@@ -1,0 +1,15 @@
+{
+  "name": "common-styles",
+  "version": "0.0.0",
+  "description": "A selection of common styles for use with your preprocessor of choice.",
+  "repository": {
+    "type": "git",
+    "url": "git@git.prod.skyscanner.local:jamesf/common-styles.git"
+  },
+  "keywords": [
+    "common",
+    "styles"
+  ],
+  "author": "James Ferguson <james.ferguson@skyscanner.net>",
+  "license": "Apache 2.0"
+}
