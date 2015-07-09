@@ -1,0 +1,37 @@
+// Standard HTML elements
+
+@import 'colours'
+
+label
+  color $col-gray-400
+  font-size 13px
+  font-weight bold
+  text-transform uppercase
+
+input[type=text]
+  height 35px
+  box-sizing border-box
+  margin 0
+  padding 0
+
+  border none
+  border-bottom solid 1px $col-blue-500
+  border-radius 0
+
+  font-size 16px
+  color $col-gray-500
+
+  &:focus
+  border-color $col-blue-700
+
+  &::-webkit-input-placeholder
+    color $col-gray-200
+    font-style italic
+    font-weight normal
+
+button
+  min-height 35px
+  box-sizing border-box
+  border none
+  border-radius 2px
+  font-weight bold
