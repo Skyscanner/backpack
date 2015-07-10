@@ -1,12 +1,12 @@
 // Standard HTML elements
 
-.sky-label
+.cs-label
   color $col-gray-400
   font-size 13px
   font-weight bold
   text-transform uppercase
 
-.sky-input-text
+.cs-input-text
   height 35px
   box-sizing border-box
   margin 0
@@ -27,8 +27,19 @@
     font-style italic
     font-weight normal
 
-button
+.cs-button
   min-height 35px
   box-sizing border-box
   border none
   border-radius 2px
+
+primary-cta()
+  background-color $col-cta-500
+
+secondary-cta()
+  background-color $col-cta-500
+
+tertiary-cta(col)
+  background-color transparent
+  border 1px solid col
+  color col
