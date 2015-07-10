@@ -1,12 +1,11 @@
 // Standard HTML elements
 
-.cs-label
+.cs-sc-label
   color $col-gray-400
   font-size 13px
   font-weight bold
-  text-transform uppercase
 
-.cs-input-text
+.cs-sc-input-text
   height 35px
   box-sizing border-box
   margin 0
@@ -27,19 +26,15 @@
     font-style italic
     font-weight normal
 
-.cs-button
-  min-height 35px
+.cs-sc-button
+  min-height 48px
   box-sizing border-box
   border none
   border-radius 2px
+  font-size 22px
+  font-weight bold
+
+  primary-cta()
 
 primary-cta()
   background-color $col-cta-500
-
-secondary-cta()
-  background-color $col-cta-500
-
-tertiary-cta(col)
-  background-color transparent
-  border 1px solid col
-  color col
