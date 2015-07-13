@@ -1,14 +1,21 @@
-basic-button()
+@import 'colours'
+
+cs-basic-button()
   box-sizing border-box
   border none
   border-radius 2px
   font-weight bold
   min-height 35px
 
-primary-cta()
-  basic-button()
+cs-primary-cta()
+  cs-basic-button()
   background-color $col-cta-500
 
-secondary-cta()
+cs-secondary-cta()
   basic-button()
-  // styles to be added
+  background-color $col-blue-500
+
+cs-tertiary-cta(col, col-stroke)
+  basic-button()
+  background-color col
+  border 1px solid col-stroke
