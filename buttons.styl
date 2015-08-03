@@ -6,19 +6,20 @@ cs-basic-button()
   border-radius 2px
   font-weight bold
   min-height 35px
+  padding 4px 12px
 
 cs-primary-cta()
   cs-basic-button()
-  color: $col-gray-500
+  color $col-gray-500
   background-color $col-cta-500
 
 cs-secondary-cta()
-  basic-button()
-  color: $col-gray-500
+  cs-basic-button()
+  color $col-gray-500
   background-color $col-blue-500
 
 cs-tertiary-cta(col1, col2)
-  basic-button()
-  color: col2
+  cs-basic-button()
+  color col2
   background-color col1
   border 1px solid col2
