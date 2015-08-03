@@ -5,7 +5,7 @@ cs-label()
   font-size 13px
   font-weight bold
 
-cs-input()
+cs-input(), cs-select()
   height 35px
   box-sizing border-box
   margin 0
@@ -25,3 +25,13 @@ cs-input()
     color $col-gray-200
     font-style italic
     font-weight normal
+
+cs-select
+  appearance none
+  position absolute
+
+  &:after
+    content '&#9662;'
+    color $col-gray-500
+    position absolute
+    right 12px
