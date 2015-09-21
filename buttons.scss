@@ -1,0 +1,30 @@
+@import 'colours';
+
+@mixin cs-basic-button() {
+  box-sizing: border-box;
+  border: none;
+  border-radius: 2px;
+  font-weight: bold;
+  min-height: 35px;
+  padding: 4px 12px;
+}
+
+@mixin cs-primary-cta() {
+  cs-basic-button()
+  color: $col-gray-500;
+  background-color: $col-cta-500;
+}
+
+
+@mixin cs-secondary-cta() {
+  cs-basic-button()
+  color: $col-gray-500;
+  background-color: $col-blue-500;
+}
+
+@mixin cs-tertiary-cta(col1, col2) {
+  cs-basic-button()
+  color: col2;
+  background-color: col1;
+  border: 1px solid col2;
+}
