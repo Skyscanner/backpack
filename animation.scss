@@ -1,0 +1,22 @@
+// Single spin
+
+@-webkit-keyframes cs-spin {
+  30%   { -webkit-transform: rotate(-.07turn);  }
+  100%   { -webkit-transform: rotate(1turn); }
+}
+
+@-moz-keyframes cs-spin {
+  30%   { -moz-transform: rotate(-.07turn);  }
+  100%   { -moz-transform: rotate(1turn); }
+}
+
+@keyframes cs-spin {
+  30%   { transform: rotate(-.07turn);  }
+  100%   { transform: rotate(1turn); }
+}
+
+@mixin cs-spin {
+  -webkit-animation:  cs-spin 1s ease forwards;
+  -moz-animation:     cs-spin 1s ease forwards;
+  animation:          cs-spin 1s ease forwards;
+}
