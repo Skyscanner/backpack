@@ -10,21 +10,21 @@
 }
 
 @mixin cs-primary-cta() {
-  cs-basic-button()
-  color: $col-gray-500;
-  background-color: $col-cta-500;
+  @include cs-basic-button();
+  color: $color-gray-500;
+  background-color: $color-green-500;
 }
 
 
 @mixin cs-secondary-cta() {
-  cs-basic-button()
-  color: $col-gray-500;
-  background-color: $col-blue-500;
+  @include cs-basic-button();
+  color: $color-gray-500;
+  background-color: $color-blue-500;
 }
 
-@mixin cs-tertiary-cta(col1, col2) {
-  cs-basic-button()
-  color: col2;
-  background-color: col1;
-  border: 1px solid col2;
+@mixin cs-tertiary-cta($col1, $col2) {
+  @include cs-basic-button();
+  color: $col2;
+  background-color: $col1;
+  border: 1px solid $col2;
 }
