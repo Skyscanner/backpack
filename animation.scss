@@ -1,0 +1,15 @@
+// Single spin
+
+@keyframes cs-spin {
+  30%   { transform: rotate(-.07turn);  }
+  100%   { transform: rotate(1turn); }
+}
+
+@mixin cs-basic-spin($time, $easing, $repeat) {
+  animation:          cs-spin $time $easing $repeat;
+}
+
+
+@mixin spin() {
+  @include cs-basic-spin(1s, ease, infinite);
+}

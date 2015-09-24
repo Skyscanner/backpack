@@ -1,0 +1,11 @@
+@import 'colours';
+
+// Card
+@mixin cs-card($col) {
+  border-radius: 4px;
+  border: 1px solid: $color-gray-100;
+  box-shadow: 1px 1px 1px $color-gray-200;
+  background-color: $col;
+}
+
+// Modal
