@@ -11,7 +11,7 @@ $color-blue-800: #0094b8;
 $color-blue-900: #006982;
 
 $color-gray-100: #f6f8fa;
-$color-gray-200: #f6f8fa;
+$color-gray-200: #e8ebed;
 $color-gray-300: #d6d9dd;
 $color-gray-400: #c4c7cc;
 $color-gray-500: #b3b6bc;
@@ -30,8 +30,8 @@ $color-green-700: #6aca26;
 $color-green-800: #55bd00;
 $color-green-900: #3a8000;
 
-$color-red-100: #3a8000;
-$color-red-200: #e8ebed;
+$color-red-100: #ffece6;
+$color-red-200: #ffd9cc;
 $color-red-300: #ffc5b3;
 $color-red-400: #ffa799;
 $color-red-500: #ff8173;
@@ -40,8 +40,8 @@ $color-red-700: #d84a48;
 $color-red-800: #b03743;
 $color-red-900: #8e2f3d;
 
-$color-yellow-100: #8e2f3d;
-$color-yellow-200: #8e2f3d;
+$color-yellow-100: #fffae6;
+$color-yellow-200: #fff8cc;
 $color-yellow-300: #fff4b3;
 $color-yellow-400: #ffec8d;
 $color-yellow-500: #ffe159;
@@ -49,11 +49,3 @@ $color-yellow-600: #ffd726;
 $color-yellow-700: #ffca36;
 $color-yellow-800: #f8a811;
 $color-yellow-900: #fa8a19;
-
-// How do we use these colours
-
-$primary-color:   $color-blue-600;
-$secondary-color: $color-gray-900;
-$text-color:      $color-gray-800;
-$call-to-action:  $color-green-500;
-$neutral-color:   $color-gray-300;
