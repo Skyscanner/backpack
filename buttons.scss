@@ -11,15 +11,28 @@
 
 @mixin cs-primary-cta() {
   @include cs-basic-button();
-  color: $color-gray-500;
-  background-color: $color-green-500;
+  color: $color-gray-900;
+  background-color: $color-green-400;
+  background: -webkit-gradient(top, $color-green-400 0%, $color-green-600 100%);
+  border: 1px solid $color-green-700;
+  text-shadow: 1px 1px 1px $color-white;
+
+  &:hover {
+    background-color: $color-green-200;
+  }
 }
 
 
 @mixin cs-secondary-cta() {
   @include cs-basic-button();
-  color: $color-gray-500;
-  background-color: $color-blue-500;
+  color: $color-gray-900;
+  background-color: $color-blue-400;
+  background: -webkit-gradient(top, $color-blue-400 0%, $color-blue-600 100%);
+  border: 1px solid $color-blue-700;
+
+  &:hover {
+    background-color: $color-blue-200;
+  }
 }
 
 @mixin cs-tertiary-cta($col1, $col2) {
