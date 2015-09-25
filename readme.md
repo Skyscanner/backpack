@@ -9,4 +9,3 @@ This is the repo for common styles used to manage and power shared styles across
 
 ## Contact
 - james.ferguson@skyscanner.net
-- matthew.davidson@skyscanner.net
