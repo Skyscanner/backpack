@@ -1,6 +1,6 @@
 @import 'colours';
 
-@mixin cs-basic-button() {
+@mixin ls-basic-button() {
   box-sizing: border-box;
   border: none;
   border-radius: 2px;
@@ -9,34 +9,34 @@
   padding: 4px 12px;
 }
 
-@mixin cs-primary-cta() {
-  @include cs-basic-button();
-  color: $color-gray-900;
-  background-color: $color-green-400;
-  background: -webkit-gradient(top, $color-green-400 0%, $color-green-600 100%);
-  border: 1px solid $color-green-700;
-  text-shadow: 1px 1px 1px $color-white;
+@mixin ls-primary-cta() {
+  @include ls-basic-button();
+  color: $ls-color-gray-900;
+  background-color: $ls-color-green-400;
+  background: -webkit-gradient(top, $ls-color-green-400 0%, $ls-color-green-600 100%);
+  border: 1px solid $ls-color-green-700;
+  text-shadow: 1px 1px 1px $ls-color-white;
 
   &:hover {
-    background-color: $color-green-200;
+    background-color: $ls-color-green-200;
   }
 }
 
 
-@mixin cs-secondary-cta() {
-  @include cs-basic-button();
-  color: $color-gray-900;
-  background-color: $color-blue-400;
-  background: -webkit-gradient(top, $color-blue-400 0%, $color-blue-600 100%);
-  border: 1px solid $color-blue-700;
+@mixin ls-secondary-cta() {
+  @include ls-basic-button();
+  color: $ls-color-gray-900;
+  background-color: $ls-color-blue-400;
+  background: -webkit-gradient(top, $ls-color-blue-400 0%, $ls-color-blue-600 100%);
+  border: 1px solid $ls-color-blue-700;
 
   &:hover {
-    background-color: $color-blue-200;
+    background-color: $ls-color-blue-200;
   }
 }
 
-@mixin cs-tertiary-cta($col1, $col2) {
-  @include cs-basic-button();
+@mixin ls-tertiary-cta($col1, $col2) {
+  @include ls-basic-button();
   color: $col2;
   background-color: $col1;
   border: 1px solid $col2;
