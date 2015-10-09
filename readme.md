@@ -17,7 +17,7 @@ Import the styles that you want to consume:
 ```scss
 @import "../node_modules/living-styles/colours";
 ```
-> Note: Remember to adjust the import path relative to your `node_modules` folder
+> Note: Remember to adjust the import path relative to your `node_modules` folder.
 
 Available imports:
 
