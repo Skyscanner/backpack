@@ -3,6 +3,7 @@
 > Up-to-date globally applicable styles for use on Skyscanner's products.
 
 ## Usage
+
 > Note: Living Styles is currently defined as an NPM module to make it easy to install and manage dependencies. We are open to 
 making this project easy to use with other package managers too (Bower etc).
 
@@ -17,6 +18,7 @@ Import the styles that you want to consume:
 ```scss
 @import "../node_modules/living-styles/colours";
 ```
+
 > Note: Remember to adjust the import path relative to your `node_modules` folder.
 
 Available imports:
