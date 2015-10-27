@@ -4,7 +4,7 @@
 
 ## Usage
 
-> Note: Living Styles is currently defined as an NPM module to make it easy to install and manage dependencies. We are open to 
+> Note: Living Styles is currently defined as an npm module to make it easy to install and manage dependencies. We are open to 
 making this project easy to use with other package managers too (Bower etc).
 
 Install the module using the git url like so:
