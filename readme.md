@@ -23,7 +23,8 @@ Import the styles that you want to consume:
 
 Available imports:
 
-- `living-styles/colours` - variables for every colour in Skyscanner's palette 
+- `living-styles/colours` - variables for every colour in Skyscanner's palette
+- `living-styles/icons` - mixins for Skyscanner's icon pack
 - `living-styles/all` - everything
 
 ## Contact
