@@ -293,12 +293,12 @@
   background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22' + $icon-color + '%22%20d%3D%22M17%2010v-3.2c0-2.6-2.2-4.8-4.8-4.8h-.4c-2.6%200-4.8%202.2-4.8%204.8v3.2c-1.1.1-2%201-2%202.1v7.7c0%201.2%201%202.2%202.2%202.2h9.7c1.2%200%202.2-1%202.2-2.2v-7.7c-.1-1.1-1-2-2.1-2.1zm-5.2-6h.4c1.5%200%202.8%201.3%202.8%202.8v3.2h-6v-3.2c0-1.5%201.3-2.8%202.8-2.8z%22/%3E%3C/svg%3E');
 }
 
-@mixin ls-icon-arrowdown-sm($icon-color) {
+@mixin ls-icon-arrow-down-sm($icon-color) {
   @include icon-sm();
   background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22' + $icon-color + '%22%20d%3D%22M6.5%201.5v6.5h-2.2c-1%200-1.6%201-1.1%201.7l3.8%205.7c.5.7%201.6.7%202.1%200l3.8-5.7c.4-.7-.2-1.7-1.2-1.7h-2.2v-6.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5%201.5z%22/%3E%3C/svg%3E');
 }
 
-@mixin ls-icon-arrowdown-lg($icon-color) {
+@mixin ls-icon-arrow-down-lg($icon-color) {
   @include icon-lg();
   background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22' + $icon-color + '%22%20d%3D%22M16.4%2012c1.2%200%202%201.2%201.4%202.2l-4.5%207.2c-.6.9-2%20.9-2.5%200l-4.5-7.2c-.6-1%20.2-2.2%201.4-2.2h2.3v-8c0-1.1.9-2%202-2s2%20.9%202%202v8h2.4z%22/%3E%3C/svg%3E');
 }
