@@ -3,12 +3,14 @@
 @mixin ls-icon-lg {
   width: 24px;
   height: 24px;
+  display: block;
   background-repeat: no-repeat;
 }
 
 @mixin ls-icon-sm {
   width: 16px;
   height: 16px;
+  display: block;
   background-repeat: no-repeat;
 }
 
