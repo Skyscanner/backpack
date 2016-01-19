@@ -10,7 +10,7 @@ making this project easy to use with other package managers too (Bower etc).
 Install the module using the git url like so:
 
 ```shell
-npm install git+http://git.prod.skyscanner.local/design/living-styles.git#v0.2.0 --save-dev
+npm install git+http://git.prod.skyscanner.local/design/living-styles.git#v0.2.1 --save-dev
 ```
 
 Import the styles that you want to consume:
