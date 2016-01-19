@@ -34,7 +34,7 @@
 @mixin ls-icon-account-lg($icon-color) {
   @include ls-icon-lg();
   $ls-icon-string: '#{$icon-color}';
-  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22' + str-replace($icon-color, '#', '%23') + '%22%20d%3D%22M19.6%2021h-15.2c-.9%200-1.6-.8-1.4-1.7l.1-.3c.5-2.7%202.1-4.2%204.3-5.8l1-.7c.4-.3.9-.5%201.4-.5h4.5c.5%200%201%20.2%201.4.4l1%20.7c2.3%201.6%203.8%203.1%204.3%205.8l.1.3c0%201-.6%201.8-1.5%201.8zm-7.6-18c-2.2%200-4%201.8-4%204s1.8%204%204%204%204-1.8%204-4-1.8-4-4-4z%22/%3E%3C/svg%3E%0A');
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22' + str-replace($ls-icon-string, '#', '%23') + '%22%20d%3D%22M19.6%2021h-15.2c-.9%200-1.6-.8-1.4-1.7l.1-.3c.5-2.7%202.1-4.2%204.3-5.8l1-.7c.4-.3.9-.5%201.4-.5h4.5c.5%200%201%20.2%201.4.4l1%20.7c2.3%201.6%203.8%203.1%204.3%205.8l.1.3c0%201-.6%201.8-1.5%201.8zm-7.6-18c-2.2%200-4%201.8-4%204s1.8%204%204%204%204-1.8%204-4-1.8-4-4-4z%22/%3E%3C/svg%3E%0A');
 }
 
 @mixin ls-icon-adult-sm($icon-color) {
