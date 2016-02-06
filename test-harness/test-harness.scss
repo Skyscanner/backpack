@@ -1,0 +1,5 @@
+@import "../all";
+
+select {
+  @include ls-select();
+}
