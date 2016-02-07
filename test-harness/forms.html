@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-GB" >
     <head>
@@ -7,43 +6,139 @@
         <meta http-equiv="X-UA-Compatible" content="IE=10" />
         <meta http-equiv="Content-Language" content="en" />
 
-        <title>Living Styles | Form elements</title>
+        <title>Living Styles | Forms</title>
 
         <meta name="description" content="Form elements"/>
 
-        <link rel="stylesheet" href="css/forms.css">
+        <link rel="stylesheet" href="test-harness.css">
     </head>
 
     <body>
-    <form action="">
-        <label for="textField">Textfield</label>
-        <input type="text" id="textField" placeholder="Enter some text">
+        <header class="th-header">
+        <h1><a href="index.html">Living Styles</a></h1>
+        <ul>
+            <li><a href="colour.html">Colour</a></li>
+            <li><a href="icons.html">Icons</a></li>
+            <li><a href="forms.html" class="selected">Forms</a></li>
+            <li><a href="units.html">Units</a></li>
+            <li><a href="logo.html">Logo</a></li>
+            <li><a href="spinners.html">Spinners</a></li>
+        </ul>
+        </header>
 
-        <label for="radioButton">Radio button</label>
-        <input type="radio" id="radioButton">
+        <section class="th-section forms dark">
+            <h2 class="dark">For dark backgrounds</h2>
+            <ul>
+                <li>
+                    <h3 class="dark">Label</h3>
+                    <label for="" class="dark">I'm a label</label>
+                </li>
 
-        <label for="radioButtonChecked">Radio button checked</label>
-        <input type="radio" id="radioButtonChecked" checked>
+                <li>
+                    <h3 class="dark">Text input</h3>
+                    <input type="text" id="textField" placeholder="Enter some text" class="dark">
+                </li>
 
-        <label for="checkbox">Checkbox</label>
-        <input type="checkbox" id="checkbox">
+                <li>
+                    <h3 class="dark">Radio buttons</h3>
+                    <input type="radio" id="radioButton" name="radioButton">
+                    <input type="radio" id="radioButton2" name="radioButton" checked>
+                    <input type="radio" id="radioButton3" name="radioButton">
+                    <input type="radio" id="radioButton4" name="radioButton">
+                </li>
 
-        <label for="radioButton">Checkbox checked</label>
-        <input type="checkbox" id="checkboxChecked" checked>
+                <li>
+                    <h3 class="dark">Checkboxes</h3>
+                    <input type="checkbox" id="checkbox">
+                    <input type="checkbox" id="checkbox2">
+                    <input type="checkbox" id="checkbox3" checked>
+                    <input type="checkbox" id="checkbox4">
+                </li>
 
-        <label for="selectMenu">Select menu</label>
-        <select name="selectMenu" id="selectMenu">
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-        </select>
+                <li>
+                    <h3 class="dark">Select menu</h3>
+                    <select name="selectMenu" id="selectMenu" class="dark">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                    </select>
+                </li>
 
-        <label for="textArea">Text area</label>
-        <textarea name="textArea" id="textArea" cols="30" rows="10"></textarea>
+                <li>
+                    <h3 class="dark">Textarea</h3>
+                    <textarea name="textArea" id="textArea" cols="30" rows="10" class="dark"></textarea>
+                </li>
+            </ul>
 
-    </form>
+            <h2 class="dark">Usage</h2>
+            <code>
+                <ol class="dark">
+                    <li>@include ls-label(true);</li>
+                    <li>@include ls-input-text(true);</li>
+                    <li>@include ls-input-radio(true);</li>
+                    <li>@include ls-input-checkbox(true);</li>
+                    <li>@include ls-select(true);</li>
+                    <li>@include ls-textarea(true);</li>
+                </ol>
+            </code>
+        </section>
 
+        <section class="th-section forms">
+            <h2>For light backgrounds</h2>
+            <ul>
+                <li>
+                    <h3>Label</h3>
+                    <label for="">I'm a label</label>
+                </li>
+
+                <li>
+                    <h3>Text input</h3>
+                    <input type="text" id="textField" placeholder="Enter some text">
+                </li>
+
+                <li>
+                    <h3>Radio buttons</h3>
+                    <input type="radio" id="radioButton5" name="radioButton2">
+                    <input type="radio" id="radioButton6" name="radioButton2" checked>
+                    <input type="radio" id="radioButton7" name="radioButton2">
+                    <input type="radio" id="radioButton8" name="radioButton2">
+                </li>
+
+                <li>
+                    <h3>Checkboxes</h3>
+                    <input type="checkbox" id="checkbox5">
+                    <input type="checkbox" id="checkbox6">
+                    <input type="checkbox" id="checkbox7" checked>
+                    <input type="checkbox" id="checkbox8">
+                </li>
+
+                <li>
+                    <h3>Select menu</h3>
+                    <select name="selectMenu" id="selectMenu">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                    </select>
+                </li>
+
+                <li>
+                    <h3>Textarea</h3>
+                    <textarea name="textArea" id="textArea" cols="30" rows="10"></textarea>
+                </li>
+            </ul>
+
+            <h2>Usage</h2>
+            <code>
+                <ol>
+                    <li>@include ls-label(false);</li>
+                    <li>@include ls-input-text(false);</li>
+                    <li>@include ls-input-radio(false);</li>
+                    <li>@include ls-input-checkbox(false);</li>
+                    <li>@include ls-select(false);</li>
+                    <li>@include ls-textarea(false);</li>
+                </ol>
+            </code>
+        </section>
     </body>
-
 </html>
 
