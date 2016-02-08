@@ -149,11 +149,19 @@ body {
   }
 
   input[type="radio"] {
-    @include ls-input-radio();
+    @include ls-input-radio(false);
+
+    &.dark {
+      @include ls-input-radio(true);
+    }
   }
 
   input[type="checkbox"] {
-    @include ls-input-checkbox();
+    @include ls-input-checkbox(false);
+
+    &.dark {
+      @include ls-input-checkbox(true);
+    }
   }
 
   select {
