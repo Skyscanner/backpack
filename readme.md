@@ -1,6 +1,5 @@
-# Living Styles ![Built with Handlebars](http://pixel-cookers.github.io/built-with-badges/sass/sass-long-flat.png)
-
-> Up-to-date globally applicable styles for use on Skyscanner's products.
+# Living Styles
+> Up-to-date globally applicable styles for use on Skyscanner's web products.
 
 ## Usage
 
@@ -25,6 +24,8 @@ Available imports:
 
 - `living-styles/colours` - variables for every colour in Skyscanner's palette
 - `living-styles/icons` - mixins for Skyscanner's icon pack
+- `living-styles/forms` - mixins for Form elements
+- `living-styles/units` - variables for commonly used properties such as padding and border-radius
 - `living-styles/all` - everything
 
 ## Contact

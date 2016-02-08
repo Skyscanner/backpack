@@ -87,6 +87,7 @@ body {
 }
 .th-section p {
   font-size: 13px;
+  margin-top: 0;
 }
 .th-section code ol {
   display: block;
