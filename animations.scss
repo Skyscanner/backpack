@@ -1,0 +1,5 @@
+@mixin ls-spin {
+  @keyframes ls-spin {
+    100% { transform: rotate(1turn); }
+  }
+}
