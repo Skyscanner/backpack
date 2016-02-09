@@ -156,6 +156,7 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   margin: 0;
+  cursor: pointer;
   background: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M8%2015c3.866%200%207-3.134%207-7s-3.134-7-7-7-7%203.134-7%207%203.134%207%207%207zm0%201c-4.418%200-8-3.582-8-8s3.582-8%208-8%208%203.582%208%208-3.582%208-8%208z%22%20fill%3D%22%23C4C7CC%22%2F%3E%3C%2Fsvg%3E") no-repeat;
 }
 .forms input[type="radio"]:checked {
@@ -167,6 +168,7 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   margin: 0;
+  cursor: pointer;
   background: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M8%2016c4.418%200%208-3.582%208-8s-3.582-8-8-8-8%203.582-8%208%203.582%208%208%208z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E") no-repeat;
 }
 .forms input[type="radio"].dark:checked {
@@ -178,6 +180,7 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   margin: 0;
+  cursor: pointer;
   background: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%3E%3Crect%20fill%3D%22%23fff%22%20width%3D%2216%22%20height%3D%2216%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M1%201.994v12.012c0%20.548.446.994.994.994h12.012c.548%200%20.994-.446.994-.994v-12.012c0-.548-.446-.994-.994-.994h-12.012c-.548%200-.994.446-.994.994zm-1%200c0-1.101.895-1.994%201.994-1.994h12.012c1.101%200%201.994.895%201.994%201.994v12.012c0%201.101-.895%201.994-1.994%201.994h-12.012c-1.101%200-1.994-.895-1.994-1.994v-12.012z%22%20fill%3D%22%23C4C7CC%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") no-repeat;
 }
 .forms input[type="checkbox"]:checked {
@@ -189,6 +192,7 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   margin: 0;
+  cursor: pointer;
   background: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%2216%22%20height%3D%2216%22%20rx%3D%222%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E") no-repeat;
 }
 .forms input[type="checkbox"].dark:checked {
