@@ -117,6 +117,21 @@ body {
   }
 }
 
+.notes {
+  background-color: $ls-color-yellow-200;
+  margin: 20px;
+  border-radius: $ls-border-radius-lg;
+  box-shadow: 0 2px 0px 0px $ls-color-yellow-400;
+
+  h2, h3, h4 {
+    color: $ls-color-yellow-800;
+  }
+
+  h2 {
+    border-bottom-color: $ls-color-yellow-500;
+  }
+}
+
 .forms {
   &.dark {
     background-color: $ls-color-gray-800;

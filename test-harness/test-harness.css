@@ -103,6 +103,19 @@ body {
   color: #b3b6bc;
 }
 
+.notes {
+  background-color: #fff8cc;
+  margin: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 0px 0px #ffec8d;
+}
+.notes h2, .notes h3, .notes h4 {
+  color: #f8a811;
+}
+.notes h2 {
+  border-bottom-color: #ffe159;
+}
+
 .forms.dark {
   background-color: #454750;
 }
