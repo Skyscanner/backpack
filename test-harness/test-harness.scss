@@ -14,7 +14,7 @@ body {
 
 .th-header {
   width: 100%;
-  padding: 20px;
+  padding: $ls-spacing-xl;
   background-color: $ls-color-blue-600;
   display: flex;
   justify-content: space-between;
@@ -39,11 +39,11 @@ body {
 
       a {
         text-decoration: none;
-        color: $ls-color-blue-100;
+        color: $ls-color-white;
 
         &:hover, &.selected {
           border-bottom: 3px solid $ls-color-yellow-500;
-          padding-bottom: 29px;
+          padding-bottom: 33px;
           color: $ls-color-yellow-500;
           font-weight: bold;
         }
@@ -990,12 +990,12 @@ body {
 
 .loaders {
   .loader-sm {
-    //@include ls-loader-sm(false);
+    @include ls-loader-sm($ls-color-gray-800);
     margin-bottom: 20px;
   }
 
   .loader-lg {
-    //@include ls-loader-lg(false);
+    @include ls-loader-lg($ls-color-gray-800);
     margin-bottom: 20px;
   }
 
@@ -1005,6 +1005,37 @@ body {
   }
 }
 
-.animations {
+.index {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: $ls-spacing-xl;
 
+    li {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-content: flex-start;
+
+      a {
+        width: 25%;
+        height: 100px;
+        padding: $ls-spacing-lg;
+        border: 1px solid $ls-color-blue-600;
+        border-radius: $ls-border-radius-lg;
+        box-sizing: border-box;
+
+        margin: 0 8px 16px 8px;
+        text-decoration: none;
+        color: $ls-color-blue-600;
+        font-weight: bold;
+        font-size: 22px;
+
+        &:hover {
+          background-color: $ls-color-blue-600;
+          color: $ls-color-white;
+        }
+      }
+    }
+  }
 }
