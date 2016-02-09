@@ -993,7 +993,7 @@ body {
     @include ls-loader-sm(false);
     margin-bottom: 20px;
 
-    .dark {
+    &.dark {
        @include ls-loader-sm(true);
     }
   }
@@ -1002,7 +1002,7 @@ body {
     @include ls-loader-lg(false);
     margin-bottom: 20px;
 
-    .dark {
+    &.dark {
       @include ls-loader-lg(true);
     }
   }
@@ -1011,7 +1011,7 @@ body {
     @include ls-loader-xl(false);
     margin-bottom: 20px;
 
-    .dark {
+    &.dark {
       @include ls-loader-xl(true);
     }
   }

@@ -1,8 +1,13 @@
+// base unit
+$ls-base-unit: 24px;
+
 // spacing
-$ls-spacing-lg: 8px;
-$ls-spacing-sm: 4px;
+$ls-spacing-xs: $ls-base-unit / 12;
+$ls-spacing-sm: $ls-base-unit / 6;
+$ls-spacing-lg: $ls-base-unit / 4;
 
 // border-radius
-$ls-border-radius-lg: 6px;
-$ls-border-radius-sm: 4px;
-$ls-border-radius-xs: 2px;
+$ls-border-radius-xs: $ls-base-unit / 12;
+$ls-border-radius-sm: $ls-base-unit / 6;
+$ls-border-radius-lg: $ls-base-unit / 4;
+
