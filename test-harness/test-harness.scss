@@ -990,30 +990,18 @@ body {
 
 .loaders {
   .loader-sm {
-    @include ls-loader-sm(false);
+    //@include ls-loader-sm(false);
     margin-bottom: 20px;
-
-    &.dark {
-       @include ls-loader-sm(true);
-    }
   }
 
   .loader-lg {
-    @include ls-loader-lg(false);
+    //@include ls-loader-lg(false);
     margin-bottom: 20px;
-
-    &.dark {
-      @include ls-loader-lg(true);
-    }
   }
 
   .loader-xl {
-    @include ls-loader-xl(false);
+    @include ls-loader-xl($ls-color-gray-800);
     margin-bottom: 20px;
-
-    &.dark {
-      @include ls-loader-xl(true);
-    }
   }
 }
 
