@@ -1,13 +1,18 @@
 // base unit
-$ls-base-unit: 24px;
+$ls-base-unit: 12px;
 
 // spacing
-$ls-spacing-xs: $ls-base-unit / 6;
-$ls-spacing-sm: $ls-base-unit / 3;
-$ls-spacing-lg: $ls-base-unit / 2;
-$ls-spacing-xl: $ls-base-unit;
+$ls-spacing-2: $ls-base-unit / 6; // 2
+$ls-spacing-3: $ls-base-unit / 4; // 3
+$ls-spacing-4: $ls-base-unit / 3; // 4
+$ls-spacing-6: $ls-base-unit / 2; // 6
+$ls-spacing-12: $ls-base-unit;     // 12
+$ls-spacing-24: $ls-base-unit * 2; // 24
+$ls-spacing-36: $ls-base-unit * 3; // 36
+$ls-spacing-48: $ls-base-unit * 4; // 48
+$ls-spacing-72: $ls-base-unit * 6; // 72
 
 // border-radius
-$ls-border-radius-xs: $ls-base-unit / 12;
-$ls-border-radius-sm: $ls-base-unit / 6;
-$ls-border-radius-lg: $ls-base-unit / 4;
+$ls-border-radius-xs: $ls-spacing-2;
+$ls-border-radius-sm: $ls-spacing-4;
+$ls-border-radius-lg: $ls-spacing-6;

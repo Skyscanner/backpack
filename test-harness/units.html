@@ -30,7 +30,7 @@
             <h2>Example Usage</h2>
             <code>
                 <ol>
-                    <li>@import "../node_modules/living-styles/units";</li>
+                    <li><strong>@import "../node_modules/living-styles/units";</strong></li>
                     <li>$ls-base-unit;</li>
                     <li>$ls-spacing-xs;</li>
                     <li>$ls-spacing-sm;</li>
@@ -44,6 +44,9 @@
 
     <section class="th-section notes">
         <h2>Notes</h2>
+        <p>Skyscanner uses a dozenal (base-12) tempo for our units.  This allows for non-floating point common fractions (halves, quarters) and also tallies cleanly with our icon sizes. 12 is a highly composite number — the smallest number with exactly four divisors: 2, 3, 4, and 6, whilst ten only has two divisors.</p>
+
+        <p>Using base-12 is also easier to divide units into 12 parts, namely halves, thirds, and quarters. The numbers 6, 4, and 3 are all whole numbers.</p>
     </section>
     </body>
 </html>
