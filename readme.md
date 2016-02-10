@@ -26,6 +26,7 @@ Available imports:
 - `living-styles/icons` - mixins for Skyscanner's icon pack
 - `living-styles/forms` - mixins for Form elements
 - `living-styles/units` - variables for commonly used properties such as padding and border-radius
+- `loaders` - mixins for loaders (spinners)
 - `living-styles/all` - everything
 
 ## Contact

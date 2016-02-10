@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: "Arial"
+  font-family: "Arial";
 }
 
 .clearfix:before,
@@ -42,7 +42,7 @@ body {
         color: $ls-color-white;
 
         &:hover, &.selected {
-          border-bottom: 3px solid $ls-color-yellow-500;
+          border-bottom: 3px solid $ls-color-yellow-400;
           padding-bottom: 33px;
           color: $ls-color-yellow-500;
           font-weight: bold;
@@ -53,10 +53,13 @@ body {
 }
 
 .th-section {
-  padding: 20px;
+  padding: $ls-spacing-xl;
+  max-width: 1048px;
+  margin: 0 auto;
 
   &.dark {
     background-color: $ls-color-gray-800;
+    border-radius: $ls-border-radius-lg;
   }
 
   h2 {
@@ -120,20 +123,21 @@ body {
       }
     }
   }
-}
 
-.notes {
-  background-color: $ls-color-yellow-200;
-  margin: 20px;
-  border-radius: $ls-border-radius-lg;
-  box-shadow: 0 2px 0px 0px $ls-color-yellow-400;
+  &.notes {
+    background-color: $ls-color-yellow-200;
+    border-radius: $ls-border-radius-lg;
+    box-shadow: 0 2px 0px 0px $ls-color-yellow-400;
+    box-sizing: border-box;
+    color: $ls-color-gray-800;
 
-  h2, h3, h4 {
-    color: $ls-color-yellow-800;
-  }
+    h2, h3, h4 {
+      color: $ls-color-yellow-800;
+    }
 
-  h2 {
-    border-bottom-color: $ls-color-yellow-500;
+    h2 {
+      border-bottom-color: $ls-color-yellow-500;
+    }
   }
 }
 
@@ -1006,36 +1010,8 @@ body {
 }
 
 .index {
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: $ls-spacing-xl;
-
-    li {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      align-content: flex-start;
-
-      a {
-        width: 25%;
-        height: 100px;
-        padding: $ls-spacing-lg;
-        border: 1px solid $ls-color-blue-600;
-        border-radius: $ls-border-radius-lg;
-        box-sizing: border-box;
-
-        margin: 0 8px 16px 8px;
-        text-decoration: none;
-        color: $ls-color-blue-600;
-        font-weight: bold;
-        font-size: 22px;
-
-        &:hover {
-          background-color: $ls-color-blue-600;
-          color: $ls-color-white;
-        }
-      }
-    }
+  .intro {
+    font-size: 24px;
+    color: $ls-color-gray-800;
   }
 }
