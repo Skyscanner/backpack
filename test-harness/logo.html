@@ -6,9 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=10" />
         <meta http-equiv="Content-Language" content="en" />
 
-        <title>Living Styles | Units</title>
+        <title>Living Styles | Logo</title>
 
-        <meta name="description" content="Units"/>
+        <meta name="description" content="Logo"/>
 
         <link rel="stylesheet" href="test-harness.css">
     </head>
@@ -20,37 +20,44 @@
             <li><a href="colour.html">Colour</a></li>
             <li><a href="icons.html">Icons</a></li>
             <li><a href="forms.html">Forms</a></li>
-            <li><a href="units.html" class="selected">Units</a></li>
-            <li><a href="logo.html">Logo</a></li>
+            <li><a href="units.html">Units</a></li>
+            <li><a href="logo.html" class="selected">Logo</a></li>
             <li><a href="loaders.html">Loaders</a></li>
         </ul>
         </header>
 
-        <section class="th-section units">
+        <section class="th-section logo">
+            <h2>Inline</h2>
+            <div class="logo inline"></div>
+
+            <h2>Stacked</h2>
+            <div class="logo stacked"></div>
+
+            <h2>Cloud only</h2>
+            <div class="logo cloud-only"></div>
+
+            <h2>Tianxun</h2>
+            <div class="logo tianxun"></div>
+        </section>
+
+        <section class="th-section">
             <h2>Example Usage</h2>
-            <code class="import">@import "../node_modules/living-styles/units";</strong></code>
-            <p>Simply reference the variables as and when needed e.g. for padding, margins, widths and heights.</p>
+            <code class="import">@import "../node_modules/living-styles/logo";</code>
+            <p>Logos are available in the 4 formats above. These can be colored on the fly by passing a color variable into the mixin e.g.</p>
             <code>
                 <ol>
-                    <li>$ls-spacing-sixth;</li>
-                    <li>$ls-spacing-quarter;</li>
-                    <li>$ls-spacing-half;</li>
-                    <li>$ls-spacing;</li>
-                    <li>$ls-border-radius-double;</li>
-                    <li>$ls-border-radius-triple;</li>
-                    <li>$ls-border-radius-quadruple;</li>
+                    <li>include ls-logo('inline', $ls-color-blue-600;</li>
+                    <li>include ls-logo('stacked', $ls-color-gray-900;</li>
+                    <li>include ls-logo('cloud', $ls-color-white;</li>
+                    <li>include ls-logo('tianxun', $ls-color-blue-600;</li>
                 </ol>
             </code>
         </section>
 
-    <section class="th-section notes">
-        <h2>Notes</h2>
-        <p>Skyscanner uses a dozenal (base-12) tempo for our units.  This allows for non-floating point common fractions (halves, quarters) and also tallies cleanly with our icon sizes. 12 is a highly composite number — the smallest number with exactly four divisors: 2, 3, 4, and 6, whilst ten only has two divisors.</p>
-
-        <p>Using base-12 is also easier to divide units into 12 parts, namely halves, thirds, and quarters. The numbers 6, 4, and 3 are all whole numbers.</p>
-        <h3>Need a different size?</h3>
-        <p>Just reference <code>$ls-base-unit</code> and multply or divide as needed.</p>
-    </section>
+        <section class="th-section notes">
+            <h2>Notes</h2>
+            <p>Whilst you <em>technically can</em> create logos in any colour, we'd prefer if you stuck to those mentioned in our Brand Guidelines. Please also see our Brand Guidelines for further info on logo usage.</p>
+        </section>
     </body>
 </html>
 

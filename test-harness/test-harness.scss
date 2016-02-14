@@ -7,7 +7,7 @@ body {
 
 .th-header {
   width: 100%;
-  padding: $ls-spacing-24;
+  padding: $ls-spacing-double;
   background-color: $ls-color-blue-600;
   display: flex;
   justify-content: space-between;
@@ -46,7 +46,7 @@ body {
 }
 
 .th-section {
-  padding: $ls-spacing-24;
+  padding: $ls-spacing-double;
   max-width: 1048px;
   margin: 0 auto;
 
@@ -96,12 +96,26 @@ body {
 
   p {
     font-size: 13px;
-    margin-top: 0;
+    margin: $ls-spacing-half 0;
+    line-height: 16px;
   }
 
   code {
+    color: $ls-color-gray-700;
+    padding: $ls-spacing-quarter;
+    background-color: $ls-color-gray-200;
+    border-radius: $ls-border-radius-xs;
+    margin-bottom: $ls-spacing;
+    font-size: 13px;
+
+    &.import {
+      display: inline-block;
+      font-weight: bold;
+      margin-bottom: $ls-spacing-quarter;
+    }
+
     ol {
-      display: block;
+      display: inline-block;
       margin-top: 8px;
       margin-bottom: 0;
       color: $ls-color-gray-700;
@@ -110,6 +124,9 @@ body {
 
       li {
         margin-bottom: 4px;
+        padding: $ls-spacing-quarter;
+        background-color: $ls-color-gray-200;
+        border-radius: $ls-border-radius-xs;
       }
 
       &.dark {
@@ -124,7 +141,7 @@ body {
     box-shadow: 0 2px 0px 0px $ls-color-yellow-400;
     box-sizing: border-box;
     color: $ls-color-gray-800;
-    margin-bottom: $ls-spacing-24;
+    margin-bottom: $ls-spacing-double;
 
     h2, h3, h4 {
       color: $ls-color-yellow-800;
@@ -132,6 +149,10 @@ body {
 
     h2 {
       border-bottom-color: $ls-color-yellow-500;
+    }
+
+    h3 {
+      margin-top: $ls-spacing-double;
     }
 
     p:last-of-type {
@@ -1026,5 +1047,30 @@ body {
   .intro {
     font-size: 24px;
     color: $ls-color-gray-800;
+  }
+}
+
+.logo {
+  .logo {
+    display: block;
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+    background-position: center;
+  }
+  .inline {
+    @include ls-logo-blue('inline', $ls-color-blue-600);
+  }
+
+  .stacked {
+    @include ls-logo-blue('stacked', $ls-color-blue-600);
+  }
+
+  .cloud-only {
+    @include ls-logo-blue('cloud', $ls-color-blue-600);
+  }
+
+  .tianxun {
+    @include ls-logo-blue('tianxun', $ls-color-blue-600);
   }
 }
