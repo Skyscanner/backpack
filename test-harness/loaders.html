@@ -37,13 +37,13 @@
 
         <section class="th-section">
             <h2>Usage</h2>
-            <code>
-                <ol>
-                    <li><strong>@import "../node_modules/living-styles/loaders";</strong></li>
-                    <li>@include ls-loader-sm($ls-color-gray-900);</li>
-                    <li>@include ls-loader-sm($ls-color-blue-600);</li>
-                </ol>
-            </code>
+            <code class="import">@import "../node_modules/living-styles/loaders";</code>
+            <p>Loaders are abavailable in the 3 sizes above and can be coloured just like icons by passing a colour variable into the mixin.</p>
+            <ol class="usage">
+                <li><code>@include ls-loader-sm($ls-color-gray-900);</code></li>
+                <li><code>@include ls-loader-lg($ls-color-blue-600);</code></li>
+                <li><code>@include ls-loader-xl($ls-color-white);</code></li>
+            </ol>
         </section>
 
         <section class="th-section notes">

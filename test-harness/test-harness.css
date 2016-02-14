@@ -93,9 +93,19 @@ body {
   margin: 6px 0;
   line-height: 16px;
 }
+.th-section .usage {
+  display: inline-block;
+  margin-top: 16px;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding: 0;
+}
+.th-section .usage li {
+  margin-bottom: 24px;
+}
 .th-section code {
   color: #80828b;
-  padding: 3px;
+  padding: 12px;
   background-color: #e8ebed;
   border-radius: 2px;
   margin-bottom: 12px;
@@ -105,23 +115,6 @@ body {
   display: inline-block;
   font-weight: bold;
   margin-bottom: 3px;
-}
-.th-section code ol {
-  display: inline-block;
-  margin-top: 8px;
-  margin-bottom: 0;
-  color: #80828b;
-  list-style-type: none;
-  padding: 0;
-}
-.th-section code ol li {
-  margin-bottom: 4px;
-  padding: 3px;
-  background-color: #e8ebed;
-  border-radius: 2px;
-}
-.th-section code ol.dark {
-  color: #b3b6bc;
 }
 .th-section.notes {
   background-color: #fff8cc;
