@@ -18,7 +18,7 @@ module.exports = (grunt) ->
     sass:
       dist:
         options:
-          style: 'expanded'
+          outputStyle: 'expanded'
         files:
           'test-harness/test-harness.css': 'test-harness/test-harness.scss'
 
@@ -36,14 +36,23 @@ module.exports = (grunt) ->
         files:
           'generated/_elements.scss': 'svgs/elements/*.svg'
 
-      icons:
+      smIcons:
         options:
           varPrefix: 'ls-icon-'
-          mapName: 'ls-icons'
+          mapName: 'ls-icons-sm'
           colors: colours
 
         files:
-          'generated/_icons.scss': 'svgs/icons/*.svg'
+          'generated/_icons-sm.scss': 'svgs/icons/sm/*.svg'
+
+      lgIcons:
+        options:
+          varPrefix: 'ls-icon-'
+          mapName: 'ls-icons-lg'
+          colors: colours
+
+        files:
+          'generated/_icons-lg.scss': 'svgs/icons/lg/*.svg'
 
       logos:
         options:

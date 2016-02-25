@@ -1,15 +1,16 @@
-@import 'generated/icons';
+@import 'generated/icons-sm';
+@import 'generated/icons-lg';
 
-@mixin ls-icon-sm($datauri) {
+@mixin ls-icon-sm($icon) {
   display: block;
   width: 16px;
   height: 16px;
-  background: url($datauri) no-repeat;
+  background: url(map-get($ls-icons-sm, $icon)) no-repeat;
 }
 
-@mixin ls-icon-lg($datauri) {
+@mixin ls-icon-lg($icon) {
   display: block;
   width: 24px;
   height: 24px;
-  background: url($datauri) no-repeat;
+  background: url(map-get($ls-icons-lg, $icon)) no-repeat;
 }

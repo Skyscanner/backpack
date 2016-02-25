@@ -528,11 +528,16 @@ body {
     }
   }
 
-  @each $name, $datauri in $ls-icons {
-    .#{$name} {
-      @include ls-icon-sm($datauri)
-    }
+  .sm-test {
+    @include ls-icon-sm(ls-icon-wifi-red-500);
   }
+
+  //
+  //@each $name in $ls-icons-lg {
+  //  .#{$name}-lg {
+  //    @include ls-icon-lg($name)
+  //  }
+  //}
 }
 
 .loaders {
