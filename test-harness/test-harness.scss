@@ -576,18 +576,30 @@ body {
     margin: 0 auto;
   }
   .inline {
-    @include ls-logo-inline($ls-logo-inline-blue-600);
+    display: block;
+    width: 368px;
+    height: 104px;
+    background: transparent url($ls-logo-inline-blue-600) no-repeat center;
   }
 
   .stacked {
-    @include ls-logo-stacked($ls-logo-stacked-blue-600);
+    display: block;
+    width: 348px;
+    height: 197px;
+    background: transparent url($ls-logo-stacked-blue-600) no-repeat center;
   }
 
   .cloud-only {
-    @include ls-logo-cloud($ls-logo-cloud-blue-600);
+    display: block;
+    width: 128px;
+    height: 104px;
+    background: transparent url($ls-logo-cloud-blue-600) no-repeat center;
   }
 
   .tianxun {
-    @include ls-logo-tianxun($ls-logo-tianxun-blue-600);
+    display: block;
+    width: 258px;
+    height: 113px;
+    background: transparent url($ls-logo-tianxun-blue-600) no-repeat center;
   }
 }
