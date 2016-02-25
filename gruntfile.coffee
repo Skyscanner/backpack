@@ -28,6 +28,14 @@ module.exports = (grunt) ->
           'generated/_colours.scss': 'colours.json'
 
     datauri:
+      elements:
+        options:
+          varPrefix: 'ls-element-'
+          mapName: 'ls-elements'
+
+        files:
+          'generated/_elements.scss': 'svgs/elements/*.svg'
+
       icons:
         options:
           varPrefix: 'ls-icon-'
