@@ -528,16 +528,23 @@ body {
     }
   }
 
-  .sm-test {
-    @include ls-icon-sm(ls-icon-wifi-red-500);
+  @each $name, $datauri in $ls-icons-sm {
+    .#{$name}-sm {
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: url($datauri) no-repeat;
+    }
   }
 
-  //
-  //@each $name in $ls-icons-lg {
-  //  .#{$name}-lg {
-  //    @include ls-icon-lg($name)
-  //  }
-  //}
+  @each $name, $datauri in $ls-icons-lg {
+    .#{$name}-lg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url($datauri) no-repeat;
+    }
+  }
 }
 
 .loaders {
