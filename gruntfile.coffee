@@ -28,13 +28,32 @@ module.exports = (grunt) ->
           'generated/_colours.scss': 'colours.json'
 
     datauri:
-      options:
-        varPrefix: 'ls-icon-'
-        colors: colours
+      icons:
+        options:
+          varPrefix: 'ls-icon-'
+          mapName: 'ls-icons'
+          colors: colours
 
-      svgs:
         files:
-          'generated/_icons.scss': 'svg/*.svg'
+          'generated/_icons.scss': 'svgs/icons/*.svg'
+
+      logos:
+        options:
+          varPrefix: 'ls-logo-'
+          mapName: 'ls-logos'
+          colors: colours
+
+        files:
+          'generated/_logos.scss': 'svgs/logos/*.svg'
+
+      spinners:
+        options:
+          varPrefix: 'ls-'
+          mapName: 'ls-spinners'
+          colors: colours
+
+        files:
+          'generated/_spinners.scss': 'svgs/spinners/*.svg'
 
     watch:
       options:

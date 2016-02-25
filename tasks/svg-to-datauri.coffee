@@ -14,10 +14,11 @@ module.exports = (grunt) ->
   grunt.registerMultiTask "datauri", "Generates .scss datauri variables for .{png,gif,jpg} and .svg, and replaces color definitions in .svg files.", ->
     options = @options
       varPrefix: 'data-image-'
-      colors: undefined
-      useMap: false
+      colors: null
+      mapName: null
 
     lines = []
+    mapLines = []
 
     _(@files).each (file) ->
       imageSources = file.src
@@ -28,26 +29,35 @@ module.exports = (grunt) ->
           grunt.log.warn "Source file \"" + imagePath + "\" not found."
           return false
 
-        template = if options.useMap then mapVariableTemplate else variableTemplate
+        if options.colors
+          _(_.keys(options.colors)).each (color) ->
+            svgContents = fs.readFileSync(imagePath).toString('utf-8');
+            colorizedSvgContents = svgContents.replace(/(<svg[^>]+>)/im, '$1<style type="text/css">circle, ellipse, line, path, polygon, polyline, rect, text { fill: ' + options.colors[color] + ' !important; }</style>')
 
-        _(_.keys(options.colors)).each (color) ->
+            varname = "#{options.varPrefix}#{path.basename(imagePath).split('.')[0]}-#{color.replace('ls-color-', '')}"
+            base64_data = "data:image/svg+xml;base64,#{new Buffer(colorizedSvgContents).toString('base64')}"
+
+            lines.push(variableTemplate({varname, base64_data}))
+            mapLines.push(mapVariableTemplate({varname, base64_data})) if options.mapName
+        else
           svgContents = fs.readFileSync(imagePath).toString('utf-8');
-          colorizedSvgContents = svgContents.replace(/(<svg[^>]+>)/im, '$1<style type="text/css">circle, ellipse, line, path, polygon, polyline, rect, text { fill: ' + options.colors[color] + ' !important; }</style>')
 
-          lines.push(
-            template(
-              varname: "#{options.varPrefix}#{path.basename(imagePath).split('.')[0]}-#{color.replace('ls-color-', '')}"
-              base64_data: "data:image/svg+xml;base64,#{new Buffer(colorizedSvgContents).toString('base64')}"
-            )
-          )
+          varname = "#{options.varPrefix}#{path.basename(imagePath).split('.')[0]}"
+          base64_data = "data:image/svg+xml;base64,#{new Buffer(svgContents).toString('base64')}"
 
-      if options.useMap
-        grunt.file.write(dest, mapTemplate(
-          mapname: options.useMap
-          vars: lines.join("\n")
-        ))
-      else
-        grunt.file.write(dest, lines.join(""))
+          lines.push(variableTemplate({varname, base64_data}))
+          mapLines.push(mapVariableTemplate({varname, base64_data})) if options.mapName
+
+      fileContents = lines.join("")
+
+      if options.mapName
+        fileContents += mapTemplate(
+          mapname: options.mapName
+          vars: mapLines.join("\n")
+        )
+
+      grunt.file.write(dest, fileContents)
 
       grunt.log.writeln "File #{dest} created."
-      grunt.log.writeln "Encoded and inlined #{lines.length} lines."
+      grunt.log.writeln "Encoded and inlined #{lines.length} variable lines."
+      grunt.log.writeln "Encoded and inlined #{mapLines.length} map lines."

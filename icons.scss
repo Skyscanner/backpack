@@ -1,15 +1,15 @@
 @import 'generated/icons';
 
-@mixin ls-icon-lg($ls-icon) {
-  display: block;
-  width: 24px;
-  height: 24px;
-  background: url($ls-icon) no-repeat;
-}
-
 @mixin ls-icon-sm($ls-icon) {
   display: block;
   width: 16px;
   height: 16px;
+  background: url($ls-icon) no-repeat;
+}
+
+@mixin ls-icon-lg($ls-icon) {
+  display: block;
+  width: 24px;
+  height: 24px;
   background: url($ls-icon) no-repeat;
 }

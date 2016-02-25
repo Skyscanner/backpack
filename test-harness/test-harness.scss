@@ -530,11 +530,11 @@ body {
   }
 
   .icon-account-lg {
-    @include ls-icon-lg($ls-icon-account-lg-gray-900);
+    @include ls-icon-sm($ls-icon-calendar-gray-900);
   }
 
   .icon-adult-lg {
-    @include ls-icon-lg($ls-icon-adult-lg-gray-900);
+    @include ls-icon-sm($ls-icon-calendar-hd-gray-900);
   }
 
   //.icon-arrow-down-lg {
