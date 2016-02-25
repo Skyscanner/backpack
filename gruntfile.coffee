@@ -63,14 +63,32 @@ module.exports = (grunt) ->
         files:
           'generated/_logos.scss': 'svgs/logos/*.svg'
 
-      spinners:
+      smSpinners:
         options:
           varPrefix: 'ls-'
-          mapName: 'ls-spinners'
+          mapName: 'ls-spinners-sm'
           colors: colours
 
         files:
-          'generated/_spinners.scss': 'svgs/spinners/*.svg'
+          'generated/_spinners-sm.scss': 'svgs/spinners/sm/*.svg'
+
+      lgSpinners:
+        options:
+          varPrefix: 'ls-'
+          mapName: 'ls-spinners-lg'
+          colors: colours
+
+        files:
+          'generated/_spinners-lg.scss': 'svgs/spinners/lg/*.svg'
+
+      xlSpinners:
+        options:
+          varPrefix: 'ls-'
+          mapName: 'ls-spinners-xl'
+          colors: colours
+
+        files:
+          'generated/_spinners-xl.scss': 'svgs/spinners/xl/*.svg'
 
     watch:
       options:

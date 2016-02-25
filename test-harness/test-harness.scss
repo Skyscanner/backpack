@@ -549,17 +549,17 @@ body {
 
 .loaders {
   .loader-sm {
-    @include ls-spinner-sm($ls-spinner-sm-gray-800);
+    @include ls-spinner-sm(ls-spinner-gray-800);
     margin-bottom: 20px;
   }
 
   .loader-lg {
-    @include ls-spinner-lg($ls-spinner-lg-gray-800);
+    @include ls-spinner-lg(ls-spinner-gray-800);
     margin-bottom: 20px;
   }
 
   .loader-xl {
-    @include ls-spinner-xl($ls-spinner-xl-gray-800);
+    @include ls-spinner-xl(ls-spinner-gray-800);
     margin-bottom: 20px;
   }
 }
