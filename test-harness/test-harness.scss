@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: "Arial";
+  font-family: "Arial", serif;
 }
 
 .th-header {
@@ -70,11 +70,10 @@ body {
   }
 
   h3 {
-    margin: 0;
     font-size: 13px;
     color: $ls-color-gray-700;
     display: block;
-    margin-bottom: 4px;
+    margin: 0 0 4px;
 
     &.dark {
       color: $ls-color-gray-500;
@@ -82,12 +81,11 @@ body {
   }
 
   h4 {
-    margin: 0;
     font-size: 13px;
     font-weight: normal;
     color: $ls-color-gray-700;
     display: block;
-    margin-bottom: 4px;
+    margin: 0 0 4px;
 
     &.dark {
       color: $ls-color-gray-500;
@@ -130,7 +128,7 @@ body {
   &.notes {
     background-color: $ls-color-yellow-200;
     border-radius: $ls-border-radius-lg;
-    box-shadow: 0 2px 0px 0px $ls-color-yellow-400;
+    box-shadow: 0 2px 0 0 $ls-color-yellow-400;
     box-sizing: border-box;
     color: $ls-color-gray-800;
     margin-bottom: $ls-spacing-double;
@@ -213,7 +211,6 @@ body {
   }
 }
 
-
 .colour {
   div {
     display: flex;
@@ -222,10 +219,9 @@ body {
 
   .blue, .gray, .yellow, .red, .green {
     list-style-type: none;
-    margin: 0;
     padding: 0;
     width: 19%;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
 
     p {
       font-size: 11px;
@@ -532,505 +528,38 @@ body {
     }
   }
 
-  .icon-account-lg {
-    @include ls-icon-account-lg($ls-color-gray-900);
+  @each $name, $datauri in $ls-icons-sm {
+    .#{$name}-sm {
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: url($datauri) no-repeat;
+    }
+  }
+
+  @each $name, $datauri in $ls-icons-lg {
+    .#{$name}-lg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url($datauri) no-repeat;
+    }
   }
-
-  .icon-adult-lg {
-    @include ls-icon-adult-lg($ls-color-gray-900);
-  }
-
-  .icon-arrow-down-lg {
-    @include ls-icon-arrow-down-lg($ls-color-gray-900);
-  }
-
-  .icon-arrow-left-lg {
-    @include ls-icon-arrow-left-lg($ls-color-gray-900);
-  }
-
-  .icon-arrow-right-lg {
-    @include ls-icon-arrow-right-lg($ls-color-gray-900);
-  }
-
-  .icon-arrow-up-lg {
-    @include ls-icon-arrow-up-lg($ls-color-gray-900);
-  }
-
-  .icon-bus-lg {
-    @include ls-icon-bus-lg($ls-color-gray-900);
-  }
-
-  .icon-calendar-lg {
-    @include ls-icon-calendar-lg($ls-color-gray-900);
-  }
-
-  .icon-cars-lg {
-    @include ls-icon-cars-lg($ls-color-gray-900);
-  }
-
-  .icon-chart-lg {
-    @include ls-icon-chart-lg($ls-color-gray-900);
-  }
-
-  .icon-chevron-down-lg {
-    @include ls-icon-chevron-down-lg($ls-color-gray-900);
-  }
-
-  .icon-chevron-left-lg {
-    @include ls-icon-chevron-left-lg($ls-color-gray-900);
-  }
-
-  .icon-chevron-right-lg {
-    @include ls-icon-chevron-right-lg($ls-color-gray-900);
-  }
-
-  .icon-chevron-up-lg {
-    @include ls-icon-chevron-up-lg($ls-color-gray-900);
-  }
-
-  .icon-child-lg {
-    @include ls-icon-child-lg($ls-color-gray-900);
-  }
-
-  .icon-close-lg {
-    @include ls-icon-close-lg($ls-color-gray-900);
-  }
-
-  .icon-currency-lg {
-    @include ls-icon-currency-lg($ls-color-gray-900);
-  }
-
-  .icon-depart-lg {
-    @include ls-icon-depart-lg($ls-color-gray-900);
-  }
-
-  .icon-flag-lg {
-    @include ls-icon-flag-lg($ls-color-gray-900);
-  }
-
-  .icon-flight-lg {
-    @include ls-icon-flight-lg($ls-color-gray-900);
-  }
-
-  .icon-heart-lg {
-    @include ls-icon-heart-lg($ls-color-gray-900);
-  }
-
-  .icon-help-lg {
-    @include ls-icon-help-lg($ls-color-gray-900);
-  }
-
-  .icon-hotels-lg {
-    @include ls-icon-hotels-lg($ls-color-gray-900);
-  }
-
-  .icon-infant-lg {
-    @include ls-icon-infant-lg($ls-color-gray-900);
-  }
-
-  .icon-information-lg {
-    @include ls-icon-information-lg($ls-color-gray-900);
-  }
-
-  .icon-language-lg {
-    @include ls-icon-language-lg($ls-color-gray-900);
-  }
-
-  .icon-location-lg {
-    @include ls-icon-location-lg($ls-color-gray-900);
-  }
-
-  .icon-lock-lg {
-    @include ls-icon-lock-lg($ls-color-gray-900);
-  }
-
-  .icon-long-arrow-down-lg {
-    @include ls-icon-long-arrow-down-lg($ls-color-gray-900);
-  }
-
-  .icon-long-arrow-left-lg {
-    @include ls-icon-long-arrow-left-lg($ls-color-gray-900);
-  }
-
-  .icon-long-arrow-right-lg {
-    @include ls-icon-long-arrow-right-lg($ls-color-gray-900);
-  }
-
-  .icon-long-arrow-up-lg {
-    @include ls-icon-long-arrow-up-lg($ls-color-gray-900);
-  }
-
-  .icon-mail-lg {
-    @include ls-icon-mail-lg($ls-color-gray-900);
-  }
-
-  .icon-map-lg {
-    @include ls-icon-map-lg($ls-color-gray-900);
-  }
-
-  .icon-menu-lg {
-    @include ls-icon-menu-lg($ls-color-gray-900);
-  }
-
-  .icon-minus-lg {
-    @include ls-icon-minus-lg($ls-color-gray-900);
-  }
-
-  .icon-not-allowed-lg {
-    @include ls-icon-not-allowed-lg($ls-color-gray-900);
-  }
-
-  .icon-payment-card-lg {
-    @include ls-icon-payment-card-lg($ls-color-gray-900);
-  }
-
-  .icon-plus-lg {
-    @include ls-icon-plus-lg($ls-color-gray-900);
-  }
-  .icon-price-alerts-lg {
-    @include ls-icon-price-alerts-lg($ls-color-gray-900);
-  }
-
-  .icon-recent-searches-lg {
-    @include ls-icon-recent-searches-lg($ls-color-gray-900);
-  }
-
-  .icon-refresh-lg {
-    @include ls-icon-refresh-lg($ls-color-gray-900);
-  }
-
-  .icon-return-lg {
-    @include ls-icon-return-lg($ls-color-gray-900);
-  }
-
-  .icon-search-lg {
-    @include ls-icon-search-lg($ls-color-gray-900);
-  }
-
-  .icon-settings-lg {
-    @include ls-icon-settings-lg($ls-color-gray-900);
-  }
-
-  .icon-star-lg {
-    @include ls-icon-star-lg($ls-color-gray-900);
-  }
-
-  .icon-swap-lg {
-    @include ls-icon-swap-lg($ls-color-gray-900);
-  }
-
-  .icon-tick-lg {
-    @include ls-icon-tick-lg($ls-color-gray-900);
-  }
-
-  .icon-trips-lg {
-    @include ls-icon-trips-lg($ls-color-gray-900);
-  }
-
-  .icon-use-location-lg {
-    @include ls-icon-location-lg($ls-color-gray-900);
-  }
-
-  .icon-view-lg {
-    @include ls-icon-view-lg($ls-color-gray-900);
-  }
-
-  // small
-
-  .icon-account-sm {
-    @include ls-icon-account-sm($ls-color-gray-900);
-  }
-
-  .icon-adult-sm {
-    @include ls-icon-adult-sm($ls-color-gray-900);
-  }
-
-  .icon-arrow-down-sm {
-    @include ls-icon-arrow-down-sm($ls-color-gray-900);
-  }
-
-  .icon-arrow-left-sm {
-    @include ls-icon-arrow-left-sm($ls-color-gray-900);
-  }
-
-  .icon-arrow-right-sm {
-    @include ls-icon-arrow-right-sm($ls-color-gray-900);
-  }
-
-  .icon-arrow-up-sm {
-    @include ls-icon-arrow-up-sm($ls-color-gray-900);
-  }
-
-  .icon-bus-sm {
-    @include ls-icon-bus-sm($ls-color-gray-900);
-  }
-
-  .icon-calendar-sm {
-    @include ls-icon-calendar-sm($ls-color-gray-900);
-  }
-
-  .icon-cars-sm {
-    @include ls-icon-cars-sm($ls-color-gray-900);
-  }
-
-  .icon-chart-sm {
-    @include ls-icon-chart-sm($ls-color-gray-900);
-  }
-
-  .icon-chevron-down-sm {
-    @include ls-icon-chevron-down-sm($ls-color-gray-900);
-  }
-
-  .icon-chevron-left-sm {
-    @include ls-icon-chevron-left-sm($ls-color-gray-900);
-  }
-
-  .icon-chevron-right-sm {
-    @include ls-icon-chevron-right-sm($ls-color-gray-900);
-  }
-
-  .icon-chevron-up-sm {
-    @include ls-icon-chevron-up-sm($ls-color-gray-900);
-  }
-
-  .icon-child-sm {
-    @include ls-icon-child-sm($ls-color-gray-900);
-  }
-
-  .icon-close-sm {
-    @include ls-icon-close-sm($ls-color-gray-900);
-  }
-
-  .icon-currency-sm {
-    @include ls-icon-currency-sm($ls-color-gray-900);
-  }
-
-  .icon-depart-sm {
-    @include ls-icon-depart-sm($ls-color-gray-900);
-  }
-
-  .icon-flag-sm {
-    @include ls-icon-flag-sm($ls-color-gray-900);
-  }
-
-  .icon-flight-sm {
-    @include ls-icon-flight-sm($ls-color-gray-900);
-  }
-
-  .icon-heart-sm {
-    @include ls-icon-heart-sm($ls-color-gray-900);
-  }
-
-  .icon-help-sm {
-    @include ls-icon-help-sm($ls-color-gray-900);
-  }
-
-  .icon-hotels-sm {
-    @include ls-icon-hotels-sm($ls-color-gray-900);
-  }
-
-  .icon-infant-sm {
-    @include ls-icon-infant-sm($ls-color-gray-900);
-  }
-
-  .icon-information-sm {
-    @include ls-icon-information-sm($ls-color-gray-900);
-  }
-
-  .icon-language-sm {
-    @include ls-icon-language-sm($ls-color-gray-900);
-  }
-
-  .icon-location-sm {
-    @include ls-icon-location-sm($ls-color-gray-900);
-  }
-
-  .icon-lock-sm {
-    @include ls-icon-lock-sm($ls-color-gray-900);
-  }
-
-  .icon-long-arrow-down-sm {
-    @include ls-icon-long-arrow-down-sm($ls-color-gray-900);
-  }
-
-  .icon-long-arrow-left-sm {
-    @include ls-icon-long-arrow-left-sm($ls-color-gray-900);
-  }
-
-  .icon-long-arrow-right-sm {
-    @include ls-icon-long-arrow-right-sm($ls-color-gray-900);
-  }
-
-  .icon-long-arrow-up-sm {
-    @include ls-icon-long-arrow-up-sm($ls-color-gray-900);
-  }
-
-  .icon-mail-sm {
-    @include ls-icon-mail-sm($ls-color-gray-900);
-  }
-
-  .icon-map-sm {
-    @include ls-icon-map-sm($ls-color-gray-900);
-  }
-
-  .icon-menu-sm {
-    @include ls-icon-menu-sm($ls-color-gray-900);
-  }
-
-  .icon-minus-sm {
-    @include ls-icon-minus-sm($ls-color-gray-900);
-  }
-
-  .icon-not-allowed-sm {
-    @include ls-icon-not-allowed-sm($ls-color-gray-900);
-  }
-
-  .icon-payment-card-sm {
-    @include ls-icon-payment-card-sm($ls-color-gray-900);
-  }
-
-  .icon-plus-sm {
-    @include ls-icon-plus-sm($ls-color-gray-900);
-  }
-
-  .icon-price-alerts-sm {
-    @include ls-icon-price-alerts-sm($ls-color-gray-900);
-  }
-
-  .icon-recent-searches-sm {
-    @include ls-icon-recent-searches-sm($ls-color-gray-900);
-  }
-
-  .icon-refresh-sm {
-    @include ls-icon-refresh-sm($ls-color-gray-900);
-  }
-
-  .icon-return-sm {
-    @include ls-icon-return-sm($ls-color-gray-900);
-  }
-
-  .icon-search-sm {
-    @include ls-icon-search-sm($ls-color-gray-900);
-  }
-
-  .icon-settings-sm {
-    @include ls-icon-settings-sm($ls-color-gray-900);
-  }
-
-  .icon-star-sm {
-    @include ls-icon-star-sm($ls-color-gray-900);
-  }
-
-  .icon-swap-sm {
-    @include ls-icon-swap-sm($ls-color-gray-900);
-  }
-
-  .icon-tick-sm {
-    @include ls-icon-tick-sm($ls-color-gray-900);
-  }
-
-  .icon-trips-sm {
-    @include ls-icon-trips-sm($ls-color-gray-900);
-  }
-
-  .icon-use-location-sm {
-    @include ls-icon-use-location-sm($ls-color-gray-900);
-  }
-
-  .icon-view-sm {
-    @include ls-icon-view-sm($ls-color-gray-900);
-  }
-
-  .icon-upgrade-sm {
-    @include ls-icon-upgrade-sm($ls-color-gray-900);
-  }
-
-  .icon-upgrade-lg {
-    @include ls-icon-upgrade-lg($ls-color-gray-900);
-  }
-
-  .icon-wifi-sm {
-    @include ls-icon-wifi-sm($ls-color-gray-900);
-  }
-
-  .icon-wifi-lg {
-    @include ls-icon-wifi-lg($ls-color-gray-900);
-  }
-
-  .icon-share-sm {
-    @include ls-icon-share-sm($ls-color-gray-900);
-  }
-
-  .icon-share-lg {
-    @include ls-icon-share-lg($ls-color-gray-900);
-  }
-
-  .icon-passport-sm {
-    @include ls-icon-passport-sm($ls-color-gray-900);
-  }
-
-  .icon-passport-lg {
-    @include ls-icon-passport-lg($ls-color-gray-900);
-  }
-
-  .icon-music-sm {
-    @include ls-icon-music-sm($ls-color-gray-900);
-  }
-
-  .icon-music-lg {
-    @include ls-icon-music-lg($ls-color-gray-900);
-  }
-
-  .icon-mobile-sm {
-    @include ls-icon-mobile-sm($ls-color-gray-900);
-  }
-
-  .icon-mobile-lg {
-    @include ls-icon-mobile-lg($ls-color-gray-900);
-  }
-
-  .icon-info-circle-sm {
-    @include ls-icon-info-circle-sm($ls-color-gray-900);
-  }
-
-  .icon-info-circle-lg {
-    @include ls-icon-info-circle-lg($ls-color-gray-900);
-  }
-
-  .icon-duration-sm {
-    @include ls-icon-duration-sm($ls-color-gray-900);
-  }
-
-  .icon-duration-lg {
-    @include ls-icon-duration-lg($ls-color-gray-900);
-  }
-
-  .icon-camera-sm {
-    @include ls-icon-camera-sm($ls-color-gray-900);
-  }
-
-  .icon-camera-lg {
-    @include ls-icon-camera-lg($ls-color-gray-900);
-  }
-}
-
-.units {
-
 }
 
 .loaders {
   .loader-sm {
-    @include ls-loader-sm($ls-color-gray-800);
+    @include ls-spinner-sm(ls-spinner-gray-800);
     margin-bottom: 20px;
   }
 
   .loader-lg {
-    @include ls-loader-lg($ls-color-gray-800);
+    @include ls-spinner-lg(ls-spinner-gray-800);
     margin-bottom: 20px;
   }
 
   .loader-xl {
-    @include ls-loader-xl($ls-color-gray-800);
+    @include ls-spinner-xl(ls-spinner-gray-800);
     margin-bottom: 20px;
   }
 }
@@ -1044,25 +573,33 @@ body {
 
 .logo {
   .logo {
-    display: block;
-    width: 300px;
-    height: 100px;
     margin: 0 auto;
-    background-position: center;
   }
   .inline {
-    @include ls-logo-blue('inline', $ls-color-blue-600);
+    display: block;
+    width: 368px;
+    height: 104px;
+    background: transparent url($ls-logo-inline-blue-600) no-repeat center;
   }
 
   .stacked {
-    @include ls-logo-blue('stacked', $ls-color-blue-600);
+    display: block;
+    width: 348px;
+    height: 197px;
+    background: transparent url($ls-logo-stacked-blue-600) no-repeat center;
   }
 
   .cloud-only {
-    @include ls-logo-blue('cloud', $ls-color-blue-600);
+    display: block;
+    width: 128px;
+    height: 104px;
+    background: transparent url($ls-logo-cloud-blue-600) no-repeat center;
   }
 
   .tianxun {
-    @include ls-logo-blue('tianxun', $ls-color-blue-600);
+    display: block;
+    width: 258px;
+    height: 113px;
+    background: transparent url($ls-logo-tianxun-blue-600) no-repeat center;
   }
 }

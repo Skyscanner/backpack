@@ -1,0 +1,36 @@
+@import 'generated/spinners-sm';
+@import 'generated/spinners-lg';
+@import 'generated/spinners-xl';
+
+@keyframes ls-spin {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@mixin ls-spinner-sm($spinner) {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  animation: ls-spin 600ms linear infinite;
+  background: url(map-get($ls-spinners-sm, $spinner));
+  background-size: 16px 16px;
+}
+
+@mixin ls-spinner-lg($spinner) {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  animation: ls-spin 600ms linear infinite;
+  background: url(map-get($ls-spinners-lg, $spinner));
+  background-size: 24px 24px;
+}
+
+@mixin ls-spinner-xl($spinner) {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  animation: ls-spin 600ms linear infinite;
+  background: url(map-get($ls-spinners-xl, $spinner));
+}
+
