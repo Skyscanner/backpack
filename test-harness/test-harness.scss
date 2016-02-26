@@ -104,19 +104,16 @@ body {
     margin-bottom: 0;
     list-style-type: none;
     padding: 0;
-
-    li {
-      margin-bottom: $ls-spacing-double;
-    }
   }
 
   code {
     color: $ls-color-gray-700;
-    padding: $ls-spacing;
+    padding: $ls-spacing-quarter;
     background-color: $ls-color-gray-200;
     border-radius: $ls-border-radius-xs;
     margin-bottom: $ls-spacing;
     font-size: 13px;
+    display: inline-block;
 
     &.import {
       display: inline-block;
@@ -565,9 +562,18 @@ body {
 }
 
 .index {
+  a {
+    color: $ls-color-blue-700;
+    text-decoration: none;
+    font-size: 13px;
+  }
+
   .intro {
     font-size: 24px;
+    line-height: 26px;
     color: $ls-color-gray-800;
+    margin-top: 0;
+    margin-bottom: $ls-spacing;
   }
 }
 
