@@ -28,7 +28,7 @@
   height: 16px;
   width: 16px;
   -webkit-appearance: none;
-  -moz-appearance: none;
+  -moz-appearance: checkbox;
   margin: 0;
   cursor: pointer;
   background: url($ls-element-checkbox-light) no-repeat;
@@ -38,11 +38,8 @@
   }
 
   // IE HACK (sorry)
-  @media all and (min-width: 0\0) and (min-resolution: .001dpcm) {
+  @media screen\0 {
     background: none !important;
-    width: 24px;
-    height: 24px;
-    box-sizing: content-box;
   }
 }
 
@@ -60,7 +57,7 @@
   height: 16px;
   width: 16px;
   -webkit-appearance: none;
-  -moz-appearance: none;
+  -moz-appearance: radio;
   margin: 0;
   cursor: pointer;
   background: url($ls-element-radio-light) no-repeat;
@@ -70,11 +67,8 @@
   }
 
   // IE HACK (sorry)
-  @media all and (min-width: 0\0) and (min-resolution: .001dpcm) {
+  @media screen\0 {
     background: none !important;
-    width: 24px;
-    height: 24px;
-    box-sizing: content-box;
   }
 }
 
