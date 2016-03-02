@@ -6,7 +6,7 @@
 Install the module using the git url like so:
 
 ```shell
-npm install git+http://git.prod.skyscanner.local/design/living-styles.git#v0.4.0 --save-dev
+npm install git+http://git.prod.skyscanner.local/design/living-styles.git#v1.0.0 --save-dev
 ```
 
 Import the styles that you want to consume:
