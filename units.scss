@@ -1,0 +1,17 @@
+// base unit
+$ls-base-unit: 12px;
+
+// spacing
+$ls-spacing-sixth: $ls-base-unit / 6; // 2
+$ls-spacing-quarter: $ls-base-unit / 4; // 3
+$ls-spacing-third: $ls-base-unit / 3; // 4
+$ls-spacing-half: $ls-base-unit / 2; // 6
+$ls-spacing: $ls-base-unit; // 12
+$ls-spacing-double: $ls-base-unit * 2; // 24
+$ls-spacing-triple: $ls-base-unit * 3; // 36
+$ls-spacing-quadruple: $ls-base-unit * 4; // 48
+
+// border-radius
+$ls-border-radius-xs: $ls-spacing-sixth;
+$ls-border-radius-sm: $ls-spacing-third;
+$ls-border-radius-lg: $ls-spacing-half;
