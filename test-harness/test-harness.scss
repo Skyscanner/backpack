@@ -160,50 +160,50 @@ body {
   }
 
   label {
-    @include ls-label(false);
+    @include ls-label();
 
     &.dark {
-      @include ls-label(true);
+      @include ls-label-dark();
     }
   }
 
   input[type="text"] {
-    @include ls-input-text(false);
+    @include ls-input-text();
 
     &.dark {
-      @include ls-input-text(true);
+      @include ls-input-text-dark();
     }
   }
 
   input[type="radio"] {
-    @include ls-input-radio(false);
+    @include ls-input-radio();
 
     &.dark {
-      @include ls-input-radio(true);
+      @include ls-input-radio-dark();
     }
   }
 
   input[type="checkbox"] {
-    @include ls-input-checkbox(false);
+    @include ls-input-checkbox();
 
     &.dark {
-      @include ls-input-checkbox(true);
+      @include ls-input-checkbox-dark();
     }
   }
 
   select {
-    @include ls-select(false);
+    @include ls-select();
 
     &.dark {
-      @include ls-select(true);
+      @include ls-select-dark();
     }
   }
 
   textarea {
-    @include ls-textarea(false);
+    @include ls-textarea();
 
     &.dark {
-      @include ls-textarea(true);
+      @include ls-textarea-dark();
     }
   }
 }

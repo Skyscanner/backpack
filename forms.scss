@@ -3,7 +3,7 @@
 @import 'generated/elements';
 @import 'generated/icons-sm';
 
-@mixin ls-input-text($ls-dark) {
+@mixin ls-input-text() {
   -webkit-appearance: none;
   -moz-appearance: none;
   box-sizing: border-box;
@@ -11,12 +11,7 @@
   min-height: 36px;
   font-size: 16px;
   border-radius: $ls-border-radius-xs;
-
-  @if $ls-dark == true {
-    border: none;
-  } @else {
-    border: 1px solid $ls-color-gray-400;
-  }
+  border: 1px solid $ls-color-gray-400;
 
   &::-webkit-input-placeholder {
     font-style: italic;
@@ -24,31 +19,26 @@
   }
 }
 
-@mixin ls-input-checkbox($ls-dark) {
+@mixin ls-input-text-dark() {
+  @include ls-input-text();
+  border: none;
+}
+
+@mixin ls-input-checkbox() {
   height: 16px;
   width: 16px;
   -webkit-appearance: none;
   -moz-appearance: none;
   margin: 0;
   cursor: pointer;
+  background: url($ls-element-checkbox-light) no-repeat;
 
-  @if $ls-dark == true {
-    background: url($ls-element-checkbox-dark) no-repeat;
-
-    &:checked {
-      background: url($ls-element-checkbox-dark-checked) no-repeat;
-    }
-
-  } @else {
-    background: url($ls-element-checkbox-light) no-repeat;
-
-    &:checked {
-      background: url($ls-element-checkbox-light-checked) no-repeat;
-    }
+  &:checked {
+    background: url($ls-element-checkbox-light-checked) no-repeat;
   }
 
   // IE HACK (sorry)
-  @media all and (min-width:0\0) and (min-resolution:.001dpcm) {
+  @media all and (min-width: 0\0) and (min-resolution: .001dpcm) {
     background: none !important;
     width: 24px;
     height: 24px;
@@ -56,31 +46,31 @@
   }
 }
 
-@mixin ls-input-radio($ls-dark) {
+@mixin ls-input-checkbox-dark() {
+  @include ls-input-checkbox();
+
+  background: url($ls-element-checkbox-dark) no-repeat;
+
+  &:checked {
+    background: url($ls-element-checkbox-dark-checked) no-repeat;
+  }
+}
+
+@mixin ls-input-radio() {
   height: 16px;
   width: 16px;
   -webkit-appearance: none;
   -moz-appearance: none;
   margin: 0;
   cursor: pointer;
+  background: url($ls-element-radio-light) no-repeat;
 
-  @if $ls-dark == true {
-    background: url($ls-element-radio-dark) no-repeat;
-
-    &:checked {
-      background: url($ls-element-radio-dark-checked) no-repeat;
-    }
-
-  } @else {
-    background: url($ls-element-radio-light) no-repeat;
-
-    &:checked {
-      background: url($ls-element-radio-light-checked) no-repeat;
-    }
+  &:checked {
+    background: url($ls-element-radio-light-checked) no-repeat;
   }
 
   // IE HACK (sorry)
-  @media all and (min-width:0\0) and (min-resolution:.001dpcm) {
+  @media all and (min-width: 0\0) and (min-resolution: .001dpcm) {
     background: none !important;
     width: 24px;
     height: 24px;
@@ -88,20 +78,25 @@
   }
 }
 
-@mixin ls-textarea($ls-dark) {
+@mixin ls-input-radio-dark() {
+  @include ls-input-radio();
+
+  background: url($ls-element-radio-dark) no-repeat;
+
+  &:checked {
+    background: url($ls-element-radio-dark-checked) no-repeat;
+  }
+}
+
+@mixin ls-textarea() {
   -webkit-appearance: none;
   -moz-appearance: none;
   box-sizing: border-box;
   padding: $ls-spacing;
   min-height: 36px;
   font-size: 16px;
+  border: 1px solid $ls-color-gray-400;
   border-radius: $ls-border-radius-xs;
-
-  @if $ls-dark == true {
-    border: none;
-  } @else {
-    border: 1px solid $ls-color-gray-400;
-  }
 
   &::-webkit-input-placeholder {
     font-style: italic;
@@ -109,7 +104,13 @@
   }
 }
 
-@mixin ls-select($ls-dark) {
+@mixin ls-textarea-dark() {
+  @include ls-textarea();
+
+  border: none;
+}
+
+@mixin ls-select() {
   -webkit-appearance: none;
   -moz-appearance: none;
   box-sizing: border-box;
@@ -119,23 +120,22 @@
   border-radius: $ls-border-radius-xs;
 
   min-width: 60px;
-  background: url($ls-icon-arrow-down-gray-800) no-repeat right $ls-spacing-half center;
+  background: $ls-color-white url($ls-icon-arrow-down-gray-800) no-repeat right $ls-spacing-half center;
   background-size: 12px 12px;
-
-  @if $ls-dark == true {
-    border: none;
-    background-color: $ls-color-white;
-  } @else {
-    border: 1px solid $ls-color-gray-400;
-  }
+  border: 1px solid $ls-color-gray-400;
 }
 
-@mixin ls-label($ls-dark) {
-  font-size: 13px;
+@mixin ls-select-dark() {
+  @include ls-select();
+  border: none;
+}
 
-  @if $ls-dark == true {
-    color: $ls-color-gray-500;
-  } @else {
-    color: $ls-color-gray-700;
-  }
+@mixin ls-label() {
+  font-size: 13px;
+  color: $ls-color-gray-700;
+}
+
+@mixin ls-label-dark() {
+  @include ls-label();
+  color: $ls-color-gray-500;
 }

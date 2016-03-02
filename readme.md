@@ -3,13 +3,10 @@
 
 ## Usage
 
-> Note: Living Styles is currently defined as an npm module to make it easy to install and manage dependencies. We are open to 
-making this project easy to use with other package managers too (Bower etc).
-
 Install the module using the git url like so:
 
 ```shell
-npm install git+http://git.prod.skyscanner.local/design/living-styles.git#v0.2.1 --save-dev
+npm install git+http://git.prod.skyscanner.local/design/living-styles.git#v0.4.0 --save-dev
 ```
 
 Import the styles that you want to consume:
@@ -22,12 +19,13 @@ Import the styles that you want to consume:
 
 Available imports:
 
-- `living-styles/colours` - variables for every colour in Skyscanner's palette
-- `living-styles/icons` - mixins for Skyscanner's icon pack
-- `living-styles/forms` - mixins for Form elements
-- `living-styles/units` - variables for commonly used properties such as padding and border-radius
-- `loaders` - mixins for loaders (spinners)
-- `living-styles/all` - everything
+- `colours` - hex code variables for every colour in Skyscanner's palette
+- `forms` - mixins for form elements (light & dark backgrounds)
+- `icons` - mixins for Skyscanner's icon pack 
+- `logos` - data uri variables for Skyscanner's logos
+- `spinners` - mixins for spinners
+- `units` - incremental unit variables for properties such as padding and border-radius
+- `all` - all of the above
 
 ## Contact
 - james.ferguson@skyscanner.net
