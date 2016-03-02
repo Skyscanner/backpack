@@ -119,15 +119,21 @@
         <section class="th-section">
             <h2>Usage</h2>
             <code class="import">@import "../node_modules/living-styles/forms";</code>
-            <p>For format elements on dark backgrounds, simply pass a <strong>true</strong> argument into the mixin. Similarly for elements on light backgrounds, pass a <strong>false</strong> argument</p>
-            <p>For example: <em>@include ls-label(true);</em> will generate the relevant CSS properties for labels on dark backgrounds, whereas <em>@include ls-label(false);</em> will generate CSS properties for labels on light backgrounds.</p>
+            <p>We currently have support for form elements on dark and light backgrounds</p>
+            <p>For example: <em>@include ls-label-dark;</em> will generate the relevant CSS properties for labels on dark backgrounds, whereas <em>@include ls-label();</em> will generate CSS properties for labels on light backgrounds.</p>
             <ol class="usage">
-                <li><code>@include ls-label(false);</code></li>
-                <li><code>@include ls-input-text(false);</code></li>
-                <li><code>@include ls-input-radio(false);</code></li>
-                <li><code>@include ls-input-checkbox(false);</code></li>
-                <li><code>@include ls-select(false);</code></li>
-                <li><code>@include ls-textarea(false);</code></li>
+                <li><code>@include ls-label();</code></li>
+                <li><code>@include ls-input-text();</code></li>
+                <li><code>@include ls-input-radio();</code></li>
+                <li><code>@include ls-input-checkbox();</code></li>
+                <li><code>@include ls-select();</code></li>
+                <li><code>@include ls-textarea();</code></li>
+                <li><code>@include ls-label-dark();</code></li>
+                <li><code>@include ls-input-text-dark();</code></li>
+                <li><code>@include ls-input-radio-dark();</code></li>
+                <li><code>@include ls-input-checkbox-dark();</code></li>
+                <li><code>@include ls-select-dark();</code></li>
+                <li><code>@include ls-textarea-dark();</code></li>
             </ol>
         </section>
     </body>
