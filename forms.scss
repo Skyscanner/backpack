@@ -46,6 +46,14 @@
       background: url($ls-element-checkbox-light-checked) no-repeat;
     }
   }
+
+  // IE HACK (sorry)
+  @media all and (min-width:0\0) and (min-resolution:.001dpcm) {
+    background: none !important;
+    width: 24px;
+    height: 24px;
+    box-sizing: content-box;
+  }
 }
 
 @mixin ls-input-radio($ls-dark) {
@@ -69,6 +77,14 @@
     &:checked {
       background: url($ls-element-radio-light-checked) no-repeat;
     }
+  }
+
+  // IE HACK (sorry)
+  @media all and (min-width:0\0) and (min-resolution:.001dpcm) {
+    background: none !important;
+    width: 24px;
+    height: 24px;
+    box-sizing: content-box;
   }
 }
 
