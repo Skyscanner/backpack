@@ -76,11 +76,11 @@ Available imports:
 - $ls-logo-tianxun-white
 
 # Spinners
-- @import "../node_modules/living-styles/loaders";
+- @import "../node_modules/living-styles/spinner";
 - Spinners are available in the 3 sizes above and can be coloured just like icons.
-- @include ls-loader-sm($ls-gray-900);
-- @include ls-loader-lg($ls-blue-600);
-- @include ls-loader-xl($ls-white);
+- @include ls-spinner-sm($ls-spinner-gray-900);
+- @include ls-spinner-lg($ls-spinner-blue-600);
+- @include ls-spinner-xl($ls-spinner-white);
 
 # Contact
 - james.ferguson@skyscanner.net
