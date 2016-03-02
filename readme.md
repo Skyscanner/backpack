@@ -27,6 +27,61 @@ Available imports:
 - `units` - incremental unit variables for properties such as padding and border-radius
 - `all` - all of the above
 
-## Contact
+# Colours
+- @import "../node_modules/living-styles/colours";
+- Simply reference the variables as and when needed. Each variable uses the same naming convention of color name + intensity. The higher the intensity value, the darker the color.
+- $ls-color-blue-100;
+- $ls-color-yellow-800;
+
+# Icons
+- @import "../node_modules/living-styles/icons";
+- Icons are available in two sizes, small @ 16px and large @ 24px. These are available in any colour using the following mixins.
+- @include ls-icon-lg($ls-icon-account-blue-600);
+- @include ls-icon-sm($ls-icon-account-blue-600);
+
+# Forms
+- @import "../node_modules/living-styles/forms";
+- We currently have support for form elements on dark and light backgrounds
+- For example: @include ls-label-dark; will generate the relevant CSS properties for labels on dark backgrounds, whereas @include ls-label(); will generate CSS properties for labels on light backgrounds.
+- @include ls-label();
+- @include ls-input-text();
+- @include ls-input-radio();
+- @include ls-input-checkbox();
+- @include ls-select();
+- @include ls-textarea();
+- @include ls-label-dark();
+- @include ls-input-text-dark();
+- @include ls-input-radio-dark();
+- @include ls-input-checkbox-dark();
+- @include ls-select-dark();
+- @include ls-textarea-dark();
+
+# Units
+- @import "../node_modules/living-styles/units";
+- Simply reference the variables as and when needed e.g. for padding, margins, widths and heights.
+- $ls-spacing-sixth;
+- $ls-spacing-quarter;
+- $ls-spacing-half;
+- $ls-spacing;
+- $ls-border-radius-double;
+- $ls-border-radius-triple;
+- $ls-border-radius-quadruple;
+
+# Logos
+- @import "../node_modules/living-styles/logo";
+- Logos are available in the 4 formats above You can use these like so...
+- $ls-logo-inline-blue-600;
+- $ls-logo-stacked-gray-900
+- $ls-logo-cloud-blue-600
+- $ls-logo-tianxun-white
+
+# Spinners
+- @import "../node_modules/living-styles/loaders";
+- Spinners are available in the 3 sizes above and can be coloured just like icons.
+- @include ls-loader-sm($ls-gray-900);
+- @include ls-loader-lg($ls-blue-600);
+- @include ls-loader-xl($ls-white);
+
+# Contact
 - james.ferguson@skyscanner.net
 - matthew.davidson@skyscanner.net

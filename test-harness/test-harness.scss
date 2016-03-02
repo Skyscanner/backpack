@@ -496,6 +496,7 @@ body {
 
   li {
     margin: 12px;
+    position: relative;
     &:after {
       content: attr(data-text);
       position: absolute;
