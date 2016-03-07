@@ -40,8 +40,8 @@ Simply reference the variables as and when needed. Each variable uses the same n
 `@import "../node_modules/living-styles/icons";`
 
 Icons are available in two sizes, small @ 16px and large @ 24px. These are available in any colour using the following mixins.
-- `@include ls-icon-lg($ls-icon-account-blue-600);`
-- `@include ls-icon-sm($ls-icon-account-blue-600);`
+- `@include ls-icon-lg(ls-icon-account-blue-600);`
+- `@include ls-icon-sm(ls-icon-account-blue-600);`
 
 # Forms
 `@import "../node_modules/living-styles/forms";`
