@@ -9,6 +9,13 @@ Install the module using the git url like so:
 npm install git+http://git.prod.skyscanner.local/design/living-styles.git#v1.0.1 --save-dev
 ```
 
+*Note:* If you're seeing problems like this
+```
+npm ERR! fetch failed http://git.prod.skyscanner.local/design/living-styles.git#v0.2.1
+npm WARN retry will retry, error on last attempt: Error: fetch failed with status code 406
+```
+under NPM 3 make sure you're using the `git+http` schema.
+
 Import the styles that you want to consume:
 
 ```scss
