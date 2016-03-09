@@ -97,9 +97,9 @@ Logos are available in the 4 formats above You can use these like so...
 `@import "../node_modules/living-styles/spinner";`
 
 Spinners are available in the 3 sizes above and can be coloured just like icons.
-- `@include ls-spinner-sm($ls-spinner-gray-900);`
-- `@include ls-spinner-lg($ls-spinner-blue-600);`
-- `@include ls-spinner-xl($ls-spinner-white);`
+- `@include ls-spinner-sm(ls-spinner-gray-900);`
+- `@include ls-spinner-lg(ls-spinner-blue-600);`
+- `@include ls-spinner-xl(ls-spinner-white);`
 
 # Contact
 - james.ferguson@skyscanner.net
