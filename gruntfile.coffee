@@ -19,6 +19,7 @@ module.exports = (grunt) ->
       dist:
         options:
           outputStyle: 'expanded'
+
         files:
           'test-harness/test-harness.css': 'test-harness/test-harness.scss'
 
@@ -94,11 +95,13 @@ module.exports = (grunt) ->
       options:
         livereload: true
         spawn: false
+
       html:
         files: ['**/*.html']
+
       styles:
         files: ['**/*.scss']
         tasks: ['sass']
 
   grunt.registerTask 'generate', ['json_to_sass', 'datauri']
-  grunt.registerTask 'default', ['connect', 'sass', 'watch']
+  grunt.registerTask 'default', ['sass', 'connect', 'watch']
