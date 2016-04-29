@@ -8,7 +8,7 @@ body {
 .th-header {
   width: 100%;
   padding: $ls-spacing-double;
-  background-color: $ls-color-blue-600;
+  background-color: $ls-color-blue-500;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,12 +32,12 @@ body {
 
       a {
         text-decoration: none;
-        color: $ls-color-white;
+        color: $ls-color-blue-900;
 
         &:hover, &.selected {
-          border-bottom: 3px solid $ls-color-yellow-400;
+          border-bottom: 3px solid $ls-color-white;
           padding-bottom: 33px;
-          color: $ls-color-yellow-500;
+          color: $ls-color-white;
           font-weight: bold;
         }
       }
@@ -51,7 +51,7 @@ body {
   margin: 0 auto;
 
   &.dark {
-    background-color: $ls-color-gray-800;
+    background-color: $ls-color-gray-700;
     border-radius: $ls-border-radius-lg;
   }
 
@@ -64,7 +64,7 @@ body {
     border-bottom: 1px solid $ls-color-gray-300;
 
     &.dark {
-      color: $ls-color-gray-500;
+      color: $ls-color-gray-300;
       border-bottom-color: $ls-color-gray-700;
     }
   }
@@ -76,7 +76,7 @@ body {
     margin: 0 0 4px;
 
     &.dark {
-      color: $ls-color-gray-500;
+      color: $ls-color-gray-300;
     }
   }
 
@@ -109,7 +109,7 @@ body {
   code {
     color: $ls-color-gray-700;
     padding: $ls-spacing-quarter;
-    background-color: $ls-color-gray-200;
+    background-color: $ls-color-gray-100;
     border-radius: $ls-border-radius-xs;
     margin-bottom: $ls-spacing;
     font-size: 13px;
@@ -127,12 +127,8 @@ body {
     border-radius: $ls-border-radius-lg;
     box-shadow: 0 2px 0 0 $ls-color-yellow-700;
     box-sizing: border-box;
-    color: $ls-color-gray-800;
+    color: $ls-color-gray-700;
     margin-bottom: $ls-spacing-double;
-
-    h2, h3, h4 {
-      color: $ls-color-yellow-700;
-    }
 
     h2 {
       border-bottom-color: $ls-color-yellow-500;
@@ -359,8 +355,8 @@ body {
     }
 
     li:nth-child(5) {
-      background-color: $ls-color-yellow-300;
-      color: $ls-color-gray-900;
+      background-color: $ls-color-white;
+      border: 1px solid $ls-color-gray-50;
     }
 
     li:nth-child(6) {
@@ -380,8 +376,8 @@ body {
     }
 
     li:nth-child(9) {
-      background-color: $ls-color-yellow-700;
-      color: $ls-color-gray-900;
+      background-color: $ls-color-white;
+      border: 1px solid $ls-color-gray-50;
     }
 
     li:nth-child(10) {
@@ -557,17 +553,17 @@ body {
 
 .loaders {
   .loader-sm {
-    @include ls-spinner-sm(ls-spinner-gray-800);
+    @include ls-spinner-sm(ls-spinner-gray-700);
     margin-bottom: 20px;
   }
 
   .loader-lg {
-    @include ls-spinner-lg(ls-spinner-gray-800);
+    @include ls-spinner-lg(ls-spinner-gray-700);
     margin-bottom: 20px;
   }
 
   .loader-xl {
-    @include ls-spinner-xl(ls-spinner-gray-800);
+    @include ls-spinner-xl(ls-spinner-gray-700);
     margin-bottom: 20px;
   }
 }
@@ -582,7 +578,7 @@ body {
   .intro {
     font-size: 24px;
     line-height: 26px;
-    color: $ls-color-gray-800;
+    color: $ls-color-gray-700;
     margin-top: 0;
     margin-bottom: $ls-spacing;
   }
@@ -596,27 +592,27 @@ body {
     display: block;
     width: 368px;
     height: 104px;
-    background: transparent url($ls-logo-inline-blue-600) no-repeat center;
+    background: transparent url($ls-logo-inline-blue-500) no-repeat center;
   }
 
   .stacked {
     display: block;
     width: 348px;
     height: 197px;
-    background: transparent url($ls-logo-stacked-blue-600) no-repeat center;
+    background: transparent url($ls-logo-stacked-blue-500) no-repeat center;
   }
 
   .cloud-only {
     display: block;
     width: 128px;
     height: 104px;
-    background: transparent url($ls-logo-cloud-blue-600) no-repeat center;
+    background: transparent url($ls-logo-cloud-blue-500) no-repeat center;
   }
 
   .tianxun {
     display: block;
     width: 258px;
     height: 113px;
-    background: transparent url($ls-logo-tianxun-blue-600) no-repeat center;
+    background: transparent url($ls-logo-tianxun-blue-500) no-repeat center;
   }
 }
