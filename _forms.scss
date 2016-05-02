@@ -11,11 +11,11 @@
   min-height: 36px;
   font-size: 16px;
   border-radius: $ls-border-radius-xs;
-  border: 1px solid $ls-color-gray-400;
+  border: 1px solid $ls-color-gray-100;
 
   &::-webkit-input-placeholder {
     font-style: italic;
-    color: $ls-color-gray-500;
+    color: $ls-color-gray-300;
   }
 }
 
@@ -89,12 +89,12 @@
   padding: $ls-spacing;
   min-height: 36px;
   font-size: 16px;
-  border: 1px solid $ls-color-gray-400;
+  border: 1px solid $ls-color-gray-100;
   border-radius: $ls-border-radius-xs;
 
   &::-webkit-input-placeholder {
     font-style: italic;
-    color: $ls-color-gray-500;
+    color: $ls-color-gray-100;
   }
 }
 
@@ -114,9 +114,9 @@
   border-radius: $ls-border-radius-xs;
 
   min-width: 60px;
-  background: $ls-color-white url($ls-icon-arrow-down-gray-800) no-repeat right $ls-spacing-half center;
+  background: $ls-color-white url($ls-icon-arrow-down-gray-700) no-repeat right $ls-spacing-half center;
   background-size: 12px 12px;
-  border: 1px solid $ls-color-gray-400;
+  border: 1px solid $ls-color-gray-100;
 }
 
 @mixin ls-select-dark() {
@@ -126,10 +126,10 @@
 
 @mixin ls-label() {
   font-size: 13px;
-  color: $ls-color-gray-700;
+  color: $ls-color-gray-500;
 }
 
 @mixin ls-label-dark() {
   @include ls-label();
-  color: $ls-color-gray-500;
+  color: $ls-color-gray-300;
 }
