@@ -14,6 +14,7 @@ module.exports = (grunt) ->
           livereload: true
           base: 'test-harness'
           open: true
+          port: '3000'
 
     sass:
       dist:
