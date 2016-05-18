@@ -105,4 +105,4 @@ module.exports = (grunt) ->
         tasks: ['sass']
 
   grunt.registerTask 'generate', ['json_to_sass', 'datauri']
-  grunt.registerTask 'default', ['sass', 'connect', 'watch']
+  grunt.registerTask 'default', ['generate', 'sass', 'connect', 'watch']
