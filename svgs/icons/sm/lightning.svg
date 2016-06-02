@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-<g id="aw">
-	<path fill="#34363D" d="M12.365,7H9.294l2.328-6.013C11.81,0.501,11.39,0,10.795,0H5.716c-0.4,0-0.748,0.234-0.845,0.568
-		l-2.178,7.5C2.556,8.541,2.972,9,3.538,9h2.677l-1.867,6.492c-0.119,0.414,0.495,0.687,0.83,0.369l7.908-7.498
-		C13.642,7.836,13.2,7,12.365,7z"/>
-</g>
-<g id="guides">
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="#34363D" d="M12.365 7H9.294L11.622.987C11.81.501 11.39 0 10.795 0H5.716c-.4 0-.748.234-.845.568l-2.178 7.5c-.137.473.279.932.845.932h2.677l-1.867 6.492c-.119.414.495.687.83.369l7.908-7.498C13.642 7.836 13.2 7 12.365 7z"/></svg>

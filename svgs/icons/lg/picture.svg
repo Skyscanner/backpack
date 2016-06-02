@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-<g id="aw">
-	<g>
-		<path fill="#34363D" d="M20,4H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V6C22,4.895,21.105,4,20,4z
-			 M9,7c1.105,0,2,0.895,2,2c0,1.105-0.895,2-2,2s-2-0.895-2-2C7,7.895,7.896,7,9,7z M20,17.3c0,0.387-0.313,0.7-0.7,0.7H6.667l0,0
-			H4.7C4.314,18,4,17.687,4,17.3V12l3.833,3.833L6.667,17l1,0l0.667-0.667l6.166-6.166c0.521-0.521,1.365-0.521,1.886,0L20,13.783
-			V17.3z"/>
-	</g>
-</g>
-<g id="guides">
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#34363D" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM9 7a2 2 0 1 1 .001 3.999A2 2 0 0 1 9 7zm11 10.3a.7.7 0 0 1-.7.7H4.7a.7.7 0 0 1-.7-.7V12l3.833 3.833L6.667 17h1l.667-.667 6.166-6.166a1.333 1.333 0 0 1 1.886 0L20 13.783V17.3z"/></svg>
