@@ -592,27 +592,27 @@ body {
     display: block;
     width: 368px;
     height: 104px;
-    background: transparent url($ls-logo-inline-blue-500) no-repeat center;
+    background: transparent url($ls-logo-inline-blue-500) no-repeat;
   }
 
   .stacked {
     display: block;
     width: 348px;
     height: 197px;
-    background: transparent url($ls-logo-stacked-blue-500) no-repeat center;
+    background: transparent url($ls-logo-stacked-blue-500) no-repeat;
   }
 
   .cloud-only {
     display: block;
     width: 128px;
     height: 104px;
-    background: transparent url($ls-logo-cloud-blue-500) no-repeat center;
+    background: transparent url($ls-logo-cloud-blue-500) no-repeat;
   }
 
   .tianxun {
     display: block;
     width: 258px;
     height: 113px;
-    background: transparent url($ls-logo-tianxun-blue-500) no-repeat center;
+    background: transparent url($ls-logo-tianxun-blue-500) no-repeat;
   }
 }
