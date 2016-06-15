@@ -1,0 +1,66 @@
+@import './../../../colours';
+@import './../../../units';
+@import './../../../breakpoints';
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
+
+  background-color: $ls-color-blue-500;
+}
+
+.logo,
+.logoLink {
+  height: $ls-spacing-triple;
+}
+
+.nav {
+  @include ls-container();
+
+  display: flex;
+  align-items: center;
+
+  padding-top: $ls-spacing-double;
+  padding-bottom: $ls-spacing-double;
+
+  @include ls-below-tablet() {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+
+  margin: 0 0 0 auto;
+  padding: 0;
+
+  list-style-type: none;
+
+  @include ls-below-tablet() {
+    height: $ls-spacing-triple;
+    margin: 0;
+  }
+}
+
+.navListItem {
+  &:not(:last-child) {
+    margin-right: $ls-spacing-double;
+  }
+}
+
+.navLink {
+  color: $ls-color-blue-900;
+  text-decoration: none;
+}
+
+.navLink:hover,
+.navLinkActive {
+  box-sizing: border-box;
+  padding-bottom: calc(#{$ls-spacing-triple} - #{$ls-spacing-half});
+  border-bottom: $ls-spacing-quarter solid $ls-color-white;
+
+  color: $ls-color-white;
+  text-decoration: none;
+}

@@ -1,0 +1,23 @@
+@import './../../../colours';
+@import './../../../units';
+@import './../../../forms';
+
+.form {
+  padding: $ls-spacing;
+  border: solid 1px $ls-color-gray-100;
+  border-radius: $ls-border-radius-sm;
+}
+
+.darkForm {
+  padding: $ls-spacing;
+  border-radius: $ls-border-radius-sm;
+  background-color: $ls-color-gray-700;
+}
+
+.label {
+  @include ls-label()
+}
+
+.darkLabel {
+  @include ls-label-dark()
+}

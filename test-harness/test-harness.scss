@@ -540,13 +540,19 @@ body {
 
   @each $name, $datauri in $ls-icons-sm {
     .#{$name}-sm {
-      @include ls-icon-sm(#{$name})
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: url($datauri) no-repeat;
     }
   }
 
   @each $name, $datauri in $ls-icons-lg {
     .#{$name}-lg {
-      @include ls-icon-lg(#{$name})
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url($datauri) no-repeat;
     }
   }
 }

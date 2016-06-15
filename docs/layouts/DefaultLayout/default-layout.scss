@@ -1,0 +1,14 @@
+@import './../../../units';
+@import './../../../breakpoints';
+
+.main,
+.footer {
+  @include ls-container()
+}
+
+.footer {
+  padding-top: $ls-spacing;
+  padding-bottom: $ls-spacing;
+
+  text-align: center;
+}
