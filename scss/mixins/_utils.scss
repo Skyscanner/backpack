@@ -1,0 +1,42 @@
+@mixin ls-hidden {
+  display: none !important;
+}
+
+@mixin ls-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+@mixin ls-visually-hidden-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+@mixin ls-invisible {
+  visibility: hidden;
+}
+
+@mixin ls-clearfix {
+  &::before,
+  &::after {
+    display: table;
+    content: '';
+  }
+
+  &::after {
+    clear: both;
+  }
+}

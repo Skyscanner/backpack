@@ -1,0 +1,28 @@
+@import './../../../scss/bonds';
+@import './../../../scss/mixins/typography';
+
+.heading {
+  &__h1 {
+    @include ls-heading-1;
+  }
+
+  &__h2 {
+    @include ls-heading-2;
+  }
+
+  &__h3 {
+    @include ls-heading-3;
+  }
+
+  &__h4 {
+    @include ls-heading-4;
+  }
+
+  &__h5 {
+    @include ls-heading-5;
+  }
+
+  &__h6 {
+    @include ls-heading-6;
+  }
+}

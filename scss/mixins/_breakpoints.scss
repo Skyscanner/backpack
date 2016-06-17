@@ -1,0 +1,56 @@
+@import './../../scss/bonds';
+
+@mixin bpk-breakpoint-mobile-only {
+  @media #{$bpk-breakpoint-query-mobile-only} {
+    @content
+  }
+}
+
+@mixin bpk-breakpoint-above-mobile {
+  @media #{$bpk-breakpoint-query-above-mobile} {
+    @content
+  }
+}
+
+@mixin bpk-breakpoint-tablet-only {
+  @media #{$bpk-breakpoint-query-tablet-only} {
+    @content
+  }
+}
+
+@mixin bpk-breakpoint-below-tablet {
+  @media #{$bpk-breakpoint-query-below-tablet} {
+    @content
+  }
+}
+
+@mixin bpk-breakpoint-above-tablet {
+  @media #{$bpk-breakpoint-query-above-tablet} {
+    @content
+  }
+}
+
+@mixin bpk-breakpoint-desktop-only {
+  @media #{$bpk-breakpoint-query-desktop-only} {
+    @content
+  }
+}
+
+@mixin bpk-breakpoint-below-desktop {
+  @media #{$bpk-breakpoint-query-below-desktop} {
+    @content
+  }
+}
+
+@mixin bpk-breakpoint-above-desktop {
+  @media #{$bpk-breakpoint-query-above-desktop} {
+    @content
+  }
+}
+
+@mixin bpk-container {
+  max-width: $bpk-breakpoint-desktop;
+  margin: 0 auto;
+  padding-right: $bpk-spacing-md;
+  padding-left: $bpk-spacing-md;
+}

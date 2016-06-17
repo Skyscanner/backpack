@@ -8,14 +8,10 @@ import * as routes from './docs/constants/routes'
 const locals = {
   paths: [
     routes.ROUTE_HOME,
-    routes.ROUTE_COLOURS,
-    routes.ROUTE_ICONS,
-    routes.ROUTE_FORMS,
-    routes.ROUTE_UNITS,
-    routes.ROUTE_LOGOS,
-    routes.ROUTE_SPINNERS,
-    routes.ROUTE_BREAKPOINTS,
-    routes.ROUTE_BASE_STYLESHEET
+    routes.ROUTE_ATOMS,
+    routes.ROUTE_TYPOGRAPHY,
+    routes.ROUTE_MOLECULES,
+    routes.ROUTE_ORGANISMS
   ]
 }
 
@@ -66,8 +62,8 @@ const config = {
         test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel'
       },
       {
-        test: /\.scss/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=ls-[name]__[local]!postcss!sass')
+        test: /\.scss/, loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[local]!postcss!sass')
+
       },
       {
         test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css')

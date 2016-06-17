@@ -1,22 +1,21 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import CssModules from 'react-css-modules'
 
 import './../../../base.scss'
 
-import Header from '../../components/Header'
-import BackpackLogo from './../../svgs/BackpackLogo.jsx'
 import styles from './default-layout.scss'
+
+import Header from '../../components/Header'
 
 export const DefaultLayout = ({ children }) => (
   <div>
-    <Helmet titleTemplate='%s | Living Styles' />
+    <Helmet titleTemplate='%s | Backpack'/>
     <Header />
-    <main className={styles.main}>
+    <main styleName='main'>
       {children}
     </main>
-    <footer className={styles.footer}>
-      <BackpackLogo className={styles.backpackLogo} /> Part of the Backpack Design System.
-    </footer>
+    <footer styleName='footer'>Some footer blurb.</footer>
   </div>
 )
 
@@ -24,4 +23,4 @@ DefaultLayout.propTypes = {
   children: React.PropTypes.element.isRequired
 }
 
-export default DefaultLayout
+export default CssModules(DefaultLayout, styles)

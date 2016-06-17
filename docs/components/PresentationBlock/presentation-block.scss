@@ -1,0 +1,10 @@
+@import './../../../scss/bonds';
+
+.presentation-block {
+  margin-bottom: $bpk-spacing-lg;
+  border: 1px solid $bpk-color-gray-50;
+
+  &__container {
+    padding: $bpk-spacing-lg;
+  }
+}

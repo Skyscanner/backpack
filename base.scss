@@ -1,49 +1,55 @@
-@import 'utils';
 @import '~normalize.css';
+@import 'scss/bonds';
+@import 'scss/mixins/utils';
 
 :global {
   html {
+    font-size: $bpk-font-size-root;
     box-sizing: border-box;
-
-    font-size: 100%;
   }
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
+  * {
+    &::before,
+    &::after {
+      box-sizing: inherit;
+    }
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 1rem;
-    line-height: 1.25;
+    color: $bpk-font-color-base;
+    font-family: $bpk-font-family-base;
+    font-size: $bpk-font-size-base;
+    line-height: $bpk-line-height-base;
 
     &.scaffold-font {
+      $scaffold-font-color: #373737;
+
+      color: $scaffold-font-color;
       font-family: arial, helvetica, clean, sans-serif;
       font-size: 13px;
       line-height: 1.231;
     }
   }
 
-  .hidden, .hide {
-    @include ls-hidden();
+  .hidden,
+  .hide {
+    @include ls-hidden;
   }
 
   .visuallyhidden,
   .visually-hidden {
-    @include ls-visually-hidden();
+    @include ls-visually-hidden;
 
     &.focusable {
-      @include ls-visually-hidden($focusable: true);
+      @include ls-visually-hidden-focusable;
     }
   }
 
   .invisible {
-    @include ls-visually-hidden();
+    @include ls-invisible;
   }
 
   .clearfix {
-    @include ls-clearfix();
+    @include ls-clearfix;
   }
 }

@@ -1,0 +1,44 @@
+@import './../bonds';
+
+@mixin _ls-heading {
+  margin-top: 0;
+  margin-bottom: $bpk-spacing-sm;
+  font-weight: normal;
+  line-height: $bpk-line-height-base;
+}
+
+@mixin ls-heading-1 {
+  @include _ls-heading;
+
+  font-size: $bpk-font-size-h-1;
+}
+
+@mixin ls-heading-2 {
+  @include _ls-heading;
+
+  font-size: $bpk-font-size-h-2;
+}
+
+@mixin ls-heading-3 {
+  @include _ls-heading;
+
+  font-size: $bpk-font-size-h-3;
+}
+
+@mixin ls-heading-4 {
+  @include _ls-heading;
+
+  font-size: $bpk-font-size-h-4;
+}
+
+@mixin ls-heading-5 {
+  @include _ls-heading;
+
+  font-size: $bpk-font-size-h-5;
+}
+
+@mixin ls-heading-6 {
+  @include _ls-heading;
+
+  font-size: $bpk-font-size-h-6;
+}
