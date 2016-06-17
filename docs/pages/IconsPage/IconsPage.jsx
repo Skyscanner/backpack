@@ -1,16 +1,117 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-// import styles from './icons-page.scss'
+import styles from './icons-page.scss'
+
+const iconNames = [
+  'accessibility',
+  'account',
+  'adult',
+  'aircon',
+  'airline',
+  'airports',
+  'award',
+  'baggage',
+  'bar',
+  'beer',
+  'bus',
+  'business',
+  'cafe',
+  'calendar',
+  'camera',
+  'cars',
+  'chart',
+  'chauffeur',
+  'child',
+  'city',
+  'close',
+  'currency',
+  'depart',
+  'duration',
+  'edit',
+  'estimated',
+  'expand',
+  'flag',
+  'flight',
+  'food',
+  'globe',
+  'heart',
+  'help',
+  'hotels',
+  'infant',
+  'information',
+  'key',
+  'language',
+  'leisure',
+  'lightning',
+  'list',
+  'location',
+  'lock',
+  'lounge',
+  'luggageall',
+  'mail',
+  'map',
+  'media',
+  'menu',
+  'minus',
+  'mobile',
+  'money',
+  'music',
+  'navigation',
+  'news',
+  'night',
+  'paperclip',
+  'parking',
+  'passport',
+  'petrol',
+  'picture',
+  'plus',
+  'policy',
+  'refresh',
+  'return',
+  'room',
+  'scales',
+  'search',
+  'services',
+  'settings',
+  'share',
+  'star',
+  'stops',
+  'swap',
+  'taxi',
+  'tick',
+  'ticket',
+  'time',
+  'train',
+  'trash',
+  'trend',
+  'trips',
+  'upgrade',
+  'view',
+  'weather',
+  'wifi'
+]
 
 const IconsPage = () => (
   <div>
     <Helmet title='Icons' />
     <section>
       <h2>Large (24px)</h2>
-      <ol></ol>
+      <ol className={styles.iconList}>
+        {iconNames.map((name) => (
+          <li key={name} className={styles.iconListItem}>
+            <i className={styles[`${name}-lg`]}></i>
+          </li>
+        ))}
+      </ol>
       <h2>Small (16px)</h2>
-      <ol></ol>
+      <ol className={styles.iconList}>
+        {iconNames.map((name) => (
+          <li key={name} className={styles.iconListItem}>
+            <i className={styles[`${name}-sm`]}></i>
+          </li>
+        ))}
+      </ol>
     </section>
     <section>
       <h2>Example Usage</h2>

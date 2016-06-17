@@ -71,28 +71,30 @@ const Colours = () => (
     <Helmet title='Colours' />
     <section>
       <h2>Primary, Tints and Shades</h2>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            {Object.keys(coloursMap).map((name) => (
-              <th key={name}>{name}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-        {coloursMap[ Object.keys(coloursMap)[ 0 ] ].map((value, index) => (
-          <tr key={index}>
-            {Object.keys(coloursMap).map((name) => (
-              <td key={`${index}-${name}`} style={{backgroundColor: coloursMap[ name ][index].hexCode}}
-                className={styles['table-cell']}>
-                <p>{coloursMap[ name ][ index ].alias}</p>
-                <code>{coloursMap[ name ][ index ].hexCode}</code>
-              </td>
-            ))}
-          </tr>
-        ))}
-        </tbody>
-      </table>
+      <div className={styles.tableContainer}>
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              {Object.keys(coloursMap).map((name) => (
+                <th key={name}>{name}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+          {coloursMap[ Object.keys(coloursMap)[ 0 ] ].map((value, index) => (
+            <tr key={index}>
+              {Object.keys(coloursMap).map((name) => (
+                <td key={`${index}-${name}`} style={{backgroundColor: coloursMap[ name ][index].hexCode}}
+                  className={styles.tableCell}>
+                  <p>{coloursMap[ name ][ index ].alias}</p>
+                  <code>{coloursMap[ name ][ index ].hexCode}</code>
+                </td>
+              ))}
+            </tr>
+          ))}
+          </tbody>
+        </table>
+      </div>
     </section>
     <section>
       <h2>Example Usage</h2>
@@ -100,8 +102,8 @@ const Colours = () => (
         <code>{'@import "~/living-styles/colours";'}</code>
       </pre>
       <p>
-        Simply reference tde variables as and when needed. Each variable uses tde same naming convention of <em>color
-        name</em> + <em>intensity</em>. tde higher tde intensity value, tde darker tde color.
+        Simply reference the variables as and when needed. Each variable uses the same naming convention of <em>color
+        name</em> + <em>intensity</em>. the higher the intensity value, the darker the color.
       </p>
       <pre>
         <code>
@@ -113,12 +115,12 @@ $ls-color-yellow-700;`}
     <section>
       <h2>Notes</h2>
       <p>
-        Whilst all tints from 50-900 are currently available, we have plans to deprecate tdese in order to enforce tde
+        Whilst all tints from 50-900 are currently available, we have plans to deprecate these in order to enforce the
         reduced palette you see above.
       </p>
       <h3>Tinting</h3>
       <p>
-        Please refrain from creating your own tints. Each colour in tde palette has been carefully tinted to ensure
+        Please refrain from creating your own tints. Each colour in the palette has been carefully tinted to ensure
         consistent brightness and saturation levels. Green and Blue 300 and 700 tints should only be used for hover and
         active/hit states
       </p>

@@ -1,13 +1,18 @@
 @import './../../../units';
 
+.tableContainer {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
 .table {
   width: 100%;
-  table-layout: fixed;
   border-collapse: collapse;
   border-spacing: $ls-spacing;
   text-align: left;
 }
 
-.table-cell {
+.tableCell {
   padding: $ls-spacing;
 }

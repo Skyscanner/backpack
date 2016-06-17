@@ -10,29 +10,29 @@ const FormsPage = () => (
       <h2>For light backgrounds</h2>
       <h3>Label</h3>
       <form className={styles.form}>
-        <label className={styles.label}>I'm a label</label>
+        <label className={styles.inputLabel}>I'm a label</label>
       </form>
       <h3>Text input</h3>
       <form className={styles.form}>
-        <input type='text' placeholder='Enter some text' />
+        <input type='text' placeholder='Enter some text' className={styles.inputText} />
       </form>
       <h3>Radio buttons</h3>
       <form className={styles.form}>
-        <input type='radio' name='radio' />
-        <input type='radio' name='radio' defaultChecked />
-        <input type='radio' name='radio' />
-        <input type='radio' name='radio' />
+        <input type='radio' name='radio' className={styles.inputRadio} />
+        <input type='radio' name='radio' className={styles.inputRadio} defaultChecked />
+        <input type='radio' name='radio' className={styles.inputRadio} />
+        <input type='radio' name='radio' className={styles.inputRadio} />
       </form>
       <h3>Checkboxes</h3>
       <form className={styles.form}>
-        <input type='checkbox' />
-        <input type='checkbox' />
-        <input type='checkbox' defaultChecked />
-        <input type='checkbox' />
+        <input type='checkbox' className={styles.inputCheckbox} />
+        <input type='checkbox' className={styles.inputCheckbox} />
+        <input type='checkbox' className={styles.inputCheckbox} defaultChecked />
+        <input type='checkbox' className={styles.inputCheckbox} />
       </form>
       <h3>Select menu</h3>
       <form className={styles.form}>
-        <select>
+        <select className={styles.inputSelect}>
           <option value={1} defaultSelected>1</option>
           <option value={2}>2</option>
           <option value={3}>3</option>
@@ -40,36 +40,36 @@ const FormsPage = () => (
       </form>
       <h3>Textarea</h3>
       <form className={styles.form}>
-        <textarea cols='30' rows='10' defaultValue='Edit this text'></textarea>
+        <textarea cols='30' rows='10' defaultValue='Edit this text' className={styles.inputTextarea}></textarea>
       </form>
     </section>
     <section>
       <h2>For dark backgrounds</h2>
       <h3>Label</h3>
       <form className={styles.darkForm}>
-        <label className={styles.darkLabel}>I'm a label</label>
+        <label className={styles.darkInputLabel}>I'm a label</label>
       </form>
       <h3>Text input</h3>
       <form className={styles.darkForm}>
-        <input type='text' placeholder='Enter some text' />
+        <input type='text' placeholder='Enter some text' className={styles.inputText} />
       </form>
       <h3>Radio buttons</h3>
       <form className={styles.darkForm}>
-        <input type='radio' name='radio' />
-        <input type='radio' name='radio' defaultChecked />
-        <input type='radio' name='radio' />
-        <input type='radio' name='radio' />
+        <input type='radio' name='radio' className={styles.darkInputRadio} />
+        <input type='radio' name='radio' className={styles.darkInputRadio} defaultChecked />
+        <input type='radio' name='radio' className={styles.darkInputRadio} />
+        <input type='radio' name='radio' className={styles.darkInputRadio} />
       </form>
       <h3>Checkboxes</h3>
       <form className={styles.darkForm}>
-        <input type='checkbox' />
-        <input type='checkbox' />
-        <input type='checkbox' defaultChecked />
-        <input type='checkbox' />
+        <input type='checkbox' className={styles.darkInputCheckbox} />
+        <input type='checkbox' className={styles.darkInputCheckbox} />
+        <input type='checkbox' className={styles.darkInputCheckbox} defaultChecked />
+        <input type='checkbox' className={styles.darkInputCheckbox} />
       </form>
       <h3>Select menu</h3>
       <form className={styles.darkForm}>
-        <select>
+        <select className={styles.darkInputSelect}>
           <option value={1} defaultSelected>1</option>
           <option value={2}>2</option>
           <option value={3}>3</option>
@@ -77,7 +77,7 @@ const FormsPage = () => (
       </form>
       <h3>Textarea</h3>
       <form className={styles.darkForm}>
-        <textarea cols='30' rows='10' defaultValue='Edit this text'></textarea>
+        <textarea cols='30' rows='10' defaultValue='Edit this text' className={styles.darkInputTextarea}></textarea>
       </form>
     </section>
     <section>

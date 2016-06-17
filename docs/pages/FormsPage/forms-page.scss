@@ -14,10 +14,50 @@
   background-color: $ls-color-gray-700;
 }
 
-.label {
-  @include ls-label()
+.inputLabel {
+  @include ls-label();
 }
 
-.darkLabel {
-  @include ls-label-dark()
+.darkInputLabel {
+  @include ls-label-dark();
+}
+
+.inputText {
+  @include ls-input-text();
+}
+
+.darkInputText {
+  @include ls-input-text-dark();
+}
+
+.inputRadio {
+  @include ls-input-radio();
+}
+
+.darkInputRadio {
+  @include ls-input-radio-dark();
+}
+
+.inputCheckbox {
+  @include ls-input-checkbox();
+}
+
+.darkInputCheckbox {
+  @include ls-input-checkbox-dark();
+}
+
+.inputSelect {
+  @include ls-select();
+}
+
+.darkInputSelect {
+  @include ls-select-dark();
+}
+
+.inputTextarea {
+  @include ls-textarea();
+}
+
+.darkInputTextarea {
+  @include ls-textarea-dark();
 }

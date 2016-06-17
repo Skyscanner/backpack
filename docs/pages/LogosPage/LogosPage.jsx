@@ -1,14 +1,20 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
+import styles from './logos-page.scss'
+
 const LogosPage = () => (
   <div>
     <Helmet title='Logos' />
     <section>
       <h2>Inline</h2>
+      <span className={styles.inlineLogo}></span>
       <h2>Stacked</h2>
+      <span className={styles.stackedLogo}></span>
       <h2>Cloud only</h2>
+      <span className={styles.cloudLogo}></span>
       <h2>Tianxun</h2>
+      <span className={styles.tianxunLogo}></span>
     </section>
     <section>
       <h2>Example Usage</h2>
@@ -18,9 +24,9 @@ const LogosPage = () => (
       <p>Logos are available in the 4 formats above You can use these like so...</p>
       <pre>
         <code>{`$ls-logo-inline-blue-500;
-$ls-logo-stacked-gray-900
-$ls-logo-cloud-blue-500
-$ls-logo-tianxun-white`}</code>
+$ls-logo-stacked-gray-900;
+$ls-logo-cloud-blue-500;
+$ls-logo-tianxun-white;`}</code>
       </pre>
     </section>
     <section>
