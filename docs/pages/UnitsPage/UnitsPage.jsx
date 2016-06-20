@@ -16,9 +16,9 @@ const UnitsPage = () => (
 $ls-spacing-quarter;
 $ls-spacing-half;
 $ls-spacing;
-$ls-border-radius-double;
-$ls-border-radius-triple;
-$ls-border-radius-quadruple;`}
+$ls-border-radius-xs;
+$ls-border-radius-sm;
+$ls-border-radius-lg;`}
         </code>
       </pre>
     </section>

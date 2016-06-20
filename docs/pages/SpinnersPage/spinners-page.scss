@@ -1,13 +1,13 @@
 @import './../../../spinners';
 
 .smallSpinner {
-  @include ls-spinner-sm(ls-spinner-gray-800)
+  @include ls-spinner-sm(ls-spinner-gray-800);
 }
 
 .largeSpinner {
-  @include ls-spinner-lg(ls-spinner-gray-800)
+  @include ls-spinner-lg(ls-spinner-gray-800);
 }
 
 .extraLargeSpinner {
-  @include ls-spinner-xl(ls-spinner-gray-800)
+  @include ls-spinner-xl(ls-spinner-gray-800);
 }

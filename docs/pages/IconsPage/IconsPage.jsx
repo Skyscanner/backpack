@@ -122,8 +122,8 @@ const IconsPage = () => (
       </p>
       <pre>
         <code>
-          {`@include ls-icon-lg(ls-icon-account-blue-600);
-@include ls-icon-sm(ls-icon-account-blue-600);`}
+          {`@include ls-icon-lg(ls-icon-account-gray-700);
+@include ls-icon-sm(ls-icon-account-gray-700);`}
         </code>
       </pre>
     </section>

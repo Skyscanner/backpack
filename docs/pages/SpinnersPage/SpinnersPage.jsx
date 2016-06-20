@@ -21,9 +21,9 @@ const SpinnersPage = () => (
       </pre>
       <p>Spinners are available in the 3 sizes above and can be coloured just like icons.</p>
       <pre>
-        <code>{`@include ls-loader-sm($ls-gray-900);
-@include ls-loader-lg($ls-blue-600);
-@include ls-loader-xl($ls-white);`}</code>
+        <code>{`@include ls-spinner-sm(ls-spinner-gray-700);
+@include ls-spinner-lg(ls-spinner-blue-500);
+@include ls-spinner-xl(ls-spinner-white);`}</code>
       </pre>
     </section>
     <section>

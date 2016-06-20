@@ -24,7 +24,7 @@ const LogosPage = () => (
       <p>Logos are available in the 4 formats above You can use these like so...</p>
       <pre>
         <code>{`$ls-logo-inline-blue-500;
-$ls-logo-stacked-gray-900;
+$ls-logo-stacked-gray-700;
 $ls-logo-cloud-blue-500;
 $ls-logo-tianxun-white;`}</code>
       </pre>
