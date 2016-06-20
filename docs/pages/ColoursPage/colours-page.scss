@@ -1,0 +1,93 @@
+@import './../../../units';
+@import './../../../colours';
+@import './../../../breakpoints';
+
+.swatchList {
+  margin: 0 -$ls-spacing;
+  padding: 0;
+
+  list-style-type: none;
+
+  @include ls-breakpoint-mobile-only {
+    margin: 0;
+  }
+}
+
+.swatch {
+  display: inline-block;
+  min-width: 150px;
+  padding: $ls-spacing-double $ls-spacing;
+  margin: $ls-spacing;
+
+  border-radius: $ls-border-radius-sm;
+
+  @include ls-breakpoint-mobile-only {
+    width: 100%;
+    margin: 0 0 $ls-spacing;
+  }
+}
+
+.blue500 {
+  background-color: $ls-color-blue-500;
+}
+
+.white {
+  border: solid 1px $ls-color-gray-100;
+  background-color: $ls-color-white;
+}
+
+.green500 {
+  background-color: $ls-color-green-500;
+}
+
+.yellow500 {
+  background-color: $ls-color-yellow-500;
+}
+
+.red500 {
+  background-color: $ls-color-red-500;
+}
+
+.gray50 {
+  background-color: $ls-color-gray-50;
+}
+
+.gray100 {
+  background-color: $ls-color-gray-100;
+}
+
+.gray300 {
+  background-color: $ls-color-gray-300;
+}
+
+.gray500 {
+  color: $ls-color-white;
+  background-color: $ls-color-gray-500;
+}
+
+.gray700 {
+  color: $ls-color-white;
+  background-color: $ls-color-gray-700;
+}
+
+.gray900 {
+  color: $ls-color-white;
+  background-color: $ls-color-gray-900;
+}
+
+.blue300 {
+  background-color: $ls-color-blue-300;
+}
+
+.blue700 {
+  background-color: $ls-color-blue-700;
+}
+
+.green300 {
+  background-color: $ls-color-green-300;
+}
+
+.green700 {
+  background-color: $ls-color-green-700;
+}
+

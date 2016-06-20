@@ -1,0 +1,64 @@
+@import './../../../colours';
+@import './../../../units';
+@import './../../../breakpoints';
+
+.background {
+  background-color: $ls-color-blue-500;
+}
+
+.logo,
+.logoLink {
+  height: $ls-spacing-triple;
+}
+
+.nav {
+  @include ls-container();
+
+  display: flex;
+  align-items: center;
+
+  padding-top: $ls-spacing-double;
+  padding-bottom: $ls-spacing-double;
+
+  @include ls-breakpoint-below-tablet() {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+
+  margin: 0 0 0 auto;
+  padding: 0;
+
+  list-style-type: none;
+
+  @include ls-breakpoint-below-tablet() {
+    height: $ls-spacing-triple;
+    margin: $ls-spacing 0 0;
+  }
+
+  @include ls-breakpoint-mobile-only() {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+.navListItem {
+  &:not(:last-child) {
+    margin-right: $ls-spacing-double;
+  }
+}
+
+.navLink {
+  color: $ls-color-blue-900;
+  text-decoration: none;
+}
+
+.navLink:hover,
+.navLinkActive {
+  color: $ls-color-white;
+  text-decoration: none;
+}

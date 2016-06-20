@@ -3,3 +3,5 @@
 node_modules
 *.map
 .DS_Store
+npm-debug.log
+dist

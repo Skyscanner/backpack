@@ -1,42 +1,43 @@
 # Living Styles
-> Up-to-date globally applicable styles for use on Skyscanner's web products.
+> Up-to-date sass mixins for use on Skyscanner's web products.
 
 ## Usage
 
 Install the module using the git url like so:
 
 ```shell
-npm install git+http://git.prod.skyscanner.local/design/living-styles.git#v2.0.0 --save-dev
+npm install git+http://git.prod.skyscanner.local/design/living-styles.git#v2.1.0 --save-dev
 ```
 
-*Note:* If you're seeing problems like this
-```
-npm ERR! fetch failed http://git.prod.skyscanner.local/design/living-styles.git#v2.0.0
-npm WARN retry will retry, error on last attempt: Error: fetch failed with status code 406
-```
-under NPM 3 make sure you're using the `git+http` schema.
+> Note: If you're seeing problems like this
+> ```
+> npm ERR! fetch failed http://git.prod.skyscanner.local/design/living-styles.git#v2.1.0
+> npm WARN retry will retry, error on last attempt: Error: fetch failed with status code 406
+> ```
+> under npm 3 make sure you're using the `git+http` schema.
 
 Import the styles that you want to consume:
 
 ```scss
-@import "../node_modules/living-styles/colours";
+@import "~/living-styles/colours";
 ```
 
-> Note: Remember to adjust the import path relative to your `node_modules` folder.
+> Note: The tilde import syntax (`~/`) is webpack specific, otherwise adjust the import path relative to your `node_modules` folder.
 
 Available imports:
 
 - `colours` - hex code variables for every colour in Skyscanner's palette
 - `forms` - mixins for form elements (light & dark backgrounds)
-- `icons` - mixins for Skyscanner's icon pack 
+- `icons` - mixins for Skyscanner's icon pack
 - `logos` - data uri variables for Skyscanner's logos
 - `spinners` - mixins for spinners
 - `units` - incremental unit variables for properties such as padding and border-radius
+- `breakpoints` - mixins for working with the three standardised breakpoints - mobile, tablet & desktop
 - `all` - all of the above
 
 # Colours
 
-`@import "../node_modules/living-styles/colours";`
+`@import "~/living-styles/colours";`
 
 Simply reference the variables as and when needed. Each variable uses the same naming convention of color name + intensity. The higher the intensity value, the darker the color.
 - `$ls-color-blue-100`
@@ -44,14 +45,14 @@ Simply reference the variables as and when needed. Each variable uses the same n
 
 # Icons
 
-`@import "../node_modules/living-styles/icons";`
+`@import "~/living-styles/icons";`
 
 Icons are available in two sizes, small @ 16px and large @ 24px. These are available in any colour using the following mixins.
-- `@include ls-icon-lg(ls-icon-account-blue-600);`
-- `@include ls-icon-sm(ls-icon-account-blue-600);`
+- `@include ls-icon-lg(ls-icon-account-blue-500);`
+- `@include ls-icon-sm(ls-icon-account-blue-500);`
 
 # Forms
-`@import "../node_modules/living-styles/forms";`
+`@import "~/living-styles/forms";`
 
 We currently have support for form elements on dark and light backgrounds
 
@@ -71,7 +72,7 @@ For example: `@include ls-label-dark();` will generate the relevant CSS properti
 
 # Units
 
-`@import "../node_modules/living-styles/units";`
+`@import "~/living-styles/units";`
 
 Simply reference the variables as and when needed e.g. for padding, margins, widths and heights.
 - `$ls-spacing-sixth`
@@ -84,7 +85,7 @@ Simply reference the variables as and when needed e.g. for padding, margins, wid
 
 # Logos
 
-`@import "../node_modules/living-styles/logo";`
+`@import "~/living-styles/logo";`
 
 Logos are available in the 4 formats above You can use these like so...
 - `$ls-logo-inline-blue-600`
@@ -94,12 +95,34 @@ Logos are available in the 4 formats above You can use these like so...
 
 # Spinners
 
-`@import "../node_modules/living-styles/spinner";`
+`@import "~/living-styles/spinners";`
 
 Spinners are available in the 3 sizes above and can be coloured just like icons.
-- `@include ls-spinner-sm(ls-spinner-gray-900);`
-- `@include ls-spinner-lg(ls-spinner-blue-600);`
+- `@include ls-spinner-sm(ls-spinner-gray-700);`
+- `@include ls-spinner-lg(ls-spinner-blue-500);`
 - `@include ls-spinner-xl(ls-spinner-white);`
+
+# Breakpoints
+
+`@import "~/living-styles/breakpoints";`
+
+There are three viewport variable definitions:
+- `$ls-breakpoint-mobile`
+- `$ls-breakpoint-tablet`
+- `$ls-breakpoint-desktop`
+
+The following mixins are exposed to work with these breakpoints:
+- `@include ls-breakpoint-mobile-only { /* your scss goes here */ }`
+- `@include ls-breakpoint-above-mobile { /* your scss goes here */ }`
+- `@include ls-breakpoint-tablet-only { /* your scss goes here */ }`
+- `@include ls-breakpoint-below-tablet { /* your scss goes here */ }`
+- `@include ls-breakpoint-above-tablet { /* your scss goes here */ }`
+- `@include ls-breakpoint-desktop-only { /* your scss goes here */ }`
+- `@include ls-breakpoint-below-desktop { /* your scss goes here */ }`
+- `@include ls-breakpoint-above-desktop { /* your scss goes here */ }`
+
+For outer container elements and overall page layout, use the following mixin:
+- `@include ls-container();`
 
 # Contact
 - james.ferguson@skyscanner.net
