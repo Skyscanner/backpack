@@ -7,7 +7,7 @@ const UnitsPage = () => (
     <section>
       <h2>Example Usage</h2>
       <pre>
-        <code>{'@import "../node_modules/living-styles/units";'}</code>
+        <code>{'@import "~/living-styles/units";'}</code>
       </pre>
       <p>Simply reference the variables as and when needed e.g. for padding, margins, widths and heights.</p>
       <pre>

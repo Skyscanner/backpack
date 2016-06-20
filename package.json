@@ -33,6 +33,7 @@
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-json-to-sass": "0.0.3",
+    "json-loader": "^0.5.4",
     "node-sass": "3.7.0",
     "normalize.css": "4.1.1",
     "postcss-loader": "0.9.1",

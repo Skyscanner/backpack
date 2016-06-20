@@ -19,7 +19,7 @@ const LogosPage = () => (
     <section>
       <h2>Example Usage</h2>
       <pre>
-        <code>{'@import "../node_modules/living-styles/logo";'}</code>
+        <code>{'@import "~/living-styles/logos";'}</code>
       </pre>
       <p>Logos are available in the 4 formats above You can use these like so...</p>
       <pre>

@@ -17,7 +17,7 @@ const SpinnersPage = () => (
     <section>
       <h2>Usage</h2>
       <pre>
-        <code>{'@import "../node_modules/living-styles/loaders";'}</code>
+        <code>{'@import "~living-styles/spinners";'}</code>
       </pre>
       <p>Spinners are available in the 3 sizes above and can be coloured just like icons.</p>
       <pre>

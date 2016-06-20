@@ -39,6 +39,9 @@ const config = {
       },
       {
         test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css')
+      },
+      {
+        test: /\.json$/, exclude: /node_modules/, loader: 'json'
       }
     ]
   },

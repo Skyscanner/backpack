@@ -83,7 +83,7 @@ const FormsPage = () => (
     <section>
       <h2>Usage</h2>
       <pre>
-        <code>{'@import "../node_modules/living-styles/forms";'}</code>
+        <code>{'@import "~/living-styles/forms";'}</code>
       </pre>
       <p>We currently have support for form elements on dark and light backgrounds</p>
       <p>

@@ -115,7 +115,7 @@ const IconsPage = () => (
     </section>
     <section>
       <h2>Example Usage</h2>
-      <code>{'@import "../node_modules/living-styles/icons";'}</code>
+      <code>{'@import "~/living-styles/icons";'}</code>
       <p>
         Icons are available in two sizes, small @ 16px and large @ 24px. These are available in any colour using the
         following mixins.
