@@ -15,7 +15,7 @@ const links = [
 ]
 
 const Header = () => (
-  <header className={styles.container}>
+  <header className={styles.background}>
     <nav className={styles.nav}>
       <IndexLink to={routes.ROUTE_HOME} className={styles.logoLink}>
         <LivingStylesLogo className={styles.logo} />

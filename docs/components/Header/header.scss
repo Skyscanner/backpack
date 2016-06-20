@@ -2,10 +2,7 @@
 @import './../../../units';
 @import './../../../breakpoints';
 
-.container {
-  width: 100%;
-  box-sizing: border-box;
-
+.background {
   background-color: $ls-color-blue-500;
 }
 
@@ -23,7 +20,7 @@
   padding-top: $ls-spacing-double;
   padding-bottom: $ls-spacing-double;
 
-  @include ls-below-tablet() {
+  @include ls-breakpoint-below-tablet() {
     flex-direction: column;
     justify-content: space-between;
   }
@@ -38,12 +35,12 @@
 
   list-style-type: none;
 
-  @include ls-below-tablet() {
+  @include ls-breakpoint-below-tablet() {
     height: $ls-spacing-triple;
     margin: $ls-spacing 0 0;
   }
 
-  @include ls-mobile-only() {
+  @include ls-breakpoint-mobile-only() {
     width: 100%;
     overflow-x: auto;
   }

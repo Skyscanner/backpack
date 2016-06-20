@@ -32,6 +32,7 @@ Available imports:
 - `logos` - data uri variables for Skyscanner's logos
 - `spinners` - mixins for spinners
 - `units` - incremental unit variables for properties such as padding and border-radius
+- `breakpoints` - mixins for working with the three standardised breakpoints - mobile, tablet & desktop
 - `all` - all of the above
 
 # Colours
@@ -97,9 +98,31 @@ Logos are available in the 4 formats above You can use these like so...
 `@import "~/living-styles/spinners";`
 
 Spinners are available in the 3 sizes above and can be coloured just like icons.
-- `@include ls-spinner-sm(ls-spinner-gray-800);`
+- `@include ls-spinner-sm(ls-spinner-gray-700);`
 - `@include ls-spinner-lg(ls-spinner-blue-500);`
 - `@include ls-spinner-xl(ls-spinner-white);`
+
+# Breakpoints
+
+`@import "~/living-styles/breakpoints";`
+
+There are three viewport variable definitions:
+- `$ls-breakpoint-mobile`
+- `$ls-breakpoint-tablet`
+- `$ls-breakpoint-desktop`
+
+The following mixins are exposed to work with these breakpoints:
+- `@include ls-breakpoint-mobile-only { /* your scss goes here */ }`
+- `@include ls-breakpoint-above-mobile { /* your scss goes here */ }`
+- `@include ls-breakpoint-tablet-only { /* your scss goes here */ }`
+- `@include ls-breakpoint-below-tablet { /* your scss goes here */ }`
+- `@include ls-breakpoint-above-tablet { /* your scss goes here */ }`
+- `@include ls-breakpoint-desktop-only { /* your scss goes here */ }`
+- `@include ls-breakpoint-below-desktop { /* your scss goes here */ }`
+- `@include ls-breakpoint-above-desktop { /* your scss goes here */ }`
+
+For outer container elements and overall page layout, use the following mixin:
+- `@include ls-container();`
 
 # Contact
 - james.ferguson@skyscanner.net

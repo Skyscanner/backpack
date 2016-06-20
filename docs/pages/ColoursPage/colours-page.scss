@@ -8,13 +8,12 @@
 
   list-style-type: none;
 
-  @include ls-mobile-only {
+  @include ls-breakpoint-mobile-only {
     margin: 0;
   }
 }
 
 .swatch {
-  box-sizing: border-box;
   display: inline-block;
   min-width: 150px;
   padding: $ls-spacing-double $ls-spacing;
@@ -22,7 +21,7 @@
 
   border-radius: $ls-border-radius-sm;
 
-  @include ls-mobile-only {
+  @include ls-breakpoint-mobile-only {
     width: 100%;
     margin: 0 0 $ls-spacing;
   }
