@@ -1,15 +1,16 @@
 fs = require("fs")
 path = require("path")
-_ = require("underscore")
-datauri = require("datauri")
 
-"use strict"
+variableTemplate = (options = {}) ->
+  "$#{options.varname}: \"#{options.base64_data}\";\n"
+
+mapTemplate = (options = {}) ->
+  "$#{options.mapname}: (\n#{options.vars}\n);\n"
+
+mapVariableTemplate = (options = {}) ->
+  "#{options.varname}: \"#{options.base64_data}\","
 
 module.exports = (grunt) ->
-  _.templateSettings = {interpolate: /\{\{(.+?)\}\}/g}
-  variableTemplate = _.template('${{ varname }}: "{{base64_data}}";\n')
-  mapTemplate = _.template('${{ mapname }}: (\n{{ vars }}\n);\n')
-  mapVariableTemplate = _.template('{{ varname }}: "{{base64_data}}",')
 
   grunt.registerMultiTask "datauri", "Generates .scss datauri variables for .{png,gif,jpg} and .svg, and replaces color definitions in .svg files.", ->
     options = @options
@@ -20,17 +21,17 @@ module.exports = (grunt) ->
     lines = []
     mapLines = []
 
-    _(@files).each (file) ->
+    for file in @files
       imageSources = file.src
       dest = file.dest
 
-      _(imageSources).each (imagePath) ->
+      for imagePath in imageSources
         unless grunt.file.exists(imagePath)
           grunt.log.warn "Source file \"" + imagePath + "\" not found."
           return false
 
         if options.colors
-          _(_.keys(options.colors)).each (color) ->
+          for own color of options.colors
             svgContents = fs.readFileSync(imagePath).toString('utf-8');
             colorizedSvgContents = svgContents.replace(/(<svg[^>]+>)/im, '$1<style type="text/css">circle, ellipse, line, path, polygon, polyline, rect, text { fill: ' + options.colors[color] + ' !important; }</style>')
 
