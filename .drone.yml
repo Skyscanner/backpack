@@ -1,0 +1,17 @@
+build:
+  image: node:4
+  commands:
+    - npm install
+    - npm test
+    - npm run build:docs
+
+publish:
+  s3_sync:
+    acl: public-read
+    region: "eu-west-1"
+    bucket: "backpack.sandbox.aws.skyscnr.com"
+    access_key: $$SANDBOX_ACCESS_KEY
+    secret_key: $$SANDBOX_SECRET_KEY
+    source: dist/
+    target: /
+    delete: true
