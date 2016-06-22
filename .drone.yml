@@ -15,3 +15,6 @@ publish:
     source: dist/
     target: /
     delete: true
+    content_encoding:
+      ".js": gzip
+      ".css": gzip
