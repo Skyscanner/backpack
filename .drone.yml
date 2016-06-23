@@ -15,11 +15,6 @@ publish:
     source: dist/
     target: /
     delete: true
-    metadata:
-      "*.js":
-        CacheControl: "max-age=31536000"
-      "*.css":
-        CacheControl: "max-age=31536000"
     content_encoding:
       ".js": gzip
       ".css": gzip
