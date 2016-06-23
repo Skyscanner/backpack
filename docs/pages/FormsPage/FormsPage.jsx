@@ -87,8 +87,9 @@ const FormsPage = () => (
       </pre>
       <p>We currently have support for form elements on dark and light backgrounds</p>
       <p>
-        For example: <em>@include ls-label-dark;</em> will generate the relevant CSS properties for labels on dark
-        backgrounds, whereas <em>@include ls-label();</em> will generate CSS properties for labels on light backgrounds.
+        For example: <code>@include ls-label-dark;</code> will generate the relevant CSS properties for labels on dark
+        backgrounds, whereas <code>@include ls-label();</code> will generate CSS properties for labels on light
+        backgrounds.
       </p>
       <pre>
         <code>

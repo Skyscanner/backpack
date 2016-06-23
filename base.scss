@@ -1,0 +1,49 @@
+@import 'utils';
+@import '~normalize.css';
+
+:global {
+  html {
+    box-sizing: border-box;
+
+    font-size: 16px;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.25;
+
+    &.scaffold-font {
+      font-family: arial, helvetica, clean, sans-serif;
+      font-size: 13px;
+      line-height: 1.231;
+    }
+  }
+
+  .hidden, .hide {
+    @include ls-hidden();
+  }
+
+  .visuallyhidden,
+  .visually-hidden {
+    @include ls-visually-hidden();
+
+    &.focusable {
+      @include ls-visually-hidden($focusable: true);
+    }
+  }
+
+  .invisible {
+    @include ls-visually-hidden();
+  }
+
+  .clearfix {
+    @include ls-clearfix();
+  }
+}

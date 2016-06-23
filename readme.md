@@ -102,6 +102,16 @@ Spinners are available in the 3 sizes above and can be coloured just like icons.
 - `@include ls-spinner-lg(ls-spinner-blue-500);`
 - `@include ls-spinner-xl(ls-spinner-white);`
 
+# Utils
+
+`@import "~/living-styles/utils";`
+
+The following mixins are available as utilities (inspired by [html5 boilerplate](https://html5boilerplate.com/)):
+- `@include ls-hidden()`
+- `@include ls-visually-hidden($focusable: (true|false))`
+- `@include ls-invisible()`
+- `@include ls-clearfix()`
+
 # Breakpoints
 
 `@import "~/living-styles/breakpoints";`
@@ -123,6 +133,16 @@ The following mixins are exposed to work with these breakpoints:
 
 For outer container elements and overall page layout, use the following mixin:
 - `@include ls-container();`
+
+# Base Stylesheet
+
+`@import "~/living-styles/base";`
+
+- A minimal, relatively un-opinionated base stylesheet
+- For improved cross-browser rendering, we use [normalize.css](http://necolas.github.io/normalize.css/) to correct small inconsistencies across browsers and devices.
+- The `box-sizing` is globally set on every element—including `*:before` and `*:after`, to `border-box`. This ensures that the declared width of element is never exceeded due to padding or border.
+- Utility classes based on the utils mixins above, including: `.hidden`, `.visuallyhidden`, `.visuallyhidden.focusable`, `.invisible` and `.clearfix`
+- That's it!
 
 # Contact
 - james.ferguson@skyscanner.net

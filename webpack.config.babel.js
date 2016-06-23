@@ -13,12 +13,43 @@ const locals = {
     routes.ROUTE_FORMS,
     routes.ROUTE_UNITS,
     routes.ROUTE_LOGOS,
-    routes.ROUTE_SPINNERS
+    routes.ROUTE_SPINNERS,
+    routes.ROUTE_BREAKPOINTS,
+    routes.ROUTE_BASE_STYLESHEET
   ]
 }
 
-const config = {
+const postcss = () => {
+  return [ autoprefixer({ browsers: [ 'last 20 versions' ] }) ]
+}
 
+const baseStylesheetConfig = {
+  entry: './base.scss',
+
+  output: {
+    filename: 'base.js',
+    path: ''
+  },
+
+  module: {
+    loaders: [
+      {
+        test: /\.scss/, loader: ExtractTextPlugin.extract('style', 'css!postcss!sass')
+      },
+      {
+        test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css')
+      }
+    ]
+  },
+
+  plugins: [
+    new ExtractTextPlugin('base.css')
+  ],
+
+  postcss
+}
+
+const config = {
   entry: {
     docs: './docs/index.js'
   },
@@ -35,7 +66,8 @@ const config = {
         test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel'
       },
       {
-        test: /\.scss/, loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=ls-[name]__[local]!postcss!sass')
+        test: /\.scss/,
+        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=ls-[name]__[local]!postcss!sass')
       },
       {
         test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css')
@@ -51,9 +83,7 @@ const config = {
     new StaticSiteGeneratorPlugin('docs', locals.paths, locals)
   ],
 
-  postcss: () => {
-    return [ autoprefixer({ browsers: [ 'last 20 versions' ] }) ]
-  },
+  postcss,
 
   devServer: {
     host: '0.0.0.0'
@@ -80,4 +110,4 @@ if (process.env.NODE_ENV === 'production') {
   )
 }
 
-export default config
+export default [ baseStylesheetConfig, config ]
