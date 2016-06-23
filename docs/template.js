@@ -17,7 +17,7 @@ export default ({ head = {}, html = '', assets = {} }) => {
   ${html}
 </div>
 
-<script src="/${assets.docs.js}"></script>
+<script src="/${assets.docs.js}" async></script>
 
 </body>
 

@@ -24,7 +24,7 @@ const config = {
   },
 
   output: {
-    filename: '[name].[chunkhash].js',
+    filename: '[name]_[chunkhash].js',
     path: 'dist',
     libraryTarget: 'umd'
   },
@@ -47,7 +47,7 @@ const config = {
   },
 
   plugins: [
-    new ExtractTextPlugin('[name].[contenthash].css'),
+    new ExtractTextPlugin('[name]_[contenthash].css'),
     new StaticSiteGeneratorPlugin('docs', locals.paths, locals)
   ],
 
