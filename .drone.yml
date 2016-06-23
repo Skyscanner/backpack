@@ -3,7 +3,7 @@ build:
   commands:
     - npm install
     - npm test
-    - npm run build:docs
+    - npm run dist:gzip
 
 publish:
   s3_sync:
@@ -18,3 +18,4 @@ publish:
     content_encoding:
       ".js": gzip
       ".css": gzip
+      ".html": gzip

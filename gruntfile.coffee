@@ -1,6 +1,7 @@
 colours = require('./colours.json')
 
 module.exports = (grunt) ->
+  grunt.loadNpmTasks('grunt-contrib-compress')
   grunt.loadNpmTasks('grunt-json-to-sass')
   grunt.loadTasks('tasks')
 
@@ -73,6 +74,17 @@ module.exports = (grunt) ->
 
         files:
           'generated/_spinners-xl.scss': 'svgs/spinners/xl/*.svg'
+
+    compress:
+      docs:
+        options:
+          mode: 'gzip'
+
+        files: [
+          { expand: true, cwd: 'dist/', src: ['**/*.js'], dest: 'dist/', ext: '.js' }
+          { expand: true, cwd: 'dist/', src: ['**/*.css'], dest: 'dist/', ext: '.css' }
+          { expand: true, cwd: 'dist/', src: ['**/*.html'], dest: 'dist/', ext: '.html' }
+        ]
 
   grunt.registerTask 'generate', ['json_to_sass', 'datauri']
   grunt.registerTask 'default', ['generate']
