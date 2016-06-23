@@ -19,3 +19,5 @@ publish:
       ".js": gzip
       ".css": gzip
       ".html": gzip
+    when:
+      branch: master
