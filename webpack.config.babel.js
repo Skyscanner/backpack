@@ -20,11 +20,11 @@ const locals = {
 const config = {
 
   entry: {
-    docs: './docs/index.jsx'
+    docs: './docs/index.js'
   },
 
   output: {
-    filename: '[name].js',
+    filename: '[name].[chunkhash].js',
     path: 'dist',
     libraryTarget: 'umd'
   },
@@ -47,7 +47,7 @@ const config = {
   },
 
   plugins: [
-    new ExtractTextPlugin('[name].css'),
+    new ExtractTextPlugin('[name].[contenthash].css'),
     new StaticSiteGeneratorPlugin('docs', locals.paths, locals)
   ],
 

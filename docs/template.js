@@ -8,7 +8,7 @@ export default ({ head = {}, html = '', assets = {} }) => {
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   ${head.title.toString()}
-  <link rel="stylesheet" href="/docs.css">
+  <link rel="stylesheet" href="/${assets.docs.css}">
 </head>
 
 <body>
@@ -17,7 +17,7 @@ export default ({ head = {}, html = '', assets = {} }) => {
   ${html}
 </div>
 
-<script src="/${assets.docs}"></script>
+<script src="/${assets.docs.js}"></script>
 
 </body>
 
