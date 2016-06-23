@@ -1,3 +1,3 @@
-import Units from './UnitsPage.jsx'
+import UnitsPage from './UnitsPage.jsx'
 
-export default Units
+export default UnitsPage
