@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import './../../../base.scss'
 
 import Header from '../../components/Header'
+import BackpackLogo from './../../svgs/BackpackLogo.jsx'
 import styles from './default-layout.scss'
 
 export const DefaultLayout = ({ children }) => (
@@ -13,7 +14,9 @@ export const DefaultLayout = ({ children }) => (
     <main className={styles.main}>
       {children}
     </main>
-    <footer className={styles.footer}>Part of the Backpack Design System.</footer>
+    <footer className={styles.footer}>
+      <BackpackLogo className={styles.backpackLogo} /> Part of the Backpack Design System.
+    </footer>
   </div>
 )
 

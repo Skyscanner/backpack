@@ -7,9 +7,9 @@ const BaseStylesheetPage = () => (
     <section>
       <p>
         <strong>
-          Note: The scaffolding still uses an different, older base stylesheet. Please refer to this
-          <a href='https://www.pre-prod.skyscanner.local/?OverrideConfig=EnableBackpackBase:true'>blog
-          post</a> for more info and this <a href='#'>JIRA card</a> for updates.
+          Note: The scaffolding still uses an different, older base stylesheet.
+          Please refer to this <a href='https://www.pre-prod.skyscanner.local/?OverrideConfig=EnableBackpackBase:true'>
+          blog post</a> for more info and this <a href='#'>JIRA card</a> for updates.
         </strong>
       </p>
       <h2>Example Usage</h2>
@@ -35,7 +35,8 @@ const BaseStylesheetPage = () => (
       <ul>
         <li>A minimal, relatively un-opinionated base stylesheet</li>
         <li>
-          For improved cross-browser rendering, we use <a href='http://necolas.github.io/normalize.css/' target='__blank'>normalize.css</a> to correct small
+          For improved cross-browser rendering, we
+          use <a href='http://necolas.github.io/normalize.css/' target='__blank'>normalize.css</a> to correct small
           inconsistencies across browsers and devices.
         </li>
         <li>
