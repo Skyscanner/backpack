@@ -19,7 +19,7 @@ npm install git+http://git.prod.skyscanner.local/design/living-styles.git#v2.2.0
 Import the styles that you want to consume:
 
 ```scss
-@import "~/living-styles/colours";
+@import "~living-styles/colours";
 ```
 
 > Note: The tilde import syntax (`~`) is webpack/sass-loader specific, otherwise adjust the import path relative to your `node_modules` folder i.e. `@import "./node_modules/living-styles/colours";`
@@ -37,7 +37,7 @@ Available imports:
 
 # Colours
 
-`@import "~/living-styles/colours";`
+`@import "~living-styles/colours";`
 
 Simply reference the variables as and when needed. Each variable uses the same naming convention of color name + intensity. The higher the intensity value, the darker the color.
 - `$ls-color-blue-100`
@@ -45,14 +45,14 @@ Simply reference the variables as and when needed. Each variable uses the same n
 
 # Icons
 
-`@import "~/living-styles/icons";`
+`@import "~living-styles/icons";`
 
 Icons are available in two sizes, small @ 16px and large @ 24px. These are available in any colour using the following mixins.
 - `@include ls-icon-lg(ls-icon-account-blue-500);`
 - `@include ls-icon-sm(ls-icon-account-blue-500);`
 
 # Forms
-`@import "~/living-styles/forms";`
+`@import "~living-styles/forms";`
 
 We currently have support for form elements on dark and light backgrounds
 
@@ -72,7 +72,7 @@ For example: `@include ls-label-dark();` will generate the relevant CSS properti
 
 # Units
 
-`@import "~/living-styles/units";`
+`@import "~living-styles/units";`
 
 Simply reference the variables as and when needed e.g. for padding, margins, widths and heights.
 - `$ls-spacing-sixth`
@@ -85,7 +85,7 @@ Simply reference the variables as and when needed e.g. for padding, margins, wid
 
 # Logos
 
-`@import "~/living-styles/logo";`
+`@import "~living-styles/logo";`
 
 Logos are available in the 4 formats above You can use these like so...
 - `$ls-logo-inline-blue-600`
@@ -95,7 +95,7 @@ Logos are available in the 4 formats above You can use these like so...
 
 # Spinners
 
-`@import "~/living-styles/spinners";`
+`@import "~living-styles/spinners";`
 
 Spinners are available in the 3 sizes above and can be coloured just like icons.
 - `@include ls-spinner-sm(ls-spinner-gray-700);`
@@ -104,7 +104,7 @@ Spinners are available in the 3 sizes above and can be coloured just like icons.
 
 # Utils
 
-`@import "~/living-styles/utils";`
+`@import "~living-styles/utils";`
 
 The following mixins are available as utilities (inspired by [html5 boilerplate](https://html5boilerplate.com/)):
 - `@include ls-hidden()`
@@ -114,7 +114,7 @@ The following mixins are available as utilities (inspired by [html5 boilerplate]
 
 # Breakpoints
 
-`@import "~/living-styles/breakpoints";`
+`@import "~living-styles/breakpoints";`
 
 There are three viewport variable definitions:
 - `$ls-breakpoint-mobile`
@@ -136,7 +136,7 @@ For outer container elements and overall page layout, use the following mixin:
 
 # Base Stylesheet
 
-`@import "~/living-styles/base";`
+`@import "~living-styles/base";`
 
 - A minimal, relatively un-opinionated base stylesheet
 - For improved cross-browser rendering, we use [normalize.css](http://necolas.github.io/normalize.css/) to correct small inconsistencies across browsers and devices.

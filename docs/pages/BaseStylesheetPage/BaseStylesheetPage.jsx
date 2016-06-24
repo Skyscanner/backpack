@@ -7,7 +7,8 @@ const BaseStylesheetPage = () => (
     <section>
       <p>
         <strong>
-          Note: The scaffolding still uses an different, older base stylesheet. Please refer to this <a href='#'>blog
+          Note: The scaffolding still uses an different, older base stylesheet. Please refer to this
+          <a href='https://www.pre-prod.skyscanner.local/?OverrideConfig=EnableBackpackBase:true'>blog
           post</a> for more info and this <a href='#'>JIRA card</a> for updates.
         </strong>
       </p>
@@ -27,7 +28,7 @@ const BaseStylesheetPage = () => (
       </p>
       <pre>
         <code>
-          {'@import "~/living-styles/base";'}
+          {'@import "~living-styles/base";'}
         </code>
       </pre>
       <h3>What's in it?</h3>

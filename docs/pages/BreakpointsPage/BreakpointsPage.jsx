@@ -25,7 +25,7 @@ const BreakpointsPage = () => (
       </pre>
       <h2>Usage</h2>
       <pre>
-        <code>{'@import "~/living-styles/breakpoints";'}</code>
+        <code>{'@import "~living-styles/breakpoints";'}</code>
       </pre>
       <p>The following mixins are exposed to work with these breakpoints:</p>
       <pre>

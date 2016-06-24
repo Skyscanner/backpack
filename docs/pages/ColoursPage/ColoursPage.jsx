@@ -38,7 +38,7 @@ const Colours = () => (
     <section>
       <h2>Example Usage</h2>
       <pre>
-        <code>{'@import "~/living-styles/colours";'}</code>
+        <code>{'@import "~living-styles/colours";'}</code>
       </pre>
       <p>
         Simply reference the variables as and when needed. Each variable uses the same naming convention of <em>color
