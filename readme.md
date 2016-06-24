@@ -6,12 +6,12 @@
 Install the module using the git url like so:
 
 ```shell
-npm install git+http://git.prod.skyscanner.local/design/living-styles.git#v2.1.0 --save-dev
+npm install git+http://git.prod.skyscanner.local/design/living-styles.git#v2.2.0 --save-dev
 ```
 
 > Note: If you're seeing problems like this
 > ```
-> npm ERR! fetch failed http://git.prod.skyscanner.local/design/living-styles.git#v2.1.0
+> npm ERR! fetch failed http://git.prod.skyscanner.local/design/living-styles.git#v2.2.0
 > npm WARN retry will retry, error on last attempt: Error: fetch failed with status code 406
 > ```
 > under npm 3 make sure you're using the `git+http` schema.
