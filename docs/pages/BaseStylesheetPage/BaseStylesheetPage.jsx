@@ -43,6 +43,9 @@ const BaseStylesheetPage = () => (
           exceeded due to padding or border.
         </li>
         <li>
+          The default <code>font-family</code>, <code>font-size</code> & <code>line-height</code>.
+        </li>
+        <li>
           Utility classes based on the utils mixins above, including: <code>.hidden</code>, <code>.visuallyhidden</code>,
           <code>.visuallyhidden.focusable</code>, <code>.invisible</code> and <code>.clearfix</code>.
         </li>
