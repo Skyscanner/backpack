@@ -6,7 +6,7 @@ import pkg from './../../../package.json'
 const HomePage = () => (
   <section>
     <Helmet title='Living Styles' />
-    <h1>Living Styles is an up-to-date library of sass mixin's for use on Skyscanner's web products.</h1>
+    <h1>Living Styles is an up-to-date library of sass mixins for use on Skyscanner's web products.</h1>
     <h2>Installation</h2>
     <p>
       Living Styles is available as an <a href='https://www.npmjs.com/' target='__blank'>npm</a> module. Install the
