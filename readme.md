@@ -22,7 +22,7 @@ Import the styles that you want to consume:
 @import "~/living-styles/colours";
 ```
 
-> Note: The tilde import syntax (`~/`) is webpack specific, otherwise adjust the import path relative to your `node_modules` folder.
+> Note: The tilde import syntax (`~`) is webpack/sass-loader specific, otherwise adjust the import path relative to your `node_modules` folder i.e. `@import "./node_modules/living-styles/colours";`
 
 Available imports:
 
