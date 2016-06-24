@@ -13,7 +13,7 @@ export const DefaultLayout = ({ children }) => (
     <main className={styles.main}>
       {children}
     </main>
-    <footer className={styles.footer}>Living Styles &copy; 2016 Skyscanner Ltd.</footer>
+    <footer className={styles.footer}>Part of the Backpack Design System.</footer>
   </div>
 )
 
