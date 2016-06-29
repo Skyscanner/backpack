@@ -1,9 +1,9 @@
 {
-  "name": "living-styles",
-  "version": "2.2.1",
-  "description": "Up-to-date globally applicable styles for use on Skyscanner's products.",
+  "name": "backpack",
+  "version": "0.0.0",
+  "description": "Backpack Design System",
   "scripts": {
-    "lint:scss": "sass-lint '*.scss, docs/**/*.scss' -v -q",
+    "lint:scss": "sass-lint -v",
     "lint:js": "eslint . --ext .jsx --ext .js",
     "lint:fix": "eslint . --ext .jsx --ext .js --fix",
     "lint": "npm run lint:js && npm run lint:scss",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.prod.skyscanner.local:design/living-styles.git"
+    "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
@@ -38,6 +38,7 @@
     "grunt-contrib-compress": "^1.3.0",
     "js-beautify": "^1.6.3",
     "json-loader": "0.5.4",
+    "lodash": "^4.13.1",
     "node-sass": "3.8.0",
     "postcss-loader": "0.9.1",
     "prismjs": "^1.5.1",

@@ -1,3 +1,3 @@
-import HomePage from './HomePage.jsx'
+import page from './HomePage.jsx'
 
-export default HomePage
+export default page

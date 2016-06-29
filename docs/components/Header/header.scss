@@ -1,42 +1,41 @@
 @import './../../../scss/bonds';
 @import './../../../scss/mixins/breakpoints';
 
-.header {
-  background-color: $bpk-color-blue-500;
+.bpkdocs-header {
+  background-color: $bpk-color-white;
 
   &__nav {
     @include bpk-container;
 
-    @include bpk-breakpoint-below-tablet {
-      flex-direction: column;
-      justify-content: space-between;
+    @include bpk-breakpoint-above-tablet {
+      flex-direction: row;
+      justify-content: inherit;
     }
 
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding-top: $bpk-spacing-lg;
-    padding-bottom: $bpk-spacing-lg;
+    justify-content: space-between;
+    padding-top: $bpk-spacing-base;
+    padding-bottom: $bpk-spacing-base;
   }
 
-  &__logo,
   &__logo-link {
-    height: $bpk-spacing-xl;
+    color: $bpk-color-blue-500;
+    font-size: $bpk-font-size-h-3;
+    text-decoration: none;
   }
 
   &__nav-list {
-    @include bpk-breakpoint-mobile-only {
-      width: 100%;
-      overflow-x: auto;
-    }
-
-    @include bpk-breakpoint-below-tablet {
-      height: $bpk-spacing-xl;
-      margin: $bpk-spacing-sm 0 0;
+    @include bpk-breakpoint-above-tablet {
+      height: auto;
+      margin: 0 0 0 auto;
     }
 
     display: flex;
     align-items: center;
-    margin: 0 0 0 auto;
+    height: $bpk-spacing-lg;
+    margin: 0;
     padding: 0;
     list-style-type: none;
   }
@@ -45,20 +44,5 @@
     &:not(:last-child) {
       margin-right: $bpk-spacing-lg;
     }
-  }
-
-  &__nav-link {
-    color: $bpk-color-blue-900;
-    text-decoration: none;
-
-    &:hover {
-      color: $bpk-color-white;
-      text-decoration: none;
-    }
-  }
-
-  &__nav-link-active {
-    color: $bpk-color-white;
-    text-decoration: none;
   }
 }

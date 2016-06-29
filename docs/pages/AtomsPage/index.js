@@ -1,3 +1,3 @@
-import AtomsPage from './AtomsPage.jsx'
+import page from './AtomsPage.jsx'
 
-export default AtomsPage
+export default page

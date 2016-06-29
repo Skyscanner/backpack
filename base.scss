@@ -1,14 +1,23 @@
 @import '~normalize.css';
 @import 'scss/bonds';
 @import 'scss/mixins/utils';
+@import 'docs/components/BpkHeading/bpk-heading';
+@import 'docs/components/BpkParagraph/bpk-paragraph';
+@import 'docs/components/BpkLink/bpk-link';
+@import 'docs/components/BpkList/bpk-list';
+@import 'docs/components/BpkButton/bpk-button';
 
 :global {
+  $scaffold-font-color: #373737;
+
   html {
     font-size: $bpk-font-size-root;
     box-sizing: border-box;
   }
 
   * {
+    box-sizing: inherit;
+
     &::before,
     &::after {
       box-sizing: inherit;
@@ -22,8 +31,6 @@
     line-height: $bpk-line-height-base;
 
     &.scaffold-font {
-      $scaffold-font-color: #373737;
-
       color: $scaffold-font-color;
       font-family: arial, helvetica, clean, sans-serif;
       font-size: 13px;
@@ -33,23 +40,23 @@
 
   .hidden,
   .hide {
-    @include ls-hidden;
+    @include bpk-hidden;
   }
 
   .visuallyhidden,
   .visually-hidden {
-    @include ls-visually-hidden;
+    @include bpk-visually-hidden;
 
     &.focusable {
-      @include ls-visually-hidden-focusable;
+      @include bpk-visually-hidden--focusable;
     }
   }
 
   .invisible {
-    @include ls-invisible;
+    @include bpk-invisible;
   }
 
   .clearfix {
-    @include ls-clearfix;
+    @include bpk-clearfix;
   }
 }

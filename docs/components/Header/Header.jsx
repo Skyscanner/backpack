@@ -1,10 +1,12 @@
 import React from 'react'
-import { IndexLink, Link } from 'react-router'
+import { IndexLink } from 'react-router'
 import CssModules from 'react-css-modules'
+
+import * as routes from '../../constants/routes'
 
 import styles from './header.scss'
 
-import * as routes from '../../constants/routes'
+import BpkLink from './../../components/BpkLink'
 
 const links = [
   { route: routes.ROUTE_ATOMS, children: 'Atoms' },
@@ -13,15 +15,15 @@ const links = [
 ]
 
 const Header = () => (
-  <header styleName='header'>
-    <nav styleName='header__nav'>
-      <IndexLink to={routes.ROUTE_HOME} styleName='header__logo-link'>Backpack</IndexLink>
-      <ul styleName='header__nav-list'>
+  <header styleName='bpkdocs-header'>
+    <nav styleName='bpkdocs-header__nav'>
+      <IndexLink to={routes.ROUTE_HOME} styleName='bpkdocs-header__logo-link'>Backpack</IndexLink>
+      <ul styleName='bpkdocs-header__nav-list'>
         {links.map((link = {}) => (
-          <li key={link.route} styleName='header__nav-list-item'>
-            <Link to={link.route} styleName='header__nav-link' activeClassName='header__nav-link-active'>
+          <li key={link.route} styleName='bpkdocs-header__nav-list-item'>
+            <BpkLink to={link.route}>
               {link.children}
-            </Link>
+            </BpkLink>
           </li>
         ))}
       </ul>

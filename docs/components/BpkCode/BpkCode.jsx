@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react'
+import CssModules from 'react-css-modules'
 import ReactDOMServer from 'react-dom/server'
 import Prism from 'prismjs'
 import Beautify from 'js-beautify'
 
-import styles from './code-snippet.scss'
+import styles from './bpk-code.scss'
 
 const syntaxHighlightingMap = {
   html: {
@@ -33,7 +34,7 @@ const renderChildrenToStaticMarkup = (children) => {
 const prettyPrint = (code, syntax) => {
   const { beautifier } = syntaxHighlightingMap[ syntax ]
 
-  return syntax ? Beautify[ beautifier ](code) : code
+  return syntax ? Beautify[ beautifier ](code, { indent_size: 2 }) : code
 }
 
 const highlight = (code, syntax) => {
@@ -42,35 +43,39 @@ const highlight = (code, syntax) => {
   return syntax ? Prism.highlight(code, highlighter) : code
 }
 
-const CodeSnippet = (props) => {
+const BpkCode = (props) => {
+  const styleName = `language-${props.syntax}`
   const staticMarkup = renderChildrenToStaticMarkup(props.children)
-  const code = prettyPrint(staticMarkup, props.syntax)
-  const highlightedCode = highlight(code, props.syntax)
+  const prettyCode = prettyPrint(staticMarkup, props.syntax)
+  const innerHTML = { __html: highlight(prettyCode, props.syntax) }
 
   if (props.inline) {
-    return (<code className={`language-${props.syntax}`} dangerouslySetInnerHTML={{__html: highlightedCode}}></code>)
+    return (
+      <code styleName={`${styleName} ${styleName}--inline`}>
+        <span dangerouslySetInnerHTML={innerHTML}></span>
+      </code>
+    )
   }
 
   return (
-    <pre className={`language-${props.syntax}`}>
-      <code className={`language-${props.syntax}`} dangerouslySetInnerHTML={{__html: highlightedCode}}></code>
+    <pre styleName={`${styleName} ${styleName}--block`}>
+      <code styleName={styleName} dangerouslySetInnerHTML={innerHTML}></code>
     </pre>
   )
 }
 
-CodeSnippet.propTypes = {
+BpkCode.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]).isRequired,
   inline: PropTypes.bool,
-  className: PropTypes.string,
-  syntax: PropTypes.oneOf([ 'html', 'css', 'scss', 'js' ])
+  syntax: PropTypes.oneOf([ 'html', 'css', 'js' ])
 }
 
-CodeSnippet.defaultProps = {
+BpkCode.defaultProps = {
   inline: false,
   syntax: 'html'
 }
 
-export default CodeSnippet
+export default CssModules(BpkCode, styles, { allowMultiple: true })

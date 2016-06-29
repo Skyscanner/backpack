@@ -1,3 +1,3 @@
-import AtomsLayout from './AtomsLayout.jsx'
+import layout from './AtomsLayout.jsx'
 
-export default AtomsLayout
+export default layout

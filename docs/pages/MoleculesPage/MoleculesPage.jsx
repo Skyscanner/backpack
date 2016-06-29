@@ -1,10 +1,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
+import BpkHeading from './../../components/BpkHeading'
+
 const MoleculesPage = () => (
   <section>
     <Helmet title='Molecules' />
-    <h1>Molecules</h1>
+    <BpkHeading level='h1'>Molecules</BpkHeading>
   </section>
 )
 

@@ -1,5 +1,6 @@
 export const ROUTE_HOME = '/'
 export const ROUTE_ATOMS = '/atoms'
 export const ROUTE_TYPOGRAPHY = '/atoms/typography'
+export const ROUTE_BUTTONS = '/atoms/buttons'
 export const ROUTE_MOLECULES = '/molecules'
 export const ROUTE_ORGANISMS = '/organisms'

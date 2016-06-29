@@ -1,5 +1,11 @@
 @import './../../scss/bonds';
 
+@mixin bpk-container {
+  max-width: $bpk-breakpoint-desktop;
+  margin: 0 auto;
+  padding: $bpk-spacing-base;
+}
+
 @mixin bpk-breakpoint-mobile-only {
   @media #{$bpk-breakpoint-query-mobile-only} {
     @content
@@ -46,11 +52,4 @@
   @media #{$bpk-breakpoint-query-above-desktop} {
     @content
   }
-}
-
-@mixin bpk-container {
-  max-width: $bpk-breakpoint-desktop;
-  margin: 0 auto;
-  padding-right: $bpk-spacing-md;
-  padding-left: $bpk-spacing-md;
 }

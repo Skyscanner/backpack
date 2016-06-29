@@ -1,3 +1,3 @@
-import header from './Header.jsx'
+import component from './Header.jsx'
 
-export default header
+export default component

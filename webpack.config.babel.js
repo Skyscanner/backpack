@@ -10,6 +10,7 @@ const locals = {
     routes.ROUTE_HOME,
     routes.ROUTE_ATOMS,
     routes.ROUTE_TYPOGRAPHY,
+    routes.ROUTE_BUTTONS,
     routes.ROUTE_MOLECULES,
     routes.ROUTE_ORGANISMS
   ]

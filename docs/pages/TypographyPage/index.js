@@ -1,3 +1,3 @@
-import TypographyPage from './TypographyPage.jsx'
+import page from './TypographyPage.jsx'
 
-export default TypographyPage
+export default page

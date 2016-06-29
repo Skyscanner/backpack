@@ -1,3 +1,3 @@
-import OrganismsPage from './OrganismsPage.jsx'
+import page from './OrganismsPage.jsx'
 
-export default OrganismsPage
+export default page

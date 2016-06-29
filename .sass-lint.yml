@@ -2,8 +2,10 @@ options:
   formatter: stylish
 
 files:
-  include: '**/*.scss'
-  ignore: '_utils.scss'
+  include:
+    - '*.scss'
+    - 'scss/**/*.scss'
+    - 'docs/**/*.scss'
 
 rules:
   # Extends

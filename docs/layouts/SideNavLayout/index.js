@@ -1,3 +1,3 @@
-import SideNavLayout from './SideNavLayout.jsx'
+import layout from './SideNavLayout.jsx'
 
-export default SideNavLayout
+export default layout

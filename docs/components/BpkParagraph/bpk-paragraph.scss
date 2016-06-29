@@ -1,0 +1,7 @@
+@import './../../../scss/bonds';
+@import './../../../scss/mixins/typography';
+
+.bpk-paragraph {
+  margin-top: $bpk-margin-top-p;
+  margin-bottom: $bpk-margin-bottom-p;
+}

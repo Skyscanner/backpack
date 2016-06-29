@@ -1,0 +1,14 @@
+@import './../../../scss/bonds';
+
+.bpk-link {
+  color: $bpk-color-blue-500;
+  text-decoration: none;
+
+  &:hover {
+    color: $bpk-color-gray-700;
+  }
+
+  &--active {
+    color: $bpk-color-gray-500;
+  }
+}
