@@ -1,0 +1,28 @@
+@import './../../../scss/bonds';
+@import './../../../scss/mixins/typography';
+
+.bpk-heading {
+  &__h1 {
+    @include bpk-heading-1;
+  }
+
+  &__h2 {
+    @include bpk-heading-2;
+  }
+
+  &__h3 {
+    @include bpk-heading-3;
+  }
+
+  &__h4 {
+    @include bpk-heading-4;
+  }
+
+  &__h5 {
+    @include bpk-heading-5;
+  }
+
+  &__h6 {
+    @include bpk-heading-6;
+  }
+}

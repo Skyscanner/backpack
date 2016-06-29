@@ -1,64 +1,48 @@
-@import './../../../colours';
-@import './../../../units';
-@import './../../../breakpoints';
+@import './../../../scss/bonds';
+@import './../../../scss/mixins/breakpoints';
 
-.background {
-  background-color: $ls-color-blue-500;
-}
+.bpkdocs-header {
+  background-color: $bpk-color-white;
 
-.logo,
-.logoLink {
-  height: $ls-spacing-triple;
-}
+  &__nav {
+    @include bpk-container;
 
-.nav {
-  @include ls-container();
+    @include bpk-breakpoint-above-tablet {
+      flex-direction: row;
+      justify-content: inherit;
+    }
 
-  display: flex;
-  align-items: center;
-
-  padding-top: $ls-spacing-double;
-  padding-bottom: $ls-spacing-double;
-
-  @include ls-breakpoint-below-tablet() {
+    display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-  }
-}
-
-.navList {
-  display: flex;
-  align-items: center;
-
-  margin: 0 0 0 auto;
-  padding: 0;
-
-  list-style-type: none;
-
-  @include ls-breakpoint-below-tablet() {
-    height: $ls-spacing-triple;
-    margin: $ls-spacing 0 0;
+    padding-top: $bpk-spacing-base;
+    padding-bottom: $bpk-spacing-base;
   }
 
-  @include ls-breakpoint-mobile-only() {
-    width: 100%;
-    overflow-x: auto;
+  &__logo-link {
+    color: $bpk-color-blue-500;
+    font-size: $bpk-font-size-h-3;
+    text-decoration: none;
   }
-}
 
-.navListItem {
-  &:not(:last-child) {
-    margin-right: $ls-spacing-double;
+  &__nav-list {
+    @include bpk-breakpoint-above-tablet {
+      height: auto;
+      margin: 0 0 0 auto;
+    }
+
+    display: flex;
+    align-items: center;
+    height: $bpk-spacing-lg;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
   }
-}
 
-.navLink {
-  color: $ls-color-blue-900;
-  text-decoration: none;
-}
-
-.navLink:hover,
-.navLinkActive {
-  color: $ls-color-white;
-  text-decoration: none;
+  &__nav-list-item {
+    &:not(:last-child) {
+      margin-right: $bpk-spacing-lg;
+    }
+  }
 }

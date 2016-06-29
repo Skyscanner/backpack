@@ -1,3 +1,3 @@
-import Routes from './Routes.jsx'
+import routes from './Routes.jsx'
 
-export default Routes
+export default routes

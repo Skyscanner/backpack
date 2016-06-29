@@ -2,15 +2,9 @@ colours = require('./colours.json')
 
 module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-compress')
-  grunt.loadNpmTasks('grunt-json-to-sass')
   grunt.loadTasks('tasks')
 
   grunt.initConfig
-
-    json_to_sass:
-      colours:
-        files:
-          'generated/_colours.scss': 'colours.json'
 
     datauri:
       elements:
@@ -86,5 +80,5 @@ module.exports = (grunt) ->
           { expand: true, cwd: 'dist/', src: ['**/*.html'], dest: 'dist/', ext: '.html' }
         ]
 
-  grunt.registerTask 'generate', ['json_to_sass', 'datauri']
+  grunt.registerTask 'generate', ['datauri']
   grunt.registerTask 'default', ['generate']

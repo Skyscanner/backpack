@@ -1,0 +1,18 @@
+@import './../../../scss/bonds';
+@import './../../../scss/mixins/typography';
+
+.bpk-list {
+  margin-top: $bpk-margin-top-list;
+  margin-bottom: $bpk-margin-bottom-list;
+  padding-left: $bpk-spacing-base;
+
+  &__item {
+    margin-top: $bpk-margin-top-list-item;
+    margin-bottom: $bpk-margin-bottom-list-item;
+  }
+
+  & & {
+    margin-top: $bpk-margin-top-nested-list;
+    margin-bottom: $bpk-margin-bottom-nested-list;
+  }
+}

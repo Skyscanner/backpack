@@ -1,10 +1,12 @@
 {
-  "name": "living-styles",
-  "version": "2.2.1",
-  "description": "Up-to-date globally applicable styles for use on Skyscanner's products.",
+  "name": "backpack",
+  "version": "0.0.0",
+  "description": "Backpack Design System",
   "scripts": {
-    "lint": "eslint . --ext .jsx --ext .js",
+    "lint:scss": "sass-lint -v",
+    "lint:js": "eslint . --ext .jsx --ext .js",
     "lint:fix": "eslint . --ext .jsx --ext .js --fix",
+    "lint": "npm run lint:js && npm run lint:scss",
     "dist": "NODE_ENV=production webpack",
     "dist:gzip": "npm run dist && grunt compress",
     "start": "webpack-dev-server",
@@ -12,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.prod.skyscanner.local:design/living-styles.git"
+    "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
@@ -22,6 +24,7 @@
     "babel-loader": "6.2.4",
     "babel-preset-es2015": "6.9.0",
     "babel-preset-react": "6.5.0",
+    "backpack-tokens": "git+http://git.prod.skyscanner.local/backpack/tokens.git#BPK-23-typography-spacing-borders-breakpoints",
     "css-loader": "0.23.1",
     "eslint-config-standard": "5.3.1",
     "eslint-config-standard-jsx": "1.2.1",
@@ -33,20 +36,26 @@
     "grunt": "0.4.5",
     "grunt-cli": "0.1.13",
     "grunt-contrib-compress": "^1.3.0",
-    "grunt-json-to-sass": "0.0.3",
+    "js-beautify": "^1.6.3",
     "json-loader": "0.5.4",
+    "lodash": "^4.13.1",
     "node-sass": "3.8.0",
-    "normalize.css": "4.1.1",
     "postcss-loader": "0.9.1",
+    "prismjs": "^1.5.1",
     "react": "15.1.0",
+    "react-css-modules": "^3.7.6",
     "react-dom": "15.1.0",
     "react-helmet": "3.1.0",
     "react-router": "2.4.1",
+    "sass-lint": "^1.8.2",
     "sass-loader": "3.2.1",
     "standard": "7.1.2",
     "static-site-generator-webpack-plugin": "2.1.0",
     "style-loader": "0.13.1",
     "webpack": "1.13.1",
     "webpack-dev-server": "1.14.1"
+  },
+  "dependencies": {
+    "normalize.css": "^4.1.1"
   }
 }

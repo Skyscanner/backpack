@@ -1,20 +1,41 @@
-@import './../../../units';
-@import './../../../breakpoints';
+@import './../../../scss/bonds';
+@import './../../../scss/mixins/breakpoints';
 
-.main,
-.footer {
-  @include ls-container()
-}
+.bpkdocs-default-layout {
+  &__footer {
+    @include bpk-container;
 
-.footer {
-  padding-top: $ls-spacing;
-  padding-bottom: $ls-spacing;
+    padding: $bpk-spacing-lg $bpk-spacing-base;
+  }
 
-  text-align: right;
-}
+  &__grid-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 99999px;
+    background: linear-gradient(to bottom, $bpk-color-red-500 1px, transparent 1px) repeat left -1px;
+    background-size: $bpk-line-height-base $bpk-line-height-base;
+    cursor: pointer;
+  }
 
-.backpackLogo {
-  height: $ls-spacing-triple;
-  margin-right: $ls-spacing;
-  vertical-align: middle;
+  &__grid-toggle {
+    position: relative;
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: none;
+    color: $bpk-color-blue-500;
+    cursor: pointer;
+
+    &:hover {
+      color: $bpk-color-gray-700;
+    }
+
+    &:active {
+      top: 1px;
+      color: $bpk-color-gray-700;
+    }
+  }
 }

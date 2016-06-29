@@ -1,0 +1,18 @@
+@import './../../../scss/bonds';
+@import './../../../scss/mixins/buttons';
+
+.bpk-button {
+  @include bpk-button;
+
+  &--large {
+    @include bpk-button--large;
+  }
+
+  &--secondary {
+    @include bpk-button--secondary;
+  }
+
+  &--selected {
+    @include bpk-button--selected;
+  }
+}

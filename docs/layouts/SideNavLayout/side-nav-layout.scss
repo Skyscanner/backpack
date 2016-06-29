@@ -1,0 +1,21 @@
+@import './../../../scss/mixins/breakpoints';
+@import './../../../scss/mixins/utils';
+
+.bpkdocs-side-nav-layout {
+  &__container {
+    @include bpk-container;
+    @include bpk-clearfix;
+  }
+
+  @include bpk-breakpoint-above-tablet {
+    &__nav {
+      width: 25%;
+      float: left;
+    }
+
+    &__content {
+      width: 75%;
+      float: left;
+    }
+  }
+}

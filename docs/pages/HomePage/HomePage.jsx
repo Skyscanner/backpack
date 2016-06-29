@@ -1,27 +1,26 @@
 import React from 'react'
+import CssModules from 'react-css-modules'
 import Helmet from 'react-helmet'
 
-import pkg from './../../../package.json'
+import styles from './home-page.scss'
+
+import BpkHeading from './../../components/BpkHeading'
+import BpkButton from './../../components/BpkButton'
 
 const HomePage = () => (
   <section>
-    <Helmet title='Living Styles' />
-    <h1>Living Styles is an up-to-date library of sass mixins for use on Skyscanner's web products.</h1>
-    <h2>Installation</h2>
-    <p>
-      Living Styles is available as an <a href='https://www.npmjs.com/' target='__blank'>npm</a> module. Install the
-      module using the git url like so:
-    </p>
-    <pre>
-      <code>
-        {`npm install git+http://git.prod.skyscanner.local/design/living-styles.git#v${pkg.version} --save-dev`}
-      </code>
-    </pre>
-    <p>
-      For more installation instructions please refer to the readme on <a
-        href='http://git.prod.skyscanner.local/design/living-styles'>GitLab</a>.
-    </p>
+    <Helmet title='Backpack' />
+    <div styleName='bpkdocs-home-page__hero'>
+      <div styleName='bpkdocs-home-page__hero-container'>
+        <BpkHeading level='h1'>Backpack</BpkHeading>
+        <BpkHeading level='h2'>A blurb about the Backpack Design System.</BpkHeading>
+        <BpkButton large>Get Started</BpkButton>
+      </div>
+    </div>
+    <div styleName='bpkdocs-home-page__content-container'>
+      <BpkHeading level='h3'>More content</BpkHeading>
+    </div>
   </section>
 )
 
-export default HomePage
+export default CssModules(HomePage, styles)
