@@ -17,7 +17,9 @@ const links = [
 const Header = () => (
   <header styleName='bpkdocs-header'>
     <nav styleName='bpkdocs-header__nav'>
-      <IndexLink to={routes.ROUTE_HOME} styleName='bpkdocs-header__logo-link'>Backpack</IndexLink>
+      <IndexLink to={routes.ROUTE_HOME} styleName='bpkdocs-header__logo-link'>
+        <span className='visuallyhidden'>Backpack</span>
+      </IndexLink>
       <ul styleName='bpkdocs-header__nav-list'>
         {links.map((link = {}) => (
           <li key={link.route} styleName='bpkdocs-header__nav-list-item'>
