@@ -1,0 +1,9 @@
+@import './../../../scss/bonds';
+@import './../../../scss/mixins/breakpoints';
+
+.bpkdocs-colours-page {
+  &__swatch-container {
+    margin-right: -$bpk-spacing-md;
+    margin-left: -$bpk-spacing-md;
+  }
+}
