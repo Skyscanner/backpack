@@ -75,9 +75,9 @@ module.exports = (grunt) ->
           mode: 'gzip'
 
         files: [
-          { expand: true, cwd: 'dist/', src: ['**/*.js'], dest: 'dist/', ext: '.js' }
-          { expand: true, cwd: 'dist/', src: ['**/*.css'], dest: 'dist/', ext: '.css' }
-          { expand: true, cwd: 'dist/', src: ['**/*.html'], dest: 'dist/', ext: '.html' }
+          { expand: true, cwd: 'dist/', src: ['**/*.js'], dest: 'dist/' }
+          { expand: true, cwd: 'dist/', src: ['**/*.css'], dest: 'dist/' }
+          { expand: true, cwd: 'dist/', src: ['**/*.html'], dest: 'dist/' }
         ]
 
   grunt.registerTask 'generate', ['datauri']
