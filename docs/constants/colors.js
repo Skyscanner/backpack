@@ -1,0 +1,19 @@
+export const COLOR_WHITE = 'COLOR_WHITE'
+
+export const COLOR_GRAY_50 = 'COLOR_GRAY_50'
+export const COLOR_GRAY_100 = 'COLOR_GRAY_100'
+export const COLOR_GRAY_300 = 'COLOR_GRAY_300'
+export const COLOR_GRAY_500 = 'COLOR_GRAY_500'
+export const COLOR_GRAY_700 = 'COLOR_GRAY_700'
+export const COLOR_GRAY_900 = 'COLOR_GRAY_900'
+
+export const COLOR_BLUE_300 = 'COLOR_BLUE_300'
+export const COLOR_BLUE_500 = 'COLOR_BLUE_500'
+export const COLOR_BLUE_700 = 'COLOR_BLUE_700'
+
+export const COLOR_GREEN_300 = 'COLOR_GREEN_300'
+export const COLOR_GREEN_500 = 'COLOR_GREEN_500'
+export const COLOR_GREEN_700 = 'COLOR_GREEN_700'
+
+export const COLOR_YELLOW_500 = 'COLOR_YELLOW_500'
+export const COLOR_RED_500 = 'COLOR_RED_500'

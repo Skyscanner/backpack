@@ -3,16 +3,18 @@ import autoprefixer from 'autoprefixer'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin'
 
-import * as routes from './docs/constants/routes'
+import * as ROUTES from './docs/constants/routes'
 
 const locals = {
   paths: [
-    routes.ROUTE_HOME,
-    routes.ROUTE_ATOMS,
-    routes.ROUTE_TYPOGRAPHY,
-    routes.ROUTE_BUTTONS,
-    routes.ROUTE_MOLECULES,
-    routes.ROUTE_ORGANISMS
+    ROUTES.HOME,
+    ROUTES.BONDS,
+    ROUTES.COLORS,
+    ROUTES.ATOMS,
+    ROUTES.TYPOGRAPHY,
+    ROUTES.BUTTONS,
+    ROUTES.MOLECULES,
+    ROUTES.ORGANISMS
   ]
 }
 
@@ -70,7 +72,7 @@ const config = {
         test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css')
       },
       {
-        test: /\.json$/, exclude: /node_modules/, loader: 'json'
+        test: /\.json$/, loader: 'json'
       }
     ]
   },

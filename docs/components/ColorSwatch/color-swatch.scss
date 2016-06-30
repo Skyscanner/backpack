@@ -1,0 +1,18 @@
+@import './../../../scss/bonds';
+
+.bkpdocs-color-swatch {
+  display: inline-block;
+  min-width: $bpk-spacing-xl * 2;
+  margin: 0 $bpk-spacing-md $bpk-spacing-base;
+  padding: $bpk-spacing-base $bpk-spacing-md;
+  border-radius: $bpk-border-radius-sm;
+  color: $bpk-color-gray-500;
+
+  &--light {
+    color: $bpk-color-white;
+  }
+
+  &--border {
+    box-shadow: 0 0 0 1px $bpk-color-gray-100 inset;
+  }
+}
