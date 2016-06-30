@@ -15,13 +15,12 @@
     bottom: 0;
     left: 0;
     height: 99999px;
-    background: linear-gradient(to bottom, $bpk-color-red-500 1px, transparent 1px) repeat left -1px;
-    background-size: $bpk-line-height-base $bpk-line-height-base;
+    background: linear-gradient(to bottom, transparent 50%, rgba($bpk-color-red-500, .3) 0) repeat left 0;
+    background-size: $bpk-line-height-lg $bpk-line-height-lg;
     cursor: pointer;
   }
 
   &__grid-toggle {
-    position: relative;
     padding: 0;
     border: 0;
     outline: none;

@@ -1,5 +1,16 @@
 @import './../bonds';
 
+////
+/// @group buttons
+////
+
+/// Standard button.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///   }
+
 @mixin bpk-button {
   display: inline-block;
   margin: $bpk-spacing-sm 0;
@@ -33,11 +44,31 @@
   }
 }
 
+/// Large button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--large();
+///   }
+
 @mixin bpk-button--large {
   margin: 0;
   padding: $bpk-spacing-md $bpk-spacing-base;
   font-size: $bpk-font-size-h-3;
 }
+
+/// Secondary button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--secondary();
+///   }
 
 @mixin bpk-button--secondary {
   background-color: transparent;
@@ -60,6 +91,16 @@
     cursor: not-allowed;
   }
 }
+
+/// Selected button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--selected();
+///   }
 
 @mixin bpk-button--selected {
   background-color: $bpk-color-blue-500;

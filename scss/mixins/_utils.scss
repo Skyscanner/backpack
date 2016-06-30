@@ -1,6 +1,26 @@
+////
+/// @group utils
+////
+
+/// Hide visually and from screen readers.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hidden();
+///   }
+
 @mixin bpk-hidden {
   display: none !important;
 }
+
+/// Hide only visually, but have it available for screen readers:
+///
+/// http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+///
+/// @example scss
+///   .selector {
+///     @include bpk-visually-hidden();
+///   }
 
 @mixin bpk-visually-hidden {
   position: absolute;
@@ -12,6 +32,19 @@
   overflow: hidden;
   clip: rect(0 0 0 0);
 }
+
+
+/// Modifies the bpk-visually-hidden mixin to allow the element to be focusable when navigated to via the keyboard:
+///
+/// https://www.drupal.org/node/897638
+///
+/// @require {mixin} bpk-visually-hidden
+///
+/// @example scss
+///   .selector {
+///     @include bpk-visually-hidden();
+///     @include bpk-visually-hidden--focusable();
+///   }
 
 @mixin bpk-visually-hidden--focusable {
   &:active,
@@ -25,9 +58,23 @@
   }
 }
 
+/// Hide visually and from screen readers, but maintain layout.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-invisible();
+///   }
+
 @mixin bpk-invisible {
   visibility: hidden;
 }
+
+/// Clearfix: contain floats.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-clearfix();
+///   }
 
 @mixin bpk-clearfix {
   &::before,
