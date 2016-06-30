@@ -1,65 +1,115 @@
 @import './../bonds';
 
-@mixin _bpk-heading {
-  margin-top: 0;
+@mixin _bpk-heading($margin-top , $margin-bottom, $font-size, $font-weight, $line-height) {
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
 }
+
+////
+/// @group typography
+////
+
+/// Level 1 heading.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-heading-1();
+///   }
 
 @mixin bpk-heading-1 {
-  @include _bpk-heading;
-
-  margin-top: $bpk-margin-top-h-1;
-  margin-bottom: $bpk-margin-bottom-h-1;
-  font-size: $bpk-font-size-h-1;
-  font-weight: $bpk-font-weight-h-1;
-  line-height: $bpk-line-height-h-1;
+  @include _bpk-heading(
+    $bpk-margin-top-h-1,
+    $bpk-margin-bottom-h-1,
+    $bpk-font-size-h-1,
+    $bpk-font-weight-h-1,
+    $bpk-line-height-h-1
+  );
 }
+
+/// Level 2 heading.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-heading-2();
+///   }
 
 @mixin bpk-heading-2 {
-  @include _bpk-heading;
-
-  margin-top: $bpk-margin-top-h-2;
-  margin-bottom: $bpk-margin-bottom-h-2;
-  font-size: $bpk-font-size-h-2;
-  font-weight: $bpk-font-weight-h-2;
-  line-height: $bpk-line-height-h-2;
+  @include _bpk-heading(
+    $bpk-margin-top-h-2,
+    $bpk-margin-bottom-h-2,
+    $bpk-font-size-h-2,
+    $bpk-font-weight-h-2,
+    $bpk-line-height-h-2
+  );
 }
+
+/// Level 3 heading.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-heading-3();
+///   }
 
 @mixin bpk-heading-3 {
-  @include _bpk-heading;
-
-  margin-top: $bpk-margin-top-h-3;
-  margin-bottom: $bpk-margin-bottom-h-3;
-  font-size: $bpk-font-size-h-3;
-  font-weight: $bpk-font-weight-h-3;
-  line-height: $bpk-line-height-h-3;
+  @include _bpk-heading(
+    $bpk-margin-top-h-3,
+    $bpk-margin-bottom-h-3,
+    $bpk-font-size-h-3,
+    $bpk-font-weight-h-3,
+    $bpk-line-height-h-3
+  );
 }
+
+/// Level 4 heading.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-heading-4();
+///   }
 
 @mixin bpk-heading-4 {
-  @include _bpk-heading;
-
-  margin-top: $bpk-margin-top-h-4;
-  margin-bottom: $bpk-margin-bottom-h-4;
-  font-size: $bpk-font-size-h-4;
-  font-weight: $bpk-font-weight-h-4;
-  line-height: $bpk-line-height-h-4;
+  @include _bpk-heading(
+    $bpk-margin-top-h-4,
+    $bpk-margin-bottom-h-4,
+    $bpk-font-size-h-4,
+    $bpk-font-weight-h-4,
+    $bpk-line-height-h-4
+  );
 }
+
+/// Level 5 heading.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-heading-5();
+///   }
 
 @mixin bpk-heading-5 {
-  @include _bpk-heading;
-
-  margin-top: $bpk-margin-top-h-5;
-  margin-bottom: $bpk-margin-bottom-h-5;
-  font-size: $bpk-font-size-h-5;
-  font-weight: $bpk-font-weight-h-5;
-  line-height: $bpk-line-height-h-5;
+  @include _bpk-heading(
+    $bpk-margin-top-h-5,
+    $bpk-margin-bottom-h-5,
+    $bpk-font-size-h-5,
+    $bpk-font-weight-h-5,
+    $bpk-line-height-h-5
+  );
 }
 
-@mixin bpk-heading-6 {
-  @include _bpk-heading;
+/// Level 6 heading.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-heading-6();
+///   }
 
-  margin-top: $bpk-margin-top-h-6;
-  margin-bottom: $bpk-margin-bottom-h-6;
-  font-size: $bpk-font-size-h-6;
-  font-weight: $bpk-font-weight-h-6;
-  line-height: $bpk-line-height-h-6;
+@mixin bpk-heading-6 {
+  @include _bpk-heading(
+    $bpk-margin-top-h-6,
+    $bpk-margin-bottom-h-6,
+    $bpk-font-size-h-6,
+    $bpk-font-weight-h-6,
+    $bpk-line-height-h-6
+  );
 }

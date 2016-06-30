@@ -5,17 +5,16 @@ import * as routes from './../../constants/routes'
 import SideNavLayout from './../SideNavLayout'
 
 const links = [
-  { route: routes.TYPOGRAPHY, children: 'Typography' },
-  { route: routes.BUTTONS, children: 'Buttons' }
+  { route: routes.COLORS, children: 'Colours' }
 ]
 
-export const AtomsLayout = ({ children }) => (
+export const BondsLayout = ({ children }) => (
   <SideNavLayout links={links}>
     {children}
   </SideNavLayout>
 )
 
-AtomsLayout.propTypes = {
+BondsLayout.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
@@ -23,4 +22,4 @@ AtomsLayout.propTypes = {
 
 }
 
-export default AtomsLayout
+export default BondsLayout
