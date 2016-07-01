@@ -1,11 +1,6 @@
 @import '~normalize.css';
 @import 'scss/bonds';
 @import 'scss/mixins/utils';
-@import 'docs/components/BpkHeading/bpk-heading';
-@import 'docs/components/BpkParagraph/bpk-paragraph';
-@import 'docs/components/BpkLink/bpk-link';
-@import 'docs/components/BpkList/bpk-list';
-@import 'docs/components/BpkButton/bpk-button';
 
 :global {
   $scaffold-font-color: #373737;
@@ -60,3 +55,9 @@
     @include bpk-clearfix;
   }
 }
+
+@import 'docs/components/BpkHeading/bpk-heading';
+@import 'docs/components/BpkParagraph/bpk-paragraph';
+@import 'docs/components/BpkLink/bpk-link';
+@import 'docs/components/BpkList/bpk-list';
+@import 'docs/components/BpkButton/bpk-button';

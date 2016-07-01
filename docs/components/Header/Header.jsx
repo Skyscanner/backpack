@@ -17,7 +17,7 @@ const links = [
 
 const Header = () => (
   <header styleName='bpkdocs-header'>
-    <nav styleName='bpkdocs-header__nav'>
+    <nav styleName='bpkdocs-header__nav' className='clearfix'>
       <IndexLink to={ROUTES.HOME} styleName='bpkdocs-header__logo-link'>
         <span className='visuallyhidden'>Backpack</span>
       </IndexLink>

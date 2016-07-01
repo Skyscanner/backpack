@@ -370,6 +370,66 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box; }
+
+* {
+  -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit; }
+  *::before, *::after {
+    -webkit-box-sizing: inherit;
+       -moz-box-sizing: inherit;
+            box-sizing: inherit; }
+
+body {
+  color: #544c63;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Arial", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem; }
+  body.scaffold-font {
+    color: #373737;
+    font-family: arial, helvetica, clean, sans-serif;
+    font-size: 13px;
+    line-height: 1.231; }
+
+.hidden,
+.hide {
+  display: none !important; }
+
+.visuallyhidden,
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0); }
+  .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus,
+  .visually-hidden.focusable:active,
+  .visually-hidden.focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto; }
+
+.invisible {
+  visibility: hidden; }
+
+.clearfix::before, .clearfix::after {
+  display: table;
+  content: ''; }
+
+.clearfix::after {
+  clear: both; }
+
 .bpk-heading__h1 {
   margin-top: 0;
   margin-bottom: 1.5rem;
@@ -504,63 +564,3 @@ textarea {
       -webkit-box-shadow: none;
               box-shadow: none;
       cursor: not-allowed; }
-
-html {
-  font-size: 100%;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box; }
-
-* {
-  -webkit-box-sizing: inherit;
-     -moz-box-sizing: inherit;
-          box-sizing: inherit; }
-  *::before, *::after {
-    -webkit-box-sizing: inherit;
-       -moz-box-sizing: inherit;
-            box-sizing: inherit; }
-
-body {
-  color: #544c63;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Arial", sans-serif;
-  font-size: 1rem;
-  line-height: 1.5rem; }
-  body.scaffold-font {
-    color: #373737;
-    font-family: arial, helvetica, clean, sans-serif;
-    font-size: 13px;
-    line-height: 1.231; }
-
-.hidden,
-.hide {
-  display: none !important; }
-
-.visuallyhidden,
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0); }
-  .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus,
-  .visually-hidden.focusable:active,
-  .visually-hidden.focusable:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    clip: auto; }
-
-.invisible {
-  visibility: hidden; }
-
-.clearfix::before, .clearfix::after {
-  display: table;
-  content: ''; }
-
-.clearfix::after {
-  clear: both; }
