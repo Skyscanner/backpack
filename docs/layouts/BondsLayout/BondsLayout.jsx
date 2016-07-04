@@ -4,7 +4,8 @@ import SideNavLayout from './../SideNavLayout'
 import * as routes from './../../constants/routes'
 
 const links = [
-  { route: routes.COLORS, children: 'Colours' }
+  { route: routes.COLORS, children: 'Colours' },
+  { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' }
 ]
 
 export const BondsLayout = ({ children }) => (

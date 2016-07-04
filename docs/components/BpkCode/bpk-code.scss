@@ -4,7 +4,7 @@ $bpk-code-color: #000;
 $bpk-code-text-shadow-color: $bpk-color-white;
 $bpk-code-selection-color: #b3d4fc;
 $bpk-code-background-color: #f5f2f0;
-$bpk-code-inline-padding: .1rem;
+$bpk-code-inline-padding: 0 $bpk-spacing-sm;
 $bpk-code-comment-color: #708090;
 $bpk-code-punctuation-color: #999;
 $bpk-code-tag-color: #905;
@@ -20,7 +20,6 @@ $bpk-code-variable-color: #e90;
 .language-js {
   background: $bpk-code-background-color none;
   color: $bpk-code-color;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   text-align: left;
   text-shadow: 0 1px $bpk-code-text-shadow-color;
   white-space: pre;
@@ -36,7 +35,8 @@ $bpk-code-variable-color: #e90;
   }
 
   &--block {
-    margin: 0;
+    display: block;
+    margin: 0 0 $bpk-spacing-base;
     padding: $bpk-spacing-base;
     overflow: auto;
     -ms-overflow-style: none;
@@ -47,9 +47,11 @@ $bpk-code-variable-color: #e90;
   }
 
   &--inline {
+    display: inline-block;
     padding: $bpk-code-inline-padding;
     border-radius: $bpk-border-radius-sm;
     white-space: normal;
+    vertical-align: bottom;
   }
 }
 

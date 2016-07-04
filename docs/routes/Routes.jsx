@@ -13,6 +13,7 @@ import HomePage from './../pages/HomePage'
 
 import BondsPage from './../pages/BondsPage'
 import ColorsPage from './../pages/ColorsPage'
+import BaseStylesheetPage from './../pages/BaseStylesheetPage'
 
 import AtomsPage from './../pages/AtomsPage'
 import TypographyPage from './../pages/TypographyPage'
@@ -27,6 +28,7 @@ const Routes = (
     <Route path={ROUTES.BONDS} component={BondsLayout}>
       <IndexRoute component={BondsPage} />
       <Route path={ROUTES.COLORS} component={ColorsPage} />
+      <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
     </Route>
     <Route path={ROUTES.ATOMS} component={AtomsLayout}>
       <IndexRoute component={AtomsPage} />
