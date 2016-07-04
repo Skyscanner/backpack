@@ -1,4 +1,5 @@
 @import './../bonds';
+@import './../mixins/typography';
 
 ////
 /// @group buttons
@@ -86,9 +87,7 @@
 
   &:disabled {
     background-color: $bpk-color-gray-100;
-    color: $bpk-color-gray-300;
     box-shadow: none;
-    cursor: not-allowed;
   }
 }
 
@@ -118,9 +117,38 @@
   }
 
   &:disabled {
-    background-color: $bpk-color-gray-100;
-    color: $bpk-color-gray-300;
     box-shadow: none;
-    cursor: not-allowed;
+  }
+}
+
+/// Link-style button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--link();
+///   }
+
+@mixin bpk-button--link {
+  @include bpk-link;
+
+  background-color: transparent;
+  font-weight: normal;
+  box-shadow: none;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    color: $bpk-color-gray-300;
+    text-decoration: none;
   }
 }

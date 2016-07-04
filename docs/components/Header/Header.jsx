@@ -2,10 +2,8 @@ import React from 'react'
 import { IndexLink } from 'react-router'
 import CssModules from 'react-css-modules'
 
-import * as ROUTES from '../../constants/routes'
-
 import styles from './header.scss'
-
+import * as ROUTES from '../../constants/routes'
 import BpkLink from './../../components/BpkLink'
 
 const links = [

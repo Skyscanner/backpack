@@ -2,16 +2,13 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import CssModules from 'react-css-modules'
 
-import { getToken } from './../../tokens'
-import * as COLORS from './../../constants/colors'
-import * as TOKEN_GROUPS from '../../constants/token-groups'
-
 import styles from './colors-page.scss'
-
-import ColorSwatch from './../../components/ColorSwatch'
+import * as COLORS from './../../constants/colors'
 import BpkHeading from './../../components/BpkHeading'
+import ColorSwatch from './../../components/ColorSwatch'
+import { TOKEN_GROUPS, getTokenValue } from './../../tokens'
 
-const getHexColor = (color) => getToken(TOKEN_GROUPS.COLORS, color).value
+const getHexColor = (color) => getTokenValue(TOKEN_GROUPS.COLORS, color)
 
 const ColorsPage = () => (
   <section>

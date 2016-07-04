@@ -1,3 +1,5 @@
-import component from './BpkList.jsx'
+import list from './BpkList.jsx'
+import listItem from './BpkListItem.jsx'
 
-export default component
+export const BpkList = list
+export const BpkListItem = listItem

@@ -1,8 +1,8 @@
+import Prism from 'prismjs'
+import Beautify from 'js-beautify'
 import React, { PropTypes } from 'react'
 import CssModules from 'react-css-modules'
 import ReactDOMServer from 'react-dom/server'
-import Prism from 'prismjs'
-import Beautify from 'js-beautify'
 
 import styles from './bpk-code.scss'
 
@@ -28,7 +28,7 @@ const renderToStaticMarkup = (element) => {
 }
 
 const renderChildrenToStaticMarkup = (children) => {
-  return React.Children.map(children, (child) => { return renderToStaticMarkup(child) }).join('')
+  return React.Children.map(children, (child) => renderToStaticMarkup(child)).join('')
 }
 
 const prettyPrint = (code, syntax) => {

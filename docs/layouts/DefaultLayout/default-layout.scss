@@ -8,19 +8,33 @@
     padding: $bpk-spacing-lg $bpk-spacing-base;
   }
 
-  &__grid-overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 99999px;
-    background: linear-gradient(to bottom, transparent 50%, rgba($bpk-color-red-500, .3) 0) repeat left 0;
-    background-size: $bpk-line-height-lg $bpk-line-height-lg;
-    cursor: pointer;
+  &__vertical-rhythm-guide {
+    position: relative;
+
+    &::after {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: auto;
+      height: auto;
+      background: linear-gradient(to bottom, transparent 50%, rgba($bpk-color-red-500, .3) 0) repeat left 0;
+      background-size: $bpk-spacing-lg $bpk-spacing-lg;
+      content: '';
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    &:active {
+      &::after {
+        display: none;
+      }
+    }
   }
 
-  &__grid-toggle {
+  &__vertical-rhythm-guide-toggle {
     padding: 0;
     border: 0;
     outline: none;

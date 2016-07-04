@@ -19,7 +19,6 @@ OrganismsLayout.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]).isRequired
-
 }
 
 export default OrganismsLayout

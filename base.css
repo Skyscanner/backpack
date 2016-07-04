@@ -430,42 +430,42 @@ body {
 .clearfix::after {
   clear: both; }
 
-.bpk-heading__h1 {
+.bpk-heading-h1 {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 3rem; }
 
-.bpk-heading__h2 {
+.bpk-heading-h2 {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 1.875rem;
   font-weight: 400;
   line-height: 3rem; }
 
-.bpk-heading__h3 {
+.bpk-heading-h3 {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 1.375rem;
   font-weight: 400;
   line-height: 1.5rem; }
 
-.bpk-heading__h4 {
+.bpk-heading-h4 {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5rem; }
 
-.bpk-heading__h5 {
+.bpk-heading-h5 {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5rem; }
 
-.bpk-heading__h6 {
+.bpk-heading-h6 {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 1rem;
@@ -480,7 +480,10 @@ body {
   color: #00b2d6;
   text-decoration: none; }
   .bpk-link:hover {
-    color: #372f45; }
+    color: #372f45;
+    text-decoration: underline; }
+  .bpk-link:active {
+    color: #544c63; }
   .bpk-link--active {
     color: #544c63; }
 
@@ -542,10 +545,8 @@ body {
               box-shadow: 0 0 0 3px #00b2d6 inset; }
     .bpk-button--secondary:disabled {
       background-color: #dfdce3;
-      color: #898294;
       -webkit-box-shadow: none;
-              box-shadow: none;
-      cursor: not-allowed; }
+              box-shadow: none; }
   .bpk-button--selected {
     background-color: #00b2d6;
     color: #ffffff;
@@ -559,8 +560,25 @@ body {
     .bpk-button--selected:active {
       background-color: #008ca8; }
     .bpk-button--selected:disabled {
-      background-color: #dfdce3;
-      color: #898294;
       -webkit-box-shadow: none;
-              box-shadow: none;
-      cursor: not-allowed; }
+              box-shadow: none; }
+  .bpk-button--link {
+    color: #00b2d6;
+    text-decoration: none;
+    background-color: transparent;
+    font-weight: normal;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+    .bpk-button--link:hover {
+      color: #372f45;
+      text-decoration: underline; }
+    .bpk-button--link:active {
+      color: #544c63; }
+    .bpk-button--link:hover {
+      background-color: transparent; }
+    .bpk-button--link:active {
+      background-color: transparent; }
+    .bpk-button--link:disabled {
+      background-color: transparent;
+      color: #898294;
+      text-decoration: none; }

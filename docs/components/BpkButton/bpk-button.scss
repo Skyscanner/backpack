@@ -15,4 +15,8 @@
   &--selected {
     @include bpk-button--selected;
   }
+
+  &--link {
+    @include bpk-button--link;
+  }
 }

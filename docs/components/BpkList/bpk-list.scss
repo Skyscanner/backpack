@@ -2,17 +2,13 @@
 @import './../../../scss/mixins/typography';
 
 .bpk-list {
-  margin-top: $bpk-margin-top-list;
-  margin-bottom: $bpk-margin-bottom-list;
-  padding-left: $bpk-spacing-base;
+  @include bpk-list;
 
   &__item {
-    margin-top: $bpk-margin-top-list-item;
-    margin-bottom: $bpk-margin-bottom-list-item;
+    @include bpk-list-item;
   }
 
   & & {
-    margin-top: $bpk-margin-top-nested-list;
-    margin-bottom: $bpk-margin-bottom-nested-list;
+    @include bpk-list--nested;
   }
 }
