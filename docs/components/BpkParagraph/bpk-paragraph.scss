@@ -1,5 +1,4 @@
-@import './../../../scss/bonds';
-@import './../../../scss/mixins/typography';
+@import './../../../backpack';
 
 .bpk-paragraph {
   @include bpk-paragraph;
