@@ -12,8 +12,9 @@ import OrganismsLayout from './../layouts/OrganismsLayout'
 import HomePage from './../pages/HomePage'
 
 import BondsPage from './../pages/BondsPage'
-import ColorsPage from './../pages/ColorsPage'
 import BaseStylesheetPage from './../pages/BaseStylesheetPage'
+import ColorsPage from './../pages/ColorsPage'
+import FontsAndSpacingPage from './../pages/FontsAndSpacingPage'
 
 import AtomsPage from './../pages/AtomsPage'
 import TypographyPage from './../pages/TypographyPage'
@@ -27,8 +28,9 @@ const Routes = (
     <IndexRoute component={HomePage} />
     <Route path={ROUTES.BONDS} component={BondsLayout}>
       <IndexRoute component={BondsPage} />
-      <Route path={ROUTES.COLORS} component={ColorsPage} />
       <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
+      <Route path={ROUTES.COLORS} component={ColorsPage} />
+      <Route path={ROUTES.FONTS_AND_SPACING} component={FontsAndSpacingPage} />
     </Route>
     <Route path={ROUTES.ATOMS} component={AtomsLayout}>
       <IndexRoute component={AtomsPage} />

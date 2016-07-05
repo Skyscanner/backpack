@@ -37,7 +37,7 @@ const BaseStylesheetPage = () => (
         exceeded due to padding or border.
       </BpkListItem>
       <BpkListItem>
-        The default <BpkCode syntax='css' inline>font-family</BpkCode>,
+        The default <BpkCode syntax='css' inline>color</BpkCode>, <BpkCode syntax='css' inline>font-family</BpkCode>,
         &nbsp;<BpkCode syntax='css' inline>font-size</BpkCode> & <BpkCode syntax='css' inline>line-height</BpkCode>.
       </BpkListItem>
       <BpkListItem>

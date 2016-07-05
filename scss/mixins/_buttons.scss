@@ -14,8 +14,8 @@
 
 @mixin bpk-button {
   display: inline-block;
-  margin: $bpk-spacing-sm 0;
-  padding: $bpk-spacing-sm $bpk-spacing-md;
+  margin: $bpk-spacing-xs 0;
+  padding: $bpk-spacing-xs $bpk-spacing-sm;
   border: 0;
   border-radius: $bpk-border-radius-pill;
   outline: 0;
@@ -57,8 +57,8 @@
 
 @mixin bpk-button--large {
   margin: 0;
-  padding: $bpk-spacing-md $bpk-spacing-base;
-  font-size: $bpk-font-size-h-3;
+  padding: $bpk-spacing-sm $bpk-spacing-base;
+  font-size: $bpk-font-size-lg;
 }
 
 /// Secondary button. Modifies the bpk-button mixin.
