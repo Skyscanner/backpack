@@ -113,3 +113,90 @@
     $bpk-line-height-h-6
   );
 }
+
+/// Paragraph.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-paragraph();
+///   }
+
+@mixin bpk-paragraph {
+  margin-top: $bpk-margin-top-p;
+  margin-bottom: $bpk-margin-bottom-p;
+}
+
+/// List.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-list();
+///   }
+
+@mixin bpk-list {
+  margin-top: $bpk-margin-top-list;
+  margin-bottom: $bpk-margin-bottom-list;
+  padding-left: $bpk-spacing-base;
+}
+
+/// Nested list. Modifies the bpk-list mixin.
+///
+/// @require {mixin} bpk-list
+///
+/// @example scss
+///   .selector {
+///     @include bpk-list();
+///     @include bpk-list--nested();
+///   }
+
+@mixin bpk-list--nested {
+  margin-top: $bpk-margin-top-nested-list;
+  margin-bottom: $bpk-margin-bottom-nested-list;
+}
+
+/// List item.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-list-item();
+///   }
+
+@mixin bpk-list-item {
+  margin-top: $bpk-margin-top-list-item;
+  margin-bottom: $bpk-margin-bottom-list-item;
+}
+
+/// Inline link.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-link();
+///   }
+
+@mixin bpk-link {
+  color: $bpk-color-blue-500;
+  text-decoration: none;
+
+  &:hover {
+    color: $bpk-color-gray-700;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $bpk-color-gray-500;
+  }
+}
+
+/// Active link. Modifies the bpk-link mixin.
+///
+/// @require {mixin} bpk-link
+///
+/// @example scss
+///   .selector {
+///     @include bpk-link();
+///     @include bpk-link--active();
+///   }
+
+@mixin bpk-link--active {
+  color: $bpk-color-gray-500;
+}

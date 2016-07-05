@@ -1,8 +1,7 @@
 import React, { PropTypes } from 'react'
 
-import * as routes from './../../constants/routes'
-
 import SideNavLayout from './../SideNavLayout'
+import * as routes from './../../constants/routes'
 
 const links = [
   { route: routes.TYPOGRAPHY, children: 'Typography' },
@@ -20,7 +19,6 @@ AtomsLayout.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]).isRequired
-
 }
 
 export default AtomsLayout

@@ -2,18 +2,19 @@ import React, { PropTypes } from 'react'
 import CssModules from 'react-css-modules'
 
 import styles from './side-nav-layout.scss'
-
 import BpkLink from './../../components/BpkLink'
-import BpkList from './../../components/BpkList'
+import { BpkList, BpkListItem } from './../../components/BpkList'
 
 export const SideNavLayout = ({ links, children }) => (
   <div styleName='bpkdocs-side-nav-layout__container'>
     <nav styleName='bpkdocs-side-nav-layout__nav'>
       <BpkList>
         {links.map((link = {}) => (
-          <BpkLink key={link.route} to={link.route}>
-            {link.children}
-          </BpkLink>
+          <BpkListItem key={link.route}>
+            <BpkLink to={link.route}>
+              {link.children}
+            </BpkLink>
+          </BpkListItem>
         ))}
       </BpkList>
     </nav>

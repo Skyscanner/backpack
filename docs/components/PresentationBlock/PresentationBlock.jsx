@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react'
 import CssModules from 'react-css-modules'
 
 import styles from './presentation-block.scss'
-
 import BpkCode from './../BpkCode'
 
 const PresentationBlock = (props) => (

@@ -1,14 +1,10 @@
 @import './../../../scss/bonds';
+@import './../../../scss/mixins/typography';
 
 .bpk-link {
-  color: $bpk-color-blue-500;
-  text-decoration: none;
-
-  &:hover {
-    color: $bpk-color-gray-700;
-  }
+  @include bpk-link;
 
   &--active {
-    color: $bpk-color-gray-500;
+    @include bpk-link--active;
   }
 }

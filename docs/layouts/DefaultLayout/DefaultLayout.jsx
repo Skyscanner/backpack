@@ -3,12 +3,10 @@ import Helmet from 'react-helmet'
 import CssModules from 'react-css-modules'
 
 import './../../../base.scss'
-
 import styles from './default-layout.scss'
-import pkg from './../../../package.json'
-
 import Header from '../../components/Header'
 import BpkLink from '../../components/BpkLink'
+import pkg from './../../../package.json'
 
 export class DefaultLayout extends React.Component {
   constructor (props) {
@@ -17,26 +15,22 @@ export class DefaultLayout extends React.Component {
     this.toggleGrid = this.toggleGrid.bind(this)
 
     this.state = {
-      gridEnabled: false
+      guideEnabled: false
     }
   }
 
   toggleGrid () {
     this.setState({
-      gridEnabled: !this.state.gridEnabled
+      guideEnabled: !this.state.guideEnabled
     })
   }
 
   render () {
     const { children } = this.props
-    const { gridEnabled } = this.state
+    const { guideEnabled } = this.state
 
     return (
-      <div>
-        {gridEnabled
-          ? <span styleName='bpkdocs-default-layout__grid-overlay' onClick={this.toggleGrid}></span>
-          : null
-        }
+      <div styleName={guideEnabled ? 'bpkdocs-default-layout__vertical-rhythm-guide' : ''}>
         <Helmet titleTemplate='%s | Backpack' />
         <Header />
         <main>
@@ -45,8 +39,9 @@ export class DefaultLayout extends React.Component {
         <footer styleName='bpkdocs-default-layout__footer'>
           v{pkg.version}. Copyright Skyscanner {new Date().getFullYear()}.
           &nbsp;
-          <button type='button' styleName='bpkdocs-default-layout__grid-toggle' onClick={this.toggleGrid}>
-            Grid is {gridEnabled ? 'on' : 'off'}.
+          <button type='button' styleName='bpkdocs-default-layout__vertical-rhythm-guide-toggle'
+            onClick={this.toggleGrid}>
+            Vertical rhythm guide is {guideEnabled ? 'on' : 'off'}.
           </button>
           <br />
           Maintained by the <BpkLink href='mailto:backpack@skyscanner.net'>Backpack Design System Squad</BpkLink>

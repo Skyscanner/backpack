@@ -1,16 +1,16 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
+import BpkLink from './../../components/BpkLink'
 import BpkHeading from './../../components/BpkHeading'
 import BpkParagraph from './../../components/BpkParagraph'
-import BpkList from './../../components/BpkList'
-import BpkLink from './../../components/BpkLink'
-
+import { BpkList, BpkListItem } from './../../components/BpkList'
 import PresentationBlock from './../../components/PresentationBlock'
 
 const anchors = {
   headings: 'typography-page-headings',
   paragraphs: 'typography-page-paragraphs',
+  links: 'typography-page-links',
   lists: 'typography-page-lists'
 }
 
@@ -18,13 +18,22 @@ const TypographyPage = () => (
   <section>
     <Helmet title='Typography' />
     <BpkHeading level='h1'>Typography</BpkHeading>
-    <BpkParagraph>Headings, paragraphs, blockquotes, lists and more.</BpkParagraph>
+    <BpkParagraph>Headings, paragraphs, links, lists and more.</BpkParagraph>
     <BpkHeading level='h2'>Contents</BpkHeading>
-    <BpkList children={[
-      <BpkLink href={`#${anchors.headings}`}>Headings</BpkLink>,
-      <BpkLink href={`#${anchors.paragraphs}`}>Paragaphs</BpkLink>,
-      <BpkLink href={`#${anchors.lists}`}>Lists</BpkLink>
-    ]} />
+    <BpkList>
+      <BpkListItem>
+        <BpkLink href={`#${anchors.headings}`}>Headings</BpkLink>
+      </BpkListItem>
+      <BpkListItem>
+        <BpkLink href={`#${anchors.paragraphs}`}>Paragaphs</BpkLink>
+      </BpkListItem>
+      <BpkListItem>
+        <BpkLink href={`#${anchors.links}`}>Links</BpkLink>
+      </BpkListItem>
+      <BpkListItem>
+        <BpkLink href={`#${anchors.lists}`}>Lists</BpkLink>
+      </BpkListItem>
+    </BpkList>
     <BpkHeading id={anchors.headings} level='h2'>Headings</BpkHeading>
     <PresentationBlock>
       <BpkHeading level='h1'>Heading 1</BpkHeading>
@@ -49,10 +58,30 @@ const TypographyPage = () => (
         rizzle, check out this. Nizzle suscipizzle. Shizznit semper crackalackin phat boofron.
       </BpkParagraph>
     </PresentationBlock>
+    <BpkHeading id={anchors.links} level='h2'>Links</BpkHeading>
+    <PresentationBlock>
+      <BpkLink href='#'>Link 1</BpkLink>{'\n'}
+      <BpkLink href='#'>Link 2</BpkLink>{'\n'}
+      <BpkLink href='#'>Link 3</BpkLink>
+    </PresentationBlock>
     <BpkHeading id={anchors.lists} level='h2'>Lists</BpkHeading>
     <PresentationBlock>
-      <BpkList children={['Apples', 'Oranges', 'Pears']} />
-      <BpkList children={['First', 'Second', 'First']} ordered />
+      <BpkList>
+        <BpkListItem>Apples</BpkListItem>
+        <BpkListItem>Oranges
+          <BpkList>
+            <BpkListItem>Tangerines</BpkListItem>
+            <BpkListItem>Mandarins</BpkListItem>
+            <BpkListItem>Satsumas</BpkListItem>
+          </BpkList>
+        </BpkListItem>
+        <BpkListItem>Pears</BpkListItem>
+      </BpkList>
+      <BpkList ordered>
+        <BpkListItem>First</BpkListItem>
+        <BpkListItem>Second</BpkListItem>
+        <BpkListItem>First</BpkListItem>
+      </BpkList>
     </PresentationBlock>
   </section>
 )

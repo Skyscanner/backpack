@@ -1,9 +1,8 @@
 import React from 'react'
-import CssModules from 'react-css-modules'
 import Helmet from 'react-helmet'
+import CssModules from 'react-css-modules'
 
 import styles from './home-page.scss'
-
 import BpkHeading from './../../components/BpkHeading'
 import BpkButton from './../../components/BpkButton'
 

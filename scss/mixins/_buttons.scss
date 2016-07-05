@@ -1,4 +1,5 @@
 @import './../bonds';
+@import './../mixins/typography';
 
 ////
 /// @group buttons
@@ -13,8 +14,8 @@
 
 @mixin bpk-button {
   display: inline-block;
-  margin: $bpk-spacing-sm 0;
-  padding: $bpk-spacing-sm $bpk-spacing-md;
+  margin: $bpk-spacing-xs 0;
+  padding: $bpk-spacing-xs $bpk-spacing-sm;
   border: 0;
   border-radius: $bpk-border-radius-pill;
   outline: 0;
@@ -56,8 +57,8 @@
 
 @mixin bpk-button--large {
   margin: 0;
-  padding: $bpk-spacing-md $bpk-spacing-base;
-  font-size: $bpk-font-size-h-3;
+  padding: $bpk-spacing-sm $bpk-spacing-base;
+  font-size: $bpk-font-size-lg;
 }
 
 /// Secondary button. Modifies the bpk-button mixin.
@@ -86,9 +87,7 @@
 
   &:disabled {
     background-color: $bpk-color-gray-100;
-    color: $bpk-color-gray-300;
     box-shadow: none;
-    cursor: not-allowed;
   }
 }
 
@@ -118,9 +117,38 @@
   }
 
   &:disabled {
-    background-color: $bpk-color-gray-100;
-    color: $bpk-color-gray-300;
     box-shadow: none;
-    cursor: not-allowed;
+  }
+}
+
+/// Link-style button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--link();
+///   }
+
+@mixin bpk-button--link {
+  @include bpk-link;
+
+  background-color: transparent;
+  font-weight: normal;
+  box-shadow: none;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    color: $bpk-color-gray-300;
+    text-decoration: none;
   }
 }

@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
 import CssModules from 'react-css-modules'
-import omit from 'lodash/omit'
 
 import styles from './bpk-button.scss'
 
@@ -9,30 +8,25 @@ const BpkButton = (props) => {
     'bpk-button',
     `${props.secondary ? 'bpk-button--secondary' : ''}`,
     `${props.selected ? 'bpk-button--selected' : ''}`,
-    `${props.large ? 'bpk-button--large' : ''}`
+    `${props.large ? 'bpk-button--large' : ''}`,
+    `${props.link ? 'bpk-button--link' : ''}`
   ]
 
-  return (
-    <button type='button' styleName={styleNames.join(' ')}{...omit(props, ['selected'])}>
-      {props.children}
-    </button>
-  )
+  return <button type='button' styleName={styleNames.join(' ')} {...props} />
 }
 
 BpkButton.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]),
   secondary: PropTypes.bool,
   selected: PropTypes.bool,
-  large: PropTypes.bool
+  large: PropTypes.bool,
+  link: PropTypes.bool
 }
 
 BpkButton.defaultProps = {
   secondary: false,
   selected: false,
-  large: false
+  large: false,
+  link: false
 }
 
 export default CssModules(BpkButton, styles, { allowMultiple: true })

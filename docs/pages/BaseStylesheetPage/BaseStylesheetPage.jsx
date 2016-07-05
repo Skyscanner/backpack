@@ -1,0 +1,65 @@
+import React from 'react'
+import Helmet from 'react-helmet'
+
+import BpkLink from './../../components/BpkLink'
+import BpkCode from './../../components/BpkCode'
+import BpkHeading from './../../components/BpkHeading'
+import BpkParagraph from './../../components/BpkParagraph'
+import { BpkList, BpkListItem } from './../../components/BpkList'
+
+const html5BoilerplateHelpersLink = 'https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#common-helpers'
+const baseStylesheetBlogPostLink = 'https://skyspace.sharepoint.com/sites/development/blog/Lists/Posts/Post.aspx?ID=96'
+
+const BaseStylesheetPage = () => (
+  <section>
+    <Helmet title='Base stylesheet' />
+    <BpkHeading level='h1'>Base stylesheet</BpkHeading>
+    <BpkParagraph>
+      <strong>
+        Note: The scaffolding still uses a different, older base stylesheet. Please refer to
+        this <BpkLink href={baseStylesheetBlogPostLink} target='_blank'>blog post</BpkLink> for
+        more info and
+        this <BpkLink href={'https://gojira.skyscanner.net/browse/BPK-72'} target='_blank'>JIRA card</BpkLink> for
+        updates.
+      </strong>
+    </BpkParagraph>
+    <BpkHeading level='h2'>What's in it?</BpkHeading>
+    <BpkList>
+      <BpkListItem>
+        For improved cross-browser rendering,
+        we use <BpkLink href='http://necolas.github.io/normalize.css/' target='_blank'>Normalize.css</BpkLink> to
+        correct small inconsistencies across browsers and devices.
+      </BpkListItem>
+      <BpkListItem>
+        The box-sizing is globally set on every element,
+        including <BpkCode syntax='css' inline>*:before</BpkCode> and <BpkCode syntax='css' inline>*:after</BpkCode>,
+        to <BpkCode syntax='css' inline>border-box</BpkCode>. This ensures that the declared width of element is never
+        exceeded due to padding or border.
+      </BpkListItem>
+      <BpkListItem>
+        The default <BpkCode syntax='css' inline>color</BpkCode>, <BpkCode syntax='css' inline>font-family</BpkCode>,
+        &nbsp;<BpkCode syntax='css' inline>font-size</BpkCode> & <BpkCode syntax='css' inline>line-height</BpkCode>.
+      </BpkListItem>
+      <BpkListItem>
+        Utility classes based on
+        the <BpkLink href={html5BoilerplateHelpersLink} target='_blank'>HTML5 Boilerplate common helpers</BpkLink>,
+        including: &nbsp;<BpkCode syntax='css' inline>.hidden</BpkCode>,
+        &nbsp;<BpkCode syntax='css' inline>.visuallyhidden</BpkCode>,
+        &nbsp;<BpkCode syntax='css' inline>.visuallyhidden.focusable</BpkCode>,
+        &nbsp;<BpkCode syntax='css' inline>.invisible</BpkCode> and <BpkCode syntax='css' inline>.clearfix</BpkCode>.
+      </BpkListItem>
+      <BpkListItem>That's it so far...</BpkListItem>
+    </BpkList>
+    <BpkHeading level='h2'>Usage</BpkHeading>
+    <BpkParagraph>
+      Consumer's of the website scaffolding should expect this base stylesheet to be on the page already. If
+      you need to emulate this base in your component's local test harness, the compiled css is available for you to
+      import like so:
+    </BpkParagraph>
+    <BpkCode>{'<link rel="stylesheet" href="/node_modules/backpack/base.css">'}</BpkCode>
+    <BpkParagraph>Alternatively you could import using SASS:</BpkParagraph>
+    <BpkCode syntax='css'>@import '~backpack/base';</BpkCode>
+  </section>
+)
+
+export default BaseStylesheetPage

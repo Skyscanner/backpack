@@ -2,58 +2,56 @@
 @import 'scss/bonds';
 @import 'scss/mixins/utils';
 
-:global {
-  $scaffold-font-color: #373737;
+$scaffold-font-color: #373737;
 
-  html {
-    font-size: $bpk-font-size-root;
-    box-sizing: border-box;
-  }
+html {
+  font-size: $bpk-font-size-root;
+  box-sizing: border-box;
+}
 
-  * {
+* {
+  box-sizing: inherit;
+
+  &::before,
+  &::after {
     box-sizing: inherit;
-
-    &::before,
-    &::after {
-      box-sizing: inherit;
-    }
   }
+}
 
-  body {
-    color: $bpk-font-color-base;
-    font-family: $bpk-font-family-base;
-    font-size: $bpk-font-size-base;
-    line-height: $bpk-line-height-base;
+body {
+  color: $bpk-font-color-base;
+  font-family: $bpk-font-family-base;
+  font-size: $bpk-font-size-base;
+  line-height: $bpk-line-height-base;
 
-    &.scaffold-font {
-      color: $scaffold-font-color;
-      font-family: arial, helvetica, clean, sans-serif;
-      font-size: 13px;
-      line-height: 1.231;
-    }
+  &.scaffold-font {
+    color: $scaffold-font-color;
+    font-family: arial, helvetica, clean, sans-serif;
+    font-size: 13px;
+    line-height: 1.231;
   }
+}
 
-  .hidden,
-  .hide {
-    @include bpk-hidden;
+.hidden,
+.hide {
+  @include bpk-hidden;
+}
+
+.visuallyhidden,
+.visually-hidden {
+  @include bpk-visually-hidden;
+
+  &.focusable {
+    @include bpk-visually-hidden--focusable;
   }
+}
 
-  .visuallyhidden,
-  .visually-hidden {
-    @include bpk-visually-hidden;
+.invisible {
+  @include bpk-invisible;
+}
 
-    &.focusable {
-      @include bpk-visually-hidden--focusable;
-    }
-  }
-
-  .invisible {
-    @include bpk-invisible;
-  }
-
-  .clearfix {
-    @include bpk-clearfix;
-  }
+.clearfix {
+  @include bpk-clearfix;
 }
 
 @import 'docs/components/BpkHeading/bpk-heading';
