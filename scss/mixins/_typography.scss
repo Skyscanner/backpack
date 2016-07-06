@@ -1,16 +1,16 @@
 @import './../bonds';
 
-@mixin _bpk-heading($margin-top , $margin-bottom, $font-size, $font-weight, $line-height) {
+////
+/// @group typography
+////
+
+@mixin _bpk-heading($margin-top, $margin-bottom, $font-size, $font-weight, $line-height) {
   margin-top: $margin-top;
   margin-bottom: $margin-bottom;
   font-size: $font-size;
   font-weight: $font-weight;
   line-height: $line-height;
 }
-
-////
-/// @group typography
-////
 
 /// Level 1 heading.
 ///
@@ -21,11 +21,11 @@
 
 @mixin bpk-heading-1 {
   @include _bpk-heading(
-    $bpk-margin-top-h-1,
-    $bpk-margin-bottom-h-1,
-    $bpk-font-size-h-1,
-    $bpk-font-weight-h-1,
-    $bpk-line-height-h-1
+    $bpk-h-1-margin-top,
+    $bpk-h-1-margin-bottom,
+    $bpk-h-1-font-size,
+    $bpk-h-1-font-weight,
+    $bpk-h-1-line-height
   );
 }
 
@@ -38,11 +38,11 @@
 
 @mixin bpk-heading-2 {
   @include _bpk-heading(
-    $bpk-margin-top-h-2,
-    $bpk-margin-bottom-h-2,
-    $bpk-font-size-h-2,
-    $bpk-font-weight-h-2,
-    $bpk-line-height-h-2
+    $bpk-h-2-margin-top,
+    $bpk-h-2-margin-bottom,
+    $bpk-h-2-font-size,
+    $bpk-h-2-font-weight,
+    $bpk-h-2-line-height
   );
 }
 
@@ -55,11 +55,11 @@
 
 @mixin bpk-heading-3 {
   @include _bpk-heading(
-    $bpk-margin-top-h-3,
-    $bpk-margin-bottom-h-3,
-    $bpk-font-size-h-3,
-    $bpk-font-weight-h-3,
-    $bpk-line-height-h-3
+    $bpk-h-3-margin-top,
+    $bpk-h-3-margin-bottom,
+    $bpk-h-3-font-size,
+    $bpk-h-3-font-weight,
+    $bpk-h-3-line-height
   );
 }
 
@@ -72,11 +72,11 @@
 
 @mixin bpk-heading-4 {
   @include _bpk-heading(
-    $bpk-margin-top-h-4,
-    $bpk-margin-bottom-h-4,
-    $bpk-font-size-h-4,
-    $bpk-font-weight-h-4,
-    $bpk-line-height-h-4
+    $bpk-h-4-margin-top,
+    $bpk-h-4-margin-bottom,
+    $bpk-h-4-font-size,
+    $bpk-h-4-font-weight,
+    $bpk-h-4-line-height
   );
 }
 
@@ -89,11 +89,11 @@
 
 @mixin bpk-heading-5 {
   @include _bpk-heading(
-    $bpk-margin-top-h-5,
-    $bpk-margin-bottom-h-5,
-    $bpk-font-size-h-5,
-    $bpk-font-weight-h-5,
-    $bpk-line-height-h-5
+    $bpk-h-5-margin-top,
+    $bpk-h-5-margin-bottom,
+    $bpk-h-5-font-size,
+    $bpk-h-5-font-weight,
+    $bpk-h-5-line-height
   );
 }
 
@@ -106,11 +106,11 @@
 
 @mixin bpk-heading-6 {
   @include _bpk-heading(
-    $bpk-margin-top-h-6,
-    $bpk-margin-bottom-h-6,
-    $bpk-font-size-h-6,
-    $bpk-font-weight-h-6,
-    $bpk-line-height-h-6
+    $bpk-h-6-margin-top,
+    $bpk-h-6-margin-bottom,
+    $bpk-h-6-font-size,
+    $bpk-h-6-font-weight,
+    $bpk-h-6-line-height
   );
 }
 
@@ -122,8 +122,8 @@
 ///   }
 
 @mixin bpk-paragraph {
-  margin-top: $bpk-margin-top-p;
-  margin-bottom: $bpk-margin-bottom-p;
+  margin-top: $bpk-p-margin-top;
+  margin-bottom: $bpk-p-margin-bottom;
 }
 
 /// List.
@@ -134,8 +134,8 @@
 ///   }
 
 @mixin bpk-list {
-  margin-top: $bpk-margin-top-list;
-  margin-bottom: $bpk-margin-bottom-list;
+  margin-top: $bpk-list-margin-top;
+  margin-bottom: $bpk-list-margin-bottom;
   padding-left: $bpk-spacing-base;
 }
 
@@ -150,8 +150,8 @@
 ///   }
 
 @mixin bpk-list--nested {
-  margin-top: $bpk-margin-top-nested-list;
-  margin-bottom: $bpk-margin-bottom-nested-list;
+  margin-top: $bpk-list-nested-margin-top;
+  margin-bottom: $bpk-list-nested-margin-bottom;
 }
 
 /// List item.
@@ -162,8 +162,8 @@
 ///   }
 
 @mixin bpk-list-item {
-  margin-top: $bpk-margin-top-list-item;
-  margin-bottom: $bpk-margin-bottom-list-item;
+  margin-top: $bpk-list-item-margin-top;
+  margin-bottom: $bpk-list-item-margin-bottom;
 }
 
 /// Inline link.

@@ -1,5 +1,4 @@
-@import './../../../scss/bonds';
-@import './../../../scss/mixins/breakpoints';
+@import './../../../backpack';
 
 .bpkdocs-default-layout {
   &__footer {
@@ -21,7 +20,7 @@
       width: auto;
       height: auto;
       background: linear-gradient(to bottom, transparent 50%, rgba($bpk-color-red-500, .3) 0) repeat left 0;
-      background-size: $bpk-spacing-lg $bpk-spacing-lg;
+      background-size: $bpk-spacing-base $bpk-spacing-base;
       content: '';
       z-index: 9999;
       pointer-events: none;

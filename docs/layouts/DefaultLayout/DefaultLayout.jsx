@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react'
 import Helmet from 'react-helmet'
 import CssModules from 'react-css-modules'
 
-import './../../../base.scss'
 import styles from './default-layout.scss'
 import Header from '../../components/Header'
 import BpkLink from '../../components/BpkLink'

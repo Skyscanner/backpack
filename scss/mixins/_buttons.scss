@@ -1,5 +1,5 @@
 @import './../bonds';
-@import './../mixins/typography';
+@import 'typography';
 
 ////
 /// @group buttons
@@ -14,33 +14,33 @@
 
 @mixin bpk-button {
   display: inline-block;
-  margin: $bpk-spacing-xs 0;
-  padding: $bpk-spacing-xs $bpk-spacing-sm;
+  margin: 0;
+  padding: $bpk-button-padding-y $bpk-button-padding-x;
   border: 0;
-  border-radius: $bpk-border-radius-pill;
+  border-radius: $bpk-button-border-radius;
   outline: 0;
-  background-color: $bpk-color-green-500;
-  color: $bpk-color-white;
-  font-size: $bpk-font-size-base;
-  font-weight: bold;
-  line-height: $bpk-line-height-base;
-  text-align: center;
+  background-color: $bpk-button-background-color;
+  color: $bpk-button-color;
+  font-size: $bpk-button-font-size;
+  font-weight: $bpk-button-font-weight;
+  line-height: $bpk-button-line-height;
+  text-align: $bpk-button-text-align;
   white-space: nowrap;
   cursor: pointer;
   vertical-align: middle;
   user-select: none;
 
   &:hover {
-    background-color: $bpk-color-green-300;
+    background-color: $bpk-button-hover-background-color;
   }
 
   &:active {
-    background-color: $bpk-color-green-700;
+    background-color: $bpk-button-active-background-color;
   }
 
   &:disabled {
-    background-color: $bpk-color-gray-100;
-    color: $bpk-color-gray-300;
+    background-color: $bpk-button-disabled-background-color;
+    color: $bpk-button-disabled-color;
     cursor: not-allowed;
   }
 }
