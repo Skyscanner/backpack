@@ -1,16 +1,16 @@
 @import './../bonds';
 
-@mixin _bpk-heading($margin-top , $margin-bottom, $font-size, $font-weight, $line-height) {
+////
+/// @group typography
+////
+
+@mixin _bpk-heading($margin-top, $margin-bottom, $font-size, $font-weight, $line-height) {
   margin-top: $margin-top;
   margin-bottom: $margin-bottom;
   font-size: $font-size;
   font-weight: $font-weight;
   line-height: $line-height;
 }
-
-////
-/// @group typography
-////
 
 /// Level 1 heading.
 ///

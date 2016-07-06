@@ -1,3 +1,5 @@
+import './../base.scss'
+
 export default ({ head = {}, html = '', assets = {} }) => {
   return `<!doctype html>
 

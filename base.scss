@@ -1,8 +1,5 @@
 @import '~normalize.css';
-@import 'scss/bonds';
-@import 'scss/mixins/utils';
-
-$scaffold-font-color: #373737;
+@import 'backpack';
 
 html {
   font-size: $bpk-font-size-root;
@@ -23,13 +20,6 @@ body {
   font-family: $bpk-font-family-base;
   font-size: $bpk-font-size-base;
   line-height: $bpk-line-height-base;
-
-  &.scaffold-font {
-    color: $scaffold-font-color;
-    font-family: arial, helvetica, clean, sans-serif;
-    font-size: 13px;
-    line-height: 1.231;
-  }
 }
 
 .hidden,
@@ -53,9 +43,3 @@ body {
 .clearfix {
   @include bpk-clearfix;
 }
-
-@import 'docs/components/BpkHeading/bpk-heading';
-@import 'docs/components/BpkParagraph/bpk-paragraph';
-@import 'docs/components/BpkLink/bpk-link';
-@import 'docs/components/BpkList/bpk-list';
-@import 'docs/components/BpkButton/bpk-button';
