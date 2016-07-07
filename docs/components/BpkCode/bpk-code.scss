@@ -1,130 +1,36 @@
 @import './../../../backpack';
 
-$bpk-code-color: #000;
-$bpk-code-text-shadow-color: $bpk-color-white;
-$bpk-code-selection-color: #b3d4fc;
-$bpk-code-background-color: #f5f2f0;
-$bpk-code-inline-padding: 0 $bpk-spacing-xs;
-$bpk-code-comment-color: #708090;
-$bpk-code-punctuation-color: #999;
-$bpk-code-tag-color: #905;
-$bpk-code-attribute-color: #690;
-$bpk-code-operator-background-color: hsla(0, 0%, 100%, .5);
-$bpk-code-operator-color: #a67f59;
-$bpk-code-attribute-value-color: #07a;
-$bpk-code-function-color: #dd4a68;
-$bpk-code-variable-color: #e90;
-
-.language-html,
-.language-css,
-.language-js {
-  background: $bpk-code-background-color none;
-  color: $bpk-code-color;
-  text-align: left;
-  text-shadow: 0 1px $bpk-code-text-shadow-color;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  tab-size: 4;
-  hyphens: none;
-
-  &::selection {
-    background: $bpk-code-selection-color;
-    text-shadow: none;
-  }
-
-  &--block {
-    display: block;
+.bpk-code {
+  &__pre {
     margin: 0 0 $bpk-spacing-base;
     padding: $bpk-spacing-base;
-    overflow: auto;
-    -ms-overflow-style: none;
+    background-color: $bpk-color-gray-50;
+  }
 
-    &::-webkit-scrollbar {
-      display: none;
+  &__code {
+    margin: 0;
+    padding: 0;
+    background-color: $bpk-color-gray-50;
+    color: $bpk-color-gray-700;
+    text-align: left;
+    text-shadow: 0 1px $bpk-color-white;
+    vertical-align: bottom;
+
+    &--block {
+      display: block;
+      overflow: auto;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &--inline {
+      display: inline;
+      padding: .125rem;
+      border-radius: $bpk-border-radius-sm;
+      white-space: nowrap;
     }
   }
-
-  &--inline {
-    display: inline-block;
-    padding: $bpk-code-inline-padding;
-    border-radius: $bpk-border-radius-sm;
-    white-space: normal;
-    vertical-align: bottom;
-  }
-}
-
-.token {
-  &.comment,
-  &.prolog,
-  &.doctype,
-  &.cdata {
-    color: $bpk-code-comment-color;
-  }
-
-  &.punctuation {
-    color: $bpk-code-punctuation-color;
-  }
-
-  &.property,
-  &.tag,
-  &.boolean,
-  &.number,
-  &.constant,
-  &.symbol,
-  &.deleted {
-    color: $bpk-code-tag-color;
-  }
-
-  &.selector,
-  &.attr-name,
-  &.string,
-  &.char,
-  &.builtin,
-  &.inserted {
-    color: $bpk-code-attribute-color;
-  }
-
-  &.operator,
-  &.entity,
-  &.url,
-  .language-css &.string,
-  .style &.string {
-    background-color: $bpk-code-operator-background-color;
-    color: $bpk-code-operator-color;
-  }
-
-  &.atrule,
-  &.attr-value,
-  &.keyword {
-    color: $bpk-code-attribute-value-color;
-  }
-
-  &.function {
-    color: $bpk-code-function-color;
-  }
-
-  &.regex,
-  &.important,
-  &.variable {
-    color: $bpk-code-variable-color;
-  }
-
-  &.important,
-  &.bold {
-    font-weight: bold;
-  }
-
-  &.italic {
-    font-style: italic;
-  }
-
-  &.entity {
-    cursor: help;
-  }
-}
-
-.namespace {
-  opacity: .7;
 }
