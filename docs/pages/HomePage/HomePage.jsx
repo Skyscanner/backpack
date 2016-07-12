@@ -3,8 +3,8 @@ import Helmet from 'react-helmet'
 import CssModules from 'react-css-modules'
 
 import styles from './home-page.scss'
+import BpkButton from 'bpk-component-button'
 import BpkHeading from './../../components/BpkHeading'
-import BpkButton from './../../components/BpkButton'
 
 const HomePage = () => (
   <section>
