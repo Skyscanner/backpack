@@ -6,6 +6,8 @@ import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin'
 
 import * as ROUTES from './docs/constants/routes'
 
+const { BPK_TOKENS } = process.env
+
 const staticSiteGeneratorConfig = {
   paths: [
     ROUTES.HOME,
@@ -93,9 +95,7 @@ const config = {
   postcss,
 
   sass: {
-    data: process.env.BPK_THEME
-      ? fs.readFileSync(require.resolve(`backpack-tokens/tokens/${process.env.BPK_THEME}.scss`))
-      : ''
+    data: BPK_TOKENS ? fs.readFileSync(require.resolve(`backpack-tokens/tokens/${BPK_TOKENS}.scss`)) : ''
   },
 
   devServer: {

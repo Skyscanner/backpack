@@ -1,8 +1,5 @@
-colours = require('./colours.json')
-
 module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-compress')
-  grunt.loadTasks('tasks')
 
   grunt.initConfig
 
