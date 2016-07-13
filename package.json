@@ -1,7 +1,7 @@
 {
   "name": "backpack",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Backpack Design System",
   "scripts": {
     "clean:dist": "rm -rf dist",
