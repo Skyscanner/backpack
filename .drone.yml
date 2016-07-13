@@ -22,18 +22,18 @@ publish:
     when:
       branch: master
 
-#  s3_sync:
-#    acl: public-read
-#    region: "eu-west-1"
-#    bucket: "backpack.prod.aws.skyscnr.com"
-#    access_key: $$PROD_ACCESS_KEY
-#    secret_key: $$PROD_SECRET_KEY
-#    source: dist/
-#    target: /
-#    delete: true
-#    content_encoding:
-#      ".js": gzip
-#      ".css": gzip
-#      ".html": gzip
-#    when:
-#      branch: master
+  s3_sync:
+    acl: public-read
+    region: "eu-west-1"
+    bucket: "backpack.prod.aws.skyscnr.com"
+    access_key: $$PROD_ACCESS_KEY
+    secret_key: $$PROD_SECRET_KEY
+    source: dist/
+    target: /
+    delete: true
+    content_encoding:
+      ".js": gzip
+      ".css": gzip
+      ".html": gzip
+    when:
+      branch: master
