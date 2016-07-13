@@ -1,5 +1,6 @@
 {
   "name": "backpack",
+  "private": true,
   "version": "0.0.1",
   "description": "Backpack Design System",
   "scripts": {
@@ -16,6 +17,12 @@
     "test": "npm run lint"
   },
   "main": "_backpack.scss",
+  "files": [
+    "scss",
+    "_backpack.scss",
+    "base.scss",
+    "base.css"
+  ],
   "repository": {
     "type": "git",
     "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
