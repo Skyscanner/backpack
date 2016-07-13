@@ -13,21 +13,21 @@ const getHexColor = (color) => getTokenValue(tokenCategories.COLORS, color)
 
 const ColorsPage = () => (
   <section>
-    <Helmet title='Colors' />
-    <BpkHeading level='h1'>Colors</BpkHeading>
+    <Helmet title='Colours' />
+    <BpkHeading level='h1'>Colours</BpkHeading>
     <BpkHeading level='h2'>Primary</BpkHeading>
-    <div styleName='bpkdocs-colours-page__swatch-container'>
+    <div styleName='bpkdocs-colors-page__swatch-container'>
       <ColorSwatch name={kebabCase(COLORS.COLOR_BLUE_500)} color={getHexColor(COLORS.COLOR_BLUE_500)} />
       <ColorSwatch name={kebabCase(COLORS.COLOR_WHITE)} color={getHexColor(COLORS.COLOR_WHITE)} border />
     </div>
     <BpkHeading level='h2'>Secondary</BpkHeading>
-    <div styleName='bpkdocs-colours-page__swatch-container'>
+    <div styleName='bpkdocs-colors-page__swatch-container'>
       <ColorSwatch name={kebabCase(COLORS.COLOR_GREEN_500)} color={getHexColor(COLORS.COLOR_GREEN_500)} />
       <ColorSwatch name={kebabCase(COLORS.COLOR_YELLOW_500)} color={getHexColor(COLORS.COLOR_YELLOW_500)} />
       <ColorSwatch name={kebabCase(COLORS.COLOR_RED_500)} color={getHexColor(COLORS.COLOR_RED_500)} whiteColor />
     </div>
     <BpkHeading level='h2'>Grays</BpkHeading>
-    <div styleName='bpkdocs-colours-page__swatch-container'>
+    <div styleName='bpkdocs-colors-page__swatch-container'>
       <ColorSwatch name={kebabCase(COLORS.COLOR_GRAY_50)} color={getHexColor(COLORS.COLOR_GRAY_50)} />
       <ColorSwatch name={kebabCase(COLORS.COLOR_GRAY_100)} color={getHexColor(COLORS.COLOR_GRAY_100)} />
       <ColorSwatch name={kebabCase(COLORS.COLOR_GRAY_300)} color={getHexColor(COLORS.COLOR_GRAY_300)} whiteColor />
@@ -36,7 +36,7 @@ const ColorsPage = () => (
       <ColorSwatch name={kebabCase(COLORS.COLOR_GRAY_900)} color={getHexColor(COLORS.COLOR_GRAY_900)} whiteColor />
     </div>
     <BpkHeading level='h2'>Tints</BpkHeading>
-    <div styleName='bpkdocs-colours-page__swatch-container'>
+    <div styleName='bpkdocs-colors-page__swatch-container'>
       <ColorSwatch name={kebabCase(COLORS.COLOR_BLUE_300)} color={getHexColor(COLORS.COLOR_BLUE_300)} />
       <ColorSwatch name={kebabCase(COLORS.COLOR_BLUE_700)} color={getHexColor(COLORS.COLOR_BLUE_700)} whiteColor />
       <ColorSwatch name={kebabCase(COLORS.COLOR_GREEN_300)} color={getHexColor(COLORS.COLOR_GREEN_300)} />

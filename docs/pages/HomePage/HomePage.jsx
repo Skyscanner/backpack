@@ -5,14 +5,21 @@ import CssModules from 'react-css-modules'
 import styles from './home-page.scss'
 import pkg from './../../../package.json'
 import * as routes from './../../constants/routes'
-import BpkLink from './../../components/BpkLink'
-import BpkCode from './../../components/BpkCode'
+
 import BpkButton from 'bpk-component-button'
+import BpkLink from './../../components/BpkLink'
+import { BpkList, BpkListItem } from './../../components/BpkList'
+import BpkCode from './../../components/BpkCode'
 import BpkHeading from './../../components/BpkHeading'
 import BpkParagraph from './../../components/BpkParagraph'
 
 const anchors = {
-  gettingStarted: 'home-page-getting-started'
+  gettingStarted: 'home-page-getting-started',
+  designTokens: 'home-page-design-tokens',
+  sketchFiles: 'home-page-sketch-files',
+  stylesheets: 'home-page-stylesheets',
+  sassMixins: 'home-page-sass-mixins',
+  reactComponents: 'home-page-react-components'
 }
 
 const HomePage = () => (
@@ -28,24 +35,32 @@ const HomePage = () => (
     <div styleName='bpkdocs-home-page__content-container'>
       <section styleName='bpkdocs-home-page__columns'>
         <article styleName='bpkdocs-home-page__column'>
-          <BpkHeading level='h3'>Developer & designer resources</BpkHeading>
+          <BpkHeading level='h3'>Bonds</BpkHeading>
           <BpkParagraph>
-            Rizzle ipsizzle dolizzle ass cool, crazy adipiscing elizzle. Nullam phat velizzle, i'm in the shizzle
-            volutpizzle, check out this quizzle, cool vizzle, arcu. Pellentesque sheezy tortor.
+            Bonds help set the foundation for all components and helps connect them together.<br />
+            <BpkLink to={routes.BONDS}>Read more</BpkLink>
           </BpkParagraph>
         </article>
         <article styleName='bpkdocs-home-page__column'>
-          <BpkHeading level='h3'>Mixins</BpkHeading>
+          <BpkHeading level='h3'>Atoms</BpkHeading>
           <BpkParagraph>
-            Owned erizzle. Black izzle dolor dapibizzle turpis tempizzle ghetto. Dope pellentesque nibh et turpis. Sure
-            in tortizzle. Pellentesque eleifend rhoncizzle crackalackin. In hac habitasse platea dictumst.
+            Atoms are the basic building blocks of our product.<br />
+            <BpkLink to={routes.ATOMS}>Read more</BpkLink>
           </BpkParagraph>
         </article>
         <article styleName='bpkdocs-home-page__column'>
-          <BpkHeading level='h3'>Reusable components</BpkHeading>
+          <BpkHeading level='h3'>Molecules</BpkHeading>
           <BpkParagraph>
-            Fo shizzle my nizzle dapibizzle. Curabitizzle tellus izzle, pretizzle nizzle, da bomb sheezy, eleifend its
-            fo rizzle, check out this. Nizzle suscipizzle. Shizznit semper crackalackin phat boofron.
+            Molecules are two or more atoms bonded together to form a larger, more useful component.<br />
+            <BpkLink to={routes.MOLECULES}>Read more</BpkLink>
+          </BpkParagraph>
+        </article>
+        <article styleName='bpkdocs-home-page__column'>
+          <BpkHeading level='h3'>Organisms</BpkHeading>
+          <BpkParagraph>
+            Organisms are groups of molecules and atoms which form a relatively complex, distinct section of an
+            interface.<br />
+            <BpkLink to={routes.ORGANISMS}>Read more</BpkLink>
           </BpkParagraph>
         </article>
       </section>
@@ -53,46 +68,72 @@ const HomePage = () => (
         <article styleName='bpkdocs-home-page__column'>
           <BpkHeading id={anchors.gettingStarted} level='h3'>Getting started</BpkHeading>
           <BpkParagraph>
-            Backpack is available as
+            There are a number of ways to get started with Backpack. Below is a list aimed to suit a variety of
+            audiences and use cases.
+          </BpkParagraph>
+          <BpkList>
+            <BpkListItem>
+              <BpkLink href={`#${anchors.designTokens}`}>Design tokens</BpkLink> <em>(coming soon...)</em>
+            </BpkListItem>
+            <BpkListItem>
+              <BpkLink href={`#${anchors.sketchFiles}`}>Sketch files</BpkLink> <em>(coming soon...)</em>
+            </BpkListItem>
+            <BpkListItem>
+              <BpkLink href={`#${anchors.stylesheets}`}>Stylesheets</BpkLink>
+            </BpkListItem>
+            <BpkListItem>
+              <BpkLink href={`#${anchors.sassMixins}`}>Sass mixins</BpkLink>
+            </BpkListItem>
+            <BpkListItem>
+              <BpkLink href={`#${anchors.reactComponents}`}>React components</BpkLink> <em>(coming soon...)</em>
+            </BpkListItem>
+          </BpkList>
+          <BpkHeading id={anchors.designTokens} level='h3'>Design tokens</BpkHeading>
+          <BpkParagraph>
+            <em>Coming soon...</em>
+          </BpkParagraph>
+          <BpkHeading id={anchors.sketchFiles} level='h3'>Sketch files</BpkHeading>
+          <BpkParagraph>
+            <em>Coming soon...</em>
+          </BpkParagraph>
+          <BpkHeading id={anchors.stylesheets} level='h3'>Stylesheets</BpkHeading>
+          <BpkParagraph>
+            At present there is only one, foundational level base stylesheet. Read more about
+            it <BpkLink to={routes.BASE_STYLESHEET}>here</BpkLink>.
+          </BpkParagraph>
+          <BpkHeading id={anchors.sassMixins} level='h3'>Sass mixins</BpkHeading>
+          <BpkParagraph>
+            <strong>View the full <BpkLink href='/sassdoc' target='__blank'>Sass documentation</BpkLink>.</strong>
+          </BpkParagraph>
+          <BpkParagraph>
+            The Backpack Sass mixins are available as
             an <BpkLink href='https://www.npmjs.com/' target='_blank'>npm</BpkLink> module.
             Install the module using the git url like so:
           </BpkParagraph>
           <BpkCode>
             {`npm install git+http://git.prod.skyscanner.local/backpack/backpack.git#v${pkg.version} --save-dev`}
           </BpkCode>
-        </article>
-      </section>
-      <section styleName='bpkdocs-home-page__columns'>
-        <article styleName='bpkdocs-home-page__column'>
-          <BpkHeading level='h3'>Bonds</BpkHeading>
           <BpkParagraph>
-            Bonds help set the foundation for all components and helps connect them together.<br />
-            <BpkLink to={routes.BONDS}>Read more</BpkLink>.
+            Import the mixins and consume as appropriate:
           </BpkParagraph>
-        </article>
-        <article styleName='bpkdocs-home-page__column'>
-          <BpkHeading level='h3'>Atoms</BpkHeading>
+          <BpkCode syntax='css'>
+            {`@import '~backpack';
+            .bpk-my-component {
+              @include bpk-button;
+            }
+            `}
+          </BpkCode>
           <BpkParagraph>
-            Atoms are the basic building blocks of our product.<br />
-            <BpkLink to={routes.ATOMS}>Read more</BpkLink>.
+            <strong>Note:</strong> The tilde import syntax (<BpkCode inline>~</BpkCode>) is webpack/sass-loader
+            specific, otherwise adjust the import path relative to your <BpkCode inline>node_modules</BpkCode> folder
+            i.e. <BpkCode inline>@import './node_modules/backpack';</BpkCode>
           </BpkParagraph>
-        </article>
-        <article styleName='bpkdocs-home-page__column'>
-          <BpkHeading level='h3'>Molecules</BpkHeading>
+          <BpkHeading id={anchors.reactComponents} level='h3'>React components</BpkHeading>
           <BpkParagraph>
-            Molecules are groups of two or more atoms bonded together to form a larger component.<br />
-            <BpkLink to={routes.MOLECULES}>Read more</BpkLink>.
-          </BpkParagraph>
-        </article>
-        <article styleName='bpkdocs-home-page__column'>
-          <BpkHeading level='h3'>Organisms</BpkHeading>
-          <BpkParagraph>
-            Fo shizzle my nizzle dapibizzle. Curabitizzle tellus izzle, pretizzle nizzle, da bomb sheezy, eleifend its
-            fo rizzle, check out this. Nizzle suscipizzle. Shizznit semper crackalackin phat boofron.
+            <em>Coming soon...</em>
           </BpkParagraph>
         </article>
       </section>
-
     </div>
   </section>
 )
