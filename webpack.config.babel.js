@@ -66,7 +66,7 @@ const config = {
   module: {
     loaders: [
       {
-        test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel'
+        test: /\.jsx?$/, exclude: /node_modules\/(?!bpk-).*/, loader: 'babel'
       },
       {
         test: /base\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!postcss!sass?config=sass')

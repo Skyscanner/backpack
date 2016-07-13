@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import BpkLink from './../../components/BpkLink'
-import BpkButton from './../../components/BpkButton'
+import BpkButton from 'bpk-component-button'
 import BpkHeading from './../../components/BpkHeading'
 import BpkParagraph from './../../components/BpkParagraph'
 import { BpkList, BpkListItem } from './../../components/BpkList'
