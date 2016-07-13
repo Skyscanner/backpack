@@ -10,11 +10,9 @@ import PresentationBlock from './../../components/PresentationBlock'
 
 const anchors = {
   primary: 'buttons-page-primary',
-  largePrimary: 'buttons-page-large-primary',
   secondary: 'buttons-page-secondary',
-  largeSecondary: 'buttons-page-large-secondary',
-  link: 'buttons-page-link',
-  largeLink: 'buttons-page-large-link'
+  selected: 'buttons-page-selected',
+  link: 'buttons-page-link'
 }
 
 const ButtonsPage = () => (
@@ -28,53 +26,49 @@ const ButtonsPage = () => (
         <BpkLink href={`#${anchors.primary}`}>Primary</BpkLink>
       </BpkListItem>
       <BpkListItem>
-        <BpkLink href={`#${anchors.largePrimary}`}>Large Primary</BpkLink>
-      </BpkListItem>
-      <BpkListItem>
         <BpkLink href={`#${anchors.secondary}`}>Secondary</BpkLink>
       </BpkListItem>
       <BpkListItem>
-        <BpkLink href={`#${anchors.largeSecondary}`}>Large Secondary</BpkLink>
+        <BpkLink href={`#${anchors.selected}`}>Selected</BpkLink>
       </BpkListItem>
       <BpkListItem>
         <BpkLink href={`#${anchors.link}`}>Link</BpkLink>
       </BpkListItem>
-      <BpkListItem>
-        <BpkLink href={`#${anchors.largeLink}`}>Large Link</BpkLink>
-      </BpkListItem>
     </BpkList>
     <BpkHeading id={anchors.primary} level='h2'>Primary</BpkHeading>
-    <PresentationBlock>
+    <PresentationBlock sassdocId='buttons-mixin-bpk-button' showHTML>
       <BpkButton>Primary</BpkButton>{'\n'}
-      <BpkButton selected>Selected</BpkButton>{'\n'}
-      <BpkButton disabled>Disabled</BpkButton>
-    </PresentationBlock>
-    <BpkHeading id={anchors.largePrimary} level='h2'>Large Primary</BpkHeading>
-    <PresentationBlock>
+      <BpkButton href='#'>Anchor</BpkButton>{'\n'}
+      <BpkButton disabled>Disabled</BpkButton>{'\n'}
       <BpkButton large>Primary</BpkButton>{'\n'}
-      <BpkButton large selected>Selected</BpkButton>{'\n'}
+      <BpkButton large href='#'>Anchor</BpkButton>{'\n'}
       <BpkButton large disabled>Disabled</BpkButton>
     </PresentationBlock>
     <BpkHeading id={anchors.secondary} level='h2'>Secondary</BpkHeading>
-    <PresentationBlock>
+    <PresentationBlock sassdocId='buttons-mixin-bpk-button--secondary' showHTML>
       <BpkButton secondary>Secondary</BpkButton>{'\n'}
-      <BpkButton secondary selected>Selected</BpkButton>{'\n'}
-      <BpkButton secondary disabled>Disabled</BpkButton>
-    </PresentationBlock>
-    <BpkHeading id={anchors.largeSecondary} level='h2'>Large Secondary</BpkHeading>
-    <PresentationBlock>
+      <BpkButton href='#' secondary>Anchor</BpkButton>{'\n'}
+      <BpkButton secondary disabled>Disabled</BpkButton>{'\n'}
       <BpkButton secondary large>Secondary</BpkButton>{'\n'}
-      <BpkButton secondary large selected>Selected</BpkButton>{'\n'}
+      <BpkButton href='#' secondary large>Anchor</BpkButton>{'\n'}
       <BpkButton secondary large disabled>Disabled</BpkButton>
     </PresentationBlock>
-    <BpkHeading id={anchors.link} level='h2'>Link</BpkHeading>
-    <PresentationBlock>
-      <BpkButton link>Link</BpkButton>{'\n'}
-      <BpkButton link disabled>Disabled</BpkButton>
+    <BpkHeading id={anchors.selected} level='h2'>Selected</BpkHeading>
+    <PresentationBlock sassdocId='buttons-mixin-bpk-button--selected' showHTML>
+      <BpkButton selected>Selected</BpkButton>{'\n'}
+      <BpkButton href='#' selected>Anchor</BpkButton>{'\n'}
+      <BpkButton selected disabled>Disabled</BpkButton>{'\n'}
+      <BpkButton selected large>Selected</BpkButton>{'\n'}
+      <BpkButton href='#' selected large>Anchor</BpkButton>{'\n'}
+      <BpkButton selected large disabled>Disabled</BpkButton>
     </PresentationBlock>
-    <BpkHeading id={anchors.largeLink} level='h2'>Large Link</BpkHeading>
-    <PresentationBlock>
+    <BpkHeading id={anchors.link} level='h2'>Link</BpkHeading>
+    <PresentationBlock sassdocId='buttons-mixin-bpk-button--link' showHTML>
+      <BpkButton link>Link</BpkButton>{'\n'}
+      <BpkButton href='#' link>Anchor</BpkButton>{'\n'}
+      <BpkButton link disabled>Disabled</BpkButton>{'\n'}
       <BpkButton link large>Link</BpkButton>{'\n'}
+      <BpkButton href='#' link large>Anchor</BpkButton>{'\n'}
       <BpkButton link large disabled>Disabled</BpkButton>
     </PresentationBlock>
   </section>

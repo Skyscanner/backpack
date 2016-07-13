@@ -17,7 +17,23 @@ $bpkdocs-home-page-gradient-end: #02ddd8;
 
   &__content-container {
     @include bpk-container;
+  }
 
-    padding: $bpk-spacing-xl $bpk-spacing-base;
+  &__columns {
+    @include bpk-breakpoint-above-tablet {
+      flex-direction: row;
+    }
+
+    display: flex;
+    flex-direction: column;
+    margin-right: -$bpk-spacing-base;
+    margin-left: -$bpk-spacing-base;
+    padding-top: $bpk-spacing-base;
+    padding-bottom: $bpk-spacing-base;
+  }
+
+  &__column {
+    flex: 1;
+    padding: $bpk-spacing-base;
   }
 }

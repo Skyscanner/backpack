@@ -35,7 +35,7 @@ const TypographyPage = () => (
       </BpkListItem>
     </BpkList>
     <BpkHeading id={anchors.headings} level='h2'>Headings</BpkHeading>
-    <PresentationBlock>
+    <PresentationBlock sassdocId='typography-mixin-bpk-heading-1' showHTML>
       <BpkHeading level='h1'>Heading 1</BpkHeading>
       <BpkHeading level='h2'>Heading 2</BpkHeading>
       <BpkHeading level='h3'>Heading 3</BpkHeading>
@@ -44,7 +44,7 @@ const TypographyPage = () => (
       <BpkHeading level='h6'>Heading 6</BpkHeading>
     </PresentationBlock>
     <BpkHeading id={anchors.paragraphs} level='h2'>Paragraphs</BpkHeading>
-    <PresentationBlock>
+    <PresentationBlock sassdocId='typography-mixin-bpk-paragraph' showHTML>
       <BpkParagraph>
         Rizzle ipsizzle dolizzle ass cool, crazy adipiscing elizzle. Nullam phat velizzle, i'm in the shizzle
         volutpizzle, check out this quizzle, cool vizzle, arcu. Pellentesque sheezy tortor.
@@ -59,13 +59,13 @@ const TypographyPage = () => (
       </BpkParagraph>
     </PresentationBlock>
     <BpkHeading id={anchors.links} level='h2'>Links</BpkHeading>
-    <PresentationBlock>
+    <PresentationBlock sassdocId='typography-mixin-bpk-link' showHTML>
       <BpkLink href='#'>Link 1</BpkLink>{'\n'}
       <BpkLink href='#'>Link 2</BpkLink>{'\n'}
       <BpkLink href='#'>Link 3</BpkLink>
     </PresentationBlock>
     <BpkHeading id={anchors.lists} level='h2'>Lists</BpkHeading>
-    <PresentationBlock>
+    <PresentationBlock sassdocId='typography-mixin-bpk-list' showHTML>
       <BpkList>
         <BpkListItem>Apples</BpkListItem>
         <BpkListItem>Oranges
