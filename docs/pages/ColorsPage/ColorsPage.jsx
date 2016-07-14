@@ -4,8 +4,8 @@ import kebabCase from 'lodash/kebabCase'
 import CssModules from 'react-css-modules'
 
 import styles from './colors-page.scss'
+import BpkHeading from 'bpk-component-heading'
 import * as COLORS from './../../constants/colors'
-import BpkHeading from './../../components/BpkHeading'
 import ColorSwatch from './../../components/ColorSwatch'
 import { tokenCategories, getTokenValue } from './../../tokens'
 

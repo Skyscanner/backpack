@@ -2,8 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import kebabCase from 'lodash/kebabCase'
 
+import BpkHeading from 'bpk-component-heading'
 import BpkLink from './../../components/BpkLink'
-import BpkHeading from './../../components/BpkHeading'
 import { tokenCategories, getTokens } from './../../tokens'
 import { BpkList, BpkListItem } from './../../components/BpkList'
 import {
