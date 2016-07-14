@@ -22,6 +22,8 @@ body {
   line-height: $bpk-line-height-base;
 }
 
+/* stylelint-disable selector-class-pattern  */
+
 .hidden,
 .hide {
   @include bpk-hidden;
@@ -43,3 +45,5 @@ body {
 .clearfix {
   @include bpk-clearfix;
 }
+
+/* stylelint-enable */

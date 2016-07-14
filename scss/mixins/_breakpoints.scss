@@ -32,7 +32,7 @@
 
 @mixin bpk-breakpoint-mobile {
   @media #{$bpk-breakpoint-query-mobile} {
-    @content
+    @content;
   }
 }
 
@@ -51,7 +51,7 @@
 
 @mixin bpk-breakpoint-tablet {
   @media #{$bpk-breakpoint-query-tablet} {
-    @content
+    @content;
   }
 }
 
@@ -70,7 +70,7 @@
 
 @mixin bpk-breakpoint-tablet-only {
   @media #{$bpk-breakpoint-query-tablet-only} {
-    @content
+    @content;
   }
 }
 
@@ -89,7 +89,7 @@
 
 @mixin bpk-breakpoint-above-mobile {
   @media #{$bpk-breakpoint-query-above-mobile} {
-    @content
+    @content;
   }
 }
 
@@ -108,6 +108,6 @@
 
 @mixin bpk-breakpoint-above-tablet {
   @media #{$bpk-breakpoint-query-above-tablet} {
-    @content
+    @content;
   }
 }

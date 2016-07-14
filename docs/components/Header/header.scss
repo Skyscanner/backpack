@@ -1,5 +1,6 @@
 @import './../../../backpack';
 
+/* @define header */
 .bpkdocs-header {
   background-color: $bpk-color-white;
   box-shadow: 0 -1px 0 0 $bpk-color-gray-100 inset;
@@ -31,8 +32,8 @@
 
     margin: 0;
     padding: 0;
-    text-align: center;
     list-style-type: none;
+    text-align: center;
   }
 
   &__nav-list-item {
