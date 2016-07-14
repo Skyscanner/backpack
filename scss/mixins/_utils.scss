@@ -10,7 +10,7 @@
 ///   }
 
 @mixin bpk-hidden {
-  display: none !important;
+  display: none !important; /* stylelint-disable-line declaration-no-important */
 }
 
 /// Hide only visually, but have it available for screen readers:
@@ -32,7 +32,6 @@
   overflow: hidden;
   clip: rect(0 0 0 0);
 }
-
 
 /// Modifies the bpk-visually-hidden mixin to allow the element to be focusable when navigated to via the keyboard:
 ///
