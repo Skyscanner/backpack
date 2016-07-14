@@ -2,9 +2,9 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import BpkHeading from 'bpk-component-heading'
+import BpkParagraph from 'bpk-component-paragraph'
 import BpkLink from './../../components/BpkLink'
 import BpkCode from './../../components/BpkCode'
-import BpkParagraph from './../../components/BpkParagraph'
 import { BpkList, BpkListItem } from './../../components/BpkList'
 
 const html5BoilerplateHelpersLink = 'https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#common-helpers'
