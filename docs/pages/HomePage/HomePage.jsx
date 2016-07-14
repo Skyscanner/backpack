@@ -7,10 +7,10 @@ import pkg from './../../../package.json'
 import * as routes from './../../constants/routes'
 
 import BpkButton from 'bpk-component-button'
+import BpkHeading from 'bpk-component-heading'
 import BpkLink from './../../components/BpkLink'
-import { BpkList, BpkListItem } from './../../components/BpkList'
 import BpkCode from './../../components/BpkCode'
-import BpkHeading from './../../components/BpkHeading'
+import { BpkList, BpkListItem } from './../../components/BpkList'
 import BpkParagraph from './../../components/BpkParagraph'
 
 const anchors = {

@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import BpkHeading from './../../components/BpkHeading'
+import BpkHeading from 'bpk-component-heading'
 
 const OrganismsPage = () => (
   <section>

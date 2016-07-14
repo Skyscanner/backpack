@@ -1,9 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import BpkLink from './../../components/BpkLink'
 import BpkButton from 'bpk-component-button'
-import BpkHeading from './../../components/BpkHeading'
+import BpkHeading from 'bpk-component-heading'
+import BpkLink from './../../components/BpkLink'
 import BpkParagraph from './../../components/BpkParagraph'
 import { BpkList, BpkListItem } from './../../components/BpkList'
 import PresentationBlock from './../../components/PresentationBlock'
