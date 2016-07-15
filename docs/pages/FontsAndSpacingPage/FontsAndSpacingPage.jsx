@@ -4,16 +4,9 @@ import kebabCase from 'lodash/kebabCase'
 
 import BpkHeading from 'bpk-component-heading'
 import { BpkList, BpkListItem } from 'bpk-component-list'
+import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
 import BpkLink from './../../components/BpkLink'
 import { tokenCategories, getTokens } from './../../tokens'
-import {
-  BpkTable,
-  BpkTableHead,
-  BpkTableBody,
-  BpkTableRow,
-  BpkTableHeadCell,
-  BpkTableCell
-} from './../../components/BpkTable'
 
 const anchors = {
   fontFamilies: 'fonts-page-fonts',
