@@ -3,8 +3,8 @@ import Helmet from 'react-helmet'
 
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
+import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkLink from './../../components/BpkLink'
-import { BpkList, BpkListItem } from './../../components/BpkList'
 import PresentationBlock from './../../components/PresentationBlock'
 
 const anchors = {

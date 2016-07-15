@@ -3,9 +3,9 @@ import Helmet from 'react-helmet'
 
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
+import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkLink from './../../components/BpkLink'
 import BpkCode from './../../components/BpkCode'
-import { BpkList, BpkListItem } from './../../components/BpkList'
 
 const html5BoilerplateHelpersLink = 'https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#common-helpers'
 const baseStylesheetBlogPostLink = 'https://skyspace.sharepoint.com/sites/development/blog/Lists/Posts/Post.aspx?ID=96'

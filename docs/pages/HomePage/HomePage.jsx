@@ -9,9 +9,9 @@ import * as routes from './../../constants/routes'
 import BpkButton from 'bpk-component-button'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
+import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkLink from './../../components/BpkLink'
 import BpkCode from './../../components/BpkCode'
-import { BpkList, BpkListItem } from './../../components/BpkList'
 
 const anchors = {
   gettingStarted: 'home-page-getting-started',

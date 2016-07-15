@@ -3,9 +3,9 @@ import Helmet from 'react-helmet'
 import kebabCase from 'lodash/kebabCase'
 
 import BpkHeading from 'bpk-component-heading'
+import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkLink from './../../components/BpkLink'
 import { tokenCategories, getTokens } from './../../tokens'
-import { BpkList, BpkListItem } from './../../components/BpkList'
 import {
   BpkTable,
   BpkTableHead,
