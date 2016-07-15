@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react'
 import CssModules from 'react-css-modules'
 
 import styles from './side-nav-layout.scss'
+import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkLink from './../../components/BpkLink'
-import { BpkList, BpkListItem } from './../../components/BpkList'
 
 export const SideNavLayout = ({ links, children }) => (
   <div styleName='bpkdocs-side-nav-layout__container'>
