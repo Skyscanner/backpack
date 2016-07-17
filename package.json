@@ -1,27 +1,19 @@
 {
   "name": "backpack",
   "private": true,
-  "version": "0.0.2",
   "description": "Backpack Design System",
   "scripts": {
     "clean:dist": "rm -rf dist",
     "clean": "npm run clean:dist",
-    "lint:scss": "stylelint scss/**/*.scss docs/**/*.scss *.scss --syntax scss",
+    "lint:scss": "stylelint docs/**/*.scss *.scss --syntax scss",
     "lint:js": "standard",
     "lint": "npm run lint:js && npm run lint:scss",
-    "sassdoc": "sassdoc {scss/**/*,scss/*,node_modules/backpack-tokens/tokens/base}.scss -d dist/sassdoc -v --strict",
+    "sassdoc": "sassdoc {node_modules/bpk-mixins/src/**/*,node_modules/bpk-mixins/**/*,node_modules/backpack-tokens/tokens/base}.scss -d dist/sassdoc -v --strict",
     "dist": "npm run clean && NODE_ENV=production webpack && npm run sassdoc",
     "dist:gzip": "npm run dist && grunt",
     "start": "webpack-dev-server",
     "test": "npm run lint"
   },
-  "main": "_backpack.scss",
-  "files": [
-    "scss",
-    "_backpack.scss",
-    "base.scss",
-    "base.css"
-  ],
   "repository": {
     "type": "git",
     "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
@@ -35,11 +27,14 @@
     "babel-plugin-syntax-object-rest-spread": "6.8.0",
     "babel-preset-es2015": "6.9.0",
     "babel-preset-react": "6.11.1",
+    "backpack-tokens": "git+http://git.prod.skyscanner.local/backpack/tokens.git#v6.0.0",
     "bpk-component-button": "*",
     "bpk-component-heading": "*",
     "bpk-component-list": "*",
     "bpk-component-paragraph": "*",
     "bpk-component-table": "*",
+    "bpk-mixins": "*",
+    "bpk-stylesheets": "*",
     "css-loader": "0.23.1",
     "extract-text-webpack-plugin": "1.0.1",
     "grunt": "0.4.5",
@@ -64,9 +59,5 @@
     "stylelint-config-standard": "11.0.0",
     "webpack": "1.13.1",
     "webpack-dev-server": "1.14.1"
-  },
-  "dependencies": {
-    "backpack-tokens": "git+http://git.prod.skyscanner.local/backpack/tokens.git#v6.0.0",
-    "normalize.css": "4.2.0"
   }
 }

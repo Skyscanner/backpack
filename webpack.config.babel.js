@@ -23,37 +23,6 @@ const staticSiteGeneratorConfig = {
   ]
 }
 
-const postcss = () => [ autoprefixer({ browsers: [ 'last 20 versions' ] }) ]
-
-const baseConfig = {
-  entry: {
-    base: './base.scss'
-  },
-
-  output: {
-    filename: 'base.js',
-    path: ''
-  },
-
-  module: {
-    loaders: [
-      {
-        test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!postcss!sass')
-      },
-      {
-        test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css')
-      }
-    ]
-  },
-
-  plugins: [
-    new ExtractTextPlugin('[name].css')
-  ],
-
-  postcss
-
-}
-
 const config = {
   entry: {
     docs: './docs/index.js'
@@ -92,7 +61,7 @@ const config = {
     new StaticSiteGeneratorPlugin('docs', staticSiteGeneratorConfig.paths, staticSiteGeneratorConfig)
   ],
 
-  postcss,
+  postcss: () => [ autoprefixer({ browsers: [ 'last 20 versions' ] }) ],
 
   sass: {
     data: BPK_TOKENS ? fs.readFileSync(require.resolve(`backpack-tokens/tokens/${BPK_TOKENS}.scss`)) : ''
@@ -123,4 +92,4 @@ if (process.env.NODE_ENV === 'production') {
   )
 }
 
-export default [ baseConfig, config ]
+export default config
