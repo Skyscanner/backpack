@@ -24,7 +24,7 @@ const HomePage = () => (
     <Helmet title='Backpack' />
     <div styleName='bpkdocs-home-page__hero'>
       <div styleName='bpkdocs-home-page__hero-container'>
-        <BpkHeading level='h2'>Backpack is a suite of front-end tools to enable you to design and build products which look and feel consistent with the Skyscanner product family.</BpkHeading>
+        <BpkHeading level='h2'>Backpack is a suite of tools to enable you to design and build products which look and feel consistent with the Skyscanner product family.</BpkHeading>
         <BpkButton large href={`#${anchors.gettingStarted}`}>Get started</BpkButton>
       </div>
     </div>
@@ -48,7 +48,7 @@ const HomePage = () => (
         <article styleName='bpkdocs-home-page__column'>
           <BpkHeading level='h3'>Molecules</BpkHeading>
           <BpkParagraph>
-            Molecules are groups of atoms bonded together, which take on new properties as a result.<br />
+            Molecules are groups of two or more atoms held together by chemical bonds. These combinations of atoms take on their own unique properties, and become more tangible and operational than atoms.<br />
             <BpkLink to={routes.MOLECULES}>Read more</BpkLink>
           </BpkParagraph>
         </article>
