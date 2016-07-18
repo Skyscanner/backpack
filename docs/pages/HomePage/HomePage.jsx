@@ -29,7 +29,7 @@ const HomePage = () => (
       </div>
     </div>
     <div styleName='bpkdocs-home-page__content-container'>
-      <BpkHeading level='h3'>We’ve built upon Atomic Design principals to bring a scalable front-end platform to design, build and share components across all of Skyscanner’s product areas.</BpkHeading>
+      <BpkHeading level='h3'>We’ve built upon Atomic Design principals to bring a scalable platform to design, build and share components across all of Skyscanner’s product areas.</BpkHeading>
       <section styleName='bpkdocs-home-page__columns'>
         <article styleName='bpkdocs-home-page__column'>
           <BpkHeading level='h3'>Bonds</BpkHeading>
