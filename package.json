@@ -8,7 +8,7 @@
     "lint:scss": "stylelint docs/**/*.scss *.scss --syntax scss",
     "lint:js": "standard",
     "lint": "npm run lint:js && npm run lint:scss",
-    "sassdoc": "sassdoc {node_modules/bpk-mixins/src/**/*,node_modules/bpk-mixins/**/*,node_modules/backpack-tokens/tokens/base}.scss -d dist/sassdoc -v --strict --debug",
+    "sassdoc": "sassdoc {node_modules/bpk-mixins/src/**/*,node_modules/bpk-mixins/**/*,node_modules/backpack-tokens/tokens/base.default}.scss -d dist/sassdoc -v --strict --debug",
     "dist": "npm run clean && NODE_ENV=production webpack && npm run sassdoc",
     "dist:gzip": "npm run dist && grunt",
     "start": "webpack-dev-server",
