@@ -8,9 +8,7 @@ import * as routes from './../../constants/routes'
 import BpkButton from 'bpk-component-button'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
-import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkLink from './../../components/BpkLink'
-import BpkCode from './../../components/BpkCode'
 
 const anchors = {
   gettingStarted: 'home-page-getting-started',
@@ -26,110 +24,39 @@ const HomePage = () => (
     <Helmet title='Backpack' />
     <div styleName='bpkdocs-home-page__hero'>
       <div styleName='bpkdocs-home-page__hero-container'>
-        <BpkHeading level='h1'>Backpack</BpkHeading>
-        <BpkHeading level='h2'>Skyscanner's living style guide and organic design system</BpkHeading>
+        <BpkHeading level='h2'>Backpack is a suite of front-end tools to enable you to design and build products which look and feel consistent with the Skyscanner product family.</BpkHeading>
         <BpkButton large href={`#${anchors.gettingStarted}`}>Get started</BpkButton>
       </div>
     </div>
     <div styleName='bpkdocs-home-page__content-container'>
+      <BpkHeading level='h3'>We’ve built upon Atomic Design principals to bring a scalable front-end platform to design, build and share components across all of Skyscanner’s product areas.</BpkHeading>
       <section styleName='bpkdocs-home-page__columns'>
         <article styleName='bpkdocs-home-page__column'>
           <BpkHeading level='h3'>Bonds</BpkHeading>
           <BpkParagraph>
-            Bonds help set the foundation for all components and helps connect them together.<br />
+            Bonds help set the foundation for all elements and helps connect them together. They’re abstract by nature and cover things like colour, typography and even more invisible aspects of an interface such as animations and spacing.<br />
             <BpkLink to={routes.BONDS}>Read more</BpkLink>
           </BpkParagraph>
         </article>
         <article styleName='bpkdocs-home-page__column'>
           <BpkHeading level='h3'>Atoms</BpkHeading>
           <BpkParagraph>
-            Atoms are the basic building blocks of our product.<br />
+            Atoms are the basic building blocks of matter. Applied to web interfaces, atoms are our HTML tags, such as a form label, an input or a button. They have distinct properties and can't be broken down further without losing their meaning.<br />
             <BpkLink to={routes.ATOMS}>Read more</BpkLink>
           </BpkParagraph>
         </article>
         <article styleName='bpkdocs-home-page__column'>
           <BpkHeading level='h3'>Molecules</BpkHeading>
           <BpkParagraph>
-            Molecules are two or more atoms bonded together to form a larger, more useful component.<br />
+            Molecules are groups of atoms bonded together, which take on new properties as a result.<br />
             <BpkLink to={routes.MOLECULES}>Read more</BpkLink>
           </BpkParagraph>
         </article>
         <article styleName='bpkdocs-home-page__column'>
           <BpkHeading level='h3'>Organisms</BpkHeading>
           <BpkParagraph>
-            Organisms are groups of molecules and atoms which form a relatively complex, distinct section of an
-            interface.<br />
+            Organisms are groups of molecules joined together to form a relatively complex, distinct section of an interface.<br />
             <BpkLink to={routes.ORGANISMS}>Read more</BpkLink>
-          </BpkParagraph>
-        </article>
-      </section>
-      <section styleName='bpkdocs-home-page__columns'>
-        <article styleName='bpkdocs-home-page__column'>
-          <BpkHeading id={anchors.gettingStarted} level='h3'>Getting started</BpkHeading>
-          <BpkParagraph>
-            There are a number of ways to get started with Backpack. Below is a list aimed to suit a variety of
-            audiences and use cases.
-          </BpkParagraph>
-          <BpkList>
-            <BpkListItem>
-              <BpkLink href={`#${anchors.designTokens}`}>Design tokens</BpkLink> <em>(coming soon...)</em>
-            </BpkListItem>
-            <BpkListItem>
-              <BpkLink href={`#${anchors.sketchFiles}`}>Sketch files</BpkLink> <em>(coming soon...)</em>
-            </BpkListItem>
-            <BpkListItem>
-              <BpkLink href={`#${anchors.stylesheets}`}>Stylesheets</BpkLink>
-            </BpkListItem>
-            <BpkListItem>
-              <BpkLink href={`#${anchors.sassMixins}`}>Sass mixins</BpkLink>
-            </BpkListItem>
-            <BpkListItem>
-              <BpkLink href={`#${anchors.reactComponents}`}>React components</BpkLink> <em>(coming soon...)</em>
-            </BpkListItem>
-          </BpkList>
-          <BpkHeading id={anchors.designTokens} level='h3'>Design tokens</BpkHeading>
-          <BpkParagraph>
-            <em>Coming soon...</em>
-          </BpkParagraph>
-          <BpkHeading id={anchors.sketchFiles} level='h3'>Sketch files</BpkHeading>
-          <BpkParagraph>
-            <em>Coming soon...</em>
-          </BpkParagraph>
-          <BpkHeading id={anchors.stylesheets} level='h3'>Stylesheets</BpkHeading>
-          <BpkParagraph>
-            At present there is only one, foundational level base stylesheet. Read more about
-            it <BpkLink to={routes.BASE_STYLESHEET}>here</BpkLink>.
-          </BpkParagraph>
-          <BpkHeading id={anchors.sassMixins} level='h3'>Sass mixins</BpkHeading>
-          <BpkParagraph>
-            <strong>View the full <BpkLink href='/sassdoc' target='__blank'>Sass documentation</BpkLink>.</strong>
-          </BpkParagraph>
-          <BpkParagraph>
-            The Backpack Sass mixins are available as
-            an <BpkLink href='https://www.npmjs.com/package/bpk-mixins' target='_blank'>npm</BpkLink> module.
-            Install the module like so:
-          </BpkParagraph>
-          <BpkCode>
-            {'npm install bpk-mixins --save-dev'}
-          </BpkCode>
-          <BpkParagraph>
-            Import the mixins and consume as appropriate:
-          </BpkParagraph>
-          <BpkCode syntax='css'>
-            {`@import '~bpk-mixins';
-            .bpk-my-component {
-              @include bpk-button;
-            }
-            `}
-          </BpkCode>
-          <BpkParagraph>
-            <strong>Note:</strong> The tilde import syntax (<BpkCode inline>~</BpkCode>) is webpack/sass-loader
-            specific, otherwise adjust the import path relative to your <BpkCode inline>node_modules</BpkCode> folder
-            i.e. <BpkCode inline>@import './node_modules/bpk-mixins';</BpkCode>
-          </BpkParagraph>
-          <BpkHeading id={anchors.reactComponents} level='h3'>React components</BpkHeading>
-          <BpkParagraph>
-            <em>Coming soon...</em>
           </BpkParagraph>
         </article>
       </section>
