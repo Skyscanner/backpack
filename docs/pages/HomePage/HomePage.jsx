@@ -24,6 +24,7 @@ const HomePage = () => (
     <Helmet title='Backpack' />
     <div styleName='bpkdocs-home-page__hero'>
       <div styleName='bpkdocs-home-page__hero-container'>
+        <BpkHeading level='h1'>Weclome to Backpack</BpkHeading>
         <BpkHeading level='h2'>Backpack is a suite of tools to enable you to design and build products which look and feel consistent with the Skyscanner product family.</BpkHeading>
         <BpkButton large href={`#${anchors.gettingStarted}`}>Get started</BpkButton>
       </div>
