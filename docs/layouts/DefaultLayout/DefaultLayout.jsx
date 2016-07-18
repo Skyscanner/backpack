@@ -5,7 +5,6 @@ import CssModules from 'react-css-modules'
 import styles from './default-layout.scss'
 import Header from '../../components/Header'
 import BpkLink from '../../components/BpkLink'
-import pkg from './../../../package.json'
 
 export class DefaultLayout extends React.Component {
   constructor (props) {
@@ -36,7 +35,7 @@ export class DefaultLayout extends React.Component {
           {children}
         </main>
         <footer styleName='bpkdocs-default-layout__footer'>
-          v{pkg.version}. Copyright Skyscanner {new Date().getFullYear()}.
+          Copyright Skyscanner {new Date().getFullYear()}.
           &nbsp;
           <button type='button' styleName='bpkdocs-default-layout__vertical-rhythm-guide-toggle'
             onClick={this.toggleGrid}>

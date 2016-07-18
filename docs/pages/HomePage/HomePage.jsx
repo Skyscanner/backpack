@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 import CssModules from 'react-css-modules'
 
 import styles from './home-page.scss'
-import pkg from './../../../package.json'
 import * as routes from './../../constants/routes'
 
 import BpkButton from 'bpk-component-button'
@@ -107,17 +106,17 @@ const HomePage = () => (
           </BpkParagraph>
           <BpkParagraph>
             The Backpack Sass mixins are available as
-            an <BpkLink href='https://www.npmjs.com/' target='_blank'>npm</BpkLink> module.
-            Install the module using the git url like so:
+            an <BpkLink href='https://www.npmjs.com/package/bpk-mixins' target='_blank'>npm</BpkLink> module.
+            Install the module like so:
           </BpkParagraph>
           <BpkCode>
-            {`npm install git+http://git.prod.skyscanner.local/backpack/backpack.git#v${pkg.version} --save-dev`}
+            {'npm install bpk-mixins --save-dev'}
           </BpkCode>
           <BpkParagraph>
             Import the mixins and consume as appropriate:
           </BpkParagraph>
           <BpkCode syntax='css'>
-            {`@import '~backpack';
+            {`@import '~bpk-mixins';
             .bpk-my-component {
               @include bpk-button;
             }
@@ -126,7 +125,7 @@ const HomePage = () => (
           <BpkParagraph>
             <strong>Note:</strong> The tilde import syntax (<BpkCode inline>~</BpkCode>) is webpack/sass-loader
             specific, otherwise adjust the import path relative to your <BpkCode inline>node_modules</BpkCode> folder
-            i.e. <BpkCode inline>@import './node_modules/backpack';</BpkCode>
+            i.e. <BpkCode inline>@import './node_modules/bpk-mixins';</BpkCode>
           </BpkParagraph>
           <BpkHeading id={anchors.reactComponents} level='h3'>React components</BpkHeading>
           <BpkParagraph>

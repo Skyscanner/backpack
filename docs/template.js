@@ -1,4 +1,4 @@
-import './../base.scss'
+import 'bpk-stylesheets/base.scss'
 
 export default ({ head = {}, html = '', assets = {} }) => {
   return `<!doctype html>

@@ -1,6 +1,5 @@
-@import './../../../backpack';
+@import '~bpk-mixins/index';
 
-/* @define header */
 .bpkdocs-header {
   background-color: $bpk-color-white;
   box-shadow: 0 -1px 0 0 $bpk-color-gray-100 inset;
