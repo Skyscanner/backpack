@@ -27,7 +27,7 @@
     "babel-plugin-syntax-object-rest-spread": "6.8.0",
     "babel-preset-es2015": "6.9.0",
     "babel-preset-react": "6.11.1",
-    "backpack-tokens": "git+http://git.prod.skyscanner.local/backpack/tokens.git#v6.0.0",
+    "backpack-tokens": "git+http://git.prod.skyscanner.local/backpack/tokens.git#v7.0.0",
     "bpk-component-button": "*",
     "bpk-component-heading": "*",
     "bpk-component-list": "*",
