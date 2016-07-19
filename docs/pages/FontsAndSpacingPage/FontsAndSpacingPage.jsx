@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import kebabCase from 'lodash/kebabCase'
 
 import BpkHeading from 'bpk-component-heading'
+import BpkParagraph from 'bpk-component-paragraph'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
 import BpkLink from './../../components/BpkLink'
@@ -38,8 +39,18 @@ const getValue = ({ value }) => {
 
 const FontsAndSpacingPage = () => (
   <section>
-    <Helmet title='Fonts' />
+    <Helmet title='Fonts and spacing' />
     <BpkHeading level='h1'>Fonts and spacing</BpkHeading>
+    <BpkParagraph>
+      We use a native font stack to get all the benefits of good typography without the need to serve a custom web font
+      and incur the performance penalties these bring, as well as providing a more native feeling experience across all
+      our products.
+    </BpkParagraph>
+    <BpkParagraph>
+      Rems are used for all units including font-sizes, padding/margins and media queries. Since these are relative to
+      the value inherited from the browser font-size, it means everything will scale accordingly should a user change
+      this. This is especially important for accessibility.
+    </BpkParagraph>
     <BpkList>
       <BpkListItem>
         <BpkLink href={`#${anchors.fontFamilies}`}>Font families</BpkLink>
