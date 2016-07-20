@@ -15,6 +15,10 @@ const BaseStylesheetPage = () => (
     <Helmet title='Base stylesheet' />
     <BpkHeading level='h1'>Base stylesheet</BpkHeading>
     <BpkParagraph>
+      All components are built on top of a super lightweight base stylesheet. Ensure you include this on the page
+      when consuming any backpack components.
+    </BpkParagraph>
+    <BpkParagraph>
       <strong>
         Note: The scaffolding still uses a different, older base stylesheet. Please refer to
         this <BpkLink href={baseStylesheetBlogPostLink} target='_blank'>blog post</BpkLink> for
@@ -23,7 +27,7 @@ const BaseStylesheetPage = () => (
         updates.
       </strong>
     </BpkParagraph>
-    <BpkHeading level='h2'>What's in it?</BpkHeading>
+    <BpkHeading level='h3'>What's in it?</BpkHeading>
     <BpkList>
       <BpkListItem>
         For improved cross-browser rendering,
@@ -50,15 +54,17 @@ const BaseStylesheetPage = () => (
       </BpkListItem>
       <BpkListItem>That's it so far...</BpkListItem>
     </BpkList>
-    <BpkHeading level='h2'>Usage</BpkHeading>
+    <BpkHeading level='h3'>Usage</BpkHeading>
     <BpkParagraph>
       Consumer's of the website scaffolding should expect this base stylesheet to be on the page already. If
       you need to emulate this base in your component's local test harness, the compiled css is available for you to
-      import like so:
+      import, but first you'll need to install the <BpkCode inline>{'bpk-stylesheets'}</BpkCode> package:
     </BpkParagraph>
-    <BpkCode>{'<link rel="stylesheet" href="/node_modules/backpack/base.css">'}</BpkCode>
+    <BpkCode>{'npm install bpk-stylesheets --save-dev'}</BpkCode>
+    <BpkParagraph>Import like so:</BpkParagraph>
+    <BpkCode>{'<link rel="stylesheet" href="/node_modules/bpk-stylesheets/base.css">'}</BpkCode>
     <BpkParagraph>Alternatively you could import using SASS:</BpkParagraph>
-    <BpkCode syntax='css'>@import '~backpack/base';</BpkCode>
+    <BpkCode syntax='css'>@import '~bpk-stylesheets/base';</BpkCode>
   </section>
 )
 
