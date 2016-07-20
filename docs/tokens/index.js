@@ -1,7 +1,7 @@
 import find from 'lodash/find'
 import filter from 'lodash/filter'
 import groupBy from 'lodash/groupBy'
-import { props as tokens } from 'backpack-tokens/tokens/base.raw.json'
+import { props as tokens } from 'bpk-tokens/tokens/base.raw.json'
 
 import * as TOKEN_CATEGORIES from '../constants/token-categories'
 

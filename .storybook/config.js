@@ -1,0 +1,10 @@
+import { configure } from '@kadira/storybook'
+
+configure(() => {
+  require('./../packages/bpk-component-button/stories')
+  require('./../packages/bpk-component-heading/stories')
+  require('./../packages/bpk-component-link/stories')
+  require('./../packages/bpk-component-list/stories')
+  require('./../packages/bpk-component-paragraph/stories')
+  require('./../packages/bpk-component-table/stories')
+}, module)

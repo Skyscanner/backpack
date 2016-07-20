@@ -1,0 +1,59 @@
+@import '~normalize.css';
+@import '~bpk-mixins/index';
+
+html {
+  font-size: $bpk-font-size-root;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+/* stylelint-disable selector-class-pattern  */
+
+body {
+  color: $bpk-font-color-base;
+  font-family: $bpk-font-family-base;
+  font-size: $bpk-font-size-base;
+  line-height: $bpk-line-height-base;
+
+  &.scaffold-font {
+    font-family: arial, helvetica, clean, sans-serif;
+    font-size: 13px;
+    line-height: 1.231;
+  }
+
+  &.scaffold-font-size {
+    font-size: 13px;
+  }
+}
+
+.hidden,
+.hide {
+  @include bpk-hidden;
+}
+
+.visuallyhidden,
+.visually-hidden {
+  @include bpk-visually-hidden;
+
+  &.focusable {
+    @include bpk-visually-hidden--focusable;
+  }
+}
+
+.invisible {
+  @include bpk-invisible;
+}
+
+.clearfix {
+  @include bpk-clearfix;
+}
+
+/* stylelint-enable */

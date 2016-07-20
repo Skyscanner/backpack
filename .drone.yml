@@ -2,8 +2,10 @@ build:
   image: node:5
   commands:
     - npm install
+    - npm run bootstrap
+    - npm run build
     - npm test
-    - npm run dist:gzip
+    - npm run docs:dist:gzip
 
 publish:
   s3_sync:

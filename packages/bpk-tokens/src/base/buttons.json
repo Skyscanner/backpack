@@ -1,0 +1,62 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "buttons"
+  },
+  "props": {
+    "BUTTON_PADDING_Y": {
+      "value": "{!SPACING_XS}",
+      "type": "size"
+    },
+    "BUTTON_PADDING_X": {
+      "value": "{!SPACING_SM}",
+      "type": "size"
+    },
+    "BUTTON_BORDER_RADIUS": {
+      "value": "{!BORDER_RADIUS_PILL}",
+      "type": "size"
+    },
+    "BUTTON_BACKGROUND_COLOR": {
+      "value": "{!GREEN_500}",
+      "type": "color"
+    },
+    "BUTTON_HOVER_BACKGROUND_COLOR": {
+      "value": "{!GREEN_300}",
+      "type": "color"
+    },
+    "BUTTON_ACTIVE_BACKGROUND_COLOR": {
+      "value": "{!GREEN_700}",
+      "type": "color"
+    },
+    "BUTTON_DISABLED_BACKGROUND_COLOR": {
+      "value": "{!GRAY_100}",
+      "type": "color"
+    },
+    "BUTTON_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "BUTTON_DISABLED_COLOR": {
+      "value": "{!GRAY_300}",
+      "type": "color"
+    },
+    "BUTTON_FONT_SIZE": {
+      "value": "{!FONT_SIZE_BASE}",
+      "type": "size"
+    },
+    "BUTTON_FONT_WEIGHT": {
+      "value": "700",
+      "type": "number"
+    },
+    "BUTTON_LINE_HEIGHT": {
+      "value": "{!SPACING_BASE}",
+      "type": "number"
+    },
+    "BUTTON_TEXT_ALIGN": {
+      "value": "center",
+      "type": "text-align"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <property name="BUTTON_PADDING_Y" category="buttons">8px</property>
+  <property name="BUTTON_PADDING_X" category="buttons">24px</property>
+  <property name="BUTTON_BORDER_RADIUS" category="buttons">3px</property>
+  <color name="BUTTON_BACKGROUND_COLOR" category="buttons">#34363dff</color>
+  <color name="BUTTON_HOVER_BACKGROUND_COLOR" category="buttons">#4d5059ff</color>
+  <color name="BUTTON_ACTIVE_BACKGROUND_COLOR" category="buttons">#4d5059ff</color>
+  <color name="BUTTON_DISABLED_BACKGROUND_COLOR" category="buttons">#4d5059ff</color>
+  <color name="BUTTON_COLOR" category="buttons">#00ddeeff</color>
+  <color name="BUTTON_DISABLED_COLOR" category="buttons">#000000ff</color>
+  <property name="BUTTON_FONT_SIZE" category="buttons">14</property>
+  <property name="BUTTON_FONT_WEIGHT" category="buttons">normal</property>
+  <property name="BUTTON_LINE_HEIGHT" category="buttons">1.125em</property>
+  <property name="BUTTON_TEXT_ALIGN" category="buttons">center</property>
+</resources>

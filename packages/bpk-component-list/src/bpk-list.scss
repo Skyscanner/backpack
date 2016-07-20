@@ -1,0 +1,13 @@
+@import '~bpk-mixins/index';
+
+.bpk-list {
+  @include bpk-list;
+
+  &__item {
+    @include bpk-list-item;
+  }
+
+  & & {
+    @include bpk-list--nested;
+  }
+}

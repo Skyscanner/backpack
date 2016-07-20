@@ -1,18 +1,27 @@
 {
   "name": "backpack",
   "private": true,
-  "description": "Backpack Design System",
   "scripts": {
+    "postinstall": "npm run bootstrap",
+    "bootstrap": "lerna bootstrap",
+    "updated": "lerna updated",
+    "diff": "lerna diff",
     "clean:dist": "rm -rf dist",
     "clean": "npm run clean:dist",
-    "lint:scss": "stylelint docs/**/*.scss *.scss --syntax scss",
+    "lint:scss": "stylelint '+(packages|docs)/**/*.scss' --syntax scss",
     "lint:js": "standard",
     "lint": "npm run lint:js && npm run lint:scss",
-    "sassdoc": "sassdoc {node_modules/bpk-mixins/src/**/*,node_modules/backpack-tokens/tokens/base.default}.scss -d dist/sassdoc -v --strict --debug",
-    "dist": "npm run clean && NODE_ENV=production webpack && npm run sassdoc",
-    "dist:gzip": "npm run dist && grunt",
-    "start": "webpack-dev-server",
-    "test": "npm run lint"
+    "jest:watch": "jest --watch",
+    "jest": "jest --coverage",
+    "build": "lerna run build",
+    "storybook": "start-storybook -p 9001",
+    "sassdoc": "sassdoc {node_modules/bpk-mixins/src/**/*,node_modules/bpk-tokens/tokens/base.default}.scss -d dist/sassdoc -v --strict --debug",
+    "docs": "webpack-dev-server",
+    "docs:dist": "npm run clean && NODE_ENV=production webpack && npm run sassdoc",
+    "docs:dist:gzip": "npm run docs:dist && grunt",
+    "start": "npm run build && npm run storybook",
+    "test": "npm run lint && npm run jest",
+    "publish": "npm run build && git pull --rebase && npm run test && lerna publish"
   },
   "repository": {
     "type": "git",
@@ -21,13 +30,13 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@kadira/storybook": "1.36.0",
     "autoprefixer": "6.3.7",
     "babel-core": "6.10.4",
+    "babel-jest": "13.2.2",
     "babel-loader": "6.2.4",
-    "babel-plugin-syntax-object-rest-spread": "6.8.0",
     "babel-preset-es2015": "6.9.0",
     "babel-preset-react": "6.11.1",
-    "backpack-tokens": "git+http://git.prod.skyscanner.local/backpack/tokens.git#v7.0.0",
     "bpk-component-button": "*",
     "bpk-component-heading": "*",
     "bpk-component-list": "*",
@@ -35,17 +44,21 @@
     "bpk-component-table": "*",
     "bpk-mixins": "*",
     "bpk-stylesheets": "*",
+    "bpk-tokens": "*",
     "css-loader": "0.23.1",
+    "enzyme": "2.4.1",
     "extract-text-webpack-plugin": "1.0.1",
     "grunt": "0.4.5",
     "grunt-cli": "0.1.13",
     "grunt-contrib-compress": "1.3.0",
+    "jest-cli": "13.2.3",
     "js-beautify": "1.6.3",
     "json-loader": "0.5.4",
     "lodash": "4.13.1",
     "node-sass": "3.8.0",
     "postcss-loader": "0.9.1",
     "react": "15.2.1",
+    "react-addons-test-utils": "15.2.1",
     "react-css-modules": "3.7.7",
     "react-dom": "15.2.1",
     "react-helmet": "3.1.0",
@@ -58,6 +71,31 @@
     "stylelint": "7.0.2",
     "stylelint-config-standard": "11.0.0",
     "webpack": "1.13.1",
-    "webpack-dev-server": "1.14.1"
+    "webpack-dev-server": "1.14.1",
+    "zkochan-lerna": "2.0.0-beta.24"
+  },
+  "standard": {
+    "globals": [
+      "jest",
+      "describe",
+      "it",
+      "expect"
+    ],
+    "ignore": [
+      "/packages/bpk-stylesheets/base.js"
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "testRegex": "packages/.*-test\\.js$",
+    "unmockedModulePathPatterns": [
+      "node_modules/react/",
+      "node_modules/enzyme/",
+      "node_modules/react-dom/",
+      "node_modules/react-addons-test-utils/"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.scss$": "<rootDir>/jest/styleMock.js"
+    }
   }
 }

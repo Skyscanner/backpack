@@ -1,0 +1,98 @@
+{
+  "aliases": {},
+  "props": {
+    "BUTTON_PADDING_Y": {
+      "category": "buttons",
+      "value": "8px",
+      "type": "size",
+      "name": "BUTTON_PADDING_Y"
+    },
+    "BUTTON_PADDING_X": {
+      "category": "buttons",
+      "value": "24px",
+      "type": "size",
+      "name": "BUTTON_PADDING_X"
+    },
+    "BUTTON_BORDER_RADIUS": {
+      "category": "buttons",
+      "value": "3px",
+      "type": "size",
+      "name": "BUTTON_BORDER_RADIUS"
+    },
+    "BUTTON_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "#34363d",
+      "type": "color",
+      "name": "BUTTON_BACKGROUND_COLOR"
+    },
+    "BUTTON_HOVER_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "#4d5059",
+      "type": "color",
+      "name": "BUTTON_HOVER_BACKGROUND_COLOR"
+    },
+    "BUTTON_ACTIVE_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "#4d5059",
+      "type": "color",
+      "name": "BUTTON_ACTIVE_BACKGROUND_COLOR"
+    },
+    "BUTTON_DISABLED_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "#4d5059",
+      "type": "color",
+      "name": "BUTTON_DISABLED_BACKGROUND_COLOR"
+    },
+    "BUTTON_COLOR": {
+      "category": "buttons",
+      "value": "#00ddee",
+      "type": "color",
+      "name": "BUTTON_COLOR"
+    },
+    "BUTTON_DISABLED_COLOR": {
+      "category": "buttons",
+      "value": "#000000",
+      "type": "color",
+      "name": "BUTTON_DISABLED_COLOR"
+    },
+    "BUTTON_FONT_SIZE": {
+      "category": "buttons",
+      "value": ".875rem",
+      "type": "size",
+      "name": "BUTTON_FONT_SIZE"
+    },
+    "BUTTON_FONT_WEIGHT": {
+      "category": "buttons",
+      "value": "normal",
+      "type": "number",
+      "name": "BUTTON_FONT_WEIGHT"
+    },
+    "BUTTON_LINE_HEIGHT": {
+      "category": "buttons",
+      "value": "1.125em",
+      "type": "number",
+      "name": "BUTTON_LINE_HEIGHT"
+    },
+    "BUTTON_TEXT_ALIGN": {
+      "category": "buttons",
+      "value": "center",
+      "type": "text-align",
+      "name": "BUTTON_TEXT_ALIGN"
+    }
+  },
+  "propKeys": [
+    "BUTTON_PADDING_Y",
+    "BUTTON_PADDING_X",
+    "BUTTON_BORDER_RADIUS",
+    "BUTTON_BACKGROUND_COLOR",
+    "BUTTON_HOVER_BACKGROUND_COLOR",
+    "BUTTON_ACTIVE_BACKGROUND_COLOR",
+    "BUTTON_DISABLED_BACKGROUND_COLOR",
+    "BUTTON_COLOR",
+    "BUTTON_DISABLED_COLOR",
+    "BUTTON_FONT_SIZE",
+    "BUTTON_FONT_WEIGHT",
+    "BUTTON_LINE_HEIGHT",
+    "BUTTON_TEXT_ALIGN"
+  ]
+}

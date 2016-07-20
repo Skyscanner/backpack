@@ -1,0 +1,5 @@
+@import '~bpk-mixins/index';
+
+.bpk-paragraph {
+  @include bpk-paragraph;
+}

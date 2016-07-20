@@ -2,5 +2,8 @@
 .idea
 .sass-cache
 node_modules
-/npm-debug.log
 /dist
+/coverage
+/npm-debug.log
+/lerna-debug.log
+/sassdoc-data.json

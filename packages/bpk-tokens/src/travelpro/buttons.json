@@ -1,0 +1,59 @@
+{
+  "global": {
+    "category": "buttons"
+  },
+  "props": {
+    "BUTTON_PADDING_Y": {
+      "value": "8px",
+      "type": "size"
+    },
+    "BUTTON_PADDING_X": {
+      "value": "24px",
+      "type": "size"
+    },
+    "BUTTON_BORDER_RADIUS": {
+      "value": "3px",
+      "type": "size"
+    },
+    "BUTTON_BACKGROUND_COLOR": {
+      "value": "#34363d",
+      "type": "color"
+    },
+    "BUTTON_HOVER_BACKGROUND_COLOR": {
+      "value": "#4d5059",
+      "type": "color"
+    },
+    "BUTTON_ACTIVE_BACKGROUND_COLOR": {
+      "value": "#4d5059",
+      "type": "color"
+    },
+    "BUTTON_DISABLED_BACKGROUND_COLOR": {
+      "value": "#4d5059",
+      "type": "color"
+    },
+    "BUTTON_COLOR": {
+      "value": "#0de",
+      "type": "color"
+    },
+    "BUTTON_DISABLED_COLOR": {
+      "value": "#686b75!important",
+      "type": "color"
+    },
+    "BUTTON_FONT_SIZE": {
+      "value": ".875rem",
+      "type": "size"
+    },
+    "BUTTON_FONT_WEIGHT": {
+      "value": "normal",
+      "type": "number"
+    },
+    "BUTTON_LINE_HEIGHT": {
+      "value": "1.125em",
+      "type": "number"
+    },
+    "BUTTON_TEXT_ALIGN": {
+      "value": "center",
+      "type": "text-align"
+    }
+  }
+}

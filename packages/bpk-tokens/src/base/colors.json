@@ -1,0 +1,164 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "type": "color",
+    "category": "color"
+  },
+  "props": {
+    "COLOR_WHITE": {
+      "value": "{!WHITE}"
+    },
+    "COLOR_BLUE_50": {
+      "value": "{!BLUE_50}"
+    },
+    "COLOR_BLUE_100": {
+      "value": "{!BLUE_100}"
+    },
+    "COLOR_BLUE_200": {
+      "value": "{!BLUE_200}"
+    },
+    "COLOR_BLUE_300": {
+      "value": "{!BLUE_300}"
+    },
+    "COLOR_BLUE_400": {
+      "value": "{!BLUE_400}"
+    },
+    "COLOR_BLUE_500": {
+      "value": "{!BLUE_500}"
+    },
+    "COLOR_BLUE_600": {
+      "value": "{!BLUE_600}"
+    },
+    "COLOR_BLUE_700": {
+      "value": "{!BLUE_700}"
+    },
+    "COLOR_BLUE_800": {
+      "value": "{!BLUE_800}"
+    },
+    "COLOR_BLUE_900": {
+      "value": "{!BLUE_900}"
+    },
+    "COLOR_GRAY_50": {
+      "value": "{!GRAY_50}"
+    },
+    "COLOR_GRAY_100": {
+      "value": "{!GRAY_100}"
+    },
+    "COLOR_GRAY_200": {
+      "value": "{!GRAY_200}"
+    },
+    "COLOR_GRAY_300": {
+      "value": "{!GRAY_300}"
+    },
+    "COLOR_GRAY_400": {
+      "value": "{!GRAY_400}"
+    },
+    "COLOR_GRAY_500": {
+      "value": "{!GRAY_500}"
+    },
+    "COLOR_GRAY_600": {
+      "value": "{!GRAY_600}"
+    },
+    "COLOR_GRAY_700": {
+      "value": "{!GRAY_700}"
+    },
+    "COLOR_GRAY_800": {
+      "value": "{!GRAY_800}"
+    },
+    "COLOR_GRAY_900": {
+      "value": "{!GRAY_900}"
+    },
+    "COLOR_GREEN_50": {
+      "value": "{!GREEN_50}"
+    },
+    "COLOR_GREEN_100": {
+      "value": "{!GREEN_100}"
+    },
+    "COLOR_GREEN_200": {
+      "value": "{!GREEN_200}"
+    },
+    "COLOR_GREEN_300": {
+      "value": "{!GREEN_300}"
+    },
+    "COLOR_GREEN_400": {
+      "value": "{!GREEN_400}"
+    },
+    "COLOR_GREEN_500": {
+      "value": "{!GREEN_500}"
+    },
+    "COLOR_GREEN_600": {
+      "value": "{!GREEN_600}"
+    },
+    "COLOR_GREEN_700": {
+      "value": "{!GREEN_700}"
+    },
+    "COLOR_GREEN_800": {
+      "value": "{!GREEN_800}"
+    },
+    "COLOR_GREEN_900": {
+      "value": "{!GREEN_900}"
+    },
+    "COLOR_RED_50": {
+      "value": "{!RED_50}"
+    },
+    "COLOR_RED_100": {
+      "value": "{!RED_100}"
+    },
+    "COLOR_RED_200": {
+      "value": "{!RED_200}"
+    },
+    "COLOR_RED_300": {
+      "value": "{!RED_300}"
+    },
+    "COLOR_RED_400": {
+      "value": "{!RED_400}"
+    },
+    "COLOR_RED_500": {
+      "value": "{!RED_500}"
+    },
+    "COLOR_RED_600": {
+      "value": "{!RED_600}"
+    },
+    "COLOR_RED_700": {
+      "value": "{!RED_700}"
+    },
+    "COLOR_RED_800": {
+      "value": "{!RED_800}"
+    },
+    "COLOR_RED_900": {
+      "value": "{!RED_900}"
+    },
+    "COLOR_YELLOW_50": {
+      "value": "{!YELLOW_50}"
+    },
+    "COLOR_YELLOW_100": {
+      "value": "{!YELLOW_100}"
+    },
+    "COLOR_YELLOW_200": {
+      "value": "{!YELLOW_200}"
+    },
+    "COLOR_YELLOW_300": {
+      "value": "{!YELLOW_300}"
+    },
+    "COLOR_YELLOW_400": {
+      "value": "{!YELLOW_400}"
+    },
+    "COLOR_YELLOW_500": {
+      "value": "{!YELLOW_500}"
+    },
+    "COLOR_YELLOW_600": {
+      "value": "{!YELLOW_600}"
+    },
+    "COLOR_YELLOW_700": {
+      "value": "{!YELLOW_700}"
+    },
+    "COLOR_YELLOW_800": {
+      "value": "{!YELLOW_800}"
+    },
+    "COLOR_YELLOW_900": {
+      "value": "{!YELLOW_900}"
+    }
+  }
+}

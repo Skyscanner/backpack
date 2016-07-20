@@ -1,0 +1,82 @@
+{
+  "properties": [
+    {
+      "category": "buttons",
+      "value": "8px",
+      "type": "size",
+      "name": "buttonPaddingY"
+    },
+    {
+      "category": "buttons",
+      "value": "24px",
+      "type": "size",
+      "name": "buttonPaddingX"
+    },
+    {
+      "category": "buttons",
+      "value": "3px",
+      "type": "size",
+      "name": "buttonBorderRadius"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(52, 54, 61)",
+      "type": "color",
+      "name": "buttonBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(77, 80, 89)",
+      "type": "color",
+      "name": "buttonHoverBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(77, 80, 89)",
+      "type": "color",
+      "name": "buttonActiveBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(77, 80, 89)",
+      "type": "color",
+      "name": "buttonDisabledBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 221, 238)",
+      "type": "color",
+      "name": "buttonColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 0, 0)",
+      "type": "color",
+      "name": "buttonDisabledColor"
+    },
+    {
+      "category": "buttons",
+      "value": "14",
+      "type": "size",
+      "name": "buttonFontSize"
+    },
+    {
+      "category": "buttons",
+      "value": "normal",
+      "type": "number",
+      "name": "buttonFontWeight"
+    },
+    {
+      "category": "buttons",
+      "value": "1.125em",
+      "type": "number",
+      "name": "buttonLineHeight"
+    },
+    {
+      "category": "buttons",
+      "value": "center",
+      "type": "text-align",
+      "name": "buttonTextAlign"
+    }
+  ]
+}
