@@ -264,6 +264,31 @@
       "value": "0",
       "type": "size",
       "category": "spacing"
+    },
+    "LINK_COLOR": {
+      "value": "{!BLUE_500}",
+      "type": "color",
+      "category": "text-color"
+    },
+    "LINK_TEXT_DECORATION": {
+      "value": "none",
+      "type": "text-decoration",
+      "category": "text-decoration"
+    },
+    "LINK_HOVER_COLOR": {
+      "value": "{!GRAY_700}",
+      "type": "color",
+      "category": "text-color"
+    },
+    "LINK_HOVER_TEXT_DECORATION": {
+      "value": "underline",
+      "type": "text-decoration",
+      "category": "text-decoration"
+    },
+    "LINK_ACTIVE_COLOR": {
+      "value": "{!GRAY_500}",
+      "type": "color",
+      "category": "text-color"
     }
   }
 }

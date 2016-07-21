@@ -4,7 +4,7 @@ import autoprefixer from 'autoprefixer'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin'
 
-import * as ROUTES from './docs/constants/routes'
+import * as ROUTES from './packages/bpk-docs/src/constants/routes'
 
 const { BPK_TOKENS } = process.env
 
@@ -25,7 +25,7 @@ const staticSiteGeneratorConfig = {
 
 const config = {
   entry: {
-    docs: './docs/index.js'
+    docs: './packages/bpk-docs/src/index.js'
   },
 
   output: {
@@ -64,7 +64,7 @@ const config = {
   postcss: () => [ autoprefixer({ browsers: [ 'last 20 versions' ] }) ],
 
   sass: {
-    data: BPK_TOKENS ? fs.readFileSync(require.resolve(`backpack-tokens/tokens/${BPK_TOKENS}.scss`)) : ''
+    data: BPK_TOKENS ? fs.readFileSync(`packages/bpk-tokens/tokens/${BPK_TOKENS}.scss`) : ''
   },
 
   devServer: {

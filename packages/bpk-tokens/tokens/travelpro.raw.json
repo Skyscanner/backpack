@@ -21,37 +21,61 @@
     },
     "BUTTON_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "#34363d",
+      "value": "rgb(52, 54, 61)",
       "type": "color",
       "name": "BUTTON_BACKGROUND_COLOR"
     },
+    "BUTTON_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_BACKGROUND_IMAGE"
+    },
     "BUTTON_HOVER_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "#4d5059",
+      "value": "rgb(77, 80, 89)",
       "type": "color",
       "name": "BUTTON_HOVER_BACKGROUND_COLOR"
     },
+    "BUTTON_HOVER_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_HOVER_BACKGROUND_IMAGE"
+    },
     "BUTTON_ACTIVE_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "#4d5059",
+      "value": "rgb(77, 80, 89)",
       "type": "color",
       "name": "BUTTON_ACTIVE_BACKGROUND_COLOR"
     },
+    "BUTTON_ACTIVE_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_ACTIVE_BACKGROUND_IMAGE"
+    },
     "BUTTON_DISABLED_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "#4d5059",
+      "value": "rgb(77, 80, 89)",
       "type": "color",
       "name": "BUTTON_DISABLED_BACKGROUND_COLOR"
     },
+    "BUTTON_DISABLED_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_DISABLED_BACKGROUND_IMAGE"
+    },
     "BUTTON_COLOR": {
       "category": "buttons",
-      "value": "#00ddee",
+      "value": "rgb(0, 221, 238)",
       "type": "color",
       "name": "BUTTON_COLOR"
     },
     "BUTTON_DISABLED_COLOR": {
       "category": "buttons",
-      "value": "#000000",
+      "value": "rgb(104, 107, 117)",
       "type": "color",
       "name": "BUTTON_DISABLED_COLOR"
     },
@@ -85,9 +109,13 @@
     "BUTTON_PADDING_X",
     "BUTTON_BORDER_RADIUS",
     "BUTTON_BACKGROUND_COLOR",
+    "BUTTON_BACKGROUND_IMAGE",
     "BUTTON_HOVER_BACKGROUND_COLOR",
+    "BUTTON_HOVER_BACKGROUND_IMAGE",
     "BUTTON_ACTIVE_BACKGROUND_COLOR",
+    "BUTTON_ACTIVE_BACKGROUND_IMAGE",
     "BUTTON_DISABLED_BACKGROUND_COLOR",
+    "BUTTON_DISABLED_BACKGROUND_IMAGE",
     "BUTTON_COLOR",
     "BUTTON_DISABLED_COLOR",
     "BUTTON_FONT_SIZE",
