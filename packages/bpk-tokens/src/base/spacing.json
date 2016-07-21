@@ -1,0 +1,35 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "type": "size",
+    "category": "spacing"
+  },
+  "props": {
+    "SPACING_XS": {
+      "value": "{!SPACING_XS}",
+      "core": true
+    },
+    "SPACING_SM": {
+      "value": "{!SPACING_SM}",
+      "core": true
+    },
+    "SPACING_BASE": {
+      "value": "{!SPACING_BASE}",
+      "core": true
+    },
+    "SPACING_LG": {
+      "value": "{!SPACING_LG}",
+      "core": true
+    },
+    "SPACING_XL": {
+      "value": "{!SPACING_XL}",
+      "core": true
+    },
+    "SPACING_XXL": {
+      "value": "{!SPACING_XXL}",
+      "core": true
+    }
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "props": {
+    "FONT_FAMILY_BASE": {
+      "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
+      "type": "font",
+      "category": "font",
+      "core": true
+    },
+    "FONT_COLOR_BASE": {
+      "value": "{!GRAY_500}",
+      "type": "color",
+      "category": "text-color",
+      "core": true
+    },
+    "LINE_HEIGHT_SM": {
+      "value": "{!SPACING_MD}",
+      "type": "number",
+      "category": "line-height",
+      "core": true
+    },
+    "LINE_HEIGHT_BASE": {
+      "value": "{!SPACING_BASE}",
+      "type": "number",
+      "category": "line-height",
+      "core": true
+    },
+    "LINE_HEIGHT_LG": {
+      "value": "{!SPACING_LG}",
+      "type": "number",
+      "category": "line-height",
+      "core": true
+    },
+    "LINE_HEIGHT_XL": {
+      "value": "{!SPACING_XL}",
+      "type": "number",
+      "category": "line-height",
+      "core": true
+    },
+    "FONT_SIZE_ROOT": {
+      "value": "100%",
+      "type": "size",
+      "category": "font-size",
+      "core": true
+    },
+    "FONT_SIZE_SM": {
+      "value": "{!FONT_SIZE_SM}",
+      "type": "size",
+      "category": "font-size",
+      "core": true
+    },
+    "FONT_SIZE_BASE": {
+      "value": "{!FONT_SIZE_BASE}",
+      "type": "size",
+      "category": "font-size",
+      "core": true
+    },
+    "FONT_SIZE_LG": {
+      "value": "{!FONT_SIZE_LG}",
+      "type": "size",
+      "category": "font-size",
+      "core": true
+    },
+    "FONT_SIZE_XL": {
+      "value": "{!FONT_SIZE_XL}",
+      "type": "size",
+      "category": "font-size",
+      "core": true
+    },
+    "FONT_SIZE_XXL": {
+      "value": "{!FONT_SIZE_XXL}",
+      "type": "size",
+      "category": "font-size",
+      "core": true
+    },
+    "H6_FONT_SIZE": {
+      "value": "{!FONT_SIZE_BASE}",
+      "type": "size",
+      "category": "font-size"
+    },
+    "H5_FONT_SIZE": {
+      "value": "{!FONT_SIZE_BASE}",
+      "type": "size",
+      "category": "font-size"
+    },
+    "H4_FONT_SIZE": {
+      "value": "{!FONT_SIZE_BASE}",
+      "type": "size",
+      "category": "font-size"
+    },
+    "H3_FONT_SIZE": {
+      "value": "{!FONT_SIZE_LG}",
+      "type": "size",
+      "category": "font-size"
+    },
+    "H2_FONT_SIZE": {
+      "value": "{!FONT_SIZE_XL}",
+      "type": "size",
+      "category": "font-size"
+    },
+    "H1_FONT_SIZE": {
+      "value": "{!FONT_SIZE_XXL}",
+      "type": "size",
+      "category": "font-size"
+    },
+    "H6_LINE_HEIGHT": {
+      "value": "{!SPACING_BASE}",
+      "type": "number",
+      "category": "line-height"
+    },
+    "H5_LINE_HEIGHT": {
+      "value": "{!SPACING_BASE}",
+      "type": "number",
+      "category": "line-height"
+    },
+    "H4_LINE_HEIGHT": {
+      "value": "{!SPACING_BASE}",
+      "type": "number",
+      "category": "line-height"
+    },
+    "H3_LINE_HEIGHT": {
+      "value": "{!SPACING_LG}",
+      "type": "number",
+      "category": "line-height"
+    },
+    "H2_LINE_HEIGHT": {
+      "value": "{!SPACING_XL}",
+      "type": "number",
+      "category": "line-height"
+    },
+    "H1_LINE_HEIGHT": {
+      "value": "{!SPACING_XL}",
+      "type": "number",
+      "category": "line-height"
+    },
+    "H6_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weight"
+    },
+    "H5_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weight"
+    },
+    "H4_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weight"
+    },
+    "H3_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weight"
+    },
+    "H2_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weight"
+    },
+    "H1_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weight"
+    },
+    "H6_MARGIN_TOP": {
+      "value": "0",
+      "type": "size",
+      "category": "spacing"
+    },
+    "H5_MARGIN_TOP": {
+      "value": "0",
+      "type": "size",
+      "category": "spacing"
+    },
+    "H4_MARGIN_TOP": {
+      "value": "0",
+      "type": "size",
+      "category": "spacing"
+    },
+    "H3_MARGIN_TOP": {
+      "value": "0",
+      "type": "size",
+      "category": "spacing"
+    },
+    "H2_MARGIN_TOP": {
+      "value": "0",
+      "type": "size",
+      "category": "spacing"
+    },
+    "H1_MARGIN_TOP": {
+      "value": "0",
+      "type": "size",
+      "category": "spacing"
+    },
+    "H6_MARGIN_BOTTOM": {
+      "value": "{!SPACING_BASE}",
+      "type": "size",
+      "category": "spacing"
+    },
+    "H5_MARGIN_BOTTOM": {
+      "value": "{!SPACING_BASE}",
+      "type": "size",
+      "category": "spacing"
+    },
+    "H4_MARGIN_BOTTOM": {
+      "value": "{!SPACING_BASE}",
+      "type": "size",
+      "category": "spacing"
+    },
+    "H3_MARGIN_BOTTOM": {
+      "value": "{!SPACING_BASE}",
+      "type": "size",
+      "category": "spacing"
+    },
+    "H2_MARGIN_BOTTOM": {
+      "value": "{!SPACING_BASE}",
+      "type": "size",
+      "category": "spacing"
+    },
+    "H1_MARGIN_BOTTOM": {
+      "value": "{!SPACING_BASE}",
+      "type": "size",
+      "category": "spacing"
+    },
+    "P_MARGIN_TOP": {
+      "value": "0",
+      "type": "size",
+      "category": "spacing"
+    },
+    "P_MARGIN_BOTTOM": {
+      "value": "{!SPACING_BASE}",
+      "type": "size",
+      "category": "spacing"
+    },
+    "LIST_MARGIN_TOP": {
+      "value": "0",
+      "type": "size",
+      "category": "spacing"
+    },
+    "LIST_MARGIN_BOTTOM": {
+      "value": "{!SPACING_BASE}",
+      "type": "size",
+      "category": "spacing"
+    },
+    "LIST_NESTED_MARGIN_TOP": {
+      "value": "0",
+      "type": "size",
+      "category": "spacing"
+    },
+    "LIST_NESTED_MARGIN_BOTTOM": {
+      "value": "0",
+      "type": "size",
+      "category": "spacing"
+    },
+    "LIST_ITEM_MARGIN_TOP": {
+      "value": "0",
+      "type": "size",
+      "category": "spacing"
+    },
+    "LIST_ITEM_MARGIN_BOTTOM": {
+      "value": "0",
+      "type": "size",
+      "category": "spacing"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "breakpoint"
+  },
+  "props": {
+    "BREAKPOINT_MOBILE": {
+      "value": "{!BREAKPOINT_MOBILE}",
+      "type": "size"
+    },
+    "BREAKPOINT_TABLET": {
+      "value": "{!BREAKPOINT_TABLET}",
+      "type": "size"
+    },
+    "BREAKPOINT_DESKTOP": {
+      "value": "{!BREAKPOINT_DESKTOP}",
+      "type": "size"
+    },
+    "BREAKPOINT_QUERY_MOBILE": {
+      "value": "(max-width: {!BREAKPOINT_MOBILE})",
+      "type": "media-query"
+    },
+    "BREAKPOINT_QUERY_TABLET": {
+      "value": "(max-width: {!BREAKPOINT_TABLET})",
+      "type": "media-query"
+    },
+    "BREAKPOINT_QUERY_TABLET_ONLY": {
+      "value": "(min-width: {!BREAKPOINT_MOBILE} + {!ONE_PIXEL_REM}) and (max-width: {!BREAKPOINT_TABLET})",
+      "type": "media-query"
+    },
+    "BREAKPOINT_QUERY_ABOVE_MOBILE": {
+      "value": "(min-width: {!BREAKPOINT_MOBILE} + {!ONE_PIXEL_REM})",
+      "type": "media-query"
+    },
+    "BREAKPOINT_QUERY_ABOVE_TABLET": {
+      "value": "(min-width: {!BREAKPOINT_TABLET} + {!ONE_PIXEL_REM})",
+      "type": "media-query"
+    }
+  }
+}

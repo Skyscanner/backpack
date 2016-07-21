@@ -1,0 +1,113 @@
+@import '../bonds';
+
+////
+/// @group breakpoints
+////
+
+/// Main content container.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-container();
+///   }
+
+@mixin bpk-container {
+  max-width: $bpk-breakpoint-desktop;
+  margin: 0 auto;
+  padding: $bpk-spacing-base;
+}
+
+/// Breakpoint to target mobile viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-mobile() {
+///       /* mobile viewport scss goes here */
+///     }
+///
+///     /* tablet & desktop viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-mobile {
+  @media #{$bpk-breakpoint-query-mobile} {
+    @content;
+  }
+}
+
+/// Breakpoint to target mobile & tablet viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-tablet() {
+///       /* mobile & tablet viewport scss goes here */
+///     }
+///
+///     /* desktop viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-tablet {
+  @media #{$bpk-breakpoint-query-tablet} {
+    @content;
+  }
+}
+
+/// Breakpoint to target tablet viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-tablet-only() {
+///       /* tablet viewport scss goes here */
+///     }
+///
+///     /* mobile & desktop viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-tablet-only {
+  @media #{$bpk-breakpoint-query-tablet-only} {
+    @content;
+  }
+}
+
+/// Breakpoint to target tablet & desktop viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-above-mobile() {
+///       /* tablet & desktop viewport scss goes here */
+///     }
+///
+///     /* mobile viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-above-mobile {
+  @media #{$bpk-breakpoint-query-above-mobile} {
+    @content;
+  }
+}
+
+/// Breakpoint to target desktop viewports.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-breakpoint-above-tablet() {
+///       /* desktop viewport scss goes here */
+///     }
+///
+///     /* mobile & tablet viewport scss goes here */
+///   }
+
+@mixin bpk-breakpoint-above-tablet {
+  @media #{$bpk-breakpoint-query-above-tablet} {
+    @content;
+  }
+}

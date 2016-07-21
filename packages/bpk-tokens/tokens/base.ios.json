@@ -1,0 +1,814 @@
+{
+  "properties": [
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(255, 255, 255)",
+      "name": "colorWhite"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(225, 244, 248)",
+      "name": "colorBlue50"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(203, 238, 245)",
+      "name": "colorBlue100"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(176, 228, 238)",
+      "name": "colorBlue200"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(127, 215, 232)",
+      "name": "colorBlue300"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(64, 196, 223)",
+      "name": "colorBlue400"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(0, 178, 214)",
+      "name": "colorBlue500"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(0, 157, 189)",
+      "name": "colorBlue600"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(0, 140, 168)",
+      "name": "colorBlue700"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(0, 117, 140)",
+      "name": "colorBlue800"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(0, 85, 103)",
+      "name": "colorBlue900"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(246, 245, 247)",
+      "name": "colorGray50"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(223, 220, 227)",
+      "name": "colorGray100"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(182, 177, 189)",
+      "name": "colorGray200"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(137, 130, 148)",
+      "name": "colorGray300"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(111, 102, 125)",
+      "name": "colorGray400"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(84, 76, 99)",
+      "name": "colorGray500"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(69, 61, 84)",
+      "name": "colorGray600"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(55, 47, 69)",
+      "name": "colorGray700"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(39, 33, 51)",
+      "name": "colorGray800"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(27, 21, 36)",
+      "name": "colorGray900"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(223, 247, 236)",
+      "name": "colorGreen50"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(203, 245, 226)",
+      "name": "colorGreen100"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(175, 237, 209)",
+      "name": "colorGreen200"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(128, 232, 185)",
+      "name": "colorGreen300"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(64, 222, 151)",
+      "name": "colorGreen400"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(0, 215, 117)",
+      "name": "colorGreen500"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(0, 189, 104)",
+      "name": "colorGreen600"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(0, 168, 93)",
+      "name": "colorGreen700"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(0, 140, 77)",
+      "name": "colorGreen800"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(0, 102, 56)",
+      "name": "colorGreen900"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(252, 233, 232)",
+      "name": "colorRed50"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(255, 214, 213)",
+      "name": "colorRed100"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(255, 187, 186)",
+      "name": "colorRed200"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(255, 150, 148)",
+      "name": "colorRed300"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(254, 116, 113)",
+      "name": "colorRed400"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(255, 84, 82)",
+      "name": "colorRed500"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(235, 66, 63)",
+      "name": "colorRed600"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(222, 50, 47)",
+      "name": "colorRed700"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(204, 31, 29)",
+      "name": "colorRed800"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(168, 3, 0)",
+      "name": "colorRed900"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(250, 244, 225)",
+      "name": "colorYellow50"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(252, 241, 202)",
+      "name": "colorYellow100"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(255, 237, 179)",
+      "name": "colorYellow200"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(255, 230, 148)",
+      "name": "colorYellow300"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(255, 222, 114)",
+      "name": "colorYellow400"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(255, 212, 69)",
+      "name": "colorYellow500"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(246, 198, 43)",
+      "name": "colorYellow600"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(232, 184, 28)",
+      "name": "colorYellow700"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(207, 162, 17)",
+      "name": "colorYellow800"
+    },
+    {
+      "type": "color",
+      "category": "color",
+      "value": "rgb(168, 129, 0)",
+      "name": "colorYellow900"
+    },
+    {
+      "type": "size",
+      "category": "spacing",
+      "value": "6",
+      "core": true,
+      "name": "spacingXs"
+    },
+    {
+      "type": "size",
+      "category": "spacing",
+      "value": "12",
+      "core": true,
+      "name": "spacingSm"
+    },
+    {
+      "type": "size",
+      "category": "spacing",
+      "value": "24",
+      "core": true,
+      "name": "spacingBase"
+    },
+    {
+      "type": "size",
+      "category": "spacing",
+      "value": "36",
+      "core": true,
+      "name": "spacingLg"
+    },
+    {
+      "type": "size",
+      "category": "spacing",
+      "value": "48",
+      "core": true,
+      "name": "spacingXl"
+    },
+    {
+      "type": "size",
+      "category": "spacing",
+      "value": "72",
+      "core": true,
+      "name": "spacingXxl"
+    },
+    {
+      "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
+      "type": "font",
+      "category": "font",
+      "core": true,
+      "name": "fontFamilyBase"
+    },
+    {
+      "value": "rgb(84, 76, 99)",
+      "type": "color",
+      "category": "text-color",
+      "core": true,
+      "name": "fontColorBase"
+    },
+    {
+      "value": "18",
+      "type": "number",
+      "category": "line-height",
+      "core": true,
+      "name": "lineHeightSm"
+    },
+    {
+      "value": "24",
+      "type": "number",
+      "category": "line-height",
+      "core": true,
+      "name": "lineHeightBase"
+    },
+    {
+      "value": "36",
+      "type": "number",
+      "category": "line-height",
+      "core": true,
+      "name": "lineHeightLg"
+    },
+    {
+      "value": "48",
+      "type": "number",
+      "category": "line-height",
+      "core": true,
+      "name": "lineHeightXl"
+    },
+    {
+      "value": "1",
+      "type": "size",
+      "category": "font-size",
+      "core": true,
+      "name": "fontSizeRoot"
+    },
+    {
+      "value": "12",
+      "type": "size",
+      "category": "font-size",
+      "core": true,
+      "name": "fontSizeSm"
+    },
+    {
+      "value": "16",
+      "type": "size",
+      "category": "font-size",
+      "core": true,
+      "name": "fontSizeBase"
+    },
+    {
+      "value": "22",
+      "type": "size",
+      "category": "font-size",
+      "core": true,
+      "name": "fontSizeLg"
+    },
+    {
+      "value": "30",
+      "type": "size",
+      "category": "font-size",
+      "core": true,
+      "name": "fontSizeXl"
+    },
+    {
+      "value": "40",
+      "type": "size",
+      "category": "font-size",
+      "core": true,
+      "name": "fontSizeXxl"
+    },
+    {
+      "value": "16",
+      "type": "size",
+      "category": "font-size",
+      "name": "h6FontSize"
+    },
+    {
+      "value": "16",
+      "type": "size",
+      "category": "font-size",
+      "name": "h5FontSize"
+    },
+    {
+      "value": "16",
+      "type": "size",
+      "category": "font-size",
+      "name": "h4FontSize"
+    },
+    {
+      "value": "22",
+      "type": "size",
+      "category": "font-size",
+      "name": "h3FontSize"
+    },
+    {
+      "value": "30",
+      "type": "size",
+      "category": "font-size",
+      "name": "h2FontSize"
+    },
+    {
+      "value": "40",
+      "type": "size",
+      "category": "font-size",
+      "name": "h1FontSize"
+    },
+    {
+      "value": "24",
+      "type": "number",
+      "category": "line-height",
+      "name": "h6LineHeight"
+    },
+    {
+      "value": "24",
+      "type": "number",
+      "category": "line-height",
+      "name": "h5LineHeight"
+    },
+    {
+      "value": "24",
+      "type": "number",
+      "category": "line-height",
+      "name": "h4LineHeight"
+    },
+    {
+      "value": "36",
+      "type": "number",
+      "category": "line-height",
+      "name": "h3LineHeight"
+    },
+    {
+      "value": "48",
+      "type": "number",
+      "category": "line-height",
+      "name": "h2LineHeight"
+    },
+    {
+      "value": "48",
+      "type": "number",
+      "category": "line-height",
+      "name": "h1LineHeight"
+    },
+    {
+      "value": "400",
+      "type": "number",
+      "category": "font-weight",
+      "name": "h6FontWeight"
+    },
+    {
+      "value": "400",
+      "type": "number",
+      "category": "font-weight",
+      "name": "h5FontWeight"
+    },
+    {
+      "value": "400",
+      "type": "number",
+      "category": "font-weight",
+      "name": "h4FontWeight"
+    },
+    {
+      "value": "400",
+      "type": "number",
+      "category": "font-weight",
+      "name": "h3FontWeight"
+    },
+    {
+      "value": "400",
+      "type": "number",
+      "category": "font-weight",
+      "name": "h2FontWeight"
+    },
+    {
+      "value": "400",
+      "type": "number",
+      "category": "font-weight",
+      "name": "h1FontWeight"
+    },
+    {
+      "value": "0",
+      "type": "size",
+      "category": "spacing",
+      "name": "h6MarginTop"
+    },
+    {
+      "value": "0",
+      "type": "size",
+      "category": "spacing",
+      "name": "h5MarginTop"
+    },
+    {
+      "value": "0",
+      "type": "size",
+      "category": "spacing",
+      "name": "h4MarginTop"
+    },
+    {
+      "value": "0",
+      "type": "size",
+      "category": "spacing",
+      "name": "h3MarginTop"
+    },
+    {
+      "value": "0",
+      "type": "size",
+      "category": "spacing",
+      "name": "h2MarginTop"
+    },
+    {
+      "value": "0",
+      "type": "size",
+      "category": "spacing",
+      "name": "h1MarginTop"
+    },
+    {
+      "value": "24",
+      "type": "size",
+      "category": "spacing",
+      "name": "h6MarginBottom"
+    },
+    {
+      "value": "24",
+      "type": "size",
+      "category": "spacing",
+      "name": "h5MarginBottom"
+    },
+    {
+      "value": "24",
+      "type": "size",
+      "category": "spacing",
+      "name": "h4MarginBottom"
+    },
+    {
+      "value": "24",
+      "type": "size",
+      "category": "spacing",
+      "name": "h3MarginBottom"
+    },
+    {
+      "value": "24",
+      "type": "size",
+      "category": "spacing",
+      "name": "h2MarginBottom"
+    },
+    {
+      "value": "24",
+      "type": "size",
+      "category": "spacing",
+      "name": "h1MarginBottom"
+    },
+    {
+      "value": "0",
+      "type": "size",
+      "category": "spacing",
+      "name": "pMarginTop"
+    },
+    {
+      "value": "24",
+      "type": "size",
+      "category": "spacing",
+      "name": "pMarginBottom"
+    },
+    {
+      "value": "0",
+      "type": "size",
+      "category": "spacing",
+      "name": "listMarginTop"
+    },
+    {
+      "value": "24",
+      "type": "size",
+      "category": "spacing",
+      "name": "listMarginBottom"
+    },
+    {
+      "value": "0",
+      "type": "size",
+      "category": "spacing",
+      "name": "listNestedMarginTop"
+    },
+    {
+      "value": "0",
+      "type": "size",
+      "category": "spacing",
+      "name": "listNestedMarginBottom"
+    },
+    {
+      "value": "0",
+      "type": "size",
+      "category": "spacing",
+      "name": "listItemMarginTop"
+    },
+    {
+      "value": "0",
+      "type": "size",
+      "category": "spacing",
+      "name": "listItemMarginBottom"
+    },
+    {
+      "type": "size",
+      "category": "radius",
+      "value": "2",
+      "name": "borderRadiusXs"
+    },
+    {
+      "type": "size",
+      "category": "radius",
+      "value": "4",
+      "name": "borderRadiusSm"
+    },
+    {
+      "type": "size",
+      "category": "radius",
+      "value": "8",
+      "name": "borderRadiusLg"
+    },
+    {
+      "type": "size",
+      "category": "radius",
+      "value": "80",
+      "name": "borderRadiusPill"
+    },
+    {
+      "category": "breakpoint",
+      "value": "500",
+      "type": "size",
+      "name": "breakpointMobile"
+    },
+    {
+      "category": "breakpoint",
+      "value": "768",
+      "type": "size",
+      "name": "breakpointTablet"
+    },
+    {
+      "category": "breakpoint",
+      "value": "1090",
+      "type": "size",
+      "name": "breakpointDesktop"
+    },
+    {
+      "category": "breakpoint",
+      "value": "(max-width: 31.25rem)",
+      "type": "media-query",
+      "name": "breakpointQueryMobile"
+    },
+    {
+      "category": "breakpoint",
+      "value": "(max-width: 48rem)",
+      "type": "media-query",
+      "name": "breakpointQueryTablet"
+    },
+    {
+      "category": "breakpoint",
+      "value": "(min-width: 31.25rem + .0625rem) and (max-width: 48rem)",
+      "type": "media-query",
+      "name": "breakpointQueryTabletOnly"
+    },
+    {
+      "category": "breakpoint",
+      "value": "(min-width: 31.25rem + .0625rem)",
+      "type": "media-query",
+      "name": "breakpointQueryAboveMobile"
+    },
+    {
+      "category": "breakpoint",
+      "value": "(min-width: 48rem + .0625rem)",
+      "type": "media-query",
+      "name": "breakpointQueryAboveTablet"
+    },
+    {
+      "category": "buttons",
+      "value": "6",
+      "type": "size",
+      "name": "buttonPaddingY"
+    },
+    {
+      "category": "buttons",
+      "value": "12",
+      "type": "size",
+      "name": "buttonPaddingX"
+    },
+    {
+      "category": "buttons",
+      "value": "80",
+      "type": "size",
+      "name": "buttonBorderRadius"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 215, 117)",
+      "type": "color",
+      "name": "buttonBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(128, 232, 185)",
+      "type": "color",
+      "name": "buttonHoverBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 168, 93)",
+      "type": "color",
+      "name": "buttonActiveBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(223, 220, 227)",
+      "type": "color",
+      "name": "buttonDisabledBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "buttonColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(137, 130, 148)",
+      "type": "color",
+      "name": "buttonDisabledColor"
+    },
+    {
+      "category": "buttons",
+      "value": "16",
+      "type": "size",
+      "name": "buttonFontSize"
+    },
+    {
+      "category": "buttons",
+      "value": "700",
+      "type": "number",
+      "name": "buttonFontWeight"
+    },
+    {
+      "category": "buttons",
+      "value": "24",
+      "type": "number",
+      "name": "buttonLineHeight"
+    },
+    {
+      "category": "buttons",
+      "value": "center",
+      "type": "text-align",
+      "name": "buttonTextAlign"
+    }
+  ]
+}

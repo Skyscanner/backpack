@@ -1,0 +1,21 @@
+@import '~bpk-mixins/index';
+
+.bpk-button {
+  @include bpk-button;
+
+  &--large {
+    @include bpk-button--large;
+  }
+
+  &--secondary {
+    @include bpk-button--secondary;
+  }
+
+  &--selected {
+    @include bpk-button--selected;
+  }
+
+  &--link {
+    @include bpk-button--link;
+  }
+}

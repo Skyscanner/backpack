@@ -1,0 +1,20 @@
+{
+  "global": {
+    "type": "size",
+    "category": "radius"
+  },
+  "props": {
+    "BORDER_RADIUS_XS": {
+      "value": "{!BORDER_RADIUS_XS}"
+    },
+    "BORDER_RADIUS_SM": {
+      "value": "{!BORDER_RADIUS_SM}"
+    },
+    "BORDER_RADIUS_LG": {
+      "value": "{!BORDER_RADIUS_LG}"
+    },
+    "BORDER_RADIUS_PILL": {
+      "value": "{!BORDER_RADIUS_PILL}"
+    }
+  }
+}
