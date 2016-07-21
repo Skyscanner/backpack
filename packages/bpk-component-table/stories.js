@@ -1,7 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@kadira/storybook'
 
-import 'bpk-stylesheets/base.scss'
 import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableCell, BpkTableHeadCell } from './index'
 
 storiesOf('bpk-component-table', module)

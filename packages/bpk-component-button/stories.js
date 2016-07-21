@@ -1,7 +1,6 @@
 import React from 'react'
 import { storiesOf, action } from '@kadira/storybook'
 
-import 'bpk-stylesheets/base.scss'
 import BpkButton from './index'
 
 storiesOf('bpk-component-button', module)

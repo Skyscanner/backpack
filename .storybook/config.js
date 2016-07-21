@@ -1,5 +1,7 @@
 import { configure } from '@kadira/storybook'
 
+import './../packages/bpk-stylesheets/base.scss'
+
 configure(() => {
   require('./../packages/bpk-component-button/stories')
   require('./../packages/bpk-component-heading/stories')

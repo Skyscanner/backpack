@@ -3,11 +3,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    base: './base.scss'
+    base: './base.scss',
+    atoms: './atoms.scss'
   },
 
   output: {
-    filename: 'base.js',
+    filename: '[name].js',
     path: ''
   },
 
