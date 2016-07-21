@@ -1,0 +1,24 @@
+{
+  "name": "bpk-docs",
+  "private": true,
+  "description": "Backpack documentation site.",
+  "repository": {
+    "type": "git",
+    "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^15.0.0"
+  },
+  "devDependencies": {
+    "bpk-component-button": "*",
+    "bpk-component-heading": "*",
+    "bpk-component-list": "*",
+    "bpk-component-paragraph": "*",
+    "bpk-component-table": "*",
+    "bpk-mixins": "*",
+    "bpk-stylesheets": "*",
+    "bpk-tokens": "*"
+  }
+}

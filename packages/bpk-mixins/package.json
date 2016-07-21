@@ -5,7 +5,7 @@
   "main": "_index.scss",
   "repository": {
     "type": "git",
-    "url": "git@git.prod.skyscanner.local:backpack/components.git"
+    "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",

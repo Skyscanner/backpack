@@ -8,21 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.prod.skyscanner.local:backpack/components.git"
+    "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "dependencies": {
     "bpk-mixins": "^0.0.6",
     "normalize.css": "4.2.0"
-  },
-  "devDependencies": {
-    "css-loader": "0.23.1",
-    "extract-text-webpack-plugin": "1.0.1",
-    "node-sass": "3.8.0",
-    "postcss-loader": "0.9.1",
-    "sass-loader": "4.0.0",
-    "style-loader": "0.13.1",
-    "webpack": "1.13.1"
   }
 }
