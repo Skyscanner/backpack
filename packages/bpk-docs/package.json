@@ -1,6 +1,7 @@
 {
   "name": "bpk-docs",
-  "private": true,
+  "version": "0.0.0",
+  "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
     "type": "git",
@@ -8,6 +9,9 @@
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
+  "files": [
+    "src"
+  ],
   "peerDependencies": {
     "react": "^15.0.0"
   },
