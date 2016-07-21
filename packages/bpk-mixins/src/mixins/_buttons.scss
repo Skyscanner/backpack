@@ -18,8 +18,8 @@
   padding: $bpk-button-padding-y $bpk-button-padding-x;
   border: 0;
   border-radius: $bpk-button-border-radius;
-  outline: 0;
   background-color: $bpk-button-background-color;
+  background-image: $bpk-button-background-image;
   color: $bpk-button-color;
   font-size: $bpk-button-font-size;
   font-weight: $bpk-button-font-weight;
@@ -33,14 +33,17 @@
 
   &:hover {
     background-color: $bpk-button-hover-background-color;
+    background-image: $bpk-button-hover-background-image;
   }
 
   &:active {
     background-color: $bpk-button-active-background-color;
+    background-image: $bpk-button-active-background-image;
   }
 
   &:disabled {
     background-color: $bpk-button-disabled-background-color;
+    background-image: $bpk-button-disabled-background-image;
     color: $bpk-button-disabled-color;
     cursor: not-allowed;
   }
@@ -57,9 +60,9 @@
 ///   }
 
 @mixin bpk-button--large {
-  margin: 0;
-  padding: $bpk-spacing-sm $bpk-spacing-base;
-  font-size: $bpk-font-size-lg;
+  padding: $bpk-button-large-padding-y $bpk-button-large-padding-x;
+  font-size: $bpk-button-large-font-size;
+  line-height: $bpk-button-large-line-height;
 }
 
 /// Secondary button. Modifies the bpk-button mixin.
@@ -73,22 +76,27 @@
 ///   }
 
 @mixin bpk-button--secondary {
-  background-color: transparent;
-  color: $bpk-color-blue-500;
-  box-shadow: 0 0 0 2px $bpk-color-gray-100 inset;
+  background-color: $bpk-button-secondary-background-color;
+  background-image: $bpk-button-secondary-background-image;
+  color: $bpk-button-secondary-color;
+  box-shadow: $bpk-button-secondary-box-shadow;
 
   &:hover {
-    background-color: transparent;
-    box-shadow: 0 0 0 2px $bpk-color-blue-500 inset;
+    background-color: $bpk-button-secondary-hover-background-color;
+    background-image: $bpk-button-secondary-hover-background-image;
+    box-shadow: $bpk-button-secondary-hover-box-shadow;
   }
 
   &:active {
-    box-shadow: 0 0 0 3px $bpk-color-blue-500 inset;
+    background-color: $bpk-button-secondary-active-background-color;
+    background-image: $bpk-button-secondary-active-background-image;
+    box-shadow: $bpk-button-secondary-active-box-shadow;
   }
 
   &:disabled {
-    background-color: $bpk-color-gray-100;
-    box-shadow: none;
+    background-color: $bpk-button-secondary-disabled-background-color;
+    background-image: $bpk-button-secondary-disabled-background-image;
+    box-shadow: $bpk-button-secondary-disabled-box-shadow;
   }
 }
 
@@ -103,22 +111,25 @@
 ///   }
 
 @mixin bpk-button--selected {
-  background-color: $bpk-color-blue-500;
-  color: $bpk-color-white;
-  box-shadow: none;
+  background-color: $bpk-button-selected-background-color;
+  background-image: $bpk-button-selected-background-image;
+  color: $bpk-button-selected-color;
+  box-shadow: $bpk-button-selected-box-shadow;
 
   &:hover {
-    background-color: $bpk-color-blue-300;
-    color: $bpk-color-white;
-    box-shadow: none;
+    background-color: $bpk-button-selected-hover-background-color;
+    background-image: $bpk-button-selected-hover-background-image;
+    color: $bpk-button-selected-hover-color;
+    box-shadow: $bpk-button-selected-hover-box-shadow;
   }
 
   &:active {
-    background-color: $bpk-color-blue-700;
+    background-color: $bpk-button-selected-active-background-color;
+    background-image: $bpk-button-selected-active-background-image;
   }
 
   &:disabled {
-    box-shadow: none;
+    box-shadow: $bpk-button-selected-disabled-box-shadow;
   }
 }
 
@@ -135,20 +146,20 @@
 @mixin bpk-button--link {
   @include bpk-link;
 
-  background-color: transparent;
+  background: none;
   font-weight: normal;
   box-shadow: none;
 
   &:hover {
-    background-color: transparent;
+    background: none;
   }
 
   &:active {
-    background-color: transparent;
+    background: none;
   }
 
   &:disabled {
-    background-color: transparent;
+    background: none;
     color: $bpk-color-gray-300;
     text-decoration: none;
   }

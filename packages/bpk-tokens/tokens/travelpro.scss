@@ -5,17 +5,25 @@ $bpk-button-padding-x: 24px;
 /// @group buttons
 $bpk-button-border-radius: 3px;
 /// @group buttons
-$bpk-button-background-color: #34363d;
+$bpk-button-background-color: rgb(52, 54, 61);
 /// @group buttons
-$bpk-button-hover-background-color: #4d5059;
+$bpk-button-background-image: none;
 /// @group buttons
-$bpk-button-active-background-color: #4d5059;
+$bpk-button-hover-background-color: rgb(77, 80, 89);
 /// @group buttons
-$bpk-button-disabled-background-color: #4d5059;
+$bpk-button-hover-background-image: none;
 /// @group buttons
-$bpk-button-color: #00ddee;
+$bpk-button-active-background-color: rgb(77, 80, 89);
 /// @group buttons
-$bpk-button-disabled-color: #000000;
+$bpk-button-active-background-image: none;
+/// @group buttons
+$bpk-button-disabled-background-color: rgb(77, 80, 89);
+/// @group buttons
+$bpk-button-disabled-background-image: none;
+/// @group buttons
+$bpk-button-color: rgb(0, 221, 238);
+/// @group buttons
+$bpk-button-disabled-color: rgb(104, 107, 117);
 /// @group buttons
 $bpk-button-font-size: .875rem;
 /// @group buttons

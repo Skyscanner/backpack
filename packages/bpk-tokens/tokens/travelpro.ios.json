@@ -26,9 +26,21 @@
     },
     {
       "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonBackgroundImage"
+    },
+    {
+      "category": "buttons",
       "value": "rgb(77, 80, 89)",
       "type": "color",
       "name": "buttonHoverBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonHoverBackgroundImage"
     },
     {
       "category": "buttons",
@@ -38,9 +50,21 @@
     },
     {
       "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonActiveBackgroundImage"
+    },
+    {
+      "category": "buttons",
       "value": "rgb(77, 80, 89)",
       "type": "color",
       "name": "buttonDisabledBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonDisabledBackgroundImage"
     },
     {
       "category": "buttons",
@@ -50,7 +74,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 0, 0)",
+      "value": "rgb(104, 107, 117)",
       "type": "color",
       "name": "buttonDisabledColor"
     },

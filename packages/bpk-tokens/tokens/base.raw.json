@@ -76,307 +76,307 @@
     "COLOR_WHITE": {
       "type": "color",
       "category": "color",
-      "value": "#ffffff",
+      "value": "rgb(255, 255, 255)",
       "name": "COLOR_WHITE"
     },
     "COLOR_BLUE_50": {
       "type": "color",
       "category": "color",
-      "value": "#e1f4f8",
+      "value": "rgb(225, 244, 248)",
       "name": "COLOR_BLUE_50"
     },
     "COLOR_BLUE_100": {
       "type": "color",
       "category": "color",
-      "value": "#cbeef5",
+      "value": "rgb(203, 238, 245)",
       "name": "COLOR_BLUE_100"
     },
     "COLOR_BLUE_200": {
       "type": "color",
       "category": "color",
-      "value": "#b0e4ee",
+      "value": "rgb(176, 228, 238)",
       "name": "COLOR_BLUE_200"
     },
     "COLOR_BLUE_300": {
       "type": "color",
       "category": "color",
-      "value": "#7fd7e8",
+      "value": "rgb(127, 215, 232)",
       "name": "COLOR_BLUE_300"
     },
     "COLOR_BLUE_400": {
       "type": "color",
       "category": "color",
-      "value": "#40c4df",
+      "value": "rgb(64, 196, 223)",
       "name": "COLOR_BLUE_400"
     },
     "COLOR_BLUE_500": {
       "type": "color",
       "category": "color",
-      "value": "#00b2d6",
+      "value": "rgb(0, 178, 214)",
       "name": "COLOR_BLUE_500"
     },
     "COLOR_BLUE_600": {
       "type": "color",
       "category": "color",
-      "value": "#009dbd",
+      "value": "rgb(0, 157, 189)",
       "name": "COLOR_BLUE_600"
     },
     "COLOR_BLUE_700": {
       "type": "color",
       "category": "color",
-      "value": "#008ca8",
+      "value": "rgb(0, 140, 168)",
       "name": "COLOR_BLUE_700"
     },
     "COLOR_BLUE_800": {
       "type": "color",
       "category": "color",
-      "value": "#00758c",
+      "value": "rgb(0, 117, 140)",
       "name": "COLOR_BLUE_800"
     },
     "COLOR_BLUE_900": {
       "type": "color",
       "category": "color",
-      "value": "#005567",
+      "value": "rgb(0, 85, 103)",
       "name": "COLOR_BLUE_900"
     },
     "COLOR_GRAY_50": {
       "type": "color",
       "category": "color",
-      "value": "#f6f5f7",
+      "value": "rgb(246, 245, 247)",
       "name": "COLOR_GRAY_50"
     },
     "COLOR_GRAY_100": {
       "type": "color",
       "category": "color",
-      "value": "#dfdce3",
+      "value": "rgb(223, 220, 227)",
       "name": "COLOR_GRAY_100"
     },
     "COLOR_GRAY_200": {
       "type": "color",
       "category": "color",
-      "value": "#b6b1bd",
+      "value": "rgb(182, 177, 189)",
       "name": "COLOR_GRAY_200"
     },
     "COLOR_GRAY_300": {
       "type": "color",
       "category": "color",
-      "value": "#898294",
+      "value": "rgb(137, 130, 148)",
       "name": "COLOR_GRAY_300"
     },
     "COLOR_GRAY_400": {
       "type": "color",
       "category": "color",
-      "value": "#6f667d",
+      "value": "rgb(111, 102, 125)",
       "name": "COLOR_GRAY_400"
     },
     "COLOR_GRAY_500": {
       "type": "color",
       "category": "color",
-      "value": "#544c63",
+      "value": "rgb(84, 76, 99)",
       "name": "COLOR_GRAY_500"
     },
     "COLOR_GRAY_600": {
       "type": "color",
       "category": "color",
-      "value": "#453d54",
+      "value": "rgb(69, 61, 84)",
       "name": "COLOR_GRAY_600"
     },
     "COLOR_GRAY_700": {
       "type": "color",
       "category": "color",
-      "value": "#372f45",
+      "value": "rgb(55, 47, 69)",
       "name": "COLOR_GRAY_700"
     },
     "COLOR_GRAY_800": {
       "type": "color",
       "category": "color",
-      "value": "#272133",
+      "value": "rgb(39, 33, 51)",
       "name": "COLOR_GRAY_800"
     },
     "COLOR_GRAY_900": {
       "type": "color",
       "category": "color",
-      "value": "#1b1524",
+      "value": "rgb(27, 21, 36)",
       "name": "COLOR_GRAY_900"
     },
     "COLOR_GREEN_50": {
       "type": "color",
       "category": "color",
-      "value": "#dff7ec",
+      "value": "rgb(223, 247, 236)",
       "name": "COLOR_GREEN_50"
     },
     "COLOR_GREEN_100": {
       "type": "color",
       "category": "color",
-      "value": "#cbf5e2",
+      "value": "rgb(203, 245, 226)",
       "name": "COLOR_GREEN_100"
     },
     "COLOR_GREEN_200": {
       "type": "color",
       "category": "color",
-      "value": "#afedd1",
+      "value": "rgb(175, 237, 209)",
       "name": "COLOR_GREEN_200"
     },
     "COLOR_GREEN_300": {
       "type": "color",
       "category": "color",
-      "value": "#80e8b9",
+      "value": "rgb(128, 232, 185)",
       "name": "COLOR_GREEN_300"
     },
     "COLOR_GREEN_400": {
       "type": "color",
       "category": "color",
-      "value": "#40de97",
+      "value": "rgb(64, 222, 151)",
       "name": "COLOR_GREEN_400"
     },
     "COLOR_GREEN_500": {
       "type": "color",
       "category": "color",
-      "value": "#00d775",
+      "value": "rgb(0, 215, 117)",
       "name": "COLOR_GREEN_500"
     },
     "COLOR_GREEN_600": {
       "type": "color",
       "category": "color",
-      "value": "#00bd68",
+      "value": "rgb(0, 189, 104)",
       "name": "COLOR_GREEN_600"
     },
     "COLOR_GREEN_700": {
       "type": "color",
       "category": "color",
-      "value": "#00a85d",
+      "value": "rgb(0, 168, 93)",
       "name": "COLOR_GREEN_700"
     },
     "COLOR_GREEN_800": {
       "type": "color",
       "category": "color",
-      "value": "#008c4d",
+      "value": "rgb(0, 140, 77)",
       "name": "COLOR_GREEN_800"
     },
     "COLOR_GREEN_900": {
       "type": "color",
       "category": "color",
-      "value": "#006638",
+      "value": "rgb(0, 102, 56)",
       "name": "COLOR_GREEN_900"
     },
     "COLOR_RED_50": {
       "type": "color",
       "category": "color",
-      "value": "#fce9e8",
+      "value": "rgb(252, 233, 232)",
       "name": "COLOR_RED_50"
     },
     "COLOR_RED_100": {
       "type": "color",
       "category": "color",
-      "value": "#ffd6d5",
+      "value": "rgb(255, 214, 213)",
       "name": "COLOR_RED_100"
     },
     "COLOR_RED_200": {
       "type": "color",
       "category": "color",
-      "value": "#ffbbba",
+      "value": "rgb(255, 187, 186)",
       "name": "COLOR_RED_200"
     },
     "COLOR_RED_300": {
       "type": "color",
       "category": "color",
-      "value": "#ff9694",
+      "value": "rgb(255, 150, 148)",
       "name": "COLOR_RED_300"
     },
     "COLOR_RED_400": {
       "type": "color",
       "category": "color",
-      "value": "#fe7471",
+      "value": "rgb(254, 116, 113)",
       "name": "COLOR_RED_400"
     },
     "COLOR_RED_500": {
       "type": "color",
       "category": "color",
-      "value": "#ff5452",
+      "value": "rgb(255, 84, 82)",
       "name": "COLOR_RED_500"
     },
     "COLOR_RED_600": {
       "type": "color",
       "category": "color",
-      "value": "#eb423f",
+      "value": "rgb(235, 66, 63)",
       "name": "COLOR_RED_600"
     },
     "COLOR_RED_700": {
       "type": "color",
       "category": "color",
-      "value": "#de322f",
+      "value": "rgb(222, 50, 47)",
       "name": "COLOR_RED_700"
     },
     "COLOR_RED_800": {
       "type": "color",
       "category": "color",
-      "value": "#cc1f1d",
+      "value": "rgb(204, 31, 29)",
       "name": "COLOR_RED_800"
     },
     "COLOR_RED_900": {
       "type": "color",
       "category": "color",
-      "value": "#a80300",
+      "value": "rgb(168, 3, 0)",
       "name": "COLOR_RED_900"
     },
     "COLOR_YELLOW_50": {
       "type": "color",
       "category": "color",
-      "value": "#faf4e1",
+      "value": "rgb(250, 244, 225)",
       "name": "COLOR_YELLOW_50"
     },
     "COLOR_YELLOW_100": {
       "type": "color",
       "category": "color",
-      "value": "#fcf1ca",
+      "value": "rgb(252, 241, 202)",
       "name": "COLOR_YELLOW_100"
     },
     "COLOR_YELLOW_200": {
       "type": "color",
       "category": "color",
-      "value": "#ffedb3",
+      "value": "rgb(255, 237, 179)",
       "name": "COLOR_YELLOW_200"
     },
     "COLOR_YELLOW_300": {
       "type": "color",
       "category": "color",
-      "value": "#ffe694",
+      "value": "rgb(255, 230, 148)",
       "name": "COLOR_YELLOW_300"
     },
     "COLOR_YELLOW_400": {
       "type": "color",
       "category": "color",
-      "value": "#ffde72",
+      "value": "rgb(255, 222, 114)",
       "name": "COLOR_YELLOW_400"
     },
     "COLOR_YELLOW_500": {
       "type": "color",
       "category": "color",
-      "value": "#ffd445",
+      "value": "rgb(255, 212, 69)",
       "name": "COLOR_YELLOW_500"
     },
     "COLOR_YELLOW_600": {
       "type": "color",
       "category": "color",
-      "value": "#f6c62b",
+      "value": "rgb(246, 198, 43)",
       "name": "COLOR_YELLOW_600"
     },
     "COLOR_YELLOW_700": {
       "type": "color",
       "category": "color",
-      "value": "#e8b81c",
+      "value": "rgb(232, 184, 28)",
       "name": "COLOR_YELLOW_700"
     },
     "COLOR_YELLOW_800": {
       "type": "color",
       "category": "color",
-      "value": "#cfa211",
+      "value": "rgb(207, 162, 17)",
       "name": "COLOR_YELLOW_800"
     },
     "COLOR_YELLOW_900": {
       "type": "color",
       "category": "color",
-      "value": "#a88100",
+      "value": "rgb(168, 129, 0)",
       "name": "COLOR_YELLOW_900"
     },
     "SPACING_XS": {
@@ -429,7 +429,7 @@
       "name": "FONT_FAMILY_BASE"
     },
     "FONT_COLOR_BASE": {
-      "value": "#544c63",
+      "value": "rgb(84, 76, 99)",
       "type": "color",
       "category": "text-color",
       "core": true,
@@ -733,6 +733,36 @@
       "category": "spacing",
       "name": "LIST_ITEM_MARGIN_BOTTOM"
     },
+    "LINK_COLOR": {
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      "category": "text-color",
+      "name": "LINK_COLOR"
+    },
+    "LINK_TEXT_DECORATION": {
+      "value": "none",
+      "type": "text-decoration",
+      "category": "text-decoration",
+      "name": "LINK_TEXT_DECORATION"
+    },
+    "LINK_HOVER_COLOR": {
+      "value": "rgb(55, 47, 69)",
+      "type": "color",
+      "category": "text-color",
+      "name": "LINK_HOVER_COLOR"
+    },
+    "LINK_HOVER_TEXT_DECORATION": {
+      "value": "underline",
+      "type": "text-decoration",
+      "category": "text-decoration",
+      "name": "LINK_HOVER_TEXT_DECORATION"
+    },
+    "LINK_ACTIVE_COLOR": {
+      "value": "rgb(84, 76, 99)",
+      "type": "color",
+      "category": "text-color",
+      "name": "LINK_ACTIVE_COLOR"
+    },
     "BORDER_RADIUS_XS": {
       "type": "size",
       "category": "radius",
@@ -825,37 +855,61 @@
     },
     "BUTTON_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "#00d775",
+      "value": "rgb(0, 215, 117)",
       "type": "color",
       "name": "BUTTON_BACKGROUND_COLOR"
     },
+    "BUTTON_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "linear-gradient(-180deg, #00d775 0%, #00bd68 100%)",
+      "type": "background-image",
+      "name": "BUTTON_BACKGROUND_IMAGE"
+    },
     "BUTTON_HOVER_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "#80e8b9",
+      "value": "rgb(0, 215, 117)",
       "type": "color",
       "name": "BUTTON_HOVER_BACKGROUND_COLOR"
     },
+    "BUTTON_HOVER_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_HOVER_BACKGROUND_IMAGE"
+    },
     "BUTTON_ACTIVE_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "#00a85d",
+      "value": "rgb(0, 189, 104)",
       "type": "color",
       "name": "BUTTON_ACTIVE_BACKGROUND_COLOR"
     },
+    "BUTTON_ACTIVE_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_ACTIVE_BACKGROUND_IMAGE"
+    },
     "BUTTON_DISABLED_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "#dfdce3",
+      "value": "rgb(223, 220, 227)",
       "type": "color",
       "name": "BUTTON_DISABLED_BACKGROUND_COLOR"
     },
+    "BUTTON_DISABLED_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_DISABLED_BACKGROUND_IMAGE"
+    },
     "BUTTON_COLOR": {
       "category": "buttons",
-      "value": "#ffffff",
+      "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "BUTTON_COLOR"
     },
     "BUTTON_DISABLED_COLOR": {
       "category": "buttons",
-      "value": "#898294",
+      "value": "rgb(137, 130, 148)",
       "type": "color",
       "name": "BUTTON_DISABLED_COLOR"
     },
@@ -882,6 +936,174 @@
       "value": "center",
       "type": "text-align",
       "name": "BUTTON_TEXT_ALIGN"
+    },
+    "BUTTON_LARGE_PADDING_Y": {
+      "category": "buttons",
+      "value": ".375rem",
+      "type": "size",
+      "name": "BUTTON_LARGE_PADDING_Y"
+    },
+    "BUTTON_LARGE_PADDING_X": {
+      "category": "buttons",
+      "value": "1.5rem",
+      "type": "size",
+      "name": "BUTTON_LARGE_PADDING_X"
+    },
+    "BUTTON_LARGE_FONT_SIZE": {
+      "category": "buttons",
+      "value": "1.375rem",
+      "type": "size",
+      "name": "BUTTON_LARGE_FONT_SIZE"
+    },
+    "BUTTON_LARGE_LINE_HEIGHT": {
+      "category": "buttons",
+      "value": "2.25rem",
+      "type": "number",
+      "name": "BUTTON_LARGE_LINE_HEIGHT"
+    },
+    "BUTTON_SECONDARY_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgba(0, 0, 0, 0)",
+      "type": "color",
+      "name": "BUTTON_SECONDARY_BACKGROUND_COLOR"
+    },
+    "BUTTON_SECONDARY_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_SECONDARY_BACKGROUND_IMAGE"
+    },
+    "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgba(0, 0, 0, 0)",
+      "type": "color",
+      "name": "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR"
+    },
+    "BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE"
+    },
+    "BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgba(0, 0, 0, 0)",
+      "type": "color",
+      "name": "BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR"
+    },
+    "BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE"
+    },
+    "BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgb(223, 220, 227)",
+      "type": "color",
+      "name": "BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR"
+    },
+    "BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE"
+    },
+    "BUTTON_SECONDARY_COLOR": {
+      "category": "buttons",
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      "name": "BUTTON_SECONDARY_COLOR"
+    },
+    "BUTTON_SECONDARY_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "0 0 0 2px #dfdce3 inset",
+      "type": "box-shadow",
+      "name": "BUTTON_SECONDARY_BOX_SHADOW"
+    },
+    "BUTTON_SECONDARY_HOVER_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "0 0 0 2px #00b2d6 inset",
+      "type": "box-shadow",
+      "name": "BUTTON_SECONDARY_HOVER_BOX_SHADOW"
+    },
+    "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "0 0 0 3px #00b2d6 inset",
+      "type": "box-shadow",
+      "name": "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW"
+    },
+    "BUTTON_SECONDARY_DISABLED_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "BUTTON_SECONDARY_DISABLED_BOX_SHADOW"
+    },
+    "BUTTON_SELECTED_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      "name": "BUTTON_SELECTED_BACKGROUND_COLOR"
+    },
+    "BUTTON_SELECTED_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "linear-gradient(-180deg, #00b2d6 0%, #009dbd 100%)",
+      "type": "background-image",
+      "name": "BUTTON_SELECTED_BACKGROUND_IMAGE"
+    },
+    "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      "name": "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR"
+    },
+    "BUTTON_SELECTED_HOVER_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_SELECTED_HOVER_BACKGROUND_IMAGE"
+    },
+    "BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgb(0, 157, 189)",
+      "type": "color",
+      "name": "BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR"
+    },
+    "BUTTON_SELECTED_ACTIVE_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_SELECTED_ACTIVE_BACKGROUND_IMAGE"
+    },
+    "BUTTON_SELECTED_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "BUTTON_SELECTED_COLOR"
+    },
+    "BUTTON_SELECTED_HOVER_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "BUTTON_SELECTED_HOVER_COLOR"
+    },
+    "BUTTON_SELECTED_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "BUTTON_SELECTED_BOX_SHADOW"
+    },
+    "BUTTON_SELECTED_HOVER_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "BUTTON_SELECTED_HOVER_BOX_SHADOW"
+    },
+    "BUTTON_SELECTED_DISABLED_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "BUTTON_SELECTED_DISABLED_BOX_SHADOW"
     }
   },
   "propKeys": [
@@ -992,6 +1214,11 @@
     "LIST_NESTED_MARGIN_BOTTOM",
     "LIST_ITEM_MARGIN_TOP",
     "LIST_ITEM_MARGIN_BOTTOM",
+    "LINK_COLOR",
+    "LINK_TEXT_DECORATION",
+    "LINK_HOVER_COLOR",
+    "LINK_HOVER_TEXT_DECORATION",
+    "LINK_ACTIVE_COLOR",
     "BORDER_RADIUS_XS",
     "BORDER_RADIUS_SM",
     "BORDER_RADIUS_LG",
@@ -1008,14 +1235,46 @@
     "BUTTON_PADDING_X",
     "BUTTON_BORDER_RADIUS",
     "BUTTON_BACKGROUND_COLOR",
+    "BUTTON_BACKGROUND_IMAGE",
     "BUTTON_HOVER_BACKGROUND_COLOR",
+    "BUTTON_HOVER_BACKGROUND_IMAGE",
     "BUTTON_ACTIVE_BACKGROUND_COLOR",
+    "BUTTON_ACTIVE_BACKGROUND_IMAGE",
     "BUTTON_DISABLED_BACKGROUND_COLOR",
+    "BUTTON_DISABLED_BACKGROUND_IMAGE",
     "BUTTON_COLOR",
     "BUTTON_DISABLED_COLOR",
     "BUTTON_FONT_SIZE",
     "BUTTON_FONT_WEIGHT",
     "BUTTON_LINE_HEIGHT",
-    "BUTTON_TEXT_ALIGN"
+    "BUTTON_TEXT_ALIGN",
+    "BUTTON_LARGE_PADDING_Y",
+    "BUTTON_LARGE_PADDING_X",
+    "BUTTON_LARGE_FONT_SIZE",
+    "BUTTON_LARGE_LINE_HEIGHT",
+    "BUTTON_SECONDARY_BACKGROUND_COLOR",
+    "BUTTON_SECONDARY_BACKGROUND_IMAGE",
+    "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR",
+    "BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE",
+    "BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR",
+    "BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE",
+    "BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR",
+    "BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE",
+    "BUTTON_SECONDARY_COLOR",
+    "BUTTON_SECONDARY_BOX_SHADOW",
+    "BUTTON_SECONDARY_HOVER_BOX_SHADOW",
+    "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW",
+    "BUTTON_SECONDARY_DISABLED_BOX_SHADOW",
+    "BUTTON_SELECTED_BACKGROUND_COLOR",
+    "BUTTON_SELECTED_BACKGROUND_IMAGE",
+    "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR",
+    "BUTTON_SELECTED_HOVER_BACKGROUND_IMAGE",
+    "BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR",
+    "BUTTON_SELECTED_ACTIVE_BACKGROUND_IMAGE",
+    "BUTTON_SELECTED_COLOR",
+    "BUTTON_SELECTED_HOVER_COLOR",
+    "BUTTON_SELECTED_BOX_SHADOW",
+    "BUTTON_SELECTED_HOVER_BOX_SHADOW",
+    "BUTTON_SELECTED_DISABLED_BOX_SHADOW"
   ]
 }

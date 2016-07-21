@@ -661,6 +661,36 @@
       "name": "listItemMarginBottom"
     },
     {
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      "category": "text-color",
+      "name": "linkColor"
+    },
+    {
+      "value": "none",
+      "type": "text-decoration",
+      "category": "text-decoration",
+      "name": "linkTextDecoration"
+    },
+    {
+      "value": "rgb(55, 47, 69)",
+      "type": "color",
+      "category": "text-color",
+      "name": "linkHoverColor"
+    },
+    {
+      "value": "underline",
+      "type": "text-decoration",
+      "category": "text-decoration",
+      "name": "linkHoverTextDecoration"
+    },
+    {
+      "value": "rgb(84, 76, 99)",
+      "type": "color",
+      "category": "text-color",
+      "name": "linkActiveColor"
+    },
+    {
       "type": "size",
       "category": "radius",
       "value": "2",
@@ -758,21 +788,45 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(128, 232, 185)",
+      "value": "linear-gradient(-180deg, #00d775 0, #00bd68 1)",
+      "type": "background-image",
+      "name": "buttonBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 215, 117)",
       "type": "color",
       "name": "buttonHoverBackgroundColor"
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 168, 93)",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonHoverBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 189, 104)",
       "type": "color",
       "name": "buttonActiveBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonActiveBackgroundImage"
     },
     {
       "category": "buttons",
       "value": "rgb(223, 220, 227)",
       "type": "color",
       "name": "buttonDisabledBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonDisabledBackgroundImage"
     },
     {
       "category": "buttons",
@@ -809,6 +863,174 @@
       "value": "center",
       "type": "text-align",
       "name": "buttonTextAlign"
+    },
+    {
+      "category": "buttons",
+      "value": "6",
+      "type": "size",
+      "name": "buttonLargePaddingY"
+    },
+    {
+      "category": "buttons",
+      "value": "24",
+      "type": "size",
+      "name": "buttonLargePaddingX"
+    },
+    {
+      "category": "buttons",
+      "value": "22",
+      "type": "size",
+      "name": "buttonLargeFontSize"
+    },
+    {
+      "category": "buttons",
+      "value": "36",
+      "type": "number",
+      "name": "buttonLargeLineHeight"
+    },
+    {
+      "category": "buttons",
+      "value": "rgba(0, 0, 0, 0)",
+      "type": "color",
+      "name": "buttonSecondaryBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonSecondaryBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgba(0, 0, 0, 0)",
+      "type": "color",
+      "name": "buttonSecondaryHoverBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonSecondaryHoverBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgba(0, 0, 0, 0)",
+      "type": "color",
+      "name": "buttonSecondaryActiveBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonSecondaryActiveBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(223, 220, 227)",
+      "type": "color",
+      "name": "buttonSecondaryDisabledBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonSecondaryDisabledBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      "name": "buttonSecondaryColor"
+    },
+    {
+      "category": "buttons",
+      "value": "0 0 0 2px #dfdce3 inset",
+      "type": "box-shadow",
+      "name": "buttonSecondaryBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "0 0 0 2px #00b2d6 inset",
+      "type": "box-shadow",
+      "name": "buttonSecondaryHoverBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "0 0 0 3px #00b2d6 inset",
+      "type": "box-shadow",
+      "name": "buttonSecondaryActiveBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonSecondaryDisabledBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      "name": "buttonSelectedBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "linear-gradient(-180deg, #00b2d6 0, #009dbd 1)",
+      "type": "background-image",
+      "name": "buttonSelectedBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      "name": "buttonSelectedHoverBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonSelectedHoverBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 157, 189)",
+      "type": "color",
+      "name": "buttonSelectedActiveBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonSelectedActiveBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "buttonSelectedColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "buttonSelectedHoverColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonSelectedBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonSelectedHoverBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonSelectedDisabledBoxShadow"
     }
   ]
 }

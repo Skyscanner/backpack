@@ -22,17 +22,33 @@
       "value": "{!GREEN_500}",
       "type": "color"
     },
+    "BUTTON_BACKGROUND_IMAGE": {
+      "value": "linear-gradient(-180deg, {!GREEN_500} 0%, {!GREEN_600} 100%)",
+      "type": "background-image"
+    },
     "BUTTON_HOVER_BACKGROUND_COLOR": {
-      "value": "{!GREEN_300}",
+      "value": "{!GREEN_500}",
       "type": "color"
     },
+    "BUTTON_HOVER_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
+    },
     "BUTTON_ACTIVE_BACKGROUND_COLOR": {
-      "value": "{!GREEN_700}",
+      "value": "{!GREEN_600}",
       "type": "color"
+    },
+    "BUTTON_ACTIVE_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
     },
     "BUTTON_DISABLED_BACKGROUND_COLOR": {
       "value": "{!GRAY_100}",
       "type": "color"
+    },
+    "BUTTON_DISABLED_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
     },
     "BUTTON_COLOR": {
       "value": "{!WHITE}",
@@ -57,6 +73,118 @@
     "BUTTON_TEXT_ALIGN": {
       "value": "center",
       "type": "text-align"
+    },
+    "BUTTON_LARGE_PADDING_Y": {
+      "value": "{!SPACING_XS}",
+      "type": "size"
+    },
+    "BUTTON_LARGE_PADDING_X": {
+      "value": "{!SPACING_BASE}",
+      "type": "size"
+    },
+    "BUTTON_LARGE_FONT_SIZE": {
+      "value": "{!FONT_SIZE_LG}",
+      "type": "size"
+    },
+    "BUTTON_LARGE_LINE_HEIGHT": {
+      "value": "{!SPACING_LG}",
+      "type": "number"
+    },
+    "BUTTON_SECONDARY_BACKGROUND_COLOR": {
+      "value": "transparent",
+      "type": "color"
+    },
+    "BUTTON_SECONDARY_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
+    },
+    "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR": {
+      "value": "transparent",
+      "type": "color"
+    },
+    "BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
+    },
+    "BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR": {
+      "value": "transparent",
+      "type": "color"
+    },
+    "BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
+    },
+    "BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR": {
+      "value": "{!GRAY_100}",
+      "type": "color"
+    },
+    "BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
+    },
+    "BUTTON_SECONDARY_COLOR": {
+      "value": "{!BLUE_500}",
+      "type": "color"
+    },
+    "BUTTON_SECONDARY_BOX_SHADOW": {
+      "value": "0 0 0 2px {!GRAY_100} inset",
+      "type": "box-shadow"
+    },
+    "BUTTON_SECONDARY_HOVER_BOX_SHADOW": {
+      "value": "0 0 0 2px {!BLUE_500} inset",
+      "type": "box-shadow"
+    },
+    "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW": {
+      "value": "0 0 0 3px {!BLUE_500} inset",
+      "type": "box-shadow"
+    },
+    "BUTTON_SECONDARY_DISABLED_BOX_SHADOW": {
+      "value": "none",
+      "type": "box-shadow"
+    },
+    "BUTTON_SELECTED_BACKGROUND_COLOR": {
+      "value": "{!BLUE_500}",
+      "type": "color"
+    },
+    "BUTTON_SELECTED_BACKGROUND_IMAGE": {
+      "value": "linear-gradient(-180deg, {!BLUE_500} 0%, {!BLUE_600} 100%)",
+      "type": "background-image"
+    },
+    "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR": {
+      "value": "{!BLUE_500}",
+      "type": "color"
+    },
+    "BUTTON_SELECTED_HOVER_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
+    },
+    "BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR": {
+      "value": "{!BLUE_600}",
+      "type": "color"
+    },
+    "BUTTON_SELECTED_ACTIVE_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
+    },
+    "BUTTON_SELECTED_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "BUTTON_SELECTED_HOVER_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "BUTTON_SELECTED_BOX_SHADOW": {
+      "value": "none",
+      "type": "box-shadow"
+    },
+    "BUTTON_SELECTED_HOVER_BOX_SHADOW": {
+      "value": "none",
+      "type": "box-shadow"
+    },
+    "BUTTON_SELECTED_DISABLED_BOX_SHADOW": {
+      "value": "none",
+      "type": "box-shadow"
     }
   }
 }

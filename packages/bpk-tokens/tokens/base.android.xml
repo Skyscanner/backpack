@@ -107,6 +107,11 @@
   <property name="LIST_NESTED_MARGIN_BOTTOM" category="spacing">0</property>
   <property name="LIST_ITEM_MARGIN_TOP" category="spacing">0</property>
   <property name="LIST_ITEM_MARGIN_BOTTOM" category="spacing">0</property>
+  <color name="LINK_COLOR" category="text-color">#00b2d6ff</color>
+  <property name="LINK_TEXT_DECORATION" category="text-decoration">none</property>
+  <color name="LINK_HOVER_COLOR" category="text-color">#372f45ff</color>
+  <property name="LINK_HOVER_TEXT_DECORATION" category="text-decoration">underline</property>
+  <color name="LINK_ACTIVE_COLOR" category="text-color">#544c63ff</color>
   <property name="BORDER_RADIUS_XS" category="radius">2</property>
   <property name="BORDER_RADIUS_SM" category="radius">4</property>
   <property name="BORDER_RADIUS_LG" category="radius">8</property>
@@ -123,13 +128,45 @@
   <property name="BUTTON_PADDING_X" category="buttons">12</property>
   <property name="BUTTON_BORDER_RADIUS" category="buttons">80</property>
   <color name="BUTTON_BACKGROUND_COLOR" category="buttons">#00d775ff</color>
-  <color name="BUTTON_HOVER_BACKGROUND_COLOR" category="buttons">#80e8b9ff</color>
-  <color name="BUTTON_ACTIVE_BACKGROUND_COLOR" category="buttons">#00a85dff</color>
+  <property name="BUTTON_BACKGROUND_IMAGE" category="buttons">linear-gradient(-180deg, #00d775 0, #00bd68 1)</property>
+  <color name="BUTTON_HOVER_BACKGROUND_COLOR" category="buttons">#00d775ff</color>
+  <property name="BUTTON_HOVER_BACKGROUND_IMAGE" category="buttons">none</property>
+  <color name="BUTTON_ACTIVE_BACKGROUND_COLOR" category="buttons">#00bd68ff</color>
+  <property name="BUTTON_ACTIVE_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_DISABLED_BACKGROUND_COLOR" category="buttons">#dfdce3ff</color>
+  <property name="BUTTON_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_COLOR" category="buttons">#ffffffff</color>
   <color name="BUTTON_DISABLED_COLOR" category="buttons">#898294ff</color>
   <property name="BUTTON_FONT_SIZE" category="buttons">16</property>
   <property name="BUTTON_FONT_WEIGHT" category="buttons">700</property>
   <property name="BUTTON_LINE_HEIGHT" category="buttons">24</property>
   <property name="BUTTON_TEXT_ALIGN" category="buttons">center</property>
+  <property name="BUTTON_LARGE_PADDING_Y" category="buttons">6</property>
+  <property name="BUTTON_LARGE_PADDING_X" category="buttons">24</property>
+  <property name="BUTTON_LARGE_FONT_SIZE" category="buttons">22</property>
+  <property name="BUTTON_LARGE_LINE_HEIGHT" category="buttons">36</property>
+  <color name="BUTTON_SECONDARY_BACKGROUND_COLOR" category="buttons">#00000000</color>
+  <property name="BUTTON_SECONDARY_BACKGROUND_IMAGE" category="buttons">none</property>
+  <color name="BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR" category="buttons">#00000000</color>
+  <property name="BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE" category="buttons">none</property>
+  <color name="BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR" category="buttons">#00000000</color>
+  <property name="BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE" category="buttons">none</property>
+  <color name="BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR" category="buttons">#dfdce3ff</color>
+  <property name="BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
+  <color name="BUTTON_SECONDARY_COLOR" category="buttons">#00b2d6ff</color>
+  <property name="BUTTON_SECONDARY_BOX_SHADOW" category="buttons">0 0 0 2px #dfdce3 inset</property>
+  <property name="BUTTON_SECONDARY_HOVER_BOX_SHADOW" category="buttons">0 0 0 2px #00b2d6 inset</property>
+  <property name="BUTTON_SECONDARY_ACTIVE_BOX_SHADOW" category="buttons">0 0 0 3px #00b2d6 inset</property>
+  <property name="BUTTON_SECONDARY_DISABLED_BOX_SHADOW" category="buttons">none</property>
+  <color name="BUTTON_SELECTED_BACKGROUND_COLOR" category="buttons">#00b2d6ff</color>
+  <property name="BUTTON_SELECTED_BACKGROUND_IMAGE" category="buttons">linear-gradient(-180deg, #00b2d6 0, #009dbd 1)</property>
+  <color name="BUTTON_SELECTED_HOVER_BACKGROUND_COLOR" category="buttons">#00b2d6ff</color>
+  <property name="BUTTON_SELECTED_HOVER_BACKGROUND_IMAGE" category="buttons">none</property>
+  <color name="BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR" category="buttons">#009dbdff</color>
+  <property name="BUTTON_SELECTED_ACTIVE_BACKGROUND_IMAGE" category="buttons">none</property>
+  <color name="BUTTON_SELECTED_COLOR" category="buttons">#ffffffff</color>
+  <color name="BUTTON_SELECTED_HOVER_COLOR" category="buttons">#ffffffff</color>
+  <property name="BUTTON_SELECTED_BOX_SHADOW" category="buttons">none</property>
+  <property name="BUTTON_SELECTED_HOVER_BOX_SHADOW" category="buttons">none</property>
+  <property name="BUTTON_SELECTED_DISABLED_BOX_SHADOW" category="buttons">none</property>
 </resources>

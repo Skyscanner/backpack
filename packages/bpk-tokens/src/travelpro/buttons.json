@@ -19,24 +19,40 @@
       "value": "#34363d",
       "type": "color"
     },
+    "BUTTON_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
+    },
     "BUTTON_HOVER_BACKGROUND_COLOR": {
       "value": "#4d5059",
       "type": "color"
+    },
+    "BUTTON_HOVER_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
     },
     "BUTTON_ACTIVE_BACKGROUND_COLOR": {
       "value": "#4d5059",
       "type": "color"
     },
+    "BUTTON_ACTIVE_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
+    },
     "BUTTON_DISABLED_BACKGROUND_COLOR": {
       "value": "#4d5059",
       "type": "color"
+    },
+    "BUTTON_DISABLED_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
     },
     "BUTTON_COLOR": {
       "value": "#0de",
       "type": "color"
     },
     "BUTTON_DISABLED_COLOR": {
-      "value": "#686b75!important",
+      "value": "#686b75",
       "type": "color"
     },
     "BUTTON_FONT_SIZE": {

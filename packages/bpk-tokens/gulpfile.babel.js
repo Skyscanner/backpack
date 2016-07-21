@@ -21,7 +21,6 @@ const OUTPUT_MAP = {
 
 // Theo config
 
-theo.registerTransform('web', [ 'color/hex' ])
 theo.registerFormat('scss', bpkScss)
 theo.registerFormat('default.scss', bpkDefaultScss)
 

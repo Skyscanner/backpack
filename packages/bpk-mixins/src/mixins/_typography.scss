@@ -174,16 +174,16 @@
 ///   }
 
 @mixin bpk-link {
-  color: $bpk-color-blue-500;
-  text-decoration: none;
+  color: $bpk-link-color;
+  text-decoration: $bpk-link-text-decoration;
 
   &:hover {
-    color: $bpk-color-gray-700;
-    text-decoration: underline;
+    color: $bpk-link-hover-color;
+    text-decoration: $bpk-link-hover-text-decoration;
   }
 
   &:active {
-    color: $bpk-color-gray-500;
+    color: $bpk-link-active-color;
   }
 }
 
@@ -198,5 +198,5 @@
 ///   }
 
 @mixin bpk-link--active {
-  color: $bpk-color-gray-500;
+  color: $bpk-link-active-color;
 }
