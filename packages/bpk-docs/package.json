@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -16,13 +16,13 @@
     "react": "^15.0.0"
   },
   "devDependencies": {
-    "bpk-component-button": "*",
-    "bpk-component-heading": "*",
-    "bpk-component-list": "*",
-    "bpk-component-paragraph": "*",
-    "bpk-component-table": "*",
-    "bpk-mixins": "*",
-    "bpk-stylesheets": "*",
-    "bpk-tokens": "*"
+    "bpk-component-button": "^0.0.16",
+    "bpk-component-heading": "^0.0.11",
+    "bpk-component-list": "^0.0.9",
+    "bpk-component-paragraph": "^0.0.10",
+    "bpk-component-table": "^0.0.9",
+    "bpk-mixins": "^0.0.7",
+    "bpk-stylesheets": "^0.0.8",
+    "bpk-tokens": "^7.0.3"
   }
 }
