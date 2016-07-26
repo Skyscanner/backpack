@@ -4,32 +4,27 @@
   ],
   "global": {
     "type": "size",
-    "category": "spacing"
+    "category": "spacing",
+    "core": true
   },
   "props": {
     "SPACING_XS": {
-      "value": "{!SPACING_XS}",
-      "core": true
+      "value": "{!SPACING_XS}"
     },
     "SPACING_SM": {
-      "value": "{!SPACING_SM}",
-      "core": true
+      "value": "{!SPACING_SM}"
     },
     "SPACING_BASE": {
-      "value": "{!SPACING_BASE}",
-      "core": true
+      "value": "{!SPACING_BASE}"
     },
     "SPACING_LG": {
-      "value": "{!SPACING_LG}",
-      "core": true
+      "value": "{!SPACING_LG}"
     },
     "SPACING_XL": {
-      "value": "{!SPACING_XL}",
-      "core": true
+      "value": "{!SPACING_XL}"
     },
     "SPACING_XXL": {
-      "value": "{!SPACING_XXL}",
-      "core": true
+      "value": "{!SPACING_XXL}"
     }
   }
 }

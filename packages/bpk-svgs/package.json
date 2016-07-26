@@ -1,0 +1,23 @@
+{
+  "name": "bpk-svgs",
+  "version": "0.0.0",
+  "description": "Backpack's library of SVG's.",
+  "main": "_index.scss",
+  "scripts": {
+    "build": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "bpk-tokens": "^7.0.3",
+    "grunt": "1.0.1",
+    "grunt-cli": "1.2.0",
+    "grunt-contrib-clean": "1.0.0",
+    "grunt-svgmin": "3.3.0",
+    "lodash": "4.13.1"
+  }
+}

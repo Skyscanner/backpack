@@ -78,8 +78,8 @@
 @mixin bpk-clearfix {
   &::before,
   &::after {
-    display: table;
     content: '';
+    display: table;
   }
 
   &::after {
