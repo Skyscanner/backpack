@@ -1,7 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@kadira/storybook'
 
-import 'bpk-stylesheets/base.scss'
 import BpkHeading from './index'
 
 storiesOf('bpk-component-heading', module)

@@ -78,9 +78,6 @@
       "describe",
       "it",
       "expect"
-    ],
-    "ignore": [
-      "/packages/bpk-stylesheets/base.js"
     ]
   },
   "jest": {

@@ -12,9 +12,6 @@
   "peerDependencies": {
     "react": "^15.0.0"
   },
-  "devDependencies": {
-    "bpk-stylesheets": "^0.0.8"
-  },
   "dependencies": {
     "bpk-mixins": "^0.0.7"
   }
