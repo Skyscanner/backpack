@@ -1,0 +1,12 @@
+@import '~bpk-mixins/index';
+
+.bpk-icon {
+  display: inline-block;
+  height: $bpk-spacing-sm;
+  width: $bpk-spacing-sm;
+
+  &--large {
+    height: $bpk-spacing-base;
+    width: $bpk-spacing-base;
+  }
+}

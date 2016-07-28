@@ -1,8 +1,8 @@
-jest.unmock('./BpkLink.jsx')
+jest.unmock('./BpkLink')
 
 import React from 'react'
 import { shallow } from 'enzyme'
-import BpkLink from './BpkLink.jsx'
+import BpkLink from './BpkLink'
 
 describe('BpkLink', () => {
   it('should render the correct element', () => {

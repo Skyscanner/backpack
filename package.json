@@ -54,6 +54,7 @@
     "node-sass": "3.8.0",
     "pluralize": "3.0.0",
     "postcss-loader": "0.9.1",
+    "raw-loader": "0.5.1",
     "react": "15.2.1",
     "react-addons-test-utils": "15.2.1",
     "react-css-modules": "3.7.7",
