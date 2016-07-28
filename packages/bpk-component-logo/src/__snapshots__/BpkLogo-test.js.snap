@@ -1,0 +1,59 @@
+exports[`BpkIcon should render correctly with a "logo" attribute equal to "cloud" 1`] = `
+<span
+  className="bpk-logo-cloud"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": Object {
+        "default": "FILE_MOCK_CONTENTS"
+      }
+    }
+  } />
+`;
+
+exports[`BpkIcon should render correctly with a "logo" attribute equal to "inline" 1`] = `
+<span
+  className="bpk-logo-inline"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": Object {
+        "default": "FILE_MOCK_CONTENTS"
+      }
+    }
+  } />
+`;
+
+exports[`BpkIcon should render correctly with a "logo" attribute equal to "stacked" 1`] = `
+<span
+  className="bpk-logo-inline"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": Object {
+        "default": "FILE_MOCK_CONTENTS"
+      }
+    }
+  } />
+`;
+
+exports[`BpkIcon should render correctly with a "logo" attribute equal to "tianxun" 1`] = `
+<span
+  className="bpk-logo-tianxun"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": Object {
+        "default": "FILE_MOCK_CONTENTS"
+      }
+    }
+  } />
+`;
+
+exports[`BpkIcon should render correctly with a "logo" attribute equal to "tianxun-stacked" 1`] = `
+<span
+  className="bpk-logo-tianxun-stacked"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": Object {
+        "default": "FILE_MOCK_CONTENTS"
+      }
+    }
+  } />
+`;
