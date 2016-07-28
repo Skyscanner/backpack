@@ -374,6 +374,16 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+@-webkit-keyframes bpk-keyframe-spin {
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn); } }
+
+@keyframes bpk-keyframe-spin {
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn); } }
+
 html {
   font-size: 100%;
   -webkit-box-sizing: border-box;
@@ -431,8 +441,8 @@ body {
   visibility: hidden; }
 
 .clearfix::before, .clearfix::after {
-  display: table;
-  content: ''; }
+  content: '';
+  display: table; }
 
 .clearfix::after {
   clear: both; }
