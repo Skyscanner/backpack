@@ -4,6 +4,17 @@
 /// @group typography
 ////
 
+
+/// Heading factory.
+///
+/// @param {variable} $margin-top
+/// @param {variable} $margin-bottom
+/// @param {variable} $font-size
+/// @param {variable} $font-weight
+/// @param {variable} $line-height
+///
+/// @access private
+
 @mixin _bpk-heading($margin-top, $margin-bottom, $font-size, $font-weight, $line-height) {
   margin-top: $margin-top;
   margin-bottom: $margin-bottom;

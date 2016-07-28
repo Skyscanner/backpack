@@ -1,0 +1,5 @@
+exports[`BpkTableHead should render correctly 1`] = `
+<thead>
+  <th />
+</thead>
+`;

@@ -10,6 +10,7 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "dependencies": {
+    "bpk-svgs": "^0.0.0",
     "bpk-tokens": "^7.0.3"
   }
 }

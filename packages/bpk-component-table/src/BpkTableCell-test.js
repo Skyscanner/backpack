@@ -1,18 +1,10 @@
-jest.unmock('./BpkTableCell.jsx')
-
 import React from 'react'
-import { shallow } from 'enzyme'
-import BpkTableCell from './BpkTableCell.jsx'
+import renderer from 'react/lib/ReactTestRenderer'
+import BpkTableCell from './BpkTableCell'
 
 describe('BpkTableCell', () => {
-  it('should render the correct element', () => {
-    const wrapper = shallow(<BpkTableCell>Tabular data</BpkTableCell>)
-    expect(wrapper.text()).toEqual('Tabular data')
-    expect(wrapper.name()).toEqual('td')
-  })
-
-  it('should render the correct class', () => {
-    const wrapper = shallow(<BpkTableCell>Tabular data</BpkTableCell>)
-    expect(wrapper.prop('className')).toEqual('bpk-table__cell')
+  it('should render correctly', () => {
+    const tree = renderer.create(<BpkTableCell>Tabular data</BpkTableCell>).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 })

@@ -1,0 +1,5 @@
+exports[`BpkTableBody should render correctly 1`] = `
+<tbody>
+  <tr />
+</tbody>
+`;

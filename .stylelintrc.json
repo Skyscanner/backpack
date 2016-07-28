@@ -11,12 +11,13 @@
       }
     ],
     "declaration-block-properties-order": [
-      "display",
       "position",
       "top",
       "right",
       "bottom",
       "left",
+      "content",
+      "display",
       "width",
       "min-width",
       "max-width",
@@ -106,7 +107,6 @@
       "border-spacing",
       "box-shadow",
       "caption-side",
-      "content",
       "cursor",
       "empty-cells",
       "opacity",

@@ -1,0 +1,6 @@
+exports[`BpkTable should render correctly 1`] = `
+<table
+  className="bpk-table">
+  <tbody />
+</table>
+`;

@@ -1,0 +1,11 @@
+@import '~bpk-mixins/index';
+
+.bpk-icon {
+  &-sm {
+    @include bpk-icon-sm();
+  }
+
+  &-lg {
+    @include bpk-icon-lg();
+  }
+}

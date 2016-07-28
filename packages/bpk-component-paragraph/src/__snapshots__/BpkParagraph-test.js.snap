@@ -1,0 +1,6 @@
+exports[`BpkParagraph should render correctly 1`] = `
+<p
+  className="bpk-paragraph">
+  My paragraph
+</p>
+`;

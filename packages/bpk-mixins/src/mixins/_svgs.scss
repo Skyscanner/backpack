@@ -1,0 +1,195 @@
+@import '~bpk-svgs/index';
+@import '../bonds';
+
+@keyframes bpk-keyframe-spin {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@mixin _bpk-icon($spacing, $spinner) {
+  content: '';
+  display: inline-block;
+  width: $spacing;
+  height: $spacing;
+  animation: bpk-keyframe-spin 600ms linear infinite;
+  background: url(map-get($bpk-spinners, $spinner)) no-repeat;
+  background-size: $spacing $spacing;
+}
+
+////
+/// @group svgs
+////
+
+/// Small icon.
+///
+/// @param {key} $icon [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-icon-sm(flight-gray-500);
+///   }
+
+@mixin bpk-icon-sm($icon: '') {
+  content: '';
+  display: inline-block;
+  width: $bpk-spacing-sm;
+  height: $bpk-spacing-sm;
+
+  @if $icon != "" {
+    background: url(map-get($bpk-icons-sm, $icon)) no-repeat;
+    background-size: $bpk-spacing-sm $bpk-spacing-sm;
+  }
+}
+
+/// Large icon.
+///
+/// @param {key} $icon [''] - The key of the desired SVG datauri from the $bpk-icons-lg map.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-icon-lg(flight-gray-500);
+///   }
+
+@mixin bpk-icon-lg($icon: '') {
+  content: '';
+  display: inline-block;
+  width: $bpk-spacing-base;
+  height: $bpk-spacing-base;
+
+  @if $icon != "" {
+    background: url(map-get($bpk-icons-lg, $icon)) no-repeat;
+    background-size: $bpk-spacing-base $bpk-spacing-base;
+  }
+}
+
+/// Cloud logo.
+///
+/// @param {key} $logo - The key of the desired SVG datauri from the $bpk-logos-cloud map.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-logo-cloud(cloud-blue-500);
+///   }
+
+@mixin bpk-logo-cloud($icon) {
+  content: '';
+  display: inline-block;
+  background: url(map-get($bpk-logos-cloud, $icon)) no-repeat;
+}
+
+/// Inline logo.
+///
+/// @param {key} $logo - The key of the desired SVG datauri from the $bpk-logos-inline map.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-logo-inline(inline-blue-500);
+///   }
+
+@mixin bpk-logo-inline($icon) {
+  content: '';
+  display: inline-block;
+  background: url(map-get($bpk-logos-inline, $icon)) no-repeat;
+}
+
+/// Stacked logo.
+///
+/// @param {key} $logo - The key of the desired SVG datauri from the $bpk-logos-stacked map.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-logo-stacked(stacked-blue-500);
+///   }
+
+@mixin bpk-logo-stacked($icon) {
+  content: '';
+  display: inline-block;
+  background: url(map-get($bpk-logos-stacked, $icon)) no-repeat;
+}
+
+/// Tianxun logo.
+///
+/// @param {key} $logo - The key of the desired SVG datauri from the $bpk-logos-tianxun map.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-logo-tianxun(tianxun-blue-500);
+///   }
+
+@mixin bpk-logo-tianxun($icon) {
+  content: '';
+  display: inline-block;
+  background: url(map-get($bpk-logos-tianxun, $icon)) no-repeat;
+}
+
+/// Tianxun stacked logo.
+///
+/// @param {key} $logo - The key of the desired SVG datauri from the $bpk-logos-tianxun-stacked map.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-logo-tianxun-stacked(tianxun-stacked-blue-500);
+///   }
+
+@mixin bpk-logo-tianxun-stacked($icon) {
+  content: '';
+  display: inline-block;
+  background: url(map-get($bpk-logos-tianxun-stacked, $icon)) no-repeat;
+}
+
+/// Spinner factory.
+///
+/// @param {variable} $spacing
+/// @param {key} $spinner
+///
+/// @access private
+
+@mixin _bpk-spinner($spacing, $spinner) {
+  content: '';
+  display: inline-block;
+  width: $spacing;
+  height: $spacing;
+  animation: bpk-keyframe-spin 600ms linear infinite;
+  background: url(map-get($bpk-spinners, $spinner)) no-repeat;
+  background-size: $spacing $spacing;
+}
+
+/// Small spinner.
+///
+/// @param {key} $spinner - The key of the desired SVG datauri from the $bpk-spinners map.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner-sm(spinner-gray-500);
+///   }
+
+@mixin bpk-spinner-sm($spinner) {
+  @include _bpk-spinner($bpk-spacing-sm, $spinner);
+}
+
+/// Large spinner.
+///
+/// @param {key} $spinner - The key of the desired SVG datauri from the $bpk-spinners map.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner-lg(spinner-gray-500);
+///   }
+
+@mixin bpk-spinner-lg($spinner) {
+  @include _bpk-spinner($bpk-spacing-base, $spinner);
+}
+
+/// Extra large spinner.
+///
+/// @param {key} $spinner - The key of the desired SVG datauri from the $bpk-spinners map.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner-xl(spinner-gray-500);
+///   }
+
+@mixin bpk-spinner-xl($spinner) {
+  @include _bpk-spinner($bpk-spacing-xl, $spinner);
+}

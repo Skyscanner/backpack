@@ -309,43 +309,43 @@
     {
       "type": "size",
       "category": "spacing",
-      "value": "6",
       "core": true,
+      "value": "6",
       "name": "spacingXs"
     },
     {
       "type": "size",
       "category": "spacing",
-      "value": "12",
       "core": true,
+      "value": "12",
       "name": "spacingSm"
     },
     {
       "type": "size",
       "category": "spacing",
-      "value": "24",
       "core": true,
+      "value": "24",
       "name": "spacingBase"
     },
     {
       "type": "size",
       "category": "spacing",
-      "value": "36",
       "core": true,
+      "value": "36",
       "name": "spacingLg"
     },
     {
       "type": "size",
       "category": "spacing",
-      "value": "48",
       "core": true,
+      "value": "48",
       "name": "spacingXl"
     },
     {
       "type": "size",
       "category": "spacing",
-      "value": "72",
       "core": true,
+      "value": "72",
       "name": "spacingXxl"
     },
     {

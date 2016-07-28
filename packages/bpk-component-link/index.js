@@ -1,3 +1,3 @@
-import component from './src/BpkLink.jsx'
+import component from './src/BpkLink'
 
 export default component

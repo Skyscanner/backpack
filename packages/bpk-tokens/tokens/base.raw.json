@@ -382,43 +382,43 @@
     "SPACING_XS": {
       "type": "size",
       "category": "spacing",
-      "value": ".375rem",
       "core": true,
+      "value": ".375rem",
       "name": "SPACING_XS"
     },
     "SPACING_SM": {
       "type": "size",
       "category": "spacing",
-      "value": ".75rem",
       "core": true,
+      "value": ".75rem",
       "name": "SPACING_SM"
     },
     "SPACING_BASE": {
       "type": "size",
       "category": "spacing",
-      "value": "1.5rem",
       "core": true,
+      "value": "1.5rem",
       "name": "SPACING_BASE"
     },
     "SPACING_LG": {
       "type": "size",
       "category": "spacing",
-      "value": "2.25rem",
       "core": true,
+      "value": "2.25rem",
       "name": "SPACING_LG"
     },
     "SPACING_XL": {
       "type": "size",
       "category": "spacing",
-      "value": "3rem",
       "core": true,
+      "value": "3rem",
       "name": "SPACING_XL"
     },
     "SPACING_XXL": {
       "type": "size",
       "category": "spacing",
-      "value": "4.5rem",
       "core": true,
+      "value": "4.5rem",
       "name": "SPACING_XXL"
     },
     "FONT_FAMILY_BASE": {

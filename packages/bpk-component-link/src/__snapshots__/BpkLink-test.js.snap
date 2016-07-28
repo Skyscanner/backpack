@@ -1,0 +1,8 @@
+exports[`BpkLink should render correctly with a "href" attribute 1`] = `
+<a
+  className="bpk-link"
+  href="#"
+  onClick={null}>
+  Link
+</a>
+`;

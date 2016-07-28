@@ -1,56 +1,45 @@
-jest.unmock('./BpkButton')
-
 import React from 'react'
-import { shallow } from 'enzyme'
+import renderer from 'react/lib/ReactTestRenderer'
 import BpkButton from './BpkButton'
 
 describe('BpkButton', () => {
-  it('should render the correct element', () => {
-    const wrapper = shallow(<BpkButton>My button</BpkButton>)
-    expect(wrapper.text()).toEqual('My button')
-    expect(wrapper.name()).toEqual('button')
+  it('should render correctly', () => {
+    const tree = renderer.create(<BpkButton>My button</BpkButton>).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 
-  it('should render the correct element if an href is provided', () => {
-    const wrapper = shallow(<BpkButton href='#'>My button</BpkButton>)
-    expect(wrapper.text()).toEqual('My button')
-    expect(wrapper.name()).toEqual('a')
-    expect(wrapper.prop('href')).toEqual('#')
+  it('should render correctly with a "href" attribute', () => {
+    const tree = renderer.create(<BpkButton href='#'>My button</BpkButton>).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 
-  it('should render the correct class by default', () => {
-    const wrapper = shallow(<BpkButton>My button</BpkButton>)
-    expect(wrapper.prop('className')).toEqual('bpk-button')
+  it('should render correctly with a "secondary" attribute', () => {
+    const tree = renderer.create(<BpkButton secondary>My button</BpkButton>).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 
-  it('should render the correct classes for a secondary button', () => {
-    const wrapper = shallow(<BpkButton secondary>My button</BpkButton>)
-    expect(wrapper.prop('className')).toEqual('bpk-button bpk-button--secondary')
+  it('should render correctly with a "selected" attribute', () => {
+    const tree = renderer.create(<BpkButton selected>My button</BpkButton>).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 
-  it('should render the correct classes for a selected button', () => {
-    const wrapper = shallow(<BpkButton selected>My button</BpkButton>)
-    expect(wrapper.prop('className')).toEqual('bpk-button bpk-button--selected')
+  it('should render correctly with a "disabled" attribute', () => {
+    const tree = renderer.create(<BpkButton disabled>My button</BpkButton>).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 
-  it('should render the correct class and attribute for a disabled button', () => {
-    const wrapper = shallow(<BpkButton disabled>My button</BpkButton>)
-    expect(wrapper.prop('className')).toEqual('bpk-button')
-    expect(wrapper.prop('disabled')).toBe(true)
+  it('should render correctly with a "large" attribute', () => {
+    const tree = renderer.create(<BpkButton large>My button</BpkButton>).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 
-  it('should render the correct classes for a large button', () => {
-    const wrapper = shallow(<BpkButton large>My button</BpkButton>)
-    expect(wrapper.prop('className')).toEqual('bpk-button bpk-button--large')
+  it('should render correctly with a "link" attribute', () => {
+    const tree = renderer.create(<BpkButton link>My button</BpkButton>).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 
-  it('should render the correct classes for a link button', () => {
-    const wrapper = shallow(<BpkButton link>My button</BpkButton>)
-    expect(wrapper.prop('className')).toEqual('bpk-button bpk-button--link')
-  })
-
-  it('should render the correct classes for large secondary button', () => {
-    const wrapper = shallow(<BpkButton large secondary>My button</BpkButton>)
-    expect(wrapper.prop('className')).toEqual('bpk-button bpk-button--secondary bpk-button--large')
+  it('should render correctly with "large" and "secondary" attributes', () => {
+    const tree = renderer.create(<BpkButton large secondary>My button</BpkButton>).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 })

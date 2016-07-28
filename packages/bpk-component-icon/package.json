@@ -1,0 +1,19 @@
+{
+  "name": "bpk-component-icon",
+  "version": "0.0.0",
+  "description": "Backpack icon component.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^15.0.0"
+  },
+  "dependencies": {
+    "bpk-mixins": "^0.0.7",
+    "bpk-svgs": "^0.0.0"
+  }
+}
