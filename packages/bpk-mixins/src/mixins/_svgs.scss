@@ -65,77 +65,117 @@
 
 /// Cloud logo.
 ///
-/// @param {key} $logo - The key of the desired SVG datauri from the $bpk-logos-cloud map.
+/// @param {key} $logo [''] - The key of the desired SVG datauri from the $bpk-logos-cloud map.
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-logo-cloud(cloud-blue-500);
 ///   }
 
-@mixin bpk-logo-cloud($icon) {
+@mixin bpk-logo-cloud($logo: '') {
   content: '';
   display: inline-block;
-  background: url(map-get($bpk-logos-cloud, $icon)) no-repeat;
+
+  @if $logo != '' {
+    background: url(map-get($bpk-logos-cloud, $logo)) no-repeat;
+  }
+
+  > svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /// Inline logo.
 ///
-/// @param {key} $logo - The key of the desired SVG datauri from the $bpk-logos-inline map.
+/// @param {key} $logo [''] - The key of the desired SVG datauri from the $bpk-logos-inline map.
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-logo-inline(inline-blue-500);
 ///   }
 
-@mixin bpk-logo-inline($icon) {
+@mixin bpk-logo-inline($logo: '') {
   content: '';
   display: inline-block;
-  background: url(map-get($bpk-logos-inline, $icon)) no-repeat;
+
+  @if $logo != '' {
+    background: url(map-get($bpk-logos-inline, $logo)) no-repeat;
+  }
+
+  > svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /// Stacked logo.
 ///
-/// @param {key} $logo - The key of the desired SVG datauri from the $bpk-logos-stacked map.
+/// @param {key} $logo [''] - The key of the desired SVG datauri from the $bpk-logos-stacked map.
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-logo-stacked(stacked-blue-500);
 ///   }
 
-@mixin bpk-logo-stacked($icon) {
+@mixin bpk-logo-stacked($logo: '') {
   content: '';
   display: inline-block;
-  background: url(map-get($bpk-logos-stacked, $icon)) no-repeat;
+
+  @if $logo != '' {
+    background: url(map-get($bpk-logos-stacked, $logo)) no-repeat;
+  }
+
+  > svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /// Tianxun logo.
 ///
-/// @param {key} $logo - The key of the desired SVG datauri from the $bpk-logos-tianxun map.
+/// @param {key} $logo [''] - The key of the desired SVG datauri from the $bpk-logos-tianxun map.
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-logo-tianxun(tianxun-blue-500);
 ///   }
 
-@mixin bpk-logo-tianxun($icon) {
+@mixin bpk-logo-tianxun($logo: '') {
   content: '';
   display: inline-block;
-  background: url(map-get($bpk-logos-tianxun, $icon)) no-repeat;
+
+  @if $logo != '' {
+    background: url(map-get($bpk-logos-tianxun, $logo)) no-repeat;
+  }
+
+  > svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /// Tianxun stacked logo.
 ///
-/// @param {key} $logo - The key of the desired SVG datauri from the $bpk-logos-tianxun-stacked map.
+/// @param {key} $logo [''] - The key of the desired SVG datauri from the $bpk-logos-tianxun-stacked map.
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-logo-tianxun-stacked(tianxun-stacked-blue-500);
 ///   }
 
-@mixin bpk-logo-tianxun-stacked($icon) {
+@mixin bpk-logo-tianxun-stacked($logo: '') {
   content: '';
   display: inline-block;
-  background: url(map-get($bpk-logos-tianxun-stacked, $icon)) no-repeat;
+
+  @if $logo != '' {
+    background: url(map-get($bpk-logos-tianxun-stacked, $logo)) no-repeat;
+  }
+
+  > svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /// Spinner factory.
