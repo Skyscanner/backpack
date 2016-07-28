@@ -1,43 +1,23 @@
-jest.unmock('./BpkList.jsx')
-
 import React from 'react'
-import { shallow } from 'enzyme'
+import renderer from 'react/lib/ReactTestRenderer'
 import BpkList from './BpkList.jsx'
 
 describe('BpkList', () => {
-  it('should render the correct element', () => {
-    const wrapper = shallow(
+  it('should render correctly', () => {
+    const tree = renderer.create(
       <BpkList>
         <li>list item</li>
       </BpkList>
-    )
-    expect(wrapper.name()).toEqual('ul')
+    ).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 
-  it('should render the correct class', () => {
-    const wrapper = shallow(
-      <BpkList>
-        <li>list item</li>
-      </BpkList>
-    )
-    expect(wrapper.prop('className')).toEqual('bpk-list')
-  })
-
-  it('should render the correct element for an ordered list', () => {
-    const wrapper = shallow(
+  it('should render correctly with a "ordered" attribute', () => {
+    const tree = renderer.create(
       <BpkList ordered>
         <li>list item</li>
       </BpkList>
-    )
-    expect(wrapper.name()).toEqual('ol')
-  })
-
-  it('should render the correct class for an ordered list', () => {
-    const wrapper = shallow(
-      <BpkList ordered>
-        <li>list item</li>
-      </BpkList>
-    )
-    expect(wrapper.prop('className')).toEqual('bpk-list')
+    ).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 })

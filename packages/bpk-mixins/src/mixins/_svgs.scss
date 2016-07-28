@@ -7,7 +7,7 @@
   }
 }
 
-@mixin _bpk-spinner($spacing, $spinner) {
+@mixin _bpk-icon($spacing, $spinner) {
   content: '';
   display: inline-block;
   width: $spacing;
@@ -23,38 +23,44 @@
 
 /// Small icon.
 ///
-/// @param {key} $icon - The key of the desired SVG datauri from the $bpk-icons-sm map.
+/// @param {key} $icon [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-icon-sm(flight-gray-500);
 ///   }
 
-@mixin bpk-icon-sm($icon) {
+@mixin bpk-icon-sm($icon: '') {
   content: '';
   display: inline-block;
   width: $bpk-spacing-sm;
   height: $bpk-spacing-sm;
-  background: url(map-get($bpk-icons-sm, $icon)) no-repeat;
-  background-size: $bpk-spacing-sm $bpk-spacing-sm;
+
+  @if $icon != "" {
+    background: url(map-get($bpk-icons-sm, $icon)) no-repeat;
+    background-size: $bpk-spacing-sm $bpk-spacing-sm;
+  }
 }
 
 /// Large icon.
 ///
-/// @param {key} $icon - The key of the desired SVG datauri from the $bpk-icons-lg map.
+/// @param {key} $icon [''] - The key of the desired SVG datauri from the $bpk-icons-lg map.
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-icon-lg(flight-gray-500);
 ///   }
 
-@mixin bpk-icon-lg($icon) {
+@mixin bpk-icon-lg($icon: '') {
   content: '';
   display: inline-block;
   width: $bpk-spacing-base;
   height: $bpk-spacing-base;
-  background: url(map-get($bpk-icons-lg, $icon)) no-repeat;
-  background-size: $bpk-spacing-base $bpk-spacing-base;
+
+  @if $icon != "" {
+    background: url(map-get($bpk-icons-lg, $icon)) no-repeat;
+    background-size: $bpk-spacing-base $bpk-spacing-base;
+  }
 }
 
 /// Cloud logo.
@@ -130,6 +136,23 @@
   content: '';
   display: inline-block;
   background: url(map-get($bpk-logos-tianxun-stacked, $icon)) no-repeat;
+}
+
+/// Spinner factory.
+///
+/// @param {variable} $spacing
+/// @param {key} $spinner
+///
+/// @access private
+
+@mixin _bpk-spinner($spacing, $spinner) {
+  content: '';
+  display: inline-block;
+  width: $spacing;
+  height: $spacing;
+  animation: bpk-keyframe-spin 600ms linear infinite;
+  background: url(map-get($bpk-spinners, $spinner)) no-repeat;
+  background-size: $spacing $spacing;
 }
 
 /// Small spinner.

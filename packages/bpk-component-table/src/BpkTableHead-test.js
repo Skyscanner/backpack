@@ -1,16 +1,14 @@
-jest.unmock('./BpkTableHead.jsx')
-
 import React from 'react'
-import { shallow } from 'enzyme'
-import BpkTableHead from './BpkTableHead.jsx'
+import renderer from 'react/lib/ReactTestRenderer'
+import BpkTableHead from './BpkTableHead'
 
 describe('BpkTableHead', () => {
-  it('should render the correct element', () => {
-    const wrapper = shallow(
+  it('should render correctly', () => {
+    const tree = renderer.create(
       <BpkTableHead>
         <th />
       </BpkTableHead>
-    )
-    expect(wrapper.name()).toEqual('thead')
+    ).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 })

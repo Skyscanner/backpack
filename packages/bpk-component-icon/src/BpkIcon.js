@@ -9,11 +9,9 @@ const resolveSvg = ({ icon, large }) => {
 }
 
 const BpkIcon = ({ icon, large }) => {
-  const classNames = [ 'bpk-icon' ]
+  const className = large ? 'bpk-icon-lg' : 'bpk-icon-sm'
 
-  large ? classNames.push('bpk-icon--large') : null
-
-  return <span className={classNames.join(' ')} dangerouslySetInnerHTML={{ __html: resolveSvg({ icon, large }) }} />
+  return <span className={className} dangerouslySetInnerHTML={{ __html: resolveSvg({ icon, large }) }} />
 }
 
 BpkIcon.propTypes = {

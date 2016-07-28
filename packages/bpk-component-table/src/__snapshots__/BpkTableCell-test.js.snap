@@ -1,0 +1,6 @@
+exports[`BpkTableCell should render correctly 1`] = `
+<td
+  className="bpk-table__cell">
+  Tabular data
+</td>
+`;

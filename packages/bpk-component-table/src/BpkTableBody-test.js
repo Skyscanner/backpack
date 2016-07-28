@@ -1,16 +1,14 @@
-jest.unmock('./BpkTableBody.jsx')
-
 import React from 'react'
-import { shallow } from 'enzyme'
-import BpkTableBody from './BpkTableBody.jsx'
+import renderer from 'react/lib/ReactTestRenderer'
+import BpkTableBody from './BpkTableBody'
 
 describe('BpkTableBody', () => {
-  it('should render the correct element', () => {
-    const wrapper = shallow(
+  it('should render correctly', () => {
+    const tree = renderer.create(
       <BpkTableBody>
         <tr />
       </BpkTableBody>
-    )
-    expect(wrapper.name()).toEqual('tbody')
+    ).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 })

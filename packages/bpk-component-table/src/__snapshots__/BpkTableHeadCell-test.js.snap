@@ -1,0 +1,6 @@
+exports[`BpkTableHeadCell should render correctly 1`] = `
+<th
+  className="bpk-table__cell bpk-table__cell--head">
+  Heading
+</th>
+`;
