@@ -5,7 +5,10 @@ import * as routes from './../../constants/routes'
 
 const links = [
   { route: routes.TYPOGRAPHY, children: 'Typography' },
-  { route: routes.BUTTONS, children: 'Buttons' }
+  { route: routes.BUTTONS, children: 'Buttons' },
+  { route: routes.ICONS, children: 'Icons' },
+  { route: routes.SPINNERS, children: 'Spinners' },
+  { route: routes.LOGOS, children: 'Logos' }
 ]
 
 export const AtomsLayout = ({ children }) => (

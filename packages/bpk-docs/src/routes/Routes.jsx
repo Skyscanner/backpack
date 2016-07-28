@@ -19,6 +19,9 @@ import FontsAndSpacingPage from './../pages/FontsAndSpacingPage'
 import AtomsPage from './../pages/AtomsPage'
 import TypographyPage from './../pages/TypographyPage'
 import ButtonsPage from './../pages/ButtonsPage'
+import IconsPage from './../pages/IconsPage'
+import SpinnersPage from './../pages/SpinnersPage'
+import LogosPage from './../pages/LogosPage'
 
 import MoleculesPage from './../pages/MoleculesPage'
 import OrganismsPage from './../pages/OrganismsPage'
@@ -36,6 +39,9 @@ const Routes = (
       <IndexRoute component={AtomsPage} />
       <Route path={ROUTES.TYPOGRAPHY} component={TypographyPage} />
       <Route path={ROUTES.BUTTONS} component={ButtonsPage} />
+      <Route path={ROUTES.ICONS} component={IconsPage} />
+      <Route path={ROUTES.SPINNERS} component={SpinnersPage} />
+      <Route path={ROUTES.LOGOS} component={LogosPage} />
     </Route>
     <Route path={ROUTES.MOLECULES} component={MoleculesLayout}>
       <IndexRoute component={MoleculesPage} />

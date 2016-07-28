@@ -1,0 +1,13 @@
+@import '~bpk-mixins/index';
+
+.bpk-spinner {
+  @include bpk-spinner();
+
+  &--large {
+    @include bpk-spinner--lg();
+  }
+
+  &--extra-large {
+    @include bpk-spinner--xl();
+  }
+}

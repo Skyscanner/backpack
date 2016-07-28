@@ -18,11 +18,15 @@
   "devDependencies": {
     "bpk-component-button": "^0.0.19",
     "bpk-component-heading": "^0.0.14",
+    "bpk-component-icon": "^0.0.2",
     "bpk-component-list": "^0.0.12",
+    "bpk-component-logo": "^0.0.1",
     "bpk-component-paragraph": "^0.0.13",
+    "bpk-component-spinner": "^0.0.0",
     "bpk-component-table": "^0.0.12",
     "bpk-mixins": "^0.1.1",
     "bpk-stylesheets": "^0.0.12",
+    "bpk-svgs": "^0.0.1",
     "bpk-tokens": "^7.0.4"
   }
 }
