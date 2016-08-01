@@ -11,7 +11,7 @@
       "type": "size"
     },
     "BUTTON_PADDING_X": {
-      "value": "{!SPACING_SM}",
+      "value": "{!SPACING_MD}",
       "type": "size"
     },
     "BUTTON_BORDER_RADIUS": {

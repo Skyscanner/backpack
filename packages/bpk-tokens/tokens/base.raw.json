@@ -850,7 +850,7 @@
     },
     "BUTTON_PADDING_X": {
       "category": "buttons",
-      "value": ".75rem",
+      "value": "1.125rem",
       "type": "size",
       "name": "BUTTON_PADDING_X"
     },

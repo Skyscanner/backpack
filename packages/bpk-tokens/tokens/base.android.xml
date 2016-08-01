@@ -126,7 +126,7 @@
   <property name="BREAKPOINT_QUERY_ABOVE_MOBILE" category="breakpoint">(min-width: 31.25rem + .0625rem)</property>
   <property name="BREAKPOINT_QUERY_ABOVE_TABLET" category="breakpoint">(min-width: 48rem + .0625rem)</property>
   <property name="BUTTON_PADDING_Y" category="buttons">6</property>
-  <property name="BUTTON_PADDING_X" category="buttons">12</property>
+  <property name="BUTTON_PADDING_X" category="buttons">18</property>
   <property name="BUTTON_BORDER_RADIUS" category="buttons">80</property>
   <color name="BUTTON_BACKGROUND_COLOR" category="buttons">#00d775ff</color>
   <property name="BUTTON_BACKGROUND_IMAGE" category="buttons">linear-gradient(-180deg, #00d775 0, #00bd68 1)</property>

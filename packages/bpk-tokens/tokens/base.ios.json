@@ -777,7 +777,7 @@
     },
     {
       "category": "buttons",
-      "value": "12",
+      "value": "18",
       "type": "size",
       "name": "buttonPaddingX"
     },
