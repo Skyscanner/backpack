@@ -34,7 +34,13 @@
       "core": true
     },
     "LINE_HEIGHT_XL": {
-      "value": "{!SPACING_XL}",
+      "value": "{!SPACING_XXL}",
+      "type": "number",
+      "category": "line-height",
+      "core": true
+    },
+    "LINE_HEIGHT_XXL": {
+      "value": "3.375rem",
       "type": "number",
       "category": "line-height",
       "core": true
@@ -76,12 +82,12 @@
       "core": true
     },
     "H6_FONT_SIZE": {
-      "value": "{!FONT_SIZE_BASE}",
+      "value": "{!FONT_SIZE_SM}",
       "type": "size",
       "category": "font-size"
     },
     "H5_FONT_SIZE": {
-      "value": "{!FONT_SIZE_BASE}",
+      "value": "{!FONT_SIZE_SM}",
       "type": "size",
       "category": "font-size"
     },
@@ -106,12 +112,12 @@
       "category": "font-size"
     },
     "H6_LINE_HEIGHT": {
-      "value": "{!SPACING_BASE}",
+      "value": "{!SPACING_MD}",
       "type": "number",
       "category": "line-height"
     },
     "H5_LINE_HEIGHT": {
-      "value": "{!SPACING_BASE}",
+      "value": "{!SPACING_MD}",
       "type": "number",
       "category": "line-height"
     },
@@ -126,12 +132,12 @@
       "category": "line-height"
     },
     "H2_LINE_HEIGHT": {
-      "value": "{!SPACING_XL}",
+      "value": "{!SPACING_XXL}",
       "type": "number",
       "category": "line-height"
     },
     "H1_LINE_HEIGHT": {
-      "value": "{!SPACING_XL}",
+      "value": "3.375rem",
       "type": "number",
       "category": "line-height"
     },

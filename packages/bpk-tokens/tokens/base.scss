@@ -107,11 +107,11 @@ $bpk-spacing-sm: .75rem;
 /// @group spacings
 $bpk-spacing-base: 1.5rem;
 /// @group spacings
-$bpk-spacing-lg: 2.25rem;
+$bpk-spacing-lg: 1.875rem;
 /// @group spacings
-$bpk-spacing-xl: 3rem;
+$bpk-spacing-xl: 2.250rem;
 /// @group spacings
-$bpk-spacing-xxl: 4.5rem;
+$bpk-spacing-xxl: 2.625rem;
 /// @group fonts
 $bpk-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif;
 /// @group text-colors
@@ -121,9 +121,11 @@ $bpk-line-height-sm: 1.125rem;
 /// @group line-heights
 $bpk-line-height-base: 1.5rem;
 /// @group line-heights
-$bpk-line-height-lg: 2.25rem;
+$bpk-line-height-lg: 1.875rem;
 /// @group line-heights
-$bpk-line-height-xl: 3rem;
+$bpk-line-height-xl: 2.625rem;
+/// @group line-heights
+$bpk-line-height-xxl: 3.375rem;
 /// @group font-sizes
 $bpk-font-size-root: 100%;
 /// @group font-sizes
@@ -131,35 +133,35 @@ $bpk-font-size-sm: .75rem;
 /// @group font-sizes
 $bpk-font-size-base: 1rem;
 /// @group font-sizes
-$bpk-font-size-lg: 1.375rem;
+$bpk-font-size-lg: 1.5rem;
 /// @group font-sizes
-$bpk-font-size-xl: 1.875rem;
+$bpk-font-size-xl: 1.75rem;
 /// @group font-sizes
-$bpk-font-size-xxl: 2.5rem;
+$bpk-font-size-xxl: 2.625rem;
 /// @group font-sizes
-$bpk-h-6-font-size: 1rem;
+$bpk-h-6-font-size: .75rem;
 /// @group font-sizes
-$bpk-h-5-font-size: 1rem;
+$bpk-h-5-font-size: .75rem;
 /// @group font-sizes
 $bpk-h-4-font-size: 1rem;
 /// @group font-sizes
-$bpk-h-3-font-size: 1.375rem;
+$bpk-h-3-font-size: 1.5rem;
 /// @group font-sizes
-$bpk-h-2-font-size: 1.875rem;
+$bpk-h-2-font-size: 1.75rem;
 /// @group font-sizes
-$bpk-h-1-font-size: 2.5rem;
+$bpk-h-1-font-size: 2.625rem;
 /// @group line-heights
-$bpk-h-6-line-height: 1.5rem;
+$bpk-h-6-line-height: 1.125rem;
 /// @group line-heights
-$bpk-h-5-line-height: 1.5rem;
+$bpk-h-5-line-height: 1.125rem;
 /// @group line-heights
 $bpk-h-4-line-height: 1.5rem;
 /// @group line-heights
-$bpk-h-3-line-height: 2.25rem;
+$bpk-h-3-line-height: 1.875rem;
 /// @group line-heights
-$bpk-h-2-line-height: 3rem;
+$bpk-h-2-line-height: 2.625rem;
 /// @group line-heights
-$bpk-h-1-line-height: 3rem;
+$bpk-h-1-line-height: 3.375rem;
 /// @group font-weights
 $bpk-h-6-font-weight: 400;
 /// @group font-weights
@@ -249,7 +251,7 @@ $bpk-breakpoint-query-above-tablet: (min-width: 48rem + .0625rem);
 /// @group buttons
 $bpk-button-padding-y: .375rem;
 /// @group buttons
-$bpk-button-padding-x: .75rem;
+$bpk-button-padding-x: 1.125rem;
 /// @group buttons
 $bpk-button-border-radius: 5rem;
 /// @group buttons
@@ -285,9 +287,9 @@ $bpk-button-large-padding-y: .375rem;
 /// @group buttons
 $bpk-button-large-padding-x: 1.5rem;
 /// @group buttons
-$bpk-button-large-font-size: 1.375rem;
+$bpk-button-large-font-size: 1.5rem;
 /// @group buttons
-$bpk-button-large-line-height: 2.25rem;
+$bpk-button-large-line-height: 1.875rem;
 /// @group buttons
 $bpk-button-secondary-background-color: rgba(0, 0, 0, 0);
 /// @group buttons

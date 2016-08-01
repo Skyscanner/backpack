@@ -331,21 +331,21 @@
       "type": "size",
       "category": "spacing",
       "core": true,
-      "value": "36",
+      "value": "30",
       "name": "spacingLg"
     },
     {
       "type": "size",
       "category": "spacing",
       "core": true,
-      "value": "48",
+      "value": "36",
       "name": "spacingXl"
     },
     {
       "type": "size",
       "category": "spacing",
       "core": true,
-      "value": "72",
+      "value": "42",
       "name": "spacingXxl"
     },
     {
@@ -377,18 +377,25 @@
       "name": "lineHeightBase"
     },
     {
-      "value": "36",
+      "value": "30",
       "type": "number",
       "category": "line-height",
       "core": true,
       "name": "lineHeightLg"
     },
     {
-      "value": "48",
+      "value": "42",
       "type": "number",
       "category": "line-height",
       "core": true,
       "name": "lineHeightXl"
+    },
+    {
+      "value": "54",
+      "type": "number",
+      "category": "line-height",
+      "core": true,
+      "name": "lineHeightXxl"
     },
     {
       "value": "1",
@@ -412,34 +419,34 @@
       "name": "fontSizeBase"
     },
     {
-      "value": "22",
+      "value": "24",
       "type": "size",
       "category": "font-size",
       "core": true,
       "name": "fontSizeLg"
     },
     {
-      "value": "30",
+      "value": "28",
       "type": "size",
       "category": "font-size",
       "core": true,
       "name": "fontSizeXl"
     },
     {
-      "value": "40",
+      "value": "42",
       "type": "size",
       "category": "font-size",
       "core": true,
       "name": "fontSizeXxl"
     },
     {
-      "value": "16",
+      "value": "12",
       "type": "size",
       "category": "font-size",
       "name": "h6FontSize"
     },
     {
-      "value": "16",
+      "value": "12",
       "type": "size",
       "category": "font-size",
       "name": "h5FontSize"
@@ -451,31 +458,31 @@
       "name": "h4FontSize"
     },
     {
-      "value": "22",
+      "value": "24",
       "type": "size",
       "category": "font-size",
       "name": "h3FontSize"
     },
     {
-      "value": "30",
+      "value": "28",
       "type": "size",
       "category": "font-size",
       "name": "h2FontSize"
     },
     {
-      "value": "40",
+      "value": "42",
       "type": "size",
       "category": "font-size",
       "name": "h1FontSize"
     },
     {
-      "value": "24",
+      "value": "18",
       "type": "number",
       "category": "line-height",
       "name": "h6LineHeight"
     },
     {
-      "value": "24",
+      "value": "18",
       "type": "number",
       "category": "line-height",
       "name": "h5LineHeight"
@@ -487,19 +494,19 @@
       "name": "h4LineHeight"
     },
     {
-      "value": "36",
+      "value": "30",
       "type": "number",
       "category": "line-height",
       "name": "h3LineHeight"
     },
     {
-      "value": "48",
+      "value": "42",
       "type": "number",
       "category": "line-height",
       "name": "h2LineHeight"
     },
     {
-      "value": "48",
+      "value": "54",
       "type": "number",
       "category": "line-height",
       "name": "h1LineHeight"
@@ -770,7 +777,7 @@
     },
     {
       "category": "buttons",
-      "value": "12",
+      "value": "18",
       "type": "size",
       "name": "buttonPaddingX"
     },
@@ -878,13 +885,13 @@
     },
     {
       "category": "buttons",
-      "value": "22",
+      "value": "24",
       "type": "size",
       "name": "buttonLargeFontSize"
     },
     {
       "category": "buttons",
-      "value": "36",
+      "value": "30",
       "type": "number",
       "name": "buttonLargeLineHeight"
     },
