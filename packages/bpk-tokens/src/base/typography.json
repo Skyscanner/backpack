@@ -237,7 +237,7 @@
       "category": "spacing"
     },
     "P_MARGIN_BOTTOM": {
-      "value": "{!SPACING_BASE}",
+      "value": "{!SPACING_SM}",
       "type": "size",
       "category": "spacing"
     },
@@ -247,7 +247,7 @@
       "category": "spacing"
     },
     "LIST_MARGIN_BOTTOM": {
-      "value": "{!SPACING_BASE}",
+      "value": "{!SPACING_SM}",
       "type": "size",
       "category": "spacing"
     },

@@ -626,7 +626,7 @@
       "name": "pMarginTop"
     },
     {
-      "value": "24",
+      "value": "12",
       "type": "size",
       "category": "spacing",
       "name": "pMarginBottom"
@@ -638,7 +638,7 @@
       "name": "listMarginTop"
     },
     {
-      "value": "24",
+      "value": "12",
       "type": "size",
       "category": "spacing",
       "name": "listMarginBottom"

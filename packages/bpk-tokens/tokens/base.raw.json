@@ -699,7 +699,7 @@
       "name": "P_MARGIN_TOP"
     },
     "P_MARGIN_BOTTOM": {
-      "value": "1.5rem",
+      "value": ".75rem",
       "type": "size",
       "category": "spacing",
       "name": "P_MARGIN_BOTTOM"
@@ -711,7 +711,7 @@
       "name": "LIST_MARGIN_TOP"
     },
     "LIST_MARGIN_BOTTOM": {
-      "value": "1.5rem",
+      "value": ".75rem",
       "type": "size",
       "category": "spacing",
       "name": "LIST_MARGIN_BOTTOM"

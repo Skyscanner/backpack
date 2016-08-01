@@ -101,9 +101,9 @@
   <property name="H2_MARGIN_BOTTOM" category="spacing">24</property>
   <property name="H1_MARGIN_BOTTOM" category="spacing">24</property>
   <property name="P_MARGIN_TOP" category="spacing">0</property>
-  <property name="P_MARGIN_BOTTOM" category="spacing">24</property>
+  <property name="P_MARGIN_BOTTOM" category="spacing">12</property>
   <property name="LIST_MARGIN_TOP" category="spacing">0</property>
-  <property name="LIST_MARGIN_BOTTOM" category="spacing">24</property>
+  <property name="LIST_MARGIN_BOTTOM" category="spacing">12</property>
   <property name="LIST_NESTED_MARGIN_TOP" category="spacing">0</property>
   <property name="LIST_NESTED_MARGIN_BOTTOM" category="spacing">0</property>
   <property name="LIST_ITEM_MARGIN_TOP" category="spacing">0</property>
