@@ -53,16 +53,16 @@
     "YELLOW_900": "#a88100",
     "FONT_SIZE_SM": ".75rem",
     "FONT_SIZE_BASE": "1rem",
-    "FONT_SIZE_LG": "1.375rem",
-    "FONT_SIZE_XL": "1.875rem",
-    "FONT_SIZE_XXL": "2.5rem",
+    "FONT_SIZE_LG": "1.5rem",
+    "FONT_SIZE_XL": "1.75rem",
+    "FONT_SIZE_XXL": "2.625rem",
     "SPACING_XS": ".375rem",
     "SPACING_SM": ".75rem",
     "SPACING_MD": "1.125rem",
     "SPACING_BASE": "1.5rem",
-    "SPACING_LG": "2.25rem",
-    "SPACING_XL": "3rem",
-    "SPACING_XXL": "4.5rem",
+    "SPACING_LG": "1.875rem",
+    "SPACING_XL": "2.250rem",
+    "SPACING_XXL": "2.625rem",
     "BORDER_RADIUS_XS": ".125rem",
     "BORDER_RADIUS_SM": ".25rem",
     "BORDER_RADIUS_LG": ".5rem",
@@ -404,21 +404,21 @@
       "type": "size",
       "category": "spacing",
       "core": true,
-      "value": "2.25rem",
+      "value": "1.875rem",
       "name": "SPACING_LG"
     },
     "SPACING_XL": {
       "type": "size",
       "category": "spacing",
       "core": true,
-      "value": "3rem",
+      "value": "2.250rem",
       "name": "SPACING_XL"
     },
     "SPACING_XXL": {
       "type": "size",
       "category": "spacing",
       "core": true,
-      "value": "4.5rem",
+      "value": "2.625rem",
       "name": "SPACING_XXL"
     },
     "FONT_FAMILY_BASE": {
@@ -450,18 +450,25 @@
       "name": "LINE_HEIGHT_BASE"
     },
     "LINE_HEIGHT_LG": {
-      "value": "2.25rem",
+      "value": "1.875rem",
       "type": "number",
       "category": "line-height",
       "core": true,
       "name": "LINE_HEIGHT_LG"
     },
     "LINE_HEIGHT_XL": {
-      "value": "3rem",
+      "value": "2.625rem",
       "type": "number",
       "category": "line-height",
       "core": true,
       "name": "LINE_HEIGHT_XL"
+    },
+    "LINE_HEIGHT_XXL": {
+      "value": "3.375rem",
+      "type": "number",
+      "category": "line-height",
+      "core": true,
+      "name": "LINE_HEIGHT_XXL"
     },
     "FONT_SIZE_ROOT": {
       "value": "100%",
@@ -485,34 +492,34 @@
       "name": "FONT_SIZE_BASE"
     },
     "FONT_SIZE_LG": {
-      "value": "1.375rem",
+      "value": "1.5rem",
       "type": "size",
       "category": "font-size",
       "core": true,
       "name": "FONT_SIZE_LG"
     },
     "FONT_SIZE_XL": {
-      "value": "1.875rem",
+      "value": "1.75rem",
       "type": "size",
       "category": "font-size",
       "core": true,
       "name": "FONT_SIZE_XL"
     },
     "FONT_SIZE_XXL": {
-      "value": "2.5rem",
+      "value": "2.625rem",
       "type": "size",
       "category": "font-size",
       "core": true,
       "name": "FONT_SIZE_XXL"
     },
     "H6_FONT_SIZE": {
-      "value": "1rem",
+      "value": ".75rem",
       "type": "size",
       "category": "font-size",
       "name": "H6_FONT_SIZE"
     },
     "H5_FONT_SIZE": {
-      "value": "1rem",
+      "value": ".75rem",
       "type": "size",
       "category": "font-size",
       "name": "H5_FONT_SIZE"
@@ -524,31 +531,31 @@
       "name": "H4_FONT_SIZE"
     },
     "H3_FONT_SIZE": {
-      "value": "1.375rem",
+      "value": "1.5rem",
       "type": "size",
       "category": "font-size",
       "name": "H3_FONT_SIZE"
     },
     "H2_FONT_SIZE": {
-      "value": "1.875rem",
+      "value": "1.75rem",
       "type": "size",
       "category": "font-size",
       "name": "H2_FONT_SIZE"
     },
     "H1_FONT_SIZE": {
-      "value": "2.5rem",
+      "value": "2.625rem",
       "type": "size",
       "category": "font-size",
       "name": "H1_FONT_SIZE"
     },
     "H6_LINE_HEIGHT": {
-      "value": "1.5rem",
+      "value": "1.125rem",
       "type": "number",
       "category": "line-height",
       "name": "H6_LINE_HEIGHT"
     },
     "H5_LINE_HEIGHT": {
-      "value": "1.5rem",
+      "value": "1.125rem",
       "type": "number",
       "category": "line-height",
       "name": "H5_LINE_HEIGHT"
@@ -560,19 +567,19 @@
       "name": "H4_LINE_HEIGHT"
     },
     "H3_LINE_HEIGHT": {
-      "value": "2.25rem",
+      "value": "1.875rem",
       "type": "number",
       "category": "line-height",
       "name": "H3_LINE_HEIGHT"
     },
     "H2_LINE_HEIGHT": {
-      "value": "3rem",
+      "value": "2.625rem",
       "type": "number",
       "category": "line-height",
       "name": "H2_LINE_HEIGHT"
     },
     "H1_LINE_HEIGHT": {
-      "value": "3rem",
+      "value": "3.375rem",
       "type": "number",
       "category": "line-height",
       "name": "H1_LINE_HEIGHT"
@@ -951,13 +958,13 @@
     },
     "BUTTON_LARGE_FONT_SIZE": {
       "category": "buttons",
-      "value": "1.375rem",
+      "value": "1.5rem",
       "type": "size",
       "name": "BUTTON_LARGE_FONT_SIZE"
     },
     "BUTTON_LARGE_LINE_HEIGHT": {
       "category": "buttons",
-      "value": "2.25rem",
+      "value": "1.875rem",
       "type": "number",
       "name": "BUTTON_LARGE_LINE_HEIGHT"
     },
@@ -1170,6 +1177,7 @@
     "LINE_HEIGHT_BASE",
     "LINE_HEIGHT_LG",
     "LINE_HEIGHT_XL",
+    "LINE_HEIGHT_XXL",
     "FONT_SIZE_ROOT",
     "FONT_SIZE_SM",
     "FONT_SIZE_BASE",

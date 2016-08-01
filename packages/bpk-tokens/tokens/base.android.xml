@@ -54,33 +54,34 @@
   <property name="SPACING_XS" category="spacing">6</property>
   <property name="SPACING_SM" category="spacing">12</property>
   <property name="SPACING_BASE" category="spacing">24</property>
-  <property name="SPACING_LG" category="spacing">36</property>
-  <property name="SPACING_XL" category="spacing">48</property>
-  <property name="SPACING_XXL" category="spacing">72</property>
+  <property name="SPACING_LG" category="spacing">30</property>
+  <property name="SPACING_XL" category="spacing">36</property>
+  <property name="SPACING_XXL" category="spacing">42</property>
   <property name="FONT_FAMILY_BASE" category="font">-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif</property>
   <color name="FONT_COLOR_BASE" category="text-color">#544c63ff</color>
   <property name="LINE_HEIGHT_SM" category="line-height">18</property>
   <property name="LINE_HEIGHT_BASE" category="line-height">24</property>
-  <property name="LINE_HEIGHT_LG" category="line-height">36</property>
-  <property name="LINE_HEIGHT_XL" category="line-height">48</property>
+  <property name="LINE_HEIGHT_LG" category="line-height">30</property>
+  <property name="LINE_HEIGHT_XL" category="line-height">42</property>
+  <property name="LINE_HEIGHT_XXL" category="line-height">54</property>
   <property name="FONT_SIZE_ROOT" category="font-size">1</property>
   <property name="FONT_SIZE_SM" category="font-size">12</property>
   <property name="FONT_SIZE_BASE" category="font-size">16</property>
-  <property name="FONT_SIZE_LG" category="font-size">22</property>
-  <property name="FONT_SIZE_XL" category="font-size">30</property>
-  <property name="FONT_SIZE_XXL" category="font-size">40</property>
-  <property name="H6_FONT_SIZE" category="font-size">16</property>
-  <property name="H5_FONT_SIZE" category="font-size">16</property>
+  <property name="FONT_SIZE_LG" category="font-size">24</property>
+  <property name="FONT_SIZE_XL" category="font-size">28</property>
+  <property name="FONT_SIZE_XXL" category="font-size">42</property>
+  <property name="H6_FONT_SIZE" category="font-size">12</property>
+  <property name="H5_FONT_SIZE" category="font-size">12</property>
   <property name="H4_FONT_SIZE" category="font-size">16</property>
-  <property name="H3_FONT_SIZE" category="font-size">22</property>
-  <property name="H2_FONT_SIZE" category="font-size">30</property>
-  <property name="H1_FONT_SIZE" category="font-size">40</property>
-  <property name="H6_LINE_HEIGHT" category="line-height">24</property>
-  <property name="H5_LINE_HEIGHT" category="line-height">24</property>
+  <property name="H3_FONT_SIZE" category="font-size">24</property>
+  <property name="H2_FONT_SIZE" category="font-size">28</property>
+  <property name="H1_FONT_SIZE" category="font-size">42</property>
+  <property name="H6_LINE_HEIGHT" category="line-height">18</property>
+  <property name="H5_LINE_HEIGHT" category="line-height">18</property>
   <property name="H4_LINE_HEIGHT" category="line-height">24</property>
-  <property name="H3_LINE_HEIGHT" category="line-height">36</property>
-  <property name="H2_LINE_HEIGHT" category="line-height">48</property>
-  <property name="H1_LINE_HEIGHT" category="line-height">48</property>
+  <property name="H3_LINE_HEIGHT" category="line-height">30</property>
+  <property name="H2_LINE_HEIGHT" category="line-height">42</property>
+  <property name="H1_LINE_HEIGHT" category="line-height">54</property>
   <property name="H6_FONT_WEIGHT" category="font-weight">400</property>
   <property name="H5_FONT_WEIGHT" category="font-weight">400</property>
   <property name="H4_FONT_WEIGHT" category="font-weight">400</property>
@@ -143,8 +144,8 @@
   <property name="BUTTON_TEXT_ALIGN" category="buttons">center</property>
   <property name="BUTTON_LARGE_PADDING_Y" category="buttons">6</property>
   <property name="BUTTON_LARGE_PADDING_X" category="buttons">24</property>
-  <property name="BUTTON_LARGE_FONT_SIZE" category="buttons">22</property>
-  <property name="BUTTON_LARGE_LINE_HEIGHT" category="buttons">36</property>
+  <property name="BUTTON_LARGE_FONT_SIZE" category="buttons">24</property>
+  <property name="BUTTON_LARGE_LINE_HEIGHT" category="buttons">30</property>
   <color name="BUTTON_SECONDARY_BACKGROUND_COLOR" category="buttons">#00000000</color>
   <property name="BUTTON_SECONDARY_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR" category="buttons">#00000000</color>
