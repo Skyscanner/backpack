@@ -12,8 +12,10 @@
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
+  "devDependencies": {
+    "bpk-component-button": "^0.0.19"
+  },
   "dependencies": {
-    "bpk-component-button": "^0.0.19",
     "bpk-mixins": "^0.1.1",
     "normalize.css": "4.2.0"
   }
