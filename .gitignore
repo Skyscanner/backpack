@@ -1,11 +1,11 @@
 .DS_Store
 .idea
 .sass-cache
-node_modules
 /dist
 /coverage
-/npm-debug.log
-/lerna-debug.log
-/sassdoc-data.json
 /packages/bpk-stylesheets/base.js
 /packages/bpk-stylesheets/atoms.js
+node_modules
+npm-debug.*
+lerna-debug.log
+sassdoc-data.json
