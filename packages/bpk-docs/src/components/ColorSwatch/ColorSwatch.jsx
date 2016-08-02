@@ -9,19 +9,22 @@ const ColorSwatch = (props) => {
     props.border ? 'bpkdocs-color-swatch--border' : ''
   ]
 
-  return <div style={{ backgroundColor: props.color }} className={classNames.join(' ')}>{props.name}</div>
+  return <div style={{backgroundColor: props.color, backgroundImage: props.gradient}} className={classNames.join(' ')}>{props.name}</div>
 }
 
 ColorSwatch.propTypes = {
-  color: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  color: PropTypes.string,
   whiteColor: PropTypes.bool,
-  border: PropTypes.bool
+  border: PropTypes.bool,
+  gradient: PropTypes.string
 }
 
 ColorSwatch.defaultProps = {
+  color: null,
   whiteColor: false,
-  border: false
+  border: false,
+  gradient: null
 }
 
 export default ColorSwatch

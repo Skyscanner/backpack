@@ -51,6 +51,7 @@
   <color name="COLOR_YELLOW_700" category="color">#e8b81cff</color>
   <color name="COLOR_YELLOW_800" category="color">#cfa211ff</color>
   <color name="COLOR_YELLOW_900" category="color">#a88100ff</color>
+  <property name="PRIMARY_GRADIENT" category="color">linear-gradient(135deg, #00b2d6 0, #02DDD8 1)</property>
   <property name="SPACING_XS" category="spacing">6</property>
   <property name="SPACING_SM" category="spacing">12</property>
   <property name="SPACING_BASE" category="spacing">24</property>

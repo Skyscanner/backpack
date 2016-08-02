@@ -59,6 +59,13 @@ const ColorsPage = () => (
       <ColorSwatch name='color-green-400' color={TOKENS.colorGreen400} />
       <ColorSwatch name='color-green-600' color={TOKENS.colorGreen600} whiteColor />
     </div>
+    <BpkHeading level='h2'>Gradients</BpkHeading>
+    <BpkParagraph>
+      This is our primary gradient. This should be used sparingly as a device to break up large swathes of blue.
+    </BpkParagraph>
+    <div className='bpkdocs-colors-page__swatch-container'>
+      <ColorSwatch name='primary-gradient' gradient={TOKENS.primaryGradient} whiteColor />
+    </div>
   </section>
 )
 

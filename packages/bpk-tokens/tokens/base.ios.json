@@ -307,6 +307,12 @@
       "name": "colorYellow900"
     },
     {
+      "type": "background-image",
+      "category": "color",
+      "value": "linear-gradient(135deg, #00b2d6 0, #02DDD8 1)",
+      "name": "primaryGradient"
+    },
+    {
       "type": "size",
       "category": "spacing",
       "value": "6",
