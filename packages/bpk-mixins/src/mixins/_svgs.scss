@@ -7,19 +7,33 @@
   }
 }
 
-@mixin _bpk-icon($spacing, $spinner) {
+////
+/// @group svgs
+////
+
+/// Icon factory.
+///
+/// @param {variable} $spacing
+/// @param {key} $icon
+///
+/// @access private
+
+@mixin _bpk-icon-factory($map, $spacing, $icon: '') {
   content: '';
   display: inline-block;
   width: $spacing;
   height: $spacing;
-  animation: bpk-keyframe-spin 600ms linear infinite;
-  background: url(map-get($bpk-spinners, $spinner)) no-repeat;
   background-size: $spacing $spacing;
-}
 
-////
-/// @group svgs
-////
+  @if $icon != "" {
+    background: url(map-get($map, $icon)) no-repeat;
+  }
+
+  > svg {
+    display: block;
+    height: 100%;
+  }
+}
 
 /// Small icon.
 ///
@@ -31,15 +45,7 @@
 ///   }
 
 @mixin bpk-icon-sm($icon: '') {
-  content: '';
-  display: inline-block;
-  width: $bpk-spacing-sm;
-  height: $bpk-spacing-sm;
-
-  @if $icon != "" {
-    background: url(map-get($bpk-icons-sm, $icon)) no-repeat;
-    background-size: $bpk-spacing-sm $bpk-spacing-sm;
-  }
+  @include _bpk-icon-factory($bpk-icons-sm, $bpk-spacing-sm, $icon);
 }
 
 /// Large icon.
@@ -52,147 +58,103 @@
 ///   }
 
 @mixin bpk-icon-lg($icon: '') {
+  @include _bpk-icon-factory($bpk-icons-lg, $bpk-spacing-base, $icon);
+}
+
+/// Logo factory.
+///
+/// @param {variable} $spacing
+/// @param {key} $icon
+/// @param {unit} $height
+///
+/// @access private
+
+@mixin _bpk-logo-factory($map, $logo: '', $height: '') {
   content: '';
   display: inline-block;
-  width: $bpk-spacing-base;
-  height: $bpk-spacing-base;
 
-  @if $icon != "" {
-    background: url(map-get($bpk-icons-lg, $icon)) no-repeat;
-    background-size: $bpk-spacing-base $bpk-spacing-base;
+  @if $logo != '' {
+    background: url(map-get($map, $logo)) no-repeat;
+  }
+
+  @if $height != '' {
+    height: $height;
+  }
+
+  > svg {
+    display: block;
+    height: 100%;
   }
 }
 
 /// Cloud logo.
 ///
 /// @param {key} $logo [''] - The key of the desired SVG datauri from the $bpk-logos-cloud map.
+/// @param {unit} $height [$bpk-spacing-xxl] - The desired height.
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-logo-cloud(cloud-blue-500);
 ///   }
 
-@mixin bpk-logo-cloud($logo: '') {
-  content: '';
-  display: inline-block;
-
-  @if $logo != '' {
-    background: url(map-get($bpk-logos-cloud, $logo)) no-repeat;
-  }
-
-  > svg {
-    width: 100%;
-    height: 100%;
-  }
+@mixin bpk-logo-cloud($logo: '', $height: $bpk-spacing-xxl) {
+  @include _bpk-logo-factory($bpk-logos-cloud, $logo, $height);
 }
 
 /// Inline logo.
 ///
 /// @param {key} $logo [''] - The key of the desired SVG datauri from the $bpk-logos-inline map.
+/// @param {unit} $height [$bpk-spacing-xxl] - The desired height.
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-logo-inline(inline-blue-500);
 ///   }
 
-@mixin bpk-logo-inline($logo: '') {
-  content: '';
-  display: inline-block;
-
-  @if $logo != '' {
-    background: url(map-get($bpk-logos-inline, $logo)) no-repeat;
-  }
-
-  > svg {
-    width: 100%;
-    height: 100%;
-  }
+@mixin bpk-logo-inline($logo: '', $height: $bpk-spacing-xxl) {
+  @include _bpk-logo-factory($bpk-logos-inline, $logo, $height);
 }
 
 /// Stacked logo.
 ///
 /// @param {key} $logo [''] - The key of the desired SVG datauri from the $bpk-logos-stacked map.
+/// @param {unit} $height [$bpk-spacing-base * 3] - The desired height.
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-logo-stacked(stacked-blue-500);
 ///   }
 
-@mixin bpk-logo-stacked($logo: '') {
-  content: '';
-  display: inline-block;
-
-  @if $logo != '' {
-    background: url(map-get($bpk-logos-stacked, $logo)) no-repeat;
-  }
-
-  > svg {
-    width: 100%;
-    height: 100%;
-  }
+@mixin bpk-logo-stacked($logo: '', $height: $bpk-spacing-base * 3) {
+  @include _bpk-logo-factory($bpk-logos-stacked, $logo, $height);
 }
 
 /// Tianxun logo.
 ///
 /// @param {key} $logo [''] - The key of the desired SVG datauri from the $bpk-logos-tianxun map.
+/// @param {unit} $height [$bpk-spacing-xxl] - The desired height.
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-logo-tianxun(tianxun-blue-500);
 ///   }
 
-@mixin bpk-logo-tianxun($logo: '') {
-  content: '';
-  display: inline-block;
-
-  @if $logo != '' {
-    background: url(map-get($bpk-logos-tianxun, $logo)) no-repeat;
-  }
-
-  > svg {
-    width: 100%;
-    height: 100%;
-  }
+@mixin bpk-logo-tianxun($logo: '', $height: $bpk-spacing-xxl) {
+  @include _bpk-logo-factory($bpk-logos-tianxun, $logo, $height);
 }
 
 /// Tianxun stacked logo.
 ///
 /// @param {key} $logo [''] - The key of the desired SVG datauri from the $bpk-logos-tianxun-stacked map.
+/// @param {unit} $height [$bpk-spacing-base * 3] - The desired height.
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-logo-tianxun-stacked(tianxun-stacked-blue-500);
 ///   }
 
-@mixin bpk-logo-tianxun-stacked($logo: '') {
-  content: '';
-  display: inline-block;
-
-  @if $logo != '' {
-    background: url(map-get($bpk-logos-tianxun-stacked, $logo)) no-repeat;
-  }
-
-  > svg {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-/// Spinner factory.
-///
-/// @param {variable} $spacing
-/// @param {key} $spinner
-///
-/// @access private
-
-@mixin _bpk-spinner($spacing, $spinner) {
-  content: '';
-  display: inline-block;
-  width: $spacing;
-  height: $spacing;
-  animation: bpk-keyframe-spin 600ms linear infinite;
-  background: url(map-get($bpk-spinners, $spinner)) no-repeat;
-  background-size: $spacing $spacing;
+@mixin bpk-logo-tianxun-stacked($logo: '', $height: $bpk-spacing-base * 3) {
+  @include _bpk-logo-factory($bpk-logos-tianxun-stacked, $logo, $height);
 }
 
 /// Small spinner.
@@ -204,32 +166,52 @@
 ///     @include bpk-spinner-sm(spinner-gray-500);
 ///   }
 
-@mixin bpk-spinner-sm($spinner) {
-  @include _bpk-spinner($bpk-spacing-sm, $spinner);
+@mixin bpk-spinner($spinner: '') {
+  content: '';
+  display: inline-block;
+  width: $bpk-spacing-sm;
+  height: $bpk-spacing-sm;
+  animation: bpk-keyframe-spin 600ms linear infinite;
+  background-size: $bpk-spacing-sm $bpk-spacing-sm;
+
+  @if $spinner != '' {
+    background: url(map-get($bpk-spinners, $spinner)) no-repeat;
+  }
+
+  > svg {
+    display: block;
+    height: 100%;
+  }
 }
 
-/// Large spinner.
+/// Large spinner. Modifies the bpk-spinner mixin.
 ///
-/// @param {key} $spinner - The key of the desired SVG datauri from the $bpk-spinners map.
+/// @require {mixin} bpk-spinner
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-spinner-lg(spinner-gray-500);
+///     @include bpk-spinner(spinner-gray-500);
+///     @include bpk-spinner-lg();
 ///   }
 
-@mixin bpk-spinner-lg($spinner) {
-  @include _bpk-spinner($bpk-spacing-base, $spinner);
+@mixin bpk-spinner--lg() {
+  width: $bpk-spacing-base;
+  height: $bpk-spacing-base;
+  background-size: $bpk-spacing-base $bpk-spacing-base;
 }
 
-/// Extra large spinner.
+/// Extra large spinner. Modifies the bpk-spinner mixin.
 ///
-/// @param {key} $spinner - The key of the desired SVG datauri from the $bpk-spinners map.
+/// @require {mixin} bpk-spinner
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-spinner-xl(spinner-gray-500);
+///     @include bpk-spinner(spinner-gray-500);
+///     @include bpk-spinner-xl();
 ///   }
 
-@mixin bpk-spinner-xl($spinner) {
-  @include _bpk-spinner($bpk-spacing-xl, $spinner);
+@mixin bpk-spinner--xl() {
+  width: $bpk-spacing-xl;
+  height: $bpk-spacing-xl;
+  background-size: $bpk-spacing-xl $bpk-spacing-xl;
 }

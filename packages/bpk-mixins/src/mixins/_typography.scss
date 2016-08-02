@@ -15,7 +15,7 @@
 ///
 /// @access private
 
-@mixin _bpk-heading($margin-top, $margin-bottom, $font-size, $font-weight, $line-height) {
+@mixin _bpk-heading-factory($margin-top, $margin-bottom, $font-size, $font-weight, $line-height) {
   margin-top: $margin-top;
   margin-bottom: $margin-bottom;
   font-size: $font-size;
@@ -31,7 +31,7 @@
 ///   }
 
 @mixin bpk-heading-1 {
-  @include _bpk-heading(
+  @include _bpk-heading-factory(
     $bpk-h-1-margin-top,
     $bpk-h-1-margin-bottom,
     $bpk-h-1-font-size,
@@ -48,7 +48,7 @@
 ///   }
 
 @mixin bpk-heading-2 {
-  @include _bpk-heading(
+  @include _bpk-heading-factory(
     $bpk-h-2-margin-top,
     $bpk-h-2-margin-bottom,
     $bpk-h-2-font-size,
@@ -65,7 +65,7 @@
 ///   }
 
 @mixin bpk-heading-3 {
-  @include _bpk-heading(
+  @include _bpk-heading-factory(
     $bpk-h-3-margin-top,
     $bpk-h-3-margin-bottom,
     $bpk-h-3-font-size,
@@ -82,7 +82,7 @@
 ///   }
 
 @mixin bpk-heading-4 {
-  @include _bpk-heading(
+  @include _bpk-heading-factory(
     $bpk-h-4-margin-top,
     $bpk-h-4-margin-bottom,
     $bpk-h-4-font-size,
@@ -99,7 +99,7 @@
 ///   }
 
 @mixin bpk-heading-5 {
-  @include _bpk-heading(
+  @include _bpk-heading-factory(
     $bpk-h-5-margin-top,
     $bpk-h-5-margin-bottom,
     $bpk-h-5-font-size,
@@ -116,7 +116,7 @@
 ///   }
 
 @mixin bpk-heading-6 {
-  @include _bpk-heading(
+  @include _bpk-heading-factory(
     $bpk-h-6-margin-top,
     $bpk-h-6-margin-bottom,
     $bpk-h-6-font-size,
