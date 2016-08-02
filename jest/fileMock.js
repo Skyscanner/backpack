@@ -1,1 +1,1 @@
-export default 'FILE_MOCK_CONTENTS'
+module.exports = 'FILE_MOCK_CONTENTS'

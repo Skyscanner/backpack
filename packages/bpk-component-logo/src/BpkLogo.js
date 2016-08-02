@@ -1,15 +1,22 @@
 import React, { PropTypes } from 'react'
+import TOKENS from 'bpk-tokens/tokens/base.common'
 
 import './bpk-logo.scss'
 
-const resolveSvg = ({ logo }) => require(`raw!bpk-svgs/src/logos/${logo}.svg`)
+const BpkLogo = ({ logo, color }) => {
+  const __html = require(`raw!bpk-svgs/src/logos/${logo}.svg`)
+    .replace(/^<svg/, `<svg fill="${color}"`)
 
-const BpkLogo = ({ logo }) => (
-  <span className={`bpk-logo-${logo}`} dangerouslySetInnerHTML={{ __html: resolveSvg({ logo }) }} />
-)
+  return <span className={`bpk-logo-${logo}`} dangerouslySetInnerHTML={{ __html }} />
+}
 
 BpkLogo.propTypes = {
-  logo: PropTypes.string.isRequired
+  logo: PropTypes.string.isRequired,
+  color: PropTypes.string
+}
+
+BpkLogo.defaultProps = {
+  color: TOKENS.colorGray500
 }
 
 export default BpkLogo

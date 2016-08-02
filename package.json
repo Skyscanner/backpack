@@ -78,6 +78,9 @@
       "describe",
       "it",
       "expect"
+    ],
+    "ignore": [
+      "/packages/bpk-tokens/tokens"
     ]
   },
   "jest": {

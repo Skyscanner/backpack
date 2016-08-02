@@ -3,9 +3,7 @@ exports[`BpkIcon should render correctly with a "logo" attribute equal to "cloud
   className="bpk-logo-cloud"
   dangerouslySetInnerHTML={
     Object {
-      "__html": Object {
-        "default": "FILE_MOCK_CONTENTS"
-      }
+      "__html": "FILE_MOCK_CONTENTS"
     }
   } />
 `;
@@ -15,9 +13,7 @@ exports[`BpkIcon should render correctly with a "logo" attribute equal to "inlin
   className="bpk-logo-inline"
   dangerouslySetInnerHTML={
     Object {
-      "__html": Object {
-        "default": "FILE_MOCK_CONTENTS"
-      }
+      "__html": "FILE_MOCK_CONTENTS"
     }
   } />
 `;
@@ -27,9 +23,7 @@ exports[`BpkIcon should render correctly with a "logo" attribute equal to "stack
   className="bpk-logo-inline"
   dangerouslySetInnerHTML={
     Object {
-      "__html": Object {
-        "default": "FILE_MOCK_CONTENTS"
-      }
+      "__html": "FILE_MOCK_CONTENTS"
     }
   } />
 `;
@@ -39,9 +33,7 @@ exports[`BpkIcon should render correctly with a "logo" attribute equal to "tianx
   className="bpk-logo-tianxun"
   dangerouslySetInnerHTML={
     Object {
-      "__html": Object {
-        "default": "FILE_MOCK_CONTENTS"
-      }
+      "__html": "FILE_MOCK_CONTENTS"
     }
   } />
 `;
@@ -51,9 +43,7 @@ exports[`BpkIcon should render correctly with a "logo" attribute equal to "tianx
   className="bpk-logo-tianxun-stacked"
   dangerouslySetInnerHTML={
     Object {
-      "__html": Object {
-        "default": "FILE_MOCK_CONTENTS"
-      }
+      "__html": "FILE_MOCK_CONTENTS"
     }
   } />
 `;

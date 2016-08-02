@@ -4,8 +4,7 @@
   ],
   "global": {
     "type": "size",
-    "category": "spacing",
-    "core": true
+    "category": "spacing"
   },
   "props": {
     "SPACING_XS": {

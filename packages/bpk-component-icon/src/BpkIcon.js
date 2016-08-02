@@ -16,15 +16,21 @@ const getSvg = (icon, large, color) => {
     .replace(/^<svg/, `<svg fill="${color}"`)
 }
 
-const BpkIcon = ({ icon, large, color = TOKENS.colorGray500 }) => {
+const BpkIcon = ({ icon, large, color }) => {
   const className = large ? 'bpk-icon-lg' : 'bpk-icon-sm'
+  const __html = getSvg(icon, large, color)
 
-  return <span className={className} dangerouslySetInnerHTML={{ __html: getSvg(icon, large, color) }}/>
+  return <span className={className} dangerouslySetInnerHTML={{ __html }} />
 }
 
 BpkIcon.propTypes = {
   icon: PropTypes.string.isRequired,
-  large: PropTypes.bool
+  large: PropTypes.bool,
+  color: PropTypes.string
+}
+
+BpkIcon.defaultProps = {
+  color: TOKENS.colorGray500
 }
 
 export default BpkIcon
