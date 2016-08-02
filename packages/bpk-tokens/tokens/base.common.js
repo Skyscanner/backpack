@@ -50,6 +50,7 @@ module.exports = {
   colorYellow700: "rgb(232, 184, 28)",
   colorYellow800: "rgb(207, 162, 17)",
   colorYellow900: "rgb(168, 129, 0)",
+  primaryGradient: "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)",
   spacingXs: ".375rem",
   spacingSm: ".75rem",
   spacingBase: "1.5rem",

@@ -379,6 +379,12 @@
       "value": "rgb(168, 129, 0)",
       "name": "COLOR_YELLOW_900"
     },
+    "PRIMARY_GRADIENT": {
+      "type": "background-image",
+      "category": "color",
+      "value": "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)",
+      "name": "PRIMARY_GRADIENT"
+    },
     "SPACING_XS": {
       "type": "size",
       "category": "spacing",
@@ -1146,6 +1152,7 @@
     "COLOR_YELLOW_700",
     "COLOR_YELLOW_800",
     "COLOR_YELLOW_900",
+    "PRIMARY_GRADIENT",
     "SPACING_XS",
     "SPACING_SM",
     "SPACING_BASE",

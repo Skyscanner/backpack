@@ -3,25 +3,32 @@ import React, { PropTypes } from 'react'
 import './color-swatch.scss'
 
 const ColorSwatch = (props) => {
-  const classNames = [
-    'bpkdocs-color-swatch',
-    props.whiteColor ? 'bpkdocs-color-swatch--light' : '',
-    props.border ? 'bpkdocs-color-swatch--border' : ''
-  ]
+  const style = {
+    backgroundColor: props.color,
+    backgroundImage: props.gradient
+  }
 
-  return <div style={{ backgroundColor: props.color }} className={classNames.join(' ')}>{props.name}</div>
+  const classNames = [ 'bpkdocs-color-swatch' ]
+
+  props.whiteColor ? classNames.push('bpkdocs-color-swatch--light') : ''
+  props.border ? classNames.push('bpkdocs-color-swatch--border') : ''
+
+  return <div style={style} className={classNames.join(' ')}>{props.name}</div>
 }
 
 ColorSwatch.propTypes = {
-  color: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  color: PropTypes.string,
   whiteColor: PropTypes.bool,
-  border: PropTypes.bool
+  border: PropTypes.bool,
+  gradient: PropTypes.string
 }
 
 ColorSwatch.defaultProps = {
+  color: null,
   whiteColor: false,
-  border: false
+  border: false,
+  gradient: null
 }
 
 export default ColorSwatch
