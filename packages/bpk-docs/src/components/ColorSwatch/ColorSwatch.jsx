@@ -3,13 +3,17 @@ import React, { PropTypes } from 'react'
 import './color-swatch.scss'
 
 const ColorSwatch = (props) => {
-  const classNames = [
-    'bpkdocs-color-swatch',
-    props.whiteColor ? 'bpkdocs-color-swatch--light' : '',
-    props.border ? 'bpkdocs-color-swatch--border' : ''
-  ]
+  const style = {
+    backgroundColor: props.color,
+    backgroundImage: props.gradient
+  }
 
-  return <div style={{backgroundColor: props.color, backgroundImage: props.gradient}} className={classNames.join(' ')}>{props.name}</div>
+  const classNames = [ 'bpkdocs-color-swatch' ]
+
+  props.whiteColor ? classNames.push('bpkdocs-color-swatch--light') : ''
+  props.border ? classNames.push('bpkdocs-color-swatch--border') : ''
+
+  return <div style={style} className={classNames.join(' ')}>{props.name}</div>
 }
 
 ColorSwatch.propTypes = {
