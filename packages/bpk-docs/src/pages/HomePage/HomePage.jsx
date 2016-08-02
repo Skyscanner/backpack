@@ -1,12 +1,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import './home-page.scss'
-import * as routes from './../../constants/routes'
-
 import BpkButton from 'bpk-component-button'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
+
+import './home-page.scss'
+import * as routes from './../../constants/routes'
 import BpkLink from './../../components/BpkLink'
 
 const HomePage = () => (
@@ -19,7 +19,7 @@ const HomePage = () => (
           A suite of tools to enable you to design and build products which look and
           feel consistent with the Skyscanner product family.
         </BpkHeading>
-        <BpkButton large>Get started</BpkButton>
+        <BpkButton href={routes.GETTING_STARTED} large>Get started</BpkButton>
       </div>
     </div>
     <div className='bpkdocs-home-page__content-container'>

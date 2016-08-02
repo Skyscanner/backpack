@@ -11,6 +11,8 @@ const { BPK_TOKENS } = process.env
 const staticSiteGeneratorConfig = {
   paths: [
     ROUTES.HOME,
+    ROUTES.DOCS,
+    ROUTES.GETTING_STARTED,
     ROUTES.BONDS,
     ROUTES.BASE_STYLESHEET,
     ROUTES.COLORS,
@@ -21,8 +23,7 @@ const staticSiteGeneratorConfig = {
     ROUTES.ICONS,
     ROUTES.SPINNERS,
     ROUTES.LOGOS,
-    ROUTES.MOLECULES,
-    ROUTES.ORGANISMS
+    ROUTES.DOWNLOADS
   ]
 }
 

@@ -6,10 +6,9 @@ import * as ROUTES from '../../constants/routes'
 import BpkLink from './../../components/BpkLink'
 
 const links = [
-  { route: ROUTES.BONDS, children: 'Bonds' },
-  { route: ROUTES.ATOMS, children: 'Atoms' },
-  { route: ROUTES.MOLECULES, children: 'Molecules' },
-  { route: ROUTES.ORGANISMS, children: 'Organisms' }
+  { to: ROUTES.DOCS, children: 'Docs' },
+  { to: ROUTES.DOWNLOADS, children: 'Downloads' },
+  { href: 'http://git.prod.skyscanner.local/backpack/backpack', children: 'GitLab', target: '__blank' }
 ]
 
 const Header = () => (
@@ -20,10 +19,8 @@ const Header = () => (
       </IndexLink>
       <ul className='bpkdocs-header__nav-list'>
         {links.map((link = {}) => (
-          <li key={link.route} className='bpkdocs-header__nav-list-item'>
-            <BpkLink to={link.route}>
-              {link.children}
-            </BpkLink>
+          <li key={link.to || link.href} className='bpkdocs-header__nav-list-item'>
+            <BpkLink {...link} />
           </li>
         ))}
       </ul>
