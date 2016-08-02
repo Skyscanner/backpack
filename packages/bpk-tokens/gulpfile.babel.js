@@ -13,7 +13,8 @@ const OUTPUT_MAP = {
   'web': [
     'scss',
     'default.scss',
-    'raw.json'
+    'raw.json',
+    'common.js'
   ],
   'ios': [ 'ios.json' ],
   'android': [ 'android.xml' ]

@@ -1,23 +1,22 @@
 import React, { PropTypes } from 'react'
-import CssModules from 'react-css-modules'
 
-import styles from './presentation-block.scss'
+import './presentation-block.scss'
 import BpkCode from './../BpkCode'
 import BpkLink from './../BpkLink'
 
-const SassDocLink = CssModules(({ sassdocId }) => (
-  <div styleName='bpkdocs-presentation-block__sassdoc'>
+const SassDocLink = ({ sassdocId }) => (
+  <div className='bpkdocs-presentation-block__sassdoc'>
     <BpkLink href={`/sassdoc/#${sassdocId}`} target='_blank'>View the Sass documentation.</BpkLink>
   </div>
-), styles)
+)
 
 SassDocLink.propTypes = {
   sassdocId: PropTypes.string
 }
 
 const PresentationBlock = ({ children, showHTML, sassdocId }) => (
-  <section styleName='bpkdocs-presentation-block'>
-    <div styleName='bpkdocs-presentation-block__container'>{children}</div>
+  <section className='bpkdocs-presentation-block'>
+    <div className='bpkdocs-presentation-block__container'>{children}</div>
     {sassdocId ? <SassDocLink sassdocId={sassdocId} /> : null}
     {showHTML ? <BpkCode label='HTML:'>{children}</BpkCode> : null}
   </section>
@@ -36,4 +35,4 @@ PresentationBlock.defaultProps = {
   showHTML: false
 }
 
-export default CssModules(PresentationBlock, styles)
+export default PresentationBlock

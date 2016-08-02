@@ -309,42 +309,36 @@
     {
       "type": "size",
       "category": "spacing",
-      "core": true,
       "value": "6",
       "name": "spacingXs"
     },
     {
       "type": "size",
       "category": "spacing",
-      "core": true,
       "value": "12",
       "name": "spacingSm"
     },
     {
       "type": "size",
       "category": "spacing",
-      "core": true,
       "value": "24",
       "name": "spacingBase"
     },
     {
       "type": "size",
       "category": "spacing",
-      "core": true,
       "value": "30",
       "name": "spacingLg"
     },
     {
       "type": "size",
       "category": "spacing",
-      "core": true,
       "value": "36",
       "name": "spacingXl"
     },
     {
       "type": "size",
       "category": "spacing",
-      "core": true,
       "value": "42",
       "name": "spacingXxl"
     },
@@ -352,91 +346,78 @@
       "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
       "type": "font",
       "category": "font",
-      "core": true,
       "name": "fontFamilyBase"
     },
     {
       "value": "rgb(84, 76, 99)",
       "type": "color",
       "category": "text-color",
-      "core": true,
       "name": "fontColorBase"
     },
     {
       "value": "18",
       "type": "number",
       "category": "line-height",
-      "core": true,
       "name": "lineHeightSm"
     },
     {
       "value": "24",
       "type": "number",
       "category": "line-height",
-      "core": true,
       "name": "lineHeightBase"
     },
     {
       "value": "30",
       "type": "number",
       "category": "line-height",
-      "core": true,
       "name": "lineHeightLg"
     },
     {
       "value": "42",
       "type": "number",
       "category": "line-height",
-      "core": true,
       "name": "lineHeightXl"
     },
     {
       "value": "54",
       "type": "number",
       "category": "line-height",
-      "core": true,
       "name": "lineHeightXxl"
     },
     {
       "value": "1",
       "type": "size",
       "category": "font-size",
-      "core": true,
       "name": "fontSizeRoot"
     },
     {
       "value": "12",
       "type": "size",
       "category": "font-size",
-      "core": true,
       "name": "fontSizeSm"
     },
     {
       "value": "16",
       "type": "size",
       "category": "font-size",
-      "core": true,
       "name": "fontSizeBase"
     },
     {
       "value": "24",
       "type": "size",
       "category": "font-size",
-      "core": true,
       "name": "fontSizeLg"
     },
     {
       "value": "28",
       "type": "size",
       "category": "font-size",
-      "core": true,
       "name": "fontSizeXl"
     },
     {
       "value": "42",
       "type": "size",
       "category": "font-size",
-      "core": true,
       "name": "fontSizeXxl"
     },
     {

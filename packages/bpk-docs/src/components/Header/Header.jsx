@@ -1,8 +1,7 @@
 import React from 'react'
 import { IndexLink } from 'react-router'
-import CssModules from 'react-css-modules'
 
-import styles from './header.scss'
+import './header.scss'
 import * as ROUTES from '../../constants/routes'
 import BpkLink from './../../components/BpkLink'
 
@@ -14,14 +13,14 @@ const links = [
 ]
 
 const Header = () => (
-  <header styleName='bpkdocs-header'>
-    <nav styleName='bpkdocs-header__nav' className='clearfix'>
-      <IndexLink to={ROUTES.HOME} styleName='bpkdocs-header__logo-link'>
+  <header className='bpkdocs-header'>
+    <nav className='bpkdocs-header__nav clearfix'>
+      <IndexLink to={ROUTES.HOME} className='bpkdocs-header__logo-link'>
         <span className='visuallyhidden'>Backpack</span>
       </IndexLink>
-      <ul styleName='bpkdocs-header__nav-list'>
+      <ul className='bpkdocs-header__nav-list'>
         {links.map((link = {}) => (
-          <li key={link.route} styleName='bpkdocs-header__nav-list-item'>
+          <li key={link.route} className='bpkdocs-header__nav-list-item'>
             <BpkLink to={link.route}>
               {link.children}
             </BpkLink>
@@ -32,4 +31,4 @@ const Header = () => (
   </header>
 )
 
-export default CssModules(Header, styles)
+export default Header

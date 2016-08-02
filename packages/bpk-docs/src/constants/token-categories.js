@@ -1,5 +1,0 @@
-export const COLORS = 'color'
-export const FONTS = 'font'
-export const FONT_SIZES = 'font-size'
-export const LINE_HEIGHTS = 'line-height'
-export const SPACINGS = 'spacing'

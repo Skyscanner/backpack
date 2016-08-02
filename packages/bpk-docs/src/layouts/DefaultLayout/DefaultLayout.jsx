@@ -1,8 +1,7 @@
 import React, { PropTypes } from 'react'
 import Helmet from 'react-helmet'
-import CssModules from 'react-css-modules'
 
-import styles from './default-layout.scss'
+import './default-layout.scss'
 import Header from '../../components/Header'
 import BpkLink from '../../components/BpkLink'
 
@@ -28,16 +27,16 @@ export class DefaultLayout extends React.Component {
     const { guideEnabled } = this.state
 
     return (
-      <div styleName={guideEnabled ? 'bpkdocs-default-layout__vertical-rhythm-guide' : ''}>
+      <div className={guideEnabled ? 'bpkdocs-default-layout__vertical-rhythm-guide' : ''}>
         <Helmet titleTemplate='%s | Backpack' />
         <Header />
         <main>
           {children}
         </main>
-        <footer styleName='bpkdocs-default-layout__footer'>
+        <footer className='bpkdocs-default-layout__footer'>
           Copyright Skyscanner {new Date().getFullYear()}.
           &nbsp;
-          <button type='button' styleName='bpkdocs-default-layout__vertical-rhythm-guide-toggle'
+          <button type='button' className='bpkdocs-default-layout__vertical-rhythm-guide-toggle'
             onClick={this.toggleGrid}>
             Vertical rhythm guide is {guideEnabled ? 'on' : 'off'}.
           </button>
@@ -56,4 +55,4 @@ DefaultLayout.propTypes = {
   ]).isRequired
 }
 
-export default CssModules(DefaultLayout, styles)
+export default DefaultLayout

@@ -1,16 +1,11 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import kebabCase from 'lodash/kebabCase'
-import CssModules from 'react-css-modules'
+import TOKENS from 'bpk-tokens/tokens/base.common'
 
-import styles from './colors-page.scss'
+import './colors-page.scss'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
-import * as COLORS from './../../constants/colors'
 import ColorSwatch from './../../components/ColorSwatch'
-import { tokenCategories, getTokenValue } from './../../tokens'
-
-const getHexColor = (color) => getTokenValue(tokenCategories.COLORS, color)
 
 const ColorsPage = () => (
   <section>
@@ -26,28 +21,28 @@ const ColorsPage = () => (
       breathing room.
     </BpkParagraph>
     <BpkHeading level='h2'>Primary</BpkHeading>
-    <div styleName='bpkdocs-colors-page__swatch-container'>
-      <ColorSwatch name={kebabCase(COLORS.COLOR_BLUE_500)} color={getHexColor(COLORS.COLOR_BLUE_500)} />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_WHITE)} color={getHexColor(COLORS.COLOR_WHITE)} border />
+    <div className='bpkdocs-colors-page__swatch-container'>
+      <ColorSwatch name='color-blue-500' color={TOKENS.colorBlue500} />
+      <ColorSwatch name='color-white' color={TOKENS.colorWhite} border />
     </div>
     <BpkHeading level='h2'>Secondary</BpkHeading>
-    <div styleName='bpkdocs-colors-page__swatch-container'>
-      <ColorSwatch name={kebabCase(COLORS.COLOR_GREEN_500)} color={getHexColor(COLORS.COLOR_GREEN_500)} />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_YELLOW_500)} color={getHexColor(COLORS.COLOR_YELLOW_500)} />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_RED_500)} color={getHexColor(COLORS.COLOR_RED_500)} whiteColor />
+    <div className='bpkdocs-colors-page__swatch-container'>
+      <ColorSwatch name='color-green-500' color={TOKENS.colorGreen500} />
+      <ColorSwatch name='color-yellow-500' color={TOKENS.colorYellow500} />
+      <ColorSwatch name='color-red-500' color={TOKENS.colorRed500} whiteColor />
     </div>
     <BpkHeading level='h2'>Grays</BpkHeading>
-    <div styleName='bpkdocs-colors-page__swatch-container'>
-      <ColorSwatch name={kebabCase(COLORS.COLOR_GRAY_50)} color={getHexColor(COLORS.COLOR_GRAY_50)} />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_GRAY_100)} color={getHexColor(COLORS.COLOR_GRAY_100)} />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_GRAY_200)} color={getHexColor(COLORS.COLOR_GRAY_200)} />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_GRAY_300)} color={getHexColor(COLORS.COLOR_GRAY_300)} whiteColor />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_GRAY_400)} color={getHexColor(COLORS.COLOR_GRAY_400)} whiteColor />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_GRAY_500)} color={getHexColor(COLORS.COLOR_GRAY_500)} whiteColor />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_GRAY_600)} color={getHexColor(COLORS.COLOR_GRAY_600)} whiteColor />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_GRAY_700)} color={getHexColor(COLORS.COLOR_GRAY_700)} whiteColor />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_GRAY_800)} color={getHexColor(COLORS.COLOR_GRAY_800)} whiteColor />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_GRAY_900)} color={getHexColor(COLORS.COLOR_GRAY_900)} whiteColor />
+    <div className='bpkdocs-colors-page__swatch-container'>
+      <ColorSwatch name='color-gray-50' color={TOKENS.colorGray50} />
+      <ColorSwatch name='color-gray-100' color={TOKENS.colorGray100} />
+      <ColorSwatch name='color-gray-200' color={TOKENS.colorGray200} />
+      <ColorSwatch name='color-gray-300' color={TOKENS.colorGray300} whiteColor />
+      <ColorSwatch name='color-gray-400' color={TOKENS.colorGray400} whiteColor />
+      <ColorSwatch name='color-gray-500' color={TOKENS.colorGray500} whiteColor />
+      <ColorSwatch name='color-gray-600' color={TOKENS.colorGray600} whiteColor />
+      <ColorSwatch name='color-gray-700' color={TOKENS.colorGray700} whiteColor />
+      <ColorSwatch name='color-gray-800' color={TOKENS.colorGray800} whiteColor />
+      <ColorSwatch name='color-gray-900' color={TOKENS.colorGray900} whiteColor />
     </div>
     <BpkHeading level='h2'>Tints &amp; shades</BpkHeading>
     <BpkParagraph>
@@ -58,13 +53,13 @@ const ColorsPage = () => (
     <BpkParagraph>
       The following tints and shades should only be used when applying states to buttons such as hovers.
     </BpkParagraph>
-    <div styleName='bpkdocs-colors-page__swatch-container'>
-      <ColorSwatch name={kebabCase(COLORS.COLOR_BLUE_400)} color={getHexColor(COLORS.COLOR_BLUE_400)} />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_BLUE_600)} color={getHexColor(COLORS.COLOR_BLUE_600)} whiteColor />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_GREEN_400)} color={getHexColor(COLORS.COLOR_GREEN_400)} />
-      <ColorSwatch name={kebabCase(COLORS.COLOR_GREEN_600)} color={getHexColor(COLORS.COLOR_GREEN_600)} whiteColor />
+    <div className='bpkdocs-colors-page__swatch-container'>
+      <ColorSwatch name='color-blue-400' color={TOKENS.colorBlue400} />
+      <ColorSwatch name='color-blue-600' color={TOKENS.colorBlue600} whiteColor />
+      <ColorSwatch name='color-green-400' color={TOKENS.colorGreen400} />
+      <ColorSwatch name='color-green-600' color={TOKENS.colorGreen600} whiteColor />
     </div>
   </section>
 )
 
-export default CssModules(ColorsPage, styles)
+export default ColorsPage

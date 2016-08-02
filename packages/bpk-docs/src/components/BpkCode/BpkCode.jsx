@@ -1,9 +1,8 @@
 import beautify from 'js-beautify'
 import React, { PropTypes } from 'react'
-import CssModules from 'react-css-modules'
 import ReactDOMServer from 'react-dom/server'
 
-import styles from './bpk-code.scss'
+import './bpk-code.scss'
 
 const childrenToString = (children) => {
   return React.Children.map(children, (child) => React.isValidElement(child)
@@ -18,14 +17,14 @@ const BpkCode = ({ children, syntax, inline }) => {
   const codeString = childrenToString(children)
 
   if (inline) {
-    return <code styleName='bpk-code__code bpk-code__code--inline'>{codeString}</code>
+    return <code className='bpk-code__code bpk-code__code--inline'>{codeString}</code>
   }
 
   const prettyCodeString = prettyPrint(codeString, syntax)
 
   return (
-    <pre styleName='bpk-code__pre'>
-      <code styleName='bpk-code__code bpk-code__code--block'>{prettyCodeString}</code>
+    <pre className='bpk-code__pre'>
+      <code className='bpk-code__code bpk-code__code--block'>{prettyCodeString}</code>
     </pre>
   )
 }
@@ -44,4 +43,4 @@ BpkCode.defaultProps = {
   syntax: 'html'
 }
 
-export default CssModules(BpkCode, styles, { allowMultiple: true })
+export default BpkCode

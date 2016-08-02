@@ -3,9 +3,7 @@ exports[`BpkIcon should render correctly 1`] = `
   className="bpk-icon-sm"
   dangerouslySetInnerHTML={
     Object {
-      "__html": Object {
-        "default": "FILE_MOCK_CONTENTS"
-      }
+      "__html": "FILE_MOCK_CONTENTS"
     }
   } />
 `;
@@ -15,9 +13,7 @@ exports[`BpkIcon should render correctly with a "large" attribute 1`] = `
   className="bpk-icon-lg"
   dangerouslySetInnerHTML={
     Object {
-      "__html": Object {
-        "default": "FILE_MOCK_CONTENTS"
-      }
+      "__html": "FILE_MOCK_CONTENTS"
     }
   } />
 `;

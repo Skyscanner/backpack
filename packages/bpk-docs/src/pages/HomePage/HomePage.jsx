@@ -1,8 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import CssModules from 'react-css-modules'
 
-import styles from './home-page.scss'
+import './home-page.scss'
 import * as routes from './../../constants/routes'
 
 import BpkButton from 'bpk-component-button'
@@ -13,8 +12,8 @@ import BpkLink from './../../components/BpkLink'
 const HomePage = () => (
   <section>
     <Helmet title='Backpack' />
-    <div styleName='bpkdocs-home-page__hero'>
-      <div styleName='bpkdocs-home-page__hero-container'>
+    <div className='bpkdocs-home-page__hero'>
+      <div className='bpkdocs-home-page__hero-container'>
         <BpkHeading level='h1'>Backpack</BpkHeading>
         <BpkHeading level='h2'>
           A suite of tools to enable you to design and build products which look and
@@ -23,13 +22,13 @@ const HomePage = () => (
         <BpkButton large>Get started</BpkButton>
       </div>
     </div>
-    <div styleName='bpkdocs-home-page__content-container'>
+    <div className='bpkdocs-home-page__content-container'>
       <BpkHeading level='h3'>
         We’ve built upon Atomic Design principals to bring a scalable platform to design, build and share components
         across all of Skyscanner’s product areas.
       </BpkHeading>
-      <section styleName='bpkdocs-home-page__columns'>
-        <article styleName='bpkdocs-home-page__column'>
+      <section className='bpkdocs-home-page__columns'>
+        <article className='bpkdocs-home-page__column'>
           <BpkHeading level='h3'>Bonds</BpkHeading>
           <BpkParagraph>
             Bonds help set the foundation for all elements and helps connect them together. They’re abstract by nature
@@ -39,7 +38,7 @@ const HomePage = () => (
             <BpkLink to={routes.BONDS}>Read more</BpkLink>
           </BpkParagraph>
         </article>
-        <article styleName='bpkdocs-home-page__column'>
+        <article className='bpkdocs-home-page__column'>
           <BpkHeading level='h3'>Atoms</BpkHeading>
           <BpkParagraph>
             Atoms are the basic building blocks of matter. Applied to web interfaces, atoms are our HTML tags, such as a
@@ -49,7 +48,7 @@ const HomePage = () => (
             <BpkLink to={routes.ATOMS}>Read more</BpkLink>
           </BpkParagraph>
         </article>
-        <article styleName='bpkdocs-home-page__column'>
+        <article className='bpkdocs-home-page__column'>
           <BpkHeading level='h3'>Molecules</BpkHeading>
           <BpkParagraph>
             Molecules are two or more atoms held together by chemical bonds. These combinations of atoms take on their
@@ -58,7 +57,7 @@ const HomePage = () => (
             <BpkLink to={routes.MOLECULES}>Read more</BpkLink>
           </BpkParagraph>
         </article>
-        <article styleName='bpkdocs-home-page__column'>
+        <article className='bpkdocs-home-page__column'>
           <BpkHeading level='h3'>Organisms</BpkHeading>
           <BpkParagraph>
             Organisms are groups of molecules joined together to form a relatively complex, distinct section of an
@@ -72,4 +71,4 @@ const HomePage = () => (
   </section>
 )
 
-export default CssModules(HomePage, styles)
+export default HomePage
