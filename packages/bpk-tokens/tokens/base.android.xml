@@ -94,12 +94,12 @@
   <property name="H3_MARGIN_TOP" category="spacing">0</property>
   <property name="H2_MARGIN_TOP" category="spacing">0</property>
   <property name="H1_MARGIN_TOP" category="spacing">0</property>
-  <property name="H6_MARGIN_BOTTOM" category="spacing">24</property>
-  <property name="H5_MARGIN_BOTTOM" category="spacing">24</property>
-  <property name="H4_MARGIN_BOTTOM" category="spacing">24</property>
-  <property name="H3_MARGIN_BOTTOM" category="spacing">24</property>
-  <property name="H2_MARGIN_BOTTOM" category="spacing">24</property>
-  <property name="H1_MARGIN_BOTTOM" category="spacing">24</property>
+  <property name="H6_MARGIN_BOTTOM" category="spacing">6</property>
+  <property name="H5_MARGIN_BOTTOM" category="spacing">6</property>
+  <property name="H4_MARGIN_BOTTOM" category="spacing">6</property>
+  <property name="H3_MARGIN_BOTTOM" category="spacing">6</property>
+  <property name="H2_MARGIN_BOTTOM" category="spacing">6</property>
+  <property name="H1_MARGIN_BOTTOM" category="spacing">6</property>
   <property name="P_MARGIN_TOP" category="spacing">0</property>
   <property name="P_MARGIN_BOTTOM" category="spacing">12</property>
   <property name="LIST_MARGIN_TOP" category="spacing">0</property>

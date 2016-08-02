@@ -584,37 +584,37 @@
       "name": "h1MarginTop"
     },
     {
-      "value": "24",
+      "value": "6",
       "type": "size",
       "category": "spacing",
       "name": "h6MarginBottom"
     },
     {
-      "value": "24",
+      "value": "6",
       "type": "size",
       "category": "spacing",
       "name": "h5MarginBottom"
     },
     {
-      "value": "24",
+      "value": "6",
       "type": "size",
       "category": "spacing",
       "name": "h4MarginBottom"
     },
     {
-      "value": "24",
+      "value": "6",
       "type": "size",
       "category": "spacing",
       "name": "h3MarginBottom"
     },
     {
-      "value": "24",
+      "value": "6",
       "type": "size",
       "category": "spacing",
       "name": "h2MarginBottom"
     },
     {
-      "value": "24",
+      "value": "6",
       "type": "size",
       "category": "spacing",
       "name": "h1MarginBottom"
