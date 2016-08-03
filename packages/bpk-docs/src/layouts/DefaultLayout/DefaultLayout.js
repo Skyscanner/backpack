@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react'
 import Helmet from 'react-helmet'
 
+import BpkLink from 'bpk-component-link'
+
 import './default-layout.scss'
 import Header from '../../components/Header'
-import BpkLink from '../../components/BpkLink'
 
 export class DefaultLayout extends React.Component {
   constructor (props) {

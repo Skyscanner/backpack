@@ -2,13 +2,13 @@ import React, { PropTypes } from 'react'
 
 import './bpk-list.scss'
 
-const BpkList = ({ children }) => <li className='bpk-list__item'>{children}</li>
+const BpkListItem = ({ children }) => <li className='bpk-list__item'>{children}</li>
 
-BpkList.propTypes = {
+BpkListItem.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ])
 }
 
-export default BpkList
+export default BpkListItem

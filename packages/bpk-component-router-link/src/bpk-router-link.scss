@@ -1,6 +1,6 @@
 @import '~bpk-mixins/index';
 
-.bpk-link {
+.bpk-router-link {
   @include bpk-link;
 
   &--active {

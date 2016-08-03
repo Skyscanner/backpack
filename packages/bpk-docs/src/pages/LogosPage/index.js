@@ -1,3 +1,3 @@
-import page from './LogosPage.jsx'
+import page from './LogosPage.js'
 
 export default page

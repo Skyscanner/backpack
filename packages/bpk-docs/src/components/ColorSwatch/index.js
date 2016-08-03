@@ -1,3 +1,3 @@
-import component from './ColorSwatch.jsx'
+import component from './ColorSwatch.js'
 
 export default component

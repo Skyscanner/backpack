@@ -6,7 +6,7 @@ import * as routes from './../../constants/routes'
 const links = [
   { route: routes.GETTING_STARTED, children: 'Getting started' },
   { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' },
-  { route: routes.COLORS, children: 'Colours' },
+  { route: routes.COLORS, children: 'Colors' },
   { route: routes.FONTS_AND_SPACING, children: 'Fonts and spacing' },
   { route: routes.TYPOGRAPHY, children: 'Typography' },
   { route: routes.BUTTONS, children: 'Buttons' },

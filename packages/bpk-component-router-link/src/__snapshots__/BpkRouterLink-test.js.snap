@@ -1,0 +1,17 @@
+exports[`BpkRouterLink should render correctly with a "blank" attribute 1`] = `
+<a
+  className="bpk-router-link"
+  onClick={[Function bound handleClick]}
+  style={Object {}}>
+  Link (new window)
+</a>
+`;
+
+exports[`BpkRouterLink should render correctly with a "to" attribute 1`] = `
+<a
+  className="bpk-router-link"
+  onClick={[Function bound handleClick]}
+  style={Object {}}>
+  Link
+</a>
+`;

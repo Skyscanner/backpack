@@ -16,3 +16,7 @@ export const BUTTONS = '/docs/atoms/buttons'
 export const ICONS = '/docs/atoms/icons'
 export const SPINNERS = '/docs/atoms/spinners'
 export const LOGOS = '/docs/atoms/logos'
+
+export const MOLECULES = '/docs/molecules'
+
+export const ORGANISMS = '/docs/molecules'

@@ -1,3 +1,3 @@
-import page from './FontsAndSpacingPage.jsx'
+import page from './FontsAndSpacingPage.js'
 
 export default page

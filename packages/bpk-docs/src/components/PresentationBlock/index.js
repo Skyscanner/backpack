@@ -1,3 +1,3 @@
-import component from './PresentationBlock.jsx'
+import component from './PresentationBlock.js'
 
 export default component

@@ -1,26 +1,29 @@
 import React from 'react'
-import { Route, IndexRoute } from 'react-router'
+import { Route, IndexRoute, withRouter } from 'react-router'
 
 import * as ROUTES from './../constants/routes'
 
 import DefaultLayout from './../layouts/DefaultLayout'
-import HomePage from './../pages/HomePage'
-import DownloadsPage from './../pages/DownloadsPage'
-
 import DocsLayout from './../layouts/DocsLayout'
+
+import HomePage from './../pages/HomePage'
+
 import GettingStartedPage from './../pages/GettingStartedPage'
 import BaseStylesheetPage from './../pages/BaseStylesheetPage'
 import ColorsPage from './../pages/ColorsPage'
 import FontsAndSpacingPage from './../pages/FontsAndSpacingPage'
+
 import TypographyPage from './../pages/TypographyPage'
 import ButtonsPage from './../pages/ButtonsPage'
 import IconsPage from './../pages/IconsPage'
 import SpinnersPage from './../pages/SpinnersPage'
 import LogosPage from './../pages/LogosPage'
 
+import DownloadsPage from './../pages/DownloadsPage'
+
 const Routes = (
   <Route path={ROUTES.HOME} component={DefaultLayout}>
-    <IndexRoute component={HomePage} />
+    <IndexRoute component={withRouter(HomePage)} />
     <Route path={ROUTES.DOCS} component={DocsLayout}>
       <IndexRoute component={GettingStartedPage} />
       <Route path={ROUTES.GETTING_STARTED} component={GettingStartedPage} />
@@ -37,6 +40,12 @@ const Routes = (
         <Route path={ROUTES.ICONS} component={IconsPage} />
         <Route path={ROUTES.SPINNERS} component={SpinnersPage} />
         <Route path={ROUTES.LOGOS} component={LogosPage} />
+      </Route>
+      <Route path={ROUTES.MOLECULES}>
+        <IndexRoute component={GettingStartedPage} />
+      </Route>
+      <Route path={ROUTES.ORGANISMS}>
+        <IndexRoute component={GettingStartedPage} />
       </Route>
     </Route>
     <Route path={ROUTES.DOWNLOADS} component={DownloadsPage} />
