@@ -10,7 +10,7 @@ const links = [
     links: [
       { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' },
       { route: routes.COLORS, children: 'Colors' },
-      { route: routes.FONTS_AND_SPACING, children: 'Fonts and spacing' },
+      { route: routes.FONTS_AND_SPACING, children: 'Fonts and spacing' }
     ]
   },
   {
