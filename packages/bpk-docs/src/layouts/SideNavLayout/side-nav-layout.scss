@@ -6,6 +6,22 @@
     @include bpk-clearfix;
   }
 
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__list-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__category {
+    font-size: $bpk-font-size-sm;
+    line-height: $bpk-line-height-sm;
+  }
+
   @include bpk-breakpoint-above-tablet {
     &__nav {
       width: 25%;

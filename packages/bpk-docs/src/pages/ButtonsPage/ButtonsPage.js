@@ -36,7 +36,7 @@ const ButtonsPage = () => (
       </BpkListItem>
     </BpkList>
     <BpkHeading id={anchors.primary} level='h2'>Primary</BpkHeading>
-    <PresentationBlock sassdocId='buttons-mixin-bpk-button' showHTML>
+    <PresentationBlock sassdocId='buttons-mixin-bpk-button'>
       <BpkButton>Primary</BpkButton>{'\n'}
       <BpkButton href='#'>Anchor</BpkButton>{'\n'}
       <BpkButton disabled>Disabled</BpkButton>{'\n'}
@@ -45,7 +45,7 @@ const ButtonsPage = () => (
       <BpkButton large disabled>Disabled</BpkButton>
     </PresentationBlock>
     <BpkHeading id={anchors.secondary} level='h2'>Secondary</BpkHeading>
-    <PresentationBlock sassdocId='buttons-mixin-bpk-button--secondary' showHTML>
+    <PresentationBlock sassdocId='buttons-mixin-bpk-button--secondary'>
       <BpkButton secondary>Secondary</BpkButton>{'\n'}
       <BpkButton href='#' secondary>Anchor</BpkButton>{'\n'}
       <BpkButton secondary disabled>Disabled</BpkButton>{'\n'}
@@ -54,7 +54,7 @@ const ButtonsPage = () => (
       <BpkButton secondary large disabled>Disabled</BpkButton>
     </PresentationBlock>
     <BpkHeading id={anchors.selected} level='h2'>Selected</BpkHeading>
-    <PresentationBlock sassdocId='buttons-mixin-bpk-button--selected' showHTML>
+    <PresentationBlock sassdocId='buttons-mixin-bpk-button--selected'>
       <BpkButton selected>Selected</BpkButton>{'\n'}
       <BpkButton href='#' selected>Anchor</BpkButton>{'\n'}
       <BpkButton selected disabled>Disabled</BpkButton>{'\n'}
@@ -63,7 +63,7 @@ const ButtonsPage = () => (
       <BpkButton selected large disabled>Disabled</BpkButton>
     </PresentationBlock>
     <BpkHeading id={anchors.link} level='h2'>Link</BpkHeading>
-    <PresentationBlock sassdocId='buttons-mixin-bpk-button--link' showHTML>
+    <PresentationBlock sassdocId='buttons-mixin-bpk-button--link'>
       <BpkButton link>Link</BpkButton>{'\n'}
       <BpkButton href='#' link>Anchor</BpkButton>{'\n'}
       <BpkButton link disabled>Disabled</BpkButton>{'\n'}

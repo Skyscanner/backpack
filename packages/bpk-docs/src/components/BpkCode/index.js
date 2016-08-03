@@ -1,3 +1,3 @@
-import component from './BpkCode.js'
+import component from './BpkCode'
 
 export default component
