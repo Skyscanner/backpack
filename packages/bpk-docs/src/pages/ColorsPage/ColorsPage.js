@@ -50,14 +50,17 @@ const ColorsPage = () => (
       and shades are based on an algorithmic value from 50-900 with 50 being the lightest and 900 being the darkest.
       The number of tints and shades has been restrained to provide better visual coherence to the overall brand.
     </BpkParagraph>
-    <BpkParagraph>
-      The following tints and shades should only be used when applying states to buttons such as hovers.
-    </BpkParagraph>
+    <BpkParagraph><strong>Strictly for use on Primary Button gradients:</strong></BpkParagraph>
     <div className='bpkdocs-colors-page__swatch-container'>
-      <ColorSwatch name='color-blue-400' color={TOKENS.colorBlue400} />
-      <ColorSwatch name='color-blue-600' color={TOKENS.colorBlue600} whiteColor />
       <ColorSwatch name='color-green-400' color={TOKENS.colorGreen400} />
+    </div>
+    <BpkParagraph><strong>Strictly for use on Primary Button active/hit states:</strong></BpkParagraph>
+    <div className='bpkdocs-colors-page__swatch-container'>
       <ColorSwatch name='color-green-600' color={TOKENS.colorGreen600} whiteColor />
+    </div>
+    <BpkParagraph><strong>Strictly for use on Android title bar only:</strong></BpkParagraph>
+    <div className='bpkdocs-colors-page__swatch-container'>
+      <ColorSwatch name='color-blue-700' color={TOKENS.colorBlue700} whiteColor />
     </div>
     <BpkHeading level='h2'>Gradients</BpkHeading>
     <BpkParagraph>
