@@ -1,3 +1,3 @@
-import page from './BaseStylesheetPage.jsx'
+import page from './BaseStylesheetPage.js'
 
 export default page

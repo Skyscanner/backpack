@@ -9,14 +9,14 @@ import ColorSwatch from './../../components/ColorSwatch'
 
 const ColorsPage = () => (
   <section>
-    <Helmet title='Colours' />
-    <BpkHeading level='h1'>Colours</BpkHeading>
+    <Helmet title='Colors' />
+    <BpkHeading level='h1'>Colors</BpkHeading>
     <BpkParagraph>
-      Our palette is bold, colourful and impactful. The naming system below will help you quickly identify the colours
+      Our palette is bold, colorful and impactful. The naming system below will help you quickly identify the colors
       referenced in this guide and in our prepared palette files.
     </BpkParagraph>
     <BpkParagraph>
-      The primary colour for Skyscanner’s brand is Blue-500, a bold and vibrant blue. All other colours in the palette
+      The primary color for Skyscanner’s brand is Blue-500, a bold and vibrant blue. All other colors in the palette
       are considered secondary to this. The brand is also heavily white and should make strong use of negative space and
       breathing room.
     </BpkParagraph>

@@ -10,6 +10,7 @@ configure(() => {
   require('./../packages/bpk-component-list/stories')
   require('./../packages/bpk-component-logo/stories')
   require('./../packages/bpk-component-paragraph/stories')
+  require('./../packages/bpk-component-router-link/stories')
   require('./../packages/bpk-component-spinner/stories')
   require('./../packages/bpk-component-table/stories')
 }, module)

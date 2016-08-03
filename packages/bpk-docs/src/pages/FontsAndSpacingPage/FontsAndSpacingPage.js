@@ -6,11 +6,11 @@ import includes from 'lodash/includes'
 import kebabCase from 'lodash/kebabCase'
 import TOKENS from 'bpk-tokens/tokens/base.common'
 
+import BpkLink from 'bpk-component-link'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
-import BpkLink from './../../components/BpkLink'
 
 const anchors = {
   fontFamilies: 'fonts-page-fonts',

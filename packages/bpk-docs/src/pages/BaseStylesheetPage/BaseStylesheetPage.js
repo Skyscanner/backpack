@@ -1,10 +1,10 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
+import BpkLink from 'bpk-component-link'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
 import { BpkList, BpkListItem } from 'bpk-component-list'
-import BpkLink from './../../components/BpkLink'
 import BpkCode from './../../components/BpkCode'
 
 const html5BoilerplateHelpersLink = 'https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#common-helpers'
@@ -21,9 +21,9 @@ const BaseStylesheetPage = () => (
     <BpkParagraph>
       <strong>
         Note: The scaffolding still uses a different, older base stylesheet. Please refer to
-        this <BpkLink href={baseStylesheetBlogPostLink} target='_blank'>blog post</BpkLink> for
+        this <BpkLink href={baseStylesheetBlogPostLink} blank>blog post</BpkLink> for
         more info and
-        this <BpkLink href={'https://gojira.skyscanner.net/browse/BPK-72'} target='_blank'>JIRA card</BpkLink> for
+        this <BpkLink href='https://gojira.skyscanner.net/browse/BPK-72' blank>JIRA card</BpkLink> for
         updates.
       </strong>
     </BpkParagraph>
@@ -31,7 +31,7 @@ const BaseStylesheetPage = () => (
     <BpkList>
       <BpkListItem>
         For improved cross-browser rendering,
-        we use <BpkLink href='http://necolas.github.io/normalize.css/' target='_blank'>Normalize.css</BpkLink> to
+        we use <BpkLink href='http://necolas.github.io/normalize.css/' blank>Normalize.css</BpkLink> to
         correct small inconsistencies across browsers and devices.
       </BpkListItem>
       <BpkListItem>
@@ -46,7 +46,7 @@ const BaseStylesheetPage = () => (
       </BpkListItem>
       <BpkListItem>
         Utility classes based on
-        the <BpkLink href={html5BoilerplateHelpersLink} target='_blank'>HTML5 Boilerplate common helpers</BpkLink>,
+        the <BpkLink href={html5BoilerplateHelpersLink} blank>HTML5 Boilerplate common helpers</BpkLink>,
         including: &nbsp;<BpkCode syntax='css' inline>.hidden</BpkCode>,
         &nbsp;<BpkCode syntax='css' inline>.visuallyhidden</BpkCode>,
         &nbsp;<BpkCode syntax='css' inline>.visuallyhidden.focusable</BpkCode>,

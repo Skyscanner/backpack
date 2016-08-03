@@ -1,3 +1,3 @@
-import page from './MoleculesPage.jsx'
+import page from './MoleculesPage.js'
 
 export default page

@@ -1,0 +1,7 @@
+@import '~bpk-mixins/index';
+
+.bpkdocs-downloads-page {
+  &__container {
+    @include bpk-container();
+  }
+}

@@ -1,3 +1,3 @@
-import page from './BondsPage.jsx'
+import page from './BondsPage.js'
 
 export default page

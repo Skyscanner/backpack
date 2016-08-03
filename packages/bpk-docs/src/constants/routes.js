@@ -1,16 +1,22 @@
 export const HOME = '/'
 
-export const BONDS = '/bonds'
-export const BASE_STYLESHEET = '/bonds/base-stylesheet'
-export const COLORS = '/bonds/colors'
-export const FONTS_AND_SPACING = '/bonds/fonts-and-spacing'
+export const DOCS = '/docs'
+export const DOWNLOADS = '/downloads'
 
-export const ATOMS = '/atoms'
-export const TYPOGRAPHY = '/atoms/typography'
-export const BUTTONS = '/atoms/buttons'
-export const ICONS = '/atoms/icons'
-export const SPINNERS = '/atoms/spinners'
-export const LOGOS = '/atoms/logos'
+export const GETTING_STARTED = '/docs/getting-started'
 
-export const MOLECULES = '/molecules'
-export const ORGANISMS = '/organisms'
+export const BONDS = '/docs/bonds'
+export const BASE_STYLESHEET = '/docs/bonds/base-stylesheet'
+export const COLORS = '/docs/bonds/colors'
+export const FONTS_AND_SPACING = '/docs/bonds/fonts-and-spacing'
+
+export const ATOMS = '/docs/atoms'
+export const TYPOGRAPHY = '/docs/atoms/typography'
+export const BUTTONS = '/docs/atoms/buttons'
+export const ICONS = '/docs/atoms/icons'
+export const SPINNERS = '/docs/atoms/spinners'
+export const LOGOS = '/docs/atoms/logos'
+
+export const MOLECULES = '/docs/molecules'
+
+export const ORGANISMS = '/docs/molecules'

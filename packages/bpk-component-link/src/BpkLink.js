@@ -2,9 +2,20 @@ import React, { PropTypes } from 'react'
 
 import './bpk-link.scss'
 
-const BpkLink = ({ children, href, onClick }) => (
-  <a className='bpk-link' children={children} href={href} onClick={onClick} />
-)
+const BpkLink = ({ children, href, onClick, blank }) => {
+  const props = {
+    className: 'bpk-link',
+    children,
+    href,
+    onClick
+  }
+
+  if (blank) {
+    props.target = '_blank'
+  }
+
+  return <a {...props} />
+}
 
 BpkLink.propTypes = {
   children: PropTypes.oneOfType([
@@ -12,11 +23,13 @@ BpkLink.propTypes = {
     PropTypes.node
   ]).isRequired,
   href: PropTypes.string.isRequired,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  blank: PropTypes.bool
 }
 
 BpkLink.defaultProps = {
-  onClick: null
+  onClick: null,
+  blank: false
 }
 
 export default BpkLink

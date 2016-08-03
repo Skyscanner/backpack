@@ -1,12 +1,13 @@
 import React, { PropTypes } from 'react'
 
-import './presentation-block.scss'
+import BpkLink from 'bpk-component-link'
+
 import BpkCode from './../BpkCode'
-import BpkLink from './../BpkLink'
+import './presentation-block.scss'
 
 const SassDocLink = ({ sassdocId }) => (
   <div className='bpkdocs-presentation-block__sassdoc'>
-    <BpkLink href={`/sassdoc/#${sassdocId}`} target='_blank'>View the Sass documentation.</BpkLink>
+    <BpkLink href={`/sassdoc/#${sassdocId}`} blank>View the Sass documentation.</BpkLink>
   </div>
 )
 

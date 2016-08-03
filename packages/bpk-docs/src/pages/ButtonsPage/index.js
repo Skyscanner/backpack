@@ -1,3 +1,3 @@
-import page from './ButtonsPage.jsx'
+import page from './ButtonsPage.js'
 
 export default page
