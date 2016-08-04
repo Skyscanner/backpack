@@ -8,6 +8,7 @@ export const GETTING_STARTED = '/docs/getting-started'
 export const BONDS = '/docs/bonds'
 export const BASE_STYLESHEET = '/docs/bonds/base-stylesheet'
 export const COLORS = '/docs/bonds/colors'
+export const SPACING = '/docs/bonds/spacing'
 export const TYPOGRAPHY = '/docs/bonds/typography'
 export const LAYOUT = '/docs/bonds/layout'
 

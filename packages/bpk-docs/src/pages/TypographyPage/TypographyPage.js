@@ -47,11 +47,6 @@ const FontsAndSpacingPage = () => (
   <section>
     <Helmet title='Typography' />
     <BpkHeading level='h1'>Typography</BpkHeading>
-    <BpkParagraph>
-      Rems are used for all units including font-sizes, padding/margins and media queries. Since these are relative to
-      the value inherited from the browser font-size, it means everything will scale accordingly should a user change
-      this. This is especially important for accessibility.
-    </BpkParagraph>
     <BpkList>
       <BpkListItem>
         <BpkLink href={`#${anchors.fontFamilies}`}>Font families</BpkLink>

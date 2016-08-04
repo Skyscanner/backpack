@@ -10,6 +10,7 @@ const links = [
     links: [
       { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' },
       { route: routes.COLORS, children: 'Colors' },
+      { route: routes.SPACING, children: 'Spacing' },
       { route: routes.TYPOGRAPHY, children: 'Typography' },
       { route: routes.LAYOUT, children: 'Layout' },
       { route: null, children: 'Motion' }
@@ -24,7 +25,8 @@ const links = [
       { route: routes.SPINNERS, children: 'Spinners' },
       { route: routes.LOGOS, children: 'Logos' },
       { route: null, children: 'Forms' },
-      { route: null, children: 'Cards' }
+      { route: null, children: 'Cards' },
+      { route: null, children: 'Illustration' }
     ]
   },
   {
@@ -36,7 +38,7 @@ const links = [
       { route: null, children: 'Tooltip' },
       { route: null, children: 'Pagination' },
       { route: null, children: 'Calendar' },
-      { route: null, children: 'Numerical stepper' },
+      { route: null, children: 'Nudger' },
       { route: null, children: 'Tabs' },
       { route: null, children: 'Primary navigation' },
       { route: null, children: 'Secondary navigation' },
@@ -60,7 +62,7 @@ const links = [
   {
     category: 'Systems',
     links: [
-      { route: null, children: 'Search controls' },
+      { route: null, children: 'Search controls' }
     ]
   }
 ]

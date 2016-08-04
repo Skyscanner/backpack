@@ -11,6 +11,7 @@ import HomePage from './../pages/HomePage'
 import GettingStartedPage from './../pages/GettingStartedPage'
 import BaseStylesheetPage from './../pages/BaseStylesheetPage'
 import ColorsPage from './../pages/ColorsPage'
+import SpacingPage from './../pages/SpacingPage'
 import TypographyPage from './../pages/TypographyPage'
 import LayoutPage from './../pages/LayoutPage'
 
@@ -32,6 +33,7 @@ const Routes = (
         <IndexRoute component={BaseStylesheetPage} />
         <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
         <Route path={ROUTES.COLORS} component={ColorsPage} />
+        <Route path={ROUTES.SPACING} component={SpacingPage} />
         <Route path={ROUTES.TYPOGRAPHY} component={TypographyPage} />
         <Route path={ROUTES.LAYOUT} component={LayoutPage} />
       </Route>
