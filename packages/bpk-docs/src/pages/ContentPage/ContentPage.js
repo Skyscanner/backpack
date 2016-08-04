@@ -8,18 +8,20 @@ import { BpkList, BpkListItem } from 'bpk-component-list'
 import PresentationBlock from './../../components/PresentationBlock'
 
 const anchors = {
-  headings: 'typography-page-headings',
-  paragraphs: 'typography-page-paragraphs',
-  links: 'typography-page-links',
-  lists: 'typography-page-lists'
+  headings: 'content-page-headings',
+  paragraphs: 'content-page-paragraphs',
+  links: 'content-page-links',
+  lists: 'content-page-lists'
 }
 
 const ContentPage = () => (
   <section>
     <Helmet title='Content' />
     <BpkHeading level='h1'>Content</BpkHeading>
-    <BpkParagraph>Headings, paragraphs, links, lists and more.</BpkParagraph>
-    <BpkHeading level='h2'>Contents</BpkHeading>
+    <BpkParagraph>
+      Headings, paragraphs, links, lists and more.&nbsp;
+      <BpkLink href='/sassdoc/#typography' blank>View the Sass documentation.</BpkLink>
+    </BpkParagraph>
     <BpkList>
       <BpkListItem>
         <BpkLink href={`#${anchors.headings}`}>Headings</BpkLink>
@@ -35,7 +37,7 @@ const ContentPage = () => (
       </BpkListItem>
     </BpkList>
     <BpkHeading id={anchors.headings} level='h2'>Headings</BpkHeading>
-    <PresentationBlock sassdocId='typography-mixin-bpk-heading-1'>
+    <PresentationBlock>
       <BpkHeading level='h1'>Heading 1</BpkHeading>
       <BpkHeading level='h2'>Heading 2</BpkHeading>
       <BpkHeading level='h3'>Heading 3</BpkHeading>
@@ -44,7 +46,7 @@ const ContentPage = () => (
       <BpkHeading level='h6'>Heading 6</BpkHeading>
     </PresentationBlock>
     <BpkHeading id={anchors.paragraphs} level='h2'>Paragraphs</BpkHeading>
-    <PresentationBlock sassdocId='typography-mixin-bpk-paragraph'>
+    <PresentationBlock>
       <BpkParagraph>
         Rizzle ipsizzle dolizzle ass cool, crazy adipiscing elizzle. Nullam phat velizzle, i'm in the shizzle
         volutpizzle, check out this quizzle, cool vizzle, arcu. Pellentesque sheezy tortor.
@@ -59,13 +61,13 @@ const ContentPage = () => (
       </BpkParagraph>
     </PresentationBlock>
     <BpkHeading id={anchors.links} level='h2'>Links</BpkHeading>
-    <PresentationBlock sassdocId='typography-mixin-bpk-link'>
+    <PresentationBlock>
       <BpkLink href='#'>Link 1</BpkLink>{'\n'}
       <BpkLink href='#'>Link 2</BpkLink>{'\n'}
       <BpkLink href='#'>Link 3</BpkLink>
     </PresentationBlock>
     <BpkHeading id={anchors.lists} level='h2'>Lists</BpkHeading>
-    <PresentationBlock sassdocId='typography-mixin-bpk-list'>
+    <PresentationBlock>
       <BpkList>
         <BpkListItem>Apples</BpkListItem>
         <BpkListItem>Oranges

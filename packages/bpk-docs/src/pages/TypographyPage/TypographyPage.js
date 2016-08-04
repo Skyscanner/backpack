@@ -3,7 +3,6 @@ import keys from 'lodash/keys'
 import Helmet from 'react-helmet'
 import pickBy from 'lodash/pickBy'
 import includes from 'lodash/includes'
-import kebabCase from 'lodash/kebabCase'
 import TOKENS from 'bpk-tokens/tokens/base.common'
 
 import BpkLink from 'bpk-component-link'
@@ -12,36 +11,16 @@ import BpkParagraph from 'bpk-component-paragraph'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
 
+import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper'
+
 const anchors = {
-  fontFamilies: 'fonts-page-fonts',
-  fontSizes: 'fonts-page-font-sizes',
-  lineHeights: 'fonts-page-line-heights',
-  spacing: 'fonts-page-spacing'
+  fontFamilies: 'typography-page-fonts',
+  fontSizes: 'typography-page-font-sizes',
+  lineHeights: 'typography-page-line-heights'
 }
 
 const fontSizes = pickBy(TOKENS, (value, key) => includes(key, 'fontSize'))
 const lineHeights = pickBy(TOKENS, (value, key) => includes(key, 'lineHeight'))
-
-const toPx = (value) => {
-  let parsed = null
-
-  if (/rem$/.test(value)) {
-    parsed = parseFloat(value.replace(/rem/, '')) * 16
-  }
-
-  if (/%$/.test(value)) {
-    parsed = parseFloat(value.replace(/%/, '')) / 100 * 16
-  }
-
-  return parsed ? `${parsed}px` : null
-}
-
-const getName = (name) => kebabCase(name)
-
-const getValue = (value) => {
-  const pxValue = toPx(value)
-  return pxValue ? `${value} (${pxValue})` : value
-}
 
 const FontsAndSpacingPage = () => (
   <section>
@@ -56,9 +35,6 @@ const FontsAndSpacingPage = () => (
       </BpkListItem>
       <BpkListItem>
         <BpkLink href={`#${anchors.lineHeights}`}>Line heights</BpkLink>
-      </BpkListItem>
-      <BpkListItem>
-        <BpkLink href={`#${anchors.spacing}`}>Spacing</BpkLink>
       </BpkListItem>
     </BpkList>
     <BpkHeading id={anchors.fontFamilies} level='h2'>Font families</BpkHeading>
@@ -94,8 +70,8 @@ const FontsAndSpacingPage = () => (
       <BpkTableBody>
         {keys(fontSizes).map((fontSize) => (
           <BpkTableRow key={fontSize}>
-            <BpkTableCell>{getName(fontSize)}</BpkTableCell>
-            <BpkTableCell>{getValue(fontSizes[fontSize])}</BpkTableCell>
+            <BpkTableCell>{formatTokenName(fontSize)}</BpkTableCell>
+            <BpkTableCell>{formatTokenValue(fontSizes[ fontSize ])}</BpkTableCell>
           </BpkTableRow>
         ))}
       </BpkTableBody>
@@ -110,9 +86,9 @@ const FontsAndSpacingPage = () => (
       </BpkTableHead>
       <BpkTableBody>
         {keys(lineHeights).map((lineHeight) => (
-          <BpkTableRow key={getName(lineHeight)}>
-            <BpkTableCell>{getName(lineHeight)}</BpkTableCell>
-            <BpkTableCell>{getValue(lineHeights[lineHeight])}</BpkTableCell>
+          <BpkTableRow key={formatTokenName(lineHeight)}>
+            <BpkTableCell>{formatTokenName(lineHeight)}</BpkTableCell>
+            <BpkTableCell>{formatTokenValue(lineHeights[ lineHeight ])}</BpkTableCell>
           </BpkTableRow>
         ))}
       </BpkTableBody>
