@@ -4,6 +4,7 @@ import './../packages/bpk-stylesheets/base.scss'
 
 configure(() => {
   require('./../packages/bpk-component-button/stories')
+  require('./../packages/bpk-component-content-container/stories')
   require('./../packages/bpk-component-heading/stories')
   require('./../packages/bpk-component-icon/stories')
   require('./../packages/bpk-component-link/stories')
