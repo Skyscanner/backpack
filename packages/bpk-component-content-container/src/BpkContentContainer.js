@@ -4,7 +4,7 @@ import './bpk-content-container.scss'
 
 const BpkContentContainer = ({ children, tagName }) => {
   const TagName = tagName
-  return <TagName className='bpk-content-container' children={children}/>
+  return <TagName className='bpk-content-container' children={children} />
 }
 
 BpkContentContainer.propTypes = {

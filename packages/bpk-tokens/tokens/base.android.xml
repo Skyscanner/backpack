@@ -58,6 +58,7 @@
   <property name="SPACING_LG" category="spacing">30</property>
   <property name="SPACING_XL" category="spacing">36</property>
   <property name="SPACING_XXL" category="spacing">42</property>
+  <property name="ONE_PIXEL_REM" category="spacing">1</property>
   <property name="FONT_FAMILY_BASE" category="font">-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif</property>
   <color name="FONT_COLOR_BASE" category="text-color">#544c63ff</color>
   <property name="LINE_HEIGHT_SM" category="line-height">18</property>

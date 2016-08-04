@@ -421,6 +421,12 @@
       "value": "2.625rem",
       "name": "SPACING_XXL"
     },
+    "ONE_PIXEL_REM": {
+      "type": "size",
+      "category": "spacing",
+      "value": ".0625rem",
+      "name": "ONE_PIXEL_REM"
+    },
     "FONT_FAMILY_BASE": {
       "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
       "type": "font",
@@ -1177,6 +1183,7 @@
     "SPACING_LG",
     "SPACING_XL",
     "SPACING_XXL",
+    "ONE_PIXEL_REM",
     "FONT_FAMILY_BASE",
     "FONT_COLOR_BASE",
     "LINE_HEIGHT_SM",

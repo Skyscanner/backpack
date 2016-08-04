@@ -57,6 +57,7 @@ module.exports = {
   spacingLg: "1.875rem",
   spacingXl: "2.250rem",
   spacingXxl: "2.625rem",
+  onePixelRem: ".0625rem",
   fontFamilyBase: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
   fontColorBase: "rgb(84, 76, 99)",
   lineHeightSm: "1.125rem",
