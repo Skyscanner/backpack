@@ -9,6 +9,7 @@ export const BONDS = '/docs/bonds'
 export const BASE_STYLESHEET = '/docs/bonds/base-stylesheet'
 export const COLORS = '/docs/bonds/colors'
 export const TYPOGRAPHY = '/docs/bonds/typography'
+export const LAYOUT = '/docs/bonds/layout'
 
 export const ATOMS = '/docs/atoms'
 export const CONTENT = '/docs/atoms/content'

@@ -11,7 +11,7 @@ const links = [
       { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' },
       { route: routes.COLORS, children: 'Colors' },
       { route: routes.TYPOGRAPHY, children: 'Typography' },
-      { route: null, children: 'Layout' },
+      { route: routes.LAYOUT, children: 'Layout' },
       { route: null, children: 'Motion' }
     ]
   },

@@ -21,7 +21,6 @@ const anchors = {
 
 const fontSizes = pickBy(TOKENS, (value, key) => includes(key, 'fontSize'))
 const lineHeights = pickBy(TOKENS, (value, key) => includes(key, 'lineHeight'))
-const spacings = pickBy(TOKENS, (value, key) => includes(key, 'spacing'))
 
 const toPx = (value) => {
   let parsed = null
@@ -119,23 +118,6 @@ const FontsAndSpacingPage = () => (
           <BpkTableRow key={getName(lineHeight)}>
             <BpkTableCell>{getName(lineHeight)}</BpkTableCell>
             <BpkTableCell>{getValue(lineHeights[lineHeight])}</BpkTableCell>
-          </BpkTableRow>
-        ))}
-      </BpkTableBody>
-    </BpkTable>
-    <BpkHeading id={anchors.spacing} level='h2'>Spacing</BpkHeading>
-    <BpkTable>
-      <BpkTableHead>
-        <BpkTableRow>
-          <BpkTableHeadCell>Name</BpkTableHeadCell>
-          <BpkTableHeadCell>Value</BpkTableHeadCell>
-        </BpkTableRow>
-      </BpkTableHead>
-      <BpkTableBody>
-        {keys(spacings).map((spacing) => (
-          <BpkTableRow key={getName(spacing)}>
-            <BpkTableCell>{getName(spacing)}</BpkTableCell>
-            <BpkTableCell>{getValue(spacings[spacing])}</BpkTableCell>
           </BpkTableRow>
         ))}
       </BpkTableBody>

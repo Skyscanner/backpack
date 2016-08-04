@@ -19,6 +19,7 @@ const staticSiteGeneratorConfig = {
     ROUTES.BASE_STYLESHEET,
     ROUTES.COLORS,
     ROUTES.TYPOGRAPHY,
+    ROUTES.LAYOUT,
 
     ROUTES.ATOMS,
     ROUTES.CONTENT,
