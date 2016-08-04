@@ -8,10 +8,10 @@ export const GETTING_STARTED = '/docs/getting-started'
 export const BONDS = '/docs/bonds'
 export const BASE_STYLESHEET = '/docs/bonds/base-stylesheet'
 export const COLORS = '/docs/bonds/colors'
-export const FONTS_AND_SPACING = '/docs/bonds/fonts-and-spacing'
+export const TYPOGRAPHY = '/docs/bonds/typography'
 
 export const ATOMS = '/docs/atoms'
-export const TYPOGRAPHY = '/docs/atoms/typography'
+export const CONTENT = '/docs/atoms/content'
 export const BUTTONS = '/docs/atoms/buttons'
 export const ICONS = '/docs/atoms/icons'
 export const SPINNERS = '/docs/atoms/spinners'
@@ -19,4 +19,4 @@ export const LOGOS = '/docs/atoms/logos'
 
 export const MOLECULES = '/docs/molecules'
 
-export const ORGANISMS = '/docs/molecules'
+export const ORGANISMS = '/docs/organisms'
