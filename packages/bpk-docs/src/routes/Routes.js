@@ -11,9 +11,11 @@ import HomePage from './../pages/HomePage'
 import GettingStartedPage from './../pages/GettingStartedPage'
 import BaseStylesheetPage from './../pages/BaseStylesheetPage'
 import ColorsPage from './../pages/ColorsPage'
-import FontsAndSpacingPage from './../pages/FontsAndSpacingPage'
-
+import SpacingPage from './../pages/SpacingPage'
 import TypographyPage from './../pages/TypographyPage'
+import LayoutPage from './../pages/LayoutPage'
+
+import ContentPage from './../pages/ContentPage'
 import ButtonsPage from './../pages/ButtonsPage'
 import IconsPage from './../pages/IconsPage'
 import SpinnersPage from './../pages/SpinnersPage'
@@ -31,11 +33,13 @@ const Routes = (
         <IndexRoute component={BaseStylesheetPage} />
         <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
         <Route path={ROUTES.COLORS} component={ColorsPage} />
-        <Route path={ROUTES.FONTS_AND_SPACING} component={FontsAndSpacingPage} />
+        <Route path={ROUTES.SPACING} component={SpacingPage} />
+        <Route path={ROUTES.TYPOGRAPHY} component={TypographyPage} />
+        <Route path={ROUTES.LAYOUT} component={LayoutPage} />
       </Route>
       <Route path={ROUTES.ATOMS}>
-        <IndexRoute component={TypographyPage} />
-        <Route path={ROUTES.TYPOGRAPHY} component={TypographyPage} />
+        <IndexRoute component={ContentPage} />
+        <Route path={ROUTES.CONTENT} component={ContentPage} />
         <Route path={ROUTES.BUTTONS} component={ButtonsPage} />
         <Route path={ROUTES.ICONS} component={IconsPage} />
         <Route path={ROUTES.SPINNERS} component={SpinnersPage} />

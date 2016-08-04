@@ -1,89 +1,99 @@
 import React from 'react'
+import keys from 'lodash/keys'
 import Helmet from 'react-helmet'
+import pickBy from 'lodash/pickBy'
+import includes from 'lodash/includes'
+import TOKENS from 'bpk-tokens/tokens/base.common'
 
 import BpkLink from 'bpk-component-link'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
 import { BpkList, BpkListItem } from 'bpk-component-list'
-import PresentationBlock from './../../components/PresentationBlock'
+import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
+
+import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper'
 
 const anchors = {
-  headings: 'typography-page-headings',
-  paragraphs: 'typography-page-paragraphs',
-  links: 'typography-page-links',
-  lists: 'typography-page-lists'
+  fontFamilies: 'typography-page-fonts',
+  fontSizes: 'typography-page-font-sizes',
+  lineHeights: 'typography-page-line-heights'
 }
 
-const TypographyPage = () => (
+const fontSizes = pickBy(TOKENS, (value, key) => includes(key, 'fontSize'))
+const lineHeights = pickBy(TOKENS, (value, key) => includes(key, 'lineHeight'))
+
+const FontsAndSpacingPage = () => (
   <section>
     <Helmet title='Typography' />
     <BpkHeading level='h1'>Typography</BpkHeading>
-    <BpkParagraph>Headings, paragraphs, links, lists and more.</BpkParagraph>
-    <BpkHeading level='h2'>Contents</BpkHeading>
     <BpkList>
       <BpkListItem>
-        <BpkLink href={`#${anchors.headings}`}>Headings</BpkLink>
+        <BpkLink href={`#${anchors.fontFamilies}`}>Font families</BpkLink>
       </BpkListItem>
       <BpkListItem>
-        <BpkLink href={`#${anchors.paragraphs}`}>Paragaphs</BpkLink>
+        <BpkLink href={`#${anchors.fontSizes}`}>Font sizes</BpkLink>
       </BpkListItem>
       <BpkListItem>
-        <BpkLink href={`#${anchors.links}`}>Links</BpkLink>
-      </BpkListItem>
-      <BpkListItem>
-        <BpkLink href={`#${anchors.lists}`}>Lists</BpkLink>
+        <BpkLink href={`#${anchors.lineHeights}`}>Line heights</BpkLink>
       </BpkListItem>
     </BpkList>
-    <BpkHeading id={anchors.headings} level='h2'>Headings</BpkHeading>
-    <PresentationBlock sassdocId='typography-mixin-bpk-heading-1'>
-      <BpkHeading level='h1'>Heading 1</BpkHeading>
-      <BpkHeading level='h2'>Heading 2</BpkHeading>
-      <BpkHeading level='h3'>Heading 3</BpkHeading>
-      <BpkHeading level='h4'>Heading 4</BpkHeading>
-      <BpkHeading level='h5'>Heading 5</BpkHeading>
-      <BpkHeading level='h6'>Heading 6</BpkHeading>
-    </PresentationBlock>
-    <BpkHeading id={anchors.paragraphs} level='h2'>Paragraphs</BpkHeading>
-    <PresentationBlock sassdocId='typography-mixin-bpk-paragraph'>
-      <BpkParagraph>
-        Rizzle ipsizzle dolizzle ass cool, crazy adipiscing elizzle. Nullam phat velizzle, i'm in the shizzle
-        volutpizzle, check out this quizzle, cool vizzle, arcu. Pellentesque sheezy tortor.
-      </BpkParagraph>
-      <BpkParagraph>
-        Owned erizzle. Black izzle dolor dapibizzle turpis tempizzle ghetto. Dope pellentesque nibh et turpis. Sure in
-        tortizzle. Pellentesque eleifend rhoncizzle crackalackin. In hac habitasse platea dictumst.
-      </BpkParagraph>
-      <BpkParagraph>
-        Fo shizzle my nizzle dapibizzle. Curabitizzle tellus izzle, pretizzle nizzle, da bomb sheezy, eleifend its fo
-        rizzle, check out this. Nizzle suscipizzle. Shizznit semper crackalackin phat boofron.
-      </BpkParagraph>
-    </PresentationBlock>
-    <BpkHeading id={anchors.links} level='h2'>Links</BpkHeading>
-    <PresentationBlock sassdocId='typography-mixin-bpk-link'>
-      <BpkLink href='#'>Link 1</BpkLink>{'\n'}
-      <BpkLink href='#'>Link 2</BpkLink>{'\n'}
-      <BpkLink href='#'>Link 3</BpkLink>
-    </PresentationBlock>
-    <BpkHeading id={anchors.lists} level='h2'>Lists</BpkHeading>
-    <PresentationBlock sassdocId='typography-mixin-bpk-list'>
-      <BpkList>
-        <BpkListItem>Apples</BpkListItem>
-        <BpkListItem>Oranges
-          <BpkList>
-            <BpkListItem>Tangerines</BpkListItem>
-            <BpkListItem>Mandarins</BpkListItem>
-            <BpkListItem>Satsumas</BpkListItem>
-          </BpkList>
-        </BpkListItem>
-        <BpkListItem>Pears</BpkListItem>
-      </BpkList>
-      <BpkList ordered>
-        <BpkListItem>First</BpkListItem>
-        <BpkListItem>Second</BpkListItem>
-        <BpkListItem>First</BpkListItem>
-      </BpkList>
-    </PresentationBlock>
+    <BpkHeading id={anchors.fontFamilies} level='h2'>Font families</BpkHeading>
+    <BpkParagraph>
+      Rather than specify a single font across all Skyscanner products, we rely on the native font used on each device.
+      The benefits of this are two-fold, firstly we can lean on the hard-work and expertise that each OS manufacturer
+      has expended in producing a font that works best on their respective platforms. Second, we avoid any drawbacks of
+      serving a custom web-font; for example extra load time, and a so-called FOUT (flash of unstyled text). This will
+      improve the user experience of our product on all devices.
+    </BpkParagraph>
+    <BpkTable>
+      <BpkTableHead>
+        <BpkTableRow>
+          <BpkTableHeadCell>Name</BpkTableHeadCell>
+          <BpkTableHeadCell>Value</BpkTableHeadCell>
+        </BpkTableRow>
+      </BpkTableHead>
+      <BpkTableBody>
+        <BpkTableRow>
+          <BpkTableCell>font-family-base</BpkTableCell>
+          <BpkTableCell>{TOKENS.fontFamilyBase}</BpkTableCell>
+        </BpkTableRow>
+      </BpkTableBody>
+    </BpkTable>
+    <BpkHeading id={anchors.fontSizes} level='h2'>Font sizes</BpkHeading>
+    <BpkTable>
+      <BpkTableHead>
+        <BpkTableRow>
+          <BpkTableHeadCell>Name</BpkTableHeadCell>
+          <BpkTableHeadCell>Value</BpkTableHeadCell>
+        </BpkTableRow>
+      </BpkTableHead>
+      <BpkTableBody>
+        {keys(fontSizes).map((fontSize) => (
+          <BpkTableRow key={fontSize}>
+            <BpkTableCell>{formatTokenName(fontSize)}</BpkTableCell>
+            <BpkTableCell>{formatTokenValue(fontSizes[ fontSize ])}</BpkTableCell>
+          </BpkTableRow>
+        ))}
+      </BpkTableBody>
+    </BpkTable>
+    <BpkHeading id={anchors.lineHeights} level='h2'>Line heights</BpkHeading>
+    <BpkTable>
+      <BpkTableHead>
+        <BpkTableRow>
+          <BpkTableHeadCell>Name</BpkTableHeadCell>
+          <BpkTableHeadCell>Value</BpkTableHeadCell>
+        </BpkTableRow>
+      </BpkTableHead>
+      <BpkTableBody>
+        {keys(lineHeights).map((lineHeight) => (
+          <BpkTableRow key={formatTokenName(lineHeight)}>
+            <BpkTableCell>{formatTokenName(lineHeight)}</BpkTableCell>
+            <BpkTableCell>{formatTokenValue(lineHeights[ lineHeight ])}</BpkTableCell>
+          </BpkTableRow>
+        ))}
+      </BpkTableBody>
+    </BpkTable>
   </section>
 )
 
-export default TypographyPage
+export default FontsAndSpacingPage

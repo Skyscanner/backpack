@@ -5,30 +5,28 @@ import BpkRouterLink from 'bpk-component-router-link'
 import './side-nav-layout.scss'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 
-const toNavLink = (link) => (
-  <BpkRouterLink key={link.route} to={link.route}>
-    {link.children}
-  </BpkRouterLink>
-)
+const toNavLink = (link, key) => link.route
+  ? <BpkRouterLink key={key} to={link.route} children={link.children} />
+  : <span key={key} className='bpkdocs-side-nav-layout__pending-link'>{link.children}</span>
 
 const toNavList = (links) => (
   <ul className='bpkdocs-side-nav-layout__list-item'>
-    {links.map((link) => link.category
-      ? toNavListCategory(link)
-      : toNavLink(link))
+    {links.map((link, index) => link.category
+      ? toNavListCategory(link, index)
+      : toNavLink(link, index))
     }
   </ul>
 )
 
-const toNavListCategory = (link) => (
-  <li className='bpkdocs-side-nav-layout__list' key={link.category}>
+const toNavListCategory = (link, key) => (
+  <li className='bpkdocs-side-nav-layout__list' key={key}>
     <span className='bpkdocs-side-nav-layout__category'>{link.category}</span>
     <BpkList>{link.links.map(toNavListItem)}</BpkList>
   </li>
 )
 
-const toNavListItem = (link) => (
-  <BpkListItem key={link.route}>{toNavLink(link)}</BpkListItem>
+const toNavListItem = (link, index) => (
+  <BpkListItem key={index}>{toNavLink(link)}</BpkListItem>
 )
 
 export const SideNavLayout = ({ links, children }) => (
@@ -44,7 +42,7 @@ const childrenPropType = PropTypes.oneOfType([
 ])
 
 const linkPropType = PropTypes.shape({
-  route: PropTypes.string.isRequired,
+  route: PropTypes.string,
   children: childrenPropType.isRequired
 })
 

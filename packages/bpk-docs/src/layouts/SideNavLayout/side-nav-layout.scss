@@ -22,6 +22,11 @@
     line-height: $bpk-line-height-sm;
   }
 
+  &__pending-link {
+    color: $bpk-color-gray-200;
+    font-style: italic;
+  }
+
   @include bpk-breakpoint-above-tablet {
     &__nav {
       width: 25%;
