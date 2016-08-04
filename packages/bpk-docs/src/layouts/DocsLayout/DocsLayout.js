@@ -11,7 +11,7 @@ const links = [
       { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' },
       { route: routes.COLORS, children: 'Colors' },
       { route: routes.SPACING, children: 'Spacing' },
-      { route: routes.TYPOGRAPHY, children: 'Typography' },
+      { route: routes.TYPE_UNITS, children: 'Type units' },
       { route: routes.LAYOUT, children: 'Layout' },
       { route: null, children: 'Motion' }
     ]
@@ -19,7 +19,7 @@ const links = [
   {
     category: 'Atoms',
     links: [
-      { route: routes.CONTENT, children: 'Content' },
+      { route: routes.TYPOGRAPHY, children: 'Typography' },
       { route: routes.BUTTONS, children: 'Buttons' },
       { route: routes.ICONS, children: 'Icons' },
       { route: routes.SPINNERS, children: 'Spinners' },
