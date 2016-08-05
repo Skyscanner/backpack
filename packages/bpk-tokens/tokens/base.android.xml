@@ -58,6 +58,7 @@
   <property name="SPACING_LG" category="spacing">30</property>
   <property name="SPACING_XL" category="spacing">36</property>
   <property name="SPACING_XXL" category="spacing">42</property>
+  <property name="ONE_PIXEL_REM" category="spacing">1</property>
   <property name="FONT_FAMILY_BASE" category="font">-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif</property>
   <color name="FONT_COLOR_BASE" category="text-color">#544c63ff</color>
   <property name="LINE_HEIGHT_SM" category="line-height">18</property>
@@ -95,12 +96,13 @@
   <property name="H3_MARGIN_TOP" category="spacing">0</property>
   <property name="H2_MARGIN_TOP" category="spacing">0</property>
   <property name="H1_MARGIN_TOP" category="spacing">0</property>
-  <property name="H6_MARGIN_BOTTOM" category="spacing">6</property>
-  <property name="H5_MARGIN_BOTTOM" category="spacing">6</property>
-  <property name="H4_MARGIN_BOTTOM" category="spacing">6</property>
-  <property name="H3_MARGIN_BOTTOM" category="spacing">6</property>
-  <property name="H2_MARGIN_BOTTOM" category="spacing">6</property>
-  <property name="H1_MARGIN_BOTTOM" category="spacing">6</property>
+  <property name="H6_MARGIN_BOTTOM" category="spacing">12</property>
+  <property name="H5_MARGIN_BOTTOM" category="spacing">12</property>
+  <property name="H4_MARGIN_BOTTOM" category="spacing">12</property>
+  <property name="H3_MARGIN_BOTTOM" category="spacing">12</property>
+  <property name="H2_MARGIN_BOTTOM" category="spacing">12</property>
+  <property name="H1_MARGIN_BOTTOM" category="spacing">12</property>
+  <property name="HEADING_CONTENT_MARGIN_TOP" category="spacing">30</property>
   <property name="P_MARGIN_TOP" category="spacing">0</property>
   <property name="P_MARGIN_BOTTOM" category="spacing">12</property>
   <property name="LIST_MARGIN_TOP" category="spacing">0</property>
@@ -138,6 +140,11 @@
   <color name="BUTTON_DISABLED_BACKGROUND_COLOR" category="buttons">#dfdce3ff</color>
   <property name="BUTTON_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_COLOR" category="buttons">#ffffffff</color>
+  <color name="BUTTON_HOVER_COLOR" category="buttons">#ffffffff</color>
+  <color name="BUTTON_ACTIVE_COLOR" category="buttons">#ffffffff</color>
+  <property name="BUTTON_BOX_SHADOW" category="buttons">none</property>
+  <property name="BUTTON_HOVER_BOX_SHADOW" category="buttons">none</property>
+  <property name="BUTTON_ACTIVE_BOX_SHADOW" category="buttons">none</property>
   <color name="BUTTON_DISABLED_COLOR" category="buttons">#898294ff</color>
   <property name="BUTTON_FONT_SIZE" category="buttons">16</property>
   <property name="BUTTON_FONT_WEIGHT" category="buttons">700</property>

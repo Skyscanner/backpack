@@ -27,6 +27,7 @@
   text-align: $bpk-button-text-align;
   text-decoration: none;
   white-space: nowrap;
+  box-shadow: $bpk-button-box-shadow;
   cursor: pointer;
   vertical-align: middle;
   user-select: none;
@@ -34,11 +35,15 @@
   &:hover {
     background-color: $bpk-button-hover-background-color;
     background-image: $bpk-button-hover-background-image;
+    color: $bpk-button-hover-color;
+    box-shadow: $bpk-button-hover-box-shadow;
   }
 
   &:active {
     background-color: $bpk-button-active-background-color;
     background-image: $bpk-button-active-background-image;
+    color: $bpk-button-active-color;
+    box-shadow: $bpk-button-active-box-shadow;
   }
 
   &:disabled {

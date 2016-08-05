@@ -54,6 +54,26 @@
       "value": "{!WHITE}",
       "type": "color"
     },
+    "BUTTON_HOVER_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "BUTTON_ACTIVE_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "BUTTON_BOX_SHADOW": {
+      "value": "none",
+      "type": "box-shadow"
+    },
+    "BUTTON_HOVER_BOX_SHADOW": {
+      "value": "none",
+      "type": "box-shadow"
+    },
+    "BUTTON_ACTIVE_BOX_SHADOW": {
+      "value": "none",
+      "type": "box-shadow"
+    },
     "BUTTON_DISABLED_COLOR": {
       "value": "{!GRAY_300}",
       "type": "color"
