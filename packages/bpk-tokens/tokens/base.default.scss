@@ -114,6 +114,8 @@ $bpk-spacing-lg: 1.875rem !default;
 $bpk-spacing-xl: 2.250rem !default;
 /// @group spacings
 $bpk-spacing-xxl: 2.625rem !default;
+/// @group spacings
+$bpk-one-pixel-rem: .0625rem !default;
 /// @group fonts
 $bpk-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif !default;
 /// @group text-colors
@@ -189,17 +191,19 @@ $bpk-h-2-margin-top: 0 !default;
 /// @group spacings
 $bpk-h-1-margin-top: 0 !default;
 /// @group spacings
-$bpk-h-6-margin-bottom: .375rem !default;
+$bpk-h-6-margin-bottom: .75rem !default;
 /// @group spacings
-$bpk-h-5-margin-bottom: .375rem !default;
+$bpk-h-5-margin-bottom: .75rem !default;
 /// @group spacings
-$bpk-h-4-margin-bottom: .375rem !default;
+$bpk-h-4-margin-bottom: .75rem !default;
 /// @group spacings
-$bpk-h-3-margin-bottom: .375rem !default;
+$bpk-h-3-margin-bottom: .75rem !default;
 /// @group spacings
-$bpk-h-2-margin-bottom: .375rem !default;
+$bpk-h-2-margin-bottom: .75rem !default;
 /// @group spacings
-$bpk-h-1-margin-bottom: .375rem !default;
+$bpk-h-1-margin-bottom: .75rem !default;
+/// @group spacings
+$bpk-heading-content-margin-top: 1.875rem !default;
 /// @group spacings
 $bpk-p-margin-top: 0 !default;
 /// @group spacings

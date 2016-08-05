@@ -1,7 +1,17 @@
 import React, { PropTypes } from 'react'
 import './bpk-button.scss'
 
-const BpkButton = ({ children, disabled, href, submit, secondary, selected, large, link, onClick }) => {
+const BpkButton = ({
+  children,
+  disabled,
+  href,
+  submit,
+  secondary,
+  selected,
+  large,
+  link,
+  onClick
+}) => {
   const classNames = [ 'bpk-button' ]
 
   secondary ? classNames.push('bpk-button--secondary') : null

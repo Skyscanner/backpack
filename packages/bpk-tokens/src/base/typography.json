@@ -189,32 +189,37 @@
       "category": "spacing"
     },
     "H6_MARGIN_BOTTOM": {
-      "value": "{!SPACING_XS}",
+      "value": "{!SPACING_SM}",
       "type": "size",
       "category": "spacing"
     },
     "H5_MARGIN_BOTTOM": {
-      "value": "{!SPACING_XS}",
+      "value": "{!SPACING_SM}",
       "type": "size",
       "category": "spacing"
     },
     "H4_MARGIN_BOTTOM": {
-      "value": "{!SPACING_XS}",
+      "value": "{!SPACING_SM}",
       "type": "size",
       "category": "spacing"
     },
     "H3_MARGIN_BOTTOM": {
-      "value": "{!SPACING_XS}",
+      "value": "{!SPACING_SM}",
       "type": "size",
       "category": "spacing"
     },
     "H2_MARGIN_BOTTOM": {
-      "value": "{!SPACING_XS}",
+      "value": "{!SPACING_SM}",
       "type": "size",
       "category": "spacing"
     },
     "H1_MARGIN_BOTTOM": {
-      "value": "{!SPACING_XS}",
+      "value": "{!SPACING_SM}",
+      "type": "size",
+      "category": "spacing"
+    },
+    "HEADING_CONTENT_MARGIN_TOP": {
+      "value": "{!SPACING_LG}",
       "type": "size",
       "category": "spacing"
     },
