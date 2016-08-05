@@ -125,6 +125,27 @@
   );
 }
 
+/// Headings within content containers. Modifies the various bpk-heading mixins.
+///
+/// @require {mixin} bpk-heading-1
+/// @require {mixin} bpk-heading-2
+/// @require {mixin} bpk-heading-3
+/// @require {mixin} bpk-heading-4
+/// @require {mixin} bpk-heading-5
+/// @require {mixin} bpk-heading-6
+///
+/// @example scss
+///   .selector {
+///     @include bpk-heading-1();
+///     @include bpk-content-heading();
+///   }
+
+@mixin bpk-content-heading {
+  &:not(:first-child) {
+    margin-top: $bpk-heading-content-margin-top;
+  }
+}
+
 /// Paragraph.
 ///
 /// @example scss

@@ -650,40 +650,46 @@
       "name": "H1_MARGIN_TOP"
     },
     "H6_MARGIN_BOTTOM": {
-      "value": ".375rem",
+      "value": ".75rem",
       "type": "size",
       "category": "spacing",
       "name": "H6_MARGIN_BOTTOM"
     },
     "H5_MARGIN_BOTTOM": {
-      "value": ".375rem",
+      "value": ".75rem",
       "type": "size",
       "category": "spacing",
       "name": "H5_MARGIN_BOTTOM"
     },
     "H4_MARGIN_BOTTOM": {
-      "value": ".375rem",
+      "value": ".75rem",
       "type": "size",
       "category": "spacing",
       "name": "H4_MARGIN_BOTTOM"
     },
     "H3_MARGIN_BOTTOM": {
-      "value": ".375rem",
+      "value": ".75rem",
       "type": "size",
       "category": "spacing",
       "name": "H3_MARGIN_BOTTOM"
     },
     "H2_MARGIN_BOTTOM": {
-      "value": ".375rem",
+      "value": ".75rem",
       "type": "size",
       "category": "spacing",
       "name": "H2_MARGIN_BOTTOM"
     },
     "H1_MARGIN_BOTTOM": {
-      "value": ".375rem",
+      "value": ".75rem",
       "type": "size",
       "category": "spacing",
       "name": "H1_MARGIN_BOTTOM"
+    },
+    "HEADING_CONTENT_MARGIN_TOP": {
+      "value": "1.875rem",
+      "type": "size",
+      "category": "spacing",
+      "name": "HEADING_CONTENT_MARGIN_TOP"
     },
     "P_MARGIN_TOP": {
       "value": "0",
@@ -1227,6 +1233,7 @@
     "H3_MARGIN_BOTTOM",
     "H2_MARGIN_BOTTOM",
     "H1_MARGIN_BOTTOM",
+    "HEADING_CONTENT_MARGIN_TOP",
     "P_MARGIN_TOP",
     "P_MARGIN_BOTTOM",
     "LIST_MARGIN_TOP",
