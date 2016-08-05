@@ -59,6 +59,8 @@
 
 @mixin bpk-icon-lg($icon: '') {
   @include _bpk-icon-factory($bpk-icons-lg, $bpk-spacing-base, $icon);
+
+  vertical-align: bottom;
 }
 
 /// Logo factory.
@@ -198,6 +200,7 @@
   width: $bpk-spacing-base;
   height: $bpk-spacing-base;
   background-size: $bpk-spacing-base $bpk-spacing-base;
+  vertical-align: bottom;
 }
 
 /// Extra large spinner. Modifies the bpk-spinner mixin.
@@ -214,4 +217,5 @@
   width: $bpk-spacing-xl;
   height: $bpk-spacing-xl;
   background-size: $bpk-spacing-xl $bpk-spacing-xl;
+  vertical-align: bottom;
 }

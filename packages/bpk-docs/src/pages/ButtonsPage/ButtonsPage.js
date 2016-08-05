@@ -2,11 +2,15 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import BpkLink from 'bpk-component-link'
+import BpkIcon from 'bpk-component-icon'
 import BpkButton from 'bpk-component-button'
+import BpkSpinner from 'bpk-component-spinner'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkContentContainer from 'bpk-component-content-container'
+import TOKENS from 'bpk-tokens/tokens/base.common'
+
 import PresentationBlock from './../../components/PresentationBlock'
 
 const anchors = {
@@ -24,8 +28,8 @@ const ButtonsPage = () => (
     <BpkContentContainer>
       <BpkHeading level='h1'>Buttons</BpkHeading>
       <BpkParagraph>
-        Primary, secondary and disabled on three different backgrounds.&nbsp;
-        <BpkLink href='/sassdoc/#buttons' blank>View the Sass documentation.</BpkLink>
+        Primary and secondary buttons, both with a selected state and a disabled state. Link style buttons which align
+        nicely alongside other buttons. <BpkLink href='/sassdoc/#buttons' blank>View the Sass documentation.</BpkLink>
       </BpkParagraph>
       <BpkList>
         <BpkListItem>
@@ -52,7 +56,41 @@ const ButtonsPage = () => (
         <BpkButton>Primary</BpkButton>&nbsp;
         <BpkButton href='#'>Anchor</BpkButton>&nbsp;
         <BpkButton selected>Selected</BpkButton>&nbsp;
-        <BpkButton disabled>Disabled</BpkButton>&nbsp;
+        <BpkButton disabled>Disabled</BpkButton>
+        <br />
+        <br />
+        <BpkButton>
+          Primary <BpkIcon icon='long-arrow-right' color={TOKENS.colorWhite} large />
+        </BpkButton>
+        &nbsp;
+        <BpkButton href='#'>
+          Anchor <BpkIcon icon='long-arrow-right' color={TOKENS.colorWhite} large />
+        </BpkButton>
+        &nbsp;
+        <BpkButton selected>
+          Selected <BpkIcon icon='long-arrow-right' color={TOKENS.colorWhite} large />
+        </BpkButton>
+        &nbsp;
+        <BpkButton disabled>
+          Disabled <BpkIcon icon='long-arrow-right' color={TOKENS.colorGray300} large />
+        </BpkButton>
+        <br />
+        <br />
+        <BpkButton>
+          Primary <BpkSpinner color={TOKENS.colorWhite} large />
+        </BpkButton>
+        &nbsp;
+        <BpkButton href='#'>
+          Anchor <BpkSpinner color={TOKENS.colorWhite} large />
+        </BpkButton>
+        &nbsp;
+        <BpkButton selected>
+          Selected <BpkSpinner color={TOKENS.colorWhite} large />
+        </BpkButton>
+        &nbsp;
+        <BpkButton disabled>
+          Disabled <BpkSpinner color={TOKENS.colorGray300} large />
+        </BpkButton>
       </PresentationBlock>
       <BpkHeading id={anchors.largePrimary} level='h2'>Large primary</BpkHeading>
       <PresentationBlock>
