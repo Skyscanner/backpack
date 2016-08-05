@@ -12,7 +12,7 @@ import GettingStartedPage from './../pages/GettingStartedPage'
 import BaseStylesheetPage from './../pages/BaseStylesheetPage'
 import ColorsPage from './../pages/ColorsPage'
 import SpacingPage from './../pages/SpacingPage'
-import TypeUnitsPage from './../pages/TypeUnitsPage'
+import TypeSettingPage from './../pages/TypeSettingPage'
 import LayoutPage from './../pages/LayoutPage'
 
 import TypographyPage from './../pages/TypographyPage'
@@ -34,7 +34,7 @@ const Routes = (
         <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
         <Route path={ROUTES.COLORS} component={ColorsPage} />
         <Route path={ROUTES.SPACING} component={SpacingPage} />
-        <Route path={ROUTES.TYPE_UNITS} component={TypeUnitsPage} />
+        <Route path={ROUTES.TYPE_SETTING} component={TypeSettingPage} />
         <Route path={ROUTES.LAYOUT} component={LayoutPage} />
       </Route>
       <Route path={ROUTES.ATOMS}>

@@ -4,14 +4,19 @@ import SideNavLayout from './../SideNavLayout'
 import * as routes from './../../constants/routes'
 
 const links = [
-  { route: routes.GETTING_STARTED, children: 'Getting started' },
+  {
+    category: 'Backpack basics',
+    links: [
+      { route: routes.GETTING_STARTED, children: 'Getting started' },
+      { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' }
+    ]
+  },
   {
     category: 'Bonds',
     links: [
-      { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' },
       { route: routes.COLORS, children: 'Colors' },
       { route: routes.SPACING, children: 'Spacing' },
-      { route: routes.TYPE_UNITS, children: 'Type units' },
+      { route: routes.TYPE_SETTING, children: 'Type setting' },
       { route: routes.LAYOUT, children: 'Layout' },
       { route: null, children: 'Motion' }
     ]

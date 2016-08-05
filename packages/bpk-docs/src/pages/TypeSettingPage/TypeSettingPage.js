@@ -22,10 +22,10 @@ const anchors = {
 const fontSizes = pickBy(TOKENS, (value, key) => includes(key, 'fontSize'))
 const lineHeights = pickBy(TOKENS, (value, key) => includes(key, 'lineHeight'))
 
-const TypeUnitsPage = () => (
+const TypeSettingPage = () => (
   <section>
-    <Helmet title='Type units' />
-    <BpkHeading level='h1'>Type units</BpkHeading>
+    <Helmet title='Type setting' />
+    <BpkHeading level='h1'>Type setting</BpkHeading>
     <BpkList>
       <BpkListItem>
         <BpkLink href={`#${anchors.fontFamilies}`}>Font families</BpkLink>
@@ -96,4 +96,4 @@ const TypeUnitsPage = () => (
   </section>
 )
 
-export default TypeUnitsPage
+export default TypeSettingPage
