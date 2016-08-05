@@ -27,6 +27,10 @@
       "value": "none",
       "type": "size"
     },
+    "BUTTON_BOX_SHADOW": {
+      "value": "inset 0px 0px 0px 1px #006982",
+      "type": "size"
+    },
     "BUTTON_HOVER_BACKGROUND_COLOR": {
       "value": "#006982",
       "type": "color"
@@ -36,11 +40,11 @@
       "type": "color"
     },
     "BUTTON_DISABLED_BACKGROUND_COLOR": {
-      "value": "#006982",
+      "value": "#FFFFFF",
       "type": "color"
     },
     "BUTTON_DISABLED_COLOR": {
-      "value": "#FFFFFF",
+      "value": "#006982",
       "type": "color"
     },
     "BUTTON_SELECTED_COLOR": {

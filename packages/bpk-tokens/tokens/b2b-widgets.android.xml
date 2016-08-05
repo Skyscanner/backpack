@@ -6,10 +6,11 @@
   <property name="BUTTON_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_COLOR" category="buttons">#006982ff</color>
   <property name="BUTTON_BORDER_RADIUS" category="buttons">none</property>
+  <property name="BUTTON_BOX_SHADOW" category="buttons">inset 0px 0px 0px 1px #006982</property>
   <color name="BUTTON_HOVER_BACKGROUND_COLOR" category="buttons">#006982ff</color>
   <color name="BUTTON_HOVER_COLOR" category="buttons">#ffffffff</color>
-  <color name="BUTTON_DISABLED_BACKGROUND_COLOR" category="buttons">#006982ff</color>
-  <color name="BUTTON_DISABLED_COLOR" category="buttons">#ffffffff</color>
+  <color name="BUTTON_DISABLED_BACKGROUND_COLOR" category="buttons">#ffffffff</color>
+  <color name="BUTTON_DISABLED_COLOR" category="buttons">#006982ff</color>
   <color name="BUTTON_SELECTED_COLOR" category="buttons">#ffffffff</color>
   <color name="BUTTON_SELECTED_BACKGROUND_COLOR" category="buttons">#006982ff</color>
   <property name="BUTTON_SELECTED_BACKGROUND_IMAGE" category="buttons">none</property>

@@ -11,13 +11,15 @@ $bpk-button-color: rgb(0, 105, 130) !default;
 /// @group buttons
 $bpk-button-border-radius: none !default;
 /// @group buttons
+$bpk-button-box-shadow: inset 0px 0px 0px 1px #006982 !default;
+/// @group buttons
 $bpk-button-hover-background-color: rgb(0, 105, 130) !default;
 /// @group buttons
 $bpk-button-hover-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-disabled-background-color: rgb(0, 105, 130) !default;
+$bpk-button-disabled-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
-$bpk-button-disabled-color: rgb(255, 255, 255) !default;
+$bpk-button-disabled-color: rgb(0, 105, 130) !default;
 /// @group buttons
 $bpk-button-selected-color: rgb(255, 255, 255) !default;
 /// @group buttons
