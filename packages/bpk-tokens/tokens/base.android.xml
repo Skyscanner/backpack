@@ -140,6 +140,8 @@
   <color name="BUTTON_DISABLED_BACKGROUND_COLOR" category="buttons">#dfdce3ff</color>
   <property name="BUTTON_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_COLOR" category="buttons">#ffffffff</color>
+  <color name="BUTTON_HOVER_COLOR" category="buttons">#ffffffff</color>
+  <color name="BUTTON_ACTIVE_COLOR" category="buttons">#ffffffff</color>
   <property name="BUTTON_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_HOVER_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_ACTIVE_BOX_SHADOW" category="buttons">none</property>

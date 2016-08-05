@@ -139,6 +139,8 @@ module.exports = {
   buttonDisabledBackgroundColor: "rgb(223, 220, 227)",
   buttonDisabledBackgroundImage: "none",
   buttonColor: "rgb(255, 255, 255)",
+  buttonHoverColor: "rgb(255, 255, 255)",
+  buttonActiveColor: "rgb(255, 255, 255)",
   buttonBoxShadow: "none",
   buttonHoverBoxShadow: "none",
   buttonActiveBoxShadow: "none",

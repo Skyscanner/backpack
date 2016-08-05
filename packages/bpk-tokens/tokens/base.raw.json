@@ -913,6 +913,18 @@
       "type": "color",
       "name": "BUTTON_COLOR"
     },
+    "BUTTON_HOVER_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "BUTTON_HOVER_COLOR"
+    },
+    "BUTTON_ACTIVE_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "BUTTON_ACTIVE_COLOR"
+    },
     "BUTTON_BOX_SHADOW": {
       "category": "buttons",
       "value": "none",
@@ -1271,6 +1283,8 @@
     "BUTTON_DISABLED_BACKGROUND_COLOR",
     "BUTTON_DISABLED_BACKGROUND_IMAGE",
     "BUTTON_COLOR",
+    "BUTTON_HOVER_COLOR",
+    "BUTTON_ACTIVE_COLOR",
     "BUTTON_BOX_SHADOW",
     "BUTTON_HOVER_BOX_SHADOW",
     "BUTTON_ACTIVE_BOX_SHADOW",

@@ -54,6 +54,14 @@
       "value": "{!WHITE}",
       "type": "color"
     },
+    "BUTTON_HOVER_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "BUTTON_ACTIVE_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
     "BUTTON_BOX_SHADOW": {
       "value": "none",
       "type": "box-shadow"

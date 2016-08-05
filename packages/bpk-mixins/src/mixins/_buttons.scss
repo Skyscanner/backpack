@@ -35,12 +35,14 @@
   &:hover {
     background-color: $bpk-button-hover-background-color;
     background-image: $bpk-button-hover-background-image;
+    color: $bpk-button-hover-color;
     box-shadow: $bpk-button-hover-box-shadow;
   }
 
   &:active {
     background-color: $bpk-button-active-background-color;
     background-image: $bpk-button-active-background-image;
+    color: $bpk-button-active-color;
     box-shadow: $bpk-button-active-box-shadow;
   }
 
