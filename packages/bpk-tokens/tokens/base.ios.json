@@ -830,6 +830,24 @@
     },
     {
       "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonHoverBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonActiveBoxShadow"
+    },
+    {
+      "category": "buttons",
       "value": "rgb(137, 130, 148)",
       "type": "color",
       "name": "buttonDisabledColor"
