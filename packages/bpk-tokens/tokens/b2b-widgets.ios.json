@@ -2,7 +2,19 @@
   "properties": [
     {
       "category": "buttons",
-      "value": "rgb(255, 0, 0)",
+      "value": "18px",
+      "type": "size",
+      "name": "buttonPaddingY"
+    },
+    {
+      "category": "buttons",
+      "value": "20px",
+      "type": "size",
+      "name": "buttonPaddingX"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "buttonBackgroundColor"
     },
@@ -14,9 +26,75 @@
     },
     {
       "category": "buttons",
+      "value": "rgb(0, 105, 130)",
+      "type": "color",
+      "name": "buttonColor"
+    },
+    {
+      "category": "buttons",
       "value": "none",
       "type": "size",
       "name": "buttonBorderRadius"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 105, 130)",
+      "type": "color",
+      "name": "buttonHoverBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "buttonHoverColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 105, 130)",
+      "type": "color",
+      "name": "buttonDisabledBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "buttonDisabledColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "buttonSelectedColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 105, 130)",
+      "type": "color",
+      "name": "buttonSelectedBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonSelectedBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "buttonSelectedHoverColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 105, 130)",
+      "type": "color",
+      "name": "buttonSelectedHoverBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 105, 130)",
+      "type": "color",
+      "name": "buttonActiveBackgroundColor"
     }
   ]
 }

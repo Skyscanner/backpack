@@ -1,6 +1,32 @@
 /// @group buttons
-$bpk-button-background-color: rgb(255, 0, 0) !default;
+$bpk-button-padding-y: 18px !default;
+/// @group buttons
+$bpk-button-padding-x: 20px !default;
+/// @group buttons
+$bpk-button-background-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-background-image: none !default;
 /// @group buttons
+$bpk-button-color: rgb(0, 105, 130) !default;
+/// @group buttons
 $bpk-button-border-radius: none !default;
+/// @group buttons
+$bpk-button-hover-background-color: rgb(0, 105, 130) !default;
+/// @group buttons
+$bpk-button-hover-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-disabled-background-color: rgb(0, 105, 130) !default;
+/// @group buttons
+$bpk-button-disabled-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-selected-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-selected-background-color: rgb(0, 105, 130) !default;
+/// @group buttons
+$bpk-button-selected-background-image: none !default;
+/// @group buttons
+$bpk-button-selected-hover-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-selected-hover-background-color: rgb(0, 105, 130) !default;
+/// @group buttons
+$bpk-button-active-background-color: rgb(0, 105, 130) !default;
