@@ -1,0 +1,28 @@
+{
+  "aliases": {},
+  "props": {
+    "BUTTON_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 0, 0)",
+      "type": "color",
+      "name": "BUTTON_BACKGROUND_COLOR"
+    },
+    "BUTTON_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "BUTTON_BACKGROUND_IMAGE"
+    },
+    "BUTTON_BORDER_RADIUS": {
+      "category": "buttons",
+      "value": "none",
+      "type": "size",
+      "name": "BUTTON_BORDER_RADIUS"
+    }
+  },
+  "propKeys": [
+    "BUTTON_BACKGROUND_COLOR",
+    "BUTTON_BACKGROUND_IMAGE",
+    "BUTTON_BORDER_RADIUS"
+  ]
+}

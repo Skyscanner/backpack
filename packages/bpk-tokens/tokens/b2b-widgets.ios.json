@@ -1,0 +1,22 @@
+{
+  "properties": [
+    {
+      "category": "buttons",
+      "value": "rgb(255, 0, 0)",
+      "type": "color",
+      "name": "buttonBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "size",
+      "name": "buttonBorderRadius"
+    }
+  ]
+}

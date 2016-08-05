@@ -1,0 +1,5 @@
+{
+  "imports": [
+    "./b2b-widgets/buttons.json"
+  ]
+}

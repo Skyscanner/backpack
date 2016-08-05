@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="BUTTON_BACKGROUND_COLOR" category="buttons">#ff0000ff</color>
+  <property name="BUTTON_BACKGROUND_IMAGE" category="buttons">none</property>
+  <property name="BUTTON_BORDER_RADIUS" category="buttons">none</property>
+</resources>
