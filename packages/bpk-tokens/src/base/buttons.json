@@ -74,6 +74,10 @@
       "value": "none",
       "type": "box-shadow"
     },
+    "BUTTON_DISABLED_BOX_SHADOW": {
+      "value": "none",
+      "type": "box-shadow"
+    },
     "BUTTON_DISABLED_COLOR": {
       "value": "{!GRAY_300}",
       "type": "color"
