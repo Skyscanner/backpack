@@ -2,11 +2,15 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import BpkLink from 'bpk-component-link'
+import BpkIcon from 'bpk-component-icon'
 import BpkButton from 'bpk-component-button'
+import BpkSpinner from 'bpk-component-spinner'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkContentContainer from 'bpk-component-content-container'
+import TOKENS from 'bpk-tokens/tokens/base.common'
+
 import PresentationBlock from './../../components/PresentationBlock'
 
 const anchors = {
@@ -14,6 +18,7 @@ const anchors = {
   largePrimary: 'buttons-page-large-primary',
   secondary: 'buttons-page-secondary',
   largeSecondary: 'buttons-page-large-secondary',
+  iconsAndSpinners: 'buttons-page-icons-and-spinners',
   link: 'buttons-page-link',
   largeLink: 'buttons-page-large-link'
 }
@@ -24,8 +29,8 @@ const ButtonsPage = () => (
     <BpkContentContainer>
       <BpkHeading level='h1'>Buttons</BpkHeading>
       <BpkParagraph>
-        Primary, secondary and disabled on three different backgrounds.&nbsp;
-        <BpkLink href='/sassdoc/#buttons' blank>View the Sass documentation.</BpkLink>
+        Primary and secondary buttons, both with a selected state and a disabled state. Link style buttons which align
+        nicely alongside other buttons. <BpkLink href='/sassdoc/#buttons' blank>View the Sass documentation.</BpkLink>
       </BpkParagraph>
       <BpkList>
         <BpkListItem>
@@ -41,6 +46,9 @@ const ButtonsPage = () => (
           <BpkLink href={`#${anchors.largeSecondary}`}>Large secondary</BpkLink>
         </BpkListItem>
         <BpkListItem>
+          <BpkLink href={`#${anchors.iconsAndSpinners}`}>Icons & spinners</BpkLink>
+        </BpkListItem>
+        <BpkListItem>
           <BpkLink href={`#${anchors.link}`}>Link</BpkLink>
         </BpkListItem>
         <BpkListItem>
@@ -52,7 +60,7 @@ const ButtonsPage = () => (
         <BpkButton>Primary</BpkButton>&nbsp;
         <BpkButton href='#'>Anchor</BpkButton>&nbsp;
         <BpkButton selected>Selected</BpkButton>&nbsp;
-        <BpkButton disabled>Disabled</BpkButton>&nbsp;
+        <BpkButton disabled>Disabled</BpkButton>
       </PresentationBlock>
       <BpkHeading id={anchors.largePrimary} level='h2'>Large primary</BpkHeading>
       <PresentationBlock>
@@ -74,6 +82,16 @@ const ButtonsPage = () => (
         <BpkButton href='#' large secondary>Anchor</BpkButton>&nbsp;
         <BpkButton large secondary selected>Selected</BpkButton>&nbsp;
         <BpkButton large secondary disabled>Disabled</BpkButton>&nbsp;
+      </PresentationBlock>
+      <BpkHeading id={anchors.iconsAndSpinners} level='h2'>Icons & spinners</BpkHeading>
+      <PresentationBlock>
+        <BpkButton>Primary <BpkIcon icon='long-arrow-right-alt' color={TOKENS.colorWhite} alignToButton /></BpkButton>&nbsp;
+        <BpkButton>Primary <BpkSpinner color={TOKENS.colorWhite} alignToButton /></BpkButton>&nbsp;
+        <BpkButton large>
+          Primary <BpkIcon large icon='long-arrow-right-alt' color={TOKENS.colorWhite} alignToButton />
+        </BpkButton>
+        &nbsp;
+        <BpkButton large>Primary <BpkSpinner large color={TOKENS.colorWhite} alignToButton /></BpkButton>
       </PresentationBlock>
       <BpkHeading id={anchors.link} level='h2'>Link</BpkHeading>
       <PresentationBlock>

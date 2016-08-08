@@ -8,8 +8,18 @@ describe('BpkIcon', () => {
     expect(tree).toMatchSnapshot()
   })
 
+  it('should render correctly with a "alignToButton" attribute', () => {
+    const tree = renderer.create(<BpkIcon icon='accessibility' alignToButton />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
   it('should render correctly with a "large" attribute', () => {
     const tree = renderer.create(<BpkIcon icon='accessibility' large />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should render correctly with a "large" and a "alignToButton" attribute', () => {
+    const tree = renderer.create(<BpkIcon icon='accessibility' large alignToButton />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

@@ -10,4 +10,12 @@
   &--extra-large {
     @include bpk-spinner--xl();
   }
+
+  &--align-to-button {
+    @include bpk-spinner--align-to-button();
+  }
+
+  &--align-to-large-button {
+    @include bpk-spinner--align-to-large-button();
+  }
 }

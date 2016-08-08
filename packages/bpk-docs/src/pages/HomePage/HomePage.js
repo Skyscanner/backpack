@@ -2,10 +2,12 @@ import React, { PropTypes } from 'react'
 import Helmet from 'react-helmet'
 import { PropTypes as RouterPropTypes } from 'react-router'
 
+import BpkIcon from 'bpk-component-icon'
 import BpkButton from 'bpk-component-button'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
 import BpkRouterLink from 'bpk-component-router-link'
+import TOKENS from 'bpk-tokens/tokens/base.common'
 
 import './home-page.scss'
 import * as ROUTES from './../../constants/routes'
@@ -33,7 +35,9 @@ class HomePage extends React.Component {
               A suite of tools to enable you to design and build products which look and feel consistent with the
               Skyscanner product family.
             </BpkHeading>
-            <BpkButton large href={ROUTES.GETTING_STARTED} onClick={this.onGettingStartedClick}>Get started</BpkButton>
+            <BpkButton large href={ROUTES.GETTING_STARTED} onClick={this.onGettingStartedClick}>
+              Get started <BpkIcon icon='long-arrow-right-alt' color={TOKENS.colorWhite} large alignToButton />
+            </BpkButton>
           </div>
         </div>
         <div className='bpkdocs-home-page__content-container'>

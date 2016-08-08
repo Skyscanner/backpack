@@ -8,9 +8,29 @@ exports[`BpkSpinner should render correctly 1`] = `
   } />
 `;
 
+exports[`BpkSpinner should render correctly with a "alignToButton" attribute 1`] = `
+<span
+  className="bpk-spinner bpk-spinner--align-to-button"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "FILE_MOCK_CONTENTS"
+    }
+  } />
+`;
+
 exports[`BpkSpinner should render correctly with a "extraLarge" attribute 1`] = `
 <span
   className="bpk-spinner bpk-spinner--extra-large"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "FILE_MOCK_CONTENTS"
+    }
+  } />
+`;
+
+exports[`BpkSpinner should render correctly with a "large" and a "alignToButton" attribute 1`] = `
+<span
+  className="bpk-spinner bpk-spinner--large bpk-spinner--align-to-large-button 3"
   dangerouslySetInnerHTML={
     Object {
       "__html": "FILE_MOCK_CONTENTS"

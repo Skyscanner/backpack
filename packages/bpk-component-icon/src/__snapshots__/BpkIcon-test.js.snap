@@ -8,6 +8,26 @@ exports[`BpkIcon should render correctly 1`] = `
   } />
 `;
 
+exports[`BpkIcon should render correctly with a "alignToButton" attribute 1`] = `
+<span
+  className="bpk-icon-sm bpk-icon-sm--align-to-button"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "FILE_MOCK_CONTENTS"
+    }
+  } />
+`;
+
+exports[`BpkIcon should render correctly with a "large" and a "alignToButton" attribute 1`] = `
+<span
+  className="bpk-icon-lg bpk-icon-lg--align-to-button"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "FILE_MOCK_CONTENTS"
+    }
+  } />
+`;
+
 exports[`BpkIcon should render correctly with a "large" attribute 1`] = `
 <span
   className="bpk-icon-lg"
