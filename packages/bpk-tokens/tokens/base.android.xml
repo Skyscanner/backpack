@@ -163,6 +163,9 @@
   <color name="BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR" category="buttons">#dfdce3ff</color>
   <property name="BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_SECONDARY_COLOR" category="buttons">#00b2d6ff</color>
+  <color name="BUTTON_SECONDARY_HOVER_COLOR" category="buttons">#00b2d6ff</color>
+  <color name="BUTTON_SECONDARY_ACTIVE_COLOR" category="buttons">#00b2d6ff</color>
+  <color name="BUTTON_SECONDARY_DISABLED_COLOR" category="buttons">#898294ff</color>
   <property name="BUTTON_SECONDARY_BOX_SHADOW" category="buttons">0 0 0 2px #dfdce3 inset</property>
   <property name="BUTTON_SECONDARY_HOVER_BOX_SHADOW" category="buttons">0 0 0 2px #00b2d6 inset</property>
   <property name="BUTTON_SECONDARY_ACTIVE_BOX_SHADOW" category="buttons">0 0 0 3px #00b2d6 inset</property>

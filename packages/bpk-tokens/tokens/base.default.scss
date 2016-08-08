@@ -325,6 +325,12 @@ $bpk-button-secondary-disabled-background-image: none !default;
 /// @group buttons
 $bpk-button-secondary-color: rgb(0, 178, 214) !default;
 /// @group buttons
+$bpk-button-secondary-hover-color: rgb(0, 178, 214) !default;
+/// @group buttons
+$bpk-button-secondary-active-color: rgb(0, 178, 214) !default;
+/// @group buttons
+$bpk-button-secondary-disabled-color: rgb(137, 130, 148) !default;
+/// @group buttons
 $bpk-button-secondary-box-shadow: 0 0 0 2px #dfdce3 inset !default;
 /// @group buttons
 $bpk-button-secondary-hover-box-shadow: 0 0 0 2px #00b2d6 inset !default;

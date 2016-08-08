@@ -980,6 +980,24 @@
     },
     {
       "category": "buttons",
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      "name": "buttonSecondaryHoverColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      "name": "buttonSecondaryActiveColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(137, 130, 148)",
+      "type": "color",
+      "name": "buttonSecondaryDisabledColor"
+    },
+    {
+      "category": "buttons",
       "value": "0 0 0 2px #dfdce3 inset",
       "type": "box-shadow",
       "name": "buttonSecondaryBoxShadow"
