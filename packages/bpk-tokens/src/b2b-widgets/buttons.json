@@ -39,13 +39,21 @@
       "value": "#FFFFFF",
       "type": "color"
     },
+    "BUTTON_HOVER_BOX_SHADOW": {
+      "value": "inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33)",
+      "type": "size"
+    },
     "BUTTON_DISABLED_BACKGROUND_COLOR": {
       "value": "#FFFFFF",
       "type": "color"
     },
     "BUTTON_DISABLED_COLOR": {
-      "value": "#006982",
+      "value": "#00698255",
       "type": "color"
+    },
+    "BUTTON_DISABLED_BOX_SHADOW": {
+      "value": "inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33)",
+      "type": "size"
     },
     "BUTTON_SELECTED_COLOR": {
       "value": "#FFFFFF",

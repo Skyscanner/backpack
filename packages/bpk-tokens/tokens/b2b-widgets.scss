@@ -17,9 +17,13 @@ $bpk-button-hover-background-color: rgb(0, 105, 130);
 /// @group buttons
 $bpk-button-hover-color: rgb(255, 255, 255);
 /// @group buttons
+$bpk-button-hover-box-shadow: inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33);
+/// @group buttons
 $bpk-button-disabled-background-color: rgb(255, 255, 255);
 /// @group buttons
-$bpk-button-disabled-color: rgb(0, 105, 130);
+$bpk-button-disabled-color: rgba(0, 105, 130, 0.33);
+/// @group buttons
+$bpk-button-disabled-box-shadow: inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33);
 /// @group buttons
 $bpk-button-selected-color: rgb(255, 255, 255);
 /// @group buttons

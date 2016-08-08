@@ -56,15 +56,27 @@
     },
     {
       "category": "buttons",
+      "value": "inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33)",
+      "type": "size",
+      "name": "buttonHoverBoxShadow"
+    },
+    {
+      "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "buttonDisabledBackgroundColor"
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 105, 130)",
+      "value": "rgba(0, 105, 130, 0.33)",
       "type": "color",
       "name": "buttonDisabledColor"
+    },
+    {
+      "category": "buttons",
+      "value": "inset 0px 0px 0px 1px rgba(0, 105, 130, 0.33)",
+      "type": "size",
+      "name": "buttonDisabledBoxShadow"
     },
     {
       "category": "buttons",
