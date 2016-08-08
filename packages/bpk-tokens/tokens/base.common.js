@@ -144,6 +144,7 @@ module.exports = {
   buttonBoxShadow: "none",
   buttonHoverBoxShadow: "none",
   buttonActiveBoxShadow: "none",
+  buttonDisabledBoxShadow: "none",
   buttonDisabledColor: "rgb(137, 130, 148)",
   buttonFontSize: "1rem",
   buttonFontWeight: "700",

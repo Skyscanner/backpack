@@ -872,6 +872,12 @@
     },
     {
       "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonDisabledBoxShadow"
+    },
+    {
+      "category": "buttons",
       "value": "rgb(137, 130, 148)",
       "type": "color",
       "name": "buttonDisabledColor"
