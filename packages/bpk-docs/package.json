@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -16,21 +16,21 @@
     "react": "^15.0.0"
   },
   "devDependencies": {
-    "bpk-component-button": "^1.0.1",
-    "bpk-component-content-container": "^0.0.0",
-    "bpk-component-grid-toggle": "^0.0.0",
-    "bpk-component-heading": "^1.0.1",
-    "bpk-component-icon": "^0.1.1",
-    "bpk-component-link": "^0.1.0",
-    "bpk-component-list": "^0.0.14",
-    "bpk-component-logo": "^0.1.1",
-    "bpk-component-paragraph": "^0.1.1",
-    "bpk-component-router-link": "^0.1.0",
-    "bpk-component-spinner": "^0.1.1",
-    "bpk-component-table": "^0.0.14",
-    "bpk-mixins": "^1.1.0",
-    "bpk-stylesheets": "^0.0.14",
-    "bpk-svgs": "^0.0.3",
-    "bpk-tokens": "^8.1.0"
+    "bpk-component-button": "^1.0.2",
+    "bpk-component-content-container": "^0.0.1",
+    "bpk-component-grid-toggle": "^0.0.1",
+    "bpk-component-heading": "^1.0.2",
+    "bpk-component-icon": "^0.1.2",
+    "bpk-component-link": "^0.1.1",
+    "bpk-component-list": "^0.0.15",
+    "bpk-component-logo": "^0.1.2",
+    "bpk-component-paragraph": "^0.1.2",
+    "bpk-component-router-link": "^0.1.1",
+    "bpk-component-spinner": "^0.1.2",
+    "bpk-component-table": "^0.0.15",
+    "bpk-mixins": "^1.1.1",
+    "bpk-stylesheets": "^0.0.15",
+    "bpk-svgs": "^0.0.4",
+    "bpk-tokens": "^8.1.1"
   }
 }

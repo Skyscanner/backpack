@@ -146,6 +146,18 @@
       "value": "{!BLUE_500}",
       "type": "color"
     },
+    "BUTTON_SECONDARY_HOVER_COLOR": {
+      "value": "{!BLUE_500}",
+      "type": "color"
+    },
+    "BUTTON_SECONDARY_ACTIVE_COLOR": {
+      "value": "{!BLUE_500}",
+      "type": "color"
+    },
+    "BUTTON_SECONDARY_DISABLED_COLOR": {
+      "value": "{!GRAY_300}",
+      "type": "color"
+    },
     "BUTTON_SECONDARY_BOX_SHADOW": {
       "value": "0 0 0 2px {!GRAY_100} inset",
       "type": "box-shadow"

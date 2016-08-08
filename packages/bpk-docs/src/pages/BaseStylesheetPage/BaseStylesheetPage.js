@@ -10,7 +10,6 @@ import BpkContentContainer from 'bpk-component-content-container'
 import BpkCode from './../../components/BpkCode'
 
 const html5BoilerplateHelpersLink = 'https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#common-helpers'
-const baseStylesheetBlogPostLink = 'https://skyspace.sharepoint.com/sites/development/blog/Lists/Posts/Post.aspx?ID=96'
 
 const BaseStylesheetPage = () => (
   <section>
@@ -20,13 +19,6 @@ const BaseStylesheetPage = () => (
       <BpkParagraph>
         All components are built on top of a super lightweight base stylesheet. Ensure you include this on the page when
         consuming any backpack components.
-      </BpkParagraph>
-      <BpkParagraph>
-        <strong>
-          Note: The scaffolding still uses a different, older base stylesheet. Please refer to
-          this <BpkLink href={baseStylesheetBlogPostLink} blank>blog post</BpkLink> for more info and
-          this <BpkLink href='https://gojira.skyscanner.net/browse/BPK-72' blank>JIRA card</BpkLink> for updates.
-        </strong>
       </BpkParagraph>
       <BpkHeading level='h3'>What's in it?</BpkHeading>
       <BpkList>
@@ -53,7 +45,7 @@ const BaseStylesheetPage = () => (
           &nbsp;<BpkCode syntax='css' inline>.visuallyhidden.focusable</BpkCode>,
           &nbsp;<BpkCode syntax='css' inline>.invisible</BpkCode> and <BpkCode syntax='css' inline>.clearfix</BpkCode>.
         </BpkListItem>
-        <BpkListItem>That's it so far...</BpkListItem>
+        <BpkListItem>That's it!</BpkListItem>
       </BpkList>
       <BpkHeading level='h3'>Usage</BpkHeading>
       <BpkParagraph>
