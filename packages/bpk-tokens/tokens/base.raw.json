@@ -943,6 +943,12 @@
       "type": "box-shadow",
       "name": "BUTTON_ACTIVE_BOX_SHADOW"
     },
+    "BUTTON_DISABLED_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "BUTTON_DISABLED_BOX_SHADOW"
+    },
     "BUTTON_DISABLED_COLOR": {
       "category": "buttons",
       "value": "rgb(137, 130, 148)",
@@ -1306,6 +1312,7 @@
     "BUTTON_BOX_SHADOW",
     "BUTTON_HOVER_BOX_SHADOW",
     "BUTTON_ACTIVE_BOX_SHADOW",
+    "BUTTON_DISABLED_BOX_SHADOW",
     "BUTTON_DISABLED_COLOR",
     "BUTTON_FONT_SIZE",
     "BUTTON_FONT_WEIGHT",

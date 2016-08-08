@@ -205,7 +205,6 @@ figure {
  */
 hr {
   -webkit-box-sizing: content-box;
-     -moz-box-sizing: content-box;
           box-sizing: content-box;
   /* 1 */
   height: 0;
@@ -300,7 +299,6 @@ fieldset {
  */
 legend {
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
           box-sizing: border-box;
   /* 1 */
   color: inherit;
@@ -327,7 +325,6 @@ textarea {
 [type="checkbox"],
 [type="radio"] {
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
           box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -387,16 +384,13 @@ textarea {
 html {
   font-size: 100%;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
           box-sizing: border-box; }
 
 * {
   -webkit-box-sizing: inherit;
-     -moz-box-sizing: inherit;
           box-sizing: inherit; }
   *::before, *::after {
     -webkit-box-sizing: inherit;
-       -moz-box-sizing: inherit;
             box-sizing: inherit; }
 
 /* stylelint-disable selector-class-pattern  */

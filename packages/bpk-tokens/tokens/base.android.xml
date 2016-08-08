@@ -145,6 +145,7 @@
   <property name="BUTTON_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_HOVER_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_ACTIVE_BOX_SHADOW" category="buttons">none</property>
+  <property name="BUTTON_DISABLED_BOX_SHADOW" category="buttons">none</property>
   <color name="BUTTON_DISABLED_COLOR" category="buttons">#898294ff</color>
   <property name="BUTTON_FONT_SIZE" category="buttons">16</property>
   <property name="BUTTON_FONT_WEIGHT" category="buttons">700</property>
