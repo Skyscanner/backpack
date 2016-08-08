@@ -1,4 +1,3 @@
-import beautify from 'js-beautify'
 import React, { PropTypes } from 'react'
 import ReactDOMServer from 'react-dom/server'
 
@@ -11,20 +10,16 @@ const childrenToString = (children) => {
   ).join('')
 }
 
-const prettyPrint = (code, syntax) => beautify[ syntax ](code, { indent_size: 2 })
-
-const Code = ({ children, syntax, inline }) => {
+const Code = ({ children, inline }) => {
   const codeString = childrenToString(children)
 
   if (inline) {
     return <code className='bpkdocs-code__code bpkdocs-code__code--inline'>{codeString}</code>
   }
 
-  const prettyCodeString = prettyPrint(codeString, syntax)
-
   return (
     <pre className='bpkdocs-code__pre'>
-      <code className='bpkdocs-code__code bpkdocs-code__code--block'>{prettyCodeString}</code>
+      <code className='bpkdocs-code__code bpkdocs-code__code--block'>{codeString}</code>
     </pre>
   )
 }
@@ -34,13 +29,11 @@ Code.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]).isRequired,
-  inline: PropTypes.bool,
-  syntax: PropTypes.oneOf([ 'html', 'css', 'js' ])
+  inline: PropTypes.bool
 }
 
 Code.defaultProps = {
-  inline: false,
-  syntax: 'html'
+  inline: false
 }
 
 export default Code

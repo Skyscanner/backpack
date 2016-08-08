@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import BpkHeading from 'bpk-component-heading'
 import BpkContentContainer from 'bpk-component-content-container'
 
-const DownloadsPage = () => (
+const GettingStartedPage = () => (
   <section>
     <Helmet title='Getting started' />
     <BpkContentContainer>
@@ -13,4 +13,4 @@ const DownloadsPage = () => (
   </section>
 )
 
-export default DownloadsPage
+export default GettingStartedPage
