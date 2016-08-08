@@ -2,7 +2,7 @@ import beautify from 'js-beautify'
 import React, { PropTypes } from 'react'
 import ReactDOMServer from 'react-dom/server'
 
-import './bpk-code.scss'
+import './code.scss'
 
 const childrenToString = (children) => {
   return React.Children.map(children, (child) => React.isValidElement(child)
@@ -13,23 +13,23 @@ const childrenToString = (children) => {
 
 const prettyPrint = (code, syntax) => beautify[ syntax ](code, { indent_size: 2 })
 
-const BpkCode = ({ children, syntax, inline }) => {
+const Code = ({ children, syntax, inline }) => {
   const codeString = childrenToString(children)
 
   if (inline) {
-    return <code className='bpk-code__code bpk-code__code--inline'>{codeString}</code>
+    return <code className='bpkdocs-code__code bpkdocs-code__code--inline'>{codeString}</code>
   }
 
   const prettyCodeString = prettyPrint(codeString, syntax)
 
   return (
-    <pre className='bpk-code__pre'>
-      <code className='bpk-code__code bpk-code__code--block'>{prettyCodeString}</code>
+    <pre className='bpkdocs-code__pre'>
+      <code className='bpkdocs-code__code bpkdocs-code__code--block'>{prettyCodeString}</code>
     </pre>
   )
 }
 
-BpkCode.propTypes = {
+Code.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
@@ -38,9 +38,9 @@ BpkCode.propTypes = {
   syntax: PropTypes.oneOf([ 'html', 'css', 'js' ])
 }
 
-BpkCode.defaultProps = {
+Code.defaultProps = {
   inline: false,
   syntax: 'html'
 }
 
-export default BpkCode
+export default Code
