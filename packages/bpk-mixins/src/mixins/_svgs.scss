@@ -1,6 +1,8 @@
 @import '~bpk-svgs/index';
 @import '../bonds';
 
+$_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
+
 @keyframes bpk-keyframe-spin {
   100% {
     transform: rotate(1turn);
@@ -35,6 +37,22 @@
   }
 }
 
+/// Button alignment utility.
+///
+/// @access private
+
+@mixin _bpk-svg--align-to-button() {
+  vertical-align: text-bottom;
+}
+
+/// Large button alignment utility.
+///
+/// @access private
+
+@mixin _bpk-svg--align-to-large-button() {
+  vertical-align: -($bpk-one-pixel-rem * 3);
+}
+
 /// Small icon.
 ///
 /// @param {key} $icon [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
@@ -45,7 +63,9 @@
 ///   }
 
 @mixin bpk-icon-sm($icon: '') {
-  @include _bpk-icon-factory($bpk-icons-sm, $bpk-spacing-sm, $icon);
+  @include _bpk-icon-factory($bpk-icons-sm, $_small-svg-size, $icon);
+
+  padding: $bpk-one-pixel-rem;
 }
 
 /// Large icon.
@@ -59,8 +79,34 @@
 
 @mixin bpk-icon-lg($icon: '') {
   @include _bpk-icon-factory($bpk-icons-lg, $bpk-spacing-base, $icon);
+}
 
-  vertical-align: bottom;
+/// Align to button. Modifies the bpk-icon-sm mixin.
+///
+/// @require {mixin} bpk-icon-sm
+///
+/// @example scss
+///   .selector {
+///     @include bpk-icon-sm(flight-gray-500);
+///     @include bpk-icon-sm--align-to-button();
+///   }
+
+@mixin bpk-icon-sm--align-to-button() {
+  @include _bpk-svg--align-to-button();
+}
+
+/// Align to large button. Modifies the bpk-icon-lg mixin.
+///
+/// @require {mixin} bpk-icon-lg
+///
+/// @example scss
+///   .selector {
+///     @include bpk-icon-lg(flight-gray-500);
+///     @include bpk-icon-lg--align-to-large-button();
+///   }
+
+@mixin bpk-icon-lg--align-to-large-button() {
+  @include _bpk-svg--align-to-large-button();
 }
 
 /// Logo factory.
@@ -171,10 +217,11 @@
 @mixin bpk-spinner($spinner: '') {
   content: '';
   display: inline-block;
-  width: $bpk-spacing-sm;
-  height: $bpk-spacing-sm;
+  width: $_small-svg-size;
+  height: $_small-svg-size;
+  padding: $bpk-one-pixel-rem;
   animation: bpk-keyframe-spin 600ms linear infinite;
-  background-size: $bpk-spacing-sm $bpk-spacing-sm;
+  background-size: $_small-svg-size $_small-svg-size;
 
   @if $spinner != '' {
     background: url(map-get($bpk-spinners, $spinner)) no-repeat;
@@ -199,8 +246,8 @@
 @mixin bpk-spinner--lg() {
   width: $bpk-spacing-base;
   height: $bpk-spacing-base;
+  padding: 0;
   background-size: $bpk-spacing-base $bpk-spacing-base;
-  vertical-align: bottom;
 }
 
 /// Extra large spinner. Modifies the bpk-spinner mixin.
@@ -216,6 +263,35 @@
 @mixin bpk-spinner--xl() {
   width: $bpk-spacing-xl;
   height: $bpk-spacing-xl;
+  padding: 0;
   background-size: $bpk-spacing-xl $bpk-spacing-xl;
-  vertical-align: bottom;
 }
+
+/// Align spinner to button. Modifies the bpk-spinner mixin.
+///
+/// @require {mixin} bpk-spinner
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner();
+///     @include bpk-icon--align-to-button();
+///   }
+
+@mixin bpk-spinner--align-to-button() {
+  @include _bpk-svg--align-to-button();
+}
+
+/// Align spinner to large button. Modifies the bpk-spinner mixin.
+///
+/// @require {mixin} bpk-spinner
+///
+/// @example scss
+///   .selector {
+///     @include bpk-spinner();
+///     @include bpk-spinner--align-to-large-button();
+///   }
+
+@mixin bpk-spinner--align-to-large-button() {
+  @include _bpk-svg--align-to-large-button();
+}
+

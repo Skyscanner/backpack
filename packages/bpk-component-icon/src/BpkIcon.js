@@ -16,21 +16,25 @@ const getSvg = (icon, large, color) => {
     .replace(/^<svg/, `<svg fill="${color}"`)
 }
 
-const BpkIcon = ({ icon, large, color }) => {
-  const className = large ? 'bpk-icon-lg' : 'bpk-icon-sm'
+const BpkIcon = ({ icon, large, color, alignToButton }) => {
   const __html = getSvg(icon, large, color)
+  const classNames = [ large ? 'bpk-icon-lg' : 'bpk-icon-sm' ]
 
-  return <span className={className} dangerouslySetInnerHTML={{ __html }} />
+  alignToButton ? classNames.push(large ? 'bpk-icon-lg--align-to-button' : 'bpk-icon-sm--align-to-button') : null
+
+  return <span className={classNames.join(' ')} dangerouslySetInnerHTML={{ __html }} />
 }
 
 BpkIcon.propTypes = {
   icon: PropTypes.string.isRequired,
   large: PropTypes.bool,
-  color: PropTypes.string
+  color: PropTypes.string,
+  alignToButton: PropTypes.bool
 }
 
 BpkIcon.defaultProps = {
-  color: TOKENS.colorGray500
+  color: TOKENS.colorGray500,
+  alignToButton: false
 }
 
 export default BpkIcon

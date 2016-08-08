@@ -18,6 +18,7 @@ const anchors = {
   largePrimary: 'buttons-page-large-primary',
   secondary: 'buttons-page-secondary',
   largeSecondary: 'buttons-page-large-secondary',
+  iconsAndSpinners: 'buttons-page-icons-and-spinners',
   link: 'buttons-page-link',
   largeLink: 'buttons-page-large-link'
 }
@@ -45,6 +46,9 @@ const ButtonsPage = () => (
           <BpkLink href={`#${anchors.largeSecondary}`}>Large secondary</BpkLink>
         </BpkListItem>
         <BpkListItem>
+          <BpkLink href={`#${anchors.iconsAndSpinners}`}>Icons & spinners</BpkLink>
+        </BpkListItem>
+        <BpkListItem>
           <BpkLink href={`#${anchors.link}`}>Link</BpkLink>
         </BpkListItem>
         <BpkListItem>
@@ -57,40 +61,6 @@ const ButtonsPage = () => (
         <BpkButton href='#'>Anchor</BpkButton>&nbsp;
         <BpkButton selected>Selected</BpkButton>&nbsp;
         <BpkButton disabled>Disabled</BpkButton>
-        <br />
-        <br />
-        <BpkButton>
-          Primary <BpkIcon icon='long-arrow-right' color={TOKENS.colorWhite} large />
-        </BpkButton>
-        &nbsp;
-        <BpkButton href='#'>
-          Anchor <BpkIcon icon='long-arrow-right' color={TOKENS.colorWhite} large />
-        </BpkButton>
-        &nbsp;
-        <BpkButton selected>
-          Selected <BpkIcon icon='long-arrow-right' color={TOKENS.colorWhite} large />
-        </BpkButton>
-        &nbsp;
-        <BpkButton disabled>
-          Disabled <BpkIcon icon='long-arrow-right' color={TOKENS.colorGray300} large />
-        </BpkButton>
-        <br />
-        <br />
-        <BpkButton>
-          Primary <BpkSpinner color={TOKENS.colorWhite} large />
-        </BpkButton>
-        &nbsp;
-        <BpkButton href='#'>
-          Anchor <BpkSpinner color={TOKENS.colorWhite} large />
-        </BpkButton>
-        &nbsp;
-        <BpkButton selected>
-          Selected <BpkSpinner color={TOKENS.colorWhite} large />
-        </BpkButton>
-        &nbsp;
-        <BpkButton disabled>
-          Disabled <BpkSpinner color={TOKENS.colorGray300} large />
-        </BpkButton>
       </PresentationBlock>
       <BpkHeading id={anchors.largePrimary} level='h2'>Large primary</BpkHeading>
       <PresentationBlock>
@@ -112,6 +82,16 @@ const ButtonsPage = () => (
         <BpkButton href='#' large secondary>Anchor</BpkButton>&nbsp;
         <BpkButton large secondary selected>Selected</BpkButton>&nbsp;
         <BpkButton large secondary disabled>Disabled</BpkButton>&nbsp;
+      </PresentationBlock>
+      <BpkHeading id={anchors.iconsAndSpinners} level='h2'>Icons & spinners</BpkHeading>
+      <PresentationBlock>
+        <BpkButton>Primary <BpkIcon icon='long-arrow-right-alt' color={TOKENS.colorWhite} alignToButton /></BpkButton>&nbsp;
+        <BpkButton>Primary <BpkSpinner color={TOKENS.colorWhite} alignToButton /></BpkButton>&nbsp;
+        <BpkButton large>
+          Primary <BpkIcon large icon='long-arrow-right-alt' color={TOKENS.colorWhite} alignToButton />
+        </BpkButton>
+        &nbsp;
+        <BpkButton large>Primary <BpkSpinner large color={TOKENS.colorWhite} alignToButton /></BpkButton>
       </PresentationBlock>
       <BpkHeading id={anchors.link} level='h2'>Link</BpkHeading>
       <PresentationBlock>
