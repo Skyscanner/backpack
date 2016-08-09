@@ -5,6 +5,7 @@ export const DOWNLOADS = '/downloads'
 
 export const GETTING_STARTED = '/docs/getting-started'
 export const BASE_STYLESHEET = '/docs/base-stylesheet'
+export const CONTRIBUTING = '/docs/contributing'
 
 export const BONDS = '/docs/bonds'
 export const COLORS = '/docs/bonds/colors'

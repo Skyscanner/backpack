@@ -14,6 +14,7 @@ const staticSiteGeneratorConfig = {
 
     ROUTES.DOCS,
     ROUTES.GETTING_STARTED,
+    ROUTES.CONTRIBUTING,
 
     ROUTES.BONDS,
     ROUTES.BASE_STYLESHEET,
