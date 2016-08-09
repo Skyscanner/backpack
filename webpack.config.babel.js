@@ -14,6 +14,7 @@ const staticSiteGeneratorConfig = {
 
     ROUTES.DOCS,
     ROUTES.GETTING_STARTED,
+    ROUTES.CONTRIBUTING,
 
     ROUTES.BONDS,
     ROUTES.BASE_STYLESHEET,
@@ -63,6 +64,9 @@ const config = {
       },
       {
         test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css')
+      },
+      {
+        test: /\.(jpg|png)$/, exclude: /node_modules/, loader: 'file?limit=10000&name=[name]_[hash].[ext]'
       },
       {
         test: /\.json$/, loader: 'json'

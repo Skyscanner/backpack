@@ -8,7 +8,8 @@ const links = [
     category: 'Backpack basics',
     links: [
       { route: routes.GETTING_STARTED, children: 'Getting started' },
-      { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' }
+      { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' },
+      { route: routes.CONTRIBUTING, children: 'Contributing' }
     ]
   },
   {

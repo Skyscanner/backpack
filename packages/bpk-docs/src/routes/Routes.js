@@ -9,6 +9,7 @@ import DocsLayout from './../layouts/DocsLayout'
 import HomePage from './../pages/HomePage'
 
 import GettingStartedPage from './../pages/GettingStartedPage'
+import ContributingPage from './../pages/ContributingPage'
 import BaseStylesheetPage from './../pages/BaseStylesheetPage'
 import ColorsPage from './../pages/ColorsPage'
 import SpacingPage from './../pages/SpacingPage'
@@ -30,6 +31,7 @@ const Routes = (
       <IndexRoute component={GettingStartedPage} />
       <Route path={ROUTES.GETTING_STARTED} component={GettingStartedPage} />
       <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
+      <Route path={ROUTES.CONTRIBUTING} component={ContributingPage} />
       <Route path={ROUTES.BONDS}>
         <IndexRoute component={ColorsPage} />
         <Route path={ROUTES.COLORS} component={ColorsPage} />
