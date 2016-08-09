@@ -24,6 +24,7 @@ const TypographyPage = () => (
         Headings, paragraphs, links, lists and more.&nbsp;
         <BpkLink href='/sassdoc/#typography' blank>View the Sass documentation.</BpkLink>
       </BpkParagraph>
+      <BpkHeading level='h2'>Examples</BpkHeading>
       <BpkList>
         <BpkListItem>
           <BpkLink href={`#${anchors.headings}`}>Headings</BpkLink>
@@ -38,7 +39,7 @@ const TypographyPage = () => (
           <BpkLink href={`#${anchors.lists}`}>Lists</BpkLink>
         </BpkListItem>
       </BpkList>
-      <BpkHeading id={anchors.headings} level='h2'>Headings</BpkHeading>
+      <BpkHeading id={anchors.headings} level='h3'>Headings</BpkHeading>
       <PresentationBlock>
         <BpkHeading level='h1'>Heading 1</BpkHeading>
         <BpkHeading level='h2'>Heading 2</BpkHeading>
@@ -47,7 +48,7 @@ const TypographyPage = () => (
         <BpkHeading level='h5'>Heading 5</BpkHeading>
         <BpkHeading level='h6'>Heading 6</BpkHeading>
       </PresentationBlock>
-      <BpkHeading id={anchors.paragraphs} level='h2'>Paragraphs</BpkHeading>
+      <BpkHeading id={anchors.paragraphs} level='h3'>Paragraphs</BpkHeading>
       <PresentationBlock>
         <BpkParagraph>
           Rizzle ipsizzle dolizzle ass cool, crazy adipiscing elizzle. Nullam phat velizzle, i'm in the shizzle
@@ -62,7 +63,7 @@ const TypographyPage = () => (
           rizzle, check out this. Nizzle suscipizzle. Shizznit semper crackalackin phat boofron.
         </BpkParagraph>
       </PresentationBlock>
-      <BpkHeading id={anchors.links} level='h2'>Links</BpkHeading>
+      <BpkHeading id={anchors.links} level='h3'>Links</BpkHeading>
       <PresentationBlock>
         <BpkLink href='#'>Link 1</BpkLink>{'\n'}
         <BpkLink href='#'>Link 2</BpkLink>{'\n'}
@@ -87,6 +88,8 @@ const TypographyPage = () => (
           <BpkListItem>First</BpkListItem>
         </BpkList>
       </PresentationBlock>
+      <BpkHeading level='h2'>Usage</BpkHeading>
+      <BpkParagraph>Matt to write</BpkParagraph>
     </BpkContentContainer>
   </section>
 )
