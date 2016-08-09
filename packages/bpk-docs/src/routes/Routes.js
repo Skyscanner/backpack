@@ -29,9 +29,9 @@ const Routes = (
     <Route path={ROUTES.DOCS} component={DocsLayout}>
       <IndexRoute component={GettingStartedPage} />
       <Route path={ROUTES.GETTING_STARTED} component={GettingStartedPage} />
+      <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
       <Route path={ROUTES.BONDS}>
-        <IndexRoute component={BaseStylesheetPage} />
-        <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
+        <IndexRoute component={ColorsPage} />
         <Route path={ROUTES.COLORS} component={ColorsPage} />
         <Route path={ROUTES.SPACING} component={SpacingPage} />
         <Route path={ROUTES.TYPE_SETTING} component={TypeSettingPage} />

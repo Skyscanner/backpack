@@ -3,8 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    base: './base.scss',
-    atoms: './atoms.scss'
+    base: './base.scss'
   },
 
   output: {

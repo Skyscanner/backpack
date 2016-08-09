@@ -4,9 +4,9 @@ export const DOCS = '/docs'
 export const DOWNLOADS = '/downloads'
 
 export const GETTING_STARTED = '/docs/getting-started'
+export const BASE_STYLESHEET = '/docs/base-stylesheet'
 
 export const BONDS = '/docs/bonds'
-export const BASE_STYLESHEET = '/docs/bonds/base-stylesheet'
 export const COLORS = '/docs/bonds/colors'
 export const SPACING = '/docs/bonds/spacing'
 export const TYPE_SETTING = '/docs/bonds/type-setting'
