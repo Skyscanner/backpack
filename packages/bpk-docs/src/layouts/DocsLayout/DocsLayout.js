@@ -73,11 +73,7 @@ const links = [
   }
 ]
 
-export const DocsLayout = ({ children }) => (
-  <SideNavLayout links={links}>
-    {children}
-  </SideNavLayout>
-)
+const DocsLayout = ({ children }) => <SideNavLayout links={links}>{children}</SideNavLayout>
 
 DocsLayout.propTypes = {
   children: PropTypes.oneOfType([
