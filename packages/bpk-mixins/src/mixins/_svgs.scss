@@ -64,8 +64,6 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 
 @mixin bpk-icon-sm($icon: '') {
   @include _bpk-icon-factory($bpk-icons-sm, $_small-svg-size, $icon);
-
-  padding: $bpk-one-pixel-rem;
 }
 
 /// Large icon.
