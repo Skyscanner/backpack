@@ -25,12 +25,12 @@ const ColorsPage = () => (
       </BpkParagraph>
       <BpkHeading level='h2'>Primary</BpkHeading>
       <div className='bpkdocs-colors-page__swatch-container'>
-        <ColorSwatch name='color-blue-500' color={TOKENS.colorBlue500} />
+        <ColorSwatch name='color-blue-500' color={TOKENS.colorBlue500} whiteColor />
         <ColorSwatch name='color-white' color={TOKENS.colorWhite} border />
       </div>
       <BpkHeading level='h2'>Secondary</BpkHeading>
       <div className='bpkdocs-colors-page__swatch-container'>
-        <ColorSwatch name='color-green-500' color={TOKENS.colorGreen500} />
+        <ColorSwatch name='color-green-500' color={TOKENS.colorGreen500} whiteColor />
         <ColorSwatch name='color-yellow-500' color={TOKENS.colorYellow500} />
         <ColorSwatch name='color-red-500' color={TOKENS.colorRed500} whiteColor />
       </div>
@@ -53,11 +53,7 @@ const ColorsPage = () => (
         and shades are based on an algorithmic value from 50-900 with 50 being the lightest and 900 being the darkest.
         The number of tints and shades has been restrained to provide better visual coherence to the overall brand.
       </BpkParagraph>
-      <BpkParagraph><strong>Strictly for use on Primary Button gradients:</strong></BpkParagraph>
-      <div className='bpkdocs-colors-page__swatch-container'>
-        <ColorSwatch name='color-green-400' color={TOKENS.colorGreen400} />
-      </div>
-      <BpkParagraph><strong>Strictly for use on Primary Button active/hit states:</strong></BpkParagraph>
+      <BpkParagraph><strong>Strictly for use on Primary Button gradient and active/hit states:</strong></BpkParagraph>
       <div className='bpkdocs-colors-page__swatch-container'>
         <ColorSwatch name='color-green-600' color={TOKENS.colorGreen600} whiteColor />
       </div>
