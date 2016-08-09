@@ -19,20 +19,20 @@ const ContributingPage = () => (
         We’ve pulled together this simple process map to help both designers and engineers understand how to contribute
         at any stage of a component’s lifecycle.
       </BpkParagraph>
-      <img src='http://fizzylightdesign.com/backpack-process-map.png' alt='' width='100%'/>
-      <BpkList>
+      <img src={`/${require('./../../static/backpack-process-map.png')}`} alt='Backpack contribution process map' width='100%' />
+      <BpkList ordered>
         <BpkListItem>
-          <sup>1</sup> Look at Backpack website or Craft Library (on Dropbox)
+          Look at Backpack website or Craft Library (on Dropbox)
         </BpkListItem>
         <BpkListItem>
-          <sup>2</sup> Check <strong>Design for Backpack</strong> and <strong>Ready for Backpack</strong> folders
+          Check <strong>Design for Backpack</strong> and <strong>Ready for Backpack</strong> folders
           (on Dropbox)
         </BpkListItem>
         <BpkListItem>
-          <sup>3</sup> When happy, get a peer review with a Designer from Glue or Backpack
+          When happy, get a peer review with a Designer from Glue or Backpack
         </BpkListItem>
         <BpkListItem>
-          <sup>4</sup> Create a JIRA Task in the Backpack Squad and then move Sketch files to the <strong>Ready for
+          Create a JIRA Task in the Backpack Squad and then move Sketch files to the <strong>Ready for
           Backpack folder</strong> with your name and JIRA ticket number.
         </BpkListItem>
       </BpkList>

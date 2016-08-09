@@ -41,6 +41,7 @@
     "css-loader": "0.23.1",
     "del": "2.2.1",
     "extract-text-webpack-plugin": "1.0.1",
+    "file-loader": "0.9.0",
     "gulp": "3.9.1",
     "gulp-cli": "1.2.2",
     "gulp-gzip": "1.4.0",
