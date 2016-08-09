@@ -120,14 +120,14 @@
   <property name="BORDER_RADIUS_SM" category="radius">4</property>
   <property name="BORDER_RADIUS_LG" category="radius">8</property>
   <property name="BORDER_RADIUS_PILL" category="radius">80</property>
-  <property name="BREAKPOINT_MOBILE" category="breakpoint">500</property>
-  <property name="BREAKPOINT_TABLET" category="breakpoint">768</property>
-  <property name="BREAKPOINT_DESKTOP" category="breakpoint">1090</property>
-  <property name="BREAKPOINT_QUERY_MOBILE" category="breakpoint">(max-width: 31.25rem)</property>
-  <property name="BREAKPOINT_QUERY_TABLET" category="breakpoint">(max-width: 48rem)</property>
-  <property name="BREAKPOINT_QUERY_TABLET_ONLY" category="breakpoint">(min-width: 31.25rem + .0625rem) and (max-width: 48rem)</property>
-  <property name="BREAKPOINT_QUERY_ABOVE_MOBILE" category="breakpoint">(min-width: 31.25rem + .0625rem)</property>
-  <property name="BREAKPOINT_QUERY_ABOVE_TABLET" category="breakpoint">(min-width: 48rem + .0625rem)</property>
+  <property name="BREAKPOINT_MOBILE" category="breakpoint">522</property>
+  <property name="BREAKPOINT_TABLET" category="breakpoint">804</property>
+  <property name="BREAKPOINT_DESKTOP" category="breakpoint">1044</property>
+  <property name="BREAKPOINT_QUERY_MOBILE" category="breakpoint">(max-width: 32.625rem)</property>
+  <property name="BREAKPOINT_QUERY_TABLET" category="breakpoint">(max-width: 50.25rem)</property>
+  <property name="BREAKPOINT_QUERY_TABLET_ONLY" category="breakpoint">(min-width: 32.625rem + .0625rem) and (max-width: 50.25rem)</property>
+  <property name="BREAKPOINT_QUERY_ABOVE_MOBILE" category="breakpoint">(min-width: 32.625rem + .0625rem)</property>
+  <property name="BREAKPOINT_QUERY_ABOVE_TABLET" category="breakpoint">(min-width: 50.25rem + .0625rem)</property>
   <property name="BUTTON_PADDING_Y" category="buttons">6</property>
   <property name="BUTTON_PADDING_X" category="buttons">18</property>
   <property name="BUTTON_BORDER_RADIUS" category="buttons">80</property>
