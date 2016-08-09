@@ -37,7 +37,7 @@ const IconsPage = () => (
         readability and clarity at small sizes.
       </BpkParagraph>
       <BpkParagraph>
-        Our icon set is provided in two sizes: small (16px) and large (24px). Both sets are pixel-snapped for clarity at
+        Our icon set is provided in two sizes: small (18px) and large (24px). Both sets are pixel-snapped for clarity at
         the intended usage sizes.
       </BpkParagraph>
       <BpkParagraph>
@@ -85,7 +85,7 @@ const IconsPage = () => (
         Try to keep strokes to no less than 2px on the 24px icons.
       </BpkParagraph>
       <BpkParagraph>
-        Icons should be created (and optimised for display) at 16px and 24px. Please ensure all shapes and lines are
+        Icons should be created (and optimised for display) at 18px and 24px. Please ensure all shapes and lines are
         pixel-snapped to ensure crispness and readability at these sizes.
       </BpkParagraph>
     </BpkContentContainer>
