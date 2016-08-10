@@ -9,6 +9,7 @@
     "clean": "npm run clean:dist",
     "lint:scss": "stylelint 'packages/**/*.scss' --syntax scss",
     "lint:js": "standard",
+    "lint:js:fix": "standard --fix",
     "lint": "npm run lint:js && npm run lint:scss",
     "jest:update": "jest ---updateSnapshot",
     "jest:watch": "jest --watch",
@@ -50,6 +51,7 @@
     "jest-cli": "14.1.0",
     "json-loader": "0.5.4",
     "lodash": "4.14.1",
+    "marked": "0.3.6",
     "node-sass": "3.8.0",
     "pluralize": "3.0.0",
     "postcss-loader": "0.9.1",
@@ -87,7 +89,7 @@
     "automock": false,
     "testRegex": "packages/.*-test\\.js$",
     "preprocessorIgnorePatterns": [
-      "/node_modules\/(?!bpk)/"
+      "/node_modules\\/(?!bpk)/"
     ],
     "moduleNameMapper": {
       "^.+\\.scss$": "<rootDir>/jest/styleMock.js",

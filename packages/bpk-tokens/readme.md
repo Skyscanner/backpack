@@ -2,13 +2,13 @@
 
 > Design tokens for colors, spacing, font, etc.
 
-## Installation
+### Installation
 
 ```sh
 npm install bpk-tokens --save
 ```
 
-## Usage
+### Usage
 
 ```scss
 @import '~bpk-tokens';

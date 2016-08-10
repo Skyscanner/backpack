@@ -1,97 +1,149 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 
 import BpkLink from 'bpk-component-link'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
+import BpkBlockquote from 'bpk-component-blockquote'
 import { BpkList, BpkListItem } from 'bpk-component-list'
-import BpkContentContainer from 'bpk-component-content-container'
-import PresentationBlock from './../../components/PresentationBlock'
+import { BpkCode, BpkCodeBlock } from 'bpk-component-code'
+import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
 
-const anchors = {
-  headings: 'content-page-headings',
-  paragraphs: 'content-page-paragraphs',
-  links: 'content-page-links',
-  lists: 'content-page-lists'
-}
+import ComponentPageBuilder from './../../components/ComponentPageBuilder'
 
-const TypographyPage = () => (
-  <section>
-    <Helmet title='Typography' />
-    <BpkContentContainer>
-      <BpkHeading level='h1'>Typography</BpkHeading>
+const components = [
+  {
+    id: 'headings',
+    title: 'Headings',
+    examples: [
+      <BpkHeading level='h1'>Heading 1</BpkHeading>,
+      <BpkHeading level='h2'>Heading 2</BpkHeading>,
+      <BpkHeading level='h3'>Heading 3</BpkHeading>,
+      <BpkHeading level='h4'>Heading 4</BpkHeading>,
+      <BpkHeading level='h5'>Heading 5</BpkHeading>,
+      <BpkHeading level='h6'>Heading 6</BpkHeading>
+    ],
+    readme: require('raw!bpk-component-heading/readme.md')
+  },
+  {
+    id: 'paragraphs',
+    title: 'Paragaphs',
+    examples: [
       <BpkParagraph>
-        Headings, paragraphs, links, lists and more.&nbsp;
-        <BpkLink href='/sassdoc/#typography' blank>View the Sass documentation.</BpkLink>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam nemo umquam voluptatem appellavit, appellat;
+        Occultum facinus esse potuerit, gaudebit; Quaerimus enim finem bonorum. Quo igitur, inquit, modo?
+      </BpkParagraph>,
+      <BpkParagraph>
+        Quodsi ipsam honestatem undique pertectam atque absolutam. Cyrenaici quidem non recusant; Sed ego in hoc
+        resisto; Quae duo sunt, unum facit.
+      </BpkParagraph>,
+      <BpkParagraph>
+        Sed nunc, quod agimus; Et quidem, inquit, vehementer errat; Equidem e Cn. Venit ad extremum; Quis non odit
+        sordidos, vanos, leves, futtiles? Itaque ab his ordiamur.
       </BpkParagraph>
-      <BpkHeading level='h2'>Examples</BpkHeading>
+    ],
+    readme: require('raw!bpk-component-paragraph/readme.md')
+  },
+  {
+    id: 'links',
+    title: 'Links',
+    examples: [
+      <BpkLink href='#'>Link 1</BpkLink>,
+      ' ',
+      <BpkLink href='#'>Link 2</BpkLink>,
+      ' ',
+      <BpkLink href='#'>Link 3</BpkLink>
+    ],
+    readme: require('raw!bpk-component-link/readme.md')
+  },
+  {
+    id: 'lists',
+    title: 'Lists',
+    examples: [
       <BpkList>
-        <BpkListItem>
-          <BpkLink href={`#${anchors.headings}`}>Headings</BpkLink>
+        <BpkListItem>Apples</BpkListItem>
+        <BpkListItem>Oranges
+          <BpkList>
+            <BpkListItem>Tangerines</BpkListItem>
+            <BpkListItem>Mandarins</BpkListItem>
+            <BpkListItem>Satsumas</BpkListItem>
+          </BpkList>
         </BpkListItem>
-        <BpkListItem>
-          <BpkLink href={`#${anchors.paragraphs}`}>Paragaphs</BpkLink>
-        </BpkListItem>
-        <BpkListItem>
-          <BpkLink href={`#${anchors.links}`}>Links</BpkLink>
-        </BpkListItem>
-        <BpkListItem>
-          <BpkLink href={`#${anchors.lists}`}>Lists</BpkLink>
-        </BpkListItem>
+        <BpkListItem>Pears</BpkListItem>
+      </BpkList>,
+      <BpkList ordered>
+        <BpkListItem>First</BpkListItem>
+        <BpkListItem>Second</BpkListItem>
+        <BpkListItem>Third</BpkListItem>
       </BpkList>
-      <BpkHeading id={anchors.headings} level='h3'>Headings</BpkHeading>
-      <PresentationBlock>
-        <BpkHeading level='h1'>Heading 1</BpkHeading>
-        <BpkHeading level='h2'>Heading 2</BpkHeading>
-        <BpkHeading level='h3'>Heading 3</BpkHeading>
-        <BpkHeading level='h4'>Heading 4</BpkHeading>
-        <BpkHeading level='h5'>Heading 5</BpkHeading>
-        <BpkHeading level='h6'>Heading 6</BpkHeading>
-      </PresentationBlock>
-      <BpkHeading id={anchors.paragraphs} level='h3'>Paragraphs</BpkHeading>
-      <PresentationBlock>
-        <BpkParagraph>
-          Rizzle ipsizzle dolizzle ass cool, crazy adipiscing elizzle. Nullam phat velizzle, i'm in the shizzle
-          volutpizzle, check out this quizzle, cool vizzle, arcu. Pellentesque sheezy tortor.
-        </BpkParagraph>
-        <BpkParagraph>
-          Owned erizzle. Black izzle dolor dapibizzle turpis tempizzle ghetto. Dope pellentesque nibh et turpis. Sure in
-          tortizzle. Pellentesque eleifend rhoncizzle crackalackin. In hac habitasse platea dictumst.
-        </BpkParagraph>
-        <BpkParagraph>
-          Fo shizzle my nizzle dapibizzle. Curabitizzle tellus izzle, pretizzle nizzle, da bomb sheezy, eleifend its fo
-          rizzle, check out this. Nizzle suscipizzle. Shizznit semper crackalackin phat boofron.
-        </BpkParagraph>
-      </PresentationBlock>
-      <BpkHeading id={anchors.links} level='h3'>Links</BpkHeading>
-      <PresentationBlock>
-        <BpkLink href='#'>Link 1</BpkLink>{'\n'}
-        <BpkLink href='#'>Link 2</BpkLink>{'\n'}
-        <BpkLink href='#'>Link 3</BpkLink>
-      </PresentationBlock>
-      <BpkHeading id={anchors.lists} level='h2'>Lists</BpkHeading>
-      <PresentationBlock>
-        <BpkList>
-          <BpkListItem>Apples</BpkListItem>
-          <BpkListItem>Oranges
-            <BpkList>
-              <BpkListItem>Tangerines</BpkListItem>
-              <BpkListItem>Mandarins</BpkListItem>
-              <BpkListItem>Satsumas</BpkListItem>
-            </BpkList>
-          </BpkListItem>
-          <BpkListItem>Pears</BpkListItem>
-        </BpkList>
-        <BpkList ordered>
-          <BpkListItem>First</BpkListItem>
-          <BpkListItem>Second</BpkListItem>
-          <BpkListItem>First</BpkListItem>
-        </BpkList>
-      </PresentationBlock>
-      <BpkHeading level='h2'>Usage</BpkHeading>
-      <BpkParagraph>Matt to write</BpkParagraph>
-    </BpkContentContainer>
-  </section>
-)
+    ],
+    readme: require('raw!bpk-component-list/readme.md')
+  },
+  {
+    id: 'tables',
+    title: 'Tables',
+    examples: [
+      <BpkTable>
+        <BpkTableHead>
+          <BpkTableRow>
+            <BpkTableHeadCell>Heading 1</BpkTableHeadCell>
+            <BpkTableHeadCell>Heading 2</BpkTableHeadCell>
+            <BpkTableHeadCell>Heading 3</BpkTableHeadCell>
+            <BpkTableHeadCell>Heading 4</BpkTableHeadCell>
+          </BpkTableRow>
+        </BpkTableHead>
+        <BpkTableBody>
+          <BpkTableRow>
+            <BpkTableCell>Row 1, Data 1</BpkTableCell>
+            <BpkTableCell>Row 1, Data 2</BpkTableCell>
+            <BpkTableCell>Row 1, Data 3</BpkTableCell>
+            <BpkTableCell>Row 1, Data 4</BpkTableCell>
+          </BpkTableRow>
+          <BpkTableRow>
+            <BpkTableCell>Row 2, Data 1</BpkTableCell>
+            <BpkTableCell>Row 2, Data 2</BpkTableCell>
+            <BpkTableCell>Row 2, Data 3</BpkTableCell>
+            <BpkTableCell>Row 2, Data 4</BpkTableCell>
+          </BpkTableRow>
+        </BpkTableBody>
+      </BpkTable>
+    ],
+    readme: require('raw!bpk-component-table/readme.md')
+  },
+  {
+    id: 'blockquotes',
+    title: 'Blockquotes',
+    examples: [
+      <BpkBlockquote>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam nemo umquam voluptatem appellavit, appellat;
+        Occultum facinus esse potuerit, gaudebit; Quaerimus enim finem bonorum. Quo igitur, inquit, modo?
+      </BpkBlockquote>
+    ],
+    readme: require('raw!bpk-component-blockquote/readme.md')
+  },
+  {
+    id: 'code',
+    title: 'Code',
+    examples: [
+      <BpkParagraph>
+        We recommend using React from npm with a bundler like webpack. You can use
+        the <BpkCode>react</BpkCode> and <BpkCode>react-dom</BpkCode> packages. After installing it
+        using <BpkCode>npm install --save react react-dom</BpkCode>, you can use:
+      </BpkParagraph>,
+      <BpkCodeBlock>{`import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(<App />, ...);`}
+      </BpkCodeBlock>
+    ],
+    readme: require('raw!bpk-component-code/readme.md')
+  }
+]
+
+const TypographyPage = () => <ComponentPageBuilder
+  title='Typography'
+  blurb='Headings, paragraphs, links, lists and more.'
+  components={components}
+  sassdocId='typography'
+/>
 
 export default TypographyPage

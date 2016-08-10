@@ -7,7 +7,7 @@ import BpkParagraph from 'bpk-component-paragraph'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkContentContainer from 'bpk-component-content-container'
 
-import Code from './../../components/Code'
+import { BpkCode, BpkCodeBlock } from 'bpk-component-code'
 
 const h5bpLink = 'https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#common-helpers'
 
@@ -28,22 +28,22 @@ const BaseStylesheetPage = () => (
           correct small inconsistencies across browsers and devices.
         </BpkListItem>
         <BpkListItem>
-          The box-sizing is globally set on every element,
-          including <Code syntax='css' inline>*:before</Code> and <Code syntax='css' inline>*:after</Code>,
-          to <Code syntax='css' inline>border-box</Code>. This ensures that the declared width of element is never
+          The <BpkCode>box-sizing</BpkCode> is globally set on every element,
+          including <BpkCode>*:before</BpkCode> and <BpkCode>*:after</BpkCode>,
+          to <BpkCode>border-box</BpkCode>. This ensures that the declared width of element is never
           exceeded due to padding or border.
         </BpkListItem>
         <BpkListItem>
-          The default <Code syntax='css' inline>color</Code>, <Code syntax='css' inline>font-family</Code>,
-          &nbsp;<Code syntax='css' inline>font-size</Code> & <Code syntax='css' inline>line-height</Code>.
+          The default <BpkCode >color</BpkCode>, <BpkCode>font-family</BpkCode>,
+          &nbsp;<BpkCode>font-size</BpkCode> & <BpkCode>line-height</BpkCode>.
         </BpkListItem>
         <BpkListItem>
           Utility classes based on
           the <BpkLink href={h5bpLink} blank>HTML5 Boilerplate common helpers</BpkLink>,
-          including: &nbsp;<Code syntax='css' inline>.hidden</Code>,
-          &nbsp;<Code syntax='css' inline>.visuallyhidden</Code>,
-          &nbsp;<Code syntax='css' inline>.visuallyhidden.focusable</Code>,
-          &nbsp;<Code syntax='css' inline>.invisible</Code> and <Code syntax='css' inline>.clearfix</Code>.
+          including: &nbsp;<BpkCode>.hidden</BpkCode>,
+          &nbsp;<BpkCode>.visuallyhidden</BpkCode>,
+          &nbsp;<BpkCode>.visuallyhidden.focusable</BpkCode>,
+          &nbsp;<BpkCode>.invisible</BpkCode> and <BpkCode>.clearfix</BpkCode>.
         </BpkListItem>
         <BpkListItem>That's it!</BpkListItem>
       </BpkList>
@@ -51,13 +51,13 @@ const BaseStylesheetPage = () => (
       <BpkParagraph>
         Consumer's of the website scaffolding should expect this base stylesheet to be on the page already. If
         you need to emulate this base in your component's local test harness, the compiled css is available for you to
-        import, but first you'll need to install the <Code inline>{'bpk-stylesheets'}</Code> package:
+        import, but first you'll need to install the <BpkCode>bpk-stylesheets</BpkCode> package:
       </BpkParagraph>
-      <Code>{'npm install bpk-stylesheets --save-dev'}</Code>
+      <BpkCodeBlock>npm install bpk-stylesheets --save-dev</BpkCodeBlock>
       <BpkParagraph>Import like so:</BpkParagraph>
-      <Code>{'<link rel="stylesheet" href="/node_modules/bpk-stylesheets/base.css">'}</Code>
+      <BpkCodeBlock>{'<link rel="stylesheet" href="/node_modules/bpk-stylesheets/base.css">'}</BpkCodeBlock>
       <BpkParagraph>Alternatively you could import using SASS:</BpkParagraph>
-      <Code syntax='css'>@import '~bpk-stylesheets/base';</Code>
+      <BpkCodeBlock>@import '~bpk-stylesheets/base';</BpkCodeBlock>
     </BpkContentContainer>
   </section>
 )

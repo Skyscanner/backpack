@@ -2,13 +2,13 @@
 
 > Backpack table component.
 
-## Installation
+### Installation
 
 ```sh
 npm install bpk-component-table --save
 ```
 
-## Usage
+### Usage
 
 ```js
 import React from 'react'
