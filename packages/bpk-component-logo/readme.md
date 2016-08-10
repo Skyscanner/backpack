@@ -2,13 +2,13 @@
 
 > Backpack logo component.
 
-## Installation
+### Installation
 
 ```sh
 npm install bpk-component-logo --save
 ```
 
-## Usage
+### Usage
 
 ```js
 import React from 'react'

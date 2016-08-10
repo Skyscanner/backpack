@@ -1,22 +1,20 @@
 # bpk-component-router-link
 
-> Backpack link component.
+> Backpack react-router link component.
 
-## Installation
+### Installation
 
 ```sh
 npm install bpk-component-router-link --save
 ```
 
-## Usage
+### Usage
 
 ```js
 import React from 'react'
 import BpkRouterLink from 'bpk-component-router-link'
 
 export default MyComponent = () => (
-  <section>
-    <BpkRouterLink to="https://www.skyscanner.net/">Click here</BpkRouterLink>
-  </section>
+  <BpkRouterLink to="https://www.skyscanner.net/">Click here</BpkRouterLink>
 )
 ```

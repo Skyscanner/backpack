@@ -2,13 +2,13 @@
 
 > Backpack code component.
 
-## Installation
+### Installation
 
 ```sh
 npm install bpk-component-code --save
 ```
 
-## Usage
+### Usage
 
 ```js
 import React from 'react'
@@ -16,8 +16,8 @@ import { BpkCode, BpkCodeBlock } from 'bpk-component-code'
 
 export default MyComponent = () => (
   <div>
-    <BpkCode>npm install react --save-dev</BpkCode>
-    <BpkCodeBlock>npm install react --save-dev</BpkCodeBlock>
+    <BpkCode>npm install react --save</BpkCode>
+    <BpkCodeBlock>npm install react --save</BpkCodeBlock>
   </div>
 )
 ```

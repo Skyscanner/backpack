@@ -8,5 +8,9 @@
 
   &__container {
     padding: $bpk-spacing-base;
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
   }
 }

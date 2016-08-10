@@ -1,71 +1,5 @@
 @import '~bpk-mixins/index';
 
-@mixin bpk-content-container {
-  h1 {
-    @include bpk-heading-1;
-    @include bpk-content-heading;
-  }
-
-  h2 {
-    @include bpk-heading-2;
-    @include bpk-content-heading;
-  }
-
-  h3 {
-    @include bpk-heading-3;
-    @include bpk-content-heading;
-  }
-
-  h4 {
-    @include bpk-heading-4;
-    @include bpk-content-heading;
-  }
-
-  h5 {
-    @include bpk-heading-5;
-    @include bpk-content-heading;
-  }
-
-  h6 {
-    @include bpk-heading-6;
-    @include bpk-content-heading;
-  }
-
-  p {
-    @include bpk-paragraph;
-  }
-
-  ul,
-  ol {
-    @include bpk-list;
-
-    ul,
-    ol {
-      @include bpk-list--nested;
-    }
-
-    li {
-      @include bpk-list-item;
-    }
-  }
-
-  code {
-    @include bpk-code;
-  }
-
-  pre {
-    @include bpk-code__pre;
-
-    > code {
-      @include bpk-code--block;
-    }
-  }
-
-  blockquote {
-    @include bpk-blockquote;
-  }
-}
-
 .bpk-content-container {
   > {
     @include bpk-content-container;
@@ -73,5 +7,9 @@
 
   blockquote > {
     @include bpk-content-container;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
   }
 }

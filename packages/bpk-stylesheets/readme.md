@@ -2,13 +2,13 @@
 
 > Backpack's stylesheets.
 
-## Installation
+### Installation
 
 ```sh
 npm install bpk-stylesheets --save
 ```
 
-## Usage
+### Usage
 
 ```scss
 @import '~bpk-stylesheets/base';

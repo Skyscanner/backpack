@@ -2,13 +2,13 @@
 
 > Backpack icon component.
 
-## Installation
+### Installation
 
 ```sh
 npm install bpk-component-icon --save
 ```
 
-## Usage
+### Usage
 
 ```js
 import React from 'react'

@@ -5,8 +5,8 @@ import { BpkCode, BpkCodeBlock } from './index'
 
 storiesOf('bpk-component-code', module)
   .add('Inline', () => (
-    <BpkCode>npm install react --save-dev</BpkCode>
+    <BpkCode>npm install react --save</BpkCode>
   ))
   .add('Block', () => (
-    <BpkCodeBlock>npm install react --save-dev</BpkCodeBlock>
+    <BpkCodeBlock>npm install react --save</BpkCodeBlock>
   ))

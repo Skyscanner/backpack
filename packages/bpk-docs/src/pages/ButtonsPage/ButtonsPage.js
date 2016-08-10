@@ -105,11 +105,12 @@ const components = [
   }
 ]
 
-const NewButtonsPage = () => <ComponentPageBuilder
+const ButtonsPage = () => <ComponentPageBuilder
   title='Buttons'
   blurb='Primary and secondary buttons, both with a selected state and a disabled state. Link style buttons which align nicely alongside other buttons.'
   components={components}
-  usage='Matt to write'
+  readme={require('raw!bpk-component-button/readme.md')}
+  sassdocId='buttons'
 />
 
-export default NewButtonsPage
+export default ButtonsPage

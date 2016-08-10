@@ -2,21 +2,19 @@
 
 > Backpack paragraph component.
 
-## Installation
+### Installation
 
 ```sh
 npm install bpk-component-paragraph --save
 ```
 
-## Usage
+### Usage
 
 ```js
 import React from 'react'
 import BpkParagraph from 'bpk-component-paragraph'
 
 export default MyComponent = () => (
-  <section>
-    <BpkParagraph>My paragraph content.</BpkParagraph>
-  </section>
+  <BpkParagraph>My paragraph content.</BpkParagraph>
 )
 ```

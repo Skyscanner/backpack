@@ -88,43 +88,27 @@ storiesOf('bpk-component-content-container', module)
             </ol>
           </li>
         </ul>
-        <dl>
-          <dt>Description lists</dt>
-          <dd>A description list is perfect for defining terms.</dd>
-          <dt>Euismod</dt>
-          <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-          <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-          <dt>Malesuada porta</dt>
-          <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-        </dl>
         <table>
-          <caption>Optional table caption.</caption>
           <thead>
             <tr>
               <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
+              <th>First name</th>
+              <th>Last name</th>
               <th>Username</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th>1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <td>1</td>
+              <td>Matthew</td>
+              <td>Davidson</td>
+              <td>@matthewdavidson</td>
             </tr>
             <tr>
-              <th>2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th>3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
+              <td>2</td>
+              <td>James</td>
+              <td>Ferguson</td>
+              <td>@jamesf</td>
             </tr>
           </tbody>
         </table>

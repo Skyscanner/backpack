@@ -35,7 +35,14 @@ const ComponentExample = (component) => {
     ? <BpkParagraph>{component.blurb}</BpkParagraph>
     : null
 
-  return [ heading, blurb, examples ]
+  const readme = component.readme ? flatten([
+    <BpkHeading id={`${component.id}-readme`} level='h3'>{component.title} readme</BpkHeading>,
+    <PresentationBlock>
+      <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(component.readme) }} />
+    </PresentationBlock>
+  ]) : null
+
+  return [ heading, blurb, examples, readme ]
 }
 
 const CustomSection = (section) => [
@@ -53,7 +60,7 @@ const toNodes = (children) => {
 
 const markdownToHTML = (readmeString) => marked(readmeString, { renderer: renderer })
 
-const ComponentPageBuilder = ({ title, blurb, components, readme, customSections }) => (
+const ComponentPageBuilder = ({ title, blurb, components, readme, customSections, sassdocId }) => (
   <BpkContentContainer>
     <Helmet title={title} />
     <BpkHeading level='h1'>{title}</BpkHeading>
@@ -63,10 +70,19 @@ const ComponentPageBuilder = ({ title, blurb, components, readme, customSections
     {flatten(components.map(ComponentExample))}
     {readme ? flatten([
       <BpkHeading id='readme' level='h2'>Readme</BpkHeading>,
-      <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(readme) }} />
+      <PresentationBlock>
+        <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(readme) }} />
+      </PresentationBlock>
     ]) : null
     }
     {flatten(customSections.map(CustomSection))}
+    {sassdocId ? flatten([
+      <BpkHeading level='h2'>Sass mixins</BpkHeading>,
+      <BpkParagraph>
+        There are Sass mixins available for these components, you can find
+        them <BpkLink href={`/sassdoc/#${sassdocId}`} blank>here</BpkLink>.
+      </BpkParagraph>
+    ]) : null}
   </BpkContentContainer>
 )
 
@@ -87,8 +103,9 @@ ComponentPageBuilder.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
+      blurb: PropTypes.string,
       examples: PropTypes.arrayOf(childrenPropType),
-      blurb: PropTypes.string
+      readme: PropTypes.string
     })
   ),
   readme: PropTypes.string,
@@ -98,14 +115,16 @@ ComponentPageBuilder.propTypes = {
       title: PropTypes.string.isRequired,
       content: PropTypes.arrayOf(contentShape)
     })
-  )
+  ),
+  sassdocId: PropTypes.string
 }
 
 ComponentPageBuilder.defaultProps = {
   blurb: null,
   components: [],
   readme: null,
-  customSections: []
+  customSections: [],
+  sassdocId: null
 }
 
 export default ComponentPageBuilder

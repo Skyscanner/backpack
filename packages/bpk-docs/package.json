@@ -16,6 +16,7 @@
     "react": "^15.0.0"
   },
   "devDependencies": {
+    "bpk-component-blockquote": "^0.0.0",
     "bpk-component-button": "^1.0.7",
     "bpk-component-code": "^0.0.0",
     "bpk-component-content-container": "^0.0.6",

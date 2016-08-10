@@ -1,19 +1,13 @@
 @import '~bpk-mixins/index';
 
 .bpk-table {
-  width: 100%;
-  margin-bottom: $bpk-spacing-sm;
-  border-collapse: collapse;
-  box-shadow: 0 0 0 1px $bpk-color-gray-100;
-  table-layout: fixed;
+  @include bpk-table;
 
   &__cell {
-    padding: $bpk-spacing-sm;
+    @include bpk-table__cell;
 
     &--head {
-      background-color: $bpk-color-gray-50;
-      font-weight: normal;
-      text-align: left;
+      @include bpk-table__cell--head;
     }
   }
 }

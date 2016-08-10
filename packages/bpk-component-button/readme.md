@@ -2,13 +2,13 @@
 
 > Backpack button component.
 
-## Installation
+### Installation
 
 ```sh
 npm install bpk-component-button --save
 ```
 
-## Usage
+### Usage
 
 ```js
 import React from 'react'
