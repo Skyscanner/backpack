@@ -6,17 +6,25 @@
     @include bpk-clearfix;
   }
 
-  &__nav-list, &__nav-category-list {
+  &__nav {
+    padding-bottom: $bpk-spacing-sm;
+    text-align: center;
+    box-shadow: 0 $bpk-one-pixel-rem 0 0 $bpk-color-gray-50;
+  }
+
+  &__nav-list,
+  &__nav-category-list {
     margin: 0;
     padding: 0;
     list-style-type: none;
   }
 
   &__nav-category-list {
-    padding: 0;
-    box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-100;
-    border-radius: $bpk-border-radius-sm;
+    display: none;
     margin-bottom: $bpk-spacing-base;
+    padding: 0;
+    border-radius: $bpk-border-radius-sm;
+    box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-100;
   }
 
   &__nav-category-list-item {
@@ -29,13 +37,11 @@
   }
 
   &__nav-category-name {
-    font-size: $bpk-font-size-sm;
-    line-height: $bpk-line-height-sm;
-    color: $bpk-color-gray-200;
     display: block;
     margin-bottom: $bpk-spacing-xs;
-
-    font-weight: bold;
+    color: $bpk-color-gray-200;
+    font-size: $bpk-font-size-base;
+    line-height: $bpk-line-height-base;
   }
 
   &__link {
@@ -43,12 +49,14 @@
 
     &--active {
       @include bpk-link--active;
+
       background-color: $bpk-color-gray-50;
       font-weight: bold;
     }
   }
 
-  &__link, &__pending-link {
+  &__link,
+  &__pending-link {
     display: block;
     padding: $bpk-spacing-xs $bpk-spacing-sm;
   }
@@ -61,8 +69,21 @@
   @include bpk-breakpoint-above-tablet {
     &__nav {
       width: 25%;
-      float: left;
       margin-right: $bpk-spacing-base;
+      padding-bottom: 0;
+      float: left;
+      text-align: left;
+      box-shadow: none;
+    }
+
+    &__nav-category-name {
+      font-size: $bpk-font-size-sm;
+      font-weight: bold;
+      line-height: $bpk-line-height-sm;
+    }
+
+    &__nav-category-list {
+      display: block;
     }
 
     &__content {
