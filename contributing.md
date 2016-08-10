@@ -1,4 +1,4 @@
-# Contributing to backpack-components
+# Contributing to backpack
 
 Use the following workflow to add new components or change any existing ones:
 
@@ -6,7 +6,7 @@ Use the following workflow to add new components or change any existing ones:
 2. Create a new branch
 3. Make your changes
 4. Commit and push your new branch
-5. Submit a [merge request](http://git.prod.skyscanner.local/backpack/components/merge_requests/)
+5. Submit a [merge request](http://git.prod.skyscanner.local/backpack/backpack/merge_requests/)
 6. Notify someone in the Backpack Design System squad or drop a note in #backpack
 
 ## Getting started
