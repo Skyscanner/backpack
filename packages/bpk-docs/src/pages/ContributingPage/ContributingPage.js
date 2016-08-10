@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
+import './contributing-page.scss'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
 import BpkContentContainer from 'bpk-component-content-container'
@@ -19,7 +20,7 @@ const ContributingPage = () => (
         We’ve pulled together this simple process map to help both designers and engineers understand how to contribute
         at any stage of a component’s lifecycle.
       </BpkParagraph>
-      <img src={`/${require('./../../static/backpack-process-map.png')}`} alt='Backpack contribution process map' width='100%' />
+      <span className='bpkdocs-contributing-page__process-map' dangerouslySetInnerHTML={{ __html: `${require('raw!./../../static/backpack-process-map.svg')}` }} />
       <BpkList ordered>
         <BpkListItem>
           Look at Backpack website or Craft Library (on Dropbox)
