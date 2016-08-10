@@ -1,4 +1,5 @@
 import 'bpk-stylesheets/base.scss'
+import 'file?name=[name].[ext]!./static/favicon.ico'
 
 export default ({ head = {}, html = '', assets = {} }) => {
   return `<!doctype html>
@@ -12,6 +13,7 @@ export default ({ head = {}, html = '', assets = {} }) => {
   <meta name="robots" content="noindex">
   ${head.title.toString()}
   <link rel="stylesheet" href="/${assets.docs.css}">
+  <link rel="apple-touch-icon" sizes="180x180" href="/${require('./static/apple-touch-icon.png')}">
 </head>
 
 <body>
