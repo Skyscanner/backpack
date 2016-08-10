@@ -722,49 +722,49 @@
     },
     {
       "category": "breakpoint",
-      "value": "500",
+      "value": "522",
       "type": "size",
       "name": "breakpointMobile"
     },
     {
       "category": "breakpoint",
-      "value": "768",
+      "value": "804",
       "type": "size",
       "name": "breakpointTablet"
     },
     {
       "category": "breakpoint",
-      "value": "1090",
+      "value": "1044",
       "type": "size",
       "name": "breakpointDesktop"
     },
     {
       "category": "breakpoint",
-      "value": "(max-width: 31.25rem)",
+      "value": "(max-width: 32.625rem)",
       "type": "media-query",
       "name": "breakpointQueryMobile"
     },
     {
       "category": "breakpoint",
-      "value": "(max-width: 48rem)",
+      "value": "(max-width: 50.25rem)",
       "type": "media-query",
       "name": "breakpointQueryTablet"
     },
     {
       "category": "breakpoint",
-      "value": "(min-width: 31.25rem + .0625rem) and (max-width: 48rem)",
+      "value": "(min-width: 32.625rem + .0625rem) and (max-width: 50.25rem)",
       "type": "media-query",
       "name": "breakpointQueryTabletOnly"
     },
     {
       "category": "breakpoint",
-      "value": "(min-width: 31.25rem + .0625rem)",
+      "value": "(min-width: 32.625rem + .0625rem)",
       "type": "media-query",
       "name": "breakpointQueryAboveMobile"
     },
     {
       "category": "breakpoint",
-      "value": "(min-width: 48rem + .0625rem)",
+      "value": "(min-width: 50.25rem + .0625rem)",
       "type": "media-query",
       "name": "breakpointQueryAboveTablet"
     },

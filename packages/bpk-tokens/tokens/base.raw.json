@@ -67,9 +67,9 @@
     "BORDER_RADIUS_SM": ".25rem",
     "BORDER_RADIUS_LG": ".5rem",
     "BORDER_RADIUS_PILL": "5rem",
-    "BREAKPOINT_MOBILE": "31.25rem",
-    "BREAKPOINT_TABLET": "48rem",
-    "BREAKPOINT_DESKTOP": "68.125rem",
+    "BREAKPOINT_MOBILE": "32.625rem",
+    "BREAKPOINT_TABLET": "50.25rem",
+    "BREAKPOINT_DESKTOP": "65.25rem",
     "ONE_PIXEL_REM": ".0625rem"
   },
   "props": {
@@ -795,49 +795,49 @@
     },
     "BREAKPOINT_MOBILE": {
       "category": "breakpoint",
-      "value": "31.25rem",
+      "value": "32.625rem",
       "type": "size",
       "name": "BREAKPOINT_MOBILE"
     },
     "BREAKPOINT_TABLET": {
       "category": "breakpoint",
-      "value": "48rem",
+      "value": "50.25rem",
       "type": "size",
       "name": "BREAKPOINT_TABLET"
     },
     "BREAKPOINT_DESKTOP": {
       "category": "breakpoint",
-      "value": "68.125rem",
+      "value": "65.25rem",
       "type": "size",
       "name": "BREAKPOINT_DESKTOP"
     },
     "BREAKPOINT_QUERY_MOBILE": {
       "category": "breakpoint",
-      "value": "(max-width: 31.25rem)",
+      "value": "(max-width: 32.625rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_MOBILE"
     },
     "BREAKPOINT_QUERY_TABLET": {
       "category": "breakpoint",
-      "value": "(max-width: 48rem)",
+      "value": "(max-width: 50.25rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_TABLET"
     },
     "BREAKPOINT_QUERY_TABLET_ONLY": {
       "category": "breakpoint",
-      "value": "(min-width: 31.25rem + .0625rem) and (max-width: 48rem)",
+      "value": "(min-width: 32.625rem + .0625rem) and (max-width: 50.25rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_TABLET_ONLY"
     },
     "BREAKPOINT_QUERY_ABOVE_MOBILE": {
       "category": "breakpoint",
-      "value": "(min-width: 31.25rem + .0625rem)",
+      "value": "(min-width: 32.625rem + .0625rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_ABOVE_MOBILE"
     },
     "BREAKPOINT_QUERY_ABOVE_TABLET": {
       "category": "breakpoint",
-      "value": "(min-width: 48rem + .0625rem)",
+      "value": "(min-width: 50.25rem + .0625rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_ABOVE_TABLET"
     },

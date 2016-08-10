@@ -239,21 +239,21 @@ $bpk-border-radius-lg: .5rem;
 /// @group radii
 $bpk-border-radius-pill: 5rem;
 /// @group breakpoints
-$bpk-breakpoint-mobile: 31.25rem;
+$bpk-breakpoint-mobile: 32.625rem;
 /// @group breakpoints
-$bpk-breakpoint-tablet: 48rem;
+$bpk-breakpoint-tablet: 50.25rem;
 /// @group breakpoints
-$bpk-breakpoint-desktop: 68.125rem;
+$bpk-breakpoint-desktop: 65.25rem;
 /// @group breakpoints
-$bpk-breakpoint-query-mobile: (max-width: 31.25rem);
+$bpk-breakpoint-query-mobile: (max-width: 32.625rem);
 /// @group breakpoints
-$bpk-breakpoint-query-tablet: (max-width: 48rem);
+$bpk-breakpoint-query-tablet: (max-width: 50.25rem);
 /// @group breakpoints
-$bpk-breakpoint-query-tablet-only: (min-width: 31.25rem + .0625rem) and (max-width: 48rem);
+$bpk-breakpoint-query-tablet-only: (min-width: 32.625rem + .0625rem) and (max-width: 50.25rem);
 /// @group breakpoints
-$bpk-breakpoint-query-above-mobile: (min-width: 31.25rem + .0625rem);
+$bpk-breakpoint-query-above-mobile: (min-width: 32.625rem + .0625rem);
 /// @group breakpoints
-$bpk-breakpoint-query-above-tablet: (min-width: 48rem + .0625rem);
+$bpk-breakpoint-query-above-tablet: (min-width: 50.25rem + .0625rem);
 /// @group buttons
 $bpk-button-padding-y: .375rem;
 /// @group buttons
