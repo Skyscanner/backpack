@@ -1,0 +1,6 @@
+exports[`BpkCode should render correctly 1`] = `
+<code
+  className="bpk-code">
+  npm install react --save-dev
+</code>
+`;

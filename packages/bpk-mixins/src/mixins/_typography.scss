@@ -4,7 +4,6 @@
 /// @group typography
 ////
 
-
 /// Heading factory.
 ///
 /// @param {variable} $margin-top
@@ -231,4 +230,44 @@
 
 @mixin bpk-link--active {
   color: $bpk-link-active-color;
+}
+
+@mixin bpk-code {
+  display: inline;
+  padding: $bpk-one-pixel-rem;
+  border-radius: $bpk-border-radius-sm;
+  background-color: $bpk-color-gray-50;
+  color: $bpk-color-gray-700;
+  text-align: left;
+  text-shadow: 0 $bpk-one-pixel-rem $bpk-color-white;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+@mixin bpk-code--block {
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin bpk-code__pre {
+  margin: 0 0 $bpk-spacing-sm;
+  padding: $bpk-spacing-base;
+  background-color: $bpk-color-gray-50;
+}
+
+@mixin bpk-blockquote {
+  margin: 0 0 $bpk-spacing-sm 0;
+  padding: $bpk-spacing-sm;
+  border-left: solid $bpk-spacing-sm $bpk-color-gray-50;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
 }

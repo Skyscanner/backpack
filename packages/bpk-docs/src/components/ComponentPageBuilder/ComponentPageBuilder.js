@@ -1,5 +1,7 @@
+import marked from 'marked'
 import Helmet from 'react-helmet'
 import isString from 'lodash/isString'
+import includes from 'lodash/includes'
 import React, { Children, PropTypes } from 'react'
 
 import BpkLink from 'bpk-component-link'
@@ -9,7 +11,12 @@ import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkContentContainer from 'bpk-component-content-container'
 import PresentationBlock from './../../components/PresentationBlock'
 
-const toArray = Children.toArray
+const flatten = Children.toArray
+const renderer = new marked.Renderer()
+
+renderer.heading = (text, level) => {
+  return includes([ 1, 2 ], level) ? '' : `<h${level}>${text}</h${level}>`
+}
 
 const ExampleNavListItem = (component) => (
   <BpkListItem>
@@ -21,7 +28,7 @@ const ComponentExample = (component) => {
   const heading = <BpkHeading id={component.id} level='h3'>{component.title}</BpkHeading>
 
   const examples = component.examples.length
-    ? <PresentationBlock>{toArray(component.examples)}</PresentationBlock>
+    ? <PresentationBlock>{flatten(component.examples)}</PresentationBlock>
     : null
 
   const blurb = component.blurb
@@ -33,7 +40,7 @@ const ComponentExample = (component) => {
 
 const CustomSection = (section) => [
   <BpkHeading id={section.id} level='h2'>{section.title}</BpkHeading>,
-  toArray(section.content.map(toNodes))
+  flatten(section.content.map(toNodes))
 ]
 
 const toNodes = (children) => {
@@ -44,17 +51,22 @@ const toNodes = (children) => {
   return isString(children) ? [ <BpkParagraph>{children}</BpkParagraph> ] : children
 }
 
-const ComponentPageBuilder = ({ title, blurb, components, usage, customSections }) => (
+const markdownToHTML = (readmeString) => marked(readmeString, { renderer: renderer })
+
+const ComponentPageBuilder = ({ title, blurb, components, readme, customSections }) => (
   <BpkContentContainer>
     <Helmet title={title} />
     <BpkHeading level='h1'>{title}</BpkHeading>
-    {toArray(toNodes(blurb))}
+    {flatten(toNodes(blurb))}
     <BpkHeading id='examples' level='h2'>Examples</BpkHeading>
-    <BpkList>{toArray(components.map(ExampleNavListItem))}</BpkList>
-    {toArray(components.map(ComponentExample))}
-    <BpkHeading id='usage' level='h2'>Usage</BpkHeading>
-    {toArray(toNodes(usage))}
-    {toArray(customSections.map(CustomSection))}
+    <BpkList>{flatten(components.map(ExampleNavListItem))}</BpkList>
+    {flatten(components.map(ComponentExample))}
+    {readme ? flatten([
+      <BpkHeading id='readme' level='h2'>Readme</BpkHeading>,
+      <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(readme) }} />
+    ]) : null
+    }
+    {flatten(customSections.map(CustomSection))}
   </BpkContentContainer>
 )
 
@@ -79,7 +91,7 @@ ComponentPageBuilder.propTypes = {
       blurb: PropTypes.string
     })
   ),
-  usage: contentShape,
+  readme: PropTypes.string,
   customSections: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -92,7 +104,7 @@ ComponentPageBuilder.propTypes = {
 ComponentPageBuilder.defaultProps = {
   blurb: null,
   components: [],
-  usage: null,
+  readme: null,
   customSections: []
 }
 

@@ -1,6 +1,6 @@
 @import '~bpk-mixins/index';
 
-.bpk-content-container > {
+@mixin bpk-content-container {
   h1 {
     @include bpk-heading-1;
     @include bpk-content-heading;
@@ -47,5 +47,31 @@
     li {
       @include bpk-list-item;
     }
+  }
+
+  code {
+    @include bpk-code;
+  }
+
+  pre {
+    @include bpk-code__pre;
+
+    > code {
+      @include bpk-code--block;
+    }
+  }
+
+  blockquote {
+    @include bpk-blockquote;
+  }
+}
+
+.bpk-content-container {
+  > {
+    @include bpk-content-container;
+  }
+
+  blockquote > {
+    @include bpk-content-container;
   }
 }

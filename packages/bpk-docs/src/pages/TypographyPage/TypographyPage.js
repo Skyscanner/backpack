@@ -24,16 +24,16 @@ const components = [
     title: 'Paragaphs',
     examples: [
       <BpkParagraph>
-        Rizzle ipsizzle dolizzle ass cool, crazy adipiscing elizzle. Nullam phat velizzle, i'm in the shizzle
-        volutpizzle, check out this quizzle, cool vizzle, arcu. Pellentesque sheezy tortor.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam nemo umquam voluptatem appellavit, appellat;
+        Occultum facinus esse potuerit, gaudebit; Quaerimus enim finem bonorum. Quo igitur, inquit, modo?
       </BpkParagraph>,
       <BpkParagraph>
-        Owned erizzle. Black izzle dolor dapibizzle turpis tempizzle ghetto. Dope pellentesque nibh et turpis.
-        Sure intortizzle. Pellentesque eleifend rhoncizzle crackalackin. In hac habitasse platea dictumst.
+        Quodsi ipsam honestatem undique pertectam atque absolutam. Cyrenaici quidem non recusant; Sed ego in hoc
+        resisto; Quae duo sunt, unum facit.
       </BpkParagraph>,
       <BpkParagraph>
-        Fo shizzle my nizzle dapibizzle. Curabitizzle tellus izzle, pretizzle nizzle, da bomb sheezy, eleifend its
-        fo rizzle, check out this. Nizzle suscipizzle. Shizznit semper crackalackin phat boofron.
+        Sed nunc, quod agimus; Et quidem, inquit, vehementer errat; Equidem e Cn. Venit ad extremum; Quis non odit
+        sordidos, vanos, leves, futtiles? Itaque ab his ordiamur.
       </BpkParagraph>
     ]
   },
@@ -66,7 +66,7 @@ const components = [
       <BpkList ordered>
         <BpkListItem>First</BpkListItem>
         <BpkListItem>Second</BpkListItem>
-        <BpkListItem>First</BpkListItem>
+        <BpkListItem>Third</BpkListItem>
       </BpkList>
     ]
   }
@@ -76,7 +76,7 @@ const TypographyPage = () => <ComponentPageBuilder
   title='Typography'
   blurb='Headings, paragraphs, links, lists and more.'
   components={components}
-  usage='Matt to write'
+  readme={require('raw!bpk-component-heading/readme.md')}
 />
 
 export default TypographyPage

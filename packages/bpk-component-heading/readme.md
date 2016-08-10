@@ -2,13 +2,13 @@
 
 > Backpack heading component.
 
-## Installation
+### Installation
 
 ```sh
 npm install bpk-component-heading --save
 ```
 
-## Usage
+### Usage
 
 ```js
 import React from 'react'
