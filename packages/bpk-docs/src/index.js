@@ -24,6 +24,10 @@ export default ((locals, callback) => {
       return callback(error)
     }
 
+    if (redirectLocation) {
+      return callback(error, `<script>window.location = '${redirectLocation.pathname}';</script>`)
+    }
+
     const head = Helmet.rewind()
     const html = ReactDOMServer.renderToStaticMarkup(React.createElement(RouterContext, props))
 
