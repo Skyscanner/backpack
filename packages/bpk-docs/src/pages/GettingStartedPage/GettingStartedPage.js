@@ -66,9 +66,9 @@ ReactDom.render(myComponent, document.getElementById('react-mount'));
       </BpkParagraph>,
       <BpkBlockquote>
         <strong>Note:</strong> We are hoping to make it a lot easier to get started with Backpack and React in the near
-        future. Ideas include a <BpkLink href={createReactAppUrl}>create-react-app</BpkLink> like project which will get
-        you up and running in minutes as well as some sort of Slingshot / MShell based integration to get your app into
-        production. Watch this space.
+        future. Ideas include a <BpkLink href={createReactAppUrl} blank>create-react-app</BpkLink> like project which
+        will get you up and running in minutes as well as some sort of Slingshot / MShell based integration to get your
+        app into production. Watch this space.
       </BpkBlockquote>
     ]
   },
