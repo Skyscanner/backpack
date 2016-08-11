@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 import './presentation-block.scss'
 
-const PresentationBlock = ({ children, showHTML, sassdocId }) => (
+const PresentationBlock = ({ children }) => (
   <section className='bpkdocs-presentation-block'>
     <div className='bpkdocs-presentation-block__container'>{children}</div>
   </section>

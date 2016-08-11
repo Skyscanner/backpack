@@ -123,10 +123,7 @@ const GettingStartedPage = () => (
     <Helmet title={title} />
     <BpkContentContainer>
       <BpkHeading level='h1'>{title}</BpkHeading>
-      <BpkParagraph>
-        Backpack is a collection of design resources, reusable components and guidelines for creating Skyscanner's
-        products. Depending on the audience, there are a few ways to get started:
-      </BpkParagraph>
+      <BpkParagraph>Depending on the audience, there are a few ways to get started:</BpkParagraph>
       <BpkList>{Children.toArray(sections.map(NavItem))}</BpkList>
       {Children.toArray(sections.map(SectionContent))}
     </BpkContentContainer>

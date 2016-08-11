@@ -143,7 +143,6 @@ const TypographyPage = () => <ComponentPageBuilder
   title='Typography'
   blurb='Headings, paragraphs, links, lists and more.'
   components={components}
-  sassdocId='typography'
 />
 
 export default TypographyPage

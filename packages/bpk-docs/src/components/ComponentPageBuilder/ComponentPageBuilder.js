@@ -60,7 +60,7 @@ const toNodes = (children) => {
 
 const markdownToHTML = (readmeString) => marked(readmeString, { renderer: renderer })
 
-const ComponentPageBuilder = ({ title, blurb, components, readme, customSections, sassdocId }) => (
+const ComponentPageBuilder = ({ title, blurb, components, readme, customSections }) => (
   <BpkContentContainer>
     <Helmet title={title} />
     <BpkHeading level='h1'>{title}</BpkHeading>
@@ -76,13 +76,6 @@ const ComponentPageBuilder = ({ title, blurb, components, readme, customSections
     ]) : null
     }
     {flatten(customSections.map(CustomSection))}
-    {sassdocId ? flatten([
-      <BpkHeading level='h2'>Sass mixins</BpkHeading>,
-      <BpkParagraph>
-        There are Sass mixins available for these components, you can find
-        them <BpkLink href={`/sassdoc/#${sassdocId}`} blank>here</BpkLink>.
-      </BpkParagraph>
-    ]) : null}
   </BpkContentContainer>
 )
 
@@ -115,16 +108,14 @@ ComponentPageBuilder.propTypes = {
       title: PropTypes.string.isRequired,
       content: PropTypes.arrayOf(contentShape)
     })
-  ),
-  sassdocId: PropTypes.string
+  )
 }
 
 ComponentPageBuilder.defaultProps = {
   blurb: null,
   components: [],
   readme: null,
-  customSections: [],
-  sassdocId: null
+  customSections: []
 }
 
 export default ComponentPageBuilder

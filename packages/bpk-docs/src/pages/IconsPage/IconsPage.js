@@ -87,7 +87,6 @@ const IconsPage = () => <ComponentPageBuilder
   components={components}
   customSections={customSections}
   readme={require('raw!bpk-component-icon/readme.md')}
-  sassdocId='mixin-bpk-icon-sm'
 />
 
 export default IconsPage

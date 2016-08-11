@@ -1,6 +1,6 @@
 # Backpack Design System
 
-> Backpack is a collection of design resources, reusable components and guidelines for creating Skyscanner's products. Depending on the audience, there are a few ways to get started:
+> Backpack is a collection of design resources, reusable components and guidelines for creating Skyscanner's products.
 
 [![Build Status](http://drone.eu-west-1.prod.aws.skyscanner.local/api/badges/backpack/backpack/status.svg)](http://drone.eu-west-1.prod.aws.skyscanner.local/backpack/backpack)
 

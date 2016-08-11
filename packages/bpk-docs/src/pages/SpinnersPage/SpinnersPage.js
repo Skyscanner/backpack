@@ -45,7 +45,6 @@ const SpinnersPage = () => <ComponentPageBuilder
   blurb={blurb}
   components={components}
   readme={require('raw!bpk-component-spinner/readme.md')}
-  sassdocId='svgs-mixin-bpk-spinner'
 />
 
 export default SpinnersPage

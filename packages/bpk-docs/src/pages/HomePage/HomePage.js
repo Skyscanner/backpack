@@ -32,8 +32,8 @@ class HomePage extends React.Component {
           <div className='bpkdocs-home-page__hero-container'>
             <BpkHeading level='h1'>Backpack</BpkHeading>
             <BpkHeading level='h2'>
-              A suite of tools to enable you to design and build products which look and feel consistent with the
-              Skyscanner product family.
+              Backpack is a collection of design resources, reusable components and guidelines for creating Skyscanner's
+              products.
             </BpkHeading>
             <BpkButton large href={ROUTES.GETTING_STARTED} onClick={this.onGettingStartedClick}>
               Get started <BpkIcon icon='long-arrow-right-alt' color={TOKENS.colorWhite} large alignToButton />
@@ -41,10 +41,6 @@ class HomePage extends React.Component {
           </div>
         </div>
         <div className='bpkdocs-home-page__content-container'>
-          <BpkHeading level='h3'>
-            We’ve built upon Atomic Design principals to bring a scalable platform to design, build and share components
-            across all of Skyscanner’s product areas.
-          </BpkHeading>
           <section className='bpkdocs-home-page__columns'>
             <article className='bpkdocs-home-page__column'>
               <BpkHeading level='h3'>Bonds</BpkHeading>

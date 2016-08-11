@@ -82,7 +82,6 @@ const LogosPage = () => <ComponentPageBuilder
   components={components}
   customSections={customSections}
   readme={require('raw!bpk-component-logo/readme.md')}
-  sassdocId='svgs-mixin-bpk-logo-cloud'
 />
 
 export default LogosPage
