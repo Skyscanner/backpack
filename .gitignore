@@ -4,7 +4,6 @@
 /dist
 /coverage
 /packages/bpk-stylesheets/base.js
-/packages/bpk-stylesheets/atoms.js
 node_modules
 npm-debug.*
 lerna-debug.log
