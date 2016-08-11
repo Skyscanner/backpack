@@ -23,7 +23,7 @@ const components = [
     id: 'inline',
     title: 'Inline',
     examples: [
-      <BpkLogo logo='tianxun' />
+      <BpkLogo logo='inline' />
     ],
     blurb: 'This is the preferred usage of the logo.'
   },
@@ -47,7 +47,7 @@ const components = [
     id: 'tianxun',
     title: 'Tianxun',
     examples: [
-      <BpkLogo logo='cloud' />
+      <BpkLogo logo='tianxun' />
     ],
     blurb: 'This is the preferred usage for Skyscanner in China.'
   },
