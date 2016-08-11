@@ -49,9 +49,13 @@ const BaseStylesheetPage = () => (
       </BpkList>
       <BpkHeading level='h3'>Usage</BpkHeading>
       <BpkParagraph>
-        Consumer's of the website scaffolding should expect this base stylesheet to be on the page already. If
-        you need to emulate this base in your component's local test harness, the compiled css is available for you to
-        import, but first you'll need to install the <BpkCode>bpk-stylesheets</BpkCode> package:
+        <strong>
+          Consumer's of the website scaffolding should expect this base stylesheet to be on the page already.
+        </strong>
+      </BpkParagraph>
+      <BpkParagraph>
+        If you need to emulate this base in your local dev environment or test harness, the compiled css is available
+        for you to import, but first you'll need to install the <BpkCode>bpk-stylesheets</BpkCode> package:
       </BpkParagraph>
       <BpkCodeBlock>npm install bpk-stylesheets --save-dev</BpkCodeBlock>
       <BpkParagraph>Import like so:</BpkParagraph>
