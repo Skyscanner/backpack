@@ -62,12 +62,7 @@ const links = [
       { route: null, children: 'Date picker' },
       { route: null, children: 'Filters' },
       { route: null, children: 'Header' },
-      { route: null, children: 'Footer' }
-    ]
-  },
-  {
-    category: 'Systems',
-    links: [
+      { route: null, children: 'Footer' },
       { route: null, children: 'Search controls' }
     ]
   }
