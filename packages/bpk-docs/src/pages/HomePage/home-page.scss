@@ -11,6 +11,10 @@
     @include bpk-container;
 
     padding: $bpk-spacing-xl $bpk-spacing-base;
+
+    @include bpk-breakpoint-above-tablet {
+      padding: $bpk-spacing-xl*3 $bpk-spacing-base;
+    }
   }
 
   &__content-container {
@@ -20,17 +24,25 @@
   &__columns {
     @include bpk-breakpoint-above-tablet {
       flex-direction: row;
+      justify-content: flex-start;
     }
 
     display: flex;
     flex-direction: column;
-    margin-right: -$bpk-spacing-base;
-    margin-left: -$bpk-spacing-base;
   }
 
   &__column {
     flex: 1;
     width: 100%;
-    padding: $bpk-spacing-base;
+
+    &:first-child {
+      margin-bottom: $bpk-spacing-base;
+    }
+
+    @include bpk-breakpoint-above-tablet {
+      &:first-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }
