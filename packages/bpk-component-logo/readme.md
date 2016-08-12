@@ -8,6 +8,11 @@
 npm install bpk-component-logo --save
 ```
 
+> **Important:** This component needs Webpack's raw-loader as a devDependency:
+```sh
+npm install raw-loader --save-dev
+```
+
 ### Usage
 
 ```js

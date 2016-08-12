@@ -3,20 +3,34 @@ import TOKENS from 'bpk-tokens/tokens/base.common'
 
 import './bpk-logo.scss'
 
-const BpkLogo = ({ logo, color }) => {
+const DEFAULT_HEIGHTS = {
+  'inline': TOKENS.logoInlineDefaultHeight,
+  'stacked': TOKENS.logoStackedDefaultHeight,
+  'cloud': TOKENS.logoCloudDefaultHeight,
+  'tianxun': TOKENS.logoTianxunDefaultHeight,
+  'tianxun-stacked': TOKENS.logoTianxunStackedDefaultHeight
+}
+
+const BpkLogo = ({ logo, color, height }) => {
   const __html = require(`raw!bpk-svgs/src/logos/${logo}.svg`)
     .replace(/^<svg/, `<svg fill="${color}"`)
 
-  return <span className={`bpk-logo-${logo}`} dangerouslySetInnerHTML={{ __html }} />
+  const style = {
+    height: height || DEFAULT_HEIGHTS[ logo ]
+  }
+
+  return <span className={`bpk-logo-${logo}`} style={style} dangerouslySetInnerHTML={{ __html }} />
 }
 
 BpkLogo.propTypes = {
-  logo: PropTypes.string.isRequired,
-  color: PropTypes.string
+  logo: PropTypes.oneOf([ 'inline', 'stacked', 'cloud', 'tianxun', 'tianxun-stacked' ]).isRequired,
+  color: PropTypes.string,
+  height: PropTypes.string
 }
 
 BpkLogo.defaultProps = {
-  color: TOKENS.colorGray500
+  color: TOKENS.colorGray500,
+  height: null
 }
 
 export default BpkLogo
