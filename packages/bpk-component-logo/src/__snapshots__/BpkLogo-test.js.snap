@@ -5,6 +5,11 @@ exports[`BpkIcon should render correctly with a "logo" attribute equal to "cloud
     Object {
       "__html": "FILE_MOCK_CONTENTS"
     }
+  }
+  style={
+    Object {
+      "height": "2.625rem"
+    }
   } />
 `;
 
@@ -14,6 +19,11 @@ exports[`BpkIcon should render correctly with a "logo" attribute equal to "inlin
   dangerouslySetInnerHTML={
     Object {
       "__html": "FILE_MOCK_CONTENTS"
+    }
+  }
+  style={
+    Object {
+      "height": "2.625rem"
     }
   } />
 `;
@@ -25,6 +35,11 @@ exports[`BpkIcon should render correctly with a "logo" attribute equal to "stack
     Object {
       "__html": "FILE_MOCK_CONTENTS"
     }
+  }
+  style={
+    Object {
+      "height": "2.625rem"
+    }
   } />
 `;
 
@@ -35,6 +50,11 @@ exports[`BpkIcon should render correctly with a "logo" attribute equal to "tianx
     Object {
       "__html": "FILE_MOCK_CONTENTS"
     }
+  }
+  style={
+    Object {
+      "height": "2.625rem"
+    }
   } />
 `;
 
@@ -44,6 +64,11 @@ exports[`BpkIcon should render correctly with a "logo" attribute equal to "tianx
   dangerouslySetInnerHTML={
     Object {
       "__html": "FILE_MOCK_CONTENTS"
+    }
+  }
+  style={
+    Object {
+      "height": "calc(1.5rem * 3)"
     }
   } />
 `;
