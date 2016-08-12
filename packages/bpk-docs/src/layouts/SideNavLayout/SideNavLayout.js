@@ -26,7 +26,7 @@ const toNavList = (links) => (
 )
 
 const toNavListCategory = (link, key) => (
-  <li key={key}>
+  <li className='bpkdocs-side-nav-layout__nav-list-item' key={key}>
     <span className='bpkdocs-side-nav-layout__nav-category-name'>{link.category}</span>
     <ul className='bpkdocs-side-nav-layout__nav-category-list'>{link.links.map(toNavListItem)}</ul>
   </li>

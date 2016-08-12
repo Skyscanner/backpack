@@ -8,8 +8,27 @@
 
   &__nav {
     margin-bottom: $bpk-spacing-sm;
-    padding-bottom: $bpk-spacing-sm;
-    box-shadow: 0 $bpk-one-pixel-rem 0 0 $bpk-color-gray-50;
+
+    @include bpk-breakpoint-above-tablet {
+      float: left;
+      width: 25%;
+    }
+  }
+
+  &__content {
+    @include bpk-breakpoint-above-tablet {
+      float: left;
+      width: calc(75% - #{$bpk-spacing-base});
+      margin-left: $bpk-spacing-base;
+    }
+  }
+
+  &__nav-list-item {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: $bpk-spacing-base;
+    }
   }
 
   &__nav-list,
@@ -20,8 +39,6 @@
   }
 
   &__nav-category-list {
-    display: none;
-    margin-bottom: $bpk-spacing-base;
     padding: 0;
     border-radius: $bpk-border-radius-sm;
     box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-100;
@@ -38,11 +55,12 @@
   }
 
   &__nav-category-name {
-    display: block;
-    margin-bottom: $bpk-spacing-xs;
+    margin: 0 0 $bpk-spacing-xs 0;
+    padding: 0;
     color: $bpk-color-gray-200;
-    font-size: $bpk-font-size-base;
-    line-height: $bpk-line-height-base;
+    font-size: $bpk-font-size-sm;
+    font-weight: bold;
+    line-height: $bpk-line-height-sm;
   }
 
   &__link {
@@ -65,31 +83,5 @@
   &__pending-link {
     color: $bpk-color-gray-200;
     font-style: italic;
-  }
-
-
-  @include bpk-breakpoint-above-tablet {
-    &__nav {
-      width: 25%;
-      padding-bottom: 0;
-      float: left;
-      box-shadow: none;
-    }
-
-    &__nav-category-name {
-      font-size: $bpk-font-size-sm;
-      font-weight: bold;
-      line-height: $bpk-line-height-sm;
-    }
-
-    &__nav-category-list {
-      display: block;
-    }
-
-    &__content {
-      float: left;
-      width: calc(75% - #{$bpk-spacing-base});
-      margin-left: $bpk-spacing-base;
-    }
   }
 }
