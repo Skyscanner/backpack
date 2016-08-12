@@ -2,40 +2,86 @@
 
 .bpkdocs-side-nav-layout {
   &__container {
-    @include bpk-container;
     @include bpk-clearfix;
+    @include bpk-container;
   }
 
-  &__list {
+  &__nav {
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-breakpoint-above-tablet {
+      float: left;
+      width: 25%;
+    }
+  }
+
+  &__content {
+    @include bpk-breakpoint-above-tablet {
+      float: left;
+      width: calc(75% - #{$bpk-spacing-base});
+      margin-left: $bpk-spacing-base;
+    }
+  }
+
+  &__nav-list-item {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: $bpk-spacing-base;
+    }
+  }
+
+  &__nav-list,
+  &__nav-category-list {
     margin: 0;
     padding: 0;
     list-style-type: none;
   }
 
-  &__list-item {
-    margin: 0;
+  &__nav-category-list {
     padding: 0;
+    border-radius: $bpk-border-radius-sm;
+    box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-100;
+    overflow: hidden;
   }
 
-  &__category {
+  &__nav-category-list-item {
+    padding: 0;
+    box-shadow: 0 $bpk-one-pixel-rem 0 0 $bpk-color-gray-50;
+
+    &:last-child {
+      box-shadow: none;
+    }
+  }
+
+  &__nav-category-name {
+    margin: 0 0 $bpk-spacing-xs 0;
+    padding: 0;
+    color: $bpk-color-gray-200;
     font-size: $bpk-font-size-sm;
+    font-weight: bold;
     line-height: $bpk-line-height-sm;
+  }
+
+  &__link {
+    @include bpk-link;
+
+    &--active {
+      @include bpk-link--active;
+
+      background-color: $bpk-color-gray-50;
+      font-weight: bold;
+    }
+  }
+
+  &__link,
+  &__pending-link {
+    display: block;
+    padding: $bpk-spacing-xs $bpk-spacing-sm;
   }
 
   &__pending-link {
     color: $bpk-color-gray-200;
     font-style: italic;
-  }
-
-  @include bpk-breakpoint-above-tablet {
-    &__nav {
-      width: 25%;
-      float: left;
-    }
-
-    &__content {
-      width: 75%;
-      float: left;
-    }
   }
 }

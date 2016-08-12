@@ -5,7 +5,7 @@ import * as routes from './../../constants/routes'
 
 const links = [
   {
-    category: 'Backpack basics',
+    category: 'Basics',
     links: [
       { route: routes.GETTING_STARTED, children: 'Getting started' },
       { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' },

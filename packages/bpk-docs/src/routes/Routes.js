@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, IndexRoute, withRouter } from 'react-router'
+import { Route, IndexRoute, IndexRedirect, withRouter } from 'react-router'
 
 import * as ROUTES from './../constants/routes'
 
@@ -28,19 +28,19 @@ const Routes = (
   <Route path={ROUTES.HOME} component={DefaultLayout}>
     <IndexRoute component={withRouter(HomePage)} />
     <Route path={ROUTES.DOCS} component={DocsLayout}>
-      <IndexRoute component={GettingStartedPage} />
+      <IndexRedirect to={ROUTES.GETTING_STARTED} />
       <Route path={ROUTES.GETTING_STARTED} component={GettingStartedPage} />
       <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
       <Route path={ROUTES.CONTRIBUTING} component={ContributingPage} />
       <Route path={ROUTES.BONDS}>
-        <IndexRoute component={ColorsPage} />
+        <IndexRedirect to={ROUTES.COLORS} />
         <Route path={ROUTES.COLORS} component={ColorsPage} />
         <Route path={ROUTES.SPACING} component={SpacingPage} />
         <Route path={ROUTES.TYPE_SETTING} component={TypeSettingPage} />
         <Route path={ROUTES.LAYOUT} component={LayoutPage} />
       </Route>
       <Route path={ROUTES.ATOMS}>
-        <IndexRoute component={TypographyPage} />
+        <IndexRedirect to={ROUTES.TYPOGRAPHY} />
         <Route path={ROUTES.TYPOGRAPHY} component={TypographyPage} />
         <Route path={ROUTES.BUTTONS} component={ButtonsPage} />
         <Route path={ROUTES.ICONS} component={IconsPage} />
@@ -48,10 +48,10 @@ const Routes = (
         <Route path={ROUTES.LOGOS} component={LogosPage} />
       </Route>
       <Route path={ROUTES.MOLECULES}>
-        <IndexRoute component={GettingStartedPage} />
+        <IndexRedirect to={ROUTES.GETTING_STARTED} />
       </Route>
       <Route path={ROUTES.ORGANISMS}>
-        <IndexRoute component={GettingStartedPage} />
+        <IndexRedirect to={ROUTES.GETTING_STARTED} />
       </Route>
     </Route>
     <Route path={ROUTES.DOWNLOADS} component={DownloadsPage} />
