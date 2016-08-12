@@ -6,7 +6,6 @@ import BpkIcon from 'bpk-component-icon'
 import BpkButton from 'bpk-component-button'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
-import BpkRouterLink from 'bpk-component-router-link'
 import TOKENS from 'bpk-tokens/tokens/base.common'
 
 import './home-page.scss'
@@ -31,8 +30,8 @@ class HomePage extends React.Component {
         <div className='bpkdocs-home-page__hero'>
           <div className='bpkdocs-home-page__hero-container'>
             <BpkHeading level='h1'>Backpack</BpkHeading>
-            <BpkHeading level='h2'>
-              Backpack is a collection of design resources, reusable components and guidelines for creating Skyscanner's
+            <BpkHeading level='h2'>Backpack is a collection of design resources, reusable components and guidelines for
+              creating Skyscanner
               products.
             </BpkHeading>
             <BpkButton large href={ROUTES.GETTING_STARTED} onClick={this.onGettingStartedClick}>
@@ -43,41 +42,20 @@ class HomePage extends React.Component {
         <div className='bpkdocs-home-page__content-container'>
           <section className='bpkdocs-home-page__columns'>
             <article className='bpkdocs-home-page__column'>
-              <BpkHeading level='h3'>Bonds</BpkHeading>
-              <BpkParagraph>
-                Bonds help set the foundation for all elements and helps connect them together. They’re abstract by
-                nature and cover things like color, typography and even more invisible aspects of an interface such as
-                animations and spacing.
-                <br />
-                <BpkRouterLink to={ROUTES.BONDS}>Read more</BpkRouterLink>
+              <BpkHeading level='h3'>Our mission</BpkHeading>
+              <BpkParagraph>To bring Design and Engineering teams together to help drive product consistency
+                at scale and reduce waste by offering a platform by which to share components easily.
               </BpkParagraph>
             </article>
             <article className='bpkdocs-home-page__column'>
-              <BpkHeading level='h3'>Atoms</BpkHeading>
+              <BpkHeading level='h3'>About Backpack</BpkHeading>
               <BpkParagraph>
-                Atoms are the basic building blocks of matter. Applied to web interfaces, atoms are our HTML tags, such
-                as a form label, an input or a button. They have distinct properties and can't be broken down further
-                without losing their meaning.
-                <br />
-                <BpkRouterLink to={ROUTES.ATOMS}>Read more</BpkRouterLink>
+                Backpack is the foundation for all Skyscanner products and is maintained by the Backpack Design System
+                Squad.
               </BpkParagraph>
-            </article>
-            <article className='bpkdocs-home-page__column'>
-              <BpkHeading level='h3'>Molecules</BpkHeading>
               <BpkParagraph>
-                Molecules are two or more atoms held together by chemical bonds. These combinations of atoms take on
-                their own unique properties, and become more tangible and operational than atoms.
-                <br />
-                <BpkRouterLink to={ROUTES.MOLECULES}>Read more</BpkRouterLink>
-              </BpkParagraph>
-            </article>
-            <article className='bpkdocs-home-page__column'>
-              <BpkHeading level='h3'>Organisms</BpkHeading>
-              <BpkParagraph>
-                Organisms are groups of molecules joined together to form a relatively complex, distinct section of an
-                interface.
-                <br />
-                <BpkRouterLink to={ROUTES.ORGANISMS}>Read more</BpkRouterLink>
+                Adopting Atomic Design principals, we're building a suite of components and tools to help bootstrap
+                Skyscanner products.
               </BpkParagraph>
             </article>
           </section>

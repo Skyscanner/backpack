@@ -35,9 +35,9 @@ class BpkGridToggle extends React.Component {
 
   render () {
     const { gridEnabled } = this.state
-    const onOrOff = gridEnabled ? 'on' : 'off'
+    const onOrOff = gridEnabled ? 'off' : 'on'
 
-    return <BpkLink href='#' onClick={this.toggleGrid}>Grid is {onOrOff}.</BpkLink>
+    return <BpkLink href='#' onClick={this.toggleGrid}>Toggle baseline grid {onOrOff}</BpkLink>
   }
 }
 

@@ -3,9 +3,8 @@ exports[`BpkGridToggle should render correctly 1`] = `
   className="bpk-link"
   href="#"
   onClick={[Function bound toggleGrid]}>
-  Grid is 
-  off
-  .
+  Toggle baseline grid 
+  on
 </a>
 `;
 
@@ -14,8 +13,7 @@ exports[`BpkGridToggle should render correctly when toggled 1`] = `
   className="bpk-link"
   href="#"
   onClick={[Function bound toggleGrid]}>
-  Grid is 
-  on
-  .
+  Toggle baseline grid 
+  off
 </a>
 `;

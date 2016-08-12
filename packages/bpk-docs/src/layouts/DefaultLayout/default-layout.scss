@@ -5,5 +5,20 @@
     @include bpk-container;
 
     padding: $bpk-spacing-lg $bpk-spacing-base;
+    box-shadow: 0 -1px 0 0 $bpk-color-gray-50;
+
+    &-copyright,
+    &-toggle {
+      font-size: $bpk-font-size-sm;
+      line-height: $bpk-line-height-sm;
+    }
+
+    &-copyright {
+      float: left;
+    }
+
+    &-toggle {
+      float: right;
+    }
   }
 }

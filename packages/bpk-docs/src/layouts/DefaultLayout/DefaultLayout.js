@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react'
 import Helmet from 'react-helmet'
 
-import BpkLink from 'bpk-component-link'
 import BpkGridToggle from 'bpk-component-grid-toggle'
 
 import './default-layout.scss'
@@ -13,8 +12,10 @@ const DefaultLayout = ({ children }) => (
     <Header />
     <main>{children}</main>
     <footer className='bpkdocs-default-layout__footer'>
-      Copyright Skyscanner {new Date().getFullYear()}. <BpkGridToggle /><br />
-      Maintained by the <BpkLink href='mailto:backpack@skyscanner.net'>Backpack Design System Squad</BpkLink>
+      <small className='bpkdocs-default-layout__footer-copyright'>&copy; Copyright Skyscanner {new Date().getFullYear()}</small>
+      <div className='bpkdocs-default-layout__footer-toggle'>
+        <BpkGridToggle />
+      </div>
     </footer>
   </div>
 )
