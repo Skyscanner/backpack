@@ -14,11 +14,14 @@
     }
 
     &-copyright {
+      width: 45%;
       float: left;
     }
 
     &-toggle {
+      width: 45%;
       float: right;
+      text-align: right;
     }
   }
 }
