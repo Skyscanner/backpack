@@ -2,11 +2,12 @@
 
 .bpkdocs-side-nav-layout {
   &__container {
-    @include bpk-container;
     @include bpk-clearfix;
+    @include bpk-container;
   }
 
   &__nav {
+    margin-bottom: $bpk-spacing-sm;
     padding-bottom: $bpk-spacing-sm;
     box-shadow: 0 $bpk-one-pixel-rem 0 0 $bpk-color-gray-50;
   }
@@ -24,6 +25,7 @@
     padding: 0;
     border-radius: $bpk-border-radius-sm;
     box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-100;
+    overflow: hidden;
   }
 
   &__nav-category-list-item {
@@ -65,10 +67,10 @@
     font-style: italic;
   }
 
+
   @include bpk-breakpoint-above-tablet {
     &__nav {
       width: 25%;
-      margin-right: $bpk-spacing-base;
       padding-bottom: 0;
       float: left;
       box-shadow: none;
@@ -85,8 +87,9 @@
     }
 
     &__content {
-      width: calc(75% - #{$bpk-spacing-base});
       float: left;
+      width: calc(75% - #{$bpk-spacing-base});
+      margin-left: $bpk-spacing-base;
     }
   }
 }

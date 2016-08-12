@@ -3,9 +3,18 @@ import { Link } from 'react-router'
 
 import './side-nav-layout.scss'
 
-const toNavLink = (link, key) => link.route
-  ? <Link key={key} className='bpkdocs-side-nav-layout__link' activeClassName='bpkdocs-side-nav-layout__link--active' to={link.route} children={link.children} />
-  : <span key={key} className='bpkdocs-side-nav-layout__pending-link'>{link.children}</span>
+const toNavLink = (link, key) => {
+  if (link.route) {
+    return <Link
+      key={key}
+      className='bpkdocs-side-nav-layout__link'
+      activeClassName='bpkdocs-side-nav-layout__link--active'
+      to={link.route} children={link.children}
+    />
+  }
+
+  return <span key={key} className='bpkdocs-side-nav-layout__pending-link'>{link.children}</span>
+}
 
 const toNavList = (links) => (
   <ul className='bpkdocs-side-nav-layout__nav-list'>
