@@ -22,25 +22,19 @@ const sections = [
     title: 'Sketch resources',
     content: [
       <BpkParagraph>
-        We use the Craft plugin (from InVision) to
-        help share components and keep Sketch files in sync. To use this:
+        We use the Craft plugin (from InVision) to help share components and keep Sketch files in sync. To use this:
       </BpkParagraph>,
       <BpkList ordered>
         <BpkListItem>
-          Download and install the Craft plugin <BpkLink href='https://labs.invisionapp.com/craft' blank>here</BpkLink>
+          Download and install the <BpkLink href='https://labs.invisionapp.com/craft' blank>Craft plugin</BpkLink>.
         </BpkListItem>
         <BpkListItem>
-          Import the <BpkCode>Backpack.library</BpkCode> folder (stored on Dropbox)
+          Download the Backpack Craft library from <BpkRouterLink to={ROUTES.DOWNLOADS}>Downloads</BpkRouterLink>.
         </BpkListItem>
-      </BpkList>,
-      <BpkBlockquote>
-        <strong>Note: </strong>Once installed, whenever a change is made you’ll automatically get the new version and be
-        prompted to update
-        any existing items in your local files via a blue refresh icon.
-      </BpkBlockquote>,
-      <BpkParagraph>For other design resources such as color palettes, and grids, head over to <BpkRouterLink
-        to={ROUTES.DOWNLOADS}>Downloads</BpkRouterLink>.
-      </BpkParagraph>
+        <BpkListItem>
+          Import the Backpack Craft Library into Sketch.
+        </BpkListItem>
+      </BpkList>
     ]
   },
   {

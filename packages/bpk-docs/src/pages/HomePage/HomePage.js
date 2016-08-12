@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import Helmet from 'react-helmet'
 import { PropTypes as RouterPropTypes } from 'react-router'
 
+import BpkLink from 'bpk-component-link'
 import BpkIcon from 'bpk-component-icon'
 import BpkButton from 'bpk-component-button'
 import BpkHeading from 'bpk-component-heading'
@@ -24,6 +25,7 @@ class HomePage extends React.Component {
   }
 
   render () {
+    const atomicDesignUrl = 'http://bradfrost.com/blog/post/atomic-web-design/'
     return (
       <section>
         <Helmet title='Backpack' />
@@ -42,7 +44,7 @@ class HomePage extends React.Component {
         <div className='bpkdocs-home-page__content-container'>
           <section className='bpkdocs-home-page__columns'>
             <article className='bpkdocs-home-page__column'>
-              <BpkHeading level='h3'>Our mission</BpkHeading>
+              <BpkHeading level='h3'>Mission</BpkHeading>
               <BpkParagraph>To bring Design and Engineering teams together to help drive product consistency
                 at scale and reduce waste by offering a platform by which to share components easily.
               </BpkParagraph>
@@ -51,11 +53,8 @@ class HomePage extends React.Component {
               <BpkHeading level='h3'>About Backpack</BpkHeading>
               <BpkParagraph>
                 Backpack is the foundation for all Skyscanner products and is maintained by the Backpack Design System
-                Squad.
-              </BpkParagraph>
-              <BpkParagraph>
-                Adopting Atomic Design principals, we're building a suite of components and tools to help bootstrap
-                Skyscanner products.
+                Squad. It adopts the <BpkLink href={atomicDesignUrl} blank>Atomic Design</BpkLink> principals to help
+                visualise how Skyscanner's products are assembled.
               </BpkParagraph>
             </article>
           </section>
