@@ -22,7 +22,24 @@ const sections = [
     title: 'Sketch resources',
     content: [
       <BpkParagraph>
-        James to input. Download the sketch resources <BpkRouterLink to={ROUTES.DOWNLOADS}>here</BpkRouterLink>.
+        We use the Craft plugin (from InVision) to
+        help share components and keep Sketch files in sync. To use this:
+      </BpkParagraph>,
+      <BpkList ordered>
+        <BpkListItem>
+          Download and install the Craft plugin <BpkLink href='https://labs.invisionapp.com/craft' blank>here</BpkLink>
+        </BpkListItem>
+        <BpkListItem>
+          Import the <BpkCode>Backpack.library</BpkCode> folder (stored on Dropbox)
+        </BpkListItem>
+      </BpkList>,
+      <BpkBlockquote>
+        <strong>Note: </strong>Once installed, whenever a change is made you’ll automatically get the new version and be
+        prompted to update
+        any existing items in your local files via a blue refresh icon.
+      </BpkBlockquote>,
+      <BpkParagraph>For other design resources such as color palettes, and grids, head over to <BpkRouterLink
+        to={ROUTES.DOWNLOADS}>Downloads</BpkRouterLink>.
       </BpkParagraph>
     ]
   },
