@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react/lib/ReactTestRenderer'
-import BpkListItem from './BpkListItem.jsx'
+import BpkListItem from './BpkListItem.js'
 
 describe('BpkListItem', () => {
   it('should render correctly', () => {
