@@ -12,7 +12,7 @@ const DefaultLayout = ({ children }) => (
     <Header />
     <main>{children}</main>
     <footer className='bpkdocs-default-layout__footer'>
-      <small className='bpkdocs-default-layout__footer-copyright'>&copy; Copyright Skyscanner {new Date().getFullYear()}</small>
+      <small className='bpkdocs-default-layout__footer-copyright'>&copy; Skyscanner {new Date().getFullYear()}</small>
       <div className='bpkdocs-default-layout__footer-toggle'><BpkGridToggle /></div>
     </footer>
   </div>
