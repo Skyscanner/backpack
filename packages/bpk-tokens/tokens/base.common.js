@@ -38,7 +38,7 @@ module.exports = {
   buttonLargePaddingX: "1.5rem",
   buttonLargeFontSize: "1.5rem",
   buttonLargeLineHeight: "1.875rem",
-  buttonSecondaryBackgroundColor: "rgba(0, 0, 0, 0)",
+  buttonSecondaryBackgroundColor: "rgb(255, 255, 255)",
   buttonSecondaryBackgroundImage: "none",
   buttonSecondaryHoverBackgroundColor: "rgba(0, 0, 0, 0)",
   buttonSecondaryHoverBackgroundImage: "none",

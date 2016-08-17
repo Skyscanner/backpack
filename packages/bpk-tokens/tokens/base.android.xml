@@ -39,7 +39,7 @@
   <property name="BUTTON_LARGE_PADDING_X" category="buttons">24</property>
   <property name="BUTTON_LARGE_FONT_SIZE" category="buttons">24</property>
   <property name="BUTTON_LARGE_LINE_HEIGHT" category="buttons">30</property>
-  <color name="BUTTON_SECONDARY_BACKGROUND_COLOR" category="buttons">#00000000</color>
+  <color name="BUTTON_SECONDARY_BACKGROUND_COLOR" category="buttons">#ffffffff</color>
   <property name="BUTTON_SECONDARY_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR" category="buttons">#00000000</color>
   <property name="BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE" category="buttons">none</property>

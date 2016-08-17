@@ -115,7 +115,7 @@
       "type": "number"
     },
     "BUTTON_SECONDARY_BACKGROUND_COLOR": {
-      "value": "transparent",
+      "value": "{!WHITE}",
       "type": "color"
     },
     "BUTTON_SECONDARY_BACKGROUND_IMAGE": {
