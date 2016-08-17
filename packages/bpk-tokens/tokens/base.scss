@@ -41,7 +41,7 @@ $bpk-button-active-background-color: rgb(0, 189, 104);
 /// @group buttons
 $bpk-button-active-background-image: none;
 /// @group buttons
-$bpk-button-disabled-background-color: rgb(223, 220, 227);
+$bpk-button-disabled-background-color: rgb(230, 228, 235);
 /// @group buttons
 $bpk-button-disabled-background-image: none;
 /// @group buttons
@@ -59,7 +59,7 @@ $bpk-button-active-box-shadow: none;
 /// @group buttons
 $bpk-button-disabled-box-shadow: none;
 /// @group buttons
-$bpk-button-disabled-color: rgb(137, 130, 148);
+$bpk-button-disabled-color: rgb(178, 174, 189);
 /// @group buttons
 $bpk-button-font-size: 1rem;
 /// @group buttons
@@ -89,7 +89,7 @@ $bpk-button-secondary-active-background-color: rgba(0, 0, 0, 0);
 /// @group buttons
 $bpk-button-secondary-active-background-image: none;
 /// @group buttons
-$bpk-button-secondary-disabled-background-color: rgb(223, 220, 227);
+$bpk-button-secondary-disabled-background-color: rgb(230, 228, 235);
 /// @group buttons
 $bpk-button-secondary-disabled-background-image: none;
 /// @group buttons
@@ -99,9 +99,9 @@ $bpk-button-secondary-hover-color: rgb(0, 178, 214);
 /// @group buttons
 $bpk-button-secondary-active-color: rgb(0, 178, 214);
 /// @group buttons
-$bpk-button-secondary-disabled-color: rgb(137, 130, 148);
+$bpk-button-secondary-disabled-color: rgb(178, 174, 189);
 /// @group buttons
-$bpk-button-secondary-box-shadow: 0 0 0 2px #dfdce3 inset;
+$bpk-button-secondary-box-shadow: 0 0 0 2px #E6E4EB inset;
 /// @group buttons
 $bpk-button-secondary-hover-box-shadow: 0 0 0 2px #00b2d6 inset;
 /// @group buttons
@@ -153,25 +153,25 @@ $bpk-color-blue-800: rgb(0, 117, 140);
 /// @group colors
 $bpk-color-blue-900: rgb(0, 85, 103);
 /// @group colors
-$bpk-color-gray-50: rgb(246, 245, 247);
+$bpk-color-gray-50: rgb(243, 242, 245);
 /// @group colors
-$bpk-color-gray-100: rgb(223, 220, 227);
+$bpk-color-gray-100: rgb(230, 228, 235);
 /// @group colors
-$bpk-color-gray-200: rgb(182, 177, 189);
+$bpk-color-gray-200: rgb(204, 201, 212);
 /// @group colors
-$bpk-color-gray-300: rgb(137, 130, 148);
+$bpk-color-gray-300: rgb(178, 174, 189);
 /// @group colors
-$bpk-color-gray-400: rgb(111, 102, 125);
+$bpk-color-gray-400: rgb(154, 149, 167);
 /// @group colors
-$bpk-color-gray-500: rgb(84, 76, 99);
+$bpk-color-gray-500: rgb(129, 123, 143);
 /// @group colors
-$bpk-color-gray-600: rgb(69, 61, 84);
+$bpk-color-gray-600: rgb(105, 97, 121);
 /// @group colors
-$bpk-color-gray-700: rgb(55, 47, 69);
+$bpk-color-gray-700: rgb(82, 76, 97);
 /// @group colors
-$bpk-color-gray-800: rgb(39, 33, 51);
+$bpk-color-gray-800: rgb(59, 52, 75);
 /// @group colors
-$bpk-color-gray-900: rgb(27, 21, 36);
+$bpk-color-gray-900: rgb(37, 32, 51);
 /// @group colors
 $bpk-color-green-50: rgb(223, 247, 236);
 /// @group colors
@@ -261,7 +261,7 @@ $bpk-one-pixel-rem: .0625rem;
 /// @group fonts
 $bpk-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif;
 /// @group text-colors
-$bpk-font-color-base: rgb(84, 76, 99);
+$bpk-font-color-base: rgb(105, 97, 121);
 /// @group line-heights
 $bpk-line-height-sm: 1.125rem;
 /// @group line-heights
@@ -367,8 +367,8 @@ $bpk-link-color: rgb(0, 178, 214);
 /// @group text-decorations
 $bpk-link-text-decoration: none;
 /// @group text-colors
-$bpk-link-hover-color: rgb(55, 47, 69);
+$bpk-link-hover-color: rgb(82, 76, 97);
 /// @group text-decorations
 $bpk-link-hover-text-decoration: underline;
 /// @group text-colors
-$bpk-link-active-color: rgb(84, 76, 99);
+$bpk-link-active-color: rgb(129, 123, 143);
