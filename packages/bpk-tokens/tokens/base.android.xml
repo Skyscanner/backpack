@@ -41,9 +41,9 @@
   <property name="BUTTON_LARGE_LINE_HEIGHT" category="buttons">30</property>
   <color name="BUTTON_SECONDARY_BACKGROUND_COLOR" category="buttons">#ffffffff</color>
   <property name="BUTTON_SECONDARY_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR" category="buttons">#00000000</color>
+  <color name="BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR" category="buttons">#ffffffff</color>
   <property name="BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR" category="buttons">#00000000</color>
+  <color name="BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR" category="buttons">#ffffffff</color>
   <property name="BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR" category="buttons">#e6e4ebff</color>
   <property name="BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
@@ -131,7 +131,7 @@
   <property name="SPACING_XXL" category="spacing">42</property>
   <property name="ONE_PIXEL_REM" category="spacing">1</property>
   <property name="FONT_FAMILY_BASE" category="font">-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif</property>
-  <color name="FONT_COLOR_BASE" category="text-color">#696179ff</color>
+  <color name="FONT_COLOR_BASE" category="text-color">#524c61ff</color>
   <property name="LINE_HEIGHT_SM" category="line-height">18</property>
   <property name="LINE_HEIGHT_BASE" category="line-height">24</property>
   <property name="LINE_HEIGHT_LG" category="line-height">30</property>

@@ -248,7 +248,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgba(0, 0, 0, 0)",
+      "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "buttonSecondaryHoverBackgroundColor"
     },
@@ -260,7 +260,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgba(0, 0, 0, 0)",
+      "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "buttonSecondaryActiveBackgroundColor"
     },
@@ -787,7 +787,7 @@
       "name": "fontFamilyBase"
     },
     {
-      "value": "rgb(105, 97, 121)",
+      "value": "rgb(82, 76, 97)",
       "type": "color",
       "category": "text-color",
       "name": "fontColorBase"

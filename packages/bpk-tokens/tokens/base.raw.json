@@ -321,7 +321,7 @@
     },
     "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "rgba(0, 0, 0, 0)",
+      "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR"
     },
@@ -333,7 +333,7 @@
     },
     "BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "rgba(0, 0, 0, 0)",
+      "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR"
     },
@@ -860,7 +860,7 @@
       "name": "FONT_FAMILY_BASE"
     },
     "FONT_COLOR_BASE": {
-      "value": "rgb(105, 97, 121)",
+      "value": "rgb(82, 76, 97)",
       "type": "color",
       "category": "text-color",
       "name": "FONT_COLOR_BASE"
