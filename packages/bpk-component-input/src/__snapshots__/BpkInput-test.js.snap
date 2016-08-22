@@ -1,0 +1,59 @@
+exports[`BpkInput should render correctly 1`] = `
+<input
+  className="bpk-input"
+  name="test"
+  onChange={[Function onChange]}
+  placeholder={null}
+  type="text"
+  value="" />
+`;
+
+exports[`BpkInput should render correctly with placeholder 1`] = `
+<input
+  className="bpk-input"
+  name="test"
+  onChange={[Function onChange]}
+  placeholder="Enter a country, city or airport"
+  type="text"
+  value="" />
+`;
+
+exports[`BpkInput should render correctly with type attribute 1`] = `
+<input
+  className="bpk-input"
+  name="test"
+  onChange={[Function onChange]}
+  placeholder={null}
+  type="password"
+  value="" />
+`;
+
+exports[`BpkInput should render correctly with valid attribute set to "false" 1`] = `
+<input
+  className="bpk-input bpk-input--invalid"
+  name="test"
+  onChange={[Function onChange]}
+  placeholder={null}
+  type="text"
+  value="" />
+`;
+
+exports[`BpkInput should render correctly with valid attribute set to "true" 1`] = `
+<input
+  className="bpk-input bpk-input--valid"
+  name="test"
+  onChange={[Function onChange]}
+  placeholder={null}
+  type="text"
+  value="" />
+`;
+
+exports[`BpkInput should render correctly with value 1`] = `
+<input
+  className="bpk-input"
+  name="test"
+  onChange={[Function onChange]}
+  placeholder={null}
+  type="text"
+  value="My value" />
+`;

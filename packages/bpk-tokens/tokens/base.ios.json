@@ -3,20 +3,14 @@
     {
       "type": "size",
       "category": "radius",
-      "value": "2",
+      "value": "3",
       "name": "borderRadiusXs"
     },
     {
       "type": "size",
       "category": "radius",
-      "value": "4",
+      "value": "6",
       "name": "borderRadiusSm"
-    },
-    {
-      "type": "size",
-      "category": "radius",
-      "value": "8",
-      "name": "borderRadiusLg"
     },
     {
       "type": "size",
