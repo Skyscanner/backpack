@@ -29,7 +29,7 @@ BpkLogo.propTypes = {
 }
 
 BpkLogo.defaultProps = {
-  color: TOKENS.colorGray500,
+  color: TOKENS.colorGray700,
   height: null
 }
 

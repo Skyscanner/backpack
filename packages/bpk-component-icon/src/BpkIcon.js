@@ -33,7 +33,7 @@ BpkIcon.propTypes = {
 }
 
 BpkIcon.defaultProps = {
-  color: TOKENS.colorGray500,
+  color: TOKENS.colorGray700,
   alignToButton: false
 }
 

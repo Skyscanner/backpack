@@ -27,7 +27,7 @@ BpkSpinner.propTypes = {
 BpkSpinner.defaultProps = {
   large: false,
   extraLarge: false,
-  color: TOKENS.colorGray500,
+  color: TOKENS.colorGray700,
   alignToButton: false
 }
 
