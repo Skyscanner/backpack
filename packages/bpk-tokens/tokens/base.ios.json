@@ -128,7 +128,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(223, 220, 227)",
+      "value": "rgb(230, 228, 235)",
       "type": "color",
       "name": "buttonDisabledBackgroundColor"
     },
@@ -182,7 +182,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(137, 130, 148)",
+      "value": "rgb(178, 174, 189)",
       "type": "color",
       "name": "buttonDisabledColor"
     },
@@ -236,7 +236,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgba(0, 0, 0, 0)",
+      "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "buttonSecondaryBackgroundColor"
     },
@@ -248,7 +248,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgba(0, 0, 0, 0)",
+      "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "buttonSecondaryHoverBackgroundColor"
     },
@@ -260,7 +260,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgba(0, 0, 0, 0)",
+      "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "buttonSecondaryActiveBackgroundColor"
     },
@@ -272,7 +272,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(223, 220, 227)",
+      "value": "rgb(230, 228, 235)",
       "type": "color",
       "name": "buttonSecondaryDisabledBackgroundColor"
     },
@@ -302,13 +302,13 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(137, 130, 148)",
+      "value": "rgb(178, 174, 189)",
       "type": "color",
       "name": "buttonSecondaryDisabledColor"
     },
     {
       "category": "buttons",
-      "value": "0 0 0 2px #dfdce3 inset",
+      "value": "0 0 0 2px #E6E4EB inset",
       "type": "box-shadow",
       "name": "buttonSecondaryBoxShadow"
     },
@@ -465,61 +465,61 @@
     {
       "type": "color",
       "category": "color",
-      "value": "rgb(246, 245, 247)",
+      "value": "rgb(243, 242, 245)",
       "name": "colorGray50"
     },
     {
       "type": "color",
       "category": "color",
-      "value": "rgb(223, 220, 227)",
+      "value": "rgb(230, 228, 235)",
       "name": "colorGray100"
     },
     {
       "type": "color",
       "category": "color",
-      "value": "rgb(182, 177, 189)",
+      "value": "rgb(204, 201, 212)",
       "name": "colorGray200"
     },
     {
       "type": "color",
       "category": "color",
-      "value": "rgb(137, 130, 148)",
+      "value": "rgb(178, 174, 189)",
       "name": "colorGray300"
     },
     {
       "type": "color",
       "category": "color",
-      "value": "rgb(111, 102, 125)",
+      "value": "rgb(154, 149, 167)",
       "name": "colorGray400"
     },
     {
       "type": "color",
       "category": "color",
-      "value": "rgb(84, 76, 99)",
+      "value": "rgb(129, 123, 143)",
       "name": "colorGray500"
     },
     {
       "type": "color",
       "category": "color",
-      "value": "rgb(69, 61, 84)",
+      "value": "rgb(105, 97, 121)",
       "name": "colorGray600"
     },
     {
       "type": "color",
       "category": "color",
-      "value": "rgb(55, 47, 69)",
+      "value": "rgb(82, 76, 97)",
       "name": "colorGray700"
     },
     {
       "type": "color",
       "category": "color",
-      "value": "rgb(39, 33, 51)",
+      "value": "rgb(59, 52, 75)",
       "name": "colorGray800"
     },
     {
       "type": "color",
       "category": "color",
-      "value": "rgb(27, 21, 36)",
+      "value": "rgb(37, 32, 51)",
       "name": "colorGray900"
     },
     {
@@ -787,7 +787,7 @@
       "name": "fontFamilyBase"
     },
     {
-      "value": "rgb(84, 76, 99)",
+      "value": "rgb(82, 76, 97)",
       "type": "color",
       "category": "text-color",
       "name": "fontColorBase"
@@ -1105,7 +1105,7 @@
       "name": "linkTextDecoration"
     },
     {
-      "value": "rgb(55, 47, 69)",
+      "value": "rgb(82, 76, 97)",
       "type": "color",
       "category": "text-color",
       "name": "linkHoverColor"
@@ -1117,7 +1117,7 @@
       "name": "linkHoverTextDecoration"
     },
     {
-      "value": "rgb(84, 76, 99)",
+      "value": "rgb(129, 123, 143)",
       "type": "color",
       "category": "text-color",
       "name": "linkActiveColor"

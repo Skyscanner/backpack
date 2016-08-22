@@ -38,13 +38,9 @@ const ColorsPage = () => (
       <div className='bpkdocs-colors-page__swatch-container'>
         <ColorSwatch name='color-gray-50' color={TOKENS.colorGray50} />
         <ColorSwatch name='color-gray-100' color={TOKENS.colorGray100} />
-        <ColorSwatch name='color-gray-200' color={TOKENS.colorGray200} />
         <ColorSwatch name='color-gray-300' color={TOKENS.colorGray300} whiteColor />
-        <ColorSwatch name='color-gray-400' color={TOKENS.colorGray400} whiteColor />
         <ColorSwatch name='color-gray-500' color={TOKENS.colorGray500} whiteColor />
-        <ColorSwatch name='color-gray-600' color={TOKENS.colorGray600} whiteColor />
         <ColorSwatch name='color-gray-700' color={TOKENS.colorGray700} whiteColor />
-        <ColorSwatch name='color-gray-800' color={TOKENS.colorGray800} whiteColor />
         <ColorSwatch name='color-gray-900' color={TOKENS.colorGray900} whiteColor />
       </div>
       <BpkHeading level='h2'>Tints &amp; shades</BpkHeading>

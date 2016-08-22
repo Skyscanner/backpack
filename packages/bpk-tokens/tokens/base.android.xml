@@ -21,7 +21,7 @@
   <property name="BUTTON_HOVER_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_ACTIVE_BACKGROUND_COLOR" category="buttons">#00bd68ff</color>
   <property name="BUTTON_ACTIVE_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_DISABLED_BACKGROUND_COLOR" category="buttons">#dfdce3ff</color>
+  <color name="BUTTON_DISABLED_BACKGROUND_COLOR" category="buttons">#e6e4ebff</color>
   <property name="BUTTON_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_COLOR" category="buttons">#ffffffff</color>
   <color name="BUTTON_HOVER_COLOR" category="buttons">#ffffffff</color>
@@ -30,7 +30,7 @@
   <property name="BUTTON_HOVER_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_ACTIVE_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_DISABLED_BOX_SHADOW" category="buttons">none</property>
-  <color name="BUTTON_DISABLED_COLOR" category="buttons">#898294ff</color>
+  <color name="BUTTON_DISABLED_COLOR" category="buttons">#b2aebdff</color>
   <property name="BUTTON_FONT_SIZE" category="buttons">16</property>
   <property name="BUTTON_FONT_WEIGHT" category="buttons">700</property>
   <property name="BUTTON_LINE_HEIGHT" category="buttons">24</property>
@@ -39,19 +39,19 @@
   <property name="BUTTON_LARGE_PADDING_X" category="buttons">24</property>
   <property name="BUTTON_LARGE_FONT_SIZE" category="buttons">24</property>
   <property name="BUTTON_LARGE_LINE_HEIGHT" category="buttons">30</property>
-  <color name="BUTTON_SECONDARY_BACKGROUND_COLOR" category="buttons">#00000000</color>
+  <color name="BUTTON_SECONDARY_BACKGROUND_COLOR" category="buttons">#ffffffff</color>
   <property name="BUTTON_SECONDARY_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR" category="buttons">#00000000</color>
+  <color name="BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR" category="buttons">#ffffffff</color>
   <property name="BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR" category="buttons">#00000000</color>
+  <color name="BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR" category="buttons">#ffffffff</color>
   <property name="BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR" category="buttons">#dfdce3ff</color>
+  <color name="BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR" category="buttons">#e6e4ebff</color>
   <property name="BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_SECONDARY_COLOR" category="buttons">#00b2d6ff</color>
   <color name="BUTTON_SECONDARY_HOVER_COLOR" category="buttons">#00b2d6ff</color>
   <color name="BUTTON_SECONDARY_ACTIVE_COLOR" category="buttons">#00b2d6ff</color>
-  <color name="BUTTON_SECONDARY_DISABLED_COLOR" category="buttons">#898294ff</color>
-  <property name="BUTTON_SECONDARY_BOX_SHADOW" category="buttons">0 0 0 2px #dfdce3 inset</property>
+  <color name="BUTTON_SECONDARY_DISABLED_COLOR" category="buttons">#b2aebdff</color>
+  <property name="BUTTON_SECONDARY_BOX_SHADOW" category="buttons">0 0 0 2px #E6E4EB inset</property>
   <property name="BUTTON_SECONDARY_HOVER_BOX_SHADOW" category="buttons">0 0 0 2px #00b2d6 inset</property>
   <property name="BUTTON_SECONDARY_ACTIVE_BOX_SHADOW" category="buttons">0 0 0 3px #00b2d6 inset</property>
   <property name="BUTTON_SECONDARY_DISABLED_BOX_SHADOW" category="buttons">none</property>
@@ -77,16 +77,16 @@
   <color name="COLOR_BLUE_700" category="color">#008ca8ff</color>
   <color name="COLOR_BLUE_800" category="color">#00758cff</color>
   <color name="COLOR_BLUE_900" category="color">#005567ff</color>
-  <color name="COLOR_GRAY_50" category="color">#f6f5f7ff</color>
-  <color name="COLOR_GRAY_100" category="color">#dfdce3ff</color>
-  <color name="COLOR_GRAY_200" category="color">#b6b1bdff</color>
-  <color name="COLOR_GRAY_300" category="color">#898294ff</color>
-  <color name="COLOR_GRAY_400" category="color">#6f667dff</color>
-  <color name="COLOR_GRAY_500" category="color">#544c63ff</color>
-  <color name="COLOR_GRAY_600" category="color">#453d54ff</color>
-  <color name="COLOR_GRAY_700" category="color">#372f45ff</color>
-  <color name="COLOR_GRAY_800" category="color">#272133ff</color>
-  <color name="COLOR_GRAY_900" category="color">#1b1524ff</color>
+  <color name="COLOR_GRAY_50" category="color">#f3f2f5ff</color>
+  <color name="COLOR_GRAY_100" category="color">#e6e4ebff</color>
+  <color name="COLOR_GRAY_200" category="color">#ccc9d4ff</color>
+  <color name="COLOR_GRAY_300" category="color">#b2aebdff</color>
+  <color name="COLOR_GRAY_400" category="color">#9a95a7ff</color>
+  <color name="COLOR_GRAY_500" category="color">#817b8fff</color>
+  <color name="COLOR_GRAY_600" category="color">#696179ff</color>
+  <color name="COLOR_GRAY_700" category="color">#524c61ff</color>
+  <color name="COLOR_GRAY_800" category="color">#3b344bff</color>
+  <color name="COLOR_GRAY_900" category="color">#252033ff</color>
   <color name="COLOR_GREEN_50" category="color">#dff7ecff</color>
   <color name="COLOR_GREEN_100" category="color">#cbf5e2ff</color>
   <color name="COLOR_GREEN_200" category="color">#afedd1ff</color>
@@ -131,7 +131,7 @@
   <property name="SPACING_XXL" category="spacing">42</property>
   <property name="ONE_PIXEL_REM" category="spacing">1</property>
   <property name="FONT_FAMILY_BASE" category="font">-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif</property>
-  <color name="FONT_COLOR_BASE" category="text-color">#544c63ff</color>
+  <color name="FONT_COLOR_BASE" category="text-color">#524c61ff</color>
   <property name="LINE_HEIGHT_SM" category="line-height">18</property>
   <property name="LINE_HEIGHT_BASE" category="line-height">24</property>
   <property name="LINE_HEIGHT_LG" category="line-height">30</property>
@@ -184,7 +184,7 @@
   <property name="LIST_ITEM_MARGIN_BOTTOM" category="spacing">0</property>
   <color name="LINK_COLOR" category="text-color">#00b2d6ff</color>
   <property name="LINK_TEXT_DECORATION" category="text-decoration">none</property>
-  <color name="LINK_HOVER_COLOR" category="text-color">#372f45ff</color>
+  <color name="LINK_HOVER_COLOR" category="text-color">#524c61ff</color>
   <property name="LINK_HOVER_TEXT_DECORATION" category="text-decoration">underline</property>
-  <color name="LINK_ACTIVE_COLOR" category="text-color">#544c63ff</color>
+  <color name="LINK_ACTIVE_COLOR" category="text-color">#817b8fff</color>
 </resources>

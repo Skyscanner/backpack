@@ -115,7 +115,7 @@
       "type": "number"
     },
     "BUTTON_SECONDARY_BACKGROUND_COLOR": {
-      "value": "transparent",
+      "value": "{!WHITE}",
       "type": "color"
     },
     "BUTTON_SECONDARY_BACKGROUND_IMAGE": {
@@ -123,7 +123,7 @@
       "type": "background-image"
     },
     "BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR": {
-      "value": "transparent",
+      "value": "{!WHITE}",
       "type": "color"
     },
     "BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE": {
@@ -131,7 +131,7 @@
       "type": "background-image"
     },
     "BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR": {
-      "value": "transparent",
+      "value": "{!WHITE}",
       "type": "color"
     },
     "BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE": {

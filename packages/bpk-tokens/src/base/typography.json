@@ -9,7 +9,7 @@
       "category": "font"
     },
     "FONT_COLOR_BASE": {
-      "value": "{!GRAY_500}",
+      "value": "{!GRAY_700}",
       "type": "color",
       "category": "text-color"
     },

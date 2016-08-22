@@ -57,7 +57,7 @@
   &__nav-category-name {
     margin: 0 0 $bpk-spacing-xs 0;
     padding: 0;
-    color: $bpk-color-gray-200;
+    color: $bpk-color-gray-300;
     font-size: $bpk-font-size-sm;
     font-weight: bold;
     line-height: $bpk-line-height-sm;
@@ -81,7 +81,7 @@
   }
 
   &__pending-link {
-    color: $bpk-color-gray-200;
+    color: $bpk-color-gray-300;
     font-style: italic;
   }
 }
