@@ -7,6 +7,7 @@ describe('BpkSelect', () => {
     const tree = renderer.create(
       <BpkSelect
         name='fruits'
+        value='oranges'
         onChange={() => null}
         options={[
           { name: 'Apples', value: 'apples' },
@@ -23,6 +24,7 @@ describe('BpkSelect', () => {
     const tree = renderer.create(
       <BpkSelect
         name='fruits'
+        value=''
         onChange={() => null}
         options={[
           { name: 'Apples', value: 'apples' },

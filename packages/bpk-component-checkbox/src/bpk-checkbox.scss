@@ -1,0 +1,34 @@
+@import '~bpk-mixins/index';
+
+.bpk-checkbox {
+  display: inline-block;
+
+  &--input {
+    display: inline-block;
+    width: $_small-svg-size;
+    height: $_small-svg-size;
+    margin: 0;
+    padding: 0;
+    background: url(map-get($bpk-elements, checkbox-light)) no-repeat;
+    cursor: pointer;
+    vertical-align: text-bottom;
+    appearance: none;
+
+    &:checked {
+      background: url(map-get($bpk-elements, checkbox-light-checked)) no-repeat;
+    }
+
+    &:disabled {
+      opacity: .5;
+    }
+
+    @media screen\0 {
+      background: none !important; /* stylelint-disable-line declaration-no-important */
+    }
+  }
+
+  &--disabled {
+    color: $bpk-color-gray-300;
+    cursor: not-allowed;
+  }
+}

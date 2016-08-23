@@ -4,7 +4,7 @@ exports[`BpkSelect should render correctly 1`] = `
   disabled={false}
   name="fruits"
   onChange={[Function onChange]}
-  value={undefined}>
+  value="oranges">
   <option
     disabled={undefined}
     value="apples">
@@ -34,7 +34,7 @@ exports[`BpkSelect should render correctly with disabled attribute 1`] = `
   disabled={true}
   name="fruits"
   onChange={[Function onChange]}
-  value={undefined}>
+  value="">
   <option
     disabled={undefined}
     value="apples">
