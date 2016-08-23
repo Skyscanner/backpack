@@ -1,0 +1,21 @@
+@import '~bpk-mixins/index';
+
+.bpk-select {
+  display: inline-block;
+  width: 100%;
+  height: $bpk-spacing-xl;
+  padding: $bpk-spacing-xs $bpk-spacing-base $bpk-spacing-xs $bpk-spacing-sm;
+  border: 0;
+  border-radius: $bpk-border-radius-xs;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-gray-700)) no-repeat right $bpk-spacing-sm center;
+  background-size: $bpk-spacing-sm;
+  box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-100 inset;
+  appearance: none;
+
+  &:disabled {
+    background-image: url(map-get($bpk-icons-sm, arrow-down-gray-300));
+    color: $bpk-color-gray-300;
+    box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-50 inset;
+    cursor: not-allowed;
+  }
+}

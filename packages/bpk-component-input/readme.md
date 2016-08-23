@@ -15,6 +15,11 @@ import React from 'react'
 import BpkInput from 'bpk-component-input'
 
 export default MyComponent = () => (
-  <BpkInput placeholder='Enter a country, city or airport' />
+  <BpkInput
+    name='origin'
+    value='Edinburgh'
+    onChange={() => console.log('input changed!')}
+    placeholder='Enter a country, city or airport'
+  />
 )
 ```

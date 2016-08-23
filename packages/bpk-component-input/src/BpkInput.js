@@ -10,7 +10,7 @@ export const INPUT_TYPES = {
   TEL: 'tel'
 }
 
-const BpkInput = ({ name, value, onChange, placeholder, valid, type }) => {
+const BpkInput = ({ name, value, onChange, placeholder, valid, disabled, type }) => {
   const classNames = [ 'bpk-input' ]
 
   valid
@@ -25,6 +25,7 @@ const BpkInput = ({ name, value, onChange, placeholder, valid, type }) => {
       onChange={onChange}
       placeholder={placeholder}
       type={type}
+      disabled={disabled}
     />
   )
 }
@@ -35,6 +36,7 @@ BpkInput.propTypes = {
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   valid: PropTypes.bool,
+  disabled: PropTypes.bool,
   type: PropTypes.oneOf([
     INPUT_TYPES.TEXT,
     INPUT_TYPES.EMAIL,
@@ -47,7 +49,8 @@ BpkInput.propTypes = {
 BpkInput.defaultProps = {
   type: INPUT_TYPES.TEXT,
   placeholder: null,
-  valid: null
+  valid: null,
+  disabled: false
 }
 
 export default BpkInput

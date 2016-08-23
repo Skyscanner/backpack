@@ -1,7 +1,9 @@
 @import '~bpk-mixins/index';
 
 .bpk-input {
+  display: inline-block;
   width: 100%;
+  height: $bpk-spacing-xl;
   padding: $bpk-spacing-xs $bpk-spacing-sm;
   border: 0;
   border-radius: $bpk-border-radius-xs;
@@ -12,6 +14,12 @@
   &::placeholder {
     color: $bpk-color-gray-500;
     font-style: italic;
+  }
+
+  &:disabled {
+    color: $bpk-color-gray-300;
+    box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-50 inset;
+    cursor: not-allowed;
   }
 
   &[type=number] {

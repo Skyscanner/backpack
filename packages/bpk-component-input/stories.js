@@ -38,6 +38,15 @@ storiesOf('bpk-component-input', module)
       valid={false}
     />
   ))
+  .add('Disabled', () => (
+    <BpkInput
+      name='disabled'
+      value='Edinburgh'
+      onChange={action('input changed')}
+      placeholder='Enter a country, city or airport'
+      disabled
+    />
+  ))
   .add('Email', () => (
     <BpkInput
       type={INPUT_TYPES.EMAIL}
@@ -51,7 +60,7 @@ storiesOf('bpk-component-input', module)
     <BpkInput
       type={INPUT_TYPES.NUMBER}
       name='number'
-      value={0}
+      value='0'
       onChange={action('input changed')}
     />
   ))

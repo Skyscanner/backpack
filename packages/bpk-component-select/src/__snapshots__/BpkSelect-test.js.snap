@@ -1,0 +1,59 @@
+exports[`BpkSelect should render correctly 1`] = `
+<select
+  className="bpk-select"
+  disabled={false}
+  name="fruits"
+  onChange={[Function onChange]}
+  value={undefined}>
+  <option
+    disabled={undefined}
+    value="apples">
+    Apples
+  </option>
+  <option
+    disabled={undefined}
+    value="oranges">
+    Oranges
+  </option>
+  <option
+    disabled={undefined}
+    value="pears">
+    Pears
+  </option>
+  <option
+    disabled={true}
+    value="tomatos">
+    Tomatos
+  </option>
+</select>
+`;
+
+exports[`BpkSelect should render correctly with disabled attribute 1`] = `
+<select
+  className="bpk-select"
+  disabled={true}
+  name="fruits"
+  onChange={[Function onChange]}
+  value={undefined}>
+  <option
+    disabled={undefined}
+    value="apples">
+    Apples
+  </option>
+  <option
+    disabled={undefined}
+    value="oranges">
+    Oranges
+  </option>
+  <option
+    disabled={undefined}
+    value="pears">
+    Pears
+  </option>
+  <option
+    disabled={true}
+    value="tomatos">
+    Tomatos
+  </option>
+</select>
+`;

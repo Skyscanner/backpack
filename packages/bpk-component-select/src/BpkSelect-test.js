@@ -1,0 +1,39 @@
+import React from 'react'
+import renderer from 'react/lib/ReactTestRenderer'
+import BpkSelect from './BpkSelect'
+
+describe('BpkSelect', () => {
+  it('should render correctly', () => {
+    const tree = renderer.create(
+      <BpkSelect
+        name='fruits'
+        onChange={() => null}
+        options={[
+          { name: 'Apples', value: 'apples' },
+          { name: 'Oranges', value: 'oranges' },
+          { name: 'Pears', value: 'pears' },
+          { name: 'Tomatos', value: 'tomatos', disabled: true }
+        ]}
+      />
+    ).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should render correctly with disabled attribute', () => {
+    const tree = renderer.create(
+      <BpkSelect
+        name='fruits'
+        onChange={() => null}
+        options={[
+          { name: 'Apples', value: 'apples' },
+          { name: 'Oranges', value: 'oranges' },
+          { name: 'Pears', value: 'pears' },
+          { name: 'Tomatos', value: 'tomatos', disabled: true }
+        ]}
+        disabled
+      />
+    ).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})
+
