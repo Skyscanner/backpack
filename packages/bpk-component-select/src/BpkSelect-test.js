@@ -19,6 +19,23 @@ describe('BpkSelect', () => {
     ).toJSON()
     expect(tree).toMatchSnapshot()
   })
+  it('should render correctly with a valid attribute equal to false', () => {
+    const tree = renderer.create(
+      <BpkSelect
+        name='fruits'
+        value='oranges'
+        onChange={() => null}
+        options={[
+          { name: 'Apples', value: 'apples' },
+          { name: 'Oranges', value: 'oranges' },
+          { name: 'Pears', value: 'pears' },
+          { name: 'Tomatos', value: 'tomatos', disabled: true }
+        ]}
+        valid={false}
+      />
+    ).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
 
   it('should render correctly with disabled attribute', () => {
     const tree = renderer.create(

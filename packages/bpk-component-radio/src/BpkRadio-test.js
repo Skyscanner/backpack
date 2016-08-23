@@ -1,12 +1,12 @@
 import React from 'react'
 import renderer from 'react/lib/ReactTestRenderer'
-import BpkCheckbox from './BpkCheckbox'
+import BpkRadio from './BpkRadio'
 
-describe('BpkCheckbox', () => {
+describe('BpkRadio', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
-      <BpkCheckbox
-        name='my-checkbox'
+      <BpkRadio
+        name='my-radio-button'
         onChange={() => null}
       />
     ).toJSON()
@@ -15,8 +15,8 @@ describe('BpkCheckbox', () => {
 
   it('should render correctly with checked attribute', () => {
     const tree = renderer.create(
-      <BpkCheckbox
-        name='my-checkbox'
+      <BpkRadio
+        name='my-radio-button'
         onChange={() => null}
         checked
       />
@@ -26,8 +26,8 @@ describe('BpkCheckbox', () => {
 
   it('should render correctly with label attribute', () => {
     const tree = renderer.create(
-      <BpkCheckbox
-        name='my-checkbox'
+      <BpkRadio
+        name='my-radio-button'
         onChange={() => null}
         label='My label'
       />
@@ -37,8 +37,8 @@ describe('BpkCheckbox', () => {
 
   it('should render correctly with disabled attribute', () => {
     const tree = renderer.create(
-      <BpkCheckbox
-        name='my-checkbox'
+      <BpkRadio
+        name='my-radio-button'
         onChange={() => null}
         disabled
       />
@@ -48,8 +48,8 @@ describe('BpkCheckbox', () => {
 
   it('should render correctly with value attribute', () => {
     const tree = renderer.create(
-      <BpkCheckbox
-        name='my-checkbox'
+      <BpkRadio
+        name='my-radio-button'
         value='my-value'
         onChange={() => null}
       />

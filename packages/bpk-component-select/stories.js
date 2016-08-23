@@ -17,6 +17,21 @@ storiesOf('bpk-component-select', module)
       ]}
     />
   ))
+  .add('Invalid', () => (
+    <BpkSelect
+      name='fruits'
+      value=''
+      onChange={action('select changed')}
+      options={[
+        { name: 'Please select...', value: '', hidden: true },
+        { name: 'Apples', value: 'apples' },
+        { name: 'Oranges', value: 'oranges' },
+        { name: 'Pears', value: 'pears' },
+        { name: 'Tomato', value: 'tomato', disabled: true }
+      ]}
+      valid={false}
+    />
+  ))
   .add('Disabled', () => (
     <BpkSelect
       name='disabled'

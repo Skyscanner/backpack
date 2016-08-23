@@ -1,6 +1,6 @@
 @import '~bpk-mixins/index';
 
-.bpk-checkbox {
+.bpk-radio {
   display: inline-block;
 
   &--input {
@@ -9,13 +9,13 @@
     height: $_small-svg-size;
     margin: 0;
     padding: 0;
-    background: url(map-get($bpk-elements, checkbox-normal)) no-repeat;
+    background: url(map-get($bpk-elements, radio-normal)) no-repeat;
     cursor: pointer;
     vertical-align: text-bottom;
     appearance: none;
 
     &:checked {
-      background: url(map-get($bpk-elements, checkbox-checked)) no-repeat;
+      background: url(map-get($bpk-elements, radio-checked)) no-repeat;
     }
 
     &:disabled {

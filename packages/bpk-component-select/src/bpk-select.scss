@@ -19,4 +19,8 @@
     box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-50 inset;
     cursor: not-allowed;
   }
+
+  &--invalid {
+    box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-red-500 inset;
+  }
 }

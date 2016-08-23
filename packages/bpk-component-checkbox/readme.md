@@ -15,6 +15,11 @@ import React from 'react'
 import BpkCheckbox from 'bpk-component-checkbox'
 
 export default MyComponent = () => (
-  <BpkCheckbox name='prefer-directs' onChange={() => console.log('select changed')} checked />
+  <BpkCheckbox
+    name='prefer-directs'
+    label='Prefer directs'
+    onChange={() => console.log('checkbox changed')}
+    checked
+  />
 )
 ```
