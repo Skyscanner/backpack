@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <property name="BORDER_RADIUS_XS" category="radius">2</property>
-  <property name="BORDER_RADIUS_SM" category="radius">4</property>
-  <property name="BORDER_RADIUS_LG" category="radius">8</property>
+  <property name="BORDER_RADIUS_XS" category="radius">3</property>
+  <property name="BORDER_RADIUS_SM" category="radius">6</property>
   <property name="BORDER_RADIUS_PILL" category="radius">80</property>
   <property name="BREAKPOINT_MOBILE" category="breakpoint">522</property>
   <property name="BREAKPOINT_TABLET" category="breakpoint">804</property>

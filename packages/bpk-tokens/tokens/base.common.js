@@ -1,7 +1,6 @@
 module.exports = {
-  borderRadiusXs: ".125rem",
-  borderRadiusSm: ".25rem",
-  borderRadiusLg: ".5rem",
+  borderRadiusXs: ".1875rem",
+  borderRadiusSm: ".375rem",
   borderRadiusPill: "5rem",
   breakpointMobile: "32.625rem",
   breakpointTablet: "50.25rem",

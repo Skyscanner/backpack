@@ -63,9 +63,8 @@
     "SPACING_LG": "1.875rem",
     "SPACING_XL": "2.250rem",
     "SPACING_XXL": "2.625rem",
-    "BORDER_RADIUS_XS": ".125rem",
-    "BORDER_RADIUS_SM": ".25rem",
-    "BORDER_RADIUS_LG": ".5rem",
+    "BORDER_RADIUS_XS": ".1875rem",
+    "BORDER_RADIUS_SM": ".375rem",
     "BORDER_RADIUS_PILL": "5rem",
     "BREAKPOINT_MOBILE": "32.625rem",
     "BREAKPOINT_TABLET": "50.25rem",
@@ -76,20 +75,14 @@
     "BORDER_RADIUS_XS": {
       "type": "size",
       "category": "radius",
-      "value": ".125rem",
+      "value": ".1875rem",
       "name": "BORDER_RADIUS_XS"
     },
     "BORDER_RADIUS_SM": {
       "type": "size",
       "category": "radius",
-      "value": ".25rem",
+      "value": ".375rem",
       "name": "BORDER_RADIUS_SM"
-    },
-    "BORDER_RADIUS_LG": {
-      "type": "size",
-      "category": "radius",
-      "value": ".5rem",
-      "name": "BORDER_RADIUS_LG"
     },
     "BORDER_RADIUS_PILL": {
       "type": "size",
@@ -1199,7 +1192,6 @@
   "propKeys": [
     "BORDER_RADIUS_XS",
     "BORDER_RADIUS_SM",
-    "BORDER_RADIUS_LG",
     "BORDER_RADIUS_PILL",
     "BREAKPOINT_MOBILE",
     "BREAKPOINT_TABLET",

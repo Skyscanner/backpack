@@ -1,0 +1,70 @@
+exports[`BpkCheckbox should render correctly 1`] = `
+<label
+  className="bpk-checkbox">
+  <input
+    checked={false}
+    className="bpk-checkbox--input"
+    disabled={false}
+    name="my-checkbox"
+    onChange={[Function onChange]}
+    type="checkbox"
+    value="my-checkbox" />
+</label>
+`;
+
+exports[`BpkCheckbox should render correctly with checked attribute 1`] = `
+<label
+  className="bpk-checkbox">
+  <input
+    checked={true}
+    className="bpk-checkbox--input"
+    disabled={false}
+    name="my-checkbox"
+    onChange={[Function onChange]}
+    type="checkbox"
+    value="my-checkbox" />
+</label>
+`;
+
+exports[`BpkCheckbox should render correctly with disabled attribute 1`] = `
+<label
+  className="bpk-checkbox bpk-checkbox--disabled">
+  <input
+    checked={false}
+    className="bpk-checkbox--input"
+    disabled={true}
+    name="my-checkbox"
+    onChange={[Function onChange]}
+    type="checkbox"
+    value="my-checkbox" />
+</label>
+`;
+
+exports[`BpkCheckbox should render correctly with label attribute 1`] = `
+<label
+  className="bpk-checkbox">
+  <input
+    checked={false}
+    className="bpk-checkbox--input"
+    disabled={false}
+    name="my-checkbox"
+    onChange={[Function onChange]}
+    type="checkbox"
+    value="my-checkbox" />
+   My label
+</label>
+`;
+
+exports[`BpkCheckbox should render correctly with value attribute 1`] = `
+<label
+  className="bpk-checkbox">
+  <input
+    checked={false}
+    className="bpk-checkbox--input"
+    disabled={false}
+    name="my-checkbox"
+    onChange={[Function onChange]}
+    type="checkbox"
+    value="my-value" />
+</label>
+`;

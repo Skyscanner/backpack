@@ -1,0 +1,70 @@
+exports[`BpkRadio should render correctly 1`] = `
+<label
+  className="bpk-radio">
+  <input
+    checked={false}
+    className="bpk-radio--input"
+    disabled={false}
+    name="my-radio-button"
+    onChange={[Function onChange]}
+    type="radio"
+    value="my-radio-button" />
+</label>
+`;
+
+exports[`BpkRadio should render correctly with checked attribute 1`] = `
+<label
+  className="bpk-radio">
+  <input
+    checked={true}
+    className="bpk-radio--input"
+    disabled={false}
+    name="my-radio-button"
+    onChange={[Function onChange]}
+    type="radio"
+    value="my-radio-button" />
+</label>
+`;
+
+exports[`BpkRadio should render correctly with disabled attribute 1`] = `
+<label
+  className="bpk-radio bpk-radio--disabled">
+  <input
+    checked={false}
+    className="bpk-radio--input"
+    disabled={true}
+    name="my-radio-button"
+    onChange={[Function onChange]}
+    type="radio"
+    value="my-radio-button" />
+</label>
+`;
+
+exports[`BpkRadio should render correctly with label attribute 1`] = `
+<label
+  className="bpk-radio">
+  <input
+    checked={false}
+    className="bpk-radio--input"
+    disabled={false}
+    name="my-radio-button"
+    onChange={[Function onChange]}
+    type="radio"
+    value="my-radio-button" />
+   My label
+</label>
+`;
+
+exports[`BpkRadio should render correctly with value attribute 1`] = `
+<label
+  className="bpk-radio">
+  <input
+    checked={false}
+    className="bpk-radio--input"
+    disabled={false}
+    name="my-radio-button"
+    onChange={[Function onChange]}
+    type="radio"
+    value="my-value" />
+</label>
+`;

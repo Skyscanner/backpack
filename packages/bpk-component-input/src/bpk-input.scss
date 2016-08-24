@@ -1,0 +1,47 @@
+@import '~bpk-mixins/index';
+
+.bpk-input {
+  display: inline-block;
+  width: 100%;
+  height: $bpk-spacing-xl;
+  padding: $bpk-spacing-xs $bpk-spacing-sm;
+  border: 0;
+  border-radius: $bpk-border-radius-xs;
+  background: $bpk-color-white;
+  color: $bpk-font-color-base;
+  box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-100 inset;
+  appearance: none;
+
+  &::placeholder {
+    color: $bpk-color-gray-500;
+    font-style: italic;
+  }
+
+  &:disabled {
+    color: $bpk-color-gray-300;
+    box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-50 inset;
+    cursor: not-allowed;
+  }
+
+  &[type=number] {
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+    }
+  }
+
+  &--valid {
+    padding-right: $bpk-spacing-sm + $_small-svg-size;
+    background: $bpk-color-white url(map-get($bpk-icons-sm, tick-green-500)) no-repeat right $bpk-spacing-sm center;
+    background-size: $_small-svg-size;
+  }
+
+  &--invalid {
+    padding-right: $bpk-spacing-sm + $_small-svg-size;
+    background: $bpk-color-white url(map-get($bpk-icons-sm, close-red-500)) no-repeat right $bpk-spacing-sm center;
+    background-size: $_small-svg-size;
+    box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-red-500 inset;
+  }
+}
