@@ -43,4 +43,8 @@
     background: $bpk-color-white url(map-get($bpk-icons-sm, close-red-500)) no-repeat right $bpk-spacing-sm center;
     background-size: $_small-svg-size $_small-svg-size;
   }
+
+  &::-ms-clear {
+    display: none;
+  }
 }

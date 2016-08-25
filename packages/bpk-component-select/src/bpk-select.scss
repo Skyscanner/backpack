@@ -22,4 +22,9 @@
   &--invalid {
     border-color: $bpk-color-red-500;
   }
+
+  @media screen\0 {
+    padding: $bpk-spacing-xs $bpk-spacing-sm !important; /* stylelint-disable-line declaration-no-important */
+    background: none !important; /* stylelint-disable-line declaration-no-important */
+  }
 }
