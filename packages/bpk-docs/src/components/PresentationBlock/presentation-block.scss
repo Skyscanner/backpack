@@ -4,7 +4,7 @@
   margin-top: 0;
   margin-bottom: $bpk-spacing-sm;
   border-radius: $bpk-border-radius-sm;
-  box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-100;
+  box-shadow: 0 0 0 1px $bpk-color-gray-100;
 
   &__container {
     padding: $bpk-spacing-base;

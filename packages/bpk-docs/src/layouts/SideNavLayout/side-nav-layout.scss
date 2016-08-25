@@ -41,13 +41,13 @@
   &__nav-category-list {
     padding: 0;
     border-radius: $bpk-border-radius-sm;
-    box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-100;
+    box-shadow: 0 0 0 1px $bpk-color-gray-100;
     overflow: hidden;
   }
 
   &__nav-category-list-item {
     padding: 0;
-    box-shadow: 0 $bpk-one-pixel-rem 0 0 $bpk-color-gray-50;
+    box-shadow: 0 1px 0 0 $bpk-color-gray-50;
 
     &:last-child {
       box-shadow: none;

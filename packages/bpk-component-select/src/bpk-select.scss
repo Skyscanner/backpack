@@ -5,22 +5,21 @@
   width: 100%;
   height: $bpk-spacing-xl;
   padding: $bpk-spacing-xs $bpk-spacing-base $bpk-spacing-xs $bpk-spacing-sm;
-  border: 0;
+  border: solid $bpk-one-pixel-rem $bpk-color-gray-100;
   border-radius: $bpk-border-radius-xs;
   background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-gray-700)) no-repeat right $bpk-spacing-sm center;
-  background-size: $bpk-spacing-sm;
+  background-size: $bpk-spacing-sm $bpk-spacing-sm;
   color: $bpk-font-color-base;
-  box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-100 inset;
   appearance: none;
 
   &:disabled {
+    border-color: $bpk-color-gray-50;
     background-image: url(map-get($bpk-icons-sm, arrow-down-gray-300));
     color: $bpk-color-gray-300;
-    box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-50 inset;
     cursor: not-allowed;
   }
 
   &--invalid {
-    box-shadow: 0 0 0 $bpk-one-pixel-rem $bpk-color-red-500 inset;
+    border-color: $bpk-color-red-500;
   }
 }
