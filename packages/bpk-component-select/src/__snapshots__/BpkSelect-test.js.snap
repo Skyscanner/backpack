@@ -2,6 +2,7 @@ exports[`BpkSelect should render correctly 1`] = `
 <select
   className="bpk-select"
   disabled={false}
+  id="fruits"
   name="fruits"
   onChange={[Function onChange]}
   value="oranges">
@@ -36,6 +37,7 @@ exports[`BpkSelect should render correctly with a valid attribute equal to false
 <select
   className="bpk-select bpk-select--invalid"
   disabled={false}
+  id="fruits"
   name="fruits"
   onChange={[Function onChange]}
   value="oranges">
@@ -70,6 +72,7 @@ exports[`BpkSelect should render correctly with disabled attribute 1`] = `
 <select
   className="bpk-select"
   disabled={true}
+  id="fruits"
   name="fruits"
   onChange={[Function onChange]}
   value="">

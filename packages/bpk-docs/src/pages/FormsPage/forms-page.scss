@@ -1,0 +1,7 @@
+@import '~bpk-mixins/index';
+
+.bpkdocs-forms-page {
+  &__form {
+    margin-bottom: $bpk-spacing-sm;
+  }
+}

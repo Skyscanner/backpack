@@ -6,7 +6,18 @@ describe('BpkRadio', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
       <BpkRadio
-        name='my-radio-button'
+        name='radio'
+        onChange={() => null}
+      />
+    ).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should render correctly with id attribute', () => {
+    const tree = renderer.create(
+      <BpkRadio
+        id='radio'
+        name='radio'
         onChange={() => null}
       />
     ).toJSON()
@@ -16,7 +27,7 @@ describe('BpkRadio', () => {
   it('should render correctly with checked attribute', () => {
     const tree = renderer.create(
       <BpkRadio
-        name='my-radio-button'
+        name='radio'
         onChange={() => null}
         checked
       />
@@ -27,7 +38,7 @@ describe('BpkRadio', () => {
   it('should render correctly with label attribute', () => {
     const tree = renderer.create(
       <BpkRadio
-        name='my-radio-button'
+        name='radio'
         onChange={() => null}
         label='My label'
       />
@@ -38,7 +49,7 @@ describe('BpkRadio', () => {
   it('should render correctly with disabled attribute', () => {
     const tree = renderer.create(
       <BpkRadio
-        name='my-radio-button'
+        name='radio'
         onChange={() => null}
         disabled
       />
@@ -49,7 +60,7 @@ describe('BpkRadio', () => {
   it('should render correctly with value attribute', () => {
     const tree = renderer.create(
       <BpkRadio
-        name='my-radio-button'
+        name='radio'
         value='my-value'
         onChange={() => null}
       />

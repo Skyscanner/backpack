@@ -2,11 +2,11 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import TOKENS from 'bpk-tokens/tokens/base.common'
 
-import './colors-page.scss'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
 import BpkContentContainer from 'bpk-component-content-container'
 
+import './colors-page.scss'
 import ColorSwatch from './../../components/ColorSwatch'
 
 const ColorsPage = () => (

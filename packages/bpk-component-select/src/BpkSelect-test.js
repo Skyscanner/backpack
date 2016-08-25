@@ -6,6 +6,7 @@ describe('BpkSelect', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
       <BpkSelect
+        id='fruits'
         name='fruits'
         value='oranges'
         onChange={() => null}
@@ -22,6 +23,7 @@ describe('BpkSelect', () => {
   it('should render correctly with a valid attribute equal to false', () => {
     const tree = renderer.create(
       <BpkSelect
+        id='fruits'
         name='fruits'
         value='oranges'
         onChange={() => null}
@@ -40,6 +42,7 @@ describe('BpkSelect', () => {
   it('should render correctly with disabled attribute', () => {
     const tree = renderer.create(
       <BpkSelect
+        id='fruits'
         name='fruits'
         value=''
         onChange={() => null}

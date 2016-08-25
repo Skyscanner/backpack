@@ -1,0 +1,7 @@
+exports[`BpkLabel should render correctly 1`] = `
+<label
+  className="bpk-label"
+  htmlFor="origin">
+  Origin
+</label>
+`;

@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 import './bpk-checkbox.scss'
 
-const BpkCheckbox = ({ name, label, value, checked, onChange, disabled }) => {
+const BpkCheckbox = ({ name, label, value, id, checked, onChange, disabled }) => {
   const classNames = [ 'bpk-checkbox' ]
 
   disabled ? classNames.push('bpk-checkbox--disabled') : null
@@ -14,6 +14,7 @@ const BpkCheckbox = ({ name, label, value, checked, onChange, disabled }) => {
         className='bpk-checkbox--input'
         name={name}
         value={value || name}
+        id={id}
         checked={checked}
         onChange={onChange}
         disabled={disabled}
@@ -26,6 +27,7 @@ const BpkCheckbox = ({ name, label, value, checked, onChange, disabled }) => {
 BpkCheckbox.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  id: PropTypes.string,
   checked: PropTypes.bool,
   value: PropTypes.string,
   label: PropTypes.string,
@@ -33,6 +35,7 @@ BpkCheckbox.propTypes = {
 }
 
 BpkCheckbox.defaultProps = {
+  id: null,
   checked: false,
   value: null,
   label: null,

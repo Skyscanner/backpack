@@ -1,10 +1,12 @@
 import React from 'react'
 
+import BpkLabel from 'bpk-component-label'
 import BpkRadio from 'bpk-component-radio'
 import BpkSelect from 'bpk-component-select'
 import BpkCheckbox from 'bpk-component-checkbox'
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input'
 
+import './forms-page.scss'
 import ComponentPageBuilder from './../../components/ComponentPageBuilder'
 
 const components = [
@@ -15,59 +17,95 @@ const components = [
     number will ensure the correct keyboard is displayed (on supported devices) and also adds semantic meaning to the 
     input.`,
     examples: [
-      <BpkInput
-        name='input'
-        value='Edinburgh'
-        onChange={() => null}
-      />,
-      <BpkInput
-        name='input_placeholder'
-        value=''
-        onChange={() => null}
-        placeholder='Enter a country, city or airport'
-      />,
-      <BpkInput
-        name='input_valid'
-        value='Edinburgh'
-        onChange={() => null}
-        valid
-      />,
-      <BpkInput
-        name='input_invalid'
-        value='Edinbrvgh'
-        onChange={() => null}
-        valid={false}
-      />,
-      <BpkInput
-        name='input_disabled'
-        value='Edinburgh'
-        onChange={() => null}
-        disabled
-      />,
-      <BpkInput
-        type={INPUT_TYPES.EMAIL}
-        name='input_email'
-        value='example@example.com'
-        onChange={() => null}
-      />,
-      <BpkInput
-        type={INPUT_TYPES.NUMBER}
-        name='input_number'
-        value='0'
-        onChange={() => null}
-      />,
-      <BpkInput
-        type={INPUT_TYPES.PASSWORD}
-        name='input_password'
-        value='letmein'
-        onChange={() => null}
-      />,
-      <BpkInput
-        type={INPUT_TYPES.TEL}
-        name='input_telephone'
-        value='+441234567890'
-        onChange={() => null}
-      />
+      <form className='bpkdocs-forms-page__form'>
+        <BpkLabel label='Input' htmlFor='input' />
+        <BpkInput
+          id='input'
+          name='input'
+          value='Edinburgh'
+          onChange={() => null}
+        />
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <BpkLabel label='Input (placeholder)' htmlFor='input_placeholder' />
+        <BpkInput
+          id='input_placeholder'
+          name='input_placeholder'
+          value=''
+          onChange={() => null}
+          placeholder='Enter a country, city or airport'
+        />
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <BpkLabel label='Valid input' htmlFor='input_valid' />
+        <BpkInput
+          id='input_valid'
+          name='input_valid'
+          value='Edinburgh'
+          onChange={() => null}
+          valid
+        />
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <BpkLabel label='Invalid input' htmlFor='input_invalid' />
+        <BpkInput
+          id='input_invalid'
+          name='input_invalid'
+          value='Edinbrvgh'
+          onChange={() => null}
+          valid={false}
+        />
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <BpkLabel label='Disabled input' htmlFor='input_disabled' />
+        <BpkInput
+          id='input_disabled'
+          name='input_disabled'
+          value='Edinburgh'
+          onChange={() => null}
+          disabled
+        />
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <BpkLabel label='Email input' htmlFor='input_email' />
+        <BpkInput
+          type={INPUT_TYPES.EMAIL}
+          id='input_email'
+          name='input_email'
+          value='example@example.com'
+          onChange={() => null}
+        />
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <BpkLabel label='Number input' htmlFor='input_number' />
+        <BpkInput
+          type={INPUT_TYPES.NUMBER}
+          id='input_number'
+          name='input_number'
+          value='0'
+          onChange={() => null}
+        />
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <BpkLabel label='Password input' htmlFor='input_password' />
+        <BpkInput
+          type={INPUT_TYPES.PASSWORD}
+          id='input_password'
+          name='input_password'
+          value='letmein'
+          onChange={() => null}
+        />
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <BpkLabel label='Telephone input' htmlFor='input_telephone' />
+        <BpkInput
+          type={INPUT_TYPES.TEL}
+          id='input_telephone'
+          name='input_telephone'
+          value='+441234567890'
+          onChange={() => null}
+        />
+      </form>
     ],
     readme: require('raw!bpk-component-input/readme.md')
   },
@@ -75,42 +113,54 @@ const components = [
     id: 'selects',
     title: 'Selects',
     examples: [
-      <BpkSelect
-        name='select'
-        value='economy'
-        onChange={() => null}
-        options={[
-          { name: 'Economy', value: 'economy' },
-          { name: 'Premium Economy', value: 'premium_economy' },
-          { name: 'Business class', value: 'business' },
-          { name: 'First class', value: 'first' }
-        ]}
-      />,
-      <BpkSelect
-        name='select_invalid'
-        value=''
-        onChange={() => null}
-        options={[
-          { name: 'Please select...', value: '', hidden: true },
-          { name: 'Economy', value: 'economy' },
-          { name: 'Premium Economy', value: 'premium_economy' },
-          { name: 'Business class', value: 'business' },
-          { name: 'First class', value: 'first' }
-        ]}
-        valid={false}
-      />,
-      <BpkSelect
-        name='select_disabled'
-        value='economy'
-        onChange={() => null}
-        options={[
-          { name: 'Economy', value: 'economy' },
-          { name: 'Premium Economy', value: 'premium_economy' },
-          { name: 'Business class', value: 'business' },
-          { name: 'First class', value: 'first' }
-        ]}
-        disabled
-      />
+      <form className='bpkdocs-forms-page__form'>
+        <BpkLabel label='Select' htmlFor='select' />
+        <BpkSelect
+          id='select'
+          name='select'
+          value='economy'
+          onChange={() => null}
+          options={[
+            { name: 'Economy', value: 'economy' },
+            { name: 'Premium Economy', value: 'premium_economy' },
+            { name: 'Business class', value: 'business' },
+            { name: 'First class', value: 'first' }
+          ]}
+        />
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <BpkLabel label='Invalid select' htmlFor='select_invalid' />
+        <BpkSelect
+          id='select_invalid'
+          name='select_invalid'
+          value=''
+          onChange={() => null}
+          options={[
+            { name: 'Please select...', value: '', hidden: true },
+            { name: 'Economy', value: 'economy' },
+            { name: 'Premium Economy', value: 'premium_economy' },
+            { name: 'Business class', value: 'business' },
+            { name: 'First class', value: 'first' }
+          ]}
+          valid={false}
+        />
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <BpkLabel label='Disabled select' htmlFor='select_disabled' />
+        <BpkSelect
+          id='select_disabled'
+          name='select_disabled'
+          value='economy'
+          onChange={() => null}
+          options={[
+            { name: 'Economy', value: 'economy' },
+            { name: 'Premium Economy', value: 'premium_economy' },
+            { name: 'Business class', value: 'business' },
+            { name: 'First class', value: 'first' }
+          ]}
+          disabled
+        />
+      </form>
     ],
     readme: require('raw!bpk-component-select/readme.md')
   },
@@ -118,25 +168,29 @@ const components = [
     id: 'checkboxes',
     title: 'Checkboxes',
     examples: [
-      <BpkCheckbox
-        name='checkbox'
-        label='Direct'
-        onChange={() => null}
-        checked
-      />,
-      <br />,
-      <BpkCheckbox
-        name='unchecked_checkbox'
-        label='1 stop'
-        onChange={() => null}
-      />,
-      <br />,
-      <BpkCheckbox
-        name='disabled_checkbox'
-        label='2+ stops'
-        onChange={() => null}
-        disabled
-      />
+      <form className='bpkdocs-forms-page__form'>
+        <BpkCheckbox
+          name='checkbox'
+          label='Direct'
+          onChange={() => null}
+          checked
+        />
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <BpkCheckbox
+          name='unchecked_checkbox'
+          label='1 stop'
+          onChange={() => null}
+        />
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <BpkCheckbox
+          name='disabled_checkbox'
+          label='2+ stops'
+          onChange={() => null}
+          disabled
+        />
+      </form>
     ],
     readme: require('raw!bpk-component-checkbox/readme.md')
   },
@@ -144,27 +198,38 @@ const components = [
     id: 'radios',
     title: 'Radio buttons',
     examples: [
-      <BpkRadio
-        name='radio'
-        label='Return'
-        onChange={() => null}
-        checked
-      />,
-      <br />,
-      <BpkRadio
-        name='unchecked_radio'
-        label='One way'
-        onChange={() => null}
-      />,
-      <br />,
-      <BpkRadio
-        name='disabled_radio'
-        label='Multi-city'
-        onChange={() => null}
-        disabled
-      />
+      <form className='bpkdocs-forms-page__form'>
+        <BpkRadio
+          name='radio'
+          label='Return'
+          onChange={() => null}
+          checked
+        />
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <BpkRadio
+          name='unchecked_radio'
+          label='One way'
+          onChange={() => null}
+        />
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <BpkRadio
+          name='disabled_radio'
+          label='Multi-city'
+          onChange={() => null}
+          disabled
+        />
+      </form>
     ],
     readme: require('raw!bpk-component-radio/readme.md')
+  },
+  {
+    id: 'labels',
+    title: 'Labels',
+    blurb: <em>Used in the examples above for inputs & selects.</em>,
+    examples: [],
+    readme: require('raw!bpk-component-label/readme.md')
   }
 ]
 

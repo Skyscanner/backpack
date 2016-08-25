@@ -10,7 +10,7 @@ export const INPUT_TYPES = {
   TEL: 'tel'
 }
 
-const BpkInput = ({ name, value, onChange, placeholder, valid, disabled, type }) => {
+const BpkInput = ({ id, name, value, onChange, placeholder, valid, disabled, type }) => {
   const classNames = [ 'bpk-input' ]
 
   valid
@@ -20,6 +20,7 @@ const BpkInput = ({ name, value, onChange, placeholder, valid, disabled, type })
   return (
     <input
       className={classNames.join(' ')}
+      id={id}
       name={name}
       value={value}
       onChange={onChange}
@@ -31,6 +32,7 @@ const BpkInput = ({ name, value, onChange, placeholder, valid, disabled, type })
 }
 
 BpkInput.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
