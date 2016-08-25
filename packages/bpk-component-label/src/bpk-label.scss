@@ -1,0 +1,8 @@
+@import '~bpk-mixins/index';
+
+.bpk-label {
+  display: block;
+  color: $bpk-color-gray-300;
+  font-size: $bpk-font-size-sm;
+  line-height: $bpk-line-height-sm;
+}

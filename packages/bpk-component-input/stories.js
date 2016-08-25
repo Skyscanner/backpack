@@ -6,7 +6,8 @@ import BpkInput, { INPUT_TYPES } from './index'
 storiesOf('bpk-component-input', module)
   .add('Text value', () => (
     <BpkInput
-      name='origin'
+      id='text_value'
+      name='text_value'
       value='Edinburgh'
       onChange={action('input changed')}
       placeholder='Enter a country, city or airport'
@@ -14,7 +15,8 @@ storiesOf('bpk-component-input', module)
   ))
   .add('Placeholder', () => (
     <BpkInput
-      name='origin'
+      id='placeholder'
+      name='placeholder'
       value=''
       onChange={action('input changed')}
       placeholder='Enter a country, city or airport'
@@ -22,7 +24,8 @@ storiesOf('bpk-component-input', module)
   ))
   .add('Valid', () => (
     <BpkInput
-      name='origin'
+      id='valid'
+      name='valid'
       value='Edinburgh'
       onChange={action('input changed')}
       placeholder='Enter a country, city or airport'
@@ -31,7 +34,8 @@ storiesOf('bpk-component-input', module)
   ))
   .add('Invalid', () => (
     <BpkInput
-      name='origin'
+      id='invalid'
+      name='invalid'
       value='Edinbrvgh'
       onChange={action('input changed')}
       placeholder='Enter a country, city or airport'
@@ -40,6 +44,7 @@ storiesOf('bpk-component-input', module)
   ))
   .add('Disabled', () => (
     <BpkInput
+      id='disabled'
       name='disabled'
       value='Edinburgh'
       onChange={action('input changed')}
@@ -50,6 +55,7 @@ storiesOf('bpk-component-input', module)
   .add('Email', () => (
     <BpkInput
       type={INPUT_TYPES.EMAIL}
+      id='email'
       name='email'
       value=''
       onChange={action('input changed')}
@@ -59,6 +65,7 @@ storiesOf('bpk-component-input', module)
   .add('Number', () => (
     <BpkInput
       type={INPUT_TYPES.NUMBER}
+      id='number'
       name='number'
       value='0'
       onChange={action('input changed')}
@@ -67,6 +74,7 @@ storiesOf('bpk-component-input', module)
   .add('Password', () => (
     <BpkInput
       type={INPUT_TYPES.PASSWORD}
+      id='password'
       name='password'
       value='letmein'
       onChange={action('input changed')}
@@ -75,6 +83,7 @@ storiesOf('bpk-component-input', module)
   .add('Telephone', () => (
     <BpkInput
       type={INPUT_TYPES.TEL}
+      id='telephone'
       name='telephone'
       value='+441234567890'
       onChange={action('input changed')}

@@ -6,6 +6,7 @@ describe('BpkInput', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
       <BpkInput
+        id='test'
         name='test'
         value=''
         onChange={() => null}
@@ -17,6 +18,7 @@ describe('BpkInput', () => {
   it('should render correctly with value', () => {
     const tree = renderer.create(
       <BpkInput
+        id='test'
         name='test'
         value='My value'
         onChange={() => null}
@@ -28,6 +30,7 @@ describe('BpkInput', () => {
   it('should render correctly with placeholder', () => {
     const tree = renderer.create(
       <BpkInput
+        id='test'
         name='test'
         value=''
         onChange={() => null}
@@ -40,6 +43,7 @@ describe('BpkInput', () => {
   it('should render correctly with valid attribute set to "true"', () => {
     const tree = renderer.create(
       <BpkInput
+        id='test'
         name='test'
         value=''
         onChange={() => null}
@@ -52,6 +56,7 @@ describe('BpkInput', () => {
   it('should render correctly with valid attribute set to "false"', () => {
     const tree = renderer.create(
       <BpkInput
+        id='test'
         name='test'
         value=''
         onChange={() => null}
@@ -65,6 +70,7 @@ describe('BpkInput', () => {
     const tree = renderer.create(
       <BpkInput
         type={INPUT_TYPES.PASSWORD}
+        id='test'
         name='test'
         value=''
         onChange={() => null}

@@ -6,6 +6,7 @@ import BpkSelect from './index'
 storiesOf('bpk-component-select', module)
   .add('Example', () => (
     <BpkSelect
+      id='fruits'
       name='fruits'
       value='oranges'
       onChange={action('select changed')}
@@ -19,7 +20,8 @@ storiesOf('bpk-component-select', module)
   ))
   .add('Invalid', () => (
     <BpkSelect
-      name='fruits'
+      id='invalid'
+      name='invalid'
       value=''
       onChange={action('select changed')}
       options={[
@@ -34,6 +36,7 @@ storiesOf('bpk-component-select', module)
   ))
   .add('Disabled', () => (
     <BpkSelect
+      id='disabled'
       name='disabled'
       value=''
       onChange={action('select changed')}

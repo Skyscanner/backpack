@@ -6,7 +6,8 @@ import BpkRadio from './index'
 storiesOf('bpk-component-radio', module)
   .add('Checked', () => (
     <BpkRadio
-      name='return'
+      id='checked'
+      name='checked'
       label='Return'
       onChange={action('radio changed')}
       checked
@@ -14,21 +15,24 @@ storiesOf('bpk-component-radio', module)
   ))
   .add('Unchecked', () => (
     <BpkRadio
-      name='return'
+      id='unchecked'
+      name='unchecked'
       label='Return'
       onChange={action('radio changed')}
     />
   ))
   .add('No label', () => (
     <BpkRadio
-      name='return'
+      id='no_label'
+      name='no_label'
       onChange={action('radio changed')}
       checked
     />
   ))
   .add('Disabled', () => (
     <BpkRadio
-      name='return'
+      id='disabled'
+      name='disabled'
       label='Return'
       onChange={action('radio changed')}
       checked

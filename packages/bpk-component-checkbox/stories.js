@@ -6,7 +6,8 @@ import BpkCheckbox from './index'
 storiesOf('bpk-component-checkbox', module)
   .add('Checked', () => (
     <BpkCheckbox
-      name='prefer-directs'
+      id='checked'
+      name='checked'
       label='Prefer directs'
       onChange={action('checkbox changed')}
       checked
@@ -14,21 +15,24 @@ storiesOf('bpk-component-checkbox', module)
   ))
   .add('Unchecked', () => (
     <BpkCheckbox
-      name='prefer-directs'
+      id='unchecked'
+      name='unchecked'
       label='Prefer directs'
       onChange={action('checkbox changed')}
     />
   ))
   .add('No label', () => (
     <BpkCheckbox
-      name='prefer-directs'
+      id='no_label'
+      name='no_label'
       onChange={action('checkbox changed')}
       checked
     />
   ))
   .add('Disabled', () => (
     <BpkCheckbox
-      name='prefer-directs'
+      id='disabled'
+      name='disabled'
       label='Prefer directs'
       onChange={action('checkbox changed')}
       checked

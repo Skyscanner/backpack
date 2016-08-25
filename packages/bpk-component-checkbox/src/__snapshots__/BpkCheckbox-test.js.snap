@@ -5,10 +5,11 @@ exports[`BpkCheckbox should render correctly 1`] = `
     checked={false}
     className="bpk-checkbox--input"
     disabled={false}
-    name="my-checkbox"
+    id={null}
+    name="checkbox"
     onChange={[Function onChange]}
     type="checkbox"
-    value="my-checkbox" />
+    value="checkbox" />
 </label>
 `;
 
@@ -19,10 +20,11 @@ exports[`BpkCheckbox should render correctly with checked attribute 1`] = `
     checked={true}
     className="bpk-checkbox--input"
     disabled={false}
-    name="my-checkbox"
+    id={null}
+    name="checkbox"
     onChange={[Function onChange]}
     type="checkbox"
-    value="my-checkbox" />
+    value="checkbox" />
 </label>
 `;
 
@@ -33,10 +35,26 @@ exports[`BpkCheckbox should render correctly with disabled attribute 1`] = `
     checked={false}
     className="bpk-checkbox--input"
     disabled={true}
-    name="my-checkbox"
+    id={null}
+    name="checkbox"
     onChange={[Function onChange]}
     type="checkbox"
-    value="my-checkbox" />
+    value="checkbox" />
+</label>
+`;
+
+exports[`BpkCheckbox should render correctly with id attribute 1`] = `
+<label
+  className="bpk-checkbox">
+  <input
+    checked={false}
+    className="bpk-checkbox--input"
+    disabled={false}
+    id="checkbox"
+    name="checkbox"
+    onChange={[Function onChange]}
+    type="checkbox"
+    value="checkbox" />
 </label>
 `;
 
@@ -47,10 +65,11 @@ exports[`BpkCheckbox should render correctly with label attribute 1`] = `
     checked={false}
     className="bpk-checkbox--input"
     disabled={false}
-    name="my-checkbox"
+    id={null}
+    name="checkbox"
     onChange={[Function onChange]}
     type="checkbox"
-    value="my-checkbox" />
+    value="checkbox" />
    My label
 </label>
 `;
@@ -62,7 +81,8 @@ exports[`BpkCheckbox should render correctly with value attribute 1`] = `
     checked={false}
     className="bpk-checkbox--input"
     disabled={false}
-    name="my-checkbox"
+    id={null}
+    name="checkbox"
     onChange={[Function onChange]}
     type="checkbox"
     value="my-value" />
