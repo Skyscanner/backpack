@@ -11,7 +11,7 @@ const BpkRadio = ({ name, label, value, id, checked, onChange, disabled }) => {
     <label className={classNames.join(' ')}>
       <input
         type='radio'
-        className='bpk-radio--input'
+        className='bpk-radio__input'
         name={name}
         value={value || name}
         id={id}

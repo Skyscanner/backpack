@@ -11,7 +11,7 @@ const BpkCheckbox = ({ name, label, value, id, checked, onChange, disabled }) =>
     <label className={classNames.join(' ')}>
       <input
         type='checkbox'
-        className='bpk-checkbox--input'
+        className='bpk-checkbox__input'
         name={name}
         value={value || name}
         id={id}
