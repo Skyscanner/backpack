@@ -170,7 +170,7 @@ const components = [
 
 const FormsPage = () => <ComponentPageBuilder
   title='Forms'
-  blurb='James TODO'
+  blurb='Here you’ll find a range of common inputs, select menus and checkboxes/radio buttons for capturing user input. You’ll also find labels, fieldsets and form components.'
   components={components}
 />
 
