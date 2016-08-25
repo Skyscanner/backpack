@@ -1,35 +1,13 @@
 @import '~bpk-mixins/index';
 
 .bpk-checkbox {
-  display: inline-block;
-
-  &--input {
-    display: inline-block;
-    width: $_small-svg-size;
-    height: $_small-svg-size;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: url(map-get($bpk-elements, checkbox-normal)) no-repeat;
-    cursor: pointer;
-    vertical-align: text-bottom;
-    appearance: none;
-
-    &:checked {
-      background: url(map-get($bpk-elements, checkbox-checked)) no-repeat;
-    }
-
-    &:disabled {
-      opacity: .5;
-    }
-
-    @media screen\0 {
-      background: none !important; /* stylelint-disable-line declaration-no-important */
-    }
-  }
+  @include bpk-checkbox;
 
   &--disabled {
-    color: $bpk-color-gray-300;
-    cursor: not-allowed;
+    @include bpk-checkbox--disabled;
+  }
+
+  &__input {
+    @include bpk-checkbox__input;
   }
 }

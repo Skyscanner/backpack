@@ -1,0 +1,259 @@
+@import '../bonds';
+
+////
+/// @group forms
+////
+
+$_form-input-size: $bpk-spacing-sm + $bpk-spacing-xs;
+
+/// Form input. Can be used for text, email, number, password and tel type inputs.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-input();
+///   }
+
+@mixin bpk-input {
+  display: inline-block;
+  width: 100%;
+  height: $bpk-spacing-xl;
+  padding: $bpk-spacing-xs $bpk-spacing-sm;
+  border: solid $bpk-one-pixel-rem $bpk-color-gray-100;
+  border-radius: $bpk-border-radius-xs;
+  background: $bpk-color-white;
+  color: $bpk-font-color-base;
+  appearance: none;
+
+  &::placeholder {
+    color: $bpk-color-gray-500;
+    font-style: italic;
+  }
+
+  &:disabled {
+    border-color: $bpk-color-gray-50;
+    color: $bpk-color-gray-300;
+    cursor: not-allowed;
+  }
+
+  &[type=number] {
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+    }
+  }
+
+  &::-ms-clear {
+    display: none;
+  }
+}
+
+/// Valid form input. Modifies the bpk-input mixin.
+///
+/// @require {mixin} bpk-input
+///
+/// @example scss
+///   .selector {
+///     @include bpk-input();
+///     @include bpk-input--valid();
+///   }
+
+@mixin bpk-input--valid {
+  padding-right: $bpk-spacing-sm + $_form-input-size;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, tick-green-500)) no-repeat right $bpk-spacing-sm center;
+  background-size: $_form-input-size $_form-input-size;
+}
+
+/// Invalid form input. Modifies the bpk-input mixin.
+///
+/// @require {mixin} bpk-input
+///
+/// @example scss
+///   .selector {
+///     @include bpk-input();
+///     @include bpk-input--invalid();
+///   }
+
+@mixin bpk-input--invalid {
+  padding-right: $bpk-spacing-sm + $_form-input-size;
+  border-color: $bpk-color-red-500;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, close-red-500)) no-repeat right $bpk-spacing-sm center;
+  background-size: $_form-input-size $_form-input-size;
+}
+
+/// Form select input.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-select();
+///   }
+
+@mixin bpk-select {
+  display: inline-block;
+  width: 100%;
+  height: $bpk-spacing-xl;
+  padding: $bpk-spacing-xs $bpk-spacing-base $bpk-spacing-xs $bpk-spacing-sm;
+  border: solid $bpk-one-pixel-rem $bpk-color-gray-100;
+  border-radius: $bpk-border-radius-xs;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-gray-700)) no-repeat right $bpk-spacing-sm center;
+  background-size: $bpk-spacing-sm $bpk-spacing-sm;
+  color: $bpk-font-color-base;
+  appearance: none;
+
+  &:disabled {
+    border-color: $bpk-color-gray-50;
+    background-image: url(map-get($bpk-icons-sm, arrow-down-gray-300));
+    color: $bpk-color-gray-300;
+    cursor: not-allowed;
+  }
+
+  @media screen\0 {
+    padding: $bpk-spacing-xs $bpk-spacing-sm !important; /* stylelint-disable-line declaration-no-important */
+    background: none !important; /* stylelint-disable-line declaration-no-important */
+  }
+}
+
+/// Invalid form select input. Modifies the bpk-select mixin.
+///
+/// @require {mixin} bpk-select
+///
+/// @example scss
+///   .selector {
+///     @include bpk-select();
+///     @include bpk-select--invalid();
+///   }
+
+@mixin bpk-select--invalid {
+  border-color: $bpk-color-red-500;
+}
+
+/// Form checkbox. Should be applied to containing label element.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-checkbox();
+///   }
+
+@mixin bpk-checkbox {
+  display: inline-block;
+}
+
+/// Disabled form checkbox. Modifies the bpk-checkbox mixin.
+///
+/// @require {mixin} bpk-checkbox
+///
+/// @example scss
+///   .selector {
+///     @include bpk-checkbox();
+///     @include bpk-checkbox--disabled();
+///   }
+
+@mixin bpk-checkbox--disabled {
+  color: $bpk-color-gray-300;
+  cursor: not-allowed;
+}
+
+/// Form checkbox input.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-checkbox__input();
+///   }
+
+@mixin bpk-checkbox__input {
+  display: inline-block;
+  width: $_form-input-size;
+  height: $_form-input-size;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: url(map-get($bpk-elements, checkbox-normal)) no-repeat;
+  cursor: pointer;
+  vertical-align: text-bottom;
+  appearance: none;
+
+  &:checked {
+    background: url(map-get($bpk-elements, checkbox-checked)) no-repeat;
+  }
+
+  &:disabled {
+    opacity: .5;
+  }
+
+  @media screen\0 {
+    background: none !important; /* stylelint-disable-line declaration-no-important */
+  }
+}
+
+/// Form radio button. Should be applied to containing label element.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-radio();
+///   }
+
+@mixin bpk-radio {
+  display: inline-block;
+}
+
+/// Disabled form radio button. Modifies the bpk-radio mixin.
+///
+/// @require {mixin} bpk-radio
+///
+/// @example scss
+///   .selector {
+///     @include bpk-radio();
+///     @include bpk-radio--disabled();
+///   }
+
+@mixin bpk-radio--disabled {
+  color: $bpk-color-gray-300;
+  cursor: not-allowed;
+}
+
+/// Form radio input.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-radio__input();
+///   }
+
+@mixin bpk-radio__input {
+  display: inline-block;
+  width: $_form-input-size;
+  height: $_form-input-size;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: url(map-get($bpk-elements, radio-normal)) no-repeat;
+  cursor: pointer;
+  vertical-align: text-bottom;
+  appearance: none;
+
+  &:checked {
+    background: url(map-get($bpk-elements, radio-checked)) no-repeat;
+  }
+
+  &:disabled {
+    opacity: .5;
+  }
+
+  @media screen\0 {
+    background: none !important; /* stylelint-disable-line declaration-no-important */
+  }
+}
+
+/// Form label.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-label();
+///   }
+
+@mixin bpk-label {
+  display: block;
+  color: $bpk-color-gray-300;
+  font-size: $bpk-font-size-sm;
+  line-height: $bpk-line-height-sm;
+}

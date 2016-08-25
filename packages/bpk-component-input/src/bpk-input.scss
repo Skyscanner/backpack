@@ -1,50 +1,13 @@
 @import '~bpk-mixins/index';
 
 .bpk-input {
-  display: inline-block;
-  width: 100%;
-  height: $bpk-spacing-xl;
-  padding: $bpk-spacing-xs $bpk-spacing-sm;
-  border: solid $bpk-one-pixel-rem $bpk-color-gray-100;
-  border-radius: $bpk-border-radius-xs;
-  background: $bpk-color-white;
-  color: $bpk-font-color-base;
-  appearance: none;
-
-  &::placeholder {
-    color: $bpk-color-gray-500;
-    font-style: italic;
-  }
-
-  &:disabled {
-    border-color: $bpk-color-gray-50;
-    color: $bpk-color-gray-300;
-    cursor: not-allowed;
-  }
-
-  &[type=number] {
-    -moz-appearance: textfield;
-
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      appearance: none;
-    }
-  }
+  @include bpk-input;
 
   &--valid {
-    padding-right: $bpk-spacing-sm + $_small-svg-size;
-    background: $bpk-color-white url(map-get($bpk-icons-sm, tick-green-500)) no-repeat right $bpk-spacing-sm center;
-    background-size: $_small-svg-size $_small-svg-size;
+    @include bpk-input--valid;
   }
 
   &--invalid {
-    padding-right: $bpk-spacing-sm + $_small-svg-size;
-    border-color: $bpk-color-red-500;
-    background: $bpk-color-white url(map-get($bpk-icons-sm, close-red-500)) no-repeat right $bpk-spacing-sm center;
-    background-size: $_small-svg-size $_small-svg-size;
-  }
-
-  &::-ms-clear {
-    display: none;
+    @include bpk-input--invalid;
   }
 }
