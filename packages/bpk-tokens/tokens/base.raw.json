@@ -774,6 +774,48 @@
       "value": "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)",
       "name": "PRIMARY_GRADIENT"
     },
+    "INPUT_HEIGHT": {
+      "category": "forms",
+      "value": "2.250rem",
+      "type": "size",
+      "name": "INPUT_HEIGHT"
+    },
+    "INPUT_PADDING_X": {
+      "category": "forms",
+      "value": ".375rem",
+      "type": "size",
+      "name": "INPUT_PADDING_X"
+    },
+    "INPUT_PADDING_Y": {
+      "category": "forms",
+      "value": ".75rem",
+      "type": "size",
+      "name": "INPUT_PADDING_Y"
+    },
+    "INPUT_BORDER": {
+      "category": "forms",
+      "value": "solid .0625rem #E6E4EB",
+      "type": "border",
+      "name": "INPUT_BORDER"
+    },
+    "INPUT_BORDER_RADIUS": {
+      "category": "forms",
+      "value": ".1875rem",
+      "type": "radius",
+      "name": "INPUT_BORDER_RADIUS"
+    },
+    "INPUT_BACKGROUND": {
+      "category": "forms",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "INPUT_BACKGROUND"
+    },
+    "INPUT_COLOR": {
+      "category": "forms",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "INPUT_COLOR"
+    },
     "LOGO_CLOUD_DEFAULT_HEIGHT": {
       "type": "size",
       "category": "logos",
@@ -1307,6 +1349,13 @@
     "COLOR_YELLOW_800",
     "COLOR_YELLOW_900",
     "PRIMARY_GRADIENT",
+    "INPUT_HEIGHT",
+    "INPUT_PADDING_X",
+    "INPUT_PADDING_Y",
+    "INPUT_BORDER",
+    "INPUT_BORDER_RADIUS",
+    "INPUT_BACKGROUND",
+    "INPUT_COLOR",
     "LOGO_CLOUD_DEFAULT_HEIGHT",
     "LOGO_INLINE_DEFAULT_HEIGHT",
     "LOGO_STACKED_DEFAULT_HEIGHT",

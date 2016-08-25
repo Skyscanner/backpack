@@ -1,0 +1,38 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "forms"
+  },
+  "props": {
+    "INPUT_HEIGHT": {
+      "value": "{!SPACING_XL}",
+      "type": "size"
+    },
+    "INPUT_PADDING_X": {
+      "value": "{!SPACING_XS}",
+      "type": "size"
+    },
+    "INPUT_PADDING_Y": {
+      "value": "{!SPACING_SM}",
+      "type": "size"
+    },
+    "INPUT_BORDER": {
+      "value": "solid {!ONE_PIXEL_REM} {!GRAY_100}",
+      "type": "border"
+    },
+    "INPUT_BORDER_RADIUS": {
+      "value": "{!BORDER_RADIUS_XS}",
+      "type": "radius"
+    },
+    "INPUT_BACKGROUND": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "INPUT_COLOR": {
+      "value": "{!GRAY_700}",
+      "type": "color"
+    }
+  }
+}

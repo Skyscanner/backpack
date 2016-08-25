@@ -16,12 +16,12 @@ $_form-input-size: $bpk-spacing-sm + $bpk-spacing-xs;
 @mixin bpk-input {
   display: inline-block;
   width: 100%;
-  height: $bpk-spacing-xl;
-  padding: $bpk-spacing-xs $bpk-spacing-sm;
-  border: solid $bpk-one-pixel-rem $bpk-color-gray-100;
-  border-radius: $bpk-border-radius-xs;
-  background: $bpk-color-white;
-  color: $bpk-font-color-base;
+  height: $bpk-input-height;
+  padding: $bpk-input-padding-x $bpk-input-padding-y;
+  border: $bpk-input-border;
+  border-radius: $bpk-input-border-radius;
+  background: $bpk-input-background;
+  color: $bpk-input-color;
   appearance: none;
 
   &::placeholder {

@@ -117,6 +117,13 @@
   <color name="COLOR_YELLOW_800" category="color">#cfa211ff</color>
   <color name="COLOR_YELLOW_900" category="color">#a88100ff</color>
   <property name="PRIMARY_GRADIENT" category="color">linear-gradient(135deg, #00b2d6 0, #02DDD8 1)</property>
+  <property name="INPUT_HEIGHT" category="forms">36</property>
+  <property name="INPUT_PADDING_X" category="forms">6</property>
+  <property name="INPUT_PADDING_Y" category="forms">12</property>
+  <property name="INPUT_BORDER" category="forms">solid .0625rem #E6E4EB</property>
+  <property name="INPUT_BORDER_RADIUS" category="forms">3</property>
+  <color name="INPUT_BACKGROUND" category="forms">#ffffffff</color>
+  <color name="INPUT_COLOR" category="forms">#524c61ff</color>
   <property name="LOGO_CLOUD_DEFAULT_HEIGHT" category="logos">42</property>
   <property name="LOGO_INLINE_DEFAULT_HEIGHT" category="logos">42</property>
   <property name="LOGO_STACKED_DEFAULT_HEIGHT" category="logos">calc(1.5rem * 3)</property>

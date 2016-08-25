@@ -703,6 +703,48 @@
       "name": "primaryGradient"
     },
     {
+      "category": "forms",
+      "value": "36",
+      "type": "size",
+      "name": "inputHeight"
+    },
+    {
+      "category": "forms",
+      "value": "6",
+      "type": "size",
+      "name": "inputPaddingX"
+    },
+    {
+      "category": "forms",
+      "value": "12",
+      "type": "size",
+      "name": "inputPaddingY"
+    },
+    {
+      "category": "forms",
+      "value": "solid .0625rem #E6E4EB",
+      "type": "border",
+      "name": "inputBorder"
+    },
+    {
+      "category": "forms",
+      "value": "3",
+      "type": "radius",
+      "name": "inputBorderRadius"
+    },
+    {
+      "category": "forms",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "inputBackground"
+    },
+    {
+      "category": "forms",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "inputColor"
+    },
+    {
       "type": "size",
       "category": "logos",
       "value": "42",

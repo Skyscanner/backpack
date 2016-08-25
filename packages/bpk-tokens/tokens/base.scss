@@ -232,6 +232,20 @@ $bpk-color-yellow-800: rgb(207, 162, 17);
 $bpk-color-yellow-900: rgb(168, 129, 0);
 /// @group colors
 $bpk-primary-gradient: linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%);
+/// @group forms
+$bpk-input-height: 2.250rem;
+/// @group forms
+$bpk-input-padding-x: .375rem;
+/// @group forms
+$bpk-input-padding-y: .75rem;
+/// @group forms
+$bpk-input-border: solid .0625rem #E6E4EB;
+/// @group forms
+$bpk-input-border-radius: .1875rem;
+/// @group forms
+$bpk-input-background: rgb(255, 255, 255);
+/// @group forms
+$bpk-input-color: rgb(82, 76, 97);
 /// @group logos
 $bpk-logo-cloud-default-height: 2.625rem;
 /// @group logos
