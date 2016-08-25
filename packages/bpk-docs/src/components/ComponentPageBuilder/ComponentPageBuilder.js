@@ -96,7 +96,7 @@ ComponentPageBuilder.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      blurb: PropTypes.string,
+      blurb: contentShape,
       examples: PropTypes.arrayOf(childrenPropType),
       readme: PropTypes.string
     })
