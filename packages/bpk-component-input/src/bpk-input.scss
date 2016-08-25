@@ -4,7 +4,6 @@
   display: inline-block;
   width: 100%;
   height: $bpk-spacing-xl;
-
   padding: $bpk-spacing-xs $bpk-spacing-sm;
   border: solid $bpk-one-pixel-rem $bpk-color-gray-100;
   border-radius: $bpk-border-radius-xs;
@@ -18,8 +17,8 @@
   }
 
   &:disabled {
-    color: $bpk-color-gray-300;
     border-color: $bpk-color-gray-50;
+    color: $bpk-color-gray-300;
     cursor: not-allowed;
   }
 
@@ -40,8 +39,8 @@
 
   &--invalid {
     padding-right: $bpk-spacing-sm + $_small-svg-size;
+    border-color: $bpk-color-red-500;
     background: $bpk-color-white url(map-get($bpk-icons-sm, close-red-500)) no-repeat right $bpk-spacing-sm center;
     background-size: $_small-svg-size $_small-svg-size;
-    border-color: $bpk-color-red-500;
   }
 }
