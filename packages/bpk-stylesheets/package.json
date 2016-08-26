@@ -1,6 +1,6 @@
 {
   "name": "bpk-stylesheets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Backpack's stylesheets.",
   "main": "base.scss",
   "scripts": {

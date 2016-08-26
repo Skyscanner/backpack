@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -36,7 +36,7 @@
     "bpk-component-spinner": "^0.2.7",
     "bpk-component-table": "^0.0.24",
     "bpk-mixins": "^3.0.0",
-    "bpk-stylesheets": "^1.0.0",
+    "bpk-stylesheets": "^1.0.1",
     "bpk-svgs": "^1.0.0",
     "bpk-tokens": "^10.0.0"
   }
