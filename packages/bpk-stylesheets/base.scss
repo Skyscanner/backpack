@@ -22,16 +22,6 @@ body {
   font-family: $bpk-font-family-base;
   font-size: $bpk-font-size-base;
   line-height: $bpk-line-height-base;
-
-  &.scaffold-font {
-    font-family: arial, helvetica, clean, sans-serif;
-    font-size: 13px;
-    line-height: 1.231;
-  }
-
-  &.scaffold-font-size {
-    font-size: 13px;
-  }
 }
 
 .hidden,
