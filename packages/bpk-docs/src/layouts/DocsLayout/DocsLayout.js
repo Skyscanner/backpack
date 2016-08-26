@@ -30,8 +30,7 @@ const links = [
       { route: routes.ICONS, children: 'Icons' },
       { route: routes.SPINNERS, children: 'Spinners' },
       { route: routes.LOGOS, children: 'Logos' },
-      // { route: routes.FORMS, children: 'Forms' },
-      { route: null, children: 'Forms' },
+      { route: routes.FORMS, children: 'Forms' },
       { route: null, children: 'Cards' },
       { route: null, children: 'Illustration' }
     ]
