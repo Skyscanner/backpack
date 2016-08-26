@@ -399,6 +399,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Arial", sans-serif;
   font-size: 1rem;
   line-height: 1.5rem; }
+  body.scaffold-font-size {
+    font-size: 13px; }
 
 .hidden,
 .hide {
