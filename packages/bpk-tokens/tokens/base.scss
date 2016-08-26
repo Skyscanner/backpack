@@ -232,6 +232,58 @@ $bpk-color-yellow-800: rgb(207, 162, 17);
 $bpk-color-yellow-900: rgb(168, 129, 0);
 /// @group colors
 $bpk-primary-gradient: linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%);
+/// @group forms
+$bpk-input-height: 2.250rem;
+/// @group forms
+$bpk-input-padding-x: .375rem;
+/// @group forms
+$bpk-input-padding-y: .75rem;
+/// @group forms
+$bpk-input-border: solid .0625rem #E6E4EB;
+/// @group forms
+$bpk-input-border-radius: .1875rem;
+/// @group forms
+$bpk-input-background: #ffffff;
+/// @group forms
+$bpk-input-color: rgb(82, 76, 97);
+/// @group forms
+$bpk-input-placeholder-color: rgb(129, 123, 143);
+/// @group forms
+$bpk-input-placeholder-font-style: italic;
+/// @group forms
+$bpk-input-disabled-border-color: rgb(243, 242, 245);
+/// @group forms
+$bpk-input-disabled-color: rgb(178, 174, 189);
+/// @group forms
+$bpk-input-invalid-border-color: rgb(255, 84, 82);
+/// @group forms
+$bpk-select-height: 2.250rem;
+/// @group forms
+$bpk-select-padding-top: .375rem;
+/// @group forms
+$bpk-select-padding-right: 1.5rem;
+/// @group forms
+$bpk-select-padding-bottom: .375rem;
+/// @group forms
+$bpk-select-padding-left: .75rem;
+/// @group forms
+$bpk-select-border: solid .0625rem #E6E4EB;
+/// @group forms
+$bpk-select-border-radius: .1875rem;
+/// @group forms
+$bpk-select-color: rgb(82, 76, 97);
+/// @group forms
+$bpk-select-disabled-border-color: rgb(243, 242, 245);
+/// @group forms
+$bpk-select-disabled-color: rgb(178, 174, 189);
+/// @group forms
+$bpk-select-invalid-border-color: rgb(255, 84, 82);
+/// @group forms
+$bpk-label-color: rgb(178, 174, 189);
+/// @group forms
+$bpk-label-font-size: .75rem;
+/// @group forms
+$bpk-label-line-height: 1.125rem;
 /// @group logos
 $bpk-logo-cloud-default-height: 2.625rem;
 /// @group logos

@@ -4,6 +4,7 @@
     "./base/breakpoints.json",
     "./base/buttons.json",
     "./base/colors.json",
+    "./base/forms.json",
     "./base/logos.json",
     "./base/spacing.json",
     "./base/typography.json"
