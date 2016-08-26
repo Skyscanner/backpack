@@ -25,13 +25,13 @@ $_form-input-size: $bpk-spacing-sm + $bpk-spacing-xs;
   appearance: none;
 
   &::placeholder {
-    color: $bpk-color-gray-500;
-    font-style: italic;
+    color: $bpk-input-placeholder-color;
+    font-style: $bpk-input-placeholder-font-style;
   }
 
   &:disabled {
-    border-color: $bpk-color-gray-50;
-    color: $bpk-color-gray-300;
+    border-color: $bpk-input-disabled-border-color;
+    color: $bpk-input-disabled-color;
     cursor: not-allowed;
   }
 
@@ -77,7 +77,7 @@ $_form-input-size: $bpk-spacing-sm + $bpk-spacing-xs;
 
 @mixin bpk-input--invalid {
   padding-right: $bpk-spacing-sm + $_form-input-size;
-  border-color: $bpk-color-red-500;
+  border-color: $bpk-input-invalid-border-color;
   background: $bpk-color-white url(map-get($bpk-icons-sm, close-red-500)) no-repeat right $bpk-spacing-sm center;
   background-size: $_form-input-size $_form-input-size;
 }
@@ -92,19 +92,19 @@ $_form-input-size: $bpk-spacing-sm + $bpk-spacing-xs;
 @mixin bpk-select {
   display: inline-block;
   width: 100%;
-  height: $bpk-spacing-xl;
-  padding: $bpk-spacing-xs $bpk-spacing-base $bpk-spacing-xs $bpk-spacing-sm;
-  border: solid $bpk-one-pixel-rem $bpk-color-gray-100;
-  border-radius: $bpk-border-radius-xs;
+  height: $bpk-select-height;
+  padding: $bpk-select-padding-top $bpk-select-padding-right $bpk-select-padding-bottom $bpk-select-padding-left;
+  border: $bpk-select-border;
+  border-radius: $bpk-select-border-radius;
   background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-gray-700)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-sm $bpk-spacing-sm;
-  color: $bpk-font-color-base;
+  color: $bpk-select-color;
   appearance: none;
 
   &:disabled {
-    border-color: $bpk-color-gray-50;
+    border-color: $bpk-select-disabled-border-color;
     background-image: url(map-get($bpk-icons-sm, arrow-down-gray-300));
-    color: $bpk-color-gray-300;
+    color: $bpk-select-disabled-color;
     cursor: not-allowed;
   }
 
@@ -125,7 +125,7 @@ $_form-input-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///   }
 
 @mixin bpk-select--invalid {
-  border-color: $bpk-color-red-500;
+  border-color: $bpk-select-invalid-border-color;
 }
 
 /// Form checkbox. Should be applied to containing label element.
@@ -253,7 +253,7 @@ $_form-input-size: $bpk-spacing-sm + $bpk-spacing-xs;
 
 @mixin bpk-label {
   display: block;
-  color: $bpk-color-gray-300;
-  font-size: $bpk-font-size-sm;
-  line-height: $bpk-line-height-sm;
+  color: $bpk-label-color;
+  font-size: $bpk-label-font-size;
+  line-height: $bpk-label-line-height;
 }

@@ -734,8 +734,8 @@
     },
     {
       "category": "forms",
-      "value": "rgb(255, 255, 255)",
-      "type": "color",
+      "value": "#ffffff",
+      "type": "background",
       "name": "inputBackground"
     },
     {
@@ -743,6 +743,120 @@
       "value": "rgb(82, 76, 97)",
       "type": "color",
       "name": "inputColor"
+    },
+    {
+      "category": "forms",
+      "value": "rgb(129, 123, 143)",
+      "type": "color",
+      "name": "inputPlaceholderColor"
+    },
+    {
+      "category": "forms",
+      "value": "italic",
+      "type": "font-syle",
+      "name": "inputPlaceholderFontStyle"
+    },
+    {
+      "category": "forms",
+      "value": "rgb(243, 242, 245)",
+      "type": "color",
+      "name": "inputDisabledBorderColor"
+    },
+    {
+      "category": "forms",
+      "value": "rgb(178, 174, 189)",
+      "type": "color",
+      "name": "inputDisabledColor"
+    },
+    {
+      "category": "forms",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "name": "inputInvalidBorderColor"
+    },
+    {
+      "category": "forms",
+      "value": "36",
+      "type": "size",
+      "name": "selectHeight"
+    },
+    {
+      "category": "forms",
+      "value": "6",
+      "type": "size",
+      "name": "selectPaddingTop"
+    },
+    {
+      "category": "forms",
+      "value": "24",
+      "type": "size",
+      "name": "selectPaddingRight"
+    },
+    {
+      "category": "forms",
+      "value": "6",
+      "type": "size",
+      "name": "selectPaddingBottom"
+    },
+    {
+      "category": "forms",
+      "value": "12",
+      "type": "size",
+      "name": "selectPaddingLeft"
+    },
+    {
+      "category": "forms",
+      "value": "solid .0625rem #E6E4EB",
+      "type": "border",
+      "name": "selectBorder"
+    },
+    {
+      "category": "forms",
+      "value": "3",
+      "type": "radius",
+      "name": "selectBorderRadius"
+    },
+    {
+      "category": "forms",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "selectColor"
+    },
+    {
+      "category": "forms",
+      "value": "rgb(243, 242, 245)",
+      "type": "color",
+      "name": "selectDisabledBorderColor"
+    },
+    {
+      "category": "forms",
+      "value": "rgb(178, 174, 189)",
+      "type": "color",
+      "name": "selectDisabledColor"
+    },
+    {
+      "category": "forms",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "name": "selectInvalidBorderColor"
+    },
+    {
+      "category": "forms",
+      "value": "rgb(178, 174, 189)",
+      "type": "color",
+      "name": "labelColor"
+    },
+    {
+      "category": "forms",
+      "value": "12",
+      "type": "size",
+      "name": "labelFontSize"
+    },
+    {
+      "category": "forms",
+      "value": "18",
+      "type": "number",
+      "name": "labelLineHeight"
     },
     {
       "type": "size",

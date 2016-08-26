@@ -806,8 +806,8 @@
     },
     "INPUT_BACKGROUND": {
       "category": "forms",
-      "value": "rgb(255, 255, 255)",
-      "type": "color",
+      "value": "#ffffff",
+      "type": "background",
       "name": "INPUT_BACKGROUND"
     },
     "INPUT_COLOR": {
@@ -815,6 +815,120 @@
       "value": "rgb(82, 76, 97)",
       "type": "color",
       "name": "INPUT_COLOR"
+    },
+    "INPUT_PLACEHOLDER_COLOR": {
+      "category": "forms",
+      "value": "rgb(129, 123, 143)",
+      "type": "color",
+      "name": "INPUT_PLACEHOLDER_COLOR"
+    },
+    "INPUT_PLACEHOLDER_FONT_STYLE": {
+      "category": "forms",
+      "value": "italic",
+      "type": "font-syle",
+      "name": "INPUT_PLACEHOLDER_FONT_STYLE"
+    },
+    "INPUT_DISABLED_BORDER_COLOR": {
+      "category": "forms",
+      "value": "rgb(243, 242, 245)",
+      "type": "color",
+      "name": "INPUT_DISABLED_BORDER_COLOR"
+    },
+    "INPUT_DISABLED_COLOR": {
+      "category": "forms",
+      "value": "rgb(178, 174, 189)",
+      "type": "color",
+      "name": "INPUT_DISABLED_COLOR"
+    },
+    "INPUT_INVALID_BORDER_COLOR": {
+      "category": "forms",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "name": "INPUT_INVALID_BORDER_COLOR"
+    },
+    "SELECT_HEIGHT": {
+      "category": "forms",
+      "value": "2.250rem",
+      "type": "size",
+      "name": "SELECT_HEIGHT"
+    },
+    "SELECT_PADDING_TOP": {
+      "category": "forms",
+      "value": ".375rem",
+      "type": "size",
+      "name": "SELECT_PADDING_TOP"
+    },
+    "SELECT_PADDING_RIGHT": {
+      "category": "forms",
+      "value": "1.5rem",
+      "type": "size",
+      "name": "SELECT_PADDING_RIGHT"
+    },
+    "SELECT_PADDING_BOTTOM": {
+      "category": "forms",
+      "value": ".375rem",
+      "type": "size",
+      "name": "SELECT_PADDING_BOTTOM"
+    },
+    "SELECT_PADDING_LEFT": {
+      "category": "forms",
+      "value": ".75rem",
+      "type": "size",
+      "name": "SELECT_PADDING_LEFT"
+    },
+    "SELECT_BORDER": {
+      "category": "forms",
+      "value": "solid .0625rem #E6E4EB",
+      "type": "border",
+      "name": "SELECT_BORDER"
+    },
+    "SELECT_BORDER_RADIUS": {
+      "category": "forms",
+      "value": ".1875rem",
+      "type": "radius",
+      "name": "SELECT_BORDER_RADIUS"
+    },
+    "SELECT_COLOR": {
+      "category": "forms",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "SELECT_COLOR"
+    },
+    "SELECT_DISABLED_BORDER_COLOR": {
+      "category": "forms",
+      "value": "rgb(243, 242, 245)",
+      "type": "color",
+      "name": "SELECT_DISABLED_BORDER_COLOR"
+    },
+    "SELECT_DISABLED_COLOR": {
+      "category": "forms",
+      "value": "rgb(178, 174, 189)",
+      "type": "color",
+      "name": "SELECT_DISABLED_COLOR"
+    },
+    "SELECT_INVALID_BORDER_COLOR": {
+      "category": "forms",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "name": "SELECT_INVALID_BORDER_COLOR"
+    },
+    "LABEL_COLOR": {
+      "category": "forms",
+      "value": "rgb(178, 174, 189)",
+      "type": "color",
+      "name": "LABEL_COLOR"
+    },
+    "LABEL_FONT_SIZE": {
+      "category": "forms",
+      "value": ".75rem",
+      "type": "size",
+      "name": "LABEL_FONT_SIZE"
+    },
+    "LABEL_LINE_HEIGHT": {
+      "category": "forms",
+      "value": "1.125rem",
+      "type": "number",
+      "name": "LABEL_LINE_HEIGHT"
     },
     "LOGO_CLOUD_DEFAULT_HEIGHT": {
       "type": "size",
@@ -1356,6 +1470,25 @@
     "INPUT_BORDER_RADIUS",
     "INPUT_BACKGROUND",
     "INPUT_COLOR",
+    "INPUT_PLACEHOLDER_COLOR",
+    "INPUT_PLACEHOLDER_FONT_STYLE",
+    "INPUT_DISABLED_BORDER_COLOR",
+    "INPUT_DISABLED_COLOR",
+    "INPUT_INVALID_BORDER_COLOR",
+    "SELECT_HEIGHT",
+    "SELECT_PADDING_TOP",
+    "SELECT_PADDING_RIGHT",
+    "SELECT_PADDING_BOTTOM",
+    "SELECT_PADDING_LEFT",
+    "SELECT_BORDER",
+    "SELECT_BORDER_RADIUS",
+    "SELECT_COLOR",
+    "SELECT_DISABLED_BORDER_COLOR",
+    "SELECT_DISABLED_COLOR",
+    "SELECT_INVALID_BORDER_COLOR",
+    "LABEL_COLOR",
+    "LABEL_FONT_SIZE",
+    "LABEL_LINE_HEIGHT",
     "LOGO_CLOUD_DEFAULT_HEIGHT",
     "LOGO_INLINE_DEFAULT_HEIGHT",
     "LOGO_STACKED_DEFAULT_HEIGHT",
