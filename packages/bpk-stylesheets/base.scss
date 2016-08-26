@@ -22,6 +22,10 @@ body {
   font-family: $bpk-font-family-base;
   font-size: $bpk-font-size-base;
   line-height: $bpk-line-height-base;
+
+  &.scaffold-font-size {
+    font-size: 13px;
+  }
 }
 
 .hidden,
