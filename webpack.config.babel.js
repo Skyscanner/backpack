@@ -35,7 +35,9 @@ const staticSiteGeneratorConfig = {
 
     ROUTES.ORGANISMS,
 
-    ROUTES.DOWNLOADS
+    ROUTES.DOWNLOADS,
+
+    ROUTES.GRID_DEMO
   ]
 }
 

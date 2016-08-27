@@ -6,12 +6,14 @@ import includes from 'lodash/includes'
 import TOKENS from 'bpk-tokens/tokens/base.common'
 
 import BpkLink from 'bpk-component-link'
+import BpkRouterLink from 'bpk-component-router-link'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkContentContainer from 'bpk-component-content-container'
 import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
 
+import * as routes from './../../constants/routes'
 import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper'
 
 const anchors = {
@@ -67,7 +69,9 @@ const LayoutPage = () => (
         </BpkTableBody>
       </BpkTable>
       <BpkHeading id={anchors.horizontal} level='h2'>Horizontal grid</BpkHeading>
-      <BpkParagraph><em>Coming soon</em></BpkParagraph>
+      <BpkParagraph>
+        <BpkRouterLink to={routes.GRID_DEMO}>Demo</BpkRouterLink>
+      </BpkParagraph>
     </BpkContentContainer>
   </section>
 )

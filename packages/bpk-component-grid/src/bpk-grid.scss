@@ -1,0 +1,71 @@
+@import '~bpk-mixins';
+
+.bpk-grid {
+  &__container {
+    @include bpk-grid__container;
+
+    &--padded {
+      @include bpk-grid__container--padded;
+    }
+
+    &--debug {
+      @include bpk-grid__container--debug;
+    }
+  }
+
+  &__row {
+    @include bpk-grid__row;
+
+    &--debug {
+      @include bpk-grid__row--debug;
+    }
+  }
+
+  &__column {
+    @include bpk-grid__column;
+
+    &--debug {
+      @include bpk-grid__column--debug;
+    }
+
+    &-debugger {
+      @include bpk-grid__column-debugger;
+    }
+
+    @for $i from 0 through $bpk-grid-columns {
+      &--#{$i} {
+        @include bpk-grid__column--($i);
+      }
+    }
+
+    @for $i from 0 through $bpk-grid-columns {
+      &--offset-#{$i} {
+        @include bpk-grid__column--offset-($i);
+      }
+    }
+
+    @for $i from 0 through $bpk-grid-columns {
+      &--mobile-#{$i} {
+        @include bpk-grid__column--mobile-($i);
+      }
+    }
+
+    @for $i from 0 through $bpk-grid-columns {
+      &--offset-mobile-#{$i} {
+        @include bpk-grid__column--offset-mobile-($i);
+      }
+    }
+
+    @for $i from 0 through $bpk-grid-columns {
+      &--tablet-#{$i} {
+        @include bpk-grid__column--tablet-($i);
+      }
+    }
+
+    @for $i from 0 through $bpk-grid-columns {
+      &--offset-tablet-#{$i} {
+        @include bpk-grid__column--offset-tablet-($i);
+      }
+    }
+  }
+}

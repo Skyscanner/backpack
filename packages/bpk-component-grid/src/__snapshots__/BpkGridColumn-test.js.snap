@@ -1,0 +1,108 @@
+exports[`BpkGridColumn should render correctly 1`] = `
+<div
+  className="bpk-grid__column bpk-grid__column--6">
+  Contents
+</div>
+`;
+
+exports[`BpkGridColumn should render correctly with "debug" attribute 1`] = `
+<div
+  className="bpk-grid__column bpk-grid__column--6 bpk-grid__column--debug">
+  <div
+    className="bpk-grid__column-debugger">
+    Contents
+  </div>
+</div>
+`;
+
+exports[`BpkGridColumn should render correctly with "mobileOffset" attribute 1`] = `
+<div
+  className="bpk-grid__column bpk-grid__column--6 bpk-grid__column--offset-mobile-6 bpk-grid__column--debug">
+  <div
+    className="bpk-grid__column-debugger">
+    Contents
+  </div>
+</div>
+`;
+
+exports[`BpkGridColumn should render correctly with "mobileOffset" attribute set to 0 1`] = `
+<div
+  className="bpk-grid__column bpk-grid__column--0 bpk-grid__column--offset-mobile-0">
+  Contents
+</div>
+`;
+
+exports[`BpkGridColumn should render correctly with "mobileWidth" attribute 1`] = `
+<div
+  className="bpk-grid__column bpk-grid__column--6 bpk-grid__column--mobile-6 bpk-grid__column--debug">
+  <div
+    className="bpk-grid__column-debugger">
+    Contents
+  </div>
+</div>
+`;
+
+exports[`BpkGridColumn should render correctly with "mobileWidth" attribute set to 0 1`] = `
+<div
+  className="bpk-grid__column bpk-grid__column--0 bpk-grid__column--mobile-0">
+  Contents
+</div>
+`;
+
+exports[`BpkGridColumn should render correctly with "offset" attribute 1`] = `
+<div
+  className="bpk-grid__column bpk-grid__column--6 bpk-grid__column--offset-6 bpk-grid__column--debug">
+  <div
+    className="bpk-grid__column-debugger">
+    Contents
+  </div>
+</div>
+`;
+
+exports[`BpkGridColumn should render correctly with "offset" attribute set to 0 1`] = `
+<div
+  className="bpk-grid__column bpk-grid__column--0 bpk-grid__column--offset-0">
+  Contents
+</div>
+`;
+
+exports[`BpkGridColumn should render correctly with "tabletOffset" attribute 1`] = `
+<div
+  className="bpk-grid__column bpk-grid__column--6 bpk-grid__column--offset-tablet-6 bpk-grid__column--debug">
+  <div
+    className="bpk-grid__column-debugger">
+    Contents
+  </div>
+</div>
+`;
+
+exports[`BpkGridColumn should render correctly with "tabletOffset" attribute set to 0 1`] = `
+<div
+  className="bpk-grid__column bpk-grid__column--0 bpk-grid__column--offset-tablet-0">
+  Contents
+</div>
+`;
+
+exports[`BpkGridColumn should render correctly with "tabletWidth" attribute 1`] = `
+<div
+  className="bpk-grid__column bpk-grid__column--6 bpk-grid__column--tablet-6 bpk-grid__column--debug">
+  <div
+    className="bpk-grid__column-debugger">
+    Contents
+  </div>
+</div>
+`;
+
+exports[`BpkGridColumn should render correctly with "tabletWidth" attribute set to 0 1`] = `
+<div
+  className="bpk-grid__column bpk-grid__column--0 bpk-grid__column--tablet-0">
+  Contents
+</div>
+`;
+
+exports[`BpkGridColumn should render correctly with "width" attribute set to 0 1`] = `
+<div
+  className="bpk-grid__column bpk-grid__column--0">
+  Contents
+</div>
+`;

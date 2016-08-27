@@ -3,7 +3,7 @@
 .bpkdocs-side-nav-layout {
   &__container {
     @include bpk-clearfix;
-    @include bpk-container;
+    @include bpk-grid__container;
   }
 
   &__nav {

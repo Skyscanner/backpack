@@ -2,6 +2,6 @@
 
 .bpkdocs-downloads-page {
   &__container {
-    @include bpk-container();
+    @include bpk-grid__container();
   }
 }

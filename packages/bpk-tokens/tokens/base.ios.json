@@ -859,6 +859,30 @@
       "name": "labelLineHeight"
     },
     {
+      "category": "grid",
+      "value": "12",
+      "type": "number",
+      "name": "gridColumns"
+    },
+    {
+      "category": "grid",
+      "value": "12",
+      "type": "size",
+      "name": "gridGutter"
+    },
+    {
+      "category": "grid",
+      "value": "24",
+      "type": "size",
+      "name": "gridContainerPadding"
+    },
+    {
+      "category": "grid",
+      "value": "12",
+      "type": "size",
+      "name": "gridContainerMobilePadding"
+    },
+    {
       "type": "size",
       "category": "logos",
       "value": "42",

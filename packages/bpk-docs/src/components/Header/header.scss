@@ -5,7 +5,7 @@
   box-shadow: 0 -1px 0 0 $bpk-color-gray-100 inset;
 
   &__nav {
-    @include bpk-container;
+    @include bpk-grid__container;
 
     padding-top: $bpk-spacing-base;
     padding-bottom: $bpk-spacing-base;

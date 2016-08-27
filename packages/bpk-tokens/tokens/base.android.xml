@@ -143,6 +143,10 @@
   <color name="LABEL_COLOR" category="forms">#b2aebdff</color>
   <property name="LABEL_FONT_SIZE" category="forms">12</property>
   <property name="LABEL_LINE_HEIGHT" category="forms">18</property>
+  <property name="GRID_COLUMNS" category="grid">12</property>
+  <property name="GRID_GUTTER" category="grid">12</property>
+  <property name="GRID_CONTAINER_PADDING" category="grid">24</property>
+  <property name="GRID_CONTAINER_MOBILE_PADDING" category="grid">12</property>
   <property name="LOGO_CLOUD_DEFAULT_HEIGHT" category="logos">42</property>
   <property name="LOGO_INLINE_DEFAULT_HEIGHT" category="logos">42</property>
   <property name="LOGO_STACKED_DEFAULT_HEIGHT" category="logos">calc(1.5rem * 3)</property>

@@ -4,17 +4,10 @@
 /// @group breakpoints
 ////
 
-/// Main content container.
-///
-/// @example scss
-///   .selector {
-///     @include bpk-container();
-///   }
+/// @alias bpk-grid__container
 
 @mixin bpk-container {
-  max-width: $bpk-breakpoint-desktop;
-  margin: 0 auto;
-  padding: $bpk-spacing-base;
+  @include bpk-grid__container;
 }
 
 /// Breakpoint to target mobile viewports.

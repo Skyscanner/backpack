@@ -1,0 +1,20 @@
+exports[`BpkGridContainer should render correctly 1`] = `
+<div
+  className="bpk-grid__container bpk-grid__container--padded">
+  Contents
+</div>
+`;
+
+exports[`BpkGridContainer should render correctly with "debug" attribute 1`] = `
+<div
+  className="bpk-grid__container bpk-grid__container--padded bpk-grid__container--debug">
+  Contents
+</div>
+`;
+
+exports[`BpkGridContainer should render correctly with "padded" attribute equal to false 1`] = `
+<div
+  className="bpk-grid__container">
+  Contents
+</div>
+`;

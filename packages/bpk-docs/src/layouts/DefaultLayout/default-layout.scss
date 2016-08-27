@@ -2,7 +2,7 @@
 
 .bpkdocs-default-layout {
   &__footer {
-    @include bpk-container;
+    @include bpk-grid__container;
 
     padding: $bpk-spacing-lg $bpk-spacing-base;
     box-shadow: 0 -1px 0 0 $bpk-color-gray-50;
