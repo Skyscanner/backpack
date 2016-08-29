@@ -9,8 +9,7 @@
 
     &-copyright,
     &-toggle {
-      font-size: $bpk-font-size-sm;
-      line-height: $bpk-line-height-sm;
+      @include bpk-text-sm;
     }
 
     &-copyright {
