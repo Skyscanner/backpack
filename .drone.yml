@@ -22,7 +22,7 @@ publish:
       ".css": gzip
       ".html": gzip
     when:
-      branch: master
+      branch: sandbox
 
   s3_sync:
     acl: public-read
