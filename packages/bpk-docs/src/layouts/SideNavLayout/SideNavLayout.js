@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
+import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid'
+
 import './side-nav-layout.scss'
 
 const toNavLink = (link, key) => {
@@ -37,10 +39,12 @@ const toNavListItem = (link, index) => (
 )
 
 export const SideNavLayout = ({ links, children }) => (
-  <div className='bpkdocs-side-nav-layout__container'>
-    <nav className='bpkdocs-side-nav-layout__nav'>{toNavList(links)}</nav>
-    <div className='bpkdocs-side-nav-layout__content'>{children}</div>
-  </div>
+  <BpkGridContainer>
+    <BpkGridRow>
+      <BpkGridColumn width={3} tabletWidth={12}>{toNavList(links)}</BpkGridColumn>
+      <BpkGridColumn width={9} tabletWidth={12}>{children}</BpkGridColumn>
+    </BpkGridRow>
+  </BpkGridContainer>
 )
 
 const childrenPropType = PropTypes.oneOfType([

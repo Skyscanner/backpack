@@ -11,7 +11,7 @@
       "type": "number"
     },
     "GRID_GUTTER": {
-      "value": "{!SPACING_SM}",
+      "value": "{!SPACING_BASE}",
       "type": "size"
     },
     "GRID_CONTAINER_PADDING": {

@@ -66,9 +66,9 @@
     "BORDER_RADIUS_XS": ".1875rem",
     "BORDER_RADIUS_SM": ".375rem",
     "BORDER_RADIUS_PILL": "5rem",
-    "BREAKPOINT_MOBILE": "32.625rem",
+    "BREAKPOINT_MOBILE": "32.25rem",
     "BREAKPOINT_TABLET": "50.25rem",
-    "BREAKPOINT_DESKTOP": "65.25rem",
+    "BREAKPOINT_DESKTOP": "71.25rem",
     "ONE_PIXEL_REM": ".0625rem"
   },
   "props": {
@@ -92,7 +92,7 @@
     },
     "BREAKPOINT_MOBILE": {
       "category": "breakpoint",
-      "value": "32.625rem",
+      "value": "32.25rem",
       "type": "size",
       "name": "BREAKPOINT_MOBILE"
     },
@@ -104,13 +104,13 @@
     },
     "BREAKPOINT_DESKTOP": {
       "category": "breakpoint",
-      "value": "65.25rem",
+      "value": "71.25rem",
       "type": "size",
       "name": "BREAKPOINT_DESKTOP"
     },
     "BREAKPOINT_QUERY_MOBILE": {
       "category": "breakpoint",
-      "value": "(max-width: 32.625rem)",
+      "value": "(max-width: 32.25rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_MOBILE"
     },
@@ -122,13 +122,13 @@
     },
     "BREAKPOINT_QUERY_TABLET_ONLY": {
       "category": "breakpoint",
-      "value": "(min-width: 32.625rem + .0625rem) and (max-width: 50.25rem)",
+      "value": "(min-width: 32.25rem + .0625rem) and (max-width: 50.25rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_TABLET_ONLY"
     },
     "BREAKPOINT_QUERY_ABOVE_MOBILE": {
       "category": "breakpoint",
-      "value": "(min-width: 32.625rem + .0625rem)",
+      "value": "(min-width: 32.25rem + .0625rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_ABOVE_MOBILE"
     },
@@ -938,7 +938,7 @@
     },
     "GRID_GUTTER": {
       "category": "grid",
-      "value": ".75rem",
+      "value": "1.5rem",
       "type": "size",
       "name": "GRID_GUTTER"
     },
