@@ -24,6 +24,8 @@ const anchors = {
 
 const breakpoints = pickBy(TOKENS, (value, key) => includes(key, 'breakpoint') && !includes(key, 'breakpointQuery'))
 
+const gridPreviewSvg = { __html: `${require('raw!./../../static/backpack-grid-preview.svg')}` }
+
 const LayoutPage = () => (
   <section>
     <Helmet title='Layout' />
@@ -69,8 +71,18 @@ const LayoutPage = () => (
         </BpkTableBody>
       </BpkTable>
       <BpkHeading id={anchors.horizontal} level='h2'>Horizontal grid</BpkHeading>
+      <span style={{ display: 'block', width: '100%' }} dangerouslySetInnerHTML={gridPreviewSvg}></span>
       <BpkParagraph>
-        <BpkRouterLink to={routes.GRID_DEMO}>Demo</BpkRouterLink>
+        Backpack uses a 12 column responsive grid to compose and lay out Systems. Systems consist mostly of groups of
+        organisms stitched together. They are very concrete and provide context to all these relatively abstract
+        molecules and organisms.
+      </BpkParagraph>
+      <BpkParagraph>
+        The grid works in conjunction with the breakpoints listed above and can be used to position content differently
+        based on these viewports by providing widths and offsets.
+      </BpkParagraph>
+      <BpkParagraph>
+        <BpkRouterLink to={routes.GRID_DEMO}>View demo.</BpkRouterLink>
       </BpkParagraph>
     </BpkContentContainer>
   </section>
