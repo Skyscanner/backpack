@@ -31,9 +31,7 @@ const ComponentExample = (component) => {
     ? <PresentationBlock>{flatten(component.examples)}</PresentationBlock>
     : null
 
-  const blurb = component.blurb
-    ? <BpkParagraph>{component.blurb}</BpkParagraph>
-    : null
+  const blurb = component.blurb ? toNodes(component.blurb) : null
 
   const readme = component.readme ? flatten([
     <BpkHeading id={`${component.id}-readme`} level='h3'>{component.title} readme</BpkHeading>,
@@ -60,12 +58,12 @@ const toNodes = (children) => {
 
 const markdownToHTML = (readmeString) => marked(readmeString, { renderer: renderer })
 
-const ComponentPageBuilder = ({ title, blurb, components, readme, customSections }) => (
+const ComponentPageBuilder = ({ title, showExamplesHeading, blurb, components, readme, customSections }) => (
   <BpkContentContainer>
     <Helmet title={title} />
     <BpkHeading level='h1'>{title}</BpkHeading>
     {flatten(toNodes(blurb))}
-    <BpkHeading id='examples' level='h2'>Examples</BpkHeading>
+    {showExamplesHeading ? <BpkHeading id='examples' level='h2'>Examples</BpkHeading> : null}
     <BpkList>{flatten(components.map(ExampleNavListItem))}</BpkList>
     {flatten(components.map(ComponentExample))}
     {readme ? flatten([
@@ -91,6 +89,7 @@ const contentShape = PropTypes.oneOfType([
 
 ComponentPageBuilder.propTypes = {
   title: PropTypes.string.isRequired,
+  showExamplesHeading: PropTypes.bool,
   blurb: contentShape,
   components: PropTypes.arrayOf(
     PropTypes.shape({
@@ -112,6 +111,7 @@ ComponentPageBuilder.propTypes = {
 }
 
 ComponentPageBuilder.defaultProps = {
+  showExamplesHeading: false,
   blurb: null,
   components: [],
   readme: null,

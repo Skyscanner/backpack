@@ -41,18 +41,6 @@
     }
 
     @for $i from 0 through $bpk-grid-columns {
-      &--mobile-#{$i} {
-        @include bpk-grid__column--mobile-($i);
-      }
-    }
-
-    @for $i from 0 through $bpk-grid-columns {
-      &--offset-mobile-#{$i} {
-        @include bpk-grid__column--offset-mobile-($i);
-      }
-    }
-
-    @for $i from 0 through $bpk-grid-columns {
       &--tablet-#{$i} {
         @include bpk-grid__column--tablet-($i);
       }
@@ -61,6 +49,18 @@
     @for $i from 0 through $bpk-grid-columns {
       &--offset-tablet-#{$i} {
         @include bpk-grid__column--offset-tablet-($i);
+      }
+    }
+
+    @for $i from 0 through $bpk-grid-columns {
+      &--mobile-#{$i} {
+        @include bpk-grid__column--mobile-($i);
+      }
+    }
+
+    @for $i from 0 through $bpk-grid-columns {
+      &--offset-mobile-#{$i} {
+        @include bpk-grid__column--offset-mobile-($i);
       }
     }
   }

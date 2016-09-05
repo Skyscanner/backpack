@@ -1,0 +1,13 @@
+@import '~bpk-mixins/index';
+
+.bpkdocs-layout-page {
+  &__grid-preview-svg {
+    display: block;
+    max-width: 30rem;
+    margin: 0 auto;
+
+    > svg {
+      display: block;
+    }
+  }
+}
