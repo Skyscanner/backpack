@@ -15,10 +15,6 @@
 
   &__row {
     @include bpk-grid__row;
-
-    &--debug {
-      @include bpk-grid__row--debug;
-    }
   }
 
   &__column {

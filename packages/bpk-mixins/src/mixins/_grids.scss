@@ -67,19 +67,7 @@
 
   margin-right: -($bpk-grid-gutter / 2);
   margin-left: -($bpk-grid-gutter / 2);
-}
 
-/// Grid row debug. Modifies the bpk-grid__row mixin.
-///
-/// @require {mixin} bpk-grid__row
-///
-/// @example scss
-///   .selector {
-///     @include bpk-grid__row();
-///     @include bpk-grid__row--debug();
-///   }
-
-@mixin bpk-grid__row--debug {
   &:first-child {
     margin-top: -($bpk-grid-gutter / 2);
   }
@@ -98,8 +86,7 @@
 
 @mixin bpk-grid__column {
   float: left;
-  padding-right: $bpk-grid-gutter / 2;
-  padding-left: $bpk-grid-gutter / 2;
+  padding: $bpk-grid-gutter / 2;
 
   html[dir="rtl"] & {
     float: right;
