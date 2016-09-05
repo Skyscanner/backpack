@@ -2,47 +2,15 @@
 
 .bpkdocs-home-page {
   &__hero {
+    @include bpk-breakpoint-above-tablet {
+      padding-top: $bpk-spacing-xl * 2;
+      padding-bottom: $bpk-spacing-xl * 2;
+    }
+
+    padding-top: $bpk-spacing-xl;
+    padding-bottom: $bpk-spacing-xl;
     background-color: $bpk-color-blue-500;
     background-image: $bpk-primary-gradient;
     color: $bpk-color-white;
-  }
-
-  &__hero-container {
-    @include bpk-grid__container;
-
-    padding: $bpk-spacing-xl $bpk-spacing-base;
-
-    @include bpk-breakpoint-above-tablet {
-      padding: $bpk-spacing-xl*3 $bpk-spacing-base;
-    }
-  }
-
-  &__content-container {
-    @include bpk-grid__container;
-  }
-
-  &__columns {
-    @include bpk-clearfix;
-  }
-
-  &__column {
-    @include bpk-breakpoint-above-tablet {
-      float: left;
-      width: calc(50% - #{$bpk-spacing-sm});
-    }
-
-    &:first-child {
-      @include bpk-breakpoint-above-tablet {
-        margin-bottom: 0;
-      }
-
-      margin-bottom: $bpk-spacing-base;
-    }
-  }
-
-  &__column + &__column {
-    @include bpk-breakpoint-above-tablet {
-      margin-left: $bpk-spacing-base;
-    }
   }
 }
