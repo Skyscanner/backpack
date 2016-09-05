@@ -66,9 +66,9 @@
     "BORDER_RADIUS_XS": ".1875rem",
     "BORDER_RADIUS_SM": ".375rem",
     "BORDER_RADIUS_PILL": "5rem",
-    "BREAKPOINT_MOBILE": "32.625rem",
+    "BREAKPOINT_MOBILE": "32.25rem",
     "BREAKPOINT_TABLET": "50.25rem",
-    "BREAKPOINT_DESKTOP": "65.25rem",
+    "BREAKPOINT_DESKTOP": "71.25rem",
     "ONE_PIXEL_REM": ".0625rem"
   }
 }

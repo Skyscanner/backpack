@@ -3,13 +3,13 @@
   <property name="BORDER_RADIUS_XS" category="radius">3</property>
   <property name="BORDER_RADIUS_SM" category="radius">6</property>
   <property name="BORDER_RADIUS_PILL" category="radius">80</property>
-  <property name="BREAKPOINT_MOBILE" category="breakpoint">522</property>
+  <property name="BREAKPOINT_MOBILE" category="breakpoint">516</property>
   <property name="BREAKPOINT_TABLET" category="breakpoint">804</property>
-  <property name="BREAKPOINT_DESKTOP" category="breakpoint">1044</property>
-  <property name="BREAKPOINT_QUERY_MOBILE" category="breakpoint">(max-width: 32.625rem)</property>
+  <property name="BREAKPOINT_DESKTOP" category="breakpoint">1140</property>
+  <property name="BREAKPOINT_QUERY_MOBILE" category="breakpoint">(max-width: 32.25rem)</property>
   <property name="BREAKPOINT_QUERY_TABLET" category="breakpoint">(max-width: 50.25rem)</property>
-  <property name="BREAKPOINT_QUERY_TABLET_ONLY" category="breakpoint">(min-width: 32.625rem + .0625rem) and (max-width: 50.25rem)</property>
-  <property name="BREAKPOINT_QUERY_ABOVE_MOBILE" category="breakpoint">(min-width: 32.625rem + .0625rem)</property>
+  <property name="BREAKPOINT_QUERY_TABLET_ONLY" category="breakpoint">(min-width: 32.25rem + .0625rem) and (max-width: 50.25rem)</property>
+  <property name="BREAKPOINT_QUERY_ABOVE_MOBILE" category="breakpoint">(min-width: 32.25rem + .0625rem)</property>
   <property name="BREAKPOINT_QUERY_ABOVE_TABLET" category="breakpoint">(min-width: 50.25rem + .0625rem)</property>
   <property name="BUTTON_PADDING_Y" category="buttons">6</property>
   <property name="BUTTON_PADDING_X" category="buttons">18</property>
@@ -144,7 +144,7 @@
   <property name="LABEL_FONT_SIZE" category="forms">12</property>
   <property name="LABEL_LINE_HEIGHT" category="forms">18</property>
   <property name="GRID_COLUMNS" category="grid">12</property>
-  <property name="GRID_GUTTER" category="grid">12</property>
+  <property name="GRID_GUTTER" category="grid">24</property>
   <property name="GRID_CONTAINER_PADDING" category="grid">24</property>
   <property name="GRID_CONTAINER_MOBILE_PADDING" category="grid">12</property>
   <property name="LOGO_CLOUD_DEFAULT_HEIGHT" category="logos">42</property>

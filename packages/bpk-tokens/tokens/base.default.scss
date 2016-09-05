@@ -5,19 +5,19 @@ $bpk-border-radius-sm: .375rem !default;
 /// @group radii
 $bpk-border-radius-pill: 5rem !default;
 /// @group breakpoints
-$bpk-breakpoint-mobile: 32.625rem !default;
+$bpk-breakpoint-mobile: 32.25rem !default;
 /// @group breakpoints
 $bpk-breakpoint-tablet: 50.25rem !default;
 /// @group breakpoints
-$bpk-breakpoint-desktop: 65.25rem !default;
+$bpk-breakpoint-desktop: 71.25rem !default;
 /// @group breakpoints
-$bpk-breakpoint-query-mobile: (max-width: 32.625rem) !default;
+$bpk-breakpoint-query-mobile: (max-width: 32.25rem) !default;
 /// @group breakpoints
 $bpk-breakpoint-query-tablet: (max-width: 50.25rem) !default;
 /// @group breakpoints
-$bpk-breakpoint-query-tablet-only: (min-width: 32.625rem + .0625rem) and (max-width: 50.25rem) !default;
+$bpk-breakpoint-query-tablet-only: (min-width: 32.25rem + .0625rem) and (max-width: 50.25rem) !default;
 /// @group breakpoints
-$bpk-breakpoint-query-above-mobile: (min-width: 32.625rem + .0625rem) !default;
+$bpk-breakpoint-query-above-mobile: (min-width: 32.25rem + .0625rem) !default;
 /// @group breakpoints
 $bpk-breakpoint-query-above-tablet: (min-width: 50.25rem + .0625rem) !default;
 /// @group buttons
@@ -287,7 +287,7 @@ $bpk-label-line-height: 1.125rem !default;
 /// @group grids
 $bpk-grid-columns: 12 !default;
 /// @group grids
-$bpk-grid-gutter: .75rem !default;
+$bpk-grid-gutter: 1.5rem !default;
 /// @group grids
 $bpk-grid-container-padding: 1.5rem !default;
 /// @group grids

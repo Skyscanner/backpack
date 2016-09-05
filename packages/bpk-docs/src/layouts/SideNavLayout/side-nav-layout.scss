@@ -1,28 +1,6 @@
 @import '~bpk-mixins/index';
 
 .bpkdocs-side-nav-layout {
-  &__container {
-    @include bpk-clearfix;
-    @include bpk-grid__container;
-  }
-
-  &__nav {
-    margin-bottom: $bpk-spacing-sm;
-
-    @include bpk-breakpoint-above-tablet {
-      float: left;
-      width: 25%;
-    }
-  }
-
-  &__content {
-    @include bpk-breakpoint-above-tablet {
-      float: left;
-      width: calc(75% - #{$bpk-spacing-base});
-      margin-left: $bpk-spacing-base;
-    }
-  }
-
   &__nav-list-item {
     display: block;
 

@@ -71,7 +71,7 @@ const LayoutPage = () => (
         </BpkTableBody>
       </BpkTable>
       <BpkHeading id={anchors.horizontal} level='h2'>Horizontal grid</BpkHeading>
-      <span style={{ display: 'block', width: '100%' }} dangerouslySetInnerHTML={gridPreviewSvg}></span>
+      <span dangerouslySetInnerHTML={gridPreviewSvg}></span>
       <BpkParagraph>
         Backpack uses a 12 column responsive grid to compose and lay out Systems. Systems consist mostly of groups of
         organisms stitched together. They are very concrete and provide context to all these relatively abstract

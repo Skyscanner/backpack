@@ -20,7 +20,7 @@
     },
     {
       "category": "breakpoint",
-      "value": "522",
+      "value": "516",
       "type": "size",
       "name": "breakpointMobile"
     },
@@ -32,13 +32,13 @@
     },
     {
       "category": "breakpoint",
-      "value": "1044",
+      "value": "1140",
       "type": "size",
       "name": "breakpointDesktop"
     },
     {
       "category": "breakpoint",
-      "value": "(max-width: 32.625rem)",
+      "value": "(max-width: 32.25rem)",
       "type": "media-query",
       "name": "breakpointQueryMobile"
     },
@@ -50,13 +50,13 @@
     },
     {
       "category": "breakpoint",
-      "value": "(min-width: 32.625rem + .0625rem) and (max-width: 50.25rem)",
+      "value": "(min-width: 32.25rem + .0625rem) and (max-width: 50.25rem)",
       "type": "media-query",
       "name": "breakpointQueryTabletOnly"
     },
     {
       "category": "breakpoint",
-      "value": "(min-width: 32.625rem + .0625rem)",
+      "value": "(min-width: 32.25rem + .0625rem)",
       "type": "media-query",
       "name": "breakpointQueryAboveMobile"
     },
@@ -866,7 +866,7 @@
     },
     {
       "category": "grid",
-      "value": "12",
+      "value": "24",
       "type": "size",
       "name": "gridGutter"
     },
