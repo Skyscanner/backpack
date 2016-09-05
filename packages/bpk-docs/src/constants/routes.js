@@ -1,7 +1,6 @@
 export const HOME = '/'
 
 export const DOCS = '/docs'
-export const DOWNLOADS = '/downloads'
 
 export const GETTING_STARTED = '/docs/getting-started'
 export const BASE_STYLESHEET = '/docs/base-stylesheet'
@@ -24,3 +23,7 @@ export const FORMS = '/docs/atoms/forms'
 export const MOLECULES = '/docs/molecules'
 
 export const ORGANISMS = '/docs/organisms'
+
+export const DOWNLOADS = '/downloads'
+
+export const GRID_DEMO = '/grid-demo'

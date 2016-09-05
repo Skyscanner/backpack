@@ -930,6 +930,30 @@
       "type": "number",
       "name": "LABEL_LINE_HEIGHT"
     },
+    "GRID_COLUMNS": {
+      "category": "grid",
+      "value": "12",
+      "type": "number",
+      "name": "GRID_COLUMNS"
+    },
+    "GRID_GUTTER": {
+      "category": "grid",
+      "value": ".75rem",
+      "type": "size",
+      "name": "GRID_GUTTER"
+    },
+    "GRID_CONTAINER_PADDING": {
+      "category": "grid",
+      "value": "1.5rem",
+      "type": "size",
+      "name": "GRID_CONTAINER_PADDING"
+    },
+    "GRID_CONTAINER_MOBILE_PADDING": {
+      "category": "grid",
+      "value": ".75rem",
+      "type": "size",
+      "name": "GRID_CONTAINER_MOBILE_PADDING"
+    },
     "LOGO_CLOUD_DEFAULT_HEIGHT": {
       "type": "size",
       "category": "logos",
@@ -1489,6 +1513,10 @@
     "LABEL_COLOR",
     "LABEL_FONT_SIZE",
     "LABEL_LINE_HEIGHT",
+    "GRID_COLUMNS",
+    "GRID_GUTTER",
+    "GRID_CONTAINER_PADDING",
+    "GRID_CONTAINER_MOBILE_PADDING",
     "LOGO_CLOUD_DEFAULT_HEIGHT",
     "LOGO_INLINE_DEFAULT_HEIGHT",
     "LOGO_STACKED_DEFAULT_HEIGHT",

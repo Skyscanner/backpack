@@ -21,6 +21,7 @@
     "bpk-component-checkbox": "^0.0.3",
     "bpk-component-code": "^0.0.6",
     "bpk-component-content-container": "^0.0.12",
+    "bpk-component-grid": "^0.0.0",
     "bpk-component-grid-toggle": "^0.0.12",
     "bpk-component-heading": "^1.0.13",
     "bpk-component-icon": "^0.2.9",

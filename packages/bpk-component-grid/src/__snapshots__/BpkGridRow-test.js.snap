@@ -1,0 +1,13 @@
+exports[`BpkGridRow should render correctly 1`] = `
+<div
+  className="bpk-grid__row">
+  Contents
+</div>
+`;
+
+exports[`BpkGridRow should render correctly with "debug" attribute 1`] = `
+<div
+  className="bpk-grid__row bpk-grid__row--debug">
+  Contents
+</div>
+`;

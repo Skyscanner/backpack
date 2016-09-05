@@ -1,0 +1,26 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "grid"
+  },
+  "props": {
+    "GRID_COLUMNS": {
+      "value": "12",
+      "type": "number"
+    },
+    "GRID_GUTTER": {
+      "value": "{!SPACING_SM}",
+      "type": "size"
+    },
+    "GRID_CONTAINER_PADDING": {
+      "value": "{!SPACING_BASE}",
+      "type": "size"
+    },
+    "GRID_CONTAINER_MOBILE_PADDING": {
+      "value": "{!SPACING_SM}",
+      "type": "size"
+    }
+  }
+}
