@@ -7,9 +7,6 @@ const GridDemoPage = () => (
   <BpkGridContainer debug>
     <Helmet title='Grid Demo' />
     <BpkGridRow debug>
-      <BpkGridColumn width={12} debug>Debug</BpkGridColumn>
-    </BpkGridRow>
-    <BpkGridRow debug>
       <BpkGridColumn width={1} debug>1</BpkGridColumn>
       <BpkGridColumn width={1} debug>1</BpkGridColumn>
       <BpkGridColumn width={1} debug>1</BpkGridColumn>
