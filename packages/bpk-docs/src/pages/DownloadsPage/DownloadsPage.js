@@ -8,6 +8,9 @@ import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkContentContainer from 'bpk-component-content-container'
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid'
 
+const smallIconsZip = require('!!file?name=[name].[hash].zip!zip-it!./../../../../bpk-svgs/src/icons/sm/icons-sm')
+const largeIconsZip = require('!!file?name=[name].[hash].zip!zip-it!./../../../../bpk-svgs/src/icons/lg/icons-lg')
+
 const DownloadsPage = () => (
   <BpkGridContainer>
     <Helmet title='Downloads' />
@@ -36,8 +39,12 @@ const DownloadsPage = () => (
           </BpkList>
           <BpkHeading level='h2'>Icons</BpkHeading>
           <BpkList>
-            <BpkListItem><em>Coming soon</em></BpkListItem>
-            <BpkListItem><em>Coming soon</em></BpkListItem>
+            <BpkListItem>
+              <BpkLink href={smallIconsZip}>Small icons</BpkLink>
+            </BpkListItem>
+            <BpkListItem>
+              <BpkLink href={largeIconsZip}>Large icons</BpkLink>
+            </BpkListItem>
           </BpkList>
           <BpkHeading level='h2'>Sketch</BpkHeading>
           <BpkList>
