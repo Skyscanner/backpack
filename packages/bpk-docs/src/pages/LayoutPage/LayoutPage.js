@@ -64,9 +64,7 @@ const components = [
     blurb: [
       <span className='bpkdocs-layout-page__grid-preview-svg' dangerouslySetInnerHTML={gridPreviewSvg}></span>,
       <BpkParagraph>
-        Backpack uses a 12 column responsive grid to compose and layout Systems. Systems consist mostly of groups of
-        organisms stitched together. They are very concrete and provide context to all these relatively abstract
-        molecules and organisms.
+        Backpack uses a 12 column responsive grid to compose and layout Organisms.
       </BpkParagraph>,
       <BpkParagraph>
         The grid works in conjunction with the breakpoints listed above and can be used to position content differently
