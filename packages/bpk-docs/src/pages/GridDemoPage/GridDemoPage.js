@@ -3,161 +3,365 @@ import Helmet from 'react-helmet'
 
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid'
 
+import './grid-demo-page.scss'
+
+const Lozenge = ({children}) => (
+  <div className='bpkdocs-grid-demo-page__lozenge'>{children}</div>
+)
+
 const GridDemoPage = () => (
-  <BpkGridContainer debug>
+  <BpkGridContainer>
     <Helmet title='Grid Demo' />
-    <BpkGridRow debug>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={2} debug>2</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={2}>
+        <Lozenge>2</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={3} debug>3</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={3}>
+        <Lozenge>3</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={4} debug>4</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={4}>
+        <Lozenge>4</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={5} debug>5</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={5}>
+        <Lozenge>5</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={6} debug>6</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={6}>
+        <Lozenge>6</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={7} debug>7</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={7}>
+        <Lozenge>7</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={8} debug>8</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={8}>
+        <Lozenge>8</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={9} debug>9</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={9}>
+        <Lozenge>9</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={10} debug>10</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={10}>
+        <Lozenge>10</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={11} debug>11</BpkGridColumn>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={11}>
+        <Lozenge>11</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={12} debug>12</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={12}>
+        <Lozenge>12</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={6} debug>6</BpkGridColumn>
-      <BpkGridColumn width={6} debug>6</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={6}>
+        <Lozenge>6</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={6}>
+        <Lozenge>6</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={3} debug>3</BpkGridColumn>
-      <BpkGridColumn width={3} debug>3</BpkGridColumn>
-      <BpkGridColumn width={3} debug>3</BpkGridColumn>
-      <BpkGridColumn width={3} debug>3</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={3}>
+        <Lozenge>3</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={3}>
+        <Lozenge>3</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={3}>
+        <Lozenge>3</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={3}>
+        <Lozenge>3</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={4} debug>4</BpkGridColumn>
-      <BpkGridColumn width={4} debug>4</BpkGridColumn>
-      <BpkGridColumn width={4} debug>4</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={4}>
+        <Lozenge>4</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={4}>
+        <Lozenge>4</Lozenge>
+      </BpkGridColumn>
+      <BpkGridColumn width={4}>
+        <Lozenge>4</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={1} offset={11} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={1} offset={11}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={1} offset={10} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={1} offset={10}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={1} offset={9} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={1} offset={9}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={1} offset={8} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={1} offset={8}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={1} offset={7} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={1} offset={7}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={1} offset={6} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={1} offset={6}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={1} offset={5} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={1} offset={5}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={1} offset={4} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={1} offset={4}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={1} offset={3} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={1} offset={3}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={1} offset={2} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={1} offset={2}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={1} offset={1} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={1} offset={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
-    <BpkGridRow debug>
-      <BpkGridColumn width={1} debug>1</BpkGridColumn>
+    <BpkGridRow>
+      <BpkGridColumn width={1}>
+        <Lozenge>1</Lozenge>
+      </BpkGridColumn>
     </BpkGridRow>
   </BpkGridContainer>
 )
