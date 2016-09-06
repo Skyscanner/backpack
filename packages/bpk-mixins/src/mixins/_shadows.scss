@@ -1,0 +1,38 @@
+@import '../bonds';
+
+////
+/// @group box-shadows
+////
+
+/// Small box shadow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-box-shadow-sm();
+///   }
+
+@mixin bpk-box-shadow-sm {
+  box-shadow: $bpk-box-shadow-sm;
+}
+
+/// Large box shadow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-box-shadow-lg();
+///   }
+
+@mixin bpk-box-shadow-lg {
+  box-shadow: $bpk-box-shadow-lg;
+}
+
+/// Extra large box shadow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-box-shadow-xl();
+///   }
+
+@mixin bpk-box-shadow-xl {
+  box-shadow: $bpk-box-shadow-xl;
+}

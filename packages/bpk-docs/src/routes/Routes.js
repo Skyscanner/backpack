@@ -14,6 +14,8 @@ import BaseStylesheetPage from './../pages/BaseStylesheetPage'
 import ColorsPage from './../pages/ColorsPage'
 import SpacingPage from './../pages/SpacingPage'
 import TypeSettingPage from './../pages/TypeSettingPage'
+import RadiiPage from './../pages/RadiiPage'
+import ShadowsPage from './../pages/ShadowsPage'
 import LayoutPage from './../pages/LayoutPage'
 
 import TypographyPage from './../pages/TypographyPage'
@@ -39,6 +41,8 @@ const Routes = (
         <Route path={ROUTES.COLORS} component={ColorsPage} />
         <Route path={ROUTES.SPACING} component={SpacingPage} />
         <Route path={ROUTES.TYPE_SETTING} component={TypeSettingPage} />
+        <Route path={ROUTES.RADII} component={RadiiPage} />
+        <Route path={ROUTES.SHADOWS} component={ShadowsPage} />
         <Route path={ROUTES.LAYOUT} component={LayoutPage} />
       </Route>
       <Route path={ROUTES.ATOMS}>

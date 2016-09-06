@@ -1,0 +1,17 @@
+{
+  "global": {
+    "type": "box-shadow",
+    "category": "box-shadow"
+  },
+  "props": {
+    "BOX_SHADOW_SM": {
+      "value": "0px 1px 3px 0px rgba({!GRAY_900}, .2)"
+    },
+    "BOX_SHADOW_LG": {
+      "value": "0px 4px 14px 0px rgba({!GRAY_900}, .25)"
+    },
+    "BOX_SHADOW_XL": {
+      "value": "0px 12px 50px 0px rgba({!GRAY_900}, .25)"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 {
   "imports": [
     "./base/borders.json",
+    "./base/box-shadows.json",
     "./base/breakpoints.json",
     "./base/buttons.json",
     "./base/colors.json",

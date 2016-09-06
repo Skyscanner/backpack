@@ -349,9 +349,10 @@
 ///   }
 
 @mixin bpk-code {
+  @include bpk-border-radius-sm;
+
   display: inline;
   padding: $bpk-one-pixel-rem;
-  border-radius: $bpk-border-radius-sm;
   background-color: $bpk-color-gray-50;
   color: $bpk-color-gray-700;
   text-align: left;

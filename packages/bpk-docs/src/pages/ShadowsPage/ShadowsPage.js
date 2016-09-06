@@ -12,17 +12,13 @@ import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, Bp
 
 import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper'
 
-const spacings = pickBy(TOKENS, (value, key) => includes(key, 'spacing'))
+const radii = pickBy(TOKENS, (value, key) => includes(key, 'boxShadow'))
 
-const UnitsPage = () => (
+const ShadowsPage = () => (
   <BpkContentContainer>
-    <Helmet title='Units' />
-    <BpkHeading level='h1'>Spacing</BpkHeading>
-    <BpkParagraph>
-      All spacing is measured in ‘Rems’. Since these are relative to the value inherited from the browser font-size,
-      all other units will scale accordingly should a user change this.
-    </BpkParagraph>
-    <BpkParagraph>To ensure elements are distributed evenly, we use .375rem (6px) increments:</BpkParagraph>
+    <Helmet title='Shadows' />
+    <BpkHeading level='h1'>Shadows</BpkHeading>
+    <BpkParagraph>Shadows are used to convey depth and order.</BpkParagraph>
     <BpkTable>
       <BpkTableHead>
         <BpkTableRow>
@@ -31,10 +27,10 @@ const UnitsPage = () => (
         </BpkTableRow>
       </BpkTableHead>
       <BpkTableBody>
-        {keys(spacings).map((spacing) => (
-          <BpkTableRow key={formatTokenName(spacing)}>
-            <BpkTableCell>{formatTokenName(spacing)}</BpkTableCell>
-            <BpkTableCell>{formatTokenValue(spacings[ spacing ])}</BpkTableCell>
+        {keys(radii).map((radius) => (
+          <BpkTableRow key={formatTokenName(radius)}>
+            <BpkTableCell>{formatTokenName(radius)}</BpkTableCell>
+            <BpkTableCell>{formatTokenValue(radii[ radius ])}</BpkTableCell>
           </BpkTableRow>
         ))}
       </BpkTableBody>
@@ -42,4 +38,4 @@ const UnitsPage = () => (
   </BpkContentContainer>
 )
 
-export default UnitsPage
+export default ShadowsPage

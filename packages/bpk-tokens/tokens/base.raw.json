@@ -90,6 +90,24 @@
       "value": "5rem",
       "name": "BORDER_RADIUS_PILL"
     },
+    "BOX_SHADOW_SM": {
+      "type": "box-shadow",
+      "category": "box-shadow",
+      "value": "0px 1px 3px 0px rgba(#252033, .2)",
+      "name": "BOX_SHADOW_SM"
+    },
+    "BOX_SHADOW_LG": {
+      "type": "box-shadow",
+      "category": "box-shadow",
+      "value": "0px 4px 14px 0px rgba(#252033, .25)",
+      "name": "BOX_SHADOW_LG"
+    },
+    "BOX_SHADOW_XL": {
+      "type": "box-shadow",
+      "category": "box-shadow",
+      "value": "0px 12px 50px 0px rgba(#252033, .25)",
+      "name": "BOX_SHADOW_XL"
+    },
     "BREAKPOINT_MOBILE": {
       "category": "breakpoint",
       "value": "32.25rem",
@@ -1373,6 +1391,9 @@
     "BORDER_RADIUS_XS",
     "BORDER_RADIUS_SM",
     "BORDER_RADIUS_PILL",
+    "BOX_SHADOW_SM",
+    "BOX_SHADOW_LG",
+    "BOX_SHADOW_XL",
     "BREAKPOINT_MOBILE",
     "BREAKPOINT_TABLET",
     "BREAKPOINT_DESKTOP",

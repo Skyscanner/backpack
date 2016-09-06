@@ -3,6 +3,9 @@
   <property name="BORDER_RADIUS_XS" category="radius">3</property>
   <property name="BORDER_RADIUS_SM" category="radius">6</property>
   <property name="BORDER_RADIUS_PILL" category="radius">80</property>
+  <property name="BOX_SHADOW_SM" category="box-shadow">0px 1px 3px 0px rgba(#252033, .2)</property>
+  <property name="BOX_SHADOW_LG" category="box-shadow">0px 4px 14px 0px rgba(#252033, .25)</property>
+  <property name="BOX_SHADOW_XL" category="box-shadow">0px 12px 50px 0px rgba(#252033, .25)</property>
   <property name="BREAKPOINT_MOBILE" category="breakpoint">516</property>
   <property name="BREAKPOINT_TABLET" category="breakpoint">804</property>
   <property name="BREAKPOINT_DESKTOP" category="breakpoint">1140</property>
