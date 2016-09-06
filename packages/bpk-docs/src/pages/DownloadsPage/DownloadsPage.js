@@ -40,10 +40,10 @@ const DownloadsPage = () => (
           <BpkHeading level='h2'>Icons</BpkHeading>
           <BpkList>
             <BpkListItem>
-              <BpkLink href={smallIconsZip}>Small icons</BpkLink>
+              <BpkLink href={`/${smallIconsZip}`}>Small icons</BpkLink>
             </BpkListItem>
             <BpkListItem>
-              <BpkLink href={largeIconsZip}>Large icons</BpkLink>
+              <BpkLink href={`/${largeIconsZip}`}>Large icons</BpkLink>
             </BpkListItem>
           </BpkList>
           <BpkHeading level='h2'>Sketch</BpkHeading>
