@@ -10,7 +10,7 @@ module.exports = {
     loaders: [
       {
         test: /\.scss$/,
-        loaders: [ 'style', 'css?modules&localIdentName=[local]', 'postcss', 'sass?config=sass' ],
+        loaders: [ 'style', 'css', 'postcss', 'sass?config=sass' ],
         include: rootDir
       },
       {

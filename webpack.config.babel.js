@@ -65,7 +65,7 @@ const config = {
       {
         test: /\.scss$/,
         exclude: /base\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[local]!postcss!sass?config=sass')
+        loader: ExtractTextPlugin.extract('style', 'css!postcss!sass?config=sass')
       },
       {
         test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css')
