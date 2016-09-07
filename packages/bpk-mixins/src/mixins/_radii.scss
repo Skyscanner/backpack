@@ -1,0 +1,38 @@
+@import '../bonds';
+
+////
+/// @group radii
+////
+
+/// Extra small border radius.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-radius-xs();
+///   }
+
+@mixin bpk-border-radius-xs {
+  border-radius: $bpk-border-radius-xs;
+}
+
+/// Small border radius.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-radius-sm();
+///   }
+
+@mixin bpk-border-radius-sm {
+  border-radius: $bpk-border-radius-sm;
+}
+
+/// Pill shaped border radius.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-radius-pill();
+///   }
+
+@mixin bpk-border-radius-pill {
+  box-shadow: $bpk-border-radius-pill;
+}

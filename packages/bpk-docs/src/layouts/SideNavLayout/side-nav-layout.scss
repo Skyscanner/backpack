@@ -17,8 +17,9 @@
   }
 
   &__nav-category-list {
+    @include bpk-border-radius-sm;
+
     padding: 0;
-    border-radius: $bpk-border-radius-sm;
     box-shadow: 0 0 0 1px $bpk-color-gray-100;
     overflow: hidden;
   }

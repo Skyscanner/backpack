@@ -19,6 +19,24 @@
       "name": "borderRadiusPill"
     },
     {
+      "type": "box-shadow",
+      "category": "box-shadow",
+      "value": "0px 1px 3px 0px rgba(#252033, .2)",
+      "name": "boxShadowSm"
+    },
+    {
+      "type": "box-shadow",
+      "category": "box-shadow",
+      "value": "0px 4px 14px 0px rgba(#252033, .25)",
+      "name": "boxShadowLg"
+    },
+    {
+      "type": "box-shadow",
+      "category": "box-shadow",
+      "value": "0px 12px 50px 0px rgba(#252033, .25)",
+      "name": "boxShadowXl"
+    },
+    {
       "category": "breakpoint",
       "value": "516",
       "type": "size",
