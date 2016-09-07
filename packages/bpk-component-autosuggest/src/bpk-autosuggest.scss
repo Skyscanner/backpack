@@ -1,0 +1,39 @@
+@import '~bpk-mixins/index';
+
+.bpk-autosuggest {
+  &__container {
+
+  }
+
+  &__container--open {
+
+  }
+
+  &__input {
+    @include bpk-input();
+  }
+
+  &__suggestions-container {
+
+  }
+
+  &__suggestions-list {
+
+  }
+
+  &__suggestion {
+
+  }
+
+  &__suggestion--focused {
+
+  }
+
+  &__section-container {
+
+  }
+
+  &__section-title {
+
+  }
+}

@@ -14,6 +14,7 @@ addDecorator((story) => (
 ))
 
 configure(() => {
+  require('./../packages/bpk-component-autosuggest/stories')
   require('./../packages/bpk-component-blockquote/stories')
   require('./../packages/bpk-component-button/stories')
   require('./../packages/bpk-component-checkbox/stories')
