@@ -2,13 +2,13 @@
 
 ## 2016-09-07 - Box shadows!
 
-### Added
+**Added**
 - bpk-mixins: 4.0.0 => 4.1.0
   - Added mixins for box shadows and border-radii
 - bpk-tokens: 11.0.0 => 11.1.0
   - Added tokens for box shadows
 
-The following packages received a patch bump due to dependency changes:
+**The following packages received a patch bump due to dependency changes:**
 - bpk-component-blockquote: 0.0.7 => 0.0.8
 - bpk-component-button: 1.0.14 => 1.0.15
 - bpk-component-checkbox: 0.0.4 => 0.0.5
