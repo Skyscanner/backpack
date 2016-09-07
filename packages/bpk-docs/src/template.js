@@ -1,5 +1,5 @@
-import 'bpk-stylesheets/base.scss'
 import 'file?name=[name].[ext]!./static/favicon.ico'
+import 'bpk-stylesheets/base.scss'
 
 export default ({ head = {}, html = '', assets = {} }) => {
   return `<!doctype html>

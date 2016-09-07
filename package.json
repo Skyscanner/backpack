@@ -15,7 +15,9 @@
     "jest:update": "jest ---updateSnapshot",
     "jest:watch": "jest --watch",
     "jest": "jest --coverage",
-    "build": "lerna run build",
+    "build:tokens": "lerna run tokens --scope bpk-tokens",
+    "build:svgs": "lerna run svgs --scope bpk-svgs",
+    "build": "npm run build:tokens && npm run build:svgs && lerna run build",
     "storybook": "start-storybook -p 9001",
     "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,packages/bpk-svgs/dist/*,packages/bpk-tokens/tokens/base.default}.scss -d dist/sassdoc -v --strict --debug",
     "docs": "webpack-dev-server",
@@ -95,8 +97,8 @@
       "/node_modules\\/(?!bpk)/"
     ],
     "moduleNameMapper": {
-      "^.+\\.scss$": "<rootDir>/jest/styleMock.js",
-      "^.+\\.svg$": "<rootDir>/jest/fileMock.js"
+      "^.+\\.scss$": "<rootDir>/scripts/jest/styleMock.js",
+      "^.+\\.svg$": "<rootDir>/scripts/jest/fileMock.js"
     },
     "coverageThreshold": {
       "global": {
