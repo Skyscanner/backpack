@@ -1,24 +1,32 @@
-# bpk-component-blockquote
+# bpk-component-autosuggest
 
-> Backpack blockquote component.
+> Backpack autosuggest component.
 
 ### Installation
 
 ```sh
-npm install bpk-component-blockquote --save
+npm install bpk-component-autosuggest --save
 ```
 
 ### Usage
 
 ```js
 import React from 'react'
-import BpkBlockquote from 'bpk-component-blockquote'
+import BpkAutosuggest from 'bpk-component-autosuggest'
 
-export default MyComponent = () => (
-  <BpkBlockquote>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-    commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-    penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </BpkBlockquote>
-)
+function renderSuggestion(suggestion) {
+  return <span>{suggestion}</span>
+}
+
+export default MyComponent = () => {
+  const suggestions = ['Suggestion 1', 'Suggestion 2', 'Suggestion 3']
+
+  return <BpkAutosuggest
+          suggestions={suggestions}
+          onSuggestionsUpdateRequested={() => {}}
+          value={'Suggestion 1'}
+          onChange={() => {}}
+          renderSuggestion={renderSuggestion}
+         />
+}
 ```

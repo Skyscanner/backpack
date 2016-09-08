@@ -14,7 +14,6 @@ class AutosuggestExample extends React.Component {
 
         return <BpkAutosuggest suggestions={suggestions}
                                onSuggestionsUpdateRequested={() => {}}
-                               getSuggestionValue={(s) => s}
                                renderSuggestion={this.renderSuggestion}
                                value={'Edinburgh'}
                                onChange={() => {}} />
