@@ -26,7 +26,7 @@ const BpkAutosuggest = (props) => {
       suggestions={props.suggestions}
       onSuggestionsUpdateRequested={props.onSuggestionsUpdateRequested}
       onSuggestionsClearRequested={props.onSuggestionsClearRequested || (() => {})}
-      getSuggestionValue={props.getSuggestionValue}
+      getSuggestionValue={props.getSuggestionValue || ((suggestion) => suggestion)}
       renderSuggestion={props.renderSuggestion}
       onSuggestionSelected={props.onSuggestionSelected || (() => {})}
       inputProps={inputProps}
