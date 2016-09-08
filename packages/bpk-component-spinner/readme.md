@@ -2,7 +2,7 @@
 
 > Backpack spinner component.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-component-spinner --save
@@ -13,7 +13,7 @@ npm install bpk-component-spinner --save
 npm install raw-loader --save-dev
 ```
 
-### Usage
+## Usage
 
 ```js
 import React from 'react'

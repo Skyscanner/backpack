@@ -2,13 +2,13 @@
 
 > Backpack react-router link component.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-component-router-link --save
 ```
 
-### Usage
+## Usage
 
 ```js
 import React from 'react'

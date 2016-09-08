@@ -2,13 +2,13 @@
 
 > Backpack grid components.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-component-grid --save
 ```
 
-### Usage
+## Usage
 
 ```js
 import React from 'react'

@@ -1,5 +1,12 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Changed**
+- bpk-content-container no longer applies styling to bare html by
+  default, instead consumers can opt in using `bareHtml` prop
+- bpk-mixins reflects the above change too
+
 ## 2016-09-07 - Box shadows!
 
 **Added**
@@ -8,7 +15,8 @@
 - bpk-tokens: 11.0.0 => 11.1.0
   - Added tokens for box shadows
 
-**The following packages received a patch bump due to dependency changes:**
+**The following packages received a patch bump due to the dependency
+changes above:**
 - bpk-component-blockquote: 0.0.7 => 0.0.8
 - bpk-component-button: 1.0.14 => 1.0.15
 - bpk-component-checkbox: 0.0.4 => 0.0.5

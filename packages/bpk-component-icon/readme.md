@@ -2,7 +2,7 @@
 
 > Backpack icon component.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-component-icon --save
@@ -13,7 +13,7 @@ npm install bpk-component-icon --save
 npm install raw-loader --save-dev
 ```
 
-### Usage
+## Usage
 
 ```js
 import React from 'react'

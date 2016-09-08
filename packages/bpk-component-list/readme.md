@@ -2,13 +2,13 @@
 
 > Backpack list component.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-component-list --save
 ```
 
-### Usage
+## Usage
 
 ```js
 import React from 'react'

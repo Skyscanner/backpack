@@ -6,7 +6,7 @@ import BpkContentContainer from './index'
 storiesOf('bpk-component-content-container', module)
   .add('Example', () => (
     <div>
-      <BpkContentContainer>
+      <BpkContentContainer bareHtml>
         <h1>Heading Level 1</h1>
         <h2>Heading Level 2</h2>
         <h3>Heading Level 3</h3>

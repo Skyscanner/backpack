@@ -2,13 +2,13 @@
 
 > Backpack label component.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-component-label --save
 ```
 
-### Usage
+## Usage
 
 ```js
 import React from 'react'

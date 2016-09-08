@@ -22,7 +22,7 @@ const ShadowsPage = () => (
     <BpkTable>
       <BpkTableHead>
         <BpkTableRow>
-          <BpkTableHeadCell>Name</BpkTableHeadCell>
+          <BpkTableHeadCell>Bond</BpkTableHeadCell>
           <BpkTableHeadCell>Value</BpkTableHeadCell>
         </BpkTableRow>
       </BpkTableHead>

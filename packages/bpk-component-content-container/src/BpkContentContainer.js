@@ -2,13 +2,17 @@ import React, { PropTypes } from 'react'
 
 import './bpk-content-container.scss'
 
-const BpkContentContainer = ({ children, tagName, dangerouslySetInnerHTML }) => {
-  const TagName = tagName
+const BpkContentContainer = (props) => {
+  const TagName = props.tagName
+  const classNames = [ 'bpk-content-container' ]
+
+  props.bareHtml ? classNames.push('bpk-content-container--bare-html') : null
+
   return (
     <TagName
-      className='bpk-content-container'
-      children={children}
-      dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+      className={classNames.join(' ')}
+      children={props.children}
+      dangerouslySetInnerHTML={props.dangerouslySetInnerHTML}
     />
   )
 }
@@ -21,13 +25,15 @@ BpkContentContainer.propTypes = {
   dangerouslySetInnerHTML: PropTypes.shape({
     __html: PropTypes.string.isRequired
   }),
-  tagName: PropTypes.oneOf([ 'article', 'aside', 'div', 'main', 'section' ])
+  tagName: PropTypes.oneOf([ 'article', 'aside', 'div', 'main', 'section' ]),
+  bareHtml: PropTypes.bool
 }
 
 BpkContentContainer.defaultProps = {
   children: null,
   dangerouslySetInnerHTML: null,
-  tagName: 'div'
+  tagName: 'div',
+  bareHtml: false
 }
 
 export default BpkContentContainer

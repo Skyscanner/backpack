@@ -2,7 +2,7 @@
 
 > Backpack's collection of SVGs.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-svgs --save

@@ -2,13 +2,13 @@
 
 > Backpack select component.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-component-select --save
 ```
 
-### Usage
+## Usage
 
 ```js
 import React from 'react'

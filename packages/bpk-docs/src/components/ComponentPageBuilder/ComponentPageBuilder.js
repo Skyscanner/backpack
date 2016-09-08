@@ -1,7 +1,6 @@
 import marked from 'marked'
 import Helmet from 'react-helmet'
 import isString from 'lodash/isString'
-import includes from 'lodash/includes'
 import React, { Children, PropTypes } from 'react'
 
 import BpkLink from 'bpk-component-link'
@@ -14,10 +13,6 @@ import PresentationBlock from './../../components/PresentationBlock'
 const flatten = Children.toArray
 const renderer = new marked.Renderer()
 
-renderer.heading = (text, level) => {
-  return includes([ 1, 2 ], level) ? '' : `<h${level}>${text}</h${level}>`
-}
-
 const ExampleNavListItem = (component) => (
   <BpkListItem>
     <BpkLink href={`#${component.id}`}>{component.title}</BpkLink>
@@ -25,7 +20,7 @@ const ExampleNavListItem = (component) => (
 )
 
 const ComponentExample = (component) => {
-  const heading = <BpkHeading id={component.id} level='h3'>{component.title}</BpkHeading>
+  const heading = <BpkHeading id={component.id} level='h2'>{component.title}</BpkHeading>
 
   const examples = component.examples.length
     ? <PresentationBlock>{flatten(component.examples)}</PresentationBlock>
@@ -35,9 +30,7 @@ const ComponentExample = (component) => {
 
   const readme = component.readme ? flatten([
     <BpkHeading id={`${component.id}-readme`} level='h3'>{component.title} readme</BpkHeading>,
-    <PresentationBlock>
-      <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(component.readme) }} />
-    </PresentationBlock>
+    <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(component.readme) }} bareHtml />
   ]) : null
 
   return [ heading, blurb, examples, readme ]
@@ -56,24 +49,26 @@ const toNodes = (children) => {
   return isString(children) ? [ <BpkParagraph>{children}</BpkParagraph> ] : children
 }
 
-const markdownToHTML = (readmeString) => marked(readmeString, { renderer: renderer })
+const markdownToHTML = (readmeString) => {
+  readmeString = readmeString.replace(/^#.*$/m, '') // remove first h1
+  readmeString = readmeString.replace(/^>.*$/m, '') // remove first blockquote
+  readmeString = readmeString.replace(/^(#|##|###) /gm, '#### ') // replace h1, h2, h3 with h4
+  return marked(readmeString, { renderer: renderer })
+}
 
-const ComponentPageBuilder = ({ title, showExamplesHeading, blurb, components, readme, customSections }) => (
+const ComponentPageBuilder = (props) => (
   <BpkContentContainer>
-    <Helmet title={title} />
-    <BpkHeading level='h1'>{title}</BpkHeading>
-    {flatten(toNodes(blurb))}
-    {showExamplesHeading ? <BpkHeading id='examples' level='h2'>Examples</BpkHeading> : null}
-    <BpkList>{flatten(components.map(ExampleNavListItem))}</BpkList>
-    {flatten(components.map(ComponentExample))}
-    {readme ? flatten([
+    <Helmet title={props.title} />
+    <BpkHeading level='h1'>{props.title}</BpkHeading>
+    {flatten(toNodes(props.blurb))}
+    <BpkList>{flatten(props.components.map(ExampleNavListItem))}</BpkList>
+    {flatten(props.components.map(ComponentExample))}
+    {props.readme ? flatten([
       <BpkHeading id='readme' level='h2'>Readme</BpkHeading>,
-      <PresentationBlock>
-        <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(readme) }} />
-      </PresentationBlock>
+      <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(props.readme) }} bareHtml />
     ]) : null
     }
-    {flatten(customSections.map(CustomSection))}
+    {flatten(props.customSections.map(CustomSection))}
   </BpkContentContainer>
 )
 
@@ -89,7 +84,6 @@ const contentShape = PropTypes.oneOfType([
 
 ComponentPageBuilder.propTypes = {
   title: PropTypes.string.isRequired,
-  showExamplesHeading: PropTypes.bool,
   blurb: contentShape,
   components: PropTypes.arrayOf(
     PropTypes.shape({
@@ -111,7 +105,6 @@ ComponentPageBuilder.propTypes = {
 }
 
 ComponentPageBuilder.defaultProps = {
-  showExamplesHeading: false,
   blurb: null,
   components: [],
   readme: null,

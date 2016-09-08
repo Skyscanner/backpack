@@ -14,6 +14,7 @@ import * as ROUTES from './../../constants/routes'
 
 const title = 'Getting started'
 const backpackReactExampleUrl = 'http://git.prod.skyscanner.local/backpack/backpack-react-example'
+const webpackConfigExampleUrl = 'http://git.prod.skyscanner.local/backpack/backpack-react-example/blob/master/webpack.config.babel.js'
 const createReactAppUrl = 'https://github.com/facebookincubator/create-react-app'
 
 const sections = [
@@ -72,9 +73,12 @@ ReactDom.render(myComponent, document.getElementById('react-mount'));
       <BpkParagraph>
         Head on over to the <BpkLink href={backpackReactExampleUrl} blank>backpack-react-example</BpkLink> project on
         GitLab to see the above example in action. Fork it, clone it to your machine and follow the readme - you should
-        end up with local dev server running a page with
-        our <BpkRouterLink to={ROUTES.BUTTONS}>button component</BpkRouterLink> on it.
+        end up with a local dev server running a page displaying the button component.
       </BpkParagraph>,
+      <BpkBlockquote>
+        <strong>Note:</strong> All Backpack components are published uncompiled which means you'll need to accommodate
+        for this in your webpack config - here is an <BpkLink href={webpackConfigExampleUrl} blank>example</BpkLink>.
+      </BpkBlockquote>,
       <BpkBlockquote>
         <strong>Note:</strong> We are hoping to make it a lot easier to get started with Backpack and React in the near
         future. Ideas include a <BpkLink href={createReactAppUrl} blank>create-react-app</BpkLink> like project which
