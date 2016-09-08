@@ -16,7 +16,7 @@ class AutosuggestExample extends React.Component {
                                onSuggestionsUpdateRequested={() => {}}
                                getSuggestionValue={(s) => s}
                                renderSuggestion={this.renderSuggestion}
-                               value={'Placeholder value'}
+                               value={'Edinburgh'}
                                onChange={() => {}} />
     }
 

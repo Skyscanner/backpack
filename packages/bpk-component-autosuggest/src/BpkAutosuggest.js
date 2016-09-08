@@ -28,6 +28,7 @@ const BpkAutosuggest = (props) => {
       getSuggestionValue={props.getSuggestionValue}
       renderSuggestion={props.renderSuggestion}
       inputProps={inputProps}
+      theme={defaultTheme}
     />
   )
 }
