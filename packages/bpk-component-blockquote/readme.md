@@ -2,13 +2,13 @@
 
 > Backpack blockquote component.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-component-blockquote --save
 ```
 
-### Usage
+## Usage
 
 ```js
 import React from 'react'
@@ -22,3 +22,9 @@ export default MyComponent = () => (
   </BpkBlockquote>
 )
 ```
+
+### Props
+
+| Property  | PropType | Required | Default Value |
+| ----------| -------- | -------- | ------------- |
+| children  | -        | true     | -             |

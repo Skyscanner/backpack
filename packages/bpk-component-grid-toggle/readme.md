@@ -2,13 +2,13 @@
 
 > Backpack vertical grid toggle component.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-component-grid-toggle --save
 ```
 
-### Usage
+## Usage
 
 ```js
 import React from 'react'

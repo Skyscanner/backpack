@@ -5,8 +5,15 @@
     @include bpk-content-container;
   }
 
-  blockquote > {
-    @include bpk-content-container;
+  &--bare-html {
+    > {
+      @include bpk-content-container--bare-html;
+    }
+
+    blockquote {
+      @include bpk-content-container;
+      @include bpk-content-container--bare-html;
+    }
   }
 
   > *:last-child {

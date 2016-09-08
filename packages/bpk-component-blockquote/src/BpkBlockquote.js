@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 import './bpk-blockquote.scss'
 
-const BpkBlockquote = ({ children }) => <blockquote className='bpk-blockquote'>{children}</blockquote>
+const BpkBlockquote = props => <blockquote className='bpk-blockquote'>{props.children}</blockquote>
 
 BpkBlockquote.propTypes = {
   children: PropTypes.oneOfType([

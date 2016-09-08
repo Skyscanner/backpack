@@ -2,13 +2,13 @@
 
 > Sass mixins and variables for Backpack.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-mixins --save
 ```
 
-### Usage
+## Usage
 
 ```scss
 @import '~bpk-mixins';

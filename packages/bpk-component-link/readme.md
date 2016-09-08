@@ -2,13 +2,13 @@
 
 > Backpack link component.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-component-link --save
 ```
 
-### Usage
+## Usage
 
 ```js
 import React from 'react'

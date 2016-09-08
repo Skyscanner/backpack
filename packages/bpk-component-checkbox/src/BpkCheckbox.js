@@ -28,17 +28,17 @@ BpkCheckbox.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   id: PropTypes.string,
-  checked: PropTypes.bool,
-  value: PropTypes.string,
   label: PropTypes.string,
+  value: PropTypes.string,
+  checked: PropTypes.bool,
   disabled: PropTypes.bool
 }
 
 BpkCheckbox.defaultProps = {
   id: null,
-  checked: false,
-  value: null,
   label: null,
+  value: null,
+  checked: false,
   disabled: false
 }
 

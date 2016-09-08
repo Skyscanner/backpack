@@ -2,13 +2,13 @@
 
 > Backpack input component.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-component-input --save
 ```
 
-### Usage
+## Usage
 
 ```js
 import React from 'react'

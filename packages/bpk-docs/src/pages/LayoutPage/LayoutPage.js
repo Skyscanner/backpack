@@ -8,14 +8,11 @@ import BpkRouterLink from 'bpk-component-router-link'
 import BpkParagraph from 'bpk-component-paragraph'
 import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
 
-import './layout-page.scss'
 import * as routes from './../../constants/routes'
 import ComponentPageBuilder from './../../components/ComponentPageBuilder'
 import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper'
 
 const breakpoints = pickBy(TOKENS, (value, key) => includes(key, 'breakpoint') && !includes(key, 'breakpointQuery'))
-
-const gridPreviewSvg = { __html: `${require('raw!./../../static/backpack-grid-preview.svg')}` }
 
 const components = [
   {
@@ -42,7 +39,7 @@ const components = [
       <BpkTable>
         <BpkTableHead>
           <BpkTableRow>
-            <BpkTableHeadCell>Name</BpkTableHeadCell>
+            <BpkTableHeadCell>Bond</BpkTableHeadCell>
             <BpkTableHeadCell>Value</BpkTableHeadCell>
           </BpkTableRow>
         </BpkTableHead>
@@ -62,13 +59,10 @@ const components = [
     id: 'horizontal-grid',
     title: 'Horizontal grid',
     blurb: [
-      <span className='bpkdocs-layout-page__grid-preview-svg' dangerouslySetInnerHTML={gridPreviewSvg}></span>,
       <BpkParagraph>
-        Backpack uses a 12 column responsive grid to compose and layout Organisms.
-      </BpkParagraph>,
-      <BpkParagraph>
-        The grid works in conjunction with the breakpoints listed above and can be used to position content differently
-        based on these viewports by providing widths and offsets.
+        Backpack uses a 12 column responsive grid to compose and layout Organisms. It works in conjunction with
+        the breakpoints listed above and can be used to position content differently based on these viewports by
+        providing widths and offsets.
       </BpkParagraph>,
       <BpkParagraph>
         <BpkRouterLink to={routes.GRID_DEMO}>View demo.</BpkRouterLink>
@@ -81,7 +75,6 @@ const components = [
 
 const LayoutPage = () => <ComponentPageBuilder
   title='Layout'
-  showExamplesHeading={false}
   components={components}
 />
 

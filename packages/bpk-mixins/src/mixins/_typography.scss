@@ -97,13 +97,7 @@
 ///   }
 
 @mixin bpk-heading-1 {
-  @include _bpk-heading-factory(
-    $bpk-h-1-margin-top,
-    $bpk-h-1-margin-bottom,
-    $bpk-h-1-font-size,
-    $bpk-h-1-font-weight,
-    $bpk-h-1-line-height
-  );
+  @include _bpk-heading-factory($bpk-h-1-margin-top, $bpk-h-1-margin-bottom, $bpk-h-1-font-size, $bpk-h-1-font-weight, $bpk-h-1-line-height);
 }
 
 /// Level 2 heading.
@@ -114,13 +108,7 @@
 ///   }
 
 @mixin bpk-heading-2 {
-  @include _bpk-heading-factory(
-    $bpk-h-2-margin-top,
-    $bpk-h-2-margin-bottom,
-    $bpk-h-2-font-size,
-    $bpk-h-2-font-weight,
-    $bpk-h-2-line-height
-  );
+  @include _bpk-heading-factory($bpk-h-2-margin-top, $bpk-h-2-margin-bottom, $bpk-h-2-font-size, $bpk-h-2-font-weight, $bpk-h-2-line-height);
 }
 
 /// Level 3 heading.
@@ -131,13 +119,7 @@
 ///   }
 
 @mixin bpk-heading-3 {
-  @include _bpk-heading-factory(
-    $bpk-h-3-margin-top,
-    $bpk-h-3-margin-bottom,
-    $bpk-h-3-font-size,
-    $bpk-h-3-font-weight,
-    $bpk-h-3-line-height
-  );
+  @include _bpk-heading-factory($bpk-h-3-margin-top, $bpk-h-3-margin-bottom, $bpk-h-3-font-size, $bpk-h-3-font-weight, $bpk-h-3-line-height);
 }
 
 /// Level 4 heading.
@@ -148,13 +130,7 @@
 ///   }
 
 @mixin bpk-heading-4 {
-  @include _bpk-heading-factory(
-    $bpk-h-4-margin-top,
-    $bpk-h-4-margin-bottom,
-    $bpk-h-4-font-size,
-    $bpk-h-4-font-weight,
-    $bpk-h-4-line-height
-  );
+  @include _bpk-heading-factory($bpk-h-4-margin-top, $bpk-h-4-margin-bottom, $bpk-h-4-font-size, $bpk-h-4-font-weight, $bpk-h-4-line-height);
 }
 
 /// Level 5 heading.
@@ -165,13 +141,7 @@
 ///   }
 
 @mixin bpk-heading-5 {
-  @include _bpk-heading-factory(
-    $bpk-h-5-margin-top,
-    $bpk-h-5-margin-bottom,
-    $bpk-h-5-font-size,
-    $bpk-h-5-font-weight,
-    $bpk-h-5-line-height
-  );
+  @include _bpk-heading-factory($bpk-h-5-margin-top, $bpk-h-5-margin-bottom, $bpk-h-5-font-size, $bpk-h-5-font-weight, $bpk-h-5-line-height);
 }
 
 /// Level 6 heading.
@@ -182,13 +152,7 @@
 ///   }
 
 @mixin bpk-heading-6 {
-  @include _bpk-heading-factory(
-    $bpk-h-6-margin-top,
-    $bpk-h-6-margin-bottom,
-    $bpk-h-6-font-size,
-    $bpk-h-6-font-weight,
-    $bpk-h-6-line-height
-  );
+  @include _bpk-heading-factory($bpk-h-6-margin-top, $bpk-h-6-margin-bottom, $bpk-h-6-font-size, $bpk-h-6-font-weight, $bpk-h-6-line-height);
 }
 
 /// Headings within content containers. Modifies the various bpk-heading mixins.
@@ -422,34 +386,51 @@
 ///   }
 
 @mixin bpk-content-container {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @include bpk-content-heading;
+  }
+}
+
+/// Content container for bare html. Modifies the bpk-content-container mixin.
+///
+/// @require {mixin} bpk-content-container
+///
+/// @example scss
+///   .selector {
+///     @include bpk-content-container();
+///     @include bpk-content-container--bare-html();
+///   }
+
+@mixin bpk-content-container--bare-html {
   h1 {
     @include bpk-heading-1;
-    @include bpk-content-heading;
   }
 
   h2 {
     @include bpk-heading-2;
-    @include bpk-content-heading;
   }
 
   h3 {
     @include bpk-heading-3;
-    @include bpk-content-heading;
   }
 
   h4 {
     @include bpk-heading-4;
-    @include bpk-content-heading;
   }
 
   h5 {
     @include bpk-heading-5;
-    @include bpk-content-heading;
   }
 
   h6 {
     @include bpk-heading-6;
-    @include bpk-content-heading;
+  }
+
+  a {
+    @include bpk-link;
   }
 
   p {

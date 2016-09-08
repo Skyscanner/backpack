@@ -114,8 +114,8 @@ const components = [
     title: 'Blockquotes',
     examples: [
       <BpkBlockquote>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam nemo umquam voluptatem appellavit, appellat;
-        Occultum facinus esse potuerit, gaudebit; Quaerimus enim finem bonorum. Quo igitur, inquit, modo?
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
       </BpkBlockquote>
     ],
     readme: require('raw!bpk-component-blockquote/readme.md')

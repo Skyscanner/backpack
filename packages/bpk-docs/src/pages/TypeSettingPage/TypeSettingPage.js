@@ -50,7 +50,7 @@ const TypeSettingPage = () => (
       <BpkTable>
         <BpkTableHead>
           <BpkTableRow>
-            <BpkTableHeadCell>Name</BpkTableHeadCell>
+            <BpkTableHeadCell>Bond</BpkTableHeadCell>
             <BpkTableHeadCell>Value</BpkTableHeadCell>
           </BpkTableRow>
         </BpkTableHead>
@@ -65,7 +65,7 @@ const TypeSettingPage = () => (
       <BpkTable>
         <BpkTableHead>
           <BpkTableRow>
-            <BpkTableHeadCell>Name</BpkTableHeadCell>
+            <BpkTableHeadCell>Bond</BpkTableHeadCell>
             <BpkTableHeadCell>Value</BpkTableHeadCell>
           </BpkTableRow>
         </BpkTableHead>
@@ -82,7 +82,7 @@ const TypeSettingPage = () => (
       <BpkTable>
         <BpkTableHead>
           <BpkTableRow>
-            <BpkTableHeadCell>Name</BpkTableHeadCell>
+            <BpkTableHeadCell>Bond</BpkTableHeadCell>
             <BpkTableHeadCell>Value</BpkTableHeadCell>
           </BpkTableRow>
         </BpkTableHead>

@@ -2,13 +2,13 @@
 
 > Backpack content container component.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-component-content-container --save
 ```
 
-### Usage
+## Usage
 
 ```js
 import React from 'react'
