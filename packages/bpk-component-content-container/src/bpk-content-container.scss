@@ -3,13 +3,17 @@
 .bpk-content-container {
   > {
     @include bpk-content-container;
+
+    .bpk-content-container {
+      margin-bottom: $bpk-spacing-sm;
+    }
+
+    *:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &--bare-html {
     @include bpk-content-container--bare-html;
-  }
-
-  > *:last-child {
-    margin-bottom: 0;
   }
 }

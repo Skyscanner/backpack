@@ -8,7 +8,7 @@ import { BpkList, BpkListItem } from 'bpk-component-list'
 import { BpkCode, BpkCodeBlock } from 'bpk-component-code'
 import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
 
-import ComponentPageBuilder from './../../components/ComponentPageBuilder'
+import DocsPageBuilder from './../../components/DocsPageBuilder'
 
 const components = [
   {
@@ -139,10 +139,11 @@ ReactDOM.render(<App />, ...);`}
   }
 ]
 
-const TypographyPage = () => <ComponentPageBuilder
+const TypographyPage = () => <DocsPageBuilder
   title='Typography'
   blurb='Headings, paragraphs, links, lists and more.'
   components={components}
+  sassdocId='typography'
 />
 
 export default TypographyPage

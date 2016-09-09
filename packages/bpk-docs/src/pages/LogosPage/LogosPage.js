@@ -4,7 +4,7 @@ import BpkLogo from 'bpk-component-logo'
 import BpkLink from 'bpk-component-link'
 import BpkParagraph from 'bpk-component-paragraph'
 
-import ComponentPageBuilder from './../../components/ComponentPageBuilder'
+import DocsPageBuilder from './../../components/DocsPageBuilder'
 
 const blurb = [
   <BpkParagraph>
@@ -76,12 +76,13 @@ const customSections = [
   }
 ]
 
-const LogosPage = () => <ComponentPageBuilder
+const LogosPage = () => <DocsPageBuilder
   title='Logos'
   blurb={blurb}
   components={components}
   customSections={customSections}
   readme={require('raw!bpk-component-logo/readme.md')}
+  sassdocId='mixin-bpk-logo-cloud'
 />
 
 export default LogosPage

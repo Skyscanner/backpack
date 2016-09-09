@@ -5,7 +5,7 @@ import BpkButton from 'bpk-component-button'
 import BpkSpinner from 'bpk-component-spinner'
 import TOKENS from 'bpk-tokens/tokens/base.common'
 
-import ComponentPageBuilder from './../../components/ComponentPageBuilder'
+import DocsPageBuilder from './../../components/DocsPageBuilder'
 
 const components = [
   {
@@ -105,11 +105,12 @@ const components = [
   }
 ]
 
-const ButtonsPage = () => <ComponentPageBuilder
+const ButtonsPage = () => <DocsPageBuilder
   title='Buttons'
   blurb='Primary and secondary buttons, both with a selected state and a disabled state. Link style buttons which align nicely alongside other buttons.'
   components={components}
   readme={require('raw!bpk-component-button/readme.md')}
+  sassdocId='buttons'
 />
 
 export default ButtonsPage

@@ -7,7 +7,7 @@ import BpkRouterLink from 'bpk-component-router-link'
 
 import './icons-page.scss'
 import * as ROUTES from './../../constants/routes'
-import ComponentPageBuilder from './../../components/ComponentPageBuilder'
+import DocsPageBuilder from './../../components/DocsPageBuilder'
 
 const req = require.context('raw!bpk-svgs/src/icons/sm', false, /\.svg$/)
 const icons = req.keys().map((key) => key.replace('./', '').replace('.svg', ''))
@@ -81,12 +81,13 @@ const customSections = [
   }
 ]
 
-const IconsPage = () => <ComponentPageBuilder
+const IconsPage = () => <DocsPageBuilder
   title='Icons'
   blurb={blurb}
   components={components}
   customSections={customSections}
   readme={require('raw!bpk-component-icon/readme.md')}
+  sassdocId='mixin-bpk-icon-sm'
 />
 
 export default IconsPage

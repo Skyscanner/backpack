@@ -9,7 +9,7 @@ import BpkParagraph from 'bpk-component-paragraph'
 import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
 
 import * as routes from './../../constants/routes'
-import ComponentPageBuilder from './../../components/ComponentPageBuilder'
+import DocsPageBuilder from './../../components/DocsPageBuilder'
 import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper'
 
 const breakpoints = pickBy(TOKENS, (value, key) => includes(key, 'breakpoint') && !includes(key, 'breakpointQuery'))
@@ -73,7 +73,7 @@ const components = [
   }
 ]
 
-const LayoutPage = () => <ComponentPageBuilder
+const LayoutPage = () => <DocsPageBuilder
   title='Layout'
   components={components}
 />

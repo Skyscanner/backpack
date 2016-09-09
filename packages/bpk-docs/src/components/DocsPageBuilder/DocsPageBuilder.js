@@ -56,7 +56,7 @@ const markdownToHTML = (readmeString) => {
   return marked(readmeString, { renderer: renderer })
 }
 
-const ComponentPageBuilder = (props) => (
+const DocsPageBuilder = (props) => (
   <BpkContentContainer>
     <Helmet title={props.title} />
     <BpkHeading level='h1'>{props.title}</BpkHeading>
@@ -69,6 +69,15 @@ const ComponentPageBuilder = (props) => (
     ]) : null
     }
     {flatten(props.customSections.map(CustomSection))}
+    {props.sassdocId ?
+      <BpkParagraph>
+        <em>
+          Looking for Sass variables and mixins? Check
+          out <BpkLink href={`/sassdoc/#${props.sassdocId}`} blank>Backpack's Sassdoc</BpkLink>.
+        </em>
+      </BpkParagraph>
+      : null
+    }
   </BpkContentContainer>
 )
 
@@ -82,7 +91,7 @@ const contentShape = PropTypes.oneOfType([
   childrenPropType
 ])
 
-ComponentPageBuilder.propTypes = {
+DocsPageBuilder.propTypes = {
   title: PropTypes.string.isRequired,
   blurb: contentShape,
   components: PropTypes.arrayOf(
@@ -101,14 +110,16 @@ ComponentPageBuilder.propTypes = {
       title: PropTypes.string.isRequired,
       content: PropTypes.arrayOf(contentShape)
     })
-  )
+  ),
+  sassdocId: PropTypes.string
 }
 
-ComponentPageBuilder.defaultProps = {
+DocsPageBuilder.defaultProps = {
   blurb: null,
   components: [],
   readme: null,
-  customSections: []
+  customSections: [],
+  sassdocId: null
 }
 
-export default ComponentPageBuilder
+export default DocsPageBuilder
