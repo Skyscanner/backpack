@@ -17,10 +17,7 @@
   }
 
   &__nav-category-list {
-    @include bpk-border-radius-sm;
-
     padding: 0;
-    box-shadow: 0 0 0 1px $bpk-color-gray-100;
     overflow: hidden;
   }
 
@@ -35,22 +32,31 @@
 
   &__nav-category-name {
     margin: 0 0 $bpk-spacing-xs 0;
-    padding: 0;
+    padding: 0 0 0 $bpk-spacing-sm;
     color: $bpk-color-gray-300;
 
     @include bpk-text-sm;
-
-    font-weight: bold;
   }
 
   &__link {
-    @include bpk-link;
+    color: $bpk-link-color;
+    text-decoration: $bpk-link-text-decoration;
 
-    &--active {
-      @include bpk-link--active;
-
+    &:hover {
       background-color: $bpk-color-gray-50;
+      color: $bpk-link-hover-color;
+    }
+
+    &:active {
+      background-color: $bpk-color-gray-100;
+    }
+
+    &--active,
+    &--active:hover {
+      background-color: $bpk-color-blue-500;
+      color: $bpk-color-white;
       font-weight: bold;
+      text-decoration: none;
     }
   }
 
