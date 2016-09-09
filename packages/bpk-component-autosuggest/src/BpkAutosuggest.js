@@ -25,14 +25,28 @@ const BpkAutosuggest = (props) => {
     <Autosuggest
       suggestions={props.suggestions}
       onSuggestionsUpdateRequested={props.onSuggestionsUpdateRequested}
-      onSuggestionsClearRequested={props.onSuggestionsClearRequested || (() => {})}
-      getSuggestionValue={props.getSuggestionValue || ((suggestion) => suggestion)}
+      onSuggestionsClearRequested={props.onSuggestionsClearRequested}
+      getSuggestionValue={props.getSuggestionValue}
       renderSuggestion={props.renderSuggestion}
-      onSuggestionSelected={props.onSuggestionSelected || (() => {})}
+      onSuggestionSelected={props.onSuggestionSelected}
+      shouldRenderSuggestions={props.shouldRenderSuggestions}
+      alwaysRenderSuggestions={props.alwaysRenderSuggestions}
+      focusFirstSuggstion={props.focusFirstSuggstion}
+      focusInputOnSuggestionClick={props.focusInputOnSuggestionClick}
+      multiSection={props.multiSection}
+      renderSectionTitle={props.renderSectionTitle}
+      getSectionSuggestions={props.getSectionSuggestions}
+      renderSuggestionsContainer={props.renderSuggestionsContainer}
+      id={props.id}
       inputProps={inputProps}
-      theme={props.theme || defaultTheme}
+      theme={props.theme}
     />
   )
+}
+
+BpkAutosuggest.defaultProps = {
+  getSuggestionValue: (suggestion) => suggestion,
+  theme: defaultTheme
 }
 
 export default BpkAutosuggest
