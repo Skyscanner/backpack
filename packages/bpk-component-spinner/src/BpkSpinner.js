@@ -3,15 +3,15 @@ import TOKENS from 'bpk-tokens/tokens/base.common'
 
 import './bpk-spinner.scss'
 
-const BpkSpinner = ({ large, extraLarge, color, alignToButton }) => {
+const BpkSpinner = (props) => {
   const classNames = [ 'bpk-spinner' ]
   const __html = require('raw!bpk-svgs/src/spinners/spinner.svg')
-    .replace(/^<svg/, `<svg fill="${color}"`)
+    .replace(/^<svg/, `<svg fill="${props.color}"`)
 
-  large ? classNames.push('bpk-spinner--large') : null
-  extraLarge ? classNames.push('bpk-spinner--extra-large') : null
-  alignToButton
-    ? classNames.push(large ? classNames.push('bpk-spinner--align-to-large-button') : 'bpk-spinner--align-to-button')
+  props.large ? classNames.push('bpk-spinner--large') : null
+  props.extraLarge ? classNames.push('bpk-spinner--extra-large') : null
+  props.alignToButton
+    ? classNames.push(props.large ? classNames.push('bpk-spinner--align-to-large-button') : 'bpk-spinner--align-to-button')
     : null
 
   return <span className={classNames.join(' ')} dangerouslySetInnerHTML={{ __html }} />

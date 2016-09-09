@@ -18,3 +18,9 @@ export default MyComponent = () => (
   <BpkParagraph>My paragraph content.</BpkParagraph>
 )
 ```
+
+### Props
+
+| Property | PropType | Required | Default Value |
+| -------- | -------- | -------- | ------------- |
+| children | -        | true     | -             |

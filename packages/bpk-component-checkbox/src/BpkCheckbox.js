@@ -2,24 +2,24 @@ import React, { PropTypes } from 'react'
 
 import './bpk-checkbox.scss'
 
-const BpkCheckbox = ({ name, label, value, id, checked, onChange, disabled }) => {
+const BpkCheckbox = (props) => {
   const classNames = [ 'bpk-checkbox' ]
 
-  disabled ? classNames.push('bpk-checkbox--disabled') : null
+  props.disabled ? classNames.push('bpk-checkbox--disabled') : null
 
   return (
     <label className={classNames.join(' ')}>
       <input
         type='checkbox'
         className='bpk-checkbox__input'
-        name={name}
-        value={value || name}
-        id={id}
-        checked={checked}
-        onChange={onChange}
-        disabled={disabled}
+        name={props.name}
+        onChange={props.onChange}
+        id={props.id}
+        value={props.value || props.name}
+        checked={props.checked}
+        disabled={props.disabled}
       />
-      {label ? ` ${label}` : null}
+      {props.label ? ` ${props.label}` : null}
     </label>
   )
 }

@@ -21,3 +21,12 @@ export default MyComponent = () => (
   </BpkContentContainer>
 )
 ```
+
+### Props
+
+| Property                | PropType                                     | Required | Default Value |
+| ----------------------- | -------------------------------------------- | -------- | ------------- |
+| children                | -                                            | true     | -             |
+| dangerouslySetInnerHTML | { __html: string }                           | false    | null          |
+| tagName                 | 'article', 'aside', 'div', 'main', 'section' | false    | 'div'         |
+| bareHtml                | bool                                         | false    | false         |

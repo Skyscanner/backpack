@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 import './bpk-list.scss'
 
-const BpkListItem = ({ children }) => <li className='bpk-list__item'>{children}</li>
+const BpkListItem = (props) => <li className='bpk-list__item'>{props.children}</li>
 
 BpkListItem.propTypes = {
   children: PropTypes.oneOfType([

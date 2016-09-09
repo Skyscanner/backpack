@@ -3,13 +3,13 @@ import { Link, PropTypes as RouterPropTypes } from 'react-router'
 
 import './bpk-router-link.scss'
 
-const BpkRouterLink = ({ children, to, onClick }) => (
+const BpkRouterLink = (props) => (
   <Link
     className='bpk-router-link'
     activeClassName='bpk-router-link--active'
-    children={children}
-    to={to}
-    onClick={onClick}
+    children={props.children}
+    to={props.to}
+    onClick={props.onClick}
   />
 )
 

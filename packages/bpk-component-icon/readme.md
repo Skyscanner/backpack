@@ -18,8 +18,18 @@ npm install raw-loader --save-dev
 ```js
 import React from 'react'
 import BpkIcon from 'bpk-component-icon'
+import TOKENS from 'bpk-tokens/tokens/base.common'
 
 export default MyComponent = () => (
-  <BpkIcon icon='flight' />
+  <BpkIcon icon='flight' color={TOKENS.colorBlue500} />
 )
 ```
+
+### Props
+
+| Property      | PropType | Required | Default Value       |
+| ------------- | -------- | -------- | ------------------- |
+| icon          | string   | true     | -                   |
+| large         | bool     | false    | -                   |
+| color         | string   | false    | TOKENS.colorGray700 |
+| alignToButton | bool     | false    | false               |

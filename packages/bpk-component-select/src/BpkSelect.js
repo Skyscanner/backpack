@@ -2,14 +2,21 @@ import React, { PropTypes } from 'react'
 
 import './bpk-select.scss'
 
-const BpkSelect = ({ id, name, value, onChange, options, valid, disabled }) => {
+const BpkSelect = (props) => {
   const classNames = [ 'bpk-select' ]
 
-  valid === false ? classNames.push('bpk-select--invalid') : null
+  props.valid === false ? classNames.push('bpk-select--invalid') : null
 
   return (
-    <select className={classNames.join(' ')} id={id} name={name} value={value} onChange={onChange} disabled={disabled}>
-      {options.map((option) =>
+    <select
+      className={classNames.join(' ')}
+      id={props.id}
+      name={props.name}
+      value={props.value}
+      onChange={props.onChange}
+      disabled={props.disabled}
+    >
+      {props.options.map((option) =>
         <option
           key={option.value}
           value={option.value}
@@ -33,7 +40,7 @@ BpkSelect.propTypes = {
       hidden: PropTypes.bool,
       disabled: PropTypes.bool
     })
-  ),
+  ).isRequired,
   valid: PropTypes.bool,
   disabled: PropTypes.bool
 }

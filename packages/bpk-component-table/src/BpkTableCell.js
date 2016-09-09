@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 import './bpk-table.scss'
 
-const BpkTableCell = ({ children }) => <td className='bpk-table__cell' children={children} />
+const BpkTableCell = (props) => <td className='bpk-table__cell' children={props.children} />
 
 BpkTableCell.propTypes = {
   children: PropTypes.oneOfType([

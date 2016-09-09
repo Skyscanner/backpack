@@ -16,6 +16,7 @@ import BpkSelect from 'bpk-component-select'
 
 export default MyComponent = () => (
   <BpkSelect
+    id='fruits'
     name='fruits'
     value='oranges'
     onChange={() => console.log('select changed')}
@@ -27,3 +28,24 @@ export default MyComponent = () => (
   />
 )
 ```
+
+### Props
+
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| id        | string   | true     | -             |
+| name      | string   | true     | -             |
+| value     | string   | true     | -             |
+| onChange  | func     | true     | -             |
+| options   | array    | true     | -             |
+| valid     | bool     | false    | null          |
+| disabled  | bool     | false    | false         |
+
+*`options` shape:*
+
+| Property  | PropType | Required |
+| --------- | -------- | -------- |
+| name      | string   | true     |
+| value     | string   | true     |
+| hidden    | bool     | false    |
+| disabled  | bool     | false    |

@@ -18,3 +18,9 @@ export default MyComponent = () => (
   <BpkGridToggle />
 )
 ```
+
+### Props
+
+| Property         | PropType | Required | Default Value |
+| ---------------- | -------- | -------- | ------------- |
+| targetContainer  | string   | false    | 'body'        |       

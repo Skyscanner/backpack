@@ -18,3 +18,11 @@ export default MyComponent = () => (
   <BpkRouterLink to="https://www.skyscanner.net/">Click here</BpkRouterLink>
 )
 ```
+
+### Props
+
+| Property | PropType | Required | Default Value |
+| -------- | -------- | -------- | ------------- |
+| children | -        | true     | -             |
+| to       | string   | true     | -             |
+| onClick  | func     | false    | null          |

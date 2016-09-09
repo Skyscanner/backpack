@@ -18,3 +18,11 @@ export default MyComponent = () => (
   <BpkHeading level='h1'>My Heading</BpkHeading>
 )
 ```
+
+### Props
+
+| Property     | PropType                           | Required | Default Value |
+| ------------ | ---------------------------------- | -------- | ------------- |
+| children     | -                                  | true     | -             |
+| level        | 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' | true     | -             |
+| id           | string                             | false    | null          |

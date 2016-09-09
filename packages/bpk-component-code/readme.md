@@ -14,10 +14,27 @@ npm install bpk-component-code --save
 import React from 'react'
 import { BpkCode, BpkCodeBlock } from 'bpk-component-code'
 
+const codeBlock = `import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(<App />, ...);`
+
 export default MyComponent = () => (
   <div>
-    <BpkCode>npm install react --save</BpkCode>
-    <BpkCodeBlock>npm install react --save</BpkCodeBlock>
+    <BpkParagraph>
+      We recommend using React from npm with a bundler like webpack. You can use
+      the <BpkCode>react</BpkCode> and <BpkCode>react-dom</BpkCode> packages. After installing it
+      using <BpkCode>npm install --save react react-dom</BpkCode>, you can use:
+    </BpkParagraph>
+    <BpkCodeBlock>{codeBlock}</BpkCodeBlock>
   </div>
 )
 ```
+
+### Props
+
+*For BpkCode & BpkCodeBlock:*
+
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| children  | -        | true     | -             |

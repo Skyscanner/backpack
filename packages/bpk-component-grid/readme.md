@@ -57,3 +57,32 @@ export default MyComponent = () => (
   </BpkGridContainer>
 )
 ```
+
+### Props
+
+*BpkGridContainer:*
+
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| children  | -        | true     | -             |
+| padded    | bool     | false    | true          |
+| debug     | bool     | false    | false         |
+
+*BpkGridRow:*
+
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| children  | -        | true     | -             |
+
+*BpkGridColumn:*
+
+| Property     | PropType | Required | Default Value |
+| ------------ | -------- | -------- | ------------- |
+| children     | -        | true     | -             |
+| width        | number   | true     | -             |
+| mobileWidth  | number   | false    | null          |
+| tabletWidth  | number   | false    | null          |
+| offset       | number   | false    | null          |
+| mobileOffset | number   | false    | null          |
+| tabletOffset | number   | false    | null          |
+| debug        | bool     | false    | false         |

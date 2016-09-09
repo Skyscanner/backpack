@@ -30,7 +30,6 @@ BpkContentContainer.propTypes = {
 }
 
 BpkContentContainer.defaultProps = {
-  children: null,
   dangerouslySetInnerHTML: null,
   tagName: 'div',
   bareHtml: false

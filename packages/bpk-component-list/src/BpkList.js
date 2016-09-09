@@ -2,10 +2,10 @@ import React, { PropTypes } from 'react'
 
 import './bpk-list.scss'
 
-const BpkList = ({ ordered, children }) => {
-  return ordered
-    ? <ol className='bpk-list' children={children} />
-    : <ul className='bpk-list' children={children} />
+const BpkList = (props) => {
+  const TagName = props.ordered ? 'ol' : 'ul'
+
+  return <TagName className='bpk-list' children={props.children} />
 }
 
 BpkList.propTypes = {

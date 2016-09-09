@@ -10,23 +10,23 @@ export const INPUT_TYPES = {
   TEL: 'tel'
 }
 
-const BpkInput = ({ id, name, value, onChange, placeholder, valid, disabled, type }) => {
+const BpkInput = (props) => {
   const classNames = [ 'bpk-input' ]
 
-  valid
+  props.valid
     ? classNames.push('bpk-input--valid')
-    : valid === false ? classNames.push('bpk-input--invalid') : null
+    : props.valid === false ? classNames.push('bpk-input--invalid') : null
 
   return (
     <input
       className={classNames.join(' ')}
-      id={id}
-      name={name}
-      value={value}
-      onChange={onChange}
-      placeholder={placeholder}
-      type={type}
-      disabled={disabled}
+      id={props.id}
+      name={props.name}
+      value={props.value}
+      onChange={props.onChange}
+      type={props.type}
+      placeholder={props.placeholder}
+      disabled={props.disabled}
     />
   )
 }
@@ -36,16 +36,16 @@ BpkInput.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  placeholder: PropTypes.string,
-  valid: PropTypes.bool,
-  disabled: PropTypes.bool,
   type: PropTypes.oneOf([
     INPUT_TYPES.TEXT,
     INPUT_TYPES.EMAIL,
     INPUT_TYPES.NUMBER,
     INPUT_TYPES.PASSWORD,
     INPUT_TYPES.TEL
-  ])
+  ]),
+  placeholder: PropTypes.string,
+  valid: PropTypes.bool,
+  disabled: PropTypes.bool
 }
 
 BpkInput.defaultProps = {
