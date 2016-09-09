@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react'
 
 import './bpk-code.scss'
 
-const BpkCodeBlock = ({ children }) => (
+const BpkCodeBlock = (props) => (
   <pre className='bpk-code__pre'>
-    <code className='bpk-code bpk-code--block'>{children}</code>
+    <code className='bpk-code bpk-code--block'>{props.children}</code>
   </pre>
 )
 

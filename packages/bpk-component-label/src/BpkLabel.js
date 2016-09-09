@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 import './bpk-label.scss'
 
-const BpkLabel = ({ label, htmlFor }) => <label className='bpk-label' htmlFor={htmlFor}>{label}</label>
+const BpkLabel = (props) => <label className='bpk-label' htmlFor={props.htmlFor}>{props.label}</label>
 
 BpkLabel.propTypes = {
   label: PropTypes.string.isRequired,

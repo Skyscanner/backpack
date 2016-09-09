@@ -18,3 +18,10 @@ export default MyComponent = () => (
   <BpkLabel label='Origin' htmlFor='origin' />
 )
 ```
+
+### Props
+
+| Property | PropType | Required | Default Value |
+| -------- | -------- | -------- | ------------- |
+| label    | string   | true     | -             |
+| htmlFor  | string   | true     | -             |

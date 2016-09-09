@@ -29,3 +29,18 @@ export default MyComponent = () => (
   </BpkList>
 )
 ```
+
+### Props
+
+*BpkList:*
+
+| Property | PropType | Required | Default Value |
+| -------- | -------- | -------- | ------------- |
+| children | -        | true     | -             |
+| ordered  | bool     | false    | false         |
+
+*BpkListItem:*
+
+| Property | PropType | Required | Default Value |
+| -------- | -------- | -------- | ------------- |
+| children | -        | true     | -             |

@@ -2,20 +2,15 @@ import React, { PropTypes } from 'react'
 
 import './bpk-link.scss'
 
-const BpkLink = ({ children, href, onClick, blank }) => {
-  const props = {
-    className: 'bpk-link',
-    children,
-    href,
-    onClick
-  }
-
-  if (blank) {
-    props.target = '_blank'
-  }
-
-  return <a {...props} />
-}
+const BpkLink = (props) => (
+  <a
+    className='bpk-link'
+    children={props.children}
+    href={props.href}
+    onClick={props.onClick}
+    target={props.blank ? '_blank' : null}
+  />
+)
 
 BpkLink.propTypes = {
   children: PropTypes.oneOfType([

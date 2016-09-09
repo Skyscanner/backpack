@@ -28,7 +28,7 @@ export default MyComponent = () => (
 ### Props
 
 | Property  | PropType | Required | Default Value |
-| ----------| -------- | -------- | ------------- |
+| --------- | -------- | -------- | ------------- |
 | children  | -        | true     | -             |
 | href      | string   | false    | null          |
 | disabled  | bool     | false    | false         |

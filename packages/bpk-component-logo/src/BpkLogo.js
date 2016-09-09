@@ -11,19 +11,25 @@ const DEFAULT_HEIGHTS = {
   'tianxun-stacked': TOKENS.logoTianxunStackedDefaultHeight
 }
 
-const BpkLogo = ({ logo, color, height }) => {
-  const __html = require(`raw!bpk-svgs/src/logos/${logo}.svg`)
-    .replace(/^<svg/, `<svg fill="${color}"`)
+const BpkLogo = (props) => {
+  const __html = require(`raw!bpk-svgs/src/logos/${props.logo}.svg`)
+    .replace(/^<svg/, `<svg fill="${props.color}"`)
 
   const style = {
-    height: height || DEFAULT_HEIGHTS[ logo ]
+    height: props.height || DEFAULT_HEIGHTS[ props.logo ]
   }
 
-  return <span className={`bpk-logo-${logo}`} style={style} dangerouslySetInnerHTML={{ __html }} />
+  return <span className={`bpk-logo-${props.logo}`} style={style} dangerouslySetInnerHTML={{ __html }} />
 }
 
 BpkLogo.propTypes = {
-  logo: PropTypes.oneOf([ 'inline', 'stacked', 'cloud', 'tianxun', 'tianxun-stacked' ]).isRequired,
+  logo: PropTypes.oneOf([
+    'inline',
+    'stacked',
+    'cloud',
+    'tianxun',
+    'tianxun-stacked'
+  ]).isRequired,
   color: PropTypes.string,
   height: PropTypes.string
 }

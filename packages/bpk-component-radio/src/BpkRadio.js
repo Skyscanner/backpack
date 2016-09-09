@@ -2,24 +2,24 @@ import React, { PropTypes } from 'react'
 
 import './bpk-radio.scss'
 
-const BpkRadio = ({ name, label, value, id, checked, onChange, disabled }) => {
+const BpkRadio = (props) => {
   const classNames = [ 'bpk-radio' ]
 
-  disabled ? classNames.push('bpk-radio--disabled') : null
+  props.disabled ? classNames.push('bpk-radio--disabled') : null
 
   return (
     <label className={classNames.join(' ')}>
       <input
         type='radio'
         className='bpk-radio__input'
-        name={name}
-        value={value || name}
-        id={id}
-        checked={checked}
-        onChange={onChange}
-        disabled={disabled}
+        name={props.name}
+        onChange={props.onChange}
+        id={props.id}
+        value={props.value || props.name}
+        checked={props.checked}
+        disabled={props.disabled}
       />
-      {label ? ` ${label}` : null}
+      {props.label ? ` ${props.label}` : null}
     </label>
   )
 }
@@ -28,17 +28,17 @@ BpkRadio.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   id: PropTypes.string,
-  checked: PropTypes.bool,
-  value: PropTypes.string,
   label: PropTypes.string,
+  value: PropTypes.string,
+  checked: PropTypes.bool,
   disabled: PropTypes.bool
 }
 
 BpkRadio.defaultProps = {
   id: null,
-  checked: false,
-  value: null,
   label: null,
+  value: null,
+  checked: false,
   disabled: false
 }
 

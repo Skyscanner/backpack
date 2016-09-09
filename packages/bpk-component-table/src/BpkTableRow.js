@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-const BpkTableRow = ({ children }) => <tr children={children} />
+const BpkTableRow = (props) => <tr children={props.children} />
 
 BpkTableRow.propTypes = {
   children: PropTypes.oneOfType([

@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 import './bpk-paragraph.scss'
 
-const BpkParagraph = ({ children }) => <p className='bpk-paragraph' children={children} />
+const BpkParagraph = (props) => <p className='bpk-paragraph' children={props.children} />
 
 BpkParagraph.propTypes = {
   children: PropTypes.oneOfType([

@@ -23,3 +23,15 @@ export default MyComponent = () => (
   />
 )
 ```
+
+### Props
+
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| name      | string   | true     | -             |
+| onChange  | func     | true     | -             |
+| id        | string   | false    | null          |
+| label     | string   | false    | null          |
+| value     | string   | false    | null          |
+| checked   | bool     | false    | false         |
+| disabled  | bool     | false    | false         |

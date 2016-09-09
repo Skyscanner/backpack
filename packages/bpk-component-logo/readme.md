@@ -18,8 +18,17 @@ npm install raw-loader --save-dev
 ```js
 import React from 'react'
 import BpkLogo from 'bpk-component-logo'
+import TOKENS from 'bpk-tokens/tokens/base.common'
 
 export default MyComponent = () => (
-  <BpkLogo logo='inline' />
+  <BpkLogo logo='inline' color={TOKENS.colorBlue500} />
 )
 ```
+
+### Props
+
+| Property | PropType                                                   | Required | Default Value        |
+| -------- | ---------------------------------------------------------- | -------- | -------------------- |
+| logo     | 'inline', 'stacked', 'cloud', 'tianxun', 'tianxun-stacked' | true     | -                    |
+| color    | string                                                     | false    | TOKENS.colorGray700  |
+| height   | string                                                     | false    | null                 |
