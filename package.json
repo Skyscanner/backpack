@@ -53,6 +53,7 @@
     "gulp-svgmin": "1.2.2",
     "jest": "15.1.1",
     "json-loader": "0.5.4",
+    "lerna": "2.0.0-beta.28",
     "lodash": "4.15.0",
     "marked": "0.3.6",
     "node-sass": "3.9.3",
@@ -75,8 +76,7 @@
     "theo": "4.3.0",
     "webpack": "1.13.2",
     "webpack-dev-server": "1.15.1",
-    "zip-it-loader": "0.3.0",
-    "zkochan-lerna": "2.0.0-beta.24"
+    "zip-it-loader": "0.3.0"
   },
   "standard": {
     "globals": [
