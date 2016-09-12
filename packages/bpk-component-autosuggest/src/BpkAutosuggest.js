@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import Autosuggest from 'react-autosuggest'
 
-import style from './bpk-autosuggest.scss'
+import './bpk-autosuggest.scss'
 
 const defaultTheme = {
   container: 'bpk-autosuggest__container',
@@ -44,11 +44,6 @@ const BpkAutosuggest = (props) => {
   )
 }
 
-BpkAutosuggest.defaultProps = {
-  getSuggestionValue: (suggestion) => suggestion,
-  theme: defaultTheme
-}
-
 BpkAutosuggest.propTypes = {
   value: PropTypes.any.isRequired,
   suggestions: PropTypes.array.isRequired,
@@ -68,6 +63,11 @@ BpkAutosuggest.propTypes = {
   renderSuggestionsContainer: PropTypes.func,
   id: PropTypes.string,
   theme: PropTypes.object
+}
+
+BpkAutosuggest.defaultProps = {
+  getSuggestionValue: (suggestion) => suggestion,
+  theme: defaultTheme
 }
 
 export default BpkAutosuggest

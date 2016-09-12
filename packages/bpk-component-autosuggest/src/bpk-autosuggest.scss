@@ -48,6 +48,10 @@
     color: $bpk-color-gray-700;
     padding: $bpk-spacing-sm;
     box-shadow: 0 1px 0 0 $bpk-color-gray-50;
+
+    &:active {
+      background-color: $bpk-color-gray-100;
+    }
   }
 
   &__suggestion--focused {

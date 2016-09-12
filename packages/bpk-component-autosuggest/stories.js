@@ -60,7 +60,7 @@ class AutosuggestExample extends React.Component {
   render () {
     const { value, suggestions } = this.state
 
-    return <BpkAutosuggest
+    return (<BpkAutosuggest
       suggestions={suggestions}
       value={value}
       onSuggestionsFetchRequested={this.onSuggestionsFetchRequested.bind(this)}
@@ -68,7 +68,7 @@ class AutosuggestExample extends React.Component {
       getSuggestionValue={this.getSuggestionValue.bind(this)}
       renderSuggestion={this.renderSuggestion.bind(this)}
       onChange={this.onChange.bind(this)}
-           />
+           />)
   }
 
 }
