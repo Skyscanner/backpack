@@ -16,12 +16,10 @@ const links = [
     category: 'Bonds',
     links: [
       { route: routes.COLORS, children: 'Colors' },
-      { route: routes.SPACING, children: 'Spacing' },
       { route: routes.TYPE_SETTING, children: 'Type setting' },
-      { route: routes.RADII, children: 'Radii' },
-      { route: routes.SHADOWS, children: 'Shadows' },
       { route: routes.LAYOUT, children: 'Layout' },
-      { route: null, children: 'Motion' }
+      { route: routes.RADII, children: 'Radii' },
+      { route: routes.SHADOWS, children: 'Shadows' }
     ]
   },
   {

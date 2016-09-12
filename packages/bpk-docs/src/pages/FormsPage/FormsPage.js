@@ -7,7 +7,7 @@ import BpkCheckbox from 'bpk-component-checkbox'
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input'
 
 import './forms-page.scss'
-import ComponentPageBuilder from './../../components/ComponentPageBuilder'
+import DocsPageBuilder from './../../components/DocsPageBuilder'
 
 const components = [
   {
@@ -233,10 +233,11 @@ const components = [
   }
 ]
 
-const FormsPage = () => <ComponentPageBuilder
+const FormsPage = () => <DocsPageBuilder
   title='Forms'
   blurb='Here you’ll find a range of common inputs, select menus and checkboxes/radio buttons for capturing user input. You’ll also find labels, fieldsets and form components.'
   components={components}
+  sassdocId='forms'
 />
 
 export default FormsPage

@@ -162,19 +162,19 @@
   <property name="SPACING_XL" category="spacing">36</property>
   <property name="SPACING_XXL" category="spacing">42</property>
   <property name="ONE_PIXEL_REM" category="spacing">1</property>
-  <property name="FONT_FAMILY_BASE" category="font">-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif</property>
+  <property name="FONT_FAMILY_BASE" category="type-setting">-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif</property>
   <color name="FONT_COLOR_BASE" category="text-color">#524c61ff</color>
-  <property name="LINE_HEIGHT_SM" category="line-height">18</property>
-  <property name="LINE_HEIGHT_BASE" category="line-height">24</property>
-  <property name="LINE_HEIGHT_LG" category="line-height">30</property>
-  <property name="LINE_HEIGHT_XL" category="line-height">42</property>
-  <property name="LINE_HEIGHT_XXL" category="line-height">54</property>
-  <property name="FONT_SIZE_ROOT" category="font-size">1</property>
-  <property name="FONT_SIZE_SM" category="font-size">12</property>
-  <property name="FONT_SIZE_BASE" category="font-size">16</property>
-  <property name="FONT_SIZE_LG" category="font-size">24</property>
-  <property name="FONT_SIZE_XL" category="font-size">28</property>
-  <property name="FONT_SIZE_XXL" category="font-size">42</property>
+  <property name="LINE_HEIGHT_SM" category="type-setting">18</property>
+  <property name="LINE_HEIGHT_BASE" category="type-setting">24</property>
+  <property name="LINE_HEIGHT_LG" category="type-setting">30</property>
+  <property name="LINE_HEIGHT_XL" category="type-setting">42</property>
+  <property name="LINE_HEIGHT_XXL" category="type-setting">54</property>
+  <property name="FONT_SIZE_ROOT" category="type-setting">1</property>
+  <property name="FONT_SIZE_SM" category="type-setting">12</property>
+  <property name="FONT_SIZE_BASE" category="type-setting">16</property>
+  <property name="FONT_SIZE_LG" category="type-setting">24</property>
+  <property name="FONT_SIZE_XL" category="type-setting">28</property>
+  <property name="FONT_SIZE_XXL" category="type-setting">42</property>
   <property name="H6_FONT_SIZE" category="font-size">12</property>
   <property name="H5_FONT_SIZE" category="font-size">12</property>
   <property name="H4_FONT_SIZE" category="font-size">16</property>

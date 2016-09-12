@@ -8,7 +8,6 @@ export const CONTRIBUTING = '/docs/contributing'
 
 export const BONDS = '/docs/bonds'
 export const COLORS = '/docs/bonds/colors'
-export const SPACING = '/docs/bonds/spacing'
 export const TYPE_SETTING = '/docs/bonds/type-setting'
 export const RADII = '/docs/bonds/radii'
 export const SHADOWS = '/docs/bonds/shadows'

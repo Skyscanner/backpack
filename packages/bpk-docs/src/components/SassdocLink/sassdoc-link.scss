@@ -1,0 +1,20 @@
+@import '~bpk-mixins/index';
+
+.bpkdocs-sassdoc-link {
+  @include bpk-border-radius-xs;
+
+  padding: $bpk-spacing-sm;
+  background-color: $bpk-color-gray-50;
+
+  &__logo {
+    display: inline-block;
+    height: $bpk-spacing-base;
+    margin-right: $bpk-spacing-sm;
+    vertical-align: top;
+
+    > svg {
+      display: block;
+      height: 100%;
+    }
+  }
+}

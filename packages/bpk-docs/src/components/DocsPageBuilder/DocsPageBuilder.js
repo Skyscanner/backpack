@@ -1,4 +1,5 @@
 import marked from 'marked'
+import keys from 'lodash/keys'
 import Helmet from 'react-helmet'
 import isString from 'lodash/isString'
 import React, { Children, PropTypes } from 'react'
@@ -8,7 +9,11 @@ import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkContentContainer from 'bpk-component-content-container'
+import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
+
+import SassdocLink from './../../components/SassdocLink'
 import PresentationBlock from './../../components/PresentationBlock'
+import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper'
 
 const flatten = Children.toArray
 const renderer = new marked.Renderer()
@@ -33,7 +38,14 @@ const ComponentExample = (component) => {
     <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(component.readme) }} bareHtml />
   ]) : null
 
-  return [ heading, blurb, examples, readme ]
+  const tokenMap = component.tokenMap ? toTokenTable(component.tokenMap) : null
+
+  const sassdocLink = component.sassdocId ? toSassdocLink({
+    sassdocId: component.sassdocId,
+    category: component.title
+  }) : null
+
+  return [ heading, blurb, examples, readme, tokenMap, sassdocLink ]
 }
 
 const CustomSection = (section) => [
@@ -56,7 +68,28 @@ const markdownToHTML = (readmeString) => {
   return marked(readmeString, { renderer: renderer })
 }
 
-const ComponentPageBuilder = (props) => (
+const toTokenTable = (tokens) => (
+  <BpkTable>
+    <BpkTableHead>
+      <BpkTableRow>
+        <BpkTableHeadCell>Bond</BpkTableHeadCell>
+        <BpkTableHeadCell>Value</BpkTableHeadCell>
+      </BpkTableRow>
+    </BpkTableHead>
+    <BpkTableBody>
+      {keys(tokens).map((token) => (
+        <BpkTableRow key={formatTokenName(token)}>
+          <BpkTableCell>{formatTokenName(token)}</BpkTableCell>
+          <BpkTableCell>{formatTokenValue(tokens[ token ])}</BpkTableCell>
+        </BpkTableRow>
+      ))}
+    </BpkTableBody>
+  </BpkTable>
+)
+
+const toSassdocLink = (props) => <SassdocLink sassdocId={props.sassdocId} category={props.category} />
+
+const DocsPageBuilder = (props) => (
   <BpkContentContainer>
     <Helmet title={props.title} />
     <BpkHeading level='h1'>{props.title}</BpkHeading>
@@ -68,7 +101,12 @@ const ComponentPageBuilder = (props) => (
       <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(props.readme) }} bareHtml />
     ]) : null
     }
+    {props.tokenMap ? toTokenTable(props.tokenMap) : null}
     {flatten(props.customSections.map(CustomSection))}
+    {props.sassdocId ? toSassdocLink({
+      sassdocId: props.sassdocId,
+      category: props.title
+    }) : null}
   </BpkContentContainer>
 )
 
@@ -82,7 +120,7 @@ const contentShape = PropTypes.oneOfType([
   childrenPropType
 ])
 
-ComponentPageBuilder.propTypes = {
+DocsPageBuilder.propTypes = {
   title: PropTypes.string.isRequired,
   blurb: contentShape,
   components: PropTypes.arrayOf(
@@ -91,24 +129,30 @@ ComponentPageBuilder.propTypes = {
       title: PropTypes.string.isRequired,
       blurb: contentShape,
       examples: PropTypes.arrayOf(childrenPropType),
-      readme: PropTypes.string
+      readme: PropTypes.string,
+      tokenMap: PropTypes.object,
+      sassdocId: PropTypes.string
     })
   ),
   readme: PropTypes.string,
+  tokenMap: PropTypes.object,
   customSections: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       content: PropTypes.arrayOf(contentShape)
     })
-  )
+  ),
+  sassdocId: PropTypes.string
 }
 
-ComponentPageBuilder.defaultProps = {
+DocsPageBuilder.defaultProps = {
   blurb: null,
   components: [],
   readme: null,
-  customSections: []
+  tokenMap: null,
+  customSections: [],
+  sassdocId: null
 }
 
-export default ComponentPageBuilder
+export default DocsPageBuilder

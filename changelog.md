@@ -3,9 +3,11 @@
 ## UNRELEASED
 
 **Changed**
-- bpk-content-container no longer applies styling to bare html by
+- bpk-content-container: no longer applies styling to bare html by
   default, instead consumers can opt in using `bareHtml` prop
-- bpk-mixins reflects the above change too
+- bpk-mixins: reflects the above change too
+- bpk-content-container: nested content containers have bottom margin
+- bpk-tokens: re-categorised some tokens for type-setting 
 
 ## 2016-09-07 - Box shadows!
 

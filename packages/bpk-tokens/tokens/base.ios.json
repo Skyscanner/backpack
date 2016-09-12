@@ -975,7 +975,7 @@
     {
       "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
       "type": "font",
-      "category": "font",
+      "category": "type-setting",
       "name": "fontFamilyBase"
     },
     {
@@ -987,67 +987,67 @@
     {
       "value": "18",
       "type": "number",
-      "category": "line-height",
+      "category": "type-setting",
       "name": "lineHeightSm"
     },
     {
       "value": "24",
       "type": "number",
-      "category": "line-height",
+      "category": "type-setting",
       "name": "lineHeightBase"
     },
     {
       "value": "30",
       "type": "number",
-      "category": "line-height",
+      "category": "type-setting",
       "name": "lineHeightLg"
     },
     {
       "value": "42",
       "type": "number",
-      "category": "line-height",
+      "category": "type-setting",
       "name": "lineHeightXl"
     },
     {
       "value": "54",
       "type": "number",
-      "category": "line-height",
+      "category": "type-setting",
       "name": "lineHeightXxl"
     },
     {
       "value": "1",
       "type": "size",
-      "category": "font-size",
+      "category": "type-setting",
       "name": "fontSizeRoot"
     },
     {
       "value": "12",
       "type": "size",
-      "category": "font-size",
+      "category": "type-setting",
       "name": "fontSizeSm"
     },
     {
       "value": "16",
       "type": "size",
-      "category": "font-size",
+      "category": "type-setting",
       "name": "fontSizeBase"
     },
     {
       "value": "24",
       "type": "size",
-      "category": "font-size",
+      "category": "type-setting",
       "name": "fontSizeLg"
     },
     {
       "value": "28",
       "type": "size",
-      "category": "font-size",
+      "category": "type-setting",
       "name": "fontSizeXl"
     },
     {
       "value": "42",
       "type": "size",
-      "category": "font-size",
+      "category": "type-setting",
       "name": "fontSizeXxl"
     },
     {

@@ -3,7 +3,7 @@ import React from 'react'
 import BpkSpinner from 'bpk-component-spinner'
 import BpkParagraph from 'bpk-component-paragraph'
 
-import ComponentPageBuilder from './../../components/ComponentPageBuilder'
+import DocsPageBuilder from './../../components/DocsPageBuilder'
 
 const blurb = [
   <BpkParagraph>
@@ -40,11 +40,12 @@ const components = [
   }
 ]
 
-const SpinnersPage = () => <ComponentPageBuilder
+const SpinnersPage = () => <DocsPageBuilder
   title='Spinners'
   blurb={blurb}
   components={components}
   readme={require('raw!bpk-component-spinner/readme.md')}
+  sassdocId='svgs-mixin-bpk-spinner'
 />
 
 export default SpinnersPage
