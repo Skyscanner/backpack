@@ -39,7 +39,9 @@ const ComponentExample = (component) => {
 
   const tokenMap = component.tokenMap ? toTokenTable(component.tokenMap) : null
 
-  return [ heading, blurb, examples, readme, tokenMap ]
+  const sassdocLink = component.sassdocId ? toSassdocLink(component.sassdocId) : null
+
+  return [ heading, blurb, examples, readme, tokenMap, sassdocLink ]
 }
 
 const CustomSection = (section) => [
@@ -81,6 +83,15 @@ const toTokenTable = (tokens) => (
   </BpkTable>
 )
 
+const toSassdocLink = (sassdocId) => (
+  <BpkParagraph>
+    <em>
+      Looking for Sass variables and mixins? Check
+      out <BpkLink href={`/sassdoc/#${sassdocId}`} blank>Backpack's Sassdoc</BpkLink>.
+    </em>
+  </BpkParagraph>
+)
+
 const DocsPageBuilder = (props) => (
   <BpkContentContainer>
     <Helmet title={props.title} />
@@ -95,15 +106,7 @@ const DocsPageBuilder = (props) => (
     }
     {props.tokenMap ? toTokenTable(props.tokenMap) : null}
     {flatten(props.customSections.map(CustomSection))}
-    {props.sassdocId ? (
-      <BpkParagraph>
-        <em>
-          Looking for Sass variables and mixins? Check
-          out <BpkLink href={`/sassdoc/#${props.sassdocId}`} blank>Backpack's Sassdoc</BpkLink>.
-        </em>
-      </BpkParagraph>
-    ) : null
-    }
+    {props.sassdocId ? toSassdocLink(props.sassdocId) : null}
   </BpkContentContainer>
 )
 
@@ -127,7 +130,8 @@ DocsPageBuilder.propTypes = {
       blurb: contentShape,
       examples: PropTypes.arrayOf(childrenPropType),
       readme: PropTypes.string,
-      tokenMap: PropTypes.object
+      tokenMap: PropTypes.object,
+      sassdocId: PropTypes.string
     })
   ),
   readme: PropTypes.string,

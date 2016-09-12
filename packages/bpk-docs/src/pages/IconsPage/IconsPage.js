@@ -27,7 +27,7 @@ const blurb = [
   </BpkParagraph>,
   <BpkParagraph>
     Like everything in Backpack, we use rems to size these to ensure they scale inline with the user’s base
-    stylesheet. More info on why we use rems can be found <BpkRouterLink to={ROUTES.SPACING}>here</BpkRouterLink>.
+    stylesheet. More info on why we use rems can be found <BpkRouterLink to={ROUTES.LAYOUT}>here</BpkRouterLink>.
   </BpkParagraph>
 ]
 

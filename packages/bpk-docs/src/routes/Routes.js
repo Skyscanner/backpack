@@ -12,7 +12,6 @@ import GettingStartedPage from './../pages/GettingStartedPage'
 import ContributingPage from './../pages/ContributingPage'
 import BaseStylesheetPage from './../pages/BaseStylesheetPage'
 import ColorsPage from './../pages/ColorsPage'
-import SpacingPage from './../pages/SpacingPage'
 import TypeSettingPage from './../pages/TypeSettingPage'
 import RadiiPage from './../pages/RadiiPage'
 import ShadowsPage from './../pages/ShadowsPage'
@@ -39,7 +38,6 @@ const Routes = (
       <Route path={ROUTES.BONDS}>
         <IndexRedirect to={ROUTES.COLORS} />
         <Route path={ROUTES.COLORS} component={ColorsPage} />
-        <Route path={ROUTES.SPACING} component={SpacingPage} />
         <Route path={ROUTES.TYPE_SETTING} component={TypeSettingPage} />
         <Route path={ROUTES.RADII} component={RadiiPage} />
         <Route path={ROUTES.SHADOWS} component={ShadowsPage} />

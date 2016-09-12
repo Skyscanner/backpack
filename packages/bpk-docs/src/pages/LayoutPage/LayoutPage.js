@@ -1,20 +1,31 @@
 import React from 'react'
-import keys from 'lodash/keys'
 import pickBy from 'lodash/pickBy'
 import includes from 'lodash/includes'
 import TOKENS from 'bpk-tokens/tokens/base.common'
 
 import BpkRouterLink from 'bpk-component-router-link'
 import BpkParagraph from 'bpk-component-paragraph'
-import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
 
 import * as routes from './../../constants/routes'
 import DocsPageBuilder from './../../components/DocsPageBuilder'
-import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper'
 
 const breakpoints = pickBy(TOKENS, (value, key) => includes(key, 'breakpoint') && !includes(key, 'breakpointQuery'))
 
 const components = [
+  {
+    id: 'spacing',
+    title: 'Spacing',
+    blurb: [
+      <BpkParagraph>
+        All spacing is measured in ‘rems’. Since these are relative to the value inherited from the browser font-size,
+        all other units will scale accordingly should a user change this.
+      </BpkParagraph>,
+      <BpkParagraph>To ensure elements are distributed evenly, we use .375rem (6px) increments:</BpkParagraph>
+    ],
+    examples: [],
+    tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'spacing')),
+    sassdocId: 'spacings'
+  },
   {
     id: 'baseline-grid',
     title: 'Baseline grid (aka vertical rhythm)',
@@ -36,24 +47,13 @@ const components = [
     id: 'breakpoints',
     title: 'Breakpoints',
     blurb: [
-      <BpkTable>
-        <BpkTableHead>
-          <BpkTableRow>
-            <BpkTableHeadCell>Bond</BpkTableHeadCell>
-            <BpkTableHeadCell>Value</BpkTableHeadCell>
-          </BpkTableRow>
-        </BpkTableHead>
-        <BpkTableBody>
-          {keys(breakpoints).map((breakpoint) => (
-            <BpkTableRow key={formatTokenName(breakpoint)}>
-              <BpkTableCell>{formatTokenName(breakpoint)}</BpkTableCell>
-              <BpkTableCell>{formatTokenValue(breakpoints[ breakpoint ])}</BpkTableCell>
-            </BpkTableRow>
-          ))}
-        </BpkTableBody>
-      </BpkTable>
+      <BpkParagraph>
+        To simplify things, Backpack uses only three breakpoints optimised for mobile, tablet and desktop viewports.
+      </BpkParagraph>
     ],
-    examples: []
+    examples: [],
+    tokenMap: breakpoints,
+    sassdocId: 'breakpoints'
   },
   {
     id: 'horizontal-grid',
@@ -69,7 +69,8 @@ const components = [
       </BpkParagraph>
     ],
     examples: [],
-    readme: require('raw!bpk-component-grid/readme.md')
+    readme: require('raw!bpk-component-grid/readme.md'),
+    sassdocId: 'grids'
   }
 ]
 
