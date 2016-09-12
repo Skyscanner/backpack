@@ -1,0 +1,23 @@
+exports[`BpkAutosuggest should render correctly 1`] = `
+<div
+  className="bpk-autosuggest__container">
+  <input
+    aria-activedescendant={null}
+    aria-autocomplete="list"
+    aria-expanded={false}
+    aria-haspopup={false}
+    aria-owns="react-autowhatever-snapshot"
+    autoComplete="off"
+    className="bpk-autosuggest__input"
+    onBlur={[Function onBlur]}
+    onChange={[Function onChange]}
+    onFocus={[Function onFocus]}
+    onKeyDown={[Function bound onKeyDown]}
+    role="combobox"
+    type="text"
+    value="Edinburgh" />
+  <div
+    className="bpk-autosuggest__suggestions-container"
+    id="react-autowhatever-snapshot" />
+</div>
+`;
