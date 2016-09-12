@@ -1,0 +1,63 @@
+@import '~bpk-mixins/index';
+
+.bpk-autosuggest {
+  &__container--open {
+    position: relative;
+  }
+
+  &__input {
+    outline: 0;
+
+    @include bpk-input;
+  }
+
+  &__suggestions-container {
+    position: absolute;
+    top: $bpk-input-height + $bpk-spacing-sm;
+    width: 100%;
+
+    &::after {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      content: ' ';
+      width: 0;
+      height: 0;
+      margin-left: -$bpk-spacing-sm;
+      border: solid transparent;
+      border-width: $bpk-spacing-sm;
+      border-bottom-color: $bpk-color-white;
+      pointer-events: none;
+    }
+  }
+
+  &__suggestions-list {
+    margin: 0;
+    padding-left: 0;
+    background-color: $bpk-color-white;
+    list-style: none;
+    overflow: hidden;
+
+    @include bpk-border-radius-sm;
+    @include bpk-box-shadow-xl;
+  }
+
+  &__suggestion {
+    padding: $bpk-spacing-sm;
+    color: $bpk-color-gray-700;
+
+    @include bpk-text-base;
+
+    &:not(:last-child) {
+      box-shadow: 0 1px 0 0 $bpk-color-gray-50;
+    }
+
+    &:active {
+      background-color: $bpk-color-gray-100;
+    }
+  }
+
+  &__suggestion--focused {
+    background-color: $bpk-color-gray-50;
+  }
+}
