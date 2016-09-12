@@ -1,4 +1,5 @@
 import marked from 'marked'
+import keys from 'lodash/keys'
 import Helmet from 'react-helmet'
 import isString from 'lodash/isString'
 import React, { Children, PropTypes } from 'react'
@@ -8,7 +9,10 @@ import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkContentContainer from 'bpk-component-content-container'
+import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
+
 import PresentationBlock from './../../components/PresentationBlock'
+import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper'
 
 const flatten = Children.toArray
 const renderer = new marked.Renderer()
@@ -33,7 +37,9 @@ const ComponentExample = (component) => {
     <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(component.readme) }} bareHtml />
   ]) : null
 
-  return [ heading, blurb, examples, readme ]
+  const tokenMap = component.tokenMap ? toTokenTable(component.tokenMap) : null
+
+  return [ heading, blurb, examples, readme, tokenMap ]
 }
 
 const CustomSection = (section) => [
@@ -56,6 +62,25 @@ const markdownToHTML = (readmeString) => {
   return marked(readmeString, { renderer: renderer })
 }
 
+const toTokenTable = (tokens) => (
+  <BpkTable>
+    <BpkTableHead>
+      <BpkTableRow>
+        <BpkTableHeadCell>Bond</BpkTableHeadCell>
+        <BpkTableHeadCell>Value</BpkTableHeadCell>
+      </BpkTableRow>
+    </BpkTableHead>
+    <BpkTableBody>
+      {keys(tokens).map((token) => (
+        <BpkTableRow key={formatTokenName(token)}>
+          <BpkTableCell>{formatTokenName(token)}</BpkTableCell>
+          <BpkTableCell>{formatTokenValue(tokens[ token ])}</BpkTableCell>
+        </BpkTableRow>
+      ))}
+    </BpkTableBody>
+  </BpkTable>
+)
+
 const DocsPageBuilder = (props) => (
   <BpkContentContainer>
     <Helmet title={props.title} />
@@ -68,15 +93,16 @@ const DocsPageBuilder = (props) => (
       <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(props.readme) }} bareHtml />
     ]) : null
     }
+    {props.tokenMap ? toTokenTable(props.tokenMap) : null}
     {flatten(props.customSections.map(CustomSection))}
-    {props.sassdocId ?
+    {props.sassdocId ? (
       <BpkParagraph>
         <em>
           Looking for Sass variables and mixins? Check
           out <BpkLink href={`/sassdoc/#${props.sassdocId}`} blank>Backpack's Sassdoc</BpkLink>.
         </em>
       </BpkParagraph>
-      : null
+    ) : null
     }
   </BpkContentContainer>
 )
@@ -100,10 +126,12 @@ DocsPageBuilder.propTypes = {
       title: PropTypes.string.isRequired,
       blurb: contentShape,
       examples: PropTypes.arrayOf(childrenPropType),
-      readme: PropTypes.string
+      readme: PropTypes.string,
+      tokenMap: PropTypes.object
     })
   ),
   readme: PropTypes.string,
+  tokenMap: PropTypes.object,
   customSections: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -118,6 +146,7 @@ DocsPageBuilder.defaultProps = {
   blurb: null,
   components: [],
   readme: null,
+  tokenMap: null,
   customSections: [],
   sassdocId: null
 }

@@ -1,45 +1,17 @@
 import React from 'react'
-import keys from 'lodash/keys'
-import Helmet from 'react-helmet'
 import pickBy from 'lodash/pickBy'
 import includes from 'lodash/includes'
 import TOKENS from 'bpk-tokens/tokens/base.common'
 
-import BpkLink from 'bpk-component-link'
-import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
-import { BpkList, BpkListItem } from 'bpk-component-list'
-import BpkContentContainer from 'bpk-component-content-container'
-import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
 
-import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper'
+import DocsPageBuilder from './../../components/DocsPageBuilder'
 
-const anchors = {
-  fontFamilies: 'type-units-page-fonts',
-  fontSizes: 'type-units-page-font-sizes',
-  lineHeights: 'type-units-page-line-heights'
-}
-
-const fontSizes = pickBy(TOKENS, (value, key) => includes(key, 'fontSize'))
-const lineHeights = pickBy(TOKENS, (value, key) => includes(key, 'lineHeight'))
-
-const TypeSettingPage = () => (
-  <section>
-    <Helmet title='Type setting' />
-    <BpkContentContainer>
-      <BpkHeading level='h1'>Type setting</BpkHeading>
-      <BpkList>
-        <BpkListItem>
-          <BpkLink href={`#${anchors.fontFamilies}`}>Font families</BpkLink>
-        </BpkListItem>
-        <BpkListItem>
-          <BpkLink href={`#${anchors.fontSizes}`}>Font sizes</BpkLink>
-        </BpkListItem>
-        <BpkListItem>
-          <BpkLink href={`#${anchors.lineHeights}`}>Line heights</BpkLink>
-        </BpkListItem>
-      </BpkList>
-      <BpkHeading id={anchors.fontFamilies} level='h2'>Font families</BpkHeading>
+const components = [
+  {
+    id: 'font-families',
+    title: 'Font families',
+    blurb: [
       <BpkParagraph>
         Rather than specify a single font across all Skyscanner products, we rely on the native font used on each
         device. The benefits of this are two-fold, firstly we can lean on the hard-work and expertise that each OS
@@ -47,56 +19,40 @@ const TypeSettingPage = () => (
         any drawbacks of serving a custom web-font; for example extra load time, and a so-called FOUT (flash of unstyled
         text). This will improve the user experience of our product on all devices.
       </BpkParagraph>
-      <BpkTable>
-        <BpkTableHead>
-          <BpkTableRow>
-            <BpkTableHeadCell>Bond</BpkTableHeadCell>
-            <BpkTableHeadCell>Value</BpkTableHeadCell>
-          </BpkTableRow>
-        </BpkTableHead>
-        <BpkTableBody>
-          <BpkTableRow>
-            <BpkTableCell>font-family-base</BpkTableCell>
-            <BpkTableCell>{TOKENS.fontFamilyBase}</BpkTableCell>
-          </BpkTableRow>
-        </BpkTableBody>
-      </BpkTable>
-      <BpkHeading id={anchors.fontSizes} level='h2'>Font sizes</BpkHeading>
-      <BpkTable>
-        <BpkTableHead>
-          <BpkTableRow>
-            <BpkTableHeadCell>Bond</BpkTableHeadCell>
-            <BpkTableHeadCell>Value</BpkTableHeadCell>
-          </BpkTableRow>
-        </BpkTableHead>
-        <BpkTableBody>
-          {keys(fontSizes).map((fontSize) => (
-            <BpkTableRow key={fontSize}>
-              <BpkTableCell>{formatTokenName(fontSize)}</BpkTableCell>
-              <BpkTableCell>{formatTokenValue(fontSizes[ fontSize ])}</BpkTableCell>
-            </BpkTableRow>
-          ))}
-        </BpkTableBody>
-      </BpkTable>
-      <BpkHeading id={anchors.lineHeights} level='h2'>Line heights</BpkHeading>
-      <BpkTable>
-        <BpkTableHead>
-          <BpkTableRow>
-            <BpkTableHeadCell>Bond</BpkTableHeadCell>
-            <BpkTableHeadCell>Value</BpkTableHeadCell>
-          </BpkTableRow>
-        </BpkTableHead>
-        <BpkTableBody>
-          {keys(lineHeights).map((lineHeight) => (
-            <BpkTableRow key={formatTokenName(lineHeight)}>
-              <BpkTableCell>{formatTokenName(lineHeight)}</BpkTableCell>
-              <BpkTableCell>{formatTokenValue(lineHeights[ lineHeight ])}</BpkTableCell>
-            </BpkTableRow>
-          ))}
-        </BpkTableBody>
-      </BpkTable>
-    </BpkContentContainer>
-  </section>
-)
+    ],
+    examples: [],
+    tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'fontFamilyBase'))
+  },
+  {
+    id: 'font-sizes',
+    title: 'Font sizes',
+    blurb: [
+      <BpkParagraph>
+        Backpack uses a set of 5 font-sizes which when used in conjunction with their retrospective line heights,
+        produces text styles which align to the baseline grid. Similar to spacing, these are specified in rems.
+      </BpkParagraph>
+    ],
+    examples: [],
+    tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'fontSize'))
+  },
+  {
+    id: 'line-heights',
+    title: 'Line heights',
+    blurb: [
+      <BpkParagraph>
+        The following line-heights should be paired with the font-sizes above to ensure text aligns with the baseline
+        grid.
+      </BpkParagraph>
+    ],
+    examples: [],
+    tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'lineHeight'))
+  }
+]
+
+const TypeSettingPage = () => <DocsPageBuilder
+  title='Type setting'
+  components={components}
+  sassdocId='type-settings'
+/>
 
 export default TypeSettingPage
