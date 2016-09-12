@@ -34,8 +34,8 @@
   &__suggestions-list {
     margin: 0;
     padding-left: 0;
-    list-style: none;
     background-color: $bpk-color-white;
+    list-style: none;
     overflow: hidden;
 
     @include bpk-border-radius-sm;
