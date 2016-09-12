@@ -7,7 +7,7 @@
   default, instead consumers can opt in using `bareHtml` prop
 - bpk-mixins: reflects the above change too
 - bpk-content-container: nested content containers have bottom margin
-- bpk-tokens: re-categorised some tokens for type-setting 
+- bpk-tokens: re-categorised some tokens for typesetting 
 
 ## 2016-09-07 - Box shadows!
 

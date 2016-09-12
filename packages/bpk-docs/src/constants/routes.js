@@ -8,7 +8,7 @@ export const CONTRIBUTING = '/docs/contributing'
 
 export const BONDS = '/docs/bonds'
 export const COLORS = '/docs/bonds/colors'
-export const TYPE_SETTING = '/docs/bonds/type-setting'
+export const TYPESETTING = '/docs/bonds/typesetting'
 export const RADII = '/docs/bonds/radii'
 export const SHADOWS = '/docs/bonds/shadows'
 export const LAYOUT = '/docs/bonds/layout'
@@ -27,4 +27,5 @@ export const ORGANISMS = '/docs/organisms'
 
 export const DOWNLOADS = '/downloads'
 
-export const GRID_DEMO = '/grid-demo'
+export const GRID_COLUMN_DEMO = '/grid-column-demo'
+export const GRID_OFFSET_DEMO = '/grid-offset-demo'

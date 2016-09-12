@@ -12,7 +12,7 @@ import GettingStartedPage from './../pages/GettingStartedPage'
 import ContributingPage from './../pages/ContributingPage'
 import BaseStylesheetPage from './../pages/BaseStylesheetPage'
 import ColorsPage from './../pages/ColorsPage'
-import TypeSettingPage from './../pages/TypeSettingPage'
+import TypesettingPage from './../pages/TypesettingPage'
 import RadiiPage from './../pages/RadiiPage'
 import ShadowsPage from './../pages/ShadowsPage'
 import LayoutPage from './../pages/LayoutPage'
@@ -38,7 +38,7 @@ const Routes = (
       <Route path={ROUTES.BONDS}>
         <IndexRedirect to={ROUTES.COLORS} />
         <Route path={ROUTES.COLORS} component={ColorsPage} />
-        <Route path={ROUTES.TYPE_SETTING} component={TypeSettingPage} />
+        <Route path={ROUTES.TYPESETTING} component={TypesettingPage} />
         <Route path={ROUTES.RADII} component={RadiiPage} />
         <Route path={ROUTES.SHADOWS} component={ShadowsPage} />
         <Route path={ROUTES.LAYOUT} component={LayoutPage} />
@@ -60,7 +60,8 @@ const Routes = (
       </Route>
     </Route>
     <Route path={ROUTES.DOWNLOADS} component={DownloadsPage} />
-    <Route path={ROUTES.GRID_DEMO} component={GridDemoPage} />
+    <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridDemoPage} />
+    <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridDemoPage} />
   </Route>
 )
 

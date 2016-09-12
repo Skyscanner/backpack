@@ -49,10 +49,11 @@ const components = [
   }
 ]
 
-const TypeSettingPage = () => <DocsPageBuilder
-  title='Type setting'
+const TypesettingPage = () => <DocsPageBuilder
+  title='Typesetting'
+  blurb='Here you can find information on how the Backpack type is set including fonts, sizes and line heights.'
   components={components}
-  sassdocId='type-settings'
+  sassdocId='typesettings'
 />
 
-export default TypeSettingPage
+export default TypesettingPage

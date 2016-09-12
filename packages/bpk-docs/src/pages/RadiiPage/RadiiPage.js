@@ -6,7 +6,7 @@ import DocsPageBuilder from './../../components/DocsPageBuilder'
 
 const RadiiPage = () => <DocsPageBuilder
   title='Radii'
-  blurb='Radii are used to soften the edges of shapes.'
+  blurb='The following radii are used to soften the edges of shapes. These are often used on cards and other surfaces.'
   components={[]}
   tokenMap={pickBy(TOKENS, (value, key) => includes(key, 'borderRadius'))}
   sassdocId='radii'

@@ -31,13 +31,13 @@ const components = [
     title: 'Baseline grid (aka vertical rhythm)',
     blurb: [
       <BpkParagraph>
-        We use a baseline grid to provide consistent vertical rhythm to our designs. A baseline grid is an underlying
-        structure that helps guide the vertical spacing of a design. Just like using columns for laying out elements
-        horizontally, the baseline grid is a way to help you make decisions and build consistency into a layout.
+        Backpack uses a baseline grid to provide consistent vertical rhythm. A baseline grid is an underlying structure
+        that helps guide the vertical spacing of a design. Just like using columns for laying out elements horizontally,
+        the baseline grid is a way to help you make decisions and build consistency into a layout.
       </BpkParagraph>,
       <BpkParagraph>
-        Our baseline grid is set to .375rem (6px) increments, with an optimised font-size, line-height and spacing that
-        align to the grid.
+        Backpack’s baseline grid is set to .375rem (6px) increments, with an optimised font-size, line-height and
+        spacing that align to the grid.
       </BpkParagraph>,
       <BpkParagraph>You can preview this by switching on the grid at the bottom of the page.</BpkParagraph>
     ],
@@ -60,12 +60,35 @@ const components = [
     title: 'Horizontal grid',
     blurb: [
       <BpkParagraph>
-        Backpack uses a 12 column responsive grid to compose and layout Organisms. It works in conjunction with
-        the breakpoints listed above and can be used to position content differently based on these viewports by
-        providing widths and offsets.
+        Backpack uses a 12 column responsive grid to compose and layout Organisms. At its core are three things:
+        containers, rows and columns. Containers are used to encapsulate the entire layout (all rows). Rows are used to
+        act as container to columns, and columns are used to contain content.
       </BpkParagraph>,
       <BpkParagraph>
-        <BpkRouterLink to={routes.GRID_DEMO}>View demo.</BpkRouterLink>
+        <strong>Columns</strong>
+      </BpkParagraph>,
+      <BpkParagraph>
+        The grid makes use of 12 percentage based columns, which means your layouts will scale no matter the browser
+        size. Columns are separated by fixed width gutters and margins.
+      </BpkParagraph>,
+      <BpkParagraph>
+        <BpkRouterLink to={routes.GRID_COLUMN_DEMO}>View demo.</BpkRouterLink>
+      </BpkParagraph>,
+      <BpkParagraph>
+        <strong>Offsets</strong>
+      </BpkParagraph>,
+      <BpkParagraph>
+        Offsets allow you to shift columns to the right. Depending on their size, columns can be offset by 1 through 11.
+      </BpkParagraph>,
+      <BpkParagraph>
+        <BpkRouterLink to={routes.GRID_COLUMN_DEMO}>View demo.</BpkRouterLink>
+      </BpkParagraph>,
+      <BpkParagraph>
+        <strong>Responsive behaviour</strong>
+      </BpkParagraph>,
+      <BpkParagraph>
+        The grid works in conjunction with the breakpoints listed above and can be used to position content differently
+        based on these viewports by specifying different widths and offsets.
       </BpkParagraph>
     ],
     examples: [],
