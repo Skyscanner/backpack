@@ -11,6 +11,7 @@ import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkContentContainer from 'bpk-component-content-container'
 import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
 
+import SassdocLink from './../../components/SassdocLink'
 import PresentationBlock from './../../components/PresentationBlock'
 import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper'
 
@@ -39,7 +40,10 @@ const ComponentExample = (component) => {
 
   const tokenMap = component.tokenMap ? toTokenTable(component.tokenMap) : null
 
-  const sassdocLink = component.sassdocId ? toSassdocLink(component.sassdocId) : null
+  const sassdocLink = component.sassdocId ? toSassdocLink({
+    sassdocId: component.sassdocId,
+    category: component.title
+  }) : null
 
   return [ heading, blurb, examples, readme, tokenMap, sassdocLink ]
 }
@@ -83,14 +87,7 @@ const toTokenTable = (tokens) => (
   </BpkTable>
 )
 
-const toSassdocLink = (sassdocId) => (
-  <BpkParagraph>
-    <em>
-      Looking for Sass variables and mixins? Check
-      out <BpkLink href={`/sassdoc/#${sassdocId}`} blank>Backpack's Sassdoc</BpkLink>.
-    </em>
-  </BpkParagraph>
-)
+const toSassdocLink = (props) => <SassdocLink sassdocId={props.sassdocId} category={props.category} />
 
 const DocsPageBuilder = (props) => (
   <BpkContentContainer>
@@ -106,7 +103,10 @@ const DocsPageBuilder = (props) => (
     }
     {props.tokenMap ? toTokenTable(props.tokenMap) : null}
     {flatten(props.customSections.map(CustomSection))}
-    {props.sassdocId ? toSassdocLink(props.sassdocId) : null}
+    {props.sassdocId ? toSassdocLink({
+      sassdocId: props.sassdocId,
+      category: props.title
+    }) : null}
   </BpkContentContainer>
 )
 
