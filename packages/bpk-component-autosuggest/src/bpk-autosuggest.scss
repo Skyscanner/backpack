@@ -1,53 +1,56 @@
 @import '~bpk-mixins/index';
 
 .bpk-autosuggest {
-
   &__container--open {
     position: relative;
   }
 
   &__input {
-    @include bpk-input;
     outline: 0;
+
+    @include bpk-input;
   }
 
   &__suggestions-container {
     position: absolute;
     top: $bpk-input-height + $bpk-spacing-sm;
-    background-color: $bpk-color-white;
-    padding: none;
-
-    @include bpk-border-radius-sm;
-    @include bpk-box-shadow-xl;
-
     width: 100%;
 
-    &:after {
+    &::after {
+      position: absolute;
       bottom: 100%;
       left: 50%;
-      border: solid transparent;
       content: ' ';
-      height: 0;
       width: 0;
-      position: absolute;
-      pointer-events: none;
-      border-bottom-color: $bpk-color-white;
-      border-width: $bpk-spacing-sm;
+      height: 0;
       margin-left: -$bpk-spacing-sm;
+      border: solid transparent;
+      border-width: $bpk-spacing-sm;
+      border-bottom-color: $bpk-color-white;
+      pointer-events: none;
     }
   }
 
   &__suggestions-list {
+    margin: 0;
     padding-left: 0;
     list-style: none;
-    margin: 0;
+    background-color: $bpk-color-white;
+    overflow: hidden;
+
+    @include bpk-border-radius-sm;
+    @include bpk-box-shadow-xl;
   }
 
   &__suggestion {
-    @include bpk-text-base;
-    color: $bpk-color-gray-700;
     padding: $bpk-spacing-sm;
-    box-shadow: 0 1px 0 0 $bpk-color-gray-50;
+    color: $bpk-color-gray-700;
+
+    @include bpk-text-base;
+
+    &:not(:last-child) {
+      box-shadow: 0 1px 0 0 $bpk-color-gray-50;
+    }
 
     &:active {
       background-color: $bpk-color-gray-100;
@@ -57,5 +60,4 @@
   &__suggestion--focused {
     background-color: $bpk-color-gray-50;
   }
-
 }
