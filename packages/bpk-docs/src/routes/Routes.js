@@ -25,7 +25,7 @@ import LogosPage from './../pages/LogosPage'
 import FormsPage from './../pages/FormsPage'
 
 import DownloadsPage from './../pages/DownloadsPage'
-import GridDemoPage from './../pages/GridDemoPage'
+import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages'
 
 const Routes = (
   <Route path={ROUTES.HOME} component={DefaultLayout}>
@@ -60,8 +60,8 @@ const Routes = (
       </Route>
     </Route>
     <Route path={ROUTES.DOWNLOADS} component={DownloadsPage} />
-    <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridDemoPage} />
-    <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridDemoPage} />
+    <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridColumnDemoPage} />
+    <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridOffsetDemoPage} />
   </Route>
 )
 

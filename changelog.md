@@ -3,8 +3,10 @@
 ## UNRELEASED
 
 **Changed**
-- bpk-content-container: no longer applies styling to bare html by
+- bpk-component-content-container: no longer applies styling to bare html by
   default, instead consumers can opt in using `bareHtml` prop
+- bpk-component-grid: added a `display: block;` to columns to override any `display: none;`'s as a result of setting 
+  width to 12
 - bpk-mixins: reflects the above change too
 - bpk-content-container: nested content containers have bottom margin
 - bpk-tokens: re-categorised some tokens for typesetting 
