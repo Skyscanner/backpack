@@ -8,13 +8,14 @@ import DocsPageBuilder from './../../components/DocsPageBuilder'
 
 const blurb = [
   <BpkParagraph>
-    We have a few different versions of our logo which can be used in different situations. In general, all logos
-    should be used in white, reversed out of a colored background. When it’s not possible to reverse the logo out
-    of a color, the preferred usage is using blue-500 or gray-500. No other colors should be used.
+    There are a few different versions of the Skyscanner logo available, which can be used in depending upon the
+    situation. In general, all logos should be used in white, reversed out of a colored background. When it’s not
+    possible to reverse the logo out of a color, the preferred usage is using Blue-500 or Gray-500. No other colors
+    should be used.
   </BpkParagraph>,
   <BpkParagraph>
-    As with using any logo, please ensure there’s sufficient clear space surrounding it and consider color,
-    contrast, and legibility to ensure it’s shown at its best.
+    As with using any logo, please ensure there’s sufficient clear space surrounding it and consider color, contrast,
+    and legibility to ensure it’s shown at its best.
   </BpkParagraph>
 ]
 
@@ -23,7 +24,7 @@ const components = [
     id: 'inline',
     title: 'Inline',
     examples: [
-      <BpkLogo logo='inline' />
+      <BpkLogo logo='inline'/>
     ],
     blurb: 'This is the preferred usage of the logo.'
   },
@@ -31,7 +32,7 @@ const components = [
     id: 'stacked',
     title: 'Stacked',
     examples: [
-      <BpkLogo logo='stacked' />
+      <BpkLogo logo='stacked'/>
     ],
     blurb: 'This version should only be used when required to be used at small sizes, usually confined to a square e.g. a social media profile..'
   },
@@ -39,7 +40,7 @@ const components = [
     id: 'cloud',
     title: 'Cloud',
     examples: [
-      <BpkLogo logo='cloud' />
+      <BpkLogo logo='cloud'/>
     ],
     blurb: 'This version should be used sparingly for things such as App icons and favicons.'
   },
@@ -47,7 +48,7 @@ const components = [
     id: 'tianxun',
     title: 'Tianxun',
     examples: [
-      <BpkLogo logo='tianxun' />
+      <BpkLogo logo='tianxun'/>
     ],
     blurb: 'This is the preferred usage for Skyscanner in China.'
   },
@@ -55,7 +56,7 @@ const components = [
     id: 'tianxun-stacked',
     title: 'Tianxun stacked',
     examples: [
-      <BpkLogo logo='tianxun-stacked' />
+      <BpkLogo logo='tianxun-stacked'/>
     ],
     blurb: 'Similar to the stacked version of the Skyscanner logo, this version should only be used at small sizes when constrained to a square e.g. social media profile.'
   }
@@ -67,7 +68,7 @@ const customSections = [
     title: 'Localised Product Logos',
     content: [
       <BpkParagraph>
-        We also maintain specific logos for our product verticals, for example: ‘Skyscanner Flights’,
+        Skyscanner also maintains specific logos for our product verticals, for example: ‘Skyscanner Flights’,
         ‘Skyscanner Hotels’ etc. These are not widely used on our product and as such are not maintained in Backpack.
         Please contact the <BpkLink href='mailto: creative@skyscanner.net'>creative team </BpkLink> if you require
         these.
