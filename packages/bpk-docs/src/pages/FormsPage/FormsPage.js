@@ -13,12 +13,10 @@ const components = [
   {
     id: 'inputs',
     title: 'Inputs',
-    blurb: `When asking a user to input text, please be sure to use the appropriate type of input. Specifying email or 
-    number will ensure the correct keyboard is displayed (on supported devices) and also adds semantic meaning to the 
-    input.`,
+    blurb: `When asking a user to input text, please be sure to use the appropriate type of input. Specifying email or number will ensure the correct keyboard is displayed (on supported devices) and also adds semantic meaning to the input.`,
     examples: [
       <form className='bpkdocs-forms-page__form'>
-        <BpkLabel label='Input' htmlFor='input' />
+        <BpkLabel label='Input' htmlFor='input'/>
         <BpkInput
           id='input'
           name='input'
@@ -27,7 +25,7 @@ const components = [
         />
       </form>,
       <form className='bpkdocs-forms-page__form'>
-        <BpkLabel label='Input (placeholder)' htmlFor='input_placeholder' />
+        <BpkLabel label='Input (placeholder)' htmlFor='input_placeholder'/>
         <BpkInput
           id='input_placeholder'
           name='input_placeholder'
@@ -37,7 +35,7 @@ const components = [
         />
       </form>,
       <form className='bpkdocs-forms-page__form'>
-        <BpkLabel label='Valid input' htmlFor='input_valid' />
+        <BpkLabel label='Valid input' htmlFor='input_valid'/>
         <BpkInput
           id='input_valid'
           name='input_valid'
@@ -47,7 +45,7 @@ const components = [
         />
       </form>,
       <form className='bpkdocs-forms-page__form'>
-        <BpkLabel label='Invalid input' htmlFor='input_invalid' />
+        <BpkLabel label='Invalid input' htmlFor='input_invalid'/>
         <BpkInput
           id='input_invalid'
           name='input_invalid'
@@ -57,7 +55,7 @@ const components = [
         />
       </form>,
       <form className='bpkdocs-forms-page__form'>
-        <BpkLabel label='Disabled input' htmlFor='input_disabled' />
+        <BpkLabel label='Disabled input' htmlFor='input_disabled'/>
         <BpkInput
           id='input_disabled'
           name='input_disabled'
@@ -67,7 +65,7 @@ const components = [
         />
       </form>,
       <form className='bpkdocs-forms-page__form'>
-        <BpkLabel label='Email input' htmlFor='input_email' />
+        <BpkLabel label='Email input' htmlFor='input_email'/>
         <BpkInput
           type={INPUT_TYPES.EMAIL}
           id='input_email'
@@ -77,7 +75,7 @@ const components = [
         />
       </form>,
       <form className='bpkdocs-forms-page__form'>
-        <BpkLabel label='Number input' htmlFor='input_number' />
+        <BpkLabel label='Number input' htmlFor='input_number'/>
         <BpkInput
           type={INPUT_TYPES.NUMBER}
           id='input_number'
@@ -87,7 +85,7 @@ const components = [
         />
       </form>,
       <form className='bpkdocs-forms-page__form'>
-        <BpkLabel label='Password input' htmlFor='input_password' />
+        <BpkLabel label='Password input' htmlFor='input_password'/>
         <BpkInput
           type={INPUT_TYPES.PASSWORD}
           id='input_password'
@@ -97,7 +95,7 @@ const components = [
         />
       </form>,
       <form className='bpkdocs-forms-page__form'>
-        <BpkLabel label='Telephone input' htmlFor='input_telephone' />
+        <BpkLabel label='Telephone input' htmlFor='input_telephone'/>
         <BpkInput
           type={INPUT_TYPES.TEL}
           id='input_telephone'
@@ -111,10 +109,10 @@ const components = [
   },
   {
     id: 'selects',
-    title: 'Selects',
+    title: 'Selects (aka Dropdowns)',
     examples: [
       <form className='bpkdocs-forms-page__form'>
-        <BpkLabel label='Select' htmlFor='select' />
+        <BpkLabel label='Select' htmlFor='select'/>
         <BpkSelect
           id='select'
           name='select'
@@ -129,7 +127,7 @@ const components = [
         />
       </form>,
       <form className='bpkdocs-forms-page__form'>
-        <BpkLabel label='Invalid select' htmlFor='select_invalid' />
+        <BpkLabel label='Invalid select' htmlFor='select_invalid'/>
         <BpkSelect
           id='select_invalid'
           name='select_invalid'
@@ -146,7 +144,7 @@ const components = [
         />
       </form>,
       <form className='bpkdocs-forms-page__form'>
-        <BpkLabel label='Disabled select' htmlFor='select_disabled' />
+        <BpkLabel label='Disabled select' htmlFor='select_disabled'/>
         <BpkSelect
           id='select_disabled'
           name='select_disabled'
@@ -167,6 +165,7 @@ const components = [
   {
     id: 'checkboxes',
     title: 'Checkboxes',
+    blurb: 'Backpack checkboxes override the browser default styles in most modern browsers. In some older browsers such as Firefox and Internet explorer they simply fall back to the browser default.',
     examples: [
       <form className='bpkdocs-forms-page__form'>
         <BpkCheckbox
@@ -197,6 +196,7 @@ const components = [
   {
     id: 'radios',
     title: 'Radio buttons',
+    blurb: 'Like checkboxes, Backpack overrides the browser default styles for radio buttons. In some older browsers such as Firefox and Internet explorer they simply fall back to the browser default.',
     examples: [
       <form className='bpkdocs-forms-page__form'>
         <BpkRadio
@@ -227,7 +227,7 @@ const components = [
   {
     id: 'labels',
     title: 'Labels',
-    blurb: <em>Used in the examples above for inputs & selects.</em>,
+    blurb: 'Labels should always be used with form elements to provide context to the user. Relying on placeholders alone is not good practise. These can be seen in the examples above for inputs & selects.',
     examples: [],
     readme: require('raw!bpk-component-label/readme.md')
   }
