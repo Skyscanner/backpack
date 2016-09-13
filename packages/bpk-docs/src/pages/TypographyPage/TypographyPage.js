@@ -14,6 +14,7 @@ const components = [
   {
     id: 'headings',
     title: 'Headings',
+    blurb: 'Backpack uses six heading types which combine font-sizes and line heights. Headings used within a content container have and margins automatically applied.',
     examples: [
       <BpkHeading level='h1'>Heading 1</BpkHeading>,
       <BpkHeading level='h2'>Heading 2</BpkHeading>,
@@ -27,6 +28,7 @@ const components = [
   {
     id: 'paragraphs',
     title: 'Paragaphs',
+    blurb: 'The default paragraph style has been kept relatively minimal and uses the base font-size and line heights to maximise readability.',
     examples: [
       <BpkParagraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam nemo umquam voluptatem appellavit, appellat;
@@ -46,6 +48,7 @@ const components = [
   {
     id: 'links',
     title: 'Links',
+    blurb: 'In Backpack, links are colored Blue-500. In general text which is colored Blue-500 should be clickable, however not all things that are clickable need to be colored Blue-500.',
     examples: [
       <BpkLink href='#'>Link 1</BpkLink>,
       ' ',
@@ -141,7 +144,7 @@ ReactDOM.render(<App />, ...);`}
 
 const TypographyPage = () => <DocsPageBuilder
   title='Typography'
-  blurb='Headings, paragraphs, links, lists and more.'
+  blurb='Backpack has a number of components to help Typography including Headings, paragraphs, links, lists and more.'
   components={components}
   sassdocId='typography'
 />
