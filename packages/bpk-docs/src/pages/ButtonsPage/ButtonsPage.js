@@ -3,6 +3,7 @@ import React from 'react'
 import BpkIcon from 'bpk-component-icon'
 import BpkButton from 'bpk-component-button'
 import BpkSpinner from 'bpk-component-spinner'
+import BpkParagraph from 'bpk-component-paragraph'
 import TOKENS from 'bpk-tokens/tokens/base.common'
 
 import DocsPageBuilder from './../../components/DocsPageBuilder'
@@ -11,23 +12,16 @@ const components = [
   {
     id: 'primary',
     title: 'Primary',
+    blurb: 'The Backpack primary button is available in two sizes and comes with styles for hover, active, disabled and selected states.',
     examples: [
       <BpkButton>Primary</BpkButton>,
       ' ',
-      <BpkButton href='#'>Anchor</BpkButton>,
-      ' ',
       <BpkButton selected>Selected</BpkButton>,
       ' ',
-      <BpkButton disabled>Disabled</BpkButton>
-    ]
-  },
-  {
-    id: 'large-primary',
-    title: 'Large primary',
-    examples: [
+      <BpkButton disabled>Disabled</BpkButton>,
+      <br />,
+      <br />,
       <BpkButton large>Primary</BpkButton>,
-      ' ',
-      <BpkButton large href='#'>Anchor</BpkButton>,
       ' ',
       <BpkButton large selected>Selected</BpkButton>,
       ' ',
@@ -37,23 +31,16 @@ const components = [
   {
     id: 'secondary',
     title: 'Secondary',
+    blurb: 'Similar to the primary button, the secondary version is available in two sizes and comes with styles for hover, active, disabled and selected states.',
     examples: [
       <BpkButton secondary>Secondary</BpkButton>,
       ' ',
-      <BpkButton href='#' secondary>Anchor</BpkButton>,
-      ' ',
       <BpkButton secondary selected>Selected</BpkButton>,
       ' ',
-      <BpkButton secondary disabled>Disabled</BpkButton>
-    ]
-  },
-  {
-    id: 'large-secondary',
-    title: 'Large secondary',
-    examples: [
+      <BpkButton secondary disabled>Disabled</BpkButton>,
+      <br />,
+      <br />,
       <BpkButton large secondary>Secondary</BpkButton>,
-      ' ',
-      <BpkButton href='#' large secondary>Anchor</BpkButton>,
       ' ',
       <BpkButton large secondary selected>Selected</BpkButton>,
       ' ',
@@ -63,6 +50,7 @@ const components = [
   {
     id: 'icons-and-spinners',
     title: 'Icons & spinners',
+    blurb: 'All buttons support nesting icons and spinners, which is useful for improving affordance or indicate loading.',
     examples: [
       <BpkButton>
         Primary <BpkIcon icon='long-arrow-right-alt' color={TOKENS.colorWhite} alignToButton />
@@ -71,7 +59,8 @@ const components = [
       <BpkButton>
         Primary <BpkSpinner color={TOKENS.colorWhite} alignToButton />
       </BpkButton>,
-      ' ',
+      <br />,
+      <br />,
       <BpkButton large>
         Primary <BpkIcon large icon='long-arrow-right-alt' color={TOKENS.colorWhite} alignToButton />
       </BpkButton>,
@@ -82,23 +71,16 @@ const components = [
     ]
   },
   {
-    id: 'link',
-    title: 'Link',
+    id: 'link-buttons',
+    title: 'Link buttons',
+    blurb: 'Link buttons follow the same style as links and are used as a tertiary means of triggering actions. Like all other buttons, these are available in two sizes and have hover, active and disabled states.',
     examples: [
       <BpkButton link>Link</BpkButton>,
       ' ',
-      <BpkButton href='#' link>Anchor</BpkButton>,
-      ' ',
-      <BpkButton link disabled>Disabled</BpkButton>
-    ]
-  },
-  {
-    id: 'large-link',
-    title: 'Large link',
-    examples: [
+      <BpkButton link disabled>Disabled</BpkButton>,
+      <br />,
+      <br />,
       <BpkButton link large>Link</BpkButton>,
-      ' ',
-      <BpkButton href='#' link large>Anchor</BpkButton>,
       ' ',
       <BpkButton link large disabled>Disabled</BpkButton>
     ]
@@ -107,7 +89,12 @@ const components = [
 
 const ButtonsPage = () => <DocsPageBuilder
   title='Buttons'
-  blurb='Primary and secondary buttons, both with a selected state and a disabled state. Link style buttons which align nicely alongside other buttons.'
+  blurb={[
+    <BpkParagraph>
+      On this page you’ll find examples and information on how to use the button component. If you provide an href, an
+      anchor tag is rendered instead.
+    </BpkParagraph>
+  ]}
   components={components}
   readme={require('raw!bpk-component-button/readme.md')}
   sassdocId='buttons'

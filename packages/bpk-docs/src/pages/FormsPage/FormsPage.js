@@ -109,7 +109,8 @@ const components = [
   },
   {
     id: 'selects',
-    title: 'Selects (aka Dropdowns)',
+    title: 'Selects (aka dropdowns)',
+    blurb: 'Backpack selects override the default styles in most modern browsers. In some older browsers they simply fall back to the browser default.',
     examples: [
       <form className='bpkdocs-forms-page__form'>
         <BpkLabel label='Select' htmlFor='select' />
@@ -165,7 +166,7 @@ const components = [
   {
     id: 'checkboxes',
     title: 'Checkboxes',
-    blurb: 'Backpack checkboxes override the browser default styles in most modern browsers. In some older browsers such as Firefox and Internet explorer they simply fall back to the browser default.',
+    blurb: 'Similar to selects, checkboxes override the default styles in most modern browsers. In some older browsers they simply fall back to the browser default.',
     examples: [
       <form className='bpkdocs-forms-page__form'>
         <BpkCheckbox
@@ -196,7 +197,7 @@ const components = [
   {
     id: 'radios',
     title: 'Radio buttons',
-    blurb: 'Like checkboxes, Backpack overrides the browser default styles for radio buttons. In some older browsers such as Firefox and Internet explorer they simply fall back to the browser default.',
+    blurb: 'Again, Backpack overrides the browser default styles for radio buttons. In some older browsers they simply fall back to the browser default.',
     examples: [
       <form className='bpkdocs-forms-page__form'>
         <BpkRadio
@@ -235,7 +236,7 @@ const components = [
 
 const FormsPage = () => <DocsPageBuilder
   title='Forms'
-  blurb='Here you’ll find a range of common inputs, select menus and checkboxes/radio buttons for capturing user input. You’ll also find labels, fieldsets and form components.'
+  blurb='Here you’ll find a range of common inputs for capturing user data.'
   components={components}
   sassdocId='forms'
 />

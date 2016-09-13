@@ -1,7 +1,6 @@
 import React from 'react'
 
 import BpkIcon from 'bpk-component-icon'
-import BpkLink from 'bpk-component-link'
 import BpkParagraph from 'bpk-component-paragraph'
 import BpkRouterLink from 'bpk-component-router-link'
 
@@ -14,7 +13,7 @@ const icons = req.keys().map((key) => key.replace('./', '').replace('.svg', ''))
 
 const blurb = [
   <BpkParagraph>
-    Backpack icons are beautifully crafted for use in across Skyscanner’s Web, App and marketing projects.
+    Backpack icons are beautifully crafted for use in across Skyscanner’s web, app and marketing projects.
   </BpkParagraph>,
   <BpkParagraph>
     Icons are provided in two sizes: small (18px) and large (24px). Both sets are pixel-snapped for clarity at the
@@ -68,8 +67,7 @@ const customSections = [
     content: [
       <BpkParagraph>
         Backpack has taken inspiration from Google’s Material Design System, leaning on their icon grid. You can find
-        our
-        template <BpkLink href='#'>here</BpkLink>.
+        the template <BpkRouterLink to={ROUTES.DOWNLOADS}>here</BpkRouterLink>.
       </BpkParagraph>,
       <BpkParagraph>
         To maintain consistency when creating new icons, you should make use of bold, filled shapes and thick strokes.
