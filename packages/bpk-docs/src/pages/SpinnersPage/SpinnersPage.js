@@ -7,35 +7,31 @@ import DocsPageBuilder from './../../components/DocsPageBuilder'
 
 const blurb = [
   <BpkParagraph>
-    We use spinners to indicate that a part of the product is loading or performing a task. These are available in 3
-    sizes, small (18px), large (24px) and extra-large (48px) in blue, white and gray.
+    Spinners are used to to indicate that a part of the product is loading or performing a task. These are available in
+    3 sizes, small (18px), large (24px) and extra-large (48px).
   </BpkParagraph>,
-  <BpkParagraph>
-    Like everything in Backpack, we use rems to size these to ensure they scale inline with the user’s base
-    stylesheet. More info on why we use rems can be found here.
-  </BpkParagraph>
 ]
 
 const components = [
   {
     id: 'small',
-    title: 'Small spinners',
+    title: 'Small',
     examples: [
       <BpkSpinner />
     ]
   },
   {
     id: 'large',
-    title: 'Large spinners',
+    title: 'Large',
     examples: [
-      <BpkSpinner large />
+      <BpkSpinner large/>
     ]
   },
   {
     id: 'extra-large',
-    title: 'Extra large spinners',
+    title: 'Extra large',
     examples: [
-      <BpkSpinner extraLarge />
+      <BpkSpinner extraLarge/>
     ]
   }
 ]
