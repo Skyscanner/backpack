@@ -1,5 +1,20 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Changed:**
+- bpk-component-autosuggest:
+  - Updated to `^7.0.1` of `react-autosuggest`
+  - Removed padding from suggestion containers with the idea
+  
+- bpk-tokens:
+  - Removed automatic pluralisation of SCSS category names. This affects all token formats except 
+    SCSS. Examples include: `animation` -> `animations`, `box-shadow` -> `box-shadows` etc
+
+**Added:**
+- bpk-component-autosuggest:
+  - Added `BpkAutosuggestSuggestion` component
+
 ## 2016-11-02 - Links can now be white
 
 **Added:**

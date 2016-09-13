@@ -2,6 +2,9 @@ module.exports = {
   durationXs: "50ms",
   durationSm: "200ms",
   durationBase: "400ms",
+  autosuggestListBackgroundColor: "rgb(255, 255, 255)",
+  autosuggestListItemActiveBackgroundColor: "rgb(230, 228, 235)",
+  autosuggestListItemFocusedBackgroundColor: "rgb(243, 242, 245)",
   borderRadiusXs: ".1875rem",
   borderRadiusSm: ".375rem",
   borderRadiusPill: "5rem",
@@ -259,6 +262,7 @@ module.exports = {
   linkWhiteColor: "rgb(255, 255, 255)",
   linkWhiteHoverColor: "rgb(255, 255, 255)",
   linkWhiteActiveColor: "rgb(230, 228, 235)",
+  zindexAutosuggest: "900",
   zindexModalScrim: "1000",
   zindexModal: "1100"
 };

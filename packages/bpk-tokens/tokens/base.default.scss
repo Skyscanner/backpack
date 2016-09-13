@@ -4,6 +4,12 @@ $bpk-duration-xs: 50ms !default;
 $bpk-duration-sm: 200ms !default;
 /// @group animations
 $bpk-duration-base: 400ms !default;
+/// @group autosuggest
+$bpk-autosuggest-list-background-color: rgb(255, 255, 255) !default;
+/// @group autosuggest
+$bpk-autosuggest-list-item-active-background-color: rgb(230, 228, 235) !default;
+/// @group autosuggest
+$bpk-autosuggest-list-item-focused-background-color: rgb(243, 242, 245) !default;
 /// @group radii
 $bpk-border-radius-xs: .1875rem !default;
 /// @group radii
@@ -518,6 +524,8 @@ $bpk-link-white-color: rgb(255, 255, 255) !default;
 $bpk-link-white-hover-color: rgb(255, 255, 255) !default;
 /// @group text-colors
 $bpk-link-white-active-color: rgb(230, 228, 235) !default;
+/// @group z-indices
+$bpk-zindex-autosuggest: 900 !default;
 /// @group z-indices
 $bpk-zindex-modal-scrim: 1000 !default;
 /// @group z-indices

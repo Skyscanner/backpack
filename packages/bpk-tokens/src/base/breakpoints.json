@@ -3,7 +3,7 @@
     "./aliases.json"
   ],
   "global": {
-    "category": "breakpoint"
+    "category": "breakpoints"
   },
   "props": {
     "BREAKPOINT_MOBILE": {

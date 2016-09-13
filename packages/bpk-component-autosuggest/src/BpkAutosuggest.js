@@ -12,8 +12,8 @@ BpkAutosuggest.defaultProps = {
     input: 'bpk-autosuggest__input',
     suggestionsContainer: 'bpk-autosuggest__suggestions-container',
     suggestionsList: 'bpk-autosuggest__suggestions-list',
-    suggestion: 'bpk-autosuggest__suggestion',
-    suggestionFocused: 'bpk-autosuggest__suggestion--focused',
+    suggestion: 'bpk-autosuggest__suggestion-item',
+    suggestionFocused: 'bpk-autosuggest__suggestion-item--focused',
     sectionContainer: 'bpk-autosuggest__section-container',
     sectionTitle: 'bpk-autosuggest__section-title'
   }

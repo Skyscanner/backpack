@@ -29,6 +29,8 @@ import CardsPage from './../pages/CardsPage'
 import NotificationsPage from './../pages/NotificationsPage'
 import ModalsPage from './../pages/ModalsPage'
 
+import AutosuggestPage from './../pages/AutosuggestPage'
+
 import DownloadsPage from './../pages/DownloadsPage'
 import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages'
 
@@ -66,6 +68,7 @@ const Routes = (
       </Route>
       <Route path={ROUTES.ORGANISMS}>
         <IndexRedirect to={ROUTES.GETTING_STARTED} />
+        <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
       </Route>
     </Route>
     <Route path={ROUTES.DOWNLOADS} component={DownloadsPage} />

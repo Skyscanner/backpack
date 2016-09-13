@@ -14,6 +14,9 @@
   },
   "dependencies": {
     "bpk-mixins": "^6.1.0",
-    "react-autosuggest": "^6.0.3"
+    "react-autosuggest": "^7.0.1"
+  },
+  "devDependencies": {
+    "bpk-component-icon": "^1.1.12"
   }
 }

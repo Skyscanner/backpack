@@ -4,6 +4,12 @@ $bpk-duration-xs: 50ms;
 $bpk-duration-sm: 200ms;
 /// @group animations
 $bpk-duration-base: 400ms;
+/// @group autosuggest
+$bpk-autosuggest-list-background-color: rgb(255, 255, 255);
+/// @group autosuggest
+$bpk-autosuggest-list-item-active-background-color: rgb(230, 228, 235);
+/// @group autosuggest
+$bpk-autosuggest-list-item-focused-background-color: rgb(243, 242, 245);
 /// @group radii
 $bpk-border-radius-xs: .1875rem;
 /// @group radii
@@ -518,6 +524,8 @@ $bpk-link-white-color: rgb(255, 255, 255);
 $bpk-link-white-hover-color: rgb(255, 255, 255);
 /// @group text-colors
 $bpk-link-white-active-color: rgb(230, 228, 235);
+/// @group z-indices
+$bpk-zindex-autosuggest: 900;
 /// @group z-indices
 $bpk-zindex-modal-scrim: 1000;
 /// @group z-indices
