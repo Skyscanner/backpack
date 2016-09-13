@@ -20,6 +20,7 @@ npm install [package-name] --save
 
 | Component | Version |
 |--------|-------|
+| [`bpk-component-autosuggest`](/packages/bpk-component-autosuggest) | [![npm version](https://badge.fury.io/js/bpk-component-autosuggest.svg)](http://badge.fury.io/js/bpk-component-autosuggest) |
 | [`bpk-component-blockquote`](/packages/bpk-component-blockquote) | [![npm version](https://badge.fury.io/js/bpk-component-blockquote.svg)](http://badge.fury.io/js/bpk-component-blockquote) |
 | [`bpk-component-button`](/packages/bpk-component-button) | [![npm version](https://badge.fury.io/js/bpk-component-button.svg)](http://badge.fury.io/js/bpk-component-button) |
 | [`bpk-component-checkbox`](/packages/bpk-component-checkbox) | [![npm version](https://badge.fury.io/js/bpk-component-checkbox.svg)](http://badge.fury.io/js/bpk-component-checkbox) |
