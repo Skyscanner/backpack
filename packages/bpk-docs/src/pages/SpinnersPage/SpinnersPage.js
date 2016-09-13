@@ -9,7 +9,7 @@ const blurb = [
   <BpkParagraph>
     Spinners are used to to indicate that a part of the product is loading or performing a task. These are available in
     3 sizes, small (18px), large (24px) and extra-large (48px).
-  </BpkParagraph>,
+  </BpkParagraph>
 ]
 
 const components = [
@@ -24,14 +24,14 @@ const components = [
     id: 'large',
     title: 'Large',
     examples: [
-      <BpkSpinner large/>
+      <BpkSpinner large />
     ]
   },
   {
     id: 'extra-large',
     title: 'Extra large',
     examples: [
-      <BpkSpinner extraLarge/>
+      <BpkSpinner extraLarge />
     ]
   }
 ]

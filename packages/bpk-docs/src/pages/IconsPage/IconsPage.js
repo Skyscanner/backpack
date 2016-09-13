@@ -39,7 +39,7 @@ const components = [
       <ol className='bpkdocs-icons-page__icon-list'>
         {icons.map((icon) => (
           <li key={icon} title={icon} className='bpkdocs-icons-page__icon-list-item'>
-            <BpkIcon icon={icon}/>
+            <BpkIcon icon={icon} />
           </li>
         ))}
       </ol>
@@ -53,7 +53,7 @@ const components = [
       <ol className='bpkdocs-icons-page__icon-list'>
         {icons.map((icon) => (
           <li key={icon} title={icon} className='bpkdocs-icons-page__icon-list-item'>
-            <BpkIcon icon={icon} large/>
+            <BpkIcon icon={icon} large />
           </li>
         ))}
       </ol>

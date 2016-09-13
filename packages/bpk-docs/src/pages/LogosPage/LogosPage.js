@@ -24,7 +24,7 @@ const components = [
     id: 'inline',
     title: 'Inline',
     examples: [
-      <BpkLogo logo='inline'/>
+      <BpkLogo logo='inline' />
     ],
     blurb: 'This is the preferred usage of the logo.'
   },
@@ -32,7 +32,7 @@ const components = [
     id: 'stacked',
     title: 'Stacked',
     examples: [
-      <BpkLogo logo='stacked'/>
+      <BpkLogo logo='stacked' />
     ],
     blurb: 'This version should only be used when required to be used at small sizes, usually confined to a square e.g. a social media profile..'
   },
@@ -40,7 +40,7 @@ const components = [
     id: 'cloud',
     title: 'Cloud',
     examples: [
-      <BpkLogo logo='cloud'/>
+      <BpkLogo logo='cloud' />
     ],
     blurb: 'This version should be used sparingly for things such as App icons and favicons.'
   },
@@ -48,7 +48,7 @@ const components = [
     id: 'tianxun',
     title: 'Tianxun',
     examples: [
-      <BpkLogo logo='tianxun'/>
+      <BpkLogo logo='tianxun' />
     ],
     blurb: 'This is the preferred usage for Skyscanner in China.'
   },
@@ -56,7 +56,7 @@ const components = [
     id: 'tianxun-stacked',
     title: 'Tianxun stacked',
     examples: [
-      <BpkLogo logo='tianxun-stacked'/>
+      <BpkLogo logo='tianxun-stacked' />
     ],
     blurb: 'Similar to the stacked version of the Skyscanner logo, this version should only be used at small sizes when constrained to a square e.g. social media profile.'
   }
