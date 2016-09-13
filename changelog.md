@@ -3,13 +3,14 @@
 ## UNRELEASED
 
 **Changed**
-- bpk-component-content-container: no longer applies styling to bare html by
-  default, instead consumers can opt in using `bareHtml` prop
+- bpk-component-content-container & bpk-mixins: no longer applying styling to bare html in content container by
+  default, instead consumers can opt in using `bareHtml` prop or the `bpk-content-container--bare-html` mixin
+- bpk-component-content-container: nested content containers have bottom margin
+- bpk-tokens: re-categorised some tokens for typesetting 
+
+**Fixed**
 - bpk-component-grid: added a `display: block;` to columns to override any `display: none;`'s as a result of setting 
   width to 12
-- bpk-mixins: reflects the above change too
-- bpk-content-container: nested content containers have bottom margin
-- bpk-tokens: re-categorised some tokens for typesetting 
 
 ## 2016-09-07 - Box shadows!
 
