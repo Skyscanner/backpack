@@ -81,7 +81,7 @@ const components = [
         Offsets allow you to shift columns to the right. Depending on their size, columns can be offset by 1 through 11.
       </BpkParagraph>,
       <BpkParagraph>
-        <BpkRouterLink to={routes.GRID_COLUMN_DEMO}>View demo.</BpkRouterLink>
+        <BpkRouterLink to={routes.GRID_OFFSET_DEMO}>View demo.</BpkRouterLink>
       </BpkParagraph>,
       <BpkParagraph>
         <strong>Responsive behaviour</strong>

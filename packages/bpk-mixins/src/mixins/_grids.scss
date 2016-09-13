@@ -134,6 +134,7 @@
   }
 
   @else {
+    display: block;
     width: percentage($size / $bpk-grid-columns);
   }
 }
