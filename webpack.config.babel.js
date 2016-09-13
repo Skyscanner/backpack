@@ -19,7 +19,7 @@ const staticSiteGeneratorConfig = {
     ROUTES.BONDS,
     ROUTES.BASE_STYLESHEET,
     ROUTES.COLORS,
-    ROUTES.TYPE_SETTING,
+    ROUTES.TYPESETTING,
     ROUTES.RADII,
     ROUTES.SHADOWS,
     ROUTES.LAYOUT,
@@ -38,7 +38,8 @@ const staticSiteGeneratorConfig = {
 
     ROUTES.DOWNLOADS,
 
-    ROUTES.GRID_DEMO
+    ROUTES.GRID_COLUMN_DEMO,
+    ROUTES.GRID_OFFSET_DEMO
   ]
 }
 
