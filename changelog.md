@@ -2,19 +2,22 @@
 
 ## UNRELEASED
 
-**Changed**
+**Added:**
+- bpk-component-autosuggest: initial version to be tested by B2B widgets squad
+
+**Changed:**
 - bpk-component-content-container & bpk-mixins: no longer applying styling to bare html in content container by
   default, instead consumers can opt in using `bareHtml` prop or the `bpk-content-container--bare-html` mixin
 - bpk-component-content-container: nested content containers have bottom margin
 - bpk-tokens: re-categorised some tokens for typesetting 
 
-**Fixed**
+**Fixed:**
 - bpk-component-grid: added a `display: block;` to columns to override any `display: none;`'s as a result of setting 
   width to 12
 
 ## 2016-09-07 - Box shadows!
 
-**Added**
+**Added:**
 - bpk-mixins: 4.0.0 => 4.1.0
   - Added mixins for box shadows and border-radii
 - bpk-tokens: 11.0.0 => 11.1.0
