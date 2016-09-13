@@ -1,19 +1,50 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-09-13 - Content container changes & initial version of Autosuggest
 
 **Added:**
-- bpk-component-autosuggest: initial version to be tested by B2B widgets squad
+
+- bpk-component-autosuggest@0.0.2
+  - Initial version to be tested by B2B widgets squad
 
 **Changed:**
-- bpk-component-content-container & bpk-mixins: no longer applying styling to bare html in content container by
-  default, instead consumers can opt in using `bareHtml` prop or the `bpk-content-container--bare-html` mixin
-- bpk-component-content-container: nested content containers have bottom margin
-- bpk-tokens: re-categorised some tokens for typesetting 
+- bpk-component-content-container@1.0.0
+  - no longer applying styling to bare html in content container by default, instead consumers can opt in using 
+  `bareHtml` prop
+  - nested content containers have bottom margin
+- bpk-mixins@5.0.0
+  - no longer applying styling to bare html in content container by default, instead consumers can opt in using 
+  the `bpk-content-container--bare-html` mixin 
+- bpk-tokens@12.0.0 
+  - re-categorised some tokens for typesetting
 
 **Fixed:**
-- bpk-component-grid: added a `display: block;` to columns to override any `display: none;`'s as a result of setting 
-  width to 12
+- bpk-component-grid@0.0.3
+  - added a `display: block;` to columns to override any `display: none;`'s as a result of setting width to 12
+  
+**The following packages received a patch bump due to the dependency
+changes above:**  
+- bpk-component-blockquote@0.0.9
+- bpk-component-button@1.0.16
+- bpk-component-checkbox@0.0.6
+- bpk-component-code@0.0.9
+- bpk-component-grid-toggle@0.0.15
+- bpk-component-heading@1.0.16
+- bpk-component-icon@0.2.12
+- bpk-component-input@0.0.6
+- bpk-component-label@0.0.6
+- bpk-component-link@0.1.15
+- bpk-component-list@0.0.29
+- bpk-component-logo@0.2.8
+- bpk-component-paragraph@0.1.16
+- bpk-component-radio@0.0.6
+- bpk-component-router-link@0.1.15
+- bpk-component-select@0.0.6
+- bpk-component-spinner@0.2.12
+- bpk-component-table@0.0.29
+- bpk-docs@0.0.25
+- bpk-stylesheets@1.0.6
+- bpk-svgs@1.0.4
 
 ## 2016-09-07 - Box shadows!
 
