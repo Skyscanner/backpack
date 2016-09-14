@@ -6,7 +6,7 @@ exports[`BpkAutosuggest should render correctly 1`] = `
     aria-autocomplete="list"
     aria-expanded={false}
     aria-haspopup={false}
-    aria-owns="react-autowhatever-snapshot"
+    aria-owns="react-autowhatever-1"
     autoComplete="off"
     className="bpk-autosuggest__input"
     onBlur={[Function onBlur]}
@@ -18,6 +18,80 @@ exports[`BpkAutosuggest should render correctly 1`] = `
     value="Edinburgh" />
   <div
     className="bpk-autosuggest__suggestions-container"
-    id="react-autowhatever-snapshot" />
+    id="react-autowhatever-1" />
+</div>
+`;
+
+exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions" attribute 1`] = `
+<div
+  className="bpk-autosuggest__container bpk-autosuggest__container--open">
+  <input
+    aria-activedescendant={null}
+    aria-autocomplete="list"
+    aria-expanded={true}
+    aria-haspopup={true}
+    aria-owns="react-autowhatever-1"
+    autoComplete="off"
+    className="bpk-autosuggest__input"
+    onBlur={[Function onBlur]}
+    onChange={[Function onChange]}
+    onFocus={[Function onFocus]}
+    onKeyDown={[Function bound onKeyDown]}
+    role="combobox"
+    type="text"
+    value="Edinburgh" />
+  <div
+    className="bpk-autosuggest__suggestions-container"
+    id="react-autowhatever-1">
+    <ul
+      className="bpk-autosuggest__suggestions-list"
+      role="listbox">
+      <li
+        className="bpk-autosuggest__suggestion"
+        data-section-index={null}
+        data-suggestion-index={0}
+        id="react-autowhatever-1--item-0"
+        onClick={[Function bound onClick]}
+        onMouseDown={[Function bound onMouseDown]}
+        onMouseEnter={[Function bound onMouseEnter]}
+        onMouseLeave={[Function bound onMouseLeave]}
+        onTouchStart={[Function anonymous]}
+        role="option">
+        <span>
+          Edinburgh
+        </span>
+      </li>
+      <li
+        className="bpk-autosuggest__suggestion"
+        data-section-index={null}
+        data-suggestion-index={1}
+        id="react-autowhatever-1--item-1"
+        onClick={[Function bound onClick]}
+        onMouseDown={[Function bound onMouseDown]}
+        onMouseEnter={[Function bound onMouseEnter]}
+        onMouseLeave={[Function bound onMouseLeave]}
+        onTouchStart={[Function anonymous]}
+        role="option">
+        <span>
+          Glasgow
+        </span>
+      </li>
+      <li
+        className="bpk-autosuggest__suggestion"
+        data-section-index={null}
+        data-suggestion-index={2}
+        id="react-autowhatever-1--item-2"
+        onClick={[Function bound onClick]}
+        onMouseDown={[Function bound onMouseDown]}
+        onMouseEnter={[Function bound onMouseEnter]}
+        onMouseLeave={[Function bound onMouseLeave]}
+        onTouchStart={[Function anonymous]}
+        role="option">
+        <span>
+          London
+        </span>
+      </li>
+    </ul>
+  </div>
 </div>
 `;

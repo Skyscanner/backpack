@@ -17,8 +17,7 @@
         width: 0;
         height: 0;
         margin-left: -$bpk-spacing-sm;
-        border: solid transparent;
-        border-width: $bpk-spacing-sm;
+        border: solid $bpk-spacing-sm transparent;
         border-bottom-color: $bpk-color-white;
         pointer-events: none;
       }
@@ -26,8 +25,6 @@
   }
 
   &__input {
-    outline: 0;
-
     @include bpk-input;
   }
 
@@ -45,6 +42,7 @@
   &__suggestion {
     padding: $bpk-spacing-sm;
     color: $bpk-color-gray-700;
+    cursor: pointer;
 
     @include bpk-text-base;
 

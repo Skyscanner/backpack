@@ -3,25 +3,69 @@ import { storiesOf } from '@kadira/storybook'
 
 import BpkAutosuggest from './index'
 
-function getSuggestions () {
-  return [
-    {
-      display: 'London Heathrow',
-      code: 'LHR'
-    },
-    {
-      display: 'Edinburgh',
-      code: 'EDI'
-    },
-    {
-      display: 'Glasgow',
-      code: 'GLA'
-    }
-  ]
+const offices = [
+  {
+    name: 'Barcelona',
+    code: 'BCN'
+  },
+  {
+    name: 'Beijing',
+    code: 'Any'
+  },
+  {
+    name: 'Budapest',
+    code: 'BUD'
+  },
+  {
+    name: 'Edinburgh',
+    code: 'EDI'
+  },
+  {
+    name: 'Glasgow',
+    code: 'Any'
+  },
+  {
+    name: 'London',
+    code: 'Any'
+  },
+  {
+    name: 'Miami, FL',
+    code: 'Any'
+  },
+  {
+    name: 'Shenzhen Bao\'an International',
+    code: 'SZX'
+  },
+  {
+    name: 'Singapore Changi',
+    code: 'SIN'
+  },
+  {
+    name: 'Sofia',
+    code: 'SOF'
+  }
+]
+
+function getSuggestions (value) {
+  const inputValue = value.trim().toLowerCase()
+  const inputLength = inputValue.length
+
+  return inputLength === 0 ? [] : offices.filter(office =>
+    office.name.toLowerCase().indexOf(inputValue) !== -1
+  )
+}
+
+function getSuggestionValue (suggestion) {
+  return `${suggestion.name} (${suggestion.code})`
+}
+
+function renderSuggestion (suggestion) {
+  return (
+    <span>{getSuggestionValue(suggestion)}</span>
+  )
 }
 
 class AutosuggestExample extends React.Component {
-
   constructor () {
     super()
 
@@ -37,40 +81,38 @@ class AutosuggestExample extends React.Component {
     })
   }
 
+  onSuggestionsFetchRequested ({ value }) {
+    this.setState({
+      suggestions: getSuggestions(value)
+    })
+  }
+
   onSuggestionsClearRequested () {
     this.setState({
       suggestions: []
     })
   }
 
-  onSuggestionsFetchRequested () {
-    this.setState({
-      suggestions: getSuggestions()
-    })
-  }
-
-  getSuggestionValue (suggestion) {
-    return suggestion.display
-  }
-
-  renderSuggestion (suggestion) {
-    return <span>{suggestion.display} ({suggestion.code})</span>
-  }
-
   render () {
     const { value, suggestions } = this.state
 
-    return (<BpkAutosuggest
-      suggestions={suggestions}
-      value={value}
-      onSuggestionsFetchRequested={this.onSuggestionsFetchRequested.bind(this)}
-      onSuggestionsClearRequested={this.onSuggestionsClearRequested.bind(this)}
-      getSuggestionValue={this.getSuggestionValue.bind(this)}
-      renderSuggestion={this.renderSuggestion.bind(this)}
-      onChange={this.onChange.bind(this)}
-           />)
-  }
+    const inputProps = {
+      placeholder: 'Enter an office name',
+      value,
+      onChange: this.onChange.bind(this)
+    }
 
+    return (
+      <BpkAutosuggest
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested.bind(this)}
+        onSuggestionsClearRequested={this.onSuggestionsClearRequested.bind(this)}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        inputProps={inputProps}
+      />
+    )
+  }
 }
 
 storiesOf('bpk-component-autosuggest', module)
