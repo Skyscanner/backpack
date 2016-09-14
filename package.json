@@ -86,7 +86,10 @@
       "expect"
     ],
     "ignore": [
-      "/packages/bpk-tokens/tokens"
+      "/packages/bpk-tokens/tokens",
+      "/packages/bpk-svgs/dist",
+      "/packages/bpk-component-icon/sm",
+      "/packages/bpk-component-icon/lg"
     ]
   },
   "jest": {

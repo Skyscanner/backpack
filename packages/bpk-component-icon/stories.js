@@ -1,28 +1,34 @@
 import React from 'react'
 import { storiesOf } from '@kadira/storybook'
 
-import BpkIcon from './index'
+const requireSmallIcon = require.context('./sm', false, /\.js$/)
+const requireLargeIcon = require.context('./lg', false, /\.js$/)
 
-const req = require.context('raw!bpk-svgs/src/icons/sm', false, /\.svg$/)
-const icons = req.keys().map((key) => key.replace('./', '').replace('.svg', ''))
+const smallIcons = requireSmallIcon.keys()
+const largeIcons = requireSmallIcon.keys()
 
 storiesOf('bpk-component-icon', module)
   .add('Small icons', () => (
     <ul>
-      {icons.map((icon) => (
-        <li key={icon}>
-          <BpkIcon icon={icon} /> <span>{icon}</span>
-        </li>
-      ))}
-
+      {smallIcons.map((icon) => {
+        const Icon = requireSmallIcon(icon).default
+        return (
+          <li key={icon}>
+            <Icon /><span>{icon}</span>
+          </li>
+        )
+      })}
     </ul>
   ))
   .add('Large icons', () => (
     <ul>
-      {icons.map((icon) => (
-        <li key={icon}>
-          <BpkIcon icon={icon} large /> <span>{icon}</span>
-        </li>
-      ))}
+      {largeIcons.map((icon) => {
+        const Icon = requireLargeIcon(icon).default
+        return (
+          <li key={icon}>
+            <Icon /><span>{icon}</span>
+          </li>
+        )
+      })}
     </ul>
   ))

@@ -25,11 +25,11 @@ module.exports = function (grunt) {
 
     clean: {
       dist: [ 'dist' ],
-      src: [ '**/*.svg.react.js' ],
+      src: [ '**/*.svg.react.js' ]
     },
 
     svgmin: {
-      preserve_fill: {
+      elements: {
         options: {
           plugins: [
             { removeTitle: true },
@@ -53,12 +53,12 @@ module.exports = function (grunt) {
           }
         ]
       },
-      remove_fill: {
+      icons: {
         options: {
           plugins: [
             { removeTitle: true },
             { removeStyleElement: true },
-            { removeAttrs: { attrs: [ 'id', 'class', 'width', 'height', 'data-name', 'fill', 'fill-rule' ] } },
+            { removeAttrs: { attrs: [ 'id', 'class', 'data-name', 'fill', 'fill-rule' ] } },
             { removeEmptyContainers: true },
             { sortAttrs: true },
             { removeUselessDefs: true },
@@ -187,7 +187,7 @@ module.exports = function (grunt) {
             dest: 'dist/js/',
             src: '**/*.svg.react.js',
             rename: function (dest, src) {
-              return dest + src.replace('.svg.react.js', '.js');
+              return dest + src.replace('.svg.react.js', '.js')
             }
           }
         ]
