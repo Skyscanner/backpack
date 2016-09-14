@@ -1,34 +1,33 @@
 import React from 'react'
 import { storiesOf } from '@kadira/storybook'
 
-const requireSmallIcon = require.context('./sm', false, /\.js$/)
-const requireLargeIcon = require.context('./lg', false, /\.js$/)
+import TOKENS from 'bpk-tokens/tokens/base.common'
+import { BpkList, BpkListItem } from 'bpk-component-list'
 
-const smallIcons = requireSmallIcon.keys()
-const largeIcons = requireSmallIcon.keys()
+import { sm, lg } from './index'
 
 storiesOf('bpk-component-icon', module)
   .add('Small icons', () => (
-    <ul>
-      {smallIcons.map((icon) => {
-        const Icon = requireSmallIcon(icon).default
+    <BpkList>
+      {Object.keys(sm).map((icon) => {
+        const Icon = sm[ icon ]
         return (
-          <li key={icon}>
-            <Icon /><span>{icon}</span>
-          </li>
+          <BpkListItem key={icon}>
+            <Icon fill={TOKENS.colorGray700} /> <span>{icon}</span>
+          </BpkListItem>
         )
       })}
-    </ul>
+    </BpkList>
   ))
   .add('Large icons', () => (
-    <ul>
-      {largeIcons.map((icon) => {
-        const Icon = requireLargeIcon(icon).default
+    <BpkList>
+      {Object.keys(lg).map((icon) => {
+        const Icon = lg[ icon ]
         return (
-          <li key={icon}>
-            <Icon /><span>{icon}</span>
-          </li>
+          <BpkListItem key={icon}>
+            <Icon fill={TOKENS.colorGray700} /> <span>{icon}</span>
+          </BpkListItem>
         )
       })}
-    </ul>
+    </BpkList>
   ))

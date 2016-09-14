@@ -1,15 +1,14 @@
 import React from 'react'
+import keys from 'lodash/keys'
 
-import BpkIcon from 'bpk-component-icon'
+import icons from 'bpk-component-icon'
 import BpkParagraph from 'bpk-component-paragraph'
 import BpkRouterLink from 'bpk-component-router-link'
+import TOKENS from 'bpk-tokens/tokens/base.common'
 
 import './icons-page.scss'
 import * as ROUTES from './../../constants/routes'
 import DocsPageBuilder from './../../components/DocsPageBuilder'
-
-const req = require.context('raw!bpk-svgs/src/icons/sm', false, /\.svg$/)
-const icons = req.keys().map((key) => key.replace('./', '').replace('.svg', ''))
 
 const blurb = [
   <BpkParagraph>
@@ -36,11 +35,14 @@ const components = [
     blurb: 'In general, this should be the default for most applications:',
     examples: [
       <ol className='bpkdocs-icons-page__icon-list'>
-        {icons.map((icon) => (
-          <li key={icon} title={icon} className='bpkdocs-icons-page__icon-list-item'>
-            <BpkIcon icon={icon} />
-          </li>
-        ))}
+        {keys(icons.sm).map((icon) => {
+          const Icon = icons.sm[ icon ]
+          return (
+            <li key={icon} title={icon} className='bpkdocs-icons-page__icon-list-item'>
+              <Icon icon={icon} fill={TOKENS.colorGray700} />
+            </li>
+          )
+        })}
       </ol>
     ]
   },
@@ -50,12 +52,16 @@ const components = [
     blurb: 'The following can be used when you need something bigger. Please refrain from scaling these any further.',
     examples: [
       <ol className='bpkdocs-icons-page__icon-list'>
-        {icons.map((icon) => (
-          <li key={icon} title={icon} className='bpkdocs-icons-page__icon-list-item'>
-            <BpkIcon icon={icon} large />
-          </li>
-        ))}
+        {keys(icons.lg).map((icon) => {
+          const Icon = icons.lg[ icon ]
+          return (
+            <li key={icon} title={icon} className='bpkdocs-icons-page__icon-list-item'>
+              <Icon icon={icon} fill={TOKENS.colorGray700} />
+            </li>
+          )
+        })}
       </ol>
+
     ]
   }
 ]

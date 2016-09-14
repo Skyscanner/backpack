@@ -20,21 +20,10 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///
 /// @access private
 
-@mixin _bpk-icon-factory($map, $spacing, $icon: '') {
+@mixin _bpk-icon-factory($map, $icon) {
   content: '';
   display: inline-block;
-  width: $spacing;
-  height: $spacing;
-  background-size: $spacing $spacing;
-
-  @if $icon != "" {
-    background: url(map-get($map, $icon)) no-repeat;
-  }
-
-  > svg {
-    display: block;
-    height: 100%;
-  }
+  background: url(map-get($map, $icon)) no-repeat;
 }
 
 /// Button alignment utility.
@@ -62,8 +51,8 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///     @include bpk-icon-sm(flight-gray-500);
 ///   }
 
-@mixin bpk-icon-sm($icon: '') {
-  @include _bpk-icon-factory($bpk-icons-sm, $_small-svg-size, $icon);
+@mixin bpk-icon-sm($icon) {
+  @include _bpk-icon-factory($bpk-icons-sm, $icon);
 }
 
 /// Large icon.
@@ -75,8 +64,8 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///     @include bpk-icon-lg(flight-gray-500);
 ///   }
 
-@mixin bpk-icon-lg($icon: '') {
-  @include _bpk-icon-factory($bpk-icons-lg, $bpk-spacing-base, $icon);
+@mixin bpk-icon-lg($icon) {
+  @include _bpk-icon-factory($bpk-icons-lg, $icon);
 }
 
 /// Align to button. Modifies the bpk-icon-sm mixin.

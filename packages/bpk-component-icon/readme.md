@@ -1,6 +1,6 @@
 # bpk-component-icon
 
-> Backpack icon component.
+> Backpack icon components.
 
 ## Installation
 
@@ -8,28 +8,21 @@
 npm install bpk-component-icon --save
 ```
 
-> **Important:** This component needs Webpack's raw-loader as a devDependency:
-```sh
-npm install raw-loader --save-dev
-```
-
 ## Usage
 
 ```js
 import React from 'react'
-import BpkIcon from 'bpk-component-icon'
+import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight'
+import BpkLargeAccessibilityIcon from 'bpk-component-icon/lg/accessibility'
 import TOKENS from 'bpk-tokens/tokens/base.common'
 
 export default MyComponent = () => (
-  <BpkIcon icon='flight' color={TOKENS.colorBlue500} />
+  <div>
+    <BpkSmallFlightIcon fill={TOKENS.colorBlue500} />
+    <BpkLargeAccessibilityIcon fill={TOKENS.colorGray700} />
+  </div>
 )
 ```
 
-### Props
-
-| Property      | PropType | Required | Default Value       |
-| ------------- | -------- | -------- | ------------------- |
-| icon          | string   | true     | -                   |
-| large         | bool     | false    | -                   |
-| color         | string   | false    | TOKENS.colorGray700 |
-| alignToButton | bool     | false    | false               |
+> Because of the way that they are generated, all props that are passed through to these components are rendered to the 
+  DOM.
