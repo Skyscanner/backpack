@@ -1,5 +1,12 @@
 # Backpack changelog
 
+## 2016-09-14 - Autosuggest tweaks
+
+**Changed:**
+ - bpk-component-autosuggest@0.0.3
+  - Interface now conforms to `react-autosuggest` 100%
+  - Fixed bug with arrow displaying even when the suggestion were hidden
+
 ## 2016-09-13 - Content container changes & initial version of Autosuggest
 
 **Added:**
