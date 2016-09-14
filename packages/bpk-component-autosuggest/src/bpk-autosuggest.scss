@@ -3,32 +3,32 @@
 .bpk-autosuggest {
   &__container--open {
     position: relative;
+
+    .bpk-autosuggest__suggestions-container {
+      position: absolute;
+      top: $bpk-input-height + $bpk-spacing-sm;
+      width: 100%;
+
+      &::after {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        content: ' ';
+        width: 0;
+        height: 0;
+        margin-left: -$bpk-spacing-sm;
+        border: solid transparent;
+        border-width: $bpk-spacing-sm;
+        border-bottom-color: $bpk-color-white;
+        pointer-events: none;
+      }
+    }
   }
 
   &__input {
     outline: 0;
 
     @include bpk-input;
-  }
-
-  &__suggestions-container {
-    position: absolute;
-    top: $bpk-input-height + $bpk-spacing-sm;
-    width: 100%;
-
-    &::after {
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      content: ' ';
-      width: 0;
-      height: 0;
-      margin-left: -$bpk-spacing-sm;
-      border: solid transparent;
-      border-width: $bpk-spacing-sm;
-      border-bottom-color: $bpk-color-white;
-      pointer-events: none;
-    }
   }
 
   &__suggestions-list {
