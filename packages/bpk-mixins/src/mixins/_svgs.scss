@@ -105,20 +105,12 @@
 ///
 /// @access private
 
-@mixin _bpk-logo-factory($map, $logo: '', $height: '', $aspect-ratio: '') {
+@mixin _bpk-logo-factory($map, $logo, $height, $aspect-ratio) {
   content: '';
   display: inline-block;
-
-  @if $logo != '' and $height != '' and $aspect-ratio != '' {
-    width: $height / $aspect-ratio;
-    height: $height;
-    background: url(map-get($map, $logo)) no-repeat;
-  }
-
-  > svg {
-    display: block;
-    height: 100%;
-  }
+  width: $height / $aspect-ratio;
+  height: $height;
+  background: url(map-get($map, $logo)) no-repeat;
 }
 
 /// Cloud logo.
@@ -131,7 +123,7 @@
 ///     @include bpk-logo-cloud(cloud-blue-500);
 ///   }
 
-@mixin bpk-logo-cloud($logo: '', $height: $bpk-logo-cloud-default-height) {
+@mixin bpk-logo-cloud($logo, $height: $bpk-logo-cloud-default-height) {
   $aspect-ratio: (50 * $bpk-one-pixel-rem) / (82 * $bpk-one-pixel-rem);
 
   @include _bpk-logo-factory($bpk-logos-cloud, $logo, $height, $aspect-ratio);
@@ -147,7 +139,7 @@
 ///     @include bpk-logo-inline(inline-blue-500);
 ///   }
 
-@mixin bpk-logo-inline($logo: '', $height: $bpk-logo-inline-default-height) {
+@mixin bpk-logo-inline($logo, $height: $bpk-logo-inline-default-height) {
   $aspect-ratio: (56 * $bpk-one-pixel-rem) / (320 * $bpk-one-pixel-rem);
 
   @include _bpk-logo-factory($bpk-logos-inline, $logo, $height, $aspect-ratio);
@@ -163,7 +155,7 @@
 ///     @include bpk-logo-stacked(stacked-blue-500);
 ///   }
 
-@mixin bpk-logo-stacked($logo: '', $height: $bpk-logo-stacked-default-height) {
+@mixin bpk-logo-stacked($logo, $height: $bpk-logo-stacked-default-height) {
   $aspect-ratio: (159 * $bpk-one-pixel-rem) / (300 * $bpk-one-pixel-rem);
 
   @include _bpk-logo-factory($bpk-logos-stacked, $logo, $height, $aspect-ratio);
@@ -179,7 +171,7 @@
 ///     @include bpk-logo-tianxun(tianxun-blue-500);
 ///   }
 
-@mixin bpk-logo-tianxun($logo: '', $height: $bpk-logo-tianxun-default-height) {
+@mixin bpk-logo-tianxun($logo, $height: $bpk-logo-tianxun-default-height) {
   $aspect-ratio: (66 * $bpk-one-pixel-rem) / (210 * $bpk-one-pixel-rem);
 
   @include _bpk-logo-factory($bpk-logos-tianxun, $logo, $height, $aspect-ratio);
@@ -195,7 +187,7 @@
 ///     @include bpk-logo-tianxun-stacked(tianxun-stacked-blue-500);
 ///   }
 
-@mixin bpk-logo-tianxun-stacked($logo: '', $height: $bpk-logo-tianxun-stacked-default-height) {
+@mixin bpk-logo-tianxun-stacked($logo, $height: $bpk-logo-tianxun-stacked-default-height) {
   $aspect-ratio: (158 * $bpk-one-pixel-rem) / (118 * $bpk-one-pixel-rem);
 
   @include _bpk-logo-factory($bpk-logos-tianxun-stacked, $logo, $height, $aspect-ratio);

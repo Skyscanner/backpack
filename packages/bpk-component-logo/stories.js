@@ -1,21 +1,21 @@
 import React from 'react'
 import { storiesOf } from '@kadira/storybook'
 
-import BpkLogo from './index'
+import { BpkInlineLogo, BpkCloudLogo, BpkStackedLogo, BpkTianxunLogo, BpkTianxunStackedLogo } from './index'
 
 storiesOf('bpk-component-logo', module)
-  .add('Cloud', () => (
-    <BpkLogo logo='cloud' />
-  ))
   .add('Inline', () => (
-    <BpkLogo logo='inline' />
+    <BpkInlineLogo />
   ))
   .add('Stacked', () => (
-    <BpkLogo logo='stacked' />
+    <BpkStackedLogo />
+  ))
+  .add('Cloud', () => (
+    <BpkCloudLogo />
   ))
   .add('Tianxun', () => (
-    <BpkLogo logo='tianxun' />
+    <BpkTianxunLogo />
   ))
   .add('Tianxun stacked', () => (
-    <BpkLogo logo='tianxun-stacked' />
+    <BpkTianxunStackedLogo />
   ))

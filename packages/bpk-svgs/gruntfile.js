@@ -53,7 +53,31 @@ module.exports = function (grunt) {
           }
         ]
       },
-      icons: {
+      logos: {
+        options: {
+          plugins: [
+            { removeTitle: true },
+            { removeStyleElement: true },
+            { removeAttrs: { attrs: [ 'id', 'class', 'width', 'height', 'data-name', 'fill', 'fill-rule' ] } },
+            { removeEmptyContainers: true },
+            { sortAttrs: true },
+            { removeUselessDefs: true },
+            { removeEmptyText: true },
+            { removeEditorsNSData: true },
+            { removeEmptyAttrs: true },
+            { removeHiddenElems: true }
+          ]
+        },
+        files: [
+          {
+            expand: true,
+            cwd: 'src/logos',
+            src: '*.svg',
+            dest: 'src/logos'
+          }
+        ]
+      },
+      everythingElse: {
         options: {
           plugins: [
             { removeTitle: true },
@@ -74,12 +98,6 @@ module.exports = function (grunt) {
             cwd: 'src/icons',
             src: '**/*.svg',
             dest: 'src/icons'
-          },
-          {
-            expand: true,
-            cwd: 'src/logos',
-            src: '*.svg',
-            dest: 'src/logos'
           },
           {
             expand: true,
