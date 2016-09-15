@@ -2,19 +2,23 @@
 
 > Backpack icon components.
 
+> **Note:** All icon components are generated using the [react-svg-loader cli](https://github.com/boopathi/react-svg-loader#cli) tool.
+Whilst this alleviates the need to hand crank every component, it limits the ability to encapsulate styling options and 
+default fill color. See the examples below on how to overcome these limitations.  
+
 ## Installation
 
 ```sh
 npm install bpk-component-icon --save
 ```
 
-## Usage
+## Basic usage
 
 ```js
 import React from 'react'
+import TOKENS from 'bpk-tokens/tokens/base.common'
 import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight'
 import BpkLargeAccessibilityIcon from 'bpk-component-icon/lg/accessibility'
-import TOKENS from 'bpk-tokens/tokens/base.common'
 
 export default MyComponent = () => (
   <div>
@@ -24,5 +28,23 @@ export default MyComponent = () => (
 )
 ```
 
-> Because of the way that they are generated, all props that are passed through to these components are rendered to the 
-  DOM.
+> **Note:** Due to the way that they are generated, there are no prop types defined on any of the icon components. Any 
+props that you pass through will be rendered directly to the DOM. 
+
+## Aligning to BpkButton components
+
+```js
+import React from 'react'
+import BpkButton from 'bpk-component-button'
+import TOKENS from 'bpk-tokens/tokens/base.common'
+import { alignToButton } from 'bpk-component-icon'
+import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight'
+
+const AlignedBpkSmallFlightIcon = alignToButton(BpkSmallFlightIcon)
+
+export default MyComponent = () => (
+  <BpkButton>
+    <AlignedBpkSmallFlightIcon fill={TOKENS.colorWhite} />
+  </BpkButton>
+)
+```

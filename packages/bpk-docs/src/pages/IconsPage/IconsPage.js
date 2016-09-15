@@ -1,7 +1,7 @@
 import React from 'react'
 import keys from 'lodash/keys'
 
-import icons from 'bpk-component-icon'
+import icons from 'bpk-component-icon/all'
 import BpkParagraph from 'bpk-component-paragraph'
 import BpkRouterLink from 'bpk-component-router-link'
 import TOKENS from 'bpk-tokens/tokens/base.common'

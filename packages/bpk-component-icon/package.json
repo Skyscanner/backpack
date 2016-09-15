@@ -19,10 +19,12 @@
     "react": "^15.0.0"
   },
   "dependencies": {
+    "bpk-mixins": "^5.0.0",
     "bpk-svgs": "^1.0.4",
     "bpk-tokens": "^12.0.0"
   },
   "devDependencies": {
+    "bpk-component-button": "^1.0.16",
     "bpk-component-list": "^0.0.29"
   }
 }

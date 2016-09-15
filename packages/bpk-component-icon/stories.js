@@ -1,10 +1,17 @@
 import React from 'react'
 import { storiesOf } from '@kadira/storybook'
 
+import BpkButton from 'bpk-component-button'
 import TOKENS from 'bpk-tokens/tokens/base.common'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 
-import { sm, lg } from './index'
+import { sm, lg } from './all'
+import { alignToButton, alignToLargeButton } from './index'
+import SmallLongArrowRightAltIcon from './sm/long-arrow-right-alt'
+import LargeLongArrowRightAltIcon from './lg/long-arrow-right-alt'
+
+const AlignedSmallLongArrowRightAltIcon = alignToButton(SmallLongArrowRightAltIcon)
+const AlignedLargeLongArrowRightAltIcon = alignToLargeButton(LargeLongArrowRightAltIcon)
 
 storiesOf('bpk-component-icon', module)
   .add('Small icons', () => (
@@ -30,4 +37,14 @@ storiesOf('bpk-component-icon', module)
         )
       })}
     </BpkList>
+  ))
+  .add('Align to button', () => (
+    <BpkButton>
+      Search <AlignedSmallLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+    </BpkButton>
+  ))
+  .add('Align to large button', () => (
+    <BpkButton large>
+      Search <AlignedLargeLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+    </BpkButton>
   ))

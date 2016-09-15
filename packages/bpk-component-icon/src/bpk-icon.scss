@@ -1,0 +1,11 @@
+@import '~bpk-mixins/index';
+
+.bpk-icon {
+  &--align-to-button {
+    @include bpk-icon-sm--align-to-button();
+  }
+
+  &--align-to-large-button {
+    @include bpk-icon-lg--align-to-large-button();
+  }
+}

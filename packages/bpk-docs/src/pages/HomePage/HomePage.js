@@ -6,11 +6,14 @@ import BpkButton from 'bpk-component-button'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
 import TOKENS from 'bpk-tokens/tokens/base.common'
-import BpkLongArrowRightAltIcon from 'bpk-component-icon/lg/long-arrow-right-alt'
+import { alignToLargeButton } from 'bpk-component-icon'
+import LongArrowRightAltIcon from 'bpk-component-icon/lg/long-arrow-right-alt'
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid'
 
 import './home-page.scss'
 import * as ROUTES from './../../constants/routes'
+
+const AlignedLongArrowRightAltIcon = alignToLargeButton(LongArrowRightAltIcon)
 
 class HomePage extends React.Component {
   constructor (props) {
@@ -38,7 +41,7 @@ class HomePage extends React.Component {
                   Skyscanner products.
                 </BpkHeading>
                 <BpkButton large href={ROUTES.GETTING_STARTED} onClick={this.onGettingStartedClick}>
-                  Get started <BpkLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+                  Get started <AlignedLongArrowRightAltIcon fill={TOKENS.colorWhite} />
                 </BpkButton>
               </BpkGridColumn>
             </BpkGridRow>
