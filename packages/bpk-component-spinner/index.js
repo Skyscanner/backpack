@@ -1,3 +1,5 @@
-import component from './src/BpkSpinner'
+import BpkSpinner from './src/BpkSpinner'
+import BpkLargeSpinner from './src/BpkLargeSpinner'
+import BpkExtraLargeSpinner from './src/BpkExtraLargeSpinner'
 
-export default component
+export { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner }

@@ -156,6 +156,7 @@ module.exports = {
   logoTianxunStackedDefaultHeight: "calc(1.5rem * 3)",
   spacingXs: ".375rem",
   spacingSm: ".75rem",
+  spacingMd: "1.125rem",
   spacingBase: "1.5rem",
   spacingLg: "1.875rem",
   spacingXl: "2.250rem",

@@ -1014,6 +1014,12 @@
       "value": ".75rem",
       "name": "SPACING_SM"
     },
+    "SPACING_MD": {
+      "type": "size",
+      "category": "spacing",
+      "value": "1.125rem",
+      "name": "SPACING_MD"
+    },
     "SPACING_BASE": {
       "type": "size",
       "category": "spacing",
@@ -1545,6 +1551,7 @@
     "LOGO_TIANXUN_STACKED_DEFAULT_HEIGHT",
     "SPACING_XS",
     "SPACING_SM",
+    "SPACING_MD",
     "SPACING_BASE",
     "SPACING_LG",
     "SPACING_XL",

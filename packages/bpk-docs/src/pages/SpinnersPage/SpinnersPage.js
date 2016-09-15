@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BpkSpinner from 'bpk-component-spinner'
+import { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner } from 'bpk-component-spinner'
 import BpkParagraph from 'bpk-component-paragraph'
 
 import DocsPageBuilder from './../../components/DocsPageBuilder'
@@ -24,14 +24,14 @@ const components = [
     id: 'large',
     title: 'Large',
     examples: [
-      <BpkSpinner large />
+      <BpkLargeSpinner />
     ]
   },
   {
     id: 'extra-large',
     title: 'Extra large',
     examples: [
-      <BpkSpinner extraLarge />
+      <BpkExtraLargeSpinner />
     ]
   }
 ]

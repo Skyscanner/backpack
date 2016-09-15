@@ -175,7 +175,7 @@ module.exports = function (grunt) {
     },
 
     exec: {
-      svg2react: 'svg2react src/elements/*.svg src/icons/sm/*.svg src/icons/lg/*.svg src/logos/*.svg src/spinners/*.svg'
+      svg2react: 'svg2react src/icons/sm/*.svg src/icons/lg/*.svg src/logos/*.svg src/spinners/*.svg'
     },
 
     copy: {

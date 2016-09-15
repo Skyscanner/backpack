@@ -1,7 +1,7 @@
 import React from 'react'
 
 import BpkButton from 'bpk-component-button'
-import BpkSpinner from 'bpk-component-spinner'
+import { BpkSpinner, BpkLargeSpinner } from 'bpk-component-spinner'
 import BpkParagraph from 'bpk-component-paragraph'
 import TOKENS from 'bpk-tokens/tokens/base.common'
 import BpkSmallArrowIcon from 'bpk-component-icon/sm/long-arrow-right-alt'
@@ -58,7 +58,7 @@ const components = [
       </BpkButton>,
       ' ',
       <BpkButton>
-        Primary <BpkSpinner color={TOKENS.colorWhite} alignToButton />
+        Primary <BpkSpinner fill={TOKENS.colorWhite} alignToButton />
       </BpkButton>,
       <br />,
       <br />,
@@ -67,7 +67,7 @@ const components = [
       </BpkButton>,
       ' ',
       <BpkButton large>
-        Primary <BpkSpinner large color={TOKENS.colorWhite} alignToButton />
+        Primary <BpkLargeSpinner fill={TOKENS.colorWhite} alignToButton />
       </BpkButton>
     ]
   },
