@@ -5,6 +5,7 @@
 ////
 
 $_form-input-size: $bpk-spacing-sm + $bpk-spacing-xs;
+$_form-input-icon-padding: $bpk-spacing-sm + $_form-input-size;
 
 /// Form input. Can be used for text, email, number, password and tel type inputs.
 ///
@@ -17,7 +18,7 @@ $_form-input-size: $bpk-spacing-sm + $bpk-spacing-xs;
   display: inline-block;
   width: 100%;
   height: $bpk-input-height;
-  padding: $bpk-input-padding-x $bpk-input-padding-y;
+  padding: $bpk-input-padding-y $bpk-input-padding-x;
   border: $bpk-input-border;
   border-radius: $bpk-input-border-radius;
   background: $bpk-input-background;
@@ -44,6 +45,15 @@ $_form-input-size: $bpk-spacing-sm + $bpk-spacing-xs;
     }
   }
 
+  @include bpk-rtl {
+    &[type=number],
+    &[type=tel],
+    &[type=email] {
+      direction: ltr;
+      text-align: right;
+    }
+  }
+
   &::-ms-clear {
     display: none;
   }
@@ -60,9 +70,15 @@ $_form-input-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///   }
 
 @mixin bpk-input--valid {
-  padding-right: $bpk-spacing-sm + $_form-input-size;
+  padding-right: $_form-input-icon-padding;
   background: $bpk-color-white url(map-get($bpk-icons-sm, tick-green-500)) no-repeat right $bpk-spacing-sm center;
   background-size: $_form-input-size $_form-input-size;
+
+  @include bpk-rtl {
+    padding-right: $bpk-input-padding-x;
+    padding-left: $_form-input-icon-padding;
+    background-position: left $bpk-spacing-sm center;
+  }
 }
 
 /// Invalid form input. Modifies the bpk-input mixin.
@@ -76,10 +92,16 @@ $_form-input-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///   }
 
 @mixin bpk-input--invalid {
-  padding-right: $bpk-spacing-sm + $_form-input-size;
+  padding-right: $_form-input-icon-padding;
   border-color: $bpk-input-invalid-border-color;
   background: $bpk-color-white url(map-get($bpk-icons-sm, close-red-500)) no-repeat right $bpk-spacing-sm center;
   background-size: $_form-input-size $_form-input-size;
+
+  @include bpk-rtl {
+    padding-right: $bpk-input-padding-x;
+    padding-left: $_form-input-icon-padding;
+    background-position: left $bpk-spacing-sm center;
+  }
 }
 
 /// Form select input.
@@ -106,6 +128,12 @@ $_form-input-size: $bpk-spacing-sm + $bpk-spacing-xs;
     background-image: url(map-get($bpk-icons-sm, arrow-down-gray-300));
     color: $bpk-select-disabled-color;
     cursor: not-allowed;
+  }
+
+  @include bpk-rtl {
+    padding-right: $bpk-select-padding-left;
+    padding-left: $bpk-select-padding-right;
+    background-position: left $bpk-spacing-sm center;
   }
 
   @media screen\0 {

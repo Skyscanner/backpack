@@ -728,13 +728,13 @@
     },
     {
       "category": "forms",
-      "value": "6",
+      "value": "12",
       "type": "size",
       "name": "inputPaddingX"
     },
     {
       "category": "forms",
-      "value": "12",
+      "value": "6",
       "type": "size",
       "name": "inputPaddingY"
     },

@@ -800,13 +800,13 @@
     },
     "INPUT_PADDING_X": {
       "category": "forms",
-      "value": ".375rem",
+      "value": ".75rem",
       "type": "size",
       "name": "INPUT_PADDING_X"
     },
     "INPUT_PADDING_Y": {
       "category": "forms",
-      "value": ".75rem",
+      "value": ".375rem",
       "type": "size",
       "name": "INPUT_PADDING_Y"
     },

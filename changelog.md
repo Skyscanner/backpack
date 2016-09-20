@@ -1,5 +1,23 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Added:**
+- bpk-mixins:
+  - `bpk-rtl` mixin to help with targeting RTL specific styles
+
+**Fixed:**
+- bpk-tokens:
+  - The values for `INPUT_PADDING_X` and `INPUT_PADDING_Y` were the wrong way around
+
+- bpk-mixins:
+- bpk-component-blockquote:
+- bpk-component-code:
+- bpk-component-input:
+- bpk-component-select:
+- bpk-component-table:
+  - Fixed RTL support
+
 ## 2016-09-20 - SVG icon/logo/spinner bundling fixes
 
 **Changed:**

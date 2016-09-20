@@ -11,11 +11,11 @@
       "type": "size"
     },
     "INPUT_PADDING_X": {
-      "value": "{!SPACING_XS}",
+      "value": "{!SPACING_SM}",
       "type": "size"
     },
     "INPUT_PADDING_Y": {
-      "value": "{!SPACING_SM}",
+      "value": "{!SPACING_XS}",
       "type": "size"
     },
     "INPUT_BORDER": {
