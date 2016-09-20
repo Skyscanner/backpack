@@ -1,32 +1,55 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-09-20 - SVG icon/logo/spinner bundling fixes
 
 **Changed:**
-- bpk-svgs
+- bpk-svgs: 1.0.4 => 2.0.0
   - Added `width` & `height` to icon svgs
   - Generating react components for each svg 
     using [react-svg-loader cli](https://github.com/boopathi/react-svg-loader#cli).
-
-- bpk-mixins
+    
+- bpk-mixins: 5.0.0 => 5.0.1
   - No fundamental api changes but a lot of the handling for inline svgs has been removed.
   
-- bpk-component-spinner
+- bpk-component-spinner: 0.2.12 => 1.0.0
   - We now expose three components `BpkSpinner`, `BpkLargeSpinner`, `BpkExtraLargeSpinner`
   - No need for raw-loader anymore
     
-- bpk-component-logo
+- bpk-component-logo: 0.2.8 => 1.0.0
   - We now expose five components `BpkInlineLogo`, `BpkCloudLogo`, `BpkStackedLogo`, `BpkTianxunLogo`, `BpkTianxunStackedLogo`
   - No need for raw-loader anymore
     
-- bpk-component-icon
+- bpk-component-icon: 0.2.12 => 1.0.0
   - We now expose hundreds of components (generated in bpk-svgs)
   - No need for raw-loader anymore
   - Alignment to buttons is supported using higher order components (HOC)
 
 **Added:**
-- bpk-tokens
+- bpk-tokens: 12.0.0 => 12.1.0
   - Surfaced SPACING_MD (18px) as a token 
+  
+**The following packages received a patch bump due to the dependency
+changes above:**
+- bpk-component-autosuggest: 0.0.3 => 0.0.4
+- bpk-component-blockquote: 0.0.9 => 0.0.10
+- bpk-component-button: 1.0.16 => 1.0.17
+- bpk-component-checkbox: 0.0.6 => 0.0.7
+- bpk-component-code: 0.0.9 => 0.0.10
+- bpk-component-content-container: 1.0.0 => 1.0.1
+- bpk-component-grid: 0.0.3 => 0.0.4
+- bpk-component-grid-toggle: 0.0.15 => 0.0.16
+- bpk-component-heading: 1.0.16 => 1.0.17
+- bpk-component-input: 0.0.6 => 0.0.7
+- bpk-component-label: 0.0.6 => 0.0.7
+- bpk-component-link: 0.1.15 => 0.1.16
+- bpk-component-list: 0.0.29 => 0.0.30
+- bpk-component-paragraph: 0.1.16 => 0.1.17
+- bpk-component-radio: 0.0.6 => 0.0.7
+- bpk-component-router-link: 0.1.15 => 0.1.16
+- bpk-component-select: 0.0.6 => 0.0.7
+- bpk-component-table: 0.0.29 => 0.0.30
+- bpk-docs: 0.0.25 => 0.0.26
+- bpk-stylesheets: 1.0.6 => 1.0.7
 
 ## 2016-09-14 - Autosuggest tweaks
 
