@@ -1,5 +1,13 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Added:**
+- bpk-component-card:
+- bpk-mixins:
+- bpk-tokens:
+  - New 'card' component for clickable/touchable surfaces such as itineraries, news articles etc
+
 ## 2016-09-21 (2) - Mixin option for opt-in RTL support for icons
 
 **Added:**

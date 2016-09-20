@@ -68,6 +68,9 @@
   <property name="BUTTON_SELECTED_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_SELECTED_HOVER_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_SELECTED_DISABLED_BOX_SHADOW" category="buttons">none</property>
+  <color name="CARD_BACKGROUND_COLOR" category="cards">#ffffffff</color>
+  <color name="CARD_COLOR" category="cards">#524c61ff</color>
+  <property name="CARD_PADDING" category="cards">12</property>
   <color name="COLOR_WHITE" category="color">#ffffffff</color>
   <color name="COLOR_BLUE_50" category="color">#e1f4f8ff</color>
   <color name="COLOR_BLUE_100" category="color">#cbeef5ff</color>

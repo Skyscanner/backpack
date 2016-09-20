@@ -10,23 +10,5 @@ npm install bpk-component-autosuggest --save
 
 ### Usage
 
-```js
-import React from 'react'
-import BpkAutosuggest from 'bpk-component-autosuggest'
-
-function renderSuggestion(suggestion) {
-  return <span>{suggestion}</span>
-}
-
-export default MyComponent = () => {
-  const suggestions = ['Suggestion 1', 'Suggestion 2', 'Suggestion 3']
-
-  return <BpkAutosuggest
-          suggestions={suggestions}
-          onSuggestionsUpdateRequested={() => {}}
-          value={'Suggestion 1'}
-          onChange={() => {}}
-          renderSuggestion={renderSuggestion}
-         />
-}
-```
+`bpk-component-autosuggest` is a lightweight wrapper component around [react-autosuggest](http://react-autosuggest.js.org/), 
+please refer to [it's documentation](https://github.com/moroshko/react-autosuggest#basic-usage) for basic usage.

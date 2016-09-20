@@ -23,6 +23,7 @@ import IconsPage from './../pages/IconsPage'
 import SpinnersPage from './../pages/SpinnersPage'
 import LogosPage from './../pages/LogosPage'
 import FormsPage from './../pages/FormsPage'
+import CardsPage from './../pages/CardsPage'
 
 import DownloadsPage from './../pages/DownloadsPage'
 import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages'
@@ -51,6 +52,7 @@ const Routes = (
         <Route path={ROUTES.SPINNERS} component={SpinnersPage} />
         <Route path={ROUTES.LOGOS} component={LogosPage} />
         <Route path={ROUTES.FORMS} component={FormsPage} />
+        <Route path={ROUTES.CARDS} component={CardsPage} />
       </Route>
       <Route path={ROUTES.MOLECULES}>
         <IndexRedirect to={ROUTES.GETTING_STARTED} />

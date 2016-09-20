@@ -480,6 +480,24 @@
       "type": "box-shadow",
       "name": "BUTTON_SELECTED_DISABLED_BOX_SHADOW"
     },
+    "CARD_BACKGROUND_COLOR": {
+      "category": "cards",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "CARD_BACKGROUND_COLOR"
+    },
+    "CARD_COLOR": {
+      "category": "cards",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "CARD_COLOR"
+    },
+    "CARD_PADDING": {
+      "category": "cards",
+      "value": ".75rem",
+      "type": "size",
+      "name": "CARD_PADDING"
+    },
     "COLOR_WHITE": {
       "type": "color",
       "category": "color",
@@ -1462,6 +1480,9 @@
     "BUTTON_SELECTED_BOX_SHADOW",
     "BUTTON_SELECTED_HOVER_BOX_SHADOW",
     "BUTTON_SELECTED_DISABLED_BOX_SHADOW",
+    "CARD_BACKGROUND_COLOR",
+    "CARD_COLOR",
+    "CARD_PADDING",
     "COLOR_WHITE",
     "COLOR_BLUE_50",
     "COLOR_BLUE_100",

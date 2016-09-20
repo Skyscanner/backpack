@@ -12,6 +12,11 @@
     margin-right: $bpk-spacing-sm;
     vertical-align: top;
 
+    @include bpk-rtl {
+      margin-right: 0;
+      margin-left: $bpk-spacing-sm;
+    }
+
     > svg {
       display: block;
       height: 100%;
