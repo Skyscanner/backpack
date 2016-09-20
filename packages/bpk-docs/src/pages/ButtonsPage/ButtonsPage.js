@@ -1,12 +1,17 @@
 import React from 'react'
 
-import BpkIcon from 'bpk-component-icon'
 import BpkButton from 'bpk-component-button'
-import BpkSpinner from 'bpk-component-spinner'
+import { BpkSpinner, BpkLargeSpinner } from 'bpk-component-spinner'
 import BpkParagraph from 'bpk-component-paragraph'
 import TOKENS from 'bpk-tokens/tokens/base.common'
+import { alignToButton, alignToLargeButton } from 'bpk-component-icon'
+import TestBpkSmallArrowIcon from 'bpk-component-icon/sm/long-arrow-right-alt'
+import TestBpkLargeArrowIcon from 'bpk-component-icon/lg/long-arrow-right-alt'
 
 import DocsPageBuilder from './../../components/DocsPageBuilder'
+
+const AlignedBpkSmallArrowIcon = alignToButton(TestBpkSmallArrowIcon)
+const AlignedBpkLargeArrowIcon = alignToLargeButton(TestBpkLargeArrowIcon)
 
 const components = [
   {
@@ -53,20 +58,20 @@ const components = [
     blurb: 'All buttons support nesting icons and spinners, which is useful for improving affordance or indicate loading.',
     examples: [
       <BpkButton>
-        Primary <BpkIcon icon='long-arrow-right-alt' color={TOKENS.colorWhite} alignToButton />
+        Primary <AlignedBpkSmallArrowIcon fill={TOKENS.colorWhite} />
       </BpkButton>,
       ' ',
       <BpkButton>
-        Primary <BpkSpinner color={TOKENS.colorWhite} alignToButton />
+        Primary <BpkSpinner fill={TOKENS.colorWhite} alignToButton />
       </BpkButton>,
       <br />,
       <br />,
       <BpkButton large>
-        Primary <BpkIcon large icon='long-arrow-right-alt' color={TOKENS.colorWhite} alignToButton />
+        Primary <AlignedBpkLargeArrowIcon fill={TOKENS.colorWhite} />
       </BpkButton>,
       ' ',
       <BpkButton large>
-        Primary <BpkSpinner large color={TOKENS.colorWhite} alignToButton />
+        Primary <BpkLargeSpinner fill={TOKENS.colorWhite} alignToButton />
       </BpkButton>
     ]
   },

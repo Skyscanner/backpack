@@ -13,6 +13,9 @@
     "SPACING_SM": {
       "value": "{!SPACING_SM}"
     },
+    "SPACING_MD": {
+      "value": "{!SPACING_MD}"
+    },
     "SPACING_BASE": {
       "value": "{!SPACING_BASE}"
     },

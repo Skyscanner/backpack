@@ -945,6 +945,12 @@
     {
       "type": "size",
       "category": "spacing",
+      "value": "18",
+      "name": "spacingMd"
+    },
+    {
+      "type": "size",
+      "category": "spacing",
       "value": "24",
       "name": "spacingBase"
     },

@@ -8,27 +8,29 @@
 npm install bpk-component-logo --save
 ```
 
-> **Important:** This component needs Webpack's raw-loader as a devDependency:
-```sh
-npm install raw-loader --save-dev
-```
-
 ## Usage
 
 ```js
 import React from 'react'
-import BpkLogo from 'bpk-component-logo'
 import TOKENS from 'bpk-tokens/tokens/base.common'
+import { BpkInlineLogo, BpkCloudLogo, BpkStackedLogo, BpkTianxunLogo, BpkTianxunStackedLogo } from 'bpk-component-logo'
 
 export default MyComponent = () => (
-  <BpkLogo logo='inline' color={TOKENS.colorBlue500} />
+  <div>
+    <BpkInlineLogo color={TOKENS.colorWhite} />
+    <BpkCloudLogo color={TOKENS.colorGray700} />
+    <BpkStackedLogo color={TOKENS.colorBlue500} />
+    <BpkTianxunLogo color={TOKENS.colorWhite} />
+    <BpkTianxunStackedLogo color={TOKENS.colorGray700} />
+  </div>
 )
 ```
 
 ### Props
 
-| Property | PropType                                                   | Required | Default Value        |
-| -------- | ---------------------------------------------------------- | -------- | -------------------- |
-| logo     | 'inline', 'stacked', 'cloud', 'tianxun', 'tianxun-stacked' | true     | -                    |
-| color    | string                                                     | false    | TOKENS.colorGray700  |
-| height   | string                                                     | false    | null                 |
+*BpkInlineLogo, BpkCloudLogo, BpkStackedLogo, BpkTianxunLogo & BpkTianxunStackedLogo:*
+
+| Property | PropType | Required | Default Value        |
+| -------- | -------- | -------- | -------------------- |
+| color    | string   | false    | TOKENS.colorGray700  |
+| height   | string   | false    | null                 |

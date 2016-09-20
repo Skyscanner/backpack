@@ -157,6 +157,7 @@
   <property name="LOGO_TIANXUN_STACKED_DEFAULT_HEIGHT" category="logos">calc(1.5rem * 3)</property>
   <property name="SPACING_XS" category="spacing">6</property>
   <property name="SPACING_SM" category="spacing">12</property>
+  <property name="SPACING_MD" category="spacing">18</property>
   <property name="SPACING_BASE" category="spacing">24</property>
   <property name="SPACING_LG" category="spacing">30</property>
   <property name="SPACING_XL" category="spacing">36</property>

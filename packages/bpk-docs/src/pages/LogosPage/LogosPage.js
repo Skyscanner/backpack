@@ -1,8 +1,8 @@
 import React from 'react'
 
-import BpkLogo from 'bpk-component-logo'
 import BpkLink from 'bpk-component-link'
 import BpkParagraph from 'bpk-component-paragraph'
+import { BpkCloudLogo, BpkInlineLogo, BpkStackedLogo, BpkTianxunLogo, BpkTianxunStackedLogo } from 'bpk-component-logo'
 
 import DocsPageBuilder from './../../components/DocsPageBuilder'
 
@@ -23,7 +23,7 @@ const components = [
     id: 'inline',
     title: 'Inline',
     examples: [
-      <BpkLogo logo='inline' />
+      <BpkInlineLogo />
     ],
     blurb: 'This is the preferred usage of the logo.'
   },
@@ -31,7 +31,7 @@ const components = [
     id: 'stacked',
     title: 'Stacked',
     examples: [
-      <BpkLogo logo='stacked' />
+      <BpkStackedLogo />
     ],
     blurb: 'Stacked logos should only be used when confined to a small square e.g. a social media avatars.'
   },
@@ -39,7 +39,7 @@ const components = [
     id: 'cloud',
     title: 'Cloud',
     examples: [
-      <BpkLogo logo='cloud' />
+      <BpkCloudLogo />
     ],
     blurb: 'The cloud is useful for things such as app icons and favicons.'
   },
@@ -47,7 +47,7 @@ const components = [
     id: 'tianxun',
     title: 'Tianxun',
     examples: [
-      <BpkLogo logo='tianxun' />
+      <BpkTianxunLogo />
     ],
     blurb: 'This is the preferred usage for Skyscanner in China.'
   },
@@ -55,7 +55,7 @@ const components = [
     id: 'tianxun-stacked',
     title: 'Tianxun stacked',
     examples: [
-      <BpkLogo logo='tianxun-stacked' />
+      <BpkTianxunStackedLogo />
     ],
     blurb: 'Similar to the stacked version of the Skyscanner logo, this should only be used when confined to a small square e.g. a social media avatars.'
   }

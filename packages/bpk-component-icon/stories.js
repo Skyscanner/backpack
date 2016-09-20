@@ -1,28 +1,50 @@
 import React from 'react'
 import { storiesOf } from '@kadira/storybook'
 
-import BpkIcon from './index'
+import BpkButton from 'bpk-component-button'
+import TOKENS from 'bpk-tokens/tokens/base.common'
+import { BpkList, BpkListItem } from 'bpk-component-list'
 
-const req = require.context('raw!bpk-svgs/src/icons/sm', false, /\.svg$/)
-const icons = req.keys().map((key) => key.replace('./', '').replace('.svg', ''))
+import { sm, lg } from './all'
+import { alignToButton, alignToLargeButton } from './index'
+import SmallLongArrowRightAltIcon from './sm/long-arrow-right-alt'
+import LargeLongArrowRightAltIcon from './lg/long-arrow-right-alt'
+
+const AlignedSmallLongArrowRightAltIcon = alignToButton(SmallLongArrowRightAltIcon)
+const AlignedLargeLongArrowRightAltIcon = alignToLargeButton(LargeLongArrowRightAltIcon)
 
 storiesOf('bpk-component-icon', module)
   .add('Small icons', () => (
-    <ul>
-      {icons.map((icon) => (
-        <li key={icon}>
-          <BpkIcon icon={icon} /> <span>{icon}</span>
-        </li>
-      ))}
-
-    </ul>
+    <BpkList>
+      {Object.keys(sm).map((icon) => {
+        const Icon = sm[ icon ]
+        return (
+          <BpkListItem key={icon}>
+            <Icon fill={TOKENS.colorGray700} /> <span>{icon}</span>
+          </BpkListItem>
+        )
+      })}
+    </BpkList>
   ))
   .add('Large icons', () => (
-    <ul>
-      {icons.map((icon) => (
-        <li key={icon}>
-          <BpkIcon icon={icon} large /> <span>{icon}</span>
-        </li>
-      ))}
-    </ul>
+    <BpkList>
+      {Object.keys(lg).map((icon) => {
+        const Icon = lg[ icon ]
+        return (
+          <BpkListItem key={icon}>
+            <Icon fill={TOKENS.colorGray700} /> <span>{icon}</span>
+          </BpkListItem>
+        )
+      })}
+    </BpkList>
+  ))
+  .add('Align to button', () => (
+    <BpkButton>
+      Search <AlignedSmallLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+    </BpkButton>
+  ))
+  .add('Align to large button', () => (
+    <BpkButton large>
+      Search <AlignedLargeLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+    </BpkButton>
   ))

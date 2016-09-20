@@ -1,6 +1,6 @@
 # bpk-component-spinner
 
-> Backpack spinner component.
+> Backpack spinner components.
 
 ## Installation
 
@@ -8,30 +8,35 @@
 npm install bpk-component-spinner --save
 ```
 
-> **Important:** This component needs Webpack's raw-loader as a devDependency:
-```sh
-npm install raw-loader --save-dev
-```
-
 ## Usage
 
 ```js
 import React from 'react'
-import BpkSpinner from 'bpk-component-spinner'
 import TOKENS from 'bpk-tokens/tokens/base.common'
+import { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner } from 'bpk-component-spinner'
 
 export default MyComponent = () => (
-  <BpkSpinner large color={TOKENS.white} alignToButton />
+  <div>
+    <BpkSpinner color={TOKENS.colorWhite} />
+    <BpkLargeSpinner color={TOKENS.colorGray700} />
+    <BpkExtraLargeSpinner color={TOKENS.colorBlue500} />
+  </div>
 )
 ```
 
 ### Props
 
+*BpkSpinner & BpkLargeSpinner:*
+
 | Property      | PropType | Required | Default Value       |
 | ------------- | -------- | -------- | ------------------- |
-| large         | bool     | false    | false               |
-| extraLarge    | bool     | false    | false               |
-| color         | string   | false    | TOKENS.colorGray700 |
+| fill          | string   | false    | TOKENS.colorGray700 |
 | alignToButton | bool     | false    | false               |
+
+*BpkExtraLargeSpinner:*
+
+| Property      | PropType | Required | Default Value       |
+| ------------- | -------- | -------- | ------------------- |
+| fill          | string   | false    | TOKENS.colorGray700 |
 
 

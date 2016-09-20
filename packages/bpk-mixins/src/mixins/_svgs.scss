@@ -1,8 +1,6 @@
 @import '~bpk-svgs/index';
 @import '../bonds';
 
-$_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
-
 @keyframes bpk-keyframe-spin {
   100% {
     transform: rotate(1turn);
@@ -20,21 +18,12 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///
 /// @access private
 
-@mixin _bpk-icon-factory($map, $spacing, $icon: '') {
+@mixin _bpk-icon-factory($map, $size, $icon) {
   content: '';
   display: inline-block;
-  width: $spacing;
-  height: $spacing;
-  background-size: $spacing $spacing;
-
-  @if $icon != "" {
-    background: url(map-get($map, $icon)) no-repeat;
-  }
-
-  > svg {
-    display: block;
-    height: 100%;
-  }
+  width: $size;
+  height: $size;
+  background: url(map-get($map, $icon)) no-repeat;
 }
 
 /// Button alignment utility.
@@ -62,8 +51,8 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///     @include bpk-icon-sm(flight-gray-500);
 ///   }
 
-@mixin bpk-icon-sm($icon: '') {
-  @include _bpk-icon-factory($bpk-icons-sm, $_small-svg-size, $icon);
+@mixin bpk-icon-sm($icon) {
+  @include _bpk-icon-factory($bpk-icons-sm, $bpk-spacing-md, $icon);
 }
 
 /// Large icon.
@@ -75,7 +64,7 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///     @include bpk-icon-lg(flight-gray-500);
 ///   }
 
-@mixin bpk-icon-lg($icon: '') {
+@mixin bpk-icon-lg($icon) {
   @include _bpk-icon-factory($bpk-icons-lg, $bpk-spacing-base, $icon);
 }
 
@@ -116,20 +105,12 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///
 /// @access private
 
-@mixin _bpk-logo-factory($map, $logo: '', $height: '', $aspect-ratio: '') {
+@mixin _bpk-logo-factory($map, $logo, $height, $aspect-ratio) {
   content: '';
   display: inline-block;
-
-  @if $logo != '' and $height != '' and $aspect-ratio != '' {
-    width: $height / $aspect-ratio;
-    height: $height;
-    background: url(map-get($map, $logo)) no-repeat;
-  }
-
-  > svg {
-    display: block;
-    height: 100%;
-  }
+  width: $height / $aspect-ratio;
+  height: $height;
+  background: url(map-get($map, $logo)) no-repeat;
 }
 
 /// Cloud logo.
@@ -142,7 +123,7 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///     @include bpk-logo-cloud(cloud-blue-500);
 ///   }
 
-@mixin bpk-logo-cloud($logo: '', $height: $bpk-logo-cloud-default-height) {
+@mixin bpk-logo-cloud($logo, $height: $bpk-logo-cloud-default-height) {
   $aspect-ratio: (50 * $bpk-one-pixel-rem) / (82 * $bpk-one-pixel-rem);
 
   @include _bpk-logo-factory($bpk-logos-cloud, $logo, $height, $aspect-ratio);
@@ -158,7 +139,7 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///     @include bpk-logo-inline(inline-blue-500);
 ///   }
 
-@mixin bpk-logo-inline($logo: '', $height: $bpk-logo-inline-default-height) {
+@mixin bpk-logo-inline($logo, $height: $bpk-logo-inline-default-height) {
   $aspect-ratio: (56 * $bpk-one-pixel-rem) / (320 * $bpk-one-pixel-rem);
 
   @include _bpk-logo-factory($bpk-logos-inline, $logo, $height, $aspect-ratio);
@@ -174,7 +155,7 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///     @include bpk-logo-stacked(stacked-blue-500);
 ///   }
 
-@mixin bpk-logo-stacked($logo: '', $height: $bpk-logo-stacked-default-height) {
+@mixin bpk-logo-stacked($logo, $height: $bpk-logo-stacked-default-height) {
   $aspect-ratio: (159 * $bpk-one-pixel-rem) / (300 * $bpk-one-pixel-rem);
 
   @include _bpk-logo-factory($bpk-logos-stacked, $logo, $height, $aspect-ratio);
@@ -190,7 +171,7 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///     @include bpk-logo-tianxun(tianxun-blue-500);
 ///   }
 
-@mixin bpk-logo-tianxun($logo: '', $height: $bpk-logo-tianxun-default-height) {
+@mixin bpk-logo-tianxun($logo, $height: $bpk-logo-tianxun-default-height) {
   $aspect-ratio: (66 * $bpk-one-pixel-rem) / (210 * $bpk-one-pixel-rem);
 
   @include _bpk-logo-factory($bpk-logos-tianxun, $logo, $height, $aspect-ratio);
@@ -206,7 +187,7 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///     @include bpk-logo-tianxun-stacked(tianxun-stacked-blue-500);
 ///   }
 
-@mixin bpk-logo-tianxun-stacked($logo: '', $height: $bpk-logo-tianxun-stacked-default-height) {
+@mixin bpk-logo-tianxun-stacked($logo, $height: $bpk-logo-tianxun-stacked-default-height) {
   $aspect-ratio: (158 * $bpk-one-pixel-rem) / (118 * $bpk-one-pixel-rem);
 
   @include _bpk-logo-factory($bpk-logos-tianxun-stacked, $logo, $height, $aspect-ratio);
@@ -222,21 +203,14 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 ///   }
 
 @mixin bpk-spinner($spinner: '') {
-  content: '';
-  display: inline-block;
-  width: $_small-svg-size;
-  height: $_small-svg-size;
-  padding: $bpk-one-pixel-rem;
   animation: bpk-keyframe-spin 600ms linear infinite;
-  background-size: $_small-svg-size $_small-svg-size;
 
   @if $spinner != '' {
+    content: '';
+    display: inline-block;
+    width: $bpk-spacing-md;
+    height: $bpk-spacing-md;
     background: url(map-get($bpk-spinners, $spinner)) no-repeat;
-  }
-
-  > svg {
-    display: block;
-    height: 100%;
   }
 }
 
@@ -253,8 +227,6 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 @mixin bpk-spinner--lg() {
   width: $bpk-spacing-base;
   height: $bpk-spacing-base;
-  padding: 0;
-  background-size: $bpk-spacing-base $bpk-spacing-base;
 }
 
 /// Extra large spinner. Modifies the bpk-spinner mixin.
@@ -270,8 +242,6 @@ $_small-svg-size: $bpk-spacing-sm + $bpk-spacing-xs;
 @mixin bpk-spinner--xl() {
   width: $bpk-spacing-xl;
   height: $bpk-spacing-xl;
-  padding: 0;
-  background-size: $bpk-spacing-xl $bpk-spacing-xl;
 }
 
 /// Align spinner to button. Modifies the bpk-spinner mixin.

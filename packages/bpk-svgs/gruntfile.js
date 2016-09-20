@@ -16,15 +16,20 @@ var colors = _(tokens.props)
 
 module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean')
+  grunt.loadNpmTasks('grunt-contrib-copy')
   grunt.loadNpmTasks('grunt-svgmin')
+  grunt.loadNpmTasks('grunt-exec')
   grunt.loadTasks('tasks')
 
   grunt.initConfig({
 
-    clean: [ 'dist' ],
+    clean: {
+      dist: [ 'dist' ],
+      src: [ '**/*.svg.react.js' ]
+    },
 
     svgmin: {
-      preserve_fill: {
+      elements: {
         options: {
           plugins: [
             { removeTitle: true },
@@ -48,12 +53,36 @@ module.exports = function (grunt) {
           }
         ]
       },
-      remove_fill: {
+      logos: {
         options: {
           plugins: [
             { removeTitle: true },
             { removeStyleElement: true },
             { removeAttrs: { attrs: [ 'id', 'class', 'width', 'height', 'data-name', 'fill', 'fill-rule' ] } },
+            { removeEmptyContainers: true },
+            { sortAttrs: true },
+            { removeUselessDefs: true },
+            { removeEmptyText: true },
+            { removeEditorsNSData: true },
+            { removeEmptyAttrs: true },
+            { removeHiddenElems: true }
+          ]
+        },
+        files: [
+          {
+            expand: true,
+            cwd: 'src/logos',
+            src: '*.svg',
+            dest: 'src/logos'
+          }
+        ]
+      },
+      everythingElse: {
+        options: {
+          plugins: [
+            { removeTitle: true },
+            { removeStyleElement: true },
+            { removeAttrs: { attrs: [ 'id', 'class', 'data-name', 'fill', 'fill-rule' ] } },
             { removeEmptyContainers: true },
             { sortAttrs: true },
             { removeUselessDefs: true },
@@ -72,12 +101,6 @@ module.exports = function (grunt) {
           },
           {
             expand: true,
-            cwd: 'src/logos',
-            src: '*.svg',
-            dest: 'src/logos'
-          },
-          {
-            expand: true,
             cwd: 'src/spinners',
             src: '*.svg',
             dest: 'src/spinners'
@@ -92,7 +115,7 @@ module.exports = function (grunt) {
           mapName: 'bpk-elements'
         },
         files: {
-          'dist/_elements.scss': 'src/elements/*.svg'
+          'dist/scss/_elements.scss': 'src/elements/*.svg'
         }
       },
       smIcons: {
@@ -101,7 +124,7 @@ module.exports = function (grunt) {
           colors: colors
         },
         files: {
-          'dist/_icons-sm.scss': 'src/icons/sm/*.svg'
+          'dist/scss/_icons-sm.scss': 'src/icons/sm/*.svg'
         }
       },
       lgIcons: {
@@ -110,7 +133,7 @@ module.exports = function (grunt) {
           colors: colors
         },
         files: {
-          'dist/_icons-lg.scss': 'src/icons/lg/*.svg'
+          'dist/scss/_icons-lg.scss': 'src/icons/lg/*.svg'
         }
       },
       cloudLogo: {
@@ -119,7 +142,7 @@ module.exports = function (grunt) {
           colors: colors
         },
         files: {
-          'dist/_logos-cloud.scss': 'src/logos/cloud.svg'
+          'dist/scss/_logos-cloud.scss': 'src/logos/cloud.svg'
         }
       },
       inlineLogo: {
@@ -128,7 +151,7 @@ module.exports = function (grunt) {
           colors: colors
         },
         files: {
-          'dist/_logos-inline.scss': 'src/logos/inline.svg'
+          'dist/scss/_logos-inline.scss': 'src/logos/inline.svg'
         }
       },
       stackedLogo: {
@@ -137,7 +160,7 @@ module.exports = function (grunt) {
           colors: colors
         },
         files: {
-          'dist/_logos-stacked.scss': 'src/logos/stacked.svg'
+          'dist/scss/_logos-stacked.scss': 'src/logos/stacked.svg'
         }
       },
       tianxunLogo: {
@@ -146,7 +169,7 @@ module.exports = function (grunt) {
           colors: colors
         },
         files: {
-          'dist/_logos-tianxun.scss': 'src/logos/tianxun.svg'
+          'dist/scss/_logos-tianxun.scss': 'src/logos/tianxun.svg'
         }
       },
       tianxunStackedLogo: {
@@ -155,7 +178,7 @@ module.exports = function (grunt) {
           colors: colors
         },
         files: {
-          'dist/_logos-tianxun-stacked.scss': 'src/logos/tianxun-stacked.svg'
+          'dist/scss/_logos-tianxun-stacked.scss': 'src/logos/tianxun-stacked.svg'
         }
       },
       spinners: {
@@ -164,11 +187,31 @@ module.exports = function (grunt) {
           colors: colors
         },
         files: {
-          'dist/_spinners.scss': 'src/spinners/*.svg'
+          'dist/scss/_spinners.scss': 'src/spinners/*.svg'
         }
+      }
+    },
+
+    exec: {
+      svg2react: 'svg2react src/icons/sm/*.svg src/icons/lg/*.svg src/logos/*.svg src/spinners/*.svg'
+    },
+
+    copy: {
+      reactSvgs: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src',
+            dest: 'dist/js/',
+            src: '**/*.svg.react.js',
+            rename: function (dest, src) {
+              return dest + src.replace('.svg.react.js', '.js')
+            }
+          }
+        ]
       }
     }
   })
 
-  grunt.registerTask('default', [ 'clean', 'svgmin', 'datauri' ])
+  grunt.registerTask('default', [ 'clean:dist', 'svgmin', 'datauri', 'exec', 'copy', 'clean:src' ])
 }

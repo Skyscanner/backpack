@@ -1,9 +1,37 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Changed:**
+- bpk-svgs
+  - Added `width` & `height` to icon svgs
+  - Generating react components for each svg 
+    using [react-svg-loader cli](https://github.com/boopathi/react-svg-loader#cli).
+
+- bpk-mixins
+  - No fundamental api changes but a lot of the handling for inline svgs has been removed.
+  
+- bpk-component-spinner
+  - We now expose three components `BpkSpinner`, `BpkLargeSpinner`, `BpkExtraLargeSpinner`
+  - No need for raw-loader anymore
+    
+- bpk-component-logo
+  - We now expose five components `BpkInlineLogo`, `BpkCloudLogo`, `BpkStackedLogo`, `BpkTianxunLogo`, `BpkTianxunStackedLogo`
+  - No need for raw-loader anymore
+    
+- bpk-component-icon
+  - We now expose hundreds of components (generated in bpk-svgs)
+  - No need for raw-loader anymore
+  - Alignment to buttons is supported using higher order components (HOC)
+
+**Added:**
+- bpk-tokens
+  - Surfaced SPACING_MD (18px) as a token 
+
 ## 2016-09-14 - Autosuggest tweaks
 
 **Changed:**
- - bpk-component-autosuggest@0.0.3
+- bpk-component-autosuggest@0.0.3
   - Interface now conforms to `react-autosuggest` 100%
   - Fixed bug with arrow displaying even when the suggestion were hidden
 

@@ -1,8 +1,14 @@
 {
   "name": "bpk-component-icon",
   "version": "0.2.12",
-  "description": "Backpack icon component.",
+  "description": "Backpack icon components.",
   "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf ./sm && rm -rf ./lg && mkdir ./sm  && mkdir ./lg",
+    "copy:sm": "cp ./node_modules/bpk-svgs/dist/js/icons/sm/*.js ./sm",
+    "copy:lg": "cp ./node_modules/bpk-svgs/dist/js/icons/lg/*.js ./lg",
+    "build": "npm run clean && npm run copy:sm && npm run copy:lg"
+  },
   "repository": {
     "type": "git",
     "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
@@ -16,5 +22,9 @@
     "bpk-mixins": "^5.0.0",
     "bpk-svgs": "^1.0.4",
     "bpk-tokens": "^12.0.0"
+  },
+  "devDependencies": {
+    "bpk-component-button": "^1.0.16",
+    "bpk-component-list": "^0.0.29"
   }
 }

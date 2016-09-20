@@ -4,6 +4,8 @@
 /dist
 /coverage
 /packages/bpk-stylesheets/base.js
+/packages/bpk-component-icon/lg
+/packages/bpk-component-icon/sm
 node_modules
 npm-debug.*
 lerna-debug.log

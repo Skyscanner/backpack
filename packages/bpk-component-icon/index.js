@@ -1,3 +1,4 @@
-import component from './src/BpkIcon'
+import alignToButton from './src/alignToButton'
+import alignToLargeButton from './src/alignToLargeButton'
 
-export default component
+export { alignToButton, alignToLargeButton }

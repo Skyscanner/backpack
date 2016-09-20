@@ -1,6 +1,10 @@
 # bpk-component-icon
 
-> Backpack icon component.
+> Backpack icon components.
+
+> **Note:** All icon components are generated using the [react-svg-loader cli](https://github.com/boopathi/react-svg-loader#cli) tool.
+Whilst this alleviates the need to hand crank every component, it limits the ability to encapsulate styling options and 
+default fill color. See the examples below on how to overcome these limitations.  
 
 ## Installation
 
@@ -8,28 +12,39 @@
 npm install bpk-component-icon --save
 ```
 
-> **Important:** This component needs Webpack's raw-loader as a devDependency:
-```sh
-npm install raw-loader --save-dev
-```
-
-## Usage
+## Basic usage
 
 ```js
 import React from 'react'
-import BpkIcon from 'bpk-component-icon'
 import TOKENS from 'bpk-tokens/tokens/base.common'
+import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight'
+import BpkLargeAccessibilityIcon from 'bpk-component-icon/lg/accessibility'
 
 export default MyComponent = () => (
-  <BpkIcon icon='flight' color={TOKENS.colorBlue500} />
+  <div>
+    <BpkSmallFlightIcon fill={TOKENS.colorBlue500} />
+    <BpkLargeAccessibilityIcon fill={TOKENS.colorGray700} />
+  </div>
 )
 ```
 
-### Props
+> **Note:** Due to the way that they are generated, there are no prop types defined on any of the icon components. Any 
+props that you pass through will be rendered directly to the DOM. 
 
-| Property      | PropType | Required | Default Value       |
-| ------------- | -------- | -------- | ------------------- |
-| icon          | string   | true     | -                   |
-| large         | bool     | false    | -                   |
-| color         | string   | false    | TOKENS.colorGray700 |
-| alignToButton | bool     | false    | false               |
+## Aligning to BpkButton components
+
+```js
+import React from 'react'
+import BpkButton from 'bpk-component-button'
+import TOKENS from 'bpk-tokens/tokens/base.common'
+import { alignToButton } from 'bpk-component-icon'
+import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight'
+
+const AlignedBpkSmallFlightIcon = alignToButton(BpkSmallFlightIcon)
+
+export default MyComponent = () => (
+  <BpkButton>
+    <AlignedBpkSmallFlightIcon fill={TOKENS.colorWhite} />
+  </BpkButton>
+)
+```
