@@ -7,9 +7,6 @@
   - Added `width` & `height` to icon svgs
   - Generating react components for each svg 
     using [react-svg-loader cli](https://github.com/boopathi/react-svg-loader#cli).
-    
-- bpk-mixins: 5.0.0 => 5.0.1
-  - No fundamental api changes but a lot of the handling for inline svgs has been removed.
   
 - bpk-component-spinner: 0.2.12 => 1.0.0
   - We now expose three components `BpkSpinner`, `BpkLargeSpinner`, `BpkExtraLargeSpinner`
@@ -27,9 +24,12 @@
 **Added:**
 - bpk-tokens: 12.0.0 => 12.1.0
   - Surfaced SPACING_MD (18px) as a token 
+
+**Fixed:**
+- bpk-mixins: 5.0.0 => 5.0.1
+  - No fundamental api changes but a lot of the handling for inline svgs has been removed.
   
-**The following packages received a patch bump due to the dependency
-changes above:**
+**The following packages received a patch bump due to the dependency changes above:**
 - bpk-component-autosuggest: 0.0.3 => 0.0.4
 - bpk-component-blockquote: 0.0.9 => 0.0.10
 - bpk-component-button: 1.0.16 => 1.0.17
