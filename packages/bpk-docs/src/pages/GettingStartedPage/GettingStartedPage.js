@@ -13,9 +13,13 @@ import BpkContentContainer from 'bpk-component-content-container'
 import * as ROUTES from './../../constants/routes'
 
 const title = 'Getting started'
+const nodeSassUrl = 'https://github.com/sass/node-sass'
+const sassLoaderUrl = 'https://github.com/jtangelder/sass-loader'
+const sassLoaderTildeUrl = 'https://github.com/jtangelder/sass-loader#imports'
+const createReactAppUrl = 'https://github.com/facebookincubator/create-react-app'
+const nodeSassTildeImporterUrl = 'https://github.com/matthewdavidson/node-sass-tilde-importer'
 const backpackReactExampleUrl = 'http://git.prod.skyscanner.local/backpack/backpack-react-example'
 const webpackConfigExampleUrl = 'http://git.prod.skyscanner.local/backpack/backpack-react-example/blob/master/webpack.config.babel.js'
-const createReactAppUrl = 'https://github.com/facebookincubator/create-react-app'
 
 const sections = [
   {
@@ -110,9 +114,12 @@ ReactDom.render(myComponent, document.getElementById('react-mount'));
 }`}
       </BpkCodeBlock>,
       <BpkBlockquote>
-        <strong>Note</strong>: The tilde import syntax (<BpkCode>~</BpkCode>) is webpack/sass-loader specific, otherwise
-        you'll have to adjust the import path relative to your <BpkCode>node_modules</BpkCode> folder, for
-        example <BpkCode>@import "./../node_modules/bpk-mixins";</BpkCode>
+        <strong>Note</strong>: <BpkCode>bpk-mixins</BpkCode> only
+        supports <BpkLink href={nodeSassUrl} blank>node-sass</BpkLink> and makes extensive use
+        of <BpkLink href={sassLoaderTildeUrl} blank>sass-loader's</BpkLink> tilde importing mechanism. If you are not
+        using <BpkLink href={sassLoaderUrl} blank>sass-loader</BpkLink>, you can
+        use <BpkLink href={nodeSassTildeImporterUrl}>node-sass-tilde-importer</BpkLink>.
+        The <BpkCode>indentedSyntax</BpkCode> option is unsupported.
       </BpkBlockquote>,
       <BpkParagraph>
         To get an idea of all the variables and mixins available, head on over to
