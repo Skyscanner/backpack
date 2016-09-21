@@ -6,12 +6,13 @@ import TOKENS from 'bpk-tokens/tokens/base.common'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 
 import { sm, lg } from './all'
-import { alignToButton, alignToLargeButton } from './index'
+import { withButtonAlignment, withLargeButtonAlignment, withRtlSupport } from './index'
 import SmallLongArrowRightAltIcon from './sm/long-arrow-right-alt'
 import LargeLongArrowRightAltIcon from './lg/long-arrow-right-alt'
 
-const AlignedSmallLongArrowRightAltIcon = alignToButton(SmallLongArrowRightAltIcon)
-const AlignedLargeLongArrowRightAltIcon = alignToLargeButton(LargeLongArrowRightAltIcon)
+const AlignedSmallLongArrowRightAltIcon = withButtonAlignment(SmallLongArrowRightAltIcon)
+const AlignedLargeLongArrowRightAltIcon = withLargeButtonAlignment(LargeLongArrowRightAltIcon)
+const RtlAlignedLargeLongArrowRightAltIcon = withRtlSupport(withLargeButtonAlignment(LargeLongArrowRightAltIcon))
 
 storiesOf('bpk-component-icon', module)
   .add('Small icons', () => (
@@ -46,5 +47,10 @@ storiesOf('bpk-component-icon', module)
   .add('Align to large button', () => (
     <BpkButton large>
       Search <AlignedLargeLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+    </BpkButton>
+  ))
+  .add('Align to large button (RTL support)', () => (
+    <BpkButton large>
+      Search <RtlAlignedLargeLongArrowRightAltIcon fill={TOKENS.colorWhite} />
     </BpkButton>
   ))

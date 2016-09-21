@@ -8,4 +8,10 @@
   &--align-to-large-button {
     @include bpk-icon-lg--align-to-large-button();
   }
+
+  &--rtl-support {
+    @include bpk-rtl {
+      transform: scaleX(-1);
+    }
+  }
 }
