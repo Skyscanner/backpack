@@ -1,22 +1,44 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-09-21 - RTL fixes
 
 **Added:**
-- bpk-mixins:
+- bpk-mixins: 5.0.1 => 5.1.0
   - `bpk-rtl` mixin to help with targeting RTL specific styles
 
 **Fixed:**
-- bpk-tokens:
+- bpk-tokens: 12.1.0 => 12.1.1
   - The values for `INPUT_PADDING_X` and `INPUT_PADDING_Y` were the wrong way around
 
-- bpk-mixins:
-- bpk-component-blockquote:
-- bpk-component-code:
-- bpk-component-input:
-- bpk-component-select:
-- bpk-component-table:
+- bpk-mixins: 5.0.1 => 5.1.0
+- bpk-component-blockquote: 0.0.10 => 0.0.11
+- bpk-component-code: 0.0.10 => 0.0.11
+- bpk-component-input: 0.0.7 => 0.0.8
+- bpk-component-select: 0.0.7 => 0.0.8
+- bpk-component-table: 0.0.30 => 0.0.31
   - Fixed RTL support
+  
+**The following packages received a patch bump due to the dependency changes above:**  
+- bpk-component-autosuggest: 0.0.4 => 0.0.5
+- bpk-component-button: 1.0.17 => 1.0.18
+- bpk-component-checkbox: 0.0.7 => 0.0.8
+- bpk-component-content-container: 1.0.1 => 1.0.2
+- bpk-component-grid: 0.0.4 => 0.0.5
+- bpk-component-grid-toggle: 0.0.16 => 0.0.17
+- bpk-component-heading: 1.0.17 => 1.0.18
+- bpk-component-icon: 1.0.0 => 1.0.1
+- bpk-component-label: 0.0.7 => 0.0.8
+- bpk-component-link: 0.1.16 => 0.1.17
+- bpk-component-list: 0.0.30 => 0.0.31
+- bpk-component-logo: 1.0.0 => 1.0.1
+- bpk-component-paragraph: 0.1.17 => 0.1.18
+- bpk-component-radio: 0.0.7 => 0.0.8
+- bpk-component-router-link: 0.1.16 => 0.1.17
+- bpk-component-spinner: 1.0.0 => 1.0.1
+- bpk-docs: 0.0.26 => 0.0.27
+- bpk-stylesheets: 1.0.7 => 1.0.8
+- bpk-svgs: 2.0.0 => 2.0.1
+
 
 ## 2016-09-20 - SVG icon/logo/spinner bundling fixes
 
