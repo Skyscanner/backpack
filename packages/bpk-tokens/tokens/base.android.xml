@@ -121,8 +121,8 @@
   <color name="COLOR_YELLOW_900" category="color">#a88100ff</color>
   <property name="PRIMARY_GRADIENT" category="color">linear-gradient(135deg, #00b2d6 0, #02DDD8 1)</property>
   <property name="INPUT_HEIGHT" category="forms">36</property>
-  <property name="INPUT_PADDING_X" category="forms">6</property>
-  <property name="INPUT_PADDING_Y" category="forms">12</property>
+  <property name="INPUT_PADDING_X" category="forms">12</property>
+  <property name="INPUT_PADDING_Y" category="forms">6</property>
   <property name="INPUT_BORDER" category="forms">solid .0625rem #E6E4EB</property>
   <property name="INPUT_BORDER_RADIUS" category="forms">3</property>
   <property name="INPUT_BACKGROUND" category="forms">#ffffff</property>

@@ -303,6 +303,10 @@
   background-color: $bpk-color-gray-50;
   font-weight: normal;
   text-align: left;
+
+  @include bpk-rtl {
+    text-align: right;
+  }
 }
 
 /// Code.
@@ -323,6 +327,10 @@
   text-shadow: 0 $bpk-one-pixel-rem $bpk-color-white;
   white-space: nowrap;
   vertical-align: bottom;
+
+  @include bpk-rtl {
+    direction: ltr;
+  }
 }
 
 /// Code block. Modifies the bpk-code mixin.
@@ -372,6 +380,11 @@
   margin: 0 0 $bpk-spacing-sm 0;
   padding: $bpk-spacing-sm;
   border-left: solid $bpk-spacing-sm $bpk-color-gray-50;
+
+  @include bpk-rtl {
+    border-right: solid $bpk-spacing-sm $bpk-color-gray-50;
+    border-left: 0;
+  }
 
   > *:last-child {
     margin-bottom: 0;

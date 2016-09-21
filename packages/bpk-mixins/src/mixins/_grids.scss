@@ -88,7 +88,7 @@
   float: left;
   padding: $bpk-grid-gutter / 2;
 
-  html[dir="rtl"] & {
+  @include bpk-rtl {
     float: right;
   }
 }

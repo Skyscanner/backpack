@@ -86,3 +86,20 @@
     clear: both;
   }
 }
+
+/// Target RTL specific styles.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-rtl() {
+///       /* RTL scss goes here */
+///     }
+///   }
+
+@mixin bpk-rtl {
+  html[dir="rtl"] & {
+    @content;
+  }
+}
