@@ -1,5 +1,23 @@
 # Backpack changelog
 
+## UNRELEASED
+
+Consumers should now add the `transform-object-rest-spread` plugin to their `.babelrc` as all components may or may not depend 
+on it. 
+
+**Added:**
+- bpk-component-rtl-toggle
+  - New component to help with testing RTL layouts
+- bpk-component-icon
+  - Three new HOC's: `withButtonAlignment`, `withLargeButtonAlignment` & `withRtlSupport`
+  - `withRtlSupport` provides RTL support for icons on an opt-in basis (as not all icons should be flipped in RTL layouts)
+  - `alignToButton` & `alignToLargeButton` remain (but are aliases to `withButtonAlignment` & `withLargeButtonAlignment`
+    respectively)
+
+**Fixed:**
+- bpk-component-autosuggest
+  - Removed padding from right hand side of suggestion container (RTL fix)
+
 ## 2016-09-21 - RTL fixes
 
 **Added:**
