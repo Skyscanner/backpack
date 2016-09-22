@@ -37,14 +37,35 @@ props that you pass through will be rendered directly to the DOM.
 import React from 'react'
 import BpkButton from 'bpk-component-button'
 import TOKENS from 'bpk-tokens/tokens/base.common'
-import { alignToButton } from 'bpk-component-icon'
 import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight'
+import BpkLargeAccessibilityIcon from 'bpk-component-icon/lg/accessibility'
+import { withButtonAlignment, withLargeButtonAlignment } from 'bpk-component-icon'
 
-const AlignedBpkSmallFlightIcon = alignToButton(BpkSmallFlightIcon)
+const AlignedBpkSmallFlightIcon = withButtonAlignment(BpkSmallFlightIcon)
+const AlignedBpkLargeAccessibilityIcon = withLargeButtonAlignment(BpkLargeAccessibilityIcon)
 
 export default MyComponent = () => (
   <BpkButton>
-    <AlignedBpkSmallFlightIcon fill={TOKENS.colorWhite} />
+    <AlignedBpkSmallFlightIcon fill={TOKENS.colorBlue500} />
+    <AlignedBpkLargeAccessibilityIcon fill={TOKENS.colorGray700} />
   </BpkButton>
+)
+```
+
+## RTL support
+
+```js
+import React from 'react'
+import BpkButton from 'bpk-component-button'
+import TOKENS from 'bpk-tokens/tokens/base.common'
+import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight'
+import { withRtlSupport } from 'bpk-component-icon'
+
+const RtlSupportedBpkSmallFlightIcon = withRtlSupport(BpkSmallFlightIcon)
+
+export default MyComponent = () => (
+  <div>
+    <RtlSupportedBpkSmallFlightIcon fill={TOKENS.colorBlue500} />
+  </div>
 )
 ```

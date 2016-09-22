@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react'
 import Helmet from 'react-helmet'
 
+import BpkRtlToggle from 'bpk-component-rtl-toggle'
 import BpkGridToggle from 'bpk-component-grid-toggle'
+import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid'
 
 import './default-layout.scss'
 import Header from '../../components/Header'
@@ -11,10 +13,22 @@ const DefaultLayout = ({ children }) => (
     <Helmet titleTemplate='%s | Backpack' />
     <Header />
     <main>{children}</main>
-    <footer className='bpkdocs-default-layout__footer'>
-      <small className='bpkdocs-default-layout__footer-copyright'>&copy; Skyscanner {new Date().getFullYear()}</small>
-      <div className='bpkdocs-default-layout__footer-toggle'><BpkGridToggle /></div>
-    </footer>
+    <BpkGridContainer padded={false}>
+      <div className='bpkdocs-default-layout__footer-container'>
+        <BpkGridRow>
+          <BpkGridColumn width={6} mobileWidth={12}>
+            <small className='bpkdocs-default-layout__footer-copy'>
+              &copy; Skyscanner {new Date().getFullYear()}
+            </small>
+          </BpkGridColumn>
+          <BpkGridColumn width={6} mobileWidth={12}>
+            <small className='bpkdocs-default-layout__footer-copy bpkdocs-default-layout__footer-copy--align-right'>
+              <BpkGridToggle /> | <BpkRtlToggle />
+            </small>
+          </BpkGridColumn>
+        </BpkGridRow>
+      </div>
+    </BpkGridContainer>
   </div>
 )
 

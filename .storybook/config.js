@@ -4,12 +4,15 @@ import { configure, addDecorator } from '@kadira/storybook'
 import './../packages/bpk-stylesheets/base.scss'
 import TOKENS from './../packages/bpk-tokens/tokens/base.common'
 import BpkGridToggle from './../packages/bpk-component-grid-toggle'
+import BpkRtlToggle from './../packages/bpk-component-rtl-toggle'
 
 addDecorator((story) => (
   <div style={{ padding: TOKENS.spacingBase }}>
     {story()}
     <br />
     <BpkGridToggle />
+    <br />
+    <BpkRtlToggle />
   </div>
 ))
 
@@ -32,6 +35,7 @@ configure(() => {
   require('./../packages/bpk-component-paragraph/stories')
   require('./../packages/bpk-component-radio/stories')
   require('./../packages/bpk-component-router-link/stories')
+  require('./../packages/bpk-component-rtl-toggle/stories')
   require('./../packages/bpk-component-select/stories')
   require('./../packages/bpk-component-spinner/stories')
   require('./../packages/bpk-component-table/stories')
