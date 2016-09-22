@@ -1,26 +1,30 @@
 @import '~bpk-mixins/index';
 
 .bpkdocs-default-layout {
-  &__footer {
-    @include bpk-grid__container;
-
-    padding: $bpk-spacing-lg $bpk-spacing-base;
+  &__footer-container {
+    padding-top: $bpk-spacing-lg;
     box-shadow: 0 -1px 0 0 $bpk-color-gray-50;
+  }
 
-    &-copyright,
-    &-toggle {
-      @include bpk-text-sm;
-    }
+  &__footer-copy {
+    @include bpk-text-sm;
 
-    &-copyright {
-      float: left;
-      width: 45%;
-    }
+    display: block;
 
-    &-toggle {
-      float: right;
-      width: 45%;
+    &--align-right {
       text-align: right;
+
+      @include bpk-rtl {
+        text-align: left;
+      }
+
+      @include bpk-breakpoint-mobile {
+        text-align: left;
+
+        @include bpk-rtl {
+          text-align: right;
+        }
+      }
     }
   }
 }

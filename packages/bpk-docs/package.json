@@ -33,6 +33,7 @@
     "bpk-component-paragraph": "^0.1.18",
     "bpk-component-radio": "^0.0.8",
     "bpk-component-router-link": "^0.1.17",
+    "bpk-component-rtl-toggle": "^0.0.0",
     "bpk-component-select": "^0.0.8",
     "bpk-component-spinner": "^1.0.1",
     "bpk-component-table": "^0.0.31",
