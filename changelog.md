@@ -1,6 +1,38 @@
 # Backpack changelog
 
-## 2016-09-21 - Opt-in RTL support for bpk-component-icon
+## 2016-09-21 (2) - Mixin option for opt-in RTL support for icons
+
+**Added:**
+- bpk-mixins: 5.1.0 => 5.2.0
+  - New mixin `bpk-icon--rtl-support` for RTL support in icons
+   
+**The following packages received a patch bump due to the dependency changes above:**     
+- bpk-component-autosuggest: 0.0.6 => 0.0.7
+- bpk-component-blockquote: 0.0.11 => 0.0.12
+- bpk-component-button: 1.0.18 => 1.0.19
+- bpk-component-checkbox: 0.0.8 => 0.0.9
+- bpk-component-code: 0.0.11 => 0.0.12
+- bpk-component-content-container: 1.0.2 => 1.0.3
+- bpk-component-grid: 0.0.5 => 0.0.6
+- bpk-component-grid-toggle: 0.0.17 => 0.0.18
+- bpk-component-heading: 1.0.18 => 1.0.19
+- bpk-component-icon: 1.1.0 => 1.1.1
+- bpk-component-input: 0.0.8 => 0.0.9
+- bpk-component-label: 0.0.8 => 0.0.9
+- bpk-component-link: 0.1.17 => 0.1.18
+- bpk-component-list: 0.0.31 => 0.0.32
+- bpk-component-logo: 1.0.1 => 1.0.2
+- bpk-component-paragraph: 0.1.18 => 0.1.19
+- bpk-component-radio: 0.0.8 => 0.0.9
+- bpk-component-router-link: 0.1.17 => 0.1.18
+- bpk-component-rtl-toggle: 0.0.1 => 0.0.2
+- bpk-component-select: 0.0.8 => 0.0.9
+- bpk-component-spinner: 1.0.1 => 1.0.2
+- bpk-component-table: 0.0.31 => 0.0.32
+- bpk-docs: 0.0.28 => 0.0.29
+- bpk-stylesheets: 1.0.8 => 1.0.9
+
+## 2016-09-21 (1) - Opt-in RTL support for bpk-component-icon
 
 Consumers should now add the `transform-object-rest-spread` plugin to their `.babelrc` as all components may or may not depend 
 on it. 
