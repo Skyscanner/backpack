@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -24,7 +24,7 @@
     "bpk-component-grid": "^0.0.5",
     "bpk-component-grid-toggle": "^0.0.17",
     "bpk-component-heading": "^1.0.18",
-    "bpk-component-icon": "^1.0.1",
+    "bpk-component-icon": "^1.1.0",
     "bpk-component-input": "^0.0.8",
     "bpk-component-label": "^0.0.8",
     "bpk-component-link": "^0.1.17",
@@ -33,7 +33,7 @@
     "bpk-component-paragraph": "^0.1.18",
     "bpk-component-radio": "^0.0.8",
     "bpk-component-router-link": "^0.1.17",
-    "bpk-component-rtl-toggle": "^0.0.0",
+    "bpk-component-rtl-toggle": "^0.0.1",
     "bpk-component-select": "^0.0.8",
     "bpk-component-spinner": "^1.0.1",
     "bpk-component-table": "^0.0.31",

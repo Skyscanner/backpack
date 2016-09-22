@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-autosuggest",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Backpack autosuggest component.",
   "main": "index.js",
   "repository": {
