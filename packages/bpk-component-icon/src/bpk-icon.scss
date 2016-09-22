@@ -10,8 +10,6 @@
   }
 
   &--rtl-support {
-    @include bpk-rtl {
-      transform: scaleX(-1);
-    }
+    @include bpk-icon--rtl-support();
   }
 }

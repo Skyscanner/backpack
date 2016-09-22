@@ -96,6 +96,23 @@
   @include _bpk-svg--align-to-large-button();
 }
 
+/// RTL support. Modifies the bpk-icon-sm or bpk-icon-lg mixin.
+///
+/// @require {mixin} bpk-icon-sm
+/// @require {mixin} bpk-icon-lg
+///
+/// @example scss
+///   .selector {
+///     @include bpk-icon-sm(flight-gray-500);
+///     @include bpk-icon--rtl-support();
+///   }
+
+@mixin bpk-icon--rtl-support() {
+  @include bpk-rtl {
+    transform: scaleX(-1);
+  }
+}
+
 /// Logo factory.
 ///
 /// @param {variable} $spacing
