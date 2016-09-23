@@ -1020,6 +1020,24 @@
       "value": "calc(1.5rem * 3)",
       "name": "LOGO_TIANXUN_STACKED_DEFAULT_HEIGHT"
     },
+    "BANNER_ALERT_SUCCESS_BOX_SHADOW": {
+      "category": "notifications",
+      "value": "0 0 0 1px #00d775",
+      "type": "box-shadow",
+      "name": "BANNER_ALERT_SUCCESS_BOX_SHADOW"
+    },
+    "BANNER_ALERT_WARN_BOX_SHADOW": {
+      "category": "notifications",
+      "value": "0 0 0 1px #ffd445",
+      "type": "box-shadow",
+      "name": "BANNER_ALERT_WARN_BOX_SHADOW"
+    },
+    "BANNER_ALERT_ERROR_BOX_SHADOW": {
+      "category": "notifications",
+      "value": "0 0 0 1px #ff5452",
+      "type": "box-shadow",
+      "name": "BANNER_ALERT_ERROR_BOX_SHADOW"
+    },
     "SPACING_XS": {
       "type": "size",
       "category": "spacing",
@@ -1570,6 +1588,9 @@
     "LOGO_STACKED_DEFAULT_HEIGHT",
     "LOGO_TIANXUN_DEFAULT_HEIGHT",
     "LOGO_TIANXUN_STACKED_DEFAULT_HEIGHT",
+    "BANNER_ALERT_SUCCESS_BOX_SHADOW",
+    "BANNER_ALERT_WARN_BOX_SHADOW",
+    "BANNER_ALERT_ERROR_BOX_SHADOW",
     "SPACING_XS",
     "SPACING_SM",
     "SPACING_MD",

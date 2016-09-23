@@ -1,0 +1,83 @@
+@import '~bpk-mixins/index';
+
+.bpk-banner-alert {
+  @include bpk-border-radius-sm;
+
+  overflow: hidden;
+
+  &--success {
+    box-shadow: $bpk-banner-alert-success-box-shadow;
+  }
+
+  &--warn {
+    box-shadow: $bpk-banner-alert-warn-box-shadow;
+  }
+
+  &--error {
+    box-shadow: $bpk-banner-alert-error-box-shadow;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    padding: $bpk-spacing-xs $bpk-spacing-sm;
+
+    &--expandable {
+      cursor: pointer;
+
+      &:hover {
+        background-color: $bpk-color-gray-50;
+      }
+
+      &:active {
+        background-color: $bpk-color-gray-100;
+      }
+    }
+  }
+
+  // Make sure the items in the flexbox are display block for older IE's
+  &__icon,
+  &__message,
+  &__toggle {
+    display: block;
+  }
+
+  &__message {
+    flex-grow: 1;
+  }
+
+  &__icon-success {
+    fill: $bpk-color-green-500;
+  }
+
+  &__icon-warn {
+    fill: $bpk-color-yellow-500;
+  }
+
+  &__icon-error {
+    fill: $bpk-color-red-500;
+  }
+
+  &__toggle-button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  &__expand-icon {
+    fill: $bpk-color-gray-700;
+
+    &--flipped {
+      transform: scaleY(-1);
+    }
+  }
+
+  &__children-container {
+    @include bpk-text-sm;
+
+    padding: $bpk-spacing-xs $bpk-spacing-sm;
+    color: $bpk-color-gray-500;
+  }
+}

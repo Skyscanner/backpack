@@ -158,6 +158,9 @@
   <property name="LOGO_STACKED_DEFAULT_HEIGHT" category="logos">calc(1.5rem * 3)</property>
   <property name="LOGO_TIANXUN_DEFAULT_HEIGHT" category="logos">42</property>
   <property name="LOGO_TIANXUN_STACKED_DEFAULT_HEIGHT" category="logos">calc(1.5rem * 3)</property>
+  <property name="BANNER_ALERT_SUCCESS_BOX_SHADOW" category="notifications">0 0 0 1px #00d775</property>
+  <property name="BANNER_ALERT_WARN_BOX_SHADOW" category="notifications">0 0 0 1px #ffd445</property>
+  <property name="BANNER_ALERT_ERROR_BOX_SHADOW" category="notifications">0 0 0 1px #ff5452</property>
   <property name="SPACING_XS" category="spacing">6</property>
   <property name="SPACING_SM" category="spacing">12</property>
   <property name="SPACING_MD" category="spacing">18</property>

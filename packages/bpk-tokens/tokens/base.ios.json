@@ -949,6 +949,24 @@
       "name": "logoTianxunStackedDefaultHeight"
     },
     {
+      "category": "notifications",
+      "value": "0 0 0 1px #00d775",
+      "type": "box-shadow",
+      "name": "bannerAlertSuccessBoxShadow"
+    },
+    {
+      "category": "notifications",
+      "value": "0 0 0 1px #ffd445",
+      "type": "box-shadow",
+      "name": "bannerAlertWarnBoxShadow"
+    },
+    {
+      "category": "notifications",
+      "value": "0 0 0 1px #ff5452",
+      "type": "box-shadow",
+      "name": "bannerAlertErrorBoxShadow"
+    },
+    {
       "type": "size",
       "category": "spacing",
       "value": "6",

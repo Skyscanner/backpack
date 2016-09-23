@@ -14,7 +14,7 @@ BpkCard.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
-  ]),
+  ]).isRequired,
   href: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   padded: PropTypes.bool

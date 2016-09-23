@@ -9,6 +9,7 @@
     "./base/forms.json",
     "./base/grids.json",
     "./base/logos.json",
+    "./base/notifications.json",
     "./base/spacing.json",
     "./base/typography.json"
   ]

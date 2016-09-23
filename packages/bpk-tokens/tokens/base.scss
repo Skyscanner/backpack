@@ -314,6 +314,12 @@ $bpk-logo-stacked-default-height: calc(1.5rem * 3);
 $bpk-logo-tianxun-default-height: 2.625rem;
 /// @group logos
 $bpk-logo-tianxun-stacked-default-height: calc(1.5rem * 3);
+/// @group notifications
+$bpk-banner-alert-success-box-shadow: 0 0 0 1px #00d775;
+/// @group notifications
+$bpk-banner-alert-warn-box-shadow: 0 0 0 1px #ffd445;
+/// @group notifications
+$bpk-banner-alert-error-box-shadow: 0 0 0 1px #ff5452;
 /// @group spacings
 $bpk-spacing-xs: .375rem;
 /// @group spacings
