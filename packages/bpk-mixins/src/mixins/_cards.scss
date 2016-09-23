@@ -1,0 +1,84 @@
+@import '../bonds';
+
+////
+/// @group cards
+////
+
+/// Basic card.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-card();
+///   }
+
+@mixin bpk-card {
+  @include bpk-box-shadow-sm;
+  @include bpk-border-radius-xs;
+
+  position: relative;
+  display: block;
+  background-color: $bpk-card-background-color;
+  color: $bpk-card-color;
+  text-decoration: none;
+  cursor: pointer;
+
+  &::after {
+    @include bpk-box-shadow-lg;
+    @include bpk-border-radius-xs;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &:active::after {
+    box-shadow: none;
+  }
+}
+
+/// Adds padding to cards. Modifies the bpk-card mixin.
+///
+/// @require {mixin} bpk-card
+///
+/// @example scss
+///   .selector {
+///     @include bpk-card();
+///     @include bpk-card--padded();
+///   }
+
+@mixin bpk-card--padded {
+  padding: $bpk-card-padding;
+}
+
+/// Focused card. Modifies the bpk-card mixin.
+///
+/// @require {mixin} bpk-card
+///
+/// @example scss
+///   .selector {
+///     @include bpk-card();
+///     @include bpk-card--focused();
+///   }
+
+@mixin bpk-card--focused {
+  &,
+  &:hover {
+    @include bpk-box-shadow-xl;
+
+    cursor: default;
+
+    &::after {
+      opacity: 0;
+    }
+  }
+}

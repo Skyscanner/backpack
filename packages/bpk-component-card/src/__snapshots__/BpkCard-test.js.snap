@@ -1,0 +1,35 @@
+exports[`BpkCard should render correctly 1`] = `
+<a
+  className="bpk-card bpk-card--padded"
+  href="//www.skyscanner.net"
+  onClick={null}>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</a>
+`;
+
+exports[`BpkCard should render correctly with "focused" attribute 1`] = `
+<a
+  className="bpk-card bpk-card--padded bpk-card--focused"
+  href="//www.skyscanner.net"
+  onClick={null}>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</a>
+`;
+
+exports[`BpkCard should render correctly with "padded" attribute equal to "false" 1`] = `
+<a
+  className="bpk-card"
+  href="//www.skyscanner.net"
+  onClick={null}>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</a>
+`;
+
+exports[`BpkCard should render correctly with "tagName" attribute equal to "article" 1`] = `
+<a
+  className="bpk-card bpk-card--padded"
+  href="//www.skyscanner.net"
+  onClick={null}>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</a>
+`;

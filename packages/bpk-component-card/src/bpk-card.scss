@@ -1,0 +1,13 @@
+@import '~bpk-mixins/index';
+
+.bpk-card {
+  @include bpk-card;
+
+  &--padded {
+    @include bpk-card--padded;
+  }
+
+  &--focused {
+    @include bpk-card--focused;
+  }
+}

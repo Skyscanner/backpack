@@ -1,0 +1,22 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "cards"
+  },
+  "props": {
+    "CARD_BACKGROUND_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "CARD_COLOR": {
+      "value": "{!GRAY_700}",
+      "type": "color"
+    },
+    "CARD_PADDING": {
+      "value": "{!SPACING_SM}",
+      "type": "size"
+    }
+  }
+}

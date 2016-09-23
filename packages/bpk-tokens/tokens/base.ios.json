@@ -409,6 +409,24 @@
       "name": "buttonSelectedDisabledBoxShadow"
     },
     {
+      "category": "cards",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "cardBackgroundColor"
+    },
+    {
+      "category": "cards",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "cardColor"
+    },
+    {
+      "category": "cards",
+      "value": "12",
+      "type": "size",
+      "name": "cardPadding"
+    },
+    {
       "type": "color",
       "category": "color",
       "value": "rgb(255, 255, 255)",
