@@ -6,8 +6,4 @@
   &--padded {
     @include bpk-card--padded;
   }
-
-  &--focused {
-    @include bpk-card--focused;
-  }
 }
