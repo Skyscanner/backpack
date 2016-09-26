@@ -59,26 +59,3 @@
 @mixin bpk-card--padded {
   padding: $bpk-card-padding;
 }
-
-/// Focused card. Modifies the bpk-card mixin.
-///
-/// @require {mixin} bpk-card
-///
-/// @example scss
-///   .selector {
-///     @include bpk-card();
-///     @include bpk-card--focused();
-///   }
-
-@mixin bpk-card--focused {
-  &,
-  &:hover {
-    @include bpk-box-shadow-xl;
-
-    cursor: default;
-
-    &::after {
-      opacity: 0;
-    }
-  }
-}
