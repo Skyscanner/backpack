@@ -23,6 +23,7 @@ export const FORMS = '/docs/atoms/forms'
 export const CARDS = '/docs/atoms/cards'
 
 export const MOLECULES = '/docs/molecules'
+export const NOTIFICATIONS = '/docs/molecules/notifications'
 
 export const ORGANISMS = '/docs/organisms'
 

@@ -25,6 +25,8 @@ import LogosPage from './../pages/LogosPage'
 import FormsPage from './../pages/FormsPage'
 import CardsPage from './../pages/CardsPage'
 
+import NotificationsPage from './../pages/NotificationsPage'
+
 import DownloadsPage from './../pages/DownloadsPage'
 import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages'
 
@@ -55,7 +57,8 @@ const Routes = (
         <Route path={ROUTES.CARDS} component={CardsPage} />
       </Route>
       <Route path={ROUTES.MOLECULES}>
-        <IndexRedirect to={ROUTES.GETTING_STARTED} />
+        <IndexRedirect to={ROUTES.NOTIFICATIONS} />
+        <Route path={ROUTES.NOTIFICATIONS} component={NotificationsPage} />
       </Route>
       <Route path={ROUTES.ORGANISMS}>
         <IndexRedirect to={ROUTES.GETTING_STARTED} />
