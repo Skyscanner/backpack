@@ -1,12 +1,39 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-09-26 - Card component
 
 **Added:**
-- bpk-component-card:
-- bpk-mixins:
-- bpk-tokens:
+- bpk-component-card: 0.0.0 => 0.0.1
+- bpk-mixins: 5.2.0 => 5.3.0
+- bpk-tokens: 12.1.1 => 12.2.0
   - New 'card' component for clickable/touchable surfaces such as itineraries, news articles etc
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 0.0.7 => 0.0.8
+- bpk-component-blockquote: 0.0.12 => 0.0.13
+- bpk-component-button: 1.0.19 => 1.0.20
+- bpk-component-checkbox: 0.0.9 => 0.0.10
+- bpk-component-code: 0.0.12 => 0.0.13
+- bpk-component-content-container: 1.0.3 => 1.0.4
+- bpk-component-grid: 0.0.6 => 0.0.7
+- bpk-component-grid-toggle: 0.0.18 => 0.0.19
+- bpk-component-heading: 1.0.19 => 1.0.20
+- bpk-component-icon: 1.1.1 => 1.1.2
+- bpk-component-input: 0.0.9 => 0.0.10
+- bpk-component-label: 0.0.9 => 0.0.10
+- bpk-component-link: 0.1.18 => 0.1.19
+- bpk-component-list: 0.0.32 => 0.0.33
+- bpk-component-logo: 1.0.2 => 1.0.3
+- bpk-component-paragraph: 0.1.19 => 0.1.20
+- bpk-component-radio: 0.0.9 => 0.0.10
+- bpk-component-router-link: 0.1.18 => 0.1.19
+- bpk-component-rtl-toggle: 0.0.2 => 0.0.3
+- bpk-component-select: 0.0.9 => 0.0.10
+- bpk-component-spinner: 1.0.2 => 1.0.3
+- bpk-component-table: 0.0.32 => 0.0.33
+- bpk-docs: 0.0.29 => 0.0.30
+- bpk-stylesheets: 1.0.9 => 1.0.10
+- bpk-svgs: 2.0.1 => 2.0.2
 
 ## 2016-09-21 (2) - Mixin option for opt-in RTL support for icons
 
