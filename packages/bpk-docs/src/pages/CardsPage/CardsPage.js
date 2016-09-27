@@ -31,7 +31,7 @@ const components = [
 
 const CardsPage = () => <DocsPageBuilder
   title='Cards'
-  blurb='Cards are used to define distinct areas of the UI. They are quite often used as a signifier to give affordance to a clickable set of elements e.g. a flight result.'
+  blurb='Cards are used to group related items within the UI. They allow complex datasets to be broken down into individual, distinct areas for easy consumption. Cards are quite often used as a signifier to give affordance to a clickable set of elements e.g. a flight itinerary.'
   components={components}
   readme={require('raw!bpk-component-card/readme.md')}
   sassdocId='cards'
