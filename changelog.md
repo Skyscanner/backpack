@@ -1,6 +1,6 @@
 # Backpack changelog
 
-## 2016-09-26 - Card flicker on safari fix
+## 2016-09-27 - Card flicker on safari fix
 
 **Fixed:**
 - bpk-component-card: 0.0.1 => 0.0.2
