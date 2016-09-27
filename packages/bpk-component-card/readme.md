@@ -30,4 +30,4 @@ export default MyComponent = () => (
 | children  | -        | true     | -             |
 | href      | string   | true     |               |
 | onClick   | func     | false    | null          |
-| focused   | bool     | false    | false         |
+| padded    | bool     | false    | false         |
