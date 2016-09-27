@@ -17,7 +17,7 @@ const NotificationsPage = () => <DocsPageBuilder
   title='Notifications'
   blurb='TODO'
   components={components}
-  readme={`TODO`}
+  readme={'TODO'}
   sassdocId='TODO'
 />
 

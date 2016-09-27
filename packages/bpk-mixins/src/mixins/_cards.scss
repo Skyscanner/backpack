@@ -22,6 +22,9 @@
   text-decoration: none;
   cursor: pointer;
 
+  // Keep transitions and animations to only transform and opacity.
+  // This pseudo element solution allows us to animate box-shadow in a performant manner.
+  // http://tobiasahlin.com/blog/how-to-animate-box-shadow/
   &::after {
     @include bpk-box-shadow-lg;
     @include bpk-border-radius-xs;
@@ -34,7 +37,12 @@
     content: '';
     transition: opacity .3s ease-in-out;
     opacity: 0;
-    z-index: -1;
+    pointer-events: none; // To prevent the pseudo element absorbing click events
+
+    // pointer-events doesn't work on ie
+    @media screen\0 {
+      z-index: -1;
+    }
   }
 
   &:hover::after {
