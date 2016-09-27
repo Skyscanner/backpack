@@ -1,5 +1,39 @@
 # Backpack changelog
 
+## 2016-09-26 - Card flicker on safari fix
+
+**Fixed:**
+- bpk-component-card: 0.0.1 => 0.0.2
+- bpk-mixins: 5.3.0 => 5.3.1
+  - Bug with card component animation causes flicker in Safari Version 10.0 (10602.1.50.0.10)
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 0.0.8 => 0.0.9
+- bpk-component-blockquote: 0.0.13 => 0.0.14
+- bpk-component-button: 1.0.20 => 1.0.21
+- bpk-component-checkbox: 0.0.10 => 0.0.11
+- bpk-component-code: 0.0.13 => 0.0.14
+- bpk-component-content-container: 1.0.4 => 1.0.5
+- bpk-component-grid: 0.0.7 => 0.0.8
+- bpk-component-grid-toggle: 0.0.19 => 0.0.20
+- bpk-component-heading: 1.0.20 => 1.0.21
+- bpk-component-icon: 1.1.2 => 1.1.3
+- bpk-component-input: 0.0.10 => 0.0.11
+- bpk-component-label: 0.0.10 => 0.0.11
+- bpk-component-link: 0.1.19 => 0.1.20
+- bpk-component-list: 0.0.33 => 0.0.34
+- bpk-component-logo: 1.0.3 => 1.0.4
+- bpk-component-paragraph: 0.1.20 => 0.1.21
+- bpk-component-radio: 0.0.10 => 0.0.11
+- bpk-component-router-link: 0.1.19 => 0.1.20
+- bpk-component-rtl-toggle: 0.0.3 => 0.0.4
+- bpk-component-select: 0.0.10 => 0.0.11
+- bpk-component-spinner: 1.0.3 => 1.0.4
+- bpk-component-table: 0.0.33 => 0.0.34
+- bpk-docs: 0.0.30 => 0.0.31
+- bpk-stylesheets: 1.0.10 => 1.0.11
+
+
 ## 2016-09-26 - Card component
 
 **Added:**
