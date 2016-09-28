@@ -1,18 +1,43 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-09-28 - Banner Alert Component
 
 **Added:**
-- bpk-component-banner-alert:
-- bpk-tokens:
-  - New banner alert component
+- bpk-component-banner-alert: 0.0.0 => 0.0.1
+- bpk-tokens: 12.2.0 => 12.3.0
+  - New banner alert component with success, warn and error variations 
   
 **Fixed:**
-- bpk-component-blockquote:
-- bpk-component-card:
-- bpk-component-code:
-- bpk-component-list:
+- bpk-component-blockquote: 0.0.14 => 0.0.15
+- bpk-component-card: 0.0.2 => 0.0.3
+- bpk-component-code: 0.0.14 => 0.0.15
+- bpk-component-list: 0.0.34 => 0.0.35
   - Added missing "required" proptypes
+  
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 0.0.9 => 0.0.10
+- bpk-component-button: 1.0.21 => 1.0.22
+- bpk-component-checkbox: 0.0.11 => 0.0.12
+- bpk-component-content-container: 1.0.5 => 1.0.6
+- bpk-component-grid: 0.0.8 => 0.0.9
+- bpk-component-grid-toggle: 0.0.20 => 0.0.21
+- bpk-component-heading: 1.0.21 => 1.0.22
+- bpk-component-icon: 1.1.3 => 1.1.4
+- bpk-component-input: 0.0.11 => 0.0.12
+- bpk-component-label: 0.0.11 => 0.0.12
+- bpk-component-link: 0.1.20 => 0.1.21
+- bpk-component-logo: 1.0.4 => 1.0.5
+- bpk-component-paragraph: 0.1.21 => 0.1.22
+- bpk-component-radio: 0.0.11 => 0.0.12
+- bpk-component-router-link: 0.1.20 => 0.1.21
+- bpk-component-rtl-toggle: 0.0.4 => 0.0.5
+- bpk-component-select: 0.0.11 => 0.0.12
+- bpk-component-spinner: 1.0.4 => 1.0.5
+- bpk-component-table: 0.0.34 => 0.0.35
+- bpk-docs: 0.0.31 => 0.0.32
+- bpk-mixins: 5.3.1 => 5.3.2
+- bpk-stylesheets: 1.0.11 => 1.0.12
+- bpk-svgs: 2.0.2 => 2.0.3
 
 ## 2016-09-27 - Card flicker on safari fix
 
