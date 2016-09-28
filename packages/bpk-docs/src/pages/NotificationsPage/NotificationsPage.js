@@ -13,15 +13,21 @@ const components = [
     examples: [
       <BpkBannerAlert message='Successful alert.' type={ALERT_TYPES.SUCCESS} />,
       <br />,
-      <BpkBannerAlert message='Successful alert with more information.' type={ALERT_TYPES.SUCCESS}>{longMessage}</BpkBannerAlert>,
+      <BpkBannerAlert message='Successful alert with more information.' type={ALERT_TYPES.SUCCESS} toggleButtonLabel='See more'>
+        {longMessage}
+      </BpkBannerAlert>,
       <br />,
       <BpkBannerAlert message='Warn alert.' type={ALERT_TYPES.WARN} />,
       <br />,
-      <BpkBannerAlert message='Warn alert with more information.' type={ALERT_TYPES.WARN}>{longMessage}</BpkBannerAlert>,
+      <BpkBannerAlert message='Warn alert with more information.' type={ALERT_TYPES.WARN} toggleButtonLabel='See more'>
+        {longMessage}
+      </BpkBannerAlert>,
       <br />,
       <BpkBannerAlert message='Error alert.' type={ALERT_TYPES.ERROR} />,
       <br />,
-      <BpkBannerAlert message='Error alert with more information.' type={ALERT_TYPES.ERROR}>{longMessage}</BpkBannerAlert>
+      <BpkBannerAlert message='Error alert with more information.' type={ALERT_TYPES.ERROR} toggleButtonLabel='See more'>
+        {longMessage}
+      </BpkBannerAlert>
     ],
     readme: require('raw!bpk-component-banner-alert/readme.md')
   },
