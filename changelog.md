@@ -1,13 +1,40 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-09-28 (2) - Button wrap fix
 
 **Fixed:**
-- bpk-component-button: 
-- bpk-mixins:
+- bpk-component-button: 1.0.22 => 1.0.23
+- bpk-mixins: 5.3.2 => 5.3.3
   - Button text can now wrap
+  
+**The following packages received a patch bump due to the dependency changes above:**  
+- bpk-component-autosuggest: 0.0.10 => 0.0.11
+- bpk-component-banner-alert: 0.0.1 => 0.0.2
+- bpk-component-blockquote: 0.0.15 => 0.0.16
+- bpk-component-card: 0.0.3 => 0.0.4
+- bpk-component-checkbox: 0.0.12 => 0.0.13
+- bpk-component-code: 0.0.15 => 0.0.16
+- bpk-component-content-container: 1.0.6 => 1.0.7
+- bpk-component-grid: 0.0.9 => 0.0.10
+- bpk-component-grid-toggle: 0.0.21 => 0.0.22
+- bpk-component-heading: 1.0.22 => 1.0.23
+- bpk-component-icon: 1.1.4 => 1.1.5
+- bpk-component-input: 0.0.12 => 0.0.13
+- bpk-component-label: 0.0.12 => 0.0.13
+- bpk-component-link: 0.1.21 => 0.1.22
+- bpk-component-list: 0.0.35 => 0.0.36
+- bpk-component-logo: 1.0.5 => 1.0.6
+- bpk-component-paragraph: 0.1.22 => 0.1.23
+- bpk-component-radio: 0.0.12 => 0.0.13
+- bpk-component-router-link: 0.1.21 => 0.1.22
+- bpk-component-rtl-toggle: 0.0.5 => 0.0.6
+- bpk-component-select: 0.0.12 => 0.0.13
+- bpk-component-spinner: 1.0.5 => 1.0.6
+- bpk-component-table: 0.0.35 => 0.0.36
+- bpk-docs: 0.0.32 => 0.0.33
+- bpk-stylesheets: 1.0.12 => 1.0.13
 
-## 2016-09-28 - Banner Alert Component
+## 2016-09-28 (1) - Banner Alert Component
 
 **Added:**
 - bpk-component-banner-alert: 0.0.0 => 0.0.1
