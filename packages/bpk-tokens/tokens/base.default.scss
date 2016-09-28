@@ -314,6 +314,36 @@ $bpk-logo-stacked-default-height: calc(1.5rem * 3) !default;
 $bpk-logo-tianxun-default-height: 2.625rem !default;
 /// @group logos
 $bpk-logo-tianxun-stacked-default-height: calc(1.5rem * 3) !default;
+/// @group notifications
+$bpk-banner-alert-background-color: rgb(255, 255, 255) !default;
+/// @group notifications
+$bpk-banner-alert-success-box-shadow: 0 0 0 1px #00d775 !default;
+/// @group notifications
+$bpk-banner-alert-warn-box-shadow: 0 0 0 1px #ffd445 !default;
+/// @group notifications
+$bpk-banner-alert-error-box-shadow: 0 0 0 1px #ff5452 !default;
+/// @group notifications
+$bpk-banner-alert-header-padding-y: .375rem !default;
+/// @group notifications
+$bpk-banner-alert-header-padding-x: .75rem !default;
+/// @group notifications
+$bpk-banner-alert-header-expandable-hover-background-color: rgb(243, 242, 245) !default;
+/// @group notifications
+$bpk-banner-alert-header-expandable-active-background-color: rgb(230, 228, 235) !default;
+/// @group notifications
+$bpk-banner-alert-success-icon-fill: rgb(0, 215, 117) !default;
+/// @group notifications
+$bpk-banner-alert-warn-icon-fill: rgb(255, 212, 69) !default;
+/// @group notifications
+$bpk-banner-alert-error-icon-fill: rgb(255, 84, 82) !default;
+/// @group notifications
+$bpk-banner-alert-expand-icon-fill: rgb(82, 76, 97) !default;
+/// @group notifications
+$bpk-banner-alert-children-padding-y: .375rem !default;
+/// @group notifications
+$bpk-banner-alert-children-padding-x: .75rem !default;
+/// @group notifications
+$bpk-banner-alert-children-color: rgb(129, 123, 143) !default;
 /// @group spacings
 $bpk-spacing-xs: .375rem !default;
 /// @group spacings

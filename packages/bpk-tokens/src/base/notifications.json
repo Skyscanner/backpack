@@ -1,0 +1,70 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "notifications"
+  },
+  "props": {
+    "BANNER_ALERT_BACKGROUND_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "BANNER_ALERT_SUCCESS_BOX_SHADOW": {
+      "value": "0 0 0 1px {!GREEN_500}",
+      "type": "box-shadow"
+    },
+    "BANNER_ALERT_WARN_BOX_SHADOW": {
+      "value": "0 0 0 1px {!YELLOW_500}",
+      "type": "box-shadow"
+    },
+    "BANNER_ALERT_ERROR_BOX_SHADOW": {
+      "value": "0 0 0 1px {!RED_500}",
+      "type": "box-shadow"
+    },
+    "BANNER_ALERT_HEADER_PADDING_Y": {
+      "value": "{!SPACING_XS}",
+      "type": "size"
+    },
+    "BANNER_ALERT_HEADER_PADDING_X": {
+      "value": "{!SPACING_SM}",
+      "type": "size"
+    },
+    "BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR": {
+      "value": "{!GRAY_50}",
+      "type": "color"
+    },
+    "BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR": {
+      "value": "{!GRAY_100}",
+      "type": "color"
+    },
+    "BANNER_ALERT_SUCCESS_ICON_FILL": {
+      "value": "{!GREEN_500}",
+      "type": "color"
+    },
+    "BANNER_ALERT_WARN_ICON_FILL": {
+      "value": "{!YELLOW_500}",
+      "type": "color"
+    },
+    "BANNER_ALERT_ERROR_ICON_FILL": {
+      "value": "{!RED_500}",
+      "type": "color"
+    },
+    "BANNER_ALERT_EXPAND_ICON_FILL": {
+      "value": "{!GRAY_700}",
+      "type": "color"
+    },
+    "BANNER_ALERT_CHILDREN_PADDING_Y": {
+      "value": "{!SPACING_XS}",
+      "type": "size"
+    },
+    "BANNER_ALERT_CHILDREN_PADDING_X": {
+      "value": "{!SPACING_SM}",
+      "type": "size"
+    },
+    "BANNER_ALERT_CHILDREN_COLOR": {
+      "value": "{!GRAY_500}",
+      "type": "color"
+    }
+  }
+}

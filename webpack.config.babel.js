@@ -86,7 +86,17 @@ const config = {
     new StaticSiteGeneratorPlugin('docs', staticSiteGeneratorConfig.paths, staticSiteGeneratorConfig)
   ],
 
-  postcss: () => [ autoprefixer({ browsers: [ 'last 20 versions' ] }) ],
+  postcss: () => [ autoprefixer({
+    browsers: [
+      'last 2 versions',
+      '> 10%',
+      'Chrome >= 34',
+      'Safari >= 6',
+      'IE >= 9',
+      'Firefox >= 34',
+      'Opera >= 30'
+    ]
+  }) ],
 
   sass: {
     data: BPK_TOKENS ? fs.readFileSync(`packages/bpk-tokens/tokens/${BPK_TOKENS}.scss`) : ''

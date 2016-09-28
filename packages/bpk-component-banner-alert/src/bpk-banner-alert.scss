@@ -1,0 +1,84 @@
+@import '~bpk-mixins/index';
+
+.bpk-banner-alert {
+  @include bpk-border-radius-sm;
+
+  background-color: $bpk-banner-alert-background-color;
+  overflow: hidden;
+
+  &--success {
+    box-shadow: $bpk-banner-alert-success-box-shadow;
+  }
+
+  &--warn {
+    box-shadow: $bpk-banner-alert-warn-box-shadow;
+  }
+
+  &--error {
+    box-shadow: $bpk-banner-alert-error-box-shadow;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    padding: $bpk-banner-alert-header-padding-y $bpk-banner-alert-header-padding-x;
+
+    &--expandable {
+      cursor: pointer;
+
+      &:hover {
+        background-color: $bpk-banner-alert-header-expandable-hover-background-color;
+      }
+
+      &:active {
+        background-color: $bpk-banner-alert-header-expandable-active-background-color;
+      }
+    }
+  }
+
+  // Make sure the items in the flexbox are display: inline-block; for older IE's
+  &__icon,
+  &__message,
+  &__toggle {
+    display: inline-block;
+  }
+
+  &__message {
+    flex-grow: 1;
+  }
+
+  &__success-icon {
+    fill: $bpk-banner-alert-success-icon-fill;
+  }
+
+  &__warn-icon {
+    fill: $bpk-banner-alert-warn-icon-fill;
+  }
+
+  &__error-icon {
+    fill: $bpk-banner-alert-error-icon-fill;
+  }
+
+  &__toggle-button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  &__expand-icon {
+    fill: $bpk-banner-alert-expand-icon-fill;
+
+    &--flipped {
+      transform: scaleY(-1);
+    }
+  }
+
+  &__children-container {
+    @include bpk-text-sm;
+
+    padding: $bpk-banner-alert-children-padding-y $bpk-banner-alert-children-padding-x;
+    color: $bpk-banner-alert-children-color;
+  }
+}

@@ -949,6 +949,96 @@
       "name": "logoTianxunStackedDefaultHeight"
     },
     {
+      "category": "notifications",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "bannerAlertBackgroundColor"
+    },
+    {
+      "category": "notifications",
+      "value": "0 0 0 1px #00d775",
+      "type": "box-shadow",
+      "name": "bannerAlertSuccessBoxShadow"
+    },
+    {
+      "category": "notifications",
+      "value": "0 0 0 1px #ffd445",
+      "type": "box-shadow",
+      "name": "bannerAlertWarnBoxShadow"
+    },
+    {
+      "category": "notifications",
+      "value": "0 0 0 1px #ff5452",
+      "type": "box-shadow",
+      "name": "bannerAlertErrorBoxShadow"
+    },
+    {
+      "category": "notifications",
+      "value": "6",
+      "type": "size",
+      "name": "bannerAlertHeaderPaddingY"
+    },
+    {
+      "category": "notifications",
+      "value": "12",
+      "type": "size",
+      "name": "bannerAlertHeaderPaddingX"
+    },
+    {
+      "category": "notifications",
+      "value": "rgb(243, 242, 245)",
+      "type": "color",
+      "name": "bannerAlertHeaderExpandableHoverBackgroundColor"
+    },
+    {
+      "category": "notifications",
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      "name": "bannerAlertHeaderExpandableActiveBackgroundColor"
+    },
+    {
+      "category": "notifications",
+      "value": "rgb(0, 215, 117)",
+      "type": "color",
+      "name": "bannerAlertSuccessIconFill"
+    },
+    {
+      "category": "notifications",
+      "value": "rgb(255, 212, 69)",
+      "type": "color",
+      "name": "bannerAlertWarnIconFill"
+    },
+    {
+      "category": "notifications",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "name": "bannerAlertErrorIconFill"
+    },
+    {
+      "category": "notifications",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "bannerAlertExpandIconFill"
+    },
+    {
+      "category": "notifications",
+      "value": "6",
+      "type": "size",
+      "name": "bannerAlertChildrenPaddingY"
+    },
+    {
+      "category": "notifications",
+      "value": "12",
+      "type": "size",
+      "name": "bannerAlertChildrenPaddingX"
+    },
+    {
+      "category": "notifications",
+      "value": "rgb(129, 123, 143)",
+      "type": "color",
+      "name": "bannerAlertChildrenColor"
+    },
+    {
       "type": "size",
       "category": "spacing",
       "value": "6",

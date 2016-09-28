@@ -1,5 +1,19 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Added:**
+- bpk-component-banner-alert:
+- bpk-tokens:
+  - New banner alert component
+  
+**Fixed:**
+- bpk-component-blockquote:
+- bpk-component-card:
+- bpk-component-code:
+- bpk-component-list:
+  - Added missing "required" proptypes
+
 ## 2016-09-27 - Card flicker on safari fix
 
 **Fixed:**

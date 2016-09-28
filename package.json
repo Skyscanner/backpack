@@ -84,6 +84,7 @@
       "jest",
       "describe",
       "it",
+      "xit",
       "expect"
     ],
     "ignore": [
