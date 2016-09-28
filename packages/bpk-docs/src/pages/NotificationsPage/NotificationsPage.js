@@ -37,7 +37,7 @@ const NotificationsPage = () => <DocsPageBuilder
   title='Notifications'
   blurb='Backpack supports a number of different types of notification styles, which can be used in different scenarios to provide messaging to the user.'
   components={components}
-  sassdocId='TODO'
+  sassdocId='notifications'
 />
 
 export default NotificationsPage
