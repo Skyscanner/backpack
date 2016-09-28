@@ -1,5 +1,12 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Fixed:**
+- bpk-component-button: 
+- bpk-mixins:
+  - Button text can now wrap
+
 ## 2016-09-28 - Banner Alert Component
 
 **Added:**
