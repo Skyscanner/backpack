@@ -7,8 +7,7 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
     <span
       className="bpk-banner-alert__icon">
       <svg
-        className="bpk-icon--align-to-button"
-        fill="rgb(255, 84, 82)"
+        className="bpk-banner-alert__error-icon bpk-icon--align-to-button"
         height="18"
         viewBox="0 0 18 18"
         width="18"
@@ -36,8 +35,7 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
     <span
       className="bpk-banner-alert__icon">
       <svg
-        className="bpk-icon--align-to-button"
-        fill="rgb(0, 215, 117)"
+        className="bpk-banner-alert__success-icon bpk-icon--align-to-button"
         height="18"
         viewBox="0 0 18 18"
         width="18"
@@ -65,8 +63,7 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
     <span
       className="bpk-banner-alert__icon">
       <svg
-        className="bpk-icon--align-to-button"
-        fill="rgb(255, 212, 69)"
+        className="bpk-banner-alert__warn-icon bpk-icon--align-to-button"
         height="18"
         viewBox="0 0 18 18"
         width="18"
@@ -94,8 +91,7 @@ exports[`BpkBannerAlert should render correctly with child nodes 1`] = `
     <span
       className="bpk-banner-alert__icon">
       <svg
-        className="bpk-icon--align-to-button"
-        fill="rgb(0, 215, 117)"
+        className="bpk-banner-alert__success-icon bpk-icon--align-to-button"
         height="18"
         viewBox="0 0 18 18"
         width="18"
@@ -118,8 +114,7 @@ exports[`BpkBannerAlert should render correctly with child nodes 1`] = `
         className="bpk-banner-alert__toggle-button"
         title="View more">
         <svg
-          className="bpk-icon--align-to-button"
-          fill="rgb(82, 76, 97)"
+          className="bpk-banner-alert__expand-icon  bpk-icon--align-to-button"
           height="18"
           viewBox="0 0 18 18"
           width="18"

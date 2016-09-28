@@ -3,6 +3,7 @@
 .bpk-banner-alert {
   @include bpk-border-radius-sm;
 
+  background-color: $bpk-banner-alert-background-color;
   overflow: hidden;
 
   &--success {
@@ -20,42 +21,42 @@
   &__header {
     display: flex;
     flex-direction: row;
-    padding: $bpk-spacing-xs $bpk-spacing-sm;
+    padding: $bpk-banner-alert-header-padding-y $bpk-banner-alert-header-padding-x;
 
     &--expandable {
       cursor: pointer;
 
       &:hover {
-        background-color: $bpk-color-gray-50;
+        background-color: $bpk-banner-alert-header-expandable-hover-background-color;
       }
 
       &:active {
-        background-color: $bpk-color-gray-100;
+        background-color: $bpk-banner-alert-header-expandable-active-background-color;
       }
     }
   }
 
-  // Make sure the items in the flexbox are display block for older IE's
+  // Make sure the items in the flexbox are display: inline-block; for older IE's
   &__icon,
   &__message,
   &__toggle {
-    display: block;
+    display: inline-block;
   }
 
   &__message {
     flex-grow: 1;
   }
 
-  &__icon-success {
-    fill: $bpk-color-green-500;
+  &__success-icon {
+    fill: $bpk-banner-alert-success-icon-fill;
   }
 
-  &__icon-warn {
-    fill: $bpk-color-yellow-500;
+  &__warn-icon {
+    fill: $bpk-banner-alert-warn-icon-fill;
   }
 
-  &__icon-error {
-    fill: $bpk-color-red-500;
+  &__error-icon {
+    fill: $bpk-banner-alert-error-icon-fill;
   }
 
   &__toggle-button {
@@ -67,7 +68,7 @@
   }
 
   &__expand-icon {
-    fill: $bpk-color-gray-700;
+    fill: $bpk-banner-alert-expand-icon-fill;
 
     &--flipped {
       transform: scaleY(-1);
@@ -77,7 +78,7 @@
   &__children-container {
     @include bpk-text-sm;
 
-    padding: $bpk-spacing-xs $bpk-spacing-sm;
-    color: $bpk-color-gray-500;
+    padding: $bpk-banner-alert-children-padding-y $bpk-banner-alert-children-padding-x;
+    color: $bpk-banner-alert-children-color;
   }
 }

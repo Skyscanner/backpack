@@ -158,9 +158,21 @@
   <property name="LOGO_STACKED_DEFAULT_HEIGHT" category="logos">calc(1.5rem * 3)</property>
   <property name="LOGO_TIANXUN_DEFAULT_HEIGHT" category="logos">42</property>
   <property name="LOGO_TIANXUN_STACKED_DEFAULT_HEIGHT" category="logos">calc(1.5rem * 3)</property>
+  <color name="BANNER_ALERT_BACKGROUND_COLOR" category="notifications">#ffffffff</color>
   <property name="BANNER_ALERT_SUCCESS_BOX_SHADOW" category="notifications">0 0 0 1px #00d775</property>
   <property name="BANNER_ALERT_WARN_BOX_SHADOW" category="notifications">0 0 0 1px #ffd445</property>
   <property name="BANNER_ALERT_ERROR_BOX_SHADOW" category="notifications">0 0 0 1px #ff5452</property>
+  <property name="BANNER_ALERT_HEADER_PADDING_Y" category="notifications">6</property>
+  <property name="BANNER_ALERT_HEADER_PADDING_X" category="notifications">12</property>
+  <color name="BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR" category="notifications">#f3f2f5ff</color>
+  <color name="BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR" category="notifications">#e6e4ebff</color>
+  <color name="BANNER_ALERT_SUCCESS_ICON_FILL" category="notifications">#00d775ff</color>
+  <color name="BANNER_ALERT_WARN_ICON_FILL" category="notifications">#ffd445ff</color>
+  <color name="BANNER_ALERT_ERROR_ICON_FILL" category="notifications">#ff5452ff</color>
+  <color name="BANNER_ALERT_EXPAND_ICON_FILL" category="notifications">#524c61ff</color>
+  <property name="BANNER_ALERT_CHILDREN_PADDING_Y" category="notifications">6</property>
+  <property name="BANNER_ALERT_CHILDREN_PADDING_X" category="notifications">12</property>
+  <color name="BANNER_ALERT_CHILDREN_COLOR" category="notifications">#817b8fff</color>
   <property name="SPACING_XS" category="spacing">6</property>
   <property name="SPACING_SM" category="spacing">12</property>
   <property name="SPACING_MD" category="spacing">18</property>

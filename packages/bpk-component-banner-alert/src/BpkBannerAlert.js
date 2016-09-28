@@ -19,9 +19,9 @@ export const ALERT_TYPES = {
 
 const getIconForType = (type) => {
   const map = {
-    [ALERT_TYPES.SUCCESS]: <SuccessIcon className='bpk-banner-alert__icon-success' />,
-    [ALERT_TYPES.WARN]: <WarnIcon className='bpk-banner-alert__icon-warn' />,
-    [ALERT_TYPES.ERROR]: <ErrorIcon className='bpk-banner-alert__icon-error' />
+    [ALERT_TYPES.SUCCESS]: <SuccessIcon className='bpk-banner-alert__success-icon' />,
+    [ALERT_TYPES.WARN]: <WarnIcon className='bpk-banner-alert__warn-icon' />,
+    [ALERT_TYPES.ERROR]: <ErrorIcon className='bpk-banner-alert__error-icon' />
   }
 
   return map[ type ]
