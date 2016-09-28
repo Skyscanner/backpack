@@ -21,8 +21,10 @@ npm install [package-name] --save
 | Component | Version |
 |--------|-------|
 | [`bpk-component-autosuggest`](/packages/bpk-component-autosuggest) | [![npm version](https://badge.fury.io/js/bpk-component-autosuggest.svg)](http://badge.fury.io/js/bpk-component-autosuggest) |
+| [`bpk-component-banner-alert`](/packages/bpk-component-banner-alert) | [![npm version](https://badge.fury.io/js/bpk-component-banner-alert.svg)](http://badge.fury.io/js/bpk-component-banner-alert) |
 | [`bpk-component-blockquote`](/packages/bpk-component-blockquote) | [![npm version](https://badge.fury.io/js/bpk-component-blockquote.svg)](http://badge.fury.io/js/bpk-component-blockquote) |
 | [`bpk-component-button`](/packages/bpk-component-button) | [![npm version](https://badge.fury.io/js/bpk-component-button.svg)](http://badge.fury.io/js/bpk-component-button) |
+| [`bpk-component-card`](/packages/bpk-component-card) | [![npm version](https://badge.fury.io/js/bpk-component-card.svg)](http://badge.fury.io/js/bpk-component-card) |
 | [`bpk-component-checkbox`](/packages/bpk-component-checkbox) | [![npm version](https://badge.fury.io/js/bpk-component-checkbox.svg)](http://badge.fury.io/js/bpk-component-checkbox) |
 | [`bpk-component-code`](/packages/bpk-component-code) | [![npm version](https://badge.fury.io/js/bpk-component-code.svg)](http://badge.fury.io/js/bpk-component-code) |
 | [`bpk-component-content-container`](/packages/bpk-component-content-container) | [![npm version](https://badge.fury.io/js/bpk-component-content-container.svg)](http://badge.fury.io/js/bpk-component-content-container) |
