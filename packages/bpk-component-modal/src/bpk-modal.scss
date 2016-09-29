@@ -1,0 +1,133 @@
+@import '~bpk-mixins/index';
+
+.bpk-modal-body-no-scroll {
+  overflow: hidden;
+}
+
+.bpk-modal-scrim {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $bpk-color-white;
+  overflow: hidden;
+  opacity: .8;
+  transition: opacity 100ms ease-in-out;
+  z-index: 1000;
+
+  @include bpk-breakpoint-mobile {
+    opacity: 1;
+  }
+
+  &-appear {
+    opacity: 0;
+  }
+
+  &-appear-active {
+    opacity: .8;
+
+    @include bpk-breakpoint-mobile {
+      opacity: 1;
+    }
+  }
+}
+
+.bpk-modal-scroll-bar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+.bpk-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1100;
+
+  &__outer {
+    width: 100%;
+    height: 100%;
+
+    @include bpk-breakpoint-above-mobile {
+      display: table;
+    }
+  }
+
+  &__inner {
+    @include bpk-breakpoint-above-mobile {
+      display: table-cell;
+      padding: $bpk-spacing-base;
+      vertical-align: middle;
+    }
+  }
+
+  &__dialog {
+    width: 100%;
+    margin: 0 auto;
+    background-color: $bpk-color-white;
+    transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+
+    &-appear {
+      opacity: 0;
+      transform: scale(.9);
+    }
+    &-appear-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @include bpk-breakpoint-above-mobile {
+      @include bpk-box-shadow-xl;
+      @include bpk-border-radius-xs;
+
+      max-width: $bpk-breakpoint-mobile;
+    }
+
+    &--wide {
+      @include bpk-breakpoint-above-mobile {
+        max-width: $bpk-breakpoint-tablet;
+      }
+    }
+  }
+
+  &__dialog-header {
+    display: flex;
+    justify-content: space-between;
+    padding: $bpk-spacing-sm;
+    box-shadow: 0 -1px 0 0 $bpk-color-gray-100 inset;
+  }
+
+  &__dialog-title {
+    font-weight: bold;
+  }
+
+  &__dialog-close-button {
+    float: right;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  &__dialog-close-icon {
+    fill: $bpk-color-gray-500;
+
+    &:hover {
+      fill: $bpk-color-gray-700;
+    }
+  }
+
+  &__dialog-content {
+    padding: $bpk-spacing-sm;
+  }
+}

@@ -236,8 +236,13 @@
 ///   }
 
 @mixin bpk-link {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
   color: $bpk-link-color;
   text-decoration: $bpk-link-text-decoration;
+  appearance: none;
+  cursor: pointer;
 
   &:hover {
     color: $bpk-link-hover-color;

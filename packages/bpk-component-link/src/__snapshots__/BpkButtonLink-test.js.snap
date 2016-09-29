@@ -1,0 +1,7 @@
+exports[`BpkButtonLink should render correctly 1`] = `
+<button
+  className="bpk-link"
+  onClick={[Function onClick]}>
+  Link
+</button>
+`;
