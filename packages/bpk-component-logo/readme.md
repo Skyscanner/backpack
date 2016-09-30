@@ -17,11 +17,11 @@ import { BpkInlineLogo, BpkCloudLogo, BpkStackedLogo, BpkTianxunLogo, BpkTianxun
 
 export default MyComponent = () => (
   <div>
-    <BpkInlineLogo color={TOKENS.colorWhite} />
-    <BpkCloudLogo color={TOKENS.colorGray700} />
-    <BpkStackedLogo color={TOKENS.colorBlue500} />
-    <BpkTianxunLogo color={TOKENS.colorWhite} />
-    <BpkTianxunStackedLogo color={TOKENS.colorGray700} />
+    <BpkInlineLogo fill={TOKENS.colorWhite} />
+    <BpkCloudLogo fill={TOKENS.colorGray700} />
+    <BpkStackedLogo fill={TOKENS.colorBlue500} />
+    <BpkTianxunLogo fill={TOKENS.colorWhite} />
+    <BpkTianxunStackedLogo fill={TOKENS.colorGray700} />
   </div>
 )
 ```
@@ -32,5 +32,5 @@ export default MyComponent = () => (
 
 | Property | PropType | Required | Default Value        |
 | -------- | -------- | -------- | -------------------- |
-| color    | string   | false    | TOKENS.colorGray700  |
+| fill     | string   | false    | TOKENS.colorGray700  |
 | height   | string   | false    | null                 |
