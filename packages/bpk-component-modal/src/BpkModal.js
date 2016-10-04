@@ -37,17 +37,27 @@ const FirstChild = (props) => {
   return children[ 0 ] || null
 }
 
-const ModalScrim = (props) => (
+const TransitionInitialMount = (props) => (
   <ReactCSSTransitionGroup
     component={FirstChild}
-    transitionName='bpk-modal-scrim'
+    transitionName={props.classNamePrefix}
     transitionAppear={true}
-    transitionAppearTimeout={200}
+    transitionAppearTimeout={props.transitionTimeout}
     transitionEnterTimeout={0}
     transitionLeaveTimeout={0}>
-    <div className='bpk-modal-scrim'/>
+    {props.children}
   </ReactCSSTransitionGroup>
 )
+
+const ModalScrim = () => {
+  const className = 'bpk-modal-scrim'
+
+  return (
+    <TransitionInitialMount classNamePrefix={className} transitionTimeout={200}>
+      <div className={className}/>
+    </TransitionInitialMount>
+  )
+}
 
 const CloseButton = (props) => (
   <button
@@ -56,7 +66,7 @@ const CloseButton = (props) => (
     className='bpk-modal__dialog-close-button'
     onClick={props.onClick}
   >
-    <CloseButtonIcon className='bpk-modal__dialog-close-icon' />
+    <CloseButtonIcon className='bpk-modal__dialog-close-icon'/>
   </button>
 )
 
@@ -70,7 +80,8 @@ const ModalInner = (props) => {
     props.closePortal() // this prop is exposed from react-portal
   }
 
-  const dialogClassNames = [ 'bpk-modal__dialog' ]
+  const dialogClassName = 'bpk-modal__dialog'
+  const dialogClassNames = [ dialogClassName ]
 
   props.wide ? dialogClassNames.push('bpk-modal__dialog--wide') : null
 
@@ -78,13 +89,7 @@ const ModalInner = (props) => {
     <div className='bpk-modal' onClick={closePortal}>
       <div className='bpk-modal__outer'>
         <div className='bpk-modal__inner'>
-          <ReactCSSTransitionGroup
-            component={FirstChild}
-            transitionName='bpk-modal__dialog'
-            transitionAppear={true}
-            transitionAppearTimeout={300}
-            transitionEnterTimeout={0}
-            transitionLeaveTimeout={0}>
+          <TransitionInitialMount classNamePrefix={dialogClassName} transitionTimeout={300}>
             <section className={dialogClassNames.join(' ')} onClick={stopPropagation}>
               <header className='bpk-modal__dialog-header'>
                 <span className='bpk-modal__dialog-title'>{props.title}</span>
@@ -97,7 +102,7 @@ const ModalInner = (props) => {
                 {props.children}
               </div>
             </section>
-          </ReactCSSTransitionGroup>
+          </TransitionInitialMount>
         </div>
       </div>
     </div>

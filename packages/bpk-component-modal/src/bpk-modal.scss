@@ -117,6 +117,10 @@
     background-color: transparent;
     appearance: none;
     cursor: pointer;
+
+    @include bpk-rtl {
+      float: left;
+    }
   }
 
   &__dialog-close-icon {
