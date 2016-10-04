@@ -1,5 +1,7 @@
 import Portal from 'react-portal'
 import React, { PropTypes } from 'react'
+import focusScope from 'a11y-focus-scope'
+import focusStore from 'a11y-focus-store'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import { BpkButtonLink } from './../../bpk-component-link'
@@ -70,6 +72,16 @@ const CloseButton = (props) => (
   </button>
 )
 
+const shiftFocusToModal = (element) => {
+  if (element) {
+    focusStore.storeFocus()
+    focusScope.scopeFocus(element)
+  } else {
+    focusScope.unscopeFocus()
+    focusStore.restoreFocus()
+  }
+}
+
 const ModalInner = (props) => {
   const stopPropagation = (e) => {
     e.stopPropagation()
@@ -86,17 +98,17 @@ const ModalInner = (props) => {
   props.wide ? dialogClassNames.push('bpk-modal__dialog--wide') : null
 
   return (
-    <div className='bpk-modal' onClick={closePortal}>
+    <div className='bpk-modal' onClick={closePortal} tabIndex='-1' ref={shiftFocusToModal}>
       <div className='bpk-modal__outer'>
         <div className='bpk-modal__inner'>
           <TransitionInitialMount classNamePrefix={dialogClassName} transitionTimeout={300}>
             <section className={dialogClassNames.join(' ')} onClick={stopPropagation}>
               <header className='bpk-modal__dialog-header'>
-                <span className='bpk-modal__dialog-title'>{props.title}</span>
                 {props.closeText
                   ? <BpkButtonLink onClick={closePortal}>{props.closeText}</BpkButtonLink>
                   : <CloseButton label={props.closeLabel} onClick={closePortal}/>
                 }
+                <span className='bpk-modal__dialog-title'>{props.title}</span>
               </header>
               <div className='bpk-modal__dialog-content'>
                 {props.children}
@@ -113,12 +125,22 @@ const BpkModal = (props) => {
   const onOpen = () => {
     addRightPaddingToBody(getScrollBarWidth())
     document.querySelector('body').classList.add(NO_SCROLL_CLASS)
+
+    let applicationElement
+    if (applicationElement = props.getApplicationElement()) {
+      applicationElement.setAttribute('aria-hidden', 'true')
+    }
   }
 
   const onClose = () => {
     document.querySelector('body').classList.remove(NO_SCROLL_CLASS)
     addRightPaddingToBody(0)
     props.onClose()
+
+    let applicationElement
+    if (applicationElement = props.getApplicationElement()) {
+      applicationElement.removeAttribute('aria-hidden')
+    }
   }
 
   return (
@@ -148,6 +170,7 @@ BpkModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
+  getApplicationElement: PropTypes.func.isRequired,
   wide: PropTypes.bool,
   closeLabel: PropTypes.string,
   closeText: PropTypes.string

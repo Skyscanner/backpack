@@ -131,7 +131,12 @@ class ModalExample extends Component {
     return (
       <div>
         <BpkButton onClick={this.onModalOpen}>Open modal</BpkButton>
-        <BpkModal title='Modal title' isOpen={this.state.isOpen} onClose={this.onModalClose}>
+        <BpkModal
+          title='Modal title'
+          isOpen={this.state.isOpen}
+          onClose={this.onModalClose}
+          getApplicationElement={() => document.getElementById('react-mount')}
+        >
           <Content />
         </BpkModal>
       </div>

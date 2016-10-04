@@ -120,14 +120,17 @@ class ModalExample extends Component {
   render () {
     return (
       <div>
-        <BpkButton onClick={this.onModalOpen}>Open modal</BpkButton>
+        <div id='application-element'>
+          <BpkButton onClick={this.onModalOpen}>Open modal</BpkButton>
+        </div>
         <BpkModal
           title='Modal title'
+          closeLabel='Close'
+          wide={this.props.wide}
           isOpen={this.state.isOpen}
           onClose={this.onModalClose}
-          wide={this.props.wide}
-          closeLabel='Close'
           closeText={this.props.closeText}
+          getApplicationElement={() => document.getElementById('application-element')}
         >
           {this.props.addContentToModal ? <Content /> : 'Hello world!'}
         </BpkModal>

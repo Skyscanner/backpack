@@ -101,6 +101,7 @@
 
   &__dialog-header {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     padding: $bpk-spacing-sm;
     box-shadow: 0 -1px 0 0 $bpk-color-gray-100 inset;
