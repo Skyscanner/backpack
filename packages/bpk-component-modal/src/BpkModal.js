@@ -2,7 +2,6 @@ import Portal from 'react-portal'
 import React, { PropTypes } from 'react'
 import focusScope from 'a11y-focus-scope'
 import focusStore from 'a11y-focus-store'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import BpkHeading from './../../bpk-component-heading'
 import { BpkButtonLink } from './../../bpk-component-link'
@@ -10,47 +9,10 @@ import CloseIcon from './../../bpk-component-icon/sm/close'
 import { withButtonAlignment } from './../../bpk-component-icon'
 
 import './bpk-modal.scss'
+import { lockScroll, unlockScroll } from './scroll-utils'
+import TransitionInitialMount from './TransitionInitialMount'
 
 const CloseButtonIcon = withButtonAlignment(CloseIcon)
-
-const getScrollBarWidth = () => {
-  let scrollBarWidth = 0
-
-  if (typeof document !== 'undefined' && document.body.clientWidth < window.innerWidth) {
-    const scrollDiv = document.createElement('div')
-    scrollDiv.className = 'bpk-modal-scroll-bar-measure'
-    document.body.appendChild(scrollDiv)
-    scrollBarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
-    document.body.removeChild(scrollDiv)
-  }
-
-  return scrollBarWidth
-}
-
-const addRightPaddingToBody = (paddingRight) => {
-  if (typeof document !== 'undefined') {
-    document.body.style.paddingRight = `${paddingRight}px`
-  }
-}
-
-const NO_SCROLL_CLASS = 'bpk-modal-body-no-scroll'
-
-const FirstChild = (props) => {
-  const children = React.Children.toArray(props.children)
-  return children[ 0 ] || null
-}
-
-const TransitionInitialMount = (props) => (
-  <ReactCSSTransitionGroup
-    component={FirstChild}
-    transitionName={props.classNamePrefix}
-    transitionAppear={true}
-    transitionAppearTimeout={props.transitionTimeout}
-    transitionEnterTimeout={0}
-    transitionLeaveTimeout={0}>
-    {props.children}
-  </ReactCSSTransitionGroup>
-)
 
 const ModalScrim = () => {
   const className = 'bpk-modal-scrim'
@@ -124,8 +86,7 @@ const ModalInner = (props) => {
 
 const BpkModal = (props) => {
   const onOpen = () => {
-    addRightPaddingToBody(getScrollBarWidth())
-    document.querySelector('body').classList.add(NO_SCROLL_CLASS)
+    lockScroll()
 
     let applicationElement
     if (applicationElement = props.getApplicationElement()) {
@@ -134,8 +95,7 @@ const BpkModal = (props) => {
   }
 
   const onClose = () => {
-    document.querySelector('body').classList.remove(NO_SCROLL_CLASS)
-    addRightPaddingToBody(0)
+    unlockScroll()
     props.onClose()
 
     let applicationElement
