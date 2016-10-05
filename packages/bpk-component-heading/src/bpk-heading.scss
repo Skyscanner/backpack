@@ -24,5 +24,9 @@
   &-h6 {
     @include bpk-heading-6;
   }
+
+  &--no-bottom-margin {
+    margin-bottom: 0;
+  }
 }
 

@@ -4,6 +4,7 @@ import focusScope from 'a11y-focus-scope'
 import focusStore from 'a11y-focus-store'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
+import BpkHeading from './../../bpk-component-heading'
 import { BpkButtonLink } from './../../bpk-component-link'
 import CloseIcon from './../../bpk-component-icon/sm/close'
 import { withButtonAlignment } from './../../bpk-component-icon'
@@ -108,7 +109,7 @@ const ModalInner = (props) => {
                   ? <BpkButtonLink onClick={closePortal}>{props.closeText}</BpkButtonLink>
                   : <CloseButton label={props.closeLabel} onClick={closePortal}/>
                 }
-                <span className='bpk-modal__dialog-title'>{props.title}</span>
+                <BpkHeading level='h4' bottomMargin={false}>{props.title}</BpkHeading>
               </header>
               <div className='bpk-modal__dialog-content'>
                 {props.children}

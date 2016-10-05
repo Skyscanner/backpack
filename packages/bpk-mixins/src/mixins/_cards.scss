@@ -13,7 +13,7 @@
 
 @mixin bpk-card {
   @include bpk-box-shadow-sm;
-  @include bpk-border-radius-xs;
+  @include bpk-border-radius-sm;
 
   position: relative;
   display: block;
@@ -27,7 +27,7 @@
   // http://tobiasahlin.com/blog/how-to-animate-box-shadow/
   &::after {
     @include bpk-box-shadow-lg;
-    @include bpk-border-radius-xs;
+    @include bpk-border-radius-sm;
 
     position: absolute;
     top: 0;
