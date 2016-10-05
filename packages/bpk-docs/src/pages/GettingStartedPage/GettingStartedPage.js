@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React from 'react'
 
 import BpkLink from 'bpk-component-link'
 import BpkParagraph from 'bpk-component-paragraph'
