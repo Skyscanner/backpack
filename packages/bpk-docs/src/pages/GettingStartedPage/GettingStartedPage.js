@@ -1,18 +1,15 @@
 import React, { Children } from 'react'
-import Helmet from 'react-helmet'
 
 import BpkLink from 'bpk-component-link'
-import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
 import BpkBlockquote from 'bpk-component-blockquote'
 import BpkRouterLink from 'bpk-component-router-link'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 import { BpkCodeBlock, BpkCode } from 'bpk-component-code'
-import BpkContentContainer from 'bpk-component-content-container'
 
 import * as ROUTES from './../../constants/routes'
 
-const title = 'Getting started'
+import DocsPageBuilder from './../../components/DocsPageBuilder'
 const nodeSassUrl = 'https://github.com/sass/node-sass'
 const sassLoaderUrl = 'https://github.com/jtangelder/sass-loader'
 const sassLoaderTildeUrl = 'https://github.com/jtangelder/sass-loader#imports'
@@ -21,11 +18,11 @@ const nodeSassTildeImporterUrl = 'https://github.com/matthewdavidson/node-sass-t
 const backpackReactExampleUrl = 'http://git.prod.skyscanner.local/backpack/backpack-react-example'
 const webpackConfigExampleUrl = 'http://git.prod.skyscanner.local/backpack/backpack-react-example/blob/master/webpack.config.babel.js'
 
-const sections = [
+const components = [
   {
     id: 'sketch-resources',
     title: 'Sketch resources',
-    content: [
+    blurb: [
       <BpkParagraph>
         We use the Craft plugin (from InVision) to help share components and keep Sketch files in sync. To use this:
       </BpkParagraph>,
@@ -40,12 +37,13 @@ const sections = [
           Import the Backpack Craft Library into Sketch.
         </BpkListItem>
       </BpkList>
-    ]
+    ],
+    examples: []
   },
   {
     id: 'react-components',
     title: 'React components',
-    content: [
+    blurb: [
       <BpkParagraph>
         All <BpkRouterLink to={ROUTES.ATOMS}>atoms</BpkRouterLink>
         , <BpkRouterLink to={ROUTES.MOLECULES}>molecules</BpkRouterLink>
@@ -89,12 +87,13 @@ ReactDom.render(myComponent, document.getElementById('react-mount'));
         will get you up and running in minutes as well as some sort of Slingshot / MShell based integration to get your
         app into production. Watch this space.
       </BpkBlockquote>
-    ]
+    ],
+    examples: []
   },
   {
     id: 'sass-variables-and-mixins',
     title: 'Sass variables and mixins',
-    content: [
+    blurb: [
       <BpkParagraph>
         Backpack's bonds are primarily available as a library of Sass variables and mixins. Furthermore, most atom
         level components are also available as mixins. Again, the library is exposed as a module on the npm registry
@@ -107,7 +106,7 @@ ReactDom.render(myComponent, document.getElementById('react-mount'));
         The following example demonstrates how to import the module and consume the primary button mixin:
       </BpkParagraph>,
       <BpkCodeBlock>
-        {`@import '~bpk-mixins';
+        {`@import '~bpk-mixins/index';
 
 .my-button {
   @include bpk-button;
@@ -125,31 +124,17 @@ ReactDom.render(myComponent, document.getElementById('react-mount'));
         To get an idea of all the variables and mixins available, head on over to
         the <BpkLink href='/sassdoc' blank>full reference documentation</BpkLink>.
       </BpkParagraph>
-    ]
+    ],
+    examples: []
   }
 ]
 
-const NavItem = (section) => (
-  <BpkListItem>
-    <BpkLink href={`#${section.id}`}>{section.title}</BpkLink>
-  </BpkListItem>
-)
-
-const SectionContent = (section) => [
-  <BpkHeading id={section.id} level='h3'>{section.title}</BpkHeading>,
-  section.content
-]
-
-const GettingStartedPage = () => (
-  <section>
-    <Helmet title={title} />
-    <BpkContentContainer>
-      <BpkHeading level='h1'>{title}</BpkHeading>
-      <BpkParagraph>Depending on the audience, there are a few ways to get started:</BpkParagraph>
-      <BpkList>{Children.toArray(sections.map(NavItem))}</BpkList>
-      {Children.toArray(sections.map(SectionContent))}
-    </BpkContentContainer>
-  </section>
-)
+const GettingStartedPage = () => <DocsPageBuilder
+  title='Getting started'
+  blurb={[
+    <BpkParagraph>Depending on the audience, there are a few ways to get started:</BpkParagraph>
+  ]}
+  components={components}
+/>
 
 export default GettingStartedPage

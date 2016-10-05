@@ -11,7 +11,7 @@ npm install bpk-mixins --save
 ## Usage
 
 ```scss
-@import '~bpk-mixins';
+@import '~bpk-mixins/index';
 
 .bpk-my-component {
   @include bpk-button;

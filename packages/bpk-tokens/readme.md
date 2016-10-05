@@ -13,7 +13,7 @@ npm install bpk-tokens --save
 Sass:
 
 ```scss
-@import '~bpk-tokens';
+@import '~bpk-tokens/tokens/base.default.scss';
 
 .my-selector {
   padding: $bpk-spacing-base;
