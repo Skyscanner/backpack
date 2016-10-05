@@ -1,5 +1,26 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Added:**
+- bpk-component-modal:
+  - New modal component
+
+- bpk-component-heading:
+  - Ability to remove bottom margin from headings
+  
+- bpk-component-link
+  - Ability to style buttons as links
+
+- bpk-mixins:
+  - New modal component
+  - Ability to remove bottom margin from headings
+  - Ability to style buttons as links
+
+**Fixed:**
+- bpk-component-card
+  - Increased border radius
+
 ## 2016-09-28 (2) - Button wrap fix
 
 **Fixed:**

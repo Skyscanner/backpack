@@ -6,10 +6,10 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: $bpk-color-white;
-  overflow: hidden;
-  opacity: .8;
   transition: opacity 100ms ease-in-out;
+  background-color: $bpk-color-white;
+  opacity: .8;
+  overflow: hidden;
   z-index: 1000;
 
   @include bpk-breakpoint-mobile {
@@ -61,16 +61,18 @@
   &__dialog {
     width: 100%;
     margin: 0 auto;
-    background-color: $bpk-color-white;
     transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+    outline: 0;
+    background-color: $bpk-color-white;
 
     &--appear {
-      opacity: 0;
       transform: scale(.9);
+      opacity: 0;
     }
+
     &--appear-active {
-      opacity: 1;
       transform: scale(1);
+      opacity: 1;
     }
 
     @include bpk-breakpoint-above-mobile {
@@ -89,10 +91,9 @@
 
   &__dialog-header {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
     padding: $bpk-spacing-sm;
     box-shadow: 0 -1px 0 0 $bpk-color-gray-100 inset;
+    justify-content: space-between;
   }
 
   &__dialog-close-button {
@@ -100,8 +101,8 @@
     padding: 0;
     border: 0;
     background-color: transparent;
-    appearance: none;
     cursor: pointer;
+    appearance: none;
 
     @include bpk-rtl {
       float: left;

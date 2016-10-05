@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 const FirstChild = (props) => {
@@ -14,7 +13,7 @@ const TransitionInitialMount = (props) => (
       appear: `${props.classNamePrefix}--appear`,
       appearActive: `${props.classNamePrefix}--appear-active`
     }}
-    transitionAppear={true}
+    transitionAppear
     transitionAppearTimeout={props.transitionTimeout}
     transitionEnterTimeout={0}
     transitionLeaveTimeout={0}>

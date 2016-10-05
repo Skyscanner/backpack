@@ -1,0 +1,18 @@
+exports[`BpkModalCloseButton should render correctly 1`] = `
+<button
+  aria-label="Close"
+  className="bpk-modal__dialog-close-button"
+  onClick={[Function onClick]}
+  title="Close"
+  type="button">
+  <svg
+    className="bpk-modal__dialog-close-icon bpk-icon--align-to-button"
+    height="18"
+    viewBox="0 0 18 18"
+    width="18"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M11.1 9l3.4-3.4c.3-.3.3-.8 0-1.1l-1.1-1.1c-.3-.3-.8-.3-1.1 0L9 6.9 5.6 3.5c-.3-.3-.8-.3-1.1 0l-1 1.1c-.3.3-.3.8 0 1.1L6.9 9l-3.4 3.4c-.3.3-.3.8 0 1.1l1.1 1.1c.3.3.8.3 1.1 0L9 11.1l3.4 3.4c.3.3.8.3 1.1 0l1.1-1.1c.3-.3.3-.8 0-1.1L11.1 9z" />
+  </svg>
+</button>
+`;

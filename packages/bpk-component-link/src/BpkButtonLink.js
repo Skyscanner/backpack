@@ -2,13 +2,15 @@ import React, { PropTypes } from 'react'
 
 import './bpk-link.scss'
 
-const BpkButtonLink = (props) => <button className='bpk-link' children={props.children} onClick={props.onClick} />
+const BpkButtonLink = (props) => <button
+  type='button'
+  className='bpk-link'
+  onClick={props.onClick}
+  children={props.children}
+/>
 
 BpkButtonLink.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired
 }
 export default BpkButtonLink
