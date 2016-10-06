@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import BpkModal from 'bpk-component-modal'
 import BpkButton from 'bpk-component-button'
 import BpkParagraph from 'bpk-component-paragraph'
+import { BpkButtonLink } from 'bpk-component-link'
 import DocsPageBuilder from './../../components/DocsPageBuilder'
 
 class ModalContainer extends Component {
@@ -45,7 +46,7 @@ class ModalContainer extends Component {
         <BpkButton onClick={this.onOpen}>{buttonText}</BpkButton>
         <BpkModal isOpen={this.state.isOpen} onClose={this.onClose} wide={this.state.wide} {...rest}>
           <BpkParagraph>{children}</BpkParagraph>
-          <BpkButton onClick={this.toggleWidth}>Toggle width</BpkButton>
+          <BpkButtonLink onClick={this.toggleWidth}>Toggle width</BpkButtonLink>
         </BpkModal>
       </div>
     )

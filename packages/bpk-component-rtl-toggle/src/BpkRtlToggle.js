@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BpkLink from 'bpk-component-link'
+import { BpkButtonLink } from 'bpk-component-link'
 
 const getHtmlElement = () => {
   return typeof document !== 'undefined' ? document.querySelector('html') : {}
@@ -43,7 +43,7 @@ class BpkRtlToggle extends React.Component {
   render () {
     const onOrOff = this.state.direction === DIRECTIONS.RTL ? 'off' : 'on'
 
-    return <BpkLink href='#' onClick={this.toggleRtl}>Toggle RTL {onOrOff}</BpkLink>
+    return <BpkButtonLink onClick={this.toggleRtl}>Toggle RTL {onOrOff}</BpkButtonLink>
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import BpkLink from 'bpk-component-link'
+import { BpkButtonLink} from 'bpk-component-link'
 
 import './bpk-grid-toggle.scss'
 
@@ -37,7 +37,7 @@ class BpkGridToggle extends React.Component {
     const { gridEnabled } = this.state
     const onOrOff = gridEnabled ? 'off' : 'on'
 
-    return <BpkLink href='#' onClick={this.toggleGrid}>Toggle baseline grid {onOrOff}</BpkLink>
+    return <BpkButtonLink onClick={this.toggleGrid}>Toggle baseline grid {onOrOff}</BpkButtonLink>
   }
 }
 
