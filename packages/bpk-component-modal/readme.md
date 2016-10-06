@@ -11,15 +11,71 @@ npm install bpk-component-modal --save
 ## Usage
 
 ```js
-import React from 'react'
-import BpkModal from 'bpk-component-modal'
+import React, { Component } from 'react'
+import BpkButton from 'bpk-component-button'
+import BpkModal from 'bpk-component-paragraph'
+import BpkParagraph from 'bpk-component-paragraph'
 
-export default MyComponent = () => (
-  <BpkModal />
-)
+class App extends Component {
+  constructor () {
+    super()
+
+    this.onOpen = this.onOpen.bind(this)
+    this.onClose = this.onClose.bind(this)
+
+    this.state = {
+      isOpen: false
+    }
+  }
+
+  onOpen () {
+    this.setState({
+      isOpen: true
+    })
+  }
+
+  onClose () {
+    this.setState({
+      isOpen: false
+    })
+  }
+
+  render () {
+    return (
+      <div>
+        <div id='application-container'>
+          <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
+        </div>
+        <BpkModal 
+          isOpen={this.state.isOpen} 
+          onClose={this.onClose}
+          title='Modal title'
+          closeLabel='Close modal'
+          buttonText='Open modal'
+          getApplicationElement={() => 
+            document.getElementById('application-container')
+          }>
+          This is a basic modal. You can put anything you want in here.
+        </BpkModal>
+      </div>
+    )
+  }
+}
 ```
+
+> **Note:** In order to "hide" your application from screenreaders whilst the modal is open you need to let it know what 
+  the root element for your application is by returning it's DOM node via the function passed to the 
+  `getApplicationElement` prop (see the example above).
 
 ### Props
 
-| Property          | PropType             | Required | Default Value |
-| ----------------- | -------------------- | -------- | ------------- |
+| Property              | PropType             | Required | Default Value |
+| --------------------- | -------------------- | -------- | ------------- |
+| children              | -                    | true     | -             |
+| isOpen                | bool                 | true     | -             |
+| onClose               | func                 | true     | -             |
+| title                 | string               | true     | -             |
+| getApplicationElement | func                 | true     | -             |
+| closeLabel            | string               | false    | null          |
+| closeText             | string               | false    | null          |
+| wide                  | bool                 | false    | false         |
