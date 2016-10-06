@@ -9,8 +9,10 @@
     "./base/forms.json",
     "./base/grids.json",
     "./base/logos.json",
+    "./base/modals.json",
     "./base/notifications.json",
     "./base/spacing.json",
-    "./base/typography.json"
+    "./base/typography.json",
+    "./base/z-index.json"
   ]
 }

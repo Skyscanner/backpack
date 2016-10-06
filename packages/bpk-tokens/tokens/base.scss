@@ -314,6 +314,34 @@ $bpk-logo-stacked-default-height: calc(1.5rem * 3);
 $bpk-logo-tianxun-default-height: 2.625rem;
 /// @group logos
 $bpk-logo-tianxun-stacked-default-height: calc(1.5rem * 3);
+/// @group modals
+$bpk-modal-scrim-background-color: rgb(255, 255, 255);
+/// @group modals
+$bpk-modal-scrim-initial-opacity: 0;
+/// @group modals
+$bpk-modal-scrim-opacity: .8;
+/// @group modals
+$bpk-modal-scrim-mobile-opacity: 1;
+/// @group modals
+$bpk-modal-background-color: rgb(255, 255, 255);
+/// @group modals
+$bpk-modal-initial-opacity: 0;
+/// @group modals
+$bpk-modal-opacity: 1;
+/// @group modals
+$bpk-modal-max-width: 32.25rem;
+/// @group modals
+$bpk-modal-wide-max-width: 50.25rem;
+/// @group modals
+$bpk-modal-header-padding: .75rem;
+/// @group modals
+$bpk-modal-header-box-shadow: 0 -1px 0 0 #E6E4EB inset;
+/// @group modals
+$bpk-modal-close-icon-fill: rgb(129, 123, 143);
+/// @group modals
+$bpk-modal-close-icon-hover-fill: rgb(82, 76, 97);
+/// @group modals
+$bpk-modal-content-padding: .75rem;
 /// @group notifications
 $bpk-banner-alert-background-color: rgb(255, 255, 255);
 /// @group notifications
@@ -474,3 +502,7 @@ $bpk-link-hover-color: rgb(82, 76, 97);
 $bpk-link-hover-text-decoration: underline;
 /// @group text-colors
 $bpk-link-active-color: rgb(129, 123, 143);
+/// @group z-indices
+$bpk-zindex-modal-scrim: 1000;
+/// @group z-indices
+$bpk-zindex-modal: 1100;

@@ -7,24 +7,24 @@
   bottom: 0;
   left: 0;
   transition: opacity 100ms ease-in-out;
-  background-color: $bpk-color-white;
-  opacity: .8;
+  background-color: $bpk-modal-scrim-background-color;
+  opacity: $bpk-modal-scrim-opacity;
   overflow: hidden;
-  z-index: 1000;
+  z-index: $bpk-zindex-modal-scrim;
 
   @include bpk-breakpoint-mobile {
-    opacity: 1;
+    opacity: $bpk-modal-scrim-mobile-opacity;
   }
 
   &--appear {
-    opacity: 0;
+    opacity: $bpk-modal-scrim-initial-opacity;
   }
 
   &--appear-active {
-    opacity: .8;
+    opacity: $bpk-modal-scrim-opacity;
 
     @include bpk-breakpoint-mobile {
-      opacity: 1;
+      opacity: $bpk-modal-scrim-mobile-opacity;
     }
   }
 }
@@ -39,7 +39,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  z-index: 1100;
+  z-index: $bpk-zindex-modal;
 
   &__outer {
     width: 100%;
@@ -63,36 +63,36 @@
     margin: 0 auto;
     transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
     outline: 0;
-    background-color: $bpk-color-white;
+    background-color: $bpk-modal-background-color;
 
     &--appear {
       transform: scale(.9);
-      opacity: 0;
+      opacity: $bpk-modal-initial-opacity;
     }
 
     &--appear-active {
       transform: scale(1);
-      opacity: 1;
+      opacity: $bpk-modal-opacity;
     }
 
     @include bpk-breakpoint-above-mobile {
       @include bpk-box-shadow-xl;
       @include bpk-border-radius-sm;
 
-      max-width: $bpk-breakpoint-mobile;
+      max-width: $bpk-modal-max-width;
     }
 
     &--wide {
       @include bpk-breakpoint-above-mobile {
-        max-width: $bpk-breakpoint-tablet;
+        max-width: $bpk-modal-wide-max-width;
       }
     }
   }
 
   &__dialog-header {
     display: flex;
-    padding: $bpk-spacing-sm;
-    box-shadow: 0 -1px 0 0 $bpk-color-gray-100 inset;
+    padding: $bpk-modal-header-padding;
+    box-shadow: $bpk-modal-header-box-shadow;
     justify-content: space-between;
   }
 
@@ -110,14 +110,14 @@
   }
 
   &__dialog-close-icon {
-    fill: $bpk-color-gray-500;
+    fill: $bpk-modal-close-icon-fill;
 
     &:hover {
-      fill: $bpk-color-gray-700;
+      fill: $bpk-modal-close-icon-hover-fill;
     }
   }
 
   &__dialog-content {
-    padding: $bpk-spacing-sm;
+    padding: $bpk-modal-content-padding;
   }
 }

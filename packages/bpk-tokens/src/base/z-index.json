@@ -1,0 +1,17 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "type": "number",
+    "category": "z-index"
+  },
+  "props": {
+    "ZINDEX_MODAL_SCRIM": {
+      "value": "{!ZINDEX_MODAL_SCRIM}"
+    },
+    "ZINDEX_MODAL": {
+      "value": "{!ZINDEX_MODAL}"
+    }
+  }
+}

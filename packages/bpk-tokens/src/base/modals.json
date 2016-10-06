@@ -1,0 +1,66 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "modals"
+  },
+  "props": {
+    "MODAL_SCRIM_BACKGROUND_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "MODAL_SCRIM_INITIAL_OPACITY": {
+      "value": "0",
+      "type": "number"
+    },
+    "MODAL_SCRIM_OPACITY": {
+      "value": ".8",
+      "type": "number"
+    },
+    "MODAL_SCRIM_MOBILE_OPACITY": {
+      "value": "1",
+      "type": "number"
+    },
+    "MODAL_BACKGROUND_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "MODAL_INITIAL_OPACITY": {
+      "value": "0",
+      "type": "number"
+    },
+    "MODAL_OPACITY": {
+      "value": "1",
+      "type": "number"
+    },
+    "MODAL_MAX_WIDTH": {
+      "value": "{!BREAKPOINT_MOBILE}",
+      "type": "size"
+    },
+    "MODAL_WIDE_MAX_WIDTH": {
+      "value": "{!BREAKPOINT_TABLET}",
+      "type": "size"
+    },
+    "MODAL_HEADER_PADDING": {
+      "value": "{!SPACING_SM}",
+      "type": "box-shadow"
+    },
+    "MODAL_HEADER_BOX_SHADOW": {
+      "value": "0 -1px 0 0 {!GRAY_100} inset",
+      "type": "box-shadow"
+    },
+    "MODAL_CLOSE_ICON_FILL": {
+      "value": "{!GRAY_500}",
+      "type": "color"
+    },
+    "MODAL_CLOSE_ICON_HOVER_FILL": {
+      "value": "{!GRAY_700}",
+      "type": "color"
+    },
+    "MODAL_CONTENT_PADDING": {
+      "value": "{!SPACING_SM}",
+      "type": "size"
+    }
+  }
+}
