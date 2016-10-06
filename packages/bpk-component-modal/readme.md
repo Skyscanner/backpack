@@ -55,7 +55,7 @@ class App extends Component {
           getApplicationElement={() => 
             document.getElementById('application-container')
           }>
-          This is a basic modal. You can put anything you want in here.
+          This is a modal. You can put anything you want in here.
         </BpkModal>
       </div>
     )

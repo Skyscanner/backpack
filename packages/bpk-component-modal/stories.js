@@ -45,14 +45,14 @@ class ModalContainer extends Component {
 }
 
 storiesOf('bpk-component-modal', module)
-  .add('Basic', () => (
+  .add('Default', () => (
     <ModalContainer
       title='Modal title'
       closeLabel='Close modal'
       buttonText='Open modal'
       getApplicationElement={() => document.getElementById('application-container')}
     >
-      This is a basic modal. You can put anything you want in here.
+      This is a default modal. You can put anything you want in here.
     </ModalContainer>
   ))
   .add('Wide', () => (
@@ -164,6 +164,6 @@ storiesOf('bpk-component-modal', module)
       buttonText='Open modal'
       getApplicationElement={() => document.getElementById('application-container')}
     >
-      This is a basic modal. You can put anything you want in here.
+      This is a default modal. You can put anything you want in here.
     </ModalContainer>
   ))

@@ -39,8 +39,8 @@ const links = [
     category: 'Molecules',
     links: [
       { route: routes.NOTIFICATIONS, children: 'Notifications' },
-      // { route: routes.MODAL, children: 'Modal' },
-      { route: null, children: 'Modal' },
+      // { route: routes.MODALS, children: 'Modals' },
+      { route: null, children: 'Modals' },
       { route: null, children: 'Popover' },
       { route: null, children: 'Tooltip' },
       { route: null, children: 'Pagination' },
