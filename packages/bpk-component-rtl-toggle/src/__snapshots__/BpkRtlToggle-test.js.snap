@@ -1,21 +1,19 @@
 exports[`BpkRtlToggle should render correctly 1`] = `
-<a
+<button
   className="bpk-link"
-  href="#"
   onClick={[Function bound toggleRtl]}
-  target={null}>
+  type="button">
   Toggle RTL 
   on
-</a>
+</button>
 `;
 
 exports[`BpkRtlToggle should render correctly when toggled 1`] = `
-<a
+<button
   className="bpk-link"
-  href="#"
   onClick={[Function bound toggleRtl]}
-  target={null}>
+  type="button">
   Toggle RTL 
   off
-</a>
+</button>
 `;

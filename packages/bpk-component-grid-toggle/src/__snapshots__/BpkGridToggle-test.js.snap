@@ -1,21 +1,19 @@
 exports[`BpkGridToggle should render correctly 1`] = `
-<a
+<button
   className="bpk-link"
-  href="#"
   onClick={[Function bound toggleGrid]}
-  target={null}>
+  type="button">
   Toggle baseline grid 
   on
-</a>
+</button>
 `;
 
 exports[`BpkGridToggle should render correctly when toggled 1`] = `
-<a
+<button
   className="bpk-link"
-  href="#"
   onClick={[Function bound toggleGrid]}
-  target={null}>
+  type="button">
   Toggle baseline grid 
   off
-</a>
+</button>
 `;

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import { BpkButtonLink} from 'bpk-component-link'
+import { BpkButtonLink } from 'bpk-component-link'
 
 import './bpk-grid-toggle.scss'
 
