@@ -26,3 +26,4 @@ export default MyComponent = () => (
 | children     | -                                  | true     | -             |
 | level        | 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' | true     | -             |
 | id           | string                             | false    | null          |
+| bottomMargin | bool                               | false    | true          |

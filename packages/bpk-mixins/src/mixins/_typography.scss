@@ -155,6 +155,25 @@
   @include _bpk-heading-factory($bpk-h-6-margin-top, $bpk-h-6-margin-bottom, $bpk-h-6-font-size, $bpk-h-6-font-weight, $bpk-h-6-line-height);
 }
 
+/// Remove bottom margin from heading. Modifies the various bpk-heading mixins.
+///
+/// @require {mixin} bpk-heading-1
+/// @require {mixin} bpk-heading-2
+/// @require {mixin} bpk-heading-3
+/// @require {mixin} bpk-heading-4
+/// @require {mixin} bpk-heading-5
+/// @require {mixin} bpk-heading-6
+///
+/// @example scss
+///   .selector {
+///     @include bpk-heading-1();
+///     @include bpk-heading--no-bottom-margin();
+///   }
+
+@mixin bpk-heading--no-bottom-margin {
+  margin-bottom: 0;
+}
+
 /// Headings within content containers. Modifies the various bpk-heading mixins.
 ///
 /// @require {mixin} bpk-heading-1

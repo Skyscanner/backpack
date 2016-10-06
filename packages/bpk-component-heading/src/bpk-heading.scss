@@ -26,7 +26,7 @@
   }
 
   &--no-bottom-margin {
-    margin-bottom: 0;
+    @include bpk-heading--no-bottom-margin;
   }
 }
 
