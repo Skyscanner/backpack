@@ -949,6 +949,90 @@
       "name": "logoTianxunStackedDefaultHeight"
     },
     {
+      "category": "modals",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "modalScrimBackgroundColor"
+    },
+    {
+      "category": "modals",
+      "value": "0",
+      "type": "number",
+      "name": "modalScrimInitialOpacity"
+    },
+    {
+      "category": "modals",
+      "value": ".8",
+      "type": "number",
+      "name": "modalScrimOpacity"
+    },
+    {
+      "category": "modals",
+      "value": "1",
+      "type": "number",
+      "name": "modalScrimMobileOpacity"
+    },
+    {
+      "category": "modals",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "modalBackgroundColor"
+    },
+    {
+      "category": "modals",
+      "value": "0",
+      "type": "number",
+      "name": "modalInitialOpacity"
+    },
+    {
+      "category": "modals",
+      "value": "1",
+      "type": "number",
+      "name": "modalOpacity"
+    },
+    {
+      "category": "modals",
+      "value": "516",
+      "type": "size",
+      "name": "modalMaxWidth"
+    },
+    {
+      "category": "modals",
+      "value": "804",
+      "type": "size",
+      "name": "modalWideMaxWidth"
+    },
+    {
+      "category": "modals",
+      "value": "12",
+      "type": "box-shadow",
+      "name": "modalHeaderPadding"
+    },
+    {
+      "category": "modals",
+      "value": "0 -1px 0 0 #E6E4EB inset",
+      "type": "box-shadow",
+      "name": "modalHeaderBoxShadow"
+    },
+    {
+      "category": "modals",
+      "value": "rgb(129, 123, 143)",
+      "type": "color",
+      "name": "modalCloseIconFill"
+    },
+    {
+      "category": "modals",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "modalCloseIconHoverFill"
+    },
+    {
+      "category": "modals",
+      "value": "12",
+      "type": "size",
+      "name": "modalContentPadding"
+    },
+    {
       "category": "notifications",
       "value": "rgb(255, 255, 255)",
       "type": "color",
@@ -1427,6 +1511,18 @@
       "type": "color",
       "category": "text-color",
       "name": "linkActiveColor"
+    },
+    {
+      "type": "number",
+      "category": "z-index",
+      "value": "1000",
+      "name": "zindexModalScrim"
+    },
+    {
+      "type": "number",
+      "category": "z-index",
+      "value": "1100",
+      "name": "zindexModal"
     }
   ]
 }

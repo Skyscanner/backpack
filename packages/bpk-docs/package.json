@@ -32,6 +32,7 @@
     "bpk-component-link": "^0.1.22",
     "bpk-component-list": "^0.0.36",
     "bpk-component-logo": "^1.0.6",
+    "bpk-component-modal": "^0.0.0",
     "bpk-component-paragraph": "^0.1.23",
     "bpk-component-radio": "^0.0.13",
     "bpk-component-router-link": "^0.1.22",

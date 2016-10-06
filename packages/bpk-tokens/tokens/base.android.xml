@@ -158,6 +158,20 @@
   <property name="LOGO_STACKED_DEFAULT_HEIGHT" category="logos">calc(1.5rem * 3)</property>
   <property name="LOGO_TIANXUN_DEFAULT_HEIGHT" category="logos">42</property>
   <property name="LOGO_TIANXUN_STACKED_DEFAULT_HEIGHT" category="logos">calc(1.5rem * 3)</property>
+  <color name="MODAL_SCRIM_BACKGROUND_COLOR" category="modals">#ffffffff</color>
+  <property name="MODAL_SCRIM_INITIAL_OPACITY" category="modals">0</property>
+  <property name="MODAL_SCRIM_OPACITY" category="modals">.8</property>
+  <property name="MODAL_SCRIM_MOBILE_OPACITY" category="modals">1</property>
+  <color name="MODAL_BACKGROUND_COLOR" category="modals">#ffffffff</color>
+  <property name="MODAL_INITIAL_OPACITY" category="modals">0</property>
+  <property name="MODAL_OPACITY" category="modals">1</property>
+  <property name="MODAL_MAX_WIDTH" category="modals">516</property>
+  <property name="MODAL_WIDE_MAX_WIDTH" category="modals">804</property>
+  <property name="MODAL_HEADER_PADDING" category="modals">12</property>
+  <property name="MODAL_HEADER_BOX_SHADOW" category="modals">0 -1px 0 0 #E6E4EB inset</property>
+  <color name="MODAL_CLOSE_ICON_FILL" category="modals">#817b8fff</color>
+  <color name="MODAL_CLOSE_ICON_HOVER_FILL" category="modals">#524c61ff</color>
+  <property name="MODAL_CONTENT_PADDING" category="modals">12</property>
   <color name="BANNER_ALERT_BACKGROUND_COLOR" category="notifications">#ffffffff</color>
   <property name="BANNER_ALERT_SUCCESS_BOX_SHADOW" category="notifications">0 0 0 1px #00d775</property>
   <property name="BANNER_ALERT_WARN_BOX_SHADOW" category="notifications">0 0 0 1px #ffd445</property>
@@ -238,4 +252,6 @@
   <color name="LINK_HOVER_COLOR" category="text-color">#524c61ff</color>
   <property name="LINK_HOVER_TEXT_DECORATION" category="text-decoration">underline</property>
   <color name="LINK_ACTIVE_COLOR" category="text-color">#817b8fff</color>
+  <property name="ZINDEX_MODAL_SCRIM" category="z-index">1000</property>
+  <property name="ZINDEX_MODAL" category="z-index">1100</property>
 </resources>

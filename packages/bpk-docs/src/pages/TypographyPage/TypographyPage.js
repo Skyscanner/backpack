@@ -1,11 +1,11 @@
 import React from 'react'
 
-import BpkLink from 'bpk-component-link'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
 import BpkBlockquote from 'bpk-component-blockquote'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 import { BpkCode, BpkCodeBlock } from 'bpk-component-code'
+import BpkLink, { BpkButtonLink } from 'bpk-component-link'
 import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
 
 import DocsPageBuilder from './../../components/DocsPageBuilder'
@@ -49,11 +49,10 @@ const components = [
     title: 'Links',
     blurb: 'In Backpack, links are colored Blue-500. In general text which is colored Blue-500 should be clickable, however not all things that are clickable need to be colored Blue-500.',
     examples: [
-      <BpkLink href='#'>Link 1</BpkLink>,
-      ' ',
-      <BpkLink href='#'>Link 2</BpkLink>,
-      ' ',
-      <BpkLink href='#'>Link 3</BpkLink>
+      <div>
+        Links can be both <BpkLink href='#'>anchor tags</BpkLink> as well
+        as <BpkButtonLink onClick={() => null}>button tags</BpkButtonLink>.
+      </div>
     ],
     readme: require('raw!bpk-component-link/readme.md')
   },

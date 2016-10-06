@@ -1,0 +1,123 @@
+@import '~bpk-mixins/index';
+
+.bpk-modal-scrim {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: opacity 100ms ease-in-out;
+  background-color: $bpk-modal-scrim-background-color;
+  opacity: $bpk-modal-scrim-opacity;
+  overflow: hidden;
+  z-index: $bpk-zindex-modal-scrim;
+
+  @include bpk-breakpoint-mobile {
+    opacity: $bpk-modal-scrim-mobile-opacity;
+  }
+
+  &--appear {
+    opacity: $bpk-modal-scrim-initial-opacity;
+  }
+
+  &--appear-active {
+    opacity: $bpk-modal-scrim-opacity;
+
+    @include bpk-breakpoint-mobile {
+      opacity: $bpk-modal-scrim-mobile-opacity;
+    }
+  }
+}
+
+.bpk-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: $bpk-zindex-modal;
+
+  &__outer {
+    width: 100%;
+    height: 100%;
+
+    @include bpk-breakpoint-above-mobile {
+      display: table;
+    }
+  }
+
+  &__inner {
+    @include bpk-breakpoint-above-mobile {
+      display: table-cell;
+      padding: $bpk-spacing-base;
+      vertical-align: middle;
+    }
+  }
+
+  &__dialog {
+    width: 100%;
+    margin: 0 auto;
+    transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+    outline: 0;
+    background-color: $bpk-modal-background-color;
+
+    &--appear {
+      transform: scale(.9);
+      opacity: $bpk-modal-initial-opacity;
+    }
+
+    &--appear-active {
+      transform: scale(1);
+      opacity: $bpk-modal-opacity;
+    }
+
+    @include bpk-breakpoint-above-mobile {
+      @include bpk-box-shadow-xl;
+      @include bpk-border-radius-sm;
+
+      max-width: $bpk-modal-max-width;
+    }
+
+    &--wide {
+      @include bpk-breakpoint-above-mobile {
+        max-width: $bpk-modal-wide-max-width;
+      }
+    }
+  }
+
+  &__dialog-header {
+    display: flex;
+    padding: $bpk-modal-header-padding;
+    box-shadow: $bpk-modal-header-box-shadow;
+    justify-content: space-between;
+  }
+
+  &__dialog-close-button {
+    float: right;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    appearance: none;
+
+    @include bpk-rtl {
+      float: left;
+    }
+  }
+
+  &__dialog-close-icon {
+    fill: $bpk-modal-close-icon-fill;
+
+    &:hover {
+      fill: $bpk-modal-close-icon-hover-fill;
+    }
+  }
+
+  &__dialog-content {
+    padding: $bpk-modal-content-padding;
+  }
+}

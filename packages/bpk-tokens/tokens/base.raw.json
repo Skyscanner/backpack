@@ -69,7 +69,9 @@
     "BREAKPOINT_MOBILE": "32.25rem",
     "BREAKPOINT_TABLET": "50.25rem",
     "BREAKPOINT_DESKTOP": "71.25rem",
-    "ONE_PIXEL_REM": ".0625rem"
+    "ONE_PIXEL_REM": ".0625rem",
+    "ZINDEX_MODAL_SCRIM": "1000",
+    "ZINDEX_MODAL": "1100"
   },
   "props": {
     "BORDER_RADIUS_XS": {
@@ -1020,6 +1022,90 @@
       "value": "calc(1.5rem * 3)",
       "name": "LOGO_TIANXUN_STACKED_DEFAULT_HEIGHT"
     },
+    "MODAL_SCRIM_BACKGROUND_COLOR": {
+      "category": "modals",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "MODAL_SCRIM_BACKGROUND_COLOR"
+    },
+    "MODAL_SCRIM_INITIAL_OPACITY": {
+      "category": "modals",
+      "value": "0",
+      "type": "number",
+      "name": "MODAL_SCRIM_INITIAL_OPACITY"
+    },
+    "MODAL_SCRIM_OPACITY": {
+      "category": "modals",
+      "value": ".8",
+      "type": "number",
+      "name": "MODAL_SCRIM_OPACITY"
+    },
+    "MODAL_SCRIM_MOBILE_OPACITY": {
+      "category": "modals",
+      "value": "1",
+      "type": "number",
+      "name": "MODAL_SCRIM_MOBILE_OPACITY"
+    },
+    "MODAL_BACKGROUND_COLOR": {
+      "category": "modals",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "MODAL_BACKGROUND_COLOR"
+    },
+    "MODAL_INITIAL_OPACITY": {
+      "category": "modals",
+      "value": "0",
+      "type": "number",
+      "name": "MODAL_INITIAL_OPACITY"
+    },
+    "MODAL_OPACITY": {
+      "category": "modals",
+      "value": "1",
+      "type": "number",
+      "name": "MODAL_OPACITY"
+    },
+    "MODAL_MAX_WIDTH": {
+      "category": "modals",
+      "value": "32.25rem",
+      "type": "size",
+      "name": "MODAL_MAX_WIDTH"
+    },
+    "MODAL_WIDE_MAX_WIDTH": {
+      "category": "modals",
+      "value": "50.25rem",
+      "type": "size",
+      "name": "MODAL_WIDE_MAX_WIDTH"
+    },
+    "MODAL_HEADER_PADDING": {
+      "category": "modals",
+      "value": ".75rem",
+      "type": "box-shadow",
+      "name": "MODAL_HEADER_PADDING"
+    },
+    "MODAL_HEADER_BOX_SHADOW": {
+      "category": "modals",
+      "value": "0 -1px 0 0 #E6E4EB inset",
+      "type": "box-shadow",
+      "name": "MODAL_HEADER_BOX_SHADOW"
+    },
+    "MODAL_CLOSE_ICON_FILL": {
+      "category": "modals",
+      "value": "rgb(129, 123, 143)",
+      "type": "color",
+      "name": "MODAL_CLOSE_ICON_FILL"
+    },
+    "MODAL_CLOSE_ICON_HOVER_FILL": {
+      "category": "modals",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "MODAL_CLOSE_ICON_HOVER_FILL"
+    },
+    "MODAL_CONTENT_PADDING": {
+      "category": "modals",
+      "value": ".75rem",
+      "type": "size",
+      "name": "MODAL_CONTENT_PADDING"
+    },
     "BANNER_ALERT_BACKGROUND_COLOR": {
       "category": "notifications",
       "value": "rgb(255, 255, 255)",
@@ -1499,6 +1585,18 @@
       "type": "color",
       "category": "text-color",
       "name": "LINK_ACTIVE_COLOR"
+    },
+    "ZINDEX_MODAL_SCRIM": {
+      "type": "number",
+      "category": "z-index",
+      "value": "1000",
+      "name": "ZINDEX_MODAL_SCRIM"
+    },
+    "ZINDEX_MODAL": {
+      "type": "number",
+      "category": "z-index",
+      "value": "1100",
+      "name": "ZINDEX_MODAL"
     }
   },
   "propKeys": [
@@ -1660,6 +1758,20 @@
     "LOGO_STACKED_DEFAULT_HEIGHT",
     "LOGO_TIANXUN_DEFAULT_HEIGHT",
     "LOGO_TIANXUN_STACKED_DEFAULT_HEIGHT",
+    "MODAL_SCRIM_BACKGROUND_COLOR",
+    "MODAL_SCRIM_INITIAL_OPACITY",
+    "MODAL_SCRIM_OPACITY",
+    "MODAL_SCRIM_MOBILE_OPACITY",
+    "MODAL_BACKGROUND_COLOR",
+    "MODAL_INITIAL_OPACITY",
+    "MODAL_OPACITY",
+    "MODAL_MAX_WIDTH",
+    "MODAL_WIDE_MAX_WIDTH",
+    "MODAL_HEADER_PADDING",
+    "MODAL_HEADER_BOX_SHADOW",
+    "MODAL_CLOSE_ICON_FILL",
+    "MODAL_CLOSE_ICON_HOVER_FILL",
+    "MODAL_CONTENT_PADDING",
     "BANNER_ALERT_BACKGROUND_COLOR",
     "BANNER_ALERT_SUCCESS_BOX_SHADOW",
     "BANNER_ALERT_WARN_BOX_SHADOW",
@@ -1739,6 +1851,8 @@
     "LINK_TEXT_DECORATION",
     "LINK_HOVER_COLOR",
     "LINK_HOVER_TEXT_DECORATION",
-    "LINK_ACTIVE_COLOR"
+    "LINK_ACTIVE_COLOR",
+    "ZINDEX_MODAL_SCRIM",
+    "ZINDEX_MODAL"
   ]
 }

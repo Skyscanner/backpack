@@ -1,3 +1,5 @@
-import component from './src/BpkLink'
+import BpkLink from './src/BpkLink'
+import BpkButtonLink from './src/BpkButtonLink'
 
-export default component
+export default BpkLink
+export { BpkButtonLink }

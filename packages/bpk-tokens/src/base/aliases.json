@@ -69,6 +69,8 @@
     "BREAKPOINT_MOBILE": "32.25rem",
     "BREAKPOINT_TABLET": "50.25rem",
     "BREAKPOINT_DESKTOP": "71.25rem",
-    "ONE_PIXEL_REM": ".0625rem"
+    "ONE_PIXEL_REM": ".0625rem",
+    "ZINDEX_MODAL_SCRIM": "1000",
+    "ZINDEX_MODAL": "1100"
   }
 }

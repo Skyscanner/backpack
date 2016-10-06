@@ -35,6 +35,7 @@ const staticSiteGeneratorConfig = {
 
     ROUTES.MOLECULES,
     ROUTES.NOTIFICATIONS,
+    ROUTES.MODAL,
 
     ROUTES.ORGANISMS,
 
