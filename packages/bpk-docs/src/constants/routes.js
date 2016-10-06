@@ -24,6 +24,7 @@ export const CARDS = '/docs/atoms/cards'
 
 export const MOLECULES = '/docs/molecules'
 export const NOTIFICATIONS = '/docs/molecules/notifications'
+export const MODAL = '/docs/molecules/modal'
 
 export const ORGANISMS = '/docs/organisms'
 
