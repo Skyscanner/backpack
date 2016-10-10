@@ -41,26 +41,13 @@
   -webkit-overflow-scrolling: touch;
   z-index: $bpk-zindex-modal;
 
-  &__outer {
-    width: 100%;
-    height: 100%;
-
-    @include bpk-breakpoint-above-mobile {
-      display: table;
-    }
-  }
-
-  &__inner {
-    @include bpk-breakpoint-above-mobile {
-      display: table-cell;
-      padding: $bpk-spacing-base;
-      vertical-align: middle;
-    }
+  @include bpk-breakpoint-above-mobile {
+    display: flex;
+    padding: $bpk-spacing-base;
   }
 
   &__dialog {
     width: 100%;
-    margin: 0 auto;
     transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
     outline: 0;
     background-color: $bpk-modal-background-color;
@@ -80,6 +67,7 @@
       @include bpk-border-radius-sm;
 
       max-width: $bpk-modal-max-width;
+      margin: auto;
     }
 
     &--wide {

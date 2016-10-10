@@ -95,9 +95,7 @@ class BpkModalDialog extends Component {
   render () {
     return (
       <div className='bpk-modal' onClick={this.onClose}>
-        <div className='bpk-modal__outer'>
-          <div className='bpk-modal__inner'>{this.renderDialog()}</div>
-        </div>
+        {this.renderDialog()}
       </div>
     )
   }
