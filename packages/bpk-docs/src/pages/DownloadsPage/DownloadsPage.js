@@ -4,9 +4,9 @@ import Helmet from 'react-helmet'
 import BpkLink from 'bpk-component-link'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
-import {BpkList, BpkListItem} from 'bpk-component-list'
+import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkContentContainer from 'bpk-component-content-container'
-import {BpkGridContainer, BpkGridRow, BpkGridColumn} from 'bpk-component-grid'
+import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid'
 
 const smallIconsZip = require('!!file?name=[name].[hash].zip!zip-it!./../../../../bpk-svgs/src/icons/sm/icons-sm')
 const largeIconsZip = require('!!file?name=[name].[hash].zip!zip-it!./../../../../bpk-svgs/src/icons/lg/icons-lg')
