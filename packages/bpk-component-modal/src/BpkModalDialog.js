@@ -98,7 +98,7 @@ class BpkModalDialog extends Component {
   render () {
     const classNames = [ 'bpk-modal' ]
 
-    !this.props.isMobileSafari ? classNames.push('bpk-modal--center-dialog') : null
+    this.props.isMobileSafari ? classNames.push('bpk-modal--mobile-safari-fix') : null
 
     return (
       <div className={classNames.join(' ')} onClick={this.onClose}>

@@ -43,16 +43,16 @@
 
   @include bpk-breakpoint-above-mobile {
     padding: $bpk-spacing-base;
+    display: flex;
   }
 
-  &--center-dialog {
-    @include bpk-breakpoint-above-mobile {
-      display: flex;
-    }
+  // IE11 and below hack for buggy flexbox support
+  @media screen\0 {
+    display: block;
+  }
 
-    @media screen\0 {
-      display: block;
-    }
+  &--mobile-safari-fix {
+    display: block;
   }
 
   &__dialog {
