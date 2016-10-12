@@ -1,11 +1,5 @@
 exports[`BpkModalDialog should render correctly 1`] = `
 <div
-  className="bpk-modal"
-  onClick={[Function bound onClose]}>
-  <div
-    className="bpk-modal__outer">
-    <div
-      className="bpk-modal__inner" />
-  </div>
-</div>
+  className="bpk-modal bpk-modal--center-dialog"
+  onClick={[Function bound onClose]} />
 `;

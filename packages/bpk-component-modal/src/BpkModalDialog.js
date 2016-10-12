@@ -22,14 +22,16 @@ class BpkModalDialog extends Component {
   }
 
   componentDidMount () {
-    lockScroll()
+    const { isMobileSafari, getApplicationElement } = this.props
+
+    lockScroll({ isMobileSafari })
+    focusStore.storeFocus()
 
     if (this.dialogElement) {
-      focusStore.storeFocus()
       focusScope.scopeFocus(this.dialogElement)
     }
 
-    const applicationElement = this.props.getApplicationElement()
+    const applicationElement = getApplicationElement()
 
     if (applicationElement) {
       applicationElement.setAttribute('aria-hidden', 'true')
@@ -37,12 +39,13 @@ class BpkModalDialog extends Component {
   }
 
   componentWillUnmount () {
-    unlockScroll()
+    const { isMobileSafari, getApplicationElement } = this.props
 
+    unlockScroll({ isMobileSafari })
     focusScope.unscopeFocus()
     focusStore.restoreFocus()
 
-    const applicationElement = this.props.getApplicationElement()
+    const applicationElement = getApplicationElement()
 
     if (applicationElement) {
       applicationElement.removeAttribute('aria-hidden')
@@ -93,11 +96,13 @@ class BpkModalDialog extends Component {
   }
 
   render () {
+    const classNames = [ 'bpk-modal' ]
+
+    !this.props.isMobileSafari ? classNames.push('bpk-modal--center-dialog') : null
+
     return (
-      <div className='bpk-modal' onClick={this.onClose}>
-        <div className='bpk-modal__outer'>
-          <div className='bpk-modal__inner'>{this.renderDialog()}</div>
-        </div>
+      <div className={classNames.join(' ')} onClick={this.onClose}>
+        {this.renderDialog()}
       </div>
     )
   }
@@ -108,12 +113,14 @@ BpkModalDialog.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   getApplicationElement: PropTypes.func.isRequired,
+  isMobileSafari: PropTypes.bool,
   closeLabel: PropTypes.string,
   closeText: PropTypes.string,
   wide: PropTypes.bool
 }
 
 BpkModalDialog.defaultProps = {
+  isMobileSafari: /iPhone|iPad/i.test(typeof window !== 'undefined' ? window.navigator.platform : ''),
   closeLabel: null,
   closeText: null,
   wide: false
