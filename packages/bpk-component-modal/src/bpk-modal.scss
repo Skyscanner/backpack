@@ -49,6 +49,10 @@
     @include bpk-breakpoint-above-mobile {
       display: flex;
     }
+
+    @media screen\0 {
+      display: block;
+    }
   }
 
   &__dialog {
