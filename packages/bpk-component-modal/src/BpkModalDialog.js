@@ -6,7 +6,7 @@ import React, { PropTypes, Component } from 'react'
 
 import './bpk-modal.scss'
 import BpkModalCloseButton from './BpkModalCloseButton'
-import { lockScroll, unlockScroll } from './scroll-utils'
+import { lockScroll, unlockScroll, storeScroll, restoreScroll } from './scroll-utils'
 import TransitionInitialMount from './TransitionInitialMount'
 
 const stopPropagation = (e) => {
@@ -18,41 +18,48 @@ class BpkModalDialog extends Component {
     super()
 
     this.onClose = this.onClose.bind(this)
-    this.getReferenceToDialogElement = this.getReferenceToDialogElement.bind(this)
+    this.getDialogRef = this.getDialogRef.bind(this)
   }
 
   componentDidMount () {
-    const { isMobileSafari, getApplicationElement } = this.props
-
-    lockScroll({ isMobileSafari })
-    focusStore.storeFocus()
-
-    if (this.dialogElement) {
-      focusScope.scopeFocus(this.dialogElement)
-    }
-
+    const { isIphone, getApplicationElement } = this.props
     const applicationElement = getApplicationElement()
 
-    if (applicationElement) {
+    if (isIphone && applicationElement) {
+      storeScroll()
+      applicationElement.style.display = 'none'
+    } else if (applicationElement) {
+      lockScroll()
       applicationElement.setAttribute('aria-hidden', 'true')
+    } else {
+      lockScroll()
+    }
+
+    focusStore.storeFocus()
+    if (this.dialogElement) {
+      focusScope.scopeFocus(this.dialogElement)
     }
   }
 
   componentWillUnmount () {
-    const { isMobileSafari, getApplicationElement } = this.props
-
-    unlockScroll({ isMobileSafari })
-    focusScope.unscopeFocus()
-    focusStore.restoreFocus()
-
+    const { isIphone, getApplicationElement } = this.props
     const applicationElement = getApplicationElement()
 
-    if (applicationElement) {
+    if (isIphone && applicationElement) {
+      applicationElement.style.display = ''
+      restoreScroll()
+    } else if (applicationElement) {
+      unlockScroll()
       applicationElement.removeAttribute('aria-hidden')
+    } else {
+      unlockScroll()
     }
+
+    focusScope.unscopeFocus()
+    focusStore.restoreFocus()
   }
 
-  getReferenceToDialogElement (ref) {
+  getDialogRef (ref) {
     this.dialogElement = ref
   }
 
@@ -66,6 +73,7 @@ class BpkModalDialog extends Component {
     const dialogClassNames = [ dialogClassName ]
 
     this.props.wide ? dialogClassNames.push('bpk-modal__dialog--wide') : null
+    this.props.isIphone ? dialogClassNames.push('bpk-modal__dialog--iphone-fix') : null
 
     return (
       <TransitionInitialMount classNamePrefix={dialogClassName} transitionTimeout={300}>
@@ -76,7 +84,7 @@ class BpkModalDialog extends Component {
           aria-describedby='aria-label-content'
           onClick={stopPropagation}
           className={dialogClassNames.join(' ')}
-          ref={this.getReferenceToDialogElement}
+          ref={this.getDialogRef}
         >
           <header className='bpk-modal__dialog-header'>
             <BpkHeading id='aria-label-heading' level='h4' bottomMargin={false}>
@@ -98,7 +106,7 @@ class BpkModalDialog extends Component {
   render () {
     const classNames = [ 'bpk-modal' ]
 
-    this.props.isMobileSafari ? classNames.push('bpk-modal--mobile-safari-fix') : null
+    this.props.isIphone ? classNames.push('bpk-modal--iphone-fix') : null
 
     return (
       <div className={classNames.join(' ')} onClick={this.onClose}>
@@ -113,16 +121,16 @@ BpkModalDialog.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   getApplicationElement: PropTypes.func.isRequired,
-  isMobileSafari: PropTypes.bool,
   closeLabel: PropTypes.string,
   closeText: PropTypes.string,
+  isIphone: PropTypes.bool,
   wide: PropTypes.bool
 }
 
 BpkModalDialog.defaultProps = {
-  isMobileSafari: /iPhone|iPad/i.test(typeof window !== 'undefined' ? window.navigator.platform : ''),
   closeLabel: null,
   closeText: null,
+  isIphone: /iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : ''),
   wide: false
 }
 

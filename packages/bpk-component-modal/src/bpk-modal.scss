@@ -42,16 +42,18 @@
   z-index: $bpk-zindex-modal;
 
   @include bpk-breakpoint-above-mobile {
-    padding: $bpk-spacing-base;
     display: flex;
+    padding: $bpk-spacing-base;
+  }
+
+  &--iphone-fix {
+    position: absolute;
+    display: block;
+    padding: 0;
   }
 
   // IE11 and below hack for buggy flexbox support
   @media screen\0 {
-    display: block;
-  }
-
-  &--mobile-safari-fix {
     display: block;
   }
 
@@ -60,6 +62,14 @@
     transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
     outline: 0;
     background-color: $bpk-modal-background-color;
+
+    @include bpk-breakpoint-above-mobile {
+      @include bpk-box-shadow-xl;
+      @include bpk-border-radius-sm;
+
+      max-width: $bpk-modal-max-width;
+      margin: auto;
+    }
 
     &--appear {
       transform: scale(.9);
@@ -71,18 +81,19 @@
       opacity: $bpk-modal-opacity;
     }
 
-    @include bpk-breakpoint-above-mobile {
-      @include bpk-box-shadow-xl;
-      @include bpk-border-radius-sm;
-
-      max-width: $bpk-modal-max-width;
-      margin: auto;
-    }
-
     &--wide {
       @include bpk-breakpoint-above-mobile {
         max-width: $bpk-modal-wide-max-width;
       }
+    }
+
+    &--iphone-fix {
+      display: block;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
     }
   }
 

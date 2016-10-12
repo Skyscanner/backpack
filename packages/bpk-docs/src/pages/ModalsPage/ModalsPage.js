@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 
+import BpkLabel from 'bpk-component-label'
 import BpkModal from 'bpk-component-modal'
 import BpkButton from 'bpk-component-button'
 import BpkParagraph from 'bpk-component-paragraph'
 import { BpkButtonLink } from 'bpk-component-link'
+import TOKENS from 'bpk-tokens/tokens/base.common'
+import BpkInput, { INPUT_TYPES } from 'bpk-component-input'
 import DocsPageBuilder from './../../components/DocsPageBuilder'
 
 class ModalContainer extends Component {
@@ -45,10 +48,73 @@ class ModalContainer extends Component {
       <div>
         <BpkButton onClick={this.onOpen}>{buttonText}</BpkButton>
         <BpkModal isOpen={this.state.isOpen} onClose={this.onClose} wide={this.state.wide} {...rest}>
-          <BpkParagraph>{children}</BpkParagraph>
+          <div>{children}</div>
           <BpkButtonLink onClick={this.toggleWidth}>Toggle width</BpkButtonLink>
         </BpkModal>
       </div>
+    )
+  }
+}
+
+const FormFieldExample = (props) => (
+  <div style={{ marginBottom: TOKENS.spacingSm, maxWidth: `calc(${TOKENS.spacingXxl} * 6)` }}>
+    {props.children}
+  </div>
+)
+
+class LoginFormExample extends Component {
+  constructor () {
+    super()
+
+    this.state = {
+      username: '',
+      password: ''
+    }
+
+    this.onUsernameChange = this.onUsernameChange.bind(this)
+    this.onPasswordChange = this.onPasswordChange.bind(this)
+  }
+
+  onUsernameChange (e) {
+    this.setState({
+      username: e.target.value
+    })
+  }
+
+  onPasswordChange (e) {
+    this.setState({
+      password: e.target.value
+    })
+  }
+
+  render () {
+    return (
+      <form action='#'>
+        <FormFieldExample>
+          <BpkLabel label='Username' htmlFor='username' />
+          <BpkInput
+            id='username'
+            name='username'
+            value={this.state.username}
+            onChange={this.onUsernameChange}
+            placeholder='Enter your username'
+          />
+        </FormFieldExample>
+        <FormFieldExample>
+          <BpkLabel label='Password' htmlFor='password' />
+          <BpkInput
+            id='password'
+            name='password'
+            value={this.state.password}
+            type={INPUT_TYPES.PASSWORD}
+            onChange={this.onPasswordChange}
+            placeholder='Enter your password'
+          />
+        </FormFieldExample>
+        <FormFieldExample>
+          <BpkButton>Login</BpkButton>
+        </FormFieldExample>
+      </form>
     )
   }
 }
@@ -63,9 +129,10 @@ const components = [
         title='Modal title'
         closeLabel='Close modal'
         buttonText='Open modal'
-        getApplicationElement={() => document.getElementById('react-root')}
+        getApplicationElement={() => document.getElementById('react-mount')}
       >
-        This is a default modal. You can put anything you want in here.
+        <BpkParagraph>You can put anything you want in here, including forms:</BpkParagraph>
+        <LoginFormExample />
       </ModalContainer>
     ]
   },
@@ -78,9 +145,10 @@ const components = [
         title='Modal title'
         closeText='Done'
         buttonText='Open modal'
-        getApplicationElement={() => document.getElementById('react-root')}
+        getApplicationElement={() => document.getElementById('react-mount')}
       >
-        You can put anything you want in here.
+        <BpkParagraph>You can put anything you want in here, including forms:</BpkParagraph>
+        <LoginFormExample />
       </ModalContainer>
     ]
   }
