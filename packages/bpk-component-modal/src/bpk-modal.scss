@@ -42,8 +42,13 @@
   z-index: $bpk-zindex-modal;
 
   @include bpk-breakpoint-above-mobile {
-    display: flex;
     padding: $bpk-spacing-base;
+  }
+
+  &--center-dialog {
+    @include bpk-breakpoint-above-mobile {
+      display: flex;
+    }
   }
 
   &__dialog {

@@ -1,31 +1,11 @@
-import './scroll-utils.scss'
+let scrollOffset = 0
 
-const NO_SCROLL_CLASS = 'bpk-no-scroll'
-const SCROLL_BAR_MEASURE_CLASS = 'bpk-scroll-bar-measure'
-
-const getWindow = () => typeof window !== 'undefined' ? window : null
-
-const getBodyElement = () => typeof document !== 'undefined' ? document.body : null
-
-const addClass = (element, className) => {
-  if (!element) { return }
-
-  if (element.classList) {
-    element.classList.add(className)
-  } else {
-    element.className += ` ${className}`
-  }
+const getWindow = () => {
+  return typeof window !== 'undefined' ? window : null
 }
 
-const removeClass = (element, className) => {
-  if (!element) { return }
-
-  if (element.classList) {
-    element.classList.remove(className)
-  } else {
-    const regExp = new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi')
-    element.className = element.className.replace(regExp, ' ')
-  }
+const getBodyElement = () => {
+  return typeof document !== 'undefined' && typeof document.body !== 'undefined' ? document.body : null
 }
 
 const getScrollBarWidth = () => {
@@ -38,32 +18,57 @@ const getScrollBarWidth = () => {
 
     if (bodyIsOverflowing) {
       const scrollDiv = document.createElement('div')
-      scrollDiv.className = SCROLL_BAR_MEASURE_CLASS
+
+      scrollDiv.style.position = 'absolute'
+      scrollDiv.style.top = '-9999px'
+      scrollDiv.style.width = '50px'
+      scrollDiv.style.height = '50px'
+      scrollDiv.style.overflow = 'scroll'
+
       body.appendChild(scrollDiv)
       scrollBarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
       body.removeChild(scrollDiv)
     }
   }
 
-  return scrollBarWidth
+  return scrollBarWidth === 0 ? '' : `${scrollBarWidth}px`
 }
 
-const rightPadBody = (paddingRight) => {
+const manipulateBodyScroll = ({ lock, isMobileSafari }) => {
+  const window = getWindow()
   const body = getBodyElement()
 
-  if (body) {
-    body.style.paddingRight = paddingRight === 0 ? '' : `${paddingRight}px`
+  if (!body && !window) { return }
+
+  let bodyStyle = {
+    'overflow': lock ? 'hidden' : '',
+    'paddingRight': lock ? getScrollBarWidth() : ''
+  }
+
+  if (isMobileSafari) {
+    if (lock) {
+      scrollOffset = window.pageYOffset
+    }
+
+    bodyStyle[ 'position' ] = lock ? 'fixed' : ''
+    bodyStyle[ 'top' ] = lock ? `-${scrollOffset}px` : ''
+    bodyStyle[ 'width' ] = lock ? '100%' : ''
+    bodyStyle[ 'height' ] = lock ? '100%' : ''
+  }
+
+  Object.keys(bodyStyle).forEach((key) => {
+    body.style[ key ] = bodyStyle[ key ]
+  })
+
+  if (isMobileSafari && !lock) {
+    window.scrollTo(0, scrollOffset)
   }
 }
 
-const lockScroll = () => {
-  rightPadBody(getScrollBarWidth())
-  addClass(getBodyElement(), NO_SCROLL_CLASS)
+export const lockScroll = ({ isMobileSafari }) => {
+  manipulateBodyScroll({ lock: true, isMobileSafari })
 }
 
-const unlockScroll = () => {
-  removeClass(getBodyElement(), NO_SCROLL_CLASS)
-  rightPadBody(0)
+export const unlockScroll = ({ isMobileSafari }) => {
+  manipulateBodyScroll({ lock: false, isMobileSafari })
 }
-
-export { lockScroll, unlockScroll }
