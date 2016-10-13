@@ -1,4 +1,12 @@
 module.exports = {
+  durationXs: "50ms",
+  durationSm: "200ms",
+  durationBase: "400ms",
+  durationLg: "600ms",
+  durationXl: "800ms",
+  pauseSm: "1500ms",
+  pauseBase: "3000ms",
+  pauseLg: "4500ms",
   borderRadiusXs: ".1875rem",
   borderRadiusSm: ".375rem",
   borderRadiusPill: "5rem",

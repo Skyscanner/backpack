@@ -12,6 +12,7 @@ export const TYPESETTING = '/docs/bonds/typesetting'
 export const RADII = '/docs/bonds/radii'
 export const SHADOWS = '/docs/bonds/shadows'
 export const LAYOUT = '/docs/bonds/layout'
+export const ANIMATION = '/docs/bonds/animation'
 
 export const ATOMS = '/docs/atoms'
 export const TYPOGRAPHY = '/docs/atoms/typography'

@@ -16,6 +16,7 @@ import TypesettingPage from './../pages/TypesettingPage'
 import RadiiPage from './../pages/RadiiPage'
 import ShadowsPage from './../pages/ShadowsPage'
 import LayoutPage from './../pages/LayoutPage'
+import AnimationPage from './../pages/AnimationPage'
 
 import TypographyPage from './../pages/TypographyPage'
 import ButtonsPage from './../pages/ButtonsPage'
@@ -46,6 +47,7 @@ const Routes = (
         <Route path={ROUTES.RADII} component={RadiiPage} />
         <Route path={ROUTES.SHADOWS} component={ShadowsPage} />
         <Route path={ROUTES.LAYOUT} component={LayoutPage} />
+        <Route path={ROUTES.ANIMATION} component={AnimationPage} />
       </Route>
       <Route path={ROUTES.ATOMS}>
         <IndexRedirect to={ROUTES.TYPOGRAPHY} />

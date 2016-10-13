@@ -1,6 +1,54 @@
 {
   "properties": [
     {
+      "type": "DURATION",
+      "category": "animation",
+      "value": "50ms",
+      "name": "durationXs"
+    },
+    {
+      "type": "DURATION",
+      "category": "animation",
+      "value": "200ms",
+      "name": "durationSm"
+    },
+    {
+      "type": "DURATION",
+      "category": "animation",
+      "value": "400ms",
+      "name": "durationBase"
+    },
+    {
+      "type": "DURATION",
+      "category": "animation",
+      "value": "600ms",
+      "name": "durationLg"
+    },
+    {
+      "type": "DURATION",
+      "category": "animation",
+      "value": "800ms",
+      "name": "durationXl"
+    },
+    {
+      "type": "DURATION",
+      "category": "animation",
+      "value": "1500ms",
+      "name": "pauseSm"
+    },
+    {
+      "type": "DURATION",
+      "category": "animation",
+      "value": "3000ms",
+      "name": "pauseBase"
+    },
+    {
+      "type": "DURATION",
+      "category": "animation",
+      "value": "4500ms",
+      "name": "pauseLg"
+    },
+    {
       "type": "size",
       "category": "radius",
       "value": "3",
