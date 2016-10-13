@@ -10,65 +10,69 @@ const getBodyElement = () => {
 
 const getScrollBarWidth = () => {
   let scrollBarWidth = 0
+
   const window = getWindow()
   const body = getBodyElement()
 
-  if (body !== null && window !== null) {
-    const bodyIsOverflowing = body.clientWidth < window.innerWidth
+  if (body === null && window === null) {
+    return ''
+  }
 
-    if (bodyIsOverflowing) {
-      const scrollDiv = document.createElement('div')
+  const bodyIsOverflowing = body.clientWidth < window.innerWidth
 
-      scrollDiv.style.position = 'absolute'
-      scrollDiv.style.top = '-9999px'
-      scrollDiv.style.width = '50px'
-      scrollDiv.style.height = '50px'
-      scrollDiv.style.overflow = 'scroll'
+  if (bodyIsOverflowing) {
+    const scrollDiv = document.createElement('div')
 
-      body.appendChild(scrollDiv)
-      scrollBarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
-      body.removeChild(scrollDiv)
-    }
+    scrollDiv.style.position = 'absolute'
+    scrollDiv.style.top = '-9999px'
+    scrollDiv.style.width = '50px'
+    scrollDiv.style.height = '50px'
+    scrollDiv.style.overflow = 'scroll'
+
+    body.appendChild(scrollDiv)
+    scrollBarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
+    body.removeChild(scrollDiv)
   }
 
   return scrollBarWidth === 0 ? '' : `${scrollBarWidth}px`
 }
 
-const manipulateBodyScroll = ({ lock, isMobileSafari }) => {
+export const storeScroll = () => {
   const window = getWindow()
-  const body = getBodyElement()
 
-  if (!body && !window) { return }
-
-  let bodyStyle = {
-    'overflow': lock ? 'hidden' : '',
-    'paddingRight': lock ? getScrollBarWidth() : ''
+  if (window) {
+    scrollOffset = window.pageYOffset
   }
+}
 
-  if (isMobileSafari) {
-    if (lock) {
-      scrollOffset = window.pageYOffset
-    }
+export const restoreScroll = () => {
+  const window = getWindow()
 
-    bodyStyle[ 'position' ] = lock ? 'fixed' : ''
-    bodyStyle[ 'top' ] = lock ? `-${scrollOffset}px` : ''
-    bodyStyle[ 'width' ] = lock ? '100%' : ''
-    bodyStyle[ 'height' ] = lock ? '100%' : ''
-  }
-
-  Object.keys(bodyStyle).forEach((key) => {
-    body.style[ key ] = bodyStyle[ key ]
-  })
-
-  if (isMobileSafari && !lock) {
+  if (window) {
     window.scrollTo(0, scrollOffset)
   }
 }
 
-export const lockScroll = ({ isMobileSafari }) => {
-  manipulateBodyScroll({ lock: true, isMobileSafari })
+export const lockScroll = () => {
+  const body = getBodyElement()
+
+  if (!body) {
+    return
+  }
+
+  const paddingRight = getScrollBarWidth()
+
+  body.style.overflow = 'hidden'
+  body.style.paddingRight = paddingRight
 }
 
-export const unlockScroll = ({ isMobileSafari }) => {
-  manipulateBodyScroll({ lock: false, isMobileSafari })
+export const unlockScroll = () => {
+  const body = getBodyElement()
+
+  if (!body) {
+    return
+  }
+
+  body.style.overflow = ''
+  body.style.paddingRight = ''
 }
