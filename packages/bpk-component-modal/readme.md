@@ -50,7 +50,6 @@ class App extends Component {
           onClose={this.onClose}
           title='Modal title'
           closeLabel='Close modal'
-          buttonText='Open modal'
           getApplicationElement={() => 
             document.getElementById('application-container')
           }>
