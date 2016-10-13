@@ -263,13 +263,14 @@
   appearance: none;
   cursor: pointer;
 
-  &:hover {
+  @include bpk-hover {
     color: $bpk-link-hover-color;
     text-decoration: $bpk-link-hover-text-decoration;
   }
 
   &:active {
     color: $bpk-link-active-color;
+    text-decoration: $bpk-link-hover-text-decoration;
   }
 }
 

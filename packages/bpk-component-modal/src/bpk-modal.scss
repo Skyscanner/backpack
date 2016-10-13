@@ -120,7 +120,7 @@
   &__dialog-close-icon {
     fill: $bpk-modal-close-icon-fill;
 
-    &:hover {
+    @include bpk-hover {
       fill: $bpk-modal-close-icon-hover-fill;
     }
   }

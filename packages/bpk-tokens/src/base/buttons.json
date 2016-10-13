@@ -210,11 +210,19 @@
       "value": "{!WHITE}",
       "type": "color"
     },
+    "BUTTON_SELECTED_ACTIVE_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
     "BUTTON_SELECTED_BOX_SHADOW": {
       "value": "none",
       "type": "box-shadow"
     },
     "BUTTON_SELECTED_HOVER_BOX_SHADOW": {
+      "value": "none",
+      "type": "box-shadow"
+    },
+    "BUTTON_SELECTED_ACTIVE_BOX_SHADOW": {
       "value": "none",
       "type": "box-shadow"
     },

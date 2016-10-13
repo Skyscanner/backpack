@@ -103,3 +103,20 @@
     @content;
   }
 }
+
+/// :hover pseudo selector wrapper which prevents styles displaying on touch devices
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-hover() {
+///       /* Non-touch specific hover scss goes here */
+///     }
+///   }
+
+@mixin bpk-hover {
+  .bpk-no-touch-support &:hover:not(:active):not(:disabled) {
+    @content;
+  }
+}

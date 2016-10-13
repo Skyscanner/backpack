@@ -464,6 +464,12 @@
       "type": "color",
       "name": "BUTTON_SELECTED_HOVER_COLOR"
     },
+    "BUTTON_SELECTED_ACTIVE_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "BUTTON_SELECTED_ACTIVE_COLOR"
+    },
     "BUTTON_SELECTED_BOX_SHADOW": {
       "category": "buttons",
       "value": "none",
@@ -475,6 +481,12 @@
       "value": "none",
       "type": "box-shadow",
       "name": "BUTTON_SELECTED_HOVER_BOX_SHADOW"
+    },
+    "BUTTON_SELECTED_ACTIVE_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "BUTTON_SELECTED_ACTIVE_BOX_SHADOW"
     },
     "BUTTON_SELECTED_DISABLED_BOX_SHADOW": {
       "category": "buttons",
@@ -1665,8 +1677,10 @@
     "BUTTON_SELECTED_ACTIVE_BACKGROUND_IMAGE",
     "BUTTON_SELECTED_COLOR",
     "BUTTON_SELECTED_HOVER_COLOR",
+    "BUTTON_SELECTED_ACTIVE_COLOR",
     "BUTTON_SELECTED_BOX_SHADOW",
     "BUTTON_SELECTED_HOVER_BOX_SHADOW",
+    "BUTTON_SELECTED_ACTIVE_BOX_SHADOW",
     "BUTTON_SELECTED_DISABLED_BOX_SHADOW",
     "CARD_BACKGROUND_COLOR",
     "CARD_COLOR",

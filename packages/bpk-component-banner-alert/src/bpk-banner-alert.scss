@@ -26,7 +26,7 @@
     &--expandable {
       cursor: pointer;
 
-      &:hover {
+      @include bpk-hover {
         background-color: $bpk-banner-alert-header-expandable-hover-background-color;
       }
 

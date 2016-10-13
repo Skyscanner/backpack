@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import BpkLink from 'bpk-component-link'
 import BpkHeading from 'bpk-component-heading'
 import BpkParagraph from 'bpk-component-paragraph'
+import BpkBlockquote from 'bpk-component-blockquote'
 import { BpkList, BpkListItem } from 'bpk-component-list'
 import BpkContentContainer from 'bpk-component-content-container'
 
@@ -47,21 +48,41 @@ const BaseStylesheetPage = () => (
         </BpkListItem>
         <BpkListItem>That's it!</BpkListItem>
       </BpkList>
+      <BpkBlockquote>
+        <strong>Note:</strong> There is also a small amount of JavaScript that does
+        "<BpkLink href='https://modernizr.com/' blank>Modernizr</BpkLink> like" feature detection (currently used to
+        prevent hover effects on touch devices in downstream components) - make sure this is included in the head also.
+      </BpkBlockquote>
       <BpkHeading level='h3'>Usage</BpkHeading>
       <BpkParagraph>
         <strong>
-          Consumer's of the website scaffolding should expect this base stylesheet to be on the page already.
+          Consumer's of the website scaffolding should expect the base stylesheet & feature detection to be on the page
+          already.
         </strong>
       </BpkParagraph>
       <BpkParagraph>
-        If you need to emulate this base in your local dev environment or test harness, the compiled css is available
-        for you to import, but first you'll need to install the <BpkCode>bpk-stylesheets</BpkCode> package:
+        If you need to emulate these in your local dev environment or test harness, the compiled CSS &
+        JavaScript are available for you to include on your page, but first you'll need to install
+        the <BpkCode>bpk-stylesheets</BpkCode> package:
       </BpkParagraph>
       <BpkCodeBlock>npm install bpk-stylesheets --save-dev</BpkCodeBlock>
-      <BpkParagraph>Import like so:</BpkParagraph>
-      <BpkCodeBlock>{'<link rel="stylesheet" href="/node_modules/bpk-stylesheets/base.css">'}</BpkCodeBlock>
-      <BpkParagraph>Alternatively you could import using SASS:</BpkParagraph>
-      <BpkCodeBlock>@import '~bpk-stylesheets/base';</BpkCodeBlock>
+      <BpkParagraph>Include in your HTML like so:</BpkParagraph>
+      <BpkCodeBlock>
+        {`<!DOCTYPE html>
+<html lang="en">
+<head>
+  ...
+  <link rel="stylesheet" href="/node_modules/bpk-stylesheets/base.css">
+  <script src="/node_modules/bpk-stylesheets/base.js"></script>
+</head>
+<body>...</body>
+</html>
+`}
+      </BpkCodeBlock>
+      <BpkParagraph>
+        Alternatively you could import the uncompiled JavaScript/Sass directly and let Webpack split them out:
+      </BpkParagraph>
+      <BpkCodeBlock>{'import \'bpk-stylesheets\';'}</BpkCodeBlock>
     </BpkContentContainer>
   </section>
 )
