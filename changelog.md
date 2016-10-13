@@ -1,25 +1,52 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-10-13 - Modal component
 
 **Added:**
-- bpk-component-modal:
+- bpk-component-modal: 0.0.0 => 0.0.1
   - New modal component
 
-- bpk-component-heading:
+- bpk-component-heading: 1.0.23 => 1.1.0
   - Ability to remove bottom margin from headings
   
-- bpk-component-link
+- bpk-component-link: 0.1.22 => 0.2.0
   - Ability to style buttons as links
 
-- bpk-mixins:
+- bpk-mixins: 5.3.3 => 5.4.0
   - New modal component
   - Ability to remove bottom margin from headings
   - Ability to style buttons as links
 
 **Fixed:**
-- bpk-component-card
+- bpk-component-card: 0.0.4 => 0.0.5
   - Increased border radius
+  
+**The following packages received a patch bump due to the dependency changes above:**  
+- bpk-component-autosuggest: 0.0.11 => 0.0.12
+- bpk-component-banner-alert: 0.0.2 => 0.0.3
+- bpk-component-blockquote: 0.0.16 => 0.0.17
+- bpk-component-button: 1.0.23 => 1.0.24
+- bpk-component-checkbox: 0.0.13 => 0.0.14
+- bpk-component-code: 0.0.16 => 0.0.17
+- bpk-component-content-container: 1.0.7 => 1.0.8
+- bpk-component-grid: 0.0.10 => 0.0.11
+- bpk-component-grid-toggle: 0.0.22 => 0.0.23
+- bpk-component-icon: 1.1.5 => 1.1.6
+- bpk-component-input: 0.0.13 => 0.0.14
+- bpk-component-label: 0.0.13 => 0.0.14
+- bpk-component-list: 0.0.36 => 0.0.37
+- bpk-component-logo: 1.0.6 => 1.0.7
+- bpk-component-paragraph: 0.1.23 => 0.1.24
+- bpk-component-radio: 0.0.13 => 0.0.14
+- bpk-component-router-link: 0.1.22 => 0.1.23
+- bpk-component-rtl-toggle: 0.0.6 => 0.0.7
+- bpk-component-select: 0.0.13 => 0.0.14
+- bpk-component-spinner: 1.0.6 => 1.0.7
+- bpk-component-table: 0.0.36 => 0.0.37
+- bpk-docs: 0.0.33 => 0.0.34
+- bpk-stylesheets: 1.0.13 => 1.0.14
+- bpk-svgs: 2.0.3 => 2.0.4
+- bpk-tokens: 12.3.0 => 12.4.0
 
 ## 2016-09-28 (2) - Button wrap fix
 
