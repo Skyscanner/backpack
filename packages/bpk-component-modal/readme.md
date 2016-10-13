@@ -12,9 +12,8 @@ npm install bpk-component-modal --save
 
 ```js
 import React, { Component } from 'react'
+import BpkModal from 'bpk-component-modal'
 import BpkButton from 'bpk-component-button'
-import BpkModal from 'bpk-component-paragraph'
-import BpkParagraph from 'bpk-component-paragraph'
 
 class App extends Component {
   constructor () {
