@@ -31,6 +31,7 @@ export default MyComponent = () => (
 | --------- | -------- | -------- | ------------- |
 | children  | -        | true     | -             |
 | href      | string   | false    | null          |
+| className | string   | false    | null          |
 | disabled  | bool     | false    | false         |
 | submit    | bool     | false    | false         |
 | secondary | bool     | false    | false         |
