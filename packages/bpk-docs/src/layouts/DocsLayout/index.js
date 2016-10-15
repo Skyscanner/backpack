@@ -1,3 +1,3 @@
-import layout from './DocsLayout'
+import layout from './DocsLayout';
 
-export default layout
+export default layout;

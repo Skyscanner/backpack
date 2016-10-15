@@ -1,3 +1,3 @@
-import page from './TypographyPage.js'
+import page from './TypographyPage';
 
-export default page
+export default page;

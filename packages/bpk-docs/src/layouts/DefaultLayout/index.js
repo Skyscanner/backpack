@@ -1,3 +1,3 @@
-import layout from './DefaultLayout.js'
+import layout from './DefaultLayout';
 
-export default layout
+export default layout;

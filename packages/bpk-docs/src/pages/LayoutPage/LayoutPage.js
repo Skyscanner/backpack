@@ -1,15 +1,16 @@
-import React from 'react'
-import pickBy from 'lodash/pickBy'
-import includes from 'lodash/includes'
-import TOKENS from 'bpk-tokens/tokens/base.common'
+import React from 'react';
+import pickBy from 'lodash/pickBy';
+import includes from 'lodash/includes';
+import TOKENS from 'bpk-tokens/tokens/base.common';
+import BpkRouterLink from 'bpk-component-router-link';
+import BpkParagraph from 'bpk-component-paragraph';
 
-import BpkRouterLink from 'bpk-component-router-link'
-import BpkParagraph from 'bpk-component-paragraph'
+import gridReadme from 'bpk-component-grid/readme.md';
 
-import * as routes from './../../constants/routes'
-import DocsPageBuilder from './../../components/DocsPageBuilder'
+import * as routes from './../../constants/routes';
+import DocsPageBuilder from './../../components/DocsPageBuilder';
 
-const breakpoints = pickBy(TOKENS, (value, key) => includes(key, 'breakpoint') && !includes(key, 'breakpointQuery'))
+const breakpoints = pickBy(TOKENS, (value, key) => includes(key, 'breakpoint') && !includes(key, 'breakpointQuery'));
 
 const components = [
   {
@@ -20,11 +21,11 @@ const components = [
         All spacing is measured in ‘rems’. Since these are relative to the value inherited from the browser font-size,
         all other units will scale accordingly should a user change this.
       </BpkParagraph>,
-      <BpkParagraph>To ensure elements are distributed evenly, we use .375rem (6px) increments:</BpkParagraph>
+      <BpkParagraph>To ensure elements are distributed evenly, we use .375rem (6px) increments:</BpkParagraph>,
     ],
     examples: [],
     tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'spacing')),
-    sassdocId: 'spacings'
+    sassdocId: 'spacings',
   },
   {
     id: 'baseline-grid',
@@ -39,9 +40,9 @@ const components = [
         Backpack’s baseline grid is set to .375rem (6px) increments, with an optimised font-size, line-height and
         spacing that align to the grid.
       </BpkParagraph>,
-      <BpkParagraph>You can preview this by switching on the grid at the bottom of the page.</BpkParagraph>
+      <BpkParagraph>You can preview this by switching on the grid at the bottom of the page.</BpkParagraph>,
     ],
-    examples: []
+    examples: [],
   },
   {
     id: 'breakpoints',
@@ -49,11 +50,11 @@ const components = [
     blurb: [
       <BpkParagraph>
         To simplify things, Backpack uses only three breakpoints optimised for mobile, tablet and desktop viewports.
-      </BpkParagraph>
+      </BpkParagraph>,
     ],
     examples: [],
     tokenMap: breakpoints,
-    sassdocId: 'breakpoints'
+    sassdocId: 'breakpoints',
   },
   {
     id: 'horizontal-grid',
@@ -89,17 +90,17 @@ const components = [
       <BpkParagraph>
         The grid works in conjunction with the breakpoints listed above and can be used to position content differently
         based on these viewports by specifying different widths and offsets.
-      </BpkParagraph>
+      </BpkParagraph>,
     ],
     examples: [],
-    readme: require('raw!bpk-component-grid/readme.md'),
-    sassdocId: 'grids'
-  }
-]
+    readme: gridReadme,
+    sassdocId: 'grids',
+  },
+];
 
 const LayoutPage = () => <DocsPageBuilder
-  title='Layout'
+  title="Layout"
   components={components}
-/>
+/>;
 
-export default LayoutPage
+export default LayoutPage;

@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
-import SideNavLayout from './../SideNavLayout'
-import * as routes from './../../constants/routes'
+import SideNavLayout from './../SideNavLayout';
+import * as routes from './../../constants/routes';
 
 const links = [
   {
@@ -9,8 +9,8 @@ const links = [
     links: [
       { route: routes.GETTING_STARTED, children: 'Getting started' },
       { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' },
-      { route: routes.CONTRIBUTING, children: 'Contributing' }
-    ]
+      { route: routes.CONTRIBUTING, children: 'Contributing' },
+    ],
   },
   {
     category: 'Bonds',
@@ -20,8 +20,8 @@ const links = [
       { route: routes.LAYOUT, children: 'Layout' },
       { route: routes.RADII, children: 'Radii' },
       { route: routes.SHADOWS, children: 'Shadows' },
-      { route: routes.ANIMATION, children: 'Animation' }
-    ]
+      { route: routes.ANIMATION, children: 'Animation' },
+    ],
   },
   {
     category: 'Atoms',
@@ -36,8 +36,8 @@ const links = [
       { route: null, children: 'Illustrations' },
       { route: null, children: 'Image' },
       { route: null, children: 'Tabs' },
-      { route: null, children: 'Badges' }
-    ]
+      { route: null, children: 'Badges' },
+    ],
   },
   {
     category: 'Molecules',
@@ -63,18 +63,18 @@ const links = [
       { route: null, children: 'Flight itinerary' },
       { route: null, children: 'Datepicker' },
       { route: null, children: 'Bar chart' },
-      { route: null, children: 'Filters' }
-    ]
-  }
-]
+      { route: null, children: 'Filters' },
+    ],
+  },
+];
 
-const DocsLayout = ({ children }) => <SideNavLayout links={links}>{children}</SideNavLayout>
+const DocsLayout = ({ children }) => <SideNavLayout links={links}>{children}</SideNavLayout>;
 
 DocsLayout.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
-}
+    PropTypes.node,
+  ]).isRequired,
+};
 
-export default DocsLayout
+export default DocsLayout;

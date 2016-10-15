@@ -1,3 +1,3 @@
-import component from './DocsPageBuilder'
+import component from './DocsPageBuilder';
 
-export default component
+export default component;

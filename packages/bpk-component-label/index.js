@@ -1,3 +1,3 @@
-import BpkLabel from './src/BpkLabel'
+import BpkLabel from './src/BpkLabel';
 
-export default BpkLabel
+export default BpkLabel;

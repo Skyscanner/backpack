@@ -1,7 +1,7 @@
-import React from 'react'
-import { storiesOf } from '@kadira/storybook'
+import React from 'react';
+import { storiesOf } from '@kadira/storybook';
 
-import { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner } from './index'
+import { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner } from './index';
 
 storiesOf('bpk-component-spinner', module)
   .add('Small', () => (
@@ -12,4 +12,4 @@ storiesOf('bpk-component-spinner', module)
   ))
   .add('Extra large', () => (
     <BpkExtraLargeSpinner />
-  ))
+  ));

@@ -1,4 +1,4 @@
-import BpkRadio from './src/BpkRadio'
+import BpkRadio from './src/BpkRadio';
 
-export default BpkRadio
+export default BpkRadio;
 

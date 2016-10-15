@@ -1,4 +1,4 @@
-import BpkCheckbox from './src/BpkCheckbox'
+import BpkCheckbox from './src/BpkCheckbox';
 
-export default BpkCheckbox
+export default BpkCheckbox;
 

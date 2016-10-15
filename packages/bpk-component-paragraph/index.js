@@ -1,3 +1,3 @@
-import component from './src/BpkParagraph'
+import component from './src/BpkParagraph';
 
-export default component
+export default component;

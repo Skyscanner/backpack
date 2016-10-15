@@ -1,3 +1,3 @@
-import component from './Header.js'
+import component from './Header';
 
-export default component
+export default component;

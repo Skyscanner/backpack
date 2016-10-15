@@ -1,55 +1,59 @@
-import React, { Component } from 'react'
-import { storiesOf } from '@kadira/storybook'
+import React, { PropTypes, Component } from 'react';
+import { storiesOf } from '@kadira/storybook';
 
-import BpkButton from 'bpk-component-button'
-import BpkParagraph from 'bpk-component-paragraph'
+import BpkButton from 'bpk-component-button';
+import BpkParagraph from 'bpk-component-paragraph';
 
-import BpkModal from './index'
+import BpkModal from './index';
 
 class ModalContainer extends Component {
-  constructor () {
-    super()
+  constructor() {
+    super();
 
-    this.onOpen = this.onOpen.bind(this)
-    this.onClose = this.onClose.bind(this)
+    this.onOpen = this.onOpen.bind(this);
+    this.onClose = this.onClose.bind(this);
 
     this.state = {
-      isOpen: false
-    }
+      isOpen: false,
+    };
   }
 
-  onOpen () {
+  onOpen() {
     this.setState({
-      isOpen: true
-    })
+      isOpen: true,
+    });
   }
 
-  onClose () {
+  onClose() {
     this.setState({
-      isOpen: false
-    })
+      isOpen: false,
+    });
   }
 
-  render () {
-    const { buttonText, ...rest } = this.props
+  render() {
+    const { buttonText, ...rest } = this.props;
 
     return (
       <div>
-        <div id='application-container'>
+        <div id="application-container">
           <BpkButton onClick={this.onOpen}>{buttonText}</BpkButton>
         </div>
         <BpkModal isOpen={this.state.isOpen} onClose={this.onClose} {...rest} />
       </div>
-    )
+    );
   }
 }
+
+ModalContainer.propTypes = {
+  buttonText: PropTypes.string.isRequired,
+};
 
 storiesOf('bpk-component-modal', module)
   .add('Default', () => (
     <ModalContainer
-      title='Modal title'
-      closeLabel='Close modal'
-      buttonText='Open modal'
+      title="Modal title"
+      closeLabel="Close modal"
+      buttonText="Open modal"
       getApplicationElement={() => document.getElementById('application-container')}
     >
       This is a default modal. You can put anything you want in here.
@@ -58,9 +62,9 @@ storiesOf('bpk-component-modal', module)
   .add('Wide', () => (
     <ModalContainer
       wide
-      title='Modal title'
-      closeLabel='Close modal'
-      buttonText='Open wide modal'
+      title="Modal title"
+      closeLabel="Close modal"
+      buttonText="Open wide modal"
       getApplicationElement={() => document.getElementById('application-container')}
     >
       This is a wide modal.
@@ -68,9 +72,9 @@ storiesOf('bpk-component-modal', module)
   ))
   .add('Overflowing', () => (
     <ModalContainer
-      title='Modal title'
-      closeLabel='Close modal'
-      buttonText='Open overflowing modal'
+      title="Modal title"
+      closeLabel="Close modal"
+      buttonText="Open overflowing modal"
       getApplicationElement={() => document.getElementById('application-container')}
     >
       <BpkParagraph>
@@ -159,11 +163,11 @@ storiesOf('bpk-component-modal', module)
   ))
   .add('Close button text', () => (
     <ModalContainer
-      title='Modal title'
-      closeText='Done'
-      buttonText='Open modal'
+      title="Modal title"
+      closeText="Done"
+      buttonText="Open modal"
       getApplicationElement={() => document.getElementById('application-container')}
     >
       This is a default modal. You can put anything you want in here.
     </ModalContainer>
-  ))
+  ));

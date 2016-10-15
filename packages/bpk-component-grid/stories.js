@@ -1,7 +1,7 @@
-import React from 'react'
-import { storiesOf } from '@kadira/storybook'
+import React from 'react';
+import { storiesOf } from '@kadira/storybook';
 
-import { BpkGridContainer, BpkGridRow, BpkGridColumn } from './index'
+import { BpkGridContainer, BpkGridRow, BpkGridColumn } from './index';
 
 storiesOf('bpk-component-grid', module)
   .add('Example', () => (
@@ -214,4 +214,4 @@ storiesOf('bpk-component-grid', module)
         </BpkGridColumn>
       </BpkGridRow>
     </BpkGridContainer>
-  ))
+  ));

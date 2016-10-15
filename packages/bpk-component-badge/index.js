@@ -1,3 +1,3 @@
-import component from './src/BpkBadge'
+import component from './src/BpkBadge';
 
-export default component
+export default component;

@@ -1,131 +1,134 @@
-import React, { Component } from 'react'
+import React, { PropTypes, Component } from 'react';
+import BpkLink from 'bpk-component-link';
+import BpkLabel from 'bpk-component-label';
+import BpkParagraph from 'bpk-component-paragraph';
+import { withRtlSupport } from 'bpk-component-icon';
+import BpkRouterLink from 'bpk-component-router-link';
+import FlightIcon from 'bpk-component-icon/lg/flight';
+import BpkAutosuggest, { BpkAutosuggestSuggestion } from 'bpk-component-autosuggest';
 
-import BpkLink from 'bpk-component-link'
-import BpkLabel from 'bpk-component-label'
-import BpkParagraph from 'bpk-component-paragraph'
-import { withRtlSupport } from 'bpk-component-icon'
-import BpkRouterLink from 'bpk-component-router-link'
-import FlightIcon from 'bpk-component-icon/lg/flight'
-import BpkAutosuggest, { BpkAutosuggestSuggestion } from 'bpk-component-autosuggest'
+import autosuggestReadme from 'bpk-component-autosuggest/readme.md';
 
-const BpkFlightIcon = withRtlSupport(FlightIcon)
+import * as ROUTES from './../../constants/routes';
+import DocsPageBuilder from './../../components/DocsPageBuilder';
 
-import * as ROUTES from './../../constants/routes'
-import DocsPageBuilder from './../../components/DocsPageBuilder'
+const BpkFlightIcon = withRtlSupport(FlightIcon);
 
 const offices = [
   {
     name: 'Barcelona',
     code: 'BCN',
-    country: 'Spain'
+    country: 'Spain',
   },
   {
     name: 'Beijing',
     code: 'Any',
-    country: 'China'
+    country: 'China',
   },
   {
     name: 'Budapest',
     code: 'BUD',
-    country: 'Hungary'
+    country: 'Hungary',
   },
   {
     name: 'Edinburgh',
     code: 'EDI',
-    country: 'United Kingdom'
+    country: 'United Kingdom',
   },
   {
     name: 'Glasgow',
     code: 'Any',
     country: 'United Kingdom',
-    indent: true
+    indent: true,
   },
   {
     name: 'London',
     code: 'Any',
-    country: 'United Kingdom'
+    country: 'United Kingdom',
   },
   {
     name: 'Miami, FL',
     code: 'Any',
-    country: 'United States'
+    country: 'United States',
   },
   {
     name: 'Shenzhen Bao\'an International',
     code: 'SZX',
-    country: 'China'
+    country: 'China',
   },
   {
     name: 'Singapore Changi',
     code: 'SIN',
-    country: 'Singapore'
+    country: 'Singapore',
   },
   {
     name: 'Sofia',
     code: 'SOF',
-    country: 'Bulgaria'
-  }
-]
+    country: 'Bulgaria',
+  },
+];
 
 const getSuggestions = (value) => {
-  const inputValue = value.trim().toLowerCase()
-  const inputLength = inputValue.length
+  const inputValue = value.trim().toLowerCase();
+  const inputLength = inputValue.length;
 
   return inputLength === 0 ? [] : offices.filter(office =>
-    office.name.toLowerCase().indexOf(inputValue) !== -1
-  )
-}
+    office.name.toLowerCase().indexOf(inputValue) !== -1,
+  );
+};
 
-const getSuggestionValue = (suggestion) => `${suggestion.name} (${suggestion.code})`
+const getSuggestionValue = suggestion => `${suggestion.name} (${suggestion.code})`;
 
-let autosuggestId = 0
+let instances = 0;
 
 class AutosuggestExample extends Component {
-  constructor () {
-    super()
+  constructor() {
+    super();
+
+    instances += instances;
 
     this.state = {
-      autosuggestId: `autosuggest-example-${autosuggestId++}`,
+      autosuggestId: `autosuggest-example-${instances}`,
       value: '',
-      suggestions: []
-    }
+      suggestions: [],
+    };
 
-    this.onChange = this.onChange.bind(this)
-    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this)
-    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this)
+    this.onChange = this.onChange.bind(this);
+    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this);
+    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this);
   }
 
-  onChange (e, { newValue }) {
+  onChange(e, { newValue }) {
     this.setState({
-      value: newValue
-    })
+      value: newValue,
+    });
   }
 
-  onSuggestionsFetchRequested ({ value }) {
+  onSuggestionsFetchRequested({ value }) {
     this.setState({
-      suggestions: getSuggestions(value)
-    })
+      suggestions: getSuggestions(value),
+    });
   }
 
-  onSuggestionsClearRequested () {
+  onSuggestionsClearRequested() {
     this.setState({
-      suggestions: []
-    })
+      suggestions: [],
+    });
   }
 
-  render () {
-    const { autosuggestId, value, suggestions } = this.state
+  render() {
+    const { autosuggestId, value, suggestions } = this.state;
 
     const inputProps = {
       id: autosuggestId,
       placeholder: 'Enter an office name',
       value,
-      onChange: this.onChange
-    }
+      onChange: this.onChange,
+    };
 
     return (
       <div>
-        <BpkLabel label='Office' htmlFor={autosuggestId} />
+        <BpkLabel label="Office" htmlFor={autosuggestId} />
         <BpkAutosuggest
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -135,9 +138,13 @@ class AutosuggestExample extends Component {
           inputProps={inputProps}
         />
       </div>
-    )
+    );
   }
 }
+
+AutosuggestExample.propTypes = {
+  renderSuggestion: PropTypes.func.isRequired,
+};
 
 const components = [
   {
@@ -146,19 +153,19 @@ const components = [
     blurb: [
       <BpkParagraph>
         This is the most basic method of displaying suggestions. Note that they can be indented (to indicate topology
-        for example) - type "a" to see this demonstrated by the Glasgow office suggestion.
-      </BpkParagraph>
+        for example) - type &quot;a&quot; to see this demonstrated by the Glasgow office suggestion.
+      </BpkParagraph>,
     ],
     examples: [
       <AutosuggestExample
-        renderSuggestion={(suggestion) => (
+        renderSuggestion={suggestion => (
           <BpkAutosuggestSuggestion
             value={getSuggestionValue(suggestion)}
             indent={suggestion.indent}
           />
         )}
-      />
-    ]
+      />,
+    ],
   },
   {
     id: 'icon',
@@ -167,19 +174,19 @@ const components = [
       <BpkParagraph>
         You can insert a <BpkRouterLink to={ROUTES.ICONS}>Backpack icon</BpkRouterLink> next to each suggestion, useful
         for differentiation e.g. between airports, cities and countries.
-      </BpkParagraph>
+      </BpkParagraph>,
     ],
     examples: [
       <AutosuggestExample
-        renderSuggestion={(suggestion) => (
+        renderSuggestion={suggestion => (
           <BpkAutosuggestSuggestion
             value={getSuggestionValue(suggestion)}
             indent={suggestion.indent}
             icon={BpkFlightIcon}
           />
         )}
-      />
-    ]
+      />,
+    ],
   },
   {
     id: 'sub-heading',
@@ -187,15 +194,15 @@ const components = [
     blurb: 'Additional suggestion information can be displayed as a sub-heading.',
     examples: [
       <AutosuggestExample
-        renderSuggestion={(suggestion) => (
+        renderSuggestion={suggestion => (
           <BpkAutosuggestSuggestion
             value={getSuggestionValue(suggestion)}
             subHeading={suggestion.country}
             indent={suggestion.indent}
           />
         )}
-      />
-    ]
+      />,
+    ],
   },
   {
     id: 'tertiary-label',
@@ -203,16 +210,16 @@ const components = [
     blurb: 'If sub-headings are not enough, you can add some tertiary information too.',
     examples: [
       <AutosuggestExample
-        renderSuggestion={(suggestion) => (
+        renderSuggestion={suggestion => (
           <BpkAutosuggestSuggestion
             value={getSuggestionValue(suggestion)}
             subHeading={suggestion.country}
             indent={suggestion.indent}
-            tertiaryLabel='Airport'
+            tertiaryLabel="Airport"
           />
         )}
-      />
-    ]
+      />,
+    ],
   },
   {
     id: 'combination',
@@ -220,22 +227,22 @@ const components = [
     blurb: 'This example shows all of the above combined.',
     examples: [
       <AutosuggestExample
-        renderSuggestion={(suggestion) => (
+        renderSuggestion={suggestion => (
           <BpkAutosuggestSuggestion
             value={getSuggestionValue(suggestion)}
             subHeading={suggestion.country}
             indent={suggestion.indent}
-            tertiaryLabel='Airport'
+            tertiaryLabel="Airport"
             icon={BpkFlightIcon}
           />
         )}
-      />
-    ]
-  }
-]
+      />,
+    ],
+  },
+];
 
 const AutosuggestPage = () => <DocsPageBuilder
-  title='Autosuggest'
+  title="Autosuggest"
   blurb={[
     <BpkParagraph>
       The Backpack autosuggest component is a lightweight wrapper
@@ -243,11 +250,11 @@ const AutosuggestPage = () => <DocsPageBuilder
       display suggestions for travel destinations, hotels, car hire and more - any data source can be used. Whilst you
       have full control over suggestion rendering, Backpack provides a built in suggestion component allowing you to
       display icons, sub-headings and more.
-    </BpkParagraph>
+    </BpkParagraph>,
   ]}
   components={components}
-  readme={require('raw!bpk-component-autosuggest/readme.md')}
-  sassdocId='autosuggest'
-/>
+  readme={autosuggestReadme}
+  sassdocId="autosuggest"
+/>;
 
-export default AutosuggestPage
+export default AutosuggestPage;

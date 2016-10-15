@@ -1,14 +1,11 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
-import './bpk-table.scss'
+import './bpk-table.scss';
 
-const BpkTable = (props) => <table className='bpk-table' children={props.children} />
+const BpkTable = props => <table className="bpk-table">{props.children}</table>;
 
 BpkTable.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
-}
+  children: PropTypes.node.isRequired,
+};
 
-export default BpkTable
+export default BpkTable;

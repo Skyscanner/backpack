@@ -1,30 +1,31 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
-import './bpk-link.scss'
+import './bpk-link.scss';
 
 const BpkButtonLink = (props) => {
-  const classNames = [ 'bpk-link' ]
+  const classNames = ['bpk-link'];
 
-  props.white ? classNames.push('bpk-link--white') : null
+  if (props.white) { classNames.push('bpk-link--white'); }
 
   return (
     <button
-      type='button'
+      type="button"
       className={classNames.join(' ')}
       onClick={props.onClick}
-      children={props.children}
-    />
-  )
-}
+    >
+      {props.children}
+    </button>
+  );
+};
 
 BpkButtonLink.propTypes = {
   onClick: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
-  white: PropTypes.bool
-}
+  white: PropTypes.bool,
+};
 
 BpkButtonLink.defaultProps = {
-  white: false
-}
+  white: false,
+};
 
-export default BpkButtonLink
+export default BpkButtonLink;

@@ -1,2 +1,4 @@
-export const BpkCode = require('./src/BpkCode').default
-export const BpkCodeBlock = require('./src/BpkCodeBlock').default
+import BpkCode from './src/BpkCode';
+import BpkCodeBlock from './src/BpkCodeBlock';
+
+export { BpkCode, BpkCodeBlock };

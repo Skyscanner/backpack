@@ -1,7 +1,7 @@
-import React from 'react'
-import { storiesOf } from '@kadira/storybook'
+import React from 'react';
+import { storiesOf } from '@kadira/storybook';
 
-import { BpkList, BpkListItem } from './index'
+import { BpkList, BpkListItem } from './index';
 
 storiesOf('bpk-component-list', module)
   .add('Unordered', () => (
@@ -31,4 +31,4 @@ storiesOf('bpk-component-list', module)
       </BpkListItem>
       <BpkListItem>Pears</BpkListItem>
     </BpkList>
-  ))
+  ));

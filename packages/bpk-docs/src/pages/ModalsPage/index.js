@@ -1,3 +1,3 @@
-import page from './ModalsPage.js'
+import page from './ModalsPage';
 
-export default page
+export default page;

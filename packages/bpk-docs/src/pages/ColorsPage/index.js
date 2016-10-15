@@ -1,3 +1,3 @@
-import page from './ColorsPage.js'
+import page from './ColorsPage';
 
-export default page
+export default page;

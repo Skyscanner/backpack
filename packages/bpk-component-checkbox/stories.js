@@ -1,41 +1,41 @@
-import React from 'react'
-import { storiesOf, action } from '@kadira/storybook'
+import React from 'react';
+import { storiesOf, action } from '@kadira/storybook';
 
-import BpkCheckbox from './index'
+import BpkCheckbox from './index';
 
 storiesOf('bpk-component-checkbox', module)
   .add('Checked', () => (
     <BpkCheckbox
-      id='checked'
-      name='checked'
-      label='Prefer directs'
+      id="checked"
+      name="checked"
+      label="Prefer directs"
       onChange={action('checkbox changed')}
       checked
     />
   ))
   .add('Unchecked', () => (
     <BpkCheckbox
-      id='unchecked'
-      name='unchecked'
-      label='Prefer directs'
+      id="unchecked"
+      name="unchecked"
+      label="Prefer directs"
       onChange={action('checkbox changed')}
     />
   ))
   .add('No label', () => (
     <BpkCheckbox
-      id='no_label'
-      name='no_label'
+      id="no_label"
+      name="no_label"
       onChange={action('checkbox changed')}
       checked
     />
   ))
   .add('Disabled', () => (
     <BpkCheckbox
-      id='disabled'
-      name='disabled'
-      label='Prefer directs'
+      id="disabled"
+      name="disabled"
+      label="Prefer directs"
       onChange={action('checkbox changed')}
       checked
       disabled
     />
-  ))
+  ));

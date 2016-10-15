@@ -1,3 +1,3 @@
-import page from './ContributingPage'
+import page from './ContributingPage';
 
-export default page
+export default page;

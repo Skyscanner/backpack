@@ -1,7 +1,7 @@
-import React from 'react'
-import { storiesOf, action } from '@kadira/storybook'
+import React from 'react';
+import { storiesOf, action } from '@kadira/storybook';
 
-import BpkButton from './index'
+import BpkButton from './index';
 
 storiesOf('bpk-component-button', module)
   .add('Primary', () => (
@@ -20,7 +20,14 @@ storiesOf('bpk-component-button', module)
       &nbsp;<BpkButton secondary selected onClick={action('secondary selected clicked')}>Selected</BpkButton>
       &nbsp;<BpkButton secondary disabled onClick={action('THIS SHOULD NOT HAPPEN')}>Disabled</BpkButton>
       &nbsp;<BpkButton secondary large onClick={action('large secondary clicked')}>Button</BpkButton>
-      &nbsp;<BpkButton secondary large selected onClick={action('large secondary selected clicked')}>Selected</BpkButton>
+      &nbsp;<BpkButton
+        secondary
+        large
+        selected
+        onClick={action('large secondary selected clicked')}
+      >
+        Selected
+      </BpkButton>
       &nbsp;<BpkButton secondary large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>Disabled</BpkButton>
     </div>
   ))
@@ -54,11 +61,11 @@ storiesOf('bpk-component-button', module)
   ))
   .add('Anchor tags', () => (
     <div>
-      &nbsp;<BpkButton href='#' onClick={action('primary anchor clicked')}>Button</BpkButton>
-      &nbsp;<BpkButton href='#' secondary onClick={action('secondary anchor clicked')}>Button</BpkButton>
-      &nbsp;<BpkButton href='#' link onClick={action('link anchor clicked')}>Button</BpkButton>
-      &nbsp;<BpkButton href='#' large onClick={action('primary anchor clicked')}>Button</BpkButton>
-      &nbsp;<BpkButton href='#' large secondary onClick={action('secondary anchor clicked')}>Button</BpkButton>
-      &nbsp;<BpkButton href='#' large link onClick={action('link anchor clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton href="#" onClick={action('primary anchor clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton href="#" secondary onClick={action('secondary anchor clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton href="#" link onClick={action('link anchor clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton href="#" large onClick={action('primary anchor clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton href="#" large secondary onClick={action('secondary anchor clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton href="#" large link onClick={action('link anchor clicked')}>Button</BpkButton>
     </div>
-  ))
+  ));

@@ -1,3 +1,3 @@
-import component from './src/BpkGridToggle'
+import component from './src/BpkGridToggle';
 
-export default component
+export default component;

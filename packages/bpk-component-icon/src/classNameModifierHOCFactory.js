@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { PropTypes } from 'react';
 
-export default (displayName, classNamesToAdd = []) => {
-  return ComposedComponent => {
-    const ClassNameModifierHOC = (props) => {
-      let classNames = []
-      const { className, ...rest } = props
+export default (displayName, classNamesToAdd = []) => (ComposedComponent) => {
+  const ClassNameModifierHOC = (props) => {
+    let classNames = [];
+    const { className, ...rest } = props;
 
-      className ? classNames.push(className) : null
-      classNames = classNamesToAdd.length ? classNames.concat(classNamesToAdd) : classNames
+    if (className) { classNames.push(className); }
+    classNames = classNamesToAdd.length ? classNames.concat(classNamesToAdd) : classNames;
 
-      return <ComposedComponent className={classNames.join(' ')} {...rest} />
-    }
+    return <ComposedComponent className={classNames.join(' ')} {...rest} />;
+  };
 
-    const composedComponentName = ComposedComponent.displayName || ComposedComponent.name || 'Component'
+  ClassNameModifierHOC.propTypes = {
+    className: PropTypes.string,
+  };
 
-    ClassNameModifierHOC.displayName = `${displayName}(${composedComponentName})`
+  const composedComponentName = ComposedComponent.displayName || ComposedComponent.name || 'Component';
 
-    return ClassNameModifierHOC
-  }
-}
+  ClassNameModifierHOC.displayName = `${displayName}(${composedComponentName})`;
+
+  return ClassNameModifierHOC;
+};

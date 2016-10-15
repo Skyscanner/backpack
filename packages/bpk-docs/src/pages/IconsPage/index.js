@@ -1,3 +1,3 @@
-import page from './IconsPage.js'
+import page from './IconsPage';
 
-export default page
+export default page;

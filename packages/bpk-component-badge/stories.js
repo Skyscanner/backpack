@@ -1,13 +1,13 @@
-import React from 'react'
-import { storiesOf } from '@kadira/storybook'
+import React from 'react';
+import { storiesOf } from '@kadira/storybook';
+import TOKENS from 'bpk-tokens/tokens/base.common';
 
-import BpkBadge from './index'
-import TOKENS from 'bpk-tokens/tokens/base.common'
+import BpkBadge from './index';
 
-const DockedContainer = (props) => <div
+const DockedContainer = props => <div
   {...props}
   style={{ backgroundColor: TOKENS.colorGray700, minHeight: TOKENS.spacingXxl, position: 'relative' }}
-/>
+/>;
 
 storiesOf('bpk-component-badge', module)
   .add('Default', () => (
@@ -22,11 +22,11 @@ storiesOf('bpk-component-badge', module)
   ))
   .add('Docked right', () => (
     <DockedContainer>
-      <BpkBadge docked='right'>Promocionado</BpkBadge>
+      <BpkBadge docked="right">Promocionado</BpkBadge>
     </DockedContainer>
   ))
   .add('Docked left', () => (
     <DockedContainer>
-      <BpkBadge docked='left'>Promocionado</BpkBadge>
+      <BpkBadge docked="left">Promocionado</BpkBadge>
     </DockedContainer>
-  ))
+  ));

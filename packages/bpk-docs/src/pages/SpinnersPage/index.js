@@ -1,3 +1,3 @@
-import page from './SpinnersPage.js'
+import page from './SpinnersPage';
 
-export default page
+export default page;

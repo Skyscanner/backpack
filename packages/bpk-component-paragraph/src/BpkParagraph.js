@@ -1,15 +1,15 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
-import './bpk-paragraph.scss'
+import './bpk-paragraph.scss';
 
-const BpkParagraph = (props) => <p className='bpk-paragraph' children={props.children} />
+const BpkParagraph = props => <p className="bpk-paragraph">{props.children}</p>;
 
 BpkParagraph.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
-}
+    PropTypes.node,
+  ]).isRequired,
+};
 
-export default BpkParagraph
+export default BpkParagraph;
 

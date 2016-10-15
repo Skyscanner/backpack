@@ -1,3 +1,3 @@
-import component from './SassdocLink'
+import component from './SassdocLink';
 
-export default component
+export default component;

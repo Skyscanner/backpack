@@ -1,3 +1,3 @@
-import page from './NotificationsPage.js'
+import page from './NotificationsPage';
 
-export default page
+export default page;

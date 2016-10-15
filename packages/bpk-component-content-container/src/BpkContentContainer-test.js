@@ -1,6 +1,6 @@
-import React from 'react'
-import renderer from 'react/lib/ReactTestRenderer'
-import BpkContentContainer from './BpkContentContainer'
+import React from 'react';
+import renderer from 'react/lib/ReactTestRenderer';
+import BpkContentContainer from './BpkContentContainer';
 
 describe('BpkContentContainer', () => {
   it('should render correctly', () => {
@@ -14,10 +14,10 @@ describe('BpkContentContainer', () => {
           <li>Item 3
           </li>
         </ul>
-      </BpkContentContainer>
-    ).toJSON()
-    expect(tree).toMatchSnapshot()
-  })
+      </BpkContentContainer>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
   it('should render correctly with a "bareHtml" attribute ', () => {
     const tree = renderer.create(
@@ -30,8 +30,8 @@ describe('BpkContentContainer', () => {
           <li>Item 3
           </li>
         </ul>
-      </BpkContentContainer>
-    ).toJSON()
-    expect(tree).toMatchSnapshot()
-  })
-})
+      </BpkContentContainer>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});

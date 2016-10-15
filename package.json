@@ -9,8 +9,8 @@
     "clean": "npm run clean:dist",
     "lint:scss": "stylelint 'packages/**/*.scss' --syntax scss",
     "lint:scss:fix": "stylefmt",
-    "lint:js": "standard",
-    "lint:js:fix": "standard --fix",
+    "lint:js": "eslint .",
+    "lint:js:fix": "eslint . --fix",
     "lint": "npm run lint:js && npm run lint:scss",
     "jest:update": "jest ---updateSnapshot",
     "jest:watch": "jest --watch",
@@ -45,6 +45,12 @@
     "babel-preset-react": "6.11.1",
     "css-loader": "0.25.0",
     "del": "2.2.2",
+    "eslint": "^3.10.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-config-skyscanner": "0.0.2",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.7.0",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
     "gulp": "3.9.1",
@@ -68,7 +74,6 @@
     "rimraf": "2.5.4",
     "sass-loader": "4.0.2",
     "sassdoc": "2.1.20",
-    "standard": "7.1.2",
     "static-site-generator-webpack-plugin": "2.1.0",
     "style-loader": "0.13.1",
     "stylefmt": "4.2.3",
@@ -78,22 +83,6 @@
     "webpack": "1.13.2",
     "webpack-dev-server": "1.15.1",
     "zip-it-loader": "0.3.0"
-  },
-  "standard": {
-    "globals": [
-      "jest",
-      "describe",
-      "it",
-      "xit",
-      "expect"
-    ],
-    "ignore": [
-      "/packages/bpk-tokens/tokens",
-      "/packages/bpk-svgs/dist",
-      "/packages/bpk-stylesheets/base.js",
-      "/packages/bpk-component-icon/sm",
-      "/packages/bpk-component-icon/lg"
-    ]
   },
   "jest": {
     "verbose": true,

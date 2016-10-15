@@ -1,4 +1,4 @@
-import BpkCard from './src/BpkCard'
+import BpkCard from './src/BpkCard';
 
-export default BpkCard
+export default BpkCard;
 

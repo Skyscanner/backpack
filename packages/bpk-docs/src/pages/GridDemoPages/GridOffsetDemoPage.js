@@ -1,12 +1,12 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from 'react';
+import Helmet from 'react-helmet';
 
-import BpkHeading from 'bpk-component-heading'
-import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid'
+import BpkHeading from 'bpk-component-heading';
+import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
 
-import Lozenge from './Lozenge'
+import Lozenge from './Lozenge';
 
-const pageTitle = 'Grid Offset Demo'
+const pageTitle = 'Grid Offset Demo';
 
 const GridColumnDemoPage = () => (
   <BpkGridContainer>
@@ -14,7 +14,7 @@ const GridColumnDemoPage = () => (
     <BpkGridRow>
       <BpkGridColumn width={12}>
         <div style={{ textAlign: 'center' }}>
-          <BpkHeading level='h1'>{pageTitle}</BpkHeading>
+          <BpkHeading level="h1">{pageTitle}</BpkHeading>
         </div>
       </BpkGridColumn>
     </BpkGridRow>
@@ -107,6 +107,6 @@ const GridColumnDemoPage = () => (
       </BpkGridColumn>
     </BpkGridRow>
   </BpkGridContainer>
-)
+);
 
-export default GridColumnDemoPage
+export default GridColumnDemoPage;

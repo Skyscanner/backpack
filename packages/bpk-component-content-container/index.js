@@ -1,3 +1,3 @@
-import component from './src/BpkContentContainer'
+import component from './src/BpkContentContainer';
 
-export default component
+export default component;

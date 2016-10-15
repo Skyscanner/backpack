@@ -1,5 +1,5 @@
-import BpkSpinner from './src/BpkSpinner'
-import BpkLargeSpinner from './src/BpkLargeSpinner'
-import BpkExtraLargeSpinner from './src/BpkExtraLargeSpinner'
+import BpkSpinner from './src/BpkSpinner';
+import BpkLargeSpinner from './src/BpkLargeSpinner';
+import BpkExtraLargeSpinner from './src/BpkExtraLargeSpinner';
 
-export { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner }
+export { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner };

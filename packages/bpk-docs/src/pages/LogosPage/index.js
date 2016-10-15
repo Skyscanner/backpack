@@ -1,3 +1,3 @@
-import page from './LogosPage.js'
+import page from './LogosPage';
 
-export default page
+export default page;

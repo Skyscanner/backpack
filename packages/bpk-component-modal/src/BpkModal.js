@@ -1,25 +1,37 @@
-import Portal from 'react-portal'
-import React, { PropTypes } from 'react'
+import Portal from 'react-portal';
+import React, { PropTypes } from 'react';
 
-import BpkModalScrim from './BpkModalScrim'
-import BpkModalDialog from './BpkModalDialog'
+import BpkModalScrim from './BpkModalScrim';
+import BpkModalDialog from './BpkModalDialog';
 
-const PortalToBpkModal = ({ closePortal, ...rest }) => (
-  <div>
-    <BpkModalScrim />
-    <BpkModalDialog onClose={closePortal} {...rest} />
-  </div>
-)
+const PortalToBpkModal = (props) => {
+  const { closePortal, ...rest } = props;
 
-const BpkModal = ({ isOpen, onClose, ...rest }) => (
-  <Portal isOpened={isOpen} onClose={onClose} closeOnEsc>
-    <PortalToBpkModal {...rest} />
-  </Portal>
-)
+  return (
+    <div>
+      <BpkModalScrim />
+      <BpkModalDialog onClose={closePortal} {...rest} />
+    </div>
+  );
+};
+
+PortalToBpkModal.propTypes = {
+  closePortal: PropTypes.func,
+};
+
+const BpkModal = (props) => {
+  const { isOpen, onClose, ...rest } = props;
+
+  return (
+    <Portal isOpened={isOpen} onClose={onClose} closeOnEsc>
+      <PortalToBpkModal {...rest} />
+    </Portal>
+  );
+};
 
 BpkModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired
-}
+  onClose: PropTypes.func.isRequired,
+};
 
-export default BpkModal
+export default BpkModal;

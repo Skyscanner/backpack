@@ -1,17 +1,21 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
-import './bpk-radio.scss'
+import './bpk-radio.scss';
 
 const BpkRadio = (props) => {
-  const classNames = [ 'bpk-radio' ]
+  const classNames = ['bpk-radio'];
 
-  props.disabled ? classNames.push('bpk-radio--disabled') : null
+  if (props.disabled) { classNames.push('bpk-radio--disabled'); }
 
+  // This is awkward because the label-has-for rule enforces an 'id' / 'for' pairing
+  // when it's not really necessary for nested inputs.
+  // See https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/51.
+  /* eslint-disable jsx-a11y/label-has-for */
   return (
     <label className={classNames.join(' ')}>
       <input
-        type='radio'
-        className='bpk-radio__input'
+        type="radio"
+        className="bpk-radio__input"
         name={props.name}
         onChange={props.onChange}
         id={props.id}
@@ -21,8 +25,9 @@ const BpkRadio = (props) => {
       />
       {props.label ? ` ${props.label}` : null}
     </label>
-  )
-}
+  );
+  /* eslint-enable */
+};
 
 BpkRadio.propTypes = {
   name: PropTypes.string.isRequired,
@@ -31,15 +36,15 @@ BpkRadio.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
   checked: PropTypes.bool,
-  disabled: PropTypes.bool
-}
+  disabled: PropTypes.bool,
+};
 
 BpkRadio.defaultProps = {
   id: null,
   label: null,
   value: null,
   checked: false,
-  disabled: false
-}
+  disabled: false,
+};
 
-export default BpkRadio
+export default BpkRadio;

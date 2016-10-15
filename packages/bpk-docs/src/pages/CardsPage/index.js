@@ -1,3 +1,3 @@
-import page from './CardsPage.js'
+import page from './CardsPage';
 
-export default page
+export default page;

@@ -1,7 +1,7 @@
-import React from 'react'
-import { storiesOf } from '@kadira/storybook'
+import React from 'react';
+import { storiesOf } from '@kadira/storybook';
 
-import BpkContentContainer from './index'
+import BpkContentContainer from './index';
 
 storiesOf('bpk-component-content-container', module)
   .add('Example', () => (
@@ -15,52 +15,52 @@ storiesOf('bpk-component-content-container', module)
         <h6>Heading Level 6</h6>
         <h1>Heading Level 1</h1>
         <p>
-          A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a
-          discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences.
-          Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing,
-          used to organize longer prose.
+          A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a
+          self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists
+          of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an
+          expected part of formal writing, used to organize longer prose.
         </p>
         <h2>Heading Level 2</h2>
         <p>
-          A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a
-          discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences.
-          Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing,
-          used to organize longer prose.
+          A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a
+          self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists
+          of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an
+          expected part of formal writing, used to organize longer prose.
         </p>
         <h3>Heading Level 3</h3>
         <p>
-          A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a
-          discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences.
-          Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing,
-          used to organize longer prose.
+          A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a
+          self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists
+          of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an
+          expected part of formal writing, used to organize longer prose.
         </p>
         <h4>Heading Level 4</h4>
         <p>
-          A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a
-          discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences.
-          Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing,
-          used to organize longer prose.
+          A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a
+          self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists
+          of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an
+          expected part of formal writing, used to organize longer prose.
         </p>
         <h5>Heading Level 5</h5>
         <p>
-          A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a
-          discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences.
-          Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing,
-          used to organize longer prose.
+          A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a
+          self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists
+          of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an
+          expected part of formal writing, used to organize longer prose.
         </p>
         <h6>Heading Level 6</h6>
         <p>
-          A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a
-          discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences.
-          Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing,
-          used to organize longer prose.
+          A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a
+          self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists
+          of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an
+          expected part of formal writing, used to organize longer prose.
         </p>
         <blockquote>
           <p>
-            A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of
-            a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more
-            sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of
-            formal writing, used to organize longer prose.
+            A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a
+          self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists
+          of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an
+          expected part of formal writing, used to organize longer prose.
           </p>
         </blockquote>
         <ul>
@@ -114,4 +114,4 @@ storiesOf('bpk-component-content-container', module)
         </table>
       </BpkContentContainer>
     </div>
-  ))
+  ));

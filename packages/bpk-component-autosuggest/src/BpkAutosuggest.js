@@ -1,9 +1,9 @@
-import React from 'react'
-import Autosuggest from 'react-autosuggest'
+import React from 'react';
+import Autosuggest from 'react-autosuggest';
 
-import './bpk-autosuggest.scss'
+import './bpk-autosuggest.scss';
 
-const BpkAutosuggest = (props) => <Autosuggest {...props} />
+const BpkAutosuggest = props => <Autosuggest {...props} />;
 
 BpkAutosuggest.defaultProps = {
   theme: {
@@ -15,8 +15,8 @@ BpkAutosuggest.defaultProps = {
     suggestion: 'bpk-autosuggest__suggestion-item',
     suggestionFocused: 'bpk-autosuggest__suggestion-item--focused',
     sectionContainer: 'bpk-autosuggest__section-container',
-    sectionTitle: 'bpk-autosuggest__section-title'
-  }
-}
+    sectionTitle: 'bpk-autosuggest__section-title',
+  },
+};
 
-export default BpkAutosuggest
+export default BpkAutosuggest;

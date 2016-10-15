@@ -1,3 +1,3 @@
-import page from './LayoutPage.js'
+import page from './LayoutPage';
 
-export default page
+export default page;

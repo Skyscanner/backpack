@@ -1,4 +1,4 @@
-import GridColumnDemoPage from './GridColumnDemoPage'
-import GridOffsetDemoPage from './GridOffsetDemoPage'
+import GridColumnDemoPage from './GridColumnDemoPage';
+import GridOffsetDemoPage from './GridOffsetDemoPage';
 
-export { GridColumnDemoPage, GridOffsetDemoPage }
+export { GridColumnDemoPage, GridOffsetDemoPage };

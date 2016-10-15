@@ -1,29 +1,41 @@
-import React from 'react'
+import React from 'react';
+import BpkHeading from 'bpk-component-heading';
+import BpkParagraph from 'bpk-component-paragraph';
+import BpkBlockquote from 'bpk-component-blockquote';
+import { BpkList, BpkListItem } from 'bpk-component-list';
+import { BpkCode, BpkCodeBlock } from 'bpk-component-code';
+import BpkLink, { BpkButtonLink } from 'bpk-component-link';
+import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table';
 
-import BpkHeading from 'bpk-component-heading'
-import BpkParagraph from 'bpk-component-paragraph'
-import BpkBlockquote from 'bpk-component-blockquote'
-import { BpkList, BpkListItem } from 'bpk-component-list'
-import { BpkCode, BpkCodeBlock } from 'bpk-component-code'
-import BpkLink, { BpkButtonLink } from 'bpk-component-link'
-import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table'
+import headingReadme from 'bpk-component-heading/readme.md';
+import paragraphReadme from 'bpk-component-paragraph/readme.md';
+import linkReadme from 'bpk-component-link/readme.md';
+import listReadme from 'bpk-component-list/readme.md';
+import tableReadme from 'bpk-component-table/readme.md';
+import blockquoteReadme from 'bpk-component-blockquote/readme.md';
+import codeReadme from 'bpk-component-code/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder'
+import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
   {
     id: 'headings',
     title: 'Headings',
-    blurb: 'Backpack uses six heading levels which combine font-sizes and line heights. Headings used within a content containers have and margins automatically applied.',
-    examples: [
-      <BpkHeading level='h1'>Heading 1</BpkHeading>,
-      <BpkHeading level='h2'>Heading 2</BpkHeading>,
-      <BpkHeading level='h3'>Heading 3</BpkHeading>,
-      <BpkHeading level='h4'>Heading 4</BpkHeading>,
-      <BpkHeading level='h5'>Heading 5</BpkHeading>,
-      <BpkHeading level='h6'>Heading 6</BpkHeading>
+    blurb: [
+      <BpkParagraph>
+        Backpack uses six heading levels which combine font-sizes and line heights. Headings used within a content
+        containers have and margins automatically applied.
+      </BpkParagraph>,
     ],
-    readme: require('raw!bpk-component-heading/readme.md')
+    examples: [
+      <BpkHeading level="h1">Heading 1</BpkHeading>,
+      <BpkHeading level="h2">Heading 2</BpkHeading>,
+      <BpkHeading level="h3">Heading 3</BpkHeading>,
+      <BpkHeading level="h4">Heading 4</BpkHeading>,
+      <BpkHeading level="h5">Heading 5</BpkHeading>,
+      <BpkHeading level="h6">Heading 6</BpkHeading>,
+    ],
+    readme: headingReadme,
   },
   {
     id: 'paragraphs',
@@ -40,21 +52,26 @@ const components = [
       <BpkParagraph>
         Sed nunc, quod agimus; Et quidem, inquit, vehementer errat; Equidem e Cn. Venit ad extremum; Quis non odit
         sordidos, vanos, leves, futtiles? Itaque ab his ordiamur.
-      </BpkParagraph>
+      </BpkParagraph>,
     ],
-    readme: require('raw!bpk-component-paragraph/readme.md')
+    readme: paragraphReadme,
   },
   {
     id: 'links',
     title: 'Links',
-    blurb: 'In Backpack, links are colored Blue-500. In general text which is colored Blue-500 should be clickable, however not all things that are clickable need to be colored Blue-500.',
+    blurb: [
+      <BpkParagraph>
+        In Backpack, links are colored Blue-500. In general text which is colored Blue-500 should be clickable,
+        however not all things that are clickable need to be colored Blue-500.
+      </BpkParagraph>,
+    ],
     examples: [
       <div>
-        Links can be both <BpkLink href='#'>anchor tags</BpkLink> as well
+        Links can be both <BpkLink href="#">anchor tags</BpkLink> as well
         as <BpkButtonLink onClick={() => null}>button tags</BpkButtonLink>.
-      </div>
+      </div>,
     ],
-    readme: require('raw!bpk-component-link/readme.md')
+    readme: linkReadme,
   },
   {
     id: 'lists',
@@ -75,9 +92,9 @@ const components = [
         <BpkListItem>First</BpkListItem>
         <BpkListItem>Second</BpkListItem>
         <BpkListItem>Third</BpkListItem>
-      </BpkList>
+      </BpkList>,
     ],
-    readme: require('raw!bpk-component-list/readme.md')
+    readme: listReadme,
   },
   {
     id: 'tables',
@@ -106,9 +123,9 @@ const components = [
             <BpkTableCell>Row 2, Data 4</BpkTableCell>
           </BpkTableRow>
         </BpkTableBody>
-      </BpkTable>
+      </BpkTable>,
     ],
-    readme: require('raw!bpk-component-table/readme.md')
+    readme: tableReadme,
   },
   {
     id: 'blockquotes',
@@ -117,9 +134,9 @@ const components = [
       <BpkBlockquote>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
         sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </BpkBlockquote>
+      </BpkBlockquote>,
     ],
-    readme: require('raw!bpk-component-blockquote/readme.md')
+    readme: blockquoteReadme,
   },
   {
     id: 'code',
@@ -134,17 +151,22 @@ const components = [
 import ReactDOM from 'react-dom';
 
 ReactDOM.render(<App />, ...);`}
-      </BpkCodeBlock>
+      </BpkCodeBlock>,
     ],
-    readme: require('raw!bpk-component-code/readme.md')
-  }
-]
+    readme: codeReadme,
+  },
+];
 
 const TypographyPage = () => <DocsPageBuilder
-  title='Typography'
-  blurb='Backpack has a number of components to help with typography including headings, paragraphs, links, lists and more.'
+  title="Typography"
+  blurb={[
+    <BpkParagraph>
+      Backpack has a number of components to help with typography including headings, paragraphs, links, lists and
+      more.
+    </BpkParagraph>,
+  ]}
   components={components}
-  sassdocId='typography'
-/>
+  sassdocId="typography"
+/>;
 
-export default TypographyPage
+export default TypographyPage;

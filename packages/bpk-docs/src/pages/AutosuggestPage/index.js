@@ -1,3 +1,3 @@
-import page from './AutosuggestPage.js'
+import page from './AutosuggestPage';
 
-export default page
+export default page;

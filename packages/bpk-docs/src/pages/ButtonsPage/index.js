@@ -1,3 +1,3 @@
-import page from './ButtonsPage.js'
+import page from './ButtonsPage';
 
-export default page
+export default page;
