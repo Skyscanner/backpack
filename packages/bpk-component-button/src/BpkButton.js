@@ -1,46 +1,32 @@
 import React, { PropTypes } from 'react'
 import './bpk-button.scss'
 
-const BpkButton = ({
-  children,
-  disabled,
-  href,
-  submit,
-  secondary,
-  selected,
-  large,
-  link,
-  className,
-  onClick
-}) => {
+const BpkButton = (props) => {
   const classNames = [ 'bpk-button' ]
 
-  secondary ? classNames.push('bpk-button--secondary') : null
-  selected ? classNames.push('bpk-button--selected') : null
-  large ? classNames.push('bpk-button--large') : null
-  link ? classNames.push('bpk-button--link') : null
+  props.secondary ? classNames.push('bpk-button--secondary') : null
+  props.selected ? classNames.push('bpk-button--selected') : null
+  props.large ? classNames.push('bpk-button--large') : null
+  props.link ? classNames.push('bpk-button--link') : null
+  props.className ? classNames.push(props.className) : null
 
-  if (className) {
-    classNames.push(className)
-  }
+  const className = classNames.join(' ')
 
-  const classNameAttr = classNames.join(' ')
-
-  if (href) {
+  if (props.href) {
     return <a
-      href={href}
-      className={classNameAttr}
-      children={children}
-      onClick={onClick}
+      href={props.href}
+      className={className}
+      children={props.children}
+      onClick={props.onClick}
     />
   }
 
   return <button
-    type={submit ? 'submit' : 'button'}
-    disabled={disabled}
-    className={classNameAttr}
-    children={children}
-    onClick={onClick}
+    type={props.submit ? 'submit' : 'button'}
+    disabled={props.disabled}
+    className={className}
+    children={props.children}
+    onClick={props.onClick}
   />
 }
 

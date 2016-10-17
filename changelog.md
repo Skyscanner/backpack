@@ -1,5 +1,11 @@
 # Backpack changelog
 
+## UNRELEASED - Ability to add custom `className` to button
+
+**Added:**
+- bpk-component-button: 
+  - Can now pass through custom `className` to button
+
 ## 2016-10-13 - Modal component
 
 **Added:**
