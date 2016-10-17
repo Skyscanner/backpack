@@ -65,8 +65,10 @@
   <property name="BUTTON_SELECTED_ACTIVE_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_SELECTED_COLOR" category="buttons">#ffffffff</color>
   <color name="BUTTON_SELECTED_HOVER_COLOR" category="buttons">#ffffffff</color>
+  <color name="BUTTON_SELECTED_ACTIVE_COLOR" category="buttons">#ffffffff</color>
   <property name="BUTTON_SELECTED_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_SELECTED_HOVER_BOX_SHADOW" category="buttons">none</property>
+  <property name="BUTTON_SELECTED_ACTIVE_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_SELECTED_DISABLED_BOX_SHADOW" category="buttons">none</property>
   <color name="CARD_BACKGROUND_COLOR" category="cards">#ffffffff</color>
   <color name="CARD_COLOR" category="cards">#524c61ff</color>

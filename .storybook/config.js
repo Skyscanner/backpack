@@ -1,7 +1,7 @@
 import React from 'react'
 import { configure, addDecorator } from '@kadira/storybook'
 
-import './../packages/bpk-stylesheets/base.scss'
+import '../packages/bpk-stylesheets'
 import TOKENS from './../packages/bpk-tokens/tokens/base.common'
 import BpkGridToggle from './../packages/bpk-component-grid-toggle'
 import BpkRtlToggle from './../packages/bpk-component-rtl-toggle'

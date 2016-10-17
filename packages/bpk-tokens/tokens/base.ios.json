@@ -392,6 +392,12 @@
     },
     {
       "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "buttonSelectedActiveColor"
+    },
+    {
+      "category": "buttons",
       "value": "none",
       "type": "box-shadow",
       "name": "buttonSelectedBoxShadow"
@@ -401,6 +407,12 @@
       "value": "none",
       "type": "box-shadow",
       "name": "buttonSelectedHoverBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonSelectedActiveBoxShadow"
     },
     {
       "category": "buttons",

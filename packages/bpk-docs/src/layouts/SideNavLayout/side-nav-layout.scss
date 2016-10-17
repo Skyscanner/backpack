@@ -42,21 +42,35 @@
     color: $bpk-link-color;
     text-decoration: $bpk-link-text-decoration;
 
-    &:hover {
+    @include bpk-hover {
       background-color: $bpk-color-gray-50;
       color: $bpk-link-hover-color;
     }
 
     &:active {
       background-color: $bpk-color-gray-100;
+      color: $bpk-link-hover-color;
     }
 
-    &--active,
-    &--active:hover {
+    &--active {
       background-color: $bpk-color-blue-500;
       color: $bpk-color-white;
       font-weight: bold;
       text-decoration: none;
+
+      @include bpk-hover {
+        background-color: $bpk-color-blue-500;
+        color: $bpk-color-white;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      &:active {
+        background-color: $bpk-color-blue-500;
+        color: $bpk-color-white;
+        font-weight: bold;
+        text-decoration: none;
+      }
     }
   }
 

@@ -3,16 +3,19 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    base: './base.scss'
+    base: './index.js'
   },
 
   output: {
-    filename: '[name].js',
+    filename: 'base.js',
     path: ''
   },
 
   module: {
     loaders: [
+      {
+        test: /\.js$/, exclude: /node_modules/, loader: 'babel'
+      },
       {
         test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!postcss!sass')
       },
@@ -23,7 +26,7 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin('base.css')
   ],
 
   postcss: function () {

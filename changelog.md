@@ -1,5 +1,25 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Changed:**
+- bpk-stylesheets: 
+  - Added small javascript utility to add feature detection classes to html element
+  - Default module export is now uncompiled `index.js` which contains both script and style, with `base.css` & `base.js`
+    exposed for compiled access
+   
+**Added:**
+- bpk-mixins:
+  - Added `bpk-hover` mixin to apply hover effects to non-touch devices only
+
+**Fixed:**
+- bpk-component-banner-alert:
+- bpk-component-modal:
+- bpk-component-button:
+- bpk-component-link:
+- bpk-mixins:
+  - hover effects now disabled on touch devices
+
 ## 2016-10-17 - Ability to add custom `className` to button
 
 **Added:** 

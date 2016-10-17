@@ -2,7 +2,7 @@
   "name": "bpk-stylesheets",
   "version": "1.0.14",
   "description": "Backpack's stylesheets.",
-  "main": "base.scss",
+  "main": "index.js",
   "scripts": {
     "build": "webpack"
   },

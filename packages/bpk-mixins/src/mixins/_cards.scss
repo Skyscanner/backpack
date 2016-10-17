@@ -45,8 +45,10 @@
     }
   }
 
-  &:hover::after {
-    opacity: 1;
+  @include bpk-hover {
+    &::after {
+      opacity: 1;
+    }
   }
 
   &:active::after {
