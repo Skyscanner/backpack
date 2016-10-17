@@ -1,10 +1,16 @@
 # Backpack changelog
 
-## UNRELEASED - Ability to add custom `className` to button
+## 2016-10-17 - Ability to add custom `className` to button
 
-**Added:**
-- bpk-component-button: 
+**Added:** 
+- bpk-component-button: 1.0.24 => 1.1.0
   - Can now pass through custom `className` to button
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-banner-alert: 0.0.3 => 0.0.4
+- bpk-component-icon: 1.1.6 => 1.1.7
+- bpk-component-modal: 0.0.1 => 0.0.2
+- bpk-docs: 0.0.34 => 0.0.35
 
 ## 2016-10-13 - Modal component
 
