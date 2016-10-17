@@ -18,6 +18,26 @@ exports[`BpkButton should render correctly with "large" and "secondary" attribut
 </button>
 `;
 
+exports[`BpkButton should respect the class names entered as a string 1`] = `
+<button
+  className="bpk-button bpk-button--secondary bpk-button--large custom-class-1 custom-class-2"
+  disabled={false}
+  onClick={null}
+  type="button">
+  My button
+</button>
+`;
+
+exports[`BpkButton should add only bpk specific classes if className prop is set to empty string 1`] = `
+<button
+  className="bpk-button bpk-button--secondary bpk-button--large"
+  disabled={false}
+  onClick={null}
+  type="button">
+  My button
+</button>
+`;
+
 exports[`BpkButton should render correctly with a "disabled" attribute 1`] = `
 <button
   className="bpk-button"

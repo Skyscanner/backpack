@@ -42,4 +42,14 @@ describe('BpkButton', () => {
     const tree = renderer.create(<BpkButton large secondary>My button</BpkButton>).toJSON()
     expect(tree).toMatchSnapshot()
   })
+
+  it('should respect the class names entered as a string', () => {
+    const tree = renderer.create(<BpkButton large secondary className='custom-class-1 custom-class-2'>My button</BpkButton>).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should add only bpk specific classes if className prop is set to empty string', () => {
+    const tree = renderer.create(<BpkButton large secondary className=''>My button</BpkButton>).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
 })

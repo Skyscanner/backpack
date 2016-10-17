@@ -10,6 +10,7 @@ const BpkButton = ({
   selected,
   large,
   link,
+  className,
   onClick
 }) => {
   const classNames = [ 'bpk-button' ]
@@ -19,12 +20,16 @@ const BpkButton = ({
   large ? classNames.push('bpk-button--large') : null
   link ? classNames.push('bpk-button--link') : null
 
-  const className = classNames.join(' ')
+  if (className) {
+    classNames.push(className)
+  }
+
+  const classNameAttr = classNames.join(' ')
 
   if (href) {
     return <a
       href={href}
-      className={className}
+      className={classNameAttr}
       children={children}
       onClick={onClick}
     />
@@ -33,7 +38,7 @@ const BpkButton = ({
   return <button
     type={submit ? 'submit' : 'button'}
     disabled={disabled}
-    className={className}
+    className={classNameAttr}
     children={children}
     onClick={onClick}
   />
@@ -45,6 +50,7 @@ BpkButton.propTypes = {
     PropTypes.node
   ]).isRequired,
   href: PropTypes.string,
+  className: PropTypes.string,
   disabled: PropTypes.bool,
   submit: PropTypes.bool,
   secondary: PropTypes.bool,
@@ -56,6 +62,7 @@ BpkButton.propTypes = {
 
 BpkButton.defaultProps = {
   href: null,
+  className: null,
   disabled: false,
   submit: false,
   secondary: false,
