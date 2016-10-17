@@ -5,7 +5,9 @@
 **Changed:**
 - bpk-stylesheets: 
   - Added small javascript utility to add feature detection classes to html element
-  - Default module export is now uncompiled `index.js` which contains both script and style, with `base.css` & `base.js`
+  - Consumers now have to include `/node_modules/bpk-stylesheets/base.js` as well as `/node_modules/bpk-stylesheets/base.css`
+    on the page.
+  - Default module export is now uncompiled `/index.js` which contains both script and style, with `/base.css` & `/base.js`
     exposed for compiled access
    
 **Added:**
