@@ -1,9 +1,9 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-10-17 (2) - Disable `:hover` effects on touch devices 
 
 **Changed:**
-- bpk-stylesheets: 
+- bpk-stylesheets: 1.0.14 => 2.0.0 
   - Added small javascript utility to add feature detection classes to html element
   - Consumers now have to include `/node_modules/bpk-stylesheets/base.js` as well as `/node_modules/bpk-stylesheets/base.css`
     on the page.
@@ -11,18 +11,44 @@
     exposed for compiled access
    
 **Added:**
-- bpk-mixins:
-  - Added `bpk-hover` mixin to apply hover effects to non-touch devices only
+- bpk-mixins: 5.4.0 => 5.5.0
+  - Added `bpk-hover` mixin to apply `:hover` effects to non-touch devices only
 
 **Fixed:**
-- bpk-component-banner-alert:
-- bpk-component-modal:
-- bpk-component-button:
-- bpk-component-link:
-- bpk-mixins:
-  - hover effects now disabled on touch devices
+- bpk-component-banner-alert: 0.0.4 => 0.0.5
+- bpk-component-modal: 0.0.2 => 0.0.3
+- bpk-component-button: 1.1.0 => 1.1.1 
+- bpk-component-link: 0.2.0 => 0.2.1
+- bpk-mixins: 5.4.0 => 5.5.0
+  - `:hover` effects now disabled on touch devices
+  
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 0.0.12 => 0.0.13
+- bpk-component-blockquote: 0.0.17 => 0.0.18
+- bpk-component-card: 0.0.5 => 0.0.6
+- bpk-component-checkbox: 0.0.14 => 0.0.15
+- bpk-component-code: 0.0.17 => 0.0.18
+- bpk-component-content-container: 1.0.8 => 1.0.9
+- bpk-component-grid: 0.0.11 => 0.0.12
+- bpk-component-grid-toggle: 0.0.23 => 0.0.24
+- bpk-component-heading: 1.1.0 => 1.1.1
+- bpk-component-icon: 1.1.7 => 1.1.8
+- bpk-component-input: 0.0.14 => 0.0.15
+- bpk-component-label: 0.0.14 => 0.0.15
+- bpk-component-list: 0.0.37 => 0.0.38
+- bpk-component-logo: 1.0.7 => 1.0.8
+- bpk-component-paragraph: 0.1.24 => 0.1.25
+- bpk-component-radio: 0.0.14 => 0.0.15
+- bpk-component-router-link: 0.1.23 => 0.1.24
+- bpk-component-rtl-toggle: 0.0.7 => 0.0.8
+- bpk-component-select: 0.0.14 => 0.0.15
+- bpk-component-spinner: 1.0.7 => 1.0.8
+- bpk-component-table: 0.0.37 => 0.0.38
+- bpk-docs: 0.0.35 => 0.0.36
+- bpk-svgs: 2.0.4 => 2.0.5
+- bpk-tokens: 12.4.0 => 12.4.1
 
-## 2016-10-17 - Ability to add custom `className` to button
+## 2016-10-17 (1) - Ability to add custom `className` to button
 
 **Added:** 
 - bpk-component-button: 1.0.24 => 1.1.0
