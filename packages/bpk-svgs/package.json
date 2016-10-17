@@ -1,6 +1,6 @@
 {
   "name": "bpk-svgs",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Backpack's library of SVG's.",
   "main": "_index.scss",
   "scripts": {
@@ -13,7 +13,7 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "bpk-tokens": "^12.4.0",
+    "bpk-tokens": "^12.4.1",
     "grunt": "1.0.1",
     "grunt-cli": "1.2.0",
     "grunt-contrib-clean": "1.0.0",
