@@ -1,6 +1,21 @@
 # Backpack changelog
 
-## 2016-10-17 (2) - Disable `:hover` effects on touch devices 
+## UNRELEASED
+
+**Added:**
+- bpk-tokens:
+- bpk-mixins:
+  - Added duration variables: `$bpk-duration-xs`, `$bpk-duration-sm` & `$bpk-duration-base`
+
+**Fixed:**
+- bpk-mixins:
+- bpk-component-card:
+  - Aligned card component animation to new duration variables
+
+- bpk-component-modal:
+  - Aligned modal component animations to new duration variables
+
+## 2016-10-17 (2) - Disable `:hover` effects on touch devices
 
 **Changed:**
 - bpk-stylesheets: 1.0.14 => 2.0.0 
