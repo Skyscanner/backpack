@@ -1,6 +1,24 @@
 {
   "properties": [
     {
+      "type": "time",
+      "category": "animation",
+      "value": "50ms",
+      "name": "durationXs"
+    },
+    {
+      "type": "time",
+      "category": "animation",
+      "value": "200ms",
+      "name": "durationSm"
+    },
+    {
+      "type": "time",
+      "category": "animation",
+      "value": "400ms",
+      "name": "durationBase"
+    },
+    {
       "type": "size",
       "category": "radius",
       "value": "3",

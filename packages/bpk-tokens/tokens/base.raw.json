@@ -74,6 +74,24 @@
     "ZINDEX_MODAL": "1100"
   },
   "props": {
+    "DURATION_XS": {
+      "type": "time",
+      "category": "animation",
+      "value": "50ms",
+      "name": "DURATION_XS"
+    },
+    "DURATION_SM": {
+      "type": "time",
+      "category": "animation",
+      "value": "200ms",
+      "name": "DURATION_SM"
+    },
+    "DURATION_BASE": {
+      "type": "time",
+      "category": "animation",
+      "value": "400ms",
+      "name": "DURATION_BASE"
+    },
     "BORDER_RADIUS_XS": {
       "type": "size",
       "category": "radius",
@@ -1612,6 +1630,9 @@
     }
   },
   "propKeys": [
+    "DURATION_XS",
+    "DURATION_SM",
+    "DURATION_BASE",
     "BORDER_RADIUS_XS",
     "BORDER_RADIUS_SM",
     "BORDER_RADIUS_PILL",

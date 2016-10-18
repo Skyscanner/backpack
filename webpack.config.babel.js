@@ -23,6 +23,7 @@ const staticSiteGeneratorConfig = {
     ROUTES.RADII,
     ROUTES.SHADOWS,
     ROUTES.LAYOUT,
+    ROUTES.ANIMATION,
 
     ROUTES.ATOMS,
     ROUTES.TYPOGRAPHY,

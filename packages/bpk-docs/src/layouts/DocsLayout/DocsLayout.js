@@ -19,7 +19,8 @@ const links = [
       { route: routes.TYPESETTING, children: 'Typesetting' },
       { route: routes.LAYOUT, children: 'Layout' },
       { route: routes.RADII, children: 'Radii' },
-      { route: routes.SHADOWS, children: 'Shadows' }
+      { route: routes.SHADOWS, children: 'Shadows' },
+      { route: routes.ANIMATION, children: 'Animation' }
     ]
   },
   {

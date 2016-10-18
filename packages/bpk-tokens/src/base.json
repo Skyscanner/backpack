@@ -1,5 +1,6 @@
 {
   "imports": [
+    "./base/animation.json",
     "./base/borders.json",
     "./base/box-shadows.json",
     "./base/breakpoints.json",

@@ -6,7 +6,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  transition: opacity 100ms ease-in-out;
+  transition: opacity $bpk-duration-xs ease-in-out;
   background-color: $bpk-modal-scrim-background-color;
   opacity: $bpk-modal-scrim-opacity;
   overflow: hidden;
@@ -59,7 +59,7 @@
 
   &__dialog {
     width: 100%;
-    transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+    transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
     outline: 0;
     background-color: $bpk-modal-background-color;
 

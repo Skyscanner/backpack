@@ -1,0 +1,17 @@
+{
+  "global": {
+    "type": "time",
+    "category": "animation"
+  },
+  "props": {
+    "DURATION_XS": {
+    "value": "50ms"
+    },
+    "DURATION_SM": {
+      "value": "200ms"
+    },
+    "DURATION_BASE": {
+      "value": "400ms"
+    }
+  }
+}
