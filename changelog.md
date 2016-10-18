@@ -1,19 +1,47 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-10-18 - Added animation duration tokens and variables
 
 **Added:**
-- bpk-tokens:
-- bpk-mixins:
+- bpk-tokens: 12.4.1 => 12.5.0
+- bpk-mixins: 5.5.0 => 5.6.0
   - Added duration variables: `$bpk-duration-xs`, `$bpk-duration-sm` & `$bpk-duration-base`
 
 **Fixed:**
-- bpk-mixins:
-- bpk-component-card:
+- bpk-mixins: 5.5.0 => 5.6.0
+- bpk-component-card: 0.0.6 => 0.0.7
   - Aligned card component animation to new duration variables
 
-- bpk-component-modal:
+- bpk-component-modal: 0.0.3 => 0.0.4
   - Aligned modal component animations to new duration variables
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 0.0.13 => 0.0.14
+- bpk-component-banner-alert: 0.0.5 => 0.0.6
+- bpk-component-blockquote: 0.0.18 => 0.0.19
+- bpk-component-button: 1.1.1 => 1.1.2
+- bpk-component-checkbox: 0.0.15 => 0.0.16
+- bpk-component-code: 0.0.18 => 0.0.19
+- bpk-component-content-container: 1.0.9 => 1.0.10
+- bpk-component-grid: 0.0.12 => 0.0.13
+- bpk-component-grid-toggle: 0.0.24 => 0.0.25
+- bpk-component-heading: 1.1.1 => 1.1.2
+- bpk-component-icon: 1.1.8 => 1.1.9
+- bpk-component-input: 0.0.15 => 0.0.16
+- bpk-component-label: 0.0.15 => 0.0.16
+- bpk-component-link: 0.2.1 => 0.2.2
+- bpk-component-list: 0.0.38 => 0.0.39
+- bpk-component-logo: 1.0.8 => 1.0.9
+- bpk-component-paragraph: 0.1.25 => 0.1.26
+- bpk-component-radio: 0.0.15 => 0.0.16
+- bpk-component-router-link: 0.1.24 => 0.1.25
+- bpk-component-rtl-toggle: 0.0.8 => 0.0.9
+- bpk-component-select: 0.0.15 => 0.0.16
+- bpk-component-spinner: 1.0.8 => 1.0.9
+- bpk-component-table: 0.0.38 => 0.0.39
+- bpk-docs: 0.0.36 => 0.0.37
+- bpk-stylesheets: 2.0.0 => 2.0.1
+- bpk-svgs: 2.0.5 => 2.0.6
 
 ## 2016-10-17 (2) - Disable `:hover` effects on touch devices
 
