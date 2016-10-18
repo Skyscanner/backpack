@@ -27,14 +27,13 @@ npm start           # Start development test harness complete with hot module re
 npm test            # Lints .js & .scss files and runs unit tests
 ```
 
-
-## Publishing packages (Backpack squads only)
-- Make changes to packages (on a branch)
-- Make a note in the changelog of every package you have changed, separating out changes (Major), additions (Minor) and fixes (Patch) changes. Mark them at the top under the title of “UNRELEASED"
-    - use full commands:
-        - npm run lerna updated
-        - npm run lerna diff <package-name>
-- Code review process as usual, merge to master
+## Publishing packages (Backpack squad members only)
+- Update the [changelog](/changelog.md) with every package that has changed, separating out breaking changes (Major), 
+  additions (Minor) and fixes (Patch) changes (you should see examples of this in previous entries). Make sure to add 
+  them at the top under a heading of “UNRELEASED"
+  - Some useful commands for determining "what's changed?":
+    - `npm run lerna updated`
+    - `npm run lerna diff <package-name>`
 - Make sure you are an owner of the npm packages (speak to a member of the Backpack squad)
 - npm run publish
 - You’ll be asked to specify a new version for every package that has changed. Options are PATCH, MINOR or MAJOR. These should directly align to the entries you put in the changelog in step 2.
