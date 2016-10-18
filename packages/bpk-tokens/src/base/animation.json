@@ -1,6 +1,6 @@
 {
   "global": {
-    "type": "DURATION",
+    "type": "time",
     "category": "animation"
   },
   "props": {
@@ -12,21 +12,6 @@
     },
     "DURATION_BASE": {
       "value": "400ms"
-    },
-    "DURATION_LG": {
-      "value": "600ms"
-    },
-    "DURATION_XL": {
-      "value": "800ms"
-    },
-    "PAUSE_SM": {
-      "value": "1500ms"
-    },
-    "PAUSE_BASE": {
-      "value": "3000ms"
-    },
-    "PAUSE_LG": {
-      "value": "4500ms"
     }
   }
 }

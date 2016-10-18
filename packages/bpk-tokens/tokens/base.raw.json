@@ -75,52 +75,22 @@
   },
   "props": {
     "DURATION_XS": {
-      "type": "DURATION",
+      "type": "time",
       "category": "animation",
       "value": "50ms",
       "name": "DURATION_XS"
     },
     "DURATION_SM": {
-      "type": "DURATION",
+      "type": "time",
       "category": "animation",
       "value": "200ms",
       "name": "DURATION_SM"
     },
     "DURATION_BASE": {
-      "type": "DURATION",
+      "type": "time",
       "category": "animation",
       "value": "400ms",
       "name": "DURATION_BASE"
-    },
-    "DURATION_LG": {
-      "type": "DURATION",
-      "category": "animation",
-      "value": "600ms",
-      "name": "DURATION_LG"
-    },
-    "DURATION_XL": {
-      "type": "DURATION",
-      "category": "animation",
-      "value": "800ms",
-      "name": "DURATION_XL"
-    },
-    "PAUSE_SM": {
-      "type": "DURATION",
-      "category": "animation",
-      "value": "1500ms",
-      "name": "PAUSE_SM"
-    },
-    "PAUSE_BASE": {
-      "type": "DURATION",
-      "category": "animation",
-      "value": "3000ms",
-      "name": "PAUSE_BASE"
-    },
-    "PAUSE_LG": {
-      "type": "DURATION",
-      "category": "animation",
-      "value": "4500ms",
-      "name": "PAUSE_LG"
     },
     "BORDER_RADIUS_XS": {
       "type": "size",
@@ -1663,11 +1633,6 @@
     "DURATION_XS",
     "DURATION_SM",
     "DURATION_BASE",
-    "DURATION_LG",
-    "DURATION_XL",
-    "PAUSE_SM",
-    "PAUSE_BASE",
-    "PAUSE_LG",
     "BORDER_RADIUS_XS",
     "BORDER_RADIUS_SM",
     "BORDER_RADIUS_PILL",

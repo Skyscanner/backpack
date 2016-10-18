@@ -3,11 +3,6 @@
   <property name="DURATION_XS" category="animation">50ms</property>
   <property name="DURATION_SM" category="animation">200ms</property>
   <property name="DURATION_BASE" category="animation">400ms</property>
-  <property name="DURATION_LG" category="animation">600ms</property>
-  <property name="DURATION_XL" category="animation">800ms</property>
-  <property name="PAUSE_SM" category="animation">1500ms</property>
-  <property name="PAUSE_BASE" category="animation">3000ms</property>
-  <property name="PAUSE_LG" category="animation">4500ms</property>
   <property name="BORDER_RADIUS_XS" category="radius">3</property>
   <property name="BORDER_RADIUS_SM" category="radius">6</property>
   <property name="BORDER_RADIUS_PILL" category="radius">80</property>

@@ -7,16 +7,8 @@ import DocsPageBuilder from './../../components/DocsPageBuilder'
 
 const components = [
   {
-    id: 'duration',
-    title: 'Duration',
-    blurb: [
-      <BpkParagraph>
-        Duration plays a big part in this. The Backpack duration stack follows best practices from industry experts.
-        Animation is not intended to slow a
-        user down, and you should avoid long animation durations for elements that are vital to a user’s progress.
-        Rather, animation should guide and assist the user.
-      </BpkParagraph>
-    ],
+    id: 'durations',
+    title: 'Durations',
     tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'duration')),
     examples: []
   }
@@ -26,12 +18,12 @@ const MotionPage = () => <DocsPageBuilder
   title='Animation'
   blurb={[
     <BpkParagraph>
-      Animations should reflect the Skyscanner tone-of-voice; we don’t rush users, we present them all the options, at
-      an appropritat time and pace.
+      Backpack components make use of animations to add delight to the user experience. Care has been taken to make
+      sure that they do not obstruct user flow and that they are performant across devices and browsers.
     </BpkParagraph>
   ]}
   components={components}
-  sassdocId='motion'
+  sassdocId='animation'
 />
 
 export default MotionPage
