@@ -1,11 +1,39 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-10-31 - Select component IE background color fix
 
 **Fixed:**
-- bpk-mixins: 
-- bpk-component-select:
-  - Fixed select background color on IE 
+- bpk-mixins: 5.6.0 => 5.6.1
+- bpk-component-select: 0.0.16 => 0.0.17
+  - Fixed select background color on IE
+  
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 0.0.14 => 0.0.15
+- bpk-component-banner-alert: 0.0.6 => 0.0.7
+- bpk-component-blockquote: 0.0.19 => 0.0.20
+- bpk-component-button: 1.1.2 => 1.1.3
+- bpk-component-card: 0.0.7 => 0.0.8
+- bpk-component-checkbox: 0.0.16 => 0.0.17
+- bpk-component-code: 0.0.19 => 0.0.20
+- bpk-component-content-container: 1.0.10 => 1.0.11
+- bpk-component-grid: 0.0.13 => 0.0.14
+- bpk-component-grid-toggle: 0.0.25 => 0.0.26
+- bpk-component-heading: 1.1.2 => 1.1.3
+- bpk-component-icon: 1.1.9 => 1.1.10
+- bpk-component-input: 0.0.16 => 0.0.17
+- bpk-component-label: 0.0.16 => 0.0.17
+- bpk-component-link: 0.2.2 => 0.2.3
+- bpk-component-list: 0.0.39 => 0.0.40
+- bpk-component-logo: 1.0.9 => 1.0.10
+- bpk-component-modal: 0.0.4 => 0.0.5
+- bpk-component-paragraph: 0.1.26 => 0.1.27
+- bpk-component-radio: 0.0.16 => 0.0.17
+- bpk-component-router-link: 0.1.25 => 0.1.26
+- bpk-component-rtl-toggle: 0.0.9 => 0.0.10
+- bpk-component-spinner: 1.0.9 => 1.0.10
+- bpk-component-table: 0.0.39 => 0.0.40
+- bpk-docs: 0.0.37 => 0.0.38
+- bpk-stylesheets: 2.0.1 => 2.0.2
 
 ## 2016-10-18 - Added animation duration tokens and variables
 
