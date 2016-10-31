@@ -1,5 +1,21 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Changed:**
+- bpk-tokens:
+- bpk-mixins:
+- bpk-components-label:
+  - Changed default label color to gray-700 instead of gray-300
+
+**Added:**
+- bpk-mixins:
+- bpk-component-label:
+  - Labels can now be white
+
+**The following packages received a patch bump due to the dependency changes above:**
+- 
+
 ## 2016-10-31 - Select component IE background color fix
 
 **Fixed:**

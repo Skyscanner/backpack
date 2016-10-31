@@ -2,4 +2,8 @@
 
 .bpk-label {
   @include bpk-label;
+
+  &--white {
+    @include bpk-label--white;
+  }
 }

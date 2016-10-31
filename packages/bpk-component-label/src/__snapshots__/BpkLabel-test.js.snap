@@ -5,3 +5,11 @@ exports[`BpkLabel should render correctly 1`] = `
   Origin
 </label>
 `;
+
+exports[`BpkLabel should render correctly with a "white" attribute 1`] = `
+<label
+  className="bpk-label bpk-label--white"
+  htmlFor="origin">
+  Origin
+</label>
+`;

@@ -285,3 +285,17 @@ $_form-input-icon-padding: $bpk-spacing-sm + $_form-input-size;
   font-size: $bpk-label-font-size;
   line-height: $bpk-label-line-height;
 }
+
+/// White form label. Modifies the bpk-label mixin.
+///
+/// @require {mixin} bpk-label
+///
+/// @example scss
+///   .selector {
+///     @include bpk-label();
+///     @include bpk-label--white();
+///   }
+
+@mixin bpk-label--white {
+  color: $bpk-color-white;
+}

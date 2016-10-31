@@ -150,7 +150,7 @@ module.exports = {
   selectDisabledBorderColor: "rgb(243, 242, 245)",
   selectDisabledColor: "rgb(178, 174, 189)",
   selectInvalidBorderColor: "rgb(255, 84, 82)",
-  labelColor: "rgb(178, 174, 189)",
+  labelColor: "rgb(82, 76, 97)",
   labelFontSize: ".75rem",
   labelLineHeight: "1.125rem",
   gridColumns: "12",

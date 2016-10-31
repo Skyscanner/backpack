@@ -151,7 +151,7 @@
   <color name="SELECT_DISABLED_BORDER_COLOR" category="forms">#f3f2f5ff</color>
   <color name="SELECT_DISABLED_COLOR" category="forms">#b2aebdff</color>
   <color name="SELECT_INVALID_BORDER_COLOR" category="forms">#ff5452ff</color>
-  <color name="LABEL_COLOR" category="forms">#b2aebdff</color>
+  <color name="LABEL_COLOR" category="forms">#524c61ff</color>
   <property name="LABEL_FONT_SIZE" category="forms">12</property>
   <property name="LABEL_LINE_HEIGHT" category="forms">18</property>
   <property name="GRID_COLUMNS" category="grid">12</property>

@@ -99,7 +99,7 @@
       "type": "color"
     },
     "LABEL_COLOR": {
-      "value": "{!GRAY_300}",
+      "value": "{!GRAY_700}",
       "type": "color"
     },
     "LABEL_FONT_SIZE": {

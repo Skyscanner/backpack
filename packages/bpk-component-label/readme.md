@@ -25,3 +25,4 @@ export default MyComponent = () => (
 | -------- | -------- | -------- | ------------- |
 | label    | string   | true     | -             |
 | htmlFor  | string   | true     | -             |
+| white    | bool     | false    | false         |
