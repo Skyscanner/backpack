@@ -1,5 +1,12 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Fixed:**
+- bpk-mixins: 
+- bpk-component-select:
+  - Fixed select background color on IE 
+
 ## 2016-10-18 - Added animation duration tokens and variables
 
 **Added:**
