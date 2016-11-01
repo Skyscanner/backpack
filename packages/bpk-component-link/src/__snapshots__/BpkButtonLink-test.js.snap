@@ -6,3 +6,12 @@ exports[`BpkButtonLink should render correctly 1`] = `
   Link
 </button>
 `;
+
+exports[`BpkButtonLink should render correctly with "white" attribute 1`] = `
+<button
+  className="bpk-link bpk-link--white"
+  onClick={[Function onClick]}
+  type="button">
+  Link
+</button>
+`;

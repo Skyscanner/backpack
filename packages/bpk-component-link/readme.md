@@ -32,6 +32,7 @@ export default MyComponent = () => (
 | href     | string   | true     | -             |
 | onClick  | func     | false    | null          |
 | blank    | bool     | false    | false         |
+| white    | bool     | false    | false         |
 
 *BpkLinkButton:*
 
@@ -39,3 +40,4 @@ export default MyComponent = () => (
 | -------- | -------- | -------- | ------------- |
 | children | -        | true     | -             |
 | onClick  | func     | true     | -             |
+| white    | bool     | false    | false         |

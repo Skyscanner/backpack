@@ -256,6 +256,9 @@ module.exports = {
   linkHoverColor: "rgb(82, 76, 97)",
   linkHoverTextDecoration: "underline",
   linkActiveColor: "rgb(129, 123, 143)",
+  linkWhiteColor: "rgb(255, 255, 255)",
+  linkWhiteHoverColor: "rgb(255, 255, 255)",
+  linkWhiteActiveColor: "rgb(230, 228, 235)",
   zindexModalScrim: "1000",
   zindexModal: "1100"
 };

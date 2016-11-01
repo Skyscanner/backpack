@@ -257,6 +257,9 @@
   <color name="LINK_HOVER_COLOR" category="text-color">#524c61ff</color>
   <property name="LINK_HOVER_TEXT_DECORATION" category="text-decoration">underline</property>
   <color name="LINK_ACTIVE_COLOR" category="text-color">#817b8fff</color>
+  <color name="LINK_WHITE_COLOR" category="text-color">#ffffffff</color>
+  <color name="LINK_WHITE_HOVER_COLOR" category="text-color">#ffffffff</color>
+  <color name="LINK_WHITE_ACTIVE_COLOR" category="text-color">#e6e4ebff</color>
   <property name="ZINDEX_MODAL_SCRIM" category="z-index">1000</property>
   <property name="ZINDEX_MODAL" category="z-index">1100</property>
 </resources>

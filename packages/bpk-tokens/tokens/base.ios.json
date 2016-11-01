@@ -1543,6 +1543,24 @@
       "name": "linkActiveColor"
     },
     {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "text-color",
+      "name": "linkWhiteColor"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "text-color",
+      "name": "linkWhiteHoverColor"
+    },
+    {
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      "category": "text-color",
+      "name": "linkWhiteActiveColor"
+    },
+    {
       "type": "number",
       "category": "z-index",
       "value": "1000",
