@@ -1,20 +1,46 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-11-01 - Form labels are darker by default
 
 **Changed:**
-- bpk-tokens:
-- bpk-mixins:
-- bpk-components-label:
+- bpk-component-label: 0.0.17 => 1.0.0
+- bpk-mixins: 5.6.1 => 6.0.0
+- bpk-tokens: 12.5.0 => 13.0.0
   - Changed default label color to gray-700 instead of gray-300
 
 **Added:**
-- bpk-mixins:
-- bpk-component-label:
+- bpk-component-label: 0.0.17 => 1.0.0
+- bpk-mixins: 5.6.1 => 6.0.0
   - Labels can now be white
 
 **The following packages received a patch bump due to the dependency changes above:**
-- 
+- bpk-component-autosuggest: 0.0.15 => 0.0.16
+- bpk-component-banner-alert: 0.0.7 => 0.0.8
+- bpk-component-blockquote: 0.0.20 => 0.0.21
+- bpk-component-button: 1.1.3 => 1.1.4
+- bpk-component-card: 0.0.8 => 0.0.9
+- bpk-component-checkbox: 0.0.17 => 0.0.18
+- bpk-component-code: 0.0.20 => 0.0.21
+- bpk-component-content-container: 1.0.11 => 1.0.12
+- bpk-component-grid: 0.0.14 => 0.0.15
+- bpk-component-grid-toggle: 0.0.26 => 0.0.27
+- bpk-component-heading: 1.1.3 => 1.1.4
+- bpk-component-icon: 1.1.10 => 1.1.11
+- bpk-component-input: 0.0.17 => 0.0.18
+- bpk-component-link: 0.2.3 => 0.2.4
+- bpk-component-list: 0.0.40 => 0.0.41
+- bpk-component-logo: 1.0.10 => 1.0.11
+- bpk-component-modal: 0.0.5 => 0.0.6
+- bpk-component-paragraph: 0.1.27 => 0.1.28
+- bpk-component-radio: 0.0.17 => 0.0.18
+- bpk-component-router-link: 0.1.26 => 0.1.27
+- bpk-component-rtl-toggle: 0.0.10 => 0.0.11
+- bpk-component-select: 0.0.17 => 0.0.18
+- bpk-component-spinner: 1.0.10 => 1.0.11
+- bpk-component-table: 0.0.40 => 0.0.41
+- bpk-docs: 0.0.38 => 0.0.39
+- bpk-stylesheets: 2.0.2 => 2.0.3
+- bpk-svgs: 2.0.6 => 2.0.7
 
 ## 2016-10-31 - Select component IE background color fix
 
