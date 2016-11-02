@@ -1,12 +1,41 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-11-02 - Links can now be white
 
 **Added:**
-- bpk-component-link:
-- bpk-mixins:
-- bpk-tokens:
-  - Link can now be white
+- bpk-component-link: 0.2.4 => 0.3.0
+- bpk-mixins: 6.0.0 => 6.1.0
+- bpk-tokens: 13.0.0 => 13.1.0
+  - Links can now be white
+
+**The following packages received a patch bump due to the dependency changes above:** 
+- bpk-component-autosuggest: 0.0.16 => 0.0.17
+- bpk-component-banner-alert: 0.0.8 => 0.0.9
+- bpk-component-blockquote: 0.0.21 => 0.0.22
+- bpk-component-button: 1.1.4 => 1.1.5
+- bpk-component-card: 0.0.9 => 0.0.10
+- bpk-component-checkbox: 0.0.18 => 0.0.19
+- bpk-component-code: 0.0.21 => 0.0.22
+- bpk-component-content-container: 1.0.12 => 1.0.13
+- bpk-component-grid: 0.0.15 => 0.0.16
+- bpk-component-grid-toggle: 0.0.27 => 0.0.28
+- bpk-component-heading: 1.1.4 => 1.1.5
+- bpk-component-icon: 1.1.11 => 1.1.12
+- bpk-component-input: 0.0.18 => 0.0.19
+- bpk-component-label: 1.0.0 => 1.0.1
+- bpk-component-list: 0.0.41 => 0.0.42
+- bpk-component-logo: 1.0.11 => 1.0.12
+- bpk-component-modal: 0.0.6 => 0.0.7
+- bpk-component-paragraph: 0.1.28 => 0.1.29
+- bpk-component-radio: 0.0.18 => 0.0.19
+- bpk-component-router-link: 0.1.27 => 0.1.28
+- bpk-component-rtl-toggle: 0.0.11 => 0.0.12
+- bpk-component-select: 0.0.18 => 0.0.19
+- bpk-component-spinner: 1.0.11 => 1.0.12
+- bpk-component-table: 0.0.41 => 0.0.42
+- bpk-docs: 0.0.39 => 0.0.40
+- bpk-stylesheets: 2.0.3 => 2.0.4
+- bpk-svgs: 2.0.7 => 2.0.8
 
 ## 2016-11-01 - Form labels are darker by default
 
