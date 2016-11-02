@@ -6,4 +6,8 @@
   &--active {
     @include bpk-link--active;
   }
+
+  &--white {
+    @include bpk-link--white;
+  }
 }

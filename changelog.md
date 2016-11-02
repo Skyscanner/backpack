@@ -1,5 +1,13 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Added:**
+- bpk-component-link:
+- bpk-mixins:
+- bpk-tokens:
+  - Link can now be white
+
 ## 2016-11-01 - Form labels are darker by default
 
 **Changed:**

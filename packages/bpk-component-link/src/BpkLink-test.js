@@ -12,4 +12,9 @@ describe('BpkLink', () => {
     const tree = renderer.create(<BpkLink href='#' blank>Link (new window)</BpkLink>).toJSON()
     expect(tree).toMatchSnapshot()
   })
+
+  it('should render correctly with a "white" attribute', () => {
+    const tree = renderer.create(<BpkLink href='#' white>Link</BpkLink>).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
 })

@@ -287,6 +287,21 @@
       "value": "{!GRAY_500}",
       "type": "color",
       "category": "text-color"
+    },
+    "LINK_WHITE_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-color"
+    },
+    "LINK_WHITE_HOVER_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-color"
+    },
+    "LINK_WHITE_ACTIVE_COLOR": {
+      "value": "{!GRAY_100}",
+      "type": "color",
+      "category": "text-color"
     }
   }
 }
