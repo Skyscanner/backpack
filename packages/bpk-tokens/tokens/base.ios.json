@@ -37,6 +37,12 @@
       "name": "autosuggestListItemFocusedBackgroundColor"
     },
     {
+      "category": "badge",
+      "value": "700",
+      "type": "number",
+      "name": "sponsoredBadgeFontWeight"
+    },
+    {
       "type": "size",
       "value": "3",
       "category": "radii",

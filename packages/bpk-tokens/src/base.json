@@ -2,6 +2,7 @@
   "imports": [
     "./base/animations.json",
     "./base/autosuggest.json",
+    "./base/badge.json",
     "./base/borders.json",
     "./base/box-shadows.json",
     "./base/breakpoints.json",

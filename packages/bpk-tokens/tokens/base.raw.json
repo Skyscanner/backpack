@@ -111,6 +111,12 @@
       "type": "color",
       "name": "AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR"
     },
+    "SPONSORED_BADGE_FONT_WEIGHT": {
+      "category": "badge",
+      "value": "700",
+      "type": "number",
+      "name": "SPONSORED_BADGE_FONT_WEIGHT"
+    },
     "BORDER_RADIUS_XS": {
       "type": "size",
       "value": ".1875rem",
@@ -1763,6 +1769,7 @@
     "AUTOSUGGEST_LIST_BACKGROUND_COLOR",
     "AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR",
     "AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR",
+    "SPONSORED_BADGE_FONT_WEIGHT",
     "BORDER_RADIUS_XS",
     "BORDER_RADIUS_SM",
     "BORDER_RADIUS_PILL",

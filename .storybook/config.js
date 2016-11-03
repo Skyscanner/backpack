@@ -41,5 +41,6 @@ configure(() => {
   require('./../packages/bpk-component-rtl-toggle/stories')
   require('./../packages/bpk-component-select/stories')
   require('./../packages/bpk-component-spinner/stories')
+  require('./../packages/bpk-component-sponsored-badge/stories')
   require('./../packages/bpk-component-table/stories')
 }, module)

@@ -1,0 +1,13 @@
+@import '~bpk-mixins/index';
+
+.bpk-sponsored-badge {
+  @include bpk-sponsored-badge;
+
+  &--docked-right {
+    @include bpk-sponsored-badge--docked-right;
+  }
+
+  &--docked-left {
+    @include bpk-sponsored-badge--docked-left;
+  }
+}

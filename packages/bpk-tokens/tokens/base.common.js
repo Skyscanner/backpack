@@ -5,6 +5,7 @@ module.exports = {
   autosuggestListBackgroundColor: "rgb(255, 255, 255)",
   autosuggestListItemActiveBackgroundColor: "rgb(230, 228, 235)",
   autosuggestListItemFocusedBackgroundColor: "rgb(243, 242, 245)",
+  sponsoredBadgeFontWeight: "700",
   borderRadiusXs: ".1875rem",
   borderRadiusSm: ".375rem",
   borderRadiusPill: "5rem",

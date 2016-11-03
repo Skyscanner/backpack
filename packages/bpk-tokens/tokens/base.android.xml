@@ -6,6 +6,7 @@
   <color name="AUTOSUGGEST_LIST_BACKGROUND_COLOR" category="autosuggest">#ffffffff</color>
   <color name="AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR" category="autosuggest">#e6e4ebff</color>
   <color name="AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR" category="autosuggest">#f3f2f5ff</color>
+  <property name="SPONSORED_BADGE_FONT_WEIGHT" category="badge">700</property>
   <property name="BORDER_RADIUS_XS" category="radii">3</property>
   <property name="BORDER_RADIUS_SM" category="radii">6</property>
   <property name="BORDER_RADIUS_PILL" category="radii">80</property>

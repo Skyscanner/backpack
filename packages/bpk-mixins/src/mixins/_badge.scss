@@ -1,0 +1,29 @@
+@import '../bonds';
+@import 'typography';
+
+////
+/// @group breakpoints
+////
+
+/// @alias bpk-sponsored-badge
+
+@mixin bpk-sponsored-badge {
+  display: table;
+  padding: 0 $bpk-spacing-xs;
+  border-radius: $bpk-border-radius-xs;
+  background-color: $bpk-color-yellow-500;
+  color: $bpk-color-gray-900;
+  font-size: $bpk-font-size-sm;
+  font-weight: $bpk-sponsored-ad-font-weight;
+  line-height: $bpk-line-height-sm;
+}
+
+@mixin bpk-sponsored-badge--docked-left {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+@mixin bpk-sponsored-badge--docked-right {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
