@@ -1,7 +1,7 @@
 {
   "global": {
     "type": "time",
-    "category": "animation"
+    "category": "animations"
   },
   "props": {
     "DURATION_XS": {

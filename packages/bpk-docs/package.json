@@ -16,6 +16,7 @@
     "react": "^15.0.0"
   },
   "devDependencies": {
+    "bpk-component-autosuggest": "^0.0.17",
     "bpk-component-banner-alert": "^0.0.9",
     "bpk-component-blockquote": "^0.0.22",
     "bpk-component-button": "^1.1.5",

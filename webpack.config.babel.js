@@ -39,6 +39,7 @@ const staticSiteGeneratorConfig = {
     ROUTES.MODALS,
 
     ROUTES.ORGANISMS,
+    ROUTES.AUTOSUGGEST,
 
     ROUTES.DOWNLOADS,
 

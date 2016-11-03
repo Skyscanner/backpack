@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <property name="DURATION_XS" category="animation">50ms</property>
-  <property name="DURATION_SM" category="animation">200ms</property>
-  <property name="DURATION_BASE" category="animation">400ms</property>
-  <property name="BORDER_RADIUS_XS" category="radius">3</property>
-  <property name="BORDER_RADIUS_SM" category="radius">6</property>
-  <property name="BORDER_RADIUS_PILL" category="radius">80</property>
-  <property name="BOX_SHADOW_SM" category="box-shadow">0px 1px 3px 0px rgba(#252033, .2)</property>
-  <property name="BOX_SHADOW_LG" category="box-shadow">0px 4px 14px 0px rgba(#252033, .25)</property>
-  <property name="BOX_SHADOW_XL" category="box-shadow">0px 12px 50px 0px rgba(#252033, .25)</property>
-  <property name="BREAKPOINT_MOBILE" category="breakpoint">516</property>
-  <property name="BREAKPOINT_TABLET" category="breakpoint">804</property>
-  <property name="BREAKPOINT_DESKTOP" category="breakpoint">1140</property>
-  <property name="BREAKPOINT_QUERY_MOBILE" category="breakpoint">(max-width: 32.25rem)</property>
-  <property name="BREAKPOINT_QUERY_TABLET" category="breakpoint">(max-width: 50.25rem)</property>
-  <property name="BREAKPOINT_QUERY_TABLET_ONLY" category="breakpoint">(min-width: 32.25rem + .0625rem) and (max-width: 50.25rem)</property>
-  <property name="BREAKPOINT_QUERY_ABOVE_MOBILE" category="breakpoint">(min-width: 32.25rem + .0625rem)</property>
-  <property name="BREAKPOINT_QUERY_ABOVE_TABLET" category="breakpoint">(min-width: 50.25rem + .0625rem)</property>
+  <property name="DURATION_XS" category="animations">50ms</property>
+  <property name="DURATION_SM" category="animations">200ms</property>
+  <property name="DURATION_BASE" category="animations">400ms</property>
+  <color name="AUTOSUGGEST_LIST_BACKGROUND_COLOR" category="autosuggest">#ffffffff</color>
+  <color name="AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR" category="autosuggest">#e6e4ebff</color>
+  <color name="AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR" category="autosuggest">#f3f2f5ff</color>
+  <property name="BORDER_RADIUS_XS" category="radii">3</property>
+  <property name="BORDER_RADIUS_SM" category="radii">6</property>
+  <property name="BORDER_RADIUS_PILL" category="radii">80</property>
+  <property name="BOX_SHADOW_SM" category="box-shadows">0px 1px 3px 0px rgba(#252033, .2)</property>
+  <property name="BOX_SHADOW_LG" category="box-shadows">0px 4px 14px 0px rgba(#252033, .25)</property>
+  <property name="BOX_SHADOW_XL" category="box-shadows">0px 12px 50px 0px rgba(#252033, .25)</property>
+  <property name="BREAKPOINT_MOBILE" category="breakpoints">516</property>
+  <property name="BREAKPOINT_TABLET" category="breakpoints">804</property>
+  <property name="BREAKPOINT_DESKTOP" category="breakpoints">1140</property>
+  <property name="BREAKPOINT_QUERY_MOBILE" category="breakpoints">(max-width: 32.25rem)</property>
+  <property name="BREAKPOINT_QUERY_TABLET" category="breakpoints">(max-width: 50.25rem)</property>
+  <property name="BREAKPOINT_QUERY_TABLET_ONLY" category="breakpoints">(min-width: 32.25rem + .0625rem) and (max-width: 50.25rem)</property>
+  <property name="BREAKPOINT_QUERY_ABOVE_MOBILE" category="breakpoints">(min-width: 32.25rem + .0625rem)</property>
+  <property name="BREAKPOINT_QUERY_ABOVE_TABLET" category="breakpoints">(min-width: 50.25rem + .0625rem)</property>
   <property name="BUTTON_PADDING_Y" category="buttons">6</property>
   <property name="BUTTON_PADDING_X" category="buttons">18</property>
   <property name="BUTTON_BORDER_RADIUS" category="buttons">80</property>
@@ -76,58 +79,58 @@
   <color name="CARD_BACKGROUND_COLOR" category="cards">#ffffffff</color>
   <color name="CARD_COLOR" category="cards">#524c61ff</color>
   <property name="CARD_PADDING" category="cards">12</property>
-  <color name="COLOR_WHITE" category="color">#ffffffff</color>
-  <color name="COLOR_BLUE_50" category="color">#e1f4f8ff</color>
-  <color name="COLOR_BLUE_100" category="color">#cbeef5ff</color>
-  <color name="COLOR_BLUE_200" category="color">#b0e4eeff</color>
-  <color name="COLOR_BLUE_300" category="color">#7fd7e8ff</color>
-  <color name="COLOR_BLUE_400" category="color">#40c4dfff</color>
-  <color name="COLOR_BLUE_500" category="color">#00b2d6ff</color>
-  <color name="COLOR_BLUE_600" category="color">#009dbdff</color>
-  <color name="COLOR_BLUE_700" category="color">#008ca8ff</color>
-  <color name="COLOR_BLUE_800" category="color">#00758cff</color>
-  <color name="COLOR_BLUE_900" category="color">#005567ff</color>
-  <color name="COLOR_GRAY_50" category="color">#f3f2f5ff</color>
-  <color name="COLOR_GRAY_100" category="color">#e6e4ebff</color>
-  <color name="COLOR_GRAY_200" category="color">#ccc9d4ff</color>
-  <color name="COLOR_GRAY_300" category="color">#b2aebdff</color>
-  <color name="COLOR_GRAY_400" category="color">#9a95a7ff</color>
-  <color name="COLOR_GRAY_500" category="color">#817b8fff</color>
-  <color name="COLOR_GRAY_600" category="color">#696179ff</color>
-  <color name="COLOR_GRAY_700" category="color">#524c61ff</color>
-  <color name="COLOR_GRAY_800" category="color">#3b344bff</color>
-  <color name="COLOR_GRAY_900" category="color">#252033ff</color>
-  <color name="COLOR_GREEN_50" category="color">#dff7ecff</color>
-  <color name="COLOR_GREEN_100" category="color">#cbf5e2ff</color>
-  <color name="COLOR_GREEN_200" category="color">#afedd1ff</color>
-  <color name="COLOR_GREEN_300" category="color">#80e8b9ff</color>
-  <color name="COLOR_GREEN_400" category="color">#40de97ff</color>
-  <color name="COLOR_GREEN_500" category="color">#00d775ff</color>
-  <color name="COLOR_GREEN_600" category="color">#00bd68ff</color>
-  <color name="COLOR_GREEN_700" category="color">#00a85dff</color>
-  <color name="COLOR_GREEN_800" category="color">#008c4dff</color>
-  <color name="COLOR_GREEN_900" category="color">#006638ff</color>
-  <color name="COLOR_RED_50" category="color">#fce9e8ff</color>
-  <color name="COLOR_RED_100" category="color">#ffd6d5ff</color>
-  <color name="COLOR_RED_200" category="color">#ffbbbaff</color>
-  <color name="COLOR_RED_300" category="color">#ff9694ff</color>
-  <color name="COLOR_RED_400" category="color">#fe7471ff</color>
-  <color name="COLOR_RED_500" category="color">#ff5452ff</color>
-  <color name="COLOR_RED_600" category="color">#eb423fff</color>
-  <color name="COLOR_RED_700" category="color">#de322fff</color>
-  <color name="COLOR_RED_800" category="color">#cc1f1dff</color>
-  <color name="COLOR_RED_900" category="color">#a80300ff</color>
-  <color name="COLOR_YELLOW_50" category="color">#faf4e1ff</color>
-  <color name="COLOR_YELLOW_100" category="color">#fcf1caff</color>
-  <color name="COLOR_YELLOW_200" category="color">#ffedb3ff</color>
-  <color name="COLOR_YELLOW_300" category="color">#ffe694ff</color>
-  <color name="COLOR_YELLOW_400" category="color">#ffde72ff</color>
-  <color name="COLOR_YELLOW_500" category="color">#ffd445ff</color>
-  <color name="COLOR_YELLOW_600" category="color">#f6c62bff</color>
-  <color name="COLOR_YELLOW_700" category="color">#e8b81cff</color>
-  <color name="COLOR_YELLOW_800" category="color">#cfa211ff</color>
-  <color name="COLOR_YELLOW_900" category="color">#a88100ff</color>
-  <property name="PRIMARY_GRADIENT" category="color">linear-gradient(135deg, #00b2d6 0, #02DDD8 1)</property>
+  <color name="COLOR_WHITE" category="colors">#ffffffff</color>
+  <color name="COLOR_BLUE_50" category="colors">#e1f4f8ff</color>
+  <color name="COLOR_BLUE_100" category="colors">#cbeef5ff</color>
+  <color name="COLOR_BLUE_200" category="colors">#b0e4eeff</color>
+  <color name="COLOR_BLUE_300" category="colors">#7fd7e8ff</color>
+  <color name="COLOR_BLUE_400" category="colors">#40c4dfff</color>
+  <color name="COLOR_BLUE_500" category="colors">#00b2d6ff</color>
+  <color name="COLOR_BLUE_600" category="colors">#009dbdff</color>
+  <color name="COLOR_BLUE_700" category="colors">#008ca8ff</color>
+  <color name="COLOR_BLUE_800" category="colors">#00758cff</color>
+  <color name="COLOR_BLUE_900" category="colors">#005567ff</color>
+  <color name="COLOR_GRAY_50" category="colors">#f3f2f5ff</color>
+  <color name="COLOR_GRAY_100" category="colors">#e6e4ebff</color>
+  <color name="COLOR_GRAY_200" category="colors">#ccc9d4ff</color>
+  <color name="COLOR_GRAY_300" category="colors">#b2aebdff</color>
+  <color name="COLOR_GRAY_400" category="colors">#9a95a7ff</color>
+  <color name="COLOR_GRAY_500" category="colors">#817b8fff</color>
+  <color name="COLOR_GRAY_600" category="colors">#696179ff</color>
+  <color name="COLOR_GRAY_700" category="colors">#524c61ff</color>
+  <color name="COLOR_GRAY_800" category="colors">#3b344bff</color>
+  <color name="COLOR_GRAY_900" category="colors">#252033ff</color>
+  <color name="COLOR_GREEN_50" category="colors">#dff7ecff</color>
+  <color name="COLOR_GREEN_100" category="colors">#cbf5e2ff</color>
+  <color name="COLOR_GREEN_200" category="colors">#afedd1ff</color>
+  <color name="COLOR_GREEN_300" category="colors">#80e8b9ff</color>
+  <color name="COLOR_GREEN_400" category="colors">#40de97ff</color>
+  <color name="COLOR_GREEN_500" category="colors">#00d775ff</color>
+  <color name="COLOR_GREEN_600" category="colors">#00bd68ff</color>
+  <color name="COLOR_GREEN_700" category="colors">#00a85dff</color>
+  <color name="COLOR_GREEN_800" category="colors">#008c4dff</color>
+  <color name="COLOR_GREEN_900" category="colors">#006638ff</color>
+  <color name="COLOR_RED_50" category="colors">#fce9e8ff</color>
+  <color name="COLOR_RED_100" category="colors">#ffd6d5ff</color>
+  <color name="COLOR_RED_200" category="colors">#ffbbbaff</color>
+  <color name="COLOR_RED_300" category="colors">#ff9694ff</color>
+  <color name="COLOR_RED_400" category="colors">#fe7471ff</color>
+  <color name="COLOR_RED_500" category="colors">#ff5452ff</color>
+  <color name="COLOR_RED_600" category="colors">#eb423fff</color>
+  <color name="COLOR_RED_700" category="colors">#de322fff</color>
+  <color name="COLOR_RED_800" category="colors">#cc1f1dff</color>
+  <color name="COLOR_RED_900" category="colors">#a80300ff</color>
+  <color name="COLOR_YELLOW_50" category="colors">#faf4e1ff</color>
+  <color name="COLOR_YELLOW_100" category="colors">#fcf1caff</color>
+  <color name="COLOR_YELLOW_200" category="colors">#ffedb3ff</color>
+  <color name="COLOR_YELLOW_300" category="colors">#ffe694ff</color>
+  <color name="COLOR_YELLOW_400" category="colors">#ffde72ff</color>
+  <color name="COLOR_YELLOW_500" category="colors">#ffd445ff</color>
+  <color name="COLOR_YELLOW_600" category="colors">#f6c62bff</color>
+  <color name="COLOR_YELLOW_700" category="colors">#e8b81cff</color>
+  <color name="COLOR_YELLOW_800" category="colors">#cfa211ff</color>
+  <color name="COLOR_YELLOW_900" category="colors">#a88100ff</color>
+  <property name="PRIMARY_GRADIENT" category="colors">linear-gradient(135deg, #00b2d6 0, #02DDD8 1)</property>
   <property name="INPUT_HEIGHT" category="forms">36</property>
   <property name="INPUT_PADDING_X" category="forms">12</property>
   <property name="INPUT_PADDING_Y" category="forms">6</property>
@@ -154,10 +157,10 @@
   <color name="LABEL_COLOR" category="forms">#524c61ff</color>
   <property name="LABEL_FONT_SIZE" category="forms">12</property>
   <property name="LABEL_LINE_HEIGHT" category="forms">18</property>
-  <property name="GRID_COLUMNS" category="grid">12</property>
-  <property name="GRID_GUTTER" category="grid">24</property>
-  <property name="GRID_CONTAINER_PADDING" category="grid">24</property>
-  <property name="GRID_CONTAINER_MOBILE_PADDING" category="grid">12</property>
+  <property name="GRID_COLUMNS" category="grids">12</property>
+  <property name="GRID_GUTTER" category="grids">24</property>
+  <property name="GRID_CONTAINER_PADDING" category="grids">24</property>
+  <property name="GRID_CONTAINER_MOBILE_PADDING" category="grids">12</property>
   <property name="LOGO_CLOUD_DEFAULT_HEIGHT" category="logos">42</property>
   <property name="LOGO_INLINE_DEFAULT_HEIGHT" category="logos">42</property>
   <property name="LOGO_STACKED_DEFAULT_HEIGHT" category="logos">calc(1.5rem * 3)</property>
@@ -192,74 +195,75 @@
   <property name="BANNER_ALERT_CHILDREN_PADDING_Y" category="notifications">6</property>
   <property name="BANNER_ALERT_CHILDREN_PADDING_X" category="notifications">12</property>
   <color name="BANNER_ALERT_CHILDREN_COLOR" category="notifications">#817b8fff</color>
-  <property name="SPACING_XS" category="spacing">6</property>
-  <property name="SPACING_SM" category="spacing">12</property>
-  <property name="SPACING_MD" category="spacing">18</property>
-  <property name="SPACING_BASE" category="spacing">24</property>
-  <property name="SPACING_LG" category="spacing">30</property>
-  <property name="SPACING_XL" category="spacing">36</property>
-  <property name="SPACING_XXL" category="spacing">42</property>
-  <property name="ONE_PIXEL_REM" category="spacing">1</property>
-  <property name="FONT_FAMILY_BASE" category="typesetting">-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif</property>
-  <color name="FONT_COLOR_BASE" category="text-color">#524c61ff</color>
-  <property name="LINE_HEIGHT_SM" category="typesetting">18</property>
-  <property name="LINE_HEIGHT_BASE" category="typesetting">24</property>
-  <property name="LINE_HEIGHT_LG" category="typesetting">30</property>
-  <property name="LINE_HEIGHT_XL" category="typesetting">42</property>
-  <property name="LINE_HEIGHT_XXL" category="typesetting">54</property>
-  <property name="FONT_SIZE_ROOT" category="typesetting">1</property>
-  <property name="FONT_SIZE_SM" category="typesetting">12</property>
-  <property name="FONT_SIZE_BASE" category="typesetting">16</property>
-  <property name="FONT_SIZE_LG" category="typesetting">24</property>
-  <property name="FONT_SIZE_XL" category="typesetting">28</property>
-  <property name="FONT_SIZE_XXL" category="typesetting">42</property>
-  <property name="H6_FONT_SIZE" category="font-size">12</property>
-  <property name="H5_FONT_SIZE" category="font-size">12</property>
-  <property name="H4_FONT_SIZE" category="font-size">16</property>
-  <property name="H3_FONT_SIZE" category="font-size">24</property>
-  <property name="H2_FONT_SIZE" category="font-size">28</property>
-  <property name="H1_FONT_SIZE" category="font-size">42</property>
-  <property name="H6_LINE_HEIGHT" category="line-height">18</property>
-  <property name="H5_LINE_HEIGHT" category="line-height">18</property>
-  <property name="H4_LINE_HEIGHT" category="line-height">24</property>
-  <property name="H3_LINE_HEIGHT" category="line-height">30</property>
-  <property name="H2_LINE_HEIGHT" category="line-height">42</property>
-  <property name="H1_LINE_HEIGHT" category="line-height">54</property>
-  <property name="H6_FONT_WEIGHT" category="font-weight">400</property>
-  <property name="H5_FONT_WEIGHT" category="font-weight">400</property>
-  <property name="H4_FONT_WEIGHT" category="font-weight">400</property>
-  <property name="H3_FONT_WEIGHT" category="font-weight">400</property>
-  <property name="H2_FONT_WEIGHT" category="font-weight">400</property>
-  <property name="H1_FONT_WEIGHT" category="font-weight">400</property>
-  <property name="H6_MARGIN_TOP" category="spacing">0</property>
-  <property name="H5_MARGIN_TOP" category="spacing">0</property>
-  <property name="H4_MARGIN_TOP" category="spacing">0</property>
-  <property name="H3_MARGIN_TOP" category="spacing">0</property>
-  <property name="H2_MARGIN_TOP" category="spacing">0</property>
-  <property name="H1_MARGIN_TOP" category="spacing">0</property>
-  <property name="H6_MARGIN_BOTTOM" category="spacing">12</property>
-  <property name="H5_MARGIN_BOTTOM" category="spacing">12</property>
-  <property name="H4_MARGIN_BOTTOM" category="spacing">12</property>
-  <property name="H3_MARGIN_BOTTOM" category="spacing">12</property>
-  <property name="H2_MARGIN_BOTTOM" category="spacing">12</property>
-  <property name="H1_MARGIN_BOTTOM" category="spacing">12</property>
-  <property name="HEADING_CONTENT_MARGIN_TOP" category="spacing">30</property>
-  <property name="P_MARGIN_TOP" category="spacing">0</property>
-  <property name="P_MARGIN_BOTTOM" category="spacing">12</property>
-  <property name="LIST_MARGIN_TOP" category="spacing">0</property>
-  <property name="LIST_MARGIN_BOTTOM" category="spacing">12</property>
-  <property name="LIST_NESTED_MARGIN_TOP" category="spacing">0</property>
-  <property name="LIST_NESTED_MARGIN_BOTTOM" category="spacing">0</property>
-  <property name="LIST_ITEM_MARGIN_TOP" category="spacing">0</property>
-  <property name="LIST_ITEM_MARGIN_BOTTOM" category="spacing">0</property>
-  <color name="LINK_COLOR" category="text-color">#00b2d6ff</color>
-  <property name="LINK_TEXT_DECORATION" category="text-decoration">none</property>
-  <color name="LINK_HOVER_COLOR" category="text-color">#524c61ff</color>
-  <property name="LINK_HOVER_TEXT_DECORATION" category="text-decoration">underline</property>
-  <color name="LINK_ACTIVE_COLOR" category="text-color">#817b8fff</color>
-  <color name="LINK_WHITE_COLOR" category="text-color">#ffffffff</color>
-  <color name="LINK_WHITE_HOVER_COLOR" category="text-color">#ffffffff</color>
-  <color name="LINK_WHITE_ACTIVE_COLOR" category="text-color">#e6e4ebff</color>
-  <property name="ZINDEX_MODAL_SCRIM" category="z-index">1000</property>
-  <property name="ZINDEX_MODAL" category="z-index">1100</property>
+  <property name="SPACING_XS" category="spacings">6</property>
+  <property name="SPACING_SM" category="spacings">12</property>
+  <property name="SPACING_MD" category="spacings">18</property>
+  <property name="SPACING_BASE" category="spacings">24</property>
+  <property name="SPACING_LG" category="spacings">30</property>
+  <property name="SPACING_XL" category="spacings">36</property>
+  <property name="SPACING_XXL" category="spacings">42</property>
+  <property name="ONE_PIXEL_REM" category="spacings">1</property>
+  <property name="FONT_FAMILY_BASE" category="typesettings">-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif</property>
+  <color name="FONT_COLOR_BASE" category="text-colors">#524c61ff</color>
+  <property name="LINE_HEIGHT_SM" category="typesettings">18</property>
+  <property name="LINE_HEIGHT_BASE" category="typesettings">24</property>
+  <property name="LINE_HEIGHT_LG" category="typesettings">30</property>
+  <property name="LINE_HEIGHT_XL" category="typesettings">42</property>
+  <property name="LINE_HEIGHT_XXL" category="typesettings">54</property>
+  <property name="FONT_SIZE_ROOT" category="typesettings">1</property>
+  <property name="FONT_SIZE_SM" category="typesettings">12</property>
+  <property name="FONT_SIZE_BASE" category="typesettings">16</property>
+  <property name="FONT_SIZE_LG" category="typesettings">24</property>
+  <property name="FONT_SIZE_XL" category="typesettings">28</property>
+  <property name="FONT_SIZE_XXL" category="typesettings">42</property>
+  <property name="H6_FONT_SIZE" category="font-sizes">12</property>
+  <property name="H5_FONT_SIZE" category="font-sizes">12</property>
+  <property name="H4_FONT_SIZE" category="font-sizes">16</property>
+  <property name="H3_FONT_SIZE" category="font-sizes">24</property>
+  <property name="H2_FONT_SIZE" category="font-sizes">28</property>
+  <property name="H1_FONT_SIZE" category="font-sizes">42</property>
+  <property name="H6_LINE_HEIGHT" category="line-heights">18</property>
+  <property name="H5_LINE_HEIGHT" category="line-heights">18</property>
+  <property name="H4_LINE_HEIGHT" category="line-heights">24</property>
+  <property name="H3_LINE_HEIGHT" category="line-heights">30</property>
+  <property name="H2_LINE_HEIGHT" category="line-heights">42</property>
+  <property name="H1_LINE_HEIGHT" category="line-heights">54</property>
+  <property name="H6_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="H5_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="H4_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="H3_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="H2_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="H1_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="H6_MARGIN_TOP" category="spacings">0</property>
+  <property name="H5_MARGIN_TOP" category="spacings">0</property>
+  <property name="H4_MARGIN_TOP" category="spacings">0</property>
+  <property name="H3_MARGIN_TOP" category="spacings">0</property>
+  <property name="H2_MARGIN_TOP" category="spacings">0</property>
+  <property name="H1_MARGIN_TOP" category="spacings">0</property>
+  <property name="H6_MARGIN_BOTTOM" category="spacings">12</property>
+  <property name="H5_MARGIN_BOTTOM" category="spacings">12</property>
+  <property name="H4_MARGIN_BOTTOM" category="spacings">12</property>
+  <property name="H3_MARGIN_BOTTOM" category="spacings">12</property>
+  <property name="H2_MARGIN_BOTTOM" category="spacings">12</property>
+  <property name="H1_MARGIN_BOTTOM" category="spacings">12</property>
+  <property name="HEADING_CONTENT_MARGIN_TOP" category="spacings">30</property>
+  <property name="P_MARGIN_TOP" category="spacings">0</property>
+  <property name="P_MARGIN_BOTTOM" category="spacings">12</property>
+  <property name="LIST_MARGIN_TOP" category="spacings">0</property>
+  <property name="LIST_MARGIN_BOTTOM" category="spacings">12</property>
+  <property name="LIST_NESTED_MARGIN_TOP" category="spacings">0</property>
+  <property name="LIST_NESTED_MARGIN_BOTTOM" category="spacings">0</property>
+  <property name="LIST_ITEM_MARGIN_TOP" category="spacings">0</property>
+  <property name="LIST_ITEM_MARGIN_BOTTOM" category="spacings">0</property>
+  <color name="LINK_COLOR" category="text-colors">#00b2d6ff</color>
+  <property name="LINK_TEXT_DECORATION" category="text-decorations">none</property>
+  <color name="LINK_HOVER_COLOR" category="text-colors">#524c61ff</color>
+  <property name="LINK_HOVER_TEXT_DECORATION" category="text-decorations">underline</property>
+  <color name="LINK_ACTIVE_COLOR" category="text-colors">#817b8fff</color>
+  <color name="LINK_WHITE_COLOR" category="text-colors">#ffffffff</color>
+  <color name="LINK_WHITE_HOVER_COLOR" category="text-colors">#ffffffff</color>
+  <color name="LINK_WHITE_ACTIVE_COLOR" category="text-colors">#e6e4ebff</color>
+  <property name="ZINDEX_AUTOSUGGEST" category="z-indices">900</property>
+  <property name="ZINDEX_MODAL_SCRIM" category="z-indices">1000</property>
+  <property name="ZINDEX_MODAL" category="z-indices">1100</property>
 </resources>

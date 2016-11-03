@@ -3,7 +3,7 @@ var tinycolor = require('tinycolor2')
 var tokens = require('bpk-tokens/tokens/base.raw.json')
 
 var colors = _(tokens.props)
-  .filter({ 'category': 'color', 'type': 'color' })
+  .filter({ 'category': 'colors', 'type': 'color' })
   .keyBy('name')
   .mapValues('value')
   .mapKeys(function (value, key) {

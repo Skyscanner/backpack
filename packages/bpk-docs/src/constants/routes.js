@@ -28,6 +28,7 @@ export const NOTIFICATIONS = '/docs/molecules/notifications'
 export const MODALS = '/docs/molecules/modals'
 
 export const ORGANISMS = '/docs/organisms'
+export const AUTOSUGGEST = '/docs/organisms/autosuggest'
 
 export const DOWNLOADS = '/downloads'
 

@@ -4,9 +4,12 @@
   ],
   "global": {
     "type": "number",
-    "category": "z-index"
+    "category": "z-indices"
   },
   "props": {
+    "ZINDEX_AUTOSUGGEST": {
+      "value": "{!ZINDEX_AUTOSUGGEST}"
+    },
     "ZINDEX_MODAL_SCRIM": {
       "value": "{!ZINDEX_MODAL_SCRIM}"
     },

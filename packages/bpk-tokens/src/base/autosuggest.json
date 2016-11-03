@@ -1,0 +1,22 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "autosuggest"
+  },
+  "props": {
+    "AUTOSUGGEST_LIST_BACKGROUND_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR": {
+      "value": "{!GRAY_100}",
+      "type": "color"
+    },
+    "AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR": {
+      "value": "{!GRAY_50}",
+      "type": "color"
+    }
+  }
+}

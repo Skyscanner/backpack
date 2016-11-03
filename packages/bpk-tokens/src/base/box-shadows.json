@@ -1,7 +1,7 @@
 {
   "global": {
     "type": "box-shadow",
-    "category": "box-shadow"
+    "category": "box-shadows"
   },
   "props": {
     "BOX_SHADOW_SM": {

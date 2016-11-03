@@ -10,5 +10,117 @@ npm install bpk-component-autosuggest --save
 
 ### Usage
 
-`bpk-component-autosuggest` is a lightweight wrapper component around [react-autosuggest](http://react-autosuggest.js.org/), 
-please refer to [it's documentation](https://github.com/moroshko/react-autosuggest#basic-usage) for basic usage.
+```js
+import React, { Component } from 'react'
+import BpkLabel from 'bpk-component-label'
+import { withRtlSupport } from 'bpk-component-icon'
+import FlightIcon from 'bpk-component-icon/lg/flight'
+import BpkAutosuggest, { BpkAutosuggestSuggestion } from 'bpk-component-autosuggest'
+
+const BpkFlightIcon = withRtlSupport(FlightIcon)
+
+const offices = [
+  {
+    name: 'Barcelona',
+    code: 'BCN',
+    country: 'Spain'
+  },
+  ...
+]
+
+const getSuggestions = (value) => {
+  const inputValue = value.trim().toLowerCase()
+  const inputLength = inputValue.length
+
+  return inputLength === 0 ? [] : offices.filter(office =>
+    office.name.toLowerCase().indexOf(inputValue) !== -1
+  )
+}
+
+const getSuggestionValue = ({ name, code }) => `${name} (${code})`
+
+const renderSuggestion = (suggestion) => (
+  <BpkAutosuggestSuggestion 
+    value={getSuggestionValue(suggestion)}
+    subHeading={suggestion.country}
+    tertiaryLabel='Airport'
+    indent={suggestion.indent}
+    icon={BpkFlightIcon}
+  />
+)
+
+class MyComonent extends Component {
+  constructor () {
+    super()
+
+    this.state = {
+      value: '',
+      suggestions: []
+    }
+
+    this.onChange = this.onChange.bind(this)
+    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this)
+    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this)
+  }
+
+  onChange (e, { newValue }) {
+    this.setState({
+      value: newValue
+    })
+  }
+
+  onSuggestionsFetchRequested ({ value }) {
+    this.setState({
+      suggestions: getSuggestions(value)
+    })
+  }
+
+  onSuggestionsClearRequested () {
+    this.setState({
+      suggestions: []
+    })
+  }
+
+  render () {
+    const { value, suggestions } = this.state
+
+    const inputProps = {
+      id: 'my-autosuggest',
+      placeholder: 'Enter an office name',
+      value,
+      onChange: this.onChange
+    }
+
+    return (
+      <div>
+        <BpkLabel label='Office' htmlFor={autosuggestId} />
+        <BpkAutosuggest
+          suggestions={suggestions}
+          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+          getSuggestionValue={getSuggestionValue}
+          renderSuggestion={renderSuggestion}
+          inputProps={inputProps}
+        />
+      </div>
+    )
+  }
+}
+
+```
+
+### Props
+
+*BpkAutosuggest:*
+
+[Please refer to react-autosuggest's documentation](https://github.com/moroshko/react-autosuggest#props).
+
+*BpkAutosuggestSuggestion:*
+
+| Property          | PropType             | Required | Default Value |
+| ----------------- | -------------------- | -------- | ------------- |
+| value             | string               | true     | -             |
+| subHeading        | string               | false    | null          |
+| tertiaryLabel     | string               | false    | null          |
+| icon              | func                 | false    | null          | 
+| indent            | bool                 | false    | false         | 

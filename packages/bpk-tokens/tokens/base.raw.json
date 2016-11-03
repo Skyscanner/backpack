@@ -70,108 +70,127 @@
     "BREAKPOINT_TABLET": "50.25rem",
     "BREAKPOINT_DESKTOP": "71.25rem",
     "ONE_PIXEL_REM": ".0625rem",
+    "ZINDEX_AUTOSUGGEST": "900",
     "ZINDEX_MODAL_SCRIM": "1000",
     "ZINDEX_MODAL": "1100"
   },
   "props": {
     "DURATION_XS": {
       "type": "time",
-      "category": "animation",
+      "category": "animations",
       "value": "50ms",
       "name": "DURATION_XS"
     },
     "DURATION_SM": {
       "type": "time",
-      "category": "animation",
+      "category": "animations",
       "value": "200ms",
       "name": "DURATION_SM"
     },
     "DURATION_BASE": {
       "type": "time",
-      "category": "animation",
+      "category": "animations",
       "value": "400ms",
       "name": "DURATION_BASE"
     },
+    "AUTOSUGGEST_LIST_BACKGROUND_COLOR": {
+      "category": "autosuggest",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "AUTOSUGGEST_LIST_BACKGROUND_COLOR"
+    },
+    "AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR": {
+      "category": "autosuggest",
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      "name": "AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR"
+    },
+    "AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR": {
+      "category": "autosuggest",
+      "value": "rgb(243, 242, 245)",
+      "type": "color",
+      "name": "AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR"
+    },
     "BORDER_RADIUS_XS": {
       "type": "size",
-      "category": "radius",
       "value": ".1875rem",
+      "category": "radii",
       "name": "BORDER_RADIUS_XS"
     },
     "BORDER_RADIUS_SM": {
       "type": "size",
-      "category": "radius",
       "value": ".375rem",
+      "category": "radii",
       "name": "BORDER_RADIUS_SM"
     },
     "BORDER_RADIUS_PILL": {
       "type": "size",
-      "category": "radius",
       "value": "5rem",
+      "category": "radii",
       "name": "BORDER_RADIUS_PILL"
     },
     "BOX_SHADOW_SM": {
       "type": "box-shadow",
-      "category": "box-shadow",
+      "category": "box-shadows",
       "value": "0px 1px 3px 0px rgba(#252033, .2)",
       "name": "BOX_SHADOW_SM"
     },
     "BOX_SHADOW_LG": {
       "type": "box-shadow",
-      "category": "box-shadow",
+      "category": "box-shadows",
       "value": "0px 4px 14px 0px rgba(#252033, .25)",
       "name": "BOX_SHADOW_LG"
     },
     "BOX_SHADOW_XL": {
       "type": "box-shadow",
-      "category": "box-shadow",
+      "category": "box-shadows",
       "value": "0px 12px 50px 0px rgba(#252033, .25)",
       "name": "BOX_SHADOW_XL"
     },
     "BREAKPOINT_MOBILE": {
-      "category": "breakpoint",
+      "category": "breakpoints",
       "value": "32.25rem",
       "type": "size",
       "name": "BREAKPOINT_MOBILE"
     },
     "BREAKPOINT_TABLET": {
-      "category": "breakpoint",
+      "category": "breakpoints",
       "value": "50.25rem",
       "type": "size",
       "name": "BREAKPOINT_TABLET"
     },
     "BREAKPOINT_DESKTOP": {
-      "category": "breakpoint",
+      "category": "breakpoints",
       "value": "71.25rem",
       "type": "size",
       "name": "BREAKPOINT_DESKTOP"
     },
     "BREAKPOINT_QUERY_MOBILE": {
-      "category": "breakpoint",
+      "category": "breakpoints",
       "value": "(max-width: 32.25rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_MOBILE"
     },
     "BREAKPOINT_QUERY_TABLET": {
-      "category": "breakpoint",
+      "category": "breakpoints",
       "value": "(max-width: 50.25rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_TABLET"
     },
     "BREAKPOINT_QUERY_TABLET_ONLY": {
-      "category": "breakpoint",
+      "category": "breakpoints",
       "value": "(min-width: 32.25rem + .0625rem) and (max-width: 50.25rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_TABLET_ONLY"
     },
     "BREAKPOINT_QUERY_ABOVE_MOBILE": {
-      "category": "breakpoint",
+      "category": "breakpoints",
       "value": "(min-width: 32.25rem + .0625rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_ABOVE_MOBILE"
     },
     "BREAKPOINT_QUERY_ABOVE_TABLET": {
-      "category": "breakpoint",
+      "category": "breakpoints",
       "value": "(min-width: 50.25rem + .0625rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_ABOVE_TABLET"
@@ -532,313 +551,313 @@
     },
     "COLOR_WHITE": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(255, 255, 255)",
       "name": "COLOR_WHITE"
     },
     "COLOR_BLUE_50": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(225, 244, 248)",
       "name": "COLOR_BLUE_50"
     },
     "COLOR_BLUE_100": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(203, 238, 245)",
       "name": "COLOR_BLUE_100"
     },
     "COLOR_BLUE_200": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(176, 228, 238)",
       "name": "COLOR_BLUE_200"
     },
     "COLOR_BLUE_300": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(127, 215, 232)",
       "name": "COLOR_BLUE_300"
     },
     "COLOR_BLUE_400": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(64, 196, 223)",
       "name": "COLOR_BLUE_400"
     },
     "COLOR_BLUE_500": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(0, 178, 214)",
       "name": "COLOR_BLUE_500"
     },
     "COLOR_BLUE_600": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(0, 157, 189)",
       "name": "COLOR_BLUE_600"
     },
     "COLOR_BLUE_700": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(0, 140, 168)",
       "name": "COLOR_BLUE_700"
     },
     "COLOR_BLUE_800": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(0, 117, 140)",
       "name": "COLOR_BLUE_800"
     },
     "COLOR_BLUE_900": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(0, 85, 103)",
       "name": "COLOR_BLUE_900"
     },
     "COLOR_GRAY_50": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(243, 242, 245)",
       "name": "COLOR_GRAY_50"
     },
     "COLOR_GRAY_100": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(230, 228, 235)",
       "name": "COLOR_GRAY_100"
     },
     "COLOR_GRAY_200": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(204, 201, 212)",
       "name": "COLOR_GRAY_200"
     },
     "COLOR_GRAY_300": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(178, 174, 189)",
       "name": "COLOR_GRAY_300"
     },
     "COLOR_GRAY_400": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(154, 149, 167)",
       "name": "COLOR_GRAY_400"
     },
     "COLOR_GRAY_500": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(129, 123, 143)",
       "name": "COLOR_GRAY_500"
     },
     "COLOR_GRAY_600": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(105, 97, 121)",
       "name": "COLOR_GRAY_600"
     },
     "COLOR_GRAY_700": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(82, 76, 97)",
       "name": "COLOR_GRAY_700"
     },
     "COLOR_GRAY_800": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(59, 52, 75)",
       "name": "COLOR_GRAY_800"
     },
     "COLOR_GRAY_900": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(37, 32, 51)",
       "name": "COLOR_GRAY_900"
     },
     "COLOR_GREEN_50": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(223, 247, 236)",
       "name": "COLOR_GREEN_50"
     },
     "COLOR_GREEN_100": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(203, 245, 226)",
       "name": "COLOR_GREEN_100"
     },
     "COLOR_GREEN_200": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(175, 237, 209)",
       "name": "COLOR_GREEN_200"
     },
     "COLOR_GREEN_300": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(128, 232, 185)",
       "name": "COLOR_GREEN_300"
     },
     "COLOR_GREEN_400": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(64, 222, 151)",
       "name": "COLOR_GREEN_400"
     },
     "COLOR_GREEN_500": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(0, 215, 117)",
       "name": "COLOR_GREEN_500"
     },
     "COLOR_GREEN_600": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(0, 189, 104)",
       "name": "COLOR_GREEN_600"
     },
     "COLOR_GREEN_700": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(0, 168, 93)",
       "name": "COLOR_GREEN_700"
     },
     "COLOR_GREEN_800": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(0, 140, 77)",
       "name": "COLOR_GREEN_800"
     },
     "COLOR_GREEN_900": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(0, 102, 56)",
       "name": "COLOR_GREEN_900"
     },
     "COLOR_RED_50": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(252, 233, 232)",
       "name": "COLOR_RED_50"
     },
     "COLOR_RED_100": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(255, 214, 213)",
       "name": "COLOR_RED_100"
     },
     "COLOR_RED_200": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(255, 187, 186)",
       "name": "COLOR_RED_200"
     },
     "COLOR_RED_300": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(255, 150, 148)",
       "name": "COLOR_RED_300"
     },
     "COLOR_RED_400": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(254, 116, 113)",
       "name": "COLOR_RED_400"
     },
     "COLOR_RED_500": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(255, 84, 82)",
       "name": "COLOR_RED_500"
     },
     "COLOR_RED_600": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(235, 66, 63)",
       "name": "COLOR_RED_600"
     },
     "COLOR_RED_700": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(222, 50, 47)",
       "name": "COLOR_RED_700"
     },
     "COLOR_RED_800": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(204, 31, 29)",
       "name": "COLOR_RED_800"
     },
     "COLOR_RED_900": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(168, 3, 0)",
       "name": "COLOR_RED_900"
     },
     "COLOR_YELLOW_50": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(250, 244, 225)",
       "name": "COLOR_YELLOW_50"
     },
     "COLOR_YELLOW_100": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(252, 241, 202)",
       "name": "COLOR_YELLOW_100"
     },
     "COLOR_YELLOW_200": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(255, 237, 179)",
       "name": "COLOR_YELLOW_200"
     },
     "COLOR_YELLOW_300": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(255, 230, 148)",
       "name": "COLOR_YELLOW_300"
     },
     "COLOR_YELLOW_400": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(255, 222, 114)",
       "name": "COLOR_YELLOW_400"
     },
     "COLOR_YELLOW_500": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(255, 212, 69)",
       "name": "COLOR_YELLOW_500"
     },
     "COLOR_YELLOW_600": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(246, 198, 43)",
       "name": "COLOR_YELLOW_600"
     },
     "COLOR_YELLOW_700": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(232, 184, 28)",
       "name": "COLOR_YELLOW_700"
     },
     "COLOR_YELLOW_800": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(207, 162, 17)",
       "name": "COLOR_YELLOW_800"
     },
     "COLOR_YELLOW_900": {
       "type": "color",
-      "category": "color",
+      "category": "colors",
       "value": "rgb(168, 129, 0)",
       "name": "COLOR_YELLOW_900"
     },
     "PRIMARY_GRADIENT": {
       "type": "background-image",
-      "category": "color",
+      "category": "colors",
       "value": "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)",
       "name": "PRIMARY_GRADIENT"
     },
@@ -999,25 +1018,25 @@
       "name": "LABEL_LINE_HEIGHT"
     },
     "GRID_COLUMNS": {
-      "category": "grid",
+      "category": "grids",
       "value": "12",
       "type": "number",
       "name": "GRID_COLUMNS"
     },
     "GRID_GUTTER": {
-      "category": "grid",
+      "category": "grids",
       "value": "1.5rem",
       "type": "size",
       "name": "GRID_GUTTER"
     },
     "GRID_CONTAINER_PADDING": {
-      "category": "grid",
+      "category": "grids",
       "value": "1.5rem",
       "type": "size",
       "name": "GRID_CONTAINER_PADDING"
     },
     "GRID_CONTAINER_MOBILE_PADDING": {
-      "category": "grid",
+      "category": "grids",
       "value": ".75rem",
       "type": "size",
       "name": "GRID_CONTAINER_MOBILE_PADDING"
@@ -1228,421 +1247,427 @@
     },
     "SPACING_XS": {
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "value": ".375rem",
       "name": "SPACING_XS"
     },
     "SPACING_SM": {
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "value": ".75rem",
       "name": "SPACING_SM"
     },
     "SPACING_MD": {
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "value": "1.125rem",
       "name": "SPACING_MD"
     },
     "SPACING_BASE": {
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "value": "1.5rem",
       "name": "SPACING_BASE"
     },
     "SPACING_LG": {
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "value": "1.875rem",
       "name": "SPACING_LG"
     },
     "SPACING_XL": {
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "value": "2.250rem",
       "name": "SPACING_XL"
     },
     "SPACING_XXL": {
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "value": "2.625rem",
       "name": "SPACING_XXL"
     },
     "ONE_PIXEL_REM": {
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "value": ".0625rem",
       "name": "ONE_PIXEL_REM"
     },
     "FONT_FAMILY_BASE": {
       "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
       "type": "font",
-      "category": "typesetting",
+      "category": "typesettings",
       "name": "FONT_FAMILY_BASE"
     },
     "FONT_COLOR_BASE": {
       "value": "rgb(82, 76, 97)",
       "type": "color",
-      "category": "text-color",
+      "category": "text-colors",
       "name": "FONT_COLOR_BASE"
     },
     "LINE_HEIGHT_SM": {
       "value": "1.125rem",
       "type": "number",
-      "category": "typesetting",
+      "category": "typesettings",
       "name": "LINE_HEIGHT_SM"
     },
     "LINE_HEIGHT_BASE": {
       "value": "1.5rem",
       "type": "number",
-      "category": "typesetting",
+      "category": "typesettings",
       "name": "LINE_HEIGHT_BASE"
     },
     "LINE_HEIGHT_LG": {
       "value": "1.875rem",
       "type": "number",
-      "category": "typesetting",
+      "category": "typesettings",
       "name": "LINE_HEIGHT_LG"
     },
     "LINE_HEIGHT_XL": {
       "value": "2.625rem",
       "type": "number",
-      "category": "typesetting",
+      "category": "typesettings",
       "name": "LINE_HEIGHT_XL"
     },
     "LINE_HEIGHT_XXL": {
       "value": "3.375rem",
       "type": "number",
-      "category": "typesetting",
+      "category": "typesettings",
       "name": "LINE_HEIGHT_XXL"
     },
     "FONT_SIZE_ROOT": {
       "value": "100%",
       "type": "size",
-      "category": "typesetting",
+      "category": "typesettings",
       "name": "FONT_SIZE_ROOT"
     },
     "FONT_SIZE_SM": {
       "value": ".75rem",
       "type": "size",
-      "category": "typesetting",
+      "category": "typesettings",
       "name": "FONT_SIZE_SM"
     },
     "FONT_SIZE_BASE": {
       "value": "1rem",
       "type": "size",
-      "category": "typesetting",
+      "category": "typesettings",
       "name": "FONT_SIZE_BASE"
     },
     "FONT_SIZE_LG": {
       "value": "1.5rem",
       "type": "size",
-      "category": "typesetting",
+      "category": "typesettings",
       "name": "FONT_SIZE_LG"
     },
     "FONT_SIZE_XL": {
       "value": "1.75rem",
       "type": "size",
-      "category": "typesetting",
+      "category": "typesettings",
       "name": "FONT_SIZE_XL"
     },
     "FONT_SIZE_XXL": {
       "value": "2.625rem",
       "type": "size",
-      "category": "typesetting",
+      "category": "typesettings",
       "name": "FONT_SIZE_XXL"
     },
     "H6_FONT_SIZE": {
       "value": ".75rem",
       "type": "size",
-      "category": "font-size",
+      "category": "font-sizes",
       "name": "H6_FONT_SIZE"
     },
     "H5_FONT_SIZE": {
       "value": ".75rem",
       "type": "size",
-      "category": "font-size",
+      "category": "font-sizes",
       "name": "H5_FONT_SIZE"
     },
     "H4_FONT_SIZE": {
       "value": "1rem",
       "type": "size",
-      "category": "font-size",
+      "category": "font-sizes",
       "name": "H4_FONT_SIZE"
     },
     "H3_FONT_SIZE": {
       "value": "1.5rem",
       "type": "size",
-      "category": "font-size",
+      "category": "font-sizes",
       "name": "H3_FONT_SIZE"
     },
     "H2_FONT_SIZE": {
       "value": "1.75rem",
       "type": "size",
-      "category": "font-size",
+      "category": "font-sizes",
       "name": "H2_FONT_SIZE"
     },
     "H1_FONT_SIZE": {
       "value": "2.625rem",
       "type": "size",
-      "category": "font-size",
+      "category": "font-sizes",
       "name": "H1_FONT_SIZE"
     },
     "H6_LINE_HEIGHT": {
       "value": "1.125rem",
       "type": "number",
-      "category": "line-height",
+      "category": "line-heights",
       "name": "H6_LINE_HEIGHT"
     },
     "H5_LINE_HEIGHT": {
       "value": "1.125rem",
       "type": "number",
-      "category": "line-height",
+      "category": "line-heights",
       "name": "H5_LINE_HEIGHT"
     },
     "H4_LINE_HEIGHT": {
       "value": "1.5rem",
       "type": "number",
-      "category": "line-height",
+      "category": "line-heights",
       "name": "H4_LINE_HEIGHT"
     },
     "H3_LINE_HEIGHT": {
       "value": "1.875rem",
       "type": "number",
-      "category": "line-height",
+      "category": "line-heights",
       "name": "H3_LINE_HEIGHT"
     },
     "H2_LINE_HEIGHT": {
       "value": "2.625rem",
       "type": "number",
-      "category": "line-height",
+      "category": "line-heights",
       "name": "H2_LINE_HEIGHT"
     },
     "H1_LINE_HEIGHT": {
       "value": "3.375rem",
       "type": "number",
-      "category": "line-height",
+      "category": "line-heights",
       "name": "H1_LINE_HEIGHT"
     },
     "H6_FONT_WEIGHT": {
       "value": "400",
       "type": "number",
-      "category": "font-weight",
+      "category": "font-weights",
       "name": "H6_FONT_WEIGHT"
     },
     "H5_FONT_WEIGHT": {
       "value": "400",
       "type": "number",
-      "category": "font-weight",
+      "category": "font-weights",
       "name": "H5_FONT_WEIGHT"
     },
     "H4_FONT_WEIGHT": {
       "value": "400",
       "type": "number",
-      "category": "font-weight",
+      "category": "font-weights",
       "name": "H4_FONT_WEIGHT"
     },
     "H3_FONT_WEIGHT": {
       "value": "400",
       "type": "number",
-      "category": "font-weight",
+      "category": "font-weights",
       "name": "H3_FONT_WEIGHT"
     },
     "H2_FONT_WEIGHT": {
       "value": "400",
       "type": "number",
-      "category": "font-weight",
+      "category": "font-weights",
       "name": "H2_FONT_WEIGHT"
     },
     "H1_FONT_WEIGHT": {
       "value": "400",
       "type": "number",
-      "category": "font-weight",
+      "category": "font-weights",
       "name": "H1_FONT_WEIGHT"
     },
     "H6_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "H6_MARGIN_TOP"
     },
     "H5_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "H5_MARGIN_TOP"
     },
     "H4_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "H4_MARGIN_TOP"
     },
     "H3_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "H3_MARGIN_TOP"
     },
     "H2_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "H2_MARGIN_TOP"
     },
     "H1_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "H1_MARGIN_TOP"
     },
     "H6_MARGIN_BOTTOM": {
       "value": ".75rem",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "H6_MARGIN_BOTTOM"
     },
     "H5_MARGIN_BOTTOM": {
       "value": ".75rem",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "H5_MARGIN_BOTTOM"
     },
     "H4_MARGIN_BOTTOM": {
       "value": ".75rem",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "H4_MARGIN_BOTTOM"
     },
     "H3_MARGIN_BOTTOM": {
       "value": ".75rem",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "H3_MARGIN_BOTTOM"
     },
     "H2_MARGIN_BOTTOM": {
       "value": ".75rem",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "H2_MARGIN_BOTTOM"
     },
     "H1_MARGIN_BOTTOM": {
       "value": ".75rem",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "H1_MARGIN_BOTTOM"
     },
     "HEADING_CONTENT_MARGIN_TOP": {
       "value": "1.875rem",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "HEADING_CONTENT_MARGIN_TOP"
     },
     "P_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "P_MARGIN_TOP"
     },
     "P_MARGIN_BOTTOM": {
       "value": ".75rem",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "P_MARGIN_BOTTOM"
     },
     "LIST_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "LIST_MARGIN_TOP"
     },
     "LIST_MARGIN_BOTTOM": {
       "value": ".75rem",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "LIST_MARGIN_BOTTOM"
     },
     "LIST_NESTED_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "LIST_NESTED_MARGIN_TOP"
     },
     "LIST_NESTED_MARGIN_BOTTOM": {
       "value": "0",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "LIST_NESTED_MARGIN_BOTTOM"
     },
     "LIST_ITEM_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "LIST_ITEM_MARGIN_TOP"
     },
     "LIST_ITEM_MARGIN_BOTTOM": {
       "value": "0",
       "type": "size",
-      "category": "spacing",
+      "category": "spacings",
       "name": "LIST_ITEM_MARGIN_BOTTOM"
     },
     "LINK_COLOR": {
       "value": "rgb(0, 178, 214)",
       "type": "color",
-      "category": "text-color",
+      "category": "text-colors",
       "name": "LINK_COLOR"
     },
     "LINK_TEXT_DECORATION": {
       "value": "none",
       "type": "text-decoration",
-      "category": "text-decoration",
+      "category": "text-decorations",
       "name": "LINK_TEXT_DECORATION"
     },
     "LINK_HOVER_COLOR": {
       "value": "rgb(82, 76, 97)",
       "type": "color",
-      "category": "text-color",
+      "category": "text-colors",
       "name": "LINK_HOVER_COLOR"
     },
     "LINK_HOVER_TEXT_DECORATION": {
       "value": "underline",
       "type": "text-decoration",
-      "category": "text-decoration",
+      "category": "text-decorations",
       "name": "LINK_HOVER_TEXT_DECORATION"
     },
     "LINK_ACTIVE_COLOR": {
       "value": "rgb(129, 123, 143)",
       "type": "color",
-      "category": "text-color",
+      "category": "text-colors",
       "name": "LINK_ACTIVE_COLOR"
     },
     "LINK_WHITE_COLOR": {
       "value": "rgb(255, 255, 255)",
       "type": "color",
-      "category": "text-color",
+      "category": "text-colors",
       "name": "LINK_WHITE_COLOR"
     },
     "LINK_WHITE_HOVER_COLOR": {
       "value": "rgb(255, 255, 255)",
       "type": "color",
-      "category": "text-color",
+      "category": "text-colors",
       "name": "LINK_WHITE_HOVER_COLOR"
     },
     "LINK_WHITE_ACTIVE_COLOR": {
       "value": "rgb(230, 228, 235)",
       "type": "color",
-      "category": "text-color",
+      "category": "text-colors",
       "name": "LINK_WHITE_ACTIVE_COLOR"
+    },
+    "ZINDEX_AUTOSUGGEST": {
+      "type": "number",
+      "category": "z-indices",
+      "value": "900",
+      "name": "ZINDEX_AUTOSUGGEST"
     },
     "ZINDEX_MODAL_SCRIM": {
       "type": "number",
-      "category": "z-index",
+      "category": "z-indices",
       "value": "1000",
       "name": "ZINDEX_MODAL_SCRIM"
     },
     "ZINDEX_MODAL": {
       "type": "number",
-      "category": "z-index",
+      "category": "z-indices",
       "value": "1100",
       "name": "ZINDEX_MODAL"
     }
@@ -1651,6 +1676,9 @@
     "DURATION_XS",
     "DURATION_SM",
     "DURATION_BASE",
+    "AUTOSUGGEST_LIST_BACKGROUND_COLOR",
+    "AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR",
+    "AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR",
     "BORDER_RADIUS_XS",
     "BORDER_RADIUS_SM",
     "BORDER_RADIUS_PILL",
@@ -1908,6 +1936,7 @@
     "LINK_WHITE_COLOR",
     "LINK_WHITE_HOVER_COLOR",
     "LINK_WHITE_ACTIVE_COLOR",
+    "ZINDEX_AUTOSUGGEST",
     "ZINDEX_MODAL_SCRIM",
     "ZINDEX_MODAL"
   ]

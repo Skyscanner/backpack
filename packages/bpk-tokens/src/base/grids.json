@@ -3,7 +3,7 @@
     "./aliases.json"
   ],
   "global": {
-    "category": "grid"
+    "category": "grids"
   },
   "props": {
     "GRID_COLUMNS": {

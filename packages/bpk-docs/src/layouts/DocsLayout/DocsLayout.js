@@ -59,6 +59,7 @@ const links = [
     category: 'Organisms',
     links: [
       { route: null, children: 'Flight itinerary' },
+      // { route: routes.AUTOSUGGEST, children: 'Autosuggest' },
       { route: null, children: 'Autosuggest' },
       { route: null, children: 'Date picker' },
       { route: null, children: 'Filters' },

@@ -6,302 +6,302 @@
     "FONT_FAMILY_BASE": {
       "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
       "type": "font",
-      "category": "typesetting"
+      "category": "typesettings"
     },
     "FONT_COLOR_BASE": {
       "value": "{!GRAY_700}",
       "type": "color",
-      "category": "text-color"
+      "category": "text-colors"
     },
     "LINE_HEIGHT_SM": {
       "value": "{!SPACING_MD}",
       "type": "number",
-      "category": "typesetting"
+      "category": "typesettings"
     },
     "LINE_HEIGHT_BASE": {
       "value": "{!SPACING_BASE}",
       "type": "number",
-      "category": "typesetting"
+      "category": "typesettings"
     },
     "LINE_HEIGHT_LG": {
       "value": "{!SPACING_LG}",
       "type": "number",
-      "category": "typesetting"
+      "category": "typesettings"
     },
     "LINE_HEIGHT_XL": {
       "value": "{!SPACING_XXL}",
       "type": "number",
-      "category": "typesetting"
+      "category": "typesettings"
     },
     "LINE_HEIGHT_XXL": {
       "value": "3.375rem",
       "type": "number",
-      "category": "typesetting"
+      "category": "typesettings"
     },
     "FONT_SIZE_ROOT": {
       "value": "100%",
       "type": "size",
-      "category": "typesetting"
+      "category": "typesettings"
     },
     "FONT_SIZE_SM": {
       "value": "{!FONT_SIZE_SM}",
       "type": "size",
-      "category": "typesetting"
+      "category": "typesettings"
     },
     "FONT_SIZE_BASE": {
       "value": "{!FONT_SIZE_BASE}",
       "type": "size",
-      "category": "typesetting"
+      "category": "typesettings"
     },
     "FONT_SIZE_LG": {
       "value": "{!FONT_SIZE_LG}",
       "type": "size",
-      "category": "typesetting"
+      "category": "typesettings"
     },
     "FONT_SIZE_XL": {
       "value": "{!FONT_SIZE_XL}",
       "type": "size",
-      "category": "typesetting"
+      "category": "typesettings"
     },
     "FONT_SIZE_XXL": {
       "value": "{!FONT_SIZE_XXL}",
       "type": "size",
-      "category": "typesetting"
+      "category": "typesettings"
     },
     "H6_FONT_SIZE": {
       "value": "{!FONT_SIZE_SM}",
       "type": "size",
-      "category": "font-size"
+      "category": "font-sizes"
     },
     "H5_FONT_SIZE": {
       "value": "{!FONT_SIZE_SM}",
       "type": "size",
-      "category": "font-size"
+      "category": "font-sizes"
     },
     "H4_FONT_SIZE": {
       "value": "{!FONT_SIZE_BASE}",
       "type": "size",
-      "category": "font-size"
+      "category": "font-sizes"
     },
     "H3_FONT_SIZE": {
       "value": "{!FONT_SIZE_LG}",
       "type": "size",
-      "category": "font-size"
+      "category": "font-sizes"
     },
     "H2_FONT_SIZE": {
       "value": "{!FONT_SIZE_XL}",
       "type": "size",
-      "category": "font-size"
+      "category": "font-sizes"
     },
     "H1_FONT_SIZE": {
       "value": "{!FONT_SIZE_XXL}",
       "type": "size",
-      "category": "font-size"
+      "category": "font-sizes"
     },
     "H6_LINE_HEIGHT": {
       "value": "{!SPACING_MD}",
       "type": "number",
-      "category": "line-height"
+      "category": "line-heights"
     },
     "H5_LINE_HEIGHT": {
       "value": "{!SPACING_MD}",
       "type": "number",
-      "category": "line-height"
+      "category": "line-heights"
     },
     "H4_LINE_HEIGHT": {
       "value": "{!SPACING_BASE}",
       "type": "number",
-      "category": "line-height"
+      "category": "line-heights"
     },
     "H3_LINE_HEIGHT": {
       "value": "{!SPACING_LG}",
       "type": "number",
-      "category": "line-height"
+      "category": "line-heights"
     },
     "H2_LINE_HEIGHT": {
       "value": "{!SPACING_XXL}",
       "type": "number",
-      "category": "line-height"
+      "category": "line-heights"
     },
     "H1_LINE_HEIGHT": {
       "value": "3.375rem",
       "type": "number",
-      "category": "line-height"
+      "category": "line-heights"
     },
     "H6_FONT_WEIGHT": {
       "value": "400",
       "type": "number",
-      "category": "font-weight"
+      "category": "font-weights"
     },
     "H5_FONT_WEIGHT": {
       "value": "400",
       "type": "number",
-      "category": "font-weight"
+      "category": "font-weights"
     },
     "H4_FONT_WEIGHT": {
       "value": "400",
       "type": "number",
-      "category": "font-weight"
+      "category": "font-weights"
     },
     "H3_FONT_WEIGHT": {
       "value": "400",
       "type": "number",
-      "category": "font-weight"
+      "category": "font-weights"
     },
     "H2_FONT_WEIGHT": {
       "value": "400",
       "type": "number",
-      "category": "font-weight"
+      "category": "font-weights"
     },
     "H1_FONT_WEIGHT": {
       "value": "400",
       "type": "number",
-      "category": "font-weight"
+      "category": "font-weights"
     },
     "H6_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "H5_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "H4_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "H3_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "H2_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "H1_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "H6_MARGIN_BOTTOM": {
       "value": "{!SPACING_SM}",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "H5_MARGIN_BOTTOM": {
       "value": "{!SPACING_SM}",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "H4_MARGIN_BOTTOM": {
       "value": "{!SPACING_SM}",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "H3_MARGIN_BOTTOM": {
       "value": "{!SPACING_SM}",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "H2_MARGIN_BOTTOM": {
       "value": "{!SPACING_SM}",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "H1_MARGIN_BOTTOM": {
       "value": "{!SPACING_SM}",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "HEADING_CONTENT_MARGIN_TOP": {
       "value": "{!SPACING_LG}",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "P_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "P_MARGIN_BOTTOM": {
       "value": "{!SPACING_SM}",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "LIST_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "LIST_MARGIN_BOTTOM": {
       "value": "{!SPACING_SM}",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "LIST_NESTED_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "LIST_NESTED_MARGIN_BOTTOM": {
       "value": "0",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "LIST_ITEM_MARGIN_TOP": {
       "value": "0",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "LIST_ITEM_MARGIN_BOTTOM": {
       "value": "0",
       "type": "size",
-      "category": "spacing"
+      "category": "spacings"
     },
     "LINK_COLOR": {
       "value": "{!BLUE_500}",
       "type": "color",
-      "category": "text-color"
+      "category": "text-colors"
     },
     "LINK_TEXT_DECORATION": {
       "value": "none",
       "type": "text-decoration",
-      "category": "text-decoration"
+      "category": "text-decorations"
     },
     "LINK_HOVER_COLOR": {
       "value": "{!GRAY_700}",
       "type": "color",
-      "category": "text-color"
+      "category": "text-colors"
     },
     "LINK_HOVER_TEXT_DECORATION": {
       "value": "underline",
       "type": "text-decoration",
-      "category": "text-decoration"
+      "category": "text-decorations"
     },
     "LINK_ACTIVE_COLOR": {
       "value": "{!GRAY_500}",
       "type": "color",
-      "category": "text-color"
+      "category": "text-colors"
     },
     "LINK_WHITE_COLOR": {
       "value": "{!WHITE}",
       "type": "color",
-      "category": "text-color"
+      "category": "text-colors"
     },
     "LINK_WHITE_HOVER_COLOR": {
       "value": "{!WHITE}",
       "type": "color",
-      "category": "text-color"
+      "category": "text-colors"
     },
     "LINK_WHITE_ACTIVE_COLOR": {
       "value": "{!GRAY_100}",
       "type": "color",
-      "category": "text-color"
+      "category": "text-colors"
     }
   }
 }

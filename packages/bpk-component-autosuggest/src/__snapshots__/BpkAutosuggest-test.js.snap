@@ -47,7 +47,7 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
       className="bpk-autosuggest__suggestions-list"
       role="listbox">
       <li
-        className="bpk-autosuggest__suggestion"
+        className="bpk-autosuggest__suggestion-item"
         data-section-index={null}
         data-suggestion-index={0}
         id="react-autowhatever-1--item-0"
@@ -62,7 +62,7 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
         </span>
       </li>
       <li
-        className="bpk-autosuggest__suggestion"
+        className="bpk-autosuggest__suggestion-item"
         data-section-index={null}
         data-suggestion-index={1}
         id="react-autowhatever-1--item-1"
@@ -77,7 +77,7 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
         </span>
       </li>
       <li
-        className="bpk-autosuggest__suggestion"
+        className="bpk-autosuggest__suggestion-item"
         data-section-index={null}
         data-suggestion-index={2}
         id="react-autowhatever-1--item-2"
