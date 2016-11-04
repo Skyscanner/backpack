@@ -1,19 +1,48 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-11-04 - Autosuggest improvements
 
 **Changed:**
-- bpk-component-autosuggest:
+- bpk-component-autosuggest: 0.0.17 => 1.0.0
   - Updated to `^7.0.1` of `react-autosuggest`
   - Removed padding from suggestion containers with the idea
   
-- bpk-tokens:
+- bpk-tokens: 13.1.0 => 14.0.0
   - Removed automatic pluralisation of SCSS category names. This affects all token formats except 
     SCSS. Examples include: `animation` -> `animations`, `box-shadow` -> `box-shadows` etc
 
-**Added:**
-- bpk-component-autosuggest:
+- bpk-component-autosuggest: 0.0.17 => 1.0.0
   - Added `BpkAutosuggestSuggestion` component
+  
+**The following packages received a patch bump due to the dependency changes above:** 
+- bpk-component-banner-alert: 0.0.9 => 0.0.10
+- bpk-component-blockquote: 0.0.22 => 0.0.23
+- bpk-component-button: 1.1.5 => 1.1.6
+- bpk-component-card: 0.0.10 => 0.0.11
+- bpk-component-checkbox: 0.0.19 => 0.0.20
+- bpk-component-code: 0.0.22 => 0.0.23
+- bpk-component-content-container: 1.0.13 => 1.0.14
+- bpk-component-grid: 0.0.16 => 0.0.17
+- bpk-component-grid-toggle: 0.0.28 => 0.0.29
+- bpk-component-heading: 1.1.5 => 1.1.6
+- bpk-component-icon: 1.1.12 => 1.1.13
+- bpk-component-input: 0.0.19 => 0.0.20
+- bpk-component-label: 1.0.1 => 1.0.2
+- bpk-component-link: 0.3.0 => 0.3.1
+- bpk-component-list: 0.0.42 => 0.0.43
+- bpk-component-logo: 1.0.12 => 1.0.13
+- bpk-component-modal: 0.0.7 => 0.0.8
+- bpk-component-paragraph: 0.1.29 => 0.1.30
+- bpk-component-radio: 0.0.19 => 0.0.20
+- bpk-component-router-link: 0.1.28 => 0.1.29
+- bpk-component-rtl-toggle: 0.0.12 => 0.0.13
+- bpk-component-select: 0.0.19 => 0.0.20
+- bpk-component-spinner: 1.0.12 => 1.0.13
+- bpk-component-table: 0.0.42 => 0.0.43
+- bpk-docs: 0.0.40 => 0.0.41
+- bpk-mixins: 6.1.0 => 6.1.1
+- bpk-stylesheets: 2.0.4 => 2.0.5
+- bpk-svgs: 2.0.8 => 2.0.9
 
 ## 2016-11-02 - Links can now be white
 
