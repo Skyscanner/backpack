@@ -184,7 +184,7 @@ const components = [
   {
     id: 'sub-heading',
     title: 'Sub-headings',
-    blurb: 'Supplemental suggestion information can be displayed as a sub-heading.',
+    blurb: 'Additional suggestion information can be displayed as a sub-heading.',
     examples: [
       <AutosuggestExample
         renderSuggestion={(suggestion) => (

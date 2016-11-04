@@ -94,7 +94,6 @@
     &-sub-heading {
       display: table-cell;
       width: 100%;
-      color: $bpk-color-gray-500;
       vertical-align: top;
 
       @include bpk-text-sm;
@@ -102,7 +101,6 @@
 
     &-tertiary-label {
       display: table-cell;
-      color: $bpk-color-gray-300;
       vertical-align: top;
 
       @include bpk-text-sm;
