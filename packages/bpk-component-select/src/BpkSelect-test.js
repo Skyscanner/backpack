@@ -57,5 +57,43 @@ describe('BpkSelect', () => {
     ).toJSON()
     expect(tree).toMatchSnapshot()
   })
+
+  it('should render correctly with "large" attribute', () => {
+    const tree = renderer.create(
+      <BpkSelect
+        id='fruits'
+        name='fruits'
+        value=''
+        onChange={() => null}
+        options={[
+          { name: 'Apples', value: 'apples' },
+          { name: 'Oranges', value: 'oranges' },
+          { name: 'Pears', value: 'pears' },
+          { name: 'Tomatos', value: 'tomatos', disabled: true }
+        ]}
+        large
+      />
+    ).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should render correctly with "docked" attribute', () => {
+    const tree = renderer.create(
+      <BpkSelect
+        id='fruits'
+        name='fruits'
+        value=''
+        onChange={() => null}
+        options={[
+          { name: 'Apples', value: 'apples' },
+          { name: 'Oranges', value: 'oranges' },
+          { name: 'Pears', value: 'pears' },
+          { name: 'Tomatos', value: 'tomatos', disabled: true }
+        ]}
+        docked
+      />
+    ).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
 })
 

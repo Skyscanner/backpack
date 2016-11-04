@@ -33,6 +33,76 @@ exports[`BpkSelect should render correctly 1`] = `
 </select>
 `;
 
+exports[`BpkSelect should render correctly with "docked" attribute 1`] = `
+<select
+  className="bpk-select bpk-select--docked"
+  disabled={false}
+  id="fruits"
+  name="fruits"
+  onChange={[Function onChange]}
+  value="">
+  <option
+    disabled={undefined}
+    hidden={undefined}
+    value="apples">
+    Apples
+  </option>
+  <option
+    disabled={undefined}
+    hidden={undefined}
+    value="oranges">
+    Oranges
+  </option>
+  <option
+    disabled={undefined}
+    hidden={undefined}
+    value="pears">
+    Pears
+  </option>
+  <option
+    disabled={true}
+    hidden={undefined}
+    value="tomatos">
+    Tomatos
+  </option>
+</select>
+`;
+
+exports[`BpkSelect should render correctly with "large" attribute 1`] = `
+<select
+  className="bpk-select bpk-select--large"
+  disabled={false}
+  id="fruits"
+  name="fruits"
+  onChange={[Function onChange]}
+  value="">
+  <option
+    disabled={undefined}
+    hidden={undefined}
+    value="apples">
+    Apples
+  </option>
+  <option
+    disabled={undefined}
+    hidden={undefined}
+    value="oranges">
+    Oranges
+  </option>
+  <option
+    disabled={undefined}
+    hidden={undefined}
+    value="pears">
+    Pears
+  </option>
+  <option
+    disabled={true}
+    hidden={undefined}
+    value="tomatos">
+    Tomatos
+  </option>
+</select>
+`;
+
 exports[`BpkSelect should render correctly with a valid attribute equal to false 1`] = `
 <select
   className="bpk-select bpk-select--invalid"

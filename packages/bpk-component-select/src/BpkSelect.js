@@ -5,6 +5,8 @@ import './bpk-select.scss'
 const BpkSelect = (props) => {
   const classNames = [ 'bpk-select' ]
 
+  props.large ? classNames.push('bpk-select--large') : null
+  props.docked ? classNames.push('bpk-select--docked') : null
   props.valid === false ? classNames.push('bpk-select--invalid') : null
 
   return (
@@ -42,12 +44,16 @@ BpkSelect.propTypes = {
     })
   ).isRequired,
   valid: PropTypes.bool,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  large: PropTypes.bool,
+  docked: PropTypes.bool
 }
 
 BpkSelect.defaultProps = {
   valid: null,
-  disabled: false
+  disabled: false,
+  large: false,
+  docked: false
 }
 
 export default BpkSelect

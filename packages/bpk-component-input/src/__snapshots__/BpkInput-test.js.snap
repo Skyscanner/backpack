@@ -10,6 +10,30 @@ exports[`BpkInput should render correctly 1`] = `
   value="" />
 `;
 
+exports[`BpkInput should render correctly with "docked" attribute 1`] = `
+<input
+  className="bpk-input bpk-input--docked"
+  disabled={false}
+  id="test"
+  name="test"
+  onChange={[Function onChange]}
+  placeholder={null}
+  type="text"
+  value="" />
+`;
+
+exports[`BpkInput should render correctly with "large" attribute 1`] = `
+<input
+  className="bpk-input bpk-input--large"
+  disabled={false}
+  id="test"
+  name="test"
+  onChange={[Function onChange]}
+  placeholder={null}
+  type="text"
+  value="" />
+`;
+
 exports[`BpkInput should render correctly with placeholder 1`] = `
 <input
   className="bpk-input"

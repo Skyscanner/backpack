@@ -164,6 +164,185 @@ const components = [
     readme: require('raw!bpk-component-select/readme.md')
   },
   {
+    id: 'docked-inputs-and-selects',
+    title: 'Docked inputs & selects',
+    blurb: 'Both inputs and selects can be docked together to build a one-line form.',
+    examples: [
+      <form className='bpkdocs-forms-page__form'>
+        <div className='bpkdocs-forms-page__flights-form-row'>
+          <BpkLabel label='From' htmlFor='input_origin' />
+          <BpkLabel label='To' htmlFor='input_destination' />
+          <BpkLabel label='Depart' htmlFor='input_outbound' />
+          <BpkLabel label='Return' htmlFor='input_inbound' />
+        </div>
+        <div className='bpkdocs-forms-page__flights-form-row'>
+          <BpkInput
+            id='input_origin'
+            name='input_origin'
+            value='Edinburgh'
+            onChange={() => null}
+            docked
+            large
+          />
+          <BpkInput
+            id='input_destination'
+            name='input_destination'
+            value=''
+            placeholder='Country, city or airport'
+            onChange={() => null}
+            docked
+            large
+          />
+          <BpkInput
+            id='input_outbound'
+            name='input_outbound'
+            value={new Date().toLocaleDateString()}
+            onChange={() => null}
+            docked
+            large
+          />
+          <BpkInput
+            id='input_inbound'
+            name='input_inbound'
+            value={new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toLocaleDateString()}
+            onChange={() => null}
+            docked
+            large
+          />
+        </div>
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <div className='bpkdocs-forms-page__hotels-form-row'>
+          <BpkLabel label='Find hotel deals' htmlFor='input_hotels_destination' />
+          <BpkLabel label='Check-in' htmlFor='input_checkin' />
+          <BpkLabel label='Check-out' htmlFor='input_checkout' />
+          <BpkLabel label='Guests' htmlFor='input_guests' />
+          <BpkLabel label='Rooms' htmlFor='input_rooms' />
+        </div>
+        <div className='bpkdocs-forms-page__hotels-form-row'>
+          <BpkInput
+            id='input_hotels_destination'
+            name='input_hotels_destination'
+            value=''
+            placeholder='Enter destination or hotel name'
+            onChange={() => null}
+            docked
+            large
+          />
+          <BpkInput
+            id='input_checkin'
+            name='input_checkin'
+            value={new Date().toLocaleDateString()}
+            onChange={() => null}
+            docked
+            large
+          />
+          <BpkInput
+            id='input_checkout'
+            name='input_checkout'
+            value={new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toLocaleDateString()}
+            onChange={() => null}
+            docked
+            large
+          />
+          <BpkSelect
+            id='input_guests'
+            name='input_guests'
+            value='2'
+            onChange={() => null}
+            options={[
+              { name: '0', value: '0' },
+              { name: '1', value: '1' },
+              { name: '2', value: '2' },
+              { name: '3', value: '3' }
+            ]}
+            docked
+            large
+          />
+          <BpkSelect
+            id='input_rooms'
+            name='input_rooms'
+            value='1'
+            onChange={() => null}
+            options={[
+              { name: '0', value: '0' },
+              { name: '1', value: '1' },
+              { name: '2', value: '2' },
+              { name: '3', value: '3' }
+            ]}
+            docked
+            large
+          />
+        </div>
+      </form>,
+      <form className='bpkdocs-forms-page__form'>
+        <div className='bpkdocs-forms-page__car-hire-form-row'>
+          <BpkLabel label='Pick-up location' htmlFor='input_pickup_location' />
+          <BpkLabel label='Pick-up date' htmlFor='input_pickup_date' />
+          <BpkLabel label='Pick-up time' htmlFor='input_pickup_time' />
+          <BpkLabel label='Drop-off date' htmlFor='input_dropoff_date' />
+          <BpkLabel label='Drop-off time' htmlFor='input_dropoff_time' />
+        </div>
+        <div className='bpkdocs-forms-page__car-hire-form-row'>
+          <BpkInput
+            id='input_pickup_location'
+            name='input_pickup_location'
+            value=''
+            placeholder='Enter city or airport'
+            onChange={() => null}
+            docked
+            large
+          />
+          <BpkInput
+            id='input_pickup_date'
+            name='input_pickup_date'
+            value={new Date().toLocaleDateString()}
+            onChange={() => null}
+            docked
+            large
+          />
+          <BpkSelect
+            id='input_pickup_time'
+            name='input_pickup_time'
+            value='10:00'
+            onChange={() => null}
+            options={[
+              { name: '10:00', value: '10:00' },
+              { name: '10:15', value: '10:15' },
+              { name: '10:30', value: '10:30' },
+              { name: '10:45', value: '10:45' }
+            ]}
+            docked
+            large
+          />
+          <BpkInput
+            id='input_dropoff_date'
+            name='input_dropoff_date'
+            value={new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toLocaleDateString()}
+            onChange={() => null}
+            docked
+            large
+          />
+          <BpkSelect
+            id='input_dropoff_time'
+            name='input_dropoff_time'
+            value='10:00'
+            onChange={() => null}
+            options={[
+              { name: '10:00', value: '10:00' },
+              { name: '10:15', value: '10:15' },
+              { name: '10:30', value: '10:30' },
+              { name: '10:45', value: '10:45' }
+            ]}
+            docked
+            large
+          />
+        </div>
+      </form>
+
+    ]
+  },
+  {
     id: 'checkboxes',
     title: 'Checkboxes',
     blurb: 'Similar to selects, checkboxes override the default styles in most modern browsers. In some older browsers they simply fall back to the browser default.',

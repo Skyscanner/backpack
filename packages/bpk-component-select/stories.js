@@ -48,3 +48,79 @@ storiesOf('bpk-component-select', module)
       disabled
     />
   ))
+  .add('Large', () => (
+    <BpkSelect
+      id='large'
+      name='large'
+      value='oranges'
+      onChange={action('select changed')}
+      options={[
+        { name: 'Apples', value: 'apples' },
+        { name: 'Oranges', value: 'oranges' },
+        { name: 'Pears', value: 'pears' },
+        { name: 'Tomato', value: 'tomato', disabled: true }
+      ]}
+      large
+    />
+  ))
+  .add('Docked', () => (
+    <div style={{ display: 'flex' }}>
+      <BpkSelect
+        id='large'
+        name='large'
+        value='oranges'
+        onChange={action('select changed')}
+        options={[
+          { name: 'Apples', value: 'apples' },
+          { name: 'Oranges', value: 'oranges' },
+          { name: 'Pears', value: 'pears' },
+          { name: 'Tomato', value: 'tomato', disabled: true }
+        ]}
+        large
+        docked
+      />
+      <BpkSelect
+        id='large'
+        name='large'
+        value='oranges'
+        onChange={action('select changed')}
+        options={[
+          { name: 'Apples', value: 'apples' },
+          { name: 'Oranges', value: 'oranges' },
+          { name: 'Pears', value: 'pears' },
+          { name: 'Tomato', value: 'tomato', disabled: true }
+        ]}
+        large
+        docked
+      />
+      <BpkSelect
+        id='large'
+        name='large'
+        value='oranges'
+        onChange={action('select changed')}
+        options={[
+          { name: 'Apples', value: 'apples' },
+          { name: 'Oranges', value: 'oranges' },
+          { name: 'Pears', value: 'pears' },
+          { name: 'Tomato', value: 'tomato', disabled: true }
+        ]}
+        large
+        valid={false}
+        docked
+      />
+      <BpkSelect
+        id='large'
+        name='large'
+        value='oranges'
+        onChange={action('select changed')}
+        options={[
+          { name: 'Apples', value: 'apples' },
+          { name: 'Oranges', value: 'oranges' },
+          { name: 'Pears', value: 'pears' },
+          { name: 'Tomato', value: 'tomato', disabled: true }
+        ]}
+        large
+        docked
+      />
+    </div>
+  ))

@@ -4,4 +4,63 @@
   &__form {
     margin-bottom: $bpk-spacing-sm;
   }
+
+  &__flights-form-row {
+    > * {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
+    > *:nth-child(1),
+    > *:nth-child(2) {
+      width: 32%;
+    }
+
+    > *:nth-child(3),
+    > *:nth-child(4) {
+      width: 18%;
+    }
+  }
+
+  &__hotels-form-row {
+    > * {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
+    > *:first-child {
+      width: 48%;
+    }
+
+    > *:nth-child(2),
+    > *:nth-child(3) {
+      width: 18%;
+    }
+
+    > *:nth-child(4),
+    > *:nth-child(5) {
+      width: 8%;
+    }
+  }
+
+  &__car-hire-form-row {
+    > * {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
+    > *:first-child {
+      width: 40%;
+    }
+
+    > *:nth-child(2),
+    > *:nth-child(4) {
+      width: 18%;
+    }
+
+    > *:nth-child(3),
+    > *:nth-child(5) {
+      width: 12%;
+    }
+  }
 }

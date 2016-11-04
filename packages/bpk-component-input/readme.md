@@ -38,3 +38,5 @@ export default MyComponent = () => (
 | placeholder | string               | false     | null             |
 | valid       | bool                 | false     | null             |
 | disabled    | bool                 | false     | false            |
+| large       | bool                 | false     | false            |
+| docked      | bool                 | false     | false            |

@@ -17,6 +17,9 @@ const BpkInput = (props) => {
     ? classNames.push('bpk-input--valid')
     : props.valid === false ? classNames.push('bpk-input--invalid') : null
 
+  props.large ? classNames.push('bpk-input--large') : null
+  props.docked ? classNames.push('bpk-input--docked') : null
+
   return (
     <input
       className={classNames.join(' ')}
@@ -45,14 +48,18 @@ BpkInput.propTypes = {
   ]),
   placeholder: PropTypes.string,
   valid: PropTypes.bool,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  large: PropTypes.bool,
+  docked: PropTypes.bool
 }
 
 BpkInput.defaultProps = {
   type: INPUT_TYPES.TEXT,
   placeholder: null,
   valid: null,
-  disabled: false
+  disabled: false,
+  large: false,
+  docked: false
 }
 
 export default BpkInput

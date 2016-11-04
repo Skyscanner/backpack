@@ -78,5 +78,31 @@ describe('BpkInput', () => {
     ).toJSON()
     expect(tree).toMatchSnapshot()
   })
+
+  it('should render correctly with "large" attribute', () => {
+    const tree = renderer.create(
+      <BpkInput
+        id='test'
+        name='test'
+        value=''
+        onChange={() => null}
+        large
+      />
+    ).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should render correctly with "docked" attribute', () => {
+    const tree = renderer.create(
+      <BpkInput
+        id='test'
+        name='test'
+        value=''
+        onChange={() => null}
+        docked
+      />
+    ).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
 })
 

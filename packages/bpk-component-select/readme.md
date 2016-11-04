@@ -40,6 +40,8 @@ export default MyComponent = () => (
 | options   | array    | true     | -             |
 | valid     | bool     | false    | null          |
 | disabled  | bool     | false    | false         |
+| large     | bool     | false    | false         |
+| docked    | bool     | false    | false         |
 
 *`options` shape:*
 

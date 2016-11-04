@@ -9,5 +9,22 @@
 
   &--invalid {
     @include bpk-input--invalid;
+
+    & + .bpk-input--docked {
+      border-left-color: $bpk-select-invalid-border-color;
+
+      @include bpk-rtl {
+        border-right-color: $bpk-select-invalid-border-color;
+        border-left-color: $bpk-color-gray-100;
+      }
+    }
+  }
+
+  &--large {
+    @include bpk-input--large;
+  }
+
+  &--docked {
+    @include bpk-input--docked;
   }
 }

@@ -806,6 +806,12 @@
     },
     {
       "category": "forms",
+      "value": "1",
+      "type": "size",
+      "name": "inputBorderWidth"
+    },
+    {
+      "category": "forms",
       "value": "solid .0625rem #E6E4EB",
       "type": "border",
       "name": "inputBorder"
@@ -860,6 +866,12 @@
     },
     {
       "category": "forms",
+      "value": "42",
+      "type": "size",
+      "name": "inputLargeHeight"
+    },
+    {
+      "category": "forms",
       "value": "36",
       "type": "size",
       "name": "selectHeight"
@@ -887,6 +899,12 @@
       "value": "12",
       "type": "size",
       "name": "selectPaddingLeft"
+    },
+    {
+      "category": "forms",
+      "value": "1",
+      "type": "size",
+      "name": "selectBorderWidth"
     },
     {
       "category": "forms",
@@ -923,6 +941,12 @@
       "value": "rgb(255, 84, 82)",
       "type": "color",
       "name": "selectInvalidBorderColor"
+    },
+    {
+      "category": "forms",
+      "value": "42",
+      "type": "size",
+      "name": "selectLargeHeight"
     },
     {
       "category": "forms",

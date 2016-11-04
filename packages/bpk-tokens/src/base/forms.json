@@ -18,6 +18,10 @@
       "value": "{!SPACING_XS}",
       "type": "size"
     },
+    "INPUT_BORDER_WIDTH": {
+      "value": "{!ONE_PIXEL_REM}",
+      "type": "size"
+    },
     "INPUT_BORDER": {
       "value": "solid {!ONE_PIXEL_REM} {!GRAY_100}",
       "type": "border"
@@ -54,6 +58,10 @@
       "value": "{!RED_500}",
       "type": "color"
     },
+    "INPUT_LARGE_HEIGHT": {
+      "value": "{!SPACING_XXL} + {!SPACING_XS}",
+      "type": "size"
+    },
     "SELECT_HEIGHT": {
       "value": "{!SPACING_XL}",
       "type": "size"
@@ -72,6 +80,10 @@
     },
     "SELECT_PADDING_LEFT": {
       "value": "{!SPACING_SM}",
+      "type": "size"
+    },
+    "SELECT_BORDER_WIDTH": {
+      "value": "{!ONE_PIXEL_REM}",
       "type": "size"
     },
     "SELECT_BORDER": {
@@ -97,6 +109,10 @@
     "SELECT_INVALID_BORDER_COLOR": {
       "value": "{!RED_500}",
       "type": "color"
+    },
+    "SELECT_LARGE_HEIGHT": {
+      "value": "{!SPACING_XXL} + {!SPACING_XS}",
+      "type": "size"
     },
     "LABEL_COLOR": {
       "value": "{!GRAY_700}",

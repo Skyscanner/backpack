@@ -90,3 +90,55 @@ storiesOf('bpk-component-input', module)
       placeholder='Enter your telephone number'
     />
   ))
+  .add('Large', () => (
+    <BpkInput
+      id='large'
+      name='large'
+      value='Edinburgh'
+      onChange={action('input changed')}
+      placeholder='Enter a country, city or airport'
+      large
+    />
+  ))
+  .add('Docked', () => (
+    <div style={{ display: 'flex' }}>
+      <BpkInput
+        id='large'
+        name='large'
+        value='Edinburgh'
+        onChange={action('input changed')}
+        placeholder='Enter a country, city or airport'
+        large
+        valid
+        docked
+      />
+      <BpkInput
+        id='large'
+        name='large'
+        value='Edinburgh'
+        onChange={action('input changed')}
+        placeholder='Enter a country, city or airport'
+        large
+        valid={false}
+        docked
+      />
+      <BpkInput
+        id='large'
+        name='large'
+        value='Edinburgh'
+        onChange={action('input changed')}
+        placeholder='Enter a country, city or airport'
+        large
+        docked
+      />
+      <BpkInput
+        id='large'
+        name='large'
+        value='Edinburgh'
+        onChange={action('input changed')}
+        placeholder='Enter a country, city or airport'
+        large
+        docked
+      />
+    </div>
+  ))
