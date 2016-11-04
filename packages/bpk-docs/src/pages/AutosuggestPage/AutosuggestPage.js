@@ -166,7 +166,7 @@ const components = [
     blurb: [
       <BpkParagraph>
         You can insert a <BpkRouterLink to={ROUTES.ICONS}>Backpack icon</BpkRouterLink> next to each suggestion, useful
-        for differentiating between suggestions e.g. between airports, cities and countries.
+        for differentiation e.g. between airports, cities and countries.
       </BpkParagraph>
     ],
     examples: [
