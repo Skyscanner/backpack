@@ -41,6 +41,7 @@ const links = [
     links: [
       { route: routes.NOTIFICATIONS, children: 'Notifications' },
       { route: routes.MODALS, children: 'Modals' },
+      { route: routes.AUTOSUGGEST, children: 'Autosuggest' },
       { route: null, children: 'Popover' },
       { route: null, children: 'Tooltip' },
       { route: null, children: 'Pagination' },
@@ -59,8 +60,6 @@ const links = [
     category: 'Organisms',
     links: [
       { route: null, children: 'Flight itinerary' },
-      // { route: routes.AUTOSUGGEST, children: 'Autosuggest' },
-      { route: null, children: 'Autosuggest' },
       { route: null, children: 'Date picker' },
       { route: null, children: 'Filters' },
       { route: null, children: 'Header' },

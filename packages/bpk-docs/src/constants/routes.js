@@ -26,9 +26,9 @@ export const CARDS = '/docs/atoms/cards'
 export const MOLECULES = '/docs/molecules'
 export const NOTIFICATIONS = '/docs/molecules/notifications'
 export const MODALS = '/docs/molecules/modals'
+export const AUTOSUGGEST = '/docs/molecules/autosuggest'
 
 export const ORGANISMS = '/docs/organisms'
-export const AUTOSUGGEST = '/docs/organisms/autosuggest'
 
 export const DOWNLOADS = '/downloads'
 

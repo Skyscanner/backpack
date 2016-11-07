@@ -65,10 +65,10 @@ const Routes = (
         <IndexRedirect to={ROUTES.NOTIFICATIONS} />
         <Route path={ROUTES.NOTIFICATIONS} component={NotificationsPage} />
         <Route path={ROUTES.MODALS} component={ModalsPage} />
+        <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
       </Route>
       <Route path={ROUTES.ORGANISMS}>
         <IndexRedirect to={ROUTES.GETTING_STARTED} />
-        <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
       </Route>
     </Route>
     <Route path={ROUTES.DOWNLOADS} component={DownloadsPage} />
