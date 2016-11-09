@@ -3,17 +3,49 @@
 ## 2016-11-09 - Destructive buttons `disabled` bugfix ;)
 
 **Added:**
-- bpk-tokens:
-  - Added tokens for destructive button hove`disabled` state
+- bpk-tokens: 14.2.0 => 14.3.0
+  - Added tokens for destructive button `disabled` state
   
 **Fixed:**
-- bpk-component-button: 
-- bpk-mixins: 
-- bpk-tokens: 
+- bpk-component-button: 1.2.0 => 1.2.1
+- bpk-mixins: 6.3.0 => 6.3.1
+- bpk-tokens: 14.2.0 => 14.3.0
   - Fixed destructive button `disabled` state
   
-- bpk-component-button:
+- bpk-component-button: 1.2.0 => 1.2.1
   - Fixed link button border radius in safari
+  
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 1.0.2 => 1.0.3
+- bpk-component-banner-alert: 0.0.12 => 0.0.13
+- bpk-component-blockquote: 0.0.25 => 0.0.26
+- bpk-component-button: 1.2.0 => 1.2.1
+- bpk-component-card: 0.0.13 => 0.0.14
+- bpk-component-checkbox: 0.0.22 => 0.0.23
+- bpk-component-code: 0.0.25 => 0.0.26
+- bpk-component-content-container: 1.0.16 => 1.0.17
+- bpk-component-grid: 0.0.19 => 0.0.20
+- bpk-component-grid-toggle: 0.0.31 => 0.0.32
+- bpk-component-heading: 1.1.8 => 1.1.9
+- bpk-component-icon: 1.1.15 => 1.1.16
+- bpk-component-input: 1.0.1 => 1.0.2
+- bpk-component-label: 2.0.1 => 2.0.2
+- bpk-component-link: 0.3.3 => 0.3.4
+- bpk-component-list: 0.0.45 => 0.0.46
+- bpk-component-logo: 1.0.15 => 1.0.16
+- bpk-component-modal: 0.0.10 => 0.0.11
+- bpk-component-paragraph: 0.1.32 => 0.1.33
+- bpk-component-radio: 0.0.22 => 0.0.23
+- bpk-component-router-link: 0.1.31 => 0.1.32
+- bpk-component-rtl-toggle: 0.0.15 => 0.0.16
+- bpk-component-select: 1.0.1 => 1.0.2
+- bpk-component-spinner: 1.0.15 => 1.0.16
+- bpk-component-table: 0.0.45 => 0.0.46
+- bpk-docs: 0.0.43 => 0.0.44
+- bpk-mixins: 6.3.0 => 6.3.1
+- bpk-stylesheets: 2.0.7 => 2.0.8
+- bpk-svgs: 2.0.11 => 2.0.12
+- bpk-tokens: 14.2.0 => 14.3.0
   
 ## 2016-11-09 - Destructive buttons
 
