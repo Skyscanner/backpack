@@ -11,27 +11,18 @@ export const INPUT_TYPES = {
 }
 
 const BpkInput = (props) => {
+  const { valid, large, docked, className, ...rest } = props
   const classNames = [ 'bpk-input' ]
 
-  props.valid
+  valid
     ? classNames.push('bpk-input--valid')
-    : props.valid === false ? classNames.push('bpk-input--invalid') : null
+    : valid === false ? classNames.push('bpk-input--invalid') : null
 
-  props.large ? classNames.push('bpk-input--large') : null
-  props.docked ? classNames.push('bpk-input--docked') : null
+  large ? classNames.push('bpk-input--large') : null
+  docked ? classNames.push('bpk-input--docked') : null
+  className ? classNames.push(className) : null
 
-  return (
-    <input
-      className={classNames.join(' ')}
-      id={props.id}
-      name={props.name}
-      value={props.value}
-      onChange={props.onChange}
-      type={props.type}
-      placeholder={props.placeholder}
-      disabled={props.disabled}
-    />
-  )
+  return <input className={classNames.join(' ')} {...rest} />
 }
 
 BpkInput.propTypes = {
@@ -39,6 +30,7 @@ BpkInput.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string.isRequired,
   type: PropTypes.oneOf([
     INPUT_TYPES.TEXT,
     INPUT_TYPES.EMAIL,
@@ -46,18 +38,16 @@ BpkInput.propTypes = {
     INPUT_TYPES.PASSWORD,
     INPUT_TYPES.TEL
   ]),
-  placeholder: PropTypes.string,
+  className: PropTypes.string,
   valid: PropTypes.bool,
-  disabled: PropTypes.bool,
   large: PropTypes.bool,
   docked: PropTypes.bool
 }
 
 BpkInput.defaultProps = {
   type: INPUT_TYPES.TEXT,
-  placeholder: null,
+  className: null,
   valid: null,
-  disabled: false,
   large: false,
   docked: false
 }

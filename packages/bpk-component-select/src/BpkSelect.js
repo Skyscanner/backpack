@@ -3,30 +3,16 @@ import React, { PropTypes } from 'react'
 import './bpk-select.scss'
 
 const BpkSelect = (props) => {
+  const { valid, large, docked, className, ...rest } = props
   const classNames = [ 'bpk-select' ]
 
-  props.large ? classNames.push('bpk-select--large') : null
-  props.docked ? classNames.push('bpk-select--docked') : null
-  props.valid === false ? classNames.push('bpk-select--invalid') : null
+  large ? classNames.push('bpk-select--large') : null
+  docked ? classNames.push('bpk-select--docked') : null
+  valid === false ? classNames.push('bpk-select--invalid') : null
+  className ? classNames.push(className) : null
 
   return (
-    <select
-      className={classNames.join(' ')}
-      id={props.id}
-      name={props.name}
-      value={props.value}
-      onChange={props.onChange}
-      disabled={props.disabled}
-    >
-      {props.options.map((option) =>
-        <option
-          key={option.value}
-          value={option.value}
-          hidden={option.hidden}
-          disabled={option.disabled}
-        >{option.name}</option>
-      )}
-    </select>
+    <select className={classNames.join(' ')} {...rest} />
   )
 }
 
@@ -35,23 +21,15 @@ BpkSelect.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
-      hidden: PropTypes.bool,
-      disabled: PropTypes.bool
-    })
-  ).isRequired,
+  className: PropTypes.string,
   valid: PropTypes.bool,
-  disabled: PropTypes.bool,
   large: PropTypes.bool,
   docked: PropTypes.bool
 }
 
 BpkSelect.defaultProps = {
+  className: null,
   valid: null,
-  disabled: false,
   large: false,
   docked: false
 }

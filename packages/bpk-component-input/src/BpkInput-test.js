@@ -10,6 +10,7 @@ describe('BpkInput', () => {
         name='test'
         value=''
         onChange={() => null}
+        placeholder='Enter a country, city or airport'
       />
     ).toJSON()
     expect(tree).toMatchSnapshot()
@@ -21,18 +22,6 @@ describe('BpkInput', () => {
         id='test'
         name='test'
         value='My value'
-        onChange={() => null}
-      />
-    ).toJSON()
-    expect(tree).toMatchSnapshot()
-  })
-
-  it('should render correctly with placeholder', () => {
-    const tree = renderer.create(
-      <BpkInput
-        id='test'
-        name='test'
-        value=''
         onChange={() => null}
         placeholder='Enter a country, city or airport'
       />
@@ -47,6 +36,7 @@ describe('BpkInput', () => {
         name='test'
         value=''
         onChange={() => null}
+        placeholder='Enter a country, city or airport'
         valid
       />
     ).toJSON()
@@ -60,6 +50,7 @@ describe('BpkInput', () => {
         name='test'
         value=''
         onChange={() => null}
+        placeholder='Enter a country, city or airport'
         valid={false}
       />
     ).toJSON()
@@ -74,6 +65,7 @@ describe('BpkInput', () => {
         name='test'
         value=''
         onChange={() => null}
+        placeholder='Enter a country, city or airport'
       />
     ).toJSON()
     expect(tree).toMatchSnapshot()
@@ -86,6 +78,7 @@ describe('BpkInput', () => {
         name='test'
         value=''
         onChange={() => null}
+        placeholder='Enter a country, city or airport'
         large
       />
     ).toJSON()
@@ -99,6 +92,7 @@ describe('BpkInput', () => {
         name='test'
         value=''
         onChange={() => null}
+        placeholder='Enter a country, city or airport'
         docked
       />
     ).toJSON()

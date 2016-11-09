@@ -21,8 +21,7 @@ export default MyComponent = () => (
 
 ### Props
 
-| Property | PropType | Required | Default Value |
-| -------- | -------- | -------- | ------------- |
-| label    | string   | true     | -             |
-| htmlFor  | string   | true     | -             |
-| white    | bool     | false    | false         |
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| label     | string   | true     | -             |
+| white     | bool     | false    | false         |

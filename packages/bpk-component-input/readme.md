@@ -21,7 +21,7 @@ export default MyComponent = () => (
     name='origin'
     value='Edinburgh'
     onChange={() => console.log('input changed!')}
-    placeholder='Enter a country, city or airport'
+    placeholder='Country, city or airport'
   />
 )
 ```
@@ -34,9 +34,8 @@ export default MyComponent = () => (
 | name        | string               | true      | -                |
 | value       | string               | true      | -                |
 | onChange    | func                 | true      | -                |
+| placeholder | string               | true      | -                |
 | type        | INPUT_TYPES (one of) | false     | INPUT_TYPES.TEXT |
-| placeholder | string               | false     | null             |
 | valid       | bool                 | false     | null             |
-| disabled    | bool                 | false     | false            |
 | large       | bool                 | false     | false            |
 | docked      | bool                 | false     | false            |

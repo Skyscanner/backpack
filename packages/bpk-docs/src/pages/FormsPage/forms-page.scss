@@ -1,66 +1,57 @@
 @import '~bpk-mixins/index';
 
 .bpkdocs-forms-page {
+  &__viewport-alert {
+    display: none;
+
+    @include bpk-breakpoint-tablet {
+      display: block;
+    }
+  }
+
   &__form {
     margin-bottom: $bpk-spacing-sm;
-  }
 
-  &__flights-form-row {
-    > * {
-      display: inline-block;
-      vertical-align: bottom;
-    }
-
-    > *:nth-child(1),
-    > *:nth-child(2) {
-      width: 32%;
-    }
-
-    > *:nth-child(3),
-    > *:nth-child(4) {
-      width: 18%;
+    &--desktop-only {
+      @include bpk-breakpoint-tablet {
+        display: none;
+      }
     }
   }
 
-  &__hotels-form-row {
-    > * {
-      display: inline-block;
-      vertical-align: bottom;
-    }
-
-    > *:first-child {
-      width: 48%;
-    }
-
-    > *:nth-child(2),
-    > *:nth-child(3) {
-      width: 18%;
-    }
-
-    > *:nth-child(4),
-    > *:nth-child(5) {
-      width: 8%;
-    }
+  &__place {
+    display: inline-block;
+    width: 32%;
+    vertical-align: bottom;
   }
 
-  &__car-hire-form-row {
-    > * {
-      display: inline-block;
-      vertical-align: bottom;
-    }
+  &__date {
+    display: inline-block;
+    width: 18%;
+    vertical-align: bottom;
+  }
 
-    > *:first-child {
-      width: 40%;
-    }
+  &__hotels-destination {
+    display: inline-block;
+    width: 48%;
+    vertical-align: bottom;
+  }
 
-    > *:nth-child(2),
-    > *:nth-child(4) {
-      width: 18%;
-    }
+  &__car-hire-pickup-location {
+    display: inline-block;
+    width: 40%;
+    vertical-align: bottom;
+  }
 
-    > *:nth-child(3),
-    > *:nth-child(5) {
-      width: 12%;
-    }
+  &__number {
+    display: inline-block;
+    width: 8%;
+    vertical-align: bottom;
+  }
+
+  &__time {
+    display: inline-block;
+    width: 12%;
+    vertical-align: bottom;
   }
 }

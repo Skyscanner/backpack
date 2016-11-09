@@ -1,5 +1,42 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Changed:**
+- bpk-component-input:
+- bpk-component-select:
+- bpk-component-label:
+  - Added use of `transform-object-rest-spread` so make sure you add it to your `.babelrc`
+  
+- bpk-component-input:
+  - `placeholder` prop is now required
+  
+- bpk-component-select:
+  - `options` prop is now deprecated, just pass options as children like normal
+
+**Added:**
+- bpk-component-input:
+- bpk-component-select:
+- bpk-component-label:
+  - We are opting for a prop "passthrough" approach, which means any additional props passed to these components
+    will be rendered i.e. the backpack component wont swallow it up
+  - This means that consumers can now add custom `className` props - they will be added to classes already supplied 
+    by backpack
+  
+- bpk-component-input:
+- bpk-component-select:
+- bpk-mixins:
+- bpk-tokens:
+  - Inputs & selects can now be made `large` & `docked` for one line search forms
+  - Sass mixin api is as follows:
+    - `@include bpk-input--docked-first-child;`, `@include bpk-input--docked-last-child;` and 
+      `@include bpk-input--docked-middle-child;` are available for fine grained control 
+    - `@include bpk-input--docked;` is available as a combo of the above which uses pseudo selectors behind the scenes
+      to apply styles accordingly - it requires inputs / selects are placed together.
+
+**The following packages received a patch bump due to the dependency changes above:**
+- TODO
+
 ## 2016-11-04 - Autosuggest improvements
 
 **Changed:**
