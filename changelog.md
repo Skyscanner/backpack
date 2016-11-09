@@ -1,12 +1,41 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-11-09 - Destructive buttons
 
 **Added:**
-- bpk-component-button:
-- bpk-mixins:
-- bpk-tokens:
+- bpk-component-button: 1.1.7 => 1.2.0
+- bpk-mixins: 6.2.0 => 6.3.0
+- bpk-tokens: 14.1.0 => 14.2.0
   - Added `destructive` button style
+  
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 1.0.1 => 1.0.2
+- bpk-component-banner-alert: 0.0.11 => 0.0.12
+- bpk-component-blockquote: 0.0.24 => 0.0.25
+- bpk-component-card: 0.0.12 => 0.0.13
+- bpk-component-checkbox: 0.0.21 => 0.0.22
+- bpk-component-code: 0.0.24 => 0.0.25
+- bpk-component-content-container: 1.0.15 => 1.0.16
+- bpk-component-grid: 0.0.18 => 0.0.19
+- bpk-component-grid-toggle: 0.0.30 => 0.0.31
+- bpk-component-heading: 1.1.7 => 1.1.8
+- bpk-component-icon: 1.1.14 => 1.1.15
+- bpk-component-input: 1.0.0 => 1.0.1
+- bpk-component-label: 2.0.0 => 2.0.1
+- bpk-component-link: 0.3.2 => 0.3.3
+- bpk-component-list: 0.0.44 => 0.0.45
+- bpk-component-logo: 1.0.14 => 1.0.15
+- bpk-component-modal: 0.0.9 => 0.0.10
+- bpk-component-paragraph: 0.1.31 => 0.1.32
+- bpk-component-radio: 0.0.21 => 0.0.22
+- bpk-component-router-link: 0.1.30 => 0.1.31
+- bpk-component-rtl-toggle: 0.0.14 => 0.0.15
+- bpk-component-select: 1.0.0 => 1.0.1
+- bpk-component-spinner: 1.0.14 => 1.0.15
+- bpk-component-table: 0.0.44 => 0.0.45
+- bpk-docs: 0.0.42 => 0.0.43
+- bpk-stylesheets: 2.0.6 => 2.0.7
+- bpk-svgs: 2.0.10 => 2.0.11
 
 ## 2016-11-09 - Docked inputs & selects 
 
