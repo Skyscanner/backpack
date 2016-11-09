@@ -3,21 +3,23 @@ import React, { PropTypes } from 'react'
 import './bpk-label.scss'
 
 const BpkLabel = (props) => {
+  const { label, white, className, ...rest } = props
   const classNames = [ 'bpk-label' ]
 
-  props.white ? classNames.push('bpk-label--white') : null
+  white ? classNames.push('bpk-label--white') : null
+  className ? classNames.push(className) : null
 
-  return <label className={classNames.join(' ')} htmlFor={props.htmlFor}>{props.label}</label>
+  return <label className={classNames.join(' ')} {...rest}>{label}</label>
 }
 
 BpkLabel.propTypes = {
   label: PropTypes.string.isRequired,
-  htmlFor: PropTypes.string,
+  className: PropTypes.string,
   white: PropTypes.bool
 }
 
 BpkLabel.defaultProps = {
-  htmlFor: null,
+  className: null,
   white: false
 }
 

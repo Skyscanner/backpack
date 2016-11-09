@@ -1,7 +1,57 @@
 @import '~bpk-mixins/index';
 
 .bpkdocs-forms-page {
+  &__viewport-alert {
+    display: none;
+
+    @include bpk-breakpoint-tablet {
+      display: block;
+    }
+  }
+
   &__form {
     margin-bottom: $bpk-spacing-sm;
+
+    &--desktop-only {
+      @include bpk-breakpoint-tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__place {
+    display: inline-block;
+    width: 32%;
+    vertical-align: bottom;
+  }
+
+  &__date {
+    display: inline-block;
+    width: 18%;
+    vertical-align: bottom;
+  }
+
+  &__hotels-destination {
+    display: inline-block;
+    width: 48%;
+    vertical-align: bottom;
+  }
+
+  &__car-hire-pickup-location {
+    display: inline-block;
+    width: 40%;
+    vertical-align: bottom;
+  }
+
+  &__number {
+    display: inline-block;
+    width: 8%;
+    vertical-align: bottom;
+  }
+
+  &__time {
+    display: inline-block;
+    width: 12%;
+    vertical-align: bottom;
   }
 }

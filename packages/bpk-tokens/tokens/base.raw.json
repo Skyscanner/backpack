@@ -879,6 +879,12 @@
       "type": "size",
       "name": "INPUT_PADDING_Y"
     },
+    "INPUT_BORDER_WIDTH": {
+      "category": "forms",
+      "value": ".0625rem",
+      "type": "size",
+      "name": "INPUT_BORDER_WIDTH"
+    },
     "INPUT_BORDER": {
       "category": "forms",
       "value": "solid .0625rem #E6E4EB",
@@ -933,6 +939,12 @@
       "type": "color",
       "name": "INPUT_INVALID_BORDER_COLOR"
     },
+    "INPUT_LARGE_HEIGHT": {
+      "category": "forms",
+      "value": "2.625rem + .375rem",
+      "type": "size",
+      "name": "INPUT_LARGE_HEIGHT"
+    },
     "SELECT_HEIGHT": {
       "category": "forms",
       "value": "2.250rem",
@@ -962,6 +974,12 @@
       "value": ".75rem",
       "type": "size",
       "name": "SELECT_PADDING_LEFT"
+    },
+    "SELECT_BORDER_WIDTH": {
+      "category": "forms",
+      "value": ".0625rem",
+      "type": "size",
+      "name": "SELECT_BORDER_WIDTH"
     },
     "SELECT_BORDER": {
       "category": "forms",
@@ -998,6 +1016,12 @@
       "value": "rgb(255, 84, 82)",
       "type": "color",
       "name": "SELECT_INVALID_BORDER_COLOR"
+    },
+    "SELECT_LARGE_HEIGHT": {
+      "category": "forms",
+      "value": "2.625rem + .375rem",
+      "type": "size",
+      "name": "SELECT_LARGE_HEIGHT"
     },
     "LABEL_COLOR": {
       "category": "forms",
@@ -1807,6 +1831,7 @@
     "INPUT_HEIGHT",
     "INPUT_PADDING_X",
     "INPUT_PADDING_Y",
+    "INPUT_BORDER_WIDTH",
     "INPUT_BORDER",
     "INPUT_BORDER_RADIUS",
     "INPUT_BACKGROUND",
@@ -1816,17 +1841,20 @@
     "INPUT_DISABLED_BORDER_COLOR",
     "INPUT_DISABLED_COLOR",
     "INPUT_INVALID_BORDER_COLOR",
+    "INPUT_LARGE_HEIGHT",
     "SELECT_HEIGHT",
     "SELECT_PADDING_TOP",
     "SELECT_PADDING_RIGHT",
     "SELECT_PADDING_BOTTOM",
     "SELECT_PADDING_LEFT",
+    "SELECT_BORDER_WIDTH",
     "SELECT_BORDER",
     "SELECT_BORDER_RADIUS",
     "SELECT_COLOR",
     "SELECT_DISABLED_BORDER_COLOR",
     "SELECT_DISABLED_COLOR",
     "SELECT_INVALID_BORDER_COLOR",
+    "SELECT_LARGE_HEIGHT",
     "LABEL_COLOR",
     "LABEL_FONT_SIZE",
     "LABEL_LINE_HEIGHT",

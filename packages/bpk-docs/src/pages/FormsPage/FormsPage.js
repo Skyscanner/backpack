@@ -4,6 +4,7 @@ import BpkLabel from 'bpk-component-label'
 import BpkRadio from 'bpk-component-radio'
 import BpkSelect from 'bpk-component-select'
 import BpkCheckbox from 'bpk-component-checkbox'
+import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert'
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input'
 
 import './forms-page.scss'
@@ -21,6 +22,7 @@ const components = [
           id='input'
           name='input'
           value='Edinburgh'
+          placeholder='Country, city or airport'
           onChange={() => null}
         />
       </form>,
@@ -30,8 +32,8 @@ const components = [
           id='input_placeholder'
           name='input_placeholder'
           value=''
+          placeholder='Country, city or airport'
           onChange={() => null}
-          placeholder='Enter a country, city or airport'
         />
       </form>,
       <form className='bpkdocs-forms-page__form'>
@@ -40,6 +42,7 @@ const components = [
           id='input_valid'
           name='input_valid'
           value='Edinburgh'
+          placeholder='Country, city or airport'
           onChange={() => null}
           valid
         />
@@ -50,6 +53,7 @@ const components = [
           id='input_invalid'
           name='input_invalid'
           value='Edinbrvgh'
+          placeholder='Country, city or airport'
           onChange={() => null}
           valid={false}
         />
@@ -60,6 +64,7 @@ const components = [
           id='input_disabled'
           name='input_disabled'
           value='Edinburgh'
+          placeholder='Country, city or airport'
           onChange={() => null}
           disabled
         />
@@ -71,6 +76,7 @@ const components = [
           id='input_email'
           name='input_email'
           value='example@example.com'
+          placeholder='Country, city or airport'
           onChange={() => null}
         />
       </form>,
@@ -81,6 +87,7 @@ const components = [
           id='input_number'
           name='input_number'
           value='0'
+          placeholder='Country, city or airport'
           onChange={() => null}
         />
       </form>,
@@ -91,6 +98,7 @@ const components = [
           id='input_password'
           name='input_password'
           value='letmein'
+          placeholder='Country, city or airport'
           onChange={() => null}
         />
       </form>,
@@ -101,6 +109,7 @@ const components = [
           id='input_telephone'
           name='input_telephone'
           value='+441234567890'
+          placeholder='Country, city or airport'
           onChange={() => null}
         />
       </form>
@@ -119,13 +128,12 @@ const components = [
           name='select'
           value='economy'
           onChange={() => null}
-          options={[
-            { name: 'Economy', value: 'economy' },
-            { name: 'Premium Economy', value: 'premium_economy' },
-            { name: 'Business class', value: 'business' },
-            { name: 'First class', value: 'first' }
-          ]}
-        />
+        >
+          <option value='economy'>Economy</option>
+          <option value='premium_economy'>Premium Economy</option>
+          <option value='business'>Business class</option>
+          <option value='first'>First class</option>
+        </BpkSelect>
       </form>,
       <form className='bpkdocs-forms-page__form'>
         <BpkLabel label='Invalid select' htmlFor='select_invalid' />
@@ -134,15 +142,14 @@ const components = [
           name='select_invalid'
           value=''
           onChange={() => null}
-          options={[
-            { name: 'Please select...', value: '', hidden: true },
-            { name: 'Economy', value: 'economy' },
-            { name: 'Premium Economy', value: 'premium_economy' },
-            { name: 'Business class', value: 'business' },
-            { name: 'First class', value: 'first' }
-          ]}
           valid={false}
-        />
+        >
+          <option value='' hidden>Please select...</option>
+          <option value='economy'>Economy</option>
+          <option value='premium_economy'>Premium Economy</option>
+          <option value='business'>Business class</option>
+          <option value='first'>First class</option>
+        </BpkSelect>
       </form>,
       <form className='bpkdocs-forms-page__form'>
         <BpkLabel label='Disabled select' htmlFor='select_disabled' />
@@ -151,17 +158,218 @@ const components = [
           name='select_disabled'
           value='economy'
           onChange={() => null}
-          options={[
-            { name: 'Economy', value: 'economy' },
-            { name: 'Premium Economy', value: 'premium_economy' },
-            { name: 'Business class', value: 'business' },
-            { name: 'First class', value: 'first' }
-          ]}
           disabled
-        />
+        >
+          <option value='economy'>Economy</option>
+          <option value='premium_economy'>Premium Economy</option>
+          <option value='business'>Business class</option>
+          <option value='first'>First class</option>
+        </BpkSelect>
       </form>
     ],
     readme: require('raw!bpk-component-select/readme.md')
+  },
+  {
+    id: 'docked-inputs-and-selects',
+    title: 'Docked inputs & selects',
+    blurb: 'Both inputs and selects can be docked together to build a one-line form.',
+    examples: [
+      <div className='bpkdocs-forms-page__viewport-alert'>
+        <BpkBannerAlert
+          type={ALERT_TYPES.WARN}
+          message='These are only suitable for larger viewports - try viewing on a desktop device.'
+        />
+      </div>,
+      <form className='bpkdocs-forms-page__form bpkdocs-forms-page__form--desktop-only'>
+        <div>
+          <BpkLabel label='From' htmlFor='input_origin' className='bpkdocs-forms-page__place' />
+          <BpkLabel label='To' htmlFor='input_destination' className='bpkdocs-forms-page__place' />
+          <BpkLabel label='Depart' htmlFor='input_outbound' className='bpkdocs-forms-page__date' />
+          <BpkLabel label='Return' htmlFor='input_inbound' className='bpkdocs-forms-page__date' />
+        </div>
+        <div>
+          <BpkInput
+            id='input_origin'
+            name='input_origin'
+            value='Edinburgh'
+            placeholder='Country, city or airport'
+            onChange={() => null}
+            className='bpkdocs-forms-page__place'
+            docked
+            large
+          />
+          <BpkInput
+            id='input_destination'
+            name='input_destination'
+            value=''
+            placeholder='Country, city or airport'
+            onChange={() => null}
+            className='bpkdocs-forms-page__place'
+            docked
+            large
+          />
+          <BpkInput
+            id='input_outbound'
+            name='input_outbound'
+            value={new Date().toLocaleDateString()}
+            placeholder='Country, city or airport'
+            onChange={() => null}
+            className='bpkdocs-forms-page__date'
+            docked
+            large
+          />
+          <BpkInput
+            id='input_inbound'
+            name='input_inbound'
+            value={new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toLocaleDateString()}
+            placeholder='Country, city or airport'
+            onChange={() => null}
+            className='bpkdocs-forms-page__date'
+            docked
+            large
+          />
+        </div>
+      </form>,
+      <form className='bpkdocs-forms-page__form bpkdocs-forms-page__form--desktop-only'>
+        <div>
+          <BpkLabel label='Find hotel deals' htmlFor='input_hotels_destination' className='bpkdocs-forms-page__hotels-destination' />
+          <BpkLabel label='Check-in' htmlFor='input_checkin' className='bpkdocs-forms-page__date' />
+          <BpkLabel label='Check-out' htmlFor='input_checkout' className='bpkdocs-forms-page__date' />
+          <BpkLabel label='Guests' htmlFor='input_guests' className='bpkdocs-forms-page__number' />
+          <BpkLabel label='Rooms' htmlFor='input_rooms' className='bpkdocs-forms-page__number' />
+        </div>
+        <div>
+          <BpkInput
+            id='input_hotels_destination'
+            name='input_hotels_destination'
+            value=''
+            placeholder='Destination or hotel name'
+            onChange={() => null}
+            className='bpkdocs-forms-page__hotels-destination'
+            docked
+            large
+          />
+          <BpkInput
+            id='input_checkin'
+            name='input_checkin'
+            value={new Date().toLocaleDateString()}
+            placeholder=''
+            onChange={() => null}
+            className='bpkdocs-forms-page__date'
+            docked
+            large
+          />
+          <BpkInput
+            id='input_checkout'
+            name='input_checkout'
+            value={new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toLocaleDateString()}
+            placeholder=''
+            onChange={() => null}
+            className='bpkdocs-forms-page__date'
+            docked
+            large
+          />
+          <BpkSelect
+            id='input_guests'
+            name='input_guests'
+            value='2'
+            onChange={() => null}
+            className='bpkdocs-forms-page__number'
+            docked
+            large
+          >
+            <option value={0}>0</option>
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+          </BpkSelect>
+          <BpkSelect
+            id='input_rooms'
+            name='input_rooms'
+            value='1'
+            onChange={() => null}
+            className='bpkdocs-forms-page__number'
+            docked
+            large
+          >
+            <option value={0}>0</option>
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+          </BpkSelect>
+        </div>
+      </form>,
+      <form className='bpkdocs-forms-page__form bpkdocs-forms-page__form--desktop-only'>
+        <div>
+          <BpkLabel label='Pick-up location' htmlFor='input_pickup_location' className='bpkdocs-forms-page__car-hire-pickup-location' />
+          <BpkLabel label='Pick-up date' htmlFor='input_pickup_date' className='bpkdocs-forms-page__date' />
+          <BpkLabel label='Pick-up time' htmlFor='input_pickup_time' className='bpkdocs-forms-page__time' />
+          <BpkLabel label='Drop-off date' htmlFor='input_dropoff_date' className='bpkdocs-forms-page__date' />
+          <BpkLabel label='Drop-off time' htmlFor='input_dropoff_time' className='bpkdocs-forms-page__time' />
+        </div>
+        <div>
+          <BpkInput
+            id='input_pickup_location'
+            name='input_pickup_location'
+            value=''
+            placeholder='City or airport'
+            onChange={() => null}
+            className='bpkdocs-forms-page__car-hire-pickup-location'
+            docked
+            large
+          />
+          <BpkInput
+            id='input_pickup_date'
+            name='input_pickup_date'
+            value={new Date().toLocaleDateString()}
+            placeholder=''
+            onChange={() => null}
+            className='bpkdocs-forms-page__date'
+            docked
+            large
+          />
+          <BpkSelect
+            id='input_pickup_time'
+            name='input_pickup_time'
+            value='10:00'
+            placeholder=''
+            onChange={() => null}
+            className='bpkdocs-forms-page__time'
+            docked
+            large
+          >
+            <option value='10:00'>10:00</option>
+            <option value='10:15'>10:15</option>
+            <option value='10:30'>10:30</option>
+            <option value='10:45'>10:45</option>
+          </BpkSelect>
+          <BpkInput
+            id='input_dropoff_date'
+            name='input_dropoff_date'
+            value={new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toLocaleDateString()}
+            placeholder=''
+            onChange={() => null}
+            className='bpkdocs-forms-page__date'
+            docked
+            large
+          />
+          <BpkSelect
+            id='input_dropoff_time'
+            name='input_dropoff_time'
+            value='10:00'
+            onChange={() => null}
+            className='bpkdocs-forms-page__time'
+            docked
+            large
+          >
+            <option value='10:00'>10:00</option>
+            <option value='10:15'>10:15</option>
+            <option value='10:30'>10:30</option>
+            <option value='10:45'>10:45</option>
+          </BpkSelect>
+        </div>
+      </form>
+    ]
   },
   {
     id: 'checkboxes',

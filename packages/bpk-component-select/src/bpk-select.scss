@@ -5,5 +5,22 @@
 
   &--invalid {
     @include bpk-select--invalid;
+
+    & + .bpk-select--docked {
+      border-left-color: $bpk-select-invalid-border-color;
+
+      @include bpk-rtl {
+        border-right-color: $bpk-select-invalid-border-color;
+        border-left-color: $bpk-color-gray-100;
+      }
+    }
+  }
+
+  &--large {
+    @include bpk-select--large;
+  }
+
+  &--docked {
+    @include bpk-select--docked;
   }
 }

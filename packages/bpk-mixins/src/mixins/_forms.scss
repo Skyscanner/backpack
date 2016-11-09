@@ -104,6 +104,115 @@ $_form-input-icon-padding: $bpk-spacing-sm + $_form-input-size;
   }
 }
 
+/// Large form input. Modifies the bpk-input mixin.
+///
+/// @require {mixin} bpk-input
+///
+/// @example scss
+///   .selector {
+///     @include bpk-input();
+///     @include bpk-input--large();
+///   }
+
+@mixin bpk-input--large {
+  height: $bpk-input-large-height;
+}
+
+/// Docked (first-child) form input. Modifies the bpk-input mixin.
+///
+/// @require {mixin} bpk-input
+///
+/// @example scss
+///   .selector {
+///     @include bpk-input();
+///     @include bpk-input--docked-first-child();
+///   }
+
+@mixin bpk-input--docked-first-child {
+  border-right-width: 0;
+  border-radius: $bpk-input-border-radius 0 0 $bpk-input-border-radius;
+
+  &:focus {
+    position: relative; // brings outline to the front
+  }
+
+  @include bpk-rtl {
+    border-right-width: $bpk-input-border-width;
+    border-left-width: 0;
+    border-radius: 0 $bpk-input-border-radius $bpk-input-border-radius 0;
+  }
+}
+
+/// Docked (last-child) form input. Modifies the bpk-input mixin.
+///
+/// @require {mixin} bpk-input
+///
+/// @example scss
+///   .selector {
+///     @include bpk-input();
+///     @include bpk-input--docked-last-child();
+///   }
+
+@mixin bpk-input--docked-last-child {
+  border-radius: 0 $bpk-input-border-radius $bpk-input-border-radius 0;
+
+  &:focus {
+    position: relative; // brings outline to the front
+  }
+
+  @include bpk-rtl {
+    border-radius: $bpk-input-border-radius 0 0 $bpk-input-border-radius;
+  }
+}
+
+/// Docked (middle-child) form input. Modifies the bpk-input mixin.
+///
+/// @require {mixin} bpk-input
+///
+/// @example scss
+///   .selector {
+///     @include bpk-input();
+///     @include bpk-input--docked-middle-child();
+///   }
+
+@mixin bpk-input--docked-middle-child {
+  border-right-width: 0;
+  border-radius: 0;
+
+  &:focus {
+    position: relative; // brings outline to the front
+  }
+
+  @include bpk-rtl {
+    border-right-width: $bpk-input-border-width;
+    border-left-width: 0;
+  }
+}
+
+/// Docked form input (inputs must sit side-by-side in the DOM). Modifies the bpk-input mixin.
+///
+/// @require {mixin} bpk-input
+///
+/// @example scss
+///   .selector {
+///     @include bpk-input();
+///     @include bpk-input--docked();
+///   }
+
+@mixin bpk-input--docked {
+  &:first-child {
+    @include bpk-input--docked-first-child;
+  }
+
+  &:last-child {
+    @include bpk-input--docked-last-child;
+  }
+
+  &:not(:first-child):not(:last-child) {
+    @include bpk-input--docked-middle-child;
+  }
+}
+
 /// Form select input.
 ///
 /// @example scss
@@ -154,6 +263,115 @@ $_form-input-icon-padding: $bpk-spacing-sm + $_form-input-size;
 
 @mixin bpk-select--invalid {
   border-color: $bpk-select-invalid-border-color;
+}
+
+/// Large form select input. Modifies the bpk-select mixin.
+///
+/// @require {mixin} bpk-select
+///
+/// @example scss
+///   .selector {
+///     @include bpk-select();
+///     @include bpk-select--large();
+///   }
+
+@mixin bpk-select--large {
+  height: $bpk-select-large-height;
+}
+
+/// Docked (first-child) form select input. Modifies the bpk-select mixin.
+///
+/// @require {mixin} bpk-select
+///
+/// @example scss
+///   .selector {
+///     @include bpk-select();
+///     @include bpk-select--docked-first-child();
+///   }
+
+@mixin bpk-select--docked-first-child {
+  border-right-width: 0;
+  border-radius: $bpk-select-border-radius 0 0 $bpk-select-border-radius;
+
+  &:focus {
+    position: relative; // brings outline to the front
+  }
+
+  @include bpk-rtl {
+    border-right-width: $bpk-select-border-width;
+    border-left-width: 0;
+    border-radius: 0 $bpk-select-border-radius $bpk-select-border-radius 0;
+  }
+}
+
+/// Docked (last-child) form select input. Modifies the bpk-select mixin.
+///
+/// @require {mixin} bpk-select
+///
+/// @example scss
+///   .selector {
+///     @include bpk-select();
+///     @include bpk-select--docked-last-child();
+///   }
+
+@mixin bpk-select--docked-last-child {
+  border-radius: 0 $bpk-select-border-radius $bpk-select-border-radius 0;
+
+  &:focus {
+    position: relative; // brings outline to the front
+  }
+
+  @include bpk-rtl {
+    border-radius: $bpk-select-border-radius 0 0 $bpk-select-border-radius;
+  }
+}
+
+/// Docked (middle-child) form select input. Modifies the bpk-select mixin.
+///
+/// @require {mixin} bpk-select
+///
+/// @example scss
+///   .selector {
+///     @include bpk-select();
+///     @include bpk-select--docked-middle-child();
+///   }
+
+@mixin bpk-select--docked-middle-child {
+  border-right-width: 0;
+  border-radius: 0;
+
+  &:focus {
+    position: relative; // brings outline to the front
+  }
+
+  @include bpk-rtl {
+    border-right-width: $bpk-select-border-width;
+    border-left-width: 0;
+  }
+}
+
+/// Docked form select input (selects must sit side-by-side in the DOM). Modifies the bpk-select mixin.
+///
+/// @require {mixin} bpk-select
+///
+/// @example scss
+///   .selector {
+///     @include bpk-select();
+///     @include bpk-select--docked();
+///   }
+
+@mixin bpk-select--docked {
+  &:first-child {
+    @include bpk-select--docked-first-child;
+  }
+
+  &:last-child {
+    @include bpk-select--docked-last-child;
+  }
+
+  &:not(:first-child):not(:last-child) {
+    @include bpk-select--docked-middle-child;
+  }
 }
 
 /// Form checkbox. Should be applied to containing label element.
