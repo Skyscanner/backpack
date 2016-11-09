@@ -3,30 +3,30 @@
 ## UNRELEASED
 
 **Changed:**
-- bpk-component-input:
-- bpk-component-select:
-- bpk-component-label:
+- bpk-component-input: 0.0.20 => 1.0.0
+- bpk-component-label: 1.0.2 => 2.0.0
+- bpk-component-select: 0.0.20 => 1.0.0
   - Added use of `transform-object-rest-spread` so make sure you add it to your `.babelrc`
   
-- bpk-component-input:
+- bpk-component-input: 0.0.20 => 1.0.0
   - `placeholder` prop is now required
   
-- bpk-component-select:
+- bpk-component-select: 0.0.20 => 1.0.0
   - `options` prop is now deprecated, just pass options as children like normal
 
 **Added:**
-- bpk-component-input:
-- bpk-component-select:
-- bpk-component-label:
+- bpk-component-input: 0.0.20 => 1.0.0
+- bpk-component-label: 1.0.2 => 2.0.0
+- bpk-component-select: 0.0.20 => 1.0.0
   - We are opting for a prop "passthrough" approach, which means any additional props passed to these components
     will be rendered i.e. the backpack component wont swallow it up
   - This means that consumers can now add custom `className` props - they will be added to classes already supplied 
     by backpack
   
-- bpk-component-input:
-- bpk-component-select:
-- bpk-mixins:
-- bpk-tokens:
+- bpk-component-input: 0.0.20 => 1.0.0
+- bpk-component-select: 0.0.20 => 1.0.0
+- bpk-mixins: 6.1.1 => 6.2.0
+- bpk-tokens: 14.0.0 => 14.1.0
   - Inputs & selects can now be made `large` & `docked` for one line search forms
   - Sass mixin api is as follows:
     - `@include bpk-input--docked-first-child;`, `@include bpk-input--docked-last-child;` and 
@@ -35,7 +35,31 @@
       to apply styles accordingly - it requires inputs / selects are placed together.
 
 **The following packages received a patch bump due to the dependency changes above:**
-- TODO
+- bpk-component-autosuggest: 1.0.0 => 1.0.1
+- bpk-component-banner-alert: 0.0.10 => 0.0.11
+- bpk-component-blockquote: 0.0.23 => 0.0.24
+- bpk-component-button: 1.1.6 => 1.1.7
+- bpk-component-card: 0.0.11 => 0.0.12
+- bpk-component-checkbox: 0.0.20 => 0.0.21
+- bpk-component-code: 0.0.23 => 0.0.24
+- bpk-component-content-container: 1.0.14 => 1.0.15
+- bpk-component-grid: 0.0.17 => 0.0.18
+- bpk-component-grid-toggle: 0.0.29 => 0.0.30
+- bpk-component-heading: 1.1.6 => 1.1.7
+- bpk-component-icon: 1.1.13 => 1.1.14
+- bpk-component-link: 0.3.1 => 0.3.2
+- bpk-component-list: 0.0.43 => 0.0.44
+- bpk-component-logo: 1.0.13 => 1.0.14
+- bpk-component-modal: 0.0.8 => 0.0.9
+- bpk-component-paragraph: 0.1.30 => 0.1.31
+- bpk-component-radio: 0.0.20 => 0.0.21
+- bpk-component-router-link: 0.1.29 => 0.1.30
+- bpk-component-rtl-toggle: 0.0.13 => 0.0.14
+- bpk-component-spinner: 1.0.13 => 1.0.14
+- bpk-component-table: 0.0.43 => 0.0.44
+- bpk-docs: 0.0.41 => 0.0.42
+- bpk-stylesheets: 2.0.5 => 2.0.6
+- bpk-svgs: 2.0.9 => 2.0.10
 
 ## 2016-11-04 - Autosuggest improvements
 
