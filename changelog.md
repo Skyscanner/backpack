@@ -1,5 +1,20 @@
 # Backpack changelog
 
+## 2016-11-09 - Destructive buttons `disabled` bugfix ;)
+
+**Added:**
+- bpk-tokens:
+  - Added tokens for destructive button hove`disabled` state
+  
+**Fixed:**
+- bpk-component-button: 
+- bpk-mixins: 
+- bpk-tokens: 
+  - Fixed destructive button `disabled` state
+  
+- bpk-component-button:
+  - Fixed link button border radius in safari
+  
 ## 2016-11-09 - Destructive buttons
 
 **Added:**
