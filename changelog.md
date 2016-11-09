@@ -1,6 +1,6 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-11-09 - Docked inputs & selects 
 
 **Changed:**
 - bpk-component-input: 0.0.20 => 1.0.0
