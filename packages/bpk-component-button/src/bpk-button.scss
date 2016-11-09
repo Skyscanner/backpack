@@ -11,6 +11,11 @@
     @include bpk-button--secondary;
   }
 
+  &--destructive {
+    @include bpk-button--secondary;
+    @include bpk-button--destructive;
+  }
+
   &--selected {
     @include bpk-button--selected;
   }

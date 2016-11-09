@@ -27,15 +27,16 @@ export default MyComponent = () => (
 
 ### Props
 
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
-| href      | string   | false    | null          |
-| className | string   | false    | null          |
-| disabled  | bool     | false    | false         |
-| submit    | bool     | false    | false         |
-| secondary | bool     | false    | false         |
-| selected  | bool     | false    | false         |
-| large     | bool     | false    | false         |
-| link      | bool     | false    | false         |
-| onClick   | func     | false    | null          |
+| Property    | PropType | Required | Default Value |
+| ----------- | -------- | -------- | ------------- |
+| children    | -        | true     | -             |
+| href        | string   | false    | null          |
+| className   | string   | false    | null          |
+| disabled    | bool     | false    | false         |
+| submit      | bool     | false    | false         |
+| secondary   | bool     | false    | false         |
+| destructive | bool     | false    | false         |
+| selected    | bool     | false    | false         |
+| large       | bool     | false    | false         |
+| link        | bool     | false    | false         |
+| onClick     | func     | false    | null          |

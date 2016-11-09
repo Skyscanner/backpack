@@ -24,6 +24,14 @@ storiesOf('bpk-component-button', module)
       &nbsp;<BpkButton secondary large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>Disabled</BpkButton>
     </div>
   ))
+  .add('Destructive', () => (
+    <div>
+      &nbsp;<BpkButton destructive onClick={action('destructive clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton destructive disabled onClick={action('THIS SHOULD NOT HAPPEN')}>Disabled</BpkButton>
+      &nbsp;<BpkButton destructive large onClick={action('large destructive clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton destructive large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>Disabled</BpkButton>
+    </div>
+  ))
   .add('Link button', () => (
     <div>
       &nbsp;<BpkButton link onClick={action('link button clicked')}>Button</BpkButton>

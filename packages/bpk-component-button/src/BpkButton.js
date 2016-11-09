@@ -5,6 +5,7 @@ const BpkButton = (props) => {
   const classNames = [ 'bpk-button' ]
 
   props.secondary ? classNames.push('bpk-button--secondary') : null
+  props.destructive ? classNames.push('bpk-button--destructive') : null
   props.selected ? classNames.push('bpk-button--selected') : null
   props.large ? classNames.push('bpk-button--large') : null
   props.link ? classNames.push('bpk-button--link') : null
@@ -41,6 +42,7 @@ BpkButton.propTypes = {
   submit: PropTypes.bool,
   secondary: PropTypes.bool,
   selected: PropTypes.bool,
+  destructive: PropTypes.bool,
   large: PropTypes.bool,
   link: PropTypes.bool,
   onClick: PropTypes.func
@@ -53,6 +55,7 @@ BpkButton.defaultProps = {
   submit: false,
   secondary: false,
   selected: false,
+  destructive: false,
   large: false,
   link: false,
   onClick: null

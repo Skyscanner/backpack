@@ -18,6 +18,11 @@ describe('BpkButton', () => {
     expect(tree).toMatchSnapshot()
   })
 
+  it('should render correctly with a "destructive" attribute', () => {
+    const tree = renderer.create(<BpkButton destructive>My button</BpkButton>).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
   it('should render correctly with a "selected" attribute', () => {
     const tree = renderer.create(<BpkButton selected>My button</BpkButton>).toJSON()
     expect(tree).toMatchSnapshot()
