@@ -1,6 +1,6 @@
 {
   "name": "bpk-tokens",
-  "version": "14.1.0",
+  "version": "14.2.0",
   "description": "Backpack design tokens for colors, spacing, font, etc.",
   "main": "tokens/base.default.scss",
   "scripts": {
