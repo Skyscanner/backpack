@@ -202,6 +202,22 @@
       "value": "0 0 0 3px {!RED_500} inset",
       "type": "box-shadow"
     },
+    "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR": {
+      "value": "{!GRAY_100}",
+      "type": "color"
+    },
+    "BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
+    },
+    "BUTTON_DESTRUCTIVE_DISABLED_COLOR": {
+      "value": "{!GRAY_300}",
+      "type": "color"
+    },
+    "BUTTON_DESTRUCTIVE_DISABLED_BOX_SHADOW": {
+      "value": "none",
+      "type": "box-shadow"
+    },
     "BUTTON_SELECTED_BACKGROUND_COLOR": {
       "value": "{!BLUE_500}",
       "type": "color"

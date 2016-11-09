@@ -416,6 +416,30 @@
     },
     {
       "category": "buttons",
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      "name": "buttonDestructiveDisabledBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonDestructiveDisabledBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(178, 174, 189)",
+      "type": "color",
+      "name": "buttonDestructiveDisabledColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonDestructiveDisabledBoxShadow"
+    },
+    {
+      "category": "buttons",
       "value": "rgb(0, 178, 214)",
       "type": "color",
       "name": "buttonSelectedBackgroundColor"

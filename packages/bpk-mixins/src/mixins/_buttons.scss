@@ -133,6 +133,13 @@
     color: $bpk-button-destructive-active-color;
     box-shadow: $bpk-button-destructive-active-box-shadow;
   }
+
+  &:disabled {
+    background-color: $bpk-button-destructive-disabled-background-color;
+    background-image: $bpk-button-destructive-disabled-background-image;
+    color: $bpk-button-destructive-disabled-color;
+    box-shadow: $bpk-button-destructive-disabled-box-shadow;
+  }
 }
 
 /// Selected button. Modifies the bpk-button mixin.
@@ -183,6 +190,7 @@
 @mixin bpk-button--link {
   @include bpk-link;
 
+  border-radius: 0;
   background: none;
   font-weight: normal;
   box-shadow: none;

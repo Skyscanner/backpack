@@ -137,6 +137,14 @@ $bpk-button-destructive-active-color: rgb(255, 84, 82) !default;
 /// @group buttons
 $bpk-button-destructive-active-box-shadow: 0 0 0 3px #ff5452 inset !default;
 /// @group buttons
+$bpk-button-destructive-disabled-background-color: rgb(230, 228, 235) !default;
+/// @group buttons
+$bpk-button-destructive-disabled-background-image: none !default;
+/// @group buttons
+$bpk-button-destructive-disabled-color: rgb(178, 174, 189) !default;
+/// @group buttons
+$bpk-button-destructive-disabled-box-shadow: none !default;
+/// @group buttons
 $bpk-button-selected-background-color: rgb(0, 178, 214) !default;
 /// @group buttons
 $bpk-button-selected-background-image: linear-gradient(-180deg, #00b2d6 0%, #009dbd 100%) !default;
