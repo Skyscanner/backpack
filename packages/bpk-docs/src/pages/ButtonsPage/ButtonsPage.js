@@ -55,14 +55,14 @@ const components = [
   {
     id: 'destructive',
     title: 'Destructive',
-    blurb: 'TODO.',
+    blurb: 'This button can be used to highlight destructive actions.',
     examples: [
-      <BpkButton destructive>Secondary</BpkButton>,
+      <BpkButton destructive>Destructive</BpkButton>,
       ' ',
       <BpkButton destructive disabled>Disabled</BpkButton>,
       <br />,
       <br />,
-      <BpkButton large destructive>Secondary</BpkButton>,
+      <BpkButton large destructive>Destructive</BpkButton>,
       ' ',
       <BpkButton large destructive disabled>Disabled</BpkButton>
     ]

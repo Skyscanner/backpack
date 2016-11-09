@@ -178,6 +178,30 @@
       "value": "none",
       "type": "box-shadow"
     },
+    "BUTTON_DESTRUCTIVE_COLOR": {
+      "value": "{!RED_500}",
+      "type": "color"
+    },
+    "BUTTON_DESTRUCTIVE_BOX_SHADOW": {
+      "value": "0 0 0 2px {!GRAY_100} inset",
+      "type": "box-shadow"
+    },
+    "BUTTON_DESTRUCTIVE_HOVER_COLOR": {
+      "value": "{!RED_500}",
+      "type": "color"
+    },
+    "BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW": {
+      "value": "0 0 0 2px {!RED_500} inset",
+      "type": "box-shadow"
+    },
+    "BUTTON_DESTRUCTIVE_ACTIVE_COLOR": {
+      "value": "{!RED_500}",
+      "type": "color"
+    },
+    "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW": {
+      "value": "0 0 0 3px {!RED_500} inset",
+      "type": "box-shadow"
+    },
     "BUTTON_SELECTED_BACKGROUND_COLOR": {
       "value": "{!BLUE_500}",
       "type": "color"

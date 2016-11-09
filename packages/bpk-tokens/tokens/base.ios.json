@@ -380,6 +380,42 @@
     },
     {
       "category": "buttons",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "name": "buttonDestructiveColor"
+    },
+    {
+      "category": "buttons",
+      "value": "0 0 0 2px #E6E4EB inset",
+      "type": "box-shadow",
+      "name": "buttonDestructiveBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "name": "buttonDestructiveHoverColor"
+    },
+    {
+      "category": "buttons",
+      "value": "0 0 0 2px #ff5452 inset",
+      "type": "box-shadow",
+      "name": "buttonDestructiveHoverBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "name": "buttonDestructiveActiveColor"
+    },
+    {
+      "category": "buttons",
+      "value": "0 0 0 3px #ff5452 inset",
+      "type": "box-shadow",
+      "name": "buttonDestructiveActiveBoxShadow"
+    },
+    {
+      "category": "buttons",
       "value": "rgb(0, 178, 214)",
       "type": "color",
       "name": "buttonSelectedBackgroundColor"

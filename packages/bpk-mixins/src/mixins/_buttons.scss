@@ -121,13 +121,17 @@
 ///   }
 
 @mixin bpk-button--destructive {
-  &,
-  &:active {
-    color: $bpk-color-red-500;
-  }
+  color: $bpk-button-destructive-color;
+  box-shadow: $bpk-button-destructive-box-shadow;
 
   @include bpk-hover {
-    color: $bpk-color-red-500;
+    color: $bpk-button-destructive-hover-color;
+    box-shadow: $bpk-button-destructive-hover-box-shadow;
+  }
+
+  &:active {
+    color: $bpk-button-destructive-active-color;
+    box-shadow: $bpk-button-destructive-active-box-shadow;
   }
 }
 

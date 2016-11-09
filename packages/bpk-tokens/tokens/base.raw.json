@@ -453,6 +453,42 @@
       "type": "box-shadow",
       "name": "BUTTON_SECONDARY_DISABLED_BOX_SHADOW"
     },
+    "BUTTON_DESTRUCTIVE_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "name": "BUTTON_DESTRUCTIVE_COLOR"
+    },
+    "BUTTON_DESTRUCTIVE_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "0 0 0 2px #E6E4EB inset",
+      "type": "box-shadow",
+      "name": "BUTTON_DESTRUCTIVE_BOX_SHADOW"
+    },
+    "BUTTON_DESTRUCTIVE_HOVER_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "name": "BUTTON_DESTRUCTIVE_HOVER_COLOR"
+    },
+    "BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "0 0 0 2px #ff5452 inset",
+      "type": "box-shadow",
+      "name": "BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW"
+    },
+    "BUTTON_DESTRUCTIVE_ACTIVE_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "name": "BUTTON_DESTRUCTIVE_ACTIVE_COLOR"
+    },
+    "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW": {
+      "category": "buttons",
+      "value": "0 0 0 3px #ff5452 inset",
+      "type": "box-shadow",
+      "name": "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW"
+    },
     "BUTTON_SELECTED_BACKGROUND_COLOR": {
       "category": "buttons",
       "value": "rgb(0, 178, 214)",
@@ -1760,6 +1796,12 @@
     "BUTTON_SECONDARY_HOVER_BOX_SHADOW",
     "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW",
     "BUTTON_SECONDARY_DISABLED_BOX_SHADOW",
+    "BUTTON_DESTRUCTIVE_COLOR",
+    "BUTTON_DESTRUCTIVE_BOX_SHADOW",
+    "BUTTON_DESTRUCTIVE_HOVER_COLOR",
+    "BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW",
+    "BUTTON_DESTRUCTIVE_ACTIVE_COLOR",
+    "BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW",
     "BUTTON_SELECTED_BACKGROUND_COLOR",
     "BUTTON_SELECTED_BACKGROUND_IMAGE",
     "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR",

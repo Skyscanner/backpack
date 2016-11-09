@@ -63,6 +63,12 @@
   <property name="BUTTON_SECONDARY_HOVER_BOX_SHADOW" category="buttons">0 0 0 2px #00b2d6 inset</property>
   <property name="BUTTON_SECONDARY_ACTIVE_BOX_SHADOW" category="buttons">0 0 0 3px #00b2d6 inset</property>
   <property name="BUTTON_SECONDARY_DISABLED_BOX_SHADOW" category="buttons">none</property>
+  <color name="BUTTON_DESTRUCTIVE_COLOR" category="buttons">#ff5452ff</color>
+  <property name="BUTTON_DESTRUCTIVE_BOX_SHADOW" category="buttons">0 0 0 2px #E6E4EB inset</property>
+  <color name="BUTTON_DESTRUCTIVE_HOVER_COLOR" category="buttons">#ff5452ff</color>
+  <property name="BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW" category="buttons">0 0 0 2px #ff5452 inset</property>
+  <color name="BUTTON_DESTRUCTIVE_ACTIVE_COLOR" category="buttons">#ff5452ff</color>
+  <property name="BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW" category="buttons">0 0 0 3px #ff5452 inset</property>
   <color name="BUTTON_SELECTED_BACKGROUND_COLOR" category="buttons">#00b2d6ff</color>
   <property name="BUTTON_SELECTED_BACKGROUND_IMAGE" category="buttons">linear-gradient(-180deg, #00b2d6 0, #009dbd 1)</property>
   <color name="BUTTON_SELECTED_HOVER_BACKGROUND_COLOR" category="buttons">#00b2d6ff</color>
