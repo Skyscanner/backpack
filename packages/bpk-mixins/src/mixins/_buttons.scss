@@ -108,6 +108,33 @@
   }
 }
 
+/// Destructive button. Modifies the bpk-button & bpk-button--secondary mixins.
+///
+/// @require {mixin} bpk-button
+/// @require {mixin} bpk-button--secondary
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--secondary();
+///     @include bpk-button--destructive();
+///   }
+
+@mixin bpk-button--destructive {
+  color: $bpk-button-destructive-color;
+  box-shadow: $bpk-button-destructive-box-shadow;
+
+  @include bpk-hover {
+    color: $bpk-button-destructive-hover-color;
+    box-shadow: $bpk-button-destructive-hover-box-shadow;
+  }
+
+  &:active {
+    color: $bpk-button-destructive-active-color;
+    box-shadow: $bpk-button-destructive-active-box-shadow;
+  }
+}
+
 /// Selected button. Modifies the bpk-button mixin.
 ///
 /// @require {mixin} bpk-button

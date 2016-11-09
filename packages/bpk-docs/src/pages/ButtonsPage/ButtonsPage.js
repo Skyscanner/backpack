@@ -53,6 +53,21 @@ const components = [
     ]
   },
   {
+    id: 'destructive',
+    title: 'Destructive',
+    blurb: 'This button can be used to highlight destructive actions.',
+    examples: [
+      <BpkButton destructive>Destructive</BpkButton>,
+      ' ',
+      <BpkButton destructive disabled>Disabled</BpkButton>,
+      <br />,
+      <br />,
+      <BpkButton large destructive>Destructive</BpkButton>,
+      ' ',
+      <BpkButton large destructive disabled>Disabled</BpkButton>
+    ]
+  },
+  {
     id: 'icons-and-spinners',
     title: 'Icons & spinners',
     blurb: 'All buttons support nesting icons and spinners, which is useful for improving affordance or indicate loading.',
