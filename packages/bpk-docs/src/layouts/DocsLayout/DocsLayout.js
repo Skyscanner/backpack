@@ -33,7 +33,10 @@ const links = [
       { route: routes.LOGOS, children: 'Logos' },
       { route: routes.FORMS, children: 'Forms' },
       { route: routes.CARDS, children: 'Cards' },
-      { route: null, children: 'Illustration' }
+      { route: null, children: 'Illustrations' },
+      { route: null, children: 'Image' },
+      { route: null, children: 'Tabs' },
+      { route: null, children: 'Badges' }
     ]
   },
   {
@@ -46,25 +49,21 @@ const links = [
       { route: null, children: 'Tooltip' },
       { route: null, children: 'Pagination' },
       { route: null, children: 'Calendar' },
-      { route: null, children: 'Nudger' },
-      { route: null, children: 'Tabs' },
+      { route: null, children: 'Nudgers' },
+      { route: null, children: 'Slider' },
+      { route: null, children: 'Accordion' },
+      { route: null, children: 'Carousel' },
+      { route: null, children: 'Toast' },
       { route: null, children: 'Primary navigation' },
       { route: null, children: 'Secondary navigation' },
-      { route: null, children: 'Utility navigation' },
       { route: null, children: 'Hamburger navigation' },
+      { route: null, children: 'Breadcrumbs' },
       { route: null, children: 'Numerical rating' },
-      { route: null, children: 'Star rating' }
-    ]
-  },
-  {
-    category: 'Organisms',
-    links: [
+      { route: null, children: 'Star rating' },
       { route: null, children: 'Flight itinerary' },
-      { route: null, children: 'Date picker' },
-      { route: null, children: 'Filters' },
-      { route: null, children: 'Header' },
-      { route: null, children: 'Footer' },
-      { route: null, children: 'Search controls' }
+      { route: null, children: 'Datepicker' },
+      { route: null, children: 'Bar chart' },
+      { route: null, children: 'Filters' }
     ]
   }
 ]
