@@ -18,12 +18,8 @@
       "value": "{!YELLOW_500}",
       "type": "color"
     },
-    "BADGE_FONT_WEIGHT": {
-      "value": "700",
-      "type": "number"
-    },
-    "BADGE_VERTICAL_ALIGN": {
-      "value": "top",
+    "BADGE_CENTERED_VERTICAL_ALIGN": {
+      "value": "text-bottom",
       "type": "vertical-align"
     }
   }

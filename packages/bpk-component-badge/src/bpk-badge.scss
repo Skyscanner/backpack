@@ -3,6 +3,10 @@
 .bpk-badge {
   @include bpk-badge;
 
+  &--centered {
+    @include bpk-badge--centered;
+  }
+
   &--docked-right {
     @include bpk-badge--docked-right;
   }

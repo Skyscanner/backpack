@@ -21,6 +21,7 @@ export default MyComponent = () => (
 
 ### Props
 
-| Property      | PropType | Required | Default Value |
-| ------------- | -------- | -------- | ------------- |
-| docked        | bool     | false    | null          |
+| Property  | PropType        | Required | Default Value |
+| --------- | --------------- | -------- | ------------- |
+| centered  | bool            | false    | null          |
+| docked    | 'left', 'right' | false    | null          |

@@ -56,15 +56,9 @@
     },
     {
       "category": "badges",
-      "value": "700",
-      "type": "number",
-      "name": "badgeFontWeight"
-    },
-    {
-      "category": "badges",
-      "value": "top",
+      "value": "text-bottom",
       "type": "vertical-align",
-      "name": "badgeVerticalAlign"
+      "name": "badgeCenteredVerticalAlign"
     },
     {
       "type": "size",
