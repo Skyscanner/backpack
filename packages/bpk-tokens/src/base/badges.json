@@ -1,0 +1,30 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "badges"
+  },
+  "props": {
+    "BADGE_PADDING_Y": {
+      "value": "0",
+      "type": "size"
+    },
+    "BADGE_PADDING_X": {
+      "value": "{!SPACING_XS}",
+      "type": "size"
+    },
+    "BADGE_BACKGROUND_COLOR": {
+      "value": "{!YELLOW_500}",
+      "type": "color"
+    },
+    "BADGE_FONT_WEIGHT": {
+      "value": "700",
+      "type": "number"
+    },
+    "BADGE_VERTICAL_ALIGN": {
+      "value": "top",
+      "type": "vertical-align"
+    }
+  }
+}

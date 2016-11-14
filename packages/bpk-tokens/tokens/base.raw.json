@@ -111,11 +111,35 @@
       "type": "color",
       "name": "AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR"
     },
-    "SPONSORED_BADGE_FONT_WEIGHT": {
-      "category": "badge",
+    "BADGE_PADDING_Y": {
+      "category": "badges",
+      "value": "0",
+      "type": "size",
+      "name": "BADGE_PADDING_Y"
+    },
+    "BADGE_PADDING_X": {
+      "category": "badges",
+      "value": ".375rem",
+      "type": "size",
+      "name": "BADGE_PADDING_X"
+    },
+    "BADGE_BACKGROUND_COLOR": {
+      "category": "badges",
+      "value": "rgb(255, 212, 69)",
+      "type": "color",
+      "name": "BADGE_BACKGROUND_COLOR"
+    },
+    "BADGE_FONT_WEIGHT": {
+      "category": "badges",
       "value": "700",
       "type": "number",
-      "name": "SPONSORED_BADGE_FONT_WEIGHT"
+      "name": "BADGE_FONT_WEIGHT"
+    },
+    "BADGE_VERTICAL_ALIGN": {
+      "category": "badges",
+      "value": "top",
+      "type": "vertical-align",
+      "name": "BADGE_VERTICAL_ALIGN"
     },
     "BORDER_RADIUS_XS": {
       "type": "size",
@@ -1769,7 +1793,11 @@
     "AUTOSUGGEST_LIST_BACKGROUND_COLOR",
     "AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR",
     "AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR",
-    "SPONSORED_BADGE_FONT_WEIGHT",
+    "BADGE_PADDING_Y",
+    "BADGE_PADDING_X",
+    "BADGE_BACKGROUND_COLOR",
+    "BADGE_FONT_WEIGHT",
+    "BADGE_VERTICAL_ALIGN",
     "BORDER_RADIUS_XS",
     "BORDER_RADIUS_SM",
     "BORDER_RADIUS_PILL",

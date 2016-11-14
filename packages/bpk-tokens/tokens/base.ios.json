@@ -37,10 +37,34 @@
       "name": "autosuggestListItemFocusedBackgroundColor"
     },
     {
-      "category": "badge",
+      "category": "badges",
+      "value": "0",
+      "type": "size",
+      "name": "badgePaddingY"
+    },
+    {
+      "category": "badges",
+      "value": "6",
+      "type": "size",
+      "name": "badgePaddingX"
+    },
+    {
+      "category": "badges",
+      "value": "rgb(255, 212, 69)",
+      "type": "color",
+      "name": "badgeBackgroundColor"
+    },
+    {
+      "category": "badges",
       "value": "700",
       "type": "number",
-      "name": "sponsoredBadgeFontWeight"
+      "name": "badgeFontWeight"
+    },
+    {
+      "category": "badges",
+      "value": "top",
+      "type": "vertical-align",
+      "name": "badgeVerticalAlign"
     },
     {
       "type": "size",

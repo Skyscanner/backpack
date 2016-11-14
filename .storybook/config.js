@@ -18,6 +18,7 @@ addDecorator((story) => (
 
 configure(() => {
   require('./../packages/bpk-component-autosuggest/stories')
+  require('./../packages/bpk-component-badge/stories')
   require('./../packages/bpk-component-banner-alert/stories')
   require('./../packages/bpk-component-blockquote/stories')
   require('./../packages/bpk-component-button/stories')
@@ -41,6 +42,5 @@ configure(() => {
   require('./../packages/bpk-component-rtl-toggle/stories')
   require('./../packages/bpk-component-select/stories')
   require('./../packages/bpk-component-spinner/stories')
-  require('./../packages/bpk-component-sponsored-badge/stories')
   require('./../packages/bpk-component-table/stories')
 }, module)
