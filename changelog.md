@@ -1,20 +1,28 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Added:**
+- bpk-component-badge:
+- bpk-mixins:
+- bpk-tokens:
+  - New badge component - limited for now to unblock the ads team
+
 ## 2016-11-09 - Destructive buttons `disabled` bugfix ;)
 
 **Added:**
 - bpk-tokens: 14.2.0 => 14.3.0
   - Added tokens for destructive button `disabled` state
-  
+
 **Fixed:**
 - bpk-component-button: 1.2.0 => 1.2.1
 - bpk-mixins: 6.3.0 => 6.3.1
 - bpk-tokens: 14.2.0 => 14.3.0
   - Fixed destructive button `disabled` state
-  
+
 - bpk-component-button: 1.2.0 => 1.2.1
   - Fixed link button border radius in safari
-  
+
 **The following packages received a patch bump due to the dependency changes above:**
 - bpk-component-autosuggest: 1.0.2 => 1.0.3
 - bpk-component-banner-alert: 0.0.12 => 0.0.13
@@ -46,7 +54,7 @@
 - bpk-stylesheets: 2.0.7 => 2.0.8
 - bpk-svgs: 2.0.11 => 2.0.12
 - bpk-tokens: 14.2.0 => 14.3.0
-  
+
 ## 2016-11-09 - Destructive buttons
 
 **Added:**
@@ -54,7 +62,7 @@
 - bpk-mixins: 6.2.0 => 6.3.0
 - bpk-tokens: 14.1.0 => 14.2.0
   - Added `destructive` button style
-  
+
 **The following packages received a patch bump due to the dependency changes above:**
 - bpk-component-autosuggest: 1.0.1 => 1.0.2
 - bpk-component-banner-alert: 0.0.11 => 0.0.12
@@ -84,17 +92,17 @@
 - bpk-stylesheets: 2.0.6 => 2.0.7
 - bpk-svgs: 2.0.10 => 2.0.11
 
-## 2016-11-09 - Docked inputs & selects 
+## 2016-11-09 - Docked inputs & selects
 
 **Changed:**
 - bpk-component-input: 0.0.20 => 1.0.0
 - bpk-component-label: 1.0.2 => 2.0.0
 - bpk-component-select: 0.0.20 => 1.0.0
   - Added use of `transform-object-rest-spread` so make sure you add it to your `.babelrc`
-  
+
 - bpk-component-input: 0.0.20 => 1.0.0
   - `placeholder` prop is now required
-  
+
 - bpk-component-select: 0.0.20 => 1.0.0
   - `options` prop is now deprecated, just pass options as children like normal
 
@@ -104,17 +112,17 @@
 - bpk-component-select: 0.0.20 => 1.0.0
   - We are opting for a prop "passthrough" approach, which means any additional props passed to these components
     will be rendered i.e. the backpack component wont swallow it up
-  - This means that consumers can now add custom `className` props - they will be added to classes already supplied 
+  - This means that consumers can now add custom `className` props - they will be added to classes already supplied
     by backpack
-  
+
 - bpk-component-input: 0.0.20 => 1.0.0
 - bpk-component-select: 0.0.20 => 1.0.0
 - bpk-mixins: 6.1.1 => 6.2.0
 - bpk-tokens: 14.0.0 => 14.1.0
   - Inputs & selects can now be made `large` & `docked` for one line search forms
   - Sass mixin api is as follows:
-    - `@include bpk-input--docked-first-child;`, `@include bpk-input--docked-last-child;` and 
-      `@include bpk-input--docked-middle-child;` are available for fine grained control 
+    - `@include bpk-input--docked-first-child;`, `@include bpk-input--docked-last-child;` and
+      `@include bpk-input--docked-middle-child;` are available for fine grained control
     - `@include bpk-input--docked;` is available as a combo of the above which uses pseudo selectors behind the scenes
       to apply styles accordingly - it requires inputs / selects are placed together.
 
@@ -151,15 +159,15 @@
 - bpk-component-autosuggest: 0.0.17 => 1.0.0
   - Updated to `^7.0.1` of `react-autosuggest`
   - Removed padding from suggestion containers with the idea
-  
+
 - bpk-tokens: 13.1.0 => 14.0.0
-  - Removed automatic pluralisation of SCSS category names. This affects all token formats except 
+  - Removed automatic pluralisation of SCSS category names. This affects all token formats except
     SCSS. Examples include: `animation` -> `animations`, `box-shadow` -> `box-shadows` etc
 
 - bpk-component-autosuggest: 0.0.17 => 1.0.0
   - Added `BpkAutosuggestSuggestion` component
-  
-**The following packages received a patch bump due to the dependency changes above:** 
+
+**The following packages received a patch bump due to the dependency changes above:**
 - bpk-component-banner-alert: 0.0.9 => 0.0.10
 - bpk-component-blockquote: 0.0.22 => 0.0.23
 - bpk-component-button: 1.1.5 => 1.1.6
@@ -197,7 +205,7 @@
 - bpk-tokens: 13.0.0 => 13.1.0
   - Links can now be white
 
-**The following packages received a patch bump due to the dependency changes above:** 
+**The following packages received a patch bump due to the dependency changes above:**
 - bpk-component-autosuggest: 0.0.16 => 0.0.17
 - bpk-component-banner-alert: 0.0.8 => 0.0.9
 - bpk-component-blockquote: 0.0.21 => 0.0.22
@@ -274,7 +282,7 @@
 - bpk-mixins: 5.6.0 => 5.6.1
 - bpk-component-select: 0.0.16 => 0.0.17
   - Fixed select background color on IE
-  
+
 **The following packages received a patch bump due to the dependency changes above:**
 - bpk-component-autosuggest: 0.0.14 => 0.0.15
 - bpk-component-banner-alert: 0.0.6 => 0.0.7
@@ -349,13 +357,13 @@
 ## 2016-10-17 (2) - Disable `:hover` effects on touch devices
 
 **Changed:**
-- bpk-stylesheets: 1.0.14 => 2.0.0 
+- bpk-stylesheets: 1.0.14 => 2.0.0
   - Added small javascript utility to add feature detection classes to html element
   - Consumers now have to include `/node_modules/bpk-stylesheets/base.js` as well as `/node_modules/bpk-stylesheets/base.css`
     on the page.
   - Default module export is now uncompiled `/index.js` which contains both script and style, with `/base.css` & `/base.js`
     exposed for compiled access
-   
+
 **Added:**
 - bpk-mixins: 5.4.0 => 5.5.0
   - Added `bpk-hover` mixin to apply `:hover` effects to non-touch devices only
@@ -363,11 +371,11 @@
 **Fixed:**
 - bpk-component-banner-alert: 0.0.4 => 0.0.5
 - bpk-component-modal: 0.0.2 => 0.0.3
-- bpk-component-button: 1.1.0 => 1.1.1 
+- bpk-component-button: 1.1.0 => 1.1.1
 - bpk-component-link: 0.2.0 => 0.2.1
 - bpk-mixins: 5.4.0 => 5.5.0
   - `:hover` effects now disabled on touch devices
-  
+
 **The following packages received a patch bump due to the dependency changes above:**
 - bpk-component-autosuggest: 0.0.12 => 0.0.13
 - bpk-component-blockquote: 0.0.17 => 0.0.18
@@ -396,7 +404,7 @@
 
 ## 2016-10-17 (1) - Ability to add custom `className` to button
 
-**Added:** 
+**Added:**
 - bpk-component-button: 1.0.24 => 1.1.0
   - Can now pass through custom `className` to button
 
@@ -414,7 +422,7 @@
 
 - bpk-component-heading: 1.0.23 => 1.1.0
   - Ability to remove bottom margin from headings
-  
+
 - bpk-component-link: 0.1.22 => 0.2.0
   - Ability to style buttons as links
 
@@ -426,8 +434,8 @@
 **Fixed:**
 - bpk-component-card: 0.0.4 => 0.0.5
   - Increased border radius
-  
-**The following packages received a patch bump due to the dependency changes above:**  
+
+**The following packages received a patch bump due to the dependency changes above:**
 - bpk-component-autosuggest: 0.0.11 => 0.0.12
 - bpk-component-banner-alert: 0.0.2 => 0.0.3
 - bpk-component-blockquote: 0.0.16 => 0.0.17
@@ -460,8 +468,8 @@
 - bpk-component-button: 1.0.22 => 1.0.23
 - bpk-mixins: 5.3.2 => 5.3.3
   - Button text can now wrap
-  
-**The following packages received a patch bump due to the dependency changes above:**  
+
+**The following packages received a patch bump due to the dependency changes above:**
 - bpk-component-autosuggest: 0.0.10 => 0.0.11
 - bpk-component-banner-alert: 0.0.1 => 0.0.2
 - bpk-component-blockquote: 0.0.15 => 0.0.16
@@ -493,15 +501,15 @@
 **Added:**
 - bpk-component-banner-alert: 0.0.0 => 0.0.1
 - bpk-tokens: 12.2.0 => 12.3.0
-  - New banner alert component with success, warn and error variations 
-  
+  - New banner alert component with success, warn and error variations
+
 **Fixed:**
 - bpk-component-blockquote: 0.0.14 => 0.0.15
 - bpk-component-card: 0.0.2 => 0.0.3
 - bpk-component-code: 0.0.14 => 0.0.15
 - bpk-component-list: 0.0.34 => 0.0.35
   - Added missing "required" proptypes
-  
+
 **The following packages received a patch bump due to the dependency changes above:**
 - bpk-component-autosuggest: 0.0.9 => 0.0.10
 - bpk-component-button: 1.0.21 => 1.0.22
@@ -601,8 +609,8 @@
 **Added:**
 - bpk-mixins: 5.1.0 => 5.2.0
   - New mixin `bpk-icon--rtl-support` for RTL support in icons
-   
-**The following packages received a patch bump due to the dependency changes above:**     
+
+**The following packages received a patch bump due to the dependency changes above:**
 - bpk-component-autosuggest: 0.0.6 => 0.0.7
 - bpk-component-blockquote: 0.0.11 => 0.0.12
 - bpk-component-button: 1.0.18 => 1.0.19
@@ -630,13 +638,13 @@
 
 ## 2016-09-21 (1) - Opt-in RTL support for bpk-component-icon
 
-Consumers should now add the `transform-object-rest-spread` plugin to their `.babelrc` as all components may or may not depend 
-on it. 
+Consumers should now add the `transform-object-rest-spread` plugin to their `.babelrc` as all components may or may not depend
+on it.
 
 **Added:**
 - bpk-component-rtl-toggle: 0.0.0 => 0.0.1
   - New component to help with testing RTL layouts
-  
+
 - bpk-component-icon: 1.0.1 => 1.1.0
   - Three new HOC's: `withButtonAlignment`, `withLargeButtonAlignment` & `withRtlSupport`
   - `withRtlSupport` provides RTL support for icons on an opt-in basis (as not all icons should be flipped in RTL layouts)
@@ -664,8 +672,8 @@ on it.
 - bpk-component-select: 0.0.7 => 0.0.8
 - bpk-component-table: 0.0.30 => 0.0.31
   - Fixed RTL support
-  
-**The following packages received a patch bump due to the dependency changes above:**  
+
+**The following packages received a patch bump due to the dependency changes above:**
 - bpk-component-autosuggest: 0.0.4 => 0.0.5
 - bpk-component-button: 1.0.17 => 1.0.18
 - bpk-component-checkbox: 0.0.7 => 0.0.8
@@ -692,17 +700,17 @@ on it.
 **Changed:**
 - bpk-svgs: 1.0.4 => 2.0.0
   - Added `width` & `height` to icon svgs
-  - Generating react components for each svg 
+  - Generating react components for each svg
     using [react-svg-loader cli](https://github.com/boopathi/react-svg-loader#cli).
-  
+
 - bpk-component-spinner: 0.2.12 => 1.0.0
   - We now expose three components `BpkSpinner`, `BpkLargeSpinner`, `BpkExtraLargeSpinner`
   - No need for raw-loader anymore
-    
+
 - bpk-component-logo: 0.2.8 => 1.0.0
   - We now expose five components `BpkInlineLogo`, `BpkCloudLogo`, `BpkStackedLogo`, `BpkTianxunLogo`, `BpkTianxunStackedLogo`
   - No need for raw-loader anymore
-    
+
 - bpk-component-icon: 0.2.12 => 1.0.0
   - We now expose hundreds of components (generated in bpk-svgs)
   - No need for raw-loader anymore
@@ -710,12 +718,12 @@ on it.
 
 **Added:**
 - bpk-tokens: 12.0.0 => 12.1.0
-  - Surfaced SPACING_MD (18px) as a token 
+  - Surfaced SPACING_MD (18px) as a token
 
 **Fixed:**
 - bpk-mixins: 5.0.0 => 5.0.1
   - No fundamental api changes but a lot of the handling for inline svgs has been removed.
-  
+
 **The following packages received a patch bump due to the dependency changes above:**
 - bpk-component-autosuggest: 0.0.3 => 0.0.4
 - bpk-component-blockquote: 0.0.9 => 0.0.10
@@ -754,21 +762,21 @@ on it.
 
 **Changed:**
 - bpk-component-content-container@1.0.0
-  - no longer applying styling to bare html in content container by default, instead consumers can opt in using 
+  - no longer applying styling to bare html in content container by default, instead consumers can opt in using
   `bareHtml` prop
   - nested content containers have bottom margin
 - bpk-mixins@5.0.0
-  - no longer applying styling to bare html in content container by default, instead consumers can opt in using 
-  the `bpk-content-container--bare-html` mixin 
-- bpk-tokens@12.0.0 
+  - no longer applying styling to bare html in content container by default, instead consumers can opt in using
+  the `bpk-content-container--bare-html` mixin
+- bpk-tokens@12.0.0
   - re-categorised some tokens for typesetting
 
 **Fixed:**
 - bpk-component-grid@0.0.3
   - added a `display: block;` to columns to override any `display: none;`'s as a result of setting width to 12
-  
+
 **The following packages received a patch bump due to the dependency
-changes above:**  
+changes above:**
 - bpk-component-blockquote@0.0.9
 - bpk-component-button@1.0.16
 - bpk-component-checkbox@0.0.6
