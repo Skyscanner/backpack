@@ -1,6 +1,8 @@
-export const BpkTable = require('./src/BpkTable').default
-export const BpkTableHead = require('./src/BpkTableHead').default
-export const BpkTableBody = require('./src/BpkTableBody').default
-export const BpkTableRow = require('./src/BpkTableRow').default
-export const BpkTableCell = require('./src/BpkTableCell').default
-export const BpkTableHeadCell = require('./src/BpkTableHeadCell').default
+import BpkTable from './src/BpkTable';
+import BpkTableHead from './src/BpkTableHead';
+import BpkTableBody from './src/BpkTableBody';
+import BpkTableRow from './src/BpkTableRow';
+import BpkTableCell from './src/BpkTableCell';
+import BpkTableHeadCell from './src/BpkTableHeadCell';
+
+export { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableCell, BpkTableHeadCell };

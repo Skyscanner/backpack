@@ -1,3 +1,3 @@
-import page from './AnimationPage.js'
+import page from './AnimationPage';
 
-export default page
+export default page;

@@ -1,23 +1,23 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
-import './bpk-list.scss'
+import './bpk-list.scss';
 
 const BpkList = (props) => {
-  const TagName = props.ordered ? 'ol' : 'ul'
+  const TagName = props.ordered ? 'ol' : 'ul';
 
-  return <TagName className='bpk-list' children={props.children} />
-}
+  return <TagName className="bpk-list">{props.children}</TagName>;
+};
 
 BpkList.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
+    PropTypes.node,
   ]).isRequired,
-  ordered: PropTypes.bool
-}
+  ordered: PropTypes.bool,
+};
 
 BpkList.defaultProps = {
-  ordered: false
-}
+  ordered: false,
+};
 
-export default (BpkList)
+export default (BpkList);

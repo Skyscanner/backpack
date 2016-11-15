@@ -1,3 +1,3 @@
-import docs from './src/index'
+import docs from './src/index';
 
-export default docs
+export default docs;

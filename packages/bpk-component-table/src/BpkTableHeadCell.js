@@ -1,14 +1,11 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
-import './bpk-table.scss'
+import './bpk-table.scss';
 
-const BpkTableHeadCell = (props) => <th className='bpk-table__cell bpk-table__cell--head' children={props.children} />
+const BpkTableHeadCell = props => <th className="bpk-table__cell bpk-table__cell--head">{props.children}</th>;
 
 BpkTableHeadCell.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
-}
+  children: PropTypes.node.isRequired,
+};
 
-export default BpkTableHeadCell
+export default BpkTableHeadCell;

@@ -1,78 +1,76 @@
-let scrollOffset = 0
+let scrollOffset = 0;
 
-const getWindow = () => {
-  return typeof window !== 'undefined' ? window : null
-}
+const getWindow = () => (typeof window !== 'undefined' ? window : null);
 
-const getBodyElement = () => {
-  return typeof document !== 'undefined' && typeof document.body !== 'undefined' ? document.body : null
-}
+const getBodyElement = () => (
+  typeof document !== 'undefined' && typeof document.body !== 'undefined' ? document.body : null
+);
 
 const getScrollBarWidth = () => {
-  let scrollBarWidth = 0
+  let scrollBarWidth = 0;
 
-  const window = getWindow()
-  const body = getBodyElement()
+  const window = getWindow();
+  const body = getBodyElement();
 
   if (body === null && window === null) {
-    return ''
+    return '';
   }
 
-  const bodyIsOverflowing = body.clientWidth < window.innerWidth
+  const bodyIsOverflowing = body.clientWidth < window.innerWidth;
 
   if (bodyIsOverflowing) {
-    const scrollDiv = document.createElement('div')
+    const scrollDiv = document.createElement('div');
 
-    scrollDiv.style.position = 'absolute'
-    scrollDiv.style.top = '-9999px'
-    scrollDiv.style.width = '50px'
-    scrollDiv.style.height = '50px'
-    scrollDiv.style.overflow = 'scroll'
+    scrollDiv.style.position = 'absolute';
+    scrollDiv.style.top = '-9999px';
+    scrollDiv.style.width = '50px';
+    scrollDiv.style.height = '50px';
+    scrollDiv.style.overflow = 'scroll';
 
-    body.appendChild(scrollDiv)
-    scrollBarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
-    body.removeChild(scrollDiv)
+    body.appendChild(scrollDiv);
+    scrollBarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+    body.removeChild(scrollDiv);
   }
 
-  return scrollBarWidth === 0 ? '' : `${scrollBarWidth}px`
-}
+  return scrollBarWidth === 0 ? '' : `${scrollBarWidth}px`;
+};
 
 export const storeScroll = () => {
-  const window = getWindow()
+  const window = getWindow();
 
   if (window) {
-    scrollOffset = window.pageYOffset
+    scrollOffset = window.pageYOffset;
   }
-}
+};
 
 export const restoreScroll = () => {
-  const window = getWindow()
+  const window = getWindow();
 
   if (window) {
-    window.scrollTo(0, scrollOffset)
+    window.scrollTo(0, scrollOffset);
   }
-}
+};
 
 export const lockScroll = () => {
-  const body = getBodyElement()
+  const body = getBodyElement();
 
   if (!body) {
-    return
+    return;
   }
 
-  const paddingRight = getScrollBarWidth()
+  const paddingRight = getScrollBarWidth();
 
-  body.style.overflow = 'hidden'
-  body.style.paddingRight = paddingRight
-}
+  body.style.overflow = 'hidden';
+  body.style.paddingRight = paddingRight;
+};
 
 export const unlockScroll = () => {
-  const body = getBodyElement()
+  const body = getBodyElement();
 
   if (!body) {
-    return
+    return;
   }
 
-  body.style.overflow = ''
-  body.style.paddingRight = ''
-}
+  body.style.overflow = '';
+  body.style.paddingRight = '';
+};

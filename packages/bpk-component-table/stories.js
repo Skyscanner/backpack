@@ -1,7 +1,7 @@
-import React from 'react'
-import { storiesOf } from '@kadira/storybook'
+import React from 'react';
+import { storiesOf } from '@kadira/storybook';
 
-import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableCell, BpkTableHeadCell } from './index'
+import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableCell, BpkTableHeadCell } from './index';
 
 storiesOf('bpk-component-table', module)
   .add('Example', () => (
@@ -31,4 +31,4 @@ storiesOf('bpk-component-table', module)
         </BpkTableRow>
       </BpkTableBody>
     </BpkTable>
-  ))
+  ));

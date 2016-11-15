@@ -1,28 +1,28 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
-import './bpk-card.scss'
+import './bpk-card.scss';
 
-const BpkCard = props => {
-  const classNames = [ 'bpk-card' ]
+const BpkCard = (props) => {
+  const classNames = ['bpk-card'];
 
-  props.padded ? classNames.push('bpk-card--padded') : null
+  if (props.padded) { classNames.push('bpk-card--padded'); }
 
-  return <a href={props.href} onClick={props.onClick} className={classNames.join(' ')}>{props.children}</a>
-}
+  return <a href={props.href} onClick={props.onClick} className={classNames.join(' ')}>{props.children}</a>;
+};
 
 BpkCard.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
+    PropTypes.node,
   ]).isRequired,
   href: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  padded: PropTypes.bool
-}
+  padded: PropTypes.bool,
+};
 
 BpkCard.defaultProps = {
   onClick: null,
-  padded: true
-}
+  padded: true,
+};
 
-export default BpkCard
+export default BpkCard;

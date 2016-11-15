@@ -1,4 +1,4 @@
-import BpkSelect from './src/BpkSelect'
+import BpkSelect from './src/BpkSelect';
 
-export default BpkSelect
+export default BpkSelect;
 

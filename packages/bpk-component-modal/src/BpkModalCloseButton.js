@@ -1,28 +1,28 @@
-import React, { PropTypes } from 'react'
-import CloseIcon from 'bpk-component-icon/sm/close'
-import { withButtonAlignment } from 'bpk-component-icon'
+import React, { PropTypes } from 'react';
+import CloseIcon from 'bpk-component-icon/sm/close';
+import { withButtonAlignment } from 'bpk-component-icon';
 
-const CloseButtonIcon = withButtonAlignment(CloseIcon)
+const CloseButtonIcon = withButtonAlignment(CloseIcon);
 
-const BpkModalCloseButton = (props) => (
+const BpkModalCloseButton = props => (
   <button
-    type='button'
+    type="button"
     title={props.label}
     onClick={props.onClick}
     aria-label={props.label}
-    className='bpk-modal__dialog-close-button'
+    className="bpk-modal__dialog-close-button"
   >
-    <CloseButtonIcon className='bpk-modal__dialog-close-icon' />
+    <CloseButtonIcon className="bpk-modal__dialog-close-icon" />
   </button>
-)
+);
 
 BpkModalCloseButton.propTypes = {
   onClick: PropTypes.func.isRequired,
-  label: PropTypes.string
-}
+  label: PropTypes.string,
+};
 
 BpkModalCloseButton.defaultProps = {
-  label: null
-}
+  label: null,
+};
 
-export default BpkModalCloseButton
+export default BpkModalCloseButton;

@@ -1,14 +1,14 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
-import './bpk-code.scss'
+import './bpk-code.scss';
 
-const BpkCode = (props) => <code className='bpk-code'>{props.children}</code>
+const BpkCode = props => <code className="bpk-code">{props.children}</code>;
 
 BpkCode.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
-}
+    PropTypes.node,
+  ]).isRequired,
+};
 
-export default BpkCode
+export default BpkCode;

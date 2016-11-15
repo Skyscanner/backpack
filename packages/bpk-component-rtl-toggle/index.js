@@ -1,3 +1,3 @@
-import component from './src/BpkRtlToggle'
+import component from './src/BpkRtlToggle';
 
-export default component
+export default component;

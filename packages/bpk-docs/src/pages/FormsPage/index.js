@@ -1,3 +1,3 @@
-import page from './FormsPage'
+import page from './FormsPage';
 
-export default page
+export default page;

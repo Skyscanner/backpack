@@ -1,23 +1,25 @@
 export const extractAssets = ({ compilation }) => {
-  const assets = {}
-  const { chunks } = compilation || []
+  const assets = {};
+  const { chunks } = compilation || [];
 
-  chunks.map(({ name, files = [] }) => {
-    assets[ name ] = {}
+  chunks.forEach(({ name, files = [] }) => {
+    assets[name] = {};
 
     files.forEach((path) => {
       switch (true) {
         case /\.js$/.test(path):
-          assets[ name ].js = path
-          break
+          assets[name].js = path;
+          break;
         case /\.css$/.test(path):
-          assets[ name ].css = path
-          break
+          assets[name].css = path;
+          break;
         default:
-          break
+          break;
       }
-    })
-  })
+    });
+  });
 
-  return assets
-}
+  return assets;
+};
+
+export default extractAssets;

@@ -1,4 +1,4 @@
-import BpkBlockquote from './src/BpkBlockquote'
+import BpkBlockquote from './src/BpkBlockquote';
 
-export default BpkBlockquote
+export default BpkBlockquote;
 

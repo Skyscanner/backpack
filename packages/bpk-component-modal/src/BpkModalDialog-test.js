@@ -1,20 +1,22 @@
-jest.mock('react-addons-css-transition-group')
+jest.mock('react-addons-css-transition-group');
 
-import React from 'react'
-import renderer from 'react/lib/ReactTestRenderer'
-import BpkModalDialog from './BpkModalDialog'
+/* eslint-disable import/first */
+import React from 'react';
+import renderer from 'react/lib/ReactTestRenderer';
+import BpkModalDialog from './BpkModalDialog';
+/* eslint-enable */
 
 describe('BpkModalDialog', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
       <BpkModalDialog
-        title='Modal title'
+        title="Modal title"
         onClose={() => null}
         getApplicationElement={() => null}
       >
         Modal content
-      </BpkModalDialog>
-    ).toJSON()
-    expect(tree).toMatchSnapshot()
-  })
-})
+      </BpkModalDialog>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});

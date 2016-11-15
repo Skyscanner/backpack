@@ -1,11 +1,11 @@
-import React from 'react'
-import pickBy from 'lodash/pickBy'
-import includes from 'lodash/includes'
-import TOKENS from 'bpk-tokens/tokens/base.common'
+import React from 'react';
+import pickBy from 'lodash/pickBy';
+import includes from 'lodash/includes';
+import TOKENS from 'bpk-tokens/tokens/base.common';
 
-import BpkParagraph from 'bpk-component-paragraph'
+import BpkParagraph from 'bpk-component-paragraph';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder'
+import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const components = [
   {
@@ -18,10 +18,10 @@ const components = [
         manufacturer has expended in producing a font that works best on their respective platforms. Second, we avoid
         any drawbacks of serving a custom web-font; for example extra load time, and a so-called FOUT (flash of unstyled
         text). This will improve the user experience of our product on all devices.
-      </BpkParagraph>
+      </BpkParagraph>,
     ],
     examples: [],
-    tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'fontFamilyBase'))
+    tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'fontFamilyBase')),
   },
   {
     id: 'font-sizes',
@@ -30,10 +30,10 @@ const components = [
       <BpkParagraph>
         Backpack uses a set of 5 font-sizes which when used in conjunction with their retrospective line heights,
         produces text styles which align to the baseline grid. Similar to spacing, these are specified in rems.
-      </BpkParagraph>
+      </BpkParagraph>,
     ],
     examples: [],
-    tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'fontSize'))
+    tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'fontSize')),
   },
   {
     id: 'line-heights',
@@ -42,18 +42,18 @@ const components = [
       <BpkParagraph>
         The following line-heights should be paired with the font-sizes above to ensure text aligns with the baseline
         grid.
-      </BpkParagraph>
+      </BpkParagraph>,
     ],
     examples: [],
-    tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'lineHeight'))
-  }
-]
+    tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'lineHeight')),
+  },
+];
 
 const TypesettingPage = () => <DocsPageBuilder
-  title='Typesetting'
-  blurb='Here you can find information on how the Backpack type is set including fonts, sizes and line heights.'
+  title="Typesetting"
+  blurb="Here you can find information on how the Backpack type is set including fonts, sizes and line heights."
   components={components}
-  sassdocId='typesettings'
-/>
+  sassdocId="typesettings"
+/>;
 
-export default TypesettingPage
+export default TypesettingPage;

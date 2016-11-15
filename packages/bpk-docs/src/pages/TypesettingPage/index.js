@@ -1,3 +1,3 @@
-import page from './TypesettingPage.js'
+import page from './TypesettingPage';
 
-export default page
+export default page;

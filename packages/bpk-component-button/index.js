@@ -1,3 +1,3 @@
-import component from './src/BpkButton'
+import component from './src/BpkButton';
 
-export default component
+export default component;

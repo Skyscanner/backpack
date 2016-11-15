@@ -1,3 +1,3 @@
-import page from './RadiiPage.js'
+import page from './RadiiPage';
 
-export default page
+export default page;

@@ -1,7 +1,7 @@
-import React from 'react'
-import { storiesOf } from '@kadira/storybook'
+import React from 'react';
+import { storiesOf } from '@kadira/storybook';
 
-import { BpkCode, BpkCodeBlock } from './index'
+import { BpkCode, BpkCodeBlock } from './index';
 
 storiesOf('bpk-component-code', module)
   .add('Inline', () => (
@@ -9,4 +9,4 @@ storiesOf('bpk-component-code', module)
   ))
   .add('Block', () => (
     <BpkCodeBlock>npm install react --save</BpkCodeBlock>
-  ))
+  ));

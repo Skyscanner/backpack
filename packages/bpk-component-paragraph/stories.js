@@ -1,7 +1,7 @@
-import React from 'react'
-import { storiesOf } from '@kadira/storybook'
+import React from 'react';
+import { storiesOf } from '@kadira/storybook';
 
-import BpkParagraph from './index'
+import BpkParagraph from './index';
 
 storiesOf('bpk-component-paragraph', module)
   .add('Example', () => (
@@ -20,4 +20,4 @@ storiesOf('bpk-component-paragraph', module)
         Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
       </BpkParagraph>
     </div>
-  ))
+  ));

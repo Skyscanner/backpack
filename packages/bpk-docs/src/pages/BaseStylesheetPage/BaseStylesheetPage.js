@@ -1,31 +1,29 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from 'react';
+import Helmet from 'react-helmet';
+import BpkLink from 'bpk-component-link';
+import BpkHeading from 'bpk-component-heading';
+import BpkParagraph from 'bpk-component-paragraph';
+import BpkBlockquote from 'bpk-component-blockquote';
+import { BpkList, BpkListItem } from 'bpk-component-list';
+import { BpkCode, BpkCodeBlock } from 'bpk-component-code';
+import BpkContentContainer from 'bpk-component-content-container';
 
-import BpkLink from 'bpk-component-link'
-import BpkHeading from 'bpk-component-heading'
-import BpkParagraph from 'bpk-component-paragraph'
-import BpkBlockquote from 'bpk-component-blockquote'
-import { BpkList, BpkListItem } from 'bpk-component-list'
-import BpkContentContainer from 'bpk-component-content-container'
-
-import { BpkCode, BpkCodeBlock } from 'bpk-component-code'
-
-const h5bpLink = 'https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#common-helpers'
+const h5bpLink = 'https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#common-helpers';
 
 const BaseStylesheetPage = () => (
   <section>
-    <Helmet title='Base stylesheet' />
+    <Helmet title="Base stylesheet" />
     <BpkContentContainer>
-      <BpkHeading level='h1'>Base stylesheet</BpkHeading>
+      <BpkHeading level="h1">Base stylesheet</BpkHeading>
       <BpkParagraph>
         All components are built on top of a super lightweight base stylesheet. Ensure you include this on the page when
         consuming any backpack components.
       </BpkParagraph>
-      <BpkHeading level='h3'>What's in it?</BpkHeading>
+      <BpkHeading level="h3">What&apos;s in it?</BpkHeading>
       <BpkList>
         <BpkListItem>
           For improved cross-browser rendering, we
-          use <BpkLink href='http://necolas.github.io/normalize.css/' blank>Normalize.css</BpkLink> to
+          use <BpkLink href="http://necolas.github.io/normalize.css/" blank>Normalize.css</BpkLink> to
           correct small inconsistencies across browsers and devices.
         </BpkListItem>
         <BpkListItem>
@@ -46,23 +44,24 @@ const BaseStylesheetPage = () => (
           &nbsp;<BpkCode>.visuallyhidden.focusable</BpkCode>,
           &nbsp;<BpkCode>.invisible</BpkCode> and <BpkCode>.clearfix</BpkCode>.
         </BpkListItem>
-        <BpkListItem>That's it!</BpkListItem>
+        <BpkListItem>That&apos;s it!</BpkListItem>
       </BpkList>
       <BpkBlockquote>
         <strong>Note:</strong> There is also a small amount of JavaScript that does
-        "<BpkLink href='https://modernizr.com/' blank>Modernizr</BpkLink> like" feature detection (currently used to
-        prevent hover effects on touch devices in downstream components) - make sure this is included in the head also.
+        &quot;<BpkLink href="https://modernizr.com/" blank>Modernizr</BpkLink> like&quot; feature detection (currently
+        used to prevent hover effects on touch devices in downstream components) - make sure this is included in the
+        head also.
       </BpkBlockquote>
-      <BpkHeading level='h3'>Usage</BpkHeading>
+      <BpkHeading level="h3">Usage</BpkHeading>
       <BpkParagraph>
         <strong>
-          Consumer's of the website scaffolding should expect the base stylesheet & feature detection to be on the page
-          already.
+          Consumer&apos;s of the website scaffolding should expect the base stylesheet & feature detection to be on the
+          page already.
         </strong>
       </BpkParagraph>
       <BpkParagraph>
         If you need to emulate these in your local dev environment or test harness, the compiled CSS &
-        JavaScript are available for you to include on your page, but first you'll need to install
+        JavaScript are available for you to include on your page, but first you&apos;ll need to install
         the <BpkCode>bpk-stylesheets</BpkCode> package:
       </BpkParagraph>
       <BpkCodeBlock>npm install bpk-stylesheets --save-dev</BpkCodeBlock>
@@ -85,6 +84,6 @@ const BaseStylesheetPage = () => (
       <BpkCodeBlock>{'import \'bpk-stylesheets\';'}</BpkCodeBlock>
     </BpkContentContainer>
   </section>
-)
+);
 
-export default BaseStylesheetPage
+export default BaseStylesheetPage;

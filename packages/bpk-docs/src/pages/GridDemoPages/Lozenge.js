@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { PropTypes } from 'react';
 
-import './grid-demo-pages.scss'
+import './grid-demo-pages.scss';
 
 const Lozenge = ({ children }) => (
-  <div className='bpkdocs-grid-demo-pages__lozenge'>{children}</div>
-)
+  <div className="bpkdocs-grid-demo-pages__lozenge">{children}</div>
+);
 
-export default Lozenge
+Lozenge.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default Lozenge;

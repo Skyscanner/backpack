@@ -1,3 +1,3 @@
-import component from './src/BpkHeading'
+import component from './src/BpkHeading';
 
-export default component
+export default component;

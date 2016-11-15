@@ -1,40 +1,46 @@
-import React, { PropTypes } from 'react'
-import './bpk-button.scss'
+import React, { PropTypes } from 'react';
+import './bpk-button.scss';
 
 const BpkButton = (props) => {
-  const classNames = [ 'bpk-button' ]
+  const classNames = ['bpk-button'];
 
-  props.secondary ? classNames.push('bpk-button--secondary') : null
-  props.destructive ? classNames.push('bpk-button--destructive') : null
-  props.selected ? classNames.push('bpk-button--selected') : null
-  props.large ? classNames.push('bpk-button--large') : null
-  props.link ? classNames.push('bpk-button--link') : null
-  props.className ? classNames.push(props.className) : null
+  if (props.secondary) { classNames.push('bpk-button--secondary'); }
+  if (props.destructive) { classNames.push('bpk-button--destructive'); }
+  if (props.selected) { classNames.push('bpk-button--selected'); }
+  if (props.large) { classNames.push('bpk-button--large'); }
+  if (props.link) { classNames.push('bpk-button--link'); }
+  if (props.className) { classNames.push(props.className); }
 
-  const className = classNames.join(' ')
+  const className = classNames.join(' ');
 
   if (props.href) {
-    return <a
-      href={props.href}
-      className={className}
-      children={props.children}
-      onClick={props.onClick}
-    />
+    return (
+      <a
+        href={props.href}
+        className={className}
+        onClick={props.onClick}
+      >
+        {props.children}
+      </a>
+    );
   }
 
-  return <button
-    type={props.submit ? 'submit' : 'button'}
-    disabled={props.disabled}
-    className={className}
-    children={props.children}
-    onClick={props.onClick}
-  />
-}
+  return (
+    <button
+      type={props.submit ? 'submit' : 'button'}
+      disabled={props.disabled}
+      className={className}
+      onClick={props.onClick}
+    >
+      {props.children}
+    </button>
+  );
+};
 
 BpkButton.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
+    PropTypes.node,
   ]).isRequired,
   href: PropTypes.string,
   className: PropTypes.string,
@@ -45,8 +51,8 @@ BpkButton.propTypes = {
   destructive: PropTypes.bool,
   large: PropTypes.bool,
   link: PropTypes.bool,
-  onClick: PropTypes.func
-}
+  onClick: PropTypes.func,
+};
 
 BpkButton.defaultProps = {
   href: null,
@@ -58,7 +64,7 @@ BpkButton.defaultProps = {
   destructive: false,
   large: false,
   link: false,
-  onClick: null
-}
+  onClick: null,
+};
 
-export default BpkButton
+export default BpkButton;

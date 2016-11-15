@@ -1,23 +1,29 @@
-import React from 'react'
+import React from 'react';
+import BpkButton from 'bpk-component-button';
+import BpkParagraph from 'bpk-component-paragraph';
+import TOKENS from 'bpk-tokens/tokens/base.common';
+import { BpkSpinner, BpkLargeSpinner } from 'bpk-component-spinner';
+import { alignToButton, alignToLargeButton } from 'bpk-component-icon';
+import TestBpkSmallArrowIcon from 'bpk-component-icon/sm/long-arrow-right-alt';
+import TestBpkLargeArrowIcon from 'bpk-component-icon/lg/long-arrow-right-alt';
 
-import BpkButton from 'bpk-component-button'
-import { BpkSpinner, BpkLargeSpinner } from 'bpk-component-spinner'
-import BpkParagraph from 'bpk-component-paragraph'
-import TOKENS from 'bpk-tokens/tokens/base.common'
-import { alignToButton, alignToLargeButton } from 'bpk-component-icon'
-import TestBpkSmallArrowIcon from 'bpk-component-icon/sm/long-arrow-right-alt'
-import TestBpkLargeArrowIcon from 'bpk-component-icon/lg/long-arrow-right-alt'
+import buttonReadme from 'bpk-component-button/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder'
+import DocsPageBuilder from './../../components/DocsPageBuilder';
 
-const AlignedBpkSmallArrowIcon = alignToButton(TestBpkSmallArrowIcon)
-const AlignedBpkLargeArrowIcon = alignToLargeButton(TestBpkLargeArrowIcon)
+const AlignedBpkSmallArrowIcon = alignToButton(TestBpkSmallArrowIcon);
+const AlignedBpkLargeArrowIcon = alignToLargeButton(TestBpkLargeArrowIcon);
 
 const components = [
   {
     id: 'primary',
     title: 'Primary',
-    blurb: 'The Backpack primary button is available in two sizes and comes with styles for hover, active, disabled and selected states.',
+    blurb: [
+      <BpkParagraph>
+        The Backpack primary button is available in two sizes and comes with styles for hover, active, disabled and
+        selected states.
+      </BpkParagraph>,
+    ],
     examples: [
       <BpkButton>Primary</BpkButton>,
       ' ',
@@ -30,13 +36,18 @@ const components = [
       ' ',
       <BpkButton large selected>Selected</BpkButton>,
       ' ',
-      <BpkButton large disabled>Disabled</BpkButton>
-    ]
+      <BpkButton large disabled>Disabled</BpkButton>,
+    ],
   },
   {
     id: 'secondary',
     title: 'Secondary',
-    blurb: 'Similar to the primary button, the secondary version is available in two sizes and comes with styles for hover, active, disabled and selected states.',
+    blurb: [
+      <BpkParagraph>
+        Similar to the primary button, the secondary version is available in two sizes and comes with styles for
+        hover, active, disabled and selected states.
+      </BpkParagraph>,
+    ],
     examples: [
       <BpkButton secondary>Secondary</BpkButton>,
       ' ',
@@ -49,8 +60,8 @@ const components = [
       ' ',
       <BpkButton large secondary selected>Selected</BpkButton>,
       ' ',
-      <BpkButton large secondary disabled>Disabled</BpkButton>
-    ]
+      <BpkButton large secondary disabled>Disabled</BpkButton>,
+    ],
   },
   {
     id: 'destructive',
@@ -64,13 +75,17 @@ const components = [
       <br />,
       <BpkButton large destructive>Destructive</BpkButton>,
       ' ',
-      <BpkButton large destructive disabled>Disabled</BpkButton>
-    ]
+      <BpkButton large destructive disabled>Disabled</BpkButton>,
+    ],
   },
   {
     id: 'icons-and-spinners',
     title: 'Icons & spinners',
-    blurb: 'All buttons support nesting icons and spinners, which is useful for improving affordance or indicate loading.',
+    blurb: [
+      <BpkParagraph>
+        All buttons support nesting icons and spinners, which is useful for improving affordance or indicate loading.
+      </BpkParagraph>,
+    ],
     examples: [
       <BpkButton>
         Primary <AlignedBpkSmallArrowIcon fill={TOKENS.colorWhite} />
@@ -87,13 +102,18 @@ const components = [
       ' ',
       <BpkButton large>
         Primary <BpkLargeSpinner fill={TOKENS.colorWhite} alignToButton />
-      </BpkButton>
-    ]
+      </BpkButton>,
+    ],
   },
   {
     id: 'link-buttons',
     title: 'Link buttons',
-    blurb: 'Link buttons follow the same style as links and are used as a tertiary means of triggering actions. Like all other buttons, these are available in two sizes and have hover, active and disabled states.',
+    blurb: [
+      <BpkParagraph>
+        Link buttons follow the same style as links and are used as a tertiary means of triggering actions. Like all
+        other buttons, these are available in two sizes and have hover, active and disabled states.
+      </BpkParagraph>,
+    ],
     examples: [
       <BpkButton link>Link</BpkButton>,
       ' ',
@@ -102,22 +122,22 @@ const components = [
       <br />,
       <BpkButton link large>Link</BpkButton>,
       ' ',
-      <BpkButton link large disabled>Disabled</BpkButton>
-    ]
-  }
-]
+      <BpkButton link large disabled>Disabled</BpkButton>,
+    ],
+  },
+];
 
 const ButtonsPage = () => <DocsPageBuilder
-  title='Buttons'
+  title="Buttons"
   blurb={[
     <BpkParagraph>
       On this page you’ll find examples and information on how to use the button component. If you provide an href, an
       anchor tag is rendered instead.
-    </BpkParagraph>
+    </BpkParagraph>,
   ]}
   components={components}
-  readme={require('raw!bpk-component-button/readme.md')}
-  sassdocId='buttons'
-/>
+  readme={buttonReadme}
+  sassdocId="buttons"
+/>;
 
-export default ButtonsPage
+export default ButtonsPage;

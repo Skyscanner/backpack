@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import BpkLink from 'bpk-component-link';
+import BpkParagraph from 'bpk-component-paragraph';
+import { BpkCloudLogo, BpkInlineLogo, BpkStackedLogo, BpkTianxunLogo, BpkTianxunStackedLogo } from 'bpk-component-logo';
 
-import BpkLink from 'bpk-component-link'
-import BpkParagraph from 'bpk-component-paragraph'
-import { BpkCloudLogo, BpkInlineLogo, BpkStackedLogo, BpkTianxunLogo, BpkTianxunStackedLogo } from 'bpk-component-logo'
+import logoReadme from 'bpk-component-logo/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder'
+import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const blurb = [
   <BpkParagraph>
@@ -15,51 +16,56 @@ const blurb = [
   <BpkParagraph>
     As with using any logo, please ensure there’s sufficient clear space surrounding it and consider color, contrast,
     and legibility to ensure it’s shown at its best.
-  </BpkParagraph>
-]
+  </BpkParagraph>,
+];
 
 const components = [
   {
     id: 'inline',
     title: 'Inline',
     examples: [
-      <BpkInlineLogo />
+      <BpkInlineLogo />,
     ],
-    blurb: 'This is the preferred usage of the logo.'
+    blurb: 'This is the preferred usage of the logo.',
   },
   {
     id: 'stacked',
     title: 'Stacked',
     examples: [
-      <BpkStackedLogo />
+      <BpkStackedLogo />,
     ],
-    blurb: 'Stacked logos should only be used when confined to a small square e.g. a social media avatars.'
+    blurb: 'Stacked logos should only be used when confined to a small square e.g. a social media avatars.',
   },
   {
     id: 'cloud',
     title: 'Cloud',
     examples: [
-      <BpkCloudLogo />
+      <BpkCloudLogo />,
     ],
-    blurb: 'The cloud is useful for things such as app icons and favicons.'
+    blurb: 'The cloud is useful for things such as app icons and favicons.',
   },
   {
     id: 'tianxun',
     title: 'Tianxun',
     examples: [
-      <BpkTianxunLogo />
+      <BpkTianxunLogo />,
     ],
-    blurb: 'This is the preferred usage for Skyscanner in China.'
+    blurb: 'This is the preferred usage for Skyscanner in China.',
   },
   {
     id: 'tianxun-stacked',
     title: 'Tianxun stacked',
     examples: [
-      <BpkTianxunStackedLogo />
+      <BpkTianxunStackedLogo />,
     ],
-    blurb: 'Similar to the stacked version of the Skyscanner logo, this should only be used when confined to a small square e.g. a social media avatars.'
-  }
-]
+    blurb: [
+      <BpkParagraph>
+        Similar to the stacked version of the Skyscanner logo, this should only be used when confined to a small square
+        e.g. a social media avatars.
+      </BpkParagraph>,
+    ],
+  },
+];
 
 const customSections = [
   {
@@ -69,20 +75,20 @@ const customSections = [
       <BpkParagraph>
         Skyscanner also maintains specific logos for our product verticals, for example: ‘Skyscanner Flights’,
         ‘Skyscanner Hotels’ etc. These are not widely used on our product and as such are not maintained in Backpack.
-        Please contact the <BpkLink href='mailto: creative@skyscanner.net'>creative team </BpkLink> if you require
+        Please contact the <BpkLink href="mailto: creative@skyscanner.net">creative team </BpkLink> if you require
         these.
-      </BpkParagraph>
-    ]
-  }
-]
+      </BpkParagraph>,
+    ],
+  },
+];
 
 const LogosPage = () => <DocsPageBuilder
-  title='Logos'
+  title="Logos"
   blurb={blurb}
   components={components}
   customSections={customSections}
-  readme={require('raw!bpk-component-logo/readme.md')}
-  sassdocId='svgs-mixin-bpk-logo-cloud'
-/>
+  readme={logoReadme}
+  sassdocId="svgs-mixin-bpk-logo-cloud"
+/>;
 
-export default LogosPage
+export default LogosPage;

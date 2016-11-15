@@ -1,93 +1,94 @@
-import focusScope from 'a11y-focus-scope'
-import focusStore from 'a11y-focus-store'
-import BpkHeading from 'bpk-component-heading'
-import { BpkButtonLink } from 'bpk-component-link'
-import React, { PropTypes, Component } from 'react'
+import focusScope from 'a11y-focus-scope';
+import focusStore from 'a11y-focus-store';
+import BpkHeading from 'bpk-component-heading';
+import { BpkButtonLink } from 'bpk-component-link';
+import React, { PropTypes, Component } from 'react';
 
-import './bpk-modal.scss'
-import BpkModalCloseButton from './BpkModalCloseButton'
-import { lockScroll, unlockScroll, storeScroll, restoreScroll } from './scroll-utils'
-import TransitionInitialMount from './TransitionInitialMount'
+import './bpk-modal.scss';
+import BpkModalCloseButton from './BpkModalCloseButton';
+import TransitionInitialMount from './TransitionInitialMount';
+import { lockScroll, unlockScroll, storeScroll, restoreScroll } from './scroll-utils';
 
 const stopPropagation = (e) => {
-  e.stopPropagation()
-}
+  e.stopPropagation();
+};
 
 class BpkModalDialog extends Component {
-  constructor () {
-    super()
+  constructor() {
+    super();
 
-    this.onClose = this.onClose.bind(this)
-    this.getDialogRef = this.getDialogRef.bind(this)
+    this.onClose = this.onClose.bind(this);
+    this.getDialogRef = this.getDialogRef.bind(this);
   }
 
-  componentDidMount () {
-    const { isIphone, getApplicationElement } = this.props
-    const applicationElement = getApplicationElement()
+  componentDidMount() {
+    const { isIphone, getApplicationElement } = this.props;
+    const applicationElement = getApplicationElement();
 
     if (isIphone && applicationElement) {
-      storeScroll()
-      applicationElement.style.display = 'none'
+      storeScroll();
+      applicationElement.style.display = 'none';
     } else if (applicationElement) {
-      lockScroll()
-      applicationElement.setAttribute('aria-hidden', 'true')
+      lockScroll();
+      applicationElement.setAttribute('aria-hidden', 'true');
     } else {
-      lockScroll()
+      lockScroll();
     }
 
-    focusStore.storeFocus()
+    focusStore.storeFocus();
     if (this.dialogElement) {
-      focusScope.scopeFocus(this.dialogElement)
+      focusScope.scopeFocus(this.dialogElement);
     }
   }
 
-  componentWillUnmount () {
-    const { isIphone, getApplicationElement } = this.props
-    const applicationElement = getApplicationElement()
+  componentWillUnmount() {
+    const { isIphone, getApplicationElement } = this.props;
+    const applicationElement = getApplicationElement();
 
     if (isIphone && applicationElement) {
-      applicationElement.style.display = ''
-      restoreScroll()
+      applicationElement.style.display = '';
+      restoreScroll();
     } else if (applicationElement) {
-      unlockScroll()
-      applicationElement.removeAttribute('aria-hidden')
+      unlockScroll();
+      applicationElement.removeAttribute('aria-hidden');
     } else {
-      unlockScroll()
+      unlockScroll();
     }
 
-    focusScope.unscopeFocus()
-    focusStore.restoreFocus()
+    focusScope.unscopeFocus();
+    focusStore.restoreFocus();
   }
 
-  getDialogRef (ref) {
-    this.dialogElement = ref
+  onClose(e) {
+    stopPropagation(e);
+    this.props.onClose();
   }
 
-  onClose (e) {
-    stopPropagation(e)
-    this.props.onClose()
+  getDialogRef(ref) {
+    this.dialogElement = ref;
   }
 
-  renderDialog () {
-    const dialogClassName = 'bpk-modal__dialog'
-    const dialogClassNames = [ dialogClassName ]
+  renderDialog() {
+    const dialogClassName = 'bpk-modal__dialog';
+    const dialogClassNames = [dialogClassName];
 
-    this.props.wide ? dialogClassNames.push('bpk-modal__dialog--wide') : null
-    this.props.isIphone ? dialogClassNames.push('bpk-modal__dialog--iphone-fix') : null
+    if (this.props.wide) { dialogClassNames.push('bpk-modal__dialog--wide'); }
+    if (this.props.isIphone) { dialogClassNames.push('bpk-modal__dialog--iphone-fix'); }
 
+    /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
       <TransitionInitialMount classNamePrefix={dialogClassName} transitionTimeout={300}>
         <section
-          tabIndex='-1'
-          role='dialog'
-          aria-labelledby='aria-label-heading'
-          aria-describedby='aria-label-content'
+          tabIndex="-1"
+          role="dialog"
+          aria-labelledby="aria-label-heading"
+          aria-describedby="aria-label-content"
           onClick={stopPropagation}
           className={dialogClassNames.join(' ')}
           ref={this.getDialogRef}
         >
-          <header className='bpk-modal__dialog-header'>
-            <BpkHeading id='aria-label-heading' level='h4' bottomMargin={false}>
+          <header className="bpk-modal__dialog-header">
+            <BpkHeading id="aria-label-heading" level="h4" bottomMargin={false}>
               {this.props.title}
             </BpkHeading>
             {this.props.closeText
@@ -95,24 +96,27 @@ class BpkModalDialog extends Component {
               : <BpkModalCloseButton label={this.props.closeLabel} onClick={this.onClose} />
             }
           </header>
-          <div id='aria-label-content' className='bpk-modal__dialog-content'>
+          <div id="aria-label-content" className="bpk-modal__dialog-content">
             {this.props.children}
           </div>
         </section>
       </TransitionInitialMount>
-    )
+    );
+    /* eslint-enable */
   }
 
-  render () {
-    const classNames = [ 'bpk-modal' ]
+  render() {
+    const classNames = ['bpk-modal'];
 
-    this.props.isIphone ? classNames.push('bpk-modal--iphone-fix') : null
+    if (this.props.isIphone) { classNames.push('bpk-modal--iphone-fix'); }
 
+    /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
       <div className={classNames.join(' ')} onClick={this.onClose}>
         {this.renderDialog()}
       </div>
-    )
+    );
+    /* eslint-enable */
   }
 }
 
@@ -124,14 +128,14 @@ BpkModalDialog.propTypes = {
   closeLabel: PropTypes.string,
   closeText: PropTypes.string,
   isIphone: PropTypes.bool,
-  wide: PropTypes.bool
-}
+  wide: PropTypes.bool,
+};
 
 BpkModalDialog.defaultProps = {
   closeLabel: null,
   closeText: null,
   isIphone: /iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : ''),
-  wide: false
-}
+  wide: false,
+};
 
-export default BpkModalDialog
+export default BpkModalDialog;

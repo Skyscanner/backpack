@@ -1,3 +1,3 @@
-import page from './GettingStartedPage'
+import page from './GettingStartedPage';
 
-export default page
+export default page;

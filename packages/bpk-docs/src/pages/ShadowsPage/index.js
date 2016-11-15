@@ -1,3 +1,3 @@
-import page from './ShadowsPage.js'
+import page from './ShadowsPage';
 
-export default page
+export default page;

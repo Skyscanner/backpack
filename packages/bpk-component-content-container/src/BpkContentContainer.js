@@ -1,39 +1,42 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
-import './bpk-content-container.scss'
+import './bpk-content-container.scss';
 
 const BpkContentContainer = (props) => {
-  const TagName = props.tagName
-  const classNames = [ 'bpk-content-container' ]
+  const TagName = props.tagName;
+  const classNames = ['bpk-content-container'];
 
-  props.bareHtml ? classNames.push('bpk-content-container--bare-html') : null
+  if (props.bareHtml) { classNames.push('bpk-content-container--bare-html'); }
 
+  /* eslint-disable react/no-danger-with-children */
   return (
     <TagName
       className={classNames.join(' ')}
-      children={props.children}
       dangerouslySetInnerHTML={props.dangerouslySetInnerHTML}
-    />
-  )
-}
+    >
+      {props.children}
+    </TagName>
+  );
+  /* eslint-enable */
+};
 
 BpkContentContainer.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
+    PropTypes.node,
   ]),
   dangerouslySetInnerHTML: PropTypes.shape({
-    __html: PropTypes.string.isRequired
+    __html: PropTypes.string.isRequired,
   }),
-  tagName: PropTypes.oneOf([ 'article', 'aside', 'div', 'main', 'section' ]),
-  bareHtml: PropTypes.bool
-}
+  tagName: PropTypes.oneOf(['article', 'aside', 'div', 'main', 'section']),
+  bareHtml: PropTypes.bool,
+};
 
 BpkContentContainer.defaultProps = {
   dangerouslySetInnerHTML: null,
   tagName: 'div',
-  bareHtml: false
-}
+  bareHtml: false,
+};
 
-export default BpkContentContainer
+export default BpkContentContainer;
 

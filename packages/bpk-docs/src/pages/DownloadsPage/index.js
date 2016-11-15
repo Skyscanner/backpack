@@ -1,3 +1,3 @@
-import page from './DownloadsPage'
+import page from './DownloadsPage';
 
-export default page
+export default page;

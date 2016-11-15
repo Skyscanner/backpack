@@ -1,7 +1,7 @@
-import React from 'react'
-import { storiesOf } from '@kadira/storybook'
+import React from 'react';
+import { storiesOf } from '@kadira/storybook';
 
-import { BpkInlineLogo, BpkCloudLogo, BpkStackedLogo, BpkTianxunLogo, BpkTianxunStackedLogo } from './index'
+import { BpkInlineLogo, BpkCloudLogo, BpkStackedLogo, BpkTianxunLogo, BpkTianxunStackedLogo } from './index';
 
 storiesOf('bpk-component-logo', module)
   .add('Inline', () => (
@@ -18,4 +18,4 @@ storiesOf('bpk-component-logo', module)
   ))
   .add('Tianxun stacked', () => (
     <BpkTianxunStackedLogo />
-  ))
+  ));

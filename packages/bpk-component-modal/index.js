@@ -1,3 +1,3 @@
-import BpkModal from './src/BpkModal'
+import BpkModal from './src/BpkModal';
 
-export default BpkModal
+export default BpkModal;

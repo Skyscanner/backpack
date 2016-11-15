@@ -1,3 +1,3 @@
-import page from './HomePage.js'
+import page from './HomePage';
 
-export default page
+export default page;

@@ -1,20 +1,20 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
-import './bpk-select.scss'
+import './bpk-select.scss';
 
 const BpkSelect = (props) => {
-  const { valid, large, docked, className, ...rest } = props
-  const classNames = [ 'bpk-select' ]
+  const { valid, large, docked, className, ...rest } = props;
+  const classNames = ['bpk-select'];
 
-  large ? classNames.push('bpk-select--large') : null
-  docked ? classNames.push('bpk-select--docked') : null
-  valid === false ? classNames.push('bpk-select--invalid') : null
-  className ? classNames.push(className) : null
+  if (large) { classNames.push('bpk-select--large'); }
+  if (docked) { classNames.push('bpk-select--docked'); }
+  if (valid === false) { classNames.push('bpk-select--invalid'); }
+  if (className) { classNames.push(className); }
 
   return (
     <select className={classNames.join(' ')} {...rest} />
-  )
-}
+  );
+};
 
 BpkSelect.propTypes = {
   id: PropTypes.string.isRequired,
@@ -24,14 +24,14 @@ BpkSelect.propTypes = {
   className: PropTypes.string,
   valid: PropTypes.bool,
   large: PropTypes.bool,
-  docked: PropTypes.bool
-}
+  docked: PropTypes.bool,
+};
 
 BpkSelect.defaultProps = {
   className: null,
   valid: null,
   large: false,
-  docked: false
-}
+  docked: false,
+};
 
-export default BpkSelect
+export default BpkSelect;

@@ -1,2 +1,4 @@
-export const BpkList = require('./src/BpkList').default
-export const BpkListItem = require('./src/BpkListItem.js').default
+import BpkList from './src/BpkList';
+import BpkListItem from './src/BpkListItem';
+
+export { BpkList, BpkListItem };

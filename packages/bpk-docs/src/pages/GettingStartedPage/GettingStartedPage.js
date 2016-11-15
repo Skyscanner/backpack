@@ -1,22 +1,22 @@
-import React from 'react'
+import React from 'react';
+import BpkLink from 'bpk-component-link';
+import BpkParagraph from 'bpk-component-paragraph';
+import BpkBlockquote from 'bpk-component-blockquote';
+import BpkRouterLink from 'bpk-component-router-link';
+import { BpkList, BpkListItem } from 'bpk-component-list';
+import { BpkCodeBlock, BpkCode } from 'bpk-component-code';
 
-import BpkLink from 'bpk-component-link'
-import BpkParagraph from 'bpk-component-paragraph'
-import BpkBlockquote from 'bpk-component-blockquote'
-import BpkRouterLink from 'bpk-component-router-link'
-import { BpkList, BpkListItem } from 'bpk-component-list'
-import { BpkCodeBlock, BpkCode } from 'bpk-component-code'
+import * as ROUTES from './../../constants/routes';
+import DocsPageBuilder from './../../components/DocsPageBuilder';
 
-import * as ROUTES from './../../constants/routes'
-
-import DocsPageBuilder from './../../components/DocsPageBuilder'
-const nodeSassUrl = 'https://github.com/sass/node-sass'
-const sassLoaderUrl = 'https://github.com/jtangelder/sass-loader'
-const sassLoaderTildeUrl = 'https://github.com/jtangelder/sass-loader#imports'
-const createReactAppUrl = 'https://github.com/facebookincubator/create-react-app'
-const nodeSassTildeImporterUrl = 'https://github.com/matthewdavidson/node-sass-tilde-importer'
-const backpackReactExampleUrl = 'http://git.prod.skyscanner.local/backpack/backpack-react-example'
-const webpackConfigExampleUrl = 'http://git.prod.skyscanner.local/backpack/backpack-react-example/blob/master/webpack.config.babel.js'
+const nodeSassUrl = 'https://github.com/sass/node-sass';
+const sassLoaderUrl = 'https://github.com/jtangelder/sass-loader';
+const sassLoaderTildeUrl = 'https://github.com/jtangelder/sass-loader#imports';
+const createReactAppUrl = 'https://github.com/facebookincubator/create-react-app';
+const nodeSassTildeImporterUrl = 'https://github.com/matthewdavidson/node-sass-tilde-importer';
+const backpackReactExampleUrl = 'http://git.prod.skyscanner.local/backpack/backpack-react-example';
+const webpackConfigExampleUrl =
+  'http://git.prod.skyscanner.local/backpack/backpack-react-example/blob/master/webpack.config.babel.js';
 
 const components = [
   {
@@ -28,7 +28,7 @@ const components = [
       </BpkParagraph>,
       <BpkList ordered>
         <BpkListItem>
-          Download and install the <BpkLink href='https://labs.invisionapp.com/craft' blank>Craft plugin</BpkLink>.
+          Download and install the <BpkLink href="https://labs.invisionapp.com/craft" blank>Craft plugin</BpkLink>.
         </BpkListItem>
         <BpkListItem>
           Download the Backpack Craft library from <BpkRouterLink to={ROUTES.DOWNLOADS}>Downloads</BpkRouterLink>.
@@ -36,9 +36,9 @@ const components = [
         <BpkListItem>
           Import the Backpack Craft Library into Sketch.
         </BpkListItem>
-      </BpkList>
+      </BpkList>,
     ],
-    examples: []
+    examples: [],
   },
   {
     id: 'react-components',
@@ -78,24 +78,25 @@ ReactDom.render(myComponent, document.getElementById('react-mount'));
         end up with a local dev server running a page displaying the button component.
       </BpkParagraph>,
       <BpkBlockquote>
-        <strong>Note:</strong> All Backpack components are published uncompiled which means you'll need to accommodate
-        for this in your webpack config - here is an <BpkLink href={webpackConfigExampleUrl} blank>example</BpkLink>.
+        <strong>Note:</strong> All Backpack components are published uncompiled which means you&apos;ll need to
+        accommodate for this in your webpack config - here is
+        an <BpkLink href={webpackConfigExampleUrl} blank>example</BpkLink>.
       </BpkBlockquote>,
       <BpkBlockquote>
         <strong>Note:</strong> We are hoping to make it a lot easier to get started with Backpack and React in the near
         future. Ideas include a <BpkLink href={createReactAppUrl} blank>create-react-app</BpkLink> like project which
         will get you up and running in minutes as well as some sort of Slingshot / MShell based integration to get your
         app into production. Watch this space.
-      </BpkBlockquote>
+      </BpkBlockquote>,
     ],
-    examples: []
+    examples: [],
   },
   {
     id: 'sass-variables-and-mixins',
     title: 'Sass variables and mixins',
     blurb: [
       <BpkParagraph>
-        Backpack's bonds are primarily available as a library of Sass variables and mixins. Furthermore, most atom
+        Backpack&apos;s bonds are primarily available as a library of Sass variables and mixins. Furthermore, most atom
         level components are also available as mixins. Again, the library is exposed as a module on the npm registry
         which can be installed like so:
       </BpkParagraph>,
@@ -115,26 +116,26 @@ ReactDom.render(myComponent, document.getElementById('react-mount'));
       <BpkBlockquote>
         <strong>Note</strong>: <BpkCode>bpk-mixins</BpkCode> only
         supports <BpkLink href={nodeSassUrl} blank>node-sass</BpkLink> and makes extensive use
-        of <BpkLink href={sassLoaderTildeUrl} blank>sass-loader's</BpkLink> tilde importing mechanism. If you are not
-        using <BpkLink href={sassLoaderUrl} blank>sass-loader</BpkLink>, you can
+        of <BpkLink href={sassLoaderTildeUrl} blank>sass-loader&apos;s</BpkLink> tilde importing mechanism. If you are
+        not using <BpkLink href={sassLoaderUrl} blank>sass-loader</BpkLink>, you can
         use <BpkLink href={nodeSassTildeImporterUrl}>node-sass-tilde-importer</BpkLink>.
         The <BpkCode>indentedSyntax</BpkCode> option is unsupported.
       </BpkBlockquote>,
       <BpkParagraph>
         To get an idea of all the variables and mixins available, head on over to
-        the <BpkLink href='/sassdoc' blank>full reference documentation</BpkLink>.
-      </BpkParagraph>
+        the <BpkLink href="/sassdoc" blank>full reference documentation</BpkLink>.
+      </BpkParagraph>,
     ],
-    examples: []
-  }
-]
+    examples: [],
+  },
+];
 
 const GettingStartedPage = () => <DocsPageBuilder
-  title='Getting started'
+  title="Getting started"
   blurb={[
-    <BpkParagraph>Depending on the audience, there are a few ways to get started:</BpkParagraph>
+    <BpkParagraph>Depending on the audience, there are a few ways to get started:</BpkParagraph>,
   ]}
   components={components}
-/>
+/>;
 
-export default GettingStartedPage
+export default GettingStartedPage;

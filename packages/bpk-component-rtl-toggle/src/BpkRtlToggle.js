@@ -1,51 +1,46 @@
-import React from 'react'
-
-import { BpkButtonLink } from 'bpk-component-link'
-
-const getHtmlElement = () => {
-  return typeof document !== 'undefined' ? document.querySelector('html') : {}
-}
-
-const getDirection = () => {
-  return getHtmlElement().dir || DIRECTIONS.LTR
-}
-
-const setDirection = (direction) => {
-  getHtmlElement().dir = direction
-}
+import React from 'react';
+import { BpkButtonLink } from 'bpk-component-link';
 
 const DIRECTIONS = {
   LTR: 'ltr',
-  RTL: 'rtl'
-}
+  RTL: 'rtl',
+};
+
+const getHtmlElement = () => (typeof document !== 'undefined' ? document.querySelector('html') : {});
+
+const getDirection = () => getHtmlElement().dir || DIRECTIONS.LTR;
+
+const setDirection = (direction) => {
+  getHtmlElement().dir = direction;
+};
 
 class BpkRtlToggle extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
 
-    this.toggleRtl = this.toggleRtl.bind(this)
+    this.toggleRtl = this.toggleRtl.bind(this);
 
     this.state = {
-      direction: getDirection()
-    }
+      direction: getDirection(),
+    };
   }
 
-  toggleRtl (e) {
-    e.preventDefault()
+  toggleRtl(e) {
+    e.preventDefault();
 
-    const direction = getDirection() === DIRECTIONS.RTL ? DIRECTIONS.LTR : DIRECTIONS.RTL
+    const direction = getDirection() === DIRECTIONS.RTL ? DIRECTIONS.LTR : DIRECTIONS.RTL;
 
-    setDirection(direction)
+    setDirection(direction);
 
-    this.setState({ direction })
+    this.setState({ direction });
   }
 
-  render () {
-    const onOrOff = this.state.direction === DIRECTIONS.RTL ? 'off' : 'on'
+  render() {
+    const onOrOff = this.state.direction === DIRECTIONS.RTL ? 'off' : 'on';
 
-    return <BpkButtonLink onClick={this.toggleRtl}>Toggle RTL {onOrOff}</BpkButtonLink>
+    return <BpkButtonLink onClick={this.toggleRtl}>Toggle RTL {onOrOff}</BpkButtonLink>;
   }
 }
 
-export default BpkRtlToggle
+export default BpkRtlToggle;
 

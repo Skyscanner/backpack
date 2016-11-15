@@ -1,38 +1,38 @@
-import React from 'react'
-import { Route, IndexRoute, IndexRedirect, withRouter } from 'react-router'
+import React from 'react';
+import { Route, IndexRoute, IndexRedirect, withRouter } from 'react-router';
 
-import * as ROUTES from './../constants/routes'
+import * as ROUTES from './../constants/routes';
 
-import DefaultLayout from './../layouts/DefaultLayout'
-import DocsLayout from './../layouts/DocsLayout'
+import DefaultLayout from './../layouts/DefaultLayout';
+import DocsLayout from './../layouts/DocsLayout';
 
-import HomePage from './../pages/HomePage'
+import HomePage from './../pages/HomePage';
 
-import GettingStartedPage from './../pages/GettingStartedPage'
-import ContributingPage from './../pages/ContributingPage'
-import BaseStylesheetPage from './../pages/BaseStylesheetPage'
-import ColorsPage from './../pages/ColorsPage'
-import TypesettingPage from './../pages/TypesettingPage'
-import RadiiPage from './../pages/RadiiPage'
-import ShadowsPage from './../pages/ShadowsPage'
-import LayoutPage from './../pages/LayoutPage'
-import AnimationPage from './../pages/AnimationPage'
+import GettingStartedPage from './../pages/GettingStartedPage';
+import ContributingPage from './../pages/ContributingPage';
+import BaseStylesheetPage from './../pages/BaseStylesheetPage';
+import ColorsPage from './../pages/ColorsPage';
+import TypesettingPage from './../pages/TypesettingPage';
+import RadiiPage from './../pages/RadiiPage';
+import ShadowsPage from './../pages/ShadowsPage';
+import LayoutPage from './../pages/LayoutPage';
+import AnimationPage from './../pages/AnimationPage';
 
-import TypographyPage from './../pages/TypographyPage'
-import ButtonsPage from './../pages/ButtonsPage'
-import IconsPage from './../pages/IconsPage'
-import SpinnersPage from './../pages/SpinnersPage'
-import LogosPage from './../pages/LogosPage'
-import FormsPage from './../pages/FormsPage'
-import CardsPage from './../pages/CardsPage'
+import TypographyPage from './../pages/TypographyPage';
+import ButtonsPage from './../pages/ButtonsPage';
+import IconsPage from './../pages/IconsPage';
+import SpinnersPage from './../pages/SpinnersPage';
+import LogosPage from './../pages/LogosPage';
+import FormsPage from './../pages/FormsPage';
+import CardsPage from './../pages/CardsPage';
 
-import NotificationsPage from './../pages/NotificationsPage'
-import ModalsPage from './../pages/ModalsPage'
+import NotificationsPage from './../pages/NotificationsPage';
+import ModalsPage from './../pages/ModalsPage';
 
-import AutosuggestPage from './../pages/AutosuggestPage'
+import AutosuggestPage from './../pages/AutosuggestPage';
 
-import DownloadsPage from './../pages/DownloadsPage'
-import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages'
+import DownloadsPage from './../pages/DownloadsPage';
+import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages';
 
 const Routes = (
   <Route path={ROUTES.HOME} component={DefaultLayout}>
@@ -75,6 +75,6 @@ const Routes = (
     <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridColumnDemoPage} />
     <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridOffsetDemoPage} />
   </Route>
-)
+);
 
-export default Routes
+export default Routes;

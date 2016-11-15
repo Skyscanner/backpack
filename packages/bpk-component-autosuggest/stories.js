@@ -1,117 +1,117 @@
-import React from 'react'
-import { storiesOf } from '@kadira/storybook'
+import React, { PropTypes } from 'react';
+import { storiesOf } from '@kadira/storybook';
 
-import { withRtlSupport } from 'bpk-component-icon'
-import FlightIcon from 'bpk-component-icon/lg/flight'
-import BpkAutosuggest, { BpkAutosuggestSuggestion } from './index'
+import { withRtlSupport } from 'bpk-component-icon';
+import FlightIcon from 'bpk-component-icon/lg/flight';
+import BpkAutosuggest, { BpkAutosuggestSuggestion } from './index';
 
-const BpkFlightIcon = withRtlSupport(FlightIcon)
+const BpkFlightIcon = withRtlSupport(FlightIcon);
 
 const offices = [
   {
     name: 'Barcelona',
     code: 'BCN',
-    country: 'Spain'
+    country: 'Spain',
   },
   {
     name: 'Beijing',
     code: 'Any',
-    country: 'China'
+    country: 'China',
   },
   {
     name: 'Budapest',
     code: 'BUD',
-    country: 'Hungary'
+    country: 'Hungary',
   },
   {
     name: 'Edinburgh',
     code: 'EDI',
-    country: 'United Kingdom'
+    country: 'United Kingdom',
   },
   {
     name: 'Glasgow',
     code: 'Any',
     country: 'United Kingdom',
-    indent: true
+    indent: true,
   },
   {
     name: 'London',
     code: 'Any',
-    country: 'United Kingdom'
+    country: 'United Kingdom',
   },
   {
     name: 'Miami, FL',
     code: 'Any',
-    country: 'United States'
+    country: 'United States',
   },
   {
     name: 'Shenzhen Bao\'an International',
     code: 'SZX',
-    country: 'China'
+    country: 'China',
   },
   {
     name: 'Singapore Changi',
     code: 'SIN',
-    country: 'Singapore'
+    country: 'Singapore',
   },
   {
     name: 'Sofia',
     code: 'SOF',
-    country: 'Bulgaria'
-  }
-]
+    country: 'Bulgaria',
+  },
+];
 
 const getSuggestions = (value) => {
-  const inputValue = value.trim().toLowerCase()
-  const inputLength = inputValue.length
+  const inputValue = value.trim().toLowerCase();
+  const inputLength = inputValue.length;
 
   return inputLength === 0 ? [] : offices.filter(office =>
-    office.name.toLowerCase().indexOf(inputValue) !== -1
-  )
-}
+    office.name.toLowerCase().indexOf(inputValue) !== -1,
+  );
+};
 
-const getSuggestionValue = (suggestion) => `${suggestion.name} (${suggestion.code})`
+const getSuggestionValue = suggestion => `${suggestion.name} (${suggestion.code})`;
 
 class AutosuggestExample extends React.Component {
-  constructor () {
-    super()
+  constructor() {
+    super();
 
     this.state = {
       value: '',
-      suggestions: []
-    }
+      suggestions: [],
+    };
 
-    this.onChange = this.onChange.bind(this)
-    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this)
-    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this)
+    this.onChange = this.onChange.bind(this);
+    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this);
+    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this);
   }
 
-  onChange (e, { newValue }) {
+  onChange(e, { newValue }) {
     this.setState({
-      value: newValue
-    })
+      value: newValue,
+    });
   }
 
-  onSuggestionsFetchRequested ({ value }) {
+  onSuggestionsFetchRequested({ value }) {
     this.setState({
-      suggestions: getSuggestions(value)
-    })
+      suggestions: getSuggestions(value),
+    });
   }
 
-  onSuggestionsClearRequested () {
+  onSuggestionsClearRequested() {
     this.setState({
-      suggestions: []
-    })
+      suggestions: [],
+    });
   }
 
-  render () {
-    const { value, suggestions } = this.state
+  render() {
+    const { value, suggestions } = this.state;
 
     const inputProps = {
       placeholder: 'Enter an office name',
       value,
-      onChange: this.onChange
-    }
+      onChange: this.onChange,
+    };
 
     return (
       <BpkAutosuggest
@@ -122,14 +122,18 @@ class AutosuggestExample extends React.Component {
         renderSuggestion={this.props.renderSuggestion}
         inputProps={inputProps}
       />
-    )
+    );
   }
 }
+
+AutosuggestExample.propTypes = {
+  renderSuggestion: PropTypes.func.isRequired,
+};
 
 storiesOf('bpk-component-autosuggest', module)
   .add('Example', () => (
     <AutosuggestExample
-      renderSuggestion={(suggestion) => (
+      renderSuggestion={suggestion => (
         <BpkAutosuggestSuggestion
           value={getSuggestionValue(suggestion)}
           indent={suggestion.indent}
@@ -139,7 +143,7 @@ storiesOf('bpk-component-autosuggest', module)
   ))
   .add('With icons', () => (
     <AutosuggestExample
-      renderSuggestion={(suggestion) => (
+      renderSuggestion={suggestion => (
         <BpkAutosuggestSuggestion
           icon={BpkFlightIcon}
           value={getSuggestionValue(suggestion)}
@@ -150,7 +154,7 @@ storiesOf('bpk-component-autosuggest', module)
   ))
   .add('With sub headings', () => (
     <AutosuggestExample
-      renderSuggestion={(suggestion) => (
+      renderSuggestion={suggestion => (
         <BpkAutosuggestSuggestion
           value={getSuggestionValue(suggestion)}
           indent={suggestion.indent}
@@ -161,26 +165,26 @@ storiesOf('bpk-component-autosuggest', module)
   ))
   .add('With sub heading + tertiary labels', () => (
     <AutosuggestExample
-      renderSuggestion={(suggestion) => (
+      renderSuggestion={suggestion => (
         <BpkAutosuggestSuggestion
           value={getSuggestionValue(suggestion)}
           indent={suggestion.indent}
           subHeading={suggestion.country}
-          tertiaryLabel='Tertiary label'
+          tertiaryLabel="Tertiary label"
         />
       )}
     />
   ))
   .add('All', () => (
     <AutosuggestExample
-      renderSuggestion={(suggestion) => (
+      renderSuggestion={suggestion => (
         <BpkAutosuggestSuggestion
           icon={BpkFlightIcon}
           value={getSuggestionValue(suggestion)}
           indent={suggestion.indent}
           subHeading={suggestion.country}
-          tertiaryLabel='Tertiary label'
+          tertiaryLabel="Tertiary label"
         />
       )}
     />
-  ))
+  ));
