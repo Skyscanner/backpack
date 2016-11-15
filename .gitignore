@@ -9,3 +9,4 @@ node_modules
 npm-debug.*
 lerna-debug.log
 sassdoc-data.json
+backpack.iml

@@ -37,6 +37,30 @@
       "name": "autosuggestListItemFocusedBackgroundColor"
     },
     {
+      "category": "badges",
+      "value": "0",
+      "type": "size",
+      "name": "badgePaddingY"
+    },
+    {
+      "category": "badges",
+      "value": "6",
+      "type": "size",
+      "name": "badgePaddingX"
+    },
+    {
+      "category": "badges",
+      "value": "rgb(255, 212, 69)",
+      "type": "color",
+      "name": "badgeBackgroundColor"
+    },
+    {
+      "category": "badges",
+      "value": "text-bottom",
+      "type": "vertical-align",
+      "name": "badgeCenteredVerticalAlign"
+    },
+    {
       "type": "size",
       "value": "3",
       "category": "radii",

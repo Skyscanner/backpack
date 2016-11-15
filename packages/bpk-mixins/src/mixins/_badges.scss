@@ -1,0 +1,88 @@
+@import '../bonds';
+@import 'typography';
+
+////
+/// @group badges
+////
+
+/// Standard badge.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///   }
+
+@mixin bpk-badge {
+  @include bpk-border-radius-xs;
+  @include bpk-text-sm;
+
+  display: inline-block;
+  padding: $bpk-badge-padding-y $bpk-badge-padding-x;
+  background-color: $bpk-badge-background-color;
+}
+
+/// Centered badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--centered();
+///   }
+
+@mixin bpk-badge--centered {
+  vertical-align: $bpk-badge-centered-vertical-align;
+}
+
+/// Right-docked badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--docked-right();
+///   }
+
+@mixin bpk-badge--docked-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  @include bpk-rtl {
+    right: inherit;
+    left: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: $bpk-border-radius-xs;
+  }
+}
+
+/// Left-docked badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--docked-left();
+///   }
+
+@mixin bpk-badge--docked-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+
+  @include bpk-rtl {
+    right: 0;
+    left: inherit;
+    border-bottom-left-radius: $bpk-border-radius-xs;
+    border-bottom-right-radius: 0;
+  }
+}

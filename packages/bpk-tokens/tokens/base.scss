@@ -10,6 +10,14 @@ $bpk-autosuggest-list-background-color: rgb(255, 255, 255);
 $bpk-autosuggest-list-item-active-background-color: rgb(230, 228, 235);
 /// @group autosuggest
 $bpk-autosuggest-list-item-focused-background-color: rgb(243, 242, 245);
+/// @group badges
+$bpk-badge-padding-y: 0;
+/// @group badges
+$bpk-badge-padding-x: .375rem;
+/// @group badges
+$bpk-badge-background-color: rgb(255, 212, 69);
+/// @group badges
+$bpk-badge-centered-vertical-align: text-bottom;
 /// @group radii
 $bpk-border-radius-xs: .1875rem;
 /// @group radii
