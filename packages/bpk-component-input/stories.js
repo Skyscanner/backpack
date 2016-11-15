@@ -69,6 +69,7 @@ storiesOf('bpk-component-input', module)
       name="number"
       value="0"
       onChange={action('input changed')}
+      placeholder=""
     />
   ))
   .add('Password', () => (
@@ -78,6 +79,7 @@ storiesOf('bpk-component-input', module)
       name="password"
       value="letmein"
       onChange={action('input changed')}
+      placeholder="Please enter a password"
     />
   ))
   .add('Telephone', () => (

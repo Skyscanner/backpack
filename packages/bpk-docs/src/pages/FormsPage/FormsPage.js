@@ -238,7 +238,7 @@ const components = [
           <BpkInput
             id="input_inbound"
             name="input_inbound"
-            value={new Date((new Date().getTime() + 24) * 60 * 60 * 1000).toLocaleDateString()}
+            value={new Date(new Date().getTime() + (24 * 60 * 60 * 1000)).toLocaleDateString()}
             placeholder="Country, city or airport"
             onChange={() => null}
             className="bpkdocs-forms-page__date"
@@ -283,7 +283,7 @@ const components = [
           <BpkInput
             id="input_checkout"
             name="input_checkout"
-            value={new Date((new Date().getTime() + 24) * 60 * 60 * 1000).toLocaleDateString()}
+            value={new Date(new Date().getTime() + (24 * 60 * 60 * 1000)).toLocaleDateString()}
             placeholder=""
             onChange={() => null}
             className="bpkdocs-forms-page__date"
@@ -371,7 +371,7 @@ const components = [
           <BpkInput
             id="input_dropoff_date"
             name="input_dropoff_date"
-            value={new Date((new Date().getTime() + 24) * 60 * 60 * 1000).toLocaleDateString()}
+            value={new Date(new Date().getTime() + (24 * 60 * 60 * 1000)).toLocaleDateString()}
             placeholder=""
             onChange={() => null}
             className="bpkdocs-forms-page__date"

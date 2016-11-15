@@ -10,13 +10,12 @@ storiesOf('bpk-component-select', module)
       name="fruits"
       value="oranges"
       onChange={action('select changed')}
-      options={[
-        { name: 'Apples', value: 'apples' },
-        { name: 'Oranges', value: 'oranges' },
-        { name: 'Pears', value: 'pears' },
-        { name: 'Tomato', value: 'tomato', disabled: true },
-      ]}
-    />
+    >
+      <option value="apples">Apples</option>
+      <option value="oranges">Oranges</option>
+      <option value="pears">Pears</option>
+      <option value="tomato" disabled>Tomato</option>
+    </BpkSelect>
   ))
   .add('Invalid', () => (
     <BpkSelect
@@ -24,15 +23,14 @@ storiesOf('bpk-component-select', module)
       name="invalid"
       value=""
       onChange={action('select changed')}
-      options={[
-        { name: 'Please select...', value: '', hidden: true },
-        { name: 'Apples', value: 'apples' },
-        { name: 'Oranges', value: 'oranges' },
-        { name: 'Pears', value: 'pears' },
-        { name: 'Tomato', value: 'tomato', disabled: true },
-      ]}
       valid={false}
-    />
+    >
+      <option value="" hidden>Please select...</option>
+      <option value="apples">Apples</option>
+      <option value="oranges">Oranges</option>
+      <option value="pears">Pears</option>
+      <option value="tomato" disabled>Tomato</option>
+    </BpkSelect>
   ))
   .add('Disabled', () => (
     <BpkSelect
@@ -40,13 +38,13 @@ storiesOf('bpk-component-select', module)
       name="disabled"
       value=""
       onChange={action('select changed')}
-      options={[
-        { name: 'Apples', value: 'apples' },
-        { name: 'Oranges', value: 'oranges' },
-        { name: 'Pears', value: 'pears' },
-      ]}
       disabled
-    />
+    >
+      <option value="apples">Apples</option>
+      <option value="oranges">Oranges</option>
+      <option value="pears">Pears</option>
+      <option value="tomato" disabled>Tomato</option>
+    </BpkSelect>
   ))
   .add('Large', () => (
     <BpkSelect
@@ -54,14 +52,13 @@ storiesOf('bpk-component-select', module)
       name="large"
       value="oranges"
       onChange={action('select changed')}
-      options={[
-        { name: 'Apples', value: 'apples' },
-        { name: 'Oranges', value: 'oranges' },
-        { name: 'Pears', value: 'pears' },
-        { name: 'Tomato', value: 'tomato', disabled: true },
-      ]}
       large
-    />
+    >
+      <option value="apples">Apples</option>
+      <option value="oranges">Oranges</option>
+      <option value="pears">Pears</option>
+      <option value="tomato" disabled>Tomato</option>
+    </BpkSelect>
   ))
   .add('Docked', () => (
     <div style={{ display: 'flex' }}>
@@ -70,57 +67,53 @@ storiesOf('bpk-component-select', module)
         name="large"
         value="oranges"
         onChange={action('select changed')}
-        options={[
-          { name: 'Apples', value: 'apples' },
-          { name: 'Oranges', value: 'oranges' },
-          { name: 'Pears', value: 'pears' },
-          { name: 'Tomato', value: 'tomato', disabled: true },
-        ]}
         large
         docked
-      />
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomato" disabled>Tomato</option>
+      </BpkSelect>
       <BpkSelect
         id="large"
         name="large"
         value="oranges"
         onChange={action('select changed')}
-        options={[
-          { name: 'Apples', value: 'apples' },
-          { name: 'Oranges', value: 'oranges' },
-          { name: 'Pears', value: 'pears' },
-          { name: 'Tomato', value: 'tomato', disabled: true },
-        ]}
         large
         docked
-      />
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomato" disabled>Tomato</option>
+      </BpkSelect>
       <BpkSelect
         id="large"
         name="large"
         value="oranges"
         onChange={action('select changed')}
-        options={[
-          { name: 'Apples', value: 'apples' },
-          { name: 'Oranges', value: 'oranges' },
-          { name: 'Pears', value: 'pears' },
-          { name: 'Tomato', value: 'tomato', disabled: true },
-        ]}
         large
         valid={false}
         docked
-      />
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomato" disabled>Tomato</option>
+      </BpkSelect>
       <BpkSelect
         id="large"
         name="large"
         value="oranges"
         onChange={action('select changed')}
-        options={[
-          { name: 'Apples', value: 'apples' },
-          { name: 'Oranges', value: 'oranges' },
-          { name: 'Pears', value: 'pears' },
-          { name: 'Tomato', value: 'tomato', disabled: true },
-        ]}
         large
         docked
-      />
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomato" disabled>Tomato</option>
+      </BpkSelect>
     </div>
   ));
