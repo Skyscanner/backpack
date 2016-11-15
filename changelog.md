@@ -1,12 +1,42 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-11-15 - New badge component
 
 **Added:**
-- bpk-component-badge:
-- bpk-mixins:
-- bpk-tokens:
+- bpk-component-badge: 0.0.0 => 0.0.1
+- bpk-mixins: 6.3.1 => 6.4.0
+- bpk-tokens: 14.3.0 => 14.4.0
   - New badge component - limited for now to unblock the ads team
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 1.0.3 => 1.0.4
+- bpk-component-banner-alert: 0.0.13 => 0.0.14
+- bpk-component-blockquote: 0.0.26 => 0.0.27
+- bpk-component-button: 1.2.1 => 1.2.2
+- bpk-component-card: 0.0.14 => 0.0.15
+- bpk-component-checkbox: 0.0.23 => 0.0.24
+- bpk-component-code: 0.0.26 => 0.0.27
+- bpk-component-content-container: 1.0.17 => 1.0.18
+- bpk-component-grid: 0.0.20 => 0.0.21
+- bpk-component-grid-toggle: 0.0.32 => 0.0.33
+- bpk-component-heading: 1.1.9 => 1.1.10
+- bpk-component-icon: 1.1.16 => 1.1.17
+- bpk-component-input: 1.0.2 => 1.0.3
+- bpk-component-label: 2.0.2 => 2.0.3
+- bpk-component-link: 0.3.4 => 0.3.5
+- bpk-component-list: 0.0.46 => 0.0.47
+- bpk-component-logo: 1.0.16 => 1.0.17
+- bpk-component-modal: 0.0.11 => 0.0.12
+- bpk-component-paragraph: 0.1.33 => 0.1.34
+- bpk-component-radio: 0.0.23 => 0.0.24
+- bpk-component-router-link: 0.1.32 => 0.1.33
+- bpk-component-rtl-toggle: 0.0.16 => 0.0.17
+- bpk-component-select: 1.0.2 => 1.0.3
+- bpk-component-spinner: 1.0.16 => 1.0.17
+- bpk-component-table: 0.0.46 => 0.0.47
+- bpk-docs: 0.0.44 => 0.0.45
+- bpk-stylesheets: 2.0.8 => 2.0.9
+- bpk-svgs: 2.0.12 => 2.0.13
 
 ## 2016-11-09 - Destructive buttons `disabled` bugfix ;)
 
