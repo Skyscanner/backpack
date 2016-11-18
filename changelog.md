@@ -4,7 +4,6 @@
 
 **Fixed:**
 - Updated React to 15.4.0
-- Added `react-test-renderer` to replace `react/lib/ReactTestRenderer`
 - bpk-component-modal:
   - Updated dependencies for compatibility with current and future React versions
 - bpk-svgs
