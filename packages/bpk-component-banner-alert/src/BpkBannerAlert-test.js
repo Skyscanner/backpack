@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react/lib/ReactTestRenderer';
+import renderer from 'react-test-renderer';
 import BpkBannerAlert, { ALERT_TYPES } from './BpkBannerAlert';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
