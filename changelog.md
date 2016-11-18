@@ -1,13 +1,44 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-11-18 - Updated React to 15.4.0
 
 **Fixed:**
 - Updated React to 15.4.0
-- bpk-component-modal:
+- bpk-component-modal: 0.0.12 => 0.1.0
   - Updated dependencies for compatibility with current and future React versions
-- bpk-svgs
+- bpk-svgs: 2.0.13 => 2.0.14
   - Added explicit dependency on `tinycolor2`
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 1.0.4 => 1.0.5
+- bpk-component-badge: 0.0.1 => 0.0.2
+- bpk-component-banner-alert: 0.0.14 => 0.0.15
+- bpk-component-blockquote: 0.0.27 => 0.0.28
+- bpk-component-button: 1.2.2 => 1.2.3
+- bpk-component-card: 0.0.15 => 0.0.16
+- bpk-component-checkbox: 0.0.24 => 0.0.25
+- bpk-component-code: 0.0.27 => 0.0.28
+- bpk-component-content-container: 1.0.18 => 1.0.19
+- bpk-component-grid: 0.0.21 => 0.0.22
+- bpk-component-grid-toggle: 0.0.33 => 0.0.34
+- bpk-component-heading: 1.1.10 => 1.1.11
+- bpk-component-icon: 1.1.17 => 1.1.18
+- bpk-component-input: 1.0.3 => 1.0.4
+- bpk-component-label: 2.0.3 => 2.0.4
+- bpk-component-link: 0.3.5 => 0.3.6
+- bpk-component-list: 0.0.47 => 0.0.48
+- bpk-component-logo: 1.0.17 => 1.0.18
+- bpk-component-paragraph: 0.1.34 => 0.1.35
+- bpk-component-radio: 0.0.24 => 0.0.25
+- bpk-component-router-link: 0.1.33 => 0.1.34
+- bpk-component-rtl-toggle: 0.0.17 => 0.0.18
+- bpk-component-select: 1.0.3 => 1.0.4
+- bpk-component-spinner: 1.0.17 => 1.0.18
+- bpk-component-table: 0.0.47 => 0.0.48
+- bpk-docs: 0.0.45 => 0.0.46
+- bpk-mixins: 6.4.0 => 6.4.1
+- bpk-stylesheets: 2.0.9 => 2.0.10
+- bpk-tokens: 14.4.0 => 14.4.1
 
 ## 2016-11-15 - New badge component
 
