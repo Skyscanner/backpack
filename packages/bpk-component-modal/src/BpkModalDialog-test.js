@@ -2,7 +2,7 @@ jest.mock('react-addons-css-transition-group');
 
 /* eslint-disable import/first */
 import React from 'react';
-import renderer from 'react/lib/ReactTestRenderer';
+import renderer from 'react-test-renderer';
 import BpkModalDialog from './BpkModalDialog';
 /* eslint-enable */
 

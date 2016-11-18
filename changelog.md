@@ -1,5 +1,14 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Fixed:**
+- Updated React to 15.4.0
+- bpk-component-modal:
+  - Updated dependencies for compatibility with current and future React versions
+- bpk-svgs
+  - Added explicit dependency on `tinycolor2`
+
 ## 2016-11-15 - New badge component
 
 **Added:**

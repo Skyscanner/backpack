@@ -21,6 +21,7 @@
     "grunt-exec": "1.0.0",
     "grunt-svgmin": "3.3.0",
     "lodash": "4.13.1",
-    "react-svg-loader": "1.1.1"
+    "react-svg-loader": "1.1.1",
+    "tinycolor2": "^1.4.1"
   }
 }
