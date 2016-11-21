@@ -1327,10 +1327,16 @@
       "name": "onePixelRem"
     },
     {
-      "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
+      "value": "-apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
       "type": "font",
       "category": "typesettings",
       "name": "fontFamilyBase"
+    },
+    {
+      "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
+      "type": "font",
+      "category": "typesettings",
+      "name": "fontFamilySegoe"
     },
     {
       "value": "rgb(82, 76, 97)",

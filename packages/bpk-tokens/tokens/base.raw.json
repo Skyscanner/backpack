@@ -1402,10 +1402,16 @@
       "name": "ONE_PIXEL_REM"
     },
     "FONT_FAMILY_BASE": {
-      "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
+      "value": "-apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
       "type": "font",
       "category": "typesettings",
       "name": "FONT_FAMILY_BASE"
+    },
+    "FONT_FAMILY_SEGOE": {
+      "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
+      "type": "font",
+      "category": "typesettings",
+      "name": "FONT_FAMILY_SEGOE"
     },
     "FONT_COLOR_BASE": {
       "value": "rgb(82, 76, 97)",
@@ -2003,6 +2009,7 @@
     "SPACING_XXL",
     "ONE_PIXEL_REM",
     "FONT_FAMILY_BASE",
+    "FONT_FAMILY_SEGOE",
     "FONT_COLOR_BASE",
     "LINE_HEIGHT_SM",
     "LINE_HEIGHT_BASE",
