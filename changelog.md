@@ -1,14 +1,44 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-11-21 - Removed Segoe UI from base font stack
 
 **Changed:**
-
-- bpk-tokens:
+- bpk-tokens: 14.4.1 => 15.0.0
   - Removed `Segoe UI` from the base font stack
   - Added alternative font stack including `Segoe UI`
-- bpk-stylesheets:
+- bpk-stylesheets: 2.0.10 => 3.0.0
   - Enabled the alternative font stack with `Segoe UI` when the `font-family-segoe` class is added to `<body>`
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 1.0.5 => 1.0.6
+- bpk-component-badge: 0.0.2 => 0.0.3
+- bpk-component-banner-alert: 0.0.15 => 0.0.16
+- bpk-component-blockquote: 0.0.28 => 0.0.29
+- bpk-component-button: 1.2.3 => 1.2.4
+- bpk-component-card: 0.0.16 => 0.0.17
+- bpk-component-checkbox: 0.0.25 => 0.0.26
+- bpk-component-code: 0.0.28 => 0.0.29
+- bpk-component-content-container: 1.0.19 => 1.0.20
+- bpk-component-grid: 0.0.22 => 0.0.23
+- bpk-component-grid-toggle: 0.0.34 => 0.0.35
+- bpk-component-heading: 1.1.11 => 1.1.12
+- bpk-component-icon: 1.1.18 => 1.1.19
+- bpk-component-input: 1.0.4 => 1.0.5
+- bpk-component-label: 2.0.4 => 2.0.5
+- bpk-component-link: 0.3.6 => 0.3.7
+- bpk-component-list: 0.0.48 => 0.0.49
+- bpk-component-logo: 1.0.18 => 1.0.19
+- bpk-component-modal: 0.1.0 => 0.1.1
+- bpk-component-paragraph: 0.1.35 => 0.1.36
+- bpk-component-radio: 0.0.25 => 0.0.26
+- bpk-component-router-link: 0.1.34 => 0.1.35
+- bpk-component-rtl-toggle: 0.0.18 => 0.0.19
+- bpk-component-select: 1.0.4 => 1.0.5
+- bpk-component-spinner: 1.0.18 => 1.0.19
+- bpk-component-table: 0.0.48 => 0.0.49
+- bpk-docs: 0.0.46 => 0.0.47
+- bpk-mixins: 6.4.1 => 6.4.2
+- bpk-svgs: 2.0.14 => 2.0.15
 
 ## 2016-11-18 - Updated React to 15.4.0
 
