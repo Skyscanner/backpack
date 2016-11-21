@@ -1,5 +1,15 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Changed:**
+
+- bpk-tokens:
+  - Removed `Segoe UI` from the base font stack
+  - Added alternative font stack including `Segoe UI`
+- bpk-stylesheets:
+  - Enabled the alternative font stack with `Segoe UI` when the `font-family-segoe` class is added to `<body>`
+
 ## 2016-11-18 - Updated React to 15.4.0
 
 **Fixed:**
