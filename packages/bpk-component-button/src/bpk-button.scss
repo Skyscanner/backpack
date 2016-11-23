@@ -23,4 +23,12 @@
   &--link {
     @include bpk-button--link;
   }
+
+  &--icon-only {
+    @include bpk-button--icon-only;
+  }
+
+  &--large-icon-only {
+    @include bpk-button--large-icon-only;
+  }
 }

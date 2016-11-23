@@ -11,8 +11,12 @@ npm install bpk-component-button --save
 ## Usage
 
 ```js
-import React from 'react'
-import BpkButton from 'bpk-component-button'
+import React from 'react';
+import { withButtonAlignment } from 'bpk-component-icon';
+import ArrowIcon from 'bpk-component-icon/sm/long-arrow-right-alt';
+import BpkButton from 'bpk-component-button';
+
+const AlignedArrowIcon = withButtonAlignment(ArrowIcon);
 
 export default MyComponent = () => (
   <div>
@@ -21,6 +25,9 @@ export default MyComponent = () => (
     <BpkButton selected>Selected</BpkButton>
     <BpkButton secondary>Secondary</BpkButton>
     <BpkButton link>Link</BpkButton>
+    <BpkButton iconOnly>
+      <AlignedArrowIcon fill='white' />
+    </BpkButton>
   </div>
 )
 ```
@@ -39,4 +46,5 @@ export default MyComponent = () => (
 | selected    | bool     | false    | false         |
 | large       | bool     | false    | false         |
 | link        | bool     | false    | false         |
+| iconOnly    | bool     | false    | false         |
 | onClick     | func     | false    | null          |

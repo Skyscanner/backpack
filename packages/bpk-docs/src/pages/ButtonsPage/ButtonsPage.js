@@ -6,6 +6,10 @@ import { BpkSpinner, BpkLargeSpinner } from 'bpk-component-spinner';
 import { alignToButton, alignToLargeButton } from 'bpk-component-icon';
 import TestBpkSmallArrowIcon from 'bpk-component-icon/sm/long-arrow-right-alt';
 import TestBpkLargeArrowIcon from 'bpk-component-icon/lg/long-arrow-right-alt';
+import TestBpkSmallTrashIcon from 'bpk-component-icon/sm/trash';
+import TestBpkLargeTrashIcon from 'bpk-component-icon/lg/trash';
+import TestBpkSmallHelpIcon from 'bpk-component-icon/sm/help';
+import TestBpkLargeHelpIcon from 'bpk-component-icon/lg/help';
 
 import buttonReadme from 'bpk-component-button/readme.md';
 
@@ -13,6 +17,10 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const AlignedBpkSmallArrowIcon = alignToButton(TestBpkSmallArrowIcon);
 const AlignedBpkLargeArrowIcon = alignToLargeButton(TestBpkLargeArrowIcon);
+const AlignedBpkSmallTrashIcon = alignToButton(TestBpkSmallTrashIcon);
+const AlignedBpkLargeTrashIcon = alignToLargeButton(TestBpkLargeTrashIcon);
+const AlignedBpkSmallHelpIcon = alignToButton(TestBpkSmallHelpIcon);
+const AlignedBpkLargeHelpIcon = alignToLargeButton(TestBpkLargeHelpIcon);
 
 const components = [
   {
@@ -102,6 +110,41 @@ const components = [
       ' ',
       <BpkButton large>
         Primary <BpkLargeSpinner fill={TOKENS.colorWhite} alignToButton />
+      </BpkButton>,
+    ],
+  },
+  {
+    id: 'icon-only',
+    title: 'Icon-only buttons',
+    blurb: [
+      <BpkParagraph>
+        Buttons may contain only an icon (without accompanying text), which is useful for small screen sizes.
+      </BpkParagraph>,
+    ],
+    examples: [
+      <BpkButton iconOnly>
+        <AlignedBpkSmallArrowIcon fill={TOKENS.colorWhite} />
+      </BpkButton>,
+      ' ',
+      <BpkButton iconOnly secondary>
+        <AlignedBpkSmallHelpIcon fill={TOKENS.buttonSecondaryColor} />
+      </BpkButton>,
+      ' ',
+      <BpkButton iconOnly destructive>
+        <AlignedBpkSmallTrashIcon fill={TOKENS.buttonDestructiveColor} />
+      </BpkButton>,
+      <br />,
+      <br />,
+      <BpkButton large iconOnly>
+        <AlignedBpkLargeArrowIcon fill={TOKENS.colorWhite} />
+      </BpkButton>,
+      ' ',
+      <BpkButton large iconOnly secondary>
+        <AlignedBpkLargeHelpIcon fill={TOKENS.buttonSecondaryColor} />
+      </BpkButton>,
+      ' ',
+      <BpkButton large iconOnly destructive>
+        <AlignedBpkLargeTrashIcon fill={TOKENS.buttonDestructiveColor} />
       </BpkButton>,
     ],
   },

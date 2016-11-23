@@ -14,6 +14,10 @@
       "value": "{!SPACING_MD}",
       "type": "size"
     },
+    "BUTTON_PADDING_X_ICON_ONLY": {
+      "value": ".5625rem",
+      "type": "size"
+    },
     "BUTTON_BORDER_RADIUS": {
       "value": "{!BORDER_RADIUS_PILL}",
       "type": "size"
@@ -104,6 +108,10 @@
     },
     "BUTTON_LARGE_PADDING_X": {
       "value": "{!SPACING_BASE}",
+      "type": "size"
+    },
+    "BUTTON_LARGE_PADDING_X_ICON_ONLY": {
+      "value": ".5625rem",
       "type": "size"
     },
     "BUTTON_LARGE_FONT_SIZE": {

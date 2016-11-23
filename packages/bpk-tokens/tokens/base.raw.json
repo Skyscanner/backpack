@@ -231,6 +231,12 @@
       "type": "size",
       "name": "BUTTON_PADDING_X"
     },
+    "BUTTON_PADDING_X_ICON_ONLY": {
+      "category": "buttons",
+      "value": ".5625rem",
+      "type": "size",
+      "name": "BUTTON_PADDING_X_ICON_ONLY"
+    },
     "BUTTON_BORDER_RADIUS": {
       "category": "buttons",
       "value": "5rem",
@@ -368,6 +374,12 @@
       "value": "1.5rem",
       "type": "size",
       "name": "BUTTON_LARGE_PADDING_X"
+    },
+    "BUTTON_LARGE_PADDING_X_ICON_ONLY": {
+      "category": "buttons",
+      "value": ".5625rem",
+      "type": "size",
+      "name": "BUTTON_LARGE_PADDING_X_ICON_ONLY"
     },
     "BUTTON_LARGE_FONT_SIZE": {
       "category": "buttons",
@@ -1813,6 +1825,7 @@
     "BREAKPOINT_QUERY_ABOVE_TABLET",
     "BUTTON_PADDING_Y",
     "BUTTON_PADDING_X",
+    "BUTTON_PADDING_X_ICON_ONLY",
     "BUTTON_BORDER_RADIUS",
     "BUTTON_BACKGROUND_COLOR",
     "BUTTON_BACKGROUND_IMAGE",
@@ -1836,6 +1849,7 @@
     "BUTTON_TEXT_ALIGN",
     "BUTTON_LARGE_PADDING_Y",
     "BUTTON_LARGE_PADDING_X",
+    "BUTTON_LARGE_PADDING_X_ICON_ONLY",
     "BUTTON_LARGE_FONT_SIZE",
     "BUTTON_LARGE_LINE_HEIGHT",
     "BUTTON_SECONDARY_BACKGROUND_COLOR",

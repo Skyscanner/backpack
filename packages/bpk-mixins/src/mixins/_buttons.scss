@@ -209,3 +209,33 @@
     text-decoration: none;
   }
 }
+
+/// Icon-only button. Modifies the bpk-button mixin.
+///
+/// @require {mixin} bpk-button
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--icon-only();
+///   }
+
+@mixin bpk-button--icon-only {
+  padding: $bpk-button-padding-y $bpk-button-padding-x-icon-only;
+}
+
+/// Large icon-only button. Modifies the bpk-button & bpk-button--large mixins.
+///
+/// @require {mixin} bpk-button
+/// @require {mixin} bpk-button--large
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--large();
+///     @include bpk-button--large-icon-only();
+///   }
+
+@mixin bpk-button--large-icon-only {
+  padding: $bpk-button-large-padding-y $bpk-button-large-padding-x-icon-only;
+}
