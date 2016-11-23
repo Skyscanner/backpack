@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 
-import TOKENS from 'bpk-tokens/tokens/base.common';
-import { withButtonAlignment, withLargeButtonAlignment } from 'bpk-component-icon';
-import SmallLongArrowRightAltIcon from 'bpk-component-icon/sm/long-arrow-right-alt';
-import LargeLongArrowRightAltIcon from 'bpk-component-icon/lg/long-arrow-right-alt';
+import TOKENS from '../bpk-tokens/tokens/base.common';
+import { withButtonAlignment, withLargeButtonAlignment } from '../bpk-component-icon';
+import SmallLongArrowRightAltIcon from '../bpk-component-icon/sm/long-arrow-right-alt';
+import LargeLongArrowRightAltIcon from '../bpk-component-icon/lg/long-arrow-right-alt';
 import BpkButton from './index';
 
 const AlignedSmallLongArrowRightAltIcon = withButtonAlignment(SmallLongArrowRightAltIcon);
