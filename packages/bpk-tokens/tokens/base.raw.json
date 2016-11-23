@@ -1193,7 +1193,7 @@
     },
     "MODAL_SCRIM_BACKGROUND_COLOR": {
       "category": "modals",
-      "value": "rgb(255, 255, 255)",
+      "value": "rgb(178, 174, 189)",
       "type": "color",
       "name": "MODAL_SCRIM_BACKGROUND_COLOR"
     },
@@ -1205,7 +1205,7 @@
     },
     "MODAL_SCRIM_OPACITY": {
       "category": "modals",
-      "value": ".8",
+      "value": ".7",
       "type": "number",
       "name": "MODAL_SCRIM_OPACITY"
     },

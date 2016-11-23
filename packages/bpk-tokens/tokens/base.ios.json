@@ -1118,7 +1118,7 @@
     },
     {
       "category": "modals",
-      "value": "rgb(255, 255, 255)",
+      "value": "rgb(178, 174, 189)",
       "type": "color",
       "name": "modalScrimBackgroundColor"
     },
@@ -1130,7 +1130,7 @@
     },
     {
       "category": "modals",
-      "value": ".8",
+      "value": ".7",
       "type": "number",
       "name": "modalScrimOpacity"
     },
