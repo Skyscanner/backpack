@@ -118,33 +118,39 @@ const components = [
     title: 'Icon-only buttons',
     blurb: [
       <BpkParagraph>
-        Buttons may contain only an icon (without accompanying text), which is useful for small screen sizes.
+        Buttons may contain only an icon (without visible text), which is useful for small screen sizes.
       </BpkParagraph>,
     ],
     examples: [
       <BpkButton iconOnly>
         <AlignedBpkSmallArrowIcon fill={TOKENS.colorWhite} />
+        <span className="visually-hidden">Search</span>
       </BpkButton>,
       ' ',
       <BpkButton iconOnly secondary>
         <AlignedBpkSmallHelpIcon fill={TOKENS.buttonSecondaryColor} />
+        <span className="visually-hidden">Help</span>
       </BpkButton>,
       ' ',
       <BpkButton iconOnly destructive>
         <AlignedBpkSmallTrashIcon fill={TOKENS.buttonDestructiveColor} />
+        <span className="visually-hidden">Delete</span>
       </BpkButton>,
       <br />,
       <br />,
       <BpkButton large iconOnly>
         <AlignedBpkLargeArrowIcon fill={TOKENS.colorWhite} />
+        <span className="visually-hidden">Search</span>
       </BpkButton>,
       ' ',
       <BpkButton large iconOnly secondary>
         <AlignedBpkLargeHelpIcon fill={TOKENS.buttonSecondaryColor} />
+        <span className="visually-hidden">Help</span>
       </BpkButton>,
       ' ',
       <BpkButton large iconOnly destructive>
         <AlignedBpkLargeTrashIcon fill={TOKENS.buttonDestructiveColor} />
+        <span className="visually-hidden">Delete</span>
       </BpkButton>,
     ],
   },

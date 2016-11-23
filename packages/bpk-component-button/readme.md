@@ -26,7 +26,8 @@ export default MyComponent = () => (
     <BpkButton secondary>Secondary</BpkButton>
     <BpkButton link>Link</BpkButton>
     <BpkButton iconOnly>
-      <AlignedArrowIcon fill='white' />
+      <AlignedArrowIcon fill="white" />
+      <span className="visually-hidden">Search</span>
     </BpkButton>
   </div>
 )
