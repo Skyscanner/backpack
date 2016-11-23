@@ -8,6 +8,7 @@ const links = [
     category: 'Introduction',
     links: [
       { route: routes.GETTING_STARTED, children: 'Getting started' },
+      { route: routes.BACKPACK_REACT_SCRIPTS, children: 'Backpack React Scripts' },
       { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' },
       { route: routes.CONTRIBUTING, children: 'Contributing' },
     ],

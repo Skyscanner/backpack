@@ -3,6 +3,7 @@ export const HOME = '/';
 export const DOCS = '/docs';
 
 export const GETTING_STARTED = '/docs/getting-started';
+export const BACKPACK_REACT_SCRIPTS = '/docs/backpack-react-scripts';
 export const BASE_STYLESHEET = '/docs/base-stylesheet';
 export const CONTRIBUTING = '/docs/contributing';
 
