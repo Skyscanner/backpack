@@ -2,6 +2,11 @@
 
 ## UNRELEASED
 
+**Fixed:**
+- bpk-component-code:
+- bpk-mixins:
+  - Fixed border radius and padding for code components
+
 **Added:**
 - bpk-tokens:
   - Added x-padding tokens for icon-only buttons (regular and large)

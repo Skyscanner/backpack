@@ -9,6 +9,7 @@ import DocsLayout from './../layouts/DocsLayout';
 import HomePage from './../pages/HomePage';
 
 import GettingStartedPage from './../pages/GettingStartedPage';
+import BackpackReactScriptsPage from './../pages/BackpackReactScriptsPage';
 import ContributingPage from './../pages/ContributingPage';
 import BaseStylesheetPage from './../pages/BaseStylesheetPage';
 import ColorsPage from './../pages/ColorsPage';
@@ -40,6 +41,7 @@ const Routes = (
     <Route path={ROUTES.DOCS} component={DocsLayout}>
       <IndexRedirect to={ROUTES.GETTING_STARTED} />
       <Route path={ROUTES.GETTING_STARTED} component={GettingStartedPage} />
+      <Route path={ROUTES.BACKPACK_REACT_SCRIPTS} component={BackpackReactScriptsPage} />
       <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
       <Route path={ROUTES.CONTRIBUTING} component={ContributingPage} />
       <Route path={ROUTES.BONDS}>

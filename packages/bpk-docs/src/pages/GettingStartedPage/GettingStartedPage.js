@@ -12,43 +12,24 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 const nodeSassUrl = 'https://github.com/sass/node-sass';
 const sassLoaderUrl = 'https://github.com/jtangelder/sass-loader';
 const sassLoaderTildeUrl = 'https://github.com/jtangelder/sass-loader#imports';
-const createReactAppUrl = 'https://github.com/facebookincubator/create-react-app';
 const nodeSassTildeImporterUrl = 'https://github.com/matthewdavidson/node-sass-tilde-importer';
-const backpackReactExampleUrl = 'http://git.prod.skyscanner.local/backpack/backpack-react-example';
 const webpackConfigExampleUrl =
   'http://git.prod.skyscanner.local/backpack/backpack-react-example/blob/master/webpack.config.babel.js';
 
 const components = [
   {
-    id: 'sketch-resources',
-    title: 'Sketch resources',
-    blurb: [
-      <BpkParagraph>
-        We use the Craft plugin (from InVision) to help share components and keep Sketch files in sync. To use this:
-      </BpkParagraph>,
-      <BpkList ordered>
-        <BpkListItem>
-          Download and install the <BpkLink href="https://labs.invisionapp.com/craft" blank>Craft plugin</BpkLink>.
-        </BpkListItem>
-        <BpkListItem>
-          Download the Backpack Craft library from <BpkRouterLink to={ROUTES.DOWNLOADS}>Downloads</BpkRouterLink>.
-        </BpkListItem>
-        <BpkListItem>
-          Import the Backpack Craft Library into Sketch.
-        </BpkListItem>
-      </BpkList>,
-    ],
-    examples: [],
-  },
-  {
     id: 'react-components',
     title: 'React components',
     blurb: [
       <BpkParagraph>
+        The recommended way to get started with Backpack is to
+        use <BpkRouterLink to={ROUTES.BACKPACK_REACT_SCRIPTS}>Backpack React Scripts</BpkRouterLink>.
+      </BpkParagraph>,
+      <BpkParagraph>
         All <BpkRouterLink to={ROUTES.ATOMS}>atoms</BpkRouterLink>
         , <BpkRouterLink to={ROUTES.MOLECULES}>molecules</BpkRouterLink>
         &nbsp;and <BpkRouterLink to={ROUTES.ORGANISMS}>organisms</BpkRouterLink> are available to consume as React
-        components, exposed as modules on the npm registry. They encapsulate markup and styling which means that
+        components, exposed as modules on the npm registry. They encapsulate markup, style and logic which means that
         achieving a consistent look and feel across Skyscanner products is as straightforward as:
       </BpkParagraph>,
       <BpkList ordered>
@@ -72,21 +53,10 @@ ReactDom.render(myComponent, document.getElementById('react-mount'));
           </BpkCodeBlock>
         </BpkListItem>
       </BpkList>,
-      <BpkParagraph>
-        Head on over to the <BpkLink href={backpackReactExampleUrl} blank>backpack-react-example</BpkLink> project on
-        GitLab to see the above example in action. Fork it, clone it to your machine and follow the readme - you should
-        end up with a local dev server running a page displaying the button component.
-      </BpkParagraph>,
       <BpkBlockquote>
-        <strong>Note:</strong> All Backpack components are published uncompiled which means you&apos;ll need to
-        accommodate for this in your webpack config - here is
-        an <BpkLink href={webpackConfigExampleUrl} blank>example</BpkLink>.
-      </BpkBlockquote>,
-      <BpkBlockquote>
-        <strong>Note:</strong> We are hoping to make it a lot easier to get started with Backpack and React in the near
-        future. Ideas include a <BpkLink href={createReactAppUrl} blank>create-react-app</BpkLink> like project which
-        will get you up and running in minutes as well as some sort of Slingshot / MShell based integration to get your
-        app into production. Watch this space.
+        <strong>Note:</strong> If you are looking to integrate Backpack components into an existing project, be
+        aware that components are published uncompiled which means you&apos;ll need to accommodate for this in your
+        webpack config - here is an <BpkLink href={webpackConfigExampleUrl} blank>example</BpkLink>.
       </BpkBlockquote>,
     ],
     examples: [],
@@ -125,6 +95,27 @@ ReactDom.render(myComponent, document.getElementById('react-mount'));
         To get an idea of all the variables and mixins available, head on over to
         the <BpkLink href="/sassdoc" blank>full reference documentation</BpkLink>.
       </BpkParagraph>,
+    ],
+    examples: [],
+  },
+  {
+    id: 'sketch-resources',
+    title: 'Sketch resources',
+    blurb: [
+      <BpkParagraph>
+        We use the Craft plugin (from InVision) to help share components and keep Sketch files in sync. To use this:
+      </BpkParagraph>,
+      <BpkList ordered>
+        <BpkListItem>
+          Download and install the <BpkLink href="https://labs.invisionapp.com/craft" blank>Craft plugin</BpkLink>.
+        </BpkListItem>
+        <BpkListItem>
+          Download the Backpack Craft library from <BpkRouterLink to={ROUTES.DOWNLOADS}>Downloads</BpkRouterLink>.
+        </BpkListItem>
+        <BpkListItem>
+          Import the Backpack Craft Library into Sketch.
+        </BpkListItem>
+      </BpkList>,
     ],
     examples: [],
   },
