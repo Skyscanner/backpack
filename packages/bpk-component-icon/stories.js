@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
-import BpkButton from 'bpk-component-button';
 import TOKENS from 'bpk-tokens/tokens/base.common';
-import { BpkList, BpkListItem } from 'bpk-component-list';
+import BpkButton from '../bpk-component-button';
+import { BpkList, BpkListItem } from '../bpk-component-list';
 
 import { sm, lg } from './all';
 import { withButtonAlignment, withLargeButtonAlignment, withRtlSupport } from './index';

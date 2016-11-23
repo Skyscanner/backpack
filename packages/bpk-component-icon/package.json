@@ -22,9 +22,5 @@
     "bpk-mixins": "^6.4.2",
     "bpk-svgs": "^2.0.15",
     "bpk-tokens": "^15.0.0"
-  },
-  "devDependencies": {
-    "bpk-component-button": "^1.2.4",
-    "bpk-component-list": "^0.0.49"
   }
 }
