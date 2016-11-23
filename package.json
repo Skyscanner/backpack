@@ -9,7 +9,7 @@
     "clean": "npm run clean:dist",
     "lint:scss": "stylelint 'packages/**/*.scss' --syntax scss",
     "lint:scss:fix": "stylefmt",
-    "lint:js": "eslint .",
+    "lint:js": "eslint . --ext .js,.jsx",
     "lint:js:fix": "eslint . --fix",
     "lint": "npm run lint:js && npm run lint:scss",
     "jest:update": "jest ---updateSnapshot",
