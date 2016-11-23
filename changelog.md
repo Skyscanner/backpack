@@ -2,10 +2,9 @@
 
 ## UNRELEASED
 
-**Fixed:**
-- bpk-component-code:
-- bpk-mixins:
-  - Fixed border radius and padding for code components
+**Changed**
+- bpk-component-modal:
+  - scrim color changed to make it darker (gray 300, 70% opacity).
 
 **Added:**
 - bpk-tokens:
@@ -14,6 +13,11 @@
   - Added mixins for icon-only buttons (regular and large)
 - bpk-component-button:
   - Added icon-only button variant
+
+**Fixed:**
+- bpk-component-code:
+- bpk-mixins:
+  - Fixed border radius and padding for code components
 
 ## 2016-11-21 - Removed Segoe UI from base font stack
 

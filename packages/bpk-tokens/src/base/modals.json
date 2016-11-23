@@ -7,7 +7,7 @@
   },
   "props": {
     "MODAL_SCRIM_BACKGROUND_COLOR": {
-      "value": "{!WHITE}",
+      "value": "{!GRAY_300}",
       "type": "color"
     },
     "MODAL_SCRIM_INITIAL_OPACITY": {
@@ -15,7 +15,7 @@
       "type": "number"
     },
     "MODAL_SCRIM_OPACITY": {
-      "value": ".8",
+      "value": ".7",
       "type": "number"
     },
     "MODAL_SCRIM_MOBILE_OPACITY": {
