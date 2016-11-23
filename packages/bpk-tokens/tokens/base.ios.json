@@ -158,6 +158,12 @@
     },
     {
       "category": "buttons",
+      "value": "9",
+      "type": "size",
+      "name": "buttonPaddingXIconOnly"
+    },
+    {
+      "category": "buttons",
       "value": "80",
       "type": "size",
       "name": "buttonBorderRadius"
@@ -293,6 +299,12 @@
       "value": "24",
       "type": "size",
       "name": "buttonLargePaddingX"
+    },
+    {
+      "category": "buttons",
+      "value": "9",
+      "type": "size",
+      "name": "buttonLargePaddingXIconOnly"
     },
     {
       "category": "buttons",

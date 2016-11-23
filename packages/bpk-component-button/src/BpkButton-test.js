@@ -43,6 +43,11 @@ describe('BpkButton', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with an "iconOnly" attribute', () => {
+    const tree = renderer.create(<BpkButton iconOnly>My button</BpkButton>).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with "large" and "secondary" attributes', () => {
     const tree = renderer.create(<BpkButton large secondary>My button</BpkButton>).toJSON();
     expect(tree).toMatchSnapshot();

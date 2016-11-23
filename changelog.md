@@ -1,5 +1,15 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Added:**
+- bpk-tokens:
+  - Added x-padding tokens for icon-only buttons (regular and large)
+- bpk-mixins:
+  - Added mixins for icon-only buttons (regular and large)
+- bpk-component-button:
+  - Added icon-only button variant
+
 ## 2016-11-21 - Removed Segoe UI from base font stack
 
 **Changed:**

@@ -9,6 +9,13 @@ const BpkButton = (props) => {
   if (props.selected) { classNames.push('bpk-button--selected'); }
   if (props.large) { classNames.push('bpk-button--large'); }
   if (props.link) { classNames.push('bpk-button--link'); }
+  if (props.iconOnly) {
+    if (props.large) {
+      classNames.push('bpk-button--large-icon-only');
+    } else {
+      classNames.push('bpk-button--icon-only');
+    }
+  }
   if (props.className) { classNames.push(props.className); }
 
   const className = classNames.join(' ');
@@ -51,6 +58,7 @@ BpkButton.propTypes = {
   destructive: PropTypes.bool,
   large: PropTypes.bool,
   link: PropTypes.bool,
+  iconOnly: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
@@ -64,6 +72,7 @@ BpkButton.defaultProps = {
   destructive: false,
   large: false,
   link: false,
+  iconOnly: false,
   onClick: null,
 };
 
