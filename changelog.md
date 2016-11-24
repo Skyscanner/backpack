@@ -1,23 +1,51 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-11-24 - Icon-only buttons, modal change, code bugfix
 
 **Changed**
-- bpk-component-modal:
+- bpk-component-modal: 0.1.1 => 0.2.0
   - scrim color changed to make it darker (gray 300, 70% opacity).
 
 **Added:**
-- bpk-tokens:
+- bpk-tokens: 15.0.0 => 15.1.0
   - Added x-padding tokens for icon-only buttons (regular and large)
-- bpk-mixins:
+- bpk-mixins: 6.4.2 => 6.5.0
   - Added mixins for icon-only buttons (regular and large)
-- bpk-component-button:
+- bpk-component-button: 1.2.4 => 1.3.0
   - Added icon-only button variant
 
 **Fixed:**
-- bpk-component-code:
-- bpk-mixins:
+- bpk-component-code: 0.0.29 => 0.0.30
+- bpk-mixins: 6.4.2 => 6.5.0
   - Fixed border radius and padding for code components
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 1.0.6 => 1.0.7
+- bpk-component-badge: 0.0.3 => 0.0.4
+- bpk-component-banner-alert: 0.0.16 => 0.0.17
+- bpk-component-blockquote: 0.0.29 => 0.0.30
+- bpk-component-card: 0.0.17 => 0.0.18
+- bpk-component-checkbox: 0.0.26 => 0.0.27
+- bpk-component-content-container: 1.0.20 => 1.0.21
+- bpk-component-grid: 0.0.23 => 0.0.24
+- bpk-component-grid-toggle: 0.0.35 => 0.0.36
+- bpk-component-heading: 1.1.12 => 1.1.13
+- bpk-component-icon: 1.1.19 => 1.1.20
+- bpk-component-input: 1.0.5 => 1.0.6
+- bpk-component-label: 2.0.5 => 2.0.6
+- bpk-component-link: 0.3.7 => 0.3.8
+- bpk-component-list: 0.0.49 => 0.0.50
+- bpk-component-logo: 1.0.19 => 1.0.20
+- bpk-component-paragraph: 0.1.36 => 0.1.37
+- bpk-component-radio: 0.0.26 => 0.0.27
+- bpk-component-router-link: 0.1.35 => 0.1.36
+- bpk-component-rtl-toggle: 0.0.19 => 0.0.20
+- bpk-component-select: 1.0.5 => 1.0.6
+- bpk-component-spinner: 1.0.19 => 1.0.20
+- bpk-component-table: 0.0.49 => 0.0.50
+- bpk-docs: 0.0.47 => 0.0.48
+- bpk-stylesheets: 3.0.0 => 3.0.1
+- bpk-svgs: 2.0.15 => 2.0.16
 
 ## 2016-11-21 - Removed Segoe UI from base font stack
 
