@@ -13,6 +13,7 @@
   z-index: $bpk-zindex-modal-scrim;
 
   @include bpk-breakpoint-mobile {
+    background-color: $bpk-modal-background-color;
     opacity: $bpk-modal-scrim-mobile-opacity;
   }
 
