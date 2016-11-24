@@ -119,4 +119,8 @@
   .bpk-no-touch-support &:hover:not(:active):not(:disabled) {
     @content;
   }
+
+  :global(.bpk-no-touch-support) &:hover:not(:active):not(:disabled) { /* stylelint-disable-line selector-pseudo-class-no-unknown */
+    @content;
+  }
 }

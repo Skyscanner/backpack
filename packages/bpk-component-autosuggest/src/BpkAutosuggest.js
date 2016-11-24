@@ -1,21 +1,24 @@
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 import Autosuggest from 'react-autosuggest';
 
-import './bpk-autosuggest.scss';
+import STYLES from './bpk-autosuggest.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkAutosuggest = props => <Autosuggest {...props} />;
 
 BpkAutosuggest.defaultProps = {
   theme: {
-    container: 'bpk-autosuggest__container',
-    containerOpen: 'bpk-autosuggest__container--open',
-    input: 'bpk-autosuggest__input',
-    suggestionsContainer: 'bpk-autosuggest__suggestions-container',
-    suggestionsList: 'bpk-autosuggest__suggestions-list',
-    suggestion: 'bpk-autosuggest__suggestion-item',
-    suggestionFocused: 'bpk-autosuggest__suggestion-item--focused',
-    sectionContainer: 'bpk-autosuggest__section-container',
-    sectionTitle: 'bpk-autosuggest__section-title',
+    container: getClassName('bpk-autosuggest__container'),
+    containerOpen: getClassName('bpk-autosuggest__container--open'),
+    input: getClassName('bpk-autosuggest__input'),
+    suggestionsContainer: getClassName('bpk-autosuggest__suggestions-container'),
+    suggestionsList: getClassName('bpk-autosuggest__suggestions-list'),
+    suggestion: getClassName('bpk-autosuggest__suggestion-item'),
+    suggestionFocused: getClassName('bpk-autosuggest__suggestion-item--focused'),
+    sectionContainer: getClassName('bpk-autosuggest__section-container'),
+    sectionTitle: getClassName('bpk-autosuggest__section-title'),
   },
 };
 
