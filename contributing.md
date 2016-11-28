@@ -6,19 +6,20 @@ This document describes how to go about it. If you have any questions, get in to
 
 <!-- TOC depthFrom:2 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Before you jump into design and code](#before-you-jump-into-design-and-code)
+- [Before you jump in](#before-you-jump-in)
 - [Getting started](#getting-started)
 - [Development tasks](#development-tasks)
-- [Common changes](#common-changes)
-	- [Adding tokens](#adding-tokens)
-	- [Adding Sass mixins](#adding-sass-mixins)
-	- [Adding a component](#adding-a-component)
+- [Adding a new component](#adding-a-new-component)
+	- [Design](#design)
+	- [Tokens](#tokens)
+	- [Sass mixins](#sass-mixins)
+	- [React component](#react-component)
 	- [Documentation](#documentation)
 - [Publishing packages (Backpack squad members only)](#publishing-packages-backpack-squad-members-only)
 
 <!-- /TOC -->
 
-## Before you jump into design and code
+## Before you jump in
 
 Is there something that you think should be in Backpack, but currently isn't? Before you dive in, please note that not everything that is a UI component belongs in Backpack.
 
@@ -28,11 +29,9 @@ If you use it multiple times yourself, it might as well be a component, but mayb
 
 > I’m sure this should be in Backpack!
 
-Awesome! Take a look at the diagram below:
+Awesome! The diagram below should give you some more info in the high-level process:
 
-![Backpack process diagram](packages/bpk-docs/src/static/backpack-process-map.svg)
-
-If you need to create a new component, make sure to get in touch with your squad’s designer. **If you don’t have access to a designer, get in touch with us or post into #design-general.**
+<img src="packages/bpk-docs/src/static/backpack-process-map.svg" style="max-width: 400px; width: 100%" />
 
 * * *
 
@@ -72,11 +71,27 @@ npm test            # Lints .js & .scss files and runs unit tests
 npm run build       # Runs the build process for all packages
 ```
 
-## Common changes
+## Adding a new component
 
-### Adding tokens
+If you want to add a new component, we will need the following:
 
-Tokens are defined in the `bpk-tokens` package under `src/base` (with the exception of product-specific tokens, which are in other subdirectories). Tokens come in two layers: In `aliases.json`, all base tokens are defined with concrete values, such as colors, numbers and sizes. The other files then map those aliases to tokens for specific elements in our Atomic Design system.
+- Design (Sketch file)
+- Associated tokens
+- Sass mixin(s)
+- React component
+- Documentation
+
+### Design
+
+Sketch is the preferred format for non-technical folks. We’d appreciate if you could provide an exact match of your component in Sketch format together with folders for each state e.g. disabled, expanded etc.
+
+**If you don’t have access to a designer, get in touch with us or post into #design-general.**
+
+### Tokens
+
+Any visual CSS parameters of the component, such as *color, margins, paddings* etc. should not live as magic numbers in the component code, but as **tokens** in the `bpk-tokens` package.
+
+Tokens are defined in the `src/base` directory (with the exception of product-specific tokens, which are in other subdirectories). Tokens come in two layers: In `aliases.json`, all base tokens are defined with concrete values, such as colors, numbers and sizes. The other files then map those aliases to tokens for specific elements in our [Atomic Design system](https://confluence.skyscannertools.net/pages/viewpage.action?pageId=14123039).
 
 > You should probably not touch `aliases.json`, as our color palette or grid rarely changes.
 
@@ -92,11 +107,13 @@ npm run build:tokens
 
 This will output different formats from the source JSON, for example Sass variables, a JavaScript module, Android and iOS resources.
 
-### Adding Sass mixins
+### Sass mixins
 
-All Sass mixins are in the `bpk-mixins` package. It also exposes the Sass variables from the `bpk-tokens` package via the `_bonds.scss` file.
+Every *atom-level component* (buttons, form elements, icons, cf [Atomic Design system](https://confluence.skyscannertools.net/pages/viewpage.action?pageId=14123039)) should not only come as a React component, but also as a set of Sass mixins for easy adoption.
 
-If you add a new file to group mixin, for example for a new Atom, make sure you add the file to the imports in `_index.scss`.
+All Sass mixins are defined in the `bpk-mixins` package. The package also exposes the Sass variables from the `bpk-tokens` package via the `_bonds.scss` file.
+
+If you add a new file of mixins, for example for a new *atom*, make sure you add the file to the imports in `_index.scss`.
 
 #### Linting
 
@@ -106,9 +123,25 @@ To lint the Sass, run
 npm run lint:scss
 ```
 
-### Adding a component
+### React component
 
-Each component has its own subdirectory `packages/bpk-component-<component-name>`. For it to be properly published, create a `package.json` starting at version `0.0.0` and take inspiration from existing packages in terms of structure.
+Each React component has its own subdirectory `packages/bpk-component-<component-name>`, where the npm module is stored. For it to be properly published, create a `package.json` starting at version `0.0.0` and take inspiration from existing packages in terms of structure.
+
+#### Storybook
+
+We use [Storybook](https://getstorybook.io/) to drive the development of Backpack's UI components. Start it using `npm start`.
+
+Create a `stories.js` file and use it to list all the different possible states of your component. Check out Storybook's documentation for more details, and also check out the `stories.js` files of existing components.
+
+> Make sure you import your new component's stories into Storybook by adding it to `.storybook/config.js`.
+
+#### Testing
+
+React components need to be properly unit tested. We use [jest](https://facebook.github.io/jest/)'s snapshot testing, but depending on the complexity of your component, you may want to add additional tests.
+
+#### README
+
+Create a `readme.md` file that shows how to install and use your component. It should also include a table of the component's props, PropTypes and their default values. Take inspiration from existing components.
 
 ### Documentation
 
@@ -124,13 +157,15 @@ Take a look at some of the mixin source files to see how to annotate your Sass t
 
 The Backpack documentation is a standalone client-side app. Each package has its own “page”, which you can find and edit in the `bpk-docs` package under `src/pages`.
 
-The “page” modules themselves contain introductory blurbs and examples for the respective component. They also import the component’s README, which should contain a code example and a table with props, their proptypes and defaults.
+The “page” modules themselves contain introductory blurbs and examples for the respective component. They also import the component’s README, which you should have created according to the section further up in this document.
 
 You can run the docs app locally using:
 
 ```sh
 npm run docs
 ```
+
+If you need any help writing documentation, get in touch!
 
 ## Publishing packages (Backpack squad members only)
 
@@ -145,4 +180,4 @@ npm run docs
 - You’ll be asked at the end to confirm. Note you can still exit without making these changes.
 - Update the changelog with the package versions and update the title with today’s date and a brief summary of what has changed.
 - Commit and push to master.
-- Update the #backpack Slack channel if necessary.
+- Update the #backpack Slack channel and the [BackpackNeedToKnow](mailto:backpackneedtoknow@skyscanner.net) mailing list if necessary.
