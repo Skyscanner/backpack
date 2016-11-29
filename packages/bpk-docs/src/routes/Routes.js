@@ -26,6 +26,7 @@ import SpinnersPage from './../pages/SpinnersPage';
 import LogosPage from './../pages/LogosPage';
 import FormsPage from './../pages/FormsPage';
 import CardsPage from './../pages/CardsPage';
+import BadgePage from './../pages/BadgePage';
 
 import NotificationsPage from './../pages/NotificationsPage';
 import ModalsPage from './../pages/ModalsPage';
@@ -62,6 +63,7 @@ const Routes = (
         <Route path={ROUTES.LOGOS} component={LogosPage} />
         <Route path={ROUTES.FORMS} component={FormsPage} />
         <Route path={ROUTES.CARDS} component={CardsPage} />
+        <Route path={ROUTES.BADGE} component={BadgePage} />
       </Route>
       <Route path={ROUTES.MOLECULES}>
         <IndexRedirect to={ROUTES.NOTIFICATIONS} />
