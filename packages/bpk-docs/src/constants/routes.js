@@ -23,6 +23,7 @@ export const SPINNERS = '/docs/atoms/spinners';
 export const LOGOS = '/docs/atoms/logos';
 export const FORMS = '/docs/atoms/forms';
 export const CARDS = '/docs/atoms/cards';
+export const BADGE = '/docs/atoms/badge';
 
 export const MOLECULES = '/docs/molecules';
 export const NOTIFICATIONS = '/docs/molecules/notifications';

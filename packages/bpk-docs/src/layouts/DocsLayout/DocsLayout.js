@@ -34,10 +34,10 @@ const links = [
       { route: routes.LOGOS, children: 'Logos' },
       { route: routes.FORMS, children: 'Forms' },
       { route: routes.CARDS, children: 'Cards' },
+      { route: routes.BADGE, children: 'Badge' },
       { route: null, children: 'Illustrations' },
       { route: null, children: 'Image' },
       { route: null, children: 'Tabs' },
-      { route: null, children: 'Badges' },
     ],
   },
   {
