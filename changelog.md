@@ -1,5 +1,11 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Changed**
+- bpk-component-modal:
+  - Removed aria-describedby attribute from modal, so screenreader does not read whole dialog contents
+
 ## 2016-11-24 - Icon-only buttons, modal change, code bugfix
 
 **Changed**
