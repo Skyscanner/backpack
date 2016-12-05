@@ -82,7 +82,6 @@ class BpkModalDialog extends Component {
           tabIndex="-1"
           role="dialog"
           aria-labelledby="aria-label-heading"
-          aria-describedby="aria-label-content"
           onClick={stopPropagation}
           className={dialogClassNames.join(' ')}
           ref={this.getDialogRef}
