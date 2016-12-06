@@ -9,21 +9,21 @@ $bpk-button-background-color: rgb(52, 54, 61);
 /// @group buttons
 $bpk-button-background-image: none;
 /// @group buttons
-$bpk-button-hover-background-color: rgb(77, 80, 89);
+$bpk-button-hover-background-color: rgb(0, 0, 0);
 /// @group buttons
 $bpk-button-hover-background-image: none;
 /// @group buttons
-$bpk-button-active-background-color: rgb(77, 80, 89);
+$bpk-button-active-background-color: rgb(0, 0, 0);
 /// @group buttons
 $bpk-button-active-background-image: none;
 /// @group buttons
-$bpk-button-disabled-background-color: rgb(77, 80, 89);
+$bpk-button-disabled-background-color: rgb(0, 0, 0);
 /// @group buttons
 $bpk-button-disabled-background-image: none;
 /// @group buttons
-$bpk-button-color: rgb(0, 221, 238);
+$bpk-button-color: rgb(0, 0, 0);
 /// @group buttons
-$bpk-button-disabled-color: rgb(104, 107, 117);
+$bpk-button-disabled-color: rgb(0, 0, 0);
 /// @group buttons
 $bpk-button-font-size: .875rem;
 /// @group buttons
@@ -32,3 +32,19 @@ $bpk-button-font-weight: normal;
 $bpk-button-line-height: 1.125em;
 /// @group buttons
 $bpk-button-text-align: center;
+/// @group text-colors
+$bpk-link-color: rgb(0, 187, 204);
+/// @group text-decorations
+$bpk-link-text-decoration: none;
+/// @group text-colors
+$bpk-link-hover-color: rgb(52, 54, 61);
+/// @group text-decorations
+$bpk-link-hover-text-decoration: underline;
+/// @group text-colors
+$bpk-link-active-color: rgb(77, 80, 89);
+/// @group text-colors
+$bpk-link-white-color: rgb(255, 255, 255);
+/// @group text-colors
+$bpk-link-white-hover-color: rgb(255, 255, 255);
+/// @group text-colors
+$bpk-link-white-active-color: rgb(247, 247, 247);

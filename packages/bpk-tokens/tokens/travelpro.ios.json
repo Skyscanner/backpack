@@ -32,7 +32,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(77, 80, 89)",
+      "value": "rgb(0, 0, 0)",
       "type": "color",
       "name": "buttonHoverBackgroundColor"
     },
@@ -44,7 +44,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(77, 80, 89)",
+      "value": "rgb(0, 0, 0)",
       "type": "color",
       "name": "buttonActiveBackgroundColor"
     },
@@ -56,7 +56,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(77, 80, 89)",
+      "value": "rgb(0, 0, 0)",
       "type": "color",
       "name": "buttonDisabledBackgroundColor"
     },
@@ -68,13 +68,13 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 221, 238)",
+      "value": "rgb(0, 0, 0)",
       "type": "color",
       "name": "buttonColor"
     },
     {
       "category": "buttons",
-      "value": "rgb(104, 107, 117)",
+      "value": "rgb(0, 0, 0)",
       "type": "color",
       "name": "buttonDisabledColor"
     },
@@ -101,6 +101,54 @@
       "value": "center",
       "type": "text-align",
       "name": "buttonTextAlign"
+    },
+    {
+      "category": "text-colors",
+      "value": "rgb(0, 187, 204)",
+      "type": "color",
+      "name": "linkColor"
+    },
+    {
+      "category": "text-decorations",
+      "value": "none",
+      "type": "text-decoration",
+      "name": "linkTextDecoration"
+    },
+    {
+      "category": "text-colors",
+      "value": "rgb(52, 54, 61)",
+      "type": "color",
+      "name": "linkHoverColor"
+    },
+    {
+      "category": "text-decorations",
+      "value": "underline",
+      "type": "text-decoration",
+      "name": "linkHoverTextDecoration"
+    },
+    {
+      "category": "text-colors",
+      "value": "rgb(77, 80, 89)",
+      "type": "color",
+      "name": "linkActiveColor"
+    },
+    {
+      "category": "text-colors",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "linkWhiteColor"
+    },
+    {
+      "category": "text-colors",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "linkWhiteHoverColor"
+    },
+    {
+      "category": "text-colors",
+      "value": "rgb(247, 247, 247)",
+      "type": "color",
+      "name": "linkWhiteActiveColor"
     }
   ]
 }

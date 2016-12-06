@@ -1,4 +1,7 @@
 {
+  "imports": [
+    "./aliases.json"
+  ],
   "global": {
     "category": "buttons"
   },
@@ -16,7 +19,7 @@
       "type": "size"
     },
     "BUTTON_BACKGROUND_COLOR": {
-      "value": "#34363d",
+      "value": "{!STORM}",
       "type": "color"
     },
     "BUTTON_BACKGROUND_IMAGE": {
@@ -24,7 +27,7 @@
       "type": "background-image"
     },
     "BUTTON_HOVER_BACKGROUND_COLOR": {
-      "value": "#4d5059",
+      "value": "TURBULENCE",
       "type": "color"
     },
     "BUTTON_HOVER_BACKGROUND_IMAGE": {
@@ -32,7 +35,7 @@
       "type": "background-image"
     },
     "BUTTON_ACTIVE_BACKGROUND_COLOR": {
-      "value": "#4d5059",
+      "value": "TURBULENCE",
       "type": "color"
     },
     "BUTTON_ACTIVE_BACKGROUND_IMAGE": {
@@ -40,7 +43,7 @@
       "type": "background-image"
     },
     "BUTTON_DISABLED_BACKGROUND_COLOR": {
-      "value": "#4d5059",
+      "value": "TURBULENCE",
       "type": "color"
     },
     "BUTTON_DISABLED_BACKGROUND_IMAGE": {
@@ -48,11 +51,11 @@
       "type": "background-image"
     },
     "BUTTON_COLOR": {
-      "value": "#0de",
+      "value": "#0SKY",
       "type": "color"
     },
     "BUTTON_DISABLED_COLOR": {
-      "value": "#686b75",
+      "value": "DUSK",
       "type": "color"
     },
     "BUTTON_FONT_SIZE": {

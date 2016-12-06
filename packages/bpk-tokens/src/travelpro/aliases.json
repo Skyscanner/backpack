@@ -1,0 +1,25 @@
+{
+  "aliases": {
+    "WHITE": "#ffffff",
+    "CLEAR": "#f0f0f0",
+    "FOG": "#F7F7F7",
+    "SPRINKLE": "#E7E7E8",
+    "MIST": "#C5CDCD",
+    "DRIZZLE": "A0A2A8",
+    "RAINY": "#878A95",
+    "DUSK": "#686B75",
+    "TURBULENCE": "#4D5059",
+    "THUNDER": "#3E4048",
+    "STORM": "#34363D",
+    "MIDNIGHT": "#232429",
+    "OVERCAST": "#00BBCC",
+    "SKY": "#00DDEE",
+    "WEED": "#22AA00",
+    "GRASS": "#66CC00",
+    "SUN": "#FFDE02",
+    "SUNSET": "#EE9900",
+    "FIRE": "#CC4400",
+    "RED": "#D0021B",
+    "BLOOD": "#C5000E"
+  }
+}
