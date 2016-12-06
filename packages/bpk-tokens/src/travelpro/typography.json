@@ -1,0 +1,50 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "typography"
+  },
+  "props": {
+    "LINK_COLOR": {
+      "value": "{!OVERCAST}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "LINK_TEXT_DECORATION": {
+      "value": "none",
+      "type": "text-decoration",
+      "category": "text-decorations"
+    },
+    "LINK_HOVER_COLOR": {
+      "value": "{!STORM}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "LINK_HOVER_TEXT_DECORATION": {
+      "value": "underline",
+      "type": "text-decoration",
+      "category": "text-decorations"
+    },
+    "LINK_ACTIVE_COLOR": {
+      "value": "{!TURBULENCE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "LINK_WHITE_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "LINK_WHITE_HOVER_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "LINK_WHITE_ACTIVE_COLOR": {
+      "value": "{!FOG}",
+      "type": "color",
+      "category": "text-colors"
+    }
+  }
+}

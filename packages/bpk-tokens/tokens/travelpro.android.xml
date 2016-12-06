@@ -5,16 +5,24 @@
   <property name="BUTTON_BORDER_RADIUS" category="buttons">3px</property>
   <color name="BUTTON_BACKGROUND_COLOR" category="buttons">#34363dff</color>
   <property name="BUTTON_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_HOVER_BACKGROUND_COLOR" category="buttons">#4d5059ff</color>
+  <color name="BUTTON_HOVER_BACKGROUND_COLOR" category="buttons">#000000ff</color>
   <property name="BUTTON_HOVER_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_ACTIVE_BACKGROUND_COLOR" category="buttons">#4d5059ff</color>
+  <color name="BUTTON_ACTIVE_BACKGROUND_COLOR" category="buttons">#000000ff</color>
   <property name="BUTTON_ACTIVE_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_DISABLED_BACKGROUND_COLOR" category="buttons">#4d5059ff</color>
+  <color name="BUTTON_DISABLED_BACKGROUND_COLOR" category="buttons">#000000ff</color>
   <property name="BUTTON_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_COLOR" category="buttons">#00ddeeff</color>
-  <color name="BUTTON_DISABLED_COLOR" category="buttons">#686b75ff</color>
+  <color name="BUTTON_COLOR" category="buttons">#000000ff</color>
+  <color name="BUTTON_DISABLED_COLOR" category="buttons">#000000ff</color>
   <property name="BUTTON_FONT_SIZE" category="buttons">14</property>
   <property name="BUTTON_FONT_WEIGHT" category="buttons">normal</property>
   <property name="BUTTON_LINE_HEIGHT" category="buttons">1.125em</property>
   <property name="BUTTON_TEXT_ALIGN" category="buttons">center</property>
+  <color name="LINK_COLOR" category="text-colors">#00bbccff</color>
+  <property name="LINK_TEXT_DECORATION" category="text-decorations">none</property>
+  <color name="LINK_HOVER_COLOR" category="text-colors">#34363dff</color>
+  <property name="LINK_HOVER_TEXT_DECORATION" category="text-decorations">underline</property>
+  <color name="LINK_ACTIVE_COLOR" category="text-colors">#4d5059ff</color>
+  <color name="LINK_WHITE_COLOR" category="text-colors">#ffffffff</color>
+  <color name="LINK_WHITE_HOVER_COLOR" category="text-colors">#ffffffff</color>
+  <color name="LINK_WHITE_ACTIVE_COLOR" category="text-colors">#f7f7f7ff</color>
 </resources>
