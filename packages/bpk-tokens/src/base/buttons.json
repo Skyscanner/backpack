@@ -31,7 +31,7 @@
       "type": "background-image"
     },
     "BUTTON_HOVER_BACKGROUND_COLOR": {
-      "value": "{!GREEN_500}",
+      "value": "{!GREEN_600}",
       "type": "color"
     },
     "BUTTON_HOVER_BACKGROUND_IMAGE": {
@@ -39,7 +39,7 @@
       "type": "background-image"
     },
     "BUTTON_ACTIVE_BACKGROUND_COLOR": {
-      "value": "{!GREEN_600}",
+      "value": "{!GREEN_700}",
       "type": "color"
     },
     "BUTTON_ACTIVE_BACKGROUND_IMAGE": {
@@ -235,7 +235,7 @@
       "type": "background-image"
     },
     "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR": {
-      "value": "{!BLUE_500}",
+      "value": "{!BLUE_600}",
       "type": "color"
     },
     "BUTTON_SELECTED_HOVER_BACKGROUND_IMAGE": {
@@ -243,7 +243,7 @@
       "type": "background-image"
     },
     "BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR": {
-      "value": "{!BLUE_600}",
+      "value": "{!BLUE_700}",
       "type": "color"
     },
     "BUTTON_SELECTED_ACTIVE_BACKGROUND_IMAGE": {
