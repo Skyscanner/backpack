@@ -182,7 +182,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 215, 117)",
+      "value": "rgb(0, 189, 104)",
       "type": "color",
       "name": "buttonHoverBackgroundColor"
     },
@@ -194,7 +194,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 189, 104)",
+      "value": "rgb(0, 168, 93)",
       "type": "color",
       "name": "buttonActiveBackgroundColor"
     },
@@ -488,7 +488,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 178, 214)",
+      "value": "rgb(0, 157, 189)",
       "type": "color",
       "name": "buttonSelectedHoverBackgroundColor"
     },
@@ -500,7 +500,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 157, 189)",
+      "value": "rgb(0, 140, 168)",
       "type": "color",
       "name": "buttonSelectedActiveBackgroundColor"
     },
