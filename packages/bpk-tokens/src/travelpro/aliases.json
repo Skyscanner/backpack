@@ -1,7 +1,7 @@
 {
   "aliases": {
-    "WHITE": "#ffffff",
-    "CLEAR": "#f0f0f0",
+    "WHITE": "#FFFFFF",
+    "CLEAR": "#F0F0F0",
     "FOG": "#F7F7F7",
     "SPRINKLE": "#E7E7E8",
     "MIST": "#C5CDCD",
@@ -22,8 +22,8 @@
     "FIRE": "#CC4400",
     "RED": "#D0021B",
     "BLOOD": "#C5000E",
-    "OVERCAST-TWENTY-PERCENT": "rgba(0,187,204,0.2)",
-    "OVERCAST-FIFTY-PERCENT": "rgba(0,187,204,0.5)",
-    "BLACK-FIFTY-PERCENT": "rgba(0,0,0,0.5)"
+    "OVERCAST_TWENTY_PERCENT": "rgba(0,187,204,0.2)",
+    "OVERCAST_FIFTY_PERCENT": "rgba(0,187,204,0.5)",
+    "BLACK_FIFTY_PERCENT": "rgba(0,0,0,0.5)"
   }
 }
