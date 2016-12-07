@@ -1,0 +1,193 @@
+@import '~bpk-mixins/index';
+
+$react-dates-width-arrow: 18px;
+$react-dates-width-tooltip-arrow: 20px;
+// $react-dates-width-day-picker: 312px;//($bpk-calendar-day-size * 7) + ($bpk-calendar-padding * 2) + ($bpk-calendar-day-spacing * 6);
+$react-dates-width-day-picker: ($bpk-calendar-day-size * 7) + ($bpk-calendar-padding * 2) + ($bpk-calendar-day-spacing * 6);
+
+$react-dates-color-primary: #00a699;
+$react-dates-color-primary-dark: #00514a;
+$react-dates-color-primary-shade-1: #33dacd;
+$react-dates-color-primary-shade-2: #66e2da;
+$react-dates-color-primary-shade-3: #80e8e0;
+$react-dates-color-primary-shade-4: #b2f1ec;
+$react-dates-color-secondary: #007a87;
+$react-dates-color-white: #fff;
+$react-dates-color-gray: #565a5c;
+$react-dates-color-gray-dark: darken($react-dates-color-gray, 10.5%);
+$react-dates-color-gray-light: lighten($react-dates-color-gray, 17.8%);   // #82888a
+$react-dates-color-gray-lighter: lighten($react-dates-color-gray, 45%);     // #cacccd
+
+$react-dates-color-border: #dbdbdb;
+$react-dates-color-border-light: #dce0e0;
+$react-dates-color-border-medium: #c4c4c4;
+
+$react-dates-color-placeholder-text: #757575;
+$react-dates-color-placeholder-text: $bpk-calendar-day-color;
+
+$react-dates-color-text: #484848;
+$react-dates-color-text-focus: #007a87;
+$react-dates-color-focus: #99ede6;
+
+@import '~react-dates/css/variables.scss';
+@import '~react-dates/css/styles.scss';
+
+.bpk-calendar {
+  &__nav-icon {
+    fill: $bpk-calendar-nav-icon-fill;
+
+    @include bpk-hover {
+      fill: $bpk-calendar-nav-icon-hover-fill;
+    }
+
+    &:active {
+      fill: $bpk-calendar-nav-icon-active-fill;
+    }
+  }
+}
+
+/* stylelint-disable selector-class-pattern */
+
+/* CalendarMonthGrid */
+
+.CalendarMonthGrid {
+  &--horizontal {
+    left: 0;
+  }
+}
+
+/* CalendarMonth */
+
+.CalendarMonth {
+  padding: ($bpk-calendar-padding / 2); // 6 instead of 12, because the table border-spacing adds 6
+
+  &__day {
+    width: $bpk-calendar-day-size;
+    height: $bpk-calendar-day-size;
+    border: none;
+    border-radius: $bpk-calendar-day-border-radius;
+    background-color: $bpk-calendar-day-background-color;
+    font-size: $bpk-calendar-day-font-size;
+
+    @include bpk-hover {
+      background-color: $bpk-calendar-day-hover-background-color;
+    }
+
+    &:active {
+      background: inherit;
+      background-color: $bpk-calendar-day-active-background-color;
+    }
+
+    &--selected {
+      background-color: $bpk-calendar-day-selected-background-color;
+      color: $bpk-calendar-day-selected-color;
+    }
+  }
+
+  &__caption {
+    margin: 6px 0 0;
+    padding: 0 $bpk-calendar-padding 36px 0;
+    font-size: $bpk-calendar-day-font-size;
+    line-height: 24px;
+
+    strong {
+      font-weight: normal;
+    }
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: $bpk-calendar-day-spacing;
+  }
+}
+
+/* DayPickerNavigation */
+
+.DayPickerNavigation--horizontal {
+  box-shadow: none;
+
+  .DayPickerNavigation__prev,
+  .DayPickerNavigation__next {
+    top: 12px;
+    margin: 0;
+    padding: 3px;
+  }
+
+  .DayPickerNavigation__prev {
+    left: $bpk-calendar-padding;
+  }
+
+  .DayPickerNavigation__next {
+    right: $bpk-calendar-padding;
+  }
+}
+
+/* DayPicker */
+
+.DayPicker {
+  &__week-header {
+    top: 48px;
+    font-weight: bold;
+
+    ul {
+      display: flex;
+      margin: 0;
+      padding-bottom: 6px;
+      box-shadow: 0 1px 0 0 $bpk-color-gray-100;
+    }
+
+    li {
+      font-size: $bpk-calendar-week-header-font-size;
+      line-height: 18px;
+    }
+
+    small {
+      font-size: $bpk-calendar-week-header-font-size;
+      line-height: 18px;
+    }
+  }
+
+  &--horizontal .DayPicker__week-header {
+    padding: 0 $bpk-calendar-padding;
+
+    &:first-of-type {
+      padding: 0 $bpk-calendar-padding;
+    }
+
+    li {
+      width: $bpk-calendar-day-size;
+      margin-right: $bpk-calendar-day-spacing;
+    }
+
+    li:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+/* stylelint-ensable selector-class-pattern */
+
+/*
+
+TODO:
+
+x Arrows
+x Weekday font style: 12px, bold
+x Day number font style: 16, regular
+x no grid
+x fill dates / overflow dates
+x text color
+x circles with right padding etc
+x baseline grid
+x overall padding
+x week headers
+x line underneath weekdays
+
+- weekend seperator line
+- border, border-radius
+- hover, active, selected state
+- inaccessible days? e.g. past?
+- pass in locale info / mon first / date format
+- rtl?
+
+*/

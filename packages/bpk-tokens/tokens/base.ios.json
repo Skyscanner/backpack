@@ -553,6 +553,96 @@
       "name": "buttonSelectedDisabledBoxShadow"
     },
     {
+      "category": "calendars",
+      "value": "12",
+      "type": "size",
+      "name": "calendarPadding"
+    },
+    {
+      "category": "calendars",
+      "value": "6",
+      "type": "size",
+      "name": "calendarDaySpacing"
+    },
+    {
+      "category": "calendars",
+      "value": "36",
+      "type": "size",
+      "name": "calendarDaySize"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "calendarDayColor"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "calendarDaySelectedColor"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "calendarDayBackgroundColor"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(243, 242, 245)",
+      "type": "color",
+      "name": "calendarDayHoverBackgroundColor"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      "name": "calendarDayActiveBackgroundColor"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      "name": "calendarDaySelectedBackgroundColor"
+    },
+    {
+      "category": "calendars",
+      "value": "80",
+      "type": "size",
+      "name": "calendarDayBorderRadius"
+    },
+    {
+      "category": "calendars",
+      "value": "16",
+      "type": "size",
+      "name": "calendarDayFontSize"
+    },
+    {
+      "category": "calendars",
+      "value": "12",
+      "type": "size",
+      "name": "calendarWeekHeaderFontSize"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      "name": "calendarNavIconFill"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(129, 123, 143)",
+      "type": "color",
+      "name": "calendarNavIconHoverFill"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "calendarNavIconActiveFill"
+    },
+    {
       "category": "cards",
       "value": "rgb(255, 255, 255)",
       "type": "color",

@@ -22,6 +22,7 @@ configure(() => {
   require('./../packages/bpk-component-banner-alert/stories')
   require('./../packages/bpk-component-blockquote/stories')
   require('./../packages/bpk-component-button/stories')
+  require('./../packages/bpk-component-calendar/stories')
   require('./../packages/bpk-component-card/stories')
   require('./../packages/bpk-component-checkbox/stories')
   require('./../packages/bpk-component-code/stories')

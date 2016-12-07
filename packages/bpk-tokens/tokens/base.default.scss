@@ -182,6 +182,36 @@ $bpk-button-selected-hover-box-shadow: none !default;
 $bpk-button-selected-active-box-shadow: none !default;
 /// @group buttons
 $bpk-button-selected-disabled-box-shadow: none !default;
+/// @group calendars
+$bpk-calendar-padding: .75rem !default;
+/// @group calendars
+$bpk-calendar-day-spacing: .375rem !default;
+/// @group calendars
+$bpk-calendar-day-size: 2.250rem !default;
+/// @group calendars
+$bpk-calendar-day-color: rgb(82, 76, 97) !default;
+/// @group calendars
+$bpk-calendar-day-selected-color: rgb(255, 255, 255) !default;
+/// @group calendars
+$bpk-calendar-day-background-color: rgb(255, 255, 255) !default;
+/// @group calendars
+$bpk-calendar-day-hover-background-color: rgb(243, 242, 245) !default;
+/// @group calendars
+$bpk-calendar-day-active-background-color: rgb(230, 228, 235) !default;
+/// @group calendars
+$bpk-calendar-day-selected-background-color: rgb(0, 178, 214) !default;
+/// @group calendars
+$bpk-calendar-day-border-radius: 5rem !default;
+/// @group calendars
+$bpk-calendar-day-font-size: 1rem !default;
+/// @group calendars
+$bpk-calendar-week-header-font-size: .75rem !default;
+/// @group calendars
+$bpk-calendar-nav-icon-fill: rgb(0, 178, 214) !default;
+/// @group calendars
+$bpk-calendar-nav-icon-hover-fill: rgb(129, 123, 143) !default;
+/// @group calendars
+$bpk-calendar-nav-icon-active-fill: rgb(82, 76, 97) !default;
 /// @group cards
 $bpk-card-background-color: rgb(255, 255, 255) !default;
 /// @group cards
