@@ -1,12 +1,47 @@
 # Backpack changelog
 
-## UNRELEASE
+## 2016-12-07 - Updated hover and active styles for primary buttons
+
 **Changed**
-- bpk-component-modal:
+- bpk-component-modal: 0.2.0 => 0.3.0
   - Removed aria-describedby attribute from modal, so screenreader does not read whole dialog contents
 
-- bpk-component-button:
+- bpk-component-button: 1.3.0 => 1.4.0
   - Changed hover and active states for primary buttons (including selected)
+
+- bpk-tokens: 15.1.0 => 16.0.0
+  - updated tokens for primary button hover and active states
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 1.0.7 => 1.0.8
+- bpk-component-badge: 0.0.4 => 0.0.5
+- bpk-component-banner-alert: 0.0.17 => 0.0.18
+- bpk-component-blockquote: 0.0.30 => 0.0.31
+- bpk-component-card: 0.0.18 => 0.0.19
+- bpk-component-checkbox: 0.0.27 => 0.0.28
+- bpk-component-code: 0.0.30 => 0.0.31
+- bpk-component-content-container: 1.0.21 => 1.0.22
+- bpk-component-grid: 0.0.24 => 0.0.25
+- bpk-component-grid-toggle: 0.0.36 => 0.0.37
+- bpk-component-heading: 1.1.13 => 1.1.14
+- bpk-component-icon: 1.1.20 => 1.1.21
+- bpk-component-input: 1.0.6 => 1.0.7
+- bpk-component-label: 2.0.6 => 2.0.7
+- bpk-component-link: 0.3.8 => 0.3.9
+- bpk-component-list: 0.0.50 => 0.0.51
+- bpk-component-logo: 1.0.20 => 1.0.21
+- bpk-component-paragraph: 0.1.37 => 0.1.38
+- bpk-component-radio: 0.0.27 => 0.0.28
+- bpk-component-router-link: 0.1.36 => 0.1.37
+- bpk-component-rtl-toggle: 0.0.20 => 0.0.21
+- bpk-component-select: 1.0.6 => 1.0.7
+- bpk-component-spinner: 1.0.20 => 1.0.21
+- bpk-component-table: 0.0.50 => 0.0.51
+- bpk-docs: 0.0.48 => 0.0.49
+- bpk-mixins: 6.5.0 => 6.5.1
+- bpk-stylesheets: 3.0.1 => 3.0.2
+- bpk-svgs: 2.0.16 => 2.0.17
+- bpk-tokens: 15.1.0 => 16.0.0
 
 ## 2016-11-24 - Icon-only buttons, modal change, code bugfix
 
