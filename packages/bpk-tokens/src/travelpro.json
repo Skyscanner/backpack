@@ -1,5 +1,6 @@
 {
   "imports": [
+    "./travelpro/aliases.json",
     "./travelpro/buttons.json",
     "./travelpro/typography.json"
   ]
