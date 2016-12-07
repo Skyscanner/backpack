@@ -6,6 +6,11 @@
     "category": "typography"
   },
   "props": {
+    "FONT_FAMILY_BASE": {
+      "value": "'markweb', Helvetica, Arial, sans-serif",
+      "type": "font",
+      "category": "typesettings"
+    },
     "LINK_COLOR": {
       "value": "{!OVERCAST}",
       "type": "color",

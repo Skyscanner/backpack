@@ -12,6 +12,7 @@
     "THUNDER": "#3E4048",
     "STORM": "#34363D",
     "MIDNIGHT": "#232429",
+    "BLACK": "#000000",
     "OVERCAST": "#00BBCC",
     "SKY": "#00DDEE",
     "WEED": "#22AA00",
@@ -20,6 +21,9 @@
     "SUNSET": "#EE9900",
     "FIRE": "#CC4400",
     "RED": "#D0021B",
-    "BLOOD": "#C5000E"
+    "BLOOD": "#C5000E",
+    "OVERCAST-TWENTY-PERCENT": "rgba(0,187,204,0.2)",
+    "OVERCAST-FIFTY-PERCENT": "rgba(0,187,204,0.5)",
+    "BLACK-FIFTY-PERCENT": "rgba(0,0,0,0.5)"
   }
 }

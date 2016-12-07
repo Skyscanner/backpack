@@ -14,6 +14,12 @@
     },
     {
       "category": "buttons",
+      "value": "16",
+      "type": "size",
+      "name": "buttonPaddingXIconOnly"
+    },
+    {
+      "category": "buttons",
       "value": "3px",
       "type": "size",
       "name": "buttonBorderRadius"
@@ -32,7 +38,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 0, 0)",
+      "value": "rgb(77, 80, 89)",
       "type": "color",
       "name": "buttonHoverBackgroundColor"
     },
@@ -44,7 +50,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 0, 0)",
+      "value": "rgb(77, 80, 89)",
       "type": "color",
       "name": "buttonActiveBackgroundColor"
     },
@@ -56,7 +62,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 0, 0)",
+      "value": "rgba(0, 0, 0, 0.5)",
       "type": "color",
       "name": "buttonDisabledBackgroundColor"
     },
@@ -68,9 +74,15 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 0, 0)",
+      "value": "rgb(0, 221, 238)",
       "type": "color",
       "name": "buttonColor"
+    },
+    {
+      "category": "buttons",
+      "value": "normal",
+      "type": "number",
+      "name": "buttonFontWeight"
     },
     {
       "category": "buttons",
@@ -86,12 +98,6 @@
     },
     {
       "category": "buttons",
-      "value": "normal",
-      "type": "number",
-      "name": "buttonFontWeight"
-    },
-    {
-      "category": "buttons",
       "value": "1.125em",
       "type": "number",
       "name": "buttonLineHeight"
@@ -101,6 +107,228 @@
       "value": "center",
       "type": "text-align",
       "name": "buttonTextAlign"
+    },
+    {
+      "category": "buttons",
+      "value": "32",
+      "type": "size",
+      "name": "buttonLargePaddingX"
+    },
+    {
+      "category": "buttons",
+      "value": "6",
+      "type": "size",
+      "name": "buttonLargePaddingY"
+    },
+    {
+      "category": "buttons",
+      "value": "9",
+      "type": "size",
+      "name": "buttonLargePaddingXIconOnly"
+    },
+    {
+      "category": "buttons",
+      "value": "16",
+      "type": "size",
+      "name": "buttonLargeFontSize"
+    },
+    {
+      "category": "buttons",
+      "value": "30",
+      "type": "number",
+      "name": "buttonLargeLineHeight"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonDisabledBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "rgba(0, 0, 0, 0.5)",
+      "type": "color",
+      "name": "buttonSecondaryBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonSecondaryBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgba(0, 187, 204, 0.2)",
+      "type": "color",
+      "name": "buttonSecondaryHoverBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonSecondaryHoverBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgba(0, 187, 204, 0.2)",
+      "type": "color",
+      "name": "buttonSecondaryActiveBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonSecondaryActiveBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 0, 0)",
+      "type": "color",
+      "name": "buttonSecondaryDisabledBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonSecondaryDisabledBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(52, 54, 61)",
+      "type": "color",
+      "name": "buttonSecondaryColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(52, 54, 61)",
+      "type": "color",
+      "name": "buttonSecondaryHoverColor"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(52, 54, 61)",
+      "type": "color",
+      "name": "buttonSecondaryActiveColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonSecondaryBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonSecondaryHoverBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonSecondaryActiveBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonSecondaryDisabledBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "14",
+      "type": "size",
+      "name": "buttonSecondaryFontSize"
+    },
+    {
+      "category": "buttons",
+      "value": "400",
+      "type": "number",
+      "name": "buttonSecondaryFontWeight"
+    },
+    {
+      "category": "buttons",
+      "value": "20",
+      "type": "number",
+      "name": "buttonSecondaryLineHeight"
+    },
+    {
+      "category": "buttons",
+      "value": "14",
+      "type": "size",
+      "name": "buttonDestructiveFontSize"
+    },
+    {
+      "category": "buttons",
+      "value": "20",
+      "type": "number",
+      "name": "buttonDestructiveLineHeight"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(197, 0, 14)",
+      "type": "color",
+      "name": "buttonDestructiveColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonDestructiveBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(197, 0, 14)",
+      "type": "color",
+      "name": "buttonDestructiveHoverColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonDestructiveHoverBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 0, 0)",
+      "type": "color",
+      "name": "buttonDestructiveActiveColor"
+    },
+    {
+      "category": "buttons",
+      "value": "0 0 0 3px {!RED_500} inset",
+      "type": "box-shadow",
+      "name": "buttonDestructiveActiveBoxShadow"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 0, 0)",
+      "type": "color",
+      "name": "buttonDestructiveDisabledBackgroundColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "background-image",
+      "name": "buttonDestructiveDisabledBackgroundImage"
+    },
+    {
+      "category": "buttons",
+      "value": "rgb(0, 0, 0)",
+      "type": "color",
+      "name": "buttonDestructiveDisabledColor"
+    },
+    {
+      "category": "buttons",
+      "value": "none",
+      "type": "box-shadow",
+      "name": "buttonDestructiveDisabledBoxShadow"
+    },
+    {
+      "category": "typesettings",
+      "value": "'markweb', Helvetica, Arial, sans-serif",
+      "type": "font",
+      "name": "fontFamilyBase"
     },
     {
       "category": "text-colors",
