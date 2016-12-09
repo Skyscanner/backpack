@@ -2,13 +2,13 @@
 
 ## UNRELEASED
 
-**Added**
+**Added:**
 - bpk-svgs:
   - Power icon
 
 ## 2016-12-07 - Updated hover and active styles for primary buttons
 
-**Changed**
+**Changed:**
 - bpk-component-modal: 0.2.0 => 0.3.0
   - Removed aria-describedby attribute from modal, so screenreader does not read whole dialog contents
 
@@ -51,7 +51,7 @@
 
 ## 2016-11-24 - Icon-only buttons, modal change, code bugfix
 
-**Changed**
+**Changed:**
 - bpk-component-modal: 0.1.1 => 0.2.0
   - scrim color changed to make it darker (gray 300, 70% opacity).
 
