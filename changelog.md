@@ -1,5 +1,11 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Added**
+- bpk-svgs:
+  - Power icon
+
 ## 2016-12-07 - Updated hover and active styles for primary buttons
 
 **Changed**
