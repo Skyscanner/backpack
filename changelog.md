@@ -2,6 +2,11 @@
 
 ## UNRELEASED
 
+**Changed:**
+- bpk-tokens:
+- bpk-stylesheets:
+  - Removed all traces of segoe, including `FONT_FAMILY_SEGOE` and `.font-family-segoe`
+
 **Added:**
 - bpk-svgs:
   - Power icon
