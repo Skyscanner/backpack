@@ -1,15 +1,46 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2016-12-12 - Added power icon and tidied up segoe flag from base stylesheet
 
 **Changed:**
-- bpk-tokens:
-- bpk-stylesheets:
+- bpk-stylesheets: 3.0.2 => 3.1.0
+- bpk-tokens: 16.0.0 => 16.1.0
   - Removed all traces of segoe, including `FONT_FAMILY_SEGOE` and `.font-family-segoe`
+  - Only bumped minor because we are certain that scaffold was the only consumer of this
 
 **Added:**
-- bpk-svgs:
+- bpk-component-icon: 1.1.21 => 1.2.0
+- bpk-svgs: 2.0.17 => 2.1.0
+- bpk-mixins: 6.5.1 => 6.6.0
   - Power icon
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 1.0.8 => 1.0.9
+- bpk-component-badge: 0.0.5 => 0.0.6
+- bpk-component-banner-alert: 0.0.18 => 0.0.19
+- bpk-component-blockquote: 0.0.31 => 0.0.32
+- bpk-component-button: 1.4.0 => 1.4.1
+- bpk-component-card: 0.0.19 => 0.0.20
+- bpk-component-checkbox: 0.0.28 => 0.0.29
+- bpk-component-code: 0.0.31 => 0.0.32
+- bpk-component-content-container: 1.0.22 => 1.0.23
+- bpk-component-grid: 0.0.25 => 0.0.26
+- bpk-component-grid-toggle: 0.0.37 => 0.0.38
+- bpk-component-heading: 1.1.14 => 1.1.15
+- bpk-component-input: 1.0.7 => 1.0.8
+- bpk-component-label: 2.0.7 => 2.0.8
+- bpk-component-link: 0.3.9 => 0.3.10
+- bpk-component-list: 0.0.51 => 0.0.52
+- bpk-component-logo: 1.0.21 => 1.0.22
+- bpk-component-modal: 0.3.0 => 0.3.1
+- bpk-component-paragraph: 0.1.38 => 0.1.39
+- bpk-component-radio: 0.0.28 => 0.0.29
+- bpk-component-router-link: 0.1.37 => 0.1.38
+- bpk-component-rtl-toggle: 0.0.21 => 0.0.22
+- bpk-component-select: 1.0.7 => 1.0.8
+- bpk-component-spinner: 1.0.21 => 1.0.22
+- bpk-component-table: 0.0.51 => 0.0.52
+- bpk-docs: 0.0.49 => 0.0.50
 
 ## 2016-12-07 - Updated hover and active styles for primary buttons
 
