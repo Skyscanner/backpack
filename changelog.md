@@ -1,5 +1,11 @@
 # Backpack changelog
 
+## Unreleased
+**Added**
+- bpk-mixins
+  - Toilets icon
+
+
 ## 2016-12-12 - Added power icon and tidied up segoe flag from base stylesheet
 
 **Changed:**
