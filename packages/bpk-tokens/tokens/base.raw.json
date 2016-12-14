@@ -651,17 +651,35 @@
       "type": "color",
       "name": "CALENDAR_DAY_COLOR"
     },
+    "CALENDAR_DAY_BACKGROUND_COLOR": {
+      "category": "calendars",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "CALENDAR_DAY_BACKGROUND_COLOR"
+    },
     "CALENDAR_DAY_SELECTED_COLOR": {
       "category": "calendars",
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "CALENDAR_DAY_SELECTED_COLOR"
     },
-    "CALENDAR_DAY_BACKGROUND_COLOR": {
+    "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
       "category": "calendars",
       "value": "rgb(255, 255, 255)",
       "type": "color",
-      "name": "CALENDAR_DAY_BACKGROUND_COLOR"
+      "name": "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR"
+    },
+    "CALENDAR_DAY_SELECTED_BORDER_COLOR": {
+      "category": "calendars",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "CALENDAR_DAY_SELECTED_BORDER_COLOR"
+    },
+    "CALENDAR_DAY_HOVER_COLOR": {
+      "category": "calendars",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "CALENDAR_DAY_HOVER_COLOR"
     },
     "CALENDAR_DAY_HOVER_BACKGROUND_COLOR": {
       "category": "calendars",
@@ -669,35 +687,29 @@
       "type": "color",
       "name": "CALENDAR_DAY_HOVER_BACKGROUND_COLOR"
     },
+    "CALENDAR_DAY_ACTIVE_COLOR": {
+      "category": "calendars",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "CALENDAR_DAY_ACTIVE_COLOR"
+    },
     "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR": {
       "category": "calendars",
       "value": "rgb(230, 228, 235)",
       "type": "color",
       "name": "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR"
     },
-    "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
+    "CALENDAR_DAY_DISABLED_COLOR": {
       "category": "calendars",
-      "value": "rgb(0, 178, 214)",
+      "value": "rgb(230, 228, 235)",
       "type": "color",
-      "name": "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR"
+      "name": "CALENDAR_DAY_DISABLED_COLOR"
     },
-    "CALENDAR_DAY_BORDER_RADIUS": {
+    "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR": {
       "category": "calendars",
-      "value": "5rem",
-      "type": "size",
-      "name": "CALENDAR_DAY_BORDER_RADIUS"
-    },
-    "CALENDAR_DAY_FONT_SIZE": {
-      "category": "calendars",
-      "value": "1rem",
-      "type": "size",
-      "name": "CALENDAR_DAY_FONT_SIZE"
-    },
-    "CALENDAR_WEEK_HEADER_FONT_SIZE": {
-      "category": "calendars",
-      "value": ".75rem",
-      "type": "size",
-      "name": "CALENDAR_WEEK_HEADER_FONT_SIZE"
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR"
     },
     "CALENDAR_NAV_ICON_FILL": {
       "category": "calendars",
@@ -1979,14 +1991,16 @@
     "CALENDAR_DAY_SPACING",
     "CALENDAR_DAY_SIZE",
     "CALENDAR_DAY_COLOR",
-    "CALENDAR_DAY_SELECTED_COLOR",
     "CALENDAR_DAY_BACKGROUND_COLOR",
-    "CALENDAR_DAY_HOVER_BACKGROUND_COLOR",
-    "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR",
+    "CALENDAR_DAY_SELECTED_COLOR",
     "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR",
-    "CALENDAR_DAY_BORDER_RADIUS",
-    "CALENDAR_DAY_FONT_SIZE",
-    "CALENDAR_WEEK_HEADER_FONT_SIZE",
+    "CALENDAR_DAY_SELECTED_BORDER_COLOR",
+    "CALENDAR_DAY_HOVER_COLOR",
+    "CALENDAR_DAY_HOVER_BACKGROUND_COLOR",
+    "CALENDAR_DAY_ACTIVE_COLOR",
+    "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR",
+    "CALENDAR_DAY_DISABLED_COLOR",
+    "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR",
     "CALENDAR_NAV_ICON_FILL",
     "CALENDAR_NAV_ICON_HOVER_FILL",
     "CALENDAR_NAV_ICON_ACTIVE_FILL",

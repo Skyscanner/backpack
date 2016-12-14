@@ -580,13 +580,31 @@
       "category": "calendars",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      "name": "calendarDayBackgroundColor"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
       "name": "calendarDaySelectedColor"
     },
     {
       "category": "calendars",
       "value": "rgb(255, 255, 255)",
       "type": "color",
-      "name": "calendarDayBackgroundColor"
+      "name": "calendarDaySelectedBackgroundColor"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "calendarDaySelectedBorderColor"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "calendarDayHoverColor"
     },
     {
       "category": "calendars",
@@ -596,33 +614,27 @@
     },
     {
       "category": "calendars",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "calendarDayActiveColor"
+    },
+    {
+      "category": "calendars",
       "value": "rgb(230, 228, 235)",
       "type": "color",
       "name": "calendarDayActiveBackgroundColor"
     },
     {
       "category": "calendars",
-      "value": "rgb(0, 178, 214)",
+      "value": "rgb(230, 228, 235)",
       "type": "color",
-      "name": "calendarDaySelectedBackgroundColor"
+      "name": "calendarDayDisabledColor"
     },
     {
       "category": "calendars",
-      "value": "80",
-      "type": "size",
-      "name": "calendarDayBorderRadius"
-    },
-    {
-      "category": "calendars",
-      "value": "16",
-      "type": "size",
-      "name": "calendarDayFontSize"
-    },
-    {
-      "category": "calendars",
-      "value": "12",
-      "type": "size",
-      "name": "calendarWeekHeaderFontSize"
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "calendarDayDisabledBackgroundColor"
     },
     {
       "category": "calendars",

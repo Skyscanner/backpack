@@ -191,21 +191,25 @@ $bpk-calendar-day-size: 2.250rem;
 /// @group calendars
 $bpk-calendar-day-color: rgb(82, 76, 97);
 /// @group calendars
+$bpk-calendar-day-background-color: rgb(255, 255, 255);
+/// @group calendars
 $bpk-calendar-day-selected-color: rgb(255, 255, 255);
 /// @group calendars
-$bpk-calendar-day-background-color: rgb(255, 255, 255);
+$bpk-calendar-day-selected-background-color: rgb(255, 255, 255);
+/// @group calendars
+$bpk-calendar-day-selected-border-color: rgb(255, 255, 255);
+/// @group calendars
+$bpk-calendar-day-hover-color: rgb(82, 76, 97);
 /// @group calendars
 $bpk-calendar-day-hover-background-color: rgb(243, 242, 245);
 /// @group calendars
+$bpk-calendar-day-active-color: rgb(82, 76, 97);
+/// @group calendars
 $bpk-calendar-day-active-background-color: rgb(230, 228, 235);
 /// @group calendars
-$bpk-calendar-day-selected-background-color: rgb(0, 178, 214);
+$bpk-calendar-day-disabled-color: rgb(230, 228, 235);
 /// @group calendars
-$bpk-calendar-day-border-radius: 5rem;
-/// @group calendars
-$bpk-calendar-day-font-size: 1rem;
-/// @group calendars
-$bpk-calendar-week-header-font-size: .75rem;
+$bpk-calendar-day-disabled-background-color: rgb(255, 255, 255);
 /// @group calendars
 $bpk-calendar-nav-icon-fill: rgb(0, 178, 214);
 /// @group calendars

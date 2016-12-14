@@ -191,21 +191,25 @@ $bpk-calendar-day-size: 2.250rem !default;
 /// @group calendars
 $bpk-calendar-day-color: rgb(82, 76, 97) !default;
 /// @group calendars
+$bpk-calendar-day-background-color: rgb(255, 255, 255) !default;
+/// @group calendars
 $bpk-calendar-day-selected-color: rgb(255, 255, 255) !default;
 /// @group calendars
-$bpk-calendar-day-background-color: rgb(255, 255, 255) !default;
+$bpk-calendar-day-selected-background-color: rgb(255, 255, 255) !default;
+/// @group calendars
+$bpk-calendar-day-selected-border-color: rgb(255, 255, 255) !default;
+/// @group calendars
+$bpk-calendar-day-hover-color: rgb(82, 76, 97) !default;
 /// @group calendars
 $bpk-calendar-day-hover-background-color: rgb(243, 242, 245) !default;
 /// @group calendars
+$bpk-calendar-day-active-color: rgb(82, 76, 97) !default;
+/// @group calendars
 $bpk-calendar-day-active-background-color: rgb(230, 228, 235) !default;
 /// @group calendars
-$bpk-calendar-day-selected-background-color: rgb(0, 178, 214) !default;
+$bpk-calendar-day-disabled-color: rgb(230, 228, 235) !default;
 /// @group calendars
-$bpk-calendar-day-border-radius: 5rem !default;
-/// @group calendars
-$bpk-calendar-day-font-size: 1rem !default;
-/// @group calendars
-$bpk-calendar-week-header-font-size: .75rem !default;
+$bpk-calendar-day-disabled-background-color: rgb(255, 255, 255) !default;
 /// @group calendars
 $bpk-calendar-nav-icon-fill: rgb(0, 178, 214) !default;
 /// @group calendars
