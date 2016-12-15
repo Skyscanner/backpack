@@ -21,7 +21,7 @@ storiesOf('bpk-component-calendar', module)
   .add('Fridays are blocked', () => (
     <BpkCalendarGrid
       onDateClick={action('Clicked day')}
-      dayModifiers={{ disabled: isFriday }}
+      dateModifiers={{ disabled: isFriday }}
     />
   ))
   .add('Non-english locale', () => (
@@ -33,7 +33,7 @@ storiesOf('bpk-component-calendar', module)
   .add('Highlight today', () => (
     <BpkCalendarGrid
       onDateClick={action('Clicked day')}
-      dayModifiers={{ today: isToday }}
+      dateModifiers={{ today: isToday }}
     />
   ))
   .add('Using a custom date component', () => {

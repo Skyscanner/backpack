@@ -14,7 +14,7 @@ const BpkCalendar = (props) => {
     <div className={classNames.join(' ')}>
       <div className="visually-hidden">This will be the calendar navigation</div>
       <BpkCalendarGrid
-        dayModifiers={modifiers}
+        dateModifiers={modifiers}
       />
     </div>
   );

@@ -6,6 +6,8 @@ import eachDay from 'date-fns/each_day';
 
 import isWithinRange from 'date-fns/is_within_range';
 import isToday from 'date-fns/is_today';
+import isSaturday from 'date-fns/is_saturday';
+import isSunday from 'date-fns/is_sunday';
 
 import addWeeks from 'date-fns/add_weeks';
 import addYears from 'date-fns/add_years';
@@ -30,6 +32,8 @@ const isDisabled = day => !isWithinRange(day, startOfToday(), addYears(startOfTo
 
 export {
   getCalendarMonthWeeks,
+  isSaturday,
+  isSunday,
   isToday,
   isDisabled,
 };

@@ -66,7 +66,7 @@
   &--disabled {
     background-color: $bpk-calendar-day-disabled-background-color;
     color: $bpk-calendar-day-disabled-color;
-    cursor: default;
+    cursor: not-allowed;
 
     @include bpk-hover {
       background-color: $bpk-calendar-day-disabled-background-color;
