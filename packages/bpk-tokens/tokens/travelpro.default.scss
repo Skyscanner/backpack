@@ -3,6 +3,8 @@ $bpk-button-padding-y: 8px !default;
 /// @group buttons
 $bpk-button-padding-x: 24px !default;
 /// @group buttons
+$bpk-button-padding-x-icon-only: 1rem !default;
+/// @group buttons
 $bpk-button-border-radius: 3px !default;
 /// @group buttons
 $bpk-button-background-color: rgb(52, 54, 61) !default;
@@ -17,18 +19,108 @@ $bpk-button-active-background-color: rgb(77, 80, 89) !default;
 /// @group buttons
 $bpk-button-active-background-image: none !default;
 /// @group buttons
-$bpk-button-disabled-background-color: rgb(77, 80, 89) !default;
+$bpk-button-disabled-background-color: rgba(0, 0, 0, 0.5) !default;
 /// @group buttons
 $bpk-button-disabled-background-image: none !default;
 /// @group buttons
 $bpk-button-color: rgb(0, 221, 238) !default;
 /// @group buttons
-$bpk-button-disabled-color: rgb(104, 107, 117) !default;
+$bpk-button-font-weight: normal !default;
+/// @group buttons
+$bpk-button-disabled-color: rgb(0, 0, 0) !default;
 /// @group buttons
 $bpk-button-font-size: .875rem !default;
-/// @group buttons
-$bpk-button-font-weight: normal !default;
 /// @group buttons
 $bpk-button-line-height: 1.125em !default;
 /// @group buttons
 $bpk-button-text-align: center !default;
+/// @group buttons
+$bpk-button-large-padding-x: 2rem !default;
+/// @group buttons
+$bpk-button-large-padding-y: 0.375rem !default;
+/// @group buttons
+$bpk-button-large-padding-x-icon-only: .5625rem !default;
+/// @group buttons
+$bpk-button-large-font-size: 1rem !default;
+/// @group buttons
+$bpk-button-large-line-height: 1.875rem !default;
+/// @group buttons
+$bpk-button-disabled-box-shadow: none !default;
+/// @group buttons
+$bpk-button-secondary-background-color: rgba(0, 0, 0, 0.5) !default;
+/// @group buttons
+$bpk-button-secondary-background-image: none !default;
+/// @group buttons
+$bpk-button-secondary-hover-background-color: rgba(0, 187, 204, 0.2) !default;
+/// @group buttons
+$bpk-button-secondary-hover-background-image: none !default;
+/// @group buttons
+$bpk-button-secondary-active-background-color: rgba(0, 187, 204, 0.2) !default;
+/// @group buttons
+$bpk-button-secondary-active-background-image: none !default;
+/// @group buttons
+$bpk-button-secondary-disabled-background-color: rgb(0, 0, 0) !default;
+/// @group buttons
+$bpk-button-secondary-disabled-background-image: none !default;
+/// @group buttons
+$bpk-button-secondary-color: rgb(52, 54, 61) !default;
+/// @group buttons
+$bpk-button-secondary-hover-color: rgb(52, 54, 61) !default;
+/// @group buttons
+$bpk-button-secondary-active-color: rgb(52, 54, 61) !default;
+/// @group buttons
+$bpk-button-secondary-box-shadow: none !default;
+/// @group buttons
+$bpk-button-secondary-hover-box-shadow: none !default;
+/// @group buttons
+$bpk-button-secondary-active-box-shadow: none !default;
+/// @group buttons
+$bpk-button-secondary-disabled-box-shadow: none !default;
+/// @group buttons
+$bpk-button-secondary-font-size: .875rem !default;
+/// @group buttons
+$bpk-button-secondary-font-weight: 400 !default;
+/// @group buttons
+$bpk-button-secondary-line-height: 1.25rem !default;
+/// @group buttons
+$bpk-button-destructive-font-size: .875rem !default;
+/// @group buttons
+$bpk-button-destructive-line-height: 1.25rem !default;
+/// @group buttons
+$bpk-button-destructive-color: rgb(197, 0, 14) !default;
+/// @group buttons
+$bpk-button-destructive-box-shadow: none !default;
+/// @group buttons
+$bpk-button-destructive-hover-color: rgb(197, 0, 14) !default;
+/// @group buttons
+$bpk-button-destructive-hover-box-shadow: none !default;
+/// @group buttons
+$bpk-button-destructive-active-color: rgb(0, 0, 0) !default;
+/// @group buttons
+$bpk-button-destructive-active-box-shadow: 0 0 0 3px {!RED_500} inset !default;
+/// @group buttons
+$bpk-button-destructive-disabled-background-color: rgb(0, 0, 0) !default;
+/// @group buttons
+$bpk-button-destructive-disabled-background-image: none !default;
+/// @group buttons
+$bpk-button-destructive-disabled-color: rgb(0, 0, 0) !default;
+/// @group buttons
+$bpk-button-destructive-disabled-box-shadow: none !default;
+/// @group typesettings
+$bpk-font-family-base: 'markweb', Helvetica, Arial, sans-serif !default;
+/// @group text-colors
+$bpk-link-color: rgb(0, 187, 204) !default;
+/// @group text-decorations
+$bpk-link-text-decoration: none !default;
+/// @group text-colors
+$bpk-link-hover-color: rgb(52, 54, 61) !default;
+/// @group text-decorations
+$bpk-link-hover-text-decoration: underline !default;
+/// @group text-colors
+$bpk-link-active-color: rgb(77, 80, 89) !default;
+/// @group text-colors
+$bpk-link-white-color: rgb(255, 255, 255) !default;
+/// @group text-colors
+$bpk-link-white-hover-color: rgb(255, 255, 255) !default;
+/// @group text-colors
+$bpk-link-white-active-color: rgb(247, 247, 247) !default;

@@ -1,0 +1,29 @@
+{
+  "aliases": {
+    "WHITE": "#FFFFFF",
+    "CLEAR": "#F0F0F0",
+    "FOG": "#F7F7F7",
+    "SPRINKLE": "#E7E7E8",
+    "MIST": "#C5CDCD",
+    "DRIZZLE": "A0A2A8",
+    "RAINY": "#878A95",
+    "DUSK": "#686B75",
+    "TURBULENCE": "#4D5059",
+    "THUNDER": "#3E4048",
+    "STORM": "#34363D",
+    "MIDNIGHT": "#232429",
+    "BLACK": "#000000",
+    "OVERCAST": "#00BBCC",
+    "SKY": "#00DDEE",
+    "WEED": "#22AA00",
+    "GRASS": "#66CC00",
+    "SUN": "#FFDE02",
+    "SUNSET": "#EE9900",
+    "FIRE": "#CC4400",
+    "RED": "#D0021B",
+    "BLOOD": "#C5000E",
+    "OVERCAST_TWENTY_PERCENT": "rgba(0,187,204,0.2)",
+    "OVERCAST_FIFTY_PERCENT": "rgba(0,187,204,0.5)",
+    "BLACK_FIFTY_PERCENT": "rgba(0,0,0,0.5)"
+  }
+}
