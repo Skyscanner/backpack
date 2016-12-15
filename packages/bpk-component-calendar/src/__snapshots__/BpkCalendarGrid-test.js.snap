@@ -1,0 +1,1579 @@
+exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribute 1`] = `
+<table
+  className="bpk-calendar-grid">
+  <thead>
+    <tr
+      className="bpk-calendar-grid__header">
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Mon
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Tue
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Wed
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Thu
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Fri
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Sat
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Sun
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          28
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          29
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          30
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          1
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          2
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          3
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          4
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          5
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          6
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          7
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          8
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          9
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          10
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          11
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          12
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          13
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          14
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          15
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          16
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          17
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          18
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          19
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          20
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          21
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          22
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          23
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          24
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          25
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          26
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          27
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          28
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          29
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          30
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          31
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          1
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          2
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          3
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          4
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          5
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          6
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          7
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date bpk-calendar-date--someClass">
+          8
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = `
+<table
+  className="bpk-calendar-grid">
+  <thead>
+    <tr
+      className="bpk-calendar-grid__header">
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Mon
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Tue
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Wed
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Thu
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Fri
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Sat
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Sun
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          28
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          29
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          30
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          1
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          2
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          3
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          4
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          5
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          6
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          7
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          8
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          9
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          10
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          11
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          12
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          13
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          14
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          15
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          16
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          17
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          18
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          19
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          20
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          21
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          22
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          23
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          24
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          25
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          26
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          27
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          28
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          29
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          30
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          31
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          1
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          2
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          3
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          4
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          5
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          6
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          7
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          8
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`] = `
+<table
+  className="bpk-calendar-grid">
+  <thead>
+    <tr
+      className="bpk-calendar-grid__header">
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        T
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        W
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        T
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        F
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        S
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        S
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        M
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          28
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          29
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          30
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          1
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          2
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          3
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          4
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          5
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          6
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          7
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          8
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          9
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          10
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          11
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          12
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          13
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          14
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          15
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          16
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          17
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          18
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          19
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          20
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          21
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          22
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          23
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          24
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          25
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          26
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          27
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          28
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          29
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          30
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          31
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          1
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          2
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          3
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          4
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          5
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          6
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          7
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          8
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute 1`] = `
+<table
+  className="bpk-calendar-grid">
+  <thead>
+    <tr
+      className="bpk-calendar-grid__header">
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Mon
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Tue
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Wed
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Thu
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Fri
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Sat
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Sun
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          28
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          29
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          30
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          1
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          2
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          3
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          4
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          5
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          6
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          7
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          8
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          9
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          10
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          11
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          12
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          13
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          14
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          15
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          16
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          17
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          18
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          19
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          20
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          21
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          22
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          23
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          24
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          25
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          26
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          27
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          28
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          29
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          30
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          31
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          1
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          2
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          3
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          4
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          5
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          6
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          7
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          8
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

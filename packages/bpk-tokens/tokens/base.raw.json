@@ -627,6 +627,108 @@
       "type": "box-shadow",
       "name": "BUTTON_SELECTED_DISABLED_BOX_SHADOW"
     },
+    "CALENDAR_PADDING": {
+      "category": "calendars",
+      "value": ".75rem",
+      "type": "size",
+      "name": "CALENDAR_PADDING"
+    },
+    "CALENDAR_DAY_SPACING": {
+      "category": "calendars",
+      "value": ".375rem",
+      "type": "size",
+      "name": "CALENDAR_DAY_SPACING"
+    },
+    "CALENDAR_DAY_SIZE": {
+      "category": "calendars",
+      "value": "2.250rem",
+      "type": "size",
+      "name": "CALENDAR_DAY_SIZE"
+    },
+    "CALENDAR_DAY_COLOR": {
+      "category": "calendars",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "CALENDAR_DAY_COLOR"
+    },
+    "CALENDAR_DAY_BACKGROUND_COLOR": {
+      "category": "calendars",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "CALENDAR_DAY_BACKGROUND_COLOR"
+    },
+    "CALENDAR_DAY_SELECTED_COLOR": {
+      "category": "calendars",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "CALENDAR_DAY_SELECTED_COLOR"
+    },
+    "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
+      "category": "calendars",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR"
+    },
+    "CALENDAR_DAY_SELECTED_BORDER_COLOR": {
+      "category": "calendars",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "CALENDAR_DAY_SELECTED_BORDER_COLOR"
+    },
+    "CALENDAR_DAY_HOVER_COLOR": {
+      "category": "calendars",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "CALENDAR_DAY_HOVER_COLOR"
+    },
+    "CALENDAR_DAY_HOVER_BACKGROUND_COLOR": {
+      "category": "calendars",
+      "value": "rgb(243, 242, 245)",
+      "type": "color",
+      "name": "CALENDAR_DAY_HOVER_BACKGROUND_COLOR"
+    },
+    "CALENDAR_DAY_ACTIVE_COLOR": {
+      "category": "calendars",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "CALENDAR_DAY_ACTIVE_COLOR"
+    },
+    "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR": {
+      "category": "calendars",
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      "name": "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR"
+    },
+    "CALENDAR_DAY_DISABLED_COLOR": {
+      "category": "calendars",
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      "name": "CALENDAR_DAY_DISABLED_COLOR"
+    },
+    "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR": {
+      "category": "calendars",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR"
+    },
+    "CALENDAR_NAV_ICON_FILL": {
+      "category": "calendars",
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      "name": "CALENDAR_NAV_ICON_FILL"
+    },
+    "CALENDAR_NAV_ICON_HOVER_FILL": {
+      "category": "calendars",
+      "value": "rgb(129, 123, 143)",
+      "type": "color",
+      "name": "CALENDAR_NAV_ICON_HOVER_FILL"
+    },
+    "CALENDAR_NAV_ICON_ACTIVE_FILL": {
+      "category": "calendars",
+      "value": "rgb(82, 76, 97)",
+      "type": "color",
+      "name": "CALENDAR_NAV_ICON_ACTIVE_FILL"
+    },
     "CARD_BACKGROUND_COLOR": {
       "category": "cards",
       "value": "rgb(255, 255, 255)",
@@ -1885,6 +1987,23 @@
     "BUTTON_SELECTED_HOVER_BOX_SHADOW",
     "BUTTON_SELECTED_ACTIVE_BOX_SHADOW",
     "BUTTON_SELECTED_DISABLED_BOX_SHADOW",
+    "CALENDAR_PADDING",
+    "CALENDAR_DAY_SPACING",
+    "CALENDAR_DAY_SIZE",
+    "CALENDAR_DAY_COLOR",
+    "CALENDAR_DAY_BACKGROUND_COLOR",
+    "CALENDAR_DAY_SELECTED_COLOR",
+    "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR",
+    "CALENDAR_DAY_SELECTED_BORDER_COLOR",
+    "CALENDAR_DAY_HOVER_COLOR",
+    "CALENDAR_DAY_HOVER_BACKGROUND_COLOR",
+    "CALENDAR_DAY_ACTIVE_COLOR",
+    "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR",
+    "CALENDAR_DAY_DISABLED_COLOR",
+    "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR",
+    "CALENDAR_NAV_ICON_FILL",
+    "CALENDAR_NAV_ICON_HOVER_FILL",
+    "CALENDAR_NAV_ICON_ACTIVE_FILL",
     "CARD_BACKGROUND_COLOR",
     "CARD_COLOR",
     "CARD_PADDING",

@@ -1,0 +1,135 @@
+@import '~bpk-mixins/index';
+
+.bpk-calendar-grid {
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  &__header {
+    font-size: $bpk-font-size-sm;
+    line-height: $bpk-line-height-sm;
+    text-align: center;
+    box-shadow: 0 1px 0 0 $bpk-color-gray-100;
+  }
+
+  &__header-cell {
+    padding: 6px; // TODO: 6px to top and bottom as well?
+    font-weight: bold;
+  }
+
+  &__date {
+    width: $bpk-calendar-day-size;
+    height: $bpk-calendar-day-size;
+    box-sizing: content-box;
+    padding: $bpk-calendar-day-spacing ($bpk-calendar-day-spacing / 2) 0 ($bpk-calendar-day-spacing / 2);
+    vertical-align: middle;
+
+    &--weekend-start {
+      box-shadow: -1px 0 0 0 $bpk-color-gray-100;
+
+      @include bpk-rtl {
+        box-shadow: 1px 0 0 0 $bpk-color-gray-100;
+      }
+    }
+
+    &--weekend-end:not(:last-child) {
+      box-shadow: 1px 0 0 0 $bpk-color-gray-100;
+
+      @include bpk-rtl {
+        box-shadow: -1px 0 0 0 $bpk-color-gray-100;
+      }
+    }
+  }
+}
+
+.bpk-calendar-date {
+  width: 100%;
+  height: 100%;
+  border-radius: $bpk-border-radius-pill;
+  background-color: $bpk-calendar-day-background-color;
+  color: $bpk-calendar-day-color;
+  font-size: $bpk-font-size-base;
+  line-height: $bpk-calendar-day-size;
+  text-align: center;
+  cursor: pointer;
+
+  @include bpk-hover {
+    background-color: $bpk-calendar-day-hover-background-color;
+    color: $bpk-calendar-day-hover-color;
+  }
+
+  &:active {
+    background-color: $bpk-calendar-day-active-background-color;
+    color: $bpk-calendar-day-active-color;
+  }
+
+  &--disabled {
+    background-color: $bpk-calendar-day-disabled-background-color;
+    color: $bpk-calendar-day-disabled-color;
+    cursor: not-allowed;
+
+    @include bpk-hover {
+      background-color: $bpk-calendar-day-disabled-background-color;
+      color: $bpk-calendar-day-disabled-color;
+    }
+
+    &:active {
+      background-color: $bpk-calendar-day-disabled-background-color;
+      color: $bpk-calendar-day-disabled-color;
+    }
+  }
+
+  &--today {
+    font-weight: bold;
+  }
+
+  &--selected {
+    background-color: $bpk-calendar-day-selected-background-color;
+    color: $bpk-calendar-day-selected-color;
+    box-shadow: 0 0 0 2px red inset;
+  }
+}
+
+// .bpk-calendar {
+//   &__nav-icon {
+//     fill: $bpk-calendar-nav-icon-fill;
+//
+//     @include bpk-hover {
+//       fill: $bpk-calendar-nav-icon-hover-fill;
+//     }
+//
+//     &:active {
+//       fill: $bpk-calendar-nav-icon-active-fill;
+//     }
+//   }
+// }
+//
+//
+//
+// /* DayPickerNavigation */
+//
+// .DayPickerNavigation--horizontal {
+//   box-shadow: none;
+//
+//   .DayPickerNavigation__prev,
+//   .DayPickerNavigation__next {
+//     top: 12px;
+//     margin: 0;
+//     padding: 3px;
+//   }
+//
+//   .DayPickerNavigation__prev {
+//     left: $bpk-calendar-padding;
+//   }
+//
+//   .DayPickerNavigation__next {
+//     right: $bpk-calendar-padding;
+//   }
+// }
+//
+//   &--horizontalREMOVEME {
+//     @include bpk-border-radius-sm();
+//
+//     box-shadow: none;
+//   }
+//

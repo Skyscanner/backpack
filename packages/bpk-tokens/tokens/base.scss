@@ -182,6 +182,40 @@ $bpk-button-selected-hover-box-shadow: none;
 $bpk-button-selected-active-box-shadow: none;
 /// @group buttons
 $bpk-button-selected-disabled-box-shadow: none;
+/// @group calendars
+$bpk-calendar-padding: .75rem;
+/// @group calendars
+$bpk-calendar-day-spacing: .375rem;
+/// @group calendars
+$bpk-calendar-day-size: 2.250rem;
+/// @group calendars
+$bpk-calendar-day-color: rgb(82, 76, 97);
+/// @group calendars
+$bpk-calendar-day-background-color: rgb(255, 255, 255);
+/// @group calendars
+$bpk-calendar-day-selected-color: rgb(255, 255, 255);
+/// @group calendars
+$bpk-calendar-day-selected-background-color: rgb(255, 255, 255);
+/// @group calendars
+$bpk-calendar-day-selected-border-color: rgb(255, 255, 255);
+/// @group calendars
+$bpk-calendar-day-hover-color: rgb(82, 76, 97);
+/// @group calendars
+$bpk-calendar-day-hover-background-color: rgb(243, 242, 245);
+/// @group calendars
+$bpk-calendar-day-active-color: rgb(82, 76, 97);
+/// @group calendars
+$bpk-calendar-day-active-background-color: rgb(230, 228, 235);
+/// @group calendars
+$bpk-calendar-day-disabled-color: rgb(230, 228, 235);
+/// @group calendars
+$bpk-calendar-day-disabled-background-color: rgb(255, 255, 255);
+/// @group calendars
+$bpk-calendar-nav-icon-fill: rgb(0, 178, 214);
+/// @group calendars
+$bpk-calendar-nav-icon-hover-fill: rgb(129, 123, 143);
+/// @group calendars
+$bpk-calendar-nav-icon-active-fill: rgb(82, 76, 97);
 /// @group cards
 $bpk-card-background-color: rgb(255, 255, 255);
 /// @group cards

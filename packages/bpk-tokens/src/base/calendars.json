@@ -1,0 +1,78 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "calendars"
+  },
+  "props": {
+    "CALENDAR_PADDING": {
+      "value": "{!SPACING_SM}",
+      "type": "size"
+    },
+    "CALENDAR_DAY_SPACING": {
+      "value": "{!SPACING_XS}",
+      "type": "size"
+    },
+    "CALENDAR_DAY_SIZE": {
+      "value": "{!SPACING_XL}",
+      "type": "size"
+    },
+    "CALENDAR_DAY_COLOR": {
+      "value": "{!GRAY_700}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_BACKGROUND_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_SELECTED_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_SELECTED_BORDER_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_HOVER_COLOR": {
+      "value": "{!GRAY_700}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_HOVER_BACKGROUND_COLOR": {
+      "value": "{!GRAY_50}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_ACTIVE_COLOR": {
+      "value": "{!GRAY_700}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR": {
+      "value": "{!GRAY_100}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_DISABLED_COLOR": {
+      "value": "{!GRAY_100}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "CALENDAR_NAV_ICON_FILL": {
+      "value": "{!BLUE_500}",
+      "type": "color"
+    },
+    "CALENDAR_NAV_ICON_HOVER_FILL": {
+      "value": "{!GRAY_500}",
+      "type": "color"
+    },
+    "CALENDAR_NAV_ICON_ACTIVE_FILL": {
+      "value": "{!GRAY_700}",
+      "type": "color"
+    }
+  }
+}
