@@ -1,6 +1,6 @@
 @import '~bpk-mixins/index';
 
-.bpk-calendar {
+.bpk-calendar-grid {
   display: table;
   border-collapse: collapse;
   border-spacing: 0;
@@ -42,7 +42,7 @@
   }
 }
 
-.bpk-calendar-day {
+.bpk-calendar-date {
   width: 100%;
   height: 100%;
   border-radius: $bpk-border-radius-pill;

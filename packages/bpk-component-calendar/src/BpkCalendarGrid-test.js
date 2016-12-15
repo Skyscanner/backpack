@@ -1,4 +1,3 @@
-jest.mock('./modifiers');
 jest.mock('./utils');
 
 /* eslint-disable import/first */

@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
 
 import BpkCalendarGrid from './BpkCalendarGrid';
-import { todayModifier } from './modifiers';
+import { todayModifier } from './utils';
+import './bpk-calendar.scss';
 
 const BpkCalendar = (props) => {
   const classNames = ['bpk-calendar'];

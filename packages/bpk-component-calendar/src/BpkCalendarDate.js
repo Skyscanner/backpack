@@ -2,12 +2,12 @@ import React, { PropTypes } from 'react';
 
 import './bpk-calendar.scss';
 
-const BpkCalendarDay = (props) => {
+const BpkCalendarDate = (props) => {
   const { date, modifiers } = props;
-  const classNames = ['bpk-calendar-day'];
+  const classNames = ['bpk-calendar-date'];
 
   Object.keys(modifiers).forEach((modifier) => {
-    if (modifiers[modifier](date)) { classNames.push(`bpk-calendar-day--${modifier}`); }
+    if (modifiers[modifier](date)) { classNames.push(`bpk-calendar-date--${modifier}`); }
   });
 
   return (
@@ -15,14 +15,13 @@ const BpkCalendarDay = (props) => {
   );
 };
 
-BpkCalendarDay.propTypes = {
-  date: PropTypes.instanceOf(Date),
+BpkCalendarDate.propTypes = {
+  date: PropTypes.instanceOf(Date).isRequired,
   modifiers: PropTypes.objectOf(React.PropTypes.func),
 };
 
-BpkCalendarDay.defaultProps = {
-  date: '2016-12',
+BpkCalendarDate.defaultProps = {
   modifiers: {},
 };
 
-export default BpkCalendarDay;
+export default BpkCalendarDate;

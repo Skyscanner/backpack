@@ -1,10 +1,16 @@
 import startOfMonth from 'date-fns/start_of_month';
 import startOfWeek from 'date-fns/start_of_week';
 import lastDayOfWeek from 'date-fns/last_day_of_week';
+import startOfToday from 'date-fns/start_of_today';
 import eachDay from 'date-fns/each_day';
-import addWeeks from 'date-fns/add_weeks';
 
-export default function getCalendarMonthWeeks(month, weekStartsOn) {
+import isWithinRange from 'date-fns/is_within_range';
+import isToday from 'date-fns/is_today';
+
+import addWeeks from 'date-fns/add_weeks';
+import addYears from 'date-fns/add_years';
+
+function getCalendarMonthWeeks(month, weekStartsOn) {
   const baseDate = new Date(month);
   const firstOfMonth = startOfMonth(baseDate);
 
@@ -19,3 +25,11 @@ export default function getCalendarMonthWeeks(month, weekStartsOn) {
 
   return weeksInMonth;
 }
+
+const isDisabled = day => !isWithinRange(day, startOfToday(), addYears(startOfToday(), 1));
+
+export {
+  getCalendarMonthWeeks,
+  isToday,
+  isDisabled,
+};

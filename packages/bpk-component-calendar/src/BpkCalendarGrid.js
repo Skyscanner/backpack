@@ -3,66 +3,126 @@ import React, { PropTypes } from 'react';
 import isSaturday from 'date-fns/is_saturday';
 import isSunday from 'date-fns/is_sunday';
 
-import getCalendarMonthWeeks from './utils';
-import BpkCalendarDay from './BpkCalendarDay';
-import { todayModifier, disabledModifier } from './modifiers';
+import { getCalendarMonthWeeks } from './utils';
+import BpkCalendarDate from './BpkCalendarDate';
 import './bpk-calendar.scss';
 
-const defaultRenderDate = (date, modifiers) => <BpkCalendarDay date={date} modifiers={modifiers} />;
+/*
+  WeekDay - table header cells such as "Mon", "Tue", "Wed"...
+*/
+const WeekDay = props => (
+  <th
+    className="bpk-calendar-grid__header-weekday"
+  >{ props.weekDay }</th>
+);
 
-const BpkCalendarGrid = (props) => {
-  const calendarClassNames = ['bpk-calendar'];
+WeekDay.propTypes = {
+  weekDay: PropTypes.string.isRequired,
+};
 
-  const renderWeekHeader = (weekDays, weekStartsOn) => {
-    const reorderedWeekDays = [
-      ...props.weekDays.slice(weekStartsOn),
-      ...props.weekDays.slice(0, weekStartsOn),
-    ];
-    return reorderedWeekDays.map(day => (
-      <th
-        key={day}
-        className="bpk-calendar__header-cell"
-      >{ day }</th>
-    ));
-  };
-
-  const renderWeekDay = (date) => {
-    const dayClassNames = ['bpk-calendar__date'];
-
-    if (isSaturday(date)) { dayClassNames.push('bpk-calendar__date--weekend-start'); }
-    if (isSunday(date)) { dayClassNames.push('bpk-calendar__date--weekend-end'); }
-
-    // TODO: To be dealt with in BPK-374
-    /* eslint-disable jsx-a11y/no-static-element-interactions */
-    return (
-      <td
-        key={date.toDateString()}
-        className={dayClassNames.join(' ')}
-        onClick={() => {
-          if (props.onClickDate) { props.onClickDate(date); }
-        }}
-      >
-        { props.renderDate(date, props.dayModifiers) }
-      </td>
-    );
-    /* eslint-enable jsx-a11y/no-static-element-interactions */
-  };
-  const renderWeek = (week, index) => (
-    <tr
-      key={index}
-      className="bpk-calendar__week"
-    >{ week.map(renderWeekDay) }</tr>
-  );
+/*
+  Week - table row containing a week full of DateContainer components
+*/
+const Week = (props) => {
+  const DateComponent = props.dateComponent;
+  const onDateClick = props.onDateClick;
 
   return (
-    <table className={calendarClassNames.join(' ')}>
+    <tr
+      className="bpk-calendar-grid__week"
+    >{ props.dates.map(date => (
+      <DateContainer
+        date={date}
+        onClick={() => { if (onDateClick) { onDateClick(date); } }}
+      >
+        <DateComponent date={date} />
+      </DateContainer>
+    ))}
+    </tr>
+  );
+};
+
+Week.propTypes = {
+  dates: PropTypes.arrayOf(Date),
+  dateComponent: PropTypes.node,
+  onDateClick: PropTypes.func,
+};
+
+/*
+  DateContainer - one for each date in the grid; wraps the actual BpkCalendarDate (or custom) component
+*/
+const DateContainer = (props) => {
+  const classNames = ['bpk-calendar-grid__date'];
+  const date = props.date;
+
+  if (isSaturday(date)) { classNames.push('bpk-calendar-grid__date--weekend-start'); }
+  if (isSunday(date)) { classNames.push('bpk-calendar-grid__date--weekend-end'); }
+
+  // TODO: To be dealt with in BPK-374
+  /* eslint-disable jsx-a11y/no-static-element-interactions */
+  return (
+    <td
+      key={date.toDateString()}
+      className={classNames.join(' ')}
+      onClick={props.onClick}
+    >
+      { props.children }
+    </td>
+  );
+  /* eslint-enable jsx-a11y/no-static-element-interactions */
+};
+
+DateContainer.propTypes = {
+  date: PropTypes.instanceOf(Date).isRequired,
+  onClick: PropTypes.func,
+  children: PropTypes.element.isRequired,
+};
+
+const getDateComponent = dateModifiers => (dcProps) => {
+  const modifiers = dateModifiers;
+  return (
+    <BpkCalendarDate modifiers={modifiers} {...dcProps} />
+  );
+};
+
+/*
+  BpkCalendarGrid - the grid representing a whole month
+*/
+const BpkCalendarGrid = (props) => {
+  const { weekDays, weekStartsOn } = props;
+  const reorderedWeekDays = [
+    ...weekDays.slice(weekStartsOn),
+    ...weekDays.slice(0, weekStartsOn),
+  ];
+
+  const calendarMonthWeeks = getCalendarMonthWeeks(props.month, props.weekStartsOn);
+
+  let dateComponent = getDateComponent(props.dayModifiers);
+
+  if (props.getDateComponent) {
+    dateComponent = props.getDateComponent();
+  }
+
+  return (
+    <table className="bpk-calendar-grid">
       <thead>
-        <tr className="bpk-calendar__header">
-          { renderWeekHeader(props.weekDays, props.weekStartsOn) }
+        <tr className="bpk-calendar-grid__header">
+          { reorderedWeekDays.map(weekDay => (
+            <WeekDay
+              weekDay={weekDay}
+              key={weekDay}
+            />
+          )) }
         </tr>
       </thead>
       <tbody>
-        { getCalendarMonthWeeks(props.month, props.weekStartsOn).map(renderWeek) }
+        { calendarMonthWeeks.map(dates => (
+          <Week
+            dates={dates}
+            dateComponent={dateComponent}
+            onDateClick={props.onDateClick}
+          />
+        )) }
       </tbody>
     </table>
   );
@@ -73,16 +133,15 @@ BpkCalendarGrid.propTypes = {
     PropTypes.string,
     PropTypes.instanceOf(Date),
   ]),
-  renderDate: PropTypes.func,
   weekDays: PropTypes.arrayOf(PropTypes.string),
   weekStartsOn: PropTypes.number,
-  dayModifiers: BpkCalendarDay.propTypes.modifiers,
-  onClickDate: PropTypes.func,
+  dayModifiers: BpkCalendarDate.propTypes.modifiers,
+  onDateClick: PropTypes.func,
+  getDateComponent: PropTypes.func,
 };
 
 BpkCalendarGrid.defaultProps = {
   month: new Date(),
-  renderDate: defaultRenderDate,
   weekDays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
   weekStartsOn: 1,
   dayModifiers: {},
