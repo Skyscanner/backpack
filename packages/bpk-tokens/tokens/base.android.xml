@@ -224,7 +224,6 @@
   <property name="SPACING_XXL" category="spacings">42</property>
   <property name="ONE_PIXEL_REM" category="spacings">1</property>
   <property name="FONT_FAMILY_BASE" category="typesettings">-apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif</property>
-  <property name="FONT_FAMILY_SEGOE" category="typesettings">-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif</property>
   <color name="FONT_COLOR_BASE" category="text-colors">#524c61ff</color>
   <property name="LINE_HEIGHT_SM" category="typesettings">18</property>
   <property name="LINE_HEIGHT_BASE" category="typesettings">24</property>

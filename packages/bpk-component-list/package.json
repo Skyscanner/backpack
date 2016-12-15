@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-list",
-  "version": "0.0.51",
+  "version": "0.0.52",
   "description": "Backpack list component.",
   "main": "index.js",
   "repository": {
@@ -13,6 +13,6 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^6.5.1"
+    "bpk-mixins": "^6.6.0"
   }
 }

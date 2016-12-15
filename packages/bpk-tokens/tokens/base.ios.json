@@ -1345,12 +1345,6 @@
       "name": "fontFamilyBase"
     },
     {
-      "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
-      "type": "font",
-      "category": "typesettings",
-      "name": "fontFamilySegoe"
-    },
-    {
       "value": "rgb(82, 76, 97)",
       "type": "color",
       "category": "text-colors",
