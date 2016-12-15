@@ -2,11 +2,45 @@
 
 ## 2016-12-15 - Added toilets icon and added travelpro tokens
 **Added**
-- bpk-mixins
+- bpk-mixins: 6.6.0 => 6.7.0
+- bpk-svgs: 2.1.0 => 2.2.0
+- bpk-component-icon: 1.2.0 => 1.3.0
   - Toilets icon
 
-- bpk-tokens
+- bpk-tokens: 16.1.0 => 17.0.0
   - added travelpro tokens
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 1.0.9 => 1.0.10
+- bpk-component-badge: 0.0.6 => 0.0.7
+- bpk-component-banner-alert: 0.0.19 => 0.0.20
+- bpk-component-blockquote: 0.0.32 => 0.0.33
+- bpk-component-button: 1.4.1 => 1.4.2
+- bpk-component-calendar: 0.0.0 => 0.0.1
+- bpk-component-card: 0.0.20 => 0.0.21
+- bpk-component-checkbox: 0.0.29 => 0.0.30
+- bpk-component-code: 0.0.32 => 0.0.33
+- bpk-component-content-container: 1.0.23 => 1.0.24
+- bpk-component-grid: 0.0.26 => 0.0.27
+- bpk-component-grid-toggle: 0.0.38 => 0.0.39
+- bpk-component-heading: 1.1.15 => 1.1.16
+- bpk-component-input: 1.0.8 => 1.0.9
+- bpk-component-label: 2.0.8 => 2.0.9
+- bpk-component-link: 0.3.10 => 0.3.11
+- bpk-component-list: 0.0.52 => 0.0.53
+- bpk-component-logo: 1.0.22 => 1.0.23
+- bpk-component-modal: 0.3.1 => 0.3.2
+- bpk-component-paragraph: 0.1.39 => 0.1.40
+- bpk-component-radio: 0.0.29 => 0.0.30
+- bpk-component-router-link: 0.1.38 => 0.1.39
+- bpk-component-rtl-toggle: 0.0.22 => 0.0.23
+- bpk-component-select: 1.0.8 => 1.0.9
+- bpk-component-spinner: 1.0.22 => 1.0.23
+- bpk-component-table: 0.0.52 => 0.0.53
+- bpk-docs: 0.0.50 => 0.0.51
+- bpk-stylesheets: 3.1.0 => 3.1.1
+
+
 
 ## 2016-12-12 - Added power icon and tidied up segoe flag from base stylesheet
 
