@@ -1,10 +1,12 @@
 # Backpack changelog
 
-## Unreleased
+## 2016-12-15 - Added toilets icon and added travelpro tokens
 **Added**
 - bpk-mixins
   - Toilets icon
 
+- bpk-tokens
+  - added travelpro tokens
 
 ## 2016-12-12 - Added power icon and tidied up segoe flag from base stylesheet
 
