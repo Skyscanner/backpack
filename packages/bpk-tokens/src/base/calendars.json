@@ -67,11 +67,15 @@
       "type": "color"
     },
     "CALENDAR_NAV_ICON_HOVER_FILL": {
-      "value": "{!GRAY_500}",
+      "value": "{!BLUE_600}",
       "type": "color"
     },
     "CALENDAR_NAV_ICON_ACTIVE_FILL": {
-      "value": "{!GRAY_700}",
+      "value": "{!BLUE_700}",
+      "type": "color"
+    },
+    "CALENDAR_NAV_ICON_DISABLED_FILL": {
+      "value": "{!GRAY_100}",
       "type": "color"
     }
   }

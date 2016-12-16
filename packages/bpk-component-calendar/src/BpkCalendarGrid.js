@@ -61,6 +61,7 @@ const DateContainer = (props) => {
   return (
     <td
       key={date.toDateString()}
+      data-date={date}
       className={classNames.join(' ')}
       onClick={props.onClick}
     >

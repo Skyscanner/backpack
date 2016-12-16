@@ -3,10 +3,19 @@ import { storiesOf, action } from '@kadira/storybook';
 import isFriday from 'date-fns/is_friday';
 import isToday from 'date-fns/is_today';
 import isWeekend from 'date-fns/is_weekend';
+import format from 'date-fns/format';
 
-import { BpkCalendarGrid } from './index';
+import BpkCalendar, { BpkCalendarGrid } from './index';
+
+const formatMonth = date => format(date, 'MMMM YYYY');
 
 storiesOf('bpk-component-calendar', module)
+  .add('Calendar', () => (
+    <BpkCalendar
+      highlightToday
+      formatMonth={formatMonth}
+    />
+  ))
   .add('Default', () => (
     <BpkCalendarGrid
       onDateClick={action('Clicked day')}

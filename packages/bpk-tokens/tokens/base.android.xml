@@ -107,8 +107,9 @@
   <color name="CALENDAR_DAY_DISABLED_COLOR" category="calendars">#e6e4ebff</color>
   <color name="CALENDAR_DAY_DISABLED_BACKGROUND_COLOR" category="calendars">#ffffffff</color>
   <color name="CALENDAR_NAV_ICON_FILL" category="calendars">#00b2d6ff</color>
-  <color name="CALENDAR_NAV_ICON_HOVER_FILL" category="calendars">#817b8fff</color>
-  <color name="CALENDAR_NAV_ICON_ACTIVE_FILL" category="calendars">#524c61ff</color>
+  <color name="CALENDAR_NAV_ICON_HOVER_FILL" category="calendars">#009dbdff</color>
+  <color name="CALENDAR_NAV_ICON_ACTIVE_FILL" category="calendars">#008ca8ff</color>
+  <color name="CALENDAR_NAV_ICON_DISABLED_FILL" category="calendars">#e6e4ebff</color>
   <color name="CARD_BACKGROUND_COLOR" category="cards">#ffffffff</color>
   <color name="CARD_COLOR" category="cards">#524c61ff</color>
   <property name="CARD_PADDING" category="cards">12</property>
