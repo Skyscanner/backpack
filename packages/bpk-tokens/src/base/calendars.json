@@ -27,7 +27,7 @@
       "type": "color"
     },
     "CALENDAR_DAY_SELECTED_COLOR": {
-      "value": "{!WHITE}",
+      "value": "{!BLUE_500}",
       "type": "color"
     },
     "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
@@ -35,7 +35,7 @@
       "type": "color"
     },
     "CALENDAR_DAY_SELECTED_BORDER_COLOR": {
-      "value": "{!WHITE}",
+      "value": "{!BLUE_500}",
       "type": "color"
     },
     "CALENDAR_DAY_HOVER_COLOR": {

@@ -86,7 +86,9 @@
   &--selected {
     background-color: $bpk-calendar-day-selected-background-color;
     color: $bpk-calendar-day-selected-color;
+    font-weight: bold;
     box-shadow: 0 0 0 2px $bpk-calendar-day-selected-border-color inset;
+    cursor: default;
   }
 }
 

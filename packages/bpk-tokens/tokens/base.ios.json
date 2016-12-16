@@ -584,7 +584,7 @@
     },
     {
       "category": "calendars",
-      "value": "rgb(255, 255, 255)",
+      "value": "rgb(0, 178, 214)",
       "type": "color",
       "name": "calendarDaySelectedColor"
     },
@@ -596,7 +596,7 @@
     },
     {
       "category": "calendars",
-      "value": "rgb(255, 255, 255)",
+      "value": "rgb(0, 178, 214)",
       "type": "color",
       "name": "calendarDaySelectedBorderColor"
     },

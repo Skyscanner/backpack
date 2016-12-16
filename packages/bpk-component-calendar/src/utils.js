@@ -9,6 +9,7 @@ import isWithinRange from 'date-fns/is_within_range';
 import isToday from 'date-fns/is_today';
 import isSaturday from 'date-fns/is_saturday';
 import isSunday from 'date-fns/is_sunday';
+import isSameDay from 'date-fns/is_same_day';
 
 import addDays from 'date-fns/add_days';
 import addWeeks from 'date-fns/add_weeks';
@@ -68,6 +69,7 @@ export {
   isSaturday,
   isSunday,
   isToday,
+  isSameDay,
   isDisabled,
   addMonths,
   addDays,

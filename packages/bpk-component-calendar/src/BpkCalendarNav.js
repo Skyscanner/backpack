@@ -21,8 +21,6 @@ const BpkCalendarNav = (props) => {
   const {
     month,
     onChangeMonth,
-    prevMonthLabel,
-    nextMonthLabel,
     minDate,
     maxDate,
     formatMonth,
@@ -40,7 +38,7 @@ const BpkCalendarNav = (props) => {
           disabled={!isWithinRange(addMonths(month, -1), min, max)}
         >
           <PrevIcon />
-          <span className="visually-hidden">{ prevMonthLabel }</span>
+          <span className="visually-hidden">{ formatMonth(addMonths(month, -1)) }</span>
         </button>
       </div>
       <div className="bpk-calendar-nav__month">
@@ -51,7 +49,7 @@ const BpkCalendarNav = (props) => {
           onChange={event => onChangeMonth(parseIsoDate(event.target.value))}
         >
           { navigatableMonths.map(m => (
-            <option value={formatIsoMonth(m)} key={m.toString()}>{formatMonth(m)}</option>
+            <option value={formatIsoMonth(m)} key={m.toString()}>{ formatMonth(m) }</option>
           ))}
         </BpkSelect>
       </div>
@@ -62,7 +60,7 @@ const BpkCalendarNav = (props) => {
           disabled={!isWithinRange(addMonths(month, 1), min, max)}
         >
           <NextIcon />
-          <span className="visually-hidden">{ nextMonthLabel }</span>
+          <span className="visually-hidden">{ formatMonth(addMonths(month, 1)) }</span>
         </button>
       </div>
     </div>
@@ -72,8 +70,6 @@ const BpkCalendarNav = (props) => {
 BpkCalendarNav.propTypes = {
   month: PropTypes.instanceOf(Date).isRequired,
   onChangeMonth: PropTypes.func,
-  prevMonthLabel: PropTypes.string,
-  nextMonthLabel: PropTypes.string,
   minDate: PropTypes.instanceOf(Date),
   maxDate: PropTypes.instanceOf(Date),
   formatMonth: PropTypes.func.isRequired,

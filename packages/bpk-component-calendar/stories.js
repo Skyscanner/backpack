@@ -1,48 +1,101 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import isFriday from 'date-fns/is_friday';
-import isToday from 'date-fns/is_today';
 import isWeekend from 'date-fns/is_weekend';
 import format from 'date-fns/format';
+import addMonths from 'date-fns/add_months';
 
-import BpkCalendar, { BpkCalendarGrid } from './index';
+import BpkCalendar, { BpkCalendarGrid, BpkCalendarNav } from './index';
 
 const formatMonth = date => format(date, 'MMMM YYYY');
+const formatMonthGerman = (date) => {
+  const months = [
+    'Januar',
+    'Februar',
+    'März',
+    'April',
+    'Mai',
+    'Juni',
+    'Juli',
+    'August',
+    'September',
+    'Oktober',
+    'November',
+    'Dezember',
+  ];
+  return `${months[date.getMonth()]} ${date.getUTCFullYear()}`;
+};
 
 storiesOf('bpk-component-calendar', module)
-  .add('Calendar', () => (
-    <BpkCalendar
-      highlightToday
+  .add('BpkCalendarNav', () => (
+    <BpkCalendarNav
+      month={new Date()}
+      onChangeMonth={action('Changed month')}
+      minDate={new Date()}
+      maxDate={addMonths(new Date(), 12)}
       formatMonth={formatMonth}
     />
   ))
-  .add('Default', () => (
+  .add('BpkCalendarGrid', () => (
     <BpkCalendarGrid
       onDateClick={action('Clicked day')}
     />
   ))
-  .add('Week starts on a Sunday', () => (
-    <BpkCalendarGrid
-      onDateClick={action('Clicked day')}
+  .add('Calendar - default', () => (
+    <BpkCalendar
+      formatMonth={formatMonth}
+      onDateSelect={action('Selected day')}
+    />
+  ))
+  .add('Calendar - Show weekend separator', () => (
+    <BpkCalendar
+      formatMonth={formatMonth}
+      onDateSelect={action('Selected day')}
+      showWeekendSeparator
+    />
+  ))
+  .add('Calendar - Week starts on a Sunday', () => (
+    <BpkCalendar
+      formatMonth={formatMonth}
+      onDateSelect={action('Selected day')}
       weekStartsOn={0}
     />
   ))
-  .add('Fridays are blocked', () => (
-    <BpkCalendarGrid
-      onDateClick={action('Clicked day')}
+  .add('Calendar - Fridays are blocked', () => (
+    <BpkCalendar
+      formatMonth={formatMonth}
+      onDateSelect={action('Selected day')}
       dateModifiers={{ disabled: isFriday }}
     />
   ))
-  .add('Non-english locale', () => (
-    <BpkCalendarGrid
-      onDateClick={action('Clicked day')}
+  .add('Calendar - Non-english locale', () => (
+    <BpkCalendar
+      formatMonth={formatMonthGerman}
+      onDateSelect={action('Selected day')}
       weekDays={['So.', 'Mo.', 'Di.', 'Mi.', 'Do.', 'Fr.', 'Sa.']}
     />
   ))
-  .add('Highlight today', () => (
-    <BpkCalendarGrid
-      onDateClick={action('Clicked day')}
-      dateModifiers={{ today: isToday }}
+  .add('Calendar - Specific initial month', () => (
+    <BpkCalendar
+      formatMonth={formatMonth}
+      onDateSelect={action('Selected day')}
+      initialMonth={addMonths(new Date(), 6)}
+    />
+  ))
+  .add('Calendar - Specific date range', () => (
+    <BpkCalendar
+      formatMonth={formatMonth}
+      onDateSelect={action('Selected day')}
+      minDate={new Date(2020, 4, 15)}
+      maxDate={new Date(2020, 5, 15)}
+      initialMonth={new Date(2020, 4, 15)}
+    />
+  ))
+  .add('Calendar - Highlight today', () => (
+    <BpkCalendar
+      formatMonth={formatMonth}
+      onDateSelect={action('Selected day')}
+      highlightToday
     />
   ))
   .add('Using a custom date component', () => {
@@ -61,7 +114,9 @@ storiesOf('bpk-component-calendar', module)
       date: React.PropTypes.instanceOf(Date).isRequired,
     };
     return (
-      <BpkCalendarGrid
+      <BpkCalendar
+        formatMonth={formatMonth}
+        onDateSelect={action('Selected day')}
         getDateComponent={() => MyCustomDate}
       />
     );
