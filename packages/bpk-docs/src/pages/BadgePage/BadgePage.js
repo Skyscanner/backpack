@@ -43,10 +43,10 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <BpkBadge centered="true" className="bpkdocs-badge-page__badge-spacing">Apples</BpkBadge>,
-      <BpkBadge centered="true" className="bpkdocs-badge-page__badge-spacing">Bananas</BpkBadge>,
-      <BpkBadge centered="true" className="bpkdocs-badge-page__badge-spacing">Strawberries</BpkBadge>,
-      <BpkBadge centered="true">Pears</BpkBadge>,
+      <BpkBadge centered className="bpkdocs-badge-page__badge-spacing">Apples</BpkBadge>,
+      <BpkBadge centered className="bpkdocs-badge-page__badge-spacing">Bananas</BpkBadge>,
+      <BpkBadge centered className="bpkdocs-badge-page__badge-spacing">Strawberries</BpkBadge>,
+      <BpkBadge centered>Pears</BpkBadge>,
     ],
   },
 ];
