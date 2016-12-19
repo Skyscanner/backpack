@@ -26,7 +26,7 @@ exports[`BpkCalendarNav should render correctly 1`] = `
     className="bpk-calendar-nav__month">
     <select
       className="bpk-select"
-      id="monthsTODOchangeME"
+      id="myCalendarNav_select"
       name="months"
       onChange={[Function onChange]}
       value="2016-12" />
@@ -83,7 +83,7 @@ exports[`BpkCalendarNav should render correctly with "minDate" and "maxDate" set
     className="bpk-calendar-nav__month">
     <select
       className="bpk-select"
-      id="monthsTODOchangeME"
+      id="myCalendarNav_select"
       name="months"
       onChange={[Function onChange]}
       value="2016-12">

@@ -12,6 +12,7 @@ describe('BpkCalendarNav', () => {
     const tree = renderer.create(<BpkCalendarNav
       month={new Date()}
       formatMonth={formatMonth}
+      id="myCalendarNav"
     />).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -22,6 +23,7 @@ describe('BpkCalendarNav', () => {
       formatMonth={formatMonth}
       minDate={new Date()}
       maxDate={addMonths(new Date(), 2)}
+      id="myCalendarNav"
     />).toJSON();
     expect(tree).toMatchSnapshot();
   });

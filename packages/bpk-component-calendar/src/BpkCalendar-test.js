@@ -14,6 +14,7 @@ describe('BpkCalendar', () => {
   it('should render correctly', () => {
     const tree = renderer.create(<BpkCalendar
       formatMonth={formatMonth}
+      id="myCalendar"
     />).toJSON();
     expect(tree).toMatchSnapshot();
   });

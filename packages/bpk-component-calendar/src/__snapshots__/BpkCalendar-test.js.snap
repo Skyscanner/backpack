@@ -3,9 +3,10 @@ exports[`BpkCalendar should render correctly 1`] = `
   className="bpk-calendar">
   <BpkCalendarNav
     formatMonth={[Function formatMonth]}
-    maxDate={2017-12-19T00:00:00.000Z}
-    minDate={2016-12-19T00:00:00.000Z}
-    month={2016-12-01T00:00:00.000Z}
+    id="myCalendar__bpk_calendar_nav"
+    maxDate={2017-12-18T23:00:00.000Z}
+    minDate={2016-12-18T23:00:00.000Z}
+    month={2016-11-30T23:00:00.000Z}
     onChangeMonth={[Function bound onChangeMonth]} />
   <BpkCalendarGrid
     dateModifiers={
@@ -14,7 +15,7 @@ exports[`BpkCalendar should render correctly 1`] = `
       }
     }
     getDateComponent={undefined}
-    month={2016-12-01T00:00:00.000Z}
+    month={2016-11-30T23:00:00.000Z}
     onDateClick={[Function bound onDateSelect]}
     showWeekendSeparator={false}
     weekDays={undefined}

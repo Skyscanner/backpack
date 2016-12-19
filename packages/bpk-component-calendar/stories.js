@@ -34,6 +34,7 @@ storiesOf('bpk-component-calendar', module)
       minDate={new Date()}
       maxDate={addMonths(new Date(), 12)}
       formatMonth={formatMonth}
+      id="myCalendarNav"
     />
   ))
   .add('BpkCalendarGrid', () => (
@@ -45,6 +46,7 @@ storiesOf('bpk-component-calendar', module)
     <BpkCalendar
       formatMonth={formatMonth}
       onDateSelect={action('Selected day')}
+      id="myCalendar"
     />
   ))
   .add('Calendar - Show weekend separator', () => (
@@ -52,6 +54,7 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonth}
       onDateSelect={action('Selected day')}
       showWeekendSeparator
+      id="myCalendar"
     />
   ))
   .add('Calendar - Week starts on a Sunday', () => (
@@ -59,6 +62,7 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonth}
       onDateSelect={action('Selected day')}
       weekStartsOn={0}
+      id="myCalendar"
     />
   ))
   .add('Calendar - Fridays are blocked', () => (
@@ -66,6 +70,7 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonth}
       onDateSelect={action('Selected day')}
       dateModifiers={{ disabled: isFriday }}
+      id="myCalendar"
     />
   ))
   .add('Calendar - Non-english locale', () => (
@@ -73,6 +78,7 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonthGerman}
       onDateSelect={action('Selected day')}
       weekDays={['So.', 'Mo.', 'Di.', 'Mi.', 'Do.', 'Fr.', 'Sa.']}
+      id="myCalendar"
     />
   ))
   .add('Calendar - Specific initial month', () => (
@@ -80,6 +86,7 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonth}
       onDateSelect={action('Selected day')}
       initialMonth={addMonths(new Date(), 6)}
+      id="myCalendar"
     />
   ))
   .add('Calendar - Specific date range', () => (
@@ -89,6 +96,7 @@ storiesOf('bpk-component-calendar', module)
       minDate={new Date(2020, 4, 15)}
       maxDate={new Date(2020, 5, 15)}
       initialMonth={new Date(2020, 4, 15)}
+      id="myCalendar"
     />
   ))
   .add('Calendar - Highlight today', () => (
@@ -96,6 +104,7 @@ storiesOf('bpk-component-calendar', module)
       formatMonth={formatMonth}
       onDateSelect={action('Selected day')}
       highlightToday
+      id="myCalendar"
     />
   ))
   .add('Using a custom date component', () => {
@@ -118,6 +127,7 @@ storiesOf('bpk-component-calendar', module)
         formatMonth={formatMonth}
         onDateSelect={action('Selected day')}
         getDateComponent={() => MyCustomDate}
+        id="myCalendar"
       />
     );
   });
