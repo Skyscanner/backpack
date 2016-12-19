@@ -83,7 +83,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-03T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -92,7 +92,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-04T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -149,7 +149,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-10T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -158,7 +158,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-11T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -215,7 +215,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-17T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -224,7 +224,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-18T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -281,7 +281,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-24T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -290,7 +290,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-25T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -347,7 +347,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-31T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -356,7 +356,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2017-01-01T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -413,7 +413,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2017-01-07T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -422,7 +422,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2017-01-08T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -436,6 +436,443 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
 `;
 
 exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = `
+<table
+  className="bpk-calendar-grid">
+  <thead>
+    <tr
+      className="bpk-calendar-grid__header">
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Mon
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Tue
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Wed
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Thu
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Fri
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Sat
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Sun
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-09-25T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          26
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-09-26T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          27
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-09-27T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          28
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-09-28T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          29
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-09-29T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          30
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-09-30T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          1
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-01T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          2
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-02T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          3
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-03T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          4
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-04T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          5
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-05T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          6
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-06T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          7
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-07T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          8
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-08T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          9
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-09T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          10
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-10T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          11
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-11T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          12
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-12T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          13
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-13T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          14
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-14T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          15
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-15T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          16
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-16T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          17
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-17T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          18
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-18T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          19
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-19T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          20
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-20T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          21
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-21T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          22
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-22T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          23
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-23T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          24
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-24T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          25
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-25T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          26
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-26T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          27
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-27T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          28
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-28T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          29
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-29T23:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          30
+        </div>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-10-31T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          31
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-11-01T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          1
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-11-02T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          2
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-11-03T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          3
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-11-04T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          4
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-11-05T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          5
+        </div>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-11-06T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          className="bpk-calendar-date">
+          6
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" attribute 1`] = `
 <table
   className="bpk-calendar-grid">
   <thead>
@@ -957,7 +1394,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-03T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -966,7 +1403,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-04T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1023,7 +1460,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-10T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1032,7 +1469,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-11T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1089,7 +1526,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-17T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1098,7 +1535,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-18T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1155,7 +1592,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-24T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1164,7 +1601,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-25T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1221,7 +1658,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-31T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1230,7 +1667,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2017-01-01T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1287,7 +1724,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2017-01-07T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1296,7 +1733,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2017-01-08T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1394,7 +1831,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-03T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1403,7 +1840,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-04T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1460,7 +1897,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-10T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1469,7 +1906,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-11T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1526,7 +1963,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-17T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1535,7 +1972,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-18T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1592,7 +2029,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-24T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1601,7 +2038,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-25T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1658,7 +2095,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2016-12-31T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1667,7 +2104,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2017-01-01T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1724,7 +2161,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        className="bpk-calendar-grid__date"
         data-date={2017-01-07T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
@@ -1733,13 +2170,702 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
         </div>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        className="bpk-calendar-grid__date"
         data-date={2017-01-08T00:00:00.000Z}
         onClick={[Function onClick]}>
         <div
           className="bpk-calendar-date">
           8
         </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`BpkCalendarGrid should render correctly with a custom date component 1`] = `
+<table
+  className="bpk-calendar-grid">
+  <thead>
+    <tr
+      className="bpk-calendar-grid__header">
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Mon
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Tue
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Wed
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Thu
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Fri
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Sat
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday">
+        Sun
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-11-28T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-11-29T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-11-30T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-01T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-02T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        data-date={2016-12-03T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        data-date={2016-12-04T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-05T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-06T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-07T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-08T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-09T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        data-date={2016-12-10T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        data-date={2016-12-11T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-12T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-13T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-14T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-15T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-16T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        data-date={2016-12-17T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        data-date={2016-12-18T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-19T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-20T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-21T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-22T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-23T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        data-date={2016-12-24T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        data-date={2016-12-25T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-26T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-27T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-28T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-29T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2016-12-30T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        data-date={2016-12-31T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        data-date={2017-01-01T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2017-01-02T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2017-01-03T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2017-01-04T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2017-01-05T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date={2017-01-06T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        data-date={2017-01-07T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        data-date={2017-01-08T00:00:00.000Z}
+        onClick={[Function onClick]}>
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%"
+            }
+          } />
       </td>
     </tr>
   </tbody>

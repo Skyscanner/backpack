@@ -149,6 +149,7 @@ BpkCalendarGrid.defaultProps = {
   weekStartsOn: 1,
   dateModifiers: {},
   showWeekendSeparator: false,
+  weekDays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 };
 
 export default BpkCalendarGrid;

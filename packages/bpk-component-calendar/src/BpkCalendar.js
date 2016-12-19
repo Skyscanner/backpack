@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import objectAssign from 'object-assign';
 import BpkCalendarGrid from './BpkCalendarGrid';
 import BpkCalendarNav from './BpkCalendarNav';
-import { isToday, addMonths, isWithinRange, getMonthRange, startOfMonth, startOfToday, isSameDay } from './utils';
+import { isToday, addMonths, isWithinRange, getMonthRange, startOfMonth, startOfToday } from './utils';
 import './bpk-calendar.scss';
 
 class BpkCalendar extends Component {
@@ -82,10 +82,10 @@ BpkCalendar.propTypes = {
   maxDate: PropTypes.instanceOf(Date),
   formatMonth: PropTypes.func.isRequired,
   onDateSelect: PropTypes.func,
-  weekDays: BpkCalendarGrid.propTypes.weekDays,
-  weekStartsOn: BpkCalendarGrid.propTypes.weekStartsOn,
-  dateModifiers: BpkCalendarGrid.propTypes.dateModifiers,
-  getDateComponent: BpkCalendarGrid.propTypes.getDateComponent,
+  weekDays: PropTypes.arrayOf(PropTypes.string),
+  weekStartsOn: PropTypes.number,
+  dateModifiers: PropTypes.objectOf(React.PropTypes.func),
+  getDateComponent: PropTypes.func,
 };
 
 BpkCalendar.defaultProps = {
@@ -95,7 +95,6 @@ BpkCalendar.defaultProps = {
   minDate: startOfToday(),
   maxDate: addMonths(startOfToday(), 12),
   dateModifiers: {},
-  weekDays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 };
 
 export default BpkCalendar;
