@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import { getCalendarMonthWeeks, isSaturday, isSunday } from './utils';
+import { getCalendarMonthWeeks, isSaturday, isSunday, formatIsoDate } from './utils';
 import BpkCalendarDate from './BpkCalendarDate';
 import './bpk-calendar.scss';
 
@@ -65,7 +65,7 @@ const DateContainer = (props) => {
   return (
     <td
       key={date.toDateString()}
-      data-date={date}
+      data-date={formatIsoDate(date)}
       className={classNames.join(' ')}
       onClick={props.onClick}
     >
