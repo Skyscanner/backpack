@@ -58,7 +58,8 @@ function getMonthsInRange(from, to) {
 
 const isDisabled = day => !isWithinRange(day, startOfToday(), addYears(startOfToday(), 1));
 const parseIsoDate = parse;
-const formatIsoDate = date => format(date);
+const formatIso = date => format(date);
+const formatIsoDate = date => format(date, 'YYYY-MM-DD');
 const formatIsoMonth = date => format(date, 'YYYY-MM');
 
 export {
@@ -75,6 +76,7 @@ export {
   addDays,
   startOfMonth,
   startOfToday,
+  formatIso,
   formatIsoDate,
   formatIsoMonth,
   parseIsoDate,

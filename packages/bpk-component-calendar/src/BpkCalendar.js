@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import objectAssign from 'object-assign';
 import BpkCalendarGrid from './BpkCalendarGrid';
 import BpkCalendarNav from './BpkCalendarNav';
-import { isToday, addMonths, isWithinRange, getMonthRange, startOfMonth, startOfToday } from './utils';
+import { isToday, addMonths, isWithinRange, getMonthRange, startOfMonth, startOfToday, formatIsoDate } from './utils';
 import './bpk-calendar.scss';
 
 class BpkCalendar extends Component {
@@ -28,25 +28,25 @@ class BpkCalendar extends Component {
 
   onDateSelect(date) {
     if (isWithinRange(date, this.props.minDate, this.props.maxDate)) {
-      // set state
       this.setState({ selectedDate: date });
-      // call callback
-      this.props.onDateSelect(date);
+      this.props.onDateSelect(
+        formatIsoDate(date),
+      );
     }
   }
 
   render() {
     const classNames = ['bpk-calendar'];
-    const modifiers = {};
+    const builtinModifiers = {};
 
     // add all from this.props.dateModifiers
 
-    if (this.props.highlightToday) { modifiers.today = isToday; }
+    if (this.props.highlightToday) { builtinModifiers.today = isToday; }
     if (this.props.minDate && this.props.maxDate) {
-      modifiers.disabled = date => !isWithinRange(date, this.props.minDate, this.props.maxDate);
+      builtinModifiers.disabled = date => !isWithinRange(date, this.props.minDate, this.props.maxDate);
     }
 
-    objectAssign(modifiers, this.props.dateModifiers);
+    const modifiers = objectAssign({}, builtinModifiers, this.props.dateModifiers);
 
     return (
       <div className={classNames.join(' ')}>
@@ -56,6 +56,7 @@ class BpkCalendar extends Component {
           minDate={this.props.minDate}
           maxDate={this.props.maxDate}
           formatMonth={this.props.formatMonth}
+          id={`${this.props.id}__bpk_calendar_nav`}
         />
         <BpkCalendarGrid
           month={this.state.currentMonth}
@@ -86,6 +87,7 @@ BpkCalendar.propTypes = {
   weekStartsOn: PropTypes.number,
   dateModifiers: PropTypes.objectOf(React.PropTypes.func),
   getDateComponent: PropTypes.func,
+  id: PropTypes.string.isRequired,
 };
 
 BpkCalendar.defaultProps = {
