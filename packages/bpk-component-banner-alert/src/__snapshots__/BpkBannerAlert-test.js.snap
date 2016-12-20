@@ -3,7 +3,7 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
   className="bpk-banner-alert bpk-banner-alert--error">
   <header
     className="bpk-banner-alert__header"
-    onClick={[Function bound onExpand]}>
+    onClick={[Function]}>
     <span
       className="bpk-banner-alert__icon">
       <svg
@@ -31,7 +31,7 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
   className="bpk-banner-alert bpk-banner-alert--success">
   <header
     className="bpk-banner-alert__header"
-    onClick={[Function bound onExpand]}>
+    onClick={[Function]}>
     <span
       className="bpk-banner-alert__icon">
       <svg
@@ -59,7 +59,7 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
   className="bpk-banner-alert bpk-banner-alert--warn">
   <header
     className="bpk-banner-alert__header"
-    onClick={[Function bound onExpand]}>
+    onClick={[Function]}>
     <span
       className="bpk-banner-alert__icon">
       <svg
@@ -87,7 +87,7 @@ exports[`BpkBannerAlert should render correctly with child nodes 1`] = `
   className="bpk-banner-alert bpk-banner-alert--success">
   <header
     className="bpk-banner-alert__header bpk-banner-alert__header--expandable"
-    onClick={[Function bound onExpand]}>
+    onClick={[Function]}>
     <span
       className="bpk-banner-alert__icon">
       <svg

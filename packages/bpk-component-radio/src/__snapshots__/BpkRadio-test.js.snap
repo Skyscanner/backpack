@@ -7,7 +7,7 @@ exports[`BpkRadio should render correctly 1`] = `
     disabled={false}
     id={null}
     name="radio"
-    onChange={[Function onChange]}
+    onChange={[Function]}
     type="radio"
     value="radio" />
 </label>
@@ -22,7 +22,7 @@ exports[`BpkRadio should render correctly with checked attribute 1`] = `
     disabled={false}
     id={null}
     name="radio"
-    onChange={[Function onChange]}
+    onChange={[Function]}
     type="radio"
     value="radio" />
 </label>
@@ -37,7 +37,7 @@ exports[`BpkRadio should render correctly with disabled attribute 1`] = `
     disabled={true}
     id={null}
     name="radio"
-    onChange={[Function onChange]}
+    onChange={[Function]}
     type="radio"
     value="radio" />
 </label>
@@ -52,7 +52,7 @@ exports[`BpkRadio should render correctly with id attribute 1`] = `
     disabled={false}
     id="radio"
     name="radio"
-    onChange={[Function onChange]}
+    onChange={[Function]}
     type="radio"
     value="radio" />
 </label>
@@ -67,7 +67,7 @@ exports[`BpkRadio should render correctly with label attribute 1`] = `
     disabled={false}
     id={null}
     name="radio"
-    onChange={[Function onChange]}
+    onChange={[Function]}
     type="radio"
     value="radio" />
    My label
@@ -83,7 +83,7 @@ exports[`BpkRadio should render correctly with value attribute 1`] = `
     disabled={false}
     id={null}
     name="radio"
-    onChange={[Function onChange]}
+    onChange={[Function]}
     type="radio"
     value="my-value" />
 </label>

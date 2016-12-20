@@ -9,10 +9,10 @@ exports[`BpkAutosuggest should render correctly 1`] = `
     aria-owns="react-autowhatever-1"
     autoComplete="off"
     className="bpk-autosuggest__input"
-    onBlur={[Function onBlur]}
-    onChange={[Function onChange]}
-    onFocus={[Function onFocus]}
-    onKeyDown={[Function bound onKeyDown]}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
     role="combobox"
     type="text"
     value="Edinburgh" />
@@ -33,10 +33,10 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
     aria-owns="react-autowhatever-1"
     autoComplete="off"
     className="bpk-autosuggest__input"
-    onBlur={[Function onBlur]}
-    onChange={[Function onChange]}
-    onFocus={[Function onFocus]}
-    onKeyDown={[Function bound onKeyDown]}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
     role="combobox"
     type="text"
     value="Edinburgh" />
@@ -51,11 +51,11 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
         data-section-index={null}
         data-suggestion-index={0}
         id="react-autowhatever-1--item-0"
-        onClick={[Function bound onClick]}
-        onMouseDown={[Function bound onMouseDown]}
-        onMouseEnter={[Function bound onMouseEnter]}
-        onMouseLeave={[Function bound onMouseLeave]}
-        onTouchStart={[Function anonymous]}
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onTouchStart={[Function]}
         role="option">
         <span>
           Edinburgh
@@ -66,11 +66,11 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
         data-section-index={null}
         data-suggestion-index={1}
         id="react-autowhatever-1--item-1"
-        onClick={[Function bound onClick]}
-        onMouseDown={[Function bound onMouseDown]}
-        onMouseEnter={[Function bound onMouseEnter]}
-        onMouseLeave={[Function bound onMouseLeave]}
-        onTouchStart={[Function anonymous]}
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onTouchStart={[Function]}
         role="option">
         <span>
           Glasgow
@@ -81,11 +81,11 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
         data-section-index={null}
         data-suggestion-index={2}
         id="react-autowhatever-1--item-2"
-        onClick={[Function bound onClick]}
-        onMouseDown={[Function bound onMouseDown]}
-        onMouseEnter={[Function bound onMouseEnter]}
-        onMouseLeave={[Function bound onMouseLeave]}
-        onTouchStart={[Function anonymous]}
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onTouchStart={[Function]}
         role="option">
         <span>
           London
