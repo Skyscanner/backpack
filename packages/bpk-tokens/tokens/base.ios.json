@@ -584,7 +584,7 @@
     },
     {
       "category": "calendars",
-      "value": "rgb(255, 255, 255)",
+      "value": "rgb(0, 178, 214)",
       "type": "color",
       "name": "calendarDaySelectedColor"
     },
@@ -596,7 +596,7 @@
     },
     {
       "category": "calendars",
-      "value": "rgb(255, 255, 255)",
+      "value": "rgb(0, 178, 214)",
       "type": "color",
       "name": "calendarDaySelectedBorderColor"
     },
@@ -644,15 +644,21 @@
     },
     {
       "category": "calendars",
-      "value": "rgb(129, 123, 143)",
+      "value": "rgb(0, 157, 189)",
       "type": "color",
       "name": "calendarNavIconHoverFill"
     },
     {
       "category": "calendars",
-      "value": "rgb(82, 76, 97)",
+      "value": "rgb(0, 140, 168)",
       "type": "color",
       "name": "calendarNavIconActiveFill"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      "name": "calendarNavIconDisabledFill"
     },
     {
       "category": "cards",

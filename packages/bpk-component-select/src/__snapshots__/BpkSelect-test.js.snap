@@ -3,7 +3,7 @@ exports[`BpkSelect should render correctly 1`] = `
   className="bpk-select"
   id="fruits"
   name="fruits"
-  onChange={[Function onChange]}
+  onChange={[Function]}
   value="oranges">
   <option
     value="apples">
@@ -30,7 +30,7 @@ exports[`BpkSelect should render correctly with "className" attribute 1`] = `
   className="bpk-select test"
   id="fruits"
   name="fruits"
-  onChange={[Function onChange]}
+  onChange={[Function]}
   value="oranges">
   <option
     value="apples">
@@ -57,7 +57,7 @@ exports[`BpkSelect should render correctly with "docked" attribute 1`] = `
   className="bpk-select bpk-select--docked"
   id="fruits"
   name="fruits"
-  onChange={[Function onChange]}
+  onChange={[Function]}
   value="">
   <option
     value="apples">
@@ -84,7 +84,7 @@ exports[`BpkSelect should render correctly with "large" attribute 1`] = `
   className="bpk-select bpk-select--large"
   id="fruits"
   name="fruits"
-  onChange={[Function onChange]}
+  onChange={[Function]}
   value="">
   <option
     value="apples">
@@ -111,7 +111,7 @@ exports[`BpkSelect should render correctly with a "valid" attribute equal to fal
   className="bpk-select bpk-select--invalid"
   id="fruits"
   name="fruits"
-  onChange={[Function onChange]}
+  onChange={[Function]}
   value="oranges">
   <option
     value="apples">

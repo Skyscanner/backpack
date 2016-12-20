@@ -193,11 +193,11 @@ $bpk-calendar-day-color: rgb(82, 76, 97);
 /// @group calendars
 $bpk-calendar-day-background-color: rgb(255, 255, 255);
 /// @group calendars
-$bpk-calendar-day-selected-color: rgb(255, 255, 255);
+$bpk-calendar-day-selected-color: rgb(0, 178, 214);
 /// @group calendars
 $bpk-calendar-day-selected-background-color: rgb(255, 255, 255);
 /// @group calendars
-$bpk-calendar-day-selected-border-color: rgb(255, 255, 255);
+$bpk-calendar-day-selected-border-color: rgb(0, 178, 214);
 /// @group calendars
 $bpk-calendar-day-hover-color: rgb(82, 76, 97);
 /// @group calendars
@@ -213,9 +213,11 @@ $bpk-calendar-day-disabled-background-color: rgb(255, 255, 255);
 /// @group calendars
 $bpk-calendar-nav-icon-fill: rgb(0, 178, 214);
 /// @group calendars
-$bpk-calendar-nav-icon-hover-fill: rgb(129, 123, 143);
+$bpk-calendar-nav-icon-hover-fill: rgb(0, 157, 189);
 /// @group calendars
-$bpk-calendar-nav-icon-active-fill: rgb(82, 76, 97);
+$bpk-calendar-nav-icon-active-fill: rgb(0, 140, 168);
+/// @group calendars
+$bpk-calendar-nav-icon-disabled-fill: rgb(230, 228, 235);
 /// @group cards
 $bpk-card-background-color: rgb(255, 255, 255);
 /// @group cards

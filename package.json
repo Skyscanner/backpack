@@ -58,7 +58,7 @@
     "gulp-gzip": "1.4.0",
     "gulp-jsonlint": "1.1.2",
     "gulp-svgmin": "1.2.2",
-    "jest": "15.1.1",
+    "jest": "18.0.0",
     "json-loader": "0.5.4",
     "lerna": "2.0.0-beta.30",
     "lodash": "4.15.0",
@@ -88,7 +88,7 @@
   "jest": {
     "verbose": true,
     "testRegex": "packages/.*-test\\.js$",
-    "preprocessorIgnorePatterns": [
+    "transformIgnorePatterns": [
       "/node_modules\\/(?!bpk)/"
     ],
     "moduleNameMapper": {

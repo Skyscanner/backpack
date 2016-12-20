@@ -7,7 +7,7 @@ exports[`BpkCheckbox should render correctly 1`] = `
     disabled={false}
     id={null}
     name="checkbox"
-    onChange={[Function onChange]}
+    onChange={[Function]}
     type="checkbox"
     value="checkbox" />
 </label>
@@ -22,7 +22,7 @@ exports[`BpkCheckbox should render correctly with checked attribute 1`] = `
     disabled={false}
     id={null}
     name="checkbox"
-    onChange={[Function onChange]}
+    onChange={[Function]}
     type="checkbox"
     value="checkbox" />
 </label>
@@ -37,7 +37,7 @@ exports[`BpkCheckbox should render correctly with disabled attribute 1`] = `
     disabled={true}
     id={null}
     name="checkbox"
-    onChange={[Function onChange]}
+    onChange={[Function]}
     type="checkbox"
     value="checkbox" />
 </label>
@@ -52,7 +52,7 @@ exports[`BpkCheckbox should render correctly with id attribute 1`] = `
     disabled={false}
     id="checkbox"
     name="checkbox"
-    onChange={[Function onChange]}
+    onChange={[Function]}
     type="checkbox"
     value="checkbox" />
 </label>
@@ -67,7 +67,7 @@ exports[`BpkCheckbox should render correctly with label attribute 1`] = `
     disabled={false}
     id={null}
     name="checkbox"
-    onChange={[Function onChange]}
+    onChange={[Function]}
     type="checkbox"
     value="checkbox" />
    My label
@@ -83,7 +83,7 @@ exports[`BpkCheckbox should render correctly with value attribute 1`] = `
     disabled={false}
     id={null}
     name="checkbox"
-    onChange={[Function onChange]}
+    onChange={[Function]}
     type="checkbox"
     value="my-value" />
 </label>

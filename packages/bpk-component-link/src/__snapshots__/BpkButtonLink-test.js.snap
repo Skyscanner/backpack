@@ -1,7 +1,7 @@
 exports[`BpkButtonLink should render correctly 1`] = `
 <button
   className="bpk-link"
-  onClick={[Function onClick]}
+  onClick={[Function]}
   type="button">
   Link
 </button>
@@ -10,7 +10,7 @@ exports[`BpkButtonLink should render correctly 1`] = `
 exports[`BpkButtonLink should render correctly with "white" attribute 1`] = `
 <button
   className="bpk-link bpk-link--white"
-  onClick={[Function onClick]}
+  onClick={[Function]}
   type="button">
   Link
 </button>

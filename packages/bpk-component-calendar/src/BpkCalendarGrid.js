@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import { getCalendarMonthWeeks, isSaturday, isSunday } from './utils';
+import { getCalendarMonthWeeks, isSaturday, isSunday, formatIsoDate } from './utils';
 import BpkCalendarDate from './BpkCalendarDate';
 import './bpk-calendar.scss';
 
@@ -32,6 +32,7 @@ const Week = (props) => {
         key={date.toDateString()}
         date={date}
         onClick={() => { if (onDateClick) { onDateClick(date); } }}
+        showWeekendSeparator={props.showWeekendSeparator}
       >
         <DateComponent date={date} />
       </DateContainer>
@@ -44,6 +45,7 @@ Week.propTypes = {
   dates: PropTypes.arrayOf(Date),
   dateComponent: PropTypes.func,
   onDateClick: PropTypes.func,
+  showWeekendSeparator: PropTypes.bool,
 };
 
 /*
@@ -53,14 +55,17 @@ const DateContainer = (props) => {
   const classNames = ['bpk-calendar-grid__date'];
   const date = props.date;
 
-  if (isSaturday(date)) { classNames.push('bpk-calendar-grid__date--weekend-start'); }
-  if (isSunday(date)) { classNames.push('bpk-calendar-grid__date--weekend-end'); }
+  if (props.showWeekendSeparator) {
+    if (isSaturday(date)) { classNames.push('bpk-calendar-grid__date--weekend-start'); }
+    if (isSunday(date)) { classNames.push('bpk-calendar-grid__date--weekend-end'); }
+  }
 
   // TODO: To be dealt with in BPK-374
   /* eslint-disable jsx-a11y/no-static-element-interactions */
   return (
     <td
       key={date.toDateString()}
+      data-date={formatIsoDate(date)}
       className={classNames.join(' ')}
       onClick={props.onClick}
     >
@@ -74,6 +79,7 @@ DateContainer.propTypes = {
   date: PropTypes.instanceOf(Date).isRequired,
   onClick: PropTypes.func,
   children: PropTypes.element.isRequired,
+  showWeekendSeparator: PropTypes.bool.isRequired,
 };
 
 const getDateComponent = dateModifiers => (dcProps) => {
@@ -87,7 +93,7 @@ const getDateComponent = dateModifiers => (dcProps) => {
   BpkCalendarGrid - the grid representing a whole month
 */
 const BpkCalendarGrid = (props) => {
-  const { weekDays, weekStartsOn } = props;
+  const { weekDays, weekStartsOn, onDateClick, showWeekendSeparator } = props;
   const reorderedWeekDays = [
     ...weekDays.slice(weekStartsOn),
     ...weekDays.slice(0, weekStartsOn),
@@ -119,7 +125,8 @@ const BpkCalendarGrid = (props) => {
             key={index}
             dates={dates}
             dateComponent={dateComponent}
-            onDateClick={props.onDateClick}
+            onDateClick={onDateClick}
+            showWeekendSeparator={showWeekendSeparator}
           />
         )) }
       </tbody>
@@ -128,22 +135,21 @@ const BpkCalendarGrid = (props) => {
 };
 
 BpkCalendarGrid.propTypes = {
-  month: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.instanceOf(Date),
-  ]),
-  weekDays: PropTypes.arrayOf(PropTypes.string),
+  month: PropTypes.instanceOf(Date),
+  weekDays: PropTypes.arrayOf(PropTypes.string).isRequired,
   weekStartsOn: PropTypes.number,
   dateModifiers: BpkCalendarDate.propTypes.modifiers,
   onDateClick: PropTypes.func,
   getDateComponent: PropTypes.func,
+  showWeekendSeparator: PropTypes.bool,
 };
 
 BpkCalendarGrid.defaultProps = {
   month: new Date(),
-  weekDays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
   weekStartsOn: 1,
   dateModifiers: {},
+  showWeekendSeparator: false,
+  weekDays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 };
 
 export default BpkCalendarGrid;
