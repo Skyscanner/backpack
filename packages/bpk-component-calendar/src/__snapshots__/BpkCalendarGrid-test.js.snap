@@ -40,7 +40,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-28"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           28
@@ -49,7 +49,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-29"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           29
@@ -58,7 +58,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-30"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           30
@@ -67,7 +67,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-01"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           1
@@ -76,7 +76,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-02"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           2
@@ -85,7 +85,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-03"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           3
@@ -94,7 +94,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-04"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           4
@@ -106,7 +106,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-05"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           5
@@ -115,7 +115,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-06"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           6
@@ -124,7 +124,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-07"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           7
@@ -133,7 +133,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-08"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           8
@@ -142,7 +142,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-09"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           9
@@ -151,7 +151,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-10"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           10
@@ -160,7 +160,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-11"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           11
@@ -172,7 +172,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-12"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           12
@@ -181,7 +181,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-13"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           13
@@ -190,7 +190,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-14"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           14
@@ -199,7 +199,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-15"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           15
@@ -208,7 +208,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-16"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           16
@@ -217,7 +217,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-17"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           17
@@ -226,7 +226,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-18"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           18
@@ -238,7 +238,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-19"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           19
@@ -247,7 +247,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-20"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           20
@@ -256,7 +256,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-21"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           21
@@ -265,7 +265,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-22"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           22
@@ -274,7 +274,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-23"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           23
@@ -283,7 +283,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-24"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           24
@@ -292,7 +292,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-25"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           25
@@ -304,7 +304,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-26"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           26
@@ -313,7 +313,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-27"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           27
@@ -322,7 +322,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-28"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           28
@@ -331,7 +331,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-29"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           29
@@ -340,7 +340,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-30"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           30
@@ -349,7 +349,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-31"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           31
@@ -358,7 +358,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-01"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           1
@@ -370,7 +370,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-02"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           2
@@ -379,7 +379,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-03"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           3
@@ -388,7 +388,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-04"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           4
@@ -397,7 +397,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-05"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           5
@@ -406,7 +406,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-06"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           6
@@ -415,7 +415,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-07"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           7
@@ -424,7 +424,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-08"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date bpk-calendar-date--someClass">
           8
@@ -477,7 +477,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-09-26"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           26
@@ -486,7 +486,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-09-27"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           27
@@ -495,7 +495,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-09-28"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           28
@@ -504,7 +504,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-09-29"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           29
@@ -513,7 +513,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-09-30"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           30
@@ -522,7 +522,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-01"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           1
@@ -531,7 +531,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-02"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           2
@@ -543,7 +543,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-03"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           3
@@ -552,7 +552,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-04"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           4
@@ -561,7 +561,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-05"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           5
@@ -570,7 +570,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-06"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           6
@@ -579,7 +579,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-07"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           7
@@ -588,7 +588,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-08"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           8
@@ -597,7 +597,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-09"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           9
@@ -609,7 +609,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-10"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           10
@@ -618,7 +618,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-11"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           11
@@ -627,7 +627,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-12"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           12
@@ -636,7 +636,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-13"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           13
@@ -645,7 +645,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-14"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           14
@@ -654,7 +654,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-15"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           15
@@ -663,7 +663,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-16"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           16
@@ -675,7 +675,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-17"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           17
@@ -684,7 +684,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-18"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           18
@@ -693,7 +693,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-19"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           19
@@ -702,7 +702,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-20"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           20
@@ -711,7 +711,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-21"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           21
@@ -720,7 +720,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-22"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           22
@@ -729,7 +729,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-23"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           23
@@ -741,7 +741,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-24"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           24
@@ -750,7 +750,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-25"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           25
@@ -759,7 +759,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-26"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           26
@@ -768,7 +768,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-27"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           27
@@ -777,7 +777,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-28"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           28
@@ -786,7 +786,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-29"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           29
@@ -795,7 +795,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-30"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           30
@@ -807,7 +807,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-10-31"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           31
@@ -816,7 +816,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-01"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           1
@@ -825,7 +825,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-02"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           2
@@ -834,7 +834,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-03"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           3
@@ -843,7 +843,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-04"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           4
@@ -852,7 +852,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-05"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           5
@@ -861,7 +861,7 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-06"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           6
@@ -914,7 +914,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-28"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           28
@@ -923,7 +923,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-29"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           29
@@ -932,7 +932,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-30"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           30
@@ -941,7 +941,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-01"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           1
@@ -950,7 +950,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-02"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           2
@@ -959,7 +959,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
         data-date="2016-12-03"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           3
@@ -968,7 +968,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
         data-date="2016-12-04"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           4
@@ -980,7 +980,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-05"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           5
@@ -989,7 +989,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-06"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           6
@@ -998,7 +998,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-07"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           7
@@ -1007,7 +1007,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-08"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           8
@@ -1016,7 +1016,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-09"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           9
@@ -1025,7 +1025,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
         data-date="2016-12-10"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           10
@@ -1034,7 +1034,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
         data-date="2016-12-11"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           11
@@ -1046,7 +1046,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-12"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           12
@@ -1055,7 +1055,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-13"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           13
@@ -1064,7 +1064,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-14"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           14
@@ -1073,7 +1073,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-15"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           15
@@ -1082,7 +1082,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-16"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           16
@@ -1091,7 +1091,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
         data-date="2016-12-17"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           17
@@ -1100,7 +1100,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
         data-date="2016-12-18"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           18
@@ -1112,7 +1112,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-19"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           19
@@ -1121,7 +1121,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-20"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           20
@@ -1130,7 +1130,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-21"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           21
@@ -1139,7 +1139,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-22"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           22
@@ -1148,7 +1148,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-23"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           23
@@ -1157,7 +1157,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
         data-date="2016-12-24"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           24
@@ -1166,7 +1166,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
         data-date="2016-12-25"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           25
@@ -1178,7 +1178,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-26"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           26
@@ -1187,7 +1187,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-27"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           27
@@ -1196,7 +1196,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-28"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           28
@@ -1205,7 +1205,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-29"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           29
@@ -1214,7 +1214,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-30"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           30
@@ -1223,7 +1223,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
         data-date="2016-12-31"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           31
@@ -1232,7 +1232,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
         data-date="2017-01-01"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           1
@@ -1244,7 +1244,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-02"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           2
@@ -1253,7 +1253,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-03"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           3
@@ -1262,7 +1262,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-04"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           4
@@ -1271,7 +1271,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-05"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           5
@@ -1280,7 +1280,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-06"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           6
@@ -1289,7 +1289,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
         data-date="2017-01-07"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           7
@@ -1298,7 +1298,7 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
         data-date="2017-01-08"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           8
@@ -1351,7 +1351,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-28"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           28
@@ -1360,7 +1360,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-29"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           29
@@ -1369,7 +1369,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-30"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           30
@@ -1378,7 +1378,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-01"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           1
@@ -1387,7 +1387,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-02"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           2
@@ -1396,7 +1396,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-03"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           3
@@ -1405,7 +1405,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-04"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           4
@@ -1417,7 +1417,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-05"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           5
@@ -1426,7 +1426,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-06"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           6
@@ -1435,7 +1435,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-07"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           7
@@ -1444,7 +1444,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-08"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           8
@@ -1453,7 +1453,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-09"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           9
@@ -1462,7 +1462,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-10"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           10
@@ -1471,7 +1471,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-11"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           11
@@ -1483,7 +1483,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-12"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           12
@@ -1492,7 +1492,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-13"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           13
@@ -1501,7 +1501,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-14"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           14
@@ -1510,7 +1510,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-15"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           15
@@ -1519,7 +1519,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-16"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           16
@@ -1528,7 +1528,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-17"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           17
@@ -1537,7 +1537,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-18"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           18
@@ -1549,7 +1549,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-19"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           19
@@ -1558,7 +1558,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-20"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           20
@@ -1567,7 +1567,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-21"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           21
@@ -1576,7 +1576,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-22"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           22
@@ -1585,7 +1585,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-23"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           23
@@ -1594,7 +1594,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-24"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           24
@@ -1603,7 +1603,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-25"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           25
@@ -1615,7 +1615,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-26"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           26
@@ -1624,7 +1624,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-27"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           27
@@ -1633,7 +1633,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-28"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           28
@@ -1642,7 +1642,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-29"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           29
@@ -1651,7 +1651,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-30"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           30
@@ -1660,7 +1660,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-31"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           31
@@ -1669,7 +1669,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-01"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           1
@@ -1681,7 +1681,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-02"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           2
@@ -1690,7 +1690,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-03"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           3
@@ -1699,7 +1699,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-04"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           4
@@ -1708,7 +1708,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-05"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           5
@@ -1717,7 +1717,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-06"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           6
@@ -1726,7 +1726,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-07"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           7
@@ -1735,7 +1735,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekDays" attribute 1`]
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-08"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           8
@@ -1788,7 +1788,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-28"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           28
@@ -1797,7 +1797,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-29"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           29
@@ -1806,7 +1806,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-30"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           30
@@ -1815,7 +1815,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-01"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           1
@@ -1824,7 +1824,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-02"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           2
@@ -1833,7 +1833,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-03"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           3
@@ -1842,7 +1842,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-04"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           4
@@ -1854,7 +1854,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-05"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           5
@@ -1863,7 +1863,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-06"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           6
@@ -1872,7 +1872,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-07"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           7
@@ -1881,7 +1881,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-08"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           8
@@ -1890,7 +1890,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-09"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           9
@@ -1899,7 +1899,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-10"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           10
@@ -1908,7 +1908,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-11"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           11
@@ -1920,7 +1920,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-12"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           12
@@ -1929,7 +1929,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-13"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           13
@@ -1938,7 +1938,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-14"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           14
@@ -1947,7 +1947,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-15"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           15
@@ -1956,7 +1956,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-16"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           16
@@ -1965,7 +1965,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-17"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           17
@@ -1974,7 +1974,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-18"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           18
@@ -1986,7 +1986,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-19"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           19
@@ -1995,7 +1995,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-20"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           20
@@ -2004,7 +2004,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-21"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           21
@@ -2013,7 +2013,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-22"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           22
@@ -2022,7 +2022,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-23"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           23
@@ -2031,7 +2031,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-24"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           24
@@ -2040,7 +2040,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-25"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           25
@@ -2052,7 +2052,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-26"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           26
@@ -2061,7 +2061,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-27"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           27
@@ -2070,7 +2070,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-28"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           28
@@ -2079,7 +2079,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-29"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           29
@@ -2088,7 +2088,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-30"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           30
@@ -2097,7 +2097,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-31"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           31
@@ -2106,7 +2106,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-01"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           1
@@ -2118,7 +2118,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-02"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           2
@@ -2127,7 +2127,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-03"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           3
@@ -2136,7 +2136,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-04"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           4
@@ -2145,7 +2145,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-05"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           5
@@ -2154,7 +2154,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-06"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           6
@@ -2163,7 +2163,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-07"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           7
@@ -2172,7 +2172,7 @@ exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-08"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           className="bpk-calendar-date">
           8
@@ -2225,7 +2225,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-28"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2233,14 +2233,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-29"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2248,14 +2248,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-11-30"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2263,14 +2263,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-01"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2278,14 +2278,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-02"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2293,14 +2293,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
         data-date="2016-12-03"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2308,14 +2308,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
         data-date="2016-12-04"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2323,7 +2323,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
@@ -2333,7 +2333,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-05"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2341,14 +2341,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-06"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2356,14 +2356,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-07"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2371,14 +2371,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-08"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2386,14 +2386,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-09"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2401,14 +2401,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
         data-date="2016-12-10"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2416,14 +2416,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
         data-date="2016-12-11"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2431,7 +2431,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
@@ -2441,7 +2441,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-12"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2449,14 +2449,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-13"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2464,14 +2464,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-14"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2479,14 +2479,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-15"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2494,14 +2494,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-16"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2509,14 +2509,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
         data-date="2016-12-17"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2524,14 +2524,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
         data-date="2016-12-18"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2539,7 +2539,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
@@ -2549,7 +2549,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-19"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2557,14 +2557,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-20"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2572,14 +2572,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-21"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2587,14 +2587,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-22"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2602,14 +2602,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-23"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2617,14 +2617,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
         data-date="2016-12-24"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2632,14 +2632,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
         data-date="2016-12-25"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2647,7 +2647,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
@@ -2657,7 +2657,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-26"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2665,14 +2665,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-27"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2680,14 +2680,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-28"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2695,14 +2695,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-29"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2710,14 +2710,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2016-12-30"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2725,14 +2725,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
         data-date="2016-12-31"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2740,14 +2740,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
         data-date="2017-01-01"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2755,7 +2755,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
@@ -2765,7 +2765,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-02"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2773,14 +2773,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-03"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2788,14 +2788,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-04"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2803,14 +2803,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-05"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2818,14 +2818,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date"
         data-date="2017-01-06"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2833,14 +2833,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
         data-date="2017-01-07"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2848,14 +2848,14 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>
       <td
         className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
         data-date="2017-01-08"
-        onClick={[Function onClick]}>
+        onClick={[Function]}>
         <div
           style={
             Object {
@@ -2863,7 +2863,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
               "borderRadius": "5rem",
               "height": "50%",
               "margin": "25%",
-              "width": "50%"
+              "width": "50%",
             }
           } />
       </td>

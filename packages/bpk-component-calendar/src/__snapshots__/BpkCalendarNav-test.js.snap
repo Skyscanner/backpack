@@ -6,7 +6,7 @@ exports[`BpkCalendarNav should render correctly 1`] = `
     <button
       className="bpk-calendar-nav__button"
       disabled={true}
-      onClick={[Function onClick]}>
+      onClick={[Function]}>
       <svg
         className="bpk-calendar-nav__icon"
         height="18"
@@ -28,7 +28,7 @@ exports[`BpkCalendarNav should render correctly 1`] = `
       className="bpk-select"
       id="myCalendarNav_select"
       name="months"
-      onChange={[Function onChange]}
+      onChange={[Function]}
       value="2016-12" />
   </div>
   <div
@@ -36,7 +36,7 @@ exports[`BpkCalendarNav should render correctly 1`] = `
     <button
       className="bpk-calendar-nav__button"
       disabled={true}
-      onClick={[Function onClick]}>
+      onClick={[Function]}>
       <svg
         className="bpk-calendar-nav__icon"
         height="18"
@@ -63,7 +63,7 @@ exports[`BpkCalendarNav should render correctly with "minDate" and "maxDate" set
     <button
       className="bpk-calendar-nav__button"
       disabled={true}
-      onClick={[Function onClick]}>
+      onClick={[Function]}>
       <svg
         className="bpk-calendar-nav__icon"
         height="18"
@@ -85,7 +85,7 @@ exports[`BpkCalendarNav should render correctly with "minDate" and "maxDate" set
       className="bpk-select"
       id="myCalendarNav_select"
       name="months"
-      onChange={[Function onChange]}
+      onChange={[Function]}
       value="2016-12">
       <option
         value="2016-12">
@@ -106,7 +106,7 @@ exports[`BpkCalendarNav should render correctly with "minDate" and "maxDate" set
     <button
       className="bpk-calendar-nav__button"
       disabled={false}
-      onClick={[Function onClick]}>
+      onClick={[Function]}>
       <svg
         className="bpk-calendar-nav__icon"
         height="18"
