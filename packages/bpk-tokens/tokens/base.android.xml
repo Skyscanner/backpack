@@ -8,7 +8,7 @@
   <color name="AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR" category="autosuggest">#f3f2f5ff</color>
   <property name="BADGE_PADDING_Y" category="badges">0</property>
   <property name="BADGE_PADDING_X" category="badges">6</property>
-  <color name="BADGE_BACKGROUND_COLOR" category="badges">#ffd445ff</color>
+  <color name="BADGE_BACKGROUND_COLOR" category="badges">#ffbb00ff</color>
   <property name="BADGE_CENTERED_VERTICAL_ALIGN" category="badges">text-bottom</property>
   <property name="BORDER_RADIUS_XS" category="radii">3</property>
   <property name="BORDER_RADIUS_SM" category="radii">6</property>
@@ -154,16 +154,16 @@
   <color name="COLOR_RED_700" category="colors">#de322fff</color>
   <color name="COLOR_RED_800" category="colors">#cc1f1dff</color>
   <color name="COLOR_RED_900" category="colors">#a80300ff</color>
-  <color name="COLOR_YELLOW_50" category="colors">#faf4e1ff</color>
-  <color name="COLOR_YELLOW_100" category="colors">#fcf1caff</color>
-  <color name="COLOR_YELLOW_200" category="colors">#ffedb3ff</color>
-  <color name="COLOR_YELLOW_300" category="colors">#ffe694ff</color>
-  <color name="COLOR_YELLOW_400" category="colors">#ffde72ff</color>
-  <color name="COLOR_YELLOW_500" category="colors">#ffd445ff</color>
-  <color name="COLOR_YELLOW_600" category="colors">#f6c62bff</color>
-  <color name="COLOR_YELLOW_700" category="colors">#e8b81cff</color>
-  <color name="COLOR_YELLOW_800" category="colors">#cfa211ff</color>
-  <color name="COLOR_YELLOW_900" category="colors">#a88100ff</color>
+  <color name="COLOR_YELLOW_50" category="colors">#fff9e6ff</color>
+  <color name="COLOR_YELLOW_100" category="colors">#fff3cfff</color>
+  <color name="COLOR_YELLOW_200" category="colors">#ffecb8ff</color>
+  <color name="COLOR_YELLOW_300" category="colors">#ffe18cff</color>
+  <color name="COLOR_YELLOW_400" category="colors">#ffcf4aff</color>
+  <color name="COLOR_YELLOW_500" category="colors">#ffbb00ff</color>
+  <color name="COLOR_YELLOW_600" category="colors">#f0b000ff</color>
+  <color name="COLOR_YELLOW_700" category="colors">#e1a500ff</color>
+  <color name="COLOR_YELLOW_800" category="colors">#c28e00ff</color>
+  <color name="COLOR_YELLOW_900" category="colors">#9c7200ff</color>
   <property name="PRIMARY_GRADIENT" category="colors">linear-gradient(135deg, #00b2d6 0, #02DDD8 1)</property>
   <property name="INPUT_HEIGHT" category="forms">36</property>
   <property name="INPUT_PADDING_X" category="forms">12</property>
@@ -220,14 +220,14 @@
   <property name="MODAL_CONTENT_PADDING" category="modals">12</property>
   <color name="BANNER_ALERT_BACKGROUND_COLOR" category="notifications">#ffffffff</color>
   <property name="BANNER_ALERT_SUCCESS_BOX_SHADOW" category="notifications">0 0 0 1px #00d775</property>
-  <property name="BANNER_ALERT_WARN_BOX_SHADOW" category="notifications">0 0 0 1px #ffd445</property>
+  <property name="BANNER_ALERT_WARN_BOX_SHADOW" category="notifications">0 0 0 1px #FFBB00</property>
   <property name="BANNER_ALERT_ERROR_BOX_SHADOW" category="notifications">0 0 0 1px #ff5452</property>
   <property name="BANNER_ALERT_HEADER_PADDING_Y" category="notifications">6</property>
   <property name="BANNER_ALERT_HEADER_PADDING_X" category="notifications">12</property>
   <color name="BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR" category="notifications">#f3f2f5ff</color>
   <color name="BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR" category="notifications">#e6e4ebff</color>
   <color name="BANNER_ALERT_SUCCESS_ICON_FILL" category="notifications">#00d775ff</color>
-  <color name="BANNER_ALERT_WARN_ICON_FILL" category="notifications">#ffd445ff</color>
+  <color name="BANNER_ALERT_WARN_ICON_FILL" category="notifications">#ffbb00ff</color>
   <color name="BANNER_ALERT_ERROR_ICON_FILL" category="notifications">#ff5452ff</color>
   <color name="BANNER_ALERT_EXPAND_ICON_FILL" category="notifications">#524c61ff</color>
   <property name="BANNER_ALERT_CHILDREN_PADDING_Y" category="notifications">6</property>

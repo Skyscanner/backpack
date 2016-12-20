@@ -41,16 +41,16 @@
     "RED_700": "#de322f",
     "RED_800": "#cc1f1d",
     "RED_900": "#a80300",
-    "YELLOW_50": "#faf4e1",
-    "YELLOW_100": "#fcf1ca",
-    "YELLOW_200": "#ffedb3",
-    "YELLOW_300": "#ffe694",
-    "YELLOW_400": "#ffde72",
-    "YELLOW_500": "#ffd445",
-    "YELLOW_600": "#f6c62b",
-    "YELLOW_700": "#e8b81c",
-    "YELLOW_800": "#cfa211",
-    "YELLOW_900": "#a88100",
+    "YELLOW_50": "#FFF9E6",
+    "YELLOW_100": "#FFF3CF",
+    "YELLOW_200": "#FFECB8",
+    "YELLOW_300": "#FFE18C",
+    "YELLOW_400": "#FFCF4A",
+    "YELLOW_500": "#FFBB00",
+    "YELLOW_600": "#F0B000",
+    "YELLOW_700": "#E1A500",
+    "YELLOW_800": "#C28E00",
+    "YELLOW_900": "#9C7200",
     "FONT_SIZE_SM": ".75rem",
     "FONT_SIZE_BASE": "1rem",
     "FONT_SIZE_LG": "1.5rem",
@@ -125,7 +125,7 @@
     },
     "BADGE_BACKGROUND_COLOR": {
       "category": "badges",
-      "value": "rgb(255, 212, 69)",
+      "value": "rgb(255, 187, 0)",
       "type": "color",
       "name": "BADGE_BACKGROUND_COLOR"
     },
@@ -1002,61 +1002,61 @@
     "COLOR_YELLOW_50": {
       "type": "color",
       "category": "colors",
-      "value": "rgb(250, 244, 225)",
+      "value": "rgb(255, 249, 230)",
       "name": "COLOR_YELLOW_50"
     },
     "COLOR_YELLOW_100": {
       "type": "color",
       "category": "colors",
-      "value": "rgb(252, 241, 202)",
+      "value": "rgb(255, 243, 207)",
       "name": "COLOR_YELLOW_100"
     },
     "COLOR_YELLOW_200": {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 237, 179)",
+      "value": "rgb(255, 236, 184)",
       "name": "COLOR_YELLOW_200"
     },
     "COLOR_YELLOW_300": {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 230, 148)",
+      "value": "rgb(255, 225, 140)",
       "name": "COLOR_YELLOW_300"
     },
     "COLOR_YELLOW_400": {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 222, 114)",
+      "value": "rgb(255, 207, 74)",
       "name": "COLOR_YELLOW_400"
     },
     "COLOR_YELLOW_500": {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 212, 69)",
+      "value": "rgb(255, 187, 0)",
       "name": "COLOR_YELLOW_500"
     },
     "COLOR_YELLOW_600": {
       "type": "color",
       "category": "colors",
-      "value": "rgb(246, 198, 43)",
+      "value": "rgb(240, 176, 0)",
       "name": "COLOR_YELLOW_600"
     },
     "COLOR_YELLOW_700": {
       "type": "color",
       "category": "colors",
-      "value": "rgb(232, 184, 28)",
+      "value": "rgb(225, 165, 0)",
       "name": "COLOR_YELLOW_700"
     },
     "COLOR_YELLOW_800": {
       "type": "color",
       "category": "colors",
-      "value": "rgb(207, 162, 17)",
+      "value": "rgb(194, 142, 0)",
       "name": "COLOR_YELLOW_800"
     },
     "COLOR_YELLOW_900": {
       "type": "color",
       "category": "colors",
-      "value": "rgb(168, 129, 0)",
+      "value": "rgb(156, 114, 0)",
       "name": "COLOR_YELLOW_900"
     },
     "PRIMARY_GRADIENT": {
@@ -1397,7 +1397,7 @@
     },
     "BANNER_ALERT_WARN_BOX_SHADOW": {
       "category": "notifications",
-      "value": "0 0 0 1px #ffd445",
+      "value": "0 0 0 1px #FFBB00",
       "type": "box-shadow",
       "name": "BANNER_ALERT_WARN_BOX_SHADOW"
     },
@@ -1439,7 +1439,7 @@
     },
     "BANNER_ALERT_WARN_ICON_FILL": {
       "category": "notifications",
-      "value": "rgb(255, 212, 69)",
+      "value": "rgb(255, 187, 0)",
       "type": "color",
       "name": "BANNER_ALERT_WARN_ICON_FILL"
     },
