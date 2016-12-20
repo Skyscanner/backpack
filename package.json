@@ -102,7 +102,6 @@
         "functions": 75,
         "lines": 75
       }
-    },
-    "snapshotSerializers": ["./scripts/jest/mockDateSerializer"]
+    }
   }
 }
