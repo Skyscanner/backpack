@@ -32,7 +32,7 @@ const components = [
       </BpkParagraph>,
       <div className="bpkdocs-colors-page__swatch-container">
         <ColorSwatch name="color-green-500" color={TOKENS.colorGreen500} whiteColor />
-        <ColorSwatch name="color-yellow-500" color={TOKENS.colorYellow500} />
+        <ColorSwatch name="color-yellow-500" color={TOKENS.colorYellow500} whiteColor />
         <ColorSwatch name="color-red-500" color={TOKENS.colorRed500} whiteColor />
       </div>,
     ],
@@ -67,18 +67,6 @@ const components = [
         The number of available tints and shades has been restricted to provide better visual coherence to the overall
         brand.
       </BpkParagraph>,
-      <BpkParagraph>
-        <strong>Strictly for use on Primary Button gradient and active/hit states:</strong>
-      </BpkParagraph>,
-      <div className="bpkdocs-colors-page__swatch-container">
-        <ColorSwatch name="color-green-600" color={TOKENS.colorGreen600} whiteColor />
-      </div>,
-      <BpkParagraph>
-        <strong>Strictly for use on Android title bar only:</strong>
-      </BpkParagraph>,
-      <div className="bpkdocs-colors-page__swatch-container">
-        <ColorSwatch name="color-blue-700" color={TOKENS.colorBlue700} whiteColor />
-      </div>,
     ],
     examples: [],
   },
