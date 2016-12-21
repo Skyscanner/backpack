@@ -1,66 +1,98 @@
-import React from 'react';
-import BpkBadge from 'bpk-component-badge';
 import BpkParagraph from 'bpk-component-paragraph';
-
-import badgeReadme from 'bpk-component-badge/readme.md';
+import React, { PropTypes, Component } from 'react';
+import BpkCalendar, { BpkCalendarGrid, BpkCalendarNav } from 'bpk-component-calendar';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import format from '../../../../bpk-component-calendar/node_modules/date-fns/format';
+import addMonths from '../../../../bpk-component-calendar/node_modules/date-fns/add_months';
+
+const formatMonth = date => format(date, 'MMMM YYYY');
+
+class CalendarNavContainer extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      month: new Date(),
+    };
+
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(month) {
+    this.setState({ month });
+  }
+
+  render() {
+    return (
+      <BpkCalendarNav
+        month={this.state.month}
+        minDate={new Date()}
+        maxDate={addMonths(new Date(), 12)}
+        onChangeMonth={this.onChange}
+        formatMonth={formatMonth}
+        id={this.props.id}
+      />
+    );
+  }
+}
+
+CalendarNavContainer.propTypes = {
+  id: PropTypes.string.isRequired,
+};
 
 const components = [
   {
-    id: 'default',
-    title: 'Default',
+    id: 'calendar',
+    title: 'Calendar',
     blurb: [
       <BpkParagraph>
-        The default behaviour for a badge is to sit next to other objects with text aligned to the baseline.
+        Calendar blurb
       </BpkParagraph>,
     ],
     examples: [
-      <BpkBadge className="bpkdocs-badge-page__badge-spacing">Apples</BpkBadge>,
-      <BpkBadge className="bpkdocs-badge-page__badge-spacing">Bananas</BpkBadge>,
-      <BpkBadge className="bpkdocs-badge-page__badge-spacing">Strawberries</BpkBadge>,
-      <BpkBadge>Pears</BpkBadge>,
+      <BpkCalendar
+        formatMonth={formatMonth}
+      />,
     ],
+
   },
   {
-    id: 'docked',
-    title: 'Docked',
-    blurb: [<BpkParagraph>A badge can also be configured to have a top-right, or top-left modifier to pin it
-    to the corner of its parent.</BpkParagraph>],
-    examples: [
-      <div className="bpkdocs-badge-page__badge-container">
-        <BpkBadge docked="right">Advert</BpkBadge>
-      </div>,
-    ],
-  },
-  {
-    id: 'visually-centered',
-    title: 'Visually centered',
+    id: 'calendar-nav',
+    title: 'Calendar Nav',
     blurb: [
       <BpkParagraph>
-        Using this configuration will visually center the badge. Note: the text will not align to the baseline.
+        Calendar Nav blurb
       </BpkParagraph>,
     ],
     examples: [
-      <BpkBadge centered className="bpkdocs-badge-page__badge-spacing">Apples</BpkBadge>,
-      <BpkBadge centered className="bpkdocs-badge-page__badge-spacing">Bananas</BpkBadge>,
-      <BpkBadge centered className="bpkdocs-badge-page__badge-spacing">Strawberries</BpkBadge>,
-      <BpkBadge centered>Pears</BpkBadge>,
+      <CalendarNavContainer id="my-calendar-nav" />,
+    ],
+  },
+  {
+    id: 'calendar-grid',
+    title: 'Calendar Grid',
+    blurb: [
+      <BpkParagraph>
+        Calendar Grid blurb
+      </BpkParagraph>,
+    ],
+    examples: [
+      <BpkCalendarGrid />,
     ],
   },
 ];
 
-const BadgePage = () => <DocsPageBuilder
+const CalendarPage = () => <DocsPageBuilder
   title="Calendar"
   blurb={[
     <BpkParagraph>
-      Badges are labels which hold small amounts of information. They are currently available in one colour.
-      Badges are most often used as counters, such as an indication of unread notifications.
+      Calendar blurb
     </BpkParagraph>,
   ]}
   components={components}
-  readme={badgeReadme}
-  sassdocId="badge"
+  // readme={calendarReadme}
+  sassdocId="calendar"
 />;
 
-export default BadgePage;
+export default CalendarPage;
