@@ -37,7 +37,16 @@ const DownloadsPage = () => (
           </BpkList>
           <BpkHeading level="h3">Extended (for illustration only)</BpkHeading>
           <BpkList>
-            <BpkListItem><em>Coming soon</em></BpkListItem>
+            <BpkListItem>
+              <BpkLink href="https://www.dropbox.com/s/1k521nig9k2rh5p/growth_rgb.ase?dl=0" blank>
+                Adobe Swatch Exchange
+              </BpkLink>
+            </BpkListItem>
+            <BpkListItem>
+              <BpkLink href="https://www.dropbox.com/s/xje2bceee1h5qcj/growth_rgb.clr?dl=0" blank>
+                Mac
+              </BpkLink>
+            </BpkListItem>
           </BpkList>
           <BpkHeading level="h2">Icons</BpkHeading>
           <BpkList>
