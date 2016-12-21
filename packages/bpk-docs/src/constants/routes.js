@@ -30,6 +30,7 @@ export const NOTIFICATIONS = '/docs/molecules/notifications';
 export const MODALS = '/docs/molecules/modals';
 export const AUTOSUGGEST = '/docs/molecules/autosuggest';
 export const POPOVERS = '/docs/molecules/popovers';
+export const CALENDAR = '/docs/molecules/calendar';
 
 export const DOWNLOADS = '/downloads';
 

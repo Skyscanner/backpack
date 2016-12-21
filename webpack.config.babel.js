@@ -41,6 +41,7 @@ const staticSiteGeneratorConfig = {
     ROUTES.MODALS,
     ROUTES.AUTOSUGGEST,
     ROUTES.POPOVERS,
+    ROUTES.CALENDAR,
 
     ROUTES.DOWNLOADS,
 
