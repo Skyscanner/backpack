@@ -4,6 +4,7 @@ import isFriday from 'date-fns/is_friday';
 import isWeekend from 'date-fns/is_weekend';
 import format from 'date-fns/format';
 import addMonths from 'date-fns/add_months';
+import isSameDay from 'date-fns/is_same_day';
 
 import BpkCalendar, { BpkCalendarGrid, BpkCalendarNav } from './index';
 
@@ -49,11 +50,11 @@ storiesOf('bpk-component-calendar', module)
       id="myCalendar"
     />
   ))
-  .add('Calendar - Show weekend separator', () => (
+  .add('Calendar - Don\'t show weekend separator', () => (
     <BpkCalendar
       formatMonth={formatMonth}
       onDateSelect={action('Selected day')}
-      showWeekendSeparator
+      showWeekendSeparator={false}
       id="myCalendar"
     />
   ))
@@ -99,11 +100,30 @@ storiesOf('bpk-component-calendar', module)
       id="myCalendar"
     />
   ))
-  .add('Calendar - Highlight today', () => (
+  .add('Calendar - Don\'t mark today', () => (
     <BpkCalendar
       formatMonth={formatMonth}
       onDateSelect={action('Selected day')}
-      highlightToday
+      markToday={false}
+      id="myCalendar"
+    />
+  ))
+  .add('Calendar - Don\'t mark outside days', () => (
+    <BpkCalendar
+      formatMonth={formatMonth}
+      onDateSelect={action('Selected day')}
+      markOutsideDays={false}
+      id="myCalendar"
+    />
+  ))
+  .add('Calendar - Selected day', () => (
+    <BpkCalendar
+      formatMonth={formatMonth}
+      onDateSelect={action('Selected day')}
+      minDate={new Date(2020, 4, 15)}
+      maxDate={new Date(2020, 5, 15)}
+      initialMonth={new Date(2020, 4, 15)}
+      dateModifiers={{ selected: date => isSameDay(date, new Date(2020, 4, 20)) }}
       id="myCalendar"
     />
   ))

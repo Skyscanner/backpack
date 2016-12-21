@@ -63,6 +63,22 @@
     color: $bpk-calendar-day-active-color;
   }
 
+  &--outside {
+    background-color: $bpk-calendar-day-outside-background-color;
+    color: $bpk-calendar-day-outside-color;
+  }
+
+  &--today {
+    font-weight: bold;
+  }
+
+  &--selected {
+    background-color: $bpk-calendar-day-selected-background-color;
+    color: $bpk-calendar-day-selected-color;
+    font-weight: bold;
+    cursor: default;
+  }
+
   &--disabled { // TODO: make :disabled as part of BPK-374
     background-color: $bpk-calendar-day-disabled-background-color;
     color: $bpk-calendar-day-disabled-color;
@@ -77,18 +93,6 @@
       background-color: $bpk-calendar-day-disabled-background-color;
       color: $bpk-calendar-day-disabled-color;
     }
-  }
-
-  &--today {
-    font-weight: bold;
-  }
-
-  &--selected {
-    background-color: $bpk-calendar-day-selected-background-color;
-    color: $bpk-calendar-day-selected-color;
-    font-weight: bold;
-    box-shadow: 0 0 0 2px $bpk-calendar-day-selected-border-color inset;
-    cursor: default;
   }
 }
 

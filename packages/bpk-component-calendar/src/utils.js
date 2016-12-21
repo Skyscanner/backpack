@@ -10,6 +10,7 @@ import isToday from 'date-fns/is_today';
 import isSaturday from 'date-fns/is_saturday';
 import isSunday from 'date-fns/is_sunday';
 import isSameDay from 'date-fns/is_same_day';
+import isSameMonth from 'date-fns/is_same_month';
 
 import addDays from 'date-fns/add_days';
 import addWeeks from 'date-fns/add_weeks';
@@ -71,6 +72,7 @@ export {
   isSunday,
   isToday,
   isSameDay,
+  isSameMonth,
   isDisabled,
   addMonths,
   addDays,

@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import objectAssign from 'object-assign';
 import BpkCalendarGrid from './BpkCalendarGrid';
 import BpkCalendarNav from './BpkCalendarNav';
-import { isToday, addMonths, isWithinRange, getMonthRange, startOfMonth, startOfToday, formatIsoDate } from './utils';
+import { isToday, addMonths, isWithinRange, getMonthRange, startOfMonth, startOfToday, formatIsoDate, isSameMonth } from './utils';
 import './bpk-calendar.scss';
 
 class BpkCalendar extends Component {
@@ -39,11 +39,12 @@ class BpkCalendar extends Component {
     const classNames = ['bpk-calendar'];
     const builtinModifiers = {};
 
-    // add all from this.props.dateModifiers
-
-    if (this.props.highlightToday) { builtinModifiers.today = isToday; }
+    if (this.props.markToday) { builtinModifiers.today = isToday; }
     if (this.props.minDate && this.props.maxDate) {
       builtinModifiers.disabled = date => !isWithinRange(date, this.props.minDate, this.props.maxDate);
+    }
+    if (this.props.markOutsideDays) {
+      builtinModifiers.outside = date => !isSameMonth(date, this.state.currentMonth);
     }
 
     const modifiers = objectAssign({}, builtinModifiers, this.props.dateModifiers);
@@ -73,7 +74,7 @@ class BpkCalendar extends Component {
 }
 
 BpkCalendar.propTypes = {
-  highlightToday: PropTypes.bool,
+  markToday: PropTypes.bool,
   showWeekendSeparator: PropTypes.bool,
   initialMonth: PropTypes.oneOfType([
     PropTypes.string,
@@ -91,8 +92,9 @@ BpkCalendar.propTypes = {
 };
 
 BpkCalendar.defaultProps = {
-  highlightToday: false,
-  showWeekendSeparator: false,
+  markToday: true,
+  markOutsideDays: true,
+  showWeekendSeparator: true,
   initialMonth: new Date(),
   minDate: startOfToday(),
   maxDate: addMonths(startOfToday(), 12),
