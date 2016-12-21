@@ -64,7 +64,8 @@ class BpkCalendar extends Component {
           dateModifiers={modifiers}
           showWeekendSeparator={this.props.showWeekendSeparator}
           onDateClick={this.onDateSelect}
-          weekDays={this.props.weekDays}
+          weekDaysAbbr={this.props.weekDaysAbbr}
+          weekDaysFull={this.props.weekDaysFull}
           weekStartsOn={this.props.weekStartsOn}
           getDateComponent={this.props.getDateComponent}
         />
@@ -84,7 +85,8 @@ BpkCalendar.propTypes = {
   maxDate: PropTypes.instanceOf(Date),
   formatMonth: PropTypes.func.isRequired,
   onDateSelect: PropTypes.func,
-  weekDays: PropTypes.arrayOf(PropTypes.string),
+  weekDaysAbbr: PropTypes.arrayOf(PropTypes.string),
+  weekDaysFull: PropTypes.arrayOf(PropTypes.string),
   weekStartsOn: PropTypes.number,
   dateModifiers: PropTypes.objectOf(React.PropTypes.func),
   getDateComponent: PropTypes.func,

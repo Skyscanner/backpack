@@ -12,13 +12,16 @@ exports[`BpkCalendar should render correctly 1`] = `
     dateModifiers={
       Object {
         "disabled": [Function],
+        "outside": [Function],
+        "today": [Function],
       }
     }
     getDateComponent={undefined}
     month={2016-12-01T00:00:00.000Z}
     onDateClick={[Function]}
-    showWeekendSeparator={false}
-    weekDays={undefined}
+    showWeekendSeparator={true}
+    weekDaysAbbr={undefined}
+    weekDaysFull={undefined}
     weekStartsOn={undefined} />
 </div>
 `;

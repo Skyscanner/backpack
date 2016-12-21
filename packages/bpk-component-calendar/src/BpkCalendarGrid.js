@@ -10,11 +10,13 @@ import './bpk-calendar.scss';
 const WeekDay = props => (
   <th
     className="bpk-calendar-grid__header-weekday"
-  >{ props.weekDay }</th>
+    title={props.weekDayFull}
+  ><span aria-hidden="true">{ props.weekDayAbbr }</span></th>
 );
 
 WeekDay.propTypes = {
-  weekDay: PropTypes.string.isRequired,
+  weekDayAbbr: PropTypes.string.isRequired,
+  weekDayFull: PropTypes.string.isRequired,
 };
 
 /*
@@ -89,15 +91,18 @@ const getDateComponent = dateModifiers => (dcProps) => {
   );
 };
 
+const reorderWeekDays = (weekDays, weekStartsOn) => [
+  ...weekDays.slice(weekStartsOn),
+  ...weekDays.slice(0, weekStartsOn),
+];
+
 /*
   BpkCalendarGrid - the grid representing a whole month
 */
 const BpkCalendarGrid = (props) => {
-  const { weekDays, weekStartsOn, onDateClick, showWeekendSeparator } = props;
-  const reorderedWeekDays = [
-    ...weekDays.slice(weekStartsOn),
-    ...weekDays.slice(0, weekStartsOn),
-  ];
+  const { weekDaysAbbr, weekDaysFull, weekStartsOn, onDateClick, showWeekendSeparator } = props;
+  const reorderedWeekDaysAbbr = reorderWeekDays(weekDaysAbbr, weekStartsOn);
+  const reorderedWeekDaysFull = reorderWeekDays(weekDaysFull, weekStartsOn);
 
   const calendarMonthWeeks = getCalendarMonthWeeks(props.month, props.weekStartsOn);
 
@@ -111,9 +116,10 @@ const BpkCalendarGrid = (props) => {
     <table className="bpk-calendar-grid">
       <thead>
         <tr className="bpk-calendar-grid__header">
-          { reorderedWeekDays.map((weekDay, index) => (
+          { reorderedWeekDaysAbbr.map((weekDay, index) => (
             <WeekDay
-              weekDay={weekDay}
+              weekDayAbbr={weekDay}
+              weekDayFull={reorderedWeekDaysFull[index]}
               key={index}
             />
           )) }
@@ -136,7 +142,8 @@ const BpkCalendarGrid = (props) => {
 
 BpkCalendarGrid.propTypes = {
   month: PropTypes.instanceOf(Date),
-  weekDays: PropTypes.arrayOf(PropTypes.string).isRequired,
+  weekDaysAbbr: PropTypes.arrayOf(PropTypes.string).isRequired,
+  weekDaysFull: PropTypes.arrayOf(PropTypes.string).isRequired,
   weekStartsOn: PropTypes.number,
   dateModifiers: BpkCalendarDate.propTypes.modifiers,
   onDateClick: PropTypes.func,
@@ -149,7 +156,8 @@ BpkCalendarGrid.defaultProps = {
   weekStartsOn: 1,
   dateModifiers: {},
   showWeekendSeparator: false,
-  weekDays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+  weekDaysAbbr: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+  weekDaysFull: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
 };
 
 export default BpkCalendarGrid;

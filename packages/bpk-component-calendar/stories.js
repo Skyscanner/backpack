@@ -78,7 +78,8 @@ storiesOf('bpk-component-calendar', module)
     <BpkCalendar
       formatMonth={formatMonthGerman}
       onDateSelect={action('Selected day')}
-      weekDays={['So.', 'Mo.', 'Di.', 'Mi.', 'Do.', 'Fr.', 'Sa.']}
+      weekDaysAbbr={['So.', 'Mo.', 'Di.', 'Mi.', 'Do.', 'Fr.', 'Sa.']}
+      weekDaysFull={['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag']}
       id="myCalendar"
     />
   ))

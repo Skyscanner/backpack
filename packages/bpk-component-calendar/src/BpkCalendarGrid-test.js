@@ -10,9 +10,12 @@ describe('BpkCalendarGrid', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with a "weekDays" attribute', () => {
+  it('should render correctly with custom week days attribute', () => {
     const tree = renderer.create(
-      <BpkCalendarGrid month={new Date('2016-12')} weekDays={['M', 'T', 'W', 'T', 'F', 'S', 'S']} />,
+      <BpkCalendarGrid
+        weekDaysAbbr={['M', 'D', 'M', 'D', 'F', 'S', 'S']}
+        weekDaysFull={['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag']}
+      />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
