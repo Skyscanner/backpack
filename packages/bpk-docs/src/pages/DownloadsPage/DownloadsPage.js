@@ -30,7 +30,7 @@ const DownloadsPage = () => (
               </BpkLink>
             </BpkListItem>
             <BpkListItem>
-              <BpkLink href="https://www.dropbox.com/s/gerab8vjv92141g/product_rgb.clr?dl=0" blank>
+              <BpkLink href="https://www.dropbox.com/s/p2j7iwkb3nftki2/product_rgb.clr?dl=0" blank>
                 Mac
               </BpkLink>
             </BpkListItem>
