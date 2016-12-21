@@ -4,7 +4,7 @@
 **Changed**
 - bpk-tokens:
 - bpk-mixins:
-  - updated tokens for yellow colors
+  - updated tokens for yellow colors to make it a bit easier to read when used for text e.g. colour coded prices on month view.
 
 ## 2016-12-15 - Added toilets icon and added travelpro tokens
 **Added**
