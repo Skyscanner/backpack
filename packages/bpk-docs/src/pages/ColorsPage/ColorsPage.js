@@ -32,7 +32,7 @@ const components = [
       </BpkParagraph>,
       <div className="bpkdocs-colors-page__swatch-container">
         <ColorSwatch name="color-green-500" color={TOKENS.colorGreen500} whiteColor />
-        <ColorSwatch name="color-yellow-500" color={TOKENS.colorYellow500} whiteColor />
+        <ColorSwatch name="color-yellow-500" color={TOKENS.colorYellow500} />
         <ColorSwatch name="color-red-500" color={TOKENS.colorRed500} whiteColor />
       </div>,
     ],
