@@ -3,7 +3,16 @@ import React, { Component, PropTypes } from 'react';
 import objectAssign from 'object-assign';
 import BpkCalendarGrid from './BpkCalendarGrid';
 import BpkCalendarNav from './BpkCalendarNav';
-import { isToday, addMonths, isWithinRange, getMonthRange, startOfMonth, startOfToday, formatIsoDate, isSameMonth } from './utils';
+import {
+  isToday,
+  addMonths,
+  isWithinRange,
+  getMonthRange,
+  startOfMonth,
+  startOfToday,
+  formatIsoDate,
+  isSameMonth,
+} from './utils';
 import './bpk-calendar.scss';
 
 class BpkCalendar extends Component {
@@ -76,6 +85,7 @@ class BpkCalendar extends Component {
 
 BpkCalendar.propTypes = {
   markToday: PropTypes.bool,
+  markOutsideDays: PropTypes.bool,
   showWeekendSeparator: PropTypes.bool,
   initialMonth: PropTypes.oneOfType([
     PropTypes.string,

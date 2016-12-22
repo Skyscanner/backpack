@@ -62,6 +62,7 @@ const parseIsoDate = parse;
 const formatIso = date => format(date);
 const formatIsoDate = date => format(date, 'YYYY-MM-DD');
 const formatIsoMonth = date => format(date, 'YYYY-MM');
+const formatHumanDate = date => format(date, 'dddd, Do MMMM YYYY');
 
 export {
   getCalendarMonthWeeks,
@@ -81,5 +82,6 @@ export {
   formatIso,
   formatIsoDate,
   formatIsoMonth,
+  formatHumanDate,
   parseIsoDate,
 };

@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import './bpk-calendar.scss';
 
 const BpkCalendarDate = (props) => {
-  const { date, modifiers } = props;
+  const { date, modifiers, ...calendarDateProps } = props;
   const classNames = ['bpk-calendar-date'];
 
   Object.keys(modifiers).forEach((modifier) => {
@@ -11,7 +11,11 @@ const BpkCalendarDate = (props) => {
   });
 
   return (
-    <div className={classNames.join(' ')}>{ date.getDate() }</div>
+    <div
+      className={classNames.join(' ')}
+      aria-label={date.getDate()}
+      {...calendarDateProps}
+    >{ date.getDate() }</div>
   );
 };
 
