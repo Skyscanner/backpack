@@ -1,5 +1,15 @@
 # Backpack changelog
 
+## 2016-12-22 - Work around React regression in BpkButton
+
+**Fixed**
+- bpk-component-button: 1.4.3 => 1.4.4
+  - onClick event no longer fires on disabled buttons in Chrome. See https://github.com/facebook/react/pull/8329
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-modal: 0.3.3 => 0.3.4
+- bpk-docs: 0.0.52 => 0.0.53
+
 ## 2016-12-21 - Updated yellow colors
 **Changed**
 - bpk-tokens: 17.0.0 => 17.0.1
