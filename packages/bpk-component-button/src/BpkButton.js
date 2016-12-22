@@ -37,7 +37,13 @@ const BpkButton = (props) => {
       type={props.submit ? 'submit' : 'button'}
       disabled={props.disabled}
       className={className}
-      onClick={props.onClick}
+      onClick={props.onClick ? () => {
+        // Due to React bug in Chrome, the onClick event fires even if the button is disabled.
+        // Pull request is being worked on (as of 2016-12-22): https://github.com/facebook/react/pull/8329
+        if (!props.disabled) {
+          props.onClick(...arguments);
+        }
+      } : null}
     >
       {props.children}
     </button>
