@@ -37,7 +37,11 @@ const BpkButton = (props) => {
       type={props.submit ? 'submit' : 'button'}
       disabled={props.disabled}
       className={className}
-      onClick={props.onClick}
+      onClick={props.onClick ? () => {
+        if (!props.disabled) {
+          props.onClick(...arguments);
+        }
+      } : null}
     >
       {props.children}
     </button>
