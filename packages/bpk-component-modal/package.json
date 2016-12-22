@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-modal",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Backpack modal component.",
   "main": "index.js",
   "repository": {
@@ -23,7 +23,7 @@
     "react-portal": "^3.0.0"
   },
   "devDependencies": {
-    "bpk-component-button": "^1.4.3",
+    "bpk-component-button": "^1.4.4",
     "bpk-component-paragraph": "^0.1.41"
   }
 }
