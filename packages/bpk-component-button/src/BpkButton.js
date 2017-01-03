@@ -78,6 +78,7 @@ BpkButton.propTypes = {
 };
 
 BpkButton.defaultProps = {
+  href: null,
   className: null,
   disabled: false,
   onClick: null,
