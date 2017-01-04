@@ -13,6 +13,7 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^6.7.1"
+    "bpk-mixins": "^6.7.1",
+    "bpk-react-utils": "^0.0.0"
   }
 }

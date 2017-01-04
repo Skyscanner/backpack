@@ -119,4 +119,15 @@
   .bpk-no-touch-support &:hover:not(:active):not(:disabled) {
     @content;
   }
+
+  // Duplicating the above rule with `:global(...)` pseudo selector around the
+  // global `.bpk-no-touch-support` class to provide support for CSS modules.
+  //
+  // - when processed through css-loader, the `:global(...)` pseudo selector will be dropped
+  //   leaving a duplicate rule which in turn will be 'uglified' out - so no worries there
+  // - when processed through node-sass only, the `:global(...)` pseudo selector will be left
+  //   intact and ignored by all browsers
+  :global(.bpk-no-touch-support) &:hover:not(:active):not(:disabled) { /* stylelint-disable-line selector-pseudo-class-no-unknown */
+    @content;
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "bpk-react-utils",
+  "version": "0.0.0",
+  "description": "Utilities for Backpack's React components.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0"
+}

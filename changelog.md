@@ -1,5 +1,22 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Added:**
+- bpk-react-utils:
+  - A new package to house backpack react component utilities, starting with a css module helper
+
+- bpk-component-autosuggest:
+- bpk-component-button:
+  - Added dependency on `bpk-react-utils`
+  - Added css module support
+
+- bpk-component-button:
+  - All additional/custom props are now passed through to `<button>` tag, including `style`
+
+- bpk-mixins:
+  - Added css module support (workaround for global `.bpk-no-touch-support` class)
+
 ## 2016-12-22 - Work around React regression in BpkButton
 
 **Fixed**
