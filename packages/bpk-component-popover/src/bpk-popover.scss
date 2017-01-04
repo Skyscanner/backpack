@@ -1,0 +1,71 @@
+@import "~bpk-mixins";
+
+.bpk-popover-tether-target {
+  display: inline-block;
+}
+
+.bpk-popover {
+  outline: 0;
+
+  &__arrow {
+    position: absolute;
+    display: block;
+    border: solid $bpk-spacing-sm transparent;
+    pointer-events: none;
+
+    .bpk-popover-tether-element-attached-top & {
+      top: -$bpk-spacing-sm;
+      left: 50%;
+      margin-left: -$bpk-spacing-sm;
+      border-bottom-color: $bpk-color-white;
+    }
+
+    .bpk-popover-tether-element-attached-right & {
+      top: 50%;
+      right: -$bpk-spacing-sm;
+      margin-top: -$bpk-spacing-sm;
+      border-left-color: $bpk-color-white;
+    }
+
+    .bpk-popover-tether-element-attached-bottom & {
+      bottom: -$bpk-spacing-sm;
+      left: 50%;
+      margin-left: -$bpk-spacing-sm;
+      border-top-color: $bpk-color-white;
+    }
+
+    .bpk-popover-tether-element-attached-left & {
+      top: 50%;
+      left: -$bpk-spacing-sm;
+      margin-top: -$bpk-spacing-sm;
+      border-right-color: $bpk-color-white;
+    }
+  }
+
+  &__inner {
+    background-color: $bpk-color-white;
+
+    @include bpk-box-shadow-xl;
+    @include bpk-border-radius-sm;
+
+    .bpk-popover-tether-element-attached-top & {
+      margin-top: $bpk-spacing-sm;
+    }
+
+    .bpk-popover-tether-element-attached-right & {
+      margin-right: $bpk-spacing-sm;
+    }
+
+    .bpk-popover-tether-element-attached-bottom & {
+      margin-bottom: $bpk-spacing-sm;
+    }
+
+    .bpk-popover-tether-element-attached-left & {
+      margin-left: $bpk-spacing-sm;
+    }
+
+    &--padded {
+      padding: $bpk-spacing-sm;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "name": "bpk-component-popover",
+  "version": "0.0.0",
+  "description": "Backpack popover component.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^15.0.0"
+  },
+  "dependencies": {
+    "a11y-focus-store": "^1.0.0",
+    "a11y-focus-scope": "^1.1.3",
+    "bpk-mixins": "^6.8.0",
+    "react-portal": "^3.0.0",
+    "tether": "^1.4.0"
+  },
+  "devDependencies": {
+    "bpk-component-button": "^1.5.0"
+  }
+}

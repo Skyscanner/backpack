@@ -46,6 +46,7 @@ npm install [package-name] --save
 | [`bpk-component-spinner`](/packages/bpk-component-spinner) | [![npm version](https://badge.fury.io/js/bpk-component-spinner.svg)](http://badge.fury.io/js/bpk-component-spinner) |
 | [`bpk-component-table`](/packages/bpk-component-table) | [![npm version](https://badge.fury.io/js/bpk-component-table.svg)](http://badge.fury.io/js/bpk-component-table) |
 | [`bpk-mixins`](/packages/bpk-mixins) | [![npm version](https://badge.fury.io/js/bpk-mixins.svg)](http://badge.fury.io/js/bpk-mixins) |
+| [`bpk-react-utils`](/packages/bpk-react-utils) | [![npm version](https://badge.fury.io/js/bpk-react-utils.svg)](http://badge.fury.io/js/bpk-react-utils) |
 | [`bpk-stylesheets`](/packages/bpk-stylesheets) | [![npm version](https://badge.fury.io/js/bpk-stylesheets.svg)](http://badge.fury.io/js/bpk-stylesheets) |
 | [`bpk-svgs`](/packages/bpk-svgs) | [![npm version](https://badge.fury.io/js/bpk-svgs.svg)](http://badge.fury.io/js/bpk-svgs) |
 | [`bpk-tokens`](/packages/bpk-tokens) | [![npm version](https://badge.fury.io/js/bpk-tokens.svg)](http://badge.fury.io/js/bpk-tokens) |

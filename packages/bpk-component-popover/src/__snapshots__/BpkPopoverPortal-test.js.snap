@@ -1,0 +1,8 @@
+exports[`BpkPopoverPortal should render correctly 1`] = `
+<div
+  className="bpk-popover-target">
+  <div>
+    target
+  </div>
+</div>
+`;
