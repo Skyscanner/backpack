@@ -1,5 +1,7 @@
 build:
-  image: node:5
+  image: node:6.9.2-slim
+  environment:
+    - NPM_CONFIG_LOGLEVEL=warn
   commands:
     - npm install
     - npm run bootstrap
