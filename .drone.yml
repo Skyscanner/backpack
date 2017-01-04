@@ -1,5 +1,5 @@
 build:
-  image: node:6.9.2-slim
+  image: node:6.9.3
   environment:
     - NPM_CONFIG_LOGLEVEL=warn
   commands:
