@@ -47,7 +47,11 @@ const components = [
     title: 'Calendar',
     blurb: [
       <BpkParagraph>
-        Calendar blurb
+        The default calendar configuration ships with navigation to nudge between months or make a
+        direct selection via a select menu.
+      </BpkParagraph>,
+      <BpkParagraph>
+      See the prop types table below for full list of config and default options.
       </BpkParagraph>,
     ],
     examples: [
@@ -59,10 +63,10 @@ const components = [
   },
   {
     id: 'calendar-nav',
-    title: 'Calendar Nav',
+    title: 'Calendar nav',
     blurb: [
       <BpkParagraph>
-        Calendar Nav blurb
+        The calendar nav component can be used independently to allow users to cycle through a group of months.
       </BpkParagraph>,
     ],
     examples: [
@@ -71,10 +75,10 @@ const components = [
   },
   {
     id: 'calendar-grid',
-    title: 'Calendar Grid',
+    title: 'Calendar grid',
     blurb: [
       <BpkParagraph>
-        Calendar Grid blurb
+        Similarly the calendar grid can be used on its own.
       </BpkParagraph>,
     ],
     examples: [
@@ -87,7 +91,7 @@ const CalendarPage = () => <DocsPageBuilder
   title="Calendar"
   blurb={[
     <BpkParagraph>
-      Calendar blurb
+      Calendars are used for date selection.  They can be configured in different ways depending on the context e.g. constrained to a date range, or with dates blocked out.
     </BpkParagraph>,
   ]}
   components={components}
