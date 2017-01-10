@@ -2,20 +2,53 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-01-10 - Added inline styling and css module support for button & autosuggest
+
 **Added:**
-- bpk-react-utils:
+- bpk-react-utils: 0.0.0 => 0.0.1
   - A new package to house backpack react component utilities, starting with a css module helper
 
-- bpk-component-autosuggest:
-- bpk-component-button:
+- bpk-component-autosuggest: 1.0.11 => 1.1.0
+- bpk-component-button: 1.4.4 => 1.5.0
   - Added dependency on `bpk-react-utils`
   - Added css module support
 
-- bpk-component-button:
+- bpk-component-button: 1.4.4 => 1.5.0
   - All additional/custom props are now passed through to `<button>` tag, including `style`
 
-- bpk-mixins:
+- bpk-mixins: 6.7.1 => 6.8.0
   - Added css module support (workaround for global `.bpk-no-touch-support` class)
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-badge: 0.0.8 => 0.0.9
+- bpk-component-banner-alert: 0.0.21 => 0.0.22
+- bpk-component-blockquote: 0.0.34 => 0.0.35
+- bpk-component-calendar: 0.0.2 => 0.0.3 (private)
+- bpk-component-card: 0.0.22 => 0.0.23
+- bpk-component-checkbox: 0.0.31 => 0.0.32
+- bpk-component-code: 0.0.34 => 0.0.35
+- bpk-component-content-container: 1.0.25 => 1.0.26
+- bpk-component-grid-toggle: 0.0.40 => 0.0.41
+- bpk-component-grid: 0.0.28 => 0.0.29
+- bpk-component-heading: 1.1.17 => 1.1.18
+- bpk-component-icon: 1.3.1 => 1.3.2
+- bpk-component-input: 1.0.10 => 1.0.11
+- bpk-component-label: 2.0.10 => 2.0.11
+- bpk-component-link: 0.3.12 => 0.3.13
+- bpk-component-list: 0.0.54 => 0.0.55
+- bpk-component-logo: 1.0.24 => 1.0.25
+- bpk-component-modal: 0.3.4 => 0.3.5
+- bpk-component-paragraph: 0.1.41 => 0.1.42
+- bpk-component-radio: 0.0.31 => 0.0.32
+- bpk-component-router-link: 0.1.40 => 0.1.41
+- bpk-component-rtl-toggle: 0.0.24 => 0.0.25
+- bpk-component-select: 1.0.10 => 1.0.11
+- bpk-component-spinner: 1.0.24 => 1.0.25
+- bpk-component-table: 0.0.54 => 0.0.55
+- bpk-docs: 0.0.53 => 0.0.54
+- bpk-stylesheets: 3.1.2 => 3.1.3
 
 ## 2016-12-22 - Work around React regression in BpkButton
 
