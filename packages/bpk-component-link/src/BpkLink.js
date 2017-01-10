@@ -3,14 +3,25 @@ import React, { PropTypes } from 'react';
 import './bpk-link.scss';
 
 const BpkLink = (props) => {
-  const classNames = ['bpk-link'];
-  const target = props.blank ? '_blank' : null;
+  const {
+    children,
+    className,
+    href,
+    onClick,
+    blank,
+    white,
+    ...rest
+  } = props;
 
-  if (props.white) { classNames.push('bpk-link--white'); }
+  const classNames = ['bpk-link'];
+  const target = blank ? '_blank' : null;
+
+  if (white) { classNames.push('bpk-link--white'); }
+  if (className) { classNames.push(className); }
 
   return (
-    <a className={classNames.join(' ')} href={props.href} onClick={props.onClick} target={target}>
-      {props.children}
+    <a className={classNames.join(' ')} href={href} onClick={onClick} target={target} {...rest}>
+      {children}
     </a>
   );
 };
@@ -21,12 +32,14 @@ BpkLink.propTypes = {
     PropTypes.node,
   ]).isRequired,
   href: PropTypes.string.isRequired,
+  className: PropTypes.string,
   onClick: PropTypes.func,
   blank: PropTypes.bool,
   white: PropTypes.bool,
 };
 
 BpkLink.defaultProps = {
+  className: null,
   onClick: null,
   blank: false,
   white: false,

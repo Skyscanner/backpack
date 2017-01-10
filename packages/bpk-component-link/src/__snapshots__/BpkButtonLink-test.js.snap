@@ -15,3 +15,22 @@ exports[`BpkButtonLink should render correctly with "white" attribute 1`] = `
   Link
 </button>
 `;
+
+exports[`BpkButtonLink should render correctly with a "className" atribute 1`] = `
+<button
+  className="bpk-link test-class"
+  onClick={[Function]}
+  type="button">
+  Link
+</button>
+`;
+
+exports[`BpkButtonLink should render correctly with arbitrary attributes 1`] = `
+<button
+  className="bpk-link"
+  id="test-id"
+  onClick={[Function]}
+  type="button">
+  Link
+</button>
+`;
