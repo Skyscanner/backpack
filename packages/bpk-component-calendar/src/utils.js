@@ -4,6 +4,7 @@ import startOfWeek from 'date-fns/start_of_week';
 import lastDayOfWeek from 'date-fns/last_day_of_week';
 import startOfToday from 'date-fns/start_of_today';
 import eachDay from 'date-fns/each_day';
+import getDay from 'date-fns/get_day';
 
 import isWithinRange from 'date-fns/is_within_range';
 import isToday from 'date-fns/is_today';
@@ -68,6 +69,7 @@ export {
   getCalendarMonthWeeks,
   getMonthsInRange,
   getMonthRange,
+  getDay,
   isWithinRange,
   isSaturday,
   isSunday,

@@ -9,22 +9,15 @@ import { getMonthsInRange, isWithinRange, getMonthRange, formatIsoMonth, parseIs
 
 import './bpk-calendar.scss';
 
-const PrevIcon = () => (
-  <ArrowLeftIcon className="bpk-calendar-nav__icon" />
-);
-
-const NextIcon = () => (
-  <ArrowRightIcon className="bpk-calendar-nav__icon" />
-);
-
 const BpkCalendarNav = (props) => {
   const {
+    id,
     month,
-    onChangeMonth,
     minDate,
     maxDate,
     formatMonth,
-    id,
+    onChangeMonth,
+    changeMonthLabel,
   } = props;
 
   const baseMonth = startOfMonth(month);
@@ -39,8 +32,8 @@ const BpkCalendarNav = (props) => {
     <div className="bpk-calendar-nav">
       <div className="bpk-calendar-nav__nudger">
         <button
-          className="bpk-calendar-nav__button"
           type="button"
+          className="bpk-calendar-nav__button"
           onClick={() => {
             if (isWithinRange(prevMonth, min, max)) {
               onChangeMonth(prevMonth);
@@ -48,11 +41,12 @@ const BpkCalendarNav = (props) => {
           }}
           disabled={!isWithinRange(prevMonth, min, max)}
         >
-          <PrevIcon />
+          <ArrowLeftIcon className="bpk-calendar-nav__icon" />
           <span className="visually-hidden">{ formatMonth(addMonths(baseMonth, -1)) }</span>
         </button>
       </div>
       <div className="bpk-calendar-nav__month">
+        <label htmlFor={`${id}_select`} className="visually-hidden">{ changeMonthLabel }</label>
         <BpkSelect
           id={`${id}_select`}
           name="months"
@@ -66,6 +60,7 @@ const BpkCalendarNav = (props) => {
       </div>
       <div className="bpk-calendar-nav__nudger">
         <button
+          type="button"
           className="bpk-calendar-nav__button"
           onClick={() => {
             if (isWithinRange(nextMonth, min, max)) {
@@ -74,7 +69,7 @@ const BpkCalendarNav = (props) => {
           }}
           disabled={!isWithinRange(addMonths(baseMonth, 1), min, max)}
         >
-          <NextIcon />
+          <ArrowRightIcon className="bpk-calendar-nav__icon" />
           <span className="visually-hidden">{ formatMonth(addMonths(baseMonth, 1)) }</span>
         </button>
       </div>
@@ -83,12 +78,13 @@ const BpkCalendarNav = (props) => {
 };
 
 BpkCalendarNav.propTypes = {
-  month: PropTypes.instanceOf(Date).isRequired,
-  onChangeMonth: PropTypes.func,
-  minDate: PropTypes.instanceOf(Date),
-  maxDate: PropTypes.instanceOf(Date),
-  formatMonth: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
+  changeMonthLabel: PropTypes.string.isRequired,
+  month: PropTypes.instanceOf(Date).isRequired,
+  minDate: PropTypes.instanceOf(Date).isRequired,
+  maxDate: PropTypes.instanceOf(Date).isRequired,
+  formatMonth: PropTypes.func.isRequired,
+  onChangeMonth: PropTypes.func.isRequired,
 };
 
 export default BpkCalendarNav;

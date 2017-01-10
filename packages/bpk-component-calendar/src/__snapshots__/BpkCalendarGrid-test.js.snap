@@ -45,7 +45,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </span>
       </th>
       <th
-        className="bpk-calendar-grid__header-weekday"
+        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
         title="Saturday">
         <span
           aria-hidden="true">
@@ -53,7 +53,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </span>
       </th>
       <th
-        className="bpk-calendar-grid__header-weekday"
+        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
         title="Sunday">
         <span
           aria-hidden="true">
@@ -67,396 +67,690 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-11-28"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          28
-        </div>
+        data-date="2016-09-26">
+        <button
+          aria-label="Monday, 26th September 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            26
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-11-29"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          29
-        </div>
+        data-date="2016-09-27">
+        <button
+          aria-label="Tuesday, 27th September 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            27
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-11-30"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          30
-        </div>
+        data-date="2016-09-28">
+        <button
+          aria-label="Wednesday, 28th September 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            28
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-01"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          1
-        </div>
+        data-date="2016-09-29">
+        <button
+          aria-label="Thursday, 29th September 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            29
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-02"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          2
-        </div>
+        data-date="2016-09-30">
+        <button
+          aria-label="Friday, 30th September 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            30
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-03"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          3
-        </div>
+        data-date="2016-10-01">
+        <button
+          aria-label="Saturday, 1st October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            1
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-04"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          4
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-05"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          5
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-06"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          6
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-07"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          7
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-08"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          8
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-09"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          9
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-10"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          10
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-11"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          11
-        </div>
+        data-date="2016-10-02">
+        <button
+          aria-label="Sunday, 2nd October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            2
+          </span>
+        </button>
       </td>
     </tr>
     <tr
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-12"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          12
-        </div>
+        data-date="2016-10-03">
+        <button
+          aria-label="Monday, 3rd October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            3
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-13"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          13
-        </div>
+        data-date="2016-10-04">
+        <button
+          aria-label="Tuesday, 4th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            4
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-14"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          14
-        </div>
+        data-date="2016-10-05">
+        <button
+          aria-label="Wednesday, 5th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            5
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-15"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          15
-        </div>
+        data-date="2016-10-06">
+        <button
+          aria-label="Thursday, 6th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            6
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-16"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          16
-        </div>
+        data-date="2016-10-07">
+        <button
+          aria-label="Friday, 7th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            7
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-17"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          17
-        </div>
+        data-date="2016-10-08">
+        <button
+          aria-label="Saturday, 8th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            8
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-18"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          18
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-19"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          19
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-20"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          20
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-21"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          21
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-22"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          22
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-23"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          23
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-24"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          24
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-25"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          25
-        </div>
+        data-date="2016-10-09">
+        <button
+          aria-label="Sunday, 9th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            9
+          </span>
+        </button>
       </td>
     </tr>
     <tr
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-26"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          26
-        </div>
+        data-date="2016-10-10">
+        <button
+          aria-label="Monday, 10th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            10
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-27"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          27
-        </div>
+        data-date="2016-10-11">
+        <button
+          aria-label="Tuesday, 11th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            11
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-28"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          28
-        </div>
+        data-date="2016-10-12">
+        <button
+          aria-label="Wednesday, 12th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            12
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-29"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          29
-        </div>
+        data-date="2016-10-13">
+        <button
+          aria-label="Thursday, 13th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            13
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-30"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          30
-        </div>
+        data-date="2016-10-14">
+        <button
+          aria-label="Friday, 14th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            14
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-31"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          31
-        </div>
+        data-date="2016-10-15">
+        <button
+          aria-label="Saturday, 15th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            15
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-01"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          1
-        </div>
+        data-date="2016-10-16">
+        <button
+          aria-label="Sunday, 16th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            16
+          </span>
+        </button>
       </td>
     </tr>
     <tr
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-02"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          2
-        </div>
+        data-date="2016-10-17">
+        <button
+          aria-label="Monday, 17th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            17
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-03"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          3
-        </div>
+        data-date="2016-10-18">
+        <button
+          aria-label="Tuesday, 18th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            18
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-04"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          4
-        </div>
+        data-date="2016-10-19">
+        <button
+          aria-label="Wednesday, 19th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            19
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-05"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          5
-        </div>
+        data-date="2016-10-20">
+        <button
+          aria-label="Thursday, 20th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            20
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-06"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          6
-        </div>
+        data-date="2016-10-21">
+        <button
+          aria-label="Friday, 21st October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            21
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-07"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          7
-        </div>
+        data-date="2016-10-22">
+        <button
+          aria-label="Saturday, 22nd October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            22
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-08"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date bpk-calendar-date--someClass">
-          8
-        </div>
+        data-date="2016-10-23">
+        <button
+          aria-label="Sunday, 23rd October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            23
+          </span>
+        </button>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-24">
+        <button
+          aria-label="Monday, 24th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            24
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-25">
+        <button
+          aria-label="Tuesday, 25th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            25
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-26">
+        <button
+          aria-label="Wednesday, 26th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            26
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-27">
+        <button
+          aria-label="Thursday, 27th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            27
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-28">
+        <button
+          aria-label="Friday, 28th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            28
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-29">
+        <button
+          aria-label="Saturday, 29th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            29
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-30">
+        <button
+          aria-label="Sunday, 30th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            30
+          </span>
+        </button>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-31">
+        <button
+          aria-label="Monday, 31st October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            31
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-01">
+        <button
+          aria-label="Tuesday, 1st November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            1
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-02">
+        <button
+          aria-label="Wednesday, 2nd November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            2
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-03">
+        <button
+          aria-label="Thursday, 3rd November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            3
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-04">
+        <button
+          aria-label="Friday, 4th November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            4
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-05">
+        <button
+          aria-label="Saturday, 5th November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            5
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-06">
+        <button
+          aria-label="Sunday, 6th November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            6
+          </span>
+        </button>
       </td>
     </tr>
   </tbody>
@@ -470,470 +764,13 @@ exports[`BpkCalendarGrid should render correctly with a "month" attribute 1`] = 
     <tr
       className="bpk-calendar-grid__header">
       <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Monday">
-        <span
-          aria-hidden="true">
-          Mon
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Tuesday">
-        <span
-          aria-hidden="true">
-          Tue
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Wednesday">
-        <span
-          aria-hidden="true">
-          Wed
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Thursday">
-        <span
-          aria-hidden="true">
-          Thu
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Friday">
-        <span
-          aria-hidden="true">
-          Fri
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Saturday">
-        <span
-          aria-hidden="true">
-          Sat
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
+        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
         title="Sunday">
         <span
           aria-hidden="true">
           Sun
         </span>
       </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-09-26"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          26
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-09-27"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          27
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-09-28"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          28
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-09-29"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          29
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-09-30"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          30
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-01"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          1
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-02"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          2
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-03"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          3
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-04"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          4
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-05"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          5
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-06"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          6
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-07"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          7
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-08"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          8
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-09"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          9
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-10"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          10
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-11"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          11
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-12"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          12
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-13"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          13
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-14"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          14
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-15"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          15
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-16"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          16
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-17"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          17
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-18"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          18
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-19"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          19
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-20"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          20
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-21"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          21
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-22"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          22
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-23"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          23
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-24"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          24
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-25"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          25
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-26"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          26
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-27"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          27
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-28"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          28
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-29"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          29
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-30"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          30
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-10-31"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          31
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-11-01"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          1
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-11-02"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          2
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-11-03"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          3
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-11-04"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          4
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-11-05"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          5
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-11-06"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          6
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-`;
-
-exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" attribute 1`] = `
-<table
-  className="bpk-calendar-grid">
-  <thead>
-    <tr
-      className="bpk-calendar-grid__header">
       <th
         className="bpk-calendar-grid__header-weekday"
         title="Monday">
@@ -975,19 +812,11 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
         </span>
       </th>
       <th
-        className="bpk-calendar-grid__header-weekday"
+        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
         title="Saturday">
         <span
           aria-hidden="true">
           Sat
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Sunday">
-        <span
-          aria-hidden="true">
-          Sun
         </span>
       </th>
     </tr>
@@ -997,861 +826,690 @@ exports[`BpkCalendarGrid should render correctly with a "showWeekendSeparator" a
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-11-28"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          28
-        </div>
+        data-date="2016-09-25">
+        <button
+          aria-label="Sunday, 25th September 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            25
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-11-29"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          29
-        </div>
+        data-date="2016-09-26">
+        <button
+          aria-label="Monday, 26th September 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            26
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-11-30"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          30
-        </div>
+        data-date="2016-09-27">
+        <button
+          aria-label="Tuesday, 27th September 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            27
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-01"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          1
-        </div>
+        data-date="2016-09-28">
+        <button
+          aria-label="Wednesday, 28th September 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            28
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-02"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          2
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
-        data-date="2016-12-03"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          3
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
-        data-date="2016-12-04"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          4
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-05"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          5
-        </div>
+        data-date="2016-09-29">
+        <button
+          aria-label="Thursday, 29th September 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            29
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-06"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          6
-        </div>
+        data-date="2016-09-30">
+        <button
+          aria-label="Friday, 30th September 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            30
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-07"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          7
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-08"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          8
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-09"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          9
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
-        data-date="2016-12-10"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          10
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
-        data-date="2016-12-11"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          11
-        </div>
+        data-date="2016-10-01">
+        <button
+          aria-label="Saturday, 1st October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            1
+          </span>
+        </button>
       </td>
     </tr>
     <tr
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-12"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          12
-        </div>
+        data-date="2016-10-02">
+        <button
+          aria-label="Sunday, 2nd October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            2
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-13"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          13
-        </div>
+        data-date="2016-10-03">
+        <button
+          aria-label="Monday, 3rd October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            3
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-14"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          14
-        </div>
+        data-date="2016-10-04">
+        <button
+          aria-label="Tuesday, 4th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            4
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-15"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          15
-        </div>
+        data-date="2016-10-05">
+        <button
+          aria-label="Wednesday, 5th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            5
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-16"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          16
-        </div>
+        data-date="2016-10-06">
+        <button
+          aria-label="Thursday, 6th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            6
+          </span>
+        </button>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
-        data-date="2016-12-17"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          17
-        </div>
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-07">
+        <button
+          aria-label="Friday, 7th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            7
+          </span>
+        </button>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
-        data-date="2016-12-18"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          18
-        </div>
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-08">
+        <button
+          aria-label="Saturday, 8th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            8
+          </span>
+        </button>
       </td>
     </tr>
     <tr
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-19"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          19
-        </div>
+        data-date="2016-10-09">
+        <button
+          aria-label="Sunday, 9th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            9
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-20"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          20
-        </div>
+        data-date="2016-10-10">
+        <button
+          aria-label="Monday, 10th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            10
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-21"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          21
-        </div>
+        data-date="2016-10-11">
+        <button
+          aria-label="Tuesday, 11th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            11
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-22"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          22
-        </div>
+        data-date="2016-10-12">
+        <button
+          aria-label="Wednesday, 12th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            12
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-23"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          23
-        </div>
+        data-date="2016-10-13">
+        <button
+          aria-label="Thursday, 13th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            13
+          </span>
+        </button>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
-        data-date="2016-12-24"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          24
-        </div>
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-14">
+        <button
+          aria-label="Friday, 14th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            14
+          </span>
+        </button>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
-        data-date="2016-12-25"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          25
-        </div>
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-15">
+        <button
+          aria-label="Saturday, 15th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            15
+          </span>
+        </button>
       </td>
     </tr>
     <tr
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-26"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          26
-        </div>
+        data-date="2016-10-16">
+        <button
+          aria-label="Sunday, 16th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            16
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-27"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          27
-        </div>
+        data-date="2016-10-17">
+        <button
+          aria-label="Monday, 17th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            17
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-28"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          28
-        </div>
+        data-date="2016-10-18">
+        <button
+          aria-label="Tuesday, 18th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            18
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-29"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          29
-        </div>
+        data-date="2016-10-19">
+        <button
+          aria-label="Wednesday, 19th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            19
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-30"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          30
-        </div>
+        data-date="2016-10-20">
+        <button
+          aria-label="Thursday, 20th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            20
+          </span>
+        </button>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
-        data-date="2016-12-31"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          31
-        </div>
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-21">
+        <button
+          aria-label="Friday, 21st October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            21
+          </span>
+        </button>
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
-        data-date="2017-01-01"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          1
-        </div>
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-22">
+        <button
+          aria-label="Saturday, 22nd October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            22
+          </span>
+        </button>
       </td>
     </tr>
     <tr
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-02"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          2
-        </div>
+        data-date="2016-10-23">
+        <button
+          aria-label="Sunday, 23rd October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            23
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-03"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          3
-        </div>
+        data-date="2016-10-24">
+        <button
+          aria-label="Monday, 24th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            24
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-04"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          4
-        </div>
+        data-date="2016-10-25">
+        <button
+          aria-label="Tuesday, 25th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            25
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-05"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          5
-        </div>
+        data-date="2016-10-26">
+        <button
+          aria-label="Wednesday, 26th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            26
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-06"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          6
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
-        data-date="2017-01-07"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          7
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
-        data-date="2017-01-08"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          8
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-`;
-
-exports[`BpkCalendarGrid should render correctly with a "weekStartsOn" attribute 1`] = `
-<table
-  className="bpk-calendar-grid">
-  <thead>
-    <tr
-      className="bpk-calendar-grid__header">
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Monday">
-        <span
-          aria-hidden="true">
-          Mon
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Tuesday">
-        <span
-          aria-hidden="true">
-          Tue
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Wednesday">
-        <span
-          aria-hidden="true">
-          Wed
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Thursday">
-        <span
-          aria-hidden="true">
-          Thu
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Friday">
-        <span
-          aria-hidden="true">
-          Fri
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Saturday">
-        <span
-          aria-hidden="true">
-          Sat
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Sunday">
-        <span
-          aria-hidden="true">
-          Sun
-        </span>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-11-28"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          28
-        </div>
+        data-date="2016-10-27">
+        <button
+          aria-label="Thursday, 27th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            27
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-11-29"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          29
-        </div>
+        data-date="2016-10-28">
+        <button
+          aria-label="Friday, 28th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            28
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-11-30"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          30
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-01"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          1
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-02"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          2
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-03"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          3
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-04"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          4
-        </div>
+        data-date="2016-10-29">
+        <button
+          aria-label="Saturday, 29th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            29
+          </span>
+        </button>
       </td>
     </tr>
     <tr
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-05"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          5
-        </div>
+        data-date="2016-10-30">
+        <button
+          aria-label="Sunday, 30th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            30
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-06"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          6
-        </div>
+        data-date="2016-10-31">
+        <button
+          aria-label="Monday, 31st October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            31
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-07"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          7
-        </div>
+        data-date="2016-11-01">
+        <button
+          aria-label="Tuesday, 1st November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            1
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-08"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          8
-        </div>
+        data-date="2016-11-02">
+        <button
+          aria-label="Wednesday, 2nd November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            2
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-09"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          9
-        </div>
+        data-date="2016-11-03">
+        <button
+          aria-label="Thursday, 3rd November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            3
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-10"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          10
-        </div>
+        data-date="2016-11-04">
+        <button
+          aria-label="Friday, 4th November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            4
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-11"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          11
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-12"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          12
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-13"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          13
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-14"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          14
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-15"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          15
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-16"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          16
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-17"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          17
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-18"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          18
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-19"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          19
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-20"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          20
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-21"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          21
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-22"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          22
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-23"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          23
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-24"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          24
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-25"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          25
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-26"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          26
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-27"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          27
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-28"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          28
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-29"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          29
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-30"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          30
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-31"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          31
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2017-01-01"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          1
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2017-01-02"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          2
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2017-01-03"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          3
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2017-01-04"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          4
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2017-01-05"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          5
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2017-01-06"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          6
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2017-01-07"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          7
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2017-01-08"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          8
-        </div>
+        data-date="2016-11-05">
+        <button
+          aria-label="Saturday, 5th November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            5
+          </span>
+        </button>
       </td>
     </tr>
   </tbody>
@@ -1905,7 +1563,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </span>
       </th>
       <th
-        className="bpk-calendar-grid__header-weekday"
+        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
         title="Saturday">
         <span
           aria-hidden="true">
@@ -1913,7 +1571,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </span>
       </th>
       <th
-        className="bpk-calendar-grid__header-weekday"
+        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
         title="Sunday">
         <span
           aria-hidden="true">
@@ -1927,8 +1585,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-11-28"
-        onClick={[Function]}>
+        data-date="2016-09-26">
         <div
           style={
             Object {
@@ -1942,8 +1599,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-11-29"
-        onClick={[Function]}>
+        data-date="2016-09-27">
         <div
           style={
             Object {
@@ -1957,8 +1613,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-11-30"
-        onClick={[Function]}>
+        data-date="2016-09-28">
         <div
           style={
             Object {
@@ -1972,8 +1627,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-01"
-        onClick={[Function]}>
+        data-date="2016-09-29">
         <div
           style={
             Object {
@@ -1987,8 +1641,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-02"
-        onClick={[Function]}>
+        data-date="2016-09-30">
         <div
           style={
             Object {
@@ -2001,9 +1654,8 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
           } />
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
-        data-date="2016-12-03"
-        onClick={[Function]}>
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-01">
         <div
           style={
             Object {
@@ -2016,117 +1668,8 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
           } />
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
-        data-date="2016-12-04"
-        onClick={[Function]}>
-        <div
-          style={
-            Object {
-              "backgroundColor": "rgb(0, 215, 117)",
-              "borderRadius": "5rem",
-              "height": "50%",
-              "margin": "25%",
-              "width": "50%",
-            }
-          } />
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-05"
-        onClick={[Function]}>
-        <div
-          style={
-            Object {
-              "backgroundColor": "rgb(255, 84, 82)",
-              "borderRadius": "5rem",
-              "height": "50%",
-              "margin": "25%",
-              "width": "50%",
-            }
-          } />
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-06"
-        onClick={[Function]}>
-        <div
-          style={
-            Object {
-              "backgroundColor": "rgb(255, 84, 82)",
-              "borderRadius": "5rem",
-              "height": "50%",
-              "margin": "25%",
-              "width": "50%",
-            }
-          } />
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-07"
-        onClick={[Function]}>
-        <div
-          style={
-            Object {
-              "backgroundColor": "rgb(255, 84, 82)",
-              "borderRadius": "5rem",
-              "height": "50%",
-              "margin": "25%",
-              "width": "50%",
-            }
-          } />
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-08"
-        onClick={[Function]}>
-        <div
-          style={
-            Object {
-              "backgroundColor": "rgb(255, 84, 82)",
-              "borderRadius": "5rem",
-              "height": "50%",
-              "margin": "25%",
-              "width": "50%",
-            }
-          } />
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-09"
-        onClick={[Function]}>
-        <div
-          style={
-            Object {
-              "backgroundColor": "rgb(255, 84, 82)",
-              "borderRadius": "5rem",
-              "height": "50%",
-              "margin": "25%",
-              "width": "50%",
-            }
-          } />
-      </td>
-      <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
-        data-date="2016-12-10"
-        onClick={[Function]}>
-        <div
-          style={
-            Object {
-              "backgroundColor": "rgb(0, 215, 117)",
-              "borderRadius": "5rem",
-              "height": "50%",
-              "margin": "25%",
-              "width": "50%",
-            }
-          } />
-      </td>
-      <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
-        data-date="2016-12-11"
-        onClick={[Function]}>
+        data-date="2016-10-02">
         <div
           style={
             Object {
@@ -2143,8 +1686,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-12"
-        onClick={[Function]}>
+        data-date="2016-10-03">
         <div
           style={
             Object {
@@ -2158,8 +1700,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-13"
-        onClick={[Function]}>
+        data-date="2016-10-04">
         <div
           style={
             Object {
@@ -2173,8 +1714,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-14"
-        onClick={[Function]}>
+        data-date="2016-10-05">
         <div
           style={
             Object {
@@ -2188,8 +1728,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-15"
-        onClick={[Function]}>
+        data-date="2016-10-06">
         <div
           style={
             Object {
@@ -2203,8 +1742,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-16"
-        onClick={[Function]}>
+        data-date="2016-10-07">
         <div
           style={
             Object {
@@ -2217,9 +1755,8 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
           } />
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
-        data-date="2016-12-17"
-        onClick={[Function]}>
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-08">
         <div
           style={
             Object {
@@ -2232,117 +1769,8 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
           } />
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
-        data-date="2016-12-18"
-        onClick={[Function]}>
-        <div
-          style={
-            Object {
-              "backgroundColor": "rgb(0, 215, 117)",
-              "borderRadius": "5rem",
-              "height": "50%",
-              "margin": "25%",
-              "width": "50%",
-            }
-          } />
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-19"
-        onClick={[Function]}>
-        <div
-          style={
-            Object {
-              "backgroundColor": "rgb(255, 84, 82)",
-              "borderRadius": "5rem",
-              "height": "50%",
-              "margin": "25%",
-              "width": "50%",
-            }
-          } />
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-20"
-        onClick={[Function]}>
-        <div
-          style={
-            Object {
-              "backgroundColor": "rgb(255, 84, 82)",
-              "borderRadius": "5rem",
-              "height": "50%",
-              "margin": "25%",
-              "width": "50%",
-            }
-          } />
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-21"
-        onClick={[Function]}>
-        <div
-          style={
-            Object {
-              "backgroundColor": "rgb(255, 84, 82)",
-              "borderRadius": "5rem",
-              "height": "50%",
-              "margin": "25%",
-              "width": "50%",
-            }
-          } />
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-22"
-        onClick={[Function]}>
-        <div
-          style={
-            Object {
-              "backgroundColor": "rgb(255, 84, 82)",
-              "borderRadius": "5rem",
-              "height": "50%",
-              "margin": "25%",
-              "width": "50%",
-            }
-          } />
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-23"
-        onClick={[Function]}>
-        <div
-          style={
-            Object {
-              "backgroundColor": "rgb(255, 84, 82)",
-              "borderRadius": "5rem",
-              "height": "50%",
-              "margin": "25%",
-              "width": "50%",
-            }
-          } />
-      </td>
-      <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
-        data-date="2016-12-24"
-        onClick={[Function]}>
-        <div
-          style={
-            Object {
-              "backgroundColor": "rgb(0, 215, 117)",
-              "borderRadius": "5rem",
-              "height": "50%",
-              "margin": "25%",
-              "width": "50%",
-            }
-          } />
-      </td>
-      <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
-        data-date="2016-12-25"
-        onClick={[Function]}>
+        data-date="2016-10-09">
         <div
           style={
             Object {
@@ -2359,8 +1787,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-26"
-        onClick={[Function]}>
+        data-date="2016-10-10">
         <div
           style={
             Object {
@@ -2374,8 +1801,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-27"
-        onClick={[Function]}>
+        data-date="2016-10-11">
         <div
           style={
             Object {
@@ -2389,8 +1815,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-28"
-        onClick={[Function]}>
+        data-date="2016-10-12">
         <div
           style={
             Object {
@@ -2404,8 +1829,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-29"
-        onClick={[Function]}>
+        data-date="2016-10-13">
         <div
           style={
             Object {
@@ -2419,8 +1843,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-30"
-        onClick={[Function]}>
+        data-date="2016-10-14">
         <div
           style={
             Object {
@@ -2433,9 +1856,8 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
           } />
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
-        data-date="2016-12-31"
-        onClick={[Function]}>
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-15">
         <div
           style={
             Object {
@@ -2448,9 +1870,8 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
           } />
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
-        data-date="2017-01-01"
-        onClick={[Function]}>
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-16">
         <div
           style={
             Object {
@@ -2467,8 +1888,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-02"
-        onClick={[Function]}>
+        data-date="2016-10-17">
         <div
           style={
             Object {
@@ -2482,8 +1902,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-03"
-        onClick={[Function]}>
+        data-date="2016-10-18">
         <div
           style={
             Object {
@@ -2497,8 +1916,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-04"
-        onClick={[Function]}>
+        data-date="2016-10-19">
         <div
           style={
             Object {
@@ -2512,8 +1930,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-05"
-        onClick={[Function]}>
+        data-date="2016-10-20">
         <div
           style={
             Object {
@@ -2527,8 +1944,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-06"
-        onClick={[Function]}>
+        data-date="2016-10-21">
         <div
           style={
             Object {
@@ -2541,9 +1957,8 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
           } />
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
-        data-date="2017-01-07"
-        onClick={[Function]}>
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-22">
         <div
           style={
             Object {
@@ -2556,9 +1971,210 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
           } />
       </td>
       <td
-        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
-        data-date="2017-01-08"
-        onClick={[Function]}>
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-23">
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%",
+            }
+          } />
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-24">
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%",
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-25">
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%",
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-26">
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%",
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-27">
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%",
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-28">
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%",
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-29">
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%",
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-30">
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%",
+            }
+          } />
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-31">
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%",
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-01">
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%",
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-02">
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%",
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-03">
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%",
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-04">
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(255, 84, 82)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%",
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-05">
+        <div
+          style={
+            Object {
+              "backgroundColor": "rgb(0, 215, 117)",
+              "borderRadius": "5rem",
+              "height": "50%",
+              "margin": "25%",
+              "width": "50%",
+            }
+          } />
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-06">
         <div
           style={
             Object {
@@ -2575,7 +2191,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
 </table>
 `;
 
-exports[`BpkCalendarGrid should render correctly with custom week days attribute 1`] = `
+exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn" attribute 1`] = `
 <table
   className="bpk-calendar-grid">
   <thead>
@@ -2583,58 +2199,58 @@ exports[`BpkCalendarGrid should render correctly with custom week days attribute
       className="bpk-calendar-grid__header">
       <th
         className="bpk-calendar-grid__header-weekday"
-        title="Dienstag">
+        title="Wednesday">
         <span
           aria-hidden="true">
-          D
+          Wed
         </span>
       </th>
       <th
         className="bpk-calendar-grid__header-weekday"
-        title="Mittwoch">
+        title="Thursday">
         <span
           aria-hidden="true">
-          M
+          Thu
         </span>
       </th>
       <th
         className="bpk-calendar-grid__header-weekday"
-        title="Donnerstag">
+        title="Friday">
         <span
           aria-hidden="true">
-          D
+          Fri
+        </span>
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
+        title="Saturday">
+        <span
+          aria-hidden="true">
+          Sat
+        </span>
+      </th>
+      <th
+        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
+        title="Sunday">
+        <span
+          aria-hidden="true">
+          Sun
         </span>
       </th>
       <th
         className="bpk-calendar-grid__header-weekday"
-        title="Freitag">
+        title="Monday">
         <span
           aria-hidden="true">
-          F
+          Mon
         </span>
       </th>
       <th
         className="bpk-calendar-grid__header-weekday"
-        title="Samstag">
+        title="Tuesday">
         <span
           aria-hidden="true">
-          S
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Sonntag">
-        <span
-          aria-hidden="true">
-          S
-        </span>
-      </th>
-      <th
-        className="bpk-calendar-grid__header-weekday"
-        title="Montag">
-        <span
-          aria-hidden="true">
-          M
+          Tue
         </span>
       </th>
     </tr>
@@ -2644,396 +2260,690 @@ exports[`BpkCalendarGrid should render correctly with custom week days attribute
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-11-28"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          28
-        </div>
+        data-date="2016-09-28">
+        <button
+          aria-label="Wednesday, 28th September 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            28
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-11-29"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          29
-        </div>
+        data-date="2016-09-29">
+        <button
+          aria-label="Thursday, 29th September 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            29
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-11-30"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          30
-        </div>
+        data-date="2016-09-30">
+        <button
+          aria-label="Friday, 30th September 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            30
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        data-date="2016-10-01">
+        <button
+          aria-label="Saturday, 1st October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            1
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        data-date="2016-10-02">
+        <button
+          aria-label="Sunday, 2nd October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            2
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-01"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          1
-        </div>
+        data-date="2016-10-03">
+        <button
+          aria-label="Monday, 3rd October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            3
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-02"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          2
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-03"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          3
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-04"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          4
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-05"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          5
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-06"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          6
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-07"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          7
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-08"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          8
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-09"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          9
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-10"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          10
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-11"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          11
-        </div>
+        data-date="2016-10-04">
+        <button
+          aria-label="Tuesday, 4th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            4
+          </span>
+        </button>
       </td>
     </tr>
     <tr
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-12"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          12
-        </div>
+        data-date="2016-10-05">
+        <button
+          aria-label="Wednesday, 5th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            5
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-13"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          13
-        </div>
+        data-date="2016-10-06">
+        <button
+          aria-label="Thursday, 6th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            6
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-14"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          14
-        </div>
+        data-date="2016-10-07">
+        <button
+          aria-label="Friday, 7th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            7
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        data-date="2016-10-08">
+        <button
+          aria-label="Saturday, 8th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            8
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        data-date="2016-10-09">
+        <button
+          aria-label="Sunday, 9th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            9
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-15"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          15
-        </div>
+        data-date="2016-10-10">
+        <button
+          aria-label="Monday, 10th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            10
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-16"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          16
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-17"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          17
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-18"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          18
-        </div>
-      </td>
-    </tr>
-    <tr
-      className="bpk-calendar-grid__week">
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-19"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          19
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-20"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          20
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-21"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          21
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-22"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          22
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-23"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          23
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-24"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          24
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-25"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          25
-        </div>
+        data-date="2016-10-11">
+        <button
+          aria-label="Tuesday, 11th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            11
+          </span>
+        </button>
       </td>
     </tr>
     <tr
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-26"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          26
-        </div>
+        data-date="2016-10-12">
+        <button
+          aria-label="Wednesday, 12th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            12
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-27"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          27
-        </div>
+        data-date="2016-10-13">
+        <button
+          aria-label="Thursday, 13th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            13
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-28"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          28
-        </div>
+        data-date="2016-10-14">
+        <button
+          aria-label="Friday, 14th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            14
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        data-date="2016-10-15">
+        <button
+          aria-label="Saturday, 15th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            15
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        data-date="2016-10-16">
+        <button
+          aria-label="Sunday, 16th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            16
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-29"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          29
-        </div>
+        data-date="2016-10-17">
+        <button
+          aria-label="Monday, 17th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            17
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2016-12-30"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          30
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2016-12-31"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          31
-        </div>
-      </td>
-      <td
-        className="bpk-calendar-grid__date"
-        data-date="2017-01-01"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          1
-        </div>
+        data-date="2016-10-18">
+        <button
+          aria-label="Tuesday, 18th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            18
+          </span>
+        </button>
       </td>
     </tr>
     <tr
       className="bpk-calendar-grid__week">
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-02"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          2
-        </div>
+        data-date="2016-10-19">
+        <button
+          aria-label="Wednesday, 19th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            19
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-03"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          3
-        </div>
+        data-date="2016-10-20">
+        <button
+          aria-label="Thursday, 20th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            20
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-04"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          4
-        </div>
+        data-date="2016-10-21">
+        <button
+          aria-label="Friday, 21st October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            21
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        data-date="2016-10-22">
+        <button
+          aria-label="Saturday, 22nd October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            22
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        data-date="2016-10-23">
+        <button
+          aria-label="Sunday, 23rd October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            23
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-05"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          5
-        </div>
+        data-date="2016-10-24">
+        <button
+          aria-label="Monday, 24th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            24
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-06"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          6
-        </div>
+        data-date="2016-10-25">
+        <button
+          aria-label="Tuesday, 25th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            25
+          </span>
+        </button>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-26">
+        <button
+          aria-label="Wednesday, 26th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            26
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-07"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          7
-        </div>
+        data-date="2016-10-27">
+        <button
+          aria-label="Thursday, 27th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            27
+          </span>
+        </button>
       </td>
       <td
         className="bpk-calendar-grid__date"
-        data-date="2017-01-08"
-        onClick={[Function]}>
-        <div
-          className="bpk-calendar-date">
-          8
-        </div>
+        data-date="2016-10-28">
+        <button
+          aria-label="Friday, 28th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            28
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        data-date="2016-10-29">
+        <button
+          aria-label="Saturday, 29th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            29
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        data-date="2016-10-30">
+        <button
+          aria-label="Sunday, 30th October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            30
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-10-31">
+        <button
+          aria-label="Monday, 31st October 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            31
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-01">
+        <button
+          aria-label="Tuesday, 1st November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            1
+          </span>
+        </button>
+      </td>
+    </tr>
+    <tr
+      className="bpk-calendar-grid__week">
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-02">
+        <button
+          aria-label="Wednesday, 2nd November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            2
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-03">
+        <button
+          aria-label="Thursday, 3rd November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            3
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-04">
+        <button
+          aria-label="Friday, 4th November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            4
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+        data-date="2016-11-05">
+        <button
+          aria-label="Saturday, 5th November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            5
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+        data-date="2016-11-06">
+        <button
+          aria-label="Sunday, 6th November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            6
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-07">
+        <button
+          aria-label="Monday, 7th November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            7
+          </span>
+        </button>
+      </td>
+      <td
+        className="bpk-calendar-grid__date"
+        data-date="2016-11-08">
+        <button
+          aria-label="Tuesday, 8th November 2016"
+          className="bpk-calendar-date"
+          disabled={false}
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button">
+          <span
+            aria-hidden="true">
+            8
+          </span>
+        </button>
       </td>
     </tr>
   </tbody>

@@ -2,11 +2,12 @@ exports[`BpkCalendar should render correctly 1`] = `
 <div
   className="bpk-calendar">
   <BpkCalendarNav
+    changeMonthLabel="Change month"
     formatMonth={[Function]}
     id="myCalendar__bpk_calendar_nav"
-    maxDate={2017-12-15T00:00:00.000Z}
-    minDate={2016-12-15T00:00:00.000Z}
-    month={2016-12-01T00:00:00.000Z}
+    maxDate={2010-03-15T00:00:00.000Z}
+    minDate={2010-02-15T00:00:00.000Z}
+    month={2010-02-01T00:00:00.000Z}
     onChangeMonth={[Function]} />
   <BpkCalendarGrid
     dateModifiers={
@@ -16,12 +17,56 @@ exports[`BpkCalendar should render correctly 1`] = `
         "today": [Function],
       }
     }
-    getDateComponent={undefined}
-    month={2016-12-01T00:00:00.000Z}
+    daysOfWeek={
+      Array [
+        Object {
+          "index": 0,
+          "isWeekend": true,
+          "name": "Sunday",
+          "nameAbbr": "Sun",
+        },
+        Object {
+          "index": 1,
+          "isWeekend": false,
+          "name": "Monday",
+          "nameAbbr": "Mon",
+        },
+        Object {
+          "index": 2,
+          "isWeekend": false,
+          "name": "Tuesday",
+          "nameAbbr": "Tue",
+        },
+        Object {
+          "index": 3,
+          "isWeekend": false,
+          "name": "Wednesday",
+          "nameAbbr": "Wed",
+        },
+        Object {
+          "index": 4,
+          "isWeekend": false,
+          "name": "Thursday",
+          "nameAbbr": "Thu",
+        },
+        Object {
+          "index": 5,
+          "isWeekend": false,
+          "name": "Friday",
+          "nameAbbr": "Fri",
+        },
+        Object {
+          "index": 6,
+          "isWeekend": true,
+          "name": "Saturday",
+          "nameAbbr": "Sat",
+        },
+      ]
+    }
+    getDateComponent={[Function]}
+    month={2010-02-01T00:00:00.000Z}
     onDateClick={[Function]}
     showWeekendSeparator={true}
-    weekDaysAbbr={undefined}
-    weekDaysFull={undefined}
-    weekStartsOn={undefined} />
+    weekStartsOn={1} />
 </div>
 `;
