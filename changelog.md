@@ -2,9 +2,20 @@
 
 ## UNRELEASED
 
-- bpk-component-link:
+_Nothing yet ..._
+
+## 2017-01-11 - Custom classNames and arbitraty props for bpk-component-link
+
+**Added:**
+- bpk-component-link: 0.3.13 => 0.4.0
   - BpkLink and BpkButtonLink now pass through arbitrary props to `<a>` and `<button>` tag respectively
   - BpkLink and BpkButtonLink now properly handle className passed as prop
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-grid-toggle: 0.0.41 => 0.0.42
+- bpk-component-modal: 0.3.5 => 0.3.6
+- bpk-component-rtl-toggle: 0.0.25 => 0.0.26
+- bpk-docs: 0.0.54 => 0.0.55
 
 ## 2017-01-10 - Added inline styling and css module support for button & autosuggest
 
