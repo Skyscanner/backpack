@@ -2,7 +2,11 @@
 
 ## UNRELEASED
 
-_Nothing yet ..._
+**Changed**
+- bpk-component-icon
+- bpk-mixins
+- bpk-svgs
+  - chevron icon has been made more pointy
 
 ## 2017-01-11 - Custom classNames and arbitraty props for bpk-component-link
 
