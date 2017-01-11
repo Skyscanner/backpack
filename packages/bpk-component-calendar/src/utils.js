@@ -4,12 +4,14 @@ import startOfWeek from 'date-fns/start_of_week';
 import lastDayOfWeek from 'date-fns/last_day_of_week';
 import startOfToday from 'date-fns/start_of_today';
 import eachDay from 'date-fns/each_day';
+import getDay from 'date-fns/get_day';
 
 import isWithinRange from 'date-fns/is_within_range';
 import isToday from 'date-fns/is_today';
 import isSaturday from 'date-fns/is_saturday';
 import isSunday from 'date-fns/is_sunday';
 import isSameDay from 'date-fns/is_same_day';
+import isSameMonth from 'date-fns/is_same_month';
 
 import addDays from 'date-fns/add_days';
 import addWeeks from 'date-fns/add_weeks';
@@ -61,16 +63,19 @@ const parseIsoDate = parse;
 const formatIso = date => format(date);
 const formatIsoDate = date => format(date, 'YYYY-MM-DD');
 const formatIsoMonth = date => format(date, 'YYYY-MM');
+const formatHumanDate = date => format(date, 'dddd, Do MMMM YYYY');
 
 export {
   getCalendarMonthWeeks,
   getMonthsInRange,
   getMonthRange,
+  getDay,
   isWithinRange,
   isSaturday,
   isSunday,
   isToday,
   isSameDay,
+  isSameMonth,
   isDisabled,
   addMonths,
   addDays,
@@ -79,5 +84,6 @@ export {
   formatIso,
   formatIsoDate,
   formatIsoMonth,
+  formatHumanDate,
   parseIsoDate,
 };

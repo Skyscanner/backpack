@@ -584,21 +584,15 @@
     },
     {
       "category": "calendars",
-      "value": "rgb(0, 178, 214)",
+      "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "calendarDaySelectedColor"
     },
     {
       "category": "calendars",
-      "value": "rgb(255, 255, 255)",
-      "type": "color",
-      "name": "calendarDaySelectedBackgroundColor"
-    },
-    {
-      "category": "calendars",
       "value": "rgb(0, 178, 214)",
       "type": "color",
-      "name": "calendarDaySelectedBorderColor"
+      "name": "calendarDaySelectedBackgroundColor"
     },
     {
       "category": "calendars",
@@ -635,6 +629,18 @@
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "calendarDayDisabledBackgroundColor"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(178, 174, 189)",
+      "type": "color",
+      "name": "calendarDayOutsideColor"
+    },
+    {
+      "category": "calendars",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "calendarDayOutsideBackgroundColor"
     },
     {
       "category": "calendars",

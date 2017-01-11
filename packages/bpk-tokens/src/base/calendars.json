@@ -27,14 +27,10 @@
       "type": "color"
     },
     "CALENDAR_DAY_SELECTED_COLOR": {
-      "value": "{!BLUE_500}",
-      "type": "color"
-    },
-    "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
       "value": "{!WHITE}",
       "type": "color"
     },
-    "CALENDAR_DAY_SELECTED_BORDER_COLOR": {
+    "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
       "value": "{!BLUE_500}",
       "type": "color"
     },
@@ -59,6 +55,14 @@
       "type": "color"
     },
     "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_OUTSIDE_COLOR": {
+      "value": "{!GRAY_300}",
+      "type": "color"
+    },
+    "CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR": {
       "value": "{!WHITE}",
       "type": "color"
     },

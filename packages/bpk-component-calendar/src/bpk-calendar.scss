@@ -5,6 +5,10 @@
   border-collapse: collapse;
   border-spacing: 0;
 
+  .bpk-calendar-nav + & {
+    margin-top: $bpk-spacing-xs;
+  }
+
   &__header {
     font-size: $bpk-font-size-sm;
     line-height: $bpk-line-height-sm;
@@ -14,7 +18,11 @@
 
   &__header-weekday {
     padding: $bpk-spacing-xs;
-    font-weight: bold;
+    font-weight: normal;
+
+    &--weekend {
+      font-weight: bold;
+    }
   }
 
   &__date {
@@ -43,27 +51,47 @@
 }
 
 .bpk-calendar-date {
-  width: 100%;
-  height: 100%;
+  width: $bpk-calendar-day-size;
+  height: $bpk-calendar-day-size;
+  border: none;
   border-radius: $bpk-border-radius-pill;
   background-color: $bpk-calendar-day-background-color;
   color: $bpk-calendar-day-color;
   font-size: $bpk-font-size-base;
-  line-height: $bpk-calendar-day-size;
   text-align: center;
+  appearance: none;
   cursor: pointer;
+  box-sizing: border-box;
 
   @include bpk-hover {
-    background-color: $bpk-calendar-day-hover-background-color;
-    color: $bpk-calendar-day-hover-color;
+    &:not(.bpk-calendar-date--selected) {
+      background-color: $bpk-calendar-day-hover-background-color;
+      color: $bpk-calendar-day-hover-color;
+    }
   }
 
-  &:active {
+  &:not(.bpk-calendar-date--selected):active {
     background-color: $bpk-calendar-day-active-background-color;
     color: $bpk-calendar-day-active-color;
   }
 
-  &--disabled { // TODO: make :disabled as part of BPK-374
+  &--outside {
+    background-color: $bpk-calendar-day-outside-background-color;
+    color: $bpk-calendar-day-outside-color;
+  }
+
+  &--today {
+    font-weight: bold;
+  }
+
+  &--selected {
+    background-color: $bpk-calendar-day-selected-background-color;
+    color: $bpk-calendar-day-selected-color;
+    font-weight: bold;
+    cursor: default;
+  }
+
+  &:disabled {
     background-color: $bpk-calendar-day-disabled-background-color;
     color: $bpk-calendar-day-disabled-color;
     cursor: not-allowed;
@@ -77,18 +105,6 @@
       background-color: $bpk-calendar-day-disabled-background-color;
       color: $bpk-calendar-day-disabled-color;
     }
-  }
-
-  &--today {
-    font-weight: bold;
-  }
-
-  &--selected {
-    background-color: $bpk-calendar-day-selected-background-color;
-    color: $bpk-calendar-day-selected-color;
-    font-weight: bold;
-    box-shadow: 0 0 0 2px $bpk-calendar-day-selected-border-color inset;
-    cursor: default;
   }
 }
 
@@ -111,6 +127,7 @@
   }
 
   &__button {
+    width: 100%;
     height: $bpk-select-height;
     padding: $bpk-select-padding-top 0 $bpk-select-padding-bottom 0;
     appearance: none;
@@ -141,6 +158,12 @@
       .bpk-calendar-nav__icon {
         fill: $bpk-calendar-nav-icon-disabled-fill;
       }
+    }
+  }
+
+  &__text {
+    &--hidden {
+      @include bpk-visually-hidden();
     }
   }
 }
