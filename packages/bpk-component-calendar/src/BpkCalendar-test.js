@@ -1,14 +1,9 @@
-jest.mock('./BpkCalendarGrid', () => 'BpkCalendarGrid');
-jest.mock('./BpkCalendarNav', () => 'BpkCalendarNav');
-
-/* eslint-disable import/first */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import format from 'date-fns/format';
 import BpkCalendar from './BpkCalendar';
 import { weekDays } from '../stories-data';
-/* eslint-enable */
 
 const formatMonth = date => format(date, 'MMMM YYYY');
 

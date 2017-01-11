@@ -21,7 +21,7 @@ describe('BpkCalendarNav', () => {
   });
 
   it('should call the onChangeMonth callback when nudging/selecting month', () => {
-    const onChangeMonth = jest.fn();
+    const onChangeMonth = jest.fn(); // TODO bug here
 
     const nav = shallow(<BpkCalendarNav
       month={new Date(2010, 1, 1)}

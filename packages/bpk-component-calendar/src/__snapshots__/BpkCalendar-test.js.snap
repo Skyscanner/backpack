@@ -1,72 +1,831 @@
 exports[`BpkCalendar should render correctly 1`] = `
 <div
   className="bpk-calendar">
-  <BpkCalendarNav
-    changeMonthLabel="Change month"
-    formatMonth={[Function]}
-    id="myCalendar__bpk_calendar_nav"
-    maxDate={2010-03-15T00:00:00.000Z}
-    minDate={2010-02-15T00:00:00.000Z}
-    month={2010-02-01T00:00:00.000Z}
-    onChangeMonth={[Function]} />
-  <BpkCalendarGrid
-    dateModifiers={
-      Object {
-        "disabled": [Function],
-        "outside": [Function],
-        "today": [Function],
-      }
-    }
-    daysOfWeek={
-      Array [
-        Object {
-          "index": 0,
-          "isWeekend": true,
-          "name": "Sunday",
-          "nameAbbr": "Sun",
-        },
-        Object {
-          "index": 1,
-          "isWeekend": false,
-          "name": "Monday",
-          "nameAbbr": "Mon",
-        },
-        Object {
-          "index": 2,
-          "isWeekend": false,
-          "name": "Tuesday",
-          "nameAbbr": "Tue",
-        },
-        Object {
-          "index": 3,
-          "isWeekend": false,
-          "name": "Wednesday",
-          "nameAbbr": "Wed",
-        },
-        Object {
-          "index": 4,
-          "isWeekend": false,
-          "name": "Thursday",
-          "nameAbbr": "Thu",
-        },
-        Object {
-          "index": 5,
-          "isWeekend": false,
-          "name": "Friday",
-          "nameAbbr": "Fri",
-        },
-        Object {
-          "index": 6,
-          "isWeekend": true,
-          "name": "Saturday",
-          "nameAbbr": "Sat",
-        },
-      ]
-    }
-    getDateComponent={[Function]}
-    month={2010-02-01T00:00:00.000Z}
-    onDateClick={[Function]}
-    showWeekendSeparator={true}
-    weekStartsOn={1} />
+  <div
+    className="bpk-calendar-nav">
+    <div
+      className="bpk-calendar-nav__nudger">
+      <button
+        className="bpk-calendar-nav__button"
+        disabled={true}
+        onClick={[Function]}
+        type="button">
+        <svg
+          className="bpk-calendar-nav__icon"
+          height="18"
+          viewBox="0 0 18 18"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M14 2.5v13.1c0 1.3-1.5 1.9-2.4 1.1l-7.1-6.6c-.7-.6-.7-1.6 0-2.2l7.1-6.5c.9-.9 2.4-.2 2.4 1.1z" />
+        </svg>
+        <span
+          className="bpk-calendar-nav__text--hidden">
+          January 2010
+        </span>
+      </button>
+    </div>
+    <div
+      className="bpk-calendar-nav__month">
+      <label
+        className="bpk-calendar-nav__text--hidden"
+        htmlFor="myCalendar__bpk_calendar_nav_select">
+        Change month
+      </label>
+      <select
+        className="bpk-select"
+        id="myCalendar__bpk_calendar_nav_select"
+        name="months"
+        onChange={[Function]}
+        value="2010-02">
+        <option
+          value="2010-02">
+          February 2010
+        </option>
+        <option
+          value="2010-03">
+          March 2010
+        </option>
+      </select>
+    </div>
+    <div
+      className="bpk-calendar-nav__nudger">
+      <button
+        className="bpk-calendar-nav__button"
+        disabled={false}
+        onClick={[Function]}
+        type="button">
+        <svg
+          className="bpk-calendar-nav__icon"
+          height="18"
+          viewBox="0 0 18 18"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M4 2.5v13.1c0 1.3 1.5 1.9 2.4 1.1l7.1-6.5c.7-.6.7-1.6 0-2.2L6.4 1.4C5.5.5 4 1.2 4 2.5z" />
+        </svg>
+        <span
+          className="bpk-calendar-nav__text--hidden">
+          March 2010
+        </span>
+      </button>
+    </div>
+  </div>
+  <table
+    className="bpk-calendar-grid">
+    <thead>
+      <tr
+        className="bpk-calendar-grid__header">
+        <th
+          className="bpk-calendar-grid__header-weekday"
+          title="Monday">
+          <span
+            aria-hidden="true">
+            Mon
+          </span>
+        </th>
+        <th
+          className="bpk-calendar-grid__header-weekday"
+          title="Tuesday">
+          <span
+            aria-hidden="true">
+            Tue
+          </span>
+        </th>
+        <th
+          className="bpk-calendar-grid__header-weekday"
+          title="Wednesday">
+          <span
+            aria-hidden="true">
+            Wed
+          </span>
+        </th>
+        <th
+          className="bpk-calendar-grid__header-weekday"
+          title="Thursday">
+          <span
+            aria-hidden="true">
+            Thu
+          </span>
+        </th>
+        <th
+          className="bpk-calendar-grid__header-weekday"
+          title="Friday">
+          <span
+            aria-hidden="true">
+            Fri
+          </span>
+        </th>
+        <th
+          className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
+          title="Saturday">
+          <span
+            aria-hidden="true">
+            Sat
+          </span>
+        </th>
+        <th
+          className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
+          title="Sunday">
+          <span
+            aria-hidden="true">
+            Sun
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="bpk-calendar-grid__week">
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-01">
+          <button
+            aria-label="Monday, 1st February 2010"
+            className="bpk-calendar-date bpk-calendar-date--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              1
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-02">
+          <button
+            aria-label="Tuesday, 2nd February 2010"
+            className="bpk-calendar-date bpk-calendar-date--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              2
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-03">
+          <button
+            aria-label="Wednesday, 3rd February 2010"
+            className="bpk-calendar-date bpk-calendar-date--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              3
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-04">
+          <button
+            aria-label="Thursday, 4th February 2010"
+            className="bpk-calendar-date bpk-calendar-date--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              4
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-05">
+          <button
+            aria-label="Friday, 5th February 2010"
+            className="bpk-calendar-date bpk-calendar-date--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              5
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+          data-date="2010-02-06">
+          <button
+            aria-label="Saturday, 6th February 2010"
+            className="bpk-calendar-date bpk-calendar-date--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              6
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+          data-date="2010-02-07">
+          <button
+            aria-label="Sunday, 7th February 2010"
+            className="bpk-calendar-date bpk-calendar-date--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              7
+            </span>
+          </button>
+        </td>
+      </tr>
+      <tr
+        className="bpk-calendar-grid__week">
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-08">
+          <button
+            aria-label="Monday, 8th February 2010"
+            className="bpk-calendar-date bpk-calendar-date--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              8
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-09">
+          <button
+            aria-label="Tuesday, 9th February 2010"
+            className="bpk-calendar-date bpk-calendar-date--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              9
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-10">
+          <button
+            aria-label="Wednesday, 10th February 2010"
+            className="bpk-calendar-date bpk-calendar-date--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              10
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-11">
+          <button
+            aria-label="Thursday, 11th February 2010"
+            className="bpk-calendar-date bpk-calendar-date--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              11
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-12">
+          <button
+            aria-label="Friday, 12th February 2010"
+            className="bpk-calendar-date bpk-calendar-date--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              12
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+          data-date="2010-02-13">
+          <button
+            aria-label="Saturday, 13th February 2010"
+            className="bpk-calendar-date bpk-calendar-date--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              13
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+          data-date="2010-02-14">
+          <button
+            aria-label="Sunday, 14th February 2010"
+            className="bpk-calendar-date bpk-calendar-date--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              14
+            </span>
+          </button>
+        </td>
+      </tr>
+      <tr
+        className="bpk-calendar-grid__week">
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-15">
+          <button
+            aria-label="Monday, 15th February 2010"
+            className="bpk-calendar-date"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              15
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-16">
+          <button
+            aria-label="Tuesday, 16th February 2010"
+            className="bpk-calendar-date"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              16
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-17">
+          <button
+            aria-label="Wednesday, 17th February 2010"
+            className="bpk-calendar-date"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              17
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-18">
+          <button
+            aria-label="Thursday, 18th February 2010"
+            className="bpk-calendar-date"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              18
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-19">
+          <button
+            aria-label="Friday, 19th February 2010"
+            className="bpk-calendar-date"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              19
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+          data-date="2010-02-20">
+          <button
+            aria-label="Saturday, 20th February 2010"
+            className="bpk-calendar-date"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              20
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+          data-date="2010-02-21">
+          <button
+            aria-label="Sunday, 21st February 2010"
+            className="bpk-calendar-date"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              21
+            </span>
+          </button>
+        </td>
+      </tr>
+      <tr
+        className="bpk-calendar-grid__week">
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-22">
+          <button
+            aria-label="Monday, 22nd February 2010"
+            className="bpk-calendar-date"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              22
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-23">
+          <button
+            aria-label="Tuesday, 23rd February 2010"
+            className="bpk-calendar-date"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              23
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-24">
+          <button
+            aria-label="Wednesday, 24th February 2010"
+            className="bpk-calendar-date"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              24
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-25">
+          <button
+            aria-label="Thursday, 25th February 2010"
+            className="bpk-calendar-date"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              25
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-02-26">
+          <button
+            aria-label="Friday, 26th February 2010"
+            className="bpk-calendar-date"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              26
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+          data-date="2010-02-27">
+          <button
+            aria-label="Saturday, 27th February 2010"
+            className="bpk-calendar-date"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              27
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+          data-date="2010-02-28">
+          <button
+            aria-label="Sunday, 28th February 2010"
+            className="bpk-calendar-date"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              28
+            </span>
+          </button>
+        </td>
+      </tr>
+      <tr
+        className="bpk-calendar-grid__week">
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-03-01">
+          <button
+            aria-label="Monday, 1st March 2010"
+            className="bpk-calendar-date bpk-calendar-date--outside"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              1
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-03-02">
+          <button
+            aria-label="Tuesday, 2nd March 2010"
+            className="bpk-calendar-date bpk-calendar-date--outside"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              2
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-03-03">
+          <button
+            aria-label="Wednesday, 3rd March 2010"
+            className="bpk-calendar-date bpk-calendar-date--outside"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              3
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-03-04">
+          <button
+            aria-label="Thursday, 4th March 2010"
+            className="bpk-calendar-date bpk-calendar-date--outside"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              4
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-03-05">
+          <button
+            aria-label="Friday, 5th March 2010"
+            className="bpk-calendar-date bpk-calendar-date--outside"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              5
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+          data-date="2010-03-06">
+          <button
+            aria-label="Saturday, 6th March 2010"
+            className="bpk-calendar-date bpk-calendar-date--outside"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              6
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+          data-date="2010-03-07">
+          <button
+            aria-label="Sunday, 7th March 2010"
+            className="bpk-calendar-date bpk-calendar-date--outside"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              7
+            </span>
+          </button>
+        </td>
+      </tr>
+      <tr
+        className="bpk-calendar-grid__week">
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-03-08">
+          <button
+            aria-label="Monday, 8th March 2010"
+            className="bpk-calendar-date bpk-calendar-date--outside"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              8
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-03-09">
+          <button
+            aria-label="Tuesday, 9th March 2010"
+            className="bpk-calendar-date bpk-calendar-date--outside"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              9
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-03-10">
+          <button
+            aria-label="Wednesday, 10th March 2010"
+            className="bpk-calendar-date bpk-calendar-date--outside"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              10
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-03-11">
+          <button
+            aria-label="Thursday, 11th March 2010"
+            className="bpk-calendar-date bpk-calendar-date--outside"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              11
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date"
+          data-date="2010-03-12">
+          <button
+            aria-label="Friday, 12th March 2010"
+            className="bpk-calendar-date bpk-calendar-date--outside"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              12
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+          data-date="2010-03-13">
+          <button
+            aria-label="Saturday, 13th March 2010"
+            className="bpk-calendar-date bpk-calendar-date--outside"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              13
+            </span>
+          </button>
+        </td>
+        <td
+          className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+          data-date="2010-03-14">
+          <button
+            aria-label="Sunday, 14th March 2010"
+            className="bpk-calendar-date bpk-calendar-date--outside"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={-1}
+            type="button">
+            <span
+              aria-hidden="true">
+              14
+            </span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;

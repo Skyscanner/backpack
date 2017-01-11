@@ -17,12 +17,7 @@ import {
 import CustomPropTypes from './custom-proptypes';
 import './bpk-calendar.scss';
 
-const getDateComponent = dateModifiers => (dcProps) => {
-  const modifiers = dateModifiers;
-  return (
-    <BpkCalendarDate modifiers={modifiers} {...dcProps} />
-  );
-};
+const getDateComponent = modifiers => props => <BpkCalendarDate modifiers={modifiers} {...props} />;
 
 class BpkCalendar extends Component {
   constructor(props) {

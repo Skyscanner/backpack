@@ -63,7 +63,7 @@ const Week = (props) => {
       >
         <DateComponent
           date={date}
-          aria-label={props.formatA11yDate(date)}
+          aria-label={props.formatDateFull(date)}
           onClick={() => { if (onDateClick) { onDateClick(date); } }}
         />
       </DateContainer>
@@ -76,7 +76,7 @@ Week.propTypes = {
   dates: PropTypes.arrayOf(Date),
   dateComponent: PropTypes.func,
   onDateClick: PropTypes.func,
-  formatA11yDate: PropTypes.func,
+  formatDateFull: PropTypes.func,
   showWeekendSeparator: PropTypes.bool,
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
 };
@@ -91,8 +91,6 @@ const DateContainer = (props) => {
   if (props.weekendStart) { classNames.push('bpk-calendar-grid__date--weekend-start'); }
   if (props.weekendEnd) { classNames.push('bpk-calendar-grid__date--weekend-end'); }
 
-  // TODO: To be dealt with in BPK-374
-  /* eslint-disable jsx-a11y/no-static-element-interactions */
   return (
     <td
       key={date.toDateString()}
@@ -102,7 +100,6 @@ const DateContainer = (props) => {
       { props.children }
     </td>
   );
-  /* eslint-enable jsx-a11y/no-static-element-interactions */
 };
 
 DateContainer.propTypes = {
@@ -124,7 +121,7 @@ const BpkCalendarGrid = (props) => {
   const {
     onDateClick,
     showWeekendSeparator,
-    formatA11yDate,
+    formatDateFull,
     daysOfWeek,
     weekStartsOn,
   } = props;
@@ -136,7 +133,6 @@ const BpkCalendarGrid = (props) => {
 
   const calendarMonthWeeks = getCalendarMonthWeeks(props.month, props.weekStartsOn);
 
-  // debugger;
   const dateComponent = props.getDateComponent(props.dateModifiers);
 
   return (
@@ -160,7 +156,7 @@ const BpkCalendarGrid = (props) => {
             onDateClick={onDateClick}
             showWeekendSeparator={showWeekendSeparator}
             daysOfWeek={daysOfWeek}
-            formatA11yDate={formatA11yDate}
+            formatDateFull={formatDateFull}
           />
         )) }
       </tbody>
@@ -175,14 +171,14 @@ BpkCalendarGrid.propTypes = {
   getDateComponent: PropTypes.func.isRequired,
   showWeekendSeparator: PropTypes.bool,
   onDateClick: PropTypes.func,
-  formatA11yDate: PropTypes.func,
+  formatDateFull: PropTypes.func,
   dateModifiers: BpkCalendarDate.propTypes.modifiers,
 };
 
 BpkCalendarGrid.defaultProps = {
   showWeekendSeparator: false,
   onDateClick: null,
-  formatA11yDate: formatHumanDate,
+  formatDateFull: formatHumanDate,
   dateModifiers: {},
 };
 

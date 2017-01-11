@@ -160,6 +160,12 @@
       }
     }
   }
+
+  &__text {
+    &--hidden {
+      @include bpk-visually-hidden();
+    }
+  }
 }
 
 .bpk-calendar {
