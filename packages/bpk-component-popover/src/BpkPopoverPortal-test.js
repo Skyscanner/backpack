@@ -1,23 +1,24 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-jest.mock('react-addons-css-transition-group');
+jest.mock('tether');
 
 /* eslint-disable import/first */
-import BpkModalDialog from './BpkModalDialog';
+import BpkPopoverPortal from './BpkPopoverPortal';
 /* eslint-enable */
 
-describe('BpkModalDialog', () => {
+describe('BpkPopoverPortal', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
-      <BpkModalDialog
-        title="Modal title"
+      <BpkPopoverPortal
+        target={<div>target</div>}
+        isOpen
         onClose={() => null}
-        getApplicationElement={() => null}
       >
-        Modal content
-      </BpkModalDialog>,
+        <div>My popover content</div>
+      </BpkPopoverPortal>,
     ).toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 });

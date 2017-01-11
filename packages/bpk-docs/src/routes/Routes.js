@@ -30,8 +30,8 @@ import BadgePage from './../pages/BadgePage';
 
 import NotificationsPage from './../pages/NotificationsPage';
 import ModalsPage from './../pages/ModalsPage';
-
 import AutosuggestPage from './../pages/AutosuggestPage';
+import PopoverPage from './../pages/PopoverPage';
 
 import DownloadsPage from './../pages/DownloadsPage';
 import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages';
@@ -70,9 +70,7 @@ const Routes = (
         <Route path={ROUTES.NOTIFICATIONS} component={NotificationsPage} />
         <Route path={ROUTES.MODALS} component={ModalsPage} />
         <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
-      </Route>
-      <Route path={ROUTES.ORGANISMS}>
-        <IndexRedirect to={ROUTES.GETTING_STARTED} />
+        <Route path={ROUTES.POPOVER} component={PopoverPage} />
       </Route>
     </Route>
     <Route path={ROUTES.DOWNLOADS} component={DownloadsPage} />

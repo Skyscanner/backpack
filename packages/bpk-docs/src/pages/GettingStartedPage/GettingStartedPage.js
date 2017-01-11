@@ -26,11 +26,10 @@ const components = [
         use <BpkRouterLink to={ROUTES.BACKPACK_REACT_SCRIPTS}>Backpack React Scripts</BpkRouterLink>.
       </BpkParagraph>,
       <BpkParagraph>
-        All <BpkRouterLink to={ROUTES.ATOMS}>atoms</BpkRouterLink>
-        , <BpkRouterLink to={ROUTES.MOLECULES}>molecules</BpkRouterLink>
-        &nbsp;and <BpkRouterLink to={ROUTES.ORGANISMS}>organisms</BpkRouterLink> are available to consume as React
-        components, exposed as modules on the npm registry. They encapsulate markup, style and logic which means that
-        achieving a consistent look and feel across Skyscanner products is as straightforward as:
+        All <BpkRouterLink to={ROUTES.ATOMS}>atoms</BpkRouterLink> and <BpkRouterLink to={ROUTES.MOLECULES}>molecules
+        </BpkRouterLink> are available to consume as React components, exposed as modules on the npm registry. They
+        encapsulate markup, style and logic which means that achieving a consistent look and feel across Skyscanner
+        products is as straightforward as:
       </BpkParagraph>,
       <BpkList ordered>
         <BpkListItem>

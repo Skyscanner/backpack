@@ -45,12 +45,12 @@ class App extends Component {
         <div id='application-container'>
           <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
         </div>
-        <BpkModal 
-          isOpen={this.state.isOpen} 
+        <BpkModal
+          isOpen={this.state.isOpen}
           onClose={this.onClose}
           title='Modal title'
           closeLabel='Close modal'
-          getApplicationElement={() => 
+          getApplicationElement={() =>
             document.getElementById('application-container')
           }>
           This is a modal. You can put anything you want in here.
@@ -61,8 +61,8 @@ class App extends Component {
 }
 ```
 
-> **Note:** In order to "hide" your application from screenreaders whilst the modal is open you need to let it know what 
-  the root element for your application is by returning it's DOM node via the function passed to the 
+> **Note:** In order to "hide" your application from screenreaders whilst the modal is open you need to let it know what
+  the root element for your application is by returning it's DOM node via the function passed to the
   `getApplicationElement` prop (see the example above).
 
 ### Props

@@ -36,6 +36,7 @@
     "bpk-component-logo": "^1.0.25",
     "bpk-component-modal": "^0.3.6",
     "bpk-component-paragraph": "^0.1.42",
+    "bpk-component-popover": "^0.0.0",
     "bpk-component-radio": "^0.0.32",
     "bpk-component-router-link": "^0.1.41",
     "bpk-component-rtl-toggle": "^0.0.26",
