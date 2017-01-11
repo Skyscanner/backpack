@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+- bpk-component-link:
+  - BpkLink and BpkButtonLink now pass through arbitrary props to `<a>` and `<button>` tag respectively
+  - BpkLink and BpkButtonLink now properly handle className passed as prop
 
 ## 2017-01-10 - Added inline styling and css module support for button & autosuggest
 

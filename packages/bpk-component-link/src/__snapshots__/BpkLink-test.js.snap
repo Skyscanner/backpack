@@ -8,6 +8,16 @@ exports[`BpkLink should render correctly with a "blank" attribute 1`] = `
 </a>
 `;
 
+exports[`BpkLink should render correctly with a "className" attribute 1`] = `
+<a
+  className="bpk-link test-class"
+  href="#"
+  onClick={null}
+  target={null}>
+  Link
+</a>
+`;
+
 exports[`BpkLink should render correctly with a "href" attribute 1`] = `
 <a
   className="bpk-link"
@@ -22,6 +32,17 @@ exports[`BpkLink should render correctly with a "white" attribute 1`] = `
 <a
   className="bpk-link bpk-link--white"
   href="#"
+  onClick={null}
+  target={null}>
+  Link
+</a>
+`;
+
+exports[`BpkLink should render correctly with arbitrary attributes 1`] = `
+<a
+  className="bpk-link"
+  href="#"
+  id="test-id"
   onClick={null}
   target={null}>
   Link
