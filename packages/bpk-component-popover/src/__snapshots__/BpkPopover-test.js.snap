@@ -6,8 +6,20 @@ exports[`BpkPopover should render correctly 1`] = `
     className="bpk-popover__arrow"
     role="presentation" />
   <div
-    className="bpk-popover__inner bpk-popover__inner--padded">
-    My popover content
+    className="bpk-popover__inner">
+    <div
+      className="bpk-popover__body bpk-popover__body--padded">
+      My popover content
+    </div>
+    <footer
+      className="bpk-popover__footer">
+      <button
+        className="bpk-link"
+        onClick={[Function]}
+        type="button">
+        Close
+      </button>
+    </footer>
   </div>
 </section>
 `;
@@ -20,8 +32,20 @@ exports[`BpkPopover should render correctly with "className" attribute 1`] = `
     className="bpk-popover__arrow"
     role="presentation" />
   <div
-    className="bpk-popover__inner bpk-popover__inner--padded">
-    My popover content
+    className="bpk-popover__inner">
+    <div
+      className="bpk-popover__body bpk-popover__body--padded">
+      My popover content
+    </div>
+    <footer
+      className="bpk-popover__footer">
+      <button
+        className="bpk-link"
+        onClick={[Function]}
+        type="button">
+        Close
+      </button>
+    </footer>
   </div>
 </section>
 `;
@@ -35,7 +59,19 @@ exports[`BpkPopover should render correctly with "padded" attribute equal to fal
     role="presentation" />
   <div
     className="bpk-popover__inner">
-    My popover content
+    <div
+      className="bpk-popover__body">
+      My popover content
+    </div>
+    <footer
+      className="bpk-popover__footer">
+      <button
+        className="bpk-link"
+        onClick={[Function]}
+        type="button">
+        Close
+      </button>
+    </footer>
   </div>
 </section>
 `;

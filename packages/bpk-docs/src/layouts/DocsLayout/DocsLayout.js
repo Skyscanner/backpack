@@ -45,7 +45,7 @@ const links = [
       { route: routes.NOTIFICATIONS, children: 'Notifications' },
       { route: routes.MODALS, children: 'Modals' },
       { route: routes.AUTOSUGGEST, children: 'Autosuggest' },
-      // { route: routes.POPOVER, children: 'Popover' },
+      // { route: routes.POPOVERS, children: 'Popover' },
       { route: null, children: 'Popover' },
       { route: null, children: 'Tooltip' },
       { route: null, children: 'Pagination' },

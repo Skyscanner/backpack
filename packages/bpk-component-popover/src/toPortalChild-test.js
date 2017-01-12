@@ -1,23 +1,18 @@
-import { mount } from 'enzyme';
-import React, { PropTypes } from 'react';
+import React from 'react';
+import renderer from 'react-test-renderer';
 
 import toPortalChild from './toPortalChild';
 
 describe('toPortalChild', () => {
-  it('should map "closePortal" prop to "onClose" prop', () => {
-    const MyComponent = props => <button onClick={props.onClose}>test</button>;
-    MyComponent.propTypes = { onClose: PropTypes.func };
+  it('should omit "closePortal" prop from being applied to composed component', () => {
+    const MyComponent = props => <button {...props}>test</button>;
 
     const MyPortalChildComponent = toPortalChild(MyComponent);
 
-    const closePortalMock = jest.fn();
+    const tree = renderer.create(
+      <MyPortalChildComponent closePortal={() => null} />,
+    ).toJSON();
 
-    const component = mount(
-      <MyPortalChildComponent closePortal={closePortalMock} />,
-    );
-
-    component.find('button').simulate('click');
-
-    expect(closePortalMock).toHaveBeenCalled();
+    expect(tree).toMatchSnapshot();
   });
 });

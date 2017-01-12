@@ -29,7 +29,7 @@ export const MOLECULES = '/docs/molecules';
 export const NOTIFICATIONS = '/docs/molecules/notifications';
 export const MODALS = '/docs/molecules/modals';
 export const AUTOSUGGEST = '/docs/molecules/autosuggest';
-export const POPOVER = '/docs/molecules/popover';
+export const POPOVERS = '/docs/molecules/popovers';
 
 export const DOWNLOADS = '/downloads';
 

@@ -2,13 +2,6 @@
 
 ## UNRELEASED
 
-**Fixed**
-- bpk-component-icon
-- bpk-mixins
-- bpk-svgs
-  - chevron icon has been made more pointy
-  - long-arrow arrows have a slightly updated style
-
 **Changed**
 - bpk-component-icon
 - bpk-mixins
@@ -16,6 +9,20 @@
  - Removed 'stubby' long-arrow-X icons
  - Renamed long-arrow-X-alt icons to long-arrow-X
  - Consumers who were relying on the 'alt' long arrow should now use the regular version and those who were using the regular version will now see a new style.
+
+**Added**
+- bpk-component-close-button
+  - Pulled close button icon out of BpkModal for use in new popover component too
+
+**Fixed**
+- bpk-component-icon
+- bpk-mixins
+- bpk-svgs
+  - chevron icon has been made more pointy
+  - long-arrow arrows have a slightly updated style
+- bpk-component-modal
+  - `onClose` called twice
+  - Now consumes `bpk-component-close-button`
 
 ## 2017-01-11 - Custom classNames and arbitraty props for bpk-component-link
 

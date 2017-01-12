@@ -107,22 +107,9 @@
 
   &__dialog-close-button {
     float: right;
-    padding: 0;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-    appearance: none;
 
     @include bpk-rtl {
       float: left;
-    }
-  }
-
-  &__dialog-close-icon {
-    fill: $bpk-modal-close-icon-fill;
-
-    @include bpk-hover {
-      fill: $bpk-modal-close-icon-hover-fill;
     }
   }
 

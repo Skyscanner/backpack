@@ -7,6 +7,7 @@ describe('BpkPopover', () => {
     const tree = renderer.create(
       <BpkPopover
         onClose={() => null}
+        closeButtonText="Close"
       >
         My popover content
       </BpkPopover>,
@@ -19,6 +20,7 @@ describe('BpkPopover', () => {
     const tree = renderer.create(
       <BpkPopover
         onClose={() => null}
+        closeButtonText="Close"
         padded={false}
       >
         My popover content
@@ -32,6 +34,7 @@ describe('BpkPopover', () => {
     const tree = renderer.create(
       <BpkPopover
         onClose={() => null}
+        closeButtonText="Close"
         className="my-custom-class"
       >
         My popover content

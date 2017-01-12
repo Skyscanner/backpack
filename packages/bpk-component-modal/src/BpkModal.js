@@ -5,12 +5,14 @@ import BpkModalScrim from './BpkModalScrim';
 import BpkModalDialog from './BpkModalDialog';
 
 const PortalToBpkModal = (props) => {
+  /* eslint-disable no-unused-vars */
   const { closePortal, ...rest } = props;
+  /* eslint-enable */
 
   return (
     <div>
       <BpkModalScrim />
-      <BpkModalDialog onClose={closePortal} {...rest} />
+      <BpkModalDialog {...rest} />
     </div>
   );
 };
@@ -24,7 +26,7 @@ const BpkModal = (props) => {
 
   return (
     <Portal isOpened={isOpen} onClose={onClose} closeOnEsc>
-      <PortalToBpkModal {...rest} />
+      <PortalToBpkModal onClose={onClose} {...rest} />
     </Portal>
   );
 };

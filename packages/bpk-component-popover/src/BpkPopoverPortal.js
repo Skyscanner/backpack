@@ -71,7 +71,7 @@ class BpkPopoverPortal extends Component {
           closeOnEsc
           closeOnOutsideClick
         >
-          <BpkPopoverPortalChild {...rest} />
+          <BpkPopoverPortalChild onClose={onClose} {...rest} />
         </Portal>
       </div>
     );
