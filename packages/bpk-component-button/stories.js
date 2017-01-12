@@ -3,12 +3,12 @@ import { storiesOf, action } from '@kadira/storybook';
 
 import TOKENS from '../bpk-tokens/tokens/base.common';
 import { withButtonAlignment, withLargeButtonAlignment } from '../bpk-component-icon';
-import SmallLongArrowRightAltIcon from '../bpk-component-icon/sm/long-arrow-right-alt';
-import LargeLongArrowRightAltIcon from '../bpk-component-icon/lg/long-arrow-right-alt';
+import SmallLongArrowRightIcon from '../bpk-component-icon/sm/long-arrow-right';
+import LargeLongArrowRightIcon from '../bpk-component-icon/lg/long-arrow-right';
 import BpkButton from './index';
 
-const AlignedSmallLongArrowRightAltIcon = withButtonAlignment(SmallLongArrowRightAltIcon);
-const AlignedLargeLongArrowRightAltIcon = withLargeButtonAlignment(LargeLongArrowRightAltIcon);
+const AlignedSmallLongArrowRightIcon = withButtonAlignment(SmallLongArrowRightIcon);
+const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(LargeLongArrowRightIcon);
 
 storiesOf('bpk-component-button', module)
   .add('Primary', () => (
@@ -60,30 +60,30 @@ storiesOf('bpk-component-button', module)
     <div>
       <div>
         <BpkButton iconOnly onClick={action('iconOnly button clicked')}>
-          <AlignedSmallLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+          <AlignedSmallLongArrowRightIcon fill={TOKENS.colorWhite} />
         </BpkButton>&nbsp;
         <BpkButton iconOnly secondary onClick={action('iconOnly button secondary clicked')}>
-          <AlignedSmallLongArrowRightAltIcon fill={TOKENS.buttonSecondaryColor} />
+          <AlignedSmallLongArrowRightIcon fill={TOKENS.buttonSecondaryColor} />
         </BpkButton>&nbsp;
         <BpkButton iconOnly selected onClick={action('iconOnly button selected clicked')}>
-          <AlignedSmallLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+          <AlignedSmallLongArrowRightIcon fill={TOKENS.colorWhite} />
         </BpkButton>&nbsp;
         <BpkButton iconOnly disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-          <AlignedSmallLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+          <AlignedSmallLongArrowRightIcon fill={TOKENS.colorWhite} />
         </BpkButton>&nbsp;
       </div>
       <div>
         <BpkButton iconOnly large onClick={action('large iconOnly button clicked')}>
-          <AlignedLargeLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+          <AlignedLargeLongArrowRightIcon fill={TOKENS.colorWhite} />
         </BpkButton>&nbsp;
         <BpkButton iconOnly large secondary onClick={action('large iconOnly button secondary clicked')}>
-          <AlignedLargeLongArrowRightAltIcon fill={TOKENS.buttonSecondaryColor} />
+          <AlignedLargeLongArrowRightIcon fill={TOKENS.buttonSecondaryColor} />
         </BpkButton>&nbsp;
         <BpkButton iconOnly large selected onClick={action('large iconOnly button selected clicked')}>
-          <AlignedLargeLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+          <AlignedLargeLongArrowRightIcon fill={TOKENS.colorWhite} />
         </BpkButton>&nbsp;
         <BpkButton iconOnly large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-          <AlignedLargeLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+          <AlignedLargeLongArrowRightIcon fill={TOKENS.colorWhite} />
         </BpkButton>&nbsp;
       </div>
     </div>

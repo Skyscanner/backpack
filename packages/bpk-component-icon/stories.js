@@ -7,12 +7,12 @@ import { BpkList, BpkListItem } from '../bpk-component-list';
 
 import { sm, lg } from './all';
 import { withButtonAlignment, withLargeButtonAlignment, withRtlSupport } from './index';
-import SmallLongArrowRightAltIcon from './sm/long-arrow-right-alt';
-import LargeLongArrowRightAltIcon from './lg/long-arrow-right-alt';
+import SmallLongArrowRightIcon from './sm/long-arrow-right';
+import LargeLongArrowRightIcon from './lg/long-arrow-right';
 
-const AlignedSmallLongArrowRightAltIcon = withButtonAlignment(SmallLongArrowRightAltIcon);
-const AlignedLargeLongArrowRightAltIcon = withLargeButtonAlignment(LargeLongArrowRightAltIcon);
-const RtlAlignedLargeLongArrowRightAltIcon = withRtlSupport(withLargeButtonAlignment(LargeLongArrowRightAltIcon));
+const AlignedSmallLongArrowRightIcon = withButtonAlignment(SmallLongArrowRightIcon);
+const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(LargeLongArrowRightIcon);
+const RtlAlignedLargeLongArrowRightIcon = withRtlSupport(withLargeButtonAlignment(LargeLongArrowRightIcon));
 
 storiesOf('bpk-component-icon', module)
   .add('Small icons', () => (
@@ -41,16 +41,16 @@ storiesOf('bpk-component-icon', module)
   ))
   .add('Align to button', () => (
     <BpkButton>
-      Search <AlignedSmallLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+      Search <AlignedSmallLongArrowRightIcon fill={TOKENS.colorWhite} />
     </BpkButton>
   ))
   .add('Align to large button', () => (
     <BpkButton large>
-      Search <AlignedLargeLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+      Search <AlignedLargeLongArrowRightIcon fill={TOKENS.colorWhite} />
     </BpkButton>
   ))
   .add('Align to large button (RTL support)', () => (
     <BpkButton large>
-      Search <RtlAlignedLargeLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+      Search <RtlAlignedLargeLongArrowRightIcon fill={TOKENS.colorWhite} />
     </BpkButton>
   ));
