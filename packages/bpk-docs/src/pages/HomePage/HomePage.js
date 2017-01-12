@@ -7,13 +7,13 @@ import BpkHeading from 'bpk-component-heading';
 import BpkParagraph from 'bpk-component-paragraph';
 import TOKENS from 'bpk-tokens/tokens/base.common';
 import { withLargeButtonAlignment, withRtlSupport } from 'bpk-component-icon';
-import LongArrowRightAltIcon from 'bpk-component-icon/lg/long-arrow-right-alt';
+import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
 
 import './home-page.scss';
 import * as ROUTES from './../../constants/routes';
 
-const AlignedLongArrowRightAltIcon = withRtlSupport(withLargeButtonAlignment(LongArrowRightAltIcon));
+const AlignedLongArrowRightAltIcon = withRtlSupport(withLargeButtonAlignment(LongArrowRightIcon));
 
 class HomePage extends React.Component {
   constructor(props) {
