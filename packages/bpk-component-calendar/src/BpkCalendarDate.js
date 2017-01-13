@@ -7,6 +7,7 @@ class BpkCalendarDate extends Component {
   componentDidMount() {
     if (this.props.focused) {
       // If we got here by clicking the nudger, don't focus this date
+      // TODO: Won't work with CSS Modules and is relying on the DOM. Need to find better solution.
       if (document.activeElement.className.indexOf('bpk-calendar-nav__button') === -1) {
         this.button.focus();
       }
