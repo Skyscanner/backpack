@@ -1,11 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import format from 'date-fns/format';
 import BpkCalendarView from './BpkCalendarView';
-import { weekDays } from '../test-utils';
-
-const formatMonth = date => format(date, 'MMMM YYYY');
-const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
+import { weekDays, formatMonth, formatDateFull } from '../test-utils';
 
 describe('BpkCalendarView', () => {
   it('should compose BpkCalendarNav and BpkCalendarGrid correctly', () => {

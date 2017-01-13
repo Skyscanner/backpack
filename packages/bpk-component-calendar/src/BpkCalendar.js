@@ -37,7 +37,7 @@ const dateToBoundaries = (date, minDate, maxDate) => {
   return maxDate;
 };
 
-class BpkNavigatableCalendar extends Component {
+class BpkCalendar extends Component {
   constructor(props) {
     super(props);
 
@@ -179,7 +179,7 @@ class BpkNavigatableCalendar extends Component {
   }
 }
 
-BpkNavigatableCalendar.propTypes = {
+BpkCalendar.propTypes = {
   onDateSelect: PropTypes.func,
   initialMonth: PropTypes.instanceOf(Date),
   initialSelectedDate: PropTypes.instanceOf(Date),
@@ -192,7 +192,7 @@ BpkNavigatableCalendar.propTypes = {
   enableSelection: PropTypes.bool,
 };
 
-BpkNavigatableCalendar.defaultProps = {
+BpkCalendar.defaultProps = {
   onDateSelect: null,
   initialMonth: new Date(),
   initialSelectedDate: new Date(),
@@ -204,4 +204,4 @@ BpkNavigatableCalendar.defaultProps = {
   dateModifiers: {},
 };
 
-export default BpkNavigatableCalendar;
+export default BpkCalendar;
