@@ -13,6 +13,7 @@ describe('BpkModalDialog', () => {
       <BpkModalDialog
         title="Modal title"
         onClose={() => null}
+        closeLabel="Close"
         getApplicationElement={() => null}
       >
         Modal content
