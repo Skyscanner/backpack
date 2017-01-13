@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-grid",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "Backpack grid components.",
   "main": "index.js",
   "repository": {
@@ -13,6 +13,6 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^6.8.0"
+    "bpk-mixins": "^7.0.0"
   }
 }
