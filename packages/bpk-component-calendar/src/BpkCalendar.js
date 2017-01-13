@@ -4,7 +4,6 @@ import BpkCalendarView from './BpkCalendarView';
 import {
   addDays,
   addMonths,
-  formatIsoDate,
   isBefore,
   isSameDay,
   isSameMonth,
@@ -86,9 +85,7 @@ class BpkCalendar extends Component {
       this.setState({ selectedDate: date });
       this.setState({ focusedDate: date });
       if (this.props.onDateSelect) {
-        this.props.onDateSelect(
-          formatIsoDate(date),
-        );
+        this.props.onDateSelect(date);
       }
     }
   }
