@@ -1,0 +1,5 @@
+exports[`toPortalChild should omit "closePortal" prop from being applied to composed component 1`] = `
+<button>
+  test
+</button>
+`;

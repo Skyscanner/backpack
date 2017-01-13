@@ -1,4 +1,5 @@
-import cssModules from './src/css-modules';
+import cssModules from './src/cssModules';
+import toPortalChild from './src/toPortalChild';
 
-export { cssModules };
-export default { cssModules };
+export { cssModules, toPortalChild };
+export default { cssModules, toPortalChild };

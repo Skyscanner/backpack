@@ -14,6 +14,7 @@ describe('BpkPopoverPortal', () => {
         target={<div>target</div>}
         isOpen
         onClose={() => null}
+        closeButtonText="Close"
       >
         <div>My popover content</div>
       </BpkPopoverPortal>,

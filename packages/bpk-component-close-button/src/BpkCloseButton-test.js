@@ -1,11 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import BpkModalCloseButton from './BpkModalCloseButton';
 
-describe('BpkModalCloseButton', () => {
+import BpkCloseButton from './BpkCloseButton';
+
+describe('BpkCloseButton', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
-      <BpkModalCloseButton label="Close" onClick={() => null} />,
+      <BpkCloseButton label="Close" onClick={() => null} />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

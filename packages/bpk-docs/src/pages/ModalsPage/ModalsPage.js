@@ -83,7 +83,7 @@ const components = [
     title: 'Text button',
     blurb: [
       <BpkParagraph>
-        The default modal can be configured to display the close button as text - useful for when a close icon
+        Modals can be configured to display the close button as text - useful for when a close icon
         doesn&apos;t fit the context.
       </BpkParagraph>,
     ],

@@ -9,11 +9,11 @@ export default (ComposedComponent) => {
   class ToPortalChildHOC extends Component {
   /* eslint-enable */
     render() {
+      /* eslint-disable no-unused-vars */
       const { closePortal, ...rest } = this.props;
+      /* eslint-enable */
 
-      return (
-        <ComposedComponent onClose={closePortal} {...rest} />
-      );
+      return <ComposedComponent {...rest} />;
     }
   }
 

@@ -3,9 +3,9 @@ import focusStore from 'a11y-focus-store';
 import BpkHeading from 'bpk-component-heading';
 import { BpkButtonLink } from 'bpk-component-link';
 import React, { PropTypes, Component } from 'react';
+import BpkCloseButton from 'bpk-component-close-button';
 
 import './bpk-modal.scss';
-import BpkModalCloseButton from './BpkModalCloseButton';
 import TransitionInitialMount from './TransitionInitialMount';
 import { lockScroll, unlockScroll, storeScroll, restoreScroll } from './scroll-utils';
 
@@ -90,12 +90,17 @@ class BpkModalDialog extends Component {
             <BpkHeading id="aria-label-heading" level="h4" bottomMargin={false}>
               {this.props.title}
             </BpkHeading>
+            &nbsp;
             {this.props.closeText
               ? <BpkButtonLink onClick={this.onClose}>{this.props.closeText}</BpkButtonLink>
-              : <BpkModalCloseButton label={this.props.closeLabel} onClick={this.onClose} />
+              : <BpkCloseButton
+                className="bpk-modal__dialog-close-button"
+                label={this.props.closeLabel}
+                onClick={this.onClose}
+              />
             }
           </header>
-          <div id="aria-label-content" className="bpk-modal__dialog-content">
+          <div className="bpk-modal__dialog-content">
             {this.props.children}
           </div>
         </section>

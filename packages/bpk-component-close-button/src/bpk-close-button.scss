@@ -1,0 +1,17 @@
+@import "~bpk-mixins";
+
+.bpk-close-button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  appearance: none;
+
+  &__icon {
+    fill: $bpk-modal-close-icon-fill;
+
+    @include bpk-hover {
+      fill: $bpk-modal-close-icon-hover-fill;
+    }
+  }
+}

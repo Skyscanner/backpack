@@ -7,6 +7,10 @@
 .bpk-popover {
   outline: 0;
 
+  @include bpk-breakpoint-above-mobile {
+    max-width: $bpk-breakpoint-mobile;
+  }
+
   &__arrow {
     position: absolute;
     display: block;
@@ -63,9 +67,38 @@
     .bpk-popover-tether-element-attached-left & {
       margin-left: $bpk-spacing-sm;
     }
+  }
 
+  &__body {
     &--padded {
       padding: $bpk-spacing-sm;
     }
+  }
+
+  &__header {
+    display: flex;
+    padding: $bpk-modal-header-padding;
+    box-shadow: $bpk-modal-header-box-shadow;
+    justify-content: space-between;
+  }
+
+  &__close-button {
+    float: right;
+
+    @include bpk-rtl {
+      float: left;
+    }
+  }
+
+  &__footer {
+    padding: $bpk-spacing-xs $bpk-spacing-sm;
+    text-align: right;
+    box-shadow: 0 1px 0 0 $bpk-color-gray-100 inset;
+
+    @include bpk-rtl {
+      text-align: left;
+    }
+
+    @include bpk-text-sm;
   }
 }

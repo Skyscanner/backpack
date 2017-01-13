@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import BpkButton from 'bpk-component-button';
 import { storiesOf } from '@kadira/storybook';
+import BpkParagraph from 'bpk-component-paragraph';
+import BpkContentContainer from 'bpk-component-content-container';
 
 import BpkPopover from './index';
 
@@ -37,9 +39,14 @@ class PopoverContainer extends Component {
           </BpkButton>
         }
         onClose={this.closePopover}
+        closeButtonText="Close"
         isOpen={this.state.isOpen}
+        {...this.props}
       >
-        <div>Hello world</div>
+        <BpkContentContainer>
+          <BpkParagraph>My popover content.</BpkParagraph>
+          <BpkParagraph>Some more popover content.</BpkParagraph>
+        </BpkContentContainer>
       </BpkPopover>
     );
   }
@@ -47,7 +54,17 @@ class PopoverContainer extends Component {
 
 storiesOf('bpk-component-popover', module)
   .add('Default', () => (
-    <div style={{ height: '2000px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
       <PopoverContainer />
+    </div>
+  ))
+  .add('With title', () => (
+    <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
+      <PopoverContainer title="My popover" />
+    </div>
+  ))
+  .add('With title but close button text', () => (
+    <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
+      <PopoverContainer title="My popover" closeButtonIcon={false} />
     </div>
   ));
