@@ -1,7 +1,10 @@
 import React, { PropTypes } from 'react';
 
-import BpkCalendarDate from './BpkCalendarDate';
-import { getCalendarMonthWeeks, formatIsoDate, formatHumanDate, getDay } from './utils';
+import {
+  formatIsoDate,
+  getCalendarMonthWeeks,
+  getDay,
+} from './date-utils';
 import CustomPropTypes from './custom-proptypes';
 import './bpk-calendar.scss';
 
@@ -22,19 +25,21 @@ const WeekDay = (props) => {
 };
 
 WeekDay.propTypes = {
-  weekDay: CustomPropTypes.WeekDay,
-  isWeekend: PropTypes.bool,
+  weekDay: CustomPropTypes.WeekDay.isRequired,
 };
 
 /*
   Week - table row containing a week full of DateContainer components
 */
 const Week = (props) => {
-  const DateComponent = props.dateComponent;
   const {
-    onDateClick,
-    showWeekendSeparator,
+    DateComponent,
+    dateModifiers,
     daysOfWeek,
+    formatDateFull,
+    onDateClick,
+    onDateKeyDown,
+    showWeekendSeparator,
   } = props;
 
   const weekend = daysOfWeek.map(day => day.isWeekend);
@@ -63,8 +68,11 @@ const Week = (props) => {
       >
         <DateComponent
           date={date}
-          aria-label={props.formatDateFull(date)}
+          modifiers={dateModifiers}
+          aria-label={formatDateFull(date)}
           onClick={() => { if (onDateClick) { onDateClick(date); } }}
+          onDateKeyDown={onDateKeyDown}
+          focused={dateModifiers.focused ? dateModifiers.focused(date) : false}
         />
       </DateContainer>
     ))}
@@ -73,12 +81,19 @@ const Week = (props) => {
 };
 
 Week.propTypes = {
-  dates: PropTypes.arrayOf(Date),
-  dateComponent: PropTypes.func,
-  onDateClick: PropTypes.func,
-  formatDateFull: PropTypes.func,
-  showWeekendSeparator: PropTypes.bool,
+  DateComponent: PropTypes.func.isRequired,
+  dateModifiers: CustomPropTypes.DateModifiers.isRequired,
+  dates: PropTypes.arrayOf(Date).isRequired,
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
+  formatDateFull: PropTypes.func.isRequired,
+  showWeekendSeparator: PropTypes.bool.isRequired,
+  onDateClick: PropTypes.func,
+  onDateKeyDown: PropTypes.func,
+};
+
+Week.defaultProps = {
+  onDateClick: null,
+  onDateKeyDown: null,
 };
 
 /*
@@ -103,10 +118,10 @@ const DateContainer = (props) => {
 };
 
 DateContainer.propTypes = {
-  date: PropTypes.instanceOf(Date).isRequired,
   children: PropTypes.element.isRequired,
-  weekendStart: PropTypes.bool,
-  weekendEnd: PropTypes.bool,
+  date: PropTypes.instanceOf(Date).isRequired,
+  weekendStart: PropTypes.bool.isRequired,
+  weekendEnd: PropTypes.bool.isRequired,
 };
 
 const reorderWeekDays = (weekDays, weekStartsOn) => [
@@ -119,10 +134,12 @@ const reorderWeekDays = (weekDays, weekStartsOn) => [
 */
 const BpkCalendarGrid = (props) => {
   const {
-    onDateClick,
-    showWeekendSeparator,
-    formatDateFull,
+    DateComponent,
     daysOfWeek,
+    formatDateFull,
+    onDateClick,
+    onDateKeyDown,
+    showWeekendSeparator,
     weekStartsOn,
   } = props;
 
@@ -132,8 +149,6 @@ const BpkCalendarGrid = (props) => {
   );
 
   const calendarMonthWeeks = getCalendarMonthWeeks(props.month, props.weekStartsOn);
-
-  const dateComponent = props.getDateComponent(props.dateModifiers);
 
   return (
     <table className="bpk-calendar-grid">
@@ -152,11 +167,13 @@ const BpkCalendarGrid = (props) => {
           <Week
             key={index}
             dates={dates}
-            dateComponent={dateComponent}
             onDateClick={onDateClick}
+            onDateKeyDown={onDateKeyDown}
             showWeekendSeparator={showWeekendSeparator}
             daysOfWeek={daysOfWeek}
             formatDateFull={formatDateFull}
+            DateComponent={DateComponent}
+            dateModifiers={props.dateModifiers}
           />
         )) }
       </tbody>
@@ -168,17 +185,17 @@ BpkCalendarGrid.propTypes = {
   month: PropTypes.instanceOf(Date).isRequired,
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   weekStartsOn: PropTypes.number.isRequired,
-  getDateComponent: PropTypes.func.isRequired,
-  showWeekendSeparator: PropTypes.bool,
+  DateComponent: PropTypes.func.isRequired,
+  showWeekendSeparator: PropTypes.bool.isRequired,
+  formatDateFull: PropTypes.func.isRequired,
+  dateModifiers: CustomPropTypes.DateModifiers,
   onDateClick: PropTypes.func,
-  formatDateFull: PropTypes.func,
-  dateModifiers: BpkCalendarDate.propTypes.modifiers,
+  onDateKeyDown: PropTypes.func,
 };
 
 BpkCalendarGrid.defaultProps = {
-  showWeekendSeparator: false,
   onDateClick: null,
-  formatDateFull: formatHumanDate,
+  onDateKeyDown: null,
   dateModifiers: {},
 };
 

@@ -1,5 +1,6 @@
 import format from 'date-fns/format';
 
+export const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
 export const formatMonth = date => format(date, 'MMMM YYYY');
 export const formatMonthGerman = (date) => {
   const months = [
