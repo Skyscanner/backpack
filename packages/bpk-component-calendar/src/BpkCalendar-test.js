@@ -67,6 +67,6 @@ describe('BpkCalendar', () => {
 
     grid.prop('onDateClick')(new Date(2010, 1, 20));
     expect(onDateSelect.mock.calls.length).toBe(1);
-    expect(onDateSelect.mock.calls[0][0]).toEqual('2010-02-20');
+    expect(onDateSelect.mock.calls[0][0]).toEqual(new Date(2010, 1, 20));
   });
 });
