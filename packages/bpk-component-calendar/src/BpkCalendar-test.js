@@ -1,35 +1,38 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
-import format from 'date-fns/format';
 import BpkCalendar from './BpkCalendar';
-import { weekDays } from '../stories-data';
+import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
-const formatMonth = date => format(date, 'MMMM YYYY');
+const createNodeMock = () => ({
+  focus: () => null,
+});
 
 describe('BpkCalendar', () => {
   it('should render correctly', () => {
     const tree = renderer.create(<BpkCalendar
       formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
       id="myCalendar"
       minDate={new Date(2010, 1, 15)}
       maxDate={new Date(2010, 2, 15)}
-      initialMonth={new Date(2010, 1, 15)}
-    />).toJSON();
+      initialSelectedDate={new Date(2010, 1, 15)}
+    />, { createNodeMock }).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should change the month', () => {
     const calendar = mount(<BpkCalendar
       formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
       id="myCalendar"
       minDate={new Date(2010, 1, 15)}
       maxDate={new Date(2010, 2, 15)}
-      initialMonth={new Date(2010, 1, 15)}
+      initialSelectedDate={new Date(2010, 1, 15)}
     />);
 
     const grid = calendar.find('BpkCalendarGrid');
@@ -47,12 +50,13 @@ describe('BpkCalendar', () => {
 
     const calendar = mount(<BpkCalendar
       formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
       id="myCalendar"
       minDate={new Date(2010, 1, 15)}
       maxDate={new Date(2010, 2, 15)}
-      initialMonth={new Date(2010, 1, 15)}
+      initialSelectedDate={new Date(2010, 1, 15)}
       onDateSelect={onDateSelect}
     />);
 

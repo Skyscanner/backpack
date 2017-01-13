@@ -1,123 +1,207 @@
 import React, { Component, PropTypes } from 'react';
-
 import objectAssign from 'object-assign';
-import BpkCalendarGrid from './BpkCalendarGrid';
-import BpkCalendarNav from './BpkCalendarNav';
-import BpkCalendarDate from './BpkCalendarDate';
+import BpkCalendarView from './BpkCalendarView';
 import {
-  isToday,
+  addDays,
   addMonths,
+  formatIsoDate,
+  isBefore,
+  isSameDay,
+  isSameMonth,
+  isToday,
   isWithinRange,
-  getMonthRange,
+  lastDayOfMonth,
+  setMonth,
+  setYear,
   startOfMonth,
   startOfToday,
-  formatIsoDate,
-  isSameMonth,
-} from './utils';
+} from './date-utils';
 import CustomPropTypes from './custom-proptypes';
-import './bpk-calendar.scss';
 
-const getDateComponent = modifiers => props => <BpkCalendarDate modifiers={modifiers} {...props} />;
+const getDirection = () => {
+  const html = document.querySelector('html');
+  return window.getComputedStyle(html, null).getPropertyValue('direction');
+};
 
-class BpkCalendar extends Component {
+const setMonthYear = (date, newMonth, newYear) => setYear(
+  setMonth(date, newMonth),
+  newYear,
+);
+
+const dateToBoundaries = (date, minDate, maxDate) => {
+  if (isWithinRange(date, minDate, maxDate)) {
+    return date;
+  } else if (isBefore(date, minDate)) {
+    return minDate;
+  }
+  return maxDate;
+};
+
+class BpkNavigatableCalendar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      currentMonth: startOfMonth(this.props.initialMonth),
-      selectedDate: null,
-    };
+    if (props.enableSelection) {
+      const initialDate = dateToBoundaries(
+        this.props.initialSelectedDate,
+        this.props.minDate,
+        this.props.maxDate,
+      );
 
-    this.onChangeMonth = this.onChangeMonth.bind(this);
+      this.state = {
+        selectedDate: initialDate,
+        focusedDate: initialDate,
+      };
+    } else {
+      const initialFocused = dateToBoundaries(
+        this.props.initialMonth,
+        this.props.minDate,
+        this.props.maxDate,
+      );
+
+      this.state = {
+        selectedDate: null,
+        focusedDate: initialFocused,
+      };
+    }
+
     this.onDateSelect = this.onDateSelect.bind(this);
+    this.onDateFocus = this.onDateFocus.bind(this);
+    this.onDateKeyDown = this.onDateKeyDown.bind(this);
+    this.onChangeMonth = this.onChangeMonth.bind(this);
   }
 
-  onChangeMonth(newMonth) {
-    const { min, max } = getMonthRange(this.props.minDate, this.props.maxDate);
-    if (isWithinRange(newMonth, min, max)) {
-      this.setState({ currentMonth: newMonth });
+  onDateFocus(date) {
+    if (isWithinRange(date, this.props.minDate, this.props.maxDate)) {
+      this.setState({ focusedDate: date });
+    } else if (isBefore(date, this.props.minDate)) {
+      this.setState({ focusedDate: this.props.minDate });
+    } else if (isBefore(this.props.maxDate, date)) {
+      this.setState({ focusedDate: this.props.maxDate });
     }
   }
 
   onDateSelect(date) {
     if (isWithinRange(date, this.props.minDate, this.props.maxDate)) {
       this.setState({ selectedDate: date });
-      this.props.onDateSelect(
-        formatIsoDate(date),
-      );
+      this.setState({ focusedDate: date });
+      if (this.props.onDateSelect) {
+        this.props.onDateSelect(
+          formatIsoDate(date),
+        );
+      }
+    }
+  }
+
+  onChangeMonth(month) {
+    this.onDateFocus(setMonthYear(this.state.focusedDate, month.getMonth(), month.getFullYear()));
+  }
+
+  onDateKeyDown(event) {
+    const reverse = getDirection() === 'rtl' ? -1 : 1;
+    let preventDefault = true;
+
+    switch (event.key) {
+      case 'ArrowRight':
+        this.onDateFocus(addDays(this.state.focusedDate, reverse * 1));
+        break;
+      case 'ArrowLeft':
+        this.onDateFocus(addDays(this.state.focusedDate, reverse * -1));
+        break;
+      case 'ArrowUp':
+        this.onDateFocus(addDays(this.state.focusedDate, -7));
+        break;
+      case 'ArrowDown':
+        this.onDateFocus(addDays(this.state.focusedDate, 7));
+        break;
+      case 'PageUp':
+        this.onDateFocus(addMonths(this.state.focusedDate, -1));
+        break;
+      case 'PageDown':
+        this.onDateFocus(addMonths(this.state.focusedDate, 1));
+        break;
+      case 'Home':
+        this.onDateFocus(startOfMonth(this.state.focusedDate));
+        break;
+      case 'End':
+        this.onDateFocus(lastDayOfMonth(this.state.focusedDate));
+        break;
+      default:
+        preventDefault = false;
+        break;
+    }
+
+    if (preventDefault) {
+      event.preventDefault();
     }
   }
 
   render() {
-    const classNames = ['bpk-calendar'];
+    const {
+      markToday,
+      markOutsideDays,
+      enableSelection,
+      dateModifiers,
+      ...calendarProps
+    } = this.props;
+
+    delete calendarProps.onDateSelect;
+
     const builtinModifiers = {};
 
-    if (this.props.markToday) { builtinModifiers.today = isToday; }
+    if (markToday) { builtinModifiers.today = isToday; }
     if (this.props.minDate && this.props.maxDate) {
       builtinModifiers.disabled = date => !isWithinRange(date, this.props.minDate, this.props.maxDate);
     }
-    if (this.props.markOutsideDays) {
-      builtinModifiers.outside = date => !isSameMonth(date, this.state.currentMonth);
+    if (markOutsideDays) {
+      builtinModifiers.outside = date => !isSameMonth(date, this.state.focusedDate);
+    }
+    if (enableSelection) {
+      builtinModifiers.selected = date => isSameDay(date, this.state.selectedDate);
+      builtinModifiers.focused = date => isSameDay(date, this.state.focusedDate);
     }
 
-    const modifiers = objectAssign({}, builtinModifiers, this.props.dateModifiers);
+    const modifiers = objectAssign({}, builtinModifiers, dateModifiers);
 
     return (
-      <div className={classNames.join(' ')}>
-        <BpkCalendarNav
-          id={`${this.props.id}__bpk_calendar_nav`}
-          month={this.state.currentMonth}
-          minDate={this.props.minDate}
-          maxDate={this.props.maxDate}
-          formatMonth={this.props.formatMonth}
-          onChangeMonth={this.onChangeMonth}
-          changeMonthLabel={this.props.changeMonthLabel}
-        />
-        <BpkCalendarGrid
-          month={this.state.currentMonth}
-          dateModifiers={modifiers}
-          showWeekendSeparator={this.props.showWeekendSeparator}
-          onDateClick={this.onDateSelect}
-          weekStartsOn={this.props.weekStartsOn}
-          daysOfWeek={this.props.daysOfWeek}
-          getDateComponent={this.props.getDateComponent}
-        />
-      </div>
+      <BpkCalendarView
+        onDateClick={this.onDateSelect}
+        onDateFocus={this.onDateFocus}
+        onDateKeyDown={this.onDateKeyDown}
+        onChangeMonth={this.onChangeMonth}
+
+        dateModifiers={modifiers}
+        month={startOfMonth(this.state.focusedDate)}
+        selectedDate={this.state.focusedDate}
+        {...calendarProps}
+      />
     );
   }
 }
 
-BpkCalendar.propTypes = {
-  id: PropTypes.string.isRequired,
-  changeMonthLabel: PropTypes.string.isRequired,
-  formatMonth: PropTypes.func.isRequired,
-  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
+BpkNavigatableCalendar.propTypes = {
   onDateSelect: PropTypes.func,
-  markToday: PropTypes.bool,
-  markOutsideDays: PropTypes.bool,
-  showWeekendSeparator: PropTypes.bool,
-  initialMonth: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.instanceOf(Date),
-  ]),
+  initialMonth: PropTypes.instanceOf(Date),
+  initialSelectedDate: PropTypes.instanceOf(Date),
   minDate: PropTypes.instanceOf(Date),
   maxDate: PropTypes.instanceOf(Date),
-  weekStartsOn: PropTypes.number,
-  dateModifiers: PropTypes.objectOf(React.PropTypes.func),
-  getDateComponent: PropTypes.func,
+  markToday: PropTypes.bool,
+  markOutsideDays: PropTypes.bool,
+  id: PropTypes.string.isRequired,
+  dateModifiers: CustomPropTypes.DateModifiers,
+  enableSelection: PropTypes.bool,
 };
 
-BpkCalendar.defaultProps = {
+BpkNavigatableCalendar.defaultProps = {
   onDateSelect: null,
-  markToday: true,
-  markOutsideDays: true,
-  showWeekendSeparator: true,
   initialMonth: new Date(),
+  initialSelectedDate: new Date(),
   minDate: startOfToday(),
   maxDate: addMonths(startOfToday(), 12),
-  weekStartsOn: 1,
+  markToday: true,
+  markOutsideDays: true,
+  enableSelection: true,
   dateModifiers: {},
-  getDateComponent,
 };
 
-export default BpkCalendar;
+export default BpkNavigatableCalendar;

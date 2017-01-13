@@ -8,8 +8,10 @@ const WeekDay = PropTypes.shape({
 });
 
 const DaysOfWeek = PropTypes.arrayOf(WeekDay);
+const DateModifiers = PropTypes.objectOf(PropTypes.func);
 
 export default {
   WeekDay,
   DaysOfWeek,
+  DateModifiers,
 };

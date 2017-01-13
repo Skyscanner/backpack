@@ -13,7 +13,10 @@
     font-size: $bpk-font-size-sm;
     line-height: $bpk-line-height-sm;
     text-align: center;
-    box-shadow: 0 1px 0 0 $bpk-color-gray-100;
+
+    &-weekday {
+      box-shadow: 0 1px 0 0 $bpk-color-gray-100;
+    }
   }
 
   &__header-weekday {
@@ -89,6 +92,10 @@
     color: $bpk-calendar-day-selected-color;
     font-weight: bold;
     cursor: default;
+  }
+
+  &--focused:not(:disabled) {
+    box-shadow: 0 0 0 2px $bpk-calendar-day-selected-background-color inset;
   }
 
   &:disabled {

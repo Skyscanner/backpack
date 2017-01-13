@@ -1,5 +1,6 @@
 import startOfMonth from 'date-fns/start_of_month';
 import endOfMonth from 'date-fns/end_of_month';
+import lastDayOfMonth from 'date-fns/last_day_of_month';
 import startOfWeek from 'date-fns/start_of_week';
 import lastDayOfWeek from 'date-fns/last_day_of_week';
 import startOfToday from 'date-fns/start_of_today';
@@ -12,11 +13,13 @@ import isSaturday from 'date-fns/is_saturday';
 import isSunday from 'date-fns/is_sunday';
 import isSameDay from 'date-fns/is_same_day';
 import isSameMonth from 'date-fns/is_same_month';
+import isBefore from 'date-fns/is_before';
 
 import addDays from 'date-fns/add_days';
 import addWeeks from 'date-fns/add_weeks';
 import addMonths from 'date-fns/add_months';
-import addYears from 'date-fns/add_years';
+import setMonth from 'date-fns/set_month';
+import setYear from 'date-fns/set_year';
 
 import parse from 'date-fns/parse';
 import format from 'date-fns/format';
@@ -58,12 +61,9 @@ function getMonthsInRange(from, to) {
   return monthsInRange;
 }
 
-const isDisabled = day => !isWithinRange(day, startOfToday(), addYears(startOfToday(), 1));
 const parseIsoDate = parse;
-const formatIso = date => format(date);
 const formatIsoDate = date => format(date, 'YYYY-MM-DD');
 const formatIsoMonth = date => format(date, 'YYYY-MM');
-const formatHumanDate = date => format(date, 'dddd, Do MMMM YYYY');
 
 export {
   getCalendarMonthWeeks,
@@ -76,14 +76,15 @@ export {
   isToday,
   isSameDay,
   isSameMonth,
-  isDisabled,
+  isBefore,
   addMonths,
   addDays,
+  setMonth,
+  setYear,
   startOfMonth,
+  lastDayOfMonth,
   startOfToday,
-  formatIso,
   formatIsoDate,
   formatIsoMonth,
-  formatHumanDate,
   parseIsoDate,
 };

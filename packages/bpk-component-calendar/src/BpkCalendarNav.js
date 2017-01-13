@@ -4,12 +4,21 @@ import ArrowLeftIcon from 'bpk-component-icon/sm/arrow-left';
 import ArrowRightIcon from 'bpk-component-icon/sm/arrow-right';
 import BpkSelect from 'bpk-component-select';
 
-import addMonths from 'date-fns/add_months';
-import { getMonthsInRange, isWithinRange, getMonthRange, formatIsoMonth, parseIsoDate, startOfMonth } from './utils';
+import {
+  addMonths,
+  formatIsoMonth,
+  getMonthRange,
+  getMonthsInRange,
+  isWithinRange,
+  parseIsoDate,
+  startOfMonth,
+} from './date-utils';
 
 import './bpk-calendar.scss';
 
 const changeMonth = (targetMonth, min, max, callback) => () => {
+  // Safeguard for disabled buttons is due to React bug in Chrome: https://github.com/facebook/react/issues/8308
+  // PR: https://github.com/facebook/react/pull/8329 - unresolved as of 22/12/2016
   if (isWithinRange(targetMonth, min, max)) {
     callback(targetMonth);
   }
@@ -32,8 +41,6 @@ const BpkCalendarNav = (props) => {
   const prevMonth = addMonths(baseMonth, -1);
   const nextMonth = addMonths(baseMonth, 1);
 
-  // Safeguard for disabled buttons is due to React bug in Chrome: https://github.com/facebook/react/issues/8308
-  // PR: https://github.com/facebook/react/pull/8329 - unresolved as of 22/12/2016
   return (
     <div className="bpk-calendar-nav">
       <div className="bpk-calendar-nav__nudger">
@@ -82,7 +89,11 @@ BpkCalendarNav.propTypes = {
   minDate: PropTypes.instanceOf(Date).isRequired,
   maxDate: PropTypes.instanceOf(Date).isRequired,
   formatMonth: PropTypes.func.isRequired,
-  onChangeMonth: PropTypes.func.isRequired,
+  onChangeMonth: PropTypes.func,
+};
+
+BpkCalendarNav.defaultProps = {
+  onChangeMonth: null,
 };
 
 export default BpkCalendarNav;
