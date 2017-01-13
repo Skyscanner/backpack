@@ -2,27 +2,64 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-01-13 - Deprecated "stubby arrow" icon and fixed "onClose firing twice bug" in the modal
+
 **Changed**
-- bpk-component-icon
-- bpk-mixins
-- bpk-svgs
+- bpk-component-icon: 1.3.2 => 2.0.0
+- bpk-mixins: 6.8.0 => 7.0.0
+- bpk-svgs: 2.2.1 => 3.0.0
  - Removed 'stubby' long-arrow-X icons
  - Renamed long-arrow-X-alt icons to long-arrow-X
  - Consumers who were relying on the 'alt' long arrow should now use the regular version and those who were using the regular version will now see a new style.
 
 **Added**
-- bpk-component-close-button
+- bpk-component-close-button: 0.0.0 => 0.0.1
   - Pulled close button icon out of BpkModal for use in new popover component too
+- bpk-react-utils: 0.0.1 => 0.1.0
+  - Added `toPortalChild` helper
 
 **Fixed**
-- bpk-component-icon
-- bpk-mixins
-- bpk-svgs
+- bpk-component-icon: 1.3.2 => 2.0.0
+- bpk-mixins: 6.8.0 => 7.0.0
+- bpk-svgs: 2.2.1 => 3.0.0
   - chevron icon has been made more pointy
   - long-arrow arrows have a slightly updated style
-- bpk-component-modal
+- bpk-component-modal: 0.3.6 => 0.3.7
   - `onClose` called twice
   - Now consumes `bpk-component-close-button`
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 1.1.0 => 1.1.1
+- bpk-component-badge: 0.0.9 => 0.0.10
+- bpk-component-banner-alert: 0.0.22 => 0.0.23
+- bpk-component-blockquote: 0.0.35 => 0.0.36
+- bpk-component-button: 1.5.0 => 1.5.1
+- bpk-component-card: 0.0.23 => 0.0.24
+- bpk-component-checkbox: 0.0.32 => 0.0.33
+- bpk-component-close-button: 0.0.0 => 0.0.1
+- bpk-component-code: 0.0.35 => 0.0.36
+- bpk-component-content-container: 1.0.26 => 1.0.27
+- bpk-component-grid-toggle: 0.0.42 => 0.0.43
+- bpk-component-grid: 0.0.29 => 0.0.30
+- bpk-component-heading: 1.1.18 => 1.1.19
+- bpk-component-input: 1.0.11 => 1.0.12
+- bpk-component-label: 2.0.11 => 2.0.12
+- bpk-component-link: 0.4.0 => 0.4.1
+- bpk-component-list: 0.0.55 => 0.0.56
+- bpk-component-logo: 1.0.25 => 1.0.26
+- bpk-component-paragraph: 0.1.42 => 0.1.43
+- bpk-component-radio: 0.0.32 => 0.0.33
+- bpk-component-router-link: 0.1.41 => 0.1.42
+- bpk-component-rtl-toggle: 0.0.26 => 0.0.27
+- bpk-component-select: 1.0.11 => 1.0.12
+- bpk-component-spinner: 1.0.25 => 1.0.26
+- bpk-component-table: 0.0.55 => 0.0.56
+- bpk-docs: 0.0.55 => 0.0.56
+- bpk-react-utils: 0.0.1 => 0.1.0
+- bpk-stylesheets: 3.1.3 => 3.1.4
+- bpk-tokens: 17.0.1 => 17.0.2
 
 ## 2017-01-11 - Custom classNames and arbitraty props for bpk-component-link
 
