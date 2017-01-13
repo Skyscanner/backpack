@@ -1,35 +1,41 @@
 import Portal from 'react-portal';
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
+import { toPortalChild } from 'bpk-react-utils';
 
 import BpkModalScrim from './BpkModalScrim';
 import BpkModalDialog from './BpkModalDialog';
 
-const PortalToBpkModal = (props) => {
-  /* eslint-disable no-unused-vars */
-  const { closePortal, ...rest } = props;
-  /* eslint-enable */
+const BpkModalChild = toPortalChild(props => (
+  <div>
+    <BpkModalScrim />
+    <BpkModalDialog {...props} />
+  </div>
+));
 
-  return (
-    <div>
-      <BpkModalScrim />
-      <BpkModalDialog {...rest} />
-    </div>
-  );
-};
+class BpkModal extends Component {
+  constructor() {
+    super();
 
-PortalToBpkModal.propTypes = {
-  closePortal: PropTypes.func,
-};
+    this.onClose = this.onClose.bind(this);
+  }
 
-const BpkModal = (props) => {
-  const { isOpen, onClose, ...rest } = props;
+  onClose() {
+    if (this.props.isOpen) {
+      this.props.onClose();
+    }
+  }
+  render() {
+    const { isOpen, ...rest } = this.props;
 
-  return (
-    <Portal isOpened={isOpen} onClose={onClose} closeOnEsc>
-      <PortalToBpkModal onClose={onClose} {...rest} />
-    </Portal>
-  );
-};
+    delete rest.onClose;
+
+    return (
+      <Portal isOpened={isOpen} onClose={this.onClose} closeOnEsc>
+        <BpkModalChild onClose={this.onClose} {...rest} />
+      </Portal>
+    );
+  }
+}
 
 BpkModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,

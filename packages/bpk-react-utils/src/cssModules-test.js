@@ -1,4 +1,4 @@
-import cssModules from './css-modules';
+import cssModules from './cssModules';
 
 describe('css-modules', () => {
   it('should return a function', () => {

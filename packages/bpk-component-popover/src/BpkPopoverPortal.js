@@ -2,11 +2,11 @@ import Tether from 'tether';
 import Portal from 'react-portal';
 import focusStore from 'a11y-focus-store';
 import focusScope from 'a11y-focus-scope';
+import { toPortalChild } from 'bpk-react-utils';
 import React, { PropTypes, Component } from 'react';
 
 import './bpk-popover.scss';
 import BpkPopover from './BpkPopover';
-import toPortalChild from './toPortalChild';
 
 const BpkPopoverPortalChild = toPortalChild(BpkPopover);
 
@@ -17,8 +17,15 @@ class BpkPopoverPortal extends Component {
     this.tether = null;
 
     this.onOpen = this.onOpen.bind(this);
+    this.onClose = this.onClose.bind(this);
     this.beforeClose = this.beforeClose.bind(this);
     this.getTargetRef = this.getTargetRef.bind(this);
+  }
+
+  onClose() {
+    if (this.props.isOpen) {
+      this.props.onClose();
+    }
   }
 
   onOpen(popoverElement) {
@@ -56,8 +63,9 @@ class BpkPopoverPortal extends Component {
   }
 
   render() {
-    const { target, isOpen, onClose, ...rest } = this.props;
+    const { target, isOpen, ...rest } = this.props;
 
+    delete rest.onClose;
     delete rest.tetherOptions;
 
     return (
@@ -65,13 +73,13 @@ class BpkPopoverPortal extends Component {
         {target}
         <Portal
           isOpened={isOpen}
-          onClose={onClose}
+          onClose={this.onClose}
           onOpen={this.onOpen}
           beforeClose={this.beforeClose}
           closeOnEsc
           closeOnOutsideClick
         >
-          <BpkPopoverPortalChild onClose={onClose} {...rest} />
+          <BpkPopoverPortalChild onClose={this.onClose} {...rest} />
         </Portal>
       </div>
     );
