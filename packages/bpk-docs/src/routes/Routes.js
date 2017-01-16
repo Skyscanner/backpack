@@ -32,6 +32,7 @@ import NotificationsPage from './../pages/NotificationsPage';
 import ModalsPage from './../pages/ModalsPage';
 import AutosuggestPage from './../pages/AutosuggestPage';
 import PopoversPage from './../pages/PopoversPage';
+import CalendarPage from './../pages/CalendarPage';
 
 import DownloadsPage from './../pages/DownloadsPage';
 import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages';
@@ -71,6 +72,7 @@ const Routes = (
         <Route path={ROUTES.MODALS} component={ModalsPage} />
         <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
         <Route path={ROUTES.POPOVERS} component={PopoversPage} />
+        <Route path={ROUTES.CALENDAR} component={CalendarPage} />
       </Route>
     </Route>
     <Route path={ROUTES.DOWNLOADS} component={DownloadsPage} />
