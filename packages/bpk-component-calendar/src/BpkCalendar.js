@@ -177,28 +177,28 @@ class BpkCalendar extends Component {
 }
 
 BpkCalendar.propTypes = {
-  onDateSelect: PropTypes.func,
-  initialMonth: PropTypes.instanceOf(Date),
-  initialSelectedDate: PropTypes.instanceOf(Date),
-  minDate: PropTypes.instanceOf(Date),
-  maxDate: PropTypes.instanceOf(Date),
-  markToday: PropTypes.bool,
-  markOutsideDays: PropTypes.bool,
   id: PropTypes.string.isRequired,
   dateModifiers: CustomPropTypes.DateModifiers,
   enableSelection: PropTypes.bool,
+  initialMonth: PropTypes.instanceOf(Date),
+  initialSelectedDate: PropTypes.instanceOf(Date),
+  markOutsideDays: PropTypes.bool,
+  markToday: PropTypes.bool,
+  maxDate: PropTypes.instanceOf(Date),
+  minDate: PropTypes.instanceOf(Date),
+  onDateSelect: PropTypes.func,
 };
 
 BpkCalendar.defaultProps = {
-  onDateSelect: null,
+  dateModifiers: {},
+  enableSelection: true,
   initialMonth: new Date(),
   initialSelectedDate: new Date(),
-  minDate: startOfToday(),
-  maxDate: addMonths(startOfToday(), 12),
-  markToday: true,
   markOutsideDays: true,
-  enableSelection: true,
-  dateModifiers: {},
+  markToday: true,
+  maxDate: addMonths(startOfToday(), 12),
+  minDate: startOfToday(),
+  onDateSelect: null,
 };
 
 export default BpkCalendar;
