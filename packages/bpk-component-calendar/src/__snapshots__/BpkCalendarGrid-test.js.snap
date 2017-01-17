@@ -846,7 +846,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </span>
       </th>
       <th
-        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
+        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend bpk-calendar-grid__header-weekday--weekend-start"
         title="Saturday">
         <span
           aria-hidden="true">
@@ -854,7 +854,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         </span>
       </th>
       <th
-        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
+        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend bpk-calendar-grid__header-weekday--weekend-end"
         title="Sunday">
         <span
           aria-hidden="true">
@@ -1647,7 +1647,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </span>
       </th>
       <th
-        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
+        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend bpk-calendar-grid__header-weekday--weekend-start"
         title="Saturday">
         <span
           aria-hidden="true">
@@ -1655,7 +1655,7 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
         </span>
       </th>
       <th
-        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
+        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend bpk-calendar-grid__header-weekday--weekend-end"
         title="Sunday">
         <span
           aria-hidden="true">
@@ -2306,7 +2306,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </span>
       </th>
       <th
-        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
+        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend bpk-calendar-grid__header-weekday--weekend-start"
         title="Saturday">
         <span
           aria-hidden="true">
@@ -2314,7 +2314,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         </span>
       </th>
       <th
-        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
+        className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend bpk-calendar-grid__header-weekday--weekend-end"
         title="Sunday">
         <span
           aria-hidden="true">

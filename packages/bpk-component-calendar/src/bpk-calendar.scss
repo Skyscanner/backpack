@@ -1,6 +1,10 @@
 @import '~bpk-mixins/index';
 
 .bpk-calendar-grid {
+  $shadow-bottom: 0 1px 0 0 $bpk-color-gray-100;
+  $shadow-left: -1px 0 0 0 $bpk-color-gray-100;
+  $shadow-right: 1px 0 0 0 $bpk-color-gray-100;
+
   display: table;
   border-collapse: collapse;
   border-spacing: 0;
@@ -15,7 +19,23 @@
     text-align: center;
 
     &-weekday {
-      box-shadow: 0 1px 0 0 $bpk-color-gray-100;
+      box-shadow: $shadow-bottom;
+
+      &--weekend-start {
+        box-shadow: $shadow-bottom, $shadow-left;
+
+        @include bpk-rtl {
+          box-shadow: $shadow-bottom, $shadow-right;
+        }
+      }
+
+      &--weekend-end:not(:last-child) {
+        box-shadow: $shadow-bottom, $shadow-right;
+
+        @include bpk-rtl {
+          box-shadow: $shadow-bottom, $shadow-left;
+        }
+      }
     }
   }
 
@@ -36,18 +56,18 @@
     vertical-align: middle;
 
     &--weekend-start {
-      box-shadow: -1px 0 0 0 $bpk-color-gray-100;
+      box-shadow: $shadow-left;
 
       @include bpk-rtl {
-        box-shadow: 1px 0 0 0 $bpk-color-gray-100;
+        box-shadow: $shadow-right;
       }
     }
 
     &--weekend-end:not(:last-child) {
-      box-shadow: 1px 0 0 0 $bpk-color-gray-100;
+      box-shadow: $shadow-right;
 
       @include bpk-rtl {
-        box-shadow: -1px 0 0 0 $bpk-color-gray-100;
+        box-shadow: $shadow-left;
       }
     }
   }

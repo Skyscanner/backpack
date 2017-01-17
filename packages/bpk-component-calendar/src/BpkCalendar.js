@@ -50,6 +50,7 @@ class BpkCalendar extends Component {
       this.state = {
         selectedDate: initialDate,
         focusedDate: initialDate,
+        preventKeyboardFocus: true,
       };
     } else {
       const initialFocused = dateToBoundaries(
@@ -61,6 +62,7 @@ class BpkCalendar extends Component {
       this.state = {
         selectedDate: null,
         focusedDate: initialFocused,
+        preventKeyboardFocus: true,
       };
     }
 
@@ -71,6 +73,7 @@ class BpkCalendar extends Component {
   }
 
   onDateFocus(date) {
+    this.setState({ preventKeyboardFocus: false });
     if (isWithinRange(date, this.props.minDate, this.props.maxDate)) {
       this.setState({ focusedDate: date });
     } else if (isBefore(date, this.props.minDate)) {
@@ -81,6 +84,7 @@ class BpkCalendar extends Component {
   }
 
   onDateSelect(date) {
+    this.setState({ preventKeyboardFocus: false });
     if (isWithinRange(date, this.props.minDate, this.props.maxDate)) {
       this.setState({ selectedDate: date });
       this.setState({ focusedDate: date });
@@ -170,6 +174,7 @@ class BpkCalendar extends Component {
         dateModifiers={modifiers}
         month={startOfMonth(this.state.focusedDate)}
         selectedDate={this.state.focusedDate}
+        preventKeyboardFocus={this.state.preventKeyboardFocus}
         {...calendarProps}
       />
     );

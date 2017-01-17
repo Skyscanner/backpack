@@ -92,25 +92,25 @@
   <property name="BUTTON_SELECTED_HOVER_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_SELECTED_ACTIVE_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_SELECTED_DISABLED_BOX_SHADOW" category="buttons">none</property>
-  <property name="CALENDAR_PADDING" category="calendars">12</property>
-  <property name="CALENDAR_DAY_SPACING" category="calendars">6</property>
-  <property name="CALENDAR_DAY_SIZE" category="calendars">36</property>
-  <color name="CALENDAR_DAY_COLOR" category="calendars">#524c61ff</color>
-  <color name="CALENDAR_DAY_BACKGROUND_COLOR" category="calendars">#ffffffff</color>
-  <color name="CALENDAR_DAY_SELECTED_COLOR" category="calendars">#ffffffff</color>
-  <color name="CALENDAR_DAY_SELECTED_BACKGROUND_COLOR" category="calendars">#00b2d6ff</color>
-  <color name="CALENDAR_DAY_HOVER_COLOR" category="calendars">#524c61ff</color>
-  <color name="CALENDAR_DAY_HOVER_BACKGROUND_COLOR" category="calendars">#f3f2f5ff</color>
-  <color name="CALENDAR_DAY_ACTIVE_COLOR" category="calendars">#524c61ff</color>
-  <color name="CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR" category="calendars">#e6e4ebff</color>
-  <color name="CALENDAR_DAY_DISABLED_COLOR" category="calendars">#e6e4ebff</color>
-  <color name="CALENDAR_DAY_DISABLED_BACKGROUND_COLOR" category="calendars">#ffffffff</color>
-  <color name="CALENDAR_DAY_OUTSIDE_COLOR" category="calendars">#b2aebdff</color>
-  <color name="CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR" category="calendars">#ffffffff</color>
-  <color name="CALENDAR_NAV_ICON_FILL" category="calendars">#00b2d6ff</color>
-  <color name="CALENDAR_NAV_ICON_HOVER_FILL" category="calendars">#009dbdff</color>
-  <color name="CALENDAR_NAV_ICON_ACTIVE_FILL" category="calendars">#008ca8ff</color>
-  <color name="CALENDAR_NAV_ICON_DISABLED_FILL" category="calendars">#e6e4ebff</color>
+  <property name="CALENDAR_PADDING" category="calendar">12</property>
+  <property name="CALENDAR_DAY_SPACING" category="calendar">6</property>
+  <property name="CALENDAR_DAY_SIZE" category="calendar">36</property>
+  <color name="CALENDAR_DAY_COLOR" category="calendar">#524c61ff</color>
+  <color name="CALENDAR_DAY_BACKGROUND_COLOR" category="calendar">#ffffffff</color>
+  <color name="CALENDAR_DAY_SELECTED_COLOR" category="calendar">#ffffffff</color>
+  <color name="CALENDAR_DAY_SELECTED_BACKGROUND_COLOR" category="calendar">#00d775ff</color>
+  <color name="CALENDAR_DAY_HOVER_COLOR" category="calendar">#524c61ff</color>
+  <color name="CALENDAR_DAY_HOVER_BACKGROUND_COLOR" category="calendar">#f3f2f5ff</color>
+  <color name="CALENDAR_DAY_ACTIVE_COLOR" category="calendar">#524c61ff</color>
+  <color name="CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR" category="calendar">#e6e4ebff</color>
+  <color name="CALENDAR_DAY_DISABLED_COLOR" category="calendar">#e6e4ebff</color>
+  <color name="CALENDAR_DAY_DISABLED_BACKGROUND_COLOR" category="calendar">#ffffffff</color>
+  <color name="CALENDAR_DAY_OUTSIDE_COLOR" category="calendar">#b2aebdff</color>
+  <color name="CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR" category="calendar">#ffffffff</color>
+  <color name="CALENDAR_NAV_ICON_FILL" category="calendar">#00b2d6ff</color>
+  <color name="CALENDAR_NAV_ICON_HOVER_FILL" category="calendar">#009dbdff</color>
+  <color name="CALENDAR_NAV_ICON_ACTIVE_FILL" category="calendar">#008ca8ff</color>
+  <color name="CALENDAR_NAV_ICON_DISABLED_FILL" category="calendar">#e6e4ebff</color>
   <color name="CARD_BACKGROUND_COLOR" category="cards">#ffffffff</color>
   <color name="CARD_COLOR" category="cards">#524c61ff</color>
   <property name="CARD_PADDING" category="cards">12</property>

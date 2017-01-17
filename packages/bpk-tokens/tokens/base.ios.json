@@ -553,115 +553,115 @@
       "name": "buttonSelectedDisabledBoxShadow"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "12",
       "type": "size",
       "name": "calendarPadding"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "6",
       "type": "size",
       "name": "calendarDaySpacing"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "36",
       "type": "size",
       "name": "calendarDaySize"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(82, 76, 97)",
       "type": "color",
       "name": "calendarDayColor"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "calendarDayBackgroundColor"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "calendarDaySelectedColor"
     },
     {
-      "category": "calendars",
-      "value": "rgb(0, 178, 214)",
+      "category": "calendar",
+      "value": "rgb(0, 215, 117)",
       "type": "color",
       "name": "calendarDaySelectedBackgroundColor"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(82, 76, 97)",
       "type": "color",
       "name": "calendarDayHoverColor"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(243, 242, 245)",
       "type": "color",
       "name": "calendarDayHoverBackgroundColor"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(82, 76, 97)",
       "type": "color",
       "name": "calendarDayActiveColor"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(230, 228, 235)",
       "type": "color",
       "name": "calendarDayActiveBackgroundColor"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(230, 228, 235)",
       "type": "color",
       "name": "calendarDayDisabledColor"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "calendarDayDisabledBackgroundColor"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(178, 174, 189)",
       "type": "color",
       "name": "calendarDayOutsideColor"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "calendarDayOutsideBackgroundColor"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(0, 178, 214)",
       "type": "color",
       "name": "calendarNavIconFill"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(0, 157, 189)",
       "type": "color",
       "name": "calendarNavIconHoverFill"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(0, 140, 168)",
       "type": "color",
       "name": "calendarNavIconActiveFill"
     },
     {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(230, 228, 235)",
       "type": "color",
       "name": "calendarNavIconDisabledFill"

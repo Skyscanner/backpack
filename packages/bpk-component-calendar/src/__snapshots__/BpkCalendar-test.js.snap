@@ -117,7 +117,7 @@ exports[`BpkCalendar should render correctly 1`] = `
           </span>
         </th>
         <th
-          className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
+          className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend bpk-calendar-grid__header-weekday--weekend-start"
           title="Saturday">
           <span
             aria-hidden="true">
@@ -125,7 +125,7 @@ exports[`BpkCalendar should render correctly 1`] = `
           </span>
         </th>
         <th
-          className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend"
+          className="bpk-calendar-grid__header-weekday bpk-calendar-grid__header-weekday--weekend bpk-calendar-grid__header-weekday--weekend-end"
           title="Sunday">
           <span
             aria-hidden="true">

@@ -7,7 +7,7 @@
     "./base/box-shadows.json",
     "./base/breakpoints.json",
     "./base/buttons.json",
-    "./base/calendars.json",
+    "./base/calendar.json",
     "./base/cards.json",
     "./base/colors.json",
     "./base/forms.json",

@@ -3,7 +3,7 @@
     "./aliases.json"
   ],
   "global": {
-    "category": "calendars"
+    "category": "calendar"
   },
   "props": {
     "CALENDAR_PADDING": {
@@ -31,7 +31,7 @@
       "type": "color"
     },
     "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
-      "value": "{!BLUE_500}",
+      "value": "{!GREEN_500}",
       "type": "color"
     },
     "CALENDAR_DAY_HOVER_COLOR": {
