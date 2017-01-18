@@ -23,9 +23,15 @@
 - bpk-component-icon:
   - Headset icon
 
+**Fixed:**
+- bpk-component-spinner:
+  - React components will now scale with user font size preference
+- bpk-mixins:
+  - Icons & Spinners consumed via mixins will now scale with user font size preference
+
 ## 2017-01-13 - Deprecated "stubby arrow" icon and fixed "onClose firing twice bug" in the modal
 
-**Changed**
+**Changed:**
 - bpk-component-icon: 1.3.2 => 2.0.0
 - bpk-mixins: 6.8.0 => 7.0.0
 - bpk-svgs: 2.2.1 => 3.0.0
@@ -33,13 +39,13 @@
   - Renamed long-arrow-X-alt icons to long-arrow-X
   - Consumers who were relying on the 'alt' long arrow should now use the regular version and those who were using the regular version will now see a new style.
 
-**Added**
+**Added:**
 - bpk-component-close-button: 0.0.0 => 0.0.1
   - Pulled close button icon out of BpkModal for use in new popover component too
 - bpk-react-utils: 0.0.1 => 0.1.0
   - Added `toPortalChild` helper
 
-**Fixed**
+**Fixed:**
 - bpk-component-icon: 1.3.2 => 2.0.0
 - bpk-mixins: 6.8.0 => 7.0.0
 - bpk-svgs: 2.2.1 => 3.0.0

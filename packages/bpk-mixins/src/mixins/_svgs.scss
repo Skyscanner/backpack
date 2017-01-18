@@ -24,6 +24,7 @@
   width: $size;
   height: $size;
   background: url(map-get($map, $icon)) no-repeat;
+  background-size: cover;
 }
 
 /// Button alignment utility.
@@ -220,14 +221,15 @@
 ///   }
 
 @mixin bpk-spinner($spinner: '') {
+  width: $bpk-spacing-md;
+  height: $bpk-spacing-md;
   animation: bpk-keyframe-spin 600ms linear infinite;
 
   @if $spinner != '' {
     content: '';
     display: inline-block;
-    width: $bpk-spacing-md;
-    height: $bpk-spacing-md;
     background: url(map-get($bpk-spinners, $spinner)) no-repeat;
+    background-size: cover;
   }
 }
 

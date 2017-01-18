@@ -5,7 +5,7 @@ import LgSpinner from 'bpk-svgs/dist/js/spinners/lg';
 import './bpk-spinner.scss';
 
 const BpkLargeSpinner = (props) => {
-  const classNames = ['bpk-spinner'];
+  const classNames = ['bpk-spinner', 'bpk-spinner--large'];
 
   if (props.alignToButton) { classNames.push('bpk-spinner--align-to-large-button'); }
 
