@@ -1,7 +1,7 @@
 import React from "react";
 export default class SVG extends React.Component {
   render() {
-    return <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" {...this.props}><path d="M4 16h8.6c1.9 0 3.4-1.5 3.4-3.4V7c0-.3-.2-.5-.5-.5s-.5.2-.5.5v5.5c0 .8-.8 1.5-1.6 1.5s-1.5-.7-1.5-1.5V5c0-.6-.4-1-1-1H3c-.6 0-1 .4-1 1v9c0 1.1.9 2 2 2zm2-6h3.5c.3 0 .5.2.5.5s-.2.5-.5.5H6c-.3 0-.5-.2-.5-.5s.2-.5.5-.5zM4.5 6h5c.3 0 .5.2.5.5s-.2.5-.5.5h-5c-.3 0-.5-.2-.5-.5s.2-.5.5-.5zm0 2h5c.3 0 .5.2.5.5s-.2.5-.5.5h-5c-.3 0-.5-.2-.5-.5s.2-.5.5-.5zM12 2c1.1 0 2 .9 2 2v8.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-8c0-.8-.7-1.5-1.5-1.5h-7c-.3 0-.5-.2-.5-.5s.2-.5.5-.5H12z" /></svg>;
+    return <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" {...this.props}><path d="M16 5v7h-1V3H3.5C2.1 3 1 4.1 1 5.5V14h14c1.1 0 2-.9 2-2V5h-1zm-8 7H3V8h5v4zm5-1H9v-1h4v1zm0-2H9V8h4v1zm0-2H3V5h10v2z" /></svg>;
   }
 
 }
