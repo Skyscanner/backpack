@@ -29,6 +29,7 @@ class CalendarNavContainer extends Component {
   render() {
     return (
       <BpkCalendarNav
+        changeMonthLabel="Change month"
         month={this.state.month}
         minDate={new Date()}
         maxDate={addMonths(new Date(), 12)}

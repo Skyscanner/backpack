@@ -5,7 +5,7 @@ import './bpk-calendar.scss';
 
 class BpkCalendarDate extends Component {
   componentDidMount() {
-    if (this.props.focused) {
+    if (!this.props.preventKeyboardFocus && this.props.focused) {
       // If we got here by clicking the nudger, don't focus this date
       // TODO: Won't work with CSS Modules and is relying on the DOM. Need to find better solution.
       if (document.activeElement.className.indexOf('bpk-calendar-nav__button') === -1) {
@@ -13,6 +13,7 @@ class BpkCalendarDate extends Component {
       }
     }
   }
+
   componentDidUpdate(prevProps) {
     if (!prevProps.focused && this.props.focused) {
       this.button.focus();
@@ -20,7 +21,7 @@ class BpkCalendarDate extends Component {
   }
 
   render() {
-    const { date, modifiers, onClick, onDateKeyDown, focused, ...calendarDateProps } = this.props;
+    const { date, modifiers, onClick, onDateKeyDown, focused, ...buttonProps } = this.props;
     const classNames = ['bpk-calendar-date'];
 
     Object.keys(modifiers).forEach((modifier) => {
@@ -28,6 +29,8 @@ class BpkCalendarDate extends Component {
     });
 
     const disabled = modifiers.disabled ? modifiers.disabled(date) : false;
+
+    delete buttonProps.preventKeyboardFocus;
 
     return (
       <button
@@ -39,7 +42,7 @@ class BpkCalendarDate extends Component {
         onClick={onClick}
         onKeyDown={onDateKeyDown}
         ref={(button) => { this.button = button; }}
-        {...calendarDateProps}
+        {...buttonProps}
       ><span aria-hidden="true">{ date.getDate() }</span></button>
     );
   }
@@ -51,6 +54,7 @@ BpkCalendarDate.propTypes = {
   onClick: React.PropTypes.func,
   onDateKeyDown: React.PropTypes.func,
   focused: React.PropTypes.bool,
+  preventKeyboardFocus: React.PropTypes.bool,
 };
 
 BpkCalendarDate.defaultProps = {
@@ -58,6 +62,7 @@ BpkCalendarDate.defaultProps = {
   onClick: null,
   onDateKeyDown: null,
   focused: false,
+  preventKeyboardFocus: false,
 };
 
 export default BpkCalendarDate;

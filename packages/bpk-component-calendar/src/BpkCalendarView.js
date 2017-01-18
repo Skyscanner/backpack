@@ -27,6 +27,7 @@ const BpkCalendarView = props => (
       daysOfWeek={props.daysOfWeek}
       DateComponent={props.DateComponent}
       formatDateFull={props.formatDateFull}
+      preventKeyboardFocus={props.preventKeyboardFocus}
     />
   </div>
 );
@@ -39,6 +40,7 @@ BpkCalendarView.propTypes = {
   month: PropTypes.instanceOf(Date).isRequired,
   minDate: PropTypes.instanceOf(Date).isRequired,
   maxDate: PropTypes.instanceOf(Date).isRequired,
+  preventKeyboardFocus: PropTypes.bool.isRequired,
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   onChangeMonth: PropTypes.func,

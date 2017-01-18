@@ -13,9 +13,13 @@ import './bpk-calendar.scss';
 */
 const WeekDay = (props) => {
   const classNames = ['bpk-calendar-grid__header-weekday'];
+
   if (props.weekDay.isWeekend) {
     classNames.push('bpk-calendar-grid__header-weekday--weekend');
   }
+  if (props.weekendStart) { classNames.push('bpk-calendar-grid__header-weekday--weekend-start'); }
+  if (props.weekendEnd) { classNames.push('bpk-calendar-grid__header-weekday--weekend-end'); }
+
   return (
     <th
       className={classNames.join(' ')}
@@ -26,6 +30,8 @@ const WeekDay = (props) => {
 
 WeekDay.propTypes = {
   weekDay: CustomPropTypes.WeekDay.isRequired,
+  weekendStart: PropTypes.bool.isRequired,
+  weekendEnd: PropTypes.bool.isRequired,
 };
 
 /*
@@ -35,26 +41,14 @@ const Week = (props) => {
   const {
     DateComponent,
     dateModifiers,
-    daysOfWeek,
     formatDateFull,
     onDateClick,
     onDateKeyDown,
     showWeekendSeparator,
+    weekendStartIndex,
+    weekendEndIndex,
+    preventKeyboardFocus,
   } = props;
-
-  const weekend = daysOfWeek.map(day => day.isWeekend);
-
-  let weekendStart = -1;
-  let weekendEnd = -1;
-
-  if (weekend[0] && weekend[6]) { // weekend stretches over turn the of the week
-    weekendStart = weekend.lastIndexOf(false) + 1;
-    weekendEnd = weekend.indexOf(false) - 1;
-  } else {
-    weekendStart = weekend.indexOf(true);
-    weekendEnd = weekend.lastIndexOf(true);
-  }
-
 
   return (
     <tr
@@ -63,8 +57,8 @@ const Week = (props) => {
       <DateContainer
         key={date.toDateString()}
         date={date}
-        weekendStart={showWeekendSeparator && weekendStart === getDay(date)}
-        weekendEnd={showWeekendSeparator && weekendEnd === getDay(date)}
+        weekendStart={showWeekendSeparator && weekendStartIndex === getDay(date)}
+        weekendEnd={showWeekendSeparator && weekendEndIndex === getDay(date)}
       >
         <DateComponent
           date={date}
@@ -73,6 +67,7 @@ const Week = (props) => {
           onClick={() => { if (onDateClick) { onDateClick(date); } }}
           onDateKeyDown={onDateKeyDown}
           focused={dateModifiers.focused ? dateModifiers.focused(date) : false}
+          preventKeyboardFocus={preventKeyboardFocus}
         />
       </DateContainer>
     ))}
@@ -84,9 +79,11 @@ Week.propTypes = {
   DateComponent: PropTypes.func.isRequired,
   dateModifiers: CustomPropTypes.DateModifiers.isRequired,
   dates: PropTypes.arrayOf(Date).isRequired,
-  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   formatDateFull: PropTypes.func.isRequired,
+  preventKeyboardFocus: PropTypes.bool.isRequired,
   showWeekendSeparator: PropTypes.bool.isRequired,
+  weekendStartIndex: PropTypes.number.isRequired,
+  weekendEndIndex: PropTypes.number.isRequired,
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
 };
@@ -141,6 +138,7 @@ const BpkCalendarGrid = (props) => {
     onDateKeyDown,
     showWeekendSeparator,
     weekStartsOn,
+    preventKeyboardFocus,
   } = props;
 
   const reorderedWeekDays = reorderWeekDays(
@@ -150,14 +148,29 @@ const BpkCalendarGrid = (props) => {
 
   const calendarMonthWeeks = getCalendarMonthWeeks(props.month, props.weekStartsOn);
 
+  const weekend = daysOfWeek.map(day => day.isWeekend);
+
+  let weekendStartIndex = -1;
+  let weekendEndIndex = -1;
+
+  if (weekend[0] && weekend[6]) { // weekend stretches over turn the of the week
+    weekendStartIndex = weekend.lastIndexOf(false) + 1;
+    weekendEndIndex = weekend.indexOf(false) - 1;
+  } else {
+    weekendStartIndex = weekend.indexOf(true);
+    weekendEndIndex = weekend.lastIndexOf(true);
+  }
+
   return (
     <table className="bpk-calendar-grid">
       <thead>
         <tr className="bpk-calendar-grid__header">
           { reorderedWeekDays.map((weekDay, index) => (
             <WeekDay
-              weekDay={weekDay}
               key={index}
+              weekDay={weekDay}
+              weekendStart={showWeekendSeparator && weekendStartIndex === weekDay.index}
+              weekendEnd={showWeekendSeparator && weekendEndIndex === weekDay.index}
             />
           )) }
         </tr>
@@ -170,10 +183,12 @@ const BpkCalendarGrid = (props) => {
             onDateClick={onDateClick}
             onDateKeyDown={onDateKeyDown}
             showWeekendSeparator={showWeekendSeparator}
-            daysOfWeek={daysOfWeek}
             formatDateFull={formatDateFull}
             DateComponent={DateComponent}
             dateModifiers={props.dateModifiers}
+            weekendStartIndex={weekendStartIndex}
+            weekendEndIndex={weekendEndIndex}
+            preventKeyboardFocus={preventKeyboardFocus}
           />
         )) }
       </tbody>
@@ -191,12 +206,14 @@ BpkCalendarGrid.propTypes = {
   dateModifiers: CustomPropTypes.DateModifiers,
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
+  preventKeyboardFocus: PropTypes.bool,
 };
 
 BpkCalendarGrid.defaultProps = {
   onDateClick: null,
   onDateKeyDown: null,
   dateModifiers: {},
+  preventKeyboardFocus: false,
 };
 
 export default BpkCalendarGrid;

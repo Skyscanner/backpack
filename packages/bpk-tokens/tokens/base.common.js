@@ -97,7 +97,7 @@ module.exports = {
   calendarDayColor: "rgb(82, 76, 97)",
   calendarDayBackgroundColor: "rgb(255, 255, 255)",
   calendarDaySelectedColor: "rgb(255, 255, 255)",
-  calendarDaySelectedBackgroundColor: "rgb(0, 178, 214)",
+  calendarDaySelectedBackgroundColor: "rgb(0, 215, 117)",
   calendarDayHoverColor: "rgb(82, 76, 97)",
   calendarDayHoverBackgroundColor: "rgb(243, 242, 245)",
   calendarDayActiveColor: "rgb(82, 76, 97)",

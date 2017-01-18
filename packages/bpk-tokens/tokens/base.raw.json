@@ -628,115 +628,115 @@
       "name": "BUTTON_SELECTED_DISABLED_BOX_SHADOW"
     },
     "CALENDAR_PADDING": {
-      "category": "calendars",
+      "category": "calendar",
       "value": ".75rem",
       "type": "size",
       "name": "CALENDAR_PADDING"
     },
     "CALENDAR_DAY_SPACING": {
-      "category": "calendars",
+      "category": "calendar",
       "value": ".375rem",
       "type": "size",
       "name": "CALENDAR_DAY_SPACING"
     },
     "CALENDAR_DAY_SIZE": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "2.250rem",
       "type": "size",
       "name": "CALENDAR_DAY_SIZE"
     },
     "CALENDAR_DAY_COLOR": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(82, 76, 97)",
       "type": "color",
       "name": "CALENDAR_DAY_COLOR"
     },
     "CALENDAR_DAY_BACKGROUND_COLOR": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "CALENDAR_DAY_BACKGROUND_COLOR"
     },
     "CALENDAR_DAY_SELECTED_COLOR": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "CALENDAR_DAY_SELECTED_COLOR"
     },
     "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
-      "category": "calendars",
-      "value": "rgb(0, 178, 214)",
+      "category": "calendar",
+      "value": "rgb(0, 215, 117)",
       "type": "color",
       "name": "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR"
     },
     "CALENDAR_DAY_HOVER_COLOR": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(82, 76, 97)",
       "type": "color",
       "name": "CALENDAR_DAY_HOVER_COLOR"
     },
     "CALENDAR_DAY_HOVER_BACKGROUND_COLOR": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(243, 242, 245)",
       "type": "color",
       "name": "CALENDAR_DAY_HOVER_BACKGROUND_COLOR"
     },
     "CALENDAR_DAY_ACTIVE_COLOR": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(82, 76, 97)",
       "type": "color",
       "name": "CALENDAR_DAY_ACTIVE_COLOR"
     },
     "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(230, 228, 235)",
       "type": "color",
       "name": "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR"
     },
     "CALENDAR_DAY_DISABLED_COLOR": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(230, 228, 235)",
       "type": "color",
       "name": "CALENDAR_DAY_DISABLED_COLOR"
     },
     "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR"
     },
     "CALENDAR_DAY_OUTSIDE_COLOR": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(178, 174, 189)",
       "type": "color",
       "name": "CALENDAR_DAY_OUTSIDE_COLOR"
     },
     "CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR"
     },
     "CALENDAR_NAV_ICON_FILL": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(0, 178, 214)",
       "type": "color",
       "name": "CALENDAR_NAV_ICON_FILL"
     },
     "CALENDAR_NAV_ICON_HOVER_FILL": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(0, 157, 189)",
       "type": "color",
       "name": "CALENDAR_NAV_ICON_HOVER_FILL"
     },
     "CALENDAR_NAV_ICON_ACTIVE_FILL": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(0, 140, 168)",
       "type": "color",
       "name": "CALENDAR_NAV_ICON_ACTIVE_FILL"
     },
     "CALENDAR_NAV_ICON_DISABLED_FILL": {
-      "category": "calendars",
+      "category": "calendar",
       "value": "rgb(230, 228, 235)",
       "type": "color",
       "name": "CALENDAR_NAV_ICON_DISABLED_FILL"

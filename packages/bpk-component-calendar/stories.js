@@ -34,6 +34,8 @@ storiesOf('bpk-component-calendar', module)
       onDateClick={action('Clicked day')}
       formatDateFull={formatDateFull}
       DateComponent={BpkCalendarDate}
+      showWeekendSeparator
+      preventKeyboardFocus
     />
   ))
   .add('BpkCalendarView', () => (
@@ -48,6 +50,7 @@ storiesOf('bpk-component-calendar', module)
       changeMonthLabel="Change month"
       onDateSelect={action('Selected day')}
       id="myCalendar"
+      preventKeyboardFocus
     />
   ))
   .add('Calendar - default', () => (
@@ -124,7 +127,7 @@ storiesOf('bpk-component-calendar', module)
       initialSelectedDate={addMonths(new Date(), 6)}
     />
   ))
-  .add('Calendar - Specify date range', () => (
+  .add('Calendar - Specify min/max date', () => (
     <BpkCalendar
       id="myCalendar"
       formatMonth={formatMonth}
