@@ -5,51 +5,6 @@ import React, { PropTypes, Component } from 'react';
 
 import './bpk-datepicker.scss';
 
-export const weekDays = [
-  {
-    name: 'Sunday',
-    nameAbbr: 'Sun',
-    index: 0,
-    isWeekend: true,
-  },
-  {
-    name: 'Monday',
-    nameAbbr: 'Mon',
-    index: 1,
-    isWeekend: false,
-  },
-  {
-    name: 'Tuesday',
-    nameAbbr: 'Tue',
-    index: 2,
-    isWeekend: false,
-  },
-  {
-    name: 'Wednesday',
-    nameAbbr: 'Wed',
-    index: 3,
-    isWeekend: false,
-  },
-  {
-    name: 'Thursday',
-    nameAbbr: 'Thu',
-    index: 4,
-    isWeekend: false,
-  },
-  {
-    name: 'Friday',
-    nameAbbr: 'Fri',
-    index: 5,
-    isWeekend: false,
-  },
-  {
-    name: 'Saturday',
-    nameAbbr: 'Sat',
-    index: 6,
-    isWeekend: true,
-  },
-];
-
 class BpkDatepicker extends Component {
   constructor() {
     super();
@@ -84,36 +39,66 @@ class BpkDatepicker extends Component {
   }
 
   render() {
-    const { inputProps, ...rest } = this.props;
+    const {
+      id,
+      inputProps,
+      daysOfWeek,
+      changeMonthLabel,
+      formatDate,
+      formatDateFull,
+      formatMonth,
+      popoverLabel,
+      ...rest
+     } = this.props;
 
     return (
-      <BpkPopover
-        target={
-          <BpkInput
-            value={this.state.date.toString()}
-            onClick={this.onOpen}
-            {...inputProps}
+      <div>
+        <span
+          className="bpk-datepicker__input-description"
+          aria-live="polite"
+        >{ formatDateFull(this.state.date) }</span>
+        <BpkPopover
+          target={
+            <BpkInput
+              id={id}
+              name={`${id}_input`}
+              value={formatDate(this.state.date)}
+              onClick={this.onOpen}
+              onFocus={this.onOpen}
+              className="bpk-datepicker__input"
+              {...inputProps}
+            />
+          }
+          onClose={this.onClose}
+          isOpen={this.state.isOpen}
+          closeButtonText="Close"
+          title={popoverLabel}
+          {...rest}
+        >
+          <BpkCalendar
+            id={`${id}_calendar`}
+            formatMonth={formatMonth}
+            formatDateFull={formatDateFull}
+            daysOfWeek={daysOfWeek}
+            changeMonthLabel={changeMonthLabel}
+            onDateSelect={this.onDateSelect}
+            initialSelectedDate={this.state.date}
           />
-        }
-        onClose={this.onClose}
-        isOpen={this.state.isOpen}
-        {...rest}
-      >
-        <BpkCalendar
-          id="TODO"
-          formatMonth={dateObj => dateObj.toString()}
-          formatDateFull={dateObj => dateObj.toString()}
-          daysOfWeek={weekDays}
-          changeMonthLabel="TODO"
-          onDateSelect={this.onDateSelect}
-        />
-      </BpkPopover>
+        </BpkPopover>
+      </div>
     );
   }
 }
 
 BpkDatepicker.propTypes = {
-  inputProps: PropTypes.object,
+  id: PropTypes.string.isRequired,
+  daysOfWeek: PropTypes.string.isRequired,
+  changeMonthLabel: PropTypes.string.isRequired,
+  formatDate: PropTypes.func.isRequired,
+  formatDateFull: PropTypes.func.isRequired,
+  formatMonth: PropTypes.func.isRequired,
+  popoverLabel: PropTypes.string.isRequired,
+  inputProps: PropTypes.objectOf(PropTypes.func),
 };
 
 BpkDatepicker.defaultProps = {

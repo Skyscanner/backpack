@@ -131,9 +131,11 @@ const reorderWeekDays = (weekDays, weekStartsOn) => [
 */
 const BpkCalendarGrid = (props) => {
   const {
+    month,
     DateComponent,
     daysOfWeek,
     formatDateFull,
+    formatMonth,
     onDateClick,
     onDateKeyDown,
     showWeekendSeparator,
@@ -146,7 +148,7 @@ const BpkCalendarGrid = (props) => {
     weekStartsOn,
   );
 
-  const calendarMonthWeeks = getCalendarMonthWeeks(props.month, props.weekStartsOn);
+  const calendarMonthWeeks = getCalendarMonthWeeks(month, weekStartsOn);
 
   const weekend = daysOfWeek.map(day => day.isWeekend);
 
@@ -163,6 +165,11 @@ const BpkCalendarGrid = (props) => {
 
   return (
     <table className="bpk-calendar-grid">
+      <caption
+        className="bpk-calendar-grid__caption"
+      >
+        {formatMonth(month)}
+      </caption>
       <thead>
         <tr className="bpk-calendar-grid__header">
           { reorderedWeekDays.map((weekDay, index) => (
@@ -203,6 +210,7 @@ BpkCalendarGrid.propTypes = {
   DateComponent: PropTypes.func.isRequired,
   showWeekendSeparator: PropTypes.bool.isRequired,
   formatDateFull: PropTypes.func.isRequired,
+  formatMonth: PropTypes.func.isRequired,
   dateModifiers: CustomPropTypes.DateModifiers,
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
