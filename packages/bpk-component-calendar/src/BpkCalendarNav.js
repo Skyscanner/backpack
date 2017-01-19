@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
-import ArrowLeftIcon from 'bpk-component-icon/sm/arrow-left';
-import ArrowRightIcon from 'bpk-component-icon/sm/arrow-right';
+import ArrowLeftIcon from 'bpk-component-icon/lg/arrow-left';
+import ArrowRightIcon from 'bpk-component-icon/lg/arrow-right';
 import BpkSelect from 'bpk-component-select';
 
 import {

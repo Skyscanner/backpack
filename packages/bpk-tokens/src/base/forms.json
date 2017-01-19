@@ -71,7 +71,7 @@
       "type": "size"
     },
     "SELECT_PADDING_RIGHT": {
-      "value": "{!SPACING_BASE}",
+      "value": "{!SPACING_LG}",
       "type": "size"
     },
     "SELECT_PADDING_BOTTOM": {

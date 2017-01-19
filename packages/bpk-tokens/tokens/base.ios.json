@@ -1094,7 +1094,7 @@
     },
     {
       "category": "forms",
-      "value": "24",
+      "value": "30",
       "type": "size",
       "name": "selectPaddingRight"
     },

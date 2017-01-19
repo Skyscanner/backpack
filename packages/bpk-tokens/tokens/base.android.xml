@@ -182,7 +182,7 @@
   <property name="INPUT_LARGE_HEIGHT" category="forms">42</property>
   <property name="SELECT_HEIGHT" category="forms">36</property>
   <property name="SELECT_PADDING_TOP" category="forms">6</property>
-  <property name="SELECT_PADDING_RIGHT" category="forms">24</property>
+  <property name="SELECT_PADDING_RIGHT" category="forms">30</property>
   <property name="SELECT_PADDING_BOTTOM" category="forms">6</property>
   <property name="SELECT_PADDING_LEFT" category="forms">12</property>
   <property name="SELECT_BORDER_WIDTH" category="forms">1</property>

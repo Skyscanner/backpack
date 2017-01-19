@@ -4,9 +4,6 @@
 /// @group forms
 ////
 
-$_form-input-size: $bpk-spacing-sm + $bpk-spacing-xs;
-$_form-input-icon-padding: $bpk-spacing-sm + $_form-input-size;
-
 /// Form input. Can be used for text, email, number, password and tel type inputs.
 ///
 /// @example scss
@@ -70,13 +67,13 @@ $_form-input-icon-padding: $bpk-spacing-sm + $_form-input-size;
 ///   }
 
 @mixin bpk-input--valid {
-  padding-right: $_form-input-icon-padding;
+  padding-right: $bpk-spacing-base;
   background: $bpk-color-white url(map-get($bpk-icons-sm, tick-green-500)) no-repeat right $bpk-spacing-sm center;
-  background-size: $_form-input-size $_form-input-size;
+  background-size: $bpk-spacing-md $bpk-spacing-md;
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
-    padding-left: $_form-input-icon-padding;
+    padding-left: $bpk-spacing-base;
     background-position: left $bpk-spacing-sm center;
   }
 }
@@ -92,14 +89,14 @@ $_form-input-icon-padding: $bpk-spacing-sm + $_form-input-size;
 ///   }
 
 @mixin bpk-input--invalid {
-  padding-right: $_form-input-icon-padding;
+  padding-right: $bpk-spacing-base;
   border-color: $bpk-input-invalid-border-color;
   background: $bpk-color-white url(map-get($bpk-icons-sm, close-red-500)) no-repeat right $bpk-spacing-sm center;
-  background-size: $_form-input-size $_form-input-size;
+  background-size: $bpk-spacing-md $bpk-spacing-md;
 
   @include bpk-rtl {
     padding-right: $bpk-input-padding-x;
-    padding-left: $_form-input-icon-padding;
+    padding-left: $bpk-spacing-base;
     background-position: left $bpk-spacing-sm center;
   }
 }
@@ -228,7 +225,7 @@ $_form-input-icon-padding: $bpk-spacing-sm + $_form-input-size;
   border: $bpk-select-border;
   border-radius: $bpk-select-border-radius;
   background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-gray-700)) no-repeat right $bpk-spacing-sm center;
-  background-size: $bpk-spacing-sm $bpk-spacing-sm;
+  background-size: $bpk-spacing-md $bpk-spacing-md;
   color: $bpk-select-color;
   appearance: none;
 
@@ -409,8 +406,8 @@ $_form-input-icon-padding: $bpk-spacing-sm + $_form-input-size;
 
 @mixin bpk-checkbox__input {
   display: inline-block;
-  width: $_form-input-size;
-  height: $_form-input-size;
+  width: $bpk-spacing-md;
+  height: $bpk-spacing-md;
   margin: 0;
   padding: 0;
   border: 0;
@@ -467,8 +464,8 @@ $_form-input-icon-padding: $bpk-spacing-sm + $_form-input-size;
 
 @mixin bpk-radio__input {
   display: inline-block;
-  width: $_form-input-size;
-  height: $_form-input-size;
+  width: $bpk-spacing-md;
+  height: $bpk-spacing-md;
   margin: 0;
   padding: 0;
   border: 0;

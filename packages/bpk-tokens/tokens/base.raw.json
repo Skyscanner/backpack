@@ -1169,7 +1169,7 @@
     },
     "SELECT_PADDING_RIGHT": {
       "category": "forms",
-      "value": "1.5rem",
+      "value": "1.875rem",
       "type": "size",
       "name": "SELECT_PADDING_RIGHT"
     },

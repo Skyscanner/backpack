@@ -181,7 +181,7 @@ module.exports = {
   inputLargeHeight: "2.625rem + .375rem",
   selectHeight: "2.250rem",
   selectPaddingTop: ".375rem",
-  selectPaddingRight: "1.5rem",
+  selectPaddingRight: "1.875rem",
   selectPaddingBottom: ".375rem",
   selectPaddingLeft: ".75rem",
   selectBorderWidth: ".0625rem",

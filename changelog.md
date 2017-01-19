@@ -2,7 +2,20 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Changed:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - Account: updated icon shape with sharper bottom edge and more angled shoulders.
+  - Airports: simplified shape.
+  - Arrows: scaled shape to suit baseline grid
+  - Chevrons: scaled shape to suit baseline grid
+  - City: simplified shape.
+  - Edit: simplified shape, removed incongruous style from LG size.
+  - Globe: improvements to shape. Music - simplified shape.
+  - News: revised design to be front view rather than fake-3D
+  - Plane seat: revised design to not look like a dentist chair
+  - Upgrade: changed to not look like a mushroom
 
 ## 2017-01-13 - Deprecated "stubby arrow" icon and fixed "onClose firing twice bug" in the modal
 
@@ -10,9 +23,9 @@ _Nothing yet..._
 - bpk-component-icon: 1.3.2 => 2.0.0
 - bpk-mixins: 6.8.0 => 7.0.0
 - bpk-svgs: 2.2.1 => 3.0.0
- - Removed 'stubby' long-arrow-X icons
- - Renamed long-arrow-X-alt icons to long-arrow-X
- - Consumers who were relying on the 'alt' long arrow should now use the regular version and those who were using the regular version will now see a new style.
+  - Removed 'stubby' long-arrow-X icons
+  - Renamed long-arrow-X-alt icons to long-arrow-X
+  - Consumers who were relying on the 'alt' long arrow should now use the regular version and those who were using the regular version will now see a new style.
 
 **Added**
 - bpk-component-close-button: 0.0.0 => 0.0.1
