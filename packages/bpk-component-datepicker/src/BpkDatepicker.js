@@ -19,6 +19,17 @@ class BpkDatepicker extends Component {
     this.onDateSelect = this.onDateSelect.bind(this);
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    // Only update when `isOpen` or `date` have changed
+    if (nextState.isOpen !== this.state.isOpen) {
+      return true;
+    }
+    if (nextState.date !== this.state.date) {
+      return true;
+    }
+    return false;
+  }
+
   onOpen() {
     this.setState({
       isOpen: true,
@@ -73,6 +84,7 @@ class BpkDatepicker extends Component {
           isOpen={this.state.isOpen}
           closeButtonText="Close"
           title={popoverLabel}
+          closeOnOutsideClickExceptTarget
           {...rest}
         >
           <BpkCalendar

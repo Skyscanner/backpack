@@ -10,7 +10,9 @@
   &--invalid {
     @include bpk-input--invalid;
 
-    & + .bpk-input--docked {
+    & + .bpk-input--docked,
+    & + .bpk-input--docked-middle,
+    & + .bpk-input--docked-last {
       border-left-color: $bpk-select-invalid-border-color;
 
       @include bpk-rtl {
@@ -26,5 +28,17 @@
 
   &--docked {
     @include bpk-input--docked;
+
+    &-first {
+      @include bpk-input--docked-first-child;
+    }
+
+    &-middle {
+      @include bpk-input--docked-middle-child;
+    }
+
+    &-last {
+      @include bpk-input--docked-last-child;
+    }
   }
 }
