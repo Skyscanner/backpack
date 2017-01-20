@@ -17,6 +17,12 @@
   - Plane seat: revised design to not look like a dentist chair
   - Upgrade: changed to not look like a mushroom
 
+**Added:**
+- bpk-mixins:
+- bpk-svgs:
+- bpk-component-icon:
+  - Headset icon
+
 ## 2017-01-13 - Deprecated "stubby arrow" icon and fixed "onClose firing twice bug" in the modal
 
 **Changed**
