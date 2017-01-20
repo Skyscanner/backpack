@@ -143,15 +143,16 @@ const BpkCalendarGrid = (props) => {
     preventKeyboardFocus,
   } = props;
 
+  // Sorted in [sun, mon, ..., sat]
+  const sortedWeekDays = daysOfWeek.slice().sort((a, b) => a.index - b.index);
+  // Ordered according to weekStartsOn, e.g. [mon, tue, ..., sun]
   const reorderedWeekDays = reorderWeekDays(
-    daysOfWeek.slice().sort((a, b) => a.index - b.index),
+    sortedWeekDays,
     weekStartsOn,
   );
-
   const calendarMonthWeeks = getCalendarMonthWeeks(month, weekStartsOn);
 
-  const weekend = daysOfWeek.map(day => day.isWeekend);
-
+  const weekend = sortedWeekDays.map(day => day.isWeekend);
   let weekendStartIndex = -1;
   let weekendEndIndex = -1;
 

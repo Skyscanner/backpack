@@ -6,9 +6,10 @@ import addMonths from 'date-fns/add_months';
 import {
   formatMonth,
   formatDateFull,
-  formatMonthGerman,
+  formatMonthArabic,
+  formatDateFullArabic,
   weekDaysMoreWeekend,
-  weekDaysGerman,
+  weekDaysArabic,
   weekDays,
 } from './test-utils';
 
@@ -106,14 +107,15 @@ storiesOf('bpk-component-calendar', module)
       dateModifiers={{ disabled: isFriday }}
     />
   ))
-  .add('Calendar - Non-english locale', () => (
+  .add('Calendar - ar-ae locale', () => (
     <BpkCalendar
       id="myCalendar"
-      formatMonth={formatMonthGerman}
-      formatDateFull={formatDateFull}
-      daysOfWeek={weekDaysGerman}
-      changeMonthLabel="Monat auswählen"
+      formatMonth={formatMonthArabic}
+      formatDateFull={formatDateFullArabic}
+      daysOfWeek={weekDaysArabic}
+      changeMonthLabel="Change month"
       onDateSelect={action('Selected day')}
+      weekStartsOn={6}
     />
   ))
   .add('Calendar - Specify initial date', () => (
