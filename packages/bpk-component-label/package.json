@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-label",
-  "version": "2.0.12",
+  "version": "2.0.14",
   "description": "Backpack label component.",
   "main": "index.js",
   "repository": {
@@ -13,6 +13,6 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^7.0.0"
+    "bpk-mixins": "^8.0.1"
   }
 }

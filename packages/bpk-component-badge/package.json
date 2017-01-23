@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-badge",
-  "version": "0.0.10",
+  "version": "0.0.12",
   "description": "Backpack badge component.",
   "main": "index.js",
   "repository": {
@@ -13,9 +13,9 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^7.0.0"
+    "bpk-mixins": "^8.0.1"
   },
   "devDependencies": {
-    "bpk-tokens": "^17.0.2"
+    "bpk-tokens": "^17.0.4"
   }
 }
