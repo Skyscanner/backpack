@@ -1,6 +1,6 @@
 import BpkInput from 'bpk-component-input';
 import BpkPopover from 'bpk-component-popover';
-import BpkCalendar from 'bpk-component-calendar';
+import BpkCalendar, { CustomPropTypes } from 'bpk-component-calendar';
 import React, { PropTypes, Component } from 'react';
 
 import './bpk-datepicker.scss';
@@ -47,6 +47,9 @@ class BpkDatepicker extends Component {
       isOpen: false,
       date: dateObj,
     });
+    if (this.props.onDateSelect) {
+      this.props.onDateSelect(dateObj);
+    }
   }
 
   render() {
@@ -104,17 +107,19 @@ class BpkDatepicker extends Component {
 
 BpkDatepicker.propTypes = {
   id: PropTypes.string.isRequired,
-  daysOfWeek: PropTypes.string.isRequired,
   changeMonthLabel: PropTypes.string.isRequired,
+  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   formatDate: PropTypes.func.isRequired,
   formatDateFull: PropTypes.func.isRequired,
   formatMonth: PropTypes.func.isRequired,
   popoverLabel: PropTypes.string.isRequired,
-  inputProps: PropTypes.objectOf(PropTypes.func),
+  inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  onDateSelect: PropTypes.func,
 };
 
 BpkDatepicker.defaultProps = {
   inputProps: {},
+  onDateSelect: null,
 };
 
 export default BpkDatepicker;
