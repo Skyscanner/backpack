@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import isWeekend from 'date-fns/is_weekend';
 
-import { weekDays, formatDateFull } from '../test-utils';
+import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 import BpkCalendarGrid from './BpkCalendarGrid';
 import BpkCalendarDate from './BpkCalendarDate';
 
@@ -12,6 +12,7 @@ describe('BpkCalendarGrid', () => {
     const tree = renderer.create(
       <BpkCalendarGrid
         month={new Date('2016-10')}
+        formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         DateComponent={BpkCalendarDate}
         daysOfWeek={weekDays}
@@ -26,6 +27,7 @@ describe('BpkCalendarGrid', () => {
     const tree = renderer.create(
       <BpkCalendarGrid
         month={new Date('2016-10')}
+        formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         DateComponent={BpkCalendarDate}
         daysOfWeek={weekDays}
@@ -43,6 +45,7 @@ describe('BpkCalendarGrid', () => {
     const tree = renderer.create(
       <BpkCalendarGrid
         month={new Date('2016-10')}
+        formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         DateComponent={BpkCalendarDate}
         daysOfWeek={weekDays}
@@ -72,6 +75,7 @@ describe('BpkCalendarGrid', () => {
     const tree = renderer.create(
       <BpkCalendarGrid
         month={new Date('2016-10')}
+        formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         DateComponent={MyCustomDate}
         daysOfWeek={weekDays}
@@ -87,6 +91,7 @@ describe('BpkCalendarGrid', () => {
 
     const grid = mount(<BpkCalendarGrid
       month={new Date('2016-10')}
+      formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       DateComponent={BpkCalendarDate}
       daysOfWeek={weekDays}

@@ -1,6 +1,10 @@
 exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" attribute set to false 1`] = `
 <table
   className="bpk-calendar-grid">
+  <caption
+    className="bpk-calendar-grid__caption">
+    October 2016
+  </caption>
   <thead>
     <tr
       className="bpk-calendar-grid__header">
@@ -70,6 +74,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-09-25">
         <button
           aria-label="Sunday, 25th September 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -87,6 +92,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-09-26">
         <button
           aria-label="Monday, 26th September 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -104,6 +110,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-09-27">
         <button
           aria-label="Tuesday, 27th September 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -121,6 +128,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-09-28">
         <button
           aria-label="Wednesday, 28th September 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -138,6 +146,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-09-29">
         <button
           aria-label="Thursday, 29th September 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -155,6 +164,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-09-30">
         <button
           aria-label="Friday, 30th September 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -172,6 +182,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-01">
         <button
           aria-label="Saturday, 1st October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -192,6 +203,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-02">
         <button
           aria-label="Sunday, 2nd October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -209,6 +221,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-03">
         <button
           aria-label="Monday, 3rd October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -226,6 +239,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-04">
         <button
           aria-label="Tuesday, 4th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -243,6 +257,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-05">
         <button
           aria-label="Wednesday, 5th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -260,6 +275,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-06">
         <button
           aria-label="Thursday, 6th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -277,6 +293,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-07">
         <button
           aria-label="Friday, 7th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -294,6 +311,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-08">
         <button
           aria-label="Saturday, 8th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -314,6 +332,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-09">
         <button
           aria-label="Sunday, 9th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -331,6 +350,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-10">
         <button
           aria-label="Monday, 10th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -348,6 +368,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-11">
         <button
           aria-label="Tuesday, 11th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -365,6 +386,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-12">
         <button
           aria-label="Wednesday, 12th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -382,6 +404,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-13">
         <button
           aria-label="Thursday, 13th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -399,6 +422,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-14">
         <button
           aria-label="Friday, 14th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -416,6 +440,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-15">
         <button
           aria-label="Saturday, 15th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -436,6 +461,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-16">
         <button
           aria-label="Sunday, 16th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -453,6 +479,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-17">
         <button
           aria-label="Monday, 17th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -470,6 +497,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-18">
         <button
           aria-label="Tuesday, 18th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -487,6 +515,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-19">
         <button
           aria-label="Wednesday, 19th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -504,6 +533,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-20">
         <button
           aria-label="Thursday, 20th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -521,6 +551,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-21">
         <button
           aria-label="Friday, 21st October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -538,6 +569,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-22">
         <button
           aria-label="Saturday, 22nd October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -558,6 +590,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-23">
         <button
           aria-label="Sunday, 23rd October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -575,6 +608,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-24">
         <button
           aria-label="Monday, 24th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -592,6 +626,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-25">
         <button
           aria-label="Tuesday, 25th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -609,6 +644,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-26">
         <button
           aria-label="Wednesday, 26th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -626,6 +662,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-27">
         <button
           aria-label="Thursday, 27th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -643,6 +680,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-28">
         <button
           aria-label="Friday, 28th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -660,6 +698,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-29">
         <button
           aria-label="Saturday, 29th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -680,6 +719,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-30">
         <button
           aria-label="Sunday, 30th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -697,6 +737,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-10-31">
         <button
           aria-label="Monday, 31st October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -714,6 +755,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-11-01">
         <button
           aria-label="Tuesday, 1st November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -731,6 +773,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-11-02">
         <button
           aria-label="Wednesday, 2nd November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -748,6 +791,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-11-03">
         <button
           aria-label="Thursday, 3rd November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -765,6 +809,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-11-04">
         <button
           aria-label="Friday, 4th November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -782,6 +827,7 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
         data-date="2016-11-05">
         <button
           aria-label="Saturday, 5th November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -802,6 +848,10 @@ exports[`BpkCalendarGrid should render correctly with "showWeekendSeparator" att
 exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribute 1`] = `
 <table
   className="bpk-calendar-grid">
+  <caption
+    className="bpk-calendar-grid__caption">
+    October 2016
+  </caption>
   <thead>
     <tr
       className="bpk-calendar-grid__header">
@@ -871,6 +921,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-09-26">
         <button
           aria-label="Monday, 26th September 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -888,6 +939,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-09-27">
         <button
           aria-label="Tuesday, 27th September 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -905,6 +957,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-09-28">
         <button
           aria-label="Wednesday, 28th September 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -922,6 +975,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-09-29">
         <button
           aria-label="Thursday, 29th September 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -939,6 +993,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-09-30">
         <button
           aria-label="Friday, 30th September 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -956,6 +1011,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-01">
         <button
           aria-label="Saturday, 1st October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -973,6 +1029,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-02">
         <button
           aria-label="Sunday, 2nd October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -993,6 +1050,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-03">
         <button
           aria-label="Monday, 3rd October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1010,6 +1068,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-04">
         <button
           aria-label="Tuesday, 4th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1027,6 +1086,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-05">
         <button
           aria-label="Wednesday, 5th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1044,6 +1104,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-06">
         <button
           aria-label="Thursday, 6th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1061,6 +1122,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-07">
         <button
           aria-label="Friday, 7th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1078,6 +1140,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-08">
         <button
           aria-label="Saturday, 8th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1095,6 +1158,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-09">
         <button
           aria-label="Sunday, 9th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1115,6 +1179,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-10">
         <button
           aria-label="Monday, 10th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1132,6 +1197,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-11">
         <button
           aria-label="Tuesday, 11th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1149,6 +1215,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-12">
         <button
           aria-label="Wednesday, 12th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1166,6 +1233,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-13">
         <button
           aria-label="Thursday, 13th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1183,6 +1251,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-14">
         <button
           aria-label="Friday, 14th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1200,6 +1269,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-15">
         <button
           aria-label="Saturday, 15th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1217,6 +1287,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-16">
         <button
           aria-label="Sunday, 16th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1237,6 +1308,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-17">
         <button
           aria-label="Monday, 17th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1254,6 +1326,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-18">
         <button
           aria-label="Tuesday, 18th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1271,6 +1344,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-19">
         <button
           aria-label="Wednesday, 19th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1288,6 +1362,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-20">
         <button
           aria-label="Thursday, 20th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1305,6 +1380,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-21">
         <button
           aria-label="Friday, 21st October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1322,6 +1398,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-22">
         <button
           aria-label="Saturday, 22nd October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1339,6 +1416,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-23">
         <button
           aria-label="Sunday, 23rd October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1359,6 +1437,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-24">
         <button
           aria-label="Monday, 24th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1376,6 +1455,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-25">
         <button
           aria-label="Tuesday, 25th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1393,6 +1473,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-26">
         <button
           aria-label="Wednesday, 26th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1410,6 +1491,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-27">
         <button
           aria-label="Thursday, 27th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1427,6 +1509,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-28">
         <button
           aria-label="Friday, 28th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1444,6 +1527,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-29">
         <button
           aria-label="Saturday, 29th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1461,6 +1545,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-30">
         <button
           aria-label="Sunday, 30th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1481,6 +1566,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-10-31">
         <button
           aria-label="Monday, 31st October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1498,6 +1584,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-11-01">
         <button
           aria-label="Tuesday, 1st November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1515,6 +1602,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-11-02">
         <button
           aria-label="Wednesday, 2nd November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1532,6 +1620,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-11-03">
         <button
           aria-label="Thursday, 3rd November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1549,6 +1638,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-11-04">
         <button
           aria-label="Friday, 4th November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1566,6 +1656,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-11-05">
         <button
           aria-label="Saturday, 5th November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1583,6 +1674,7 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
         data-date="2016-11-06">
         <button
           aria-label="Sunday, 6th November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date bpk-calendar-date--someClass"
           disabled={false}
           onClick={[Function]}
@@ -1603,6 +1695,10 @@ exports[`BpkCalendarGrid should render correctly with a "dateModifiers" attribut
 exports[`BpkCalendarGrid should render correctly with a custom date component 1`] = `
 <table
   className="bpk-calendar-grid">
+  <caption
+    className="bpk-calendar-grid__caption">
+    October 2016
+  </caption>
   <thead>
     <tr
       className="bpk-calendar-grid__header">
@@ -2278,6 +2374,10 @@ exports[`BpkCalendarGrid should render correctly with a custom date component 1`
 exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn" attribute 1`] = `
 <table
   className="bpk-calendar-grid">
+  <caption
+    className="bpk-calendar-grid__caption">
+    October 2016
+  </caption>
   <thead>
     <tr
       className="bpk-calendar-grid__header">
@@ -2347,6 +2447,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-09-28">
         <button
           aria-label="Wednesday, 28th September 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2364,6 +2465,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-09-29">
         <button
           aria-label="Thursday, 29th September 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2381,6 +2483,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-09-30">
         <button
           aria-label="Friday, 30th September 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2398,6 +2501,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-01">
         <button
           aria-label="Saturday, 1st October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2415,6 +2519,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-02">
         <button
           aria-label="Sunday, 2nd October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2432,6 +2537,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-03">
         <button
           aria-label="Monday, 3rd October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2449,6 +2555,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-04">
         <button
           aria-label="Tuesday, 4th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2469,6 +2576,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-05">
         <button
           aria-label="Wednesday, 5th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2486,6 +2594,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-06">
         <button
           aria-label="Thursday, 6th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2503,6 +2612,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-07">
         <button
           aria-label="Friday, 7th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2520,6 +2630,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-08">
         <button
           aria-label="Saturday, 8th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2537,6 +2648,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-09">
         <button
           aria-label="Sunday, 9th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2554,6 +2666,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-10">
         <button
           aria-label="Monday, 10th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2571,6 +2684,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-11">
         <button
           aria-label="Tuesday, 11th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2591,6 +2705,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-12">
         <button
           aria-label="Wednesday, 12th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2608,6 +2723,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-13">
         <button
           aria-label="Thursday, 13th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2625,6 +2741,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-14">
         <button
           aria-label="Friday, 14th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2642,6 +2759,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-15">
         <button
           aria-label="Saturday, 15th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2659,6 +2777,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-16">
         <button
           aria-label="Sunday, 16th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2676,6 +2795,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-17">
         <button
           aria-label="Monday, 17th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2693,6 +2813,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-18">
         <button
           aria-label="Tuesday, 18th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2713,6 +2834,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-19">
         <button
           aria-label="Wednesday, 19th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2730,6 +2852,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-20">
         <button
           aria-label="Thursday, 20th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2747,6 +2870,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-21">
         <button
           aria-label="Friday, 21st October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2764,6 +2888,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-22">
         <button
           aria-label="Saturday, 22nd October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2781,6 +2906,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-23">
         <button
           aria-label="Sunday, 23rd October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2798,6 +2924,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-24">
         <button
           aria-label="Monday, 24th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2815,6 +2942,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-25">
         <button
           aria-label="Tuesday, 25th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2835,6 +2963,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-26">
         <button
           aria-label="Wednesday, 26th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2852,6 +2981,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-27">
         <button
           aria-label="Thursday, 27th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2869,6 +2999,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-28">
         <button
           aria-label="Friday, 28th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2886,6 +3017,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-29">
         <button
           aria-label="Saturday, 29th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2903,6 +3035,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-30">
         <button
           aria-label="Sunday, 30th October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2920,6 +3053,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-10-31">
         <button
           aria-label="Monday, 31st October 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2937,6 +3071,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-11-01">
         <button
           aria-label="Tuesday, 1st November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2957,6 +3092,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-11-02">
         <button
           aria-label="Wednesday, 2nd November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2974,6 +3110,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-11-03">
         <button
           aria-label="Thursday, 3rd November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -2991,6 +3128,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-11-04">
         <button
           aria-label="Friday, 4th November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -3008,6 +3146,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-11-05">
         <button
           aria-label="Saturday, 5th November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -3025,6 +3164,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-11-06">
         <button
           aria-label="Sunday, 6th November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -3042,6 +3182,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-11-07">
         <button
           aria-label="Monday, 7th November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}
@@ -3059,6 +3200,7 @@ exports[`BpkCalendarGrid should render correctly with a different "weekStartsOn"
         data-date="2016-11-08">
         <button
           aria-label="Tuesday, 8th November 2016"
+          aria-pressed={false}
           className="bpk-calendar-date"
           disabled={false}
           onClick={[Function]}

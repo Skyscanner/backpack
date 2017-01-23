@@ -26,12 +26,12 @@ export const formatMonthArabic = (date) => {
 };
 
 export const weekDays = [
-  // {
-  //   name: 'Sunday',
-  //   nameAbbr: 'Sun',
-  //   index: 0,
-  //   isWeekend: true,
-  // },
+  {
+    name: 'Sunday',
+    nameAbbr: 'Sun',
+    index: 0,
+    isWeekend: true,
+  },
   {
     name: 'Monday',
     nameAbbr: 'Mon',
@@ -49,12 +49,6 @@ export const weekDays = [
     nameAbbr: 'Wed',
     index: 3,
     isWeekend: false,
-  },
-  {
-    name: 'Sunday',
-    nameAbbr: 'Sun',
-    index: 0,
-    isWeekend: true,
   },
   {
     name: 'Thursday',

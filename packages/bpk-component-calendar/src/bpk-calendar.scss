@@ -13,6 +13,10 @@
     margin-top: $bpk-spacing-sm;
   }
 
+  &__caption {
+    @include bpk-visually-hidden();
+  }
+
   &__header {
     font-size: $bpk-font-size-sm;
     line-height: $bpk-line-height-sm;
