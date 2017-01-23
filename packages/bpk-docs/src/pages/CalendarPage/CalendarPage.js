@@ -114,6 +114,7 @@ const components = [
         daysOfWeek={weekDays}
         weekStartsOn={1}
         DateComponent={BpkCalendarDate}
+        formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         showWeekendSeparator
       />,

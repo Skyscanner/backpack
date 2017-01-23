@@ -26,6 +26,7 @@
     "bpk-component-checkbox": "^0.0.35",
     "bpk-component-code": "^0.0.38",
     "bpk-component-content-container": "^1.0.29",
+    "bpk-component-datepicker": "^0.0.0",
     "bpk-component-grid": "^0.0.32",
     "bpk-component-grid-toggle": "^0.0.45",
     "bpk-component-heading": "^1.1.21",

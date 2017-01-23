@@ -62,6 +62,7 @@ class BpkDatepicker extends Component {
       formatDateFull,
       formatMonth,
       popoverLabel,
+      weekStartsOn,
       ...rest
      } = this.props;
 
@@ -96,6 +97,7 @@ class BpkDatepicker extends Component {
             formatDateFull={formatDateFull}
             daysOfWeek={daysOfWeek}
             changeMonthLabel={changeMonthLabel}
+            weekStartsOn={weekStartsOn}
             onDateSelect={this.onDateSelect}
             initialSelectedDate={this.state.date}
           />
@@ -115,6 +117,10 @@ BpkDatepicker.propTypes = {
   popoverLabel: PropTypes.string.isRequired,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   onDateSelect: PropTypes.func,
+  weekStartsOn: PropTypes.number,
+  maxDate: PropTypes.instanceOf(Date),
+  minDate: PropTypes.instanceOf(Date),
+  DateComponent: PropTypes.func,
 };
 
 BpkDatepicker.defaultProps = {

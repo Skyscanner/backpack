@@ -31,6 +31,7 @@ export const MODALS = '/docs/molecules/modals';
 export const AUTOSUGGEST = '/docs/molecules/autosuggest';
 export const POPOVERS = '/docs/molecules/popovers';
 export const CALENDAR = '/docs/molecules/calendar';
+export const DATEPICKER = '/docs/molecules/datepicker';
 
 export const DOWNLOADS = '/downloads';
 

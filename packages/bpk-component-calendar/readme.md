@@ -22,9 +22,7 @@ const daysOfWeek = [
   {
     "name": "Monday",
     "nameAbbr": "Mon",
-    "nameShort": "Mo",
     "index": 1,
-    "cldrKey": "mon",
     "isWeekend": false
   },
   // ...
