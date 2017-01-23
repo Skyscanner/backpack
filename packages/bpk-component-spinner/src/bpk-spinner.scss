@@ -3,6 +3,14 @@
 .bpk-spinner {
   @include bpk-spinner();
 
+  &--large {
+    @include bpk-spinner--lg();
+  }
+
+  &--extra-large {
+    @include bpk-spinner--xl();
+  }
+
   &--align-to-button {
     @include bpk-spinner--align-to-button();
   }

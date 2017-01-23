@@ -4,7 +4,7 @@ import XlSpinner from 'bpk-svgs/dist/js/spinners/xl';
 
 import './bpk-spinner.scss';
 
-const BpkExtraLargeSpinner = props => <XlSpinner className="bpk-spinner" fill={props.fill} />;
+const BpkExtraLargeSpinner = props => <XlSpinner className="bpk-spinner bpk-spinner--extra-large" fill={props.fill} />;
 
 BpkExtraLargeSpinner.propTypes = {
   fill: PropTypes.string,
