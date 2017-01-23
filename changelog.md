@@ -1,11 +1,11 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2017-01-23 - Visual improvements to some icons, new 'headset' icon, fixed icon scaling issue when consumed via mixins, and fixed spinner scaling issue when consumed via both mixins and react component.
 
 **Changed:**
-- bpk-component-icon:
-- bpk-mixins:
-- bpk-svgs:
+- bpk-component-icon: 2.0.0 => 3.0.1
+- bpk-mixins: 7.0.0 => 8.0.1
+- bpk-svgs: 3.0.0 => 4.0.1
   - Account: updated icon shape with sharper bottom edge and more angled shoulders.
   - Airports: simplified shape.
   - Arrows: scaled shape to suit baseline grid
@@ -18,16 +18,46 @@
   - Upgrade: changed to not look like a mushroom
 
 **Added:**
-- bpk-mixins:
-- bpk-svgs:
-- bpk-component-icon:
-  - Headset icon
+- bpk-mixins: 7.0.0 => 8.0.1
+- bpk-svgs: 3.0.0 => 4.0.1
+- bpk-component-icon: 2.0.0 => 3.0.1
+  - Added headset icon
 
 **Fixed:**
-- bpk-component-spinner:
+- bpk-component-spinner: 1.0.26 => 1.0.28
   - React components will now scale with user font size preference
-- bpk-mixins:
+- bpk-mixins: 7.0.0 => 8.0.1
   - Icons & Spinners consumed via mixins will now scale with user font size preference
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 1.1.1 => 1.1.3
+- bpk-component-badge: 0.0.10 => 0.0.12
+- bpk-component-banner-alert: 0.0.23 => 0.0.25
+- bpk-component-blockquote: 0.0.36 => 0.0.38
+- bpk-component-button: 1.5.1 => 1.5.3
+- bpk-component-card: 0.0.24 => 0.0.26
+- bpk-component-checkbox: 0.0.33 => 0.0.35
+- bpk-component-close-button: 0.0.1 => 0.0.3
+- bpk-component-code: 0.0.36 => 0.0.38
+- bpk-component-content-container: 1.0.27 => 1.0.29
+- bpk-component-grid-toggle: 0.0.43 => 0.0.45
+- bpk-component-grid: 0.0.30 => 0.0.32
+- bpk-component-heading: 1.1.19 => 1.1.21
+- bpk-component-input: 1.0.12 => 1.0.14
+- bpk-component-label: 2.0.12 => 2.0.14
+- bpk-component-link: 0.4.1 => 0.4.3
+- bpk-component-list: 0.0.56 => 0.0.58
+- bpk-component-logo: 1.0.26 => 1.0.28
+- bpk-component-modal: 0.3.7 => 0.3.9
+- bpk-component-paragraph: 0.1.43 => 0.1.45
+- bpk-component-radio: 0.0.33 => 0.0.35
+- bpk-component-router-link: 0.1.42 => 0.1.44
+- bpk-component-rtl-toggle: 0.0.27 => 0.0.29
+- bpk-component-select: 1.0.12 => 1.0.14
+- bpk-component-table: 0.0.56 => 0.0.58
+- bpk-docs: 0.0.56 => 0.0.58
+- bpk-stylesheets: 3.1.4 => 3.1.6
+- bpk-tokens: 17.0.2 => 17.0.4
 
 ## 2017-01-13 - Deprecated "stubby arrow" icon and fixed "onClose firing twice bug" in the modal
 
