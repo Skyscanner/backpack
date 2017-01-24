@@ -8,8 +8,11 @@ import {
   formatDateFull,
   formatMonthArabic,
   formatDateFullArabic,
+  formatMonthJapanese,
+  formatDateFullJapanese,
   weekDaysMoreWeekend,
   weekDaysArabic,
+  weekDaysJapanese,
   weekDays,
 } from './test-utils';
 
@@ -108,7 +111,7 @@ storiesOf('bpk-component-calendar', module)
       dateModifiers={{ disabled: isFriday }}
     />
   ))
-  .add('Calendar - ar-ae locale', () => (
+  .add('Calendar - ar-AE locale', () => (
     <BpkCalendar
       id="myCalendar"
       formatMonth={formatMonthArabic}
@@ -117,6 +120,17 @@ storiesOf('bpk-component-calendar', module)
       changeMonthLabel="Change month"
       onDateSelect={action('Selected day')}
       weekStartsOn={6}
+    />
+  ))
+  .add('Calendar - ja-JP locale', () => (
+    <BpkCalendar
+      id="myCalendar"
+      formatMonth={formatMonthJapanese}
+      formatDateFull={formatDateFullJapanese}
+      daysOfWeek={weekDaysJapanese}
+      changeMonthLabel="Change month"
+      onDateSelect={action('Selected day')}
+      weekStartsOn={0}
     />
   ))
   .add('Calendar - Specify initial date', () => (
