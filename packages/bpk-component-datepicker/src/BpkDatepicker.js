@@ -88,7 +88,7 @@ class BpkDatepicker extends Component {
             <BpkInput
               id={id}
               name={`${id}_input`}
-              defaultValue={formatDate(this.state.date)}
+              value={formatDate(this.state.date)}
               onClick={this.onOpen}
               onFocus={this.onOpen}
               className="bpk-datepicker__input"
