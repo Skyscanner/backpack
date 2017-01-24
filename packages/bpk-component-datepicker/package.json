@@ -14,9 +14,9 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-component-calendar": "^0.0.4",
-    "bpk-component-input": "^1.0.12",
-    "bpk-component-popover": "^0.0.1",
-    "bpk-mixins": "^7.0.0"
+    "bpk-component-calendar": "^0.0.6",
+    "bpk-component-input": "^1.0.14",
+    "bpk-component-popover": "^0.0.3",
+    "bpk-mixins": "^8.0.1"
   }
 }
