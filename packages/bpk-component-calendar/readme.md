@@ -205,3 +205,11 @@ const formatMonth = date => format(date, 'MMMM YYYY');
 #### weekStartsOn
 
 First day of the week. 0 = Sunday, 1 = Monday, ..., 6 = Saturday.
+
+### Translation
+
+If building a Skyscanner product, the following translation strings are recommended.
+
+| Property              | Translation key               | English          |
+| --------------------- | ----------------------------- | ---------------- |
+| changeMonthLabel      | bpk_calendar_changeMonthLabel | Change month     |

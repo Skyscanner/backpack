@@ -6,6 +6,7 @@ export const GETTING_STARTED = '/docs/getting-started';
 export const BACKPACK_REACT_SCRIPTS = '/docs/backpack-react-scripts';
 export const BASE_STYLESHEET = '/docs/base-stylesheet';
 export const CONTRIBUTING = '/docs/contributing';
+export const I18N = '/docs/i18n';
 
 export const BONDS = '/docs/bonds';
 export const COLORS = '/docs/bonds/colors';

@@ -15,6 +15,14 @@ const components = [
   {
     id: 'datepicker',
     title: 'Default datepicker',
+    blurb: [
+      <BpkParagraph>
+        Default calendar, input and popover configuration.
+      </BpkParagraph>,
+      <BpkParagraph>
+        See the BpkCalendar documentation for more examples.
+      </BpkParagraph>,
+    ],
     examples: [
       <BpkDatepicker
         id="calendar-1"

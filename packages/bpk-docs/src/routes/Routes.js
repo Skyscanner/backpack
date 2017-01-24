@@ -12,6 +12,8 @@ import GettingStartedPage from './../pages/GettingStartedPage';
 import BackpackReactScriptsPage from './../pages/BackpackReactScriptsPage';
 import ContributingPage from './../pages/ContributingPage';
 import BaseStylesheetPage from './../pages/BaseStylesheetPage';
+import InternationalisationPage from './../pages/InternationalisationPage';
+
 import ColorsPage from './../pages/ColorsPage';
 import TypesettingPage from './../pages/TypesettingPage';
 import RadiiPage from './../pages/RadiiPage';
@@ -47,6 +49,7 @@ const Routes = (
       <Route path={ROUTES.BACKPACK_REACT_SCRIPTS} component={BackpackReactScriptsPage} />
       <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
       <Route path={ROUTES.CONTRIBUTING} component={ContributingPage} />
+      <Route path={ROUTES.I18N} component={InternationalisationPage} />
       <Route path={ROUTES.BONDS}>
         <IndexRedirect to={ROUTES.COLORS} />
         <Route path={ROUTES.COLORS} component={ColorsPage} />
