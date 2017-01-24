@@ -27,6 +27,9 @@ describe('BpkDatepicker', () => {
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         inputProps={inputProps}
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        initialSelectedDate={new Date(2010, 1, 15)}
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -42,6 +45,9 @@ describe('BpkDatepicker', () => {
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       inputProps={inputProps}
+      minDate={new Date(2010, 1, 15)}
+      maxDate={new Date(2010, 2, 15)}
+      initialSelectedDate={new Date(2010, 1, 15)}
     />);
 
     expect(datepicker.state('isOpen')).toEqual(false);
@@ -60,6 +66,9 @@ describe('BpkDatepicker', () => {
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       inputProps={inputProps}
+      minDate={new Date(2010, 1, 15)}
+      maxDate={new Date(2010, 2, 15)}
+      initialSelectedDate={new Date(2010, 1, 15)}
     />);
 
     expect(datepicker.state('isOpen')).toEqual(false);
@@ -78,6 +87,9 @@ describe('BpkDatepicker', () => {
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       inputProps={inputProps}
+      minDate={new Date(2010, 1, 15)}
+      maxDate={new Date(2010, 2, 15)}
+      initialSelectedDate={new Date(2010, 1, 15)}
     />);
 
     datepicker.find('BpkInput').simulate('click');
@@ -99,6 +111,9 @@ describe('BpkDatepicker', () => {
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       inputProps={inputProps}
+      minDate={new Date(2010, 1, 15)}
+      maxDate={new Date(2010, 2, 15)}
+      initialSelectedDate={new Date(2010, 1, 15)}
     />);
 
     datepicker.find('BpkInput').simulate('click');
@@ -118,6 +133,9 @@ describe('BpkDatepicker', () => {
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       inputProps={inputProps}
+      minDate={new Date(2010, 1, 15)}
+      maxDate={new Date(2010, 2, 15)}
+      initialSelectedDate={new Date(2010, 1, 15)}
     />);
 
     const spy = jest.fn();

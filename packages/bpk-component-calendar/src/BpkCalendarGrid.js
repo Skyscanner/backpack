@@ -205,13 +205,15 @@ const BpkCalendarGrid = (props) => {
 };
 
 BpkCalendarGrid.propTypes = {
-  month: PropTypes.instanceOf(Date).isRequired,
-  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
-  weekStartsOn: PropTypes.number.isRequired,
+  // Required
   DateComponent: PropTypes.func.isRequired,
-  showWeekendSeparator: PropTypes.bool.isRequired,
+  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   formatDateFull: PropTypes.func.isRequired,
   formatMonth: PropTypes.func.isRequired,
+  month: PropTypes.instanceOf(Date).isRequired,
+  showWeekendSeparator: PropTypes.bool.isRequired,
+  weekStartsOn: PropTypes.number.isRequired,
+  // Optional
   dateModifiers: CustomPropTypes.DateModifiers,
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
@@ -219,9 +221,9 @@ BpkCalendarGrid.propTypes = {
 };
 
 BpkCalendarGrid.defaultProps = {
+  dateModifiers: {},
   onDateClick: null,
   onDateKeyDown: null,
-  dateModifiers: {},
   preventKeyboardFocus: false,
 };
 

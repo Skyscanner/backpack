@@ -48,18 +48,23 @@ For more information on some these props, check the BpkCalendar documentation.
 
 | Property              | PropType             | Required | Default Value        |
 | --------------------- | -------------------- | -------- | -------------------- |
-| id                    | string               | true     | -                    |
 | changeMonthLabel      | string               | true     | -                    |
 | daysOfWeek            | object               | true     | -                    |
 | formatDate            | func                 | true     | -                    |
 | formatDateFull        | func                 | true     | -                    |
 | formatMonth           | func                 | true     | -                    |
+| id                    | string               | true     | -                    |
 | popoverLabel          | func                 | true     | -                    |
+| DateComponent         | func                 | false    | BpkCalendarDate  (*) |
+| dateModifiers         | object               | false    | {}               (*) |
+| initialSelectedDate   | Date                 | false    | new Date         (*) |
 | inputProps            | object               | false    | {}                   |
-| onDateSelect          | func                 | false    | null                 |
-| weekStartsOn          | number               | false    | 1                (*) |
+| markOutsideDays       | bool                 | false    | true             (*) |
+| markToday             | bool                 | false    | true             (*) |
 | maxDate               | Date                 | false    | new Date() + 1yr (*) |
 | minDate               | Date                 | false    | new Date()       (*) |
-| DateComponent         | func                 | false    | BpkCalendarDate  (*) |
+| onDateSelect          | func                 | false    | null                 |
+| showWeekendSeparator  | bool                 | false    | true             (*) |
+| weekStartsOn          | number               | false    | 1                (*) |
 
 > (*) Default value is defined on child component

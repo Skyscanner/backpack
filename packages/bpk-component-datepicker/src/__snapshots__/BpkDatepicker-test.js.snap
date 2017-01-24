@@ -3,7 +3,7 @@ exports[`BpkDatepicker should render correctly 1`] = `
   <span
     aria-live="polite"
     className="bpk-datepicker__input-description">
-    Monday, 23rd January 2017
+    Monday, 15th February 2010
   </span>
   <div
     className="bpk-popover-target">
@@ -16,7 +16,7 @@ exports[`BpkDatepicker should render correctly 1`] = `
       onFocus={[Function]}
       placeholder="placeholder"
       type="text"
-      value="23/01/2017" />
+      value="15/02/2010" />
   </div>
 </div>
 `;

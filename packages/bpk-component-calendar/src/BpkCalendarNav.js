@@ -83,12 +83,14 @@ const BpkCalendarNav = (props) => {
 };
 
 BpkCalendarNav.propTypes = {
-  id: PropTypes.string.isRequired,
+  // Required
   changeMonthLabel: PropTypes.string.isRequired,
-  month: PropTypes.instanceOf(Date).isRequired,
-  minDate: PropTypes.instanceOf(Date).isRequired,
-  maxDate: PropTypes.instanceOf(Date).isRequired,
   formatMonth: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
+  maxDate: PropTypes.instanceOf(Date).isRequired,
+  minDate: PropTypes.instanceOf(Date).isRequired,
+  month: PropTypes.instanceOf(Date).isRequired,
+  // Optional
   onChangeMonth: PropTypes.func,
 };
 

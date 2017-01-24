@@ -6,12 +6,12 @@ import React, { PropTypes, Component } from 'react';
 import './bpk-datepicker.scss';
 
 class BpkDatepicker extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       isOpen: false,
-      date: new Date(),
+      date: this.props.initialSelectedDate,
     };
 
     this.onOpen = this.onOpen.bind(this);
@@ -54,17 +54,28 @@ class BpkDatepicker extends Component {
 
   render() {
     const {
-      id,
-      inputProps,
-      daysOfWeek,
       changeMonthLabel,
+      DateComponent,
+      dateModifiers,
+      daysOfWeek,
       formatDate,
       formatDateFull,
       formatMonth,
+      id,
+      inputProps,
+      markOutsideDays,
+      markToday,
+      maxDate,
+      minDate,
       popoverLabel,
+      showWeekendSeparator,
       weekStartsOn,
       ...rest
      } = this.props;
+
+    // The following props are not used in render
+    delete rest.initialSelectedDate;
+    delete rest.onDateSelect;
 
     return (
       <div>
@@ -77,7 +88,7 @@ class BpkDatepicker extends Component {
             <BpkInput
               id={id}
               name={`${id}_input`}
-              value={formatDate(this.state.date)}
+              defaultValue={formatDate(this.state.date)}
               onClick={this.onOpen}
               onFocus={this.onOpen}
               className="bpk-datepicker__input"
@@ -92,14 +103,22 @@ class BpkDatepicker extends Component {
           {...rest}
         >
           <BpkCalendar
-            id={`${id}_calendar`}
-            formatMonth={formatMonth}
-            formatDateFull={formatDateFull}
-            daysOfWeek={daysOfWeek}
             changeMonthLabel={changeMonthLabel}
-            weekStartsOn={weekStartsOn}
-            onDateSelect={this.onDateSelect}
+            DateComponent={DateComponent}
+            dateModifiers={dateModifiers}
+            daysOfWeek={daysOfWeek}
+            enableSelection
+            formatDateFull={formatDateFull}
+            formatMonth={formatMonth}
+            id={`${id}_calendar`}
             initialSelectedDate={this.state.date}
+            markOutsideDays={markOutsideDays}
+            markToday={markToday}
+            maxDate={maxDate}
+            minDate={minDate}
+            onDateSelect={this.onDateSelect}
+            showWeekendSeparator={showWeekendSeparator}
+            weekStartsOn={weekStartsOn}
           />
         </BpkPopover>
       </div>
@@ -108,24 +127,40 @@ class BpkDatepicker extends Component {
 }
 
 BpkDatepicker.propTypes = {
-  id: PropTypes.string.isRequired,
+  // Required
   changeMonthLabel: PropTypes.string.isRequired,
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   formatDate: PropTypes.func.isRequired,
   formatDateFull: PropTypes.func.isRequired,
   formatMonth: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
   popoverLabel: PropTypes.string.isRequired,
+  // Optional
+  DateComponent: PropTypes.func,
+  dateModifiers: CustomPropTypes.DateModifiers,
+  initialSelectedDate: PropTypes.instanceOf(Date),
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  onDateSelect: PropTypes.func,
-  weekStartsOn: PropTypes.number,
+  markOutsideDays: PropTypes.bool,
+  markToday: PropTypes.bool,
   maxDate: PropTypes.instanceOf(Date),
   minDate: PropTypes.instanceOf(Date),
-  DateComponent: PropTypes.func,
+  onDateSelect: PropTypes.func,
+  showWeekendSeparator: PropTypes.bool,
+  weekStartsOn: PropTypes.number,
 };
 
 BpkDatepicker.defaultProps = {
+  DateComponent: BpkCalendar.defaultProps.DateComponent,
+  dateModifiers: BpkCalendar.defaultProps.dateModifiers,
+  initialSelectedDate: BpkCalendar.defaultProps.initialSelectedDate,
   inputProps: {},
+  markOutsideDays: BpkCalendar.defaultProps.markOutsideDays,
+  markToday: BpkCalendar.defaultProps.markToday,
+  maxDate: BpkCalendar.defaultProps.maxDate,
+  minDate: BpkCalendar.defaultProps.minDate,
   onDateSelect: null,
+  showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
+  weekStartsOn: BpkCalendar.defaultProps.weekStartsOn,
 };
 
 export default BpkDatepicker;

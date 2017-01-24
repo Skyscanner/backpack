@@ -73,7 +73,12 @@ class App extends Component {
 
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
+| changeMonthLabel      | string               | true     | -                |
+| daysOfWeek            | object               | true     | -                |
+| formatDateFull        | func                 | true     | -                |
+| formatMonth           | func                 | true     | -                |
 | id                    | string               | true     | -                |
+| DateComponent         | func                 | false    | BpkCalendarDate  |
 | dateModifiers         | object               | false    | {}               |
 | enableSelection       | bool                 | false    | true             |
 | initialMonth          | Date                 | false    | new Date()       |
@@ -83,18 +88,8 @@ class App extends Component {
 | maxDate               | Date                 | false    | new Date() + 1yr |
 | minDate               | Date                 | false    | new Date()       |
 | onDateSelect          | func                 | false    | null             |
-
-The following props are not defined on `BpkCalendar` directly, but on its child components, and are passed through.
-
-| Property              | PropType             | Required | Default Value    |
-| --------------------- | -------------------- | -------- | ---------------- |
-| changeMonthLabel      | string               | true     | -                |
-| daysOfWeek            | object               | true     | -                |
-| formatDateFull        | func                 | true     | -                |
-| formatMonth           | func                 | true     | -                |
 | showWeekendSeparator  | bool                 | false    | true             |
 | weekStartsOn          | number               | false    | 1                |
-| DateComponent         | func                 | false    | BpkCalendarDate  |
 
 Some of the more complex props are explained below.
 
