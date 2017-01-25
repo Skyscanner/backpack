@@ -1,41 +1,23 @@
-import Portal from 'react-portal';
-import React, { PropTypes, Component } from 'react';
-import { toPortalChild } from 'bpk-react-utils';
+import { Portal } from 'bpk-react-utils';
+import React, { PropTypes } from 'react';
 
 import BpkModalScrim from './BpkModalScrim';
 import BpkModalDialog from './BpkModalDialog';
 
-const BpkModalChild = toPortalChild(props => (
-  <div>
-    <BpkModalScrim />
-    <BpkModalDialog {...props} />
-  </div>
-));
+const BpkModal = (props) => {
+  const { isOpen, onClose, ...rest } = props;
 
-class BpkModal extends Component {
-  constructor() {
-    super();
+  delete rest.onClose;
 
-    this.onClose = this.onClose.bind(this);
-  }
-
-  onClose() {
-    if (this.props.isOpen) {
-      this.props.onClose();
-    }
-  }
-  render() {
-    const { isOpen, ...rest } = this.props;
-
-    delete rest.onClose;
-
-    return (
-      <Portal isOpened={isOpen} onClose={this.onClose} closeOnEsc>
-        <BpkModalChild onClose={this.onClose} {...rest} />
-      </Portal>
-    );
-  }
-}
+  return (
+    <Portal isOpen={isOpen} onClose={onClose}>
+      <div>
+        <BpkModalScrim />
+        <BpkModalDialog onClose={onClose} {...rest} />
+      </div>
+    </Portal>
+  );
+};
 
 BpkModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,

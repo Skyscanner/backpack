@@ -99,7 +99,6 @@ class BpkDatepicker extends Component {
           isOpen={this.state.isOpen}
           closeButtonText="Close"
           title={popoverLabel}
-          closeOnOutsideClickExceptTarget
           {...rest}
         >
           <BpkCalendar

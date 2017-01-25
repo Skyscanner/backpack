@@ -12,7 +12,7 @@ describe('BpkPopoverPortal', () => {
     const tree = renderer.create(
       <BpkPopoverPortal
         target={<div>target</div>}
-        isOpen
+        isOpen={false}
         onClose={() => null}
         closeButtonText="Close"
       >

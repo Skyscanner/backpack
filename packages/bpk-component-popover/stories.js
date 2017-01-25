@@ -40,7 +40,7 @@ class PopoverContainer extends Component {
         }
         onClose={this.closePopover}
         closeButtonText="Close"
-        isOpen={this.state.isOpen}
+        isOpen
         {...this.props}
       >
         <BpkContentContainer>
