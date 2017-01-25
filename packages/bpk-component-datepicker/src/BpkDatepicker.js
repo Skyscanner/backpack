@@ -5,6 +5,13 @@ import React, { PropTypes, Component } from 'react';
 
 import './bpk-datepicker.scss';
 
+const onKeyEvent = (keyCode, callback) => (e) => {
+  if (e.keyCode === keyCode) {
+    e.preventDefault();
+    callback();
+  }
+};
+
 class BpkDatepicker extends Component {
   constructor(props) {
     super(props);
@@ -78,49 +85,48 @@ class BpkDatepicker extends Component {
     delete rest.onDateSelect;
 
     return (
-      <div>
-        <span
-          className="bpk-datepicker__input-description"
-          aria-live="polite"
-        >{ formatDateFull(this.state.date) }</span>
-        <BpkPopover
-          target={
-            <BpkInput
-              id={id}
-              name={`${id}_input`}
-              value={formatDate(this.state.date)}
-              onClick={this.onOpen}
-              onFocus={this.onOpen}
-              className="bpk-datepicker__input"
-              {...inputProps}
-            />
-          }
-          onClose={this.onClose}
-          isOpen={this.state.isOpen}
-          closeButtonText="Close"
-          title={popoverLabel}
-          {...rest}
-        >
-          <BpkCalendar
-            changeMonthLabel={changeMonthLabel}
-            DateComponent={DateComponent}
-            dateModifiers={dateModifiers}
-            daysOfWeek={daysOfWeek}
-            enableSelection
-            formatDateFull={formatDateFull}
-            formatMonth={formatMonth}
-            id={`${id}_calendar`}
-            initialSelectedDate={this.state.date}
-            markOutsideDays={markOutsideDays}
-            markToday={markToday}
-            maxDate={maxDate}
-            minDate={minDate}
-            onDateSelect={this.onDateSelect}
-            showWeekendSeparator={showWeekendSeparator}
-            weekStartsOn={weekStartsOn}
+      <BpkPopover
+        target={
+          <BpkInput
+            id={id}
+            name={`${id}_input`}
+            value={formatDate(this.state.date)}
+            onClick={this.onOpen}
+            onFocus={this.onOpen}
+            onKeyDown={onKeyEvent(13, this.onOpen)}
+            onKeyUp={onKeyEvent(32, this.onOpen)}
+            className="bpk-datepicker__input"
+            aria-live="assertive"
+            aria-atomic="true"
+            aria-label={formatDateFull(this.state.date)}
+            {...inputProps}
           />
-        </BpkPopover>
-      </div>
+        }
+        onClose={this.onClose}
+        isOpen={this.state.isOpen}
+        closeButtonText="Close"
+        title={popoverLabel}
+        {...rest}
+      >
+        <BpkCalendar
+          changeMonthLabel={changeMonthLabel}
+          DateComponent={DateComponent}
+          dateModifiers={dateModifiers}
+          daysOfWeek={daysOfWeek}
+          enableSelection
+          formatDateFull={formatDateFull}
+          formatMonth={formatMonth}
+          id={`${id}_calendar`}
+          initialSelectedDate={this.state.date}
+          markOutsideDays={markOutsideDays}
+          markToday={markToday}
+          maxDate={maxDate}
+          minDate={minDate}
+          onDateSelect={this.onDateSelect}
+          showWeekendSeparator={showWeekendSeparator}
+          weekStartsOn={weekStartsOn}
+        />
+      </BpkPopover>
     );
   }
 }

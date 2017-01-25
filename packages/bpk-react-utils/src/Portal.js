@@ -54,7 +54,6 @@ class Portal extends Component {
 
     const isPortalClick = this.portalElement &&
       (e.target === this.portalElement || this.portalElement.contains(e.target));
-
     if (notLeftClick || isTargetClick || isPortalClick) {
       return;
     }
@@ -73,7 +72,8 @@ class Portal extends Component {
 
     this.portalElement = document.createElement('div');
     document.body.appendChild(this.portalElement);
-    document.body.addEventListener('click', this.onBodyClick, false);
+    document.addEventListener('mouseup', this.onBodyClick, false);
+    document.addEventListener('touchstart', this.onBodyClick, false);
 
     this.componentDidUpdate();
     this.props.onOpen(this.portalElement, this.getTargetElement());
@@ -86,7 +86,8 @@ class Portal extends Component {
 
     unmountComponentAtNode(this.portalElement);
     document.body.removeChild(this.portalElement);
-    document.body.removeEventListener('click', this.onBodyClick, false);
+    document.removeEventListener('mouseup', this.onBodyClick, false);
+    document.removeEventListener('touchstart', this.onBodyClick, false);
     this.portalElement = null;
   }
 

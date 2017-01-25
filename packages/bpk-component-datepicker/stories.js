@@ -11,6 +11,7 @@ const inputProps = {
   onChange: () => null,
   placeholder: 'placeholder',
   large: true,
+  docked: true,
 };
 
 storiesOf('bpk-component-datepicker', module)
@@ -23,7 +24,6 @@ storiesOf('bpk-component-datepicker', module)
       formatDate={formatDate}
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
-      inputProps={inputProps}
     />
   ))
   .add('Depart & Return', () => (
