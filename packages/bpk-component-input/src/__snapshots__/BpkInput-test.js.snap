@@ -3,8 +3,6 @@ exports[`BpkInput should render correctly 1`] = `
   className="bpk-input"
   id="test"
   name="test"
-  onChange={[Function]}
-  placeholder="Enter a country, city or airport"
   type="text"
   value="" />
 `;
@@ -14,8 +12,6 @@ exports[`BpkInput should render correctly with "docked" attribute 1`] = `
   className="bpk-input bpk-input--docked"
   id="test"
   name="test"
-  onChange={[Function]}
-  placeholder="Enter a country, city or airport"
   type="text"
   value="" />
 `;
@@ -23,6 +19,15 @@ exports[`BpkInput should render correctly with "docked" attribute 1`] = `
 exports[`BpkInput should render correctly with "large" attribute 1`] = `
 <input
   className="bpk-input bpk-input--large"
+  id="test"
+  name="test"
+  type="text"
+  value="" />
+`;
+
+exports[`BpkInput should render correctly with additional props 1`] = `
+<input
+  className="bpk-input"
   id="test"
   name="test"
   onChange={[Function]}
@@ -36,8 +41,6 @@ exports[`BpkInput should render correctly with type attribute 1`] = `
   className="bpk-input"
   id="test"
   name="test"
-  onChange={[Function]}
-  placeholder="Enter a country, city or airport"
   type="password"
   value="" />
 `;
@@ -47,8 +50,6 @@ exports[`BpkInput should render correctly with valid attribute set to "false" 1`
   className="bpk-input bpk-input--invalid"
   id="test"
   name="test"
-  onChange={[Function]}
-  placeholder="Enter a country, city or airport"
   type="text"
   value="" />
 `;
@@ -58,8 +59,6 @@ exports[`BpkInput should render correctly with valid attribute set to "true" 1`]
   className="bpk-input bpk-input--valid"
   id="test"
   name="test"
-  onChange={[Function]}
-  placeholder="Enter a country, city or airport"
   type="text"
   value="" />
 `;
@@ -69,8 +68,6 @@ exports[`BpkInput should render correctly with value 1`] = `
   className="bpk-input"
   id="test"
   name="test"
-  onChange={[Function]}
-  placeholder="Enter a country, city or airport"
   type="text"
   value="My value" />
 `;

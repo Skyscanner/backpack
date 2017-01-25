@@ -31,8 +31,6 @@ BpkInput.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  placeholder: PropTypes.string.isRequired,
   type: PropTypes.oneOf([
     INPUT_TYPES.TEXT,
     INPUT_TYPES.EMAIL,
