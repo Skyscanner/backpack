@@ -6,9 +6,13 @@ import addMonths from 'date-fns/add_months';
 import {
   formatMonth,
   formatDateFull,
-  formatMonthGerman,
+  formatMonthArabic,
+  formatDateFullArabic,
+  formatMonthJapanese,
+  formatDateFullJapanese,
   weekDaysMoreWeekend,
-  weekDaysGerman,
+  weekDaysArabic,
+  weekDaysJapanese,
   weekDays,
 } from './test-utils';
 
@@ -32,6 +36,7 @@ storiesOf('bpk-component-calendar', module)
       weekStartsOn={1}
       daysOfWeek={weekDays}
       onDateClick={action('Clicked day')}
+      formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       DateComponent={BpkCalendarDate}
       showWeekendSeparator
@@ -106,14 +111,26 @@ storiesOf('bpk-component-calendar', module)
       dateModifiers={{ disabled: isFriday }}
     />
   ))
-  .add('Calendar - Non-english locale', () => (
+  .add('Calendar - ar-AE locale', () => (
     <BpkCalendar
       id="myCalendar"
-      formatMonth={formatMonthGerman}
-      formatDateFull={formatDateFull}
-      daysOfWeek={weekDaysGerman}
-      changeMonthLabel="Monat auswählen"
+      formatMonth={formatMonthArabic}
+      formatDateFull={formatDateFullArabic}
+      daysOfWeek={weekDaysArabic}
+      changeMonthLabel="Change month"
       onDateSelect={action('Selected day')}
+      weekStartsOn={6}
+    />
+  ))
+  .add('Calendar - ja-JP locale', () => (
+    <BpkCalendar
+      id="myCalendar"
+      formatMonth={formatMonthJapanese}
+      formatDateFull={formatDateFullJapanese}
+      daysOfWeek={weekDaysJapanese}
+      changeMonthLabel="Change month"
+      onDateSelect={action('Selected day')}
+      weekStartsOn={0}
     />
   ))
   .add('Calendar - Specify initial date', () => (

@@ -1,15 +1,21 @@
 import BpkParagraph from 'bpk-component-paragraph';
+import BpkRouterLink from 'bpk-component-router-link';
+import BpkLink from 'bpk-component-link';
 import React, { PropTypes, Component } from 'react';
 import BpkCalendar, { BpkCalendarGrid, BpkCalendarNav, BpkCalendarDate } from 'bpk-component-calendar';
 
 import calendarReadme from 'bpk-component-calendar/readme.md';
+import { I18N } from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import format from '../../../../bpk-component-calendar/node_modules/date-fns/format';
 import addMonths from '../../../../bpk-component-calendar/node_modules/date-fns/add_months';
-import { weekDays } from '../../../../bpk-component-calendar/test-utils';
-
-const formatMonth = date => format(date, 'MMMM YYYY');
-const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
+import {
+  weekDays,
+  weekDaysArabic,
+  formatDateFull,
+  formatDateFullArabic,
+  formatMonth,
+  formatMonthArabic,
+} from '../../../../bpk-component-calendar/test-utils';
 
 class CalendarNavContainer extends Component {
   constructor() {
@@ -69,6 +75,26 @@ const components = [
     ],
   },
   {
+    id: 'calendar-ar',
+    title: 'Localised calendar',
+    blurb: [
+      <BpkParagraph>
+        The calendar can be configured with locale data: month names, weekday names, weekend, first day of the week,
+        date formatting.
+      </BpkParagraph>,
+    ],
+    examples: [
+      <BpkCalendar
+        id="calendar-ar1"
+        formatMonth={formatMonthArabic}
+        formatDateFull={formatDateFullArabic}
+        daysOfWeek={weekDaysArabic}
+        changeMonthLabel="Change month"
+        weekStartsOn={6}
+      />,
+    ],
+  },
+  {
     id: 'calendar-no-selection',
     title: 'Calendar without date selection',
     blurb: [
@@ -114,6 +140,7 @@ const components = [
         daysOfWeek={weekDays}
         weekStartsOn={1}
         DateComponent={BpkCalendarDate}
+        formatMonth={formatMonth}
         formatDateFull={formatDateFull}
         showWeekendSeparator
       />,
@@ -127,6 +154,10 @@ const CalendarPage = () => <DocsPageBuilder
     <BpkParagraph>
       Calendars are used for date selection.  They can be configured in different ways depending on the context,
       e.g. constrained to a date range, or with dates blocked out.
+    </BpkParagraph>,
+    <BpkParagraph>
+      There exist <BpkLink href="#translation">recommended translation strings</BpkLink> for this component.
+      See also <BpkRouterLink to={I18N}>Internationalisation</BpkRouterLink>.
     </BpkParagraph>,
   ]}
   components={components}

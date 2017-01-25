@@ -73,6 +73,10 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
   </div>
   <table
     className="bpk-calendar-grid">
+    <caption
+      className="bpk-calendar-grid__caption">
+      February 2010
+    </caption>
     <thead>
       <tr
         className="bpk-calendar-grid__header">
@@ -142,6 +146,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-01">
           <button
             aria-label="Monday, 1st February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -159,6 +164,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-02">
           <button
             aria-label="Tuesday, 2nd February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -176,6 +182,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-03">
           <button
             aria-label="Wednesday, 3rd February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -193,6 +200,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-04">
           <button
             aria-label="Thursday, 4th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -210,6 +218,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-05">
           <button
             aria-label="Friday, 5th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -227,6 +236,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-06">
           <button
             aria-label="Saturday, 6th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -244,6 +254,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-07">
           <button
             aria-label="Sunday, 7th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -264,6 +275,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-08">
           <button
             aria-label="Monday, 8th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -281,6 +293,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-09">
           <button
             aria-label="Tuesday, 9th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -298,6 +311,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-10">
           <button
             aria-label="Wednesday, 10th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -315,6 +329,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-11">
           <button
             aria-label="Thursday, 11th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -332,6 +347,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-12">
           <button
             aria-label="Friday, 12th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -349,6 +365,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-13">
           <button
             aria-label="Saturday, 13th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -366,6 +383,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-14">
           <button
             aria-label="Sunday, 14th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -386,6 +404,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-15">
           <button
             aria-label="Monday, 15th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -403,6 +422,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-16">
           <button
             aria-label="Tuesday, 16th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -420,6 +440,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-17">
           <button
             aria-label="Wednesday, 17th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -437,6 +458,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-18">
           <button
             aria-label="Thursday, 18th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -454,6 +476,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-19">
           <button
             aria-label="Friday, 19th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -471,6 +494,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-20">
           <button
             aria-label="Saturday, 20th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -488,6 +512,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-21">
           <button
             aria-label="Sunday, 21st February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -508,6 +533,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-22">
           <button
             aria-label="Monday, 22nd February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -525,6 +551,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-23">
           <button
             aria-label="Tuesday, 23rd February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -542,6 +569,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-24">
           <button
             aria-label="Wednesday, 24th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -559,6 +587,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-25">
           <button
             aria-label="Thursday, 25th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -576,6 +605,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-26">
           <button
             aria-label="Friday, 26th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -593,6 +623,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-27">
           <button
             aria-label="Saturday, 27th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -610,6 +641,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-02-28">
           <button
             aria-label="Sunday, 28th February 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -630,6 +662,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-03-01">
           <button
             aria-label="Monday, 1st March 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -647,6 +680,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-03-02">
           <button
             aria-label="Tuesday, 2nd March 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -664,6 +698,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-03-03">
           <button
             aria-label="Wednesday, 3rd March 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -681,6 +716,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-03-04">
           <button
             aria-label="Thursday, 4th March 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -698,6 +734,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-03-05">
           <button
             aria-label="Friday, 5th March 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -715,6 +752,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-03-06">
           <button
             aria-label="Saturday, 6th March 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -732,6 +770,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-03-07">
           <button
             aria-label="Sunday, 7th March 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -752,6 +791,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-03-08">
           <button
             aria-label="Monday, 8th March 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -769,6 +809,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-03-09">
           <button
             aria-label="Tuesday, 9th March 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -786,6 +827,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-03-10">
           <button
             aria-label="Wednesday, 10th March 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -803,6 +845,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-03-11">
           <button
             aria-label="Thursday, 11th March 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -820,6 +863,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-03-12">
           <button
             aria-label="Friday, 12th March 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -837,6 +881,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-03-13">
           <button
             aria-label="Saturday, 13th March 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}
@@ -854,6 +899,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav and BpkCalendarGrid corre
           data-date="2010-03-14">
           <button
             aria-label="Sunday, 14th March 2010"
+            aria-pressed={false}
             className="bpk-calendar-date"
             disabled={false}
             onClick={[Function]}

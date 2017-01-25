@@ -11,6 +11,7 @@ const links = [
       { route: routes.BACKPACK_REACT_SCRIPTS, children: 'Backpack React Scripts' },
       { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' },
       { route: routes.CONTRIBUTING, children: 'Contributing' },
+      { route: routes.I18N, children: 'Internationalisation' },
     ],
   },
   {

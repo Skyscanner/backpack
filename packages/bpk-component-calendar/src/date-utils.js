@@ -84,6 +84,7 @@ export {
   startOfMonth,
   lastDayOfMonth,
   startOfToday,
+  format,
   formatIsoDate,
   formatIsoMonth,
   parseIsoDate,

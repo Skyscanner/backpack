@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import objectAssign from 'object-assign';
+import BpkCalendarDate from './BpkCalendarDate';
 import BpkCalendarView from './BpkCalendarView';
 import {
   addDays,
@@ -175,6 +176,7 @@ class BpkCalendar extends Component {
         month={startOfMonth(this.state.focusedDate)}
         selectedDate={this.state.focusedDate}
         preventKeyboardFocus={this.state.preventKeyboardFocus}
+
         {...calendarProps}
       />
     );
@@ -182,7 +184,14 @@ class BpkCalendar extends Component {
 }
 
 BpkCalendar.propTypes = {
+  // Required
+  changeMonthLabel: PropTypes.string.isRequired,
+  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
+  formatDateFull: PropTypes.func.isRequired,
+  formatMonth: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
+  // Optional
+  DateComponent: PropTypes.func,
   dateModifiers: CustomPropTypes.DateModifiers,
   enableSelection: PropTypes.bool,
   initialMonth: PropTypes.instanceOf(Date),
@@ -192,9 +201,12 @@ BpkCalendar.propTypes = {
   maxDate: PropTypes.instanceOf(Date),
   minDate: PropTypes.instanceOf(Date),
   onDateSelect: PropTypes.func,
+  showWeekendSeparator: PropTypes.bool,
+  weekStartsOn: PropTypes.number,
 };
 
 BpkCalendar.defaultProps = {
+  DateComponent: BpkCalendarDate,
   dateModifiers: {},
   enableSelection: true,
   initialMonth: new Date(),
@@ -204,6 +216,8 @@ BpkCalendar.defaultProps = {
   maxDate: addMonths(startOfToday(), 12),
   minDate: startOfToday(),
   onDateSelect: null,
+  showWeekendSeparator: true,
+  weekStartsOn: 1,
 };
 
 export default BpkCalendar;

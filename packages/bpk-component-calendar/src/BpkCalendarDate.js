@@ -29,6 +29,7 @@ class BpkCalendarDate extends Component {
     });
 
     const disabled = modifiers.disabled ? modifiers.disabled(date) : false;
+    const selected = modifiers.selected ? modifiers.selected(date) : false;
 
     delete buttonProps.preventKeyboardFocus;
 
@@ -41,6 +42,7 @@ class BpkCalendarDate extends Component {
         tabIndex={focused ? 0 : -1}
         onClick={onClick}
         onKeyDown={onDateKeyDown}
+        aria-pressed={selected}
         ref={(button) => { this.button = button; }}
         {...buttonProps}
       ><span aria-hidden="true">{ date.getDate() }</span></button>

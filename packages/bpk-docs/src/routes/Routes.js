@@ -12,6 +12,8 @@ import GettingStartedPage from './../pages/GettingStartedPage';
 import BackpackReactScriptsPage from './../pages/BackpackReactScriptsPage';
 import ContributingPage from './../pages/ContributingPage';
 import BaseStylesheetPage from './../pages/BaseStylesheetPage';
+import InternationalisationPage from './../pages/InternationalisationPage';
+
 import ColorsPage from './../pages/ColorsPage';
 import TypesettingPage from './../pages/TypesettingPage';
 import RadiiPage from './../pages/RadiiPage';
@@ -33,6 +35,7 @@ import ModalsPage from './../pages/ModalsPage';
 import AutosuggestPage from './../pages/AutosuggestPage';
 import PopoversPage from './../pages/PopoversPage';
 import CalendarPage from './../pages/CalendarPage';
+import DatepickerPage from './../pages/DatepickerPage';
 
 import DownloadsPage from './../pages/DownloadsPage';
 import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages';
@@ -46,6 +49,7 @@ const Routes = (
       <Route path={ROUTES.BACKPACK_REACT_SCRIPTS} component={BackpackReactScriptsPage} />
       <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
       <Route path={ROUTES.CONTRIBUTING} component={ContributingPage} />
+      <Route path={ROUTES.I18N} component={InternationalisationPage} />
       <Route path={ROUTES.BONDS}>
         <IndexRedirect to={ROUTES.COLORS} />
         <Route path={ROUTES.COLORS} component={ColorsPage} />
@@ -73,6 +77,7 @@ const Routes = (
         <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
         <Route path={ROUTES.POPOVERS} component={PopoversPage} />
         <Route path={ROUTES.CALENDAR} component={CalendarPage} />
+        <Route path={ROUTES.DATEPICKER} component={DatepickerPage} />
       </Route>
     </Route>
     <Route path={ROUTES.DOWNLOADS} component={DownloadsPage} />

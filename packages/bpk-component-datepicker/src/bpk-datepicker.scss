@@ -1,0 +1,11 @@
+@import "~bpk-mixins";
+
+.bpk-datepicker {
+  &__input {
+    cursor: pointer;
+
+    &-description {
+      @include bpk-visually-hidden();
+    }
+  }
+}

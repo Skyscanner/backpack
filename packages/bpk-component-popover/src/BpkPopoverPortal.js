@@ -15,21 +15,36 @@ class BpkPopoverPortal extends Component {
     super();
 
     this.tether = null;
+    this.popoverElement = null;
+    this.targetElement = null;
 
     this.onOpen = this.onOpen.bind(this);
     this.onClose = this.onClose.bind(this);
     this.beforeClose = this.beforeClose.bind(this);
     this.getTargetRef = this.getTargetRef.bind(this);
+    this.handleOutsideMouseClick = this.handleOutsideMouseClick.bind(this);
   }
 
   onClose() {
     if (this.props.isOpen) {
       this.props.onClose();
+
+      if (this.props.closeOnOutsideClickExceptTarget && document) {
+        document.removeEventListener('mouseup', this.handleOutsideMouseClick);
+        document.removeEventListener('touchstart', this.handleOutsideMouseClick);
+      }
+      this.popoverElement = null;
     }
   }
 
   onOpen(popoverElement) {
+    this.popoverElement = popoverElement;
     this.initTether(popoverElement);
+
+    if (this.props.closeOnOutsideClickExceptTarget && document) {
+      document.addEventListener('mouseup', this.handleOutsideMouseClick);
+      document.addEventListener('touchstart', this.handleOutsideMouseClick);
+    }
 
     focusStore.storeFocus();
     focusScope.scopeFocus(popoverElement);
@@ -62,8 +77,22 @@ class BpkPopoverPortal extends Component {
     this.tether.position();
   }
 
+  handleOutsideMouseClick(e) {
+    if (!this.targetElement
+      || !this.popoverElement
+      || this.targetElement.contains(e.target)
+      || this.popoverElement.contains(e.target)
+      || (e.button && e.button !== 0)
+    ) {
+      return;
+    }
+
+    e.stopPropagation();
+    this.onClose();
+  }
+
   render() {
-    const { target, isOpen, ...rest } = this.props;
+    const { target, isOpen, closeOnOutsideClick, closeOnOutsideClickExceptTarget, ...rest } = this.props;
 
     delete rest.onClose;
     delete rest.tetherOptions;
@@ -77,7 +106,7 @@ class BpkPopoverPortal extends Component {
           onOpen={this.onOpen}
           beforeClose={this.beforeClose}
           closeOnEsc
-          closeOnOutsideClick
+          closeOnOutsideClick={!closeOnOutsideClickExceptTarget && closeOnOutsideClick}
         >
           <BpkPopoverPortalChild onClose={this.onClose} {...rest} />
         </Portal>
@@ -90,6 +119,8 @@ BpkPopoverPortal.propTypes = {
   target: PropTypes.element.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
+  closeOnOutsideClick: PropTypes.bool,
+  closeOnOutsideClickExceptTarget: PropTypes.bool,
   tetherOptions: PropTypes.shape({
     attachment: PropTypes.string,
     targetAttachment: PropTypes.string,
@@ -99,6 +130,8 @@ BpkPopoverPortal.propTypes = {
 };
 
 BpkPopoverPortal.defaultProps = {
+  closeOnOutsideClick: true,
+  closeOnOutsideClickExceptTarget: false,
   tetherOptions: {
     attachment: 'top center',
     constraints: [

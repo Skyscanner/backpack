@@ -131,9 +131,11 @@ const reorderWeekDays = (weekDays, weekStartsOn) => [
 */
 const BpkCalendarGrid = (props) => {
   const {
+    month,
     DateComponent,
     daysOfWeek,
     formatDateFull,
+    formatMonth,
     onDateClick,
     onDateKeyDown,
     showWeekendSeparator,
@@ -141,15 +143,16 @@ const BpkCalendarGrid = (props) => {
     preventKeyboardFocus,
   } = props;
 
+  // Sorted in [sun, mon, ..., sat]
+  const sortedWeekDays = daysOfWeek.slice().sort((a, b) => a.index - b.index);
+  // Ordered according to weekStartsOn, e.g. [mon, tue, ..., sun]
   const reorderedWeekDays = reorderWeekDays(
-    daysOfWeek.slice().sort((a, b) => a.index - b.index),
+    sortedWeekDays,
     weekStartsOn,
   );
+  const calendarMonthWeeks = getCalendarMonthWeeks(month, weekStartsOn);
 
-  const calendarMonthWeeks = getCalendarMonthWeeks(props.month, props.weekStartsOn);
-
-  const weekend = daysOfWeek.map(day => day.isWeekend);
-
+  const weekend = sortedWeekDays.map(day => day.isWeekend);
   let weekendStartIndex = -1;
   let weekendEndIndex = -1;
 
@@ -163,6 +166,11 @@ const BpkCalendarGrid = (props) => {
 
   return (
     <table className="bpk-calendar-grid">
+      <caption
+        className="bpk-calendar-grid__caption"
+      >
+        {formatMonth(month)}
+      </caption>
       <thead>
         <tr className="bpk-calendar-grid__header">
           { reorderedWeekDays.map((weekDay, index) => (
@@ -197,12 +205,15 @@ const BpkCalendarGrid = (props) => {
 };
 
 BpkCalendarGrid.propTypes = {
-  month: PropTypes.instanceOf(Date).isRequired,
-  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
-  weekStartsOn: PropTypes.number.isRequired,
+  // Required
   DateComponent: PropTypes.func.isRequired,
-  showWeekendSeparator: PropTypes.bool.isRequired,
+  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   formatDateFull: PropTypes.func.isRequired,
+  formatMonth: PropTypes.func.isRequired,
+  month: PropTypes.instanceOf(Date).isRequired,
+  showWeekendSeparator: PropTypes.bool.isRequired,
+  weekStartsOn: PropTypes.number.isRequired,
+  // Optional
   dateModifiers: CustomPropTypes.DateModifiers,
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
@@ -210,9 +221,9 @@ BpkCalendarGrid.propTypes = {
 };
 
 BpkCalendarGrid.defaultProps = {
+  dateModifiers: {},
   onDateClick: null,
   onDateKeyDown: null,
-  dateModifiers: {},
   preventKeyboardFocus: false,
 };
 
