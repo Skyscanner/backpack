@@ -35,5 +35,110 @@ describe('Portal', () => {
       </Portal>,
     );
   });
-});
 
+  it('should remove portal children from document.body on close', (done) => {
+    const div = document.createElement('div');
+    div.appendChild(document.createTextNode('Not a portal'));
+    document.body.appendChild(div);
+
+    expect(document.body.lastChild.textContent).toEqual('Not a portal');
+
+    const portal = mount(
+      <Portal isOpen>
+        <div>My portal content</div>
+      </Portal>,
+    );
+
+    expect(document.body.lastChild.textContent).toEqual('My portal content');
+
+    portal.setProps({ isOpen: false }, () => {
+      expect(document.body.lastChild.textContent).toEqual('Not a portal');
+      done();
+    });
+  });
+
+  it('should call the onClose handler on click outside', () => {
+    const onCloseSpy = jest.fn();
+
+    const portal = mount(
+      <Portal isOpen onClose={onCloseSpy} target={<div>target</div>}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+
+    expect(onCloseSpy.mock.calls.length).toEqual(0);
+
+    portal.instance().onBodyClick({
+      button: 1,
+    });
+    expect(onCloseSpy.mock.calls.length).toEqual(0);
+
+    portal.instance().onBodyClick({
+      button: 0,
+      target: portal.instance().getTargetElement(),
+    });
+    expect(onCloseSpy.mock.calls.length).toEqual(0);
+
+    portal.instance().onBodyClick({
+      button: 0,
+      target: portal.instance().portalElement,
+    });
+    expect(onCloseSpy.mock.calls.length).toEqual(0);
+
+    portal.instance().onBodyClick({
+      button: 0,
+    });
+    expect(onCloseSpy.mock.calls.length).toEqual(1);
+  });
+
+  describe('lifecycle methods', () => {
+    let portal;
+    const openSpy = jest.fn();
+    const closeSpy = jest.fn();
+    const beforeCloseSpy = jest.fn();
+
+    beforeAll(() => {
+      Portal.prototype.open = openSpy;
+      Portal.prototype.close = closeSpy;
+
+      portal = mount(
+        <Portal isOpen>
+          <div>My portal content</div>
+        </Portal>,
+      );
+    });
+
+    describe('componentDidMount()', () => {
+      it('should open the portal on mount', () => {
+        expect(openSpy.mock.calls.length).toEqual(1);
+      });
+    });
+
+    describe('componentWillReceiveProps()', () => {
+      it('should close the portal when isOpen is removed', (done) => {
+        portal.setProps({ isOpen: false }, () => {
+          expect(closeSpy.mock.calls.length).toEqual(1);
+          done();
+        });
+      });
+
+      it('should open the portal again when isOpen is added', (done) => {
+        portal.setProps({ isOpen: true }, () => {
+          expect(openSpy.mock.calls.length).toEqual(2);
+          done();
+        });
+      });
+
+      it('should call beforeClose when isOpen is removed', (done) => {
+        portal.setProps({ beforeClose: beforeCloseSpy, isOpen: false }, () => {
+          expect(beforeCloseSpy.mock.calls.length).toEqual(1);
+          done();
+        });
+      });
+    });
+
+    // No tests for
+    // - componentDidUpdate, as we'd have to mock react-dom render()
+    // - componentWillUnmount, as it takes forever and slows down the test suite immensely
+  });
+});
