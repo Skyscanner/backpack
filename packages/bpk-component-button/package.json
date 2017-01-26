@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-button",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "Backpack button component.",
   "main": "index.js",
   "repository": {
@@ -14,6 +14,6 @@
   },
   "dependencies": {
     "bpk-mixins": "^8.0.1",
-    "bpk-react-utils": "^0.1.0"
+    "bpk-react-utils": "^1.0.0"
   }
 }
