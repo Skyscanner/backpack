@@ -3,6 +3,9 @@
 ## UNRELEASED
 
 **Changed:**
+- bpk-component-input:
+  - Props `placeholder` and `onChange` are no longer required and are not explicitly listed in propTypes anymore
+
 - bpk-react-utils:
   - deprecated `toPortalChild`
   - `react` & `react-dom` are now peer deps

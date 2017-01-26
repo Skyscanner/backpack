@@ -33,9 +33,9 @@ export default MyComponent = () => (
 | id          | string               | true      | -                |
 | name        | string               | true      | -                |
 | value       | string               | true      | -                |
-| onChange    | func                 | true      | -                |
-| placeholder | string               | true      | -                |
 | type        | INPUT_TYPES (one of) | false     | INPUT_TYPES.TEXT |
 | valid       | bool                 | false     | null             |
 | large       | bool                 | false     | false            |
 | docked      | bool                 | false     | false            |
+
+Additionally, all native `<input />` attributes such as `placeholder` and `onChange` are supported.

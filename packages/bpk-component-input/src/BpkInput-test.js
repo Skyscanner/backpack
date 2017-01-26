@@ -9,8 +9,19 @@ describe('BpkInput', () => {
         id="test"
         name="test"
         value=""
-        onChange={() => null}
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with additional props', () => {
+    const tree = renderer.create(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
         placeholder="Enter a country, city or airport"
+        onChange={() => null}
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -22,8 +33,6 @@ describe('BpkInput', () => {
         id="test"
         name="test"
         value="My value"
-        onChange={() => null}
-        placeholder="Enter a country, city or airport"
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -35,8 +44,6 @@ describe('BpkInput', () => {
         id="test"
         name="test"
         value=""
-        onChange={() => null}
-        placeholder="Enter a country, city or airport"
         valid
       />,
     ).toJSON();
@@ -49,8 +56,6 @@ describe('BpkInput', () => {
         id="test"
         name="test"
         value=""
-        onChange={() => null}
-        placeholder="Enter a country, city or airport"
         valid={false}
       />,
     ).toJSON();
@@ -64,8 +69,6 @@ describe('BpkInput', () => {
         id="test"
         name="test"
         value=""
-        onChange={() => null}
-        placeholder="Enter a country, city or airport"
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -77,8 +80,6 @@ describe('BpkInput', () => {
         id="test"
         name="test"
         value=""
-        onChange={() => null}
-        placeholder="Enter a country, city or airport"
         large
       />,
     ).toJSON();
@@ -91,12 +92,9 @@ describe('BpkInput', () => {
         id="test"
         name="test"
         value=""
-        onChange={() => null}
-        placeholder="Enter a country, city or airport"
         docked
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
-
