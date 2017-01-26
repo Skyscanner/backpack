@@ -2,21 +2,29 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-01-26 - Input prop types are less strict & new portal implementation
+
 **Changed:**
-- bpk-component-input:
+- bpk-component-input: 1.0.14 => 2.0.0
   - Props `placeholder` and `onChange` are no longer required and are not explicitly listed in propTypes anymore
 
-- bpk-react-utils:
+- bpk-react-utils: 0.1.0 => 1.0.0
   - deprecated `toPortalChild`
   - `react` & `react-dom` are now peer deps
 
 **Added:**
-- bpk-react-utils:
+- bpk-react-utils: 0.1.0 => 1.0.0
   - New `Portal` implementation - to be used instead of third party `react-portal`
 
 **Fixed:**
-- bpk-component-modal:
+- bpk-component-modal: 0.3.9 => 0.3.10
   - Swapped `react-portal` in favor of `bpk-react-utils` implementation
+
+**The following packages received a patch bump due to the dependency changes above:**
+- bpk-component-autosuggest: 1.1.3 => 1.1.4
+- bpk-component-button: 1.5.3 => 1.5.4
 
 ## 2017-01-23 - Visual improvements to some icons, new 'headset' icon, fixed icon scaling issue when consumed via mixins, and fixed spinner scaling issue when consumed via both mixins and react component.
 
