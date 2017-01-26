@@ -46,7 +46,7 @@ class Portal extends Component {
   }
 
   onBodyClick(e) {
-    const notLeftClick = e.button && e.button !== 0;
+    const isNotLeftClick = e.button && e.button !== 0;
 
     const targetElement = this.getTargetElement();
     const isTargetClick = targetElement &&
@@ -54,7 +54,8 @@ class Portal extends Component {
 
     const isPortalClick = this.portalElement &&
       (e.target === this.portalElement || this.portalElement.contains(e.target));
-    if (notLeftClick || isTargetClick || isPortalClick) {
+
+    if (isNotLeftClick || isTargetClick || isPortalClick) {
       return;
     }
 
