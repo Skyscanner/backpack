@@ -110,7 +110,8 @@ class BpkDatepicker extends Component {
         onClose={this.onClose}
         isOpen={this.state.isOpen}
         closeButtonText="Close"
-        title={popoverLabel}
+        aria-label={popoverLabel}
+        tabIndex="0"
         {...rest}
       >
         <BpkCalendar
