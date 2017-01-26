@@ -67,6 +67,7 @@ class BpkDatepicker extends Component {
   render() {
     const {
       changeMonthLabel,
+      closeButtonText,
       DateComponent,
       dateModifiers,
       daysOfWeek,
@@ -109,8 +110,9 @@ class BpkDatepicker extends Component {
         }
         onClose={this.onClose}
         isOpen={this.state.isOpen}
-        closeButtonText="Close"
-        title={popoverLabel}
+        closeButtonText={closeButtonText}
+        aria-label={popoverLabel}
+        tabIndex="0"
         {...rest}
       >
         <BpkCalendar
@@ -139,6 +141,7 @@ class BpkDatepicker extends Component {
 BpkDatepicker.propTypes = {
   // Required
   changeMonthLabel: PropTypes.string.isRequired,
+  closeButtonText: PropTypes.string.isRequired,
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   formatDate: PropTypes.func.isRequired,
   formatDateFull: PropTypes.func.isRequired,

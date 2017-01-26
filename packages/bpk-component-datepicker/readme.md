@@ -32,6 +32,7 @@ const daysOfWeek = [
 export default MyComponent = () => (
   <BpkDatepicker
     id="myDatepicker"
+    closeButtonText="Close"
     formatDate={formatDate}
     formatDateFull={formatDateFull}
     formatMonth={formatMonth}
@@ -49,6 +50,7 @@ For more information on some these props, check the BpkCalendar documentation.
 | Property              | PropType             | Required | Default Value        |
 | --------------------- | -------------------- | -------- | -------------------- |
 | changeMonthLabel      | string               | true     | -                    |
+| closeButtonText       | string               | true     | -                    |
 | daysOfWeek            | object               | true     | -                    |
 | formatDate            | func                 | true     | -                    |
 | formatDateFull        | func                 | true     | -                    |

@@ -26,6 +26,7 @@ const components = [
     examples: [
       <BpkDatepicker
         id="calendar-1"
+        closeButtonText="Close"
         formatDate={formatDate}
         formatDateFull={formatDateFull}
         formatMonth={formatMonth}
