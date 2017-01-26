@@ -27,7 +27,7 @@ export const formatMonthArabic = (date) => {
     'نوفمبر',
     'ديسمبر',
   ];
-  return `${months[date.getMonth()]} ${date.getUTCFullYear()}`;
+  return `${months[date.getMonth()]} ${date.getFullYear()}`;
 };
 export const formatMonthJapanese = (date) => {
   const months = [
@@ -44,7 +44,7 @@ export const formatMonthJapanese = (date) => {
     '11月',
     '12月',
   ];
-  return `${date.getUTCFullYear()}年${months[date.getMonth()]}`;
+  return `${date.getFullYear()}年${months[date.getMonth()]}`;
 };
 
 export const weekDays = [
