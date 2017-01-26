@@ -1,6 +1,10 @@
 import { Component, PropTypes } from 'react';
 import { render, unmountComponentAtNode, findDOMNode } from 'react-dom';
 
+const KEYCODES = {
+  ESCAPE: 27,
+};
+
 class Portal extends Component {
   constructor() {
     super();
@@ -8,7 +12,8 @@ class Portal extends Component {
     this.portalElement = null;
 
     this.close = this.close.bind(this);
-    this.onBodyClick = this.onBodyClick.bind(this);
+    this.onDocumentClick = this.onDocumentClick.bind(this);
+    this.onDocumentKeyDown = this.onDocumentKeyDown.bind(this);
   }
 
   componentDidMount() {
@@ -45,7 +50,7 @@ class Portal extends Component {
     this.close();
   }
 
-  onBodyClick(e) {
+  onDocumentClick(e) {
     const isNotLeftClick = e.button && e.button !== 0;
 
     const targetElement = this.getTargetElement();
@@ -62,6 +67,12 @@ class Portal extends Component {
     this.props.onClose();
   }
 
+  onDocumentKeyDown(e) {
+    if (e.keyCode === KEYCODES.ESCAPE && this.props.isOpen) {
+      this.props.onClose();
+    }
+  }
+
   getTargetElement() {
     return this.props.target && findDOMNode(this);
   }
@@ -73,8 +84,9 @@ class Portal extends Component {
 
     this.portalElement = document.createElement('div');
     document.body.appendChild(this.portalElement);
-    document.addEventListener('mouseup', this.onBodyClick, false);
-    document.addEventListener('touchstart', this.onBodyClick, false);
+    document.addEventListener('mouseup', this.onDocumentClick, false);
+    document.addEventListener('touchstart', this.onDocumentClick, false);
+    document.addEventListener('keydown', this.onDocumentKeyDown, false);
 
     this.componentDidUpdate();
     this.props.onOpen(this.portalElement, this.getTargetElement());
@@ -87,8 +99,9 @@ class Portal extends Component {
 
     unmountComponentAtNode(this.portalElement);
     document.body.removeChild(this.portalElement);
-    document.removeEventListener('mouseup', this.onBodyClick, false);
-    document.removeEventListener('touchstart', this.onBodyClick, false);
+    document.removeEventListener('mouseup', this.onDocumentClick, false);
+    document.removeEventListener('touchstart', this.onDocumentClick, false);
+    document.removeEventListener('keydown', this.onDocumentKeyDown, false);
     this.portalElement = null;
   }
 

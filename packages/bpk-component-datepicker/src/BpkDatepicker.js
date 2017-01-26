@@ -5,6 +5,11 @@ import React, { PropTypes, Component } from 'react';
 
 import './bpk-datepicker.scss';
 
+const KEYCODES = {
+  ENTER: 13,
+  SPACEBAR: 32,
+};
+
 const onKeyEvent = (keyCode, callback) => (e) => {
   if (e.keyCode === keyCode) {
     e.preventDefault();
@@ -93,8 +98,8 @@ class BpkDatepicker extends Component {
             value={formatDate(this.state.date)}
             onClick={this.onOpen}
             onFocus={this.onOpen}
-            onKeyDown={onKeyEvent(13, this.onOpen)}
-            onKeyUp={onKeyEvent(32, this.onOpen)}
+            onKeyDown={onKeyEvent(KEYCODES.ENTER, this.onOpen)}
+            onKeyUp={onKeyEvent(KEYCODES.SPACEBAR, this.onOpen)}
             className="bpk-datepicker__input"
             aria-live="assertive"
             aria-atomic="true"
