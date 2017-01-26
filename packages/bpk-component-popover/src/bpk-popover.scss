@@ -1,7 +1,15 @@
 @import "~bpk-mixins";
 
-.bpk-popover-tether-target {
-  display: inline-block;
+.bpk-popover-tether-element {
+  &--full-screen-on-mobile {
+    @include bpk-breakpoint-mobile {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
 }
 
 .bpk-popover {
@@ -9,6 +17,13 @@
 
   @include bpk-breakpoint-above-mobile {
     max-width: $bpk-breakpoint-mobile;
+  }
+
+  &--full-screen-on-mobile {
+    @include bpk-breakpoint-mobile {
+      height: 100%;
+      width: 100%;
+    }
   }
 
   &__arrow {
@@ -49,8 +64,16 @@
   &__inner {
     background-color: $bpk-color-white;
 
-    @include bpk-box-shadow-xl;
     @include bpk-border-radius-sm;
+    @include bpk-box-shadow-xl;
+
+    &--full-screen-on-mobile {
+      @include bpk-breakpoint-mobile {
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+      }
+    }
 
     .bpk-popover-tether-element-attached-top & {
       margin-top: $bpk-spacing-sm;

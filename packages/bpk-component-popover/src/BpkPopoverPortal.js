@@ -25,6 +25,10 @@ class BpkPopoverPortal extends Component {
       ...this.props.tetherOptions,
     });
 
+    if (this.props.fullScreenOnMobile) {
+      popoverElement.classList.add('bpk-popover-tether-element--full-screen-on-mobile');
+    }
+
     this.tether.position();
 
     focusStore.storeFocus();
@@ -42,7 +46,7 @@ class BpkPopoverPortal extends Component {
   }
 
   render() {
-    const { target, isOpen, onClose, ...rest } = this.props;
+    const { target, isOpen, onClose, fullScreenOnMobile, ...rest } = this.props;
 
     delete rest.onClose;
     delete rest.tetherOptions;
@@ -55,7 +59,7 @@ class BpkPopoverPortal extends Component {
         onOpen={this.onOpen}
         beforeClose={this.beforeClose}
       >
-        <BpkPopover onClose={onClose} {...rest} />
+        <BpkPopover onClose={onClose} fullScreenOnMobile={fullScreenOnMobile} {...rest} />
       </Portal>
     );
   }
@@ -71,6 +75,7 @@ BpkPopoverPortal.propTypes = {
     offset: PropTypes.string,
     constraints: PropTypes.array,
   }),
+  fullScreenOnMobile: PropTypes.bool,
 };
 
 BpkPopoverPortal.defaultProps = {
@@ -84,6 +89,7 @@ BpkPopoverPortal.defaultProps = {
       },
     ],
   },
+  fullScreenOnMobile: false,
 };
 
 export default BpkPopoverPortal;
