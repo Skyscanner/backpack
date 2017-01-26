@@ -18,6 +18,7 @@ storiesOf('bpk-component-datepicker', module)
   .add('Default', () => (
     <BpkDatepicker
       id="myDatepicker"
+      closeButtonText="Close"
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
       popoverLabel="Departure date"
@@ -30,6 +31,7 @@ storiesOf('bpk-component-datepicker', module)
     <div style={{ display: 'flex' }}>
       <BpkDatepicker
         id="depart"
+        closeButtonText="Close"
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
         popoverLabel="Departure date"
@@ -40,6 +42,7 @@ storiesOf('bpk-component-datepicker', module)
       />
       <BpkDatepicker
         id="return"
+        closeButtonText="Close"
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
         popoverLabel="Return date"
