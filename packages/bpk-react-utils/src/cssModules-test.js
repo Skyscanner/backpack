@@ -1,6 +1,6 @@
 import cssModules from './cssModules';
 
-describe('css-modules', () => {
+describe('cssModules', () => {
   it('should return a function', () => {
     expect(cssModules()).toBeInstanceOf(Function);
   });

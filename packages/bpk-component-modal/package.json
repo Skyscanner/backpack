@@ -21,8 +21,7 @@
     "bpk-component-link": "^0.4.3",
     "bpk-mixins": "^8.0.1",
     "bpk-react-utils": "^0.1.0",
-    "react-addons-css-transition-group": "^15.3.2",
-    "react-portal": "^3.0.0"
+    "react-addons-css-transition-group": "^15.3.2"
   },
   "devDependencies": {
     "bpk-component-button": "^1.5.3",

@@ -1,5 +1,20 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Changed:**
+- bpk-react-utils:
+  - deprecated `toPortalChild`
+  - `react` & `react-dom` are now peer deps
+
+**Added:**
+- bpk-react-utils:
+  - New `Portal` implementation - to be used instead of third party `react-portal`
+
+**Fixed:**
+- bpk-component-modal:
+  - Swapped `react-portal` in favor of `bpk-react-utils` implementation
+
 ## 2017-01-23 - Visual improvements to some icons, new 'headset' icon, fixed icon scaling issue when consumed via mixins, and fixed spinner scaling issue when consumed via both mixins and react component.
 
 **Changed:**

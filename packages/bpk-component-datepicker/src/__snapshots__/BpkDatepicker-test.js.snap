@@ -1,22 +1,17 @@
 exports[`BpkDatepicker should render correctly 1`] = `
-<div>
-  <span
-    aria-live="polite"
-    className="bpk-datepicker__input-description">
-    Monday, 15th February 2010
-  </span>
-  <div
-    className="bpk-popover-target">
-    <input
-      className="bpk-input bpk-input--large bpk-datepicker__input"
-      id="myDatepicker"
-      name="myDatepicker_input"
-      onChange={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      placeholder="placeholder"
-      type="text"
-      value="15/02/2010" />
-  </div>
-</div>
+<input
+  aria-atomic="true"
+  aria-label="Monday, 15th February 2010"
+  aria-live="assertive"
+  className="bpk-input bpk-input--large bpk-datepicker__input"
+  id="myDatepicker"
+  name="myDatepicker_input"
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  placeholder="placeholder"
+  type="text"
+  value="15/02/2010" />
 `;

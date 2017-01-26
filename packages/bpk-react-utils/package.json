@@ -8,5 +8,9 @@
     "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0"
+  }
 }
