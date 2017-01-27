@@ -2,7 +2,7 @@ exports[`BpkCalendar should render correctly 1`] = `
 <div
   className="bpk-calendar">
   <div
-    className="bpk-calendar-nav">
+    className="bpk-calendar-nav bpk-calendar__nav">
     <div
       className="bpk-calendar-nav__nudger">
       <button
@@ -72,7 +72,7 @@ exports[`BpkCalendar should render correctly 1`] = `
     </div>
   </div>
   <table
-    className="bpk-calendar-grid">
+    className="bpk-calendar-grid bpk-calendar__grid">
     <caption
       className="bpk-calendar-grid__caption">
       February 2010

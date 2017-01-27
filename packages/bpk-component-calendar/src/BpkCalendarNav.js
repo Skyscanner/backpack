@@ -95,7 +95,7 @@ BpkCalendarNav.propTypes = {
   minDate: PropTypes.instanceOf(Date).isRequired,
   month: PropTypes.instanceOf(Date).isRequired,
   // Optional
-  className: PropTypes.strings,
+  className: PropTypes.string,
   onChangeMonth: PropTypes.func,
 };
 

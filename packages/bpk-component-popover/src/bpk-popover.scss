@@ -13,8 +13,8 @@
 }
 
 .bpk-popover {
-  outline: 0;
   transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
+  outline: 0;
   opacity: 1;
 
   @include bpk-breakpoint-above-mobile {
@@ -40,8 +40,8 @@
 
   &--full-screen-on-mobile {
     @include bpk-breakpoint-mobile {
-      height: 100%;
       width: 100%;
+      height: 100%;
     }
   }
 
@@ -88,8 +88,8 @@
 
     &--full-screen-on-mobile {
       @include bpk-breakpoint-mobile {
-        height: 100%;
         width: 100%;
+        height: 100%;
         border-radius: 0;
       }
     }

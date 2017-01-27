@@ -1,7 +1,8 @@
+import MediaQuery from 'react-responsive';
 import BpkInput from 'bpk-component-input';
 import BpkPopover from 'bpk-component-popover';
-import BpkCalendar, { CustomPropTypes } from 'bpk-component-calendar';
 import React, { PropTypes, Component } from 'react';
+import BpkCalendar, { CustomPropTypes } from 'bpk-component-calendar';
 
 import './bpk-datepicker.scss';
 
@@ -78,7 +79,9 @@ class BpkDatepicker extends Component {
     delete rest.onDateSelect;
 
     return (
-      <BpkPopover
+      <MediaQuery query="(max-width: 32.25rem)">
+        {isMobile => (
+          <BpkPopover
         target={
           <BpkInput
             id={id}
@@ -104,8 +107,9 @@ class BpkDatepicker extends Component {
         }
         onClose={this.onClose}
         isOpen={this.state.isOpen}
-        closeButtonText={closeButtonText}
-        aria-label={popoverLabel}
+title={isMobile ? popoverLabel : null}
+            aria-label={isMobile ? null : popoverLabel}
+
         tabIndex="0"
         fullScreenOnMobile
         {...rest}
@@ -129,6 +133,8 @@ class BpkDatepicker extends Component {
           weekStartsOn={weekStartsOn}
         />
       </BpkPopover>
+        )}
+      </MediaQuery>
     );
   }
 }
