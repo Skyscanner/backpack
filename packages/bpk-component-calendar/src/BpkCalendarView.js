@@ -9,6 +9,7 @@ import './bpk-calendar.scss';
 const BpkCalendarView = props => (
   <div className="bpk-calendar">
     <BpkCalendarNav
+      className="bpk-calendar__nav"
       changeMonthLabel={props.changeMonthLabel}
       formatMonth={props.formatMonth}
       id={`${props.id}__bpk_calendar_nav`}
@@ -18,6 +19,7 @@ const BpkCalendarView = props => (
       onChangeMonth={props.onChangeMonth}
     />
     <BpkCalendarGrid
+      className="bpk-calendar__grid"
       DateComponent={props.DateComponent}
       dateModifiers={props.dateModifiers}
       daysOfWeek={props.daysOfWeek}

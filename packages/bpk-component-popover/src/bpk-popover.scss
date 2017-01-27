@@ -14,9 +14,28 @@
 
 .bpk-popover {
   outline: 0;
+  transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
+  opacity: 1;
 
   @include bpk-breakpoint-above-mobile {
     max-width: $bpk-breakpoint-mobile;
+    transition: opacity $bpk-duration-xs ease-in-out, transform $bpk-duration-sm ease-in-out;
+  }
+
+  &--appear {
+    opacity: 0;
+
+    @include bpk-breakpoint-mobile {
+      transform: scale(.9);
+    }
+  }
+
+  &--appear-active {
+    opacity: 1;
+
+    @include bpk-breakpoint-mobile {
+      transform: scale(1);
+    }
   }
 
   &--full-screen-on-mobile {

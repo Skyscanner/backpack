@@ -202,4 +202,9 @@
 
 .bpk-calendar {
   @include bpk-border-radius-sm();
+
+  &__nav,
+  &__grid {
+    margin: 0 auto;
+  }
 }

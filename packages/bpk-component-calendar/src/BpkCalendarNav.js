@@ -30,19 +30,23 @@ const BpkCalendarNav = (props) => {
     month,
     minDate,
     maxDate,
+    className,
     formatMonth,
     onChangeMonth,
     changeMonthLabel,
   } = props;
 
+  const classNames = ['bpk-calendar-nav'];
   const baseMonth = startOfMonth(month);
   const { min, max } = getMonthRange(minDate, maxDate);
   const navigatableMonths = getMonthsInRange(minDate, maxDate);
   const prevMonth = addMonths(baseMonth, -1);
   const nextMonth = addMonths(baseMonth, 1);
 
+  if (className) { classNames.push(className); }
+
   return (
-    <div className="bpk-calendar-nav">
+    <div className={classNames.join(' ')}>
       <div className="bpk-calendar-nav__nudger">
         <button
           type="button"
@@ -91,10 +95,12 @@ BpkCalendarNav.propTypes = {
   minDate: PropTypes.instanceOf(Date).isRequired,
   month: PropTypes.instanceOf(Date).isRequired,
   // Optional
+  className: PropTypes.strings,
   onChangeMonth: PropTypes.func,
 };
 
 BpkCalendarNav.defaultProps = {
+  className: null,
   onChangeMonth: null,
 };
 

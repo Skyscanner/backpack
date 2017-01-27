@@ -107,6 +107,7 @@ class BpkDatepicker extends Component {
         closeButtonText={closeButtonText}
         aria-label={popoverLabel}
         tabIndex="0"
+        fullScreenOnMobile
         {...rest}
       >
         <BpkCalendar
