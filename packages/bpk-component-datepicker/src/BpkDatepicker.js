@@ -10,11 +10,16 @@ const KEYCODES = {
   SPACEBAR: 32,
 };
 
-const onKeyEvent = (keyCode, callback) => (e) => {
+const handleKeyEvent = (keyCode, callback) => (e) => {
   if (e.keyCode === keyCode) {
     e.preventDefault();
     callback();
   }
+};
+
+const handlePointerEvent = callback => (e) => {
+  e.preventDefault();
+  callback();
 };
 
 class BpkDatepicker extends Component {
@@ -97,10 +102,11 @@ class BpkDatepicker extends Component {
             id={id}
             name={`${id}_input`}
             value={formatDate(this.state.date)}
-            onClick={this.onOpen}
-            onFocus={this.onOpen}
-            onKeyDown={onKeyEvent(KEYCODES.ENTER, this.onOpen)}
-            onKeyUp={onKeyEvent(KEYCODES.SPACEBAR, this.onOpen)}
+            onClick={handlePointerEvent(this.onOpen)}
+            onFocus={handlePointerEvent(this.onOpen)}
+            onTouchStart={handlePointerEvent(this.onOpen)}
+            onKeyDown={handleKeyEvent(KEYCODES.ENTER, this.onOpen)}
+            onKeyUp={handleKeyEvent(KEYCODES.SPACEBAR, this.onOpen)}
             className="bpk-datepicker__input"
             aria-live="assertive"
             aria-atomic="true"
