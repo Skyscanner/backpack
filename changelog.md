@@ -2,7 +2,10 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-component-popover:
+- bpk-component-datepicker:
+  - Initial release of popover, and datepicker components
 
 ## 2017-01-31 - Introduced new Calendar component
 
