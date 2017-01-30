@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react';
 import BpkHeading from 'bpk-component-heading';
 import { BpkButtonLink } from 'bpk-component-link';
 import BpkCloseButton from 'bpk-component-close-button';
+import { TransitionInitialMount } from 'bpk-react-utils';
 
 import './bpk-popover.scss';
-import TransitionInitialMount from './../../bpk-component-modal/src/TransitionInitialMount';
 
 const BpkPopover = (props) => {
   const {

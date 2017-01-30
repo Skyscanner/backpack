@@ -4,9 +4,9 @@ import BpkHeading from 'bpk-component-heading';
 import { BpkButtonLink } from 'bpk-component-link';
 import React, { PropTypes, Component } from 'react';
 import BpkCloseButton from 'bpk-component-close-button';
+import { TransitionInitialMount } from 'bpk-react-utils';
 
 import './bpk-modal.scss';
-import TransitionInitialMount from './TransitionInitialMount';
 import { lockScroll, unlockScroll, storeScroll, restoreScroll } from './scroll-utils';
 
 const stopPropagation = (e) => {

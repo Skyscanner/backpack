@@ -1,1 +1,4 @@
-exports[`BpkModalScrim should render correctly 1`] = `null`;
+exports[`BpkModalScrim should render correctly 1`] = `
+<div
+  className="bpk-modal-scrim" />
+`;

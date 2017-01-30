@@ -13,6 +13,7 @@
 }
 
 .bpk-popover {
+  transform: scale(1);
   transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
@@ -24,25 +25,41 @@
 
   &--appear {
     opacity: 0;
-
-    @include bpk-breakpoint-mobile {
-      transform: scale(.9);
-    }
   }
 
   &--appear-active {
     opacity: 1;
-
-    @include bpk-breakpoint-mobile {
-      transform: scale(1);
-    }
   }
 
   &--full-screen-on-mobile {
     @include bpk-breakpoint-mobile {
       width: 100%;
       height: 100%;
+
+      &.bpk-popover--appear {
+        transform: scale(.9);
+      }
+
+      &.bpk-popover--appear-active {
+        transform: scale(1);
+      }
     }
+  }
+
+  .bpk-popover-tether-element-attached-top & {
+    padding-top: $bpk-spacing-sm;
+  }
+
+  .bpk-popover-tether-element-attached-right & {
+    padding-right: $bpk-spacing-sm;
+  }
+
+  .bpk-popover-tether-element-attached-bottom & {
+    padding-bottom: $bpk-spacing-sm;
+  }
+
+  .bpk-popover-tether-element-attached-left & {
+    padding-left: $bpk-spacing-sm;
   }
 
   &__arrow {
@@ -92,22 +109,6 @@
         height: 100%;
         border-radius: 0;
       }
-    }
-
-    .bpk-popover-tether-element-attached-top & {
-      margin-top: $bpk-spacing-sm;
-    }
-
-    .bpk-popover-tether-element-attached-right & {
-      margin-right: $bpk-spacing-sm;
-    }
-
-    .bpk-popover-tether-element-attached-bottom & {
-      margin-bottom: $bpk-spacing-sm;
-    }
-
-    .bpk-popover-tether-element-attached-left & {
-      margin-left: $bpk-spacing-sm;
     }
   }
 
