@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "private": false,
   "name": "bpk-component-popover",
   "version": "0.0.4",
   "description": "Backpack popover component.",

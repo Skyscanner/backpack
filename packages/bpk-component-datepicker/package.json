@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "private": false,
   "name": "bpk-component-datepicker",
   "version": "0.0.2",
   "description": "Backpack datepicker component.",
