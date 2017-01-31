@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "bpk-component-popover",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Backpack popover component.",
   "main": "index.js",
   "repository": {
