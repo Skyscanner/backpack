@@ -156,8 +156,8 @@ const CalendarPage = () => <DocsPageBuilder
       e.g. constrained to a date range, or with dates blocked out.
     </BpkParagraph>,
     <BpkParagraph>
-      There exist <BpkLink href="#translation">recommended translation strings</BpkLink> for this component.
-      See also <BpkRouterLink to={I18N}>Internationalisation</BpkRouterLink>.
+      <BpkLink href="#translation">Recommended translation strings</BpkLink> exist for this component (see
+      also <BpkRouterLink to={I18N}>Internationalisation</BpkRouterLink>).
     </BpkParagraph>,
   ]}
   components={components}
