@@ -17,11 +17,6 @@ const handleKeyEvent = (keyCode, callback) => (e) => {
   }
 };
 
-const handlePointerEvent = callback => (e) => {
-  e.preventDefault();
-  callback();
-};
-
 class BpkDatepicker extends Component {
   constructor(props) {
     super(props);
@@ -102,9 +97,14 @@ class BpkDatepicker extends Component {
             id={id}
             name={`${id}_input`}
             value={formatDate(this.state.date)}
-            onClick={handlePointerEvent(this.onOpen)}
-            onFocus={handlePointerEvent(this.onOpen)}
-            onTouchStart={handlePointerEvent(this.onOpen)}
+            onClick={this.onOpen}
+            onFocus={this.onOpen}
+            onTouchEnd={(e) => {
+              // preventDefault fixes an issue on Android and iOS in which the popover closes immediately
+              // because a touch event is registered on one of the dates.
+              e.preventDefault();
+              this.onOpen();
+            }}
             onKeyDown={handleKeyEvent(KEYCODES.ENTER, this.onOpen)}
             onKeyUp={handleKeyEvent(KEYCODES.SPACEBAR, this.onOpen)}
             className="bpk-datepicker__input"
