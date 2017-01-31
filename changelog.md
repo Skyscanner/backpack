@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-component-calendar:
+  - New calendar component (http://backpack.prod.aws.skyscnr.com/docs/molecules/calendar/)
 
 ## 2017-01-26 - Input prop types are less strict & new portal implementation
 
