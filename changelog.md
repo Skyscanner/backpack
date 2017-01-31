@@ -2,16 +2,15 @@
 
 ## UNRELEASED
 
-**Added:**
-- bpk-component-popover:
-- bpk-component-datepicker:
-  - Initial release of popover, and datepicker components
-
 ## 2017-01-31 - Introduced new Calendar component
 
 **Added:**
 - bpk-component-calendar: 0.0.7
   - New calendar component (http://backpack.prod.aws.skyscnr.com/docs/molecules/calendar/)
+- bpk-component-datepicker: 0.0.3
+  - New datepicker component (http://backpack.prod.aws.skyscnr.com/docs/molecules/datepicker/)
+- bpk-component-popover: 0.0.5
+  - New popover component (http://backpack.prod.aws.skyscnr.com/docs/molecules/popovers/)
 
 ## 2017-01-26 - Input prop types are less strict & new portal implementation
 
