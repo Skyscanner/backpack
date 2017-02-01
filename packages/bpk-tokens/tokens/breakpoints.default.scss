@@ -1,0 +1,16 @@
+/// @group breakpoints
+$bpk-breakpoint-mobile: 32.25rem !default;
+/// @group breakpoints
+$bpk-breakpoint-tablet: 50.25rem !default;
+/// @group breakpoints
+$bpk-breakpoint-desktop: 71.25rem !default;
+/// @group breakpoints
+$bpk-breakpoint-query-mobile: (max-width: 32.25rem) !default;
+/// @group breakpoints
+$bpk-breakpoint-query-tablet: (max-width: 50.25rem) !default;
+/// @group breakpoints
+$bpk-breakpoint-query-tablet-only: (min-width: 32.3125rem) and (max-width: 50.25rem) !default;
+/// @group breakpoints
+$bpk-breakpoint-query-above-mobile: (min-width: 32.3125rem) !default;
+/// @group breakpoints
+$bpk-breakpoint-query-above-tablet: (min-width: 50.3125rem) !default;

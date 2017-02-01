@@ -128,19 +128,19 @@
     },
     {
       "category": "breakpoints",
-      "value": "(min-width: 32.25rem + .0625rem) and (max-width: 50.25rem)",
+      "value": "(min-width: 32.3125rem) and (max-width: 50.25rem)",
       "type": "media-query",
       "name": "breakpointQueryTabletOnly"
     },
     {
       "category": "breakpoints",
-      "value": "(min-width: 32.25rem + .0625rem)",
+      "value": "(min-width: 32.3125rem)",
       "type": "media-query",
       "name": "breakpointQueryAboveMobile"
     },
     {
       "category": "breakpoints",
-      "value": "(min-width: 50.25rem + .0625rem)",
+      "value": "(min-width: 50.3125rem)",
       "type": "media-query",
       "name": "breakpointQueryAboveTablet"
     },

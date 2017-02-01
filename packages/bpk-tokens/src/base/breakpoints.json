@@ -27,15 +27,15 @@
       "type": "media-query"
     },
     "BREAKPOINT_QUERY_TABLET_ONLY": {
-      "value": "(min-width: {!BREAKPOINT_MOBILE} + {!ONE_PIXEL_REM}) and (max-width: {!BREAKPOINT_TABLET})",
+      "value": "(min-width: {!BREAKPOINT_ABOVE_MOBILE}) and (max-width: {!BREAKPOINT_TABLET})",
       "type": "media-query"
     },
     "BREAKPOINT_QUERY_ABOVE_MOBILE": {
-      "value": "(min-width: {!BREAKPOINT_MOBILE} + {!ONE_PIXEL_REM})",
+      "value": "(min-width: {!BREAKPOINT_ABOVE_MOBILE})",
       "type": "media-query"
     },
     "BREAKPOINT_QUERY_ABOVE_TABLET": {
-      "value": "(min-width: {!BREAKPOINT_TABLET} + {!ONE_PIXEL_REM})",
+      "value": "(min-width: {!BREAKPOINT_ABOVE_TABLET})",
       "type": "media-query"
     }
   }

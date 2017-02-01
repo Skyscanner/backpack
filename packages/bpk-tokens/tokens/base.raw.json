@@ -67,7 +67,9 @@
     "BORDER_RADIUS_SM": ".375rem",
     "BORDER_RADIUS_PILL": "5rem",
     "BREAKPOINT_MOBILE": "32.25rem",
+    "BREAKPOINT_ABOVE_MOBILE": "32.3125rem",
     "BREAKPOINT_TABLET": "50.25rem",
+    "BREAKPOINT_ABOVE_TABLET": "50.3125rem",
     "BREAKPOINT_DESKTOP": "71.25rem",
     "ONE_PIXEL_REM": ".0625rem",
     "ZINDEX_AUTOSUGGEST": "900",
@@ -203,19 +205,19 @@
     },
     "BREAKPOINT_QUERY_TABLET_ONLY": {
       "category": "breakpoints",
-      "value": "(min-width: 32.25rem + .0625rem) and (max-width: 50.25rem)",
+      "value": "(min-width: 32.3125rem) and (max-width: 50.25rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_TABLET_ONLY"
     },
     "BREAKPOINT_QUERY_ABOVE_MOBILE": {
       "category": "breakpoints",
-      "value": "(min-width: 32.25rem + .0625rem)",
+      "value": "(min-width: 32.3125rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_ABOVE_MOBILE"
     },
     "BREAKPOINT_QUERY_ABOVE_TABLET": {
       "category": "breakpoints",
-      "value": "(min-width: 50.25rem + .0625rem)",
+      "value": "(min-width: 50.3125rem)",
       "type": "media-query",
       "name": "BREAKPOINT_QUERY_ABOVE_TABLET"
     },

@@ -8,4 +8,10 @@
       @include bpk-visually-hidden();
     }
   }
+
+  &__calendar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }

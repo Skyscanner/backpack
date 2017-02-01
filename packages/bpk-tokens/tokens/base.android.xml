@@ -21,9 +21,9 @@
   <property name="BREAKPOINT_DESKTOP" category="breakpoints">1140</property>
   <property name="BREAKPOINT_QUERY_MOBILE" category="breakpoints">(max-width: 32.25rem)</property>
   <property name="BREAKPOINT_QUERY_TABLET" category="breakpoints">(max-width: 50.25rem)</property>
-  <property name="BREAKPOINT_QUERY_TABLET_ONLY" category="breakpoints">(min-width: 32.25rem + .0625rem) and (max-width: 50.25rem)</property>
-  <property name="BREAKPOINT_QUERY_ABOVE_MOBILE" category="breakpoints">(min-width: 32.25rem + .0625rem)</property>
-  <property name="BREAKPOINT_QUERY_ABOVE_TABLET" category="breakpoints">(min-width: 50.25rem + .0625rem)</property>
+  <property name="BREAKPOINT_QUERY_TABLET_ONLY" category="breakpoints">(min-width: 32.3125rem) and (max-width: 50.25rem)</property>
+  <property name="BREAKPOINT_QUERY_ABOVE_MOBILE" category="breakpoints">(min-width: 32.3125rem)</property>
+  <property name="BREAKPOINT_QUERY_ABOVE_TABLET" category="breakpoints">(min-width: 50.3125rem)</property>
   <property name="BUTTON_PADDING_Y" category="buttons">6</property>
   <property name="BUTTON_PADDING_X" category="buttons">18</property>
   <property name="BUTTON_PADDING_X_ICON_ONLY" category="buttons">9</property>

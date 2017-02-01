@@ -1,0 +1,5 @@
+exports[`BpkBreakpoint should render correctly 1`] = `
+<div>
+  child
+</div>
+`;

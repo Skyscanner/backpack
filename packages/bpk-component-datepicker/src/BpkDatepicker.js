@@ -1,7 +1,7 @@
-import MediaQuery from 'react-responsive';
 import BpkInput from 'bpk-component-input';
 import BpkPopover from 'bpk-component-popover';
 import React, { PropTypes, Component } from 'react';
+import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 import BpkCalendar, { CustomPropTypes } from 'bpk-component-calendar';
 
 import './bpk-datepicker.scss';
@@ -79,62 +79,64 @@ class BpkDatepicker extends Component {
     delete rest.onDateSelect;
 
     return (
-      <MediaQuery query="(max-width: 32.25rem)">
+      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
         {isMobile => (
           <BpkPopover
-        target={
-          <BpkInput
-            id={id}
-            name={`${id}_input`}
-            value={this.props.date ? formatDate(this.props.date) : ''}
-            onClick={this.onOpen}
-            onFocus={this.onOpen}
-            onTouchEnd={(e) => {
-              // preventDefault fixes an issue on Android and iOS in which the popover closes immediately
-              // because a touch event is registered on one of the dates.
-              e.preventDefault();
-              this.onOpen();
-            }}
-            onKeyDown={handleKeyEvent(KEYCODES.ENTER, this.onOpen)}
-            onKeyUp={handleKeyEvent(KEYCODES.SPACEBAR, this.onOpen)}
-            className="bpk-datepicker__input"
-            aria-live="assertive"
-            aria-atomic="true"
-            aria-label={formatDateFull(date)}
-            onChange={() => null}
-            {...inputProps}
-          />
-        }
-        onClose={this.onClose}
-        isOpen={this.state.isOpen}
-title={isMobile ? popoverLabel : null}
+            target={
+              <BpkInput
+                id={id}
+                name={`${id}_input`}
+                value={this.props.date ? formatDate(this.props.date) : ''}
+                onClick={this.onOpen}
+                onFocus={this.onOpen}
+                onTouchEnd={(e) => {
+                  // preventDefault fixes an issue on Android and iOS in which the popover closes immediately
+                  // because a touch event is registered on one of the dates.
+                  e.preventDefault();
+                  this.onOpen();
+                }}
+                onKeyDown={handleKeyEvent(KEYCODES.ENTER, this.onOpen)}
+                onKeyUp={handleKeyEvent(KEYCODES.SPACEBAR, this.onOpen)}
+                className="bpk-datepicker__input"
+                aria-live="assertive"
+                aria-atomic="true"
+                aria-label={formatDateFull(this.state.date)}
+                onChange={() => null}
+                {...inputProps}
+              />
+            }
+            onClose={this.onClose}
+            isOpen={this.state.isOpen}
+            closeButtonText={closeButtonText}
+            title={isMobile ? popoverLabel : null}
             aria-label={isMobile ? null : popoverLabel}
-
-        tabIndex="0"
-        fullScreenOnMobile
-        {...rest}
-      >
-        <BpkCalendar
-          changeMonthLabel={changeMonthLabel}
-          DateComponent={DateComponent}
-          date={date}
-          dateModifiers={dateModifiers}
-          daysOfWeek={daysOfWeek}
-          enableSelection
-          formatDateFull={formatDateFull}
-          formatMonth={formatMonth}
-          id={`${id}_calendar`}
-          markOutsideDays={markOutsideDays}
-          markToday={markToday}
-          maxDate={maxDate}
-          minDate={minDate}
-          onDateSelect={this.handleDateSelect}
-          showWeekendSeparator={showWeekendSeparator}
-          weekStartsOn={weekStartsOn}
-        />
-      </BpkPopover>
+            tabIndex="0"
+            fullScreenOnMobile
+            {...rest}
+          >
+            <BpkCalendar
+              className="bpk-datepicker__calendar"
+              changeMonthLabel={changeMonthLabel}
+              DateComponent={DateComponent}
+	      date={date}
+              dateModifiers={dateModifiers}
+              daysOfWeek={daysOfWeek}
+              enableSelection
+              formatDateFull={formatDateFull}
+              formatMonth={formatMonth}
+              id={`${id}_calendar`}
+              initialSelectedDate={this.state.date}
+              markOutsideDays={markOutsideDays}
+              markToday={markToday}
+              maxDate={maxDate}
+              minDate={minDate}
+	      onDateSelect={this.handleDateSelect}
+              showWeekendSeparator={showWeekendSeparator}
+              weekStartsOn={weekStartsOn}
+            />
+          </BpkPopover>
         )}
-      </MediaQuery>
+      </BpkBreakpoint>
     );
   }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "bpk-component-datepicker",
-  "version": "1.0.0",
-  "description": "Backpack datepicker component.",
+  "name": "bpk-component-breakpoint",
+  "version": "0.0.0",
+  "description": "Backpack breakpoint component.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -13,10 +13,10 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-component-breakpoint": "^0.0.0",
-    "bpk-component-calendar": "^1.0.0",
-    "bpk-component-input": "^2.0.1",
-    "bpk-component-popover": "^0.0.6",
-    "bpk-mixins": "^8.1.0"
+    "bpk-mixins": "^8.0.1",
+    "react-responsive": "^1.2.6"
+  },
+  "devDependencies": {
+    "bpk-tokens": "^17.0.4"
   }
 }

@@ -132,7 +132,6 @@ const reorderWeekDays = (weekDays, weekStartsOn) => [
 const BpkCalendarGrid = (props) => {
   const {
     month,
-    className,
     DateComponent,
     daysOfWeek,
     formatDateFull,
@@ -165,12 +164,8 @@ const BpkCalendarGrid = (props) => {
     weekendEndIndex = weekend.lastIndexOf(true);
   }
 
-  const classNames = ['bpk-calendar-grid'];
-
-  if (className) { classNames.push(className); }
-
   return (
-    <table className={classNames.join(' ')}>
+    <table className="bpk-calendar-grid">
       <caption
         className="bpk-calendar-grid__caption"
       >
@@ -219,7 +214,6 @@ BpkCalendarGrid.propTypes = {
   showWeekendSeparator: PropTypes.bool.isRequired,
   weekStartsOn: PropTypes.number.isRequired,
   // Optional
-  className: PropTypes.string,
   dateModifiers: CustomPropTypes.DateModifiers,
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
@@ -227,7 +221,6 @@ BpkCalendarGrid.propTypes = {
 };
 
 BpkCalendarGrid.defaultProps = {
-  className: null,
   dateModifiers: {},
   onDateClick: null,
   onDateKeyDown: null,
