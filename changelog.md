@@ -16,7 +16,10 @@
 - bpk-component-datepicker:
 - bpk-component-popover:
   - Added opacity transition on open
-  
+
+- bpk-component-modal:
+  - Now accepts a `target` prop - helpful for avoiding wrapper divs
+
 - bpk-react-utils:
   - Added `TransitionInitialMount` to help with css transitions (from `bpk-component-modal`)
 

@@ -1,14 +1,13 @@
 @import "~bpk-mixins";
 
 .bpk-popover {
-  transform: scale(1);
-  transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
+  transition: opacity $bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
 
   @include bpk-breakpoint-above-mobile {
     max-width: $bpk-breakpoint-mobile;
-    transition: opacity $bpk-duration-xs ease-in-out, transform $bpk-duration-sm ease-in-out;
+    transition: opacity $bpk-duration-xs ease-in-out;
   }
 
   &--appear {
