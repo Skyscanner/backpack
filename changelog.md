@@ -2,6 +2,12 @@
 
 ## UNRELEASED
 
+**Changed:**
+- bpk-component-calendar:
+- bpk-component-datepicker:
+  - Removed "selected date" state management from components, which is not in the consumer's responsibility
+  - `minDate` and `maxDate` props are now internally set to the start of that day
+
 **Added:**
 - bpk-component-icon:
 - bpk-mixins:

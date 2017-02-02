@@ -23,23 +23,11 @@ class BpkDatepicker extends Component {
 
     this.state = {
       isOpen: false,
-      date: this.props.initialSelectedDate,
     };
 
     this.onOpen = this.onOpen.bind(this);
     this.onClose = this.onClose.bind(this);
-    this.onDateSelect = this.onDateSelect.bind(this);
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    // Only update when `isOpen` or `date` have changed
-    if (nextState.isOpen !== this.state.isOpen) {
-      return true;
-    }
-    if (nextState.date !== this.state.date) {
-      return true;
-    }
-    return false;
+    this.handleDateSelect = this.handleDateSelect.bind(this);
   }
 
   onOpen() {
@@ -54,10 +42,9 @@ class BpkDatepicker extends Component {
     });
   }
 
-  onDateSelect(dateObj) {
+  handleDateSelect(dateObj) {
     this.setState({
       isOpen: false,
-      date: dateObj,
     });
     if (this.props.onDateSelect) {
       this.props.onDateSelect(dateObj);
@@ -69,6 +56,7 @@ class BpkDatepicker extends Component {
       changeMonthLabel,
       closeButtonText,
       DateComponent,
+      date,
       dateModifiers,
       daysOfWeek,
       formatDate,
@@ -87,7 +75,6 @@ class BpkDatepicker extends Component {
      } = this.props;
 
     // The following props are not used in render
-    delete rest.initialSelectedDate;
     delete rest.onDateSelect;
 
     return (
@@ -96,7 +83,7 @@ class BpkDatepicker extends Component {
           <BpkInput
             id={id}
             name={`${id}_input`}
-            value={formatDate(this.state.date)}
+            value={this.props.date ? formatDate(this.props.date) : ''}
             onClick={this.onOpen}
             onFocus={this.onOpen}
             onTouchEnd={(e) => {
@@ -110,7 +97,7 @@ class BpkDatepicker extends Component {
             className="bpk-datepicker__input"
             aria-live="assertive"
             aria-atomic="true"
-            aria-label={formatDateFull(this.state.date)}
+            aria-label={formatDateFull(date)}
             {...inputProps}
           />
         }
@@ -124,18 +111,18 @@ class BpkDatepicker extends Component {
         <BpkCalendar
           changeMonthLabel={changeMonthLabel}
           DateComponent={DateComponent}
+          date={date}
           dateModifiers={dateModifiers}
           daysOfWeek={daysOfWeek}
           enableSelection
           formatDateFull={formatDateFull}
           formatMonth={formatMonth}
           id={`${id}_calendar`}
-          initialSelectedDate={this.state.date}
           markOutsideDays={markOutsideDays}
           markToday={markToday}
           maxDate={maxDate}
           minDate={minDate}
-          onDateSelect={this.onDateSelect}
+          onDateSelect={this.handleDateSelect}
           showWeekendSeparator={showWeekendSeparator}
           weekStartsOn={weekStartsOn}
         />
@@ -156,8 +143,8 @@ BpkDatepicker.propTypes = {
   popoverLabel: PropTypes.string.isRequired,
   // Optional
   DateComponent: PropTypes.func,
+  date: PropTypes.instanceOf(Date),
   dateModifiers: CustomPropTypes.DateModifiers,
-  initialSelectedDate: PropTypes.instanceOf(Date),
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   markOutsideDays: PropTypes.bool,
   markToday: PropTypes.bool,
@@ -170,8 +157,8 @@ BpkDatepicker.propTypes = {
 
 BpkDatepicker.defaultProps = {
   DateComponent: BpkCalendar.defaultProps.DateComponent,
+  date: BpkCalendar.defaultProps.date,
   dateModifiers: BpkCalendar.defaultProps.dateModifiers,
-  initialSelectedDate: BpkCalendar.defaultProps.initialSelectedDate,
   inputProps: {},
   markOutsideDays: BpkCalendar.defaultProps.markOutsideDays,
   markToday: BpkCalendar.defaultProps.markToday,

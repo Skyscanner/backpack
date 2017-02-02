@@ -1,9 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 
 import CustomPropTypes from './custom-proptypes';
 import './bpk-calendar.scss';
 
-class BpkCalendarDate extends Component {
+class BpkCalendarDate extends PureComponent {
   componentDidMount() {
     if (!this.props.preventKeyboardFocus && this.props.focused) {
       // If we got here by clicking the nudger, don't focus this date
