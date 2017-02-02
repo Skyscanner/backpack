@@ -118,7 +118,7 @@ class BpkDatepicker extends Component {
               className="bpk-datepicker__calendar"
               changeMonthLabel={changeMonthLabel}
               DateComponent={DateComponent}
-	      date={date}
+              date={date}
               dateModifiers={dateModifiers}
               daysOfWeek={daysOfWeek}
               enableSelection
@@ -130,7 +130,7 @@ class BpkDatepicker extends Component {
               markToday={markToday}
               maxDate={maxDate}
               minDate={minDate}
-	      onDateSelect={this.handleDateSelect}
+              onDateSelect={this.handleDateSelect}
               showWeekendSeparator={showWeekendSeparator}
               weekStartsOn={weekStartsOn}
             />
