@@ -3,7 +3,7 @@ import endOfMonth from 'date-fns/end_of_month';
 import lastDayOfMonth from 'date-fns/last_day_of_month';
 import startOfWeek from 'date-fns/start_of_week';
 import lastDayOfWeek from 'date-fns/last_day_of_week';
-import startOfToday from 'date-fns/start_of_today';
+import startOfDay from 'date-fns/start_of_day';
 import eachDay from 'date-fns/each_day';
 import getDay from 'date-fns/get_day';
 
@@ -61,6 +61,15 @@ function getMonthsInRange(from, to) {
   return monthsInRange;
 }
 
+const dateToBoundaries = (date, minDate, maxDate) => {
+  if (isWithinRange(date, minDate, maxDate)) {
+    return date;
+  } else if (isBefore(date, minDate)) {
+    return minDate;
+  }
+  return maxDate;
+};
+
 const parseIsoDate = parse;
 const formatIsoDate = date => format(date, 'YYYY-MM-DD');
 const formatIsoMonth = date => format(date, 'YYYY-MM');
@@ -70,20 +79,20 @@ export {
   getMonthsInRange,
   getMonthRange,
   getDay,
+  dateToBoundaries,
   isWithinRange,
   isSaturday,
   isSunday,
   isToday,
   isSameDay,
   isSameMonth,
-  isBefore,
   addMonths,
   addDays,
   setMonth,
   setYear,
   startOfMonth,
   lastDayOfMonth,
-  startOfToday,
+  startOfDay,
   format,
   formatIsoDate,
   formatIsoMonth,

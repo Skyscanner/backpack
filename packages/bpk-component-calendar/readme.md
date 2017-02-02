@@ -39,7 +39,7 @@ class App extends Component {
     }
   }
 
-  onDateSelect(date) {
+  handleDateSelect(date) {
     this.setState({
       selectedDate: date
     });
@@ -57,11 +57,12 @@ class App extends Component {
         />
         <BpkCalendar
           id='calendar'
-          onDateSelect={onDateSelect}
+          onDateSelect={this.handleDateSelect}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
           daysOfWeek={daysOfWeek}
           changeMonthLabel="Change month"
+          date={this.state.selectedDate}
         />
       </div>
     )
@@ -74,6 +75,7 @@ class App extends Component {
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
 | changeMonthLabel      | string               | true     | -                |
+| date                  | Date                 | true     | -                |
 | daysOfWeek            | object               | true     | -                |
 | formatDateFull        | func                 | true     | -                |
 | formatMonth           | func                 | true     | -                |
@@ -81,8 +83,6 @@ class App extends Component {
 | DateComponent         | func                 | false    | BpkCalendarDate  |
 | dateModifiers         | object               | false    | {}               |
 | enableSelection       | bool                 | false    | true             |
-| initialMonth          | Date                 | false    | new Date()       |
-| initialSelectedDate   | Date                 | false    | new Date()       |
 | markOutsideDays       | bool                 | false    | true             |
 | markToday             | bool                 | false    | true             |
 | maxDate               | Date                 | false    | new Date() + 1yr |

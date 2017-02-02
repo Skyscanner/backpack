@@ -1,5 +1,5 @@
 import BpkParagraph from 'bpk-component-paragraph';
-import React from 'react';
+import React, { Component } from 'react';
 import BpkDatepicker from 'bpk-component-datepicker';
 import BpkRouterLink from 'bpk-component-router-link';
 
@@ -12,6 +12,25 @@ import { weekDays } from '../../../../bpk-component-calendar/test-utils';
 const formatDate = date => format(date, 'DD/MM/YYYY');
 const formatMonth = date => format(date, 'MMMM YYYY');
 const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
+
+class CalendarContainer extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      date: null,
+    };
+  }
+  render() {
+    return (
+      <BpkDatepicker
+        {...this.props}
+        date={this.state.date}
+        onDateSelect={date => this.setState({ date, focusedDate: date })}
+      />
+    );
+  }
+}
 
 const components = [
   {
@@ -26,7 +45,7 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <BpkDatepicker
+      <CalendarContainer
         id="calendar-1"
         closeButtonText="Close"
         formatDate={formatDate}
@@ -35,6 +54,7 @@ const components = [
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
         popoverLabel="Select date"
+        inputProps={{ placeholder: 'Select date' }}
       />,
     ],
   },

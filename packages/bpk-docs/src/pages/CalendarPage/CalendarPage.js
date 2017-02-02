@@ -17,6 +17,7 @@ import {
   formatMonthArabic,
 } from '../../../../bpk-component-calendar/test-utils';
 
+/* eslint-disable react/no-multi-comp */
 class CalendarNavContainer extends Component {
   constructor() {
     super();
@@ -51,6 +52,26 @@ CalendarNavContainer.propTypes = {
   id: PropTypes.string.isRequired,
 };
 
+class CalendarContainer extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      date: new Date(),
+    };
+  }
+  render() {
+    return (
+      <BpkCalendar
+        {...this.props}
+        date={this.state.date}
+        onDateSelect={date => this.setState({ date, focusedDate: date })}
+      />
+    );
+  }
+}
+/* eslint-enable react/no-multi-comp */
+
 const components = [
   {
     id: 'calendar',
@@ -65,7 +86,7 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <BpkCalendar
+      <CalendarContainer
         id="calendar-1"
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -84,33 +105,13 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <BpkCalendar
+      <CalendarContainer
         id="calendar-ar1"
         formatMonth={formatMonthArabic}
         formatDateFull={formatDateFullArabic}
         daysOfWeek={weekDaysArabic}
         changeMonthLabel="Change month"
         weekStartsOn={6}
-      />,
-    ],
-  },
-  {
-    id: 'calendar-no-selection',
-    title: 'Calendar without date selection',
-    blurb: [
-      <BpkParagraph>
-        The default calendar configuration ships with navigation to nudge between months or make a
-        direct selection via a select menu.
-      </BpkParagraph>,
-    ],
-    examples: [
-      <BpkCalendar
-        id="calendar-2"
-        formatMonth={formatMonth}
-        formatDateFull={formatDateFull}
-        daysOfWeek={weekDays}
-        changeMonthLabel="Change month"
-        enableSelection={false}
       />,
     ],
   },

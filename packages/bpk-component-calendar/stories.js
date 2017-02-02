@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import isFriday from 'date-fns/is_friday';
 import isWeekend from 'date-fns/is_weekend';
@@ -17,6 +17,25 @@ import {
 } from './test-utils';
 
 import BpkCalendar, { BpkCalendarView, BpkCalendarGrid, BpkCalendarNav, BpkCalendarDate } from './index';
+
+class CalendarContainer extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      date: new Date(),
+    };
+  }
+  render() {
+    return (
+      <BpkCalendar
+        {...this.props}
+        date={this.state.date}
+        onDateSelect={date => this.setState({ date, focusedDate: date })}
+      />
+    );
+  }
+}
 
 storiesOf('bpk-component-calendar', module)
   .add('BpkCalendarNav', () => (
@@ -59,7 +78,7 @@ storiesOf('bpk-component-calendar', module)
     />
   ))
   .add('Calendar - default', () => (
-    <BpkCalendar
+    <CalendarContainer
       id="myCalendar"
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
@@ -69,7 +88,7 @@ storiesOf('bpk-component-calendar', module)
     />
   ))
   .add('Calendar - Don\'t show weekend separator', () => (
-    <BpkCalendar
+    <CalendarContainer
       id="myCalendar"
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
@@ -80,7 +99,7 @@ storiesOf('bpk-component-calendar', module)
     />
   ))
   .add('Calendar - Week starts on a Sunday', () => (
-    <BpkCalendar
+    <CalendarContainer
       id="myCalendar"
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
@@ -91,7 +110,7 @@ storiesOf('bpk-component-calendar', module)
     />
   ))
   .add('Calendar - Honest weekend', () => (
-    <BpkCalendar
+    <CalendarContainer
       id="myCalendar"
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
@@ -101,7 +120,7 @@ storiesOf('bpk-component-calendar', module)
     />
   ))
   .add('Calendar - Custom modifiers (Fridays are blocked)', () => (
-    <BpkCalendar
+    <CalendarContainer
       id="myCalendar"
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
@@ -112,7 +131,7 @@ storiesOf('bpk-component-calendar', module)
     />
   ))
   .add('Calendar - ar-AE locale', () => (
-    <BpkCalendar
+    <CalendarContainer
       id="myCalendar"
       formatMonth={formatMonthArabic}
       formatDateFull={formatDateFullArabic}
@@ -123,7 +142,7 @@ storiesOf('bpk-component-calendar', module)
     />
   ))
   .add('Calendar - ja-JP locale', () => (
-    <BpkCalendar
+    <CalendarContainer
       id="myCalendar"
       formatMonth={formatMonthJapanese}
       formatDateFull={formatDateFullJapanese}
@@ -133,19 +152,8 @@ storiesOf('bpk-component-calendar', module)
       weekStartsOn={0}
     />
   ))
-  .add('Calendar - Specify initial date', () => (
-    <BpkCalendar
-      id="myCalendar"
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
-      onDateSelect={action('Selected day')}
-      initialSelectedDate={addMonths(new Date(), 6)}
-    />
-  ))
   .add('Calendar - Specify min/max date', () => (
-    <BpkCalendar
+    <CalendarContainer
       id="myCalendar"
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
@@ -154,11 +162,10 @@ storiesOf('bpk-component-calendar', module)
       onDateSelect={action('Selected day')}
       minDate={new Date(2020, 4, 15)}
       maxDate={new Date(2020, 5, 15)}
-      initialMonth={new Date(2020, 4, 15)}
     />
   ))
   .add('Calendar - Don\'t mark today', () => (
-    <BpkCalendar
+    <CalendarContainer
       id="myCalendar"
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
@@ -169,7 +176,7 @@ storiesOf('bpk-component-calendar', module)
     />
   ))
   .add('Calendar - Don\'t mark outside days', () => (
-    <BpkCalendar
+    <CalendarContainer
       id="myCalendar"
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
@@ -177,31 +184,6 @@ storiesOf('bpk-component-calendar', module)
       changeMonthLabel="Change month"
       onDateSelect={action('Selected day')}
       markOutsideDays={false}
-    />
-  ))
-  .add('Calendar - No selection', () => (
-    <BpkCalendar
-      id="myCalendar"
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
-      onDateSelect={action('Selected day')}
-      enableSelection={false}
-    />
-  ))
-  .add('Calendar - No selection; initial month', () => (
-    <BpkCalendar
-      id="myCalendar"
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
-      onDateSelect={action('Selected day')}
-      minDate={new Date(2020, 4, 15)}
-      maxDate={new Date(2020, 6, 15)}
-      initialMonth={new Date(2020, 5, 15)}
-      enableSelection={false}
     />
   ))
   .add('Calendar -  Custom date component', () => {
@@ -220,7 +202,7 @@ storiesOf('bpk-component-calendar', module)
       date: React.PropTypes.instanceOf(Date).isRequired,
     };
     return (
-      <BpkCalendar
+      <CalendarContainer
         id="myCalendar"
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}

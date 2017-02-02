@@ -11,14 +11,13 @@ npm install bpk-component-datepicker --save
 ## Usage
 
 ```js
-import React from 'react';
-import BpkDatepicker from 'bpk-component-datepicker';
+import React, { Component } from 'react';
+import BpkCalendar from 'bpk-component-calendar';
+import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 import format from 'date-fns/format';
 
-const formatDate = date => format(date, 'DD/MM/YYYY');
 const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
 const formatMonth = date => format(date, 'MMMM YYYY');
-
 const daysOfWeek = [
   {
     "name": "Monday",
@@ -29,18 +28,40 @@ const daysOfWeek = [
   // ...
 ];
 
-export default MyComponent = () => (
-  <BpkDatepicker
-    id="myDatepicker"
-    closeButtonText="Close"
-    formatDate={formatDate}
-    formatDateFull={formatDateFull}
-    formatMonth={formatMonth}
-    daysOfWeek={weekDays}
-    changeMonthLabel="Change month"
-    popoverLabel="Select date"
-  />
-);
+class App extends Component {
+  constructor () {
+    super();
+
+    this.onDateSelect = this.onDateSelect.bind(this);
+
+    this.state = {
+      selectedDate: null
+    }
+  }
+
+  handleDateSelect(date) {
+    this.setState({
+      selectedDate: date
+    });
+  }
+
+  render () {
+    return (
+      <BpkDatepicker
+          id='datepicker'
+          daysOfWeek={daysOfWeek}
+          changeMonthLabel="Change month"
+          closeButtonText="Close"
+          popoverLabel="Departure date"
+          formatDate={formatDate}
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          onDateSelect={this.handleDateSelect}
+          date={this.state.selectedDate}
+        />
+    )
+  }
+}
 ```
 
 ### Props
@@ -51,6 +72,7 @@ For more information on some these props, check the BpkCalendar documentation.
 | --------------------- | -------------------- | -------- | -------------------- |
 | changeMonthLabel      | string               | true     | -                    |
 | closeButtonText       | string               | true     | -                    |
+| date                  | Date                 | true     | -                    |
 | daysOfWeek            | object               | true     | -                    |
 | formatDate            | func                 | true     | -                    |
 | formatDateFull        | func                 | true     | -                    |
@@ -59,7 +81,6 @@ For more information on some these props, check the BpkCalendar documentation.
 | popoverLabel          | func                 | true     | -                    |
 | DateComponent         | func                 | false    | BpkCalendarDate  (*) |
 | dateModifiers         | object               | false    | {}               (*) |
-| initialSelectedDate   | Date                 | false    | new Date         (*) |
 | inputProps            | object               | false    | {}                   |
 | markOutsideDays       | bool                 | false    | true             (*) |
 | markToday             | bool                 | false    | true             (*) |

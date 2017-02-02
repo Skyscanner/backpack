@@ -30,7 +30,7 @@ describe('BpkDatepicker', () => {
         inputProps={inputProps}
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
-        initialSelectedDate={new Date(2010, 1, 15)}
+        date={new Date(2010, 1, 15)}
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -49,7 +49,7 @@ describe('BpkDatepicker', () => {
       inputProps={inputProps}
       minDate={new Date(2010, 1, 15)}
       maxDate={new Date(2010, 2, 15)}
-      initialSelectedDate={new Date(2010, 1, 15)}
+      date={new Date(2010, 1, 15)}
     />);
 
     expect(datepicker.state('isOpen')).toEqual(false);
@@ -71,7 +71,7 @@ describe('BpkDatepicker', () => {
       inputProps={inputProps}
       minDate={new Date(2010, 1, 15)}
       maxDate={new Date(2010, 2, 15)}
-      initialSelectedDate={new Date(2010, 1, 15)}
+      date={new Date(2010, 1, 15)}
     />);
 
     expect(datepicker.state('isOpen')).toEqual(false);
@@ -93,16 +93,15 @@ describe('BpkDatepicker', () => {
       inputProps={inputProps}
       minDate={new Date(2010, 1, 15)}
       maxDate={new Date(2010, 2, 15)}
-      initialSelectedDate={new Date(2010, 1, 15)}
+      date={new Date(2010, 1, 15)}
     />);
 
     datepicker.find('BpkInput').simulate('click');
     expect(datepicker.state('isOpen')).toEqual(true);
 
-    const date = new Date();
-    datepicker.instance().onDateSelect(date);
+    const date = new Date(2010, 1, 15);
+    datepicker.instance().handleDateSelect(date);
     expect(datepicker.state('isOpen')).toEqual(false);
-    expect(datepicker.state('date')).toBe(date);
   });
 
   it('should close when `onClose` is called', () => {
@@ -118,7 +117,7 @@ describe('BpkDatepicker', () => {
       inputProps={inputProps}
       minDate={new Date(2010, 1, 15)}
       maxDate={new Date(2010, 2, 15)}
-      initialSelectedDate={new Date(2010, 1, 15)}
+      date={new Date(2010, 1, 15)}
     />);
 
     datepicker.find('BpkInput').simulate('click');
@@ -126,36 +125,5 @@ describe('BpkDatepicker', () => {
 
     datepicker.instance().onClose();
     expect(datepicker.state('isOpen')).toEqual(false);
-  });
-
-  it('should only update when `date` or `isOpen` change', () => {
-    const datepicker = mount(<BpkDatepicker
-      id="myDatepicker"
-      closeButtonText="Close"
-      daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
-      popoverLabel="Departure date"
-      formatDate={formatDate}
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      inputProps={inputProps}
-      minDate={new Date(2010, 1, 15)}
-      maxDate={new Date(2010, 2, 15)}
-      initialSelectedDate={new Date(2010, 1, 15)}
-    />);
-
-    const spy = jest.fn();
-    BpkDatepicker.prototype.componentDidUpdate = spy;
-
-    expect(spy.mock.calls.length).toEqual(0);
-
-    datepicker.setState({ isOpen: true });
-    expect(spy.mock.calls.length).toEqual(1);
-
-    datepicker.setState({ date: new Date() });
-    expect(spy.mock.calls.length).toEqual(2);
-
-    datepicker.setProps({ id: 'newId' });
-    expect(spy.mock.calls.length).toEqual(2);
   });
 });
