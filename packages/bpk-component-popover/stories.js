@@ -67,9 +67,4 @@ storiesOf('bpk-component-popover', module)
     <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
       <PopoverContainer title="My popover" closeButtonIcon={false} />
     </div>
-  ))
-  .add('Fullscreen on mobile', () => (
-    <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
-      <PopoverContainer title="My popover" fullScreenOnMobile />
-    </div>
   ));

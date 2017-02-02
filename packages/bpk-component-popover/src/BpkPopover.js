@@ -15,20 +15,14 @@ const BpkPopover = (props) => {
     padded,
     title,
     closeButtonIcon,
-    fullScreenOnMobile,
     ...rest
   } = props;
 
   const classNames = ['bpk-popover'];
-  const innerClassName = ['bpk-popover__inner'];
   const bodyClassNames = ['bpk-popover__body'];
 
   // outer classNames
   if (className) { classNames.push(className); }
-  if (fullScreenOnMobile) { classNames.push('bpk-popover--full-screen-on-mobile'); }
-
-  // inner classNames
-  if (fullScreenOnMobile) { innerClassName.push('bpk-popover__inner--full-screen-on-mobile'); }
 
   // inner classNames
   if (padded) { bodyClassNames.push('bpk-popover__body--padded'); }
@@ -41,7 +35,7 @@ const BpkPopover = (props) => {
         {...rest}
       >
         <span className="bpk-popover__arrow" role="presentation" />
-        <div className={innerClassName.join(' ')}>
+        <div className="bpk-popover__inner">
           {title && <header className="bpk-popover__header">
             <BpkHeading id="aria-label-heading" level="h4" bottomMargin={false}>
               {title}
@@ -70,7 +64,6 @@ BpkPopover.propTypes = {
   padded: PropTypes.bool,
   title: PropTypes.string,
   closeButtonIcon: PropTypes.bool,
-  fullScreenOnMobile: PropTypes.bool,
 };
 
 BpkPopover.defaultProps = {
@@ -78,7 +71,6 @@ BpkPopover.defaultProps = {
   padded: true,
   title: null,
   closeButtonIcon: true,
-  fullScreenOnMobile: false,
 };
 
 export default BpkPopover;

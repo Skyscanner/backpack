@@ -100,7 +100,7 @@ class BpkDatepicker extends Component {
                 className="bpk-datepicker__input"
                 aria-live="assertive"
                 aria-atomic="true"
-                aria-label={formatDateFull(this.state.date)}
+                aria-label={formatDateFull(this.props.date)}
                 onChange={() => null}
                 {...inputProps}
               />

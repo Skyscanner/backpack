@@ -1,17 +1,5 @@
 @import "~bpk-mixins";
 
-.bpk-popover-tether-element {
-  &--full-screen-on-mobile {
-    @include bpk-breakpoint-mobile {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-  }
-}
-
 .bpk-popover {
   transform: scale(1);
   transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
@@ -29,21 +17,6 @@
 
   &--appear-active {
     opacity: 1;
-  }
-
-  &--full-screen-on-mobile {
-    @include bpk-breakpoint-mobile {
-      width: 100%;
-      height: 100%;
-
-      &.bpk-popover--appear {
-        transform: scale(.9);
-      }
-
-      &.bpk-popover--appear-active {
-        transform: scale(1);
-      }
-    }
   }
 
   .bpk-popover-tether-element-attached-top & {
@@ -102,14 +75,6 @@
 
     @include bpk-border-radius-sm;
     @include bpk-box-shadow-xl;
-
-    &--full-screen-on-mobile {
-      @include bpk-breakpoint-mobile {
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-      }
-    }
   }
 
   &__body {
