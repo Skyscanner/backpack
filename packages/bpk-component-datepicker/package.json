@@ -16,6 +16,7 @@
     "bpk-component-breakpoint": "^0.0.0",
     "bpk-component-calendar": "^1.0.0",
     "bpk-component-input": "^2.0.1",
+    "bpk-component-modal": "^0.3.11",
     "bpk-component-popover": "^0.0.6",
     "bpk-mixins": "^8.1.0"
   }
