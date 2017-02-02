@@ -2,17 +2,24 @@
 
 ## UNRELEASED
 
+Nothing so far
+
+## 2017-02-02 - New Pin icon and calendar/datepicker fixes
+
 **Changed:**
-- bpk-component-calendar:
-- bpk-component-datepicker:
+- bpk-component-calendar: 0.0.7 => 1.0.0
+- bpk-component-datepicker: 0.0.3 => 1.0.0
   - Removed "selected date" state management from components, which is not in the consumer's responsibility
-  - `minDate` and `maxDate` props are now internally set to the start of that day
 
 **Added:**
-- bpk-component-icon:
-- bpk-mixins:
-- bpk-svgs:
+- bpk-component-icon: 3.0.1 => 3.1.0
+- bpk-mixins: 8.0.1 => 8.1.0
+- bpk-svgs: 4.0.1 => 4.1.0
   - Pin icon
+
+**Fixed:**
+- bpk-component-calendar: 0.0.7 => 1.0.0
+  - `minDate` and `maxDate` props are now internally set to the start of that day
 
 ## 2017-01-31 - Introducing the popover, calendar and datepicker components
 
