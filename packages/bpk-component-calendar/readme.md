@@ -75,12 +75,12 @@ class App extends Component {
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
 | changeMonthLabel      | string               | true     | -                |
+| date                  | Date                 | true     | -                |
 | daysOfWeek            | object               | true     | -                |
 | formatDateFull        | func                 | true     | -                |
 | formatMonth           | func                 | true     | -                |
 | id                    | string               | true     | -                |
 | DateComponent         | func                 | false    | BpkCalendarDate  |
-| date                  | Date                 | false    | null             |
 | dateModifiers         | object               | false    | {}               |
 | enableSelection       | bool                 | false    | true             |
 | markOutsideDays       | bool                 | false    | true             |

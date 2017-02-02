@@ -98,6 +98,7 @@ class BpkDatepicker extends Component {
             aria-live="assertive"
             aria-atomic="true"
             aria-label={formatDateFull(date)}
+            onChange={() => null}
             {...inputProps}
           />
         }
@@ -135,6 +136,7 @@ BpkDatepicker.propTypes = {
   // Required
   changeMonthLabel: PropTypes.string.isRequired,
   closeButtonText: PropTypes.string.isRequired,
+  date: PropTypes.instanceOf(Date).isRequired,
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   formatDate: PropTypes.func.isRequired,
   formatDateFull: PropTypes.func.isRequired,
@@ -143,7 +145,6 @@ BpkDatepicker.propTypes = {
   popoverLabel: PropTypes.string.isRequired,
   // Optional
   DateComponent: PropTypes.func,
-  date: PropTypes.instanceOf(Date),
   dateModifiers: CustomPropTypes.DateModifiers,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   markOutsideDays: PropTypes.bool,
@@ -157,7 +158,6 @@ BpkDatepicker.propTypes = {
 
 BpkDatepicker.defaultProps = {
   DateComponent: BpkCalendar.defaultProps.DateComponent,
-  date: BpkCalendar.defaultProps.date,
   dateModifiers: BpkCalendar.defaultProps.dateModifiers,
   inputProps: {},
   markOutsideDays: BpkCalendar.defaultProps.markOutsideDays,

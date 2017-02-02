@@ -72,6 +72,7 @@ For more information on some these props, check the BpkCalendar documentation.
 | --------------------- | -------------------- | -------- | -------------------- |
 | changeMonthLabel      | string               | true     | -                    |
 | closeButtonText       | string               | true     | -                    |
+| date                  | Date                 | true     | -                    |
 | daysOfWeek            | object               | true     | -                    |
 | formatDate            | func                 | true     | -                    |
 | formatDateFull        | func                 | true     | -                    |
@@ -79,7 +80,6 @@ For more information on some these props, check the BpkCalendar documentation.
 | id                    | string               | true     | -                    |
 | popoverLabel          | func                 | true     | -                    |
 | DateComponent         | func                 | false    | BpkCalendarDate  (*) |
-| date                  | Date                 | false    | null             (*) |
 | dateModifiers         | object               | false    | {}               (*) |
 | inputProps            | object               | false    | {}                   |
 | markOutsideDays       | bool                 | false    | true             (*) |
