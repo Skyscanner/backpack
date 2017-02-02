@@ -2,6 +2,12 @@
 
 ## UNRELEASED
 
+**Added:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - Pin icon
+
 ## 2017-01-31 - Introducing the popover, calendar and datepicker components
 
 **Added:**
