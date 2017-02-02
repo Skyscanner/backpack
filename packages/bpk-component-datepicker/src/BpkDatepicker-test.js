@@ -24,6 +24,7 @@ describe('BpkDatepicker', () => {
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
         popoverLabel="Departure date"
+        getApplicationElement={() => document.createElement('div')}
         formatDate={formatDate}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -43,6 +44,7 @@ describe('BpkDatepicker', () => {
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
       popoverLabel="Departure date"
+      getApplicationElement={() => document.createElement('div')}
       formatDate={formatDate}
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
@@ -65,6 +67,7 @@ describe('BpkDatepicker', () => {
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
       popoverLabel="Departure date"
+      getApplicationElement={() => document.createElement('div')}
       formatDate={formatDate}
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
@@ -87,6 +90,7 @@ describe('BpkDatepicker', () => {
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
       popoverLabel="Departure date"
+      getApplicationElement={() => document.createElement('div')}
       formatDate={formatDate}
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
@@ -111,6 +115,7 @@ describe('BpkDatepicker', () => {
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
       popoverLabel="Departure date"
+      getApplicationElement={() => document.createElement('div')}
       formatDate={formatDate}
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}

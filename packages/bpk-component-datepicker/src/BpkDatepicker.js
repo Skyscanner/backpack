@@ -73,6 +73,7 @@ class BpkDatepicker extends Component {
       popoverLabel,
       showWeekendSeparator,
       weekStartsOn,
+      getApplicationElement,
       ...rest
      } = this.props;
 
@@ -137,7 +138,7 @@ class BpkDatepicker extends Component {
                 isOpen={this.state.isOpen}
                 title={popoverLabel}
                 closeLabel={closeButtonText}
-                getApplicationElement={() => document.getElementById('react-mount')}
+                getApplicationElement={getApplicationElement}
               >
                 {calendarComponent}
               </BpkModal>
@@ -172,6 +173,7 @@ BpkDatepicker.propTypes = {
   formatMonth: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
   popoverLabel: PropTypes.string.isRequired,
+  getApplicationElement: PropTypes.func.isRequired,
   // Optional
   DateComponent: PropTypes.func,
   dateModifiers: CustomPropTypes.DateModifiers,
