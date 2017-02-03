@@ -2,25 +2,35 @@
 
 ## UNRELEASED
 
+Nothing so far
+
+## 2017-02-03 - New sort icon, datepicker now renders in a modal on mobile
+
 **Changed:**
-- Datepicker renders as a modal on mobile
+- bpk-component-datepicker: 2.0.0 => 3.0.0
+  - Datepicker renders as a modal on mobile
 
 **Added:**
-- bpk-component-breakpoint:
+- bpk-component-breakpoint: 0.0.2
   - A new component which encapsulates Backpacks viewport breakpoints and re-renders children when
     they change
 
-- bpk-component-calendar:
+- bpk-component-calendar: 1.1.0 => 1.2.0
   - Now accepts a custom `className` prop
 
-- bpk-component-datepicker:
-- bpk-component-popover:
+- bpk-component-datepicker: 2.0.0 => 3.0.0
+- bpk-component-popover: 0.1.0 => 0.2.0
   - Added opacity transition on open
 
-- bpk-component-modal:
+- bpk-component-icon: 3.2.0 => 3.3.0
+- bpk-mixins: 8.2.0 => 8.3.0
+- bpk-svgs: 4.2.0 => 4.3.0
+  - Added sort icon
+
+- bpk-component-modal: 0.4.0 => 0.5.0
   - Now accepts a `target` prop - helpful for avoiding wrapper divs
 
-- bpk-react-utils:
+- bpk-react-utils: 1.1.0 => 1.2.0
   - Added `TransitionInitialMount` to help with css transitions (from `bpk-component-modal`)
 
 ## 2017-02-02 - New Pin icon and calendar/datepicker fixes

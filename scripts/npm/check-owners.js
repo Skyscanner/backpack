@@ -6,10 +6,13 @@ const http = require('http');
 const Q = require('q');
 
 const readdir = Q.denodeify(fs.readdir);
+
 const maintainers = fs.readFileSync('NPM_OWNERS', { encoding: 'utf-8' })
                       .split('\n')
                       .filter(s => s.trim() !== '')
                       .sort();
+
+let failures = false;
 
 const getPackageMaintainers = (pkg) => {
   const deferred = Q.defer();
@@ -53,6 +56,7 @@ const verifyMaintainers = (data) => {
       `${data.name}\n  Expected\n    ${maintainers.join(', ')}\n  but got\n    ${data.maintainers.sort().join(', ')}`
     );
     process.exitCode = 1;
+    failures = true;
   }
 };
 
@@ -62,7 +66,9 @@ readdir('packages/')
   .then(packages => Q.all(packages.map(getPackageMaintainers)))
   .then(packages => packages.forEach(verifyMaintainers))
   .then(() => {
-    if (process.exitCode !== 0) {
+    if (failures) {
       console.log('\nPlease fix your maintainer list before publishing.');
+    } else {
+      console.log('\nAll good 👍');
     }
   });
