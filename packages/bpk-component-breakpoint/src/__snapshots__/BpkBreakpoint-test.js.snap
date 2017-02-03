@@ -1,5 +1,11 @@
-exports[`BpkBreakpoint should render correctly 1`] = `
+exports[`BpkBreakpoint should render if the breakpoint is matched 1`] = `
 <div>
-  child
+  matches
+</div>
+`;
+
+exports[`BpkBreakpoint should render if the breakpoint is not matched 1`] = `
+<div>
+  does not match
 </div>
 `;
