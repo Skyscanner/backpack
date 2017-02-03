@@ -25,7 +25,8 @@
     "docs:dist:gzip": "npm run docs:dist && gulp",
     "start": "npm run build && npm run storybook",
     "test": "npm run lint && npm run jest",
-    "publish": "npm run build && git pull --rebase && npm run test && lerna publish"
+    "check-owners": "node scripts/npm/check-owners.js",
+    "publish": "npm run check-owners && npm run build && git pull --rebase && npm run test && lerna publish"
   },
   "repository": {
     "type": "git",
@@ -67,6 +68,7 @@
     "node-sass": "4.1.1",
     "pluralize": "3.1.0",
     "postcss-loader": "1.2.1",
+    "q": "^1.4.1",
     "raw-loader": "0.5.1",
     "react": "15.4.1",
     "react-addons-test-utils": "15.4.1",
