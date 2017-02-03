@@ -47,13 +47,14 @@ class ReturnDatepicker extends Component {
   }
   render() {
     return (
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex' }} id="application-element">
         <BpkDatepicker
           id="depart"
           closeButtonText="Close"
           daysOfWeek={weekDays}
           changeMonthLabel="Change month"
           popoverLabel="Departure date"
+          getApplicationElement={() => document.getElementById('application-element')}
           formatDate={formatDate}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
@@ -70,6 +71,7 @@ class ReturnDatepicker extends Component {
           daysOfWeek={weekDays}
           changeMonthLabel="Change month"
           popoverLabel="Return date"
+          getApplicationElement={() => document.getElementById('application-element')}
           formatDate={formatDate}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
@@ -88,16 +90,19 @@ class ReturnDatepicker extends Component {
 
 storiesOf('bpk-component-datepicker', module)
   .add('Default', () => (
-    <CalendarContainer
-      id="myDatepicker"
-      closeButtonText="Close"
-      daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
-      popoverLabel="Departure date"
-      formatDate={formatDate}
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-    />
+    <div id="application-element">
+      <CalendarContainer
+        id="myDatepicker"
+        closeButtonText="Close"
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        popoverLabel="Departure date"
+        getApplicationElement={() => document.getElementById('application-element')}
+        formatDate={formatDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+      />
+    </div>
   ))
   .add('Depart & Return', () => (
     <ReturnDatepicker />

@@ -1,7 +1,7 @@
 import React from 'react';
+import { TransitionInitialMount } from 'bpk-react-utils';
 
 import './bpk-modal.scss';
-import TransitionInitialMount from './TransitionInitialMount';
 
 const BpkModalScrim = () => {
   const className = 'bpk-modal-scrim';

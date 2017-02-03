@@ -1,14 +1,37 @@
 @import "~bpk-mixins";
 
-.bpk-popover-tether-target {
-  display: inline-block;
-}
-
 .bpk-popover {
+  transition: opacity $bpk-duration-sm ease-in-out;
   outline: 0;
+  opacity: 1;
 
   @include bpk-breakpoint-above-mobile {
     max-width: $bpk-breakpoint-mobile;
+    transition: opacity $bpk-duration-xs ease-in-out;
+  }
+
+  &--appear {
+    opacity: 0;
+  }
+
+  &--appear-active {
+    opacity: 1;
+  }
+
+  .bpk-popover-tether-element-attached-top & {
+    padding-top: $bpk-spacing-sm;
+  }
+
+  .bpk-popover-tether-element-attached-right & {
+    padding-right: $bpk-spacing-sm;
+  }
+
+  .bpk-popover-tether-element-attached-bottom & {
+    padding-bottom: $bpk-spacing-sm;
+  }
+
+  .bpk-popover-tether-element-attached-left & {
+    padding-left: $bpk-spacing-sm;
   }
 
   &__arrow {
@@ -49,24 +72,8 @@
   &__inner {
     background-color: $bpk-color-white;
 
-    @include bpk-box-shadow-xl;
     @include bpk-border-radius-sm;
-
-    .bpk-popover-tether-element-attached-top & {
-      margin-top: $bpk-spacing-sm;
-    }
-
-    .bpk-popover-tether-element-attached-right & {
-      margin-right: $bpk-spacing-sm;
-    }
-
-    .bpk-popover-tether-element-attached-bottom & {
-      margin-bottom: $bpk-spacing-sm;
-    }
-
-    .bpk-popover-tether-element-attached-left & {
-      margin-left: $bpk-spacing-sm;
-    }
+    @include bpk-box-shadow-xl;
   }
 
   &__body {

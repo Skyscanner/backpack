@@ -1,0 +1,52 @@
+{
+  "properties": [
+    {
+      "category": "breakpoints",
+      "value": "516",
+      "type": "size",
+      "name": "breakpointMobile"
+    },
+    {
+      "category": "breakpoints",
+      "value": "804",
+      "type": "size",
+      "name": "breakpointTablet"
+    },
+    {
+      "category": "breakpoints",
+      "value": "1140",
+      "type": "size",
+      "name": "breakpointDesktop"
+    },
+    {
+      "category": "breakpoints",
+      "value": "(max-width: 32.25rem)",
+      "type": "media-query",
+      "name": "breakpointQueryMobile"
+    },
+    {
+      "category": "breakpoints",
+      "value": "(max-width: 50.25rem)",
+      "type": "media-query",
+      "name": "breakpointQueryTablet"
+    },
+    {
+      "category": "breakpoints",
+      "value": "(min-width: 32.3125rem) and (max-width: 50.25rem)",
+      "type": "media-query",
+      "name": "breakpointQueryTabletOnly"
+    },
+    {
+      "category": "breakpoints",
+      "value": "(min-width: 32.3125rem)",
+      "type": "media-query",
+      "name": "breakpointQueryAboveMobile"
+    },
+    {
+      "category": "breakpoints",
+      "value": "(min-width: 50.3125rem)",
+      "type": "media-query",
+      "name": "breakpointQueryAboveTablet"
+    }
+  ]
+}

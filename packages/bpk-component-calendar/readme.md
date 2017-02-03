@@ -80,6 +80,7 @@ class App extends Component {
 | formatDateFull        | func                 | true     | -                |
 | formatMonth           | func                 | true     | -                |
 | id                    | string               | true     | -                |
+| className             | string               | false    | -                |
 | DateComponent         | func                 | false    | BpkCalendarDate  |
 | dateModifiers         | object               | false    | {}               |
 | enableSelection       | bool                 | false    | true             |

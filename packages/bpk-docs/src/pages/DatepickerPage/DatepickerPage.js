@@ -13,7 +13,7 @@ const formatDate = date => format(date, 'DD/MM/YYYY');
 const formatMonth = date => format(date, 'MMMM YYYY');
 const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
 
-class CalendarContainer extends Component {
+class DatepickerContainer extends Component {
   constructor() {
     super();
 
@@ -45,7 +45,7 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <CalendarContainer
+      <DatepickerContainer
         id="calendar-1"
         closeButtonText="Close"
         formatDate={formatDate}
@@ -54,6 +54,7 @@ const components = [
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
         popoverLabel="Select date"
+        getApplicationElement={() => document.getElementById('react-mount')}
         inputProps={{ placeholder: 'Select date' }}
       />,
     ],

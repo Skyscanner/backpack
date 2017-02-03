@@ -1,7 +1,7 @@
 {
-  "name": "bpk-react-utils",
-  "version": "1.0.0",
-  "description": "Utilities for Backpack's React components.",
+  "name": "bpk-component-breakpoint",
+  "version": "0.0.0",
+  "description": "Backpack breakpoint component.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -10,10 +10,13 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "peerDependencies": {
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0"
+    "react": "^15.0.0"
   },
   "dependencies": {
-    "react-addons-css-transition-group": "^15.4.2"
+    "bpk-mixins": "^8.0.1",
+    "react-responsive": "^1.2.6"
+  },
+  "devDependencies": {
+    "bpk-tokens": "^17.0.4"
   }
 }

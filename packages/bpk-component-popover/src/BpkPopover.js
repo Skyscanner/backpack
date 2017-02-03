@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import BpkHeading from 'bpk-component-heading';
 import { BpkButtonLink } from 'bpk-component-link';
 import BpkCloseButton from 'bpk-component-close-button';
+import { TransitionInitialMount } from 'bpk-react-utils';
 
 import './bpk-popover.scss';
 
@@ -27,29 +28,31 @@ const BpkPopover = (props) => {
   if (padded) { bodyClassNames.push('bpk-popover__body--padded'); }
 
   return (
-    <section
-      tabIndex="-1"
-      className={classNames.join(' ')}
-      {...rest}
-    >
-      <span className="bpk-popover__arrow" role="presentation" />
-      <div className="bpk-popover__inner">
-        {title && <header className="bpk-popover__header">
-          <BpkHeading id="aria-label-heading" level="h4" bottomMargin={false}>
-            {title}
-          </BpkHeading>
-          &nbsp;
-          {closeButtonIcon
-            ? <BpkCloseButton className="bpk-popover__close-button" label={closeButtonText} onClick={onClose} />
-            : <BpkButtonLink onClick={onClose}>{closeButtonText}</BpkButtonLink>
-          }
-        </header>}
-        <div className={bodyClassNames.join(' ')}>{children}</div>
-        {!title && <footer className="bpk-popover__footer">
-          <BpkButtonLink onClick={onClose}>{closeButtonText}</BpkButtonLink>
-        </footer>}
-      </div>
-    </section>
+    <TransitionInitialMount classNamePrefix={'bpk-popover'} transitionTimeout={200}>
+      <section
+        tabIndex="-1"
+        className={classNames.join(' ')}
+        {...rest}
+      >
+        <span className="bpk-popover__arrow" role="presentation" />
+        <div className="bpk-popover__inner">
+          {title && <header className="bpk-popover__header">
+            <BpkHeading id="aria-label-heading" level="h4" bottomMargin={false}>
+              {title}
+            </BpkHeading>
+            &nbsp;
+            {closeButtonIcon
+              ? <BpkCloseButton className="bpk-popover__close-button" label={closeButtonText} onClick={onClose} />
+              : <BpkButtonLink onClick={onClose}>{closeButtonText}</BpkButtonLink>
+            }
+          </header>}
+          <div className={bodyClassNames.join(' ')}>{children}</div>
+          {!title && <footer className="bpk-popover__footer">
+            <BpkButtonLink onClick={onClose}>{closeButtonText}</BpkButtonLink>
+          </footer>}
+        </div>
+      </section>
+    </TransitionInitialMount>
   );
 };
 

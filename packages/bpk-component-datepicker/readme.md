@@ -53,6 +53,7 @@ class App extends Component {
           changeMonthLabel="Change month"
           closeButtonText="Close"
           popoverLabel="Departure date"
+          getApplicationElement={() => document.getElementById('react-mount')}
           formatDate={formatDate}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}
@@ -68,6 +69,11 @@ class App extends Component {
 
 For more information on some these props, check the BpkCalendar documentation.
 
+> **Note:** Because this component uses a modal on mobile viewports, you need to let it know what
+  the root element of your application is by returning it's DOM node via the function passed to the
+  `getApplicationElement` prop (see the example above) - this is to "hide" your application from
+  screenreaders whilst the dateicker is open.
+
 | Property              | PropType             | Required | Default Value        |
 | --------------------- | -------------------- | -------- | -------------------- |
 | changeMonthLabel      | string               | true     | -                    |
@@ -79,6 +85,7 @@ For more information on some these props, check the BpkCalendar documentation.
 | formatMonth           | func                 | true     | -                    |
 | id                    | string               | true     | -                    |
 | popoverLabel          | func                 | true     | -                    |
+| getApplicationElement | func                 | true     | -                    |
 | DateComponent         | func                 | false    | BpkCalendarDate  (*) |
 | dateModifiers         | object               | false    | {}               (*) |
 | inputProps            | object               | false    | {}                   |

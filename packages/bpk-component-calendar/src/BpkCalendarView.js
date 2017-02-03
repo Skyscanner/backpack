@@ -6,32 +6,40 @@ import BpkCalendarDate from './BpkCalendarDate';
 import CustomPropTypes from './custom-proptypes';
 import './bpk-calendar.scss';
 
-const BpkCalendarView = props => (
-  <div className="bpk-calendar">
-    <BpkCalendarNav
-      changeMonthLabel={props.changeMonthLabel}
-      formatMonth={props.formatMonth}
-      id={`${props.id}__bpk_calendar_nav`}
-      maxDate={props.maxDate}
-      minDate={props.minDate}
-      month={props.month}
-      onChangeMonth={props.onChangeMonth}
-    />
-    <BpkCalendarGrid
-      DateComponent={props.DateComponent}
-      dateModifiers={props.dateModifiers}
-      daysOfWeek={props.daysOfWeek}
-      formatDateFull={props.formatDateFull}
-      formatMonth={props.formatMonth}
-      month={props.month}
-      onDateClick={props.onDateClick}
-      onDateKeyDown={props.onDateKeyDown}
-      preventKeyboardFocus={props.preventKeyboardFocus}
-      showWeekendSeparator={props.showWeekendSeparator}
-      weekStartsOn={props.weekStartsOn}
-    />
-  </div>
-);
+const BpkCalendarView = (props) => {
+  const classNames = ['bpk-calendar'];
+
+  if (props.className) { classNames.push(props.className); }
+
+  return (
+    <div className={classNames.join(' ')}>
+      <BpkCalendarNav
+        className="bpk-calendar__nav"
+        changeMonthLabel={props.changeMonthLabel}
+        formatMonth={props.formatMonth}
+        id={`${props.id}__bpk_calendar_nav`}
+        maxDate={props.maxDate}
+        minDate={props.minDate}
+        month={props.month}
+        onChangeMonth={props.onChangeMonth}
+      />
+      <BpkCalendarGrid
+        className="bpk-calendar__grid"
+        DateComponent={props.DateComponent}
+        dateModifiers={props.dateModifiers}
+        daysOfWeek={props.daysOfWeek}
+        formatDateFull={props.formatDateFull}
+        formatMonth={props.formatMonth}
+        month={props.month}
+        onDateClick={props.onDateClick}
+        onDateKeyDown={props.onDateKeyDown}
+        preventKeyboardFocus={props.preventKeyboardFocus}
+        showWeekendSeparator={props.showWeekendSeparator}
+        weekStartsOn={props.weekStartsOn}
+      />
+    </div>
+  );
+};
 
 BpkCalendarView.propTypes = {
   // BpkCalendarNav & BpkCalendarGrid
@@ -53,6 +61,7 @@ BpkCalendarView.propTypes = {
   showWeekendSeparator: PropTypes.bool.isRequired,
   weekStartsOn: PropTypes.number.isRequired,
 
+  className: PropTypes.string,
   dateModifiers: CustomPropTypes.DateModifiers,
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
@@ -60,6 +69,7 @@ BpkCalendarView.propTypes = {
 };
 
 BpkCalendarView.defaultProps = {
+  className: null,
   DateComponent: BpkCalendarDate,
   dateModifiers: {},
   onChangeMonth: null,
