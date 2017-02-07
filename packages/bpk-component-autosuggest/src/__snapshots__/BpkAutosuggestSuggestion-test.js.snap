@@ -49,6 +49,25 @@ exports[`BpkAutosuggestSuggestion should render correctly with a "tertiaryLabel"
 </section>
 `;
 
+exports[`BpkAutosuggestSuggestion should render correctly with a "tertiaryLabel" attribute but without a "subHeading" attribute 1`] = `
+<section
+  className="bpk-autosuggest__suggestion">
+  <div
+    className="bpk-autosuggest__suggestion-inner">
+    <span
+      className="bpk-autosuggest__suggestion-value">
+      Edinburgh
+    </span>
+    <small
+      className="bpk-autosuggest__suggestion-sub-heading" />
+    <aside
+      className="bpk-autosuggest__suggestion-tertiary-label">
+      Scotland
+    </aside>
+  </div>
+</section>
+`;
+
 exports[`BpkAutosuggestSuggestion should render correctly with all available attributes 1`] = `
 <section
   className="bpk-autosuggest__suggestion bpk-autosuggest__suggestion--indent">

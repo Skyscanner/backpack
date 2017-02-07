@@ -35,6 +35,16 @@ describe('BpkAutosuggestSuggestion', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with a "tertiaryLabel" attribute but without a "subHeading" attribute', () => {
+    const tree = renderer.create(
+      <BpkAutosuggestSuggestion
+        value="Edinburgh"
+        tertiaryLabel="Scotland"
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with an "icon" attribute', () => {
     const tree = renderer.create(
       <BpkAutosuggestSuggestion

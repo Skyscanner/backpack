@@ -163,6 +163,17 @@ storiesOf('bpk-component-autosuggest', module)
       )}
     />
   ))
+  .add('With tertiary labels', () => (
+    <AutosuggestExample
+      renderSuggestion={suggestion => (
+        <BpkAutosuggestSuggestion
+          value={getSuggestionValue(suggestion)}
+          indent={suggestion.indent}
+          tertiaryLabel="Tertiary label"
+        />
+      )}
+    />
+  ))
   .add('With sub heading + tertiary labels', () => (
     <AutosuggestExample
       renderSuggestion={suggestion => (
