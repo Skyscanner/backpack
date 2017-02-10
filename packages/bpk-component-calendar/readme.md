@@ -83,7 +83,6 @@ class App extends Component {
 | className             | string               | false    | -                |
 | DateComponent         | func                 | false    | BpkCalendarDate  |
 | dateModifiers         | object               | false    | {}               |
-| enableSelection       | bool                 | false    | true             |
 | markOutsideDays       | bool                 | false    | true             |
 | markToday             | bool                 | false    | true             |
 | maxDate               | Date                 | false    | new Date() + 1yr |

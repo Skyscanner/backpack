@@ -1,15 +1,41 @@
 import React, { PropTypes } from 'react';
 
 import BpkCalendarNav from './BpkCalendarNav';
-import BpkCalendarGrid from './BpkCalendarGrid';
+import BpkCalendarGrid, { BpkCalendarGridHeader } from './BpkCalendarGrid';
 import BpkCalendarDate from './BpkCalendarDate';
 import CustomPropTypes from './custom-proptypes';
 import './bpk-calendar.scss';
+
+const reorderWeekDays = (weekDays, weekStartsOn) => [
+  ...weekDays.slice(weekStartsOn),
+  ...weekDays.slice(0, weekStartsOn),
+];
 
 const BpkCalendarView = (props) => {
   const classNames = ['bpk-calendar'];
 
   if (props.className) { classNames.push(props.className); }
+
+  // Sorted in [sun, mon, ..., sat]
+  const sortedWeekDays = props.daysOfWeek.slice().sort((a, b) => a.index - b.index);
+  // Ordered according to weekStartsOn, e.g. [mon, tue, ..., sun]
+  const reorderedWeekDays = reorderWeekDays(
+    sortedWeekDays,
+    props.weekStartsOn,
+  );
+
+
+  const weekend = sortedWeekDays.map(day => day.isWeekend);
+  let weekendStartIndex = -1;
+  let weekendEndIndex = -1;
+
+  if (weekend[0] && weekend[6]) { // weekend stretches over turn the of the week
+    weekendStartIndex = weekend.lastIndexOf(false) + 1;
+    weekendEndIndex = weekend.indexOf(false) - 1;
+  } else {
+    weekendStartIndex = weekend.indexOf(true);
+    weekendEndIndex = weekend.lastIndexOf(true);
+  }
 
   return (
     <div className={classNames.join(' ')}>
@@ -22,6 +48,13 @@ const BpkCalendarView = (props) => {
         minDate={props.minDate}
         month={props.month}
         onChangeMonth={props.onChangeMonth}
+      />
+      <BpkCalendarGridHeader
+        className="bpk-calendar__grid-header"
+        weekDays={reorderedWeekDays}
+        showWeekendSeparator={props.showWeekendSeparator}
+        weekendStartIndex={weekendStartIndex}
+        weekendEndIndex={weekendEndIndex}
       />
       <BpkCalendarGrid
         className="bpk-calendar__grid"
@@ -36,6 +69,13 @@ const BpkCalendarView = (props) => {
         preventKeyboardFocus={props.preventKeyboardFocus}
         showWeekendSeparator={props.showWeekendSeparator}
         weekStartsOn={props.weekStartsOn}
+        maxDate={props.maxDate}
+        minDate={props.minDate}
+        focusedDate={props.focusedDate}
+
+        weekDays={reorderedWeekDays}
+        weekendStartIndex={weekendStartIndex}
+        weekendEndIndex={weekendEndIndex}
       />
     </div>
   );

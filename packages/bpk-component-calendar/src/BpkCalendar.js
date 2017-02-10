@@ -136,7 +136,7 @@ class BpkCalendar extends Component {
 
     if (markToday) { builtinModifiers.today = isToday; }
     if (markOutsideDays) {
-      builtinModifiers.outside = date => !isSameMonth(date, focusedDate);
+      builtinModifiers.outside = (date, month) => !isSameMonth(date, month);
     }
     if (enableSelection) {
       builtinModifiers.selected = date => isSameDay(date, selectedDate);
@@ -157,6 +157,7 @@ class BpkCalendar extends Component {
         month={startOfMonth(focusedDate)}
         selectedDate={selectedDate}
         preventKeyboardFocus={this.state.preventKeyboardFocus}
+        focusedDate={focusedDate}
 
         {...calendarProps}
       />

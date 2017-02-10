@@ -14,6 +14,7 @@ import isSunday from 'date-fns/is_sunday';
 import isSameDay from 'date-fns/is_same_day';
 import isSameMonth from 'date-fns/is_same_month';
 import isBefore from 'date-fns/is_before';
+import differenceInCalendarMonths from 'date-fns/difference_in_calendar_months';
 
 import addDays from 'date-fns/add_days';
 import addWeeks from 'date-fns/add_weeks';
@@ -86,6 +87,7 @@ export {
   isToday,
   isSameDay,
   isSameMonth,
+  differenceInCalendarMonths,
   addMonths,
   addDays,
   setMonth,

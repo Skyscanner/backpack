@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import BpkCalendarGridHeader from './BpkCalendarGridHeader';
 
 import {
   formatIsoDate,
@@ -6,33 +7,8 @@ import {
   getDay,
 } from './date-utils';
 import CustomPropTypes from './custom-proptypes';
+import addCalendarGridTransition from './BpkCalendarGridTransition';
 import './bpk-calendar.scss';
-
-/*
-  WeekDay - table header cells such as "Mon", "Tue", "Wed"...
-*/
-const WeekDay = (props) => {
-  const classNames = ['bpk-calendar-grid__header-weekday'];
-
-  if (props.weekDay.isWeekend) {
-    classNames.push('bpk-calendar-grid__header-weekday--weekend');
-  }
-  if (props.weekendStart) { classNames.push('bpk-calendar-grid__header-weekday--weekend-start'); }
-  if (props.weekendEnd) { classNames.push('bpk-calendar-grid__header-weekday--weekend-end'); }
-
-  return (
-    <th
-      className={classNames.join(' ')}
-      title={props.weekDay.name}
-    ><span aria-hidden="true">{ props.weekDay.nameAbbr }</span></th>
-  );
-};
-
-WeekDay.propTypes = {
-  weekDay: CustomPropTypes.WeekDay.isRequired,
-  weekendStart: PropTypes.bool.isRequired,
-  weekendEnd: PropTypes.bool.isRequired,
-};
 
 /*
   Week - table row containing a week full of DateContainer components
@@ -48,6 +24,8 @@ const Week = (props) => {
     weekendStartIndex,
     weekendEndIndex,
     preventKeyboardFocus,
+    focusable,
+    month,
   } = props;
 
   return (
@@ -62,12 +40,14 @@ const Week = (props) => {
       >
         <DateComponent
           date={date}
+          month={month}
           modifiers={dateModifiers}
           aria-label={formatDateFull(date)}
           onClick={() => { if (onDateClick) { onDateClick(date); } }}
           onDateKeyDown={onDateKeyDown}
-          focused={dateModifiers.focused ? dateModifiers.focused(date) : false}
+          focused={dateModifiers.focused ? dateModifiers.focused(date, month) : false}
           preventKeyboardFocus={preventKeyboardFocus}
+          isInCurrentMonth={focusable}
         />
       </DateContainer>
     ))}
@@ -121,10 +101,6 @@ DateContainer.propTypes = {
   weekendEnd: PropTypes.bool.isRequired,
 };
 
-const reorderWeekDays = (weekDays, weekStartsOn) => [
-  ...weekDays.slice(weekStartsOn),
-  ...weekDays.slice(0, weekStartsOn),
-];
 
 /*
   BpkCalendarGrid - the grid representing a whole month
@@ -140,53 +116,35 @@ const BpkCalendarGrid = (props) => {
     onDateKeyDown,
     showWeekendSeparator,
     weekStartsOn,
+    weekDays,
     preventKeyboardFocus,
+    isInCurrentMonth,
+    weekendStartIndex,
+    weekendEndIndex,
   } = props;
 
-  // Sorted in [sun, mon, ..., sat]
-  const sortedWeekDays = daysOfWeek.slice().sort((a, b) => a.index - b.index);
-  // Ordered according to weekStartsOn, e.g. [mon, tue, ..., sun]
-  const reorderedWeekDays = reorderWeekDays(
-    sortedWeekDays,
-    weekStartsOn,
-  );
   const calendarMonthWeeks = getCalendarMonthWeeks(month, weekStartsOn);
 
-  const weekend = sortedWeekDays.map(day => day.isWeekend);
-  let weekendStartIndex = -1;
-  let weekendEndIndex = -1;
-
-  if (weekend[0] && weekend[6]) { // weekend stretches over turn the of the week
-    weekendStartIndex = weekend.lastIndexOf(false) + 1;
-    weekendEndIndex = weekend.indexOf(false) - 1;
-  } else {
-    weekendStartIndex = weekend.indexOf(true);
-    weekendEndIndex = weekend.lastIndexOf(true);
-  }
-
   return (
-    <table className="bpk-calendar-grid">
+    <table className="bpk-calendar-grid" aria-hidden="true">
       <caption
         className="bpk-calendar-grid__caption"
+        hidden
       >
         {formatMonth(month)}
       </caption>
-      <thead>
-        <tr className="bpk-calendar-grid__header">
-          { reorderedWeekDays.map((weekDay, index) => (
-            <WeekDay
-              key={index}
-              weekDay={weekDay}
-              weekendStart={showWeekendSeparator && weekendStartIndex === weekDay.index}
-              weekendEnd={showWeekendSeparator && weekendEndIndex === weekDay.index}
-            />
-          )) }
-        </tr>
-      </thead>
+      <BpkCalendarGridHeader
+        isTableHead
+        weekDays={weekDays}
+        showWeekendSeparator={showWeekendSeparator}
+        weekendStartIndex={weekendStartIndex}
+        weekendEndIndex={weekendEndIndex}
+      />
       <tbody>
         { calendarMonthWeeks.map((dates, index) => (
           <Week
             key={index}
+            month={month}
             dates={dates}
             onDateClick={onDateClick}
             onDateKeyDown={onDateKeyDown}
@@ -197,6 +155,7 @@ const BpkCalendarGrid = (props) => {
             weekendStartIndex={weekendStartIndex}
             weekendEndIndex={weekendEndIndex}
             preventKeyboardFocus={preventKeyboardFocus}
+            focusable={isInCurrentMonth}
           />
         )) }
       </tbody>
@@ -227,4 +186,5 @@ BpkCalendarGrid.defaultProps = {
   preventKeyboardFocus: false,
 };
 
-export default BpkCalendarGrid;
+export default addCalendarGridTransition(BpkCalendarGrid);
+export { BpkCalendarGridHeader };
