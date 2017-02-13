@@ -71,7 +71,11 @@ const BpkCalendarView = (props) => {
         weekStartsOn={props.weekStartsOn}
         maxDate={props.maxDate}
         minDate={props.minDate}
+
         focusedDate={props.focusedDate}
+        markToday={props.markToday}
+        markOutsideDays={props.markOutsideDays}
+        selectedDate={props.selectedDate}
 
         weekDays={reorderedWeekDays}
         weekendStartIndex={weekendStartIndex}

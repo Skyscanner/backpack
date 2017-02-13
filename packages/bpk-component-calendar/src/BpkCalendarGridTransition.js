@@ -3,13 +3,11 @@ import React, { Component, PropTypes } from 'react';
 import {
   addMonths,
   isSameMonth,
-  isSameDay,
   formatIsoMonth,
   differenceInCalendarMonths,
   dateToBoundaries,
   startOfDay,
-  setMonth,
-  setYear,
+  setMonthYear,
 } from './date-utils';
 
 import './bpk-calendar.scss';
@@ -24,9 +22,10 @@ function getTransformStyles(transformValue) {
   };
 }
 
-const setMonthYear = (date, newMonth, newYear) => setYear(
-  setMonth(date, newMonth),
-  newYear,
+const predictFocusedDate = (month, currentFocusedDate, minDate, maxDate) => dateToBoundaries(
+  setMonthYear(currentFocusedDate, month.getMonth(), month.getFullYear()),
+  startOfDay(minDate),
+  startOfDay(maxDate),
 );
 
 /*
@@ -65,8 +64,7 @@ class BpkCalendarTransition extends Component {
 
     if (hasMonthChanged) {
       if (differenceInCalendarMonths(nextProps.month, this.props.month) === 1) {
-        // next
-        console.log('Transition start, next month');
+        // Transition to next month
         this.setState({
           transitionValue: -588,
           isTransitioning: true,
@@ -75,8 +73,7 @@ class BpkCalendarTransition extends Component {
       }
 
       if (differenceInCalendarMonths(nextProps.month, this.props.month) === -1) {
-        // prev
-        console.log('Transition start, prev month');
+        // Transition to previous month
         this.setState({
           transitionValue: 0,
           isTransitioning: true,
@@ -96,14 +93,12 @@ class BpkCalendarTransition extends Component {
   }
 
   onMonthTransitionEnd() {
-    console.log('Transition end', this.state.transitionValue);
-
     const month = this.props.month;
 
     this.setState({
       transitionValue: -294,
       isTransitioning: false,
-      currentMonth: this.props.month,
+      currentMonth: month,
       months: [
         addMonths(month, -1),
         month,
@@ -115,39 +110,17 @@ class BpkCalendarTransition extends Component {
   render() {
     const {
       TransitionComponent,
-      minDate,
-      maxDate,
       focusedDate,
       ...rest
     } = this.props;
-
-    const month = this.state.currentMonth;
-
-    const prevMonth = addMonths(month, -1);
-    const nextMonth = addMonths(month, 1);
-
-    // TODO: change 'focused' modifier to suit the adjacent month
-    const predictFocusedDate = (m, currentFocusedDate) => {
-      return dateToBoundaries(
-        setMonthYear(currentFocusedDate, m.getMonth(), m.getFullYear()),
-        startOfDay(minDate),
-        startOfDay(maxDate),
-      );
-    };
-    // TODO: works fine, HOWEVER, there's a bug where - when it's animating, it will change the next month's focused
-    // date highlighted in the previous month (if it's an outside date there). We must make this completely independent
-    // of upper state. Goddammit.
 
     const classNames = ['BpkCalendarGridTransition'];
     if (this.state.isTransitioning) { classNames.push('BpkCalendarGridTransition--transitioning'); }
 
     const adjacentModifiers = {
       ...rest.dateModifiers,
-      focused: (date, m) => isSameDay(date, predictFocusedDate(m, focusedDate)),
     };
     delete adjacentModifiers.selected;
-
-    console.log(this.state.months);
 
     // aria-hidden
     return (
@@ -165,33 +138,12 @@ class BpkCalendarTransition extends Component {
                 key={formatIsoMonth(m)}
                 month={m}
                 dateModifiers={index === 1 ? rest.dateModifiers : adjacentModifiers}
-                preventKeyboardFocus={index !== 1}
+                preventKeyboardFocus={index !== 1 || rest.preventKeyboardFocus}
                 isInCurrentMonth={!this.state.isTransitioning && (index === 1)}
+                focusedDate={predictFocusedDate(m, focusedDate, rest.minDate, rest.maxDate)}
               />
             ))
           }
-          {/* <TransitionComponent
-            {...rest}
-            key={formatIsoMonth(prevMonth)}
-            month={prevMonth}
-            dateModifiers={adjacentModifiers}
-            preventKeyboardFocus
-            isInCurrentMonth={false}
-          />
-          <TransitionComponent
-            key={formatIsoMonth(month)}
-            month={month}
-            {...rest}
-            isInCurrentMonth={!this.state.isTransitioning}
-          />
-          <TransitionComponent
-            {...rest}
-            key={formatIsoMonth(nextMonth)}
-            month={nextMonth}
-            dateModifiers={adjacentModifiers}
-            preventKeyboardFocus
-            isInCurrentMonth={false}
-          /> */}
         </div>
       </div>
     );
@@ -201,6 +153,8 @@ class BpkCalendarTransition extends Component {
 BpkCalendarTransition.propTypes = {
   TransitionComponent: PropTypes.func.isRequired,
   month: PropTypes.instanceOf(Date),
+
+  focusedDate: PropTypes.instanceOf(Date),
 };
 
 const addCalendarGridTransition = TransitionComponent => props => (

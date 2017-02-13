@@ -5,6 +5,10 @@ import {
   formatIsoDate,
   getCalendarMonthWeeks,
   getDay,
+  isSameDay,
+  isSameMonth,
+  isWithinRange,
+  isToday,
 } from './date-utils';
 import CustomPropTypes from './custom-proptypes';
 import addCalendarGridTransition from './BpkCalendarGridTransition';
@@ -24,8 +28,15 @@ const Week = (props) => {
     weekendStartIndex,
     weekendEndIndex,
     preventKeyboardFocus,
-    focusable,
+    isInCurrentMonth,
     month,
+
+    markToday,
+    markOutsideDays,
+    selectedDate,
+    focusedDate,
+    minDate,
+    maxDate,
   } = props;
 
   return (
@@ -40,14 +51,18 @@ const Week = (props) => {
       >
         <DateComponent
           date={date}
-          month={month}
           modifiers={dateModifiers}
           aria-label={formatDateFull(date)}
           onClick={() => { if (onDateClick) { onDateClick(date); } }}
           onDateKeyDown={onDateKeyDown}
-          focused={dateModifiers.focused ? dateModifiers.focused(date, month) : false}
           preventKeyboardFocus={preventKeyboardFocus}
-          isInCurrentMonth={focusable}
+          isInCurrentMonth={isInCurrentMonth}
+
+          isFocused={isSameDay(date, focusedDate)}
+          isSelected={isSameDay(date, selectedDate)}
+          isBlocked={!isWithinRange(date, minDate, maxDate)}
+          isOutside={markOutsideDays ? !isSameMonth(date, month) : false}
+          isToday={markToday ? isToday(date) : false}
         />
       </DateContainer>
     ))}
@@ -121,6 +136,12 @@ const BpkCalendarGrid = (props) => {
     isInCurrentMonth,
     weekendStartIndex,
     weekendEndIndex,
+    markToday,
+    markOutsideDays,
+    selectedDate,
+    focusedDate,
+    minDate,
+    maxDate,
   } = props;
 
   const calendarMonthWeeks = getCalendarMonthWeeks(month, weekStartsOn);
@@ -155,7 +176,14 @@ const BpkCalendarGrid = (props) => {
             weekendStartIndex={weekendStartIndex}
             weekendEndIndex={weekendEndIndex}
             preventKeyboardFocus={preventKeyboardFocus}
-            focusable={isInCurrentMonth}
+            isInCurrentMonth={isInCurrentMonth}
+
+            markToday={markToday}
+            markOutsideDays={markOutsideDays}
+            selectedDate={selectedDate}
+            focusedDate={focusedDate}
+            minDate={minDate}
+            maxDate={maxDate}
           />
         )) }
       </tbody>
