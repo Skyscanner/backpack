@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-02-13 - Autosuggest tertiary label bugfix
+
 **Fixed:**
-- bpk-component-autosuggest:
+- bpk-component-autosuggest: 1.1.7 => 1.1.8
   - Suggestion tertiary labels will remain on the right hand side regardless of the presence
     of a sub heading
 
