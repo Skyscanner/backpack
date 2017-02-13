@@ -2,7 +2,10 @@
 
 ## UNRELEASED
 
-Nothing so far
+**Fixed:**
+- bpk-component-autosuggest:
+  - Suggestion tertiary labels will remain on the right hand side regardless of the presence
+    of a sub heading
 
 ## 2017-02-03 - New sort icon, datepicker now renders in a modal on mobile
 
