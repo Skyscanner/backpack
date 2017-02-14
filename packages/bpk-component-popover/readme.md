@@ -43,13 +43,14 @@ class App extends Component {
   render() {
     return (
       <BpkPopover
+        id="my-popover"
         target={
           <BpkButton onClick={this.openPopover}>Open</BpkButton>
         }
         onClose={this.closePopover}
         isOpen={this.state.isOpen}
+        label="My popover"
         closeButtonText="Close"
-        title="My popover"
       >
         <BpkParagraph>My popover content</BpkParagraph>
       </BpkPopover>
@@ -62,12 +63,14 @@ class App extends Component {
 
 | Property              | PropType                      | Required | Default Value |
 | --------------------- | ----------------------------- | -------- | ------------- |
+| id                    | string                        | true     | -             |
 | children              | node                          | true     | -             |
 | target                | element                       | true     | -             |
 | isOpen                | bool                          | true     | -             |
 | onClose               | func                          | true     | -             |
+| label                 | string                        | true     | -             |
 | closeButtonText       | string                        | true     | -             |
 | tetherOptions         | See http://tether.io/#options | false    | { attachment: 'top center', constraints: [ { to: 'window', attachment: 'together', pin: true, }, ], } |
 | padded                | bool                          | false    | true          |
-| title                 | string                        | false    | null          |
+| labelAsTitle          | bool                          | false    | true          |
 | closeButtonIcon       | bool                          | false    | true          |

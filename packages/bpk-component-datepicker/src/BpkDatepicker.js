@@ -70,7 +70,7 @@ class BpkDatepicker extends Component {
       markToday,
       maxDate,
       minDate,
-      popoverLabel,
+      title,
       showWeekendSeparator,
       weekStartsOn,
       getApplicationElement,
@@ -115,7 +115,7 @@ class BpkDatepicker extends Component {
         enableSelection
         formatDateFull={formatDateFull}
         formatMonth={formatMonth}
-        id={`${id}_calendar`}
+        id={`${id}-calendar`}
         initialSelectedDate={this.state.date}
         markOutsideDays={markOutsideDays}
         markToday={markToday}
@@ -133,10 +133,11 @@ class BpkDatepicker extends Component {
           isMobile
             ? (
               <BpkModal
+                id={`${id}-modal`}
                 target={inputComponent}
                 onClose={this.onClose}
                 isOpen={this.state.isOpen}
-                title={popoverLabel}
+                title={title}
                 closeLabel={closeButtonText}
                 getApplicationElement={getApplicationElement}
               >
@@ -145,12 +146,12 @@ class BpkDatepicker extends Component {
             )
             : (
               <BpkPopover
+                id={`${id}-popover`}
                 target={inputComponent}
                 onClose={this.onClose}
                 isOpen={this.state.isOpen}
+                label={title}
                 closeButtonText={closeButtonText}
-                aria-label={popoverLabel}
-                tabIndex="0"
                 {...rest}
               >
                 {calendarComponent}
@@ -172,7 +173,7 @@ BpkDatepicker.propTypes = {
   formatDateFull: PropTypes.func.isRequired,
   formatMonth: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
-  popoverLabel: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   getApplicationElement: PropTypes.func.isRequired,
   // Optional
   DateComponent: PropTypes.func,

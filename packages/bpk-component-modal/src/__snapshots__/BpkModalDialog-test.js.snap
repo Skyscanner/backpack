@@ -3,8 +3,9 @@ exports[`BpkModalDialog should render correctly 1`] = `
   className="bpk-modal"
   onClick={[Function]}>
   <section
-    aria-labelledby="aria-label-heading"
+    aria-labelledby="bpk-modal-heading-my-modal"
     className="bpk-modal__dialog"
+    id="my-modal"
     onClick={[Function]}
     role="dialog"
     tabIndex="-1">
@@ -12,7 +13,7 @@ exports[`BpkModalDialog should render correctly 1`] = `
       className="bpk-modal__dialog-header">
       <h4
         className="bpk-heading-h4 bpk-heading--no-bottom-margin"
-        id="aria-label-heading">
+        id="bpk-modal-heading-my-modal">
         Modal title
       </h4>
        

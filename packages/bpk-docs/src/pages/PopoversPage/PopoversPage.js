@@ -37,11 +37,13 @@ class PopoverContainer extends Component {
   render() {
     return (
       <BpkPopover
+        id="my-popover"
         target={
           <BpkButton onClick={this.openPopover}>Open</BpkButton>
         }
         onClose={this.closePopover}
         isOpen={this.state.isOpen}
+        label="My popover"
         closeButtonText="Close"
         {...this.props}
       />
@@ -71,7 +73,7 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <PopoverContainer title="My popover">{loremIpsum}</PopoverContainer>,
+      <PopoverContainer labelAsTitle>{loremIpsum}</PopoverContainer>,
     ],
   },
   {
@@ -83,7 +85,7 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <PopoverContainer title="My popover" closeButtonIcon={false}>{loremIpsum}</PopoverContainer>,
+      <PopoverContainer labelAsTitle closeButtonIcon={false}>{loremIpsum}</PopoverContainer>,
     ],
   },
 ];

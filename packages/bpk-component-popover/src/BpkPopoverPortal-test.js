@@ -20,6 +20,7 @@ describe('BpkPopoverPortal', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
       <BpkPopoverPortal
+        id="my-popover"
         target={<div>target</div>}
         isOpen={false}
         onClose={() => null}
@@ -38,6 +39,7 @@ describe('BpkPopoverPortal', () => {
 
     const portal = mount(
       <BpkPopoverPortal
+        id="my-popover"
         target={<div>target</div>}
         isOpen={false}
         onClose={() => null}

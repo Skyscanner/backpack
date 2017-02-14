@@ -53,7 +53,7 @@ const components = [
         formatMonth={formatMonth}
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
-        popoverLabel="Select date"
+        title="Select date"
         getApplicationElement={() => document.getElementById('react-mount')}
         inputProps={{ placeholder: 'Select date' }}
       />,

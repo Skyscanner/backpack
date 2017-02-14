@@ -75,19 +75,22 @@ class BpkModalDialog extends Component {
     if (this.props.wide) { dialogClassNames.push('bpk-modal__dialog--wide'); }
     if (this.props.isIphone) { dialogClassNames.push('bpk-modal__dialog--iphone-fix'); }
 
+    const headingId = `bpk-modal-heading-${this.props.id}`;
+
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
       <TransitionInitialMount classNamePrefix={dialogClassName} transitionTimeout={300}>
         <section
+          id={this.props.id}
           tabIndex="-1"
           role="dialog"
-          aria-labelledby="aria-label-heading"
+          aria-labelledby={headingId}
           onClick={stopPropagation}
           className={dialogClassNames.join(' ')}
           ref={this.getDialogRef}
         >
           <header className="bpk-modal__dialog-header">
-            <BpkHeading id="aria-label-heading" level="h4" bottomMargin={false}>
+            <BpkHeading id={headingId} level="h4" bottomMargin={false}>
               {this.props.title}
             </BpkHeading>
             &nbsp;
@@ -125,6 +128,7 @@ class BpkModalDialog extends Component {
 }
 
 BpkModalDialog.propTypes = {
+  id: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,

@@ -60,9 +60,11 @@
 
   &__dialog {
     width: 100%;
+    transform: scale(1);
     transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
     outline: 0;
     background-color: $bpk-modal-background-color;
+    opacity: $bpk-modal-opacity;
 
     @include bpk-breakpoint-above-mobile {
       @include bpk-box-shadow-xl;
