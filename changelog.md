@@ -2,7 +2,18 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-component-mixins:
+  - A new `bpk-locale` mixin to help with targeting locale specifics styles. TO BE USED SPARINGLY. Example:
+    ```
+    @include bpk-locale("ja-JP") {
+      /* ja-JP scss goes here */
+    }
+    ```
+
+- bpk-stylesheets:
+  - A feature flag class on body `.enable-jp-font-feature-settings` to enable `font-feature-settings`
+    for ja-JP locale
 
 ## 2017-02-13 - Autosuggest tertiary label bugfix
 

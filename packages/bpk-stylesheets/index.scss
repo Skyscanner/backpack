@@ -26,6 +26,12 @@ body {
   &.scaffold-font-size {
     font-size: 13px;
   }
+
+  &.enable-jp-font-feature-settings {
+    @include bpk-locale("ja-JP") {
+      font-feature-settings: "palt";
+    }
+  }
 }
 
 .hidden,
