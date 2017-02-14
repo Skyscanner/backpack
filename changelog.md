@@ -3,7 +3,19 @@
 ## UNRELEASED
 
 **Added:**
-- bpk-component-mixins:
+- bpk-component-datepicker:
+  - Renamed prop `popoverLabel` to `title`
+
+- bpk-component-modal:
+  - Added new required prop `id` to reduce id naming collisions
+
+- bpk-component-popover:
+  - Added new required prop `id` to reduce id naming collisions
+  - Added new required prop `label` for screen readers
+  - Renamed prop `title` to `labelAsTitle` and type is now `bool` instead of `string`
+  - Popovers now behave a lot better for screen reader users
+  
+- bpk-mixins:
   - A new `bpk-locale` mixin to help with targeting locale specifics styles. TO BE USED SPARINGLY. Example:
     ```
     @include bpk-locale("ja-JP") {

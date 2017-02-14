@@ -11,6 +11,7 @@ describe('BpkModalDialog', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
       <BpkModalDialog
+        id="my-modal"
         title="Modal title"
         onClose={() => null}
         closeLabel="Close"

@@ -52,7 +52,7 @@ class App extends Component {
           daysOfWeek={daysOfWeek}
           changeMonthLabel="Change month"
           closeButtonText="Close"
-          popoverLabel="Departure date"
+          title="Departure date"
           getApplicationElement={() => document.getElementById('react-mount')}
           formatDate={formatDate}
           formatMonth={formatMonth}
@@ -78,14 +78,14 @@ For more information on some these props, check the BpkCalendar documentation.
 | --------------------- | -------------------- | -------- | -------------------- |
 | changeMonthLabel      | string               | true     | -                    |
 | closeButtonText       | string               | true     | -                    |
+| title                 | string               | true     | -                    |
+| id                    | string               | true     | -                    |
+| getApplicationElement | func                 | true     | -                    |
 | date                  | Date                 | true     | -                    |
 | daysOfWeek            | object               | true     | -                    |
 | formatDate            | func                 | true     | -                    |
 | formatDateFull        | func                 | true     | -                    |
 | formatMonth           | func                 | true     | -                    |
-| id                    | string               | true     | -                    |
-| popoverLabel          | func                 | true     | -                    |
-| getApplicationElement | func                 | true     | -                    |
 | DateComponent         | func                 | false    | BpkCalendarDate  (*) |
 | dateModifiers         | object               | false    | {}               (*) |
 | inputProps            | object               | false    | {}                   |

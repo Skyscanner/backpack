@@ -1,12 +1,20 @@
 exports[`BpkPopover should render correctly 1`] = `
 <section
+  aria-labelledby="bpk-popover-label-my-popover"
   className="bpk-popover"
+  id="my-popover"
+  role="dialog"
   tabIndex="-1">
   <span
     className="bpk-popover__arrow"
     role="presentation" />
   <div
     className="bpk-popover__inner">
+    <span
+      className="bpk-popover__label"
+      id="bpk-popover-label-my-popover">
+      My popover
+    </span>
     <div
       className="bpk-popover__body bpk-popover__body--padded">
       My popover content
@@ -26,13 +34,21 @@ exports[`BpkPopover should render correctly 1`] = `
 
 exports[`BpkPopover should render correctly with "className" attribute 1`] = `
 <section
+  aria-labelledby="bpk-popover-label-my-popover"
   className="bpk-popover my-custom-class"
+  id="my-popover"
+  role="dialog"
   tabIndex="-1">
   <span
     className="bpk-popover__arrow"
     role="presentation" />
   <div
     className="bpk-popover__inner">
+    <span
+      className="bpk-popover__label"
+      id="bpk-popover-label-my-popover">
+      My popover
+    </span>
     <div
       className="bpk-popover__body bpk-popover__body--padded">
       My popover content
@@ -50,15 +66,68 @@ exports[`BpkPopover should render correctly with "className" attribute 1`] = `
 </section>
 `;
 
-exports[`BpkPopover should render correctly with "padded" attribute equal to false 1`] = `
+exports[`BpkPopover should render correctly with "labelAsTitle" attribute 1`] = `
 <section
+  aria-labelledby="bpk-popover-label-my-popover"
   className="bpk-popover"
+  id="my-popover"
+  role="dialog"
   tabIndex="-1">
   <span
     className="bpk-popover__arrow"
     role="presentation" />
   <div
     className="bpk-popover__inner">
+    <header
+      className="bpk-popover__header">
+      <h4
+        className="bpk-heading-h4 bpk-heading--no-bottom-margin"
+        id="bpk-popover-label-my-popover">
+        My popover
+      </h4>
+       
+      <button
+        aria-label="Close"
+        className="bpk-close-button bpk-popover__close-button"
+        onClick={[Function]}
+        title="Close"
+        type="button">
+        <svg
+          className="bpk-close-button__icon bpk-icon--align-to-button"
+          height="18"
+          viewBox="0 0 18 18"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.1 9l3.4-3.4c.3-.3.3-.8 0-1.1l-1.1-1.1c-.3-.3-.8-.3-1.1 0L9 6.9 5.6 3.5c-.3-.3-.8-.3-1.1 0l-1 1.1c-.3.3-.3.8 0 1.1L6.9 9l-3.4 3.4c-.3.3-.3.8 0 1.1l1.1 1.1c.3.3.8.3 1.1 0L9 11.1l3.4 3.4c.3.3.8.3 1.1 0l1.1-1.1c.3-.3.3-.8 0-1.1L11.1 9z" />
+        </svg>
+      </button>
+    </header>
+    <div
+      className="bpk-popover__body bpk-popover__body--padded">
+      My popover content
+    </div>
+  </div>
+</section>
+`;
+
+exports[`BpkPopover should render correctly with "padded" attribute equal to false 1`] = `
+<section
+  aria-labelledby="bpk-popover-label-my-popover"
+  className="bpk-popover"
+  id="my-popover"
+  role="dialog"
+  tabIndex="-1">
+  <span
+    className="bpk-popover__arrow"
+    role="presentation" />
+  <div
+    className="bpk-popover__inner">
+    <span
+      className="bpk-popover__label"
+      id="bpk-popover-label-my-popover">
+      My popover
+    </span>
     <div
       className="bpk-popover__body">
       My popover content

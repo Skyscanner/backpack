@@ -53,7 +53,7 @@ class ReturnDatepicker extends Component {
           closeButtonText="Close"
           daysOfWeek={weekDays}
           changeMonthLabel="Change month"
-          popoverLabel="Departure date"
+          title="Departure date"
           getApplicationElement={() => document.getElementById('application-element')}
           formatDate={formatDate}
           formatMonth={formatMonth}
@@ -70,7 +70,7 @@ class ReturnDatepicker extends Component {
           closeButtonText="Close"
           daysOfWeek={weekDays}
           changeMonthLabel="Change month"
-          popoverLabel="Return date"
+          title="Return date"
           getApplicationElement={() => document.getElementById('application-element')}
           formatDate={formatDate}
           formatMonth={formatMonth}
@@ -96,7 +96,7 @@ storiesOf('bpk-component-datepicker', module)
         closeButtonText="Close"
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
-        popoverLabel="Departure date"
+        title="Departure date"
         getApplicationElement={() => document.getElementById('application-element')}
         formatDate={formatDate}
         formatMonth={formatMonth}

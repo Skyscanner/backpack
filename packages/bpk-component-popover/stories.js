@@ -33,6 +33,7 @@ class PopoverContainer extends Component {
   render() {
     return (
       <BpkPopover
+        id="my-popover"
         target={
           <BpkButton onClick={this.openPopover}>
             Open
@@ -40,6 +41,7 @@ class PopoverContainer extends Component {
         }
         onClose={this.closePopover}
         isOpen={this.state.isOpen}
+        label="My popover"
         closeButtonText="Close"
         {...this.props}
       >
@@ -58,13 +60,13 @@ storiesOf('bpk-component-popover', module)
       <PopoverContainer />
     </div>
   ))
-  .add('With title', () => (
+  .add('With label as title', () => (
     <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
-      <PopoverContainer title="My popover" />
+      <PopoverContainer labelAsTitle />
     </div>
   ))
-  .add('With title but close button text', () => (
+  .add('With label as title but close button text', () => (
     <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
-      <PopoverContainer title="My popover" closeButtonIcon={false} />
+      <PopoverContainer labelAsTitle closeButtonIcon={false} />
     </div>
   ));

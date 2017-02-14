@@ -8,12 +8,14 @@ import './bpk-popover.scss';
 
 const BpkPopover = (props) => {
   const {
+    id,
     onClose,
+    label,
     closeButtonText,
     children,
     className,
     padded,
-    title,
+    labelAsTitle,
     closeButtonIcon,
     ...rest
   } = props;
@@ -27,29 +29,40 @@ const BpkPopover = (props) => {
   // inner classNames
   if (padded) { bodyClassNames.push('bpk-popover__body--padded'); }
 
+  const labelId = `bpk-popover-label-${id}`;
+
   return (
     <TransitionInitialMount classNamePrefix={'bpk-popover'} transitionTimeout={200}>
       <section
+        id={id}
         tabIndex="-1"
+        role="dialog"
+        aria-labelledby={labelId}
         className={classNames.join(' ')}
         {...rest}
       >
         <span className="bpk-popover__arrow" role="presentation" />
         <div className="bpk-popover__inner">
-          {title && <header className="bpk-popover__header">
-            <BpkHeading id="aria-label-heading" level="h4" bottomMargin={false}>
-              {title}
-            </BpkHeading>
-            &nbsp;
-            {closeButtonIcon
-              ? <BpkCloseButton className="bpk-popover__close-button" label={closeButtonText} onClick={onClose} />
-              : <BpkButtonLink onClick={onClose}>{closeButtonText}</BpkButtonLink>
-            }
-          </header>}
+          {labelAsTitle
+            ? (
+              <header className="bpk-popover__header">
+                <BpkHeading id={labelId} level="h4" bottomMargin={false}>{label}</BpkHeading>
+                &nbsp;
+                {closeButtonIcon
+                  ? <BpkCloseButton className="bpk-popover__close-button" label={closeButtonText} onClick={onClose} />
+                  : <BpkButtonLink onClick={onClose}>{closeButtonText}</BpkButtonLink>
+                }
+              </header>
+            ) : (
+              <span id={labelId} className="bpk-popover__label">{label}</span>
+            )
+          }
           <div className={bodyClassNames.join(' ')}>{children}</div>
-          {!title && <footer className="bpk-popover__footer">
-            <BpkButtonLink onClick={onClose}>{closeButtonText}</BpkButtonLink>
-          </footer>}
+          {!labelAsTitle && (
+            <footer className="bpk-popover__footer">
+              <BpkButtonLink onClick={onClose}>{closeButtonText}</BpkButtonLink>
+            </footer>
+          )}
         </div>
       </section>
     </TransitionInitialMount>
@@ -57,19 +70,21 @@ const BpkPopover = (props) => {
 };
 
 BpkPopover.propTypes = {
+  id: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
   closeButtonText: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   padded: PropTypes.bool,
-  title: PropTypes.string,
+  labelAsTitle: PropTypes.bool,
   closeButtonIcon: PropTypes.bool,
 };
 
 BpkPopover.defaultProps = {
   className: null,
   padded: true,
-  title: null,
+  labelAsTitle: false,
   closeButtonIcon: true,
 };
 

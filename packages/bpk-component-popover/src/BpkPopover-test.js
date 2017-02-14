@@ -6,7 +6,9 @@ describe('BpkPopover', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
       <BpkPopover
+        id="my-popover"
         onClose={() => null}
+        label="My popover"
         closeButtonText="Close"
       >
         My popover content
@@ -19,7 +21,9 @@ describe('BpkPopover', () => {
   it('should render correctly with "padded" attribute equal to false', () => {
     const tree = renderer.create(
       <BpkPopover
+        id="my-popover"
         onClose={() => null}
+        label="My popover"
         closeButtonText="Close"
         padded={false}
       >
@@ -33,9 +37,27 @@ describe('BpkPopover', () => {
   it('should render correctly with "className" attribute', () => {
     const tree = renderer.create(
       <BpkPopover
+        id="my-popover"
         onClose={() => null}
+        label="My popover"
         closeButtonText="Close"
         className="my-custom-class"
+      >
+        My popover content
+      </BpkPopover>,
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "labelAsTitle" attribute', () => {
+    const tree = renderer.create(
+      <BpkPopover
+        id="my-popover"
+        onClose={() => null}
+        label="My popover"
+        closeButtonText="Close"
+        labelAsTitle
       >
         My popover content
       </BpkPopover>,
