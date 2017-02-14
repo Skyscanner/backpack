@@ -36,7 +36,7 @@ describe('BpkCalendar', () => {
       date={new Date(2010, 1, 15)}
     />);
 
-    const grid = calendar.find('BpkCalendarGrid');
+    const grid = calendar.find('BpkCalendarGridTransition');
     const nav = calendar.find('BpkCalendarNav');
 
     expect(grid.prop('month')).toEqual(new Date(2010, 1, 1));
@@ -60,7 +60,7 @@ describe('BpkCalendar', () => {
       onDateSelect={onDateSelect}
     />);
 
-    const grid = calendar.find('BpkCalendarGrid');
+    const grid = calendar.find('BpkCalendarGridTransition');
 
     expect(onDateSelect.mock.calls.length).toBe(0);
     expect(grid.prop('month')).toEqual(new Date(2010, 1, 1));

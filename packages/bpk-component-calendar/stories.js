@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import isFriday from 'date-fns/is_friday';
 import isWeekend from 'date-fns/is_weekend';
 import addMonths from 'date-fns/add_months';
 import {
@@ -117,17 +116,6 @@ storiesOf('bpk-component-calendar', module)
       daysOfWeek={weekDaysMoreWeekend}
       changeMonthLabel="Change month"
       onDateSelect={action('Selected day')}
-    />
-  ))
-  .add('Calendar - Custom modifiers (Fridays are blocked)', () => (
-    <CalendarContainer
-      id="myCalendar"
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
-      onDateSelect={action('Selected day')}
-      dateModifiers={{ disabled: isFriday }}
     />
   ))
   .add('Calendar - ar-AE locale', () => (

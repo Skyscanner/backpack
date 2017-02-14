@@ -6,7 +6,7 @@ exports[`BpkCalendarDate should pass props through to button 1`] = `
   disabled={false}
   onClick={null}
   onKeyDown={null}
-  tabIndex={-1}
+  tabIndex="-1"
   type="button">
   <span
     aria-hidden="true">
@@ -23,7 +23,7 @@ exports[`BpkCalendarDate should render a disabled button 1`] = `
   disabled={true}
   onClick={null}
   onKeyDown={null}
-  tabIndex={-1}
+  tabIndex="-1"
   type="button">
   <span
     aria-hidden="true">
@@ -38,9 +38,10 @@ exports[`BpkCalendarDate should render a focused button with tabIndex 1`] = `
   aria-pressed={false}
   className="bpk-calendar-date"
   disabled={false}
+  focused={true}
   onClick={null}
   onKeyDown={null}
-  tabIndex={0}
+  tabIndex="-1"
   type="button">
   <span
     aria-hidden="true">
@@ -57,7 +58,7 @@ exports[`BpkCalendarDate should render correctly 1`] = `
   disabled={false}
   onClick={null}
   onKeyDown={null}
-  tabIndex={-1}
+  tabIndex="-1"
   type="button">
   <span
     aria-hidden="true">
@@ -74,7 +75,7 @@ exports[`BpkCalendarDate should render with a click and keyDown handler 1`] = `
   disabled={false}
   onClick={[Function]}
   onKeyDown={[Function]}
-  tabIndex={-1}
+  tabIndex="-1"
   type="button">
   <span
     aria-hidden="true">

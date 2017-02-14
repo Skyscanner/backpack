@@ -41,6 +41,34 @@ function getCalendarMonthWeeks(month, weekStartsOn) {
   return weeksInMonth;
 }
 
+function getLastDayOfWeekend(daysOfWeek) {
+  const weekend = daysOfWeek.map(day => day.isWeekend);
+
+  if (weekend[0] && weekend[6]) { // weekend stretches over turn the of the week
+    return daysOfWeek[weekend.indexOf(false) - 1].index;
+  }
+  return daysOfWeek[weekend.lastIndexOf(true)].index;
+}
+
+function getFirstDayOfWeekend(daysOfWeek) {
+  const weekend = daysOfWeek.map(day => day.isWeekend);
+
+  if (weekend[0] && weekend[6]) { // weekend stretches over turn the of the week
+    return daysOfWeek[weekend.lastIndexOf(false) + 1].index;
+  }
+  return daysOfWeek[weekend.indexOf(true)].index;
+}
+
+const orderDaysOfWeek = (daysOfWeek, weekStartsOn) => {
+  // Sorted in [sun, mon, ..., sat]
+  const sortedDaysOfWeek = daysOfWeek.slice().sort((a, b) => a.index - b.index);
+  // Ordered according to weekStartsOn, e.g. [mon, tue, ..., sun]
+  return [
+    ...sortedDaysOfWeek.slice(weekStartsOn),
+    ...sortedDaysOfWeek.slice(0, weekStartsOn),
+  ];
+};
+
 /* Takes arbitrary dates and returns the beginning of the first and enf of the last month containing these dates  */
 function getMonthRange(from, to) {
   return {
@@ -82,6 +110,8 @@ const formatIsoMonth = date => format(date, 'YYYY-MM');
 
 export {
   getCalendarMonthWeeks,
+  getFirstDayOfWeekend,
+  getLastDayOfWeekend,
   getMonthsInRange,
   getMonthRange,
   getDay,
@@ -95,6 +125,7 @@ export {
   differenceInCalendarMonths,
   addMonths,
   addDays,
+  orderDaysOfWeek,
   setMonthYear,
   startOfMonth,
   lastDayOfMonth,

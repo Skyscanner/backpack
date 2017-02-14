@@ -167,7 +167,6 @@ BpkDatepicker.propTypes = {
   // Required
   changeMonthLabel: PropTypes.string.isRequired,
   closeButtonText: PropTypes.string.isRequired,
-  date: PropTypes.instanceOf(Date).isRequired,
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   formatDate: PropTypes.func.isRequired,
   formatDateFull: PropTypes.func.isRequired,
@@ -176,6 +175,7 @@ BpkDatepicker.propTypes = {
   title: PropTypes.string.isRequired,
   getApplicationElement: PropTypes.func.isRequired,
   // Optional
+  date: PropTypes.instanceOf(Date),
   DateComponent: PropTypes.func,
   dateModifiers: CustomPropTypes.DateModifiers,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
@@ -189,6 +189,7 @@ BpkDatepicker.propTypes = {
 };
 
 BpkDatepicker.defaultProps = {
+  date: null,
   DateComponent: BpkCalendar.defaultProps.DateComponent,
   dateModifiers: BpkCalendar.defaultProps.dateModifiers,
   inputProps: {},

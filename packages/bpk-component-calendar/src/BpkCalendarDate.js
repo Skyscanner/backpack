@@ -11,7 +11,7 @@ class BpkCalendarDate extends Component {
     if (!this.props.preventKeyboardFocus && this.props.isFocused) {
       // If we got here by clicking the nudger, don't focus this date
       if (!navigatedByMonthNudger()) {
-        console.debug('Giving focus after instantiation', this.button);
+        // Giving focus after instantiation
         this.button.focus();
       }
     }
@@ -21,15 +21,13 @@ class BpkCalendarDate extends Component {
     if (this.props.preventKeyboardFocus || navigatedByMonthNudger()) { return; }
 
     // Giving focus after keyboard navigation
-    if (!prevProps.isFocused && this.props.isFocused && this.props.isInCurrentMonth) {
-      console.debug('Giving focus after kb navigation', this.button);
+    if (!prevProps.isFocused && this.props.isFocused && this.props.isKeyboardFocusable) {
       this.button.focus();
       return;
     }
 
     // Giving focus after changing months with transition
-    if (this.props.isFocused && !prevProps.isInCurrentMonth && this.props.isInCurrentMonth) {
-      console.debug('Giving focus after moving months', this.button);
+    if (this.props.isFocused && !prevProps.isKeyboardFocusable && this.props.isKeyboardFocusable) {
       this.button.focus();
     }
   }
@@ -45,7 +43,7 @@ class BpkCalendarDate extends Component {
       isBlocked,
       isOutside,
       isToday,
-      isInCurrentMonth,
+      isKeyboardFocusable,
       ...buttonProps
     } = this.props;
     const classNames = ['bpk-calendar-date'];
@@ -68,7 +66,7 @@ class BpkCalendarDate extends Component {
         className={classNames.join(' ')}
         aria-label={date.getDate()}
         disabled={isBlocked}
-        tabIndex={(isInCurrentMonth && isFocused) ? 0 : -1}
+        tabIndex={(isKeyboardFocusable && isFocused) ? '0' : '-1'}
         onClick={onClick}
         onKeyDown={onDateKeyDown}
         aria-pressed={isSelected}
@@ -80,34 +78,32 @@ class BpkCalendarDate extends Component {
 }
 
 BpkCalendarDate.propTypes = {
+  // Required
   date: PropTypes.instanceOf(Date).isRequired,
+  // Optional
+  isBlocked: React.PropTypes.bool,
+  isFocused: React.PropTypes.bool,
+  isKeyboardFocusable: React.PropTypes.bool,
+  isOutside: React.PropTypes.bool,
+  isSelected: React.PropTypes.bool,
+  isToday: React.PropTypes.bool,
   modifiers: CustomPropTypes.DateModifiers,
   onClick: React.PropTypes.func,
   onDateKeyDown: React.PropTypes.func,
-
   preventKeyboardFocus: React.PropTypes.bool,
-  isInCurrentMonth: React.PropTypes.bool,
-
-  isFocused: React.PropTypes.bool,
-  isSelected: React.PropTypes.bool,
-  isBlocked: React.PropTypes.bool,
-  isOutside: React.PropTypes.bool,
-  isToday: React.PropTypes.bool,
 };
 
 BpkCalendarDate.defaultProps = {
+  isBlocked: false,
+  isFocused: false,
+  isKeyboardFocusable: true,
+  isOutside: false,
+  isSelected: false,
+  isToday: false,
   modifiers: {},
   onClick: null,
   onDateKeyDown: null,
-
   preventKeyboardFocus: true,
-  isInCurrentMonth: true,
-
-  isFocused: false,
-  isSelected: false,
-  isBlocked: false,
-  isOutside: false,
-  isToday: false,
 };
 
 export default BpkCalendarDate;

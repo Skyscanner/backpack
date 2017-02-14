@@ -116,19 +116,16 @@ If you want to create your own DateComponent, make sure to adhere to the followi
 
 An object of functions to be called on a date. If a function returns true, the `BpkCalendarDate` component attaches classes to the respective DOM node for purposes of styling.
 
-This is by default used for "outside days" (days which are displayed in the calendar, but are in the previous or next month), the selected day, focused day, and disabled (non-selectable) days.
-
 Example:
 
 ```js
 const dateModifiers = {
-  'blocked': date => isWeekend(date),
-  'selected': date => isSameDay(date, this.state.selectedDate),
+  'pubtime': date => isWeekend(date),
   'tims-birthday': date => date.getDay() === 20 && date.getMonth() === 11,
 };
 ```
 
-The classes attached to the note have the format of `bpk-calendar-date--${modifier}`, e.g. `bpk-calendar-date--blocked`, `bpk-calendar-date--selected` and so on.
+The classes attached to the node have the format of `bpk-calendar-date-modifier--${modifier}`, i.e. `bpk-calendar-date-modifier--pubtime`.
 
 #### daysOfWeek
 

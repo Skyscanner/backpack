@@ -144,12 +144,12 @@ class BpkCalendar extends Component {
 BpkCalendar.propTypes = {
   // Required
   changeMonthLabel: PropTypes.string.isRequired,
-  date: PropTypes.instanceOf(Date).isRequired,
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   formatDateFull: PropTypes.func.isRequired,
   formatMonth: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
   // Optional
+  date: PropTypes.instanceOf(Date),
   DateComponent: PropTypes.func,
   dateModifiers: CustomPropTypes.DateModifiers,
   enableSelection: PropTypes.bool,
@@ -163,6 +163,7 @@ BpkCalendar.propTypes = {
 };
 
 BpkCalendar.defaultProps = {
+  date: null,
   DateComponent: BpkCalendarDate,
   dateModifiers: {},
   enableSelection: true,

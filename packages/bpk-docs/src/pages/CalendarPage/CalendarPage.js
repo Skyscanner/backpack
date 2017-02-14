@@ -2,7 +2,12 @@ import BpkParagraph from 'bpk-component-paragraph';
 import BpkRouterLink from 'bpk-component-router-link';
 import BpkLink from 'bpk-component-link';
 import React, { PropTypes, Component } from 'react';
-import BpkCalendar, { BpkCalendarGrid, BpkCalendarNav, BpkCalendarDate } from 'bpk-component-calendar';
+import BpkCalendar, {
+  BpkCalendarGrid,
+  BpkCalendarNav,
+  BpkCalendarDate,
+  BpkCalendarGridHeader,
+} from 'bpk-component-calendar';
 
 import calendarReadme from 'bpk-component-calendar/readme.md';
 import { I18N } from './../../constants/routes';
@@ -132,10 +137,19 @@ const components = [
     title: 'Calendar grid',
     blurb: [
       <BpkParagraph>
-        Similarly the calendar grid can be used on its own.
+        Similarly the calendar grid can be used on its own (grid and header are separate components).
       </BpkParagraph>,
     ],
     examples: [
+      <BpkCalendarGridHeader
+        month={new Date()}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        DateComponent={BpkCalendarDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        showWeekendSeparator
+      />,
       <BpkCalendarGrid
         month={new Date()}
         daysOfWeek={weekDays}
