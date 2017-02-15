@@ -13,6 +13,7 @@
   - Added new required prop `id` to reduce id naming collisions
   - Added new required prop `label` for screen readers
   - Renamed prop `title` to `labelAsTitle` and type is now `bool` instead of `string`
+    - **Consumers who were using `title` should now use `label` to set the string and pass `labelAsTitle` accordingly**
   - Popovers now behave a lot better for screen reader users
 
 **Added:**
