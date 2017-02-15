@@ -2,14 +2,18 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-02-15 - Datepicker / Popover a11y improvements
+
 **Changed:**
-- bpk-component-datepicker:
+- bpk-component-datepicker: 3.0.0 => 4.0.0
   - Renamed prop `popoverLabel` to `title`
 
-- bpk-component-modal:
+- bpk-component-modal: 0.5.0 => 1.0.0
   - Added new required prop `id` to reduce id naming collisions
 
-- bpk-component-popover:
+- bpk-component-popover: 0.2.0 => 1.0.0
   - Added new required prop `id` to reduce id naming collisions
   - Added new required prop `label` for screen readers
   - Renamed prop `title` to `labelAsTitle` and type is now `bool` instead of `string`
@@ -17,7 +21,7 @@
   - Popovers now behave a lot better for screen reader users
 
 **Added:**
-- bpk-mixins:
+- bpk-mixins: 8.3.0 => 8.4.0
   - A new `bpk-locale` mixin to help with targeting locale specifics styles. TO BE USED SPARINGLY. Example:
     ```
     @include bpk-locale("ja-JP") {
@@ -25,7 +29,7 @@
     }
     ```
 
-- bpk-stylesheets:
+- bpk-stylesheets: 3.1.9 => 3.2.0
   - A feature flag class on body `.enable-jp-font-feature-settings` to enable `font-feature-settings`
     for ja-JP locale
 
