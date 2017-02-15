@@ -5,7 +5,10 @@
 **Changed:**
 - bpk-component-datepicker:
 - bpk-component-calendar:
-  - Separated `modifiers` from blocked/focused/selected/outside/today; modifiers now only add classes, and blocked dates can not be specified anymore except through a min/max date range
+  - Separates blocked/focused/selected/outside/today logic from `modifiers` logic. Modifiers now create classes like
+    `bpk-calendar-date-modifier--MYMODIFIER` (was `bpk-calendar-date--MYMODIFIER`). This means you cannot mess anymore
+    with core functionality of the calendar/datepicker.
+  - Removes (previously broken) support for blocked dates (except for a min/max date range)
 
 **Added:**
 - bpk-component-datepicker:

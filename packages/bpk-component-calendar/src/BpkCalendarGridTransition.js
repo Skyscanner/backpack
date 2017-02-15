@@ -3,7 +3,9 @@ import React, { Component, PropTypes } from 'react';
 import {
   getCalendarGridWidth,
   getTransformStyles,
-} from './transition-utils';
+  getScriptDirection,
+  isTransitionEndSupported,
+} from './utils';
 import {
   addMonths,
   isSameMonth,
@@ -44,7 +46,7 @@ class BpkCalendarGridTransition extends Component {
     };
 
     this.strip = null;
-
+    this.isTransitionEndSupported = isTransitionEndSupported();
     this.onMonthTransitionEnd = this.onMonthTransitionEnd.bind(this);
   }
 
@@ -52,10 +54,12 @@ class BpkCalendarGridTransition extends Component {
     const hasMonthChanged = !isSameMonth(this.props.month, nextProps.month);
 
     if (hasMonthChanged) {
+      const reverse = getScriptDirection() === 'rtl';
+
       if (differenceInCalendarMonths(nextProps.month, this.props.month) === 1) {
         // Transition to next month
         this.setState({
-          transitionValue: transitionValues.next,
+          transitionValue: reverse ? transitionValues.previous : transitionValues.next,
           isTransitioning: true,
         });
         return;
@@ -64,7 +68,7 @@ class BpkCalendarGridTransition extends Component {
       if (differenceInCalendarMonths(nextProps.month, this.props.month) === -1) {
         // Transition to previous month
         this.setState({
-          transitionValue: transitionValues.previous,
+          transitionValue: reverse ? transitionValues.next : transitionValues.previous,
           isTransitioning: true,
         });
         return;
@@ -78,6 +82,15 @@ class BpkCalendarGridTransition extends Component {
           addMonths(nextProps.month, 1),
         ],
       });
+    }
+  }
+
+  componentDidUpdate() {
+    // For IE9, immediately call onMonthTransitionEnd instead of
+    // waiting for the animation to complete
+    // Thx to Airbnb's react-dates <3
+    if (!this.isTransitionEndSupported && this.state.isTransitioning) {
+      this.onMonthTransitionEnd();
     }
   }
 

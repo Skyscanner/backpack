@@ -10,12 +10,8 @@ import {
   startOfMonth,
   startOfDay,
 } from './date-utils';
+import { getScriptDirection } from './utils';
 import CustomPropTypes from './custom-proptypes';
-
-const getDirection = () => {
-  const html = document.querySelector('html');
-  return window.getComputedStyle(html, null).getPropertyValue('direction');
-};
 
 class BpkCalendar extends Component {
   constructor(props) {
@@ -65,7 +61,7 @@ class BpkCalendar extends Component {
   }
 
   handleDateKeyDown(event) {
-    const reverse = getDirection() === 'rtl' ? -1 : 1;
+    const reverse = getScriptDirection() === 'rtl' ? -1 : 1;
     const { focusedDate } = this.state;
     let preventDefault = true;
 
