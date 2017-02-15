@@ -2,7 +2,13 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-component-grid:
+    - Added `fullWidth` prop to `BpkGridContainer` which allows it use the full width of the parent 
+
+- bpk-mixins:
+    - Added `bpk-grid__container--full-width` 
+
 
 ## 2017-02-15 - Datepicker / Popover a11y improvements
 

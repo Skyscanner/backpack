@@ -55,6 +55,20 @@
   background-color: $bpk-color-gray-50;
 }
 
+/// Container will use the width of the parent element. Modifies the bpk-grid__container mixin.
+///
+/// @require {mixin} bpk-grid__container
+///
+/// @example scss
+///   .selector {
+///     @include bpk-grid__container();
+///     @include bpk-grid__container--full-width();
+///   }
+
+@mixin bpk-grid__container--full-width {
+  max-width: 100%;
+}
+
 /// Grid row.
 ///
 /// @example scss

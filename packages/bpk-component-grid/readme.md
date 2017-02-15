@@ -67,6 +67,7 @@ export default MyComponent = () => (
 | children  | -        | true     | -             |
 | padded    | bool     | false    | true          |
 | debug     | bool     | false    | false         |
+| fullWidth | bool     | false    | false         |
 
 *BpkGridRow:*
 
