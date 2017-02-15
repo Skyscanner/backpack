@@ -24,7 +24,7 @@ const transitionValues = {
   next: -2 * getCalendarGridWidth(),
 };
 
-const predictFocusedDate = (month, currentFocusedDate, minDate, maxDate) => dateToBoundaries(
+const getFocusedDateForMonth = (month, currentFocusedDate, minDate, maxDate) => dateToBoundaries(
   setMonthYear(currentFocusedDate, month.getMonth(), month.getFullYear()),
   startOfDay(minDate),
   startOfDay(maxDate),
@@ -141,7 +141,7 @@ class BpkCalendarGridTransition extends Component {
                 dateModifiers={index === 1 ? rest.dateModifiers : adjacentModifiers}
                 preventKeyboardFocus={index !== 1 || rest.preventKeyboardFocus}
                 isKeyboardFocusable={!this.state.isTransitioning && (index === 1)}
-                focusedDate={predictFocusedDate(m, focusedDate, rest.minDate, rest.maxDate)}
+                focusedDate={getFocusedDateForMonth(m, focusedDate, rest.minDate, rest.maxDate)}
                 aria-hidden={index !== 1}
               />
             ))
@@ -163,5 +163,5 @@ const addCalendarGridTransition = TransitionComponent => props => (
   <BpkCalendarGridTransition TransitionComponent={TransitionComponent} {...props} />
 );
 
-export default addCalendarGridTransition;
-export { BpkCalendarGridTransition };
+export default BpkCalendarGridTransition;
+export { addCalendarGridTransition };

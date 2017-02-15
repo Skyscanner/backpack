@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
-import addCalendarGridTransition, { BpkCalendarGridTransition } from './BpkCalendarGridTransition';
+import BpkCalendarGridTransition, { addCalendarGridTransition } from './BpkCalendarGridTransition';
 
 const MyComponent = props => <div>{ JSON.stringify(props) }</div>;
 const TransitioningMyComponent = addCalendarGridTransition(MyComponent);

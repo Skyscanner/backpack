@@ -5,7 +5,7 @@ import BpkCalendarGrid from './BpkCalendarGrid';
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
 import BpkCalendarDate from './BpkCalendarDate';
 import CustomPropTypes from './custom-proptypes';
-import addCalendarGridTransition from './BpkCalendarGridTransition';
+import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 import './bpk-calendar.scss';
 
 const TransitioningBpkCalendarGrid = addCalendarGridTransition(BpkCalendarGrid);
@@ -28,7 +28,6 @@ const BpkCalendarView = (props) => {
         onChangeMonth={props.onChangeMonth}
       />
       <BpkCalendarGridHeader
-        className="bpk-calendar__grid-header"
         daysOfWeek={props.daysOfWeek}
         showWeekendSeparator={props.showWeekendSeparator}
         weekStartsOn={props.weekStartsOn}
