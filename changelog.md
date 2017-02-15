@@ -2,7 +2,7 @@
 
 ## UNRELEASED
 
-**Added:**
+**Changed:**
 - bpk-component-datepicker:
   - Renamed prop `popoverLabel` to `title`
 
@@ -14,7 +14,8 @@
   - Added new required prop `label` for screen readers
   - Renamed prop `title` to `labelAsTitle` and type is now `bool` instead of `string`
   - Popovers now behave a lot better for screen reader users
-  
+
+**Added:**
 - bpk-mixins:
   - A new `bpk-locale` mixin to help with targeting locale specifics styles. TO BE USED SPARINGLY. Example:
     ```
