@@ -23,6 +23,11 @@ publish:
       ".js": gzip
       ".css": gzip
       ".html": gzip
+    metadata:
+      "*.js":
+        Cache-Control: "public, max-age: 86400"
+      "*.css":
+        Cache-Control: "public, max-age: 86400"
     when:
       branch: sandbox
 
