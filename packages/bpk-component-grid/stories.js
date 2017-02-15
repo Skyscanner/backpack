@@ -162,7 +162,7 @@ storiesOf('bpk-component-grid', module)
     </BpkGridContainer>
   ))
   .add('Full width example', () => (
-     <BpkGridContainer fullWidth debug>
+    <BpkGridContainer fullWidth debug>
       <BpkGridRow debug>
         <BpkGridColumn width={1} debug>1</BpkGridColumn>
         <BpkGridColumn width={1} debug>1</BpkGridColumn>
