@@ -401,6 +401,11 @@ body {
   line-height: 1.5rem; }
   body.scaffold-font-size {
     font-size: 13px; }
+  html[lang="ja-JP"] body.enable-jp-font-feature-settings,
+  html[lang="ja-jp"] body.enable-jp-font-feature-settings {
+    -webkit-font-feature-settings: "palt";
+       -moz-font-feature-settings: "palt";
+            font-feature-settings: "palt"; }
 
 .hidden,
 .hide {
