@@ -23,5 +23,12 @@ describe('BpkGridContainer', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with "fullWidth" attribute', () => {
+    const tree = renderer.create(
+      <BpkGridContainer fullWidth>Contents</BpkGridContainer>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
 

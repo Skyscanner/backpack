@@ -12,6 +12,13 @@ exports[`BpkGridContainer should render correctly with "debug" attribute 1`] = `
 </div>
 `;
 
+exports[`BpkGridContainer should render correctly with "fullWidth" attribute 1`] = `
+<div
+  className="bpk-grid__container bpk-grid__container--padded bpk-grid__container--full-width">
+  Contents
+</div>
+`;
+
 exports[`BpkGridContainer should render correctly with "padded" attribute equal to false 1`] = `
 <div
   className="bpk-grid__container">

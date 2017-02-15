@@ -11,6 +11,10 @@
     &--debug {
       @include bpk-grid__container--debug;
     }
+
+    &--full-width {
+      @include bpk-grid__container--full-width;
+    }
   }
 
   &__row {

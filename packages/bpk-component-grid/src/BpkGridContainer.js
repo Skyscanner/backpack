@@ -7,6 +7,7 @@ const BpkGridContainer = (props) => {
 
   if (props.padded) { classNames.push('bpk-grid__container--padded'); }
   if (props.debug) { classNames.push('bpk-grid__container--debug'); }
+  if (props.fullWidth) { classNames.push('bpk-grid__container--full-width'); }
 
   return <div className={classNames.join(' ')}>{props.children}</div>;
 };
@@ -18,11 +19,13 @@ BpkGridContainer.propTypes = {
   ]).isRequired,
   padded: PropTypes.bool,
   debug: PropTypes.bool,
+  fullWidth: PropTypes.bool,
 };
 
 BpkGridContainer.defaultProps = {
   padded: true,
   debug: false,
+  fullWidth: false,
 };
 
 export default BpkGridContainer;
