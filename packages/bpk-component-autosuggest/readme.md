@@ -40,7 +40,7 @@ const getSuggestions = (value) => {
 const getSuggestionValue = ({ name, code }) => `${name} (${code})`
 
 const renderSuggestion = (suggestion) => (
-  <BpkAutosuggestSuggestion 
+  <BpkAutosuggestSuggestion
     value={getSuggestionValue(suggestion)}
     subHeading={suggestion.country}
     tertiaryLabel='Airport'
@@ -93,7 +93,7 @@ class MyComonent extends Component {
 
     return (
       <div>
-        <BpkLabel label='Office' htmlFor={autosuggestId} />
+        <BpkLabel label='Office' htmlFor='my-autosuggest' />
         <BpkAutosuggest
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -122,5 +122,5 @@ class MyComonent extends Component {
 | value             | string               | true     | -             |
 | subHeading        | string               | false    | null          |
 | tertiaryLabel     | string               | false    | null          |
-| icon              | func                 | false    | null          | 
-| indent            | bool                 | false    | false         | 
+| icon              | func                 | false    | null          |
+| indent            | bool                 | false    | false         |

@@ -9,9 +9,14 @@ const WeekDay = PropTypes.shape({
 
 const DaysOfWeek = PropTypes.arrayOf(WeekDay);
 const DateModifiers = PropTypes.objectOf(PropTypes.func);
+const ReactComponent = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.func,
+]);
 
 export default {
-  WeekDay,
-  DaysOfWeek,
   DateModifiers,
+  DaysOfWeek,
+  ReactComponent,
+  WeekDay,
 };

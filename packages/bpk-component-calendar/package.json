@@ -16,8 +16,7 @@
     "bpk-component-icon": "^3.3.2",
     "bpk-component-select": "^1.0.19",
     "bpk-mixins": "^8.5.0",
-    "bpk-tokens": "^15.1.0",
-    "date-fns": "^1.17.0",
-    "object-assign": "^4.1.0"
+    "bpk-tokens": "^17.0.6",
+    "date-fns": "^1.17.0"
   }
 }

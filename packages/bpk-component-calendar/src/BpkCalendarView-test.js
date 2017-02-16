@@ -3,8 +3,12 @@ import renderer from 'react-test-renderer';
 import BpkCalendarView from './BpkCalendarView';
 import { weekDays, formatMonth, formatDateFull } from '../test-utils';
 
+const createNodeMock = () => ({
+  focus: () => null,
+});
+
 describe('BpkCalendarView', () => {
-  it('should compose BpkCalendarNav and BpkCalendarGrid correctly', () => {
+  it('should compose BpkCalendarNav, BpkCalendarGridHeader and BpkCalendarGrid correctly', () => {
     const tree = renderer.create(<BpkCalendarView
       id="myCalendar"
       formatMonth={formatMonth}
@@ -14,7 +18,7 @@ describe('BpkCalendarView', () => {
       minDate={new Date(2010, 1, 15)}
       maxDate={new Date(2010, 2, 15)}
       month={new Date(2010, 1, 15)}
-    />).toJSON();
+    />, { createNodeMock }).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -30,7 +34,7 @@ describe('BpkCalendarView', () => {
       maxDate={new Date(2010, 2, 15)}
       month={new Date(2010, 1, 15)}
       className="my-custom-class"
-    />).toJSON();
+    />, { createNodeMock }).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

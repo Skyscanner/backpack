@@ -2,9 +2,13 @@ import React, { PropTypes } from 'react';
 
 import BpkCalendarNav from './BpkCalendarNav';
 import BpkCalendarGrid from './BpkCalendarGrid';
+import BpkCalendarGridHeader from './BpkCalendarGridHeader';
 import BpkCalendarDate from './BpkCalendarDate';
 import CustomPropTypes from './custom-proptypes';
+import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 import './bpk-calendar.scss';
+
+const TransitioningBpkCalendarGrid = addCalendarGridTransition(BpkCalendarGrid);
 
 const BpkCalendarView = (props) => {
   const classNames = ['bpk-calendar'];
@@ -23,7 +27,12 @@ const BpkCalendarView = (props) => {
         month={props.month}
         onChangeMonth={props.onChangeMonth}
       />
-      <BpkCalendarGrid
+      <BpkCalendarGridHeader
+        daysOfWeek={props.daysOfWeek}
+        showWeekendSeparator={props.showWeekendSeparator}
+        weekStartsOn={props.weekStartsOn}
+      />
+      <TransitioningBpkCalendarGrid
         className="bpk-calendar__grid"
         DateComponent={props.DateComponent}
         dateModifiers={props.dateModifiers}
@@ -36,44 +45,53 @@ const BpkCalendarView = (props) => {
         preventKeyboardFocus={props.preventKeyboardFocus}
         showWeekendSeparator={props.showWeekendSeparator}
         weekStartsOn={props.weekStartsOn}
+        maxDate={props.maxDate}
+        minDate={props.minDate}
+        focusedDate={props.focusedDate}
+        markToday={props.markToday}
+        markOutsideDays={props.markOutsideDays}
+        selectedDate={props.selectedDate}
       />
     </div>
   );
 };
 
 BpkCalendarView.propTypes = {
-  // BpkCalendarNav & BpkCalendarGrid
-  month: PropTypes.instanceOf(Date).isRequired,
-  formatMonth: PropTypes.func.isRequired,
-
-  // BpkCalendarNav
+  // Required
   changeMonthLabel: PropTypes.string.isRequired,
+  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
+  formatDateFull: PropTypes.func.isRequired,
+  formatMonth: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
   maxDate: PropTypes.instanceOf(Date).isRequired,
   minDate: PropTypes.instanceOf(Date).isRequired,
-
-  onChangeMonth: PropTypes.func,
-
-  // BpkCalendarGrid
-  DateComponent: PropTypes.func.isRequired,
-  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
-  formatDateFull: PropTypes.func.isRequired,
+  month: PropTypes.instanceOf(Date).isRequired,
   showWeekendSeparator: PropTypes.bool.isRequired,
   weekStartsOn: PropTypes.number.isRequired,
-
+  // Optional
   className: PropTypes.string,
+  DateComponent: PropTypes.func,
   dateModifiers: CustomPropTypes.DateModifiers,
+  focusedDate: PropTypes.instanceOf(Date),
+  markOutsideDays: PropTypes.bool,
+  markToday: PropTypes.bool,
+  onChangeMonth: PropTypes.func,
   onDateClick: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   preventKeyboardFocus: PropTypes.bool,
+  selectedDate: PropTypes.instanceOf(Date),
 };
 
 BpkCalendarView.defaultProps = {
   className: null,
   DateComponent: BpkCalendarDate,
   dateModifiers: {},
-  onChangeMonth: null,
-  onDateClick: null,
+  focusedDate: null,
+  markOutsideDays: false,
+  markToday: false,
+  onChangeMonth: () => null,
+  onDateClick: () => null,
+  selectedDate: null,
   showWeekendSeparator: true,
   weekStartsOn: 1,
 };

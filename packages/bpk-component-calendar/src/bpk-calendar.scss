@@ -1,5 +1,60 @@
 @import '~bpk-mixins/index';
 
+$shadow-bottom: 0 1px 0 0 $bpk-color-gray-100;
+$shadow-left: -1px 0 0 0 $bpk-color-gray-100;
+$shadow-right: 1px 0 0 0 $bpk-color-gray-100;
+
+.bpk-calendar-header {
+  display: table;
+
+  .bpk-calendar-nav + & {
+    margin-top: $bpk-spacing-sm;
+  }
+
+  &--table-head {
+    display: none;
+  }
+
+  &__week {
+    display: table-row;
+    font-size: $bpk-font-size-sm;
+    line-height: $bpk-line-height-sm;
+    list-style: none;
+    text-align: center;
+  }
+
+  &__weekday {
+    display: table-cell;
+    width: $bpk-calendar-day-size;
+    height: $bpk-calendar-day-size;
+    box-sizing: content-box;
+    padding: 0 ($bpk-calendar-day-spacing / 2) 0 ($bpk-calendar-day-spacing / 2);
+    font-weight: normal;
+    box-shadow: $shadow-bottom;
+    vertical-align: middle;
+
+    &--weekend {
+      font-weight: bold;
+    }
+
+    &--weekend-start {
+      box-shadow: $shadow-bottom, $shadow-left;
+
+      @include bpk-rtl {
+        box-shadow: $shadow-bottom, $shadow-right;
+      }
+    }
+
+    &--weekend-end:not(:last-child) {
+      box-shadow: $shadow-bottom, $shadow-right;
+
+      @include bpk-rtl {
+        box-shadow: $shadow-bottom, $shadow-left;
+      }
+    }
+  }
+}
+
 .bpk-calendar-grid {
   $shadow-bottom: 0 1px 0 0 $bpk-color-gray-100;
   $shadow-left: -1px 0 0 0 $bpk-color-gray-100;
@@ -13,43 +68,15 @@
     margin-top: $bpk-spacing-sm;
   }
 
+  &--animating {
+    -moz-transition: -moz-transform .2s ease-in-out;
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    z-index: 1;
+  }
+
   &__caption {
     @include bpk-visually-hidden();
-  }
-
-  &__header {
-    font-size: $bpk-font-size-sm;
-    line-height: $bpk-line-height-sm;
-    text-align: center;
-
-    &-weekday {
-      box-shadow: $shadow-bottom;
-
-      &--weekend-start {
-        box-shadow: $shadow-bottom, $shadow-left;
-
-        @include bpk-rtl {
-          box-shadow: $shadow-bottom, $shadow-right;
-        }
-      }
-
-      &--weekend-end:not(:last-child) {
-        box-shadow: $shadow-bottom, $shadow-right;
-
-        @include bpk-rtl {
-          box-shadow: $shadow-bottom, $shadow-left;
-        }
-      }
-    }
-  }
-
-  &__header-weekday {
-    padding: $bpk-spacing-xs;
-    font-weight: normal;
-
-    &--weekend {
-      font-weight: bold;
-    }
   }
 
   &__date {
@@ -202,4 +229,33 @@
 
 .bpk-calendar {
   @include bpk-border-radius-sm();
+}
+
+$calendar-width: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
+$calendar-height: 6 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
+
+.bpk-calendar-grid-transition {
+  box-sizing: border-box;
+  position: relative;
+  width: $calendar-width;
+  height: $calendar-height;
+  overflow: hidden;
+
+  &__strip {
+    position: absolute;
+    left: 0;
+    width: 3 * $calendar-width;
+    z-index: 0;
+
+    &--transitioning {
+      -moz-transition: -moz-transform $bpk-duration-sm ease-in-out;
+      -webkit-transition: -webkit-transform $bpk-duration-sm ease-in-out;
+      transition: transform $bpk-duration-sm ease-in-out;
+      z-index: 1;
+    }
+
+    & > .bpk-calendar-grid {
+      display: inline-table;
+    }
+  }
 }

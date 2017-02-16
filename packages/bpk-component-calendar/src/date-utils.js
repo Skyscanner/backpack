@@ -14,6 +14,7 @@ import isSunday from 'date-fns/is_sunday';
 import isSameDay from 'date-fns/is_same_day';
 import isSameMonth from 'date-fns/is_same_month';
 import isBefore from 'date-fns/is_before';
+import differenceInCalendarMonths from 'date-fns/difference_in_calendar_months';
 
 import addDays from 'date-fns/add_days';
 import addWeeks from 'date-fns/add_weeks';
@@ -39,6 +40,34 @@ function getCalendarMonthWeeks(month, weekStartsOn) {
 
   return weeksInMonth;
 }
+
+function getLastDayOfWeekend(daysOfWeek) {
+  const weekend = daysOfWeek.map(day => day.isWeekend);
+
+  if (weekend[0] && weekend[6]) { // weekend stretches over turn the of the week
+    return daysOfWeek[weekend.indexOf(false) - 1].index;
+  }
+  return daysOfWeek[weekend.lastIndexOf(true)].index;
+}
+
+function getFirstDayOfWeekend(daysOfWeek) {
+  const weekend = daysOfWeek.map(day => day.isWeekend);
+
+  if (weekend[0] && weekend[6]) { // weekend stretches over turn the of the week
+    return daysOfWeek[weekend.lastIndexOf(false) + 1].index;
+  }
+  return daysOfWeek[weekend.indexOf(true)].index;
+}
+
+const orderDaysOfWeek = (daysOfWeek, weekStartsOn) => {
+  // Sorted in [sun, mon, ..., sat]
+  const sortedDaysOfWeek = daysOfWeek.slice().sort((a, b) => a.index - b.index);
+  // Ordered according to weekStartsOn, e.g. [mon, tue, ..., sun]
+  return [
+    ...sortedDaysOfWeek.slice(weekStartsOn),
+    ...sortedDaysOfWeek.slice(0, weekStartsOn),
+  ];
+};
 
 /* Takes arbitrary dates and returns the beginning of the first and enf of the last month containing these dates  */
 function getMonthRange(from, to) {
@@ -70,12 +99,19 @@ const dateToBoundaries = (date, minDate, maxDate) => {
   return maxDate;
 };
 
+const setMonthYear = (date, newMonth, newYear) => setYear(
+  setMonth(date, newMonth),
+  newYear,
+);
+
 const parseIsoDate = parse;
 const formatIsoDate = date => format(date, 'YYYY-MM-DD');
 const formatIsoMonth = date => format(date, 'YYYY-MM');
 
 export {
   getCalendarMonthWeeks,
+  getFirstDayOfWeekend,
+  getLastDayOfWeekend,
   getMonthsInRange,
   getMonthRange,
   getDay,
@@ -86,10 +122,11 @@ export {
   isToday,
   isSameDay,
   isSameMonth,
+  differenceInCalendarMonths,
   addMonths,
   addDays,
-  setMonth,
-  setYear,
+  orderDaysOfWeek,
+  setMonthYear,
   startOfMonth,
   lastDayOfMonth,
   startOfDay,

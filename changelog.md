@@ -2,7 +2,18 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Changed:**
+- bpk-component-datepicker:
+- bpk-component-calendar:
+  - Separates blocked/focused/selected/outside/today logic from `modifiers` logic. Modifiers now create classes like
+    `bpk-calendar-date-modifier--MYMODIFIER` (was `bpk-calendar-date--MYMODIFIER`). This means you cannot mess anymore
+    with core functionality of the calendar/datepicker.
+  - Removes (previously broken) support for blocked dates (except for a min/max date range)
+
+**Added:**
+- bpk-component-datepicker:
+- bpk-component-calendar:
+  - Sliding month transition added when navigation one month backwards or forwards
 
 ## 2017-02-15 - Added `fullWidth` option to grid container
 
