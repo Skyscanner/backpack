@@ -1,5 +1,9 @@
 {
   "name": "backpack",
+  "engines": {
+    "node" : ">=6.0.0",
+    "npm" : ">=4.0.0"
+  },
   "private": true,
   "scripts": {
     "postinstall": "npm run bootstrap",

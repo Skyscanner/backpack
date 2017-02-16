@@ -46,6 +46,11 @@ When you are ready to jump into code, use the following workflow to add new comp
 
 ## Getting started
 
+> Make sure to run at least npm 4, which ships with Node 7. You can get the
+[latest Node version from this website](https://nodejs.org/en/), use a tool like nvm or
+[nave](https://github.com/isaacs/nave) (`nave auto` does the trick), or just upgrade npm using
+`npm install -g npm@latest`.
+
 To get started run:
 
 ```sh
