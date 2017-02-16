@@ -30,6 +30,8 @@ class BpkDatepicker extends Component {
     this.onOpen = this.onOpen.bind(this);
     this.onClose = this.onClose.bind(this);
     this.handleDateSelect = this.handleDateSelect.bind(this);
+
+    this.focusCanOpen = true;
   }
 
   onOpen() {
@@ -86,7 +88,20 @@ class BpkDatepicker extends Component {
         name={`${id}_input`}
         value={date ? formatDate(date) : ''}
         onClick={this.onOpen}
-        onFocus={this.onOpen}
+        onFocus={() => {
+          if (this.focusCanOpen) {
+            this.onOpen();
+          }
+        }}
+        onBlur={() => {
+          if (this.state.isOpen) {
+            // If the input loses focus when the popover/modal is open, it should not open on a subsequent focus.
+            // Fixes an issue with IE9.
+            this.focusCanOpen = false;
+          } else {
+            this.focusCanOpen = true;
+          }
+        }}
         onTouchEnd={(e) => {
           // preventDefault fixes an issue on Android and iOS in which the popover closes immediately
           // because a touch event is registered on one of the dates.
