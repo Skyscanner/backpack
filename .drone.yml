@@ -23,6 +23,9 @@ publish:
       ".js": gzip
       ".css": gzip
       ".html": gzip
+    cache_control:
+      ".js": "public, max-age: 86400"
+      ".css": "public, max-age: 86400"
     when:
       branch: sandbox
 
@@ -39,6 +42,9 @@ publish:
       ".js": gzip
       ".css": gzip
       ".html": gzip
+    cache_control:
+      ".js": "public, max-age: 86400"
+      ".css": "public, max-age: 86400"
     when:
       branch: master
 
