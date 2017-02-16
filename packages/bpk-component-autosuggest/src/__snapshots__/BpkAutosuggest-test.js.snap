@@ -8,12 +8,13 @@ exports[`BpkAutosuggest should render correctly 1`] = `
     aria-haspopup={false}
     aria-owns="react-autowhatever-1"
     autoComplete="off"
-    className="bpk-autosuggest__input"
+    className="bpk-input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     role="combobox"
+    style={Object {}}
     type="text"
     value="Edinburgh" />
   <div
@@ -32,12 +33,13 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
     aria-haspopup={true}
     aria-owns="react-autowhatever-1"
     autoComplete="off"
-    className="bpk-autosuggest__input"
+    className="bpk-input"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     role="combobox"
+    style={Object {}}
     type="text"
     value="Edinburgh" />
   <div

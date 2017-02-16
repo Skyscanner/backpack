@@ -7,8 +7,9 @@
 
   &__container--open &__suggestions-container {
     position: absolute;
-    top: $bpk-input-height + $bpk-spacing-sm;
+    top: 100%;
     width: 100%;
+    margin-top: $bpk-spacing-sm;
     z-index: $bpk-zindex-autosuggest;
 
     &::after {
@@ -23,10 +24,6 @@
       border-bottom-color: $bpk-autosuggest-list-background-color;
       pointer-events: none;
     }
-  }
-
-  &__input {
-    @include bpk-input;
   }
 
   &__suggestions-list {

@@ -113,7 +113,9 @@ class MyComonent extends Component {
 
 *BpkAutosuggest:*
 
-[Please refer to react-autosuggest's documentation](https://github.com/moroshko/react-autosuggest#props).
+[Please refer to react-autosuggest's documentation for a full list of props](https://github.com/moroshko/react-autosuggest#props).
+
+**Note:** The `inputProps` object is passed directly to a `BpkInput` component, so it's proptypes apply also.
 
 *BpkAutosuggestSuggestion:*
 
