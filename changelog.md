@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+_Nothing yet_
+
+## 2017-02-16 - Added month transitions to calendar and datepicker
+
 **Changed:**
 - bpk-component-datepicker:
 - bpk-component-calendar:
