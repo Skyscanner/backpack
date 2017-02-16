@@ -10,7 +10,7 @@ build:
     - npm run docs:dist:gzip
 
 publish:
-  325714046698.dkr.ecr.eu-west-1.amazonaws.com/drone-plugins/drone-s3-sync:
+  s3_sync:
     acl: public-read
     region: "eu-west-1"
     bucket: "backpack.sandbox.aws.skyscnr.com"
@@ -29,7 +29,7 @@ publish:
     when:
       branch: sandbox
 
-  325714046698.dkr.ecr.eu-west-1.amazonaws.com/drone-plugins/drone-s3-sync:
+  s3_sync:
     acl: public-read
     region: "eu-west-1"
     bucket: "backpack.prod.aws.skyscnr.com"
