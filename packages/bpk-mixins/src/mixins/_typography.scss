@@ -272,6 +272,10 @@
     color: $bpk-link-active-color;
     text-decoration: $bpk-link-hover-text-decoration;
   }
+
+  &:visited {
+    color: $bpk-link-visited-color;
+  }
 }
 
 /// White link. Modifies the bpk-link mixin.
@@ -293,6 +297,10 @@
 
   &:active {
     color: $bpk-link-white-active-color;
+  }
+
+  &:visited {
+    color: $bpk-link-white-visited-color;
   }
 }
 

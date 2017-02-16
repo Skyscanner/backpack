@@ -1795,6 +1795,12 @@
       "name": "linkActiveColor"
     },
     {
+      "value": "rgb(0, 140, 168)",
+      "type": "color",
+      "category": "text-colors",
+      "name": "linkVisitedColor"
+    },
+    {
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "category": "text-colors",
@@ -1811,6 +1817,12 @@
       "type": "color",
       "category": "text-colors",
       "name": "linkWhiteActiveColor"
+    },
+    {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "text-colors",
+      "name": "linkWhiteVisitedColor"
     },
     {
       "type": "number",

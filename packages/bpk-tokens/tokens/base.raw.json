@@ -1871,6 +1871,12 @@
       "category": "text-colors",
       "name": "LINK_ACTIVE_COLOR"
     },
+    "LINK_VISITED_COLOR": {
+      "value": "rgb(0, 140, 168)",
+      "type": "color",
+      "category": "text-colors",
+      "name": "LINK_VISITED_COLOR"
+    },
     "LINK_WHITE_COLOR": {
       "value": "rgb(255, 255, 255)",
       "type": "color",
@@ -1888,6 +1894,12 @@
       "type": "color",
       "category": "text-colors",
       "name": "LINK_WHITE_ACTIVE_COLOR"
+    },
+    "LINK_WHITE_VISITED_COLOR": {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "text-colors",
+      "name": "LINK_WHITE_VISITED_COLOR"
     },
     "ZINDEX_AUTOSUGGEST": {
       "type": "number",
@@ -2208,9 +2220,11 @@
     "LINK_HOVER_COLOR",
     "LINK_HOVER_TEXT_DECORATION",
     "LINK_ACTIVE_COLOR",
+    "LINK_VISITED_COLOR",
     "LINK_WHITE_COLOR",
     "LINK_WHITE_HOVER_COLOR",
     "LINK_WHITE_ACTIVE_COLOR",
+    "LINK_WHITE_VISITED_COLOR",
     "ZINDEX_AUTOSUGGEST",
     "ZINDEX_MODAL_SCRIM",
     "ZINDEX_MODAL"
