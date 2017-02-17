@@ -24,6 +24,7 @@ describe('BpkPopoverPortal', () => {
         target={<div>target</div>}
         isOpen={false}
         onClose={() => null}
+        label="My popover"
         closeButtonText="Close"
       >
         <div>My popover content</div>
@@ -43,6 +44,7 @@ describe('BpkPopoverPortal', () => {
         target={<div>target</div>}
         isOpen={false}
         onClose={() => null}
+        label="My popover"
         closeButtonText="Close"
       >
         <div>My popover content</div>

@@ -2,7 +2,10 @@
 
 ## UNRELEASED
 
-_Nothing yet_
+- bpk-component-link:
+- bpk-mixins:
+- bpk-tokens:
+  - Added `:visited` link colour of `blue-700`
 
 ## 2017-02-16 - Added month transitions to calendar and datepicker
 

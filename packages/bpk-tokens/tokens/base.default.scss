@@ -597,11 +597,15 @@ $bpk-link-hover-text-decoration: underline !default;
 /// @group text-colors
 $bpk-link-active-color: rgb(129, 123, 143) !default;
 /// @group text-colors
+$bpk-link-visited-color: rgb(0, 140, 168) !default;
+/// @group text-colors
 $bpk-link-white-color: rgb(255, 255, 255) !default;
 /// @group text-colors
 $bpk-link-white-hover-color: rgb(255, 255, 255) !default;
 /// @group text-colors
 $bpk-link-white-active-color: rgb(230, 228, 235) !default;
+/// @group text-colors
+$bpk-link-white-visited-color: rgb(255, 255, 255) !default;
 /// @group z-indices
 $bpk-zindex-autosuggest: 900 !default;
 /// @group z-indices

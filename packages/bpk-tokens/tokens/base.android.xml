@@ -299,9 +299,11 @@
   <color name="LINK_HOVER_COLOR" category="text-colors">#524c61ff</color>
   <property name="LINK_HOVER_TEXT_DECORATION" category="text-decorations">underline</property>
   <color name="LINK_ACTIVE_COLOR" category="text-colors">#817b8fff</color>
+  <color name="LINK_VISITED_COLOR" category="text-colors">#008ca8ff</color>
   <color name="LINK_WHITE_COLOR" category="text-colors">#ffffffff</color>
   <color name="LINK_WHITE_HOVER_COLOR" category="text-colors">#ffffffff</color>
   <color name="LINK_WHITE_ACTIVE_COLOR" category="text-colors">#e6e4ebff</color>
+  <color name="LINK_WHITE_VISITED_COLOR" category="text-colors">#ffffffff</color>
   <property name="ZINDEX_AUTOSUGGEST" category="z-indices">900</property>
   <property name="ZINDEX_MODAL_SCRIM" category="z-indices">1000</property>
   <property name="ZINDEX_MODAL" category="z-indices">1100</property>
