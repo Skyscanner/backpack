@@ -1,6 +1,6 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2017-02-17 Improved autosuggest input options & `:visited` link styles
 
 **Changed:**
 - bpk-component-autosuggest: 1.1.11 => 2.0.0
