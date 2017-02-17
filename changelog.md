@@ -3,18 +3,18 @@
 ## UNRELEASED
 
 **Changed:**
-- bpk-component-autosuggest:
+- bpk-component-autosuggest: 1.1.11 => 2.0.0
   - Upgraded `react-autosuggest` to `v8.0.0` & made use of `renderInputComponent` to truly compose `bpk-component-input`
     rather than just style the input that `react-autosuggest` renders
 
 **Added:**
-- bpk-component-link:
-- bpk-mixins:
-- bpk-tokens:
+- bpk-component-link: 0.4.8 => 0.5.0
+- bpk-mixins: 8.5.0 => 8.6.0
+- bpk-tokens: 17.0.6 => 17.1.0
   - Added `:visited` link colour of `blue-700`
 
 **Fixed:**
-- bpk-component-datepicker:
+- bpk-component-datepicker: 5.0.0 => 5.0.1
   - Fixed bug with datepicker not closing on IE9
 
 ## 2017-02-16 - Added month transitions to calendar and datepicker
