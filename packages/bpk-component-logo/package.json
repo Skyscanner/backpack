@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-logo",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "description": "Backpack logo component.",
   "main": "index.js",
   "repository": {
@@ -13,8 +13,8 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^8.5.0",
-    "bpk-svgs": "^4.3.0",
-    "bpk-tokens": "^17.0.6"
+    "bpk-mixins": "^8.6.0",
+    "bpk-svgs": "^4.3.1",
+    "bpk-tokens": "^17.1.0"
   }
 }
