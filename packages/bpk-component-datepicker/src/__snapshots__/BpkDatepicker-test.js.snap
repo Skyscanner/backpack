@@ -6,6 +6,7 @@ exports[`BpkDatepicker should render correctly 1`] = `
   className="bpk-input bpk-input--large bpk-datepicker__input"
   id="myDatepicker"
   name="myDatepicker_input"
+  onBlur={[Function]}
   onChange={[Function]}
   onClick={[Function]}
   onFocus={[Function]}
