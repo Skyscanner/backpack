@@ -108,8 +108,10 @@ class AutosuggestExample extends React.Component {
     const { value, suggestions } = this.state;
 
     const inputProps = {
-      placeholder: 'Enter an office name',
+      id: 'my-autosuggest',
+      name: 'my_autosuggest',
       value,
+      placeholder: 'Enter an office name',
       onChange: this.onChange,
     };
 

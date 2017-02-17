@@ -88,8 +88,8 @@ class AutosuggestExample extends Component {
     instances += instances;
 
     this.state = {
-      autosuggestId: `autosuggest-example-${instances}`,
       value: '',
+      autosuggestId: `autosuggest-example-${instances}`,
       suggestions: [],
     };
 
@@ -121,8 +121,9 @@ class AutosuggestExample extends Component {
 
     const inputProps = {
       id: autosuggestId,
-      placeholder: 'Enter an office name',
+      name: 'my_autosuggest',
       value,
+      placeholder: 'Enter an office name',
       onChange: this.onChange,
     };
 

@@ -2,6 +2,12 @@
 
 ## UNRELEASED
 
+**Changed:**
+- bpk-component-autosuggest:
+  - Upgraded `react-autosuggest` to `v8.0.0` & made use of `renderInputComponent` to truly compose `bpk-component-input`
+    rather than just style the input that `react-autosuggest` renders
+    
+**Added:**
 - bpk-component-link:
 - bpk-mixins:
 - bpk-tokens:
