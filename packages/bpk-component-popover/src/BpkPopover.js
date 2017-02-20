@@ -41,7 +41,7 @@ const BpkPopover = (props) => {
         className={classNames.join(' ')}
         {...rest}
       >
-        <span className="bpk-popover__arrow" role="presentation" />
+        <span id="js-bpk-popover-arrow" className="bpk-popover__arrow" role="presentation" />
         <div className="bpk-popover__inner">
           {labelAsTitle
             ? (

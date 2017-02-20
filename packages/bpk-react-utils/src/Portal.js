@@ -85,7 +85,7 @@ class Portal extends Component {
     this.portalElement = document.createElement('div');
     document.body.appendChild(this.portalElement);
     document.addEventListener('mouseup', this.onDocumentClick, false);
-    document.addEventListener('touchstart', this.onDocumentClick, false);
+    document.addEventListener('touchend', this.onDocumentClick, false);
     document.addEventListener('keydown', this.onDocumentKeyDown, false);
 
     this.componentDidUpdate();
@@ -100,7 +100,7 @@ class Portal extends Component {
     unmountComponentAtNode(this.portalElement);
     document.body.removeChild(this.portalElement);
     document.removeEventListener('mouseup', this.onDocumentClick, false);
-    document.removeEventListener('touchstart', this.onDocumentClick, false);
+    document.removeEventListener('touchend', this.onDocumentClick, false);
     document.removeEventListener('keydown', this.onDocumentKeyDown, false);
     this.portalElement = null;
   }

@@ -7,6 +7,7 @@ exports[`BpkPopover should render correctly 1`] = `
   tabIndex="-1">
   <span
     className="bpk-popover__arrow"
+    id="js-bpk-popover-arrow"
     role="presentation" />
   <div
     className="bpk-popover__inner">
@@ -41,6 +42,7 @@ exports[`BpkPopover should render correctly with "className" attribute 1`] = `
   tabIndex="-1">
   <span
     className="bpk-popover__arrow"
+    id="js-bpk-popover-arrow"
     role="presentation" />
   <div
     className="bpk-popover__inner">
@@ -75,6 +77,7 @@ exports[`BpkPopover should render correctly with "labelAsTitle" attribute 1`] = 
   tabIndex="-1">
   <span
     className="bpk-popover__arrow"
+    id="js-bpk-popover-arrow"
     role="presentation" />
   <div
     className="bpk-popover__inner">
@@ -120,6 +123,7 @@ exports[`BpkPopover should render correctly with "padded" attribute equal to fal
   tabIndex="-1">
   <span
     className="bpk-popover__arrow"
+    id="js-bpk-popover-arrow"
     role="presentation" />
   <div
     className="bpk-popover__inner">
