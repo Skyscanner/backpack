@@ -117,7 +117,7 @@ Without css modules:
 
 ## TransitionInitialMount.js
 
-A wrapper around `react-addons-css-transition-group` which makes it easy to transition a
+A wrapper around `react-transition-group` which makes it easy to transition a
 components initial mount. All you need to provide is a class name and a timeout.
 
 ### Usage

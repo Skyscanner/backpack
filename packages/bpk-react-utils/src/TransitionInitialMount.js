@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 const FirstChild = (props) => {
   const children = React.Children.toArray(props.children);
@@ -7,7 +7,7 @@ const FirstChild = (props) => {
 };
 
 const TransitionInitialMount = props => (
-  <ReactCSSTransitionGroup
+  <CSSTransitionGroup
     component={FirstChild}
     transitionName={{
       appear: `${props.classNamePrefix}--appear`,
@@ -19,7 +19,7 @@ const TransitionInitialMount = props => (
     transitionLeaveTimeout={0}
   >
     {props.children}
-  </ReactCSSTransitionGroup>
+  </CSSTransitionGroup>
 );
 
 TransitionInitialMount.propTypes = {

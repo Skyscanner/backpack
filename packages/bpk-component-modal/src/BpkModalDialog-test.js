@@ -1,8 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-jest.mock('react-addons-css-transition-group');
-
 /* eslint-disable import/first */
 import BpkModalDialog from './BpkModalDialog';
 /* eslint-enable */
