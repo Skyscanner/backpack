@@ -1,5 +1,16 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Fixed:**
+- bpk-component-popover:
+- bpk-component-button:
+- bpk-component-autosuggest:
+- bpk-component-modal:
+- bpk-react-utils:
+  - Removed all traces of `react/lib` in the components above (bye bye `react-addons-css-transition-group`)
+  - Fixed issue with users of webpack externals and bloated bundles
+
 ## 2017-02-17 Improved autosuggest input options & `:visited` link styles
 
 **Changed:**
