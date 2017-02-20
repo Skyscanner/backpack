@@ -100,7 +100,7 @@
       "node_modules\/(?!bpk)"
     ],
     "moduleNameMapper": {
-      "react-addons-css-transition-group": "<rootDir>/scripts/jest/cssTransitionGroupStub.js",
+      "react-transition-group/CSSTransitionGroup": "<rootDir>/scripts/jest/cssTransitionGroupStub.js",
       "^.+\\.scss$": "<rootDir>/scripts/jest/styleStub.js",
       "^.+\\.svg$": "<rootDir>/scripts/jest/fileStub.js"
     },
