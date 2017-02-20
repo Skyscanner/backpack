@@ -2,13 +2,18 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-02-20 - Removed more traces of `react/lib`
+
 **Fixed:**
-- bpk-component-popover:
-- bpk-component-button:
-- bpk-component-autosuggest:
-- bpk-component-modal:
-- bpk-react-utils:
-  - Removed all traces of `react/lib` in the components above (bye bye `react-addons-css-transition-group`)
+- bpk-component-autosuggest: 2.0.0 => 2.0.1
+- bpk-component-button: 1.5.10 => 1.5.11
+- bpk-component-datepicker: 5.0.1 => 5.0.2
+- bpk-component-modal: 1.0.2 => 1.0.3
+- bpk-component-popover: 1.0.2 => 1.0.3
+- bpk-react-utils: 1.2.0 => 1.2.1
+  - Removed more traces of `react/lib` in the components above (bye bye `react-addons-css-transition-group`)
   - Fixed issue with users of webpack externals and bloated bundles
 
 ## 2017-02-17 Improved autosuggest input options & `:visited` link styles
