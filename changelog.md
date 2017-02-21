@@ -2,7 +2,13 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Fixed:**
+- bpk-component-datepicker:
+- bpk-component-popover:
+  - Arrow position now stays true to the target element
+
+- bpk-react-utils:
+  - Portal now closes on `touchend` instead of `touchstart`
 
 ## 2017-02-20 - Removed more traces of `react/lib`
 
