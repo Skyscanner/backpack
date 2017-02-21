@@ -5,6 +5,7 @@ import BpkCloseButton from 'bpk-component-close-button';
 import { TransitionInitialMount } from 'bpk-react-utils';
 
 import './bpk-popover.scss';
+import { ARROW_ID } from './constants';
 
 const BpkPopover = (props) => {
   const {
@@ -41,7 +42,7 @@ const BpkPopover = (props) => {
         className={classNames.join(' ')}
         {...rest}
       >
-        <span id="js-bpk-popover-arrow" className="bpk-popover__arrow" role="presentation" />
+        <span id={ARROW_ID} className="bpk-popover__arrow" role="presentation" />
         <div className="bpk-popover__inner">
           {labelAsTitle
             ? (

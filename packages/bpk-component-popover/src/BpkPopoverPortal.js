@@ -6,6 +6,7 @@ import React, { PropTypes, Component } from 'react';
 import './bpk-popover.scss';
 import BpkPopover from './BpkPopover';
 import Tether from './TetherWrapper';
+import { ARROW_ID } from './constants';
 
 const hasClass = (el, className) => {
   if (el.classList) {
@@ -16,7 +17,7 @@ const hasClass = (el, className) => {
 };
 
 const getArrowPositionCallback = (popoverElement) => {
-  const arrowElement = popoverElement.querySelector('#js-bpk-popover-arrow');
+  const arrowElement = popoverElement.querySelector(`#${ARROW_ID}`);
 
   if (popoverElement === null) {
     return () => null;
