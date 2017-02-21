@@ -8,6 +8,8 @@ import BpkPopover from './BpkPopover';
 import Tether from './TetherWrapper';
 import { ARROW_ID } from './constants';
 
+// For compat with various IE browsers who haven't implemented classList yet.
+// See http://youmightnotneedjquery.com/#has_class.
 const hasClass = (el, className) => {
   if (el.classList) {
     return el.classList.contains(className);
