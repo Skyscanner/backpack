@@ -18,10 +18,14 @@ const hasClass = (el, className) => {
   return new RegExp(`(^| )${className}( |$)`, 'gi').test(el.className);
 };
 
-const getArrowPositionCallback = (popoverElement) => {
-  const arrowElement = popoverElement.querySelector(`#${ARROW_ID}`);
+const getArrowPositionCallback = (popoverElement = {}) => {
+  let arrowElement = null;
 
-  if (popoverElement === null) {
+  if (popoverElement.querySelector) {
+    arrowElement = popoverElement.querySelector(`#${ARROW_ID}`);
+  }
+
+  if (arrowElement === null) {
     return () => null;
   }
 
