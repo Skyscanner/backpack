@@ -4,7 +4,7 @@
   "description": "Backpack's library of SVG's.",
   "main": "_index.scss",
   "scripts": {
-    "svgs": "grunt"
+    "svgs": "gulp"
   },
   "repository": {
     "type": "git",
@@ -14,19 +14,12 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "bpk-tokens": "^17.1.0",
-    "grunt": "1.0.1",
-    "grunt-cli": "1.2.0",
-    "grunt-contrib-clean": "1.0.0",
-    "grunt-contrib-copy": "1.0.0",
-    "grunt-exec": "1.0.0",
-    "grunt-svgmin": "4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.2.2",
     "gulp-svgmin": "^1.2.3",
     "lodash": "4.13.1",
     "merge-stream": "^1.0.1",
     "react-svg-loader": "2.0.0-alpha.1",
-    "run-sequence": "^1.2.2",
     "tinycolor2": "^1.4.1"
   }
 }
