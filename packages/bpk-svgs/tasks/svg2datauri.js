@@ -6,11 +6,7 @@ const PLUGIN_NAME = 'svg2datauri';
 
 const mapTemplate = (options = {}) => `/// @group svgs\n$${options.mapName}: (\n${options.vars}\n);\n`;
 const mapVariableTemplate = (options = {}) => `${options.varname}: "${options.base64Data}",`;
-const colorOverride = color => (
-  `$1<style type="text/css">
-    circle, ellipse, line, path, polygon, polyline, rect, text { fill: ${color} !important }
-  </style>`
-);
+const colorOverride = color => `$1<style type="text/css">circle, ellipse, line, path, polygon, polyline, rect, text { fill: ${color} !important }</style>`; // eslint-disable-line
 
 const encodeSvg = (svgContents, color) => {
   const contents = color
