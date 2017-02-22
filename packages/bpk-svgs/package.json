@@ -13,13 +13,6 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "bpk-tokens": "^17.1.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-svgmin": "^1.2.3",
-    "lodash": "4.13.1",
-    "merge-stream": "^1.0.1",
-    "react-svg-loader": "2.0.0-alpha.1",
-    "tinycolor2": "^1.4.1"
+    "bpk-tokens": "^17.1.0"
   }
 }
