@@ -1,13 +1,22 @@
 # Backpack changelog
 
 ## UNRELEASED
+_Nothing yet..._
+
+## 2017-02-22 - Improved popover arrow positioning
 
 **Fixed:**
-- bpk-component-datepicker:
-- bpk-component-popover:
+- bpk-component-datepicker: 5.0.2 => 5.0.3
+- bpk-component-popover: 1.0.3 => 1.0.4
   - Arrow position now stays true to the target element
 
-- bpk-react-utils:
+- bpk-component-datepicker: 5.0.2 => 5.0.3
+- bpk-component-modal: 1.0.3 => 1.0.4
+- bpk-component-popover: 1.0.3 => 1.0.4
+- bpk-react-utils: 1.2.1 => 1.2.2
+  - Fixed `Object.assign` exception in popover based components
+
+- bpk-react-utils: 1.2.1 => 1.2.2
   - Portal now closes on `touchend` instead of `touchstart`
 
 ## 2017-02-20 - Removed more traces of `react/lib`
