@@ -1,7 +1,11 @@
 # Backpack changelog
 
 ## UNRELEASED
-_Nothing yet..._
+
+**Fixed**
+- bpk-component-icon:
+- bpk-svgs:
+  - Icon components now scale with custom browser font size
 
 ## 2017-02-22 - Improved popover arrow positioning
 
