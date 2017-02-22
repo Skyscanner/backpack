@@ -17,8 +17,8 @@
   },
   "devDependencies": {
     "bpk-component-autosuggest": "^2.0.1",
-    "bpk-component-banner-alert": "^0.0.31",
     "bpk-component-badge": "^0.0.18",
+    "bpk-component-banner-alert": "^0.0.31",
     "bpk-component-blockquote": "^0.0.44",
     "bpk-component-button": "^1.5.11",
     "bpk-component-calendar": "^2.0.1",

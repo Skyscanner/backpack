@@ -1,5 +1,10 @@
+import assign from 'object-assign';
 import React, { PropTypes } from 'react';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+
+// Object.assign() is used unpolyfilled in react-transition-group.
+// It will use the native implementation if it's present and isn't buggy.
+Object.assign = assign;
 
 const FirstChild = (props) => {
   const children = React.Children.toArray(props.children);
