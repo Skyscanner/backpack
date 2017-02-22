@@ -2,9 +2,13 @@
 
 ## UNRELEASED
 
-**Fixed**
-- bpk-component-icon:
-- bpk-svgs:
+_Nothing yet..._
+
+## 2017-02-22 - Fixed icon scaling in React components
+
+**Fixed:**
+- bpk-component-icon: 3.3.3 => 3.3.4
+- bpk-svgs: 4.3.1 => 4.3.2
   - Icon components now scale with custom browser font size
 
 ## 2017-02-22 - Improved popover arrow positioning
