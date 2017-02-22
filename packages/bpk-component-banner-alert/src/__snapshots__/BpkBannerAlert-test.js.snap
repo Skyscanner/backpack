@@ -9,6 +9,12 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
       <svg
         className="bpk-banner-alert__error-icon bpk-icon--align-to-button"
         height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
         viewBox="0 0 18 18"
         width="18"
         xmlns="http://www.w3.org/2000/svg">
@@ -37,6 +43,12 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
       <svg
         className="bpk-banner-alert__success-icon bpk-icon--align-to-button"
         height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
         viewBox="0 0 18 18"
         width="18"
         xmlns="http://www.w3.org/2000/svg">
@@ -65,6 +77,12 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
       <svg
         className="bpk-banner-alert__warn-icon bpk-icon--align-to-button"
         height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
         viewBox="0 0 18 18"
         width="18"
         xmlns="http://www.w3.org/2000/svg">
@@ -93,6 +111,12 @@ exports[`BpkBannerAlert should render correctly with child nodes 1`] = `
       <svg
         className="bpk-banner-alert__success-icon bpk-icon--align-to-button"
         height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
         viewBox="0 0 18 18"
         width="18"
         xmlns="http://www.w3.org/2000/svg">
@@ -116,6 +140,12 @@ exports[`BpkBannerAlert should render correctly with child nodes 1`] = `
         <svg
           className="bpk-banner-alert__expand-icon  bpk-icon--align-to-button"
           height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
           viewBox="0 0 18 18"
           width="18"
           xmlns="http://www.w3.org/2000/svg">

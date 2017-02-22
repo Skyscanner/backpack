@@ -98,6 +98,12 @@ exports[`BpkPopover should render correctly with "labelAsTitle" attribute 1`] = 
         <svg
           className="bpk-close-button__icon bpk-icon--align-to-button"
           height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
           viewBox="0 0 18 18"
           width="18"
           xmlns="http://www.w3.org/2000/svg">
