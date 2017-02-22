@@ -74,6 +74,12 @@ exports[`BpkAutosuggestSuggestion should render correctly with all available att
   <svg
     className="bpk-autosuggest__suggestion-icon"
     height="24"
+    style={
+      Object {
+        "height": "1.5rem",
+        "width": "1.5rem",
+      }
+    }
     viewBox="0 0 24 24"
     width="24"
     xmlns="http://www.w3.org/2000/svg">
@@ -104,6 +110,12 @@ exports[`BpkAutosuggestSuggestion should render correctly with an "icon" attribu
   <svg
     className="bpk-autosuggest__suggestion-icon"
     height="24"
+    style={
+      Object {
+        "height": "1.5rem",
+        "width": "1.5rem",
+      }
+    }
     viewBox="0 0 24 24"
     width="24"
     xmlns="http://www.w3.org/2000/svg">

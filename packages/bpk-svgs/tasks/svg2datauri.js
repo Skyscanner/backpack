@@ -4,47 +4,40 @@ import { PluginError } from 'gulp-util';
 
 const PLUGIN_NAME = 'svg2datauri';
 
-var mapTemplate = function (options = {}) {
-  return '/// @group svgs\n$' + options.mapName + ': (\n' + options.vars + '\n);\n'
-}
-
-var mapVariableTemplate = function (options) {
-  if (options == null) {
-    options = {};
-  }
-  return options.varname + ': "' + options.base64Data + '",'
-}
+const mapTemplate = (options = {}) => `/// @group svgs\n$${options.mapName}: (\n${options.vars}\n);\n`;
+const mapVariableTemplate = (options = {}) => `${options.varname}: "${options.base64Data}",`;
+const colorOverride = color => (
+  `$1<style type="text/css">
+    circle, ellipse, line, path, polygon, polyline, rect, text { fill: ${color} !important }
+  </style>`
+);
 
 const encodeSvg = (svgContents, color) => {
-  if (color) {
-    const colorizedSvgContents = svgContents.replace(/(<svg[^>]+>)/im, '$1<style type="text/css">circle, ellipse, line, path, polygon, polyline, rect, text { fill: ' + color + ' !important }</style>')
+  const contents = color
+    ? svgContents.replace(/(<svg[^>]+>)/im, colorOverride(color))
+    : svgContents;
 
-    return 'data:image/svg+xml;base64,' + (new Buffer(colorizedSvgContents).toString('base64'))
-  } else {
-    return 'data:image/svg+xml;base64,' + (new Buffer(svgContents).toString('base64'))
-  }
-}
+  return `data:image/svg+xml;base64,${new Buffer(contents).toString('base64')}`;
+};
 
 const svg2datauri = (svgContents, svgName, colors) => {
   if (colors) {
-    return Object.keys(colors).map((color) => mapVariableTemplate({
-      varname: svgName + '-' + color,
+    return Object.keys(colors).map(color => mapVariableTemplate({
+      varname: `${svgName}-${color}`,
       base64Data: encodeSvg(svgContents, colors[color]),
     })).join('\n');
-  } else {
-    // no colors
-    return mapVariableTemplate({
-      varname: svgName,
-      base64Data: encodeSvg(svgContents),
-    });
   }
-}
+  // no colors
+  return mapVariableTemplate({
+    varname: svgName,
+    base64Data: encodeSvg(svgContents),
+  });
+};
 
 export default (opts = {}) => {
   const stream = new Transform({ objectMode: true });
 
   stream._transform = (file, encoding, cb) => { // eslint-disable-line no-underscore-dangle
-    console.log(file.path)
     if (file.isNull()) {
       return cb(null, file);
     }
@@ -54,8 +47,8 @@ export default (opts = {}) => {
     }
 
     if (file.isBuffer()) {
-      file.contents = new Buffer(
-        svg2datauri(String(file.contents), path.basename(file.path).split('.')[ 0 ], opts.colors),
+      file.contents = new Buffer( // eslint-disable-line no-param-reassign
+        svg2datauri(String(file.contents), path.basename(file.path).split('.')[0], opts.colors),
       );
       return cb(null, file);
     }
@@ -83,7 +76,7 @@ export const sassMap = (mapName) => {
     }
 
     if (file.isBuffer()) {
-      file.contents = new Buffer(
+      file.contents = new Buffer( // eslint-disable-line no-param-reassign
         mapTemplate({
           mapName,
           vars: String(file.contents),
@@ -96,4 +89,4 @@ export const sassMap = (mapName) => {
   };
 
   return stream;
-}
+};
