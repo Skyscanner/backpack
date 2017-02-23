@@ -12,16 +12,16 @@ npm install bpk-component-logo --save
 
 ```js
 import React from 'react'
-import TOKENS from 'bpk-tokens/tokens/base.common'
+import { colors } from 'bpk-tokens/tokens/base.es6'
 import { BpkInlineLogo, BpkCloudLogo, BpkStackedLogo, BpkTianxunLogo, BpkTianxunStackedLogo } from 'bpk-component-logo'
 
 export default MyComponent = () => (
   <div>
-    <BpkInlineLogo fill={TOKENS.colorWhite} />
-    <BpkCloudLogo fill={TOKENS.colorGray700} />
-    <BpkStackedLogo fill={TOKENS.colorBlue500} />
-    <BpkTianxunLogo fill={TOKENS.colorWhite} />
-    <BpkTianxunStackedLogo fill={TOKENS.colorGray700} />
+    <BpkInlineLogo fill={colors.colorWhite} />
+    <BpkCloudLogo fill={colors.colorGray700} />
+    <BpkStackedLogo fill={colors.colorBlue500} />
+    <BpkTianxunLogo fill={colors.colorWhite} />
+    <BpkTianxunStackedLogo fill={colors.colorGray700} />
   </div>
 )
 ```

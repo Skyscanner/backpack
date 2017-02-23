@@ -5,7 +5,7 @@ import { PropTypes as RouterPropTypes } from 'react-router';
 import BpkButton from 'bpk-component-button';
 import BpkHeading from 'bpk-component-heading';
 import BpkParagraph from 'bpk-component-paragraph';
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import { colorWhite } from 'bpk-tokens/tokens/base.es6';
 import { withLargeButtonAlignment, withRtlSupport } from 'bpk-component-icon';
 import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
@@ -41,7 +41,7 @@ class HomePage extends React.Component {
                   Skyscanner products.
                 </BpkHeading>
                 <BpkButton large href={ROUTES.GETTING_STARTED} onClick={this.onGettingStartedClick}>
-                  Get started <AlignedLongArrowRightAltIcon fill={TOKENS.colorWhite} />
+                  Get started <AlignedLongArrowRightAltIcon fill={colorWhite} />
                 </BpkButton>
               </BpkGridColumn>
             </BpkGridRow>

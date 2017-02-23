@@ -1,134 +1,134 @@
-export const BUTTON_PADDING_Y = "8px";
-export const BUTTON_PADDING_X = "24px";
-export const BUTTON_PADDING_X_ICON_ONLY = "1rem";
-export const BUTTON_BORDER_RADIUS = "3px";
-export const BUTTON_BACKGROUND_COLOR = "rgb(52, 54, 61)";
-export const BUTTON_BACKGROUND_IMAGE = "none";
-export const BUTTON_HOVER_BACKGROUND_COLOR = "rgb(77, 80, 89)";
-export const BUTTON_HOVER_BACKGROUND_IMAGE = "none";
-export const BUTTON_ACTIVE_BACKGROUND_COLOR = "rgb(77, 80, 89)";
-export const BUTTON_ACTIVE_BACKGROUND_IMAGE = "none";
-export const BUTTON_DISABLED_BACKGROUND_COLOR = "rgba(0, 0, 0, 0.5)";
-export const BUTTON_DISABLED_BACKGROUND_IMAGE = "none";
-export const BUTTON_COLOR = "rgb(0, 221, 238)";
-export const BUTTON_FONT_WEIGHT = "normal";
-export const BUTTON_DISABLED_COLOR = "rgb(0, 0, 0)";
-export const BUTTON_FONT_SIZE = ".875rem";
-export const BUTTON_LINE_HEIGHT = "1.125em";
-export const BUTTON_TEXT_ALIGN = "center";
-export const BUTTON_LARGE_PADDING_X = "2rem";
-export const BUTTON_LARGE_PADDING_Y = "0.375rem";
-export const BUTTON_LARGE_PADDING_X_ICON_ONLY = ".5625rem";
-export const BUTTON_LARGE_FONT_SIZE = "1rem";
-export const BUTTON_LARGE_LINE_HEIGHT = "1.875rem";
-export const BUTTON_DISABLED_BOX_SHADOW = "none";
-export const BUTTON_SECONDARY_BACKGROUND_COLOR = "rgba(0, 0, 0, 0.5)";
-export const BUTTON_SECONDARY_BACKGROUND_IMAGE = "none";
-export const BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR = "rgba(0, 187, 204, 0.2)";
-export const BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE = "none";
-export const BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR = "rgba(0, 187, 204, 0.2)";
-export const BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE = "none";
-export const BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR = "rgb(0, 0, 0)";
-export const BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE = "none";
-export const BUTTON_SECONDARY_COLOR = "rgb(52, 54, 61)";
-export const BUTTON_SECONDARY_HOVER_COLOR = "rgb(52, 54, 61)";
-export const BUTTON_SECONDARY_ACTIVE_COLOR = "rgb(52, 54, 61)";
-export const BUTTON_SECONDARY_BOX_SHADOW = "none";
-export const BUTTON_SECONDARY_HOVER_BOX_SHADOW = "none";
-export const BUTTON_SECONDARY_ACTIVE_BOX_SHADOW = "none";
-export const BUTTON_SECONDARY_DISABLED_BOX_SHADOW = "none";
-export const BUTTON_SECONDARY_FONT_SIZE = ".875rem";
-export const BUTTON_SECONDARY_FONT_WEIGHT = "400";
-export const BUTTON_SECONDARY_LINE_HEIGHT = "1.25rem";
-export const BUTTON_DESTRUCTIVE_FONT_SIZE = ".875rem";
-export const BUTTON_DESTRUCTIVE_LINE_HEIGHT = "1.25rem";
-export const BUTTON_DESTRUCTIVE_COLOR = "rgb(197, 0, 14)";
-export const BUTTON_DESTRUCTIVE_BOX_SHADOW = "none";
-export const BUTTON_DESTRUCTIVE_HOVER_COLOR = "rgb(197, 0, 14)";
-export const BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW = "none";
-export const BUTTON_DESTRUCTIVE_ACTIVE_COLOR = "rgb(0, 0, 0)";
-export const BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW = "0 0 0 3px {!RED_500} inset";
-export const BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR = "rgb(0, 0, 0)";
-export const BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE = "none";
-export const BUTTON_DESTRUCTIVE_DISABLED_COLOR = "rgb(0, 0, 0)";
-export const BUTTON_DESTRUCTIVE_DISABLED_BOX_SHADOW = "none";
-export const FONT_FAMILY_BASE = "'markweb', Helvetica, Arial, sans-serif";
-export const LINK_COLOR = "rgb(0, 187, 204)";
-export const LINK_TEXT_DECORATION = "none";
-export const LINK_HOVER_COLOR = "rgb(52, 54, 61)";
-export const LINK_HOVER_TEXT_DECORATION = "underline";
-export const LINK_ACTIVE_COLOR = "rgb(77, 80, 89)";
-export const LINK_WHITE_COLOR = "rgb(255, 255, 255)";
-export const LINK_WHITE_HOVER_COLOR = "rgb(255, 255, 255)";
-export const LINK_WHITE_ACTIVE_COLOR = "rgb(247, 247, 247)";
+export const buttonPaddingY = "8px";
+export const buttonPaddingX = "24px";
+export const buttonPaddingXIconOnly = "1rem";
+export const buttonBorderRadius = "3px";
+export const buttonBackgroundColor = "rgb(52, 54, 61)";
+export const buttonBackgroundImage = "none";
+export const buttonHoverBackgroundColor = "rgb(77, 80, 89)";
+export const buttonHoverBackgroundImage = "none";
+export const buttonActiveBackgroundColor = "rgb(77, 80, 89)";
+export const buttonActiveBackgroundImage = "none";
+export const buttonDisabledBackgroundColor = "rgba(0, 0, 0, 0.5)";
+export const buttonDisabledBackgroundImage = "none";
+export const buttonColor = "rgb(0, 221, 238)";
+export const buttonFontWeight = "normal";
+export const buttonDisabledColor = "rgb(0, 0, 0)";
+export const buttonFontSize = ".875rem";
+export const buttonLineHeight = "1.125em";
+export const buttonTextAlign = "center";
+export const buttonLargePaddingX = "2rem";
+export const buttonLargePaddingY = "0.375rem";
+export const buttonLargePaddingXIconOnly = ".5625rem";
+export const buttonLargeFontSize = "1rem";
+export const buttonLargeLineHeight = "1.875rem";
+export const buttonDisabledBoxShadow = "none";
+export const buttonSecondaryBackgroundColor = "rgba(0, 0, 0, 0.5)";
+export const buttonSecondaryBackgroundImage = "none";
+export const buttonSecondaryHoverBackgroundColor = "rgba(0, 187, 204, 0.2)";
+export const buttonSecondaryHoverBackgroundImage = "none";
+export const buttonSecondaryActiveBackgroundColor = "rgba(0, 187, 204, 0.2)";
+export const buttonSecondaryActiveBackgroundImage = "none";
+export const buttonSecondaryDisabledBackgroundColor = "rgb(0, 0, 0)";
+export const buttonSecondaryDisabledBackgroundImage = "none";
+export const buttonSecondaryColor = "rgb(52, 54, 61)";
+export const buttonSecondaryHoverColor = "rgb(52, 54, 61)";
+export const buttonSecondaryActiveColor = "rgb(52, 54, 61)";
+export const buttonSecondaryBoxShadow = "none";
+export const buttonSecondaryHoverBoxShadow = "none";
+export const buttonSecondaryActiveBoxShadow = "none";
+export const buttonSecondaryDisabledBoxShadow = "none";
+export const buttonSecondaryFontSize = ".875rem";
+export const buttonSecondaryFontWeight = "400";
+export const buttonSecondaryLineHeight = "1.25rem";
+export const buttonDestructiveFontSize = ".875rem";
+export const buttonDestructiveLineHeight = "1.25rem";
+export const buttonDestructiveColor = "rgb(197, 0, 14)";
+export const buttonDestructiveBoxShadow = "none";
+export const buttonDestructiveHoverColor = "rgb(197, 0, 14)";
+export const buttonDestructiveHoverBoxShadow = "none";
+export const buttonDestructiveActiveColor = "rgb(0, 0, 0)";
+export const buttonDestructiveActiveBoxShadow = "0 0 0 3px {!RED_500} inset";
+export const buttonDestructiveDisabledBackgroundColor = "rgb(0, 0, 0)";
+export const buttonDestructiveDisabledBackgroundImage = "none";
+export const buttonDestructiveDisabledColor = "rgb(0, 0, 0)";
+export const buttonDestructiveDisabledBoxShadow = "none";
+export const fontFamilyBase = "'markweb', Helvetica, Arial, sans-serif";
+export const linkColor = "rgb(0, 187, 204)";
+export const linkTextDecoration = "none";
+export const linkHoverColor = "rgb(52, 54, 61)";
+export const linkHoverTextDecoration = "underline";
+export const linkActiveColor = "rgb(77, 80, 89)";
+export const linkWhiteColor = "rgb(255, 255, 255)";
+export const linkWhiteHoverColor = "rgb(255, 255, 255)";
+export const linkWhiteActiveColor = "rgb(247, 247, 247)";
 export const buttons = {
-BUTTON_PADDING_Y,
-BUTTON_PADDING_X,
-BUTTON_PADDING_X_ICON_ONLY,
-BUTTON_BORDER_RADIUS,
-BUTTON_BACKGROUND_COLOR,
-BUTTON_BACKGROUND_IMAGE,
-BUTTON_HOVER_BACKGROUND_COLOR,
-BUTTON_HOVER_BACKGROUND_IMAGE,
-BUTTON_ACTIVE_BACKGROUND_COLOR,
-BUTTON_ACTIVE_BACKGROUND_IMAGE,
-BUTTON_DISABLED_BACKGROUND_COLOR,
-BUTTON_DISABLED_BACKGROUND_IMAGE,
-BUTTON_COLOR,
-BUTTON_FONT_WEIGHT,
-BUTTON_DISABLED_COLOR,
-BUTTON_FONT_SIZE,
-BUTTON_LINE_HEIGHT,
-BUTTON_TEXT_ALIGN,
-BUTTON_LARGE_PADDING_X,
-BUTTON_LARGE_PADDING_Y,
-BUTTON_LARGE_PADDING_X_ICON_ONLY,
-BUTTON_LARGE_FONT_SIZE,
-BUTTON_LARGE_LINE_HEIGHT,
-BUTTON_DISABLED_BOX_SHADOW,
-BUTTON_SECONDARY_BACKGROUND_COLOR,
-BUTTON_SECONDARY_BACKGROUND_IMAGE,
-BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR,
-BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE,
-BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR,
-BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE,
-BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR,
-BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE,
-BUTTON_SECONDARY_COLOR,
-BUTTON_SECONDARY_HOVER_COLOR,
-BUTTON_SECONDARY_ACTIVE_COLOR,
-BUTTON_SECONDARY_BOX_SHADOW,
-BUTTON_SECONDARY_HOVER_BOX_SHADOW,
-BUTTON_SECONDARY_ACTIVE_BOX_SHADOW,
-BUTTON_SECONDARY_DISABLED_BOX_SHADOW,
-BUTTON_SECONDARY_FONT_SIZE,
-BUTTON_SECONDARY_FONT_WEIGHT,
-BUTTON_SECONDARY_LINE_HEIGHT,
-BUTTON_DESTRUCTIVE_FONT_SIZE,
-BUTTON_DESTRUCTIVE_LINE_HEIGHT,
-BUTTON_DESTRUCTIVE_COLOR,
-BUTTON_DESTRUCTIVE_BOX_SHADOW,
-BUTTON_DESTRUCTIVE_HOVER_COLOR,
-BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW,
-BUTTON_DESTRUCTIVE_ACTIVE_COLOR,
-BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW,
-BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR,
-BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE,
-BUTTON_DESTRUCTIVE_DISABLED_COLOR,
-BUTTON_DESTRUCTIVE_DISABLED_BOX_SHADOW,
+buttonPaddingY,
+buttonPaddingX,
+buttonPaddingXIconOnly,
+buttonBorderRadius,
+buttonBackgroundColor,
+buttonBackgroundImage,
+buttonHoverBackgroundColor,
+buttonHoverBackgroundImage,
+buttonActiveBackgroundColor,
+buttonActiveBackgroundImage,
+buttonDisabledBackgroundColor,
+buttonDisabledBackgroundImage,
+buttonColor,
+buttonFontWeight,
+buttonDisabledColor,
+buttonFontSize,
+buttonLineHeight,
+buttonTextAlign,
+buttonLargePaddingX,
+buttonLargePaddingY,
+buttonLargePaddingXIconOnly,
+buttonLargeFontSize,
+buttonLargeLineHeight,
+buttonDisabledBoxShadow,
+buttonSecondaryBackgroundColor,
+buttonSecondaryBackgroundImage,
+buttonSecondaryHoverBackgroundColor,
+buttonSecondaryHoverBackgroundImage,
+buttonSecondaryActiveBackgroundColor,
+buttonSecondaryActiveBackgroundImage,
+buttonSecondaryDisabledBackgroundColor,
+buttonSecondaryDisabledBackgroundImage,
+buttonSecondaryColor,
+buttonSecondaryHoverColor,
+buttonSecondaryActiveColor,
+buttonSecondaryBoxShadow,
+buttonSecondaryHoverBoxShadow,
+buttonSecondaryActiveBoxShadow,
+buttonSecondaryDisabledBoxShadow,
+buttonSecondaryFontSize,
+buttonSecondaryFontWeight,
+buttonSecondaryLineHeight,
+buttonDestructiveFontSize,
+buttonDestructiveLineHeight,
+buttonDestructiveColor,
+buttonDestructiveBoxShadow,
+buttonDestructiveHoverColor,
+buttonDestructiveHoverBoxShadow,
+buttonDestructiveActiveColor,
+buttonDestructiveActiveBoxShadow,
+buttonDestructiveDisabledBackgroundColor,
+buttonDestructiveDisabledBackgroundImage,
+buttonDestructiveDisabledColor,
+buttonDestructiveDisabledBoxShadow,
 };
 export const typesettings = {
-FONT_FAMILY_BASE,
+fontFamilyBase,
 };
 export const textColors = {
-LINK_COLOR,
-LINK_HOVER_COLOR,
-LINK_ACTIVE_COLOR,
-LINK_WHITE_COLOR,
-LINK_WHITE_HOVER_COLOR,
-LINK_WHITE_ACTIVE_COLOR,
+linkColor,
+linkHoverColor,
+linkActiveColor,
+linkWhiteColor,
+linkWhiteHoverColor,
+linkWhiteActiveColor,
 };
 export const textDecorations = {
-LINK_TEXT_DECORATION,
-LINK_HOVER_TEXT_DECORATION,
+linkTextDecoration,
+linkHoverTextDecoration,
 };

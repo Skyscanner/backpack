@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import { colors } from 'bpk-tokens/tokens/base.es6';
 import BpkButton from '../bpk-component-button';
 import { BpkList, BpkListItem } from '../bpk-component-list';
 
@@ -21,7 +21,7 @@ storiesOf('bpk-component-icon', module)
         const Icon = sm[icon];
         return (
           <BpkListItem key={icon}>
-            <Icon fill={TOKENS.colorGray700} /> <span>{icon}</span>
+            <Icon fill={colors.colorGray700} /> <span>{icon}</span>
           </BpkListItem>
         );
       })}
@@ -33,7 +33,7 @@ storiesOf('bpk-component-icon', module)
         const Icon = lg[icon];
         return (
           <BpkListItem key={icon}>
-            <Icon fill={TOKENS.colorGray700} /> <span>{icon}</span>
+            <Icon fill={colors.colorGray700} /> <span>{icon}</span>
           </BpkListItem>
         );
       })}
@@ -41,16 +41,16 @@ storiesOf('bpk-component-icon', module)
   ))
   .add('Align to button', () => (
     <BpkButton>
-      Search <AlignedSmallLongArrowRightIcon fill={TOKENS.colorWhite} />
+      Search <AlignedSmallLongArrowRightIcon fill={colors.colorWhite} />
     </BpkButton>
   ))
   .add('Align to large button', () => (
     <BpkButton large>
-      Search <AlignedLargeLongArrowRightIcon fill={TOKENS.colorWhite} />
+      Search <AlignedLargeLongArrowRightIcon fill={colors.colorWhite} />
     </BpkButton>
   ))
   .add('Align to large button (RTL support)', () => (
     <BpkButton large>
-      Search <RtlAlignedLargeLongArrowRightIcon fill={TOKENS.colorWhite} />
+      Search <RtlAlignedLargeLongArrowRightIcon fill={colors.colorWhite} />
     </BpkButton>
   ));

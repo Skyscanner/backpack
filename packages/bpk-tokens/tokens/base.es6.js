@@ -1,660 +1,660 @@
-export const DURATION_XS = "50ms";
-export const DURATION_SM = "200ms";
-export const DURATION_BASE = "400ms";
-export const AUTOSUGGEST_LIST_BACKGROUND_COLOR = "rgb(255, 255, 255)";
-export const AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR = "rgb(230, 228, 235)";
-export const AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR = "rgb(243, 242, 245)";
-export const BADGE_PADDING_Y = "0";
-export const BADGE_PADDING_X = ".375rem";
-export const BADGE_BACKGROUND_COLOR = "rgb(255, 187, 0)";
-export const BADGE_CENTERED_VERTICAL_ALIGN = "text-bottom";
-export const BORDER_RADIUS_XS = ".1875rem";
-export const BORDER_RADIUS_SM = ".375rem";
-export const BORDER_RADIUS_PILL = "5rem";
-export const BOX_SHADOW_SM = "0px 1px 3px 0px rgba(#252033, .2)";
-export const BOX_SHADOW_LG = "0px 4px 14px 0px rgba(#252033, .25)";
-export const BOX_SHADOW_XL = "0px 12px 50px 0px rgba(#252033, .25)";
-export const BREAKPOINT_MOBILE = "32.25rem";
-export const BREAKPOINT_TABLET = "50.25rem";
-export const BREAKPOINT_DESKTOP = "71.25rem";
-export const BREAKPOINT_QUERY_MOBILE = "(max-width: 32.25rem)";
-export const BREAKPOINT_QUERY_TABLET = "(max-width: 50.25rem)";
-export const BREAKPOINT_QUERY_TABLET_ONLY = "(min-width: 32.3125rem) and (max-width: 50.25rem)";
-export const BREAKPOINT_QUERY_ABOVE_MOBILE = "(min-width: 32.3125rem)";
-export const BREAKPOINT_QUERY_ABOVE_TABLET = "(min-width: 50.3125rem)";
-export const BUTTON_PADDING_Y = ".375rem";
-export const BUTTON_PADDING_X = "1.125rem";
-export const BUTTON_PADDING_X_ICON_ONLY = ".5625rem";
-export const BUTTON_BORDER_RADIUS = "5rem";
-export const BUTTON_BACKGROUND_COLOR = "rgb(0, 215, 117)";
-export const BUTTON_BACKGROUND_IMAGE = "linear-gradient(-180deg, #00d775 0%, #00bd68 100%)";
-export const BUTTON_HOVER_BACKGROUND_COLOR = "rgb(0, 189, 104)";
-export const BUTTON_HOVER_BACKGROUND_IMAGE = "none";
-export const BUTTON_ACTIVE_BACKGROUND_COLOR = "rgb(0, 168, 93)";
-export const BUTTON_ACTIVE_BACKGROUND_IMAGE = "none";
-export const BUTTON_DISABLED_BACKGROUND_COLOR = "rgb(230, 228, 235)";
-export const BUTTON_DISABLED_BACKGROUND_IMAGE = "none";
-export const BUTTON_COLOR = "rgb(255, 255, 255)";
-export const BUTTON_HOVER_COLOR = "rgb(255, 255, 255)";
-export const BUTTON_ACTIVE_COLOR = "rgb(255, 255, 255)";
-export const BUTTON_BOX_SHADOW = "none";
-export const BUTTON_HOVER_BOX_SHADOW = "none";
-export const BUTTON_ACTIVE_BOX_SHADOW = "none";
-export const BUTTON_DISABLED_BOX_SHADOW = "none";
-export const BUTTON_DISABLED_COLOR = "rgb(178, 174, 189)";
-export const BUTTON_FONT_SIZE = "1rem";
-export const BUTTON_FONT_WEIGHT = "700";
-export const BUTTON_LINE_HEIGHT = "1.5rem";
-export const BUTTON_TEXT_ALIGN = "center";
-export const BUTTON_LARGE_PADDING_Y = ".375rem";
-export const BUTTON_LARGE_PADDING_X = "1.5rem";
-export const BUTTON_LARGE_PADDING_X_ICON_ONLY = ".5625rem";
-export const BUTTON_LARGE_FONT_SIZE = "1.5rem";
-export const BUTTON_LARGE_LINE_HEIGHT = "1.875rem";
-export const BUTTON_SECONDARY_BACKGROUND_COLOR = "rgb(255, 255, 255)";
-export const BUTTON_SECONDARY_BACKGROUND_IMAGE = "none";
-export const BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR = "rgb(255, 255, 255)";
-export const BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE = "none";
-export const BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR = "rgb(255, 255, 255)";
-export const BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE = "none";
-export const BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR = "rgb(230, 228, 235)";
-export const BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE = "none";
-export const BUTTON_SECONDARY_COLOR = "rgb(0, 178, 214)";
-export const BUTTON_SECONDARY_HOVER_COLOR = "rgb(0, 178, 214)";
-export const BUTTON_SECONDARY_ACTIVE_COLOR = "rgb(0, 178, 214)";
-export const BUTTON_SECONDARY_DISABLED_COLOR = "rgb(178, 174, 189)";
-export const BUTTON_SECONDARY_BOX_SHADOW = "0 0 0 2px #E6E4EB inset";
-export const BUTTON_SECONDARY_HOVER_BOX_SHADOW = "0 0 0 2px #00b2d6 inset";
-export const BUTTON_SECONDARY_ACTIVE_BOX_SHADOW = "0 0 0 3px #00b2d6 inset";
-export const BUTTON_SECONDARY_DISABLED_BOX_SHADOW = "none";
-export const BUTTON_DESTRUCTIVE_COLOR = "rgb(255, 84, 82)";
-export const BUTTON_DESTRUCTIVE_BOX_SHADOW = "0 0 0 2px #E6E4EB inset";
-export const BUTTON_DESTRUCTIVE_HOVER_COLOR = "rgb(255, 84, 82)";
-export const BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW = "0 0 0 2px #ff5452 inset";
-export const BUTTON_DESTRUCTIVE_ACTIVE_COLOR = "rgb(255, 84, 82)";
-export const BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW = "0 0 0 3px #ff5452 inset";
-export const BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR = "rgb(230, 228, 235)";
-export const BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE = "none";
-export const BUTTON_DESTRUCTIVE_DISABLED_COLOR = "rgb(178, 174, 189)";
-export const BUTTON_DESTRUCTIVE_DISABLED_BOX_SHADOW = "none";
-export const BUTTON_SELECTED_BACKGROUND_COLOR = "rgb(0, 178, 214)";
-export const BUTTON_SELECTED_BACKGROUND_IMAGE = "linear-gradient(-180deg, #00b2d6 0%, #009dbd 100%)";
-export const BUTTON_SELECTED_HOVER_BACKGROUND_COLOR = "rgb(0, 157, 189)";
-export const BUTTON_SELECTED_HOVER_BACKGROUND_IMAGE = "none";
-export const BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR = "rgb(0, 140, 168)";
-export const BUTTON_SELECTED_ACTIVE_BACKGROUND_IMAGE = "none";
-export const BUTTON_SELECTED_COLOR = "rgb(255, 255, 255)";
-export const BUTTON_SELECTED_HOVER_COLOR = "rgb(255, 255, 255)";
-export const BUTTON_SELECTED_ACTIVE_COLOR = "rgb(255, 255, 255)";
-export const BUTTON_SELECTED_BOX_SHADOW = "none";
-export const BUTTON_SELECTED_HOVER_BOX_SHADOW = "none";
-export const BUTTON_SELECTED_ACTIVE_BOX_SHADOW = "none";
-export const BUTTON_SELECTED_DISABLED_BOX_SHADOW = "none";
-export const CALENDAR_PADDING = ".75rem";
-export const CALENDAR_DAY_SPACING = ".375rem";
-export const CALENDAR_DAY_SIZE = "2.250rem";
-export const CALENDAR_DAY_COLOR = "rgb(82, 76, 97)";
-export const CALENDAR_DAY_BACKGROUND_COLOR = "rgb(255, 255, 255)";
-export const CALENDAR_DAY_SELECTED_COLOR = "rgb(255, 255, 255)";
-export const CALENDAR_DAY_SELECTED_BACKGROUND_COLOR = "rgb(0, 215, 117)";
-export const CALENDAR_DAY_HOVER_COLOR = "rgb(82, 76, 97)";
-export const CALENDAR_DAY_HOVER_BACKGROUND_COLOR = "rgb(243, 242, 245)";
-export const CALENDAR_DAY_ACTIVE_COLOR = "rgb(82, 76, 97)";
-export const CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR = "rgb(230, 228, 235)";
-export const CALENDAR_DAY_DISABLED_COLOR = "rgb(230, 228, 235)";
-export const CALENDAR_DAY_DISABLED_BACKGROUND_COLOR = "rgb(255, 255, 255)";
-export const CALENDAR_DAY_OUTSIDE_COLOR = "rgb(178, 174, 189)";
-export const CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR = "rgb(255, 255, 255)";
-export const CALENDAR_NAV_ICON_FILL = "rgb(0, 178, 214)";
-export const CALENDAR_NAV_ICON_HOVER_FILL = "rgb(0, 157, 189)";
-export const CALENDAR_NAV_ICON_ACTIVE_FILL = "rgb(0, 140, 168)";
-export const CALENDAR_NAV_ICON_DISABLED_FILL = "rgb(230, 228, 235)";
-export const CARD_BACKGROUND_COLOR = "rgb(255, 255, 255)";
-export const CARD_COLOR = "rgb(82, 76, 97)";
-export const CARD_PADDING = ".75rem";
-export const COLOR_WHITE = "rgb(255, 255, 255)";
-export const COLOR_BLUE_50 = "rgb(225, 244, 248)";
-export const COLOR_BLUE_100 = "rgb(203, 238, 245)";
-export const COLOR_BLUE_200 = "rgb(176, 228, 238)";
-export const COLOR_BLUE_300 = "rgb(127, 215, 232)";
-export const COLOR_BLUE_400 = "rgb(64, 196, 223)";
-export const COLOR_BLUE_500 = "rgb(0, 178, 214)";
-export const COLOR_BLUE_600 = "rgb(0, 157, 189)";
-export const COLOR_BLUE_700 = "rgb(0, 140, 168)";
-export const COLOR_BLUE_800 = "rgb(0, 117, 140)";
-export const COLOR_BLUE_900 = "rgb(0, 85, 103)";
-export const COLOR_GRAY_50 = "rgb(243, 242, 245)";
-export const COLOR_GRAY_100 = "rgb(230, 228, 235)";
-export const COLOR_GRAY_200 = "rgb(204, 201, 212)";
-export const COLOR_GRAY_300 = "rgb(178, 174, 189)";
-export const COLOR_GRAY_400 = "rgb(154, 149, 167)";
-export const COLOR_GRAY_500 = "rgb(129, 123, 143)";
-export const COLOR_GRAY_600 = "rgb(105, 97, 121)";
-export const COLOR_GRAY_700 = "rgb(82, 76, 97)";
-export const COLOR_GRAY_800 = "rgb(59, 52, 75)";
-export const COLOR_GRAY_900 = "rgb(37, 32, 51)";
-export const COLOR_GREEN_50 = "rgb(223, 247, 236)";
-export const COLOR_GREEN_100 = "rgb(203, 245, 226)";
-export const COLOR_GREEN_200 = "rgb(175, 237, 209)";
-export const COLOR_GREEN_300 = "rgb(128, 232, 185)";
-export const COLOR_GREEN_400 = "rgb(64, 222, 151)";
-export const COLOR_GREEN_500 = "rgb(0, 215, 117)";
-export const COLOR_GREEN_600 = "rgb(0, 189, 104)";
-export const COLOR_GREEN_700 = "rgb(0, 168, 93)";
-export const COLOR_GREEN_800 = "rgb(0, 140, 77)";
-export const COLOR_GREEN_900 = "rgb(0, 102, 56)";
-export const COLOR_RED_50 = "rgb(252, 233, 232)";
-export const COLOR_RED_100 = "rgb(255, 214, 213)";
-export const COLOR_RED_200 = "rgb(255, 187, 186)";
-export const COLOR_RED_300 = "rgb(255, 150, 148)";
-export const COLOR_RED_400 = "rgb(254, 116, 113)";
-export const COLOR_RED_500 = "rgb(255, 84, 82)";
-export const COLOR_RED_600 = "rgb(235, 66, 63)";
-export const COLOR_RED_700 = "rgb(222, 50, 47)";
-export const COLOR_RED_800 = "rgb(204, 31, 29)";
-export const COLOR_RED_900 = "rgb(168, 3, 0)";
-export const COLOR_YELLOW_50 = "rgb(255, 249, 230)";
-export const COLOR_YELLOW_100 = "rgb(255, 243, 207)";
-export const COLOR_YELLOW_200 = "rgb(255, 236, 184)";
-export const COLOR_YELLOW_300 = "rgb(255, 225, 140)";
-export const COLOR_YELLOW_400 = "rgb(255, 207, 74)";
-export const COLOR_YELLOW_500 = "rgb(255, 187, 0)";
-export const COLOR_YELLOW_600 = "rgb(240, 176, 0)";
-export const COLOR_YELLOW_700 = "rgb(225, 165, 0)";
-export const COLOR_YELLOW_800 = "rgb(194, 142, 0)";
-export const COLOR_YELLOW_900 = "rgb(156, 114, 0)";
-export const PRIMARY_GRADIENT = "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)";
-export const INPUT_HEIGHT = "2.250rem";
-export const INPUT_PADDING_X = ".75rem";
-export const INPUT_PADDING_Y = ".375rem";
-export const INPUT_BORDER_WIDTH = ".0625rem";
-export const INPUT_BORDER = "solid .0625rem #E6E4EB";
-export const INPUT_BORDER_RADIUS = ".1875rem";
-export const INPUT_BACKGROUND = "#ffffff";
-export const INPUT_COLOR = "rgb(82, 76, 97)";
-export const INPUT_PLACEHOLDER_COLOR = "rgb(129, 123, 143)";
-export const INPUT_PLACEHOLDER_FONT_STYLE = "italic";
-export const INPUT_DISABLED_BORDER_COLOR = "rgb(243, 242, 245)";
-export const INPUT_DISABLED_COLOR = "rgb(178, 174, 189)";
-export const INPUT_INVALID_BORDER_COLOR = "rgb(255, 84, 82)";
-export const INPUT_LARGE_HEIGHT = "2.625rem + .375rem";
-export const SELECT_HEIGHT = "2.250rem";
-export const SELECT_PADDING_TOP = ".375rem";
-export const SELECT_PADDING_RIGHT = "1.875rem";
-export const SELECT_PADDING_BOTTOM = ".375rem";
-export const SELECT_PADDING_LEFT = ".75rem";
-export const SELECT_BORDER_WIDTH = ".0625rem";
-export const SELECT_BORDER = "solid .0625rem #E6E4EB";
-export const SELECT_BORDER_RADIUS = ".1875rem";
-export const SELECT_COLOR = "rgb(82, 76, 97)";
-export const SELECT_DISABLED_BORDER_COLOR = "rgb(243, 242, 245)";
-export const SELECT_DISABLED_COLOR = "rgb(178, 174, 189)";
-export const SELECT_INVALID_BORDER_COLOR = "rgb(255, 84, 82)";
-export const SELECT_LARGE_HEIGHT = "2.625rem + .375rem";
-export const LABEL_COLOR = "rgb(82, 76, 97)";
-export const LABEL_FONT_SIZE = ".75rem";
-export const LABEL_LINE_HEIGHT = "1.125rem";
-export const GRID_COLUMNS = "12";
-export const GRID_GUTTER = "1.5rem";
-export const GRID_CONTAINER_PADDING = "1.5rem";
-export const GRID_CONTAINER_MOBILE_PADDING = ".75rem";
-export const LOGO_CLOUD_DEFAULT_HEIGHT = "2.625rem";
-export const LOGO_INLINE_DEFAULT_HEIGHT = "2.625rem";
-export const LOGO_STACKED_DEFAULT_HEIGHT = "calc(1.5rem * 3)";
-export const LOGO_TIANXUN_DEFAULT_HEIGHT = "2.625rem";
-export const LOGO_TIANXUN_STACKED_DEFAULT_HEIGHT = "calc(1.5rem * 3)";
-export const MODAL_SCRIM_BACKGROUND_COLOR = "rgb(178, 174, 189)";
-export const MODAL_SCRIM_INITIAL_OPACITY = "0";
-export const MODAL_SCRIM_OPACITY = ".7";
-export const MODAL_SCRIM_MOBILE_OPACITY = "1";
-export const MODAL_BACKGROUND_COLOR = "rgb(255, 255, 255)";
-export const MODAL_INITIAL_OPACITY = "0";
-export const MODAL_OPACITY = "1";
-export const MODAL_MAX_WIDTH = "32.25rem";
-export const MODAL_WIDE_MAX_WIDTH = "50.25rem";
-export const MODAL_HEADER_PADDING = ".75rem";
-export const MODAL_HEADER_BOX_SHADOW = "0 -1px 0 0 #E6E4EB inset";
-export const MODAL_CLOSE_ICON_FILL = "rgb(129, 123, 143)";
-export const MODAL_CLOSE_ICON_HOVER_FILL = "rgb(82, 76, 97)";
-export const MODAL_CONTENT_PADDING = ".75rem";
-export const BANNER_ALERT_BACKGROUND_COLOR = "rgb(255, 255, 255)";
-export const BANNER_ALERT_SUCCESS_BOX_SHADOW = "0 0 0 1px #00d775";
-export const BANNER_ALERT_WARN_BOX_SHADOW = "0 0 0 1px #FFBB00";
-export const BANNER_ALERT_ERROR_BOX_SHADOW = "0 0 0 1px #ff5452";
-export const BANNER_ALERT_HEADER_PADDING_Y = ".375rem";
-export const BANNER_ALERT_HEADER_PADDING_X = ".75rem";
-export const BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR = "rgb(243, 242, 245)";
-export const BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR = "rgb(230, 228, 235)";
-export const BANNER_ALERT_SUCCESS_ICON_FILL = "rgb(0, 215, 117)";
-export const BANNER_ALERT_WARN_ICON_FILL = "rgb(255, 187, 0)";
-export const BANNER_ALERT_ERROR_ICON_FILL = "rgb(255, 84, 82)";
-export const BANNER_ALERT_EXPAND_ICON_FILL = "rgb(82, 76, 97)";
-export const BANNER_ALERT_CHILDREN_PADDING_Y = ".375rem";
-export const BANNER_ALERT_CHILDREN_PADDING_X = ".75rem";
-export const BANNER_ALERT_CHILDREN_COLOR = "rgb(129, 123, 143)";
-export const SPACING_XS = ".375rem";
-export const SPACING_SM = ".75rem";
-export const SPACING_MD = "1.125rem";
-export const SPACING_BASE = "1.5rem";
-export const SPACING_LG = "1.875rem";
-export const SPACING_XL = "2.250rem";
-export const SPACING_XXL = "2.625rem";
-export const ONE_PIXEL_REM = ".0625rem";
-export const FONT_FAMILY_BASE = "-apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif";
-export const FONT_COLOR_BASE = "rgb(82, 76, 97)";
-export const LINE_HEIGHT_SM = "1.125rem";
-export const LINE_HEIGHT_BASE = "1.5rem";
-export const LINE_HEIGHT_LG = "1.875rem";
-export const LINE_HEIGHT_XL = "2.625rem";
-export const LINE_HEIGHT_XXL = "3.375rem";
-export const FONT_SIZE_ROOT = "100%";
-export const FONT_SIZE_SM = ".75rem";
-export const FONT_SIZE_BASE = "1rem";
-export const FONT_SIZE_LG = "1.5rem";
-export const FONT_SIZE_XL = "1.75rem";
-export const FONT_SIZE_XXL = "2.625rem";
-export const H6_FONT_SIZE = ".75rem";
-export const H5_FONT_SIZE = ".75rem";
-export const H4_FONT_SIZE = "1rem";
-export const H3_FONT_SIZE = "1.5rem";
-export const H2_FONT_SIZE = "1.75rem";
-export const H1_FONT_SIZE = "2.625rem";
-export const H6_LINE_HEIGHT = "1.125rem";
-export const H5_LINE_HEIGHT = "1.125rem";
-export const H4_LINE_HEIGHT = "1.5rem";
-export const H3_LINE_HEIGHT = "1.875rem";
-export const H2_LINE_HEIGHT = "2.625rem";
-export const H1_LINE_HEIGHT = "3.375rem";
-export const H6_FONT_WEIGHT = "400";
-export const H5_FONT_WEIGHT = "400";
-export const H4_FONT_WEIGHT = "400";
-export const H3_FONT_WEIGHT = "400";
-export const H2_FONT_WEIGHT = "400";
-export const H1_FONT_WEIGHT = "400";
-export const H6_MARGIN_TOP = "0";
-export const H5_MARGIN_TOP = "0";
-export const H4_MARGIN_TOP = "0";
-export const H3_MARGIN_TOP = "0";
-export const H2_MARGIN_TOP = "0";
-export const H1_MARGIN_TOP = "0";
-export const H6_MARGIN_BOTTOM = ".75rem";
-export const H5_MARGIN_BOTTOM = ".75rem";
-export const H4_MARGIN_BOTTOM = ".75rem";
-export const H3_MARGIN_BOTTOM = ".75rem";
-export const H2_MARGIN_BOTTOM = ".75rem";
-export const H1_MARGIN_BOTTOM = ".75rem";
-export const HEADING_CONTENT_MARGIN_TOP = "1.875rem";
-export const P_MARGIN_TOP = "0";
-export const P_MARGIN_BOTTOM = ".75rem";
-export const LIST_MARGIN_TOP = "0";
-export const LIST_MARGIN_BOTTOM = ".75rem";
-export const LIST_NESTED_MARGIN_TOP = "0";
-export const LIST_NESTED_MARGIN_BOTTOM = "0";
-export const LIST_ITEM_MARGIN_TOP = "0";
-export const LIST_ITEM_MARGIN_BOTTOM = "0";
-export const LINK_COLOR = "rgb(0, 178, 214)";
-export const LINK_TEXT_DECORATION = "none";
-export const LINK_HOVER_COLOR = "rgb(82, 76, 97)";
-export const LINK_HOVER_TEXT_DECORATION = "underline";
-export const LINK_ACTIVE_COLOR = "rgb(129, 123, 143)";
-export const LINK_VISITED_COLOR = "rgb(0, 140, 168)";
-export const LINK_WHITE_COLOR = "rgb(255, 255, 255)";
-export const LINK_WHITE_HOVER_COLOR = "rgb(255, 255, 255)";
-export const LINK_WHITE_ACTIVE_COLOR = "rgb(230, 228, 235)";
-export const LINK_WHITE_VISITED_COLOR = "rgb(255, 255, 255)";
-export const ZINDEX_AUTOSUGGEST = "900";
-export const ZINDEX_MODAL_SCRIM = "1000";
-export const ZINDEX_MODAL = "1100";
+export const durationXs = "50ms";
+export const durationSm = "200ms";
+export const durationBase = "400ms";
+export const autosuggestListBackgroundColor = "rgb(255, 255, 255)";
+export const autosuggestListItemActiveBackgroundColor = "rgb(230, 228, 235)";
+export const autosuggestListItemFocusedBackgroundColor = "rgb(243, 242, 245)";
+export const badgePaddingY = "0";
+export const badgePaddingX = ".375rem";
+export const badgeBackgroundColor = "rgb(255, 187, 0)";
+export const badgeCenteredVerticalAlign = "text-bottom";
+export const borderRadiusXs = ".1875rem";
+export const borderRadiusSm = ".375rem";
+export const borderRadiusPill = "5rem";
+export const boxShadowSm = "0px 1px 3px 0px rgba(#252033, .2)";
+export const boxShadowLg = "0px 4px 14px 0px rgba(#252033, .25)";
+export const boxShadowXl = "0px 12px 50px 0px rgba(#252033, .25)";
+export const breakpointMobile = "32.25rem";
+export const breakpointTablet = "50.25rem";
+export const breakpointDesktop = "71.25rem";
+export const breakpointQueryMobile = "(max-width: 32.25rem)";
+export const breakpointQueryTablet = "(max-width: 50.25rem)";
+export const breakpointQueryTabletOnly = "(min-width: 32.3125rem) and (max-width: 50.25rem)";
+export const breakpointQueryAboveMobile = "(min-width: 32.3125rem)";
+export const breakpointQueryAboveTablet = "(min-width: 50.3125rem)";
+export const buttonPaddingY = ".375rem";
+export const buttonPaddingX = "1.125rem";
+export const buttonPaddingXIconOnly = ".5625rem";
+export const buttonBorderRadius = "5rem";
+export const buttonBackgroundColor = "rgb(0, 215, 117)";
+export const buttonBackgroundImage = "linear-gradient(-180deg, #00d775 0%, #00bd68 100%)";
+export const buttonHoverBackgroundColor = "rgb(0, 189, 104)";
+export const buttonHoverBackgroundImage = "none";
+export const buttonActiveBackgroundColor = "rgb(0, 168, 93)";
+export const buttonActiveBackgroundImage = "none";
+export const buttonDisabledBackgroundColor = "rgb(230, 228, 235)";
+export const buttonDisabledBackgroundImage = "none";
+export const buttonColor = "rgb(255, 255, 255)";
+export const buttonHoverColor = "rgb(255, 255, 255)";
+export const buttonActiveColor = "rgb(255, 255, 255)";
+export const buttonBoxShadow = "none";
+export const buttonHoverBoxShadow = "none";
+export const buttonActiveBoxShadow = "none";
+export const buttonDisabledBoxShadow = "none";
+export const buttonDisabledColor = "rgb(178, 174, 189)";
+export const buttonFontSize = "1rem";
+export const buttonFontWeight = "700";
+export const buttonLineHeight = "1.5rem";
+export const buttonTextAlign = "center";
+export const buttonLargePaddingY = ".375rem";
+export const buttonLargePaddingX = "1.5rem";
+export const buttonLargePaddingXIconOnly = ".5625rem";
+export const buttonLargeFontSize = "1.5rem";
+export const buttonLargeLineHeight = "1.875rem";
+export const buttonSecondaryBackgroundColor = "rgb(255, 255, 255)";
+export const buttonSecondaryBackgroundImage = "none";
+export const buttonSecondaryHoverBackgroundColor = "rgb(255, 255, 255)";
+export const buttonSecondaryHoverBackgroundImage = "none";
+export const buttonSecondaryActiveBackgroundColor = "rgb(255, 255, 255)";
+export const buttonSecondaryActiveBackgroundImage = "none";
+export const buttonSecondaryDisabledBackgroundColor = "rgb(230, 228, 235)";
+export const buttonSecondaryDisabledBackgroundImage = "none";
+export const buttonSecondaryColor = "rgb(0, 178, 214)";
+export const buttonSecondaryHoverColor = "rgb(0, 178, 214)";
+export const buttonSecondaryActiveColor = "rgb(0, 178, 214)";
+export const buttonSecondaryDisabledColor = "rgb(178, 174, 189)";
+export const buttonSecondaryBoxShadow = "0 0 0 2px #E6E4EB inset";
+export const buttonSecondaryHoverBoxShadow = "0 0 0 2px #00b2d6 inset";
+export const buttonSecondaryActiveBoxShadow = "0 0 0 3px #00b2d6 inset";
+export const buttonSecondaryDisabledBoxShadow = "none";
+export const buttonDestructiveColor = "rgb(255, 84, 82)";
+export const buttonDestructiveBoxShadow = "0 0 0 2px #E6E4EB inset";
+export const buttonDestructiveHoverColor = "rgb(255, 84, 82)";
+export const buttonDestructiveHoverBoxShadow = "0 0 0 2px #ff5452 inset";
+export const buttonDestructiveActiveColor = "rgb(255, 84, 82)";
+export const buttonDestructiveActiveBoxShadow = "0 0 0 3px #ff5452 inset";
+export const buttonDestructiveDisabledBackgroundColor = "rgb(230, 228, 235)";
+export const buttonDestructiveDisabledBackgroundImage = "none";
+export const buttonDestructiveDisabledColor = "rgb(178, 174, 189)";
+export const buttonDestructiveDisabledBoxShadow = "none";
+export const buttonSelectedBackgroundColor = "rgb(0, 178, 214)";
+export const buttonSelectedBackgroundImage = "linear-gradient(-180deg, #00b2d6 0%, #009dbd 100%)";
+export const buttonSelectedHoverBackgroundColor = "rgb(0, 157, 189)";
+export const buttonSelectedHoverBackgroundImage = "none";
+export const buttonSelectedActiveBackgroundColor = "rgb(0, 140, 168)";
+export const buttonSelectedActiveBackgroundImage = "none";
+export const buttonSelectedColor = "rgb(255, 255, 255)";
+export const buttonSelectedHoverColor = "rgb(255, 255, 255)";
+export const buttonSelectedActiveColor = "rgb(255, 255, 255)";
+export const buttonSelectedBoxShadow = "none";
+export const buttonSelectedHoverBoxShadow = "none";
+export const buttonSelectedActiveBoxShadow = "none";
+export const buttonSelectedDisabledBoxShadow = "none";
+export const calendarPadding = ".75rem";
+export const calendarDaySpacing = ".375rem";
+export const calendarDaySize = "2.250rem";
+export const calendarDayColor = "rgb(82, 76, 97)";
+export const calendarDayBackgroundColor = "rgb(255, 255, 255)";
+export const calendarDaySelectedColor = "rgb(255, 255, 255)";
+export const calendarDaySelectedBackgroundColor = "rgb(0, 215, 117)";
+export const calendarDayHoverColor = "rgb(82, 76, 97)";
+export const calendarDayHoverBackgroundColor = "rgb(243, 242, 245)";
+export const calendarDayActiveColor = "rgb(82, 76, 97)";
+export const calendarDayActiveBackgroundColor = "rgb(230, 228, 235)";
+export const calendarDayDisabledColor = "rgb(230, 228, 235)";
+export const calendarDayDisabledBackgroundColor = "rgb(255, 255, 255)";
+export const calendarDayOutsideColor = "rgb(178, 174, 189)";
+export const calendarDayOutsideBackgroundColor = "rgb(255, 255, 255)";
+export const calendarNavIconFill = "rgb(0, 178, 214)";
+export const calendarNavIconHoverFill = "rgb(0, 157, 189)";
+export const calendarNavIconActiveFill = "rgb(0, 140, 168)";
+export const calendarNavIconDisabledFill = "rgb(230, 228, 235)";
+export const cardBackgroundColor = "rgb(255, 255, 255)";
+export const cardColor = "rgb(82, 76, 97)";
+export const cardPadding = ".75rem";
+export const colorWhite = "rgb(255, 255, 255)";
+export const colorBlue50 = "rgb(225, 244, 248)";
+export const colorBlue100 = "rgb(203, 238, 245)";
+export const colorBlue200 = "rgb(176, 228, 238)";
+export const colorBlue300 = "rgb(127, 215, 232)";
+export const colorBlue400 = "rgb(64, 196, 223)";
+export const colorBlue500 = "rgb(0, 178, 214)";
+export const colorBlue600 = "rgb(0, 157, 189)";
+export const colorBlue700 = "rgb(0, 140, 168)";
+export const colorBlue800 = "rgb(0, 117, 140)";
+export const colorBlue900 = "rgb(0, 85, 103)";
+export const colorGray50 = "rgb(243, 242, 245)";
+export const colorGray100 = "rgb(230, 228, 235)";
+export const colorGray200 = "rgb(204, 201, 212)";
+export const colorGray300 = "rgb(178, 174, 189)";
+export const colorGray400 = "rgb(154, 149, 167)";
+export const colorGray500 = "rgb(129, 123, 143)";
+export const colorGray600 = "rgb(105, 97, 121)";
+export const colorGray700 = "rgb(82, 76, 97)";
+export const colorGray800 = "rgb(59, 52, 75)";
+export const colorGray900 = "rgb(37, 32, 51)";
+export const colorGreen50 = "rgb(223, 247, 236)";
+export const colorGreen100 = "rgb(203, 245, 226)";
+export const colorGreen200 = "rgb(175, 237, 209)";
+export const colorGreen300 = "rgb(128, 232, 185)";
+export const colorGreen400 = "rgb(64, 222, 151)";
+export const colorGreen500 = "rgb(0, 215, 117)";
+export const colorGreen600 = "rgb(0, 189, 104)";
+export const colorGreen700 = "rgb(0, 168, 93)";
+export const colorGreen800 = "rgb(0, 140, 77)";
+export const colorGreen900 = "rgb(0, 102, 56)";
+export const colorRed50 = "rgb(252, 233, 232)";
+export const colorRed100 = "rgb(255, 214, 213)";
+export const colorRed200 = "rgb(255, 187, 186)";
+export const colorRed300 = "rgb(255, 150, 148)";
+export const colorRed400 = "rgb(254, 116, 113)";
+export const colorRed500 = "rgb(255, 84, 82)";
+export const colorRed600 = "rgb(235, 66, 63)";
+export const colorRed700 = "rgb(222, 50, 47)";
+export const colorRed800 = "rgb(204, 31, 29)";
+export const colorRed900 = "rgb(168, 3, 0)";
+export const colorYellow50 = "rgb(255, 249, 230)";
+export const colorYellow100 = "rgb(255, 243, 207)";
+export const colorYellow200 = "rgb(255, 236, 184)";
+export const colorYellow300 = "rgb(255, 225, 140)";
+export const colorYellow400 = "rgb(255, 207, 74)";
+export const colorYellow500 = "rgb(255, 187, 0)";
+export const colorYellow600 = "rgb(240, 176, 0)";
+export const colorYellow700 = "rgb(225, 165, 0)";
+export const colorYellow800 = "rgb(194, 142, 0)";
+export const colorYellow900 = "rgb(156, 114, 0)";
+export const primaryGradient = "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)";
+export const inputHeight = "2.250rem";
+export const inputPaddingX = ".75rem";
+export const inputPaddingY = ".375rem";
+export const inputBorderWidth = ".0625rem";
+export const inputBorder = "solid .0625rem #E6E4EB";
+export const inputBorderRadius = ".1875rem";
+export const inputBackground = "#ffffff";
+export const inputColor = "rgb(82, 76, 97)";
+export const inputPlaceholderColor = "rgb(129, 123, 143)";
+export const inputPlaceholderFontStyle = "italic";
+export const inputDisabledBorderColor = "rgb(243, 242, 245)";
+export const inputDisabledColor = "rgb(178, 174, 189)";
+export const inputInvalidBorderColor = "rgb(255, 84, 82)";
+export const inputLargeHeight = "2.625rem + .375rem";
+export const selectHeight = "2.250rem";
+export const selectPaddingTop = ".375rem";
+export const selectPaddingRight = "1.875rem";
+export const selectPaddingBottom = ".375rem";
+export const selectPaddingLeft = ".75rem";
+export const selectBorderWidth = ".0625rem";
+export const selectBorder = "solid .0625rem #E6E4EB";
+export const selectBorderRadius = ".1875rem";
+export const selectColor = "rgb(82, 76, 97)";
+export const selectDisabledBorderColor = "rgb(243, 242, 245)";
+export const selectDisabledColor = "rgb(178, 174, 189)";
+export const selectInvalidBorderColor = "rgb(255, 84, 82)";
+export const selectLargeHeight = "2.625rem + .375rem";
+export const labelColor = "rgb(82, 76, 97)";
+export const labelFontSize = ".75rem";
+export const labelLineHeight = "1.125rem";
+export const gridColumns = "12";
+export const gridGutter = "1.5rem";
+export const gridContainerPadding = "1.5rem";
+export const gridContainerMobilePadding = ".75rem";
+export const logoCloudDefaultHeight = "2.625rem";
+export const logoInlineDefaultHeight = "2.625rem";
+export const logoStackedDefaultHeight = "calc(1.5rem * 3)";
+export const logoTianxunDefaultHeight = "2.625rem";
+export const logoTianxunStackedDefaultHeight = "calc(1.5rem * 3)";
+export const modalScrimBackgroundColor = "rgb(178, 174, 189)";
+export const modalScrimInitialOpacity = "0";
+export const modalScrimOpacity = ".7";
+export const modalScrimMobileOpacity = "1";
+export const modalBackgroundColor = "rgb(255, 255, 255)";
+export const modalInitialOpacity = "0";
+export const modalOpacity = "1";
+export const modalMaxWidth = "32.25rem";
+export const modalWideMaxWidth = "50.25rem";
+export const modalHeaderPadding = ".75rem";
+export const modalHeaderBoxShadow = "0 -1px 0 0 #E6E4EB inset";
+export const modalCloseIconFill = "rgb(129, 123, 143)";
+export const modalCloseIconHoverFill = "rgb(82, 76, 97)";
+export const modalContentPadding = ".75rem";
+export const bannerAlertBackgroundColor = "rgb(255, 255, 255)";
+export const bannerAlertSuccessBoxShadow = "0 0 0 1px #00d775";
+export const bannerAlertWarnBoxShadow = "0 0 0 1px #FFBB00";
+export const bannerAlertErrorBoxShadow = "0 0 0 1px #ff5452";
+export const bannerAlertHeaderPaddingY = ".375rem";
+export const bannerAlertHeaderPaddingX = ".75rem";
+export const bannerAlertHeaderExpandableHoverBackgroundColor = "rgb(243, 242, 245)";
+export const bannerAlertHeaderExpandableActiveBackgroundColor = "rgb(230, 228, 235)";
+export const bannerAlertSuccessIconFill = "rgb(0, 215, 117)";
+export const bannerAlertWarnIconFill = "rgb(255, 187, 0)";
+export const bannerAlertErrorIconFill = "rgb(255, 84, 82)";
+export const bannerAlertExpandIconFill = "rgb(82, 76, 97)";
+export const bannerAlertChildrenPaddingY = ".375rem";
+export const bannerAlertChildrenPaddingX = ".75rem";
+export const bannerAlertChildrenColor = "rgb(129, 123, 143)";
+export const spacingXs = ".375rem";
+export const spacingSm = ".75rem";
+export const spacingMd = "1.125rem";
+export const spacingBase = "1.5rem";
+export const spacingLg = "1.875rem";
+export const spacingXl = "2.250rem";
+export const spacingXxl = "2.625rem";
+export const onePixelRem = ".0625rem";
+export const fontFamilyBase = "-apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif";
+export const fontColorBase = "rgb(82, 76, 97)";
+export const lineHeightSm = "1.125rem";
+export const lineHeightBase = "1.5rem";
+export const lineHeightLg = "1.875rem";
+export const lineHeightXl = "2.625rem";
+export const lineHeightXxl = "3.375rem";
+export const fontSizeRoot = "100%";
+export const fontSizeSm = ".75rem";
+export const fontSizeBase = "1rem";
+export const fontSizeLg = "1.5rem";
+export const fontSizeXl = "1.75rem";
+export const fontSizeXxl = "2.625rem";
+export const h6FontSize = ".75rem";
+export const h5FontSize = ".75rem";
+export const h4FontSize = "1rem";
+export const h3FontSize = "1.5rem";
+export const h2FontSize = "1.75rem";
+export const h1FontSize = "2.625rem";
+export const h6LineHeight = "1.125rem";
+export const h5LineHeight = "1.125rem";
+export const h4LineHeight = "1.5rem";
+export const h3LineHeight = "1.875rem";
+export const h2LineHeight = "2.625rem";
+export const h1LineHeight = "3.375rem";
+export const h6FontWeight = "400";
+export const h5FontWeight = "400";
+export const h4FontWeight = "400";
+export const h3FontWeight = "400";
+export const h2FontWeight = "400";
+export const h1FontWeight = "400";
+export const h6MarginTop = "0";
+export const h5MarginTop = "0";
+export const h4MarginTop = "0";
+export const h3MarginTop = "0";
+export const h2MarginTop = "0";
+export const h1MarginTop = "0";
+export const h6MarginBottom = ".75rem";
+export const h5MarginBottom = ".75rem";
+export const h4MarginBottom = ".75rem";
+export const h3MarginBottom = ".75rem";
+export const h2MarginBottom = ".75rem";
+export const h1MarginBottom = ".75rem";
+export const headingContentMarginTop = "1.875rem";
+export const pMarginTop = "0";
+export const pMarginBottom = ".75rem";
+export const listMarginTop = "0";
+export const listMarginBottom = ".75rem";
+export const listNestedMarginTop = "0";
+export const listNestedMarginBottom = "0";
+export const listItemMarginTop = "0";
+export const listItemMarginBottom = "0";
+export const linkColor = "rgb(0, 178, 214)";
+export const linkTextDecoration = "none";
+export const linkHoverColor = "rgb(82, 76, 97)";
+export const linkHoverTextDecoration = "underline";
+export const linkActiveColor = "rgb(129, 123, 143)";
+export const linkVisitedColor = "rgb(0, 140, 168)";
+export const linkWhiteColor = "rgb(255, 255, 255)";
+export const linkWhiteHoverColor = "rgb(255, 255, 255)";
+export const linkWhiteActiveColor = "rgb(230, 228, 235)";
+export const linkWhiteVisitedColor = "rgb(255, 255, 255)";
+export const zindexAutosuggest = "900";
+export const zindexModalScrim = "1000";
+export const zindexModal = "1100";
 export const animations = {
-DURATION_XS,
-DURATION_SM,
-DURATION_BASE,
+durationXs,
+durationSm,
+durationBase,
 };
 export const autosuggest = {
-AUTOSUGGEST_LIST_BACKGROUND_COLOR,
-AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR,
-AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR,
+autosuggestListBackgroundColor,
+autosuggestListItemActiveBackgroundColor,
+autosuggestListItemFocusedBackgroundColor,
 };
 export const badges = {
-BADGE_PADDING_Y,
-BADGE_PADDING_X,
-BADGE_BACKGROUND_COLOR,
-BADGE_CENTERED_VERTICAL_ALIGN,
+badgePaddingY,
+badgePaddingX,
+badgeBackgroundColor,
+badgeCenteredVerticalAlign,
 };
 export const radii = {
-BORDER_RADIUS_XS,
-BORDER_RADIUS_SM,
-BORDER_RADIUS_PILL,
+borderRadiusXs,
+borderRadiusSm,
+borderRadiusPill,
 };
 export const boxShadows = {
-BOX_SHADOW_SM,
-BOX_SHADOW_LG,
-BOX_SHADOW_XL,
+boxShadowSm,
+boxShadowLg,
+boxShadowXl,
 };
 export const breakpoints = {
-BREAKPOINT_MOBILE,
-BREAKPOINT_TABLET,
-BREAKPOINT_DESKTOP,
-BREAKPOINT_QUERY_MOBILE,
-BREAKPOINT_QUERY_TABLET,
-BREAKPOINT_QUERY_TABLET_ONLY,
-BREAKPOINT_QUERY_ABOVE_MOBILE,
-BREAKPOINT_QUERY_ABOVE_TABLET,
+breakpointMobile,
+breakpointTablet,
+breakpointDesktop,
+breakpointQueryMobile,
+breakpointQueryTablet,
+breakpointQueryTabletOnly,
+breakpointQueryAboveMobile,
+breakpointQueryAboveTablet,
 };
 export const buttons = {
-BUTTON_PADDING_Y,
-BUTTON_PADDING_X,
-BUTTON_PADDING_X_ICON_ONLY,
-BUTTON_BORDER_RADIUS,
-BUTTON_BACKGROUND_COLOR,
-BUTTON_BACKGROUND_IMAGE,
-BUTTON_HOVER_BACKGROUND_COLOR,
-BUTTON_HOVER_BACKGROUND_IMAGE,
-BUTTON_ACTIVE_BACKGROUND_COLOR,
-BUTTON_ACTIVE_BACKGROUND_IMAGE,
-BUTTON_DISABLED_BACKGROUND_COLOR,
-BUTTON_DISABLED_BACKGROUND_IMAGE,
-BUTTON_COLOR,
-BUTTON_HOVER_COLOR,
-BUTTON_ACTIVE_COLOR,
-BUTTON_BOX_SHADOW,
-BUTTON_HOVER_BOX_SHADOW,
-BUTTON_ACTIVE_BOX_SHADOW,
-BUTTON_DISABLED_BOX_SHADOW,
-BUTTON_DISABLED_COLOR,
-BUTTON_FONT_SIZE,
-BUTTON_FONT_WEIGHT,
-BUTTON_LINE_HEIGHT,
-BUTTON_TEXT_ALIGN,
-BUTTON_LARGE_PADDING_Y,
-BUTTON_LARGE_PADDING_X,
-BUTTON_LARGE_PADDING_X_ICON_ONLY,
-BUTTON_LARGE_FONT_SIZE,
-BUTTON_LARGE_LINE_HEIGHT,
-BUTTON_SECONDARY_BACKGROUND_COLOR,
-BUTTON_SECONDARY_BACKGROUND_IMAGE,
-BUTTON_SECONDARY_HOVER_BACKGROUND_COLOR,
-BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE,
-BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR,
-BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE,
-BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR,
-BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE,
-BUTTON_SECONDARY_COLOR,
-BUTTON_SECONDARY_HOVER_COLOR,
-BUTTON_SECONDARY_ACTIVE_COLOR,
-BUTTON_SECONDARY_DISABLED_COLOR,
-BUTTON_SECONDARY_BOX_SHADOW,
-BUTTON_SECONDARY_HOVER_BOX_SHADOW,
-BUTTON_SECONDARY_ACTIVE_BOX_SHADOW,
-BUTTON_SECONDARY_DISABLED_BOX_SHADOW,
-BUTTON_DESTRUCTIVE_COLOR,
-BUTTON_DESTRUCTIVE_BOX_SHADOW,
-BUTTON_DESTRUCTIVE_HOVER_COLOR,
-BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW,
-BUTTON_DESTRUCTIVE_ACTIVE_COLOR,
-BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW,
-BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR,
-BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE,
-BUTTON_DESTRUCTIVE_DISABLED_COLOR,
-BUTTON_DESTRUCTIVE_DISABLED_BOX_SHADOW,
-BUTTON_SELECTED_BACKGROUND_COLOR,
-BUTTON_SELECTED_BACKGROUND_IMAGE,
-BUTTON_SELECTED_HOVER_BACKGROUND_COLOR,
-BUTTON_SELECTED_HOVER_BACKGROUND_IMAGE,
-BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR,
-BUTTON_SELECTED_ACTIVE_BACKGROUND_IMAGE,
-BUTTON_SELECTED_COLOR,
-BUTTON_SELECTED_HOVER_COLOR,
-BUTTON_SELECTED_ACTIVE_COLOR,
-BUTTON_SELECTED_BOX_SHADOW,
-BUTTON_SELECTED_HOVER_BOX_SHADOW,
-BUTTON_SELECTED_ACTIVE_BOX_SHADOW,
-BUTTON_SELECTED_DISABLED_BOX_SHADOW,
+buttonPaddingY,
+buttonPaddingX,
+buttonPaddingXIconOnly,
+buttonBorderRadius,
+buttonBackgroundColor,
+buttonBackgroundImage,
+buttonHoverBackgroundColor,
+buttonHoverBackgroundImage,
+buttonActiveBackgroundColor,
+buttonActiveBackgroundImage,
+buttonDisabledBackgroundColor,
+buttonDisabledBackgroundImage,
+buttonColor,
+buttonHoverColor,
+buttonActiveColor,
+buttonBoxShadow,
+buttonHoverBoxShadow,
+buttonActiveBoxShadow,
+buttonDisabledBoxShadow,
+buttonDisabledColor,
+buttonFontSize,
+buttonFontWeight,
+buttonLineHeight,
+buttonTextAlign,
+buttonLargePaddingY,
+buttonLargePaddingX,
+buttonLargePaddingXIconOnly,
+buttonLargeFontSize,
+buttonLargeLineHeight,
+buttonSecondaryBackgroundColor,
+buttonSecondaryBackgroundImage,
+buttonSecondaryHoverBackgroundColor,
+buttonSecondaryHoverBackgroundImage,
+buttonSecondaryActiveBackgroundColor,
+buttonSecondaryActiveBackgroundImage,
+buttonSecondaryDisabledBackgroundColor,
+buttonSecondaryDisabledBackgroundImage,
+buttonSecondaryColor,
+buttonSecondaryHoverColor,
+buttonSecondaryActiveColor,
+buttonSecondaryDisabledColor,
+buttonSecondaryBoxShadow,
+buttonSecondaryHoverBoxShadow,
+buttonSecondaryActiveBoxShadow,
+buttonSecondaryDisabledBoxShadow,
+buttonDestructiveColor,
+buttonDestructiveBoxShadow,
+buttonDestructiveHoverColor,
+buttonDestructiveHoverBoxShadow,
+buttonDestructiveActiveColor,
+buttonDestructiveActiveBoxShadow,
+buttonDestructiveDisabledBackgroundColor,
+buttonDestructiveDisabledBackgroundImage,
+buttonDestructiveDisabledColor,
+buttonDestructiveDisabledBoxShadow,
+buttonSelectedBackgroundColor,
+buttonSelectedBackgroundImage,
+buttonSelectedHoverBackgroundColor,
+buttonSelectedHoverBackgroundImage,
+buttonSelectedActiveBackgroundColor,
+buttonSelectedActiveBackgroundImage,
+buttonSelectedColor,
+buttonSelectedHoverColor,
+buttonSelectedActiveColor,
+buttonSelectedBoxShadow,
+buttonSelectedHoverBoxShadow,
+buttonSelectedActiveBoxShadow,
+buttonSelectedDisabledBoxShadow,
 };
 export const calendar = {
-CALENDAR_PADDING,
-CALENDAR_DAY_SPACING,
-CALENDAR_DAY_SIZE,
-CALENDAR_DAY_COLOR,
-CALENDAR_DAY_BACKGROUND_COLOR,
-CALENDAR_DAY_SELECTED_COLOR,
-CALENDAR_DAY_SELECTED_BACKGROUND_COLOR,
-CALENDAR_DAY_HOVER_COLOR,
-CALENDAR_DAY_HOVER_BACKGROUND_COLOR,
-CALENDAR_DAY_ACTIVE_COLOR,
-CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR,
-CALENDAR_DAY_DISABLED_COLOR,
-CALENDAR_DAY_DISABLED_BACKGROUND_COLOR,
-CALENDAR_DAY_OUTSIDE_COLOR,
-CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR,
-CALENDAR_NAV_ICON_FILL,
-CALENDAR_NAV_ICON_HOVER_FILL,
-CALENDAR_NAV_ICON_ACTIVE_FILL,
-CALENDAR_NAV_ICON_DISABLED_FILL,
+calendarPadding,
+calendarDaySpacing,
+calendarDaySize,
+calendarDayColor,
+calendarDayBackgroundColor,
+calendarDaySelectedColor,
+calendarDaySelectedBackgroundColor,
+calendarDayHoverColor,
+calendarDayHoverBackgroundColor,
+calendarDayActiveColor,
+calendarDayActiveBackgroundColor,
+calendarDayDisabledColor,
+calendarDayDisabledBackgroundColor,
+calendarDayOutsideColor,
+calendarDayOutsideBackgroundColor,
+calendarNavIconFill,
+calendarNavIconHoverFill,
+calendarNavIconActiveFill,
+calendarNavIconDisabledFill,
 };
 export const cards = {
-CARD_BACKGROUND_COLOR,
-CARD_COLOR,
-CARD_PADDING,
+cardBackgroundColor,
+cardColor,
+cardPadding,
 };
 export const colors = {
-COLOR_WHITE,
-COLOR_BLUE_50,
-COLOR_BLUE_100,
-COLOR_BLUE_200,
-COLOR_BLUE_300,
-COLOR_BLUE_400,
-COLOR_BLUE_500,
-COLOR_BLUE_600,
-COLOR_BLUE_700,
-COLOR_BLUE_800,
-COLOR_BLUE_900,
-COLOR_GRAY_50,
-COLOR_GRAY_100,
-COLOR_GRAY_200,
-COLOR_GRAY_300,
-COLOR_GRAY_400,
-COLOR_GRAY_500,
-COLOR_GRAY_600,
-COLOR_GRAY_700,
-COLOR_GRAY_800,
-COLOR_GRAY_900,
-COLOR_GREEN_50,
-COLOR_GREEN_100,
-COLOR_GREEN_200,
-COLOR_GREEN_300,
-COLOR_GREEN_400,
-COLOR_GREEN_500,
-COLOR_GREEN_600,
-COLOR_GREEN_700,
-COLOR_GREEN_800,
-COLOR_GREEN_900,
-COLOR_RED_50,
-COLOR_RED_100,
-COLOR_RED_200,
-COLOR_RED_300,
-COLOR_RED_400,
-COLOR_RED_500,
-COLOR_RED_600,
-COLOR_RED_700,
-COLOR_RED_800,
-COLOR_RED_900,
-COLOR_YELLOW_50,
-COLOR_YELLOW_100,
-COLOR_YELLOW_200,
-COLOR_YELLOW_300,
-COLOR_YELLOW_400,
-COLOR_YELLOW_500,
-COLOR_YELLOW_600,
-COLOR_YELLOW_700,
-COLOR_YELLOW_800,
-COLOR_YELLOW_900,
-PRIMARY_GRADIENT,
+colorWhite,
+colorBlue50,
+colorBlue100,
+colorBlue200,
+colorBlue300,
+colorBlue400,
+colorBlue500,
+colorBlue600,
+colorBlue700,
+colorBlue800,
+colorBlue900,
+colorGray50,
+colorGray100,
+colorGray200,
+colorGray300,
+colorGray400,
+colorGray500,
+colorGray600,
+colorGray700,
+colorGray800,
+colorGray900,
+colorGreen50,
+colorGreen100,
+colorGreen200,
+colorGreen300,
+colorGreen400,
+colorGreen500,
+colorGreen600,
+colorGreen700,
+colorGreen800,
+colorGreen900,
+colorRed50,
+colorRed100,
+colorRed200,
+colorRed300,
+colorRed400,
+colorRed500,
+colorRed600,
+colorRed700,
+colorRed800,
+colorRed900,
+colorYellow50,
+colorYellow100,
+colorYellow200,
+colorYellow300,
+colorYellow400,
+colorYellow500,
+colorYellow600,
+colorYellow700,
+colorYellow800,
+colorYellow900,
+primaryGradient,
 };
 export const forms = {
-INPUT_HEIGHT,
-INPUT_PADDING_X,
-INPUT_PADDING_Y,
-INPUT_BORDER_WIDTH,
-INPUT_BORDER,
-INPUT_BORDER_RADIUS,
-INPUT_BACKGROUND,
-INPUT_COLOR,
-INPUT_PLACEHOLDER_COLOR,
-INPUT_PLACEHOLDER_FONT_STYLE,
-INPUT_DISABLED_BORDER_COLOR,
-INPUT_DISABLED_COLOR,
-INPUT_INVALID_BORDER_COLOR,
-INPUT_LARGE_HEIGHT,
-SELECT_HEIGHT,
-SELECT_PADDING_TOP,
-SELECT_PADDING_RIGHT,
-SELECT_PADDING_BOTTOM,
-SELECT_PADDING_LEFT,
-SELECT_BORDER_WIDTH,
-SELECT_BORDER,
-SELECT_BORDER_RADIUS,
-SELECT_COLOR,
-SELECT_DISABLED_BORDER_COLOR,
-SELECT_DISABLED_COLOR,
-SELECT_INVALID_BORDER_COLOR,
-SELECT_LARGE_HEIGHT,
-LABEL_COLOR,
-LABEL_FONT_SIZE,
-LABEL_LINE_HEIGHT,
+inputHeight,
+inputPaddingX,
+inputPaddingY,
+inputBorderWidth,
+inputBorder,
+inputBorderRadius,
+inputBackground,
+inputColor,
+inputPlaceholderColor,
+inputPlaceholderFontStyle,
+inputDisabledBorderColor,
+inputDisabledColor,
+inputInvalidBorderColor,
+inputLargeHeight,
+selectHeight,
+selectPaddingTop,
+selectPaddingRight,
+selectPaddingBottom,
+selectPaddingLeft,
+selectBorderWidth,
+selectBorder,
+selectBorderRadius,
+selectColor,
+selectDisabledBorderColor,
+selectDisabledColor,
+selectInvalidBorderColor,
+selectLargeHeight,
+labelColor,
+labelFontSize,
+labelLineHeight,
 };
 export const grids = {
-GRID_COLUMNS,
-GRID_GUTTER,
-GRID_CONTAINER_PADDING,
-GRID_CONTAINER_MOBILE_PADDING,
+gridColumns,
+gridGutter,
+gridContainerPadding,
+gridContainerMobilePadding,
 };
 export const logos = {
-LOGO_CLOUD_DEFAULT_HEIGHT,
-LOGO_INLINE_DEFAULT_HEIGHT,
-LOGO_STACKED_DEFAULT_HEIGHT,
-LOGO_TIANXUN_DEFAULT_HEIGHT,
-LOGO_TIANXUN_STACKED_DEFAULT_HEIGHT,
+logoCloudDefaultHeight,
+logoInlineDefaultHeight,
+logoStackedDefaultHeight,
+logoTianxunDefaultHeight,
+logoTianxunStackedDefaultHeight,
 };
 export const modals = {
-MODAL_SCRIM_BACKGROUND_COLOR,
-MODAL_SCRIM_INITIAL_OPACITY,
-MODAL_SCRIM_OPACITY,
-MODAL_SCRIM_MOBILE_OPACITY,
-MODAL_BACKGROUND_COLOR,
-MODAL_INITIAL_OPACITY,
-MODAL_OPACITY,
-MODAL_MAX_WIDTH,
-MODAL_WIDE_MAX_WIDTH,
-MODAL_HEADER_PADDING,
-MODAL_HEADER_BOX_SHADOW,
-MODAL_CLOSE_ICON_FILL,
-MODAL_CLOSE_ICON_HOVER_FILL,
-MODAL_CONTENT_PADDING,
+modalScrimBackgroundColor,
+modalScrimInitialOpacity,
+modalScrimOpacity,
+modalScrimMobileOpacity,
+modalBackgroundColor,
+modalInitialOpacity,
+modalOpacity,
+modalMaxWidth,
+modalWideMaxWidth,
+modalHeaderPadding,
+modalHeaderBoxShadow,
+modalCloseIconFill,
+modalCloseIconHoverFill,
+modalContentPadding,
 };
 export const notifications = {
-BANNER_ALERT_BACKGROUND_COLOR,
-BANNER_ALERT_SUCCESS_BOX_SHADOW,
-BANNER_ALERT_WARN_BOX_SHADOW,
-BANNER_ALERT_ERROR_BOX_SHADOW,
-BANNER_ALERT_HEADER_PADDING_Y,
-BANNER_ALERT_HEADER_PADDING_X,
-BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR,
-BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR,
-BANNER_ALERT_SUCCESS_ICON_FILL,
-BANNER_ALERT_WARN_ICON_FILL,
-BANNER_ALERT_ERROR_ICON_FILL,
-BANNER_ALERT_EXPAND_ICON_FILL,
-BANNER_ALERT_CHILDREN_PADDING_Y,
-BANNER_ALERT_CHILDREN_PADDING_X,
-BANNER_ALERT_CHILDREN_COLOR,
+bannerAlertBackgroundColor,
+bannerAlertSuccessBoxShadow,
+bannerAlertWarnBoxShadow,
+bannerAlertErrorBoxShadow,
+bannerAlertHeaderPaddingY,
+bannerAlertHeaderPaddingX,
+bannerAlertHeaderExpandableHoverBackgroundColor,
+bannerAlertHeaderExpandableActiveBackgroundColor,
+bannerAlertSuccessIconFill,
+bannerAlertWarnIconFill,
+bannerAlertErrorIconFill,
+bannerAlertExpandIconFill,
+bannerAlertChildrenPaddingY,
+bannerAlertChildrenPaddingX,
+bannerAlertChildrenColor,
 };
 export const spacings = {
-SPACING_XS,
-SPACING_SM,
-SPACING_MD,
-SPACING_BASE,
-SPACING_LG,
-SPACING_XL,
-SPACING_XXL,
-ONE_PIXEL_REM,
-H6_MARGIN_TOP,
-H5_MARGIN_TOP,
-H4_MARGIN_TOP,
-H3_MARGIN_TOP,
-H2_MARGIN_TOP,
-H1_MARGIN_TOP,
-H6_MARGIN_BOTTOM,
-H5_MARGIN_BOTTOM,
-H4_MARGIN_BOTTOM,
-H3_MARGIN_BOTTOM,
-H2_MARGIN_BOTTOM,
-H1_MARGIN_BOTTOM,
-HEADING_CONTENT_MARGIN_TOP,
-P_MARGIN_TOP,
-P_MARGIN_BOTTOM,
-LIST_MARGIN_TOP,
-LIST_MARGIN_BOTTOM,
-LIST_NESTED_MARGIN_TOP,
-LIST_NESTED_MARGIN_BOTTOM,
-LIST_ITEM_MARGIN_TOP,
-LIST_ITEM_MARGIN_BOTTOM,
+spacingXs,
+spacingSm,
+spacingMd,
+spacingBase,
+spacingLg,
+spacingXl,
+spacingXxl,
+onePixelRem,
+h6MarginTop,
+h5MarginTop,
+h4MarginTop,
+h3MarginTop,
+h2MarginTop,
+h1MarginTop,
+h6MarginBottom,
+h5MarginBottom,
+h4MarginBottom,
+h3MarginBottom,
+h2MarginBottom,
+h1MarginBottom,
+headingContentMarginTop,
+pMarginTop,
+pMarginBottom,
+listMarginTop,
+listMarginBottom,
+listNestedMarginTop,
+listNestedMarginBottom,
+listItemMarginTop,
+listItemMarginBottom,
 };
 export const typesettings = {
-FONT_FAMILY_BASE,
-LINE_HEIGHT_SM,
-LINE_HEIGHT_BASE,
-LINE_HEIGHT_LG,
-LINE_HEIGHT_XL,
-LINE_HEIGHT_XXL,
-FONT_SIZE_ROOT,
-FONT_SIZE_SM,
-FONT_SIZE_BASE,
-FONT_SIZE_LG,
-FONT_SIZE_XL,
-FONT_SIZE_XXL,
+fontFamilyBase,
+lineHeightSm,
+lineHeightBase,
+lineHeightLg,
+lineHeightXl,
+lineHeightXxl,
+fontSizeRoot,
+fontSizeSm,
+fontSizeBase,
+fontSizeLg,
+fontSizeXl,
+fontSizeXxl,
 };
 export const textColors = {
-FONT_COLOR_BASE,
-LINK_COLOR,
-LINK_HOVER_COLOR,
-LINK_ACTIVE_COLOR,
-LINK_VISITED_COLOR,
-LINK_WHITE_COLOR,
-LINK_WHITE_HOVER_COLOR,
-LINK_WHITE_ACTIVE_COLOR,
-LINK_WHITE_VISITED_COLOR,
+fontColorBase,
+linkColor,
+linkHoverColor,
+linkActiveColor,
+linkVisitedColor,
+linkWhiteColor,
+linkWhiteHoverColor,
+linkWhiteActiveColor,
+linkWhiteVisitedColor,
 };
 export const fontSizes = {
-H6_FONT_SIZE,
-H5_FONT_SIZE,
-H4_FONT_SIZE,
-H3_FONT_SIZE,
-H2_FONT_SIZE,
-H1_FONT_SIZE,
+h6FontSize,
+h5FontSize,
+h4FontSize,
+h3FontSize,
+h2FontSize,
+h1FontSize,
 };
 export const lineHeights = {
-H6_LINE_HEIGHT,
-H5_LINE_HEIGHT,
-H4_LINE_HEIGHT,
-H3_LINE_HEIGHT,
-H2_LINE_HEIGHT,
-H1_LINE_HEIGHT,
+h6LineHeight,
+h5LineHeight,
+h4LineHeight,
+h3LineHeight,
+h2LineHeight,
+h1LineHeight,
 };
 export const fontWeights = {
-H6_FONT_WEIGHT,
-H5_FONT_WEIGHT,
-H4_FONT_WEIGHT,
-H3_FONT_WEIGHT,
-H2_FONT_WEIGHT,
-H1_FONT_WEIGHT,
+h6FontWeight,
+h5FontWeight,
+h4FontWeight,
+h3FontWeight,
+h2FontWeight,
+h1FontWeight,
 };
 export const textDecorations = {
-LINK_TEXT_DECORATION,
-LINK_HOVER_TEXT_DECORATION,
+linkTextDecoration,
+linkHoverTextDecoration,
 };
 export const zIndices = {
-ZINDEX_AUTOSUGGEST,
-ZINDEX_MODAL_SCRIM,
-ZINDEX_MODAL,
+zindexAutosuggest,
+zindexModalScrim,
+zindexModal,
 };

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import { colorGray700 } from 'bpk-tokens/tokens/base.es6';
 import SmSpinner from 'bpk-svgs/dist/js/spinners/sm';
 
 import './bpk-spinner.scss';
@@ -18,7 +18,7 @@ BpkSpinner.propTypes = {
 };
 
 BpkSpinner.defaultProps = {
-  fill: TOKENS.colorGray700,
+  fill: colorGray700,
   alignToButton: false,
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import BpkButton from 'bpk-component-button';
 import BpkParagraph from 'bpk-component-paragraph';
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import { colors, buttons } from 'bpk-tokens/tokens/base.es6';
 import { BpkSpinner, BpkLargeSpinner } from 'bpk-component-spinner';
 import { alignToButton, alignToLargeButton } from 'bpk-component-icon';
 import TestBpkSmallArrowIcon from 'bpk-component-icon/sm/long-arrow-right';
@@ -96,20 +96,20 @@ const components = [
     ],
     examples: [
       <BpkButton>
-        Primary <AlignedBpkSmallArrowIcon fill={TOKENS.colorWhite} />
+        Primary <AlignedBpkSmallArrowIcon fill={colors.colorWhite} />
       </BpkButton>,
       ' ',
       <BpkButton>
-        Primary <BpkSpinner fill={TOKENS.colorWhite} alignToButton />
+        Primary <BpkSpinner fill={colors.colorWhite} alignToButton />
       </BpkButton>,
       <br />,
       <br />,
       <BpkButton large>
-        Primary <AlignedBpkLargeArrowIcon fill={TOKENS.colorWhite} />
+        Primary <AlignedBpkLargeArrowIcon fill={colors.colorWhite} />
       </BpkButton>,
       ' ',
       <BpkButton large>
-        Primary <BpkLargeSpinner fill={TOKENS.colorWhite} alignToButton />
+        Primary <BpkLargeSpinner fill={colors.colorWhite} alignToButton />
       </BpkButton>,
     ],
   },
@@ -123,33 +123,33 @@ const components = [
     ],
     examples: [
       <BpkButton iconOnly>
-        <AlignedBpkSmallArrowIcon fill={TOKENS.colorWhite} />
+        <AlignedBpkSmallArrowIcon fill={colors.colorWhite} />
         <span className="visually-hidden">Search</span>
       </BpkButton>,
       ' ',
       <BpkButton iconOnly secondary>
-        <AlignedBpkSmallHelpIcon fill={TOKENS.buttonSecondaryColor} />
+        <AlignedBpkSmallHelpIcon fill={buttons.buttonSecondaryColor} />
         <span className="visually-hidden">Help</span>
       </BpkButton>,
       ' ',
       <BpkButton iconOnly destructive>
-        <AlignedBpkSmallTrashIcon fill={TOKENS.buttonDestructiveColor} />
+        <AlignedBpkSmallTrashIcon fill={buttons.buttonDestructiveColor} />
         <span className="visually-hidden">Delete</span>
       </BpkButton>,
       <br />,
       <br />,
       <BpkButton large iconOnly>
-        <AlignedBpkLargeArrowIcon fill={TOKENS.colorWhite} />
+        <AlignedBpkLargeArrowIcon fill={colors.colorWhite} />
         <span className="visually-hidden">Search</span>
       </BpkButton>,
       ' ',
       <BpkButton large iconOnly secondary>
-        <AlignedBpkLargeHelpIcon fill={TOKENS.buttonSecondaryColor} />
+        <AlignedBpkLargeHelpIcon fill={buttons.buttonSecondaryColor} />
         <span className="visually-hidden">Help</span>
       </BpkButton>,
       ' ',
       <BpkButton large iconOnly destructive>
-        <AlignedBpkLargeTrashIcon fill={TOKENS.buttonDestructiveColor} />
+        <AlignedBpkLargeTrashIcon fill={buttons.buttonDestructiveColor} />
         <span className="visually-hidden">Delete</span>
       </BpkButton>,
     ],

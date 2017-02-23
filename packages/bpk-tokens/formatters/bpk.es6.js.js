@@ -1,11 +1,11 @@
 import _ from 'lodash';
 
 export const tokenTemplate = ({ name, value }) => (
-  `export const ${name} = "${value.replace(/"/g, '\\"')}";`
+  `export const ${_.camelCase(name)} = "${value.replace(/"/g, '\\"')}";`
 );
 
 export const categoryTemplate = (categoryName, props) => `export const ${_.camelCase(categoryName)} = {
-${_.map(props, prop => `${prop.name},`).join('\n')}
+${_.map(props, prop => `${_.camelCase(prop.name)},`).join('\n')}
 };`;
 
 export default (json) => {

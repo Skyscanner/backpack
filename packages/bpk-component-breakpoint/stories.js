@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react';
 import { storiesOf } from '@kadira/storybook';
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import { spacingBase, colorGreen500, colorGray100 } from 'bpk-tokens/tokens/base.es6';
 
 import BpkBreakpoint, { BREAKPOINTS } from './index';
 
 const MediaQueryStatus = (props) => {
   const style = {
-    padding: TOKENS.spacingBase,
-    backgroundColor: props.isActive ? TOKENS.colorGreen500 : TOKENS.colorGray100,
+    padding: spacingBase,
+    backgroundColor: props.isActive ? colorGreen500 : colorGray100,
   };
 
   return <div style={style}>{props.children}</div>;
