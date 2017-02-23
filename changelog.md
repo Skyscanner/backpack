@@ -2,7 +2,10 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-tokens:
+  - Tokens can now be consumed individually or grouped by category using ES6 imports:
+    ```import { colors, spacingXxl } from 'bpk-tokens/tokens/base.es6';```
 
 ## 2017-02-22 (2) - Fixed icon scaling in React components
 
