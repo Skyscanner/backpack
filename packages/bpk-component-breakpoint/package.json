@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-breakpoint",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Backpack breakpoint component.",
   "main": "index.js",
   "repository": {
@@ -13,10 +13,10 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^8.6.1",
+    "bpk-mixins": "^8.6.2",
     "react-responsive": "^1.2.6"
   },
   "devDependencies": {
-    "bpk-tokens": "^17.1.0"
+    "bpk-tokens": "^17.1.1"
   }
 }
