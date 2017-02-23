@@ -1,5 +1,5 @@
 import React from 'react';
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import { colors, primaryGradient } from 'bpk-tokens/tokens/base.es6';
 
 import BpkParagraph from 'bpk-component-paragraph';
 
@@ -17,8 +17,8 @@ const components = [
         secondary to these.
       </BpkParagraph>,
       <div className="bpkdocs-colors-page__swatch-container">
-        <ColorSwatch name="color-blue-500" color={TOKENS.colorBlue500} whiteColor />
-        <ColorSwatch name="color-white" color={TOKENS.colorWhite} border />
+        <ColorSwatch name="color-blue-500" color={colors.colorBlue500} whiteColor />
+        <ColorSwatch name="color-white" color={colors.colorWhite} border />
       </div>,
     ],
     examples: [],
@@ -31,9 +31,9 @@ const components = [
         The following colors are used in conjunction with the above and should always be used sparingly.
       </BpkParagraph>,
       <div className="bpkdocs-colors-page__swatch-container">
-        <ColorSwatch name="color-green-500" color={TOKENS.colorGreen500} whiteColor />
-        <ColorSwatch name="color-yellow-500" color={TOKENS.colorYellow500} />
-        <ColorSwatch name="color-red-500" color={TOKENS.colorRed500} whiteColor />
+        <ColorSwatch name="color-green-500" color={colors.colorGreen500} whiteColor />
+        <ColorSwatch name="color-yellow-500" color={colors.colorYellow500} />
+        <ColorSwatch name="color-red-500" color={colors.colorRed500} whiteColor />
       </div>,
     ],
     examples: [],
@@ -47,12 +47,12 @@ const components = [
         when required.
       </BpkParagraph>,
       <div className="bpkdocs-colors-page__swatch-container">
-        <ColorSwatch name="color-gray-50" color={TOKENS.colorGray50} />
-        <ColorSwatch name="color-gray-100" color={TOKENS.colorGray100} />
-        <ColorSwatch name="color-gray-300" color={TOKENS.colorGray300} whiteColor />
-        <ColorSwatch name="color-gray-500" color={TOKENS.colorGray500} whiteColor />
-        <ColorSwatch name="color-gray-700" color={TOKENS.colorGray700} whiteColor />
-        <ColorSwatch name="color-gray-900" color={TOKENS.colorGray900} whiteColor />
+        <ColorSwatch name="color-gray-50" color={colors.colorGray50} />
+        <ColorSwatch name="color-gray-100" color={colors.colorGray100} />
+        <ColorSwatch name="color-gray-300" color={colors.colorGray300} whiteColor />
+        <ColorSwatch name="color-gray-500" color={colors.colorGray500} whiteColor />
+        <ColorSwatch name="color-gray-700" color={colors.colorGray700} whiteColor />
+        <ColorSwatch name="color-gray-900" color={colors.colorGray900} whiteColor />
       </div>,
     ],
     examples: [],
@@ -78,7 +78,7 @@ const components = [
         An optional gradient can be used to break up large swathes of blue. However, this should be used sparingly.
       </BpkParagraph>,
       <div className="bpkdocs-colors-page__swatch-container">
-        <ColorSwatch name="primary-gradient" gradient={TOKENS.primaryGradient} whiteColor />
+        <ColorSwatch name="primary-gradient" gradient={primaryGradient} whiteColor />
       </div>,
     ],
     examples: [],

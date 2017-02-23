@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import { colorBlue500 } from 'bpk-tokens/tokens/base.es6';
 import BpkSpinner from './BpkSpinner';
 
 describe('BpkSpinner', () => {
@@ -11,7 +11,7 @@ describe('BpkSpinner', () => {
   });
 
   it('should render correctly with a "fill" attribute', () => {
-    const tree = renderer.create(<BpkSpinner fill={TOKENS.colorBlue500} />).toJSON();
+    const tree = renderer.create(<BpkSpinner fill={colorBlue500} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 

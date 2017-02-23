@@ -1,4 +1,4 @@
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import { calendarDaySize, calendarDaySpacing } from 'bpk-tokens/tokens/base.es6';
 
 const remToPx = (value) => {
   let parsed = null;
@@ -11,7 +11,7 @@ const remToPx = (value) => {
 };
 
 export const getCalendarGridWidth = () => 7 * (
-  remToPx(TOKENS.calendarDaySize) + remToPx(TOKENS.calendarDaySpacing)
+  remToPx(calendarDaySize) + remToPx(calendarDaySpacing)
 );
 
 export const getTransformStyles = (transformValue) => {

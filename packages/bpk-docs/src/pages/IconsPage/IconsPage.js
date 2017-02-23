@@ -1,7 +1,7 @@
 import React from 'react';
 import keys from 'lodash/keys';
 import icons from 'bpk-component-icon/all';
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import { colorGray700 } from 'bpk-tokens/tokens/base.es6';
 import BpkParagraph from 'bpk-component-paragraph';
 import BpkRouterLink from 'bpk-component-router-link';
 
@@ -40,7 +40,7 @@ const components = [
           const Icon = icons.sm[icon];
           return (
             <li key={icon} title={icon} className="bpkdocs-icons-page__icon-list-item">
-              <Icon icon={icon} fill={TOKENS.colorGray700} />
+              <Icon icon={icon} fill={colorGray700} />
             </li>
           );
         })}
@@ -57,7 +57,7 @@ const components = [
           const Icon = icons.lg[icon];
           return (
             <li key={icon} title={icon} className="bpkdocs-icons-page__icon-list-item">
-              <Icon icon={icon} fill={TOKENS.colorGray700} />
+              <Icon icon={icon} fill={colorGray700} />
             </li>
           );
         })}

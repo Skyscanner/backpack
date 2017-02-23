@@ -12,14 +12,14 @@ npm install bpk-component-spinner --save
 
 ```js
 import React from 'react'
-import TOKENS from 'bpk-tokens/tokens/base.common'
+import { colors } from 'bpk-tokens/tokens/base.es6'
 import { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner } from 'bpk-component-spinner'
 
 export default MyComponent = () => (
   <div>
-    <BpkSpinner color={TOKENS.colorWhite} />
-    <BpkLargeSpinner color={TOKENS.colorGray700} />
-    <BpkExtraLargeSpinner color={TOKENS.colorBlue500} />
+    <BpkSpinner color={colors.colorWhite} />
+    <BpkLargeSpinner color={colors.colorGray700} />
+    <BpkExtraLargeSpinner color={colors.colorBlue500} />
   </div>
 )
 ```
@@ -38,5 +38,3 @@ export default MyComponent = () => (
 | Property      | PropType | Required | Default Value       |
 | ------------- | -------- | -------- | ------------------- |
 | fill          | string   | false    | TOKENS.colorGray700 |
-
-

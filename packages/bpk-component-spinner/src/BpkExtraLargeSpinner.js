@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import { colorGray700 } from 'bpk-tokens/tokens/base.es6';
 import XlSpinner from 'bpk-svgs/dist/js/spinners/xl';
 
 import './bpk-spinner.scss';
@@ -11,7 +11,7 @@ BpkExtraLargeSpinner.propTypes = {
 };
 
 BpkExtraLargeSpinner.defaultProps = {
-  fill: TOKENS.colorGray700,
+  fill: colorGray700,
 };
 
 export default BpkExtraLargeSpinner;

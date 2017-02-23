@@ -1,11 +1,11 @@
 import BpkLabel from 'bpk-component-label';
 import BpkButton from 'bpk-component-button';
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import { spacingSm, spacingXxl } from 'bpk-tokens/tokens/base.es6';
 import React, { PropTypes, Component } from 'react';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 
 const FormFieldExample = props => (
-  <div style={{ marginBottom: TOKENS.spacingSm, maxWidth: `calc(${TOKENS.spacingXxl} * 6)` }}>
+  <div style={{ marginBottom: spacingSm, maxWidth: `calc(${spacingXxl} * 6)` }}>
     {props.children}
   </div>
 );

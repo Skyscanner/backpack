@@ -20,10 +20,24 @@ Sass:
 }
 ```
 
-JavaScript:
+JavaScript (CommonJS):
 
 ```js
 import TOKENS from 'bpk-tokens/tokens/base.common';
 
 console.log(TOKENS.spacingBase);
+```
+
+JavaScript (ES6 module):
+
+```js
+// Individual tokens
+import { spacingBase } from 'bpk-tokens/tokens/base.es6';
+
+console.log(spacingBase);
+
+// Whole token categories
+import { colors } from 'bpk-tokens/tokens/base.es6';
+
+console.log(colors.colorGray700);
 ```

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import { colorGray700, spacingXxl } from 'bpk-tokens/tokens/base.es6';
 import CloudLogo from 'bpk-svgs/dist/js/logos/cloud';
 
 const BpkCloudLogo = props => <CloudLogo fill={props.fill} height={props.height} />;
@@ -10,8 +10,8 @@ BpkCloudLogo.propTypes = {
 };
 
 BpkCloudLogo.defaultProps = {
-  fill: TOKENS.colorGray700,
-  height: TOKENS.spacingXxl,
+  fill: colorGray700,
+  height: spacingXxl,
 };
 
 export default BpkCloudLogo;

@@ -8,6 +8,7 @@ import theo from 'theo';
 
 import bpkScss from './formatters/bpk.scss';
 import bpkDefaultScss from './formatters/bpk.default.scss';
+import bpkEs6Js from './formatters/bpk.es6.js';
 
 const OUTPUT_MAP = {
   web: [
@@ -15,6 +16,7 @@ const OUTPUT_MAP = {
     'default.scss',
     'raw.json',
     'common.js',
+    'es6.js',
   ],
   ios: ['ios.json'],
   android: ['android.xml'],
@@ -24,6 +26,7 @@ const OUTPUT_MAP = {
 
 theo.registerFormat('scss', bpkScss);
 theo.registerFormat('default.scss', bpkDefaultScss);
+theo.registerFormat('es6.js', bpkEs6Js);
 
 // Gulp task definitions
 
