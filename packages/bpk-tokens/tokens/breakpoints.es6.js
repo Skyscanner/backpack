@@ -1,0 +1,18 @@
+export const BREAKPOINT_MOBILE = '32.25rem';
+export const BREAKPOINT_TABLET = '50.25rem';
+export const BREAKPOINT_DESKTOP = '71.25rem';
+export const BREAKPOINT_QUERY_MOBILE = '(max-width: 32.25rem)';
+export const BREAKPOINT_QUERY_TABLET = '(max-width: 50.25rem)';
+export const BREAKPOINT_QUERY_TABLET_ONLY = '(min-width: 32.3125rem) and (max-width: 50.25rem)';
+export const BREAKPOINT_QUERY_ABOVE_MOBILE = '(min-width: 32.3125rem)';
+export const BREAKPOINT_QUERY_ABOVE_TABLET = '(min-width: 50.3125rem)';
+export const breakpoints = {
+BREAKPOINT_MOBILE,
+BREAKPOINT_TABLET,
+BREAKPOINT_DESKTOP,
+BREAKPOINT_QUERY_MOBILE,
+BREAKPOINT_QUERY_TABLET,
+BREAKPOINT_QUERY_TABLET_ONLY,
+BREAKPOINT_QUERY_ABOVE_MOBILE,
+BREAKPOINT_QUERY_ABOVE_TABLET,
+};
