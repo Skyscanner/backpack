@@ -2,7 +2,12 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Changed:**
+- bpk-component-logo:
+- bpk-mixins:
+- bpk-svgs:
+  - Removed logo components from backpack
+  - Use internal `bpk-logos` component instead
 
 ## 2017-02-23 - Tokens as ES6 module
 

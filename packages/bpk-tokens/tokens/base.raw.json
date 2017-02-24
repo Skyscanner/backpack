@@ -1277,36 +1277,6 @@
       "type": "size",
       "name": "GRID_CONTAINER_MOBILE_PADDING"
     },
-    "LOGO_CLOUD_DEFAULT_HEIGHT": {
-      "type": "size",
-      "category": "logos",
-      "value": "2.625rem",
-      "name": "LOGO_CLOUD_DEFAULT_HEIGHT"
-    },
-    "LOGO_INLINE_DEFAULT_HEIGHT": {
-      "type": "size",
-      "category": "logos",
-      "value": "2.625rem",
-      "name": "LOGO_INLINE_DEFAULT_HEIGHT"
-    },
-    "LOGO_STACKED_DEFAULT_HEIGHT": {
-      "type": "size",
-      "category": "logos",
-      "value": "calc(1.5rem * 3)",
-      "name": "LOGO_STACKED_DEFAULT_HEIGHT"
-    },
-    "LOGO_TIANXUN_DEFAULT_HEIGHT": {
-      "type": "size",
-      "category": "logos",
-      "value": "2.625rem",
-      "name": "LOGO_TIANXUN_DEFAULT_HEIGHT"
-    },
-    "LOGO_TIANXUN_STACKED_DEFAULT_HEIGHT": {
-      "type": "size",
-      "category": "logos",
-      "value": "calc(1.5rem * 3)",
-      "name": "LOGO_TIANXUN_STACKED_DEFAULT_HEIGHT"
-    },
     "MODAL_SCRIM_BACKGROUND_COLOR": {
       "category": "modals",
       "value": "rgb(178, 174, 189)",
@@ -2121,11 +2091,6 @@
     "GRID_GUTTER",
     "GRID_CONTAINER_PADDING",
     "GRID_CONTAINER_MOBILE_PADDING",
-    "LOGO_CLOUD_DEFAULT_HEIGHT",
-    "LOGO_INLINE_DEFAULT_HEIGHT",
-    "LOGO_STACKED_DEFAULT_HEIGHT",
-    "LOGO_TIANXUN_DEFAULT_HEIGHT",
-    "LOGO_TIANXUN_STACKED_DEFAULT_HEIGHT",
     "MODAL_SCRIM_BACKGROUND_COLOR",
     "MODAL_SCRIM_INITIAL_OPACITY",
     "MODAL_SCRIM_OPACITY",

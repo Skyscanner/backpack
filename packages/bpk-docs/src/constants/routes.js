@@ -21,7 +21,6 @@ export const TYPOGRAPHY = '/docs/atoms/typography';
 export const BUTTONS = '/docs/atoms/buttons';
 export const ICONS = '/docs/atoms/icons';
 export const SPINNERS = '/docs/atoms/spinners';
-export const LOGOS = '/docs/atoms/logos';
 export const FORMS = '/docs/atoms/forms';
 export const CARDS = '/docs/atoms/cards';
 export const BADGE = '/docs/atoms/badge';

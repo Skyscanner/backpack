@@ -25,7 +25,6 @@ import TypographyPage from './../pages/TypographyPage';
 import ButtonsPage from './../pages/ButtonsPage';
 import IconsPage from './../pages/IconsPage';
 import SpinnersPage from './../pages/SpinnersPage';
-import LogosPage from './../pages/LogosPage';
 import FormsPage from './../pages/FormsPage';
 import CardsPage from './../pages/CardsPage';
 import BadgePage from './../pages/BadgePage';
@@ -65,7 +64,6 @@ const Routes = (
         <Route path={ROUTES.BUTTONS} component={ButtonsPage} />
         <Route path={ROUTES.ICONS} component={IconsPage} />
         <Route path={ROUTES.SPINNERS} component={SpinnersPage} />
-        <Route path={ROUTES.LOGOS} component={LogosPage} />
         <Route path={ROUTES.FORMS} component={FormsPage} />
         <Route path={ROUTES.CARDS} component={CardsPage} />
         <Route path={ROUTES.BADGE} component={BadgePage} />

@@ -57,19 +57,6 @@ const DownloadsPage = () => (
               <BpkLink href={`/${largeIconsZip}`}>Large icons</BpkLink>
             </BpkListItem>
           </BpkList>
-          <BpkHeading level="h2">Logos</BpkHeading>
-          <BpkList>
-            <BpkListItem>
-              <BpkLink href="https://www.dropbox.com/sh/spolkpatjaua6xi/AADon-XjEae9pRmLazfo3-R7a?dl=0" blank>
-                App icons
-              </BpkLink>
-            </BpkListItem>
-            <BpkListItem>
-              <BpkLink href="https://www.dropbox.com/sh/yvj8s9m030t0fur/AABDX6BTDsuxSdyqe2_twW-Ra?dl=0" blank>
-                Logos
-              </BpkLink>
-            </BpkListItem>
-          </BpkList>
           <BpkHeading level="h2">Sketch</BpkHeading>
           <BpkList>
             <BpkListItem>

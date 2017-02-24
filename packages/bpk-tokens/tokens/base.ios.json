@@ -1201,36 +1201,6 @@
       "name": "gridContainerMobilePadding"
     },
     {
-      "type": "size",
-      "category": "logos",
-      "value": "42",
-      "name": "logoCloudDefaultHeight"
-    },
-    {
-      "type": "size",
-      "category": "logos",
-      "value": "42",
-      "name": "logoInlineDefaultHeight"
-    },
-    {
-      "type": "size",
-      "category": "logos",
-      "value": "calc(1.5rem * 3)",
-      "name": "logoStackedDefaultHeight"
-    },
-    {
-      "type": "size",
-      "category": "logos",
-      "value": "42",
-      "name": "logoTianxunDefaultHeight"
-    },
-    {
-      "type": "size",
-      "category": "logos",
-      "value": "calc(1.5rem * 3)",
-      "name": "logoTianxunStackedDefaultHeight"
-    },
-    {
       "category": "modals",
       "value": "rgb(178, 174, 189)",
       "type": "color",

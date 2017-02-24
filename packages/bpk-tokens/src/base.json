@@ -12,7 +12,6 @@
     "./base/colors.json",
     "./base/forms.json",
     "./base/grids.json",
-    "./base/logos.json",
     "./base/modals.json",
     "./base/notifications.json",
     "./base/spacing.json",
