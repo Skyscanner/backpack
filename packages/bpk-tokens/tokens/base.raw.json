@@ -158,7 +158,7 @@
     "BOX_SHADOW_SM": {
       "type": "box-shadow",
       "category": "box-shadows",
-      "value": "0px 1px 3px 0px rgba(#252033, .2)",
+      "value": "0px 1px 3px 0px rgba(#252033, .3)",
       "name": "BOX_SHADOW_SM"
     },
     "BOX_SHADOW_LG": {
