@@ -167,6 +167,7 @@ class BpkDatepicker extends Component {
                 isOpen={this.state.isOpen}
                 label={title}
                 closeButtonText={closeButtonText}
+                tabIndex={0}
                 {...rest}
               >
                 {calendarComponent}
