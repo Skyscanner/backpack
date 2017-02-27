@@ -198,11 +198,6 @@ export const gridColumns = "12";
 export const gridGutter = "1.5rem";
 export const gridContainerPadding = "1.5rem";
 export const gridContainerMobilePadding = ".75rem";
-export const logoCloudDefaultHeight = "2.625rem";
-export const logoInlineDefaultHeight = "2.625rem";
-export const logoStackedDefaultHeight = "calc(1.5rem * 3)";
-export const logoTianxunDefaultHeight = "2.625rem";
-export const logoTianxunStackedDefaultHeight = "calc(1.5rem * 3)";
 export const modalScrimBackgroundColor = "rgb(178, 174, 189)";
 export const modalScrimInitialOpacity = "0";
 export const modalScrimOpacity = ".7";
@@ -528,13 +523,6 @@ gridColumns,
 gridGutter,
 gridContainerPadding,
 gridContainerMobilePadding,
-};
-export const logos = {
-logoCloudDefaultHeight,
-logoInlineDefaultHeight,
-logoStackedDefaultHeight,
-logoTianxunDefaultHeight,
-logoTianxunStackedDefaultHeight,
 };
 export const modals = {
 modalScrimBackgroundColor,

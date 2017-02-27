@@ -51,68 +51,6 @@ gulp.task('elements', () => {
 });
 
 /*
-  LOGOS
-*/
-gulp.task('logos-base', () => {
-  const optimised = gulp
-    .src('src/logos/**/*.svg')
-    .pipe(svgmin({
-      plugins: [
-        ...svgoCommonPlugins,
-        { removeAttrs: { attrs: ['id', 'class', 'width', 'height', 'data-name', 'fill', 'fill-rule'] } },
-      ],
-    }))
-    .pipe(gulp.dest('src/logos'));
-
-  return optimised
-    .pipe(svg2react())
-    .pipe(rename({ extname: '.js' }))
-    .pipe(gulp.dest('dist/js/logos'));
-});
-
-gulp.task('logos-cloud', ['logos-base'], () => (
-  gulp
-    .src('src/logos/cloud.svg')
-    .pipe(svg2datauri({ colors }))
-    .pipe(sassMap('bpk-logos-cloud'))
-    .pipe(rename('_logos-cloud.scss'))
-    .pipe(gulp.dest('dist/scss'))
-));
-gulp.task('logos-inline', ['logos-base'], () => (
-  gulp
-    .src('src/logos/inline.svg')
-    .pipe(svg2datauri({ colors }))
-    .pipe(sassMap('bpk-logos-inline'))
-    .pipe(rename('_logos-inline.scss'))
-    .pipe(gulp.dest('dist/scss'))
-));
-gulp.task('logos-stacked', ['logos-base'], () => (
-  gulp
-    .src('src/logos/stacked.svg')
-    .pipe(svg2datauri({ colors }))
-    .pipe(sassMap('bpk-logos-stacked'))
-    .pipe(rename('_logos-stacked.scss'))
-    .pipe(gulp.dest('dist/scss'))
-));
-gulp.task('logos-tianxun-stacked', ['logos-base'], () => (
-  gulp
-    .src('src/logos/tianxun-stacked.svg')
-    .pipe(svg2datauri({ colors }))
-    .pipe(sassMap('bpk-logos-tianxun-stacked'))
-    .pipe(rename('_logos-tianxun-stacked.scss'))
-    .pipe(gulp.dest('dist/scss'))
-));
-gulp.task('logos-tianxun', ['logos-base'], () => (
-  gulp
-    .src('src/logos/tianxun.svg')
-    .pipe(svg2datauri({ colors }))
-    .pipe(sassMap('bpk-logos-tianxun'))
-    .pipe(rename('_logos-tianxun.scss'))
-    .pipe(gulp.dest('dist/scss'))
-));
-gulp.task('logos', ['logos-cloud', 'logos-inline', 'logos-stacked', 'logos-tianxun-stacked', 'logos-tianxun']);
-
-/*
   SPINNERS
 */
 gulp.task('spinners', () => {
@@ -209,6 +147,6 @@ gulp.task('icons-lg', () => {
   return merge(react, datauri);
 });
 
-gulp.task('default', ['elements', 'logos', 'spinners', 'icons-sm', 'icons-lg']);
+gulp.task('default', ['elements', 'spinners', 'icons-sm', 'icons-lg']);
 
 // TODO: include width/height in same line in react components
