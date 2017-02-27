@@ -2,20 +2,25 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-02-27 - Deprecated logo components
+
 **Changed:**
 - bpk-component-logo:
-  - This component has been deprecated
-  - **Consumers should now use our internal `bpk-logos` component instead**
+  - **This component has been deprecated**
+  - Consumers should now use our internal `bpk-logos` component instead
 
-- bpk-mixins:
-- bpk-svgs:
-  - Removed logo mixins
-  - **Consumers who were using logo mixins from these packages should now use
+- bpk-mixins: 8.6.2 => 9.0.0
+- bpk-svgs: 4.3.3 => 5.0.0
+- bpk-tokens: 17.1.1 => 18.0.0
+  - **Removed logo mixins**
+  - Consumers who were using logo mixins from these packages should now use
     our internal `bpk-logos` component instead - Sass mixins are available at
-    `bpk-logos/sass`**
+    `bpk-logos/sass`
 
 **Fixed:**
-- bpk-component-datepicker:
+- bpk-component-datepicker: 5.0.5 => 5.0.6
   - Month selector used to be automatically opened on iPad
 
 ## 2017-02-23 - Tokens as ES6 module
@@ -24,8 +29,8 @@
 - bpk-tokens: 17.1.0 => 17.1.1
   - Tokens can now be consumed individually or grouped by category using ES6 imports:
     ```
-import { colors, spacingXxl } from 'bpk-tokens/tokens/base.es6';
-```
+    import { colors, spacingXxl } from 'bpk-tokens/tokens/base.es6';
+    ```
 
 ## 2017-02-22 (2) - Fixed icon scaling in React components
 
