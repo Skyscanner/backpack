@@ -4,11 +4,15 @@
 
 **Changed:**
 - bpk-component-logo:
+  - This component has been deprecated
+  - **Consumers should now use our internal `bpk-logos` component instead**
+
 - bpk-mixins:
 - bpk-svgs:
-  - Removed logo components from backpack
-  - **Consumers who were using logo components from these packages should now use our
-    internal `bpk-logos` component instead**
+  - Removed logo mixins
+  - **Consumers who were using logo mixins from these packages should now use
+    our internal `bpk-logos` component instead - Sass mixins are available at
+    `bpk-logos/sass`**
 
 **Fixed:**
 - bpk-component-datepicker:
