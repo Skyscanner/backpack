@@ -7,7 +7,8 @@
 - bpk-mixins:
 - bpk-svgs:
   - Removed logo components from backpack
-  - Use internal `bpk-logos` component instead
+  - **Consumers who were using logo components from these packages should now use our
+    internal `bpk-logos` component instead**
 
 **Fixed:**
 - bpk-component-datepicker:
