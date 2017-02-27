@@ -9,6 +9,10 @@
   - Removed logo components from backpack
   - Use internal `bpk-logos` component instead
 
+**Fixed:**
+- bpk-component-datepicker:
+  - Month selector used to be automatically opened on iPad
+
 ## 2017-02-23 - Tokens as ES6 module
 
 **Added:**
