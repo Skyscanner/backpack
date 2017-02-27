@@ -24,10 +24,12 @@ npm install [package-name] --save
 | [`bpk-component-badge`](/packages/bpk-component-badge) | [![npm version](https://badge.fury.io/js/bpk-component-badge.svg)](http://badge.fury.io/js/bpk-component-badge) |
 | [`bpk-component-banner-alert`](/packages/bpk-component-banner-alert) | [![npm version](https://badge.fury.io/js/bpk-component-banner-alert.svg)](http://badge.fury.io/js/bpk-component-banner-alert) |
 | [`bpk-component-blockquote`](/packages/bpk-component-blockquote) | [![npm version](https://badge.fury.io/js/bpk-component-blockquote.svg)](http://badge.fury.io/js/bpk-component-blockquote) |
+| [`bpk-component-breakpoint`](/packages/bpk-component-breakpoint) | [![npm version](https://badge.fury.io/js/bpk-component-breakpoint.svg)](http://badge.fury.io/js/bpk-component-breakpoint) |
 | [`bpk-component-button`](/packages/bpk-component-button) | [![npm version](https://badge.fury.io/js/bpk-component-button.svg)](http://badge.fury.io/js/bpk-component-button) |
 | [`bpk-component-calendar`](/packages/bpk-component-calendar) | [![npm version](https://badge.fury.io/js/bpk-component-calendar.svg)](http://badge.fury.io/js/bpk-component-calendar) |
 | [`bpk-component-card`](/packages/bpk-component-card) | [![npm version](https://badge.fury.io/js/bpk-component-card.svg)](http://badge.fury.io/js/bpk-component-card) |
 | [`bpk-component-checkbox`](/packages/bpk-component-checkbox) | [![npm version](https://badge.fury.io/js/bpk-component-checkbox.svg)](http://badge.fury.io/js/bpk-component-checkbox) |
+| [`bpk-component-close-button`](/packages/bpk-component-close-button) | [![npm version](https://badge.fury.io/js/bpk-component-close-button.svg)](http://badge.fury.io/js/bpk-component-close-button) |
 | [`bpk-component-code`](/packages/bpk-component-code) | [![npm version](https://badge.fury.io/js/bpk-component-code.svg)](http://badge.fury.io/js/bpk-component-code) |
 | [`bpk-component-content-container`](/packages/bpk-component-content-container) | [![npm version](https://badge.fury.io/js/bpk-component-content-container.svg)](http://badge.fury.io/js/bpk-component-content-container) |
 | [`bpk-component-datepicker`](/packages/bpk-component-datepicker) | [![npm version](https://badge.fury.io/js/bpk-component-datepicker.svg)](http://badge.fury.io/js/bpk-component-datepicker) |
@@ -39,11 +41,12 @@ npm install [package-name] --save
 | [`bpk-component-label`](/packages/bpk-component-label) | [![npm version](https://badge.fury.io/js/bpk-component-label.svg)](http://badge.fury.io/js/bpk-component-label) |
 | [`bpk-component-link`](/packages/bpk-component-link) | [![npm version](https://badge.fury.io/js/bpk-component-link.svg)](http://badge.fury.io/js/bpk-component-link) |
 | [`bpk-component-list`](/packages/bpk-component-list) | [![npm version](https://badge.fury.io/js/bpk-component-list.svg)](http://badge.fury.io/js/bpk-component-list) |
-| [`bpk-component-logo`](/packages/bpk-component-logo) | [![npm version](https://badge.fury.io/js/bpk-component-logo.svg)](http://badge.fury.io/js/bpk-component-logo) |
 | [`bpk-component-modal`](/packages/bpk-component-modal) | [![npm version](https://badge.fury.io/js/bpk-component-modal.svg)](http://badge.fury.io/js/bpk-component-modal) |
 | [`bpk-component-paragraph`](/packages/bpk-component-paragraph) | [![npm version](https://badge.fury.io/js/bpk-component-paragraph.svg)](http://badge.fury.io/js/bpk-component-paragraph) |
+| [`bpk-component-popover`](/packages/bpk-component-popover) | [![npm version](https://badge.fury.io/js/bpk-component-popover.svg)](http://badge.fury.io/js/bpk-component-popover) |
 | [`bpk-component-radio`](/packages/bpk-component-radio) | [![npm version](https://badge.fury.io/js/bpk-component-radio.svg)](http://badge.fury.io/js/bpk-component-radio) |
 | [`bpk-component-router-link`](/packages/bpk-component-router-link) | [![npm version](https://badge.fury.io/js/bpk-component-router-link.svg)](http://badge.fury.io/js/bpk-component-router-link) |
+| [`bpk-component-rtl-toggle`](/packages/bpk-component-rtl-toggle) | [![npm version](https://badge.fury.io/js/bpk-component-rtl-toggle.svg)](http://badge.fury.io/js/bpk-component-rtl-toggle) |
 | [`bpk-component-select`](/packages/bpk-component-select) | [![npm version](https://badge.fury.io/js/bpk-component-select.svg)](http://badge.fury.io/js/bpk-component-select) |
 | [`bpk-component-spinner`](/packages/bpk-component-spinner) | [![npm version](https://badge.fury.io/js/bpk-component-spinner.svg)](http://badge.fury.io/js/bpk-component-spinner) |
 | [`bpk-component-table`](/packages/bpk-component-table) | [![npm version](https://badge.fury.io/js/bpk-component-table.svg)](http://badge.fury.io/js/bpk-component-table) |
