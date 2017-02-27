@@ -1,8 +1,11 @@
 # Backpack changelog
 
 ## UNRELEASED
+**Fixed:**
+- bpk-tokens:
+  - Increased opacity of shadow sm
 
-_Nothing yet..._
+
 
 ## 2017-02-27 - Deprecated logo components
 
