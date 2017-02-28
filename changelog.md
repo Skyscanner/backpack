@@ -2,18 +2,20 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-02-28 (2) - Better border-radius for multiline buttons
+
 **Fixed:**
-- bpk-tokens
-- bpk-mixins
-- bpk-component-button
+- bpk-tokens: 18.0.1 => 18.0.2
+- bpk-mixins: 9.0.1 => 9.0.2
+- bpk-component-button: 1.5.16 => 1.5.17
   - Constrained border-radius of buttons to support multi-line text better.
 
-
-
-## 2017-02-28 - Updated shadow opacity
+## 2017-02-28 (1) - Updated shadow opacity
 
 **Fixed:**
-- bpk-tokens:
+- bpk-tokens: 18.0.0 => 18.0.1
   - Increased opacity of shadow sm
 
 ## 2017-02-27 - Deprecated logo components
