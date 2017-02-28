@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-02-28 - Updated shadow opacity
+
 **Fixed:**
 - bpk-tokens:
   - Increased opacity of shadow sm
