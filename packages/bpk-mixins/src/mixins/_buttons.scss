@@ -65,8 +65,8 @@
 ///   }
 
 @mixin bpk-button--large {
-  border-radius: $bpk-button-border-radius-lg;
   padding: $bpk-button-large-padding-y $bpk-button-large-padding-x;
+  border-radius: $bpk-button-border-radius-lg;
   font-size: $bpk-button-large-font-size;
   line-height: $bpk-button-large-line-height;
 }
