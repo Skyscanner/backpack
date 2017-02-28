@@ -22,6 +22,10 @@
       "value": "{!BORDER_RADIUS_PILL}",
       "type": "size"
     },
+    "BUTTON_BORDER_RADIUS_LG": {
+      "value": "{!BORDER_RADIUS_PILL_LG}",
+      "type": "size"
+    },
     "BUTTON_BACKGROUND_COLOR": {
       "value": "{!GREEN_500}",
       "type": "color"

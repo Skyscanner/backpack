@@ -65,7 +65,8 @@
     "SPACING_XXL": "2.625rem",
     "BORDER_RADIUS_XS": ".1875rem",
     "BORDER_RADIUS_SM": ".375rem",
-    "BORDER_RADIUS_PILL": "5rem",
+    "BORDER_RADIUS_PILL": "1.125rem",
+    "BORDER_RADIUS_PILL_LG": "1.3125rem",
     "BREAKPOINT_MOBILE": "32.25rem",
     "BREAKPOINT_ABOVE_MOBILE": "32.3125rem",
     "BREAKPOINT_TABLET": "50.25rem",
@@ -151,7 +152,7 @@
     },
     "BORDER_RADIUS_PILL": {
       "type": "size",
-      "value": "5rem",
+      "value": "1.125rem",
       "category": "radii",
       "name": "BORDER_RADIUS_PILL"
     },
@@ -241,9 +242,15 @@
     },
     "BUTTON_BORDER_RADIUS": {
       "category": "buttons",
-      "value": "5rem",
+      "value": "1.125rem",
       "type": "size",
       "name": "BUTTON_BORDER_RADIUS"
+    },
+    "BUTTON_BORDER_RADIUS_LG": {
+      "category": "buttons",
+      "value": "1.3125rem",
+      "type": "size",
+      "name": "BUTTON_BORDER_RADIUS_LG"
     },
     "BUTTON_BACKGROUND_COLOR": {
       "category": "buttons",
@@ -1919,6 +1926,7 @@
     "BUTTON_PADDING_X",
     "BUTTON_PADDING_X_ICON_ONLY",
     "BUTTON_BORDER_RADIUS",
+    "BUTTON_BORDER_RADIUS_LG",
     "BUTTON_BACKGROUND_COLOR",
     "BUTTON_BACKGROUND_IMAGE",
     "BUTTON_HOVER_BACKGROUND_COLOR",

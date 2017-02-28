@@ -23,7 +23,7 @@ $bpk-border-radius-xs: .1875rem !default;
 /// @group radii
 $bpk-border-radius-sm: .375rem !default;
 /// @group radii
-$bpk-border-radius-pill: 5rem !default;
+$bpk-border-radius-pill: 1.125rem !default;
 /// @group box-shadows
 $bpk-box-shadow-sm: 0px 1px 3px 0px rgba(#252033, .3) !default;
 /// @group box-shadows
@@ -53,7 +53,9 @@ $bpk-button-padding-x: 1.125rem !default;
 /// @group buttons
 $bpk-button-padding-x-icon-only: .5625rem !default;
 /// @group buttons
-$bpk-button-border-radius: 5rem !default;
+$bpk-button-border-radius: 1.125rem !default;
+/// @group buttons
+$bpk-button-border-radius-lg: 1.3125rem !default;
 /// @group buttons
 $bpk-button-background-color: rgb(0, 215, 117) !default;
 /// @group buttons

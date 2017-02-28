@@ -2,7 +2,13 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Fixed:**
+- bpk-tokens
+- bpk-mixins
+- bpk-component-button
+  - Constrained border-radius of buttons to support multi-line text better.
+
+
 
 ## 2017-02-28 - Updated shadow opacity
 
