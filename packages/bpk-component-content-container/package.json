@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-content-container",
-  "version": "1.0.38",
+  "version": "1.0.39",
   "description": "Backpack content container component.",
   "main": "index.js",
   "repository": {
@@ -13,6 +13,6 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^9.0.0"
+    "bpk-mixins": "^9.0.1"
   }
 }
