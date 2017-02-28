@@ -74,7 +74,7 @@
     },
     {
       "type": "size",
-      "value": "80",
+      "value": "18",
       "category": "radii",
       "name": "borderRadiusPill"
     },
@@ -164,9 +164,15 @@
     },
     {
       "category": "buttons",
-      "value": "80",
+      "value": "18",
       "type": "size",
       "name": "buttonBorderRadius"
+    },
+    {
+      "category": "buttons",
+      "value": "21",
+      "type": "size",
+      "name": "buttonBorderRadiusLg"
     },
     {
       "category": "buttons",

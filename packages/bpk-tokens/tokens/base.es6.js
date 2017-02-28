@@ -10,7 +10,7 @@ export const badgeBackgroundColor = "rgb(255, 187, 0)";
 export const badgeCenteredVerticalAlign = "text-bottom";
 export const borderRadiusXs = ".1875rem";
 export const borderRadiusSm = ".375rem";
-export const borderRadiusPill = "5rem";
+export const borderRadiusPill = "1.125rem";
 export const boxShadowSm = "0px 1px 3px 0px rgba(#252033, .3)";
 export const boxShadowLg = "0px 4px 14px 0px rgba(#252033, .25)";
 export const boxShadowXl = "0px 12px 50px 0px rgba(#252033, .25)";
@@ -25,7 +25,8 @@ export const breakpointQueryAboveTablet = "(min-width: 50.3125rem)";
 export const buttonPaddingY = ".375rem";
 export const buttonPaddingX = "1.125rem";
 export const buttonPaddingXIconOnly = ".5625rem";
-export const buttonBorderRadius = "5rem";
+export const buttonBorderRadius = "1.125rem";
+export const buttonBorderRadiusLg = "1.3125rem";
 export const buttonBackgroundColor = "rgb(0, 215, 117)";
 export const buttonBackgroundImage = "linear-gradient(-180deg, #00d775 0%, #00bd68 100%)";
 export const buttonHoverBackgroundColor = "rgb(0, 189, 104)";
@@ -341,6 +342,7 @@ buttonPaddingY,
 buttonPaddingX,
 buttonPaddingXIconOnly,
 buttonBorderRadius,
+buttonBorderRadiusLg,
 buttonBackgroundColor,
 buttonBackgroundImage,
 buttonHoverBackgroundColor,

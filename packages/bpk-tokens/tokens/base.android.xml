@@ -12,7 +12,7 @@
   <property name="BADGE_CENTERED_VERTICAL_ALIGN" category="badges">text-bottom</property>
   <property name="BORDER_RADIUS_XS" category="radii">3</property>
   <property name="BORDER_RADIUS_SM" category="radii">6</property>
-  <property name="BORDER_RADIUS_PILL" category="radii">80</property>
+  <property name="BORDER_RADIUS_PILL" category="radii">18</property>
   <property name="BOX_SHADOW_SM" category="box-shadows">0px 1px 3px 0px rgba(#252033, .3)</property>
   <property name="BOX_SHADOW_LG" category="box-shadows">0px 4px 14px 0px rgba(#252033, .25)</property>
   <property name="BOX_SHADOW_XL" category="box-shadows">0px 12px 50px 0px rgba(#252033, .25)</property>
@@ -27,7 +27,8 @@
   <property name="BUTTON_PADDING_Y" category="buttons">6</property>
   <property name="BUTTON_PADDING_X" category="buttons">18</property>
   <property name="BUTTON_PADDING_X_ICON_ONLY" category="buttons">9</property>
-  <property name="BUTTON_BORDER_RADIUS" category="buttons">80</property>
+  <property name="BUTTON_BORDER_RADIUS" category="buttons">18</property>
+  <property name="BUTTON_BORDER_RADIUS_LG" category="buttons">21</property>
   <color name="BUTTON_BACKGROUND_COLOR" category="buttons">#00d775ff</color>
   <property name="BUTTON_BACKGROUND_IMAGE" category="buttons">linear-gradient(-180deg, #00d775 0, #00bd68 1)</property>
   <color name="BUTTON_HOVER_BACKGROUND_COLOR" category="buttons">#00bd68ff</color>
