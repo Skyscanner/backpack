@@ -2,10 +2,62 @@
 
 ## UNRELEASED
 
+**Changed:**
+- bpk-component-grid:
+  - Removed `padded` prop from `BpkGridContainer` in favour of adding it to `BpkGridRow` components
+    i.e. instead of the following:
+    ```
+    <BpkGridContainer padded={false}>
+      <BpkGridRow>
+        ...
+      </BpkGridRow>
+    </BpkGridContainer>
+    ```
+
+    ...consumers should now do:
+
+    ```
+    <BpkGridContainer>
+      <BpkGridRow padded={false}>
+        ...
+      </BpkGridRow>
+    </BpkGridContainer>
+    ```
+    
+- bpk-mixins:
+  - Removed `bpk-grid__container--padded` modifier mixin in favour of `bpk-grid__row--padded`
+    i.e. instead of the following:
+    ```
+    .selector {
+      @include bpk-grid__container();
+      @include bpk-grid__container--padded();
+    }
+    ```
+
+    ..consumers should now do:
+    ```
+    .selector {
+      @include bpk-grid__row();
+      @include bpk-grid__row--padded();
+    }
+    ```
+
+**Added:**
+- bpk-component-grid:
+- bpk-mixins:
+  - Added the ability to turn padding off on `BpkGridColumn` components
+    Usage: `<BpkGridColumn width={1} padded={false}>Content</BpkGridColumn>`
+  - Added the ability to add a custom `className` prop to all grid components
+  - Added the ability to add arbitrary props to all grid components
+
 **Fixed:**
-  - bpk-component-card:
-    - Relaxed the `href` prop to no longer be required
-    - If an `href` prop isn't provided, the component will render a `<div role="button" />`
+- bpk-component-grid:
+- bpk-mixins:
+  - Fixed RTL support for grid columns using `offset`
+
+- bpk-component-card:
+  - Relaxed the `href` prop to no longer be required
+  - If an `href` prop isn't provided, the component will render a `<div role="button" />`
 
 ## 2017-02-28 (2) - Better border-radius for multiline buttons
 

@@ -1,11 +1,14 @@
 import React from 'react';
 import pickBy from 'lodash/pickBy';
 import includes from 'lodash/includes';
+import { BpkCode } from 'bpk-component-code';
 import TOKENS from 'bpk-tokens/tokens/base.common';
-import BpkRouterLink from 'bpk-component-router-link';
 import BpkParagraph from 'bpk-component-paragraph';
+import BpkBlockquote from 'bpk-component-blockquote';
+import BpkRouterLink from 'bpk-component-router-link';
 
 import gridReadme from 'bpk-component-grid/readme.md';
+import breakpointReadme from 'bpk-component-breakpoint/readme.md';
 
 import * as routes from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -54,6 +57,7 @@ const components = [
     ],
     examples: [],
     tokenMap: breakpoints,
+    readme: breakpointReadme,
     sassdocId: 'breakpoints',
   },
   {
@@ -61,10 +65,15 @@ const components = [
     title: 'Horizontal grid',
     blurb: [
       <BpkParagraph>
-        Backpack uses a 12 column responsive grid to compose and layout Organisms. At its core are three things:
-        containers, rows and columns. Containers are used to encapsulate the entire layout (all rows). Rows are used to
-        act as container to columns, and columns are used to contain content.
+        Backpack uses a 12 column responsive grid to compose and layout pages. Grids are composed using three basic
+        building blocks: containers, rows and columns. Containers are used to encapsulate the entire layout (all rows).
+        Rows are used to act as container to columns and columns are used to horizontally layout content.
       </BpkParagraph>,
+      <BpkBlockquote>
+        <strong>Note:</strong> The Backpack grid is intended to be used for overall page layout as opposed to spacing
+        out atom or molecule level components. Please stick to flexbox (or <BpkCode>display: table;</BpkCode> for
+        browsers which lack suport) based techniques for more intricate layouts.
+      </BpkBlockquote>,
       <BpkParagraph>
         <strong>Columns</strong>
       </BpkParagraph>,

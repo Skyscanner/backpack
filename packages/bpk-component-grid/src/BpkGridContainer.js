@@ -3,29 +3,27 @@ import React, { PropTypes } from 'react';
 import './bpk-grid.scss';
 
 const BpkGridContainer = (props) => {
+  const { children, className, debug, fullWidth, ...rest } = props;
   const classNames = ['bpk-grid__container'];
 
-  if (props.padded) { classNames.push('bpk-grid__container--padded'); }
-  if (props.debug) { classNames.push('bpk-grid__container--debug'); }
-  if (props.fullWidth) { classNames.push('bpk-grid__container--full-width'); }
+  if (debug) { classNames.push('bpk-grid__container--debug'); }
+  if (fullWidth) { classNames.push('bpk-grid__container--full-width'); }
+  if (className) { classNames.push(className); }
 
-  return <div className={classNames.join(' ')}>{props.children}</div>;
+  return <div className={classNames.join(' ')} {...rest}>{children}</div>;
 };
 
 BpkGridContainer.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-  padded: PropTypes.bool,
+  children: PropTypes.node.isRequired,
   debug: PropTypes.bool,
   fullWidth: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 BpkGridContainer.defaultProps = {
-  padded: true,
   debug: false,
   fullWidth: false,
+  className: null,
 };
 
 export default BpkGridContainer;

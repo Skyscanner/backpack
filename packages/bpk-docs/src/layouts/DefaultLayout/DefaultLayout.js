@@ -13,21 +13,19 @@ const DefaultLayout = ({ children }) => (
     <Helmet titleTemplate="%s | Backpack" />
     <Header />
     <main>{children}</main>
-    <BpkGridContainer padded={false}>
-      <div className="bpkdocs-default-layout__footer-container">
-        <BpkGridRow>
-          <BpkGridColumn width={6} mobileWidth={12}>
-            <small className="bpkdocs-default-layout__footer-copy">
-              &copy; Skyscanner {new Date().getFullYear()}
-            </small>
-          </BpkGridColumn>
-          <BpkGridColumn width={6} mobileWidth={12}>
-            <small className="bpkdocs-default-layout__footer-copy bpkdocs-default-layout__footer-copy--align-right">
-              <BpkGridToggle /> | <BpkRtlToggle />
-            </small>
-          </BpkGridColumn>
-        </BpkGridRow>
-      </div>
+    <BpkGridContainer className="bpkdocs-default-layout__footer-container">
+      <BpkGridRow>
+        <BpkGridColumn width={6} mobileWidth={12}>
+          <small className="bpkdocs-default-layout__footer-copy">
+            &copy; Skyscanner {new Date().getFullYear()}
+          </small>
+        </BpkGridColumn>
+        <BpkGridColumn width={6} mobileWidth={12}>
+          <small className="bpkdocs-default-layout__footer-copy bpkdocs-default-layout__footer-copy--align-right">
+            <BpkGridToggle /> | <BpkRtlToggle />
+          </small>
+        </BpkGridColumn>
+      </BpkGridRow>
     </BpkGridContainer>
   </div>
 );

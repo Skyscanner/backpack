@@ -11,8 +11,8 @@ npm install bpk-component-grid --save
 ## Usage
 
 ```js
-import React from 'react'
-import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid'
+import React from 'react';
+import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
 
 export default MyComponent = () => (
   <BpkGridContainer>
@@ -55,7 +55,7 @@ export default MyComponent = () => (
       </BpkGridColumn>
     </BpkGridRow>
   </BpkGridContainer>
-)
+);
 ```
 
 ### Props
@@ -64,8 +64,7 @@ export default MyComponent = () => (
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
-| padded    | bool     | false    | true          |
+| children  | node     | true     | -             |
 | debug     | bool     | false    | false         |
 | fullWidth | bool     | false    | false         |
 
@@ -73,17 +72,19 @@ export default MyComponent = () => (
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
+| children  | node     | true     | -             |
+| padded    | bool     | false    | true          |
 
 *BpkGridColumn:*
 
 | Property     | PropType | Required | Default Value |
 | ------------ | -------- | -------- | ------------- |
-| children     | -        | true     | -             |
+| children     | node     | true     | -             |
 | width        | number   | true     | -             |
 | mobileWidth  | number   | false    | null          |
 | tabletWidth  | number   | false    | null          |
 | offset       | number   | false    | null          |
 | mobileOffset | number   | false    | null          |
 | tabletOffset | number   | false    | null          |
+| padded       | bool     | false    | true          |
 | debug        | bool     | false    | false         |
