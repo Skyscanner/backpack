@@ -2,7 +2,10 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Fixed:**
+  - bpk-component-card:
+    - Relaxed the `href` prop to no longer be required
+    - If an `href` prop isn't provided, the component will render a `<div role="button" />`
 
 ## 2017-02-28 (2) - Better border-radius for multiline buttons
 

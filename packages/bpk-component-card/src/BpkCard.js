@@ -4,24 +4,27 @@ import './bpk-card.scss';
 
 const BpkCard = (props) => {
   const classNames = ['bpk-card'];
+  const { children, href, padded, ...rest } = props;
 
-  if (props.padded) { classNames.push('bpk-card--padded'); }
+  if (padded) { classNames.push('bpk-card--padded'); }
 
-  return <a href={props.href} onClick={props.onClick} className={classNames.join(' ')}>{props.children}</a>;
+  const classNameFinal = classNames.join(' ');
+
+  if (href) {
+    return <a href={href} className={classNameFinal} {...rest}>{children}</a>;
+  }
+
+  return <div role="button" className={classNameFinal} {...rest}>{children}</div>;
 };
 
 BpkCard.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-  href: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
+  children: PropTypes.node.isRequired,
+  href: PropTypes.string,
   padded: PropTypes.bool,
 };
 
 BpkCard.defaultProps = {
-  onClick: null,
+  href: null,
   padded: true,
 };
 
