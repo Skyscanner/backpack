@@ -71,8 +71,9 @@ const components = [
       </BpkParagraph>,
       <BpkBlockquote>
         <strong>Note:</strong> The Backpack grid is intended to be used for overall page layout as opposed to spacing
-        out atom or molecule level components. Please stick to flexbox (or <BpkCode>display: table;</BpkCode> for
-        browsers which lack suport) based techniques for more intricate layouts.
+        out atom or molecule level components. Please stick to flexbox based techniques for more intricate
+        layouts (or <BpkCode>display: table;</BpkCode> for browsers which lack support), just be sure to use the spacing
+        values above in order to achieve consistency.
       </BpkBlockquote>,
       <BpkParagraph>
         <strong>Columns</strong>
