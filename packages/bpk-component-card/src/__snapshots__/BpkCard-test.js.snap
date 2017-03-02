@@ -1,26 +1,23 @@
 exports[`BpkCard should render correctly 1`] = `
-<a
+<div
   className="bpk-card bpk-card--padded"
-  href="//www.skyscanner.net"
-  onClick={null}>
+  role="button">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-</a>
+</div>
 `;
 
 exports[`BpkCard should render correctly with "padded" attribute equal to "false" 1`] = `
-<a
+<div
   className="bpk-card"
-  href="//www.skyscanner.net"
-  onClick={null}>
+  role="button">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-</a>
+</div>
 `;
 
-exports[`BpkCard should render correctly with "tagName" attribute equal to "article" 1`] = `
+exports[`BpkCard should render correctly with an "href" attribute 1`] = `
 <a
   className="bpk-card bpk-card--padded"
-  href="//www.skyscanner.net"
-  onClick={null}>
+  href="//www.skyscanner.net">
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 </a>
 `;

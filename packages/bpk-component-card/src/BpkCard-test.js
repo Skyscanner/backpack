@@ -5,7 +5,7 @@ import BpkCard from './BpkCard';
 describe('BpkCard', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
-      <BpkCard href="//www.skyscanner.net">
+      <BpkCard>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
         sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
       </BpkCard>,
@@ -13,9 +13,9 @@ describe('BpkCard', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with "tagName" attribute equal to "article"', () => {
+  it('should render correctly with an "href" attribute', () => {
     const tree = renderer.create(
-      <BpkCard href="//www.skyscanner.net" tagName="article">
+      <BpkCard href="//www.skyscanner.net">
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
         sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
       </BpkCard>,
@@ -25,7 +25,7 @@ describe('BpkCard', () => {
 
   it('should render correctly with "padded" attribute equal to "false"', () => {
     const tree = renderer.create(
-      <BpkCard href="//www.skyscanner.net" padded={false}>
+      <BpkCard padded={false}>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
         sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
       </BpkCard>,

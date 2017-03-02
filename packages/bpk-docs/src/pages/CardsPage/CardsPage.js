@@ -17,7 +17,7 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <BpkCard href="#" onClick={e => e.preventDefault()}>
+      <BpkCard>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
         sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
       </BpkCard>,
@@ -28,7 +28,7 @@ const components = [
     title: 'Without padding',
     blurb: 'For full flexibility you can opt to remove the default padding.',
     examples: [
-      <BpkCard href="#" onClick={e => e.preventDefault()} padded={false}>
+      <BpkCard padded={false}>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
         sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
       </BpkCard>,
