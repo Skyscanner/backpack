@@ -10,6 +10,7 @@ _Nothing yet..._
 - bpk-component-grid: 0.1.6 => 1.0.0
   - Removed `padded` prop from `BpkGridContainer` in favour of adding it to `BpkGridRow` components
     i.e. instead of the following:
+
     ```
     <BpkGridContainer padded={false}>
       <BpkGridRow>
@@ -31,6 +32,7 @@ _Nothing yet..._
 - bpk-mixins: 9.0.2 => 10.0.0
   - Removed `bpk-grid__container--padded` modifier mixin in favour of `bpk-grid__row--padded`
     i.e. instead of the following:
+
     ```
     .selector {
       @include bpk-grid__container();
