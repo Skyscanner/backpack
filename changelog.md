@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-03-03 - Fixed padding issues with grid components
+
 **Changed:**
-- bpk-component-grid:
+- bpk-component-grid: 0.1.6 => 1.0.0
   - Removed `padded` prop from `BpkGridContainer` in favour of adding it to `BpkGridRow` components
     i.e. instead of the following:
     ```
@@ -23,8 +27,8 @@
       </BpkGridRow>
     </BpkGridContainer>
     ```
-    
-- bpk-mixins:
+
+- bpk-mixins: 9.0.2 => 10.0.0
   - Removed `bpk-grid__container--padded` modifier mixin in favour of `bpk-grid__row--padded`
     i.e. instead of the following:
     ```
@@ -43,19 +47,19 @@
     ```
 
 **Added:**
-- bpk-component-grid:
-- bpk-mixins:
+- bpk-component-grid: 0.1.6 => 1.0.0
+- bpk-mixins: 9.0.2 => 10.0.0
   - Added the ability to turn padding off on `BpkGridColumn` components
     Usage: `<BpkGridColumn width={1} padded={false}>Content</BpkGridColumn>`
   - Added the ability to add a custom `className` prop to all grid components
   - Added the ability to add arbitrary props to all grid components
 
 **Fixed:**
-- bpk-component-grid:
-- bpk-mixins:
+- bpk-component-grid: 0.1.6 => 1.0.0
+- bpk-mixins: 9.0.2 => 10.0.0
   - Fixed RTL support for grid columns using `offset`
 
-- bpk-component-card:
+- bpk-component-card: 0.0.37 => 0.0.38
   - Relaxed the `href` prop to no longer be required
   - If an `href` prop isn't provided, the component will render a `<div role="button" />`
 
