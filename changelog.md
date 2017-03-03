@@ -4,7 +4,7 @@
 
 _Nothing yet..._
 
-## 2017-03-03 (2) - Fixed padding issues with grid components
+## 2017-03-03 (2) - Fixed datauri based icons in stock andoid browser
 
 **Fixed:**
 - bpk-mixins: 10.0.0 => 10.0.1
