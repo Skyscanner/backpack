@@ -84,7 +84,7 @@ const ComponentExample = (component) => {
     category: component.title,
   }) : null;
 
-  return [heading, blurb, examples, readme, tokenMap, sassdocLink];
+  return [heading, blurb, tokenMap, examples, readme, sassdocLink];
 };
 
 const CustomSection = section => [
@@ -98,13 +98,13 @@ const DocsPageBuilder = props => (
     <BpkHeading level="h1">{props.title}</BpkHeading>
     {flatten(toNodes(props.blurb))}
     <BpkList>{flatten(props.components.map(ExampleNavListItem))}</BpkList>
+    {props.tokenMap ? toTokenTable(props.tokenMap) : null}
     {flatten(props.components.map(ComponentExample))}
     {props.readme ? flatten([
       <BpkHeading id="readme" level="h2">Readme</BpkHeading>,
       <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(props.readme) }} bareHtml />,
     ]) : null
     }
-    {props.tokenMap ? toTokenTable(props.tokenMap) : null}
     {flatten(props.customSections.map(CustomSection))}
     {props.sassdocId ? toSassdocLink({
       sassdocId: props.sassdocId,

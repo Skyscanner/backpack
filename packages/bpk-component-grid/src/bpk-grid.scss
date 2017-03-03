@@ -4,10 +4,6 @@
   &__container {
     @include bpk-grid__container;
 
-    &--padded {
-      @include bpk-grid__container--padded;
-    }
-
     &--debug {
       @include bpk-grid__container--debug;
     }
@@ -19,10 +15,18 @@
 
   &__row {
     @include bpk-grid__row;
+
+    &--padded {
+      @include bpk-grid__row--padded;
+    }
   }
 
   &__column {
     @include bpk-grid__column;
+
+    &--padded {
+      @include bpk-grid__column--padded;
+    }
 
     &--debug {
       @include bpk-grid__column--debug;

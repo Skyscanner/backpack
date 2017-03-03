@@ -5,37 +5,49 @@ import './bpk-grid.scss';
 const isNumeric = n => !isNaN(parseFloat(n)) && isFinite(n);
 
 const BpkGridColumn = (props) => {
-  const classNames = ['bpk-grid__column', `bpk-grid__column--${props.width}`];
+  const {
+    children,
+    width,
+    mobileWidth,
+    tabletWidth,
+    offset,
+    mobileOffset,
+    tabletOffset,
+    padded,
+    debug,
+    className,
+    ...rest
+  } = props;
 
-  if (isNumeric(props.mobileWidth)) { classNames.push(`bpk-grid__column--mobile-${props.mobileWidth}`); }
-  if (isNumeric(props.tabletWidth)) { classNames.push(`bpk-grid__column--tablet-${props.tabletWidth}`); }
-  if (isNumeric(props.offset)) { classNames.push(`bpk-grid__column--offset-${props.offset}`); }
-  if (isNumeric(props.mobileOffset)) { classNames.push(`bpk-grid__column--offset-mobile-${props.mobileOffset}`); }
-  if (isNumeric(props.tabletOffset)) { classNames.push(`bpk-grid__column--offset-tablet-${props.tabletOffset}`); }
-  if (props.debug) { classNames.push('bpk-grid__column--debug'); }
+  const classNames = ['bpk-grid__column', `bpk-grid__column--${width}`];
+
+  if (isNumeric(mobileWidth)) { classNames.push(`bpk-grid__column--mobile-${mobileWidth}`); }
+  if (isNumeric(tabletWidth)) { classNames.push(`bpk-grid__column--tablet-${tabletWidth}`); }
+  if (isNumeric(offset)) { classNames.push(`bpk-grid__column--offset-${offset}`); }
+  if (isNumeric(mobileOffset)) { classNames.push(`bpk-grid__column--offset-mobile-${mobileOffset}`); }
+  if (isNumeric(tabletOffset)) { classNames.push(`bpk-grid__column--offset-tablet-${tabletOffset}`); }
+  if (padded) { classNames.push('bpk-grid__column--padded'); }
+  if (debug) { classNames.push('bpk-grid__column--debug'); }
+  if (className) { classNames.push(className); }
 
   return (
-    <div className={classNames.join(' ')}>
-      {props.debug
-        ? <div className="bpk-grid__column-debugger">{props.children}</div>
-        : props.children
-      }
+    <div className={classNames.join(' ')} {...rest}>
+      {debug ? <div className="bpk-grid__column-debugger">{children}</div> : children}
     </div>
   );
 };
 
 BpkGridColumn.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
+  children: PropTypes.node.isRequired,
   width: PropTypes.number.isRequired,
   mobileWidth: PropTypes.number,
   tabletWidth: PropTypes.number,
   offset: PropTypes.number,
   mobileOffset: PropTypes.number,
   tabletOffset: PropTypes.number,
+  padded: PropTypes.bool,
   debug: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 BpkGridColumn.defaultProps = {
@@ -44,7 +56,9 @@ BpkGridColumn.defaultProps = {
   offset: null,
   mobileOffset: null,
   tabletOffset: null,
+  padded: true,
   debug: false,
+  className: null,
 };
 
 export default BpkGridColumn;
