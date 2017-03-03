@@ -1,57 +1,61 @@
 @import "~bpk-mixins";
 
-$border-color: red;
-$border-color: $bpk-color-gray-100;
-
 .bpk-tooltip {
-  transition: opacity $bpk-duration-sm ease-in-out;
+  $border-color: $bpk-color-gray-100;
+  $arrow-size: $bpk-spacing-xs;
+
+  transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
-
-  // @include bpk-breakpoint-above-mobile {
-  //   max-width: $bpk-breakpoint-mobile;
-  //   transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
-  // }
 
   &--appear {
     opacity: 0;
 
     .bpk-tooltip-tether-element-attached-top &:not(.bpk-tooltip--appear-active) {
-      transform: translateY(1rem);
+      transform: translate(0, 1rem);
       transition: none;
     }
 
     .bpk-tooltip-tether-element-attached-bottom &:not(.bpk-tooltip--appear-active) {
-      transform: translateY(-1rem);
+      transform: translate(0, -1rem);
+      transition: none;
+    }
+
+    .bpk-tooltip-tether-element-attached-left &:not(.bpk-tooltip--appear-active) {
+      transform: translate(1rem, 0);
+      transition: none;
+    }
+
+    .bpk-tooltip-tether-element-attached-right &:not(.bpk-tooltip--appear-active) {
+      transform: translate(-1rem, 0);
       transition: none;
     }
   }
 
   &--appear-active {
-    transform: translateY(0);
+    transform: translate(0, 0);
     transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
     opacity: 1;
   }
 
   .bpk-tooltip-tether-element-attached-top & {
-    padding-top: $bpk-spacing-xs;
+    padding-top: $arrow-size;
   }
 
   .bpk-tooltip-tether-element-attached-right & {
-    padding-right: $bpk-spacing-xs;
+    margin-left: -$arrow-size;
+    padding-right: $arrow-size;
   }
 
   .bpk-tooltip-tether-element-attached-bottom & {
-    padding-bottom: $bpk-spacing-xs;
+    padding-bottom: $arrow-size;
   }
 
   .bpk-tooltip-tether-element-attached-left & {
-    padding-left: $bpk-spacing-xs;
+    padding-left: $arrow-size;
   }
 
   &__arrow {
-    $arrow-size: $bpk-spacing-xs;
-
     position: absolute;
     display: block;
     pointer-events: none;
@@ -72,7 +76,6 @@ $border-color: $bpk-color-gray-100;
     }
 
     .bpk-tooltip-tether-element-attached-top & {
-      // top: -$arrow-size;
       bottom: 100%;
       left: 50%;
       margin-left: -$arrow-size;
@@ -92,12 +95,23 @@ $border-color: $bpk-color-gray-100;
 
     .bpk-tooltip-tether-element-attached-right & {
       top: 50%;
-      right: -$arrow-size;
+      left: 100%;
       margin-top: -$arrow-size;
+      border-left-color: $bpk-color-white;
+
+      &::before {
+        right: -($arrow-size + .0625rem);
+        margin-top: -.0625rem;
+        border-left-color: $border-color;
+      }
+
+      &::after {
+        right: -$arrow-size + .0625rem;
+        border-left-color: $bpk-color-white;
+      }
     }
 
     .bpk-tooltip-tether-element-attached-bottom & {
-      // bottom: -$arrow-size;
       top: 100%;
       left: 50%;
       margin-left: -$arrow-size;
@@ -117,20 +131,19 @@ $border-color: $bpk-color-gray-100;
     }
 
     .bpk-tooltip-tether-element-attached-left & {
-      // top: 50%;
+      top: 50%;
       right: 100%;
       margin-top: -$arrow-size;
       border-right-color: $bpk-color-white;
 
       &::before {
         left: -($arrow-size + .0625rem);
-        margin-top: -($arrow-size + .0625rem);
+        margin-top: -.0625rem;
         border-right-color: $border-color;
       }
 
       &::after {
         left: -$arrow-size + .0625rem;
-        margin-top: -$arrow-size;
         border-right-color: $bpk-color-white;
       }
     }

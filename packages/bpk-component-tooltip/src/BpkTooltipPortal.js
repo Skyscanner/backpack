@@ -17,8 +17,6 @@ class BpkTooltipPortal extends Component {
     this.tether = null;
 
     this.onOpen = this.onOpen.bind(this);
-    this.beforeClose = this.beforeClose.bind(this);
-
     this.openTooltip = this.openTooltip.bind(this);
     this.closeTooltip = this.closeTooltip.bind(this);
   }
@@ -56,7 +54,9 @@ class BpkTooltipPortal extends Component {
   }
 
   render() {
-    const { padded, target, children } = this.props;
+    const { padded, target, children, ...rest } = this.props;
+
+    delete rest.tetherOptions;
 
     return (
       <Portal
@@ -67,9 +67,8 @@ class BpkTooltipPortal extends Component {
         }}
         isOpen={this.state.isOpen}
         onOpen={this.onOpen}
-        beforeClose={this.beforeClose}
       >
-        <BpkTooltip padded={padded}>
+        <BpkTooltip padded={padded} {...rest}>
           { children }
         </BpkTooltip>
       </Portal>
