@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-banner-alert",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "description": "Backpack banner alert component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-component-icon": "^3.3.8",
-    "bpk-mixins": "^9.0.2"
+    "bpk-component-icon": "^3.3.9",
+    "bpk-mixins": "^10.0.0"
   }
 }
