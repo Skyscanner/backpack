@@ -6,16 +6,6 @@ import Tether, { getArrowPositionCallback } from 'bpk-tether';
 import BpkTooltip from './BpkTooltip';
 import { ARROW_ID } from './constants';
 
-class BpkTooltipPortalPortal extends Portal {
-  componentDidMount() {
-    super.componentDidMount();
-
-    const target = this.getTargetElement();
-    target.addEventListener('mouseenter', this.props.onMouseEnter);
-    target.addEventListener('mouseleave', this.props.onMouseLeave);
-  }
-}
-
 class BpkTooltipPortal extends Component {
   constructor(props) {
     super(props);
@@ -29,19 +19,19 @@ class BpkTooltipPortal extends Component {
     this.onOpen = this.onOpen.bind(this);
     this.beforeClose = this.beforeClose.bind(this);
 
-    this.openPopover = this.openPopover.bind(this);
-    this.closePopover = this.closePopover.bind(this);
+    this.openTooltip = this.openTooltip.bind(this);
+    this.closeTooltip = this.closeTooltip.bind(this);
   }
 
-  onOpen(popoverElement, targetElement) {
+  onOpen(tooltipElement, targetElement) {
     this.tether = new Tether({
       classPrefix: 'bpk-tooltip-tether',
-      element: popoverElement,
+      element: tooltipElement,
       target: targetElement,
       ...this.props.tetherOptions,
     });
 
-    this.tether.on('position', getArrowPositionCallback(popoverElement, ARROW_ID, 'bpk-tooltip-tether'));
+    this.tether.on('position', getArrowPositionCallback(tooltipElement, ARROW_ID, 'bpk-tooltip-tether'));
 
     this.tether.position();
   }
@@ -53,13 +43,13 @@ class BpkTooltipPortal extends Component {
     done();
   }
 
-  openPopover() {
+  openTooltip() {
     this.setState({
       isOpen: true,
     });
   }
 
-  closePopover() {
+  closeTooltip() {
     this.setState({
       isOpen: false,
     });
@@ -69,18 +59,20 @@ class BpkTooltipPortal extends Component {
     const { padded, target, children } = this.props;
 
     return (
-      <BpkTooltipPortalPortal
+      <Portal
         target={target}
+        targetRef={(targetRef) => {
+          targetRef.addEventListener('mouseenter', this.openTooltip);
+          targetRef.addEventListener('mouseleave', this.closeTooltip);
+        }}
         isOpen={this.state.isOpen}
-        onMouseEnter={this.openPopover}
-        onMouseLeave={this.closePopover}
         onOpen={this.onOpen}
         beforeClose={this.beforeClose}
       >
         <BpkTooltip padded={padded}>
           { children }
         </BpkTooltip>
-      </BpkTooltipPortalPortal>
+      </Portal>
     );
   }
 }
