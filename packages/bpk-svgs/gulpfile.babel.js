@@ -1,11 +1,13 @@
 import _ from 'lodash';
-import rename from 'gulp-rename';
 import gulp from 'gulp';
-import tinycolor from 'tinycolor2';
+import clone from 'gulp-clone';
+import rename from 'gulp-rename';
 import svgmin from 'gulp-svgmin';
 import concat from 'gulp-concat';
 import merge from 'merge-stream';
+import tinycolor from 'tinycolor2';
 import tokens from 'bpk-tokens/tokens/base.raw.json';
+
 import svg2react from './tasks/svg2react';
 import svg2datauri, { sassMap } from './tasks/svg2datauri';
 
@@ -65,11 +67,13 @@ gulp.task('spinners', () => {
     .pipe(gulp.dest('src/spinners'));
 
   const react = optimised
+    .pipe(clone())
     .pipe(svg2react())
     .pipe(rename({ extname: '.js' }))
     .pipe(gulp.dest('dist/js/spinners'));
 
   const datauri = optimised
+    .pipe(clone())
     .pipe(svg2datauri({ colors }))
     .pipe(concat('_spinners.scss'))
     .pipe(sassMap('bpk-spinners'))
@@ -93,6 +97,7 @@ gulp.task('icons-sm', () => {
     .pipe(gulp.dest('src/icons/sm'));
 
   const react = optimised
+    .pipe(clone())
     .pipe(svgmin({
       plugins: [
         { addAttributesToSVGElement: {
@@ -106,6 +111,7 @@ gulp.task('icons-sm', () => {
     .pipe(gulp.dest('dist/js/icons/sm'));
 
   const datauri = optimised
+    .pipe(clone())
     .pipe(svg2datauri({ colors }))
     .pipe(concat('_icons-sm.scss'))
     .pipe(sassMap('bpk-icons-sm'))
@@ -126,6 +132,7 @@ gulp.task('icons-lg', () => {
     .pipe(gulp.dest('src/icons/lg'));
 
   const react = optimised
+    .pipe(clone())
     .pipe(svgmin({
       plugins: [
         { addAttributesToSVGElement: {
@@ -139,6 +146,7 @@ gulp.task('icons-lg', () => {
     .pipe(gulp.dest('dist/js/icons/lg'));
 
   const datauri = optimised
+    .pipe(clone())
     .pipe(svg2datauri({ colors }))
     .pipe(concat('_icons-lg.scss'))
     .pipe(sassMap('bpk-icons-lg'))
