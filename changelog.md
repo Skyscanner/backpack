@@ -2,7 +2,11 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Fixed:**
+- bpk-mixins:
+- bpk-svgs:
+  - Removed `style` prop from icon datauri variables
+    This fixes the icons rendering on stock android browser
 
 ## 2017-03-03 - Fixed padding issues with grid components
 
