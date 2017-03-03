@@ -2,53 +2,11 @@ import focusStore from 'a11y-focus-store';
 import focusScope from 'a11y-focus-scope';
 import { Portal } from 'bpk-react-utils';
 import React, { PropTypes, Component } from 'react';
+import Tether, { getArrowPositionCallback } from 'bpk-tether';
 
 import './bpk-popover.scss';
 import BpkPopover from './BpkPopover';
-import Tether from './TetherWrapper';
 import { ARROW_ID } from './constants';
-
-// For compat with various IE browsers who haven't implemented classList yet.
-// See http://youmightnotneedjquery.com/#has_class.
-const hasClass = (el, className) => {
-  if (el.classList) {
-    return el.classList.contains(className);
-  }
-
-  return new RegExp(`(^| )${className}( |$)`, 'gi').test(el.className);
-};
-
-const getArrowPositionCallback = (popoverElement = {}) => {
-  let arrowElement = null;
-
-  if (popoverElement.querySelector) {
-    arrowElement = popoverElement.querySelector(`#${ARROW_ID}`);
-  }
-
-  if (arrowElement === null) {
-    return () => null;
-  }
-
-  return (props) => {
-    const { top, left, targetPos } = props;
-
-    const shouldApplyLeftOffset =
-      hasClass(popoverElement, 'bpk-popover-tether-element-attached-top')
-      || hasClass(popoverElement, 'bpk-popover-tether-element-attached-bottom');
-
-    if (shouldApplyLeftOffset) {
-      const leftOffset = (targetPos.left + (targetPos.width / 2)) - left;
-
-      arrowElement.style.top = '';
-      arrowElement.style.left = `${leftOffset}px`;
-    } else {
-      const topOffset = (targetPos.top + (targetPos.height / 2)) - top;
-
-      arrowElement.style.top = `${topOffset}px`;
-      arrowElement.style.left = '';
-    }
-  };
-};
 
 class BpkPopoverPortal extends Component {
   constructor() {
@@ -68,7 +26,7 @@ class BpkPopoverPortal extends Component {
       ...this.props.tetherOptions,
     });
 
-    this.tether.on('position', getArrowPositionCallback(popoverElement));
+    this.tether.on('position', getArrowPositionCallback(popoverElement, ARROW_ID, 'bpk-popover-tether'));
 
     this.tether.position();
 
