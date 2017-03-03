@@ -141,7 +141,7 @@ $border-color: $bpk-color-gray-100;
     background-color: $bpk-color-white;
 
     @include bpk-border-radius-sm;
-    @include bpk-box-shadow-sm;
+    @include bpk-box-shadow-lg;
 
     overflow: hidden;
 
