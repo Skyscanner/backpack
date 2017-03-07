@@ -45,6 +45,7 @@
     "bpk-component-select": "^1.0.27",
     "bpk-component-spinner": "^1.0.41",
     "bpk-component-table": "^0.0.71",
+    "bpk-component-tooltip": "^0.0.0",
     "bpk-mixins": "^10.0.1",
     "bpk-stylesheets": "^3.2.9",
     "bpk-svgs": "^5.0.3",

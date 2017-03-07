@@ -20,6 +20,10 @@ class Portal extends Component {
     if (this.props.isOpen) {
       this.open();
     }
+
+    if (this.props.targetRef) {
+      this.props.targetRef(this.getTargetElement());
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -116,6 +120,7 @@ Portal.propTypes = {
   target: PropTypes.element,
   onOpen: PropTypes.func,
   onClose: PropTypes.func,
+  targetRef: PropTypes.func,
   beforeClose: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
 };
 
@@ -123,6 +128,7 @@ Portal.defaultProps = {
   target: null,
   onOpen: () => null,
   onClose: () => null,
+  targetRef: null,
   beforeClose: null,
 };
 

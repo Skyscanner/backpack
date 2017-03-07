@@ -48,5 +48,6 @@ configure(() => {
   require('./../packages/bpk-component-select/stories');
   require('./../packages/bpk-component-spinner/stories');
   require('./../packages/bpk-component-table/stories');
+  require('./../packages/bpk-component-tooltip/stories');
 }, module);
 /* eslint-enable */

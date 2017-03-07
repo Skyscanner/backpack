@@ -48,7 +48,7 @@ const links = [
       { route: routes.POPOVERS, children: 'Popovers' },
       { route: routes.CALENDAR, children: 'Calendar' },
       { route: routes.DATEPICKER, children: 'Datepicker' },
-      { route: null, children: 'Tooltip' },
+      { route: routes.TOOLTIPS, children: 'Tooltips' },
       { route: null, children: 'Pagination' },
       { route: null, children: 'Nudgers' },
       { route: null, children: 'Slider' },

@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
-jest.mock('tether');
+jest.mock('bpk-tether');
 jest.mock('a11y-focus-store', () => ({
   storeFocus: jest.fn(),
   restoreFocus: jest.fn(),

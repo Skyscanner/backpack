@@ -32,6 +32,7 @@ export const AUTOSUGGEST = '/docs/molecules/autosuggest';
 export const POPOVERS = '/docs/molecules/popovers';
 export const CALENDAR = '/docs/molecules/calendar';
 export const DATEPICKER = '/docs/molecules/datepicker';
+export const TOOLTIPS = '/docs/molecules/tooltips';
 
 export const DOWNLOADS = '/downloads';
 
