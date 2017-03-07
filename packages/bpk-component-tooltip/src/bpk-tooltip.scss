@@ -3,6 +3,7 @@
 .bpk-tooltip {
   $border-color: $bpk-color-gray-100;
   $arrow-size: $bpk-spacing-xs;
+  $one-pixel: .0625rem;
 
   transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
   outline: 0;
@@ -68,7 +69,7 @@
     }
 
     &::before {
-      border: ($arrow-size + .0625rem) solid transparent;
+      border: ($arrow-size + $one-pixel) solid transparent;
     }
 
     &::after {
@@ -78,16 +79,15 @@
     .bpk-tooltip-tether-element-attached-top & {
       bottom: 100%;
       left: 50%;
-      margin-left: -$arrow-size;
 
       &::before {
-        top: -($arrow-size + .0625rem);
-        margin-left: -($arrow-size + .0625rem);
+        top: -($arrow-size + $one-pixel);
+        margin-left: -($arrow-size + $one-pixel);
         border-bottom-color: $border-color;
       }
 
       &::after {
-        top: -$arrow-size + .0625rem;
+        top: -$arrow-size + $one-pixel;
         margin-left: -$arrow-size;
         border-bottom-color: $bpk-color-white;
       }
@@ -97,16 +97,15 @@
       top: 50%;
       left: 100%;
       margin-top: -$arrow-size;
-      border-left-color: $bpk-color-white;
 
       &::before {
-        right: -($arrow-size + .0625rem);
-        margin-top: -.0625rem;
+        right: -($arrow-size + $one-pixel);
+        margin-top: -$one-pixel;
         border-left-color: $border-color;
       }
 
       &::after {
-        right: -$arrow-size + .0625rem;
+        right: -$arrow-size + $one-pixel;
         border-left-color: $bpk-color-white;
       }
     }
@@ -114,17 +113,15 @@
     .bpk-tooltip-tether-element-attached-bottom & {
       top: 100%;
       left: 50%;
-      margin-left: -$arrow-size;
-      border-top-color: $bpk-color-white;
 
       &::before {
-        bottom: -($arrow-size + .0625rem);
-        margin-left: -($arrow-size + .0625rem);
+        bottom: -($arrow-size + $one-pixel);
+        margin-left: -($arrow-size + $one-pixel);
         border-top-color: $border-color;
       }
 
       &::after {
-        bottom: -$arrow-size + .0625rem;
+        bottom: -$arrow-size + $one-pixel;
         margin-left: -$arrow-size;
         border-top-color: $bpk-color-white;
       }
@@ -134,23 +131,22 @@
       top: 50%;
       right: 100%;
       margin-top: -$arrow-size;
-      border-right-color: $bpk-color-white;
 
       &::before {
-        left: -($arrow-size + .0625rem);
-        margin-top: -.0625rem;
+        left: -($arrow-size + $one-pixel);
+        margin-top: -$one-pixel;
         border-right-color: $border-color;
       }
 
       &::after {
-        left: -$arrow-size + .0625rem;
+        left: -$arrow-size + $one-pixel;
         border-right-color: $bpk-color-white;
       }
     }
   }
 
   &__inner {
-    border: 1px solid $border-color;
+    border: $one-pixel solid $border-color;
     background-color: $bpk-color-white;
 
     @include bpk-border-radius-sm;

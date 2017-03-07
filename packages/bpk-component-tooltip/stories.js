@@ -17,6 +17,7 @@ storiesOf('bpk-component-tooltip', module)
   .add('Default', () => (
     <div style={st}>
       <BpkTooltip
+        id="my-tooltip"
         target={<BpkHeading level="h1">£295</BpkHeading>}
       >
         This is the cheapest price! 👍
@@ -26,6 +27,7 @@ storiesOf('bpk-component-tooltip', module)
   .add('On the side', () => (
     <div style={st}>
       <BpkTooltip
+        id="my-tooltip"
         target={<BpkHeading level="h1">£295</BpkHeading>}
         tetherOptions={{
           attachment: 'middle left',
@@ -45,6 +47,7 @@ storiesOf('bpk-component-tooltip', module)
   .add('Custom content', () => (
     <div style={{ height: '500px', margin: '30px', textAlign: 'center' }}>
       <BpkTooltip
+        id="my-tooltip"
         target={<BpkHeading level="h1">£295</BpkHeading>}
         padded={false}
       >

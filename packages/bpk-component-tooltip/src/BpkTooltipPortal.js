@@ -78,10 +78,7 @@ class BpkTooltipPortal extends Component {
 
 BpkTooltipPortal.propTypes = {
   target: PropTypes.element.isRequired,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
+  children: PropTypes.node.isRequired,
   padded: PropTypes.bool,
   tetherOptions: PropTypes.shape({
     attachment: PropTypes.string,

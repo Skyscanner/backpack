@@ -29,9 +29,6 @@ class BpkPopoverPortal extends Component {
     this.tether.on('position', getArrowPositionCallback(popoverElement, ARROW_ID, 'bpk-popover-tether'));
 
     this.tether.position();
-    // setTimeout(() => {
-    //   this.tether.position();
-    // });
 
     focusStore.storeFocus();
     focusScope.scopeFocus(popoverElement);

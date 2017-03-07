@@ -9,6 +9,8 @@ import { spacingSm, colorGreen500 } from 'bpk-tokens/tokens/base.es6';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
+/* eslint-disable no-alert */
+
 const components = [
   {
     id: 'default',
@@ -21,7 +23,7 @@ const components = [
     examples: [
       <BpkTooltip
         id="my-tooltip"
-        target={<BpkButton onClick={() => null}>Buy now!</BpkButton>}
+        target={<BpkButton onClick={() => alert('Sold!')}>Buy now!</BpkButton>}
       >
         Save up to 40%! 🤑
       </BpkTooltip>,
@@ -48,7 +50,7 @@ const components = [
             },
           ],
         }}
-        target={<BpkButton onClick={() => null}>Buy now!</BpkButton>}
+        target={<BpkButton onClick={() => alert('Sold!')}>Buy now!</BpkButton>}
       >
         Save up to 40%! 🤑
       </BpkTooltip>,
@@ -70,7 +72,7 @@ const components = [
       <BpkTooltip
         id="my-tooltip-3"
         padded={false}
-        target={<BpkButton onClick={() => null}>Buy now!</BpkButton>}
+        target={<BpkButton onClick={() => alert('Sold!')}>Buy now!</BpkButton>}
       >
         <div
           style={{
