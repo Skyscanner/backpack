@@ -13,13 +13,12 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-component-popover": "^1.0.9",
-    "bpk-mixins": "^9.0.2",
+    "bpk-mixins": "^10.0.1",
     "bpk-react-utils": "^1.2.2",
     "bpk-tether": "^0.0.0"
   },
   "devDependencies": {
-    "bpk-component-heading": "^1.1.32",
+    "bpk-component-heading": "^1.1.34",
     "bpk-tokens": "^18.0.2"
   }
 }
