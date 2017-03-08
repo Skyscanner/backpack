@@ -23,13 +23,17 @@ class BpkTooltipPortal extends Component {
   }
 
   componentDidMount() {
-    this.targetRef.addEventListener('mouseenter', this.openTooltip);
-    this.targetRef.addEventListener('mouseleave', this.closeTooltip);
+    if (this.targetRef) {
+      this.targetRef.addEventListener('mouseenter', this.openTooltip);
+      this.targetRef.addEventListener('mouseleave', this.closeTooltip);
+    }
   }
 
   componentWillUnmount() {
-    this.targetRef.removeEventListener('mouseenter', this.openTooltip);
-    this.targetRef.removeEventListener('mouseleave', this.closeTooltip);
+    if (this.targetRef) {
+      this.targetRef.removeEventListener('mouseenter', this.openTooltip);
+      this.targetRef.removeEventListener('mouseleave', this.closeTooltip);
+    }
   }
 
   onOpen(tooltipElement, targetElement) {
