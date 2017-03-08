@@ -15,10 +15,21 @@ class BpkTooltipPortal extends Component {
     };
 
     this.tether = null;
+    this.targetRef = null;
 
     this.onOpen = this.onOpen.bind(this);
     this.openTooltip = this.openTooltip.bind(this);
     this.closeTooltip = this.closeTooltip.bind(this);
+  }
+
+  componentDidMount() {
+    this.targetRef.addEventListener('mouseenter', this.openTooltip);
+    this.targetRef.addEventListener('mouseleave', this.closeTooltip);
+  }
+
+  componentWillUnmount() {
+    this.targetRef.removeEventListener('mouseenter', this.openTooltip);
+    this.targetRef.removeEventListener('mouseleave', this.closeTooltip);
   }
 
   onOpen(tooltipElement, targetElement) {
@@ -61,12 +72,10 @@ class BpkTooltipPortal extends Component {
     return (
       <Portal
         target={target}
-        targetRef={(targetRef) => {
-          targetRef.addEventListener('mouseenter', this.openTooltip);
-          targetRef.addEventListener('mouseleave', this.closeTooltip);
-        }}
+        targetRef={(targetRef) => { this.targetRef = targetRef; }}
         isOpen={this.state.isOpen}
         onOpen={this.onOpen}
+        onClose={this.closeTooltip}
       >
         <BpkTooltip padded={padded} {...rest}>
           { children }

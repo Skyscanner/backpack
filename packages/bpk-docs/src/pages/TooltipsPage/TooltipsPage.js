@@ -1,5 +1,5 @@
 import React from 'react';
-import BpkButton from 'bpk-component-button';
+import BpkHeading from 'bpk-component-heading';
 import BpkTooltip from 'bpk-component-tooltip';
 import BpkParagraph from 'bpk-component-paragraph';
 import BpkRouterLink from 'bpk-component-router-link';
@@ -8,6 +8,7 @@ import { spacingSm, colorGreen500 } from 'bpk-tokens/tokens/base.es6';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import './tooltips-page.scss';
 
 /* eslint-disable no-alert */
 
@@ -23,9 +24,9 @@ const components = [
     examples: [
       <BpkTooltip
         id="my-tooltip"
-        target={<BpkButton onClick={() => alert('Sold!')}>Buy now!</BpkButton>}
+        target={<BpkHeading level="h3" className="bpkdocs-tooltips-page__heading">LHR</BpkHeading>}
       >
-        Save up to 40%! 🤑
+        London Heathrow
       </BpkTooltip>,
     ],
   },
@@ -50,9 +51,9 @@ const components = [
             },
           ],
         }}
-        target={<BpkButton onClick={() => alert('Sold!')}>Buy now!</BpkButton>}
+        target={<BpkHeading level="h3" className="bpkdocs-tooltips-page__heading">EDI</BpkHeading>}
       >
-        Save up to 40%! 🤑
+        Edinburgh
       </BpkTooltip>,
     ],
   },
@@ -72,7 +73,7 @@ const components = [
       <BpkTooltip
         id="my-tooltip-3"
         padded={false}
-        target={<BpkButton onClick={() => alert('Sold!')}>Buy now!</BpkButton>}
+        target={<BpkHeading level="h3" className="bpkdocs-tooltips-page__heading">JFK</BpkHeading>}
       >
         <div
           style={{
@@ -82,7 +83,7 @@ const components = [
             padding: spacingSm,
           }}
         >
-          Save up to 40%! 🤑
+          New York John F. Kennedy
         </div>
       </BpkTooltip>,
     ],
@@ -94,10 +95,12 @@ const PopoversPage = () => <DocsPageBuilder
   blurb={[
     <BpkParagraph>
       Tooltips appear on hover of a particular element and are used to provide additional context/information to the
-      user. They generally are text-only and are triggered on a pointer based interfaces.
+      user. They generally are text-only and are triggered on pointer based interfaces.
     </BpkParagraph>,
     <BpkParagraph>
-      Using tooltips on mobile is generally bad practise due to lack of hover state.
+      Using tooltips on purely touch-based interfaces is generally bad practise due to the lack of hover state.
+      We also don&apos;t recommend using tooltips on interactive elements that can receive focus, such as links,
+      buttons, and inputs.
     </BpkParagraph>,
     <BpkParagraph>
       Tooltips do not manage focus. If you need to include interactive elements in a tooltip,
