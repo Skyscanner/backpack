@@ -12,15 +12,15 @@ npm install bpk-component-tooltip --save
 
 ```js
 import React, { Component } from 'react';
-import BpkButton from 'bpk-component-button';
+import BpkHeading from 'bpk-component-heading';
 import BpkTooltip from 'bpk-component-tooltip';
 
 const App = () => (
   <BpkTooltip
     id="my-tooltip"
-    target={<BpkButton onClick={() => null}>Buy now!</BpkButton>}
+    target={<BpkHeading level="h3">LHR</BpkHeading>}
   >
-    Save up to 40%! 🤑
+    London Heathrow
   </BpkTooltip>
 );
 ```
