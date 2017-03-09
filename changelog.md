@@ -4,6 +4,19 @@
 
 _Nothing yet..._
 
+## 2017-03-09 - Introducing the Tooltip component
+
+**Added:**
+- bpk-component-heading: 1.1.34 => 1.2.0
+  - Allow consumers to pass in a custom `className`
+- bpk-component-tooltip: 0.0.1
+  - Introducing the Tooltip component
+- bpk-react-utils: 1.2.2 => 1.3.0
+  - The Portal component now accepts a `targetRef` callback for the parent component to receive a ref to the portal's
+    target
+- bpk-tether: 0.0.1
+  - New packages to provide a wrapper around tether and related utils
+
 ## 2017-03-03 (2) - Fixed datauri based icons in stock andoid browser
 
 **Fixed:**
