@@ -12,7 +12,7 @@ export default (displayName, classNamesToAdd = []) => (ComposedComponent) => {
   };
 
   ClassNameModifierHOC.propTypes = {
-    className: PropTypes.string,
+    className: PropTypes.string.isRequired,
   };
 
   const composedComponentName = ComposedComponent.displayName || ComposedComponent.name || 'Component';

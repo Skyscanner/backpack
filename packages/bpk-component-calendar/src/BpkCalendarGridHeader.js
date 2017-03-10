@@ -59,10 +59,10 @@ const BpkCalendarGridHeader = (props) => {
   return (
     <Header className={classNames.join(' ')}>
       <List className="bpk-calendar-header__week">
-        { daysOfWeek.map((weekDay, index) => (
+        { daysOfWeek.map(weekDay => (
           <WeekDay
             Element={Item}
-            key={index}
+            key={weekDay.index}
             weekDay={weekDay}
             isFirstDayOfWeekend={showWeekendSeparator && firstDayOfWeekendIndex === weekDay.index}
             isLastDayOfWeekend={showWeekendSeparator && lastDayOfWeekendIndex === weekDay.index}

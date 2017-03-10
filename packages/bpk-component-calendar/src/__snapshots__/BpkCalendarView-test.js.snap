@@ -241,7 +241,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -259,7 +259,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -277,7 +277,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -295,7 +295,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -313,7 +313,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -331,7 +331,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -349,7 +349,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -370,7 +370,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -388,7 +388,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -406,7 +406,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -424,7 +424,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -442,7 +442,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -460,7 +460,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -478,7 +478,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -499,7 +499,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -517,7 +517,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -535,7 +535,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -553,7 +553,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -571,7 +571,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -589,7 +589,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -607,7 +607,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -628,7 +628,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -646,7 +646,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -664,7 +664,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -682,7 +682,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -700,7 +700,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -718,7 +718,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -736,7 +736,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -757,7 +757,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -775,7 +775,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -793,7 +793,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -811,7 +811,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -829,7 +829,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -847,7 +847,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -865,7 +865,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -886,7 +886,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -904,7 +904,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -922,7 +922,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -940,7 +940,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -958,7 +958,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -976,7 +976,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -994,7 +994,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1088,7 +1088,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1106,7 +1106,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1124,7 +1124,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1142,7 +1142,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1160,7 +1160,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1178,7 +1178,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1196,7 +1196,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1217,7 +1217,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1235,7 +1235,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1253,7 +1253,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1271,7 +1271,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1289,7 +1289,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1307,7 +1307,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1325,7 +1325,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1346,7 +1346,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--focused"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="0"
                 type="button">
                 <span
@@ -1364,7 +1364,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1382,7 +1382,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1400,7 +1400,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1418,7 +1418,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1436,7 +1436,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1454,7 +1454,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1475,7 +1475,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1493,7 +1493,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1511,7 +1511,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1529,7 +1529,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1547,7 +1547,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1565,7 +1565,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1583,7 +1583,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1604,7 +1604,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1622,7 +1622,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1640,7 +1640,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1658,7 +1658,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1676,7 +1676,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1694,7 +1694,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1712,7 +1712,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1733,7 +1733,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1751,7 +1751,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1769,7 +1769,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1787,7 +1787,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1805,7 +1805,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1823,7 +1823,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1841,7 +1841,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1935,7 +1935,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--focused"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1953,7 +1953,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1971,7 +1971,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -1989,7 +1989,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2007,7 +2007,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2025,7 +2025,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2043,7 +2043,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2064,7 +2064,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2082,7 +2082,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2100,7 +2100,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2118,7 +2118,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2136,7 +2136,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2154,7 +2154,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2172,7 +2172,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2193,7 +2193,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2211,7 +2211,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2229,7 +2229,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2247,7 +2247,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2265,7 +2265,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2283,7 +2283,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2301,7 +2301,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2322,7 +2322,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2340,7 +2340,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2358,7 +2358,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2376,7 +2376,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2394,7 +2394,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2412,7 +2412,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2430,7 +2430,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2451,7 +2451,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2469,7 +2469,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2487,7 +2487,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2505,7 +2505,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2523,7 +2523,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2541,7 +2541,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2559,7 +2559,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2580,7 +2580,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2598,7 +2598,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2616,7 +2616,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2634,7 +2634,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2652,7 +2652,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2670,7 +2670,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2688,7 +2688,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2948,7 +2948,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2966,7 +2966,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -2984,7 +2984,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3002,7 +3002,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3020,7 +3020,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3038,7 +3038,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3056,7 +3056,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3077,7 +3077,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3095,7 +3095,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3113,7 +3113,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3131,7 +3131,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3149,7 +3149,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3167,7 +3167,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3185,7 +3185,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3206,7 +3206,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3224,7 +3224,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3242,7 +3242,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3260,7 +3260,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3278,7 +3278,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3296,7 +3296,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3314,7 +3314,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3335,7 +3335,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3353,7 +3353,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3371,7 +3371,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3389,7 +3389,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3407,7 +3407,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3425,7 +3425,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3443,7 +3443,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3464,7 +3464,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3482,7 +3482,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3500,7 +3500,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3518,7 +3518,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3536,7 +3536,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3554,7 +3554,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3572,7 +3572,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3593,7 +3593,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3611,7 +3611,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3629,7 +3629,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3647,7 +3647,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3665,7 +3665,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3683,7 +3683,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3701,7 +3701,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3795,7 +3795,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3813,7 +3813,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3831,7 +3831,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3849,7 +3849,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3867,7 +3867,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3885,7 +3885,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3903,7 +3903,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3924,7 +3924,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3942,7 +3942,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3960,7 +3960,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3978,7 +3978,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -3996,7 +3996,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4014,7 +4014,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4032,7 +4032,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4053,7 +4053,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--focused"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="0"
                 type="button">
                 <span
@@ -4071,7 +4071,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4089,7 +4089,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4107,7 +4107,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4125,7 +4125,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4143,7 +4143,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4161,7 +4161,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4182,7 +4182,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4200,7 +4200,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4218,7 +4218,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4236,7 +4236,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4254,7 +4254,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4272,7 +4272,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4290,7 +4290,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4311,7 +4311,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4329,7 +4329,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4347,7 +4347,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4365,7 +4365,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4383,7 +4383,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4401,7 +4401,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4419,7 +4419,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4440,7 +4440,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4458,7 +4458,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4476,7 +4476,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4494,7 +4494,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4512,7 +4512,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4530,7 +4530,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4548,7 +4548,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4642,7 +4642,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--focused"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4660,7 +4660,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4678,7 +4678,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4696,7 +4696,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4714,7 +4714,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4732,7 +4732,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4750,7 +4750,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4771,7 +4771,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4789,7 +4789,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4807,7 +4807,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4825,7 +4825,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4843,7 +4843,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4861,7 +4861,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4879,7 +4879,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4900,7 +4900,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date"
                 disabled={false}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4918,7 +4918,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4936,7 +4936,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4954,7 +4954,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4972,7 +4972,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -4990,7 +4990,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5008,7 +5008,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5029,7 +5029,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5047,7 +5047,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5065,7 +5065,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5083,7 +5083,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5101,7 +5101,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5119,7 +5119,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5137,7 +5137,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5158,7 +5158,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5176,7 +5176,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5194,7 +5194,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5212,7 +5212,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5230,7 +5230,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5248,7 +5248,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5266,7 +5266,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5287,7 +5287,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5305,7 +5305,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5323,7 +5323,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5341,7 +5341,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5359,7 +5359,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5377,7 +5377,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span
@@ -5395,7 +5395,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
                 className="bpk-calendar-date bpk-calendar-date--blocked"
                 disabled={true}
                 onClick={[Function]}
-                onKeyDown={null}
+                onKeyDown={[Function]}
                 tabIndex="-1"
                 type="button">
                 <span

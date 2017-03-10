@@ -93,8 +93,12 @@ Week.propTypes = {
 };
 
 Week.defaultProps = {
+  focusedDate: null,
+  maxDate: null,
+  minDate: null,
   onDateClick: null,
   onDateKeyDown: null,
+  selectedDate: null,
 };
 
 /*
@@ -166,9 +170,9 @@ const BpkCalendarGrid = (props) => {
         weekStartsOn={weekStartsOn}
       />
       <tbody>
-        { calendarMonthWeeks.map((dates, index) => (
+        { calendarMonthWeeks.map(dates => (
           <Week
-            key={index}
+            key={dates[0]}
             month={month}
             dates={dates}
             onDateClick={onDateClick}
@@ -223,6 +227,8 @@ BpkCalendarGrid.defaultProps = {
   isKeyboardFocusable: true,
   markOutsideDays: true,
   markToday: true,
+  maxDate: null,
+  minDate: null,
   onDateClick: null,
   onDateKeyDown: null,
   preventKeyboardFocus: false,

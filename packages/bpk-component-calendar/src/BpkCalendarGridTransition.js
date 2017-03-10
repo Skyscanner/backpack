@@ -155,8 +155,12 @@ class BpkCalendarGridTransition extends Component {
 BpkCalendarGridTransition.propTypes = {
   TransitionComponent: PropTypes.func.isRequired,
   month: PropTypes.instanceOf(Date),
-
   focusedDate: PropTypes.instanceOf(Date),
+};
+
+BpkCalendarGridTransition.defaultProps = {
+  month: null,
+  focusedDate: null,
 };
 
 const addCalendarGridTransition = TransitionComponent => props => (

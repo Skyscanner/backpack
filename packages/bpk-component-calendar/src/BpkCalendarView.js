@@ -91,6 +91,8 @@ BpkCalendarView.defaultProps = {
   markToday: false,
   onChangeMonth: () => null,
   onDateClick: () => null,
+  onDateKeyDown: () => null,
+  preventKeyboardFocus: false,
   selectedDate: null,
   showWeekendSeparator: true,
   weekStartsOn: 1,
