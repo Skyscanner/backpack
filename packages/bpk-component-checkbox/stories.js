@@ -29,13 +29,22 @@ storiesOf('bpk-component-checkbox', module)
       checked
     />
   ))
-  .add('Disabled', () => (
+  .add('Disabled (Checked)', () => (
+    <BpkCheckbox
+      id="disabled_checked"
+      name="disabled_checked"
+      label="Prefer directs"
+      onChange={action('checkbox changed')}
+      checked
+      disabled
+    />
+  ))
+  .add('Disabled (Unchecked)', () => (
     <BpkCheckbox
       id="disabled"
       name="disabled"
       label="Prefer directs"
       onChange={action('checkbox changed')}
-      checked
       disabled
     />
   ));

@@ -409,7 +409,7 @@ const components = [
       <form className="bpkdocs-forms-page__form">
         <BpkCheckbox
           name="checkbox"
-          label="Direct"
+          label="Apples"
           onChange={() => null}
           checked
         />
@@ -417,14 +417,14 @@ const components = [
       <form className="bpkdocs-forms-page__form">
         <BpkCheckbox
           name="unchecked_checkbox"
-          label="1 stop"
+          label="Bananas"
           onChange={() => null}
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
         <BpkCheckbox
           name="disabled_checkbox"
-          label="2+ stops"
+          label="Strawberries"
           onChange={() => null}
           disabled
         />
@@ -432,7 +432,7 @@ const components = [
       <form className="bpkdocs-forms-page__form">
         <BpkCheckbox
           name="disabled_checked_checkbox"
-          label="2+ stops"
+          label="Pears"
           onChange={() => null}
           disabled
           checked
@@ -454,7 +454,7 @@ const components = [
       <form className="bpkdocs-forms-page__form">
         <BpkRadio
           name="radio"
-          label="Return"
+          label="Apples"
           onChange={() => null}
           checked
         />
@@ -462,14 +462,14 @@ const components = [
       <form className="bpkdocs-forms-page__form">
         <BpkRadio
           name="unchecked_radio"
-          label="One way"
+          label="Bananas"
           onChange={() => null}
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
         <BpkRadio
           name="disabled_radio"
-          label="Multi-city"
+          label="Strawberries"
           onChange={() => null}
           disabled
         />
@@ -477,7 +477,7 @@ const components = [
       <form className="bpkdocs-forms-page__form">
         <BpkRadio
           name="disabled_checked_radio"
-          label="Multi-city"
+          label="Pears"
           onChange={() => null}
           disabled
           checked
