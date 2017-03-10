@@ -429,6 +429,15 @@ const components = [
           disabled
         />
       </form>,
+      <form className="bpkdocs-forms-page__form">
+        <BpkCheckbox
+          name="disabled_checked_checkbox"
+          label="2+ stops"
+          onChange={() => null}
+          disabled
+          checked
+        />
+      </form>,
     ],
     readme: checkboxReadme,
   },
@@ -463,6 +472,15 @@ const components = [
           label="Multi-city"
           onChange={() => null}
           disabled
+        />
+      </form>,
+      <form className="bpkdocs-forms-page__form">
+        <BpkRadio
+          name="disabled_checked_radio"
+          label="Multi-city"
+          onChange={() => null}
+          disabled
+          checked
         />
       </form>,
     ],
