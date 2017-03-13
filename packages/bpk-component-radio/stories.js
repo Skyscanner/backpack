@@ -29,13 +29,22 @@ storiesOf('bpk-component-radio', module)
       checked
     />
   ))
-  .add('Disabled', () => (
+  .add('Disabled (Checked)', () => (
+    <BpkRadio
+      id="disabled_checked"
+      name="disabled_checked"
+      label="Return"
+      onChange={action('radio changed')}
+      checked
+      disabled
+    />
+  ))
+  .add('Disabled (Unchecked)', () => (
     <BpkRadio
       id="disabled"
       name="disabled"
       label="Return"
       onChange={action('radio changed')}
-      checked
       disabled
     />
   ));

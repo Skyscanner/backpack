@@ -2,7 +2,12 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Fixed**
+- bpk-component-checkbox
+- bpk-component-radio
+- bpk-mixins
+- bpk-svgs
+  - Improved checkbox and radio button disabled states
 
 ## 2017-03-09 - Introducing the Tooltip component
 

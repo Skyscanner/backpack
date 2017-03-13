@@ -418,10 +418,14 @@
 
   &:checked {
     background: url(map-get($bpk-elements, checkbox-checked)) no-repeat;
+
+    &:disabled {
+      background: url(map-get($bpk-elements, checkbox-checked-disabled)) no-repeat;
+    }
   }
 
   &:disabled {
-    opacity: .5;
+    background: url(map-get($bpk-elements, checkbox-disabled)) no-repeat;
   }
 
   @media screen\0 {
@@ -476,10 +480,14 @@
 
   &:checked {
     background: url(map-get($bpk-elements, radio-checked)) no-repeat;
+
+    &:disabled {
+      background: url(map-get($bpk-elements, radio-checked-disabled)) no-repeat;
+    }
   }
 
   &:disabled {
-    opacity: .5;
+    background: url(map-get($bpk-elements, radio-disabled)) no-repeat;
   }
 
   @media screen\0 {
