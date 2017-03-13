@@ -21,10 +21,7 @@ const BpkContentContainer = (props) => {
 };
 
 BpkContentContainer.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
+  children: PropTypes.node,
   dangerouslySetInnerHTML: PropTypes.shape({
     __html: PropTypes.string.isRequired,
   }),
@@ -33,6 +30,7 @@ BpkContentContainer.propTypes = {
 };
 
 BpkContentContainer.defaultProps = {
+  children: null,
   dangerouslySetInnerHTML: null,
   tagName: 'div',
   bareHtml: false,

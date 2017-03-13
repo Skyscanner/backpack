@@ -70,7 +70,7 @@ class HomePage extends React.Component {
 }
 
 HomePage.propTypes = {
-  router: PropTypes.shape(RouterPropTypes.routerShape),
+  router: PropTypes.shape(RouterPropTypes.routerShape).isRequired,
 };
 
 export default HomePage;
