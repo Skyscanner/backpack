@@ -1,6 +1,8 @@
 @import "~bpk-mixins";
 
 .bpk-popover {
+  $arrow-size: $bpk-spacing-sm;
+
   transition: opacity $bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
@@ -36,45 +38,27 @@
   }
 
   &__arrow {
-    position: absolute;
-    display: block;
-    border: solid $bpk-spacing-sm transparent;
-    pointer-events: none;
+    @include bpk-layer-arrow($arrow-size);
 
     .bpk-popover-tether-element-attached-top & {
-      top: -$bpk-spacing-sm;
-      left: 50%;
-      margin-left: -$bpk-spacing-sm;
-      border-bottom-color: $bpk-color-white;
+      @include bpk-layer-arrow-bottom($arrow-size);
     }
 
     .bpk-popover-tether-element-attached-right & {
-      top: 50%;
-      right: -$bpk-spacing-sm;
-      margin-top: -$bpk-spacing-sm;
-      border-left-color: $bpk-color-white;
+      @include bpk-layer-arrow-left($arrow-size);
     }
 
     .bpk-popover-tether-element-attached-bottom & {
-      bottom: -$bpk-spacing-sm;
-      left: 50%;
-      margin-left: -$bpk-spacing-sm;
-      border-top-color: $bpk-color-white;
+      @include bpk-layer-arrow-top($arrow-size);
     }
 
     .bpk-popover-tether-element-attached-left & {
-      top: 50%;
-      left: -$bpk-spacing-sm;
-      margin-top: -$bpk-spacing-sm;
-      border-right-color: $bpk-color-white;
+      @include bpk-layer-arrow-right($arrow-size);
     }
   }
 
   &__inner {
-    background-color: $bpk-color-white;
-
-    @include bpk-border-radius-sm;
-    @include bpk-box-shadow-xl;
+    @include bpk-layer;
   }
 
   &__body {
