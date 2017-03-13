@@ -4,7 +4,20 @@
 
 _Nothing yet..._
 
-## 2017-03-13 - Better disabled checkboxes/radio buttons and better popover contrast
+## 2017-03-13 (2) - Fixed icon alignment on large buttons
+
+**Added:**
+- bpk-tokens: 18.0.2 => 18.1.0
+  - Add tokens for icon sizes
+
+**Fixed:**
+- bpk-component-button: 1.5.21 => 1.5.22
+- bpk-component-icon: 3.3.11 => 3.3.12
+- bpk-component-spinner: 1.0.42 => 1.0.43
+- bpk-mixins: 10.1.0 => 10.1.1
+  - Fixed icon alignment on large buttons
+
+## 2017-03-13 (1) - Better disabled checkboxes/radio buttons and better popover contrast
 
 **Added:**
 - bpk-mixins: 10.0.1 => 10.1.0
