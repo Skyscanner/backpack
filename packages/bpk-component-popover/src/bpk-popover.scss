@@ -41,19 +41,19 @@
     @include bpk-layer-arrow($arrow-size);
 
     .bpk-popover-tether-element-attached-top & {
-      @include bpk-layer-arrow-bottom($arrow-size);
-    }
-
-    .bpk-popover-tether-element-attached-right & {
-      @include bpk-layer-arrow-left($arrow-size);
-    }
-
-    .bpk-popover-tether-element-attached-bottom & {
       @include bpk-layer-arrow-top($arrow-size);
     }
 
-    .bpk-popover-tether-element-attached-left & {
+    .bpk-popover-tether-element-attached-right & {
       @include bpk-layer-arrow-right($arrow-size);
+    }
+
+    .bpk-popover-tether-element-attached-bottom & {
+      @include bpk-layer-arrow-bottom($arrow-size);
+    }
+
+    .bpk-popover-tether-element-attached-left & {
+      @include bpk-layer-arrow-left($arrow-size);
     }
   }
 
