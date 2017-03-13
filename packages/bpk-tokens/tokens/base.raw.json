@@ -1284,6 +1284,18 @@
       "type": "size",
       "name": "GRID_CONTAINER_MOBILE_PADDING"
     },
+    "ICON_SIZE_SM": {
+      "type": "size",
+      "category": "icons",
+      "value": "1.125rem",
+      "name": "ICON_SIZE_SM"
+    },
+    "ICON_SIZE_LG": {
+      "type": "size",
+      "category": "icons",
+      "value": "1.5rem",
+      "name": "ICON_SIZE_LG"
+    },
     "MODAL_SCRIM_BACKGROUND_COLOR": {
       "category": "modals",
       "value": "rgb(178, 174, 189)",
@@ -2099,6 +2111,8 @@
     "GRID_GUTTER",
     "GRID_CONTAINER_PADDING",
     "GRID_CONTAINER_MOBILE_PADDING",
+    "ICON_SIZE_SM",
+    "ICON_SIZE_LG",
     "MODAL_SCRIM_BACKGROUND_COLOR",
     "MODAL_SCRIM_INITIAL_OPACITY",
     "MODAL_SCRIM_OPACITY",

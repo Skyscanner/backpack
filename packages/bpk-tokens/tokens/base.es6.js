@@ -199,6 +199,8 @@ export const gridColumns = "12";
 export const gridGutter = "1.5rem";
 export const gridContainerPadding = "1.5rem";
 export const gridContainerMobilePadding = ".75rem";
+export const iconSizeSm = "1.125rem";
+export const iconSizeLg = "1.5rem";
 export const modalScrimBackgroundColor = "rgb(178, 174, 189)";
 export const modalScrimInitialOpacity = "0";
 export const modalScrimOpacity = ".7";
@@ -525,6 +527,10 @@ gridColumns,
 gridGutter,
 gridContainerPadding,
 gridContainerMobilePadding,
+};
+export const icons = {
+iconSizeSm,
+iconSizeLg,
 };
 export const modals = {
 modalScrimBackgroundColor,

@@ -1,0 +1,17 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "type": "size",
+    "category": "icons"
+  },
+  "props": {
+    "ICON_SIZE_SM": {
+      "value": "{!SPACING_MD}"
+    },
+    "ICON_SIZE_LG": {
+      "value": "{!SPACING_BASE}"
+    }
+  }
+}

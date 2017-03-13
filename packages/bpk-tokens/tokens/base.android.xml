@@ -201,6 +201,8 @@
   <property name="GRID_GUTTER" category="grids">24</property>
   <property name="GRID_CONTAINER_PADDING" category="grids">24</property>
   <property name="GRID_CONTAINER_MOBILE_PADDING" category="grids">12</property>
+  <property name="ICON_SIZE_SM" category="icons">18</property>
+  <property name="ICON_SIZE_LG" category="icons">24</property>
   <color name="MODAL_SCRIM_BACKGROUND_COLOR" category="modals">#b2aebdff</color>
   <property name="MODAL_SCRIM_INITIAL_OPACITY" category="modals">0</property>
   <property name="MODAL_SCRIM_OPACITY" category="modals">.7</property>

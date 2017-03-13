@@ -200,6 +200,8 @@ module.exports = {
   gridGutter: "1.5rem",
   gridContainerPadding: "1.5rem",
   gridContainerMobilePadding: ".75rem",
+  iconSizeSm: "1.125rem",
+  iconSizeLg: "1.5rem",
   modalScrimBackgroundColor: "rgb(178, 174, 189)",
   modalScrimInitialOpacity: "0",
   modalScrimOpacity: ".7",
