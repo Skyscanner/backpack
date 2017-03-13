@@ -58,19 +58,19 @@
     @include bpk-layer-arrow($arrow-size);
 
     .bpk-tooltip-tether-element-attached-top & {
-      @include bpk-layer-arrow-bottom($arrow-size);
-    }
-
-    .bpk-tooltip-tether-element-attached-right & {
-      @include bpk-layer-arrow-left($arrow-size);
-    }
-
-    .bpk-tooltip-tether-element-attached-bottom & {
       @include bpk-layer-arrow-top($arrow-size);
     }
 
-    .bpk-tooltip-tether-element-attached-left & {
+    .bpk-tooltip-tether-element-attached-right & {
       @include bpk-layer-arrow-right($arrow-size);
+    }
+
+    .bpk-tooltip-tether-element-attached-bottom & {
+      @include bpk-layer-arrow-bottom($arrow-size);
+    }
+
+    .bpk-tooltip-tether-element-attached-left & {
+      @include bpk-layer-arrow-left($arrow-size);
     }
   }
 
