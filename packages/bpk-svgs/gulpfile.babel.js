@@ -101,7 +101,7 @@ gulp.task('icons-sm', () => {
     .pipe(svgmin({
       plugins: [
         { addAttributesToSVGElement: {
-          attribute: `style="width:${tokens.props.SPACING_MD.value};height:${tokens.props.SPACING_MD.value}"`,
+          attribute: `style="width:${tokens.props.ICON_SIZE_SM.value};height:${tokens.props.ICON_SIZE_SM.value}"`,
         } },
         { sortAttrs: true },
       ],
@@ -136,7 +136,7 @@ gulp.task('icons-lg', () => {
     .pipe(svgmin({
       plugins: [
         { addAttributesToSVGElement: {
-          attribute: `style="width:${tokens.props.SPACING_BASE.value};height:${tokens.props.SPACING_BASE.value}"`,
+          attribute: `style="width:${tokens.props.ICON_SIZE_LG.value};height:${tokens.props.ICON_SIZE_LG.value}"`,
         } },
         { sortAttrs: true },
       ],

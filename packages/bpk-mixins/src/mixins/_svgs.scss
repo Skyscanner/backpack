@@ -40,7 +40,8 @@
 /// @access private
 
 @mixin _bpk-svg--align-to-large-button() {
-  vertical-align: -($bpk-one-pixel-rem * 3);
+  margin-top: ($bpk-button-large-line-height - $bpk-icon-size-lg) / 2;
+  vertical-align: top;
 }
 
 /// Small icon.
@@ -193,4 +194,3 @@
 @mixin bpk-spinner--align-to-large-button() {
   @include _bpk-svg--align-to-large-button();
 }
-

@@ -1207,6 +1207,18 @@
       "name": "gridContainerMobilePadding"
     },
     {
+      "type": "size",
+      "category": "icons",
+      "value": "18",
+      "name": "iconSizeSm"
+    },
+    {
+      "type": "size",
+      "category": "icons",
+      "value": "24",
+      "name": "iconSizeLg"
+    },
+    {
       "category": "modals",
       "value": "rgb(178, 174, 189)",
       "type": "color",
