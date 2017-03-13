@@ -1,0 +1,149 @@
+@import '../bonds';
+@import 'radii';
+@import 'shadows';
+
+////
+/// @group layers
+////
+
+/// Layer base styles.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-layer;
+///   }
+
+@mixin bpk-layer {
+  border: $bpk-one-pixel-rem solid $bpk-color-gray-100;
+  background-color: $bpk-color-white;
+
+  @include bpk-border-radius-sm;
+  @include bpk-box-shadow-lg;
+}
+
+/// Layer arrow base styles.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-layer-arrow(1rem);
+///   }
+
+@mixin bpk-layer-arrow($arrow-size) {
+  position: absolute;
+  pointer-events: none;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: " ";
+    display: block;
+  }
+
+  &::before {
+    border: ($arrow-size + $bpk-one-pixel-rem) solid transparent;
+  }
+
+  &::after {
+    border: $arrow-size solid transparent;
+  }
+}
+
+/// Layer top arrow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-layer-arrow(1rem);
+///     @include bpk-layer-arrow-top(1rem);
+///   }
+
+@mixin bpk-layer-arrow-top($size) {
+  top: 100%;
+  left: 50%;
+
+  &::before {
+    bottom: -($size + $bpk-one-pixel-rem);
+    margin-left: -($size + $bpk-one-pixel-rem);
+    border-top-color: $bpk-color-gray-100;
+  }
+
+  &::after {
+    bottom: -$size + $bpk-one-pixel-rem;
+    margin-left: -$size;
+    border-top-color: $bpk-color-white;
+  }
+}
+
+/// Layer right arrow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-layer-arrow(1rem);
+///     @include bpk-layer-arrow-right(1rem);
+///   }
+
+@mixin bpk-layer-arrow-right($size) {
+  top: 50%;
+  right: 100%;
+  margin-top: -$size;
+
+  &::before {
+    left: -($size + $bpk-one-pixel-rem);
+    margin-top: -$bpk-one-pixel-rem;
+    border-right-color: $bpk-color-gray-100;
+  }
+
+  &::after {
+    left: -$size + $bpk-one-pixel-rem;
+    border-right-color: $bpk-color-white;
+  }
+}
+
+/// Layer bottom arrow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-layer-arrow(1rem);
+///     @include bpk-layer-arrow-bottom(1rem);
+///   }
+
+@mixin bpk-layer-arrow-bottom($size) {
+  bottom: 100%;
+  left: 50%;
+
+  &::before {
+    top: -($size + $bpk-one-pixel-rem);
+    margin-left: -($size + $bpk-one-pixel-rem);
+    border-bottom-color: $bpk-color-gray-100;
+  }
+
+  &::after {
+    top: -$size + $bpk-one-pixel-rem;
+    margin-left: -$size;
+    border-bottom-color: $bpk-color-white;
+  }
+}
+
+/// Layer left arrow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-layer-arrow(1rem);
+///     @include bpk-layer-arrow-left(1rem);
+///   }
+
+@mixin bpk-layer-arrow-left($size) {
+  top: 50%;
+  left: 100%;
+  margin-top: -$size;
+
+  &::before {
+    right: -($size + $bpk-one-pixel-rem);
+    margin-top: -$bpk-one-pixel-rem;
+    border-left-color: $bpk-color-gray-100;
+  }
+
+  &::after {
+    right: -$size + $bpk-one-pixel-rem;
+    border-left-color: $bpk-color-white;
+  }
+}
