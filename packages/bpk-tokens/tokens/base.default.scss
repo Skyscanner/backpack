@@ -184,6 +184,12 @@ $bpk-button-selected-hover-box-shadow: none !default;
 $bpk-button-selected-active-box-shadow: none !default;
 /// @group buttons
 $bpk-button-selected-disabled-box-shadow: none !default;
+/// @group buttons
+$bpk-button-direct-booking-background-image: linear-gradient(-180deg, #FA488A 0%, #D92B6B 100%) !default;
+/// @group buttons
+$bpk-button-direct-booking-hover-background-color: rgb(217, 43, 107) !default;
+/// @group buttons
+$bpk-button-direct-booking-active-background-color: rgb(197, 15, 82) !default;
 /// @group calendar
 $bpk-calendar-padding: .75rem !default;
 /// @group calendar

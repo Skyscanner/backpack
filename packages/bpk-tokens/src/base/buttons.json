@@ -281,6 +281,18 @@
     "BUTTON_SELECTED_DISABLED_BOX_SHADOW": {
       "value": "none",
       "type": "box-shadow"
+    },
+    "BUTTON_DIRECT_BOOKING_BACKGROUND_IMAGE": {
+      "value": "linear-gradient(-180deg, {!PINK_500} 0%, {!PINK_600} 100%)",
+      "type": "background-image"
+    },
+    "BUTTON_DIRECT_BOOKING_HOVER_BACKGROUND_COLOR": {
+      "value": "{!PINK_600}",
+      "type": "color"
+    },
+    "BUTTON_DIRECT_BOOKING_ACTIVE_BACKGROUND_COLOR": {
+      "value": "{!PINK_700}",
+      "type": "color"
     }
   }
 }

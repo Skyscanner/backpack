@@ -31,4 +31,8 @@
   &--large-icon-only {
     @include bpk-button--large-icon-only;
   }
+
+  &--direct-booking {
+    @include bpk-button--direct-booking;
+  }
 }

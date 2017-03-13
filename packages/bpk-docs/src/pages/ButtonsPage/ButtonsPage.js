@@ -72,6 +72,29 @@ const components = [
     ],
   },
   {
+    id: 'direct-booking',
+    title: 'Direct Booking',
+    blurb: [
+      <BpkParagraph>
+        This button is reserved for sending users to the direct booking form.
+      </BpkParagraph>,
+    ],
+    examples: [
+      <BpkButton directBooking>DiBoo</BpkButton>,
+      ' ',
+      <BpkButton directBooking selected>Selected</BpkButton>,
+      ' ',
+      <BpkButton directBooking disabled>Disabled</BpkButton>,
+      <br />,
+      <br />,
+      <BpkButton large directBooking>DiBoo</BpkButton>,
+      ' ',
+      <BpkButton large directBooking selected>Selected</BpkButton>,
+      ' ',
+      <BpkButton large directBooking disabled>Disabled</BpkButton>,
+    ],
+  },
+  {
     id: 'destructive',
     title: 'Destructive',
     blurb: 'This button can be used to highlight destructive actions.',

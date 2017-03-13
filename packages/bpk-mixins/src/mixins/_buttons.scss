@@ -240,3 +240,27 @@
 @mixin bpk-button--large-icon-only {
   padding: $bpk-button-large-padding-y $bpk-button-large-padding-x-icon-only;
 }
+
+/// Direct booking button. Modifies the bpk-button 
+///
+/// @require {mixin} bpk-button
+/// @require {mixin} bpk-button--large
+///
+/// @example scss
+///   .selector {
+///     @include bpk-button();
+///     @include bpk-button--direct-booking();
+///   }
+
+@mixin bpk-button--direct-booking {
+  background-color: $bpk-button-direct-booking-active-background-color;
+  background-image: $bpk-button-direct-booking-background-image;
+
+  @include bpk-hover {
+    background-color: $bpk-button-direct-booking-hover-background-color;
+  }
+
+  &:active {
+    background-color: $bpk-button-direct-booking-active-background-color;
+  }
+}
