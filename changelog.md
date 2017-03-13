@@ -2,12 +2,23 @@
 
 ## UNRELEASED
 
-**Fixed**
-- bpk-component-checkbox
-- bpk-component-radio
-- bpk-mixins
-- bpk-svgs
+_Nothing yet..._
+
+## 2017-03-13 - Better disabled checkboxes/radio buttons and better popover contrast
+
+**Added:**
+- bpk-mixins: 10.0.1 => 10.1.0
+  - Added "layers" mixins for popovers and tooltips
+
+**Fixed:**
+- bpk-component-checkbox: 0.0.48 => 0.0.49
+- bpk-component-radio: 0.0.48 => 0.0.49
+- bpk-mixins: 10.0.1 => 10.1.0
+- bpk-svgs: 5.0.3 => 5.0.4
   - Improved checkbox and radio button disabled states
+- bpk-component-autosuggest: 2.0.10 => 2.0.11
+- bpk-component-popover: 1.0.12 => 1.0.13
+  - Improved popover-to-background contrast
 
 ## 2017-03-09 - Introducing the Tooltip component
 
