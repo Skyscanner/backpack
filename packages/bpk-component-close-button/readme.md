@@ -14,9 +14,9 @@ npm install bpk-component-close-button --save
 import React from 'react';
 import BpkCloseButton from 'bpk-component-close-button';
 
-export default MyComponent = () => (
+export default () => (
   <BpkCloseButton label="Close" onClick={() => console.log('click')} />
-)
+);
 ```
 
 ### Props

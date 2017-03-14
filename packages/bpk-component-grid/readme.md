@@ -14,7 +14,7 @@ npm install bpk-component-grid --save
 import React from 'react';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
 
-export default MyComponent = () => (
+export default () => (
   <BpkGridContainer>
     <BpkGridRow>
       <BpkGridColumn width={8} tabletWidth={12}>

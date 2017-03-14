@@ -11,18 +11,18 @@ npm install bpk-component-checkbox --save
 ## Usage
 
 ```js
-import React from 'react'
-import BpkCheckbox from 'bpk-component-checkbox'
+import React from 'react';
+import BpkCheckbox from 'bpk-component-checkbox';
 
 export default MyComponent = () => (
   <BpkCheckbox
-    name='prefer-directs'
+    name="prefer-directs"
     onChange={() => console.log('prefer directs changed!')}
-    id='prefer-directs'
-    label='Prefer directs'
+    id="prefer-directs"
+    label="Prefer directs"
     checked
   />
-)
+);
 ```
 
 ### Props

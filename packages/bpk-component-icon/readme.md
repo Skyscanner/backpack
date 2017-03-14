@@ -15,17 +15,17 @@ npm install bpk-component-icon --save
 ## Basic usage
 
 ```js
-import React from 'react'
-import { colors } from 'bpk-tokens/tokens/base.es6'
-import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight'
-import BpkLargeAccessibilityIcon from 'bpk-component-icon/lg/accessibility'
+import React from 'react';
+import { colors } from 'bpk-tokens/tokens/base.es6';
+import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
+import BpkLargeAccessibilityIcon from 'bpk-component-icon/lg/accessibility';
 
-export default MyComponent = () => (
+export default () => (
   <div>
     <BpkSmallFlightIcon fill={colors.colorBlue500} />
     <BpkLargeAccessibilityIcon fill={colors.colorGray700} />
   </div>
-)
+);
 ```
 
 > **Note:** Due to the way that they are generated, there are no prop types defined on any of the icon components. Any
@@ -34,38 +34,38 @@ props that you pass through will be rendered directly to the DOM.
 ## Aligning to BpkButton components
 
 ```js
-import React from 'react'
-import BpkButton from 'bpk-component-button'
-import { colors } from 'bpk-tokens/tokens/base.es6'
-import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight'
-import BpkLargeAccessibilityIcon from 'bpk-component-icon/lg/accessibility'
-import { withButtonAlignment, withLargeButtonAlignment } from 'bpk-component-icon'
+import React from 'react';
+import BpkButton from 'bpk-component-button';
+import { colors } from 'bpk-tokens/tokens/base.es6';
+import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
+import BpkLargeAccessibilityIcon from 'bpk-component-icon/lg/accessibility';
+import { withButtonAlignment, withLargeButtonAlignment } from 'bpk-component-icon';
 
-const AlignedBpkSmallFlightIcon = withButtonAlignment(BpkSmallFlightIcon)
-const AlignedBpkLargeAccessibilityIcon = withLargeButtonAlignment(BpkLargeAccessibilityIcon)
+const AlignedBpkSmallFlightIcon = withButtonAlignment(BpkSmallFlightIcon);
+const AlignedBpkLargeAccessibilityIcon = withLargeButtonAlignment(BpkLargeAccessibilityIcon);
 
-export default MyComponent = () => (
+export default () => (
   <BpkButton>
     <AlignedBpkSmallFlightIcon fill={colors.colorBlue500} />
     <AlignedBpkLargeAccessibilityIcon fill={colors.colorGray700} />
   </BpkButton>
-)
+);
 ```
 
 ## RTL support
 
 ```js
-import React from 'react'
-import BpkButton from 'bpk-component-button'
-import { colors } from 'bpk-tokens/tokens/base.es6'
-import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight'
-import { withRtlSupport } from 'bpk-component-icon'
+import React from 'react';
+import BpkButton from 'bpk-component-button';
+import { colors } from 'bpk-tokens/tokens/base.es6';
+import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
+import { withRtlSupport } from 'bpk-component-icon';
 
-const RtlSupportedBpkSmallFlightIcon = withRtlSupport(BpkSmallFlightIcon)
+const RtlSupportedBpkSmallFlightIcon = withRtlSupport(BpkSmallFlightIcon);
 
-export default MyComponent = () => (
+export default () => (
   <div>
     <RtlSupportedBpkSmallFlightIcon fill={colors.colorBlue500} />
   </div>
-)
+);
 ```

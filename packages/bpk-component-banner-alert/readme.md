@@ -11,19 +11,19 @@ npm install bpk-component-banner-alert --save
 ## Usage
 
 ```js
-import React from 'react'
-import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert'
+import React from 'react';
+import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert';
 
-const longMessage = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis ante in, vestibulum nulla.'
+const longMessage = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis ante in, vestibulum nulla.';
 
-export default MyComponent = () => (
-  <BpkBannerAlert 
-    message='Successful alert with more information.' 
+export default () => (
+  <BpkBannerAlert
+    message="Successful alert with more information."
     type={ALERT_TYPES.SUCCESS}
   >
     {longMessage}
   </BpkBannerAlert>
-)
+);
 ```
 
 ### Props

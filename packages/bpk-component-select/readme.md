@@ -11,21 +11,21 @@ npm install bpk-component-select --save
 ## Usage
 
 ```js
-import React from 'react'
-import BpkSelect from 'bpk-component-select'
+import React from 'react';
+import BpkSelect from 'bpk-component-select';
 
-export default MyComponent = () => (
+export default () => (
   <BpkSelect
-    id='fruits'
-    name='fruits'
-    value='oranges'
+    id="fruits"
+    name="fruits"
+    value="oranges"
     onChange={() => console.log('select changed')}
   >
-    <option value='apples'>Apples</option>
-    <option value='oranges'>Oranges</option>
-    <option value='pears'>Pears</option>
+    <option value="apples">Apples</option>
+    <option value="oranges">Oranges</option>
+    <option value="pears">Pears</option>
   </BpkSelect>
-)
+);
 ```
 
 ### Props

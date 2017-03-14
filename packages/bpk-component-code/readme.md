@@ -11,15 +11,15 @@ npm install bpk-component-code --save
 ## Usage
 
 ```js
-import React from 'react'
-import { BpkCode, BpkCodeBlock } from 'bpk-component-code'
+import React from 'react';
+import { BpkCode, BpkCodeBlock } from 'bpk-component-code';
 
 const codeBlock = `import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<App />, ...);`
+ReactDOM.render(<App />, ...);`;
 
-export default MyComponent = () => (
+export default () => (
   <div>
     <BpkParagraph>
       We recommend using React from npm with a bundler like webpack. You can use
@@ -28,7 +28,7 @@ export default MyComponent = () => (
     </BpkParagraph>
     <BpkCodeBlock>{codeBlock}</BpkCodeBlock>
   </div>
-)
+);
 ```
 
 ### Props
