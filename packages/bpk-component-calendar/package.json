@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-calendar",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "description": "Backpack calendar component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-component-icon": "^3.3.12",
+    "bpk-component-icon": "^3.3.13",
     "bpk-component-select": "^1.0.29",
     "bpk-mixins": "^10.1.1",
     "bpk-tokens": "^18.1.0",

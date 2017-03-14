@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-icon",
-  "version": "3.3.12",
+  "version": "3.3.13",
   "description": "Backpack icon components.",
   "main": "index.js",
   "scripts": {
