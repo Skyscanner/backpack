@@ -4,6 +4,12 @@
 
 _Nothing yet..._
 
+## 2017-03-14 - Fixed overzealous proptype warning in icon components
+
+**Fixed:**
+- bpk-component-icon: 3.3.12 => 3.3.13
+  - Relaxed `className` propType in internal component
+
 ## 2017-03-13 (2) - Fixed icon alignment on large buttons
 
 **Added:**
