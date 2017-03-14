@@ -14,13 +14,13 @@ npm install bpk-component-card --save
 import React from 'react';
 import BpkCard from 'bpk-component-card';
 
-export default MyComponent = () => (
+export default () => (
   <BpkCard>
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
     commodo ligula eget dolor. Aenean massa. Cum sociis natoque
     penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </BpkCard>
-)
+);
 ```
 
 ### Props

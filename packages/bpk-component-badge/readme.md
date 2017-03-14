@@ -11,12 +11,12 @@ npm install bpk-component-badge --save
 ## Usage
 
 ```js
-import React from 'react'
-import BpkBadge from 'bpk-component-badge'
+import React from 'react';
+import BpkBadge from 'bpk-component-badge';
 
-export default MyComponent = () => (
+export default () => (
   <BpkBadge>My Badge</BpkBadge>
-)
+);
 ```
 
 ### Props

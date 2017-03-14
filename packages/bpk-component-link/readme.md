@@ -11,12 +11,12 @@ npm install bpk-component-link --save
 ## Usage
 
 ```js
-import React from 'react'
-import BpkLink, { BpkButtonLink } from 'bpk-component-link'
+import React from 'react';
+import BpkLink, { BpkButtonLink } from 'bpk-component-link';
 
-export default MyComponent = () => (
+export default () => (
   <div>
-    Links can be both <BpkLink href='http://www.skyscanner.net/'>anchor tags</BpkLink> as well
+    Links can be both <BpkLink href="http://www.skyscanner.net/">anchor tags</BpkLink> as well
     as <BpkButtonLink onClick={() => console.log('link button click!')}>button tags</BpkButtonLink>.
   </div>
 )

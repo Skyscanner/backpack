@@ -18,7 +18,7 @@ import BpkButton from 'bpk-component-button';
 
 const AlignedArrowIcon = withButtonAlignment(ArrowIcon);
 
-export default MyComponent = () => (
+export default () => (
   <div>
     <BpkButton>Primary</BpkButton>
     <BpkButton large>Large primary</BpkButton>
@@ -30,7 +30,7 @@ export default MyComponent = () => (
       <span className="visually-hidden">Search</span>
     </BpkButton>
   </div>
-)
+);
 ```
 
 ### Props

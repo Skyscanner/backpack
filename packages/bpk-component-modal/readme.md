@@ -11,52 +11,53 @@ npm install bpk-component-modal --save
 ## Usage
 
 ```js
-import React, { Component } from 'react'
-import BpkModal from 'bpk-component-modal'
-import BpkButton from 'bpk-component-button'
+import React, { Component } from 'react';
+import BpkModal from 'bpk-component-modal';
+import BpkButton from 'bpk-component-button';
 
 class App extends Component {
-  constructor () {
-    super()
+  constructor() {
+    super();
 
-    this.onOpen = this.onOpen.bind(this)
-    this.onClose = this.onClose.bind(this)
+    this.onOpen = this.onOpen.bind(this);
+    this.onClose = this.onClose.bind(this);
 
     this.state = {
-      isOpen: false
-    }
+      isOpen: false,
+    };
   }
 
-  onOpen () {
+  onOpen() {
     this.setState({
-      isOpen: true
-    })
+      isOpen: true,
+    });
   }
 
-  onClose () {
+  onClose() {
     this.setState({
-      isOpen: false
-    })
+      isOpen: false,
+    });
   }
 
-  render () {
+  render() {
     return (
       <div>
-        <div id='application-container'>
+        <div id="application-container">
           <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
         </div>
         <BpkModal
           isOpen={this.state.isOpen}
           onClose={this.onClose}
-          title='Modal title'
-          closeLabel='Close modal'
+          title="Modal title"
+          closeLabel="Close modal"
           getApplicationElement={() =>
             document.getElementById('application-container')
-          }>
+          }
+        >
           This is a modal. You can put anything you want in here.
         </BpkModal>
       </div>
-    )
+    );
   }
 }
 ```

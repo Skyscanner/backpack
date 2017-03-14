@@ -14,9 +14,9 @@ npm install bpk-component-breakpoint --save
 import React from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 
-export default MyComponent = () => (
+export default () => (
   <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-    {isActive => isActive ? 'Mobile viewport is active' : 'Mobile viewport is inactive'}
+    {isActive => (isActive ? 'Mobile viewport is active' : 'Mobile viewport is inactive')}
   </BpkBreakpoint>
 );
 ```

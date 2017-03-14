@@ -11,19 +11,19 @@ npm install bpk-component-input --save
 ## Usage
 
 ```js
-import React from 'react'
-import BpkInput, { INPUT_TYPES } from 'bpk-component-input'
+import React from 'react';
+import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 
-export default MyComponent = () => (
+export default () => (
   <BpkInput
-    id='origin'
+    id="origin"
     type={INPUT_TYPES.TEXT}
-    name='origin'
-    value='Edinburgh'
+    name="origin"
+    value="Edinburgh"
     onChange={() => console.log('input changed!')}
-    placeholder='Country, city or airport'
+    placeholder="Country, city or airport"
   />
-)
+);
 ```
 
 ### Props

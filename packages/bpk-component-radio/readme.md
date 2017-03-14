@@ -11,17 +11,17 @@ npm install bpk-component-radio --save
 ## Usage
 
 ```js
-import React from 'react'
-import BpkRadio from 'bpk-component-radio'
+import React from 'react';
+import BpkRadio from 'bpk-component-radio';
 
-export default MyComponent = () => (
+export default () => (
   <BpkRadio
-    name='return'
-    label='Return'
+    name="return"
+    label="Return"
     onChange={() => console.log('radio changed')}
     checked
   />
-)
+);
 ```
 
 ### Props

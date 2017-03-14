@@ -11,17 +11,17 @@ npm install bpk-component-table --save
 ## Usage
 
 ```js
-import React from 'react'
+import React from 'react';
 import {
   BpkTable,
   BpkTableHead,
   BpkTableBody,
   BpkTableRow,
   BpkTableCell,
-  BpkTableHeadCell
-} from 'bpk-component-table'
+  BpkTableHeadCell,
+} from 'bpk-component-table';
 
-export default MyComponent = () => (
+export default () => (
   <BpkTable>
     <BpkTableHead>
       <BpkTableRow>
@@ -46,7 +46,7 @@ export default MyComponent = () => (
       </BpkTableRow>
     </BpkTableBody>
   </BpkTable>
-)
+);
 ```
 
 ### Props

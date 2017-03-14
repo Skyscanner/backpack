@@ -11,89 +11,89 @@ npm install bpk-component-autosuggest --save
 ### Usage
 
 ```js
-import React, { Component } from 'react'
-import BpkLabel from 'bpk-component-label'
-import { withRtlSupport } from 'bpk-component-icon'
-import FlightIcon from 'bpk-component-icon/lg/flight'
-import BpkAutosuggest, { BpkAutosuggestSuggestion } from 'bpk-component-autosuggest'
+import React, { Component } from 'react';
+import BpkLabel from 'bpk-component-label';
+import { withRtlSupport } from 'bpk-component-icon';
+import FlightIcon from 'bpk-component-icon/lg/flight';
+import BpkAutosuggest, { BpkAutosuggestSuggestion } from 'bpk-component-autosuggest';
 
-const BpkFlightIcon = withRtlSupport(FlightIcon)
+const BpkFlightIcon = withRtlSupport(FlightIcon);
 
 const offices = [
   {
     name: 'Barcelona',
     code: 'BCN',
-    country: 'Spain'
+    country: 'Spain',
   },
   ...
-]
+];
 
 const getSuggestions = (value) => {
-  const inputValue = value.trim().toLowerCase()
-  const inputLength = inputValue.length
+  const inputValue = value.trim().toLowerCase();
+  const inputLength = inputValue.length;
 
   return inputLength === 0 ? [] : offices.filter(office =>
-    office.name.toLowerCase().indexOf(inputValue) !== -1
-  )
-}
+    office.name.toLowerCase().indexOf(inputValue) !== -1,
+  );
+};
 
-const getSuggestionValue = ({ name, code }) => `${name} (${code})`
+const getSuggestionValue = ({ name, code }) => `${name} (${code})`;
 
-const renderSuggestion = (suggestion) => (
+const renderSuggestion = suggestion => (
   <BpkAutosuggestSuggestion
     value={getSuggestionValue(suggestion)}
     subHeading={suggestion.country}
-    tertiaryLabel='Airport'
+    tertiaryLabel="Airport"
     indent={suggestion.indent}
     icon={BpkFlightIcon}
   />
-)
+);
 
-class MyComonent extends Component {
-  constructor () {
-    super()
+class MyComponent extends Component {
+  constructor() {
+    super();
 
     this.state = {
       value: '',
-      suggestions: []
-    }
+      suggestions: [],
+    };
 
-    this.onChange = this.onChange.bind(this)
-    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this)
-    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this)
+    this.onChange = this.onChange.bind(this);
+    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this);
+    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this);
   }
 
-  onChange (e, { newValue }) {
+  onChange(e, { newValue }) {
     this.setState({
-      value: newValue
-    })
+      value: newValue,
+    });
   }
 
-  onSuggestionsFetchRequested ({ value }) {
+  onSuggestionsFetchRequested({ value }) {
     this.setState({
-      suggestions: getSuggestions(value)
-    })
+      suggestions: getSuggestions(value),
+    });
   }
 
-  onSuggestionsClearRequested () {
+  onSuggestionsClearRequested() {
     this.setState({
-      suggestions: []
-    })
+      suggestions: [],
+    });
   }
 
-  render () {
-    const { value, suggestions } = this.state
+  render() {
+    const { value, suggestions } = this.state;
 
     const inputProps = {
       id: 'my-autosuggest',
       placeholder: 'Enter an office name',
       value,
-      onChange: this.onChange
-    }
+      onChange: this.onChange,
+    };
 
     return (
       <div>
-        <BpkLabel label='Office' htmlFor='my-autosuggest' />
+        <BpkLabel label="Office" htmlFor="my-autosuggest" />
         <BpkAutosuggest
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -103,10 +103,9 @@ class MyComonent extends Component {
           inputProps={inputProps}
         />
       </div>
-    )
+    );
   }
 }
-
 ```
 
 ### Props

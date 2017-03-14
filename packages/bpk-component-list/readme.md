@@ -11,10 +11,10 @@ npm install bpk-component-list --save
 ## Usage
 
 ```js
-import React from 'react'
-import { BpkList, BpkListItem } from 'bpk-component-list'
+import React from 'react';
+import { BpkList, BpkListItem } from 'bpk-component-list';
 
-export default MyComponent = () => (
+export default () => (
   <BpkList>
     <BpkListItem>Apples</BpkListItem>
     <BpkListItem>
@@ -27,7 +27,7 @@ export default MyComponent = () => (
     </BpkListItem>
     <BpkListItem>Pears</BpkListItem>
   </BpkList>
-)
+);
 ```
 
 ### Props

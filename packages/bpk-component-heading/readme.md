@@ -11,12 +11,12 @@ npm install bpk-component-heading --save
 ## Usage
 
 ```js
-import React from 'react'
-import BpkHeading from 'bpk-component-heading'
+import React from 'react';
+import BpkHeading from 'bpk-component-heading';
 
-export default MyComponent = () => (
-  <BpkHeading level='h1'>My Heading</BpkHeading>
-)
+export default () => (
+  <BpkHeading level="h1">My Heading</BpkHeading>
+);
 ```
 
 ### Props
