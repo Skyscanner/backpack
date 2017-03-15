@@ -72,26 +72,26 @@ const components = [
     ],
   },
   {
-    id: 'direct-booking',
-    title: 'Direct Booking',
+    id: 'featured',
+    title: 'Featured',
     blurb: [
       <BpkParagraph>
-        This button is reserved for sending users to the direct booking form.
+        This button is reserved for featured buttons.
       </BpkParagraph>,
     ],
     examples: [
-      <BpkButton directBooking>DiBoo</BpkButton>,
+      <BpkButton featured>Featured</BpkButton>,
       ' ',
-      <BpkButton directBooking selected>Selected</BpkButton>,
+      <BpkButton featured selected>Selected</BpkButton>,
       ' ',
-      <BpkButton directBooking disabled>Disabled</BpkButton>,
+      <BpkButton featured disabled>Disabled</BpkButton>,
       <br />,
       <br />,
-      <BpkButton large directBooking>DiBoo</BpkButton>,
+      <BpkButton large featured>DiBoo</BpkButton>,
       ' ',
-      <BpkButton large directBooking selected>Selected</BpkButton>,
+      <BpkButton large featured selected>Selected</BpkButton>,
       ' ',
-      <BpkButton large directBooking disabled>Disabled</BpkButton>,
+      <BpkButton large featured disabled>Disabled</BpkButton>,
     ],
   },
   {

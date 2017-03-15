@@ -32,7 +32,7 @@
     @include bpk-button--large-icon-only;
   }
 
-  &--direct-booking {
-    @include bpk-button--direct-booking;
+  &--featured {
+    @include bpk-button--featured;
   }
 }

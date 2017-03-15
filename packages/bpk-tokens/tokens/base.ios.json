@@ -562,19 +562,19 @@
       "category": "buttons",
       "value": "linear-gradient(-180deg, #FA488A 0, #D92B6B 1)",
       "type": "background-image",
-      "name": "buttonDirectBookingBackgroundImage"
+      "name": "buttonFeaturedBackgroundImage"
     },
     {
       "category": "buttons",
       "value": "rgb(217, 43, 107)",
       "type": "color",
-      "name": "buttonDirectBookingHoverBackgroundColor"
+      "name": "buttonFeaturedHoverBackgroundColor"
     },
     {
       "category": "buttons",
       "value": "rgb(197, 15, 82)",
       "type": "color",
-      "name": "buttonDirectBookingActiveBackgroundColor"
+      "name": "buttonFeaturedActiveBackgroundColor"
     },
     {
       "category": "calendar",

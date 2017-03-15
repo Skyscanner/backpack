@@ -56,14 +56,14 @@ storiesOf('bpk-component-button', module)
       &nbsp;<BpkButton link large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>Disabled</BpkButton>
     </div>
   ))
-  .add('Direct Booking', () => (
+  .add('Featured', () => (
     <div>
-      &nbsp;<BpkButton directBooking onClick={action('directBooking button clicked')}>Button</BpkButton>
-      &nbsp;<BpkButton directBooking selected onClick={action('directBooking button selected clicked')}>Selected</BpkButton>
-      &nbsp;<BpkButton directBooking disabled onClick={action('THIS SHOULD NOT HAPPEN')}>Disabled</BpkButton>
-      &nbsp;<BpkButton directBooking large onClick={action('directBooking button clicked')}>Button</BpkButton>
-      &nbsp;<BpkButton directBooking large selected onClick={action('directBooking button selected clicked')}>Selected</BpkButton>
-      &nbsp;<BpkButton directBooking large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>Disabled</BpkButton>
+      &nbsp;<BpkButton featured onClick={action('featured button clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton featured selected onClick={action('featured button selected clicked')}>Selected</BpkButton>
+      &nbsp;<BpkButton featured disabled onClick={action('THIS SHOULD NOT HAPPEN')}>Disabled</BpkButton>
+      &nbsp;<BpkButton featured large onClick={action('featured button clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton featured large selected onClick={action('featured button selected clicked')}>Selected</BpkButton>
+      &nbsp;<BpkButton featured large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>Disabled</BpkButton>
     </div>
   ))
   .add('Icon-only button', () => (
@@ -81,7 +81,7 @@ storiesOf('bpk-component-button', module)
         <BpkButton iconOnly disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
           <AlignedSmallLongArrowRightIcon fill={TOKENS.colorWhite} />
         </BpkButton>&nbsp;
-        <BpkButton iconOnly directBooking onClick={action('iconOnly button directBooking clicked')}>
+        <BpkButton iconOnly featured onClick={action('iconOnly button featured clicked')}>
           <AlignedSmallLongArrowRightIcon fill={TOKENS.colorWhite} />
         </BpkButton>&nbsp;
       </div>
@@ -98,7 +98,7 @@ storiesOf('bpk-component-button', module)
         <BpkButton iconOnly large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
           <AlignedLargeLongArrowRightIcon fill={TOKENS.colorWhite} />
         </BpkButton>&nbsp;
-        <BpkButton iconOnly large directBooking onClick={action('large iconOnly button directBooking clicked')}>
+        <BpkButton iconOnly large featured onClick={action('large iconOnly button featured clicked')}>
           <AlignedLargeLongArrowRightIcon fill={TOKENS.colorWhite} />
         </BpkButton>&nbsp;
       </div>
@@ -109,7 +109,7 @@ storiesOf('bpk-component-button', module)
       &nbsp;<BpkButton onClick={action('primary button clicked')}>Button</BpkButton>
       &nbsp;<BpkButton secondary onClick={action('secondary button clicked')}>Button</BpkButton>
       &nbsp;<BpkButton link onClick={action('link button clicked')}>Button</BpkButton>
-      &nbsp;<BpkButton directBooking onClick={action('directBooking button clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton featured onClick={action('featured button clicked')}>Button</BpkButton>
       &nbsp;<BpkButton large onClick={action('primary button clicked')}>Button</BpkButton>
       &nbsp;<BpkButton large secondary onClick={action('secondary button clicked')}>Button</BpkButton>
       &nbsp;<BpkButton large link onClick={action('link button clicked')}>Button</BpkButton>
@@ -120,7 +120,7 @@ storiesOf('bpk-component-button', module)
       &nbsp;<BpkButton href="#" onClick={action('primary anchor clicked')}>Button</BpkButton>
       &nbsp;<BpkButton href="#" secondary onClick={action('secondary anchor clicked')}>Button</BpkButton>
       &nbsp;<BpkButton href="#" link onClick={action('link anchor clicked')}>Button</BpkButton>
-      &nbsp;<BpkButton href="#" directBooking onClick={action('directBooking anchor clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton href="#" featured onClick={action('featured anchor clicked')}>Button</BpkButton>
       &nbsp;<BpkButton href="#" large onClick={action('primary anchor clicked')}>Button</BpkButton>
       &nbsp;<BpkButton href="#" large secondary onClick={action('secondary anchor clicked')}>Button</BpkButton>
       &nbsp;<BpkButton href="#" large link onClick={action('link anchor clicked')}>Button</BpkButton>
