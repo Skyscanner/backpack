@@ -6,9 +6,9 @@
   }
 
   &__footer-copy {
-    @include bpk-text-sm;
-
     display: block;
+
+    @include bpk-text-sm;
 
     &--align-right {
       text-align: right;

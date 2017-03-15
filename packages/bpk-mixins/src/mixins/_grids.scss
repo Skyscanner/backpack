@@ -12,15 +12,15 @@
 ///   }
 
 @mixin bpk-grid__container {
-  @include bpk-breakpoint-above-tablet {
-    padding-right: $bpk-grid-container-padding;
-    padding-left: $bpk-grid-container-padding;
-  }
-
   max-width: $bpk-breakpoint-desktop;
   margin: 0 auto;
   padding-right: $bpk-grid-container-mobile-padding;
   padding-left: $bpk-grid-container-mobile-padding;
+
+  @include bpk-breakpoint-above-tablet {
+    padding-right: $bpk-grid-container-padding;
+    padding-left: $bpk-grid-container-padding;
+  }
 }
 
 /// Grid container debug. Modifies the bpk-grid__container mixin.
@@ -59,10 +59,10 @@
 ///   }
 
 @mixin bpk-grid__row {
-  @include bpk-clearfix;
-
   margin-right: -($bpk-grid-gutter / 2);
   margin-left: -($bpk-grid-gutter / 2);
+
+  @include bpk-clearfix;
 }
 
 /// Grid row padded. Modifies the bpk-grid__row mixin.

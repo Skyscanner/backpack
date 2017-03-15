@@ -12,9 +12,6 @@
 ///   }
 
 @mixin bpk-card {
-  @include bpk-box-shadow-sm;
-  @include bpk-border-radius-sm;
-
   position: relative;
   display: block;
   background-color: $bpk-card-background-color;
@@ -22,13 +19,19 @@
   text-decoration: none;
   cursor: pointer;
 
+  @include bpk-box-shadow-sm;
+  @include bpk-border-radius-sm;
+
+  @include bpk-hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+
   // Keep transitions and animations to only transform and opacity.
   // This pseudo element solution allows us to animate box-shadow in a performant manner.
   // http://tobiasahlin.com/blog/how-to-animate-box-shadow/
   &::after {
-    @include bpk-box-shadow-lg;
-    @include bpk-border-radius-sm;
-
     position: absolute;
     top: 0;
     right: 0;
@@ -39,15 +42,12 @@
     opacity: 0;
     pointer-events: none; // To prevent the pseudo element absorbing click events
 
+    @include bpk-box-shadow-lg;
+    @include bpk-border-radius-sm;
+
     // pointer-events doesn't work on ie
     @media screen\0 {
       z-index: -1;
-    }
-  }
-
-  @include bpk-hover {
-    &::after {
-      opacity: 1;
     }
   }
 

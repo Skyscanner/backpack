@@ -189,12 +189,13 @@
 ///   }
 
 @mixin bpk-button--link {
-  @include bpk-link;
-
   border-radius: 0;
-  background: none;
   font-weight: normal;
   box-shadow: none;
+
+  @include bpk-link;
+
+  background: none; /* stylelint-disable-line order/order, order/properties-order */
 
   @include bpk-hover {
     background: none;

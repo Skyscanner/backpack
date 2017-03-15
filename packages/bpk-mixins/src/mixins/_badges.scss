@@ -13,12 +13,12 @@
 ///   }
 
 @mixin bpk-badge {
-  @include bpk-border-radius-xs;
-  @include bpk-text-sm;
-
   display: inline-block;
   padding: $bpk-badge-padding-y $bpk-badge-padding-x;
   background-color: $bpk-badge-background-color;
+
+  @include bpk-border-radius-xs;
+  @include bpk-text-sm;
 }
 
 /// Centered badge. Modifies the bpk-badge mixin.

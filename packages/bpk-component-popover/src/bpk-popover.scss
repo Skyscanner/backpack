@@ -91,10 +91,10 @@
     text-align: right;
     box-shadow: 0 1px 0 0 $bpk-color-gray-100 inset;
 
+    @include bpk-text-sm;
+
     @include bpk-rtl {
       text-align: left;
     }
-
-    @include bpk-text-sm;
   }
 }

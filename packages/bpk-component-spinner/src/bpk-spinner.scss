@@ -1,21 +1,21 @@
 @import '~bpk-mixins/index';
 
 .bpk-spinner {
-  @include bpk-spinner();
+  @include bpk-spinner;
 
   &--large {
-    @include bpk-spinner--lg();
+    @include bpk-spinner--lg;
   }
 
   &--extra-large {
-    @include bpk-spinner--xl();
+    @include bpk-spinner--xl;
   }
 
   &--align-to-button {
-    @include bpk-spinner--align-to-button();
+    @include bpk-spinner--align-to-button;
   }
 
   &--align-to-large-button {
-    @include bpk-spinner--align-to-large-button();
+    @include bpk-spinner--align-to-large-button;
   }
 }

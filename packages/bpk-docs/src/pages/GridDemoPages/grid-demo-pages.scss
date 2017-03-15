@@ -2,12 +2,12 @@
 
 .bpkdocs-grid-demo-pages {
   &__lozenge {
-    @include bpk-text-sm;
-    @include bpk-border-radius-xs;
-
     padding: $bpk-spacing-xs;
     background-color: $bpk-color-gray-50;
     text-align: center;
     box-shadow: 0 0 0 1px $bpk-color-gray-100;
+
+    @include bpk-text-sm;
+    @include bpk-border-radius-xs;
   }
 }

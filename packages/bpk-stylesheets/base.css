@@ -393,14 +393,15 @@ html {
     -webkit-box-sizing: inherit;
             box-sizing: inherit; }
 
-/* stylelint-disable selector-class-pattern  */
+/* stylelint-disable selector-class-pattern */
 body {
   color: #524c61;
   font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Arial", sans-serif;
   font-size: 1rem;
   line-height: 1.5rem; }
   body.scaffold-font-size {
-    font-size: 13px; }
+    font-size: 13px;
+    /* stylelint-disable-line unit-blacklist, scale-unlimited/declaration-strict-value */ }
   html[lang="ja-JP"] body.enable-jp-font-feature-settings,
   html[lang="ja-jp"] body.enable-jp-font-feature-settings {
     -webkit-font-feature-settings: "palt";
@@ -416,8 +417,11 @@ body {
 .visually-hidden {
   position: absolute;
   width: 1px;
+  /* stylelint-disable-line unit-blacklist */
   height: 1px;
+  /* stylelint-disable-line unit-blacklist */
   margin: -1px;
+  /* stylelint-disable-line unit-blacklist */
   padding: 0;
   border: 0;
   overflow: hidden;

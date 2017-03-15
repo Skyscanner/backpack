@@ -15,7 +15,7 @@ html {
   }
 }
 
-/* stylelint-disable selector-class-pattern  */
+/* stylelint-disable selector-class-pattern */
 
 body {
   color: $bpk-font-color-base;
@@ -24,7 +24,7 @@ body {
   line-height: $bpk-line-height-base;
 
   &.scaffold-font-size {
-    font-size: 13px;
+    font-size: 13px; /* stylelint-disable-line unit-blacklist, scale-unlimited/declaration-strict-value */
   }
 
   &.enable-jp-font-feature-settings {
