@@ -77,6 +77,7 @@ BpkButton.propTypes = {
   large: PropTypes.bool,
   link: PropTypes.bool,
   iconOnly: PropTypes.bool,
+  featured: PropTypes.bool,
 };
 
 BpkButton.defaultProps = {
@@ -91,6 +92,7 @@ BpkButton.defaultProps = {
   large: false,
   link: false,
   iconOnly: false,
+  featured: false,
 };
 
 export default BpkButton;

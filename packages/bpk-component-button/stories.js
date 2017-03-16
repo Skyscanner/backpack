@@ -126,4 +126,3 @@ storiesOf('bpk-component-button', module)
       &nbsp;<BpkButton href="#" large link onClick={action('link anchor clicked')}>Button</BpkButton>
     </div>
   ));
-  
