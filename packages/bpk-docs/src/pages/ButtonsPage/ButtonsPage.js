@@ -87,7 +87,7 @@ const components = [
       <BpkButton featured disabled>Disabled</BpkButton>,
       <br />,
       <br />,
-      <BpkButton large featured>DiBoo</BpkButton>,
+      <BpkButton large featured>Featured</BpkButton>,
       ' ',
       <BpkButton large featured selected>Selected</BpkButton>,
       ' ',
