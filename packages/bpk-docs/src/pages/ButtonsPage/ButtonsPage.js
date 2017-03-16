@@ -72,6 +72,29 @@ const components = [
     ],
   },
   {
+    id: 'featured',
+    title: 'Featured',
+    blurb: [
+      <BpkParagraph>
+        This button is reserved for featured buttons.
+      </BpkParagraph>,
+    ],
+    examples: [
+      <BpkButton featured>Featured</BpkButton>,
+      ' ',
+      <BpkButton featured selected>Selected</BpkButton>,
+      ' ',
+      <BpkButton featured disabled>Disabled</BpkButton>,
+      <br />,
+      <br />,
+      <BpkButton large featured>Featured</BpkButton>,
+      ' ',
+      <BpkButton large featured selected>Selected</BpkButton>,
+      ' ',
+      <BpkButton large featured disabled>Disabled</BpkButton>,
+    ],
+  },
+  {
     id: 'destructive',
     title: 'Destructive',
     blurb: 'This button can be used to highlight destructive actions.',

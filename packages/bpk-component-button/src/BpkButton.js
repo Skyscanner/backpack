@@ -16,6 +16,7 @@ const BpkButton = (props) => {
     secondary,
     selected,
     destructive,
+    featured,
     large,
     link,
     iconOnly,
@@ -29,6 +30,7 @@ const BpkButton = (props) => {
   if (selected) { classNames.push(getClassName('bpk-button--selected')); }
   if (large) { classNames.push(getClassName('bpk-button--large')); }
   if (link) { classNames.push(getClassName('bpk-button--link')); }
+  if (featured) { classNames.push(getClassName('bpk-button--featured')); }
   if (iconOnly) { classNames.push(getClassName(large ? 'bpk-button--large-icon-only' : 'bpk-button--icon-only')); }
   if (className) { classNames.push(className); }
 

@@ -31,4 +31,8 @@
   &--large-icon-only {
     @include bpk-button--large-icon-only;
   }
+
+  &--featured {
+    @include bpk-button--featured;
+  }
 }

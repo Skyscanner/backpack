@@ -51,6 +51,16 @@
     "YELLOW_700": "#E1A500",
     "YELLOW_800": "#C28E00",
     "YELLOW_900": "#9C7200",
+    "PINK_50": "#FDE4ED",
+    "PINK_100": "#FFBFD7",
+    "PINK_200": "#FF94BB",
+    "PINK_300": "#FF73A6",
+    "PINK_400": "#FF619B",
+    "PINK_500": "#FA488A",
+    "PINK_600": "#D92B6B",
+    "PINK_700": "#C50F52",
+    "PINK_800": "#B00C48",
+    "PINK_900": "#94053A",
     "FONT_SIZE_SM": ".75rem",
     "FONT_SIZE_BASE": "1rem",
     "FONT_SIZE_LG": "1.5rem",
@@ -635,6 +645,24 @@
       "value": "none",
       "type": "box-shadow",
       "name": "BUTTON_SELECTED_DISABLED_BOX_SHADOW"
+    },
+    "BUTTON_FEATURED_BACKGROUND_IMAGE": {
+      "category": "buttons",
+      "value": "linear-gradient(-180deg, #FA488A 0%, #D92B6B 100%)",
+      "type": "background-image",
+      "name": "BUTTON_FEATURED_BACKGROUND_IMAGE"
+    },
+    "BUTTON_FEATURED_HOVER_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgb(217, 43, 107)",
+      "type": "color",
+      "name": "BUTTON_FEATURED_HOVER_BACKGROUND_COLOR"
+    },
+    "BUTTON_FEATURED_ACTIVE_BACKGROUND_COLOR": {
+      "category": "buttons",
+      "value": "rgb(197, 15, 82)",
+      "type": "color",
+      "name": "BUTTON_FEATURED_ACTIVE_BACKGROUND_COLOR"
     },
     "CALENDAR_PADDING": {
       "category": "calendar",
@@ -2003,6 +2031,9 @@
     "BUTTON_SELECTED_HOVER_BOX_SHADOW",
     "BUTTON_SELECTED_ACTIVE_BOX_SHADOW",
     "BUTTON_SELECTED_DISABLED_BOX_SHADOW",
+    "BUTTON_FEATURED_BACKGROUND_IMAGE",
+    "BUTTON_FEATURED_HOVER_BACKGROUND_COLOR",
+    "BUTTON_FEATURED_ACTIVE_BACKGROUND_COLOR",
     "CALENDAR_PADDING",
     "CALENDAR_DAY_SPACING",
     "CALENDAR_DAY_SIZE",

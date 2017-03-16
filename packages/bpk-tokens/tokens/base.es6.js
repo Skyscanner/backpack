@@ -91,6 +91,9 @@ export const buttonSelectedBoxShadow = "none";
 export const buttonSelectedHoverBoxShadow = "none";
 export const buttonSelectedActiveBoxShadow = "none";
 export const buttonSelectedDisabledBoxShadow = "none";
+export const buttonFeaturedBackgroundImage = "linear-gradient(-180deg, #FA488A 0%, #D92B6B 100%)";
+export const buttonFeaturedHoverBackgroundColor = "rgb(217, 43, 107)";
+export const buttonFeaturedActiveBackgroundColor = "rgb(197, 15, 82)";
 export const calendarPadding = ".75rem";
 export const calendarDaySpacing = ".375rem";
 export const calendarDaySize = "2.250rem";
@@ -409,6 +412,9 @@ buttonSelectedBoxShadow,
 buttonSelectedHoverBoxShadow,
 buttonSelectedActiveBoxShadow,
 buttonSelectedDisabledBoxShadow,
+buttonFeaturedBackgroundImage,
+buttonFeaturedHoverBackgroundColor,
+buttonFeaturedActiveBackgroundColor,
 };
 export const calendar = {
 calendarPadding,

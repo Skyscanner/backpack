@@ -184,6 +184,12 @@ $bpk-button-selected-hover-box-shadow: none;
 $bpk-button-selected-active-box-shadow: none;
 /// @group buttons
 $bpk-button-selected-disabled-box-shadow: none;
+/// @group buttons
+$bpk-button-featured-background-image: linear-gradient(-180deg, #FA488A 0%, #D92B6B 100%);
+/// @group buttons
+$bpk-button-featured-hover-background-color: rgb(217, 43, 107);
+/// @group buttons
+$bpk-button-featured-active-background-color: rgb(197, 15, 82);
 /// @group calendar
 $bpk-calendar-padding: .75rem;
 /// @group calendar
