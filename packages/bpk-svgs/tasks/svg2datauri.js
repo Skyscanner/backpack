@@ -5,7 +5,7 @@ import { PluginError } from 'gulp-util';
 const PLUGIN_NAME = 'svg2datauri';
 
 const mapTemplate = (options = {}) => `/// @group svgs\n$${options.mapName}: (\n${options.vars}\n);\n`;
-const mapVariableTemplate = (options = {}) => `${options.varname}: "${options.base64Data}",`;
+const mapVariableTemplate = (options = {}) => `${options.varname}: '${options.base64Data}',`;
 const colorOverride = color => `$1<style type="text/css">circle, ellipse, line, path, polygon, polyline, rect, text { fill: ${color} !important }</style>`; // eslint-disable-line
 const colorPlaceholder = '$1<style type="text/css">circle, ellipse, line, path, polygon, polyline, rect, text { fill: $$$COLOR$$$ !important }</style>'; // eslint-disable-line
 
@@ -17,7 +17,14 @@ const encodeSvg = (svgContents, color) => {
   return `data:image/svg+xml;base64,${new Buffer(contents).toString('base64')}`;
 };
 
-const injectColorPlaceholder = svgContents => svgContents.replace(/(<svg[^>]+>)/im, colorPlaceholder);
+const injectColorPlaceholder = (svgContents, svgName) => {
+  const svg = svgContents.replace(/(<svg[^>]+>)/im, colorPlaceholder);
+
+  return mapVariableTemplate({
+    varname: svgName,
+    base64Data: svg,
+  });
+};
 
 const svg2datauri = (svgContents, svgName, colors) => {
   if (colors) {
@@ -90,7 +97,7 @@ export const sassMap = (mapName) => {
   return stream;
 };
 
-export const svg2datauri2 = () => {
+export const svg2sassvar = () => {
   const stream = new Transform({ objectMode: true });
 
   stream._transform = (file, encoding, cb) => { // eslint-disable-line no-underscore-dangle
@@ -104,7 +111,7 @@ export const svg2datauri2 = () => {
 
     if (file.isBuffer()) {
       file.contents = new Buffer( // eslint-disable-line no-param-reassign
-        svg2datauri(String(file.contents), path.basename(file.path).split('.')[0], {}),
+        injectColorPlaceholder(String(file.contents), path.basename(file.path).split('.')[0]),
       );
       return cb(null, file);
     }

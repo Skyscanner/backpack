@@ -12,11 +12,4 @@
     margin: 0;
     padding: $bpk-spacing-xs;
   }
-
-  &__custom-color-icon {
-    &::after {
-      @include bpk-icon(flight, pink, "large");
-      @include bpk-icon(flight, cyan, small);
-    }
-  }
 }

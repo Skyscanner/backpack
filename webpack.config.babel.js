@@ -4,6 +4,7 @@ import autoprefixer from 'autoprefixer';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin';
 
+import sassFunctions from './packages/bpk-mixins/sass-functions';
 import * as ROUTES from './packages/bpk-docs/src/constants/routes';
 
 const { BPK_TOKENS } = process.env;
@@ -113,6 +114,7 @@ const config = {
 
   sass: {
     data: BPK_TOKENS ? fs.readFileSync(`packages/bpk-tokens/tokens/${BPK_TOKENS}.scss`) : '',
+    functions: sassFunctions,
   },
 
   devServer: {
