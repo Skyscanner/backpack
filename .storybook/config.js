@@ -18,6 +18,7 @@ addDecorator(story => (
 
 /* eslint-disable global-require */
 configure(() => {
+  require('./../packages/bpk-component-accordion/stories');
   require('./../packages/bpk-component-autosuggest/stories');
   require('./../packages/bpk-component-badge/stories');
   require('./../packages/bpk-component-banner-alert/stories');

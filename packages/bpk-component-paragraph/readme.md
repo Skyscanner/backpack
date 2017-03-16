@@ -21,6 +21,7 @@ export default () => (
 
 ### Props
 
-| Property | PropType | Required | Default Value |
-| -------- | -------- | -------- | ------------- |
-| children | -        | true     | -             |
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| children  | node     | true     | -             |
+| className | string   | false    | null          |

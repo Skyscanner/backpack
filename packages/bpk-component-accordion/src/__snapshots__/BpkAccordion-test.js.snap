@@ -1,0 +1,13 @@
+exports[`BpkAccordion should render correctly 1`] = `
+<dl
+  className="bpk-accordion">
+  Accordion child
+</dl>
+`;
+
+exports[`BpkAccordion should render correctly with custom "className" prop 1`] = `
+<dl
+  className="bpk-accordion my-custom-class">
+  Accordion child
+</dl>
+`;

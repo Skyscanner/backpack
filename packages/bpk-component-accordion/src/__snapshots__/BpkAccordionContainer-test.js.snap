@@ -1,0 +1,104 @@
+exports[`BpkAccordionContainer should render correctly 1`] = `
+<dl
+  className="bpk-accordion">
+  <div
+    expanded={false}
+    onClick={[Function]}>
+    Accordion Item 1
+  </div>
+  <div
+    expanded={false}
+    onClick={[Function]}>
+    Accordion Item 2
+  </div>
+  <div
+    expanded={false}
+    onClick={[Function]}>
+    Accordion Item 3
+  </div>
+</dl>
+`;
+
+exports[`BpkAccordionContainer should render correctly even when multiple items are marked as initially expanded 1`] = `
+<dl
+  className="bpk-accordion">
+  <div
+    expanded={false}
+    onClick={[Function]}>
+    Accordion Item 1
+  </div>
+  <div
+    expanded={true}
+    onClick={[Function]}>
+    Accordion Item 2
+  </div>
+  <div
+    expanded={false}
+    onClick={[Function]}>
+    Accordion Item 3
+  </div>
+</dl>
+`;
+
+exports[`BpkAccordionContainer should render correctly with "allowMultiple" prop 1`] = `
+<dl
+  className="bpk-accordion">
+  <div
+    expanded={false}
+    onClick={[Function]}>
+    Accordion Item 1
+  </div>
+  <div
+    expanded={false}
+    onClick={[Function]}>
+    Accordion Item 2
+  </div>
+  <div
+    expanded={false}
+    onClick={[Function]}>
+    Accordion Item 3
+  </div>
+</dl>
+`;
+
+exports[`BpkAccordionContainer should render correctly with "allowMultiple" prop and custom initially expanded items 1`] = `
+<dl
+  className="bpk-accordion">
+  <div
+    expanded={true}
+    onClick={[Function]}>
+    Accordion Item 1
+  </div>
+  <div
+    expanded={false}
+    onClick={[Function]}>
+    Accordion Item 2
+  </div>
+  <div
+    expanded={true}
+    onClick={[Function]}>
+    Accordion Item 3
+  </div>
+</dl>
+`;
+
+exports[`BpkAccordionContainer should render correctly with custom initially expanded item 1`] = `
+<dl
+  className="bpk-accordion">
+  <div
+    expanded={false}
+    onClick={[Function]}>
+    Accordion Item 1
+  </div>
+  <div
+    expanded={true}
+    onClick={[Function]}>
+    Accordion Item 2
+  </div>
+  <div
+    expanded={false}
+    onClick={[Function]}>
+    Accordion Item 3
+  </div>
+</dl>
+`;

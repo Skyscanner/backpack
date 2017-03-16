@@ -4,8 +4,10 @@ import './bpk-checkbox.scss';
 
 const BpkCheckbox = (props) => {
   const classNames = ['bpk-checkbox'];
+  const { name, onChange, value, checked, label, disabled, className, ...rest } = props;
 
-  if (props.disabled) { classNames.push('bpk-checkbox--disabled'); }
+  if (disabled) { classNames.push('bpk-checkbox--disabled'); }
+  if (className) { classNames.push(className); }
 
   // This is awkward because the label-has-for rule enforces an 'id' / 'for' pairing
   // when it's not really necessary for nested inputs.
@@ -16,14 +18,14 @@ const BpkCheckbox = (props) => {
       <input
         type="checkbox"
         className="bpk-checkbox__input"
-        name={props.name}
-        onChange={props.onChange}
-        id={props.id}
-        value={props.value || props.name}
-        checked={props.checked}
-        disabled={props.disabled}
+        name={name}
+        onChange={onChange}
+        value={value || name}
+        checked={checked}
+        disabled={disabled}
+        {...rest}
       />
-      {props.label ? ` ${props.label}` : null}
+      {label ? ` ${label}` : null}
     </label>
   );
   /* eslint-enable */
@@ -32,19 +34,19 @@ const BpkCheckbox = (props) => {
 BpkCheckbox.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  id: PropTypes.string,
   label: PropTypes.string,
   value: PropTypes.string,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 BpkCheckbox.defaultProps = {
-  id: null,
   label: null,
   value: null,
   checked: false,
   disabled: false,
+  className: null,
 };
 
 export default BpkCheckbox;

@@ -36,6 +36,7 @@ import PopoversPage from './../pages/PopoversPage';
 import CalendarPage from './../pages/CalendarPage';
 import DatepickerPage from './../pages/DatepickerPage';
 import TooltipsPage from './../pages/TooltipsPage';
+import AccordionsPage from './../pages/AccordionsPage';
 
 import DownloadsPage from './../pages/DownloadsPage';
 import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages';
@@ -78,6 +79,7 @@ const Routes = (
         <Route path={ROUTES.CALENDAR} component={CalendarPage} />
         <Route path={ROUTES.DATEPICKER} component={DatepickerPage} />
         <Route path={ROUTES.TOOLTIPS} component={TooltipsPage} />
+        <Route path={ROUTES.ACCORDIONS} component={AccordionsPage} />
       </Route>
     </Route>
     <Route path={ROUTES.DOWNLOADS} component={DownloadsPage} />
