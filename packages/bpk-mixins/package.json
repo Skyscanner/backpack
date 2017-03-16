@@ -12,5 +12,8 @@
   "dependencies": {
     "bpk-svgs": "^5.0.5",
     "bpk-tokens": "^18.1.0"
+  },
+  "peerDependencies": {
+    "node-sass": "^4.1.1"
   }
 }

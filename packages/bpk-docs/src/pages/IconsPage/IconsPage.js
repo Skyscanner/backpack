@@ -65,6 +65,14 @@ const components = [
 
     ],
   },
+  {
+    id: 'custom',
+    title: 'Custom icons',
+    blurb: 'Custom colored icons',
+    examples: [
+      <div className="bpkdocs-icons-page__custom-color-icon">Meh</div>,
+    ],
+  },
 ];
 
 const customSections = [

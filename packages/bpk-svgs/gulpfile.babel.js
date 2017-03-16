@@ -152,7 +152,14 @@ gulp.task('icons-lg', () => {
     .pipe(sassMap('bpk-icons-lg'))
     .pipe(gulp.dest('dist/scss'));
 
-  return merge(react, datauri);
+  const rawDatauri = optimised
+    .pipe(clone())
+    .pipe(svg2sassvar({ colors }))
+    .pipe(concat('_icons-lg-raw.scss'))
+    .pipe(sassMap('bpk-icons-lg-raw'))
+    .pipe(gulp.dest('dist/scss'));
+
+  return merge(react, datauri, rawDatauri);
 });
 
 gulp.task('default', ['elements', 'spinners', 'icons-sm', 'icons-lg']);

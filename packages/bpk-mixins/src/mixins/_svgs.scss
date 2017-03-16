@@ -1,5 +1,6 @@
 @import '~bpk-svgs/index';
 @import '../bonds';
+@import './utils';
 
 @keyframes bpk-keyframe-spin {
   100% {
@@ -42,6 +43,45 @@
 @mixin _bpk-svg--align-to-large-button() {
   margin-top: ($bpk-button-large-line-height - $bpk-icon-size-lg) / 2;
   vertical-align: top;
+}
+
+/// Icon.
+///
+/// @param {key} $icon [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
+/// @param {key} $color [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
+/// @param {key} $size [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-icon(flight, $bpk-color-gray-500, large);
+///   }
+
+$bpk-icons: (
+  flight: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><style type="text/css">circle, ellipse, line, path, polygon, polyline, rect, text { fill: $$$COLOR$$$ !important }</style><path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0zm0 22a10 10 0 1 1 10-10 10 10 0 0 1-10 10zm0-18a8 8 0 1 0 8 8 8 8 0 0 0-8-8zm.07 1a1.59 1.59 0 1 1-1.55 1.59A1.57 1.57 0 0 1 12.07 5zm1.6 5.51v3l1.43 4.62a.45.45 0 0 1-.79.45l-2.31-5-2.35 5a.47.47 0 0 1-.65.11.44.44 0 0 1-.11-.62l1.46-4.6V10.4l-4.1-1.3A.45.45 0 0 1 6 8.71a.49.49 0 0 1 .25-.42.75.75 0 0 1 .48 0L12 9.2l5.29-.89h.2a.45.45 0 0 1 .48.28.46.46 0 0 1-.17.53z"/></svg>',
+);
+
+@mixin bpk-icon($icon, $color, $size: small) {
+  @if function-exists(encodebase64) {
+    $_datauri: "data:image/svg+xml;base64," + encodebase64(
+      str-replace(
+        map-get($bpk-icons, $icon),
+        "$$$COLOR$$$",
+        $color
+      )
+    );
+
+    position: relative;
+    content: '';
+    display: inline-block;
+    width: if($size == large, $bpk-spacing-base, $bpk-spacing-md);
+    height: if($size == large, $bpk-spacing-base, $bpk-spacing-md);
+    background: url($_datauri) no-repeat;
+    background-size: cover;
+  }
+
+  @else {
+    @error "Could not find encodebase64 function. ";
+  }
 }
 
 /// Small icon.
