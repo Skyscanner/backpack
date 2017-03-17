@@ -5,8 +5,9 @@ import { PluginError } from 'gulp-util';
 const PLUGIN_NAME = 'svg2datauri';
 
 const mapTemplate = (options = {}) => `/// @group svgs\n$${options.mapName}: (\n${options.vars}\n);\n`;
-const mapVariableTemplate = (options = {}) => `${options.varname}: "${options.base64Data}",`;
+const mapVariableTemplate = (options = {}) => `${options.varname}: '${options.base64Data}',`;
 const colorOverride = color => `$1<style type="text/css">circle, ellipse, line, path, polygon, polyline, rect, text { fill: ${color} !important }</style>`; // eslint-disable-line
+const colorPlaceholder = '$1<style type="text/css">circle, ellipse, line, path, polygon, polyline, rect, text { fill: $$$COLOR$$$ !important }</style>'; // eslint-disable-line
 
 const encodeSvg = (svgContents, color) => {
   const contents = color
@@ -14,6 +15,15 @@ const encodeSvg = (svgContents, color) => {
     : svgContents;
 
   return `data:image/svg+xml;base64,${new Buffer(contents).toString('base64')}`;
+};
+
+const injectColorPlaceholder = (svgContents, svgName) => {
+  const svg = svgContents.replace(/(<svg[^>]+>)/im, colorPlaceholder);
+
+  return mapVariableTemplate({
+    varname: svgName,
+    base64Data: svg,
+  });
 };
 
 const svg2datauri = (svgContents, svgName, colors) => {
@@ -77,6 +87,31 @@ export const sassMap = (mapName) => {
           mapName,
           vars: String(file.contents),
         }),
+      );
+      return cb(null, file);
+    }
+
+    return cb(new PluginError(PLUGIN_NAME, 'Data type not supported'));
+  };
+
+  return stream;
+};
+
+export const svg2sassvar = () => {
+  const stream = new Transform({ objectMode: true });
+
+  stream._transform = (file, encoding, cb) => { // eslint-disable-line no-underscore-dangle
+    if (file.isNull()) {
+      return cb(null, file);
+    }
+
+    if (file.isStream()) {
+      return cb(new PluginError(PLUGIN_NAME, 'Streaming not supported'));
+    }
+
+    if (file.isBuffer()) {
+      file.contents = new Buffer( // eslint-disable-line no-param-reassign
+        injectColorPlaceholder(String(file.contents), path.basename(file.path).split('.')[0]),
       );
       return cb(null, file);
     }

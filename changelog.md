@@ -2,7 +2,20 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-component-button:
+- bpk-tokens:
+  - Add "featured" variant of buttons
+- bpk-mixins:
+- bpk-svgs:
+  - Add more flexible `bpk-icon` mixin to include icons of any color
+
+**Fixed:**
+- bpk-component-button: 1.5.21 => 1.5.22
+- bpk-component-icon: 3.3.11 => 3.3.12
+- bpk-component-spinner: 1.0.42 => 1.0.43
+- bpk-mixins: 10.1.0 => 10.1.1
+  - Fixed icon alignment on large buttons
 
 ## 2017-03-14 - Fixed overzealous proptype warning in icon components
 

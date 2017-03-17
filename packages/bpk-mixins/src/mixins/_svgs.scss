@@ -1,5 +1,6 @@
 @import '~bpk-svgs/index';
 @import '../bonds';
+@import './utils';
 
 @keyframes bpk-keyframe-spin {
   100% {
@@ -44,6 +45,59 @@
   vertical-align: top;
 }
 
+/// Icon.
+///
+/// > **Note:** You will need to pass the sassFunction `encodebase64` to your node-sass process to use this mixin:
+/// >
+/// > ```js
+/// > var sass = require('node-sass');
+/// > var sassFunctions = require('bpk-mixins/sass-functions');
+/// > ...
+/// > sass.render({
+/// >   file: 'mysassfile.scss',
+/// >   functions: sassFunctions,
+/// > });
+/// > ```
+///
+/// @param {key} $icon [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
+/// @param {key} $color [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
+/// @param {key} $size [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-icon(flight, $bpk-color-gray-500, large);
+///   }
+
+@mixin bpk-icon($icon, $color, $size: small) {
+  @if function-exists(encodebase64) {
+    $icon-map: if($size == large, $bpk-icons-no-color-lg, $bpk-icons-no-color-sm);
+    $datauri: "data:image/svg+xml;base64," + encodebase64(
+      str-replace(
+        map-get($icon-map, $icon),
+        "$$COLOR$$",
+        $color
+      )
+    );
+
+    content: '';
+    display: inline-block;
+    width: if($size == large, $bpk-icon-size-lg, $bpk-icon-size-sm);
+    height: if($size == large, $bpk-icon-size-lg, $bpk-icon-size-sm);
+    background: url($datauri) no-repeat;
+    background-size: cover;
+  }
+
+  @else {
+    $err: (
+      "Could not find encodebase64 function. Refer to "
+      + "http://backpack.prod.aws.skyscnr.com/sassdoc/#svgs-mixin-bpk-icon"
+      + " on how to provide it to node-sass."
+    );
+
+    @error $err;
+  }
+}
+
 /// Small icon.
 ///
 /// @param {key} $icon [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
@@ -54,7 +108,7 @@
 ///   }
 
 @mixin bpk-icon-sm($icon) {
-  @include _bpk-icon-factory($bpk-icons-sm, $bpk-spacing-md, $icon);
+  @include _bpk-icon-factory($bpk-icons-sm, $bpk-icon-size-sm, $icon);
 }
 
 /// Large icon.
@@ -67,7 +121,7 @@
 ///   }
 
 @mixin bpk-icon-lg($icon) {
-  @include _bpk-icon-factory($bpk-icons-lg, $bpk-spacing-base, $icon);
+  @include _bpk-icon-factory($bpk-icons-lg, $bpk-icon-size-lg, $icon);
 }
 
 /// Align to button. Modifies the bpk-icon-sm mixin.

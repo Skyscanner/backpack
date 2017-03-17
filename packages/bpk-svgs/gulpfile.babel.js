@@ -9,7 +9,7 @@ import tinycolor from 'tinycolor2';
 import tokens from 'bpk-tokens/tokens/base.raw.json';
 
 import svg2react from './tasks/svg2react';
-import svg2datauri, { sassMap } from './tasks/svg2datauri';
+import svg2datauri, { sassMap, svg2sassvar } from './tasks/svg2datauri';
 
 const colors = _(tokens.props)
   .filter({ category: 'colors', type: 'color' })
@@ -117,7 +117,14 @@ gulp.task('icons-sm', () => {
     .pipe(sassMap('bpk-icons-sm'))
     .pipe(gulp.dest('dist/scss'));
 
-  return merge(react, datauri);
+  const rawDatauri = optimised
+    .pipe(clone())
+    .pipe(svg2sassvar())
+    .pipe(concat('_icons-no-color-sm.scss'))
+    .pipe(sassMap('bpk-icons-no-color-sm'))
+    .pipe(gulp.dest('dist/scss'));
+
+  return merge(react, datauri, rawDatauri);
 });
 
 gulp.task('icons-lg', () => {
@@ -152,7 +159,14 @@ gulp.task('icons-lg', () => {
     .pipe(sassMap('bpk-icons-lg'))
     .pipe(gulp.dest('dist/scss'));
 
-  return merge(react, datauri);
+  const rawDatauri = optimised
+    .pipe(clone())
+    .pipe(svg2sassvar())
+    .pipe(concat('_icons-no-color-lg.scss'))
+    .pipe(sassMap('bpk-icons-no-color-lg'))
+    .pipe(gulp.dest('dist/scss'));
+
+  return merge(react, datauri, rawDatauri);
 });
 
 gulp.task('default', ['elements', 'spinners', 'icons-sm', 'icons-lg']);
