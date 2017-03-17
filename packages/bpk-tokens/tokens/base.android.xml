@@ -96,6 +96,9 @@
   <property name="BUTTON_FEATURED_BACKGROUND_IMAGE" category="buttons">linear-gradient(-180deg, #FA488A 0, #D92B6B 1)</property>
   <color name="BUTTON_FEATURED_HOVER_BACKGROUND_COLOR" category="buttons">#d92b6bff</color>
   <color name="BUTTON_FEATURED_ACTIVE_BACKGROUND_COLOR" category="buttons">#c50f52ff</color>
+  <property name="BUTTON_FEATURED_ACTIVE_BACKGROUND_IMAGE" category="buttons">none</property>
+  <color name="BUTTON_FEATURED_DISABLED_BACKGROUND_COLOR" category="buttons">#e6e4ebff</color>
+  <property name="BUTTON_FEATURED_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
   <property name="CALENDAR_PADDING" category="calendar">12</property>
   <property name="CALENDAR_DAY_SPACING" category="calendar">6</property>
   <property name="CALENDAR_DAY_SIZE" category="calendar">36</property>

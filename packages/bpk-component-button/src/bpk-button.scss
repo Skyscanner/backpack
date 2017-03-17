@@ -11,6 +11,10 @@
     @include bpk-button--secondary;
   }
 
+  &--featured {
+    @include bpk-button--featured;
+  }
+
   &--destructive {
     @include bpk-button--secondary;
     @include bpk-button--destructive;
@@ -30,9 +34,5 @@
 
   &--large-icon-only {
     @include bpk-button--large-icon-only;
-  }
-
-  &--featured {
-    @include bpk-button--featured;
   }
 }

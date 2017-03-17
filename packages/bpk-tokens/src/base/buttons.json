@@ -293,6 +293,18 @@
     "BUTTON_FEATURED_ACTIVE_BACKGROUND_COLOR": {
       "value": "{!PINK_700}",
       "type": "color"
+    },
+    "BUTTON_FEATURED_ACTIVE_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
+    },
+    "BUTTON_FEATURED_DISABLED_BACKGROUND_COLOR": {
+      "value": "{!GRAY_100}",
+      "type": "color"
+    },
+    "BUTTON_FEATURED_DISABLED_BACKGROUND_IMAGE": {
+      "value": "none",
+      "type": "background-image"
     }
   }
 }
