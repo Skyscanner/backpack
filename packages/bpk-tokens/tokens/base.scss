@@ -190,6 +190,12 @@ $bpk-button-featured-background-image: linear-gradient(-180deg, #FA488A 0%, #D92
 $bpk-button-featured-hover-background-color: rgb(217, 43, 107);
 /// @group buttons
 $bpk-button-featured-active-background-color: rgb(197, 15, 82);
+/// @group buttons
+$bpk-button-featured-active-background-image: none;
+/// @group buttons
+$bpk-button-featured-disabled-background-color: rgb(230, 228, 235);
+/// @group buttons
+$bpk-button-featured-disabled-background-image: none;
 /// @group calendar
 $bpk-calendar-padding: .75rem;
 /// @group calendar
