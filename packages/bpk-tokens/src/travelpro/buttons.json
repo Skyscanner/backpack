@@ -1,6 +1,7 @@
 {
   "imports": [
-    "./aliases.json"
+    "./aliases.json",
+    "../base/aliases.json"
   ],
   "global": {
     "category": "buttons"

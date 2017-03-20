@@ -86,7 +86,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 0, 0)",
+      "value": "rgb(178, 174, 189)",
       "type": "color",
       "name": "buttonDisabledColor"
     },
@@ -182,7 +182,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 0, 0)",
+      "value": "rgb(230, 228, 235)",
       "type": "color",
       "name": "buttonSecondaryDisabledBackgroundColor"
     },
@@ -290,19 +290,19 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 0, 0)",
+      "value": "rgb(255, 84, 82)",
       "type": "color",
       "name": "buttonDestructiveActiveColor"
     },
     {
       "category": "buttons",
-      "value": "0 0 0 3px {!RED_500} inset",
+      "value": "0 0 0 3px #ff5452 inset",
       "type": "box-shadow",
       "name": "buttonDestructiveActiveBoxShadow"
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 0, 0)",
+      "value": "rgb(230, 228, 235)",
       "type": "color",
       "name": "buttonDestructiveDisabledBackgroundColor"
     },
@@ -314,7 +314,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 0, 0)",
+      "value": "rgb(178, 174, 189)",
       "type": "color",
       "name": "buttonDestructiveDisabledColor"
     },
