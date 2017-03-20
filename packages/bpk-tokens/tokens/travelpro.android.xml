@@ -14,7 +14,7 @@
   <property name="BUTTON_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_COLOR" category="buttons">#00ddeeff</color>
   <property name="BUTTON_FONT_WEIGHT" category="buttons">normal</property>
-  <color name="BUTTON_DISABLED_COLOR" category="buttons">#000000ff</color>
+  <color name="BUTTON_DISABLED_COLOR" category="buttons">#b2aebdff</color>
   <property name="BUTTON_FONT_SIZE" category="buttons">14</property>
   <property name="BUTTON_LINE_HEIGHT" category="buttons">1.125em</property>
   <property name="BUTTON_TEXT_ALIGN" category="buttons">center</property>
@@ -30,7 +30,7 @@
   <property name="BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR" category="buttons">#00bbcc33</color>
   <property name="BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR" category="buttons">#000000ff</color>
+  <color name="BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR" category="buttons">#e6e4ebff</color>
   <property name="BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_SECONDARY_COLOR" category="buttons">#34363dff</color>
   <color name="BUTTON_SECONDARY_HOVER_COLOR" category="buttons">#34363dff</color>
@@ -48,11 +48,11 @@
   <property name="BUTTON_DESTRUCTIVE_BOX_SHADOW" category="buttons">none</property>
   <color name="BUTTON_DESTRUCTIVE_HOVER_COLOR" category="buttons">#c5000eff</color>
   <property name="BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW" category="buttons">none</property>
-  <color name="BUTTON_DESTRUCTIVE_ACTIVE_COLOR" category="buttons">#000000ff</color>
-  <property name="BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW" category="buttons">0 0 0 3px {!RED_500} inset</property>
-  <color name="BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR" category="buttons">#000000ff</color>
+  <color name="BUTTON_DESTRUCTIVE_ACTIVE_COLOR" category="buttons">#ff5452ff</color>
+  <property name="BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW" category="buttons">0 0 0 3px #ff5452 inset</property>
+  <color name="BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR" category="buttons">#e6e4ebff</color>
   <property name="BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_DESTRUCTIVE_DISABLED_COLOR" category="buttons">#000000ff</color>
+  <color name="BUTTON_DESTRUCTIVE_DISABLED_COLOR" category="buttons">#b2aebdff</color>
   <property name="BUTTON_DESTRUCTIVE_DISABLED_BOX_SHADOW" category="buttons">none</property>
   <property name="FONT_FAMILY_BASE" category="typesettings">'markweb', Helvetica, Arial, sans-serif</property>
   <color name="LINK_COLOR" category="text-colors">#00bbccff</color>

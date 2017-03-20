@@ -27,7 +27,7 @@ $bpk-button-color: rgb(0, 221, 238);
 /// @group buttons
 $bpk-button-font-weight: normal;
 /// @group buttons
-$bpk-button-disabled-color: rgb(0, 0, 0);
+$bpk-button-disabled-color: rgb(178, 174, 189);
 /// @group buttons
 $bpk-button-font-size: .875rem;
 /// @group buttons
@@ -59,7 +59,7 @@ $bpk-button-secondary-active-background-color: rgba(0, 187, 204, 0.2);
 /// @group buttons
 $bpk-button-secondary-active-background-image: none;
 /// @group buttons
-$bpk-button-secondary-disabled-background-color: rgb(0, 0, 0);
+$bpk-button-secondary-disabled-background-color: rgb(230, 228, 235);
 /// @group buttons
 $bpk-button-secondary-disabled-background-image: none;
 /// @group buttons
@@ -95,15 +95,15 @@ $bpk-button-destructive-hover-color: rgb(197, 0, 14);
 /// @group buttons
 $bpk-button-destructive-hover-box-shadow: none;
 /// @group buttons
-$bpk-button-destructive-active-color: rgb(0, 0, 0);
+$bpk-button-destructive-active-color: rgb(255, 84, 82);
 /// @group buttons
-$bpk-button-destructive-active-box-shadow: 0 0 0 3px {!RED_500} inset;
+$bpk-button-destructive-active-box-shadow: 0 0 0 3px #ff5452 inset;
 /// @group buttons
-$bpk-button-destructive-disabled-background-color: rgb(0, 0, 0);
+$bpk-button-destructive-disabled-background-color: rgb(230, 228, 235);
 /// @group buttons
 $bpk-button-destructive-disabled-background-image: none;
 /// @group buttons
-$bpk-button-destructive-disabled-color: rgb(0, 0, 0);
+$bpk-button-destructive-disabled-color: rgb(178, 174, 189);
 /// @group buttons
 $bpk-button-destructive-disabled-box-shadow: none;
 /// @group typesettings
