@@ -4,7 +4,13 @@
 
 _Nothing yet..._
 
-## 2017-03-20 - Modal `querySelectorAll` exception fix
+## 2017-03-20 (2) - TravelPro tokens fix
+
+**Fixed:**
+- bpk-tokens: 18.2.0 => 18.2.1
+  - Some token aliases were not found and failed to be included in output files
+
+## 2017-03-20 (1) - Modal `querySelectorAll` exception fix
 
 **Fixed:**
 - bpk-component-modal: 1.0.16 => 1.0.17
