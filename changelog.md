@@ -4,6 +4,12 @@
 
 _Nothing yet..._
 
+## 2017-03-20 - Modal `querySelectorAll` exception fix
+
+**Fixed:**
+- bpk-component-modal: 1.0.16 => 1.0.17
+  - Locked down `react-transition-group` to `1.0.0` as they introduced a breaking change to the modal
+
 ## 2017-03-17 - New "featured" button and a flexible icon mixin
 
 **Added:**
