@@ -143,4 +143,54 @@ storiesOf('bpk-component-input', module)
         docked
       />
     </div>
+  ))
+  .add('Manually docked', () => (
+    <div style={{ display: 'flex' }}>
+      <div style={{ width: '100%' }}>
+        <BpkInput
+          id="large"
+          name="large"
+          value="Edinburgh"
+          onChange={action('input changed')}
+          placeholder="Enter a country, city or airport"
+          large
+          valid
+          dockedFirst
+        />
+      </div>
+      <div style={{ width: '100%' }}>
+        <BpkInput
+          id="large"
+          name="large"
+          value="Edinburgh"
+          onChange={action('input changed')}
+          placeholder="Enter a country, city or airport"
+          large
+          valid={false}
+          dockedMiddle
+        />
+      </div>
+      <div style={{ width: '100%' }}>
+        <BpkInput
+          id="large"
+          name="large"
+          value="Edinburgh"
+          onChange={action('input changed')}
+          placeholder="Enter a country, city or airport"
+          large
+          dockedMiddle
+        />
+      </div>
+      <div style={{ width: '100%' }}>
+        <BpkInput
+          id="large"
+          name="large"
+          value="Edinburgh"
+          onChange={action('input changed')}
+          placeholder="Enter a country, city or airport"
+          large
+          dockedLast
+        />
+      </div>
+    </div>
   ));

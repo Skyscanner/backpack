@@ -54,8 +54,8 @@
       "value": "{!GRAY_300}",
       "type": "color"
     },
-    "INPUT_INVALID_BORDER_COLOR": {
-      "value": "{!RED_500}",
+    "INPUT_INVALID_BACKGROUND_COLOR": {
+      "value": "{!RED_50}",
       "type": "color"
     },
     "INPUT_LARGE_HEIGHT": {
@@ -106,8 +106,8 @@
       "value": "{!GRAY_300}",
       "type": "color"
     },
-    "SELECT_INVALID_BORDER_COLOR": {
-      "value": "{!RED_500}",
+    "SELECT_INVALID_BACKGROUND_COLOR": {
+      "value": "{!RED_50}",
       "type": "color"
     },
     "SELECT_LARGE_HEIGHT": {

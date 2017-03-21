@@ -31,7 +31,7 @@
     "GREEN_700": "#00a85d",
     "GREEN_800": "#008c4d",
     "GREEN_900": "#006638",
-    "RED_50": "#fce9e8",
+    "RED_50": "#fcf2f2",
     "RED_100": "#ffd6d5",
     "RED_200": "#ffbbba",
     "RED_300": "#ff9694",
@@ -1003,7 +1003,7 @@
     "COLOR_RED_50": {
       "type": "color",
       "category": "colors",
-      "value": "rgb(252, 233, 232)",
+      "value": "rgb(252, 242, 242)",
       "name": "COLOR_RED_50"
     },
     "COLOR_RED_100": {
@@ -1198,11 +1198,11 @@
       "type": "color",
       "name": "INPUT_DISABLED_COLOR"
     },
-    "INPUT_INVALID_BORDER_COLOR": {
+    "INPUT_INVALID_BACKGROUND_COLOR": {
       "category": "forms",
-      "value": "rgb(255, 84, 82)",
+      "value": "rgb(252, 242, 242)",
       "type": "color",
-      "name": "INPUT_INVALID_BORDER_COLOR"
+      "name": "INPUT_INVALID_BACKGROUND_COLOR"
     },
     "INPUT_LARGE_HEIGHT": {
       "category": "forms",
@@ -1276,11 +1276,11 @@
       "type": "color",
       "name": "SELECT_DISABLED_COLOR"
     },
-    "SELECT_INVALID_BORDER_COLOR": {
+    "SELECT_INVALID_BACKGROUND_COLOR": {
       "category": "forms",
-      "value": "rgb(255, 84, 82)",
+      "value": "rgb(252, 242, 242)",
       "type": "color",
-      "name": "SELECT_INVALID_BORDER_COLOR"
+      "name": "SELECT_INVALID_BACKGROUND_COLOR"
     },
     "SELECT_LARGE_HEIGHT": {
       "category": "forms",
@@ -2141,7 +2141,7 @@
     "INPUT_PLACEHOLDER_FONT_STYLE",
     "INPUT_DISABLED_BORDER_COLOR",
     "INPUT_DISABLED_COLOR",
-    "INPUT_INVALID_BORDER_COLOR",
+    "INPUT_INVALID_BACKGROUND_COLOR",
     "INPUT_LARGE_HEIGHT",
     "SELECT_HEIGHT",
     "SELECT_PADDING_TOP",
@@ -2154,7 +2154,7 @@
     "SELECT_COLOR",
     "SELECT_DISABLED_BORDER_COLOR",
     "SELECT_DISABLED_COLOR",
-    "SELECT_INVALID_BORDER_COLOR",
+    "SELECT_INVALID_BACKGROUND_COLOR",
     "SELECT_LARGE_HEIGHT",
     "LABEL_COLOR",
     "LABEL_FONT_SIZE",

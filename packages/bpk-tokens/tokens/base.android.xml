@@ -152,7 +152,7 @@
   <color name="COLOR_GREEN_700" category="colors">#00a85dff</color>
   <color name="COLOR_GREEN_800" category="colors">#008c4dff</color>
   <color name="COLOR_GREEN_900" category="colors">#006638ff</color>
-  <color name="COLOR_RED_50" category="colors">#fce9e8ff</color>
+  <color name="COLOR_RED_50" category="colors">#fcf2f2ff</color>
   <color name="COLOR_RED_100" category="colors">#ffd6d5ff</color>
   <color name="COLOR_RED_200" category="colors">#ffbbbaff</color>
   <color name="COLOR_RED_300" category="colors">#ff9694ff</color>
@@ -185,7 +185,7 @@
   <property name="INPUT_PLACEHOLDER_FONT_STYLE" category="forms">italic</property>
   <color name="INPUT_DISABLED_BORDER_COLOR" category="forms">#f3f2f5ff</color>
   <color name="INPUT_DISABLED_COLOR" category="forms">#b2aebdff</color>
-  <color name="INPUT_INVALID_BORDER_COLOR" category="forms">#ff5452ff</color>
+  <color name="INPUT_INVALID_BACKGROUND_COLOR" category="forms">#fcf2f2ff</color>
   <property name="INPUT_LARGE_HEIGHT" category="forms">42</property>
   <property name="SELECT_HEIGHT" category="forms">36</property>
   <property name="SELECT_PADDING_TOP" category="forms">6</property>
@@ -198,7 +198,7 @@
   <color name="SELECT_COLOR" category="forms">#524c61ff</color>
   <color name="SELECT_DISABLED_BORDER_COLOR" category="forms">#f3f2f5ff</color>
   <color name="SELECT_DISABLED_COLOR" category="forms">#b2aebdff</color>
-  <color name="SELECT_INVALID_BORDER_COLOR" category="forms">#ff5452ff</color>
+  <color name="SELECT_INVALID_BACKGROUND_COLOR" category="forms">#fcf2f2ff</color>
   <property name="SELECT_LARGE_HEIGHT" category="forms">42</property>
   <color name="LABEL_COLOR" category="forms">#524c61ff</color>
   <property name="LABEL_FONT_SIZE" category="forms">12</property>

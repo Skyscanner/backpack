@@ -11,7 +11,7 @@ export const INPUT_TYPES = {
 };
 
 const BpkInput = (props) => {
-  const { valid, large, docked, className, ...rest } = props;
+  const { valid, large, docked, dockedFirst, dockedMiddle, dockedLast, className, ...rest } = props;
   const classNames = ['bpk-input'];
 
   if (valid) {
@@ -22,6 +22,9 @@ const BpkInput = (props) => {
 
   if (large) { classNames.push('bpk-input--large'); }
   if (docked) { classNames.push('bpk-input--docked'); }
+  if (dockedFirst) { classNames.push('bpk-input--docked-first'); }
+  if (dockedMiddle) { classNames.push('bpk-input--docked-middle'); }
+  if (dockedLast) { classNames.push('bpk-input--docked-last'); }
   if (className) { classNames.push(className); }
 
   return <input className={classNames.join(' ')} {...rest} />;
@@ -42,6 +45,9 @@ BpkInput.propTypes = {
   valid: PropTypes.bool,
   large: PropTypes.bool,
   docked: PropTypes.bool,
+  dockedFirst: PropTypes.bool,
+  dockedMiddle: PropTypes.bool,
+  dockedLast: PropTypes.bool,
 };
 
 BpkInput.defaultProps = {
@@ -50,6 +56,9 @@ BpkInput.defaultProps = {
   valid: null,
   large: false,
   docked: false,
+  dockedFirst: false,
+  dockedMiddle: false,
+  dockedLast: false,
 };
 
 export default BpkInput;

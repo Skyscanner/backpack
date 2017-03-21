@@ -90,8 +90,7 @@
 
 @mixin bpk-input--invalid {
   padding-right: $bpk-spacing-base;
-  border-color: $bpk-input-invalid-border-color;
-  background: $bpk-color-white url(map-get($bpk-icons-sm, close-red-500)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-input-invalid-background-color url(map-get($bpk-icons-sm, close-red-500)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
   @include bpk-rtl {
@@ -259,7 +258,11 @@
 ///   }
 
 @mixin bpk-select--invalid {
-  border-color: $bpk-select-invalid-border-color;
+  background-color: $bpk-select-invalid-background-color;
+
+  option {
+    background-color: $bpk-color-white;
+  }
 }
 
 /// Large form select input. Modifies the bpk-select mixin.
@@ -290,10 +293,6 @@
   border-right-width: 0;
   border-radius: $bpk-select-border-radius 0 0 $bpk-select-border-radius;
 
-  &:focus {
-    position: relative; // brings outline to the front
-  }
-
   @include bpk-rtl {
     border-right-width: $bpk-select-border-width;
     border-left-width: 0;
@@ -314,10 +313,6 @@
 @mixin bpk-select--docked-last-child {
   border-radius: 0 $bpk-select-border-radius $bpk-select-border-radius 0;
 
-  &:focus {
-    position: relative; // brings outline to the front
-  }
-
   @include bpk-rtl {
     border-radius: $bpk-select-border-radius 0 0 $bpk-select-border-radius;
   }
@@ -336,10 +331,6 @@
 @mixin bpk-select--docked-middle-child {
   border-right-width: 0;
   border-radius: 0;
-
-  &:focus {
-    position: relative; // brings outline to the front
-  }
 
   @include bpk-rtl {
     border-right-width: $bpk-select-border-width;
