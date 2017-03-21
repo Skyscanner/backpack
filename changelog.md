@@ -2,7 +2,18 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Changed:**
+- bpk-component-input:
+- bpk-component-select:
+- bpk-mixins:
+- bpk-tokens:
+  - Changed the `invalid` state of inputs and selects from a red border to a light red background color.
+
+**Added:**
+- bpk-component-input:
+- bpk-component-select:
+  - Added `dockedFirst`, `dockedMiddle` and `dockedLast` props to BpkInput and BpkSelect in case you need
+    finer control of docked inputs (e.g. when they are not direct sibling elements).
 
 ## 2017-03-20 (2) - TravelPro tokens fix
 

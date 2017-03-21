@@ -28,14 +28,17 @@ export default () => (
 
 ### Props
 
-| Property    | PropType             | Required  | Default Value    |
-| ----------- | -------------------- | --------- | ---------------- |
-| id          | string               | true      | -                |
-| name        | string               | true      | -                |
-| value       | string               | true      | -                |
-| type        | INPUT_TYPES (one of) | false     | INPUT_TYPES.TEXT |
-| valid       | bool                 | false     | null             |
-| large       | bool                 | false     | false            |
-| docked      | bool                 | false     | false            |
+| Property     | PropType             | Required  | Default Value    |
+| ------------ | -------------------- | --------- | ---------------- |
+| id           | string               | true      | -                |
+| name         | string               | true      | -                |
+| value        | string               | true      | -                |
+| type         | INPUT_TYPES (one of) | false     | INPUT_TYPES.TEXT |
+| valid        | bool                 | false     | null             |
+| large        | bool                 | false     | false            |
+| docked       | bool                 | false     | false            |
+| dockedFirst  | bool                 | false     | false            |
+| dockedMiddle | bool                 | false     | false            |
+| dockedLast   | bool                 | false     | false            |
 
 Additionally, all native `<input />` attributes such as `placeholder` and `onChange` are supported.
