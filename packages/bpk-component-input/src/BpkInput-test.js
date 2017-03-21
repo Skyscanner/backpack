@@ -97,4 +97,40 @@ describe('BpkInput', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with "dockedFirst" attribute', () => {
+    const tree = renderer.create(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        dockedFirst
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "dockedMiddle" attribute', () => {
+    const tree = renderer.create(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        dockedMiddle
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "dockedLast" attribute', () => {
+    const tree = renderer.create(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        dockedLast
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

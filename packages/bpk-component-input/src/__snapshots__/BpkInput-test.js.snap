@@ -16,6 +16,33 @@ exports[`BpkInput should render correctly with "docked" attribute 1`] = `
   value="" />
 `;
 
+exports[`BpkInput should render correctly with "dockedFirst" attribute 1`] = `
+<input
+  className="bpk-input bpk-input--docked-first"
+  id="test"
+  name="test"
+  type="text"
+  value="" />
+`;
+
+exports[`BpkInput should render correctly with "dockedLast" attribute 1`] = `
+<input
+  className="bpk-input bpk-input--docked-last"
+  id="test"
+  name="test"
+  type="text"
+  value="" />
+`;
+
+exports[`BpkInput should render correctly with "dockedMiddle" attribute 1`] = `
+<input
+  className="bpk-input bpk-input--docked-middle"
+  id="test"
+  name="test"
+  type="text"
+  value="" />
+`;
+
 exports[`BpkInput should render correctly with "large" attribute 1`] = `
 <input
   className="bpk-input bpk-input--large"

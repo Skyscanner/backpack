@@ -91,5 +91,58 @@ describe('BpkSelect', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
-});
 
+  it('should render correctly with "dockedFirst" attribute', () => {
+    const tree = renderer.create(
+      <BpkSelect
+        id="fruits"
+        name="fruits"
+        value=""
+        onChange={() => null}
+        dockedFirst
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomatos" disabled>Tomatos</option>
+      </BpkSelect>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "dockedMiddle" attribute', () => {
+    const tree = renderer.create(
+      <BpkSelect
+        id="fruits"
+        name="fruits"
+        value=""
+        onChange={() => null}
+        dockedMiddle
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomatos" disabled>Tomatos</option>
+      </BpkSelect>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "dockedLast" attribute', () => {
+    const tree = renderer.create(
+      <BpkSelect
+        id="fruits"
+        name="fruits"
+        value=""
+        onChange={() => null}
+        dockedLast
+      >
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomatos" disabled>Tomatos</option>
+      </BpkSelect>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});

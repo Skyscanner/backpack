@@ -150,7 +150,7 @@ export const colorGreen600 = "rgb(0, 189, 104)";
 export const colorGreen700 = "rgb(0, 168, 93)";
 export const colorGreen800 = "rgb(0, 140, 77)";
 export const colorGreen900 = "rgb(0, 102, 56)";
-export const colorRed50 = "rgb(252, 233, 232)";
+export const colorRed50 = "rgb(252, 242, 242)";
 export const colorRed100 = "rgb(255, 214, 213)";
 export const colorRed200 = "rgb(255, 187, 186)";
 export const colorRed300 = "rgb(255, 150, 148)";
@@ -183,7 +183,7 @@ export const inputPlaceholderColor = "rgb(129, 123, 143)";
 export const inputPlaceholderFontStyle = "italic";
 export const inputDisabledBorderColor = "rgb(243, 242, 245)";
 export const inputDisabledColor = "rgb(178, 174, 189)";
-export const inputInvalidBorderColor = "rgb(255, 84, 82)";
+export const inputInvalidBackgroundColor = "rgb(252, 242, 242)";
 export const inputLargeHeight = "2.625rem + .375rem";
 export const selectHeight = "2.250rem";
 export const selectPaddingTop = ".375rem";
@@ -196,7 +196,7 @@ export const selectBorderRadius = ".1875rem";
 export const selectColor = "rgb(82, 76, 97)";
 export const selectDisabledBorderColor = "rgb(243, 242, 245)";
 export const selectDisabledColor = "rgb(178, 174, 189)";
-export const selectInvalidBorderColor = "rgb(255, 84, 82)";
+export const selectInvalidBackgroundColor = "rgb(252, 242, 242)";
 export const selectLargeHeight = "2.625rem + .375rem";
 export const labelColor = "rgb(82, 76, 97)";
 export const labelFontSize = ".75rem";
@@ -515,7 +515,7 @@ inputPlaceholderColor,
 inputPlaceholderFontStyle,
 inputDisabledBorderColor,
 inputDisabledColor,
-inputInvalidBorderColor,
+inputInvalidBackgroundColor,
 inputLargeHeight,
 selectHeight,
 selectPaddingTop,
@@ -528,7 +528,7 @@ selectBorderRadius,
 selectColor,
 selectDisabledBorderColor,
 selectDisabledColor,
-selectInvalidBorderColor,
+selectInvalidBackgroundColor,
 selectLargeHeight,
 labelColor,
 labelFontSize,

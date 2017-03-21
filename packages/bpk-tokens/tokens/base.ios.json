@@ -915,7 +915,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(252, 233, 232)",
+      "value": "rgb(252, 242, 242)",
       "name": "colorRed50"
     },
     {
@@ -1112,9 +1112,9 @@
     },
     {
       "category": "forms",
-      "value": "rgb(255, 84, 82)",
+      "value": "rgb(252, 242, 242)",
       "type": "color",
-      "name": "inputInvalidBorderColor"
+      "name": "inputInvalidBackgroundColor"
     },
     {
       "category": "forms",
@@ -1190,9 +1190,9 @@
     },
     {
       "category": "forms",
-      "value": "rgb(255, 84, 82)",
+      "value": "rgb(252, 242, 242)",
       "type": "color",
-      "name": "selectInvalidBorderColor"
+      "name": "selectInvalidBackgroundColor"
     },
     {
       "category": "forms",

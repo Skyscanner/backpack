@@ -116,4 +116,69 @@ storiesOf('bpk-component-select', module)
         <option value="tomato" disabled>Tomato</option>
       </BpkSelect>
     </div>
+  ))
+  .add('Manually docked', () => (
+    <div style={{ display: 'flex' }}>
+      <div style={{ width: '100%' }}>
+        <BpkSelect
+          id="large"
+          name="large"
+          value="oranges"
+          onChange={action('select changed')}
+          large
+          dockedFirst
+        >
+          <option value="apples">Apples</option>
+          <option value="oranges">Oranges</option>
+          <option value="pears">Pears</option>
+          <option value="tomato" disabled>Tomato</option>
+        </BpkSelect>
+      </div>
+      <div style={{ width: '100%' }}>
+        <BpkSelect
+          id="large"
+          name="large"
+          value="oranges"
+          onChange={action('select changed')}
+          large
+          dockedMiddle
+        >
+          <option value="apples">Apples</option>
+          <option value="oranges">Oranges</option>
+          <option value="pears">Pears</option>
+          <option value="tomato" disabled>Tomato</option>
+        </BpkSelect>
+      </div>
+      <div style={{ width: '100%' }}>
+        <BpkSelect
+          id="large"
+          name="large"
+          value="oranges"
+          onChange={action('select changed')}
+          large
+          valid={false}
+          dockedMiddle
+        >
+          <option value="apples">Apples</option>
+          <option value="oranges">Oranges</option>
+          <option value="pears">Pears</option>
+          <option value="tomato" disabled>Tomato</option>
+        </BpkSelect>
+      </div>
+      <div style={{ width: '100%' }}>
+        <BpkSelect
+          id="large"
+          name="large"
+          value="oranges"
+          onChange={action('select changed')}
+          large
+          dockedLast
+        >
+          <option value="apples">Apples</option>
+          <option value="oranges">Oranges</option>
+          <option value="pears">Pears</option>
+          <option value="tomato" disabled>Tomato</option>
+        </BpkSelect>
+      </div>
+    </div>
   ));

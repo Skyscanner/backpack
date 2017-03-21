@@ -9,15 +9,6 @@
 
   &--invalid {
     @include bpk-input--invalid;
-
-    & + .bpk-input--docked {
-      border-left-color: $bpk-select-invalid-border-color;
-
-      @include bpk-rtl {
-        border-right-color: $bpk-select-invalid-border-color;
-        border-left-color: $bpk-color-gray-100;
-      }
-    }
   }
 
   &--large {
@@ -26,5 +17,17 @@
 
   &--docked {
     @include bpk-input--docked;
+
+    &-first {
+      @include bpk-input--docked-first-child;
+    }
+
+    &-middle {
+      @include bpk-input--docked-middle-child;
+    }
+
+    &-last {
+      @include bpk-input--docked-last-child;
+    }
   }
 }
