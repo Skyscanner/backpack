@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-popover",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Backpack popover component.",
   "main": "index.js",
   "repository": {
@@ -15,16 +15,16 @@
   "dependencies": {
     "a11y-focus-store": "^1.0.0",
     "a11y-focus-scope": "^1.1.3",
-    "bpk-component-close-button": "^0.0.21",
-    "bpk-component-heading": "^1.2.4",
-    "bpk-component-link": "^0.5.11",
-    "bpk-mixins": "^10.2.1",
+    "bpk-component-close-button": "^0.0.22",
+    "bpk-component-heading": "^1.2.5",
+    "bpk-component-link": "^0.5.12",
+    "bpk-mixins": "^11.0.0",
     "bpk-react-utils": "^1.3.1",
     "bpk-tether": "^0.0.1"
   },
   "devDependencies": {
-    "bpk-component-button": "^1.6.2",
-    "bpk-component-content-container": "^1.0.46",
-    "bpk-component-paragraph": "^0.1.62"
+    "bpk-component-button": "^1.6.3",
+    "bpk-component-content-container": "^1.0.47",
+    "bpk-component-paragraph": "^0.1.63"
   }
 }
