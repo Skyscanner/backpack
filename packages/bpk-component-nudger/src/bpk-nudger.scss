@@ -1,0 +1,15 @@
+@import '~bpk-mixins/index';
+
+.bpk-nudger {
+  &__input {
+    $size: $bpk-button-line-height + ($bpk-button-padding-y * 2);
+
+    display: inline-block;
+    width: $size;
+    border: none;
+    font-size: $bpk-font-size-lg;
+    line-height: $size;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
