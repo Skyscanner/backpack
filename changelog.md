@@ -2,16 +2,21 @@
 
 ## UNRELEASED
 
+_Nothing yet_
+
+## 2017-02-22 (1) - More flexible docking and changed invalid state for inputs/selects
+
 **Changed:**
-- bpk-component-input:
-- bpk-component-select:
-- bpk-mixins:
-- bpk-tokens:
+- bpk-component-input: 2.0.17 => 3.0.0
+- bpk-component-select: 1.0.31 => 2.0.0
+- bpk-mixins: 10.2.1 => 11.0.0
+- bpk-tokens: 18.2.1 => 19.0.0
   - Changed the `invalid` state of inputs and selects from a red border to a light red background color.
+  - Changed `red-50` to a lighter shade
 
 **Added:**
-- bpk-component-input:
-- bpk-component-select:
+- bpk-component-input: 2.0.17 => 3.0.0
+- bpk-component-select: 1.0.31 => 2.0.0
   - Added `dockedFirst`, `dockedMiddle` and `dockedLast` props to BpkInput and BpkSelect in case you need
     finer control of docked inputs (e.g. when they are not direct sibling elements).
 
