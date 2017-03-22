@@ -170,7 +170,11 @@ You can run the docs app locally using:
 npm run docs
 ```
 
+And loading [http://localhost:8080/](http://localhost:8080/)
+
 If you need any help writing documentation, get in touch!
+
+When adding documentation for a new component, add the new dependency in `packages/bpk-docs/package.json` and run `npm run bootstrap` to install it.
 
 ## Publishing packages (Backpack squad members only)
 

@@ -31,6 +31,7 @@ configure(() => {
   require('./../packages/bpk-component-close-button/stories');
   require('./../packages/bpk-component-code/stories');
   require('./../packages/bpk-component-content-container/stories');
+  require('./../packages/bpk-component-cta-button/stories');
   require('./../packages/bpk-component-datepicker/stories');
   require('./../packages/bpk-component-grid/stories');
   require('./../packages/bpk-component-grid-toggle/stories');

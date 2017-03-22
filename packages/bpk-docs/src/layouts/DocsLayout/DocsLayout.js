@@ -30,6 +30,7 @@ const links = [
     links: [
       { route: routes.TYPOGRAPHY, children: 'Typography' },
       { route: routes.BUTTONS, children: 'Buttons' },
+      { route: routes.CALLTOACTIONS, children: 'Call to actions' },
       { route: routes.ICONS, children: 'Icons' },
       { route: routes.SPINNERS, children: 'Spinners' },
       { route: routes.FORMS, children: 'Forms' },
