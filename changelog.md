@@ -2,7 +2,13 @@
 
 ## UNRELEASED
 
-_Nothing yet_
+**Added:**
+- bpk-component-accordion:
+  - New accordion component (http://backpack.prod.aws.skyscnr.com/docs/molecules/accordions/)
+- bpk-component-checkbox:
+  - Added ability to add custom className and other arbitrary props
+- bpk-component-paragraph:
+  - Added ability to add custom className and other arbitrary props
 
 ## 2017-02-22 (1) - More flexible docking and changed invalid state for inputs/selects
 

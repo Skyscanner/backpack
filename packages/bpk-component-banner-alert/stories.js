@@ -19,12 +19,12 @@ storiesOf('bpk-component-banner-alert', module)
     <BpkBannerAlert message={longMessage} type={ALERT_TYPES.SUCCESS} />
   ))
   .add('Success with children', () => (
-    <BpkBannerAlert message={message} type={ALERT_TYPES.SUCCESS} toggleButtonLabel={'View more'}>
+    <BpkBannerAlert message={message} type={ALERT_TYPES.SUCCESS} toggleButtonLabel="View more">
       {longMessage}
     </BpkBannerAlert>
   ))
   .add('Success with children (long message)', () => (
-    <BpkBannerAlert message={longMessage} type={ALERT_TYPES.SUCCESS} toggleButtonLabel={'View more'}>
+    <BpkBannerAlert message={longMessage} type={ALERT_TYPES.SUCCESS} toggleButtonLabel="View more">
       {longMessage}
     </BpkBannerAlert>
   ))

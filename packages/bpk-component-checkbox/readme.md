@@ -14,11 +14,10 @@ npm install bpk-component-checkbox --save
 import React from 'react';
 import BpkCheckbox from 'bpk-component-checkbox';
 
-export default MyComponent = () => (
+export default () => (
   <BpkCheckbox
     name="prefer-directs"
     onChange={() => console.log('prefer directs changed!')}
-    id="prefer-directs"
     label="Prefer directs"
     checked
   />
@@ -31,7 +30,6 @@ export default MyComponent = () => (
 | --------- | -------- | -------- | ------------- |
 | name      | string   | true     | -             |
 | onChange  | func     | true     | -             |
-| id        | string   | false    | null          |
 | label     | string   | false    | null          |
 | value     | string   | false    | null          |
 | checked   | bool     | false    | false         |

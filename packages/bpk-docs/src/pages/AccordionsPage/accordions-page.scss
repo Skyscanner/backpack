@@ -1,0 +1,8 @@
+@import '~bpk-mixins/index';
+
+.bpkdocs-accordions-page {
+  &__checkbox {
+    display: block;
+    padding: $bpk-spacing-sm 0;
+  }
+}

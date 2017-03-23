@@ -30,7 +30,6 @@ export default () => (
 | --------- | -------- | -------- | ------------- |
 | name      | string   | true     | -             |
 | onChange  | func     | true     | -             |
-| id        | string   | false    | null          |
 | label     | string   | false    | null          |
 | value     | string   | false    | null          |
 | checked   | bool     | false    | false         |
