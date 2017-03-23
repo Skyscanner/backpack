@@ -3,7 +3,7 @@ exports[`BpkNudger should render correctly 1`] = `
   className="bpk-nudger">
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
@@ -34,7 +34,7 @@ exports[`BpkNudger should render correctly 1`] = `
     value={2} />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
@@ -63,7 +63,7 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
   className="bpk-nudger my-nudger">
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
@@ -94,7 +94,7 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
     value={2} />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
@@ -123,7 +123,7 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
   className="bpk-nudger">
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={true}
     onClick={[Function]}
     title="Decrease"
@@ -154,7 +154,7 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
     value={1} />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
@@ -183,7 +183,7 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
   className="bpk-nudger">
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
@@ -214,7 +214,7 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
     value={9} />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={true}
     onClick={[Function]}
     title="Increase"
@@ -243,7 +243,7 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
   className="bpk-nudger">
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={true}
     onClick={[Function]}
     title="Decrease"
@@ -274,7 +274,7 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
     value={1} />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
@@ -303,7 +303,7 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
   className="bpk-nudger">
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
@@ -334,7 +334,7 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
     value={9} />
   <button
     aria-controls="nudger"
-    className="bpk-button bpk-button--secondary bpk-button--icon-only"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={true}
     onClick={[Function]}
     title="Increase"
