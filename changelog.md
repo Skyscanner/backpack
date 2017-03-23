@@ -2,17 +2,21 @@
 
 ## UNRELEASED
 
+_Nothing yet_
+
+## 2017-03-23 - Introducing the accordion and nudger components
+
 **Added:**
-- bpk-component-accordion:
+- bpk-component-accordion: 0.0.0 => 0.0.1
   - New accordion component (http://backpack.prod.aws.skyscnr.com/docs/molecules/accordions/)
-- bpk-component-nudger:
+- bpk-component-nudger: 0.0.0 => 0.0.1
   - New nudger component (http://backpack.prod.aws.skyscnr.com/docs/molecules/nudgers/)
-- bpk-component-checkbox:
+- bpk-component-checkbox: 0.0.53 => 0.1.0
   - Added ability to add custom className and other arbitrary props
-- bpk-component-paragraph:
+- bpk-component-paragraph: 0.1.63 => 0.2.0
   - Added ability to add custom className and other arbitrary props
 
-## 2017-02-22 (1) - More flexible docking and changed invalid state for inputs/selects
+## 2017-03-22 - More flexible docking and changed invalid state for inputs/selects
 
 **Changed:**
 - bpk-component-input: 2.0.17 => 3.0.0
