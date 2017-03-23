@@ -1,0 +1,25 @@
+{
+  "name": "bpk-component-nudger",
+  "version": "0.0.0",
+  "description": "Backpack nudger component.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^15.0.0"
+  },
+  "dependencies": {
+    "bpk-component-button": "^1.6.3",
+    "bpk-component-icon": "^3.3.16",
+    "bpk-mixins": "^11.0.0",
+    "bpk-tokens": "^19.0.0",
+    "lodash.clamp": "^4.0.3"
+  },
+  "devDependencies": {
+    "bpk-component-label": "^2.0.32"
+  }
+}
