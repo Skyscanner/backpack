@@ -12,4 +12,12 @@
     text-align: center;
     vertical-align: middle;
   }
+
+  &__icon {
+    fill: $bpk-button-secondary-color;
+
+    &--disabled {
+      fill: $bpk-button-disabled-color;
+    }
+  }
 }

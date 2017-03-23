@@ -3,7 +3,6 @@ import BpkButton from 'bpk-component-button';
 import { withButtonAlignment } from 'bpk-component-icon';
 import MinusIcon from 'bpk-component-icon/sm/minus';
 import PlusIcon from 'bpk-component-icon/sm/plus';
-import { buttonSecondaryColor, buttonDisabledColor } from 'bpk-tokens/tokens/base.es6';
 import clamp from 'lodash.clamp';
 
 import './bpk-nudger.scss';
@@ -29,6 +28,11 @@ const BpkNudger = (props) => {
   const decreaseDisabled = adjustedValue <= min;
   const increaseDisabled = adjustedValue >= max;
 
+  const minusIconClassNames = ['bpk-nudger__icon'];
+  if (decreaseDisabled) { minusIconClassNames.push('bpk-nudger__icon--disabled'); }
+  const plusIconClassNames = ['bpk-nudger__icon'];
+  if (increaseDisabled) { plusIconClassNames.push('bpk-nudger__icon--disabled'); }
+
   return (
     <div className={classNames.join(' ')}>
       <BpkButton
@@ -39,7 +43,7 @@ const BpkNudger = (props) => {
         title={decreaseButtonLabel}
         aria-controls={id}
       >
-        <AlignedMinusIcon fill={decreaseDisabled ? buttonDisabledColor : buttonSecondaryColor} />
+        <AlignedMinusIcon className={minusIconClassNames.join(' ')} />
       </BpkButton>
       <input
         type="text"
@@ -58,7 +62,7 @@ const BpkNudger = (props) => {
         title={increaseButtonLabel}
         aria-controls={id}
       >
-        <AlignedPlusIcon fill={increaseDisabled ? buttonDisabledColor : buttonSecondaryColor} />
+        <AlignedPlusIcon className={plusIconClassNames.join(' ')} />
       </BpkButton>
     </div>
   );
@@ -66,10 +70,10 @@ const BpkNudger = (props) => {
 
 BpkNudger.propTypes = {
   id: PropTypes.string.isRequired,
-  increaseButtonLabel: PropTypes.string.isRequired,
   decreaseButtonLabel: PropTypes.string.isRequired,
-  min: PropTypes.number.isRequired,
+  increaseButtonLabel: PropTypes.string.isRequired,
   max: PropTypes.number.isRequired,
+  min: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
   className: PropTypes.string,
