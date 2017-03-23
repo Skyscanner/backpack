@@ -12,26 +12,29 @@ exports[`BpkAccordionItem should render correctly 1`] = `
       onClick={[Function]}
       type="button">
       <span
-        className="bpk-accordion__title-text">
-        My accordion item
-      </span>
-      <span
-        className="bpk-accordion__icon-wrapper">
-        <svg
-          className="bpk-accordion__item-expand-icon bpk-icon--align-to-button"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
+        className="bpk-accordion__flex-container">
+        <span
+          className="bpk-accordion__title-text">
+          My accordion item
+        </span>
+        <span
+          className="bpk-accordion__icon-wrapper">
+          <svg
+            className="bpk-accordion__item-expand-icon bpk-icon--align-to-button"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
             }
-          }
-          viewBox="0 0 18 18"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M9 13.1L3.6 8.3c-.5-.4-.5-1.1-.1-1.5.4-.5 1.1-.5 1.6-.1L9 10.1l3.9-3.5c.5-.4 1.2-.4 1.6.1s.4 1.2-.1 1.6L9 13.1z" />
-        </svg>
+            viewBox="0 0 18 18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M9 13.1L3.6 8.3c-.5-.4-.5-1.1-.1-1.5.4-.5 1.1-.5 1.6-.1L9 10.1l3.9-3.5c.5-.4 1.2-.4 1.6.1s.4 1.2-.1 1.6L9 13.1z" />
+          </svg>
+        </span>
       </span>
     </button>
   </dt>
@@ -76,26 +79,29 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
       onClick={[Function]}
       type="button">
       <span
-        className="bpk-accordion__title-text">
-        My accordion item
-      </span>
-      <span
-        className="bpk-accordion__icon-wrapper">
-        <svg
-          className="bpk-accordion__item-expand-icon bpk-icon--align-to-button"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
+        className="bpk-accordion__flex-container">
+        <span
+          className="bpk-accordion__title-text">
+          My accordion item
+        </span>
+        <span
+          className="bpk-accordion__icon-wrapper">
+          <svg
+            className="bpk-accordion__item-expand-icon bpk-icon--align-to-button"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
             }
-          }
-          viewBox="0 0 18 18"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M9 13.1L3.6 8.3c-.5-.4-.5-1.1-.1-1.5.4-.5 1.1-.5 1.6-.1L9 10.1l3.9-3.5c.5-.4 1.2-.4 1.6.1s.4 1.2-.1 1.6L9 13.1z" />
-        </svg>
+            viewBox="0 0 18 18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M9 13.1L3.6 8.3c-.5-.4-.5-1.1-.1-1.5.4-.5 1.1-.5 1.6-.1L9 10.1l3.9-3.5c.5-.4 1.2-.4 1.6.1s.4 1.2-.1 1.6L9 13.1z" />
+          </svg>
+        </span>
       </span>
     </button>
   </dt>
@@ -139,26 +145,29 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
       onClick={[Function]}
       type="button">
       <span
-        className="bpk-accordion__title-text">
-        My accordion item
-      </span>
-      <span
-        className="bpk-accordion__icon-wrapper">
-        <svg
-          className="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped bpk-icon--align-to-button"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
+        className="bpk-accordion__flex-container">
+        <span
+          className="bpk-accordion__title-text">
+          My accordion item
+        </span>
+        <span
+          className="bpk-accordion__icon-wrapper">
+          <svg
+            className="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped bpk-icon--align-to-button"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
             }
-          }
-          viewBox="0 0 18 18"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M9 13.1L3.6 8.3c-.5-.4-.5-1.1-.1-1.5.4-.5 1.1-.5 1.6-.1L9 10.1l3.9-3.5c.5-.4 1.2-.4 1.6.1s.4 1.2-.1 1.6L9 13.1z" />
-        </svg>
+            viewBox="0 0 18 18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M9 13.1L3.6 8.3c-.5-.4-.5-1.1-.1-1.5.4-.5 1.1-.5 1.6-.1L9 10.1l3.9-3.5c.5-.4 1.2-.4 1.6.1s.4 1.2-.1 1.6L9 13.1z" />
+          </svg>
+        </span>
       </span>
     </button>
   </dt>
