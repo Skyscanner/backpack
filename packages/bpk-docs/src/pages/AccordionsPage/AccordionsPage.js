@@ -134,7 +134,7 @@ const components = [
     title: 'Default',
     blurb: [
       <BpkParagraph>
-        By default, accorions allow only one section to be expanded at any time.
+        By default, accordions allow only one section to be expanded at any time.
       </BpkParagraph>,
     ],
     examples: [
