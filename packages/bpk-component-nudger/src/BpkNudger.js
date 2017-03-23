@@ -42,6 +42,7 @@ const BpkNudger = (props) => {
         disabled={decreaseDisabled}
         title={decreaseButtonLabel}
         aria-controls={id}
+        className="bpk-nudger__button"
       >
         <AlignedMinusIcon className={minusIconClassNames.join(' ')} />
       </BpkButton>
@@ -61,6 +62,7 @@ const BpkNudger = (props) => {
         disabled={increaseDisabled}
         title={increaseButtonLabel}
         aria-controls={id}
+        className="bpk-nudger__button"
       >
         <AlignedPlusIcon className={plusIconClassNames.join(' ')} />
       </BpkButton>
