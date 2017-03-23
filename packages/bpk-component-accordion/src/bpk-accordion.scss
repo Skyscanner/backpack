@@ -1,13 +1,13 @@
 @import '~bpk-mixins';
 
 .bpk-accordion {
+  margin: 0;
+
   &__title {
     box-shadow: 0 -1px 0 0 $bpk-color-gray-100 inset;
   }
 
   &__toggle-button {
-    display: inline-flex;
-    flex-direction: row;
     width: 100%;
     padding: $bpk-spacing-xs 0;
     border: 0;
@@ -28,6 +28,12 @@
     &:active {
       color: $bpk-link-active-color;
     }
+  }
+
+  &__flex-container {
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
   }
 
   &__title-text {

@@ -30,9 +30,11 @@ const BpkAccordionItem = (props) => {
           onClick={onClick}
           className="bpk-accordion__toggle-button"
         >
-          <span className="bpk-accordion__title-text">{title}</span>
-          <span className="bpk-accordion__icon-wrapper">
-            <ExpandIcon className={iconClassNames.join(' ')} />
+          <span className="bpk-accordion__flex-container">
+            <span className="bpk-accordion__title-text">{title}</span>
+            <span className="bpk-accordion__icon-wrapper">
+              <ExpandIcon className={iconClassNames.join(' ')} />
+            </span>
           </span>
         </button>
       </dt>
