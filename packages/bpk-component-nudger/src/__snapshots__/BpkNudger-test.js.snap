@@ -9,8 +9,7 @@ exports[`BpkNudger should render correctly 1`] = `
     title="Decrease"
     type="button">
     <svg
-      className="bpk-icon--align-to-button"
-      fill="rgb(0, 178, 214)"
+      className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
       style={
         Object {
@@ -41,8 +40,7 @@ exports[`BpkNudger should render correctly 1`] = `
     title="Increase"
     type="button">
     <svg
-      className="bpk-icon--align-to-button"
-      fill="rgb(0, 178, 214)"
+      className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
       style={
         Object {
@@ -71,8 +69,7 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
     title="Decrease"
     type="button">
     <svg
-      className="bpk-icon--align-to-button"
-      fill="rgb(0, 178, 214)"
+      className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
       style={
         Object {
@@ -103,8 +100,7 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
     title="Increase"
     type="button">
     <svg
-      className="bpk-icon--align-to-button"
-      fill="rgb(0, 178, 214)"
+      className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
       style={
         Object {
@@ -133,8 +129,7 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
     title="Decrease"
     type="button">
     <svg
-      className="bpk-icon--align-to-button"
-      fill="rgb(178, 174, 189)"
+      className="bpk-nudger__icon bpk-nudger__icon--disabled bpk-icon--align-to-button"
       height="18"
       style={
         Object {
@@ -165,8 +160,7 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
     title="Increase"
     type="button">
     <svg
-      className="bpk-icon--align-to-button"
-      fill="rgb(0, 178, 214)"
+      className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
       style={
         Object {
@@ -195,8 +189,7 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
     title="Decrease"
     type="button">
     <svg
-      className="bpk-icon--align-to-button"
-      fill="rgb(0, 178, 214)"
+      className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
       style={
         Object {
@@ -227,8 +220,7 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
     title="Increase"
     type="button">
     <svg
-      className="bpk-icon--align-to-button"
-      fill="rgb(178, 174, 189)"
+      className="bpk-nudger__icon bpk-nudger__icon--disabled bpk-icon--align-to-button"
       height="18"
       style={
         Object {
@@ -257,8 +249,7 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
     title="Decrease"
     type="button">
     <svg
-      className="bpk-icon--align-to-button"
-      fill="rgb(178, 174, 189)"
+      className="bpk-nudger__icon bpk-nudger__icon--disabled bpk-icon--align-to-button"
       height="18"
       style={
         Object {
@@ -289,8 +280,7 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
     title="Increase"
     type="button">
     <svg
-      className="bpk-icon--align-to-button"
-      fill="rgb(0, 178, 214)"
+      className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
       style={
         Object {
@@ -319,8 +309,7 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
     title="Decrease"
     type="button">
     <svg
-      className="bpk-icon--align-to-button"
-      fill="rgb(0, 178, 214)"
+      className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
       style={
         Object {
@@ -351,8 +340,7 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
     title="Increase"
     type="button">
     <svg
-      className="bpk-icon--align-to-button"
-      fill="rgb(178, 174, 189)"
+      className="bpk-nudger__icon bpk-nudger__icon--disabled bpk-icon--align-to-button"
       height="18"
       style={
         Object {
