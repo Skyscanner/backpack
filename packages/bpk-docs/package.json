@@ -38,6 +38,7 @@
     "bpk-component-link": "^0.5.12",
     "bpk-component-list": "^0.0.76",
     "bpk-component-modal": "^1.0.19",
+    "bpk-component-nudger": "^0.0.0",
     "bpk-component-paragraph": "^0.1.63",
     "bpk-component-popover": "^1.0.19",
     "bpk-component-radio": "^0.0.53",

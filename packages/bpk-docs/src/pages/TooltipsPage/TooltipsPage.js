@@ -10,8 +10,6 @@ import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import './tooltips-page.scss';
 
-/* eslint-disable no-alert */
-
 const components = [
   {
     id: 'default',

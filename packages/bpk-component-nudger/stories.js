@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf, action } from '@kadira/storybook';
+import BpkLabel from 'bpk-component-label';
 
 import BpkNudger from './index';
 
@@ -18,14 +19,18 @@ class NudgerContainer extends Component {
 
   render() {
     return (
-      <BpkNudger
-        min={1}
-        max={10}
-        value={this.state.value}
-        onChange={this.handleChange}
-        decreaseButtonLabel="Decrease"
-        increaseButtonLabel="Increase"
-      />
+      <div>
+        <BpkLabel label="Number of passengers" htmlFor="my-nudger" />
+        <BpkNudger
+          id="my-nudger"
+          min={1}
+          max={10}
+          value={this.state.value}
+          onChange={this.handleChange}
+          decreaseButtonLabel="Decrease"
+          increaseButtonLabel="Increase"
+        />
+      </div>
     );
   }
 }
@@ -33,6 +38,7 @@ class NudgerContainer extends Component {
 storiesOf('bpk-component-nudger', module)
   .add('Default', () => (
     <BpkNudger
+      id="my-nudger"
       min={1}
       max={99}
       value={3}
@@ -43,6 +49,7 @@ storiesOf('bpk-component-nudger', module)
   ))
   .add('Lower bounds', () => (
     <BpkNudger
+      id="my-nudger"
       min={3}
       max={99}
       value={3}
@@ -53,6 +60,7 @@ storiesOf('bpk-component-nudger', module)
   ))
   .add('Upper bounds', () => (
     <BpkNudger
+      id="my-nudger"
       min={1}
       max={99}
       value={99}
