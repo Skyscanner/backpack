@@ -15,11 +15,11 @@
 /// @access private
 
 @mixin _bpk-heading-factory($margin-top, $margin-bottom, $font-size, $font-weight, $line-height) {
-  @include _bpk-text-factory($font-size, $line-height);
-
   margin-top: $margin-top;
   margin-bottom: $margin-bottom;
   font-weight: $font-weight;
+
+  @include _bpk-text-factory($font-size, $line-height);
 }
 
 /// Type factory.
@@ -372,8 +372,6 @@
 ///   }
 
 @mixin bpk-code {
-  @include bpk-border-radius-xs;
-
   display: inline;
   padding: 0 $bpk-spacing-xs;
   background-color: $bpk-color-gray-50;
@@ -382,6 +380,8 @@
   text-shadow: 0 $bpk-one-pixel-rem $bpk-color-white;
   white-space: nowrap;
   vertical-align: bottom;
+
+  @include bpk-border-radius-xs;
 
   @include bpk-rtl {
     direction: ltr;
@@ -419,11 +419,11 @@
 ///   }
 
 @mixin bpk-code__pre {
-  @include bpk-border-radius-xs;
-
   margin: 0 0 $bpk-spacing-sm;
   padding: $bpk-spacing-base;
   background-color: $bpk-color-gray-50;
+
+  @include bpk-border-radius-xs;
 }
 
 /// Blockquote.

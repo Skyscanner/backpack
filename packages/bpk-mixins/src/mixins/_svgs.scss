@@ -135,7 +135,7 @@
 ///   }
 
 @mixin bpk-icon-sm--align-to-button() {
-  @include _bpk-svg--align-to-button();
+  @include _bpk-svg--align-to-button;
 }
 
 /// Align to large button. Modifies the bpk-icon-lg mixin.
@@ -149,7 +149,7 @@
 ///   }
 
 @mixin bpk-icon-lg--align-to-large-button() {
-  @include _bpk-svg--align-to-large-button();
+  @include _bpk-svg--align-to-large-button;
 }
 
 /// RTL support. Modifies the bpk-icon-sm or bpk-icon-lg mixin.
@@ -232,7 +232,7 @@
 ///   }
 
 @mixin bpk-spinner--align-to-button() {
-  @include _bpk-svg--align-to-button();
+  @include _bpk-svg--align-to-button;
 }
 
 /// Align spinner to large button. Modifies the bpk-spinner mixin.
@@ -246,5 +246,5 @@
 ///   }
 
 @mixin bpk-spinner--align-to-large-button() {
-  @include _bpk-svg--align-to-large-button();
+  @include _bpk-svg--align-to-large-button;
 }

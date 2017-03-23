@@ -2,15 +2,15 @@
 
 .bpkdocs-home-page {
   &__hero {
-    @include bpk-breakpoint-above-tablet {
-      padding-top: $bpk-spacing-xl * 2;
-      padding-bottom: $bpk-spacing-xl * 2;
-    }
-
     padding-top: $bpk-spacing-xl;
     padding-bottom: $bpk-spacing-xl;
     background-color: $bpk-color-blue-500;
     background-image: $bpk-primary-gradient;
     color: $bpk-color-white;
+
+    @include bpk-breakpoint-above-tablet {
+      padding-top: $bpk-spacing-xl * 2;
+      padding-bottom: $bpk-spacing-xl * 2;
+    }
   }
 }

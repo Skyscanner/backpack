@@ -24,9 +24,9 @@
 
 @mixin bpk-visually-hidden {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
+  width: 1px; /* stylelint-disable-line unit-blacklist */
+  height: 1px; /* stylelint-disable-line unit-blacklist */
+  margin: -1px; /* stylelint-disable-line unit-blacklist */
   padding: 0;
   border: 0;
   overflow: hidden;

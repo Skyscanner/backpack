@@ -1,10 +1,10 @@
 @import '~bpk-mixins/index';
 
 .bpk-banner-alert {
-  @include bpk-border-radius-sm;
-
   background-color: $bpk-banner-alert-background-color;
   overflow: hidden;
+
+  @include bpk-border-radius-sm;
 
   &--success {
     box-shadow: $bpk-banner-alert-success-box-shadow;
@@ -76,9 +76,9 @@
   }
 
   &__children-container {
-    @include bpk-text-sm;
-
     padding: $bpk-banner-alert-children-padding-y $bpk-banner-alert-children-padding-x;
     color: $bpk-banner-alert-children-color;
+
+    @include bpk-text-sm;
   }
 }

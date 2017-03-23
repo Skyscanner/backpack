@@ -5,7 +5,7 @@
     cursor: pointer;
 
     &-description {
-      @include bpk-visually-hidden();
+      @include bpk-visually-hidden;
     }
   }
 

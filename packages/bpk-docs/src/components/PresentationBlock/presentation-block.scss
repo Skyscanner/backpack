@@ -1,11 +1,11 @@
 @import '~bpk-mixins/index';
 
 .bpkdocs-presentation-block {
-  @include bpk-border-radius-sm;
-
   margin-top: 0;
   margin-bottom: $bpk-spacing-sm;
   box-shadow: 0 0 0 1px $bpk-color-gray-100;
+
+  @include bpk-border-radius-sm;
 
   &__container {
     padding: $bpk-spacing-base;

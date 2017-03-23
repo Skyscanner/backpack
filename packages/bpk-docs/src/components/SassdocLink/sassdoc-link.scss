@@ -1,10 +1,10 @@
 @import '~bpk-mixins/index';
 
 .bpkdocs-sassdoc-link {
-  @include bpk-border-radius-xs;
-
   padding: $bpk-spacing-sm;
   background-color: $bpk-color-gray-50;
+
+  @include bpk-border-radius-xs;
 
   &__logo {
     display: inline-block;

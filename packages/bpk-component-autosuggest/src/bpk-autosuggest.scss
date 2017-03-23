@@ -8,9 +8,9 @@
   &__container--open &__suggestions-container {
     position: absolute;
     top: 100%;
+    z-index: $bpk-zindex-autosuggest;
     width: 100%;
     margin-top: $bpk-spacing-sm;
-    z-index: $bpk-zindex-autosuggest;
 
     &::before {
       position: absolute;
@@ -40,13 +40,12 @@
   }
 
   &__suggestions-list {
-    @include bpk-layer;
-
     margin: 0;
     padding: 0;
-    background-color: $bpk-autosuggest-list-background-color;
     list-style: none;
     overflow: hidden;
+
+    @include bpk-layer;
   }
 
   &__suggestion-item {
@@ -80,7 +79,7 @@
       display: table-cell;
       fill: $bpk-color-gray-500;
       // stylelint seems to complain that margin is ignored in `display: table-cell;`, but it defo works.
-      margin-right: $bpk-spacing-xs; // stylelint-disable-line declaration-block-no-ignored-properties
+      margin-right: $bpk-spacing-xs; /* stylelint-disable-line declaration-block-no-ignored-properties */
       vertical-align: top;
 
       @include bpk-rtl {

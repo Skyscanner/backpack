@@ -12,11 +12,11 @@
       left: 0;
       content: '';
       display: block;
+      z-index: 9999;
       width: auto;
       height: auto;
       background: linear-gradient(to bottom, rgba($bpk-color-red-500, .3) 0, transparent $bpk-one-pixel-rem) repeat left 0;
       background-size: $bpk-spacing-xs $bpk-spacing-xs;
-      z-index: 9999;
       pointer-events: none;
     }
 

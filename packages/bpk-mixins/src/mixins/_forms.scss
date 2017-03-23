@@ -42,10 +42,10 @@
     }
   }
 
-  @include bpk-rtl {
-    &[type=number],
-    &[type=tel],
-    &[type=email] {
+  &[type=number],
+  &[type=tel],
+  &[type=email] {
+    @include bpk-rtl {
       direction: ltr;
       text-align: right;
     }
@@ -128,14 +128,14 @@
   border-right-width: 0;
   border-radius: $bpk-input-border-radius 0 0 $bpk-input-border-radius;
 
-  &:focus {
-    position: relative; // brings outline to the front
-  }
-
   @include bpk-rtl {
     border-right-width: $bpk-input-border-width;
     border-left-width: 0;
     border-radius: 0 $bpk-input-border-radius $bpk-input-border-radius 0;
+  }
+
+  &:focus {
+    position: relative; // brings outline to the front
   }
 }
 
@@ -152,12 +152,12 @@
 @mixin bpk-input--docked-last-child {
   border-radius: 0 $bpk-input-border-radius $bpk-input-border-radius 0;
 
-  &:focus {
-    position: relative; // brings outline to the front
-  }
-
   @include bpk-rtl {
     border-radius: $bpk-input-border-radius 0 0 $bpk-input-border-radius;
+  }
+
+  &:focus {
+    position: relative; // brings outline to the front
   }
 }
 
@@ -175,13 +175,13 @@
   border-right-width: 0;
   border-radius: 0;
 
-  &:focus {
-    position: relative; // brings outline to the front
-  }
-
   @include bpk-rtl {
     border-right-width: $bpk-input-border-width;
     border-left-width: 0;
+  }
+
+  &:focus {
+    position: relative; // brings outline to the front
   }
 }
 
@@ -228,13 +228,6 @@
   color: $bpk-select-color;
   appearance: none;
 
-  &:disabled {
-    border-color: $bpk-select-disabled-border-color;
-    background-image: url(map-get($bpk-icons-sm, arrow-down-gray-300));
-    color: $bpk-select-disabled-color;
-    cursor: not-allowed;
-  }
-
   @include bpk-rtl {
     padding-right: $bpk-select-padding-left;
     padding-left: $bpk-select-padding-right;
@@ -244,6 +237,13 @@
   @media screen\0 {
     padding: $bpk-spacing-xs $bpk-spacing-sm !important; /* stylelint-disable-line declaration-no-important */
     background-image: none !important; /* stylelint-disable-line declaration-no-important */
+  }
+
+  &:disabled {
+    border-color: $bpk-select-disabled-border-color;
+    background-image: url(map-get($bpk-icons-sm, arrow-down-gray-300));
+    color: $bpk-select-disabled-color;
+    cursor: not-allowed;
   }
 }
 
@@ -298,6 +298,10 @@
     border-left-width: 0;
     border-radius: 0 $bpk-select-border-radius $bpk-select-border-radius 0;
   }
+
+  &:focus {
+    position: relative; // brings outline to the front
+  }
 }
 
 /// Docked (last-child) form select input. Modifies the bpk-select mixin.
@@ -315,6 +319,10 @@
 
   @include bpk-rtl {
     border-radius: $bpk-select-border-radius 0 0 $bpk-select-border-radius;
+  }
+
+  &:focus {
+    position: relative; // brings outline to the front
   }
 }
 
@@ -335,6 +343,10 @@
   @include bpk-rtl {
     border-right-width: $bpk-select-border-width;
     border-left-width: 0;
+  }
+
+  &:focus {
+    position: relative; // brings outline to the front
   }
 }
 
@@ -407,6 +419,10 @@
   vertical-align: text-bottom;
   appearance: none;
 
+  @media screen\0 {
+    background: none !important; /* stylelint-disable-line declaration-no-important */
+  }
+
   &:checked {
     background: url(map-get($bpk-elements, checkbox-checked)) no-repeat;
 
@@ -417,10 +433,6 @@
 
   &:disabled {
     background: url(map-get($bpk-elements, checkbox-disabled)) no-repeat;
-  }
-
-  @media screen\0 {
-    background: none !important; /* stylelint-disable-line declaration-no-important */
   }
 }
 
@@ -469,6 +481,10 @@
   vertical-align: text-bottom;
   appearance: none;
 
+  @media screen\0 {
+    background: none !important; /* stylelint-disable-line declaration-no-important */
+  }
+
   &:checked {
     background: url(map-get($bpk-elements, radio-checked)) no-repeat;
 
@@ -479,10 +495,6 @@
 
   &:disabled {
     background: url(map-get($bpk-elements, radio-disabled)) no-repeat;
-  }
-
-  @media screen\0 {
-    background: none !important; /* stylelint-disable-line declaration-no-important */
   }
 }
 
