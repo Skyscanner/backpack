@@ -41,6 +41,7 @@
     "bpk-component-nudger": "^0.0.2",
     "bpk-component-paragraph": "^0.2.0",
     "bpk-component-popover": "^1.0.21",
+    "bpk-component-progress": "^0.0.0",
     "bpk-component-radio": "^0.0.54",
     "bpk-component-router-link": "^0.1.63",
     "bpk-component-rtl-toggle": "^0.0.48",

@@ -47,6 +47,7 @@ const staticSiteGeneratorConfig = {
     ROUTES.TOOLTIPS,
     ROUTES.ACCORDIONS,
     ROUTES.NUDGERS,
+    ROUTES.PROGRESS,
 
     ROUTES.DOWNLOADS,
 

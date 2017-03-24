@@ -35,6 +35,7 @@ export const DATEPICKER = '/docs/molecules/datepicker';
 export const TOOLTIPS = '/docs/molecules/tooltips';
 export const ACCORDIONS = '/docs/molecules/accordions';
 export const NUDGERS = '/docs/molecules/nudgers';
+export const PROGRESS = '/docs/molecules/progress';
 
 export const DOWNLOADS = '/downloads';
 

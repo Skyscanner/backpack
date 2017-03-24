@@ -51,6 +51,7 @@ const links = [
       { route: routes.TOOLTIPS, children: 'Tooltips' },
       { route: routes.ACCORDIONS, children: 'Accordions' },
       { route: routes.NUDGERS, children: 'Nudgers' },
+      { route: routes.PROGRESS, children: 'Progress bars' },
       { route: null, children: 'Pagination' },
       { route: null, children: 'Slider' },
       { route: null, children: 'Carousel' },

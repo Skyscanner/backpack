@@ -44,6 +44,7 @@ configure(() => {
   require('./../packages/bpk-component-nudger/stories');
   require('./../packages/bpk-component-paragraph/stories');
   require('./../packages/bpk-component-popover/stories');
+  require('./../packages/bpk-component-progress/stories');
   require('./../packages/bpk-component-radio/stories');
   require('./../packages/bpk-component-router-link/stories');
   require('./../packages/bpk-component-rtl-toggle/stories');
