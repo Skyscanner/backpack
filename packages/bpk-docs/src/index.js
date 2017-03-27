@@ -28,8 +28,8 @@ export default ((locals, callback) => {
       return callback(error, `<script>window.location = '${redirectLocation.pathname}';</script>`);
     }
 
-    const head = Helmet.rewind();
     const html = ReactDOMServer.renderToStaticMarkup(React.createElement(RouterContext, props));
+    const head = Helmet.rewind();
 
     return callback(error, template({ head, html, assets }));
   });
