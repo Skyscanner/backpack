@@ -1,3 +1,67 @@
+exports[`BpkPopoverPortal Custom Portal props should render correctly with portalClassName added to portal component 1`] = `
+<Portal
+  beforeClose={[Function]}
+  className="my-custom-classname"
+  isOpen={false}
+  onClose={[Function]}
+  onOpen={[Function]}
+  style={null}
+  target={
+    <div>
+      target
+    </div>
+  }
+  targetRef={null}>
+  <BpkPopover
+    className={null}
+    closeButtonIcon={true}
+    closeButtonText="Close"
+    id="my-popover"
+    label="My popover"
+    labelAsTitle={false}
+    onClose={[Function]}
+    padded={true}>
+    <div>
+      My popover content
+    </div>
+  </BpkPopover>
+</Portal>
+`;
+
+exports[`BpkPopoverPortal Custom Portal props should render correctly with portalStyle added to portal component 1`] = `
+<Portal
+  beforeClose={[Function]}
+  className={null}
+  isOpen={false}
+  onClose={[Function]}
+  onOpen={[Function]}
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+  target={
+    <div>
+      target
+    </div>
+  }
+  targetRef={null}>
+  <BpkPopover
+    className={null}
+    closeButtonIcon={true}
+    closeButtonText="Close"
+    id="my-popover"
+    label="My popover"
+    labelAsTitle={false}
+    onClose={[Function]}
+    padded={true}>
+    <div>
+      My popover content
+    </div>
+  </BpkPopover>
+</Portal>
+`;
+
 exports[`BpkPopoverPortal should render correctly 1`] = `
 <div>
   target

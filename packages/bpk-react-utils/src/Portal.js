@@ -1,3 +1,4 @@
+import assign from 'object-assign';
 import { Component, PropTypes } from 'react';
 import { render, unmountComponentAtNode, findDOMNode } from 'react-dom';
 
@@ -92,6 +93,13 @@ class Portal extends Component {
     document.addEventListener('touchend', this.onDocumentClick, false);
     document.addEventListener('keydown', this.onDocumentKeyDown, false);
 
+    if (this.props.style) {
+      assign(this.portalElement.style, this.props.style);
+    }
+    if (this.props.className) {
+      this.portalElement.className = this.props.className;
+    }
+
     this.componentDidUpdate();
     this.props.onOpen(this.portalElement, this.getTargetElement());
   }
@@ -122,6 +130,8 @@ Portal.propTypes = {
   onClose: PropTypes.func,
   targetRef: PropTypes.func,
   beforeClose: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  className: PropTypes.string,
 };
 
 Portal.defaultProps = {
@@ -130,6 +140,8 @@ Portal.defaultProps = {
   onClose: () => null,
   targetRef: null,
   beforeClose: null,
+  style: null,
+  className: null,
 };
 
 export default Portal;
