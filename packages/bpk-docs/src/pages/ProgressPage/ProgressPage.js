@@ -6,7 +6,6 @@ import progressReadme from 'bpk-component-progress/readme.md';
 
 import ProgressContainer from './ProgressContainer';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import './tooltips-page.scss';
 
 class SteppedContainer extends Component {
   constructor() {
