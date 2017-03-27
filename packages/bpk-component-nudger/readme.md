@@ -58,6 +58,7 @@ class App extends Component {
 | max                   | number                        | true     | -             |
 | min                   | number                        | true     | -             |
 | onChange              | func                          | true     | -             |
+| value                 | number                        | true     | -             |
 | className             | string                        | false    | null          |
 
 ### Translation

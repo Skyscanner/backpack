@@ -1,0 +1,34 @@
+@import '~bpk-mixins/index';
+
+.bpk-progress {
+  position: relative;
+  height: $bpk-spacing-sm;
+  border-radius: $bpk-border-radius-sm;
+  background-color: $bpk-color-gray-100;
+  overflow: hidden;
+
+  &--small {
+    height: $bpk-spacing-xs;
+    border-radius: $bpk-border-radius-xs;
+  }
+
+  &__value {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 0%;
+    transition: width $bpk-duration-base ease-in-out;
+    background-color: $bpk-color-green-500;
+  }
+
+  &__step {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2 * $bpk-one-pixel-rem;
+    background: white;
+  }
+}
