@@ -1,5 +1,11 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Added:**
+- bpk-component-progress
+  - New progress bar component
+
 ## 2017-03-27 - Ability to add custom style and className props to portal elements
 
 **Fixed:**
