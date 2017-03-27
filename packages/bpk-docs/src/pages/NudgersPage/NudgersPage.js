@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
+import BpkLink from 'bpk-component-link';
 import BpkNudger from 'bpk-component-nudger';
 import BpkParagraph from 'bpk-component-paragraph';
 import BpkRouterLink from 'bpk-component-router-link';
-import BpkLink from 'bpk-component-link';
-import tooltipReadme from 'bpk-component-nudger/readme.md';
+import nudgersReadme from 'bpk-component-nudger/readme.md';
 
 import { I18N } from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import './tooltips-page.scss';
 
 class NudgerContainer extends Component {
   constructor() {
@@ -53,8 +52,8 @@ const components = [
   },
 ];
 
-const PopoversPage = () => <DocsPageBuilder
-  title="Tooltips"
+const NudgersPage = () => <DocsPageBuilder
+  title="Nudgers"
   blurb={[
     <BpkParagraph>
       Nudgers allow users to quickly specify a value within a given range.
@@ -69,7 +68,7 @@ const PopoversPage = () => <DocsPageBuilder
     </BpkParagraph>,
   ]}
   components={components}
-  readme={tooltipReadme}
+  readme={nudgersReadme}
 />;
 
-export default PopoversPage;
+export default NudgersPage;
