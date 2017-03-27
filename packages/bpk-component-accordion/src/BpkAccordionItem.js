@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
-import AnimateHeight from 'react-animate-height';
 import { withButtonAlignment } from 'bpk-component-icon';
 import ChevronDownIcon from 'bpk-component-icon/sm/chevron-down';
 
 import './bpk-accordion.scss';
+import AnimateHeight from './AnimateHeight';
 
 const ExpandIcon = withButtonAlignment(ChevronDownIcon);
 

@@ -39,7 +39,7 @@ exports[`BpkAccordionItem should render correctly 1`] = `
     </button>
   </dt>
   <div
-    className={undefined}
+    onTransitionEnd={[Function]}
     style={
       Object {
         "MozTransition": "height 200ms ease ",
@@ -106,7 +106,7 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
     </button>
   </dt>
   <div
-    className={undefined}
+    onTransitionEnd={[Function]}
     style={
       Object {
         "MozTransition": "height 200ms ease ",
@@ -172,7 +172,7 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
     </button>
   </dt>
   <div
-    className={undefined}
+    onTransitionEnd={[Function]}
     style={
       Object {
         "MozTransition": "height 200ms ease ",
