@@ -9,9 +9,14 @@ const ExpandIcon = withButtonAlignment(ChevronDownIcon);
 
 const BpkAccordionItem = (props) => {
   const iconClassNames = ['bpk-accordion__item-expand-icon'];
+  const containerClassNames = ['bpk-accordion__content-container'];
   const { id, title, children, expanded, onClick, ...rest } = props;
 
+  // Icon class names
   if (expanded) { iconClassNames.push('bpk-accordion__item-expand-icon--flipped'); }
+
+  // Container class names
+  if (!expanded) { containerClassNames.push('bpk-accordion__content-container--collapsed'); }
 
   const titleId = `${id}_title`;
   const contentId = `${id}_content`;
@@ -46,7 +51,7 @@ const BpkAccordionItem = (props) => {
           id={contentId}
           role="region"
           aria-labelledby={titleId}
-          className="bpk-accordion__content-container"
+          className={containerClassNames.join(' ')}
         >
           {children}
         </dd>

@@ -54,7 +54,7 @@ exports[`BpkAccordionItem should render correctly 1`] = `
     <div>
       <dd
         aria-labelledby="my-accordion_title"
-        className="bpk-accordion__content-container"
+        className="bpk-accordion__content-container bpk-accordion__content-container--collapsed"
         id="my-accordion_content"
         role="region">
         My accordion content
@@ -121,7 +121,7 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
     <div>
       <dd
         aria-labelledby="my-accordion_title"
-        className="bpk-accordion__content-container"
+        className="bpk-accordion__content-container bpk-accordion__content-container--collapsed"
         id="my-accordion_content"
         role="region">
         My accordion content
