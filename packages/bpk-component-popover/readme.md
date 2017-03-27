@@ -74,3 +74,5 @@ class App extends Component {
 | padded                | bool                          | false    | true          |
 | labelAsTitle          | bool                          | false    | true          |
 | closeButtonIcon       | bool                          | false    | true          |
+| portalStyle           | object                        | false    | null          |
+| portalClassName       | string                        | false    | null          |

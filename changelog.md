@@ -1,12 +1,12 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2017-03-27 - Ability to add custom style and className props to portal elements
 
-**Changed:**
-- bpk-react-utils:
-  - Added feature for the Portal component to accept custom style and className props
-- bpk-component-popover:
+**Fixed:**
+- bpk-component-popover: 1.0.20 => 1.0.21
   - Added feature to accept portalStyle and portalClassName props
+- bpk-react-utils: 1.3.1 => 1.3.2
+  - Added feature for the Portal component to accept custom style and className props
 
 ## 2017-03-23 - Introducing the accordion and nudger components
 
