@@ -45,7 +45,14 @@ class BpkPopoverPortal extends Component {
   }
 
   render() {
-    const { target, isOpen, onClose, ...rest } = this.props;
+    const {
+      target,
+      isOpen,
+      onClose,
+      portalStyle,
+      portalClassName,
+      ...rest
+    } = this.props;
 
     delete rest.onClose;
     delete rest.tetherOptions;
@@ -57,6 +64,8 @@ class BpkPopoverPortal extends Component {
         onClose={onClose}
         onOpen={this.onOpen}
         beforeClose={this.beforeClose}
+        style={portalStyle}
+        className={portalClassName}
       >
         <BpkPopover onClose={onClose} {...rest} />
       </Portal>
@@ -74,6 +83,8 @@ BpkPopoverPortal.propTypes = {
     offset: PropTypes.string,
     constraints: PropTypes.array,
   }),
+  portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  portalClassName: PropTypes.string,
 };
 
 BpkPopoverPortal.defaultProps = {
@@ -87,6 +98,8 @@ BpkPopoverPortal.defaultProps = {
       },
     ],
   },
+  portalStyle: null,
+  portalClassName: null,
 };
 
 export default BpkPopoverPortal;

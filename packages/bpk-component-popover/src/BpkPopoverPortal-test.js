@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTestUtils from 'react-addons-test-utils';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
@@ -32,6 +33,49 @@ describe('BpkPopoverPortal', () => {
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
+  });
+
+  describe('Custom Portal props', () => {
+    // Changing the props of the <Portal> component will not affect the rendered
+    // output. Thus we need to do shallow rendering to test the correct props
+    // are passed to the <Portal> component.
+
+    it('should render correctly with portalClassName added to portal component', () => {
+      const shallowRenderer = ReactTestUtils.createRenderer();
+      const result = shallowRenderer.render(
+        <BpkPopoverPortal
+          id="my-popover"
+          target={<div>target</div>}
+          isOpen={false}
+          onClose={() => null}
+          label="My popover"
+          closeButtonText="Close"
+          portalClassName="my-custom-classname"
+        >
+          <div>My popover content</div>
+        </BpkPopoverPortal>,
+      );
+      expect(result).toMatchSnapshot();
+    });
+
+    it('should render correctly with portalStyle added to portal component', () => {
+      const shallowRenderer = ReactTestUtils.createRenderer();
+      const customStyle = { color: 'red' };
+      const result = shallowRenderer.render(
+        <BpkPopoverPortal
+          id="my-popover"
+          target={<div>target</div>}
+          isOpen={false}
+          onClose={() => null}
+          label="My popover"
+          closeButtonText="Close"
+          portalStyle={customStyle}
+        >
+          <div>My popover content</div>
+        </BpkPopoverPortal>,
+      );
+      expect(result).toMatchSnapshot();
+    });
   });
 
   it('should trap and restore focus', (done) => {

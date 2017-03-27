@@ -2,7 +2,11 @@
 
 ## UNRELEASED
 
-_Nothing yet_
+**Changed:**
+- bpk-react-utils:
+  - Added feature for the Portal component to accept custom style and className props
+- bpk-component-popover:
+  - Added feature to accept portalStyle and portalClassName props
 
 ## 2017-03-23 - Introducing the accordion and nudger components
 

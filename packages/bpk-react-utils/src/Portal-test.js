@@ -24,6 +24,34 @@ describe('Portal', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render with a custom style property', (done) => {
+    const customStyle = { color: 'red' };
+    const assertion = (portalElement) => {
+      expect(portalElement.style.color).toEqual(customStyle.color);
+      done();
+    };
+
+    mount(
+      <Portal isOpen onOpen={assertion} style={customStyle}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+  });
+
+  it('should render with a custom className property', (done) => {
+    const customClassname = 'my-custom-classname';
+    const assertion = (portalElement) => {
+      expect(portalElement.classList.contains(customClassname)).toBe(true);
+      done();
+    };
+
+    mount(
+      <Portal isOpen onOpen={assertion} className={customClassname}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+  });
+
   it('should render portal children to document.body', (done) => {
     const firstAssertion = () => {
       expect(document.body.lastChild.textContent).toEqual('My portal content');
