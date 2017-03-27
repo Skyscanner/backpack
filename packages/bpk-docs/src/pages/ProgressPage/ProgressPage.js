@@ -1,60 +1,11 @@
-import React, { Component } from 'react';
-import BpkProgress from 'bpk-component-progress';
-import BpkButton from 'bpk-component-button';
+import React from 'react';
 import BpkParagraph from 'bpk-component-paragraph';
 import progressReadme from 'bpk-component-progress/readme.md';
 
 import ProgressContainer from './ProgressContainer';
+import SteppedProgressContainer from './SteppedProgressContainer';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-
-class SteppedContainer extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      progress: 1,
-    };
-
-    this.setProgress = this.setProgress.bind(this);
-  }
-
-  setProgress(progress) {
-    if (progress >= 1 && progress <= 5) {
-      this.setState({ progress });
-    }
-  }
-
-  render() {
-    return (
-      <div>
-        <BpkProgress
-          min={0}
-          max={5}
-          value={this.state.progress}
-          stepped
-        />
-        <br />
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <BpkButton
-            secondary
-            onClick={() => this.setProgress(this.state.progress - 1)}
-            disabled={this.state.progress <= 1}
-            getValueText={(value, min, max) => `Step ${value} of ${max}`}
-          >
-            Back
-          </BpkButton>
-          <span>{ `Step ${this.state.progress} of 5` }</span>
-          <BpkButton
-            onClick={() => this.setProgress(this.state.progress + 1)}
-            disabled={this.state.progress === 5}
-          >
-            Continue
-          </BpkButton>
-        </div>
-      </div>
-    );
-  }
-}
+import './progress-page.scss';
 
 const components = [
   {
@@ -97,7 +48,7 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <SteppedContainer />,
+      <SteppedProgressContainer />,
     ],
   },
 ];

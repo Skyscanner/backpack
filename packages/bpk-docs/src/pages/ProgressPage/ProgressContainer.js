@@ -14,7 +14,7 @@ export default class ProgressContainer extends Component {
   render() {
     const { progress } = this.state;
     return (
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div className="bpkdocs-progress-page__flex">
         <BpkButton
           secondary
           onClick={() => this.setState({ progress: 0 })}
@@ -30,7 +30,7 @@ export default class ProgressContainer extends Component {
           Go!
         </BpkButton>
         &nbsp;
-        <div style={{ flexGrow: '1' }}>
+        <div className="bpkdocs-progress-page__flex-grow">
           <BpkProgress
             min={0}
             max={100}

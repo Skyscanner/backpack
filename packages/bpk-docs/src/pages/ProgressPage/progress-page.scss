@@ -1,0 +1,11 @@
+.bpkdocs-progress-page {
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-grow {
+      flex-grow: 1;
+    }
+  }
+}
