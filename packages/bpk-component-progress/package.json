@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-progress",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Backpack progress bar component.",
   "main": "index.js",
   "repository": {
