@@ -1,4 +1,6 @@
-import TetherWrapper, { getArrowPositionCallback } from './src/TetherWrapper';
+import TetherWrapper from './src/TetherWrapper';
+import getArrowPositionCallback from './src/getArrowPositionCallback';
+import applyRTLTransforms from './src/applyRTLTransforms';
 
 export default TetherWrapper;
-export { getArrowPositionCallback };
+export { getArrowPositionCallback, applyRTLTransforms };

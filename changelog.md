@@ -3,6 +3,11 @@
 ## UNRELEASED
 
 **Fixed:**
+- bpk-component-accordion:
+  - Content in collapsed accordions are now correctly hidden
+- bpk-component-popover:
+- bpk-component-tooltip:
+  - Popovers and tooltips now flip in RTL when positioned on the side
 - bpk-svgs:
 - bpk-mixins:
 - bpk-component-checkbox:
