@@ -2,9 +2,13 @@
 
 ## UNRELEASED
 
+_Nothing yet_
+
+## 2017-03-27 (2) - New progress bar component
+
 **Added:**
-- bpk-component-progress
-  - New progress bar component
+- bpk-component-progress: 0.0.0 => 0.0.1
+  - New progress bar component (http://backpack.prod.aws.skyscnr.com/docs/molecules/progress)
 
 ## 2017-03-27 - Ability to add custom style and className props to portal elements
 
