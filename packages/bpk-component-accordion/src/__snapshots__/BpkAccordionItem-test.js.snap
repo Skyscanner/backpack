@@ -39,7 +39,7 @@ exports[`BpkAccordionItem should render correctly 1`] = `
     </button>
   </dt>
   <div
-    className={undefined}
+    onTransitionEnd={[Function]}
     style={
       Object {
         "MozTransition": "height 200ms ease ",
@@ -54,7 +54,7 @@ exports[`BpkAccordionItem should render correctly 1`] = `
     <div>
       <dd
         aria-labelledby="my-accordion_title"
-        className="bpk-accordion__content-container bpk-accordion__content-container--collapsed"
+        className="bpk-accordion__content-container"
         id="my-accordion_content"
         role="region">
         My accordion content
@@ -106,7 +106,7 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
     </button>
   </dt>
   <div
-    className={undefined}
+    onTransitionEnd={[Function]}
     style={
       Object {
         "MozTransition": "height 200ms ease ",
@@ -121,7 +121,7 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
     <div>
       <dd
         aria-labelledby="my-accordion_title"
-        className="bpk-accordion__content-container bpk-accordion__content-container--collapsed"
+        className="bpk-accordion__content-container"
         id="my-accordion_content"
         role="region">
         My accordion content
@@ -172,7 +172,7 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
     </button>
   </dt>
   <div
-    className={undefined}
+    onTransitionEnd={[Function]}
     style={
       Object {
         "MozTransition": "height 200ms ease ",
