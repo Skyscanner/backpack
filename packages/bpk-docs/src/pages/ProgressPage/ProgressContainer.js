@@ -35,7 +35,6 @@ export default class ProgressContainer extends Component {
             min={0}
             max={100}
             value={progress}
-            onCompleteTransitionEnd={() => alert('ja')}
             {...this.props}
           />
         </div>

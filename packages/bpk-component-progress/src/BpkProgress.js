@@ -1,17 +1,25 @@
 import React, { Component, PropTypes } from 'react';
+import { bpkColorWhite } from 'bpk-tokens/tokens/base.es6';
 import clamp from 'lodash.clamp';
 
 import './bpk-progress.scss';
 
 const isTransitionEndSupported = () => !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
 
-const renderGaps = (noGaps) => {
-  const gaps = [];
-  for (let i = 1; i <= noGaps; i += 1) {
-    const left = `${100 * (i / (noGaps + 1))}%`;
-    gaps.push(<div className="bpk-progress__gap" style={{ left }} />);
+const renderSteps = (numberOfSteps, stepColor) => {
+  const steps = [];
+  for (let i = 1; i <= numberOfSteps; i += 1) {
+    const left = `${100 * (i / (numberOfSteps + 1))}%`;
+    const backgroundColor = stepColor;
+    steps.push(
+      <div
+        key={`bpk-progress__step-${i}`}
+        className="bpk-progress__step"
+        style={{ left, backgroundColor }}
+      />,
+    );
   }
-  return gaps;
+  return steps;
 };
 
 class BpkProgress extends Component {
@@ -26,8 +34,8 @@ class BpkProgress extends Component {
     if (value >= max && value !== previousProps.value) {
       this.props.onComplete();
 
-      if (!isTransitionEndSupported()) {
-        this.onCompleteTransitionEnd();
+      if (!isTransitionEndSupported() && this.props.onCompleteTransitionEnd) {
+        this.props.onCompleteTransitionEnd();
       }
     }
   }
@@ -48,6 +56,7 @@ class BpkProgress extends Component {
       stepped,
       className,
       getValueText,
+      stepColor,
       ...rest
     } = this.props;
     const classNames = ['bpk-progress'];
@@ -56,7 +65,10 @@ class BpkProgress extends Component {
 
     const adjustedValue = clamp(value, min, max);
     const percentage = 100 * (adjustedValue / (max - min));
-    const noGaps = stepped ? (max - min - 1) : 0;
+    const numberOfSteps = stepped ? (max - min - 1) : 0;
+
+    delete rest.onComplete;
+    delete rest.onCompleteTransitionEnd;
 
     return (
       <div
@@ -74,7 +86,7 @@ class BpkProgress extends Component {
           style={{ width: `${percentage}%` }}
           onTransitionEnd={this.handleCompleteTransitionEnd}
         />
-        { renderGaps(noGaps) }
+        { renderSteps(numberOfSteps, stepColor) }
       </div>
     );
   }
@@ -85,6 +97,7 @@ BpkProgress.propTypes = {
   min: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
   stepped: PropTypes.bool,
+  stepColor: PropTypes.string,
   small: PropTypes.bool,
   className: PropTypes.string,
   onComplete: PropTypes.func,
@@ -95,6 +108,7 @@ BpkProgress.propTypes = {
 BpkProgress.defaultProps = {
   className: null,
   stepped: false,
+  stepColor: bpkColorWhite,
   small: false,
   onComplete: () => null,
   onCompleteTransitionEnd: () => null,
