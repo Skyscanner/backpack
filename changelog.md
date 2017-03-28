@@ -1,17 +1,20 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2017-03-28 - Fixed disabled state color contrast for checkboxes & radio buttons and more bug fixes
 
 **Fixed:**
-- bpk-component-accordion:
+
+- bpk-component-accordion: 0.0.1 => 0.0.2
   - Content in collapsed accordions are now correctly hidden
-- bpk-component-popover:
-- bpk-component-tooltip:
+
+- bpk-component-popover: 1.0.22 => 1.0.23
+- bpk-component-tooltip: 0.0.9 => 0.0.10
   - Popovers and tooltips now flip in RTL when positioned on the side
-- bpk-svgs:
-- bpk-mixins:
-- bpk-component-checkbox:
-- bpk-component-radio:
+
+- bpk-component-checkbox: 0.1.0 => 0.1.1
+- bpk-component-radio: 0.0.54 => 0.0.55
+- bpk-mixins: 11.0.1 => 11.0.2
+- bpk-svgs: 5.1.2 => 5.1.3
   - Fixing disabled states of checkboxes and radio buttons so that they render better on gray-50 backgrounds.
 
 ## 2017-03-27 (2) - New progress bar component
