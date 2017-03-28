@@ -2,7 +2,12 @@
 
 ## UNRELEASED
 
-_Nothing yet_
+**Fixed:**
+- bpk-svgs:
+- bpk-mixins:
+- bpk-component-checkbox:
+- bpk-component-radio:
+  - Fixing disabled states of checkboxes and radio buttons so that they render better on gray-50 backgrounds.
 
 ## 2017-03-27 (2) - New progress bar component
 
