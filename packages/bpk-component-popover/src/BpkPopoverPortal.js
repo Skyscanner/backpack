@@ -2,7 +2,7 @@ import focusStore from 'a11y-focus-store';
 import focusScope from 'a11y-focus-scope';
 import { Portal } from 'bpk-react-utils';
 import React, { PropTypes, Component } from 'react';
-import Tether, { getArrowPositionCallback } from 'bpk-tether';
+import Tether, { getArrowPositionCallback, applyRTLTransforms } from 'bpk-tether';
 
 import './bpk-popover.scss';
 import BpkPopover from './BpkPopover';
@@ -23,7 +23,7 @@ class BpkPopoverPortal extends Component {
       classPrefix: 'bpk-popover-tether',
       element: popoverElement,
       target: targetElement,
-      ...this.props.tetherOptions,
+      ...applyRTLTransforms(this.props.tetherOptions),
     });
 
     this.tether.on('position', getArrowPositionCallback(popoverElement, ARROW_ID, 'bpk-popover-tether'));

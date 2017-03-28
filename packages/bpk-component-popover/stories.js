@@ -69,4 +69,20 @@ storiesOf('bpk-component-popover', module)
     <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
       <PopoverContainer labelAsTitle closeButtonIcon={false} />
     </div>
+  ))
+  .add('On the side', () => (
+    <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
+      <PopoverContainer
+        tetherOptions={{
+          attachment: 'middle left',
+          constraints: [
+            {
+              to: 'window',
+              attachment: 'together',
+              pin: true,
+            },
+          ],
+        }}
+      />
+    </div>
   ));

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import { Portal } from 'bpk-react-utils';
-import Tether, { getArrowPositionCallback } from 'bpk-tether';
+import Tether, { getArrowPositionCallback, applyRTLTransforms } from 'bpk-tether';
 
 import BpkTooltip from './BpkTooltip';
 import { ARROW_ID } from './constants';
@@ -41,7 +41,7 @@ class BpkTooltipPortal extends Component {
       classPrefix: 'bpk-tooltip-tether',
       element: tooltipElement,
       target: targetElement,
-      ...this.props.tetherOptions,
+      ...applyRTLTransforms(this.props.tetherOptions),
     });
 
     this.tether.on('position', getArrowPositionCallback(tooltipElement, ARROW_ID, 'bpk-tooltip-tether'));
