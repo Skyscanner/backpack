@@ -1,0 +1,21 @@
+{
+  "name": "bpk-component-cta-button",
+  "version": "0.0.0",
+  "description": "Backpack CTA button component.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^15.0.0"
+  },
+  "dependencies": {
+    "bpk-component-button": "^1.6.3",
+    "bpk-component-icon": "^3.0.1",
+    "bpk-component-spinner": "^1.0.31",
+    "bpk-mixins": "^11.0.1"
+  }
+}

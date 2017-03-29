@@ -47,5 +47,6 @@ export default () => (
 | selected    | bool     | false    | false         |
 | large       | bool     | false    | false         |
 | link        | bool     | false    | false         |
+| featured    | bool     | false    | false         |
 | iconOnly    | bool     | false    | false         |
 | onClick     | func     | false    | null          |

@@ -75,6 +75,9 @@ storiesOf('bpk-component-button', module)
         <BpkButton iconOnly secondary onClick={action('iconOnly button secondary clicked')}>
           <AlignedSmallLongArrowRightIcon fill={TOKENS.buttonSecondaryColor} />
         </BpkButton>&nbsp;
+        <BpkButton iconOnly destructive onClick={action('iconOnly button destructive clicked')}>
+          <AlignedSmallLongArrowRightIcon fill={TOKENS.buttonDestructiveColor} />
+        </BpkButton>&nbsp;
         <BpkButton iconOnly selected onClick={action('iconOnly button selected clicked')}>
           <AlignedSmallLongArrowRightIcon fill={TOKENS.colorWhite} />
         </BpkButton>&nbsp;
@@ -92,6 +95,9 @@ storiesOf('bpk-component-button', module)
         <BpkButton iconOnly large secondary onClick={action('large iconOnly button secondary clicked')}>
           <AlignedLargeLongArrowRightIcon fill={TOKENS.buttonSecondaryColor} />
         </BpkButton>&nbsp;
+        <BpkButton iconOnly large destructive onClick={action('large iconOnly button destructive clicked')}>
+          <AlignedLargeLongArrowRightIcon fill={TOKENS.buttonDestructiveColor} />
+        </BpkButton>&nbsp;
         <BpkButton iconOnly large selected onClick={action('large iconOnly button selected clicked')}>
           <AlignedLargeLongArrowRightIcon fill={TOKENS.colorWhite} />
         </BpkButton>&nbsp;
@@ -108,21 +114,27 @@ storiesOf('bpk-component-button', module)
     <div>
       &nbsp;<BpkButton onClick={action('primary button clicked')}>Button</BpkButton>
       &nbsp;<BpkButton secondary onClick={action('secondary button clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton destructive onClick={action('destructive button clicked')}>Button</BpkButton>
       &nbsp;<BpkButton link onClick={action('link button clicked')}>Button</BpkButton>
       &nbsp;<BpkButton featured onClick={action('featured button clicked')}>Button</BpkButton>
       &nbsp;<BpkButton large onClick={action('primary button clicked')}>Button</BpkButton>
       &nbsp;<BpkButton large secondary onClick={action('secondary button clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton large destructive onClick={action('destructive button clicked')}>Button</BpkButton>
       &nbsp;<BpkButton large link onClick={action('link button clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton large featured onClick={action('featured button clicked')}>Button</BpkButton>
     </div>
   ))
   .add('Anchor tags', () => (
     <div>
       &nbsp;<BpkButton href="#" onClick={action('primary anchor clicked')}>Button</BpkButton>
       &nbsp;<BpkButton href="#" secondary onClick={action('secondary anchor clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton href="#" destructive onClick={action('destructive anchor clicked')}>Button</BpkButton>
       &nbsp;<BpkButton href="#" link onClick={action('link anchor clicked')}>Button</BpkButton>
       &nbsp;<BpkButton href="#" featured onClick={action('featured anchor clicked')}>Button</BpkButton>
       &nbsp;<BpkButton href="#" large onClick={action('primary anchor clicked')}>Button</BpkButton>
       &nbsp;<BpkButton href="#" large secondary onClick={action('secondary anchor clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton href="#" large destructive onClick={action('destructive anchor clicked')}>Button</BpkButton>
       &nbsp;<BpkButton href="#" large link onClick={action('link anchor clicked')}>Button</BpkButton>
+      &nbsp;<BpkButton href="#" large featured onClick={action('featured anchor clicked')}>Button</BpkButton>
     </div>
   ));
