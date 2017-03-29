@@ -298,10 +298,6 @@
     border-left-width: 0;
     border-radius: 0 $bpk-select-border-radius $bpk-select-border-radius 0;
   }
-
-  &:focus {
-    position: relative; // brings outline to the front
-  }
 }
 
 /// Docked (last-child) form select input. Modifies the bpk-select mixin.
@@ -319,10 +315,6 @@
 
   @include bpk-rtl {
     border-radius: $bpk-select-border-radius 0 0 $bpk-select-border-radius;
-  }
-
-  &:focus {
-    position: relative; // brings outline to the front
   }
 }
 
@@ -343,10 +335,6 @@
   @include bpk-rtl {
     border-right-width: $bpk-select-border-width;
     border-left-width: 0;
-  }
-
-  &:focus {
-    position: relative; // brings outline to the front
   }
 }
 
