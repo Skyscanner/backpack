@@ -1,5 +1,11 @@
 # Backpack changelog
 
+## UNRELEASED
+
+**Fixed:**
+- bpk-component-accordion:
+  - Aligned `bpk-mixin` dependency
+
 ## 2017-03-28 - Fixed disabled state color contrast for checkboxes & radio buttons and more bug fixes
 
 **Fixed:**

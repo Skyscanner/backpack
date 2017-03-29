@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "bpk-component-icon": "^3.3.18",
-    "bpk-mixins": "^10.1.1"
+    "bpk-mixins": "^11.0.2"
   },
   "devDependencies": {
     "bpk-component-checkbox": "^0.1.1",
