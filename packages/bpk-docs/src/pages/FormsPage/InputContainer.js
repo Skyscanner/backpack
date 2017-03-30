@@ -14,7 +14,9 @@ class InputContainer extends Component {
 
   render() {
     const { FormComponent, ...rest } = this.props;
+
     let overrideProps = {};
+
     if (FormComponent === BpkCheckbox) {
       overrideProps = {
         checked: this.state.value,
@@ -37,7 +39,13 @@ class InputContainer extends Component {
 
 InputContainer.propTypes = {
   FormComponent: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  checked: PropTypes.bool,
+};
+
+InputContainer.defaultProps = {
+  value: null,
+  checked: false,
 };
 
 export default InputContainer;

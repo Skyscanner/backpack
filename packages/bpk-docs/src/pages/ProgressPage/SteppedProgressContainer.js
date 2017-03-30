@@ -34,7 +34,6 @@ export default class SteppedProgressContainer extends Component {
             secondary
             onClick={() => this.setProgress(this.state.progress - 1)}
             disabled={this.state.progress <= 1}
-            getValueText={(value, min, max) => `Step ${value} of ${max}`}
           >
             Back
           </BpkButton>

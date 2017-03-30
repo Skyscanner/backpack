@@ -22,6 +22,8 @@ class ProgressContainer extends Component {
   render() {
     const { steps, ...rest } = this.props;
 
+    delete rest.initialValue;
+
     return (
       <div>
         <BpkProgress
@@ -42,6 +44,7 @@ class ProgressContainer extends Component {
         <br />
         { steps.map(step => (
           <BpkButton
+            key={step}
             secondary
             onClick={() => this.handleChange(step)}
             selected={step === this.state.progress}

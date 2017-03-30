@@ -17,9 +17,7 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <ProgressContainer
-        initialValue={0}
-      />,
+      <ProgressContainer />,
     ],
   },
   {
@@ -32,10 +30,7 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <ProgressContainer
-        initialValue={0}
-        small
-      />,
+      <ProgressContainer small />,
     ],
   },
   {
