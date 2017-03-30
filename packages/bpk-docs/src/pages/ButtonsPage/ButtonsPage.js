@@ -177,23 +177,6 @@ const components = [
     ],
   },
   {
-    id: 'loading-buttons',
-    title: 'Loading buttons',
-    blurb: [
-      <BpkParagraph>
-        Loading buttons support all the same props as
-        the <BpkRouterLink to={ROUTES.BUTTONS}>button</BpkRouterLink> component. They are distinct in that they
-        encapsulate the composition of <BpkRouterLink to={ROUTES.ICONS}>icons</BpkRouterLink> as well
-        as <BpkRouterLink to={ROUTES.SPINNERS}>spinners</BpkRouterLink> to form a nice, compelling call to action.
-      </BpkParagraph>,
-    ],
-    examples: [
-      <CtaButtonContainer />,
-      ' ',
-      <CtaButtonContainer large />,
-    ],
-  },
-  {
     id: 'icon-only',
     title: 'Icon-only buttons',
     blurb: [
@@ -256,6 +239,28 @@ const components = [
   },
 ];
 
+
+const customSections = [
+  {
+    id: 'loading-buttons',
+    title: 'Loading buttons',
+    content: [
+      <BpkParagraph>
+        Loading buttons support all the same props as
+        the <BpkRouterLink to={ROUTES.BUTTONS}>button</BpkRouterLink> component. They are distinct in that they
+        encapsulate the composition of <BpkRouterLink to={ROUTES.ICONS}>icons</BpkRouterLink> as well
+        as <BpkRouterLink to={ROUTES.SPINNERS}>spinners</BpkRouterLink> to form a nice, compelling call to action.
+      </BpkParagraph>,
+    ],
+    examples: [
+      <CtaButtonContainer />,
+      ' ',
+      <CtaButtonContainer large />,
+    ],
+    readme: ctaButtonReadme,
+  },
+];
+
 const ButtonsPage = () => <DocsPageBuilder
   title="Buttons"
   blurb={[
@@ -265,8 +270,9 @@ const ButtonsPage = () => <DocsPageBuilder
     </BpkParagraph>,
   ]}
   components={components}
-  readme={buttonReadme}
   sassdocId="buttons"
+  readme={buttonReadme}
+  customSections={customSections}
 />;
 
 export default ButtonsPage;
