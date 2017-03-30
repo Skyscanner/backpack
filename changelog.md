@@ -2,12 +2,16 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-03-30 - Added new call to action button
+
 **Added:**
-- bpk-component-cta-button:
+- bpk-component-cta-button: 0.0.0 => 0.0.1
   - New call to action button component (http://backpack.prod.aws.skyscnr.com/docs/atoms/calltoactions)
 
 **Fixed:**
-- bpk-component-accordion:
+- bpk-component-accordion: 0.0.2 => 0.0.3
   - Aligned `bpk-mixin` dependency
 
 ## 2017-03-28 - Fixed disabled state color contrast for checkboxes & radio buttons and more bug fixes
