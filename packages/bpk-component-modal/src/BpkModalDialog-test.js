@@ -20,4 +20,20 @@ describe('BpkModalDialog', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly when it has a className', () => {
+    const tree = renderer.create(
+      <BpkModalDialog
+        id="my-modal"
+        className="my-classname"
+        title="Modal title"
+        onClose={() => null}
+        closeLabel="Close"
+        getApplicationElement={() => null}
+      >
+        Modal content
+      </BpkModalDialog>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -74,6 +74,7 @@ class BpkModalDialog extends Component {
 
     if (this.props.wide) { dialogClassNames.push('bpk-modal__dialog--wide'); }
     if (this.props.isIphone) { dialogClassNames.push('bpk-modal__dialog--iphone-fix'); }
+    if (this.props.className) { dialogClassNames.push(this.props.className); }
 
     const headingId = `bpk-modal-heading-${this.props.id}`;
 
@@ -129,6 +130,7 @@ class BpkModalDialog extends Component {
 
 BpkModalDialog.propTypes = {
   id: PropTypes.string.isRequired,
+  className: PropTypes.string,
   onClose: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
@@ -140,6 +142,7 @@ BpkModalDialog.propTypes = {
 };
 
 BpkModalDialog.defaultProps = {
+  className: null,
   closeLabel: null,
   closeText: null,
   isIphone: /iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : ''),

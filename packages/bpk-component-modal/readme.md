@@ -71,6 +71,7 @@ class App extends Component {
 | Property              | PropType             | Required | Default Value |
 | --------------------- | -------------------- | -------- | ------------- |
 | id                    | string               | true     | -             |
+| className             | string               | true     | -             |
 | children              | node                 | true     | -             |
 | isOpen                | bool                 | true     | -             |
 | onClose               | func                 | true     | -             |
