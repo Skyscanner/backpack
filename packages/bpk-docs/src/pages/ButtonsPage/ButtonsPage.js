@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import BpkButton from 'bpk-component-button';
 import BpkParagraph from 'bpk-component-paragraph';
 import { colors, buttons } from 'bpk-tokens/tokens/base.es6';
@@ -11,6 +11,11 @@ import TestBpkLargeTrashIcon from 'bpk-component-icon/lg/trash';
 import TestBpkSmallHelpIcon from 'bpk-component-icon/sm/help';
 import TestBpkLargeHelpIcon from 'bpk-component-icon/lg/help';
 
+import BpkCtaButton from 'bpk-component-cta-button';
+import BpkRouterLink from 'bpk-component-router-link';
+import * as ROUTES from './../../constants/routes';
+import ctaButtonReadme from 'bpk-component-cta-button/readme.md';
+
 import buttonReadme from 'bpk-component-button/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -21,6 +26,41 @@ const AlignedBpkSmallTrashIcon = alignToButton(TestBpkSmallTrashIcon);
 const AlignedBpkLargeTrashIcon = alignToLargeButton(TestBpkLargeTrashIcon);
 const AlignedBpkSmallHelpIcon = alignToButton(TestBpkSmallHelpIcon);
 const AlignedBpkLargeHelpIcon = alignToLargeButton(TestBpkLargeHelpIcon);
+
+class CtaButtonContainer extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      loading: false,
+    };
+
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    this.setState({
+      loading: true,
+    });
+  }
+
+  render() {
+    const { ...rest } = this.props;
+
+    delete rest.onClick;
+    delete rest.loading;
+
+    return (
+      <BpkCtaButton
+        loading={this.state.loading}
+        onClick={this.onClick}
+        {...this.props}
+      >
+        Search
+      </BpkCtaButton>
+    );
+  }
+}
 
 const components = [
   {
@@ -134,6 +174,23 @@ const components = [
       <BpkButton large>
         Primary <BpkLargeSpinner fill={colors.colorWhite} alignToButton />
       </BpkButton>,
+    ],
+  },
+  {
+    id: 'loading-buttons',
+    title: 'Loading buttons',
+    blurb: [
+      <BpkParagraph>
+        Loading buttons support all the same props as
+        the <BpkRouterLink to={ROUTES.BUTTONS}>button</BpkRouterLink> component. They are distinct in that they
+        encapsulate the composition of <BpkRouterLink to={ROUTES.ICONS}>icons</BpkRouterLink> as well
+        as <BpkRouterLink to={ROUTES.SPINNERS}>spinners</BpkRouterLink> to form a nice, compelling call to action.
+      </BpkParagraph>,
+    ],
+    examples: [
+      <CtaButtonContainer />,
+      ' ',
+      <CtaButtonContainer large />,
     ],
   },
   {
