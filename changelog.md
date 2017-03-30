@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+**Added:**
+- bpk-component-cta-button:
+  - New call to action button component (http://backpack.prod.aws.skyscnr.com/docs/atoms/calltoactions)
+
 **Fixed:**
 - bpk-component-accordion:
   - Aligned `bpk-mixin` dependency

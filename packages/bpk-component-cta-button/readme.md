@@ -12,9 +12,9 @@ npm install bpk-component-cta-button --save
 
 ```js
 import React from 'react';
-import { withButtonAlignment } from 'bpk-component-icon';
-import BaggageIcon from 'bpk-component-icon/sm/baggage';
 import BpkCtaButton from 'bpk-component-cta-button';
+import BaggageIcon from 'bpk-component-icon/sm/baggage';
+import { withButtonAlignment } from 'bpk-component-icon';
 
 const AlignedBaggageIcon = withButtonAlignment(BaggageIcon);
 const icon = <AlignedBaggageIcon />;
@@ -28,10 +28,7 @@ export default () => (
     <BpkCtaButton iconOnly>
       <span className="visually-hidden">Search</span>
     </BpkCtaButton>
-    <BpkCtaButton
-      icon={icon}
-      iconDisabled={icon}
-    >Custom Icon</BpkCtaButton>
+    <BpkCtaButton icon={icon} iconDisabled={icon}>Custom Icon</BpkCtaButton>
   </div>
 );
 ```
@@ -40,20 +37,11 @@ export default () => (
 
 | Property     | PropType | Required | Default Value |
 | ------------ | -------- | -------- | ------------- |
-| children     | -        | true     | -             |
-| href         | string   | false    | null          |
+| children     | node     | true     | -             |
 | className    | string   | false    | null          |
 | disabled     | bool     | false    | false         |
 | loading      | bool     | false    | false         |
-| submit       | bool     | false    | false         |
-| secondary    | bool     | false    | false         |
-| destructive  | bool     | false    | false         |
-| selected     | bool     | false    | false         |
-| large        | bool     | false    | false         |
-| link         | bool     | false    | false         |
-| featured     | bool     | false    | false         |
 | iconOnly     | bool     | false    | false         |
-| onClick      | func     | false    | null          |
 | icon         | element  | false    | null          |
 | iconSelected | element  | false    | null          |
 | iconDisabled | element  | false    | null          |

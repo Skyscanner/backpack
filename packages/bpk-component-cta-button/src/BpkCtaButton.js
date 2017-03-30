@@ -8,7 +8,6 @@ import ArrowIconLg from 'bpk-component-icon/lg/long-arrow-right';
 
 import './bpk-cta-button.scss';
 
-
 const getPropsIcon = (props) => {
   const {
     disabled,
@@ -82,30 +81,23 @@ const BpkCtaButton = (props) => {
   const spacer = (iconOnly) ? '' : '\u00A0';
 
   return (
-    <BpkButton disabled={showBtnDisabled} iconOnly={iconOnly} className={classNames.join(' ')} {...rest}>
+    <BpkButton
+      iconOnly={iconOnly}
+      disabled={showBtnDisabled}
+      className={classNames.join(' ')}
+      {...rest}
+    >
       {children}{spacer}{ctaIcon}
     </BpkButton>
   );
 };
 
 BpkCtaButton.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-  href: PropTypes.string,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
-  onClick: PropTypes.func,
-  submit: PropTypes.bool,
-  secondary: PropTypes.bool,
-  selected: PropTypes.bool,
-  destructive: PropTypes.bool,
-  large: PropTypes.bool,
-  link: PropTypes.bool,
   iconOnly: PropTypes.bool,
-  featured: PropTypes.bool,
   icon: PropTypes.element,
   iconSelected: PropTypes.element,
   iconDisabled: PropTypes.element,
@@ -113,19 +105,10 @@ BpkCtaButton.propTypes = {
 };
 
 BpkCtaButton.defaultProps = {
-  href: null,
   className: null,
   disabled: false,
   loading: false,
-  onClick: null,
-  submit: false,
-  secondary: false,
-  selected: false,
-  destructive: false,
-  large: false,
-  link: false,
   iconOnly: false,
-  featured: false,
   icon: null,
   iconSelected: null,
   iconDisabled: null,
