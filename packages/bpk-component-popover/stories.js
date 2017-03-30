@@ -12,10 +12,13 @@ class PopoverContainer extends Component {
 
     this.state = {
       isOpen: false,
+      showLongContent: false,
     };
 
     this.openPopover = this.openPopover.bind(this);
     this.closePopover = this.closePopover.bind(this);
+    this.changeContent = this.changeContent.bind(this);
+    this.changeTarget = this.changeTarget.bind(this);
   }
 
   openPopover() {
@@ -30,19 +33,31 @@ class PopoverContainer extends Component {
     });
   }
 
+  changeContent() {
+    this.setState({
+      showLongContent: true,
+    });
+  }
+
+  changeTarget() {
+    this.setState({
+      changedTarget: () => document.getElementById('reposition-alt-target'),
+    });
+  }
+
   render() {
-    const { targetFunction, ...props } = this.props;
+    const { targetFunction, changeProps, ...rest } = this.props;
     let target = null;
-    let openButton = null;
+    let openButton = <BpkButton onClick={this.openPopover}> Open </BpkButton>;
 
     if (targetFunction != null) {
       target = targetFunction;
-      openButton = <BpkButton onClick={this.openPopover}> Open </BpkButton>;
+    } else if (this.state.changedTarget) {
+      target = this.state.changedTarget;
     } else {
-      target = <BpkButton onClick={this.openPopover}> Open </BpkButton>;
+      target = openButton;
       openButton = null;
     }
-
     return (
       <div>
         {openButton}
@@ -53,11 +68,28 @@ class PopoverContainer extends Component {
           isOpen={this.state.isOpen}
           label="My popover"
           closeButtonText="Close"
-          {...props}
+          {...rest}
         >
           <BpkContentContainer>
             <BpkParagraph>My popover content.</BpkParagraph>
             <BpkParagraph>Some more popover content.</BpkParagraph>
+            { changeProps
+              ? <BpkParagraph>
+                <BpkButton onClick={this.changeContent}>
+                    Change content
+                </BpkButton>
+                <BpkButton onClick={this.changeTarget}>
+                    Change target
+                </BpkButton>
+              </BpkParagraph>
+              : null }
+            { this.state.showLongContent
+              ? <BpkParagraph>
+                  This is some long content.
+                  This is some long content.
+                  This is some long content.
+                </BpkParagraph>
+              : null }
           </BpkContentContainer>
         </BpkPopover>
       </div>
@@ -65,12 +97,14 @@ class PopoverContainer extends Component {
   }
 }
 
-PopoverContainer.defaultProps = {
-  targetFunction: null,
+PopoverContainer.propTypes = {
+  changeProps: PropTypes.bool,
+  targetFunction: PropTypes.string,
 };
 
-PopoverContainer.propTypes = {
-  targetFunction: PropTypes.string,
+PopoverContainer.defaultProps = {
+  changeProps: false,
+  targetFunction: null,
 };
 
 storiesOf('bpk-component-popover', module)
@@ -110,5 +144,24 @@ storiesOf('bpk-component-popover', module)
       <div id="attachElement">Pop over attached here</div>
       <p>&nbsp; </p>
       <PopoverContainer targetFunction={() => document.getElementById('attachElement')} />
+    </div>
+  ))
+  .add('Repositioning', () => (
+    // This story demonstrates the popover repositioning itself when props change (including children).
+    <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
+      <BpkParagraph id="reposition-alt-target" style={{ float: 'right' }}>Different target</BpkParagraph>
+      <PopoverContainer
+        changeProps
+        tetherOptions={{
+          attachment: 'top center',
+          constraints: [
+            {
+              to: document.getElementById('root'),
+              attachment: 'together',
+              pin: true,
+            },
+          ],
+        }}
+      />
     </div>
   ));

@@ -129,4 +129,73 @@ describe('BpkPopoverPortal', () => {
       });
     });
   });
+
+  it('should reposition when props are updated', (done) => {
+    const portal = mount(
+      <BpkPopoverPortal
+        id="my-popover"
+        target={<div>target</div>}
+        isOpen={false}
+        onClose={() => null}
+        label="My popover"
+        closeButtonText="Close"
+      >
+        <div>My popover content</div>
+      </BpkPopoverPortal>,
+    );
+
+    portal.instance().position = jest.fn();
+
+    portal.setProps({ isOpen: true }, () => {
+      expect(portal.instance().position.mock.calls.length).toBe(1);
+      portal.setProps({ target: <div>another target</div> }, () => {
+        expect(portal.instance().position.mock.calls.length).toBe(2);
+        done();
+      });
+    });
+  });
+
+  it('should not reposition if not open', (done) => {
+    const portal = mount(
+      <BpkPopoverPortal
+        id="my-popover"
+        target={<div>target</div>}
+        isOpen
+        onClose={() => null}
+        label="My popover"
+        closeButtonText="Close"
+      >
+        <div>My popover content</div>
+      </BpkPopoverPortal>,
+    );
+
+    portal.instance().position = jest.fn();
+
+    portal.setProps({ isOpen: false }, () => {
+      expect(portal.instance().position.mock.calls.length).toBe(0);
+      done();
+    });
+  });
+
+  it('should not create multiple tether instances when repositioning', (done) => {
+    const portal = mount(
+      <BpkPopoverPortal
+        id="my-popover"
+        target={<div>target</div>}
+        isOpen
+        onClose={() => null}
+        label="My popover"
+        closeButtonText="Close"
+      >
+        <div>My popover content</div>
+      </BpkPopoverPortal>,
+    );
+
+    const tether = portal.instance().tether;
+
+    portal.setProps({ target: <div>another target</div> }, () => {
+      expect(portal.instance().tether).toBe(tether);
+      done();
+    });
+  });
 });

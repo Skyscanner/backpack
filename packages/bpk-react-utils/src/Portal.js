@@ -27,28 +27,22 @@ class Portal extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.isOpen) {
-      if (!this.props.isOpen) {
-        this.open();
-      }
-
-      return;
-    }
-
+  componentDidUpdate(prevProps) {
     if (this.props.isOpen) {
-      if (nextProps.beforeClose) {
-        nextProps.beforeClose(this.close);
+      if (!prevProps.isOpen) {
+        this.open();
+        return;
+      }
+    } else if (prevProps.isOpen) {
+      if (this.props.beforeClose) {
+        this.props.beforeClose(this.close);
       } else {
         this.close();
       }
+      return;
     }
-  }
 
-  componentDidUpdate() {
-    if (this.portalElement) {
-      render(this.props.children, this.portalElement);
-    }
+    this.renderPortal();
   }
 
   componentWillUnmount() {
@@ -103,7 +97,7 @@ class Portal extends Component {
       this.portalElement.className = this.props.className;
     }
 
-    this.componentDidUpdate();
+    this.renderPortal();
     this.props.onOpen(this.portalElement, this.getTargetElement());
   }
 
@@ -120,6 +114,16 @@ class Portal extends Component {
     this.portalElement = null;
   }
 
+  renderPortal() {
+    if (this.portalElement) {
+      render(this.props.children, this.portalElement, () => {
+        if (this.props.isOpen) {
+          this.props.onRender(this.portalElement, this.getTargetElement());
+        }
+      });
+    }
+  }
+
   render() {
     return typeof this.props.target === 'function' ? null : this.props.target;
   }
@@ -131,6 +135,7 @@ Portal.propTypes = {
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
   onOpen: PropTypes.func,
   onClose: PropTypes.func,
+  onRender: PropTypes.func,
   targetRef: PropTypes.func,
   beforeClose: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
@@ -141,6 +146,7 @@ Portal.defaultProps = {
   target: null,
   onOpen: () => null,
   onClose: () => null,
+  onRender: () => null,
   targetRef: null,
   beforeClose: null,
   style: null,

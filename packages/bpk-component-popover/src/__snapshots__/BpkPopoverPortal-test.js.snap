@@ -5,6 +5,7 @@ exports[`BpkPopoverPortal Custom Portal props should render correctly with porta
   isOpen={false}
   onClose={[Function]}
   onOpen={[Function]}
+  onRender={[Function]}
   style={null}
   target={
     <div>
@@ -35,6 +36,7 @@ exports[`BpkPopoverPortal Custom Portal props should render correctly with porta
   isOpen={false}
   onClose={[Function]}
   onOpen={[Function]}
+  onRender={[Function]}
   style={
     Object {
       "color": "red",
