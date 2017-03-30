@@ -38,7 +38,7 @@ class ModalContainer extends Component {
         <div id="application-container">
           <BpkButton onClick={this.onOpen}>{buttonText}</BpkButton>
         </div>
-        <BpkModal id="my-modal" isOpen={this.state.isOpen} onClose={this.onClose} {...rest} />
+        <BpkModal id="my-modal" className="my-classname" isOpen={this.state.isOpen} onClose={this.onClose} {...rest} />
       </div>
     );
   }
