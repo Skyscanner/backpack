@@ -6,7 +6,7 @@ _Nothing yet..._
 
 ## 2017-03-31 - Popovers can now attach to native DOM elements
 
-**Added:**
+**Changed:**
 - bpk-component-modal: 1.0.23 => 1.0.24
   - Added the ability to pass a custom `className`
 
