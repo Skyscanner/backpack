@@ -79,6 +79,9 @@ class Portal extends Component {
   }
 
   getTargetElement() {
+    if (typeof this.props.target === 'function') {
+      return this.props.target();
+    }
     return this.props.target && findDOMNode(this);
   }
 
@@ -118,14 +121,14 @@ class Portal extends Component {
   }
 
   render() {
-    return this.props.target;
+    return typeof this.props.target === 'function' ? null : this.props.target;
   }
 }
 
 Portal.propTypes = {
   children: PropTypes.node.isRequired,
   isOpen: PropTypes.bool.isRequired,
-  target: PropTypes.element,
+  target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
   onOpen: PropTypes.func,
   onClose: PropTypes.func,
   targetRef: PropTypes.func,
