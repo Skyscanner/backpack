@@ -2,7 +2,13 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-component-modal:
+  - Added the ability to pass a custom `className`
+
+- bpk-component-popover:
+- bpk-react-utils:
+  - Added the ability to pass a function which returns a dom element to target prop
 
 ## 2017-03-30 - Added new call to action button
 

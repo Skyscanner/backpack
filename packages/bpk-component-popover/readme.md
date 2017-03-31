@@ -77,19 +77,17 @@ class App extends Component {
 | portalStyle           | object                        | false    | null          |
 | portalClassName       | string                        | false    | null          |
 
-When target is a function it needs to return a DOM element. This allows attaching the popover to an already rendered DOM element. 
+In order to attach the popover to a regular DOM element, provide a function which returns it to `target`:
 
-```
-  <BpkPopover
-    id="my-popover"
-    target={
-      () = > document.getElementById('mydiv');
-    }
-    onClose={this.closePopover}
-    isOpen={this.state.isOpen}
-    label="My popover"
-    closeButtonText="Close"
-  >
-    <BpkParagraph>My popover content</BpkParagraph>
-  </BpkPopover>
+```js
+<BpkPopover
+  id="my-popover"
+  target={() => document.getElementById('mydiv')}
+  onClose={this.closePopover}
+  isOpen={this.state.isOpen}
+  label="My popover"
+  closeButtonText="Close"
+>
+  <BpkParagraph>My popover content</BpkParagraph>
+</BpkPopover>
 ```
