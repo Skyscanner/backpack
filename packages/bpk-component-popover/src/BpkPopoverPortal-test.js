@@ -35,6 +35,23 @@ describe('BpkPopoverPortal', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should not render anything if target is a function', () => {
+    const tree = renderer.create(
+      <BpkPopoverPortal
+        id="my-popover"
+        target={() => 'test'}
+        isOpen={false}
+        onClose={() => null}
+        label="My popover"
+        closeButtonText="Close"
+      >
+        <div>My popover content</div>
+      </BpkPopoverPortal>,
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
   describe('Custom Portal props', () => {
     // Changing the props of the <Portal> component will not affect the rendered
     // output. Thus we need to do shallow rendering to test the correct props

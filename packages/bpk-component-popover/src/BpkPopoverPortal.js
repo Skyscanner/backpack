@@ -74,7 +74,7 @@ class BpkPopoverPortal extends Component {
 }
 
 BpkPopoverPortal.propTypes = {
-  target: PropTypes.element.isRequired,
+  target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]).isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   tetherOptions: PropTypes.shape({

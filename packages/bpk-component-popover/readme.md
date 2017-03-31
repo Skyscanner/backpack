@@ -65,7 +65,7 @@ class App extends Component {
 | --------------------- | ----------------------------- | -------- | ------------- |
 | id                    | string                        | true     | -             |
 | children              | node                          | true     | -             |
-| target                | element                       | true     | -             |
+| target                | element || func               | true     | -             |
 | isOpen                | bool                          | true     | -             |
 | onClose               | func                          | true     | -             |
 | label                 | string                        | true     | -             |
@@ -76,3 +76,20 @@ class App extends Component {
 | closeButtonIcon       | bool                          | false    | true          |
 | portalStyle           | object                        | false    | null          |
 | portalClassName       | string                        | false    | null          |
+
+When target is a function it needs to return a DOM element. This allows attaching the popover to an already rendered DOM element. 
+
+```
+  <BpkPopover
+    id="my-popover"
+    target={
+      () = > document.getElementById('mydiv');
+    }
+    onClose={this.closePopover}
+    isOpen={this.state.isOpen}
+    label="My popover"
+    closeButtonText="Close"
+  >
+    <BpkParagraph>My popover content</BpkParagraph>
+  </BpkPopover>
+```
