@@ -2,12 +2,16 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-03-31 - Popovers can now attach to native DOM elements
+
 **Added:**
-- bpk-component-modal:
+- bpk-component-modal: 1.0.23 => 1.0.24
   - Added the ability to pass a custom `className`
 
-- bpk-component-popover:
-- bpk-react-utils:
+- bpk-component-popover: 1.0.24 => 1.0.25
+- bpk-react-utils: 1.3.2 => 1.3.3
   - Added the ability to pass a function which returns a dom element to target prop
 
 ## 2017-03-30 - Added new call to action button
