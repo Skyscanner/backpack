@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-cta-button",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Backpack CTA button component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-component-button": "^1.6.7",
+    "bpk-component-button": "^1.6.8",
     "bpk-component-icon": "^3.3.19",
     "bpk-component-spinner": "^1.0.49",
     "bpk-mixins": "^11.0.3"
