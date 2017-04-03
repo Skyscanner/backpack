@@ -168,4 +168,3 @@ DocsPageBuilder.defaultProps = {
 };
 
 export default DocsPageBuilder;
-export { ComponentExample };

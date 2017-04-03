@@ -12,7 +12,7 @@ npm install bpk-component-datepicker --save
 
 ```js
 import React, { Component } from 'react';
-import BpkCalendar from 'bpk-component-calendar';
+import BpkDatepicker from 'bpk-component-datepicker';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 import format from 'date-fns/format';
 

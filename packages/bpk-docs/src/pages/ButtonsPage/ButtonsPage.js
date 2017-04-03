@@ -11,14 +11,13 @@ import TestBpkLargeTrashIcon from 'bpk-component-icon/lg/trash';
 import TestBpkSmallHelpIcon from 'bpk-component-icon/sm/help';
 import TestBpkLargeHelpIcon from 'bpk-component-icon/lg/help';
 
-import BpkCtaButton from 'bpk-component-cta-button';
+import BpkLoadingButton from 'bpk-component-loading-button';
 import BpkRouterLink from 'bpk-component-router-link';
-import * as ROUTES from './../../constants/routes';
-import ctaButtonReadme from 'bpk-component-cta-button/readme.md';
-
 import buttonReadme from 'bpk-component-button/readme.md';
+import loadingButtonReadme from 'bpk-component-loading-button/readme.md';
 
-import DocsPageBuilder, { ComponentExample } from './../../components/DocsPageBuilder';
+import * as ROUTES from './../../constants/routes';
+import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const AlignedBpkSmallArrowIcon = alignToButton(TestBpkSmallArrowIcon);
 const AlignedBpkLargeArrowIcon = alignToLargeButton(TestBpkLargeArrowIcon);
@@ -27,7 +26,7 @@ const AlignedBpkLargeTrashIcon = alignToLargeButton(TestBpkLargeTrashIcon);
 const AlignedBpkSmallHelpIcon = alignToButton(TestBpkSmallHelpIcon);
 const AlignedBpkLargeHelpIcon = alignToLargeButton(TestBpkLargeHelpIcon);
 
-class CtaButtonContainer extends Component {
+class LoadingButtonContainer extends Component {
   constructor() {
     super();
 
@@ -55,13 +54,13 @@ class CtaButtonContainer extends Component {
     delete rest.loading;
 
     return (
-      <BpkCtaButton
+      <BpkLoadingButton
         loading={this.state.loading}
         onClick={this.onClick}
         {...this.props}
       >
         Search
-      </BpkCtaButton>
+      </BpkLoadingButton>
     );
   }
 }
@@ -256,11 +255,11 @@ const customSections = [
       </BpkParagraph>,
     ],
     examples: [
-      <CtaButtonContainer />,
+      <LoadingButtonContainer />,
       ' ',
-      <CtaButtonContainer large />,
+      <LoadingButtonContainer large />,
     ],
-    readme: ctaButtonReadme,
+    readme: loadingButtonReadme,
   },
 ];
 

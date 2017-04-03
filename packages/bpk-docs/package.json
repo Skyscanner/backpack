@@ -28,7 +28,7 @@
     "bpk-component-checkbox": "^0.1.2",
     "bpk-component-code": "^0.0.59",
     "bpk-component-content-container": "^1.0.50",
-    "bpk-component-cta-button": "^0.0.2",
+    "bpk-component-loading-button": "^0.0.2",
     "bpk-component-datepicker": "^5.0.24",
     "bpk-component-grid": "^1.0.9",
     "bpk-component-grid-toggle": "^0.0.66",
