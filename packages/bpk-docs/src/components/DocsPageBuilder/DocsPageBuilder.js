@@ -90,6 +90,15 @@ const ComponentExample = (component) => {
 const CustomSection = section => [
   <BpkHeading id={section.id} level="h2">{section.title}</BpkHeading>,
   flatten(section.content.map(toNodes)),
+  section.examples
+    ? <PresentationBlock>{flatten(section.examples)}</PresentationBlock>
+    : null,
+  section.readme
+    ? flatten([
+      <BpkHeading id="readme" level="h3">Readme</BpkHeading>,
+      <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(section.readme) }} bareHtml />,
+    ])
+    : null,
 ];
 
 const DocsPageBuilder = props => (
@@ -97,7 +106,7 @@ const DocsPageBuilder = props => (
     <Helmet title={props.title} />
     <BpkHeading level="h1">{props.title}</BpkHeading>
     {flatten(toNodes(props.blurb))}
-    <BpkList>{flatten(props.components.map(ExampleNavListItem))}</BpkList>
+    <BpkList>{flatten([...props.components, ...props.customSections].map(ExampleNavListItem))}</BpkList>
     {props.tokenMap ? toTokenTable(props.tokenMap) : null}
     {flatten(props.components.map(ComponentExample))}
     {props.readme ? flatten([
@@ -159,3 +168,4 @@ DocsPageBuilder.defaultProps = {
 };
 
 export default DocsPageBuilder;
+export { ComponentExample };

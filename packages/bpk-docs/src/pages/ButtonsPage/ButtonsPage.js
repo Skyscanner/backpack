@@ -18,7 +18,7 @@ import ctaButtonReadme from 'bpk-component-cta-button/readme.md';
 
 import buttonReadme from 'bpk-component-button/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import DocsPageBuilder, { ComponentExample } from './../../components/DocsPageBuilder';
 
 const AlignedBpkSmallArrowIcon = alignToButton(TestBpkSmallArrowIcon);
 const AlignedBpkLargeArrowIcon = alignToLargeButton(TestBpkLargeArrowIcon);
@@ -42,6 +42,10 @@ class CtaButtonContainer extends Component {
     this.setState({
       loading: true,
     });
+    setTimeout(
+      () => this.setState({ loading: false }),
+      2000,
+    );
   }
 
   render() {
@@ -238,7 +242,6 @@ const components = [
     ],
   },
 ];
-
 
 const customSections = [
   {
