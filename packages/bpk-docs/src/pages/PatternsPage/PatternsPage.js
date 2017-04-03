@@ -1,9 +1,6 @@
 import React from 'react';
 import BpkParagraph from 'bpk-component-paragraph';
-import { BpkList, BpkListItem } from 'bpk-component-list';
-import { BpkCodeBlock, BpkCode } from 'bpk-component-code';
 
-import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 
