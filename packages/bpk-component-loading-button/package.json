@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-loading-button",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Backpack loading button component.",
   "main": "index.js",
   "repository": {
