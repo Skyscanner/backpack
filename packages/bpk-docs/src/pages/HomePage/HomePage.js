@@ -35,8 +35,8 @@ class HomePage extends React.Component {
           <BpkGridContainer>
             <BpkGridRow>
               <BpkGridColumn width={12}>
-                <BpkHeading level="h1">Backpack</BpkHeading>
-                <BpkHeading level="h2">
+                <BpkHeading level="h1" className="bpkdocs-home-page__heading1">Backpack</BpkHeading>
+                <BpkHeading level="h2" className="bpkdocs-home-page__heading2">
                   Backpack is a collection of design resources, reusable components and guidelines for creating
                   Skyscanner products.
                 </BpkHeading>
