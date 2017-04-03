@@ -1,18 +1,18 @@
-# bpk-component-cta-button
+# bpk-component-loading-button
 
-> Backpack CTA button component.
+> Backpack loading button component.
 
 ## Installation
 
 ```sh
-npm install bpk-component-cta-button --save
+npm install bpk-component-loading-button --save
 ```
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkCtaButton from 'bpk-component-cta-button';
+import BpkLoadingButton from 'bpk-component-loading-button';
 import BaggageIcon from 'bpk-component-icon/sm/baggage';
 import { withButtonAlignment } from 'bpk-component-icon';
 
@@ -21,14 +21,14 @@ const icon = <AlignedBaggageIcon />;
 
 export default () => (
   <div>
-    <BpkCtaButton>Primary</BpkCtaButton>
-    <BpkCtaButton large>Large primary</BpkCtaButton>
-    <BpkCtaButton selected>Selected</BpkCtaButton>
-    <BpkCtaButton secondary>Secondary</BpkCtaButton>
-    <BpkCtaButton iconOnly>
+    <BpkLoadingButton>Primary</BpkLoadingButton>
+    <BpkLoadingButton large>Large primary</BpkLoadingButton>
+    <BpkLoadingButton selected>Selected</BpkLoadingButton>
+    <BpkLoadingButton secondary>Secondary</BpkLoadingButton>
+    <BpkLoadingButton iconOnly>
       <span className="visually-hidden">Search</span>
-    </BpkCtaButton>
-    <BpkCtaButton icon={icon} iconDisabled={icon}>Custom Icon</BpkCtaButton>
+    </BpkLoadingButton>
+    <BpkLoadingButton icon={icon} iconDisabled={icon}>Custom Icon</BpkLoadingButton>
   </div>
 );
 ```

@@ -19,7 +19,6 @@ export const ANIMATION = '/docs/bonds/animation';
 export const ATOMS = '/docs/atoms';
 export const TYPOGRAPHY = '/docs/atoms/typography';
 export const BUTTONS = '/docs/atoms/buttons';
-export const CALLTOACTIONS = '/docs/atoms/calltoactions';
 export const ICONS = '/docs/atoms/icons';
 export const SPINNERS = '/docs/atoms/spinners';
 export const FORMS = '/docs/atoms/forms';

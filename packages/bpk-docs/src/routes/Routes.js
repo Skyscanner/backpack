@@ -23,7 +23,6 @@ import AnimationPage from './../pages/AnimationPage';
 
 import TypographyPage from './../pages/TypographyPage';
 import ButtonsPage from './../pages/ButtonsPage';
-import CallToActionsPage from './../pages/CallToActionsPage';
 import IconsPage from './../pages/IconsPage';
 import SpinnersPage from './../pages/SpinnersPage';
 import FormsPage from './../pages/FormsPage';
@@ -67,7 +66,6 @@ const Routes = (
         <IndexRedirect to={ROUTES.TYPOGRAPHY} />
         <Route path={ROUTES.TYPOGRAPHY} component={TypographyPage} />
         <Route path={ROUTES.BUTTONS} component={ButtonsPage} />
-        <Route path={ROUTES.CALLTOACTIONS} component={CallToActionsPage} />
         <Route path={ROUTES.ICONS} component={IconsPage} />
         <Route path={ROUTES.SPINNERS} component={SpinnersPage} />
         <Route path={ROUTES.FORMS} component={FormsPage} />

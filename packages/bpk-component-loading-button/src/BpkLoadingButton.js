@@ -6,7 +6,7 @@ import { withButtonAlignment, withLargeButtonAlignment } from 'bpk-component-ico
 import ArrowIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import ArrowIconLg from 'bpk-component-icon/lg/long-arrow-right';
 
-import './bpk-cta-button.scss';
+import './bpk-loading-button.scss';
 
 const getPropsIcon = (props) => {
   const {
@@ -54,7 +54,7 @@ const getDefaultIcon = (props) => {
   return getEnabledIcon(large);
 };
 
-const BpkCtaButton = (props) => {
+const BpkLoadingButton = (props) => {
   const {
     children,
     className,
@@ -70,15 +70,11 @@ const BpkCtaButton = (props) => {
 
   const showBtnDisabled = disabled || loading;
 
-  const classNames = ['bpk-cta-button'];
+  const classNames = ['bpk-loading-button'];
   if (className) { classNames.push(className); }
 
-  let ctaIcon = getPropsIcon(props);
-  if (!ctaIcon) {
-    ctaIcon = getDefaultIcon(props);
-  }
-
   const spacer = (iconOnly) ? '' : '\u00A0';
+  const buttonIcon = getPropsIcon(props) || getDefaultIcon(props);
 
   return (
     <BpkButton
@@ -87,12 +83,12 @@ const BpkCtaButton = (props) => {
       className={classNames.join(' ')}
       {...rest}
     >
-      {children}{spacer}{ctaIcon}
+      {children}{spacer}{buttonIcon}
     </BpkButton>
   );
 };
 
-BpkCtaButton.propTypes = {
+BpkLoadingButton.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
@@ -104,7 +100,7 @@ BpkCtaButton.propTypes = {
   iconLoading: PropTypes.element,
 };
 
-BpkCtaButton.defaultProps = {
+BpkLoadingButton.defaultProps = {
   className: null,
   disabled: false,
   loading: false,
@@ -115,4 +111,4 @@ BpkCtaButton.defaultProps = {
   iconLoading: null,
 };
 
-export default BpkCtaButton;
+export default BpkLoadingButton;

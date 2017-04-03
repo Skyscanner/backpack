@@ -31,7 +31,6 @@ configure(() => {
   require('./../packages/bpk-component-close-button/stories');
   require('./../packages/bpk-component-code/stories');
   require('./../packages/bpk-component-content-container/stories');
-  require('./../packages/bpk-component-cta-button/stories');
   require('./../packages/bpk-component-datepicker/stories');
   require('./../packages/bpk-component-grid/stories');
   require('./../packages/bpk-component-grid-toggle/stories');
@@ -41,6 +40,7 @@ configure(() => {
   require('./../packages/bpk-component-label/stories');
   require('./../packages/bpk-component-link/stories');
   require('./../packages/bpk-component-list/stories');
+  require('./../packages/bpk-component-loading-button/stories');
   require('./../packages/bpk-component-modal/stories');
   require('./../packages/bpk-component-nudger/stories');
   require('./../packages/bpk-component-paragraph/stories');

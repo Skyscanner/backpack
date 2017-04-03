@@ -1,7 +1,7 @@
 {
-  "name": "bpk-component-cta-button",
+  "name": "bpk-component-loading-button",
   "version": "0.0.2",
-  "description": "Backpack CTA button component.",
+  "description": "Backpack loading button component.",
   "main": "index.js",
   "repository": {
     "type": "git",
