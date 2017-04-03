@@ -5,6 +5,7 @@ import * as ROUTES from './../constants/routes';
 
 import DefaultLayout from './../layouts/DefaultLayout';
 import DocsLayout from './../layouts/DocsLayout';
+import GettingStartedLayout from './../layouts/GettingStartedLayout';
 
 import HomePage from './../pages/HomePage';
 
@@ -13,6 +14,8 @@ import BackpackReactScriptsPage from './../pages/BackpackReactScriptsPage';
 import ContributingPage from './../pages/ContributingPage';
 import BaseStylesheetPage from './../pages/BaseStylesheetPage';
 import InternationalisationPage from './../pages/InternationalisationPage';
+
+import StylePage from './../pages/StylePage';
 
 import ColorsPage from './../pages/ColorsPage';
 import TypesettingPage from './../pages/TypesettingPage';
@@ -40,19 +43,28 @@ import AccordionsPage from './../pages/AccordionsPage';
 import NudgersPage from './../pages/NudgersPage';
 import ProgressPage from './../pages/ProgressPage';
 
+import PatternsPage from './../pages/PatternsPage';
+
 import ResourcesPage from './../pages/ResourcesPage';
 import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages';
 
 const Routes = (
   <Route path={ROUTES.HOME} component={DefaultLayout}>
     <IndexRoute component={withRouter(HomePage)} />
-    <Route path={ROUTES.DOCS} component={DocsLayout}>
+
+    <Route path={ROUTES.GETTING_STARTED_INDEX} component={GettingStartedLayout}>
       <IndexRedirect to={ROUTES.GETTING_STARTED} />
       <Route path={ROUTES.GETTING_STARTED} component={GettingStartedPage} />
       <Route path={ROUTES.BACKPACK_REACT_SCRIPTS} component={BackpackReactScriptsPage} />
       <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
       <Route path={ROUTES.CONTRIBUTING} component={ContributingPage} />
       <Route path={ROUTES.I18N} component={InternationalisationPage} />
+    </Route>
+
+    <Route path={ROUTES.STYLE} component={StylePage} />
+
+    <Route path={ROUTES.DOCS} component={DocsLayout}>
+      <IndexRedirect to={ROUTES.BONDS} />
       <Route path={ROUTES.BONDS}>
         <IndexRedirect to={ROUTES.COLORS} />
         <Route path={ROUTES.COLORS} component={ColorsPage} />
@@ -86,6 +98,7 @@ const Routes = (
         <Route path={ROUTES.PROGRESS} component={ProgressPage} />
       </Route>
     </Route>
+    <Route path={ROUTES.PATTERNS} component={PatternsPage} />
     <Route path={ROUTES.RESOURCES} component={ResourcesPage} />
     <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridColumnDemoPage} />
     <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridOffsetDemoPage} />

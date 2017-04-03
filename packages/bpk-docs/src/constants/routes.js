@@ -1,12 +1,15 @@
 export const HOME = '/';
 
 export const DOCS = '/components';
+export const GETTING_STARTED_INDEX = '/getting-started-index';
 
 export const GETTING_STARTED = '/docs/getting-started';
 export const BACKPACK_REACT_SCRIPTS = '/docs/backpack-react-scripts';
 export const BASE_STYLESHEET = '/docs/base-stylesheet';
 export const CONTRIBUTING = '/docs/contributing';
 export const I18N = '/docs/i18n';
+
+export const STYLE = '/style';
 
 export const BONDS = '/docs/bonds';
 export const COLORS = '/docs/bonds/colors';
@@ -36,6 +39,8 @@ export const TOOLTIPS = '/docs/molecules/tooltips';
 export const ACCORDIONS = '/docs/molecules/accordions';
 export const NUDGERS = '/docs/molecules/nudgers';
 export const PROGRESS = '/docs/molecules/progress';
+
+export const PATTERNS = '/patterns';
 
 export const RESOURCES = '/resources';
 

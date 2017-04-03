@@ -19,7 +19,7 @@ const ResourcesPage = () => (
     <BpkGridRow>
       <BpkGridColumn width={12}>
         <BpkContentContainer>
-          <BpkHeading level="h1">Downloads</BpkHeading>
+          <BpkHeading level="h1">Resources</BpkHeading>
           <BpkParagraph>Here you can find a variety of resources to help you design Skyscanner products:</BpkParagraph>
           <BpkHeading level="h2">Color palettes</BpkHeading>
           <BpkHeading level="h3">Core</BpkHeading>
