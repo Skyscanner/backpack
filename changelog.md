@@ -2,13 +2,17 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-04-03 - Replacing bpk-component-cta-button with bpk-component-loading-button
+
 **Changed:**
 - bpk-component-cta-button:
   - **This component has been deprecated**
   - Consumers should now use `bpk-component-loading-button` instead
 
 **Added:**
-- bpk-component-loading-button:
+- bpk-component-loading-button: 0.0.0 => 0.0.3
   - Replaces `bpk-component-cta-button`
 
 ## 2017-03-31 - Popovers can now attach to native DOM elements
