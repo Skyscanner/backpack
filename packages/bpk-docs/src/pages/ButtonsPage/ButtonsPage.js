@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import BpkButton from 'bpk-component-button';
 import BpkParagraph from 'bpk-component-paragraph';
 import { colors, buttons } from 'bpk-tokens/tokens/base.es6';
-import { BpkSpinner, BpkLargeSpinner } from 'bpk-component-spinner';
 import { alignToButton, alignToLargeButton } from 'bpk-component-icon';
 import TestBpkSmallArrowIcon from 'bpk-component-icon/sm/long-arrow-right';
 import TestBpkLargeArrowIcon from 'bpk-component-icon/lg/long-arrow-right';
@@ -10,6 +9,8 @@ import TestBpkSmallTrashIcon from 'bpk-component-icon/sm/trash';
 import TestBpkLargeTrashIcon from 'bpk-component-icon/lg/trash';
 import TestBpkSmallHelpIcon from 'bpk-component-icon/sm/help';
 import TestBpkLargeHelpIcon from 'bpk-component-icon/lg/help';
+import TestBpkSmallSearchIcon from 'bpk-component-icon/sm/search';
+import TestBpkLargeSearchIcon from 'bpk-component-icon/lg/search';
 
 import BpkLoadingButton from 'bpk-component-loading-button';
 import BpkRouterLink from 'bpk-component-router-link';
@@ -25,6 +26,8 @@ const AlignedBpkSmallTrashIcon = alignToButton(TestBpkSmallTrashIcon);
 const AlignedBpkLargeTrashIcon = alignToLargeButton(TestBpkLargeTrashIcon);
 const AlignedBpkSmallHelpIcon = alignToButton(TestBpkSmallHelpIcon);
 const AlignedBpkLargeHelpIcon = alignToLargeButton(TestBpkLargeHelpIcon);
+const AlignedBpkSmallSearchIcon = alignToButton(TestBpkSmallSearchIcon);
+const AlignedBpkLargeSearchIcon = alignToLargeButton(TestBpkLargeSearchIcon);
 
 class LoadingButtonContainer extends Component {
   constructor() {
@@ -153,29 +156,21 @@ const components = [
     ],
   },
   {
-    id: 'icons-and-spinners',
-    title: 'Icons & spinners',
+    id: 'with-icons',
+    title: 'With icons',
     blurb: [
       <BpkParagraph>
-        All buttons support nesting icons and spinners, which is useful for improving affordance or indicate loading.
+        All buttons support the nesting of icons, which is useful for improving affordance.
       </BpkParagraph>,
     ],
     examples: [
       <BpkButton>
-        Primary <AlignedBpkSmallArrowIcon fill={colors.colorWhite} />
-      </BpkButton>,
-      ' ',
-      <BpkButton>
-        Primary <BpkSpinner fill={colors.colorWhite} alignToButton />
+        <AlignedBpkSmallSearchIcon fill={colors.colorWhite} /> Search
       </BpkButton>,
       <br />,
       <br />,
       <BpkButton large>
-        Primary <AlignedBpkLargeArrowIcon fill={colors.colorWhite} />
-      </BpkButton>,
-      ' ',
-      <BpkButton large>
-        Primary <BpkLargeSpinner fill={colors.colorWhite} alignToButton />
+        <AlignedBpkLargeSearchIcon fill={colors.colorWhite} /> Search
       </BpkButton>,
     ],
   },
