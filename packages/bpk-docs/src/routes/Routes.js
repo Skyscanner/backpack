@@ -40,7 +40,7 @@ import AccordionsPage from './../pages/AccordionsPage';
 import NudgersPage from './../pages/NudgersPage';
 import ProgressPage from './../pages/ProgressPage';
 
-import DownloadsPage from './../pages/DownloadsPage';
+import ResourcesPage from './../pages/ResourcesPage';
 import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages';
 
 const Routes = (
@@ -86,7 +86,7 @@ const Routes = (
         <Route path={ROUTES.PROGRESS} component={ProgressPage} />
       </Route>
     </Route>
-    <Route path={ROUTES.DOWNLOADS} component={DownloadsPage} />
+    <Route path={ROUTES.RESOURCES} component={ResourcesPage} />
     <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridColumnDemoPage} />
     <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridOffsetDemoPage} />
   </Route>

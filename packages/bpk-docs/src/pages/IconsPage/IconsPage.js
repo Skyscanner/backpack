@@ -74,7 +74,7 @@ const customSections = [
     content: [
       <BpkParagraph>
         Backpack has taken inspiration from Google’s Material Design System, leaning on their icon grid. You can find
-        the template <BpkRouterLink to={ROUTES.DOWNLOADS}>here</BpkRouterLink>.
+        the template <BpkRouterLink to={ROUTES.RESOURCES}>here</BpkRouterLink>.
       </BpkParagraph>,
       <BpkParagraph>
         To maintain consistency when creating new icons, you should make use of bold, filled shapes and thick strokes.

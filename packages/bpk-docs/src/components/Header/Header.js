@@ -9,8 +9,8 @@ import './header.scss';
 import * as ROUTES from '../../constants/routes';
 
 const links = [
-  { to: ROUTES.DOCS, children: 'Docs' },
-  { to: ROUTES.DOWNLOADS, children: 'Downloads' },
+  { to: ROUTES.DOCS, children: 'Components' },
+  { to: ROUTES.RESOURCES, children: 'Resources' },
   { href: 'http://git.prod.skyscanner.local/backpack/backpack', children: 'GitLab', blank: true },
 ];
 

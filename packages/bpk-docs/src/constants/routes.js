@@ -1,6 +1,6 @@
 export const HOME = '/';
 
-export const DOCS = '/docs';
+export const DOCS = '/components';
 
 export const GETTING_STARTED = '/docs/getting-started';
 export const BACKPACK_REACT_SCRIPTS = '/docs/backpack-react-scripts';
@@ -37,7 +37,7 @@ export const ACCORDIONS = '/docs/molecules/accordions';
 export const NUDGERS = '/docs/molecules/nudgers';
 export const PROGRESS = '/docs/molecules/progress';
 
-export const DOWNLOADS = '/downloads';
+export const RESOURCES = '/resources';
 
 export const GRID_COLUMN_DEMO = '/grid-column-demo';
 export const GRID_OFFSET_DEMO = '/grid-offset-demo';

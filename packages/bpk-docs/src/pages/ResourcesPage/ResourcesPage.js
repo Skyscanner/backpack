@@ -13,9 +13,9 @@ const smallIconsZip = require('!!file?name=[name].[hash].zip!zip-it!./../../../.
 const largeIconsZip = require('!!file?name=[name].[hash].zip!zip-it!./../../../../bpk-svgs/src/icons/lg/icons-lg');
 /* eslint-enable */
 
-const DownloadsPage = () => (
+const ResourcesPage = () => (
   <BpkGridContainer>
-    <Helmet title="Downloads" />
+    <Helmet title="Resources" />
     <BpkGridRow>
       <BpkGridColumn width={12}>
         <BpkContentContainer>
@@ -81,4 +81,4 @@ const DownloadsPage = () => (
   </BpkGridContainer>
 );
 
-export default DownloadsPage;
+export default ResourcesPage;
