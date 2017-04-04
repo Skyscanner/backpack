@@ -4,11 +4,14 @@
 
 _Nothing yet..._
 
-**Changed:**
+## 2017-04-04 - Popovers now reposition when props change
 
-- bpk-react-utils:
+**Added:**
+- bpk-react-utils: 1.3.3 => 1.4.0
   - Add onRender handler to Portal to be called when props are updated
-- bpk-component-popover:
+
+**Fixed:**
+- bpk-component-popover: 1.0.26 => 1.0.27
   - Allow repositioning of Portal when props update
 
 ## 2017-04-03 - Replacing bpk-component-cta-button with bpk-component-loading-button
