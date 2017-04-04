@@ -169,6 +169,52 @@ gulp.task('icons-lg', () => {
   return merge(react, datauri, rawDatauri);
 });
 
-gulp.task('default', ['elements', 'spinners', 'icons-sm', 'icons-lg']);
+gulp.task('icons', () => {
+  const optimised = gulp
+    .src([
+      'src/icons/**/*.svg',
+      '!src/icons/lg/**/*.svg',
+      '!src/icons/sm/**/*.svg',
+    ])
+    .pipe(svgmin({
+      plugins: [
+        ...svgoCommonPlugins,
+        { removeAttrs: { attrs: ['id', 'class', 'data-name', 'fill', 'fill-rule'] } },
+      ],
+    }))
+    .pipe(gulp.dest('src/icons'));
+
+  const react = optimised
+    .pipe(clone())
+    .pipe(svgmin({
+      plugins: [
+        { addAttributesToSVGElement: {
+          attribute: `style="width:${tokens.props.ICON_SIZE_LG.value};height:${tokens.props.ICON_SIZE_LG.value}"`,
+        } },
+        { sortAttrs: true },
+      ],
+    }))
+    .pipe(svg2react())
+    .pipe(rename({ extname: '.js' }))
+    .pipe(gulp.dest('dist/js/icons'));
+
+  const datauri = optimised
+    .pipe(clone())
+    .pipe(svg2datauri({ colors }))
+    .pipe(concat('_icons.scss'))
+    .pipe(sassMap('bpk-icons'))
+    .pipe(gulp.dest('dist/scss'));
+
+  const rawDatauri = optimised
+    .pipe(clone())
+    .pipe(svg2sassvar())
+    .pipe(concat('_icons-no-color.scss'))
+    .pipe(sassMap('bpk-icons-no-color'))
+    .pipe(gulp.dest('dist/scss'));
+
+  return merge(react, datauri, rawDatauri);
+});
+
+gulp.task('default', ['elements', 'spinners', 'icons-sm', 'icons-lg', 'icons']);
 
 // TODO: include width/height in same line in react components
