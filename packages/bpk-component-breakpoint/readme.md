@@ -27,3 +27,4 @@ export default () => (
 | --------- | ------------------ | -------- | ------------- |
 | children  | node               | true     | -             |
 | query     | oneOf(BREAKPOINTS) | true     | -             |
+| legacy    | bool               | false    | false         |
