@@ -9,8 +9,9 @@ import './header.scss';
 import * as ROUTES from '../../constants/routes';
 
 const links = [
-  { to: ROUTES.DOCS, children: 'Docs' },
-  { to: ROUTES.DOWNLOADS, children: 'Downloads' },
+  { to: ROUTES.USING_BACKPACK, children: 'Using Backpack' },
+  { to: ROUTES.DOCS, children: 'Components' },
+  { to: ROUTES.RESOURCES, children: 'Resources' },
   { href: 'http://git.prod.skyscanner.local/backpack/backpack', children: 'GitLab', blank: true },
 ];
 
@@ -18,12 +19,12 @@ const Header = () => (
   <header className="bpkdocs-header">
     <BpkGridContainer>
       <BpkGridRow>
-        <BpkGridColumn width={6} mobileWidth={3}>
+        <BpkGridColumn width={3}>
           <IndexLink to={ROUTES.HOME} className="bpkdocs-header__logo-link">
             <span className="visuallyhidden">Backpack</span>
           </IndexLink>
         </BpkGridColumn>
-        <BpkGridColumn width={6} mobileWidth={9}>
+        <BpkGridColumn width={9}>
           <nav>
             <ul className="bpkdocs-header__nav-list">
               {links.map((link = {}) => (

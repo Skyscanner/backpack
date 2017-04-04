@@ -13,13 +13,13 @@ const smallIconsZip = require('!!file?name=[name].[hash].zip!zip-it!./../../../.
 const largeIconsZip = require('!!file?name=[name].[hash].zip!zip-it!./../../../../bpk-svgs/src/icons/lg/icons-lg');
 /* eslint-enable */
 
-const DownloadsPage = () => (
+const ResourcesPage = () => (
   <BpkGridContainer>
-    <Helmet title="Downloads" />
+    <Helmet title="Resources" />
     <BpkGridRow>
       <BpkGridColumn width={12}>
         <BpkContentContainer>
-          <BpkHeading level="h1">Downloads</BpkHeading>
+          <BpkHeading level="h1">Resources</BpkHeading>
           <BpkParagraph>Here you can find a variety of resources to help you design Skyscanner products:</BpkParagraph>
           <BpkHeading level="h2">Color palettes</BpkHeading>
           <BpkHeading level="h3">Core</BpkHeading>
@@ -81,4 +81,4 @@ const DownloadsPage = () => (
   </BpkGridContainer>
 );
 
-export default DownloadsPage;
+export default ResourcesPage;

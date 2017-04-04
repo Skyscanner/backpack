@@ -5,12 +5,18 @@
     padding-top: $bpk-spacing-xl;
     padding-bottom: $bpk-spacing-xl;
     background-color: $bpk-color-blue-500;
-    background-image: $bpk-primary-gradient;
+    background-image: url('hero.png');
+    background-size: cover;
     color: $bpk-color-white;
 
     @include bpk-breakpoint-above-tablet {
       padding-top: $bpk-spacing-xl * 2;
       padding-bottom: $bpk-spacing-xl * 2;
     }
+  }
+
+  &__heading1,
+  &__heading2 {
+    text-shadow: 0 $bpk-one-pixel-rem $bpk-one-pixel-rem * 6 rgba($bpk-color-gray-900, .7);
   }
 }

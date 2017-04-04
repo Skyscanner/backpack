@@ -109,7 +109,7 @@ ReactDom.render(myComponent, document.getElementById('react-mount'));
           Download and install the <BpkLink href="https://labs.invisionapp.com/craft" blank>Craft plugin</BpkLink>.
         </BpkListItem>
         <BpkListItem>
-          Download the Backpack Craft library from <BpkRouterLink to={ROUTES.DOWNLOADS}>Downloads</BpkRouterLink>.
+          Download the Backpack Craft library from <BpkRouterLink to={ROUTES.RESOURCES}>Downloads</BpkRouterLink>.
         </BpkListItem>
         <BpkListItem>
           Import the Backpack Craft Library into Sketch.
