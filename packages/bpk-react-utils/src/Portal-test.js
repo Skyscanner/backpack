@@ -189,6 +189,72 @@ describe('Portal', () => {
     expect(onCloseSpy.mock.calls.length).toEqual(1);
   });
 
+  it('should call the onRender handler when props are updated', (done) => {
+    const onRenderSpy = jest.fn();
+
+    const portal = mount(
+      <Portal isOpen onRender={onRenderSpy}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+
+    expect(onRenderSpy.mock.calls.length).toBe(1);
+
+    portal.setProps({ target: <div>target1</div> }, () => {
+      expect(onRenderSpy.mock.calls.length).toBe(2);
+      portal.setProps({ target: <div>target2</div> }, () => {
+        expect(onRenderSpy.mock.calls.length).toBe(3);
+        done();
+      });
+    });
+  });
+
+  it('should call the onRender handler before the onOpen handler handler when props are updated', () => {
+    let order = 0;
+    const onRender = () => (order = 1);
+    const onOpen = () => (order = 2);
+    const portal = mount(
+      <Portal isOpen={false} onRender={onRender} onOpen={onOpen}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+    portal.setProps({ isOpen: true }, () => {
+      expect(order).toBe(2);
+    });
+  });
+
+  it('should call the onRender handler before the onOpen handler handler when component is mounted', () => {
+    let order = 0;
+    const onRender = () => (order = 1);
+    const onOpen = () => (order = 2);
+    mount(
+      <Portal isOpen onRender={onRender} onOpen={onOpen}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+    expect(order).toBe(2);
+  });
+
+  it('should not call the onRender handler when isOpen is false', (done) => {
+    const onRenderSpy = jest.fn();
+
+    const portal = mount(
+      <Portal isOpen={false} onRender={onRenderSpy}>
+        <div>My portal content</div>
+      </Portal>,
+    );
+
+    expect(onRenderSpy.mock.calls.length).toBe(0);
+
+    portal.setProps({ isOpen: true }, () => {
+      expect(onRenderSpy.mock.calls.length).toBe(1);
+      portal.setProps({ isOpen: false }, () => {
+        expect(onRenderSpy.mock.calls.length).toBe(1);
+        done();
+      });
+    });
+  });
+
   describe('lifecycle methods', () => {
     let portal;
     const openSpy = jest.fn();
@@ -236,7 +302,7 @@ describe('Portal', () => {
     });
 
     // No tests for
-    // - componentDidUpdate, as we'd have to mock react-dom render()
+    // - renderPortal, as we'd have to mock react-dom render()
     // - componentWillUnmount, as it takes forever and slows down the test suite immensely
   });
 });

@@ -8,30 +8,23 @@ import './bpk-popover.scss';
 import BpkPopover from './BpkPopover';
 import { ARROW_ID } from './constants';
 
+const onOpen = (popoverElement) => {
+  focusStore.storeFocus();
+  focusScope.scopeFocus(popoverElement);
+};
+
 class BpkPopoverPortal extends Component {
   constructor() {
     super();
 
     this.tether = null;
 
-    this.onOpen = this.onOpen.bind(this);
+    this.onRender = this.onRender.bind(this);
     this.beforeClose = this.beforeClose.bind(this);
   }
 
-  onOpen(popoverElement, targetElement) {
-    this.tether = new Tether({
-      classPrefix: 'bpk-popover-tether',
-      element: popoverElement,
-      target: targetElement,
-      ...applyRTLTransforms(this.props.tetherOptions),
-    });
-
-    this.tether.on('position', getArrowPositionCallback(popoverElement, ARROW_ID, 'bpk-popover-tether'));
-
-    this.tether.position();
-
-    focusStore.storeFocus();
-    focusScope.scopeFocus(popoverElement);
+  onRender(popoverElement, targetElement) {
+    this.position(popoverElement, targetElement);
   }
 
   beforeClose(done) {
@@ -42,6 +35,24 @@ class BpkPopoverPortal extends Component {
     focusStore.restoreFocus();
 
     done();
+  }
+
+  position(popoverElement, targetElement) {
+    const options = {
+      classPrefix: 'bpk-popover-tether',
+      element: popoverElement,
+      target: targetElement,
+      ...applyRTLTransforms(this.props.tetherOptions),
+    };
+
+    if (!this.tether) {
+      this.tether = new Tether(options);
+      this.tether.on('position', getArrowPositionCallback(popoverElement, ARROW_ID, 'bpk-popover-tether'));
+    } else {
+      this.tether.setOptions(options);
+    }
+
+    this.tether.position();
   }
 
   render() {
@@ -62,7 +73,8 @@ class BpkPopoverPortal extends Component {
         target={target}
         isOpen={isOpen}
         onClose={onClose}
-        onOpen={this.onOpen}
+        onOpen={onOpen}
+        onRender={this.onRender}
         beforeClose={this.beforeClose}
         style={portalStyle}
         className={portalClassName}
