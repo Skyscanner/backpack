@@ -5,7 +5,7 @@ import * as ROUTES from './../constants/routes';
 
 import DefaultLayout from './../layouts/DefaultLayout';
 import DocsLayout from './../layouts/DocsLayout';
-import GettingStartedLayout from './../layouts/GettingStartedLayout';
+import UsingLayout from './../layouts/UsingLayout';
 
 import HomePage from './../pages/HomePage';
 
@@ -52,7 +52,7 @@ const Routes = (
   <Route path={ROUTES.HOME} component={DefaultLayout}>
     <IndexRoute component={withRouter(HomePage)} />
 
-    <Route path={ROUTES.GETTING_STARTED_INDEX} component={GettingStartedLayout}>
+    <Route path={ROUTES.USING_BACKPACK} component={UsingLayout}>
       <IndexRedirect to={ROUTES.GETTING_STARTED} />
       <Route path={ROUTES.GETTING_STARTED} component={GettingStartedPage} />
       <Route path={ROUTES.BACKPACK_REACT_SCRIPTS} component={BackpackReactScriptsPage} />

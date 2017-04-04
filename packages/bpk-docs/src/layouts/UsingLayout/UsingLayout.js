@@ -5,7 +5,7 @@ import * as routes from './../../constants/routes';
 
 const links = [
   {
-    category: 'Introduction',
+    category: 'Using Backpack',
     links: [
       { route: routes.GETTING_STARTED, children: 'Getting started' },
       { route: routes.BACKPACK_REACT_SCRIPTS, children: 'Backpack React Scripts' },
@@ -16,13 +16,13 @@ const links = [
   },
 ];
 
-const GettingStartedLayout = ({ children }) => <SideNavLayout links={links}>{children}</SideNavLayout>;
+const UsingLayout = ({ children }) => <SideNavLayout links={links}>{children}</SideNavLayout>;
 
-GettingStartedLayout.propTypes = {
+UsingLayout.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
 };
 
-export default GettingStartedLayout;
+export default UsingLayout;
