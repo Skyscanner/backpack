@@ -4,10 +4,7 @@
   "description": "Backpack icon components.",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf ./sm && rm -rf ./lg && mkdir ./sm  && mkdir ./lg",
-    "copy:sm": "cp ./node_modules/bpk-svgs/dist/js/icons/sm/*.js ./sm",
-    "copy:lg": "cp ./node_modules/bpk-svgs/dist/js/icons/lg/*.js ./lg",
-    "build": "npm run clean && npm run copy:sm && npm run copy:lg"
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
