@@ -4,9 +4,10 @@
 
 _Nothing yet..._
 
-**Added:**
+## 2017-04-05 - Added `legacy` prop to breakpoint component
 
-- bpk-component-breakpoint:
+**Added:**
+- bpk-component-breakpoint: 0.0.20 => 0.1.0
   - Add 'legacy' prop to allow component to receive legacy queries
 
 ## 2017-04-04 - Popovers now reposition when props change
