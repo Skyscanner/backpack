@@ -69,6 +69,7 @@ class MyComponent extends Component {
 | isOpen      | bool     | true     | -             |
 | target      | node     | false    | null          |
 | onOpen      | func     | false    | noop          |
+| onRender    | func     | false    | noop          |
 | onClose     | func     | false    | noop          |
 | beforeClose | func     | false    | null          |
 
@@ -127,7 +128,7 @@ import React from 'react';
 import { TransitionInitialMount } from 'bpk-react-utils';
 
 const MyComponent = (props) => (
-  <TransitionInitialMount className="my-transition-class" transitionTimeout={300}>
+  <TransitionInitialMount classNamePrefix="my-transition-class" transitionTimeout={300}>
     <div>Some text.</div>
   </TransitionInitialMount>
 );
