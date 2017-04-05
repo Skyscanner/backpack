@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import gulp from 'gulp';
+import sort from 'gulp-sort';
 import clone from 'gulp-clone';
 import rename from 'gulp-rename';
 import svgmin from 'gulp-svgmin';
@@ -117,14 +118,7 @@ gulp.task('icons-sm', () => {
     .pipe(sassMap('bpk-icons-sm'))
     .pipe(gulp.dest('dist/scss'));
 
-  const rawDatauri = optimised
-    .pipe(clone())
-    .pipe(svg2sassvar())
-    .pipe(concat('_icons-no-color-sm.scss'))
-    .pipe(sassMap('bpk-icons-no-color-sm'))
-    .pipe(gulp.dest('dist/scss'));
-
-  return merge(react, datauri, rawDatauri);
+  return merge(react, datauri);
 });
 
 gulp.task('icons-lg', () => {
@@ -159,14 +153,7 @@ gulp.task('icons-lg', () => {
     .pipe(sassMap('bpk-icons-lg'))
     .pipe(gulp.dest('dist/scss'));
 
-  const rawDatauri = optimised
-    .pipe(clone())
-    .pipe(svg2sassvar())
-    .pipe(concat('_icons-no-color-lg.scss'))
-    .pipe(sassMap('bpk-icons-no-color-lg'))
-    .pipe(gulp.dest('dist/scss'));
-
-  return merge(react, datauri, rawDatauri);
+  return merge(react, datauri);
 });
 
 gulp.task('icons', () => {
@@ -200,19 +187,13 @@ gulp.task('icons', () => {
 
   const datauri = optimised
     .pipe(clone())
-    .pipe(svg2datauri({ colors }))
+    .pipe(svg2sassvar())
+    .pipe(sort())
     .pipe(concat('_icons.scss'))
     .pipe(sassMap('bpk-icons'))
     .pipe(gulp.dest('dist/scss'));
 
-  const rawDatauri = optimised
-    .pipe(clone())
-    .pipe(svg2sassvar())
-    .pipe(concat('_icons-no-color.scss'))
-    .pipe(sassMap('bpk-icons-no-color'))
-    .pipe(gulp.dest('dist/scss'));
-
-  return merge(react, datauri, rawDatauri);
+  return merge(react, datauri);
 });
 
 gulp.task('default', ['elements', 'spinners', 'icons-sm', 'icons-lg', 'icons']);

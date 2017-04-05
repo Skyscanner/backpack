@@ -68,9 +68,9 @@
 ///     @include bpk-icon(flight, $bpk-color-gray-500, large);
 ///   }
 
-@mixin bpk-icon($icon, $color, $size: small) {
+@mixin bpk-icon($icon, $color, $size: null) {
   @if function-exists(encodebase64) {
-    $icon-map: if($size == large, $bpk-icons-no-color-lg, $bpk-icons-no-color-sm);
+    $icon-map: $bpk-icons;
     $datauri: "data:image/svg+xml;base64," + encodebase64(
       str-replace(
         map-get($icon-map, $icon),
