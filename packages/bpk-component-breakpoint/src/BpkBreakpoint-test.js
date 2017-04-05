@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 
 import { BREAKPOINTS } from './BpkBreakpoint';
 
@@ -28,5 +29,56 @@ describe('BpkBreakpoint', () => {
       </BpkBreakpoint>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  describe('PropType validation', () => {
+    let errorOrWarningSpy = null;
+    let oldError = null;
+    let oldWarning = null;
+    let BpkBreakpoint = null;
+
+    beforeEach(() => {
+      jest.resetModules();
+      BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
+      jest.mock('react-responsive', () => props => props.children());
+
+      errorOrWarningSpy = jest.fn();
+      oldError = window.console.error;
+      oldWarning = window.console.warning;
+      window.console.error = errorOrWarningSpy;
+      window.console.warning = errorOrWarningSpy;
+    });
+
+    afterEach(() => {
+      window.console.error = oldError;
+      window.console.warning = oldWarning;
+    });
+
+    it('should not error if the \'query\' prop is an allowed value', () => {
+      mount(
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+          {() => <div />}
+        </BpkBreakpoint>,
+      );
+      expect(errorOrWarningSpy.mock.calls.length).toBe(0);
+    });
+
+    it('should error if the \'query\' prop is not an allowed value', () => {
+      mount(
+        <BpkBreakpoint query="A RANDOM STRING">
+          {() => <div />}
+        </BpkBreakpoint>,
+      );
+      expect(errorOrWarningSpy.mock.calls.length).toBe(1);
+    });
+
+    it('should not error if the \'query\' prop is not an allowed value but \'legacy\' prop is true', () => {
+      mount(
+        <BpkBreakpoint query="A RANDOM STRING" legacy>
+          {() => <div />}
+        </BpkBreakpoint>,
+      );
+      expect(errorOrWarningSpy.mock.calls.length).toBe(0);
+    });
   });
 });
