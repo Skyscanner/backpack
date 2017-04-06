@@ -59,13 +59,12 @@
 /// > });
 /// > ```
 ///
-/// @param {key} $icon [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
-/// @param {key} $color [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
-/// @param {key} $size [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
+/// @param {key} $icon
+/// @param {variable} $color
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-icon(flight, $bpk-color-gray-500, large);
+///     @include bpk-icon(flight--return, $bpk-color-gray-500);
 ///   }
 
 @mixin bpk-icon($icon, $color) {
@@ -109,6 +108,8 @@
 ///   .selector {
 ///     @include bpk-icon-sm(flight-gray-500);
 ///   }
+///
+/// @deprecated Use bpk-icon instead
 
 @mixin bpk-icon-sm($icon) {
   @include _bpk-icon-factory($bpk-icons-sm, $bpk-icon-size-sm, $icon);
@@ -122,6 +123,8 @@
 ///   .selector {
 ///     @include bpk-icon-lg(flight-gray-500);
 ///   }
+///
+/// @deprecated Use bpk-icon instead
 
 @mixin bpk-icon-lg($icon) {
   @include _bpk-icon-factory($bpk-icons-lg, $bpk-icon-size-lg, $icon);

@@ -17,4 +17,4 @@ gulp.task('copy', () => {
     .pipe(gulp.dest('.'));
 });
 
-gulp.task('default', ['clean', 'copy']);
+gulp.task('default', ['copy']);

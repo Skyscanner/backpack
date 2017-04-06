@@ -1,3 +1,4 @@
+import del from 'del';
 import _ from 'lodash';
 import gulp from 'gulp';
 import sort from 'gulp-sort';
@@ -31,6 +32,8 @@ const svgoCommonPlugins = [
   { removeEmptyAttrs: true },
   { removeHiddenElems: true },
 ];
+
+gulp.task('clean', () => del(['dist']));
 
 /*
   ELEMENTS

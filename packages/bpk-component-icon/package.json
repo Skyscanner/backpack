@@ -4,7 +4,7 @@
   "description": "Backpack icon components.",
   "main": "index.js",
   "scripts": {
-    "build": "gulp"
+    "build": "gulp clean && gulp"
   },
   "repository": {
     "type": "git",

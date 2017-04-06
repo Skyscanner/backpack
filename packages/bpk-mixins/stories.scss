@@ -10,6 +10,6 @@
   }
 
   &__data--chart {
-    @include bpk-icon('data--chart', $bpk-color-green-500);
+    @include bpk-icon(data--chart, $bpk-color-green-500);
   }
 }
