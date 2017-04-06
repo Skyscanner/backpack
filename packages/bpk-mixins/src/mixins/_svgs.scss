@@ -68,26 +68,8 @@
 ///     @include bpk-icon(flight, $bpk-color-gray-500, large);
 ///   }
 
-@mixin bpk-icon($icon, $color, $size: null) {
-  @if function-exists(encodebase64) {
-    $icon-map: $bpk-icons;
-    $datauri: "data:image/svg+xml;base64," + encodebase64(
-      str-replace(
-        map-get($icon-map, $icon),
-        "$$COLOR$$",
-        $color
-      )
-    );
-
-    content: '';
-    display: inline-block;
-    width: if($size == large, $bpk-icon-size-lg, $bpk-icon-size-sm);
-    height: if($size == large, $bpk-icon-size-lg, $bpk-icon-size-sm);
-    background: url($datauri) no-repeat;
-    background-size: cover;
-  }
-
-  @else {
+@mixin bpk-icon($icon, $color) {
+  @if function-exists(encodebase64) != true {
     $err: (
       "Could not find encodebase64 function. Refer to "
       + "http://backpack.prod.aws.skyscnr.com/sassdoc/#svgs-mixin-bpk-icon"
@@ -96,6 +78,27 @@
 
     @error $err;
   }
+
+  @if map_has_key($bpk-icons, $icon) != true {
+    $err: (
+      "Could not find '" + $icon + "' icon. Refer to "
+      + "http://backpack.prod.aws.skyscnr.com/components/atoms/icons"
+      + " when specifying icon names."
+    );
+
+    @error $err;
+  }
+
+  $raw-svg: map-get($bpk-icons, $icon);
+  $svg-string: str-replace($raw-svg, "$$COLOR$$", $color);
+  $datauri: "data:image/svg+xml;base64," + encodebase64($svg-string);
+
+  content: '';
+  display: inline-block;
+  width: $bpk-icon-size-lg;
+  height: $bpk-icon-size-lg;
+  background: url($datauri) no-repeat;
+  background-size: cover;
 }
 
 /// Small icon.
