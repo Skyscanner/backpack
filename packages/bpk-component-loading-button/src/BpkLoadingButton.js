@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import BpkButton from 'bpk-component-button';
 
 import { BpkSpinner, BpkLargeSpinner } from 'bpk-component-spinner';
-import { withButtonAlignment, withLargeButtonAlignment } from 'bpk-component-icon';
+import { withButtonAlignment, withLargeButtonAlignment, withRtlSupport } from 'bpk-component-icon';
 import ArrowIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import ArrowIconLg from 'bpk-component-icon/lg/long-arrow-right';
 
@@ -37,8 +37,8 @@ const getSpinner = large => (
 
 const getEnabledIcon = (large) => {
   const AlignedIcon = large ?
-    withLargeButtonAlignment(ArrowIconLg) :
-    withButtonAlignment(ArrowIconSm);
+    withLargeButtonAlignment(withRtlSupport(ArrowIconLg)) :
+    withButtonAlignment(withRtlSupport(ArrowIconSm));
   return <AlignedIcon />;
 };
 

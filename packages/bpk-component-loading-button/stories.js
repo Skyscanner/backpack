@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 
-import { withButtonAlignment, withLargeButtonAlignment } from 'bpk-component-icon';
+import { withButtonAlignment, withLargeButtonAlignment, withRtlSupport } from 'bpk-component-icon';
 import BaggageIconSm from 'bpk-component-icon/sm/baggage';
 import BaggageIconLg from 'bpk-component-icon/lg/baggage';
 
@@ -241,10 +241,10 @@ storiesOf('bpk-component-loading-button', module)
     </div>
   ))
   .add('Custom Icon', () => {
-    const AlignedIconSm = withButtonAlignment(BaggageIconSm);
+    const AlignedIconSm = withButtonAlignment(withRtlSupport(BaggageIconSm));
     const iconSm = <AlignedIconSm />;
 
-    const AlignedIconLg = withLargeButtonAlignment(BaggageIconLg);
+    const AlignedIconLg = withLargeButtonAlignment(withRtlSupport(BaggageIconLg));
     const iconLg = <AlignedIconLg />;
 
     return (<div>

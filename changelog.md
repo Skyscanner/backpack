@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Changed:**
+- bpk-component-loading-button: 0.0.5 => 0.0.6
+  - Add 'withRtlSupport' to default icons
 
 ## 2017-04-05 - Added `legacy` prop to breakpoint component
 

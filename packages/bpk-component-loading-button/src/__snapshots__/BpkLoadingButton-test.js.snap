@@ -7,7 +7,7 @@ exports[`BpkLoadingButton should add only bpk specific classes if className prop
   My button
    
   <svg
-    className="bpk-icon--align-to-large-button"
+    className="bpk-icon--align-to-large-button bpk-icon--rtl-support"
     height="24"
     style={
       Object {
@@ -33,7 +33,7 @@ exports[`BpkLoadingButton should render correctly 1`] = `
   My button
    
   <svg
-    className="bpk-icon--align-to-button"
+    className="bpk-icon--align-to-button bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -59,7 +59,7 @@ exports[`BpkLoadingButton should render correctly with "destructive selected" at
   My button
    
   <svg
-    className="bpk-icon--align-to-button"
+    className="bpk-icon--align-to-button bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -85,7 +85,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "destructive"
   My button
    
   <svg
-    className="bpk-icon--align-to-large-button"
+    className="bpk-icon--align-to-large-button bpk-icon--rtl-support"
     height="24"
     style={
       Object {
@@ -111,7 +111,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "disabled" at
   My button
    
   <svg
-    className="bpk-icon--align-to-large-button"
+    className="bpk-icon--align-to-large-button bpk-icon--rtl-support"
     height="24"
     style={
       Object {
@@ -137,7 +137,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "featured" at
   My button
    
   <svg
-    className="bpk-icon--align-to-large-button"
+    className="bpk-icon--align-to-large-button bpk-icon--rtl-support"
     height="24"
     style={
       Object {
@@ -166,7 +166,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "iconOnly" at
   </span>
   
   <svg
-    className="bpk-icon--align-to-large-button"
+    className="bpk-icon--align-to-large-button bpk-icon--rtl-support"
     height="24"
     style={
       Object {
@@ -192,7 +192,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "link" attrib
   My button
    
   <svg
-    className="bpk-icon--align-to-large-button"
+    className="bpk-icon--align-to-large-button bpk-icon--rtl-support"
     height="24"
     style={
       Object {
@@ -293,7 +293,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "secondary" a
   My button
    
   <svg
-    className="bpk-icon--align-to-large-button"
+    className="bpk-icon--align-to-large-button bpk-icon--rtl-support"
     height="24"
     style={
       Object {
@@ -319,7 +319,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "selected" at
   My button
    
   <svg
-    className="bpk-icon--align-to-large-button"
+    className="bpk-icon--align-to-large-button bpk-icon--rtl-support"
     height="24"
     style={
       Object {
@@ -345,7 +345,7 @@ exports[`BpkLoadingButton should render correctly with "link selected" attribute
   My button
    
   <svg
-    className="bpk-icon--align-to-button"
+    className="bpk-icon--align-to-button bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -371,7 +371,7 @@ exports[`BpkLoadingButton should render correctly with "secondary selected" attr
   My button
    
   <svg
-    className="bpk-icon--align-to-button"
+    className="bpk-icon--align-to-button bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -397,7 +397,7 @@ exports[`BpkLoadingButton should render correctly with a "destructive" attribute
   My button
    
   <svg
-    className="bpk-icon--align-to-button"
+    className="bpk-icon--align-to-button bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -423,7 +423,7 @@ exports[`BpkLoadingButton should render correctly with a "disabled" attribute 1`
   My button
    
   <svg
-    className="bpk-icon--align-to-button"
+    className="bpk-icon--align-to-button bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -449,7 +449,7 @@ exports[`BpkLoadingButton should render correctly with a "featured" attribute 1`
   My button
    
   <svg
-    className="bpk-icon--align-to-button"
+    className="bpk-icon--align-to-button bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -474,7 +474,7 @@ exports[`BpkLoadingButton should render correctly with a "href" attribute 1`] = 
   My button
    
   <svg
-    className="bpk-icon--align-to-button"
+    className="bpk-icon--align-to-button bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -581,7 +581,7 @@ exports[`BpkLoadingButton should render correctly with a "iconOnly" attribute 1`
   </span>
   
   <svg
-    className="bpk-icon--align-to-button"
+    className="bpk-icon--align-to-button bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -633,7 +633,7 @@ exports[`BpkLoadingButton should render correctly with a "large" attribute 1`] =
   My button
    
   <svg
-    className="bpk-icon--align-to-large-button"
+    className="bpk-icon--align-to-large-button bpk-icon--rtl-support"
     height="24"
     style={
       Object {
@@ -659,7 +659,7 @@ exports[`BpkLoadingButton should render correctly with a "link" attribute 1`] = 
   My button
    
   <svg
-    className="bpk-icon--align-to-button"
+    className="bpk-icon--align-to-button bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -760,7 +760,7 @@ exports[`BpkLoadingButton should render correctly with a "secondary" attribute 1
   My button
    
   <svg
-    className="bpk-icon--align-to-button"
+    className="bpk-icon--align-to-button bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -786,7 +786,7 @@ exports[`BpkLoadingButton should render correctly with a "selected" attribute 1`
   My button
    
   <svg
-    className="bpk-icon--align-to-button"
+    className="bpk-icon--align-to-button bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -812,7 +812,7 @@ exports[`BpkLoadingButton should respect the class names entered as a string 1`]
   My button
    
   <svg
-    className="bpk-icon--align-to-large-button"
+    className="bpk-icon--align-to-large-button bpk-icon--rtl-support"
     height="24"
     style={
       Object {
