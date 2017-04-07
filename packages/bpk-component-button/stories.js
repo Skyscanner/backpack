@@ -2,13 +2,13 @@ import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 
 import TOKENS from '../bpk-tokens/tokens/base.common';
-import { withButtonAlignment, withLargeButtonAlignment } from '../bpk-component-icon';
+import { withButtonAlignment, withLargeButtonAlignment, withRtlSupport } from '../bpk-component-icon';
 import SmallLongArrowRightIcon from '../bpk-component-icon/sm/long-arrow-right';
 import LargeLongArrowRightIcon from '../bpk-component-icon/lg/long-arrow-right';
 import BpkButton from './index';
 
-const AlignedSmallLongArrowRightIcon = withButtonAlignment(SmallLongArrowRightIcon);
-const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(LargeLongArrowRightIcon);
+const AlignedSmallLongArrowRightIcon = withButtonAlignment(withRtlSupport(SmallLongArrowRightIcon));
+const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(withRtlSupport(LargeLongArrowRightIcon));
 
 storiesOf('bpk-component-button', module)
   .add('Primary', () => (

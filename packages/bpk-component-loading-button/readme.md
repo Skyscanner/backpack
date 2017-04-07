@@ -14,9 +14,9 @@ npm install bpk-component-loading-button --save
 import React from 'react';
 import BpkLoadingButton from 'bpk-component-loading-button';
 import BaggageIcon from 'bpk-component-icon/sm/baggage';
-import { withButtonAlignment } from 'bpk-component-icon';
+import { withButtonAlignment, withRtlSupport } from 'bpk-component-icon';
 
-const AlignedBaggageIcon = withButtonAlignment(BaggageIcon);
+const AlignedBaggageIcon = withButtonAlignment(withRtlSupport(BaggageIcon));
 const icon = <AlignedBaggageIcon />;
 
 export default () => (
