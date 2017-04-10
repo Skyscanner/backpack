@@ -52,10 +52,10 @@ const AlignedBpkSmallFlightIcon = withButtonAlignment(BpkSmallFlightIcon);
 const AlignedBpkLargeAccessibilityIcon = withLargeButtonAlignment(BpkLargeAccessibilityIcon);
 
 export default () => (
-  <div>
+  <BpkButton>
     <AlignedBpkSmallFlightIcon className="abc-icon__flight" />
     <AlignedBpkLargeAccessibilityIcon className="abc-icon__a11y" />
-  </div>
+  </BpkButton>
 );
 ```
 
