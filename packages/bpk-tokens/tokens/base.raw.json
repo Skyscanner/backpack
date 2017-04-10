@@ -808,6 +808,12 @@
       "type": "color",
       "name": "CARD_COLOR"
     },
+    "CARD_NOTCH_SIZE": {
+      "category": "cards",
+      "value": ".375rem",
+      "type": "size",
+      "name": "CARD_NOTCH_SIZE"
+    },
     "CARD_PADDING": {
       "category": "cards",
       "value": ".75rem",
@@ -2076,6 +2082,7 @@
     "CALENDAR_NAV_ICON_DISABLED_FILL",
     "CARD_BACKGROUND_COLOR",
     "CARD_COLOR",
+    "CARD_NOTCH_SIZE",
     "CARD_PADDING",
     "COLOR_WHITE",
     "COLOR_BLUE_50",

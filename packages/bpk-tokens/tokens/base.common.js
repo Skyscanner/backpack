@@ -119,6 +119,7 @@ module.exports = {
   calendarNavIconDisabledFill: "rgb(230, 228, 235)",
   cardBackgroundColor: "rgb(255, 255, 255)",
   cardColor: "rgb(82, 76, 97)",
+  cardNotchSize: ".375rem",
   cardPadding: ".75rem",
   colorWhite: "rgb(255, 255, 255)",
   colorBlue50: "rgb(225, 244, 248)",

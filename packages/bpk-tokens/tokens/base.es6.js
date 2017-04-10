@@ -118,6 +118,7 @@ export const calendarNavIconActiveFill = "rgb(0, 140, 168)";
 export const calendarNavIconDisabledFill = "rgb(230, 228, 235)";
 export const cardBackgroundColor = "rgb(255, 255, 255)";
 export const cardColor = "rgb(82, 76, 97)";
+export const cardNotchSize = ".375rem";
 export const cardPadding = ".75rem";
 export const colorWhite = "rgb(255, 255, 255)";
 export const colorBlue50 = "rgb(225, 244, 248)";
@@ -446,6 +447,7 @@ calendarNavIconDisabledFill,
 export const cards = {
 cardBackgroundColor,
 cardColor,
+cardNotchSize,
 cardPadding,
 };
 export const colors = {

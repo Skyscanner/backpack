@@ -722,6 +722,12 @@
     },
     {
       "category": "cards",
+      "value": "6",
+      "type": "size",
+      "name": "cardNotchSize"
+    },
+    {
+      "category": "cards",
       "value": "12",
       "type": "size",
       "name": "cardPadding"

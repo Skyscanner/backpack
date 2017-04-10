@@ -7,3 +7,68 @@
     @include bpk-card--padded;
   }
 }
+
+.bpk-card-ticket {
+  @include bpk-ticket;
+
+  @include bpk-hover {
+    .bpk-card-ticket__main::after,
+    .bpk-card-ticket__stub::after {
+      opacity: 1;
+    }
+  }
+
+  &--vertical {
+    flex-direction: column;
+
+    .bpk-card-ticket__main {
+      @include bpk-ticket__main--vertical;
+    }
+
+    .bpk-card-ticket__stub {
+      @include bpk-ticket__stub--vertical;
+    }
+
+    .bpk-card-ticket__punchline {
+      @include bpk-ticket__punchline--horizontal;
+    }
+
+    .bpk-card-ticket__notch--start {
+      @include bpk-ticket__notch;
+      @include bpk-ticket__notch--left;
+    }
+
+    .bpk-card-ticket__notch--end {
+      @include bpk-ticket__notch;
+      @include bpk-ticket__notch--right;
+    }
+  }
+
+  &--horizontal {
+    flex-direction: row;
+
+    .bpk-card-ticket__punchline {
+      @include bpk-ticket__punchline--vertical;
+    }
+
+    .bpk-card-ticket__notch--start {
+      @include bpk-ticket__notch;
+      @include bpk-ticket__notch--start;
+    }
+
+    .bpk-card-ticket__notch--end {
+      @include bpk-ticket__notch;
+      @include bpk-ticket__notch--end;
+    }
+  }
+
+  &__main {
+    @include bpk-ticket__paper;
+    @include bpk-ticket__main;
+  }
+
+  &__stub {
+    @include bpk-ticket__paper;
+    @include bpk-ticket__stub;
+  }
+}
