@@ -64,6 +64,13 @@
     }
   }
 
+  &--padded {
+    .bpk-card-ticket__main,
+    .bpk-card-ticket__stub {
+      @include bpk-ticket__paper--padded;
+    }
+  }
+
   &__main {
     @include bpk-ticket__paper;
     @include bpk-ticket__paper-main;

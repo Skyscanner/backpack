@@ -94,6 +94,9 @@
 ///   }
 
 @mixin bpk-ticket__paper {
+  position: relative;
+  background-color: $bpk-card-background-color;
+
   &::after {
     position: absolute;
     top: 0;
@@ -113,6 +116,20 @@
   }
 }
 
+/// Adds padding to ticket and stub
+///
+/// @require {mixin} bpk-ticket__paper
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__paper();
+///     @include bpk-ticket__paper--padded();
+///   }
+
+@mixin bpk-ticket__paper--padded {
+  padding: $bpk-card-padding;
+}
+
 /// Main part of the ticket card
 ///
 /// @require {mixin} bpk-ticket__paper
@@ -124,11 +141,8 @@
 ///   }
 
 @mixin bpk-ticket__paper-main {
-  position: relative;
   flex-grow: 1;
-  padding: $bpk-card-padding;
   border-radius: $bpk-border-radius-sm 0 0 $bpk-border-radius-sm;
-  background-color: $bpk-card-background-color;
 
   @include bpk-box-shadow-sm;
 
@@ -168,11 +182,8 @@
 ///   }
 
 @mixin bpk-ticket__paper-stub {
-  position: relative;
-  padding: $bpk-card-padding;
-  border-radius: 0 $bpk-border-radius-sm $bpk-border-radius-sm 0;
-  background-color: $bpk-card-background-color;
   flex-grow: 0;
+  border-radius: 0 $bpk-border-radius-sm $bpk-border-radius-sm 0;
 
   @include bpk-box-shadow-sm;
 
