@@ -5,7 +5,7 @@ import { colors } from 'bpk-tokens/tokens/base.es6';
 import BpkButton from '../bpk-component-button';
 import { BpkList, BpkListItem } from '../bpk-component-list';
 
-import { sm, lg } from './all';
+import allIcons from './all';
 import { withButtonAlignment, withLargeButtonAlignment, withRtlSupport } from './index';
 import SmallLongArrowRightIcon from './sm/long-arrow-right';
 import LargeLongArrowRightIcon from './lg/long-arrow-right';
@@ -14,11 +14,19 @@ const AlignedSmallLongArrowRightIcon = withButtonAlignment(SmallLongArrowRightIc
 const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(LargeLongArrowRightIcon);
 const RtlAlignedLargeLongArrowRightIcon = withRtlSupport(withLargeButtonAlignment(LargeLongArrowRightIcon));
 
-storiesOf('bpk-component-icon', module)
-  .add('Small icons', () => (
+const stories = storiesOf('bpk-component-icon', module);
+
+Object.keys(allIcons).forEach((iconGroupName) => {
+  let storyName = `${iconGroupName} icons`;
+
+  if (['sm', 'lg'].indexOf(iconGroupName) !== -1) {
+    storyName = `${iconGroupName} icons (DEPRECATED)`;
+  }
+
+  stories.add(storyName, () => (
     <BpkList>
-      {Object.keys(sm).map((icon) => {
-        const Icon = sm[icon];
+      {Object.keys(allIcons[iconGroupName]).map((icon) => {
+        const Icon = allIcons[iconGroupName][icon];
         return (
           <BpkListItem key={icon}>
             <Icon fill={colors.colorGray700} /> <span>{icon}</span>
@@ -26,19 +34,10 @@ storiesOf('bpk-component-icon', module)
         );
       })}
     </BpkList>
-  ))
-  .add('Large icons', () => (
-    <BpkList>
-      {Object.keys(lg).map((icon) => {
-        const Icon = lg[icon];
-        return (
-          <BpkListItem key={icon}>
-            <Icon fill={colors.colorGray700} /> <span>{icon}</span>
-          </BpkListItem>
-        );
-      })}
-    </BpkList>
-  ))
+  ));
+});
+
+stories
   .add('Align to button', () => (
     <BpkButton>
       Search <AlignedSmallLongArrowRightIcon fill={colors.colorWhite} />

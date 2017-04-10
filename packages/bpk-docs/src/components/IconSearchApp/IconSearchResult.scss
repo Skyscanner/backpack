@@ -1,0 +1,48 @@
+@import '~bpk-mixins';
+
+.bpkdocs-icon-search-result {
+  &__title {
+    margin-bottom: $bpk-spacing-sm;
+  }
+
+  &__content {
+    margin: 0 0 $bpk-spacing-base 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin: -#{$bpk-spacing-xs};
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__list-item {
+    display: inline-flex;
+    align-items: center;
+    width: calc(33.33% - #{$bpk-spacing-sm});
+    margin: $bpk-spacing-xs;
+    padding: $bpk-spacing-sm;
+    box-shadow: 0 0 0 1px $bpk-color-gray-100 inset;
+
+    @include bpk-border-radius-xs;
+
+    @include bpk-breakpoint-mobile {
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    fill: $bpk-color-gray-700;
+    vertical-align: bottom;
+  }
+
+  &__icon-container {
+    padding: $bpk-spacing-xs;
+  }
+
+  &__name-container {
+    padding: $bpk-spacing-xs;
+  }
+}
