@@ -14,5 +14,9 @@
   },
   "dependencies": {
     "bpk-mixins": "^11.1.0"
+  },
+  "devDependencies": {
+    "bpk-component-button": "^1.6.11",
+    "bpk-component-icon": "^3.4.0"
   }
 }

@@ -1,0 +1,65 @@
+exports[`BpkCardTicket should render correctly 1`] = `
+<div
+  className="bpk-card-ticket bpk-card-ticket--padded bpk-card-ticket--horizontal"
+  role="button">
+  <div
+    className="bpk-card-ticket__main">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </div>
+  <div
+    className="bpk-card-ticket__punchline">
+    <div
+      className="bpk-card-ticket__notch--start" />
+    <div
+      className="bpk-card-ticket__notch--end" />
+  </div>
+  <div
+    className="bpk-card-ticket__stub">
+    Ticket stub
+  </div>
+</div>
+`;
+
+exports[`BpkCardTicket should render correctly with a "vertical" attribute 1`] = `
+<div
+  className="bpk-card-ticket bpk-card-ticket--padded bpk-card-ticket--vertical"
+  role="button">
+  <div
+    className="bpk-card-ticket__main">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </div>
+  <div
+    className="bpk-card-ticket__punchline">
+    <div
+      className="bpk-card-ticket__notch--start" />
+    <div
+      className="bpk-card-ticket__notch--end" />
+  </div>
+  <div
+    className="bpk-card-ticket__stub">
+    Ticket stub
+  </div>
+</div>
+`;
+
+exports[`BpkCardTicket should render correctly with an "href" attribute 1`] = `
+<a
+  className="bpk-card-ticket bpk-card-ticket--padded bpk-card-ticket--horizontal"
+  href="//www.skyscanner.net">
+  <div
+    className="bpk-card-ticket__main">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </div>
+  <div
+    className="bpk-card-ticket__punchline">
+    <div
+      className="bpk-card-ticket__notch--start" />
+    <div
+      className="bpk-card-ticket__notch--end" />
+  </div>
+  <div
+    className="bpk-card-ticket__stub">
+    Ticket stub
+  </div>
+</a>
+`;

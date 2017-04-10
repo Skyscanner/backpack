@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import './bpk-card.scss';
 
-const BpkCard = (props) => {
+const BpkCardSimple = (props) => {
   const classNames = ['bpk-card'];
   const { children, href, padded, ...rest } = props;
 
@@ -17,16 +17,15 @@ const BpkCard = (props) => {
   return <div role="button" className={classNameFinal} {...rest}>{children}</div>;
 };
 
-BpkCard.propTypes = {
+BpkCardSimple.propTypes = {
   children: PropTypes.node.isRequired,
   href: PropTypes.string,
   padded: PropTypes.bool,
-  stub: PropTypes.node,
 };
 
-BpkCard.defaultProps = {
+BpkCardSimple.defaultProps = {
   href: null,
   padded: true,
 };
 
-export default BpkCard;
+export default BpkCardSimple;

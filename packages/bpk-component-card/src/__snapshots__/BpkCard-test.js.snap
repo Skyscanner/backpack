@@ -1,4 +1,4 @@
-exports[`BpkCard should render correctly 1`] = `
+exports[`BpkCard should render BpkCardSimple 1`] = `
 <div
   className="bpk-card bpk-card--padded"
   role="button">
@@ -6,18 +6,24 @@ exports[`BpkCard should render correctly 1`] = `
 </div>
 `;
 
-exports[`BpkCard should render correctly with "padded" attribute equal to "false" 1`] = `
+exports[`BpkCard should render BpkCardTicket with a "stub" attribute 1`] = `
 <div
-  className="bpk-card"
+  className="bpk-card-ticket bpk-card-ticket--padded bpk-card-ticket--horizontal"
   role="button">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  <div
+    className="bpk-card-ticket__main">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </div>
+  <div
+    className="bpk-card-ticket__punchline">
+    <div
+      className="bpk-card-ticket__notch--start" />
+    <div
+      className="bpk-card-ticket__notch--end" />
+  </div>
+  <div
+    className="bpk-card-ticket__stub">
+    Ticket stub
+  </div>
 </div>
-`;
-
-exports[`BpkCard should render correctly with an "href" attribute 1`] = `
-<a
-  className="bpk-card bpk-card--padded"
-  href="//www.skyscanner.net">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-</a>
 `;
