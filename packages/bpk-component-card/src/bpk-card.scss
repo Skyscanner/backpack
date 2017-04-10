@@ -22,14 +22,15 @@
     flex-direction: column;
 
     .bpk-card-ticket__main {
-      @include bpk-ticket__main--vertical;
+      @include bpk-ticket__paper-main--vertical;
     }
 
     .bpk-card-ticket__stub {
-      @include bpk-ticket__stub--vertical;
+      @include bpk-ticket__paper-stub--vertical;
     }
 
     .bpk-card-ticket__punchline {
+      @include bpk-ticket__punchline;
       @include bpk-ticket__punchline--horizontal;
     }
 
@@ -48,27 +49,28 @@
     flex-direction: row;
 
     .bpk-card-ticket__punchline {
+      @include bpk-ticket__punchline;
       @include bpk-ticket__punchline--vertical;
     }
 
     .bpk-card-ticket__notch--start {
       @include bpk-ticket__notch;
-      @include bpk-ticket__notch--start;
+      @include bpk-ticket__notch--top;
     }
 
     .bpk-card-ticket__notch--end {
       @include bpk-ticket__notch;
-      @include bpk-ticket__notch--end;
+      @include bpk-ticket__notch--bottom;
     }
   }
 
   &__main {
     @include bpk-ticket__paper;
-    @include bpk-ticket__main;
+    @include bpk-ticket__paper-main;
   }
 
   &__stub {
     @include bpk-ticket__paper;
-    @include bpk-ticket__stub;
+    @include bpk-ticket__paper-stub;
   }
 }

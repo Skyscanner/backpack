@@ -81,20 +81,17 @@
   position: relative;
   display: flex;
   align-items: stretch;
-  // background-color: $bpk-card-background-color;
   color: $bpk-card-color;
   text-decoration: none;
   cursor: pointer;
-
-  // @include bpk-box-shadow-sm;
-  // @include bpk-border-radius-sm;
-
-  // @include bpk-hover {
-  //   &::after {
-  //     opacity: 1;
-  //   }
-  // }
 }
+
+/// Ticket and ticket stub styles
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__paper();
+///   }
 
 @mixin bpk-ticket__paper {
   &::after {
@@ -116,7 +113,17 @@
   }
 }
 
-@mixin bpk-ticket__main {
+/// Main part of the ticket card
+///
+/// @require {mixin} bpk-ticket__paper
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__paper();
+///     @include bpk-ticket__paper-main();
+///   }
+
+@mixin bpk-ticket__paper-main {
   position: relative;
   flex-grow: 1;
   padding: $bpk-card-padding;
@@ -134,11 +141,33 @@
   }
 }
 
-@mixin bpk-ticket__main--vertical {
+/// Main part of the ticket card, vertical variant
+///
+/// @require {mixin} bpk-ticket__paper
+/// @require {mixin} bpk-ticket__paper-main
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__paper();
+///     @include bpk-ticket__paper-main();
+///     @include bpk-ticket__paper-main--vertical();
+///   }
+
+@mixin bpk-ticket__paper-main--vertical {
   border-radius: $bpk-border-radius-sm $bpk-border-radius-sm 0 0;
 }
 
-@mixin bpk-ticket__stub {
+/// Stub part of the ticket card
+///
+/// @require {mixin} bpk-ticket__paper
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__paper();
+///     @include bpk-ticket__paper-stub();
+///   }
+
+@mixin bpk-ticket__paper-stub {
   position: relative;
   padding: $bpk-card-padding;
   border-radius: 0 $bpk-border-radius-sm $bpk-border-radius-sm 0;
@@ -156,36 +185,83 @@
   }
 }
 
-@mixin bpk-ticket__stub--vertical {
+/// Stub part of the ticket card, vertical variant
+///
+/// @require {mixin} bpk-ticket__paper
+/// @require {mixin} bpk-ticket__paper-stub
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__paper();
+///     @include bpk-ticket__paper-stub();
+///     @include bpk-ticket__paper-stub--vertical();
+///   }
+
+@mixin bpk-ticket__paper-stub--vertical {
   border-radius: 0 0 $bpk-border-radius-sm $bpk-border-radius-sm;
 }
 
-@mixin bpk-ticket__punchline--vertical {
+/// Ticket punchline
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__punchline();
+///   }
+
+@mixin bpk-ticket__punchline {
   flex-shrink: 0;
   position: relative;
   z-index: 1;
-  width: $bpk-card-notch-size * 2;
-  margin: $bpk-card-notch-size auto;
   background-color: $bpk-card-background-color;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 8' enable-background='new 0 0 4 8'%3E%3Cpath fill='%23DFDCE3' d='M1 1v3c0 .552.448 1 1 1s1-.448 1-1v-3c0-.552-.448-1-1-1s-1 .448-1 1z'/%3E%3C/svg%3E");
-  background-repeat: repeat-y;
-  background-position: 50% 0;
-  background-size: 4px 10px;
 }
 
+/// Horizontal ticket punchline (for vertical ticket card)
+///
+/// @require {mixin} bpk-ticket__punchline
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__punchline();
+///     @include bpk-ticket__punchline--vertical();
+///   }
+
+@mixin bpk-ticket__punchline--vertical {
+  width: $bpk-card-notch-size * 2;
+  margin: $bpk-card-notch-size auto;
+  padding: $bpk-card-notch-size 0;
+  background-image: url(map-get($bpk-elements, card-dash-vertical));
+  background-repeat: repeat-y;
+  background-position: 50% 0;
+  background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
+}
+
+/// Horizontal ticket punchline (for vertical ticket card)
+///
+/// @require {mixin} bpk-ticket__punchline
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__punchline();
+///     @include bpk-ticket__punchline--horizontal();
+///   }
+
 @mixin bpk-ticket__punchline--horizontal {
-  flex-shrink: 0;
-  position: relative;
-  z-index: 1;
-  width: auto;
+  // width: auto;
   height: $bpk-card-notch-size * 2;
   margin: auto $bpk-card-notch-size;
-  background-color: $bpk-card-background-color;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 8' enable-background='new 0 0 4 8'%3E%3Cpath fill='%23DFDCE3' d='M1 1v3c0 .552.448 1 1 1s1-.448 1-1v-3c0-.552-.448-1-1-1s-1 .448-1 1z'/%3E%3C/svg%3E");
+  padding: 0 $bpk-card-notch-size;
+  background-image: url(map-get($bpk-elements, card-dash-horizontal));
   background-repeat: repeat-x;
   background-position: 0 50%;
-  background-size: 4px 10px;
+  background-size: 8 * $bpk-one-pixel-rem 2 * $bpk-one-pixel-rem;
 }
+
+/// Ticket notch
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__notch();
+///   }
 
 @mixin bpk-ticket__notch {
   position: absolute;
@@ -194,14 +270,22 @@
   overflow: hidden;
 }
 
+/// Ticket notch, positioned to the left of the ticket
+///
+/// @require {mixin} bpk-ticket__notch
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__notch();
+///     @include bpk-ticket__notch--left();
+///   }
+
 @mixin bpk-ticket__notch--left {
   left: -$bpk-card-notch-size;
   width: $bpk-card-notch-size;
   height: $bpk-card-notch-size * 2;
-  // background: red;
 
   &::after {
-    // background: blue;
     position: relative;
     right: 200%;
     bottom: 50%;
@@ -215,14 +299,22 @@
   }
 }
 
+/// Ticket notch, positioned to the right of the ticket
+///
+/// @require {mixin} bpk-ticket__notch
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__notch();
+///     @include bpk-ticket__notch--right();
+///   }
+
 @mixin bpk-ticket__notch--right {
   right: -$bpk-card-notch-size;
   width: $bpk-card-notch-size;
   height: $bpk-card-notch-size * 2;
-  // background: red;
 
   &::after {
-    // background: blue;
     position: relative;
     right: 100%;
     bottom: 50%;
@@ -236,7 +328,17 @@
   }
 }
 
-@mixin bpk-ticket__notch--start {
+/// Ticket notch, positioned to the top of the ticket
+///
+/// @require {mixin} bpk-ticket__notch
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__notch();
+///     @include bpk-ticket__notch--top();
+///   }
+
+@mixin bpk-ticket__notch--top {
   top: -$bpk-card-notch-size;
 
   &::after {
@@ -254,7 +356,17 @@
   }
 }
 
-@mixin bpk-ticket__notch--end {
+/// Ticket notch, positioned to the bottom of the ticket
+///
+/// @require {mixin} bpk-ticket__notch
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__notch();
+///     @include bpk-ticket__notch--bottom();
+///   }
+
+@mixin bpk-ticket__notch--bottom {
   bottom: -$bpk-card-notch-size;
 
   &::after {
