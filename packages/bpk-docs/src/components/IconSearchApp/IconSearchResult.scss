@@ -20,16 +20,17 @@
 
   &__list-item {
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
-    width: calc(33.33% - #{$bpk-spacing-sm});
+    width: calc(25% - #{$bpk-spacing-sm});
     margin: $bpk-spacing-xs;
-    padding: $bpk-spacing-sm;
+    padding: $bpk-spacing-xs;
     box-shadow: 0 0 0 1px $bpk-color-gray-100 inset;
 
     @include bpk-border-radius-xs;
 
     @include bpk-breakpoint-mobile {
-      width: 100%;
+      width: calc(50% - #{$bpk-spacing-sm});
     }
   }
 
@@ -51,5 +52,10 @@
 
   &__name-container {
     padding: $bpk-spacing-xs;
+    padding-top: 0;
+    color: $bpk-color-gray-500;
+    text-align: center;
+
+    @include bpk-text-sm;
   }
 }
