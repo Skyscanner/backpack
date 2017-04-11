@@ -20,7 +20,11 @@ const BpkCardTicket = (props) => {
     <div className="bpk-card-ticket__main">
       {children}
     </div>,
-    <div className="bpk-card-ticket__punchline">
+    <div
+      className="bpk-card-ticket__punchline"
+      role="presentation"
+      aria-hidden="true"
+    >
       <div className="bpk-card-ticket__notch--start" />
       <div className="bpk-card-ticket__notch--end" />
     </div>,

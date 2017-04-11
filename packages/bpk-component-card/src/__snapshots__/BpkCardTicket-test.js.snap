@@ -7,7 +7,9 @@ exports[`BpkCardTicket should render correctly 1`] = `
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
   <div
-    className="bpk-card-ticket__punchline">
+    aria-hidden="true"
+    className="bpk-card-ticket__punchline"
+    role="presentation">
     <div
       className="bpk-card-ticket__notch--start" />
     <div
@@ -29,7 +31,9 @@ exports[`BpkCardTicket should render correctly with "padded" attribute equal to 
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
   <div
-    className="bpk-card-ticket__punchline">
+    aria-hidden="true"
+    className="bpk-card-ticket__punchline"
+    role="presentation">
     <div
       className="bpk-card-ticket__notch--start" />
     <div
@@ -51,7 +55,9 @@ exports[`BpkCardTicket should render correctly with a "className" attribute 1`] 
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
   <div
-    className="bpk-card-ticket__punchline">
+    aria-hidden="true"
+    className="bpk-card-ticket__punchline"
+    role="presentation">
     <div
       className="bpk-card-ticket__notch--start" />
     <div
@@ -73,7 +79,9 @@ exports[`BpkCardTicket should render correctly with a "vertical" attribute 1`] =
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
   <div
-    className="bpk-card-ticket__punchline">
+    aria-hidden="true"
+    className="bpk-card-ticket__punchline"
+    role="presentation">
     <div
       className="bpk-card-ticket__notch--start" />
     <div
@@ -95,7 +103,9 @@ exports[`BpkCardTicket should render correctly with an "href" attribute 1`] = `
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
   <div
-    className="bpk-card-ticket__punchline">
+    aria-hidden="true"
+    className="bpk-card-ticket__punchline"
+    role="presentation">
     <div
       className="bpk-card-ticket__notch--start" />
     <div
