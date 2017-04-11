@@ -3,32 +3,47 @@ import React, { PropTypes } from 'react';
 import './bpk-card.scss';
 
 const BpkCardTicket = (props) => {
-  const classNames = ['bpk-card-ticket'];
   const { children, href, padded, stub, vertical, className, ...rest } = props;
+  const classNames = ['bpk-card-ticket'];
+  const mainClassNames = ['bpk-card-ticket__main'];
+  const stubClassNames = ['bpk-card-ticket__stub'];
+  const punchlineClassNames = ['bpk-card-ticket__punchline'];
+  const startNotchClassNames = ['bpk-card-ticket__notch'];
+  const endNotchClassNames = ['bpk-card-ticket__notch'];
 
-  if (padded) { classNames.push('bpk-card-ticket--padded'); }
   if (className) { classNames.push(className); }
+  if (padded) {
+    mainClassNames.push('bpk-card-ticket__main--padded');
+    stubClassNames.push('bpk-card-ticket__stub--padded');
+  }
   if (vertical) {
     classNames.push('bpk-card-ticket--vertical');
+    mainClassNames.push('bpk-card-ticket__main--vertical');
+    stubClassNames.push('bpk-card-ticket__stub--vertical');
+    punchlineClassNames.push('bpk-card-ticket__punchline--horizontal');
+    startNotchClassNames.push('bpk-card-ticket__notch--left');
+    endNotchClassNames.push('bpk-card-ticket__notch--right');
   } else {
-    classNames.push('bpk-card-ticket--horizontal');
+    punchlineClassNames.push('bpk-card-ticket__punchline--vertical');
+    startNotchClassNames.push('bpk-card-ticket__notch--top');
+    endNotchClassNames.push('bpk-card-ticket__notch--bottom');
   }
 
   const classNameFinal = classNames.join(' ');
 
   const contents = [
-    <div className="bpk-card-ticket__main">
+    <div className={mainClassNames.join(' ')}>
       {children}
     </div>,
     <div
-      className="bpk-card-ticket__punchline"
+      className={punchlineClassNames.join(' ')}
       role="presentation"
       aria-hidden="true"
     >
-      <div className="bpk-card-ticket__notch--start" />
-      <div className="bpk-card-ticket__notch--end" />
+      <div className={startNotchClassNames.join(' ')} />
+      <div className={endNotchClassNames.join(' ')} />
     </div>,
-    <div className="bpk-card-ticket__stub">
+    <div className={stubClassNames.join(' ')}>
       {stub}
     </div>,
   ];

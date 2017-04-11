@@ -84,6 +84,21 @@
   color: $bpk-card-color;
   text-decoration: none;
   cursor: pointer;
+  flex-direction: row;
+}
+
+/// Vertical variant of ticket card
+///
+/// @require {mixin} bpk-ticket
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket();
+///     @include bpk-ticket--vertical();
+///   }
+
+@mixin bpk-ticket--vertical {
+  flex-direction: column;
 }
 
 /// Ticket and ticket stub styles
@@ -128,6 +143,22 @@
 
 @mixin bpk-ticket__paper--padded {
   padding: $bpk-card-padding;
+}
+
+/// Adds hover effect to ticket and stub
+///
+/// @require {mixin} bpk-ticket__paper
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__paper();
+///     @include bpk-ticket__paper--hover();
+///   }
+
+@mixin bpk-ticket__paper--hover {
+  &::after {
+    opacity: 1;
+  }
 }
 
 /// Main part of the ticket card

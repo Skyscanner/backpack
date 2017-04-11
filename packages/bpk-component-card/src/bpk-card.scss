@@ -12,72 +12,71 @@
   @include bpk-ticket;
 
   @include bpk-hover {
-    .bpk-card-ticket__main::after,
-    .bpk-card-ticket__stub::after {
-      opacity: 1;
+    .bpk-card-ticket__main,
+    .bpk-card-ticket__stub {
+      @include bpk-ticket__paper--hover;
     }
   }
 
   &--vertical {
-    flex-direction: column;
-
-    .bpk-card-ticket__main {
-      @include bpk-ticket__paper-main--vertical;
-    }
-
-    .bpk-card-ticket__stub {
-      @include bpk-ticket__paper-stub--vertical;
-    }
-
-    .bpk-card-ticket__punchline {
-      @include bpk-ticket__punchline;
-      @include bpk-ticket__punchline--horizontal;
-    }
-
-    .bpk-card-ticket__notch--start {
-      @include bpk-ticket__notch;
-      @include bpk-ticket__notch--left;
-    }
-
-    .bpk-card-ticket__notch--end {
-      @include bpk-ticket__notch;
-      @include bpk-ticket__notch--right;
-    }
-  }
-
-  &--horizontal {
-    flex-direction: row;
-
-    .bpk-card-ticket__punchline {
-      @include bpk-ticket__punchline;
-      @include bpk-ticket__punchline--vertical;
-    }
-
-    .bpk-card-ticket__notch--start {
-      @include bpk-ticket__notch;
-      @include bpk-ticket__notch--top;
-    }
-
-    .bpk-card-ticket__notch--end {
-      @include bpk-ticket__notch;
-      @include bpk-ticket__notch--bottom;
-    }
-  }
-
-  &--padded {
-    .bpk-card-ticket__main,
-    .bpk-card-ticket__stub {
-      @include bpk-ticket__paper--padded;
-    }
+    @include bpk-ticket--vertical;
   }
 
   &__main {
     @include bpk-ticket__paper;
     @include bpk-ticket__paper-main;
+
+    &--vertical {
+      @include bpk-ticket__paper-main--vertical;
+    }
+
+    &--padded {
+      @include bpk-ticket__paper--padded;
+    }
   }
 
   &__stub {
     @include bpk-ticket__paper;
     @include bpk-ticket__paper-stub;
+
+    &--vertical {
+      @include bpk-ticket__paper-stub--vertical;
+    }
+
+    &--padded {
+      @include bpk-ticket__paper--padded;
+    }
+  }
+
+  &__punchline {
+    @include bpk-ticket__punchline;
+
+    &--horizontal {
+      @include bpk-ticket__punchline--horizontal;
+    }
+
+    &--vertical {
+      @include bpk-ticket__punchline--vertical;
+    }
+  }
+
+  &__notch {
+    @include bpk-ticket__notch;
+
+    &--top {
+      @include bpk-ticket__notch--top;
+    }
+
+    &--right {
+      @include bpk-ticket__notch--right;
+    }
+
+    &--bottom {
+      @include bpk-ticket__notch--bottom;
+    }
+
+    &--left {
+      @include bpk-ticket__notch--left;
+    }
   }
 }
