@@ -16,35 +16,30 @@ const BpkCardTicket = (props) => {
 
   const classNameFinal = classNames.join(' ');
 
+  const contents = [
+    <div className="bpk-card-ticket__main">
+      {children}
+    </div>,
+    <div className="bpk-card-ticket__punchline">
+      <div className="bpk-card-ticket__notch--start" />
+      <div className="bpk-card-ticket__notch--end" />
+    </div>,
+    <div className="bpk-card-ticket__stub">
+      {stub}
+    </div>,
+  ];
+
   if (href) {
     return (
       <a href={href} className={classNameFinal} {...rest}>
-        <div className="bpk-card-ticket__main">
-          {children}
-        </div>
-        <div className="bpk-card-ticket__punchline">
-          <div className="bpk-card-ticket__notch--start" />
-          <div className="bpk-card-ticket__notch--end" />
-        </div>
-        <div className="bpk-card-ticket__stub">
-          {stub}
-        </div>
+        { contents }
       </a>
     );
   }
 
   return (
     <div role="button" className={classNameFinal} {...rest}>
-      <div className="bpk-card-ticket__main">
-        {children}
-      </div>
-      <div className="bpk-card-ticket__punchline">
-        <div className="bpk-card-ticket__notch--start" />
-        <div className="bpk-card-ticket__notch--end" />
-      </div>
-      <div className="bpk-card-ticket__stub">
-        {stub}
-      </div>
+      { contents }
     </div>
   );
 };

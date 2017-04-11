@@ -42,4 +42,14 @@ describe('BpkCardTicket', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with a "className" attribute', () => {
+    const tree = renderer.create(
+      <BpkCardTicket stub="Ticket stub" className="custom-class">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </BpkCardTicket>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -26,9 +26,30 @@ const components = [
   {
     id: 'without-padding',
     title: 'Without padding',
-    blurb: 'For full flexibility you can opt to remove the default padding.',
+    blurb: 'For full flexibility you can opt to remove the default padding e.g. to display full-bleed images.',
     examples: [
       <BpkCard padded={false}>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </BpkCard>,
+    ],
+  },
+  {
+    id: 'ticket',
+    title: 'With ticket stub',
+    blurb: [
+      <BpkParagraph>
+        A ticket line can be added to a card to create a separation between two distinct areas.
+        This is available both horizontally and vertically.
+      </BpkParagraph>,
+    ],
+    examples: [
+      <BpkCard stub="Lorem ipsum dolor sit amet.">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </BpkCard>,
+      <br />,
+      <BpkCard stub="Lorem ipsum dolor sit amet." vertical>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
         sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
       </BpkCard>,
@@ -41,7 +62,7 @@ const CardsPage = () => <DocsPageBuilder
   blurb={[
     <BpkParagraph>
       Cards are used to group related items within the UI. They allow complex datasets to be broken down into
-      individual, distinct areas for easy consumption. Cards are quite often used as a signifier to give affordance
+      individual, distinct areas for easy consumption. Cards are used as a signifier to give affordance
       to a clickable set of elements e.g. a flight itinerary.
     </BpkParagraph>,
   ]}

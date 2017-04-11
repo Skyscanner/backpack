@@ -42,6 +42,28 @@ exports[`BpkCardTicket should render correctly with "padded" attribute equal to 
 </div>
 `;
 
+exports[`BpkCardTicket should render correctly with a "className" attribute 1`] = `
+<div
+  className="bpk-card-ticket bpk-card-ticket--padded custom-class bpk-card-ticket--horizontal"
+  role="button">
+  <div
+    className="bpk-card-ticket__main">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+  </div>
+  <div
+    className="bpk-card-ticket__punchline">
+    <div
+      className="bpk-card-ticket__notch--start" />
+    <div
+      className="bpk-card-ticket__notch--end" />
+  </div>
+  <div
+    className="bpk-card-ticket__stub">
+    Ticket stub
+  </div>
+</div>
+`;
+
 exports[`BpkCardTicket should render correctly with a "vertical" attribute 1`] = `
 <div
   className="bpk-card-ticket bpk-card-ticket--padded bpk-card-ticket--vertical"

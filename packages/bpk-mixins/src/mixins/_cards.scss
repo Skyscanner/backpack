@@ -169,6 +169,10 @@
 
 @mixin bpk-ticket__paper-main--vertical {
   border-radius: $bpk-border-radius-sm $bpk-border-radius-sm 0 0;
+
+  @include bpk-rtl {
+    border-radius: $bpk-border-radius-sm $bpk-border-radius-sm 0 0;
+  }
 }
 
 /// Stub part of the ticket card
@@ -210,6 +214,10 @@
 
 @mixin bpk-ticket__paper-stub--vertical {
   border-radius: 0 0 $bpk-border-radius-sm $bpk-border-radius-sm;
+
+  @include bpk-rtl {
+    border-radius: 0 0 $bpk-border-radius-sm $bpk-border-radius-sm;
+  }
 }
 
 /// Ticket punchline
@@ -257,7 +265,6 @@
 ///   }
 
 @mixin bpk-ticket__punchline--horizontal {
-  // width: auto;
   height: $bpk-card-notch-size * 2;
   margin: auto $bpk-card-notch-size;
   padding: 0 $bpk-card-notch-size;
@@ -307,6 +314,11 @@
     border: $bpk-card-notch-size solid white;
     border-radius: $bpk-card-notch-size * 2;
     box-shadow: $bpk-box-shadow-sm inset;
+
+    @include bpk-rtl {
+      right: auto;
+      left: 100%;
+    }
   }
 }
 
@@ -336,6 +348,11 @@
     border: $bpk-card-notch-size solid white;
     border-radius: $bpk-card-notch-size * 2;
     box-shadow: $bpk-box-shadow-sm inset;
+
+    @include bpk-rtl {
+      right: auto;
+      left: 200%;
+    }
   }
 }
 

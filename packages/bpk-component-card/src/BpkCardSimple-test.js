@@ -32,4 +32,14 @@ describe('BpkCardSimple', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with a "className" attribute', () => {
+    const tree = renderer.create(
+      <BpkCardSimple className="custom-class">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </BpkCardSimple>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
