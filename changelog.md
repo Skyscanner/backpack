@@ -2,6 +2,12 @@
 
 ## UNRELEASED
 
+**Added:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - Added deals icon
+
 **Fixed:**
 - bpk-component-loading-button:
   - Add 'withRtlSupport' to default icons
