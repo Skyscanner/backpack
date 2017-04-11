@@ -2,6 +2,10 @@
 
 > Backpack icon components.
 
+> **Note:** All icon components are generated using the [react-svg-loader cli](https://github.com/boopathi/react-svg-loader#cli) tool.
+Whilst this alleviates the need to hand crank every component, it limits the ability to encapsulate styling options and
+default fill color. See the examples below on how to overcome these limitations.  
+
 ## Installation
 
 ```sh
@@ -12,49 +16,38 @@ npm install bpk-component-icon --save
 
 ```js
 import React from 'react';
+import { colors } from 'bpk-tokens/tokens/base.es6';
 import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
 import BpkLargeAccessibilityIcon from 'bpk-component-icon/lg/accessibility';
 
-import './icons.scss';
-
 export default () => (
   <div>
-    <BpkSmallFlightIcon className="abc-icon__flight" />
-    <BpkLargeAccessibilityIcon className="abc-icon__a11y" />
+    <BpkSmallFlightIcon fill={colors.colorBlue500} />
+    <BpkLargeAccessibilityIcon fill={colors.colorGray700} />
   </div>
 );
 ```
 
-*icons.scss:*
-```scss
-@import '~bpk-mixins';
-
-.abc-icon__flight {
-  fill: $bpk-color-white;
-}
-
-.abc-icon__a11y {
-  fill: $bpk-color-blue-500;
-}
-```
+> **Note:** Due to the way that they are generated, there are no prop types defined on any of the icon components. Any
+props that you pass through will be rendered directly to the DOM.
 
 ## Aligning to BpkButton components
 
 ```js
 import React from 'react';
+import BpkButton from 'bpk-component-button';
+import { colors } from 'bpk-tokens/tokens/base.es6';
 import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
 import BpkLargeAccessibilityIcon from 'bpk-component-icon/lg/accessibility';
 import { withButtonAlignment, withLargeButtonAlignment } from 'bpk-component-icon';
-
-import './icons.scss';
 
 const AlignedBpkSmallFlightIcon = withButtonAlignment(BpkSmallFlightIcon);
 const AlignedBpkLargeAccessibilityIcon = withLargeButtonAlignment(BpkLargeAccessibilityIcon);
 
 export default () => (
   <BpkButton>
-    <AlignedBpkSmallFlightIcon className="abc-icon__flight" />
-    <AlignedBpkLargeAccessibilityIcon className="abc-icon__a11y" />
+    <AlignedBpkSmallFlightIcon fill={colors.colorBlue500} />
+    <AlignedBpkLargeAccessibilityIcon fill={colors.colorGray700} />
   </BpkButton>
 );
 ```
@@ -63,14 +56,16 @@ export default () => (
 
 ```js
 import React from 'react';
+import BpkButton from 'bpk-component-button';
+import { colors } from 'bpk-tokens/tokens/base.es6';
 import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
 import { withRtlSupport } from 'bpk-component-icon';
-
-import './icons.scss';
 
 const RtlSupportedBpkSmallFlightIcon = withRtlSupport(BpkSmallFlightIcon);
 
 export default () => (
-  <RtlSupportedBpkSmallFlightIcon className="abc-icon__flight" />
+  <div>
+    <RtlSupportedBpkSmallFlightIcon fill={colors.colorBlue500} />
+  </div>
 );
 ```

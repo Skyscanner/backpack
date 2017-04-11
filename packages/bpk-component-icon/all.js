@@ -1,18 +1,15 @@
-const requireAll = (requireContext) => {
+function requireAll(requireContext) {
   const hash = {};
 
   requireContext.keys().forEach((key) => {
     const moduleName = key.replace('./', '').replace('.js', '');
-    const moduleParts = moduleName.split('/');
-
-    if (!hash[moduleParts[0]]) {
-      hash[moduleParts[0]] = {};
-    }
-
-    hash[moduleParts[0]][moduleParts[1]] = requireContext(key).default;
+    hash[moduleName] = requireContext(key).default;
   });
 
   return hash;
-};
+}
 
-export default requireAll(require.context('./', true, /\.\/(?!src|node_modules).*\/.*\.js$/));
+module.exports = {
+  sm: requireAll(require.context('./sm', false, /\.js$/)),
+  lg: requireAll(require.context('./lg', false, /\.js$/)),
+};

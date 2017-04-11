@@ -3,24 +3,6 @@
 ## UNRELEASED
 
 **Changed:**
-- bpk-mixins:
-  - Breaking change to newly introduced `bpk-icon` mixin
-  - Old signature: `bpk-icon($icon, $color, $size: small)`
-  - New signature: `bpk-icon($icon, $color)`
-  - New icon taxonomy now available through this mixin
-
-- bpk-svgs:
-  - Removed recently added `$bpk-icons-no-color-sm` & `$bpk-icons-no-color-lg` maps
-
-**Added:**
-- bpk-component-icon:
-- bpk-svgs:
-  - Added icons following the new taxonomy system
-
-- bpk-svgs:
-  - Added `$bpk-icons` map with new taxonomy system
-  
-**Fixed:**
 - bpk-component-loading-button: 0.0.5 => 0.0.6
   - Add 'withRtlSupport' to default icons
 
