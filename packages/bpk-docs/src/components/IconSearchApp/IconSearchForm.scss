@@ -1,0 +1,16 @@
+@import '~bpk-mixins';
+
+.bpkdocs-icon-search-form {
+  width: 100%;
+
+  &__fieldset {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    @include bpk-breakpoint-mobile {
+      width: 100%;
+    }
+  }
+}

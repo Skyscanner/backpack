@@ -20,6 +20,16 @@
 /// @access private
 
 @mixin _bpk-icon-factory($map, $size, $icon) {
+  @if map_has_key($map, $icon) != true {
+    $err: (
+      "Could not find '" + $icon + "' icon. Refer to "
+      + "http://backpack.prod.aws.skyscnr.com/components/atoms/icons"
+      + " when specifying icon names."
+    );
+
+    @error $err;
+  }
+
   content: '';
   display: inline-block;
   width: $size;
@@ -59,9 +69,9 @@
 /// > });
 /// > ```
 ///
-/// @param {key} $icon [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
-/// @param {key} $color [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
-/// @param {key} $size [''] - The key of the desired SVG datauri from the $bpk-icons-sm map.
+/// @param {key} $icon
+/// @param {variable} $color
+/// @param {key} $size
 ///
 /// @example scss
 ///   .selector {
@@ -69,25 +79,7 @@
 ///   }
 
 @mixin bpk-icon($icon, $color, $size: small) {
-  @if function-exists(encodebase64) {
-    $icon-map: if($size == large, $bpk-icons-no-color-lg, $bpk-icons-no-color-sm);
-    $datauri: "data:image/svg+xml;base64," + encodebase64(
-      str-replace(
-        map-get($icon-map, $icon),
-        "$$COLOR$$",
-        $color
-      )
-    );
-
-    content: '';
-    display: inline-block;
-    width: if($size == large, $bpk-icon-size-lg, $bpk-icon-size-sm);
-    height: if($size == large, $bpk-icon-size-lg, $bpk-icon-size-sm);
-    background: url($datauri) no-repeat;
-    background-size: cover;
-  }
-
-  @else {
+  @if function-exists(encodebase64) != true {
     $err: (
       "Could not find encodebase64 function. Refer to "
       + "http://backpack.prod.aws.skyscnr.com/sassdoc/#svgs-mixin-bpk-icon"
@@ -96,6 +88,30 @@
 
     @error $err;
   }
+
+  $icon-map: if($size == large, $bpk-icons-no-color-lg, $bpk-icons-no-color-sm);
+
+  @if map_has_key($icon-map, $icon) != true {
+    $err: (
+      "Could not find '" + $icon + "' icon. Refer to "
+      + "http://backpack.prod.aws.skyscnr.com/components/atoms/icons"
+      + " when specifying icon names."
+    );
+
+    @error $err;
+  }
+
+  $icon-size: if($size == large, $bpk-icon-size-lg, $bpk-icon-size-sm);
+  $raw-svg: map-get($icon-map, $icon);
+  $svg-string: str-replace($raw-svg, "$$COLOR$$", $color);
+  $datauri: "data:image/svg+xml;base64," + encodebase64($svg-string);
+
+  content: '';
+  display: inline-block;
+  width: $icon-size;
+  height: $icon-size;
+  background: url($datauri) no-repeat;
+  background-size: cover;
 }
 
 /// Small icon.
@@ -106,6 +122,8 @@
 ///   .selector {
 ///     @include bpk-icon-sm(flight-gray-500);
 ///   }
+///
+/// @deprecated Use bpk-icon instead
 
 @mixin bpk-icon-sm($icon) {
   @include _bpk-icon-factory($bpk-icons-sm, $bpk-icon-size-sm, $icon);
@@ -119,6 +137,8 @@
 ///   .selector {
 ///     @include bpk-icon-lg(flight-gray-500);
 ///   }
+///
+/// @deprecated Use bpk-icon instead
 
 @mixin bpk-icon-lg($icon) {
   @include _bpk-icon-factory($bpk-icons-lg, $bpk-icon-size-lg, $icon);

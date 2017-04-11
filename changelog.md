@@ -2,9 +2,12 @@
 
 ## UNRELEASED
 
-**Changed:**
-- bpk-component-loading-button: 0.0.5 => 0.0.6
+**Fixed:**
+- bpk-component-loading-button:
   - Add 'withRtlSupport' to default icons
+
+- bpk-mixins:
+  - Improved error message when incorrect icon name is passed to icon mixins
 
 ## 2017-04-05 - Added `legacy` prop to breakpoint component
 
