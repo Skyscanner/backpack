@@ -1,0 +1,19 @@
+@import 'index';
+
+.bpk-icon {
+  &-sm__chart {
+    @include bpk-icon-sm(chart-green-500);
+  }
+
+  &-lg__chart {
+    @include bpk-icon-lg(chart-green-500);
+  }
+
+  &__chart--small {
+    @include bpk-icon(chart, $bpk-color-green-500, small);
+  }
+
+  &__chart--large {
+    @include bpk-icon(chart, $bpk-color-green-500, large);
+  }
+}
