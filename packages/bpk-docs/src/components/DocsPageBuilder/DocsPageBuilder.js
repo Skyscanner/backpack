@@ -106,9 +106,7 @@ const DocsPageBuilder = props => (
     <Helmet title={props.title} />
     <BpkHeading level="h1">{props.title}</BpkHeading>
     {flatten(toNodes(props.blurb))}
-    {props.showMenu && (
-      <BpkList>{flatten([...props.components, ...props.customSections].map(ExampleNavListItem))}</BpkList>
-    )}
+    <BpkList>{flatten([...props.components, ...props.customSections].map(ExampleNavListItem))}</BpkList>
     {props.tokenMap ? toTokenTable(props.tokenMap) : null}
     {flatten(props.components.map(ComponentExample))}
     {props.readme ? flatten([
@@ -148,7 +146,6 @@ DocsPageBuilder.propTypes = {
       sassdocId: PropTypes.string,
     }),
   ),
-  showMenu: PropTypes.bool,
   readme: PropTypes.string,
   tokenMap: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   customSections: PropTypes.arrayOf(
@@ -164,7 +161,6 @@ DocsPageBuilder.propTypes = {
 DocsPageBuilder.defaultProps = {
   blurb: null,
   components: [],
-  showMenu: true,
   readme: null,
   tokenMap: null,
   customSections: [],

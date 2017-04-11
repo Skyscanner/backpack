@@ -2,6 +2,6 @@ node_modules
 dist
 coverage
 /packages/bpk-stylesheets/base.js
-/packages/bpk-component-icon/*/
-!/packages/bpk-component-icon/src
+/packages/bpk-component-icon/lg
+/packages/bpk-component-icon/sm
 /packages/bpk-tokens/tokens
