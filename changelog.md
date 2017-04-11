@@ -2,17 +2,21 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-04-11 - Added deals icon and improved icon not found error handling
+
 **Added:**
-- bpk-component-icon:
-- bpk-mixins:
-- bpk-svgs:
+- bpk-component-icon: 3.3.19 => 3.4.0
+- bpk-mixins: 11.0.3 => 11.1.0
+- bpk-svgs: 5.1.3 => 5.2.0
   - Added deals icon
 
 **Fixed:**
-- bpk-component-loading-button:
+- bpk-component-loading-button: 0.0.5 => 0.0.6
   - Add 'withRtlSupport' to default icons
 
-- bpk-mixins:
+- bpk-mixins: 11.0.3 => 11.1.0
   - Improved error message when incorrect icon name is passed to icon mixins
 
 ## 2017-04-05 - Added `legacy` prop to breakpoint component
