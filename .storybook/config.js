@@ -35,6 +35,7 @@ configure(() => {
   require('./../packages/bpk-component-grid/stories');
   require('./../packages/bpk-component-grid-toggle/stories');
   require('./../packages/bpk-component-heading/stories');
+  require('./../packages/bpk-component-horizontal-nav/stories');
   require('./../packages/bpk-component-icon/stories');
   require('./../packages/bpk-component-input/stories');
   require('./../packages/bpk-component-label/stories');

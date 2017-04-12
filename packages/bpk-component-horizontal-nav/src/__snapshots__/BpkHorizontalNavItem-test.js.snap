@@ -1,0 +1,10 @@
+exports[`BpkHorizontalNavItem should render correctly 1`] = `
+<li
+  className="bpk-horizontal-nav__item">
+  <button
+    className="bpk-horizontal-nav__button"
+    type="button">
+    My nav item content
+  </button>
+</li>
+`;

@@ -1,0 +1,9 @@
+exports[`BpkHorizontalNav should render correctly 1`] = `
+<nav
+  className="bpk-horizontal-nav">
+  <ul
+    className="bpk-horizontal-nav__list">
+    My nav content.
+  </ul>
+</nav>
+`;
