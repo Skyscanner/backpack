@@ -24,7 +24,7 @@ class IconSearchApp extends Component {
     const { icons } = this.props;
     const { filterValue } = this.state;
 
-    return icons.filter(icon => icon.name.indexOf(filterValue) !== -1);
+    return icons.filter(icon => icon.name.indexOf(filterValue.toLowerCase()) !== -1);
   }
 
   render() {
