@@ -24,6 +24,8 @@ const BpkCardTicket = (props) => {
     startNotchClassNames.push('bpk-card-ticket__notch--left');
     endNotchClassNames.push('bpk-card-ticket__notch--right');
   } else {
+    mainClassNames.push('bpk-card-ticket__main--horizontal');
+    stubClassNames.push('bpk-card-ticket__stub--horizontal');
     punchlineClassNames.push('bpk-card-ticket__punchline--vertical');
     startNotchClassNames.push('bpk-card-ticket__notch--top');
     endNotchClassNames.push('bpk-card-ticket__notch--bottom');
@@ -32,10 +34,14 @@ const BpkCardTicket = (props) => {
   const classNameFinal = classNames.join(' ');
 
   const contents = [
-    <div className={mainClassNames.join(' ')}>
+    <div
+      key="main"
+      className={mainClassNames.join(' ')}
+    >
       {children}
     </div>,
     <div
+      key="punchline"
       className={punchlineClassNames.join(' ')}
       role="presentation"
       aria-hidden="true"
@@ -43,7 +49,10 @@ const BpkCardTicket = (props) => {
       <div className={startNotchClassNames.join(' ')} />
       <div className={endNotchClassNames.join(' ')} />
     </div>,
-    <div className={stubClassNames.join(' ')}>
+    <div
+      key="stub"
+      className={stubClassNames.join(' ')}
+    >
       {stub}
     </div>,
   ];

@@ -79,12 +79,18 @@
 
 @mixin bpk-ticket {
   position: relative;
+  display: block;
   display: flex;
   align-items: stretch;
   color: $bpk-card-color;
   text-decoration: none;
   cursor: pointer;
   flex-direction: row;
+
+  // Don't use Flexbox in IE
+  @media screen\0 {
+    display: block;
+  }
 }
 
 /// Vertical variant of ticket card
@@ -172,17 +178,37 @@
 ///   }
 
 @mixin bpk-ticket__paper-main {
-  flex-grow: 1;
-  border-radius: $bpk-border-radius-sm 0 0 $bpk-border-radius-sm;
+  flex: 2 1 auto;
 
   @include bpk-box-shadow-sm;
+
+  &::after {
+    border-radius: inherit;
+  }
+}
+
+/// Main part of the ticket card, horizontal variant
+///
+/// @require {mixin} bpk-ticket__paper
+/// @require {mixin} bpk-ticket__paper-main
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__paper();
+///     @include bpk-ticket__paper-main();
+///     @include bpk-ticket__paper-main--horizontal();
+///   }
+
+@mixin bpk-ticket__paper-main--horizontal {
+  border-radius: $bpk-border-radius-sm 0 0 $bpk-border-radius-sm;
 
   @include bpk-rtl {
     border-radius: 0 $bpk-border-radius-sm $bpk-border-radius-sm 0;
   }
 
-  &::after {
-    border-radius: inherit;
+  // Don't use Flexbox in IE
+  @media screen\0 {
+    width: calc(68% - #{$bpk-card-notch-size * 2});
   }
 }
 
@@ -200,10 +226,6 @@
 
 @mixin bpk-ticket__paper-main--vertical {
   border-radius: $bpk-border-radius-sm $bpk-border-radius-sm 0 0;
-
-  @include bpk-rtl {
-    border-radius: $bpk-border-radius-sm $bpk-border-radius-sm 0 0;
-  }
 }
 
 /// Stub part of the ticket card
@@ -217,17 +239,47 @@
 ///   }
 
 @mixin bpk-ticket__paper-stub {
-  flex-grow: 0;
-  border-radius: 0 $bpk-border-radius-sm $bpk-border-radius-sm 0;
+  flex: 1 1 auto;
 
   @include bpk-box-shadow-sm;
 
-  @include bpk-rtl {
-    border-radius: $bpk-border-radius-sm 0 0 $bpk-border-radius-sm;
-  }
-
   &::after {
     border-radius: inherit;
+  }
+}
+
+/// Stub part of the ticket card, horizontal variant
+///
+/// @require {mixin} bpk-ticket__paper
+/// @require {mixin} bpk-ticket__paper-stub
+///
+/// @example scss
+///   .selector {
+///     @include bpk-ticket__paper();
+///     @include bpk-ticket__paper-stub();
+///     @include bpk-ticket__paper-stub--horizontal();
+///   }
+
+@mixin bpk-ticket__paper-stub--horizontal {
+  min-width: 30%;
+  border-radius: 0 $bpk-border-radius-sm $bpk-border-radius-sm 0;
+
+  @include bpk-rtl {
+    border-radius: $bpk-border-radius-sm 0 0 $bpk-border-radius-sm;
+
+    @media screen\0 {
+      right: auto;
+      left: 0;
+    }
+  }
+
+  // Don't use Flexbox in IE
+  @media screen\0 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 32%;
+    height: 100%;
   }
 }
 
@@ -245,10 +297,6 @@
 
 @mixin bpk-ticket__paper-stub--vertical {
   border-radius: 0 0 $bpk-border-radius-sm $bpk-border-radius-sm;
-
-  @include bpk-rtl {
-    border-radius: 0 0 $bpk-border-radius-sm $bpk-border-radius-sm;
-  }
 }
 
 /// Ticket punchline
@@ -259,7 +307,7 @@
 ///   }
 
 @mixin bpk-ticket__punchline {
-  flex-shrink: 0;
+  flex: 0 0 auto;
   position: relative;
   z-index: 1;
   background-color: $bpk-card-background-color;
@@ -283,6 +331,21 @@
   background-repeat: repeat-y;
   background-position: 50% 0;
   background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
+
+  @include bpk-rtl {
+    @media screen\0 {
+      right: auto;
+      left: 32%;
+    }
+  }
+
+  // Don't use Flexbox in IE
+  @media screen\0 {
+    position: absolute;
+    top: 0;
+    right: 32%;
+    bottom: 0;
+  }
 }
 
 /// Horizontal ticket punchline (for vertical ticket card)

@@ -26,6 +26,10 @@
     @include bpk-ticket__paper;
     @include bpk-ticket__paper-main;
 
+    &--horizontal {
+      @include bpk-ticket__paper-main--horizontal;
+    }
+
     &--vertical {
       @include bpk-ticket__paper-main--vertical;
     }
@@ -38,6 +42,10 @@
   &__stub {
     @include bpk-ticket__paper;
     @include bpk-ticket__paper-stub;
+
+    &--horizontal {
+      @include bpk-ticket__paper-stub--horizontal;
+    }
 
     &--vertical {
       @include bpk-ticket__paper-stub--vertical;
