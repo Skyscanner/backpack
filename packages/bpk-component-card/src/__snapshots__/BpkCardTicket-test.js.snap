@@ -3,7 +3,7 @@ exports[`BpkCardTicket should render correctly 1`] = `
   className="bpk-card-ticket"
   role="button">
   <div
-    className="bpk-card-ticket__main bpk-card-ticket__main--padded">
+    className="bpk-card-ticket__main bpk-card-ticket__main--padded bpk-card-ticket__main--horizontal">
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
   <div
@@ -16,7 +16,7 @@ exports[`BpkCardTicket should render correctly 1`] = `
       className="bpk-card-ticket__notch bpk-card-ticket__notch--bottom" />
   </div>
   <div
-    className="bpk-card-ticket__stub bpk-card-ticket__stub--padded">
+    className="bpk-card-ticket__stub bpk-card-ticket__stub--padded bpk-card-ticket__stub--horizontal">
     Ticket stub
   </div>
 </div>
@@ -27,7 +27,7 @@ exports[`BpkCardTicket should render correctly with "padded" attribute equal to 
   className="bpk-card-ticket"
   role="button">
   <div
-    className="bpk-card-ticket__main">
+    className="bpk-card-ticket__main bpk-card-ticket__main--horizontal">
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
   <div
@@ -40,7 +40,7 @@ exports[`BpkCardTicket should render correctly with "padded" attribute equal to 
       className="bpk-card-ticket__notch bpk-card-ticket__notch--bottom" />
   </div>
   <div
-    className="bpk-card-ticket__stub">
+    className="bpk-card-ticket__stub bpk-card-ticket__stub--horizontal">
     Ticket stub
   </div>
 </div>
@@ -51,7 +51,7 @@ exports[`BpkCardTicket should render correctly with a "className" attribute 1`] 
   className="bpk-card-ticket custom-class"
   role="button">
   <div
-    className="bpk-card-ticket__main bpk-card-ticket__main--padded">
+    className="bpk-card-ticket__main bpk-card-ticket__main--padded bpk-card-ticket__main--horizontal">
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
   <div
@@ -64,7 +64,7 @@ exports[`BpkCardTicket should render correctly with a "className" attribute 1`] 
       className="bpk-card-ticket__notch bpk-card-ticket__notch--bottom" />
   </div>
   <div
-    className="bpk-card-ticket__stub bpk-card-ticket__stub--padded">
+    className="bpk-card-ticket__stub bpk-card-ticket__stub--padded bpk-card-ticket__stub--horizontal">
     Ticket stub
   </div>
 </div>
@@ -99,7 +99,7 @@ exports[`BpkCardTicket should render correctly with an "href" attribute 1`] = `
   className="bpk-card-ticket"
   href="//www.skyscanner.net">
   <div
-    className="bpk-card-ticket__main bpk-card-ticket__main--padded">
+    className="bpk-card-ticket__main bpk-card-ticket__main--padded bpk-card-ticket__main--horizontal">
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
   <div
@@ -112,7 +112,7 @@ exports[`BpkCardTicket should render correctly with an "href" attribute 1`] = `
       className="bpk-card-ticket__notch bpk-card-ticket__notch--bottom" />
   </div>
   <div
-    className="bpk-card-ticket__stub bpk-card-ticket__stub--padded">
+    className="bpk-card-ticket__stub bpk-card-ticket__stub--padded bpk-card-ticket__stub--horizontal">
     Ticket stub
   </div>
 </a>

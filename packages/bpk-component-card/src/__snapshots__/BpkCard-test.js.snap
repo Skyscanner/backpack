@@ -11,7 +11,7 @@ exports[`BpkCard should render BpkCardTicket with a "stub" attribute 1`] = `
   className="bpk-card-ticket"
   role="button">
   <div
-    className="bpk-card-ticket__main bpk-card-ticket__main--padded">
+    className="bpk-card-ticket__main bpk-card-ticket__main--padded bpk-card-ticket__main--horizontal">
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
   </div>
   <div
@@ -24,7 +24,7 @@ exports[`BpkCard should render BpkCardTicket with a "stub" attribute 1`] = `
       className="bpk-card-ticket__notch bpk-card-ticket__notch--bottom" />
   </div>
   <div
-    className="bpk-card-ticket__stub bpk-card-ticket__stub--padded">
+    className="bpk-card-ticket__stub bpk-card-ticket__stub--padded bpk-card-ticket__stub--horizontal">
     Ticket stub
   </div>
 </div>
