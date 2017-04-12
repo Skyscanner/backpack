@@ -2,17 +2,24 @@ import React, { PropTypes } from 'react';
 
 import './presentation-block.scss';
 
-const PresentationBlock = ({ children }) => (
-  <section className="bpkdocs-presentation-block">
-    <div className="bpkdocs-presentation-block__container">{children}</div>
-  </section>
-);
+const PresentationBlock = (props) => {
+  const classNames = ['bpkdocs-presentation-block'];
+  const { className, ...rest } = props;
+
+  if (className) { classNames.push(className); }
+
+  return (
+    <section className={classNames.join(' ')} {...rest} />
+  );
+};
 
 PresentationBlock.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+};
+
+PresentationBlock.defaultProps = {
+  className: null,
 };
 
 export default PresentationBlock;
