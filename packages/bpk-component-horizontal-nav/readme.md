@@ -40,3 +40,4 @@ export default () => (
 | children  | node     | true     | -             |
 | className | string   | false    | null          |
 | selected  | bool     | false    | false         |
+| href      | string   | false    | null          |

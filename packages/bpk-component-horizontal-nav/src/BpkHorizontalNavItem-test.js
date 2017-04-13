@@ -21,6 +21,15 @@ describe('BpkHorizontalNavItem', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with an "href" prop', () => {
+    const tree = renderer.create(
+      <BpkHorizontalNavItem href="#">
+        My nav item content
+      </BpkHorizontalNavItem>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with "selected" prop', () => {
     const tree = renderer.create(
       <BpkHorizontalNavItem selected>

@@ -29,6 +29,13 @@ storiesOf('bpk-component-horizontal-nav', module)
       <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
     </BpkHorizontalNav>
   ))
+  .add('Anchor tags', () => (
+    <BpkHorizontalNav>
+      <BpkHorizontalNavItem href="#">Flights</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem selected href="#">Hotels</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem href="#">Car hire</BpkHorizontalNavItem>
+    </BpkHorizontalNav>
+  ))
   .add('Extreme example', () => (
     <BpkHorizontalNav>
       <BpkHorizontalNavItem selected>
