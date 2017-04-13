@@ -7,3 +7,35 @@ exports[`BpkHorizontalNav should render correctly 1`] = `
   </ul>
 </nav>
 `;
+
+exports[`BpkHorizontalNav should render correctly with "spaceAround" prop 1`] = `
+<nav
+  className="bpk-horizontal-nav">
+  <ul
+    className="bpk-horizontal-nav__list bpk-horizontal-nav__list--space-around">
+    My nav content.
+  </ul>
+</nav>
+`;
+
+exports[`BpkHorizontalNav should render correctly with arbitrary props 1`] = `
+<nav
+  className="bpk-horizontal-nav"
+  data-arbitrary-1="arbirary-value-1"
+  data-arbitrary-2="arbirary-value-2">
+  <ul
+    className="bpk-horizontal-nav__list">
+    My nav content.
+  </ul>
+</nav>
+`;
+
+exports[`BpkHorizontalNav should render correctly with custom "className" prop 1`] = `
+<nav
+  className="bpk-horizontal-nav my-custom-class-name">
+  <ul
+    className="bpk-horizontal-nav__list">
+    My nav content.
+  </ul>
+</nav>
+`;

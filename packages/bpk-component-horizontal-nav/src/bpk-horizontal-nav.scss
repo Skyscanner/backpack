@@ -8,6 +8,10 @@
     padding: 0;
     list-style-type: none;
     box-shadow: 0 1px 0 0 $bpk-color-gray-100;
+
+    &--space-around {
+      justify-content: space-around;
+    }
   }
 
   &__item {

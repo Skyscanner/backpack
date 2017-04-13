@@ -31,23 +31,28 @@ storiesOf('bpk-component-horizontal-nav', module)
   ))
   .add('Extreme example', () => (
     <BpkHorizontalNav>
-      <BpkHorizontalNavItem>
+      <BpkHorizontalNavItem selected>
         Flights Flights Flights Flights Flights Flights Flights Flights Flights Flights Flights Flights Flights
         Flights Flights Flights
       </BpkHorizontalNavItem>
-      <Separator />
-      <BpkHorizontalNavItem selected>
+      <BpkHorizontalNavItem>
         HotelsHotelsHotelsHotelsHotelsHotels
       </BpkHorizontalNavItem>
-      <Separator />
       <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
+    </BpkHorizontalNav>
+  ))
+  .add('Space around', () => (
+    <BpkHorizontalNav spaceAround>
+      <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem>Hotels</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem selected>Car hire</BpkHorizontalNavItem>
     </BpkHorizontalNav>
   ))
   .add('Separators', () => (
     <BpkHorizontalNav>
-      <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem selected>Flights</BpkHorizontalNavItem>
       <Separator />
-      <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem>Hotels</BpkHorizontalNavItem>
       <Separator />
       <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
     </BpkHorizontalNav>

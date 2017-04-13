@@ -8,3 +8,38 @@ exports[`BpkHorizontalNavItem should render correctly 1`] = `
   </button>
 </li>
 `;
+
+exports[`BpkHorizontalNavItem should render correctly with "selected" prop 1`] = `
+<li
+  className="bpk-horizontal-nav__item">
+  <button
+    className="bpk-horizontal-nav__button bpk-horizontal-nav__button--selected"
+    type="button">
+    My nav item content
+  </button>
+</li>
+`;
+
+exports[`BpkHorizontalNavItem should render correctly with arbitrary props 1`] = `
+<li
+  className="bpk-horizontal-nav__item">
+  <button
+    className="bpk-horizontal-nav__button"
+    data-arbitrary-1="arbirary-value-1"
+    data-arbitrary-2="arbirary-value-2"
+    type="button">
+    My nav content.
+  </button>
+</li>
+`;
+
+exports[`BpkHorizontalNavItem should render correctly with custom "className" prop 1`] = `
+<li
+  className="bpk-horizontal-nav__item">
+  <button
+    className="bpk-horizontal-nav__button my-custom-class"
+    type="button">
+    My nav item content
+  </button>
+</li>
+`;
