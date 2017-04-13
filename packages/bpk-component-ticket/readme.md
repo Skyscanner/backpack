@@ -1,25 +1,25 @@
-# bpk-component-card
+# bpk-component-ticket
 
-> Backpack card component.
+> Backpack ticket component.
 
 ## Installation
 
 ```sh
-npm install bpk-component-card --save
+npm install bpk-component-ticket --save
 ```
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkCard from 'bpk-component-card';
+import BpkTicket from 'bpk-component-ticket';
 
 export default () => (
-  <BpkCard>
+  <BpkTicket stub="Lorem ipsum dolor sit amet.">
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
     commodo ligula eget dolor. Aenean massa. Cum sociis natoque
     penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </BpkCard>
+  </BpkTicket>
 );
 ```
 
@@ -27,6 +27,8 @@ export default () => (
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
+| children  | node     | true     | -             |
+| stub      | node     | true     | -             |
 | href      | string   | false    | null          |
-| padded    | bool     | false    | false         |
+| padded    | bool     | false    | true          |
+| vertical  | bool     | false    | false         |

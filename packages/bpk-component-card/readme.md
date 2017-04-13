@@ -29,4 +29,4 @@ export default () => (
 | --------- | -------- | -------- | ------------- |
 | children  | -        | true     | -             |
 | href      | string   | false    | null          |
-| padded    | bool     | false    | false         |
+| padded    | bool     | false    | true          |
