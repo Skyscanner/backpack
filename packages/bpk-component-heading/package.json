@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-heading",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "description": "Backpack heading component.",
   "main": "index.js",
   "repository": {
@@ -13,6 +13,6 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^11.1.0"
+    "bpk-mixins": "^11.1.1"
   }
 }
