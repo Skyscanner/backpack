@@ -120,7 +120,6 @@
   <color name="CALENDAR_NAV_ICON_DISABLED_FILL" category="calendar">#e6e4ebff</color>
   <color name="CARD_BACKGROUND_COLOR" category="cards">#ffffffff</color>
   <color name="CARD_COLOR" category="cards">#524c61ff</color>
-  <property name="CARD_NOTCH_SIZE" category="cards">6</property>
   <property name="CARD_PADDING" category="cards">12</property>
   <color name="COLOR_WHITE" category="colors">#ffffffff</color>
   <color name="COLOR_BLUE_50" category="colors">#e1f4f8ff</color>
