@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet_
+**Added:**
+- bpk-component-horizontal-nav:
+  - New horizontal navigation component (http://backpack.prod.aws.skyscnr.com/components/molecules/horizontal-nav)
 
 ## 2017-04-13 - Introducing the new BpkTicket component
 
@@ -67,7 +69,7 @@ _Nothing yet_
 
 **Added:**
 - bpk-component-cta-button: 0.0.0 => 0.0.1
-  - New call to action button component (http://backpack.prod.aws.skyscnr.com/docs/atoms/calltoactions)
+  - New call to action button component (http://backpack.prod.aws.skyscnr.com/components/atoms/calltoactions)
 
 **Fixed:**
 - bpk-component-accordion: 0.0.2 => 0.0.3
@@ -94,7 +96,7 @@ _Nothing yet_
 
 **Added:**
 - bpk-component-progress: 0.0.0 => 0.0.1
-  - New progress bar component (http://backpack.prod.aws.skyscnr.com/docs/molecules/progress)
+  - New progress bar component (http://backpack.prod.aws.skyscnr.com/components/molecules/progress)
 
 ## 2017-03-27 - Ability to add custom style and className props to portal elements
 
@@ -108,9 +110,9 @@ _Nothing yet_
 
 **Added:**
 - bpk-component-accordion: 0.0.0 => 0.0.1
-  - New accordion component (http://backpack.prod.aws.skyscnr.com/docs/molecules/accordions/)
+  - New accordion component (http://backpack.prod.aws.skyscnr.com/components/molecules/accordions/)
 - bpk-component-nudger: 0.0.0 => 0.0.1
-  - New nudger component (http://backpack.prod.aws.skyscnr.com/docs/molecules/nudgers/)
+  - New nudger component (http://backpack.prod.aws.skyscnr.com/components/molecules/nudgers/)
 - bpk-component-checkbox: 0.0.53 => 0.1.0
   - Added ability to add custom className and other arbitrary props
 - bpk-component-paragraph: 0.1.63 => 0.2.0
@@ -475,11 +477,11 @@ _Nothing yet_
 
 **Added:**
 - bpk-component-calendar: 0.0.7
-  - New calendar component (http://backpack.prod.aws.skyscnr.com/docs/molecules/calendar/)
+  - New calendar component (http://backpack.prod.aws.skyscnr.com/components/molecules/calendar/)
 - bpk-component-datepicker: 0.0.3
-  - New datepicker component (http://backpack.prod.aws.skyscnr.com/docs/molecules/datepicker/)
+  - New datepicker component (http://backpack.prod.aws.skyscnr.com/components/molecules/datepicker/)
 - bpk-component-popover: 0.0.5
-  - New popover component (http://backpack.prod.aws.skyscnr.com/docs/molecules/popovers/)
+  - New popover component (http://backpack.prod.aws.skyscnr.com/components/molecules/popovers/)
 
 ## 2017-01-26 - Input prop types are less strict & new portal implementation
 

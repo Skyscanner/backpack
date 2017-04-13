@@ -1,0 +1,61 @@
+exports[`BpkHorizontalNavItem should render correctly 1`] = `
+<li
+  className="bpk-horizontal-nav__item">
+  <button
+    className="bpk-horizontal-nav__link"
+    disabled={false}
+    type="button">
+    My nav item content
+  </button>
+</li>
+`;
+
+exports[`BpkHorizontalNavItem should render correctly with "selected" prop 1`] = `
+<li
+  className="bpk-horizontal-nav__item">
+  <button
+    className="bpk-horizontal-nav__link bpk-horizontal-nav__link--selected"
+    disabled={true}
+    type="button">
+    My nav item content
+  </button>
+</li>
+`;
+
+exports[`BpkHorizontalNavItem should render correctly with an "href" prop 1`] = `
+<li
+  className="bpk-horizontal-nav__item">
+  <a
+    aria-disabled={false}
+    className="bpk-horizontal-nav__link"
+    href="#">
+    My nav item content
+  </a>
+</li>
+`;
+
+exports[`BpkHorizontalNavItem should render correctly with arbitrary props 1`] = `
+<li
+  className="bpk-horizontal-nav__item">
+  <button
+    className="bpk-horizontal-nav__link"
+    data-arbitrary-1="arbirary-value-1"
+    data-arbitrary-2="arbirary-value-2"
+    disabled={false}
+    type="button">
+    My nav content.
+  </button>
+</li>
+`;
+
+exports[`BpkHorizontalNavItem should render correctly with custom "className" prop 1`] = `
+<li
+  className="bpk-horizontal-nav__item">
+  <button
+    className="bpk-horizontal-nav__link my-custom-class"
+    disabled={false}
+    type="button">
+    My nav item content
+  </button>
+</li>
+`;
