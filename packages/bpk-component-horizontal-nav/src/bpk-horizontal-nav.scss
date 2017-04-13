@@ -1,13 +1,14 @@
 @import '~bpk-mixins/index';
 
 .bpk-horizontal-nav {
+  box-shadow: 0 1px 0 0 $bpk-color-gray-100;
+
   &__list {
     display: flex;
     align-items: stretch;
     margin: 0;
     padding: 0;
     list-style-type: none;
-    box-shadow: 0 1px 0 0 $bpk-color-gray-100;
 
     &--space-around {
       justify-content: space-around;
@@ -25,6 +26,7 @@
     padding: $bpk-spacing-sm $bpk-spacing-base;
     border: 0;
     background: none;
+    color: $bpk-color-blue-500;
     cursor: pointer;
 
     @include bpk-hover {
@@ -36,7 +38,7 @@
     }
 
     &--selected {
-      font-weight: bold;
+      color: $bpk-font-color-base;
       box-shadow: 0 -3px 0 0 $bpk-color-green-500 inset;
 
       @include bpk-hover {

@@ -5,23 +5,38 @@
 ## Installation
 
 ```sh
-npm install bpk-component-horizontal-nav --save
+npm install bpk-component-horizontal-nav --save-dev
 ```
 
 ## Usage
 
 ```js
 import React from 'react';
-import BpkHorizontalNav from 'bpk-component-horizontal-nav';
+import BpkHorizontalNav, { BpkHorizontalNavItem } from 'bpk-component-horizontal-nav';
 
 export default () => (
-  <BpkHorizontalNav>My paragraph content.</BpkHorizontalNav>
+  <BpkHorizontalNav>
+    <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
+    <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
+    <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
+  </BpkHorizontalNav>
 )
 ```
 
 ### Props
 
+*BpkHorizontalNav:*
+
+| Property    | PropType | Required | Default Value |
+| ----------- | -------- | -------- | ------------- |
+| children    | node     | true     | -             |
+| className   | string   | false    | null          |
+| spaceAround | bool     | false    | false         |
+
+*BpkHorizontalNavItem:*
+
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
 | children  | node     | true     | -             |
 | className | string   | false    | null          |
+| selected  | bool     | false    | false         |

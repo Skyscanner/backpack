@@ -53,6 +53,7 @@ const staticSiteGeneratorConfig = {
     ROUTES.NUDGERS,
     ROUTES.PROGRESS,
     ROUTES.TICKETS,
+    ROUTES.HORIZONTAL_NAV,
 
     ROUTES.PATTERNS,
 

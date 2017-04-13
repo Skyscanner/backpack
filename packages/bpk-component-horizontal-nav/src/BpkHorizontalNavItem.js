@@ -11,10 +11,16 @@ const BpkHorizontalNavItem = (props) => {
 
   return (
     <li className="bpk-horizontal-nav__item">
-      <button type="button" className={classNames.join(' ')} {...rest} />
+      <button
+        type="button"
+        className={classNames.join(' ')}
+        disabled={selected}
+        {...rest}
+      />
     </li>
   );
 };
+
 
 BpkHorizontalNavItem.propTypes = {
   children: PropTypes.node.isRequired,

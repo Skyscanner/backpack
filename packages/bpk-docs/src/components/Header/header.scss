@@ -30,17 +30,12 @@
   &__nav-list-item {
     display: inline-block;
 
-    &:not(:first-child) {
-      @include bpk-rtl {
-        margin-right: $bpk-spacing-base;
-      }
-    }
-
     &:not(:last-child) {
       margin-right: $bpk-spacing-base;
 
       @include bpk-rtl {
         margin-right: 0;
+        margin-left: $bpk-spacing-base;
       }
     }
   }

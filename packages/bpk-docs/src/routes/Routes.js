@@ -43,6 +43,7 @@ import AccordionsPage from './../pages/AccordionsPage';
 import NudgersPage from './../pages/NudgersPage';
 import ProgressPage from './../pages/ProgressPage';
 import TicketsPage from './../pages/TicketsPage';
+import HorizontalNavPage from './../pages/HorizontalNavPage';
 
 import PatternsPage from './../pages/PatternsPage';
 
@@ -98,6 +99,7 @@ const Routes = (
         <Route path={ROUTES.NUDGERS} component={NudgersPage} />
         <Route path={ROUTES.PROGRESS} component={ProgressPage} />
         <Route path={ROUTES.TICKETS} component={TicketsPage} />
+        <Route path={ROUTES.HORIZONTAL_NAV} component={HorizontalNavPage} />
       </Route>
     </Route>
     <Route path={ROUTES.PATTERNS} component={PatternsPage} />
