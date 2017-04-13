@@ -5,13 +5,13 @@
   },
   "props": {
     "BOX_SHADOW_SM": {
-      "value": "0px 1px 3px 0px rgba({!GRAY_900}, .3)"
+      "value": "0px 1px 3px 0px rgba(37,32,31,.3)"
     },
     "BOX_SHADOW_LG": {
-      "value": "0px 4px 14px 0px rgba({!GRAY_900}, .25)"
+      "value": "0px 4px 14px 0px rgba(37,32,31,.25)"
     },
     "BOX_SHADOW_XL": {
-      "value": "0px 12px 50px 0px rgba({!GRAY_900}, .25)"
+      "value": "0px 12px 50px 0px rgba(37,32,31,.25)"
     }
   }
 }

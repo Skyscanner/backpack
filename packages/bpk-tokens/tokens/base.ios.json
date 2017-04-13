@@ -81,19 +81,19 @@
     {
       "type": "box-shadow",
       "category": "box-shadows",
-      "value": "0px 1px 3px 0px rgba(#252033, .3)",
+      "value": "0px 1px 3px 0px rgba(37,32,31,.3)",
       "name": "boxShadowSm"
     },
     {
       "type": "box-shadow",
       "category": "box-shadows",
-      "value": "0px 4px 14px 0px rgba(#252033, .25)",
+      "value": "0px 4px 14px 0px rgba(37,32,31,.25)",
       "name": "boxShadowLg"
     },
     {
       "type": "box-shadow",
       "category": "box-shadows",
-      "value": "0px 12px 50px 0px rgba(#252033, .25)",
+      "value": "0px 12px 50px 0px rgba(37,32,31,.25)",
       "name": "boxShadowXl"
     },
     {
