@@ -14,10 +14,6 @@
       "value": "{!GRAY_700}",
       "type": "color"
     },
-    "CARD_NOTCH_SIZE": {
-      "value": "{!SPACING_XS}",
-      "type": "size"
-    },
     "CARD_PADDING": {
       "value": "{!SPACING_SM}",
       "type": "size"

@@ -3,11 +3,9 @@
 ## UNRELEASED
 
 **Added:**
-- bpk-component-card:
-- bpk-mixins:
-- bpk-tokens:
+- bpk-component-ticket:
 - bpk-svgs:
-  - Add new variant that looks like a flight ticket
+  - Introducing the new BpkTicket component
 
 ## 2017-04-11 - Added deals icon and improved icon not found error handling
 

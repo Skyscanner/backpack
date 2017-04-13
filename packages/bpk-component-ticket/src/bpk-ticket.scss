@@ -1,50 +1,8 @@
 @import '~bpk-mixins/index';
 
-// @mixin bpk-ticket {
-//   // Don't use Flexbox in IE
-//   @media screen\0 {
-//     display: block;
-//   }
-// }
-
-/*
-@mixin bpk-ticket__paper-main--horizontal {
-  // Don't use Flexbox in IE
-  @media screen\0 {
-    width: calc(68% - #{$bpk-card-notch-size * 2});
-  }
-}
-
-@mixin bpk-ticket__paper-stub--horizontal {
-  // Don't use Flexbox in IE
-  @media screen\0 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 32%;
-    height: 100%;
-  }
-}
-
-@mixin bpk-ticket__punchline--vertical {
-  @include bpk-rtl {
-    @media screen\0 {
-      right: auto;
-      left: 32%;
-    }
-  }
-
-  // Don't use Flexbox in IE
-  @media screen\0 {
-    position: absolute;
-    top: 0;
-    right: 32%;
-    bottom: 0;
-  }
-}
-*/
-
 .bpk-ticket {
+  $notch-size: $bpk-spacing-xs;
+
   position: relative;
   display: block;
   display: flex;
@@ -156,9 +114,9 @@
     background-color: $bpk-card-background-color;
 
     &--horizontal {
-      height: $bpk-card-notch-size * 2;
-      margin: auto $bpk-card-notch-size;
-      padding: 0 $bpk-card-notch-size;
+      height: $notch-size * 2;
+      margin: auto $notch-size;
+      padding: 0 $notch-size;
       background-image: url(map-get($bpk-elements, card-dash-horizontal));
       background-repeat: repeat-x;
       background-position: 0 50%;
@@ -166,9 +124,9 @@
     }
 
     &--vertical {
-      width: $bpk-card-notch-size * 2;
-      margin: $bpk-card-notch-size auto;
-      padding: $bpk-card-notch-size 0;
+      width: $notch-size * 2;
+      margin: $notch-size auto;
+      padding: $notch-size 0;
       background-image: url(map-get($bpk-elements, card-dash-vertical));
       background-repeat: repeat-y;
       background-position: 50% 0;
@@ -187,23 +145,23 @@
 
   &__notch {
     position: absolute;
-    width: $bpk-card-notch-size * 2;
-    height: $bpk-card-notch-size;
+    width: $notch-size * 2;
+    height: $notch-size;
     overflow: hidden;
 
     &::after {
       position: relative;
       content: '';
       display: block;
-      width: $bpk-card-notch-size * 4;
-      height: $bpk-card-notch-size * 4;
-      border: $bpk-card-notch-size solid white;
-      border-radius: $bpk-card-notch-size * 2;
+      width: $notch-size * 4;
+      height: $notch-size * 4;
+      border: $notch-size solid white;
+      border-radius: $notch-size * 2;
       box-shadow: $bpk-box-shadow-sm inset;
     }
 
     &--top {
-      top: -$bpk-card-notch-size;
+      top: -$notch-size;
 
       &::after {
         right: -50%;
@@ -213,9 +171,9 @@
     }
 
     &--right {
-      right: -$bpk-card-notch-size;
-      width: $bpk-card-notch-size;
-      height: $bpk-card-notch-size * 2;
+      right: -$notch-size;
+      width: $notch-size;
+      height: $notch-size * 2;
 
       &::after {
         right: 100%;
@@ -229,7 +187,7 @@
     }
 
     &--bottom {
-      bottom: -$bpk-card-notch-size;
+      bottom: -$notch-size;
 
       &::after {
         right: -50%;
@@ -239,9 +197,9 @@
     }
 
     &--left {
-      left: -$bpk-card-notch-size;
-      width: $bpk-card-notch-size;
-      height: $bpk-card-notch-size * 2;
+      left: -$notch-size;
+      width: $notch-size;
+      height: $notch-size * 2;
 
       &::after {
         right: 200%;
