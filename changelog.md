@@ -2,7 +2,10 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-component-ticket:
+- bpk-svgs:
+  - Introducing the new BpkTicket component
 
 ## 2017-04-11 - Added deals icon and improved icon not found error handling
 

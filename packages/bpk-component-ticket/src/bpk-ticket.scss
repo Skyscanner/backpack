@@ -1,0 +1,215 @@
+@import '~bpk-mixins/index';
+
+.bpk-ticket {
+  $notch-size: $bpk-spacing-xs;
+
+  position: relative;
+  display: block;
+  display: flex;
+  align-items: stretch;
+  color: $bpk-card-color;
+  text-decoration: none;
+  cursor: pointer;
+  flex-direction: row;
+
+  @include bpk-hover {
+    .bpk-ticket__paper::after {
+      opacity: 1;
+    }
+  }
+
+  &--fallback {
+    display: table;
+  }
+
+  &--vertical {
+    flex-direction: column;
+  }
+
+  &__paper {
+    position: relative;
+    background-color: $bpk-card-background-color;
+
+    @include bpk-box-shadow-sm;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      display: block;
+      z-index: -1;
+      transition: opacity 200ms ease-in-out;
+      border-radius: inherit;
+      box-shadow: $bpk-box-shadow-lg;
+      opacity: 0;
+      pointer-events: none; // To prevent the pseudo element absorbing click events
+
+      // pointer-events doesn't work on ie
+      @media screen\0 {
+        z-index: -1; // TODO
+      }
+    }
+
+    &--fallback {
+      display: table-cell;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__main {
+    flex: 2 1 auto;
+
+    &--horizontal {
+      border-radius: $bpk-border-radius-sm 0 0 $bpk-border-radius-sm;
+
+      @include bpk-rtl {
+        border-radius: 0 $bpk-border-radius-sm $bpk-border-radius-sm 0;
+      }
+    }
+
+    &--vertical {
+      border-radius: $bpk-border-radius-sm $bpk-border-radius-sm 0 0;
+    }
+
+    &--padded {
+      padding: $bpk-card-padding;
+    }
+  }
+
+  &__stub {
+    flex: 1 1 auto;
+
+    &--horizontal {
+      min-width: 30%;
+      border-radius: 0 $bpk-border-radius-sm $bpk-border-radius-sm 0;
+
+      @include bpk-rtl {
+        border-radius: $bpk-border-radius-sm 0 0 $bpk-border-radius-sm;
+      }
+    }
+
+    &--vertical {
+      border-radius: 0 0 $bpk-border-radius-sm $bpk-border-radius-sm;
+    }
+
+    &--padded {
+      padding: $bpk-card-padding;
+    }
+
+    &--fallback {
+      width: 32%;
+    }
+  }
+
+  &__punchline {
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 1;
+    background-color: $bpk-card-background-color;
+
+    &--horizontal {
+      height: $notch-size * 2;
+      margin: auto $notch-size;
+      padding: 0 $notch-size;
+      background-image: url(map-get($bpk-elements, card-dash-horizontal));
+      background-repeat: repeat-x;
+      background-position: 0 50%;
+      background-size: 8 * $bpk-one-pixel-rem 2 * $bpk-one-pixel-rem;
+    }
+
+    &--vertical {
+      width: $notch-size * 2;
+      margin: $notch-size auto;
+      padding: $notch-size 0;
+      background-image: url(map-get($bpk-elements, card-dash-vertical));
+      background-repeat: repeat-y;
+      background-position: 50% 0;
+      background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
+    }
+
+    &--fallback {
+      display: table-cell;
+      width: 2 * $bpk-one-pixel-rem;
+      background-image: url(map-get($bpk-elements, card-dash-vertical));
+      background-repeat: repeat-y;
+      background-position: 50% 0;
+      background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
+    }
+  }
+
+  &__notch {
+    position: absolute;
+    width: $notch-size * 2;
+    height: $notch-size;
+    overflow: hidden;
+
+    &::after {
+      position: relative;
+      content: '';
+      display: block;
+      width: $notch-size * 4;
+      height: $notch-size * 4;
+      border: $notch-size solid white;
+      border-radius: $notch-size * 2;
+      box-shadow: $bpk-box-shadow-sm inset;
+    }
+
+    &--top {
+      top: -$notch-size;
+
+      &::after {
+        right: -50%;
+        bottom: 200%;
+        left: -50%;
+      }
+    }
+
+    &--right {
+      right: -$notch-size;
+      width: $notch-size;
+      height: $notch-size * 2;
+
+      &::after {
+        right: 100%;
+        bottom: 50%;
+
+        @include bpk-rtl {
+          right: auto;
+          left: 200%;
+        }
+      }
+    }
+
+    &--bottom {
+      bottom: -$notch-size;
+
+      &::after {
+        right: -50%;
+        bottom: 100%;
+        left: -50%;
+      }
+    }
+
+    &--left {
+      left: -$notch-size;
+      width: $notch-size;
+      height: $notch-size * 2;
+
+      &::after {
+        right: 200%;
+        bottom: 50%;
+
+        @include bpk-rtl {
+          right: auto;
+          left: 100%;
+        }
+      }
+    }
+  }
+}

@@ -43,7 +43,7 @@ gulp.task('elements', () => {
     .pipe(svgmin({
       plugins: [
         ...svgoCommonPlugins,
-        { removeAttrs: { attrs: ['id', 'class', 'width', 'height', 'data-name'] } },
+        { removeAttrs: { attrs: ['id', 'class', 'data-name'] } },
       ],
     }))
     .pipe(gulp.dest('src/elements'));

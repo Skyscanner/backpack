@@ -1,0 +1,45 @@
+@import '~bpk-mixins';
+
+.bpk-stories-flight {
+  margin-bottom: 2rem;
+
+  &__stub {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  &__small {
+    color: $bpk-color-gray-500;
+
+    @include bpk-text-sm;
+  }
+
+  &__price {
+    font-weight: bold;
+
+    @include bpk-text-lg;
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &__from {
+    padding: 0 $bpk-spacing-base;
+    text-align: right;
+  }
+
+  &__to {
+    padding: 0 $bpk-spacing-base;
+  }
+
+  &__duration {
+    padding: 0 $bpk-spacing-sm;
+  }
+
+  &__time {
+    @include bpk-text-lg;
+  }
+}

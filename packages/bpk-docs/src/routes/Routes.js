@@ -42,6 +42,7 @@ import TooltipsPage from './../pages/TooltipsPage';
 import AccordionsPage from './../pages/AccordionsPage';
 import NudgersPage from './../pages/NudgersPage';
 import ProgressPage from './../pages/ProgressPage';
+import TicketsPage from './../pages/TicketsPage';
 
 import PatternsPage from './../pages/PatternsPage';
 
@@ -96,6 +97,7 @@ const Routes = (
         <Route path={ROUTES.ACCORDIONS} component={AccordionsPage} />
         <Route path={ROUTES.NUDGERS} component={NudgersPage} />
         <Route path={ROUTES.PROGRESS} component={ProgressPage} />
+        <Route path={ROUTES.TICKETS} component={TicketsPage} />
       </Route>
     </Route>
     <Route path={ROUTES.PATTERNS} component={PatternsPage} />

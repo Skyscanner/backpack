@@ -26,7 +26,7 @@ const components = [
   {
     id: 'without-padding',
     title: 'Without padding',
-    blurb: 'For full flexibility you can opt to remove the default padding.',
+    blurb: 'For full flexibility you can opt to remove the default padding e.g. to display full-bleed images.',
     examples: [
       <BpkCard padded={false}>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
@@ -41,8 +41,8 @@ const CardsPage = () => <DocsPageBuilder
   blurb={[
     <BpkParagraph>
       Cards are used to group related items within the UI. They allow complex datasets to be broken down into
-      individual, distinct areas for easy consumption. Cards are quite often used as a signifier to give affordance
-      to a clickable set of elements e.g. a flight itinerary.
+      individual, distinct areas for easy consumption. Cards are used as a signifier to give affordance
+      to a clickable set of elements.
     </BpkParagraph>,
   ]}
   components={components}
