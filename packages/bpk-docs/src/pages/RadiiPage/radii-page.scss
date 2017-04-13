@@ -3,32 +3,36 @@
 .bpkdocs-radii-page {
   &__examples {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+
+    @include bpk-breakpoint-tablet {
+      flex-direction: column;
+    }
   }
 
   &__item {
     width: 30%;
 
-    &:not(:last-child) {
-      margin-right: $bpk-spacing-sm;
+    @include bpk-breakpoint-above-tablet {
+      &:nth-child(4n) {
+        margin-top: $bpk-spacing-sm;
+      }
+    }
+
+    @include bpk-breakpoint-tablet {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: $bpk-spacing-sm;
+      }
     }
   }
 
   &__radii-example {
     width: 100%;
-    height: $bpk-one-pixel-rem * 36;
+    padding: $bpk-spacing-xs $bpk-spacing-sm;
     background-color: $bpk-color-gray-500;
-
-    &__extra-small {
-      border-radius: $bpk-border-radius-xs;
-    }
-
-    &__small {
-      border-radius: $bpk-border-radius-sm;
-    }
-
-    &__pill {
-      border-radius: $bpk-border-radius-pill;
-    }
+    color: $bpk-color-white;
   }
 }
