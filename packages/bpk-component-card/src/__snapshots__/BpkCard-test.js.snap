@@ -1,4 +1,4 @@
-exports[`BpkCard should render BpkCardSimple 1`] = `
+exports[`BpkCard should render correctly 1`] = `
 <div
   className="bpk-card bpk-card--padded"
   role="button">
@@ -6,26 +6,26 @@ exports[`BpkCard should render BpkCardSimple 1`] = `
 </div>
 `;
 
-exports[`BpkCard should render BpkCardTicket with a "stub" attribute 1`] = `
+exports[`BpkCard should render correctly with "padded" attribute equal to "false" 1`] = `
 <div
-  className="bpk-card-ticket"
+  className="bpk-card"
   role="button">
-  <div
-    className="bpk-card-ticket__main bpk-card-ticket__main--padded bpk-card-ticket__main--horizontal">
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  </div>
-  <div
-    aria-hidden="true"
-    className="bpk-card-ticket__punchline bpk-card-ticket__punchline--vertical"
-    role="presentation">
-    <div
-      className="bpk-card-ticket__notch bpk-card-ticket__notch--top" />
-    <div
-      className="bpk-card-ticket__notch bpk-card-ticket__notch--bottom" />
-  </div>
-  <div
-    className="bpk-card-ticket__stub bpk-card-ticket__stub--padded bpk-card-ticket__stub--horizontal">
-    Ticket stub
-  </div>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 </div>
+`;
+
+exports[`BpkCard should render correctly with a "className" attribute 1`] = `
+<div
+  className="bpk-card bpk-card--padded custom-class"
+  role="button">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</div>
+`;
+
+exports[`BpkCard should render correctly with an "href" attribute 1`] = `
+<a
+  className="bpk-card bpk-card--padded"
+  href="//www.skyscanner.net">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</a>
 `;

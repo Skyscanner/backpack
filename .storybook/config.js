@@ -52,6 +52,7 @@ configure(() => {
   require('./../packages/bpk-component-select/stories');
   require('./../packages/bpk-component-spinner/stories');
   require('./../packages/bpk-component-table/stories');
+  require('./../packages/bpk-component-ticket/stories');
   require('./../packages/bpk-component-tooltip/stories');
   require('./../packages/bpk-mixins/stories');
 }, module);

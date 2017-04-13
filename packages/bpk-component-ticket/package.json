@@ -1,7 +1,7 @@
 {
-  "name": "bpk-component-card",
-  "version": "0.0.48",
-  "description": "Backpack card component.",
+  "name": "bpk-component-ticket",
+  "version": "0.0.0",
+  "description": "Backpack ticket component.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -14,5 +14,9 @@
   },
   "dependencies": {
     "bpk-mixins": "^11.1.0"
+  },
+  "devDependencies": {
+    "bpk-component-button": "^1.6.11",
+    "bpk-component-icon": "^3.4.0"
   }
 }

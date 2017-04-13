@@ -39,6 +39,7 @@ export const TOOLTIPS = '/components/molecules/tooltips';
 export const ACCORDIONS = '/components/molecules/accordions';
 export const NUDGERS = '/components/molecules/nudgers';
 export const PROGRESS = '/components/molecules/progress';
+export const TICKETS = '/components/molecules/tickets';
 
 export const PATTERNS = '/patterns';
 

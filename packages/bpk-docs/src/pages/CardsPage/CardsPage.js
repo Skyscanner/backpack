@@ -34,27 +34,6 @@ const components = [
       </BpkCard>,
     ],
   },
-  {
-    id: 'ticket',
-    title: 'With ticket stub',
-    blurb: [
-      <BpkParagraph>
-        A ticket line can be added to a card to create a separation between two distinct areas.
-        This is available both horizontally and vertically.
-      </BpkParagraph>,
-    ],
-    examples: [
-      <BpkCard stub="Lorem ipsum dolor sit amet.">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </BpkCard>,
-      <br />,
-      <BpkCard stub="Lorem ipsum dolor sit amet." vertical>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </BpkCard>,
-    ],
-  },
 ];
 
 const CardsPage = () => <DocsPageBuilder
@@ -63,7 +42,7 @@ const CardsPage = () => <DocsPageBuilder
     <BpkParagraph>
       Cards are used to group related items within the UI. They allow complex datasets to be broken down into
       individual, distinct areas for easy consumption. Cards are used as a signifier to give affordance
-      to a clickable set of elements e.g. a flight itinerary.
+      to a clickable set of elements.
     </BpkParagraph>,
   ]}
   components={components}

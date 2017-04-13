@@ -1,0 +1,257 @@
+@import '~bpk-mixins/index';
+
+// @mixin bpk-ticket {
+//   // Don't use Flexbox in IE
+//   @media screen\0 {
+//     display: block;
+//   }
+// }
+
+/*
+@mixin bpk-ticket__paper-main--horizontal {
+  // Don't use Flexbox in IE
+  @media screen\0 {
+    width: calc(68% - #{$bpk-card-notch-size * 2});
+  }
+}
+
+@mixin bpk-ticket__paper-stub--horizontal {
+  // Don't use Flexbox in IE
+  @media screen\0 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 32%;
+    height: 100%;
+  }
+}
+
+@mixin bpk-ticket__punchline--vertical {
+  @include bpk-rtl {
+    @media screen\0 {
+      right: auto;
+      left: 32%;
+    }
+  }
+
+  // Don't use Flexbox in IE
+  @media screen\0 {
+    position: absolute;
+    top: 0;
+    right: 32%;
+    bottom: 0;
+  }
+}
+*/
+
+.bpk-ticket {
+  position: relative;
+  display: block;
+  display: flex;
+  align-items: stretch;
+  color: $bpk-card-color;
+  text-decoration: none;
+  cursor: pointer;
+  flex-direction: row;
+
+  @include bpk-hover {
+    .bpk-ticket__paper::after {
+      opacity: 1;
+    }
+  }
+
+  &--fallback {
+    display: table;
+  }
+
+  &--vertical {
+    flex-direction: column;
+  }
+
+  &__paper {
+    position: relative;
+    background-color: $bpk-card-background-color;
+
+    @include bpk-box-shadow-sm;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      display: block;
+      z-index: -1;
+      transition: opacity 200ms ease-in-out;
+      border-radius: inherit;
+      box-shadow: $bpk-box-shadow-lg;
+      opacity: 0;
+      pointer-events: none; // To prevent the pseudo element absorbing click events
+
+      // pointer-events doesn't work on ie
+      @media screen\0 {
+        z-index: -1; // TODO
+      }
+    }
+
+    &--fallback {
+      display: table-cell;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__main {
+    flex: 2 1 auto;
+
+    &--horizontal {
+      border-radius: $bpk-border-radius-sm 0 0 $bpk-border-radius-sm;
+
+      @include bpk-rtl {
+        border-radius: 0 $bpk-border-radius-sm $bpk-border-radius-sm 0;
+      }
+    }
+
+    &--vertical {
+      border-radius: $bpk-border-radius-sm $bpk-border-radius-sm 0 0;
+    }
+
+    &--padded {
+      padding: $bpk-card-padding;
+    }
+  }
+
+  &__stub {
+    flex: 1 1 auto;
+
+    &--horizontal {
+      min-width: 30%;
+      border-radius: 0 $bpk-border-radius-sm $bpk-border-radius-sm 0;
+
+      @include bpk-rtl {
+        border-radius: $bpk-border-radius-sm 0 0 $bpk-border-radius-sm;
+      }
+    }
+
+    &--vertical {
+      border-radius: 0 0 $bpk-border-radius-sm $bpk-border-radius-sm;
+    }
+
+    &--padded {
+      padding: $bpk-card-padding;
+    }
+
+    &--fallback {
+      width: 32%;
+    }
+  }
+
+  &__punchline {
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 1;
+    background-color: $bpk-card-background-color;
+
+    &--horizontal {
+      height: $bpk-card-notch-size * 2;
+      margin: auto $bpk-card-notch-size;
+      padding: 0 $bpk-card-notch-size;
+      background-image: url(map-get($bpk-elements, card-dash-horizontal));
+      background-repeat: repeat-x;
+      background-position: 0 50%;
+      background-size: 8 * $bpk-one-pixel-rem 2 * $bpk-one-pixel-rem;
+    }
+
+    &--vertical {
+      width: $bpk-card-notch-size * 2;
+      margin: $bpk-card-notch-size auto;
+      padding: $bpk-card-notch-size 0;
+      background-image: url(map-get($bpk-elements, card-dash-vertical));
+      background-repeat: repeat-y;
+      background-position: 50% 0;
+      background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
+    }
+
+    &--fallback {
+      display: table-cell;
+      width: 2 * $bpk-one-pixel-rem;
+      background-image: url(map-get($bpk-elements, card-dash-vertical));
+      background-repeat: repeat-y;
+      background-position: 50% 0;
+      background-size: 2 * $bpk-one-pixel-rem 8 * $bpk-one-pixel-rem;
+    }
+  }
+
+  &__notch {
+    position: absolute;
+    width: $bpk-card-notch-size * 2;
+    height: $bpk-card-notch-size;
+    overflow: hidden;
+
+    &::after {
+      position: relative;
+      content: '';
+      display: block;
+      width: $bpk-card-notch-size * 4;
+      height: $bpk-card-notch-size * 4;
+      border: $bpk-card-notch-size solid white;
+      border-radius: $bpk-card-notch-size * 2;
+      box-shadow: $bpk-box-shadow-sm inset;
+    }
+
+    &--top {
+      top: -$bpk-card-notch-size;
+
+      &::after {
+        right: -50%;
+        bottom: 200%;
+        left: -50%;
+      }
+    }
+
+    &--right {
+      right: -$bpk-card-notch-size;
+      width: $bpk-card-notch-size;
+      height: $bpk-card-notch-size * 2;
+
+      &::after {
+        right: 100%;
+        bottom: 50%;
+
+        @include bpk-rtl {
+          right: auto;
+          left: 200%;
+        }
+      }
+    }
+
+    &--bottom {
+      bottom: -$bpk-card-notch-size;
+
+      &::after {
+        right: -50%;
+        bottom: 100%;
+        left: -50%;
+      }
+    }
+
+    &--left {
+      left: -$bpk-card-notch-size;
+      width: $bpk-card-notch-size;
+      height: $bpk-card-notch-size * 2;
+
+      &::after {
+        right: 200%;
+        bottom: 50%;
+
+        @include bpk-rtl {
+          right: auto;
+          left: 100%;
+        }
+      }
+    }
+  }
+}
