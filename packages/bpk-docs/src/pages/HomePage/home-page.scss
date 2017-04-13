@@ -14,9 +14,4 @@
       padding-bottom: $bpk-spacing-xl * 2;
     }
   }
-
-  &__heading1,
-  &__heading2 {
-    text-shadow: 0 $bpk-one-pixel-rem $bpk-one-pixel-rem * 6 rgba($bpk-color-gray-900, .7);
-  }
 }
