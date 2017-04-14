@@ -4,7 +4,7 @@
 
 _Nothing yet..._
 
-## 2017-04-13 - Introducing the new BpkTicket component
+## 2017-04-14 - New horizontal nav component
 
 **Added:**
 - bpk-component-horizontal-nav: 0.0.0 => 0.0.1
