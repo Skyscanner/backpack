@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-04-13 - Introducing the new BpkTicket component
+
 **Added:**
-- bpk-component-horizontal-nav:
+- bpk-component-horizontal-nav: 0.0.0 => 0.0.1
   - New horizontal navigation component (http://backpack.prod.aws.skyscnr.com/components/molecules/horizontal-nav)
 
 ## 2017-04-13 - Introducing the new BpkTicket component
