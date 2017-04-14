@@ -11,6 +11,12 @@ import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid'
 /* eslint-disable import/no-webpack-loader-syntax */
 const smallIconsZip = require('!!file?name=[name].[hash].zip!zip-it!./../../../../bpk-svgs/src/icons/sm/icons-sm');
 const largeIconsZip = require('!!file?name=[name].[hash].zip!zip-it!./../../../../bpk-svgs/src/icons/lg/icons-lg');
+const coreRgbAse = require('!!file?name=[name].[hash].ase!./../../static/core_rgb.ase');
+const coreRgbClr = require('!!file?name=[name].[hash].clr!./../../static/core_rgb.clr');
+const extendedRgbAse = require('!!file?name=[name].[hash].ase!./../../static/extended_rgb.ase');
+const extendedRgbClr = require('!!file?name=[name].[hash].clr!./../../static/extended_rgb.clr');
+const iconTemplate = require('!!file?name=[name].[hash].sketch!./../../static/icon-template.sketch');
+const responsiveGrid = require('!!file?name=[name].[hash].sketch!./../../static/responsive-grids.sketch');
 /* eslint-enable */
 
 const ResourcesPage = () => (
@@ -25,27 +31,19 @@ const ResourcesPage = () => (
           <BpkHeading level="h3">Core</BpkHeading>
           <BpkList>
             <BpkListItem>
-              <BpkLink href="https://www.dropbox.com/s/oea9wmk3l757c81/product_rgb.ase?dl=0" blank>
-                Adobe Swatch Exchange
-              </BpkLink>
+              <BpkLink href={`/${coreRgbAse}`} blank>Adobe Swatch Exchange</BpkLink>
             </BpkListItem>
             <BpkListItem>
-              <BpkLink href="https://www.dropbox.com/s/p2j7iwkb3nftki2/product_rgb.clr?dl=0" blank>
-                Mac
-              </BpkLink>
+              <BpkLink href={`/${coreRgbClr}`} blank>Mac</BpkLink>
             </BpkListItem>
           </BpkList>
           <BpkHeading level="h3">Extended (for illustration only)</BpkHeading>
           <BpkList>
             <BpkListItem>
-              <BpkLink href="https://www.dropbox.com/s/1k521nig9k2rh5p/growth_rgb.ase?dl=0" blank>
-                Adobe Swatch Exchange
-              </BpkLink>
+              <BpkLink href={`/${extendedRgbAse}`} blank>Adobe Swatch Exchange</BpkLink>
             </BpkListItem>
             <BpkListItem>
-              <BpkLink href="https://www.dropbox.com/s/xje2bceee1h5qcj/growth_rgb.clr?dl=0" blank>
-                Mac
-              </BpkLink>
+              <BpkLink href={`/${extendedRgbClr}`} blank>Mac</BpkLink>
             </BpkListItem>
           </BpkList>
           <BpkHeading level="h2">Icons</BpkHeading>
@@ -60,14 +58,10 @@ const ResourcesPage = () => (
           <BpkHeading level="h2">Sketch</BpkHeading>
           <BpkList>
             <BpkListItem>
-              <BpkLink href="https://www.dropbox.com/s/3acziruyha8zqdc/Responsive-grids.sketch?dl=0" blank>
-                Responsive grids
-              </BpkLink>
+              <BpkLink href={`/${responsiveGrid}`} blank>Responsive grids</BpkLink>
             </BpkListItem>
             <BpkListItem>
-              <BpkLink href="https://www.dropbox.com/s/hxyv9jckjmln29i/Icon%20template.sketch?dl=0" blank>
-                Icon grids
-              </BpkLink>
+              <BpkLink href={`/${iconTemplate}`} blank>Icon tempalte</BpkLink>
             </BpkListItem>
             <BpkListItem>
               <BpkLink href="https://www.dropbox.com/sh/aodde0j6gmgllgw/AABrmRTv6j1-VqUKuSdWDxqla?dl=0" blank>
