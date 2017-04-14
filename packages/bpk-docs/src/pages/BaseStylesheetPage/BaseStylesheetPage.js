@@ -53,17 +53,6 @@ const BaseStylesheetPage = () => (
         head also.
       </BpkBlockquote>
       <BpkHeading level="h3">Usage</BpkHeading>
-      <BpkParagraph>
-        <strong>
-          Consumer&apos;s of the website scaffolding should expect the base stylesheet & feature detection to be on the
-          page already.
-        </strong>
-      </BpkParagraph>
-      <BpkParagraph>
-        If you need to emulate these in your local dev environment or test harness, the compiled CSS &
-        JavaScript are available for you to include on your page, but first you&apos;ll need to install
-        the <BpkCode>bpk-stylesheets</BpkCode> package:
-      </BpkParagraph>
       <BpkCodeBlock>npm install bpk-stylesheets --save-dev</BpkCodeBlock>
       <BpkParagraph>Include in your HTML like so:</BpkParagraph>
       <BpkCodeBlock>

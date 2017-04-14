@@ -59,12 +59,6 @@ const components = [
   {
     id: 'links',
     title: 'Links',
-    blurb: [
-      <BpkParagraph>
-        In Backpack, links are colored Blue-500. In general text which is colored Blue-500 should be clickable,
-        however not all things that are clickable need to be colored Blue-500.
-      </BpkParagraph>,
-    ],
     examples: [
       <div>
         Links can be both <BpkLink href="#">anchor tags</BpkLink> as well

@@ -6,8 +6,6 @@ export const USING_BACKPACK = '/using';
 export const GETTING_STARTED = '/using/getting-started';
 export const BACKPACK_REACT_SCRIPTS = '/using/backpack-react-scripts';
 export const BASE_STYLESHEET = '/using/base-stylesheet';
-export const CONTRIBUTING = '/using/contributing';
-export const I18N = '/using/i18n';
 
 export const STYLE = '/style';
 

@@ -1,6 +1,4 @@
 import BpkParagraph from 'bpk-component-paragraph';
-import BpkRouterLink from 'bpk-component-router-link';
-import BpkLink from 'bpk-component-link';
 import React, { PropTypes, Component } from 'react';
 import BpkCalendar, {
   BpkCalendarGrid,
@@ -10,7 +8,6 @@ import BpkCalendar, {
 } from 'bpk-component-calendar';
 
 import calendarReadme from 'bpk-component-calendar/readme.md';
-import { I18N } from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import addMonths from '../../../../bpk-component-calendar/node_modules/date-fns/add_months';
 import {
@@ -169,10 +166,6 @@ const CalendarPage = () => <DocsPageBuilder
     <BpkParagraph>
       Calendars are used for date selection.  They can be configured in different ways depending on the context,
       e.g. constrained to a date range, or with dates blocked out.
-    </BpkParagraph>,
-    <BpkParagraph>
-      <BpkLink href="#translation">Recommended translation strings</BpkLink> exist for this component (see
-      also <BpkRouterLink to={I18N}>Internationalisation</BpkRouterLink>).
     </BpkParagraph>,
   ]}
   components={components}
