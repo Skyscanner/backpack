@@ -235,11 +235,11 @@
       "type": "color"
     },
     "BUTTON_SELECTED_BACKGROUND_IMAGE": {
-      "value": "linear-gradient(-180deg, {!BLUE_500} 0%, {!BLUE_600} 100%)",
+      "value": "linear-gradient(-180deg, {!BLUE_600} 0%, {!BLUE_700} 100%)",
       "type": "background-image"
     },
     "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR": {
-      "value": "{!BLUE_600}",
+      "value": "{!BLUE_700}",
       "type": "color"
     },
     "BUTTON_SELECTED_HOVER_BACKGROUND_IMAGE": {
@@ -247,7 +247,7 @@
       "type": "background-image"
     },
     "BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR": {
-      "value": "{!BLUE_700}",
+      "value": "{!BLUE_800}",
       "type": "color"
     },
     "BUTTON_SELECTED_ACTIVE_BACKGROUND_IMAGE": {

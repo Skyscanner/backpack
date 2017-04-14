@@ -488,13 +488,13 @@
     },
     {
       "category": "buttons",
-      "value": "linear-gradient(-180deg, #00b2d6 0, #009dbd 1)",
+      "value": "linear-gradient(-180deg, #009dbd 0, #008ca8 1)",
       "type": "background-image",
       "name": "buttonSelectedBackgroundImage"
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 157, 189)",
+      "value": "rgb(0, 140, 168)",
       "type": "color",
       "name": "buttonSelectedHoverBackgroundColor"
     },
@@ -506,7 +506,7 @@
     },
     {
       "category": "buttons",
-      "value": "rgb(0, 140, 168)",
+      "value": "rgb(0, 117, 140)",
       "type": "color",
       "name": "buttonSelectedActiveBackgroundColor"
     },
