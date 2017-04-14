@@ -2,18 +2,17 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Fixed:**
+- bpk-component-button:
+- bpk-mixins:
+- bpk-tokens:
+  - Fixed button selected state color
 
 ## 2017-04-14 - New horizontal nav component
 
 **Added:**
 - bpk-component-horizontal-nav: 0.0.0 => 0.0.1
   - New horizontal navigation component (http://backpack.prod.aws.skyscnr.com/components/molecules/horizontal-nav)
-
-- bpk-component-button:
-- bpk-mixins:
-- bpk-tokens:
-  - Fixed button selected state color
 
 ## 2017-04-13 - Introducing the new BpkTicket component
 
