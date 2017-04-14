@@ -576,13 +576,13 @@
     },
     "BUTTON_SELECTED_BACKGROUND_IMAGE": {
       "category": "buttons",
-      "value": "linear-gradient(-180deg, #00b2d6 0%, #009dbd 100%)",
+      "value": "linear-gradient(-180deg, #009dbd 0%, #008ca8 100%)",
       "type": "background-image",
       "name": "BUTTON_SELECTED_BACKGROUND_IMAGE"
     },
     "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "rgb(0, 157, 189)",
+      "value": "rgb(0, 140, 168)",
       "type": "color",
       "name": "BUTTON_SELECTED_HOVER_BACKGROUND_COLOR"
     },
@@ -594,7 +594,7 @@
     },
     "BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR": {
       "category": "buttons",
-      "value": "rgb(0, 140, 168)",
+      "value": "rgb(0, 117, 140)",
       "type": "color",
       "name": "BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR"
     },
