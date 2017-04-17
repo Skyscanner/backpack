@@ -14,6 +14,22 @@
     "BORDER_RADIUS_PILL": {
       "value": "{!BORDER_RADIUS_PILL}",
       "category": "radii"
+    },
+    "BORDER_RADIUS_PILL_LG": {
+      "value": "{!BORDER_RADIUS_PILL_LG}",
+      "category": "radii"
+    },
+    "BORDER_SIZE_SM": {
+      "value": "{!BORDER_SIZE_SM}",
+      "category": "borders"
+    },
+    "BORDER_SIZE_LG": {
+      "value": "{!BORDER_SIZE_LG}",
+      "category": "borders"
+    },
+    "BORDER_SIZE_XL": {
+      "value": "{!BORDER_SIZE_XL}",
+      "category": "borders"
     }
   }
 }

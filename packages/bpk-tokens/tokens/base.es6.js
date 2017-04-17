@@ -11,6 +11,10 @@ export const badgeCenteredVerticalAlign = "text-bottom";
 export const borderRadiusXs = ".1875rem";
 export const borderRadiusSm = ".375rem";
 export const borderRadiusPill = "1.125rem";
+export const borderRadiusPillLg = "1.3125rem";
+export const borderSizeSm = "1px";
+export const borderSizeLg = "2px";
+export const borderSizeXl = "3px";
 export const boxShadowSm = "0px 1px 3px 0px rgba(37,32,31,.3)";
 export const boxShadowLg = "0px 4px 14px 0px rgba(37,32,31,.25)";
 export const boxShadowXl = "0px 12px 50px 0px rgba(37,32,31,.25)";
@@ -329,6 +333,12 @@ export const radii = {
 borderRadiusXs,
 borderRadiusSm,
 borderRadiusPill,
+borderRadiusPillLg,
+};
+export const borders = {
+borderSizeSm,
+borderSizeLg,
+borderSizeXl,
 };
 export const boxShadows = {
 boxShadowSm,

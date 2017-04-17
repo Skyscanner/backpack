@@ -77,6 +77,9 @@
     "BORDER_RADIUS_SM": ".375rem",
     "BORDER_RADIUS_PILL": "1.125rem",
     "BORDER_RADIUS_PILL_LG": "1.3125rem",
+    "BORDER_SIZE_SM": "1px",
+    "BORDER_SIZE_LG": "2px",
+    "BORDER_SIZE_XL": "3px",
     "BREAKPOINT_MOBILE": "32.25rem",
     "BREAKPOINT_ABOVE_MOBILE": "32.3125rem",
     "BREAKPOINT_TABLET": "50.25rem",
@@ -165,6 +168,30 @@
       "value": "1.125rem",
       "category": "radii",
       "name": "BORDER_RADIUS_PILL"
+    },
+    "BORDER_RADIUS_PILL_LG": {
+      "type": "size",
+      "value": "1.3125rem",
+      "category": "radii",
+      "name": "BORDER_RADIUS_PILL_LG"
+    },
+    "BORDER_SIZE_SM": {
+      "type": "size",
+      "value": "1px",
+      "category": "borders",
+      "name": "BORDER_SIZE_SM"
+    },
+    "BORDER_SIZE_LG": {
+      "type": "size",
+      "value": "2px",
+      "category": "borders",
+      "name": "BORDER_SIZE_LG"
+    },
+    "BORDER_SIZE_XL": {
+      "type": "size",
+      "value": "3px",
+      "category": "borders",
+      "name": "BORDER_SIZE_XL"
     },
     "BOX_SHADOW_SM": {
       "type": "box-shadow",
@@ -1969,6 +1996,10 @@
     "BORDER_RADIUS_XS",
     "BORDER_RADIUS_SM",
     "BORDER_RADIUS_PILL",
+    "BORDER_RADIUS_PILL_LG",
+    "BORDER_SIZE_SM",
+    "BORDER_SIZE_LG",
+    "BORDER_SIZE_XL",
     "BOX_SHADOW_SM",
     "BOX_SHADOW_LG",
     "BOX_SHADOW_XL",

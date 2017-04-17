@@ -79,6 +79,30 @@
       "name": "borderRadiusPill"
     },
     {
+      "type": "size",
+      "value": "21",
+      "category": "radii",
+      "name": "borderRadiusPillLg"
+    },
+    {
+      "type": "size",
+      "value": "1px",
+      "category": "borders",
+      "name": "borderSizeSm"
+    },
+    {
+      "type": "size",
+      "value": "2px",
+      "category": "borders",
+      "name": "borderSizeLg"
+    },
+    {
+      "type": "size",
+      "value": "3px",
+      "category": "borders",
+      "name": "borderSizeXl"
+    },
+    {
       "type": "box-shadow",
       "category": "box-shadows",
       "value": "0px 1px 3px 0px rgba(37,32,31,.3)",
