@@ -10,8 +10,6 @@ const links = [
       { route: routes.GETTING_STARTED, children: 'Getting started' },
       { route: routes.BACKPACK_REACT_SCRIPTS, children: 'Backpack React Scripts' },
       { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' },
-      { route: routes.CONTRIBUTING, children: 'Contributing' },
-      { route: routes.I18N, children: 'Internationalisation' },
     ],
   },
 ];
@@ -19,10 +17,7 @@ const links = [
 const UsingLayout = ({ children }) => <SideNavLayout links={links}>{children}</SideNavLayout>;
 
 UsingLayout.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default UsingLayout;

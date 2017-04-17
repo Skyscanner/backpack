@@ -20,10 +20,6 @@ const components = [
     id: 'spacing',
     title: 'Spacing',
     blurb: [
-      <BpkParagraph>
-        All spacing is measured in ‘rems’. Since these are relative to the value inherited from the browser font-size,
-        all other units will scale accordingly should a user change this.
-      </BpkParagraph>,
       <BpkParagraph>To ensure elements are distributed evenly, we use .375rem (6px) increments:</BpkParagraph>,
     ],
     examples: [],

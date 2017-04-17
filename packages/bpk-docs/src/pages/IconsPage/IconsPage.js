@@ -35,8 +35,8 @@ const blurb = [
     compliment the rest of Backpack.
   </BpkParagraph>,
   <BpkParagraph>
-    Our icon set is provided in two sizes: small (18px) and large (24px). Both are pixel-snapped for clarity at the
-    intended usage sizes.
+    Icons are provided in two sizes: small (18px) and large (24px). Both are pixel-snapped for clarity at the intended
+    usage sizes.
   </BpkParagraph>,
   <BpkParagraph>
     The <BpkLink href="#readme">readme</BpkLink> for the component is available below the search tool.

@@ -1,7 +1,7 @@
 import React from 'react';
-import { colors, primaryGradient } from 'bpk-tokens/tokens/base.es6';
-
 import BpkParagraph from 'bpk-component-paragraph';
+import { BpkList, BpkListItem } from 'bpk-component-list';
+import { colors, primaryGradient } from 'bpk-tokens/tokens/base.es6';
 
 import './colors-page.scss';
 import ColorSwatch from './../../components/ColorSwatch';
@@ -20,6 +20,20 @@ const components = [
         <ColorSwatch name="color-blue-500" color={colors.colorBlue500} whiteColor />
         <ColorSwatch name="color-white" color={colors.colorWhite} border />
       </div>,
+      <BpkParagraph>
+        Anything using Blue should be clickable, but not all things that are clickable need to be Blue.
+      </BpkParagraph>,
+      <BpkList>
+        <BpkListItem>
+          Links make use of Blue-500.
+        </BpkListItem>
+        <BpkListItem>
+          Visited links make use of Blue-700.
+        </BpkListItem>
+        <BpkListItem>
+          Selected states should use Blue-700 also.
+        </BpkListItem>
+      </BpkList>,
     ],
     examples: [],
   },
@@ -35,6 +49,10 @@ const components = [
         <ColorSwatch name="color-yellow-500" color={colors.colorYellow500} />
         <ColorSwatch name="color-red-500" color={colors.colorRed500} whiteColor />
       </div>,
+      <BpkParagraph>
+        Green is used to denote, cheap, direct and generally anything positive. Yellow is used to guide the user and
+        notify them of any warnings. Red is expensive, In-direct and must-read warnings such as errors.
+      </BpkParagraph>,
     ],
     examples: [],
   },
@@ -54,19 +72,20 @@ const components = [
         <ColorSwatch name="color-gray-700" color={colors.colorGray700} whiteColor />
         <ColorSwatch name="color-gray-900" color={colors.colorGray900} whiteColor />
       </div>,
-    ],
-    examples: [],
-  },
-  {
-    id: 'tint-and-shades',
-    title: 'Tints & shades',
-    blurb: [
       <BpkParagraph>
-        A range of tints and shades are available for use in the Skyscanner palette, based on five base hues. The tints
-        and shades are based on an algorithmic value from 50-900 with 50 being the lightest and 900 being the darkest.
-        The number of available tints and shades has been restricted to provide better visual coherence to the overall
-        brand.
+        Neutrals for typography and decorative elements.
       </BpkParagraph>,
+      <BpkList>
+        <BpkListItem>
+          Gray-50 is useful for background colours especially when using cards.
+        </BpkListItem>
+        <BpkListItem>
+          Gray-700 is the default text colour.
+        </BpkListItem>
+        <BpkListItem>
+          Gray-300 and Gray-500 are used for supplementary text and microcopy.
+        </BpkListItem>
+      </BpkList>,
     ],
     examples: [],
   },
@@ -89,8 +108,12 @@ const ColorsPage = () => <DocsPageBuilder
   title="Colors"
   blurb={[
     <BpkParagraph>
-      The Skyscanner color palette is bold, colorful and impactful. The naming system below will help you quickly
-      identify the colors referenced in this guide and in our prepared palette files.
+      Skyscanner makes use of a harmonious and vibrant palette, which you can see below. This made up of primary and
+      secondary colours as well as a suite of grays.
+    </BpkParagraph>,
+    <BpkParagraph>
+      The Skyscanner product relies on a lot of white space, which should be considered at all times when pairing
+      with additional colours.
     </BpkParagraph>,
   ]}
   components={components}

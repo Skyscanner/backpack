@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import BpkLink from 'bpk-component-link';
 import BpkNudger from 'bpk-component-nudger';
 import BpkParagraph from 'bpk-component-paragraph';
-import BpkRouterLink from 'bpk-component-router-link';
 import nudgersReadme from 'bpk-component-nudger/readme.md';
 
-import { I18N } from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 class NudgerContainer extends Component {
@@ -61,10 +58,6 @@ const NudgersPage = () => <DocsPageBuilder
     <BpkParagraph>
       They should only be used for small number ranges. If users have to click many times to get to the desired value,
       a different UI element might be better suited.
-    </BpkParagraph>,
-    <BpkParagraph>
-      <BpkLink href="#translation">Recommended translation strings</BpkLink> exist for this component (see
-      also <BpkRouterLink to={I18N}>Internationalisation</BpkRouterLink>).
     </BpkParagraph>,
   ]}
   components={components}

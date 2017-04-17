@@ -129,52 +129,35 @@ The classes attached to the node have the format of `bpk-calendar-date-modifier-
 
 #### daysOfWeek
 
-An array of objects describing the days of the week. This can be fed directly through CLDR data from the culture service (see the [Culture Service test harness](http://cs.uk1.prod.skyscanner.local/testharness/cldr.html)).
-
-The prop takes the value of the CLDR response data's key `supplemental.weekDate.daysOfWeek`:
+An array of objects describing the days of the week:
 
 ```json
 [
   {
+    "name": "Sunday",
+    "nameAbbr": "Sun",
+    "index": 0,
+    "isWeekend": true
+  },
+  {
     "name": "Monday",
     "nameAbbr": "Mon",
-    "nameShort": "Mo",
     "index": 1,
-    "cldrKey": "mon",
     "isWeekend": false
   },
   {
     "name": "Tuesday",
     "nameAbbr": "Tue",
-    "nameShort": "Tu",
     "index": 2,
-    "cldrKey": "tue",
     "isWeekend": false
   },
   ...
-  {
-    "name": "Sunday",
-    "nameAbbr": "Sun",
-    "nameShort": "Su",
-    "index": 0,
-    "cldrKey": "sun",
-    "isWeekend": true
-  }
 ]
 ```
 
-Of each object, only the following keys are required: `index`, `name`, `nameAbbr`, `isWeekend`. It does not matter if you use `daysOfWeek` or `daysOfWeekUnordered`, as the calendar sorts them based on their index property and the value of the `weekStartsOn` prop.
-
 #### formatDateFull
 
-A function to format a full, human-readable date, for example: "Friday, 13th January 2017". Skyscanner apps in production should use the `full` format provided by the [Scaffolding JavaScript API](http://readthedocs.prod.aws.skyscnr.com/docs/web-platform-web-platform-docs/en/latest/scaffolding-javascript-api/pages/Skyscanner.Api.html#skyscanner-api-localisation):
-
-```js
-var formatDateFull = Skyscanner.Api.localisation.formatDate(new Date(), 'full');
-// eg. Tuesday, 13 October 2015
-```
-
-If you just need to quickly prototype, use the following from [date-fns](https://date-fns.org/docs/format#usage):
+A function to format a full, human-readable date, for example: "Friday, 13th January 2017":
 
 ```js
 import format from 'date-fns/format';
@@ -184,12 +167,7 @@ const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
 
 #### formatMonth
 
-A function to format a human-readable month, for example: "January 2017". Skyscanner apps in production should use the `yearMonth` format provided by the [Scaffolding JavaScript API](http://readthedocs.prod.aws.skyscnr.com/docs/web-platform-web-platform-docs/en/latest/scaffolding-javascript-api/pages/Skyscanner.Api.html#skyscanner-api-localisation):
-
-```js
-var formatMonth = Skyscanner.Api.localisation.formatDate(new Date(), 'yearMonth');
-// eg. October 2015
-```
+A function to format a human-readable month, for example: "January 2017":
 
 If you just need to quickly prototype, use the following from [date-fns](https://date-fns.org/docs/format#usage):
 
@@ -202,11 +180,3 @@ const formatMonth = date => format(date, 'MMMM YYYY');
 #### weekStartsOn
 
 First day of the week. 0 = Sunday, 1 = Monday, ..., 6 = Saturday.
-
-### Translation
-
-If building a Skyscanner product, the following translation strings are recommended.
-
-| Property              | Translation key               | English          |
-| --------------------- | ----------------------------- | ---------------- |
-| changeMonthLabel      | bpk_calendar_changeMonthLabel | Change month     |

@@ -61,11 +61,3 @@ class App extends Component {
 | value                 | number                        | true     | -             |
 | className             | string                        | false    | null          |
 
-### Translation
-
-If building a Skyscanner product, the following translation strings are available.
-
-| Property              | Translation key                | English          |
-| --------------------- | ------------------------------ | ---------------- |
-| decreaseButtonLabel   | bpk_nudger_decreaseButtonLabel | Decrease         |
-| increaseButtonLabel   | bpk_nudger_increaseButtonLabel | Increase         |

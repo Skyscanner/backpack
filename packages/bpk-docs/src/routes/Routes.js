@@ -11,9 +11,7 @@ import HomePage from './../pages/HomePage';
 
 import GettingStartedPage from './../pages/GettingStartedPage';
 import BackpackReactScriptsPage from './../pages/BackpackReactScriptsPage';
-import ContributingPage from './../pages/ContributingPage';
 import BaseStylesheetPage from './../pages/BaseStylesheetPage';
-import InternationalisationPage from './../pages/InternationalisationPage';
 
 import StylePage from './../pages/StylePage';
 
@@ -59,8 +57,6 @@ const Routes = (
       <Route path={ROUTES.GETTING_STARTED} component={GettingStartedPage} />
       <Route path={ROUTES.BACKPACK_REACT_SCRIPTS} component={BackpackReactScriptsPage} />
       <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
-      <Route path={ROUTES.CONTRIBUTING} component={ContributingPage} />
-      <Route path={ROUTES.I18N} component={InternationalisationPage} />
     </Route>
 
     <Route path={ROUTES.STYLE} component={StylePage} />

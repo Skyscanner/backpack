@@ -14,8 +14,8 @@ const components = [
     blurb: [
       <BpkParagraph>
         Rather than specify a single font across all Skyscanner products, we rely on the native font used on each
-        device. The benefits of this are two-fold, firstly we can lean on the hard-work and expertise that each OS
-        manufacturer has expended in producing a font that works best on their respective platforms. Second, we avoid
+        device. The benefits of this are two-fold, firstly we can lean on the hard-work and expertise that OS vendors
+        have expended in producing a font that works best on their respective platforms. Second, we avoid
         any drawbacks of serving a custom web-font; for example extra load time, and a so-called FOUT (flash of unstyled
         text). This will improve the user experience of our product on all devices.
       </BpkParagraph>,
@@ -29,7 +29,7 @@ const components = [
     blurb: [
       <BpkParagraph>
         Backpack uses a set of 5 font-sizes which when used in conjunction with their retrospective line heights,
-        produces text styles which align to the baseline grid. Similar to spacing, these are specified in rems.
+        produces text styles which align to the baseline grid.
       </BpkParagraph>,
     ],
     examples: [],
