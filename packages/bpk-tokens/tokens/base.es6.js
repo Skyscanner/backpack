@@ -221,14 +221,10 @@ export const modalOpacity = "1";
 export const modalMaxWidth = "32.25rem";
 export const modalWideMaxWidth = "50.25rem";
 export const modalHeaderPadding = ".75rem";
-export const modalHeaderBoxShadow = "0 -1px 0 0 #E6E4EB inset";
 export const modalCloseIconFill = "rgb(129, 123, 143)";
 export const modalCloseIconHoverFill = "rgb(82, 76, 97)";
 export const modalContentPadding = ".75rem";
 export const bannerAlertBackgroundColor = "rgb(255, 255, 255)";
-export const bannerAlertSuccessBoxShadow = "0 0 0 1px #00d775";
-export const bannerAlertWarnBoxShadow = "0 0 0 1px #FFBB00";
-export const bannerAlertErrorBoxShadow = "0 0 0 1px #ff5452";
 export const bannerAlertHeaderPaddingY = ".375rem";
 export const bannerAlertHeaderPaddingX = ".75rem";
 export const bannerAlertHeaderExpandableHoverBackgroundColor = "rgb(243, 242, 245)";
@@ -565,16 +561,12 @@ modalOpacity,
 modalMaxWidth,
 modalWideMaxWidth,
 modalHeaderPadding,
-modalHeaderBoxShadow,
 modalCloseIconFill,
 modalCloseIconHoverFill,
 modalContentPadding,
 };
 export const notifications = {
 bannerAlertBackgroundColor,
-bannerAlertSuccessBoxShadow,
-bannerAlertWarnBoxShadow,
-bannerAlertErrorBoxShadow,
 bannerAlertHeaderPaddingY,
 bannerAlertHeaderPaddingX,
 bannerAlertHeaderExpandableHoverBackgroundColor,

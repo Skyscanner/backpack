@@ -445,8 +445,6 @@ $bpk-modal-wide-max-width: 50.25rem !default;
 /// @group modals
 $bpk-modal-header-padding: .75rem !default;
 /// @group modals
-$bpk-modal-header-box-shadow: 0 -1px 0 0 #E6E4EB inset !default;
-/// @group modals
 $bpk-modal-close-icon-fill: rgb(129, 123, 143) !default;
 /// @group modals
 $bpk-modal-close-icon-hover-fill: rgb(82, 76, 97) !default;
@@ -454,12 +452,6 @@ $bpk-modal-close-icon-hover-fill: rgb(82, 76, 97) !default;
 $bpk-modal-content-padding: .75rem !default;
 /// @group notifications
 $bpk-banner-alert-background-color: rgb(255, 255, 255) !default;
-/// @group notifications
-$bpk-banner-alert-success-box-shadow: 0 0 0 1px #00d775 !default;
-/// @group notifications
-$bpk-banner-alert-warn-box-shadow: 0 0 0 1px #FFBB00 !default;
-/// @group notifications
-$bpk-banner-alert-error-box-shadow: 0 0 0 1px #ff5452 !default;
 /// @group notifications
 $bpk-banner-alert-header-padding-y: .375rem !default;
 /// @group notifications

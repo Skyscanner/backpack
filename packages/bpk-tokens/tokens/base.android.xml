@@ -223,14 +223,10 @@
   <property name="MODAL_MAX_WIDTH" category="modals">516</property>
   <property name="MODAL_WIDE_MAX_WIDTH" category="modals">804</property>
   <property name="MODAL_HEADER_PADDING" category="modals">12</property>
-  <property name="MODAL_HEADER_BOX_SHADOW" category="modals">0 -1px 0 0 #E6E4EB inset</property>
   <color name="MODAL_CLOSE_ICON_FILL" category="modals">#817b8fff</color>
   <color name="MODAL_CLOSE_ICON_HOVER_FILL" category="modals">#524c61ff</color>
   <property name="MODAL_CONTENT_PADDING" category="modals">12</property>
   <color name="BANNER_ALERT_BACKGROUND_COLOR" category="notifications">#ffffffff</color>
-  <property name="BANNER_ALERT_SUCCESS_BOX_SHADOW" category="notifications">0 0 0 1px #00d775</property>
-  <property name="BANNER_ALERT_WARN_BOX_SHADOW" category="notifications">0 0 0 1px #FFBB00</property>
-  <property name="BANNER_ALERT_ERROR_BOX_SHADOW" category="notifications">0 0 0 1px #ff5452</property>
   <property name="BANNER_ALERT_HEADER_PADDING_Y" category="notifications">6</property>
   <property name="BANNER_ALERT_HEADER_PADDING_X" category="notifications">12</property>
   <color name="BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR" category="notifications">#f3f2f5ff</color>

@@ -1429,12 +1429,6 @@
       "type": "box-shadow",
       "name": "MODAL_HEADER_PADDING"
     },
-    "MODAL_HEADER_BOX_SHADOW": {
-      "category": "modals",
-      "value": "0 -1px 0 0 #E6E4EB inset",
-      "type": "box-shadow",
-      "name": "MODAL_HEADER_BOX_SHADOW"
-    },
     "MODAL_CLOSE_ICON_FILL": {
       "category": "modals",
       "value": "rgb(129, 123, 143)",
@@ -1458,24 +1452,6 @@
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "BANNER_ALERT_BACKGROUND_COLOR"
-    },
-    "BANNER_ALERT_SUCCESS_BOX_SHADOW": {
-      "category": "notifications",
-      "value": "0 0 0 1px #00d775",
-      "type": "box-shadow",
-      "name": "BANNER_ALERT_SUCCESS_BOX_SHADOW"
-    },
-    "BANNER_ALERT_WARN_BOX_SHADOW": {
-      "category": "notifications",
-      "value": "0 0 0 1px #FFBB00",
-      "type": "box-shadow",
-      "name": "BANNER_ALERT_WARN_BOX_SHADOW"
-    },
-    "BANNER_ALERT_ERROR_BOX_SHADOW": {
-      "category": "notifications",
-      "value": "0 0 0 1px #ff5452",
-      "type": "box-shadow",
-      "name": "BANNER_ALERT_ERROR_BOX_SHADOW"
     },
     "BANNER_ALERT_HEADER_PADDING_Y": {
       "category": "notifications",
@@ -2206,14 +2182,10 @@
     "MODAL_MAX_WIDTH",
     "MODAL_WIDE_MAX_WIDTH",
     "MODAL_HEADER_PADDING",
-    "MODAL_HEADER_BOX_SHADOW",
     "MODAL_CLOSE_ICON_FILL",
     "MODAL_CLOSE_ICON_HOVER_FILL",
     "MODAL_CONTENT_PADDING",
     "BANNER_ALERT_BACKGROUND_COLOR",
-    "BANNER_ALERT_SUCCESS_BOX_SHADOW",
-    "BANNER_ALERT_WARN_BOX_SHADOW",
-    "BANNER_ALERT_ERROR_BOX_SHADOW",
     "BANNER_ALERT_HEADER_PADDING_Y",
     "BANNER_ALERT_HEADER_PADDING_X",
     "BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR",

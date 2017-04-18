@@ -1340,12 +1340,6 @@
     },
     {
       "category": "modals",
-      "value": "0 -1px 0 0 #E6E4EB inset",
-      "type": "box-shadow",
-      "name": "modalHeaderBoxShadow"
-    },
-    {
-      "category": "modals",
       "value": "rgb(129, 123, 143)",
       "type": "color",
       "name": "modalCloseIconFill"
@@ -1367,24 +1361,6 @@
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "bannerAlertBackgroundColor"
-    },
-    {
-      "category": "notifications",
-      "value": "0 0 0 1px #00d775",
-      "type": "box-shadow",
-      "name": "bannerAlertSuccessBoxShadow"
-    },
-    {
-      "category": "notifications",
-      "value": "0 0 0 1px #FFBB00",
-      "type": "box-shadow",
-      "name": "bannerAlertWarnBoxShadow"
-    },
-    {
-      "category": "notifications",
-      "value": "0 0 0 1px #ff5452",
-      "type": "box-shadow",
-      "name": "bannerAlertErrorBoxShadow"
     },
     {
       "category": "notifications",
