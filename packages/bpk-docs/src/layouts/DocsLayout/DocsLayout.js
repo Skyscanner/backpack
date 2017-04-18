@@ -12,6 +12,7 @@ const links = [
       { route: routes.LAYOUT, children: 'Layout' },
       { route: routes.RADII, children: 'Radii' },
       { route: routes.SHADOWS, children: 'Shadows' },
+      { route: routes.BORDERS, children: 'Borders' },
       { route: routes.ANIMATION, children: 'Animation' },
     ],
   },

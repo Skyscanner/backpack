@@ -14,6 +14,7 @@ export const COLORS = '/components/bonds/colors';
 export const TYPESETTING = '/components/bonds/typesetting';
 export const RADII = '/components/bonds/radii';
 export const SHADOWS = '/components/bonds/shadows';
+export const BORDERS = '/components/bonds/borders';
 export const LAYOUT = '/components/bonds/layout';
 export const ANIMATION = '/components/bonds/animation';
 

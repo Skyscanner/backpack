@@ -23,6 +23,7 @@ const MotionPage = () => <DocsPageBuilder
     </BpkParagraph>,
   ]}
   components={components}
+  showMenu={false}
   sassdocId="animation"
 />;
 

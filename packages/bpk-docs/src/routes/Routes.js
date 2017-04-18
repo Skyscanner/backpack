@@ -19,6 +19,7 @@ import ColorsPage from './../pages/ColorsPage';
 import TypesettingPage from './../pages/TypesettingPage';
 import RadiiPage from './../pages/RadiiPage';
 import ShadowsPage from './../pages/ShadowsPage';
+import BordersPage from './../pages/BordersPage';
 import LayoutPage from './../pages/LayoutPage';
 import AnimationPage from './../pages/AnimationPage';
 
@@ -69,6 +70,7 @@ const Routes = (
         <Route path={ROUTES.TYPESETTING} component={TypesettingPage} />
         <Route path={ROUTES.RADII} component={RadiiPage} />
         <Route path={ROUTES.SHADOWS} component={ShadowsPage} />
+        <Route path={ROUTES.BORDERS} component={BordersPage} />
         <Route path={ROUTES.LAYOUT} component={LayoutPage} />
         <Route path={ROUTES.ANIMATION} component={AnimationPage} />
       </Route>

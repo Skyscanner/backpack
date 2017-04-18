@@ -27,6 +27,7 @@ const staticSiteGeneratorConfig = {
     ROUTES.TYPESETTING,
     ROUTES.RADII,
     ROUTES.SHADOWS,
+    ROUTES.BORDERS,
     ROUTES.LAYOUT,
     ROUTES.ANIMATION,
 
