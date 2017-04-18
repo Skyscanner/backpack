@@ -2,7 +2,31 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Changed:**
+- bpk-tokens:
+  - Removed superfluous tokens:
+    - `MODAL_HEADER_BOX_SHADOW`
+    - `BANNER_ALERT_SUCCESS_BOX_SHADOW`
+    - `BANNER_ALERT_WARN_BOX_SHADOW`
+    - `BANNER_ALERT_ERROR_BOX_SHADOW`
+
+**Added:**
+- bpk-mixins:
+- bpk-tokens:
+  - New mixins for applying borders:
+    - `@include bpk-border-sm($color);`
+    - `@include bpk-border-lg($color);`
+    - `@include bpk-border-xl($color);`
+  - Each border mixin size above also has an option for top, right, bottom & left borders:
+    - `@include bpk-border-top-sm($color);`
+    - `@include bpk-border-right-sm($color);`
+    - `@include bpk-border-bottom-sm($color);`
+    - `@include bpk-border-left-sm($color);`
+  - Full docs here http://backpack.prod.aws.skyscnr.com/sassdoc/#borders-mixin-bpk-border-sm
+
+**Fixed:**
+- bpk-mixins:
+  - Fixed `@include bpk-border-radius-pill;` mixin as it was completely broken
 
 ## 2017-04-17 - Tweaked button selected state color
 
