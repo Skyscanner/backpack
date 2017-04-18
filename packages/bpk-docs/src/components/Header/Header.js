@@ -11,6 +11,7 @@ import * as ROUTES from '../../constants/routes';
 const links = [
   { to: ROUTES.USING_BACKPACK, children: 'Using Backpack' },
   { to: ROUTES.DOCS, children: 'Components' },
+  { to: ROUTES.PATTERNS, children: 'Patterns' },
   { to: ROUTES.RESOURCES, children: 'Resources' },
   { href: 'http://git.prod.skyscanner.local/backpack/backpack', children: 'GitLab', blank: true },
 ];

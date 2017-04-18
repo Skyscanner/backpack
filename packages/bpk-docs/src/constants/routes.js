@@ -43,6 +43,9 @@ export const HORIZONTAL_NAV = '/components/molecules/horizontal-nav';
 export const FIELDSETS = '/components/molecules/fieldsets';
 
 export const PATTERNS = '/patterns';
+export const VERTICAL_RHYTHM = '/patterns/vertical-rhythm';
+export const STATEFULNESS = '/patterns/statefulness';
+export const UNITS = '/patterns/units';
 
 export const RESOURCES = '/resources';
 

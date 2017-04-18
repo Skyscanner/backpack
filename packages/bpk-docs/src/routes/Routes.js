@@ -6,6 +6,7 @@ import * as ROUTES from './../constants/routes';
 import DefaultLayout from './../layouts/DefaultLayout';
 import DocsLayout from './../layouts/DocsLayout';
 import UsingLayout from './../layouts/UsingLayout';
+import PatternsLayout from './../layouts/PatternsLayout';
 
 import HomePage from './../pages/HomePage';
 
@@ -45,7 +46,10 @@ import TicketsPage from './../pages/TicketsPage';
 import HorizontalNavPage from './../pages/HorizontalNavPage';
 import FieldsetsPage from './../pages/FieldsetsPage';
 
-import PatternsPage from './../pages/PatternsPage';
+import VerticalRhythmPage from './../pages/VerticalRhythmPage';
+import StatefulnessPage from './../pages/StatefulnessPage';
+import UnitsPage from './../pages/UnitsPage';
+
 
 import ResourcesPage from './../pages/ResourcesPage';
 import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages';
@@ -102,7 +106,14 @@ const Routes = (
         <Route path={ROUTES.FIELDSETS} component={FieldsetsPage} />
       </Route>
     </Route>
-    <Route path={ROUTES.PATTERNS} component={PatternsPage} />
+
+    <Route path={ROUTES.PATTERNS} component={PatternsLayout}>
+      <IndexRedirect to={ROUTES.VERTICAL_RHYTHM} />
+      <Route path={ROUTES.VERTICAL_RHYTHM} component={VerticalRhythmPage} />
+      <Route path={ROUTES.STATEFULNESS} component={StatefulnessPage} />
+      <Route path={ROUTES.UNITS} component={UnitsPage} />
+    </Route>
+
     <Route path={ROUTES.RESOURCES} component={ResourcesPage} />
     <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridColumnDemoPage} />
     <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridOffsetDemoPage} />
