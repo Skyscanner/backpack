@@ -46,10 +46,6 @@
       "value": "{!SPACING_SM}",
       "type": "box-shadow"
     },
-    "MODAL_HEADER_BOX_SHADOW": {
-      "value": "0 -1px 0 0 {!GRAY_100} inset",
-      "type": "box-shadow"
-    },
     "MODAL_CLOSE_ICON_FILL": {
       "value": "{!GRAY_500}",
       "type": "color"

@@ -14,6 +14,6 @@
   }
 
   &--border {
-    box-shadow: 0 0 0 1px $bpk-color-gray-100 inset;
+    @include bpk-border-sm($bpk-color-gray-100);
   }
 }

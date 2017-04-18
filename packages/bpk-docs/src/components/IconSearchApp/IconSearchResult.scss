@@ -25,9 +25,9 @@
     width: calc(25% - #{$bpk-spacing-sm});
     margin: $bpk-spacing-xs;
     padding: $bpk-spacing-xs;
-    box-shadow: 0 0 0 1px $bpk-color-gray-100 inset;
 
     @include bpk-border-radius-xs;
+    @include bpk-border-sm($bpk-color-gray-100);
 
     @include bpk-breakpoint-mobile {
       width: calc(50% - #{$bpk-spacing-sm});

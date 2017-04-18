@@ -7,15 +7,15 @@
   @include bpk-border-radius-sm;
 
   &--success {
-    box-shadow: $bpk-banner-alert-success-box-shadow;
+    @include bpk-border-sm($bpk-color-green-500, '');
   }
 
   &--warn {
-    box-shadow: $bpk-banner-alert-warn-box-shadow;
+    @include bpk-border-sm($bpk-color-yellow-500, '');
   }
 
   &--error {
-    box-shadow: $bpk-banner-alert-error-box-shadow;
+    @include bpk-border-sm($bpk-color-red-500, '');
   }
 
   &__header {
