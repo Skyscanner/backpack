@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-input",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "Backpack input component.",
   "main": "index.js",
   "repository": {
@@ -13,6 +13,6 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^11.1.3"
+    "bpk-mixins": "^12.0.0"
   }
 }
