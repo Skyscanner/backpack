@@ -1,0 +1,42 @@
+@import '~bpk-tokens';
+
+.bpk-barchart__bar {
+  fill: $bpk-color-blue-500;
+  shape-rendering: auto;
+
+  &:hover {
+    fill: $bpk-color-green-500;
+  }
+}
+
+.bpk-barchart__axis {
+  text {
+    fill: $bpk-color-gray-500;
+
+    font: {
+      family: $bpk-font-family-base;
+      size: $bpk-font-size-sm;
+    }
+  }
+
+  .domain { /* stylelint-disable-line selector-class-pattern */
+    stroke: $bpk-color-gray-100;
+  }
+
+  &--disable-line {
+    .domain { /* stylelint-disable-line selector-class-pattern */
+      display: none;
+    }
+  }
+
+  .tick { /* stylelint-disable-line selector-class-pattern */
+    line { /* stylelint-disable-line selector-max-compound-selectors */
+      stroke: $bpk-color-gray-100;
+    }
+  }
+}
+
+.bpk-barchart__grid-line {
+  stroke: $bpk-color-gray-100;
+  shape-rendering: crispEdges;
+}
