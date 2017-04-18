@@ -2,8 +2,14 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-04-18 - New border mixins
+
 **Changed:**
-- bpk-tokens:
+- bpk-component-banner-alert: 0.0.51 => 1.0.0
+- bpk-mixins: 11.1.3 => 12.0.0
+- bpk-tokens: 19.0.2 => 20.0.0
   - Removed superfluous tokens:
     - `MODAL_HEADER_BOX_SHADOW`
     - `BANNER_ALERT_SUCCESS_BOX_SHADOW`
@@ -15,8 +21,8 @@
     - `BANNER_ALERT_ERROR_ICON_FILL` -> `BANNER_ALERT_ERROR_COLOR`
 
 **Added:**
-- bpk-mixins:
-- bpk-tokens:
+- bpk-mixins: 11.1.3 => 12.0.0
+- bpk-tokens: 19.0.2 => 20.0.0
   - New mixins for applying borders:
     - `@include bpk-border-sm($color);`
     - `@include bpk-border-lg($color);`
@@ -29,7 +35,7 @@
   - Full docs here http://backpack.prod.aws.skyscnr.com/sassdoc/#borders-mixin-bpk-border-sm
 
 **Fixed:**
-- bpk-mixins:
+- bpk-mixins: 11.1.3 => 12.0.0
   - Fixed `@include bpk-border-radius-pill;` mixin as it was completely broken
 
 ## 2017-04-17 - Tweaked button selected state color
