@@ -231,9 +231,9 @@
   <property name="BANNER_ALERT_HEADER_PADDING_X" category="notifications">12</property>
   <color name="BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR" category="notifications">#f3f2f5ff</color>
   <color name="BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR" category="notifications">#e6e4ebff</color>
-  <color name="BANNER_ALERT_SUCCESS_ICON_FILL" category="notifications">#00d775ff</color>
-  <color name="BANNER_ALERT_WARN_ICON_FILL" category="notifications">#ffbb00ff</color>
-  <color name="BANNER_ALERT_ERROR_ICON_FILL" category="notifications">#ff5452ff</color>
+  <color name="BANNER_ALERT_SUCCESS_COLOR" category="notifications">#00d775ff</color>
+  <color name="BANNER_ALERT_WARN_COLOR" category="notifications">#ffbb00ff</color>
+  <color name="BANNER_ALERT_ERROR_COLOR" category="notifications">#ff5452ff</color>
   <color name="BANNER_ALERT_EXPAND_ICON_FILL" category="notifications">#524c61ff</color>
   <property name="BANNER_ALERT_CHILDREN_PADDING_Y" category="notifications">6</property>
   <property name="BANNER_ALERT_CHILDREN_PADDING_X" category="notifications">12</property>

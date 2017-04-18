@@ -7,15 +7,15 @@
   @include bpk-border-radius-sm;
 
   &--success {
-    @include bpk-border-sm($bpk-color-green-500, '');
+    @include bpk-border-sm($bpk-banner-alert-success-color, '');
   }
 
   &--warn {
-    @include bpk-border-sm($bpk-color-yellow-500, '');
+    @include bpk-border-sm($bpk-banner-alert-warn-color, '');
   }
 
   &--error {
-    @include bpk-border-sm($bpk-color-red-500, '');
+    @include bpk-border-sm($bpk-banner-alert-error-color, '');
   }
 
   &__header {
@@ -48,15 +48,15 @@
   }
 
   &__success-icon {
-    fill: $bpk-banner-alert-success-icon-fill;
+    fill: $bpk-banner-alert-success-color;
   }
 
   &__warn-icon {
-    fill: $bpk-banner-alert-warn-icon-fill;
+    fill: $bpk-banner-alert-warn-color;
   }
 
   &__error-icon {
-    fill: $bpk-banner-alert-error-icon-fill;
+    fill: $bpk-banner-alert-error-color;
   }
 
   &__toggle-button {

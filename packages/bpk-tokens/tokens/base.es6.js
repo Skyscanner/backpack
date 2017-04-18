@@ -229,9 +229,9 @@ export const bannerAlertHeaderPaddingY = ".375rem";
 export const bannerAlertHeaderPaddingX = ".75rem";
 export const bannerAlertHeaderExpandableHoverBackgroundColor = "rgb(243, 242, 245)";
 export const bannerAlertHeaderExpandableActiveBackgroundColor = "rgb(230, 228, 235)";
-export const bannerAlertSuccessIconFill = "rgb(0, 215, 117)";
-export const bannerAlertWarnIconFill = "rgb(255, 187, 0)";
-export const bannerAlertErrorIconFill = "rgb(255, 84, 82)";
+export const bannerAlertSuccessColor = "rgb(0, 215, 117)";
+export const bannerAlertWarnColor = "rgb(255, 187, 0)";
+export const bannerAlertErrorColor = "rgb(255, 84, 82)";
 export const bannerAlertExpandIconFill = "rgb(82, 76, 97)";
 export const bannerAlertChildrenPaddingY = ".375rem";
 export const bannerAlertChildrenPaddingX = ".75rem";
@@ -571,9 +571,9 @@ bannerAlertHeaderPaddingY,
 bannerAlertHeaderPaddingX,
 bannerAlertHeaderExpandableHoverBackgroundColor,
 bannerAlertHeaderExpandableActiveBackgroundColor,
-bannerAlertSuccessIconFill,
-bannerAlertWarnIconFill,
-bannerAlertErrorIconFill,
+bannerAlertSuccessColor,
+bannerAlertWarnColor,
+bannerAlertErrorColor,
 bannerAlertExpandIconFill,
 bannerAlertChildrenPaddingY,
 bannerAlertChildrenPaddingX,

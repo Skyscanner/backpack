@@ -26,15 +26,15 @@
       "value": "{!GRAY_100}",
       "type": "color"
     },
-    "BANNER_ALERT_SUCCESS_ICON_FILL": {
+    "BANNER_ALERT_SUCCESS_COLOR": {
       "value": "{!GREEN_500}",
       "type": "color"
     },
-    "BANNER_ALERT_WARN_ICON_FILL": {
+    "BANNER_ALERT_WARN_COLOR": {
       "value": "{!YELLOW_500}",
       "type": "color"
     },
-    "BANNER_ALERT_ERROR_ICON_FILL": {
+    "BANNER_ALERT_ERROR_COLOR": {
       "value": "{!RED_500}",
       "type": "color"
     },

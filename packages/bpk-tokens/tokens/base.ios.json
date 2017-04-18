@@ -1390,19 +1390,19 @@
       "category": "notifications",
       "value": "rgb(0, 215, 117)",
       "type": "color",
-      "name": "bannerAlertSuccessIconFill"
+      "name": "bannerAlertSuccessColor"
     },
     {
       "category": "notifications",
       "value": "rgb(255, 187, 0)",
       "type": "color",
-      "name": "bannerAlertWarnIconFill"
+      "name": "bannerAlertWarnColor"
     },
     {
       "category": "notifications",
       "value": "rgb(255, 84, 82)",
       "type": "color",
-      "name": "bannerAlertErrorIconFill"
+      "name": "bannerAlertErrorColor"
     },
     {
       "category": "notifications",
