@@ -7,15 +7,15 @@
   @include bpk-border-radius-sm;
 
   &--success {
-    box-shadow: $bpk-banner-alert-success-box-shadow;
+    @include bpk-border-sm($bpk-banner-alert-success-color, '');
   }
 
   &--warn {
-    box-shadow: $bpk-banner-alert-warn-box-shadow;
+    @include bpk-border-sm($bpk-banner-alert-warn-color, '');
   }
 
   &--error {
-    box-shadow: $bpk-banner-alert-error-box-shadow;
+    @include bpk-border-sm($bpk-banner-alert-error-color, '');
   }
 
   &__header {
@@ -48,15 +48,15 @@
   }
 
   &__success-icon {
-    fill: $bpk-banner-alert-success-icon-fill;
+    fill: $bpk-banner-alert-success-color;
   }
 
   &__warn-icon {
-    fill: $bpk-banner-alert-warn-icon-fill;
+    fill: $bpk-banner-alert-warn-color;
   }
 
   &__error-icon {
-    fill: $bpk-banner-alert-error-icon-fill;
+    fill: $bpk-banner-alert-error-color;
   }
 
   &__toggle-button {

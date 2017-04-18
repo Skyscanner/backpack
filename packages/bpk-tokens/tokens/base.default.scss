@@ -24,6 +24,14 @@ $bpk-border-radius-xs: .1875rem !default;
 $bpk-border-radius-sm: .375rem !default;
 /// @group radii
 $bpk-border-radius-pill: 1.125rem !default;
+/// @group radii
+$bpk-border-radius-pill-lg: 1.3125rem !default;
+/// @group borders
+$bpk-border-size-sm: 1px !default;
+/// @group borders
+$bpk-border-size-lg: 2px !default;
+/// @group borders
+$bpk-border-size-xl: 3px !default;
 /// @group box-shadows
 $bpk-box-shadow-sm: 0px 1px 3px 0px rgba(37,32,31,.3) !default;
 /// @group box-shadows
@@ -437,8 +445,6 @@ $bpk-modal-wide-max-width: 50.25rem !default;
 /// @group modals
 $bpk-modal-header-padding: .75rem !default;
 /// @group modals
-$bpk-modal-header-box-shadow: 0 -1px 0 0 #E6E4EB inset !default;
-/// @group modals
 $bpk-modal-close-icon-fill: rgb(129, 123, 143) !default;
 /// @group modals
 $bpk-modal-close-icon-hover-fill: rgb(82, 76, 97) !default;
@@ -446,12 +452,6 @@ $bpk-modal-close-icon-hover-fill: rgb(82, 76, 97) !default;
 $bpk-modal-content-padding: .75rem !default;
 /// @group notifications
 $bpk-banner-alert-background-color: rgb(255, 255, 255) !default;
-/// @group notifications
-$bpk-banner-alert-success-box-shadow: 0 0 0 1px #00d775 !default;
-/// @group notifications
-$bpk-banner-alert-warn-box-shadow: 0 0 0 1px #FFBB00 !default;
-/// @group notifications
-$bpk-banner-alert-error-box-shadow: 0 0 0 1px #ff5452 !default;
 /// @group notifications
 $bpk-banner-alert-header-padding-y: .375rem !default;
 /// @group notifications
@@ -461,11 +461,11 @@ $bpk-banner-alert-header-expandable-hover-background-color: rgb(243, 242, 245) !
 /// @group notifications
 $bpk-banner-alert-header-expandable-active-background-color: rgb(230, 228, 235) !default;
 /// @group notifications
-$bpk-banner-alert-success-icon-fill: rgb(0, 215, 117) !default;
+$bpk-banner-alert-success-color: rgb(0, 215, 117) !default;
 /// @group notifications
-$bpk-banner-alert-warn-icon-fill: rgb(255, 187, 0) !default;
+$bpk-banner-alert-warn-color: rgb(255, 187, 0) !default;
 /// @group notifications
-$bpk-banner-alert-error-icon-fill: rgb(255, 84, 82) !default;
+$bpk-banner-alert-error-color: rgb(255, 84, 82) !default;
 /// @group notifications
 $bpk-banner-alert-expand-icon-fill: rgb(82, 76, 97) !default;
 /// @group notifications

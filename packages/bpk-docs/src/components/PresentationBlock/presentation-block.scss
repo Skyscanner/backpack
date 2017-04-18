@@ -4,9 +4,9 @@
   margin-top: 0;
   margin-bottom: $bpk-spacing-sm;
   padding: $bpk-spacing-base;
-  box-shadow: 0 0 0 1px $bpk-color-gray-100;
 
   @include bpk-border-radius-sm;
+  @include bpk-border-sm($bpk-color-gray-100);
 
   > *:last-child {
     margin-bottom: 0;

@@ -79,6 +79,30 @@
       "name": "borderRadiusPill"
     },
     {
+      "type": "size",
+      "value": "21",
+      "category": "radii",
+      "name": "borderRadiusPillLg"
+    },
+    {
+      "type": "size",
+      "value": "1px",
+      "category": "borders",
+      "name": "borderSizeSm"
+    },
+    {
+      "type": "size",
+      "value": "2px",
+      "category": "borders",
+      "name": "borderSizeLg"
+    },
+    {
+      "type": "size",
+      "value": "3px",
+      "category": "borders",
+      "name": "borderSizeXl"
+    },
+    {
       "type": "box-shadow",
       "category": "box-shadows",
       "value": "0px 1px 3px 0px rgba(37,32,31,.3)",
@@ -1316,12 +1340,6 @@
     },
     {
       "category": "modals",
-      "value": "0 -1px 0 0 #E6E4EB inset",
-      "type": "box-shadow",
-      "name": "modalHeaderBoxShadow"
-    },
-    {
-      "category": "modals",
       "value": "rgb(129, 123, 143)",
       "type": "color",
       "name": "modalCloseIconFill"
@@ -1343,24 +1361,6 @@
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "name": "bannerAlertBackgroundColor"
-    },
-    {
-      "category": "notifications",
-      "value": "0 0 0 1px #00d775",
-      "type": "box-shadow",
-      "name": "bannerAlertSuccessBoxShadow"
-    },
-    {
-      "category": "notifications",
-      "value": "0 0 0 1px #FFBB00",
-      "type": "box-shadow",
-      "name": "bannerAlertWarnBoxShadow"
-    },
-    {
-      "category": "notifications",
-      "value": "0 0 0 1px #ff5452",
-      "type": "box-shadow",
-      "name": "bannerAlertErrorBoxShadow"
     },
     {
       "category": "notifications",
@@ -1390,19 +1390,19 @@
       "category": "notifications",
       "value": "rgb(0, 215, 117)",
       "type": "color",
-      "name": "bannerAlertSuccessIconFill"
+      "name": "bannerAlertSuccessColor"
     },
     {
       "category": "notifications",
       "value": "rgb(255, 187, 0)",
       "type": "color",
-      "name": "bannerAlertWarnIconFill"
+      "name": "bannerAlertWarnColor"
     },
     {
       "category": "notifications",
       "value": "rgb(255, 84, 82)",
       "type": "color",
-      "name": "bannerAlertErrorIconFill"
+      "name": "bannerAlertErrorColor"
     },
     {
       "category": "notifications",

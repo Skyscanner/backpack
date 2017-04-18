@@ -34,5 +34,5 @@
 ///   }
 
 @mixin bpk-border-radius-pill {
-  box-shadow: $bpk-border-radius-pill;
+  border-radius: $bpk-border-radius-pill;
 }

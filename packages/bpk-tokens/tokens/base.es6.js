@@ -11,6 +11,10 @@ export const badgeCenteredVerticalAlign = "text-bottom";
 export const borderRadiusXs = ".1875rem";
 export const borderRadiusSm = ".375rem";
 export const borderRadiusPill = "1.125rem";
+export const borderRadiusPillLg = "1.3125rem";
+export const borderSizeSm = "1px";
+export const borderSizeLg = "2px";
+export const borderSizeXl = "3px";
 export const boxShadowSm = "0px 1px 3px 0px rgba(37,32,31,.3)";
 export const boxShadowLg = "0px 4px 14px 0px rgba(37,32,31,.25)";
 export const boxShadowXl = "0px 12px 50px 0px rgba(37,32,31,.25)";
@@ -217,21 +221,17 @@ export const modalOpacity = "1";
 export const modalMaxWidth = "32.25rem";
 export const modalWideMaxWidth = "50.25rem";
 export const modalHeaderPadding = ".75rem";
-export const modalHeaderBoxShadow = "0 -1px 0 0 #E6E4EB inset";
 export const modalCloseIconFill = "rgb(129, 123, 143)";
 export const modalCloseIconHoverFill = "rgb(82, 76, 97)";
 export const modalContentPadding = ".75rem";
 export const bannerAlertBackgroundColor = "rgb(255, 255, 255)";
-export const bannerAlertSuccessBoxShadow = "0 0 0 1px #00d775";
-export const bannerAlertWarnBoxShadow = "0 0 0 1px #FFBB00";
-export const bannerAlertErrorBoxShadow = "0 0 0 1px #ff5452";
 export const bannerAlertHeaderPaddingY = ".375rem";
 export const bannerAlertHeaderPaddingX = ".75rem";
 export const bannerAlertHeaderExpandableHoverBackgroundColor = "rgb(243, 242, 245)";
 export const bannerAlertHeaderExpandableActiveBackgroundColor = "rgb(230, 228, 235)";
-export const bannerAlertSuccessIconFill = "rgb(0, 215, 117)";
-export const bannerAlertWarnIconFill = "rgb(255, 187, 0)";
-export const bannerAlertErrorIconFill = "rgb(255, 84, 82)";
+export const bannerAlertSuccessColor = "rgb(0, 215, 117)";
+export const bannerAlertWarnColor = "rgb(255, 187, 0)";
+export const bannerAlertErrorColor = "rgb(255, 84, 82)";
 export const bannerAlertExpandIconFill = "rgb(82, 76, 97)";
 export const bannerAlertChildrenPaddingY = ".375rem";
 export const bannerAlertChildrenPaddingX = ".75rem";
@@ -329,6 +329,12 @@ export const radii = {
 borderRadiusXs,
 borderRadiusSm,
 borderRadiusPill,
+borderRadiusPillLg,
+};
+export const borders = {
+borderSizeSm,
+borderSizeLg,
+borderSizeXl,
 };
 export const boxShadows = {
 boxShadowSm,
@@ -555,23 +561,19 @@ modalOpacity,
 modalMaxWidth,
 modalWideMaxWidth,
 modalHeaderPadding,
-modalHeaderBoxShadow,
 modalCloseIconFill,
 modalCloseIconHoverFill,
 modalContentPadding,
 };
 export const notifications = {
 bannerAlertBackgroundColor,
-bannerAlertSuccessBoxShadow,
-bannerAlertWarnBoxShadow,
-bannerAlertErrorBoxShadow,
 bannerAlertHeaderPaddingY,
 bannerAlertHeaderPaddingX,
 bannerAlertHeaderExpandableHoverBackgroundColor,
 bannerAlertHeaderExpandableActiveBackgroundColor,
-bannerAlertSuccessIconFill,
-bannerAlertWarnIconFill,
-bannerAlertErrorIconFill,
+bannerAlertSuccessColor,
+bannerAlertWarnColor,
+bannerAlertErrorColor,
 bannerAlertExpandIconFill,
 bannerAlertChildrenPaddingY,
 bannerAlertChildrenPaddingX,

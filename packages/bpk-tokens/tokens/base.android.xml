@@ -13,6 +13,10 @@
   <property name="BORDER_RADIUS_XS" category="radii">3</property>
   <property name="BORDER_RADIUS_SM" category="radii">6</property>
   <property name="BORDER_RADIUS_PILL" category="radii">18</property>
+  <property name="BORDER_RADIUS_PILL_LG" category="radii">21</property>
+  <property name="BORDER_SIZE_SM" category="borders">1px</property>
+  <property name="BORDER_SIZE_LG" category="borders">2px</property>
+  <property name="BORDER_SIZE_XL" category="borders">3px</property>
   <property name="BOX_SHADOW_SM" category="box-shadows">0px 1px 3px 0px rgba(37,32,31,.3)</property>
   <property name="BOX_SHADOW_LG" category="box-shadows">0px 4px 14px 0px rgba(37,32,31,.25)</property>
   <property name="BOX_SHADOW_XL" category="box-shadows">0px 12px 50px 0px rgba(37,32,31,.25)</property>
@@ -219,21 +223,17 @@
   <property name="MODAL_MAX_WIDTH" category="modals">516</property>
   <property name="MODAL_WIDE_MAX_WIDTH" category="modals">804</property>
   <property name="MODAL_HEADER_PADDING" category="modals">12</property>
-  <property name="MODAL_HEADER_BOX_SHADOW" category="modals">0 -1px 0 0 #E6E4EB inset</property>
   <color name="MODAL_CLOSE_ICON_FILL" category="modals">#817b8fff</color>
   <color name="MODAL_CLOSE_ICON_HOVER_FILL" category="modals">#524c61ff</color>
   <property name="MODAL_CONTENT_PADDING" category="modals">12</property>
   <color name="BANNER_ALERT_BACKGROUND_COLOR" category="notifications">#ffffffff</color>
-  <property name="BANNER_ALERT_SUCCESS_BOX_SHADOW" category="notifications">0 0 0 1px #00d775</property>
-  <property name="BANNER_ALERT_WARN_BOX_SHADOW" category="notifications">0 0 0 1px #FFBB00</property>
-  <property name="BANNER_ALERT_ERROR_BOX_SHADOW" category="notifications">0 0 0 1px #ff5452</property>
   <property name="BANNER_ALERT_HEADER_PADDING_Y" category="notifications">6</property>
   <property name="BANNER_ALERT_HEADER_PADDING_X" category="notifications">12</property>
   <color name="BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR" category="notifications">#f3f2f5ff</color>
   <color name="BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR" category="notifications">#e6e4ebff</color>
-  <color name="BANNER_ALERT_SUCCESS_ICON_FILL" category="notifications">#00d775ff</color>
-  <color name="BANNER_ALERT_WARN_ICON_FILL" category="notifications">#ffbb00ff</color>
-  <color name="BANNER_ALERT_ERROR_ICON_FILL" category="notifications">#ff5452ff</color>
+  <color name="BANNER_ALERT_SUCCESS_COLOR" category="notifications">#00d775ff</color>
+  <color name="BANNER_ALERT_WARN_COLOR" category="notifications">#ffbb00ff</color>
+  <color name="BANNER_ALERT_ERROR_COLOR" category="notifications">#ff5452ff</color>
   <color name="BANNER_ALERT_EXPAND_ICON_FILL" category="notifications">#524c61ff</color>
   <property name="BANNER_ALERT_CHILDREN_PADDING_Y" category="notifications">6</property>
   <property name="BANNER_ALERT_CHILDREN_PADDING_X" category="notifications">12</property>

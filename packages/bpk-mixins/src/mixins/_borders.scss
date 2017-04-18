@@ -1,0 +1,248 @@
+@import '../bonds';
+
+////
+/// @group borders
+////
+
+/// Full border utility.
+///
+/// @access private
+
+@mixin _bpk-border($size, $color, $inset) {
+  box-shadow: 0 0 0 $size $color #{$inset};
+}
+
+/// Top border utility.
+///
+/// @access private
+
+@mixin _bpk-border-top($size, $color, $inset) {
+  $offset-y: if($inset == inset, $size, -#{$size});
+
+  box-shadow: 0 $offset-y 0 0 $color #{$inset};
+}
+
+/// Right border utility.
+///
+/// @access private
+
+@mixin _bpk-border-right($size, $color, $inset) {
+  $offset-x: if($inset == inset, -#{$size}, $size);
+
+  box-shadow: $offset-x 0 0 0 $color #{$inset};
+}
+
+/// Bottom border utility.
+///
+/// @access private
+
+@mixin _bpk-border-bottom($size, $color, $inset) {
+  $offset-y: if($inset == inset, -#{$size}, $size);
+
+  box-shadow: 0 $offset-y 0 0 $color #{$inset};
+}
+
+/// Left border utility.
+///
+/// @access private
+
+@mixin _bpk-border-left($size, $color, $inset) {
+  $offset-x: if($inset == inset, $size, -#{$size});
+
+  box-shadow: $offset-x 0 0 0 $color #{$inset};
+}
+
+/// Small "1px" border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-sm($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-sm($color, $inset: inset) {
+  @include _bpk-border($bpk-border-size-sm, $color, $inset);
+}
+
+/// Small "1px" top border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-top-sm($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-top-sm($color, $inset: inset) {
+  @include _bpk-border-top($bpk-border-size-sm, $color, $inset);
+}
+
+/// Small "1px" right border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-right-sm($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-right-sm($color, $inset: inset) {
+  @include _bpk-border-right($bpk-border-size-sm, $color, $inset);
+}
+
+/// Small "1px" bottom border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-bottom-sm($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-bottom-sm($color, $inset: inset) {
+  @include _bpk-border-bottom($bpk-border-size-sm, $color, $inset);
+}
+
+/// Small "1px" left border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-left-sm($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-left-sm($color, $inset: inset) {
+  @include _bpk-border-left($bpk-border-size-sm, $color, $inset);
+}
+
+/// Large "2px" border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-lg($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-lg($color, $inset: inset) {
+  @include _bpk-border($bpk-border-size-lg, $color, $inset);
+}
+
+/// Large "2px" top border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-top-lg($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-top-lg($color, $inset: inset) {
+  @include _bpk-border-top($bpk-border-size-lg, $color, $inset);
+}
+
+/// Large "2px" right border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-right-lg($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-right-lg($color, $inset: inset) {
+  @include _bpk-border-right($bpk-border-size-lg, $color, $inset);
+}
+
+/// Large "2px" bottom border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-bottom-lg($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-bottom-lg($color, $inset: inset) {
+  @include _bpk-border-bottom($bpk-border-size-lg, $color, $inset);
+}
+
+/// Large "2px" left border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-left-lg($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-left-lg($color, $inset: inset) {
+  @include _bpk-border-left($bpk-border-size-lg, $color, $inset);
+}
+
+/// Extra large "3px" border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-xl($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-xl($color, $inset: inset) {
+  @include _bpk-border($bpk-border-size-xl, $color, $inset);
+}
+
+/// Extra large "3px" top border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-top-xl($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-top-xl($color, $inset: inset) {
+  @include _bpk-border-top($bpk-border-size-xl, $color, $inset);
+}
+
+/// Extra large "3px" right border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-right-xl($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-right-xl($color, $inset: inset) {
+  @include _bpk-border-right($bpk-border-size-xl, $color, $inset);
+}
+
+/// Extra large "3px" bottom border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-bottom-xl($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-bottom-xl($color, $inset: inset) {
+  @include _bpk-border-bottom($bpk-border-size-xl, $color, $inset);
+}
+
+/// Extra large "3px" left border.
+///
+/// Applied using box-shadow which preserves vertical rhythm on elements without a fixed height.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-border-left-xl($bpk-color-gray-100);
+///   }
+
+@mixin bpk-border-left-xl($color, $inset: inset) {
+  @include _bpk-border-left($bpk-border-size-xl, $color, $inset);
+}
