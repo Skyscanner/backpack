@@ -2,10 +2,13 @@
 
 ## UNRELEASED
 
-**Fixed:**
+__Nothing yet...__
 
-- bpk-component-datepicker:
-- bpk-component-calendar:
+## 2017-04-19 - Fixed datepicker date selection exception
+
+**Fixed:**
+- bpk-component-calendar: 2.0.22 => 2.0.23
+- bpk-component-datepicker: 5.0.32 => 5.0.33
   - `onDateSelect` is now called after internal state operations have concluded
   - This fixes an internal react exception in the datepicker when selecting dates
 
