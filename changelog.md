@@ -2,7 +2,12 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Fixed:**
+
+- bpk-component-datepicker:
+- bpk-component-calendar:
+  - `onDateSelect` is now called after internal state operations have concluded
+  - This fixes an internal react exception in the datepicker when selecting dates
 
 ## 2017-04-18 - New border mixins
 
