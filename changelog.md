@@ -2,7 +2,10 @@
 
 ## UNRELEASED
 
-__Nothing yet...__
+**Fixed:**
+- bpk-component-datepicker:
+  - Event handlers `onClick`, `onFocus`, `onBlur`, `onKeyDown`, `onKeyUp` and `onTouchEnd`
+    are now passed through to the input when provided in `inputProps`
 
 ## 2017-04-19 - Fixed datepicker date selection exception
 
