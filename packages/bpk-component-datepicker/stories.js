@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf, action } from '@kadira/storybook';
 
 import { weekDays, formatMonth, formatDateFull } from 'bpk-component-calendar/test-utils';
 import { format, dateToBoundaries, addMonths, addDays, startOfDay } from 'bpk-component-calendar/src/date-utils';
@@ -12,6 +12,18 @@ const inputProps = {
   placeholder: 'placeholder',
   large: true,
   docked: true,
+};
+
+const inputPropsWithEventHandlers = {
+  onClick: action('input onClick'),
+  onFocus: action('input onFocus'),
+  onBlur: action('input onBlur'),
+  onTouchEnd: action('input onTouchEnd'),
+  onKeyDown: action('input onKeyDown'),
+  onKeyUp: action('input onKeyUp'),
+  onChange: () => null,
+  placeholder: 'placeholder',
+  large: true,
 };
 
 /* eslint-disable react/no-multi-comp */
@@ -101,6 +113,22 @@ storiesOf('bpk-component-datepicker', module)
         formatDate={formatDate}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
+      />
+    </div>
+  ))
+  .add('Passing through props to underlying input', () => (
+    <div id="application-element">
+      <CalendarContainer
+        id="myDatepicker"
+        closeButtonText="Close"
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        title="Departure date"
+        getApplicationElement={() => document.getElementById('application-element')}
+        formatDate={formatDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        inputProps={inputPropsWithEventHandlers}
       />
     </div>
   ))
