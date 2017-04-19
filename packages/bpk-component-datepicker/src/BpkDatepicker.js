@@ -19,6 +19,13 @@ const handleKeyEvent = (keyCode, callback) => (e) => {
   }
 };
 
+const withEventHandler = (fn, eventHandler) => (e) => {
+  fn(e);
+  if (eventHandler) {
+    eventHandler(e);
+  }
+};
+
 class BpkDatepicker extends Component {
   constructor(props) {
     super(props);
@@ -77,7 +84,17 @@ class BpkDatepicker extends Component {
       weekStartsOn,
       getApplicationElement,
       ...rest
-     } = this.props;
+    } = this.props;
+
+    const {
+      onClick,
+      onFocus,
+      onBlur,
+      onTouchEnd,
+      onKeyDown,
+      onKeyUp,
+      ...restInputProps
+    } = inputProps;
 
     // The following props are not used in render
     delete rest.onDateSelect;
@@ -87,13 +104,13 @@ class BpkDatepicker extends Component {
         id={id}
         name={`${id}_input`}
         value={date ? formatDate(date) : ''}
-        onClick={this.onOpen}
-        onFocus={() => {
+        onClick={withEventHandler(this.onOpen, onClick)}
+        onFocus={withEventHandler(() => {
           if (this.focusCanOpen) {
             this.onOpen();
           }
-        }}
-        onBlur={() => {
+        }, onFocus)}
+        onBlur={withEventHandler(() => {
           if (this.state.isOpen) {
             // If the input loses focus when the popover/modal is open, it should not open on a subsequent focus.
             // Fixes an issue with IE9.
@@ -101,21 +118,21 @@ class BpkDatepicker extends Component {
           } else {
             this.focusCanOpen = true;
           }
-        }}
-        onTouchEnd={(e) => {
+        }, onBlur)}
+        onTouchEnd={withEventHandler((event) => {
           // preventDefault fixes an issue on Android and iOS in which the popover closes immediately
           // because a touch event is registered on one of the dates.
-          e.preventDefault();
+          event.preventDefault();
           this.onOpen();
-        }}
-        onKeyDown={handleKeyEvent(KEYCODES.ENTER, this.onOpen)}
-        onKeyUp={handleKeyEvent(KEYCODES.SPACEBAR, this.onOpen)}
+        }, onTouchEnd)}
+        onKeyDown={withEventHandler(handleKeyEvent(KEYCODES.ENTER, this.onOpen), onKeyDown)}
+        onKeyUp={withEventHandler(handleKeyEvent(KEYCODES.SPACEBAR, this.onOpen), onKeyUp)}
         className="bpk-datepicker__input"
         aria-live="assertive"
         aria-atomic="true"
         aria-label={formatDateFull(date)}
         onChange={() => null}
-        {...inputProps}
+        {...restInputProps}
       />
     );
 
