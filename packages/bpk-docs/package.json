@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.100",
+  "version": "0.0.101",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -23,13 +23,13 @@
     "bpk-component-blockquote": "^0.0.64",
     "bpk-component-breakpoint": "^0.1.5",
     "bpk-component-button": "^1.6.15",
-    "bpk-component-calendar": "^2.0.22",
+    "bpk-component-calendar": "^2.0.23",
     "bpk-component-card": "^0.0.52",
     "bpk-component-checkbox": "^0.1.7",
     "bpk-component-code": "^0.0.64",
     "bpk-component-content-container": "^1.0.55",
     "bpk-component-loading-button": "^0.0.10",
-    "bpk-component-datepicker": "^5.0.32",
+    "bpk-component-datepicker": "^5.0.33",
     "bpk-component-grid": "^1.0.14",
     "bpk-component-grid-toggle": "^0.0.71",
     "bpk-component-heading": "^1.2.13",
