@@ -44,15 +44,20 @@ class BpkCalendar extends Component {
   }
 
   handleDateSelect(date) {
-    this.setState({ preventKeyboardFocus: false });
+    const keyboardFocusState = { preventKeyboardFocus: false };
+
     if (this.props.onDateSelect) {
       const newDate = dateToBoundaries(
         date,
         startOfDay(this.props.minDate),
         startOfDay(this.props.maxDate),
       );
-      this.props.onDateSelect(newDate);
-      this.setState({ focusedDate: newDate });
+
+      const newState = { focusedDate: newDate, ...keyboardFocusState };
+
+      this.setState(newState, () => this.props.onDateSelect(newDate));
+    } else {
+      this.setState(keyboardFocusState);
     }
   }
 

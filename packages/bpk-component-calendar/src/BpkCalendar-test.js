@@ -70,6 +70,33 @@ describe('BpkCalendar', () => {
     expect(onDateSelect.mock.calls[0][0]).toEqual(new Date(2010, 1, 20));
   });
 
+  it('should set state only once on date selection', () => {
+    const setStateSpy = jest.fn();
+    const oldSetState = BpkCalendar.prototype.setState;
+    BpkCalendar.prototype.setState = setStateSpy;
+
+    const calendar = mount(<BpkCalendar
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      daysOfWeek={weekDays}
+      changeMonthLabel="Change month"
+      id="myCalendar"
+      minDate={new Date(2010, 1, 15)}
+      maxDate={new Date(2010, 2, 15)}
+      date={new Date(2010, 1, 15)}
+      onDateSelect={() => null}
+    />);
+
+    const grid = calendar.find('BpkCalendarGridTransition');
+
+    expect(setStateSpy.mock.calls.length).toBe(0);
+
+    grid.prop('onDateClick')(new Date(2010, 1, 20));
+    expect(setStateSpy.mock.calls.length).toBe(1);
+
+    BpkCalendar.prototype.setState = oldSetState;
+  });
+
   it('should move focus on keyboard input', () => {
     const preventDefault = jest.fn();
     const origin = new Date(2010, 2, 1);
