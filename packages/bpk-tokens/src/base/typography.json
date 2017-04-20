@@ -284,7 +284,7 @@
       "category": "text-decorations"
     },
     "LINK_ACTIVE_COLOR": {
-      "value": "{!GRAY_500}",
+      "value": "{!GRAY_900}",
       "type": "color",
       "category": "text-colors"
     },

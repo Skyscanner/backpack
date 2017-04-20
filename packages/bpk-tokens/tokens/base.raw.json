@@ -729,7 +729,7 @@
     },
     "CALENDAR_DAY_COLOR": {
       "category": "calendar",
-      "value": "rgb(82, 76, 97)",
+      "value": "rgb(0, 178, 214)",
       "type": "color",
       "name": "CALENDAR_DAY_COLOR"
     },
@@ -747,7 +747,7 @@
     },
     "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
       "category": "calendar",
-      "value": "rgb(0, 215, 117)",
+      "value": "rgb(0, 140, 168)",
       "type": "color",
       "name": "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR"
     },
@@ -765,7 +765,7 @@
     },
     "CALENDAR_DAY_ACTIVE_COLOR": {
       "category": "calendar",
-      "value": "rgb(82, 76, 97)",
+      "value": "rgb(37, 32, 51)",
       "type": "color",
       "name": "CALENDAR_DAY_ACTIVE_COLOR"
     },
@@ -1904,7 +1904,7 @@
       "name": "LINK_HOVER_TEXT_DECORATION"
     },
     "LINK_ACTIVE_COLOR": {
-      "value": "rgb(129, 123, 143)",
+      "value": "rgb(37, 32, 51)",
       "type": "color",
       "category": "text-colors",
       "name": "LINK_ACTIVE_COLOR"

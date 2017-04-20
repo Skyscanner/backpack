@@ -19,7 +19,7 @@
       "type": "size"
     },
     "CALENDAR_DAY_COLOR": {
-      "value": "{!GRAY_700}",
+      "value": "{!BLUE_500}",
       "type": "color"
     },
     "CALENDAR_DAY_BACKGROUND_COLOR": {
@@ -31,7 +31,7 @@
       "type": "color"
     },
     "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
-      "value": "{!GREEN_500}",
+      "value": "{!BLUE_700}",
       "type": "color"
     },
     "CALENDAR_DAY_HOVER_COLOR": {
@@ -43,7 +43,7 @@
       "type": "color"
     },
     "CALENDAR_DAY_ACTIVE_COLOR": {
-      "value": "{!GRAY_700}",
+      "value": "{!GRAY_900}",
       "type": "color"
     },
     "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR": {

@@ -31,24 +31,28 @@
     cursor: pointer;
 
     @include bpk-hover {
+      color: $bpk-link-hover-color;
+
       @include bpk-border-bottom-xl($bpk-color-gray-100);
     }
 
     &:active {
+      color: $bpk-link-active-color;
+
       @include bpk-border-bottom-xl($bpk-color-gray-200);
     }
 
     &--selected {
       color: $bpk-font-color-base;
 
-      @include bpk-border-bottom-xl($bpk-color-green-500);
+      @include bpk-border-bottom-xl($bpk-color-blue-700);
 
       @include bpk-hover {
-        @include bpk-border-bottom-xl($bpk-color-green-500);
+        @include bpk-border-bottom-xl($bpk-color-blue-700);
       }
 
       &:active {
-        @include bpk-border-bottom-xl($bpk-color-green-500);
+        @include bpk-border-bottom-xl($bpk-color-blue-700);
       }
     }
   }

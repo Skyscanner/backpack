@@ -268,13 +268,13 @@
     text-decoration: $bpk-link-hover-text-decoration;
   }
 
+  &:visited {
+    color: $bpk-link-visited-color;
+  }
+
   &:active {
     color: $bpk-link-active-color;
     text-decoration: $bpk-link-hover-text-decoration;
-  }
-
-  &:visited {
-    color: $bpk-link-visited-color;
   }
 }
 
