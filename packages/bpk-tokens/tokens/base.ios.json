@@ -686,12 +686,6 @@
     },
     {
       "category": "calendar",
-      "value": "rgb(0, 140, 168)",
-      "type": "color",
-      "name": "calendarDayFocusedColor"
-    },
-    {
-      "category": "calendar",
       "value": "rgb(230, 228, 235)",
       "type": "color",
       "name": "calendarDayDisabledColor"
@@ -1067,6 +1061,12 @@
       "category": "colors",
       "value": "linear-gradient(135deg, #00b2d6 0, #02DDD8 1)",
       "name": "primaryGradient"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 140, 168)",
+      "name": "colorSelected"
     },
     {
       "category": "forms",

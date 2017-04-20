@@ -112,7 +112,6 @@ export const calendarDayHoverColor = "rgb(82, 76, 97)";
 export const calendarDayHoverBackgroundColor = "rgb(243, 242, 245)";
 export const calendarDayActiveColor = "rgb(37, 32, 51)";
 export const calendarDayActiveBackgroundColor = "rgb(230, 228, 235)";
-export const calendarDayFocusedColor = "rgb(0, 140, 168)";
 export const calendarDayDisabledColor = "rgb(230, 228, 235)";
 export const calendarDayDisabledBackgroundColor = "rgb(255, 255, 255)";
 export const calendarDayOutsideColor = "rgb(178, 174, 189)";
@@ -176,6 +175,7 @@ export const colorYellow700 = "rgb(225, 165, 0)";
 export const colorYellow800 = "rgb(194, 142, 0)";
 export const colorYellow900 = "rgb(156, 114, 0)";
 export const primaryGradient = "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)";
+export const colorSelected = "rgb(0, 140, 168)";
 export const inputHeight = "2.250rem";
 export const inputPaddingX = ".75rem";
 export const inputPaddingY = ".375rem";
@@ -441,7 +441,6 @@ calendarDayHoverColor,
 calendarDayHoverBackgroundColor,
 calendarDayActiveColor,
 calendarDayActiveBackgroundColor,
-calendarDayFocusedColor,
 calendarDayDisabledColor,
 calendarDayDisabledBackgroundColor,
 calendarDayOutsideColor,
@@ -509,6 +508,7 @@ colorYellow700,
 colorYellow800,
 colorYellow900,
 primaryGradient,
+colorSelected,
 };
 export const forms = {
 inputHeight,

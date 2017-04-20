@@ -775,12 +775,6 @@
       "type": "color",
       "name": "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR"
     },
-    "CALENDAR_DAY_FOCUSED_COLOR": {
-      "category": "calendar",
-      "value": "rgb(0, 140, 168)",
-      "type": "color",
-      "name": "CALENDAR_DAY_FOCUSED_COLOR"
-    },
     "CALENDAR_DAY_DISABLED_COLOR": {
       "category": "calendar",
       "value": "rgb(230, 228, 235)",
@@ -1158,6 +1152,12 @@
       "category": "colors",
       "value": "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)",
       "name": "PRIMARY_GRADIENT"
+    },
+    "COLOR_SELECTED": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 140, 168)",
+      "name": "COLOR_SELECTED"
     },
     "INPUT_HEIGHT": {
       "category": "forms",
@@ -2079,7 +2079,6 @@
     "CALENDAR_DAY_HOVER_BACKGROUND_COLOR",
     "CALENDAR_DAY_ACTIVE_COLOR",
     "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR",
-    "CALENDAR_DAY_FOCUSED_COLOR",
     "CALENDAR_DAY_DISABLED_COLOR",
     "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR",
     "CALENDAR_DAY_OUTSIDE_COLOR",
@@ -2143,6 +2142,7 @@
     "COLOR_YELLOW_800",
     "COLOR_YELLOW_900",
     "PRIMARY_GRADIENT",
+    "COLOR_SELECTED",
     "INPUT_HEIGHT",
     "INPUT_PADDING_X",
     "INPUT_PADDING_Y",

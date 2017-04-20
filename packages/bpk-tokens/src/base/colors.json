@@ -163,6 +163,9 @@
     "PRIMARY_GRADIENT": {
       "value": "linear-gradient(135deg, {!BLUE_500} 0%, #02DDD8 100%)",
       "type": "background-image"
+    },
+    "COLOR_SELECTED": {
+      "value": "{!BLUE_700}"
     }
   }
 }

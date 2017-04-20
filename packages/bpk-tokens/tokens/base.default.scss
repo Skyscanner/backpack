@@ -227,8 +227,6 @@ $bpk-calendar-day-active-color: rgb(37, 32, 51) !default;
 /// @group calendar
 $bpk-calendar-day-active-background-color: rgb(230, 228, 235) !default;
 /// @group calendar
-$bpk-calendar-day-focused-color: rgb(0, 140, 168) !default;
-/// @group calendar
 $bpk-calendar-day-disabled-color: rgb(230, 228, 235) !default;
 /// @group calendar
 $bpk-calendar-day-disabled-background-color: rgb(255, 255, 255) !default;
@@ -354,6 +352,8 @@ $bpk-color-yellow-800: rgb(194, 142, 0) !default;
 $bpk-color-yellow-900: rgb(156, 114, 0) !default;
 /// @group colors
 $bpk-primary-gradient: linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%) !default;
+/// @group colors
+$bpk-color-selected: rgb(0, 140, 168) !default;
 /// @group forms
 $bpk-input-height: 2.250rem !default;
 /// @group forms

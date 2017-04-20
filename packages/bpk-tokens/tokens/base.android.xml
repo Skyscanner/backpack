@@ -114,7 +114,6 @@
   <color name="CALENDAR_DAY_HOVER_BACKGROUND_COLOR" category="calendar">#f3f2f5ff</color>
   <color name="CALENDAR_DAY_ACTIVE_COLOR" category="calendar">#252033ff</color>
   <color name="CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR" category="calendar">#e6e4ebff</color>
-  <color name="CALENDAR_DAY_FOCUSED_COLOR" category="calendar">#008ca8ff</color>
   <color name="CALENDAR_DAY_DISABLED_COLOR" category="calendar">#e6e4ebff</color>
   <color name="CALENDAR_DAY_DISABLED_BACKGROUND_COLOR" category="calendar">#ffffffff</color>
   <color name="CALENDAR_DAY_OUTSIDE_COLOR" category="calendar">#b2aebdff</color>
@@ -178,6 +177,7 @@
   <color name="COLOR_YELLOW_800" category="colors">#c28e00ff</color>
   <color name="COLOR_YELLOW_900" category="colors">#9c7200ff</color>
   <property name="PRIMARY_GRADIENT" category="colors">linear-gradient(135deg, #00b2d6 0, #02DDD8 1)</property>
+  <color name="COLOR_SELECTED" category="colors">#008ca8ff</color>
   <property name="INPUT_HEIGHT" category="forms">36</property>
   <property name="INPUT_PADDING_X" category="forms">12</property>
   <property name="INPUT_PADDING_Y" category="forms">6</property>
