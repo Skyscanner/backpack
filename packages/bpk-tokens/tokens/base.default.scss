@@ -211,19 +211,19 @@ $bpk-calendar-day-spacing: .375rem !default;
 /// @group calendar
 $bpk-calendar-day-size: 2.250rem !default;
 /// @group calendar
-$bpk-calendar-day-color: rgb(82, 76, 97) !default;
+$bpk-calendar-day-color: rgb(0, 178, 214) !default;
 /// @group calendar
 $bpk-calendar-day-background-color: rgb(255, 255, 255) !default;
 /// @group calendar
 $bpk-calendar-day-selected-color: rgb(255, 255, 255) !default;
 /// @group calendar
-$bpk-calendar-day-selected-background-color: rgb(0, 215, 117) !default;
+$bpk-calendar-day-selected-background-color: rgb(0, 140, 168) !default;
 /// @group calendar
 $bpk-calendar-day-hover-color: rgb(82, 76, 97) !default;
 /// @group calendar
 $bpk-calendar-day-hover-background-color: rgb(243, 242, 245) !default;
 /// @group calendar
-$bpk-calendar-day-active-color: rgb(82, 76, 97) !default;
+$bpk-calendar-day-active-color: rgb(37, 32, 51) !default;
 /// @group calendar
 $bpk-calendar-day-active-background-color: rgb(230, 228, 235) !default;
 /// @group calendar
@@ -352,6 +352,8 @@ $bpk-color-yellow-800: rgb(194, 142, 0) !default;
 $bpk-color-yellow-900: rgb(156, 114, 0) !default;
 /// @group colors
 $bpk-primary-gradient: linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%) !default;
+/// @group colors
+$bpk-color-selected: rgb(0, 140, 168) !default;
 /// @group forms
 $bpk-input-height: 2.250rem !default;
 /// @group forms
@@ -603,7 +605,7 @@ $bpk-link-hover-color: rgb(82, 76, 97) !default;
 /// @group text-decorations
 $bpk-link-hover-text-decoration: underline !default;
 /// @group text-colors
-$bpk-link-active-color: rgb(129, 123, 143) !default;
+$bpk-link-active-color: rgb(37, 32, 51) !default;
 /// @group text-colors
 $bpk-link-visited-color: rgb(0, 140, 168) !default;
 /// @group text-colors

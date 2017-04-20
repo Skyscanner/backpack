@@ -104,13 +104,13 @@ export const buttonFeaturedDisabledBackgroundImage = "none";
 export const calendarPadding = ".75rem";
 export const calendarDaySpacing = ".375rem";
 export const calendarDaySize = "2.250rem";
-export const calendarDayColor = "rgb(82, 76, 97)";
+export const calendarDayColor = "rgb(0, 178, 214)";
 export const calendarDayBackgroundColor = "rgb(255, 255, 255)";
 export const calendarDaySelectedColor = "rgb(255, 255, 255)";
-export const calendarDaySelectedBackgroundColor = "rgb(0, 215, 117)";
+export const calendarDaySelectedBackgroundColor = "rgb(0, 140, 168)";
 export const calendarDayHoverColor = "rgb(82, 76, 97)";
 export const calendarDayHoverBackgroundColor = "rgb(243, 242, 245)";
-export const calendarDayActiveColor = "rgb(82, 76, 97)";
+export const calendarDayActiveColor = "rgb(37, 32, 51)";
 export const calendarDayActiveBackgroundColor = "rgb(230, 228, 235)";
 export const calendarDayDisabledColor = "rgb(230, 228, 235)";
 export const calendarDayDisabledBackgroundColor = "rgb(255, 255, 255)";
@@ -175,6 +175,7 @@ export const colorYellow700 = "rgb(225, 165, 0)";
 export const colorYellow800 = "rgb(194, 142, 0)";
 export const colorYellow900 = "rgb(156, 114, 0)";
 export const primaryGradient = "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)";
+export const colorSelected = "rgb(0, 140, 168)";
 export const inputHeight = "2.250rem";
 export const inputPaddingX = ".75rem";
 export const inputPaddingY = ".375rem";
@@ -300,7 +301,7 @@ export const linkColor = "rgb(0, 178, 214)";
 export const linkTextDecoration = "none";
 export const linkHoverColor = "rgb(82, 76, 97)";
 export const linkHoverTextDecoration = "underline";
-export const linkActiveColor = "rgb(129, 123, 143)";
+export const linkActiveColor = "rgb(37, 32, 51)";
 export const linkVisitedColor = "rgb(0, 140, 168)";
 export const linkWhiteColor = "rgb(255, 255, 255)";
 export const linkWhiteHoverColor = "rgb(255, 255, 255)";
@@ -507,6 +508,7 @@ colorYellow700,
 colorYellow800,
 colorYellow900,
 primaryGradient,
+colorSelected,
 };
 export const forms = {
 inputHeight,

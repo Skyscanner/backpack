@@ -729,7 +729,7 @@
     },
     "CALENDAR_DAY_COLOR": {
       "category": "calendar",
-      "value": "rgb(82, 76, 97)",
+      "value": "rgb(0, 178, 214)",
       "type": "color",
       "name": "CALENDAR_DAY_COLOR"
     },
@@ -747,7 +747,7 @@
     },
     "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR": {
       "category": "calendar",
-      "value": "rgb(0, 215, 117)",
+      "value": "rgb(0, 140, 168)",
       "type": "color",
       "name": "CALENDAR_DAY_SELECTED_BACKGROUND_COLOR"
     },
@@ -765,7 +765,7 @@
     },
     "CALENDAR_DAY_ACTIVE_COLOR": {
       "category": "calendar",
-      "value": "rgb(82, 76, 97)",
+      "value": "rgb(37, 32, 51)",
       "type": "color",
       "name": "CALENDAR_DAY_ACTIVE_COLOR"
     },
@@ -1152,6 +1152,12 @@
       "category": "colors",
       "value": "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)",
       "name": "PRIMARY_GRADIENT"
+    },
+    "COLOR_SELECTED": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 140, 168)",
+      "name": "COLOR_SELECTED"
     },
     "INPUT_HEIGHT": {
       "category": "forms",
@@ -1904,7 +1910,7 @@
       "name": "LINK_HOVER_TEXT_DECORATION"
     },
     "LINK_ACTIVE_COLOR": {
-      "value": "rgb(129, 123, 143)",
+      "value": "rgb(37, 32, 51)",
       "type": "color",
       "category": "text-colors",
       "name": "LINK_ACTIVE_COLOR"
@@ -2136,6 +2142,7 @@
     "COLOR_YELLOW_800",
     "COLOR_YELLOW_900",
     "PRIMARY_GRADIENT",
+    "COLOR_SELECTED",
     "INPUT_HEIGHT",
     "INPUT_PADDING_X",
     "INPUT_PADDING_Y",

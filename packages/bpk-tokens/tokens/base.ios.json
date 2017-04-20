@@ -638,7 +638,7 @@
     },
     {
       "category": "calendar",
-      "value": "rgb(82, 76, 97)",
+      "value": "rgb(0, 178, 214)",
       "type": "color",
       "name": "calendarDayColor"
     },
@@ -656,7 +656,7 @@
     },
     {
       "category": "calendar",
-      "value": "rgb(0, 215, 117)",
+      "value": "rgb(0, 140, 168)",
       "type": "color",
       "name": "calendarDaySelectedBackgroundColor"
     },
@@ -674,7 +674,7 @@
     },
     {
       "category": "calendar",
-      "value": "rgb(82, 76, 97)",
+      "value": "rgb(37, 32, 51)",
       "type": "color",
       "name": "calendarDayActiveColor"
     },
@@ -1061,6 +1061,12 @@
       "category": "colors",
       "value": "linear-gradient(135deg, #00b2d6 0, #02DDD8 1)",
       "name": "primaryGradient"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 140, 168)",
+      "name": "colorSelected"
     },
     {
       "category": "forms",
@@ -1813,7 +1819,7 @@
       "name": "linkHoverTextDecoration"
     },
     {
-      "value": "rgb(129, 123, 143)",
+      "value": "rgb(37, 32, 51)",
       "type": "color",
       "category": "text-colors",
       "name": "linkActiveColor"
