@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
+_Nothing yet_
+
+## 2017-04-20 - Fixed datepicker prop passthrough to input
+
 **Fixed:**
-- bpk-component-datepicker:
+- bpk-component-datepicker: 5.0.33 => 5.0.34
   - Event handlers `onClick`, `onFocus`, `onBlur`, `onKeyDown`, `onKeyUp` and `onTouchEnd`
     are now passed through to the input when provided in `inputProps`
 
