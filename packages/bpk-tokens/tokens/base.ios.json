@@ -1063,12 +1063,6 @@
       "name": "primaryGradient"
     },
     {
-      "type": "color",
-      "category": "colors",
-      "value": "rgb(0, 140, 168)",
-      "name": "colorSelected"
-    },
-    {
       "category": "forms",
       "value": "36",
       "type": "size",
@@ -1481,6 +1475,12 @@
       "category": "spacings",
       "value": "1",
       "name": "onePixelRem"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 140, 168)",
+      "name": "stateSelectedBackgroundColor"
     },
     {
       "value": "-apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",

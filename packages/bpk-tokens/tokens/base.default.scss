@@ -352,8 +352,6 @@ $bpk-color-yellow-800: rgb(194, 142, 0) !default;
 $bpk-color-yellow-900: rgb(156, 114, 0) !default;
 /// @group colors
 $bpk-primary-gradient: linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%) !default;
-/// @group colors
-$bpk-color-selected: rgb(0, 140, 168) !default;
 /// @group forms
 $bpk-input-height: 2.250rem !default;
 /// @group forms
@@ -492,6 +490,8 @@ $bpk-spacing-xl: 2.250rem !default;
 $bpk-spacing-xxl: 2.625rem !default;
 /// @group spacings
 $bpk-one-pixel-rem: .0625rem !default;
+/// @group colors
+$bpk-state-selected-background-color: rgb(0, 140, 168) !default;
 /// @group typesettings
 $bpk-font-family-base: -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif !default;
 /// @group text-colors

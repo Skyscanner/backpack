@@ -140,15 +140,15 @@ $shadow-right: 1px 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-bla
   }
 
   &--selected {
-    background-color: $bpk-color-selected;
+    background-color: $bpk-state-selected-background-color;
     color: $bpk-calendar-day-selected-color;
     font-weight: bold;
     cursor: default;
   }
 
   &--focused:not(:disabled):not(.bpk-calendar-date--selected) {
-    color: $bpk-color-selected;
-    box-shadow: 0 0 0 2px $bpk-color-selected inset;
+    color: $bpk-state-selected-background-color;
+    box-shadow: 0 0 0 2px $bpk-state-selected-background-color inset;
   }
 
   &:disabled {

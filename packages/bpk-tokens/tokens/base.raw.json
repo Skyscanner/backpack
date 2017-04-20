@@ -1153,12 +1153,6 @@
       "value": "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)",
       "name": "PRIMARY_GRADIENT"
     },
-    "COLOR_SELECTED": {
-      "type": "color",
-      "category": "colors",
-      "value": "rgb(0, 140, 168)",
-      "name": "COLOR_SELECTED"
-    },
     "INPUT_HEIGHT": {
       "category": "forms",
       "value": "2.250rem",
@@ -1572,6 +1566,12 @@
       "category": "spacings",
       "value": ".0625rem",
       "name": "ONE_PIXEL_REM"
+    },
+    "STATE_SELECTED_BACKGROUND_COLOR": {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 140, 168)",
+      "name": "STATE_SELECTED_BACKGROUND_COLOR"
     },
     "FONT_FAMILY_BASE": {
       "value": "-apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif",
@@ -2142,7 +2142,6 @@
     "COLOR_YELLOW_800",
     "COLOR_YELLOW_900",
     "PRIMARY_GRADIENT",
-    "COLOR_SELECTED",
     "INPUT_HEIGHT",
     "INPUT_PADDING_X",
     "INPUT_PADDING_Y",
@@ -2212,6 +2211,7 @@
     "SPACING_XL",
     "SPACING_XXL",
     "ONE_PIXEL_REM",
+    "STATE_SELECTED_BACKGROUND_COLOR",
     "FONT_FAMILY_BASE",
     "FONT_COLOR_BASE",
     "LINE_HEIGHT_SM",

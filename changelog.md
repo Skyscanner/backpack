@@ -2,7 +2,13 @@
 
 ## UNRELEASED
 
-_Nothing yet_
+**Fixed:**
+- bpk-component-datepicker:
+- bpk-component-calendar:
+- bpk-component-horizontal-nav:
+- bpk-mixins:
+- bpk-tokens:
+  - Unified colors for hover, active and selected states
 
 ## 2017-04-20 - Fixed datepicker prop passthrough to input
 

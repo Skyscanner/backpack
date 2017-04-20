@@ -1,0 +1,14 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "type": "color",
+    "category": "colors"
+  },
+  "props": {
+    "STATE_SELECTED_BACKGROUND_COLOR": {
+      "value": "{!BLUE_700}"
+    }
+  }
+}

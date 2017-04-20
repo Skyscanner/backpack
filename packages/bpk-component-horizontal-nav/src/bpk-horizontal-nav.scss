@@ -45,14 +45,14 @@
     &--selected {
       color: $bpk-font-color-base;
 
-      @include bpk-border-bottom-xl($bpk-color-selected);
+      @include bpk-border-bottom-xl($bpk-state-selected-background-color);
 
       @include bpk-hover {
-        @include bpk-border-bottom-xl($bpk-color-selected);
+        @include bpk-border-bottom-xl($bpk-state-selected-background-color);
       }
 
       &:active {
-        @include bpk-border-bottom-xl($bpk-color-selected);
+        @include bpk-border-bottom-xl($bpk-state-selected-background-color);
       }
     }
   }

@@ -177,7 +177,6 @@
   <color name="COLOR_YELLOW_800" category="colors">#c28e00ff</color>
   <color name="COLOR_YELLOW_900" category="colors">#9c7200ff</color>
   <property name="PRIMARY_GRADIENT" category="colors">linear-gradient(135deg, #00b2d6 0, #02DDD8 1)</property>
-  <color name="COLOR_SELECTED" category="colors">#008ca8ff</color>
   <property name="INPUT_HEIGHT" category="forms">36</property>
   <property name="INPUT_PADDING_X" category="forms">12</property>
   <property name="INPUT_PADDING_Y" category="forms">6</property>
@@ -247,6 +246,7 @@
   <property name="SPACING_XL" category="spacings">36</property>
   <property name="SPACING_XXL" category="spacings">42</property>
   <property name="ONE_PIXEL_REM" category="spacings">1</property>
+  <color name="STATE_SELECTED_BACKGROUND_COLOR" category="colors">#008ca8ff</color>
   <property name="FONT_FAMILY_BASE" category="typesettings">-apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif</property>
   <color name="FONT_COLOR_BASE" category="text-colors">#524c61ff</color>
   <property name="LINE_HEIGHT_SM" category="typesettings">18</property>
