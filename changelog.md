@@ -2,15 +2,19 @@
 
 ## UNRELEASED
 
+_Nothing yet_
+
+## 2017-04-20 (1) - Unified colors for hover, active and selected states
+
 **Fixed:**
-- bpk-component-datepicker:
-- bpk-component-calendar:
-- bpk-component-horizontal-nav:
-- bpk-mixins:
-- bpk-tokens:
+- bpk-component-datepicker: 5.0.34 => 5.0.35
+- bpk-component-calendar: 2.0.23 => 2.0.24
+- bpk-component-horizontal-nav: 0.0.3 => 0.0.4
+- bpk-mixins: 12.0.0 => 12.0.1
+- bpk-tokens: 20.0.0 => 20.0.1
   - Unified colors for hover, active and selected states
 
-## 2017-04-20 - Fixed datepicker prop passthrough to input
+## 2017-04-20 (1) - Fixed datepicker prop passthrough to input
 
 **Fixed:**
 - bpk-component-datepicker: 5.0.33 => 5.0.34
