@@ -775,6 +775,12 @@
       "type": "color",
       "name": "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR"
     },
+    "CALENDAR_DAY_FOCUSED_COLOR": {
+      "category": "calendar",
+      "value": "rgb(0, 140, 168)",
+      "type": "color",
+      "name": "CALENDAR_DAY_FOCUSED_COLOR"
+    },
     "CALENDAR_DAY_DISABLED_COLOR": {
       "category": "calendar",
       "value": "rgb(230, 228, 235)",
@@ -2073,6 +2079,7 @@
     "CALENDAR_DAY_HOVER_BACKGROUND_COLOR",
     "CALENDAR_DAY_ACTIVE_COLOR",
     "CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR",
+    "CALENDAR_DAY_FOCUSED_COLOR",
     "CALENDAR_DAY_DISABLED_COLOR",
     "CALENDAR_DAY_DISABLED_BACKGROUND_COLOR",
     "CALENDAR_DAY_OUTSIDE_COLOR",

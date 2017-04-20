@@ -50,6 +50,10 @@
       "value": "{!GRAY_100}",
       "type": "color"
     },
+    "CALENDAR_DAY_FOCUSED_COLOR": {
+      "value": "{!BLUE_700}",
+      "type": "color"
+    },
     "CALENDAR_DAY_DISABLED_COLOR": {
       "value": "{!GRAY_100}",
       "type": "color"

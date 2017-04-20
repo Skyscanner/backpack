@@ -112,6 +112,7 @@ export const calendarDayHoverColor = "rgb(82, 76, 97)";
 export const calendarDayHoverBackgroundColor = "rgb(243, 242, 245)";
 export const calendarDayActiveColor = "rgb(37, 32, 51)";
 export const calendarDayActiveBackgroundColor = "rgb(230, 228, 235)";
+export const calendarDayFocusedColor = "rgb(0, 140, 168)";
 export const calendarDayDisabledColor = "rgb(230, 228, 235)";
 export const calendarDayDisabledBackgroundColor = "rgb(255, 255, 255)";
 export const calendarDayOutsideColor = "rgb(178, 174, 189)";
@@ -440,6 +441,7 @@ calendarDayHoverColor,
 calendarDayHoverBackgroundColor,
 calendarDayActiveColor,
 calendarDayActiveBackgroundColor,
+calendarDayFocusedColor,
 calendarDayDisabledColor,
 calendarDayDisabledBackgroundColor,
 calendarDayOutsideColor,

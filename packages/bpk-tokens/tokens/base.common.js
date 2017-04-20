@@ -113,6 +113,7 @@ module.exports = {
   calendarDayHoverBackgroundColor: "rgb(243, 242, 245)",
   calendarDayActiveColor: "rgb(37, 32, 51)",
   calendarDayActiveBackgroundColor: "rgb(230, 228, 235)",
+  calendarDayFocusedColor: "rgb(0, 140, 168)",
   calendarDayDisabledColor: "rgb(230, 228, 235)",
   calendarDayDisabledBackgroundColor: "rgb(255, 255, 255)",
   calendarDayOutsideColor: "rgb(178, 174, 189)",
