@@ -1,5 +1,6 @@
 exports[`BpkSelect should render correctly 1`] = `
 <select
+  aria-invalid={false}
   className="bpk-select"
   id="fruits"
   name="fruits"
@@ -27,6 +28,7 @@ exports[`BpkSelect should render correctly 1`] = `
 
 exports[`BpkSelect should render correctly with "className" attribute 1`] = `
 <select
+  aria-invalid={false}
   className="bpk-select test"
   id="fruits"
   name="fruits"
@@ -54,6 +56,7 @@ exports[`BpkSelect should render correctly with "className" attribute 1`] = `
 
 exports[`BpkSelect should render correctly with "docked" attribute 1`] = `
 <select
+  aria-invalid={false}
   className="bpk-select bpk-select--docked"
   id="fruits"
   name="fruits"
@@ -81,6 +84,7 @@ exports[`BpkSelect should render correctly with "docked" attribute 1`] = `
 
 exports[`BpkSelect should render correctly with "dockedFirst" attribute 1`] = `
 <select
+  aria-invalid={false}
   className="bpk-select bpk-select--docked-first"
   id="fruits"
   name="fruits"
@@ -108,6 +112,7 @@ exports[`BpkSelect should render correctly with "dockedFirst" attribute 1`] = `
 
 exports[`BpkSelect should render correctly with "dockedLast" attribute 1`] = `
 <select
+  aria-invalid={false}
   className="bpk-select bpk-select--docked-last"
   id="fruits"
   name="fruits"
@@ -135,6 +140,7 @@ exports[`BpkSelect should render correctly with "dockedLast" attribute 1`] = `
 
 exports[`BpkSelect should render correctly with "dockedMiddle" attribute 1`] = `
 <select
+  aria-invalid={false}
   className="bpk-select bpk-select--docked-middle"
   id="fruits"
   name="fruits"
@@ -162,6 +168,7 @@ exports[`BpkSelect should render correctly with "dockedMiddle" attribute 1`] = `
 
 exports[`BpkSelect should render correctly with "large" attribute 1`] = `
 <select
+  aria-invalid={false}
   className="bpk-select bpk-select--large"
   id="fruits"
   name="fruits"
@@ -189,6 +196,7 @@ exports[`BpkSelect should render correctly with "large" attribute 1`] = `
 
 exports[`BpkSelect should render correctly with a "valid" attribute equal to false 1`] = `
 <select
+  aria-invalid={true}
   className="bpk-select bpk-select--invalid"
   id="fruits"
   name="fruits"

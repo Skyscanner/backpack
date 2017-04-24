@@ -13,7 +13,7 @@ class AnimateHeight extends Component {
 
     if (isNumber(this.props.height)) {
       height = this.props.height < 0 ? 0 : this.props.height;
-      overflow = 'hidden';
+      overflow = this.props.transitionOverflow;
     }
 
     this.state = {
@@ -39,14 +39,14 @@ class AnimateHeight extends Component {
     if (this.contentElement && nextProps.height !== height) {
       // Cache content height
       this.contentElement.style.display = '';
-      this.contentElement.style.overflow = 'hidden';
+      this.contentElement.style.overflow = this.props.transitionOverflow;
       const contentHeight = this.contentElement.offsetHeight;
       this.contentElement.style.overflow = '';
 
       let newHeight = null;
       let shouldSetTimeout = false;
       let timeoutHeight = null;
-      let timeoutOverflow = 'hidden';
+      let timeoutOverflow = this.props.transitionOverflow;
       let timeoutDuration = nextProps.duration;
 
       clearTimeout(this.timeoutID);
@@ -75,7 +75,7 @@ class AnimateHeight extends Component {
 
       this.setState({
         height: newHeight,
-        overflow: 'hidden',
+        overflow: this.props.transitionOverflow,
       });
 
       if (shouldSetTimeout) {
@@ -130,6 +130,7 @@ class AnimateHeight extends Component {
     };
 
     delete rest.height;
+    delete rest.transitionOverflow;
 
     return (
       <div
@@ -153,11 +154,13 @@ AnimateHeight.propTypes = {
     PropTypes.number,
   ]).isRequired,
   easing: PropTypes.string,
+  transitionOverflow: PropTypes.string,
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 AnimateHeight.defaultProps = {
   easing: 'ease',
+  transitionOverflow: 'hidden',
   style: {},
 };
 

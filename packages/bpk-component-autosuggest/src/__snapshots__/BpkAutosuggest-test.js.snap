@@ -6,6 +6,7 @@ exports[`BpkAutosuggest should render correctly 1`] = `
     aria-autocomplete="list"
     aria-expanded={false}
     aria-haspopup={false}
+    aria-invalid={false}
     aria-owns="react-autowhatever-1"
     autoComplete="off"
     className="bpk-input"
@@ -31,6 +32,7 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
     aria-autocomplete="list"
     aria-expanded={true}
     aria-haspopup={true}
+    aria-invalid={false}
     aria-owns="react-autowhatever-1"
     autoComplete="off"
     className="bpk-input"

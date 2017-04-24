@@ -1,0 +1,39 @@
+exports[`BpkFieldset should render correctly 1`] = `
+<fieldset
+  className="bpk-fieldset">
+  <label
+    className="bpk-label"
+    htmlFor="name_input">
+    Name
+  </label>
+  <input
+    aria-describedby={null}
+    aria-invalid={false}
+    className="bpk-input"
+    id="name_input"
+    name="name"
+    placeholder="e.g. Joe Bloggs"
+    type="text" />
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "visible",
+        "transition": "height 200ms ease ",
+      }
+    }>
+    <div>
+      <span
+        className="bpk-form-validation "
+        id="name_input_message">
+        Please enter a name
+      </span>
+    </div>
+  </div>
+</fieldset>
+`;
