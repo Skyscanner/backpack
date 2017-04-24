@@ -4,7 +4,7 @@
 
 **Added:**
 - bpk-animate-height:
-  - Extracted `AnimateHeight` module out of `bpk-component-accordion` to it's own package
+  - Extracted `AnimateHeight` module out of `bpk-component-accordion` to its own package
 
 ## 2017-04-20 (1) - Unified colors for hover, active and selected states
 

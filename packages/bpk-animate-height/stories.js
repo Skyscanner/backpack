@@ -16,8 +16,8 @@ class AnimateHeightContainer extends Component {
   }
 
   onClick() {
-    this.setState((prevProps) => {
-      const height = prevProps.height !== this.props.fromHeight
+    this.setState((prevState) => {
+      const height = prevState.height !== this.props.fromHeight
         ? this.props.fromHeight
         : this.props.toHeight;
 
