@@ -2,9 +2,6 @@
 
 > Backpack accordion component.
 
-Note: This was forked from https://github.com/Stanko/react-animate-height. We have added functionality to
-set the display property of the container to `display: none;` when the height is equal to 0.
-
 ## Installation
 
 ```sh
