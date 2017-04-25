@@ -1,4 +1,28 @@
-exports[`BpkFieldset should render correctly 1`] = `
+exports[`BpkFormValidation should render correctly 1`] = `
+<div
+  onTransitionEnd={[Function]}
+  style={
+    Object {
+      "MozTransition": "height 200ms ease ",
+      "OTransition": "height 200ms ease ",
+      "WebkitTransition": "height 200ms ease ",
+      "height": "auto",
+      "msTransition": "height 200ms ease ",
+      "overflow": "visible",
+      "transition": "height 200ms ease ",
+    }
+  }>
+  <div>
+    <span
+      className="bpk-form-validation bpk-form-validation--appear"
+      id="my-form-validation">
+      A validation message.
+    </span>
+  </div>
+</div>
+`;
+
+exports[`BpkFormValidation should render correctly with "expand" equal to false 1`] = `
 <div
   onTransitionEnd={[Function]}
   style={
@@ -15,7 +39,9 @@ exports[`BpkFieldset should render correctly 1`] = `
   <div>
     <span
       className="bpk-form-validation"
-      id="undefined_message" />
+      id="my-form-validation">
+      A validation message.
+    </span>
   </div>
 </div>
 `;

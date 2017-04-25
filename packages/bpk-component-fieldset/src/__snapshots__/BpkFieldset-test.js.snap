@@ -1,4 +1,42 @@
-exports[`BpkFieldset should render correctly 1`] = `
+exports[`BpkFieldset should render correctly with checkbox component 1`] = `
+<fieldset
+  className="bpk-fieldset">
+  <label
+    className="bpk-checkbox">
+    <input
+      className="bpk-checkbox__input"
+      disabled={false}
+      id="terms_and_conditions_checkbox"
+      name="terms_and_conditions"
+      type="checkbox"
+      value="terms_and_conditions" />
+     I accept the terms and conditions
+  </label>
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "visible",
+        "transition": "height 200ms ease ",
+      }
+    }>
+    <div>
+      <span
+        className="bpk-form-validation bpk-form-validation--is-checkbox"
+        id="terms_and_conditions_checkbox_validation_message">
+        You must accept the terms and conditions to continue
+      </span>
+    </div>
+  </div>
+</fieldset>
+`;
+
+exports[`BpkFieldset should render correctly with input component 1`] = `
 <fieldset
   className="bpk-fieldset">
   <label
@@ -7,13 +45,13 @@ exports[`BpkFieldset should render correctly 1`] = `
     Name
   </label>
   <input
-    aria-describedby={null}
     aria-invalid={false}
     className="bpk-input"
     id="name_input"
     name="name"
     placeholder="e.g. Joe Bloggs"
-    type="text" />
+    type="text"
+    value="" />
   <div
     onTransitionEnd={[Function]}
     style={
@@ -30,8 +68,149 @@ exports[`BpkFieldset should render correctly 1`] = `
     <div>
       <span
         className="bpk-form-validation"
-        id="name_input_validation_message_message">
+        id="name_input_validation_message">
         Please enter a name
+      </span>
+    </div>
+  </div>
+</fieldset>
+`;
+
+exports[`BpkFieldset should render correctly with input component and "valid" attribute 1`] = `
+<fieldset
+  className="bpk-fieldset">
+  <label
+    className="bpk-label"
+    htmlFor="name_input">
+    Name
+  </label>
+  <input
+    aria-invalid={false}
+    className="bpk-input bpk-input--valid"
+    id="name_input"
+    name="name"
+    placeholder="e.g. Joe Bloggs"
+    type="text"
+    value="" />
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "visible",
+        "transition": "height 200ms ease ",
+      }
+    }>
+    <div>
+      <span
+        className="bpk-form-validation"
+        id="name_input_validation_message">
+        Please enter a name
+      </span>
+    </div>
+  </div>
+</fieldset>
+`;
+
+exports[`BpkFieldset should render correctly with input component and "valid" attribute equal to false 1`] = `
+<fieldset
+  className="bpk-fieldset">
+  <label
+    className="bpk-label"
+    htmlFor="name_input">
+    Name
+  </label>
+  <input
+    aria-describedby="name_input_validation_message"
+    aria-invalid={true}
+    className="bpk-input bpk-input--invalid"
+    id="name_input"
+    name="name"
+    placeholder="e.g. Joe Bloggs"
+    type="text"
+    value="" />
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": "auto",
+        "msTransition": "height 200ms ease ",
+        "overflow": "visible",
+        "transition": "height 200ms ease ",
+      }
+    }>
+    <div>
+      <span
+        className="bpk-form-validation bpk-form-validation--appear"
+        id="name_input_validation_message">
+        Please enter a name
+      </span>
+    </div>
+  </div>
+</fieldset>
+`;
+
+exports[`BpkFieldset should render correctly with select component 1`] = `
+<fieldset
+  className="bpk-fieldset">
+  <label
+    className="bpk-label"
+    htmlFor="fruits_select">
+    Fruits
+  </label>
+  <select
+    aria-invalid={false}
+    className="bpk-select"
+    id="fruits_select"
+    name="fruits"
+    value="">
+    <option
+      value="">
+      Please select...
+    </option>
+    <option
+      value="apples">
+      Apples
+    </option>
+    <option
+      value="oranges">
+      Oranges
+    </option>
+    <option
+      value="pears">
+      Pears
+    </option>
+    <option
+      disabled={true}
+      value="tomato">
+      Tomato
+    </option>
+  </select>
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "visible",
+        "transition": "height 200ms ease ",
+      }
+    }>
+    <div>
+      <span
+        className="bpk-form-validation"
+        id="fruits_select_validation_message">
+        Please select a fruit
       </span>
     </div>
   </div>

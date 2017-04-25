@@ -2,7 +2,6 @@ exports[`BpkCheckbox should render correctly 1`] = `
 <label
   className="bpk-checkbox">
   <input
-    checked={false}
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
@@ -30,7 +29,6 @@ exports[`BpkCheckbox should render correctly with disabled attribute 1`] = `
 <label
   className="bpk-checkbox bpk-checkbox--disabled">
   <input
-    checked={false}
     className="bpk-checkbox__input"
     disabled={true}
     name="checkbox"
@@ -44,7 +42,6 @@ exports[`BpkCheckbox should render correctly with id attribute 1`] = `
 <label
   className="bpk-checkbox">
   <input
-    checked={false}
     className="bpk-checkbox__input"
     disabled={false}
     id="checkbox"
@@ -59,7 +56,6 @@ exports[`BpkCheckbox should render correctly with label attribute 1`] = `
 <label
   className="bpk-checkbox">
   <input
-    checked={false}
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
@@ -74,7 +70,6 @@ exports[`BpkCheckbox should render correctly with value attribute 1`] = `
 <label
   className="bpk-checkbox">
   <input
-    checked={false}
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"

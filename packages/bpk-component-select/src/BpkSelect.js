@@ -27,7 +27,6 @@ BpkSelect.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
   className: PropTypes.string,
   valid: PropTypes.bool,
   large: PropTypes.bool,

@@ -34,6 +34,7 @@ configure(() => {
   require('./../packages/bpk-component-content-container/stories');
   require('./../packages/bpk-component-datepicker/stories');
   require('./../packages/bpk-component-fieldset/stories');
+  require('./../packages/bpk-component-form-validation/stories');
   require('./../packages/bpk-component-grid/stories');
   require('./../packages/bpk-component-grid-toggle/stories');
   require('./../packages/bpk-component-heading/stories');

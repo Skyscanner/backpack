@@ -1,50 +1,39 @@
-import React, { PropTypes } from 'react';
+import React, { cloneElement, PropTypes } from 'react';
 import BpkLabel from 'bpk-component-label';
 import BpkFormValidation from 'bpk-component-form-validation';
 
 import './bpk-fieldset.scss';
 
 const BpkFieldset = (props) => {
-  const {
-    id,
-    label,
-    control,
-    valid,
-    validationMessage,
-    isCheckbox,
-    containerProps = {},
-    validationProps,
-    ...rest
-  } = props;
+  const classNames = ['bpk-fieldset'];
+  const { children, label, className, validationMessage, valid, isCheckbox, validationProps, ...rest } = props;
 
-  const containerClassNames = ['bpk-fieldset'];
-  const validationMessageId = `${id}_validation_message`;
+  if (!children) {
+    return null;
+  }
+
+  const validationMessageId = `${children.props.id}_validation_message`;
 
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
-  const isInvalid = valid === false;
+  const isInvalid = isCheckbox
+    ? valid === false
+    : children.props.valid === false;
 
-  // https://facebook.github.io/react/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized
-  const Control = control;
+  const ariaProps = validationMessage && isInvalid
+      ? { 'aria-describedby': validationMessageId }
+      : {};
 
-  if (containerProps.className) {
-    containerClassNames.push(containerProps.className);
-    delete containerProps.className;
-  }
+  const clonedChildren = cloneElement(children, { ...ariaProps });
 
-  const dynamicControlProps = isCheckbox
-    ? { label }
-    : { valid };
+  if (className) { classNames.push(className); }
 
   return (
-    <fieldset className={containerClassNames.join(' ')} {...containerProps}>
-      {!isCheckbox && <BpkLabel label={label} htmlFor={id} />}
-      <Control
-        id={id}
-        aria-describedby={validationMessage && isInvalid ? validationMessageId : null}
-        {...dynamicControlProps}
-        {...rest}
-      />
+    <fieldset className={classNames.join(' ')} {...rest}>
+      {!isCheckbox && (
+        <BpkLabel label={label} htmlFor={children.props.id} />
+      )}
+      {clonedChildren}
       {validationMessage && (
         <BpkFormValidation
           id={validationMessageId}
@@ -60,23 +49,21 @@ const BpkFieldset = (props) => {
 };
 
 BpkFieldset.propTypes = {
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  control: PropTypes.func.isRequired,
-  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  label: PropTypes.string,
   valid: PropTypes.bool,
+  className: PropTypes.string,
   validationMessage: PropTypes.string,
   isCheckbox: PropTypes.bool,
-  containerProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   validationProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 BpkFieldset.defaultProps = {
-  className: null,
+  label: null,
   valid: null,
+  className: null,
   validationMessage: null,
   isCheckbox: false,
-  containerProps: {},
   validationProps: {},
 };
 

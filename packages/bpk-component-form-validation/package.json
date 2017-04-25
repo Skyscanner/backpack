@@ -15,5 +15,8 @@
   "dependencies": {
     "bpk-animate-height": "^0.0.0",
     "bpk-mixins": "^12.0.0"
+  },
+  "devDependencies": {
+    "bpk-component-button": "^1.6.16"
   }
 }

@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { cloneElement, PropTypes, Component } from 'react';
 import BpkSelect from 'bpk-component-select';
 import BpkCheckbox from 'bpk-component-checkbox';
 import { storiesOf } from '@kadira/storybook';
@@ -7,11 +7,11 @@ import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 import BpkFieldset from './index';
 
 class FieldsetContainer extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      value: '',
+      value: this.props.children.props.value,
       checked: false,
     };
 
@@ -26,11 +26,7 @@ class FieldsetContainer extends Component {
   }
 
   render() {
-    const { validValue, isCheckbox, ...rest } = this.props;
-
-    const valueProps = isCheckbox
-      ? { checked: this.state.checked }
-      : { value: this.state.value };
+    const { children, validValue, isCheckbox, ...rest } = this.props;
 
     let isValid;
     if (isCheckbox) {
@@ -41,19 +37,33 @@ class FieldsetContainer extends Component {
         : this.state.value === validValue;
     }
 
+    const dynamicChildrenProps = isCheckbox
+      ? { checked: this.state.checked }
+      : { value: this.state.value, valid: isValid };
+
+    const dynamicFieldsetProps = isCheckbox
+      ? { valid: isValid }
+      : {};
+
+    const clonedChildren = cloneElement(children, {
+      onChange: this.onChange,
+      ...dynamicChildrenProps,
+    });
+
     return (
       <BpkFieldset
-        valid={isValid}
         isCheckbox={isCheckbox}
-        onChange={this.onChange}
         {...rest}
-        {...valueProps}
-      />
+        {...dynamicFieldsetProps}
+      >
+        {clonedChildren}
+      </BpkFieldset>
     );
   }
 }
 
 FieldsetContainer.propTypes = {
+  children: PropTypes.node.isRequired,
   validValue: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.bool,
@@ -68,40 +78,48 @@ FieldsetContainer.defaultProps = {
 storiesOf('bpk-component-fieldset', module)
   .add('Input example', () => (
     <FieldsetContainer
-      id="name_input"
-      name="name"
       label="Name"
-      control={BpkInput}
-      type={INPUT_TYPES.TEXT}
-      placeholder="e.g. Joe Bloggs"
       validationMessage="Please enter a name (Joe Bloggs is correct!)"
       validValue="Joe Bloggs"
-    />
+    >
+      <BpkInput
+        id="name_input"
+        name="name"
+        type={INPUT_TYPES.TEXT}
+        placeholder="e.g. Joe Bloggs"
+        value=""
+      />
+    </FieldsetContainer>
   ))
   .add('Select example', () => (
     <FieldsetContainer
-      id="fruits_select"
-      name="fruits"
       label="Fruits"
-      control={BpkSelect}
       validationMessage="Please select a fruit (Orange is correct!)"
       validValue="oranges"
     >
-      <option value="">Please select...</option>
-      <option value="apples">Apples</option>
-      <option value="oranges">Oranges</option>
-      <option value="pears">Pears</option>
-      <option value="tomato" disabled>Tomato</option>
+      <BpkSelect
+        id="fruits_select"
+        name="fruits"
+        value=""
+      >
+        <option value="">Please select...</option>
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomato" disabled>Tomato</option>
+      </BpkSelect>
     </FieldsetContainer>
   ))
   .add('Checkbox example', () => (
     <FieldsetContainer
-      id="prefer_directs_checkbox"
-      name="prefer_directs"
-      label="Prefer directs"
-      control={BpkCheckbox}
       validationMessage="Required"
       validValue
       isCheckbox
-    />
+    >
+      <BpkCheckbox
+        id="prefer_directs_checkbox"
+        name="prefer_directs"
+        label="Prefer directs"
+      />
+    </FieldsetContainer>
   ));

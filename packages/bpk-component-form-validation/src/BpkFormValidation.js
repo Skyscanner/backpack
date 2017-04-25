@@ -5,7 +5,7 @@ import './bpk-form-validation.scss';
 
 const BpkFormValidation = (props) => {
   const classNames = ['bpk-form-validation'];
-  const { children, id, expand, isCheckbox, className, containerProps, ...rest } = props;
+  const { children, expand, isCheckbox, className, containerProps, ...rest } = props;
 
   if (expand) { classNames.push('bpk-form-validation--appear'); }
   if (isCheckbox) { classNames.push('bpk-form-validation--is-checkbox'); }
@@ -18,7 +18,7 @@ const BpkFormValidation = (props) => {
       transitionOverflow="visible"
       {...containerProps}
     >
-      <span id={`${id}_message`} className={classNames.join(' ')} {...rest}>{children}</span>
+      <span className={classNames.join(' ')} {...rest}>{children}</span>
     </AnimateHeight>
   );
 };
