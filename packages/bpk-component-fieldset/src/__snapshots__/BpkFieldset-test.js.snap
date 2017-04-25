@@ -29,8 +29,8 @@ exports[`BpkFieldset should render correctly 1`] = `
     }>
     <div>
       <span
-        className="bpk-form-validation "
-        id="name_input_message">
+        className="bpk-form-validation"
+        id="name_input_validation_message_message">
         Please enter a name
       </span>
     </div>

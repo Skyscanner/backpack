@@ -90,7 +90,7 @@
 
 @mixin bpk-input--invalid {
   padding-right: $bpk-spacing-base;
-  background: $bpk-input-invalid-background-color url(map-get($bpk-icons-sm, close-red-500)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, information-circle-red-500)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
   @include bpk-rtl {
@@ -258,7 +258,7 @@
 ///   }
 
 @mixin bpk-select--invalid {
-  background-color: $bpk-select-invalid-background-color;
+  background-color: $bpk-color-white;
 
   option {
     background-color: $bpk-color-white;

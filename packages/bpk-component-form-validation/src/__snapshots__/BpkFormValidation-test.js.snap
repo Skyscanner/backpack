@@ -1,0 +1,21 @@
+exports[`BpkFieldset should render correctly 1`] = `
+<div
+  onTransitionEnd={[Function]}
+  style={
+    Object {
+      "MozTransition": "height 200ms ease ",
+      "OTransition": "height 200ms ease ",
+      "WebkitTransition": "height 200ms ease ",
+      "height": 0,
+      "msTransition": "height 200ms ease ",
+      "overflow": "visible",
+      "transition": "height 200ms ease ",
+    }
+  }>
+  <div>
+    <span
+      className="bpk-form-validation"
+      id="undefined_message" />
+  </div>
+</div>
+`;

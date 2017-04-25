@@ -1,41 +1,59 @@
 import React, { PropTypes } from 'react';
 import BpkLabel from 'bpk-component-label';
-import AnimateHeight from 'bpk-animate-height';
+import BpkFormValidation from 'bpk-component-form-validation';
 
 import './bpk-fieldset.scss';
 
 const BpkFieldset = (props) => {
-  const classNames = ['bpk-fieldset'];
-  const { className, id, label, control, valid, validationMessage, ...rest } = props;
+  const {
+    id,
+    label,
+    control,
+    valid,
+    validationMessage,
+    isCheckbox,
+    containerProps = {},
+    validationProps,
+    ...rest
+  } = props;
+
+  const containerClassNames = ['bpk-fieldset'];
+  const validationMessageId = `${id}_validation_message`;
+
+  // Explicit check for false primitive value as undefined is
+  // treated as neither valid nor invalid
+  const isInvalid = valid === false;
+
+  // https://facebook.github.io/react/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized
   const Control = control;
-  const isCheckbox = Control.name === 'BpkCheckbox';
 
-  if (className) { classNames.push(className); }
+  if (containerProps.className) {
+    containerClassNames.push(containerProps.className);
+    delete containerProps.className;
+  }
 
-  const magicProps = isCheckbox ? { label } : { valid };
+  const dynamicControlProps = isCheckbox
+    ? { label }
+    : { valid };
 
   return (
-    <fieldset className={classNames.join(' ')}>
+    <fieldset className={containerClassNames.join(' ')} {...containerProps}>
       {!isCheckbox && <BpkLabel label={label} htmlFor={id} />}
       <Control
         id={id}
-        aria-describedby={validationMessage && valid === false ? `${id}_message` : null}
-        {...magicProps}
+        aria-describedby={validationMessage && isInvalid ? validationMessageId : null}
+        {...dynamicControlProps}
         {...rest}
       />
       {validationMessage && (
-        <AnimateHeight
-          duration={200}
-          height={valid === false ? 'auto' : 0}
-          transitionOverflow="visible"
+        <BpkFormValidation
+          id={validationMessageId}
+          expand={isInvalid}
+          isCheckbox={isCheckbox}
+          {...validationProps}
         >
-          <span
-            id={`${id}_message`}
-            className={`bpk-form-validation ${valid === false ? 'bpk-form-validation--appear' : ''}`}
-          >
-            {validationMessage}
-          </span>
-        </AnimateHeight>
+          {validationMessage}
+        </BpkFormValidation>
       )}
     </fieldset>
   );
@@ -48,12 +66,18 @@ BpkFieldset.propTypes = {
   className: PropTypes.string,
   valid: PropTypes.bool,
   validationMessage: PropTypes.string,
+  isCheckbox: PropTypes.bool,
+  containerProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  validationProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 BpkFieldset.defaultProps = {
   className: null,
   valid: null,
   validationMessage: null,
+  isCheckbox: false,
+  containerProps: {},
+  validationProps: {},
 };
 
 export default BpkFieldset;
