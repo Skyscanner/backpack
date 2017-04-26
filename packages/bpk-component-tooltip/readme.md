@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-tooltip --save
+npm install bpk-component-tooltip --save-dev
 ```
 
 ## Usage

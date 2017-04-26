@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-calendar --save
+npm install bpk-component-calendar --save-dev
 ```
 
 ## Usage

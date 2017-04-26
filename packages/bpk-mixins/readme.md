@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-mixins --save
+npm install bpk-mixins --save-dev
 ```
 
 ## Usage

@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-checkbox --save
+npm install bpk-component-checkbox --save-dev
 ```
 
 ## Usage

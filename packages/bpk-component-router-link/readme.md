@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-router-link --save
+npm install bpk-component-router-link --save-dev
 ```
 
 ## Usage

@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-popover --save
+npm install bpk-component-popover --save-dev
 ```
 
 ## Usage

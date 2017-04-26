@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-table --save
+npm install bpk-component-table --save-dev
 ```
 
 ## Usage

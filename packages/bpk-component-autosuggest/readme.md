@@ -5,7 +5,7 @@
 ### Installation
 
 ```sh
-npm install bpk-component-autosuggest --save
+npm install bpk-component-autosuggest --save-dev
 ```
 
 ### Usage

@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-breakpoint --save
+npm install bpk-component-breakpoint --save-dev
 ```
 
 ## Usage

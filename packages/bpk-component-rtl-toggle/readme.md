@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-rtl-toggle --save
+npm install bpk-component-rtl-toggle --save-dev
 ```
 
 ## Usage

@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-input --save
+npm install bpk-component-input --save-dev
 ```
 
 ## Usage

@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-modal --save
+npm install bpk-component-modal --save-dev
 ```
 
 ## Usage

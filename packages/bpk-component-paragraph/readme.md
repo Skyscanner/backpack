@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-paragraph --save
+npm install bpk-component-paragraph --save-dev
 ```
 
 ## Usage

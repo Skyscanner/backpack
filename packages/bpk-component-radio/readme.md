@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-radio --save
+npm install bpk-component-radio --save-dev
 ```
 
 ## Usage
