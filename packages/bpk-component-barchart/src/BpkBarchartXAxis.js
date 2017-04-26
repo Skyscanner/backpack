@@ -1,50 +1,45 @@
-import React, { Component, PropTypes } from 'react';
-import { axisBottom } from 'd3-axis';
-import { select } from 'd3-selection';
-import ContextTypes from './ContextTypes';
+import React, { PropTypes } from 'react';
+import ContextTypes from './BpkBarchartContextTypes';
 
-class BpkBarchartXAxis extends Component {
-  componentDidMount() {
-    this.renderAxis();
-  }
+import BpkBarchartAxis, { AXIS_TYPE_X } from './BpkBarchartAxis';
 
-  componentDidUpdate() {
-    this.renderAxis();
-  }
-
-  renderAxis() {
-    const axis = axisBottom(this.context.xScaler);
-    select(this.axis).call(axis);
-  }
-
-  render() {
-    const { height, margin } = this.context;
-    const { top, bottom } = margin;
-    const { disableLine, ...rest } = this.props;
-    const axisHeight = height - top - bottom;
-    const classNames = ['bpk-barchart__axis', 'bpk-barchart__axis--x'];
-    if (disableLine) {
-      classNames.push('bpk-barchart__axis--disable-line');
-    }
-    return (
-      <g
-        className={classNames.join(' ')}
-        ref={(axis) => {
-          this.axis = axis;
-        }}
-        transform={`translate(0, ${axisHeight})`}
-        {...rest}
-      />
-    );
-  }
-}
+const BpkBarchartXAxis = (
+  { children, tickEvery, tickOffset, ...rest },
+  { height, margin, xScaler },
+) => {
+  const domain = xScaler.domain();
+  const ticks = domain.filter((tick, i) => ((i - tickOffset) % tickEvery) === 0);
+  return (
+    <BpkBarchartAxis
+      transform={`translate(0, ${height - margin.bottom - margin.top})`}
+      textAnchor="middle"
+      type={AXIS_TYPE_X}
+      ticks={ticks}
+      tickPosition={tick => [xScaler(tick) + (xScaler.bandwidth() / 2), 0]}
+      textCoords={{
+        y: 5,
+        x: 0.5,
+        dy: 0,
+      }}
+      {...rest}
+    >
+      {children}
+    </BpkBarchartAxis>
+  );
+};
 
 BpkBarchartXAxis.propTypes = {
-  disableLine: PropTypes.bool,
+  children: PropTypes.node,
+  tickEvery: PropTypes.number,
+  tickOffset: PropTypes.number,
+  tickValue: PropTypes.func,
 };
 
 BpkBarchartXAxis.defaultProps = {
-  disableLine: false,
+  children: null,
+  tickEvery: 1,
+  tickOffset: 0,
+  tickValue: tick => tick,
 };
 
 BpkBarchartXAxis.contextTypes = ContextTypes;

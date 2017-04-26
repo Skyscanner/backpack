@@ -1,37 +1,55 @@
 @import '~bpk-tokens';
+@import '~bpk-mixins/index';
 
-.bpk-barchart__bar {
-  fill: $bpk-color-blue-500;
-  shape-rendering: auto;
+%bpk-chart-font-style {
+  fill: $bpk-color-gray-500;
 
-  &:hover {
-    fill: $bpk-color-green-500;
-  }
+  @include bpk-text-sm;
 }
 
-.bpk-barchart__axis {
-  text {
-    fill: $bpk-color-gray-500;
+.bpk-barchart {
+  &__title {
+    @extend %bpk-chart-font-style;
 
-    font: {
-      family: $bpk-font-family-base;
-      size: $bpk-font-size-sm;
+    fill: $bpk-color-gray-700;
+
+    @include bpk-text-lg;
+  }
+
+  &__bar {
+    fill: $bpk-color-blue-300;
+    shape-rendering: auto;
+
+    &:hover {
+      fill: $bpk-color-blue-500;
+    }
+
+    &--outlier {
+      fill: url(#bpk-barchart__def-gradient);
+
+      &:hover {
+        fill: url(#bpk-barchart__def-gradient-hover);
+      }
     }
   }
 
-  .domain { /* stylelint-disable-line selector-class-pattern */
-    stroke: $bpk-color-gray-100;
-  }
+  &__axis {
+    &-tick {
+      &--text {
+        @extend %bpk-chart-font-style;
+      }
 
-  &--disable-line {
-    .domain { /* stylelint-disable-line selector-class-pattern */
-      display: none;
+      &--line {
+        stroke: $bpk-color-gray-100;
+      }
     }
-  }
 
-  .tick { /* stylelint-disable-line selector-class-pattern */
-    line { /* stylelint-disable-line selector-max-compound-selectors */
-      stroke: $bpk-color-gray-100;
+    &-label {
+      @extend %bpk-chart-font-style;
+
+      &--x {
+        transform: translate(0, -1 * $bpk-line-height-sm);
+      }
     }
   }
 }

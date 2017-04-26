@@ -1,54 +1,50 @@
-import React, { Component, PropTypes } from 'react';
-import { axisLeft } from 'd3-axis';
-import { select } from 'd3-selection';
-import ContextTypes from './ContextTypes';
+import React, { PropTypes } from 'react';
+import ContextTypes from './BpkBarchartContextTypes';
+import { isRTL } from './RTLtransforms';
 
-class BpkBarchartYAxis extends Component {
-  componentDidMount() {
-    this.renderAxis();
-  }
+import BpkBarchartAxis, { AXIS_TYPE_Y } from './BpkBarchartAxis';
 
-  componentDidUpdate() {
-    this.renderAxis();
+const BpkBarchartYAxis = (
+  { ticks, children, ...rest },
+  { data, yScaler, xScaler, xScaleDataKey },
+) => {
+  let x = 0;
+  if (isRTL()) {
+    const dataPoint = data[data.length - 1][xScaleDataKey];
+    const padding = xScaler.bandwidth() * xScaler.padding();
+    x = xScaler(dataPoint) + xScaler.bandwidth() + (padding * 2);
   }
-
-  renderAxis() {
-    const axis = axisLeft(this.context.yScaler).ticks(this.props.ticks);
-    select(this.axis).call(axis);
-  }
-
-  render() {
-    const { ticks, disableLine, ...rest } = this.props;
-    const classNames = ['bpk-barchart__axis', 'bpk-barchart__axis--y'];
-    if (disableLine) {
-      classNames.push('bpk-barchart__axis--disable-line');
-    }
-    return (
-      <g
-        className={classNames.join(' ')}
-        ref={(axis) => {
-          this.axis = axis;
-        }}
-        {...rest}
-      />
-    );
-  }
-}
+  return (
+    <BpkBarchartAxis
+      transform={`translate(${x}, 0)`}
+      textAnchor="end"
+      type={AXIS_TYPE_Y}
+      ticks={yScaler.ticks(ticks)}
+      tickPosition={tick => [0, yScaler(tick)]}
+      textCoords={{
+        y: 0,
+        x: -5,
+        dy: '0.32em',
+      }}
+      {...rest}
+    >
+      {children}
+    </BpkBarchartAxis>
+  );
+};
 
 BpkBarchartYAxis.propTypes = {
   ticks: PropTypes.number,
-  disableLine: PropTypes.bool,
+  children: PropTypes.node,
+  tickValue: PropTypes.func,
 };
 
 BpkBarchartYAxis.defaultProps = {
   ticks: null,
-  disableLine: false,
+  children: null,
+  tickValue: tick => tick,
 };
 
-const { yScaler } = ContextTypes;
-
-BpkBarchartYAxis.contextTypes = {
-  yScaler,
-};
+BpkBarchartYAxis.contextTypes = ContextTypes;
 
 export default BpkBarchartYAxis;

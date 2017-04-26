@@ -1,31 +1,28 @@
 import React from 'react';
-import ContextTypes from './ContextTypes';
+import ContextTypes from './BpkBarchartContextTypes';
 
-const getY = ({ height, margin }) => {
-  const { top, bottom } = margin;
-  return height - top - bottom;
-};
+import BpkBarchartGridLines, { GRIDLINE_TYPE_X } from './BpkBarchartGridLines';
 
-const getX = (point, { xScaler }) => xScaler(point) + (xScaler.bandwidth() / 2);
+const BpkBarchartXGridLines = (props, { xScaler, height, margin }) => (
+  <BpkBarchartGridLines
+    type={GRIDLINE_TYPE_X}
+    ticks={xScaler.domain()}
+    lineProps={(tick) => {
+      const x = xScaler(tick) + (xScaler.bandwidth() / 2);
+      return {
+        x1: x,
+        x2: x,
+        y2: height - margin.top - margin.bottom,
+      };
+    }}
+    {...props}
+  />
+);
 
-const BpkBarchartYGridLines = (props, context) => {
-  const points = context.xScaler.domain();
-  return (
-    <g className="bpk-barchart__grid-lines bpk-barchart__grid-lines--y">
-      {points.map((point, i) => (
-        <line
-          className="bpk-barchart__grid-line bpk-barchart__grid-line--y"
-          x1={getX(point, context)}
-          x2={getX(point, context)}
-          y2={getY(context)}
-          key={`xline${i.toString()}`}
-          {...props}
-        />
-      ))}
-    </g>
-  );
-};
+BpkBarchartXGridLines.contextTypes = ContextTypes;
 
-BpkBarchartYGridLines.contextTypes = ContextTypes;
+export default BpkBarchartXGridLines;
 
-export default BpkBarchartYGridLines;
+
+
+

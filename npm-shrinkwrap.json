@@ -956,6 +956,21 @@
       "resolved": "https://registry.npmjs.org/boom/-/boom-2.10.1.tgz",
       "dev": true
     },
+    "bpk-mixins": {
+      "version": "13.1.0",
+      "from": "bpk-mixins@latest",
+      "resolved": "https://registry.npmjs.org/bpk-mixins/-/bpk-mixins-13.1.0.tgz"
+    },
+    "bpk-svgs": {
+      "version": "5.3.6",
+      "from": "bpk-svgs@>=5.3.6 <6.0.0",
+      "resolved": "https://registry.npmjs.org/bpk-svgs/-/bpk-svgs-5.3.6.tgz"
+    },
+    "bpk-tokens": {
+      "version": "21.1.0",
+      "from": "bpk-tokens@>=21.1.0 <22.0.0",
+      "resolved": "https://registry.npmjs.org/bpk-tokens/-/bpk-tokens-21.1.0.tgz"
+    },
     "brace-expansion": {
       "version": "1.1.6",
       "from": "brace-expansion@>=1.0.0 <2.0.0",

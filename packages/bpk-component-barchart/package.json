@@ -13,11 +13,15 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-tokens": "^20.0.0",
-    "d3-array": "^1.2.0",
-    "d3-axis": "^1.0.6",
+    "bpk-mixins": "14.0.0",
+    "bpk-tokens": "^22.0.0",
+    "d3-path": "1.0.5",
     "d3-scale": "^1.0.5",
-    "d3-selection": "^1.0.5",
     "lodash.debounce": "^4.0.8"
+  },
+  "devDependencies": {
+    "bpk-component-breakpoint": "0.1.10",
+    "bpk-component-content-container": "1.0.60",
+    "bpk-component-heading": "2.0.0"
   }
 }
