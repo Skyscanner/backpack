@@ -29,8 +29,5 @@ export default () => (
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
 | name      | string   | true     | -             |
-| onChange  | func     | true     | -             |
-| label     | string   | false    | null          |
-| value     | string   | false    | null          |
-| checked   | bool     | false    | false         |
+| label     | string   | true     | -             |
 | disabled  | bool     | false    | false         |

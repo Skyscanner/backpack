@@ -11,16 +11,59 @@ npm install bpk-component-fieldset --save-dev
 ## Usage
 
 ```js
-import React from 'react';
+import React, { Component } from 'react';
 import BpkFieldset from 'bpk-component-fieldset';
+import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 
-export default () => (
-  <BpkFieldset>TODO</BpkFieldset>
-)
+class FieldsetContainer extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: '',
+    };
+
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(e) {
+    this.setState({
+      value: e.target.value,
+    });
+  }
+
+  render() {
+    const isValid = this.state.value === ''
+      ? undefined
+      : this.state.value === validValue;
+
+    return (
+      <BpkFieldset
+        label="Name"
+        validationMessage="Please enter a name"
+      >
+        <BpkInput
+          id="name_input"
+          name="name"
+          type={INPUT_TYPES.TEXT}
+          placeholder="e.g. Joe Bloggs"
+          value={this.state.value}
+          valid={isValid}
+        />
+      </BpkFieldset>
+    );
+  }
+}
 ```
 
 ### Props
 
-| Property    | PropType | Required | Default Value |
-| ----------- | -------- | -------- | ------------- |
-| children    | node     | true     | -             |
+| Property          | PropType | Required | Default Value |
+| ----------------- | -------- | -------- | ------------- |
+| children          | node     | true     | -             |
+| label             | string   | false    | null          |
+| valid             | bool     | false    | null          |
+| className         | string   | false    | null          |
+| validationMessage | string   | false    | null          |
+| isCheckbox        | bool     | false    | false         |
+| validationProps   | object   | false    | {}            |

@@ -46,4 +46,17 @@ describe('AnimateHeight', () => {
 
     expect(tree.instance().contentElement.style.display).toEqual('');
   });
+
+  it('should render correctly with "transitionOverflow" attribute equal to "visible"', () => {
+    const tree = renderer.create(
+      <AnimateHeight
+        duration={200}
+        height={200}
+        transitionOverflow="visible"
+      >
+        Content.
+      </AnimateHeight>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

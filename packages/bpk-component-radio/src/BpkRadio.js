@@ -4,7 +4,7 @@ import './bpk-radio.scss';
 
 const BpkRadio = (props) => {
   const classNames = ['bpk-radio'];
-  const { name, onChange, value, checked, label, disabled, className, ...rest } = props;
+  const { name, label, disabled, className, ...rest } = props;
 
   if (disabled) { classNames.push('bpk-radio--disabled'); }
   if (className) { classNames.push(className); }
@@ -19,13 +19,11 @@ const BpkRadio = (props) => {
         type="radio"
         className="bpk-radio__input"
         name={name}
-        onChange={onChange}
-        value={value || name}
-        checked={checked}
         disabled={disabled}
         {...rest}
       />
-      {label ? ` ${label}` : null}
+      &nbsp;
+      {label}
     </label>
   );
   /* eslint-enable */
@@ -33,18 +31,12 @@ const BpkRadio = (props) => {
 
 BpkRadio.propTypes = {
   name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  label: PropTypes.string,
-  value: PropTypes.string,
-  checked: PropTypes.bool,
+  label: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
   className: PropTypes.string,
 };
 
 BpkRadio.defaultProps = {
-  label: null,
-  value: null,
-  checked: false,
   disabled: false,
   className: null,
 };

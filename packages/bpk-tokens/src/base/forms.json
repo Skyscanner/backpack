@@ -54,10 +54,6 @@
       "value": "{!GRAY_300}",
       "type": "color"
     },
-    "INPUT_INVALID_BACKGROUND_COLOR": {
-      "value": "{!RED_50}",
-      "type": "color"
-    },
     "INPUT_LARGE_HEIGHT": {
       "value": "{!SPACING_XXL} + {!SPACING_XS}",
       "type": "size"
@@ -104,10 +100,6 @@
     },
     "SELECT_DISABLED_COLOR": {
       "value": "{!GRAY_300}",
-      "type": "color"
-    },
-    "SELECT_INVALID_BACKGROUND_COLOR": {
-      "value": "{!RED_50}",
       "type": "color"
     },
     "SELECT_LARGE_HEIGHT": {

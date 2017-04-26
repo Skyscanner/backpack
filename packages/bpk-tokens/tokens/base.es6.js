@@ -187,7 +187,6 @@ export const inputPlaceholderColor = "rgb(129, 123, 143)";
 export const inputPlaceholderFontStyle = "italic";
 export const inputDisabledBorderColor = "rgb(243, 242, 245)";
 export const inputDisabledColor = "rgb(178, 174, 189)";
-export const inputInvalidBackgroundColor = "rgb(252, 242, 242)";
 export const inputLargeHeight = "2.625rem + .375rem";
 export const selectHeight = "2.250rem";
 export const selectPaddingTop = ".375rem";
@@ -200,7 +199,6 @@ export const selectBorderRadius = ".1875rem";
 export const selectColor = "rgb(82, 76, 97)";
 export const selectDisabledBorderColor = "rgb(243, 242, 245)";
 export const selectDisabledColor = "rgb(178, 174, 189)";
-export const selectInvalidBackgroundColor = "rgb(252, 242, 242)";
 export const selectLargeHeight = "2.625rem + .375rem";
 export const labelColor = "rgb(82, 76, 97)";
 export const labelFontSize = ".75rem";
@@ -523,7 +521,6 @@ inputPlaceholderColor,
 inputPlaceholderFontStyle,
 inputDisabledBorderColor,
 inputDisabledColor,
-inputInvalidBackgroundColor,
 inputLargeHeight,
 selectHeight,
 selectPaddingTop,
@@ -536,7 +533,6 @@ selectBorderRadius,
 selectColor,
 selectDisabledBorderColor,
 selectDisabledColor,
-selectInvalidBackgroundColor,
 selectLargeHeight,
 labelColor,
 labelFontSize,

@@ -7,7 +7,7 @@ describe('BpkCheckbox', () => {
     const tree = renderer.create(
       <BpkCheckbox
         name="checkbox"
-        onChange={() => null}
+        label="Prefer directs"
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -16,9 +16,9 @@ describe('BpkCheckbox', () => {
   it('should render correctly with id attribute', () => {
     const tree = renderer.create(
       <BpkCheckbox
-        id="checkbox"
         name="checkbox"
-        onChange={() => null}
+        label="Prefer directs"
+        id="checkbox"
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -28,19 +28,8 @@ describe('BpkCheckbox', () => {
     const tree = renderer.create(
       <BpkCheckbox
         name="checkbox"
-        onChange={() => null}
+        label="Prefer directs"
         checked
-      />,
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render correctly with label attribute', () => {
-    const tree = renderer.create(
-      <BpkCheckbox
-        name="checkbox"
-        onChange={() => null}
-        label="My label"
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -50,7 +39,7 @@ describe('BpkCheckbox', () => {
     const tree = renderer.create(
       <BpkCheckbox
         name="checkbox"
-        onChange={() => null}
+        label="Prefer directs"
         disabled
       />,
     ).toJSON();
@@ -61,8 +50,8 @@ describe('BpkCheckbox', () => {
     const tree = renderer.create(
       <BpkCheckbox
         name="checkbox"
+        label="Prefer directs"
         value="my-value"
-        onChange={() => null}
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();

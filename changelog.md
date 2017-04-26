@@ -2,6 +2,16 @@
 
 ## UNRELEASED
 
+**Changed:**
+- bpk-component-checkbox:
+- bpk-component-radio:
+  - `label` prop is now required
+  - `value` props are no longer magically set to the value of `name` prop if not provided
+
+- bpk-mixins:
+- bpk-tokens:
+  - Removed `INPUT_INVALID_BACKGROUND_COLOR` & `SELECT_INVALID_BACKGROUND_COLOR` tokens
+
 **Added:**
 - bpk-animate-height:
   - Extracted `AnimateHeight` module out of `bpk-component-accordion` to its own package

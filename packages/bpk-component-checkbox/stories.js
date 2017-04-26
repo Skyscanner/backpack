@@ -21,14 +21,6 @@ storiesOf('bpk-component-checkbox', module)
       onChange={action('checkbox changed')}
     />
   ))
-  .add('No label', () => (
-    <BpkCheckbox
-      id="no_label"
-      name="no_label"
-      onChange={action('checkbox changed')}
-      checked
-    />
-  ))
   .add('Disabled (Checked)', () => (
     <BpkCheckbox
       id="disabled_checked"

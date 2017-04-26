@@ -21,14 +21,6 @@ storiesOf('bpk-component-radio', module)
       onChange={action('radio changed')}
     />
   ))
-  .add('No label', () => (
-    <BpkRadio
-      id="no_label"
-      name="no_label"
-      onChange={action('radio changed')}
-      checked
-    />
-  ))
   .add('Disabled (Checked)', () => (
     <BpkRadio
       id="disabled_checked"

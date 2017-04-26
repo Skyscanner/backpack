@@ -15,12 +15,19 @@ import React from 'react';
 import BpkFormValidation from 'bpk-component-form-validation';
 
 export default () => (
-  <BpkFormValidation>TODO</BpkFormValidation>
+  <BpkFormValidation id="my-form-validation" expand>
+    A validation message.
+  </BpkFormValidation>,
 )
 ```
 
 ### Props
 
-| Property    | PropType | Required | Default Value |
-| ----------- | -------- | -------- | ------------- |
-| children    | node     | true     | -             |
+| Property       | PropType | Required | Default Value |
+| -------------- | -------- | -------- | ------------- |
+| children       | node     | true     | -             |
+| id             | string   | true     | -             |
+| expand         | bool     | true     | -             |
+| isCheckbox     | bool     | false    | false         |
+| className      | string   | false    | null          |
+| containerProps | object   | false    | {}            |

@@ -8,9 +8,9 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
       disabled={false}
       id="terms_and_conditions_checkbox"
       name="terms_and_conditions"
-      type="checkbox"
-      value="terms_and_conditions" />
-     I accept the terms and conditions
+      type="checkbox" />
+     
+    I accept the terms and conditions
   </label>
   <div
     onTransitionEnd={[Function]}
