@@ -9,6 +9,7 @@ const BpkSuggestion = (props) => {
   const classNames = [getClassName('bpk-autosuggest__suggestion')];
 
   if (props.indent) { classNames.push(getClassName('bpk-autosuggest__suggestion--indent')); }
+  if (props.className) { classNames.push(props.className); }
 
   return (
     <section className={classNames.join(' ')}>
@@ -36,6 +37,7 @@ BpkSuggestion.propTypes = {
   tertiaryLabel: PropTypes.string,
   icon: PropTypes.func,
   indent: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 BpkSuggestion.defaultProps = {
@@ -43,6 +45,7 @@ BpkSuggestion.defaultProps = {
   tertiaryLabel: null,
   icon: null,
   indent: false,
+  className: null,
 };
 
 export default BpkSuggestion;

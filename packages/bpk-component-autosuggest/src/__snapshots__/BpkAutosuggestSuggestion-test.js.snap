@@ -1,3 +1,16 @@
+exports[`BpkAutosuggestSuggestion should add only bpk specific classes if className prop is set to empty string 1`] = `
+<section
+  className="bpk-autosuggest__suggestion">
+  <div
+    className="bpk-autosuggest__suggestion-inner">
+    <span
+      className="bpk-autosuggest__suggestion-value">
+      Edinburgh
+    </span>
+  </div>
+</section>
+`;
+
 exports[`BpkAutosuggestSuggestion should render correctly 1`] = `
 <section
   className="bpk-autosuggest__suggestion">
@@ -135,6 +148,19 @@ exports[`BpkAutosuggestSuggestion should render correctly with an "icon" attribu
 exports[`BpkAutosuggestSuggestion should render correctly with an "indent" attribute 1`] = `
 <section
   className="bpk-autosuggest__suggestion bpk-autosuggest__suggestion--indent">
+  <div
+    className="bpk-autosuggest__suggestion-inner">
+    <span
+      className="bpk-autosuggest__suggestion-value">
+      Edinburgh
+    </span>
+  </div>
+</section>
+`;
+
+exports[`BpkAutosuggestSuggestion should respect the class names entered as a string 1`] = `
+<section
+  className="bpk-autosuggest__suggestion custom-class-1 custom-class-2">
   <div
     className="bpk-autosuggest__suggestion-inner">
     <span

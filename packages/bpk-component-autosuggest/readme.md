@@ -46,6 +46,7 @@ const renderSuggestion = suggestion => (
     tertiaryLabel="Airport"
     indent={suggestion.indent}
     icon={BpkFlightIcon}
+    className="class-name1 class-name2"
   />
 );
 
@@ -125,3 +126,4 @@ class MyComponent extends Component {
 | tertiaryLabel     | string               | false    | null          |
 | icon              | func                 | false    | null          |
 | indent            | bool                 | false    | false         |
+| className         | string               | false    | null          |
