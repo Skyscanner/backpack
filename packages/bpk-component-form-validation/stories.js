@@ -9,15 +9,15 @@ class FormValidationContainer extends Component {
     super();
 
     this.state = {
-      expand: true,
+      expanded: true,
     };
 
-    this.toggleExpand = this.toggleExpand.bind(this);
+    this.toggleExpanded = this.toggleExpanded.bind(this);
   }
 
-  toggleExpand() {
+  toggleExpanded() {
     this.setState(prevState => ({
-      expand: !prevState.expand,
+      expanded: !prevState.expanded,
     }));
   }
 
@@ -25,11 +25,11 @@ class FormValidationContainer extends Component {
     return (
       <div>
         <div style={{ textAlign: 'center' }}>
-          <BpkButton onClick={this.toggleExpand}>
+          <BpkButton onClick={this.toggleExpanded}>
             Toggle
           </BpkButton>
         </div>
-        <BpkFormValidation expand={this.state.expand} {...this.props} />
+        <BpkFormValidation expanded={this.state.expanded} {...this.props} />
       </div>
     );
   }

@@ -37,7 +37,7 @@ const BpkFieldset = (props) => {
       {validationMessage && (
         <BpkFormValidation
           id={validationMessageId}
-          expand={isInvalid}
+          expanded={isInvalid}
           isCheckbox={isCheckbox}
           {...validationProps}
         >

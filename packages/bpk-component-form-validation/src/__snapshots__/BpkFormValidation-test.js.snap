@@ -13,16 +13,16 @@ exports[`BpkFormValidation should render correctly 1`] = `
     }
   }>
   <div>
-    <span
+    <div
       className="bpk-form-validation bpk-form-validation--appear"
       id="my-form-validation">
       A validation message.
-    </span>
+    </div>
   </div>
 </div>
 `;
 
-exports[`BpkFormValidation should render correctly with "expand" equal to false 1`] = `
+exports[`BpkFormValidation should render correctly with "expanded" equal to false 1`] = `
 <div
   onTransitionEnd={[Function]}
   style={
@@ -37,11 +37,11 @@ exports[`BpkFormValidation should render correctly with "expand" equal to false 
     }
   }>
   <div>
-    <span
+    <div
       className="bpk-form-validation"
       id="my-form-validation">
       A validation message.
-    </span>
+    </div>
   </div>
 </div>
 `;

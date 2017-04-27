@@ -15,7 +15,7 @@ import React from 'react';
 import BpkFormValidation from 'bpk-component-form-validation';
 
 export default () => (
-  <BpkFormValidation id="my-form-validation" expand>
+  <BpkFormValidation id="my-form-validation" expanded>
     A validation message.
   </BpkFormValidation>,
 )
@@ -27,7 +27,7 @@ export default () => (
 | -------------- | -------- | -------- | ------------- |
 | children       | node     | true     | -             |
 | id             | string   | true     | -             |
-| expand         | bool     | true     | -             |
+| expanded       | bool     | true     | -             |
 | isCheckbox     | bool     | false    | false         |
 | className      | string   | false    | null          |
 | containerProps | object   | false    | {}            |

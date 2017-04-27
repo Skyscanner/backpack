@@ -5,16 +5,16 @@ import './bpk-form-validation.scss';
 
 const BpkFormValidation = (props) => {
   const classNames = ['bpk-form-validation'];
-  const { children, expand, isCheckbox, className, containerProps, ...rest } = props;
+  const { children, expanded, isCheckbox, className, containerProps, ...rest } = props;
 
-  if (expand) { classNames.push('bpk-form-validation--appear'); }
+  if (expanded) { classNames.push('bpk-form-validation--appear'); }
   if (isCheckbox) { classNames.push('bpk-form-validation--is-checkbox'); }
   if (className) { classNames.push(className); }
 
   return (
     <AnimateHeight
       duration={200}
-      height={expand ? 'auto' : 0}
+      height={expanded ? 'auto' : 0}
       transitionOverflow="visible"
       {...containerProps}
     >
@@ -26,7 +26,7 @@ const BpkFormValidation = (props) => {
 BpkFormValidation.propTypes = {
   children: PropTypes.node.isRequired,
   id: PropTypes.string.isRequired,
-  expand: PropTypes.bool.isRequired,
+  expanded: PropTypes.bool.isRequired,
   isCheckbox: PropTypes.bool,
   className: PropTypes.string,
   containerProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
