@@ -84,11 +84,4 @@ describe('BpkAutosuggestSuggestion', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
-
-  it('should add only bpk specific classes if className prop is set to empty string', () => {
-    const tree = renderer.create(
-      <BpkAutosuggestSuggestion value="Edinburgh" className="" />,
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
 });
