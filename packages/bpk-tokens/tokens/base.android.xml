@@ -205,6 +205,13 @@
   <color name="LABEL_COLOR" category="forms">#524c61ff</color>
   <property name="LABEL_FONT_SIZE" category="forms">12</property>
   <property name="LABEL_LINE_HEIGHT" category="forms">18</property>
+  <property name="FORM_VALIDATION_MARGIN" category="forms">0</property>
+  <property name="FORM_VALIDATION_PADDING_Y" category="forms">6</property>
+  <property name="FORM_VALIDATION_PADDING_X" category="forms">12</property>
+  <color name="FORM_VALIDATION_BACKGROUND_COLOR" category="forms">#ff5452ff</color>
+  <color name="FORM_VALIDATION_COLOR" category="forms">#ffffffff</color>
+  <property name="FORM_VALIDATION_ARROW_SIZE" category="forms">6</property>
+  <property name="FORM_VALIDATION_CHECKBOX_ARROW_LEFT" category="forms">24</property>
   <property name="GRID_COLUMNS" category="grids">12</property>
   <property name="GRID_GUTTER" category="grids">24</property>
   <property name="GRID_CONTAINER_PADDING" category="grids">24</property>

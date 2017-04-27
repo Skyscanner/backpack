@@ -117,6 +117,34 @@
     "LABEL_LINE_HEIGHT": {
       "value": "{!SPACING_MD}",
       "type": "number"
+    },
+    "FORM_VALIDATION_MARGIN": {
+      "value": "0",
+      "type": "size"
+    },
+    "FORM_VALIDATION_PADDING_Y": {
+      "value": "{!SPACING_XS}",
+      "type": "size"
+    },
+    "FORM_VALIDATION_PADDING_X": {
+      "value": "{!SPACING_SM}",
+      "type": "size"
+    },
+    "FORM_VALIDATION_BACKGROUND_COLOR": {
+      "value": "{!RED_500}",
+      "type": "color"
+    },
+    "FORM_VALIDATION_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "FORM_VALIDATION_ARROW_SIZE": {
+      "value": "{!SPACING_XS}",
+      "type": "size"
+    },
+    "FORM_VALIDATION_CHECKBOX_ARROW_LEFT": {
+      "value": "{!SPACING_BASE}",
+      "type": "size"
     }
   }
 }

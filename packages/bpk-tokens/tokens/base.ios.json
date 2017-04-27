@@ -1231,6 +1231,48 @@
       "name": "labelLineHeight"
     },
     {
+      "category": "forms",
+      "value": "0",
+      "type": "size",
+      "name": "formValidationMargin"
+    },
+    {
+      "category": "forms",
+      "value": "6",
+      "type": "size",
+      "name": "formValidationPaddingY"
+    },
+    {
+      "category": "forms",
+      "value": "12",
+      "type": "size",
+      "name": "formValidationPaddingX"
+    },
+    {
+      "category": "forms",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "name": "formValidationBackgroundColor"
+    },
+    {
+      "category": "forms",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "formValidationColor"
+    },
+    {
+      "category": "forms",
+      "value": "6",
+      "type": "size",
+      "name": "formValidationArrowSize"
+    },
+    {
+      "category": "forms",
+      "value": "24",
+      "type": "size",
+      "name": "formValidationCheckboxArrowLeft"
+    },
+    {
       "category": "grids",
       "value": "12",
       "type": "number",

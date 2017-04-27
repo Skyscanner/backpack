@@ -203,6 +203,13 @@ export const selectLargeHeight = "2.625rem + .375rem";
 export const labelColor = "rgb(82, 76, 97)";
 export const labelFontSize = ".75rem";
 export const labelLineHeight = "1.125rem";
+export const formValidationMargin = "0";
+export const formValidationPaddingY = ".375rem";
+export const formValidationPaddingX = ".75rem";
+export const formValidationBackgroundColor = "rgb(255, 84, 82)";
+export const formValidationColor = "rgb(255, 255, 255)";
+export const formValidationArrowSize = ".375rem";
+export const formValidationCheckboxArrowLeft = "1.5rem";
 export const gridColumns = "12";
 export const gridGutter = "1.5rem";
 export const gridContainerPadding = "1.5rem";
@@ -537,6 +544,13 @@ selectLargeHeight,
 labelColor,
 labelFontSize,
 labelLineHeight,
+formValidationMargin,
+formValidationPaddingY,
+formValidationPaddingX,
+formValidationBackgroundColor,
+formValidationColor,
+formValidationArrowSize,
+formValidationCheckboxArrowLeft,
 };
 export const grids = {
 gridColumns,
