@@ -30,4 +30,3 @@ export default () => (
 | --------- | -------- | -------- | ------------- |
 | name      | string   | true     | -             |
 | label     | string   | true     | -             |
-| disabled  | bool     | false    | false         |

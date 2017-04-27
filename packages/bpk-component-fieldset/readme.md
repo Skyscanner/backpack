@@ -33,9 +33,7 @@ class FieldsetContainer extends Component {
   }
 
   render() {
-    const isValid = this.state.value === ''
-      ? undefined
-      : this.state.value === validValue;
+    const isValid = this.state.value !== '';
 
     return (
       <BpkFieldset
@@ -67,3 +65,7 @@ class FieldsetContainer extends Component {
 | validationMessage | string   | false    | null          |
 | isCheckbox        | bool     | false    | false         |
 | validationProps   | object   | false    | {}            |
+
+> **Note:** There are a couple of props that behave differently when using `isCheckbox`:
+> - `valid`: checkboxes don't have a valid prop so you have to apply it to the fieldset directly
+> - `label`: checkboxes have their own labels so it's safe to omit these

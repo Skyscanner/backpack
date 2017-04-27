@@ -18,7 +18,7 @@ const BpkFormValidation = (props) => {
       transitionOverflow="visible"
       {...containerProps}
     >
-      <span className={classNames.join(' ')} {...rest}>{children}</span>
+      <div className={classNames.join(' ')} {...rest}>{children}</div>
     </AnimateHeight>
   );
 };
