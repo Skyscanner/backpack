@@ -73,16 +73,17 @@ class BpkDatepicker extends Component {
       formatDate,
       formatDateFull,
       formatMonth,
+      getApplicationElement,
       id,
       inputProps,
       markOutsideDays,
       markToday,
       maxDate,
       minDate,
-      title,
+      onMonthChange,
       showWeekendSeparator,
+      title,
       weekStartsOn,
-      getApplicationElement,
       ...rest
     } = this.props;
 
@@ -144,7 +145,6 @@ class BpkDatepicker extends Component {
         date={date}
         dateModifiers={dateModifiers}
         daysOfWeek={daysOfWeek}
-        enableSelection
         formatDateFull={formatDateFull}
         formatMonth={formatMonth}
         id={`${id}-calendar`}
@@ -154,6 +154,7 @@ class BpkDatepicker extends Component {
         maxDate={maxDate}
         minDate={minDate}
         onDateSelect={this.handleDateSelect}
+        onMonthChange={onMonthChange}
         showWeekendSeparator={showWeekendSeparator}
         weekStartsOn={weekStartsOn}
       />
@@ -217,6 +218,7 @@ BpkDatepicker.propTypes = {
   maxDate: PropTypes.instanceOf(Date),
   minDate: PropTypes.instanceOf(Date),
   onDateSelect: PropTypes.func,
+  onMonthChange: PropTypes.func,
   showWeekendSeparator: PropTypes.bool,
   weekStartsOn: PropTypes.number,
 };
@@ -231,6 +233,7 @@ BpkDatepicker.defaultProps = {
   maxDate: BpkCalendar.defaultProps.maxDate,
   minDate: BpkCalendar.defaultProps.minDate,
   onDateSelect: null,
+  onMonthChange: null,
   showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
   weekStartsOn: BpkCalendar.defaultProps.weekStartsOn,
 };

@@ -40,7 +40,11 @@ class CalendarContainer extends Component {
       <BpkDatepicker
         {...this.props}
         date={this.state.date}
-        onDateSelect={date => this.setState({ date })}
+        onDateSelect={(date) => {
+          this.setState({ date });
+          action('Selected date')(date);
+        }}
+        onMonthChange={action('Changed month')}
       />
     );
   }
@@ -72,10 +76,14 @@ class ReturnDatepicker extends Component {
           formatDateFull={formatDateFull}
           inputProps={inputProps}
           date={this.state.departDate}
-          onDateSelect={departDate => this.setState({
-            departDate,
-            returnDate: dateToBoundaries(this.state.returnDate, departDate, this.maxDate),
-          })}
+          onDateSelect={(departDate) => {
+            this.setState({
+              departDate,
+              returnDate: dateToBoundaries(this.state.returnDate, departDate, this.maxDate),
+            });
+            action('Selected departure date')(departDate);
+          }}
+          onMonthChange={action('Changed month')}
         />
         <BpkDatepicker
           id="return"
@@ -89,10 +97,14 @@ class ReturnDatepicker extends Component {
           formatDateFull={formatDateFull}
           inputProps={inputProps}
           date={this.state.returnDate}
-          onDateSelect={returnDate => this.setState({
-            returnDate,
-            departDate: dateToBoundaries(this.state.departDate, this.minDate, returnDate),
-          })}
+          onDateSelect={(returnDate) => {
+            this.setState({
+              returnDate,
+              departDate: dateToBoundaries(this.state.departDate, this.minDate, returnDate),
+            });
+            action('Selected return date')(returnDate);
+          }}
+          onMonthChange={action('Changed month')}
         />
       </div>
     );

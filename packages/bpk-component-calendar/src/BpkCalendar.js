@@ -1,180 +1,136 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+
+import BpkCalendarNav from './BpkCalendarNav';
+import BpkCalendarGrid from './BpkCalendarGrid';
+import BpkCalendarGridHeader from './BpkCalendarGridHeader';
 import BpkCalendarDate from './BpkCalendarDate';
-import BpkCalendarView from './BpkCalendarView';
-import {
-  addDays,
-  addMonths,
-  dateToBoundaries,
-  lastDayOfMonth,
-  setMonthYear,
-  startOfMonth,
-  startOfDay,
-} from './date-utils';
-import { getScriptDirection } from './utils';
 import CustomPropTypes from './custom-proptypes';
+import { addCalendarGridTransition } from './BpkCalendarGridTransition';
+import './bpk-calendar.scss';
 
-class BpkCalendar extends Component {
-  constructor(props) {
-    super(props);
+const TransitioningBpkCalendarGrid = addCalendarGridTransition(BpkCalendarGrid);
 
-    const minDate = startOfDay(this.props.minDate);
-    const maxDate = startOfDay(this.props.maxDate);
+const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
+  const BpkCalendar = (props) => {
+    const classNames = ['bpk-calendar'];
 
-    this.state = {
-      preventKeyboardFocus: true,
-      focusedDate: this.props.date ? dateToBoundaries(this.props.date, minDate, maxDate)
-                                   : minDate,
-    };
-
-    this.handleDateSelect = this.handleDateSelect.bind(this);
-    this.handleDateFocus = this.handleDateFocus.bind(this);
-    this.handleDateKeyDown = this.handleDateKeyDown.bind(this);
-    this.handleChangeMonth = this.handleChangeMonth.bind(this);
-  }
-
-  handleDateFocus(date) {
-    this.setState({
-      preventKeyboardFocus: false,
-      focusedDate: dateToBoundaries(
-        date,
-        startOfDay(this.props.minDate),
-        startOfDay(this.props.maxDate),
-      ),
-    });
-  }
-
-  handleDateSelect(date) {
-    const keyboardFocusState = { preventKeyboardFocus: false };
-
-    if (this.props.onDateSelect) {
-      const newDate = dateToBoundaries(
-        date,
-        startOfDay(this.props.minDate),
-        startOfDay(this.props.maxDate),
-      );
-
-      const newState = { focusedDate: newDate, ...keyboardFocusState };
-
-      this.setState(newState, () => this.props.onDateSelect(newDate));
-    } else {
-      this.setState(keyboardFocusState);
-    }
-  }
-
-  handleChangeMonth(month) {
-    this.handleDateFocus(setMonthYear(this.state.focusedDate, month.getMonth(), month.getFullYear()));
-  }
-
-  handleDateKeyDown(event) {
-    const reverse = getScriptDirection() === 'rtl' ? -1 : 1;
-    const { focusedDate } = this.state;
-    let preventDefault = true;
-
-    switch (event.key) {
-      case 'ArrowRight':
-        this.handleDateFocus(addDays(focusedDate, reverse * 1));
-        break;
-      case 'ArrowLeft':
-        this.handleDateFocus(addDays(focusedDate, reverse * -1));
-        break;
-      case 'ArrowUp':
-        this.handleDateFocus(addDays(focusedDate, -7));
-        break;
-      case 'ArrowDown':
-        this.handleDateFocus(addDays(focusedDate, 7));
-        break;
-      case 'PageUp':
-        this.handleDateFocus(addMonths(focusedDate, -1));
-        break;
-      case 'PageDown':
-        this.handleDateFocus(addMonths(focusedDate, 1));
-        break;
-      case 'Home':
-        this.handleDateFocus(startOfMonth(focusedDate));
-        break;
-      case 'End':
-        this.handleDateFocus(lastDayOfMonth(focusedDate));
-        break;
-      default:
-        preventDefault = false;
-        break;
-    }
-
-    if (preventDefault) {
-      event.preventDefault();
-    }
-  }
-
-  render() {
     const {
-      minDate,
+      changeMonthLabel,
       maxDate,
-      ...calendarProps
-    } = this.props;
+      minDate,
+      month,
+      onChangeMonth,
+      id,
+      formatMonth,
+      daysOfWeek,
+      weekStartsOn,
+      dateModifiers,
+      formatDateFull,
+      onDateClick,
+      onDateKeyDown,
+      preventKeyboardFocus,
+      showWeekendSeparator,
+      focusedDate,
+      markToday,
+      markOutsideDays,
+      selectedDate,
+    } = props;
 
-    delete calendarProps.onDateSelect;
-
-    const sanitisedMinDate = startOfDay(minDate);
-    const sanitisedMaxDate = startOfDay(maxDate);
-
-    const selectedDate = this.props.date ? dateToBoundaries(this.props.date, sanitisedMinDate, sanitisedMaxDate)
-                                         : null;
-    const focusedDate = dateToBoundaries(this.state.focusedDate, sanitisedMinDate, sanitisedMaxDate);
+    if (props.className) { classNames.push(props.className); }
 
     return (
-      <BpkCalendarView
-        onDateClick={this.handleDateSelect}
-        onDateFocus={this.handleDateFocus}
-        onDateKeyDown={this.handleDateKeyDown}
-        onChangeMonth={this.handleChangeMonth}
-
-        month={startOfMonth(focusedDate)}
-        preventKeyboardFocus={this.state.preventKeyboardFocus}
-        selectedDate={selectedDate}
-        focusedDate={focusedDate}
-
-        {...calendarProps}
-
-        minDate={sanitisedMinDate}
-        maxDate={sanitisedMaxDate}
-      />
+      <div className={classNames.join(' ')}>
+        { Nav && (
+          <Nav
+            className="bpk-calendar__nav"
+            changeMonthLabel={changeMonthLabel}
+            formatMonth={formatMonth}
+            id={`${id}__bpk_calendar_nav`}
+            maxDate={maxDate}
+            minDate={minDate}
+            month={month}
+            onChangeMonth={onChangeMonth}
+          />
+        )}
+        { GridHeader && (
+          <GridHeader
+            daysOfWeek={daysOfWeek}
+            showWeekendSeparator={showWeekendSeparator}
+            weekStartsOn={weekStartsOn}
+          />
+        )}
+        <Grid
+          className="bpk-calendar__grid"
+          DateComponent={CalendarDate}
+          dateModifiers={dateModifiers}
+          daysOfWeek={daysOfWeek}
+          formatDateFull={formatDateFull}
+          formatMonth={formatMonth}
+          month={month}
+          onDateClick={onDateClick}
+          onDateKeyDown={onDateKeyDown}
+          preventKeyboardFocus={preventKeyboardFocus}
+          showWeekendSeparator={showWeekendSeparator}
+          weekStartsOn={weekStartsOn}
+          maxDate={maxDate}
+          minDate={minDate}
+          focusedDate={focusedDate}
+          markToday={markToday}
+          markOutsideDays={markOutsideDays}
+          selectedDate={selectedDate}
+        />
+      </div>
     );
-  }
-}
+  };
 
-BpkCalendar.propTypes = {
-  // Required
-  changeMonthLabel: PropTypes.string.isRequired,
-  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
-  formatDateFull: PropTypes.func.isRequired,
-  formatMonth: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
-  // Optional
-  date: PropTypes.instanceOf(Date),
-  DateComponent: PropTypes.func,
-  dateModifiers: CustomPropTypes.DateModifiers,
-  enableSelection: PropTypes.bool,
-  markOutsideDays: PropTypes.bool,
-  markToday: PropTypes.bool,
-  maxDate: PropTypes.instanceOf(Date),
-  minDate: PropTypes.instanceOf(Date),
-  onDateSelect: PropTypes.func,
-  showWeekendSeparator: PropTypes.bool,
-  weekStartsOn: PropTypes.number,
+  BpkCalendar.propTypes = {
+    // Required
+    changeMonthLabel: PropTypes.string.isRequired,
+    daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
+    formatDateFull: PropTypes.func.isRequired,
+    formatMonth: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
+    maxDate: PropTypes.instanceOf(Date).isRequired,
+    minDate: PropTypes.instanceOf(Date).isRequired,
+    month: PropTypes.instanceOf(Date).isRequired,
+    showWeekendSeparator: PropTypes.bool.isRequired,
+    weekStartsOn: PropTypes.number.isRequired,
+    // Optional
+    className: PropTypes.string,
+    dateModifiers: CustomPropTypes.DateModifiers,
+    focusedDate: PropTypes.instanceOf(Date),
+    markOutsideDays: PropTypes.bool,
+    markToday: PropTypes.bool,
+    onChangeMonth: PropTypes.func,
+    onDateClick: PropTypes.func,
+    onDateKeyDown: PropTypes.func,
+    preventKeyboardFocus: PropTypes.bool,
+    selectedDate: PropTypes.instanceOf(Date),
+  };
+
+  BpkCalendar.defaultProps = {
+    className: null,
+    dateModifiers: {},
+    focusedDate: null,
+    markOutsideDays: true,
+    markToday: true,
+    onChangeMonth: () => null,
+    onDateClick: () => null,
+    onDateKeyDown: () => null,
+    preventKeyboardFocus: false,
+    selectedDate: null,
+    showWeekendSeparator: true,
+    weekStartsOn: 1,
+  };
+
+  return BpkCalendar;
 };
 
-BpkCalendar.defaultProps = {
-  date: null,
-  DateComponent: BpkCalendarDate,
-  dateModifiers: {},
-  enableSelection: true,
-  markOutsideDays: true,
-  markToday: true,
-  maxDate: addMonths(new Date(), 12),
-  minDate: new Date(),
-  onDateSelect: null,
-  showWeekendSeparator: true,
-  weekStartsOn: 1,
-};
+export default composeCalendar(
+  BpkCalendarNav,
+  BpkCalendarGridHeader,
+  TransitioningBpkCalendarGrid,
+  BpkCalendarDate,
+);
 
-export default BpkCalendar;
+export { composeCalendar };

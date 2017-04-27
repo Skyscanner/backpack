@@ -15,7 +15,17 @@ import {
   weekDays,
 } from './test-utils';
 
-import BpkCalendar, { BpkCalendarView, BpkCalendarGrid, BpkCalendarNav, BpkCalendarDate } from './index';
+import BpkCalendar, {
+  // BpkCalendarView,
+  BpkCalendarGrid,
+  BpkCalendarGridHeader,
+  BpkCalendarNav,
+  BpkCalendarDate,
+  withCalendarState,
+  composeCalendar,
+} from './index';
+
+import MonthViewCalendar from './stories-components';
 
 class CalendarContainer extends Component {
   constructor() {
@@ -30,7 +40,11 @@ class CalendarContainer extends Component {
       <BpkCalendar
         {...this.props}
         date={this.state.date}
-        onDateSelect={date => this.setState({ date, focusedDate: date })}
+        onDateSelect={(date) => {
+          this.setState({ date, focusedDate: date });
+          action('Selected day')(date);
+        }}
+        onMonthChange={action('Changed month')}
       />
     );
   }
@@ -61,21 +75,21 @@ storiesOf('bpk-component-calendar', module)
       preventKeyboardFocus
     />
   ))
-  .add('BpkCalendarView', () => (
-    <BpkCalendarView
-      month={new Date()}
-      formatDateFull={formatDateFull}
-      DateComponent={BpkCalendarDate}
-      formatMonth={formatMonth}
-      minDate={new Date()}
-      maxDate={addMonths(new Date(), 12)}
-      daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
-      onDateSelect={action('Selected day')}
-      id="myCalendar"
-      preventKeyboardFocus
-    />
-  ))
+  // .add('BpkCalendarView', () => (
+  //   <BpkCalendarView
+  //     month={new Date()}
+  //     formatDateFull={formatDateFull}
+  //     DateComponent={BpkCalendarDate}
+  //     formatMonth={formatMonth}
+  //     minDate={new Date()}
+  //     maxDate={addMonths(new Date(), 12)}
+  //     daysOfWeek={weekDays}
+  //     changeMonthLabel="Change month"
+  //     onDateSelect={action('Selected day')}
+  //     id="myCalendar"
+  //     preventKeyboardFocus
+  //   />
+  // ))
   .add('Calendar - default', () => (
     <CalendarContainer
       id="myCalendar"
@@ -83,7 +97,6 @@ storiesOf('bpk-component-calendar', module)
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
-      onDateSelect={action('Selected day')}
     />
   ))
   .add('Calendar - Don\'t show weekend separator', () => (
@@ -93,7 +106,6 @@ storiesOf('bpk-component-calendar', module)
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
-      onDateSelect={action('Selected day')}
       showWeekendSeparator={false}
     />
   ))
@@ -104,7 +116,6 @@ storiesOf('bpk-component-calendar', module)
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
-      onDateSelect={action('Selected day')}
       weekStartsOn={0}
     />
   ))
@@ -115,7 +126,6 @@ storiesOf('bpk-component-calendar', module)
       formatDateFull={formatDateFull}
       daysOfWeek={weekDaysMoreWeekend}
       changeMonthLabel="Change month"
-      onDateSelect={action('Selected day')}
     />
   ))
   .add('Calendar - ar-AE locale', () => (
@@ -125,7 +135,6 @@ storiesOf('bpk-component-calendar', module)
       formatDateFull={formatDateFullArabic}
       daysOfWeek={weekDaysArabic}
       changeMonthLabel="Change month"
-      onDateSelect={action('Selected day')}
       weekStartsOn={6}
     />
   ))
@@ -136,7 +145,6 @@ storiesOf('bpk-component-calendar', module)
       formatDateFull={formatDateFullJapanese}
       daysOfWeek={weekDaysJapanese}
       changeMonthLabel="Change month"
-      onDateSelect={action('Selected day')}
       weekStartsOn={0}
     />
   ))
@@ -147,7 +155,6 @@ storiesOf('bpk-component-calendar', module)
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
-      onDateSelect={action('Selected day')}
       minDate={new Date(2020, 4, 15)}
       maxDate={new Date(2020, 5, 15)}
     />
@@ -159,7 +166,6 @@ storiesOf('bpk-component-calendar', module)
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
-      onDateSelect={action('Selected day')}
       markToday={false}
     />
   ))
@@ -170,7 +176,6 @@ storiesOf('bpk-component-calendar', module)
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
-      onDateSelect={action('Selected day')}
       markOutsideDays={false}
     />
   ))
@@ -196,8 +201,12 @@ storiesOf('bpk-component-calendar', module)
         formatDateFull={formatDateFull}
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
-        onDateSelect={action('Selected day')}
         DateComponent={MyCustomDate}
       />
+    );
+  })
+  .add('Custom composed calendar', () => {
+    return (
+      <MonthViewCalendar />
     );
   });
