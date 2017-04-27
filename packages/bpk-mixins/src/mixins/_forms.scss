@@ -247,24 +247,6 @@
   }
 }
 
-/// Invalid form select input. Modifies the bpk-select mixin.
-///
-/// @require {mixin} bpk-select
-///
-/// @example scss
-///   .selector {
-///     @include bpk-select();
-///     @include bpk-select--invalid();
-///   }
-
-@mixin bpk-select--invalid {
-  background-color: $bpk-color-white;
-
-  option {
-    background-color: $bpk-color-white;
-  }
-}
-
 /// Large form select input. Modifies the bpk-select mixin.
 ///
 /// @require {mixin} bpk-select

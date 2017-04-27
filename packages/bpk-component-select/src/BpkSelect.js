@@ -15,7 +15,6 @@ const BpkSelect = (props) => {
   if (dockedFirst) { classNames.push('bpk-select--docked-first'); }
   if (dockedMiddle) { classNames.push('bpk-select--docked-middle'); }
   if (dockedLast) { classNames.push('bpk-select--docked-last'); }
-  if (isInvalid) { classNames.push('bpk-select--invalid'); }
   if (className) { classNames.push(className); }
 
   return (

@@ -11,6 +11,7 @@
 - bpk-mixins:
 - bpk-tokens:
   - Removed `INPUT_INVALID_BACKGROUND_COLOR` & `SELECT_INVALID_BACKGROUND_COLOR` tokens
+  - Removed `bpk-select--invalid` mixin as it was made redundant.
 
 **Added:**
 - bpk-animate-height:
