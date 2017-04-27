@@ -1,0 +1,30 @@
+@import '~bpk-mixins/index';
+
+.bpkdocs-fieldsets-page {
+  &__container {
+    display: flex;
+
+    @include bpk-breakpoint-mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__fieldset {
+    flex: 1;
+    margin-right: $bpk-spacing-sm;
+
+    @include bpk-rtl {
+      margin-right: 0;
+      margin-left: $bpk-spacing-sm;
+    }
+  }
+
+  &__toggle {
+    margin-top: $bpk-spacing-md;
+    text-align: right;
+
+    @include bpk-rtl {
+      text-align: left;
+    }
+  }
+}

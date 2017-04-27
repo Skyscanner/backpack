@@ -30,6 +30,8 @@
     "bpk-component-content-container": "^1.0.56",
     "bpk-component-loading-button": "^0.0.11",
     "bpk-component-datepicker": "^5.0.35",
+    "bpk-component-fieldset": "^0.0.0",
+    "bpk-component-form-validation": "^0.0.0",
     "bpk-component-grid": "^1.0.15",
     "bpk-component-grid-toggle": "^0.0.72",
     "bpk-component-heading": "^1.2.14",

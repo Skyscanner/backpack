@@ -27,9 +27,12 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
     }>
     <div>
       <div
-        className="bpk-form-validation bpk-form-validation--is-checkbox"
-        id="terms_and_conditions_checkbox_validation_message">
-        You must accept the terms and conditions to continue
+        className="bpk-form-validation__container">
+        <div
+          className="bpk-form-validation bpk-form-validation--is-checkbox"
+          id="terms_and_conditions_checkbox_validation_message">
+          You must accept the terms and conditions to continue
+        </div>
       </div>
     </div>
   </div>
@@ -67,9 +70,12 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
     }>
     <div>
       <div
-        className="bpk-form-validation"
-        id="name_input_validation_message">
-        Please enter a name
+        className="bpk-form-validation__container">
+        <div
+          className="bpk-form-validation"
+          id="name_input_validation_message">
+          Please enter a name
+        </div>
       </div>
     </div>
   </div>
@@ -107,9 +113,12 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
     }>
     <div>
       <div
-        className="bpk-form-validation"
-        id="name_input_validation_message">
-        Please enter a name
+        className="bpk-form-validation__container">
+        <div
+          className="bpk-form-validation"
+          id="name_input_validation_message">
+          Please enter a name
+        </div>
       </div>
     </div>
   </div>
@@ -148,9 +157,12 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
     }>
     <div>
       <div
-        className="bpk-form-validation bpk-form-validation--appear"
-        id="name_input_validation_message">
-        Please enter a name
+        className="bpk-form-validation__container">
+        <div
+          className="bpk-form-validation bpk-form-validation--appear"
+          id="name_input_validation_message">
+          Please enter a name
+        </div>
       </div>
     </div>
   </div>
@@ -208,9 +220,12 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
     }>
     <div>
       <div
-        className="bpk-form-validation"
-        id="fruits_select_validation_message">
-        Please select a fruit
+        className="bpk-form-validation__container">
+        <div
+          className="bpk-form-validation"
+          id="fruits_select_validation_message">
+          Please select a fruit
+        </div>
       </div>
     </div>
   </div>
