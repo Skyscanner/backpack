@@ -4,7 +4,7 @@ import './bpk-checkbox.scss';
 
 const BpkCheckbox = (props) => {
   const classNames = ['bpk-checkbox'];
-  const { name, onChange, value, checked, label, disabled, className, ...rest } = props;
+  const { name, label, disabled, className, ...rest } = props;
 
   if (disabled) { classNames.push('bpk-checkbox--disabled'); }
   if (className) { classNames.push(className); }
@@ -19,13 +19,11 @@ const BpkCheckbox = (props) => {
         type="checkbox"
         className="bpk-checkbox__input"
         name={name}
-        onChange={onChange}
-        value={value || name}
-        checked={checked}
         disabled={disabled}
         {...rest}
       />
-      {label ? ` ${label}` : null}
+      &nbsp;
+      {label}
     </label>
   );
   /* eslint-enable */
@@ -33,18 +31,12 @@ const BpkCheckbox = (props) => {
 
 BpkCheckbox.propTypes = {
   name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  label: PropTypes.string,
-  value: PropTypes.string,
-  checked: PropTypes.bool,
+  label: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
   className: PropTypes.string,
 };
 
 BpkCheckbox.defaultProps = {
-  label: null,
-  value: null,
-  checked: false,
   disabled: false,
   className: null,
 };

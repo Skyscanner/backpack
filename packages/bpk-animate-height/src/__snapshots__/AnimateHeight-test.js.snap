@@ -37,3 +37,23 @@ exports[`AnimateHeight should render correctly with "height" attribute equal to 
   </div>
 </div>
 `;
+
+exports[`AnimateHeight should render correctly with "transitionOverflow" attribute equal to "visible" 1`] = `
+<div
+  onTransitionEnd={[Function]}
+  style={
+    Object {
+      "MozTransition": "height 200ms ease ",
+      "OTransition": "height 200ms ease ",
+      "WebkitTransition": "height 200ms ease ",
+      "height": 200,
+      "msTransition": "height 200ms ease ",
+      "overflow": "visible",
+      "transition": "height 200ms ease ",
+    }
+  }>
+  <div>
+    Content.
+  </div>
+</div>
+`;

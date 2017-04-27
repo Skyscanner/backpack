@@ -1,6 +1,7 @@
 exports[`BpkDatepicker should render correctly 1`] = `
 <input
   aria-atomic="true"
+  aria-invalid={false}
   aria-label="Monday, 15th February 2010"
   aria-live="assertive"
   className="bpk-input bpk-input--large bpk-datepicker__input"

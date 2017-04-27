@@ -2,13 +2,12 @@ exports[`BpkRadio should render correctly 1`] = `
 <label
   className="bpk-radio">
   <input
-    checked={false}
     className="bpk-radio__input"
     disabled={false}
     name="radio"
-    onChange={[Function]}
-    type="radio"
-    value="radio" />
+    type="radio" />
+   
+  Direct
 </label>
 `;
 
@@ -20,9 +19,9 @@ exports[`BpkRadio should render correctly with checked attribute 1`] = `
     className="bpk-radio__input"
     disabled={false}
     name="radio"
-    onChange={[Function]}
-    type="radio"
-    value="radio" />
+    type="radio" />
+   
+  Direct
 </label>
 `;
 
@@ -30,13 +29,12 @@ exports[`BpkRadio should render correctly with disabled attribute 1`] = `
 <label
   className="bpk-radio bpk-radio--disabled">
   <input
-    checked={false}
     className="bpk-radio__input"
     disabled={true}
     name="radio"
-    onChange={[Function]}
-    type="radio"
-    value="radio" />
+    type="radio" />
+   
+  Direct
 </label>
 `;
 
@@ -44,29 +42,13 @@ exports[`BpkRadio should render correctly with id attribute 1`] = `
 <label
   className="bpk-radio">
   <input
-    checked={false}
     className="bpk-radio__input"
     disabled={false}
     id="radio"
     name="radio"
-    onChange={[Function]}
-    type="radio"
-    value="radio" />
-</label>
-`;
-
-exports[`BpkRadio should render correctly with label attribute 1`] = `
-<label
-  className="bpk-radio">
-  <input
-    checked={false}
-    className="bpk-radio__input"
-    disabled={false}
-    name="radio"
-    onChange={[Function]}
-    type="radio"
-    value="radio" />
-   My label
+    type="radio" />
+   
+  Direct
 </label>
 `;
 
@@ -74,12 +56,12 @@ exports[`BpkRadio should render correctly with value attribute 1`] = `
 <label
   className="bpk-radio">
   <input
-    checked={false}
     className="bpk-radio__input"
     disabled={false}
     name="radio"
-    onChange={[Function]}
     type="radio"
     value="my-value" />
+   
+  Direct
 </label>
 `;

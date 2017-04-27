@@ -438,7 +438,6 @@ const components = [
           FormComponent={BpkCheckbox}
           name="checkbox"
           label="Apples"
-          onChange={() => null}
           checked
         />
       </form>,
@@ -447,7 +446,7 @@ const components = [
           FormComponent={BpkCheckbox}
           name="unchecked_checkbox"
           label="Bananas"
-          onChange={() => null}
+          checked={false}
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
@@ -455,7 +454,6 @@ const components = [
           FormComponent={BpkCheckbox}
           name="disabled_checkbox"
           label="Strawberries"
-          onChange={() => null}
           disabled
         />
       </form>,
@@ -464,7 +462,6 @@ const components = [
           FormComponent={BpkCheckbox}
           name="disabled_checked_checkbox"
           label="Pears"
-          onChange={() => null}
           disabled
           checked
         />

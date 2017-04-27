@@ -2,13 +2,12 @@ exports[`BpkCheckbox should render correctly 1`] = `
 <label
   className="bpk-checkbox">
   <input
-    checked={false}
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
-    onChange={[Function]}
-    type="checkbox"
-    value="checkbox" />
+    type="checkbox" />
+   
+  Prefer directs
 </label>
 `;
 
@@ -20,9 +19,9 @@ exports[`BpkCheckbox should render correctly with checked attribute 1`] = `
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
-    onChange={[Function]}
-    type="checkbox"
-    value="checkbox" />
+    type="checkbox" />
+   
+  Prefer directs
 </label>
 `;
 
@@ -30,13 +29,12 @@ exports[`BpkCheckbox should render correctly with disabled attribute 1`] = `
 <label
   className="bpk-checkbox bpk-checkbox--disabled">
   <input
-    checked={false}
     className="bpk-checkbox__input"
     disabled={true}
     name="checkbox"
-    onChange={[Function]}
-    type="checkbox"
-    value="checkbox" />
+    type="checkbox" />
+   
+  Prefer directs
 </label>
 `;
 
@@ -44,29 +42,13 @@ exports[`BpkCheckbox should render correctly with id attribute 1`] = `
 <label
   className="bpk-checkbox">
   <input
-    checked={false}
     className="bpk-checkbox__input"
     disabled={false}
     id="checkbox"
     name="checkbox"
-    onChange={[Function]}
-    type="checkbox"
-    value="checkbox" />
-</label>
-`;
-
-exports[`BpkCheckbox should render correctly with label attribute 1`] = `
-<label
-  className="bpk-checkbox">
-  <input
-    checked={false}
-    className="bpk-checkbox__input"
-    disabled={false}
-    name="checkbox"
-    onChange={[Function]}
-    type="checkbox"
-    value="checkbox" />
-   My label
+    type="checkbox" />
+   
+  Prefer directs
 </label>
 `;
 
@@ -74,12 +56,12 @@ exports[`BpkCheckbox should render correctly with value attribute 1`] = `
 <label
   className="bpk-checkbox">
   <input
-    checked={false}
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
-    onChange={[Function]}
     type="checkbox"
     value="my-value" />
+   
+  Prefer directs
 </label>
 `;

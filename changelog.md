@@ -2,9 +2,36 @@
 
 ## UNRELEASED
 
+**Changed:**
+- bpk-component-checkbox:
+- bpk-component-radio:
+  - `label` prop is now required
+  - `value` props are no longer magically set to the value of `name` prop if not provided
+
+- bpk-mixins:
+- bpk-tokens:
+  - Removed `INPUT_INVALID_BACKGROUND_COLOR` & `SELECT_INVALID_BACKGROUND_COLOR` tokens
+  - Removed `bpk-select--invalid` mixin as it was made redundant.
+
 **Added:**
 - bpk-animate-height:
   - Extracted `AnimateHeight` module out of `bpk-component-accordion` to its own package
+  - Added `transitionOverflow` prop to customise the overflow behaviour during the transition
+
+- bpk-component-form-validation:
+  - New form validation component (http://backpack.prod.aws.skyscnr.com/components/atoms/form-validation)
+
+- bpk-component-fieldset:
+  - New fieldset component (http://backpack.prod.aws.skyscnr.com/components/molecules/fieldset)
+
+**Fixed:**
+- bpk-component-input:
+- bpk-component-select:
+  - `aria-invalid` is now set when `valid={false}`
+
+- bpk-component-checkbox:
+- bpk-component-radio:
+  - Updated checkbox and radio checked svgs to use BLUE_700 color
 
 ## 2017-04-20 (1) - Unified colors for hover, active and selected states
 

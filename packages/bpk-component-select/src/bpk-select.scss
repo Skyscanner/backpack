@@ -3,10 +3,6 @@
 .bpk-select {
   @include bpk-select;
 
-  &--invalid {
-    @include bpk-select--invalid;
-  }
-
   &--large {
     @include bpk-select--large;
   }

@@ -39,6 +39,7 @@ exports[`BpkCalendarView should compose BpkCalendarNav, BpkCalendarGridHeader an
         Change month
       </label>
       <select
+        aria-invalid={false}
         className="bpk-select"
         id="myCalendar__bpk_calendar_nav_select"
         name="months"
@@ -2746,6 +2747,7 @@ exports[`BpkCalendarView should render with custom className prop correctly 1`] 
         Change month
       </label>
       <select
+        aria-invalid={false}
         className="bpk-select"
         id="myCalendar__bpk_calendar_nav_select"
         name="months"

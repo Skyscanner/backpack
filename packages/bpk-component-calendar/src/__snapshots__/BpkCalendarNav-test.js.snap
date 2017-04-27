@@ -37,6 +37,7 @@ exports[`BpkCalendarNav should render correctly 1`] = `
       Change month
     </label>
     <select
+      aria-invalid={false}
       className="bpk-select"
       id="myCalendarNav_select"
       name="months"

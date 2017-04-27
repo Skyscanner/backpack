@@ -90,7 +90,7 @@
 
 @mixin bpk-input--invalid {
   padding-right: $bpk-spacing-base;
-  background: $bpk-input-invalid-background-color url(map-get($bpk-icons-sm, close-red-500)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, information-circle-red-500)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
   @include bpk-rtl {
@@ -244,24 +244,6 @@
     background-image: url(map-get($bpk-icons-sm, arrow-down-gray-300));
     color: $bpk-select-disabled-color;
     cursor: not-allowed;
-  }
-}
-
-/// Invalid form select input. Modifies the bpk-select mixin.
-///
-/// @require {mixin} bpk-select
-///
-/// @example scss
-///   .selector {
-///     @include bpk-select();
-///     @include bpk-select--invalid();
-///   }
-
-@mixin bpk-select--invalid {
-  background-color: $bpk-select-invalid-background-color;
-
-  option {
-    background-color: $bpk-color-white;
   }
 }
 

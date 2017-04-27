@@ -39,13 +39,6 @@ class InputContainer extends Component {
 
 InputContainer.propTypes = {
   FormComponent: PropTypes.func.isRequired,
-  value: PropTypes.string,
-  checked: PropTypes.bool,
-};
-
-InputContainer.defaultProps = {
-  value: null,
-  checked: false,
 };
 
 export default InputContainer;

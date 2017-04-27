@@ -1136,12 +1136,6 @@
     },
     {
       "category": "forms",
-      "value": "rgb(252, 242, 242)",
-      "type": "color",
-      "name": "inputInvalidBackgroundColor"
-    },
-    {
-      "category": "forms",
       "value": "42",
       "type": "size",
       "name": "inputLargeHeight"
@@ -1211,12 +1205,6 @@
       "value": "rgb(178, 174, 189)",
       "type": "color",
       "name": "selectDisabledColor"
-    },
-    {
-      "category": "forms",
-      "value": "rgb(252, 242, 242)",
-      "type": "color",
-      "name": "selectInvalidBackgroundColor"
     },
     {
       "category": "forms",
