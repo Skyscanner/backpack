@@ -40,6 +40,7 @@ export const NUDGERS = '/components/molecules/nudgers';
 export const PROGRESS = '/components/molecules/progress';
 export const TICKETS = '/components/molecules/tickets';
 export const HORIZONTAL_NAV = '/components/molecules/horizontal-nav';
+export const FIELDSETS = '/components/molecules/fieldsets';
 
 export const PATTERNS = '/patterns';
 

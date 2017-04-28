@@ -1,9 +1,12 @@
 import React from 'react';
+import BpkLink from 'bpk-component-link';
 import BpkLabel from 'bpk-component-label';
 import BpkSelect from 'bpk-component-select';
 import BpkCheckbox from 'bpk-component-checkbox';
 import BpkParagraph from 'bpk-component-paragraph';
+import BpkRouterLink from 'bpk-component-router-link';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
+import BpkFormValidation from 'bpk-component-form-validation';
 import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert';
 
 import inputReadme from 'bpk-component-input/readme.md';
@@ -11,8 +14,10 @@ import labelReadme from 'bpk-component-label/readme.md';
 import radioReadme from 'bpk-component-radio/readme.md';
 import selectReadme from 'bpk-component-select/readme.md';
 import checkboxReadme from 'bpk-component-checkbox/readme.md';
+import validationReadme from 'bpk-component-form-validation/readme.md';
 
 import './forms-page.scss';
+import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import InputContainer from './InputContainer';
 import RadioContainer from './RadioContainer';
@@ -496,6 +501,26 @@ const components = [
     ],
     examples: [],
     readme: labelReadme,
+  },
+  {
+    id: 'validation',
+    title: 'Validation',
+    blurb: [
+      <BpkParagraph>
+        Validation messages should be used to provide the user with specific feedback about an error with a particular
+        form input field. They can be attached to <BpkLink href="#inputs">inputs</BpkLink>
+        , <BpkLink href="#selects">selects</BpkLink> and <BpkLink href="#checkboxes">checkboxes</BpkLink>. They should
+        either be displayed on form submit or on field blur. Have a look at
+        the <BpkRouterLink to={ROUTES.FIELDSETS}>fieldset</BpkRouterLink> component which composes labels, fields and
+        validation messages accordingly.
+      </BpkParagraph>,
+    ],
+    examples: [
+      <BpkFormValidation id="form_validation" expand>Please enter a name</BpkFormValidation>,
+      <br />,
+      <BpkFormValidation id="form_validation" expand isCheckbox>This is required</BpkFormValidation>,
+    ],
+    readme: validationReadme,
   },
 ];
 

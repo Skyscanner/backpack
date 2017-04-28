@@ -45,6 +45,7 @@ const links = [
       { route: routes.PROGRESS, children: 'Progress bars' },
       { route: routes.TICKETS, children: 'Tickets' },
       { route: routes.HORIZONTAL_NAV, children: 'Horizontal navigation' },
+      { route: routes.FIELDSETS, children: 'Fieldsets' },
       { route: null, children: 'Pagination' },
       { route: null, children: 'Slider' },
       { route: null, children: 'Carousel' },

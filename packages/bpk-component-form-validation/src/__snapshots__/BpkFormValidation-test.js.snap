@@ -14,9 +14,12 @@ exports[`BpkFormValidation should render correctly 1`] = `
   }>
   <div>
     <div
-      className="bpk-form-validation bpk-form-validation--appear"
-      id="my-form-validation">
-      A validation message.
+      className="bpk-form-validation__container">
+      <div
+        className="bpk-form-validation bpk-form-validation--appear"
+        id="my-form-validation">
+        A validation message.
+      </div>
     </div>
   </div>
 </div>
@@ -38,9 +41,12 @@ exports[`BpkFormValidation should render correctly with "expanded" equal to fals
   }>
   <div>
     <div
-      className="bpk-form-validation"
-      id="my-form-validation">
-      A validation message.
+      className="bpk-form-validation__container">
+      <div
+        className="bpk-form-validation"
+        id="my-form-validation">
+        A validation message.
+      </div>
     </div>
   </div>
 </div>

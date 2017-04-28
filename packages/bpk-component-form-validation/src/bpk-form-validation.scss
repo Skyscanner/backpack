@@ -2,7 +2,7 @@
 
 .bpk-form-validation {
   position: relative;
-  margin: $bpk-spacing-xs 0 0 0;
+  margin: 0;
   padding: $bpk-spacing-xs $bpk-spacing-sm;
   transform: translateY(-#{$bpk-spacing-sm});
   transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
@@ -24,6 +24,10 @@
     border-width: $bpk-spacing-xs;
     border-bottom-color: $bpk-color-red-500;
     pointer-events: none;
+  }
+
+  &__container {
+    padding-top: $bpk-spacing-xs;
   }
 
   &--appear {
