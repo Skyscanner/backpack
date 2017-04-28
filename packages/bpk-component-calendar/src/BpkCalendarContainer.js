@@ -1,4 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import BpkCalendarNav from './BpkCalendarNav';
+import BpkCalendarGrid from './BpkCalendarGrid';
+import { addCalendarGridTransition } from './BpkCalendarGridTransition';
+import BpkCalendarGridHeader from './BpkCalendarGridHeader';
+import BpkCalendarDate from './BpkCalendarDate';
+import composeCalendar from './composeCalendar';
 import {
   addDays,
   addMonths,
@@ -11,8 +17,10 @@ import {
 } from './date-utils';
 import { getScriptDirection } from './utils';
 
+const TransitioningBpkCalendarGrid = addCalendarGridTransition(BpkCalendarGrid);
+
 const withCalendarState = (Calendar) => {
-  class CalendarContainer extends Component {
+  class BpkCalendarContainer extends Component {
     constructor(props) {
       super(props);
 
@@ -150,7 +158,7 @@ const withCalendarState = (Calendar) => {
     }
   }
 
-  CalendarContainer.propTypes = {
+  BpkCalendarContainer.propTypes = {
     date: PropTypes.instanceOf(Date),
     maxDate: PropTypes.instanceOf(Date),
     minDate: PropTypes.instanceOf(Date),
@@ -158,7 +166,7 @@ const withCalendarState = (Calendar) => {
     onMonthChange: PropTypes.func,
   };
 
-  CalendarContainer.defaultProps = {
+  BpkCalendarContainer.defaultProps = {
     date: null,
     maxDate: addMonths(new Date(), 12),
     minDate: new Date(),
@@ -166,7 +174,13 @@ const withCalendarState = (Calendar) => {
     onMonthChange: null,
   };
 
-  return CalendarContainer;
+  return BpkCalendarContainer;
 };
 
-export default withCalendarState;
+export default withCalendarState(composeCalendar(
+  BpkCalendarNav,
+  BpkCalendarGridHeader,
+  TransitioningBpkCalendarGrid,
+  BpkCalendarDate,
+));
+export { withCalendarState };

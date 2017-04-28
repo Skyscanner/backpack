@@ -21,8 +21,6 @@ import BpkCalendar, {
   BpkCalendarGridHeader,
   BpkCalendarNav,
   BpkCalendarDate,
-  withCalendarState,
-  composeCalendar,
 } from './index';
 
 import MonthViewCalendar from './stories-components';
@@ -62,6 +60,13 @@ storiesOf('bpk-component-calendar', module)
       id="myCalendarNav"
     />
   ))
+  .add('BpkCalendarGridHeader', () => (
+    <BpkCalendarGridHeader
+      weekStartsOn={1}
+      daysOfWeek={weekDays}
+      showWeekendSeparator
+    />
+  ))
   .add('BpkCalendarGrid', () => (
     <BpkCalendarGrid
       month={new Date()}
@@ -75,21 +80,6 @@ storiesOf('bpk-component-calendar', module)
       preventKeyboardFocus
     />
   ))
-  // .add('BpkCalendarView', () => (
-  //   <BpkCalendarView
-  //     month={new Date()}
-  //     formatDateFull={formatDateFull}
-  //     DateComponent={BpkCalendarDate}
-  //     formatMonth={formatMonth}
-  //     minDate={new Date()}
-  //     maxDate={addMonths(new Date(), 12)}
-  //     daysOfWeek={weekDays}
-  //     changeMonthLabel="Change month"
-  //     onDateSelect={action('Selected day')}
-  //     id="myCalendar"
-  //     preventKeyboardFocus
-  //   />
-  // ))
   .add('Calendar - default', () => (
     <CalendarContainer
       id="myCalendar"
@@ -205,8 +195,6 @@ storiesOf('bpk-component-calendar', module)
       />
     );
   })
-  .add('Custom composed calendar', () => {
-    return (
-      <MonthViewCalendar />
-    );
-  });
+  .add('Custom composed calendar', () => (
+    <MonthViewCalendar />
+  ));

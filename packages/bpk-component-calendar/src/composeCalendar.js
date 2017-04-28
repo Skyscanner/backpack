@@ -1,14 +1,7 @@
 import React, { PropTypes } from 'react';
 
-import BpkCalendarNav from './BpkCalendarNav';
-import BpkCalendarGrid from './BpkCalendarGrid';
-import BpkCalendarGridHeader from './BpkCalendarGridHeader';
-import BpkCalendarDate from './BpkCalendarDate';
 import CustomPropTypes from './custom-proptypes';
-import { addCalendarGridTransition } from './BpkCalendarGridTransition';
 import './bpk-calendar.scss';
-
-const TransitioningBpkCalendarGrid = addCalendarGridTransition(BpkCalendarGrid);
 
 const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
   const BpkCalendar = (props) => {
@@ -126,11 +119,4 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
   return BpkCalendar;
 };
 
-export default composeCalendar(
-  BpkCalendarNav,
-  BpkCalendarGridHeader,
-  TransitioningBpkCalendarGrid,
-  BpkCalendarDate,
-);
-
-export { composeCalendar };
+export default composeCalendar;

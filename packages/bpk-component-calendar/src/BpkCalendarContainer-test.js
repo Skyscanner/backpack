@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
-import BpkCalendar from './BpkCalendar';
+import BpkCalendarContainer from './BpkCalendarContainer';
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 import { addDays } from './date-utils';
 
@@ -11,7 +11,7 @@ const createNodeMock = () => ({
 
 describe('BpkCalendar', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkCalendar
+    const tree = renderer.create(<BpkCalendarContainer
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
@@ -25,7 +25,7 @@ describe('BpkCalendar', () => {
   });
 
   it('should change the month', () => {
-    const calendar = mount(<BpkCalendar
+    const calendar = mount(<BpkCalendarContainer
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
@@ -48,7 +48,7 @@ describe('BpkCalendar', () => {
   it('should call the onDateSelect callback', () => {
     const onDateSelect = jest.fn();
 
-    const calendar = mount(<BpkCalendar
+    const calendar = mount(<BpkCalendarContainer
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
@@ -72,10 +72,10 @@ describe('BpkCalendar', () => {
 
   it('should set state only once on date selection', () => {
     const setStateSpy = jest.fn();
-    const oldSetState = BpkCalendar.prototype.setState;
-    BpkCalendar.prototype.setState = setStateSpy;
+    const oldSetState = BpkCalendarContainer.prototype.setState;
+    BpkCalendarContainer.prototype.setState = setStateSpy;
 
-    const calendar = mount(<BpkCalendar
+    const calendar = mount(<BpkCalendarContainer
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
@@ -94,14 +94,14 @@ describe('BpkCalendar', () => {
     grid.prop('onDateClick')(new Date(2010, 1, 20));
     expect(setStateSpy.mock.calls.length).toBe(1);
 
-    BpkCalendar.prototype.setState = oldSetState;
+    BpkCalendarContainer.prototype.setState = oldSetState;
   });
 
   it('should move focus on keyboard input', () => {
     const preventDefault = jest.fn();
     const origin = new Date(2010, 2, 1);
 
-    const calendar = mount(<BpkCalendar
+    const calendar = mount(<BpkCalendarContainer
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
