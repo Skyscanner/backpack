@@ -156,8 +156,8 @@ const FieldsetPage = () => <DocsPageBuilder
     <BpkParagraph>
       Fieldsets encapsulate the composition of <BpkRouterLink to={`${ROUTES.FORMS}`}>form controls</BpkRouterLink>
       , <BpkRouterLink to={`${ROUTES.FORMS}#labels`}>labels</BpkRouterLink>
-      &nbsp;& <BpkRouterLink to={`${ROUTES.FORMS}#validation`}>validation messages</BpkRouterLink> with the necessary
-      attributes to ensure good accessibility for screen readers.
+      &nbsp;&amp; <BpkRouterLink to={`${ROUTES.FORMS}#validation`}>validation messages</BpkRouterLink> with the
+      necessary attributes to ensure good accessibility for screen readers.
     </BpkParagraph>,
   ]}
   components={components}
