@@ -516,9 +516,9 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <BpkFormValidation id="form_validation" expand>Please enter a name</BpkFormValidation>,
+      <BpkFormValidation id="form_validation" expanded>Please enter a name</BpkFormValidation>,
       <br />,
-      <BpkFormValidation id="form_validation" expand isCheckbox>This is required</BpkFormValidation>,
+      <BpkFormValidation id="form_validation" expanded isCheckbox>This is required</BpkFormValidation>,
     ],
     readme: validationReadme,
   },
