@@ -495,3 +495,92 @@
 @mixin bpk-label--white {
   color: $bpk-color-white;
 }
+
+/// Form validation.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-form-validation();
+///   }
+
+@mixin bpk-form-validation {
+  position: relative;
+  margin: $bpk-form-validation-margin;
+  padding: $bpk-form-validation-padding-y $bpk-form-validation-padding-x;
+  transform: translateY(-#{$bpk-spacing-sm});
+  transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
+  background-color: $bpk-form-validation-background-color;
+  color: $bpk-form-validation-color;
+  opacity: 0;
+
+  @include bpk-border-radius-sm;
+
+  &::after {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    content: " ";
+    width: 0;
+    height: 0;
+    margin-left: -#{$bpk-form-validation-arrow-size};
+    border: solid transparent;
+    border-width: $bpk-form-validation-arrow-size;
+    border-bottom-color: $bpk-form-validation-background-color;
+    pointer-events: none;
+  }
+}
+
+/// Form validation transition state. Modifies the bpk-form-validation mixin.
+///
+/// @require {mixin} bpk-form-validation
+///
+/// @example scss
+///   .selector {
+///     @include bpk-form-validation();
+///
+///     &--appear {
+///       @include bpk-form-validation--appear();
+///     }
+///   }
+
+@mixin bpk-form-validation--appear {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/// Checkbox form validation. Modifies the bpk-form-validation mixin.
+///
+/// @require {mixin} bpk-form-validation
+///
+/// @example scss
+///   .selector {
+///     @include bpk-form-validation();
+///
+///     &--is-checkbox {
+///       @include bpk-form-validation--is-checkbox();
+///     }
+///   }
+
+@mixin bpk-form-validation--is-checkbox {
+  display: inline-block;
+
+  &::after {
+    left: $bpk-form-validation-checkbox-arrow-left + $bpk-form-validation-arrow-size;
+
+    @include bpk-rtl {
+      right: $bpk-form-validation-checkbox-arrow-left;
+      left: 0;
+    }
+  }
+}
+
+/// Form validation container.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-form-validation__container();
+///   }
+
+@mixin bpk-form-validation__container {
+  padding-top: $bpk-form-validation-arrow-size;
+}

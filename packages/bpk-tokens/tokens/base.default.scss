@@ -408,6 +408,20 @@ $bpk-label-color: rgb(82, 76, 97) !default;
 $bpk-label-font-size: .75rem !default;
 /// @group forms
 $bpk-label-line-height: 1.125rem !default;
+/// @group forms
+$bpk-form-validation-margin: 0 !default;
+/// @group forms
+$bpk-form-validation-padding-y: .375rem !default;
+/// @group forms
+$bpk-form-validation-padding-x: .75rem !default;
+/// @group forms
+$bpk-form-validation-background-color: rgb(255, 84, 82) !default;
+/// @group forms
+$bpk-form-validation-color: rgb(255, 255, 255) !default;
+/// @group forms
+$bpk-form-validation-arrow-size: .375rem !default;
+/// @group forms
+$bpk-form-validation-checkbox-arrow-left: 1.5rem !default;
 /// @group grids
 $bpk-grid-columns: 12 !default;
 /// @group grids

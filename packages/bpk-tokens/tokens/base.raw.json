@@ -1321,6 +1321,48 @@
       "type": "number",
       "name": "LABEL_LINE_HEIGHT"
     },
+    "FORM_VALIDATION_MARGIN": {
+      "category": "forms",
+      "value": "0",
+      "type": "size",
+      "name": "FORM_VALIDATION_MARGIN"
+    },
+    "FORM_VALIDATION_PADDING_Y": {
+      "category": "forms",
+      "value": ".375rem",
+      "type": "size",
+      "name": "FORM_VALIDATION_PADDING_Y"
+    },
+    "FORM_VALIDATION_PADDING_X": {
+      "category": "forms",
+      "value": ".75rem",
+      "type": "size",
+      "name": "FORM_VALIDATION_PADDING_X"
+    },
+    "FORM_VALIDATION_BACKGROUND_COLOR": {
+      "category": "forms",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "name": "FORM_VALIDATION_BACKGROUND_COLOR"
+    },
+    "FORM_VALIDATION_COLOR": {
+      "category": "forms",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "FORM_VALIDATION_COLOR"
+    },
+    "FORM_VALIDATION_ARROW_SIZE": {
+      "category": "forms",
+      "value": ".375rem",
+      "type": "size",
+      "name": "FORM_VALIDATION_ARROW_SIZE"
+    },
+    "FORM_VALIDATION_CHECKBOX_ARROW_LEFT": {
+      "category": "forms",
+      "value": "1.5rem",
+      "type": "size",
+      "name": "FORM_VALIDATION_CHECKBOX_ARROW_LEFT"
+    },
     "GRID_COLUMNS": {
       "category": "grids",
       "value": "12",
@@ -2158,6 +2200,13 @@
     "LABEL_COLOR",
     "LABEL_FONT_SIZE",
     "LABEL_LINE_HEIGHT",
+    "FORM_VALIDATION_MARGIN",
+    "FORM_VALIDATION_PADDING_Y",
+    "FORM_VALIDATION_PADDING_X",
+    "FORM_VALIDATION_BACKGROUND_COLOR",
+    "FORM_VALIDATION_COLOR",
+    "FORM_VALIDATION_ARROW_SIZE",
+    "FORM_VALIDATION_CHECKBOX_ARROW_LEFT",
     "GRID_COLUMNS",
     "GRID_GUTTER",
     "GRID_CONTAINER_PADDING",

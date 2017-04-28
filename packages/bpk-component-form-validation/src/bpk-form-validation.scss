@@ -1,50 +1,17 @@
 @import '~bpk-mixins/index';
 
 .bpk-form-validation {
-  position: relative;
-  margin: 0;
-  padding: $bpk-spacing-xs $bpk-spacing-sm;
-  transform: translateY(-#{$bpk-spacing-sm});
-  transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
-  background-color: $bpk-color-red-500;
-  color: $bpk-color-white;
-  opacity: 0;
-
-  @include bpk-border-radius-sm;
-
-  &::after {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    content: " ";
-    width: 0;
-    height: 0;
-    margin-left: -#{$bpk-spacing-xs};
-    border: solid transparent;
-    border-width: $bpk-spacing-xs;
-    border-bottom-color: $bpk-color-red-500;
-    pointer-events: none;
-  }
+  @include bpk-form-validation;
 
   &__container {
-    padding-top: $bpk-spacing-xs;
+    @include bpk-form-validation__container;
   }
 
   &--appear {
-    transform: translateY(0);
-    opacity: 1;
+    @include bpk-form-validation--appear;
   }
 
   &--is-checkbox {
-    display: inline-block;
-
-    &::after {
-      left: $bpk-spacing-base + $bpk-spacing-xs;
-
-      @include bpk-rtl {
-        right: $bpk-spacing-base;
-        left: 0;
-      }
-    }
+    @include bpk-form-validation--is-checkbox;
   }
 }
