@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTestUtils from 'react-addons-test-utils';
 import renderer from 'react-test-renderer';
 import BpkAutosuggest from './BpkAutosuggest';
 
@@ -37,5 +38,27 @@ describe('BpkAutosuggest', () => {
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  it('should set the input reference', () => {
+    let inputRef;
+    const storeAutosuggestReference = (autosuggest) => {
+      if (autosuggest !== null) {
+        inputRef = autosuggest.input;
+      }
+    };
+    const tree = ReactTestUtils.renderIntoDocument(
+      <BpkAutosuggest
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={onSuggestionsClearRequested}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        inputProps={inputProps}
+        ref={storeAutosuggestReference}
+      />,
+    );
+    const input = ReactTestUtils.findRenderedDOMComponentWithTag(tree, 'input');
+    expect(input).toEqual(inputRef);
   });
 });

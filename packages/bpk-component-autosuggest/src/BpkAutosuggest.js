@@ -1,4 +1,3 @@
-import React from 'react';
 import Autosuggest from 'react-autosuggest';
 import { cssModules } from 'bpk-react-utils';
 import BpkInput from 'bpk-component-input';
@@ -7,22 +6,25 @@ import STYLES from './bpk-autosuggest.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkAutosuggest = props => <Autosuggest
-  renderInputComponent={BpkInput}
-  {...props}
-/>;
+/*
+  `react-autosuggest` is not wrapped in a functional component because the `ref` attribute won't work on it.
+  This is because functional components don't have instances, and it is a mounted instance of the component
+  what it's received by the `ref` callback.
 
-BpkAutosuggest.defaultProps = {
-  theme: {
-    container: getClassName('bpk-autosuggest__container'),
-    containerOpen: getClassName('bpk-autosuggest__container--open'),
-    suggestionsContainer: getClassName('bpk-autosuggest__suggestions-container'),
-    suggestionsList: getClassName('bpk-autosuggest__suggestions-list'),
-    suggestion: getClassName('bpk-autosuggest__suggestion-item'),
-    suggestionFocused: getClassName('bpk-autosuggest__suggestion-item--focused'),
-    sectionContainer: getClassName('bpk-autosuggest__section-container'),
-    sectionTitle: getClassName('bpk-autosuggest__section-title'),
-  },
+  Further reading about Refs: https://facebook.github.io/react/docs/refs-and-the-dom.html
+ */
+
+Autosuggest.defaultProps.theme = {
+  container: getClassName('bpk-autosuggest__container'),
+  containerOpen: getClassName('bpk-autosuggest__container--open'),
+  suggestionsContainer: getClassName('bpk-autosuggest__suggestions-container'),
+  suggestionsList: getClassName('bpk-autosuggest__suggestions-list'),
+  suggestion: getClassName('bpk-autosuggest__suggestion-item'),
+  suggestionFocused: getClassName('bpk-autosuggest__suggestion-item--focused'),
+  sectionContainer: getClassName('bpk-autosuggest__section-container'),
+  sectionTitle: getClassName('bpk-autosuggest__section-title'),
 };
 
-export default BpkAutosuggest;
+Autosuggest.defaultProps.renderInputComponent = BpkInput;
+
+export default Autosuggest;
