@@ -3,6 +3,10 @@
 .bpk-checkbox {
   @include bpk-checkbox;
 
+  &--white {
+    @include bpk-checkbox--white;
+  }
+
   &--disabled {
     @include bpk-checkbox--disabled;
   }
