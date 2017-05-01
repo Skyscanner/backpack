@@ -158,7 +158,6 @@ withCalendarState(composeCalendar(
 | formatMonth           | func                 | true     | -                |
 | id                    | string               | true     | -                |
 | className             | string               | false    | null             |
-| dateModifiers         | object               | false    | {}               |
 | markOutsideDays       | bool                 | false    | true             |
 | markToday             | bool                 | false    | true             |
 | maxDate               | Date                 | false    | new Date() + 1yr |
@@ -210,7 +209,6 @@ The BpkCalendarGrid component displays a month as a table.
 | formatDateFull        | func                 | true     | -                |
 | formatMonth           | func                 | true     | -                |
 | month                 | Date                 | true     | -                |
-| dateModifiers         | object               | false    | {}               |
 | focusedDate           | Date                 | false    | null             |
 | isKeyboardFocusable   | bool                 | false    | true             |
 | markOutsideDays       | bool                 | false    | true             |
@@ -238,7 +236,6 @@ The BpkCalendarDate component is used to render the content of a cell
 | isOutside             | bool                 | false    | false            |
 | isSelected            | bool                 | false    | false            |
 | isToday               | bool                 | false    | false            |
-| modifiers             | object               | false    | {}               |
 | onClick               | func                 | false    | null             |
 | onDateKeyDown         | func                 | false    | null             |
 | preventKeyboardFocus  | bool                 | false    | true             |
