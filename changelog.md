@@ -2,35 +2,39 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-05-01 - New form validation & fieldset components
+
 **Changed:**
-- bpk-component-checkbox:
-- bpk-component-radio:
+- bpk-component-checkbox: 0.1.8 => 1.0.0
+- bpk-component-radio: 0.0.62 => 0.0.63
   - `label` prop is now required
   - `value` props are no longer magically set to the value of `name` prop if not provided
 
-- bpk-mixins:
-- bpk-tokens:
+- bpk-mixins: 12.0.1 => 13.0.0
+- bpk-tokens: 20.0.1 => 21.0.0
   - Removed `INPUT_INVALID_BACKGROUND_COLOR` & `SELECT_INVALID_BACKGROUND_COLOR` tokens
   - Removed `bpk-select--invalid` mixin as it was made redundant.
 
 **Added:**
-- bpk-animate-height:
+- bpk-animate-height: 0.0.0 => 0.0.1
   - Extracted `AnimateHeight` module out of `bpk-component-accordion` to its own package
   - Added `transitionOverflow` prop to customise the overflow behaviour during the transition
 
-- bpk-component-form-validation:
+- bpk-component-fieldset: 0.0.0 => 0.0.1
   - New form validation component (http://backpack.prod.aws.skyscnr.com/components/atoms/form-validation)
 
-- bpk-component-fieldset:
+- bpk-component-form-validation: 0.0.0 => 0.0.1
   - New fieldset component (http://backpack.prod.aws.skyscnr.com/components/molecules/fieldset)
 
 **Fixed:**
-- bpk-component-input:
-- bpk-component-select:
+- bpk-component-input: 3.0.9 => 3.0.10
+- bpk-component-select: 2.0.9 => 2.0.10
   - `aria-invalid` is now set when `valid={false}`
 
-- bpk-component-checkbox:
-- bpk-component-radio:
+- bpk-component-checkbox: 0.1.8 => 1.0.0
+- bpk-component-radio: 0.0.62 => 0.0.63
   - Updated checkbox and radio checked svgs to use BLUE_700 color
 
 ## 2017-04-20 (1) - Unified colors for hover, active and selected states
