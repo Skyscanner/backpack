@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-datepicker",
-  "version": "5.0.36",
+  "version": "5.0.37",
   "description": "Backpack datepicker component.",
   "main": "index.js",
   "repository": {
@@ -13,11 +13,11 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-component-breakpoint": "^0.1.7",
-    "bpk-component-calendar": "^2.0.25",
-    "bpk-component-input": "^3.0.10",
-    "bpk-component-modal": "^1.0.33",
-    "bpk-component-popover": "^1.0.35",
-    "bpk-mixins": "^13.0.0"
+    "bpk-component-breakpoint": "^0.1.8",
+    "bpk-component-calendar": "^2.0.26",
+    "bpk-component-input": "^3.0.11",
+    "bpk-component-modal": "^1.0.34",
+    "bpk-component-popover": "^1.0.36",
+    "bpk-mixins": "^13.1.0"
   }
 }
