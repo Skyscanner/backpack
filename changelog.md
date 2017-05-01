@@ -6,6 +6,14 @@ _Nothing yet..._
 
 ## 2017-05-01 - New form validation & fieldset components
 
+**Added:**
+- bpk-component-checkbox: 1.0.0 => 1.0.1
+- bpk-component-radio: 0.0.63 => 1.0.0
+- bpk-mixins: 13.0.0 => 13.1.0
+  - Radio buttons and checkboxes can now have white labels
+
+## 2017-05-01 - New form validation & fieldset components
+
 **Changed:**
 - bpk-component-checkbox: 0.1.8 => 1.0.0
 - bpk-component-radio: 0.0.62 => 0.0.63
