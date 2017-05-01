@@ -8,11 +8,12 @@ const links = [
     category: 'Patterns',
     links: [
       { route: routes.VERTICAL_RHYTHM, children: 'Vertical rhythm' },
-      { route: routes.UNITS, children: 'Units' },
       { route: routes.STATEFULNESS, children: 'Statefulness' },
+      { route: null, children: 'Units' },
       { route: null, children: 'Error handling' },
       { route: null, children: 'Data entry' },
       { route: null, children: 'Messaging' },
+      { route: null, children: 'Tiles and cards' },
       { route: null, children: 'Tap targets' },
     ],
   },

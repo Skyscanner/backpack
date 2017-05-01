@@ -45,7 +45,8 @@ const VerticalRhythmPage = () => <DocsPageBuilder
     </BpkParagraph>,
     <BpkHeading level="h2">Exceptions</BpkHeading>,
     <BpkParagraph>
-      In general, vertical rhythm is not an optional thing, everything must adhere to it. However, there are some cases where this proves
+      In general, vertical rhythm is not an optional thing, everything must adhere to it. However, there are some cases
+      where this proves
       more difficult. In particular when working with third party components. Where we don’t have fine-grained control
       to fully style these using Backpack values, we ensure that these components are placed within a container which
       does. This ensures the rest of the page remains unaffected.

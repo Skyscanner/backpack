@@ -1,6 +1,5 @@
 import React from 'react';
 import BpkParagraph from 'bpk-component-paragraph';
-import BpkHeading from 'bpk-component-heading';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const UnitsPage = () => <DocsPageBuilder
