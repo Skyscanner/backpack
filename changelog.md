@@ -2,12 +2,20 @@
 
 ## UNRELEASED
 
+_Nothing yet_
+
+## 2017-05-01 - More flexible calendar with higher-order components
+
 **Changed:**
-- bpk-component-calendar:
+- bpk-component-datepicker: 5.0.37 => 6.0.0
+- bpk-component-calendar: 2.0.26 => 3.0.0
   - `onMonthChange` callback added
   - BpkCalendarView has been replaced by the higher-order component `composeCalendar`
   - Higher-order component `withCalendarState` has been added to provide focus management and keyboard input
-  - Renamed the `date` prop to `selectedDate`
+  - Props deprecation
+    - Renamed the `date` prop to `selectedDate`; `date` will be removed in future versions
+    - Deprecating `dateModifiers`; if needed, the date component can be wrapped in a HOC to add this feature;
+      `dateModifiers` will be removed in future versions
 
 ## 2017-05-01 - White labels for radio buttons and checkboxes
 
