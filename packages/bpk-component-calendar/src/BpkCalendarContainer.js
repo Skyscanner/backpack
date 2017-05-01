@@ -27,9 +27,12 @@ const withCalendarState = (Calendar) => {
       const minDate = startOfDay(this.props.minDate);
       const maxDate = startOfDay(this.props.maxDate);
 
+      // `date` is to be DEPRECATED in favour of `selectedDate`
+      const rawSelectedDate = this.props.selectedDate || this.props.date;
+
       this.state = {
         preventKeyboardFocus: true,
-        focusedDate: this.props.date ? dateToBoundaries(this.props.date, minDate, maxDate)
+        focusedDate: rawSelectedDate ? dateToBoundaries(rawSelectedDate, minDate, maxDate)
                                      : minDate,
       };
 
@@ -131,10 +134,12 @@ const withCalendarState = (Calendar) => {
       } = this.props;
 
       delete calendarProps.onDateSelect;
+      delete calendarProps.onMonthChange;
 
       const sanitisedMinDate = startOfDay(minDate);
       const sanitisedMaxDate = startOfDay(maxDate);
 
+      // `date` is to be DEPRECATED in favour of `selectedDate`
       const rawSelectedDate = selectedDate || date;
 
       const sanitisedSelectedDate = rawSelectedDate
@@ -149,6 +154,7 @@ const withCalendarState = (Calendar) => {
         sanitisedMinDate,
         sanitisedMaxDate,
       );
+      const month = startOfMonth(sanitisedFocusedDate);
 
       return (
         <Calendar
@@ -157,6 +163,7 @@ const withCalendarState = (Calendar) => {
           onDateKeyDown={this.handleDateKeyDown}
           onMonthChange={this.handleMonthChange}
 
+          month={month}
           preventKeyboardFocus={this.state.preventKeyboardFocus}
           selectedDate={sanitisedSelectedDate}
           focusedDate={sanitisedFocusedDate}

@@ -9,7 +9,7 @@ exports[`composeCalendar should compose a nav, header, grid and date component c
     maxDate={2010-03-15T00:00:00.000Z}
     minDate={2010-02-15T00:00:00.000Z}
     month={2010-02-15T00:00:00.000Z}
-    onChangeMonth={[Function]} />
+    onMonthChange={[Function]} />
   <Header
     daysOfWeek={
       Array [
@@ -137,7 +137,7 @@ exports[`composeCalendar should render with custom className prop correctly 1`] 
     maxDate={2010-03-15T00:00:00.000Z}
     minDate={2010-02-15T00:00:00.000Z}
     month={2010-02-15T00:00:00.000Z}
-    onChangeMonth={[Function]} />
+    onMonthChange={[Function]} />
   <Header
     daysOfWeek={
       Array [

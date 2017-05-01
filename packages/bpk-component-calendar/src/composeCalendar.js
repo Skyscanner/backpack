@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 
 import CustomPropTypes from './custom-proptypes';
-import { startOfMonth } from './date-utils';
 import './bpk-calendar.scss';
 
 const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
@@ -21,6 +20,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       markToday,
       maxDate,
       minDate,
+      month,
       onDateClick,
       onDateKeyDown,
       onMonthChange,
@@ -31,7 +31,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     } = props;
 
     if (className) { classNames.push(className); }
-    const month = focusedDate ? startOfMonth(focusedDate) : null;
 
     return (
       <div className={classNames.join(' ')}>
@@ -87,8 +86,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     id: PropTypes.string.isRequired,
     maxDate: PropTypes.instanceOf(Date).isRequired,
     minDate: PropTypes.instanceOf(Date).isRequired,
-    showWeekendSeparator: PropTypes.bool.isRequired,
-    weekStartsOn: PropTypes.number.isRequired,
+    month: PropTypes.instanceOf(Date).isRequired,
     // Optional
     className: PropTypes.string,
     dateModifiers: CustomPropTypes.DateModifiers,
@@ -100,6 +98,8 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     onDateKeyDown: PropTypes.func,
     preventKeyboardFocus: PropTypes.bool,
     selectedDate: PropTypes.instanceOf(Date),
+    showWeekendSeparator: PropTypes.bool,
+    weekStartsOn: PropTypes.number,
   };
 
   BpkCalendar.defaultProps = {
