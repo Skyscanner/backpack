@@ -1,0 +1,46 @@
+@import '~bpk-mixins/index';
+
+.bpkdocs-statefulness-page {
+  &__states {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include bpk-breakpoint-tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__state-example {
+    width: 20%;
+    padding: $bpk-spacing-sm;
+
+    @include bpk-breakpoint-tablet {
+      width: 100%;
+    }
+  }
+
+  &__state-normal {
+    color: $bpk-color-blue-500;
+
+    @include bpk-border-sm($bpk-color-gray-50);
+  }
+
+  &__state-hover {
+    background-color: $bpk-color-gray-50;
+  }
+
+  &__state-active {
+    background-color: $bpk-color-gray-100;
+    color: $bpk-color-gray-900;
+  }
+
+  &__state-focussed {
+    @include bpk-border-xl($bpk-color-blue-700);
+  }
+
+  &__state-selected {
+    background-color: $bpk-color-blue-700;
+    color: $bpk-color-white;
+  }
+}

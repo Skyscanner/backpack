@@ -7,12 +7,10 @@ const UnitsPage = () => <DocsPageBuilder
   title="Units"
   blurb={[
     <BpkParagraph>
-      Rems are used as an alternative to pixels throughout Backpack’s component library. Using rems brings many
-      benefits, in particular for accessibility.
-    </BpkParagraph>,
-    <BpkParagraph>
-      By harnessing the power of rems, we are able to ensure that the entire UI scales beautifully in line with the
-      user’s base font size.
+      Rems are used as an alternative to pixels throughout Backpack’s component library. Rems are a way of setting
+      font-sizes based on the font-size of the root HTML element. Using rems brings many
+      benefits, in particular when thinking about accessibility since they allow you to quickly scale the entire
+      UI beautifully by changing the root font-size.
     </BpkParagraph>,
   ]}
 />;
