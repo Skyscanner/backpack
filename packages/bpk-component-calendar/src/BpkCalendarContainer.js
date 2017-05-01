@@ -36,7 +36,7 @@ const withCalendarState = (Calendar) => {
       this.handleDateSelect = this.handleDateSelect.bind(this);
       this.handleDateFocus = this.handleDateFocus.bind(this);
       this.handleDateKeyDown = this.handleDateKeyDown.bind(this);
-      this.handleChangeMonth = this.handleChangeMonth.bind(this);
+      this.handleMonthChange = this.handleMonthChange.bind(this);
     }
 
     handleDateFocus(date) {

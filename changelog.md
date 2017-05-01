@@ -2,7 +2,14 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Changed:**
+- bpk-component-calendar:
+  - `onMonthChange` callback added
+  - Refactored internal components:
+    - BpkCalendarContainer replaces BpkCalendar and is the default export
+    - BpkCalendar replaces BpkCalendarView
+  - New higher-order components `withCalendarState` and `composeCalendar` allow you to create your own
+    calendar from of-the-shelf and custom components
 
 ## 2017-05-01 - New form validation & fieldset components
 

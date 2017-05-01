@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import isWeekend from 'date-fns/is_weekend';
 import addMonths from 'date-fns/add_months';
 import {
   formatMonth,

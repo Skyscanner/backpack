@@ -79,20 +79,17 @@ class App extends Component {
 | formatDateFull        | func                 | true     | -                |
 | formatMonth           | func                 | true     | -                |
 | id                    | string               | true     | -                |
-| className             | string               | false    | -                |
-
+| className             | string               | false    | null             |
 | dateModifiers         | object               | false    | {}               |
 | markOutsideDays       | bool                 | false    | true             |
 | markToday             | bool                 | false    | true             |
-
 | maxDate               | Date                 | false    | new Date() + 1yr |
 | minDate               | Date                 | false    | new Date()       |
 | onDateSelect          | func                 | false    | null             |
 | onMonthChange         | func                 | false    | null             |
-
 | showWeekendSeparator  | bool                 | false    | true             |
-| weekStartsOn          | number               | false    | 1                |
 | selectedDate          | Date                 | false    | null             |
+| weekStartsOn          | number               | false    | 1                |
 
 Some of the more complex props and props for sub-components are detailed below.
 
