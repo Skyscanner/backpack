@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-banner-alert --save
+npm install bpk-component-banner-alert --save-dev
 ```
 
 ## Usage

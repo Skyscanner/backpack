@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-close-button --save
+npm install bpk-component-close-button --save-dev
 ```
 
 ## Usage

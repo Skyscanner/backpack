@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-stylesheets --save
+npm install bpk-stylesheets --save-dev
 ```
 
 ## Usage

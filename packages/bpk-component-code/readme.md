@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-code --save
+npm install bpk-component-code --save-dev
 ```
 
 ## Usage

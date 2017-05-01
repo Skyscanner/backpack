@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-heading --save
+npm install bpk-component-heading --save-dev
 ```
 
 ## Usage

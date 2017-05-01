@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-grid-toggle --save
+npm install bpk-component-grid-toggle --save-dev
 ```
 
 ## Usage
@@ -23,4 +23,4 @@ export default () => (
 
 | Property         | PropType | Required | Default Value |
 | ---------------- | -------- | -------- | ------------- |
-| targetContainer  | string   | false    | 'body'        |       
+| targetContainer  | string   | false    | 'body'        |

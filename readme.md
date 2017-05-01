@@ -13,7 +13,7 @@ http://backpack.prod.aws.skyscnr.com/
 ### Installing packages
 
 ```sh
-npm install [package-name] --save
+npm install [package-name] --save-dev
 ```
 
 ## List of packages

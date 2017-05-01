@@ -5,5 +5,5 @@
 ## Installation
 
 ```sh
-npm install bpk-svgs --save
+npm install bpk-svgs --save-dev
 ```

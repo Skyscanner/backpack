@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-datepicker --save
+npm install bpk-component-datepicker --save-dev
 ```
 
 ## Usage

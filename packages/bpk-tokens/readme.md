@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-tokens --save
+npm install bpk-tokens --save-dev
 ```
 
 ## Usage

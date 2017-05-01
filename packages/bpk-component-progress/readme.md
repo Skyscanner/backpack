@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-progress --save
+npm install bpk-component-progress --save-dev
 ```
 
 ## Usage

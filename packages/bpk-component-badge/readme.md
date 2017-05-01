@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-badge --save
+npm install bpk-component-badge --save-dev
 ```
 
 ## Usage

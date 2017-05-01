@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-tether --save
+npm install bpk-tether --save-dev
 ```
 
 ## Tether Wrapper

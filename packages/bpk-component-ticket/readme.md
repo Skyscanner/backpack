@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-ticket --save
+npm install bpk-component-ticket --save-dev
 ```
 
 ## Usage

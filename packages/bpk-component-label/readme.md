@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-label --save
+npm install bpk-component-label --save-dev
 ```
 
 ## Usage

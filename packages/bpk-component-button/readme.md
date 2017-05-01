@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-button --save
+npm install bpk-component-button --save-dev
 ```
 
 ## Usage

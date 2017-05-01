@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-content-container --save
+npm install bpk-component-content-container --save-dev
 ```
 
 ## Usage

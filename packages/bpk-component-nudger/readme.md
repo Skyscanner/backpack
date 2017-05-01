@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-nudger --save
+npm install bpk-component-nudger --save-dev
 ```
 
 ## Usage

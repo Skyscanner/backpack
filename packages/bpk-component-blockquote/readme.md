@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-blockquote --save
+npm install bpk-component-blockquote --save-dev
 ```
 
 ## Usage

@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-accordion --save
+npm install bpk-component-accordion --save-dev
 ```
 
 ## Usage

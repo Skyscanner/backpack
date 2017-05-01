@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-grid --save
+npm install bpk-component-grid --save-dev
 ```
 
 ## Usage

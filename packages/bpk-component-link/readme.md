@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-link --save
+npm install bpk-component-link --save-dev
 ```
 
 ## Usage

@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-react-utils --save
+npm install bpk-react-utils --save-dev
 ```
 
 ## Portal.js

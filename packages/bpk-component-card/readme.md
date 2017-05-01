@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-card --save
+npm install bpk-component-card --save-dev
 ```
 
 ## Usage

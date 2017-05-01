@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-icon --save
+npm install bpk-component-icon --save-dev
 ```
 
 ## Basic usage

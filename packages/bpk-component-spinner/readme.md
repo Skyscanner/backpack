@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-spinner --save
+npm install bpk-component-spinner --save-dev
 ```
 
 ## Usage

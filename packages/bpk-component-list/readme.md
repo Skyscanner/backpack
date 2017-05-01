@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npm install bpk-component-list --save
+npm install bpk-component-list --save-dev
 ```
 
 ## Usage
