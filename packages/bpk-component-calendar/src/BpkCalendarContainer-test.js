@@ -41,7 +41,7 @@ describe('BpkCalendar', () => {
 
     expect(grid.prop('month')).toEqual(new Date(2010, 1, 1));
 
-    nav.prop('onChangeMonth')(new Date(2010, 2, 1));
+    nav.prop('onMonthChange')(new Date(2010, 2, 1));
     expect(grid.prop('month')).toEqual(new Date(2010, 2, 1));
   });
 

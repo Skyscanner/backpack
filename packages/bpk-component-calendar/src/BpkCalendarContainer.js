@@ -77,7 +77,7 @@ const withCalendarState = (Calendar) => {
       }
     }
 
-    handleChangeMonth(month) {
+    handleMonthChange(month) {
       this.handleDateFocus(setMonthYear(this.state.focusedDate, month.getMonth(), month.getFullYear()));
     }
 
@@ -125,6 +125,8 @@ const withCalendarState = (Calendar) => {
       const {
         minDate,
         maxDate,
+        date,
+        selectedDate,
         ...calendarProps
       } = this.props;
 
@@ -133,21 +135,31 @@ const withCalendarState = (Calendar) => {
       const sanitisedMinDate = startOfDay(minDate);
       const sanitisedMaxDate = startOfDay(maxDate);
 
-      const selectedDate = this.props.date ? dateToBoundaries(this.props.date, sanitisedMinDate, sanitisedMaxDate)
-                                           : null;
-      const focusedDate = dateToBoundaries(this.state.focusedDate, sanitisedMinDate, sanitisedMaxDate);
+      const rawSelectedDate = selectedDate || date;
+
+      const sanitisedSelectedDate = rawSelectedDate
+        ? dateToBoundaries(
+            rawSelectedDate,
+            sanitisedMinDate,
+            sanitisedMaxDate,
+          )
+        : null;
+      const sanitisedFocusedDate = dateToBoundaries(
+        this.state.focusedDate,
+        sanitisedMinDate,
+        sanitisedMaxDate,
+      );
 
       return (
         <Calendar
           onDateClick={this.handleDateSelect}
           onDateFocus={this.handleDateFocus}
           onDateKeyDown={this.handleDateKeyDown}
-          onChangeMonth={this.handleChangeMonth}
+          onMonthChange={this.handleMonthChange}
 
-          month={startOfMonth(focusedDate)}
           preventKeyboardFocus={this.state.preventKeyboardFocus}
-          selectedDate={selectedDate}
-          focusedDate={focusedDate}
+          selectedDate={sanitisedSelectedDate}
+          focusedDate={sanitisedFocusedDate}
 
           {...calendarProps}
 
@@ -159,11 +171,13 @@ const withCalendarState = (Calendar) => {
   }
 
   BpkCalendarContainer.propTypes = {
+    // `date` is to be DEPRECATED in favour of `selectedDate`
     date: PropTypes.instanceOf(Date),
     maxDate: PropTypes.instanceOf(Date),
     minDate: PropTypes.instanceOf(Date),
     onDateSelect: PropTypes.func,
     onMonthChange: PropTypes.func,
+    selectedDate: PropTypes.instanceOf(Date),
   };
 
   BpkCalendarContainer.defaultProps = {
@@ -172,6 +186,7 @@ const withCalendarState = (Calendar) => {
     minDate: new Date(),
     onDateSelect: null,
     onMonthChange: null,
+    selectedDate: null,
   };
 
   return BpkCalendarContainer;

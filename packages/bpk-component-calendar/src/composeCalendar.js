@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import CustomPropTypes from './custom-proptypes';
+import { startOfMonth } from './date-utils';
 import './bpk-calendar.scss';
 
 const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
@@ -9,27 +10,28 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
 
     const {
       changeMonthLabel,
+      className,
+      dateModifiers,
+      daysOfWeek,
+      focusedDate,
+      formatDateFull,
+      formatMonth,
+      id,
+      markOutsideDays,
+      markToday,
       maxDate,
       minDate,
-      month,
-      onChangeMonth,
-      id,
-      formatMonth,
-      daysOfWeek,
-      weekStartsOn,
-      dateModifiers,
-      formatDateFull,
       onDateClick,
       onDateKeyDown,
+      onMonthChange,
       preventKeyboardFocus,
-      showWeekendSeparator,
-      focusedDate,
-      markToday,
-      markOutsideDays,
       selectedDate,
+      showWeekendSeparator,
+      weekStartsOn,
     } = props;
 
-    if (props.className) { classNames.push(props.className); }
+    if (className) { classNames.push(className); }
+    const month = focusedDate ? startOfMonth(focusedDate) : null;
 
     return (
       <div className={classNames.join(' ')}>
@@ -42,7 +44,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
             maxDate={maxDate}
             minDate={minDate}
             month={month}
-            onChangeMonth={onChangeMonth}
+            onMonthChange={onMonthChange}
           />
         )}
         { GridHeader && (
@@ -85,7 +87,6 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     id: PropTypes.string.isRequired,
     maxDate: PropTypes.instanceOf(Date).isRequired,
     minDate: PropTypes.instanceOf(Date).isRequired,
-    month: PropTypes.instanceOf(Date).isRequired,
     showWeekendSeparator: PropTypes.bool.isRequired,
     weekStartsOn: PropTypes.number.isRequired,
     // Optional
@@ -94,7 +95,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     focusedDate: PropTypes.instanceOf(Date),
     markOutsideDays: PropTypes.bool,
     markToday: PropTypes.bool,
-    onChangeMonth: PropTypes.func,
+    onMonthChange: PropTypes.func,
     onDateClick: PropTypes.func,
     onDateKeyDown: PropTypes.func,
     preventKeyboardFocus: PropTypes.bool,
@@ -107,7 +108,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     focusedDate: null,
     markOutsideDays: true,
     markToday: true,
-    onChangeMonth: () => null,
+    onMonthChange: () => null,
     onDateClick: () => null,
     onDateKeyDown: () => null,
     preventKeyboardFocus: false,

@@ -42,7 +42,7 @@ class CalendarNavContainer extends Component {
         month={this.state.month}
         minDate={new Date()}
         maxDate={addMonths(new Date(), 12)}
-        onChangeMonth={this.onChange}
+        onMonthChange={this.onChange}
         formatMonth={formatMonth}
         id={this.props.id}
       />

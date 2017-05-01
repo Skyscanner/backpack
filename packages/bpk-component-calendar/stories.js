@@ -53,7 +53,7 @@ storiesOf('bpk-component-calendar', module)
     <BpkCalendarNav
       month={new Date()}
       changeMonthLabel="Change month"
-      onChangeMonth={action('Changed month')}
+      onMonthChange={action('Changed month')}
       minDate={new Date()}
       maxDate={addMonths(new Date(), 12)}
       formatMonth={formatMonth}
@@ -169,32 +169,6 @@ storiesOf('bpk-component-calendar', module)
       markOutsideDays={false}
     />
   ))
-  .add('Calendar -  Custom date component', () => {
-    const MyCustomDate = (props) => {
-      const cx = {
-        backgroundColor: 'rgb(255, 84, 82)',
-        width: '50%',
-        height: '50%',
-        borderRadius: '5rem',
-        margin: '25%',
-      };
-      if (isWeekend(props.date)) { cx.backgroundColor = 'rgb(0, 215, 117)'; }
-      return <div style={cx} />;
-    };
-    MyCustomDate.propTypes = {
-      date: React.PropTypes.instanceOf(Date).isRequired,
-    };
-    return (
-      <CalendarContainer
-        id="myCalendar"
-        formatMonth={formatMonth}
-        formatDateFull={formatDateFull}
-        daysOfWeek={weekDays}
-        changeMonthLabel="Change month"
-        DateComponent={MyCustomDate}
-      />
-    );
-  })
   .add('Custom composed calendar', () => (
     <MonthViewCalendar />
   ));

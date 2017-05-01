@@ -40,7 +40,7 @@ const prices = [
 
 const MyCalendarNav = ({
   month,
-  onChangeMonth,
+  onMonthChange,
   direction,
 }) => (
   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -48,11 +48,11 @@ const MyCalendarNav = ({
     <div>
       <BpkButton
         iconOnly
-        onClick={() => onChangeMonth(addMonths(month, -1))}
+        onClick={() => onMonthChange(addMonths(month, -1))}
       ><LeftIcon fill="white" /></BpkButton>&nbsp;
       <BpkButton
         iconOnly
-        onClick={() => onChangeMonth(addMonths(month, 1))}
+        onClick={() => onMonthChange(addMonths(month, 1))}
       ><RightIcon fill="white" /></BpkButton>
     </div>
   </div>
