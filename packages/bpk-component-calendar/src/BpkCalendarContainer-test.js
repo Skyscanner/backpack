@@ -114,40 +114,40 @@ describe('BpkCalendarContainer', () => {
 
     expect(calendar.state('focusedDate')).toEqual(origin);
 
-    // calendar.instance().handleDateKeyDown({ key: 'S', preventDefault });
-    // expect(calendar.state('focusedDate')).toEqual(origin);
-    // expect(preventDefault.mock.calls.length).toEqual(0);
-    //
-    // calendar.instance().handleDateKeyDown({ key: 'ArrowRight', preventDefault });
-    // expect(calendar.state('focusedDate')).toEqual(addDays(origin, 1));
-    // expect(preventDefault.mock.calls.length).toEqual(1);
-    //
-    // calendar.instance().handleDateKeyDown({ key: 'ArrowDown', preventDefault });
-    // expect(calendar.state('focusedDate')).toEqual(addDays(origin, 8));
-    // expect(preventDefault.mock.calls.length).toEqual(2);
-    //
-    // calendar.instance().handleDateKeyDown({ key: 'ArrowLeft', preventDefault });
-    // expect(calendar.state('focusedDate')).toEqual(addDays(origin, 7));
-    // expect(preventDefault.mock.calls.length).toEqual(3);
-    //
-    // calendar.instance().handleDateKeyDown({ key: 'ArrowUp', preventDefault });
-    // expect(calendar.state('focusedDate')).toEqual(origin);
-    // expect(preventDefault.mock.calls.length).toEqual(4);
-    //
-    // calendar.instance().handleDateKeyDown({ key: 'End', preventDefault });
-    // expect(calendar.state('focusedDate')).toEqual(addDays(origin, 14));
-    // expect(preventDefault.mock.calls.length).toEqual(5);
-    // 
-    // calendar.instance().handleDateKeyDown({ key: 'Home', preventDefault });
-    // expect(calendar.state('focusedDate')).toEqual(origin);
-    // expect(preventDefault.mock.calls.length).toEqual(6);
-    //
-    // calendar.instance().handleDateKeyDown({ key: 'PageDown', preventDefault });
-    // expect(calendar.state('focusedDate')).toEqual(addDays(origin, 14));
-    // expect(preventDefault.mock.calls.length).toEqual(7);
-    //
-    // calendar.instance().handleDateKeyDown({ key: 'PageUp', preventDefault });
-    // expect(calendar.state('focusedDate')).toEqual(addDays(origin, -14));
-    // expect(preventDefault.mock.calls.length).toEqual(8);
+    calendar.instance().handleDateKeyDown({ key: 'S', preventDefault });
+    expect(calendar.state('focusedDate')).toEqual(origin);
+    expect(preventDefault.mock.calls.length).toEqual(0);
+
+    calendar.instance().handleDateKeyDown({ key: 'ArrowRight', preventDefault });
+    expect(calendar.state('focusedDate')).toEqual(addDays(origin, 1));
+    expect(preventDefault.mock.calls.length).toEqual(1);
+
+    calendar.instance().handleDateKeyDown({ key: 'ArrowDown', preventDefault });
+    expect(calendar.state('focusedDate')).toEqual(addDays(origin, 8));
+    expect(preventDefault.mock.calls.length).toEqual(2);
+
+    calendar.instance().handleDateKeyDown({ key: 'ArrowLeft', preventDefault });
+    expect(calendar.state('focusedDate')).toEqual(addDays(origin, 7));
+    expect(preventDefault.mock.calls.length).toEqual(3);
+
+    calendar.instance().handleDateKeyDown({ key: 'ArrowUp', preventDefault });
+    expect(calendar.state('focusedDate')).toEqual(origin);
+    expect(preventDefault.mock.calls.length).toEqual(4);
+
+    calendar.instance().handleDateKeyDown({ key: 'End', preventDefault });
+    expect(calendar.state('focusedDate')).toEqual(addDays(origin, 14));
+    expect(preventDefault.mock.calls.length).toEqual(5);
+
+    calendar.instance().handleDateKeyDown({ key: 'Home', preventDefault });
+    expect(calendar.state('focusedDate')).toEqual(origin);
+    expect(preventDefault.mock.calls.length).toEqual(6);
+
+    calendar.instance().handleDateKeyDown({ key: 'PageDown', preventDefault });
+    expect(calendar.state('focusedDate')).toEqual(addDays(origin, 14));
+    expect(preventDefault.mock.calls.length).toEqual(7);
+
+    calendar.instance().handleDateKeyDown({ key: 'PageUp', preventDefault });
+    expect(calendar.state('focusedDate')).toEqual(addDays(origin, -14));
+    expect(preventDefault.mock.calls.length).toEqual(8);
   });
 });
