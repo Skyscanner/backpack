@@ -65,3 +65,16 @@ exports[`BpkRadio should render correctly with value attribute 1`] = `
   Direct
 </label>
 `;
+
+exports[`BpkRadio should render correctly with white attribute 1`] = `
+<label
+  className="bpk-radio bpk-radio--white">
+  <input
+    className="bpk-radio__input"
+    disabled={false}
+    name="radio"
+    type="radio" />
+   
+  Direct
+</label>
+`;

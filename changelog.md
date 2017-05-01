@@ -28,6 +28,10 @@ _Nothing yet..._
 - bpk-component-form-validation: 0.0.0 => 0.0.1
   - New fieldset component (http://backpack.prod.aws.skyscnr.com/components/molecules/fieldset)
 
+- bpk-component-checkbox:
+- bpk-component-radio:
+  - Radio buttons and checkboxes can now have white labels
+
 **Fixed:**
 - bpk-component-input: 3.0.9 => 3.0.10
 - bpk-component-select: 2.0.9 => 2.0.10

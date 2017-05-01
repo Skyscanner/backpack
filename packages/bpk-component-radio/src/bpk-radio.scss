@@ -3,6 +3,10 @@
 .bpk-radio {
   @include bpk-radio;
 
+  &--white {
+    @include bpk-radio--white;
+  }
+
   &--disabled {
     @include bpk-radio--disabled;
   }

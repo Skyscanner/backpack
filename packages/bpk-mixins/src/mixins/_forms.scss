@@ -90,7 +90,7 @@
 
 @mixin bpk-input--invalid {
   padding-right: $bpk-spacing-base;
-  background: $bpk-color-white url(map-get($bpk-icons-sm, information-circle-red-500)) no-repeat right $bpk-spacing-sm center;
+  background: $bpk-color-white url(map-get($bpk-icons-sm, exclamation-circle-red-500)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
 
   @include bpk-rtl {
@@ -355,6 +355,20 @@
   display: inline-block;
 }
 
+/// White label checkbox. Modifies the bpk-checkbox mixin.
+///
+/// @require {mixin} bpk-checkbox
+///
+/// @example scss
+///   .selector {
+///     @include bpk-checkbox();
+///     @include bpk-checkbox--white();
+///   }
+
+@mixin bpk-checkbox--white {
+  color: $bpk-color-white;
+}
+
 /// Disabled form checkbox. Modifies the bpk-checkbox mixin.
 ///
 /// @require {mixin} bpk-checkbox
@@ -430,6 +444,20 @@
 @mixin bpk-radio--disabled {
   color: $bpk-color-gray-300;
   cursor: not-allowed;
+}
+
+/// White label radio button. Modifies the bpk-radio mixin.
+///
+/// @require {mixin} bpk-radio
+///
+/// @example scss
+///   .selector {
+///     @include bpk-radio();
+///     @include bpk-radio--white();
+///   }
+
+@mixin bpk-radio--white {
+  color: $bpk-color-white;
 }
 
 /// Form radio input.

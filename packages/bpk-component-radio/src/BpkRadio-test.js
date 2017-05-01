@@ -46,6 +46,17 @@ describe('BpkRadio', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with white attribute', () => {
+    const tree = renderer.create(
+      <BpkRadio
+        name="radio"
+        label="Direct"
+        white
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with value attribute', () => {
     const tree = renderer.create(
       <BpkRadio

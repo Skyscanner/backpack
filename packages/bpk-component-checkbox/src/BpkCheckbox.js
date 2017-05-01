@@ -4,8 +4,9 @@ import './bpk-checkbox.scss';
 
 const BpkCheckbox = (props) => {
   const classNames = ['bpk-checkbox'];
-  const { name, label, disabled, className, ...rest } = props;
+  const { name, label, disabled, white, className, ...rest } = props;
 
+  if (white) { classNames.push('bpk-checkbox--white'); }
   if (disabled) { classNames.push('bpk-checkbox--disabled'); }
   if (className) { classNames.push(className); }
 
@@ -33,11 +34,13 @@ BpkCheckbox.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
+  white: PropTypes.bool,
   className: PropTypes.string,
 };
 
 BpkCheckbox.defaultProps = {
   disabled: false,
+  white: false,
   className: null,
 };
 

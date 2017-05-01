@@ -4,8 +4,9 @@ import './bpk-radio.scss';
 
 const BpkRadio = (props) => {
   const classNames = ['bpk-radio'];
-  const { name, label, disabled, className, ...rest } = props;
+  const { name, label, disabled, white, className, ...rest } = props;
 
+  if (white) { classNames.push('bpk-radio--white'); }
   if (disabled) { classNames.push('bpk-radio--disabled'); }
   if (className) { classNames.push(className); }
 
@@ -33,11 +34,13 @@ BpkRadio.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
+  white: PropTypes.bool,
   className: PropTypes.string,
 };
 
 BpkRadio.defaultProps = {
   disabled: false,
+  white: false,
   className: null,
 };
 

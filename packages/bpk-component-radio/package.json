@@ -14,5 +14,8 @@
   },
   "dependencies": {
     "bpk-mixins": "^13.0.0"
+  },
+  "devDependencies": {
+    "bpk-tokens": "^21.0.0"
   }
 }
