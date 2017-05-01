@@ -9,7 +9,7 @@
   - Higher-order component `withCalendarState` has been added to provide focus management and keyboard input
   - Renamed the `date` prop to `selectedDate`
 
-## 2017-05-01 - New form validation & fieldset components
+## 2017-05-01 - White labels for radio buttons and checkboxes
 
 **Added:**
 - bpk-component-checkbox: 1.0.0 => 1.0.1

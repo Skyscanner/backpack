@@ -70,6 +70,84 @@ class App extends Component {
 }
 ```
 
+### Component structure
+
+A calendar is composed of four basic components: a month navigation, a grid header, a grid, and the date components.
+
+These components are all stateless and can be composed into a calendar using the `composeCalendar` higher-order component.
+
+Another higher-order component, `withCalendarState`, can be used to provide focus management and keyboard navigation.
+
+The default export of this package uses the following set of components:
+
+| Calendar component | Default                      |
+| ------------------ | ---------------------------- |
+| Month navigation   | BpkCalendarNav               |
+| Grid header        | BpkCalendarGridHeader        |
+| Grid               | TransitioningBpkCalendarGrid |
+| Date               | BpkCalendarDate              |
+
+Composition and state are implemented using the aforementioned higher-order components:
+
+```js
+withCalendarState(composeCalendar(
+  BpkCalendarNav,
+  BpkCalendarGridHeader,
+  TransitioningBpkCalendarGrid,
+  BpkCalendarDate,
+))
+```
+
+#### Building a custom calendar
+
+A custom calendar can be created by swapping out any default component for an alternative:
+
+```js
+composeCalendar(
+  MyNavigation,
+  MyHeader,
+  MyGrid,
+  MyDate,
+)
+```
+
+The navigation and header components are optional. If they are not needed, the arguments to `composeCalendar` should be set to `null`:
+
+```js
+composeCalendar(
+  null,
+  null,
+  MyGrid,
+  MyDate,
+)
+```
+
+In many cases, you might want to keep most of the components and replace only one or two:
+
+```js
+composeCalendar(
+  BpkCalendarNav,
+  BpkCalendarGridHeader,
+  BpkCalendarGrid,
+  MyDate,
+)
+```
+
+Finally, focus management and support for keyboard input can be added using `withCalendarState`:
+
+```js
+withCalendarState(composeCalendar(
+  BpkCalendarNav,
+  BpkCalendarGridHeader,
+  BpkCalendarGrid,
+  MyDate,
+))
+```
+
+> When implementing a replacement for any of the default calendar components, make sure it
+> implements the same API (props see below) and provides all the relevant accessibility
+> properties, such as ARIA attributes and `tabIndex`.
+
 ### Props
 
 | Property              | PropType             | Required | Default Value    |
@@ -80,7 +158,6 @@ class App extends Component {
 | formatMonth           | func                 | true     | -                |
 | id                    | string               | true     | -                |
 | className             | string               | false    | null             |
-| dateModifiers         | object               | false    | {}               |
 | markOutsideDays       | bool                 | false    | true             |
 | markToday             | bool                 | false    | true             |
 | maxDate               | Date                 | false    | new Date() + 1yr |
@@ -95,6 +172,9 @@ Some of the more complex props and props for sub-components are detailed below.
 
 #### BpkCalendarNav
 
+The BpkCalendarNav component is used to change the month that is being displayed by using
+buttons and a select box.
+
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
 | changeMonthLabel      | string               | true     | -                |
@@ -107,6 +187,10 @@ Some of the more complex props and props for sub-components are detailed below.
 
 #### BpkCalendarGridHeader
 
+The BpkCalendarGridHeader component displays the header of `BpkCalendarGrid`, listing
+the days of the week. This is needed as a separate component, as the header should stay
+in place while the rest of the grid transitions when changing months.
+
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
 | showWeekendSeparator  | bool                 | true     | -                |
@@ -116,6 +200,8 @@ Some of the more complex props and props for sub-components are detailed below.
 
 #### BpkCalendarGrid
 
+The BpkCalendarGrid component displays a month as a table.
+
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
 | DateComponent         | func                 | true     | -                |
@@ -123,7 +209,6 @@ Some of the more complex props and props for sub-components are detailed below.
 | formatDateFull        | func                 | true     | -                |
 | formatMonth           | func                 | true     | -                |
 | month                 | Date                 | true     | -                |
-| dateModifiers         | object               | false    | {}               |
 | focusedDate           | Date                 | false    | null             |
 | isKeyboardFocusable   | bool                 | false    | true             |
 | markOutsideDays       | bool                 | false    | true             |
@@ -139,7 +224,8 @@ Some of the more complex props and props for sub-components are detailed below.
 
 #### BpkCalendarDate
 
-The component used to render the content of a cell in the calendar grid. The following are passed as props:
+The BpkCalendarDate component is used to render the content of a cell
+(a single day) inside the calendar grid.
 
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
@@ -150,34 +236,11 @@ The component used to render the content of a cell in the calendar grid. The fol
 | isOutside             | bool                 | false    | false            |
 | isSelected            | bool                 | false    | false            |
 | isToday               | bool                 | false    | false            |
-| modifiers             | object               | false    | {}               |
 | onClick               | func                 | false    | null             |
 | onDateKeyDown         | func                 | false    | null             |
 | preventKeyboardFocus  | bool                 | false    | true             |
 
-If you want to create your own DateComponent, make sure to adhere to the following rules:
-
-- If you want the calendar to manage a "selected" state, make sure to apply the `onClick` handler.
-- If the user can interact with the cell, e.g. focus or select it, make sure it contains a semantically correct element, such as a button
-- If you want to keep the feature of keyboard navigation, make sure to apply the `onDateClick` handler and take a peek at `BpkCalendarDate.js` to see how keyboard focus should be dealt with with respect to `tabIndex` etc.
-- Don't forget to apply the relevant ARIA attributes for screenreader support
-
 #### Prop details
-
-##### dateModifiers
-
-An object of functions to be called on a date. If a function returns true, the `BpkCalendarDate` component attaches classes to the respective DOM node for purposes of styling.
-
-Example:
-
-```js
-const dateModifiers = {
-  'pubtime': date => isWeekend(date),
-  'tims-birthday': date => date.getDay() === 20 && date.getMonth() === 11,
-};
-```
-
-The classes attached to the node have the format of `bpk-calendar-date-modifier--${modifier}`, i.e. `bpk-calendar-date-modifier--pubtime`.
 
 ##### daysOfWeek
 
