@@ -75,35 +75,85 @@ class App extends Component {
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
 | changeMonthLabel      | string               | true     | -                |
-| date                  | Date                 | true     | -                |
 | daysOfWeek            | object               | true     | -                |
 | formatDateFull        | func                 | true     | -                |
 | formatMonth           | func                 | true     | -                |
 | id                    | string               | true     | -                |
-| className             | string               | false    | -                |
-| DateComponent         | func                 | false    | BpkCalendarDate  |
+| className             | string               | false    | null             |
 | dateModifiers         | object               | false    | {}               |
 | markOutsideDays       | bool                 | false    | true             |
 | markToday             | bool                 | false    | true             |
 | maxDate               | Date                 | false    | new Date() + 1yr |
 | minDate               | Date                 | false    | new Date()       |
 | onDateSelect          | func                 | false    | null             |
+| onMonthChange         | func                 | false    | null             |
+| showWeekendSeparator  | bool                 | false    | true             |
+| selectedDate          | Date                 | false    | null             |
+| weekStartsOn          | number               | false    | 1                |
+
+Some of the more complex props and props for sub-components are detailed below.
+
+#### BpkCalendarNav
+
+| Property              | PropType             | Required | Default Value    |
+| --------------------- | -------------------- | -------- | ---------------- |
+| changeMonthLabel      | string               | true     | -                |
+| formatMonth           | func                 | true     | -                |
+| id                    | string               | true     | -                |
+| maxDate               | Date                 | true     | -                |
+| minDate               | Date                 | true     | -                |
+| month                 | Date                 | true     | -                |
+| onMonthChange         | func                 | false    | null             |
+
+#### BpkCalendarGridHeader
+
+| Property              | PropType             | Required | Default Value    |
+| --------------------- | -------------------- | -------- | ---------------- |
+| showWeekendSeparator  | bool                 | true     | -                |
+| daysOfWeek            | object               | true     | -                |
+| weekStartsOn          | number               | true     | -                |
+| showWeekendSeparator  | bool                 | false    | false            |
+
+#### BpkCalendarGrid
+
+| Property              | PropType             | Required | Default Value    |
+| --------------------- | -------------------- | -------- | ---------------- |
+| DateComponent         | func                 | true     | -                |
+| daysOfWeek            | object               | true     | -                |
+| formatDateFull        | func                 | true     | -                |
+| formatMonth           | func                 | true     | -                |
+| month                 | Date                 | true     | -                |
+| dateModifiers         | object               | false    | {}               |
+| focusedDate           | Date                 | false    | null             |
+| isKeyboardFocusable   | bool                 | false    | true             |
+| markOutsideDays       | bool                 | false    | true             |
+| markToday             | bool                 | false    | true             |
+| maxDate               | Date                 | false    | new Date() + 1yr |
+| minDate               | Date                 | false    | new Date()       |
+| onDateClick           | func                 | false    | null             |
+| onDateKeyDown         | func                 | false    | null             |
+| preventKeyboardFocus  | bool                 | false    | false            |
+| selectedDate          | Date                 | false    | null             |
 | showWeekendSeparator  | bool                 | false    | true             |
 | weekStartsOn          | number               | false    | 1                |
 
-Some of the more complex props are explained below.
-
-#### DateComponent
+#### BpkCalendarDate
 
 The component used to render the content of a cell in the calendar grid. The following are passed as props:
 
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
 | date                  | Date                 | true     | -                |
+| isBlocked             | bool                 | false    | false            |
+| isFocused             | bool                 | false    | false            |
+| isKeyboardFocusable   | bool                 | false    | true             |
+| isOutside             | bool                 | false    | false            |
+| isSelected            | bool                 | false    | false            |
+| isToday               | bool                 | false    | false            |
 | modifiers             | object               | false    | {}               |
 | onClick               | func                 | false    | null             |
 | onDateKeyDown         | func                 | false    | null             |
-| focused               | bool                 | false    | false            |
+| preventKeyboardFocus  | bool                 | false    | true             |
 
 If you want to create your own DateComponent, make sure to adhere to the following rules:
 
@@ -112,7 +162,9 @@ If you want to create your own DateComponent, make sure to adhere to the followi
 - If you want to keep the feature of keyboard navigation, make sure to apply the `onDateClick` handler and take a peek at `BpkCalendarDate.js` to see how keyboard focus should be dealt with with respect to `tabIndex` etc.
 - Don't forget to apply the relevant ARIA attributes for screenreader support
 
-#### dateModifiers
+#### Prop details
+
+##### dateModifiers
 
 An object of functions to be called on a date. If a function returns true, the `BpkCalendarDate` component attaches classes to the respective DOM node for purposes of styling.
 
@@ -127,7 +179,7 @@ const dateModifiers = {
 
 The classes attached to the node have the format of `bpk-calendar-date-modifier--${modifier}`, i.e. `bpk-calendar-date-modifier--pubtime`.
 
-#### daysOfWeek
+##### daysOfWeek
 
 An array of objects describing the days of the week:
 
@@ -155,7 +207,7 @@ An array of objects describing the days of the week:
 ]
 ```
 
-#### formatDateFull
+##### formatDateFull
 
 A function to format a full, human-readable date, for example: "Friday, 13th January 2017":
 
@@ -165,7 +217,7 @@ import format from 'date-fns/format';
 const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
 ```
 
-#### formatMonth
+##### formatMonth
 
 A function to format a human-readable month, for example: "January 2017":
 
@@ -177,6 +229,6 @@ import format from 'date-fns/format';
 const formatMonth = date => format(date, 'MMMM YYYY');
 ```
 
-#### weekStartsOn
+##### weekStartsOn
 
 First day of the week. 0 = Sunday, 1 = Monday, ..., 6 = Saturday.

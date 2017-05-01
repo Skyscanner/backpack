@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
-import BpkCalendar from './BpkCalendar';
+import BpkCalendarContainer from './BpkCalendarContainer';
 import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 import { addDays } from './date-utils';
 
@@ -9,9 +9,9 @@ const createNodeMock = () => ({
   focus: () => null,
 });
 
-describe('BpkCalendar', () => {
+describe('BpkCalendarContainer', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkCalendar
+    const tree = renderer.create(<BpkCalendarContainer
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
@@ -19,13 +19,13 @@ describe('BpkCalendar', () => {
       id="myCalendar"
       minDate={new Date(2010, 1, 15)}
       maxDate={new Date(2010, 2, 15)}
-      date={new Date(2010, 1, 15)}
+      selectedDate={new Date(2010, 1, 15)}
     />, { createNodeMock }).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should change the month', () => {
-    const calendar = mount(<BpkCalendar
+    const calendar = mount(<BpkCalendarContainer
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
@@ -33,7 +33,7 @@ describe('BpkCalendar', () => {
       id="myCalendar"
       minDate={new Date(2010, 1, 15)}
       maxDate={new Date(2010, 2, 15)}
-      date={new Date(2010, 1, 15)}
+      selectedDate={new Date(2010, 1, 15)}
     />);
 
     const grid = calendar.find('BpkCalendarGridTransition');
@@ -41,14 +41,14 @@ describe('BpkCalendar', () => {
 
     expect(grid.prop('month')).toEqual(new Date(2010, 1, 1));
 
-    nav.prop('onChangeMonth')(new Date(2010, 2, 1));
+    nav.prop('onMonthChange')(new Date(2010, 2, 1));
     expect(grid.prop('month')).toEqual(new Date(2010, 2, 1));
   });
 
   it('should call the onDateSelect callback', () => {
     const onDateSelect = jest.fn();
 
-    const calendar = mount(<BpkCalendar
+    const calendar = mount(<BpkCalendarContainer
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
@@ -56,7 +56,7 @@ describe('BpkCalendar', () => {
       id="myCalendar"
       minDate={new Date(2010, 1, 15)}
       maxDate={new Date(2010, 2, 15)}
-      date={new Date(2010, 1, 15)}
+      selectedDate={new Date(2010, 1, 15)}
       onDateSelect={onDateSelect}
     />);
 
@@ -72,10 +72,10 @@ describe('BpkCalendar', () => {
 
   it('should set state only once on date selection', () => {
     const setStateSpy = jest.fn();
-    const oldSetState = BpkCalendar.prototype.setState;
-    BpkCalendar.prototype.setState = setStateSpy;
+    const oldSetState = BpkCalendarContainer.prototype.setState;
+    BpkCalendarContainer.prototype.setState = setStateSpy;
 
-    const calendar = mount(<BpkCalendar
+    const calendar = mount(<BpkCalendarContainer
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
@@ -83,7 +83,7 @@ describe('BpkCalendar', () => {
       id="myCalendar"
       minDate={new Date(2010, 1, 15)}
       maxDate={new Date(2010, 2, 15)}
-      date={new Date(2010, 1, 15)}
+      selectedDate={new Date(2010, 1, 15)}
       onDateSelect={() => null}
     />);
 
@@ -94,14 +94,14 @@ describe('BpkCalendar', () => {
     grid.prop('onDateClick')(new Date(2010, 1, 20));
     expect(setStateSpy.mock.calls.length).toBe(1);
 
-    BpkCalendar.prototype.setState = oldSetState;
+    BpkCalendarContainer.prototype.setState = oldSetState;
   });
 
   it('should move focus on keyboard input', () => {
     const preventDefault = jest.fn();
     const origin = new Date(2010, 2, 1);
 
-    const calendar = mount(<BpkCalendar
+    const calendar = mount(<BpkCalendarContainer
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
@@ -109,7 +109,7 @@ describe('BpkCalendar', () => {
       id="myCalendar"
       minDate={new Date(2010, 1, 15)}
       maxDate={new Date(2010, 2, 15)}
-      date={origin}
+      selectedDate={origin}
     />);
 
     expect(calendar.state('focusedDate')).toEqual(origin);

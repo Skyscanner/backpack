@@ -1,4 +1,4 @@
-exports[`BpkCalendar should render correctly 1`] = `
+exports[`BpkCalendarContainer should render correctly 1`] = `
 <div
   className="bpk-calendar">
   <div

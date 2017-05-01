@@ -205,8 +205,6 @@ BpkCalendarGrid.propTypes = {
   formatDateFull: PropTypes.func.isRequired,
   formatMonth: PropTypes.func.isRequired,
   month: PropTypes.instanceOf(Date).isRequired,
-  showWeekendSeparator: PropTypes.bool.isRequired,
-  weekStartsOn: PropTypes.number.isRequired,
   // Optional
   dateModifiers: CustomPropTypes.DateModifiers,
   focusedDate: PropTypes.instanceOf(Date),
@@ -219,6 +217,8 @@ BpkCalendarGrid.propTypes = {
   onDateKeyDown: PropTypes.func,
   preventKeyboardFocus: PropTypes.bool,
   selectedDate: PropTypes.instanceOf(Date),
+  showWeekendSeparator: PropTypes.bool,
+  weekStartsOn: PropTypes.number,
 };
 
 BpkCalendarGrid.defaultProps = {
@@ -233,6 +233,8 @@ BpkCalendarGrid.defaultProps = {
   onDateKeyDown: null,
   preventKeyboardFocus: false,
   selectedDate: null,
+  showWeekendSeparator: true,
+  weekStartsOn: 1,
 };
 
 export default BpkCalendarGrid;

@@ -18,5 +18,8 @@
     "bpk-mixins": "^13.1.0",
     "bpk-tokens": "^21.1.0",
     "date-fns": "^1.17.0"
+  },
+  "devDependencies": {
+    "bpk-component-button": "^1.6.16"
   }
 }
