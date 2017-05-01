@@ -6,7 +6,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
 
-    @include bpk-breakpoint-tablet {
+    @include bpk-breakpoint-mobile {
       flex-direction: column;
     }
   }
@@ -15,7 +15,7 @@
     width: 20%;
     padding: $bpk-spacing-sm;
 
-    @include bpk-breakpoint-tablet {
+    @include bpk-breakpoint-mobile {
       width: 100%;
     }
   }
