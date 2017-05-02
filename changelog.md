@@ -4,6 +4,13 @@
 
 _Nothing yet_
 
+## 2017-05-02 - Fluid calendar
+
+**Added:**
+- bpk-component-calendar: 3.0.0 => 3.1.0
+  - Added prop `fixedWidth` (true by default). If set to `false`, the calendar will be of fluid width (does not
+    work with transitions!)
+
 ## 2017-05-01 - More flexible calendar with higher-order components
 
 **Changed:**
