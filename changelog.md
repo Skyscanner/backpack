@@ -2,7 +2,18 @@
 
 ## UNRELEASED
 
-_Nothing yet_
+**Added:**
+- bpk-component-autosuggest:
+  - `ref` callbacks now work:
+    ```
+    function storeInputReference(autosuggest) {
+      if (autosuggest !== null) {
+        this.input = autosuggest.input;
+      }
+    }
+
+    <BpkAutosuggest ref={storeInputReference} ... />
+    ```
 
 ## 2017-05-02 - Fluid calendar
 
