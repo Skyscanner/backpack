@@ -180,6 +180,7 @@ const withCalendarState = (Calendar) => {
   BpkCalendarContainer.propTypes = {
     // `date` is to be DEPRECATED in favour of `selectedDate`
     date: PropTypes.instanceOf(Date),
+    fixedWidth: PropTypes.bool,
     maxDate: PropTypes.instanceOf(Date),
     minDate: PropTypes.instanceOf(Date),
     onDateSelect: PropTypes.func,
@@ -189,6 +190,7 @@ const withCalendarState = (Calendar) => {
 
   BpkCalendarContainer.defaultProps = {
     date: null,
+    fixedWidth: true,
     maxDate: addMonths(new Date(), 12),
     minDate: new Date(),
     onDateSelect: null,

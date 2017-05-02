@@ -124,6 +124,7 @@ class MonthViewCalendar extends Component {
           daysOfWeek={weekDays}
           changeMonthLabel="Change month"
           date={this.state.departDate}
+          fixedWidth={false}
           onDateSelect={(departDate) => {
             this.setState({
               departDate,
@@ -131,6 +132,7 @@ class MonthViewCalendar extends Component {
             });
           }}
         />
+        <div style={{ flexShrink: 1, margin: '0 2rem', borderRight: '1px solid #e6e4eb' }} />
         <MyReturnCalendar
           id="myCalendar"
           formatMonth={formatMonth}
@@ -138,6 +140,7 @@ class MonthViewCalendar extends Component {
           daysOfWeek={weekDays}
           changeMonthLabel="Change month"
           date={this.state.returnDate}
+          fixedWidth={false}
           onDateSelect={(returnDate) => {
             this.setState({
               returnDate,

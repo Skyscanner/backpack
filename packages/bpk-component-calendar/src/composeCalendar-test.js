@@ -52,6 +52,21 @@ describe('composeCalendar', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render with "fixedWidth" set to false', () => {
+    const tree = renderer.create(<CalendarComponent
+      id="myCalendar"
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      daysOfWeek={weekDays}
+      changeMonthLabel="Change month"
+      minDate={new Date(2010, 1, 15)}
+      maxDate={new Date(2010, 2, 15)}
+      month={new Date(2010, 1, 15)}
+      fixedWidth={false}
+    />, { createNodeMock }).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render without a nav or header element', () => {
     const tree = renderer.create(<CustomCalendarComponent
       id="myCalendar"

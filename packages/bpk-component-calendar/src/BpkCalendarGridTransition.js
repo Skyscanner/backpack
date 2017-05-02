@@ -112,12 +112,16 @@ class BpkCalendarGridTransition extends Component {
   render() {
     const {
       TransitionComponent,
+      className,
       focusedDate,
       ...rest
     } = this.props;
 
-    const classNames = ['bpk-calendar-grid-transition__strip'];
-    if (this.state.isTransitioning) { classNames.push('bpk-calendar-grid-transition__strip--transitioning'); }
+    const stripClassNames = ['bpk-calendar-grid-transition__strip'];
+    if (this.state.isTransitioning) { stripClassNames.push('bpk-calendar-grid-transition__strip--transitioning'); }
+
+    const classNames = ['bpk-calendar-grid-transition'];
+    if (className) { classNames.push(className); }
 
     const adjacentModifiers = {
       ...rest.dateModifiers,
@@ -125,9 +129,9 @@ class BpkCalendarGridTransition extends Component {
     delete adjacentModifiers.selected;
 
     return (
-      <div className="bpk-calendar-grid-transition">
+      <div className={classNames.join(' ')}>
         <div
-          className={classNames.join(' ')}
+          className={stripClassNames.join(' ')}
           style={{ display: 'block', ...getTransformStyles(this.state.transitionValue) }}
           onTransitionEnd={this.onMonthTransitionEnd}
           ref={(strip) => { this.strip = strip; }}
@@ -154,11 +158,13 @@ class BpkCalendarGridTransition extends Component {
 
 BpkCalendarGridTransition.propTypes = {
   TransitionComponent: PropTypes.func.isRequired,
+  className: PropTypes.string,
   month: PropTypes.instanceOf(Date),
   focusedDate: PropTypes.instanceOf(Date),
 };
 
 BpkCalendarGridTransition.defaultProps = {
+  className: null,
   month: null,
   focusedDate: null,
 };
