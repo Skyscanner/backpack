@@ -1,6 +1,6 @@
 exports[`BpkCalendarContainer should render correctly 1`] = `
 <div
-  className="bpk-calendar">
+  className="bpk-calendar bpk-calendar--fixed">
   <div
     className="bpk-calendar-nav">
     <div
@@ -147,7 +147,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
     </ol>
   </header>
   <div
-    className="bpk-calendar-grid-transition">
+    className="bpk-calendar-grid-transition bpk-calendar__grid">
     <div
       className="bpk-calendar-grid-transition__strip"
       onTransitionEnd={[Function]}

@@ -158,6 +158,7 @@ withCalendarState(composeCalendar(
 | formatMonth           | func                 | true     | -                |
 | id                    | string               | true     | -                |
 | className             | string               | false    | null             |
+| fixedWidth            | bool                 | false    | true             |
 | markOutsideDays       | bool                 | false    | true             |
 | markToday             | bool                 | false    | true             |
 | maxDate               | Date                 | false    | new Date() + 1yr |
@@ -269,6 +270,13 @@ An array of objects describing the days of the week:
   ...
 ]
 ```
+
+##### fixedWidth
+
+If set to true (default), it sets a fixed width on the calendar container. This is necessary to support
+transitions and to create the right size for the Datepicker component.
+
+If set to false, the calendar is of fluid width and will take up the space of its parent container.
 
 ##### formatDateFull
 

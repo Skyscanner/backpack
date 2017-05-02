@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 
 import CustomPropTypes from './custom-proptypes';
 import { getFirstDayOfWeekend, getLastDayOfWeekend, orderDaysOfWeek } from './date-utils';
+import './bpk-calendar.scss';
 
 /*
   WeekDay - table header cells such as "Mon", "Tue", "Wed"...

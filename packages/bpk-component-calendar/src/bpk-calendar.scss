@@ -1,11 +1,15 @@
 @import '~bpk-mixins/index';
 
-$shadow-bottom: 0 1px 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
-$shadow-left: -1px 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
-$shadow-right: 1px 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
+$shadow-bottom: 0 $bpk-one-pixel-rem 0 0 $bpk-color-gray-100;
+$shadow-left: -$bpk-one-pixel-rem 0 0 0 $bpk-color-gray-100;
+$shadow-right: $bpk-one-pixel-rem 0 0 0 $bpk-color-gray-100;
+$calendar-width: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
+$calendar-height: 6 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
 
 .bpk-calendar-header {
   display: table;
+  width: 100%;
+  table-layout: fixed;
 
   .bpk-calendar-nav + & {
     margin-top: $bpk-spacing-sm;
@@ -25,7 +29,6 @@ $shadow-right: 1px 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-bla
 
   &__weekday {
     display: table-cell;
-    width: $bpk-calendar-day-size;
     height: $bpk-calendar-day-size;
     box-sizing: content-box;
     padding: 0 ($bpk-calendar-day-spacing / 2) 0 ($bpk-calendar-day-spacing / 2);
@@ -56,13 +59,11 @@ $shadow-right: 1px 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-bla
 }
 
 .bpk-calendar-grid {
-  $shadow-bottom: 0 1px 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
-  $shadow-left: -1px 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
-  $shadow-right: 1px 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-blacklist */
-
   display: table;
+  width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
+  table-layout: fixed;
 
   .bpk-calendar-nav + & {
     margin-top: $bpk-spacing-sm;
@@ -80,9 +81,6 @@ $shadow-right: 1px 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-bla
   }
 
   &__date {
-    width: $bpk-calendar-day-size;
-    height: $bpk-calendar-day-size;
-    box-sizing: content-box;
     padding: $bpk-calendar-day-spacing ($bpk-calendar-day-spacing / 2) 0 ($bpk-calendar-day-spacing / 2);
     vertical-align: middle;
 
@@ -229,11 +227,14 @@ $shadow-right: 1px 0 0 0 $bpk-color-gray-100; /* stylelint-disable-line unit-bla
 }
 
 .bpk-calendar {
-  @include bpk-border-radius-sm;
-}
+  width: 100%;
 
-$calendar-width: 7 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
-$calendar-height: 6 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
+  @include bpk-border-radius-sm;
+
+  &--fixed {
+    width: $calendar-width;
+  }
+}
 
 .bpk-calendar-grid-transition {
   box-sizing: border-box;
@@ -257,6 +258,7 @@ $calendar-height: 6 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
 
     > .bpk-calendar-grid {
       display: inline-table;
+      width: $calendar-width;
     }
   }
 }

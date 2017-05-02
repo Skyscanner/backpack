@@ -135,6 +135,7 @@ DateContainer.propTypes = {
 const BpkCalendarGrid = (props) => {
   const {
     month,
+    className,
     DateComponent,
     formatDateFull,
     formatMonth,
@@ -155,8 +156,11 @@ const BpkCalendarGrid = (props) => {
   const calendarMonthWeeks = getCalendarMonthWeeks(month, weekStartsOn);
   const daysOfWeek = orderDaysOfWeek(props.daysOfWeek, weekStartsOn);
 
+  const classNames = ['bpk-calendar-grid'];
+  if (className) { classNames.push(className); }
+
   return (
-    <table className="bpk-calendar-grid" aria-hidden={!isKeyboardFocusable}>
+    <table className={classNames.join(' ')} aria-hidden={!isKeyboardFocusable}>
       <caption
         className="bpk-calendar-grid__caption"
         hidden
@@ -206,6 +210,7 @@ BpkCalendarGrid.propTypes = {
   formatMonth: PropTypes.func.isRequired,
   month: PropTypes.instanceOf(Date).isRequired,
   // Optional
+  className: PropTypes.string,
   dateModifiers: CustomPropTypes.DateModifiers,
   focusedDate: PropTypes.instanceOf(Date),
   isKeyboardFocusable: PropTypes.bool,
@@ -222,6 +227,7 @@ BpkCalendarGrid.propTypes = {
 };
 
 BpkCalendarGrid.defaultProps = {
+  className: null,
   dateModifiers: {},
   focusedDate: null,
   isKeyboardFocusable: true,

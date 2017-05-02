@@ -28,9 +28,11 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       selectedDate,
       showWeekendSeparator,
       weekStartsOn,
+      fixedWidth,
     } = props;
 
     if (className) { classNames.push(className); }
+    if (fixedWidth) { classNames.push('bpk-calendar--fixed'); }
 
     return (
       <div className={classNames.join(' ')}>
@@ -90,6 +92,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     // Optional
     className: PropTypes.string,
     dateModifiers: CustomPropTypes.DateModifiers,
+    fixedWidth: PropTypes.bool,
     focusedDate: PropTypes.instanceOf(Date),
     markOutsideDays: PropTypes.bool,
     markToday: PropTypes.bool,
@@ -105,6 +108,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
   BpkCalendar.defaultProps = {
     className: null,
     dateModifiers: {},
+    fixedWidth: true,
     focusedDate: null,
     markOutsideDays: true,
     markToday: true,
