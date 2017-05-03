@@ -125,3 +125,4 @@ class MyComponent extends Component {
 | tertiaryLabel     | string               | false    | null          |
 | icon              | func                 | false    | null          |
 | indent            | bool                 | false    | false         |
+| className         | string               | false    | null          |

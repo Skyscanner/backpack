@@ -77,4 +77,11 @@ describe('BpkAutosuggestSuggestion', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with a "className" attribute', () => {
+    const tree = renderer.create(
+      <BpkAutosuggestSuggestion value="Edinburgh" className="custom-class-1 custom-class-2" />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
