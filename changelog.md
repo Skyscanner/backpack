@@ -5,11 +5,14 @@
 **Fixed:**
 - bpk-component-autosuggest:
   - Suggestion component can now recieve a className
-  
+
 - bpk-component-checkbox:
 - bpk-component-radio:
 - bpk-mixins:
   - Checkboxes and radio buttons now display properly with multi line labels
+
+- bpk-component-datepicker:
+  - Datepicker no longer restores focus to other inputs when closed
 
 ## 2017-05-03 - Spinners come with less bloat
 
