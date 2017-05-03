@@ -1,24 +1,25 @@
 import React, { PropTypes } from 'react';
-import { colorGray700 } from 'bpk-tokens/tokens/base.es6';
 import LgSpinner from 'bpk-svgs/dist/js/spinners/lg';
 
 import './bpk-spinner.scss';
 
 const BpkLargeSpinner = (props) => {
   const classNames = ['bpk-spinner', 'bpk-spinner--large'];
+  const { className, alignToButton, ...rest } = props;
 
-  if (props.alignToButton) { classNames.push('bpk-spinner--align-to-large-button'); }
+  if (alignToButton) { classNames.push('bpk-spinner--align-to-large-button'); }
+  if (className) { classNames.push(className); }
 
-  return <LgSpinner className={classNames.join(' ')} fill={props.fill} />;
+  return <LgSpinner className={classNames.join(' ')} {...rest} />;
 };
 
 BpkLargeSpinner.propTypes = {
-  fill: PropTypes.string,
+  className: PropTypes.string,
   alignToButton: PropTypes.bool,
 };
 
 BpkLargeSpinner.defaultProps = {
-  fill: colorGray700,
+  className: null,
   alignToButton: false,
 };
 

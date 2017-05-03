@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "bpk-mixins": "^13.1.0",
-    "bpk-svgs": "^5.3.6",
-    "bpk-tokens": "^21.1.0"
+    "bpk-svgs": "^5.3.6"
   }
 }

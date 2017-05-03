@@ -1,7 +1,6 @@
 exports[`BpkExtraLargeSpinner should render correctly 1`] = `
 <svg
   className="bpk-spinner bpk-spinner--extra-large"
-  fill="rgb(82, 76, 97)"
   height="36"
   viewBox="0 0 36 36"
   width="36"
@@ -65,10 +64,9 @@ exports[`BpkExtraLargeSpinner should render correctly 1`] = `
 </svg>
 `;
 
-exports[`BpkExtraLargeSpinner should render correctly with a "fill" attribute 1`] = `
+exports[`BpkExtraLargeSpinner should render correctly with a "className" attribute 1`] = `
 <svg
-  className="bpk-spinner bpk-spinner--extra-large"
-  fill="rgb(0, 178, 214)"
+  className="bpk-spinner bpk-spinner--extra-large my-custom-class"
   height="36"
   viewBox="0 0 36 36"
   width="36"

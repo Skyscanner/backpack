@@ -1,7 +1,6 @@
 exports[`BpkLargeSpinner should render correctly 1`] = `
 <svg
   className="bpk-spinner bpk-spinner--large"
-  fill="rgb(82, 76, 97)"
   height="24"
   viewBox="0 0 24 24"
   width="24"
@@ -68,7 +67,6 @@ exports[`BpkLargeSpinner should render correctly 1`] = `
 exports[`BpkLargeSpinner should render correctly with a "alignToButton" attribute 1`] = `
 <svg
   className="bpk-spinner bpk-spinner--large bpk-spinner--align-to-large-button"
-  fill="rgb(82, 76, 97)"
   height="24"
   viewBox="0 0 24 24"
   width="24"
@@ -132,10 +130,9 @@ exports[`BpkLargeSpinner should render correctly with a "alignToButton" attribut
 </svg>
 `;
 
-exports[`BpkLargeSpinner should render correctly with a "fill" attribute 1`] = `
+exports[`BpkLargeSpinner should render correctly with a "className" attribute 1`] = `
 <svg
-  className="bpk-spinner bpk-spinner--large"
-  fill="rgb(0, 178, 214)"
+  className="bpk-spinner bpk-spinner--large my-custom-class"
   height="24"
   viewBox="0 0 24 24"
   width="24"

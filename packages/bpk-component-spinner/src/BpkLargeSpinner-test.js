@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { colorBlue500 } from 'bpk-tokens/tokens/base.es6';
 import BpkLargeSpinner from './BpkLargeSpinner';
 
 describe('BpkLargeSpinner', () => {
@@ -10,8 +9,8 @@ describe('BpkLargeSpinner', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with a "fill" attribute', () => {
-    const tree = renderer.create(<BpkLargeSpinner fill={colorBlue500} />).toJSON();
+  it('should render correctly with a "className" attribute', () => {
+    const tree = renderer.create(<BpkLargeSpinner className="my-custom-class" />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 

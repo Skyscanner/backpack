@@ -1,6 +1,8 @@
 @import '~bpk-mixins/index';
 
 .bpk-spinner {
+  fill: $bpk-color-gray-700;
+
   @include bpk-spinner;
 
   &--large {
