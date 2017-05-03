@@ -15,6 +15,7 @@ _Nothing yet..._
 **Added:**
 - bpk-component-autosuggest: 2.0.32 => 2.1.0
   - `ref` callbacks now work:
+
     ```
     function storeInputReference(autosuggest) {
       if (autosuggest !== null) {
