@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-spinner",
-  "version": "1.0.57",
+  "version": "2.0.0",
   "description": "Backpack spinner components.",
   "main": "index.js",
   "repository": {
