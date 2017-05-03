@@ -32,6 +32,29 @@ describe('BpkDatepicker', () => {
         minDate={new Date(2010, 1, 15)}
         maxDate={new Date(2010, 2, 15)}
         date={new Date(2010, 1, 15)}
+        hasTouchSupport={false}
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should attach different event handlers when touch is supported', () => {
+    const tree = renderer.create(
+      <BpkDatepicker
+        id="myDatepicker"
+        closeButtonText="Close"
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        title="Departure date"
+        getApplicationElement={() => document.createElement('div')}
+        formatDate={formatDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        inputProps={inputProps}
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        date={new Date(2010, 1, 15)}
+        hasTouchSupport
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();

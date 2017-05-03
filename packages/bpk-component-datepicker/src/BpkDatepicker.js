@@ -84,6 +84,7 @@ class BpkDatepicker extends Component {
       showWeekendSeparator,
       title,
       weekStartsOn,
+      hasTouchSupport,
       ...rest
     } = this.props;
 
@@ -100,39 +101,54 @@ class BpkDatepicker extends Component {
     // The following props are not used in render
     delete rest.onDateSelect;
 
+    const eventHandlers = {
+      onClick: withEventHandler(this.onOpen, onClick),
+      onKeyDown: withEventHandler(handleKeyEvent(KEYCODES.ENTER, this.onOpen), onKeyDown),
+      onKeyUp: withEventHandler(handleKeyEvent(KEYCODES.SPACEBAR, this.onOpen), onKeyUp),
+    };
+
+    if (!hasTouchSupport) {
+      eventHandlers.onFocus = withEventHandler(() => {
+        if (this.focusCanOpen) {
+          this.onOpen();
+        }
+      }, onFocus);
+      eventHandlers.onBlur = withEventHandler(() => {
+        // If the input loses focus when the popover/modal is open, it should not open on a subsequent focus.
+        // Fixes an issue with IE9.
+        if (this.state.isOpen) {
+          this.focusCanOpen = false;
+        } else {
+          this.focusCanOpen = true;
+        }
+      }, onBlur);
+    } else {
+      // Prevents the mobile keyboard from opening (iOS / Android)
+      eventHandlers.readOnly = 'readOnly';
+      eventHandlers.onTouchEnd = withEventHandler((event) => {
+        // preventDefault fixes an issue on Android and iOS in which the popover closes immediately
+        // because a touch event is registered on one of the dates.
+        // We can only run preventDefault when the input is already focused - otherwise it would never set
+        // focus on it, and when closing the modal/popover focus would return to the previously focused
+        // element (which is annoying if it's an autosuggest or another datepicker, for example).
+        if (document && event.target === document.activeElement) {
+          event.preventDefault();
+          this.onOpen();
+        }
+      }, onTouchEnd);
+    }
+
     const inputComponent = (
       <BpkInput
         id={id}
         name={`${id}_input`}
         value={date ? formatDate(date) : ''}
-        onClick={withEventHandler(this.onOpen, onClick)}
-        onFocus={withEventHandler(() => {
-          if (this.focusCanOpen) {
-            this.onOpen();
-          }
-        }, onFocus)}
-        onBlur={withEventHandler(() => {
-          if (this.state.isOpen) {
-            // If the input loses focus when the popover/modal is open, it should not open on a subsequent focus.
-            // Fixes an issue with IE9.
-            this.focusCanOpen = false;
-          } else {
-            this.focusCanOpen = true;
-          }
-        }, onBlur)}
-        onTouchEnd={withEventHandler((event) => {
-          // preventDefault fixes an issue on Android and iOS in which the popover closes immediately
-          // because a touch event is registered on one of the dates.
-          event.preventDefault();
-          this.onOpen();
-        }, onTouchEnd)}
-        onKeyDown={withEventHandler(handleKeyEvent(KEYCODES.ENTER, this.onOpen), onKeyDown)}
-        onKeyUp={withEventHandler(handleKeyEvent(KEYCODES.SPACEBAR, this.onOpen), onKeyUp)}
         className="bpk-datepicker__input"
         aria-live="assertive"
         aria-atomic="true"
         aria-label={formatDateFull(date)}
         onChange={() => null}
+        {...eventHandlers}
         {...restInputProps}
       />
     );
@@ -212,6 +228,7 @@ BpkDatepicker.propTypes = {
   date: PropTypes.instanceOf(Date),
   DateComponent: PropTypes.func,
   dateModifiers: CustomPropTypes.DateModifiers,
+  hasTouchSupport: PropTypes.bool,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   markOutsideDays: PropTypes.bool,
   markToday: PropTypes.bool,
@@ -227,6 +244,7 @@ BpkDatepicker.defaultProps = {
   date: null,
   DateComponent: BpkCalendar.defaultProps.DateComponent,
   dateModifiers: BpkCalendar.defaultProps.dateModifiers,
+  hasTouchSupport: (typeof window !== 'undefined' && (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)), // eslint-disable-line
   inputProps: {},
   markOutsideDays: BpkCalendar.defaultProps.markOutsideDays,
   markToday: BpkCalendar.defaultProps.markToday,
