@@ -6,7 +6,6 @@ exports[`BpkCheckbox should render correctly 1`] = `
     disabled={false}
     name="checkbox"
     type="checkbox" />
-   
   Prefer directs
 </label>
 `;
@@ -20,7 +19,6 @@ exports[`BpkCheckbox should render correctly with checked attribute 1`] = `
     disabled={false}
     name="checkbox"
     type="checkbox" />
-   
   Prefer directs
 </label>
 `;
@@ -33,7 +31,6 @@ exports[`BpkCheckbox should render correctly with disabled attribute 1`] = `
     disabled={true}
     name="checkbox"
     type="checkbox" />
-   
   Prefer directs
 </label>
 `;
@@ -47,7 +44,6 @@ exports[`BpkCheckbox should render correctly with id attribute 1`] = `
     id="checkbox"
     name="checkbox"
     type="checkbox" />
-   
   Prefer directs
 </label>
 `;
@@ -61,7 +57,6 @@ exports[`BpkCheckbox should render correctly with value attribute 1`] = `
     name="checkbox"
     type="checkbox"
     value="my-value" />
-   
   Prefer directs
 </label>
 `;
@@ -74,7 +69,6 @@ exports[`BpkCheckbox should render correctly with white attribute 1`] = `
     disabled={false}
     name="checkbox"
     type="checkbox" />
-   
   Prefer directs
 </label>
 `;
