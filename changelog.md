@@ -2,14 +2,18 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-05-03 - Spinners come with less bloat
+
 **Changed:**
-- bpk-component-spinner:
+- bpk-component-spinner: 1.0.57 => 2.0.0
   - Removed `bpk-tokens` dependency which dramatically reduces component bloat
   - Removed explicit `fill` attribute, this is now applied via CSS class
   - Arbitrary props are now passed through to the svg
 
 **Added:**
-- bpk-component-autosuggest:
+- bpk-component-autosuggest: 2.0.32 => 2.1.0
   - `ref` callbacks now work:
     ```
     function storeInputReference(autosuggest) {
