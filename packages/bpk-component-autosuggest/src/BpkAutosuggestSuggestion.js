@@ -7,30 +7,33 @@ const getClassName = cssModules(STYLES);
 
 const BpkSuggestion = (props) => {
   const classNames = [getClassName('bpk-autosuggest__suggestion')];
+  const { indent, className, icon, subHeading, tertiaryLabel, value, ...rest } = props;
+  const Icon = icon;
 
-  if (props.indent) { classNames.push(getClassName('bpk-autosuggest__suggestion--indent')); }
-  if (props.className) { classNames.push(props.className); }
+  if (indent) { classNames.push(getClassName('bpk-autosuggest__suggestion--indent')); }
+  if (className) { classNames.push(className); }
 
   return (
-    <section className={classNames.join(' ')}>
-      {props.icon
-        ? <props.icon className={getClassName('bpk-autosuggest__suggestion-icon')} />
+    <section className={classNames.join(' ')} {...rest}>
+      {icon
+        ? <Icon className={getClassName('bpk-autosuggest__suggestion-icon')} />
         : null
       }
       <div className={getClassName('bpk-autosuggest__suggestion-inner')}>
-        <span className={getClassName('bpk-autosuggest__suggestion-value')}>{props.value}</span>
-        {props.subHeading || props.tertiaryLabel
-          ? <small className={getClassName('bpk-autosuggest__suggestion-sub-heading')}>{props.subHeading}</small>
+        <span className={getClassName('bpk-autosuggest__suggestion-value')}>{value}</span>
+        {subHeading || tertiaryLabel
+          ? <small className={getClassName('bpk-autosuggest__suggestion-sub-heading')}>{subHeading}</small>
           : null
         }
-        {props.tertiaryLabel
-          ? <aside className={getClassName('bpk-autosuggest__suggestion-tertiary-label')}>{props.tertiaryLabel}</aside>
+        {tertiaryLabel
+          ? <aside className={getClassName('bpk-autosuggest__suggestion-tertiary-label')}>{tertiaryLabel}</aside>
           : null
         }
       </div>
     </section>
   );
 };
+
 BpkSuggestion.propTypes = {
   value: PropTypes.string.isRequired,
   subHeading: PropTypes.string,

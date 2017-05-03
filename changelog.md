@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Fixed:**
+- bpk-component-autosuggest:
+  - Suggestion component can now recieve a className
 
 ## 2017-05-03 - Spinners come with less bloat
 

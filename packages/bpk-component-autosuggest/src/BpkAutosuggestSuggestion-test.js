@@ -78,7 +78,7 @@ describe('BpkAutosuggestSuggestion', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should respect the class names entered as a string', () => {
+  it('should render correctly with a "className" attribute', () => {
     const tree = renderer.create(
       <BpkAutosuggestSuggestion value="Edinburgh" className="custom-class-1 custom-class-2" />,
     ).toJSON();

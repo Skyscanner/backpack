@@ -46,7 +46,6 @@ const renderSuggestion = suggestion => (
     tertiaryLabel="Airport"
     indent={suggestion.indent}
     icon={BpkFlightIcon}
-    className="class-name1 class-name2"
   />
 );
 
