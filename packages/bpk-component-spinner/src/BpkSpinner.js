@@ -1,24 +1,25 @@
 import React, { PropTypes } from 'react';
-import { colorGray700 } from 'bpk-tokens/tokens/base.es6';
 import SmSpinner from 'bpk-svgs/dist/js/spinners/sm';
 
 import './bpk-spinner.scss';
 
 const BpkSpinner = (props) => {
   const classNames = ['bpk-spinner'];
+  const { className, alignToButton, ...rest } = props;
 
-  if (props.alignToButton) { classNames.push('bpk-spinner--align-to-button'); }
+  if (alignToButton) { classNames.push('bpk-spinner--align-to-button'); }
+  if (className) { classNames.push(className); }
 
-  return <SmSpinner className={classNames.join(' ')} fill={props.fill} />;
+  return <SmSpinner className={classNames.join(' ')} {...rest} />;
 };
 
 BpkSpinner.propTypes = {
-  fill: PropTypes.string,
+  className: PropTypes.string,
   alignToButton: PropTypes.bool,
 };
 
 BpkSpinner.defaultProps = {
-  fill: colorGray700,
+  className: null,
   alignToButton: false,
 };
 

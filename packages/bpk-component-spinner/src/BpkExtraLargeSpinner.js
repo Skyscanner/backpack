@@ -1,17 +1,23 @@
 import React, { PropTypes } from 'react';
-import { colorGray700 } from 'bpk-tokens/tokens/base.es6';
 import XlSpinner from 'bpk-svgs/dist/js/spinners/xl';
 
 import './bpk-spinner.scss';
 
-const BpkExtraLargeSpinner = props => <XlSpinner className="bpk-spinner bpk-spinner--extra-large" fill={props.fill} />;
+const BpkExtraLargeSpinner = (props) => {
+  const { className, ...rest } = props;
+  const classNames = ['bpk-spinner', 'bpk-spinner--extra-large'];
+
+  if (className) { classNames.push(className); }
+
+  return <XlSpinner className={classNames.join(' ')} {...rest} />;
+};
 
 BpkExtraLargeSpinner.propTypes = {
-  fill: PropTypes.string,
+  className: PropTypes.string,
 };
 
 BpkExtraLargeSpinner.defaultProps = {
-  fill: colorGray700,
+  className: null,
 };
 
 export default BpkExtraLargeSpinner;

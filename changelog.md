@@ -2,6 +2,12 @@
 
 ## UNRELEASED
 
+**Changed:**
+- bpk-component-spinner:
+  - Removed `bpk-tokens` dependency which dramatically reduces component bloat
+  - Removed explicit `fill` attribute, this is now applied via CSS class
+  - Arbitrary props are now passed through to the svg
+
 **Added:**
 - bpk-component-autosuggest:
   - `ref` callbacks now work:
