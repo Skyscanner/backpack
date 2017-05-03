@@ -4,6 +4,10 @@ import { colorGray700, spacingBase } from 'bpk-tokens/tokens/base.es6';
 
 import BpkRadio from './index';
 
+const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita
+quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!
+Nesciunt, voluptate, illo.`;
+
 storiesOf('bpk-component-radio', module)
   .add('Checked', () => (
     <BpkRadio
@@ -19,6 +23,14 @@ storiesOf('bpk-component-radio', module)
       id="unchecked"
       name="unchecked"
       label="Return"
+      onChange={action('radio changed')}
+    />
+  ))
+  .add('Multi line', () => (
+    <BpkRadio
+      id="multi_line"
+      name="multi_line"
+      label={loremIpsum}
       onChange={action('radio changed')}
     />
   ))

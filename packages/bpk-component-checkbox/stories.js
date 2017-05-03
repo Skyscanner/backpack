@@ -4,6 +4,10 @@ import { colorGray700, spacingBase } from 'bpk-tokens/tokens/base.es6';
 
 import BpkCheckbox from './index';
 
+const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita
+quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!
+Nesciunt, voluptate, illo.`;
+
 storiesOf('bpk-component-checkbox', module)
   .add('Checked', () => (
     <BpkCheckbox
@@ -19,6 +23,14 @@ storiesOf('bpk-component-checkbox', module)
       id="unchecked"
       name="unchecked"
       label="Prefer directs"
+      onChange={action('checkbox changed')}
+    />
+  ))
+  .add('Multi line', () => (
+    <BpkCheckbox
+      id="multi_line"
+      name="multi_line"
+      label={loremIpsum}
       onChange={action('checkbox changed')}
     />
   ))

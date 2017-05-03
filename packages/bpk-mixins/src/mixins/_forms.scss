@@ -352,7 +352,14 @@
 ///   }
 
 @mixin bpk-checkbox {
+  position: relative;
   display: inline-block;
+  padding-left: $bpk-spacing-base;
+
+  @include bpk-rtl {
+    padding-right: $bpk-spacing-base;
+    padding-left: 0;
+  }
 }
 
 /// White label checkbox. Modifies the bpk-checkbox mixin.
@@ -392,7 +399,9 @@
 ///   }
 
 @mixin bpk-checkbox__input {
-  display: inline-block;
+  position: absolute;
+  top: ($bpk-spacing-base - $bpk-spacing-md) / 2;
+  left: 0;
   width: $bpk-spacing-md;
   height: $bpk-spacing-md;
   margin: 0;
@@ -402,6 +411,11 @@
   cursor: pointer;
   vertical-align: text-bottom;
   appearance: none;
+
+  @include bpk-rtl {
+    right: 0;
+    left: auto;
+  }
 
   @media screen\0 {
     background: none !important; /* stylelint-disable-line declaration-no-important */
@@ -428,7 +442,14 @@
 ///   }
 
 @mixin bpk-radio {
+  position: relative;
   display: inline-block;
+  padding-left: $bpk-spacing-base;
+
+  @include bpk-rtl {
+    padding-right: $bpk-spacing-base;
+    padding-left: 0;
+  }
 }
 
 /// Disabled form radio button. Modifies the bpk-radio mixin.
@@ -468,7 +489,9 @@
 ///   }
 
 @mixin bpk-radio__input {
-  display: inline-block;
+  position: absolute;
+  top: ($bpk-spacing-base - $bpk-spacing-md) / 2;
+  left: 0;
   width: $bpk-spacing-md;
   height: $bpk-spacing-md;
   margin: 0;
@@ -478,6 +501,11 @@
   cursor: pointer;
   vertical-align: text-bottom;
   appearance: none;
+
+  @include bpk-rtl {
+    right: 0;
+    left: auto;
+  }
 
   @media screen\0 {
     background: none !important; /* stylelint-disable-line declaration-no-important */

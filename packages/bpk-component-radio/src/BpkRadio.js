@@ -23,7 +23,6 @@ const BpkRadio = (props) => {
         disabled={disabled}
         {...rest}
       />
-      &nbsp;
       {label}
     </label>
   );

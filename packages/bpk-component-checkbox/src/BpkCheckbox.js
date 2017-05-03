@@ -23,7 +23,6 @@ const BpkCheckbox = (props) => {
         disabled={disabled}
         {...rest}
       />
-      &nbsp;
       {label}
     </label>
   );
