@@ -37,6 +37,9 @@ class BpkDatepicker extends Component {
     this.onOpen = this.onOpen.bind(this);
     this.onClose = this.onClose.bind(this);
     this.handleDateSelect = this.handleDateSelect.bind(this);
+    this.handleTouchEnd = this.handleTouchEnd.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
 
     this.focusCanOpen = true;
   }
@@ -59,6 +62,34 @@ class BpkDatepicker extends Component {
     });
     if (this.props.onDateSelect) {
       this.props.onDateSelect(dateObj);
+    }
+  }
+
+  handleTouchEnd(event) {
+    // preventDefault fixes an issue on Android and iOS in which the popover closes immediately
+    // because a touch event is registered on one of the dates.
+    // We can only run preventDefault when the input is already focused - otherwise it would never set
+    // focus on it, and when closing the modal/popover focus would return to the previously focused
+    // element (which is annoying if it's an autosuggest or another datepicker, for example).
+    if (document && event.target === document.activeElement) {
+      event.preventDefault();
+      this.onOpen();
+    }
+  }
+
+  handleFocus() {
+    if (this.focusCanOpen) {
+      this.onOpen();
+    }
+  }
+
+  handleBlur() {
+    // If the input loses focus when the popover/modal is open, it should not open on a subsequent focus.
+    // Fixes an issue with IE9.
+    if (this.state.isOpen) {
+      this.focusCanOpen = false;
+    } else {
+      this.focusCanOpen = true;
     }
   }
 
@@ -107,35 +138,13 @@ class BpkDatepicker extends Component {
       onKeyUp: withEventHandler(handleKeyEvent(KEYCODES.SPACEBAR, this.onOpen), onKeyUp),
     };
 
-    if (!hasTouchSupport) {
-      eventHandlers.onFocus = withEventHandler(() => {
-        if (this.focusCanOpen) {
-          this.onOpen();
-        }
-      }, onFocus);
-      eventHandlers.onBlur = withEventHandler(() => {
-        // If the input loses focus when the popover/modal is open, it should not open on a subsequent focus.
-        // Fixes an issue with IE9.
-        if (this.state.isOpen) {
-          this.focusCanOpen = false;
-        } else {
-          this.focusCanOpen = true;
-        }
-      }, onBlur);
-    } else {
+    if (hasTouchSupport) {
       // Prevents the mobile keyboard from opening (iOS / Android)
       eventHandlers.readOnly = 'readOnly';
-      eventHandlers.onTouchEnd = withEventHandler((event) => {
-        // preventDefault fixes an issue on Android and iOS in which the popover closes immediately
-        // because a touch event is registered on one of the dates.
-        // We can only run preventDefault when the input is already focused - otherwise it would never set
-        // focus on it, and when closing the modal/popover focus would return to the previously focused
-        // element (which is annoying if it's an autosuggest or another datepicker, for example).
-        if (document && event.target === document.activeElement) {
-          event.preventDefault();
-          this.onOpen();
-        }
-      }, onTouchEnd);
+      eventHandlers.onTouchEnd = withEventHandler(this.handleTouchEnd, onTouchEnd);
+    } else {
+      eventHandlers.onFocus = withEventHandler(this.handleFocus, onFocus);
+      eventHandlers.onBlur = withEventHandler(this.handleBlur, onBlur);
     }
 
     const inputComponent = (
