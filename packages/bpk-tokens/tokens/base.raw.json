@@ -1795,78 +1795,6 @@
       "category": "font-weights",
       "name": "H1_FONT_WEIGHT"
     },
-    "H6_MARGIN_TOP": {
-      "value": "0",
-      "type": "size",
-      "category": "spacings",
-      "name": "H6_MARGIN_TOP"
-    },
-    "H5_MARGIN_TOP": {
-      "value": "0",
-      "type": "size",
-      "category": "spacings",
-      "name": "H5_MARGIN_TOP"
-    },
-    "H4_MARGIN_TOP": {
-      "value": "0",
-      "type": "size",
-      "category": "spacings",
-      "name": "H4_MARGIN_TOP"
-    },
-    "H3_MARGIN_TOP": {
-      "value": "0",
-      "type": "size",
-      "category": "spacings",
-      "name": "H3_MARGIN_TOP"
-    },
-    "H2_MARGIN_TOP": {
-      "value": "0",
-      "type": "size",
-      "category": "spacings",
-      "name": "H2_MARGIN_TOP"
-    },
-    "H1_MARGIN_TOP": {
-      "value": "0",
-      "type": "size",
-      "category": "spacings",
-      "name": "H1_MARGIN_TOP"
-    },
-    "H6_MARGIN_BOTTOM": {
-      "value": ".75rem",
-      "type": "size",
-      "category": "spacings",
-      "name": "H6_MARGIN_BOTTOM"
-    },
-    "H5_MARGIN_BOTTOM": {
-      "value": ".75rem",
-      "type": "size",
-      "category": "spacings",
-      "name": "H5_MARGIN_BOTTOM"
-    },
-    "H4_MARGIN_BOTTOM": {
-      "value": ".75rem",
-      "type": "size",
-      "category": "spacings",
-      "name": "H4_MARGIN_BOTTOM"
-    },
-    "H3_MARGIN_BOTTOM": {
-      "value": ".75rem",
-      "type": "size",
-      "category": "spacings",
-      "name": "H3_MARGIN_BOTTOM"
-    },
-    "H2_MARGIN_BOTTOM": {
-      "value": ".75rem",
-      "type": "size",
-      "category": "spacings",
-      "name": "H2_MARGIN_BOTTOM"
-    },
-    "H1_MARGIN_BOTTOM": {
-      "value": ".75rem",
-      "type": "size",
-      "category": "spacings",
-      "name": "H1_MARGIN_BOTTOM"
-    },
     "HEADING_CONTENT_MARGIN_TOP": {
       "value": "1.875rem",
       "type": "size",
@@ -2285,18 +2213,6 @@
     "H3_FONT_WEIGHT",
     "H2_FONT_WEIGHT",
     "H1_FONT_WEIGHT",
-    "H6_MARGIN_TOP",
-    "H5_MARGIN_TOP",
-    "H4_MARGIN_TOP",
-    "H3_MARGIN_TOP",
-    "H2_MARGIN_TOP",
-    "H1_MARGIN_TOP",
-    "H6_MARGIN_BOTTOM",
-    "H5_MARGIN_BOTTOM",
-    "H4_MARGIN_BOTTOM",
-    "H3_MARGIN_BOTTOM",
-    "H2_MARGIN_BOTTOM",
-    "H1_MARGIN_BOTTOM",
     "HEADING_CONTENT_MARGIN_TOP",
     "P_MARGIN_TOP",
     "P_MARGIN_BOTTOM",
