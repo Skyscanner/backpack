@@ -97,10 +97,10 @@
 ///   }
 
 @mixin bpk-heading-1 {
-  @include _bpk-heading-factory($bpk-h-1-margin-top, $bpk-h-1-margin-bottom, $bpk-h-1-font-size, $bpk-h-1-font-weight, $bpk-h-1-line-height, $font-smoothing: false);
+  @include _bpk-heading-factory($bpk-h-1-margin-top, $bpk-h-1-margin-bottom, $bpk-h-1-font-size, $bpk-h-1-font-weight, $bpk-h-1-line-height);
 
   @include bpk-breakpoint-mobile {
-    @include _bpk-heading-factory($bpk-h-2-margin-top, $bpk-h-2-margin-bottom, $bpk-h-2-font-size, $bpk-h-2-font-weight, $bpk-h-2-line-height, $font-smoothing: true);
+    @include _bpk-heading-factory($bpk-h-2-margin-top, $bpk-h-2-margin-bottom, $bpk-h-2-font-size, $bpk-h-2-font-weight, $bpk-h-2-line-height);
   }
 }
 
