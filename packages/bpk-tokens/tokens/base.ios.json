@@ -1273,6 +1273,12 @@
       "name": "formValidationCheckboxArrowLeft"
     },
     {
+      "category": "forms",
+      "value": "2.625rem * 2",
+      "type": "size",
+      "name": "textareaMinHeight"
+    },
+    {
       "category": "grids",
       "value": "12",
       "type": "number",

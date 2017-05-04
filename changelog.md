@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet_
+**Added:**
+- bpk-component-textarea:
+  - New form validation component (http://backpack.prod.aws.skyscnr.com/components/atoms/forms#textareas)
 
 ## 2017-05-04 - Multiline labels for checkboxes/radio buttons, bug fixes
 
@@ -87,10 +89,10 @@ _Nothing yet_
   - Added `transitionOverflow` prop to customise the overflow behaviour during the transition
 
 - bpk-component-fieldset: 0.0.0 => 0.0.1
-  - New form validation component (http://backpack.prod.aws.skyscnr.com/components/atoms/form-validation)
+  - New form validation component (http://backpack.prod.aws.skyscnr.com/components/atoms/forms#validation)
 
 - bpk-component-form-validation: 0.0.0 => 0.0.1
-  - New fieldset component (http://backpack.prod.aws.skyscnr.com/components/molecules/fieldset)
+  - New fieldset component (http://backpack.prod.aws.skyscnr.com/components/molecules/fieldsets)
 
 - bpk-component-checkbox:
 - bpk-component-radio:

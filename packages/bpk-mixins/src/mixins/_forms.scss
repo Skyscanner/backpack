@@ -640,3 +640,37 @@
 @mixin bpk-form-validation__container {
   padding-top: $bpk-form-validation-arrow-size;
 }
+
+/// Form textarea.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-textarea();
+///   }
+
+@mixin bpk-textarea {
+  display: inline-block;
+  width: 100%;
+  min-height: $bpk-textarea-min-height;
+  padding: $bpk-input-padding-y $bpk-input-padding-x;
+  border: $bpk-input-border;
+  border-radius: $bpk-input-border-radius;
+  background: $bpk-input-background;
+  color: $bpk-input-color;
+  appearance: none;
+
+  &::placeholder {
+    color: $bpk-input-placeholder-color;
+    font-style: $bpk-input-placeholder-font-style;
+  }
+
+  &:disabled {
+    border-color: $bpk-input-disabled-border-color;
+    color: $bpk-input-disabled-color;
+    cursor: not-allowed;
+  }
+
+  &::-ms-clear {
+    display: none;
+  }
+}

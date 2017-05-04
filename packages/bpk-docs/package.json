@@ -52,6 +52,7 @@
     "bpk-component-select": "^2.0.12",
     "bpk-component-spinner": "^2.0.1",
     "bpk-component-table": "^0.0.88",
+    "bpk-component-textarea": "^0.0.0",
     "bpk-component-ticket": "^0.0.8",
     "bpk-component-tooltip": "^0.0.23",
     "bpk-mixins": "^13.1.1",

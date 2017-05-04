@@ -145,6 +145,10 @@
     "FORM_VALIDATION_CHECKBOX_ARROW_LEFT": {
       "value": "{!SPACING_BASE}",
       "type": "size"
+    },
+    "TEXTAREA_MIN_HEIGHT": {
+      "value": "{!SPACING_XXL} * 2",
+      "type": "size"
     }
   }
 }

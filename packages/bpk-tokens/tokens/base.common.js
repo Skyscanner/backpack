@@ -211,6 +211,7 @@ module.exports = {
   formValidationColor: "rgb(255, 255, 255)",
   formValidationArrowSize: ".375rem",
   formValidationCheckboxArrowLeft: "1.5rem",
+  textareaMinHeight: "2.625rem * 2",
   gridColumns: "12",
   gridGutter: "1.5rem",
   gridContainerPadding: "1.5rem",

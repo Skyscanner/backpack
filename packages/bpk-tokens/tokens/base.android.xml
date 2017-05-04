@@ -212,6 +212,7 @@
   <color name="FORM_VALIDATION_COLOR" category="forms">#ffffffff</color>
   <property name="FORM_VALIDATION_ARROW_SIZE" category="forms">6</property>
   <property name="FORM_VALIDATION_CHECKBOX_ARROW_LEFT" category="forms">24</property>
+  <property name="TEXTAREA_MIN_HEIGHT" category="forms">2.625rem * 2</property>
   <property name="GRID_COLUMNS" category="grids">12</property>
   <property name="GRID_GUTTER" category="grids">24</property>
   <property name="GRID_CONTAINER_PADDING" category="grids">24</property>
