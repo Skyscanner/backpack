@@ -458,7 +458,7 @@ const components = [
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Textarea (placeholder)" htmlFor="textarea" />
+        <BpkLabel label="Textarea (placeholder)" htmlFor="textarea_placeholder" />
         <InputContainer
           FormComponent={BpkTextarea}
           id="textarea_placeholder"

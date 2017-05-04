@@ -14,4 +14,16 @@ describe('BpkTextarea', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with "className" attribute', () => {
+    const tree = renderer.create(
+      <BpkTextarea
+        id="test"
+        name="test"
+        value=""
+        className="my-custom-class-1 my-custom-class-2"
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
