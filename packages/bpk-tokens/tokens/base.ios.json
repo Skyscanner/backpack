@@ -1669,19 +1669,19 @@
       "name": "h1LineHeight"
     },
     {
-      "value": "400",
+      "value": "700",
       "type": "number",
       "category": "font-weights",
       "name": "h6FontWeight"
     },
     {
-      "value": "400",
+      "value": "700",
       "type": "number",
       "category": "font-weights",
       "name": "h5FontWeight"
     },
     {
-      "value": "400",
+      "value": "700",
       "type": "number",
       "category": "font-weights",
       "name": "h4FontWeight"
