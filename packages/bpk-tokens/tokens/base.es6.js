@@ -210,6 +210,7 @@ export const formValidationBackgroundColor = "rgb(255, 84, 82)";
 export const formValidationColor = "rgb(255, 255, 255)";
 export const formValidationArrowSize = ".375rem";
 export const formValidationCheckboxArrowLeft = "1.5rem";
+export const textareaMinHeight = "2.625rem * 2";
 export const gridColumns = "12";
 export const gridGutter = "1.5rem";
 export const gridContainerPadding = "1.5rem";
@@ -551,6 +552,7 @@ formValidationBackgroundColor,
 formValidationColor,
 formValidationArrowSize,
 formValidationCheckboxArrowLeft,
+textareaMinHeight,
 };
 export const grids = {
 gridColumns,

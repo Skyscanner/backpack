@@ -3,6 +3,7 @@ import BpkLink from 'bpk-component-link';
 import BpkLabel from 'bpk-component-label';
 import BpkSelect from 'bpk-component-select';
 import BpkCheckbox from 'bpk-component-checkbox';
+import BpkTextarea from 'bpk-component-textarea';
 import BpkParagraph from 'bpk-component-paragraph';
 import BpkRouterLink from 'bpk-component-router-link';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
@@ -13,6 +14,7 @@ import inputReadme from 'bpk-component-input/readme.md';
 import labelReadme from 'bpk-component-label/readme.md';
 import radioReadme from 'bpk-component-radio/readme.md';
 import selectReadme from 'bpk-component-select/readme.md';
+import textareaReadme from 'bpk-component-textarea/readme.md';
 import checkboxReadme from 'bpk-component-checkbox/readme.md';
 import validationReadme from 'bpk-component-form-validation/readme.md';
 
@@ -21,6 +23,12 @@ import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import InputContainer from './InputContainer';
 import RadioContainer from './RadioContainer';
+
+const loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
+
+const loremIpsumLong = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate repellat assumenda
+necessitatibus reiciendis, porro temporibus expedita excepturi! Nostrum pariatur odit porro, dolorem dignissimos
+laudantium quis, tempore iste non, nam magnam.`;
 
 const components = [
   {
@@ -427,6 +435,53 @@ const components = [
         </div>
       </form>,
     ],
+  },
+  {
+    id: 'textareas',
+    title: 'Textareas',
+    blurb: [
+      <BpkParagraph>
+        Textareas look almost identical to <BpkLink href="#inputs">inputs</BpkLink> except they allow long text to wrap
+        across multiple lines.
+      </BpkParagraph>,
+    ],
+    examples: [
+      <form className="bpkdocs-forms-page__form">
+        <BpkLabel label="Textarea" htmlFor="textarea" />
+        <InputContainer
+          FormComponent={BpkTextarea}
+          id="textarea"
+          name="textarea"
+          value={loremIpsumLong}
+          placeholder={loremIpsumLong}
+          onChange={() => null}
+        />
+      </form>,
+      <form className="bpkdocs-forms-page__form">
+        <BpkLabel label="Textarea (placeholder)" htmlFor="textarea_placeholder" />
+        <InputContainer
+          FormComponent={BpkTextarea}
+          id="textarea_placeholder"
+          name="textarea_placeholder"
+          value=""
+          placeholder={loremIpsum}
+          onChange={() => null}
+        />
+      </form>,
+      <form className="bpkdocs-forms-page__form">
+        <BpkLabel label="Disabled textarea" htmlFor="textarea_disabled" />
+        <InputContainer
+          FormComponent={BpkTextarea}
+          id="textarea_disabled"
+          name="textarea_disabled"
+          value=""
+          placeholder={loremIpsum}
+          onChange={() => null}
+          disabled
+        />
+      </form>,
+    ],
+    readme: textareaReadme,
   },
   {
     id: 'checkboxes',

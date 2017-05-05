@@ -1363,6 +1363,12 @@
       "type": "size",
       "name": "FORM_VALIDATION_CHECKBOX_ARROW_LEFT"
     },
+    "TEXTAREA_MIN_HEIGHT": {
+      "category": "forms",
+      "value": "2.625rem * 2",
+      "type": "size",
+      "name": "TEXTAREA_MIN_HEIGHT"
+    },
     "GRID_COLUMNS": {
       "category": "grids",
       "value": "12",
@@ -2207,6 +2213,7 @@
     "FORM_VALIDATION_COLOR",
     "FORM_VALIDATION_ARROW_SIZE",
     "FORM_VALIDATION_CHECKBOX_ARROW_LEFT",
+    "TEXTAREA_MIN_HEIGHT",
     "GRID_COLUMNS",
     "GRID_GUTTER",
     "GRID_CONTAINER_PADDING",
