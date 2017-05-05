@@ -282,6 +282,18 @@ export const h4FontWeight = "700";
 export const h3FontWeight = "400";
 export const h2FontWeight = "400";
 export const h1FontWeight = "400";
+export const h6MarginTop = "0";
+export const h5MarginTop = "0";
+export const h4MarginTop = "0";
+export const h3MarginTop = "0";
+export const h2MarginTop = "0";
+export const h1MarginTop = "0";
+export const h6MarginBottom = ".75rem";
+export const h5MarginBottom = ".75rem";
+export const h4MarginBottom = ".75rem";
+export const h3MarginBottom = ".75rem";
+export const h2MarginBottom = ".75rem";
+export const h1MarginBottom = ".75rem";
 export const headingContentMarginTop = "1.875rem";
 export const pMarginTop = "0";
 export const pMarginBottom = ".75rem";
@@ -590,6 +602,18 @@ spacingLg,
 spacingXl,
 spacingXxl,
 onePixelRem,
+h6MarginTop,
+h5MarginTop,
+h4MarginTop,
+h3MarginTop,
+h2MarginTop,
+h1MarginTop,
+h6MarginBottom,
+h5MarginBottom,
+h4MarginBottom,
+h3MarginBottom,
+h2MarginBottom,
+h1MarginBottom,
 headingContentMarginTop,
 pMarginTop,
 pMarginBottom,

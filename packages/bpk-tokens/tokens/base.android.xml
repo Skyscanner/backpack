@@ -284,6 +284,18 @@
   <property name="H3_FONT_WEIGHT" category="font-weights">400</property>
   <property name="H2_FONT_WEIGHT" category="font-weights">400</property>
   <property name="H1_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="H6_MARGIN_TOP" category="spacings">0</property>
+  <property name="H5_MARGIN_TOP" category="spacings">0</property>
+  <property name="H4_MARGIN_TOP" category="spacings">0</property>
+  <property name="H3_MARGIN_TOP" category="spacings">0</property>
+  <property name="H2_MARGIN_TOP" category="spacings">0</property>
+  <property name="H1_MARGIN_TOP" category="spacings">0</property>
+  <property name="H6_MARGIN_BOTTOM" category="spacings">12</property>
+  <property name="H5_MARGIN_BOTTOM" category="spacings">12</property>
+  <property name="H4_MARGIN_BOTTOM" category="spacings">12</property>
+  <property name="H3_MARGIN_BOTTOM" category="spacings">12</property>
+  <property name="H2_MARGIN_BOTTOM" category="spacings">12</property>
+  <property name="H1_MARGIN_BOTTOM" category="spacings">12</property>
   <property name="HEADING_CONTENT_MARGIN_TOP" category="spacings">30</property>
   <property name="P_MARGIN_TOP" category="spacings">0</property>
   <property name="P_MARGIN_BOTTOM" category="spacings">12</property>

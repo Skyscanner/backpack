@@ -9,7 +9,8 @@
 **Fixed:**
 - bpk-component-heading
 - bpk-mixins
-  - H1, H2 and H3 headings are now have a smaller font-size and line-height on mobile
+  - h1, h2, h3 and h4 heading styles are bumped one level down on mobile
+  - i.e. h1 -> h2, h2 -> h3 etc
   - H4, H5 and H6 headings are now bold.
 
 ## 2017-05-04 - Multiline labels for checkboxes/radio buttons, bug fixes
