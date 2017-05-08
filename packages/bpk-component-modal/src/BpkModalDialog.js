@@ -1,6 +1,5 @@
 import focusScope from 'a11y-focus-scope';
 import focusStore from 'a11y-focus-store';
-import BpkHeading from 'bpk-component-heading';
 import { BpkButtonLink } from 'bpk-component-link';
 import React, { PropTypes, Component } from 'react';
 import BpkCloseButton from 'bpk-component-close-button';
@@ -91,9 +90,9 @@ class BpkModalDialog extends Component {
           ref={this.getDialogRef}
         >
           <header className="bpk-modal__dialog-header">
-            <BpkHeading id={headingId} level="h4" bottomMargin={false}>
+            <h2 id={headingId} className="bpk-modal__dialog-heading">
               {this.props.title}
-            </BpkHeading>
+            </h2>
             &nbsp;
             {this.props.closeText
               ? <BpkButtonLink onClick={this.onClose}>{this.props.closeText}</BpkButtonLink>

@@ -11,11 +11,11 @@ exports[`BpkModalDialog should render correctly 1`] = `
     tabIndex="-1">
     <header
       className="bpk-modal__dialog-header">
-      <h4
-        className="bpk-heading-h4 bpk-heading--no-bottom-margin"
+      <h2
+        className="bpk-modal__dialog-heading"
         id="bpk-modal-heading-my-modal">
         Modal title
-      </h4>
+      </h2>
        
       <button
         aria-label="Close"
@@ -61,11 +61,11 @@ exports[`BpkModalDialog should render correctly when it has a className 1`] = `
     tabIndex="-1">
     <header
       className="bpk-modal__dialog-header">
-      <h4
-        className="bpk-heading-h4 bpk-heading--no-bottom-margin"
+      <h2
+        className="bpk-modal__dialog-heading"
         id="bpk-modal-heading-my-modal">
         Modal title
-      </h4>
+      </h2>
        
       <button
         aria-label="Close"
