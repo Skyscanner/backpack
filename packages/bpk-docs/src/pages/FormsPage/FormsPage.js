@@ -553,10 +553,15 @@ const components = [
     blurb: [
       <BpkParagraph>
         Labels should always be used with form elements to provide context to the user. Relying on placeholders alone
-        is not good practise. These can be seen in the examples above for inputs & selects.
+        is not good practise. Have a look at
+        the <BpkRouterLink to={ROUTES.FIELDSETS}>fieldset</BpkRouterLink> component which composes labels, fields and
+        validation messages accordingly.
       </BpkParagraph>,
     ],
-    examples: [],
+    examples: [
+      <BpkLabel>This is a label</BpkLabel>,
+      <BpkLabel required>This is a required label</BpkLabel>,
+    ],
     readme: labelReadme,
   },
   {
