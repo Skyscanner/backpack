@@ -1708,73 +1708,13 @@
       "value": "0",
       "type": "size",
       "category": "spacings",
-      "name": "h6MarginTop"
-    },
-    {
-      "value": "0",
-      "type": "size",
-      "category": "spacings",
-      "name": "h5MarginTop"
-    },
-    {
-      "value": "0",
-      "type": "size",
-      "category": "spacings",
-      "name": "h4MarginTop"
-    },
-    {
-      "value": "0",
-      "type": "size",
-      "category": "spacings",
-      "name": "h3MarginTop"
-    },
-    {
-      "value": "0",
-      "type": "size",
-      "category": "spacings",
-      "name": "h2MarginTop"
-    },
-    {
-      "value": "0",
-      "type": "size",
-      "category": "spacings",
-      "name": "h1MarginTop"
+      "name": "headingMarginTop"
     },
     {
       "value": "12",
       "type": "size",
       "category": "spacings",
-      "name": "h6MarginBottom"
-    },
-    {
-      "value": "12",
-      "type": "size",
-      "category": "spacings",
-      "name": "h5MarginBottom"
-    },
-    {
-      "value": "12",
-      "type": "size",
-      "category": "spacings",
-      "name": "h4MarginBottom"
-    },
-    {
-      "value": "12",
-      "type": "size",
-      "category": "spacings",
-      "name": "h3MarginBottom"
-    },
-    {
-      "value": "12",
-      "type": "size",
-      "category": "spacings",
-      "name": "h2MarginBottom"
-    },
-    {
-      "value": "12",
-      "type": "size",
-      "category": "spacings",
-      "name": "h1MarginBottom"
+      "name": "headingMarginBottom"
     },
     {
       "value": "30",

@@ -158,62 +158,12 @@
       "type": "number",
       "category": "font-weights"
     },
-    "H6_MARGIN_TOP": {
+    "HEADING_MARGIN_TOP": {
       "value": "0",
       "type": "size",
       "category": "spacings"
     },
-    "H5_MARGIN_TOP": {
-      "value": "0",
-      "type": "size",
-      "category": "spacings"
-    },
-    "H4_MARGIN_TOP": {
-      "value": "0",
-      "type": "size",
-      "category": "spacings"
-    },
-    "H3_MARGIN_TOP": {
-      "value": "0",
-      "type": "size",
-      "category": "spacings"
-    },
-    "H2_MARGIN_TOP": {
-      "value": "0",
-      "type": "size",
-      "category": "spacings"
-    },
-    "H1_MARGIN_TOP": {
-      "value": "0",
-      "type": "size",
-      "category": "spacings"
-    },
-    "H6_MARGIN_BOTTOM": {
-      "value": "{!SPACING_SM}",
-      "type": "size",
-      "category": "spacings"
-    },
-    "H5_MARGIN_BOTTOM": {
-      "value": "{!SPACING_SM}",
-      "type": "size",
-      "category": "spacings"
-    },
-    "H4_MARGIN_BOTTOM": {
-      "value": "{!SPACING_SM}",
-      "type": "size",
-      "category": "spacings"
-    },
-    "H3_MARGIN_BOTTOM": {
-      "value": "{!SPACING_SM}",
-      "type": "size",
-      "category": "spacings"
-    },
-    "H2_MARGIN_BOTTOM": {
-      "value": "{!SPACING_SM}",
-      "type": "size",
-      "category": "spacings"
-    },
-    "H1_MARGIN_BOTTOM": {
+    "HEADING_MARGIN_BOTTOM": {
       "value": "{!SPACING_SM}",
       "type": "size",
       "category": "spacings"
