@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 import CustomPropTypes from './custom-proptypes';
 import './bpk-calendar.scss';
@@ -81,16 +82,16 @@ BpkCalendarDate.propTypes = {
   // Required
   date: PropTypes.instanceOf(Date).isRequired,
   // Optional
-  isBlocked: React.PropTypes.bool,
-  isFocused: React.PropTypes.bool,
-  isKeyboardFocusable: React.PropTypes.bool,
-  isOutside: React.PropTypes.bool,
-  isSelected: React.PropTypes.bool,
-  isToday: React.PropTypes.bool,
+  isBlocked: PropTypes.bool,
+  isFocused: PropTypes.bool,
+  isKeyboardFocusable: PropTypes.bool,
+  isOutside: PropTypes.bool,
+  isSelected: PropTypes.bool,
+  isToday: PropTypes.bool,
   modifiers: CustomPropTypes.DateModifiers,
-  onClick: React.PropTypes.func,
-  onDateKeyDown: React.PropTypes.func,
-  preventKeyboardFocus: React.PropTypes.bool,
+  onClick: PropTypes.func,
+  onDateKeyDown: PropTypes.func,
+  preventKeyboardFocus: PropTypes.bool,
 };
 
 BpkCalendarDate.defaultProps = {

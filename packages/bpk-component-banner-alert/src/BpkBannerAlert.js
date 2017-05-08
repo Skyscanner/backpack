@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { withButtonAlignment } from 'bpk-component-icon';
 import TickCircleIcon from 'bpk-component-icon/sm/tick-circle';
 import ChevronDownIcon from 'bpk-component-icon/sm/chevron-down';

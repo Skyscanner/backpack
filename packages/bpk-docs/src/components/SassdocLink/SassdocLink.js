@@ -1,5 +1,7 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import BpkLink from 'bpk-component-link';
+
+import PropTypes from 'prop-types';
 
 /* eslint-disable import/no-webpack-loader-syntax */
 import rawSassdocLogoSvg from 'raw!./../../static/sassdoc-logo.svg';

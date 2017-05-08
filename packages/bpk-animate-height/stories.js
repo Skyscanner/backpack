@@ -1,6 +1,7 @@
 import BpkButton from 'bpk-component-button';
 import { storiesOf } from '@kadira/storybook';
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 import AnimateHeight from './index';
 

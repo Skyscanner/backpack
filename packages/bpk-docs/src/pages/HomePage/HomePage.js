@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
+import RouterPropTypes from 'prop-types';
+import React from 'react';
 import Helmet from 'react-helmet';
-import { PropTypes as RouterPropTypes } from 'react-router';
+import 'react-router';
 
 import BpkButton from 'bpk-component-button';
 import BpkHeading from 'bpk-component-heading';

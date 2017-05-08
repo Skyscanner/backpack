@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import CustomPropTypes from './custom-proptypes';
 import { getFirstDayOfWeekend, getLastDayOfWeekend, orderDaysOfWeek } from './date-utils';

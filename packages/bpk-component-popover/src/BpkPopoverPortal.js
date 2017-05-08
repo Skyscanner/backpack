@@ -1,7 +1,8 @@
 import focusStore from 'a11y-focus-store';
 import focusScope from 'a11y-focus-scope';
 import { Portal } from 'bpk-react-utils';
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import Tether, { getArrowPositionCallback, applyRTLTransforms } from 'bpk-tether';
 
 import './bpk-popover.scss';

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import SmSpinner from 'bpk-svgs/dist/js/spinners/sm';
 
 import './bpk-spinner.scss';

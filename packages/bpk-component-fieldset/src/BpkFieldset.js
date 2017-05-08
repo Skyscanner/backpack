@@ -1,4 +1,5 @@
-import React, { cloneElement, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { cloneElement } from 'react';
 import BpkLabel from 'bpk-component-label';
 import BpkFormValidation from 'bpk-component-form-validation';
 

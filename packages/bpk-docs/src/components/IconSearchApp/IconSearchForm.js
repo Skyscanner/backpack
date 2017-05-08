@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import BpkLabel from 'bpk-component-label';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 

@@ -1,4 +1,4 @@
-import { PropTypes } from 'react';
+import PropTypes from 'prop-types';
 
 const icons = PropTypes.arrayOf(PropTypes.shape({
   name: PropTypes.string.isRequired,

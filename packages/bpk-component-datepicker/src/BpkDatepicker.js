@@ -1,7 +1,8 @@
 import BpkInput from 'bpk-component-input';
 import BpkModal from 'bpk-component-modal';
 import BpkPopover from 'bpk-component-popover';
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 import BpkCalendar, { CustomPropTypes } from 'bpk-component-calendar';
 

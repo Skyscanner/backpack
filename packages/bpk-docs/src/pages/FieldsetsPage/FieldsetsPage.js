@@ -6,7 +6,8 @@ import BpkFieldset from 'bpk-component-fieldset';
 import BpkParagraph from 'bpk-component-paragraph';
 import BpkRouterLink from 'bpk-component-router-link';
 import readme from 'bpk-component-fieldset/readme.md';
-import React, { cloneElement, PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { cloneElement, Component } from 'react';
 
 import './fieldsets-page.scss';
 import * as ROUTES from './../../constants/routes';

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import CloseIcon from 'bpk-component-icon/sm/close';
 import { withButtonAlignment } from 'bpk-component-icon';
 

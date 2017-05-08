@@ -1,5 +1,6 @@
 import BpkParagraph from 'bpk-component-paragraph';
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import BpkCalendar, {
   BpkCalendarGrid,
   BpkCalendarNav,
