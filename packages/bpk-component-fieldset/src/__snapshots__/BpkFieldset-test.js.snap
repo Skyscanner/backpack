@@ -4,13 +4,56 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
   <label
     className="bpk-checkbox">
     <input
-      aria-required={false}
       className="bpk-checkbox__input"
       disabled={false}
       id="terms_and_conditions_checkbox"
       name="terms_and_conditions"
       type="checkbox" />
     I accept the terms and conditions
+  </label>
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "visible",
+        "transition": "height 200ms ease ",
+      }
+    }>
+    <div>
+      <div
+        className="bpk-form-validation__container">
+        <div
+          className="bpk-form-validation bpk-form-validation--is-checkbox"
+          id="terms_and_conditions_checkbox_validation_message">
+          You must accept the terms and conditions to continue
+        </div>
+      </div>
+    </div>
+  </div>
+</fieldset>
+`;
+
+exports[`BpkFieldset should render correctly with checkbox component and "required" attribute 1`] = `
+<fieldset
+  className="bpk-fieldset">
+  <label
+    className="bpk-checkbox">
+    <input
+      className="bpk-checkbox__input"
+      disabled={false}
+      id="terms_and_conditions_checkbox"
+      name="terms_and_conditions"
+      type="checkbox" />
+    I accept the terms and conditions
+    <span
+      className="bpk-checkbox__asterix">
+      *
+    </span>
   </label>
   <div
     onTransitionEnd={[Function]}
@@ -51,6 +94,54 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
     aria-invalid={false}
     aria-required={false}
     className="bpk-input"
+    id="name_input"
+    name="name"
+    placeholder="e.g. Joe Bloggs"
+    type="text"
+    value="" />
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "visible",
+        "transition": "height 200ms ease ",
+      }
+    }>
+    <div>
+      <div
+        className="bpk-form-validation__container">
+        <div
+          className="bpk-form-validation"
+          id="name_input_validation_message">
+          Please enter a name
+        </div>
+      </div>
+    </div>
+  </div>
+</fieldset>
+`;
+
+exports[`BpkFieldset should render correctly with input component and "required" attribute 1`] = `
+<fieldset
+  className="bpk-fieldset">
+  <label
+    className="bpk-label"
+    htmlFor="name_input">
+    Name
+    <span
+      className="bpk-label__asterix">
+      *
+    </span>
+  </label>
+  <input
+    aria-invalid={false}
+    aria-required={true}
+    className="bpk-input bpk-input--valid"
     id="name_input"
     name="name"
     placeholder="e.g. Joe Bloggs"
@@ -183,6 +274,74 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
   <select
     aria-invalid={false}
     aria-required={false}
+    className="bpk-select"
+    id="fruits_select"
+    name="fruits"
+    value="">
+    <option
+      value="">
+      Please select...
+    </option>
+    <option
+      value="apples">
+      Apples
+    </option>
+    <option
+      value="oranges">
+      Oranges
+    </option>
+    <option
+      value="pears">
+      Pears
+    </option>
+    <option
+      disabled={true}
+      value="tomato">
+      Tomato
+    </option>
+  </select>
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "visible",
+        "transition": "height 200ms ease ",
+      }
+    }>
+    <div>
+      <div
+        className="bpk-form-validation__container">
+        <div
+          className="bpk-form-validation"
+          id="fruits_select_validation_message">
+          Please select a fruit
+        </div>
+      </div>
+    </div>
+  </div>
+</fieldset>
+`;
+
+exports[`BpkFieldset should render correctly with select component and "required" attribute 1`] = `
+<fieldset
+  className="bpk-fieldset">
+  <label
+    className="bpk-label"
+    htmlFor="fruits_select">
+    Fruits
+    <span
+      className="bpk-label__asterix">
+      *
+    </span>
+  </label>
+  <select
+    aria-invalid={false}
+    aria-required={true}
     className="bpk-select"
     id="fruits_select"
     name="fruits"

@@ -112,7 +112,7 @@ storiesOf('bpk-component-fieldset', module)
   ))
   .add('Checkbox example', () => (
     <FieldsetContainer
-      validationMessage="Required"
+      validationMessage="Please check this"
       validValue
       isCheckbox
     >
@@ -137,6 +137,26 @@ storiesOf('bpk-component-fieldset', module)
         placeholder="e.g. Joe Bloggs"
         value=""
       />
+    </FieldsetContainer>
+  ))
+  .add('Required select example', () => (
+    <FieldsetContainer
+      label="Fruits"
+      validationMessage="Please select a fruit (Orange is correct!)"
+      validValue="oranges"
+      required
+    >
+      <BpkSelect
+        id="required_select"
+        name="fruits"
+        value=""
+      >
+        <option value="">Please select...</option>
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomato" disabled>Tomato</option>
+      </BpkSelect>
     </FieldsetContainer>
   ))
   .add('Required checkbox example', () => (

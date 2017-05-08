@@ -48,6 +48,22 @@ exports[`BpkCheckbox should render correctly with id attribute 1`] = `
 </label>
 `;
 
+exports[`BpkCheckbox should render correctly with required attribute 1`] = `
+<label
+  className="bpk-checkbox">
+  <input
+    className="bpk-checkbox__input"
+    disabled={false}
+    name="checkbox"
+    type="checkbox" />
+  Prefer directs
+  <span
+    className="bpk-checkbox__asterix">
+    *
+  </span>
+</label>
+`;
+
 exports[`BpkCheckbox should render correctly with value attribute 1`] = `
 <label
   className="bpk-checkbox">

@@ -13,6 +13,11 @@ describe('BpkLabel', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with a "required" attribute', () => {
+    const tree = renderer.create(<BpkLabel required>Origin</BpkLabel>).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with a "className" attribute', () => {
     const tree = renderer.create(<BpkLabel className="test">Origin</BpkLabel>).toJSON();
     expect(tree).toMatchSnapshot();

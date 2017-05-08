@@ -30,12 +30,12 @@ const BpkFieldset = (props) => {
     ? valid === false
     : children.props.valid === false;
 
-  const childrenProps = {
-    'aria-required': required,
-  };
+  const childrenProps = {};
 
-  if (isCheckbox && required) {
-    childrenProps.required = true;
+  if (isCheckbox) {
+    childrenProps.required = required;
+  } else {
+    childrenProps['aria-required'] = required;
   }
 
   if (validationMessage && isInvalid) {
