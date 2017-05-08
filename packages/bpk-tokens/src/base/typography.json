@@ -129,17 +129,17 @@
       "category": "line-heights"
     },
     "H6_FONT_WEIGHT": {
-      "value": "400",
+      "value": "700",
       "type": "number",
       "category": "font-weights"
     },
     "H5_FONT_WEIGHT": {
-      "value": "400",
+      "value": "700",
       "type": "number",
       "category": "font-weights"
     },
     "H4_FONT_WEIGHT": {
-      "value": "400",
+      "value": "700",
       "type": "number",
       "category": "font-weights"
     },

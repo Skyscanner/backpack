@@ -108,6 +108,13 @@
     @include bpk-border-bottom-sm($bpk-color-gray-100);
   }
 
+  &__dialog-heading {
+    margin: 0;
+    font-weight: 700;
+
+    @include bpk-text-base;
+  }
+
   &__dialog-close-button {
     float: right;
 

@@ -83,11 +83,11 @@ exports[`BpkPopover should render correctly with "labelAsTitle" attribute 1`] = 
     className="bpk-popover__inner">
     <header
       className="bpk-popover__header">
-      <h4
-        className="bpk-heading-h4 bpk-heading--no-bottom-margin"
+      <h2
+        className="bpk-popover__heading"
         id="bpk-popover-label-my-popover">
         My popover
-      </h4>
+      </h2>
        
       <button
         aria-label="Close"

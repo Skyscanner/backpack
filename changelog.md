@@ -6,6 +6,13 @@
 - bpk-component-textarea:
   - New form validation component (http://backpack.prod.aws.skyscnr.com/components/atoms/forms#textareas)
 
+**Fixed:**
+- bpk-component-heading
+- bpk-mixins
+  - h1, h2, h3 and h4 heading styles are bumped one level down on mobile
+  - i.e. h1 -> h2, h2 -> h3 etc
+  - H4, H5 and H6 headings are now bold.
+
 ## 2017-05-04 - Multiline labels for checkboxes/radio buttons, bug fixes
 
 **Fixed:**

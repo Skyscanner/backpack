@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import BpkHeading from 'bpk-component-heading';
 import { BpkButtonLink } from 'bpk-component-link';
 import BpkCloseButton from 'bpk-component-close-button';
 import { TransitionInitialMount } from 'bpk-react-utils';
@@ -47,7 +46,7 @@ const BpkPopover = (props) => {
           {labelAsTitle
             ? (
               <header className="bpk-popover__header">
-                <BpkHeading id={labelId} level="h4" bottomMargin={false}>{label}</BpkHeading>
+                <h2 id={labelId} className="bpk-popover__heading">{label}</h2>
                 &nbsp;
                 {closeButtonIcon
                   ? <BpkCloseButton className="bpk-popover__close-button" label={closeButtonText} onClick={onClose} />
