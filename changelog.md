@@ -2,10 +2,14 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-05-08 - Responsive headings and a new textarea component
+
 **Changed:**
-- bpk-component-heading:
-- bpk-mixins:
-- bpk-tokens:
+- bpk-component-heading: 1.2.17 => 2.0.0
+- bpk-mixins: 13.1.1 => 14.0.0
+- bpk-tokens: 21.1.0 => 22.0.0
   - h1, h2, h3 and h4 heading styles are bumped one level down on mobile
   - i.e. h1 -> h2, h2 -> h3 etc
   - H4, H5 and H6 headings are now bold.
@@ -13,11 +17,11 @@
     - i.e. `H1_MARGIN_TOP` -> `HEADING_MARGIN_TOP` & `H3_MARGIN_BOTTOM` -> `HEADING_MARGIN_BOTTOM`
 
 **Added:**
-- bpk-component-textarea:
+- bpk-component-textarea: 0.0.0 => 0.0.1
   - New form validation component (http://backpack.prod.aws.skyscnr.com/components/atoms/forms#textareas)
 
 **Fixed:**
-- bpk-component-datepicker:
+- bpk-component-datepicker: 6.0.2 => 6.0.3
   - Fixed calendar grid alignment on mobile
 
 ## 2017-05-04 - Multiline labels for checkboxes/radio buttons, bug fixes
