@@ -149,6 +149,10 @@
     "TEXTAREA_MIN_HEIGHT": {
       "value": "{!SPACING_XXL} * 2",
       "type": "size"
+    },
+    "REQUIRED_COLOR": {
+      "value": "{!RED_500}",
+      "type": "color"
     }
   }
 }
