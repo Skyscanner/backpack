@@ -243,9 +243,15 @@ $calendar-height: 6 * ($bpk-calendar-day-size + $bpk-calendar-day-spacing);
   height: $calendar-height;
   overflow: hidden;
 
+  &__dummy {
+    display: inline-block;
+    width: $calendar-width;
+  }
+
   &__strip {
     position: absolute;
     left: 0;
+    display: block;
     z-index: 0;
     width: 3 * $calendar-width;
 
