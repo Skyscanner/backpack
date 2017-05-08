@@ -8,6 +8,12 @@ import './bpk-calendar.scss';
 const navigatedByMonthNudger = () => document.activeElement.className.indexOf('bpk-calendar-nav__button') !== -1;
 
 class BpkCalendarDate extends Component {
+  constructor() {
+    super();
+
+    this.getButtonRef = this.getButtonRef.bind(this);
+  }
+
   componentDidMount() {
     if (!this.props.preventKeyboardFocus && this.props.isFocused) {
       // If we got here by clicking the nudger, don't focus this date
@@ -19,7 +25,7 @@ class BpkCalendarDate extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.preventKeyboardFocus || navigatedByMonthNudger()) { return; }
+    if (!this.props.isKeyboardFocusable || this.props.preventKeyboardFocus || navigatedByMonthNudger()) { return; }
 
     // Giving focus after keyboard navigation
     if (!prevProps.isFocused && this.props.isFocused && this.props.isKeyboardFocusable) {
@@ -31,6 +37,10 @@ class BpkCalendarDate extends Component {
     if (this.props.isFocused && !prevProps.isKeyboardFocusable && this.props.isKeyboardFocusable) {
       this.button.focus();
     }
+  }
+
+  getButtonRef(button) {
+    this.button = button;
   }
 
   render() {
@@ -71,7 +81,7 @@ class BpkCalendarDate extends Component {
         onClick={onClick}
         onKeyDown={onDateKeyDown}
         aria-pressed={isSelected}
-        ref={(button) => { this.button = button; }}
+        ref={this.getButtonRef}
         {...buttonProps}
       ><span aria-hidden="true">{ date.getDate() }</span></button>
     );
