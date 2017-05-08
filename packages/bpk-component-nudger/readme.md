@@ -32,7 +32,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <BpkLabel label="Number of passengers" htmlFor="my-nudger" />
+        <BpkLabel htmlFor="my-nudger">Number of passengers</BpkLabel>
         <BpkNudger
           id="my-nudger"
           min={1}

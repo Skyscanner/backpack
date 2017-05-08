@@ -43,7 +43,7 @@ class LoginFormExample extends Component {
     return (
       <form action="#">
         <FormFieldExample>
-          <BpkLabel label="Username" htmlFor="username" />
+          <BpkLabel htmlFor="username">Username</BpkLabel>
           <BpkInput
             id="username"
             name="username"
@@ -53,7 +53,7 @@ class LoginFormExample extends Component {
           />
         </FormFieldExample>
         <FormFieldExample>
-          <BpkLabel label="Password" htmlFor="password" />
+          <BpkLabel htmlFor="password">Password</BpkLabel>
           <BpkInput
             id="password"
             name="password"

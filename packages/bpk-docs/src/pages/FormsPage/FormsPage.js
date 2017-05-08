@@ -43,7 +43,7 @@ const components = [
     ],
     examples: [
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Input" htmlFor="input" />
+        <BpkLabel htmlFor="input">Input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
           id="input"
@@ -54,7 +54,7 @@ const components = [
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Input (placeholder)" htmlFor="input_placeholder" />
+        <BpkLabel htmlFor="input_placeholder">Input (placeholder)</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
           id="input_placeholder"
@@ -65,7 +65,7 @@ const components = [
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Valid input" htmlFor="input_valid" />
+        <BpkLabel htmlFor="input_valid">Valid input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
           id="input_valid"
@@ -77,7 +77,7 @@ const components = [
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Invalid input" htmlFor="input_invalid" />
+        <BpkLabel htmlFor="input_invalid">Invalid input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
           id="input_invalid"
@@ -89,7 +89,7 @@ const components = [
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Disabled input" htmlFor="input_disabled" />
+        <BpkLabel htmlFor="input_disabled">Disabled input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
           id="input_disabled"
@@ -101,7 +101,7 @@ const components = [
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Email input" htmlFor="input_email" />
+        <BpkLabel htmlFor="input_email">Email input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
           type={INPUT_TYPES.EMAIL}
@@ -113,7 +113,7 @@ const components = [
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Number input" htmlFor="input_number" />
+        <BpkLabel htmlFor="input_number">Number input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
           type={INPUT_TYPES.NUMBER}
@@ -125,7 +125,7 @@ const components = [
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Password input" htmlFor="input_password" />
+        <BpkLabel htmlFor="input_password">Password input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
           type={INPUT_TYPES.PASSWORD}
@@ -137,7 +137,7 @@ const components = [
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Telephone input" htmlFor="input_telephone" />
+        <BpkLabel htmlFor="input_telephone">Telephone input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
           type={INPUT_TYPES.TEL}
@@ -162,7 +162,7 @@ const components = [
     ],
     examples: [
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Select" htmlFor="select" />
+        <BpkLabel htmlFor="select">Select</BpkLabel>
         <InputContainer
           FormComponent={BpkSelect}
           id="select"
@@ -177,7 +177,7 @@ const components = [
         </InputContainer>
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Invalid select" htmlFor="select_invalid" />
+        <BpkLabel htmlFor="select_invalid">Invalid select</BpkLabel>
         <InputContainer
           FormComponent={BpkSelect}
           id="select_invalid"
@@ -194,7 +194,7 @@ const components = [
         </InputContainer>
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Disabled select" htmlFor="select_disabled" />
+        <BpkLabel htmlFor="select_disabled">Disabled select</BpkLabel>
         <InputContainer
           FormComponent={BpkSelect}
           id="select_disabled"
@@ -225,10 +225,10 @@ const components = [
       </div>,
       <form className="bpkdocs-forms-page__form bpkdocs-forms-page__form--desktop-only">
         <div>
-          <BpkLabel label="From" htmlFor="input_origin" className="bpkdocs-forms-page__place" />
-          <BpkLabel label="To" htmlFor="input_destination" className="bpkdocs-forms-page__place" />
-          <BpkLabel label="Depart" htmlFor="input_outbound" className="bpkdocs-forms-page__date" />
-          <BpkLabel label="Return" htmlFor="input_inbound" className="bpkdocs-forms-page__date" />
+          <BpkLabel htmlFor="input_origin" className="bpkdocs-forms-page__place">From</BpkLabel>
+          <BpkLabel htmlFor="input_destination" className="bpkdocs-forms-page__place">To</BpkLabel>
+          <BpkLabel htmlFor="input_outbound" className="bpkdocs-forms-page__date">Depart</BpkLabel>
+          <BpkLabel htmlFor="input_inbound" className="bpkdocs-forms-page__date">Return</BpkLabel>
         </div>
         <div>
           <InputContainer
@@ -280,14 +280,15 @@ const components = [
       <form className="bpkdocs-forms-page__form bpkdocs-forms-page__form--desktop-only">
         <div>
           <BpkLabel
-            label="Find hotel deals"
             htmlFor="input_hotels_destination"
             className="bpkdocs-forms-page__hotels-destination"
-          />
-          <BpkLabel label="Check-in" htmlFor="input_checkin" className="bpkdocs-forms-page__date" />
-          <BpkLabel label="Check-out" htmlFor="input_checkout" className="bpkdocs-forms-page__date" />
-          <BpkLabel label="Guests" htmlFor="input_guests" className="bpkdocs-forms-page__number" />
-          <BpkLabel label="Rooms" htmlFor="input_rooms" className="bpkdocs-forms-page__number" />
+          >
+            Find hotel deals
+          </BpkLabel>
+          <BpkLabel htmlFor="input_checkin" className="bpkdocs-forms-page__date">Check-in</BpkLabel>
+          <BpkLabel htmlFor="input_checkout" className="bpkdocs-forms-page__date">Check-out</BpkLabel>
+          <BpkLabel htmlFor="input_guests" className="bpkdocs-forms-page__number">Guests</BpkLabel>
+          <BpkLabel htmlFor="input_rooms" className="bpkdocs-forms-page__number">Rooms</BpkLabel>
         </div>
         <div>
           <InputContainer
@@ -358,14 +359,15 @@ const components = [
       <form className="bpkdocs-forms-page__form bpkdocs-forms-page__form--desktop-only">
         <div>
           <BpkLabel
-            label="Pick-up location"
             htmlFor="input_pickup_location"
             className="bpkdocs-forms-page__car-hire-pickup-location"
-          />
-          <BpkLabel label="Pick-up date" htmlFor="input_pickup_date" className="bpkdocs-forms-page__date" />
-          <BpkLabel label="Pick-up time" htmlFor="input_pickup_time" className="bpkdocs-forms-page__time" />
-          <BpkLabel label="Drop-off date" htmlFor="input_dropoff_date" className="bpkdocs-forms-page__date" />
-          <BpkLabel label="Drop-off time" htmlFor="input_dropoff_time" className="bpkdocs-forms-page__time" />
+          >
+            Pick-up location
+          </BpkLabel>
+          <BpkLabel htmlFor="input_pickup_date" className="bpkdocs-forms-page__date">Pick-up date</BpkLabel>
+          <BpkLabel htmlFor="input_pickup_time" className="bpkdocs-forms-page__time">Pick-up time</BpkLabel>
+          <BpkLabel htmlFor="input_dropoff_date" className="bpkdocs-forms-page__date">Drop-off date</BpkLabel>
+          <BpkLabel htmlFor="input_dropoff_time" className="bpkdocs-forms-page__time">Drop-off time</BpkLabel>
         </div>
         <div>
           <InputContainer
@@ -447,7 +449,7 @@ const components = [
     ],
     examples: [
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Textarea" htmlFor="textarea" />
+        <BpkLabel htmlFor="textarea">Textarea</BpkLabel>
         <InputContainer
           FormComponent={BpkTextarea}
           id="textarea"
@@ -458,7 +460,7 @@ const components = [
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Textarea (placeholder)" htmlFor="textarea_placeholder" />
+        <BpkLabel htmlFor="textarea_placeholder">Textarea (placeholder)</BpkLabel>
         <InputContainer
           FormComponent={BpkTextarea}
           id="textarea_placeholder"
@@ -469,7 +471,7 @@ const components = [
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel label="Disabled textarea" htmlFor="textarea_disabled" />
+        <BpkLabel htmlFor="textarea_disabled">Disabled textarea</BpkLabel>
         <InputContainer
           FormComponent={BpkTextarea}
           id="textarea_disabled"

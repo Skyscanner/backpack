@@ -15,7 +15,7 @@ import React from 'react';
 import BpkLabel from 'bpk-component-label';
 
 export default () => (
-  <BpkLabel label="Origin" htmlFor="origin" />
+  <BpkLabel htmlFor="origin">Origin</BpkLabel>
 )
 ```
 

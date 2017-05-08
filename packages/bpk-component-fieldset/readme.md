@@ -61,6 +61,7 @@ class FieldsetContainer extends Component {
 | children          | node     | true     | -             |
 | label             | string   | false    | null          |
 | valid             | bool     | false    | null          |
+| required          | bool     | false    | false         |
 | className         | string   | false    | null          |
 | validationMessage | string   | false    | null          |
 | isCheckbox        | bool     | false    | false         |

@@ -2,7 +2,16 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Changed:**
+- bpk-component-label:
+  - The `label` prop has been deprecated in favor of `children`
+  - i.e. `<BpkLabel>My label</BpkLabel>` instead of `<BpkLabel label="My label" />`
+
+**Added:**
+- bpk-component-checkbox:
+- bpk-component-fieldset:
+- bpk-component-label:
+  - New `required` prop
 
 ## 2017-05-08 - Responsive headings and a new textarea component
 

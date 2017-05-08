@@ -93,7 +93,7 @@ class MyComponent extends Component {
 
     return (
       <div>
-        <BpkLabel label="Office" htmlFor="my-autosuggest" />
+        <BpkLabel htmlFor="my-autosuggest">Office</BpkLabel>
         <BpkAutosuggest
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
