@@ -5,5 +5,8 @@ import BpkLabel from './index';
 
 storiesOf('bpk-component-label', module)
   .add('Example', () => (
-    <BpkLabel label="Origin" htmlFor="origin" />
+    <BpkLabel htmlFor="origin">Origin</BpkLabel>
+  ))
+  .add('Required', () => (
+    <BpkLabel htmlFor="origin" required>Origin</BpkLabel>
   ));

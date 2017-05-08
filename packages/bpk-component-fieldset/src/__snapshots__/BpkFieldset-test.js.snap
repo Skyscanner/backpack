@@ -4,6 +4,7 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
   <label
     className="bpk-checkbox">
     <input
+      aria-required={false}
       className="bpk-checkbox__input"
       disabled={false}
       id="terms_and_conditions_checkbox"
@@ -48,6 +49,7 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
   </label>
   <input
     aria-invalid={false}
+    aria-required={false}
     className="bpk-input"
     id="name_input"
     name="name"
@@ -91,6 +93,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
   </label>
   <input
     aria-invalid={false}
+    aria-required={false}
     className="bpk-input bpk-input--valid"
     id="name_input"
     name="name"
@@ -135,6 +138,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
   <input
     aria-describedby="name_input_validation_message"
     aria-invalid={true}
+    aria-required={false}
     className="bpk-input bpk-input--invalid"
     id="name_input"
     name="name"
@@ -178,6 +182,7 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
   </label>
   <select
     aria-invalid={false}
+    aria-required={false}
     className="bpk-select"
     id="fruits_select"
     name="fruits"

@@ -122,4 +122,34 @@ storiesOf('bpk-component-fieldset', module)
         label="Prefer directs"
       />
     </FieldsetContainer>
+  ))
+  .add('Required input example', () => (
+    <FieldsetContainer
+      label="Name"
+      validationMessage="Please enter a name (Joe Bloggs is correct!)"
+      validValue="Joe Bloggs"
+      required
+    >
+      <BpkInput
+        id="required_name_input"
+        name="name"
+        type={INPUT_TYPES.TEXT}
+        placeholder="e.g. Joe Bloggs"
+        value=""
+      />
+    </FieldsetContainer>
+  ))
+  .add('Required checkbox example', () => (
+    <FieldsetContainer
+      validationMessage="Please accept the terms &amp; conditions to continue"
+      validValue
+      isCheckbox
+      required
+    >
+      <BpkCheckbox
+        id="required_checkbox"
+        name="required_checkbox"
+        label="I accept the terms and conditions"
+      />
+    </FieldsetContainer>
   ));

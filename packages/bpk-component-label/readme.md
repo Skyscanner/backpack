@@ -23,5 +23,6 @@ export default () => (
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
-| label     | string   | true     | -             |
+| children  | node     | true     | -             |
+| required  | bool     | false    | false         |
 | white     | bool     | false    | false         |

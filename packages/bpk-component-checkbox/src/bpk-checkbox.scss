@@ -14,4 +14,8 @@
   &__input {
     @include bpk-checkbox__input;
   }
+
+  &__asterix {
+    color: $bpk-color-red-500;
+  }
 }

@@ -75,4 +75,14 @@ storiesOf('bpk-component-checkbox', module)
       onChange={action('checkbox changed')}
       disabled
     />
+  ))
+  .add('Required', () => (
+    <BpkCheckbox
+      id="required"
+      name="required"
+      label="Please accept the terms and conditions"
+      onChange={action('checkbox changed')}
+      checked
+      required
+    />
   ));
