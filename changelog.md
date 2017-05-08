@@ -2,16 +2,23 @@
 
 ## UNRELEASED
 
+**Changed:**
+- bpk-component-heading:
+- bpk-mixins:
+- bpk-tokens:
+  - h1, h2, h3 and h4 heading styles are bumped one level down on mobile
+  - i.e. h1 -> h2, h2 -> h3 etc
+  - H4, H5 and H6 headings are now bold.
+  - Consolidated hX margin top/bottom tokens
+    - i.e. `H1_MARGIN_TOP` -> `HEADING_MARGIN_TOP` & `H3_MARGIN_BOTTOM` -> `HEADING_MARGIN_BOTTOM`
+
 **Added:**
 - bpk-component-textarea:
   - New form validation component (http://backpack.prod.aws.skyscnr.com/components/atoms/forms#textareas)
 
 **Fixed:**
-- bpk-component-heading
-- bpk-mixins
-  - h1, h2, h3 and h4 heading styles are bumped one level down on mobile
-  - i.e. h1 -> h2, h2 -> h3 etc
-  - H4, H5 and H6 headings are now bold.
+- bpk-component-datepicker:
+  - Fixed calendar grid alignment on mobile
 
 ## 2017-05-04 - Multiline labels for checkboxes/radio buttons, bug fixes
 
