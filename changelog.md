@@ -1,10 +1,14 @@
 # Backpack changelog
 
+## UNRELEASED
+
+_Nothing yet_
+
 ## 2017-05-09 - Improved calendar performance
 
 **Fixed:**
-- bpk-component-datepicker:
-- bpk-component-calendar:
+- bpk-component-datepicker: 6.0.4 => 6.0.5
+- bpk-component-calendar: 3.1.3 => 3.1.4
   - Improved update/render performance of several components
 
 ## 2017-05-09 - "Required*" labels for form elements & fixed `prop-types` warnings
