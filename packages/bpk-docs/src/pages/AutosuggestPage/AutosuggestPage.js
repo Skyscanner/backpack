@@ -129,7 +129,7 @@ class AutosuggestExample extends Component {
 
     return (
       <div>
-        <BpkLabel label="Office" htmlFor={autosuggestId} />
+        <BpkLabel htmlFor={autosuggestId}>Office</BpkLabel>
         <BpkAutosuggest
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}

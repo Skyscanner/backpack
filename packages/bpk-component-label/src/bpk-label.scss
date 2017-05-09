@@ -6,4 +6,8 @@
   &--white {
     @include bpk-label--white;
   }
+
+  &__asterix {
+    color: $bpk-required-color;
+  }
 }

@@ -25,6 +25,26 @@ describe('BpkFieldset', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with input component and "required" attribute', () => {
+    const tree = renderer.create(
+      <BpkFieldset
+        label="Name"
+        validationMessage="Please enter a name"
+        required
+      >
+        <BpkInput
+          id="name_input"
+          name="name"
+          type={INPUT_TYPES.TEXT}
+          placeholder="e.g. Joe Bloggs"
+          value=""
+          valid
+        />
+      </BpkFieldset>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with input component and "valid" attribute', () => {
     const tree = renderer.create(
       <BpkFieldset
@@ -85,11 +105,51 @@ describe('BpkFieldset', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with select component and "required" attribute', () => {
+    const tree = renderer.create(
+      <BpkFieldset
+        label="Fruits"
+        validationMessage="Please select a fruit"
+        required
+      >
+        <BpkSelect
+          id="fruits_select"
+          name="fruits"
+          value=""
+        >
+          <option value="">Please select...</option>
+          <option value="apples">Apples</option>
+          <option value="oranges">Oranges</option>
+          <option value="pears">Pears</option>
+          <option value="tomato" disabled>Tomato</option>
+        </BpkSelect>
+      </BpkFieldset>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with checkbox component', () => {
     const tree = renderer.create(
       <BpkFieldset
         isCheckbox
         validationMessage="You must accept the terms and conditions to continue"
+      >
+        <BpkCheckbox
+          id="terms_and_conditions_checkbox"
+          name="terms_and_conditions"
+          label="I accept the terms and conditions"
+        />
+      </BpkFieldset>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with checkbox component and "required" attribute', () => {
+    const tree = renderer.create(
+      <BpkFieldset
+        isCheckbox
+        validationMessage="You must accept the terms and conditions to continue"
+        required
       >
         <BpkCheckbox
           id="terms_and_conditions_checkbox"

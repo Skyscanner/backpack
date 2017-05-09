@@ -12,6 +12,17 @@ exports[`BpkLabel should render correctly with a "className" attribute 1`] = `
 </label>
 `;
 
+exports[`BpkLabel should render correctly with a "required" attribute 1`] = `
+<label
+  className="bpk-label">
+  Origin
+  <span
+    className="bpk-label__asterix">
+    *
+  </span>
+</label>
+`;
+
 exports[`BpkLabel should render correctly with a "white" attribute 1`] = `
 <label
   className="bpk-label bpk-label--white">

@@ -48,9 +48,9 @@ class FieldsetContainer extends Component {
   }
 
   render() {
-    const { children, isCheckbox, ...rest } = this.props;
+    const { children, isCheckbox, validStates, ...rest } = this.props;
 
-    const valid = this.props.validStates[this.state.validState];
+    const valid = validStates[this.state.validState];
 
     const dynamicProps = isCheckbox
       ? { checked: this.state.checked }

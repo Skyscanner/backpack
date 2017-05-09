@@ -1279,6 +1279,12 @@
       "name": "textareaMinHeight"
     },
     {
+      "category": "forms",
+      "value": "rgb(255, 84, 82)",
+      "type": "color",
+      "name": "requiredColor"
+    },
+    {
       "category": "grids",
       "value": "12",
       "type": "number",

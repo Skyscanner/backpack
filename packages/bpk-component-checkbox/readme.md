@@ -30,4 +30,5 @@ export default () => (
 | --------- | -------- | -------- | ------------- |
 | name      | string   | true     | -             |
 | label     | string   | true     | -             |
+| required  | bool     | false    | false         |
 | white     | bool     | false    | false         |

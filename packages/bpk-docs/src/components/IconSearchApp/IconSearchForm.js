@@ -12,7 +12,7 @@ const IconSearchForm = (props) => {
   return (
     <form onSubmit={e => e.preventDefault()} className="bpkdocs-icon-search-form">
       <fieldset className="bpkdocs-icon-search-form__fieldset">
-        <BpkLabel label="Filter" htmlFor={FILTER_INPUT_ID} />
+        <BpkLabel htmlFor={FILTER_INPUT_ID}>Filter</BpkLabel>
         <BpkInput
           id={FILTER_INPUT_ID}
           type={INPUT_TYPES.TEXT}
