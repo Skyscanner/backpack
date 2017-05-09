@@ -2,16 +2,23 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-05-09 - "Required*" labels for form elements & fixed `prop-types` warnings
+
 **Changed:**
-- bpk-component-label:
+- bpk-component-label: 2.0.45 => 3.0.0
   - The `label` prop has been deprecated in favor of `children`
   - i.e. `<BpkLabel>My label</BpkLabel>` instead of `<BpkLabel label="My label" />`
 
 **Added:**
-- bpk-component-checkbox:
-- bpk-component-fieldset:
-- bpk-component-label:
+- bpk-component-checkbox: 1.0.3 => 1.1.0
+- bpk-component-fieldset: 0.0.4 => 0.1.0
+- bpk-component-label: 2.0.45 => 3.0.0
   - New `required` prop
+
+**Fixed:**
+- All components now depend on `prop-types` directly
 
 ## 2017-05-08 - Responsive headings and a new textarea component
 
