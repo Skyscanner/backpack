@@ -12,10 +12,6 @@
   "files": [
     "src"
   ],
-  "peerDependencies": {
-    "react": "^15.0.0",
-    "prop-types": "^15.5.8"
-  },
   "devDependencies": {
     "bpk-component-accordion": "^0.0.13",
     "bpk-component-autosuggest": "^2.1.2",
@@ -59,6 +55,8 @@
     "bpk-mixins": "^14.0.0",
     "bpk-stylesheets": "^3.2.27",
     "bpk-svgs": "^5.3.7",
-    "bpk-tokens": "^22.0.0"
+    "bpk-tokens": "^22.0.0",
+    "prop-types": "^15.5.8",
+    "react": "^15.0.0"
   }
 }

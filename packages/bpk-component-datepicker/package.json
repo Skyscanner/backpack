@@ -10,8 +10,7 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "peerDependencies": {
-    "react": "^15.0.0",
-    "prop-types": "^15.5.8"
+    "react": "^15.0.0"
   },
   "dependencies": {
     "bpk-component-breakpoint": "^0.1.10",
@@ -19,6 +18,7 @@
     "bpk-component-input": "^3.0.13",
     "bpk-component-modal": "^1.0.36",
     "bpk-component-popover": "^1.0.38",
-    "bpk-mixins": "^14.0.0"
+    "bpk-mixins": "^14.0.0",
+    "prop-types": "^15.5.8"
   }
 }
