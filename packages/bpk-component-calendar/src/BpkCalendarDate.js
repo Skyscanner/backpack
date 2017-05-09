@@ -58,7 +58,6 @@ class BpkCalendarDate extends PureComponent {
       ...buttonProps
     } = this.props;
     const classNames = ['bpk-calendar-date'];
-    // console.log('Re-rendering');
 
     Object.keys(modifiers).forEach((modifier) => {
       if (modifiers[modifier](this.props)) { classNames.push(`bpk-calendar-date--modifier-${modifier}`); }
