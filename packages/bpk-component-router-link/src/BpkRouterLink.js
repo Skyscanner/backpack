@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { Link, PropTypes as RouterPropTypes } from 'react-router';
 
 import './bpk-router-link.scss';

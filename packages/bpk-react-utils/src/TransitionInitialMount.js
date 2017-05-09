@@ -1,5 +1,6 @@
 import assign from 'object-assign';
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 // Object.assign() is used unpolyfilled in react-transition-group.

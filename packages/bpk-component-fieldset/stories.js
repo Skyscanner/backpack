@@ -1,4 +1,5 @@
-import React, { cloneElement, PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { cloneElement, Component } from 'react';
 import BpkSelect from 'bpk-component-select';
 import BpkCheckbox from 'bpk-component-checkbox';
 import { storiesOf } from '@kadira/storybook';

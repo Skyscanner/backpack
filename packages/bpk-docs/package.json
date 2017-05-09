@@ -13,7 +13,8 @@
     "src"
   ],
   "peerDependencies": {
-    "react": "^15.0.0"
+    "react": "^15.0.0",
+    "prop-types": "^15.5.8"
   },
   "devDependencies": {
     "bpk-component-accordion": "^0.0.13",

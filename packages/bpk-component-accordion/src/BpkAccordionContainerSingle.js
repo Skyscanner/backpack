@@ -1,4 +1,5 @@
-import React, { PropTypes, Component, Children, cloneElement } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component, Children, cloneElement } from 'react';
 
 import BpkAccordion from './BpkAccordion';
 

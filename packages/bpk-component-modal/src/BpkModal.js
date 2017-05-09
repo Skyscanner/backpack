@@ -1,5 +1,6 @@
 import { Portal } from 'bpk-react-utils';
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import BpkModalScrim from './BpkModalScrim';
 import BpkModalDialog from './BpkModalDialog';

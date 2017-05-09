@@ -1,7 +1,8 @@
 import BpkLabel from 'bpk-component-label';
 import BpkButton from 'bpk-component-button';
 import { spacingSm, spacingXxl } from 'bpk-tokens/tokens/base.es6';
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 
 const FormFieldExample = props => (

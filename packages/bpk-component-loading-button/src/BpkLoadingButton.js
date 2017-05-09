@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import BpkButton from 'bpk-component-button';
 
 import { BpkSpinner, BpkLargeSpinner } from 'bpk-component-spinner';

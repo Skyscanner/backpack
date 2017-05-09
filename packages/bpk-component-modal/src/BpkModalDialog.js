@@ -1,7 +1,8 @@
 import focusScope from 'a11y-focus-scope';
 import focusStore from 'a11y-focus-store';
 import { BpkButtonLink } from 'bpk-component-link';
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import BpkCloseButton from 'bpk-component-close-button';
 import { TransitionInitialMount } from 'bpk-react-utils';
 

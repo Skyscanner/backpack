@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
@@ -70,7 +71,7 @@ describe('BpkCalendarGrid', () => {
       return <div style={cx} />;
     };
     MyCustomDate.propTypes = {
-      date: React.PropTypes.instanceOf(Date).isRequired,
+      date: PropTypes.instanceOf(Date).isRequired,
     };
     const tree = renderer.create(
       <BpkCalendarGrid

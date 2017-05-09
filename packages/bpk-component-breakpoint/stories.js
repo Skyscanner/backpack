@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import { spacingBase, colorGreen500, colorGray100 } from 'bpk-tokens/tokens/base.es6';
 

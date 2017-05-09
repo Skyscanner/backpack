@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { bpkColorWhite } from 'bpk-tokens/tokens/base.es6';
 import clamp from 'lodash.clamp';
 

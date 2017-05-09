@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import BpkModal from 'bpk-component-modal';
 import BpkButton from 'bpk-component-button';
 import BpkParagraph from 'bpk-component-paragraph';
