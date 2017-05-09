@@ -8,19 +8,18 @@ exports[`BpkCalendar should render correctly 1`] = `
       Object {
         "MozTransform": "translateX(-294px)",
         "WebkitTransform": "translateX(-294px)",
-        "display": "block",
         "msTransform": "translateX(-294px)",
         "transform": "translateX(-294px)",
       }
     }>
     <div>
-      {\"month\":\"2010-01-01T00:00:00.000Z\",\"dateModifiers\":{},\"preventKeyboardFocus\":true,\"isKeyboardFocusable\":false,\"focusedDate\":null,\"aria-hidden\":true}
+      {\"minDate\":\"2009-02-01T00:00:00.000Z\",\"maxDate\":\"2011-02-01T00:00:00.000Z\",\"month\":\"2010-01-01T00:00:00.000Z\",\"preventKeyboardFocus\":true,\"isKeyboardFocusable\":false,\"focusedDate\":\"2010-01-01T00:00:00.000Z\",\"aria-hidden\":true}
     </div>
     <div>
-      {\"month\":\"2010-02-01T00:00:00.000Z\",\"isKeyboardFocusable\":true,\"focusedDate\":null,\"aria-hidden\":false}
+      {\"minDate\":\"2009-02-01T00:00:00.000Z\",\"maxDate\":\"2011-02-01T00:00:00.000Z\",\"month\":\"2010-02-01T00:00:00.000Z\",\"isKeyboardFocusable\":true,\"focusedDate\":null,\"aria-hidden\":false}
     </div>
     <div>
-      {\"month\":\"2010-03-01T00:00:00.000Z\",\"dateModifiers\":{},\"preventKeyboardFocus\":true,\"isKeyboardFocusable\":false,\"focusedDate\":null,\"aria-hidden\":true}
+      {\"minDate\":\"2009-02-01T00:00:00.000Z\",\"maxDate\":\"2011-02-01T00:00:00.000Z\",\"month\":\"2010-03-01T00:00:00.000Z\",\"preventKeyboardFocus\":true,\"isKeyboardFocusable\":false,\"focusedDate\":\"2010-03-01T00:00:00.000Z\",\"aria-hidden\":true}
     </div>
   </div>
 </div>

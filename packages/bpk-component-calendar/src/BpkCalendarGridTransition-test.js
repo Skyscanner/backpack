@@ -10,6 +10,8 @@ describe('BpkCalendar', () => {
   it('should render correctly', () => {
     const tree = renderer.create(<TransitioningMyComponent
       TransitionComponent={MyComponent}
+      minDate={new Date(2009, 1)}
+      maxDate={new Date(2011, 1)}
       month={new Date(2010, 1)}
     />).toJSON();
     expect(tree).toMatchSnapshot();

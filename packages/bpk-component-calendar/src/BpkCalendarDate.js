@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import CustomPropTypes from './custom-proptypes';
 import './bpk-calendar.scss';
@@ -7,7 +7,7 @@ import './bpk-calendar.scss';
 // FIXME: Won't work with CSS Modules and is relying on the DOM. Need to find better solution.
 const navigatedByMonthNudger = () => document.activeElement.className.indexOf('bpk-calendar-nav__button') !== -1;
 
-class BpkCalendarDate extends Component {
+class BpkCalendarDate extends PureComponent {
   constructor() {
     super();
 
@@ -58,6 +58,7 @@ class BpkCalendarDate extends Component {
       ...buttonProps
     } = this.props;
     const classNames = ['bpk-calendar-date'];
+    // console.log('Re-rendering');
 
     Object.keys(modifiers).forEach((modifier) => {
       if (modifiers[modifier](this.props)) { classNames.push(`bpk-calendar-date--modifier-${modifier}`); }
@@ -78,7 +79,7 @@ class BpkCalendarDate extends Component {
         aria-label={date.getDate()}
         disabled={isBlocked}
         tabIndex={(isKeyboardFocusable && isFocused) ? '0' : '-1'}
-        onClick={onClick}
+        onClick={() => { if (onClick) { onClick(date); } }}
         onKeyDown={onDateKeyDown}
         aria-pressed={isSelected}
         ref={this.getButtonRef}
