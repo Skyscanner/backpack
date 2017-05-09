@@ -11,6 +11,7 @@ import {
   addMonths,
   dateToBoundaries,
   isSameMonth,
+  isSameDay,
   lastDayOfMonth,
   setMonthYear,
   startOfDay,
@@ -19,6 +20,13 @@ import {
 import { getScriptDirection } from './utils';
 
 const TransitioningBpkCalendarGrid = addCalendarGridTransition(BpkCalendarGrid);
+
+const focusedDateHasChanged = (currentProps, nextProps) => {
+  const rawNextSelectedDate = nextProps.selectedDate || nextProps.date;
+  const rawSelectedDate = currentProps.selectedDate || currentProps.date;
+
+  return rawNextSelectedDate && !isSameDay(rawNextSelectedDate, rawSelectedDate);
+};
 
 const withCalendarState = (Calendar) => {
   class BpkCalendarContainer extends Component {
@@ -41,6 +49,19 @@ const withCalendarState = (Calendar) => {
       this.handleDateFocus = this.handleDateFocus.bind(this);
       this.handleDateKeyDown = this.handleDateKeyDown.bind(this);
       this.handleMonthChange = this.handleMonthChange.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps) {
+      // `date` is to be DEPRECATED in favour of `selectedDate`
+      const rawNextSelectedDate = nextProps.selectedDate || nextProps.date;
+
+      const minDate = startOfDay(nextProps.minDate);
+      const maxDate = startOfDay(nextProps.maxDate);
+      if (focusedDateHasChanged(this.props, nextProps)) {
+        this.setState({
+          focusedDate: dateToBoundaries(rawNextSelectedDate, minDate, maxDate),
+        });
+      }
     }
 
     handleDateFocus(date) {
@@ -73,9 +94,7 @@ const withCalendarState = (Calendar) => {
           startOfDay(this.props.maxDate),
         );
 
-        const newState = { focusedDate: newDate, ...keyboardFocusState };
-
-        this.setState(newState, () => onDateSelect(newDate));
+        onDateSelect(newDate);
       } else {
         this.setState(keyboardFocusState);
       }

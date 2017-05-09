@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PureComponent } from 'react';
 
 import CustomPropTypes from './custom-proptypes';
 import { getFirstDayOfWeekend, getLastDayOfWeekend, orderDaysOfWeek } from './date-utils';
@@ -39,41 +39,43 @@ WeekDay.propTypes = {
   isLastDayOfWeekend: PropTypes.bool.isRequired,
 };
 
-const BpkCalendarGridHeader = (props) => {
-  const {
-    isTableHead,
-    showWeekendSeparator,
-    weekStartsOn,
-  } = props;
+class BpkCalendarGridHeader extends PureComponent {
+  render() {
+    const {
+      isTableHead,
+      showWeekendSeparator,
+      weekStartsOn,
+    } = this.props;
 
-  const Header = isTableHead ? 'thead' : 'header';
-  const List = isTableHead ? 'tr' : 'ol';
-  const Item = isTableHead ? 'th' : 'li';
+    const Header = isTableHead ? 'thead' : 'header';
+    const List = isTableHead ? 'tr' : 'ol';
+    const Item = isTableHead ? 'th' : 'li';
 
-  const daysOfWeek = orderDaysOfWeek(props.daysOfWeek, weekStartsOn);
+    const daysOfWeek = orderDaysOfWeek(this.props.daysOfWeek, weekStartsOn);
 
-  const firstDayOfWeekendIndex = getFirstDayOfWeekend(daysOfWeek);
-  const lastDayOfWeekendIndex = getLastDayOfWeekend(daysOfWeek);
+    const firstDayOfWeekendIndex = getFirstDayOfWeekend(daysOfWeek);
+    const lastDayOfWeekendIndex = getLastDayOfWeekend(daysOfWeek);
 
-  const classNames = ['bpk-calendar-header'];
-  if (isTableHead) { classNames.push('bpk-calendar-header--table-head'); }
+    const classNames = ['bpk-calendar-header'];
+    if (isTableHead) { classNames.push('bpk-calendar-header--table-head'); }
 
-  return (
-    <Header className={classNames.join(' ')}>
-      <List className="bpk-calendar-header__week">
-        { daysOfWeek.map(weekDay => (
-          <WeekDay
-            Element={Item}
-            key={weekDay.index}
-            weekDay={weekDay}
-            isFirstDayOfWeekend={showWeekendSeparator && firstDayOfWeekendIndex === weekDay.index}
-            isLastDayOfWeekend={showWeekendSeparator && lastDayOfWeekendIndex === weekDay.index}
-          />
-        )) }
-      </List>
-    </Header>
-  );
-};
+    return (
+      <Header className={classNames.join(' ')}>
+        <List className="bpk-calendar-header__week">
+          { daysOfWeek.map(weekDay => (
+            <WeekDay
+              Element={Item}
+              key={weekDay.index}
+              weekDay={weekDay}
+              isFirstDayOfWeekend={showWeekendSeparator && firstDayOfWeekendIndex === weekDay.index}
+              isLastDayOfWeekend={showWeekendSeparator && lastDayOfWeekendIndex === weekDay.index}
+            />
+          )) }
+        </List>
+      </Header>
+    );
+  }
+}
 
 BpkCalendarGridHeader.propTypes = {
   showWeekendSeparator: PropTypes.bool.isRequired,

@@ -15,6 +15,8 @@ import {
   dateToBoundaries,
   startOfDay,
   setMonthYear,
+  isWithinRange,
+  getMonthRange,
 } from './date-utils';
 
 import './bpk-calendar.scss';
@@ -46,7 +48,6 @@ class BpkCalendarGridTransition extends Component {
       ],
     };
 
-    this.strip = null;
     this.isTransitionEndSupported = isTransitionEndSupported();
     this.onMonthTransitionEnd = this.onMonthTransitionEnd.bind(this);
   }
@@ -123,32 +124,34 @@ class BpkCalendarGridTransition extends Component {
 
     const classNames = ['bpk-calendar-grid-transition'];
     if (className) { classNames.push(className); }
-
-    const adjacentModifiers = {
-      ...rest.dateModifiers,
-    };
-    delete adjacentModifiers.selected;
+    const { min, max } = getMonthRange(rest.minDate, rest.maxDate);
 
     return (
       <div className={classNames.join(' ')}>
         <div
           className={stripClassNames.join(' ')}
-          style={{ display: 'block', ...getTransformStyles(this.state.transitionValue) }}
+          style={getTransformStyles(this.state.transitionValue)}
           onTransitionEnd={this.onMonthTransitionEnd}
-          ref={(strip) => { this.strip = strip; }}
         >
           {
             this.state.months.map((m, index) => (
-              <TransitionComponent
-                {...rest}
-                key={formatIsoMonth(m)}
-                month={m}
-                dateModifiers={index === 1 ? rest.dateModifiers : adjacentModifiers}
-                preventKeyboardFocus={index !== 1 || rest.preventKeyboardFocus}
-                isKeyboardFocusable={!this.state.isTransitioning && (index === 1)}
-                focusedDate={getFocusedDateForMonth(m, focusedDate, rest.minDate, rest.maxDate)}
-                aria-hidden={index !== 1}
-              />
+              isWithinRange(m, min, max) ?
+                <TransitionComponent
+                  {...rest}
+                  key={formatIsoMonth(m)}
+                  month={m}
+                  preventKeyboardFocus={index !== 1 || rest.preventKeyboardFocus}
+                  isKeyboardFocusable={!this.state.isTransitioning && (index === 1)}
+                  focusedDate={
+                    index === 1 ? focusedDate : getFocusedDateForMonth(m, focusedDate, rest.minDate, rest.maxDate)
+                  }
+                  aria-hidden={index !== 1}
+                />
+              :
+                <div
+                  className="bpk-calendar-grid-transition__dummy"
+                  key={formatIsoMonth(m)}
+                />
             ))
           }
         </div>

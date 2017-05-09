@@ -84,7 +84,7 @@ describe('BpkCalendarContainer', () => {
       minDate={new Date(2010, 1, 15)}
       maxDate={new Date(2010, 2, 15)}
       selectedDate={new Date(2010, 1, 15)}
-      onDateSelect={() => null}
+      onDateSelect={null}
     />);
 
     const grid = calendar.find('BpkCalendarGridTransition');
