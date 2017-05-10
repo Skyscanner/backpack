@@ -34,7 +34,7 @@
       "category": "autosuggest",
       "value": "rgb(243, 242, 245)",
       "type": "color",
-      "name": "autosuggestListItemFocusedBackgroundColor"
+      "name": "autosuggestListItemHighlightedBackgroundColor"
     },
     {
       "category": "badges",

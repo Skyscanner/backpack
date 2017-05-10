@@ -5,7 +5,7 @@
   <property name="DURATION_BASE" category="animations">400ms</property>
   <color name="AUTOSUGGEST_LIST_BACKGROUND_COLOR" category="autosuggest">#ffffffff</color>
   <color name="AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR" category="autosuggest">#e6e4ebff</color>
-  <color name="AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR" category="autosuggest">#f3f2f5ff</color>
+  <color name="AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR" category="autosuggest">#f3f2f5ff</color>
   <property name="BADGE_PADDING_Y" category="badges">0</property>
   <property name="BADGE_PADDING_X" category="badges">6</property>
   <color name="BADGE_BACKGROUND_COLOR" category="badges">#ffbb00ff</color>

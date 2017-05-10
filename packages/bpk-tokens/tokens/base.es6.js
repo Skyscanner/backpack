@@ -3,7 +3,7 @@ export const durationSm = "200ms";
 export const durationBase = "400ms";
 export const autosuggestListBackgroundColor = "rgb(255, 255, 255)";
 export const autosuggestListItemActiveBackgroundColor = "rgb(230, 228, 235)";
-export const autosuggestListItemFocusedBackgroundColor = "rgb(243, 242, 245)";
+export const autosuggestListItemHighlightedBackgroundColor = "rgb(243, 242, 245)";
 export const badgePaddingY = "0";
 export const badgePaddingX = ".375rem";
 export const badgeBackgroundColor = "rgb(255, 187, 0)";
@@ -315,7 +315,7 @@ durationBase,
 export const autosuggest = {
 autosuggestListBackgroundColor,
 autosuggestListItemActiveBackgroundColor,
-autosuggestListItemFocusedBackgroundColor,
+autosuggestListItemHighlightedBackgroundColor,
 };
 export const badges = {
 badgePaddingY,

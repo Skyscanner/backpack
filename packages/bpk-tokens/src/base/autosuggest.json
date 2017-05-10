@@ -14,7 +14,7 @@
       "value": "{!GRAY_100}",
       "type": "color"
     },
-    "AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR": {
+    "AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR": {
       "value": "{!GRAY_50}",
       "type": "color"
     }
