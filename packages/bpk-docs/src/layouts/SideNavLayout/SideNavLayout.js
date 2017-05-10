@@ -2,6 +2,8 @@ import { Link } from 'react-router';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+import BpkSelect from 'bpk-component-select';
+import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 
 import './side-nav-layout.scss';
 
@@ -41,10 +43,44 @@ const toNavList = links => (
   </ul>
 );
 
-export const SideNavLayout = ({ links, children }) => (
+const toNavSelectItem = (link, index) => (
+  <option
+    key={index}
+    disabled={!link.route}
+    value={link.route}
+    selected={false}
+  >{link.children}</option>
+);
+
+const toNavSelectCategory = (link, key) => (
+  <optgroup label={link.category} key={key}>
+    {link.links.map(toNavSelectItem)}
+  </optgroup>
+);
+
+// TODO: Add BpkLabel to select
+
+const toNavSelect = (links, context) => (
+  <BpkSelect
+    id="fruits"
+    name="fruits"
+    value={context.location.pathname}
+    onChange={e => context.router.push(e.target.value)}
+  >
+    {links.map(
+      (link, index) => (link.category ? toNavSelectCategory(link, index) : toNavLink(link, index)),
+    )}
+  </BpkSelect>
+);
+
+export const SideNavLayout = ({ links, children }, context) => (
   <BpkGridContainer>
     <BpkGridRow>
-      <BpkGridColumn width={3} tabletWidth={12}>{toNavList(links)}</BpkGridColumn>
+      <BpkGridColumn width={3} tabletWidth={12}>
+        <BpkBreakpoint query={BREAKPOINTS.TABLET}>
+          {isActive => (isActive ? toNavSelect(links, context) : toNavList(links))}
+        </BpkBreakpoint>
+      </BpkGridColumn>
       <BpkGridColumn width={9} tabletWidth={12}>{children}</BpkGridColumn>
     </BpkGridRow>
   </BpkGridContainer>
@@ -71,6 +107,11 @@ const linksPropType = PropTypes.arrayOf(PropTypes.oneOfType([
 SideNavLayout.propTypes = {
   children: childrenPropType.isRequired,
   links: linksPropType,
+};
+
+SideNavLayout.contextTypes = {
+  router: React.PropTypes.object,
+  location: React.PropTypes.object,
 };
 
 export default SideNavLayout;
