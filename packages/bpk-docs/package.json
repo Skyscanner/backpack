@@ -13,6 +13,7 @@
     "src"
   ],
   "devDependencies": {
+    "bpk-animate-height": "^0.0.5",
     "bpk-component-accordion": "^0.0.14",
     "bpk-component-autosuggest": "^2.1.3",
     "bpk-component-badge": "^0.0.44",

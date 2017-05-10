@@ -40,4 +40,27 @@
       }
     }
   }
+
+  &__hamburger-nav {
+    text-align: right;
+  }
+
+  &__hamburger-nav-container {
+    @include bpk-border-top-sm($bpk-color-gray-100);
+  }
+
+  &__hamburger-nav-toggle {
+    fill: $bpk-color-gray-700;
+  }
+
+  &__hamburger-nav-list {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__hamburger-nav-list-item {
+    &:not(:last-child) {
+      @include bpk-border-bottom-sm($bpk-color-gray-100);
+    }
+  }
 }
