@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { path as d3Path } from 'd3-path';
 import { durationBase } from 'bpk-tokens/tokens/base.es6';
 
-import ContextTypes from './BpkBarchartContextTypes';
+import contextTypes from './contextTypes';
 
 export const ANIMATE_PROPS = {
   calcMode: 'spline',
@@ -63,11 +63,10 @@ const getPathDescription = (width, height, x, y, radius, isOutlier = false) => {
 const isOutlier = (point, { yScaleDataKey, maxYValue }) =>
   point[yScaleDataKey] > maxYValue;
 
-const BpkBarchartBars = (
-  { animate, padding, rounded, onClick, animateDuration, ...rest },
-  context,
-) => {
+const BpkBarchartBars = (props, context) => {
+  const { animate, padding, rounded, onClick, animateDuration, ...rest } = props;
   const { data, height, margin, xScaleDataKey, yScaleDataKey, xScaler } = context;
+
   xScaler.padding(padding);
 
   const shouldAnimate = animate && canAnimate;
@@ -90,6 +89,7 @@ const BpkBarchartBars = (
               isOutlier(point, context),
             )
           : null;
+
         const finalD = getPathDescription(
           barWidth,
           heights[i],
@@ -98,6 +98,7 @@ const BpkBarchartBars = (
           roundedAmount,
           isOutlier(point, context),
         );
+
         return (
           <g className="bpk-barchart__bar-group" key={`bar${i.toString()}`}>
             <title>{`${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}</title>
@@ -140,6 +141,6 @@ BpkBarchartBars.defaultProps = {
   animateDuration: durationBase,
 };
 
-BpkBarchartBars.contextTypes = ContextTypes;
+BpkBarchartBars.contextTypes = contextTypes;
 
 export default BpkBarchartBars;

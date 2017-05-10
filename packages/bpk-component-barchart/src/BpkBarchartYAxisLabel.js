@@ -2,29 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { isRTL } from './RTLtransforms';
-import ContextTypes from './BpkBarchartContextTypes';
+import contextTypes from './contextTypes';
 import BpkBarchartAxisLabel, { LABEL_TYPE_Y } from './BpkBarchartAxisLabel';
 
-const BpkBarchartYAxisLabel = (
-  { children, rightOffset, leftOffset, ...rest },
-  { height, margin },
-) => (
-  <BpkBarchartAxisLabel
-    type={LABEL_TYPE_Y}
-    textAnchor="middle"
-    dominantBaseline="hanging"
-    transform={`
-      translate(
-        ${isRTL() ? margin.right - rightOffset : -margin.left + leftOffset},
-        ${(height - margin.top - margin.bottom) / 2}
-      )
-      rotate(-90)
-    `}
-    {...rest}
-  >
-    {children}
-  </BpkBarchartAxisLabel>
-);
+const BpkBarchartYAxisLabel = (props, context) => {
+  const { children, rightOffset, leftOffset, ...rest } = props;
+  const { height, margin } = context;
+
+  const translateX = isRTL() ? margin.right - rightOffset : -margin.left + leftOffset;
+  const translateY = (height - margin.top - margin.bottom) / 2;
+
+  return (
+    <BpkBarchartAxisLabel
+      type={LABEL_TYPE_Y}
+      textAnchor="middle"
+      dominantBaseline="hanging"
+      transform={`translate(${translateX}, ${translateY}) rotate(-90)`}
+      {...rest}
+    >
+      {children}
+    </BpkBarchartAxisLabel>
+  );
+};
 
 BpkBarchartYAxisLabel.propTypes = {
   children: PropTypes.node.isRequired,
@@ -37,6 +36,6 @@ BpkBarchartYAxisLabel.defaultProps = {
   leftOffset: 0,
 };
 
-BpkBarchartYAxisLabel.contextTypes = ContextTypes;
+BpkBarchartYAxisLabel.contextTypes = contextTypes;
 
 export default BpkBarchartYAxisLabel;

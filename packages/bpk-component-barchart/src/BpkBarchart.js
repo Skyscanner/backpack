@@ -4,41 +4,50 @@ import React, { Component } from 'react';
 import scaleBand from 'd3-scale/src/band';
 import scaleLinear from 'd3-scale/src/linear';
 
-import BpkBarchartMargin from './BpkBarchartMargin';
-import BpkBarchartDefs from './BpkBarchartDefs';
-import BpkBarchartContextTypes from './BpkBarchartContextTypes';
-import { applyArrayRTLTransform, applyDirectionalRTLTransform } from './RTLtransforms';
-
 import './bpk-barchart.scss';
+import contextTypes from './contextTypes';
+import BpkBarchartDefs from './BpkBarchartDefs';
+import BpkBarchartMargin from './BpkBarchartMargin';
+import { applyArrayRTLTransform, applyDirectionalRTLTransform } from './RTLtransforms';
 
 class BpkBarchart extends Component {
   constructor() {
     super();
+
     this.state = {
       width: 0,
       height: 0,
     };
+
+    this.updateDimensions = this.updateDimensions.bind(this);
+
     this.maxYValue = null;
-    this.transformedData = null;
-    this.onWindowResize = debounce(this.updateDimensions.bind(this), 100);
     this.xScaler = scaleBand();
     this.yScaler = scaleLinear();
+    this.transformedData = null;
+    this.onWindowResize = debounce(this.updateDimensions, 100);
   }
 
   getChildContext() {
     const { yScaleDataKey, xScaleDataKey } = this.props;
     const { width, height } = this.state;
     const { xScaler, yScaler, maxYValue, transformedData, transformedMargin } = this;
+
     return {
-      width,
-      height,
-      data: transformedData,
-      margin: transformedMargin,
+      // props
       yScaleDataKey,
       xScaleDataKey,
+
+      // state
+      width,
+      height,
+
+      // this
       xScaler,
       yScaler,
       maxYValue,
+      data: transformedData,
+      margin: transformedMargin,
     };
   }
 
@@ -59,13 +68,13 @@ class BpkBarchart extends Component {
   }
 
   updateDimensions() {
-    if (this.svg) {
-      const { width, height } = this.svg.getBoundingClientRect();
-      this.setState({
-        width,
-        height,
-      });
+    if (!this.svg) {
+      return;
     }
+
+    const { width, height } = this.svg.getBoundingClientRect();
+
+    this.setState({ width, height });
   }
 
   render() {
@@ -108,9 +117,7 @@ class BpkBarchart extends Component {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="bpk-barchart"
-        ref={(svg) => {
-          this.svg = svg;
-        }}
+        ref={(svg) => { this.svg = svg; }}
         {...rest}
       >
         <BpkBarchartDefs />
@@ -124,7 +131,7 @@ class BpkBarchart extends Component {
 
 BpkBarchart.propTypes = {
   children: PropTypes.node.isRequired,
-  ...BpkBarchartContextTypes,
+  ...contextTypes,
 };
 
 BpkBarchart.defaultProps = {
@@ -139,6 +146,6 @@ BpkBarchart.defaultProps = {
   },
 };
 
-BpkBarchart.childContextTypes = BpkBarchartContextTypes;
+BpkBarchart.childContextTypes = contextTypes;
 
 export default BpkBarchart;

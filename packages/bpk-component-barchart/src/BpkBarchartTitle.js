@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import contextTypes from './contextTypes';
 import { rtlConditionalValue } from './RTLtransforms';
-import ContextTypes from './BpkBarchartContextTypes';
 
-const BpkBarchartXAxis = (
-  { children },
-  { margin, xScaler, data, xScaleDataKey },
-) => {
+const BpkBarchartXAxis = (props, context) => {
+  const { children } = props;
+  const { margin, xScaler, data, xScaleDataKey } = context;
+
   const dataPoint = data[rtlConditionalValue(0, data.length - 1)][xScaleDataKey];
   const x = xScaler(dataPoint) + rtlConditionalValue(0, (xScaler.bandwidth() / 2));
+
   return (
     <text
       className="bpk-barchart__title"
@@ -28,6 +29,6 @@ BpkBarchartXAxis.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-BpkBarchartXAxis.contextTypes = ContextTypes;
+BpkBarchartXAxis.contextTypes = contextTypes;
 
 export default BpkBarchartXAxis;

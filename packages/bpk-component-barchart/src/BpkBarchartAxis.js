@@ -1,39 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ContextTypes from './BpkBarchartContextTypes';
+import contextTypes from './contextTypes';
 
 export const AXIS_TYPE_X = 'x';
 export const AXIS_TYPE_Y = 'y';
 
-const BpkBarchartAxis = ({
-  type,
-  ticks,
-  tickValue,
-  tickPosition,
-  textCoords,
-  children,
-  ...rest
-}) => (
-  <g className={`bpk-barchart__axis bpk-barchart__axis--${type}`} {...rest}>
-    {ticks.map((tick, i) => (
-      <g
-        className="bpk-barchart__axis-tick--group"
-        transform={`translate(${tickPosition(tick).join(', ')})`}
-        key={`${type}axis${i.toString()}`}
-      >
-        <text
-          dominantBaseline={type === AXIS_TYPE_X ? 'hanging' : 'auto'}
-          className="bpk-barchart__axis-tick--text"
-          {...textCoords}
+const BpkBarchartAxis = (props) => {
+  const { type, ticks, tickValue, tickPosition, textCoords, children, ...rest } = props;
+
+  return (
+    <g className={`bpk-barchart__axis bpk-barchart__axis--${type}`} {...rest}>
+      {ticks.map((tick, i) => (
+        <g
+          className="bpk-barchart__axis-tick--group"
+          transform={`translate(${tickPosition(tick).join(', ')})`}
+          key={`${type}axis${i.toString()}`}
         >
-          {tickValue(tick)}
-        </text>
-      </g>
-    ))}
-    {children}
-  </g>
-);
+          <text
+            dominantBaseline={type === AXIS_TYPE_X ? 'hanging' : 'auto'}
+            className="bpk-barchart__axis-tick--text"
+            {...textCoords}
+          >
+            {tickValue(tick)}
+          </text>
+        </g>
+      ))}
+      {children}
+    </g>
+  );
+};
 
 BpkBarchartAxis.propTypes = {
   children: PropTypes.node,
@@ -50,6 +46,6 @@ BpkBarchartAxis.defaultProps = {
   label: null,
 };
 
-BpkBarchartAxis.contextTypes = ContextTypes;
+BpkBarchartAxis.contextTypes = contextTypes;
 
 export default BpkBarchartAxis;

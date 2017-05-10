@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ContextTypes from './BpkBarchartContextTypes';
+import contextTypes from './contextTypes';
 import BpkBarchartAxis, { AXIS_TYPE_X } from './BpkBarchartAxis';
 
-const BpkBarchartXAxis = (
-  { children, tickEvery, tickOffset, ...rest },
-  { height, margin, xScaler },
-) => {
+const BpkBarchartXAxis = (props, context) => {
+  const { children, tickEvery, tickOffset, ...rest } = props;
+  const { height, margin, xScaler } = context;
+
   const domain = xScaler.domain();
   const ticks = domain.filter((tick, i) => ((i - tickOffset) % tickEvery) === 0);
+
   return (
     <BpkBarchartAxis
       transform={`translate(0, ${height - margin.bottom - margin.top})`}
@@ -43,6 +44,6 @@ BpkBarchartXAxis.defaultProps = {
   tickValue: tick => tick,
 };
 
-BpkBarchartXAxis.contextTypes = ContextTypes;
+BpkBarchartXAxis.contextTypes = contextTypes;
 
 export default BpkBarchartXAxis;

@@ -33,28 +33,26 @@
     }
   }
 
-  &__axis {
-    &-tick {
-      &--text {
-        @extend %bpk-chart-font-style;
-      }
-
-      &--line {
-        stroke: $bpk-color-gray-100;
-      }
+  &__axis-tick {
+    &--text {
+      @extend %bpk-chart-font-style;
     }
 
-    &-label {
-      @extend %bpk-chart-font-style;
-
-      &--x {
-        transform: translate(0, -1 * $bpk-line-height-sm);
-      }
+    &--line {
+      stroke: $bpk-color-gray-100;
     }
   }
-}
 
-.bpk-barchart__grid-line {
-  stroke: $bpk-color-gray-100;
-  shape-rendering: crispEdges;
+  &__axis-label {
+    @extend %bpk-chart-font-style;
+
+    &--x {
+      transform: translate(0, -1 * $bpk-line-height-sm);
+    }
+  }
+
+  &__grid-line {
+    stroke: $bpk-color-gray-100;
+    shape-rendering: crispEdges;
+  }
 }

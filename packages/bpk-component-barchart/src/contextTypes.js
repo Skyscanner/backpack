@@ -1,12 +1,10 @@
-import PropTypes from 'prop-types';
-
-const { number, array, shape, func, string } = PropTypes;
+import { number, array, shape, func, string } from 'prop-types';
 
 export default {
   width: number,
   height: number,
   data: array,
-  maxYValue: PropTypes.number,
+  maxYValue: number,
   margin: shape({
     top: number,
     bottom: number,

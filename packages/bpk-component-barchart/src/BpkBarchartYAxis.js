@@ -2,19 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { isRTL } from './RTLtransforms';
-import ContextTypes from './BpkBarchartContextTypes';
+import contextTypes from './contextTypes';
 import BpkBarchartAxis, { AXIS_TYPE_Y } from './BpkBarchartAxis';
 
-const BpkBarchartYAxis = (
-  { ticks, children, ...rest },
-  { data, yScaler, xScaler, xScaleDataKey },
-) => {
+const BpkBarchartYAxis = (props, context) => {
+  const { ticks, children, ...rest } = props;
+  const { data, yScaler, xScaler, xScaleDataKey } = context;
+
   let x = 0;
+
   if (isRTL()) {
     const dataPoint = data[data.length - 1][xScaleDataKey];
     const padding = xScaler.bandwidth() * xScaler.padding();
     x = xScaler(dataPoint) + xScaler.bandwidth() + (padding * 2);
   }
+
   return (
     <BpkBarchartAxis
       transform={`translate(${x}, 0)`}
@@ -46,6 +48,6 @@ BpkBarchartYAxis.defaultProps = {
   tickValue: tick => tick,
 };
 
-BpkBarchartYAxis.contextTypes = ContextTypes;
+BpkBarchartYAxis.contextTypes = contextTypes;
 
 export default BpkBarchartYAxis;

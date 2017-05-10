@@ -4,18 +4,24 @@ import PropTypes from 'prop-types';
 export const GRIDLINE_TYPE_X = 'x';
 export const GRIDLINE_TYPE_Y = 'y';
 
-const BpkBarchartYGridLines = ({ ticks, type, lineProps, ...rest }) => (
-  <g className={`bpk-barchart__grid-lines bpk-barchart__grid-lines--${type}`}>
-    {ticks.map((tick, i) => (
-      <line
-        className={`bpk-barchart__grid-line bpk-barchart__grid-line--${type}`}
-        key={`${type}gridline${i.toString()}`}
-        {...lineProps(tick)}
-        {...rest}
-      />
-    ))}
-  </g>
-);
+const BpkBarchartYGridLines = (props) => {
+  const { ticks, type, lineProps, ...rest } = props;
+
+  const toLine = (tick, i) => (
+    <line
+      className={`bpk-barchart__grid-line bpk-barchart__grid-line--${type}`}
+      key={`${type}gridline${i.toString()}`}
+      {...lineProps(tick)}
+      {...rest}
+    />
+  );
+
+  return (
+    <g className={`bpk-barchart__grid-lines bpk-barchart__grid-lines--${type}`}>
+      {ticks.map(toLine)}
+    </g>
+  );
+};
 
 BpkBarchartYGridLines.propTypes = {
   type: PropTypes.oneOf([GRIDLINE_TYPE_X, GRIDLINE_TYPE_Y]).isRequired,
