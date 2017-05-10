@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export const GRIDLINE_TYPE_X = 'x';
 export const GRIDLINE_TYPE_Y = 'y';

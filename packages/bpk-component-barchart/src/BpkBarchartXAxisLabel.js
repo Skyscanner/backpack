@@ -1,4 +1,6 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import BpkBarchartAxisLabel, { LABEL_TYPE_X } from './BpkBarchartAxisLabel';
 import ContextTypes from './BpkBarchartContextTypes';
 

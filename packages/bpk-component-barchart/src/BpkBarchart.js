@@ -1,8 +1,9 @@
-import React, { Component, PropTypes } from 'react';
-
+import PropTypes from 'prop-types';
+import debounce from 'lodash.debounce';
+import React, { Component } from 'react';
 import scaleBand from 'd3-scale/src/band';
 import scaleLinear from 'd3-scale/src/linear';
-import debounce from 'lodash.debounce';
+
 import BpkBarchartMargin from './BpkBarchartMargin';
 import BpkBarchartDefs from './BpkBarchartDefs';
 import BpkBarchartContextTypes from './BpkBarchartContextTypes';

@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
-import ContextTypes from './BpkBarchartContextTypes';
+import React from 'react';
+import PropTypes from 'prop-types';
 
+import ContextTypes from './BpkBarchartContextTypes';
 import BpkBarchartGridLines, { GRIDLINE_TYPE_Y } from './BpkBarchartGridLines';
 
 const BpkBarchartYGridLines = (

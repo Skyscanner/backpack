@@ -17,7 +17,8 @@
     "bpk-tokens": "^22.0.0",
     "d3-path": "1.0.5",
     "d3-scale": "^1.0.5",
-    "lodash.debounce": "^4.0.8"
+    "lodash.debounce": "^4.0.8",
+    "prop-types": "^15.5.8"
   },
   "devDependencies": {
     "bpk-component-breakpoint": "0.1.10",

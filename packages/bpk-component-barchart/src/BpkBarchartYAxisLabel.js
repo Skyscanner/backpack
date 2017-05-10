@@ -1,8 +1,9 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import BpkBarchartAxisLabel, { LABEL_TYPE_Y } from './BpkBarchartAxisLabel';
 import { isRTL } from './RTLtransforms';
 import ContextTypes from './BpkBarchartContextTypes';
+import BpkBarchartAxisLabel, { LABEL_TYPE_Y } from './BpkBarchartAxisLabel';
 
 const BpkBarchartYAxisLabel = (
   { children, rightOffset, leftOffset, ...rest },

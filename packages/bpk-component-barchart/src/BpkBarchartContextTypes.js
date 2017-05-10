@@ -1,4 +1,4 @@
-import { PropTypes } from 'react';
+import PropTypes from 'prop-types';
 
 const { number, array, shape, func, string } = PropTypes;
 

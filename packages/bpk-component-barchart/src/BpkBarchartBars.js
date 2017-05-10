@@ -1,6 +1,8 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { path as d3Path } from 'd3-path';
 import { durationBase } from 'bpk-tokens/tokens/base.es6';
+
 import ContextTypes from './BpkBarchartContextTypes';
 
 export const ANIMATE_PROPS = {

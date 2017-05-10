@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react';
-import ContextTypes from './BpkBarchartContextTypes';
-import { isRTL } from './RTLtransforms';
+import React from 'react';
+import PropTypes from 'prop-types';
 
+import { isRTL } from './RTLtransforms';
+import ContextTypes from './BpkBarchartContextTypes';
 import BpkBarchartAxis, { AXIS_TYPE_Y } from './BpkBarchartAxis';
 
 const BpkBarchartYAxis = (
