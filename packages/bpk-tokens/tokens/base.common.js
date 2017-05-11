@@ -4,7 +4,7 @@ module.exports = {
   durationBase: "400ms",
   autosuggestListBackgroundColor: "rgb(255, 255, 255)",
   autosuggestListItemActiveBackgroundColor: "rgb(230, 228, 235)",
-  autosuggestListItemFocusedBackgroundColor: "rgb(243, 242, 245)",
+  autosuggestListItemHighlightedBackgroundColor: "rgb(243, 242, 245)",
   badgePaddingY: "0",
   badgePaddingX: ".375rem",
   badgeBackgroundColor: "rgb(255, 187, 0)",

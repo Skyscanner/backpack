@@ -20,7 +20,7 @@ Autosuggest.defaultProps.theme = {
   suggestionsContainer: getClassName('bpk-autosuggest__suggestions-container'),
   suggestionsList: getClassName('bpk-autosuggest__suggestions-list'),
   suggestion: getClassName('bpk-autosuggest__suggestion-item'),
-  suggestionFocused: getClassName('bpk-autosuggest__suggestion-item--focused'),
+  suggestionHighlighted: getClassName('bpk-autosuggest__suggestion-item--highlighted'),
   sectionContainer: getClassName('bpk-autosuggest__section-container'),
   sectionTitle: getClassName('bpk-autosuggest__section-title'),
 };
