@@ -45,7 +45,7 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
     type="text"
     value="Edinburgh" />
   <div
-    className="bpk-autosuggest__suggestions-container"
+    className="bpk-autosuggest__suggestions-container bpk-autosuggest__suggestions-container--open"
     id="react-autowhatever-1">
     <ul
       className="bpk-autosuggest__suggestions-list"

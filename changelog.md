@@ -2,7 +2,11 @@
 
 ## UNRELEASED
 
-_Nothing yet_
+**Changed:**
+- bpk-component-autosuggest:
+  - Updated `react-autosuggest` dependency: `8.0.0` => `9.0.1`, see the [release notes](https://github.com/moroshko/react-autosuggest/releases/tag/v9.0.0) for breaking changes
+- bpk-tokens:
+  - Renamed `AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR` -> `AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR`
 
 ## 2017-05-09 - Improved calendar performance
 

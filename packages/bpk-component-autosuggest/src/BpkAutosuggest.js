@@ -18,6 +18,7 @@ Autosuggest.defaultProps.theme = {
   container: getClassName('bpk-autosuggest__container'),
   containerOpen: getClassName('bpk-autosuggest__container--open'),
   suggestionsContainer: getClassName('bpk-autosuggest__suggestions-container'),
+  suggestionsContainerOpen: getClassName('bpk-autosuggest__suggestions-container--open'),
   suggestionsList: getClassName('bpk-autosuggest__suggestions-list'),
   suggestion: getClassName('bpk-autosuggest__suggestion-item'),
   suggestionHighlighted: getClassName('bpk-autosuggest__suggestion-item--highlighted'),
