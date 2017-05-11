@@ -1,22 +1,16 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
 import { IndexLink } from 'react-router';
 
 import BpkLink from 'bpk-component-link';
-import BpkRouterLink from 'bpk-component-router-link';
-import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
-import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
-import BpkButton from 'bpk-component-button';
-import CloseIcon from 'bpk-component-icon/sm/close';
-import MenuIcon from 'bpk-component-icon/sm/menu';
-import { withButtonAlignment } from 'bpk-component-icon';
 import AnimateHeight from 'bpk-animate-height';
+import BpkRouterLink from 'bpk-component-router-link';
+import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
+import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
 
-import './header.scss';
-import * as ROUTES from '../../constants/routes';
-
-const CloseButtonIcon = withButtonAlignment(CloseIcon);
-const MenuButtonIcon = withButtonAlignment(MenuIcon);
+import './Header.scss';
+import * as ROUTES from './../../constants/routes';
+import HamburgerButton from './HamburgerButton';
 
 const headerLinks = [
   { to: ROUTES.USING_BACKPACK, children: 'Using Backpack' },
@@ -26,108 +20,77 @@ const headerLinks = [
   { href: 'http://git.prod.skyscanner.local/backpack/backpack', children: 'GitLab', blank: true },
 ];
 
-const toHorizontalNav = links => (
-  <nav>
+const toNavList = (links, isTablet) => {
+  const itemClassNames = ['bpkdocs-header__nav-list-item'];
+
+  if (isTablet) {
+    itemClassNames.push('bpkdocs-header__nav-list-item--tablet');
+  }
+
+  return (
     <ul className="bpkdocs-header__nav-list">
       {links.map((link = {}) => (
-        <li key={link.to || link.href} className="bpkdocs-header__nav-list-item">
+        <li key={link.to || link.href} className={itemClassNames.join(' ')}>
           {link.to ? <BpkRouterLink {...link} /> : <BpkLink {...link} />}
         </li>
       ))}
     </ul>
-  </nav>
-);
-
-const toVerticalNav = links => (
-  <ul className="bpkdocs-header__hamburger-nav-list">
-    {links.map((link = {}) => (
-      <li key={link.to || link.href} className="bpkdocs-header__hamburger-nav-list-item">
-        {link.to ? <BpkRouterLink {...link} /> : <BpkLink {...link} />}
-      </li>
-    ))}
-  </ul>
-);
-
-const HamburgerButton = ({
-  expanded,
-  onClick,
-}) => (
-  <nav className="bpkdocs-header__hamburger-nav">
-    <BpkButton
-      link
-      className="bpkdocs-header__hamburger-nav-toggle"
-      aria-expanded={expanded}
-      aria-controls="menu-list"
-      onClick={onClick}
-      aria-label={expanded ? 'Close menu' : 'Open menu'}
-    >{ expanded ? <CloseButtonIcon /> : <MenuButtonIcon /> }</BpkButton>
-
-  </nav>
-);
-
-HamburgerButton.propTypes = {
-  expanded: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
+  );
 };
 
-class Header extends Component {
-  constructor() {
-    super();
+const Header = (props) => {
+  const { expanded, onHamburgerClick } = props;
 
-    this.state = { expanded: true };
-    this.toggleMenu = this.toggleMenu.bind(this);
-  }
-
-  toggleMenu() {
-    this.setState(state => ({ expanded: !state.expanded }));
-  }
-
-  render() {
-    const { expanded } = this.state;
-
-    return (
-      <header className="bpkdocs-header">
-        <BpkGridContainer>
-          <BpkGridRow>
-            <BpkGridColumn width={3}>
-              <IndexLink to={ROUTES.HOME} className="bpkdocs-header__logo-link">
-                <span className="visuallyhidden">Backpack</span>
-              </IndexLink>
-            </BpkGridColumn>
-            <BpkGridColumn width={9}>
+  return (
+    <header className="bpkdocs-header">
+      <BpkGridContainer>
+        <BpkGridRow>
+          <BpkGridColumn width={3} mobileWidth={6}>
+            <IndexLink to={ROUTES.HOME} className="bpkdocs-header__logo-link">
+              <span className="visuallyhidden">Backpack</span>
+            </IndexLink>
+          </BpkGridColumn>
+          <BpkGridColumn width={9} mobileWidth={6}>
+            <nav className="bpkdocs-header__nav">
               <BpkBreakpoint query={BREAKPOINTS.TABLET}>
-                {isActive => (
-                  isActive
-                    ? <HamburgerButton expanded={expanded} onClick={this.toggleMenu} />
-                    : toHorizontalNav(headerLinks)
-                  )
-                }
+                {isTablet => (
+                  isTablet
+                    ? <HamburgerButton expanded={expanded} onClick={onHamburgerClick} />
+                    : toNavList(headerLinks, isTablet)
+                )}
               </BpkBreakpoint>
-            </BpkGridColumn>
-          </BpkGridRow>
-        </BpkGridContainer>
-        <BpkBreakpoint query={BREAKPOINTS.TABLET}>
-          {isActive => (
-            isActive ?
-              <AnimateHeight
-                height={expanded ? 'auto' : 0}
-                duration={200}
-              >
-                <BpkGridContainer>
-                  <BpkGridRow className="bpkdocs-header__hamburger-nav-container">
-                    <BpkGridColumn width={12} padded={false}>
-                      { toVerticalNav(headerLinks) }
-                    </BpkGridColumn>
-                  </BpkGridRow>
-                </BpkGridContainer>
-              </AnimateHeight>
-            : null
-            )
-          }
-        </BpkBreakpoint>
-      </header>
-    );
-  }
-}
+            </nav>
+          </BpkGridColumn>
+        </BpkGridRow>
+      </BpkGridContainer>
+      <BpkBreakpoint query={BREAKPOINTS.TABLET}>
+        {isTablet => (
+          isTablet ?
+            <AnimateHeight
+              height={expanded ? 'auto' : 0}
+              duration={200}
+            >
+              <BpkGridContainer>
+                <BpkGridRow>
+                  <BpkGridColumn width={12} padded={false} className="bpkdocs-header__tablet-nav-container">
+                    <nav>
+                      {toNavList(headerLinks, true)}
+                    </nav>
+                  </BpkGridColumn>
+                </BpkGridRow>
+              </BpkGridContainer>
+            </AnimateHeight>
+          : null
+          )
+        }
+      </BpkBreakpoint>
+    </header>
+  );
+};
+
+Header.propTypes = {
+  expanded: PropTypes.bool.isRequired,
+  onHamburgerClick: PropTypes.func.isRequired,
+};
 
 export default Header;

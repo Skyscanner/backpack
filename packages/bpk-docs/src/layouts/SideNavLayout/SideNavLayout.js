@@ -110,8 +110,8 @@ SideNavLayout.propTypes = {
 };
 
 SideNavLayout.contextTypes = {
-  router: React.PropTypes.object,
-  location: React.PropTypes.object,
+  router: PropTypes.object,
+  location: PropTypes.object,
 };
 
 export default SideNavLayout;

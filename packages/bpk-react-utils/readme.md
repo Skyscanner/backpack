@@ -19,7 +19,7 @@ it's necessary in overcoming z-index issues when absolutely positioning elemtent
 import { Portal } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
 import { BpkCode } from 'bpk-component-code';
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 
 class MyComponent extends Component {
   constructor() {
