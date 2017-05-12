@@ -15,7 +15,7 @@ const links = [
   },
 ];
 
-const UsingLayout = ({ children }) => <SideNavLayout links={links}>{children}</SideNavLayout>;
+const UsingLayout = ({ children, ...rest }) => <SideNavLayout links={links} {...rest}>{children}</SideNavLayout>;
 
 UsingLayout.propTypes = {
   children: PropTypes.node.isRequired,

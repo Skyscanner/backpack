@@ -1,9 +1,10 @@
-import { Link } from 'react-router';
-import PropTypes from 'prop-types';
+import _ from 'lodash';
 import React from 'react';
-import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+import PropTypes from 'prop-types';
 import BpkSelect from 'bpk-component-select';
-import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
+import BpkFieldset from 'bpk-component-fieldset';
+import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+import { Link, browserHistory, PropTypes as RouterPropTypes } from 'react-router';
 
 import './side-nav-layout.scss';
 
@@ -48,7 +49,6 @@ const toNavSelectItem = (link, index) => (
     key={index}
     disabled={!link.route}
     value={link.route}
-    selected={false}
   >{link.children}</option>
 );
 
@@ -58,42 +58,49 @@ const toNavSelectCategory = (link, key) => (
   </optgroup>
 );
 
-// TODO: Add BpkLabel to select
+const getCategoryName = (links, location) => {
+  const reducer = (prev, link) => {
+    const toCategory = innerLink => Object.assign({}, innerLink, { category: link.category });
+    return prev.concat(link.links.map(toCategory));
+  };
 
-const toNavSelect = (links, context) => (
-  <BpkSelect
-    id="fruits"
-    name="fruits"
-    value={context.location.pathname}
-    onChange={e => context.router.push(e.target.value)}
-  >
-    {links.map(
-      (link, index) => (link.category ? toNavSelectCategory(link, index) : toNavLink(link, index)),
-    )}
-  </BpkSelect>
-);
+  const reducedLinks = links.reduce(reducer, []);
 
-export const SideNavLayout = ({ links, children }, context) => (
+  return (_.find(reducedLinks, { route: location.pathname }) || {}).category || '';
+};
+
+const toNavSelect = (links, location) => (
+  <BpkFieldset label={getCategoryName(links, location)}>
+    <BpkSelect
+      id="fruits"
+      name="fruits"
+      value={location.pathname}
+      onChange={e => browserHistory.push(e.target.value)}
+    >
+      {links.map(
+          (link, index) => (link.category ? toNavSelectCategory(link, index) : toNavLink(link, index)),
+        )}
+    </BpkSelect>
+  </BpkFieldset>
+  );
+
+export const SideNavLayout = ({ children, links, location }) => (
   <BpkGridContainer>
     <BpkGridRow>
-      <BpkGridColumn width={3} tabletWidth={12}>
-        <BpkBreakpoint query={BREAKPOINTS.TABLET}>
-          {isActive => (isActive ? toNavSelect(links, context) : toNavList(links))}
-        </BpkBreakpoint>
+      <BpkGridColumn width={12} padded={false} className="bpkdocs-side-nav-layout__nav-select-container">
+        {toNavSelect(links, location)}
+      </BpkGridColumn>
+      <BpkGridColumn width={3} className="bpkdocs-side-nav-layout__nav-list-container">
+        {toNavList(links)}
       </BpkGridColumn>
       <BpkGridColumn width={9} tabletWidth={12}>{children}</BpkGridColumn>
     </BpkGridRow>
   </BpkGridContainer>
 );
 
-const childrenPropType = PropTypes.oneOfType([
-  PropTypes.arrayOf(PropTypes.node),
-  PropTypes.node,
-]);
-
 const linkPropType = PropTypes.shape({
   route: PropTypes.string,
-  children: childrenPropType.isRequired,
+  children: PropTypes.node.isRequired,
 });
 
 const linksPropType = PropTypes.arrayOf(PropTypes.oneOfType([
@@ -105,13 +112,9 @@ const linksPropType = PropTypes.arrayOf(PropTypes.oneOfType([
 ]));
 
 SideNavLayout.propTypes = {
-  children: childrenPropType.isRequired,
-  links: linksPropType,
-};
-
-SideNavLayout.contextTypes = {
-  router: PropTypes.object,
-  location: PropTypes.object,
+  children: PropTypes.node.isRequired,
+  links: linksPropType.isRequired,
+  location: PropTypes.shape(RouterPropTypes.locationShape).isRequired,
 };
 
 export default SideNavLayout;

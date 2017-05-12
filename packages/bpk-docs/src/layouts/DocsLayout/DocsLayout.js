@@ -63,7 +63,7 @@ const links = [
   },
 ];
 
-const DocsLayout = ({ children }) => <SideNavLayout links={links}>{children}</SideNavLayout>;
+const DocsLayout = ({ children, ...rest }) => <SideNavLayout links={links} {...rest}>{children}</SideNavLayout>;
 
 DocsLayout.propTypes = {
   children: PropTypes.oneOfType([

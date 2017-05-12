@@ -9,22 +9,35 @@ import './HamburgerButton.scss';
 const CloseButtonIcon = withButtonAlignment(CloseIcon);
 const MenuButtonIcon = withButtonAlignment(MenuIcon);
 
-const HamburgerButton = ({ expanded, onClick }) => (
-  <button
-    type="button"
-    onClick={onClick}
-    className="bpkdocs-hamburger-button"
-    aria-expanded={expanded}
-    aria-controls="menu-list"
-    aria-label={expanded ? 'Close menu' : 'Open menu'}
-  >
-    {expanded ? <CloseButtonIcon /> : <MenuButtonIcon />}
-  </button>
-);
+const HamburgerButton = (props) => {
+  const classNames = ['bpkdocs-hamburger-button'];
+  const { expanded, onClick, className, ...rest } = props;
+
+  if (className) { classNames.push(className); }
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={classNames.join(' ')}
+      aria-expanded={expanded}
+      aria-controls="menu-list"
+      aria-label={expanded ? 'Close menu' : 'Open menu'}
+      {...rest}
+    >
+      {expanded ? <CloseButtonIcon /> : <MenuButtonIcon />}
+    </button>
+  );
+};
 
 HamburgerButton.propTypes = {
   expanded: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
+};
+
+HamburgerButton.defaultProps = {
+  className: null,
 };
 
 export default HamburgerButton;

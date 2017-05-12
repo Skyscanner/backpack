@@ -20,7 +20,7 @@ const links = [
   },
 ];
 
-const PatternsLayout = ({ children }) => <SideNavLayout links={links}>{children}</SideNavLayout>;
+const PatternsLayout = ({ children, ...rest }) => <SideNavLayout links={links} {...rest}>{children}</SideNavLayout>;
 
 PatternsLayout.propTypes = {
   children: PropTypes.oneOfType([
