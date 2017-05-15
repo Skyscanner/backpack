@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet_
+**Fixed:**
+- bpk-component-popover:
+  - Popover now has a zindex on par with autosuggest
 
 ## 2017-05-16 - Upgraded autosuggest to latest upstream major version
 

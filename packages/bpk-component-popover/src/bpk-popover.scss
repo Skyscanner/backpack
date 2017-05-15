@@ -3,6 +3,7 @@
 .bpk-popover {
   $arrow-size: $bpk-spacing-sm;
 
+  z-index: $bpk-zindex-popover;
   transition: opacity $bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;

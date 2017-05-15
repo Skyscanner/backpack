@@ -1845,6 +1845,12 @@
     {
       "type": "number",
       "category": "z-indices",
+      "value": "900",
+      "name": "zindexPopover"
+    },
+    {
+      "type": "number",
+      "category": "z-indices",
       "value": "1000",
       "name": "zindexModalScrim"
     },
