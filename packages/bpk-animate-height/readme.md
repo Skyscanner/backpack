@@ -15,7 +15,7 @@ npm install bpk-animate-height --save-dev
 
 ```js
 import AnimateHeight from 'bpk-animate-height';
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 
 class AnimateHeightContainer extends Component {
   constructor() {

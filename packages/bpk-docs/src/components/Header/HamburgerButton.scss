@@ -1,0 +1,9 @@
+@import '~bpk-mixins/index';
+
+.bpkdocs-hamburger-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  fill: $bpk-color-gray-700;
+  cursor: pointer;
+}

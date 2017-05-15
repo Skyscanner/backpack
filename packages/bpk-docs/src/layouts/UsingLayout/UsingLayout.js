@@ -6,16 +6,17 @@ import * as routes from './../../constants/routes';
 
 const links = [
   {
+    id: 'USING_BACKPACK',
     category: 'Using Backpack',
     links: [
-      { route: routes.GETTING_STARTED, children: 'Getting started' },
-      { route: routes.BACKPACK_REACT_SCRIPTS, children: 'Backpack React Scripts' },
-      { route: routes.BASE_STYLESHEET, children: 'Base stylesheet' },
+      { id: 'GETTING_STARTED', route: routes.GETTING_STARTED, children: 'Getting started' },
+      { id: 'BACKPACK_REACT_SCRIPTS', route: routes.BACKPACK_REACT_SCRIPTS, children: 'Backpack React Scripts' },
+      { id: 'BASE_STYLESHEET', route: routes.BASE_STYLESHEET, children: 'Base stylesheet' },
     ],
   },
 ];
 
-const UsingLayout = ({ children }) => <SideNavLayout links={links}>{children}</SideNavLayout>;
+const UsingLayout = ({ children, ...rest }) => <SideNavLayout links={links} {...rest}>{children}</SideNavLayout>;
 
 UsingLayout.propTypes = {
   children: PropTypes.node.isRequired,

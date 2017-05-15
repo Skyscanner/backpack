@@ -8,8 +8,15 @@ describe('BpkRouterLink', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with a "blank" attribute', () => {
-    const tree = renderer.create(<BpkRouterLink to="#" blank>Link (new window)</BpkRouterLink>).toJSON();
+  it('should render correctly with a "className" attribute', () => {
+    const tree = renderer.create(
+      <BpkRouterLink to="#" className="my-custom-class-1 my-custom-class-2">Link</BpkRouterLink>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with arbitrary attributes', () => {
+    const tree = renderer.create(<BpkRouterLink to="#" target="_blank">Link</BpkRouterLink>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

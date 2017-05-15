@@ -6,21 +6,22 @@ import * as routes from './../../constants/routes';
 
 const links = [
   {
+    id: 'PATTERNS',
     category: 'Patterns',
     links: [
-      { route: routes.VERTICAL_RHYTHM, children: 'Vertical rhythm' },
-      { route: routes.STATEFULNESS, children: 'Statefulness' },
-      { route: null, children: 'Units' },
-      { route: null, children: 'Error handling' },
-      { route: null, children: 'Data entry' },
-      { route: null, children: 'Messaging' },
-      { route: null, children: 'Tiles and cards' },
-      { route: null, children: 'Tap targets' },
+      { id: 'VERTICAL_RHYTHM', route: routes.VERTICAL_RHYTHM, children: 'Vertical rhythm' },
+      { id: 'STATEFULNESS', route: routes.STATEFULNESS, children: 'Statefulness' },
+      { id: 'UNITS', route: null, children: 'Units' },
+      { id: 'ERROR_HANDLING', route: null, children: 'Error handling' },
+      { id: 'DATA_ENTRY', route: null, children: 'Data entry' },
+      { id: 'MESSAGIN', route: null, children: 'Messaging' },
+      { id: 'TILES_AND_CARDS', route: null, children: 'Tiles and cards' },
+      { id: 'TAP_TARGETS', route: null, children: 'Tap targets' },
     ],
   },
 ];
 
-const PatternsLayout = ({ children }) => <SideNavLayout links={links}>{children}</SideNavLayout>;
+const PatternsLayout = ({ children, ...rest }) => <SideNavLayout links={links} {...rest}>{children}</SideNavLayout>;
 
 PatternsLayout.propTypes = {
   children: PropTypes.oneOfType([

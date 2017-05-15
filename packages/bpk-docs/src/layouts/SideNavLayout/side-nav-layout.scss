@@ -1,6 +1,23 @@
 @import '~bpk-mixins/index';
 
 .bpkdocs-side-nav-layout {
+  &__nav-select-container {
+    display: none;
+    padding-top: $bpk-spacing-sm;
+
+    @include bpk-breakpoint-tablet {
+      display: block;
+    }
+  }
+
+  &__nav-list-container {
+    display: block;
+
+    @include bpk-breakpoint-tablet {
+      display: none;
+    }
+  }
+
   &__nav-list-item {
     display: block;
 
