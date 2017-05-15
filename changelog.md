@@ -8,6 +8,12 @@
 - bpk-tokens:
   - Renamed `AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR` -> `AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR`
 
+**Fixed:**
+- bpk-component-router-link:
+- bpk-component-mixins:
+  - Fixed router link actve + visited color
+  - Arbitrary props can now be passed through
+
 ## 2017-05-09 - Improved calendar performance
 
 **Fixed:**

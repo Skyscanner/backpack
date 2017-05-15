@@ -28,7 +28,9 @@ const toNavList = (links, hideOnTablet) => {
     <ul className={classNames.join(' ')}>
       {links.map((link = {}) => (
         <li key={link.to || link.href} className="bpkdocs-header__nav-list-item">
-          {link.to ? <BpkRouterLink {...link} /> : <BpkLink {...link} />}
+          {link.to
+            ? <BpkRouterLink className="bpkdocs-header__nav-list-link" {...link} />
+            : <BpkLink className="bpkdocs-header__nav-list-link" {...link} />}
         </li>
         ))}
     </ul>

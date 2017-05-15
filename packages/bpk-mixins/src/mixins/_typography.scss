@@ -325,12 +325,12 @@
     color: $bpk-link-white-hover-color;
   }
 
-  &:active {
-    color: $bpk-link-white-active-color;
-  }
-
   &:visited {
     color: $bpk-link-white-visited-color;
+  }
+
+  &:active {
+    color: $bpk-link-white-active-color;
   }
 }
 
@@ -346,6 +346,14 @@
 
 @mixin bpk-link--active {
   color: $bpk-link-active-color;
+
+  &:visited {
+    color: $bpk-link-active-color;
+  }
+
+  &:active {
+    color: $bpk-link-active-color;
+  }
 }
 
 /// Table.
