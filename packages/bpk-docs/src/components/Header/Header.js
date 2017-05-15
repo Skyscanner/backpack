@@ -7,7 +7,7 @@ import AnimateHeight from 'bpk-animate-height';
 import BpkRouterLink from 'bpk-component-router-link';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
 
-import './MyHeader.scss';
+import './Header.scss';
 import * as ROUTES from './../../constants/routes';
 import HamburgerButton from './HamburgerButton';
 
