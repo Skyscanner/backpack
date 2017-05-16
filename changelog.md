@@ -13,6 +13,19 @@
 - bpk-component-popover:
   - Popover now has a zindex on par with autosuggest
 
+## 2017-05-16 - Release new major version of bpk-mixins
+
+**Changed:**
+- bpk-mixins: 14.1.3 => 15.0.0
+  - Upgraded `bpk-tokens` to `^23.0.0` which comes with the following breaking change:
+    - Renamed `AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR` -> `AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR`
+
+## 2017-05-16 - Fixed breaking change in bpk-component-autosuggest@2.1.3
+
+**Fixed:**
+- bpk-mixins: 14.1.1 => 14.1.3
+  - Reverted `bpk-tokens` to `^22.1.0` as a result of a breaking change
+
 ## 2017-05-16 - Upgraded autosuggest to latest upstream major version
 
 **Changed:**
