@@ -110,6 +110,10 @@
       "value": "{!GRAY_700}",
       "type": "color"
     },
+    "LABEL_DISABLED_COLOR": {
+      "value": "{!GRAY_300}",
+      "type": "color"
+    },
     "LABEL_FONT_SIZE": {
       "value": "{!FONT_SIZE_SM}",
       "type": "size"

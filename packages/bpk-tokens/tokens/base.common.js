@@ -202,6 +202,7 @@ module.exports = {
   selectDisabledColor: "rgb(178, 174, 189)",
   selectLargeHeight: "2.625rem + .375rem",
   labelColor: "rgb(82, 76, 97)",
+  labelDisabledColor: "rgb(178, 174, 189)",
   labelFontSize: ".75rem",
   labelLineHeight: "1.125rem",
   formValidationMargin: "0",

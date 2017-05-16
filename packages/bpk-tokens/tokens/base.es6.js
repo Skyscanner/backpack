@@ -201,6 +201,7 @@ export const selectDisabledBorderColor = "rgb(243, 242, 245)";
 export const selectDisabledColor = "rgb(178, 174, 189)";
 export const selectLargeHeight = "2.625rem + .375rem";
 export const labelColor = "rgb(82, 76, 97)";
+export const labelDisabledColor = "rgb(178, 174, 189)";
 export const labelFontSize = ".75rem";
 export const labelLineHeight = "1.125rem";
 export const formValidationMargin = "0";
@@ -535,6 +536,7 @@ selectDisabledBorderColor,
 selectDisabledColor,
 selectLargeHeight,
 labelColor,
+labelDisabledColor,
 labelFontSize,
 labelLineHeight,
 formValidationMargin,

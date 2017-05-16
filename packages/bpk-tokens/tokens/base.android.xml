@@ -203,6 +203,7 @@
   <color name="SELECT_DISABLED_COLOR" category="forms">#b2aebdff</color>
   <property name="SELECT_LARGE_HEIGHT" category="forms">42</property>
   <color name="LABEL_COLOR" category="forms">#524c61ff</color>
+  <color name="LABEL_DISABLED_COLOR" category="forms">#b2aebdff</color>
   <property name="LABEL_FONT_SIZE" category="forms">12</property>
   <property name="LABEL_LINE_HEIGHT" category="forms">18</property>
   <property name="FORM_VALIDATION_MARGIN" category="forms">0</property>

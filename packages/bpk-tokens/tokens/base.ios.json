@@ -1220,6 +1220,12 @@
     },
     {
       "category": "forms",
+      "value": "rgb(178, 174, 189)",
+      "type": "color",
+      "name": "labelDisabledColor"
+    },
+    {
+      "category": "forms",
       "value": "12",
       "type": "size",
       "name": "labelFontSize"

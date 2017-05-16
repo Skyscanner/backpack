@@ -1310,6 +1310,12 @@
       "type": "color",
       "name": "LABEL_COLOR"
     },
+    "LABEL_DISABLED_COLOR": {
+      "category": "forms",
+      "value": "rgb(178, 174, 189)",
+      "type": "color",
+      "name": "LABEL_DISABLED_COLOR"
+    },
     "LABEL_FONT_SIZE": {
       "category": "forms",
       "value": ".75rem",
@@ -2157,6 +2163,7 @@
     "SELECT_DISABLED_COLOR",
     "SELECT_LARGE_HEIGHT",
     "LABEL_COLOR",
+    "LABEL_DISABLED_COLOR",
     "LABEL_FONT_SIZE",
     "LABEL_LINE_HEIGHT",
     "FORM_VALIDATION_MARGIN",

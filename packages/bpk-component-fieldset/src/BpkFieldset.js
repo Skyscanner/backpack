@@ -15,6 +15,7 @@ const BpkFieldset = (props) => {
     required,
     isCheckbox,
     validationProps,
+    disabled,
     ...rest
   } = props;
 
@@ -43,6 +44,8 @@ const BpkFieldset = (props) => {
     childrenProps['aria-describedby'] = validationMessageId;
   }
 
+  childrenProps.disabled = disabled;
+
   const clonedChildren = cloneElement(children, childrenProps);
 
   if (className) { classNames.push(className); }
@@ -50,7 +53,11 @@ const BpkFieldset = (props) => {
   return (
     <fieldset className={classNames.join(' ')} {...rest}>
       {!isCheckbox && (
-        <BpkLabel htmlFor={children.props.id} required={required}>{label}</BpkLabel>
+        <BpkLabel
+          htmlFor={children.props.id}
+          required={required}
+          disabled={disabled}
+        >{label}</BpkLabel>
       )}
       {clonedChildren}
       {validationMessage && (
@@ -69,6 +76,7 @@ const BpkFieldset = (props) => {
 
 BpkFieldset.propTypes = {
   children: PropTypes.node.isRequired,
+  disabled: PropTypes.bool,
   label: PropTypes.string,
   valid: PropTypes.bool,
   required: PropTypes.bool,
@@ -79,6 +87,7 @@ BpkFieldset.propTypes = {
 };
 
 BpkFieldset.defaultProps = {
+  disabled: false,
   label: null,
   valid: null,
   required: false,
@@ -89,4 +98,3 @@ BpkFieldset.defaultProps = {
 };
 
 export default BpkFieldset;
-

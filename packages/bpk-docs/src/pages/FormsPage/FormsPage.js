@@ -89,7 +89,7 @@ const components = [
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel htmlFor="input_disabled">Disabled input</BpkLabel>
+        <BpkLabel htmlFor="input_disabled" disabled>Disabled input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
           id="input_disabled"
@@ -194,7 +194,7 @@ const components = [
         </InputContainer>
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel htmlFor="select_disabled">Disabled select</BpkLabel>
+        <BpkLabel htmlFor="select_disabled" disabled>Disabled select</BpkLabel>
         <InputContainer
           FormComponent={BpkSelect}
           id="select_disabled"
@@ -471,7 +471,7 @@ const components = [
         />
       </form>,
       <form className="bpkdocs-forms-page__form">
-        <BpkLabel htmlFor="textarea_disabled">Disabled textarea</BpkLabel>
+        <BpkLabel htmlFor="textarea_disabled" disabled>Disabled textarea</BpkLabel>
         <InputContainer
           FormComponent={BpkTextarea}
           id="textarea_disabled"
@@ -561,6 +561,7 @@ const components = [
     examples: [
       <BpkLabel>This is a label</BpkLabel>,
       <BpkLabel required>This is a required label</BpkLabel>,
+      <BpkLabel disabled>This is a disabled label</BpkLabel>,
     ],
     readme: labelReadme,
   },
