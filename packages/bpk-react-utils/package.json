@@ -1,6 +1,6 @@
 {
   "name": "bpk-react-utils",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Utilities for Backpack's React components.",
   "main": "index.js",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-accordion",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Backpack accordion component.",
   "main": "index.js",
   "repository": {
@@ -13,13 +13,13 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-animate-height": "^0.0.5",
-    "bpk-component-icon": "^3.4.10",
-    "bpk-mixins": "^14.1.0",
+    "bpk-animate-height": "^0.0.6",
+    "bpk-component-icon": "^3.4.11",
+    "bpk-mixins": "^14.1.1",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-component-checkbox": "^1.1.0",
-    "bpk-tokens": "^22.1.0"
+    "bpk-component-checkbox": "^1.1.1",
+    "bpk-tokens": "^23.0.0"
   }
 }
