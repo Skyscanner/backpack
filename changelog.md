@@ -3,6 +3,9 @@
 ## UNRELEASED
 
 - bpk-mixins:
+  - Upgraded `bpk-tokens` to `^23.0.1` for major bump
+
+- bpk-mixins:
   - Reverted `bpk-tokens` to `^22.1.0` as a result of a breaking change
 
 ## 2017-05-16 - Upgraded autosuggest to latest upstream major version
