@@ -32,7 +32,7 @@ const BpkFieldset = (props) => {
     ? valid === false
     : children.props.valid === false;
 
-  const childrenProps = {};
+  const childrenProps = { disabled };
 
   if (isCheckbox) {
     childrenProps.required = required;
@@ -43,8 +43,6 @@ const BpkFieldset = (props) => {
   if (validationMessage && isInvalid) {
     childrenProps['aria-describedby'] = validationMessageId;
   }
-
-  childrenProps.disabled = disabled;
 
   const clonedChildren = cloneElement(children, childrenProps);
 

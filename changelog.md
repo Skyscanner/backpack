@@ -2,6 +2,13 @@
 
 ## UNRELEASED
 
+**Added:**
+- bpk-component-fieldset:
+- bpk-component-label:
+- bpk-mixins:
+- bpk-tokens:
+  - Labels now accept `disabled` prop to display in a different color when used with a disabled form element
+
 **Fixed:**
 - bpk-component-popover:
   - Popover now has a zindex on par with autosuggest
