@@ -83,6 +83,25 @@ describe('BpkFieldset', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with input component and "disabled" attribute', () => {
+    const tree = renderer.create(
+      <BpkFieldset
+        label="Name"
+        validationMessage="Please enter a name"
+      >
+        <BpkInput
+          id="name_input"
+          name="name"
+          type={INPUT_TYPES.TEXT}
+          placeholder="e.g. Joe Bloggs"
+          value=""
+          disabled
+        />
+      </BpkFieldset>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with select component', () => {
     const tree = renderer.create(
       <BpkFieldset

@@ -173,4 +173,54 @@ storiesOf('bpk-component-fieldset', module)
         label="I accept the terms and conditions"
       />
     </FieldsetContainer>
+  ))
+  .add('Disabled input example', () => (
+    <FieldsetContainer
+      label="Name"
+      validationMessage="Please enter a name (Joe Bloggs is correct!)"
+      validValue="Joe Bloggs"
+      disabled
+    >
+      <BpkInput
+        id="name_input"
+        name="name"
+        type={INPUT_TYPES.TEXT}
+        placeholder="e.g. Joe Bloggs"
+        value=""
+      />
+    </FieldsetContainer>
+  ))
+  .add('Disabled select example', () => (
+    <FieldsetContainer
+      label="Fruits"
+      validationMessage="Please select a fruit (Orange is correct!)"
+      validValue="oranges"
+      disabled
+    >
+      <BpkSelect
+        id="fruits_select"
+        name="fruits"
+        value=""
+      >
+        <option value="">Please select...</option>
+        <option value="apples">Apples</option>
+        <option value="oranges">Oranges</option>
+        <option value="pears">Pears</option>
+        <option value="tomato" disabled>Tomato</option>
+      </BpkSelect>
+    </FieldsetContainer>
+  ))
+  .add('Disabled checkbox example', () => (
+    <FieldsetContainer
+      validationMessage="Please check this"
+      validValue
+      isCheckbox
+      disabled
+    >
+      <BpkCheckbox
+        id="prefer_directs_checkbox"
+        name="prefer_directs"
+        label="Prefer directs"
+      />
+    </FieldsetContainer>
   ));

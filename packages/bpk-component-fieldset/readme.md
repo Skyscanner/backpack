@@ -59,12 +59,13 @@ class FieldsetContainer extends Component {
 | Property          | PropType | Required | Default Value |
 | ----------------- | -------- | -------- | ------------- |
 | children          | node     | true     | -             |
-| label             | string   | false    | null          |
-| valid             | bool     | false    | null          |
-| required          | bool     | false    | false         |
 | className         | string   | false    | null          |
-| validationMessage | string   | false    | null          |
+| disabled          | bool     | false    | false         |
 | isCheckbox        | bool     | false    | false         |
+| label             | string   | false    | null          |
+| required          | bool     | false    | false         |
+| valid             | bool     | false    | null          |
+| validationMessage | string   | false    | null          |
 | validationProps   | object   | false    | {}            |
 
 > **Note:** There are a couple of props that behave differently when using `isCheckbox`:

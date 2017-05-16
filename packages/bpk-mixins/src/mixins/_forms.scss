@@ -387,7 +387,7 @@
 ///   }
 
 @mixin bpk-checkbox--disabled {
-  color: $bpk-color-gray-300;
+  color: $bpk-label-disabled-color;
   cursor: not-allowed;
 }
 
@@ -463,7 +463,7 @@
 ///   }
 
 @mixin bpk-radio--disabled {
-  color: $bpk-color-gray-300;
+  color: $bpk-label-disabled-color;
   cursor: not-allowed;
 }
 
@@ -550,6 +550,21 @@
 
 @mixin bpk-label--white {
   color: $bpk-color-white;
+}
+
+/// Disabled form label. Modifies the bpk-label mixin.
+///
+/// @require {mixin} bpk-label
+///
+/// @example scss
+///   .selector {
+///     @include bpk-label();
+///     @include bpk-label--disabled();
+///   }
+
+@mixin bpk-label--disabled {
+  color: $bpk-label-disabled-color;
+  cursor: not-allowed;
 }
 
 /// Form validation.
