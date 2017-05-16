@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
+_Nothing yet_
+
+## 2017-05-16 - Upgraded autosuggest to latest upstream major version
+
 **Changed:**
-- bpk-component-autosuggest:
+- bpk-component-autosuggest: 2.1.3 => 3.0.0
   - Updated `react-autosuggest` dependency: `8.0.0` => `9.0.1`
   - Upgrade instructions:
     - Change the `focusFirstSuggestion` prop to be `highlightFirstSuggestion`
@@ -11,12 +15,12 @@
       `function onBlur(event, { highlightedSuggestion })`
     - For additional (breaking) changes, please refer to
       the [release notes](https://github.com/moroshko/react-autosuggest/releases/tag/v9.0.0)
-- bpk-tokens:
+- bpk-tokens: 22.1.0 => 23.0.0
   - Renamed `AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR` -> `AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR`
 
 **Fixed:**
-- bpk-component-router-link:
-- bpk-component-mixins:
+- bpk-component-router-link: 0.1.76 => 0.1.77
+- bpk-component-mixins: 14.1.0 => 14.1.1
   - Fixed router link actve + visited color
   - Arbitrary props can now be passed through
 
