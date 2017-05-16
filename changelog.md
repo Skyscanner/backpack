@@ -4,7 +4,13 @@
 
 **Changed:**
 - bpk-component-autosuggest:
-  - Updated `react-autosuggest` dependency: `8.0.0` => `9.0.1`, see the [release notes](https://github.com/moroshko/react-autosuggest/releases/tag/v9.0.0) for breaking changes
+  - Updated `react-autosuggest` dependency: `8.0.0` => `9.0.1`
+  - Upgrade instructions:
+    - Change the `focusFirstSuggestion` prop to be `highlightFirstSuggestion`
+    - Change the signature of `inputProps.onBlur` from `function onBlur(event, { focusedSuggestion })` to
+      `function onBlur(event, { highlightedSuggestion })`
+    - For additional (breaking) changes, please refer to
+      the [release notes](https://github.com/moroshko/react-autosuggest/releases/tag/v9.0.0)
 - bpk-tokens:
   - Renamed `AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR` -> `AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR`
 
