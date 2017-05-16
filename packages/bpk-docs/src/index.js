@@ -8,10 +8,14 @@ import routes from './routes';
 import template from './template';
 import { extractAssets } from './webpackStats';
 
-if (typeof document !== 'undefined') {
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   const root = document.getElementById('react-mount');
 
-  ReactDOM.render(React.createElement(Router, { history: browserHistory, routes }), root);
+  ReactDOM.render(React.createElement(Router, {
+    history: browserHistory,
+    onUpdate: () => window.scrollTo(0, 0),
+    routes,
+  }), root);
 }
 
 export default ((locals, callback) => {
