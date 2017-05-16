@@ -94,6 +94,7 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
     aria-invalid={false}
     aria-required={false}
     className="bpk-input"
+    disabled={false}
     id="name_input"
     name="name"
     placeholder="e.g. Joe Bloggs"
@@ -142,6 +143,7 @@ exports[`BpkFieldset should render correctly with input component and "required"
     aria-invalid={false}
     aria-required={true}
     className="bpk-input bpk-input--valid"
+    disabled={false}
     id="name_input"
     name="name"
     placeholder="e.g. Joe Bloggs"
@@ -186,6 +188,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
     aria-invalid={false}
     aria-required={false}
     className="bpk-input bpk-input--valid"
+    disabled={false}
     id="name_input"
     name="name"
     placeholder="e.g. Joe Bloggs"
@@ -231,6 +234,7 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
     aria-invalid={true}
     aria-required={false}
     className="bpk-input bpk-input--invalid"
+    disabled={false}
     id="name_input"
     name="name"
     placeholder="e.g. Joe Bloggs"
@@ -275,6 +279,7 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
     aria-invalid={false}
     aria-required={false}
     className="bpk-select"
+    disabled={false}
     id="fruits_select"
     name="fruits"
     value="">
@@ -343,6 +348,7 @@ exports[`BpkFieldset should render correctly with select component and "required
     aria-invalid={false}
     aria-required={true}
     className="bpk-select"
+    disabled={false}
     id="fruits_select"
     name="fruits"
     value="">
