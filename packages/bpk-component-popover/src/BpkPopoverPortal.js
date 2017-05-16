@@ -66,6 +66,10 @@ class BpkPopoverPortal extends Component {
       ...rest
     } = this.props;
 
+    const classNames = ['bpk-popover-portal'];
+
+    if (portalClassName) { classNames.push(portalClassName); }
+
     delete rest.onClose;
     delete rest.tetherOptions;
 
@@ -78,7 +82,7 @@ class BpkPopoverPortal extends Component {
         onRender={this.onRender}
         beforeClose={this.beforeClose}
         style={portalStyle}
-        className={portalClassName}
+        className={classNames.join(' ')}
       >
         <BpkPopover onClose={onClose} {...rest} />
       </Portal>

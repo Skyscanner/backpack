@@ -10,6 +10,9 @@
     "ZINDEX_AUTOSUGGEST": {
       "value": "{!ZINDEX_AUTOSUGGEST}"
     },
+    "ZINDEX_POPOVER": {
+      "value": "{!ZINDEX_POPOVER}"
+    },
     "ZINDEX_MODAL_SCRIM": {
       "value": "{!ZINDEX_MODAL_SCRIM}"
     },

@@ -305,6 +305,7 @@ export const linkWhiteHoverColor = "rgb(255, 255, 255)";
 export const linkWhiteActiveColor = "rgb(230, 228, 235)";
 export const linkWhiteVisitedColor = "rgb(255, 255, 255)";
 export const zindexAutosuggest = "900";
+export const zindexPopover = "900";
 export const zindexModalScrim = "1000";
 export const zindexModal = "1100";
 export const animations = {
@@ -661,6 +662,7 @@ linkHoverTextDecoration,
 };
 export const zIndices = {
 zindexAutosuggest,
+zindexPopover,
 zindexModalScrim,
 zindexModal,
 };

@@ -1,7 +1,7 @@
 exports[`BpkPopoverPortal Custom Portal props should render correctly with portalClassName added to portal component 1`] = `
 <Portal
   beforeClose={[Function]}
-  className="my-custom-classname"
+  className="bpk-popover-portal my-custom-classname"
   isOpen={false}
   onClose={[Function]}
   onOpen={[Function]}
@@ -32,7 +32,7 @@ exports[`BpkPopoverPortal Custom Portal props should render correctly with porta
 exports[`BpkPopoverPortal Custom Portal props should render correctly with portalStyle added to portal component 1`] = `
 <Portal
   beforeClose={[Function]}
-  className={null}
+  className="bpk-popover-portal"
   isOpen={false}
   onClose={[Function]}
   onOpen={[Function]}
