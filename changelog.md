@@ -2,15 +2,19 @@
 
 ## UNRELEASED
 
+_Nothing yet_
+
+## 2017-05-17 - Support for disabled labels, popover fix
+
 **Added:**
-- bpk-component-fieldset:
-- bpk-component-label:
-- bpk-mixins:
-- bpk-tokens:
+- bpk-component-fieldset: 0.1.2 => 0.2.0
+- bpk-component-label: 3.0.2 => 3.1.0
+- bpk-mixins: 15.0.0 => 15.1.0
+- bpk-tokens: 23.0.0 => 23.1.0
   - Labels now accept `disabled` prop to display in a different color when used with a disabled form element
 
 **Fixed:**
-- bpk-component-popover:
+- bpk-component-popover: 1.0.41 => 1.0.42
   - Popover now has a zindex on par with autosuggest
 
 ## 2017-05-16 - Release new major version of bpk-mixins
