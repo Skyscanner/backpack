@@ -80,7 +80,6 @@ const HorizontalNavPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={readme}
-  sassdocId="horizontal-nav"
 />;
 
 export default HorizontalNavPage;

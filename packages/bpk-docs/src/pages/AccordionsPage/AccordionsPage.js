@@ -187,7 +187,6 @@ const AccordionsPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={accordionsReadme}
-  sassdocId="accordions"
 />;
 
 export default AccordionsPage;
