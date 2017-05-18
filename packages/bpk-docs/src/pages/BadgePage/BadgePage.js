@@ -61,7 +61,7 @@ const BadgePage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={badgeReadme}
-  sassdocId="badge"
+  sassdocId="badges"
 />;
 
 export default BadgePage;

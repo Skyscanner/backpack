@@ -101,7 +101,6 @@ const PopoversPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={popoverReadme}
-  sassdocId="popovers"
 />;
 
 export default PopoversPage;

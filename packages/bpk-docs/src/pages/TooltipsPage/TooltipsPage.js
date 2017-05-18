@@ -88,7 +88,7 @@ const components = [
   },
 ];
 
-const PopoversPage = () => <DocsPageBuilder
+const TooltipsPage = () => <DocsPageBuilder
   title="Tooltips"
   blurb={[
     <BpkParagraph>
@@ -107,7 +107,6 @@ const PopoversPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={tooltipReadme}
-  sassdocId="popovers"
 />;
 
-export default PopoversPage;
+export default TooltipsPage;

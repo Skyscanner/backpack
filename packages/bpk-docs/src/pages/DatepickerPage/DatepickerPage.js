@@ -72,7 +72,6 @@ const DatepickerPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={datepickerReadme}
-  sassdocId="calendar"
 />;
 
 export default DatepickerPage;
