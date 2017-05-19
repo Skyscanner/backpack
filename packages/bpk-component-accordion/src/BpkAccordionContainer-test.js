@@ -1,4 +1,5 @@
 import React from 'react';
+import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import BpkAccordionContainer from './BpkAccordionContainer';
@@ -35,5 +36,23 @@ describe('BpkAccordionContainer', () => {
       </BpkAccordionContainer>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  it('should update "expanded" value with key of clicked child', () => {
+    const accordionContainer = shallow(
+      <BpkAccordionContainer>
+        <div>Accordion Item 1</div>
+        <div initiallyExpanded>Accordion Item 2</div>
+        <div>Accordion Item 3</div>
+      </BpkAccordionContainer>,
+    );
+
+    expect(accordionContainer.state('expanded')).toEqual('.1');
+
+    accordionContainer.findWhere(e => e.text() === 'Accordion Item 1').first().prop('onClick')();
+    expect(accordionContainer.state('expanded')).toEqual('.0');
+
+    accordionContainer.findWhere(e => e.text() === 'Accordion Item 3').first().prop('onClick')();
+    expect(accordionContainer.state('expanded')).toEqual('.2');
   });
 });

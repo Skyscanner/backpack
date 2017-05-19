@@ -35,7 +35,7 @@ export default () => (
 
 ### withState
 
-The `withState` HOC is used to allow multiple items to be expanded simultaneously.
+The `withState` higher-order component is used to allow multiple items to be expanded simultaneously.
 
 ```js
 import React from 'react';

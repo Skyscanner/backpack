@@ -31,7 +31,7 @@ describe('BpkAccordionItem', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with "initiallyExpanded" prop', () => {
+  it('should not render an "initiallyExpanded" attribute on the html node', () => {
     const tree = renderer.create(
       <BpkAccordionItem id="my-accordion" title="My accordion item" initiallyExpanded>
         My accordion content

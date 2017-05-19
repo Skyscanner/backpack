@@ -12,6 +12,9 @@ const BpkAccordionItem = (props) => {
   const iconClassNames = ['bpk-accordion__item-expand-icon'];
   const { id, title, children, expanded, onClick, ...rest } = props;
 
+  // if this component is passed initiallyExpanded, this makes sure it doesn't
+  // end up on the node. Not ideal as our container component shouldn't be passing
+  // it, but the benefit of a better container api versus this was worth it
   delete rest.initiallyExpanded;
 
   if (expanded) { iconClassNames.push('bpk-accordion__item-expand-icon--flipped'); }
