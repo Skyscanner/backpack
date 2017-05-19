@@ -1,4 +1,4 @@
-exports[`BpkAccordionItem should render correctly 1`] = `
+exports[`withState should render correctly 1`] = `
 <div
   id="my-accordion">
   <dt
@@ -64,9 +64,8 @@ exports[`BpkAccordionItem should render correctly 1`] = `
 </div>
 `;
 
-exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
+exports[`withState should render correctly with "expanded" prop 1`] = `
 <div
-  className="my-custom-class"
   id="my-accordion">
   <dt
     aria-level="3"
@@ -131,7 +130,7 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
 </div>
 `;
 
-exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
+exports[`withState should render correctly with "initiallyExpanded" prop 1`] = `
 <div
   id="my-accordion">
   <dt
@@ -181,72 +180,6 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
         "height": "auto",
         "msTransition": "height 200ms ease ",
         "overflow": "visible",
-        "transition": "height 200ms ease ",
-      }
-    }>
-    <div>
-      <dd
-        aria-labelledby="my-accordion_title"
-        className="bpk-accordion__content-container"
-        id="my-accordion_content"
-        role="region">
-        My accordion content
-      </dd>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`BpkAccordionItem should render correctly with "initiallyExpanded" prop 1`] = `
-<div
-  id="my-accordion">
-  <dt
-    aria-level="3"
-    className="bpk-accordion__title"
-    role="heading">
-    <button
-      aria-controls="my-accordion_content"
-      aria-expanded={false}
-      className="bpk-accordion__toggle-button"
-      onClick={[Function]}
-      type="button">
-      <span
-        className="bpk-accordion__flex-container">
-        <span
-          className="bpk-accordion__title-text">
-          My accordion item
-        </span>
-        <span
-          className="bpk-accordion__icon-wrapper">
-          <svg
-            className="bpk-accordion__item-expand-icon bpk-icon--align-to-button"
-            height="18"
-            style={
-              Object {
-                "height": "1.125rem",
-                "width": "1.125rem",
-              }
-            }
-            viewBox="0 0 18 18"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M9 13.1L3.6 8.3c-.5-.4-.5-1.1-.1-1.5.4-.5 1.1-.5 1.6-.1L9 10.1l3.9-3.5c.5-.4 1.2-.4 1.6.1s.4 1.2-.1 1.6L9 13.1z" />
-          </svg>
-        </span>
-      </span>
-    </button>
-  </dt>
-  <div
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "MozTransition": "height 200ms ease ",
-        "OTransition": "height 200ms ease ",
-        "WebkitTransition": "height 200ms ease ",
-        "height": 0,
-        "msTransition": "height 200ms ease ",
-        "overflow": "hidden",
         "transition": "height 200ms ease ",
       }
     }>

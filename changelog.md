@@ -2,6 +2,14 @@
 
 ## UNRELEASED
 
+**Changed:**
+- bpk-component-accordion:
+  - New API:
+    - Consumers using `BpkAccordionContainer` without `allowMultiple` will now have to use `initiallyExpanded` on `BpkAccordionItem`'s that should be initially expanded
+    - `BpkAccordionContainer` with `allowMultiple` is deprecated, consumers should now wrap `BpkAccordionItem` with the new `withState` HOC and use `BpkAccordion` as the parent
+    - `withState(BpkAccordionItem)` components also expect `initiallyExpanded` for items that should be initially expanded
+    - Please refer to [the readme](http://backpack.prod.aws.skyscnr.com/components/molecules/accordions#readme) for examples
+
 **Fixed:**
 - bpk-component-datepicker:
 - bpk-component-input:

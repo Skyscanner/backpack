@@ -3,9 +3,11 @@ import BpkCheckbox from 'bpk-component-checkbox';
 import BpkParagraph from 'bpk-component-paragraph';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 import accordionsReadme from 'bpk-component-accordion/readme.md';
-import { BpkAccordionContainer, BpkAccordionItem } from 'bpk-component-accordion';
+import { BpkAccordionContainer, BpkAccordion, BpkAccordionItem, withState } from 'bpk-component-accordion';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+
+const StatefulBpkAccordionItem = withState(BpkAccordionItem);
 
 const CheckboxWrapper = props => <div style={{ padding: `${spacingSm} 0` }} {...props} />;
 
@@ -139,7 +141,7 @@ const components = [
     ],
     examples: [
       <BpkAccordionContainer>
-        <BpkAccordionItem id="stops" title="Stops" expanded>
+        <BpkAccordionItem id="stops" title="Stops" initiallyExpanded>
           <StopsContent />
         </BpkAccordionItem>
         <BpkAccordionItem id="airlines" title="Airlines">
@@ -160,17 +162,17 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <BpkAccordionContainer allowMultiple>
-        <BpkAccordionItem id="stops" title="Stops" expanded>
+      <BpkAccordion>
+        <StatefulBpkAccordionItem id="stops" title="Stops" initiallyExpanded>
           <StopsContent />
-        </BpkAccordionItem>
-        <BpkAccordionItem id="airlines" title="Airlines">
+        </StatefulBpkAccordionItem>
+        <StatefulBpkAccordionItem id="airlines" title="Airlines" initiallyExpanded>
           <AirlinesContent />
-        </BpkAccordionItem>
-        <BpkAccordionItem id="airports" title="Airports">
+        </StatefulBpkAccordionItem>
+        <StatefulBpkAccordionItem id="airports" title="Airports">
           <AirportsContent />
-        </BpkAccordionItem>
-      </BpkAccordionContainer>,
+        </StatefulBpkAccordionItem>
+      </BpkAccordion>,
     ],
   },
 ];

@@ -12,6 +12,8 @@ const BpkAccordionItem = (props) => {
   const iconClassNames = ['bpk-accordion__item-expand-icon'];
   const { id, title, children, expanded, onClick, ...rest } = props;
 
+  delete rest.initiallyExpanded;
+
   if (expanded) { iconClassNames.push('bpk-accordion__item-expand-icon--flipped'); }
 
   const titleId = `${id}_title`;

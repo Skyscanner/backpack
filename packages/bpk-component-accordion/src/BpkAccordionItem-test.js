@@ -30,4 +30,13 @@ describe('BpkAccordionItem', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with "initiallyExpanded" prop', () => {
+    const tree = renderer.create(
+      <BpkAccordionItem id="my-accordion" title="My accordion item" initiallyExpanded>
+        My accordion content
+      </BpkAccordionItem>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

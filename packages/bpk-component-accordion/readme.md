@@ -10,6 +10,10 @@ npm install bpk-component-accordion --save-dev
 
 ## Usage
 
+### BpkAccordionContainer
+
+The `BpkAccordionContainer` component is used limit one section to be expanded at any time.
+
 ```js
 import React from 'react';
 import { BpkAccordionContainer, BpkAccordionItem } from 'bpk-component-accordion';
@@ -19,7 +23,7 @@ export default () => (
     <BpkAccordionItem id="stops" title="Stops">
       My stops content.
     </BpkAccordionItem>
-    <BpkAccordionItem id="departure-times" title="Departure times">
+    <BpkAccordionItem id="departure-times" title="Departure times" initiallyExpanded>
       My departure times content.
     </BpkAccordionItem>
     <BpkAccordionItem id="journey-duration" title="Journey duration">
@@ -29,22 +33,41 @@ export default () => (
 )
 ```
 
-### Props
+### withState
 
-#### BpkAccordionContainer
+The `withState` HOC is used to allow multiple items to be expanded simultaneously.
 
-| Property      | PropType | Required | Default Value |
-| ------------- | -------- | -------- | ------------- |
-| allowMultiple | bool     | false    | false         |
+```js
+import React from 'react';
+import { BpkAccordion, BpkAccordionItem, withState } from 'bpk-component-accordion';
 
-#### BpkAccordion
+const StatefulBpkAccordionItem = withState(BpkAccordionItem);
+
+export default () => (
+  <BpkAccordion>
+    <StatefulBpkAccordionItem id="stops" title="Stops">
+      My stops content.
+    </StatefulBpkAccordionItem>
+    <StatefulBpkAccordionItem id="departure-times" title="Departure times" initiallyExpanded>
+      My departure times content.
+    </StatefulBpkAccordionItem>
+    <StatefulBpkAccordionItem id="journey-duration" title="Journey duration" initiallyExpanded>
+      My journey duration content.
+    </StatefulBpkAccordionItem>
+  </BpkAccordion>
+)
+```
+
+## Props
+
+### BpkAccordion
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
 | children  | node     | true     | -             |
 | className | string   | false    | null          |
 
-#### BpkAccordionItem
+### BpkAccordionItem
 
 | Property | PropType | Required | Default Value |
 | -------- | -------- | -------- | ------------- |
@@ -53,3 +76,15 @@ export default () => (
 | children | node     | true     | -             |
 | expanded | bool     | false    | false         |
 | onClick  | func     | false    | () => null    |
+
+### BpkAccordionContainer > BpkAccordionItem
+
+| Property                       | PropType | Required | Default Value |
+| ------------------------------ | -------- | -------- | ------------- |
+| ~~expanded~~ initiallyExpanded | bool     | false    | false         |
+
+### withState(BpkAccordionItem)
+
+| Property                       | PropType | Required | Default Value |
+| ------------------------------ | -------- | -------- | ------------- |
+| ~~expanded~~ initiallyExpanded | bool     | false    | false         |

@@ -29,53 +29,13 @@ exports[`BpkAccordionContainer should render correctly even when multiple items 
   </div>
   <div
     expanded={true}
+    initiallyExpanded={true}
     onClick={[Function]}>
     Accordion Item 2
   </div>
   <div
     expanded={false}
-    onClick={[Function]}>
-    Accordion Item 3
-  </div>
-</dl>
-`;
-
-exports[`BpkAccordionContainer should render correctly with "allowMultiple" prop 1`] = `
-<dl
-  className="bpk-accordion">
-  <div
-    expanded={false}
-    onClick={[Function]}>
-    Accordion Item 1
-  </div>
-  <div
-    expanded={false}
-    onClick={[Function]}>
-    Accordion Item 2
-  </div>
-  <div
-    expanded={false}
-    onClick={[Function]}>
-    Accordion Item 3
-  </div>
-</dl>
-`;
-
-exports[`BpkAccordionContainer should render correctly with "allowMultiple" prop and custom initially expanded items 1`] = `
-<dl
-  className="bpk-accordion">
-  <div
-    expanded={true}
-    onClick={[Function]}>
-    Accordion Item 1
-  </div>
-  <div
-    expanded={false}
-    onClick={[Function]}>
-    Accordion Item 2
-  </div>
-  <div
-    expanded={true}
+    initiallyExpanded={true}
     onClick={[Function]}>
     Accordion Item 3
   </div>
@@ -92,6 +52,7 @@ exports[`BpkAccordionContainer should render correctly with custom initially exp
   </div>
   <div
     expanded={true}
+    initiallyExpanded={true}
     onClick={[Function]}>
     Accordion Item 2
   </div>
