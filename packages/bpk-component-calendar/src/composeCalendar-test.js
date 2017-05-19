@@ -29,9 +29,9 @@ describe('composeCalendar', () => {
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
-      minDate={new Date(2010, 1, 15)}
-      maxDate={new Date(2010, 2, 15)}
-      month={new Date(2010, 1, 15)}
+      minDate={new Date(Date.UTC(2010, 1, 15))}
+      maxDate={new Date(Date.UTC(2010, 2, 15))}
+      month={new Date(Date.UTC(2010, 1, 15))}
     />, { createNodeMock }).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -44,9 +44,9 @@ describe('composeCalendar', () => {
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
-      minDate={new Date(2010, 1, 15)}
-      maxDate={new Date(2010, 2, 15)}
-      month={new Date(2010, 1, 15)}
+      minDate={new Date(Date.UTC(2010, 1, 15))}
+      maxDate={new Date(Date.UTC(2010, 2, 15))}
+      month={new Date(Date.UTC(2010, 1, 15))}
       className="my-custom-class"
     />, { createNodeMock }).toJSON();
     expect(tree).toMatchSnapshot();
@@ -59,9 +59,9 @@ describe('composeCalendar', () => {
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
-      minDate={new Date(2010, 1, 15)}
-      maxDate={new Date(2010, 2, 15)}
-      month={new Date(2010, 1, 15)}
+      minDate={new Date(Date.UTC(2010, 1, 15))}
+      maxDate={new Date(Date.UTC(2010, 2, 15))}
+      month={new Date(Date.UTC(2010, 1, 15))}
       fixedWidth={false}
     />, { createNodeMock }).toJSON();
     expect(tree).toMatchSnapshot();
@@ -74,9 +74,9 @@ describe('composeCalendar', () => {
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
-      minDate={new Date(2010, 1, 15)}
-      maxDate={new Date(2010, 2, 15)}
-      month={new Date(2010, 1, 15)}
+      minDate={new Date(Date.UTC(2010, 1, 15))}
+      maxDate={new Date(Date.UTC(2010, 2, 15))}
+      month={new Date(Date.UTC(2010, 1, 15))}
     />, { createNodeMock }).toJSON();
     expect(tree).toMatchSnapshot();
   });
