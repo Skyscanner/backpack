@@ -19,7 +19,7 @@ export default () => (
 )
 ```
 
-### Props
+## Props
 
 | Property | PropType | Required | Default Value |
 | -------- | -------- | -------- | ------------- |

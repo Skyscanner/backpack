@@ -22,9 +22,9 @@ export default () => (
 )
 ```
 
-### Props
+## Props
 
-*BpkLink:*
+### BpkLink
 
 | Property | PropType | Required | Default Value |
 | -------- | -------- | -------- | ------------- |
@@ -34,7 +34,7 @@ export default () => (
 | blank    | bool     | false    | false         |
 | white    | bool     | false    | false         |
 
-*BpkLinkButton:*
+### BpkLinkButton
 
 | Property | PropType | Required | Default Value |
 | -------- | -------- | -------- | ------------- |

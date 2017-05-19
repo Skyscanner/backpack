@@ -31,7 +31,7 @@ export default () => (
 );
 ```
 
-### Props
+## Props
 
 *For BpkCode & BpkCodeBlock:*
 

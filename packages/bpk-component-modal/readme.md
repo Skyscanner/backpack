@@ -66,7 +66,7 @@ class App extends Component {
   the root element for your application is by returning it's DOM node via the function passed to the
   `getApplicationElement` prop (see the example above).
 
-### Props
+## Props
 
 | Property              | PropType             | Required | Default Value |
 | --------------------- | -------------------- | -------- | ------------- |

@@ -30,16 +30,16 @@ export default () => (
 );
 ```
 
-### Props
+## Props
 
-*BpkList:*
+### BpkList
 
 | Property | PropType | Required | Default Value |
 | -------- | -------- | -------- | ------------- |
 | children | -        | true     | -             |
 | ordered  | bool     | false    | false         |
 
-*BpkListItem:*
+### BpkListItem
 
 | Property | PropType | Required | Default Value |
 | -------- | -------- | -------- | ------------- |

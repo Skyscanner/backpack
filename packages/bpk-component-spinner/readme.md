@@ -42,9 +42,9 @@ export default () => (
 }
 ```
 
-### Props
+## Props
 
-*BpkSpinner & BpkLargeSpinner only:*
+> `BpkSpinner` & `BpkLargeSpinner` only/
 
 | Property      | PropType | Required | Default Value       |
 | ------------- | -------- | -------- | ------------------- |

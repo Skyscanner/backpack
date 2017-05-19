@@ -36,7 +36,7 @@ const Steps = () => (
 );
 ```
 
-### Props
+## Props
 
 | Property                 | PropType                      | Required | Default Value |
 | ------------------------ | ----------------------------- | -------- | ------------- |

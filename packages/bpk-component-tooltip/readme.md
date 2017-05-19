@@ -25,7 +25,7 @@ const App = () => (
 );
 ```
 
-### Props
+## Props
 
 | Property              | PropType                      | Required | Default Value |
 | --------------------- | ----------------------------- | -------- | ------------- |

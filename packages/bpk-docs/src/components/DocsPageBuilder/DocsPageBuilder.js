@@ -36,7 +36,10 @@ const toNodes = (children) => {
 const markdownToHTML = readmeString => marked(readmeString
   .replace(/^#.*$/m, '') // remove first h1
   .replace(/^>.*$/m, '') // remove first blockquote
-  .replace(/^(#|##|###) /gm, '#### ') // replace h1, h2, h3 with h4
+  .replace(/^#### /gm, '##### ') // replace h4 with h5
+  .replace(/^### /gm, '#### ') // replace h3 with h4
+  .replace(/^## /gm, '### ') // replace h2 with h3
+  .replace(/^# /gm, '## ') // replace h1 with h2
 , { renderer });
 
 const toTokenTable = tokens => (
@@ -74,7 +77,7 @@ const ComponentExample = (component) => {
   const blurb = component.blurb ? toNodes(component.blurb) : null;
 
   const readme = component.readme ? flatten([
-    <BpkHeading id={`${component.id}-readme`} level="h3">{component.title} readme</BpkHeading>,
+    <BpkHeading id={`${component.id}-readme`} level="h2">{component.title} readme</BpkHeading>,
     <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(component.readme) }} bareHtml />,
   ]) : null;
 
@@ -96,7 +99,7 @@ const CustomSection = section => [
     : null,
   section.readme
     ? flatten([
-      <BpkHeading id="readme" level="h3">Readme</BpkHeading>,
+      <BpkHeading id="readme" level="h2">Readme</BpkHeading>,
       <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(section.readme) }} bareHtml />,
     ])
     : null,

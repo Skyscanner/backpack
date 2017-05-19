@@ -23,9 +23,9 @@ export default () => (
 )
 ```
 
-### Props
+## Props
 
-*BpkHorizontalNav:*
+### BpkHorizontalNav
 
 | Property    | PropType | Required | Default Value |
 | ----------- | -------- | -------- | ------------- |
@@ -33,7 +33,7 @@ export default () => (
 | className   | string   | false    | null          |
 | spaceAround | bool     | false    | false         |
 
-*BpkHorizontalNavItem:*
+### BpkHorizontalNavItem
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |

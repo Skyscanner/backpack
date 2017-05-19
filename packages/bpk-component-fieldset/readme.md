@@ -54,7 +54,7 @@ class FieldsetContainer extends Component {
 }
 ```
 
-### Props
+## Props
 
 | Property          | PropType | Required | Default Value |
 | ----------------- | -------- | -------- | ------------- |

@@ -58,9 +58,9 @@ export default () => (
 );
 ```
 
-### Props
+## Props
 
-*BpkGridContainer:*
+### BpkGridContainer
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
@@ -68,14 +68,14 @@ export default () => (
 | debug     | bool     | false    | false         |
 | fullWidth | bool     | false    | false         |
 
-*BpkGridRow:*
+### BpkGridRow
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
 | children  | node     | true     | -             |
 | padded    | bool     | false    | true          |
 
-*BpkGridColumn:*
+### BpkGridColumn
 
 | Property     | PropType | Required | Default Value |
 | ------------ | -------- | -------- | ------------- |

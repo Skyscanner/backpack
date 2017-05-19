@@ -48,7 +48,7 @@ class App extends Component {
 }
 ```
 
-### Props
+## Props
 
 | Property              | PropType                      | Required | Default Value |
 | --------------------- | ----------------------------- | -------- | ------------- |

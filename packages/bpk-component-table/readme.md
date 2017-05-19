@@ -49,9 +49,9 @@ export default () => (
 );
 ```
 
-### Props
+## Props
 
-*For BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableCell & BpkTableHeadCell:*
+> For `BpkTable`, `BpkTableHead`, `BpkTableBody`, `BpkTableRow`, `BpkTableCell` & `BpkTableHeadCell`.
 
 | Property | PropType | Required | Default Value |
 | -------- | -------- | -------- | ------------- |
