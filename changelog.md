@@ -2,7 +2,10 @@
 
 ## UNRELEASED
 
-_Nothing yet_
+**Fixed:**
+- bpk-component-datepicker:
+- bpk-component-input:
+  - Added a new `withOpenEvents` higher-order component to encapsulate events triggering a modal or popover
 
 ## 2017-05-17 - Support for disabled labels, popover fix
 

@@ -44,8 +44,6 @@ describe('withOpenEvents', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  // TODO: write proper unit tests for event handlers
-
   it('should open on click', () => {
     const onOpen = jest.fn();
     const input = mount(<Input

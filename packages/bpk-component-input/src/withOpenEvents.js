@@ -23,7 +23,7 @@ const withEventHandler = (fn, eventHandler) => (e) => {
 };
 
 const withOpenEvents = (InputComponent) => {
-  class PopoverInput extends React.Component {
+  class WithOpenEvents extends React.Component {
     constructor(props) {
       super(props);
 
@@ -79,7 +79,7 @@ const withOpenEvents = (InputComponent) => {
 
       delete rest.isOpen;
 
-      const classNames = ['bpk-input--with-input-state'];
+      const classNames = ['bpk-input--with-open-events'];
       if (className) { classNames.push(className); }
 
       const eventHandlers = {
@@ -107,7 +107,7 @@ const withOpenEvents = (InputComponent) => {
     }
   }
 
-  PopoverInput.propTypes = {
+  WithOpenEvents.propTypes = {
     // Custom props
     isOpen: PropTypes.bool,
     hasTouchSupport: PropTypes.bool,
@@ -122,7 +122,7 @@ const withOpenEvents = (InputComponent) => {
     onKeyUp: PropTypes.func,
   };
 
-  PopoverInput.defaultProps = {
+  WithOpenEvents.defaultProps = {
     // Custom props
     isOpen: false,
     hasTouchSupport: (typeof window !== 'undefined' && (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)), // eslint-disable-line
@@ -138,9 +138,9 @@ const withOpenEvents = (InputComponent) => {
   };
 
   const inputDisplayName = InputComponent.displayName || InputComponent.name || 'Input';
-  PopoverInput.displayName = `withOpenEvents(${inputDisplayName})`;
+  WithOpenEvents.displayName = `withOpenEvents(${inputDisplayName})`;
 
-  return PopoverInput;
+  return WithOpenEvents;
 };
 
 export default withOpenEvents;

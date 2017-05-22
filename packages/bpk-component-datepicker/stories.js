@@ -4,7 +4,6 @@ import { storiesOf, action } from '@kadira/storybook';
 import { weekDays, formatMonth, formatDateFull } from 'bpk-component-calendar/test-utils';
 import { format, dateToBoundaries, addMonths, addDays, startOfDay } from 'bpk-component-calendar/src/date-utils';
 import BpkDatepicker from './index';
-// import BpkDatepicker from './src/BpkDatepickerMagic';
 
 const formatDate = date => format(date, 'DD/MM/YYYY');
 
