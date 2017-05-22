@@ -23,7 +23,9 @@ const BpkSuggestion = (props) => {
       <div className={getClassName('bpk-autosuggest__suggestion-inner')}>
         <span className={getClassName('bpk-autosuggest__suggestion-value')}>{renderValue(value)}</span>
         {subHeading || tertiaryLabel
-          ? <small className={getClassName('bpk-autosuggest__suggestion-sub-heading')}>{renderSubHeading(subHeading)}</small>
+          ? <small className={getClassName('bpk-autosuggest__suggestion-sub-heading')}>
+            {renderSubHeading(subHeading)}
+          </small>
           : null
         }
         {tertiaryLabel

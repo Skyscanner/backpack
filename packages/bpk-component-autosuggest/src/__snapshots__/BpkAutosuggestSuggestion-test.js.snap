@@ -24,6 +24,38 @@ exports[`BpkAutosuggestSuggestion should render correctly with a "className" att
 </section>
 `;
 
+exports[`BpkAutosuggestSuggestion should render correctly with a "renderSubHeading" attribute 1`] = `
+<section
+  className="bpk-autosuggest__suggestion">
+  <div
+    className="bpk-autosuggest__suggestion-inner">
+    <span
+      className="bpk-autosuggest__suggestion-value">
+      Edinburgh
+    </span>
+    <small
+      className="bpk-autosuggest__suggestion-sub-heading">
+      UNITED KINGDOM
+    </small>
+  </div>
+</section>
+`;
+
+exports[`BpkAutosuggestSuggestion should render correctly with a "renderValue" attribute 1`] = `
+<section
+  className="bpk-autosuggest__suggestion">
+  <div
+    className="bpk-autosuggest__suggestion-inner">
+    <span
+      className="bpk-autosuggest__suggestion-value">
+      <strong>
+        Edinburgh
+      </strong>
+    </span>
+  </div>
+</section>
+`;
+
 exports[`BpkAutosuggestSuggestion should render correctly with a "subHeading" attribute 1`] = `
 <section
   className="bpk-autosuggest__suggestion">

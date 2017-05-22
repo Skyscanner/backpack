@@ -84,4 +84,25 @@ describe('BpkAutosuggestSuggestion', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with a "renderValue" attribute', () => {
+    const tree = renderer.create(
+      <BpkAutosuggestSuggestion
+        value="Edinburgh"
+        renderValue={value => (<strong>{value}</strong>)}
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "renderSubHeading" attribute', () => {
+    const tree = renderer.create(
+      <BpkAutosuggestSuggestion
+        value="Edinburgh"
+        subHeading="United Kingdom"
+        renderSubHeading={value => value.toUpperCase()}
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
