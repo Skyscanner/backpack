@@ -5,9 +5,12 @@
 **Changed:**
 - bpk-component-accordion:
   - New API:
-    - Consumers using `BpkAccordionContainer` without `allowMultiple` will now have to use `initiallyExpanded` on `BpkAccordionItem`'s that should be initially expanded
-    - `BpkAccordionContainer` with `allowMultiple` is deprecated, consumers should now wrap `BpkAccordionItem` with the new `withState` HOC and use `BpkAccordion` as the parent
-    - `withState(BpkAccordionItem)` components also expect `initiallyExpanded` for items that should be initially expanded
+    - `BpkAccordionContainer` is now deprecated
+    - Consumers using `BpkAccordionContainer` should now enhance `BpkAccordion` with the `withSingleItemAccordionState`
+      higher-order component
+    - Consumers using `BpkAccordionContainer` *with* `allowMultiple` should now use a regular
+      `BpkAccordion` component with each `BpkAccordionItem` enhanced using the `withAccordionItemState` higher-order component
+    - In each case, `BpkAccordionItem` will now use the `initiallyExpanded` prop for items that should be initially expanded
     - Please refer to [the readme](http://backpack.prod.aws.skyscnr.com/components/molecules/accordions#readme) for examples
 
 **Fixed:**

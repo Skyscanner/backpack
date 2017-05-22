@@ -1,4 +1,4 @@
-exports[`withState should render correctly 1`] = `
+exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = `
 <div
   id="my-accordion">
   <dt
@@ -64,7 +64,7 @@ exports[`withState should render correctly 1`] = `
 </div>
 `;
 
-exports[`withState should render correctly with "expanded" prop 1`] = `
+exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "expanded" prop 1`] = `
 <div
   id="my-accordion">
   <dt
@@ -130,7 +130,7 @@ exports[`withState should render correctly with "expanded" prop 1`] = `
 </div>
 `;
 
-exports[`withState should render correctly with "initiallyExpanded" prop 1`] = `
+exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "initiallyExpanded" prop 1`] = `
 <div
   id="my-accordion">
   <dt

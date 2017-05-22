@@ -10,16 +10,18 @@ npm install bpk-component-accordion --save-dev
 
 ## Usage
 
-### BpkAccordionContainer
+### withSingleItemAccordionState
 
-The `BpkAccordionContainer` component is used limit one section to be expanded at any time.
+The `withSingleItemAccordionState` higher-order component is used to limit one section to be expanded at any time.
 
 ```js
 import React from 'react';
-import { BpkAccordionContainer, BpkAccordionItem } from 'bpk-component-accordion';
+import { BpkAccordion, BpkAccordionItem, withSingleItemAccordionState } from 'bpk-component-accordion';
+
+const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 
 export default () => (
-  <BpkAccordionContainer>
+  <SingleItemAccordion>
     <BpkAccordionItem id="stops" title="Stops">
       My stops content.
     </BpkAccordionItem>
@@ -29,31 +31,31 @@ export default () => (
     <BpkAccordionItem id="journey-duration" title="Journey duration">
       My journey duration content.
     </BpkAccordionItem>
-  </BpkAccordionContainer>
+  </SingleItemAccordion>
 )
 ```
 
-### withState
+### withAccordionItemState
 
-The `withState` higher-order component is used to allow multiple items to be expanded simultaneously.
+The `withAccordionItemState` higher-order component is used to allow multiple items to be expanded simultaneously.
 
 ```js
 import React from 'react';
-import { BpkAccordion, BpkAccordionItem, withState } from 'bpk-component-accordion';
+import { BpkAccordion, BpkAccordionItem, withAccordionItemState } from 'bpk-component-accordion';
 
-const StatefulBpkAccordionItem = withState(BpkAccordionItem);
+const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
 
 export default () => (
   <BpkAccordion>
-    <StatefulBpkAccordionItem id="stops" title="Stops">
+    <StatefulAccordionItem id="stops" title="Stops">
       My stops content.
-    </StatefulBpkAccordionItem>
-    <StatefulBpkAccordionItem id="departure-times" title="Departure times" initiallyExpanded>
+    </StatefulAccordionItem>
+    <StatefulAccordionItem id="departure-times" title="Departure times" initiallyExpanded>
       My departure times content.
-    </StatefulBpkAccordionItem>
-    <StatefulBpkAccordionItem id="journey-duration" title="Journey duration" initiallyExpanded>
+    </StatefulAccordionItem>
+    <StatefulAccordionItem id="journey-duration" title="Journey duration" initiallyExpanded>
       My journey duration content.
-    </StatefulBpkAccordionItem>
+    </StatefulAccordionItem>
   </BpkAccordion>
 )
 ```
@@ -77,7 +79,7 @@ export default () => (
 | expanded | bool     | false    | false         |
 | onClick  | func     | false    | () => null    |
 
-### BpkAccordionContainer > BpkAccordionItem
+### withSingleItemAccordionState(BpkAccordion)
 
 | Property                       | PropType | Required | Default Value |
 | ------------------------------ | -------- | -------- | ------------- |

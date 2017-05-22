@@ -1,4 +1,4 @@
-exports[`BpkAccordionContainer should render correctly 1`] = `
+exports[`withSingleItemAccordionState(BpkAccordion) should render correctly 1`] = `
 <dl
   className="bpk-accordion">
   <div
@@ -19,7 +19,7 @@ exports[`BpkAccordionContainer should render correctly 1`] = `
 </dl>
 `;
 
-exports[`BpkAccordionContainer should render correctly even when multiple items are marked as initially expanded 1`] = `
+exports[`withSingleItemAccordionState(BpkAccordion) should render correctly even when multiple items are marked as initially expanded 1`] = `
 <dl
   className="bpk-accordion">
   <div
@@ -42,7 +42,7 @@ exports[`BpkAccordionContainer should render correctly even when multiple items 
 </dl>
 `;
 
-exports[`BpkAccordionContainer should render correctly with custom initially expanded item 1`] = `
+exports[`withSingleItemAccordionState(BpkAccordion) should render correctly with custom initially expanded item 1`] = `
 <dl
   className="bpk-accordion">
   <div

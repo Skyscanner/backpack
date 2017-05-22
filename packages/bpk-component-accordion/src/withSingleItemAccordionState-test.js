@@ -2,49 +2,52 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 
-import BpkAccordionContainer from './BpkAccordionContainer';
+import BpkAccordion from './BpkAccordion';
+import withSingleItemAccordionState from './withSingleItemAccordionState';
 
-describe('BpkAccordionContainer', () => {
+const EnhancedComponent = withSingleItemAccordionState(BpkAccordion);
+
+describe('withSingleItemAccordionState(BpkAccordion)', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
-      <BpkAccordionContainer>
+      <EnhancedComponent>
         <div>Accordion Item 1</div>
         <div>Accordion Item 2</div>
         <div>Accordion Item 3</div>
-      </BpkAccordionContainer>,
+      </EnhancedComponent>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with custom initially expanded item', () => {
     const tree = renderer.create(
-      <BpkAccordionContainer>
+      <EnhancedComponent>
         <div>Accordion Item 1</div>
         <div initiallyExpanded>Accordion Item 2</div>
         <div>Accordion Item 3</div>
-      </BpkAccordionContainer>,
+      </EnhancedComponent>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly even when multiple items are marked as initially expanded', () => {
     const tree = renderer.create(
-      <BpkAccordionContainer>
+      <EnhancedComponent>
         <div>Accordion Item 1</div>
         <div initiallyExpanded>Accordion Item 2</div>
         <div initiallyExpanded>Accordion Item 3</div>
-      </BpkAccordionContainer>,
+      </EnhancedComponent>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should update "expanded" value with key of clicked child', () => {
     const accordionContainer = shallow(
-      <BpkAccordionContainer>
+      <EnhancedComponent>
         <div>Accordion Item 1</div>
         <div initiallyExpanded>Accordion Item 2</div>
         <div>Accordion Item 3</div>
-      </BpkAccordionContainer>,
+      </EnhancedComponent>,
     );
 
     expect(accordionContainer.state('expanded')).toEqual('.1');

@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-const withState = (ComposedComponent) => {
-  class WithState extends Component {
+const withAccordionItemState = (ComposedComponent) => {
+  class WithAccordionItemState extends Component {
     constructor(props) {
       super(props);
 
       this.state = {
-        expanded: this.props.initiallyExpanded,
+        expanded: props.initiallyExpanded,
       };
 
       this.onClick = this.onClick.bind(this);
@@ -26,13 +26,13 @@ const withState = (ComposedComponent) => {
     }
   }
 
-  WithState.propTypes = {
+  WithAccordionItemState.propTypes = {
     initiallyExpanded: PropTypes.bool,
     expanded: PropTypes.bool,
     onClick: PropTypes.func,
   };
 
-  WithState.defaultProps = {
+  WithAccordionItemState.defaultProps = {
     initiallyExpanded: false,
     expanded: false,
     onClick: null,
@@ -40,9 +40,9 @@ const withState = (ComposedComponent) => {
 
   const composedComponentName = ComposedComponent.displayName || ComposedComponent.name || 'Component';
 
-  WithState.displayName = `WithState(${composedComponentName})`;
+  WithAccordionItemState.displayName = `withAccordionItemState(${composedComponentName})`;
 
-  return WithState;
+  return WithAccordionItemState;
 };
 
-export default withState;
+export default withAccordionItemState;

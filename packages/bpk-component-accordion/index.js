@@ -1,6 +1,6 @@
 import BpkAccordion from './src/BpkAccordion';
-import BpkAccordionContainer from './src/BpkAccordionContainer';
 import BpkAccordionItem from './src/BpkAccordionItem';
-import withState from './src/withState';
+import withSingleItemAccordionState from './src/withSingleItemAccordionState';
+import withAccordionItemState from './src/withAccordionItemState';
 
-export { BpkAccordionContainer, BpkAccordion, BpkAccordionItem, withState };
+export { BpkAccordion, BpkAccordionItem, withSingleItemAccordionState, withAccordionItemState };
