@@ -1,30 +1,10 @@
-exports[`BpkDatepicker should attach different event handlers when touch is supported 1`] = `
-<input
-  aria-atomic="true"
-  aria-invalid={false}
-  aria-label="Monday, 15th February 2010"
-  aria-live="assertive"
-  className="bpk-input bpk-input--large bpk-datepicker__input"
-  id="myDatepicker"
-  name="myDatepicker_input"
-  onChange={[Function]}
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
-  onTouchEnd={[Function]}
-  placeholder="placeholder"
-  readOnly="readOnly"
-  type="text"
-  value="15/02/2010" />
-`;
-
 exports[`BpkDatepicker should render correctly 1`] = `
 <input
   aria-atomic="true"
   aria-invalid={false}
   aria-label="Monday, 15th February 2010"
   aria-live="assertive"
-  className="bpk-input bpk-input--large bpk-datepicker__input"
+  className="bpk-input bpk-input--large bpk-input--with-open-events bpk-datepicker__input"
   id="myDatepicker"
   name="myDatepicker_input"
   onBlur={[Function]}

@@ -30,4 +30,8 @@
       @include bpk-input--docked-last-child;
     }
   }
+
+  &--with-open-events {
+    cursor: pointer;
+  }
 }
