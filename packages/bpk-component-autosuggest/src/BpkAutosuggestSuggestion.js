@@ -8,7 +8,7 @@ const getClassName = cssModules(STYLES);
 
 const BpkSuggestion = (props) => {
   const classNames = [getClassName('bpk-autosuggest__suggestion')];
-  const { indent, className, icon, subHeading, tertiaryLabel, value, ...rest } = props;
+  const { indent, className, icon, subHeading, tertiaryLabel, value, renderValue, renderSubHeading, ...rest } = props;
   const Icon = icon;
 
   if (indent) { classNames.push(getClassName('bpk-autosuggest__suggestion--indent')); }
@@ -21,9 +21,9 @@ const BpkSuggestion = (props) => {
         : null
       }
       <div className={getClassName('bpk-autosuggest__suggestion-inner')}>
-        <span className={getClassName('bpk-autosuggest__suggestion-value')}>{value}</span>
+        <span className={getClassName('bpk-autosuggest__suggestion-value')}>{renderValue(value)}</span>
         {subHeading || tertiaryLabel
-          ? <small className={getClassName('bpk-autosuggest__suggestion-sub-heading')}>{subHeading}</small>
+          ? <small className={getClassName('bpk-autosuggest__suggestion-sub-heading')}>{renderSubHeading(subHeading)}</small>
           : null
         }
         {tertiaryLabel
@@ -42,6 +42,8 @@ BpkSuggestion.propTypes = {
   icon: PropTypes.func,
   indent: PropTypes.bool,
   className: PropTypes.string,
+  renderValue: PropTypes.func,
+  renderSubHeading: PropTypes.func,
 };
 
 BpkSuggestion.defaultProps = {
@@ -50,6 +52,8 @@ BpkSuggestion.defaultProps = {
   icon: null,
   indent: false,
   className: null,
+  renderValue: value => value,
+  renderSubHeading: subHeading => subHeading,
 };
 
 export default BpkSuggestion;
