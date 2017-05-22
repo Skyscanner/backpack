@@ -22,7 +22,7 @@ const withEventHandler = (fn, eventHandler) => (e) => {
   }
 };
 
-const withInputState = (InputComponent) => {
+const withOpenEvents = (InputComponent) => {
   class PopoverInput extends React.Component {
     constructor(props) {
       super(props);
@@ -54,7 +54,7 @@ const withInputState = (InputComponent) => {
     }
 
     handleBlur() {
-      // If the input loses focus when the popover/modal is open, it should not open on a subsequent focus.
+      // If the input loses focus when the target is open, it should not open on a subsequent focus.
       // Fixes an issue with IE9.
       if (this.props.isOpen) {
         this.focusCanOpen = false;
@@ -66,6 +66,7 @@ const withInputState = (InputComponent) => {
     render() {
       const {
         className,
+        hasTouchSupport,
         onClick,
         onFocus,
         onBlur,
@@ -86,8 +87,6 @@ const withInputState = (InputComponent) => {
         onKeyDown: withEventHandler(handleKeyEvent(KEYCODES.ENTER, onOpen), onKeyDown),
         onKeyUp: withEventHandler(handleKeyEvent(KEYCODES.SPACEBAR, onOpen), onKeyUp),
       };
-
-      const hasTouchSupport = (typeof window !== 'undefined' && (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch));  // eslint-disable-line
 
       if (hasTouchSupport) {
         // Prevents the mobile keyboard from opening (iOS / Android)
@@ -111,6 +110,7 @@ const withInputState = (InputComponent) => {
   PopoverInput.propTypes = {
     // Custom props
     isOpen: PropTypes.bool,
+    hasTouchSupport: PropTypes.bool,
     onOpen: PropTypes.func,
     // Input props
     className: PropTypes.string,
@@ -125,6 +125,7 @@ const withInputState = (InputComponent) => {
   PopoverInput.defaultProps = {
     // Custom props
     isOpen: false,
+    hasTouchSupport: (typeof window !== 'undefined' && (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)), // eslint-disable-line
     onOpen: null,
     // Input props
     className: null,
@@ -137,9 +138,9 @@ const withInputState = (InputComponent) => {
   };
 
   const inputDisplayName = InputComponent.displayName || InputComponent.name || 'Input';
-  PopoverInput.displayName = `withInputState(${inputDisplayName})`;
+  PopoverInput.displayName = `withOpenEvents(${inputDisplayName})`;
 
   return PopoverInput;
 };
 
-export default withInputState;
+export default withOpenEvents;

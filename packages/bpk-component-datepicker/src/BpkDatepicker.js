@@ -1,4 +1,4 @@
-import BpkInput, { withInputState } from 'bpk-component-input';
+import BpkInput, { withOpenEvents } from 'bpk-component-input';
 import BpkModal from 'bpk-component-modal';
 import BpkPopover from 'bpk-component-popover';
 import PropTypes from 'prop-types';
@@ -8,7 +8,7 @@ import BpkCalendar, { CustomPropTypes } from 'bpk-component-calendar';
 
 import './bpk-datepicker.scss';
 
-const Input = withInputState(BpkInput);
+const Input = withOpenEvents(BpkInput);
 
 class BpkDatepicker extends Component {
   constructor(props) {
@@ -65,7 +65,6 @@ class BpkDatepicker extends Component {
       showWeekendSeparator,
       title,
       weekStartsOn,
-      hasTouchSupport,
       ...rest
     } = this.props;
 
@@ -160,7 +159,6 @@ BpkDatepicker.propTypes = {
   // Optional
   date: PropTypes.instanceOf(Date),
   dateModifiers: CustomPropTypes.DateModifiers,
-  hasTouchSupport: PropTypes.bool,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   markOutsideDays: PropTypes.bool,
   markToday: PropTypes.bool,
@@ -175,7 +173,6 @@ BpkDatepicker.propTypes = {
 BpkDatepicker.defaultProps = {
   date: null,
   dateModifiers: BpkCalendar.defaultProps.dateModifiers,
-  hasTouchSupport: (typeof window !== 'undefined' && (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)), // eslint-disable-line
   inputProps: {},
   markOutsideDays: BpkCalendar.defaultProps.markOutsideDays,
   markToday: BpkCalendar.defaultProps.markToday,

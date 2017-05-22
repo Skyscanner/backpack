@@ -1,0 +1,44 @@
+exports[`withOpenEvents should attach different event handlers when touch is supported 1`] = `
+<input
+  aria-invalid={false}
+  className="bpk-input bpk-input--with-input-state"
+  id="my-input"
+  name="my-input"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onTouchEnd={[Function]}
+  readOnly="readOnly"
+  type="text"
+  value="value" />
+`;
+
+exports[`withOpenEvents should render correctly 1`] = `
+<input
+  aria-invalid={false}
+  className="bpk-input bpk-input--with-input-state"
+  id="my-input"
+  name="my-input"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  type="text"
+  value="value" />
+`;
+
+exports[`withOpenEvents should render correctly with "className" prop 1`] = `
+<input
+  aria-invalid={false}
+  className="bpk-input bpk-input--with-input-state my-custom-class"
+  id="my-input"
+  name="my-input"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  type="text"
+  value="value" />
+`;

@@ -2,13 +2,19 @@ import React, { Component } from 'react';
 import BpkButton from 'bpk-component-button';
 import BpkPopover from 'bpk-component-popover';
 import BpkParagraph from 'bpk-component-paragraph';
+import BpkInput, { withOpenEvents } from 'bpk-component-input';
+import BpkRouterLink from 'bpk-component-router-link';
+import { BpkCode } from 'bpk-component-code';
 import popoverReadme from 'bpk-component-popover/readme.md';
 
+import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar leo in gravida varius.
 Mauris eget euismod mi. Ut vulputate ex nec consequat sollicitudin. Pellentesque pulvinar ac dolor vel hendrerit.
 Maecenas sed felis justo. Proin at tellus in urna molestie blandit. Duis posuere urna nec finibus imperdiet.`;
+
+const EnhancedInput = withOpenEvents(BpkInput);
 
 class PopoverContainer extends Component {
   constructor() {
@@ -35,19 +41,32 @@ class PopoverContainer extends Component {
   }
 
   render() {
+    /* eslint-disable react/prop-types */
+    const { input, ...rest } = this.props;
     return (
       <BpkPopover
         id="my-popover"
         target={
-          <BpkButton onClick={this.openPopover}>Open</BpkButton>
+          input ?
+            <EnhancedInput
+              id="input"
+              name="input"
+              value="Open"
+              isOpen={this.state.isOpen}
+              onOpen={this.openPopover}
+              onChange={() => null}
+            />
+          :
+            <BpkButton onClick={this.openPopover}>Open</BpkButton>
         }
         onClose={this.closePopover}
         isOpen={this.state.isOpen}
         label="My popover"
         closeButtonText="Close"
-        {...this.props}
+        {...rest}
       />
     );
+    /* eslint-enable react/prop-types */
   }
 }
 
@@ -86,6 +105,19 @@ const components = [
     ],
     examples: [
       <PopoverContainer labelAsTitle closeButtonIcon={false}>{loremIpsum}</PopoverContainer>,
+    ],
+  },
+  {
+    id: 'from-input',
+    title: 'Opened by an input',
+    blurb: [
+      <BpkParagraph>
+        You can use a <BpkRouterLink to={ROUTES.FORMS}>BpkInput</BpkRouterLink> enhanced
+        with the <BpkCode>withOpenEvents</BpkCode> higher-order component to open popovers.
+      </BpkParagraph>,
+    ],
+    examples: [
+      <PopoverContainer input>{loremIpsum}</PopoverContainer>,
     ],
   },
 ];
