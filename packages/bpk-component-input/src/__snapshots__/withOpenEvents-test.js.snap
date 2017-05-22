@@ -1,7 +1,7 @@
 exports[`withOpenEvents should attach different event handlers when touch is supported 1`] = `
 <input
   aria-invalid={false}
-  className="bpk-input bpk-input--with-input-state"
+  className="bpk-input bpk-input--with-open-events"
   id="my-input"
   name="my-input"
   onClick={[Function]}
@@ -16,7 +16,7 @@ exports[`withOpenEvents should attach different event handlers when touch is sup
 exports[`withOpenEvents should render correctly 1`] = `
 <input
   aria-invalid={false}
-  className="bpk-input bpk-input--with-input-state"
+  className="bpk-input bpk-input--with-open-events"
   id="my-input"
   name="my-input"
   onBlur={[Function]}
@@ -31,7 +31,7 @@ exports[`withOpenEvents should render correctly 1`] = `
 exports[`withOpenEvents should render correctly with "className" prop 1`] = `
 <input
   aria-invalid={false}
-  className="bpk-input bpk-input--with-input-state my-custom-class"
+  className="bpk-input bpk-input--with-open-events my-custom-class"
   id="my-input"
   name="my-input"
   onBlur={[Function]}
