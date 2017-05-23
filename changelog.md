@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+_Nothing yet_
+
+## 2017-05-23 - Better accordion API, abstraction for input events triggering a modal/popover
+
 **Changed:**
 - bpk-component-accordion:
   - New API:
@@ -13,8 +17,7 @@
     - In each case, `BpkAccordionItem` will now use the `initiallyExpanded` prop for items that should be initially expanded
     - Please refer to [the readme](http://backpack.prod.aws.skyscnr.com/components/molecules/accordions#readme) for examples
 
-**Fixed:**
-- bpk-component-datepicker:
+**Added:**
 - bpk-component-input:
   - Added a new `withOpenEvents` higher-order component to encapsulate events triggering a modal or popover
 
