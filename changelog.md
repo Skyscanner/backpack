@@ -3,14 +3,14 @@
 ## 2017-05-23 - Autosuggest suggestion values can now accept elements
 
 **Fixed:**
-- bpk-component-autossugest:
+- bpk-component-autosuggest: 3.0.3 => 3.0.4
   - Suggestion `value` attribute is now of a `node` type therefore it accepts: numbers, strings, elements and arrays of them
   - `subHeading` attribute is now of a `node` type too
 
 ## 2017-05-23 - Better accordion API, abstraction for input events triggering a modal/popover
 
 **Changed:**
-- bpk-component-accordion:
+- bpk-component-accordion: 0.0.17 => 1.0.0
   - New API:
     - `BpkAccordionContainer` is now deprecated
     - Consumers using `BpkAccordionContainer` should now enhance `BpkAccordion` with the `withSingleItemAccordionState`
@@ -21,7 +21,7 @@
     - Please refer to [the readme](http://backpack.prod.aws.skyscnr.com/components/molecules/accordions#readme) for examples
 
 **Added:**
-- bpk-component-input:
+- bpk-component-input: 3.0.17 => 3.1.0
   - Added a new `withOpenEvents` higher-order component to encapsulate events triggering a modal or popover
 
 ## 2017-05-17 - Support for disabled labels, popover fix
