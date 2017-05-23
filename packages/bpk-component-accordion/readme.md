@@ -10,7 +10,7 @@ npm install bpk-component-accordion --save-dev
 
 ## Usage
 
-### withSingleItemAccordionState
+### withSingleItemAccordionState(BpkAccordion)
 
 The `withSingleItemAccordionState` higher-order component is used to limit one section to be expanded at any time.
 
@@ -35,7 +35,7 @@ export default () => (
 )
 ```
 
-### withAccordionItemState
+### withAccordionItemState(BpkAccordionItem)
 
 The `withAccordionItemState` higher-order component is used to allow multiple items to be expanded simultaneously.
 
