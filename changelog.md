@@ -23,8 +23,8 @@ _Nothing yet_
 
 **Added:**
 - bpk-component-autossugest:
-  - `renderValue` property added to `BpkAutosuggestSuggestion` to provide a function for custom value rendering
-  - `renderSubHeading` property added to `BpkAutosuggestSuggestion` to provide a function for custom subheading rendering
+  - `value` attribute is now of a `node` type therefore it accepts: numbers, strings, elements and arrays of them
+  - `subHeading` attribute is now of a `node` type too
   
 ## 2017-05-17 - Support for disabled labels, popover fix
 
