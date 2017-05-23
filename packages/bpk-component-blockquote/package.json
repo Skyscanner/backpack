@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-blockquote",
-  "version": "0.0.73",
+  "version": "0.0.74",
   "description": "Backpack blockquote component.",
   "main": "index.js",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-content-container",
-  "version": "1.0.64",
+  "version": "1.0.65",
   "description": "Backpack content container component.",
   "main": "index.js",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-breakpoint",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Backpack breakpoint component.",
   "main": "index.js",
   "repository": {

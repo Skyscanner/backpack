@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-router-link",
-  "version": "0.1.79",
+  "version": "0.1.80",
   "description": "Backpack link component.",
   "main": "index.js",
   "repository": {
