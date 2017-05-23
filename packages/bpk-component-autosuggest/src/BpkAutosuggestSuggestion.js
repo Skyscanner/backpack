@@ -36,8 +36,8 @@ const BpkSuggestion = (props) => {
 };
 
 BpkSuggestion.propTypes = {
-  value: PropTypes.string.isRequired,
-  subHeading: PropTypes.string,
+  value: PropTypes.node.isRequired,
+  subHeading: PropTypes.node,
   tertiaryLabel: PropTypes.string,
   icon: PropTypes.func,
   indent: PropTypes.bool,

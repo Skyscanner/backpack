@@ -84,4 +84,23 @@ describe('BpkAutosuggestSuggestion', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with a "value" attribute being an element', () => {
+    const tree = renderer.create(
+      <BpkAutosuggestSuggestion
+        value={<strong>Edinburgh</strong>}
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "subHeading" attribute being an element', () => {
+    const tree = renderer.create(
+      <BpkAutosuggestSuggestion
+        value="Edinburgh"
+        subHeading={<strong>United Kingdom</strong>}
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

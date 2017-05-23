@@ -41,6 +41,25 @@ exports[`BpkAutosuggestSuggestion should render correctly with a "subHeading" at
 </section>
 `;
 
+exports[`BpkAutosuggestSuggestion should render correctly with a "subHeading" attribute being an element 1`] = `
+<section
+  className="bpk-autosuggest__suggestion">
+  <div
+    className="bpk-autosuggest__suggestion-inner">
+    <span
+      className="bpk-autosuggest__suggestion-value">
+      Edinburgh
+    </span>
+    <small
+      className="bpk-autosuggest__suggestion-sub-heading">
+      <strong>
+        United Kingdom
+      </strong>
+    </small>
+  </div>
+</section>
+`;
+
 exports[`BpkAutosuggestSuggestion should render correctly with a "tertiaryLabel" attribute 1`] = `
 <section
   className="bpk-autosuggest__suggestion">
@@ -77,6 +96,21 @@ exports[`BpkAutosuggestSuggestion should render correctly with a "tertiaryLabel"
       className="bpk-autosuggest__suggestion-tertiary-label">
       Scotland
     </aside>
+  </div>
+</section>
+`;
+
+exports[`BpkAutosuggestSuggestion should render correctly with a "value" attribute being an element 1`] = `
+<section
+  className="bpk-autosuggest__suggestion">
+  <div
+    className="bpk-autosuggest__suggestion-inner">
+    <span
+      className="bpk-autosuggest__suggestion-value">
+      <strong>
+        Edinburgh
+      </strong>
+    </span>
   </div>
 </section>
 `;
