@@ -2,13 +2,13 @@
 
 > Backpack autosuggest component.
 
-### Installation
+## Installation
 
 ```sh
 npm install bpk-component-autosuggest --save-dev
 ```
 
-### Usage
+## Usage
 
 ```js
 import React, { Component } from 'react';
@@ -108,7 +108,7 @@ class MyComponent extends Component {
 }
 ```
 
-### Props
+## Props
 
 *BpkAutosuggest:*
 

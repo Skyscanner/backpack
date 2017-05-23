@@ -38,7 +38,7 @@ export default () => (
 }
 ```
 
-## Aligning to BpkButton components
+### Aligning to BpkButton components
 
 ```js
 import React from 'react';
@@ -64,7 +64,7 @@ export default () => (
 );
 ```
 
-## RTL support
+### RTL support
 
 ```js
 import React from 'react';

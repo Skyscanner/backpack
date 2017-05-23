@@ -98,7 +98,7 @@ withCalendarState(composeCalendar(
 ))
 ```
 
-#### Building a custom calendar
+### Building a custom calendar
 
 A custom calendar can be created by swapping out any default component for an alternative:
 
@@ -148,7 +148,7 @@ withCalendarState(composeCalendar(
 > implements the same API (props see below) and provides all the relevant accessibility
 > properties, such as ARIA attributes and `tabIndex`.
 
-### Props
+## Props
 
 | Property              | PropType             | Required | Default Value    |
 | --------------------- | -------------------- | -------- | ---------------- |
@@ -171,7 +171,7 @@ withCalendarState(composeCalendar(
 
 Some of the more complex props and props for sub-components are detailed below.
 
-#### BpkCalendarNav
+### BpkCalendarNav
 
 The BpkCalendarNav component is used to change the month that is being displayed by using
 buttons and a select box.
@@ -186,7 +186,7 @@ buttons and a select box.
 | month                 | Date                 | true     | -                |
 | onMonthChange         | func                 | false    | null             |
 
-#### BpkCalendarGridHeader
+### BpkCalendarGridHeader
 
 The BpkCalendarGridHeader component displays the header of `BpkCalendarGrid`, listing
 the days of the week. This is needed as a separate component, as the header should stay
@@ -199,7 +199,7 @@ in place while the rest of the grid transitions when changing months.
 | weekStartsOn          | number               | true     | -                |
 | showWeekendSeparator  | bool                 | false    | false            |
 
-#### BpkCalendarGrid
+### BpkCalendarGrid
 
 The BpkCalendarGrid component displays a month as a table.
 
@@ -223,7 +223,7 @@ The BpkCalendarGrid component displays a month as a table.
 | showWeekendSeparator  | bool                 | false    | true             |
 | weekStartsOn          | number               | false    | 1                |
 
-#### BpkCalendarDate
+### BpkCalendarDate
 
 The BpkCalendarDate component is used to render the content of a cell
 (a single day) inside the calendar grid.
@@ -241,9 +241,9 @@ The BpkCalendarDate component is used to render the content of a cell
 | onDateKeyDown         | func                 | false    | null             |
 | preventKeyboardFocus  | bool                 | false    | true             |
 
-#### Prop details
+### Prop details
 
-##### daysOfWeek
+#### daysOfWeek
 
 An array of objects describing the days of the week:
 
@@ -271,14 +271,14 @@ An array of objects describing the days of the week:
 ]
 ```
 
-##### fixedWidth
+#### fixedWidth
 
 If set to true (default), it sets a fixed width on the calendar container. This is necessary to support
 transitions and to create the right size for the Datepicker component.
 
 If set to false, the calendar is of fluid width and will take up the space of its parent container.
 
-##### formatDateFull
+#### formatDateFull
 
 A function to format a full, human-readable date, for example: "Friday, 13th January 2017":
 
@@ -288,7 +288,7 @@ import format from 'date-fns/format';
 const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
 ```
 
-##### formatMonth
+#### formatMonth
 
 A function to format a human-readable month, for example: "January 2017":
 
@@ -300,6 +300,6 @@ import format from 'date-fns/format';
 const formatMonth = date => format(date, 'MMMM YYYY');
 ```
 
-##### weekStartsOn
+#### weekStartsOn
 
 First day of the week. 0 = Sunday, 1 = Monday, ..., 6 = Saturday.
