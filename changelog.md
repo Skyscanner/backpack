@@ -21,7 +21,7 @@ _Nothing yet_
 - bpk-component-input:
   - Added a new `withOpenEvents` higher-order component to encapsulate events triggering a modal or popover
 
-**Changed:**
+**Added:**
 - bpk-component-autossugest:
   - `renderValue` property added to `BpkAutosuggestSuggestion` to provide a function for custom value rendering
   - `renderSubHeading` property added to `BpkAutosuggestSuggestion` to provide a function for custom subheading rendering
