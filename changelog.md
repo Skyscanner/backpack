@@ -1,10 +1,10 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2017-05-23 - Autosuggest suggestion values can now accept elements
 
-**Added:**
+**Fixed:**
 - bpk-component-autossugest:
-  - `value` attribute is now of a `node` type therefore it accepts: numbers, strings, elements and arrays of them
+  - Suggestion `value` attribute is now of a `node` type therefore it accepts: numbers, strings, elements and arrays of them
   - `subHeading` attribute is now of a `node` type too
 
 ## 2017-05-23 - Better accordion API, abstraction for input events triggering a modal/popover
