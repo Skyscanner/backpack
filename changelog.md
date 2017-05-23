@@ -2,6 +2,17 @@
 
 ## UNRELEASED
 
+**Changed:**
+- bpk-component-accordion:
+  - New API:
+    - `BpkAccordionContainer` is now deprecated
+    - Consumers using `BpkAccordionContainer` should now enhance `BpkAccordion` with the `withSingleItemAccordionState`
+      higher-order component
+    - Consumers using `BpkAccordionContainer` *with* `allowMultiple` should now use a regular
+      `BpkAccordion` component with each `BpkAccordionItem` enhanced using the `withAccordionItemState` higher-order component
+    - In each case, `BpkAccordionItem` will now use the `initiallyExpanded` prop for items that should be initially expanded
+    - Please refer to [the readme](http://backpack.prod.aws.skyscnr.com/components/molecules/accordions#readme) for examples
+
 **Fixed:**
 - bpk-component-datepicker:
 - bpk-component-input:

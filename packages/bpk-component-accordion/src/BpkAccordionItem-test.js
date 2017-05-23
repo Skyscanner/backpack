@@ -30,4 +30,13 @@ describe('BpkAccordionItem', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should not render an "initiallyExpanded" attribute on the html node', () => {
+    const tree = renderer.create(
+      <BpkAccordionItem id="my-accordion" title="My accordion item" initiallyExpanded>
+        My accordion content
+      </BpkAccordionItem>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

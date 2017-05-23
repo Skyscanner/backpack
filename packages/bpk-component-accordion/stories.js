@@ -3,7 +3,10 @@ import { storiesOf } from '@kadira/storybook';
 import BpkCheckbox from 'bpk-component-checkbox';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 
-import { BpkAccordionContainer, BpkAccordion, BpkAccordionItem } from './index';
+import { BpkAccordion, withSingleItemAccordionState, BpkAccordionItem, withAccordionItemState } from './index';
+
+const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
+const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
 
 const CheckboxWrapper = props => <div style={{ padding: `${spacingSm} 0` }} {...props} />;
 
@@ -127,9 +130,9 @@ const AirportsContent = () => (
 );
 
 storiesOf('bpk-component-accordion', module)
-  .add('Default', () => (
-    <BpkAccordionContainer>
-      <BpkAccordionItem id="stops" title="Stops" expanded>
+  .add('Single item only', () => (
+    <SingleItemAccordion>
+      <BpkAccordionItem id="stops" title="Stops" initiallyExpanded>
         <StopsContent />
       </BpkAccordionItem>
       <BpkAccordionItem id="airlines" title="Airlines">
@@ -138,46 +141,46 @@ storiesOf('bpk-component-accordion', module)
       <BpkAccordionItem id="airports" title="Airports">
         <AirportsContent />
       </BpkAccordionItem>
-    </BpkAccordionContainer>
+    </SingleItemAccordion>
   ))
-  .add('Default (second item initially expanded)', () => (
-    <BpkAccordionContainer>
+  .add('Single item only (second item initially expanded)', () => (
+    <SingleItemAccordion>
       <BpkAccordionItem id="stops" title="Stops">
         <StopsContent />
       </BpkAccordionItem>
-      <BpkAccordionItem id="departure-times" title="Departure times" expanded>
+      <BpkAccordionItem id="departure-times" title="Departure times" initiallyExpanded>
         <AirlinesContent />
       </BpkAccordionItem>
       <BpkAccordionItem id="journey-duration" title="Journey duration">
         <AirportsContent />
       </BpkAccordionItem>
-    </BpkAccordionContainer>
+    </SingleItemAccordion>
   ))
-  .add('Multiple', () => (
-    <BpkAccordionContainer allowMultiple>
-      <BpkAccordionItem id="stops" title="Stops" expanded>
+  .add('Multiple items open', () => (
+    <BpkAccordion>
+      <StatefulAccordionItem id="stops" title="Stops" initiallyExpanded>
         <StopsContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem id="departure-times" title="Departure times" expanded>
+      </StatefulAccordionItem>
+      <StatefulAccordionItem id="departure-times" title="Departure times" initiallyExpanded>
         <AirlinesContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem id="journey-duration" title="Journey duration" expanded>
+      </StatefulAccordionItem>
+      <StatefulAccordionItem id="journey-duration" title="Journey duration" initiallyExpanded>
         <AirportsContent />
-      </BpkAccordionItem>
-    </BpkAccordionContainer>
+      </StatefulAccordionItem>
+    </BpkAccordion>
   ))
-  .add('Multiple (second & third items initially expanded)', () => (
-    <BpkAccordionContainer allowMultiple>
-      <BpkAccordionItem id="stops" title="Stops">
+  .add('Multiple items open (second & third items initially expanded)', () => (
+    <BpkAccordion>
+      <StatefulAccordionItem id="stops" title="Stops">
         <StopsContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem id="departure-times" title="Departure times" expanded>
+      </StatefulAccordionItem>
+      <StatefulAccordionItem id="departure-times" title="Departure times" initiallyExpanded>
         <AirlinesContent />
-      </BpkAccordionItem>
-      <BpkAccordionItem id="journey-duration" title="Journey duration" expanded>
+      </StatefulAccordionItem>
+      <StatefulAccordionItem id="journey-duration" title="Journey duration" initiallyExpanded>
         <AirportsContent />
-      </BpkAccordionItem>
-    </BpkAccordionContainer>
+      </StatefulAccordionItem>
+    </BpkAccordion>
   ))
   .add('Custom', () => (
     <BpkAccordion>

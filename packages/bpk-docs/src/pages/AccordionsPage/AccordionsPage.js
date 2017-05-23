@@ -3,9 +3,17 @@ import BpkCheckbox from 'bpk-component-checkbox';
 import BpkParagraph from 'bpk-component-paragraph';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 import accordionsReadme from 'bpk-component-accordion/readme.md';
-import { BpkAccordionContainer, BpkAccordionItem } from 'bpk-component-accordion';
+import {
+  BpkAccordion,
+  BpkAccordionItem,
+  withSingleItemAccordionState,
+  withAccordionItemState,
+} from 'bpk-component-accordion';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+
+const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
+const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
 
 const CheckboxWrapper = props => <div style={{ padding: `${spacingSm} 0` }} {...props} />;
 
@@ -138,8 +146,8 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <BpkAccordionContainer>
-        <BpkAccordionItem id="stops" title="Stops" expanded>
+      <SingleItemAccordion>
+        <BpkAccordionItem id="stops" title="Stops" initiallyExpanded>
           <StopsContent />
         </BpkAccordionItem>
         <BpkAccordionItem id="airlines" title="Airlines">
@@ -148,7 +156,7 @@ const components = [
         <BpkAccordionItem id="airports" title="Airports">
           <AirportsContent />
         </BpkAccordionItem>
-      </BpkAccordionContainer>,
+      </SingleItemAccordion>,
     ],
   },
   {
@@ -160,17 +168,17 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <BpkAccordionContainer allowMultiple>
-        <BpkAccordionItem id="stops" title="Stops" expanded>
+      <BpkAccordion>
+        <StatefulAccordionItem id="stops" title="Stops" initiallyExpanded>
           <StopsContent />
-        </BpkAccordionItem>
-        <BpkAccordionItem id="airlines" title="Airlines">
+        </StatefulAccordionItem>
+        <StatefulAccordionItem id="airlines" title="Airlines" initiallyExpanded>
           <AirlinesContent />
-        </BpkAccordionItem>
-        <BpkAccordionItem id="airports" title="Airports">
+        </StatefulAccordionItem>
+        <StatefulAccordionItem id="airports" title="Airports">
           <AirportsContent />
-        </BpkAccordionItem>
-      </BpkAccordionContainer>,
+        </StatefulAccordionItem>
+      </BpkAccordion>,
     ],
   },
 ];
