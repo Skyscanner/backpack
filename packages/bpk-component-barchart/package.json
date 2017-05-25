@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "bpk-component-barchart",
   "version": "0.0.3",
   "description": "Backpack bar chart component.",
