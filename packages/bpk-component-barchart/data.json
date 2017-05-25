@@ -1,0 +1,86 @@
+{
+  "example1": [
+    {
+      "value": 11,
+      "label": "1"
+    },
+    {
+      "value": 13,
+      "label": "2"
+    },
+    {
+      "value": 5,
+      "label": "3"
+    },
+    {
+      "value": 16,
+      "label": "4"
+    },
+    {
+      "value": 4,
+      "label": "5"
+    },
+    {
+      "value": 19,
+      "label": "6"
+    },
+    {
+      "value": 10,
+      "label": "7"
+    },
+    {
+      "value": 5,
+      "label": "8"
+    },
+    {
+      "value": 8,
+      "label": "9"
+    },
+    {
+      "value": 3,
+      "label": "10"
+    }
+  ],
+  "example2": [
+    {
+      "value": 11,
+      "label": "1"
+    },
+    {
+      "value": 13,
+      "label": "2"
+    },
+    {
+      "value": 75,
+      "label": "3"
+    },
+    {
+      "value": 16,
+      "label": "4"
+    },
+    {
+      "value": 4,
+      "label": "5"
+    },
+    {
+      "value": 19,
+      "label": "6"
+    },
+    {
+      "value": 45,
+      "label": "7"
+    },
+    {
+      "value": 5,
+      "label": "8"
+    },
+    {
+      "value": 8,
+      "label": "9"
+    },
+    {
+      "value": 3,
+      "label": "10"
+    }
+  ]
+}

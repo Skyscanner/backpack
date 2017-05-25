@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "name": "bpk-component-barchart",
+  "version": "0.0.3",
+  "description": "Backpack bar chart component.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@git.prod.skyscanner.local:backpack/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^15.0.0"
+  },
+  "dependencies": {
+    "bpk-mixins": "14.0.0",
+    "bpk-tokens": "^22.0.0",
+    "d3-path": "1.0.5",
+    "d3-scale": "^1.0.5",
+    "lodash.debounce": "^4.0.8",
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
+    "bpk-component-breakpoint": "0.1.10",
+    "bpk-component-content-container": "1.0.60",
+    "bpk-component-heading": "2.0.0"
+  }
+}
