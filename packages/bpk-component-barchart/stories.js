@@ -75,30 +75,6 @@ storiesOf('bpk-component-barchart', module)
       <BpkBarchartBars />
     </BpkBarchart>
   ))
-  .add('Animated', () => (
-    <BpkBarchart
-      width={580}
-      height={300}
-      data={data.example1}
-      xScaleDataKey="label"
-      yScaleDataKey="value"
-      margin={{
-        top: 0,
-        right: 0,
-        bottom: 20,
-        left: 20,
-      }}
-      style={{
-        width: '100%',
-        maxWidth: '580px',
-        height: '300px',
-      }}
-    >
-      <BpkBarchartXAxis />
-      <BpkBarchartYAxis />
-      <BpkBarchartBars animate animateDuration="1s" />
-    </BpkBarchart>
-  ))
   .add('Title', () => (
     <BpkBarchart
       width={580}

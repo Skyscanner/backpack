@@ -25,11 +25,7 @@
     }
 
     &--outlier {
-      fill: url(#bpk-barchart__def-gradient);
-
-      &:hover {
-        fill: url(#bpk-barchart__def-gradient-hover);
-      }
+      mask: url(#bpk-barchart__def-mask);
     }
   }
 

@@ -1,11 +1,5 @@
 import React from 'react';
 
-import {
-  colorBlue300,
-  colorBlue500,
-  colorWhite,
-} from 'bpk-tokens/tokens/base.es6';
-
 const GRADIENT_ATTRIBUTES = {
   x1: 0,
   x2: 0,
@@ -16,19 +10,18 @@ const GRADIENT_ATTRIBUTES = {
 const BpkBarchartDefs = () => (
   <defs>
     <linearGradient
-      id="bpk-barchart__def-gradient"
+      id="gradient"
       {...GRADIENT_ATTRIBUTES}
     >
-      <stop offset="0%" stopColor={colorWhite} />
-      <stop offset="10%" stopColor={colorBlue300} />
+      <stop offset="0" stopColor="white" stopOpacity="0" />
+      <stop offset="10%" stopColor="white" stopOpacity="1" />
     </linearGradient>
-    <linearGradient
-      id="bpk-barchart__def-gradient-hover"
-      {...GRADIENT_ATTRIBUTES}
+    <mask
+      id="bpk-barchart__def-mask"
+      maskUnits="userSpaceOnUse"
     >
-      <stop offset="0%" stopColor={colorWhite} />
-      <stop offset="10%" stopColor={colorBlue500} />
-    </linearGradient>
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#gradient)" />
+    </mask>
   </defs>
 );
 
