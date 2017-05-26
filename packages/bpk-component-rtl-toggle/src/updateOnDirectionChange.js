@@ -24,6 +24,10 @@ const updateOnDirectionChange = (EnhancedComponent) => {
     }
   }
 
+  const enhancedComponentName = EnhancedComponent.displayName || EnhancedComponent.name || 'Component';
+
+  UpdateOnDirectionChange.displayName = `updateOnDirectionChange(${enhancedComponentName})`;
+
   return UpdateOnDirectionChange;
 };
 
