@@ -8,9 +8,10 @@ import { storiesOf } from '@kadira/storybook';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 import BpkContentContainer from 'bpk-component-content-container';
 import BpkHeading from 'bpk-component-heading';
+import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 
 import {
-  BpkBarchart,
+  BpkBarchart as BasicBpkBarchart,
   BpkBarchartTitle,
   BpkBarchartBars,
   BpkBarchartXAxis,
@@ -20,6 +21,8 @@ import {
   BpkBarchartYAxisLabel,
   BpkBarchartXAxisLabel,
 } from './index';
+
+const BpkBarchart = updateOnDirectionChange(BasicBpkBarchart);
 
 const data = require('./data');
 

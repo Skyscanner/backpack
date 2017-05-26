@@ -1,3 +1,5 @@
-import component from './src/BpkRtlToggle';
+import BpkRtlToggle from './src/BpkRtlToggle';
+import updateOnDirectionChange from './src/updateOnDirectionChange';
 
-export default component;
+export default BpkRtlToggle;
+export { updateOnDirectionChange };
