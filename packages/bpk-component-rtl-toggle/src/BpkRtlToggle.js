@@ -1,17 +1,14 @@
 import React from 'react';
 import { BpkButtonLink } from 'bpk-component-link';
-
-const DIRECTIONS = {
-  LTR: 'ltr',
-  RTL: 'rtl',
-};
-
-const getHtmlElement = () => (typeof document !== 'undefined' ? document.querySelector('html') : {});
+import { getHtmlElement, DIRECTIONS, DIRECTION_CHANGE_EVENT } from './utils';
 
 const getDirection = () => getHtmlElement().dir || DIRECTIONS.LTR;
 
 const setDirection = (direction) => {
-  getHtmlElement().dir = direction;
+  const htmlElement = getHtmlElement();
+
+  htmlElement.dir = direction;
+  htmlElement.dispatchEvent(new Event(DIRECTION_CHANGE_EVENT));
 };
 
 class BpkRtlToggle extends React.Component {
@@ -43,4 +40,3 @@ class BpkRtlToggle extends React.Component {
 }
 
 export default BpkRtlToggle;
-

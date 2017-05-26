@@ -8,6 +8,7 @@ import { storiesOf } from '@kadira/storybook';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 import BpkContentContainer from 'bpk-component-content-container';
 import BpkHeading from 'bpk-component-heading';
+import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 
 import {
   BpkBarchart,
@@ -21,10 +22,12 @@ import {
   BpkBarchartXAxisLabel,
 } from './index';
 
+const EnhancedBarchart = updateOnDirectionChange(BpkBarchart);
+
 const data = require('./data');
 
 const getMobileChart = tickEvery => (
-  <BpkBarchart
+  <EnhancedBarchart
     height={300}
     data={data.example1}
     xScaleDataKey="label"
@@ -47,12 +50,12 @@ const getMobileChart = tickEvery => (
       tickValue={tick => `Label ${tick}`}
     />
     <BpkBarchartYAxis />
-  </BpkBarchart>
+  </EnhancedBarchart>
 );
 
 storiesOf('bpk-component-barchart', module)
   .add('Default', () => (
-    <BpkBarchart
+    <EnhancedBarchart
       width={500}
       height={300}
       data={data.example1}
@@ -73,10 +76,10 @@ storiesOf('bpk-component-barchart', module)
       <BpkBarchartXAxis />
       <BpkBarchartYAxis />
       <BpkBarchartBars />
-    </BpkBarchart>
+    </EnhancedBarchart>
   ))
   .add('Title', () => (
-    <BpkBarchart
+    <EnhancedBarchart
       width={580}
       height={300}
       data={data.example1}
@@ -98,10 +101,10 @@ storiesOf('bpk-component-barchart', module)
       <BpkBarchartXAxis />
       <BpkBarchartYAxis />
       <BpkBarchartBars />
-    </BpkBarchart>
+    </EnhancedBarchart>
   ))
   .add('Outliers', () => (
-    <BpkBarchart
+    <EnhancedBarchart
       width={500}
       height={300}
       data={data.example2}
@@ -123,10 +126,10 @@ storiesOf('bpk-component-barchart', module)
       <BpkBarchartXAxis />
       <BpkBarchartYAxis />
       <BpkBarchartBars />
-    </BpkBarchart>
+    </EnhancedBarchart>
   ))
   .add('Custom ticks', () => (
-    <BpkBarchart
+    <EnhancedBarchart
       width={500}
       height={300}
       data={data.example1}
@@ -147,10 +150,10 @@ storiesOf('bpk-component-barchart', module)
       <BpkBarchartXAxis tickEvery={2} tickOffset={1} />
       <BpkBarchartYAxis ticks={3} />
       <BpkBarchartBars />
-    </BpkBarchart>
+    </EnhancedBarchart>
   ))
   .add('Axis and tick labels', () => (
-    <BpkBarchart
+    <EnhancedBarchart
       width={500}
       height={300}
       data={data.example1}
@@ -186,12 +189,12 @@ storiesOf('bpk-component-barchart', module)
         <BpkBarchartYAxisLabel>Y Axis Label</BpkBarchartYAxisLabel>
       </BpkBarchartYAxis>
       <BpkBarchartBars />
-    </BpkBarchart>
+    </EnhancedBarchart>
   ))
   .add('Grid lines', () => (
     <BpkContentContainer>
       <BpkHeading level="h2">X Grid lines</BpkHeading>
-      <BpkBarchart
+      <EnhancedBarchart
         width={500}
         height={300}
         data={data.example1}
@@ -213,9 +216,9 @@ storiesOf('bpk-component-barchart', module)
         <BpkBarchartYAxis />
         <BpkBarchartXGridLines />
         <BpkBarchartBars />
-      </BpkBarchart>
+      </EnhancedBarchart>
       <BpkHeading level="h2">Y Grid lines</BpkHeading>
-      <BpkBarchart
+      <EnhancedBarchart
         width={500}
         height={300}
         data={data.example1}
@@ -237,9 +240,9 @@ storiesOf('bpk-component-barchart', module)
         <BpkBarchartYAxis />
         <BpkBarchartYGridLines />
         <BpkBarchartBars />
-      </BpkBarchart>
+      </EnhancedBarchart>
       <BpkHeading level="h2">Combined grid lines</BpkHeading>
-      <BpkBarchart
+      <EnhancedBarchart
         width={500}
         height={300}
         data={data.example1}
@@ -262,7 +265,7 @@ storiesOf('bpk-component-barchart', module)
         <BpkBarchartXGridLines />
         <BpkBarchartYGridLines />
         <BpkBarchartBars />
-      </BpkBarchart>
+      </EnhancedBarchart>
     </BpkContentContainer>
   ))
   .add('Mobile', () => (
