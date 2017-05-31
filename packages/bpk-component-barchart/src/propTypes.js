@@ -11,8 +11,8 @@ export default {
     left: number,
     right: number,
   }),
-  xScaler: func,
-  yScaler: func,
+  xScale: func,
+  yScale: func,
   xScaleDataKey: string,
   yScaleDataKey: string,
 };

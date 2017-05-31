@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import propTypes from './propTypes';
 
-import contextTypes from './contextTypes';
-
-const BpkBarchartMargin = (props, context) => {
-  const { children, ...rest } = props;
-  const { margin } = context;
+const BpkChartMargin = (props) => {
+  const { children, margin, ...rest } = props;
 
   return (
     <g
@@ -18,10 +16,9 @@ const BpkBarchartMargin = (props, context) => {
   );
 };
 
-BpkBarchartMargin.propTypes = {
+BpkChartMargin.propTypes = {
   children: PropTypes.node.isRequired,
+  margin: propTypes.margin.isRequired,
 };
 
-BpkBarchartMargin.contextTypes = contextTypes;
-
-export default BpkBarchartMargin;
+export default BpkChartMargin;

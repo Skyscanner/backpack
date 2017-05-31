@@ -1,4 +1,34 @@
 {
+  "continentCountries": [
+    {
+      "continent": "North America",
+      "countries": 3
+    },
+    {
+      "continent": "South America",
+      "countries": 13
+    },
+    {
+      "continent": "Europe",
+      "countries": 47
+    },
+    {
+      "continent": "Africa",
+      "countries": 44
+    },
+    {
+      "continent": "Asia",
+      "countries": 50
+    },
+    {
+      "continent": "Australia",
+      "countries": 1
+    },
+    {
+      "continent": "Antartica",
+      "countries": 0
+    }
+  ],
   "example1": [
     {
       "value": 11,

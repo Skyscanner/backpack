@@ -1,0 +1,374 @@
+exports[`BpkBarchartBars should render correctly 1`] = `
+<g
+  className="bpk-barchart__bars-group">
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      North America - 3
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={148}
+      height={148}
+      onClick={[Function]}
+      rx={2.2108843537414966}
+      ry={2.2108843537414966}
+      strokeWidth={17.687074829931973}
+      width={17.687074829931973}
+      x={9.523809523809518}
+      y={12} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      South America - 13
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={108}
+      height={108}
+      onClick={[Function]}
+      rx={2.2108843537414966}
+      ry={2.2108843537414966}
+      strokeWidth={17.687074829931973}
+      width={17.687074829931973}
+      x={36.73469387755101}
+      y={52} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Europe - 47
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={0}
+      height={0}
+      onClick={[Function]}
+      rx={2.2108843537414966}
+      ry={2.2108843537414966}
+      strokeWidth={17.687074829931973}
+      width={17.687074829931973}
+      x={63.94557823129251}
+      y={188} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Africa - 44
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={0}
+      height={0}
+      onClick={[Function]}
+      rx={2.2108843537414966}
+      ry={2.2108843537414966}
+      strokeWidth={17.687074829931973}
+      width={17.687074829931973}
+      x={91.156462585034}
+      y={176} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Asia - 50
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={0}
+      height={0}
+      onClick={[Function]}
+      rx={2.2108843537414966}
+      ry={2.2108843537414966}
+      strokeWidth={17.687074829931973}
+      width={17.687074829931973}
+      x={118.3673469387755}
+      y={200} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Australia - 1
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={156}
+      height={156}
+      onClick={[Function]}
+      rx={2.2108843537414966}
+      ry={2.2108843537414966}
+      strokeWidth={17.687074829931973}
+      width={17.687074829931973}
+      x={145.578231292517}
+      y={4} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Antartica - 0
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={160}
+      height={160}
+      onClick={[Function]}
+      rx={2.2108843537414966}
+      ry={2.2108843537414966}
+      strokeWidth={17.687074829931973}
+      width={17.687074829931973}
+      x={172.7891156462585}
+      y={0} />
+  </g>
+</g>
+`;
+
+exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
+<g
+  className="bpk-barchart__bars-group">
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      North America - 3
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={148}
+      height={148}
+      onClick={[Function]}
+      rx={3.5714285714285716}
+      ry={3.5714285714285716}
+      strokeWidth={28.571428571428573}
+      width={28.571428571428573}
+      x={0}
+      y={12} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      South America - 13
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={108}
+      height={108}
+      onClick={[Function]}
+      rx={3.5714285714285716}
+      ry={3.5714285714285716}
+      strokeWidth={28.571428571428573}
+      width={28.571428571428573}
+      x={28.571428571428573}
+      y={52} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Europe - 47
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={0}
+      height={0}
+      onClick={[Function]}
+      rx={3.5714285714285716}
+      ry={3.5714285714285716}
+      strokeWidth={28.571428571428573}
+      width={28.571428571428573}
+      x={57.142857142857146}
+      y={188} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Africa - 44
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={0}
+      height={0}
+      onClick={[Function]}
+      rx={3.5714285714285716}
+      ry={3.5714285714285716}
+      strokeWidth={28.571428571428573}
+      width={28.571428571428573}
+      x={85.71428571428572}
+      y={176} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Asia - 50
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={0}
+      height={0}
+      onClick={[Function]}
+      rx={3.5714285714285716}
+      ry={3.5714285714285716}
+      strokeWidth={28.571428571428573}
+      width={28.571428571428573}
+      x={114.28571428571429}
+      y={200} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Australia - 1
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={156}
+      height={156}
+      onClick={[Function]}
+      rx={3.5714285714285716}
+      ry={3.5714285714285716}
+      strokeWidth={28.571428571428573}
+      width={28.571428571428573}
+      x={142.85714285714286}
+      y={4} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Antartica - 0
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={160}
+      height={160}
+      onClick={[Function]}
+      rx={3.5714285714285716}
+      ry={3.5714285714285716}
+      strokeWidth={28.571428571428573}
+      width={28.571428571428573}
+      x={171.42857142857144}
+      y={0} />
+  </g>
+</g>
+`;
+
+exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = `
+<g
+  className="bpk-barchart__bars-group">
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      North America - 3
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={148}
+      height={148}
+      onClick={[Function]}
+      rx={0}
+      ry={0}
+      strokeWidth={17.687074829931973}
+      width={17.687074829931973}
+      x={9.523809523809518}
+      y={12} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      South America - 13
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={108}
+      height={108}
+      onClick={[Function]}
+      rx={0}
+      ry={0}
+      strokeWidth={17.687074829931973}
+      width={17.687074829931973}
+      x={36.73469387755101}
+      y={52} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Europe - 47
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={0}
+      height={0}
+      onClick={[Function]}
+      rx={0}
+      ry={0}
+      strokeWidth={17.687074829931973}
+      width={17.687074829931973}
+      x={63.94557823129251}
+      y={188} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Africa - 44
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={0}
+      height={0}
+      onClick={[Function]}
+      rx={0}
+      ry={0}
+      strokeWidth={17.687074829931973}
+      width={17.687074829931973}
+      x={91.156462585034}
+      y={176} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Asia - 50
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={0}
+      height={0}
+      onClick={[Function]}
+      rx={0}
+      ry={0}
+      strokeWidth={17.687074829931973}
+      width={17.687074829931973}
+      x={118.3673469387755}
+      y={200} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Australia - 1
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={156}
+      height={156}
+      onClick={[Function]}
+      rx={0}
+      ry={0}
+      strokeWidth={17.687074829931973}
+      width={17.687074829931973}
+      x={145.578231292517}
+      y={4} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Antartica - 0
+    </title>
+    <rect
+      className="bpk-barchart__bar "
+      data-height={160}
+      height={160}
+      onClick={[Function]}
+      rx={0}
+      ry={0}
+      strokeWidth={17.687074829931973}
+      width={17.687074829931973}
+      x={172.7891156462585}
+      y={0} />
+  </g>
+</g>
+`;

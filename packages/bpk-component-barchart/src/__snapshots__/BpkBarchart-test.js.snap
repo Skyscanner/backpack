@@ -1,0 +1,379 @@
+exports[`BpkBarchart should render correctly 1`] = `
+<svg
+  className="bpk-barchart"
+  height={200}
+  width={200}
+  xmlns="http://www.w3.org/2000/svg">
+  <BpkBarchartDefs />
+  <BpkChartMargin
+    margin={
+      Object {
+        "bottom": 30,
+        "left": 40,
+        "right": 20,
+        "top": 10,
+      }
+    }>
+    <BpkChartAxis
+      height={200}
+      label={null}
+      margin={
+        Object {
+          "bottom": 30,
+          "left": 40,
+          "right": 20,
+          "top": 10,
+        }
+      }
+      numTicks={null}
+      orientation="y"
+      scale={[Function]}
+      tickEvery={1}
+      tickOffset={0}
+      tickValue={[Function]}
+      width={200} />
+    <BpkChartAxis
+      height={200}
+      label={null}
+      margin={
+        Object {
+          "bottom": 30,
+          "left": 40,
+          "right": 20,
+          "top": 10,
+        }
+      }
+      numTicks={null}
+      orientation="x"
+      scale={[Function]}
+      tickEvery={1}
+      tickOffset={0}
+      tickValue={[Function]}
+      width={200} />
+    <BpkBarchartBars
+      data={
+        Array [
+          Object {
+            "continent": "North America",
+            "countries": 3,
+          },
+          Object {
+            "continent": "South America",
+            "countries": 13,
+          },
+          Object {
+            "continent": "Europe",
+            "countries": 47,
+          },
+          Object {
+            "continent": "Africa",
+            "countries": 44,
+          },
+          Object {
+            "continent": "Asia",
+            "countries": 50,
+          },
+          Object {
+            "continent": "Australia",
+            "countries": 1,
+          },
+          Object {
+            "continent": "Antartica",
+            "countries": 0,
+          },
+        ]
+      }
+      height={200}
+      margin={
+        Object {
+          "bottom": 30,
+          "left": 40,
+          "right": 20,
+          "top": 10,
+        }
+      }
+      maxYValue={50}
+      onClick={[Function]}
+      padding={0.35}
+      rounded={true}
+      xScale={[Function]}
+      xScaleDataKey="continent"
+      yScale={[Function]}
+      yScaleDataKey="countries" />
+  </BpkChartMargin>
+</svg>
+`;
+
+exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
+<svg
+  className="bpk-barchart"
+  height={200}
+  width={200}
+  xmlns="http://www.w3.org/2000/svg">
+  <BpkBarchartDefs />
+  <BpkChartMargin
+    margin={
+      Object {
+        "bottom": 30,
+        "left": 40,
+        "right": 20,
+        "top": 10,
+      }
+    }>
+    <BpkChartAxis
+      height={200}
+      label={null}
+      margin={
+        Object {
+          "bottom": 30,
+          "left": 40,
+          "right": 20,
+          "top": 10,
+        }
+      }
+      numTicks={null}
+      orientation="y"
+      scale={[Function]}
+      tickEvery={1}
+      tickOffset={0}
+      tickValue={[Function]}
+      width={200} />
+    <BpkChartAxis
+      height={200}
+      label={null}
+      margin={
+        Object {
+          "bottom": 30,
+          "left": 40,
+          "right": 20,
+          "top": 10,
+        }
+      }
+      numTicks={null}
+      orientation="x"
+      scale={[Function]}
+      tickEvery={1}
+      tickOffset={0}
+      tickValue={[Function]}
+      width={200} />
+    <BpkChartGridLines
+      height={200}
+      margin={
+        Object {
+          "bottom": 30,
+          "left": 40,
+          "right": 20,
+          "top": 10,
+        }
+      }
+      numTicks={null}
+      orientation="y"
+      scale={[Function]}
+      tickEvery={1}
+      tickOffset={0}
+      width={200} />
+    <BpkBarchartBars
+      data={
+        Array [
+          Object {
+            "continent": "North America",
+            "countries": 3,
+          },
+          Object {
+            "continent": "South America",
+            "countries": 13,
+          },
+          Object {
+            "continent": "Europe",
+            "countries": 47,
+          },
+          Object {
+            "continent": "Africa",
+            "countries": 44,
+          },
+          Object {
+            "continent": "Asia",
+            "countries": 50,
+          },
+          Object {
+            "continent": "Australia",
+            "countries": 1,
+          },
+          Object {
+            "continent": "Antartica",
+            "countries": 0,
+          },
+        ]
+      }
+      height={200}
+      margin={
+        Object {
+          "bottom": 30,
+          "left": 40,
+          "right": 20,
+          "top": 10,
+        }
+      }
+      maxYValue={50}
+      onClick={[Function]}
+      padding={0.35}
+      rounded={true}
+      xScale={[Function]}
+      xScaleDataKey="continent"
+      yScale={[Function]}
+      yScaleDataKey="countries" />
+  </BpkChartMargin>
+</svg>
+`;
+
+exports[`BpkBarchart should render with "title" prop 1`] = `
+<svg
+  className="bpk-barchart"
+  height={200}
+  width={200}
+  xmlns="http://www.w3.org/2000/svg">
+  <BpkBarchartDefs />
+  <BpkChartMargin
+    margin={
+      Object {
+        "bottom": 30,
+        "left": 40,
+        "right": 20,
+        "top": 10,
+      }
+    }>
+    <BpkChartAxis
+      height={200}
+      label={null}
+      margin={
+        Object {
+          "bottom": 30,
+          "left": 40,
+          "right": 20,
+          "top": 10,
+        }
+      }
+      numTicks={null}
+      orientation="y"
+      scale={[Function]}
+      tickEvery={1}
+      tickOffset={0}
+      tickValue={[Function]}
+      width={200} />
+    <BpkChartAxis
+      height={200}
+      label={null}
+      margin={
+        Object {
+          "bottom": 30,
+          "left": 40,
+          "right": 20,
+          "top": 10,
+        }
+      }
+      numTicks={null}
+      orientation="x"
+      scale={[Function]}
+      tickEvery={1}
+      tickOffset={0}
+      tickValue={[Function]}
+      width={200} />
+    <BpkBarchartBars
+      data={
+        Array [
+          Object {
+            "continent": "North America",
+            "countries": 3,
+          },
+          Object {
+            "continent": "South America",
+            "countries": 13,
+          },
+          Object {
+            "continent": "Europe",
+            "countries": 47,
+          },
+          Object {
+            "continent": "Africa",
+            "countries": 44,
+          },
+          Object {
+            "continent": "Asia",
+            "countries": 50,
+          },
+          Object {
+            "continent": "Australia",
+            "countries": 1,
+          },
+          Object {
+            "continent": "Antartica",
+            "countries": 0,
+          },
+        ]
+      }
+      height={200}
+      margin={
+        Object {
+          "bottom": 30,
+          "left": 40,
+          "right": 20,
+          "top": 10,
+        }
+      }
+      maxYValue={50}
+      onClick={[Function]}
+      padding={0.35}
+      rounded={true}
+      xScale={[Function]}
+      xScaleDataKey="continent"
+      yScale={[Function]}
+      yScaleDataKey="countries" />
+    <BpkChartTitle
+      data={
+        Array [
+          Object {
+            "continent": "North America",
+            "countries": 3,
+          },
+          Object {
+            "continent": "South America",
+            "countries": 13,
+          },
+          Object {
+            "continent": "Europe",
+            "countries": 47,
+          },
+          Object {
+            "continent": "Africa",
+            "countries": 44,
+          },
+          Object {
+            "continent": "Asia",
+            "countries": 50,
+          },
+          Object {
+            "continent": "Australia",
+            "countries": 1,
+          },
+          Object {
+            "continent": "Antartica",
+            "countries": 0,
+          },
+        ]
+      }
+      margin={
+        Object {
+          "bottom": 30,
+          "left": 40,
+          "right": 20,
+          "top": 10,
+        }
+      }
+      width={140}
+      xScale={[Function]}
+      xScaleDataKey="continent">
+      Countries on each continent
+    </BpkChartTitle>
+  </BpkChartMargin>
+</svg>
+`;
