@@ -25,6 +25,6 @@
     "bpk-component-breakpoint": "^0.1.15",
     "bpk-component-content-container": "^1.0.65",
     "bpk-component-heading": "^2.0.5",
-    "bpk-component-rtl-toggle": "^0.0.65"
+    "bpk-component-rtl-toggle": "^0.0.66"
   }
 }
