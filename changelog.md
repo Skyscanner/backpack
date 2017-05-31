@@ -1,5 +1,10 @@
 # Backpack changelog
 
+## UNRELEASED
+
+- bpk-component-button:
+  - Removed the dependency on `bpk-react-utils` to debloat the button for non tree-shaking consumers
+
 ## 2017-05-23 - Autosuggest suggestion values can now accept elements
 
 **Fixed:**
