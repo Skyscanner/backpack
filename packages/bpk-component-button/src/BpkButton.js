@@ -1,8 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-button.scss';
+
+// This was originally depended upon from the bpk-react-utils package, however
+// we decided to inline it in this particular component so as not to bloat the
+// the bundles of consumers who are not yet on webpack 2
+// We'll revisit this again soon.
+const cssModules = (styles = {}) =>
+  className => (styles[className] ? styles[className] : className);
 
 const getClassName = cssModules(STYLES);
 
