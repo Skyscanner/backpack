@@ -2,7 +2,12 @@
 
 ## UNRELEASED
 
-- bpk-component-button:
+_Nothing yet..._
+
+## 2017-05-31 - Reduced dependency bloat of the button component
+
+**Fixed:**
+- bpk-component-button: 1.6.25 => 1.6.26
   - Removed the dependency on `bpk-react-utils` to debloat the button for non tree-shaking consumers
 
 ## 2017-05-23 - Autosuggest suggestion values can now accept elements
