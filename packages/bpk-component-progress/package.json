@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-progress",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "Backpack progress bar component.",
   "main": "index.js",
   "repository": {
@@ -13,12 +13,12 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^15.1.0",
+    "bpk-mixins": "^15.2.0",
     "bpk-tokens": "^23.1.0",
     "lodash.clamp": "^4.0.3",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-component-button": "^1.6.26"
+    "bpk-component-button": "^1.6.27"
   }
 }
