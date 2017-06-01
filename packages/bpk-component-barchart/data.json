@@ -1,11 +1,11 @@
 {
   "continentCountries": [
     {
-      "continent": "North America",
+      "continent": "N America",
       "countries": 3
     },
     {
-      "continent": "South America",
+      "continent": "S America",
       "countries": 13
     },
     {

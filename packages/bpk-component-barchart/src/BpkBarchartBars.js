@@ -35,18 +35,21 @@ const BpkBarchartBars = (props) => {
         const x = xScale(point[xScaleDataKey]);
         const y = getYPos(point, { yScale, yScaleDataKey, maxYValue });
         const outlier = isOutlier(point, props);
+        const barClassNames = ['bpk-barchart__bar'];
+        if (outlier) { barClassNames.push('bpk-barchart__bar--outlier'); }
+        if (onClick) { barClassNames.push('bpk-barchart__bar--interative'); }
 
         return (
           <g className="bpk-barchart__bar-group" key={`bar${i.toString()}`}>
             <title>{`${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}</title>
             <rect
-              className={`bpk-barchart__bar ${outlier ? 'bpk-barchart__bar--outlier' : ''}`}
+              className={barClassNames.join(' ')}
               x={x}
               y={outlier ? y - barWidth : y}
               width={barWidth}
               height={outlier ? heights[i] + barWidth : heights[i]}
-              rx={rounded ? barWidth / 8 : 0}
-              ry={rounded ? barWidth / 8 : 0}
+              rx={rounded ? 3 : 0}
+              ry={rounded ? 3 : 0}
               strokeWidth={barWidth}
               onClick={e => onClick(e, point)}
               data-height={heights[i]}
@@ -68,7 +71,7 @@ BpkBarchartBars.propTypes = {
 BpkBarchartBars.defaultProps = {
   padding: 0.35,
   rounded: true,
-  onClick: () => {},
+  onClick: undefined,
 };
 
 export default BpkBarchartBars;

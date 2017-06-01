@@ -8,7 +8,18 @@ const center = (scale) => {
 
 const identity = x => x;
 
+const remToPx = (value) => {
+  let parsed = null;
+
+  if (/rem$/.test(value)) {
+    parsed = parseFloat(value.replace(/rem/, '')) * 16;
+  }
+
+  return parsed || null;
+};
+
 export {
   center,
   identity,
+  remToPx,
 };

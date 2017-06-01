@@ -20,12 +20,14 @@
     fill: $bpk-color-blue-300;
     shape-rendering: auto;
 
-    &:hover {
-      fill: $bpk-color-blue-500;
-    }
-
     &--outlier {
       mask: url(#bpk-barchart__def-mask);
+    }
+
+    &--interactive {
+      &:hover {
+        fill: $bpk-color-blue-500;
+      }
     }
   }
 
@@ -34,17 +36,17 @@
       @extend %bpk-chart-font-style;
     }
 
-    &--line {
-      stroke: $bpk-color-gray-100;
-    }
+    // &--line {
+    //   stroke: $bpk-color-gray-100;
+    // }
   }
 
   &__axis-label {
     @extend %bpk-chart-font-style;
 
-    &--x {
-      transform: translate(0, -1 * $bpk-line-height-sm);
-    }
+    // &--x {
+    //   transform: translate(0, -1 * $bpk-line-height-sm);
+    // }
   }
 
   &__grid-line {

@@ -3,7 +3,7 @@ const DIRECTIONS = {
   RTL: 'rtl',
 };
 
-const getDirection = () => (document.documentElement.dir || DIRECTIONS.LTR).toLowerCase();
+const getDirection = () => typeof document !== 'undefined' && (document.documentElement.dir || DIRECTIONS.LTR).toLowerCase();
 const isRTL = () => getDirection() === DIRECTIONS.RTL;
 const applyArrayRTLTransform = arr => (isRTL() ? arr.slice(0).reverse() : arr);
 const rtlConditionalValue = (ltrValue, rtlValue) => (isRTL() ? rtlValue : ltrValue);

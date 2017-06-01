@@ -10,7 +10,7 @@ import propTypes from './propTypes';
 import BpkBarchartDefs from './BpkBarchartDefs';
 import BpkBarchartBars from './BpkBarchartBars';
 import BpkChartMargin from './BpkChartMargin';
-import BpkChartTitle from './BpkChartTitle';
+import BpkChartTitle, { chartTitleLineHeight } from './BpkChartTitle';
 import BpkChartAxis from './BpkChartAxis';
 import BpkChartGridLines from './BpkChartGridLines';
 
@@ -65,12 +65,16 @@ class BpkBarchart extends Component {
     const {
       children,
       data,
-      margin,
+      // margin,
       xScaleDataKey,
       yScaleDataKey,
       outlierPercentage,
       showGridlines,
       title,
+
+      yAxisMargin,
+      xAxisMargin,
+      titleMargin,
 
       xAxisLabel,
       xAxisTickValue,
@@ -84,11 +88,16 @@ class BpkBarchart extends Component {
     } = this.props;
 
     this.transformedData = applyArrayRTLTransform(data);
-    this.transformedMargin = applyDirectionalRTLTransform(margin);
+    this.transformedMargin = applyDirectionalRTLTransform({
+      top: title ? titleMargin : 6,
+      left: yAxisMargin,
+      right: 0,
+      bottom: xAxisMargin,
+    });
 
     const { transformedData, transformedMargin, xScale, yScale } = this;
-    const width = this.state.width - transformedMargin.left - transformedMargin.right;
-    const height = this.state.height - transformedMargin.top - transformedMargin.bottom;
+    const width = this.state.width - yAxisMargin;
+    const height = this.state.height - xAxisMargin - (title ? titleMargin : 6);
 
     xScale.rangeRound([0, width]);
     xScale.domain(transformedData.map(d => d[xScaleDataKey]));
@@ -143,7 +152,7 @@ class BpkBarchart extends Component {
           { showGridlines && <BpkChartGridLines
             orientation={ORIENTATION_Y}
             height={this.state.height}
-            margin={margin}
+            margin={transformedMargin}
             scale={yScale}
             width={this.state.width}
           /> }
@@ -159,7 +168,6 @@ class BpkBarchart extends Component {
           />
           { title &&
             <BpkChartTitle
-              margin={transformedMargin}
               data={transformedData}
               width={width}
               xScale={xScale}
@@ -172,15 +180,18 @@ class BpkBarchart extends Component {
 }
 
 BpkBarchart.propTypes = {
-  showGridlines: PropTypes.bool,
 
-  xAxisLabel: PropTypes.string,
+  xAxisLabel: PropTypes.string.isRequired,
+  yAxisLabel: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+
+  showGridlines: PropTypes.bool,
   xAxisTickValue: PropTypes.func,
   xAxisTickOffset: PropTypes.number,
   xAxisTickEvery: PropTypes.number,
 
   yAxisNumTicks: PropTypes.number,
-  yAxisLabel: PropTypes.string,
   yAxisTickValue: PropTypes.func,
 };
 
@@ -188,12 +199,9 @@ BpkBarchart.defaultProps = {
   width: null,
   height: null,
   outlierPercentage: null,
-  margin: {
-    top: 5,
-    right: 20,
-    bottom: 20,
-    left: 60,
-  },
+  yAxisMargin: 18 + 42,
+  xAxisMargin: 18 + 18 + 6 + 6,
+  titleMargin: chartTitleLineHeight + 6, // TODO: Explain the + 6
   showGridlines: false,
 
   xAxisLabel: null,

@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { spacingXs, lineHeightSm } from 'bpk-tokens/tokens/base.es6';
 import propTypes from './propTypes';
 import { rtlConditionalValue } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
-import { identity, center } from './utils';
+import { identity, center, remToPx } from './utils';
+
+const spacing = remToPx(spacingXs);
+const lineHeight = remToPx(lineHeightSm);
 
 const getAxisConfig = ({ orientation, margin, height, width, scale }) => {
   const position = (scale.bandwidth ? center : identity)(scale.copy());
@@ -15,24 +19,19 @@ const getAxisConfig = ({ orientation, margin, height, width, scale }) => {
         transform: `translate(0, ${height - margin.bottom - margin.top})`,
       },
       textProps: {
-        y: 6,
+        y: lineHeight,
         x: 0,
-        dy: 0,
-        dominantBaseline: 'hanging',
       },
       labelProps: {
-        dominantBaseline: 'text-before-edge',
         x: (width - margin.left - margin.right) / 2,
-        y: margin.bottom,
+        y: margin.bottom - 6,
       },
       tickPosition: tick => [position(tick), 0],
     };
   }
 
-  const leftOffset = 0;
-  const rightOffset = 20;
-  const x = rtlConditionalValue(0, width - (margin.right / 2));
-  const translateX = rtlConditionalValue(-margin.left + leftOffset, margin.right - rightOffset);
+  const x = rtlConditionalValue(0, width - margin.right);
+  const translateX = rtlConditionalValue(18 - margin.left, margin.right - 6);
   const translateY = (height - margin.top - margin.bottom) / 2;
 
   return {
@@ -42,12 +41,13 @@ const getAxisConfig = ({ orientation, margin, height, width, scale }) => {
     },
     textProps: {
       y: 0,
-      x: -6,
+      x: rtlConditionalValue(-1, 1) * spacing,
+      // textAnchor: "end",
       dy: '0.32em',
-      dominantBaseline: 'auto',
+      // dominantBaseline: 'auto',
     },
     labelProps: {
-      dominantBaseline: 'hanging',
+      // dominantBaseline: 'hanging',
       transform: `translate(${translateX}, ${translateY}) rotate(-90)`,
     },
     tickPosition: tick => [0, position(tick)],
@@ -81,6 +81,7 @@ const BpkChartAxis = (props) => {
       {...containerProps}
       {...rest}
     >
+      <rect x={0} y={0} width={margin.right} height={10} fill="red" />
       {ticks.map((tick, i) => (
         <g
           className="bpk-barchart__axis-tick--group"
@@ -99,7 +100,6 @@ const BpkChartAxis = (props) => {
         className={`bpk-barchart__axis-label bpk-barchart__axis-label--${orientation}`}
         textAnchor="middle"
         {...labelProps}
-        {...rest}
       >{ label }</text> }
     </g>
   );
@@ -114,7 +114,6 @@ BpkChartAxis.propTypes = {
   label: PropTypes.node,
   orientation: PropTypes.oneOf([ORIENTATION_X, ORIENTATION_Y]).isRequired,
   tickValue: PropTypes.func,
-  // children: PropTypes.node,
   numTicks: PropTypes.number,
   tickOffset: PropTypes.number,
   tickEvery: PropTypes.number,

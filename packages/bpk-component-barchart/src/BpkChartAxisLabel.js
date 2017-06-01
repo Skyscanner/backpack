@@ -17,7 +17,7 @@ const BpkChartAxisLabel = (props) => {
     labelProps.x = (width - margin.left - margin.right) / 2;
     labelProps.y = margin.bottom;
   } else {
-    labelProps.dominantBaseline = 'hanging';
+    // labelProps.dominantBaseline = 'hanging';
     const translateX = isRTL() ? margin.right - rightOffset : -margin.left + leftOffset;
     const translateY = (height - margin.top - margin.bottom) / 2;
     labelProps.transform = `translate(${translateX}, ${translateY}) rotate(-90)`;

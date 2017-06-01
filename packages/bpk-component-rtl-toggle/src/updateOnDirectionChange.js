@@ -7,7 +7,8 @@ const updateOnDirectionChange = (EnhancedComponent) => {
       super();
       this.onDirectionChange = this.onDirectionChange.bind(this);
     }
-    componentWillMount() {
+
+    componentDidMount() {
       getHtmlElement().addEventListener(DIRECTION_CHANGE_EVENT, this.onDirectionChange, false);
     }
 
