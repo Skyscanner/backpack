@@ -2,10 +2,14 @@
 
 ## UNRELEASED
 
+_Nothing Yet_
+
+## 2017-06-01 - Added 3 icons
+
 **Added:**
-- bpk-svgs:
-- bpk-component-icon:
-- bpk-mixins:
+- bpk-svgs:5.3.10 => 5.4.0
+- bpk-component-icon:3.4.14 => 3.5.0
+- bpk-mixins:15.1.0 => 15.2.0
   - added 3 new icons (insurance, baby-carriage and download)
 
 ## 2017-05-31 - Reduced dependency bloat of the button component
