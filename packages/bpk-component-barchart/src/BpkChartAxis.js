@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { spacingXs, lineHeightSm } from 'bpk-tokens/tokens/base.es6';
-import propTypes from './propTypes';
 import { rtlConditionalValue } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center, remToPx } from './utils';
@@ -24,14 +23,14 @@ const getAxisConfig = ({ orientation, margin, height, width, scale }) => {
       },
       labelProps: {
         x: (width - margin.left - margin.right) / 2,
-        y: margin.bottom - 6,
+        y: margin.bottom - spacing,
       },
       tickPosition: tick => [position(tick), 0],
     };
   }
 
   const x = rtlConditionalValue(0, width - margin.right);
-  const translateX = rtlConditionalValue(18 - margin.left, margin.right - 6);
+  const translateX = rtlConditionalValue(lineHeight - margin.left, margin.right - spacing);
   const translateY = (height - margin.top - margin.bottom) / 2;
 
   return {
@@ -42,12 +41,9 @@ const getAxisConfig = ({ orientation, margin, height, width, scale }) => {
     textProps: {
       y: 0,
       x: rtlConditionalValue(-1, 1) * spacing,
-      // textAnchor: "end",
       dy: '0.32em',
-      // dominantBaseline: 'auto',
     },
     labelProps: {
-      // dominantBaseline: 'hanging',
       transform: `translate(${translateX}, ${translateY}) rotate(-90)`,
     },
     tickPosition: tick => [0, position(tick)],
@@ -81,7 +77,6 @@ const BpkChartAxis = (props) => {
       {...containerProps}
       {...rest}
     >
-      <rect x={0} y={0} width={margin.right} height={10} fill="red" />
       {ticks.map((tick, i) => (
         <g
           className="bpk-barchart__axis-tick--group"
@@ -92,7 +87,7 @@ const BpkChartAxis = (props) => {
             className="bpk-barchart__axis-tick--text"
             {...textProps}
           >
-            {tickValue(tick)}
+            {tickValue(tick, i)}
           </text>
         </g>
       ))}
@@ -108,10 +103,15 @@ const BpkChartAxis = (props) => {
 BpkChartAxis.propTypes = {
   height: PropTypes.number.isRequired,
   width: PropTypes.number.isRequired,
-  margin: propTypes.margin.isRequired,
+  margin: PropTypes.shape({
+    top: PropTypes.number,
+    bottom: PropTypes.number,
+    left: PropTypes.number,
+    right: PropTypes.number,
+  }).isRequired,
   scale: PropTypes.func.isRequired,
-
   label: PropTypes.node,
+
   orientation: PropTypes.oneOf([ORIENTATION_X, ORIENTATION_Y]).isRequired,
   tickValue: PropTypes.func,
   numTicks: PropTypes.number,

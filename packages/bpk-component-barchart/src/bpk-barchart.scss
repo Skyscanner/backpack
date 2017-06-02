@@ -1,20 +1,8 @@
 @import '~bpk-tokens';
 @import '~bpk-mixins/index';
 
-%bpk-chart-font-style {
-  fill: $bpk-color-gray-500;
-
-  @include bpk-text-sm;
-}
-
 .bpk-barchart {
-  &__title {
-    @extend %bpk-chart-font-style;
-
-    fill: $bpk-color-gray-700;
-
-    @include bpk-text-lg;
-  }
+  width: 100%;
 
   &__bar {
     fill: $bpk-color-blue-300;
@@ -33,20 +21,16 @@
 
   &__axis-tick {
     &--text {
-      @extend %bpk-chart-font-style;
-    }
+      fill: $bpk-color-gray-500;
 
-    // &--line {
-    //   stroke: $bpk-color-gray-100;
-    // }
+      @include bpk-text-sm;
+    }
   }
 
   &__axis-label {
-    @extend %bpk-chart-font-style;
+    fill: $bpk-color-gray-500;
 
-    // &--x {
-    //   transform: translate(0, -1 * $bpk-line-height-sm);
-    // }
+    @include bpk-text-sm;
   }
 
   &__grid-line {

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import propTypes from './propTypes';
 
 const BpkChartMargin = (props) => {
   const { children, margin, ...rest } = props;
@@ -18,7 +17,12 @@ const BpkChartMargin = (props) => {
 
 BpkChartMargin.propTypes = {
   children: PropTypes.node.isRequired,
-  margin: propTypes.margin.isRequired,
+  margin: PropTypes.shape({
+    top: PropTypes.number,
+    bottom: PropTypes.number,
+    left: PropTypes.number,
+    right: PropTypes.number,
+  }).isRequired,
 };
 
 export default BpkChartMargin;

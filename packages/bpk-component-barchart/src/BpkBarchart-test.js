@@ -4,25 +4,18 @@ import toJson from 'enzyme-to-json';
 import BpkBarchart from './BpkBarchart';
 import data from '../data.json';
 
-const margin = {
-  top: 10,
-  right: 20,
-  bottom: 30,
-  left: 40,
-};
-const continentCountries = data.continentCountries;
+const prices = data.prices;
 const size = 200;
 
 describe('BpkBarchart', () => {
   it('should render correctly', () => {
     const tree = shallow(
       <BpkBarchart
-        margin={margin}
-        xScaleDataKey="continent"
-        yScaleDataKey="countries"
-        width={size}
-        height={size}
-        data={continentCountries}
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();
@@ -31,12 +24,11 @@ describe('BpkBarchart', () => {
   it('should render with "showGridlines" prop', () => {
     const tree = shallow(
       <BpkBarchart
-        margin={margin}
-        xScaleDataKey="continent"
-        yScaleDataKey="countries"
-        width={size}
-        height={size}
-        data={continentCountries}
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
         showGridlines
       />,
     );
@@ -46,12 +38,11 @@ describe('BpkBarchart', () => {
   it('should render with "title" prop', () => {
     const tree = shallow(
       <BpkBarchart
-        margin={margin}
-        xScaleDataKey="continent"
-        yScaleDataKey="countries"
-        width={size}
-        height={size}
-        data={continentCountries}
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
         title="Countries on each continent"
       />,
     );

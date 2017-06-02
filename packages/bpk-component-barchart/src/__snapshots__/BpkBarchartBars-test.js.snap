@@ -4,121 +4,194 @@ exports[`BpkBarchartBars should render correctly 1`] = `
   <g
     className="bpk-barchart__bar-group">
     <title>
-      North America - 3
+      Jan - 305
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={148}
-      height={148}
-      onClick={[Function]}
-      rx={2.2108843537414966}
-      ry={2.2108843537414966}
-      strokeWidth={17.687074829931973}
-      width={17.687074829931973}
-      x={9.523809523809518}
-      y={12} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={5.668016194331983}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      South America - 13
+      Feb - 348
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={108}
-      height={108}
-      onClick={[Function]}
-      rx={2.2108843537414966}
-      ry={2.2108843537414966}
-      strokeWidth={17.687074829931973}
-      width={17.687074829931973}
-      x={36.73469387755101}
-      y={52} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={21.86234817813765}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Europe - 47
+      Mar - 418
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={0}
-      height={0}
-      onClick={[Function]}
-      rx={2.2108843537414966}
-      ry={2.2108843537414966}
-      strokeWidth={17.687074829931973}
-      width={17.687074829931973}
-      x={63.94557823129251}
-      y={188} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={38.05668016194332}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Africa - 44
+      Apr - 448
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={0}
-      height={0}
-      onClick={[Function]}
-      rx={2.2108843537414966}
-      ry={2.2108843537414966}
-      strokeWidth={17.687074829931973}
-      width={17.687074829931973}
-      x={91.156462585034}
-      y={176} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={54.25101214574899}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Asia - 50
+      May - 344
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={0}
-      height={0}
-      onClick={[Function]}
-      rx={2.2108843537414966}
-      ry={2.2108843537414966}
-      strokeWidth={17.687074829931973}
-      width={17.687074829931973}
-      x={118.3673469387755}
-      y={200} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={70.44534412955466}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Australia - 1
+      Jun - 322
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={156}
-      height={156}
-      onClick={[Function]}
-      rx={2.2108843537414966}
-      ry={2.2108843537414966}
-      strokeWidth={17.687074829931973}
-      width={17.687074829931973}
-      x={145.578231292517}
-      y={4} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={86.63967611336032}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Antartica - 0
+      Jul - 340
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={160}
-      height={160}
-      onClick={[Function]}
-      rx={2.2108843537414966}
-      ry={2.2108843537414966}
-      strokeWidth={17.687074829931973}
-      width={17.687074829931973}
-      x={172.7891156462585}
-      y={0} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={102.83400809716599}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Aug - 327
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={119.02834008097166}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Sep - 444
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={135.22267206477733}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Oct - 422
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={151.417004048583}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Nov - 344
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={167.61133603238866}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Dec - 301
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={183.80566801619432}
+      y={9.473684210526315} />
   </g>
 </g>
 `;
@@ -129,121 +202,206 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
   <g
     className="bpk-barchart__bar-group">
     <title>
-      North America - 3
+      Jan - 305
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={148}
-      height={148}
-      onClick={[Function]}
-      rx={3.5714285714285716}
-      ry={3.5714285714285716}
-      strokeWidth={28.571428571428573}
-      width={28.571428571428573}
-      x={0}
-      y={12} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      padding={0}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={5.668016194331983}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      South America - 13
+      Feb - 348
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={108}
-      height={108}
-      onClick={[Function]}
-      rx={3.5714285714285716}
-      ry={3.5714285714285716}
-      strokeWidth={28.571428571428573}
-      width={28.571428571428573}
-      x={28.571428571428573}
-      y={52} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      padding={0}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={21.86234817813765}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Europe - 47
+      Mar - 418
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={0}
-      height={0}
-      onClick={[Function]}
-      rx={3.5714285714285716}
-      ry={3.5714285714285716}
-      strokeWidth={28.571428571428573}
-      width={28.571428571428573}
-      x={57.142857142857146}
-      y={188} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      padding={0}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={38.05668016194332}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Africa - 44
+      Apr - 448
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={0}
-      height={0}
-      onClick={[Function]}
-      rx={3.5714285714285716}
-      ry={3.5714285714285716}
-      strokeWidth={28.571428571428573}
-      width={28.571428571428573}
-      x={85.71428571428572}
-      y={176} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      padding={0}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={54.25101214574899}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Asia - 50
+      May - 344
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={0}
-      height={0}
-      onClick={[Function]}
-      rx={3.5714285714285716}
-      ry={3.5714285714285716}
-      strokeWidth={28.571428571428573}
-      width={28.571428571428573}
-      x={114.28571428571429}
-      y={200} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      padding={0}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={70.44534412955466}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Australia - 1
+      Jun - 322
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={156}
-      height={156}
-      onClick={[Function]}
-      rx={3.5714285714285716}
-      ry={3.5714285714285716}
-      strokeWidth={28.571428571428573}
-      width={28.571428571428573}
-      x={142.85714285714286}
-      y={4} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      padding={0}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={86.63967611336032}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Antartica - 0
+      Jul - 340
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={160}
-      height={160}
-      onClick={[Function]}
-      rx={3.5714285714285716}
-      ry={3.5714285714285716}
-      strokeWidth={28.571428571428573}
-      width={28.571428571428573}
-      x={171.42857142857144}
-      y={0} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      padding={0}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={102.83400809716599}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Aug - 327
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      padding={0}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={119.02834008097166}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Sep - 444
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      padding={0}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={135.22267206477733}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Oct - 422
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      padding={0}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={151.417004048583}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Nov - 344
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      padding={0}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={167.61133603238866}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Dec - 301
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      padding={0}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={183.80566801619432}
+      y={9.473684210526315} />
   </g>
 </g>
 `;
@@ -254,121 +412,206 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
   <g
     className="bpk-barchart__bar-group">
     <title>
-      North America - 3
+      Jan - 305
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={148}
-      height={148}
-      onClick={[Function]}
-      rx={0}
-      ry={0}
-      strokeWidth={17.687074829931973}
-      width={17.687074829931973}
-      x={9.523809523809518}
-      y={12} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rounded={false}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={5.668016194331983}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      South America - 13
+      Feb - 348
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={108}
-      height={108}
-      onClick={[Function]}
-      rx={0}
-      ry={0}
-      strokeWidth={17.687074829931973}
-      width={17.687074829931973}
-      x={36.73469387755101}
-      y={52} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rounded={false}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={21.86234817813765}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Europe - 47
+      Mar - 418
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={0}
-      height={0}
-      onClick={[Function]}
-      rx={0}
-      ry={0}
-      strokeWidth={17.687074829931973}
-      width={17.687074829931973}
-      x={63.94557823129251}
-      y={188} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rounded={false}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={38.05668016194332}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Africa - 44
+      Apr - 448
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={0}
-      height={0}
-      onClick={[Function]}
-      rx={0}
-      ry={0}
-      strokeWidth={17.687074829931973}
-      width={17.687074829931973}
-      x={91.156462585034}
-      y={176} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rounded={false}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={54.25101214574899}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Asia - 50
+      May - 344
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={0}
-      height={0}
-      onClick={[Function]}
-      rx={0}
-      ry={0}
-      strokeWidth={17.687074829931973}
-      width={17.687074829931973}
-      x={118.3673469387755}
-      y={200} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rounded={false}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={70.44534412955466}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Australia - 1
+      Jun - 322
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={156}
-      height={156}
-      onClick={[Function]}
-      rx={0}
-      ry={0}
-      strokeWidth={17.687074829931973}
-      width={17.687074829931973}
-      x={145.578231292517}
-      y={4} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rounded={false}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={86.63967611336032}
+      y={9.473684210526315} />
   </g>
   <g
     className="bpk-barchart__bar-group">
     <title>
-      Antartica - 0
+      Jul - 340
     </title>
     <rect
-      className="bpk-barchart__bar "
-      data-height={160}
-      height={160}
-      onClick={[Function]}
-      rx={0}
-      ry={0}
-      strokeWidth={17.687074829931973}
-      width={17.687074829931973}
-      x={172.7891156462585}
-      y={0} />
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rounded={false}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={102.83400809716599}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Aug - 327
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rounded={false}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={119.02834008097166}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Sep - 444
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rounded={false}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={135.22267206477733}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Oct - 422
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rounded={false}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={151.417004048583}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Nov - 344
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rounded={false}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={167.61133603238866}
+      y={9.473684210526315} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Dec - 301
+    </title>
+    <rect
+      className="bpk-barchart__bar bpk-barchart__bar--outlier"
+      height={150.5263157894737}
+      onClick={null}
+      rounded={false}
+      rx={3}
+      ry={3}
+      strokeWidth={10.526315789473685}
+      width={200}
+      x={183.80566801619432}
+      y={9.473684210526315} />
   </g>
 </g>
 `;

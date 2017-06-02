@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import propTypes from './propTypes';
+import { borderRadiusXs } from 'bpk-tokens/tokens/base.es6';
+import { remToPx } from './utils';
+
+const borderRadius = remToPx(borderRadiusXs);
 
 const getYPos = (point, { yScale, yScaleDataKey, maxYValue }) =>
   yScale(Math.min(point[yScaleDataKey], maxYValue));
@@ -21,10 +24,23 @@ const isOutlier = (point, { yScaleDataKey, maxYValue }) =>
   point[yScaleDataKey] > maxYValue;
 
 const BpkBarchartBars = (props) => {
-  const { padding, rounded, onClick,
-    data, xScaleDataKey, yScaleDataKey, xScale, yScale, maxYValue, margin,  width, height, ...rest } = props;
+  const {
+    outerPadding,
+    innerPadding,
+    onClick,
+    data,
+    xScaleDataKey,
+    yScaleDataKey,
+    xScale,
+    yScale,
+    maxYValue,
+    margin,
+    height,
+    ...rest
+  } = props;
 
-  xScale.padding(padding);
+  xScale.paddingOuter(outerPadding);
+  xScale.paddingInner(innerPadding);
 
   const barWidth = xScale.bandwidth();
   const heights = data.map(point => getBarHeight(point, props));
@@ -32,6 +48,7 @@ const BpkBarchartBars = (props) => {
   return (
     <g className="bpk-barchart__bars-group">
       {data.map((point, i) => {
+        console.log(point[xScaleDataKey], xScale(point[xScaleDataKey]));
         const x = xScale(point[xScaleDataKey]);
         const y = getYPos(point, { yScale, yScaleDataKey, maxYValue });
         const outlier = isOutlier(point, props);
@@ -48,11 +65,10 @@ const BpkBarchartBars = (props) => {
               y={outlier ? y - barWidth : y}
               width={barWidth}
               height={outlier ? heights[i] + barWidth : heights[i]}
-              rx={rounded ? 3 : 0}
-              ry={rounded ? 3 : 0}
+              rx={borderRadius}
+              ry={borderRadius}
               strokeWidth={barWidth}
-              onClick={e => onClick(e, point)}
-              data-height={heights[i]}
+              onClick={onClick ? e => onClick(e, point) : null}
               {...rest}
             />
           </g>
@@ -63,15 +79,29 @@ const BpkBarchartBars = (props) => {
 };
 
 BpkBarchartBars.propTypes = {
-  padding: PropTypes.number,
-  rounded: PropTypes.bool,
+  data: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+  xScaleDataKey: PropTypes.string.isRequired,
+  yScaleDataKey: PropTypes.string.isRequired,
+  height: PropTypes.number.isRequired,
+  xScale: PropTypes.func.isRequired,
+  yScale: PropTypes.func.isRequired,
+  maxYValue: PropTypes.number.isRequired,
+  margin: PropTypes.shape({
+    top: PropTypes.number,
+    bottom: PropTypes.number,
+    left: PropTypes.number,
+    right: PropTypes.number,
+  }).isRequired,
+
+  outerPadding: PropTypes.number,
+  innerPadding: PropTypes.number,
   onClick: PropTypes.func,
 };
 
 BpkBarchartBars.defaultProps = {
-  padding: 0.35,
-  rounded: true,
-  onClick: undefined,
+  outerPadding: 0.35,
+  innerPadding: 0.35,
+  onClick: null,
 };
 
 export default BpkBarchartBars;

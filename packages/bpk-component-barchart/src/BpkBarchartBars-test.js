@@ -10,11 +10,11 @@ const margin = {
   bottom: 30,
   left: 40,
 };
-const continentCountries = data.continentCountries;
+const prices = data.prices;
 const size = 200;
-const yScale = scaleLinear().domain([0, 50]).range([0, size]);
+const yScale = scaleLinear().domain([0, 500]).range([0, size]);
 const xScale = scaleBand()
-  .domain(continentCountries.map(d => d.continent)).range([0, size]);
+  .domain(prices.map(d => d.month)).range([0, size]);
 
 describe('BpkBarchartBars', () => {
   it('should render correctly', () => {
@@ -23,12 +23,12 @@ describe('BpkBarchartBars', () => {
         margin={margin}
         xScale={xScale}
         yScale={yScale}
-        xScaleDataKey="continent"
-        yScaleDataKey="countries"
+        xScaleDataKey="month"
+        yScaleDataKey="price"
         maxYValue={50}
         width={size}
         height={size}
-        data={continentCountries}
+        data={prices}
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -40,12 +40,12 @@ describe('BpkBarchartBars', () => {
         margin={margin}
         xScale={xScale}
         yScale={yScale}
-        xScaleDataKey="continent"
-        yScaleDataKey="countries"
+        xScaleDataKey="month"
+        yScaleDataKey="price"
         maxYValue={50}
         width={size}
         height={size}
-        data={continentCountries}
+        data={prices}
         rounded={false}
       />,
     ).toJSON();
@@ -58,12 +58,12 @@ describe('BpkBarchartBars', () => {
         margin={margin}
         xScale={xScale}
         yScale={yScale}
-        xScaleDataKey="continent"
-        yScaleDataKey="countries"
+        xScaleDataKey="month"
+        yScaleDataKey="price"
         maxYValue={50}
         width={size}
         height={size}
-        data={continentCountries}
+        data={prices}
         padding={0}
       />,
     ).toJSON();

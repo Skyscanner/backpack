@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import propTypes from './propTypes';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center } from './utils';
 
@@ -42,9 +41,14 @@ const BpkChartGridLines = (props) => {
 };
 
 BpkChartGridLines.propTypes = {
-  width: propTypes.width.isRequired,
-  height: propTypes.height.isRequired,
-  margin: propTypes.margin.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  margin: PropTypes.shape({
+    top: PropTypes.number,
+    bottom: PropTypes.number,
+    left: PropTypes.number,
+    right: PropTypes.number,
+  }).isRequired,
 
   scale: PropTypes.func.isRequired,
   orientation: PropTypes.oneOf([ORIENTATION_X, ORIENTATION_Y]).isRequired,

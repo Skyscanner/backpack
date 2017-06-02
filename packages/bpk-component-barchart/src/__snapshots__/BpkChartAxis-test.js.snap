@@ -8,10 +8,8 @@ exports[`BpkChartAxis X should render band scale 1`] = `
     transform="translate(16.666666666666668, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       North America
     </text>
   </g>
@@ -20,10 +18,8 @@ exports[`BpkChartAxis X should render band scale 1`] = `
     transform="translate(50, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       South America
     </text>
   </g>
@@ -32,10 +28,8 @@ exports[`BpkChartAxis X should render band scale 1`] = `
     transform="translate(83.33333333333334, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       Europe
     </text>
   </g>
@@ -44,10 +38,8 @@ exports[`BpkChartAxis X should render band scale 1`] = `
     transform="translate(116.66666666666667, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       Asia
     </text>
   </g>
@@ -56,10 +48,8 @@ exports[`BpkChartAxis X should render band scale 1`] = `
     transform="translate(150, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       Australia
     </text>
   </g>
@@ -68,10 +58,8 @@ exports[`BpkChartAxis X should render band scale 1`] = `
     transform="translate(183.33333333333334, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       Antartica
     </text>
   </g>
@@ -88,10 +76,8 @@ exports[`BpkChartAxis X should render band scale with "tickEvery" and "tickOffse
     transform="translate(50, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       South America
     </text>
   </g>
@@ -100,10 +86,8 @@ exports[`BpkChartAxis X should render band scale with "tickEvery" and "tickOffse
     transform="translate(116.66666666666667, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       Asia
     </text>
   </g>
@@ -112,10 +96,8 @@ exports[`BpkChartAxis X should render band scale with "tickEvery" and "tickOffse
     transform="translate(183.33333333333334, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       Antartica
     </text>
   </g>
@@ -132,10 +114,8 @@ exports[`BpkChartAxis X should render band scale with "tickEvery" attribute 1`] 
     transform="translate(16.666666666666668, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       North America
     </text>
   </g>
@@ -144,10 +124,8 @@ exports[`BpkChartAxis X should render band scale with "tickEvery" attribute 1`] 
     transform="translate(83.33333333333334, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       Europe
     </text>
   </g>
@@ -156,10 +134,8 @@ exports[`BpkChartAxis X should render band scale with "tickEvery" attribute 1`] 
     transform="translate(150, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       Australia
     </text>
   </g>
@@ -176,10 +152,8 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
     transform="translate(18.947368421052634, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       50
     </text>
   </g>
@@ -188,10 +162,8 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
     transform="translate(40, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       100
     </text>
   </g>
@@ -200,10 +172,8 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
     transform="translate(61.05263157894737, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       150
     </text>
   </g>
@@ -212,10 +182,8 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
     transform="translate(82.10526315789474, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       200
     </text>
   </g>
@@ -224,10 +192,8 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
     transform="translate(103.15789473684211, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       250
     </text>
   </g>
@@ -236,10 +202,8 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
     transform="translate(124.21052631578948, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       300
     </text>
   </g>
@@ -248,10 +212,8 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
     transform="translate(145.26315789473685, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       350
     </text>
   </g>
@@ -260,10 +222,8 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
     transform="translate(166.31578947368422, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       400
     </text>
   </g>
@@ -272,10 +232,8 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
     transform="translate(187.3684210526316, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       450
     </text>
   </g>
@@ -292,10 +250,8 @@ exports[`BpkChartAxis X should render linear scale with "numTicks" attribute 1`]
     transform="translate(82.10526315789474, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       200
     </text>
   </g>
@@ -304,10 +260,8 @@ exports[`BpkChartAxis X should render linear scale with "numTicks" attribute 1`]
     transform="translate(166.31578947368422, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       400
     </text>
   </g>
@@ -324,10 +278,8 @@ exports[`BpkChartAxis X should render with label 1`] = `
     transform="translate(18.947368421052634, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       50
     </text>
   </g>
@@ -336,10 +288,8 @@ exports[`BpkChartAxis X should render with label 1`] = `
     transform="translate(40, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       100
     </text>
   </g>
@@ -348,10 +298,8 @@ exports[`BpkChartAxis X should render with label 1`] = `
     transform="translate(61.05263157894737, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       150
     </text>
   </g>
@@ -360,10 +308,8 @@ exports[`BpkChartAxis X should render with label 1`] = `
     transform="translate(82.10526315789474, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       200
     </text>
   </g>
@@ -372,10 +318,8 @@ exports[`BpkChartAxis X should render with label 1`] = `
     transform="translate(103.15789473684211, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       250
     </text>
   </g>
@@ -384,10 +328,8 @@ exports[`BpkChartAxis X should render with label 1`] = `
     transform="translate(124.21052631578948, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       300
     </text>
   </g>
@@ -396,10 +338,8 @@ exports[`BpkChartAxis X should render with label 1`] = `
     transform="translate(145.26315789473685, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       350
     </text>
   </g>
@@ -408,10 +348,8 @@ exports[`BpkChartAxis X should render with label 1`] = `
     transform="translate(166.31578947368422, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       400
     </text>
   </g>
@@ -420,19 +358,16 @@ exports[`BpkChartAxis X should render with label 1`] = `
     transform="translate(187.3684210526316, 0)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="hanging"
-      dy={0}
       x={0}
-      y={6}>
+      y={18}>
       450
     </text>
   </g>
   <text
     className="bpk-barchart__axis-label bpk-barchart__axis-label--x"
-    dominantBaseline="text-before-edge"
     textAnchor="middle"
     x={60}
-    y={40}>
+    y={34}>
     X axis label
   </text>
 </g>
@@ -448,7 +383,6 @@ exports[`BpkChartAxis Y should render band scale 1`] = `
     transform="translate(0, 16.666666666666668)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -460,7 +394,6 @@ exports[`BpkChartAxis Y should render band scale 1`] = `
     transform="translate(0, 50)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -472,7 +405,6 @@ exports[`BpkChartAxis Y should render band scale 1`] = `
     transform="translate(0, 83.33333333333334)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -484,7 +416,6 @@ exports[`BpkChartAxis Y should render band scale 1`] = `
     transform="translate(0, 116.66666666666667)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -496,7 +427,6 @@ exports[`BpkChartAxis Y should render band scale 1`] = `
     transform="translate(0, 150)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -508,7 +438,6 @@ exports[`BpkChartAxis Y should render band scale 1`] = `
     transform="translate(0, 183.33333333333334)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -528,7 +457,6 @@ exports[`BpkChartAxis Y should render band scale with "tickEvery" and "tickOffse
     transform="translate(0, 50)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -540,7 +468,6 @@ exports[`BpkChartAxis Y should render band scale with "tickEvery" and "tickOffse
     transform="translate(0, 116.66666666666667)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -552,7 +479,6 @@ exports[`BpkChartAxis Y should render band scale with "tickEvery" and "tickOffse
     transform="translate(0, 183.33333333333334)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -572,7 +498,6 @@ exports[`BpkChartAxis Y should render band scale with "tickEvery" attribute 1`] 
     transform="translate(0, 16.666666666666668)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -584,7 +509,6 @@ exports[`BpkChartAxis Y should render band scale with "tickEvery" attribute 1`] 
     transform="translate(0, 83.33333333333334)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -596,7 +520,6 @@ exports[`BpkChartAxis Y should render band scale with "tickEvery" attribute 1`] 
     transform="translate(0, 150)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -616,7 +539,6 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
     transform="translate(0, 18.947368421052634)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -628,7 +550,6 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
     transform="translate(0, 40)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -640,7 +561,6 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
     transform="translate(0, 61.05263157894737)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -652,7 +572,6 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
     transform="translate(0, 82.10526315789474)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -664,7 +583,6 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
     transform="translate(0, 103.15789473684211)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -676,7 +594,6 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
     transform="translate(0, 124.21052631578948)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -688,7 +605,6 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
     transform="translate(0, 145.26315789473685)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -700,7 +616,6 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
     transform="translate(0, 166.31578947368422)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -712,7 +627,6 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
     transform="translate(0, 187.3684210526316)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -732,7 +646,6 @@ exports[`BpkChartAxis Y should render linear scale with "numTicks" attribute 1`]
     transform="translate(0, 82.10526315789474)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -744,7 +657,6 @@ exports[`BpkChartAxis Y should render linear scale with "numTicks" attribute 1`]
     transform="translate(0, 166.31578947368422)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -764,7 +676,6 @@ exports[`BpkChartAxis Y should render with label 1`] = `
     transform="translate(0, 18.947368421052634)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -776,7 +687,6 @@ exports[`BpkChartAxis Y should render with label 1`] = `
     transform="translate(0, 40)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -788,7 +698,6 @@ exports[`BpkChartAxis Y should render with label 1`] = `
     transform="translate(0, 61.05263157894737)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -800,7 +709,6 @@ exports[`BpkChartAxis Y should render with label 1`] = `
     transform="translate(0, 82.10526315789474)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -812,7 +720,6 @@ exports[`BpkChartAxis Y should render with label 1`] = `
     transform="translate(0, 103.15789473684211)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -824,7 +731,6 @@ exports[`BpkChartAxis Y should render with label 1`] = `
     transform="translate(0, 124.21052631578948)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -836,7 +742,6 @@ exports[`BpkChartAxis Y should render with label 1`] = `
     transform="translate(0, 145.26315789473685)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -848,7 +753,6 @@ exports[`BpkChartAxis Y should render with label 1`] = `
     transform="translate(0, 166.31578947368422)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -860,7 +764,6 @@ exports[`BpkChartAxis Y should render with label 1`] = `
     transform="translate(0, 187.3684210526316)">
     <text
       className="bpk-barchart__axis-tick--text"
-      dominantBaseline="auto"
       dy="0.32em"
       x={-6}
       y={0}>
@@ -869,9 +772,8 @@ exports[`BpkChartAxis Y should render with label 1`] = `
   </g>
   <text
     className="bpk-barchart__axis-label bpk-barchart__axis-label--y"
-    dominantBaseline="hanging"
     textAnchor="middle"
-    transform="translate(-40, 60) rotate(-90)">
+    transform="translate(-22, 60) rotate(-90)">
     Y axis label
   </text>
 </g>

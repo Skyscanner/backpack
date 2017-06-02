@@ -2,44 +2,37 @@ import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 import React, { Component } from 'react';
 import { scaleLinear, scaleBand } from 'd3-scale';
+import { spacingXs, lineHeightSm } from 'bpk-tokens/tokens/base.es6';
 
-import { identity } from './utils';
-
-import './bpk-barchart.scss';
-import propTypes from './propTypes';
 import BpkBarchartDefs from './BpkBarchartDefs';
 import BpkBarchartBars from './BpkBarchartBars';
 import BpkChartMargin from './BpkChartMargin';
-import BpkChartTitle, { chartTitleLineHeight } from './BpkChartTitle';
 import BpkChartAxis from './BpkChartAxis';
 import BpkChartGridLines from './BpkChartGridLines';
-
+import { identity, remToPx } from './utils';
 import { applyArrayRTLTransform, applyDirectionalRTLTransform } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
+import './bpk-barchart.scss';
+
+const spacing = remToPx(spacingXs);
+const lineHeight = remToPx(lineHeightSm);
 
 class BpkBarchart extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      width: 0,
-      height: 0,
+      width: Number(props.initialWidth),
+      height: Number(props.initialHeight),
     };
-
-    this.updateDimensions = this.updateDimensions.bind(this);
 
     this.maxYValue = null;
     this.xScale = scaleBand();
     this.yScale = scaleLinear();
     this.transformedData = null;
-    this.onWindowResize = debounce(this.updateDimensions, 100);
-  }
 
-  componentWillMount() {
-    this.setState({
-      width: Number(this.props.width),
-      height: Number(this.props.height),
-    });
+    this.updateDimensions = this.updateDimensions.bind(this);
+    this.onWindowResize = debounce(this.updateDimensions, 100);
   }
 
   componentDidMount() {
@@ -63,24 +56,20 @@ class BpkBarchart extends Component {
 
   render() {
     const {
-      children,
+      className,
       data,
-      // margin,
+      initialWidth,
+      initialHeight,
       xScaleDataKey,
       yScaleDataKey,
       outlierPercentage,
       showGridlines,
-      title,
-
-      yAxisMargin,
       xAxisMargin,
-      titleMargin,
-
       xAxisLabel,
       xAxisTickValue,
       xAxisTickOffset,
       xAxisTickEvery,
-
+      yAxisMargin,
       yAxisLabel,
       yAxisTickValue,
       yAxisNumTicks,
@@ -89,15 +78,18 @@ class BpkBarchart extends Component {
 
     this.transformedData = applyArrayRTLTransform(data);
     this.transformedMargin = applyDirectionalRTLTransform({
-      top: title ? titleMargin : 6,
+      top: spacing,
       left: yAxisMargin,
       right: 0,
       bottom: xAxisMargin,
     });
 
+    const classNames = ['bpk-barchart'];
+    if (className) { classNames.push(className); }
+
     const { transformedData, transformedMargin, xScale, yScale } = this;
     const width = this.state.width - yAxisMargin;
-    const height = this.state.height - xAxisMargin - (title ? titleMargin : 6);
+    const height = this.state.height - xAxisMargin - (transformedMargin.top);
 
     xScale.rangeRound([0, width]);
     xScale.domain(transformedData.map(d => d[xScaleDataKey]));
@@ -120,7 +112,9 @@ class BpkBarchart extends Component {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="bpk-barchart"
+        className={classNames.join(' ')}
+        width={initialWidth}
+        height={initialHeight}
         ref={(svg) => { this.svg = svg; }}
         {...rest}
       >
@@ -165,14 +159,8 @@ class BpkBarchart extends Component {
             xScaleDataKey={xScaleDataKey}
             yScaleDataKey={yScaleDataKey}
             maxYValue={this.maxYValue}
+            outerPadding={showGridlines ? undefined : 0}
           />
-          { title &&
-            <BpkChartTitle
-              data={transformedData}
-              width={width}
-              xScale={xScale}
-              xScaleDataKey={xScaleDataKey}
-            >{ title }</BpkChartTitle> }
         </BpkChartMargin>
       </svg>
     );
@@ -180,38 +168,37 @@ class BpkBarchart extends Component {
 }
 
 BpkBarchart.propTypes = {
-
+  data: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+  xScaleDataKey: PropTypes.string.isRequired,
+  yScaleDataKey: PropTypes.string.isRequired,
   xAxisLabel: PropTypes.string.isRequired,
   yAxisLabel: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
+  initialWidth: PropTypes.number.isRequired,
+  initialHeight: PropTypes.number.isRequired,
 
+  className: PropTypes.string,
+  outlierPercentage: PropTypes.number,
   showGridlines: PropTypes.bool,
+  xAxisMargin: PropTypes.number,
   xAxisTickValue: PropTypes.func,
   xAxisTickOffset: PropTypes.number,
   xAxisTickEvery: PropTypes.number,
-
-  yAxisNumTicks: PropTypes.number,
+  yAxisMargin: PropTypes.number,
   yAxisTickValue: PropTypes.func,
+  yAxisNumTicks: PropTypes.number,
 };
 
 BpkBarchart.defaultProps = {
-  width: null,
-  height: null,
+  className: null,
   outlierPercentage: null,
-  yAxisMargin: 18 + 42,
-  xAxisMargin: 18 + 18 + 6 + 6,
-  titleMargin: chartTitleLineHeight + 6, // TODO: Explain the + 6
   showGridlines: false,
-
-  xAxisLabel: null,
+  xAxisMargin: 2 * (lineHeight + spacing),
   xAxisTickValue: identity,
   xAxisTickOffset: 0,
   xAxisTickEvery: 1,
-
-  yAxisNumTicks: null,
-  yAxisLabel: null,
+  yAxisMargin: (4 * lineHeight) + spacing,
   yAxisTickValue: identity,
+  yAxisNumTicks: null,
 };
 
 export default BpkBarchart;

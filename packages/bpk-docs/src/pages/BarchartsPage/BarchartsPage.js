@@ -1,5 +1,5 @@
 import React from 'react';
-import { BpkBarchart } from 'bpk-component-barchart';
+import BpkBarchart from 'bpk-component-barchart';
 import BpkParagraph from 'bpk-component-paragraph';
 
 import barchartReadme from 'bpk-component-barchart/readme.md';
@@ -22,19 +22,14 @@ const components = [
     ],
     examples: [
       <EnhancedBarchart
-        width={500}
-        height={300}
-        data={data.continentCountries}
-        xScaleDataKey="continent"
-        yScaleDataKey="countries"
+        initialWidth={500}
+        initialHeight={300}
+        data={data.prices}
+        xScaleDataKey="month"
+        yScaleDataKey="price"
         xAxisMargin={60}
-        style={{
-          width: '100%',
-          maxWidth: '580px',
-          height: '300px',
-        }}
-        yAxisLabel="No. of countries"
-        xAxisLabel="Continents"
+        yAxisLabel="Average price (£)"
+        xAxisLabel="Month"
         showGridlines
       />,
     ],

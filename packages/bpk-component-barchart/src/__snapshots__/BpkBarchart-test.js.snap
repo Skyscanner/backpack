@@ -8,10 +8,10 @@ exports[`BpkBarchart should render correctly 1`] = `
   <BpkChartMargin
     margin={
       Object {
-        "bottom": 30,
-        "left": 40,
-        "right": 20,
-        "top": 10,
+        "bottom": 48,
+        "left": 78,
+        "right": 0,
+        "top": 6,
       }
     }>
     <BpkChartAxis
@@ -19,10 +19,10 @@ exports[`BpkBarchart should render correctly 1`] = `
       label={null}
       margin={
         Object {
-          "bottom": 30,
-          "left": 40,
-          "right": 20,
-          "top": 10,
+          "bottom": 48,
+          "left": 78,
+          "right": 0,
+          "top": 6,
         }
       }
       numTicks={null}
@@ -37,10 +37,10 @@ exports[`BpkBarchart should render correctly 1`] = `
       label={null}
       margin={
         Object {
-          "bottom": 30,
-          "left": 40,
-          "right": 20,
-          "top": 10,
+          "bottom": 48,
+          "left": 78,
+          "right": 0,
+          "top": 6,
         }
       }
       numTicks={null}
@@ -54,52 +54,72 @@ exports[`BpkBarchart should render correctly 1`] = `
       data={
         Array [
           Object {
-            "continent": "North America",
-            "countries": 3,
+            "month": "Jan",
+            "price": 305,
           },
           Object {
-            "continent": "South America",
-            "countries": 13,
+            "month": "Feb",
+            "price": 348,
           },
           Object {
-            "continent": "Europe",
-            "countries": 47,
+            "month": "Mar",
+            "price": 418,
           },
           Object {
-            "continent": "Africa",
-            "countries": 44,
+            "month": "Apr",
+            "price": 448,
           },
           Object {
-            "continent": "Asia",
-            "countries": 50,
+            "month": "May",
+            "price": 344,
           },
           Object {
-            "continent": "Australia",
-            "countries": 1,
+            "month": "Jun",
+            "price": 322,
           },
           Object {
-            "continent": "Antartica",
-            "countries": 0,
+            "month": "Jul",
+            "price": 340,
+          },
+          Object {
+            "month": "Aug",
+            "price": 327,
+          },
+          Object {
+            "month": "Sep",
+            "price": 444,
+          },
+          Object {
+            "month": "Oct",
+            "price": 422,
+          },
+          Object {
+            "month": "Nov",
+            "price": 344,
+          },
+          Object {
+            "month": "Dec",
+            "price": 301,
           },
         ]
       }
       height={200}
+      innerPadding={0.35}
       margin={
         Object {
-          "bottom": 30,
-          "left": 40,
-          "right": 20,
-          "top": 10,
+          "bottom": 48,
+          "left": 78,
+          "right": 0,
+          "top": 6,
         }
       }
-      maxYValue={50}
-      onClick={[Function]}
-      padding={0.35}
-      rounded={true}
+      maxYValue={448}
+      onClick={null}
+      outerPadding={0}
       xScale={[Function]}
-      xScaleDataKey="continent"
+      xScaleDataKey="month"
       yScale={[Function]}
-      yScaleDataKey="countries" />
+      yScaleDataKey="price" />
   </BpkChartMargin>
 </svg>
 `;
@@ -114,10 +134,10 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
   <BpkChartMargin
     margin={
       Object {
-        "bottom": 30,
-        "left": 40,
-        "right": 20,
-        "top": 10,
+        "bottom": 48,
+        "left": 78,
+        "right": 0,
+        "top": 6,
       }
     }>
     <BpkChartAxis
@@ -125,10 +145,10 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
       label={null}
       margin={
         Object {
-          "bottom": 30,
-          "left": 40,
-          "right": 20,
-          "top": 10,
+          "bottom": 48,
+          "left": 78,
+          "right": 0,
+          "top": 6,
         }
       }
       numTicks={null}
@@ -143,10 +163,10 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
       label={null}
       margin={
         Object {
-          "bottom": 30,
-          "left": 40,
-          "right": 20,
-          "top": 10,
+          "bottom": 48,
+          "left": 78,
+          "right": 0,
+          "top": 6,
         }
       }
       numTicks={null}
@@ -160,10 +180,10 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
       height={200}
       margin={
         Object {
-          "bottom": 30,
-          "left": 40,
-          "right": 20,
-          "top": 10,
+          "bottom": 48,
+          "left": 78,
+          "right": 0,
+          "top": 6,
         }
       }
       numTicks={null}
@@ -176,52 +196,72 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
       data={
         Array [
           Object {
-            "continent": "North America",
-            "countries": 3,
+            "month": "Jan",
+            "price": 305,
           },
           Object {
-            "continent": "South America",
-            "countries": 13,
+            "month": "Feb",
+            "price": 348,
           },
           Object {
-            "continent": "Europe",
-            "countries": 47,
+            "month": "Mar",
+            "price": 418,
           },
           Object {
-            "continent": "Africa",
-            "countries": 44,
+            "month": "Apr",
+            "price": 448,
           },
           Object {
-            "continent": "Asia",
-            "countries": 50,
+            "month": "May",
+            "price": 344,
           },
           Object {
-            "continent": "Australia",
-            "countries": 1,
+            "month": "Jun",
+            "price": 322,
           },
           Object {
-            "continent": "Antartica",
-            "countries": 0,
+            "month": "Jul",
+            "price": 340,
+          },
+          Object {
+            "month": "Aug",
+            "price": 327,
+          },
+          Object {
+            "month": "Sep",
+            "price": 444,
+          },
+          Object {
+            "month": "Oct",
+            "price": 422,
+          },
+          Object {
+            "month": "Nov",
+            "price": 344,
+          },
+          Object {
+            "month": "Dec",
+            "price": 301,
           },
         ]
       }
       height={200}
+      innerPadding={0.35}
       margin={
         Object {
-          "bottom": 30,
-          "left": 40,
-          "right": 20,
-          "top": 10,
+          "bottom": 48,
+          "left": 78,
+          "right": 0,
+          "top": 6,
         }
       }
-      maxYValue={50}
-      onClick={[Function]}
-      padding={0.35}
-      rounded={true}
+      maxYValue={448}
+      onClick={null}
+      outerPadding={0.35}
       xScale={[Function]}
-      xScaleDataKey="continent"
+      xScaleDataKey="month"
       yScale={[Function]}
-      yScaleDataKey="countries" />
+      yScaleDataKey="price" />
   </BpkChartMargin>
 </svg>
 `;
@@ -230,16 +270,17 @@ exports[`BpkBarchart should render with "title" prop 1`] = `
 <svg
   className="bpk-barchart"
   height={200}
+  title="Countries on each continent"
   width={200}
   xmlns="http://www.w3.org/2000/svg">
   <BpkBarchartDefs />
   <BpkChartMargin
     margin={
       Object {
-        "bottom": 30,
-        "left": 40,
-        "right": 20,
-        "top": 10,
+        "bottom": 48,
+        "left": 78,
+        "right": 0,
+        "top": 6,
       }
     }>
     <BpkChartAxis
@@ -247,10 +288,10 @@ exports[`BpkBarchart should render with "title" prop 1`] = `
       label={null}
       margin={
         Object {
-          "bottom": 30,
-          "left": 40,
-          "right": 20,
-          "top": 10,
+          "bottom": 48,
+          "left": 78,
+          "right": 0,
+          "top": 6,
         }
       }
       numTicks={null}
@@ -265,10 +306,10 @@ exports[`BpkBarchart should render with "title" prop 1`] = `
       label={null}
       margin={
         Object {
-          "bottom": 30,
-          "left": 40,
-          "right": 20,
-          "top": 10,
+          "bottom": 48,
+          "left": 78,
+          "right": 0,
+          "top": 6,
         }
       }
       numTicks={null}
@@ -282,98 +323,72 @@ exports[`BpkBarchart should render with "title" prop 1`] = `
       data={
         Array [
           Object {
-            "continent": "North America",
-            "countries": 3,
+            "month": "Jan",
+            "price": 305,
           },
           Object {
-            "continent": "South America",
-            "countries": 13,
+            "month": "Feb",
+            "price": 348,
           },
           Object {
-            "continent": "Europe",
-            "countries": 47,
+            "month": "Mar",
+            "price": 418,
           },
           Object {
-            "continent": "Africa",
-            "countries": 44,
+            "month": "Apr",
+            "price": 448,
           },
           Object {
-            "continent": "Asia",
-            "countries": 50,
+            "month": "May",
+            "price": 344,
           },
           Object {
-            "continent": "Australia",
-            "countries": 1,
+            "month": "Jun",
+            "price": 322,
           },
           Object {
-            "continent": "Antartica",
-            "countries": 0,
+            "month": "Jul",
+            "price": 340,
+          },
+          Object {
+            "month": "Aug",
+            "price": 327,
+          },
+          Object {
+            "month": "Sep",
+            "price": 444,
+          },
+          Object {
+            "month": "Oct",
+            "price": 422,
+          },
+          Object {
+            "month": "Nov",
+            "price": 344,
+          },
+          Object {
+            "month": "Dec",
+            "price": 301,
           },
         ]
       }
       height={200}
+      innerPadding={0.35}
       margin={
         Object {
-          "bottom": 30,
-          "left": 40,
-          "right": 20,
-          "top": 10,
+          "bottom": 48,
+          "left": 78,
+          "right": 0,
+          "top": 6,
         }
       }
-      maxYValue={50}
-      onClick={[Function]}
-      padding={0.35}
-      rounded={true}
+      maxYValue={448}
+      onClick={null}
+      outerPadding={0}
       xScale={[Function]}
-      xScaleDataKey="continent"
+      xScaleDataKey="month"
       yScale={[Function]}
-      yScaleDataKey="countries" />
-    <BpkChartTitle
-      data={
-        Array [
-          Object {
-            "continent": "North America",
-            "countries": 3,
-          },
-          Object {
-            "continent": "South America",
-            "countries": 13,
-          },
-          Object {
-            "continent": "Europe",
-            "countries": 47,
-          },
-          Object {
-            "continent": "Africa",
-            "countries": 44,
-          },
-          Object {
-            "continent": "Asia",
-            "countries": 50,
-          },
-          Object {
-            "continent": "Australia",
-            "countries": 1,
-          },
-          Object {
-            "continent": "Antartica",
-            "countries": 0,
-          },
-        ]
-      }
-      margin={
-        Object {
-          "bottom": 30,
-          "left": 40,
-          "right": 20,
-          "top": 10,
-        }
-      }
-      width={140}
-      xScale={[Function]}
-      xScaleDataKey="continent">
-      Countries on each continent
-    </BpkChartTitle>
+      yScaleDataKey="price" />
   </BpkChartMargin>
 </svg>
 `;

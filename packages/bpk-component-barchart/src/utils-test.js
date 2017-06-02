@@ -1,7 +1,8 @@
 import { scaleBand } from 'd3-scale';
 import {
   center,
-  identity
+  identity,
+  remToPx,
 } from './utils';
 import data from '../data.json';
 
@@ -18,7 +19,7 @@ describe('utils', () => {
   });
 
   describe('center', () => {
-    const domain = data.continentCountries.map(c => c.continent);
+    const domain = data.prices.map(c => c.month);
     const scale = scaleBand().domain(domain).range([0, 100]);
     const scaleRound = scaleBand().domain(domain).rangeRound([0, 100]);
 
@@ -28,16 +29,25 @@ describe('utils', () => {
 
     it('should return the exact band center', () => {
       const position = center(scale);
-      expect(position(domain[0])).not.toBe(7);
-      expect(Math.round(position(domain[0]))).toBe(7);
-      expect(position(domain[1])).not.toBe(21);
-      expect(Math.round(position(domain[1]))).toBe(21);
+      expect(position(domain[0])).not.toBe(4);
+      expect(Math.round(position(domain[0]))).toBe(4);
+      expect(position(domain[1])).not.toBe(13);
+      expect(Math.round(position(domain[1]))).toBe(13);
     });
 
     it('should return the rounded band center for a rounded range', () => {
       const position = center(scaleRound);
-      expect(position(domain[0])).toBe(8);
-      expect(position(domain[1])).toBe(22);
+      expect(position(domain[0])).toBe(6);
+      expect(position(domain[1])).toBe(14);
+    });
+  });
+
+  describe('remToPx', () => {
+    it('should transform rem strings into px numbers', () => {
+      expect(typeof remToPx('1rem') === 'number').toBe(true);
+      expect(remToPx('1rem')).toBe(16);
+      expect(remToPx('1.5rem')).toBe(24);
+      expect(remToPx('.5rem')).toBe(8);
     });
   });
 });
