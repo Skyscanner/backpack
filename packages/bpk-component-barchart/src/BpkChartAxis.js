@@ -74,18 +74,18 @@ const BpkChartAxis = (props) => {
 
   return (
     <g
-      className={`bpk-barchart__axis bpk-barchart__axis--${orientation}`}
+      className={`bpk-chart__axis bpk-chart__axis--${orientation}`}
       {...containerProps}
       {...rest}
     >
       {ticks.map((tick, i) => (
         <g
-          className="bpk-barchart__axis-tick--group"
+          className="bpk-chart__axis-tick--group"
           transform={`translate(${tickPosition(tick).join(', ')})`}
           key={`${orientation}axis${i.toString()}`}
         >
           <text
-            className="bpk-barchart__axis-tick--text"
+            className="bpk-chart__axis-tick--text"
             {...textProps}
           >
             {tickValue(tick, i)}
@@ -93,7 +93,7 @@ const BpkChartAxis = (props) => {
         </g>
       ))}
       { label && <text
-        className={`bpk-barchart__axis-label bpk-barchart__axis-label--${orientation}`}
+        className={`bpk-chart__axis-label bpk-chart__axis-label--${orientation}`}
         textAnchor="middle"
         {...labelProps}
       >{ label }</text> }

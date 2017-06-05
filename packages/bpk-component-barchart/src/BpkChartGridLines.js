@@ -27,7 +27,7 @@ const BpkChartGridLines = (props) => {
 
   const toLine = (tick, i) => (
     <line
-      className={`bpk-barchart__grid-line bpk-barchart__grid-line--${orientation}`}
+      className={`bpk-chart__grid-line bpk-chart__grid-line--${orientation}`}
       key={`${orientation}gridline${i.toString()}`}
       {...lineProps(tick)}
       {...rest}
@@ -35,7 +35,7 @@ const BpkChartGridLines = (props) => {
   );
 
   return (
-    <g className={`bpk-barchart__grid-lines bpk-barchart__grid-lines--${orientation}`}>
+    <g className={`bpk-chart__grid-lines bpk-chart__grid-lines--${orientation}`}>
       {ticks.map(toLine)}
     </g>
   );

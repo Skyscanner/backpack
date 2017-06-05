@@ -26,10 +26,8 @@ class BpkBarchart extends Component {
       height: props.initialHeight,
     };
 
-    this.maxYValue = null;
     this.xScale = scaleBand();
     this.yScale = scaleLinear();
-    this.transformedData = null;
 
     this.updateDimensions = this.updateDimensions.bind(this);
     this.onWindowResize = debounce(this.updateDimensions, 100);
@@ -76,8 +74,8 @@ class BpkBarchart extends Component {
       ...rest
     } = this.props;
 
-    this.transformedData = applyArrayRTLTransform(data);
-    this.transformedMargin = applyDirectionalRTLTransform({
+    const transformedData = applyArrayRTLTransform(data);
+    const margin = applyDirectionalRTLTransform({
       top: spacing,
       left: yAxisMargin,
       right: 0,
@@ -87,13 +85,12 @@ class BpkBarchart extends Component {
     const classNames = ['bpk-barchart'];
     if (className) { classNames.push(className); }
 
-    const { transformedData, transformedMargin, xScale, yScale } = this;
-    const width = this.state.width - yAxisMargin;
-    const height = this.state.height - xAxisMargin - (transformedMargin.top);
+    const width = this.state.width - margin.left - margin.right;
+    const height = this.state.height - margin.bottom - margin.top;
 
-    xScale.rangeRound([0, width]);
-    xScale.domain(transformedData.map(d => d[xScaleDataKey]));
-    yScale.rangeRound([height, 0]);
+    this.xScale.rangeRound([0, width]);
+    this.xScale.domain(transformedData.map(d => d[xScaleDataKey]));
+    this.yScale.rangeRound([height, 0]);
 
     const dataPoints = transformedData.map(d => d[yScaleDataKey]);
     const meanValue =
@@ -107,7 +104,7 @@ class BpkBarchart extends Component {
         )
       : maxYValue;
 
-    yScale.domain([0, this.maxYValue]);
+    this.yScale.domain([0, this.maxYValue]);
 
     return (
       <svg
@@ -120,14 +117,14 @@ class BpkBarchart extends Component {
       >
         <BpkBarchartDefs />
         <BpkChartMargin
-          margin={transformedMargin}
+          margin={margin}
         >
           <BpkChartAxis
             orientation={ORIENTATION_Y}
             width={this.state.width}
             height={this.state.height}
-            margin={transformedMargin}
-            scale={yScale}
+            margin={margin}
+            scale={this.yScale}
             tickValue={yAxisTickValue}
             numTicks={yAxisNumTicks}
             label={yAxisLabel}
@@ -136,8 +133,8 @@ class BpkBarchart extends Component {
             orientation={ORIENTATION_X}
             width={this.state.width}
             height={this.state.height}
-            margin={transformedMargin}
-            scale={xScale}
+            margin={margin}
+            scale={this.xScale}
             tickValue={xAxisTickValue}
             tickEvery={xAxisTickEvery}
             tickOffset={xAxisTickOffset}
@@ -146,16 +143,16 @@ class BpkBarchart extends Component {
           { showGridlines && <BpkChartGridLines
             orientation={ORIENTATION_Y}
             height={this.state.height}
-            margin={transformedMargin}
-            scale={yScale}
+            margin={margin}
+            scale={this.yScale}
             width={this.state.width}
           /> }
           <BpkBarchartBars
             height={this.state.height}
-            margin={transformedMargin}
+            margin={margin}
             data={transformedData}
-            xScale={xScale}
-            yScale={yScale}
+            xScale={this.xScale}
+            yScale={this.yScale}
             xScaleDataKey={xScaleDataKey}
             yScaleDataKey={yScaleDataKey}
             maxYValue={this.maxYValue}
