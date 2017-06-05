@@ -1,86 +1,102 @@
 {
-  "example1": [
+  "prices": [
     {
-      "value": 11,
-      "label": "1"
+      "month": "Jan",
+      "price": 305
     },
     {
-      "value": 13,
-      "label": "2"
+      "month": "Feb",
+      "price": 348
     },
     {
-      "value": 5,
-      "label": "3"
+      "month": "Mar",
+      "price": 418
     },
     {
-      "value": 16,
-      "label": "4"
+      "month": "Apr",
+      "price": 448
     },
     {
-      "value": 4,
-      "label": "5"
+      "month": "May",
+      "price": 344
     },
     {
-      "value": 19,
-      "label": "6"
+      "month": "Jun",
+      "price": 322
     },
     {
-      "value": 10,
-      "label": "7"
+      "month": "Jul",
+      "price": 340
     },
     {
-      "value": 5,
-      "label": "8"
+      "month": "Aug",
+      "price": 327
     },
     {
-      "value": 8,
-      "label": "9"
+      "month": "Sep",
+      "price": 444
     },
     {
-      "value": 3,
-      "label": "10"
+      "month": "Oct",
+      "price": 422
+    },
+    {
+      "month": "Nov",
+      "price": 344
+    },
+    {
+      "month": "Dec",
+      "price": 301
     }
   ],
-  "example2": [
+  "prices2": [
     {
-      "value": 11,
-      "label": "1"
+      "month": "Jan",
+      "price": 305
     },
     {
-      "value": 13,
-      "label": "2"
+      "month": "Feb",
+      "price": 348
     },
     {
-      "value": 75,
-      "label": "3"
+      "month": "Mar",
+      "price": 418
     },
     {
-      "value": 16,
-      "label": "4"
+      "month": "Apr",
+      "price": 448
     },
     {
-      "value": 4,
-      "label": "5"
+      "month": "May",
+      "price": 344
     },
     {
-      "value": 19,
-      "label": "6"
+      "month": "Jun",
+      "price": 322
     },
     {
-      "value": 45,
-      "label": "7"
+      "month": "Jul",
+      "price": 840
     },
     {
-      "value": 5,
-      "label": "8"
+      "month": "Aug",
+      "price": 927
     },
     {
-      "value": 8,
-      "label": "9"
+      "month": "Sep",
+      "price": 444
     },
     {
-      "value": 3,
-      "label": "10"
+      "month": "Oct",
+      "price": 422
+    },
+    {
+      "month": "Nov",
+      "price": 344
+    },
+    {
+      "month": "Dec",
+      "price": 601
     }
   ]
 }

@@ -1,0 +1,23 @@
+@import '~bpk-tokens';
+@import '~bpk-mixins/index';
+
+.bpk-chart {
+  &__axis-tick {
+    &--text {
+      fill: $bpk-color-gray-500;
+
+      @include bpk-text-sm;
+    }
+  }
+
+  &__axis-label {
+    fill: $bpk-color-gray-500;
+
+    @include bpk-text-sm;
+  }
+
+  &__grid-line {
+    stroke: $bpk-color-gray-100;
+    shape-rendering: crispEdges;
+  }
+}

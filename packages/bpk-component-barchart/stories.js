@@ -1,281 +1,200 @@
-// scrolling begthavor
-// color states
-// show example of rounded corners being the height of the smallest
-// RTL and accessibility (somethign backpack could do)
-
 import React from 'react';
+import { number } from 'prop-types';
 import { storiesOf } from '@kadira/storybook';
-import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
-import BpkContentContainer from 'bpk-component-content-container';
 import BpkHeading from 'bpk-component-heading';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
+import { lineHeightSm } from 'bpk-tokens/tokens/base.es6';
+import { scaleLinear, scaleBand } from 'd3-scale';
+import { remToPx } from './src/utils';
 
-import {
-  BpkBarchart,
-  BpkBarchartTitle,
-  BpkBarchartBars,
-  BpkBarchartXAxis,
-  BpkBarchartYAxis,
-  BpkBarchartXGridLines,
-  BpkBarchartYGridLines,
-  BpkBarchartYAxisLabel,
-  BpkBarchartXAxisLabel,
+import BpkBarchart, {
+  BpkChartGridLines,
+  BpkChartAxis,
+  BpkChartMargin,
 } from './index';
+
+import { ORIENTATION_X, ORIENTATION_Y } from './src/orientation';
 
 const EnhancedBarchart = updateOnDirectionChange(BpkBarchart);
 
 const data = require('./data');
 
-const getMobileChart = tickEvery => (
-  <EnhancedBarchart
-    height={300}
-    data={data.example1}
-    xScaleDataKey="label"
-    yScaleDataKey="value"
-    style={{
-      width: '100%',
-      maxWidth: '700px',
-      minWidth: '100px',
-    }}
-    margin={{
-      top: 5,
-      right: 0,
-      bottom: 20,
-      left: 20,
-    }}
+const margin = { top: 0, left: 40, bottom: 40, right: 0 };
+
+const Gridlines = ({ size, ...rest }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
   >
-    <BpkBarchartBars />
-    <BpkBarchartXAxis
-      tickEvery={tickEvery}
-      tickValue={tick => `Label ${tick}`}
-    />
-    <BpkBarchartYAxis />
-  </EnhancedBarchart>
+    <BpkChartMargin margin={margin}>
+      <BpkChartAxis
+        orientation={ORIENTATION_X}
+        height={size}
+        width={size}
+        margin={margin}
+        {...rest}
+      />
+      <BpkChartAxis
+        orientation={ORIENTATION_Y}
+        width={size}
+        height={size}
+        margin={margin}
+        {...rest}
+      />
+      <BpkChartGridLines
+        orientation={ORIENTATION_X}
+        width={size}
+        height={size}
+        margin={margin}
+        {...rest}
+      />
+      <BpkChartGridLines
+        orientation={ORIENTATION_Y}
+        width={size}
+        height={size}
+        margin={margin}
+        {...rest}
+      />
+    </BpkChartMargin>
+  </svg>
 );
 
+Gridlines.propTypes = { size: number.isRequired };
+
 storiesOf('bpk-component-barchart', module)
+  .add('Axes and Gridlines', () => {
+    const dataset = [
+      [5, 20], [480, 90], [250, 50], [100, 33], [330, 95],
+      [410, 12], [475, 44], [25, 67], [85, 21], [220, 88],
+    ];
+    const size = 440;
+    const scale = scaleLinear()
+      .domain([5, 480]).range([0, size - 40]);
+    const scale2 = scaleBand()
+      .domain(dataset.map(d => d[0])).range([0, size - 40]);
+
+    return (
+      <div>
+        <BpkHeading level="h3">Linear scale</BpkHeading>
+        <Gridlines
+          scale={scale}
+          size={size}
+        />
+        <Gridlines
+          scale={scale}
+          size={size}
+          numTicks={2}
+        />
+        <BpkHeading level="h3">Band scale</BpkHeading>
+        <Gridlines
+          scale={scale2}
+          size={size}
+        />
+        <Gridlines
+          scale={scale2}
+          size={size}
+          tickEvery={2}
+        />
+        <Gridlines
+          scale={scale2}
+          size={size}
+          tickEvery={2}
+          tickOffset={1}
+        />
+      </div>
+    );
+  })
   .add('Default', () => (
     <EnhancedBarchart
-      width={500}
-      height={300}
-      data={data.example1}
-      xScaleDataKey="label"
-      yScaleDataKey="value"
-      margin={{
-        top: 0,
-        right: 0,
-        bottom: 20,
-        left: 20,
-      }}
+      initialWidth={500}
+      initialHeight={300}
+      data={data.prices}
+      xScaleDataKey="month"
+      yScaleDataKey="price"
       style={{
-        width: '100%',
         maxWidth: '580px',
-        height: '300px',
       }}
-    >
-      <BpkBarchartXAxis />
-      <BpkBarchartYAxis />
-      <BpkBarchartBars />
-    </EnhancedBarchart>
-  ))
-  .add('Title', () => (
-    <EnhancedBarchart
-      width={580}
-      height={300}
-      data={data.example1}
-      xScaleDataKey="label"
-      yScaleDataKey="value"
-      margin={{
-        top: 40,
-        right: 60,
-        bottom: 20,
-        left: 30,
-      }}
-      style={{
-        width: '100%',
-        maxWidth: '580px',
-        height: '300px',
-      }}
-    >
-      <BpkBarchartTitle>Chart title</BpkBarchartTitle>
-      <BpkBarchartXAxis />
-      <BpkBarchartYAxis />
-      <BpkBarchartBars />
-    </EnhancedBarchart>
+      xAxisLabel="Month"
+      yAxisLabel="Average Price (£)"
+    />
   ))
   .add('Outliers', () => (
     <EnhancedBarchart
-      width={500}
-      height={300}
-      data={data.example2}
-      xScaleDataKey="label"
-      yScaleDataKey="value"
-      margin={{
-        top: 0,
-        right: 0,
-        bottom: 20,
-        left: 20,
-      }}
+      initialWidth={500}
+      initialHeight={300}
+      data={data.prices2}
+      xScaleDataKey="month"
+      yScaleDataKey="price"
       style={{
-        width: '100%',
         maxWidth: '580px',
-        height: '300px',
       }}
-      outlierPercentage={40}
-    >
-      <BpkBarchartXAxis />
-      <BpkBarchartYAxis />
-      <BpkBarchartBars />
-    </EnhancedBarchart>
+      xAxisLabel="Month"
+      yAxisLabel="Average Price (£)"
+      outlierPercentage={25}
+    />
   ))
   .add('Custom ticks', () => (
     <EnhancedBarchart
-      width={500}
-      height={300}
-      data={data.example1}
-      xScaleDataKey="label"
-      yScaleDataKey="value"
-      margin={{
-        top: 0,
-        right: 0,
-        bottom: 20,
-        left: 20,
-      }}
+      initialWidth={500}
+      initialHeight={300}
+      data={data.prices}
+      xScaleDataKey="month"
+      yScaleDataKey="price"
       style={{
-        width: '100%',
         maxWidth: '580px',
-        height: '300px',
       }}
-    >
-      <BpkBarchartXAxis tickEvery={2} tickOffset={1} />
-      <BpkBarchartYAxis ticks={3} />
-      <BpkBarchartBars />
-    </EnhancedBarchart>
+      xAxisLabel="Month"
+      yAxisLabel="Average Price (£)"
+      yAxisNumTicks={3}
+      xAxisTickEvery={2}
+      xAxisTickOffset={1}
+    />
   ))
-  .add('Axis and tick labels', () => (
+  .add('Custom tick labels', () => (
     <EnhancedBarchart
-      width={500}
-      height={300}
-      data={data.example1}
-      xScaleDataKey="label"
-      yScaleDataKey="value"
-      margin={{
-        top: 0,
-        right: 0,
-        bottom: 60,
-        left: 60,
-      }}
+      initialWidth={500}
+      initialHeight={300}
+      data={data.prices}
+      xScaleDataKey="month"
+      yScaleDataKey="price"
       style={{
-        width: '100%',
         maxWidth: '580px',
-        height: '300px',
       }}
-    >
-      <BpkBarchartXAxis
-        tickValue={tick => (
-          <tspan>
-            <tspan x="0" y="0">
-              {tick}
-            </tspan>
-            <tspan x="0" y="16">
-              {tick <= Math.floor(data.length / 2) ? 'Low' : 'High'}
-            </tspan>
-          </tspan>
-        )}
-      >
-        <BpkBarchartXAxisLabel>X Axis Label</BpkBarchartXAxisLabel>
-      </BpkBarchartXAxis>
-      <BpkBarchartYAxis tickValue={tick => `${tick}%`}>
-        <BpkBarchartYAxisLabel>Y Axis Label</BpkBarchartYAxisLabel>
-      </BpkBarchartYAxis>
-      <BpkBarchartBars />
-    </EnhancedBarchart>
+      xAxisLabel="Month"
+      xAxisMargin={(3 * remToPx(lineHeightSm)) + 12}
+      xAxisTickValue={(tick) => {
+        let season = '❄️';
+        if (['Mar', 'Apr', 'May'].indexOf(tick) > -1) { season = '🌻'; }
+        if (['Jun', 'Jul', 'Aug'].indexOf(tick) > -1) { season = '☀️'; }
+        if (['Sep', 'Oct', 'Nov'].indexOf(tick) > -1) { season = '🍁'; }
+        return ([
+          <tspan x="0" dy="0" style={{ fontWeight: 'bold' }} key="month">
+            {tick}
+          </tspan>,
+          <tspan x="0" dy={remToPx(lineHeightSm)} key="season">
+            { season }
+          </tspan>,
+          <tspan key="ltr">&lrm;</tspan>,
+        ]);
+      }}
+      yAxisLabel="Average Price"
+      yAxisMargin={4 * remToPx(lineHeightSm)}
+      yAxisTickValue={v => `£${v}`}
+    />
   ))
   .add('Grid lines', () => (
-    <BpkContentContainer>
-      <BpkHeading level="h2">X Grid lines</BpkHeading>
-      <EnhancedBarchart
-        width={500}
-        height={300}
-        data={data.example1}
-        xScaleDataKey="label"
-        yScaleDataKey="value"
-        margin={{
-          top: 0,
-          right: 0,
-          bottom: 20,
-          left: 20,
-        }}
-        style={{
-          width: '100%',
-          maxWidth: '580px',
-          height: '300px',
-        }}
-      >
-        <BpkBarchartXAxis />
-        <BpkBarchartYAxis />
-        <BpkBarchartXGridLines />
-        <BpkBarchartBars />
-      </EnhancedBarchart>
-      <BpkHeading level="h2">Y Grid lines</BpkHeading>
-      <EnhancedBarchart
-        width={500}
-        height={300}
-        data={data.example1}
-        xScaleDataKey="label"
-        yScaleDataKey="value"
-        margin={{
-          top: 0,
-          right: 0,
-          bottom: 20,
-          left: 20,
-        }}
-        style={{
-          width: '100%',
-          maxWidth: '580px',
-          height: '300px',
-        }}
-      >
-        <BpkBarchartXAxis />
-        <BpkBarchartYAxis />
-        <BpkBarchartYGridLines />
-        <BpkBarchartBars />
-      </EnhancedBarchart>
-      <BpkHeading level="h2">Combined grid lines</BpkHeading>
-      <EnhancedBarchart
-        width={500}
-        height={300}
-        data={data.example1}
-        xScaleDataKey="label"
-        yScaleDataKey="value"
-        margin={{
-          top: 0,
-          right: 0,
-          bottom: 20,
-          left: 20,
-        }}
-        style={{
-          width: '100%',
-          maxWidth: '580px',
-          height: '300px',
-        }}
-      >
-        <BpkBarchartXAxis />
-        <BpkBarchartYAxis />
-        <BpkBarchartXGridLines />
-        <BpkBarchartYGridLines />
-        <BpkBarchartBars />
-      </EnhancedBarchart>
-    </BpkContentContainer>
-  ))
-  .add('Mobile', () => (
-    <div>
-      <p>Make your window smaller</p>
-      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-        {isActive => isActive && getMobileChart(2)}
-      </BpkBreakpoint>
-      <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
-        {isActive => isActive && getMobileChart()}
-      </BpkBreakpoint>
-    </div>
+    <EnhancedBarchart
+      initialWidth={500}
+      initialHeight={300}
+      data={data.prices}
+      xScaleDataKey="month"
+      yScaleDataKey="price"
+      style={{
+        maxWidth: '580px',
+      }}
+      xAxisLabel="Month"
+      yAxisLabel="Average Price (£)"
+      showGridlines
+    />
   ));

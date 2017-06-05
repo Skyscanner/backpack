@@ -1,61 +1,49 @@
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 import React, { Component } from 'react';
-import scaleBand from 'd3-scale/src/band';
-import scaleLinear from 'd3-scale/src/linear';
+import { scaleLinear, scaleBand } from 'd3-scale';
+import { spacingXs, lineHeightSm } from 'bpk-tokens/tokens/base.es6';
 
-import './bpk-barchart.scss';
-import contextTypes from './contextTypes';
 import BpkBarchartDefs from './BpkBarchartDefs';
-import BpkBarchartMargin from './BpkBarchartMargin';
-import { applyArrayRTLTransform, applyDirectionalRTLTransform } from './RTLtransforms';
+import BpkBarchartBars from './BpkBarchartBars';
+import BpkChartMargin from './BpkChartMargin';
+import BpkChartAxis from './BpkChartAxis';
+import BpkChartGridLines from './BpkChartGridLines';
+import { identity, remToPx } from './utils';
+import { applyArrayRTLTransform, applyMarginRTLTransform } from './RTLtransforms';
+import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
+import './bpk-barchart.scss';
+
+const spacing = remToPx(spacingXs);
+const lineHeight = remToPx(lineHeightSm);
+
+const getMaxYValue = (dataPoints, yScaleDataKey, outlierPercentage) => {
+  const meanValue =
+    dataPoints.reduce((d, t) => d + t, 0) / dataPoints.length;
+  const maxYValue = Math.max(...dataPoints);
+
+  return outlierPercentage !== null
+    ? Math.min(
+        maxYValue,
+        (meanValue * (outlierPercentage / 100)) + meanValue,
+      )
+    : maxYValue;
+};
 
 class BpkBarchart extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      width: 0,
-      height: 0,
+      width: props.initialWidth,
+      height: props.initialHeight,
     };
+
+    this.xScale = scaleBand();
+    this.yScale = scaleLinear();
 
     this.updateDimensions = this.updateDimensions.bind(this);
-
-    this.maxYValue = null;
-    this.xScaler = scaleBand();
-    this.yScaler = scaleLinear();
-    this.transformedData = null;
     this.onWindowResize = debounce(this.updateDimensions, 100);
-  }
-
-  getChildContext() {
-    const { yScaleDataKey, xScaleDataKey } = this.props;
-    const { width, height } = this.state;
-    const { xScaler, yScaler, maxYValue, transformedData, transformedMargin } = this;
-
-    return {
-      // props
-      yScaleDataKey,
-      xScaleDataKey,
-
-      // state
-      width,
-      height,
-
-      // this
-      xScaler,
-      yScaler,
-      maxYValue,
-      data: transformedData,
-      margin: transformedMargin,
-    };
-  }
-
-  componentWillMount() {
-    this.setState({
-      width: Number(this.props.width),
-      height: Number(this.props.height),
-    });
   }
 
   componentDidMount() {
@@ -68,84 +56,147 @@ class BpkBarchart extends Component {
   }
 
   updateDimensions() {
-    if (!this.svg) {
+    if (!this.svgEl) {
       return;
     }
 
-    const { width, height } = this.svg.getBoundingClientRect();
+    const { width, height } = this.svgEl.getBoundingClientRect();
 
     this.setState({ width, height });
   }
 
   render() {
     const {
-      children,
+      className,
       data,
-      margin,
+      initialWidth,
+      initialHeight,
       xScaleDataKey,
       yScaleDataKey,
       outlierPercentage,
+      showGridlines,
+      xAxisMargin,
+      xAxisLabel,
+      xAxisTickValue,
+      xAxisTickOffset,
+      xAxisTickEvery,
+      yAxisMargin,
+      yAxisLabel,
+      yAxisTickValue,
+      yAxisNumTicks,
       ...rest
     } = this.props;
 
-    this.transformedData = applyArrayRTLTransform(data);
-    this.transformedMargin = applyDirectionalRTLTransform(margin);
+    const transformedData = applyArrayRTLTransform(data);
+    const margin = applyMarginRTLTransform({
+      top: spacing,
+      left: yAxisMargin,
+      right: 0,
+      bottom: xAxisMargin,
+    });
 
-    const { transformedData, transformedMargin, xScaler, yScaler } = this;
-    const width = this.state.width - transformedMargin.left - transformedMargin.right;
-    const height = this.state.height - transformedMargin.top - transformedMargin.bottom;
+    const classNames = ['bpk-barchart'];
+    if (className) { classNames.push(className); }
 
-    xScaler.rangeRound([0, width]);
-    xScaler.domain(transformedData.map(d => d[xScaleDataKey]));
-    yScaler.rangeRound([height, 0]);
+    const width = this.state.width - margin.left - margin.right;
+    const height = this.state.height - margin.bottom - margin.top;
+    const maxYValue = getMaxYValue(data.map(d => d[yScaleDataKey]), yScaleDataKey, outlierPercentage);
 
-    const dataPoints = transformedData.map(d => d[yScaleDataKey]);
-    const meanValue =
-      dataPoints.reduce((d, t) => d + t, 0) / transformedData.length;
-    const maxYValue = Math.max(...dataPoints);
-
-    this.maxYValue = outlierPercentage !== null
-      ? Math.min(
-          maxYValue,
-          (meanValue * (outlierPercentage / 100)) + meanValue,
-        )
-      : maxYValue;
-
-    yScaler.domain([0, this.maxYValue]);
+    this.xScale.rangeRound([0, width]);
+    this.xScale.domain(transformedData.map(d => d[xScaleDataKey]));
+    this.yScale.rangeRound([height, 0]);
+    this.yScale.domain([0, maxYValue]);
 
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="bpk-barchart"
-        ref={(svg) => { this.svg = svg; }}
+        className={classNames.join(' ')}
+        width={this.state.width}
+        height={this.state.height}
+        ref={(svgEl) => { this.svgEl = svgEl; }}
         {...rest}
       >
         <BpkBarchartDefs />
-        <BpkBarchartMargin>
-          {children}
-        </BpkBarchartMargin>
+        <BpkChartMargin
+          margin={margin}
+        >
+          <BpkChartAxis
+            orientation={ORIENTATION_Y}
+            width={this.state.width}
+            height={this.state.height}
+            margin={margin}
+            scale={this.yScale}
+            tickValue={yAxisTickValue}
+            numTicks={yAxisNumTicks}
+            label={yAxisLabel}
+          />
+          <BpkChartAxis
+            orientation={ORIENTATION_X}
+            width={this.state.width}
+            height={this.state.height}
+            margin={margin}
+            scale={this.xScale}
+            tickValue={xAxisTickValue}
+            tickEvery={xAxisTickEvery}
+            tickOffset={xAxisTickOffset}
+            label={xAxisLabel}
+          />
+          { showGridlines && <BpkChartGridLines
+            orientation={ORIENTATION_Y}
+            width={this.state.width}
+            height={this.state.height}
+            margin={margin}
+            scale={this.yScale}
+          /> }
+          <BpkBarchartBars
+            height={this.state.height}
+            margin={margin}
+            data={transformedData}
+            xScale={this.xScale}
+            yScale={this.yScale}
+            xScaleDataKey={xScaleDataKey}
+            yScaleDataKey={yScaleDataKey}
+            maxYValue={maxYValue}
+            outerPadding={showGridlines ? undefined : 0}
+          />
+        </BpkChartMargin>
       </svg>
     );
   }
 }
 
 BpkBarchart.propTypes = {
-  children: PropTypes.node.isRequired,
-  ...contextTypes,
+  data: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+  xScaleDataKey: PropTypes.string.isRequired,
+  yScaleDataKey: PropTypes.string.isRequired,
+  xAxisLabel: PropTypes.string.isRequired,
+  yAxisLabel: PropTypes.string.isRequired,
+  initialWidth: PropTypes.number.isRequired,
+  initialHeight: PropTypes.number.isRequired,
+
+  className: PropTypes.string,
+  outlierPercentage: PropTypes.number,
+  showGridlines: PropTypes.bool,
+  xAxisMargin: PropTypes.number,
+  xAxisTickValue: PropTypes.func,
+  xAxisTickOffset: PropTypes.number,
+  xAxisTickEvery: PropTypes.number,
+  yAxisMargin: PropTypes.number,
+  yAxisTickValue: PropTypes.func,
+  yAxisNumTicks: PropTypes.number,
 };
 
 BpkBarchart.defaultProps = {
-  width: null,
-  height: null,
+  className: null,
   outlierPercentage: null,
-  margin: {
-    top: 5,
-    right: 20,
-    bottom: 20,
-    left: 60,
-  },
+  showGridlines: false,
+  xAxisMargin: 2 * (lineHeight + spacing),
+  xAxisTickValue: identity,
+  xAxisTickOffset: 0,
+  xAxisTickEvery: 1,
+  yAxisMargin: (4 * lineHeight) + spacing,
+  yAxisTickValue: identity,
+  yAxisNumTicks: null,
 };
-
-BpkBarchart.childContextTypes = contextTypes;
 
 export default BpkBarchart;

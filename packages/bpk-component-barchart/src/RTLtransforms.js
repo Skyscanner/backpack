@@ -3,19 +3,31 @@ const DIRECTIONS = {
   RTL: 'rtl',
 };
 
-const getDirection = () => (document.documentElement.dir || DIRECTIONS.LTR).toLowerCase();
+const getDirection = () => (
+  ((typeof document !== 'undefined' && document.documentElement.dir) || DIRECTIONS.LTR).toLowerCase()
+);
+
 const isRTL = () => getDirection() === DIRECTIONS.RTL;
-const applyArrayRTLTransform = arr => (isRTL() ? arr.slice(0).reverse() : arr);
+
 const rtlConditionalValue = (ltrValue, rtlValue) => (isRTL() ? rtlValue : ltrValue);
 
-const applyDirectionalRTLTransform = (obj) => {
+const applyArrayRTLTransform = arr => (isRTL() ? arr.slice(0).reverse() : arr);
+
+const applyMarginRTLTransform = (obj) => {
   if (!isRTL()) {
     return obj;
   }
-  const transformedObject = { ...obj };
-  transformedObject.left = obj.right;
-  transformedObject.right = obj.left;
-  return transformedObject;
+  const { left, right, ...rest } = obj;
+  return {
+    left: right,
+    right: left,
+    ...rest,
+  };
 };
 
-export { applyArrayRTLTransform, rtlConditionalValue, applyDirectionalRTLTransform, isRTL };
+export {
+  applyArrayRTLTransform,
+  applyMarginRTLTransform,
+  rtlConditionalValue,
+  isRTL,
+};

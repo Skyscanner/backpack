@@ -956,21 +956,6 @@
       "resolved": "https://registry.npmjs.org/boom/-/boom-2.10.1.tgz",
       "dev": true
     },
-    "bpk-mixins": {
-      "version": "13.1.0",
-      "from": "bpk-mixins@latest",
-      "resolved": "https://registry.npmjs.org/bpk-mixins/-/bpk-mixins-13.1.0.tgz"
-    },
-    "bpk-svgs": {
-      "version": "5.3.6",
-      "from": "bpk-svgs@>=5.3.6 <6.0.0",
-      "resolved": "https://registry.npmjs.org/bpk-svgs/-/bpk-svgs-5.3.6.tgz"
-    },
-    "bpk-tokens": {
-      "version": "21.1.0",
-      "from": "bpk-tokens@>=21.1.0 <22.0.0",
-      "resolved": "https://registry.npmjs.org/bpk-tokens/-/bpk-tokens-21.1.0.tgz"
-    },
     "brace-expansion": {
       "version": "1.1.6",
       "from": "brace-expansion@>=1.0.0 <2.0.0",
@@ -1898,9 +1883,9 @@
       "dev": true
     },
     "domhandler": {
-      "version": "2.3.0",
+      "version": "2.4.1",
       "from": "domhandler@>=2.3.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/domhandler/-/domhandler-2.3.0.tgz",
+      "resolved": "https://registry.npmjs.org/domhandler/-/domhandler-2.4.1.tgz",
       "dev": true
     },
     "domutils": {
@@ -2065,9 +2050,15 @@
       "dev": true
     },
     "enzyme": {
-      "version": "2.7.0",
-      "from": "enzyme@2.7.0",
-      "resolved": "https://registry.npmjs.org/enzyme/-/enzyme-2.7.0.tgz",
+      "version": "2.8.2",
+      "from": "enzyme@>=2.8.2 <3.0.0",
+      "resolved": "https://registry.npmjs.org/enzyme/-/enzyme-2.8.2.tgz",
+      "dev": true
+    },
+    "enzyme-to-json": {
+      "version": "1.5.1",
+      "from": "enzyme-to-json@latest",
+      "resolved": "https://registry.npmjs.org/enzyme-to-json/-/enzyme-to-json-1.5.1.tgz",
       "dev": true
     },
     "errno": {
@@ -5695,6 +5686,12 @@
       "resolved": "https://registry.npmjs.org/lodash.isfunction/-/lodash.isfunction-3.0.8.tgz",
       "dev": true
     },
+    "lodash.isnil": {
+      "version": "4.0.0",
+      "from": "lodash.isnil@>=4.0.0 <5.0.0",
+      "resolved": "https://registry.npmjs.org/lodash.isnil/-/lodash.isnil-4.0.0.tgz",
+      "dev": true
+    },
     "lodash.isobject": {
       "version": "2.4.1",
       "from": "lodash.isobject@>=2.4.1 <2.5.0",
@@ -5761,6 +5758,12 @@
       "resolved": "https://registry.npmjs.org/lodash.noop/-/lodash.noop-2.4.1.tgz",
       "dev": true
     },
+    "lodash.omitby": {
+      "version": "4.6.0",
+      "from": "lodash.omitby@>=4.5.0 <5.0.0",
+      "resolved": "https://registry.npmjs.org/lodash.omitby/-/lodash.omitby-4.6.0.tgz",
+      "dev": true
+    },
     "lodash.pairs": {
       "version": "3.0.1",
       "from": "lodash.pairs@>=3.0.0 <4.0.0",
@@ -5771,6 +5774,12 @@
       "version": "4.4.0",
       "from": "lodash.pick@>=4.2.0 <5.0.0",
       "resolved": "https://registry.npmjs.org/lodash.pick/-/lodash.pick-4.4.0.tgz",
+      "dev": true
+    },
+    "lodash.range": {
+      "version": "3.2.0",
+      "from": "lodash.range@>=3.2.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/lodash.range/-/lodash.range-3.2.0.tgz",
       "dev": true
     },
     "lodash.reduce": {
@@ -6389,6 +6398,12 @@
       "version": "1.0.11",
       "from": "object-keys@>=1.0.8 <2.0.0",
       "resolved": "https://registry.npmjs.org/object-keys/-/object-keys-1.0.11.tgz",
+      "dev": true
+    },
+    "object-values": {
+      "version": "1.0.0",
+      "from": "object-values@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/object-values/-/object-values-1.0.0.tgz",
       "dev": true
     },
     "object.assign": {

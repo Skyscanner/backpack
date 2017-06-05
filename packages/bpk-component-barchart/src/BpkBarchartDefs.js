@@ -2,15 +2,15 @@ import React from 'react';
 
 const GRADIENT_ATTRIBUTES = {
   x1: 0,
-  x2: 0,
   y1: 0,
+  x2: 0,
   y2: 1,
 };
 
 const BpkBarchartDefs = () => (
   <defs>
     <linearGradient
-      id="gradient"
+      id="bpk-barchart__def-gradient"
       {...GRADIENT_ATTRIBUTES}
     >
       <stop offset="0" stopColor="white" stopOpacity="0" />
@@ -18,9 +18,8 @@ const BpkBarchartDefs = () => (
     </linearGradient>
     <mask
       id="bpk-barchart__def-mask"
-      maskUnits="userSpaceOnUse"
     >
-      <rect x="0" y="0" width="100%" height="100%" fill="url(#gradient)" />
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#bpk-barchart__def-gradient)" />
     </mask>
   </defs>
 );
