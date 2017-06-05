@@ -16,6 +16,6 @@
   "dependencies": {
     "object-assign": "^4.1.1",
     "prop-types": "^15.5.8",
-    "react-transition-group": "1.0.0"
+    "react-transition-group": "1.1.3"
   }
 }

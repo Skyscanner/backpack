@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing Yet_
+**Fixed:**
+- bpk-react-utils:
+  - Upgraded to `react-transition-group@1.1.3` (no more prop-type warnings)
 
 ## 2017-06-01 - Added 3 icons
 
