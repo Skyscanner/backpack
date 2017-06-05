@@ -39,3 +39,7 @@ describe('BpkBarchart', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 });
+
+// outlier
+// hideXAxisLabel
+// hideYAxisLabel

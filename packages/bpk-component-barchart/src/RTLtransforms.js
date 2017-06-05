@@ -13,7 +13,7 @@ const rtlConditionalValue = (ltrValue, rtlValue) => (isRTL() ? rtlValue : ltrVal
 
 const applyArrayRTLTransform = arr => (isRTL() ? arr.slice(0).reverse() : arr);
 
-const applyDirectionalRTLTransform = (obj) => {
+const applyMarginRTLTransform = (obj) => {
   if (!isRTL()) {
     return obj;
   }
@@ -27,7 +27,7 @@ const applyDirectionalRTLTransform = (obj) => {
 
 export {
   applyArrayRTLTransform,
-  applyDirectionalRTLTransform,
+  applyMarginRTLTransform,
   rtlConditionalValue,
   isRTL,
 };

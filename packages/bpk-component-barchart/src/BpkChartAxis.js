@@ -30,14 +30,14 @@ const getAxisConfig = ({ orientation, margin, height, width, scale }) => {
     };
   }
 
-  const x = rtlConditionalValue(0, width - margin.right);
-  const translateX = rtlConditionalValue(lineHeight - margin.left, margin.right - spacing);
-  const translateY = (height - margin.top - margin.bottom) / 2;
+  const containerTranslateX = rtlConditionalValue(0, width - margin.right);
+  const labelTranslateX = rtlConditionalValue(lineHeight - margin.left, margin.right - spacing);
+  const labelTranslateY = (height - margin.top - margin.bottom) / 2;
 
   return {
     containerProps: {
       textAnchor: 'end',
-      transform: `translate(${x}, 0)`,
+      transform: `translate(${containerTranslateX}, 0)`,
     },
     textProps: {
       y: 0,
@@ -45,7 +45,7 @@ const getAxisConfig = ({ orientation, margin, height, width, scale }) => {
       dy: '0.32em',
     },
     labelProps: {
-      transform: `translate(${translateX}, ${translateY}) rotate(-90)`,
+      transform: `translate(${labelTranslateX}, ${labelTranslateY}) rotate(-90)`,
     },
     tickPosition: tick => [0, position(tick)],
   };

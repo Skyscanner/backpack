@@ -10,12 +10,25 @@ import BpkChartMargin from './BpkChartMargin';
 import BpkChartAxis from './BpkChartAxis';
 import BpkChartGridLines from './BpkChartGridLines';
 import { identity, remToPx } from './utils';
-import { applyArrayRTLTransform, applyDirectionalRTLTransform } from './RTLtransforms';
+import { applyArrayRTLTransform, applyMarginRTLTransform } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import './bpk-barchart.scss';
 
 const spacing = remToPx(spacingXs);
 const lineHeight = remToPx(lineHeightSm);
+
+const getMaxYValue = (dataPoints, yScaleDataKey, outlierPercentage) => {
+  const meanValue =
+    dataPoints.reduce((d, t) => d + t, 0) / dataPoints.length;
+  const maxYValue = Math.max(...dataPoints);
+
+  return outlierPercentage !== null
+    ? Math.min(
+        maxYValue,
+        (meanValue * (outlierPercentage / 100)) + meanValue,
+      )
+    : maxYValue;
+};
 
 class BpkBarchart extends Component {
   constructor(props) {
@@ -43,11 +56,11 @@ class BpkBarchart extends Component {
   }
 
   updateDimensions() {
-    if (!this.svg) {
+    if (!this.svgEl) {
       return;
     }
 
-    const { width, height } = this.svg.getBoundingClientRect();
+    const { width, height } = this.svgEl.getBoundingClientRect();
 
     this.setState({ width, height });
   }
@@ -75,7 +88,7 @@ class BpkBarchart extends Component {
     } = this.props;
 
     const transformedData = applyArrayRTLTransform(data);
-    const margin = applyDirectionalRTLTransform({
+    const margin = applyMarginRTLTransform({
       top: spacing,
       left: yAxisMargin,
       right: 0,
@@ -87,32 +100,20 @@ class BpkBarchart extends Component {
 
     const width = this.state.width - margin.left - margin.right;
     const height = this.state.height - margin.bottom - margin.top;
+    const maxYValue = getMaxYValue(data.map(d => d[yScaleDataKey]), yScaleDataKey, outlierPercentage);
 
     this.xScale.rangeRound([0, width]);
     this.xScale.domain(transformedData.map(d => d[xScaleDataKey]));
     this.yScale.rangeRound([height, 0]);
-
-    const dataPoints = transformedData.map(d => d[yScaleDataKey]);
-    const meanValue =
-      dataPoints.reduce((d, t) => d + t, 0) / transformedData.length;
-    const maxYValue = Math.max(...dataPoints);
-
-    this.maxYValue = outlierPercentage !== null
-      ? Math.min(
-          maxYValue,
-          (meanValue * (outlierPercentage / 100)) + meanValue,
-        )
-      : maxYValue;
-
-    this.yScale.domain([0, this.maxYValue]);
+    this.yScale.domain([0, maxYValue]);
 
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className={classNames.join(' ')}
-        width={initialWidth}
-        height={initialHeight}
-        ref={(svg) => { this.svg = svg; }}
+        width={this.state.width}
+        height={this.state.height}
+        ref={(svgEl) => { this.svgEl = svgEl; }}
         {...rest}
       >
         <BpkBarchartDefs />
@@ -142,10 +143,10 @@ class BpkBarchart extends Component {
           />
           { showGridlines && <BpkChartGridLines
             orientation={ORIENTATION_Y}
+            width={this.state.width}
             height={this.state.height}
             margin={margin}
             scale={this.yScale}
-            width={this.state.width}
           /> }
           <BpkBarchartBars
             height={this.state.height}
@@ -155,7 +156,7 @@ class BpkBarchart extends Component {
             yScale={this.yScale}
             xScaleDataKey={xScaleDataKey}
             yScaleDataKey={yScaleDataKey}
-            maxYValue={this.maxYValue}
+            maxYValue={maxYValue}
             outerPadding={showGridlines ? undefined : 0}
           />
         </BpkChartMargin>

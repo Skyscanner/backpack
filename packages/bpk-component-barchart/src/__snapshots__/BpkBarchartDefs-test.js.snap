@@ -16,8 +16,7 @@ exports[`BpkBarchartDefs should render correctly 1`] = `
       stopOpacity="1" />
   </linearGradient>
   <mask
-    id="bpk-barchart__def-mask"
-    maskUnits="userSpaceOnUse">
+    id="bpk-barchart__def-mask">
     <rect
       fill="url(#bpk-barchart__def-gradient)"
       height="100%"

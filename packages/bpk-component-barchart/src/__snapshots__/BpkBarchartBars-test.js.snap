@@ -8,14 +8,14 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rx={3}
       ry={3}
       strokeWidth={10.526315789473685}
       width={200}
       x={5.668016194331983}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -24,14 +24,14 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rx={3}
       ry={3}
       strokeWidth={10.526315789473685}
       width={200}
       x={21.86234817813765}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -40,14 +40,14 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rx={3}
       ry={3}
       strokeWidth={10.526315789473685}
       width={200}
       x={38.05668016194332}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -56,14 +56,14 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rx={3}
       ry={3}
       strokeWidth={10.526315789473685}
       width={200}
       x={54.25101214574899}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -72,14 +72,14 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rx={3}
       ry={3}
       strokeWidth={10.526315789473685}
       width={200}
       x={70.44534412955466}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -88,14 +88,14 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rx={3}
       ry={3}
       strokeWidth={10.526315789473685}
       width={200}
       x={86.63967611336032}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -104,14 +104,14 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rx={3}
       ry={3}
       strokeWidth={10.526315789473685}
       width={200}
       x={102.83400809716599}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -120,14 +120,14 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rx={3}
       ry={3}
       strokeWidth={10.526315789473685}
       width={200}
       x={119.02834008097166}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -136,14 +136,14 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rx={3}
       ry={3}
       strokeWidth={10.526315789473685}
       width={200}
       x={135.22267206477733}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -152,14 +152,14 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rx={3}
       ry={3}
       strokeWidth={10.526315789473685}
       width={200}
       x={151.417004048583}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -168,14 +168,14 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rx={3}
       ry={3}
       strokeWidth={10.526315789473685}
       width={200}
       x={167.61133603238866}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -184,14 +184,14 @@ exports[`BpkBarchartBars should render correctly 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rx={3}
       ry={3}
       strokeWidth={10.526315789473685}
       width={200}
       x={183.80566801619432}
-      y={9.473684210526315} />
+      y={17} />
   </g>
 </g>
 `;
@@ -206,7 +206,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       padding={0}
       rx={3}
@@ -214,7 +214,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
       strokeWidth={10.526315789473685}
       width={200}
       x={5.668016194331983}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -223,7 +223,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       padding={0}
       rx={3}
@@ -231,7 +231,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
       strokeWidth={10.526315789473685}
       width={200}
       x={21.86234817813765}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -240,7 +240,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       padding={0}
       rx={3}
@@ -248,7 +248,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
       strokeWidth={10.526315789473685}
       width={200}
       x={38.05668016194332}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -257,7 +257,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       padding={0}
       rx={3}
@@ -265,7 +265,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
       strokeWidth={10.526315789473685}
       width={200}
       x={54.25101214574899}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -274,7 +274,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       padding={0}
       rx={3}
@@ -282,7 +282,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
       strokeWidth={10.526315789473685}
       width={200}
       x={70.44534412955466}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -291,7 +291,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       padding={0}
       rx={3}
@@ -299,7 +299,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
       strokeWidth={10.526315789473685}
       width={200}
       x={86.63967611336032}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -308,7 +308,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       padding={0}
       rx={3}
@@ -316,7 +316,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
       strokeWidth={10.526315789473685}
       width={200}
       x={102.83400809716599}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -325,7 +325,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       padding={0}
       rx={3}
@@ -333,7 +333,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
       strokeWidth={10.526315789473685}
       width={200}
       x={119.02834008097166}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -342,7 +342,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       padding={0}
       rx={3}
@@ -350,7 +350,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
       strokeWidth={10.526315789473685}
       width={200}
       x={135.22267206477733}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -359,7 +359,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       padding={0}
       rx={3}
@@ -367,7 +367,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
       strokeWidth={10.526315789473685}
       width={200}
       x={151.417004048583}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -376,7 +376,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       padding={0}
       rx={3}
@@ -384,7 +384,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
       strokeWidth={10.526315789473685}
       width={200}
       x={167.61133603238866}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -393,7 +393,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       padding={0}
       rx={3}
@@ -401,7 +401,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
       strokeWidth={10.526315789473685}
       width={200}
       x={183.80566801619432}
-      y={9.473684210526315} />
+      y={17} />
   </g>
 </g>
 `;
@@ -416,7 +416,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rounded={false}
       rx={3}
@@ -424,7 +424,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
       strokeWidth={10.526315789473685}
       width={200}
       x={5.668016194331983}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -433,7 +433,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rounded={false}
       rx={3}
@@ -441,7 +441,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
       strokeWidth={10.526315789473685}
       width={200}
       x={21.86234817813765}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -450,7 +450,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rounded={false}
       rx={3}
@@ -458,7 +458,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
       strokeWidth={10.526315789473685}
       width={200}
       x={38.05668016194332}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -467,7 +467,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rounded={false}
       rx={3}
@@ -475,7 +475,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
       strokeWidth={10.526315789473685}
       width={200}
       x={54.25101214574899}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -484,7 +484,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rounded={false}
       rx={3}
@@ -492,7 +492,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
       strokeWidth={10.526315789473685}
       width={200}
       x={70.44534412955466}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -501,7 +501,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rounded={false}
       rx={3}
@@ -509,7 +509,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
       strokeWidth={10.526315789473685}
       width={200}
       x={86.63967611336032}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -518,7 +518,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rounded={false}
       rx={3}
@@ -526,7 +526,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
       strokeWidth={10.526315789473685}
       width={200}
       x={102.83400809716599}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -535,7 +535,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rounded={false}
       rx={3}
@@ -543,7 +543,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
       strokeWidth={10.526315789473685}
       width={200}
       x={119.02834008097166}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -552,7 +552,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rounded={false}
       rx={3}
@@ -560,7 +560,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
       strokeWidth={10.526315789473685}
       width={200}
       x={135.22267206477733}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -569,7 +569,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rounded={false}
       rx={3}
@@ -577,7 +577,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
       strokeWidth={10.526315789473685}
       width={200}
       x={151.417004048583}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -586,7 +586,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rounded={false}
       rx={3}
@@ -594,7 +594,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
       strokeWidth={10.526315789473685}
       width={200}
       x={167.61133603238866}
-      y={9.473684210526315} />
+      y={17} />
   </g>
   <g
     className="bpk-barchart__bar-group">
@@ -603,7 +603,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
     </title>
     <rect
       className="bpk-barchart__bar bpk-barchart__bar--outlier"
-      height={150.5263157894737}
+      height={143}
       onClick={null}
       rounded={false}
       rx={3}
@@ -611,7 +611,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
       strokeWidth={10.526315789473685}
       width={200}
       x={183.80566801619432}
-      y={9.473684210526315} />
+      y={17} />
   </g>
 </g>
 `;

@@ -43,7 +43,6 @@ const BpkBarchartBars = (props) => {
   xScale.paddingInner(innerPadding);
 
   const barWidth = xScale.bandwidth();
-  const heights = data.map(point => getBarHeight(point, props));
 
   return (
     <g className="bpk-barchart__bars-group">
@@ -53,7 +52,8 @@ const BpkBarchartBars = (props) => {
         const outlier = isOutlier(point, props);
         const barClassNames = ['bpk-barchart__bar'];
         if (outlier) { barClassNames.push('bpk-barchart__bar--outlier'); }
-        if (onClick) { barClassNames.push('bpk-barchart__bar--interative'); }
+        if (onClick) { barClassNames.push('bpk-barchart__bar--interactive'); }
+        const barHeight = getBarHeight(point, props);
 
         return (
           <g className="bpk-barchart__bar-group" key={`bar${i.toString()}`}>
@@ -61,9 +61,9 @@ const BpkBarchartBars = (props) => {
             <rect
               className={barClassNames.join(' ')}
               x={x}
-              y={outlier ? y - barWidth : y}
+              y={outlier ? y - borderRadius : y}
               width={barWidth}
-              height={outlier ? heights[i] + barWidth : heights[i]}
+              height={outlier ? barHeight + borderRadius : barHeight}
               rx={borderRadius}
               ry={borderRadius}
               strokeWidth={barWidth}
