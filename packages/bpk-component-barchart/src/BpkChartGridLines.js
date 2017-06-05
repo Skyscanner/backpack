@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center } from './utils';
+import './bpk-chart.scss';
 
 const BpkChartGridLines = (props) => {
   const { orientation, scale, numTicks, width, height, margin, tickOffset, tickEvery, ...rest } = props;

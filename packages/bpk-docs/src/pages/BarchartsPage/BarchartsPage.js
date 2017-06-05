@@ -6,7 +6,6 @@ import barchartReadme from 'bpk-component-barchart/readme.md';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 import data from 'bpk-component-barchart/data.json';
 
-import './barcharts-page.scss';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const EnhancedBarchart = updateOnDirectionChange(BpkBarchart);
@@ -17,7 +16,28 @@ const components = [
     title: 'Default',
     blurb: [
       <BpkParagraph>
-        CHART CHART CHART
+        By default, bar charts come with axis labels.
+      </BpkParagraph>,
+    ],
+    examples: [
+      <EnhancedBarchart
+        initialWidth={500}
+        initialHeight={300}
+        data={data.prices}
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisMargin={60}
+        yAxisLabel="Average price (£)"
+        xAxisLabel="Month"
+      />,
+    ],
+  },
+  {
+    id: 'gridlines',
+    title: 'With gridlines',
+    blurb: [
+      <BpkParagraph>
+        It is possible to show gridlines for each tick on the Y axis.
       </BpkParagraph>,
     ],
     examples: [

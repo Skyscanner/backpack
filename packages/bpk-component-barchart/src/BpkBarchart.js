@@ -22,8 +22,8 @@ class BpkBarchart extends Component {
     super(props);
 
     this.state = {
-      width: Number(props.initialWidth),
-      height: Number(props.initialHeight),
+      width: props.initialWidth,
+      height: props.initialHeight,
     };
 
     this.maxYValue = null;

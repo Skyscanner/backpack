@@ -1,7 +1,7 @@
 exports[`BpkBarchartDefs should render correctly 1`] = `
 <defs>
   <linearGradient
-    id="gradient"
+    id="bpk-barchart__def-gradient"
     x1={0}
     x2={0}
     y1={0}
@@ -19,7 +19,7 @@ exports[`BpkBarchartDefs should render correctly 1`] = `
     id="bpk-barchart__def-mask"
     maskUnits="userSpaceOnUse">
     <rect
-      fill="url(#gradient)"
+      fill="url(#bpk-barchart__def-gradient)"
       height="100%"
       width="100%"
       x="0"
