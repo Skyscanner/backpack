@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-06-05 - Removed the last `prop-type` warning (famous last words)
+
 **Fixed:**
-- bpk-react-utils:
+- bpk-react-utils: 1.4.4 => 1.4.5
   - Upgraded to `react-transition-group@1.1.3` (no more prop-type warnings)
 
 ## 2017-06-01 - Added 3 icons
