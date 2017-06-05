@@ -107,7 +107,7 @@
     "verbose": true,
     "testRegex": "packages/.*-test\\.js$",
     "transformIgnorePatterns": [
-      "node_modules/(?!bpk)"
+      "node_modules\/(?!bpk)"
     ],
     "moduleNameMapper": {
       "react-transition-group/CSSTransitionGroup": "<rootDir>/scripts/jest/cssTransitionGroupStub.js",
