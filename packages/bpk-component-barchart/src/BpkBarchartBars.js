@@ -48,7 +48,6 @@ const BpkBarchartBars = (props) => {
   return (
     <g className="bpk-barchart__bars-group">
       {data.map((point, i) => {
-        console.log(point[xScaleDataKey], xScale(point[xScaleDataKey]));
         const x = xScale(point[xScaleDataKey]);
         const y = getYPos(point, { yScale, yScaleDataKey, maxYValue });
         const outlier = isOutlier(point, props);

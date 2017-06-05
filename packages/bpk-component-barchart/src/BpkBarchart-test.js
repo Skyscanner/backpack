@@ -13,6 +13,8 @@ describe('BpkBarchart', () => {
       <BpkBarchart
         xScaleDataKey="month"
         yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
         initialWidth={size}
         initialHeight={size}
         data={prices}
@@ -26,24 +28,12 @@ describe('BpkBarchart', () => {
       <BpkBarchart
         xScaleDataKey="month"
         yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
         initialWidth={size}
         initialHeight={size}
         data={prices}
         showGridlines
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render with "title" prop', () => {
-    const tree = shallow(
-      <BpkBarchart
-        xScaleDataKey="month"
-        yScaleDataKey="price"
-        initialWidth={size}
-        initialHeight={size}
-        data={prices}
-        title="Countries on each continent"
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();
