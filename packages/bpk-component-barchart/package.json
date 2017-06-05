@@ -1,7 +1,6 @@
 {
-  "private": true,
   "name": "bpk-component-barchart",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Backpack bar chart component.",
   "main": "index.js",
   "repository": {
