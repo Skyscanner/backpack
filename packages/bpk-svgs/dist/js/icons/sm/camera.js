@@ -1,10 +1,10 @@
 import React from "react";
 export default class SVG extends React.Component {
   render() {
-    return <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" style={{
+    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style={{
       width: "1.125rem",
       height: "1.125rem"
-    }} {...this.props}><path d="M16 5h-2l-1.4-1.2c-.5-.5-1.3-.8-2-.8H7.1c-.7 0-1.4.3-2 .8L3.8 5H2c-.5 0-1 .5-1 1v8c0 .5.5 1 1 1h14c.5 0 1-.5 1-1V6c0-.5-.5-1-1-1zm-9-.5c0-.3.2-.5.5-.5h3c.3 0 .5.2.5.5s-.2.5-.5.5h-3c-.3 0-.5-.2-.5-.5zM9 14c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z" /><circle cx="9" cy="10" r="2" /></svg>;
+    }} {...this.props}><path d="M20 7h-2l-2.3-2.2c-.5-.5-1.3-.8-2-.8h-3.4c-.7 0-1.5.3-2 .8L6 7H4c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-10-.5c0-.3.2-.5.5-.5h3c.3 0 .5.2.5.5s-.2.5-.5.5h-3c-.3 0-.5-.2-.5-.5zm2 11c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z" /><circle cx="12" cy="13.5" r="2" /></svg>;
   }
 
 }
