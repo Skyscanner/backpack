@@ -17,11 +17,11 @@ exports[`BpkNudger should render correctly 1`] = `
           "width": "1.125rem",
         }
       }
-      viewBox="0 0 18 18"
+      viewBox="0 0 24 24"
       width="18"
       xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M2.5 11C1.7 11 1 10.3 1 9.5v-1C1 7.7 1.7 7 2.5 7h13c.8 0 1.5.7 1.5 1.5v1c0 .8-.7 1.5-1.5 1.5h-13z" />
+        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2" />
     </svg>
   </button>
   <input
@@ -48,11 +48,11 @@ exports[`BpkNudger should render correctly 1`] = `
           "width": "1.125rem",
         }
       }
-      viewBox="0 0 18 18"
+      viewBox="0 0 24 24"
       width="18"
       xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M14.5 7H11V3.5c0-.8-.7-1.5-1.5-1.5h-1C7.7 2 7 2.7 7 3.5V7H3.5C2.7 7 2 7.7 2 8.5v1c0 .8.7 1.5 1.5 1.5H7v3.5c0 .8.7 1.5 1.5 1.5h1c.8 0 1.5-.7 1.5-1.5V11h3.5c.8 0 1.5-.7 1.5-1.5v-1c0-.8-.7-1.5-1.5-1.5z" />
+        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z" />
     </svg>
   </button>
 </div>
@@ -77,11 +77,11 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
           "width": "1.125rem",
         }
       }
-      viewBox="0 0 18 18"
+      viewBox="0 0 24 24"
       width="18"
       xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M2.5 11C1.7 11 1 10.3 1 9.5v-1C1 7.7 1.7 7 2.5 7h13c.8 0 1.5.7 1.5 1.5v1c0 .8-.7 1.5-1.5 1.5h-13z" />
+        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2" />
     </svg>
   </button>
   <input
@@ -108,11 +108,11 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
           "width": "1.125rem",
         }
       }
-      viewBox="0 0 18 18"
+      viewBox="0 0 24 24"
       width="18"
       xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M14.5 7H11V3.5c0-.8-.7-1.5-1.5-1.5h-1C7.7 2 7 2.7 7 3.5V7H3.5C2.7 7 2 7.7 2 8.5v1c0 .8.7 1.5 1.5 1.5H7v3.5c0 .8.7 1.5 1.5 1.5h1c.8 0 1.5-.7 1.5-1.5V11h3.5c.8 0 1.5-.7 1.5-1.5v-1c0-.8-.7-1.5-1.5-1.5z" />
+        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z" />
     </svg>
   </button>
 </div>
@@ -137,11 +137,11 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
           "width": "1.125rem",
         }
       }
-      viewBox="0 0 18 18"
+      viewBox="0 0 24 24"
       width="18"
       xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M2.5 11C1.7 11 1 10.3 1 9.5v-1C1 7.7 1.7 7 2.5 7h13c.8 0 1.5.7 1.5 1.5v1c0 .8-.7 1.5-1.5 1.5h-13z" />
+        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2" />
     </svg>
   </button>
   <input
@@ -168,11 +168,11 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
           "width": "1.125rem",
         }
       }
-      viewBox="0 0 18 18"
+      viewBox="0 0 24 24"
       width="18"
       xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M14.5 7H11V3.5c0-.8-.7-1.5-1.5-1.5h-1C7.7 2 7 2.7 7 3.5V7H3.5C2.7 7 2 7.7 2 8.5v1c0 .8.7 1.5 1.5 1.5H7v3.5c0 .8.7 1.5 1.5 1.5h1c.8 0 1.5-.7 1.5-1.5V11h3.5c.8 0 1.5-.7 1.5-1.5v-1c0-.8-.7-1.5-1.5-1.5z" />
+        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z" />
     </svg>
   </button>
 </div>
@@ -197,11 +197,11 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
           "width": "1.125rem",
         }
       }
-      viewBox="0 0 18 18"
+      viewBox="0 0 24 24"
       width="18"
       xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M2.5 11C1.7 11 1 10.3 1 9.5v-1C1 7.7 1.7 7 2.5 7h13c.8 0 1.5.7 1.5 1.5v1c0 .8-.7 1.5-1.5 1.5h-13z" />
+        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2" />
     </svg>
   </button>
   <input
@@ -228,11 +228,11 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
           "width": "1.125rem",
         }
       }
-      viewBox="0 0 18 18"
+      viewBox="0 0 24 24"
       width="18"
       xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M14.5 7H11V3.5c0-.8-.7-1.5-1.5-1.5h-1C7.7 2 7 2.7 7 3.5V7H3.5C2.7 7 2 7.7 2 8.5v1c0 .8.7 1.5 1.5 1.5H7v3.5c0 .8.7 1.5 1.5 1.5h1c.8 0 1.5-.7 1.5-1.5V11h3.5c.8 0 1.5-.7 1.5-1.5v-1c0-.8-.7-1.5-1.5-1.5z" />
+        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z" />
     </svg>
   </button>
 </div>
@@ -257,11 +257,11 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
           "width": "1.125rem",
         }
       }
-      viewBox="0 0 18 18"
+      viewBox="0 0 24 24"
       width="18"
       xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M2.5 11C1.7 11 1 10.3 1 9.5v-1C1 7.7 1.7 7 2.5 7h13c.8 0 1.5.7 1.5 1.5v1c0 .8-.7 1.5-1.5 1.5h-13z" />
+        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2" />
     </svg>
   </button>
   <input
@@ -288,11 +288,11 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
           "width": "1.125rem",
         }
       }
-      viewBox="0 0 18 18"
+      viewBox="0 0 24 24"
       width="18"
       xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M14.5 7H11V3.5c0-.8-.7-1.5-1.5-1.5h-1C7.7 2 7 2.7 7 3.5V7H3.5C2.7 7 2 7.7 2 8.5v1c0 .8.7 1.5 1.5 1.5H7v3.5c0 .8.7 1.5 1.5 1.5h1c.8 0 1.5-.7 1.5-1.5V11h3.5c.8 0 1.5-.7 1.5-1.5v-1c0-.8-.7-1.5-1.5-1.5z" />
+        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z" />
     </svg>
   </button>
 </div>
@@ -317,11 +317,11 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
           "width": "1.125rem",
         }
       }
-      viewBox="0 0 18 18"
+      viewBox="0 0 24 24"
       width="18"
       xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M2.5 11C1.7 11 1 10.3 1 9.5v-1C1 7.7 1.7 7 2.5 7h13c.8 0 1.5.7 1.5 1.5v1c0 .8-.7 1.5-1.5 1.5h-13z" />
+        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2" />
     </svg>
   </button>
   <input
@@ -348,11 +348,11 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
           "width": "1.125rem",
         }
       }
-      viewBox="0 0 18 18"
+      viewBox="0 0 24 24"
       width="18"
       xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M14.5 7H11V3.5c0-.8-.7-1.5-1.5-1.5h-1C7.7 2 7 2.7 7 3.5V7H3.5C2.7 7 2 7.7 2 8.5v1c0 .8.7 1.5 1.5 1.5H7v3.5c0 .8.7 1.5 1.5 1.5h1c.8 0 1.5-.7 1.5-1.5V11h3.5c.8 0 1.5-.7 1.5-1.5v-1c0-.8-.7-1.5-1.5-1.5z" />
+        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z" />
     </svg>
   </button>
 </div>
