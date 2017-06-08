@@ -16,7 +16,7 @@ import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 
 export default () => (
   <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-    {isActive => (isActive ? 'Mobile viewport is active' : 'Mobile viewport is inactive')}
+    {isActive => (isActive ? <span>Mobile viewport is active</span> : <span>Mobile viewport is inactive</span>)}
   </BpkBreakpoint>
 );
 ```
