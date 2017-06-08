@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { borderRadiusXs } from 'bpk-tokens/tokens/base.es6';
+import BpkBarchartBar from './BpkBarchartBar';
 import { remToPx } from './utils';
 
 const borderRadius = remToPx(borderRadiusXs);
@@ -36,6 +37,7 @@ const BpkBarchartBars = (props) => {
     maxYValue,
     margin,
     height,
+    BarComponent,
     ...rest
   } = props;
 
@@ -45,32 +47,24 @@ const BpkBarchartBars = (props) => {
   const barWidth = xScale.bandwidth();
 
   return (
-    <g className="bpk-barchart__bars-group">
+    <g className="bpk-barchart__bars">
       {data.map((point, i) => {
         const x = xScale(point[xScaleDataKey]);
         const y = getYPos(point, { yScale, yScaleDataKey, maxYValue });
         const outlier = isOutlier(point, props);
-        const barClassNames = ['bpk-barchart__bar'];
-        if (outlier) { barClassNames.push('bpk-barchart__bar--outlier'); }
-        if (onClick) { barClassNames.push('bpk-barchart__bar--interactive'); }
         const barHeight = getBarHeight(point, props);
-
         return (
-          <g className="bpk-barchart__bar-group" key={`bar${i.toString()}`}>
-            <title>{`${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}</title>
-            <rect
-              className={barClassNames.join(' ')}
-              x={x}
-              y={outlier ? y - borderRadius : y}
-              width={barWidth}
-              height={outlier ? barHeight + borderRadius : barHeight}
-              rx={borderRadius}
-              ry={borderRadius}
-              strokeWidth={barWidth}
-              onClick={onClick ? e => onClick(e, point) : null}
-              {...rest}
-            />
-          </g>
+          <BarComponent
+            key={`bar${i.toString()}`}
+            x={x}
+            y={outlier ? y - borderRadius : y}
+            width={barWidth}
+            height={outlier ? barHeight + borderRadius : barHeight}
+            label={`${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
+            outlier={isOutlier(point, props)}
+            onClick={onClick ? e => onClick(e, point) : null}
+            {...rest}
+          />
         );
       })}
     </g>
@@ -91,6 +85,7 @@ BpkBarchartBars.propTypes = {
     left: PropTypes.number,
     right: PropTypes.number,
   }).isRequired,
+  BarComponent: PropTypes.func,
 
   outerPadding: PropTypes.number,
   innerPadding: PropTypes.number,
@@ -101,6 +96,7 @@ BpkBarchartBars.defaultProps = {
   outerPadding: 0.35,
   innerPadding: 0.35,
   onClick: null,
+  BarComponent: BpkBarchartBar,
 };
 
 export default BpkBarchartBars;

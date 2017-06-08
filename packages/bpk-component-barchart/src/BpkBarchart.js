@@ -84,6 +84,7 @@ class BpkBarchart extends Component {
       yAxisLabel,
       yAxisTickValue,
       yAxisNumTicks,
+      onClick,
       ...rest
     } = this.props;
 
@@ -158,6 +159,7 @@ class BpkBarchart extends Component {
             yScaleDataKey={yScaleDataKey}
             maxYValue={maxYValue}
             outerPadding={showGridlines ? undefined : 0}
+            onClick={onClick}
           />
         </BpkChartMargin>
       </svg>
@@ -184,6 +186,7 @@ BpkBarchart.propTypes = {
   yAxisMargin: PropTypes.number,
   yAxisTickValue: PropTypes.func,
   yAxisNumTicks: PropTypes.number,
+  onClick: PropTypes.func,
 };
 
 BpkBarchart.defaultProps = {
@@ -197,6 +200,7 @@ BpkBarchart.defaultProps = {
   yAxisMargin: (4 * lineHeight) + spacing,
   yAxisTickValue: identity,
   yAxisNumTicks: null,
+  onClick: null,
 };
 
 export default BpkBarchart;

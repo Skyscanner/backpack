@@ -12,8 +12,14 @@
     }
 
     &--interactive {
+      cursor: pointer;
+
       &:hover {
         fill: $bpk-color-blue-500;
+      }
+
+      &:active {
+        fill: $bpk-color-blue-600;
       }
     }
   }

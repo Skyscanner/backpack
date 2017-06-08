@@ -51,6 +51,7 @@ exports[`BpkBarchart should render correctly 1`] = `
       tickValue={[Function]}
       width={200} />
     <BpkBarchartBars
+      BarComponent={[Function]}
       data={
         Array [
           Object {
@@ -115,6 +116,133 @@ exports[`BpkBarchart should render correctly 1`] = `
       }
       maxYValue={448}
       onClick={null}
+      outerPadding={0}
+      xScale={[Function]}
+      xScaleDataKey="month"
+      yScale={[Function]}
+      yScaleDataKey="price" />
+  </BpkChartMargin>
+</svg>
+`;
+
+exports[`BpkBarchart should render with "onClick" prop 1`] = `
+<svg
+  className="bpk-barchart"
+  height={200}
+  width={200}
+  xmlns="http://www.w3.org/2000/svg">
+  <BpkBarchartDefs />
+  <BpkChartMargin
+    margin={
+      Object {
+        "bottom": 48,
+        "left": 78,
+        "right": 0,
+        "top": 6,
+      }
+    }>
+    <BpkChartAxis
+      height={200}
+      label="Average price (£)"
+      margin={
+        Object {
+          "bottom": 48,
+          "left": 78,
+          "right": 0,
+          "top": 6,
+        }
+      }
+      numTicks={null}
+      orientation="y"
+      scale={[Function]}
+      tickEvery={1}
+      tickOffset={0}
+      tickValue={[Function]}
+      width={200} />
+    <BpkChartAxis
+      height={200}
+      label="Month"
+      margin={
+        Object {
+          "bottom": 48,
+          "left": 78,
+          "right": 0,
+          "top": 6,
+        }
+      }
+      numTicks={null}
+      orientation="x"
+      scale={[Function]}
+      tickEvery={1}
+      tickOffset={0}
+      tickValue={[Function]}
+      width={200} />
+    <BpkBarchartBars
+      BarComponent={[Function]}
+      data={
+        Array [
+          Object {
+            "month": "Jan",
+            "price": 305,
+          },
+          Object {
+            "month": "Feb",
+            "price": 348,
+          },
+          Object {
+            "month": "Mar",
+            "price": 418,
+          },
+          Object {
+            "month": "Apr",
+            "price": 448,
+          },
+          Object {
+            "month": "May",
+            "price": 344,
+          },
+          Object {
+            "month": "Jun",
+            "price": 322,
+          },
+          Object {
+            "month": "Jul",
+            "price": 340,
+          },
+          Object {
+            "month": "Aug",
+            "price": 327,
+          },
+          Object {
+            "month": "Sep",
+            "price": 444,
+          },
+          Object {
+            "month": "Oct",
+            "price": 422,
+          },
+          Object {
+            "month": "Nov",
+            "price": 344,
+          },
+          Object {
+            "month": "Dec",
+            "price": 301,
+          },
+        ]
+      }
+      height={200}
+      innerPadding={0.35}
+      margin={
+        Object {
+          "bottom": 48,
+          "left": 78,
+          "right": 0,
+          "top": 6,
+        }
+      }
+      maxYValue={448}
+      onClick={[Function]}
       outerPadding={0}
       xScale={[Function]}
       xScaleDataKey="month"
@@ -193,6 +321,7 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
       tickOffset={0}
       width={200} />
     <BpkBarchartBars
+      BarComponent={[Function]}
       data={
         Array [
           Object {
