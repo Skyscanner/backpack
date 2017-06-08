@@ -20,6 +20,19 @@ describe('BpkCalendarNav', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should disable inputs when disabled', () => {
+    const tree = renderer.create(<BpkCalendarNav
+      month={new Date(2010, 1, 1)}
+      minDate={new Date(2010, 1, 1)}
+      maxDate={new Date(2010, 2, 1)}
+      formatMonth={formatMonth}
+      changeMonthLabel="Change month"
+      disabled
+      id="myCalendarNav"
+    />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should call the onMonthChange callback when nudging/selecting month', () => {
     const onMonthChange = jest.fn(); // TODO bug here
 
