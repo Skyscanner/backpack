@@ -34,6 +34,7 @@ const BpkCalendarNav = (props) => {
     formatMonth,
     onMonthChange,
     changeMonthLabel,
+    disabled,
   } = props;
 
   const baseMonth = startOfMonth(month);
@@ -49,7 +50,7 @@ const BpkCalendarNav = (props) => {
           type="button"
           className="bpk-calendar-nav__button"
           onClick={changeMonth(prevMonth, min, max, onMonthChange)}
-          disabled={!isWithinRange(prevMonth, min, max)}
+          disabled={disabled || !isWithinRange(prevMonth, min, max)}
         >
           <ArrowLeftIcon className="bpk-calendar-nav__icon" />
           <span className="bpk-calendar-nav__text--hidden">{ formatMonth(addMonths(baseMonth, -1)) }</span>
@@ -61,6 +62,7 @@ const BpkCalendarNav = (props) => {
           id={`${id}_select`}
           name="months"
           value={formatIsoMonth(baseMonth)}
+          disabled={disabled}
           onChange={event => onMonthChange(parseIsoDate(event.target.value))}
         >
           { navigatableMonths.map(m => (
@@ -73,7 +75,7 @@ const BpkCalendarNav = (props) => {
           type="button"
           className="bpk-calendar-nav__button"
           onClick={changeMonth(nextMonth, min, max, onMonthChange)}
-          disabled={!isWithinRange(addMonths(baseMonth, 1), min, max)}
+          disabled={disabled || !isWithinRange(addMonths(baseMonth, 1), min, max)}
         >
           <ArrowRightIcon className="bpk-calendar-nav__icon" />
           <span className="bpk-calendar-nav__text--hidden">{ formatMonth(addMonths(baseMonth, 1)) }</span>
@@ -93,10 +95,12 @@ BpkCalendarNav.propTypes = {
   month: PropTypes.instanceOf(Date).isRequired,
   // Optional
   onMonthChange: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 
 BpkCalendarNav.defaultProps = {
   onMonthChange: null,
+  disabled: false,
 };
 
 export default BpkCalendarNav;

@@ -41,6 +41,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
       <select
         aria-invalid={false}
         className="bpk-select"
+        disabled={false}
         id="myCalendar__bpk_calendar_nav_select"
         name="months"
         onChange={[Function]}

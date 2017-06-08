@@ -185,6 +185,7 @@ buttons and a select box.
 | minDate               | Date                 | true     | -                |
 | month                 | Date                 | true     | -                |
 | onMonthChange         | func                 | false    | null             |
+| disabled              | bool                 | false    | false            |
 
 ### BpkCalendarGridHeader
 
