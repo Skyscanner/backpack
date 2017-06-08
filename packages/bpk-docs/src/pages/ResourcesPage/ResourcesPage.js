@@ -9,8 +9,7 @@ import BpkContentContainer from 'bpk-component-content-container';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
 
 /* eslint-disable import/no-webpack-loader-syntax */
-const smallIconsZip = require('!!file?name=[name].[hash].zip!zip-it!./../../../../bpk-svgs/src/icons/sm/icons-sm');
-const largeIconsZip = require('!!file?name=[name].[hash].zip!zip-it!./../../../../bpk-svgs/src/icons/lg/icons-lg');
+const iconsZip = require('!!file?name=[name].[hash].zip!zip-it!./../../../../bpk-svgs/src/icons/icons');
 const coreRgbAse = require('!!file?name=[name].[hash].ase!./../../static/core_rgb.ase');
 const coreRgbClr = require('!!file?name=[name].[hash].clr!./../../static/core_rgb.clr');
 const extendedRgbAse = require('!!file?name=[name].[hash].ase!./../../static/extended_rgb.ase');
@@ -49,10 +48,7 @@ const ResourcesPage = () => (
           <BpkHeading level="h2">Icons</BpkHeading>
           <BpkList>
             <BpkListItem>
-              <BpkLink href={`/${smallIconsZip}`}>Small icons</BpkLink>
-            </BpkListItem>
-            <BpkListItem>
-              <BpkLink href={`/${largeIconsZip}`}>Large icons</BpkLink>
+              <BpkLink href={`/${iconsZip}`}>Icons</BpkLink>
             </BpkListItem>
           </BpkList>
           <BpkHeading level="h2">Sketch</BpkHeading>

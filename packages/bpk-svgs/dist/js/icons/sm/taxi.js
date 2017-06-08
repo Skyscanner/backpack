@@ -1,10 +1,10 @@
 import React from "react";
 export default class SVG extends React.Component {
   render() {
-    return <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" style={{
+    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style={{
       width: "1.125rem",
       height: "1.125rem"
-    }} {...this.props}><path d="M3 14h3v1c0 .6-.4 1-1 1H4c-.6 0-1-.4-1-1v-1zm9 1c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-1h-3v1zm4-5.4V13H2V9.6c0-.8.5-1.4 1.3-1.6L4 5.5C4.2 4.6 5.1 4 6.2 4H7V2h4v2h.8c1.1 0 2 .6 2.3 1.5l.6 2.5c.8.2 1.3.8 1.3 1.6zM4.3 8h9.4l-.6-2.3c-.1-.5-.7-.9-1.3-.9H6.2c-.6 0-1.2.4-1.3.9L4.3 8zM6 10c0-.6-.4-1-1-1s-1 .4-1 1 .4 1 1 1 1-.4 1-1zm8 0c0-.6-.4-1-1-1s-1 .4-1 1 .4 1 1 1 1-.4 1-1z" /></svg>;
+    }} {...this.props}><path d="M4 18h4v2c0 .5-.5 1-1 1H5c-.5 0-1-.5-1-1v-2zm12 2c0 .5.5 1 1 1h2c.5 0 1-.5 1-1v-2h-4v2zm5-8v5H3v-5c0-1.1.9-2 2-2h.2L6 6.6C6.3 5.7 7.3 5 8.4 5H9V3h6v2h.7c1.1 0 2.1.7 2.3 1.6l.7 3.4h.3c1.1 0 2 .9 2 2zM7.2 10h9.7l-.4-2.8c-.1-.3-.4-.5-.8-.5H8.4c-.4 0-.7.2-.8.5L7.2 10zm.8 3.5c0-.8-.7-1.5-1.5-1.5S5 12.7 5 13.5 5.7 15 6.5 15 8 14.3 8 13.5zm11 0c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5.7 1.5 1.5 1.5 1.5-.7 1.5-1.5z" /></svg>;
   }
 
 }

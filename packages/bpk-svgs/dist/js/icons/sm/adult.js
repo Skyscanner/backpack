@@ -1,10 +1,10 @@
 import React from "react";
 export default class SVG extends React.Component {
   render() {
-    return <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" style={{
+    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style={{
       width: "1.125rem",
       height: "1.125rem"
-    }} {...this.props}><path d="M9 4c.8 0 1.5-.7 1.5-1.5S9.8 1 9 1s-1.5.7-1.5 1.5S8.2 4 9 4zm-2.4 7c0 .2.2.4.4.4h.4L8 17h2l.6-5.6h.4c.2 0 .4-.2.4-.4l.6-4.2c.1-1-.6-1.8-1.6-1.8H7.6c-.9 0-1.7.9-1.6 1.8l.6 4.2z" /></svg>;
+    }} {...this.props}><path d="M12 6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3 8.5c0 .3.2.5.5.5h.5l1 7h2l1-7h.5c.3 0 .5-.2.5-.5l.7-5.2c.2-1.2-.8-2.3-2-2.3h-3.4c-1.2 0-2.1 1.1-2 2.3l.7 5.2z" /></svg>;
   }
 
 }

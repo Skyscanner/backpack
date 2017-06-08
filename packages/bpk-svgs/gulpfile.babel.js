@@ -12,6 +12,21 @@ import tokens from 'bpk-tokens/tokens/base.raw.json';
 import svg2react from './tasks/svg2react';
 import svg2datauri, { sassMap, svg2sassvar } from './tasks/svg2datauri';
 
+const remToPx = (value) => {
+  let parsed = null;
+
+  if (/rem$/.test(value)) {
+    parsed = parseFloat(value.replace(/rem/, '')) * 16;
+  }
+
+  return parsed || null;
+};
+
+const smallIconSize = tokens.props.ICON_SIZE_SM.value;
+const smallIconPxSize = remToPx(smallIconSize);
+const largeIconSize = tokens.props.ICON_SIZE_LG.value;
+const largeIconPxSize = remToPx(largeIconSize);
+
 const colors = _(tokens.props)
   .filter({ category: 'colors', type: 'color' })
   .keyBy('name')
@@ -43,7 +58,11 @@ gulp.task('elements', () => {
     .pipe(svgmin({
       plugins: [
         ...svgoCommonPlugins,
-        { removeAttrs: { attrs: ['id', 'class', 'data-name'] } },
+        {
+          removeAttrs: {
+            attrs: ['id', 'class', 'data-name'],
+          },
+        },
       ],
     }))
     .pipe(gulp.dest('src/elements'));
@@ -64,7 +83,11 @@ gulp.task('spinners', () => {
     .pipe(svgmin({
       plugins: [
         ...svgoCommonPlugins,
-        { removeAttrs: { attrs: ['id', 'class', 'data-name', 'fill', 'fill-rule'] } },
+        {
+          removeAttrs: {
+            attrs: ['id', 'class', 'data-name', 'fill', 'fill-rule'],
+          },
+        },
       ],
     }))
     .pipe(gulp.dest('src/spinners'));
@@ -88,40 +111,73 @@ gulp.task('spinners', () => {
 /*
   ICONS
 */
-gulp.task('icons-sm', () => {
-  const optimised = gulp
-    .src('src/icons/sm/**/*.svg')
-    .pipe(svgmin({
-      plugins: [
-        ...svgoCommonPlugins,
-        { removeAttrs: { attrs: ['id', 'class', 'data-name', 'fill', 'fill-rule'] } },
-      ],
-    }))
-    .pipe(gulp.dest('src/icons/sm'));
+gulp.task('icons-common', () => gulp
+  .src('src/icons/**/*.svg')
+  .pipe(svgmin({
+    plugins: [
+      ...svgoCommonPlugins,
+      {
+        removeAttrs: {
+          attrs: ['id', 'class', 'data-name', 'fill', 'fill-rule', 'width', 'height', 'viewBox'],
+        },
+      },
+      {
+        addAttributesToSVGElement: {
+          attribute: `viewBox="0 0 ${largeIconPxSize} ${largeIconPxSize}"`,
+        },
+      },
+    ],
+  }))
+  .pipe(gulp.dest('src/icons')));
 
-  const react = optimised
+gulp.task('icons-sm', ['icons-common'], () => {
+  const svgs = gulp
+    .src('src/icons/**/*.svg');
+
+  const styleAttribute = `style="width:${smallIconSize};height:${smallIconSize}"`;
+
+  const react = svgs
     .pipe(clone())
     .pipe(svgmin({
       plugins: [
-        { addAttributesToSVGElement: {
-          attribute: `style="width:${tokens.props.ICON_SIZE_SM.value};height:${tokens.props.ICON_SIZE_SM.value}"`,
-        } },
-        { sortAttrs: true },
+        {
+          addAttributesToSVGElement: {
+            attribute: `width="${smallIconPxSize}" height="${smallIconPxSize}" ${styleAttribute}`,
+          },
+        },
       ],
     }))
     .pipe(svg2react())
     .pipe(rename({ extname: '.js' }))
     .pipe(gulp.dest('dist/js/icons/sm'));
 
-  const datauri = optimised
+  const datauri = svgs
     .pipe(clone())
+    .pipe(svgmin({
+      plugins: [
+        {
+          addAttributesToSVGElement: {
+            attribute: `width="${smallIconPxSize}" height="${smallIconPxSize}"`,
+          },
+        },
+      ],
+    }))
     .pipe(svg2datauri({ colors }))
     .pipe(concat('_icons-sm.scss'))
     .pipe(sassMap('bpk-icons-sm'))
     .pipe(gulp.dest('dist/scss'));
 
-  const rawDatauri = optimised
+  const rawDatauri = svgs
     .pipe(clone())
+    .pipe(svgmin({
+      plugins: [
+        {
+          addAttributesToSVGElement: {
+            attribute: `width="${smallIconPxSize}" height="${smallIconPxSize}"`,
+          },
+        },
+      ],
+    }))
     .pipe(svg2sassvar())
     .pipe(concat('_icons-no-color-sm.scss'))
     .pipe(sassMap('bpk-icons-no-color-sm'))
@@ -130,40 +186,54 @@ gulp.task('icons-sm', () => {
   return merge(react, datauri, rawDatauri);
 });
 
-gulp.task('icons-lg', () => {
-  const optimised = gulp
-    .src('src/icons/lg/**/*.svg')
-    .pipe(svgmin({
-      plugins: [
-        ...svgoCommonPlugins,
-        { removeAttrs: { attrs: ['id', 'class', 'data-name', 'fill', 'fill-rule'] } },
-      ],
-    }))
-    .pipe(gulp.dest('src/icons/lg'));
+gulp.task('icons-lg', ['icons-common'], () => {
+  const svgs = gulp
+    .src('src/icons/**/*.svg');
 
-  const react = optimised
+  const styleAttribute = `style="width:${largeIconSize};height:${largeIconSize}"`;
+
+  const react = svgs
     .pipe(clone())
     .pipe(svgmin({
       plugins: [
-        { addAttributesToSVGElement: {
-          attribute: `style="width:${tokens.props.ICON_SIZE_LG.value};height:${tokens.props.ICON_SIZE_LG.value}"`,
-        } },
-        { sortAttrs: true },
+        {
+          addAttributesToSVGElement: {
+            attribute: `width="${largeIconPxSize}" height="${largeIconPxSize}" ${styleAttribute}`,
+          },
+        },
       ],
     }))
     .pipe(svg2react())
     .pipe(rename({ extname: '.js' }))
     .pipe(gulp.dest('dist/js/icons/lg'));
 
-  const datauri = optimised
+  const datauri = svgs
     .pipe(clone())
+    .pipe(svgmin({
+      plugins: [
+        {
+          addAttributesToSVGElement: {
+            attribute: `width="${largeIconPxSize}" height="${largeIconPxSize}"`,
+          },
+        },
+      ],
+    }))
     .pipe(svg2datauri({ colors }))
     .pipe(concat('_icons-lg.scss'))
     .pipe(sassMap('bpk-icons-lg'))
     .pipe(gulp.dest('dist/scss'));
 
-  const rawDatauri = optimised
+  const rawDatauri = svgs
     .pipe(clone())
+    .pipe(svgmin({
+      plugins: [
+        {
+          addAttributesToSVGElement: {
+            attribute: `width="${largeIconPxSize}" height="${largeIconPxSize}"`,
+          },
+        },
+      ],
+    }))
     .pipe(svg2sassvar())
     .pipe(concat('_icons-no-color-lg.scss'))
     .pipe(sassMap('bpk-icons-no-color-lg'))
@@ -173,5 +243,3 @@ gulp.task('icons-lg', () => {
 });
 
 gulp.task('default', ['elements', 'spinners', 'icons-sm', 'icons-lg']);
-
-// TODO: include width/height in same line in react components
