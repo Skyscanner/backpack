@@ -2,7 +2,14 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-component-calendar:
+  - `BpkCalendarNav` now accepts a `disabled` prop to disable all navigation elements (buttons and select)
+
+**Fixed:**
+- bpk-component-icon:
+- bpk-svgs:
+  - All icons are now generated from a single source, rather than large and small SVGs
 
 ## 2017-06-05 - Removed the last `prop-type` warning (famous last words)
 
