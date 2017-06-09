@@ -1,5 +1,9 @@
 # Backpack changelog
 
+## UNRELEASED
+
+_Nothing yet_
+
 ## 2017-06-09 - Icon generation from single source, disabled calendar navigation
 
 **Added:**
