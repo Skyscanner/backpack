@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { borderRadiusXs } from 'bpk-tokens/tokens/base.es6';
-import BpkBarchartBar from './BpkBarchartBar';
 import { remToPx } from './utils';
 
 const borderRadius = remToPx(borderRadiusXs);
@@ -28,7 +27,7 @@ const BpkBarchartBars = (props) => {
   const {
     outerPadding,
     innerPadding,
-    onClick,
+    onBarClick,
     data,
     xScaleDataKey,
     yScaleDataKey,
@@ -38,6 +37,7 @@ const BpkBarchartBars = (props) => {
     margin,
     height,
     BarComponent,
+    getBarLabel,
     ...rest
   } = props;
 
@@ -60,9 +60,9 @@ const BpkBarchartBars = (props) => {
             y={outlier ? y - borderRadius : y}
             width={barWidth}
             height={outlier ? barHeight + borderRadius : barHeight}
-            label={`${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
+            label={getBarLabel(point, xScaleDataKey, yScaleDataKey)}
             outlier={isOutlier(point, props)}
-            onClick={onClick ? e => onClick(e, point) : null}
+            onClick={onBarClick ? e => onBarClick(e, point) : null}
             {...rest}
           />
         );
@@ -85,18 +85,18 @@ BpkBarchartBars.propTypes = {
     left: PropTypes.number,
     right: PropTypes.number,
   }).isRequired,
-  BarComponent: PropTypes.func,
+  getBarLabel: PropTypes.func.isRequired,
+  BarComponent: PropTypes.func.isRequired,
 
   outerPadding: PropTypes.number,
   innerPadding: PropTypes.number,
-  onClick: PropTypes.func,
+  onBarClick: PropTypes.func,
 };
 
 BpkBarchartBars.defaultProps = {
   outerPadding: 0.35,
   innerPadding: 0.35,
-  onClick: null,
-  BarComponent: BpkBarchartBar,
+  onBarClick: null,
 };
 
 export default BpkBarchartBars;

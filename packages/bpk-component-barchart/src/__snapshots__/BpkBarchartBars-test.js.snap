@@ -232,6 +232,252 @@ exports[`BpkBarchartBars should render correctly 1`] = `
 </g>
 `;
 
+exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
+<g
+  className="bpk-barchart__bars">
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Jan - 305
+    </title>
+    <rect
+      aria-label="Jan - 305"
+      className="bpk-barchart__bar bpk-barchart__bar--outlier bpk-barchart__bar--interactive"
+      height={143}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      padding={0}
+      role="button"
+      rx={3}
+      ry={3}
+      tabIndex={0}
+      width={200}
+      x={5.668016194331983}
+      y={17} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Feb - 348
+    </title>
+    <rect
+      aria-label="Feb - 348"
+      className="bpk-barchart__bar bpk-barchart__bar--outlier bpk-barchart__bar--interactive"
+      height={143}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      padding={0}
+      role="button"
+      rx={3}
+      ry={3}
+      tabIndex={0}
+      width={200}
+      x={21.86234817813765}
+      y={17} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Mar - 418
+    </title>
+    <rect
+      aria-label="Mar - 418"
+      className="bpk-barchart__bar bpk-barchart__bar--outlier bpk-barchart__bar--interactive"
+      height={143}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      padding={0}
+      role="button"
+      rx={3}
+      ry={3}
+      tabIndex={0}
+      width={200}
+      x={38.05668016194332}
+      y={17} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Apr - 448
+    </title>
+    <rect
+      aria-label="Apr - 448"
+      className="bpk-barchart__bar bpk-barchart__bar--outlier bpk-barchart__bar--interactive"
+      height={143}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      padding={0}
+      role="button"
+      rx={3}
+      ry={3}
+      tabIndex={0}
+      width={200}
+      x={54.25101214574899}
+      y={17} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      May - 344
+    </title>
+    <rect
+      aria-label="May - 344"
+      className="bpk-barchart__bar bpk-barchart__bar--outlier bpk-barchart__bar--interactive"
+      height={143}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      padding={0}
+      role="button"
+      rx={3}
+      ry={3}
+      tabIndex={0}
+      width={200}
+      x={70.44534412955466}
+      y={17} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Jun - 322
+    </title>
+    <rect
+      aria-label="Jun - 322"
+      className="bpk-barchart__bar bpk-barchart__bar--outlier bpk-barchart__bar--interactive"
+      height={143}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      padding={0}
+      role="button"
+      rx={3}
+      ry={3}
+      tabIndex={0}
+      width={200}
+      x={86.63967611336032}
+      y={17} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Jul - 340
+    </title>
+    <rect
+      aria-label="Jul - 340"
+      className="bpk-barchart__bar bpk-barchart__bar--outlier bpk-barchart__bar--interactive"
+      height={143}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      padding={0}
+      role="button"
+      rx={3}
+      ry={3}
+      tabIndex={0}
+      width={200}
+      x={102.83400809716599}
+      y={17} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Aug - 327
+    </title>
+    <rect
+      aria-label="Aug - 327"
+      className="bpk-barchart__bar bpk-barchart__bar--outlier bpk-barchart__bar--interactive"
+      height={143}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      padding={0}
+      role="button"
+      rx={3}
+      ry={3}
+      tabIndex={0}
+      width={200}
+      x={119.02834008097166}
+      y={17} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Sep - 444
+    </title>
+    <rect
+      aria-label="Sep - 444"
+      className="bpk-barchart__bar bpk-barchart__bar--outlier bpk-barchart__bar--interactive"
+      height={143}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      padding={0}
+      role="button"
+      rx={3}
+      ry={3}
+      tabIndex={0}
+      width={200}
+      x={135.22267206477733}
+      y={17} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Oct - 422
+    </title>
+    <rect
+      aria-label="Oct - 422"
+      className="bpk-barchart__bar bpk-barchart__bar--outlier bpk-barchart__bar--interactive"
+      height={143}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      padding={0}
+      role="button"
+      rx={3}
+      ry={3}
+      tabIndex={0}
+      width={200}
+      x={151.417004048583}
+      y={17} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Nov - 344
+    </title>
+    <rect
+      aria-label="Nov - 344"
+      className="bpk-barchart__bar bpk-barchart__bar--outlier bpk-barchart__bar--interactive"
+      height={143}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      padding={0}
+      role="button"
+      rx={3}
+      ry={3}
+      tabIndex={0}
+      width={200}
+      x={167.61133603238866}
+      y={17} />
+  </g>
+  <g
+    className="bpk-barchart__bar-group">
+    <title>
+      Dec - 301
+    </title>
+    <rect
+      aria-label="Dec - 301"
+      className="bpk-barchart__bar bpk-barchart__bar--outlier bpk-barchart__bar--interactive"
+      height={143}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      padding={0}
+      role="button"
+      rx={3}
+      ry={3}
+      tabIndex={0}
+      width={200}
+      x={183.80566801619432}
+      y={17} />
+  </g>
+</g>
+`;
+
 exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
 <g
   className="bpk-barchart__bars">

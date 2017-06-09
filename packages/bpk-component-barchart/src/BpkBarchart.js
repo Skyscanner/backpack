@@ -9,6 +9,7 @@ import BpkBarchartBars from './BpkBarchartBars';
 import BpkChartMargin from './BpkChartMargin';
 import BpkChartAxis from './BpkChartAxis';
 import BpkChartGridLines from './BpkChartGridLines';
+import BpkBarchartBar from './BpkBarchartBar';
 import { identity, remToPx } from './utils';
 import { applyArrayRTLTransform, applyMarginRTLTransform } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
@@ -84,7 +85,9 @@ class BpkBarchart extends Component {
       yAxisLabel,
       yAxisTickValue,
       yAxisNumTicks,
-      onClick,
+      onBarClick,
+      getBarLabel,
+      BarComponent,
       ...rest
     } = this.props;
 
@@ -159,7 +162,9 @@ class BpkBarchart extends Component {
             yScaleDataKey={yScaleDataKey}
             maxYValue={maxYValue}
             outerPadding={showGridlines ? undefined : 0}
-            onClick={onClick}
+            onBarClick={onBarClick}
+            getBarLabel={getBarLabel}
+            BarComponent={BarComponent}
           />
         </BpkChartMargin>
       </svg>
@@ -186,7 +191,9 @@ BpkBarchart.propTypes = {
   yAxisMargin: PropTypes.number,
   yAxisTickValue: PropTypes.func,
   yAxisNumTicks: PropTypes.number,
-  onClick: PropTypes.func,
+  onBarClick: PropTypes.func,
+  getBarLabel: PropTypes.func,
+  BarComponent: PropTypes.func,
 };
 
 BpkBarchart.defaultProps = {
@@ -200,7 +207,9 @@ BpkBarchart.defaultProps = {
   yAxisMargin: (4 * lineHeight) + spacing,
   yAxisTickValue: identity,
   yAxisNumTicks: null,
-  onClick: null,
+  onBarClick: null,
+  getBarLabel: (point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
+  BarComponent: BpkBarchartBar,
 };
 
 export default BpkBarchart;

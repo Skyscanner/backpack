@@ -131,7 +131,7 @@ storiesOf('bpk-component-barchart', module)
       }}
       xAxisLabel="Month"
       yAxisLabel="Average Price (£)"
-      onClick={action('clicked a bar')}
+      onBarClick={action('clicked a bar')}
     />
   ))
   .add('Outliers', () => (
