@@ -1,14 +1,14 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2017-06-09 - Icon generation from single source, disabled calendar navigation
 
 **Added:**
-- bpk-component-calendar:
+- bpk-component-calendar: 3.1.11 => 3.2.0
   - `BpkCalendarNav` now accepts a `disabled` prop to disable all navigation elements (buttons and select)
 
 **Fixed:**
-- bpk-component-icon:
-- bpk-svgs:
+- bpk-component-icon: 3.5.0 => 3.5.1
+- bpk-svgs: 5.4.0 => 5.4.1
   - All icons are now generated from a single source, rather than large and small SVGs
 
 ## 2017-06-05 - Removed the last `prop-type` warning (famous last words)
