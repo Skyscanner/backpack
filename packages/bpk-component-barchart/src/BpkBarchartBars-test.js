@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import BpkBarchartBars from './BpkBarchartBars';
+import BpkBarchartBar from './BpkBarchartBar';
 import data from '../data.json';
 
 const margin = {
@@ -29,6 +30,8 @@ describe('BpkBarchartBars', () => {
         width={size}
         height={size}
         data={prices}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
+        BarComponent={BpkBarchartBar}
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -46,6 +49,8 @@ describe('BpkBarchartBars', () => {
         width={size}
         height={size}
         data={prices}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
+        BarComponent={BpkBarchartBar}
         rounded={false}
       />,
     ).toJSON();
@@ -64,7 +69,30 @@ describe('BpkBarchartBars', () => {
         width={size}
         height={size}
         data={prices}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
+        BarComponent={BpkBarchartBar}
         padding={0}
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "onBarClick" prop', () => {
+    const tree = renderer.create(
+      <BpkBarchartBars
+        margin={margin}
+        xScale={xScale}
+        yScale={yScale}
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        maxYValue={50}
+        width={size}
+        height={size}
+        data={prices}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
+        BarComponent={BpkBarchartBar}
+        padding={0}
+        onBarClick={() => null}
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();

@@ -38,8 +38,68 @@ describe('BpkBarchart', () => {
     );
     expect(toJson(tree)).toMatchSnapshot();
   });
-});
 
-// outlier
-// hideXAxisLabel
-// hideYAxisLabel
+  it('should render with "onBarClick" prop', () => {
+    const tree = shallow(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        onBarClick={() => null}
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render with "hideXAxisLabel" prop', () => {
+    const tree = shallow(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        hideXAxisLabel
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render with "hideYAxisLabel" prop', () => {
+    const tree = shallow(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        hideYAxisLabel
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render with "getBarLabel" prop', () => {
+    const tree = shallow(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        getBarLabel={() => null}
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+});

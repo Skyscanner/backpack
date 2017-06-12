@@ -1,6 +1,6 @@
 import React from 'react';
 import { number } from 'prop-types';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf, action } from '@kadira/storybook';
 import BpkHeading from 'bpk-component-heading';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 import { lineHeightSm } from 'bpk-tokens/tokens/base.es6';
@@ -117,6 +117,21 @@ storiesOf('bpk-component-barchart', module)
       }}
       xAxisLabel="Month"
       yAxisLabel="Average Price (£)"
+    />
+  ))
+  .add('Interactive', () => (
+    <EnhancedBarchart
+      initialWidth={500}
+      initialHeight={300}
+      data={data.prices}
+      xScaleDataKey="month"
+      yScaleDataKey="price"
+      style={{
+        maxWidth: '580px',
+      }}
+      xAxisLabel="Month"
+      yAxisLabel="Average Price (£)"
+      onBarClick={action('clicked a bar')}
     />
   ))
   .add('Outliers', () => (
