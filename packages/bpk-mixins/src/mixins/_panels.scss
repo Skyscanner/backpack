@@ -1,0 +1,49 @@
+@import '../bonds';
+
+///
+/// @group panels
+///
+
+/// Basic panel.
+///
+/// @example scss
+///   .selector {
+///     @include @bpk-panel()
+///   }
+@mixin bpk-panel {
+  display: block;
+  background-color: $bpk-panel-background-color;
+
+  @include bpk-border-sm($bpk-panel-border-color);
+  @include bpk-border-radius-sm;
+}
+
+/// Adds padding to panels. Modifies the bpk-panel mixin.
+///
+/// @require {mixin} bpk-panel
+///
+/// @example scss
+///   .selector {
+///     @include bpk-panel();
+///     @include bpk-panel--padded();
+///   }
+@mixin bpk-panel--padded {
+  padding: $bpk-panel-padding;
+}
+
+/// Makes panel full width by removing left and right border.
+/// Modifies the bpk-panel mixin.
+///
+/// @require {mixin} bpk-panel
+///
+/// @example scss
+///   .selector {
+///     @include bpk-panel();
+///     @include bpk-panel--full-width();
+///   }
+@mixin bpk-panel--full-width {
+  border-radius: 0;
+  box-shadow:
+    $bpk-panel-border-color 0 #{-$bpk-one-pixel-rem} 0 0 inset,
+    $bpk-panel-border-color 0 $bpk-one-pixel-rem 0 0 inset;
+}

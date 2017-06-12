@@ -246,6 +246,10 @@
   <property name="BANNER_ALERT_CHILDREN_PADDING_Y" category="notifications">6</property>
   <property name="BANNER_ALERT_CHILDREN_PADDING_X" category="notifications">12</property>
   <color name="BANNER_ALERT_CHILDREN_COLOR" category="notifications">#817b8fff</color>
+  <property name="PANEL_PADDING" category="panels">12</property>
+  <color name="PANEL_BORDER_COLOR" category="panels">#e6e4ebff</color>
+  <color name="PANEL_BACKGROUND_COLOR" category="panels">#ffffffff</color>
+  <property name="PANEL_BORDER_RADIUS" category="panels">2px</property>
   <property name="SPACING_XS" category="spacings">6</property>
   <property name="SPACING_SM" category="spacings">12</property>
   <property name="SPACING_MD" category="spacings">18</property>

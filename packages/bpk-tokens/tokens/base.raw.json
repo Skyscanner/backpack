@@ -1568,6 +1568,30 @@
       "type": "color",
       "name": "BANNER_ALERT_CHILDREN_COLOR"
     },
+    "PANEL_PADDING": {
+      "category": "panels",
+      "value": ".75rem",
+      "type": "size",
+      "name": "PANEL_PADDING"
+    },
+    "PANEL_BORDER_COLOR": {
+      "category": "panels",
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      "name": "PANEL_BORDER_COLOR"
+    },
+    "PANEL_BACKGROUND_COLOR": {
+      "category": "panels",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "PANEL_BACKGROUND_COLOR"
+    },
+    "PANEL_BORDER_RADIUS": {
+      "category": "panels",
+      "value": "2px",
+      "type": "size",
+      "name": "PANEL_BORDER_RADIUS"
+    },
     "SPACING_XS": {
       "type": "size",
       "category": "spacings",
@@ -2206,6 +2230,10 @@
     "BANNER_ALERT_CHILDREN_PADDING_Y",
     "BANNER_ALERT_CHILDREN_PADDING_X",
     "BANNER_ALERT_CHILDREN_COLOR",
+    "PANEL_PADDING",
+    "PANEL_BORDER_COLOR",
+    "PANEL_BACKGROUND_COLOR",
+    "PANEL_BORDER_RADIUS",
     "SPACING_XS",
     "SPACING_SM",
     "SPACING_MD",

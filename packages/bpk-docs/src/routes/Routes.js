@@ -31,6 +31,7 @@ import SpinnersPage from './../pages/SpinnersPage';
 import FormsPage from './../pages/FormsPage';
 import CardsPage from './../pages/CardsPage';
 import BadgePage from './../pages/BadgePage';
+import PanelsPage from './../pages/PanelsPage';
 
 import NotificationsPage from './../pages/NotificationsPage';
 import ModalsPage from './../pages/ModalsPage';
@@ -89,6 +90,7 @@ const Routes = (
         <Route path={ROUTES.FORMS} component={FormsPage} />
         <Route path={ROUTES.CARDS} component={CardsPage} />
         <Route path={ROUTES.BADGE} component={BadgePage} />
+        <Route path={ROUTES.PANELS} component={PanelsPage} />
       </Route>
       <Route path={ROUTES.MOLECULES}>
         <IndexRedirect to={ROUTES.NOTIFICATIONS} />

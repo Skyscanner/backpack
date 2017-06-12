@@ -26,6 +26,7 @@ export const SPINNERS = '/components/atoms/spinners';
 export const FORMS = '/components/atoms/forms';
 export const CARDS = '/components/atoms/cards';
 export const BADGE = '/components/atoms/badge';
+export const PANELS = '/components/atoms/panels';
 
 export const MOLECULES = '/components/molecules';
 export const NOTIFICATIONS = '/components/molecules/notifications';

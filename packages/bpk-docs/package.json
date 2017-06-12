@@ -42,6 +42,7 @@
     "bpk-component-list": "^0.0.96",
     "bpk-component-modal": "^1.0.45",
     "bpk-component-nudger": "^0.0.26",
+    "bpk-component-panel": "^0.0.0",
     "bpk-component-paragraph": "^0.2.19",
     "bpk-component-popover": "^1.0.47",
     "bpk-component-progress": "^0.0.24",
