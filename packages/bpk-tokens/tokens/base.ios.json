@@ -1477,6 +1477,30 @@
       "name": "bannerAlertChildrenColor"
     },
     {
+      "category": "panels",
+      "value": "12",
+      "type": "size",
+      "name": "panelPadding"
+    },
+    {
+      "category": "panels",
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      "name": "panelBorderColor"
+    },
+    {
+      "category": "panels",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "name": "panelBackgroundColor"
+    },
+    {
+      "category": "panels",
+      "value": "2px",
+      "type": "size",
+      "name": "panelBorderRadius"
+    },
+    {
       "type": "size",
       "category": "spacings",
       "value": "6",

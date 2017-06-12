@@ -1,0 +1,22 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "panels"
+  },
+  "props": {
+    "PANEL_PADDING": {
+      "value": "{!SPACING_SM}",
+      "type": "size"
+    },
+    "PANEL_BORDER_COLOR": {
+      "value": "{!GRAY_100}",
+      "type": "color"
+    },
+    "PANEL_BACKGROUND_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    }
+  }
+}

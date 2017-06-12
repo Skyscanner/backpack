@@ -1,0 +1,13 @@
+@import '~bpk-mixins/index';
+
+.bpk-panel {
+  @include bpk-panel;
+
+  &--padded {
+    @include bpk-panel--padded;
+  }
+
+  &--full-width {
+    @include bpk-panel--full-width;
+  }
+}
