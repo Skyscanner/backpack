@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-link",
-  "version": "0.5.33",
+  "version": "0.5.34",
   "description": "Backpack link component.",
   "main": "index.js",
   "repository": {
@@ -13,10 +13,10 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^15.3.0",
+    "bpk-mixins": "^15.3.1",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-tokens": "^23.2.0"
+    "bpk-tokens": "^23.2.1"
   }
 }
