@@ -6,6 +6,8 @@ _Nothing yet_
 
 **Added:**
 - bpk-component-panel:
+- bpk-mixins:
+- bpk-tokens:
   - New panel component (http://backpack.prod.aws.skyscnr.com/components/atoms/panels)
 
 ## 2017-06-09 - Icon generation from single source, disabled calendar navigation
