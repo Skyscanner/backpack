@@ -1495,12 +1495,6 @@
       "name": "panelBackgroundColor"
     },
     {
-      "category": "panels",
-      "value": "2px",
-      "type": "size",
-      "name": "panelBorderRadius"
-    },
-    {
       "type": "size",
       "category": "spacings",
       "value": "6",

@@ -248,7 +248,6 @@ module.exports = {
   panelPadding: ".75rem",
   panelBorderColor: "rgb(230, 228, 235)",
   panelBackgroundColor: "rgb(255, 255, 255)",
-  panelBorderRadius: "2px",
   spacingXs: ".375rem",
   spacingSm: ".75rem",
   spacingMd: "1.125rem",

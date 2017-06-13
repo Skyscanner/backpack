@@ -247,7 +247,6 @@ export const bannerAlertChildrenColor = "rgb(129, 123, 143)";
 export const panelPadding = ".75rem";
 export const panelBorderColor = "rgb(230, 228, 235)";
 export const panelBackgroundColor = "rgb(255, 255, 255)";
-export const panelBorderRadius = "2px";
 export const spacingXs = ".375rem";
 export const spacingSm = ".75rem";
 export const spacingMd = "1.125rem";
@@ -596,7 +595,6 @@ export const panels = {
 panelPadding,
 panelBorderColor,
 panelBackgroundColor,
-panelBorderRadius,
 };
 export const spacings = {
 spacingXs,

@@ -1586,12 +1586,6 @@
       "type": "color",
       "name": "PANEL_BACKGROUND_COLOR"
     },
-    "PANEL_BORDER_RADIUS": {
-      "category": "panels",
-      "value": "2px",
-      "type": "size",
-      "name": "PANEL_BORDER_RADIUS"
-    },
     "SPACING_XS": {
       "type": "size",
       "category": "spacings",
@@ -2233,7 +2227,6 @@
     "PANEL_PADDING",
     "PANEL_BORDER_COLOR",
     "PANEL_BACKGROUND_COLOR",
-    "PANEL_BORDER_RADIUS",
     "SPACING_XS",
     "SPACING_SM",
     "SPACING_MD",
