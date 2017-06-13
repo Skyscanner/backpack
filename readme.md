@@ -46,6 +46,7 @@ npm install [package-name] --save-dev
 | [`bpk-component-loading-button`](/packages/bpk-component-loading-button) | [![npm version](https://badge.fury.io/js/bpk-component-loading-button.svg)](http://badge.fury.io/js/bpk-component-loading-button) |
 | [`bpk-component-modal`](/packages/bpk-component-modal) | [![npm version](https://badge.fury.io/js/bpk-component-modal.svg)](http://badge.fury.io/js/bpk-component-modal) |
 | [`bpk-component-nudger`](/packages/bpk-component-nudger) | [![npm version](https://badge.fury.io/js/bpk-component-nudger.svg)](http://badge.fury.io/js/bpk-component-nudger) |
+| [`bpk-component-panel`](/packages/bpk-component-panel) | [![npm version](https://badge.fury.io/js/bpk-component-panel.svg)](http://badge.fury.io/js/bpk-component-panel) |
 | [`bpk-component-paragraph`](/packages/bpk-component-paragraph) | [![npm version](https://badge.fury.io/js/bpk-component-paragraph.svg)](http://badge.fury.io/js/bpk-component-paragraph) |
 | [`bpk-component-popover`](/packages/bpk-component-popover) | [![npm version](https://badge.fury.io/js/bpk-component-popover.svg)](http://badge.fury.io/js/bpk-component-popover) |
 | [`bpk-component-progress`](/packages/bpk-component-progress) | [![npm version](https://badge.fury.io/js/bpk-component-progress.svg)](http://badge.fury.io/js/bpk-component-progress) |
