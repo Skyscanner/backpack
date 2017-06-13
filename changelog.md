@@ -4,6 +4,8 @@
 
 _Nothing yet_
 
+## 2017-06-13 - Panels release
+
 **Added:**
 - bpk-component-panel:
 - bpk-mixins:
