@@ -7,6 +7,11 @@ import Tether, { getArrowPositionCallback, applyRTLTransforms } from 'bpk-tether
 import BpkTooltip from './BpkTooltip';
 import { ARROW_ID } from './constants';
 
+const hasTouchSupport = () => !!(
+  (typeof window !== 'undefined') &&
+    (('ontouchstart' in window) || (window.DocumentTouch && document instanceof window.DocumentTouch))
+);
+
 class BpkTooltipPortal extends Component {
   constructor(props) {
     super(props);
@@ -70,22 +75,26 @@ class BpkTooltipPortal extends Component {
   }
 
   render() {
-    const { padded, target, children, ...rest } = this.props;
+    const { padded, target, children, hideOnTouchDevices, ...rest } = this.props;
+    const renderPortal = !hasTouchSupport() || !hideOnTouchDevices;
 
     delete rest.tetherOptions;
 
     return (
-      <Portal
-        target={target}
-        targetRef={(targetRef) => { this.targetRef = targetRef; }}
-        isOpen={this.state.isOpen}
-        onOpen={this.onOpen}
-        onClose={this.closeTooltip}
-      >
-        <BpkTooltip padded={padded} {...rest}>
-          { children }
-        </BpkTooltip>
-      </Portal>
+      renderPortal ? (
+        <Portal
+          target={target}
+          targetRef={(targetRef) => { this.targetRef = targetRef; }}
+          isOpen={this.state.isOpen}
+          onOpen={this.onOpen}
+          onClose={this.closeTooltip}
+        >
+          <BpkTooltip padded={padded} {...rest}>
+            { children }
+          </BpkTooltip>
+        </Portal>
+      )
+      : target
     );
   }
 }
@@ -93,6 +102,7 @@ class BpkTooltipPortal extends Component {
 BpkTooltipPortal.propTypes = {
   target: PropTypes.element.isRequired,
   children: PropTypes.node.isRequired,
+  hideOnTouchDevices: PropTypes.bool,
   padded: PropTypes.bool,
   tetherOptions: PropTypes.shape({
     attachment: PropTypes.string,
@@ -103,6 +113,7 @@ BpkTooltipPortal.propTypes = {
 };
 
 BpkTooltipPortal.defaultProps = {
+  hideOnTouchDevices: true,
   padded: true,
   tetherOptions: {
     attachment: 'top center',

@@ -2,7 +2,11 @@
 
 ## UNRELEASED
 
-_Nothing yet_
+**Added:**
+
+- bpk-component-tooltip:
+  - Added `hideOnTouchDevices` prop (defaults to true) to not render the tooltip on touch-capable devices.
+    Prevents the need to double-tap links that have tooltips attached to them.
 
 ## 2017-06-13 - Panels release
 

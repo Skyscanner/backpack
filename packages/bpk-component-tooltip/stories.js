@@ -63,4 +63,14 @@ storiesOf('bpk-component-tooltip', module)
         </div>
       </BpkTooltip>
     </div>
+  ))
+  .add('On a link', () => (
+    <div style={st}>
+      <BpkTooltip
+        id="my-tooltip"
+        target={<a href="//skyscanner.net" target="_blank" rel="noopener noreferrer">Click me!</a>}
+      >
+        Find cheap flights here! ✈️
+      </BpkTooltip>
+    </div>
   ));
