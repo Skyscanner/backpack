@@ -7,10 +7,12 @@ _Nothing yet_
 ## 2017-06-13 - Panels release
 
 **Added:**
-- bpk-component-panel:
-- bpk-mixins:
-- bpk-tokens:
+- bpk-component-panel: 0.0.0 => 0.0.2
+- bpk-mixins: 23.1.0 => 23.2.1
+- bpk-tokens: 15.2.1 => 15.3.1
   - New panel component (http://backpack.prod.aws.skyscnr.com/components/atoms/panels)
+
+:warning: `bpk-tokens@15.3.0`, and `bpk-mixins@23.2.0` were broken due to a previous bad release. Because many packages depend on these versions make sure you're not depending either of them.
 
 ## 2017-06-09 - Icon generation from single source, disabled calendar navigation
 
