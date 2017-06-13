@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-blockquote",
-  "version": "0.0.76",
+  "version": "0.0.77",
   "description": "Backpack blockquote component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^15.2.1",
+    "bpk-mixins": "^15.3.0",
     "prop-types": "^15.5.8"
   }
 }
