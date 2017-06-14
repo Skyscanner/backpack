@@ -96,7 +96,8 @@ const TooltipsPage = () => <DocsPageBuilder
       user. They generally are text-only and are triggered on pointer based interfaces.
     </BpkParagraph>,
     <BpkParagraph>
-      Using tooltips on purely touch-based interfaces is generally bad practise due to the lack of hover state.
+      By default, <em>tooltips do not work on touch devices</em>. Using tooltips in touch-based interfaces is
+      generally bad practise due to the lack of hover state.
       We also don&apos;t recommend using tooltips on interactive elements that can receive focus, such as links,
       buttons, and inputs.
     </BpkParagraph>,
