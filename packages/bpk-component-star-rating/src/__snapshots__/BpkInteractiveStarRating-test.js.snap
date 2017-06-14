@@ -1,0 +1,25 @@
+exports[`BpkInteractiveStarRating should render correctly 1`] = `
+<BpkStarRating
+  className={null}
+  hoverRating={0}
+  interactive={true}
+  large={false}
+  maxRating={5}
+  onMouseLeave={[Function]}
+  onRatingHover={[Function]}
+  onRatingSelect={[Function]}
+  rating={0} />
+`;
+
+exports[`BpkInteractiveStarRating should render correctly with "large" attribute 1`] = `
+<BpkStarRating
+  className={null}
+  hoverRating={0}
+  interactive={true}
+  large={true}
+  maxRating={5}
+  onMouseLeave={[Function]}
+  onRatingHover={[Function]}
+  onRatingSelect={[Function]}
+  rating={0} />
+`;

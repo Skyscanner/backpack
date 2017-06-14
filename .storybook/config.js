@@ -57,6 +57,7 @@ configure(() => {
   require('./../packages/bpk-component-rtl-toggle/stories');
   require('./../packages/bpk-component-select/stories');
   require('./../packages/bpk-component-spinner/stories');
+  require('./../packages/bpk-component-star-rating/stories');
   require('./../packages/bpk-component-table/stories');
   require('./../packages/bpk-component-textarea/stories');
   require('./../packages/bpk-component-ticket/stories');

@@ -1,0 +1,443 @@
+exports[`BpkStarRating should render 3 interactive stars when we have hoverRating equal to 3 and "interactive" 1`] = `
+<div
+  className="bpk-star-rating"
+  onMouseLeave={[Function]}>
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="interactive" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="interactive" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="interactive" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+</div>
+`;
+
+exports[`BpkStarRating should render 4 stars based on hoverRating as it has priority over rating 1`] = `
+<div
+  className="bpk-star-rating"
+  onMouseLeave={[Function]}>
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+</div>
+`;
+
+exports[`BpkStarRating should render as 3 stars with 3.3 Large stars  1`] = `
+<div
+  className="bpk-star-rating"
+  onMouseLeave={[Function]}>
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+</div>
+`;
+
+exports[`BpkStarRating should render as 3.5 with 3.7 Large stars  1`] = `
+<div
+  className="bpk-star-rating"
+  onMouseLeave={[Function]}>
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="half" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+</div>
+`;
+
+exports[`BpkStarRating should render correctly if you give it more than the max rating allowed 1`] = `
+<div
+  className="bpk-star-rating"
+  onMouseLeave={[Function]}>
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+</div>
+`;
+
+exports[`BpkStarRating should render correctly with 0 Large stars  1`] = `
+<div
+  className="bpk-star-rating"
+  onMouseLeave={[Function]}>
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+</div>
+`;
+
+exports[`BpkStarRating should render correctly with 0 stars 1`] = `
+<div
+  className="bpk-star-rating"
+  onMouseLeave={[Function]}>
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+</div>
+`;
+
+exports[`BpkStarRating should render correctly with 3 stars 1`] = `
+<div
+  className="bpk-star-rating"
+  onMouseLeave={[Function]}>
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+</div>
+`;
+
+exports[`BpkStarRating should render correctly with 3.5 Large stars  1`] = `
+<div
+  className="bpk-star-rating"
+  onMouseLeave={[Function]}>
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="half" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+</div>
+`;
+
+exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
+<div
+  className="bpk-star-rating"
+  onMouseLeave={[Function]}>
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="half" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="empty" />
+</div>
+`;
+
+exports[`BpkStarRating should render correctly with 5 Large stars  1`] = `
+<div
+  className="bpk-star-rating"
+  onMouseLeave={[Function]}>
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={true}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+</div>
+`;
+
+exports[`BpkStarRating should render correctly with 5 stars 1`] = `
+<div
+  className="bpk-star-rating"
+  onMouseLeave={[Function]}>
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+  <BpkStar
+    large={false}
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    selected={false}
+    type="full" />
+</div>
+`;

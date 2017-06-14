@@ -47,6 +47,7 @@ import TicketsPage from './../pages/TicketsPage';
 import HorizontalNavPage from './../pages/HorizontalNavPage';
 import FieldsetsPage from './../pages/FieldsetsPage';
 import BarchartsPage from './../pages/BarchartsPage';
+import StarRatingPage from './../pages/StarRatingPage';
 
 import VerticalRhythmPage from './../pages/VerticalRhythmPage';
 import StatefulnessPage from './../pages/StatefulnessPage';
@@ -108,6 +109,7 @@ const Routes = (
         <Route path={ROUTES.HORIZONTAL_NAV} component={HorizontalNavPage} />
         <Route path={ROUTES.FIELDSETS} component={FieldsetsPage} />
         <Route path={ROUTES.BARCHARTS} component={BarchartsPage} />
+        <Route path={ROUTES.STAR_RATING} component={StarRatingPage} />
       </Route>
     </Route>
 
