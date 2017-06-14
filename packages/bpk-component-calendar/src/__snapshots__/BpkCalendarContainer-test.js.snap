@@ -8,6 +8,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
       <button
         className="bpk-calendar-nav__button"
         disabled={true}
+        id="myCalendar__bpk_calendar_nav_month_nudger_previous"
         onClick={[Function]}
         type="button">
         <svg
@@ -61,6 +62,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
       <button
         className="bpk-calendar-nav__button"
         disabled={false}
+        id="myCalendar__bpk_calendar_nav_month_nudger_next"
         onClick={[Function]}
         type="button">
         <svg

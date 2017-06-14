@@ -4,8 +4,8 @@ import React, { PureComponent } from 'react';
 import CustomPropTypes from './custom-proptypes';
 import './bpk-calendar.scss';
 
-// FIXME: Won't work with CSS Modules and is relying on the DOM. Need to find better solution.
-const navigatedByMonthNudger = () => document.activeElement.className.indexOf('bpk-calendar-nav__button') !== -1;
+const navigatedByMonthNudger = () =>
+  document.activeElement.id && document.activeElement.id.indexOf('month_nudger') !== -1;
 
 class BpkCalendarDate extends PureComponent {
   constructor() {
