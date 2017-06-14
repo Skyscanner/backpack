@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { cssModules } from 'bpk-react-utils';
 import { borderRadiusXs } from 'bpk-tokens/tokens/base.es6';
 import { remToPx } from './utils';
+
+import STYLES from './bpk-barchart-bar.scss';
+
+const getClassName = cssModules(STYLES);
 
 const KEYCODES = {
   ENTER: 13,
@@ -30,13 +35,13 @@ const BpkBarchartBar = (props) => {
     ...rest
   } = props;
 
-  const classNames = ['bpk-barchart__bar'];
+  const classNames = [getClassName('bpk-barchart__bar')];
   if (className) { classNames.push(className); }
-  if (outlier) { classNames.push('bpk-barchart__bar--outlier'); }
-  if (onClick) { classNames.push('bpk-barchart__bar--interactive'); }
+  if (outlier) { classNames.push(getClassName('bpk-barchart__bar--outlier')); }
+  if (onClick) { classNames.push(getClassName('bpk-barchart__bar--interactive')); }
 
   return (
-    <g className="bpk-barchart__bar-group">
+    <g className={getClassName('bpk-barchart__bar-group')}>
       <title>{label}</title>
       <rect
         className={classNames.join(' ')}

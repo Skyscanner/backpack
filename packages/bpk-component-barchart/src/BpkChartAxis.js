@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { cssModules } from 'bpk-react-utils';
 import { spacingXs, lineHeightSm } from 'bpk-tokens/tokens/base.es6';
 import { rtlConditionalValue } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center, remToPx } from './utils';
-import './bpk-chart.scss';
+
+import STYLES from './bpk-chart-axis.scss';
+
+const getClassName = cssModules(STYLES);
 
 const spacing = remToPx(spacingXs);
 const lineHeight = remToPx(lineHeightSm);
@@ -74,18 +78,17 @@ const BpkChartAxis = (props) => {
 
   return (
     <g
-      className={`bpk-chart__axis bpk-chart__axis--${orientation}`}
+      className={getClassName('bpk-chart__axis')}
       {...containerProps}
       {...rest}
     >
       {ticks.map((tick, i) => (
         <g
-          className="bpk-chart__axis-tick--group"
           transform={`translate(${tickPosition(tick).join(', ')})`}
           key={`${orientation}axis${i.toString()}`}
         >
           <text
-            className="bpk-chart__axis-tick--text"
+            className={getClassName('bpk-chart__axis-tick-text')}
             {...textProps}
           >
             {tickValue(tick, i)}
@@ -93,7 +96,7 @@ const BpkChartAxis = (props) => {
         </g>
       ))}
       { label && <text
-        className={`bpk-chart__axis-label bpk-chart__axis-label--${orientation}`}
+        className={getClassName('bpk-chart__axis-label')}
         textAnchor="middle"
         {...labelProps}
       >{ label }</text> }

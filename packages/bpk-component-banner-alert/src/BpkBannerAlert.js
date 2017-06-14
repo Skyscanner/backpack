@@ -4,8 +4,11 @@ import { withButtonAlignment } from 'bpk-component-icon';
 import TickCircleIcon from 'bpk-component-icon/sm/tick-circle';
 import ChevronDownIcon from 'bpk-component-icon/sm/chevron-down';
 import InfoCircleIcon from 'bpk-component-icon/sm/information-circle';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-banner-alert.scss';
+import STYLES from './bpk-banner-alert.scss';
+
+const getClassName = cssModules(STYLES);
 
 const WarnIcon = withButtonAlignment(InfoCircleIcon);
 const ErrorIcon = withButtonAlignment(InfoCircleIcon);
@@ -20,26 +23,32 @@ export const ALERT_TYPES = {
 
 const getIconForType = (type) => {
   const map = {
-    [ALERT_TYPES.SUCCESS]: <SuccessIcon className="bpk-banner-alert__success-icon" />,
-    [ALERT_TYPES.WARN]: <WarnIcon className="bpk-banner-alert__warn-icon" />,
-    [ALERT_TYPES.ERROR]: <ErrorIcon className="bpk-banner-alert__error-icon" />,
+    [ALERT_TYPES.SUCCESS]: <SuccessIcon className={getClassName('bpk-banner-alert__success-icon')} />,
+    [ALERT_TYPES.WARN]: <WarnIcon className={getClassName('bpk-banner-alert__warn-icon')} />,
+    [ALERT_TYPES.ERROR]: <ErrorIcon className={getClassName('bpk-banner-alert__error-icon')} />,
   };
 
   return map[type];
 };
 
-const ToggleButton = props => (
-  <button
-    className="bpk-banner-alert__toggle-button"
-    aria-label={props.label}
-    aria-expanded={props.expanded}
-    title={props.label}
-  >
-    <ExpandIcon
-      className={`bpk-banner-alert__expand-icon ${props.expanded ? 'bpk-banner-alert__expand-icon--flipped' : ''}`}
-    />
-  </button>
-);
+const ToggleButton = (props) => {
+  const classNames = [getClassName('bpk-banner-alert__expand-icon')];
+
+  if (props.expanded) { classNames.push(getClassName('bpk-banner-alert__expand-icon--flipped')); }
+
+  return (
+    <button
+      className={getClassName('bpk-banner-alert__toggle-button')}
+      aria-label={props.label}
+      aria-expanded={props.expanded}
+      title={props.label}
+    >
+      <ExpandIcon
+        className={classNames.join(' ')}
+      />
+    </button>
+  );
+};
 
 ToggleButton.propTypes = {
   label: PropTypes.string.isRequired,
@@ -68,25 +77,31 @@ class BpkBannerAlert extends Component {
     const isExpandable = this.props.children;
     const showChildren = isExpandable && isExpanded;
 
-    const headerClassNames = ['bpk-banner-alert__header'];
+    const headerClassNames = [getClassName('bpk-banner-alert__header')];
+    const sectionClassNames = ['bpk-banner-alert', `bpk-banner-alert--${this.props.type}`]
+      .map(className => getClassName(className));
 
-    if (isExpandable) { headerClassNames.push('bpk-banner-alert__header--expandable'); }
+    if (isExpandable) { headerClassNames.push(getClassName('bpk-banner-alert__header--expandable')); }
 
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
-      <section className={`bpk-banner-alert bpk-banner-alert--${this.props.type}`}>
+      <section className={sectionClassNames.join(' ')}>
         <header className={headerClassNames.join(' ')} onClick={this.onExpand}>
-          <span className="bpk-banner-alert__icon">{getIconForType(this.props.type)}</span>
+          <span className={getClassName('bpk-banner-alert__icon')}>{getIconForType(this.props.type)}</span>
           &nbsp;
-          <span className="bpk-banner-alert__message">{this.props.message}</span>
+          <span className={getClassName('bpk-banner-alert__message')}>{this.props.message}</span>
           &nbsp;
           {isExpandable ? (
-            <span className="bpk-banner-alert__toggle">
+            <span className={getClassName('bpk-banner-alert__toggle')}>
               <ToggleButton expanded={isExpanded} label={this.props.toggleButtonLabel} />
             </span>
           ) : null}
         </header>
-        {showChildren ? <div className="bpk-banner-alert__children-container">{this.props.children}</div> : null}
+        {
+          showChildren ?
+            <div className={getClassName('bpk-banner-alert__children-container')}>{this.props.children}</div>
+            : null
+        }
       </section>
     );
     /* eslint-enable */
