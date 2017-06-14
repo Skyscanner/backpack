@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
+_Nothing yet_
+
+## 2017-06-14 - Tooltips no longer appear on touch devices
+
 **Changed:**
-- bpk-component-tooltip:
+- bpk-component-tooltip: 0.0.34 => 1.0.0
   - Added `hideOnTouchDevices` prop (defaults to true) to not render the tooltip on touch-capable devices.
     Prevents the need to double-tap links that have tooltips attached to them.
 
