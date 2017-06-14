@@ -49,6 +49,7 @@ const BpkCalendarNav = (props) => {
         <button
           type="button"
           className="bpk-calendar-nav__button"
+          id={`${id}_month_nudger_previous`}
           onClick={changeMonth(prevMonth, min, max, onMonthChange)}
           disabled={disabled || !isWithinRange(prevMonth, min, max)}
         >
@@ -74,6 +75,7 @@ const BpkCalendarNav = (props) => {
         <button
           type="button"
           className="bpk-calendar-nav__button"
+          id={`${id}_month_nudger_next`}
           onClick={changeMonth(nextMonth, min, max, onMonthChange)}
           disabled={disabled || !isWithinRange(addMonths(baseMonth, 1), min, max)}
         >
