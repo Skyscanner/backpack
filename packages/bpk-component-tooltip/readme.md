@@ -32,5 +32,6 @@ const App = () => (
 | id                    | string                        | true     | -             |
 | children              | node                          | true     | -             |
 | target                | element                       | true     | -             |
+| hideOnTouchDevices    | bool                          | false    | true          |
 | tetherOptions         | See http://tether.io/#options | false    | { attachment: 'top center', constraints: [ { to: 'window', attachment: 'together', pin: true, }, ], } |
 | padded                | bool                          | false    | true          |

@@ -125,7 +125,7 @@ const withOpenEvents = (InputComponent) => {
   WithOpenEvents.defaultProps = {
     // Custom props
     isOpen: false,
-    hasTouchSupport: (typeof window !== 'undefined' && (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)), // eslint-disable-line
+    hasTouchSupport: !!(typeof window !== 'undefined' && (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)), // eslint-disable-line
     onOpen: null,
     // Input props
     className: null,
