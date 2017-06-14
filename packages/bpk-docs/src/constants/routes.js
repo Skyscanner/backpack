@@ -43,6 +43,7 @@ export const TICKETS = '/components/molecules/tickets';
 export const HORIZONTAL_NAV = '/components/molecules/horizontal-nav';
 export const FIELDSETS = '/components/molecules/fieldsets';
 export const BARCHARTS = '/components/molecules/barcharts';
+export const STAR_RATING = '/components/molecules/star-rating';
 
 export const PATTERNS = '/patterns';
 export const VERTICAL_RHYTHM = '/patterns/vertical-rhythm';
