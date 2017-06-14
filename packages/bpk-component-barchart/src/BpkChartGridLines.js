@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { cssModules } from 'bpk-react-utils';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center } from './utils';
-import './bpk-chart.scss';
+
+import STYLES from './bpk-chart-grid-lines.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkChartGridLines = (props) => {
   const { orientation, scale, numTicks, width, height, margin, tickOffset, tickEvery, ...rest } = props;
@@ -27,7 +31,7 @@ const BpkChartGridLines = (props) => {
 
   const toLine = (tick, i) => (
     <line
-      className={`bpk-chart__grid-line bpk-chart__grid-line--${orientation}`}
+      className={getClassName('bpk-chart__grid-line')}
       key={`${orientation}gridline${i.toString()}`}
       {...lineProps(tick)}
       {...rest}
@@ -35,7 +39,7 @@ const BpkChartGridLines = (props) => {
   );
 
   return (
-    <g className={`bpk-chart__grid-lines bpk-chart__grid-lines--${orientation}`}>
+    <g className={getClassName('bpk-chart__grid-lines')}>
       {ticks.map(toLine)}
     </g>
   );
