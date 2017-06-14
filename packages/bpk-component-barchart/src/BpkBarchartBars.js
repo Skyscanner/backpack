@@ -47,7 +47,7 @@ const BpkBarchartBars = (props) => {
   const barWidth = xScale.bandwidth();
 
   return (
-    <g className="bpk-barchart__bars">
+    <g>
       {data.map((point, i) => {
         const x = xScale(point[xScaleDataKey]);
         const y = getYPos(point, { yScale, yScaleDataKey, maxYValue });

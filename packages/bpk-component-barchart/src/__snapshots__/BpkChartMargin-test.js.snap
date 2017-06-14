@@ -1,6 +1,5 @@
 exports[`BpkChartMargin should render correctly 1`] = `
 <g
-  className="bpk-barchart__margin"
   transform="translate(40, 10)">
   Children
 </g>
