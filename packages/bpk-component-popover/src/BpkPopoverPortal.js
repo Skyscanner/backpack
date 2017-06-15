@@ -1,13 +1,15 @@
 import focusStore from 'a11y-focus-store';
 import focusScope from 'a11y-focus-scope';
-import { Portal } from 'bpk-react-utils';
+import { Portal, cssModules } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Tether, { getArrowPositionCallback, applyRTLTransforms } from 'bpk-tether';
 
-import './bpk-popover.scss';
+import STYLES from './bpk-popover.scss';
 import BpkPopover from './BpkPopover';
 import { ARROW_ID } from './constants';
+
+const getClassName = cssModules(STYLES);
 
 const onOpen = (popoverElement) => {
   focusStore.storeFocus();
@@ -66,7 +68,7 @@ class BpkPopoverPortal extends Component {
       ...rest
     } = this.props;
 
-    const classNames = ['bpk-popover-portal'];
+    const classNames = [getClassName('bpk-popover-portal')];
 
     if (portalClassName) { classNames.push(portalClassName); }
 

@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-radio.scss';
+import STYLES from './bpk-radio.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkRadio = (props) => {
-  const classNames = ['bpk-radio'];
+  const classNames = [getClassName('bpk-radio')];
   const { name, label, disabled, white, className, ...rest } = props;
 
-  if (white) { classNames.push('bpk-radio--white'); }
-  if (disabled) { classNames.push('bpk-radio--disabled'); }
+  if (white) { classNames.push(getClassName('bpk-radio--white')); }
+  if (disabled) { classNames.push(getClassName('bpk-radio--disabled')); }
   if (className) { classNames.push(className); }
 
   // This is awkward because the label-has-for rule enforces an 'id' / 'for' pairing
@@ -19,7 +22,7 @@ const BpkRadio = (props) => {
     <label className={classNames.join(' ')}>
       <input
         type="radio"
-        className="bpk-radio__input"
+        className={getClassName('bpk-radio__input')}
         name={name}
         disabled={disabled}
         {...rest}

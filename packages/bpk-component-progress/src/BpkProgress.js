@@ -2,8 +2,11 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { bpkColorWhite } from 'bpk-tokens/tokens/base.es6';
 import clamp from 'lodash.clamp';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-progress.scss';
+import STYLES from './bpk-progress.scss';
+
+const getClassName = cssModules(STYLES);
 
 const isTransitionEndSupported = () => !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
 
@@ -15,7 +18,7 @@ const renderSteps = (numberOfSteps, stepColor) => {
     steps.push(
       <div
         key={`bpk-progress__step-${i}`}
-        className="bpk-progress__step"
+        className={getClassName('bpk-progress__step')}
         style={{ left, backgroundColor }}
       />,
     );
@@ -60,9 +63,9 @@ class BpkProgress extends Component {
       stepColor,
       ...rest
     } = this.props;
-    const classNames = ['bpk-progress'];
+    const classNames = [getClassName('bpk-progress')];
     if (className) { classNames.push(className); }
-    if (small) { classNames.push('bpk-progress--small'); }
+    if (small) { classNames.push(getClassName('bpk-progress--small')); }
 
     const adjustedValue = clamp(value, min, max);
     const percentage = 100 * (adjustedValue / (max - min));
@@ -83,7 +86,7 @@ class BpkProgress extends Component {
         {...rest}
       >
         <div
-          className="bpk-progress__value"
+          className={getClassName('bpk-progress__value')}
           style={{ width: `${percentage}%` }}
           onTransitionEnd={this.handleCompleteTransitionEnd}
         />

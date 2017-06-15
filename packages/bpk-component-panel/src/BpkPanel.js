@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-panel.scss';
+import STYLES from './bpk-panel.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkPanel = (props) => {
-  const classNames = ['bpk-panel'];
+  const classNames = [getClassName('bpk-panel')];
   const { children, className, padded, fullWidth, ...rest } = props;
 
-  if (padded) { classNames.push('bpk-panel--padded'); }
-  if (fullWidth) { classNames.push('bpk-panel--full-width'); }
+  if (padded) { classNames.push(getClassName('bpk-panel--padded')); }
+  if (fullWidth) { classNames.push(getClassName('bpk-panel--full-width')); }
   if (className) { classNames.push(className); }
 
   return (

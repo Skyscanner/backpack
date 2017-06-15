@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-textarea.scss';
+import STYLES from './bpk-textarea.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkTextarea = (props) => {
-  const classNames = ['bpk-textarea'];
+  const classNames = [getClassName('bpk-textarea')];
   const { className, ...rest } = props;
 
   if (className) { classNames.push(className); }

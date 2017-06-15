@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 import SmSpinner from 'bpk-svgs/dist/js/spinners/sm';
 
-import './bpk-spinner.scss';
+import STYLES from './bpk-spinner.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkSpinner = (props) => {
-  const classNames = ['bpk-spinner'];
+  const classNames = [getClassName('bpk-spinner')];
   const { className, alignToButton, ...rest } = props;
 
-  if (alignToButton) { classNames.push('bpk-spinner--align-to-button'); }
+  if (alignToButton) { classNames.push(getClassName('bpk-spinner--align-to-button')); }
   if (className) { classNames.push(className); }
 
   return <SmSpinner className={classNames.join(' ')} {...rest} />;
