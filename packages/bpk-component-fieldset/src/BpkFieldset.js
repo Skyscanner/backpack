@@ -2,8 +2,11 @@ import PropTypes from 'prop-types';
 import React, { cloneElement } from 'react';
 import BpkLabel from 'bpk-component-label';
 import BpkFormValidation from 'bpk-component-form-validation';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-fieldset.scss';
+import STYLES from './bpk-fieldset.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkFieldset = (props) => {
   const {
@@ -23,7 +26,7 @@ const BpkFieldset = (props) => {
     return null;
   }
 
-  const classNames = ['bpk-fieldset'];
+  const classNames = [getClassName('bpk-fieldset')];
   const validationMessageId = `${children.props.id}_validation_message`;
 
   // Explicit check for false primitive value as undefined is

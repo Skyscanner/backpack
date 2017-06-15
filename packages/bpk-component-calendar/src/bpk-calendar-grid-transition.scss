@@ -1,0 +1,35 @@
+@import '~bpk-mixins/index';
+@import 'variables';
+
+.bpk-calendar-grid-transition {
+  box-sizing: border-box;
+  position: relative;
+  width: $calendar-width;
+  height: $calendar-height;
+  overflow: hidden;
+
+  &__dummy {
+    display: inline-block;
+    width: $calendar-width;
+  }
+
+  &__strip {
+    position: absolute;
+    left: 0;
+    display: block;
+    z-index: 0;
+    width: 3 * $calendar-width;
+
+    &--transitioning {
+      z-index: 1;
+      -moz-transition: -moz-transform $bpk-duration-sm ease-in-out;
+      -webkit-transition: -webkit-transform $bpk-duration-sm ease-in-out;
+      transition: transform $bpk-duration-sm ease-in-out;
+    }
+  }
+
+  &__grid {
+    display: inline-table;
+    width: $calendar-width;
+  }
+}

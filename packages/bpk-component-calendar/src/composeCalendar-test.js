@@ -21,6 +21,13 @@ const CustomCalendarComponent = composeCalendar(
   'Date',
 );
 
+const HeaderAndGridCalendar = composeCalendar(
+  'Nav',
+  null,
+  'Grid',
+  'Date',
+);
+
 describe('composeCalendar', () => {
   it('should compose a nav, header, grid and date component correctly', () => {
     const tree = renderer.create(<CalendarComponent
@@ -69,6 +76,20 @@ describe('composeCalendar', () => {
 
   it('should render without a nav or header element', () => {
     const tree = renderer.create(<CustomCalendarComponent
+      id="myCalendar"
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      daysOfWeek={weekDays}
+      changeMonthLabel="Change month"
+      minDate={new Date(Date.UTC(2010, 1, 15))}
+      maxDate={new Date(Date.UTC(2010, 2, 15))}
+      month={new Date(Date.UTC(2010, 1, 15))}
+    />, { createNodeMock }).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render without a header element', () => {
+    const tree = renderer.create(<HeaderAndGridCalendar
       id="myCalendar"
       formatMonth={formatMonth}
       formatDateFull={formatDateFull}

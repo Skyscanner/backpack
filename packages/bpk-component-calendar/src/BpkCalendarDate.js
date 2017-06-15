@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
+import { cssModules } from 'bpk-react-utils';
 
 import CustomPropTypes from './custom-proptypes';
-import './bpk-calendar.scss';
+
+import STYLES from './bpk-calendar-date.scss';
+
+const getClassName = cssModules(STYLES);
 
 const navigatedByMonthNudger = () =>
   document.activeElement.id && document.activeElement.id.indexOf('month_nudger') !== -1;
@@ -57,17 +61,17 @@ class BpkCalendarDate extends PureComponent {
       isKeyboardFocusable,
       ...buttonProps
     } = this.props;
-    const classNames = ['bpk-calendar-date'];
+    const classNames = [getClassName('bpk-calendar-date')];
 
     Object.keys(modifiers).forEach((modifier) => {
-      if (modifiers[modifier](this.props)) { classNames.push(`bpk-calendar-date--modifier-${modifier}`); }
+      if (modifiers[modifier](this.props)) { classNames.push(getClassName(`bpk-calendar-date--modifier-${modifier}`)); }
     });
 
-    if (isFocused) { classNames.push('bpk-calendar-date--focused'); }
-    if (isSelected) { classNames.push('bpk-calendar-date--selected'); }
-    if (isBlocked) { classNames.push('bpk-calendar-date--blocked'); }
-    if (isOutside) { classNames.push('bpk-calendar-date--outside'); }
-    if (isToday) { classNames.push('bpk-calendar-date--today'); }
+    if (isFocused) { classNames.push(getClassName('bpk-calendar-date--focused')); }
+    if (isSelected) { classNames.push(getClassName('bpk-calendar-date--selected')); }
+    if (isBlocked) { classNames.push(getClassName('bpk-calendar-date--blocked')); }
+    if (isOutside) { classNames.push(getClassName('bpk-calendar-date--outside')); }
+    if (isToday) { classNames.push(getClassName('bpk-calendar-date--today')); }
 
     delete buttonProps.preventKeyboardFocus;
 

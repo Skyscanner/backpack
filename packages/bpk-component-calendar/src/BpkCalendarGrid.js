@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { cssModules } from 'bpk-react-utils';
 
 import BpkCalendarGridHeader from './BpkCalendarGridHeader';
 import Week from './Week';
@@ -10,7 +11,10 @@ import {
   orderDaysOfWeek,
 } from './date-utils';
 import CustomPropTypes from './custom-proptypes';
-import './bpk-calendar.scss';
+
+import STYLES from './bpk-calendar-grid.scss';
+
+const getClassName = cssModules(STYLES);
 
 /*
   BpkCalendarGrid - the grid representing a whole month
@@ -65,13 +69,13 @@ class BpkCalendarGrid extends Component {
       daysOfWeek,
     } = this.state;
 
-    const classNames = ['bpk-calendar-grid'];
+    const classNames = [getClassName('bpk-calendar-grid')];
     if (className) { classNames.push(className); }
 
     return (
       <table className={classNames.join(' ')} aria-hidden={!isKeyboardFocusable}>
         <caption
-          className="bpk-calendar-grid__caption"
+          className={getClassName('bpk-calendar-grid__caption')}
           hidden
         >
           {formatMonth(month)}

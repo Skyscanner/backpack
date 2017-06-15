@@ -1,0 +1,62 @@
+@import '~bpk-mixins/index';
+@import 'variables';
+
+.bpk-calendar-nav {
+  display: table;
+
+  &__month {
+    display: table-cell;
+    width: ($bpk-calendar-day-size * 5) + ($bpk-calendar-day-spacing * 5);
+    text-align: center;
+  }
+
+  &__nudger {
+    display: table-cell;
+    width: $bpk-calendar-day-size + $bpk-calendar-day-spacing;
+    box-sizing: border-box;
+    padding: 0 ($bpk-calendar-day-spacing / 2);
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  &__button {
+    width: 100%;
+    height: $bpk-select-height;
+    padding: $bpk-select-padding-top 0 $bpk-select-padding-bottom 0;
+    appearance: none;
+    border: none;
+    background: none;
+    line-height: 100%; /* stylelint-disable-line scale-unlimited/declaration-strict-value */
+    cursor: pointer;
+
+    @include bpk-hover {
+      .bpk-calendar-nav__icon {
+        fill: $bpk-calendar-nav-icon-hover-fill;
+      }
+    }
+
+    .bpk-calendar-nav__icon {
+      fill: $bpk-calendar-nav-icon-fill;
+
+      @include bpk-icon--rtl-support;
+    }
+
+    &:active .bpk-calendar-nav__icon {
+      fill: $bpk-calendar-nav-icon-active-fill;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      .bpk-calendar-nav__icon {
+        fill: $bpk-calendar-nav-icon-disabled-fill;
+      }
+    }
+  }
+
+  &__text {
+    &--hidden {
+      @include bpk-visually-hidden;
+    }
+  }
+}
