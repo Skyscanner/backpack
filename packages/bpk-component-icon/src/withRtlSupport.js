@@ -1,4 +1,8 @@
-import './bpk-icon.scss';
+import { cssModules } from 'bpk-react-utils';
+
+import STYLES from './bpk-icon.scss';
 import classNameModifierHOCFactory from './classNameModifierHOCFactory';
 
-export default classNameModifierHOCFactory('withRtlSupport', ['bpk-icon--rtl-support']);
+const getClassName = cssModules(STYLES);
+
+export default classNameModifierHOCFactory('withRtlSupport', [getClassName('bpk-icon--rtl-support')]);

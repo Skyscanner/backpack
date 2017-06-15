@@ -4,10 +4,12 @@ import { BpkButtonLink } from 'bpk-component-link';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkCloseButton from 'bpk-component-close-button';
-import { TransitionInitialMount } from 'bpk-react-utils';
+import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
-import './bpk-modal.scss';
+import STYLES from './bpk-modal-dialog.scss';
 import { lockScroll, unlockScroll, storeScroll, restoreScroll } from './scroll-utils';
+
+const getClassName = cssModules(STYLES);
 
 const stopPropagation = (e) => {
   e.stopPropagation();
@@ -69,10 +71,10 @@ class BpkModalDialog extends Component {
   }
 
   renderDialog() {
-    const dialogClassNames = ['bpk-modal__dialog'];
+    const dialogClassNames = [getClassName('bpk-modal__dialog')];
 
-    if (this.props.wide) { dialogClassNames.push('bpk-modal__dialog--wide'); }
-    if (this.props.isIphone) { dialogClassNames.push('bpk-modal__dialog--iphone-fix'); }
+    if (this.props.wide) { dialogClassNames.push(getClassName('bpk-modal__dialog--wide')); }
+    if (this.props.isIphone) { dialogClassNames.push(getClassName('bpk-modal__dialog--iphone-fix')); }
     if (this.props.className) { dialogClassNames.push(this.props.className); }
 
     const headingId = `bpk-modal-heading-${this.props.id}`;
@@ -80,8 +82,8 @@ class BpkModalDialog extends Component {
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
       <TransitionInitialMount
-        appearClassName="bpk-modal__dialog--appear"
-        appearActiveClassName="bpk-modal__dialog--appear-active"
+        appearClassName={getClassName('bpk-modal__dialog--appear')}
+        appearActiveClassName={getClassName('bpk-modal__dialog--appear-active')}
         transitionTimeout={300}
       >
         <section
@@ -93,21 +95,21 @@ class BpkModalDialog extends Component {
           className={dialogClassNames.join(' ')}
           ref={this.getDialogRef}
         >
-          <header className="bpk-modal__dialog-header">
-            <h2 id={headingId} className="bpk-modal__dialog-heading">
+          <header className={getClassName('bpk-modal__dialog-header')}>
+            <h2 id={headingId} className={getClassName('bpk-modal__dialog-heading')}>
               {this.props.title}
             </h2>
             &nbsp;
             {this.props.closeText
               ? <BpkButtonLink onClick={this.onClose}>{this.props.closeText}</BpkButtonLink>
               : <BpkCloseButton
-                className="bpk-modal__dialog-close-button"
+                className={getClassName('bpk-modal__dialog-close-button')}
                 label={this.props.closeLabel}
                 onClick={this.onClose}
               />
             }
           </header>
-          <div className="bpk-modal__dialog-content">
+          <div className={getClassName('bpk-modal__dialog-content')}>
             {this.props.children}
           </div>
         </section>
@@ -117,9 +119,9 @@ class BpkModalDialog extends Component {
   }
 
   render() {
-    const classNames = ['bpk-modal'];
+    const classNames = [getClassName('bpk-modal')];
 
-    if (this.props.isIphone) { classNames.push('bpk-modal--iphone-fix'); }
+    if (this.props.isIphone) { classNames.push(getClassName('bpk-modal--iphone-fix')); }
 
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (

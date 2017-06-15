@@ -1,49 +1,47 @@
 @import '~bpk-mixins/index';
 
 .bpk-loading-button {
-  &.bpk-button {
+  svg {
+    fill: $bpk-button-color;
+  }
+
+  &--secondary svg {
+    fill: $bpk-button-secondary-color;
+  }
+
+  &--destructive svg {
+    fill: $bpk-button-destructive-color;
+  }
+
+  &--selected svg {
+    fill: $bpk-button-selected-color;
+  }
+
+  &:disabled svg {
+    fill: $bpk-button-disabled-color;
+  }
+
+  &--link {
     svg {
-      fill: $bpk-button-color;
+      fill: $bpk-link-color;
     }
 
-    &--secondary svg {
-      fill: $bpk-button-secondary-color;
-    }
+    &:hover {
+      &:disabled svg {
+        fill: $bpk-button-disabled-color;
+      }
 
-    &--destructive svg {
-      fill: $bpk-button-destructive-color;
-    }
-
-    &--selected svg {
-      fill: $bpk-button-selected-color;
-    }
-
-    &:disabled svg {
-      fill: $bpk-button-disabled-color;
-    }
-
-    &--link {
       svg {
-        fill: $bpk-link-color;
+        fill: $bpk-link-hover-color;
       }
+    }
 
-      &:hover {
-        &:disabled svg {
-          fill: $bpk-button-disabled-color;
-        }
+    &:active svg {
+      fill: $bpk-link-active-color;
+    }
 
-        svg {
-          fill: $bpk-link-hover-color;
-        }
-      }
-
-      &:active svg {
-        fill: $bpk-link-active-color;
-      }
-
-      &:visited svg {
-        fill: $bpk-link-visited-color;
-      }
+    &:visited svg {
+      fill: $bpk-link-visited-color;
     }
   }
 }

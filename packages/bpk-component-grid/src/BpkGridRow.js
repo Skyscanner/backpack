@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-grid.scss';
+import STYLES from './bpk-grid-row.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkGridRow = (props) => {
-  const classNames = ['bpk-grid__row'];
+  const classNames = [getClassName('bpk-grid__row')];
   const { children, padded, className, ...rest } = props;
 
-  if (padded) { classNames.push('bpk-grid__row--padded'); }
+  if (padded) { classNames.push(getClassName('bpk-grid__row--padded')); }
   if (className) { classNames.push(className); }
 
   return <div className={classNames.join(' ')} {...rest}>{children}</div>;
