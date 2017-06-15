@@ -1,18 +1,21 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-horizontal-nav.scss';
+import STYLES from './bpk-horizontal-nav.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkHorizontalNav = (props) => {
-  const classNames = ['bpk-horizontal-nav'];
-  const listClassNames = ['bpk-horizontal-nav__list'];
+  const classNames = [getClassName('bpk-horizontal-nav')];
+  const listClassNames = [getClassName('bpk-horizontal-nav__list')];
   const { children, className, spaceAround, ...rest } = props;
 
   // Outer classNames
   if (className) { classNames.push(className); }
 
   // Inner "list" classNames
-  if (spaceAround) { listClassNames.push('bpk-horizontal-nav__list--space-around'); }
+  if (spaceAround) { listClassNames.push(getClassName('bpk-horizontal-nav__list--space-around')); }
 
   return (
     <nav className={classNames.join(' ')} {...rest}>

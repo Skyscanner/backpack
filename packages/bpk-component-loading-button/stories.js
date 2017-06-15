@@ -129,49 +129,22 @@ storiesOf('bpk-component-loading-button', module)
   ))
   .add('Icon-only button', () => (
     <div>
-      <BpkLoadingButton iconOnly onClick={action('iconOnly button clicked')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
-      <BpkLoadingButton iconOnly secondary onClick={action('iconOnly button secondary clicked')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
-      <BpkLoadingButton iconOnly destructive onClick={action('iconOnly button destructive clicked')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
-      <BpkLoadingButton iconOnly selected onClick={action('iconOnly button selected clicked')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
-      <BpkLoadingButton iconOnly disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
-      <BpkLoadingButton iconOnly loading onClick={action('THIS SHOULD NOT HAPPEN')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
-      <BpkLoadingButton iconOnly featured onClick={action('iconOnly button featured clicked')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
+      <BpkLoadingButton iconOnly onClick={action('iconOnly button clicked')} />&nbsp;
+      <BpkLoadingButton iconOnly secondary onClick={action('iconOnly button secondary clicked')} />&nbsp;
+      <BpkLoadingButton iconOnly destructive onClick={action('iconOnly button destructive clicked')} />&nbsp;
+      <BpkLoadingButton iconOnly selected onClick={action('iconOnly button selected clicked')} />&nbsp;
+      <BpkLoadingButton iconOnly disabled onClick={action('THIS SHOULD NOT HAPPEN')} />&nbsp;
+      <BpkLoadingButton iconOnly loading onClick={action('THIS SHOULD NOT HAPPEN')} />&nbsp;
+      <BpkLoadingButton iconOnly featured onClick={action('iconOnly button featured clicked')} />&nbsp;
 
-      &nbsp;<BpkLoadingButton iconOnly large onClick={action('large iconOnly button clicked')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
-      <BpkLoadingButton iconOnly large secondary onClick={action('large iconOnly button secondary clicked')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
-      <BpkLoadingButton iconOnly large destructive onClick={action('large iconOnly button destructive clicked')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
-      <BpkLoadingButton iconOnly large selected onClick={action('large iconOnly button selected clicked')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
-      <BpkLoadingButton iconOnly large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
-      <BpkLoadingButton iconOnly large loading onClick={action('THIS SHOULD NOT HAPPEN')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
-      <BpkLoadingButton iconOnly large featured onClick={action('large iconOnly button featured clicked')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
+      &nbsp;<BpkLoadingButton iconOnly large onClick={action('large iconOnly button clicked')} />&nbsp;
+      <BpkLoadingButton iconOnly large secondary onClick={action('large iconOnly button secondary clicked')} />&nbsp;
+      <BpkLoadingButton iconOnly large destructive onClick={action('large iconOnly button destructive clicked')} />
+      &nbsp;
+      <BpkLoadingButton iconOnly large selected onClick={action('large iconOnly button selected clicked')} />&nbsp;
+      <BpkLoadingButton iconOnly large disabled onClick={action('THIS SHOULD NOT HAPPEN')} />&nbsp;
+      <BpkLoadingButton iconOnly large loading onClick={action('THIS SHOULD NOT HAPPEN')} />&nbsp;
+      <BpkLoadingButton iconOnly large featured onClick={action('large iconOnly button featured clicked')} />&nbsp;
     </div>
   ))
   .add('Mixture', () => (

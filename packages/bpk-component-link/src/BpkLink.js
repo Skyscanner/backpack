@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-link.scss';
+import STYLES from './bpk-link.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkLink = (props) => {
   const {
@@ -14,10 +17,10 @@ const BpkLink = (props) => {
     ...rest
   } = props;
 
-  const classNames = ['bpk-link'];
+  const classNames = [getClassName('bpk-link')];
   const target = blank ? '_blank' : null;
 
-  if (white) { classNames.push('bpk-link--white'); }
+  if (white) { classNames.push(getClassName('bpk-link--white')); }
   if (className) { classNames.push(className); }
 
   return (
