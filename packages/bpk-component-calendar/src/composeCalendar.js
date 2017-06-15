@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
 import CustomPropTypes from './custom-proptypes';
-import './bpk-calendar.scss';
+import STYLES from './bpk-calendar.scss';
+
+const getClassName = cssModules(STYLES);
 
 const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
   const BpkCalendar = (props) => {
-    const classNames = ['bpk-calendar'];
+    const classNames = [getClassName('bpk-calendar')];
 
     const {
       changeMonthLabel,
@@ -33,13 +36,22 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     } = props;
 
     if (className) { classNames.push(className); }
-    if (fixedWidth) { classNames.push('bpk-calendar--fixed'); }
+    if (fixedWidth) { classNames.push(getClassName('bpk-calendar--fixed')); }
+
+    const headerClasses = [];
+    // If the Nav is present add `bpk-calendar__header` which
+    // adds spacing between the nav and header.
+    if (Nav) { headerClasses.push(getClassName('bpk-calendar__header')); }
+
+    const gridClasses = [];
+    // If the GridHeader is not present add `bpk-calendar__grid` which
+    // adds spacing between the nav and grid.
+    if (!GridHeader && Nav) { gridClasses.push(getClassName('bpk-calendar__grid')); }
 
     return (
       <div className={classNames.join(' ')}>
         { Nav && (
           <Nav
-            className="bpk-calendar__nav"
             changeMonthLabel={changeMonthLabel}
             formatMonth={formatMonth}
             id={`${id}__bpk_calendar_nav`}
@@ -54,10 +66,10 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
             daysOfWeek={daysOfWeek}
             showWeekendSeparator={showWeekendSeparator}
             weekStartsOn={weekStartsOn}
+            className={headerClasses.join(' ')}
           />
         )}
         <Grid
-          className="bpk-calendar__grid"
           DateComponent={CalendarDate}
           dateModifiers={dateModifiers}
           daysOfWeek={daysOfWeek}
@@ -75,6 +87,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
           markToday={markToday}
           markOutsideDays={markOutsideDays}
           selectedDate={selectedDate}
+          className={gridClasses.join(' ')}
         />
       </div>
     );

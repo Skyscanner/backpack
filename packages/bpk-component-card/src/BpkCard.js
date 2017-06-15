@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-card.scss';
+import STYLES from './bpk-card.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkCard = (props) => {
-  const classNames = ['bpk-card'];
+  const classNames = [getClassName('bpk-card')];
   const { children, className, href, padded, ...rest } = props;
 
-  if (padded) { classNames.push('bpk-card--padded'); }
+  if (padded) { classNames.push(getClassName('bpk-card--padded')); }
   if (className) { classNames.push(className); }
 
   const classNameFinal = classNames.join(' ');

@@ -19,6 +19,7 @@
     "bpk-component-modal": "^1.0.49",
     "bpk-component-popover": "^1.0.51",
     "bpk-mixins": "^15.4.0",
+    "bpk-react-utils": "^1.4.6",
     "prop-types": "^15.5.8"
   }
 }
