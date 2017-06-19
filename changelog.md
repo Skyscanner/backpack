@@ -13,7 +13,7 @@
 - bpk-svgs:
 - bpk-component-icon:
 - bpk-mixins:
-  - added 3 new icons (onsen, language, language-alert, and language-question)
+  - added 4 new icons (onsen, language, language-alert, language-question and airline-multiple)
 
 ## 2017-06-14 - Tooltips no longer appear on touch devices
 
