@@ -4,9 +4,12 @@ import BpkButton from 'bpk-component-button';
 import { withButtonAlignment } from 'bpk-component-icon';
 import MinusIcon from 'bpk-component-icon/sm/minus';
 import PlusIcon from 'bpk-component-icon/sm/plus';
+import { cssModules } from 'bpk-react-utils';
 import clamp from 'lodash.clamp';
 
-import './bpk-nudger.scss';
+import STYLES from './bpk-nudger.scss';
+
+const getClassName = cssModules(STYLES);
 
 const AlignedMinusIcon = withButtonAlignment(MinusIcon);
 const AlignedPlusIcon = withButtonAlignment(PlusIcon);
@@ -22,17 +25,17 @@ const BpkNudger = (props) => {
     increaseButtonLabel,
     decreaseButtonLabel,
   } = props;
-  const classNames = ['bpk-nudger'];
+  const classNames = [getClassName('bpk-nudger')];
   if (className) { classNames.push(className); }
 
   const adjustedValue = Math.floor(clamp(value, min, max));
   const decreaseDisabled = adjustedValue <= min;
   const increaseDisabled = adjustedValue >= max;
 
-  const minusIconClassNames = ['bpk-nudger__icon'];
-  if (decreaseDisabled) { minusIconClassNames.push('bpk-nudger__icon--disabled'); }
-  const plusIconClassNames = ['bpk-nudger__icon'];
-  if (increaseDisabled) { plusIconClassNames.push('bpk-nudger__icon--disabled'); }
+  const minusIconClassNames = [getClassName('bpk-nudger__icon')];
+  if (decreaseDisabled) { minusIconClassNames.push(getClassName('bpk-nudger__icon--disabled')); }
+  const plusIconClassNames = [getClassName('bpk-nudger__icon')];
+  if (increaseDisabled) { plusIconClassNames.push(getClassName('bpk-nudger__icon--disabled')); }
 
   return (
     <div className={classNames.join(' ')}>
@@ -43,7 +46,7 @@ const BpkNudger = (props) => {
         disabled={decreaseDisabled}
         title={decreaseButtonLabel}
         aria-controls={id}
-        className="bpk-nudger__button"
+        className={getClassName('bpk-nudger__button')}
       >
         <AlignedMinusIcon className={minusIconClassNames.join(' ')} />
       </BpkButton>
@@ -54,7 +57,7 @@ const BpkNudger = (props) => {
         readOnly
         value={adjustedValue}
         id={id}
-        className="bpk-nudger__input"
+        className={getClassName('bpk-nudger__input')}
       />
       <BpkButton
         secondary
@@ -63,7 +66,7 @@ const BpkNudger = (props) => {
         disabled={increaseDisabled}
         title={increaseButtonLabel}
         aria-controls={id}
-        className="bpk-nudger__button"
+        className={getClassName('bpk-nudger__button')}
       >
         <AlignedPlusIcon className={plusIconClassNames.join(' ')} />
       </BpkButton>

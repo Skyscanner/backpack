@@ -1,5 +1,9 @@
-import './bpk-icon.scss';
+import { cssModules } from 'bpk-react-utils';
+
+import STYLES from './bpk-icon.scss';
 import classNameModifierHOCFactory from './classNameModifierHOCFactory';
 
-export default classNameModifierHOCFactory('withLargeButtonAlignment', ['bpk-icon--align-to-large-button']);
+const getClassName = cssModules(STYLES);
+
+export default classNameModifierHOCFactory('withLargeButtonAlignment', [getClassName('bpk-icon--align-to-large-button')]);
 

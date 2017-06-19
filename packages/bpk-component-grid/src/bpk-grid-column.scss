@@ -1,26 +1,6 @@
 @import '~bpk-mixins';
 
 .bpk-grid {
-  &__container {
-    @include bpk-grid__container;
-
-    &--debug {
-      @include bpk-grid__container--debug;
-    }
-
-    &--full-width {
-      @include bpk-grid__container--full-width;
-    }
-  }
-
-  &__row {
-    @include bpk-grid__row;
-
-    &--padded {
-      @include bpk-grid__row--padded;
-    }
-  }
-
   &__column {
     @include bpk-grid__column;
 
