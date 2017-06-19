@@ -2,6 +2,13 @@
 
 ## UNRELEASED
 
+**Breaking:**
+
+* bpk-react-utils:
+
+  * TransitionInitialMount: Removes `classNamePrefix` in favour of `appearClassName` and `appearActiveClassName` for CSS Modules compatibility.
+
+
 **Added:**
 - bpk-svgs:
 - bpk-component-icon:

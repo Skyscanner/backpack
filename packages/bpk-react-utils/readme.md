@@ -119,7 +119,7 @@ Without css modules:
 ## TransitionInitialMount.js
 
 A wrapper around `react-transition-group` which makes it easy to transition a
-components initial mount. All you need to provide is a class name and a timeout.
+components initial mount. All you need to provide is two class names and a timeout.
 
 ### Usage
 
@@ -128,7 +128,11 @@ import React from 'react';
 import { TransitionInitialMount } from 'bpk-react-utils';
 
 const MyComponent = (props) => (
-  <TransitionInitialMount classNamePrefix="my-transition-class" transitionTimeout={300}>
+  <TransitionInitialMount
+    appearClassName="my-transition-class--appear"
+    appearActiveClassName="my-transition-class--appear-active"
+    transitionTimeout={300}
+  >
     <div>Some text.</div>
   </TransitionInitialMount>
 );
@@ -153,8 +157,9 @@ const MyComponent = (props) => (
 
 ### Props
 
-| Property          | PropType | Required | Default Value |
-| ----------------- | -------- | -------- | ------------- |
-| children          | node     | true     | -             |
-| classNamePrefix   | string   | true     | -             |
-| transitionTimeout | number   | true     | -             |
+| Property              | PropType | Required | Default Value |
+| --------------------- | -------- | -------- | ------------- |
+| children              | node     | true     | -             |
+| appearClassName       | string   | true     | -             |
+| appearActiveClassName | string   | true     | -             |
+| transitionTimeout     | number   | true     | -             |

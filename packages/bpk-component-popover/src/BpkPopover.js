@@ -33,7 +33,11 @@ const BpkPopover = (props) => {
   const labelId = `bpk-popover-label-${id}`;
 
   return (
-    <TransitionInitialMount classNamePrefix={'bpk-popover'} transitionTimeout={200}>
+    <TransitionInitialMount
+      appearClassName="bpk-popover--appear"
+      appearActiveClassName="bpk-popover--appear-active"
+      transitionTimeout={200}
+    >
       <section
         id={id}
         tabIndex="-1"
