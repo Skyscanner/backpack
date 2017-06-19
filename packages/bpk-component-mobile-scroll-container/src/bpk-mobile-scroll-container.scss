@@ -1,0 +1,56 @@
+@import '~bpk-mixins/index';
+
+@mixin scroll-indicator ($direction: 'left') {
+  $gradient-direction: if($direction == 'left', 90deg, 270deg);
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  content: ' ';
+  display: block;
+  z-index: 1;
+  width: $bpk-spacing-xl;
+  background-image: linear-gradient($gradient-direction, rgba($bpk-color-white, 1), rgba($bpk-color-white, 0));
+  pointer-events: none;
+
+  @if $direction == 'left' {
+    left: 0;
+  }
+
+  @else {
+    right: 0;
+  }
+}
+
+.bpk-mobile-scroll-container {
+  position: relative;
+  overflow: hidden;
+
+  &--left-indicator {
+    &::before {
+      @include scroll-indicator('left');
+    }
+  }
+
+  &--right-indicator {
+    &::after {
+      @include scroll-indicator('right');
+    }
+  }
+
+  &__scroller {
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__inner {
+    width: 100%;
+  }
+}

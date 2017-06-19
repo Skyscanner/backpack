@@ -22,6 +22,18 @@ exports[`BpkHorizontalNavItem should render correctly with "selected" prop 1`] =
 </li>
 `;
 
+exports[`BpkHorizontalNavItem should render correctly with "spaceAround" prop 1`] = `
+<li
+  className="bpk-horizontal-nav__item bpk-horizontal-nav__item--space-around">
+  <button
+    className="bpk-horizontal-nav__link"
+    disabled={false}
+    type="button">
+    My nav item content.
+  </button>
+</li>
+`;
+
 exports[`BpkHorizontalNavItem should render correctly with an "href" prop 1`] = `
 <li
   className="bpk-horizontal-nav__item">

@@ -1,6 +1,7 @@
 import React from 'react';
 import BpkBarchart from 'bpk-component-barchart';
 import BpkParagraph from 'bpk-component-paragraph';
+import { onePixelRem } from 'bpk-tokens/tokens/base.es6';
 
 import barchartReadme from 'bpk-component-barchart/readme.md';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
@@ -29,6 +30,7 @@ const components = [
         xAxisMargin={60}
         yAxisLabel="Average price (£)"
         xAxisLabel="Month"
+        style={{ minWidth: `calc(500 * ${onePixelRem})` }}
       />,
     ],
   },
@@ -50,6 +52,7 @@ const components = [
         xAxisMargin={60}
         yAxisLabel="Average price (£)"
         xAxisLabel="Month"
+        style={{ minWidth: `calc(500 * ${onePixelRem})` }}
         showGridlines
       />,
     ],

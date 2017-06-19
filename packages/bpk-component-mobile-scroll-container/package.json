@@ -1,7 +1,7 @@
 {
-  "name": "bpk-component-horizontal-nav",
-  "version": "0.1.0",
-  "description": "Backpack horizontal nav component.",
+  "name": "bpk-component-mobile-scroll-container",
+  "version": "0.0.0",
+  "description": "Backpack mobile scroll container component.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -13,12 +13,14 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-component-mobile-scroll-container": "^0.0.0",
-    "bpk-mixins": "^15.5.0",
-    "bpk-react-utils": "^2.0.0",
+    "bpk-mixins": "^15.4.0",
+    "bpk-react-utils": "^1.4.6",
+    "lodash.debounce": "^4.0.8",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
+    "bpk-component-table": "^0.0.100",
+    "bpk-component-button": "^1.6.32",
     "bpk-tokens": "^23.2.1"
   }
 }

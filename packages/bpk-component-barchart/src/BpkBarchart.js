@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import { spacingXs, lineHeightSm } from 'bpk-tokens/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
+import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 
 import BpkBarchartDefs from './BpkBarchartDefs';
 import BpkBarchartBars from './BpkBarchartBars';
@@ -115,62 +116,64 @@ class BpkBarchart extends Component {
     this.yScale.domain([0, maxYValue]);
 
     return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className={classNames.join(' ')}
-        width={this.state.width}
-        height={this.state.height}
-        ref={(svgEl) => { this.svgEl = svgEl; }}
-        {...rest}
-      >
-        <BpkBarchartDefs />
-        <BpkChartMargin
-          margin={margin}
+      <BpkMobileScrollContainer>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={classNames.join(' ')}
+          width={this.state.width}
+          height={this.state.height}
+          ref={(svgEl) => { this.svgEl = svgEl; }}
+          {...rest}
         >
-          <BpkChartAxis
-            orientation={ORIENTATION_Y}
-            width={this.state.width}
-            height={this.state.height}
+          <BpkBarchartDefs />
+          <BpkChartMargin
             margin={margin}
-            scale={this.yScale}
-            tickValue={yAxisTickValue}
-            numTicks={yAxisNumTicks}
-            label={yAxisLabel}
-          />
-          <BpkChartAxis
-            orientation={ORIENTATION_X}
-            width={this.state.width}
-            height={this.state.height}
-            margin={margin}
-            scale={this.xScale}
-            tickValue={xAxisTickValue}
-            tickEvery={xAxisTickEvery}
-            tickOffset={xAxisTickOffset}
-            label={xAxisLabel}
-          />
-          { showGridlines && <BpkChartGridLines
-            orientation={ORIENTATION_Y}
-            width={this.state.width}
-            height={this.state.height}
-            margin={margin}
-            scale={this.yScale}
-          /> }
-          <BpkBarchartBars
-            height={this.state.height}
-            margin={margin}
-            data={transformedData}
-            xScale={this.xScale}
-            yScale={this.yScale}
-            xScaleDataKey={xScaleDataKey}
-            yScaleDataKey={yScaleDataKey}
-            maxYValue={maxYValue}
-            outerPadding={showGridlines ? undefined : 0}
-            onBarClick={onBarClick}
-            getBarLabel={getBarLabel}
-            BarComponent={BarComponent}
-          />
-        </BpkChartMargin>
-      </svg>
+          >
+            <BpkChartAxis
+              orientation={ORIENTATION_Y}
+              width={this.state.width}
+              height={this.state.height}
+              margin={margin}
+              scale={this.yScale}
+              tickValue={yAxisTickValue}
+              numTicks={yAxisNumTicks}
+              label={yAxisLabel}
+            />
+            <BpkChartAxis
+              orientation={ORIENTATION_X}
+              width={this.state.width}
+              height={this.state.height}
+              margin={margin}
+              scale={this.xScale}
+              tickValue={xAxisTickValue}
+              tickEvery={xAxisTickEvery}
+              tickOffset={xAxisTickOffset}
+              label={xAxisLabel}
+            />
+            { showGridlines && <BpkChartGridLines
+              orientation={ORIENTATION_Y}
+              width={this.state.width}
+              height={this.state.height}
+              margin={margin}
+              scale={this.yScale}
+            /> }
+            <BpkBarchartBars
+              height={this.state.height}
+              margin={margin}
+              data={transformedData}
+              xScale={this.xScale}
+              yScale={this.yScale}
+              xScaleDataKey={xScaleDataKey}
+              yScaleDataKey={yScaleDataKey}
+              maxYValue={maxYValue}
+              outerPadding={showGridlines ? undefined : 0}
+              onBarClick={onBarClick}
+              getBarLabel={getBarLabel}
+              BarComponent={BarComponent}
+            />
+          </BpkChartMargin>
+        </svg>
+      </BpkMobileScrollContainer>
     );
   }
 }

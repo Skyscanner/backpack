@@ -4,3 +4,10 @@ exports[`BpkTable should render correctly 1`] = `
   <tbody />
 </table>
 `;
+
+exports[`BpkTable should render correctly with custom class 1`] = `
+<table
+  className="bpk-table my-table">
+  <tbody />
+</table>
+`;

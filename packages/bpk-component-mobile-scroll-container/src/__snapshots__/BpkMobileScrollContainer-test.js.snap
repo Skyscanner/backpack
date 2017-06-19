@@ -1,0 +1,57 @@
+exports[`BpkMobileScrollContainer should render correctly 1`] = `
+<div
+  className="bpk-mobile-scroll-container"
+  style={
+    Object {
+      "height": "auto",
+    }
+  }>
+  <div
+    className="bpk-mobile-scroll-container__scroller"
+    onScroll={[Function]}>
+    <div
+      className="bpk-mobile-scroll-container__inner">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkMobileScrollContainer should render correctly with a custom "className" attribute 1`] = `
+<div
+  className="bpk-mobile-scroll-container my-custom-class"
+  style={
+    Object {
+      "height": "auto",
+    }
+  }>
+  <div
+    className="bpk-mobile-scroll-container__scroller"
+    onScroll={[Function]}>
+    <div
+      className="bpk-mobile-scroll-container__inner">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkMobileScrollContainer should render correctly with a custom "style" attribute 1`] = `
+<div
+  className="bpk-mobile-scroll-container"
+  style={
+    Object {
+      "backgroundColor": "red",
+      "height": "auto",
+    }
+  }>
+  <div
+    className="bpk-mobile-scroll-container__scroller"
+    onScroll={[Function]}>
+    <div
+      className="bpk-mobile-scroll-container__inner">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
+  </div>
+</div>
+`;
