@@ -2,7 +2,11 @@
 
 ## UNRELEASED
 
-_Nothing yet_
+**Added:**
+- bpk-svgs:
+- bpk-component-icon:
+- bpk-mixins:
+  - added 3 new icons (onsen, language, language-alert, and language-question)
 
 ## 2017-06-14 - Tooltips no longer appear on touch devices
 
