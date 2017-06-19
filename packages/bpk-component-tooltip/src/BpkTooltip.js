@@ -24,7 +24,11 @@ const BpkTooltip = (props) => {
   if (padded) { innerClassNames.push('bpk-tooltip__inner--padded'); }
 
   return (
-    <TransitionInitialMount classNamePrefix={'bpk-tooltip'} transitionTimeout={200}>
+    <TransitionInitialMount
+      appearClassName="bpk-tooltip--appear"
+      appearActiveClassName="bpk-tooltip--appear-active"
+      transitionTimeout={200}
+    >
       <section
         id={id}
         tabIndex="-1"
