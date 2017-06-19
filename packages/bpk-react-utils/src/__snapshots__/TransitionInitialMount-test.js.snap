@@ -1,0 +1,18 @@
+exports[`TransitionInitialMount should render correctly 1`] = `
+<Component
+  component={[Function]}
+  transitionAppear={true}
+  transitionAppearTimeout={250}
+  transitionEnterTimeout={0}
+  transitionLeaveTimeout={0}
+  transitionName={
+    Object {
+      "appear": "block--appear",
+      "appearActive": "block--apear-active",
+    }
+  }>
+  <p>
+    My transition
+  </p>
+</Component>
+`;

@@ -3,7 +3,6 @@ exports[`composeCalendar should compose a nav, header, grid and date component c
   className="bpk-calendar bpk-calendar--fixed">
   <Nav
     changeMonthLabel="Change month"
-    className="bpk-calendar__nav"
     formatMonth={[Function]}
     id="myCalendar__bpk_calendar_nav"
     maxDate={2010-03-15T00:00:00.000Z}
@@ -11,6 +10,7 @@ exports[`composeCalendar should compose a nav, header, grid and date component c
     month={2010-02-15T00:00:00.000Z}
     onMonthChange={[Function]} />
   <Header
+    className="bpk-calendar__header"
     daysOfWeek={
       Array [
         Object {
@@ -61,7 +61,7 @@ exports[`composeCalendar should compose a nav, header, grid and date component c
     weekStartsOn={1} />
   <Grid
     DateComponent="Date"
-    className="bpk-calendar__grid"
+    className=""
     dateModifiers={Object {}}
     daysOfWeek={
       Array [
@@ -131,7 +131,6 @@ exports[`composeCalendar should render with "fixedWidth" set to false 1`] = `
   className="bpk-calendar">
   <Nav
     changeMonthLabel="Change month"
-    className="bpk-calendar__nav"
     formatMonth={[Function]}
     id="myCalendar__bpk_calendar_nav"
     maxDate={2010-03-15T00:00:00.000Z}
@@ -139,6 +138,7 @@ exports[`composeCalendar should render with "fixedWidth" set to false 1`] = `
     month={2010-02-15T00:00:00.000Z}
     onMonthChange={[Function]} />
   <Header
+    className="bpk-calendar__header"
     daysOfWeek={
       Array [
         Object {
@@ -189,7 +189,7 @@ exports[`composeCalendar should render with "fixedWidth" set to false 1`] = `
     weekStartsOn={1} />
   <Grid
     DateComponent="Date"
-    className="bpk-calendar__grid"
+    className=""
     dateModifiers={Object {}}
     daysOfWeek={
       Array [
@@ -259,7 +259,6 @@ exports[`composeCalendar should render with custom className prop correctly 1`] 
   className="bpk-calendar my-custom-class bpk-calendar--fixed">
   <Nav
     changeMonthLabel="Change month"
-    className="bpk-calendar__nav"
     formatMonth={[Function]}
     id="myCalendar__bpk_calendar_nav"
     maxDate={2010-03-15T00:00:00.000Z}
@@ -267,6 +266,7 @@ exports[`composeCalendar should render with custom className prop correctly 1`] 
     month={2010-02-15T00:00:00.000Z}
     onMonthChange={[Function]} />
   <Header
+    className="bpk-calendar__header"
     daysOfWeek={
       Array [
         Object {
@@ -315,6 +315,84 @@ exports[`composeCalendar should render with custom className prop correctly 1`] 
     }
     showWeekendSeparator={true}
     weekStartsOn={1} />
+  <Grid
+    DateComponent="Date"
+    className=""
+    dateModifiers={Object {}}
+    daysOfWeek={
+      Array [
+        Object {
+          "index": 0,
+          "isWeekend": true,
+          "name": "Sunday",
+          "nameAbbr": "Sun",
+        },
+        Object {
+          "index": 1,
+          "isWeekend": false,
+          "name": "Monday",
+          "nameAbbr": "Mon",
+        },
+        Object {
+          "index": 2,
+          "isWeekend": false,
+          "name": "Tuesday",
+          "nameAbbr": "Tue",
+        },
+        Object {
+          "index": 3,
+          "isWeekend": false,
+          "name": "Wednesday",
+          "nameAbbr": "Wed",
+        },
+        Object {
+          "index": 4,
+          "isWeekend": false,
+          "name": "Thursday",
+          "nameAbbr": "Thu",
+        },
+        Object {
+          "index": 5,
+          "isWeekend": false,
+          "name": "Friday",
+          "nameAbbr": "Fri",
+        },
+        Object {
+          "index": 6,
+          "isWeekend": true,
+          "name": "Saturday",
+          "nameAbbr": "Sat",
+        },
+      ]
+    }
+    focusedDate={null}
+    formatDateFull={[Function]}
+    formatMonth={[Function]}
+    markOutsideDays={true}
+    markToday={true}
+    maxDate={2010-03-15T00:00:00.000Z}
+    minDate={2010-02-15T00:00:00.000Z}
+    month={2010-02-15T00:00:00.000Z}
+    onDateClick={[Function]}
+    onDateKeyDown={[Function]}
+    preventKeyboardFocus={false}
+    selectedDate={null}
+    showWeekendSeparator={true}
+    weekStartsOn={1} />
+</div>
+`;
+
+exports[`composeCalendar should render without a header element 1`] = `
+<div
+  className="bpk-calendar bpk-calendar--fixed">
+  <Nav
+    changeMonthLabel="Change month"
+    formatMonth={[Function]}
+    id="myCalendar__bpk_calendar_nav"
+    maxDate={2010-03-15T00:00:00.000Z}
+    minDate={2010-02-15T00:00:00.000Z}
+    month={2010-02-15T00:00:00.000Z}
+    onMonthChange={[Function]} />
   <Grid
     DateComponent="Date"
     className="bpk-calendar__grid"
@@ -387,7 +465,7 @@ exports[`composeCalendar should render without a nav or header element 1`] = `
   className="bpk-calendar bpk-calendar--fixed">
   <Grid
     DateComponent="Date"
-    className="bpk-calendar__grid"
+    className=""
     dateModifiers={Object {}}
     daysOfWeek={
       Array [

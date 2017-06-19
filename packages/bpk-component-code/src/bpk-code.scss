@@ -2,12 +2,4 @@
 
 .bpk-code {
   @include bpk-code;
-
-  &--block {
-    @include bpk-code--block;
-  }
-
-  &__pre {
-    @include bpk-code__pre;
-  }
 }

@@ -6,6 +6,7 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
     <button
       className="bpk-calendar-nav__button"
       disabled={true}
+      id="myCalendarNav_month_nudger_previous"
       onClick={[Function]}
       type="button">
       <svg
@@ -59,6 +60,7 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
     <button
       className="bpk-calendar-nav__button"
       disabled={true}
+      id="myCalendarNav_month_nudger_next"
       onClick={[Function]}
       type="button">
       <svg
@@ -93,6 +95,7 @@ exports[`BpkCalendarNav should render correctly 1`] = `
     <button
       className="bpk-calendar-nav__button"
       disabled={true}
+      id="myCalendarNav_month_nudger_previous"
       onClick={[Function]}
       type="button">
       <svg
@@ -146,6 +149,7 @@ exports[`BpkCalendarNav should render correctly 1`] = `
     <button
       className="bpk-calendar-nav__button"
       disabled={false}
+      id="myCalendarNav_month_nudger_next"
       onClick={[Function]}
       type="button">
       <svg
