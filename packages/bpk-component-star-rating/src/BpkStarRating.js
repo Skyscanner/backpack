@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { cssModules } from 'bpk-react-utils';
 import BpkStar, { STAR_TYPES } from './BpkStar';
-import './bpk-star-rating.scss';
+
+import STYLES from './bpk-star-rating.scss';
+
+const getClassName = cssModules(STYLES);
 
 const getTypeByRating = (starNumber, rating) => {
   if (starNumber <= rating) {
@@ -28,7 +32,7 @@ const BpkStarRating = (props) => {
   } = props;
 
   const stars = [];
-  const classNames = ['bpk-star-rating'];
+  const classNames = [getClassName('bpk-star-rating')];
 
   const currentRating = rating > maxRating ? maxRating : rating;
 

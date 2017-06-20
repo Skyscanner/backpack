@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { cssModules } from 'bpk-react-utils';
 import BpkStar, { STAR_TYPES } from './BpkStar';
-import './bpk-interactive-star.scss';
+
+import STYLES from './bpk-interactive-star.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkInteractiveStar = (props) => {
   const { selected, type, name, value, onChange, label, ...rest } = props;
-  const classNames = ['bpk-interactive-star'];
-  if (selected) { classNames.push('bpk-interactive-star--selected'); }
+  const classNames = [getClassName('bpk-interactive-star')];
+  if (selected) { classNames.push(getClassName('bpk-interactive-star--selected')); }
 
   return (
     <label aria-label={label} htmlFor={`${name}_${value}`}>
@@ -18,7 +22,7 @@ const BpkInteractiveStar = (props) => {
         value={value}
         checked={selected}
         onChange={onChange}
-        className="bpk-interactive-star__radio"
+        className={getClassName('bpk-interactive-star__radio')}
       />
       <BpkStar
         className={classNames.join(' ')}
