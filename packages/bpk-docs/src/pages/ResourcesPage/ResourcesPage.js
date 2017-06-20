@@ -60,7 +60,7 @@ const ResourcesPage = () => (
               <BpkLink href={`/${iconTemplate}`} blank>Icon tempalte</BpkLink>
             </BpkListItem>
             <BpkListItem>
-              <BpkLink href="https://www.dropbox.com/sh/aodde0j6gmgllgw/AABrmRTv6j1-VqUKuSdWDxqla?dl=0" blank>
+              <BpkLink href="https://www.dropbox.com/sh/0dqy5vbr1pjk0f4/AADHS3kRM_yGCqp5wyVMe09Ba?dl=0" blank>
                 Craft Library
               </BpkLink>
             </BpkListItem>
