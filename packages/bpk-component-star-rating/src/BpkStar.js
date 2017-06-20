@@ -5,21 +5,20 @@ import LargeIcon from 'bpk-component-icon/lg/star';
 import HalfSmallIcon from 'bpk-component-icon/sm/star-half';
 import HalfLargeIcon from 'bpk-component-icon/lg/star-half';
 
-import './bpk-star-rating.scss';
+import './bpk-star.scss';
 
 export const STAR_TYPES = {
   EMPTY: 'empty',
   HALF: 'half',
   FULL: 'full',
-  INTERACTIVE: 'interactive',
 };
 
 const BpkStar = (props) => {
-  const { type, large, selected, ...rest } = props;
-  const iconClassNames = ['bpk-star-rating__star'];
-  const containerClassNames = ['bpk-star-rating__star-container'];
-  const halfIconClassNamesLeft = ['bpk-star-rating__star bpk-star-rating__star--half bpk-star-rating__star--filled'];
-  const halfIconClassNamesRight = ['bpk-star-rating__star bpk-star-rating__star--half-flipped'];
+  const { type, large, className, ...rest } = props;
+  const iconClassNames = ['bpk-star'];
+  const containerClassNames = ['bpk-star__container bpk-star__container--half-star'];
+  const halfIconClassNamesLeft = ['bpk-star bpk-star--half bpk-star--filled'];
+  const halfIconClassNamesRight = ['bpk-star bpk-star--half-flipped'];
 
   let Icon = SmallIcon;
   let HalfIcon = HalfSmallIcon;
@@ -27,13 +26,12 @@ const BpkStar = (props) => {
   if (large) {
     Icon = LargeIcon;
     HalfIcon = HalfLargeIcon;
-    iconClassNames.push('bpk-star-rating__star--large');
-    containerClassNames.push('bpk-star-rating__star-container--large');
+    iconClassNames.push('bpk-star--large');
+    containerClassNames.push('bpk-star__container--large');
   }
 
-  if (selected) { iconClassNames.push('bpk-star-rating__star--selected'); }
-
   if (type === STAR_TYPES.HALF) {
+    if (className) { containerClassNames.push(className); }
     return (
       <span className={containerClassNames.join(' ')} {...rest}>
         <HalfIcon className={halfIconClassNamesLeft.join(' ')} />
@@ -42,14 +40,11 @@ const BpkStar = (props) => {
     );
   }
 
-  if (type === STAR_TYPES.INTERACTIVE) {
-    iconClassNames.push('bpk-star-rating__star--filled');
-    iconClassNames.push('bpk-star-rating__star--interactive');
+  if (type === STAR_TYPES.FULL) {
+    iconClassNames.push('bpk-star--filled');
   }
 
-  if (type === STAR_TYPES.FULL) {
-    iconClassNames.push('bpk-star-rating__star--filled');
-  }
+  if (className) { iconClassNames.push(className); }
 
   return <Icon className={iconClassNames.join(' ')} {...rest} />;
 };
@@ -59,15 +54,14 @@ BpkStar.propTypes = {
     STAR_TYPES.EMPTY,
     STAR_TYPES.HALF,
     STAR_TYPES.FULL,
-    STAR_TYPES.INTERACTIVE,
   ]).isRequired,
+  className: PropTypes.string,
   large: PropTypes.bool,
-  selected: PropTypes.bool,
 };
 
 BpkStar.defaultProps = {
+  className: null,
   large: false,
-  selected: false,
 };
 
 export default BpkStar;

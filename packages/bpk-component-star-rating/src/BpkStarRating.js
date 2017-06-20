@@ -1,64 +1,55 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './bpk-star-rating.scss';
 import BpkStar, { STAR_TYPES } from './BpkStar';
+import './bpk-star-rating.scss';
 
-const getTypeByRating = (currentRating) => {
-  if (currentRating < 0.5) {
-    return STAR_TYPES.EMPTY;
-  } else if (currentRating >= 0.5 && currentRating < 1) {
+const getTypeByRating = (starNumber, rating) => {
+  if (starNumber <= rating) {
+    return STAR_TYPES.FULL;
+  }
+
+  const rest = rating - (starNumber - 1);
+  if (rest >= 0.5 && rest < 1) {
     return STAR_TYPES.HALF;
   }
-  return STAR_TYPES.FULL;
+
+  return STAR_TYPES.EMPTY;
 };
 
 const BpkStarRating = (props) => {
   const {
     rating,
-    hoverRating,
     maxRating,
     large,
-    interactive,
     className,
-    onRatingSelect,
-    onRatingHover,
-    onMouseLeave,
     ...rest
   } = props;
 
   const stars = [];
   const classNames = ['bpk-star-rating'];
-  const displayRating = hoverRating || rating;
 
-  let currentRating = displayRating > maxRating ? maxRating : displayRating;
+  const currentRating = rating > maxRating ? maxRating : rating;
 
   if (className) { classNames.push(className); }
 
-  for (let i = 1; i < maxRating + 1; i += 1) {
-    const type = (interactive && hoverRating >= i)
-      ? STAR_TYPES.INTERACTIVE
-      : getTypeByRating(currentRating);
+  for (let starNumber = 1; starNumber <= maxRating; starNumber += 1) {
+    const type = getTypeByRating(starNumber, currentRating);
 
     stars.push(
       <BpkStar
-        key={`star${i}`}
-        onClick={() => onRatingSelect(i)}
+        key={`star${starNumber}`}
         type={type}
         large={large}
-        onMouseEnter={() => onRatingHover(i)}
-        selected={interactive ? rating === i : false}
       />,
     );
-
-    currentRating -= 1;
   }
 
   return (
     <div
       {...rest}
+      aria-label={`Rated ${rating} out of ${maxRating} stars`}
       className={classNames.join(' ')}
-      onMouseLeave={onMouseLeave}
     >
       {stars}
     </div>
@@ -67,25 +58,15 @@ const BpkStarRating = (props) => {
 
 BpkStarRating.propTypes = {
   rating: PropTypes.number,
-  hoverRating: PropTypes.number,
   maxRating: PropTypes.number,
   large: PropTypes.bool,
-  interactive: PropTypes.bool,
-  onRatingHover: PropTypes.func,
-  onMouseLeave: PropTypes.func,
-  onRatingSelect: PropTypes.func,
   className: PropTypes.string,
 };
 
 BpkStarRating.defaultProps = {
   rating: 0,
-  hoverRating: 0,
   maxRating: 5,
   large: false,
-  interactive: false,
-  onRatingHover: () => null,
-  onMouseLeave: () => null,
-  onRatingSelect: () => null,
   className: null,
 };
 

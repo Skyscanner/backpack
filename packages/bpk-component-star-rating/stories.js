@@ -11,6 +11,9 @@ import {
 
 import BpkStarRating, { BpkStar, STAR_TYPES } from './index';
 import BpkInteractiveStarRating from './src/BpkInteractiveStarRating';
+import withInteractiveStarRatingState from './src/withInteractiveStarRatingState';
+
+const InteractiveStarRating = withInteractiveStarRatingState(BpkInteractiveStarRating);
 
 storiesOf('bpk-component-star-rating', module)
   .add('BpkStar examples', () => (
@@ -80,7 +83,7 @@ storiesOf('bpk-component-star-rating', module)
   ))
   .add('3.3 Stars', () => (
     <div>
-      <BpkStarRating rating={3.3} />
+      <BpkStarRating rating={0.9} />
       <br />
       <BpkStarRating rating={3.3} large />
     </div>
@@ -94,8 +97,8 @@ storiesOf('bpk-component-star-rating', module)
   ))
   .add('BpkInteractiveStarRating', () => (
     <div>
-      <BpkInteractiveStarRating onRatingSelect={action('rating selected')} />
+      <InteractiveStarRating id="small-star-rating" onRatingSelect={action('rating selected')} />
       <br />
-      <BpkInteractiveStarRating large onRatingSelect={action('large rating selected')} />
+      <InteractiveStarRating id="large-star-rating" large onRatingSelect={action('large rating selected')} />
     </div>
   ));
