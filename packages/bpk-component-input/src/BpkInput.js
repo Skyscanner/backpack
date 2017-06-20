@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-input.scss';
-
-const getClassName = cssModules(STYLES);
+import './bpk-input.scss';
 
 export const INPUT_TYPES = {
   TEXT: 'text',
@@ -15,7 +12,7 @@ export const INPUT_TYPES = {
 };
 
 const BpkInput = (props) => {
-  const classNames = [getClassName('bpk-input')];
+  const classNames = ['bpk-input'];
   const { valid, large, docked, dockedFirst, dockedMiddle, dockedLast, className, ...rest } = props;
 
   // Explicit check for false primitive value as undefined is
@@ -23,16 +20,16 @@ const BpkInput = (props) => {
   const isInvalid = valid === false;
 
   if (valid) {
-    classNames.push(getClassName('bpk-input--valid'));
+    classNames.push('bpk-input--valid');
   } else if (isInvalid) {
-    classNames.push(getClassName('bpk-input--invalid'));
+    classNames.push('bpk-input--invalid');
   }
 
-  if (large) { classNames.push(getClassName('bpk-input--large')); }
-  if (docked) { classNames.push(getClassName('bpk-input--docked')); }
-  if (dockedFirst) { classNames.push(getClassName('bpk-input--docked-first')); }
-  if (dockedMiddle) { classNames.push(getClassName('bpk-input--docked-middle')); }
-  if (dockedLast) { classNames.push(getClassName('bpk-input--docked-last')); }
+  if (large) { classNames.push('bpk-input--large'); }
+  if (docked) { classNames.push('bpk-input--docked'); }
+  if (dockedFirst) { classNames.push('bpk-input--docked-first'); }
+  if (dockedMiddle) { classNames.push('bpk-input--docked-middle'); }
+  if (dockedLast) { classNames.push('bpk-input--docked-last'); }
   if (className) { classNames.push(className); }
 
   return <input className={classNames.join(' ')} aria-invalid={isInvalid} {...rest} />;

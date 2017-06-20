@@ -1,17 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-label.scss';
-
-const getClassName = cssModules(STYLES);
+import './bpk-label.scss';
 
 const BpkLabel = (props) => {
   const { children, required, white, disabled, className, ...rest } = props;
-  const classNames = [getClassName('bpk-label')];
+  const classNames = ['bpk-label'];
 
-  if (white) { classNames.push(getClassName('bpk-label--white')); }
-  if (disabled) { classNames.push(getClassName('bpk-label--disabled')); }
+  if (white) { classNames.push('bpk-label--white'); }
+  if (disabled) { classNames.push('bpk-label--disabled'); }
   if (className) { classNames.push(className); }
 
   return (
@@ -20,7 +17,7 @@ const BpkLabel = (props) => {
     <label className={classNames.join(' ')} {...rest}>
       {children}
       {required && (
-        <span className={getClassName('bpk-label__asterix')}>*</span>
+        <span className="bpk-label__asterix">*</span>
       )}
     </label>
   );

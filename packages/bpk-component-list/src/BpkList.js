@@ -1,15 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-list.scss';
-
-const getClassName = cssModules(STYLES);
+import './bpk-list.scss';
 
 const BpkList = (props) => {
   const TagName = props.ordered ? 'ol' : 'ul';
 
-  return <TagName className={getClassName('bpk-list')}>{props.children}</TagName>;
+  return <TagName className="bpk-list">{props.children}</TagName>;
 };
 
 BpkList.propTypes = {

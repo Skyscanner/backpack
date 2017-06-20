@@ -1,16 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-heading.scss';
-
-const getClassName = cssModules(STYLES);
+import './bpk-heading.scss';
 
 const BpkHeading = (props) => {
-  const classNames = [getClassName(`bpk-heading-${props.level}`)];
+  const classNames = [`bpk-heading-${props.level}`];
 
   if (props.className) { classNames.push(props.className); }
-  if (!props.bottomMargin) { classNames.push(getClassName('bpk-heading--no-bottom-margin')); }
+  if (!props.bottomMargin) { classNames.push('bpk-heading--no-bottom-margin'); }
 
   return (
     <props.level className={classNames.join(' ')} id={props.id}>

@@ -1,17 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-grid-container.scss';
-
-const getClassName = cssModules(STYLES);
+import './bpk-grid.scss';
 
 const BpkGridContainer = (props) => {
   const { children, className, debug, fullWidth, ...rest } = props;
-  const classNames = [getClassName('bpk-grid__container')];
+  const classNames = ['bpk-grid__container'];
 
-  if (debug) { classNames.push(getClassName('bpk-grid__container--debug')); }
-  if (fullWidth) { classNames.push(getClassName('bpk-grid__container--full-width')); }
+  if (debug) { classNames.push('bpk-grid__container--debug'); }
+  if (fullWidth) { classNames.push('bpk-grid__container--full-width'); }
   if (className) { classNames.push(className); }
 
   return <div className={classNames.join(' ')} {...rest}>{children}</div>;

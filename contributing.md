@@ -71,9 +71,9 @@ You can find the individual modules / packages inside the `packages/` folder.
 ## Development tasks
 
 ```sh
-ENABLE_CSS_MODULES=true npm start # Start development test harness complete with hot module reloading [HMR]
-npm test                          # Lints .js & .scss files and runs unit tests
-npm run build                     # Runs the build process for all packages
+npm start           # Start development test harness complete with hot module reloading [HMR]
+npm test            # Lints .js & .scss files and runs unit tests
+npm run build       # Runs the build process for all packages
 ```
 
 ## Adding a new component
@@ -130,7 +130,7 @@ npm run lint:scss
 
 ### React component
 
-Each React component has its own subdirectory `packages/bpk-component-<component-name>`, where the npm module is stored. For it to be properly published, create a `package.json` starting at version `0.0.0` and take inspiration from existing packages in terms of structure. We use [CSS Modules](https://github.com/css-modules/css-modules) along with [BEM](http://getbem.com/) to prevent collisions and accidental overwrites in CSS.
+Each React component has its own subdirectory `packages/bpk-component-<component-name>`, where the npm module is stored. For it to be properly published, create a `package.json` starting at version `0.0.0` and take inspiration from existing packages in terms of structure.
 
 #### Storybook
 

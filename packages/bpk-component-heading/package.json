@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "bpk-mixins": "^15.3.2",
-    "bpk-react-utils": "^1.4.6",
     "prop-types": "^15.5.8"
   }
 }
