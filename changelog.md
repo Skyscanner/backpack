@@ -2,11 +2,57 @@
 
 ## UNRELEASED
 
+- _Nothing yet..._
+
+## 2017-06-20 - CSS modules support across all packages
+
 **Breaking:**
 
 * bpk-react-utils:
 
   * TransitionInitialMount: Removes `classNamePrefix` in favour of `appearClassName` and `appearActiveClassName` for CSS Modules compatibility.
+
+**Added:**
+
+- bpk-component-accordion: 1.0.8 => 1.1.0
+- bpk-component-badge: 0.0.54 => 0.1.0
+- bpk-component-banner-alert: 1.0.16 => 1.1.0
+- bpk-component-blockquote: 0.0.80 => 0.1.0
+- bpk-component-calendar: 3.2.4 => 3.3.0
+- bpk-component-card: 0.0.68 => 0.1.0
+- bpk-component-checkbox: 1.1.10 => 1.2.0
+- bpk-component-close-button: 0.0.46 => 0.1.0
+- bpk-component-code: 0.0.80 => 0.1.0
+- bpk-component-content-container: 1.0.71 => 1.1.0
+- bpk-component-datepicker: 6.0.18 => 6.1.0
+- bpk-component-fieldset: 0.2.9 => 0.3.0
+- bpk-component-form-validation: 0.0.16 => 0.1.0
+- bpk-component-grid-toggle: 0.0.87 => 0.1.0
+- bpk-component-grid: 1.0.30 => 1.1.0
+- bpk-component-heading: 2.0.11 => 2.1.0
+- bpk-component-horizontal-nav: 0.0.19 => 0.1.0
+- bpk-component-icon: 3.6.0 => 3.7.0
+- bpk-component-input: 3.1.7 => 3.2.0
+- bpk-component-label: 3.1.7 => 3.2.0
+- bpk-component-link: 0.5.36 => 0.6.0
+- bpk-component-list: 0.0.100 => 0.1.0
+- bpk-component-loading-button: 0.0.28 => 0.1.0
+- bpk-component-modal: 1.0.49 => 1.1.0
+- bpk-component-nudger: 0.0.30 => 0.1.0
+- bpk-component-panel: 0.0.4 => 0.1.0
+- bpk-component-paragraph: 0.2.23 => 0.3.0
+- bpk-component-popover: 1.0.51 => 1.1.0
+- bpk-component-progress: 0.0.28 => 0.1.0
+- bpk-component-radio: 1.0.13 => 1.1.0
+- bpk-component-router-link: 0.1.86 => 0.2.0
+- bpk-component-select: 2.0.24 => 2.1.0
+- bpk-component-spinner: 2.0.13 => 2.1.0
+- bpk-component-table: 0.0.100 => 0.1.0
+- bpk-component-textarea: 0.0.12 => 0.1.0
+- bpk-component-ticket: 0.0.21 => 0.1.0
+- bpk-component-tooltip: 1.0.1 => 1.1.0
+- bpk-mixins: 15.4.0 => 15.5.0
+  - Added suppport for CSS Modules.
 
 ## 2017-06-20 - New icons (onsen, language, language-alert, language-question and airline-multiple)
 
