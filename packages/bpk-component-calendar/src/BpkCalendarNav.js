@@ -4,7 +4,6 @@ import React from 'react';
 import ArrowLeftIcon from 'bpk-component-icon/lg/arrow-left';
 import ArrowRightIcon from 'bpk-component-icon/lg/arrow-right';
 import BpkSelect from 'bpk-component-select';
-import { cssModules } from 'bpk-react-utils';
 
 import {
   addMonths,
@@ -16,9 +15,7 @@ import {
   startOfMonth,
 } from './date-utils';
 
-import STYLES from './bpk-calendar-nav.scss';
-
-const getClassName = cssModules(STYLES);
+import './bpk-calendar.scss';
 
 const changeMonth = (targetMonth, min, max, callback) => () => {
   // Safeguard for disabled buttons is due to React bug in Chrome: https://github.com/facebook/react/issues/8308
@@ -47,30 +44,20 @@ const BpkCalendarNav = (props) => {
   const nextMonth = addMonths(baseMonth, 1);
 
   return (
-    <div className={getClassName('bpk-calendar-nav')}>
-      <div className={getClassName('bpk-calendar-nav__nudger')}>
+    <div className="bpk-calendar-nav">
+      <div className="bpk-calendar-nav__nudger">
         <button
           type="button"
-          className={getClassName('bpk-calendar-nav__button')}
-          id={`${id}_month_nudger_previous`}
+          className="bpk-calendar-nav__button"
           onClick={changeMonth(prevMonth, min, max, onMonthChange)}
           disabled={disabled || !isWithinRange(prevMonth, min, max)}
         >
-          <ArrowLeftIcon className={getClassName('bpk-calendar-nav__icon')} />
-          <span
-            className={getClassName('bpk-calendar-nav__text--hidden')}
-          >
-            { formatMonth(addMonths(baseMonth, -1)) }
-          </span>
+          <ArrowLeftIcon className="bpk-calendar-nav__icon" />
+          <span className="bpk-calendar-nav__text--hidden">{ formatMonth(addMonths(baseMonth, -1)) }</span>
         </button>
       </div>
-      <div className={getClassName('bpk-calendar-nav__month')}>
-        <label
-          htmlFor={`${id}_select`}
-          className={getClassName('bpk-calendar-nav__text--hidden')}
-        >
-          { changeMonthLabel }
-        </label>
+      <div className="bpk-calendar-nav__month">
+        <label htmlFor={`${id}_select`} className="bpk-calendar-nav__text--hidden">{ changeMonthLabel }</label>
         <BpkSelect
           id={`${id}_select`}
           name="months"
@@ -83,20 +70,15 @@ const BpkCalendarNav = (props) => {
           ))}
         </BpkSelect>
       </div>
-      <div className={getClassName('bpk-calendar-nav__nudger')}>
+      <div className="bpk-calendar-nav__nudger">
         <button
           type="button"
-          className={getClassName('bpk-calendar-nav__button')}
-          id={`${id}_month_nudger_next`}
+          className="bpk-calendar-nav__button"
           onClick={changeMonth(nextMonth, min, max, onMonthChange)}
           disabled={disabled || !isWithinRange(addMonths(baseMonth, 1), min, max)}
         >
-          <ArrowRightIcon className={getClassName('bpk-calendar-nav__icon')} />
-          <span
-            className={getClassName('bpk-calendar-nav__text--hidden')}
-          >
-            { formatMonth(addMonths(baseMonth, 1)) }
-          </span>
+          <ArrowRightIcon className="bpk-calendar-nav__icon" />
+          <span className="bpk-calendar-nav__text--hidden">{ formatMonth(addMonths(baseMonth, 1)) }</span>
         </button>
       </div>
     </div>

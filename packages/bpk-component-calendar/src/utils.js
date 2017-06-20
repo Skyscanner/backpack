@@ -29,5 +29,4 @@ export const getScriptDirection = () => {
   return window.getComputedStyle(html, null).getPropertyValue('direction');
 };
 
-
 export const isTransitionEndSupported = () => !!(typeof window !== 'undefined' && 'TransitionEvent' in window);

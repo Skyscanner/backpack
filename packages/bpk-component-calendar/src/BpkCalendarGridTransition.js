@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { cssModules } from 'bpk-react-utils';
 
 import {
   getCalendarGridWidth,
@@ -20,9 +19,7 @@ import {
   getMonthRange,
 } from './date-utils';
 
-import STYLES from './bpk-calendar-grid-transition.scss';
-
-const getClassName = cssModules(STYLES);
+import './bpk-calendar.scss';
 
 const transitionValues = {
   previous: 0,
@@ -122,12 +119,10 @@ class BpkCalendarGridTransition extends Component {
       ...rest
     } = this.props;
 
-    const stripClassNames = [getClassName('bpk-calendar-grid-transition__strip')];
-    if (this.state.isTransitioning) {
-      stripClassNames.push(getClassName('bpk-calendar-grid-transition__strip--transitioning'));
-    }
+    const stripClassNames = ['bpk-calendar-grid-transition__strip'];
+    if (this.state.isTransitioning) { stripClassNames.push('bpk-calendar-grid-transition__strip--transitioning'); }
 
-    const classNames = [getClassName('bpk-calendar-grid-transition')];
+    const classNames = ['bpk-calendar-grid-transition'];
     if (className) { classNames.push(className); }
     const { min, max } = getMonthRange(rest.minDate, rest.maxDate);
 
@@ -151,11 +146,10 @@ class BpkCalendarGridTransition extends Component {
                     index === 1 ? focusedDate : getFocusedDateForMonth(m, focusedDate, rest.minDate, rest.maxDate)
                   }
                   aria-hidden={index !== 1}
-                  className={getClassName('bpk-calendar-grid-transition__grid')}
                 />
               :
                 <div
-                  className={getClassName('bpk-calendar-grid-transition__dummy')}
+                  className="bpk-calendar-grid-transition__dummy"
                   key={formatIsoMonth(m)}
                 />
             ))

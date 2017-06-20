@@ -8,7 +8,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
       <button
         className="bpk-calendar-nav__button"
         disabled={true}
-        id="myCalendar__bpk_calendar_nav_month_nudger_previous"
         onClick={[Function]}
         type="button">
         <svg
@@ -62,7 +61,6 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
       <button
         className="bpk-calendar-nav__button"
         disabled={false}
-        id="myCalendar__bpk_calendar_nav_month_nudger_next"
         onClick={[Function]}
         type="button">
         <svg
@@ -88,7 +86,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
     </div>
   </div>
   <header
-    className="bpk-calendar-header bpk-calendar__header">
+    className="bpk-calendar-header">
     <ol
       className="bpk-calendar-header__week">
       <li
@@ -150,7 +148,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
     </ol>
   </header>
   <div
-    className="bpk-calendar-grid-transition">
+    className="bpk-calendar-grid-transition bpk-calendar__grid">
     <div
       className="bpk-calendar-grid-transition__strip"
       onTransitionEnd={[Function]}
@@ -166,7 +164,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         className="bpk-calendar-grid-transition__dummy" />
       <table
         aria-hidden={false}
-        className="bpk-calendar-grid bpk-calendar-grid-transition__grid">
+        className="bpk-calendar-grid">
         <caption
           className="bpk-calendar-grid__caption"
           hidden={true}>
@@ -971,7 +969,7 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
       </table>
       <table
         aria-hidden={true}
-        className="bpk-calendar-grid bpk-calendar-grid-transition__grid">
+        className="bpk-calendar-grid">
         <caption
           className="bpk-calendar-grid__caption"
           hidden={true}>

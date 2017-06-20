@@ -1,15 +1,12 @@
 import BpkInput, { withOpenEvents } from 'bpk-component-input';
 import BpkModal from 'bpk-component-modal';
 import BpkPopover from 'bpk-component-popover';
-import { cssModules } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 import BpkCalendar, { CustomPropTypes } from 'bpk-component-calendar';
 
-import STYLES from './bpk-datepicker.scss';
-
-const getClassName = cssModules(STYLES);
+import './bpk-datepicker.scss';
 
 const Input = withOpenEvents(BpkInput);
 
@@ -79,7 +76,7 @@ class BpkDatepicker extends Component {
         id={id}
         name={`${id}_input`}
         value={date ? formatDate(date) : ''}
-        className={getClassName('bpk-datepicker__input')}
+        className="bpk-datepicker__input"
         aria-live="assertive"
         aria-atomic="true"
         aria-label={formatDateFull(date)}
@@ -92,7 +89,7 @@ class BpkDatepicker extends Component {
 
     const calendarComponent = (
       <BpkCalendar
-        className={getClassName('bpk-datepicker__calendar')}
+        className="bpk-datepicker__calendar"
         changeMonthLabel={changeMonthLabel}
         date={date}
         dateModifiers={dateModifiers}

@@ -1,17 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-checkbox.scss';
-
-const getClassName = cssModules(STYLES);
+import './bpk-checkbox.scss';
 
 const BpkCheckbox = (props) => {
-  const classNames = [getClassName('bpk-checkbox')];
+  const classNames = ['bpk-checkbox'];
   const { name, label, required, disabled, white, className, ...rest } = props;
 
-  if (white) { classNames.push(getClassName('bpk-checkbox--white')); }
-  if (disabled) { classNames.push(getClassName('bpk-checkbox--disabled')); }
+  if (white) { classNames.push('bpk-checkbox--white'); }
+  if (disabled) { classNames.push('bpk-checkbox--disabled'); }
   if (className) { classNames.push(className); }
 
   // This is awkward because the label-has-for rule enforces an 'id' / 'for' pairing
@@ -22,14 +19,14 @@ const BpkCheckbox = (props) => {
     <label className={classNames.join(' ')}>
       <input
         type="checkbox"
-        className={getClassName('bpk-checkbox__input')}
+        className="bpk-checkbox__input"
         name={name}
         disabled={disabled}
         {...rest}
       />
       {label}
       {required && (
-        <span className={getClassName('bpk-checkbox__asterix')}>*</span>
+        <span className="bpk-checkbox__asterix">*</span>
       )}
     </label>
   );

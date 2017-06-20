@@ -1,20 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-code-block.scss';
+import './bpk-code.scss';
 
-const getClassName = cssModules(STYLES);
-
-const BpkCodeBlock = ({ children }) => {
-  const classNames = ['bpk-code', 'bpk-code--block'].map(className => getClassName(className));
-
-  return (
-    <pre className={getClassName('bpk-code__pre')}>
-      <code className={classNames.join(' ')}>{children}</code>
-    </pre>
-  );
-};
+const BpkCodeBlock = props => (
+  <pre className="bpk-code__pre">
+    <code className="bpk-code bpk-code--block">{props.children}</code>
+  </pre>
+);
 
 BpkCodeBlock.propTypes = {
   children: PropTypes.oneOfType([

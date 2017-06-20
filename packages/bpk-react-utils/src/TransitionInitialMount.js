@@ -12,26 +12,25 @@ const FirstChild = (props) => {
   return children[0] || null;
 };
 
-const TransitionInitialMount = ({ appearClassName, appearActiveClassName, transitionTimeout, children }) => (
+const TransitionInitialMount = props => (
   <CSSTransitionGroup
     component={FirstChild}
     transitionName={{
-      appear: appearClassName,
-      appearActive: appearActiveClassName,
+      appear: `${props.classNamePrefix}--appear`,
+      appearActive: `${props.classNamePrefix}--appear-active`,
     }}
     transitionAppear
-    transitionAppearTimeout={transitionTimeout}
+    transitionAppearTimeout={props.transitionTimeout}
     transitionEnterTimeout={0}
     transitionLeaveTimeout={0}
   >
-    {children}
+    {props.children}
   </CSSTransitionGroup>
 );
 
 TransitionInitialMount.propTypes = {
   children: PropTypes.node.isRequired,
-  appearClassName: PropTypes.string.isRequired,
-  appearActiveClassName: PropTypes.string.isRequired,
+  classNamePrefix: PropTypes.string.isRequired,
   transitionTimeout: PropTypes.number.isRequired,
 };
 

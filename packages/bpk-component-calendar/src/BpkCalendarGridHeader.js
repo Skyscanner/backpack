@@ -1,13 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { cssModules } from 'bpk-react-utils';
 
 import CustomPropTypes from './custom-proptypes';
 import { getFirstDayOfWeekend, getLastDayOfWeekend, orderDaysOfWeek } from './date-utils';
-
-import STYLES from './bpk-calendar-grid-header.scss';
-
-const getClassName = cssModules(STYLES);
+import './bpk-calendar.scss';
 
 /*
   WeekDay - table header cells such as "Mon", "Tue", "Wed"...
@@ -19,13 +15,13 @@ const WeekDay = (props) => {
     isLastDayOfWeekend,
     Element,
   } = props;
-  const classNames = [getClassName('bpk-calendar-header__weekday')];
+  const classNames = ['bpk-calendar-header__weekday'];
 
   if (weekDay.isWeekend) {
-    classNames.push(getClassName('bpk-calendar-header__weekday--weekend'));
+    classNames.push('bpk-calendar-header__weekday--weekend');
 
-    if (isFirstDayOfWeekend) { classNames.push(getClassName('bpk-calendar-header__weekday--weekend-start')); }
-    if (isLastDayOfWeekend) { classNames.push(getClassName('bpk-calendar-header__weekday--weekend-end')); }
+    if (isFirstDayOfWeekend) { classNames.push('bpk-calendar-header__weekday--weekend-start'); }
+    if (isLastDayOfWeekend) { classNames.push('bpk-calendar-header__weekday--weekend-end'); }
   }
 
   return (
@@ -49,7 +45,6 @@ class BpkCalendarGridHeader extends PureComponent {
       isTableHead,
       showWeekendSeparator,
       weekStartsOn,
-      className,
     } = this.props;
 
     const Header = isTableHead ? 'thead' : 'header';
@@ -61,13 +56,12 @@ class BpkCalendarGridHeader extends PureComponent {
     const firstDayOfWeekendIndex = getFirstDayOfWeekend(daysOfWeek);
     const lastDayOfWeekendIndex = getLastDayOfWeekend(daysOfWeek);
 
-    const classNames = [getClassName('bpk-calendar-header')];
-    if (isTableHead) { classNames.push(getClassName('bpk-calendar-header--table-head')); }
-    if (className) { classNames.push(className); }
+    const classNames = ['bpk-calendar-header'];
+    if (isTableHead) { classNames.push('bpk-calendar-header--table-head'); }
 
     return (
       <Header className={classNames.join(' ')}>
-        <List className={getClassName('bpk-calendar-header__week')}>
+        <List className="bpk-calendar-header__week">
           { daysOfWeek.map(weekDay => (
             <WeekDay
               Element={Item}
@@ -88,12 +82,10 @@ BpkCalendarGridHeader.propTypes = {
   daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
   weekStartsOn: PropTypes.number.isRequired,
   isTableHead: PropTypes.bool,
-  className: PropTypes.string,
 };
 
 BpkCalendarGridHeader.defaultProps = {
   isTableHead: false,
-  className: null,
 };
 
 export default BpkCalendarGridHeader;

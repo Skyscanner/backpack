@@ -69,7 +69,8 @@ class BpkModalDialog extends Component {
   }
 
   renderDialog() {
-    const dialogClassNames = ['bpk-modal__dialog'];
+    const dialogClassName = 'bpk-modal__dialog';
+    const dialogClassNames = [dialogClassName];
 
     if (this.props.wide) { dialogClassNames.push('bpk-modal__dialog--wide'); }
     if (this.props.isIphone) { dialogClassNames.push('bpk-modal__dialog--iphone-fix'); }
@@ -79,11 +80,7 @@ class BpkModalDialog extends Component {
 
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
-      <TransitionInitialMount
-        appearClassName="bpk-modal__dialog--appear"
-        appearActiveClassName="bpk-modal__dialog--appear-active"
-        transitionTimeout={300}
-      >
+      <TransitionInitialMount classNamePrefix={dialogClassName} transitionTimeout={300}>
         <section
           id={this.props.id}
           tabIndex="-1"
