@@ -3,7 +3,7 @@
 
 .bpk-chart {
   &__axis-tick {
-    &-text {
+    &--text {
       fill: $bpk-color-gray-500;
 
       @include bpk-text-sm;
@@ -14,5 +14,10 @@
     fill: $bpk-color-gray-500;
 
     @include bpk-text-sm;
+  }
+
+  &__grid-line {
+    stroke: $bpk-color-gray-100;
+    shape-rendering: crispEdges;
   }
 }

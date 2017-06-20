@@ -1,18 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-badge.scss';
-
-const getClassName = cssModules(STYLES);
+import './bpk-badge.scss';
 
 const BpkBadge = (props) => {
   const { docked, centered, className, ...rest } = props;
-  const classNames = [getClassName('bpk-badge')];
+  const classNames = ['bpk-badge'];
 
-  if (docked === 'right') { classNames.push(getClassName('bpk-badge--docked-right')); }
-  if (docked === 'left') { classNames.push(getClassName('bpk-badge--docked-left')); }
-  if (centered) { classNames.push(getClassName('bpk-badge--centered')); }
+  if (docked === 'right') { classNames.push('bpk-badge--docked-right'); }
+  if (docked === 'left') { classNames.push('bpk-badge--docked-left'); }
+  if (centered) { classNames.push('bpk-badge--centered'); }
   if (className) { classNames.push(className); }
 
   return <span className={classNames.join(' ')} {...rest} />;

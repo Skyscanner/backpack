@@ -6,6 +6,7 @@ const BpkChartMargin = (props) => {
 
   return (
     <g
+      className="bpk-barchart__margin"
       transform={`translate(${margin.left}, ${margin.top})`}
       {...rest}
     >

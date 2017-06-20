@@ -16,7 +16,6 @@
     "bpk-animate-height": "^0.0.15",
     "bpk-component-icon": "^3.5.4",
     "bpk-mixins": "^15.3.2",
-    "bpk-react-utils": "^1.4.6",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {

@@ -1,5 +1,6 @@
 exports[`BpkBarchartBars should render correctly 1`] = `
-<g>
+<g
+  className="bpk-barchart__bars">
   <g
     className="bpk-barchart__bar-group">
     <title>
@@ -232,7 +233,8 @@ exports[`BpkBarchartBars should render correctly 1`] = `
 `;
 
 exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
-<g>
+<g
+  className="bpk-barchart__bars">
   <g
     className="bpk-barchart__bar-group">
     <title>
@@ -477,7 +479,8 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
 `;
 
 exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
-<g>
+<g
+  className="bpk-barchart__bars">
   <g
     className="bpk-barchart__bar-group">
     <title>
@@ -722,7 +725,8 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
 `;
 
 exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = `
-<g>
+<g
+  className="bpk-barchart__bars">
   <g
     className="bpk-barchart__bar-group">
     <title>

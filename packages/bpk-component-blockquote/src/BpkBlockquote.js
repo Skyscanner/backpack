@@ -1,12 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-blockquote.scss';
+import './bpk-blockquote.scss';
 
-const getClassName = cssModules(STYLES);
-
-const BpkBlockquote = props => <blockquote className={getClassName('bpk-blockquote')}>{props.children}</blockquote>;
+const BpkBlockquote = props => <blockquote className="bpk-blockquote">{props.children}</blockquote>;
 
 BpkBlockquote.propTypes = {
   children: PropTypes.oneOfType([

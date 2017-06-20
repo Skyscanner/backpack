@@ -1,13 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-accordion.scss';
-
-const getClassName = cssModules(STYLES);
+import './bpk-accordion.scss';
 
 const BpkAccordion = (props) => {
-  const classNames = [getClassName('bpk-accordion')];
+  const classNames = ['bpk-accordion'];
   const { children, className, ...rest } = props;
 
   if (className) { classNames.push(className); }

@@ -1,8 +1,0 @@
-@import '~bpk-tokens';
-
-.bpk-chart {
-  &__grid-line {
-    stroke: $bpk-color-gray-100;
-    shape-rendering: crispEdges;
-  }
-}
