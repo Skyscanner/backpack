@@ -11,6 +11,9 @@
       "ignoreProperties": {
         "px": ["box-shadow"]
       }
+    }],
+    "selector-pseudo-class-no-unknown": [true, {
+      "ignorePseudoClasses": ["global"]
     }]
   }
 }

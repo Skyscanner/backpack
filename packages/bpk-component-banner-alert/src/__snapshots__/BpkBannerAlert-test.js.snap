@@ -138,7 +138,7 @@ exports[`BpkBannerAlert should render correctly with child nodes 1`] = `
         className="bpk-banner-alert__toggle-button"
         title="View more">
         <svg
-          className="bpk-banner-alert__expand-icon  bpk-icon--align-to-button"
+          className="bpk-banner-alert__expand-icon bpk-icon--align-to-button"
           height="18"
           style={
             Object {

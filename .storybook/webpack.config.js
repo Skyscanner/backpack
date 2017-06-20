@@ -6,12 +6,19 @@ const sassFunctions = require('../packages/bpk-mixins/sass-functions');
 const rootDir = path.resolve(__dirname, '../');
 const BPK_TOKENS = process.env.BPK_TOKENS;
 
+const useCssModules = process.env.ENABLE_CSS_MODULES === 'true';
+
 module.exports = {
   module: {
     loaders: [
       {
         test: /\.scss$/,
-        loaders: ['style', 'css', 'postcss', 'sass?config=sass'],
+        loaders: [
+          'style',
+          `css?modules=${JSON.stringify(useCssModules)}&localIdentName=[name]__[local]--[hash:base64:5]`,
+          'postcss',
+          'sass?config=sass',
+        ],
         include: rootDir,
       },
       {

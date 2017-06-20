@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-list.scss';
+import STYLES from './bpk-list.scss';
 
-const BpkListItem = props => <li className="bpk-list__item">{props.children}</li>;
+const getClassName = cssModules(STYLES);
+
+const BpkListItem = props => <li className={getClassName('bpk-list__item')}>{props.children}</li>;
 
 BpkListItem.propTypes = {
   children: PropTypes.oneOfType([

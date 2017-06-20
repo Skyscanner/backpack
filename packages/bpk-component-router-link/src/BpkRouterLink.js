@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 import { Link, PropTypes as RouterPropTypes } from 'react-router';
 
-import './bpk-router-link.scss';
+import STYLES from './bpk-router-link.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkRouterLink = (props) => {
-  const classNames = ['bpk-router-link'];
+  const classNames = [getClassName('bpk-router-link')];
   const { children, to, className, ...rest } = props;
 
   if (className) { classNames.push(className); }
@@ -13,7 +16,7 @@ const BpkRouterLink = (props) => {
   return (
     <Link
       className={classNames.join(' ')}
-      activeClassName="bpk-router-link--active"
+      activeClassName={getClassName('bpk-router-link--active')}
       to={to}
       {...rest}
     >

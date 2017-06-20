@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-table.scss';
+import STYLES from './bpk-table.scss';
 
-const BpkTable = props => <table className="bpk-table">{props.children}</table>;
+const getClassName = cssModules(STYLES);
+
+const BpkTable = props => <table className={getClassName('bpk-table')}>{props.children}</table>;
 
 BpkTable.propTypes = {
   children: PropTypes.node.isRequired,

@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-paragraph.scss';
+import STYLES from './bpk-paragraph.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkParagraph = (props) => {
-  const classNames = ['bpk-paragraph'];
+  const classNames = [getClassName('bpk-paragraph')];
   const { className, ...rest } = props;
 
   if (className) { classNames.push(className); }

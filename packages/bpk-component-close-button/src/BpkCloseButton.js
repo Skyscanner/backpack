@@ -2,13 +2,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CloseIcon from 'bpk-component-icon/sm/close';
 import { withButtonAlignment } from 'bpk-component-icon';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-close-button.scss';
+import STYLES from './bpk-close-button.scss';
+
+const getClassName = cssModules(STYLES);
 
 const CloseButtonIcon = withButtonAlignment(CloseIcon);
 
 const BpkCloseButton = (props) => {
-  const classNames = ['bpk-close-button'];
+  const classNames = [getClassName('bpk-close-button')];
   const { label, onClick, className, ...rest } = props;
 
   if (className) { classNames.push(className); }
@@ -22,7 +25,7 @@ const BpkCloseButton = (props) => {
       className={classNames.join(' ')}
       {...rest}
     >
-      <CloseButtonIcon className="bpk-close-button__icon" />
+      <CloseButtonIcon className={getClassName('bpk-close-button__icon')} />
     </button>
   );
 };

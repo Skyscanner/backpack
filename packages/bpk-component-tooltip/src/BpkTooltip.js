@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { TransitionInitialMount } from 'bpk-react-utils';
+import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
-import './bpk-tooltip.scss';
+import STYLES from './bpk-tooltip.scss';
 import { ARROW_ID } from './constants';
+
+const getClassName = cssModules(STYLES);
 
 const BpkTooltip = (props) => {
   const {
@@ -14,17 +16,21 @@ const BpkTooltip = (props) => {
     ...rest
   } = props;
 
-  const classNames = ['bpk-tooltip'];
-  const innerClassNames = ['bpk-tooltip__inner'];
+  const classNames = [getClassName('bpk-tooltip')];
+  const innerClassNames = [getClassName('bpk-tooltip__inner')];
 
   // outer classNames
   if (className) { classNames.push(className); }
 
   // inner classNames
-  if (padded) { innerClassNames.push('bpk-tooltip__inner--padded'); }
+  if (padded) { innerClassNames.push(getClassName('bpk-tooltip__inner--padded')); }
 
   return (
-    <TransitionInitialMount classNamePrefix={'bpk-tooltip'} transitionTimeout={200}>
+    <TransitionInitialMount
+      appearClassName={getClassName('bpk-tooltip--appear')}
+      appearActiveClassName={getClassName('bpk-tooltip--appear-active')}
+      transitionTimeout={200}
+    >
       <section
         id={id}
         tabIndex="-1"
@@ -32,7 +38,7 @@ const BpkTooltip = (props) => {
         className={classNames.join(' ')}
         {...rest}
       >
-        <span id={ARROW_ID} className="bpk-tooltip__arrow" role="presentation" />
+        <span id={ARROW_ID} className={getClassName('bpk-tooltip__arrow')} role="presentation" />
         <div className={innerClassNames.join(' ')}>
           {children}
         </div>

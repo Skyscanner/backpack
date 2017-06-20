@@ -1,15 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import AnimateHeight from 'bpk-animate-height';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-form-validation.scss';
+import STYLES from './bpk-form-validation.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkFormValidation = (props) => {
-  const classNames = ['bpk-form-validation'];
+  const classNames = [getClassName('bpk-form-validation')];
   const { children, expanded, isCheckbox, className, containerProps, ...rest } = props;
 
-  if (expanded) { classNames.push('bpk-form-validation--appear'); }
-  if (isCheckbox) { classNames.push('bpk-form-validation--is-checkbox'); }
+  if (expanded) { classNames.push(getClassName('bpk-form-validation--appear')); }
+  if (isCheckbox) { classNames.push(getClassName('bpk-form-validation--is-checkbox')); }
   if (className) { classNames.push(className); }
 
   return (
@@ -19,7 +22,7 @@ const BpkFormValidation = (props) => {
       transitionOverflow="visible"
       {...containerProps}
     >
-      <div className="bpk-form-validation__container">
+      <div className={getClassName('bpk-form-validation__container')}>
         <div className={classNames.join(' ')} {...rest}>{children}</div>
       </div>
     </AnimateHeight>

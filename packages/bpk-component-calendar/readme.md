@@ -199,6 +199,7 @@ in place while the rest of the grid transitions when changing months.
 | daysOfWeek            | object               | true     | -                |
 | weekStartsOn          | number               | true     | -                |
 | showWeekendSeparator  | bool                 | false    | false            |
+| className             | string               | false    | null             |
 
 ### BpkCalendarGrid
 

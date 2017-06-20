@@ -1,0 +1,11 @@
+@import '~bpk-mixins';
+
+.bpk-grid {
+  &__row {
+    @include bpk-grid__row;
+
+    &--padded {
+      @include bpk-grid__row--padded;
+    }
+  }
+}

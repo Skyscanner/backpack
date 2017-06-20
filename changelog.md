@@ -2,7 +2,11 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Breaking:**
+
+* bpk-react-utils:
+
+  * TransitionInitialMount: Removes `classNamePrefix` in favour of `appearClassName` and `appearActiveClassName` for CSS Modules compatibility.
 
 ## 2017-06-20 - New icons (onsen, language, language-alert, language-question and airline-multiple)
 

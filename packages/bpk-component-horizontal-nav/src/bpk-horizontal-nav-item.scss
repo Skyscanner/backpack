@@ -1,0 +1,45 @@
+@import '~bpk-mixins/index';
+
+.bpk-horizontal-nav {
+  &__item {
+    display: inline-block;
+    display: flex;
+  }
+
+  &__link {
+    display: inline-block;
+    display: flex;
+    padding: $bpk-spacing-sm $bpk-spacing-base;
+    border: 0;
+    background: none;
+    color: $bpk-link-color;
+    text-decoration: none;
+    cursor: pointer;
+
+    @include bpk-hover {
+      color: $bpk-link-hover-color;
+
+      @include bpk-border-bottom-xl($bpk-color-gray-100);
+    }
+
+    &:active {
+      color: $bpk-link-active-color;
+
+      @include bpk-border-bottom-xl($bpk-color-gray-200);
+    }
+
+    &--selected {
+      color: $bpk-font-color-base;
+
+      @include bpk-border-bottom-xl($bpk-state-selected-background-color);
+
+      @include bpk-hover {
+        @include bpk-border-bottom-xl($bpk-state-selected-background-color);
+      }
+
+      &:active {
+        @include bpk-border-bottom-xl($bpk-state-selected-background-color);
+      }
+    }
+  }
+}

@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "bpk-mixins": "^15.4.0",
+    "bpk-react-utils": "^1.4.6",
     "bpk-tokens": "^23.2.1",
     "lodash.clamp": "^4.0.3",
     "prop-types": "^15.5.8"

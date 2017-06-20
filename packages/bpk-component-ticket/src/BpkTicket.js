@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-ticket.scss';
+import STYLES from './bpk-ticket.scss';
+
+const getClassName = cssModules(STYLES);
 
 const isIE9 = () => {
   if (typeof window === 'undefined') return false;
@@ -10,39 +13,39 @@ const isIE9 = () => {
 
 const BpkTicket = (props) => {
   const { children, href, padded, stub, vertical, className, ...rest } = props;
-  const classNames = ['bpk-ticket'];
-  const mainClassNames = ['bpk-ticket__paper', 'bpk-ticket__main'];
-  const stubClassNames = ['bpk-ticket__paper', 'bpk-ticket__stub'];
-  const punchlineClassNames = ['bpk-ticket__punchline'];
-  const startNotchClassNames = ['bpk-ticket__notch'];
-  const endNotchClassNames = ['bpk-ticket__notch'];
+  const classNames = [getClassName('bpk-ticket')];
+  const mainClassNames = ['bpk-ticket__paper', 'bpk-ticket__main'].map(getClassName);
+  const stubClassNames = ['bpk-ticket__paper', 'bpk-ticket__stub'].map(getClassName);
+  const punchlineClassNames = [getClassName('bpk-ticket__punchline')];
+  const startNotchClassNames = [getClassName('bpk-ticket__notch')];
+  const endNotchClassNames = [getClassName('bpk-ticket__notch')];
   const fallback = isIE9();
 
   if (className) { classNames.push(className); }
   if (padded) {
-    mainClassNames.push('bpk-ticket__main--padded');
-    stubClassNames.push('bpk-ticket__stub--padded');
+    mainClassNames.push(getClassName('bpk-ticket__main--padded'));
+    stubClassNames.push(getClassName('bpk-ticket__stub--padded'));
   }
   if (vertical) {
-    classNames.push('bpk-ticket--vertical');
-    mainClassNames.push('bpk-ticket__main--vertical');
-    stubClassNames.push('bpk-ticket__stub--vertical');
-    punchlineClassNames.push('bpk-ticket__punchline--horizontal');
-    startNotchClassNames.push('bpk-ticket__notch--left');
-    endNotchClassNames.push('bpk-ticket__notch--right');
+    classNames.push(getClassName('bpk-ticket--vertical'));
+    mainClassNames.push(getClassName('bpk-ticket__main--vertical'));
+    stubClassNames.push(getClassName('bpk-ticket__stub--vertical'));
+    punchlineClassNames.push(getClassName('bpk-ticket__punchline--horizontal'));
+    startNotchClassNames.push(getClassName('bpk-ticket__notch--left'));
+    endNotchClassNames.push(getClassName('bpk-ticket__notch--right'));
   } else {
-    mainClassNames.push('bpk-ticket__main--horizontal');
-    stubClassNames.push('bpk-ticket__stub--horizontal');
+    mainClassNames.push(getClassName('bpk-ticket__main--horizontal'));
+    stubClassNames.push(getClassName('bpk-ticket__stub--horizontal'));
 
     if (!fallback) {
-      punchlineClassNames.push('bpk-ticket__punchline--vertical');
-      startNotchClassNames.push('bpk-ticket__notch--top');
-      endNotchClassNames.push('bpk-ticket__notch--bottom');
+      punchlineClassNames.push(getClassName('bpk-ticket__punchline--vertical'));
+      startNotchClassNames.push(getClassName('bpk-ticket__notch--top'));
+      endNotchClassNames.push(getClassName('bpk-ticket__notch--bottom'));
     } else {
-      classNames.push('bpk-ticket--fallback');
-      mainClassNames.push('bpk-ticket__paper--fallback');
-      stubClassNames.push('bpk-ticket__paper--fallback', 'bpk-ticket__stub--fallback');
-      punchlineClassNames.push('bpk-ticket__punchline--fallback');
+      classNames.push(getClassName('bpk-ticket--fallback'));
+      mainClassNames.push(getClassName('bpk-ticket__paper--fallback'));
+      stubClassNames.push(getClassName('bpk-ticket__paper--fallback'), getClassName('bpk-ticket__stub--fallback'));
+      punchlineClassNames.push(getClassName('bpk-ticket__punchline--fallback'));
     }
   }
 

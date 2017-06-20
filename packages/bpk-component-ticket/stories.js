@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 import { storiesOf } from '@kadira/storybook';
 
 import BpkButton from 'bpk-component-button';
 import ArrowRightIcon from 'bpk-component-icon/sm/long-arrow-right';
 import { withButtonAlignment, withRtlSupport } from 'bpk-component-icon';
 import BpkCard from './index';
-import './stories.scss';
+import STYLES from './stories.scss';
+
+const getClassName = cssModules(STYLES);
 
 const AlignedArrowRightIcon = withButtonAlignment(withRtlSupport(ArrowRightIcon));
 
@@ -22,30 +25,30 @@ const flights = Array(100).fill({
 
 const Flight = ({ flight }) => (
   <BpkCard
-    className="bpk-stories-flight"
+    className={getClassName('bpk-stories-flight')}
     stub={
-      <div className="bpk-stories-flight__stub">
-        <div className="bpk-stories-flight__small">8 deals from</div>
-        <div className="bpk-stories-flight__price">£{ flight.price }</div>
+      <div className={getClassName('bpk-stories-flight__stub')}>
+        <div className={getClassName('bpk-stories-flight__small')}>8 deals from</div>
+        <div className={getClassName('bpk-stories-flight__price')}>£{ flight.price }</div>
         <BpkButton>Select <AlignedArrowRightIcon fill="white" /></BpkButton>
       </div>
     }
   >
-    <div className="bpk-stories-flight__main">
+    <div className={getClassName('bpk-stories-flight__main')}>
       <img src={flight.logo} alt="BA Logo" />
-      <div className="bpk-stories-flight__from">
-        <div className="bpk-stories-flight__time">{ flight.departure }</div>
+      <div className={getClassName('bpk-stories-flight__from')}>
+        <div className={getClassName('bpk-stories-flight__time')}>{ flight.departure }</div>
         <div>{ flight.from }</div>
       </div>
       <div>
         { flight.duration }
       </div>
-      <div className="bpk-stories-flight__to">
-        <div className="bpk-stories-flight__time">{ flight.arrival }</div>
+      <div className={getClassName('bpk-stories-flight__to')}>
+        <div className={getClassName('bpk-stories-flight__time')}>{ flight.arrival }</div>
         <div>{ flight.to }</div>
       </div>
     </div>
-    <div className="bpk-stories-flight__small">Operated by BA Cityflyer</div>
+    <div className={getClassName('bpk-stories-flight__small')}>Operated by BA Cityflyer</div>
   </BpkCard>
 );
 

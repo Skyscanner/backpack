@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-content-container.scss';
+import STYLES from './bpk-content-container.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkContentContainer = (props) => {
   const TagName = props.tagName;
-  const classNames = ['bpk-content-container'];
+  const classNames = [getClassName('bpk-content-container')];
 
-  if (props.bareHtml) { classNames.push('bpk-content-container--bare-html'); }
+  if (props.bareHtml) { classNames.push(getClassName('bpk-content-container--bare-html')); }
 
   /* eslint-disable react/no-danger-with-children */
   return (

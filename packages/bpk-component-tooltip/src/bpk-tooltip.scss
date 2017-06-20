@@ -10,22 +10,22 @@
   &--appear {
     opacity: 0;
 
-    .bpk-tooltip-tether-element-attached-top &:not(.bpk-tooltip--appear-active) {
+    :global(.bpk-tooltip-tether-element-attached-top) &:not(.bpk-tooltip--appear-active) {
       transform: translate(0, 1rem);
       transition: none;
     }
 
-    .bpk-tooltip-tether-element-attached-bottom &:not(.bpk-tooltip--appear-active) {
+    :global(.bpk-tooltip-tether-element-attached-bottom) &:not(.bpk-tooltip--appear-active) {
       transform: translate(0, -1rem);
       transition: none;
     }
 
-    .bpk-tooltip-tether-element-attached-left &:not(.bpk-tooltip--appear-active) {
+    :global(.bpk-tooltip-tether-element-attached-left) &:not(.bpk-tooltip--appear-active) {
       transform: translate(1rem, 0);
       transition: none;
     }
 
-    .bpk-tooltip-tether-element-attached-right &:not(.bpk-tooltip--appear-active) {
+    :global(.bpk-tooltip-tether-element-attached-right) &:not(.bpk-tooltip--appear-active) {
       transform: translate(-1rem, 0);
       transition: none;
     }
@@ -37,39 +37,39 @@
     opacity: 1;
   }
 
-  .bpk-tooltip-tether-element-attached-top & {
+  :global(.bpk-tooltip-tether-element-attached-top) & {
     padding-top: $arrow-size;
   }
 
-  .bpk-tooltip-tether-element-attached-right & {
+  :global(.bpk-tooltip-tether-element-attached-right) & {
     margin-left: -$arrow-size;
     padding-right: $arrow-size;
   }
 
-  .bpk-tooltip-tether-element-attached-bottom & {
+  :global(.bpk-tooltip-tether-element-attached-bottom) & {
     padding-bottom: $arrow-size;
   }
 
-  .bpk-tooltip-tether-element-attached-left & {
+  :global(.bpk-tooltip-tether-element-attached-left) & {
     padding-left: $arrow-size;
   }
 
   &__arrow {
     @include bpk-layer-arrow($arrow-size);
 
-    .bpk-tooltip-tether-element-attached-top & {
+    :global(.bpk-tooltip-tether-element-attached-top) & {
       @include bpk-layer-arrow-top($arrow-size);
     }
 
-    .bpk-tooltip-tether-element-attached-right & {
+    :global(.bpk-tooltip-tether-element-attached-right) & {
       @include bpk-layer-arrow-right($arrow-size);
     }
 
-    .bpk-tooltip-tether-element-attached-bottom & {
+    :global(.bpk-tooltip-tether-element-attached-bottom) & {
       @include bpk-layer-arrow-bottom($arrow-size);
     }
 
-    .bpk-tooltip-tether-element-attached-left & {
+    :global(.bpk-tooltip-tether-element-attached-left) & {
       @include bpk-layer-arrow-left($arrow-size);
     }
   }

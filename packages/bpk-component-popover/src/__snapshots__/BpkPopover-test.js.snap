@@ -17,7 +17,7 @@ exports[`BpkPopover should render correctly 1`] = `
       My popover
     </span>
     <div
-      className="bpk-popover__body bpk-popover__body--padded">
+      className="bpk-popover__body--padded">
       My popover content
     </div>
     <footer
@@ -52,7 +52,7 @@ exports[`BpkPopover should render correctly with "className" attribute 1`] = `
       My popover
     </span>
     <div
-      className="bpk-popover__body bpk-popover__body--padded">
+      className="bpk-popover__body--padded">
       My popover content
     </div>
     <footer
@@ -113,7 +113,7 @@ exports[`BpkPopover should render correctly with "labelAsTitle" attribute 1`] = 
       </button>
     </header>
     <div
-      className="bpk-popover__body bpk-popover__body--padded">
+      className="bpk-popover__body--padded">
       My popover content
     </div>
   </div>
@@ -139,7 +139,7 @@ exports[`BpkPopover should render correctly with "padded" attribute equal to fal
       My popover
     </span>
     <div
-      className="bpk-popover__body">
+      className="">
       My popover content
     </div>
     <footer

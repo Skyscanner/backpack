@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 import XlSpinner from 'bpk-svgs/dist/js/spinners/xl';
 
-import './bpk-spinner.scss';
+import STYLES from './bpk-spinner.scss';
+
+const getClassName = cssModules(STYLES);
 
 const BpkExtraLargeSpinner = (props) => {
   const { className, ...rest } = props;
-  const classNames = ['bpk-spinner', 'bpk-spinner--extra-large'];
+  const classNames = ['bpk-spinner', 'bpk-spinner--extra-large'].map(getClassName);
 
   if (className) { classNames.push(className); }
 

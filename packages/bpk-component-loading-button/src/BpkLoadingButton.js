@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import BpkButton from 'bpk-component-button';
+import { cssModules } from 'bpk-react-utils';
 
 import { BpkSpinner, BpkLargeSpinner } from 'bpk-component-spinner';
 import { withButtonAlignment, withLargeButtonAlignment, withRtlSupport } from 'bpk-component-icon';
 import ArrowIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import ArrowIconLg from 'bpk-component-icon/lg/long-arrow-right';
 
-import './bpk-loading-button.scss';
+import STYLES from './bpk-loading-button.scss';
+
+const getClassName = cssModules(STYLES);
 
 const getPropsIcon = (props) => {
   const {
@@ -71,8 +74,12 @@ const BpkLoadingButton = (props) => {
 
   const showBtnDisabled = disabled || loading;
 
-  const classNames = ['bpk-loading-button'];
+  const classNames = [getClassName('bpk-loading-button')];
   if (className) { classNames.push(className); }
+  if (props.secondary) { classNames.push(getClassName('bpk-loading-button--secondary')); }
+  if (props.destructive) { classNames.push(getClassName('bpk-loading-button--destructive')); }
+  if (props.selected) { classNames.push(getClassName('bpk-loading-button--selected')); }
+  if (props.link) { classNames.push(getClassName('bpk-loading-button--link')); }
 
   const spacer = (iconOnly) ? '' : '\u00A0';
   const buttonIcon = getPropsIcon(props) || getDefaultIcon(props);
@@ -93,6 +100,10 @@ BpkLoadingButton.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  secondary: PropTypes.bool,
+  selected: PropTypes.bool,
+  destructive: PropTypes.bool,
+  link: PropTypes.bool,
   loading: PropTypes.bool,
   iconOnly: PropTypes.bool,
   icon: PropTypes.element,
@@ -104,6 +115,9 @@ BpkLoadingButton.propTypes = {
 BpkLoadingButton.defaultProps = {
   className: null,
   disabled: false,
+  secondary: false,
+  selected: false,
+  destructive: false,
   loading: false,
   iconOnly: false,
   icon: null,

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { cssModules } from 'bpk-react-utils';
 
 import {
   getDay,
@@ -12,7 +13,9 @@ import {
   isWithinRange,
 } from './date-utils';
 import CustomPropTypes from './custom-proptypes';
-import './bpk-calendar.scss';
+import STYLES from './bpk-calendar-grid.scss';
+
+const getClassName = cssModules(STYLES);
 
 const shallowEqualProps = (props1, props2, propList) => {
   let i = 0;
@@ -91,7 +94,7 @@ class Week extends Component {
 
     return (
       <tr
-        className="bpk-calendar-grid__week"
+        className={getClassName('bpk-calendar-grid__week')}
       >{ this.props.dates.map(date => (
         <DateContainer
           key={date.getDate()}
@@ -153,10 +156,10 @@ Week.defaultProps = {
   DateContainer - one for each date in the grid; wraps the actual BpkCalendarDate (or custom) component
 */
 const DateContainer = (props) => {
-  const classNames = ['bpk-calendar-grid__date'];
+  const classNames = [getClassName('bpk-calendar-grid__date')];
 
-  if (props.weekendStart) { classNames.push('bpk-calendar-grid__date--weekend-start'); }
-  if (props.weekendEnd) { classNames.push('bpk-calendar-grid__date--weekend-end'); }
+  if (props.weekendStart) { classNames.push(getClassName('bpk-calendar-grid__date--weekend-start')); }
+  if (props.weekendEnd) { classNames.push(getClassName('bpk-calendar-grid__date--weekend-end')); }
 
   return (
     <td

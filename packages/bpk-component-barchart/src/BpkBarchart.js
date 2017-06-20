@@ -3,6 +3,7 @@ import debounce from 'lodash.debounce';
 import React, { Component } from 'react';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import { spacingXs, lineHeightSm } from 'bpk-tokens/tokens/base.es6';
+import { cssModules } from 'bpk-react-utils';
 
 import BpkBarchartDefs from './BpkBarchartDefs';
 import BpkBarchartBars from './BpkBarchartBars';
@@ -13,7 +14,9 @@ import BpkBarchartBar from './BpkBarchartBar';
 import { identity, remToPx } from './utils';
 import { applyArrayRTLTransform, applyMarginRTLTransform } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
-import './bpk-barchart.scss';
+import STYLES from './bpk-barchart.scss';
+
+const getClassName = cssModules(STYLES);
 
 const spacing = remToPx(spacingXs);
 const lineHeight = remToPx(lineHeightSm);
@@ -99,7 +102,7 @@ class BpkBarchart extends Component {
       bottom: xAxisMargin,
     });
 
-    const classNames = ['bpk-barchart'];
+    const classNames = [getClassName('bpk-barchart')];
     if (className) { classNames.push(className); }
 
     const width = this.state.width - margin.left - margin.right;

@@ -1,9 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-table.scss';
+import STYLES from './bpk-table.scss';
 
-const BpkTableHeadCell = props => <th className="bpk-table__cell bpk-table__cell--head">{props.children}</th>;
+const getClassName = cssModules(STYLES);
+
+const BpkTableHeadCell = props =>
+  <th
+    className={['bpk-table__cell', 'bpk-table__cell--head'].map(getClassName).join(' ')}
+  >
+    {props.children}
+  </th>;
 
 BpkTableHeadCell.propTypes = {
   children: PropTypes.node.isRequired,

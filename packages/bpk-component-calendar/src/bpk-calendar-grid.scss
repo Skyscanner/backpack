@@ -1,0 +1,43 @@
+@import '~bpk-mixins/index';
+@import 'variables';
+
+.bpk-calendar-grid {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+
+  &--animating {
+    z-index: 1;
+    -moz-transition: -moz-transform .2s ease-in-out;
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+  }
+
+  &__caption {
+    @include bpk-visually-hidden;
+  }
+
+  &__date {
+    padding: $bpk-calendar-day-spacing ($bpk-calendar-day-spacing / 2) 0 ($bpk-calendar-day-spacing / 2);
+    text-align: center;
+    vertical-align: middle;
+
+    &--weekend-start {
+      box-shadow: $shadow-left;
+
+      @include bpk-rtl {
+        box-shadow: $shadow-right;
+      }
+    }
+
+    &--weekend-end:not(:last-child) {
+      box-shadow: $shadow-right;
+
+      @include bpk-rtl {
+        box-shadow: $shadow-left;
+      }
+    }
+  }
+}

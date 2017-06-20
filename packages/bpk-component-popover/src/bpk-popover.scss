@@ -24,39 +24,41 @@
     opacity: 1;
   }
 
-  .bpk-popover-tether-element-attached-top & {
+  // FIXME: Remove use of :global when/if https://github.com/HubSpot/tether/pull/245
+  // is merged.
+  :global(.bpk-popover-tether-element-attached-top) & {
     padding-top: $bpk-spacing-sm;
   }
 
-  .bpk-popover-tether-element-attached-right & {
+  :global(.bpk-popover-tether-element-attached-right) & {
     margin-left: -$bpk-spacing-sm;
     padding-right: $bpk-spacing-sm;
   }
 
-  .bpk-popover-tether-element-attached-bottom & {
+  :global(.bpk-popover-tether-element-attached-bottom) & {
     padding-bottom: $bpk-spacing-sm;
   }
 
-  .bpk-popover-tether-element-attached-left & {
+  :global(.bpk-popover-tether-element-attached-left) & {
     padding-left: $bpk-spacing-sm;
   }
 
   &__arrow {
     @include bpk-layer-arrow($arrow-size);
 
-    .bpk-popover-tether-element-attached-top & {
+    :global(.bpk-popover-tether-element-attached-top) & {
       @include bpk-layer-arrow-top($arrow-size);
     }
 
-    .bpk-popover-tether-element-attached-right & {
+    :global(.bpk-popover-tether-element-attached-right) & {
       @include bpk-layer-arrow-right($arrow-size);
     }
 
-    .bpk-popover-tether-element-attached-bottom & {
+    :global(.bpk-popover-tether-element-attached-bottom) & {
       @include bpk-layer-arrow-bottom($arrow-size);
     }
 
-    .bpk-popover-tether-element-attached-left & {
+    :global(.bpk-popover-tether-element-attached-left) & {
       @include bpk-layer-arrow-left($arrow-size);
     }
   }
