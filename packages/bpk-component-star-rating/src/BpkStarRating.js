@@ -20,6 +20,7 @@ const getTypeByRating = (starNumber, rating) => {
 const BpkStarRating = (props) => {
   const {
     rating,
+    ratingLabel,
     maxRating,
     large,
     className,
@@ -45,10 +46,12 @@ const BpkStarRating = (props) => {
     );
   }
 
+  const label = typeof ratingLabel === 'string' ? ratingLabel : ratingLabel(rating, maxRating);
+
   return (
     <div
       {...rest}
-      aria-label={`Rated ${rating} out of ${maxRating} stars`}
+      aria-label={label}
       className={classNames.join(' ')}
     >
       {stars}
@@ -57,6 +60,10 @@ const BpkStarRating = (props) => {
 };
 
 BpkStarRating.propTypes = {
+  ratingLabel: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+  ]).isRequired,
   rating: PropTypes.number,
   maxRating: PropTypes.number,
   large: PropTypes.bool,

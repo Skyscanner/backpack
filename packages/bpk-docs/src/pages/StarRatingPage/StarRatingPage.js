@@ -1,10 +1,12 @@
 import React from 'react';
 import BpkParagraph from 'bpk-component-paragraph';
-import BpkStarRating, { BpkInteractiveStarRating } from 'bpk-component-star-rating';
+import BpkStarRating, { BpkInteractiveStarRating, withInteractiveStarRatingState } from 'bpk-component-star-rating';
 
 import starRatingReadme from 'bpk-component-star-rating/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+
+const InteractiveStarRating = withInteractiveStarRatingState(BpkInteractiveStarRating);
 
 const components = [
   {
@@ -16,7 +18,7 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <BpkStarRating rating={3.5} />,
+      <BpkStarRating rating={3.5} ratingLabel="3.5 stars" />,
     ],
   },
   {
@@ -24,7 +26,7 @@ const components = [
     title: 'Large',
     blurb: [<BpkParagraph>Similar to the default, but in a large size.</BpkParagraph>],
     examples: [
-      <BpkStarRating rating={3.5} large />,
+      <BpkStarRating rating={3.5} ratingLabel="3.5 stars" large />,
     ],
   },
   {
@@ -36,7 +38,10 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <BpkInteractiveStarRating large />,
+      <InteractiveStarRating
+        large
+        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+      />,
     ],
   },
 ];

@@ -11,7 +11,7 @@ exports[`BpkInteractiveStar should render correctly with "onChange" prop 1`] = `
     type="radio"
     value={1} />
   <svg
-    className="bpk-star bpk-star--filled bpk-interactive-star"
+    className="bpk-star bpk-star--filled bpk-interactive-star bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -41,7 +41,7 @@ exports[`BpkInteractiveStar should render correctly with a selected full star 1`
     type="radio"
     value={1} />
   <svg
-    className="bpk-star bpk-star--filled bpk-interactive-star bpk-interactive-star--selected"
+    className="bpk-star bpk-star--filled bpk-interactive-star bpk-interactive-star--selected bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -71,7 +71,7 @@ exports[`BpkInteractiveStar should render correctly with empty star 1`] = `
     type="radio"
     value={1} />
   <svg
-    className="bpk-star bpk-interactive-star"
+    className="bpk-star bpk-interactive-star bpk-icon--rtl-support"
     height="18"
     style={
       Object {
@@ -101,7 +101,7 @@ exports[`BpkInteractiveStar should render correctly with full star 1`] = `
     type="radio"
     value={1} />
   <svg
-    className="bpk-star bpk-star--filled bpk-interactive-star"
+    className="bpk-star bpk-star--filled bpk-interactive-star bpk-icon--rtl-support"
     height="18"
     style={
       Object {

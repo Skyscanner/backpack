@@ -14,6 +14,7 @@ import BpkInteractiveStarRating from './src/BpkInteractiveStarRating';
 import withInteractiveStarRatingState from './src/withInteractiveStarRatingState';
 
 const InteractiveStarRating = withInteractiveStarRatingState(BpkInteractiveStarRating);
+const StarRating = props => <BpkStarRating ratingLabel={(r, m) => `${r} out of ${m} stars`} {...props} />;
 
 storiesOf('bpk-component-star-rating', module)
   .add('BpkStar examples', () => (
@@ -41,64 +42,64 @@ storiesOf('bpk-component-star-rating', module)
           <BpkTableCell><BpkStar type={STAR_TYPES.FULL} /></BpkTableCell>
           <BpkTableCell><BpkStar type={STAR_TYPES.FULL} large /></BpkTableCell>
         </BpkTableRow>
-        <BpkTableRow>
-          <BpkTableCell>Interactive</BpkTableCell>
-          <BpkTableCell>
-            <BpkStar type={STAR_TYPES.INTERACTIVE} />
-          </BpkTableCell>
-          <BpkTableCell>
-            <BpkStar type={STAR_TYPES.INTERACTIVE} large />
-          </BpkTableCell>
-        </BpkTableRow>
       </BpkTableBody>
     </BpkTable>
   ))
   .add('Full Stars', () => (
     <div>
-      <BpkStarRating rating={5} />
+      <StarRating rating={5} />
       <br />
-      <BpkStarRating rating={5} large />
+      <StarRating rating={5} large />
     </div>
   ))
   .add('Empty Stars', () => (
     <div>
-      <BpkStarRating rating={0} />
+      <StarRating rating={0} />
       <br />
-      <BpkStarRating rating={0} large />
+      <StarRating rating={0} large />
     </div>
   ))
   .add('3 Stars Rating', () => (
     <div>
-      <BpkStarRating rating={3} />
+      <StarRating rating={3} />
       <br />
-      <BpkStarRating rating={3} large />
+      <StarRating rating={3} large />
     </div>
   ))
   .add('3 1/2 Stars Rating', () => (
     <div>
-      <BpkStarRating rating={3.5} />
+      <StarRating rating={3.5} />
       <br />
-      <BpkStarRating rating={3.5} large />
+      <StarRating rating={3.5} large />
     </div>
   ))
   .add('3.3 Stars', () => (
     <div>
-      <BpkStarRating rating={0.9} />
+      <StarRating rating={3.3} />
       <br />
-      <BpkStarRating rating={3.3} large />
+      <StarRating rating={3.3} large />
     </div>
   ))
   .add('3.7 Stars', () => (
     <div>
-      <BpkStarRating rating={3.7} />
+      <StarRating rating={3.7} />
       <br />
-      <BpkStarRating rating={3.7} large />
+      <StarRating rating={3.7} large />
     </div>
   ))
-  .add('BpkInteractiveStarRating', () => (
+  .add('Interactive', () => (
     <div>
-      <InteractiveStarRating id="small-star-rating" onRatingSelect={action('rating selected')} />
+      <InteractiveStarRating
+        id="small-star-rating"
+        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        onRatingSelect={action('rating selected')}
+      />
       <br />
-      <InteractiveStarRating id="large-star-rating" large onRatingSelect={action('large rating selected')} />
+      <InteractiveStarRating
+        id="large-star-rating"
+        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        onRatingSelect={action('large rating selected')}
+        large
+      />
     </div>
   ));

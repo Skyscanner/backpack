@@ -15,15 +15,16 @@ const getTypeByRating = (starNumber, rating) => {
 
 const BpkStarRating = (props) => {
   const {
-    rating,
-    hoverRating,
-    maxRating,
-    large,
     className,
-    onRatingSelect,
-    onRatingHover,
-    onMouseLeave,
+    getStarLabel,
+    hoverRating,
     id,
+    large,
+    maxRating,
+    onMouseLeave,
+    onRatingHover,
+    onRatingSelect,
+    rating,
     ...rest
   } = props;
 
@@ -46,7 +47,7 @@ const BpkStarRating = (props) => {
         large={large}
         onMouseEnter={() => onRatingHover(starNumber)}
         selected={rating === starNumber}
-        label={`${starNumber} out of ${maxRating} stars`}
+        label={getStarLabel(starNumber, maxRating)}
         name={`${id}_rating`}
         value={starNumber}
       />,
@@ -66,6 +67,7 @@ const BpkStarRating = (props) => {
 
 BpkStarRating.propTypes = {
   id: PropTypes.string.isRequired,
+  getStarLabel: PropTypes.func.isRequired,
   rating: PropTypes.number,
   hoverRating: PropTypes.number,
   maxRating: PropTypes.number,

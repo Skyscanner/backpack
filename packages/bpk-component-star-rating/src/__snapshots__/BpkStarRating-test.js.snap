@@ -2,23 +2,23 @@ exports[`BpkStarRating should render correctly if you give it more than the max 
 <div
   aria-label="Rated 7 out of 5 stars"
   className="bpk-star-rating">
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
@@ -29,23 +29,23 @@ exports[`BpkStarRating should render correctly with "large" attribute 1`] = `
 <div
   aria-label="Rated 5 out of 5 stars"
   className="bpk-star-rating">
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={true}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={true}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={true}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={true}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={true}
     type="full" />
@@ -56,35 +56,35 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
 <div
   aria-label="Rated 5 out of 8 stars"
   className="bpk-star-rating">
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="empty" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="empty" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="empty" />
@@ -95,23 +95,23 @@ exports[`BpkStarRating should render correctly with 0 stars 1`] = `
 <div
   aria-label="Rated 0 out of 5 stars"
   className="bpk-star-rating">
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="empty" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="empty" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="empty" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="empty" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="empty" />
@@ -122,23 +122,23 @@ exports[`BpkStarRating should render correctly with 3 stars 1`] = `
 <div
   aria-label="Rated 3 out of 5 stars"
   className="bpk-star-rating">
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="empty" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="empty" />
@@ -149,23 +149,23 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
 <div
   aria-label="Rated 3.5 out of 5 stars"
   className="bpk-star-rating">
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="half" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="empty" />
@@ -176,23 +176,23 @@ exports[`BpkStarRating should render correctly with 5 stars 1`] = `
 <div
   aria-label="Rated 5 out of 5 stars"
   className="bpk-star-rating">
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />
-  <BpkStar
+  <withRtlSupport(BpkStar)
     className={null}
     large={false}
     type="full" />

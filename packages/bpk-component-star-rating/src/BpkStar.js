@@ -4,6 +4,7 @@ import SmallIcon from 'bpk-component-icon/sm/star';
 import LargeIcon from 'bpk-component-icon/lg/star';
 import HalfSmallIcon from 'bpk-component-icon/sm/star-half';
 import HalfLargeIcon from 'bpk-component-icon/lg/star-half';
+import { withRtlSupport } from 'bpk-component-icon';
 
 import './bpk-star.scss';
 
@@ -64,4 +65,4 @@ BpkStar.defaultProps = {
   large: false,
 };
 
-export default BpkStar;
+export default withRtlSupport(BpkStar);

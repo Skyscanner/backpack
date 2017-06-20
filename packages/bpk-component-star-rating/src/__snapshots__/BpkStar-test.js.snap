@@ -1,6 +1,6 @@
 exports[`BpkStar should render correctly with a "className" prop 1`] = `
 <svg
-  className="bpk-star bpk-star--filled my-class"
+  className="bpk-star bpk-star--filled my-class bpk-icon--rtl-support"
   height="18"
   style={
     Object {
@@ -18,7 +18,7 @@ exports[`BpkStar should render correctly with a "className" prop 1`] = `
 
 exports[`BpkStar should render correctly with a large empty star 1`] = `
 <svg
-  className="bpk-star bpk-star--large"
+  className="bpk-star bpk-star--large bpk-icon--rtl-support"
   height="24"
   style={
     Object {
@@ -36,7 +36,7 @@ exports[`BpkStar should render correctly with a large empty star 1`] = `
 
 exports[`BpkStar should render correctly with a large full star 1`] = `
 <svg
-  className="bpk-star bpk-star--large bpk-star--filled"
+  className="bpk-star bpk-star--large bpk-star--filled bpk-icon--rtl-support"
   height="24"
   style={
     Object {
@@ -54,7 +54,7 @@ exports[`BpkStar should render correctly with a large full star 1`] = `
 
 exports[`BpkStar should render correctly with a large half star 1`] = `
 <span
-  className="bpk-star__container bpk-star__container--half-star bpk-star__container--large">
+  className="bpk-star__container bpk-star__container--half-star bpk-star__container--large bpk-icon--rtl-support">
   <svg
     className="bpk-star bpk-star--half bpk-star--filled"
     height="24"
@@ -90,7 +90,7 @@ exports[`BpkStar should render correctly with a large half star 1`] = `
 
 exports[`BpkStar should render correctly with empty star 1`] = `
 <svg
-  className="bpk-star"
+  className="bpk-star bpk-icon--rtl-support"
   height="18"
   style={
     Object {
@@ -108,7 +108,7 @@ exports[`BpkStar should render correctly with empty star 1`] = `
 
 exports[`BpkStar should render correctly with full star 1`] = `
 <svg
-  className="bpk-star bpk-star--filled"
+  className="bpk-star bpk-star--filled bpk-icon--rtl-support"
   height="18"
   style={
     Object {
@@ -126,7 +126,7 @@ exports[`BpkStar should render correctly with full star 1`] = `
 
 exports[`BpkStar should render correctly with half star 1`] = `
 <span
-  className="bpk-star__container bpk-star__container--half-star">
+  className="bpk-star__container bpk-star__container--half-star bpk-icon--rtl-support">
   <svg
     className="bpk-star bpk-star--half bpk-star--filled"
     height="18"
