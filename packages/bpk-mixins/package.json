@@ -13,6 +13,9 @@
     "bpk-svgs": "^5.5.0",
     "bpk-tokens": "^23.2.1"
   },
+  "devDependencies": {
+    "bpk-react-utils": "^1.4.6"
+  },
   "peerDependencies": {
     "node-sass": "^4.1.1"
   }
