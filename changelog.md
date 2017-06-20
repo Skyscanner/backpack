@@ -4,6 +4,10 @@
 
 - _Nothing yet..._
 
+**Fixed:**
+- bpk-component-input:
+  - Fix CSS modules for withOpenEvents classes.
+
 ## 2017-06-20 - CSS modules support across all packages
 
 **Breaking:**
