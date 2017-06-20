@@ -12,12 +12,31 @@ npm install bpk-component-star-rating --save-dev
 
 ```js
 import React from 'react';
-import BpkStarRating, { BpkStar, STAR_TYPES, BpkInteractiveStarRating } from 'bpk-component-star-rating';
+import BpkStarRating, {
+  BpkStar,
+  STAR_TYPES,
+  BpkInteractiveStarRating,
+  withInteractiveStarRatingState
+} from 'bpk-component-star-rating';
+
+const InteractiveStarRating = withInteractiveStarRatingState(BpkInteractiveStarRating);
 
 export default () => (
-  <BpkStar type={STAR_TYPES.HALF} />
-  <BpkStarRating rating={3.5} large />
-  <BpkInteractiveStarRating onRatingSelect={(rating) => console.log(rating)} />
+  <div>
+    <BpkStar
+      type={STAR_TYPES.HALF}
+    />
+    <BpkStarRating
+      rating={3.5}
+      large
+      ratingLabel="So-so"
+    />
+    <InteractiveStarRating
+      id="large-star-rating"
+      onRatingSelect={(rating) => console.log(rating)}
+      getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+    />
+  </div>
 );
 ```
 
@@ -25,28 +44,50 @@ export default () => (
 
 ### BpkStarRating
 
-| Property       | PropType | Required | Default Value |
-| -------------- | -------- | -------- | ------------- |
-| rating         | number   | false    | 0             |
-| hoverRating    | number   | false    | 0             |
-| maxRating      | number   | false    | 5             |
-| large          | bool     | false    | false         |
-| interactive    | bool     | false    | false         |
-| onRatingHover  | func     | false    | null          |
-| onMouseLeave   | func     | false    | null          |
-| onRatingSelect | func     | false    | null          |
-| className      | string   | false    | null          |
+| Property       | PropType                | Required | Default Value |
+| -------------- | ----------------------- | -------- | ------------- |
+| ratingLabel    | oneOfType(string, func) | true     | -             |
+| className      | string                  | false    | null          |
+| large          | bool                    | false    | false         |
+| maxRating      | number                  | false    | 5             |
+| rating         | number                  | false    | 0             |
 
 ### BpkStar
 
 | Property    | PropType          | Required | Default Value |
 | ----------- | ----------------- | -------- | ------------- |
 | type        | oneOf(STAR_TYPES) | true     | -             |
+| className   | string            | false    | null          |
 | large       | bool              | false    | false         |
-| selected    | bool              | false    | false         |
+
+### withInteractiveStarRatingState()
+
+| Property       | PropType | Required | Default Value |
+| -------------- | -------- | -------- | ------------- |
+| onRatingSelect | func     | false    | () => null    |
 
 ### BpkInteractiveStarRating
 
 | Property       | PropType | Required | Default Value |
 | -------------- | -------- | -------- | ------------- |
+| getStarLabel   | func     | true     | -             |
+| id             | string   | true     | -             |
+| className      | string   | false    | null          |
+| hoverRating    | number   | false    | 0             |
+| large          | bool     | false    | false         |
+| maxRating      | number   | false    | 5             |
+| onMouseLeave   | func     | false    | () => null    |
+| onRatingHover  | func     | false    | () => null    |
 | onRatingSelect | func     | false    | () => null    |
+| rating         | number   | false    | 0             |
+
+### BpkInteractiveStar
+
+| Property    | PropType          | Required | Default Value |
+| ----------- | ----------------- | -------- | ------------- |
+| label       | bool              | true     | -             |
+| name        | bool              | true     | -             |
+| type        | oneOf(STAR_TYPES) | true     | -             |
+| value       | number            | true     | -             |
+| onChange    | func              | false    | () => null    |
+| selected    | bool              | false    | false         |

@@ -68,17 +68,17 @@ BpkStarRating.propTypes = {
     PropTypes.string,
     PropTypes.func,
   ]).isRequired,
-  rating: PropTypes.number,
-  maxRating: PropTypes.number,
-  large: PropTypes.bool,
   className: PropTypes.string,
+  large: PropTypes.bool,
+  maxRating: PropTypes.number,
+  rating: PropTypes.number,
 };
 
 BpkStarRating.defaultProps = {
-  rating: 0,
-  maxRating: 5,
-  large: false,
   className: null,
+  large: false,
+  maxRating: 5,
+  rating: 0,
 };
 
 export default BpkStarRating;

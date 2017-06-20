@@ -17,7 +17,7 @@ const getTypeByRating = (starNumber, rating) => {
   return STAR_TYPES.FULL;
 };
 
-const BpkStarRating = (props) => {
+const BpkInteractiveStarRating = (props) => {
   const {
     className,
     getStarLabel,
@@ -69,28 +69,28 @@ const BpkStarRating = (props) => {
   );
 };
 
-BpkStarRating.propTypes = {
-  id: PropTypes.string.isRequired,
+BpkInteractiveStarRating.propTypes = {
   getStarLabel: PropTypes.func.isRequired,
-  rating: PropTypes.number,
-  hoverRating: PropTypes.number,
-  maxRating: PropTypes.number,
-  large: PropTypes.bool,
-  onRatingHover: PropTypes.func,
-  onMouseLeave: PropTypes.func,
-  onRatingSelect: PropTypes.func,
+  id: PropTypes.string.isRequired,
   className: PropTypes.string,
+  hoverRating: PropTypes.number,
+  large: PropTypes.bool,
+  maxRating: PropTypes.number,
+  onMouseLeave: PropTypes.func,
+  onRatingHover: PropTypes.func,
+  onRatingSelect: PropTypes.func,
+  rating: PropTypes.number,
 };
 
-BpkStarRating.defaultProps = {
-  rating: 0,
-  hoverRating: 0,
-  maxRating: 5,
-  large: false,
-  onRatingHover: () => null,
-  onMouseLeave: () => null,
-  onRatingSelect: () => null,
+BpkInteractiveStarRating.defaultProps = {
   className: null,
+  hoverRating: 0,
+  large: false,
+  maxRating: 5,
+  onMouseLeave: () => null,
+  onRatingHover: () => null,
+  onRatingSelect: () => null,
+  rating: 0,
 };
 
-export default BpkStarRating;
+export default BpkInteractiveStarRating;
