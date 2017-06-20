@@ -2,10 +2,14 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-06-20 - New icons (onsen, language, language-alert, language-question and airline-multiple)
+
 **Added:**
-- bpk-svgs:
-- bpk-component-icon:
-- bpk-mixins:
+- bpk-component-icon: 3.5.4 => 3.6.0
+- bpk-mixins: 15.3.2 => 15.4.0
+- bpk-svgs: 5.4.3 => 5.5.0
   - added 4 new icons (onsen, language, language-alert, language-question and airline-multiple)
 
 ## 2017-06-14 - Tooltips no longer appear on touch devices
