@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import BpkStarRating from './BpkStarRating';
+import BpkStarRating, { getTypeByRating } from './BpkStarRating';
+import { STAR_TYPES } from './BpkStar';
 
 describe('BpkStarRating', () => {
   it('should render correctly if you give it more than the max rating allowed', () => {
@@ -73,5 +74,30 @@ describe('BpkStarRating', () => {
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  describe('getTypeByRating()', () => {
+    it('should be a function', () => {
+      expect(typeof getTypeByRating === 'function').toBe(true);
+    });
+
+    it('should return EMPTY if the star number is more than 0.5 higher than the rating', () => {
+      expect(getTypeByRating(2, 0)).toBe(STAR_TYPES.EMPTY);
+      expect(getTypeByRating(2, 0.9)).toBe(STAR_TYPES.EMPTY);
+      expect(getTypeByRating(2, 1.4)).toBe(STAR_TYPES.EMPTY);
+    });
+
+    it('should return FULL if the rating is higher than or equal to the star number', () => {
+      expect(getTypeByRating(0, 1)).toBe(STAR_TYPES.FULL);
+      expect(getTypeByRating(1, 1)).toBe(STAR_TYPES.FULL);
+    });
+
+    it('should return HALF if the rating is up to 0.5 under the star number', () => {
+      expect(getTypeByRating(1, 0)).not.toBe(STAR_TYPES.HALF);
+      expect(getTypeByRating(1, 0.4)).not.toBe(STAR_TYPES.HALF);
+      expect(getTypeByRating(1, 0.5)).toBe(STAR_TYPES.HALF);
+      expect(getTypeByRating(1, 0.9)).toBe(STAR_TYPES.HALF);
+      expect(getTypeByRating(1, 1)).not.toBe(STAR_TYPES.HALF);
+    });
   });
 });

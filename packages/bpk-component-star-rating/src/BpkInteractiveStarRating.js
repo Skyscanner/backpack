@@ -9,7 +9,7 @@ import STYLES from './bpk-star-rating.scss';
 
 const getClassName = cssModules(STYLES);
 
-const getTypeByRating = (starNumber, rating) => {
+export const getTypeByRating = (starNumber, rating) => {
   if (starNumber > rating) {
     return STAR_TYPES.EMPTY;
   }
@@ -45,7 +45,7 @@ const BpkInteractiveStarRating = (props) => {
 
     stars.push(
       <BpkInteractiveStar
-        key={`star${starNumber}`}
+        key={`star-${starNumber}`}
         onChange={event => onRatingSelect(starNumber, event)}
         type={type}
         large={large}

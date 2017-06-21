@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import BpkInteractiveStarRating from './BpkInteractiveStarRating';
+import BpkInteractiveStarRating, { getTypeByRating } from './BpkInteractiveStarRating';
+import { STAR_TYPES } from './BpkStar';
 
 describe('BpkInteractiveStarRating', () => {
   it('should render correctly if you give it more than the max rating allowed', () => {
@@ -120,5 +121,21 @@ describe('BpkInteractiveStarRating', () => {
     expect(onRatingSelect).not.toHaveBeenCalled();
     tree.childAt(0).prop('onChange')(1, {});
     expect(onRatingSelect).toHaveBeenCalled();
+  });
+
+  describe('getTypeByRating()', () => {
+    it('should be a function', () => {
+      expect(typeof getTypeByRating === 'function').toBe(true);
+    });
+
+    it('should return EMPTY if the rating is smaller than the star number', () => {
+      expect(getTypeByRating(1, 0)).toBe(STAR_TYPES.EMPTY);
+      expect(getTypeByRating(1, 0.9)).toBe(STAR_TYPES.EMPTY);
+    });
+
+    it('should return FULL if the rating is higher than or equal to the star number', () => {
+      expect(getTypeByRating(0, 1)).toBe(STAR_TYPES.FULL);
+      expect(getTypeByRating(1, 1)).toBe(STAR_TYPES.FULL);
+    });
   });
 });
