@@ -33,13 +33,8 @@ describe('BpkStar', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with a selected full star', () => {
-    const tree = renderer.create(<BpkStar type={STAR_TYPES.FULL} selected />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render correctly with a selected large full star', () => {
-    const tree = renderer.create(<BpkStar type={STAR_TYPES.FULL} selected large />).toJSON();
+  it('should render correctly with a "className" prop', () => {
+    const tree = renderer.create(<BpkStar type={STAR_TYPES.FULL} className="my-class" />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

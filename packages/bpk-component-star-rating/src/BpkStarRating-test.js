@@ -1,66 +1,103 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import BpkStarRating from './BpkStarRating';
+import BpkStarRating, { getTypeByRating } from './BpkStarRating';
+import { STAR_TYPES } from './BpkStar';
 
 describe('BpkStarRating', () => {
   it('should render correctly if you give it more than the max rating allowed', () => {
-    const tree = shallow(<BpkStarRating rating={7} />);
+    const tree = shallow(
+      <BpkStarRating
+        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
+        rating={7}
+      />);
     expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should render correctly with 0 stars', () => {
-    const tree = shallow(<BpkStarRating rating={0} />);
+    const tree = shallow(
+      <BpkStarRating
+        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
+        rating={0}
+      />,
+    );
     expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should render correctly with 3 stars', () => {
-    const tree = shallow(<BpkStarRating rating={3} />);
+    const tree = shallow(
+      <BpkStarRating
+        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
+        rating={3}
+      />,
+    );
     expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should render correctly with 3.5 stars', () => {
-    const tree = shallow(<BpkStarRating rating={3.5} />);
+    const tree = shallow(
+      <BpkStarRating
+        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
+        rating={3.5}
+      />,
+    );
     expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should render correctly with 5 stars', () => {
-    const tree = shallow(<BpkStarRating rating={5} />);
+    const tree = shallow(
+      <BpkStarRating
+        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
+        rating={5}
+      />,
+    );
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should render correctly with 0 Large stars ', () => {
-    const tree = shallow(<BpkStarRating rating={0} large />);
+  it('should render correctly with "large" attribute', () => {
+    const tree = shallow(
+      <BpkStarRating
+        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
+        rating={5}
+        large
+      />,
+    );
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should render correctly with 5 Large stars ', () => {
-    const tree = shallow(<BpkStarRating rating={5} large />);
+  it('should render correctly with "maxRating" attribute', () => {
+    const tree = shallow(
+      <BpkStarRating
+        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
+        rating={5}
+        maxRating={8}
+      />,
+    );
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should render as 3 stars with 3.3 Large stars ', () => {
-    const tree = shallow(<BpkStarRating rating={3.3} large />);
-    expect(toJson(tree)).toMatchSnapshot();
-  });
+  describe('getTypeByRating()', () => {
+    it('should be a function', () => {
+      expect(typeof getTypeByRating === 'function').toBe(true);
+    });
 
-  it('should render correctly with 3.5 Large stars ', () => {
-    const tree = shallow(<BpkStarRating rating={3.5} large />);
-    expect(toJson(tree)).toMatchSnapshot();
-  });
+    it('should return EMPTY if the star number is more than 0.5 higher than the rating', () => {
+      expect(getTypeByRating(2, 0)).toBe(STAR_TYPES.EMPTY);
+      expect(getTypeByRating(2, 0.9)).toBe(STAR_TYPES.EMPTY);
+      expect(getTypeByRating(2, 1.4)).toBe(STAR_TYPES.EMPTY);
+    });
 
-  it('should render as 3.5 with 3.7 Large stars ', () => {
-    const tree = shallow(<BpkStarRating rating={3.7} large />);
-    expect(toJson(tree)).toMatchSnapshot();
-  });
+    it('should return FULL if the rating is higher than or equal to the star number', () => {
+      expect(getTypeByRating(0, 1)).toBe(STAR_TYPES.FULL);
+      expect(getTypeByRating(1, 1)).toBe(STAR_TYPES.FULL);
+    });
 
-  it('should render 4 stars based on hoverRating as it has priority over rating', () => {
-    const tree = shallow(<BpkStarRating rating={3} hoverRating={4} />);
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render 3 interactive stars when we have hoverRating equal to 3 and "interactive"', () => {
-    const tree = shallow(<BpkStarRating rating={0} hoverRating={3} interactive />);
-    expect(toJson(tree)).toMatchSnapshot();
+    it('should return HALF if the rating is up to 0.5 under the star number', () => {
+      expect(getTypeByRating(1, 0)).not.toBe(STAR_TYPES.HALF);
+      expect(getTypeByRating(1, 0.4)).not.toBe(STAR_TYPES.HALF);
+      expect(getTypeByRating(1, 0.5)).toBe(STAR_TYPES.HALF);
+      expect(getTypeByRating(1, 0.9)).toBe(STAR_TYPES.HALF);
+      expect(getTypeByRating(1, 1)).not.toBe(STAR_TYPES.HALF);
+    });
   });
 });

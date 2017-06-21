@@ -1,0 +1,45 @@
+@import "~bpk-mixins";
+
+@mixin large-star {
+  width: $bpk-icon-size-lg;
+  height: $bpk-icon-size-lg;
+  vertical-align: bottom;
+}
+
+.bpk-star {
+  display: inline-block;
+  fill: $bpk-color-gray-100;
+  vertical-align: text-bottom;
+
+  &--large {
+    @include large-star;
+  }
+
+  &--half {
+    position: absolute;
+  }
+
+  &--half-flipped {
+    position: absolute;
+    transform: scaleX(-1);
+  }
+
+  &--filled {
+    fill: $bpk-color-yellow-500;
+  }
+
+  &__container {
+    display: inline-block;
+    width: $bpk-icon-size-sm;
+    height: $bpk-icon-size-sm;
+
+    &--half-star {
+      position: relative;
+      vertical-align: text-bottom;
+    }
+
+    &--large {
+      @include large-star;
+    }
+  }
+}
