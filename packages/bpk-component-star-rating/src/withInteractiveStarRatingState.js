@@ -22,22 +22,20 @@ const withInteractiveStarRatingState = (InteractiveStarRating) => {
       }
 
       const callback = () => {
-        this.props.onRatingSelect(rating, event);
+        if (this.props.onRatingSelect) {
+          this.props.onRatingSelect(rating, event);
+        }
       };
 
-      this.setState({ rating }, callback);
+      this.setState(() => ({ rating }), callback);
     }
 
     onMouseLeave() {
-      this.setState({
-        hoverRating: 0,
-      });
+      this.setState(() => ({ hoverRating: 0 }));
     }
 
     onRatingHover(hoverRating) {
-      this.setState({
-        hoverRating,
-      });
+      this.setState(() => ({ hoverRating }));
     }
 
     render() {
