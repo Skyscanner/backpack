@@ -4,8 +4,15 @@
 
 - _Nothing yet..._
 
+## 2017-06-21 - New star rating component
+
+**Added:**
+- bpk-component-star-rating: 0.0.3
+  - Introducing the new star rating component:
+    Docs: http://backpack.prod.aws.skyscnr.com/components/molecules/star-rating
+
 **Fixed:**
-- bpk-component-input:
+- bpk-component-input: 3.2.0 => 3.2.1
   - Fix CSS modules for withOpenEvents classes.
 
 ## 2017-06-20 - CSS modules support across all packages
