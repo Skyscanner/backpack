@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { cssModules } from 'bpk-react-utils';
 
-import './bpk-input.scss';
+import STYLES from './bpk-input.scss';
+
+const getClassName = cssModules(STYLES);
 
 const KEYCODES = {
   ENTER: 13,
@@ -79,7 +82,7 @@ const withOpenEvents = (InputComponent) => {
 
       delete rest.isOpen;
 
-      const classNames = ['bpk-input--with-open-events'];
+      const classNames = [getClassName('bpk-input--with-open-events')];
       if (className) { classNames.push(className); }
 
       const eventHandlers = {
