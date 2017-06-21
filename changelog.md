@@ -14,6 +14,8 @@
 **Fixed:**
 - bpk-component-input: 3.2.0 => 3.2.1
   - Fix CSS modules for withOpenEvents classes.
+- bpk-component-banner-alert:
+  - The message prop type is now `PropTypes.node` instead of `PropTypes.string` which enables rending more customized messages.
 
 ## 2017-06-20 - CSS modules support across all packages
 

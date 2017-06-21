@@ -34,4 +34,13 @@ describe('BpkBannerAlert', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with a element based message', () => {
+    const tree = renderer.create(
+      <BpkBannerAlert type={ALERT_TYPES.SUCCESS} message={<p>All <span>good</span></p>}>
+        {message}
+      </BpkBannerAlert>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -114,11 +114,8 @@ BpkBannerAlert.propTypes = {
     ALERT_TYPES.WARN,
     ALERT_TYPES.ERROR,
   ]).isRequired,
-  message: PropTypes.string.isRequired,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
+  message: PropTypes.node.isRequired,
+  children: PropTypes.node,
   toggleButtonLabel: PropTypes.string,
 };
 

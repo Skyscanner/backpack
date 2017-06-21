@@ -31,6 +31,6 @@ export default () => (
 | Property          | PropType             | Required | Default Value |
 | ----------------- | -------------------- | -------- | ------------- |
 | type              | ALERT_TYPES (one of) | true     | -             |
-| message           | string               | true     | -             |
-| children          | -                    | false    | null          |
+| message           | node                 | true     | -             |
+| children          | node                 | false    | null          |
 | toggleButtonLabel | string               | false    | null          |

@@ -18,6 +18,9 @@ storiesOf('bpk-component-banner-alert', module)
   .add('Success (long message)', () => (
     <BpkBannerAlert message={longMessage} type={ALERT_TYPES.SUCCESS} />
   ))
+  .add('Success with React rendered message', () => (
+    <BpkBannerAlert message={<span style={{ fontWeight: 700 }}>{message}</span>} type={ALERT_TYPES.SUCCESS} />
+  ))
   .add('Success with children', () => (
     <BpkBannerAlert message={message} type={ALERT_TYPES.SUCCESS} toggleButtonLabel="View more">
       {longMessage}
