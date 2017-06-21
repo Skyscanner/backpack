@@ -12,6 +12,7 @@ nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fr
 porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.`;
+const richMessage = <span style={{ fontWeight: 700 }}>Successful alert with custom rendered message</span>;
 
 const components = [
   {
@@ -34,6 +35,11 @@ const components = [
       >
         {longMessage}
       </BpkBannerAlert>,
+      <br />,
+      <BpkBannerAlert
+        message={richMessage}
+        type={ALERT_TYPES.SUCCESS}
+      />,
       <br />,
       <BpkBannerAlert message="Warn alert." type={ALERT_TYPES.WARN} />,
       <br />,
