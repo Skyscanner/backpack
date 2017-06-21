@@ -1,5 +1,5 @@
 exports[`withInteractiveStarRatingState should render correctly 1`] = `
-<BpkStarRating
+<BpkInteractiveStarRating
   className={null}
   hoverRating={0}
   id="my-star-rating"
@@ -12,7 +12,7 @@ exports[`withInteractiveStarRatingState should render correctly 1`] = `
 `;
 
 exports[`withInteractiveStarRatingState should render correctly with "large" attribute 1`] = `
-<BpkStarRating
+<BpkInteractiveStarRating
   className={null}
   hoverRating={0}
   id="my-star-rating"
