@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-mobile-scroll-container",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Backpack mobile scroll container component.",
   "main": "index.js",
   "repository": {
