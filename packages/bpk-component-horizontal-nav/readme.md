@@ -31,13 +31,13 @@ export default () => (
 | ----------- | -------- | -------- | ------------- |
 | children    | node     | true     | -             |
 | className   | string   | false    | null          |
-| spaceAround | bool     | false    | false         |
 
 ### BpkHorizontalNavItem
 
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | node     | true     | -             |
-| className | string   | false    | null          |
-| selected  | bool     | false    | false         |
-| href      | string   | false    | null          |
+| Property    | PropType | Required | Default Value |
+| ----------- | -------- | -------- | ------------- |
+| children    | node     | true     | -             |
+| className   | string   | false    | null          |
+| spaceAround | bool     | false    | false         |
+| selected    | bool     | false    | false         |
+| href        | string   | false    | null          |

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkParagraph from 'bpk-component-paragraph';
 import readme from 'bpk-component-horizontal-nav/readme.md';
@@ -23,12 +24,15 @@ class HorizontalNavContainer extends Component {
   }
 
   render() {
+    const { spaceAround, ...rest } = this.props;
+
     return (
-      <BpkHorizontalNav {...this.props}>
+      <BpkHorizontalNav {...rest}>
         <BpkHorizontalNavItem
           name="flights"
           selected={this.state.selected === 'flights'}
           onClick={this.onClick}
+          spaceAround={spaceAround}
         >
           Flights
         </BpkHorizontalNavItem>
@@ -36,6 +40,7 @@ class HorizontalNavContainer extends Component {
           name="hotels"
           selected={this.state.selected === 'hotels'}
           onClick={this.onClick}
+          spaceAround={spaceAround}
         >
           Hotels
         </BpkHorizontalNavItem>
@@ -43,6 +48,7 @@ class HorizontalNavContainer extends Component {
           name="car-hire"
           selected={this.state.selected === 'car-hire'}
           onClick={this.onClick}
+          spaceAround={spaceAround}
         >
           Car hire
         </BpkHorizontalNavItem>
@@ -50,6 +56,14 @@ class HorizontalNavContainer extends Component {
     );
   }
 }
+
+HorizontalNavContainer.propTypes = {
+  spaceAround: PropTypes.bool,
+};
+
+HorizontalNavContainer.defaultProps = {
+  spaceAround: false,
+};
 
 const components = [
   {

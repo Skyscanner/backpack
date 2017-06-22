@@ -4,6 +4,11 @@
   &__item {
     display: inline-block;
     display: flex;
+
+    &--space-around {
+      margin-right: auto;
+      margin-left: auto;
+    }
   }
 
   &__link {

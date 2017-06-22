@@ -114,6 +114,7 @@ storiesOf('bpk-component-barchart', module)
       yScaleDataKey="price"
       style={{
         maxWidth: '580px',
+        minWidth: '400px',
       }}
       xAxisLabel="Month"
       yAxisLabel="Average Price (£)"
@@ -128,6 +129,7 @@ storiesOf('bpk-component-barchart', module)
       yScaleDataKey="price"
       style={{
         maxWidth: '580px',
+        minWidth: '400px',
       }}
       xAxisLabel="Month"
       yAxisLabel="Average Price (£)"

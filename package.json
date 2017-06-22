@@ -18,7 +18,7 @@
     "lint:js": "eslint . .storybook --ext .js,.jsx",
     "lint:js:fix": "eslint . .storybook --ext .js,.jsx --fix",
     "lint": "npm run lint:js && npm run lint:scss",
-    "jest:update": "jest ---updateSnapshot",
+    "jest:update": "jest --updateSnapshot",
     "jest:watch": "jest --watch",
     "jest": "jest --coverage",
     "build:tokens": "lerna run tokens --scope bpk-tokens",

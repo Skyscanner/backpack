@@ -46,6 +46,7 @@ configure(() => {
   require('./../packages/bpk-component-link/stories');
   require('./../packages/bpk-component-list/stories');
   require('./../packages/bpk-component-loading-button/stories');
+  require('./../packages/bpk-component-mobile-scroll-container/stories');
   require('./../packages/bpk-component-modal/stories');
   require('./../packages/bpk-component-nudger/stories');
   require('./../packages/bpk-component-panel/stories');

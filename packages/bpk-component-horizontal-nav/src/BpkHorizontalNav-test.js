@@ -21,15 +21,6 @@ describe('BpkHorizontalNav', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with "spaceAround" prop', () => {
-    const tree = renderer.create(
-      <BpkHorizontalNav spaceAround>
-        My nav content.
-      </BpkHorizontalNav>,
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
   it('should render correctly with arbitrary props', () => {
     const tree = renderer.create(
       <BpkHorizontalNav data-arbitrary-1="arbirary-value-1" data-arbitrary-2="arbirary-value-2">
