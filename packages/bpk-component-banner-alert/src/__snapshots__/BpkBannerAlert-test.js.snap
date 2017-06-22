@@ -139,9 +139,9 @@ exports[`BpkBannerAlert should render correctly with a element based message 1`]
       className="bpk-banner-alert__toggle">
       <button
         aria-expanded={false}
-        aria-label={null}
+        aria-label="View more"
         className="bpk-banner-alert__toggle-button"
-        title={null}>
+        title="View more">
         <svg
           className="bpk-banner-alert__expand-icon bpk-icon--align-to-button"
           height="18"
