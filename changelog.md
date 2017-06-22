@@ -91,7 +91,7 @@
 
 ## 2017-06-14 - Tooltips no longer appear on touch devices
 
-**Changed:**
+**Breaking:**
 - bpk-component-tooltip: 0.0.34 => 1.0.0
   - Added `hideOnTouchDevices` prop (defaults to true) to not render the tooltip on touch-capable devices.
     Prevents the need to double-tap links that have tooltips attached to them.
@@ -146,7 +146,7 @@
 
 ## 2017-05-23 - Better accordion API, abstraction for input events triggering a modal/popover
 
-**Changed:**
+**Breaking:**
 - bpk-component-accordion: 0.0.17 => 1.0.0
   - New API:
     - `BpkAccordionContainer` is now deprecated
@@ -176,7 +176,7 @@
 
 ## 2017-05-16 - Release new major version of bpk-mixins
 
-**Changed:**
+**Breaking:**
 - bpk-mixins: 14.1.3 => 15.0.0
   - Upgraded `bpk-tokens` to `^23.0.0` which comes with the following breaking change:
     - Renamed `AUTOSUGGEST_LIST_ITEM_FOCUSED_BACKGROUND_COLOR` -> `AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR`
@@ -189,7 +189,7 @@
 
 ## 2017-05-16 - Upgraded autosuggest to latest upstream major version
 
-**Changed:**
+**Breaking:**
 - bpk-component-autosuggest: 2.1.3 => 3.0.0
   - Updated `react-autosuggest` dependency: `8.0.0` => `9.0.1`
   - Upgrade instructions:
@@ -216,7 +216,7 @@
 
 ## 2017-05-09 - "Required*" labels for form elements & fixed `prop-types` warnings
 
-**Changed:**
+**Breaking:**
 - bpk-component-label: 2.0.45 => 3.0.0
   - The `label` prop has been deprecated in favor of `children`
   - i.e. `<BpkLabel>My label</BpkLabel>` instead of `<BpkLabel label="My label" />`
@@ -232,7 +232,7 @@
 
 ## 2017-05-08 - Responsive headings and a new textarea component
 
-**Changed:**
+**Breaking:**
 - bpk-component-heading: 1.2.17 => 2.0.0
 - bpk-mixins: 13.1.1 => 14.0.0
 - bpk-tokens: 21.1.0 => 22.0.0
@@ -266,7 +266,7 @@
 
 ## 2017-05-03 - Spinners come with less bloat
 
-**Changed:**
+**Breaking:**
 - bpk-component-spinner: 1.0.57 => 2.0.0
   - Removed `bpk-tokens` dependency which dramatically reduces component bloat
   - Removed explicit `fill` attribute, this is now applied via CSS class
@@ -295,7 +295,7 @@
 
 ## 2017-05-01 - More flexible calendar with higher-order components
 
-**Changed:**
+**Breaking:**
 - bpk-component-datepicker: 5.0.37 => 6.0.0
 - bpk-component-calendar: 2.0.26 => 3.0.0
   - `onMonthChange` callback added
@@ -316,7 +316,7 @@
 
 ## 2017-05-01 - New form validation & fieldset components
 
-**Changed:**
+**Breaking:**
 - bpk-component-checkbox: 0.1.8 => 1.0.0
 - bpk-component-radio: 0.0.62 => 0.0.63
   - `label` prop is now required
@@ -378,7 +378,7 @@
 
 ## 2017-04-18 - New border mixins
 
-**Changed:**
+**Breaking:**
 - bpk-component-banner-alert: 0.0.51 => 1.0.0
 - bpk-mixins: 11.1.3 => 12.0.0
 - bpk-tokens: 19.0.2 => 20.0.0
@@ -464,7 +464,7 @@
 
 ## 2017-04-03 - Replacing bpk-component-cta-button with bpk-component-loading-button
 
-**Changed:**
+**Breaking:**
 - bpk-component-cta-button:
   - **This component has been deprecated**
   - Consumers should now use `bpk-component-loading-button` instead
@@ -475,7 +475,7 @@
 
 ## 2017-03-31 - Popovers can now attach to native DOM elements
 
-**Changed:**
+**Breaking:**
 - bpk-component-modal: 1.0.23 => 1.0.24
   - Added the ability to pass a custom `className`
 
@@ -538,7 +538,7 @@
 
 ## 2017-03-22 - More flexible docking and changed invalid state for inputs/selects
 
-**Changed:**
+**Breaking:**
 - bpk-component-input: 2.0.17 => 3.0.0
 - bpk-component-select: 1.0.31 => 2.0.0
 - bpk-mixins: 10.2.1 => 11.0.0
@@ -633,7 +633,7 @@
 
 ## 2017-03-03 - Fixed padding issues with grid components
 
-**Changed:**
+**Breaking:**
 - bpk-component-grid: 0.1.6 => 1.0.0
   - Removed `padded` prop from `BpkGridContainer` in favour of adding it to `BpkGridRow` components
     i.e. instead of the following:
@@ -708,7 +708,7 @@
 
 ## 2017-02-27 - Deprecated logo components
 
-**Changed:**
+**Breaking:**
 - bpk-component-logo:
   - **This component has been deprecated**
   - Consumers should now use our internal `bpk-logos` component instead
@@ -771,7 +771,7 @@
 
 ## 2017-02-17 Improved autosuggest input options & `:visited` link styles
 
-**Changed:**
+**Breaking:**
 - bpk-component-autosuggest: 1.1.11 => 2.0.0
   - Upgraded `react-autosuggest` to `v8.0.0` & made use of `renderInputComponent` to truly compose `bpk-component-input`
     rather than just style the input that `react-autosuggest` renders
@@ -788,7 +788,7 @@
 
 ## 2017-02-16 - Added month transitions to calendar and datepicker
 
-**Changed:**
+**Breaking:**
 - bpk-component-datepicker:
 - bpk-component-calendar:
   - Separates blocked/focused/selected/outside/today logic from `modifiers` logic. Modifiers now create classes like
@@ -811,7 +811,7 @@
 
 ## 2017-02-15 - Datepicker / Popover a11y improvements
 
-**Changed:**
+**Breaking:**
 - bpk-component-datepicker: 3.0.0 => 4.0.0
   - Renamed prop `popoverLabel` to `title`
 
@@ -847,7 +847,7 @@
 
 ## 2017-02-03 - New sort icon, datepicker now renders in a modal on mobile
 
-**Changed:**
+**Breaking:**
 - bpk-component-datepicker: 2.0.0 => 3.0.0
   - Datepicker renders as a modal on mobile
 
@@ -876,7 +876,7 @@
 
 ## 2017-02-02 - New Pin icon and calendar/datepicker fixes
 
-**Changed:**
+**Breaking:**
 - bpk-component-calendar: 0.0.7 => 1.0.0
 - bpk-component-datepicker: 0.0.3 => 1.0.0
   - Removed "selected date" state management from components, which is not in the consumer's responsibility
@@ -903,7 +903,7 @@
 
 ## 2017-01-26 - Input prop types are less strict & new portal implementation
 
-**Changed:**
+**Breaking:**
 - bpk-component-input: 1.0.14 => 2.0.0
   - Props `placeholder` and `onChange` are no longer required and are not explicitly listed in propTypes anymore
 
@@ -925,7 +925,7 @@
 
 ## 2017-01-23 - Visual improvements to some icons, new 'headset' icon, fixed icon scaling issue when consumed via mixins, and fixed spinner scaling issue when consumed via both mixins and react component.
 
-**Changed:**
+**Breaking:**
 - bpk-component-icon: 2.0.0 => 3.0.1
 - bpk-mixins: 7.0.0 => 8.0.1
 - bpk-svgs: 3.0.0 => 4.0.1
@@ -954,7 +954,7 @@
 
 ## 2017-01-13 - Deprecated "stubby arrow" icon and fixed "onClose firing twice bug" in the modal
 
-**Changed:**
+**Breaking:**
 - bpk-component-icon: 1.3.2 => 2.0.0
 - bpk-mixins: 6.8.0 => 7.0.0
 - bpk-svgs: 2.2.1 => 3.0.0
@@ -1020,7 +1020,7 @@
 
 ## 2016-12-21 - Updated yellow colors
 
-**Changed:**
+**Breaking:**
 - bpk-tokens: 17.0.0 => 17.0.1
 - bpk-mixins: 6.7.0 => 6.7.1
   - updated tokens for yellow colors to make it a bit easier to read when used for text e.g. colour coded prices on month view.
@@ -1038,7 +1038,7 @@
 
 ## 2016-12-12 - Added power icon and tidied up segoe flag from base stylesheet
 
-**Changed:**
+**Breaking:**
 - bpk-stylesheets: 3.0.2 => 3.1.0
 - bpk-tokens: 16.0.0 => 16.1.0
   - Removed all traces of segoe, including `FONT_FAMILY_SEGOE` and `.font-family-segoe`
@@ -1052,7 +1052,7 @@
 
 ## 2016-12-07 - Updated hover and active styles for primary buttons
 
-**Changed:**
+**Breaking:**
 - bpk-component-modal: 0.2.0 => 0.3.0
   - Removed aria-describedby attribute from modal, so screenreader does not read whole dialog contents
 
@@ -1064,7 +1064,7 @@
 
 ## 2016-11-24 - Icon-only buttons, modal change, code bugfix
 
-**Changed:**
+**Breaking:**
 - bpk-component-modal: 0.1.1 => 0.2.0
   - scrim color changed to make it darker (gray 300, 70% opacity).
 
@@ -1083,7 +1083,7 @@
 
 ## 2016-11-21 - Removed Segoe UI from base font stack
 
-**Changed:**
+**Breaking:**
 - bpk-tokens: 14.4.1 => 15.0.0
   - Removed `Segoe UI` from the base font stack
   - Added alternative font stack including `Segoe UI`
@@ -1132,7 +1132,7 @@
 
 ## 2016-11-09 - Docked inputs & selects
 
-**Changed:**
+**Breaking:**
 - bpk-component-input: 0.0.20 => 1.0.0
 - bpk-component-label: 1.0.2 => 2.0.0
 - bpk-component-select: 0.0.20 => 1.0.0
@@ -1166,7 +1166,7 @@
 
 ## 2016-11-04 - Autosuggest improvements
 
-**Changed:**
+**Breaking:**
 - bpk-component-autosuggest: 0.0.17 => 1.0.0
   - Updated to `^7.0.1` of `react-autosuggest`
   - Removed padding from suggestion containers with the idea
@@ -1188,7 +1188,7 @@
 
 ## 2016-11-01 - Form labels are darker by default
 
-**Changed:**
+**Breaking:**
 - bpk-component-label: 0.0.17 => 1.0.0
 - bpk-mixins: 5.6.1 => 6.0.0
 - bpk-tokens: 12.5.0 => 13.0.0
@@ -1223,7 +1223,7 @@
 
 ## 2016-10-17 (2) - Disable `:hover` effects on touch devices
 
-**Changed:**
+**Breaking:**
 - bpk-stylesheets: 1.0.14 => 2.0.0
   - Added small javascript utility to add feature detection classes to html element
   - Consumers now have to include `/node_modules/bpk-stylesheets/base.js` as well as `/node_modules/bpk-stylesheets/base.css`
@@ -1351,7 +1351,7 @@ on it.
 
 ## 2016-09-20 - SVG icon/logo/spinner bundling fixes
 
-**Changed:**
+**Breaking:**
 - bpk-svgs: 1.0.4 => 2.0.0
   - Added `width` & `height` to icon svgs
   - Generating react components for each svg
@@ -1380,7 +1380,7 @@ on it.
 
 ## 2016-09-14 - Autosuggest tweaks
 
-**Changed:**
+**Breaking:**
 - bpk-component-autosuggest@0.0.3
   - Interface now conforms to `react-autosuggest` 100%
   - Fixed bug with arrow displaying even when the suggestion were hidden
@@ -1392,7 +1392,7 @@ on it.
 - bpk-component-autosuggest@0.0.2
   - Initial version to be tested by B2B widgets squad
 
-**Changed:**
+**Breaking:**
 - bpk-component-content-container@1.0.0
   - no longer applying styling to bare html in content container by default, instead consumers can opt in using
   `bareHtml` prop
