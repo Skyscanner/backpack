@@ -3,21 +3,21 @@
 ## UNRELEASED
 
 **Breaking:**
-- bpk-component-horizontal-nav:
+- bpk-component-horizontal-nav: 0.1.0 => 1.0.0
   - `spaceAround` is now a prop of `BpkHorizontalNavItem` instead of `BpkHorizontalNav`
 
 **Added:**
-- bpk-component-mobile-scroll-container:
+- bpk-component-mobile-scroll-container: 0.0.0 => 0.0.1
   - A general purpose component to allow children to scroll horizontally if they overflow their containers
 
-- bpk-component-horizontal-nav:
+- bpk-component-horizontal-nav: 0.1.0 => 1.0.0
   - Horizontal navs now scroll horizontally using the new component above
 
 **Fixed:**
-- bpk-component-table:
+- bpk-component-table: 0.1.0 => 0.1.1
   - `BpkTable`'s now accept arbitrary props and classNames
 
-- bpk-component-banner-alert:
+- bpk-component-banner-alert: 1.1.0 => 1.1.1
   - The message prop type is now `PropTypes.node` instead of `PropTypes.string` which enables rending more customized messages.
 
 ## 2017-06-21 - New star rating component
