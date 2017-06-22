@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-06-22 - Mobile side scroll for horizontal nav's
+
 **Breaking:**
 - bpk-component-horizontal-nav: 0.1.0 => 1.0.0
   - `spaceAround` is now a prop of `BpkHorizontalNavItem` instead of `BpkHorizontalNav`
