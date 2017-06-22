@@ -37,7 +37,7 @@ describe('BpkBannerAlert', () => {
 
   it('should render correctly with a element based message', () => {
     const tree = renderer.create(
-      <BpkBannerAlert type={ALERT_TYPES.SUCCESS} message={<p>All <span>good</span></p>}>
+      <BpkBannerAlert type={ALERT_TYPES.SUCCESS} message={<p>All <span>good</span></p>} toggleButtonLabel={'View more'}>
         {message}
       </BpkBannerAlert>,
     ).toJSON();
