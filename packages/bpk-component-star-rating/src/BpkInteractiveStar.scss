@@ -1,0 +1,40 @@
+@import "~bpk-mixins";
+
+@keyframes star_dust {
+  0% { transform: scale(1); }
+  50% { transform: scale(.5); }
+  100% { transform: scale(1); }
+}
+
+.bpk-interactive-star {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+
+  @include bpk-hover {
+    .bpk-interactive-star__icon {
+      transform: rotate(10deg) scale(1.2);
+
+      &--selected {
+        transform: rotate(0deg) scale(1);
+      }
+    }
+  }
+
+  &--selected {
+    cursor: default;
+  }
+
+  &__icon {
+    transform: rotate(0deg) scale(1);
+    transition: transform $bpk-duration-sm ease-in-out;
+
+    &--selected {
+      animation-duration: 300ms;
+      animation-name: star_dust;
+    }
+  }
+}

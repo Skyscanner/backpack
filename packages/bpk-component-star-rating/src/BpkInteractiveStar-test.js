@@ -11,6 +11,7 @@ describe('BpkInteractiveStar', () => {
         label="One star"
         name="stars"
         value={1}
+        onClick={() => null}
       />).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -22,6 +23,7 @@ describe('BpkInteractiveStar', () => {
         label="One star"
         name="stars"
         value={1}
+        onClick={() => null}
       />).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -33,19 +35,8 @@ describe('BpkInteractiveStar', () => {
         label="One star"
         name="stars"
         value={1}
+        onClick={() => null}
         selected
-      />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render correctly with "onChange" prop', () => {
-    const tree = renderer.create(
-      <BpkInteractiveStar
-        type={STAR_TYPES.FULL}
-        label="One star"
-        name="stars"
-        value={1}
-        onChange={() => null}
       />).toJSON();
     expect(tree).toMatchSnapshot();
   });
