@@ -8,6 +8,7 @@ import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 
 import BpkBarchartDefs from './BpkBarchartDefs';
 import BpkBarchartBars from './BpkBarchartBars';
+import BpkChartDataTable from './BpkChartDataTable';
 import BpkChartMargin from './BpkChartMargin';
 import BpkChartAxis from './BpkChartAxis';
 import BpkChartGridLines from './BpkChartGridLines';
@@ -92,6 +93,7 @@ class BpkBarchart extends Component {
       onBarClick,
       getBarLabel,
       BarComponent,
+      disableDataTable,
       ...rest
     } = this.props;
 
@@ -173,6 +175,13 @@ class BpkBarchart extends Component {
             />
           </BpkChartMargin>
         </svg>
+        {!disableDataTable && <BpkChartDataTable
+          data={data}
+          xScaleDataKey={xScaleDataKey}
+          yScaleDataKey={yScaleDataKey}
+          xAxisLabel={xAxisLabel}
+          yAxisLabel={yAxisLabel}
+        />}
       </BpkMobileScrollContainer>
     );
   }
@@ -200,6 +209,7 @@ BpkBarchart.propTypes = {
   onBarClick: PropTypes.func,
   getBarLabel: PropTypes.func,
   BarComponent: PropTypes.func,
+  disableDataTable: PropTypes.bool,
 };
 
 BpkBarchart.defaultProps = {
@@ -216,6 +226,7 @@ BpkBarchart.defaultProps = {
   onBarClick: null,
   getBarLabel: (point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
   BarComponent: BpkBarchartBar,
+  disableDataTable: false,
 };
 
 export default BpkBarchart;
