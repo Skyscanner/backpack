@@ -83,11 +83,12 @@ export default () => (
 
 ### BpkInteractiveStar
 
-| Property    | PropType          | Required | Default Value |
-| ----------- | ----------------- | -------- | ------------- |
-| label       | bool              | true     | -             |
-| name        | bool              | true     | -             |
-| type        | oneOf(STAR_TYPES) | true     | -             |
-| value       | number            | true     | -             |
-| onChange    | func              | false    | () => null    |
-| selected    | bool              | false    | false         |
+| Property     | PropType          | Required | Default Value |
+| ------------ | ----------------- | -------- | ------------- |
+| label        | bool              | true     | -             |
+| name         | bool              | true     | -             |
+| type         | oneOf(STAR_TYPES) | true     | -             |
+| value        | number            | true     | -             |
+| onClick      | func              | true     | -             |
+| onMouseEnter | func              | true     | -             |
+| selected     | bool              | false    | false         |

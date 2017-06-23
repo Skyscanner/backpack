@@ -108,7 +108,7 @@ describe('BpkInteractiveStarRating', () => {
     expect(onRatingHover).toHaveBeenCalled();
   });
 
-  it('should call onRatingSelect on change', () => {
+  it('should call onRatingSelect on click', () => {
     const onRatingSelect = jest.fn();
     const tree = shallow(
       <BpkInteractiveStarRating
@@ -119,7 +119,7 @@ describe('BpkInteractiveStarRating', () => {
     );
 
     expect(onRatingSelect).not.toHaveBeenCalled();
-    tree.childAt(0).prop('onChange')(1, {});
+    tree.childAt(0).prop('onClick')(1, {});
     expect(onRatingSelect).toHaveBeenCalled();
   });
 

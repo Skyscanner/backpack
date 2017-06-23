@@ -7,38 +7,34 @@
 }
 
 .bpk-interactive-star {
-  transform: rotate(0deg) scale(1);
-  transition: transform $bpk-duration-sm ease-in-out;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  appearance: none;
   cursor: pointer;
 
   @include bpk-hover {
-    transform: rotate(10deg) scale(1.2);
-  }
+    .bpk-interactive-star__icon {
+      transform: rotate(10deg) scale(1.2);
 
-  &:active {
-    transform: rotate(0deg) scale(1);
+      &--selected {
+        transform: rotate(0deg) scale(1);
+      }
+    }
   }
 
   &--selected {
-    animation-duration: 300ms;
-    animation-name: star_dust;
-
-    @include bpk-hover {
-      transform: rotate(0deg) scale(1);
-    }
-
-    &:active {
-      transform: rotate(0deg) scale(1);
-    }
+    cursor: default;
   }
 
-  &__radio {
-    @include bpk-visually-hidden;
+  &__icon {
+    transform: rotate(0deg) scale(1);
+    transition: transform $bpk-duration-sm ease-in-out;
 
-    &:focus:checked + * {
-      animation: none;
-      transform: rotate(10deg) scale(1.2);
-      fill: $bpk-color-yellow-700;
+    &--selected {
+      animation-duration: 300ms;
+      animation-name: star_dust;
     }
   }
 }
