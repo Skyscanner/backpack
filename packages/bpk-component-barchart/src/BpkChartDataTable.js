@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
+
+import dataProp from './customPropTypes';
+
 import STYLES from './bpk-chart-data-table.scss';
 
 const getClassName = cssModules(STYLES);
@@ -34,11 +37,15 @@ const BpkChartDataTable = (props) => {
 };
 
 BpkChartDataTable.propTypes = {
-  data: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+  data: dataProp, // This is actually required and will fail if not present
   xScaleDataKey: PropTypes.string.isRequired,
   yScaleDataKey: PropTypes.string.isRequired,
   xAxisLabel: PropTypes.string.isRequired,
   yAxisLabel: PropTypes.string.isRequired,
+};
+
+BpkChartDataTable.defaultProps = {
+  data: null,
 };
 
 export default BpkChartDataTable;
