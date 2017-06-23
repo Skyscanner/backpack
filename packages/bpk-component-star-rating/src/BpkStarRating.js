@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { cssModules } from 'bpk-react-utils';
 import BpkStar, { STAR_TYPES } from './BpkStar';
 
-import STYLES from './bpk-star-rating.scss';
+import STYLES from './BpkStarRating.scss';
 
 const getClassName = cssModules(STYLES);
 
