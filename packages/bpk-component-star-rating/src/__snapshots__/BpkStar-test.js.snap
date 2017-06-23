@@ -71,7 +71,7 @@ exports[`BpkStar should render correctly with a large half star 1`] = `
       d="M12 17.6V3c-.3 0-.6.2-.8.5L9 8c-.1.3-.4.4-.7.5l-4.5.7c-.7.1-1 1-.5 1.5l3.8 3.5c.2.2.3.5.3.8l-1.5 5c-.1.7.6 1.3 1.3.9l4.8-3.3z" />
   </svg>
   <svg
-    className="bpk-star bpk-star--half-flipped"
+    className="bpk-star bpk-star--half bpk-star--half-flipped"
     height="24"
     style={
       Object {
@@ -143,7 +143,7 @@ exports[`BpkStar should render correctly with half star 1`] = `
       d="M12 17.6V3c-.3 0-.6.2-.8.5L9 8c-.1.3-.4.4-.7.5l-4.5.7c-.7.1-1 1-.5 1.5l3.8 3.5c.2.2.3.5.3.8l-1.5 5c-.1.7.6 1.3 1.3.9l4.8-3.3z" />
   </svg>
   <svg
-    className="bpk-star bpk-star--half-flipped"
+    className="bpk-star bpk-star--half bpk-star--half-flipped"
     height="18"
     style={
       Object {

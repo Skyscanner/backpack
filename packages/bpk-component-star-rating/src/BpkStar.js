@@ -22,7 +22,7 @@ const BpkStar = (props) => {
   const iconClassNames = [getClassName('bpk-star')];
   const containerClassNames = ['bpk-star__container', 'bpk-star__container--half-star'].map(getClassName);
   const halfIconClassNamesLeft = ['bpk-star', 'bpk-star--half', 'bpk-star--filled'].map(getClassName);
-  const halfIconClassNamesRight = ['bpk-star', 'bpk-star--half-flipped'].map(getClassName);
+  const halfIconClassNamesRight = ['bpk-star', 'bpk-star--half', 'bpk-star--half-flipped'].map(getClassName);
 
   let Icon = SmallIcon;
   let HalfIcon = HalfSmallIcon;

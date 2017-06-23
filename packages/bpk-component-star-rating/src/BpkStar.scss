@@ -17,10 +17,10 @@
 
   &--half {
     position: absolute;
+    left: 0;
   }
 
   &--half-flipped {
-    position: absolute;
     transform: scaleX(-1);
   }
 
