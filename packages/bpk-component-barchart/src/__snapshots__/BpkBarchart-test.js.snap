@@ -3,6 +3,63 @@ exports[`BpkBarchart should render correctly 1`] = `
   className={null}
   innerContainerTagName="div"
   style={null}>
+  <BpkChartDataTable
+    data={
+      Array [
+        Object {
+          "month": "Jan",
+          "price": 305,
+        },
+        Object {
+          "month": "Feb",
+          "price": 348,
+        },
+        Object {
+          "month": "Mar",
+          "price": 418,
+        },
+        Object {
+          "month": "Apr",
+          "price": 448,
+        },
+        Object {
+          "month": "May",
+          "price": 344,
+        },
+        Object {
+          "month": "Jun",
+          "price": 322,
+        },
+        Object {
+          "month": "Jul",
+          "price": 340,
+        },
+        Object {
+          "month": "Aug",
+          "price": 327,
+        },
+        Object {
+          "month": "Sep",
+          "price": 444,
+        },
+        Object {
+          "month": "Oct",
+          "price": 422,
+        },
+        Object {
+          "month": "Nov",
+          "price": 344,
+        },
+        Object {
+          "month": "Dec",
+          "price": 301,
+        },
+      ]
+    }
+    xAxisLabel="Month"
+    xScaleDataKey="month"
+    yAxisLabel="Average price (£)"
+    yScaleDataKey="price" />
   <svg
     className="bpk-barchart"
     height={200}
@@ -128,63 +185,6 @@ exports[`BpkBarchart should render correctly 1`] = `
         yScaleDataKey="price" />
     </BpkChartMargin>
   </svg>
-  <BpkChartDataTable
-    data={
-      Array [
-        Object {
-          "month": "Jan",
-          "price": 305,
-        },
-        Object {
-          "month": "Feb",
-          "price": 348,
-        },
-        Object {
-          "month": "Mar",
-          "price": 418,
-        },
-        Object {
-          "month": "Apr",
-          "price": 448,
-        },
-        Object {
-          "month": "May",
-          "price": 344,
-        },
-        Object {
-          "month": "Jun",
-          "price": 322,
-        },
-        Object {
-          "month": "Jul",
-          "price": 340,
-        },
-        Object {
-          "month": "Aug",
-          "price": 327,
-        },
-        Object {
-          "month": "Sep",
-          "price": 444,
-        },
-        Object {
-          "month": "Oct",
-          "price": 422,
-        },
-        Object {
-          "month": "Nov",
-          "price": 344,
-        },
-        Object {
-          "month": "Dec",
-          "price": 301,
-        },
-      ]
-    }
-    xAxisLabel="Month"
-    xScaleDataKey="month"
-    yAxisLabel="Average price (£)"
-    yScaleDataKey="price" />
 </BpkMobileScrollContainer>
 `;
 
@@ -326,6 +326,63 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
   className={null}
   innerContainerTagName="div"
   style={null}>
+  <BpkChartDataTable
+    data={
+      Array [
+        Object {
+          "month": "Jan",
+          "price": 305,
+        },
+        Object {
+          "month": "Feb",
+          "price": 348,
+        },
+        Object {
+          "month": "Mar",
+          "price": 418,
+        },
+        Object {
+          "month": "Apr",
+          "price": 448,
+        },
+        Object {
+          "month": "May",
+          "price": 344,
+        },
+        Object {
+          "month": "Jun",
+          "price": 322,
+        },
+        Object {
+          "month": "Jul",
+          "price": 340,
+        },
+        Object {
+          "month": "Aug",
+          "price": 327,
+        },
+        Object {
+          "month": "Sep",
+          "price": 444,
+        },
+        Object {
+          "month": "Oct",
+          "price": 422,
+        },
+        Object {
+          "month": "Nov",
+          "price": 344,
+        },
+        Object {
+          "month": "Dec",
+          "price": 301,
+        },
+      ]
+    }
+    xAxisLabel="Month"
+    xScaleDataKey="month"
+    yAxisLabel="Average price (£)"
+    yScaleDataKey="price" />
   <svg
     className="bpk-barchart"
     height={200}
@@ -451,6 +508,14 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
         yScaleDataKey="price" />
     </BpkChartMargin>
   </svg>
+</BpkMobileScrollContainer>
+`;
+
+exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
+<BpkMobileScrollContainer
+  className={null}
+  innerContainerTagName="div"
+  style={null}>
   <BpkChartDataTable
     data={
       Array [
@@ -508,14 +573,6 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
     xScaleDataKey="month"
     yAxisLabel="Average price (£)"
     yScaleDataKey="price" />
-</BpkMobileScrollContainer>
-`;
-
-exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  style={null}>
   <svg
     className="bpk-barchart"
     height={200}
@@ -642,6 +699,14 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
         yScaleDataKey="price" />
     </BpkChartMargin>
   </svg>
+</BpkMobileScrollContainer>
+`;
+
+exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
+<BpkMobileScrollContainer
+  className={null}
+  innerContainerTagName="div"
+  style={null}>
   <BpkChartDataTable
     data={
       Array [
@@ -699,14 +764,6 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
     xScaleDataKey="month"
     yAxisLabel="Average price (£)"
     yScaleDataKey="price" />
-</BpkMobileScrollContainer>
-`;
-
-exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  style={null}>
   <svg
     className="bpk-barchart"
     height={200}
@@ -833,6 +890,14 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
         yScaleDataKey="price" />
     </BpkChartMargin>
   </svg>
+</BpkMobileScrollContainer>
+`;
+
+exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
+<BpkMobileScrollContainer
+  className={null}
+  innerContainerTagName="div"
+  style={null}>
   <BpkChartDataTable
     data={
       Array [
@@ -890,14 +955,6 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
     xScaleDataKey="month"
     yAxisLabel="Average price (£)"
     yScaleDataKey="price" />
-</BpkMobileScrollContainer>
-`;
-
-exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  style={null}>
   <svg
     className="bpk-barchart"
     height={200}
@@ -1023,6 +1080,14 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
         yScaleDataKey="price" />
     </BpkChartMargin>
   </svg>
+</BpkMobileScrollContainer>
+`;
+
+exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
+<BpkMobileScrollContainer
+  className={null}
+  innerContainerTagName="div"
+  style={null}>
   <BpkChartDataTable
     data={
       Array [
@@ -1080,14 +1145,6 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
     xScaleDataKey="month"
     yAxisLabel="Average price (£)"
     yScaleDataKey="price" />
-</BpkMobileScrollContainer>
-`;
-
-exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
-<BpkMobileScrollContainer
-  className={null}
-  innerContainerTagName="div"
-  style={null}>
   <svg
     className="bpk-barchart"
     height={200}
@@ -1229,62 +1286,5 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
         yScaleDataKey="price" />
     </BpkChartMargin>
   </svg>
-  <BpkChartDataTable
-    data={
-      Array [
-        Object {
-          "month": "Jan",
-          "price": 305,
-        },
-        Object {
-          "month": "Feb",
-          "price": 348,
-        },
-        Object {
-          "month": "Mar",
-          "price": 418,
-        },
-        Object {
-          "month": "Apr",
-          "price": 448,
-        },
-        Object {
-          "month": "May",
-          "price": 344,
-        },
-        Object {
-          "month": "Jun",
-          "price": 322,
-        },
-        Object {
-          "month": "Jul",
-          "price": 340,
-        },
-        Object {
-          "month": "Aug",
-          "price": 327,
-        },
-        Object {
-          "month": "Sep",
-          "price": 444,
-        },
-        Object {
-          "month": "Oct",
-          "price": 422,
-        },
-        Object {
-          "month": "Nov",
-          "price": 344,
-        },
-        Object {
-          "month": "Dec",
-          "price": 301,
-        },
-      ]
-    }
-    xAxisLabel="Month"
-    xScaleDataKey="month"
-    yAxisLabel="Average price (£)"
-    yScaleDataKey="price" />
 </BpkMobileScrollContainer>
 `;

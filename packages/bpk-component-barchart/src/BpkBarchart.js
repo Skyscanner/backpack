@@ -120,6 +120,13 @@ class BpkBarchart extends Component {
 
     return (
       <BpkMobileScrollContainer>
+        {!disableDataTable && <BpkChartDataTable
+          data={data}
+          xScaleDataKey={xScaleDataKey}
+          yScaleDataKey={yScaleDataKey}
+          xAxisLabel={xAxisLabel}
+          yAxisLabel={yAxisLabel}
+        />}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className={classNames.join(' ')}
@@ -176,13 +183,6 @@ class BpkBarchart extends Component {
             />
           </BpkChartMargin>
         </svg>
-        {!disableDataTable && <BpkChartDataTable
-          data={data}
-          xScaleDataKey={xScaleDataKey}
-          yScaleDataKey={yScaleDataKey}
-          xAxisLabel={xAxisLabel}
-          yAxisLabel={yAxisLabel}
-        />}
       </BpkMobileScrollContainer>
     );
   }
