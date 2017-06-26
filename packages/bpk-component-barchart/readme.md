@@ -1,6 +1,6 @@
 # bpk-component-barchart
 
-> Backpack barchart component.
+> Backpack bar chart component.
 
 ## Installation
 
@@ -131,4 +131,3 @@ By default the following function is used:
   return `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`;
 }
 ```
-

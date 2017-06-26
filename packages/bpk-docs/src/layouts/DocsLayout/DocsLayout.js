@@ -52,7 +52,7 @@ const links = [
       { id: 'HORIZONTAL_NAV', route: routes.HORIZONTAL_NAV, children: 'Horizontal navigation' },
       { id: 'FIELDSETS', route: routes.FIELDSETS, children: 'Fieldsets' },
       { id: 'STAR_RATINGS', route: routes.STAR_RATING, children: 'Star rating' },
-      { id: 'BAR_CHARTS', route: routes.BARCHARTS, children: 'Bar chart' },
+      { id: 'BAR_CHARTS', route: routes.BARCHARTS, children: 'Bar charts' },
       { id: 'PAGINATION', route: null, children: 'Pagination' },
       { id: 'SLIDERS', route: null, children: 'Slider' },
       { id: 'CAROUSELS', route: null, children: 'Carousel' },
