@@ -102,4 +102,20 @@ describe('BpkBarchart', () => {
     );
     expect(toJson(tree)).toMatchSnapshot();
   });
+
+  it('should render with "disableDataTable" prop', () => {
+    const tree = shallow(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        disableDataTable
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
 });

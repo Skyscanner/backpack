@@ -8,10 +8,12 @@ import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 
 import BpkBarchartDefs from './BpkBarchartDefs';
 import BpkBarchartBars from './BpkBarchartBars';
+import BpkChartDataTable from './BpkChartDataTable';
 import BpkChartMargin from './BpkChartMargin';
 import BpkChartAxis from './BpkChartAxis';
 import BpkChartGridLines from './BpkChartGridLines';
 import BpkBarchartBar from './BpkBarchartBar';
+import dataProp from './customPropTypes';
 import { identity, remToPx } from './utils';
 import { applyArrayRTLTransform, applyMarginRTLTransform } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
@@ -92,6 +94,7 @@ class BpkBarchart extends Component {
       onBarClick,
       getBarLabel,
       BarComponent,
+      disableDataTable,
       ...rest
     } = this.props;
 
@@ -117,6 +120,13 @@ class BpkBarchart extends Component {
 
     return (
       <BpkMobileScrollContainer>
+        {!disableDataTable && <BpkChartDataTable
+          data={data}
+          xScaleDataKey={xScaleDataKey}
+          yScaleDataKey={yScaleDataKey}
+          xAxisLabel={xAxisLabel}
+          yAxisLabel={yAxisLabel}
+        />}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className={classNames.join(' ')}
@@ -179,7 +189,7 @@ class BpkBarchart extends Component {
 }
 
 BpkBarchart.propTypes = {
-  data: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+  data: dataProp,
   xScaleDataKey: PropTypes.string.isRequired,
   yScaleDataKey: PropTypes.string.isRequired,
   xAxisLabel: PropTypes.string.isRequired,
@@ -200,9 +210,11 @@ BpkBarchart.propTypes = {
   onBarClick: PropTypes.func,
   getBarLabel: PropTypes.func,
   BarComponent: PropTypes.func,
+  disableDataTable: PropTypes.bool,
 };
 
 BpkBarchart.defaultProps = {
+  data: null,
   className: null,
   outlierPercentage: null,
   showGridlines: false,
@@ -216,6 +228,7 @@ BpkBarchart.defaultProps = {
   onBarClick: null,
   getBarLabel: (point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
   BarComponent: BpkBarchartBar,
+  disableDataTable: false,
 };
 
 export default BpkBarchart;
