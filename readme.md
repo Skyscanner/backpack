@@ -24,6 +24,7 @@ npm install [package-name] --save-dev
 | [`bpk-component-autosuggest`](/packages/bpk-component-autosuggest) | [![npm version](https://badge.fury.io/js/bpk-component-autosuggest.svg)](http://badge.fury.io/js/bpk-component-autosuggest) |
 | [`bpk-component-badge`](/packages/bpk-component-badge) | [![npm version](https://badge.fury.io/js/bpk-component-badge.svg)](http://badge.fury.io/js/bpk-component-badge) |
 | [`bpk-component-banner-alert`](/packages/bpk-component-banner-alert) | [![npm version](https://badge.fury.io/js/bpk-component-banner-alert.svg)](http://badge.fury.io/js/bpk-component-banner-alert) |
+| [`bpk-component-barchart`](/packages/bpk-component-barchart) | [![npm version](https://badge.fury.io/js/bpk-component-barchart.svg)](http://badge.fury.io/js/bpk-component-barchart) |
 | [`bpk-component-blockquote`](/packages/bpk-component-blockquote) | [![npm version](https://badge.fury.io/js/bpk-component-blockquote.svg)](http://badge.fury.io/js/bpk-component-blockquote) |
 | [`bpk-component-breakpoint`](/packages/bpk-component-breakpoint) | [![npm version](https://badge.fury.io/js/bpk-component-breakpoint.svg)](http://badge.fury.io/js/bpk-component-breakpoint) |
 | [`bpk-component-button`](/packages/bpk-component-button) | [![npm version](https://badge.fury.io/js/bpk-component-button.svg)](http://badge.fury.io/js/bpk-component-button) |

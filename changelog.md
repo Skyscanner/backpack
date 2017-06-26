@@ -4,14 +4,15 @@
 
 _Nothing yet..._
 
+## 2017-06-26 - New bar chart component
+
 **Added:**
-  - bpk-component-barchart:
-    - Introducing the new barchart component:
+- bpk-component-barchart: 0.3.0
+    - Introducing the new bar chart component:
       Docs: http://backpack.prod.aws.skyscnr.com/components/molecules/barcharts
 
 **Fixed:**
-
-bpk-component-star-rating:
+- bpk-component-star-rating: 0.0.4 => 0.0.5
   - Changed interactive star implementation from radio buttons to toggle buttons for more consistent cross-browser behaviour
 
 ## 2017-06-22 - Mobile side scroll for horizontal nav's
