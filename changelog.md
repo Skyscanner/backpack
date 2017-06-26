@@ -4,6 +4,11 @@
 
 _Nothing yet..._
 
+**Added:**
+  - bpk-component-barchart:
+    - Introducing the new barchart component:
+      Docs: http://backpack.prod.aws.skyscnr.com/components/molecules/barcharts
+
 ## 2017-06-22 - Mobile side scroll for horizontal nav's
 
 **Breaking:**
