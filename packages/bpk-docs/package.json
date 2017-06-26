@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.128",
+  "version": "0.0.129",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -17,8 +17,8 @@
     "bpk-component-accordion": "^1.1.0",
     "bpk-component-autosuggest": "^3.0.13",
     "bpk-component-badge": "^0.1.0",
-    "bpk-component-banner-alert": "^1.1.1",
-    "bpk-component-barchart": "^0.2.0",
+    "bpk-component-banner-alert": "^1.1.2",
+    "bpk-component-barchart": "^0.3.0",
     "bpk-component-blockquote": "^0.1.0",
     "bpk-component-breakpoint": "^0.1.22",
     "bpk-component-button": "^1.6.33",
@@ -51,7 +51,7 @@
     "bpk-component-rtl-toggle": "^0.0.73",
     "bpk-component-select": "^2.1.0",
     "bpk-component-spinner": "^2.1.0",
-    "bpk-component-star-rating": "^0.0.4",
+    "bpk-component-star-rating": "^0.0.5",
     "bpk-component-table": "^0.1.1",
     "bpk-component-textarea": "^0.1.0",
     "bpk-component-ticket": "^0.1.0",
