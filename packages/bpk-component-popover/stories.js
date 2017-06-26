@@ -100,7 +100,7 @@ class PopoverContainer extends Component {
 
 PopoverContainer.propTypes = {
   changeProps: PropTypes.bool,
-  targetFunction: PropTypes.string,
+  targetFunction: PropTypes.func,
 };
 
 PopoverContainer.defaultProps = {
@@ -145,6 +145,13 @@ storiesOf('bpk-component-popover', module)
       <div id="attachElement">Pop over attached here</div>
       <p>&nbsp; </p>
       <PopoverContainer targetFunction={() => document.getElementById('attachElement')} />
+    </div>
+  ))
+  .add('Not rendering if external element does not exist', () => (
+    <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
+      <div id="attachElement">Popover does not open</div>
+      <p>&nbsp; </p>
+      <PopoverContainer targetFunction={() => document.getElementById('doesNotExist')} />
     </div>
   ))
   .add('Repositioning', () => (

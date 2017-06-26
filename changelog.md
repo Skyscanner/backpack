@@ -2,7 +2,12 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Fixed:**
+- bpk-component-popover:
+- bpk-react-utils:
+  - The Popover and Tether don't crash any longer when the popover target does not exist (when using a function)
+    **Note:** It's still your job to figure out when the target doesn't exist if you want to log this or send a metric.
+    You can do this in the function that you pass as `target` prop to the popover.
 
 ## 2017-06-26 - New bar chart component
 

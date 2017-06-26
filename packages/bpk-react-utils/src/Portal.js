@@ -116,7 +116,11 @@ class Portal extends Component {
   }
 
   renderPortal() {
-    if (this.portalElement) {
+    // If the `target` prop is null, it's fine that there is no targetElement
+    // Otherwise, if a `target` is provided, we don't render if we cannot find the respective element
+    const missesExpectedTarget = this.props.target && !this.getTargetElement();
+
+    if (this.portalElement && !missesExpectedTarget) {
       render(this.props.children, this.portalElement, () => {
         if (this.props.isOpen) {
           this.props.onRender(this.portalElement, this.getTargetElement());
