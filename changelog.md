@@ -9,6 +9,11 @@ _Nothing yet..._
     - Introducing the new barchart component:
       Docs: http://backpack.prod.aws.skyscnr.com/components/molecules/barcharts
 
+**Fixed:**
+
+bpk-component-star-rating:
+  - Changed interactive star implementation from radio buttons to toggle buttons for more consistent cross-browser behaviour
+
 ## 2017-06-22 - Mobile side scroll for horizontal nav's
 
 **Breaking:**
