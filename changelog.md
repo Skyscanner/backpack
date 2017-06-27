@@ -2,13 +2,19 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-06-27 - Small checkbox labels and fix for popover crash
+
 **Added:**
-- bpk-component-checkbox:
-  - New prop `smallLabel` renders the label at a smaller font size suitble for filters etc.
+- bpk-component-checkbox: 1.2.0 => 1.3.0
+  - New prop `smallLabel` renders the label at a smaller font size suitable for filters etc.
+- bpk-mixins: 15.5.0 => 15.6.0
+  - New mixins for small checkbox labels suitable for filters etc.
 
 **Fixed:**
-- bpk-component-popover:
-- bpk-react-utils:
+- bpk-component-popover: 1.1.0 => 1.1.1
+- bpk-react-utils: 2.0.0 => 2.0.1
   - The Popover and Tether don't crash any longer when the popover target does not exist (when using a function)
     **Note:** It's still your job to figure out when the target doesn't exist if you want to log this or send a metric.
     You can do this in the function that you pass as `target` prop to the popover.
@@ -72,6 +78,7 @@
 - bpk-component-calendar: 3.2.4 => 3.3.0
 - bpk-component-card: 0.0.68 => 0.1.0
 - bpk-component-checkbox: 1.1.10 => 1.2.0
+
 - bpk-component-close-button: 0.0.46 => 0.1.0
 - bpk-component-code: 0.0.80 => 0.1.0
 - bpk-component-content-container: 1.0.71 => 1.1.0
