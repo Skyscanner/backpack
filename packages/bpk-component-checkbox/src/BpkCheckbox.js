@@ -32,7 +32,7 @@ const BpkCheckbox = (props) => {
       <span className={labelClassNames.join(' ')}>
         {label}
         {required && (
-          <span className={getClassName('bpk-checkbox__asterix')}>*</span>
+          <span className={getClassName('bpk-checkbox__asterisk')}>*</span>
         )}
       </span>
     </label>

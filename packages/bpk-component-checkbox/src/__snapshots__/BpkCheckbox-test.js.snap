@@ -87,7 +87,7 @@ exports[`BpkCheckbox should render correctly with required attribute 1`] = `
     className="bpk-checkbox__label">
     Prefer directs
     <span
-      className="bpk-checkbox__asterix">
+      className="bpk-checkbox__asterisk">
       *
     </span>
   </span>

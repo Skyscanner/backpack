@@ -56,7 +56,7 @@ exports[`BpkFieldset should render correctly with checkbox component and "requir
       className="bpk-checkbox__label">
       I accept the terms and conditions
       <span
-        className="bpk-checkbox__asterix">
+        className="bpk-checkbox__asterisk">
         *
       </span>
     </span>
@@ -186,7 +186,7 @@ exports[`BpkFieldset should render correctly with input component and "required"
     htmlFor="name_input">
     Name
     <span
-      className="bpk-label__asterix">
+      className="bpk-label__asterisk">
       *
     </span>
   </label>
@@ -391,7 +391,7 @@ exports[`BpkFieldset should render correctly with select component and "required
     htmlFor="fruits_select">
     Fruits
     <span
-      className="bpk-label__asterix">
+      className="bpk-label__asterisk">
       *
     </span>
   </label>

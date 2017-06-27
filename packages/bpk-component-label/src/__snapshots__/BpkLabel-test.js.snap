@@ -17,7 +17,7 @@ exports[`BpkLabel should render correctly with a "required" attribute 1`] = `
   className="bpk-label">
   Origin
   <span
-    className="bpk-label__asterix">
+    className="bpk-label__asterisk">
     *
   </span>
 </label>
