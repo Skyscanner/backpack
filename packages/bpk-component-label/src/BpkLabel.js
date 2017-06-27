@@ -20,7 +20,7 @@ const BpkLabel = (props) => {
     <label className={classNames.join(' ')} {...rest}>
       {children}
       {required && (
-        <span className={getClassName('bpk-label__asterix')}>*</span>
+        <span className={getClassName('bpk-label__asterisk')}>*</span>
       )}
     </label>
   );

@@ -356,10 +356,36 @@
   display: inline-block;
   padding-left: $bpk-spacing-base;
 
+  @include bpk-text-base;
+
   @include bpk-rtl {
     padding-right: $bpk-spacing-base;
     padding-left: 0;
   }
+}
+
+/// Label for checkbox. Should be applied to label text element.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-checkbox__label();
+///   }
+
+@mixin bpk-checkbox__label {
+  vertical-align: baseline;
+}
+
+/// Small label for checkbox. Should be applied to label text element.
+/// Modifies bpk-checkbox__label.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-checkbox__label();
+///     @include bpk-checkbox__label--small();
+///   }
+
+@mixin bpk-checkbox__label--small {
+  @include bpk-text-sm;
 }
 
 /// White label checkbox. Modifies the bpk-checkbox mixin.

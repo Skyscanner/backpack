@@ -85,4 +85,14 @@ storiesOf('bpk-component-checkbox', module)
       checked
       required
     />
+  ))
+  .add('Small label', () => (
+    <BpkCheckbox
+      id="small"
+      name="small"
+      label="Direct flights only"
+      onChange={action('checkbox changed')}
+      checked
+      smallLabel
+    />
   ));
