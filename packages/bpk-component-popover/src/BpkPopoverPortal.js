@@ -11,9 +11,13 @@ import { ARROW_ID } from './constants';
 
 const getClassName = cssModules(STYLES);
 
-const onOpen = (popoverElement) => {
-  focusStore.storeFocus();
-  focusScope.scopeFocus(popoverElement);
+const onOpen = (popoverElement, targetElement) => {
+  // If the target element does _not_ exist, the Portal does not open
+  // Therefore we also shouldn't store and scope the focus
+  if (targetElement) {
+    focusStore.storeFocus();
+    focusScope.scopeFocus(popoverElement);
+  }
 };
 
 class BpkPopoverPortal extends Component {
@@ -31,8 +35,10 @@ class BpkPopoverPortal extends Component {
   }
 
   beforeClose(done) {
-    this.tether.destroy();
-    this.tether = null;
+    if (this.tether) {
+      this.tether.destroy();
+      this.tether = null;
+    }
 
     focusScope.unscopeFocus();
     focusStore.restoreFocus();
@@ -41,6 +47,10 @@ class BpkPopoverPortal extends Component {
   }
 
   position(popoverElement, targetElement) {
+    if (!targetElement) {
+      return;
+    }
+
     const options = {
       classPrefix: 'bpk-popover-tether',
       element: popoverElement,
