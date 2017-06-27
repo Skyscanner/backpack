@@ -79,5 +79,16 @@ describe('BpkCheckbox', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with a small label', () => {
+    const tree = renderer.create(
+      <BpkCheckbox
+        name="checkbox"
+        label="Prefer directs"
+        smallLabel
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
 

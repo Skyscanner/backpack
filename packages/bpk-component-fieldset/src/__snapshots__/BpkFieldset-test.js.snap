@@ -9,7 +9,10 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
       id="terms_and_conditions_checkbox"
       name="terms_and_conditions"
       type="checkbox" />
-    I accept the terms and conditions
+    <span
+      className="bpk-checkbox__label">
+      I accept the terms and conditions
+    </span>
   </label>
   <div
     onTransitionEnd={[Function]}
@@ -49,10 +52,13 @@ exports[`BpkFieldset should render correctly with checkbox component and "requir
       id="terms_and_conditions_checkbox"
       name="terms_and_conditions"
       type="checkbox" />
-    I accept the terms and conditions
     <span
-      className="bpk-checkbox__asterix">
-      *
+      className="bpk-checkbox__label">
+      I accept the terms and conditions
+      <span
+        className="bpk-checkbox__asterix">
+        *
+      </span>
     </span>
   </label>
   <div

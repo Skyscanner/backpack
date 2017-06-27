@@ -3,6 +3,14 @@
 .bpk-checkbox {
   @include bpk-checkbox;
 
+  &__label {
+    @include bpk-checkbox__label;
+
+    &--small {
+      @include bpk-checkbox__label--small;
+    }
+  }
+
   &--white {
     @include bpk-checkbox--white;
   }

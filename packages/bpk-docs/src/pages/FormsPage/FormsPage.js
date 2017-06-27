@@ -528,6 +528,14 @@ const components = [
           checked
         />
       </form>,
+      <form className="bpkdocs-forms-page__form">
+        <InputContainer
+          FormComponent={BpkCheckbox}
+          name="small_checkbox"
+          label="Oranges"
+          smallLabel
+        />
+      </form>,
     ],
     readme: checkboxReadme,
   },

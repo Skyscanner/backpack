@@ -8,10 +8,12 @@ const getClassName = cssModules(STYLES);
 
 const BpkCheckbox = (props) => {
   const classNames = [getClassName('bpk-checkbox')];
-  const { name, label, required, disabled, white, className, ...rest } = props;
+  const labelClassNames = [getClassName('bpk-checkbox__label')];
+  const { name, label, required, disabled, white, className, smallLabel, ...rest } = props;
 
   if (white) { classNames.push(getClassName('bpk-checkbox--white')); }
   if (disabled) { classNames.push(getClassName('bpk-checkbox--disabled')); }
+  if (smallLabel) { labelClassNames.push(getClassName('bpk-checkbox__label--small')); }
   if (className) { classNames.push(className); }
 
   // This is awkward because the label-has-for rule enforces an 'id' / 'for' pairing
@@ -27,10 +29,12 @@ const BpkCheckbox = (props) => {
         disabled={disabled}
         {...rest}
       />
-      {label}
-      {required && (
-        <span className={getClassName('bpk-checkbox__asterix')}>*</span>
-      )}
+      <span className={labelClassNames.join(' ')}>
+        {label}
+        {required && (
+          <span className={getClassName('bpk-checkbox__asterix')}>*</span>
+        )}
+      </span>
     </label>
   );
   /* eslint-enable */
@@ -43,6 +47,7 @@ BpkCheckbox.propTypes = {
   disabled: PropTypes.bool,
   white: PropTypes.bool,
   className: PropTypes.string,
+  smallLabel: PropTypes.bool,
 };
 
 BpkCheckbox.defaultProps = {
@@ -50,6 +55,7 @@ BpkCheckbox.defaultProps = {
   disabled: false,
   white: false,
   className: null,
+  smallLabel: false,
 };
 
 export default BpkCheckbox;
