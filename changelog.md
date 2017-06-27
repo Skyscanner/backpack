@@ -2,17 +2,16 @@
 
 ## UNRELEASED
 
+**Added:**
+- bpk-component-checkbox:
+  - New prop `smallLabel` renders the label at a smaller font size suitble for filters etc.
+
 **Fixed:**
 - bpk-component-popover:
 - bpk-react-utils:
   - The Popover and Tether don't crash any longer when the popover target does not exist (when using a function)
     **Note:** It's still your job to figure out when the target doesn't exist if you want to log this or send a metric.
     You can do this in the function that you pass as `target` prop to the popover.
-
-**Added:**
-- bpk-component-checkbox:
-  - New prop `smallLabel` renders the label at a smaller font size suitble for filters etc.
-
 
 ## 2017-06-26 - New bar chart component
 
