@@ -20,11 +20,12 @@ import STYLES from './bpk-calendar-nav.scss';
 
 const getClassName = cssModules(STYLES);
 
-const changeMonth = (targetMonth, min, max, callback) => () => {
+const changeMonth = ({ month, min, max, callback, source }) => (event) => {
   // Safeguard for disabled buttons is due to React bug in Chrome: https://github.com/facebook/react/issues/8308
   // PR: https://github.com/facebook/react/pull/8329 - unresolved as of 22/12/2016
-  if (isWithinRange(targetMonth, min, max)) {
-    callback(targetMonth);
+  if (isWithinRange(month, min, max)) {
+    event.persist();
+    callback(event, { month, source });
   }
 };
 
@@ -53,7 +54,7 @@ const BpkCalendarNav = (props) => {
           type="button"
           className={getClassName('bpk-calendar-nav__button')}
           id={`${id}_month_nudger_previous`}
-          onClick={changeMonth(prevMonth, min, max, onMonthChange)}
+          onClick={changeMonth({ month: prevMonth, min, max, callback: onMonthChange, source: 'PREV' })}
           disabled={disabled || !isWithinRange(prevMonth, min, max)}
         >
           <ArrowLeftIcon className={getClassName('bpk-calendar-nav__icon')} />
@@ -76,7 +77,10 @@ const BpkCalendarNav = (props) => {
           name="months"
           value={formatIsoMonth(baseMonth)}
           disabled={disabled}
-          onChange={event => onMonthChange(parseIsoDate(event.target.value))}
+          onChange={(event) => {
+            event.persist();
+            onMonthChange(event, { month: parseIsoDate(event.target.value), source: 'SELECT' });
+          }}
         >
           { navigatableMonths.map(m => (
             <option value={formatIsoMonth(m)} key={m.toString()}>{ formatMonth(m) }</option>
@@ -88,7 +92,7 @@ const BpkCalendarNav = (props) => {
           type="button"
           className={getClassName('bpk-calendar-nav__button')}
           id={`${id}_month_nudger_next`}
-          onClick={changeMonth(nextMonth, min, max, onMonthChange)}
+          onClick={changeMonth({ month: nextMonth, min, max, callback: onMonthChange, source: 'NEXT' })}
           disabled={disabled || !isWithinRange(addMonths(baseMonth, 1), min, max)}
         >
           <ArrowRightIcon className={getClassName('bpk-calendar-nav__icon')} />

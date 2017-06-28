@@ -305,3 +305,14 @@ const formatMonth = date => format(date, 'MMMM YYYY');
 #### weekStartsOn
 
 First day of the week. 0 = Sunday, 1 = Monday, ..., 6 = Saturday.
+
+#### onMonthChange
+
+```javascript
+const onMonthChange = (event, {
+  month: <Date>, // The first day of the selected month
+  source: <string>, // One of `PREV`, `NEXT`, `SELECT`, `GRID`
+}) => {
+  ...
+}
+```
