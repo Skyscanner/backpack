@@ -16,7 +16,10 @@ const extendedRgbAse = require('!!file?name=[name].[hash].ase!./../../static/ext
 const extendedRgbClr = require('!!file?name=[name].[hash].clr!./../../static/extended_rgb.clr');
 const iconTemplate = require('!!file?name=[name].[hash].sketch!./../../static/icon-template.sketch');
 const responsiveGrid = require('!!file?name=[name].[hash].sketch!./../../static/responsive-grids.sketch');
+// TODO: Expose this when we release
+// const bookmarklet = require('!!raw-loader!uglify-loader!babel-loader!../../bag-check-bookmarklet/index.js');
 /* eslint-enable */
+
 
 const ResourcesPage = () => (
   <BpkGridContainer>
@@ -59,6 +62,12 @@ const ResourcesPage = () => (
             <BpkListItem>
               <BpkLink href={`/${iconTemplate}`} blank>Icon tempalte</BpkLink>
             </BpkListItem>
+            {/*
+              // TODO: Expose this when release
+            <BpkListItem>
+              <BpkLink href={`javascript:(function(){${bookmarklet}})();`}>Backcheck</BpkLink>
+            </BpkListItem>
+            */}
             <BpkListItem>
               <BpkLink href="https://www.dropbox.com/sh/0dqy5vbr1pjk0f4/AADHS3kRM_yGCqp5wyVMe09Ba?dl=0" blank>
                 Craft Library
