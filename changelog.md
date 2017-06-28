@@ -2,7 +2,10 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Fixed:**
+- bpk-mixins:
+- bpk-tokens:
+  - Fix syntax bug in "tablet-only" sass variables & mixins
 
 ## 2017-06-27 - Small checkbox labels and fix for popover crash
 
