@@ -1,0 +1,87 @@
+@import '~bpk-mixins/index';
+
+.bpkdocs-side-nav-list {
+  &__list,
+  &__category-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__list-item {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: $bpk-spacing-base;
+    }
+  }
+
+  &__category-list {
+    overflow: hidden;
+  }
+
+  &__category-list-item {
+    padding: 0;
+  }
+
+  &__category-name {
+    margin: 0 0 $bpk-spacing-xs 0;
+    padding: 0 0 0 $bpk-spacing-sm;
+    color: $bpk-color-gray-300;
+
+    @include bpk-text-sm;
+  }
+
+  &__link {
+    color: $bpk-link-color;
+    text-decoration: $bpk-link-text-decoration;
+
+    @include bpk-hover {
+      background-color: $bpk-color-gray-50;
+      color: $bpk-link-hover-color;
+    }
+
+    &:active {
+      background-color: $bpk-color-gray-100;
+      color: $bpk-link-hover-color;
+    }
+
+    &--active {
+      background-color: $bpk-color-blue-500;
+      color: $bpk-color-white;
+      font-weight: bold;
+      text-decoration: none;
+
+      @include bpk-hover {
+        background-color: $bpk-color-blue-500;
+        color: $bpk-color-white;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      &:active {
+        background-color: $bpk-color-blue-500;
+        color: $bpk-color-white;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__link,
+  &__pending-link {
+    display: block;
+    padding: $bpk-spacing-xs $bpk-spacing-sm;
+
+    @include bpk-border-bottom-sm($bpk-color-gray-100);
+
+    *:last-child > & {
+      box-shadow: none;
+    }
+  }
+
+  &__pending-link {
+    color: $bpk-color-gray-300;
+    font-style: italic;
+  }
+}

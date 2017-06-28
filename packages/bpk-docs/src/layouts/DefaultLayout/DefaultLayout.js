@@ -5,9 +5,12 @@ import BpkRtlToggle from 'bpk-component-rtl-toggle';
 import BpkGridToggle from 'bpk-component-grid-toggle';
 import { PropTypes as RouterPropTypes } from 'react-router';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+import { cssModules } from 'bpk-react-utils';
 
-import './default-layout.scss';
+import STYLES from './default-layout.scss';
 import Header from '../../components/Header';
+
+const getClassName = cssModules(STYLES);
 
 class DefaultLayout extends Component {
   constructor(props) {
@@ -47,15 +50,21 @@ class DefaultLayout extends Component {
           onHamburgerClick={this.onHamburgerClick}
         />
         <main>{children}</main>
-        <BpkGridContainer className="bpkdocs-default-layout__footer-container">
+        <BpkGridContainer className={getClassName('bpkdocs-default-layout__footer-container')}>
           <BpkGridRow>
             <BpkGridColumn width={6} mobileWidth={12}>
-              <small className="bpkdocs-default-layout__footer-copy">
+              <small className={getClassName('bpkdocs-default-layout__footer-copy')}>
                 &copy; Skyscanner {new Date().getFullYear()}
               </small>
             </BpkGridColumn>
             <BpkGridColumn width={6} mobileWidth={12}>
-              <small className="bpkdocs-default-layout__footer-copy bpkdocs-default-layout__footer-copy--align-right">
+              <small
+                className={
+                  ['bpkdocs-default-layout__footer-copy', 'bpkdocs-default-layout__footer-copy--align-right']
+                    .map(getClassName)
+                    .join(' ')
+                }
+              >
                 <BpkGridToggle /> | <BpkRtlToggle />
               </small>
             </BpkGridColumn>

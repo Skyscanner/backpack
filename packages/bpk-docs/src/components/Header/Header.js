@@ -6,10 +6,13 @@ import BpkLink from 'bpk-component-link';
 import AnimateHeight from 'bpk-animate-height';
 import BpkRouterLink from 'bpk-component-router-link';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+import { cssModules } from 'bpk-react-utils';
 
-import './Header.scss';
+import STYLES from './Header.scss';
 import * as ROUTES from './../../constants/routes';
 import HamburgerButton from './HamburgerButton';
+
+const getClassName = cssModules(STYLES);
 
 const headerLinks = [
   { to: ROUTES.USING_BACKPACK, children: 'Using Backpack' },
@@ -20,17 +23,17 @@ const headerLinks = [
 ];
 
 const toNavList = (links, hideOnTablet) => {
-  const classNames = ['bpkdocs-header__nav-list'];
+  const classNames = [getClassName('bpkdocs-header__nav-list')];
 
-  if (hideOnTablet) { classNames.push('bpkdocs-header__nav-list--hide-on-tablet'); }
+  if (hideOnTablet) { classNames.push(getClassName('bpkdocs-header__nav-list--hide-on-tablet')); }
 
   return (
     <ul className={classNames.join(' ')}>
       {links.map((link = {}) => (
-        <li key={link.to || link.href} className="bpkdocs-header__nav-list-item">
+        <li key={link.to || link.href} className={getClassName('bpkdocs-header__nav-list-item')}>
           {link.to
-            ? <BpkRouterLink className="bpkdocs-header__nav-list-link" {...link} />
-            : <BpkLink className="bpkdocs-header__nav-list-link" {...link} />}
+            ? <BpkRouterLink className={getClassName('bpkdocs-header__nav-list-link')} {...link} />
+            : <BpkLink className={getClassName('bpkdocs-header__nav-list-link')} {...link} />}
         </li>
         ))}
     </ul>
@@ -41,20 +44,20 @@ const Header = (props) => {
   const { expanded, onHamburgerClick } = props;
 
   return (
-    <header className="bpkdocs-header">
+    <header className={getClassName('bpkdocs-header')}>
       <BpkGridContainer>
         <BpkGridRow>
           <BpkGridColumn width={3} mobileWidth={6}>
-            <IndexLink to={ROUTES.HOME} className="bpkdocs-header__logo-link">
-              <span className="visuallyhidden">Backpack</span>
+            <IndexLink to={ROUTES.HOME} className={getClassName('bpkdocs-header__logo-link')}>
+              <span className={getClassName('bpkdocs-header__logo-link-text')}>Backpack</span>
             </IndexLink>
           </BpkGridColumn>
           <BpkGridColumn width={9} mobileWidth={6}>
-            <nav className="bpkdocs-header__nav">
+            <nav className={getClassName('bpkdocs-header__nav')}>
               <HamburgerButton
                 expanded={expanded}
                 onClick={onHamburgerClick}
-                className="bpkdocs-header__hamburger"
+                className={getClassName('bpkdocs-header__hamburger')}
               />
               {toNavList(headerLinks, true)}
             </nav>
@@ -65,7 +68,7 @@ const Header = (props) => {
         height={expanded ? 'auto' : 0}
         duration={200}
       >
-        <BpkGridContainer className="bpkdocs-header__tablet-nav-container">
+        <BpkGridContainer className={getClassName('bpkdocs-header__tablet-nav-container')}>
           <BpkGridRow>
             <BpkGridColumn width={12} padded={false}>
               <nav>

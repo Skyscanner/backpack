@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './presentation-block.scss';
+import STYLES from './presentation-block.scss';
+
+const getClassName = cssModules(STYLES);
 
 const PresentationBlock = (props) => {
-  const classNames = ['bpkdocs-presentation-block'];
+  const classNames = [getClassName('bpkdocs-presentation-block')];
   const { className, ...rest } = props;
 
   if (className) { classNames.push(className); }
