@@ -64,12 +64,12 @@ class Portal extends Component {
       return;
     }
 
-    this.props.onClose();
+    this.props.onClose(e);
   }
 
   onDocumentKeyDown(e) {
     if (e.keyCode === KEYCODES.ESCAPE && this.props.isOpen) {
-      this.props.onClose();
+      this.props.onClose(e);
     }
   }
 
