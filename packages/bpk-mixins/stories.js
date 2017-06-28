@@ -18,4 +18,23 @@ storiesOf('bpk-mixins', module)
   ))
   .add('bpk-icon mixin (large)', () => (
     <span className={getClassName('bpk-icon__chart--large')} />
+  ))
+  .add('bpk-breakpoint-*', () => (
+    <div>
+      <div className={getClassName('bpk-breakpoint-mobile')}>
+        MOBILE
+      </div>
+      <div className={getClassName('bpk-breakpoint-tablet')}>
+        TABLET
+      </div>
+      <div className={getClassName('bpk-breakpoint-tablet-only')}>
+        TABLET ONLY
+      </div>
+      <div className={getClassName('bpk-breakpoint-above-mobile')}>
+        ABOVE MOBILE
+      </div>
+      <div className={getClassName('bpk-breakpoint-above-tablet')}>
+        ABOVE TABLET
+      </div>
+    </div>
   ));
