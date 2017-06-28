@@ -8,7 +8,7 @@ import sassFunctions from './packages/bpk-mixins/sass-functions';
 import * as ROUTES from './packages/bpk-docs/src/constants/routes';
 
 const { BPK_TOKENS } = process.env;
-const useCssModules = process.env.ENABLE_CSS_MODULES === 'true';
+const useCssModules = process.env.ENABLE_CSS_MODULES !== 'false';
 
 const staticSiteGeneratorConfig = {
   paths: [
@@ -96,7 +96,7 @@ const config = {
         loader: ExtractTextPlugin.extract(
           'style',
           [
-            `css?modules=${JSON.stringify(useCssModules)}&localIdentName=[name]__[local]--[hash:base64:5]`,
+            `css?modules=${JSON.stringify(useCssModules)}&localIdentName=[local]-[hash:base64:5]`,
             'postcss',
             'sass?config=sass',
           ],
