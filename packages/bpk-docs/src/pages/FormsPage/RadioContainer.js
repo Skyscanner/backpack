@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkRadio from 'bpk-component-radio';
+import { cssModules } from 'bpk-react-utils';
+
+import STYLES from './forms-page.scss';
+
+const getClassName = cssModules(STYLES);
 
 class RadioContainer extends Component {
   constructor(props) {
@@ -16,7 +21,7 @@ class RadioContainer extends Component {
     delete rest.value;
 
     return (
-      <form className="bpkdocs-forms-page__form">
+      <form className={getClassName('bpkdocs-forms-page__form')}>
         <BpkRadio
           name="radio_fruit"
           value="apples"

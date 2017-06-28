@@ -10,10 +10,12 @@ import { colorWhite } from 'bpk-tokens/tokens/base.es6';
 import { withLargeButtonAlignment, withRtlSupport } from 'bpk-component-icon';
 import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+import { cssModules } from 'bpk-react-utils';
 
-import './home-page.scss';
+import STYLES from './home-page.scss';
 import * as ROUTES from './../../constants/routes';
 
+const getClassName = cssModules(STYLES);
 const AlignedLongArrowRightAltIcon = withRtlSupport(withLargeButtonAlignment(LongArrowRightIcon));
 
 class HomePage extends React.Component {
@@ -32,7 +34,7 @@ class HomePage extends React.Component {
     return (
       <section>
         <Helmet title="Backpack" />
-        <div className="bpkdocs-home-page__hero">
+        <div className={getClassName('bpkdocs-home-page__hero')}>
           <BpkGridContainer>
             <BpkGridRow>
               <BpkGridColumn width={12}>

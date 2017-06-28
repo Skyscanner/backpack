@@ -1,11 +1,15 @@
 import React from 'react';
 import BpkBadge from 'bpk-component-badge';
 import BpkParagraph from 'bpk-component-paragraph';
+import { cssModules } from 'bpk-react-utils';
 
 import badgeReadme from 'bpk-component-badge/readme.md';
 
-import './badge-page.scss';
+import STYLES from './badge-page.scss';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+
+const getClassName = cssModules(STYLES);
+const badgeClassName = getClassName('bpkdocs-badge-page__badge-spacing');
 
 const components = [
   {
@@ -17,9 +21,9 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <BpkBadge className="bpkdocs-badge-page__badge-spacing">Apples</BpkBadge>,
-      <BpkBadge className="bpkdocs-badge-page__badge-spacing">Bananas</BpkBadge>,
-      <BpkBadge className="bpkdocs-badge-page__badge-spacing">Strawberries</BpkBadge>,
+      <BpkBadge className={badgeClassName}>Apples</BpkBadge>,
+      <BpkBadge className={badgeClassName}>Bananas</BpkBadge>,
+      <BpkBadge className={badgeClassName}>Strawberries</BpkBadge>,
       <BpkBadge>Pears</BpkBadge>,
     ],
   },
@@ -29,7 +33,7 @@ const components = [
     blurb: [<BpkParagraph>A badge can also be configured to have a top-right, or top-left modifier to pin it
     to the corner of its parent.</BpkParagraph>],
     examples: [
-      <div className="bpkdocs-badge-page__badge-container">
+      <div className={getClassName('bpkdocs-badge-page__badge-container')}>
         <BpkBadge docked="right">Advert</BpkBadge>
       </div>,
     ],
@@ -43,9 +47,9 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <BpkBadge centered className="bpkdocs-badge-page__badge-spacing">Apples</BpkBadge>,
-      <BpkBadge centered className="bpkdocs-badge-page__badge-spacing">Bananas</BpkBadge>,
-      <BpkBadge centered className="bpkdocs-badge-page__badge-spacing">Strawberries</BpkBadge>,
+      <BpkBadge centered className={badgeClassName}>Apples</BpkBadge>,
+      <BpkBadge centered className={badgeClassName}>Bananas</BpkBadge>,
+      <BpkBadge centered className={badgeClassName}>Strawberries</BpkBadge>,
       <BpkBadge centered>Pears</BpkBadge>,
     ],
   },
