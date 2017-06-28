@@ -1,18 +1,17 @@
 import React from 'react';
-import pickBy from 'lodash/pickBy';
-import includes from 'lodash/includes';
 import kebabCase from 'lodash/kebabCase';
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import { boxShadows } from 'bpk-tokens/tokens/base.es6';
+import { cssModules } from 'bpk-react-utils';
 
 import BpkParagraph from 'bpk-component-paragraph';
 import BpkRouterLink from 'bpk-component-router-link';
-import './shadow-page.scss';
+import STYLES from './shadow-page.scss';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import PresentationBlock from './../../components/PresentationBlock';
 
-const tokenMap = pickBy(TOKENS, (value, key) => includes(key, 'boxShadow'));
+const getClassName = cssModules(STYLES);
 
 const ShadowsPage = () => <DocsPageBuilder
   title="Shadows"
@@ -21,16 +20,16 @@ const ShadowsPage = () => <DocsPageBuilder
       Shadows are used to convey depth and order. Like <BpkRouterLink to={ROUTES.RADII}>radii</BpkRouterLink> these are
       most often used on cards and other surfaces.
     </BpkParagraph>,
-    <PresentationBlock className="bpkdocs-shadow-page__examples">
-      {Object.keys(tokenMap).map(tokenName => (
+    <PresentationBlock className={getClassName('bpkdocs-shadow-page__examples')}>
+      {Object.keys(boxShadows).map(tokenName => (
         <div
           key={tokenName}
-          className="bpkdocs-shadow-page__item"
+          className={getClassName('bpkdocs-shadow-page__item')}
         >
           <div
-            className="bpkdocs-shadow-page__shadow-example"
+            className={getClassName('bpkdocs-shadow-page__shadow-example')}
             style={{
-              boxShadow: tokenMap[tokenName],
+              boxShadow: boxShadows[tokenName],
             }}
           >
             {kebabCase(tokenName)}
@@ -40,7 +39,7 @@ const ShadowsPage = () => <DocsPageBuilder
     </PresentationBlock>,
   ]}
   components={[]}
-  tokenMap={pickBy(TOKENS, (value, key) => includes(key, 'boxShadow'))}
+  tokenMap={boxShadows}
   sassdocId="box-shadows"
 />;
 

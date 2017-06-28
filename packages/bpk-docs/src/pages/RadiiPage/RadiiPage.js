@@ -1,15 +1,14 @@
 import React from 'react';
-import pickBy from 'lodash/pickBy';
-import includes from 'lodash/includes';
 import kebabCase from 'lodash/kebabCase';
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import { radii } from 'bpk-tokens/tokens/base.es6';
 import BpkParagraph from 'bpk-component-paragraph';
+import { cssModules } from 'bpk-react-utils';
 
-import './radii-page.scss';
+import STYLES from './radii-page.scss';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import PresentationBlock from './../../components/PresentationBlock';
 
-const tokenMap = pickBy(TOKENS, (value, key) => includes(key, 'borderRadius'));
+const getClassName = cssModules(STYLES);
 
 const RadiiPage = () => <DocsPageBuilder
   title="Radii"
@@ -17,16 +16,16 @@ const RadiiPage = () => <DocsPageBuilder
     <BpkParagraph>
       The following radii are used to soften the edges of shapes. These are often used on cards and other surfaces.
     </BpkParagraph>,
-    <PresentationBlock className="bpkdocs-radii-page__examples">
-      {Object.keys(tokenMap).map(tokenName => (
+    <PresentationBlock className={getClassName('bpkdocs-radii-page__examples')}>
+      {Object.keys(radii).map(tokenName => (
         <div
           key={tokenName}
-          className="bpkdocs-radii-page__item"
+          className={getClassName('bpkdocs-radii-page__item')}
         >
           <div
-            className="bpkdocs-radii-page__radii-example"
+            className={getClassName('bpkdocs-radii-page__radii-example')}
             style={{
-              borderRadius: tokenMap[tokenName],
+              borderRadius: radii[tokenName],
             }}
           >
             {kebabCase(tokenName)}
@@ -35,7 +34,7 @@ const RadiiPage = () => <DocsPageBuilder
       ))}
     </PresentationBlock>,
   ]}
-  tokenMap={tokenMap}
+  tokenMap={radii}
   sassdocId="radii"
 />;
 

@@ -7,7 +7,6 @@ import BpkParagraph from 'bpk-component-paragraph';
 
 import iconReadme from 'bpk-component-icon/readme.md';
 
-import './icons-page.scss';
 import IconSearchApp from './../../components/IconSearchApp';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
