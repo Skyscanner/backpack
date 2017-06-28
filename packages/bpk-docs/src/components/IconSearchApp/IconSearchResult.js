@@ -1,24 +1,31 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './IconSearchResult.scss';
+import STYLES from './IconSearchResult.scss';
 import customPropTypes from './propTypes';
+
+const getClassName = cssModules(STYLES);
 
 const IconSearchResult = props => (
   <div>
-    <dt className="bpkdocs-icon-search-result__title">
+    <dt className={getClassName('bpkdocs-icon-search-result__title')}>
       {props.categoryName}
     </dt>
-    <dd className="bpkdocs-icon-search-result__content">
-      <ul className="bpkdocs-icon-search-result__list">
+    <dd className={getClassName('bpkdocs-icon-search-result__content')}>
+      <ul className={getClassName('bpkdocs-icon-search-result__list')}>
         {props.icons.map(icon => (
-          <li key={icon.name} className="bpkdocs-icon-search-result__list-item">
-            <span className="bpkdocs-icon-search-result__icon-container">
+          <li key={icon.name} className={getClassName('bpkdocs-icon-search-result__list-item')}>
+            <span className={getClassName('bpkdocs-icon-search-result__icon-container')}>
               <icon.component
-                className={`bpkdocs-icon-search-result__icon bpkdocs-icon-search-result__icon--${icon.categoryId}`}
+                className={
+                  ['bpkdocs-icon-search-result__icon', `bpkdocs-icon-search-result__icon--${icon.categoryId}`]
+                    .map(getClassName)
+                    .join(' ')
+                }
               />
             </span>
-            <span className="bpkdocs-icon-search-result__name-container">{icon.name}</span>
+            <span className={getClassName('bpkdocs-icon-search-result__name-container')}>{icon.name}</span>
           </li>
           ))}
       </ul>

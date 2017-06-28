@@ -8,10 +8,13 @@ import BpkRouterLink from 'bpk-component-router-link';
 import readme from 'bpk-component-fieldset/readme.md';
 import PropTypes from 'prop-types';
 import React, { cloneElement, Component } from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './fieldsets-page.scss';
+import STYLES from './fieldsets-page.scss';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+
+const getClassName = cssModules(STYLES);
 
 class FieldsetContainer extends Component {
   constructor() {
@@ -63,16 +66,16 @@ class FieldsetContainer extends Component {
     });
 
     return (
-      <div className="bpkdocs-fieldsets-page__container">
+      <div className={getClassName('bpkdocs-fieldsets-page__container')}>
         <BpkFieldset
-          className="bpkdocs-fieldsets-page__fieldset"
+          className={getClassName('bpkdocs-fieldsets-page__fieldset')}
           isCheckbox={isCheckbox}
           valid={valid}
           {...rest}
         >
           {clonedChildren}
         </BpkFieldset>
-        <div className="bpkdocs-fieldsets-page__toggle">
+        <div className={getClassName('bpkdocs-fieldsets-page__toggle')}>
           <BpkButton onClick={this.toggleStates}>Toggle states</BpkButton>
         </div>
       </div>

@@ -9,6 +9,7 @@ import BpkRouterLink from 'bpk-component-router-link';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 import BpkFormValidation from 'bpk-component-form-validation';
 import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert';
+import { cssModules } from 'bpk-react-utils';
 
 import inputReadme from 'bpk-component-input/readme.md';
 import labelReadme from 'bpk-component-label/readme.md';
@@ -18,17 +19,28 @@ import textareaReadme from 'bpk-component-textarea/readme.md';
 import checkboxReadme from 'bpk-component-checkbox/readme.md';
 import validationReadme from 'bpk-component-form-validation/readme.md';
 
-import './forms-page.scss';
+import STYLES from './forms-page.scss';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import InputContainer from './InputContainer';
 import RadioContainer from './RadioContainer';
 
+const getClassName = cssModules(STYLES);
 const loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
 
 const loremIpsumLong = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate repellat assumenda
 necessitatibus reiciendis, porro temporibus expedita excepturi! Nostrum pariatur odit porro, dolorem dignissimos
 laudantium quis, tempore iste non, nam magnam.`;
+
+const formClassName = getClassName('bpkdocs-forms-page__form');
+const placeClassName = getClassName('bpkdocs-forms-page__place');
+const dateClassName = getClassName('bpkdocs-forms-page__date');
+const numberClassName = getClassName('bpkdocs-forms-page__number');
+const timeClassName = getClassName('bpkdocs-forms-page__time');
+const destinationClassName = getClassName('bpkdocs-forms-page__hotels-destination');
+const pickupClassName = getClassName('bpkdocs-forms-page__car-hire-pickup-location');
+const containerClassName = ['bpkdocs-forms-page__form', 'bpkdocs-forms-page__form--desktop-only']
+  .map(getClassName).join(' ');
 
 const components = [
   {
@@ -42,7 +54,7 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="input">Input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
@@ -53,7 +65,7 @@ const components = [
           onChange={() => null}
         />
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="input_placeholder">Input (placeholder)</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
@@ -64,7 +76,7 @@ const components = [
           onChange={() => null}
         />
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="input_valid">Valid input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
@@ -76,7 +88,7 @@ const components = [
           valid
         />
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="input_invalid">Invalid input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
@@ -88,7 +100,7 @@ const components = [
           valid={false}
         />
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="input_disabled" disabled>Disabled input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
@@ -100,7 +112,7 @@ const components = [
           disabled
         />
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="input_email">Email input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
@@ -112,7 +124,7 @@ const components = [
           onChange={() => null}
         />
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="input_number">Number input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
@@ -124,7 +136,7 @@ const components = [
           onChange={() => null}
         />
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="input_password">Password input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
@@ -136,7 +148,7 @@ const components = [
           onChange={() => null}
         />
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="input_telephone">Telephone input</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
@@ -161,7 +173,7 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="select">Select</BpkLabel>
         <InputContainer
           FormComponent={BpkSelect}
@@ -176,7 +188,7 @@ const components = [
           <option value="first">First class</option>
         </InputContainer>
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="select_invalid">Invalid select</BpkLabel>
         <InputContainer
           FormComponent={BpkSelect}
@@ -193,7 +205,7 @@ const components = [
           <option value="first">First class</option>
         </InputContainer>
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="select_disabled" disabled>Disabled select</BpkLabel>
         <InputContainer
           FormComponent={BpkSelect}
@@ -217,18 +229,18 @@ const components = [
     title: 'Docked inputs & selects',
     blurb: 'Both inputs and selects can be docked together to build a one-line form.',
     examples: [
-      <div className="bpkdocs-forms-page__viewport-alert">
+      <div className={getClassName('bpkdocs-forms-page__viewport-alert')}>
         <BpkBannerAlert
           type={ALERT_TYPES.WARN}
           message="These are only suitable for larger viewports - try viewing on a desktop device."
         />
       </div>,
-      <form className="bpkdocs-forms-page__form bpkdocs-forms-page__form--desktop-only">
+      <form className={containerClassName}>
         <div>
-          <BpkLabel htmlFor="input_origin" className="bpkdocs-forms-page__place">From</BpkLabel>
-          <BpkLabel htmlFor="input_destination" className="bpkdocs-forms-page__place">To</BpkLabel>
-          <BpkLabel htmlFor="input_outbound" className="bpkdocs-forms-page__date">Depart</BpkLabel>
-          <BpkLabel htmlFor="input_inbound" className="bpkdocs-forms-page__date">Return</BpkLabel>
+          <BpkLabel htmlFor="input_origin" className={placeClassName}>From</BpkLabel>
+          <BpkLabel htmlFor="input_destination" className={placeClassName}>To</BpkLabel>
+          <BpkLabel htmlFor="input_outbound" className={dateClassName}>Depart</BpkLabel>
+          <BpkLabel htmlFor="input_inbound" className={dateClassName}>Return</BpkLabel>
         </div>
         <div>
           <InputContainer
@@ -238,7 +250,7 @@ const components = [
             value="Edinburgh"
             placeholder="Country, city or airport"
             onChange={() => null}
-            className="bpkdocs-forms-page__place"
+            className={placeClassName}
             docked
             large
           />
@@ -249,7 +261,7 @@ const components = [
             value=""
             placeholder="Country, city or airport"
             onChange={() => null}
-            className="bpkdocs-forms-page__place"
+            className={placeClassName}
             docked
             large
           />
@@ -260,7 +272,7 @@ const components = [
             value={new Date().toLocaleDateString()}
             placeholder="Country, city or airport"
             onChange={() => null}
-            className="bpkdocs-forms-page__date"
+            className={dateClassName}
             docked
             large
           />
@@ -271,24 +283,24 @@ const components = [
             value={new Date(new Date().getTime() + (24 * 60 * 60 * 1000)).toLocaleDateString()}
             placeholder="Country, city or airport"
             onChange={() => null}
-            className="bpkdocs-forms-page__date"
+            className={dateClassName}
             docked
             large
           />
         </div>
       </form>,
-      <form className="bpkdocs-forms-page__form bpkdocs-forms-page__form--desktop-only">
+      <form className={containerClassName}>
         <div>
           <BpkLabel
             htmlFor="input_hotels_destination"
-            className="bpkdocs-forms-page__hotels-destination"
+            className={destinationClassName}
           >
             Find hotel deals
           </BpkLabel>
-          <BpkLabel htmlFor="input_checkin" className="bpkdocs-forms-page__date">Check-in</BpkLabel>
-          <BpkLabel htmlFor="input_checkout" className="bpkdocs-forms-page__date">Check-out</BpkLabel>
-          <BpkLabel htmlFor="input_guests" className="bpkdocs-forms-page__number">Guests</BpkLabel>
-          <BpkLabel htmlFor="input_rooms" className="bpkdocs-forms-page__number">Rooms</BpkLabel>
+          <BpkLabel htmlFor="input_checkin" className={dateClassName}>Check-in</BpkLabel>
+          <BpkLabel htmlFor="input_checkout" className={dateClassName}>Check-out</BpkLabel>
+          <BpkLabel htmlFor="input_guests" className={numberClassName}>Guests</BpkLabel>
+          <BpkLabel htmlFor="input_rooms" className={numberClassName}>Rooms</BpkLabel>
         </div>
         <div>
           <InputContainer
@@ -298,7 +310,7 @@ const components = [
             value=""
             placeholder="Destination or hotel name"
             onChange={() => null}
-            className="bpkdocs-forms-page__hotels-destination"
+            className={destinationClassName}
             docked
             large
           />
@@ -309,7 +321,7 @@ const components = [
             value={new Date().toLocaleDateString()}
             placeholder=""
             onChange={() => null}
-            className="bpkdocs-forms-page__date"
+            className={dateClassName}
             docked
             large
           />
@@ -320,7 +332,7 @@ const components = [
             value={new Date(new Date().getTime() + (24 * 60 * 60 * 1000)).toLocaleDateString()}
             placeholder=""
             onChange={() => null}
-            className="bpkdocs-forms-page__date"
+            className={dateClassName}
             docked
             large
           />
@@ -330,7 +342,7 @@ const components = [
             name="input_guests"
             value="2"
             onChange={() => null}
-            className="bpkdocs-forms-page__number"
+            className={numberClassName}
             docked
             large
           >
@@ -345,7 +357,7 @@ const components = [
             name="input_rooms"
             value="1"
             onChange={() => null}
-            className="bpkdocs-forms-page__number"
+            className={numberClassName}
             docked
             large
           >
@@ -356,18 +368,18 @@ const components = [
           </InputContainer>
         </div>
       </form>,
-      <form className="bpkdocs-forms-page__form bpkdocs-forms-page__form--desktop-only">
+      <form className={containerClassName}>
         <div>
           <BpkLabel
             htmlFor="input_pickup_location"
-            className="bpkdocs-forms-page__car-hire-pickup-location"
+            className={pickupClassName}
           >
             Pick-up location
           </BpkLabel>
-          <BpkLabel htmlFor="input_pickup_date" className="bpkdocs-forms-page__date">Pick-up date</BpkLabel>
-          <BpkLabel htmlFor="input_pickup_time" className="bpkdocs-forms-page__time">Pick-up time</BpkLabel>
-          <BpkLabel htmlFor="input_dropoff_date" className="bpkdocs-forms-page__date">Drop-off date</BpkLabel>
-          <BpkLabel htmlFor="input_dropoff_time" className="bpkdocs-forms-page__time">Drop-off time</BpkLabel>
+          <BpkLabel htmlFor="input_pickup_date" className={dateClassName}>Pick-up date</BpkLabel>
+          <BpkLabel htmlFor="input_pickup_time" className={timeClassName}>Pick-up time</BpkLabel>
+          <BpkLabel htmlFor="input_dropoff_date" className={dateClassName}>Drop-off date</BpkLabel>
+          <BpkLabel htmlFor="input_dropoff_time" className={timeClassName}>Drop-off time</BpkLabel>
         </div>
         <div>
           <InputContainer
@@ -377,7 +389,7 @@ const components = [
             value=""
             placeholder="City or airport"
             onChange={() => null}
-            className="bpkdocs-forms-page__car-hire-pickup-location"
+            className={pickupClassName}
             docked
             large
           />
@@ -388,7 +400,7 @@ const components = [
             value={new Date().toLocaleDateString()}
             placeholder=""
             onChange={() => null}
-            className="bpkdocs-forms-page__date"
+            className={dateClassName}
             docked
             large
           />
@@ -399,7 +411,7 @@ const components = [
             value="10:00"
             placeholder=""
             onChange={() => null}
-            className="bpkdocs-forms-page__time"
+            className={timeClassName}
             docked
             large
           >
@@ -415,7 +427,7 @@ const components = [
             value={new Date(new Date().getTime() + (24 * 60 * 60 * 1000)).toLocaleDateString()}
             placeholder=""
             onChange={() => null}
-            className="bpkdocs-forms-page__date"
+            className={dateClassName}
             docked
             large
           />
@@ -425,7 +437,7 @@ const components = [
             name="input_dropoff_time"
             value="10:00"
             onChange={() => null}
-            className="bpkdocs-forms-page__time"
+            className={timeClassName}
             docked
             large
           >
@@ -448,7 +460,7 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="textarea">Textarea</BpkLabel>
         <InputContainer
           FormComponent={BpkTextarea}
@@ -459,7 +471,7 @@ const components = [
           onChange={() => null}
         />
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="textarea_placeholder">Textarea (placeholder)</BpkLabel>
         <InputContainer
           FormComponent={BpkTextarea}
@@ -470,7 +482,7 @@ const components = [
           onChange={() => null}
         />
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <BpkLabel htmlFor="textarea_disabled" disabled>Disabled textarea</BpkLabel>
         <InputContainer
           FormComponent={BpkTextarea}
@@ -495,7 +507,7 @@ const components = [
       </BpkParagraph>,
     ],
     examples: [
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <InputContainer
           FormComponent={BpkCheckbox}
           name="checkbox"
@@ -503,7 +515,7 @@ const components = [
           checked
         />
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <InputContainer
           FormComponent={BpkCheckbox}
           name="unchecked_checkbox"
@@ -511,7 +523,7 @@ const components = [
           checked={false}
         />
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <InputContainer
           FormComponent={BpkCheckbox}
           name="disabled_checkbox"
@@ -519,7 +531,7 @@ const components = [
           disabled
         />
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <InputContainer
           FormComponent={BpkCheckbox}
           name="disabled_checked_checkbox"
@@ -528,7 +540,7 @@ const components = [
           checked
         />
       </form>,
-      <form className="bpkdocs-forms-page__form">
+      <form className={formClassName}>
         <InputContainer
           FormComponent={BpkCheckbox}
           name="small_checkbox"

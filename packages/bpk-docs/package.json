@@ -57,6 +57,7 @@
     "bpk-component-ticket": "^0.1.2",
     "bpk-component-tooltip": "^1.1.2",
     "bpk-mixins": "^15.6.1",
+    "bpk-react-utils": "^2.0.1",
     "bpk-stylesheets": "^3.2.40",
     "bpk-svgs": "^5.5.1",
     "bpk-tokens": "^23.2.2",

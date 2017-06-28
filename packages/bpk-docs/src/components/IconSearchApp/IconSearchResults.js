@@ -1,10 +1,13 @@
 import _ from 'lodash';
 import React from 'react';
 import BpkHeading from 'bpk-component-heading';
+import { cssModules } from 'bpk-react-utils';
 
-import './IconSearchResults.scss';
+import STYLES from './IconSearchResults.scss';
 import customPropTypes from './propTypes';
 import IconSearchResult from './IconSearchResult';
+
+const getClassName = cssModules(STYLES);
 
 const IconSearchResults = (props) => {
   const categories = _.groupBy(props.icons, 'categoryName');
@@ -12,8 +15,8 @@ const IconSearchResults = (props) => {
 
   return (
     <div>
-      <BpkHeading level="h3" className="bpkdocs-icon-search-results__heading">Results</BpkHeading>
-      <dl className="bpkdocs-icon-search-results__list">
+      <BpkHeading level="h3" className={getClassName('bpkdocs-icon-search-results__heading')}>Results</BpkHeading>
+      <dl className={getClassName('bpkdocs-icon-search-results__list')}>
         {categoryNames.length > 0
           ? categoryNames.map(categoryName => (
             <IconSearchResult

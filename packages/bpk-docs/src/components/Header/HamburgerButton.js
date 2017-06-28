@@ -3,14 +3,17 @@ import PropTypes from 'prop-types';
 import MenuIcon from 'bpk-component-icon/sm/menu';
 import CloseIcon from 'bpk-component-icon/sm/close';
 import { withButtonAlignment } from 'bpk-component-icon';
+import { cssModules } from 'bpk-react-utils';
 
-import './HamburgerButton.scss';
+import STYLES from './HamburgerButton.scss';
+
+const getClassName = cssModules(STYLES);
 
 const CloseButtonIcon = withButtonAlignment(CloseIcon);
 const MenuButtonIcon = withButtonAlignment(MenuIcon);
 
 const HamburgerButton = (props) => {
-  const classNames = ['bpkdocs-hamburger-button'];
+  const classNames = [getClassName('bpkdocs-hamburger-button')];
   const { expanded, onClick, className, ...rest } = props;
 
   if (className) { classNames.push(className); }

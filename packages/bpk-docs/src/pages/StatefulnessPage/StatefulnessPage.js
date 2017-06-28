@@ -3,10 +3,12 @@ import BpkParagraph from 'bpk-component-paragraph';
 import BpkHeading from 'bpk-component-heading';
 import BpkLink from 'bpk-component-link';
 import { BpkList, BpkListItem } from 'bpk-component-list';
+import { cssModules } from 'bpk-react-utils';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
-import './statefulness-page.scss';
+import STYLES from './statefulness-page.scss';
 
+const getClassName = cssModules(STYLES);
 const ScottHurffLink = 'http://scotthurff.com/dppl/';
 
 const StatefulnessPage = () => <DocsPageBuilder
@@ -92,12 +94,42 @@ const StatefulnessPage = () => <DocsPageBuilder
     <BpkParagraph>
       As a general rule of thumb, the more you interact with something the darker it should appear in colour e.g.
     </BpkParagraph>,
-    <section className="bpkdocs-statefulness-page__states">
-      <div className="bpkdocs-statefulness-page__state-example bpkdocs-statefulness-page__state-normal">Normal</div>
-      <div className="bpkdocs-statefulness-page__state-example bpkdocs-statefulness-page__state-hover">Hover</div>
-      <div className="bpkdocs-statefulness-page__state-example bpkdocs-statefulness-page__state-active">Active</div>
-      <div className="bpkdocs-statefulness-page__state-example bpkdocs-statefulness-page__state-focussed">Focussed</div>
-      <div className="bpkdocs-statefulness-page__state-example bpkdocs-statefulness-page__state-selected">Selected</div>
+    <section className={getClassName('bpkdocs-statefulness-page__states')}>
+      <div
+        className={
+          ['bpkdocs-statefulness-page__state-example', 'bpkdocs-statefulness-page__state-normal']
+            .map(getClassName)
+            .join(' ')
+        }
+      >Normal</div>
+      <div
+        className={
+          ['bpkdocs-statefulness-page__state-example', 'bpkdocs-statefulness-page__state-hover']
+            .map(getClassName)
+            .join(' ')
+        }
+      >Hover</div>
+      <div
+        className={
+          ['bpkdocs-statefulness-page__state-example', 'bpkdocs-statefulness-page__state-active']
+            .map(getClassName)
+            .join(' ')
+        }
+      >Active</div>
+      <div
+        className={
+          ['bpkdocs-statefulness-page__state-example', 'bpkdocs-statefulness-page__state-focussed']
+            .map(getClassName)
+            .join(' ')
+        }
+      >Focussed</div>
+      <div
+        className={
+          ['bpkdocs-statefulness-page__state-example', 'bpkdocs-statefulness-page__state-selected']
+            .map(getClassName)
+            .join(' ')
+        }
+      >Selected</div>
     </section>,
   ]}
 />;

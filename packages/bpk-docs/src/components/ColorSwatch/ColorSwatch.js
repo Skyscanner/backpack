@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './color-swatch.scss';
+import STYLES from './color-swatch.scss';
+
+const getClassName = cssModules(STYLES);
 
 const ColorSwatch = (props) => {
   const style = {
@@ -9,10 +12,10 @@ const ColorSwatch = (props) => {
     backgroundImage: props.gradient,
   };
 
-  const classNames = ['bpkdocs-color-swatch'];
+  const classNames = [getClassName('bpkdocs-color-swatch')];
 
-  if (props.whiteColor) { classNames.push('bpkdocs-color-swatch--light'); }
-  if (props.border) { classNames.push('bpkdocs-color-swatch--border'); }
+  if (props.whiteColor) { classNames.push(getClassName('bpkdocs-color-swatch--light')); }
+  if (props.border) { classNames.push(getClassName('bpkdocs-color-swatch--border')); }
 
   return <div style={style} className={classNames.join(' ')}>{props.name}</div>;
 };

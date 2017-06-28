@@ -1,16 +1,18 @@
-
 import React from 'react';
 import { Link } from 'react-router';
+import { cssModules } from 'bpk-react-utils';
 
-import './side-nav-layout.scss';
+import STYLES from './nav-list.scss';
 import { linkPropType, linksPropType, categoryPropType } from './sideNavPropTypes';
+
+const getClassName = cssModules(STYLES);
 
 const NavLink = (props) => {
   if (props.link.route) {
     return (
       <Link
-        className="bpkdocs-side-nav-layout__link"
-        activeClassName="bpkdocs-side-nav-layout__link--active"
+        className={getClassName('bpkdocs-side-nav-list__link')}
+        activeClassName={getClassName('bpkdocs-side-nav-list__link--active')}
         to={props.link.route}
       >
         {props.link.children}
@@ -18,7 +20,7 @@ const NavLink = (props) => {
     );
   }
 
-  return <span className="bpkdocs-side-nav-layout__pending-link">{props.link.children}</span>;
+  return <span className={getClassName('bpkdocs-side-nav-list__pending-link')}>{props.link.children}</span>;
 };
 
 NavLink.propTypes = {
@@ -26,7 +28,7 @@ NavLink.propTypes = {
 };
 
 const NavListItem = props => (
-  <li className="bpkdocs-side-nav-layout__nav-category-list-item">
+  <li className={getClassName('bpkdocs-side-nav-list__category-list-item')}>
     <NavLink link={props.link} />
   </li>
 );
@@ -36,9 +38,9 @@ NavListItem.propTypes = {
 };
 
 const NavListCategory = props => (
-  <li className="bpkdocs-side-nav-layout__nav-list-item">
-    <span className="bpkdocs-side-nav-layout__nav-category-name">{props.link.category}</span>
-    <ul className="bpkdocs-side-nav-layout__nav-category-list">
+  <li className={getClassName('bpkdocs-side-nav-list__list-item')}>
+    <span className={getClassName('bpkdocs-side-nav-list__category-name')}>{props.link.category}</span>
+    <ul className={getClassName('bpkdocs-side-nav-list__category-list')}>
       {props.link.links.map(link => <NavListItem key={link.id} link={link} />)}
     </ul>
   </li>
@@ -49,7 +51,7 @@ NavListCategory.propTypes = {
 };
 
 const NavList = props => (
-  <ul className="bpkdocs-side-nav-layout__nav-list">
+  <ul className={getClassName('bpkdocs-side-nav-list__list')}>
     {props.links.map(
       link => (link.category
         ? <NavListCategory key={link.id} link={link} />

@@ -5,10 +5,13 @@ import BpkParagraph from 'bpk-component-paragraph';
 import BpkRouterLink from 'bpk-component-router-link';
 import tooltipReadme from 'bpk-component-tooltip/readme.md';
 import { spacingSm, colorGreen500 } from 'bpk-tokens/tokens/base.es6';
+import { cssModules } from 'bpk-react-utils';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import './tooltips-page.scss';
+import STYLES from './tooltips-page.scss';
+
+const getClassName = cssModules(STYLES);
 
 const components = [
   {
@@ -22,7 +25,7 @@ const components = [
     examples: [
       <BpkTooltip
         id="my-tooltip"
-        target={<BpkHeading level="h3" className="bpkdocs-tooltips-page__heading">LHR</BpkHeading>}
+        target={<BpkHeading level="h3" className={getClassName('bpkdocs-tooltips-page__heading')}>LHR</BpkHeading>}
       >
         London Heathrow
       </BpkTooltip>,
@@ -49,7 +52,7 @@ const components = [
             },
           ],
         }}
-        target={<BpkHeading level="h3" className="bpkdocs-tooltips-page__heading">EDI</BpkHeading>}
+        target={<BpkHeading level="h3" className={getClassName('bpkdocs-tooltips-page__heading')}>EDI</BpkHeading>}
       >
         Edinburgh
       </BpkTooltip>,
@@ -71,7 +74,7 @@ const components = [
       <BpkTooltip
         id="my-tooltip-3"
         padded={false}
-        target={<BpkHeading level="h3" className="bpkdocs-tooltips-page__heading">JFK</BpkHeading>}
+        target={<BpkHeading level="h3" className={getClassName('bpkdocs-tooltips-page__heading')}>JFK</BpkHeading>}
       >
         <div
           style={{

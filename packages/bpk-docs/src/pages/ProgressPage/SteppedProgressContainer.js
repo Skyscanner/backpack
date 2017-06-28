@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import BpkProgress from 'bpk-component-progress';
 import BpkButton from 'bpk-component-button';
+import { cssModules } from 'bpk-react-utils';
+
+import STYLES from './progress-container.scss';
+
+const getClassName = cssModules(STYLES);
 
 export default class SteppedProgressContainer extends Component {
   constructor() {
@@ -29,7 +34,7 @@ export default class SteppedProgressContainer extends Component {
           stepped
         />
         <br />
-        <div className="bpkdocs-progress-page__flex">
+        <div className={getClassName('bpkdocs-progress-container__flex')}>
           <BpkButton
             secondary
             onClick={() => this.setProgress(this.state.progress - 1)}

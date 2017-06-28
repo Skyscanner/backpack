@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { cssModules } from 'bpk-react-utils';
 
-import './grid-demo-pages.scss';
+import STYLES from './grid-demo-pages.scss';
+
+const getClassName = cssModules(STYLES);
 
 const Lozenge = ({ children }) => (
-  <div className="bpkdocs-grid-demo-pages__lozenge">{children}</div>
+  <div className={getClassName('bpkdocs-grid-demo-pages__lozenge')}>{children}</div>
 );
 
 Lozenge.propTypes = {

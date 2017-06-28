@@ -2,10 +2,14 @@ import React from 'react';
 import BpkParagraph from 'bpk-component-paragraph';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import { colors, primaryGradient } from 'bpk-tokens/tokens/base.es6';
+import { cssModules } from 'bpk-react-utils';
 
-import './colors-page.scss';
+import STYLES from './colors-page.scss';
 import ColorSwatch from './../../components/ColorSwatch';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+
+const getClassName = cssModules(STYLES);
+const containerClassName = getClassName('bpkdocs-colors-page__swatch-container');
 
 const components = [
   {
@@ -16,7 +20,7 @@ const components = [
         Skyscanner’s primary brand colors are Blue-500 and White. All other colors in the palette are considered
         secondary to these.
       </BpkParagraph>,
-      <div className="bpkdocs-colors-page__swatch-container">
+      <div className={containerClassName}>
         <ColorSwatch name="color-blue-500" color={colors.colorBlue500} whiteColor />
         <ColorSwatch name="color-white" color={colors.colorWhite} border />
       </div>,
@@ -44,7 +48,7 @@ const components = [
       <BpkParagraph>
         The following colors are used in conjunction with the above and should always be used sparingly.
       </BpkParagraph>,
-      <div className="bpkdocs-colors-page__swatch-container">
+      <div className={containerClassName}>
         <ColorSwatch name="color-green-500" color={colors.colorGreen500} whiteColor />
         <ColorSwatch name="color-yellow-500" color={colors.colorYellow500} />
         <ColorSwatch name="color-red-500" color={colors.colorRed500} whiteColor />
@@ -64,7 +68,7 @@ const components = [
         The gray palette has been carefully considered to work in a broad range of situations and be bold, yet subtle
         when required.
       </BpkParagraph>,
-      <div className="bpkdocs-colors-page__swatch-container">
+      <div className={containerClassName}>
         <ColorSwatch name="color-gray-50" color={colors.colorGray50} />
         <ColorSwatch name="color-gray-100" color={colors.colorGray100} />
         <ColorSwatch name="color-gray-300" color={colors.colorGray300} whiteColor />
@@ -96,7 +100,7 @@ const components = [
       <BpkParagraph>
         An optional gradient can be used to break up large swathes of blue. However, this should be used sparingly.
       </BpkParagraph>,
-      <div className="bpkdocs-colors-page__swatch-container">
+      <div className={containerClassName}>
         <ColorSwatch name="primary-gradient" gradient={primaryGradient} whiteColor />
       </div>,
     ],
