@@ -37,6 +37,7 @@ window.bagCheckLatestLoaded = (latest) => {
 
   document.getElementsByTagName('head')[0].appendChild(link);
   document.getElementsByTagName('body')[0].appendChild(script);
+  delete window.bagCheckLatestLoaded;
 };
 
 // Start
