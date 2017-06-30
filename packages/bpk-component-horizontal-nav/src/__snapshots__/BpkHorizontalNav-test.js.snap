@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkHorizontalNav should render correctly 1`] = `
 <div
   className="bpk-mobile-scroll-container bpk-horizontal-nav"
@@ -5,14 +7,18 @@ exports[`BpkHorizontalNav should render correctly 1`] = `
     Object {
       "height": "auto",
     }
-  }>
+  }
+>
   <div
     className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}>
+    onScroll={[Function]}
+  >
     <nav
-      className="bpk-mobile-scroll-container__inner">
+      className="bpk-mobile-scroll-container__inner"
+    >
       <ul
-        className="bpk-horizontal-nav__list">
+        className="bpk-horizontal-nav__list"
+      >
         My nav content.
       </ul>
     </nav>
@@ -29,14 +35,18 @@ exports[`BpkHorizontalNav should render correctly with arbitrary props 1`] = `
     Object {
       "height": "auto",
     }
-  }>
+  }
+>
   <div
     className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}>
+    onScroll={[Function]}
+  >
     <nav
-      className="bpk-mobile-scroll-container__inner">
+      className="bpk-mobile-scroll-container__inner"
+    >
       <ul
-        className="bpk-horizontal-nav__list">
+        className="bpk-horizontal-nav__list"
+      >
         My nav content.
       </ul>
     </nav>
@@ -51,14 +61,18 @@ exports[`BpkHorizontalNav should render correctly with custom "className" prop 1
     Object {
       "height": "auto",
     }
-  }>
+  }
+>
   <div
     className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}>
+    onScroll={[Function]}
+  >
     <nav
-      className="bpk-mobile-scroll-container__inner">
+      className="bpk-mobile-scroll-container__inner"
+    >
       <ul
-        className="bpk-horizontal-nav__list">
+        className="bpk-horizontal-nav__list"
+      >
         My nav content.
       </ul>
     </nav>

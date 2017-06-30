@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkFormValidation should render correctly 1`] = `
 <div
   onTransitionEnd={[Function]}
@@ -11,13 +13,16 @@ exports[`BpkFormValidation should render correctly 1`] = `
       "overflow": "visible",
       "transition": "height 200ms ease ",
     }
-  }>
+  }
+>
   <div>
     <div
-      className="bpk-form-validation__container">
+      className="bpk-form-validation__container"
+    >
       <div
         className="bpk-form-validation bpk-form-validation--appear"
-        id="my-form-validation">
+        id="my-form-validation"
+      >
         A validation message.
       </div>
     </div>
@@ -38,13 +43,16 @@ exports[`BpkFormValidation should render correctly with "expanded" equal to fals
       "overflow": "visible",
       "transition": "height 200ms ease ",
     }
-  }>
+  }
+>
   <div>
     <div
-      className="bpk-form-validation__container">
+      className="bpk-form-validation__container"
+    >
       <div
         className="bpk-form-validation"
-        id="my-form-validation">
+        id="my-form-validation"
+      >
         A validation message.
       </div>
     </div>

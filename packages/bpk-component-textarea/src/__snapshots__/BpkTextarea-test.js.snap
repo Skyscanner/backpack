@@ -1,9 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkTextarea should render correctly 1`] = `
 <textarea
   className="bpk-textarea"
   id="test"
   name="test"
-  value="" />
+  value=""
+/>
 `;
 
 exports[`BpkTextarea should render correctly with "className" attribute 1`] = `
@@ -11,5 +14,6 @@ exports[`BpkTextarea should render correctly with "className" attribute 1`] = `
   className="bpk-textarea my-custom-class-1 my-custom-class-2"
   id="test"
   name="test"
-  value="" />
+  value=""
+/>
 `;

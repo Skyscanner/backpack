@@ -1,9 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkLink should render correctly with a "blank" attribute 1`] = `
 <a
   className="bpk-link"
   href="#"
   onClick={null}
-  target="_blank">
+  target="_blank"
+>
   Link (new window)
 </a>
 `;
@@ -13,7 +16,8 @@ exports[`BpkLink should render correctly with a "className" attribute 1`] = `
   className="bpk-link test-class"
   href="#"
   onClick={null}
-  target={null}>
+  target={null}
+>
   Link
 </a>
 `;
@@ -23,7 +27,8 @@ exports[`BpkLink should render correctly with a "href" attribute 1`] = `
   className="bpk-link"
   href="#"
   onClick={null}
-  target={null}>
+  target={null}
+>
   Link
 </a>
 `;
@@ -33,7 +38,8 @@ exports[`BpkLink should render correctly with a "white" attribute 1`] = `
   className="bpk-link bpk-link--white"
   href="#"
   onClick={null}
-  target={null}>
+  target={null}
+>
   Link
 </a>
 `;
@@ -44,7 +50,8 @@ exports[`BpkLink should render correctly with arbitrary attributes 1`] = `
   href="#"
   id="test-id"
   onClick={null}
-  target={null}>
+  target={null}
+>
   Link
 </a>
 `;

@@ -1,13 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkCheckbox should render correctly 1`] = `
 <label
-  className="bpk-checkbox">
+  className="bpk-checkbox"
+>
   <input
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
-    type="checkbox" />
+    type="checkbox"
+  />
   <span
-    className="bpk-checkbox__label">
+    className="bpk-checkbox__label"
+  >
     Prefer directs
   </span>
 </label>
@@ -15,14 +20,17 @@ exports[`BpkCheckbox should render correctly 1`] = `
 
 exports[`BpkCheckbox should render correctly with a small label 1`] = `
 <label
-  className="bpk-checkbox">
+  className="bpk-checkbox"
+>
   <input
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
-    type="checkbox" />
+    type="checkbox"
+  />
   <span
-    className="bpk-checkbox__label bpk-checkbox__label--small">
+    className="bpk-checkbox__label bpk-checkbox__label--small"
+  >
     Prefer directs
   </span>
 </label>
@@ -30,15 +38,18 @@ exports[`BpkCheckbox should render correctly with a small label 1`] = `
 
 exports[`BpkCheckbox should render correctly with checked attribute 1`] = `
 <label
-  className="bpk-checkbox">
+  className="bpk-checkbox"
+>
   <input
     checked={true}
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
-    type="checkbox" />
+    type="checkbox"
+  />
   <span
-    className="bpk-checkbox__label">
+    className="bpk-checkbox__label"
+  >
     Prefer directs
   </span>
 </label>
@@ -46,14 +57,17 @@ exports[`BpkCheckbox should render correctly with checked attribute 1`] = `
 
 exports[`BpkCheckbox should render correctly with disabled attribute 1`] = `
 <label
-  className="bpk-checkbox bpk-checkbox--disabled">
+  className="bpk-checkbox bpk-checkbox--disabled"
+>
   <input
     className="bpk-checkbox__input"
     disabled={true}
     name="checkbox"
-    type="checkbox" />
+    type="checkbox"
+  />
   <span
-    className="bpk-checkbox__label">
+    className="bpk-checkbox__label"
+  >
     Prefer directs
   </span>
 </label>
@@ -61,15 +75,18 @@ exports[`BpkCheckbox should render correctly with disabled attribute 1`] = `
 
 exports[`BpkCheckbox should render correctly with id attribute 1`] = `
 <label
-  className="bpk-checkbox">
+  className="bpk-checkbox"
+>
   <input
     className="bpk-checkbox__input"
     disabled={false}
     id="checkbox"
     name="checkbox"
-    type="checkbox" />
+    type="checkbox"
+  />
   <span
-    className="bpk-checkbox__label">
+    className="bpk-checkbox__label"
+  >
     Prefer directs
   </span>
 </label>
@@ -77,17 +94,21 @@ exports[`BpkCheckbox should render correctly with id attribute 1`] = `
 
 exports[`BpkCheckbox should render correctly with required attribute 1`] = `
 <label
-  className="bpk-checkbox">
+  className="bpk-checkbox"
+>
   <input
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
-    type="checkbox" />
+    type="checkbox"
+  />
   <span
-    className="bpk-checkbox__label">
+    className="bpk-checkbox__label"
+  >
     Prefer directs
     <span
-      className="bpk-checkbox__asterisk">
+      className="bpk-checkbox__asterisk"
+    >
       *
     </span>
   </span>
@@ -96,15 +117,18 @@ exports[`BpkCheckbox should render correctly with required attribute 1`] = `
 
 exports[`BpkCheckbox should render correctly with value attribute 1`] = `
 <label
-  className="bpk-checkbox">
+  className="bpk-checkbox"
+>
   <input
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
     type="checkbox"
-    value="my-value" />
+    value="my-value"
+  />
   <span
-    className="bpk-checkbox__label">
+    className="bpk-checkbox__label"
+  >
     Prefer directs
   </span>
 </label>
@@ -112,14 +136,17 @@ exports[`BpkCheckbox should render correctly with value attribute 1`] = `
 
 exports[`BpkCheckbox should render correctly with white attribute 1`] = `
 <label
-  className="bpk-checkbox bpk-checkbox--white">
+  className="bpk-checkbox bpk-checkbox--white"
+>
   <input
     className="bpk-checkbox__input"
     disabled={false}
     name="checkbox"
-    type="checkbox" />
+    type="checkbox"
+  />
   <span
-    className="bpk-checkbox__label">
+    className="bpk-checkbox__label"
+  >
     Prefer directs
   </span>
 </label>

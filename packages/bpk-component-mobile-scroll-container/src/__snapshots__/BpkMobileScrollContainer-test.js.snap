@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkMobileScrollContainer should render correctly 1`] = `
 <div
   className="bpk-mobile-scroll-container"
@@ -5,12 +7,15 @@ exports[`BpkMobileScrollContainer should render correctly 1`] = `
     Object {
       "height": "auto",
     }
-  }>
+  }
+>
   <div
     className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}>
+    onScroll={[Function]}
+  >
     <div
-      className="bpk-mobile-scroll-container__inner">
+      className="bpk-mobile-scroll-container__inner"
+    >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </div>
   </div>
@@ -24,12 +29,15 @@ exports[`BpkMobileScrollContainer should render correctly with a custom "classNa
     Object {
       "height": "auto",
     }
-  }>
+  }
+>
   <div
     className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}>
+    onScroll={[Function]}
+  >
     <div
-      className="bpk-mobile-scroll-container__inner">
+      className="bpk-mobile-scroll-container__inner"
+    >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </div>
   </div>
@@ -44,12 +52,15 @@ exports[`BpkMobileScrollContainer should render correctly with a custom "style" 
       "backgroundColor": "red",
       "height": "auto",
     }
-  }>
+  }
+>
   <div
     className="bpk-mobile-scroll-container__scroller"
-    onScroll={[Function]}>
+    onScroll={[Function]}
+  >
     <div
-      className="bpk-mobile-scroll-container__inner">
+      className="bpk-mobile-scroll-container__inner"
+    >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </div>
   </div>

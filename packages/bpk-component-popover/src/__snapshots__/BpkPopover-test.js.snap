@@ -1,31 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkPopover should render correctly 1`] = `
 <section
   aria-labelledby="bpk-popover-label-my-popover"
   className="bpk-popover"
   id="my-popover"
   role="dialog"
-  tabIndex="-1">
+  tabIndex="-1"
+>
   <span
     className="bpk-popover__arrow"
     id="js-bpk-popover-arrow"
-    role="presentation" />
+    role="presentation"
+  />
   <div
-    className="bpk-popover__inner">
+    className="bpk-popover__inner"
+  >
     <span
       className="bpk-popover__label"
-      id="bpk-popover-label-my-popover">
+      id="bpk-popover-label-my-popover"
+    >
       My popover
     </span>
     <div
-      className="bpk-popover__body--padded">
+      className="bpk-popover__body--padded"
+    >
       My popover content
     </div>
     <footer
-      className="bpk-popover__footer">
+      className="bpk-popover__footer"
+    >
       <button
         className="bpk-link"
         onClick={[Function]}
-        type="button">
+        type="button"
+      >
         Close
       </button>
     </footer>
@@ -39,28 +48,35 @@ exports[`BpkPopover should render correctly with "className" attribute 1`] = `
   className="bpk-popover my-custom-class"
   id="my-popover"
   role="dialog"
-  tabIndex="-1">
+  tabIndex="-1"
+>
   <span
     className="bpk-popover__arrow"
     id="js-bpk-popover-arrow"
-    role="presentation" />
+    role="presentation"
+  />
   <div
-    className="bpk-popover__inner">
+    className="bpk-popover__inner"
+  >
     <span
       className="bpk-popover__label"
-      id="bpk-popover-label-my-popover">
+      id="bpk-popover-label-my-popover"
+    >
       My popover
     </span>
     <div
-      className="bpk-popover__body--padded">
+      className="bpk-popover__body--padded"
+    >
       My popover content
     </div>
     <footer
-      className="bpk-popover__footer">
+      className="bpk-popover__footer"
+    >
       <button
         className="bpk-link"
         onClick={[Function]}
-        type="button">
+        type="button"
+      >
         Close
       </button>
     </footer>
@@ -74,18 +90,23 @@ exports[`BpkPopover should render correctly with "labelAsTitle" attribute 1`] = 
   className="bpk-popover"
   id="my-popover"
   role="dialog"
-  tabIndex="-1">
+  tabIndex="-1"
+>
   <span
     className="bpk-popover__arrow"
     id="js-bpk-popover-arrow"
-    role="presentation" />
+    role="presentation"
+  />
   <div
-    className="bpk-popover__inner">
+    className="bpk-popover__inner"
+  >
     <header
-      className="bpk-popover__header">
+      className="bpk-popover__header"
+    >
       <h2
         className="bpk-popover__heading"
-        id="bpk-popover-label-my-popover">
+        id="bpk-popover-label-my-popover"
+      >
         My popover
       </h2>
        
@@ -94,7 +115,8 @@ exports[`BpkPopover should render correctly with "labelAsTitle" attribute 1`] = 
         className="bpk-close-button bpk-popover__close-button"
         onClick={[Function]}
         title="Close"
-        type="button">
+        type="button"
+      >
         <svg
           className="bpk-close-button__icon bpk-icon--align-to-button"
           height="18"
@@ -106,14 +128,17 @@ exports[`BpkPopover should render correctly with "labelAsTitle" attribute 1`] = 
           }
           viewBox="0 0 24 24"
           width="18"
-          xmlns="http://www.w3.org/2000/svg">
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
-            d="M14.8 12l4.9-4.9c.4-.4.4-1 0-1.4l-1.4-1.4c-.4-.4-1-.4-1.4 0L12 9.2l-4.9-5c-.4-.4-1-.4-1.4 0L4.2 5.6c-.4.4-.4 1 0 1.4l5 5-4.9 4.9c-.4.4-.4 1 0 1.4l1.4 1.4c.4.4 1 .4 1.4 0l4.9-4.9 4.9 4.9c.4.4 1 .4 1.4 0l1.4-1.4c.4-.4.4-1 0-1.4L14.8 12z" />
+            d="M14.8 12l4.9-4.9c.4-.4.4-1 0-1.4l-1.4-1.4c-.4-.4-1-.4-1.4 0L12 9.2l-4.9-5c-.4-.4-1-.4-1.4 0L4.2 5.6c-.4.4-.4 1 0 1.4l5 5-4.9 4.9c-.4.4-.4 1 0 1.4l1.4 1.4c.4.4 1 .4 1.4 0l4.9-4.9 4.9 4.9c.4.4 1 .4 1.4 0l1.4-1.4c.4-.4.4-1 0-1.4L14.8 12z"
+          />
         </svg>
       </button>
     </header>
     <div
-      className="bpk-popover__body--padded">
+      className="bpk-popover__body--padded"
+    >
       My popover content
     </div>
   </div>
@@ -126,28 +151,35 @@ exports[`BpkPopover should render correctly with "padded" attribute equal to fal
   className="bpk-popover"
   id="my-popover"
   role="dialog"
-  tabIndex="-1">
+  tabIndex="-1"
+>
   <span
     className="bpk-popover__arrow"
     id="js-bpk-popover-arrow"
-    role="presentation" />
+    role="presentation"
+  />
   <div
-    className="bpk-popover__inner">
+    className="bpk-popover__inner"
+  >
     <span
       className="bpk-popover__label"
-      id="bpk-popover-label-my-popover">
+      id="bpk-popover-label-my-popover"
+    >
       My popover
     </span>
     <div
-      className="">
+      className=""
+    >
       My popover content
     </div>
     <footer
-      className="bpk-popover__footer">
+      className="bpk-popover__footer"
+    >
       <button
         className="bpk-link"
         onClick={[Function]}
-        type="button">
+        type="button"
+      >
         Close
       </button>
     </footer>

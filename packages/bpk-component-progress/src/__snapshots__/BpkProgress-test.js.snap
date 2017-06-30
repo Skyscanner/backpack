@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkProgress should render correctly 1`] = `
 <div
   aria-valuemax={100}
@@ -6,7 +8,8 @@ exports[`BpkProgress should render correctly 1`] = `
   aria-valuetext={null}
   className="bpk-progress"
   role="progressbar"
-  tabIndex="0">
+  tabIndex="0"
+>
   <div
     className="bpk-progress__value"
     onTransitionEnd={[Function]}
@@ -14,7 +17,8 @@ exports[`BpkProgress should render correctly 1`] = `
       Object {
         "width": "25%",
       }
-    } />
+    }
+  />
 </div>
 `;
 
@@ -26,7 +30,8 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
   aria-valuetext={null}
   className="bpk-progress bpk-progress--small"
   role="progressbar"
-  tabIndex="0">
+  tabIndex="0"
+>
   <div
     className="bpk-progress__value"
     onTransitionEnd={[Function]}
@@ -34,7 +39,8 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
       Object {
         "width": "22.22222222222222%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -42,7 +48,8 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
         "backgroundColor": undefined,
         "left": "11.11111111111111%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -50,7 +57,8 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
         "backgroundColor": undefined,
         "left": "22.22222222222222%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -58,7 +66,8 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
         "backgroundColor": undefined,
         "left": "33.33333333333333%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -66,7 +75,8 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
         "backgroundColor": undefined,
         "left": "44.44444444444444%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -74,7 +84,8 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
         "backgroundColor": undefined,
         "left": "55.55555555555556%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -82,7 +93,8 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
         "backgroundColor": undefined,
         "left": "66.66666666666666%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -90,7 +102,8 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
         "backgroundColor": undefined,
         "left": "77.77777777777779%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -98,7 +111,8 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
         "backgroundColor": undefined,
         "left": "88.88888888888889%",
       }
-    } />
+    }
+  />
 </div>
 `;
 
@@ -110,7 +124,8 @@ exports[`BpkProgress should render correctly with a "className" attribute 1`] = 
   aria-valuetext={null}
   className="bpk-progress my-progress-bar"
   role="progressbar"
-  tabIndex="0">
+  tabIndex="0"
+>
   <div
     className="bpk-progress__value"
     onTransitionEnd={[Function]}
@@ -118,7 +133,8 @@ exports[`BpkProgress should render correctly with a "className" attribute 1`] = 
       Object {
         "width": "25%",
       }
-    } />
+    }
+  />
 </div>
 `;
 
@@ -130,7 +146,8 @@ exports[`BpkProgress should render correctly with a "small" attribute 1`] = `
   aria-valuetext={null}
   className="bpk-progress bpk-progress--small"
   role="progressbar"
-  tabIndex="0">
+  tabIndex="0"
+>
   <div
     className="bpk-progress__value"
     onTransitionEnd={[Function]}
@@ -138,7 +155,8 @@ exports[`BpkProgress should render correctly with a "small" attribute 1`] = `
       Object {
         "width": "22.22222222222222%",
       }
-    } />
+    }
+  />
 </div>
 `;
 
@@ -150,7 +168,8 @@ exports[`BpkProgress should render correctly with a "stepColor" attribute 1`] = 
   aria-valuetext={null}
   className="bpk-progress"
   role="progressbar"
-  tabIndex="0">
+  tabIndex="0"
+>
   <div
     className="bpk-progress__value"
     onTransitionEnd={[Function]}
@@ -158,7 +177,8 @@ exports[`BpkProgress should render correctly with a "stepColor" attribute 1`] = 
       Object {
         "width": "22.22222222222222%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -166,7 +186,8 @@ exports[`BpkProgress should render correctly with a "stepColor" attribute 1`] = 
         "backgroundColor": "blue",
         "left": "11.11111111111111%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -174,7 +195,8 @@ exports[`BpkProgress should render correctly with a "stepColor" attribute 1`] = 
         "backgroundColor": "blue",
         "left": "22.22222222222222%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -182,7 +204,8 @@ exports[`BpkProgress should render correctly with a "stepColor" attribute 1`] = 
         "backgroundColor": "blue",
         "left": "33.33333333333333%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -190,7 +213,8 @@ exports[`BpkProgress should render correctly with a "stepColor" attribute 1`] = 
         "backgroundColor": "blue",
         "left": "44.44444444444444%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -198,7 +222,8 @@ exports[`BpkProgress should render correctly with a "stepColor" attribute 1`] = 
         "backgroundColor": "blue",
         "left": "55.55555555555556%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -206,7 +231,8 @@ exports[`BpkProgress should render correctly with a "stepColor" attribute 1`] = 
         "backgroundColor": "blue",
         "left": "66.66666666666666%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -214,7 +240,8 @@ exports[`BpkProgress should render correctly with a "stepColor" attribute 1`] = 
         "backgroundColor": "blue",
         "left": "77.77777777777779%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -222,7 +249,8 @@ exports[`BpkProgress should render correctly with a "stepColor" attribute 1`] = 
         "backgroundColor": "blue",
         "left": "88.88888888888889%",
       }
-    } />
+    }
+  />
 </div>
 `;
 
@@ -234,7 +262,8 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
   aria-valuetext={null}
   className="bpk-progress"
   role="progressbar"
-  tabIndex="0">
+  tabIndex="0"
+>
   <div
     className="bpk-progress__value"
     onTransitionEnd={[Function]}
@@ -242,7 +271,8 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
       Object {
         "width": "22.22222222222222%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -250,7 +280,8 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
         "backgroundColor": undefined,
         "left": "11.11111111111111%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -258,7 +289,8 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
         "backgroundColor": undefined,
         "left": "22.22222222222222%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -266,7 +298,8 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
         "backgroundColor": undefined,
         "left": "33.33333333333333%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -274,7 +307,8 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
         "backgroundColor": undefined,
         "left": "44.44444444444444%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -282,7 +316,8 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
         "backgroundColor": undefined,
         "left": "55.55555555555556%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -290,7 +325,8 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
         "backgroundColor": undefined,
         "left": "66.66666666666666%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -298,7 +334,8 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
         "backgroundColor": undefined,
         "left": "77.77777777777779%",
       }
-    } />
+    }
+  />
   <div
     className="bpk-progress__step"
     style={
@@ -306,6 +343,7 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
         "backgroundColor": undefined,
         "left": "88.88888888888889%",
       }
-    } />
+    }
+  />
 </div>
 `;

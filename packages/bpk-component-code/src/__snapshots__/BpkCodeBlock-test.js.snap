@@ -1,8 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkCodeBlock should render correctly 1`] = `
 <pre
-  className="bpk-code__pre">
+  className="bpk-code__pre"
+>
   <code
-    className="bpk-code bpk-code--block">
+    className="bpk-code bpk-code--block"
+  >
     npm install react --save-dev
   </code>
 </pre>

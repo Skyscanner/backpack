@@ -1,6 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkBarchartBar should render as an outlier 1`] = `
 <g
-  className="bpk-barchart__bar-group">
+  className="bpk-barchart__bar-group"
+>
   <title>
     Bar
   </title>
@@ -16,13 +19,15 @@ exports[`BpkBarchartBar should render as an outlier 1`] = `
     tabIndex={undefined}
     width={20}
     x={10}
-    y={10} />
+    y={10}
+  />
 </g>
 `;
 
 exports[`BpkBarchartBar should render correctly 1`] = `
 <g
-  className="bpk-barchart__bar-group">
+  className="bpk-barchart__bar-group"
+>
   <title>
     Bar
   </title>
@@ -38,13 +43,15 @@ exports[`BpkBarchartBar should render correctly 1`] = `
     tabIndex={undefined}
     width={20}
     x={10}
-    y={10} />
+    y={10}
+  />
 </g>
 `;
 
 exports[`BpkBarchartBar should render with an onClick handler 1`] = `
 <g
-  className="bpk-barchart__bar-group">
+  className="bpk-barchart__bar-group"
+>
   <title>
     Bar
   </title>
@@ -60,6 +67,7 @@ exports[`BpkBarchartBar should render with an onClick handler 1`] = `
     tabIndex={0}
     width={20}
     x={10}
-    y={10} />
+    y={10}
+  />
 </g>
 `;

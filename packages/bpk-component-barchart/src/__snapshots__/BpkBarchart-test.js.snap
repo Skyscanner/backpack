@@ -1,8 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkBarchart should render correctly 1`] = `
 <BpkMobileScrollContainer
   className={null}
   innerContainerTagName="div"
-  style={null}>
+  style={null}
+>
   <BpkChartDataTable
     data={
       Array [
@@ -59,12 +62,14 @@ exports[`BpkBarchart should render correctly 1`] = `
     xAxisLabel="Month"
     xScaleDataKey="month"
     yAxisLabel="Average price (£)"
-    yScaleDataKey="price" />
+    yScaleDataKey="price"
+  />
   <svg
     className="bpk-barchart"
     height={200}
     width={200}
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <BpkBarchartDefs />
     <BpkChartMargin
       margin={
@@ -74,7 +79,8 @@ exports[`BpkBarchart should render correctly 1`] = `
           "right": 0,
           "top": 6,
         }
-      }>
+      }
+    >
       <BpkChartAxis
         height={200}
         label="Average price (£)"
@@ -92,7 +98,8 @@ exports[`BpkBarchart should render correctly 1`] = `
         tickEvery={1}
         tickOffset={0}
         tickValue={[Function]}
-        width={200} />
+        width={200}
+      />
       <BpkChartAxis
         height={200}
         label="Month"
@@ -110,7 +117,8 @@ exports[`BpkBarchart should render correctly 1`] = `
         tickEvery={1}
         tickOffset={0}
         tickValue={[Function]}
-        width={200} />
+        width={200}
+      />
       <BpkBarchartBars
         BarComponent={[Function]}
         data={
@@ -182,7 +190,8 @@ exports[`BpkBarchart should render correctly 1`] = `
         xScale={[Function]}
         xScaleDataKey="month"
         yScale={[Function]}
-        yScaleDataKey="price" />
+        yScaleDataKey="price"
+      />
     </BpkChartMargin>
   </svg>
 </BpkMobileScrollContainer>
@@ -192,12 +201,14 @@ exports[`BpkBarchart should render with "disableDataTable" prop 1`] = `
 <BpkMobileScrollContainer
   className={null}
   innerContainerTagName="div"
-  style={null}>
+  style={null}
+>
   <svg
     className="bpk-barchart"
     height={200}
     width={200}
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <BpkBarchartDefs />
     <BpkChartMargin
       margin={
@@ -207,7 +218,8 @@ exports[`BpkBarchart should render with "disableDataTable" prop 1`] = `
           "right": 0,
           "top": 6,
         }
-      }>
+      }
+    >
       <BpkChartAxis
         height={200}
         label="Average price (£)"
@@ -225,7 +237,8 @@ exports[`BpkBarchart should render with "disableDataTable" prop 1`] = `
         tickEvery={1}
         tickOffset={0}
         tickValue={[Function]}
-        width={200} />
+        width={200}
+      />
       <BpkChartAxis
         height={200}
         label="Month"
@@ -243,7 +256,8 @@ exports[`BpkBarchart should render with "disableDataTable" prop 1`] = `
         tickEvery={1}
         tickOffset={0}
         tickValue={[Function]}
-        width={200} />
+        width={200}
+      />
       <BpkBarchartBars
         BarComponent={[Function]}
         data={
@@ -315,7 +329,8 @@ exports[`BpkBarchart should render with "disableDataTable" prop 1`] = `
         xScale={[Function]}
         xScaleDataKey="month"
         yScale={[Function]}
-        yScaleDataKey="price" />
+        yScaleDataKey="price"
+      />
     </BpkChartMargin>
   </svg>
 </BpkMobileScrollContainer>
@@ -325,7 +340,8 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
 <BpkMobileScrollContainer
   className={null}
   innerContainerTagName="div"
-  style={null}>
+  style={null}
+>
   <BpkChartDataTable
     data={
       Array [
@@ -382,12 +398,14 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
     xAxisLabel="Month"
     xScaleDataKey="month"
     yAxisLabel="Average price (£)"
-    yScaleDataKey="price" />
+    yScaleDataKey="price"
+  />
   <svg
     className="bpk-barchart"
     height={200}
     width={200}
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <BpkBarchartDefs />
     <BpkChartMargin
       margin={
@@ -397,7 +415,8 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
           "right": 0,
           "top": 6,
         }
-      }>
+      }
+    >
       <BpkChartAxis
         height={200}
         label="Average price (£)"
@@ -415,7 +434,8 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
         tickEvery={1}
         tickOffset={0}
         tickValue={[Function]}
-        width={200} />
+        width={200}
+      />
       <BpkChartAxis
         height={200}
         label="Month"
@@ -433,7 +453,8 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
         tickEvery={1}
         tickOffset={0}
         tickValue={[Function]}
-        width={200} />
+        width={200}
+      />
       <BpkBarchartBars
         BarComponent={[Function]}
         data={
@@ -505,7 +526,8 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
         xScale={[Function]}
         xScaleDataKey="month"
         yScale={[Function]}
-        yScaleDataKey="price" />
+        yScaleDataKey="price"
+      />
     </BpkChartMargin>
   </svg>
 </BpkMobileScrollContainer>
@@ -515,7 +537,8 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
 <BpkMobileScrollContainer
   className={null}
   innerContainerTagName="div"
-  style={null}>
+  style={null}
+>
   <BpkChartDataTable
     data={
       Array [
@@ -572,13 +595,15 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
     xAxisLabel="Month"
     xScaleDataKey="month"
     yAxisLabel="Average price (£)"
-    yScaleDataKey="price" />
+    yScaleDataKey="price"
+  />
   <svg
     className="bpk-barchart"
     height={200}
     hideXAxisLabel={true}
     width={200}
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <BpkBarchartDefs />
     <BpkChartMargin
       margin={
@@ -588,7 +613,8 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
           "right": 0,
           "top": 6,
         }
-      }>
+      }
+    >
       <BpkChartAxis
         height={200}
         label="Average price (£)"
@@ -606,7 +632,8 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
         tickEvery={1}
         tickOffset={0}
         tickValue={[Function]}
-        width={200} />
+        width={200}
+      />
       <BpkChartAxis
         height={200}
         label="Month"
@@ -624,7 +651,8 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
         tickEvery={1}
         tickOffset={0}
         tickValue={[Function]}
-        width={200} />
+        width={200}
+      />
       <BpkBarchartBars
         BarComponent={[Function]}
         data={
@@ -696,7 +724,8 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
         xScale={[Function]}
         xScaleDataKey="month"
         yScale={[Function]}
-        yScaleDataKey="price" />
+        yScaleDataKey="price"
+      />
     </BpkChartMargin>
   </svg>
 </BpkMobileScrollContainer>
@@ -706,7 +735,8 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
 <BpkMobileScrollContainer
   className={null}
   innerContainerTagName="div"
-  style={null}>
+  style={null}
+>
   <BpkChartDataTable
     data={
       Array [
@@ -763,13 +793,15 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
     xAxisLabel="Month"
     xScaleDataKey="month"
     yAxisLabel="Average price (£)"
-    yScaleDataKey="price" />
+    yScaleDataKey="price"
+  />
   <svg
     className="bpk-barchart"
     height={200}
     hideYAxisLabel={true}
     width={200}
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <BpkBarchartDefs />
     <BpkChartMargin
       margin={
@@ -779,7 +811,8 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
           "right": 0,
           "top": 6,
         }
-      }>
+      }
+    >
       <BpkChartAxis
         height={200}
         label="Average price (£)"
@@ -797,7 +830,8 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
         tickEvery={1}
         tickOffset={0}
         tickValue={[Function]}
-        width={200} />
+        width={200}
+      />
       <BpkChartAxis
         height={200}
         label="Month"
@@ -815,7 +849,8 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
         tickEvery={1}
         tickOffset={0}
         tickValue={[Function]}
-        width={200} />
+        width={200}
+      />
       <BpkBarchartBars
         BarComponent={[Function]}
         data={
@@ -887,7 +922,8 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
         xScale={[Function]}
         xScaleDataKey="month"
         yScale={[Function]}
-        yScaleDataKey="price" />
+        yScaleDataKey="price"
+      />
     </BpkChartMargin>
   </svg>
 </BpkMobileScrollContainer>
@@ -897,7 +933,8 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
 <BpkMobileScrollContainer
   className={null}
   innerContainerTagName="div"
-  style={null}>
+  style={null}
+>
   <BpkChartDataTable
     data={
       Array [
@@ -954,12 +991,14 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
     xAxisLabel="Month"
     xScaleDataKey="month"
     yAxisLabel="Average price (£)"
-    yScaleDataKey="price" />
+    yScaleDataKey="price"
+  />
   <svg
     className="bpk-barchart"
     height={200}
     width={200}
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <BpkBarchartDefs />
     <BpkChartMargin
       margin={
@@ -969,7 +1008,8 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
           "right": 0,
           "top": 6,
         }
-      }>
+      }
+    >
       <BpkChartAxis
         height={200}
         label="Average price (£)"
@@ -987,7 +1027,8 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
         tickEvery={1}
         tickOffset={0}
         tickValue={[Function]}
-        width={200} />
+        width={200}
+      />
       <BpkChartAxis
         height={200}
         label="Month"
@@ -1005,7 +1046,8 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
         tickEvery={1}
         tickOffset={0}
         tickValue={[Function]}
-        width={200} />
+        width={200}
+      />
       <BpkBarchartBars
         BarComponent={[Function]}
         data={
@@ -1077,7 +1119,8 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
         xScale={[Function]}
         xScaleDataKey="month"
         yScale={[Function]}
-        yScaleDataKey="price" />
+        yScaleDataKey="price"
+      />
     </BpkChartMargin>
   </svg>
 </BpkMobileScrollContainer>
@@ -1087,7 +1130,8 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
 <BpkMobileScrollContainer
   className={null}
   innerContainerTagName="div"
-  style={null}>
+  style={null}
+>
   <BpkChartDataTable
     data={
       Array [
@@ -1144,12 +1188,14 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
     xAxisLabel="Month"
     xScaleDataKey="month"
     yAxisLabel="Average price (£)"
-    yScaleDataKey="price" />
+    yScaleDataKey="price"
+  />
   <svg
     className="bpk-barchart"
     height={200}
     width={200}
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <BpkBarchartDefs />
     <BpkChartMargin
       margin={
@@ -1159,7 +1205,8 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
           "right": 0,
           "top": 6,
         }
-      }>
+      }
+    >
       <BpkChartAxis
         height={200}
         label="Average price (£)"
@@ -1177,7 +1224,8 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
         tickEvery={1}
         tickOffset={0}
         tickValue={[Function]}
-        width={200} />
+        width={200}
+      />
       <BpkChartAxis
         height={200}
         label="Month"
@@ -1195,7 +1243,8 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
         tickEvery={1}
         tickOffset={0}
         tickValue={[Function]}
-        width={200} />
+        width={200}
+      />
       <BpkChartGridLines
         height={200}
         margin={
@@ -1211,7 +1260,8 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
         scale={[Function]}
         tickEvery={1}
         tickOffset={0}
-        width={200} />
+        width={200}
+      />
       <BpkBarchartBars
         BarComponent={[Function]}
         data={
@@ -1283,7 +1333,8 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
         xScale={[Function]}
         xScaleDataKey="month"
         yScale={[Function]}
-        yScaleDataKey="price" />
+        yScaleDataKey="price"
+      />
     </BpkChartMargin>
   </svg>
 </BpkMobileScrollContainer>

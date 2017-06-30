@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`TransitionInitialMount should render correctly 1`] = `
 <Component
   component={[Function]}
@@ -10,7 +12,8 @@ exports[`TransitionInitialMount should render correctly 1`] = `
       "appear": "block--appear",
       "appearActive": "block--apear-active",
     }
-  }>
+  }
+>
   <p>
     My transition
   </p>

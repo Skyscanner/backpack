@@ -1,16 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkFieldset should render correctly with checkbox component 1`] = `
 <fieldset
-  className="bpk-fieldset">
+  className="bpk-fieldset"
+>
   <label
-    className="bpk-checkbox">
+    className="bpk-checkbox"
+  >
     <input
       className="bpk-checkbox__input"
       disabled={false}
       id="terms_and_conditions_checkbox"
       name="terms_and_conditions"
-      type="checkbox" />
+      type="checkbox"
+    />
     <span
-      className="bpk-checkbox__label">
+      className="bpk-checkbox__label"
+    >
       I accept the terms and conditions
     </span>
   </label>
@@ -26,13 +32,16 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
         "overflow": "visible",
         "transition": "height 200ms ease ",
       }
-    }>
+    }
+  >
     <div>
       <div
-        className="bpk-form-validation__container">
+        className="bpk-form-validation__container"
+      >
         <div
           className="bpk-form-validation bpk-form-validation--is-checkbox"
-          id="terms_and_conditions_checkbox_validation_message">
+          id="terms_and_conditions_checkbox_validation_message"
+        >
           You must accept the terms and conditions to continue
         </div>
       </div>
@@ -43,20 +52,25 @@ exports[`BpkFieldset should render correctly with checkbox component 1`] = `
 
 exports[`BpkFieldset should render correctly with checkbox component and "required" attribute 1`] = `
 <fieldset
-  className="bpk-fieldset">
+  className="bpk-fieldset"
+>
   <label
-    className="bpk-checkbox">
+    className="bpk-checkbox"
+  >
     <input
       className="bpk-checkbox__input"
       disabled={false}
       id="terms_and_conditions_checkbox"
       name="terms_and_conditions"
-      type="checkbox" />
+      type="checkbox"
+    />
     <span
-      className="bpk-checkbox__label">
+      className="bpk-checkbox__label"
+    >
       I accept the terms and conditions
       <span
-        className="bpk-checkbox__asterisk">
+        className="bpk-checkbox__asterisk"
+      >
         *
       </span>
     </span>
@@ -73,13 +87,16 @@ exports[`BpkFieldset should render correctly with checkbox component and "requir
         "overflow": "visible",
         "transition": "height 200ms ease ",
       }
-    }>
+    }
+  >
     <div>
       <div
-        className="bpk-form-validation__container">
+        className="bpk-form-validation__container"
+      >
         <div
           className="bpk-form-validation bpk-form-validation--is-checkbox"
-          id="terms_and_conditions_checkbox_validation_message">
+          id="terms_and_conditions_checkbox_validation_message"
+        >
           You must accept the terms and conditions to continue
         </div>
       </div>
@@ -90,10 +107,12 @@ exports[`BpkFieldset should render correctly with checkbox component and "requir
 
 exports[`BpkFieldset should render correctly with input component 1`] = `
 <fieldset
-  className="bpk-fieldset">
+  className="bpk-fieldset"
+>
   <label
     className="bpk-label"
-    htmlFor="name_input">
+    htmlFor="name_input"
+  >
     Name
   </label>
   <input
@@ -105,7 +124,8 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
     name="name"
     placeholder="e.g. Joe Bloggs"
     type="text"
-    value="" />
+    value=""
+  />
   <div
     onTransitionEnd={[Function]}
     style={
@@ -118,13 +138,16 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
         "overflow": "visible",
         "transition": "height 200ms ease ",
       }
-    }>
+    }
+  >
     <div>
       <div
-        className="bpk-form-validation__container">
+        className="bpk-form-validation__container"
+      >
         <div
           className="bpk-form-validation"
-          id="name_input_validation_message">
+          id="name_input_validation_message"
+        >
           Please enter a name
         </div>
       </div>
@@ -135,10 +158,12 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
 
 exports[`BpkFieldset should render correctly with input component and "disabled" attribute 1`] = `
 <fieldset
-  className="bpk-fieldset">
+  className="bpk-fieldset"
+>
   <label
     className="bpk-label"
-    htmlFor="name_input">
+    htmlFor="name_input"
+  >
     Name
   </label>
   <input
@@ -150,7 +175,8 @@ exports[`BpkFieldset should render correctly with input component and "disabled"
     name="name"
     placeholder="e.g. Joe Bloggs"
     type="text"
-    value="" />
+    value=""
+  />
   <div
     onTransitionEnd={[Function]}
     style={
@@ -163,13 +189,16 @@ exports[`BpkFieldset should render correctly with input component and "disabled"
         "overflow": "visible",
         "transition": "height 200ms ease ",
       }
-    }>
+    }
+  >
     <div>
       <div
-        className="bpk-form-validation__container">
+        className="bpk-form-validation__container"
+      >
         <div
           className="bpk-form-validation"
-          id="name_input_validation_message">
+          id="name_input_validation_message"
+        >
           Please enter a name
         </div>
       </div>
@@ -180,13 +209,16 @@ exports[`BpkFieldset should render correctly with input component and "disabled"
 
 exports[`BpkFieldset should render correctly with input component and "required" attribute 1`] = `
 <fieldset
-  className="bpk-fieldset">
+  className="bpk-fieldset"
+>
   <label
     className="bpk-label"
-    htmlFor="name_input">
+    htmlFor="name_input"
+  >
     Name
     <span
-      className="bpk-label__asterisk">
+      className="bpk-label__asterisk"
+    >
       *
     </span>
   </label>
@@ -199,7 +231,8 @@ exports[`BpkFieldset should render correctly with input component and "required"
     name="name"
     placeholder="e.g. Joe Bloggs"
     type="text"
-    value="" />
+    value=""
+  />
   <div
     onTransitionEnd={[Function]}
     style={
@@ -212,13 +245,16 @@ exports[`BpkFieldset should render correctly with input component and "required"
         "overflow": "visible",
         "transition": "height 200ms ease ",
       }
-    }>
+    }
+  >
     <div>
       <div
-        className="bpk-form-validation__container">
+        className="bpk-form-validation__container"
+      >
         <div
           className="bpk-form-validation"
-          id="name_input_validation_message">
+          id="name_input_validation_message"
+        >
           Please enter a name
         </div>
       </div>
@@ -229,10 +265,12 @@ exports[`BpkFieldset should render correctly with input component and "required"
 
 exports[`BpkFieldset should render correctly with input component and "valid" attribute 1`] = `
 <fieldset
-  className="bpk-fieldset">
+  className="bpk-fieldset"
+>
   <label
     className="bpk-label"
-    htmlFor="name_input">
+    htmlFor="name_input"
+  >
     Name
   </label>
   <input
@@ -244,7 +282,8 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
     name="name"
     placeholder="e.g. Joe Bloggs"
     type="text"
-    value="" />
+    value=""
+  />
   <div
     onTransitionEnd={[Function]}
     style={
@@ -257,13 +296,16 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
         "overflow": "visible",
         "transition": "height 200ms ease ",
       }
-    }>
+    }
+  >
     <div>
       <div
-        className="bpk-form-validation__container">
+        className="bpk-form-validation__container"
+      >
         <div
           className="bpk-form-validation"
-          id="name_input_validation_message">
+          id="name_input_validation_message"
+        >
           Please enter a name
         </div>
       </div>
@@ -274,10 +316,12 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
 
 exports[`BpkFieldset should render correctly with input component and "valid" attribute equal to false 1`] = `
 <fieldset
-  className="bpk-fieldset">
+  className="bpk-fieldset"
+>
   <label
     className="bpk-label"
-    htmlFor="name_input">
+    htmlFor="name_input"
+  >
     Name
   </label>
   <input
@@ -290,7 +334,8 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
     name="name"
     placeholder="e.g. Joe Bloggs"
     type="text"
-    value="" />
+    value=""
+  />
   <div
     onTransitionEnd={[Function]}
     style={
@@ -303,13 +348,16 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
         "overflow": "visible",
         "transition": "height 200ms ease ",
       }
-    }>
+    }
+  >
     <div>
       <div
-        className="bpk-form-validation__container">
+        className="bpk-form-validation__container"
+      >
         <div
           className="bpk-form-validation bpk-form-validation--appear"
-          id="name_input_validation_message">
+          id="name_input_validation_message"
+        >
           Please enter a name
         </div>
       </div>
@@ -320,10 +368,12 @@ exports[`BpkFieldset should render correctly with input component and "valid" at
 
 exports[`BpkFieldset should render correctly with select component 1`] = `
 <fieldset
-  className="bpk-fieldset">
+  className="bpk-fieldset"
+>
   <label
     className="bpk-label"
-    htmlFor="fruits_select">
+    htmlFor="fruits_select"
+  >
     Fruits
   </label>
   <select
@@ -333,26 +383,32 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
     disabled={false}
     id="fruits_select"
     name="fruits"
-    value="">
+    value=""
+  >
     <option
-      value="">
+      value=""
+    >
       Please select...
     </option>
     <option
-      value="apples">
+      value="apples"
+    >
       Apples
     </option>
     <option
-      value="oranges">
+      value="oranges"
+    >
       Oranges
     </option>
     <option
-      value="pears">
+      value="pears"
+    >
       Pears
     </option>
     <option
       disabled={true}
-      value="tomato">
+      value="tomato"
+    >
       Tomato
     </option>
   </select>
@@ -368,13 +424,16 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
         "overflow": "visible",
         "transition": "height 200ms ease ",
       }
-    }>
+    }
+  >
     <div>
       <div
-        className="bpk-form-validation__container">
+        className="bpk-form-validation__container"
+      >
         <div
           className="bpk-form-validation"
-          id="fruits_select_validation_message">
+          id="fruits_select_validation_message"
+        >
           Please select a fruit
         </div>
       </div>
@@ -385,13 +444,16 @@ exports[`BpkFieldset should render correctly with select component 1`] = `
 
 exports[`BpkFieldset should render correctly with select component and "required" attribute 1`] = `
 <fieldset
-  className="bpk-fieldset">
+  className="bpk-fieldset"
+>
   <label
     className="bpk-label"
-    htmlFor="fruits_select">
+    htmlFor="fruits_select"
+  >
     Fruits
     <span
-      className="bpk-label__asterisk">
+      className="bpk-label__asterisk"
+    >
       *
     </span>
   </label>
@@ -402,26 +464,32 @@ exports[`BpkFieldset should render correctly with select component and "required
     disabled={false}
     id="fruits_select"
     name="fruits"
-    value="">
+    value=""
+  >
     <option
-      value="">
+      value=""
+    >
       Please select...
     </option>
     <option
-      value="apples">
+      value="apples"
+    >
       Apples
     </option>
     <option
-      value="oranges">
+      value="oranges"
+    >
       Oranges
     </option>
     <option
-      value="pears">
+      value="pears"
+    >
       Pears
     </option>
     <option
       disabled={true}
-      value="tomato">
+      value="tomato"
+    >
       Tomato
     </option>
   </select>
@@ -437,13 +505,16 @@ exports[`BpkFieldset should render correctly with select component and "required
         "overflow": "visible",
         "transition": "height 200ms ease ",
       }
-    }>
+    }
+  >
     <div>
       <div
-        className="bpk-form-validation__container">
+        className="bpk-form-validation__container"
+      >
         <div
           className="bpk-form-validation"
-          id="fruits_select_validation_message">
+          id="fruits_select_validation_message"
+        >
           Please select a fruit
         </div>
       </div>

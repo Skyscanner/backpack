@@ -1,19 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`withSingleItemAccordionState(BpkAccordion) should render correctly 1`] = `
 <dl
-  className="bpk-accordion">
+  className="bpk-accordion"
+>
   <div
     expanded={false}
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     Accordion Item 1
   </div>
   <div
     expanded={false}
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     Accordion Item 2
   </div>
   <div
     expanded={false}
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     Accordion Item 3
   </div>
 </dl>
@@ -21,22 +27,26 @@ exports[`withSingleItemAccordionState(BpkAccordion) should render correctly 1`] 
 
 exports[`withSingleItemAccordionState(BpkAccordion) should render correctly even when multiple items are marked as initially expanded 1`] = `
 <dl
-  className="bpk-accordion">
+  className="bpk-accordion"
+>
   <div
     expanded={false}
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     Accordion Item 1
   </div>
   <div
     expanded={true}
     initiallyExpanded={true}
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     Accordion Item 2
   </div>
   <div
     expanded={false}
     initiallyExpanded={true}
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     Accordion Item 3
   </div>
 </dl>
@@ -44,21 +54,25 @@ exports[`withSingleItemAccordionState(BpkAccordion) should render correctly even
 
 exports[`withSingleItemAccordionState(BpkAccordion) should render correctly with custom initially expanded item 1`] = `
 <dl
-  className="bpk-accordion">
+  className="bpk-accordion"
+>
   <div
     expanded={false}
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     Accordion Item 1
   </div>
   <div
     expanded={true}
     initiallyExpanded={true}
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     Accordion Item 2
   </div>
   <div
     expanded={false}
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     Accordion Item 3
   </div>
 </dl>

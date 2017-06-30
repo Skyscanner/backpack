@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkSelect should render correctly 1`] = `
 <select
   aria-invalid={false}
@@ -5,22 +7,27 @@ exports[`BpkSelect should render correctly 1`] = `
   id="fruits"
   name="fruits"
   onChange={[Function]}
-  value="oranges">
+  value="oranges"
+>
   <option
-    value="apples">
+    value="apples"
+  >
     Apples
   </option>
   <option
-    value="oranges">
+    value="oranges"
+  >
     Oranges
   </option>
   <option
-    value="pears">
+    value="pears"
+  >
     Pears
   </option>
   <option
     disabled={true}
-    value="tomatos">
+    value="tomatos"
+  >
     Tomatos
   </option>
 </select>
@@ -33,22 +40,27 @@ exports[`BpkSelect should render correctly with "className" attribute 1`] = `
   id="fruits"
   name="fruits"
   onChange={[Function]}
-  value="oranges">
+  value="oranges"
+>
   <option
-    value="apples">
+    value="apples"
+  >
     Apples
   </option>
   <option
-    value="oranges">
+    value="oranges"
+  >
     Oranges
   </option>
   <option
-    value="pears">
+    value="pears"
+  >
     Pears
   </option>
   <option
     disabled={true}
-    value="tomatos">
+    value="tomatos"
+  >
     Tomatos
   </option>
 </select>
@@ -61,22 +73,27 @@ exports[`BpkSelect should render correctly with "docked" attribute 1`] = `
   id="fruits"
   name="fruits"
   onChange={[Function]}
-  value="">
+  value=""
+>
   <option
-    value="apples">
+    value="apples"
+  >
     Apples
   </option>
   <option
-    value="oranges">
+    value="oranges"
+  >
     Oranges
   </option>
   <option
-    value="pears">
+    value="pears"
+  >
     Pears
   </option>
   <option
     disabled={true}
-    value="tomatos">
+    value="tomatos"
+  >
     Tomatos
   </option>
 </select>
@@ -89,22 +106,27 @@ exports[`BpkSelect should render correctly with "dockedFirst" attribute 1`] = `
   id="fruits"
   name="fruits"
   onChange={[Function]}
-  value="">
+  value=""
+>
   <option
-    value="apples">
+    value="apples"
+  >
     Apples
   </option>
   <option
-    value="oranges">
+    value="oranges"
+  >
     Oranges
   </option>
   <option
-    value="pears">
+    value="pears"
+  >
     Pears
   </option>
   <option
     disabled={true}
-    value="tomatos">
+    value="tomatos"
+  >
     Tomatos
   </option>
 </select>
@@ -117,22 +139,27 @@ exports[`BpkSelect should render correctly with "dockedLast" attribute 1`] = `
   id="fruits"
   name="fruits"
   onChange={[Function]}
-  value="">
+  value=""
+>
   <option
-    value="apples">
+    value="apples"
+  >
     Apples
   </option>
   <option
-    value="oranges">
+    value="oranges"
+  >
     Oranges
   </option>
   <option
-    value="pears">
+    value="pears"
+  >
     Pears
   </option>
   <option
     disabled={true}
-    value="tomatos">
+    value="tomatos"
+  >
     Tomatos
   </option>
 </select>
@@ -145,22 +172,27 @@ exports[`BpkSelect should render correctly with "dockedMiddle" attribute 1`] = `
   id="fruits"
   name="fruits"
   onChange={[Function]}
-  value="">
+  value=""
+>
   <option
-    value="apples">
+    value="apples"
+  >
     Apples
   </option>
   <option
-    value="oranges">
+    value="oranges"
+  >
     Oranges
   </option>
   <option
-    value="pears">
+    value="pears"
+  >
     Pears
   </option>
   <option
     disabled={true}
-    value="tomatos">
+    value="tomatos"
+  >
     Tomatos
   </option>
 </select>
@@ -173,22 +205,27 @@ exports[`BpkSelect should render correctly with "large" attribute 1`] = `
   id="fruits"
   name="fruits"
   onChange={[Function]}
-  value="">
+  value=""
+>
   <option
-    value="apples">
+    value="apples"
+  >
     Apples
   </option>
   <option
-    value="oranges">
+    value="oranges"
+  >
     Oranges
   </option>
   <option
-    value="pears">
+    value="pears"
+  >
     Pears
   </option>
   <option
     disabled={true}
-    value="tomatos">
+    value="tomatos"
+  >
     Tomatos
   </option>
 </select>
@@ -201,22 +238,27 @@ exports[`BpkSelect should render correctly with a "valid" attribute equal to fal
   id="fruits"
   name="fruits"
   onChange={[Function]}
-  value="oranges">
+  value="oranges"
+>
   <option
-    value="apples">
+    value="apples"
+  >
     Apples
   </option>
   <option
-    value="oranges">
+    value="oranges"
+  >
     Oranges
   </option>
   <option
-    value="pears">
+    value="pears"
+  >
     Pears
   </option>
   <option
     disabled={true}
-    value="tomatos">
+    value="tomatos"
+  >
     Tomatos
   </option>
 </select>

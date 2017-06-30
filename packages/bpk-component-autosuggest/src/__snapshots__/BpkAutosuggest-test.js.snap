@@ -1,6 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkAutosuggest should render correctly 1`] = `
 <div
-  className="bpk-autosuggest__container">
+  className="bpk-autosuggest__container"
+>
   <input
     aria-activedescendant={null}
     aria-autocomplete="list"
@@ -17,16 +20,19 @@ exports[`BpkAutosuggest should render correctly 1`] = `
     role="combobox"
     style={Object {}}
     type="text"
-    value="Edinburgh" />
+    value="Edinburgh"
+  />
   <div
     className="bpk-autosuggest__suggestions-container"
-    id="react-autowhatever-1" />
+    id="react-autowhatever-1"
+  />
 </div>
 `;
 
 exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions" attribute 1`] = `
 <div
-  className="bpk-autosuggest__container bpk-autosuggest__container--open">
+  className="bpk-autosuggest__container bpk-autosuggest__container--open"
+>
   <input
     aria-activedescendant={null}
     aria-autocomplete="list"
@@ -43,13 +49,16 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
     role="combobox"
     style={Object {}}
     type="text"
-    value="Edinburgh" />
+    value="Edinburgh"
+  />
   <div
     className="bpk-autosuggest__suggestions-container bpk-autosuggest__suggestions-container--open"
-    id="react-autowhatever-1">
+    id="react-autowhatever-1"
+  >
     <ul
       className="bpk-autosuggest__suggestions-list"
-      role="listbox">
+      role="listbox"
+    >
       <li
         className="bpk-autosuggest__suggestion-item"
         data-section-index={null}
@@ -60,7 +69,8 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         onTouchStart={[Function]}
-        role="option">
+        role="option"
+      >
         <span>
           Edinburgh
         </span>
@@ -75,7 +85,8 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         onTouchStart={[Function]}
-        role="option">
+        role="option"
+      >
         <span>
           Glasgow
         </span>
@@ -90,7 +101,8 @@ exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         onTouchStart={[Function]}
-        role="option">
+        role="option"
+      >
         <span>
           London
         </span>

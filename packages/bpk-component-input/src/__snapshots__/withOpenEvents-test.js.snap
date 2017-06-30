@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`withOpenEvents should attach different event handlers when touch is supported 1`] = `
 <input
   aria-invalid={false}
@@ -11,7 +13,8 @@ exports[`withOpenEvents should attach different event handlers when touch is sup
   onTouchEnd={[Function]}
   readOnly="readOnly"
   type="text"
-  value="value" />
+  value="value"
+/>
 `;
 
 exports[`withOpenEvents should render correctly 1`] = `
@@ -27,7 +30,8 @@ exports[`withOpenEvents should render correctly 1`] = `
   onKeyDown={[Function]}
   onKeyUp={[Function]}
   type="text"
-  value="value" />
+  value="value"
+/>
 `;
 
 exports[`withOpenEvents should render correctly with "className" prop 1`] = `
@@ -43,5 +47,6 @@ exports[`withOpenEvents should render correctly with "className" prop 1`] = `
   onKeyDown={[Function]}
   onKeyUp={[Function]}
   type="text"
-  value="value" />
+  value="value"
+/>
 `;

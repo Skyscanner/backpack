@@ -1,7 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as it has priority over rating 1`] = `
 <div
   className="bpk-star-rating"
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <BpkInteractiveStar
     label="1 out of 5 stars"
     large={false}
@@ -10,7 +13,8 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={1} />
+    value={1}
+  />
   <BpkInteractiveStar
     label="2 out of 5 stars"
     large={false}
@@ -19,7 +23,8 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={2} />
+    value={2}
+  />
   <BpkInteractiveStar
     label="3 out of 5 stars"
     large={false}
@@ -28,7 +33,8 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
     onMouseEnter={[Function]}
     selected={true}
     type="full"
-    value={3} />
+    value={3}
+  />
   <BpkInteractiveStar
     label="4 out of 5 stars"
     large={false}
@@ -37,7 +43,8 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={4} />
+    value={4}
+  />
   <BpkInteractiveStar
     label="5 out of 5 stars"
     large={false}
@@ -46,14 +53,16 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
     onMouseEnter={[Function]}
     selected={false}
     type="empty"
-    value={5} />
+    value={5}
+  />
 </div>
 `;
 
 exports[`BpkInteractiveStarRating should render correctly if you give it more than the max rating allowed 1`] = `
 <div
   className="bpk-star-rating"
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <BpkInteractiveStar
     label="1 out of 5 stars"
     large={false}
@@ -62,7 +71,8 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={1} />
+    value={1}
+  />
   <BpkInteractiveStar
     label="2 out of 5 stars"
     large={false}
@@ -71,7 +81,8 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={2} />
+    value={2}
+  />
   <BpkInteractiveStar
     label="3 out of 5 stars"
     large={false}
@@ -80,7 +91,8 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={3} />
+    value={3}
+  />
   <BpkInteractiveStar
     label="4 out of 5 stars"
     large={false}
@@ -89,7 +101,8 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={4} />
+    value={4}
+  />
   <BpkInteractiveStar
     label="5 out of 5 stars"
     large={false}
@@ -98,14 +111,16 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={5} />
+    value={5}
+  />
 </div>
 `;
 
 exports[`BpkInteractiveStarRating should render correctly with "large" attribute 1`] = `
 <div
   className="bpk-star-rating"
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <BpkInteractiveStar
     label="1 out of 5 stars"
     large={true}
@@ -114,7 +129,8 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={1} />
+    value={1}
+  />
   <BpkInteractiveStar
     label="2 out of 5 stars"
     large={true}
@@ -123,7 +139,8 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={2} />
+    value={2}
+  />
   <BpkInteractiveStar
     label="3 out of 5 stars"
     large={true}
@@ -132,7 +149,8 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={3} />
+    value={3}
+  />
   <BpkInteractiveStar
     label="4 out of 5 stars"
     large={true}
@@ -141,7 +159,8 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={4} />
+    value={4}
+  />
   <BpkInteractiveStar
     label="5 out of 5 stars"
     large={true}
@@ -150,14 +169,16 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
     onMouseEnter={[Function]}
     selected={true}
     type="full"
-    value={5} />
+    value={5}
+  />
 </div>
 `;
 
 exports[`BpkInteractiveStarRating should render correctly with "maxRating" attribute 1`] = `
 <div
   className="bpk-star-rating"
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <BpkInteractiveStar
     label="1 out of 8 stars"
     large={false}
@@ -166,7 +187,8 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={1} />
+    value={1}
+  />
   <BpkInteractiveStar
     label="2 out of 8 stars"
     large={false}
@@ -175,7 +197,8 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={2} />
+    value={2}
+  />
   <BpkInteractiveStar
     label="3 out of 8 stars"
     large={false}
@@ -184,7 +207,8 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={3} />
+    value={3}
+  />
   <BpkInteractiveStar
     label="4 out of 8 stars"
     large={false}
@@ -193,7 +217,8 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={4} />
+    value={4}
+  />
   <BpkInteractiveStar
     label="5 out of 8 stars"
     large={false}
@@ -202,7 +227,8 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     onMouseEnter={[Function]}
     selected={true}
     type="full"
-    value={5} />
+    value={5}
+  />
   <BpkInteractiveStar
     label="6 out of 8 stars"
     large={false}
@@ -211,7 +237,8 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     onMouseEnter={[Function]}
     selected={false}
     type="empty"
-    value={6} />
+    value={6}
+  />
   <BpkInteractiveStar
     label="7 out of 8 stars"
     large={false}
@@ -220,7 +247,8 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     onMouseEnter={[Function]}
     selected={false}
     type="empty"
-    value={7} />
+    value={7}
+  />
   <BpkInteractiveStar
     label="8 out of 8 stars"
     large={false}
@@ -229,14 +257,16 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     onMouseEnter={[Function]}
     selected={false}
     type="empty"
-    value={8} />
+    value={8}
+  />
 </div>
 `;
 
 exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
 <div
   className="bpk-star-rating"
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <BpkInteractiveStar
     label="1 out of 5 stars"
     large={false}
@@ -245,7 +275,8 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="empty"
-    value={1} />
+    value={1}
+  />
   <BpkInteractiveStar
     label="2 out of 5 stars"
     large={false}
@@ -254,7 +285,8 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="empty"
-    value={2} />
+    value={2}
+  />
   <BpkInteractiveStar
     label="3 out of 5 stars"
     large={false}
@@ -263,7 +295,8 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="empty"
-    value={3} />
+    value={3}
+  />
   <BpkInteractiveStar
     label="4 out of 5 stars"
     large={false}
@@ -272,7 +305,8 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="empty"
-    value={4} />
+    value={4}
+  />
   <BpkInteractiveStar
     label="5 out of 5 stars"
     large={false}
@@ -281,14 +315,16 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="empty"
-    value={5} />
+    value={5}
+  />
 </div>
 `;
 
 exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
 <div
   className="bpk-star-rating"
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <BpkInteractiveStar
     label="1 out of 5 stars"
     large={false}
@@ -297,7 +333,8 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={1} />
+    value={1}
+  />
   <BpkInteractiveStar
     label="2 out of 5 stars"
     large={false}
@@ -306,7 +343,8 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={2} />
+    value={2}
+  />
   <BpkInteractiveStar
     label="3 out of 5 stars"
     large={false}
@@ -315,7 +353,8 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
     onMouseEnter={[Function]}
     selected={true}
     type="full"
-    value={3} />
+    value={3}
+  />
   <BpkInteractiveStar
     label="4 out of 5 stars"
     large={false}
@@ -324,7 +363,8 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="empty"
-    value={4} />
+    value={4}
+  />
   <BpkInteractiveStar
     label="5 out of 5 stars"
     large={false}
@@ -333,14 +373,16 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="empty"
-    value={5} />
+    value={5}
+  />
 </div>
 `;
 
 exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
 <div
   className="bpk-star-rating"
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <BpkInteractiveStar
     label="1 out of 5 stars"
     large={false}
@@ -349,7 +391,8 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={1} />
+    value={1}
+  />
   <BpkInteractiveStar
     label="2 out of 5 stars"
     large={false}
@@ -358,7 +401,8 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={2} />
+    value={2}
+  />
   <BpkInteractiveStar
     label="3 out of 5 stars"
     large={false}
@@ -367,7 +411,8 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={3} />
+    value={3}
+  />
   <BpkInteractiveStar
     label="4 out of 5 stars"
     large={false}
@@ -376,7 +421,8 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="empty"
-    value={4} />
+    value={4}
+  />
   <BpkInteractiveStar
     label="5 out of 5 stars"
     large={false}
@@ -385,14 +431,16 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="empty"
-    value={5} />
+    value={5}
+  />
 </div>
 `;
 
 exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
 <div
   className="bpk-star-rating"
-  onMouseLeave={[Function]}>
+  onMouseLeave={[Function]}
+>
   <BpkInteractiveStar
     label="1 out of 5 stars"
     large={false}
@@ -401,7 +449,8 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={1} />
+    value={1}
+  />
   <BpkInteractiveStar
     label="2 out of 5 stars"
     large={false}
@@ -410,7 +459,8 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={2} />
+    value={2}
+  />
   <BpkInteractiveStar
     label="3 out of 5 stars"
     large={false}
@@ -419,7 +469,8 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={3} />
+    value={3}
+  />
   <BpkInteractiveStar
     label="4 out of 5 stars"
     large={false}
@@ -428,7 +479,8 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
     onMouseEnter={[Function]}
     selected={false}
     type="full"
-    value={4} />
+    value={4}
+  />
   <BpkInteractiveStar
     label="5 out of 5 stars"
     large={false}
@@ -437,6 +489,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
     onMouseEnter={[Function]}
     selected={true}
     type="full"
-    value={5} />
+    value={5}
+  />
 </div>
 `;

@@ -1,16 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkCalendarContainer should render correctly 1`] = `
 <div
-  className="bpk-calendar bpk-calendar--fixed">
+  className="bpk-calendar bpk-calendar--fixed"
+>
   <div
-    className="bpk-calendar-nav">
+    className="bpk-calendar-nav"
+  >
     <div
-      className="bpk-calendar-nav__nudger">
+      className="bpk-calendar-nav__nudger"
+    >
       <button
         className="bpk-calendar-nav__button"
         disabled={true}
         id="myCalendar__bpk_calendar_nav_month_nudger_previous"
         onClick={[Function]}
-        type="button">
+        type="button"
+      >
         <svg
           className="bpk-calendar-nav__icon"
           height="24"
@@ -22,21 +28,26 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
           }
           viewBox="0 0 24 24"
           width="24"
-          xmlns="http://www.w3.org/2000/svg">
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
-            d="M13.7 19.7L6.6 12l7.1-7.7c.6-.6 1.7-.2 1.7.7v14c0 .9-1.1 1.4-1.7.7z" />
+            d="M13.7 19.7L6.6 12l7.1-7.7c.6-.6 1.7-.2 1.7.7v14c0 .9-1.1 1.4-1.7.7z"
+          />
         </svg>
         <span
-          className="bpk-calendar-nav__text--hidden">
+          className="bpk-calendar-nav__text--hidden"
+        >
           January 2010
         </span>
       </button>
     </div>
     <div
-      className="bpk-calendar-nav__month">
+      className="bpk-calendar-nav__month"
+    >
       <label
         className="bpk-calendar-nav__text--hidden"
-        htmlFor="myCalendar__bpk_calendar_nav_select">
+        htmlFor="myCalendar__bpk_calendar_nav_select"
+      >
         Change month
       </label>
       <select
@@ -46,25 +57,30 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         id="myCalendar__bpk_calendar_nav_select"
         name="months"
         onChange={[Function]}
-        value="2010-02">
+        value="2010-02"
+      >
         <option
-          value="2010-02">
+          value="2010-02"
+        >
           February 2010
         </option>
         <option
-          value="2010-03">
+          value="2010-03"
+        >
           March 2010
         </option>
       </select>
     </div>
     <div
-      className="bpk-calendar-nav__nudger">
+      className="bpk-calendar-nav__nudger"
+    >
       <button
         className="bpk-calendar-nav__button"
         disabled={false}
         id="myCalendar__bpk_calendar_nav_month_nudger_next"
         onClick={[Function]}
-        type="button">
+        type="button"
+      >
         <svg
           className="bpk-calendar-nav__icon"
           height="24"
@@ -76,81 +92,101 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
           }
           viewBox="0 0 24 24"
           width="24"
-          xmlns="http://www.w3.org/2000/svg">
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
-            d="M9.9 19.7L17 12 9.9 4.4c-.7-.7-1.7-.2-1.7.7v14c0 .8 1 1.3 1.7.6z" />
+            d="M9.9 19.7L17 12 9.9 4.4c-.7-.7-1.7-.2-1.7.7v14c0 .8 1 1.3 1.7.6z"
+          />
         </svg>
         <span
-          className="bpk-calendar-nav__text--hidden">
+          className="bpk-calendar-nav__text--hidden"
+        >
           March 2010
         </span>
       </button>
     </div>
   </div>
   <header
-    className="bpk-calendar-header bpk-calendar__header">
+    className="bpk-calendar-header bpk-calendar__header"
+  >
     <ol
-      className="bpk-calendar-header__week">
+      className="bpk-calendar-header__week"
+    >
       <li
         className="bpk-calendar-header__weekday"
-        title="Monday">
+        title="Monday"
+      >
         <span
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           Mon
         </span>
       </li>
       <li
         className="bpk-calendar-header__weekday"
-        title="Tuesday">
+        title="Tuesday"
+      >
         <span
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           Tue
         </span>
       </li>
       <li
         className="bpk-calendar-header__weekday"
-        title="Wednesday">
+        title="Wednesday"
+      >
         <span
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           Wed
         </span>
       </li>
       <li
         className="bpk-calendar-header__weekday"
-        title="Thursday">
+        title="Thursday"
+      >
         <span
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           Thu
         </span>
       </li>
       <li
         className="bpk-calendar-header__weekday"
-        title="Friday">
+        title="Friday"
+      >
         <span
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           Fri
         </span>
       </li>
       <li
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
-        title="Saturday">
+        title="Saturday"
+      >
         <span
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           Sat
         </span>
       </li>
       <li
         className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
-        title="Sunday">
+        title="Sunday"
+      >
         <span
-          aria-hidden="true">
+          aria-hidden="true"
+        >
           Sun
         </span>
       </li>
     </ol>
   </header>
   <div
-    className="bpk-calendar-grid-transition">
+    className="bpk-calendar-grid-transition"
+  >
     <div
       className="bpk-calendar-grid-transition__strip"
       onTransitionEnd={[Function]}
@@ -161,74 +197,94 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
           "msTransform": "translateX(-294px)",
           "transform": "translateX(-294px)",
         }
-      }>
+      }
+    >
       <div
-        className="bpk-calendar-grid-transition__dummy" />
+        className="bpk-calendar-grid-transition__dummy"
+      />
       <table
         aria-hidden={false}
-        className="bpk-calendar-grid bpk-calendar-grid-transition__grid">
+        className="bpk-calendar-grid bpk-calendar-grid-transition__grid"
+      >
         <caption
           className="bpk-calendar-grid__caption"
-          hidden={true}>
+          hidden={true}
+        >
           February 2010
         </caption>
         <thead
-          className="bpk-calendar-header bpk-calendar-header--table-head">
+          className="bpk-calendar-header bpk-calendar-header--table-head"
+        >
           <tr
-            className="bpk-calendar-header__week">
+            className="bpk-calendar-header__week"
+          >
             <th
               className="bpk-calendar-header__weekday"
-              title="Monday">
+              title="Monday"
+            >
               <span
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 Mon
               </span>
             </th>
             <th
               className="bpk-calendar-header__weekday"
-              title="Tuesday">
+              title="Tuesday"
+            >
               <span
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 Tue
               </span>
             </th>
             <th
               className="bpk-calendar-header__weekday"
-              title="Wednesday">
+              title="Wednesday"
+            >
               <span
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 Wed
               </span>
             </th>
             <th
               className="bpk-calendar-header__weekday"
-              title="Thursday">
+              title="Thursday"
+            >
               <span
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 Thu
               </span>
             </th>
             <th
               className="bpk-calendar-header__weekday"
-              title="Friday">
+              title="Friday"
+            >
               <span
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 Fri
               </span>
             </th>
             <th
               className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
-              title="Saturday">
+              title="Saturday"
+            >
               <span
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 Sat
               </span>
             </th>
             <th
               className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
-              title="Sunday">
+              title="Sunday"
+            >
               <span
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 Sun
               </span>
             </th>
@@ -236,9 +292,11 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         </thead>
         <tbody>
           <tr
-            className="bpk-calendar-grid__week">
+            className="bpk-calendar-grid__week"
+          >
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Monday, 1st February 2010"
                 aria-pressed={false}
@@ -247,15 +305,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   1
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Tuesday, 2nd February 2010"
                 aria-pressed={false}
@@ -264,15 +325,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   2
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Wednesday, 3rd February 2010"
                 aria-pressed={false}
@@ -281,15 +345,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   3
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Thursday, 4th February 2010"
                 aria-pressed={false}
@@ -298,15 +365,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   4
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Friday, 5th February 2010"
                 aria-pressed={false}
@@ -315,15 +385,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   5
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+            >
               <button
                 aria-label="Saturday, 6th February 2010"
                 aria-pressed={false}
@@ -332,15 +405,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   6
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+            >
               <button
                 aria-label="Sunday, 7th February 2010"
                 aria-pressed={false}
@@ -349,18 +425,22 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   7
                 </span>
               </button>
             </td>
           </tr>
           <tr
-            className="bpk-calendar-grid__week">
+            className="bpk-calendar-grid__week"
+          >
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Monday, 8th February 2010"
                 aria-pressed={false}
@@ -369,15 +449,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   8
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Tuesday, 9th February 2010"
                 aria-pressed={false}
@@ -386,15 +469,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   9
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Wednesday, 10th February 2010"
                 aria-pressed={false}
@@ -403,15 +489,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   10
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Thursday, 11th February 2010"
                 aria-pressed={false}
@@ -420,15 +509,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   11
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Friday, 12th February 2010"
                 aria-pressed={false}
@@ -437,15 +529,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   12
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+            >
               <button
                 aria-label="Saturday, 13th February 2010"
                 aria-pressed={false}
@@ -454,15 +549,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   13
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+            >
               <button
                 aria-label="Sunday, 14th February 2010"
                 aria-pressed={false}
@@ -471,18 +569,22 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   14
                 </span>
               </button>
             </td>
           </tr>
           <tr
-            className="bpk-calendar-grid__week">
+            className="bpk-calendar-grid__week"
+          >
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Monday, 15th February 2010"
                 aria-pressed={true}
@@ -491,15 +593,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="0"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   15
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Tuesday, 16th February 2010"
                 aria-pressed={false}
@@ -508,15 +613,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   16
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Wednesday, 17th February 2010"
                 aria-pressed={false}
@@ -525,15 +633,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   17
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Thursday, 18th February 2010"
                 aria-pressed={false}
@@ -542,15 +653,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   18
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Friday, 19th February 2010"
                 aria-pressed={false}
@@ -559,15 +673,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   19
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+            >
               <button
                 aria-label="Saturday, 20th February 2010"
                 aria-pressed={false}
@@ -576,15 +693,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   20
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+            >
               <button
                 aria-label="Sunday, 21st February 2010"
                 aria-pressed={false}
@@ -593,18 +713,22 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   21
                 </span>
               </button>
             </td>
           </tr>
           <tr
-            className="bpk-calendar-grid__week">
+            className="bpk-calendar-grid__week"
+          >
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Monday, 22nd February 2010"
                 aria-pressed={false}
@@ -613,15 +737,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   22
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Tuesday, 23rd February 2010"
                 aria-pressed={false}
@@ -630,15 +757,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   23
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Wednesday, 24th February 2010"
                 aria-pressed={false}
@@ -647,15 +777,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   24
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Thursday, 25th February 2010"
                 aria-pressed={false}
@@ -664,15 +797,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   25
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Friday, 26th February 2010"
                 aria-pressed={false}
@@ -681,15 +817,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   26
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+            >
               <button
                 aria-label="Saturday, 27th February 2010"
                 aria-pressed={false}
@@ -698,15 +837,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   27
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+            >
               <button
                 aria-label="Sunday, 28th February 2010"
                 aria-pressed={false}
@@ -715,18 +857,22 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   28
                 </span>
               </button>
             </td>
           </tr>
           <tr
-            className="bpk-calendar-grid__week">
+            className="bpk-calendar-grid__week"
+          >
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Monday, 1st March 2010"
                 aria-pressed={false}
@@ -735,15 +881,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   1
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Tuesday, 2nd March 2010"
                 aria-pressed={false}
@@ -752,15 +901,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   2
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Wednesday, 3rd March 2010"
                 aria-pressed={false}
@@ -769,15 +921,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   3
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Thursday, 4th March 2010"
                 aria-pressed={false}
@@ -786,15 +941,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   4
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Friday, 5th March 2010"
                 aria-pressed={false}
@@ -803,15 +961,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   5
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+            >
               <button
                 aria-label="Saturday, 6th March 2010"
                 aria-pressed={false}
@@ -820,15 +981,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   6
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+            >
               <button
                 aria-label="Sunday, 7th March 2010"
                 aria-pressed={false}
@@ -837,18 +1001,22 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   7
                 </span>
               </button>
             </td>
           </tr>
           <tr
-            className="bpk-calendar-grid__week">
+            className="bpk-calendar-grid__week"
+          >
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Monday, 8th March 2010"
                 aria-pressed={false}
@@ -857,15 +1025,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   8
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Tuesday, 9th March 2010"
                 aria-pressed={false}
@@ -874,15 +1045,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   9
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Wednesday, 10th March 2010"
                 aria-pressed={false}
@@ -891,15 +1065,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   10
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Thursday, 11th March 2010"
                 aria-pressed={false}
@@ -908,15 +1085,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   11
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Friday, 12th March 2010"
                 aria-pressed={false}
@@ -925,15 +1105,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   12
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+            >
               <button
                 aria-label="Saturday, 13th March 2010"
                 aria-pressed={false}
@@ -942,15 +1125,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   13
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+            >
               <button
                 aria-label="Sunday, 14th March 2010"
                 aria-pressed={false}
@@ -959,9 +1145,11 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   14
                 </span>
               </button>
@@ -971,69 +1159,87 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
       </table>
       <table
         aria-hidden={true}
-        className="bpk-calendar-grid bpk-calendar-grid-transition__grid">
+        className="bpk-calendar-grid bpk-calendar-grid-transition__grid"
+      >
         <caption
           className="bpk-calendar-grid__caption"
-          hidden={true}>
+          hidden={true}
+        >
           March 2010
         </caption>
         <thead
-          className="bpk-calendar-header bpk-calendar-header--table-head">
+          className="bpk-calendar-header bpk-calendar-header--table-head"
+        >
           <tr
-            className="bpk-calendar-header__week">
+            className="bpk-calendar-header__week"
+          >
             <th
               className="bpk-calendar-header__weekday"
-              title="Monday">
+              title="Monday"
+            >
               <span
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 Mon
               </span>
             </th>
             <th
               className="bpk-calendar-header__weekday"
-              title="Tuesday">
+              title="Tuesday"
+            >
               <span
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 Tue
               </span>
             </th>
             <th
               className="bpk-calendar-header__weekday"
-              title="Wednesday">
+              title="Wednesday"
+            >
               <span
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 Wed
               </span>
             </th>
             <th
               className="bpk-calendar-header__weekday"
-              title="Thursday">
+              title="Thursday"
+            >
               <span
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 Thu
               </span>
             </th>
             <th
               className="bpk-calendar-header__weekday"
-              title="Friday">
+              title="Friday"
+            >
               <span
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 Fri
               </span>
             </th>
             <th
               className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-start"
-              title="Saturday">
+              title="Saturday"
+            >
               <span
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 Sat
               </span>
             </th>
             <th
               className="bpk-calendar-header__weekday bpk-calendar-header__weekday--weekend bpk-calendar-header__weekday--weekend-end"
-              title="Sunday">
+              title="Sunday"
+            >
               <span
-                aria-hidden="true">
+                aria-hidden="true"
+              >
                 Sun
               </span>
             </th>
@@ -1041,9 +1247,11 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
         </thead>
         <tbody>
           <tr
-            className="bpk-calendar-grid__week">
+            className="bpk-calendar-grid__week"
+          >
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Monday, 1st March 2010"
                 aria-pressed={false}
@@ -1052,15 +1260,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   1
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Tuesday, 2nd March 2010"
                 aria-pressed={false}
@@ -1069,15 +1280,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   2
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Wednesday, 3rd March 2010"
                 aria-pressed={false}
@@ -1086,15 +1300,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   3
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Thursday, 4th March 2010"
                 aria-pressed={false}
@@ -1103,15 +1320,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   4
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Friday, 5th March 2010"
                 aria-pressed={false}
@@ -1120,15 +1340,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   5
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+            >
               <button
                 aria-label="Saturday, 6th March 2010"
                 aria-pressed={false}
@@ -1137,15 +1360,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   6
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+            >
               <button
                 aria-label="Sunday, 7th March 2010"
                 aria-pressed={false}
@@ -1154,18 +1380,22 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   7
                 </span>
               </button>
             </td>
           </tr>
           <tr
-            className="bpk-calendar-grid__week">
+            className="bpk-calendar-grid__week"
+          >
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Monday, 8th March 2010"
                 aria-pressed={false}
@@ -1174,15 +1404,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   8
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Tuesday, 9th March 2010"
                 aria-pressed={false}
@@ -1191,15 +1424,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   9
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Wednesday, 10th March 2010"
                 aria-pressed={false}
@@ -1208,15 +1444,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   10
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Thursday, 11th March 2010"
                 aria-pressed={false}
@@ -1225,15 +1464,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   11
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Friday, 12th March 2010"
                 aria-pressed={false}
@@ -1242,15 +1484,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   12
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+            >
               <button
                 aria-label="Saturday, 13th March 2010"
                 aria-pressed={false}
@@ -1259,15 +1504,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   13
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+            >
               <button
                 aria-label="Sunday, 14th March 2010"
                 aria-pressed={false}
@@ -1276,18 +1524,22 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   14
                 </span>
               </button>
             </td>
           </tr>
           <tr
-            className="bpk-calendar-grid__week">
+            className="bpk-calendar-grid__week"
+          >
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Monday, 15th March 2010"
                 aria-pressed={false}
@@ -1296,15 +1548,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   15
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Tuesday, 16th March 2010"
                 aria-pressed={false}
@@ -1313,15 +1568,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   16
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Wednesday, 17th March 2010"
                 aria-pressed={false}
@@ -1330,15 +1588,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   17
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Thursday, 18th March 2010"
                 aria-pressed={false}
@@ -1347,15 +1608,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   18
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Friday, 19th March 2010"
                 aria-pressed={false}
@@ -1364,15 +1628,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   19
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+            >
               <button
                 aria-label="Saturday, 20th March 2010"
                 aria-pressed={false}
@@ -1381,15 +1648,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   20
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+            >
               <button
                 aria-label="Sunday, 21st March 2010"
                 aria-pressed={false}
@@ -1398,18 +1668,22 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   21
                 </span>
               </button>
             </td>
           </tr>
           <tr
-            className="bpk-calendar-grid__week">
+            className="bpk-calendar-grid__week"
+          >
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Monday, 22nd March 2010"
                 aria-pressed={false}
@@ -1418,15 +1692,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   22
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Tuesday, 23rd March 2010"
                 aria-pressed={false}
@@ -1435,15 +1712,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   23
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Wednesday, 24th March 2010"
                 aria-pressed={false}
@@ -1452,15 +1732,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   24
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Thursday, 25th March 2010"
                 aria-pressed={false}
@@ -1469,15 +1752,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   25
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Friday, 26th March 2010"
                 aria-pressed={false}
@@ -1486,15 +1772,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   26
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+            >
               <button
                 aria-label="Saturday, 27th March 2010"
                 aria-pressed={false}
@@ -1503,15 +1792,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   27
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+            >
               <button
                 aria-label="Sunday, 28th March 2010"
                 aria-pressed={false}
@@ -1520,18 +1812,22 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   28
                 </span>
               </button>
             </td>
           </tr>
           <tr
-            className="bpk-calendar-grid__week">
+            className="bpk-calendar-grid__week"
+          >
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Monday, 29th March 2010"
                 aria-pressed={false}
@@ -1540,15 +1836,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   29
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Tuesday, 30th March 2010"
                 aria-pressed={false}
@@ -1557,15 +1856,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   30
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Wednesday, 31st March 2010"
                 aria-pressed={false}
@@ -1574,15 +1876,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   31
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Thursday, 1st April 2010"
                 aria-pressed={false}
@@ -1591,15 +1896,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   1
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Friday, 2nd April 2010"
                 aria-pressed={false}
@@ -1608,15 +1916,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   2
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+            >
               <button
                 aria-label="Saturday, 3rd April 2010"
                 aria-pressed={false}
@@ -1625,15 +1936,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   3
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+            >
               <button
                 aria-label="Sunday, 4th April 2010"
                 aria-pressed={false}
@@ -1642,18 +1956,22 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   4
                 </span>
               </button>
             </td>
           </tr>
           <tr
-            className="bpk-calendar-grid__week">
+            className="bpk-calendar-grid__week"
+          >
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Monday, 5th April 2010"
                 aria-pressed={false}
@@ -1662,15 +1980,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   5
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Tuesday, 6th April 2010"
                 aria-pressed={false}
@@ -1679,15 +2000,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   6
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Wednesday, 7th April 2010"
                 aria-pressed={false}
@@ -1696,15 +2020,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   7
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Thursday, 8th April 2010"
                 aria-pressed={false}
@@ -1713,15 +2040,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   8
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date">
+              className="bpk-calendar-grid__date"
+            >
               <button
                 aria-label="Friday, 9th April 2010"
                 aria-pressed={false}
@@ -1730,15 +2060,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   9
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-start"
+            >
               <button
                 aria-label="Saturday, 10th April 2010"
                 aria-pressed={false}
@@ -1747,15 +2080,18 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   10
                 </span>
               </button>
             </td>
             <td
-              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end">
+              className="bpk-calendar-grid__date bpk-calendar-grid__date--weekend-end"
+            >
               <button
                 aria-label="Sunday, 11th April 2010"
                 aria-pressed={false}
@@ -1764,9 +2100,11 @@ exports[`BpkCalendarContainer should render correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex="-1"
-                type="button">
+                type="button"
+              >
                 <span
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   11
                 </span>
               </button>

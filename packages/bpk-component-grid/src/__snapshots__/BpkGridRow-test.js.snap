@@ -1,13 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkGridRow should render correctly 1`] = `
 <div
-  className="bpk-grid__row bpk-grid__row--padded">
+  className="bpk-grid__row bpk-grid__row--padded"
+>
   Contents
 </div>
 `;
 
 exports[`BpkGridRow should render correctly with "className" attribute 1`] = `
 <div
-  className="bpk-grid__row bpk-grid__row--padded my-custom-class">
+  className="bpk-grid__row bpk-grid__row--padded my-custom-class"
+>
   Contents
 </div>
 `;
@@ -15,7 +19,8 @@ exports[`BpkGridRow should render correctly with "className" attribute 1`] = `
 exports[`BpkGridRow should render correctly with "debug" attribute 1`] = `
 <div
   className="bpk-grid__row bpk-grid__row--padded"
-  debug={true}>
+  debug={true}
+>
   Contents
 </div>
 `;
@@ -24,7 +29,8 @@ exports[`BpkGridRow should render correctly with arbitrary attributes 1`] = `
 <div
   className="bpk-grid__row bpk-grid__row--padded"
   data-arbitrary-1="my-arbitrary-data"
-  data-arbitrary-2="my-arbitrary-data">
+  data-arbitrary-2="my-arbitrary-data"
+>
   Contents
 </div>
 `;
