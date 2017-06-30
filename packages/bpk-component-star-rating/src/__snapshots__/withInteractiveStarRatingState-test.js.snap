@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`withInteractiveStarRatingState should render correctly 1`] = `
 <BpkInteractiveStarRating
   className={null}
@@ -9,7 +11,8 @@ exports[`withInteractiveStarRatingState should render correctly 1`] = `
   onMouseLeave={[Function]}
   onRatingHover={[Function]}
   onRatingSelect={[Function]}
-  rating={0} />
+  rating={0}
+/>
 `;
 
 exports[`withInteractiveStarRatingState should render correctly with "large" attribute 1`] = `
@@ -23,5 +26,6 @@ exports[`withInteractiveStarRatingState should render correctly with "large" att
   onMouseLeave={[Function]}
   onRatingHover={[Function]}
   onRatingSelect={[Function]}
-  rating={0} />
+  rating={0}
+/>
 `;

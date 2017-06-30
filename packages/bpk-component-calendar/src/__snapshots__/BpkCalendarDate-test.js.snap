@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkCalendarDate should pass props through to button 1`] = `
 <button
   aria-label="Nothing happened on this day in 2010"
@@ -7,9 +9,11 @@ exports[`BpkCalendarDate should pass props through to button 1`] = `
   onClick={[Function]}
   onKeyDown={null}
   tabIndex="-1"
-  type="button">
+  type="button"
+>
   <span
-    aria-hidden="true">
+    aria-hidden="true"
+  >
     15
   </span>
 </button>
@@ -24,9 +28,11 @@ exports[`BpkCalendarDate should render a disabled button 1`] = `
   onClick={[Function]}
   onKeyDown={null}
   tabIndex="-1"
-  type="button">
+  type="button"
+>
   <span
-    aria-hidden="true">
+    aria-hidden="true"
+  >
     15
   </span>
 </button>
@@ -42,9 +48,11 @@ exports[`BpkCalendarDate should render a focused button with tabIndex 1`] = `
   onClick={[Function]}
   onKeyDown={null}
   tabIndex="-1"
-  type="button">
+  type="button"
+>
   <span
-    aria-hidden="true">
+    aria-hidden="true"
+  >
     15
   </span>
 </button>
@@ -59,9 +67,11 @@ exports[`BpkCalendarDate should render correctly 1`] = `
   onClick={[Function]}
   onKeyDown={null}
   tabIndex="-1"
-  type="button">
+  type="button"
+>
   <span
-    aria-hidden="true">
+    aria-hidden="true"
+  >
     15
   </span>
 </button>
@@ -76,9 +86,11 @@ exports[`BpkCalendarDate should render with a click and keyDown handler 1`] = `
   onClick={[Function]}
   onKeyDown={[Function]}
   tabIndex="-1"
-  type="button">
+  type="button"
+>
   <span
-    aria-hidden="true">
+    aria-hidden="true"
+  >
     15
   </span>
 </button>

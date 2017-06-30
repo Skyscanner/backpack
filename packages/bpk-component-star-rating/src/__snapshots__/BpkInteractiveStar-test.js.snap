@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkInteractiveStar should render correctly with a selected full star 1`] = `
 <button
   aria-label="One star"
@@ -5,7 +7,8 @@ exports[`BpkInteractiveStar should render correctly with a selected full star 1`
   className="bpk-interactive-star bpk-interactive-star--selected"
   onClick={[Function]}
   onMouseEnter={[Function]}
-  type="button">
+  type="button"
+>
   <svg
     className="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected bpk-icon--rtl-support"
     height="18"
@@ -17,9 +20,11 @@ exports[`BpkInteractiveStar should render correctly with a selected full star 1`
     }
     viewBox="0 0 24 24"
     width="18"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
-      d="M12.8 3.5L15 8c.1.3.4.4.7.5l4.6.7c.7.1 1 1 .5 1.5L17 14.2c-.2.2-.3.5-.3.8l1.5 5c.1.7-.6 1.3-1.3.9l-4.4-3c-.3-.1-.6-.1-.8 0l-4.4 3c-.6.3-1.4-.2-1.3-.9l1.5-5c0-.3 0-.6-.3-.8l-3.8-3.5c-.7-.5-.4-1.4.4-1.5l4.6-.7c.2-.1.5-.2.6-.5l2.2-4.5c.3-.7 1.3-.7 1.6 0z" />
+      d="M12.8 3.5L15 8c.1.3.4.4.7.5l4.6.7c.7.1 1 1 .5 1.5L17 14.2c-.2.2-.3.5-.3.8l1.5 5c.1.7-.6 1.3-1.3.9l-4.4-3c-.3-.1-.6-.1-.8 0l-4.4 3c-.6.3-1.4-.2-1.3-.9l1.5-5c0-.3 0-.6-.3-.8l-3.8-3.5c-.7-.5-.4-1.4.4-1.5l4.6-.7c.2-.1.5-.2.6-.5l2.2-4.5c.3-.7 1.3-.7 1.6 0z"
+    />
   </svg>
 </button>
 `;
@@ -31,7 +36,8 @@ exports[`BpkInteractiveStar should render correctly with empty star 1`] = `
   className="bpk-interactive-star"
   onClick={[Function]}
   onMouseEnter={[Function]}
-  type="button">
+  type="button"
+>
   <svg
     className="bpk-star bpk-interactive-star__icon bpk-icon--rtl-support"
     height="18"
@@ -43,9 +49,11 @@ exports[`BpkInteractiveStar should render correctly with empty star 1`] = `
     }
     viewBox="0 0 24 24"
     width="18"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
-      d="M12.8 3.5L15 8c.1.3.4.4.7.5l4.6.7c.7.1 1 1 .5 1.5L17 14.2c-.2.2-.3.5-.3.8l1.5 5c.1.7-.6 1.3-1.3.9l-4.4-3c-.3-.1-.6-.1-.8 0l-4.4 3c-.6.3-1.4-.2-1.3-.9l1.5-5c0-.3 0-.6-.3-.8l-3.8-3.5c-.7-.5-.4-1.4.4-1.5l4.6-.7c.2-.1.5-.2.6-.5l2.2-4.5c.3-.7 1.3-.7 1.6 0z" />
+      d="M12.8 3.5L15 8c.1.3.4.4.7.5l4.6.7c.7.1 1 1 .5 1.5L17 14.2c-.2.2-.3.5-.3.8l1.5 5c.1.7-.6 1.3-1.3.9l-4.4-3c-.3-.1-.6-.1-.8 0l-4.4 3c-.6.3-1.4-.2-1.3-.9l1.5-5c0-.3 0-.6-.3-.8l-3.8-3.5c-.7-.5-.4-1.4.4-1.5l4.6-.7c.2-.1.5-.2.6-.5l2.2-4.5c.3-.7 1.3-.7 1.6 0z"
+    />
   </svg>
 </button>
 `;
@@ -57,7 +65,8 @@ exports[`BpkInteractiveStar should render correctly with full star 1`] = `
   className="bpk-interactive-star"
   onClick={[Function]}
   onMouseEnter={[Function]}
-  type="button">
+  type="button"
+>
   <svg
     className="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-icon--rtl-support"
     height="18"
@@ -69,9 +78,11 @@ exports[`BpkInteractiveStar should render correctly with full star 1`] = `
     }
     viewBox="0 0 24 24"
     width="18"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
-      d="M12.8 3.5L15 8c.1.3.4.4.7.5l4.6.7c.7.1 1 1 .5 1.5L17 14.2c-.2.2-.3.5-.3.8l1.5 5c.1.7-.6 1.3-1.3.9l-4.4-3c-.3-.1-.6-.1-.8 0l-4.4 3c-.6.3-1.4-.2-1.3-.9l1.5-5c0-.3 0-.6-.3-.8l-3.8-3.5c-.7-.5-.4-1.4.4-1.5l4.6-.7c.2-.1.5-.2.6-.5l2.2-4.5c.3-.7 1.3-.7 1.6 0z" />
+      d="M12.8 3.5L15 8c.1.3.4.4.7.5l4.6.7c.7.1 1 1 .5 1.5L17 14.2c-.2.2-.3.5-.3.8l1.5 5c.1.7-.6 1.3-1.3.9l-4.4-3c-.3-.1-.6-.1-.8 0l-4.4 3c-.6.3-1.4-.2-1.3-.9l1.5-5c0-.3 0-.6-.3-.8l-3.8-3.5c-.7-.5-.4-1.4.4-1.5l4.6-.7c.2-.1.5-.2.6-.5l2.2-4.5c.3-.7 1.3-.7 1.6 0z"
+    />
   </svg>
 </button>
 `;

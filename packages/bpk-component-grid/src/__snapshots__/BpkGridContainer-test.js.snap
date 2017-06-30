@@ -1,27 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkGridContainer should render correctly 1`] = `
 <div
-  className="bpk-grid__container">
+  className="bpk-grid__container"
+>
   Contents
 </div>
 `;
 
 exports[`BpkGridContainer should render correctly with "className" attribute 1`] = `
 <div
-  className="bpk-grid__container my-custom-class">
+  className="bpk-grid__container my-custom-class"
+>
   Contents
 </div>
 `;
 
 exports[`BpkGridContainer should render correctly with "debug" attribute 1`] = `
 <div
-  className="bpk-grid__container bpk-grid__container--debug">
+  className="bpk-grid__container bpk-grid__container--debug"
+>
   Contents
 </div>
 `;
 
 exports[`BpkGridContainer should render correctly with "fullWidth" attribute 1`] = `
 <div
-  className="bpk-grid__container bpk-grid__container--full-width">
+  className="bpk-grid__container bpk-grid__container--full-width"
+>
   Contents
 </div>
 `;
@@ -30,7 +36,8 @@ exports[`BpkGridContainer should render correctly with arbitrary attributes 1`] 
 <div
   className="bpk-grid__container"
   data-arbitrary-1="my-arbitrary-data"
-  data-arbitrary-2="my-arbitrary-data">
+  data-arbitrary-2="my-arbitrary-data"
+>
   Contents
 </div>
 `;

@@ -1,13 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkNudger should render correctly 1`] = `
 <div
-  className="bpk-nudger">
+  className="bpk-nudger"
+>
   <button
     aria-controls="nudger"
     className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
-    type="button">
+    type="button"
+  >
     <svg
       className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
@@ -19,9 +23,11 @@ exports[`BpkNudger should render correctly 1`] = `
       }
       viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2" />
+        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+      />
     </svg>
   </button>
   <input
@@ -31,14 +37,16 @@ exports[`BpkNudger should render correctly 1`] = `
     readOnly={true}
     role="alert"
     type="text"
-    value={2} />
+    value={2}
+  />
   <button
     aria-controls="nudger"
     className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
-    type="button">
+    type="button"
+  >
     <svg
       className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
@@ -50,9 +58,11 @@ exports[`BpkNudger should render correctly 1`] = `
       }
       viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z" />
+        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+      />
     </svg>
   </button>
 </div>
@@ -60,14 +70,16 @@ exports[`BpkNudger should render correctly 1`] = `
 
 exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
 <div
-  className="bpk-nudger my-nudger">
+  className="bpk-nudger my-nudger"
+>
   <button
     aria-controls="nudger"
     className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
-    type="button">
+    type="button"
+  >
     <svg
       className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
@@ -79,9 +91,11 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
       }
       viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2" />
+        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+      />
     </svg>
   </button>
   <input
@@ -91,14 +105,16 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
     readOnly={true}
     role="alert"
     type="text"
-    value={2} />
+    value={2}
+  />
   <button
     aria-controls="nudger"
     className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
-    type="button">
+    type="button"
+  >
     <svg
       className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
@@ -110,9 +126,11 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
       }
       viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z" />
+        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+      />
     </svg>
   </button>
 </div>
@@ -120,14 +138,16 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
 
 exports[`BpkNudger should render correctly with a value < min 1`] = `
 <div
-  className="bpk-nudger">
+  className="bpk-nudger"
+>
   <button
     aria-controls="nudger"
     className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={true}
     onClick={[Function]}
     title="Decrease"
-    type="button">
+    type="button"
+  >
     <svg
       className="bpk-nudger__icon bpk-nudger__icon--disabled bpk-icon--align-to-button"
       height="18"
@@ -139,9 +159,11 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
       }
       viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2" />
+        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+      />
     </svg>
   </button>
   <input
@@ -151,14 +173,16 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
     readOnly={true}
     role="alert"
     type="text"
-    value={1} />
+    value={1}
+  />
   <button
     aria-controls="nudger"
     className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
-    type="button">
+    type="button"
+  >
     <svg
       className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
@@ -170,9 +194,11 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
       }
       viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z" />
+        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+      />
     </svg>
   </button>
 </div>
@@ -180,14 +206,16 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
 
 exports[`BpkNudger should render correctly with a value = max 1`] = `
 <div
-  className="bpk-nudger">
+  className="bpk-nudger"
+>
   <button
     aria-controls="nudger"
     className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
-    type="button">
+    type="button"
+  >
     <svg
       className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
@@ -199,9 +227,11 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
       }
       viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2" />
+        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+      />
     </svg>
   </button>
   <input
@@ -211,14 +241,16 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
     readOnly={true}
     role="alert"
     type="text"
-    value={9} />
+    value={9}
+  />
   <button
     aria-controls="nudger"
     className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={true}
     onClick={[Function]}
     title="Increase"
-    type="button">
+    type="button"
+  >
     <svg
       className="bpk-nudger__icon bpk-nudger__icon--disabled bpk-icon--align-to-button"
       height="18"
@@ -230,9 +262,11 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
       }
       viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z" />
+        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+      />
     </svg>
   </button>
 </div>
@@ -240,14 +274,16 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
 
 exports[`BpkNudger should render correctly with a value = min 1`] = `
 <div
-  className="bpk-nudger">
+  className="bpk-nudger"
+>
   <button
     aria-controls="nudger"
     className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={true}
     onClick={[Function]}
     title="Decrease"
-    type="button">
+    type="button"
+  >
     <svg
       className="bpk-nudger__icon bpk-nudger__icon--disabled bpk-icon--align-to-button"
       height="18"
@@ -259,9 +295,11 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
       }
       viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2" />
+        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+      />
     </svg>
   </button>
   <input
@@ -271,14 +309,16 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
     readOnly={true}
     role="alert"
     type="text"
-    value={1} />
+    value={1}
+  />
   <button
     aria-controls="nudger"
     className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Increase"
-    type="button">
+    type="button"
+  >
     <svg
       className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
@@ -290,9 +330,11 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
       }
       viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z" />
+        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+      />
     </svg>
   </button>
 </div>
@@ -300,14 +342,16 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
 
 exports[`BpkNudger should render correctly with a value > max 1`] = `
 <div
-  className="bpk-nudger">
+  className="bpk-nudger"
+>
   <button
     aria-controls="nudger"
     className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={false}
     onClick={[Function]}
     title="Decrease"
-    type="button">
+    type="button"
+  >
     <svg
       className="bpk-nudger__icon bpk-icon--align-to-button"
       height="18"
@@ -319,9 +363,11 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
       }
       viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2" />
+        d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+      />
     </svg>
   </button>
   <input
@@ -331,14 +377,16 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
     readOnly={true}
     role="alert"
     type="text"
-    value={9} />
+    value={9}
+  />
   <button
     aria-controls="nudger"
     className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
     disabled={true}
     onClick={[Function]}
     title="Increase"
-    type="button">
+    type="button"
+  >
     <svg
       className="bpk-nudger__icon bpk-nudger__icon--disabled bpk-icon--align-to-button"
       height="18"
@@ -350,9 +398,11 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
       }
       viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z" />
+        d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+      />
     </svg>
   </button>
 </div>

@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkDatepicker should render correctly 1`] = `
 <input
   aria-atomic="true"
@@ -15,5 +17,6 @@ exports[`BpkDatepicker should render correctly 1`] = `
   onKeyUp={[Function]}
   placeholder="placeholder"
   type="text"
-  value="15/02/2010" />
+  value="15/02/2010"
+/>
 `;

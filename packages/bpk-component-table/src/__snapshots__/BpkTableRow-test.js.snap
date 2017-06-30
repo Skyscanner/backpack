@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkTableRow should render correctly 1`] = `
 <tr>
   <td />

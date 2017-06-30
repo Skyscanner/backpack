@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkInput should render correctly 1`] = `
 <input
   aria-invalid={false}
@@ -5,7 +7,8 @@ exports[`BpkInput should render correctly 1`] = `
   id="test"
   name="test"
   type="text"
-  value="" />
+  value=""
+/>
 `;
 
 exports[`BpkInput should render correctly with "docked" attribute 1`] = `
@@ -15,7 +18,8 @@ exports[`BpkInput should render correctly with "docked" attribute 1`] = `
   id="test"
   name="test"
   type="text"
-  value="" />
+  value=""
+/>
 `;
 
 exports[`BpkInput should render correctly with "dockedFirst" attribute 1`] = `
@@ -25,7 +29,8 @@ exports[`BpkInput should render correctly with "dockedFirst" attribute 1`] = `
   id="test"
   name="test"
   type="text"
-  value="" />
+  value=""
+/>
 `;
 
 exports[`BpkInput should render correctly with "dockedLast" attribute 1`] = `
@@ -35,7 +40,8 @@ exports[`BpkInput should render correctly with "dockedLast" attribute 1`] = `
   id="test"
   name="test"
   type="text"
-  value="" />
+  value=""
+/>
 `;
 
 exports[`BpkInput should render correctly with "dockedMiddle" attribute 1`] = `
@@ -45,7 +51,8 @@ exports[`BpkInput should render correctly with "dockedMiddle" attribute 1`] = `
   id="test"
   name="test"
   type="text"
-  value="" />
+  value=""
+/>
 `;
 
 exports[`BpkInput should render correctly with "large" attribute 1`] = `
@@ -55,7 +62,8 @@ exports[`BpkInput should render correctly with "large" attribute 1`] = `
   id="test"
   name="test"
   type="text"
-  value="" />
+  value=""
+/>
 `;
 
 exports[`BpkInput should render correctly with additional props 1`] = `
@@ -67,7 +75,8 @@ exports[`BpkInput should render correctly with additional props 1`] = `
   onChange={[Function]}
   placeholder="Enter a country, city or airport"
   type="text"
-  value="" />
+  value=""
+/>
 `;
 
 exports[`BpkInput should render correctly with type attribute 1`] = `
@@ -77,7 +86,8 @@ exports[`BpkInput should render correctly with type attribute 1`] = `
   id="test"
   name="test"
   type="password"
-  value="" />
+  value=""
+/>
 `;
 
 exports[`BpkInput should render correctly with valid attribute set to "false" 1`] = `
@@ -87,7 +97,8 @@ exports[`BpkInput should render correctly with valid attribute set to "false" 1`
   id="test"
   name="test"
   type="text"
-  value="" />
+  value=""
+/>
 `;
 
 exports[`BpkInput should render correctly with valid attribute set to "true" 1`] = `
@@ -97,7 +108,8 @@ exports[`BpkInput should render correctly with valid attribute set to "true" 1`]
   id="test"
   name="test"
   type="text"
-  value="" />
+  value=""
+/>
 `;
 
 exports[`BpkInput should render correctly with value 1`] = `
@@ -107,5 +119,6 @@ exports[`BpkInput should render correctly with value 1`] = `
   id="test"
   name="test"
   type="text"
-  value="My value" />
+  value="My value"
+/>
 `;

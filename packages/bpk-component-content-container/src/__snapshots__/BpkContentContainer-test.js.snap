@@ -1,7 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkContentContainer should render correctly 1`] = `
 <div
   className="bpk-content-container"
-  dangerouslySetInnerHTML={null}>
+  dangerouslySetInnerHTML={null}
+>
   <h1>
     Heading
   </h1>
@@ -25,7 +28,8 @@ exports[`BpkContentContainer should render correctly 1`] = `
 exports[`BpkContentContainer should render correctly with a "bareHtml" attribute  1`] = `
 <div
   className="bpk-content-container bpk-content-container--bare-html"
-  dangerouslySetInnerHTML={null}>
+  dangerouslySetInnerHTML={null}
+>
   <h1>
     Heading
   </h1>

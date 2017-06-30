@@ -1,11 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkBannerAlert should render correctly with "type" attribute equal to "error" 1`] = `
 <section
-  className="bpk-banner-alert bpk-banner-alert--error">
+  className="bpk-banner-alert bpk-banner-alert--error"
+>
   <header
     className="bpk-banner-alert__header"
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     <span
-      className="bpk-banner-alert__icon">
+      className="bpk-banner-alert__icon"
+    >
       <svg
         className="bpk-banner-alert__error-icon bpk-icon--align-to-button"
         height="18"
@@ -17,14 +22,17 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
         }
         viewBox="0 0 24 24"
         width="18"
-        xmlns="http://www.w3.org/2000/svg">
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
-          d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1.5 16.1c0 .5-.4.9-.9.9h-1.1c-.5 0-.9-.4-.9-.9V11c0-.5.4-.9.9-.9h1.1c.5 0 .9.4.9.9v7.1zm0-11.1c0 .5-.5 1-1 1h-1c-.5 0-1-.5-1-1V6c0-.5.5-1 1-1h1c.5 0 1 .5 1 1v1z" />
+          d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1.5 16.1c0 .5-.4.9-.9.9h-1.1c-.5 0-.9-.4-.9-.9V11c0-.5.4-.9.9-.9h1.1c.5 0 .9.4.9.9v7.1zm0-11.1c0 .5-.5 1-1 1h-1c-.5 0-1-.5-1-1V6c0-.5.5-1 1-1h1c.5 0 1 .5 1 1v1z"
+        />
       </svg>
     </span>
      
     <span
-      className="bpk-banner-alert__message">
+      className="bpk-banner-alert__message"
+    >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </span>
      
@@ -34,12 +42,15 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
 
 exports[`BpkBannerAlert should render correctly with "type" attribute equal to "success" 1`] = `
 <section
-  className="bpk-banner-alert bpk-banner-alert--success">
+  className="bpk-banner-alert bpk-banner-alert--success"
+>
   <header
     className="bpk-banner-alert__header"
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     <span
-      className="bpk-banner-alert__icon">
+      className="bpk-banner-alert__icon"
+    >
       <svg
         className="bpk-banner-alert__success-icon bpk-icon--align-to-button"
         height="18"
@@ -51,14 +62,17 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
         }
         viewBox="0 0 24 24"
         width="18"
-        xmlns="http://www.w3.org/2000/svg">
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
-          d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm5.855 6.992l-6.496 7.406a1.198 1.198 0 0 1-1.691.115L4.21 11.444a.601.601 0 0 1-.059-.848l.788-.906a.6.6 0 0 1 .847-.059l2.374 2.126a.24.24 0 0 0 .339-.023l5.55-6.324a.6.6 0 0 1 .847-.057l.904.791a.603.603 0 0 1 .055.848z" />
+          d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm5.855 6.992l-6.496 7.406a1.198 1.198 0 0 1-1.691.115L4.21 11.444a.601.601 0 0 1-.059-.848l.788-.906a.6.6 0 0 1 .847-.059l2.374 2.126a.24.24 0 0 0 .339-.023l5.55-6.324a.6.6 0 0 1 .847-.057l.904.791a.603.603 0 0 1 .055.848z"
+        />
       </svg>
     </span>
      
     <span
-      className="bpk-banner-alert__message">
+      className="bpk-banner-alert__message"
+    >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </span>
      
@@ -68,12 +82,15 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
 
 exports[`BpkBannerAlert should render correctly with "type" attribute equal to "warn" 1`] = `
 <section
-  className="bpk-banner-alert bpk-banner-alert--warn">
+  className="bpk-banner-alert bpk-banner-alert--warn"
+>
   <header
     className="bpk-banner-alert__header"
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     <span
-      className="bpk-banner-alert__icon">
+      className="bpk-banner-alert__icon"
+    >
       <svg
         className="bpk-banner-alert__warn-icon bpk-icon--align-to-button"
         height="18"
@@ -85,14 +102,17 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
         }
         viewBox="0 0 24 24"
         width="18"
-        xmlns="http://www.w3.org/2000/svg">
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
-          d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1.5 16.1c0 .5-.4.9-.9.9h-1.1c-.5 0-.9-.4-.9-.9V11c0-.5.4-.9.9-.9h1.1c.5 0 .9.4.9.9v7.1zm0-11.1c0 .5-.5 1-1 1h-1c-.5 0-1-.5-1-1V6c0-.5.5-1 1-1h1c.5 0 1 .5 1 1v1z" />
+          d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1.5 16.1c0 .5-.4.9-.9.9h-1.1c-.5 0-.9-.4-.9-.9V11c0-.5.4-.9.9-.9h1.1c.5 0 .9.4.9.9v7.1zm0-11.1c0 .5-.5 1-1 1h-1c-.5 0-1-.5-1-1V6c0-.5.5-1 1-1h1c.5 0 1 .5 1 1v1z"
+        />
       </svg>
     </span>
      
     <span
-      className="bpk-banner-alert__message">
+      className="bpk-banner-alert__message"
+    >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </span>
      
@@ -102,12 +122,15 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
 
 exports[`BpkBannerAlert should render correctly with a element based message 1`] = `
 <section
-  className="bpk-banner-alert bpk-banner-alert--success">
+  className="bpk-banner-alert bpk-banner-alert--success"
+>
   <header
     className="bpk-banner-alert__header bpk-banner-alert__header--expandable"
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     <span
-      className="bpk-banner-alert__icon">
+      className="bpk-banner-alert__icon"
+    >
       <svg
         className="bpk-banner-alert__success-icon bpk-icon--align-to-button"
         height="18"
@@ -119,14 +142,17 @@ exports[`BpkBannerAlert should render correctly with a element based message 1`]
         }
         viewBox="0 0 24 24"
         width="18"
-        xmlns="http://www.w3.org/2000/svg">
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
-          d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm5.855 6.992l-6.496 7.406a1.198 1.198 0 0 1-1.691.115L4.21 11.444a.601.601 0 0 1-.059-.848l.788-.906a.6.6 0 0 1 .847-.059l2.374 2.126a.24.24 0 0 0 .339-.023l5.55-6.324a.6.6 0 0 1 .847-.057l.904.791a.603.603 0 0 1 .055.848z" />
+          d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm5.855 6.992l-6.496 7.406a1.198 1.198 0 0 1-1.691.115L4.21 11.444a.601.601 0 0 1-.059-.848l.788-.906a.6.6 0 0 1 .847-.059l2.374 2.126a.24.24 0 0 0 .339-.023l5.55-6.324a.6.6 0 0 1 .847-.057l.904.791a.603.603 0 0 1 .055.848z"
+        />
       </svg>
     </span>
      
     <span
-      className="bpk-banner-alert__message">
+      className="bpk-banner-alert__message"
+    >
       <p>
         All 
         <span>
@@ -136,12 +162,14 @@ exports[`BpkBannerAlert should render correctly with a element based message 1`]
     </span>
      
     <span
-      className="bpk-banner-alert__toggle">
+      className="bpk-banner-alert__toggle"
+    >
       <button
         aria-expanded={false}
         aria-label="View more"
         className="bpk-banner-alert__toggle-button"
-        title="View more">
+        title="View more"
+      >
         <svg
           className="bpk-banner-alert__expand-icon bpk-icon--align-to-button"
           height="18"
@@ -153,9 +181,11 @@ exports[`BpkBannerAlert should render correctly with a element based message 1`]
           }
           viewBox="0 0 24 24"
           width="18"
-          xmlns="http://www.w3.org/2000/svg">
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
-            d="M12 17.5l-7.2-6.4c-.6-.5-.7-1.5-.1-2.1.5-.6 1.5-.7 2.1-.1l5.2 4.6 5.2-4.6c.6-.6 1.6-.5 2.1.1s.5 1.6-.1 2.1L12 17.5z" />
+            d="M12 17.5l-7.2-6.4c-.6-.5-.7-1.5-.1-2.1.5-.6 1.5-.7 2.1-.1l5.2 4.6 5.2-4.6c.6-.6 1.6-.5 2.1.1s.5 1.6-.1 2.1L12 17.5z"
+          />
         </svg>
       </button>
     </span>
@@ -165,12 +195,15 @@ exports[`BpkBannerAlert should render correctly with a element based message 1`]
 
 exports[`BpkBannerAlert should render correctly with child nodes 1`] = `
 <section
-  className="bpk-banner-alert bpk-banner-alert--success">
+  className="bpk-banner-alert bpk-banner-alert--success"
+>
   <header
     className="bpk-banner-alert__header bpk-banner-alert__header--expandable"
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     <span
-      className="bpk-banner-alert__icon">
+      className="bpk-banner-alert__icon"
+    >
       <svg
         className="bpk-banner-alert__success-icon bpk-icon--align-to-button"
         height="18"
@@ -182,24 +215,29 @@ exports[`BpkBannerAlert should render correctly with child nodes 1`] = `
         }
         viewBox="0 0 24 24"
         width="18"
-        xmlns="http://www.w3.org/2000/svg">
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
-          d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm5.855 6.992l-6.496 7.406a1.198 1.198 0 0 1-1.691.115L4.21 11.444a.601.601 0 0 1-.059-.848l.788-.906a.6.6 0 0 1 .847-.059l2.374 2.126a.24.24 0 0 0 .339-.023l5.55-6.324a.6.6 0 0 1 .847-.057l.904.791a.603.603 0 0 1 .055.848z" />
+          d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm5.855 6.992l-6.496 7.406a1.198 1.198 0 0 1-1.691.115L4.21 11.444a.601.601 0 0 1-.059-.848l.788-.906a.6.6 0 0 1 .847-.059l2.374 2.126a.24.24 0 0 0 .339-.023l5.55-6.324a.6.6 0 0 1 .847-.057l.904.791a.603.603 0 0 1 .055.848z"
+        />
       </svg>
     </span>
      
     <span
-      className="bpk-banner-alert__message">
+      className="bpk-banner-alert__message"
+    >
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     </span>
      
     <span
-      className="bpk-banner-alert__toggle">
+      className="bpk-banner-alert__toggle"
+    >
       <button
         aria-expanded={false}
         aria-label="View more"
         className="bpk-banner-alert__toggle-button"
-        title="View more">
+        title="View more"
+      >
         <svg
           className="bpk-banner-alert__expand-icon bpk-icon--align-to-button"
           height="18"
@@ -211,9 +249,11 @@ exports[`BpkBannerAlert should render correctly with child nodes 1`] = `
           }
           viewBox="0 0 24 24"
           width="18"
-          xmlns="http://www.w3.org/2000/svg">
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
-            d="M12 17.5l-7.2-6.4c-.6-.5-.7-1.5-.1-2.1.5-.6 1.5-.7 2.1-.1l5.2 4.6 5.2-4.6c.6-.6 1.6-.5 2.1.1s.5 1.6-.1 2.1L12 17.5z" />
+            d="M12 17.5l-7.2-6.4c-.6-.5-.7-1.5-.1-2.1.5-.6 1.5-.7 2.1-.1l5.2 4.6 5.2-4.6c.6-.6 1.6-.5 2.1.1s.5 1.6-.1 2.1L12 17.5z"
+          />
         </svg>
       </button>
     </span>

@@ -1,6 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`BpkList should render correctly 1`] = `
 <ul
-  className="bpk-list">
+  className="bpk-list"
+>
   <li>
     list item
   </li>
@@ -9,7 +12,8 @@ exports[`BpkList should render correctly 1`] = `
 
 exports[`BpkList should render correctly with a "ordered" attribute 1`] = `
 <ol
-  className="bpk-list">
+  className="bpk-list"
+>
   <li>
     list item
   </li>
