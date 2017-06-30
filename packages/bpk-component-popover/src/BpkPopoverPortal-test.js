@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactTestUtils from 'react-addons-test-utils';
+import Shallow from 'react-test-renderer/shallow';
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
@@ -58,7 +58,7 @@ describe('BpkPopoverPortal', () => {
     // are passed to the <Portal> component.
 
     it('should render correctly with portalClassName added to portal component', () => {
-      const shallowRenderer = ReactTestUtils.createRenderer();
+      const shallowRenderer = Shallow.createRenderer();
       const result = shallowRenderer.render(
         <BpkPopoverPortal
           id="my-popover"
@@ -76,7 +76,7 @@ describe('BpkPopoverPortal', () => {
     });
 
     it('should render correctly with portalStyle added to portal component', () => {
-      const shallowRenderer = ReactTestUtils.createRenderer();
+      const shallowRenderer = Shallow.createRenderer();
       const customStyle = { color: 'red' };
       const result = shallowRenderer.render(
         <BpkPopoverPortal

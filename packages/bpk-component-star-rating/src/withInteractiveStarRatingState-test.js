@@ -8,23 +8,23 @@ const InteractiveStarRating = withInteractiveStarRatingState(BpkInteractiveStarR
 
 describe('withInteractiveStarRatingState', () => {
   it('should render correctly', () => {
-    const tree = shallow(<InteractiveStarRating id="my-star-rating" />);
+    const tree = shallow(<InteractiveStarRating id="my-star-rating" getStarLabel={() => 'my-label'} />);
     expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should render correctly with "large" attribute', () => {
-    const tree = shallow(<InteractiveStarRating id="my-star-rating" large />);
+    const tree = shallow(<InteractiveStarRating id="my-star-rating" getStarLabel={() => 'my-label'} large />);
     expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should have a rating of 3 when onRatingSelect is called with 3', () => {
-    const interactiveItem = shallow(<InteractiveStarRating id="my-star-rating" />);
+    const interactiveItem = shallow(<InteractiveStarRating id="my-star-rating" getStarLabel={() => 'my-label'} />);
     interactiveItem.instance().onRatingSelect(3);
     expect(interactiveItem.state('rating')).toBe(3);
   });
 
   it('should have a hover rating of 4 when onRatingHover is called with 4', () => {
-    const interactiveItem = shallow(<InteractiveStarRating id="my-star-rating" />);
+    const interactiveItem = shallow(<InteractiveStarRating id="my-star-rating" getStarLabel={() => 'my-label'} />);
 
     interactiveItem.instance().onRatingHover(4);
     expect(interactiveItem.state('hoverRating')).toBe(4);

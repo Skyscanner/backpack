@@ -4,7 +4,7 @@ exports[`BpkInteractiveStar should render correctly with a selected full star 1`
   aria-pressed={true}
   className="bpk-interactive-star bpk-interactive-star--selected"
   onClick={[Function]}
-  onMouseEnter={undefined}
+  onMouseEnter={[Function]}
   type="button">
   <svg
     className="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-interactive-star__icon--selected bpk-icon--rtl-support"
@@ -30,7 +30,7 @@ exports[`BpkInteractiveStar should render correctly with empty star 1`] = `
   aria-pressed={false}
   className="bpk-interactive-star"
   onClick={[Function]}
-  onMouseEnter={undefined}
+  onMouseEnter={[Function]}
   type="button">
   <svg
     className="bpk-star bpk-interactive-star__icon bpk-icon--rtl-support"
@@ -56,7 +56,7 @@ exports[`BpkInteractiveStar should render correctly with full star 1`] = `
   aria-pressed={false}
   className="bpk-interactive-star"
   onClick={[Function]}
-  onMouseEnter={undefined}
+  onMouseEnter={[Function]}
   type="button">
   <svg
     className="bpk-star bpk-star--filled bpk-interactive-star__icon bpk-icon--rtl-support"

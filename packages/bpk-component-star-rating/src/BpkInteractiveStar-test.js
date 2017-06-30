@@ -12,6 +12,7 @@ describe('BpkInteractiveStar', () => {
         name="stars"
         value={1}
         onClick={() => null}
+        onMouseEnter={() => null}
       />).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -24,6 +25,7 @@ describe('BpkInteractiveStar', () => {
         name="stars"
         value={1}
         onClick={() => null}
+        onMouseEnter={() => null}
       />).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -36,6 +38,7 @@ describe('BpkInteractiveStar', () => {
         name="stars"
         value={1}
         onClick={() => null}
+        onMouseEnter={() => null}
         selected
       />).toJSON();
     expect(tree).toMatchSnapshot();
