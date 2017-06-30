@@ -15,6 +15,7 @@ describe('withOpenEvents', () => {
         name="my-input"
         value="value"
         hasTouchSupport={false}
+        onChange={() => null}
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -27,6 +28,7 @@ describe('withOpenEvents', () => {
         name="my-input"
         value="value"
         hasTouchSupport
+        onChange={() => null}
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -39,6 +41,7 @@ describe('withOpenEvents', () => {
         name="my-input"
         value="value"
         className="my-custom-class"
+        onChange={() => null}
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -51,6 +54,7 @@ describe('withOpenEvents', () => {
       name="my-input"
       value="value"
       onOpen={onOpen}
+      onChange={() => null}
     />);
 
     expect(onOpen).not.toHaveBeenCalled();
@@ -66,6 +70,7 @@ describe('withOpenEvents', () => {
       name="my-input"
       value="value"
       onOpen={onOpen}
+      onChange={() => null}
     />);
 
     expect(onOpen).not.toHaveBeenCalled();
@@ -82,6 +87,7 @@ describe('withOpenEvents', () => {
       value="value"
       onOpen={onOpen}
       hasTouchSupport
+      onChange={() => null}
     />);
 
     expect(onOpen).not.toHaveBeenCalled();
@@ -99,6 +105,7 @@ describe('withOpenEvents', () => {
       name="my-input"
       value="value"
       onOpen={onOpen}
+      onChange={() => null}
     />);
 
     expect(onOpen).not.toHaveBeenCalled();
@@ -115,6 +122,7 @@ describe('withOpenEvents', () => {
       name="my-input"
       value="value"
       onOpen={onOpen}
+      onChange={() => null}
     />);
 
     expect(onOpen).not.toHaveBeenCalled();

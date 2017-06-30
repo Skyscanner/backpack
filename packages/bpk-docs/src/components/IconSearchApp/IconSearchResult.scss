@@ -11,20 +11,20 @@
 
   &__list {
     display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
     margin: -#{$bpk-spacing-xs};
     padding: 0;
     list-style-type: none;
+    align-items: stretch;
+    flex-wrap: wrap;
   }
 
   &__list-item {
     display: inline-flex;
-    flex-direction: column;
-    align-items: center;
     width: calc(25% - #{$bpk-spacing-sm});
     margin: $bpk-spacing-xs;
     padding: $bpk-spacing-xs;
+    align-items: center;
+    flex-direction: column;
 
     @include bpk-border-radius-xs;
     @include bpk-border-sm($bpk-color-gray-100);

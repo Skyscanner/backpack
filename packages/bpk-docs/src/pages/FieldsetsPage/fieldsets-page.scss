@@ -10,8 +10,8 @@
   }
 
   &__fieldset {
-    flex: 1;
     margin-right: $bpk-spacing-sm;
+    flex: 1;
 
     @include bpk-rtl {
       margin-right: 0;

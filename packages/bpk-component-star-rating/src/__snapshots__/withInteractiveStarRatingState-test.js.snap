@@ -1,6 +1,7 @@
 exports[`withInteractiveStarRatingState should render correctly 1`] = `
 <BpkInteractiveStarRating
   className={null}
+  getStarLabel={[Function]}
   hoverRating={0}
   id="my-star-rating"
   large={false}
@@ -14,6 +15,7 @@ exports[`withInteractiveStarRatingState should render correctly 1`] = `
 exports[`withInteractiveStarRatingState should render correctly with "large" attribute 1`] = `
 <BpkInteractiveStarRating
   className={null}
+  getStarLabel={[Function]}
   hoverRating={0}
   id="my-star-rating"
   large={true}

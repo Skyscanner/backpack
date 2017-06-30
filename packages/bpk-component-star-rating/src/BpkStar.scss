@@ -1,4 +1,4 @@
-@import "~bpk-mixins";
+@import '~bpk-mixins';
 
 @mixin large-star {
   width: $bpk-icon-size-lg;
@@ -8,8 +8,8 @@
 
 .bpk-star {
   display: inline-block;
-  fill: $bpk-color-gray-100;
   vertical-align: text-bottom;
+  fill: $bpk-color-gray-100;
 
   &--large {
     @include large-star;

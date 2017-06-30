@@ -20,7 +20,7 @@
         position: absolute;
         bottom: 100%;
         left: 50%;
-        content: " ";
+        content: ' ';
         display: block;
         margin-bottom: -$bpk-one-pixel-rem;
         margin-left: -($bpk-spacing-sm + $bpk-one-pixel-rem);
@@ -33,7 +33,7 @@
         position: absolute;
         bottom: 100%;
         left: 50%;
-        content: " ";
+        content: ' ';
         display: block;
         margin-bottom: -$bpk-one-pixel-rem;
         margin-left: -$bpk-spacing-sm;
@@ -82,10 +82,9 @@
 
     &-icon {
       display: table-cell;
-      fill: $bpk-color-gray-500;
-      // stylelint seems to complain that margin is ignored in `display: table-cell;`, but it defo works.
-      margin-right: $bpk-spacing-xs; /* stylelint-disable-line declaration-block-no-ignored-properties */
+      margin-right: $bpk-spacing-xs;
       vertical-align: top;
+      fill: $bpk-color-gray-500;
 
       @include bpk-rtl {
         margin-right: 0;

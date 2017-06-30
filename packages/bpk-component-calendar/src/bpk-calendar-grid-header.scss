@@ -21,11 +21,11 @@
   &__weekday {
     display: table-cell;
     height: $bpk-calendar-day-size;
-    box-sizing: content-box;
     padding: 0 ($bpk-calendar-day-spacing / 2) 0 ($bpk-calendar-day-spacing / 2);
     font-weight: normal;
     box-shadow: $shadow-bottom;
     vertical-align: middle;
+    box-sizing: content-box;
 
     &--weekend {
       font-weight: bold;

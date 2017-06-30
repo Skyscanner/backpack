@@ -34,7 +34,7 @@
   }
 
   &[type=number] {
-    -moz-appearance: textfield;
+    -moz-appearance: textfield; // stylelint-disable property-no-vendor-prefix
 
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
@@ -46,8 +46,8 @@
   &[type=tel],
   &[type=email] {
     @include bpk-rtl {
-      direction: ltr;
       text-align: right;
+      direction: ltr;
     }
   }
 
@@ -616,7 +616,7 @@
     position: absolute;
     bottom: 100%;
     left: 50%;
-    content: " ";
+    content: ' ';
     width: 0;
     height: 0;
     margin-left: -#{$bpk-form-validation-arrow-size};

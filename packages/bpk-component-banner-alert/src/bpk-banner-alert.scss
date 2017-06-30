@@ -20,8 +20,8 @@
 
   &__header {
     display: flex;
-    flex-direction: row;
     padding: $bpk-banner-alert-header-padding-y $bpk-banner-alert-header-padding-x;
+    flex-direction: row;
 
     &--expandable {
       cursor: pointer;
@@ -63,8 +63,8 @@
     padding: 0;
     border: 0;
     background-color: transparent;
-    appearance: none;
     cursor: pointer;
+    appearance: none;
   }
 
   &__expand-icon {

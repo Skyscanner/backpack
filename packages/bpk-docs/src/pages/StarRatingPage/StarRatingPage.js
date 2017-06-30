@@ -39,6 +39,7 @@ const components = [
     ],
     examples: [
       <InteractiveStarRating
+        id="my-star-rating"
         large
         getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
       />,

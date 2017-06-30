@@ -6,10 +6,10 @@
   position: relative;
   display: block;
   display: flex;
-  align-items: stretch;
   color: $bpk-card-color;
   text-decoration: none;
   cursor: pointer;
+  align-items: stretch;
   flex-direction: row;
 
   @include bpk-hover {
@@ -108,10 +108,10 @@
   }
 
   &__punchline {
-    flex: 0 0 auto;
     position: relative;
     z-index: 1;
     background-color: $bpk-card-background-color;
+    flex: 0 0 auto;
 
     &--horizontal {
       height: $notch-size * 2;

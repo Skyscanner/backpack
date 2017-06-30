@@ -2,11 +2,11 @@
 @import 'variables';
 
 .bpk-calendar-grid-transition {
-  box-sizing: border-box;
   position: relative;
   width: $calendar-width;
   height: $calendar-height;
   overflow: hidden;
+  box-sizing: border-box;
 
   &__dummy {
     display: inline-block;
@@ -22,8 +22,6 @@
 
     &--transitioning {
       z-index: 1;
-      -moz-transition: -moz-transform $bpk-duration-sm ease-in-out;
-      -webkit-transition: -webkit-transform $bpk-duration-sm ease-in-out;
       transition: transform $bpk-duration-sm ease-in-out;
     }
   }

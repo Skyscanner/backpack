@@ -290,8 +290,8 @@
   background-color: transparent;
   color: $bpk-link-color;
   text-decoration: $bpk-link-text-decoration;
-  appearance: none;
   cursor: pointer;
+  appearance: none;
 
   @include bpk-hover {
     color: $bpk-link-hover-color;

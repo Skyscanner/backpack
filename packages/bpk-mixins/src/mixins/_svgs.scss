@@ -22,9 +22,9 @@
 @mixin _bpk-icon-factory($map, $size, $icon) {
   @if map_has_key($map, $icon) != true {
     $err: (
-      "Could not find '" + $icon + "' icon. Refer to "
-      + "http://backpack.prod.aws.skyscnr.com/components/atoms/icons"
-      + " when specifying icon names."
+      'Could not find "' + $icon + ': icon. Refer to '
+      + 'http://backpack.prod.aws.skyscnr.com/components/atoms/icons'
+      + ' when specifying icon names.'
     );
 
     @error $err;
@@ -81,9 +81,9 @@
 @mixin bpk-icon($icon, $color, $size: small) {
   @if function-exists(encodebase64) != true {
     $err: (
-      "Could not find encodebase64 function. Refer to "
-      + "http://backpack.prod.aws.skyscnr.com/sassdoc/#svgs-mixin-bpk-icon"
-      + " on how to provide it to node-sass."
+      'Could not find encodebase64 function. Refer to '
+      + 'http://backpack.prod.aws.skyscnr.com/sassdoc/#svgs-mixin-bpk-icon'
+      + ' on how to provide it to node-sass.'
     );
 
     @error $err;
@@ -93,9 +93,9 @@
 
   @if map_has_key($icon-map, $icon) != true {
     $err: (
-      "Could not find '" + $icon + "' icon. Refer to "
-      + "http://backpack.prod.aws.skyscnr.com/components/atoms/icons"
-      + " when specifying icon names."
+      'Could not find "' + $icon + '" icon. Refer to '
+      + 'http://backpack.prod.aws.skyscnr.com/components/atoms/icons'
+      + ' when specifying icon names.'
     );
 
     @error $err;
@@ -103,8 +103,8 @@
 
   $icon-size: if($size == large, $bpk-icon-size-lg, $bpk-icon-size-sm);
   $raw-svg: map-get($icon-map, $icon);
-  $svg-string: str-replace($raw-svg, "$$COLOR$$", $color);
-  $datauri: "data:image/svg+xml;base64," + encodebase64($svg-string);
+  $svg-string: str-replace($raw-svg, '$$COLOR$$', $color);
+  $datauri: 'data:image/svg+xml;base64,' + encodebase64($svg-string);
 
   content: '';
   display: inline-block;
