@@ -12,8 +12,8 @@
     background-color: transparent;
     color: $bpk-link-color;
     text-align: left;
-    appearance: none;
     cursor: pointer;
+    appearance: none;
 
     @include bpk-rtl {
       text-align: right;
@@ -30,13 +30,13 @@
 
   &__flex-container {
     display: inline-flex;
-    flex-direction: row;
     width: 100%;
+    flex-direction: row;
   }
 
   &__title-text {
-    flex-grow: 1;
     display: inline-block;
+    flex-grow: 1;
   }
 
   &__icon-wrapper {

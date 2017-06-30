@@ -3,8 +3,8 @@
 .bpkdocs-statefulness-page {
   &__states {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     @include bpk-breakpoint-mobile {
       flex-direction: column;

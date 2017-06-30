@@ -10,8 +10,8 @@
   color: $bpk-calendar-day-color;
   font-size: $bpk-font-size-base;
   text-align: center;
-  appearance: none;
   cursor: pointer;
+  appearance: none;
   box-sizing: border-box;
 
   @include bpk-hover {

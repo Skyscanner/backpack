@@ -28,8 +28,8 @@ body {
   }
 
   &.enable-jp-font-feature-settings {
-    @include bpk-locale("ja-JP") {
-      font-feature-settings: "palt";
+    @include bpk-locale('ja-JP') {
+      font-feature-settings: 'palt';
     }
   }
 }

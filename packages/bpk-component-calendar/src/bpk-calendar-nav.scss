@@ -13,21 +13,21 @@
   &__nudger {
     display: table-cell;
     width: $bpk-calendar-day-size + $bpk-calendar-day-spacing;
-    box-sizing: border-box;
     padding: 0 ($bpk-calendar-day-spacing / 2);
     text-align: center;
     vertical-align: middle;
+    box-sizing: border-box;
   }
 
   &__button {
     width: 100%;
     height: $bpk-select-height;
     padding: $bpk-select-padding-top 0 $bpk-select-padding-bottom 0;
-    appearance: none;
     border: none;
     background: none;
     line-height: 100%; /* stylelint-disable-line scale-unlimited/declaration-strict-value */
     cursor: pointer;
+    appearance: none;
 
     @include bpk-hover {
       .bpk-calendar-nav__icon {

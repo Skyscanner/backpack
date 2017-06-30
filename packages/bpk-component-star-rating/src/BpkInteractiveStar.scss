@@ -1,4 +1,4 @@
-@import "~bpk-mixins";
+@import '~bpk-mixins';
 
 @keyframes star_dust {
   0% { transform: scale(1); }
@@ -11,8 +11,8 @@
   padding: 0;
   border: none;
   background: transparent;
-  appearance: none;
   cursor: pointer;
+  appearance: none;
 
   @include bpk-hover {
     .bpk-interactive-star__icon {

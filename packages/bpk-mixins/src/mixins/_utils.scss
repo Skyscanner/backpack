@@ -99,7 +99,7 @@
 ///   }
 
 @mixin bpk-rtl {
-  html[dir="rtl"] & {
+  html[dir=rtl] & {
     @content;
   }
 }
@@ -138,14 +138,14 @@
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-locale("ja-JP") {
+///     @include bpk-locale('ja-JP') {
 ///       /* ja-JP scss goes here */
 ///     }
 ///   }
 
 @mixin bpk-locale($locale) {
-  html[lang="#{$locale}"] &,
-  html[lang="#{to_lower_case($locale)}"] & {
+  html[lang=#{$locale}] &,
+  html[lang=#{to_lower_case($locale)}] & {
     @content;
   }
 }

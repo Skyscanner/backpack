@@ -2,7 +2,7 @@
 
 .bpk-chart {
   &__grid-line {
-    stroke: $bpk-color-gray-100;
     shape-rendering: crispEdges;
+    stroke: $bpk-color-gray-100;
   }
 }
