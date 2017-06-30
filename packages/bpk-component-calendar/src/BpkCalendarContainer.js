@@ -64,7 +64,7 @@ const withCalendarState = (Calendar) => {
       }
     }
 
-    handleDateFocus(date) {
+    handleDateFocus(event, { date, source }) {
       const { onMonthChange } = this.props;
       const focusedDate = dateToBoundaries(
         date,
@@ -78,7 +78,7 @@ const withCalendarState = (Calendar) => {
         focusedDate,
       }, () => {
         if (onMonthChange && didMonthChange) {
-          onMonthChange(startOfMonth(focusedDate));
+          onMonthChange(event, { month: startOfMonth(focusedDate), source });
         }
       });
     }
@@ -100,39 +100,44 @@ const withCalendarState = (Calendar) => {
       }
     }
 
-    handleMonthChange(month) {
-      this.handleDateFocus(setMonthYear(this.state.focusedDate, month.getMonth(), month.getFullYear()));
+    handleMonthChange(event, { month, source }) {
+      this.handleDateFocus(event, {
+        date: setMonthYear(this.state.focusedDate, month.getMonth(), month.getFullYear()),
+        source,
+      });
     }
 
     handleDateKeyDown(event) {
+      event.persist();
       const reverse = getScriptDirection() === 'rtl' ? -1 : 1;
       const { focusedDate } = this.state;
+      const source = 'GRID';
       let preventDefault = true;
 
       switch (event.key) {
         case 'ArrowRight':
-          this.handleDateFocus(addDays(focusedDate, reverse * 1));
+          this.handleDateFocus(event, { date: addDays(focusedDate, reverse * 1), source });
           break;
         case 'ArrowLeft':
-          this.handleDateFocus(addDays(focusedDate, reverse * -1));
+          this.handleDateFocus(event, { date: addDays(focusedDate, reverse * -1), source });
           break;
         case 'ArrowUp':
-          this.handleDateFocus(addDays(focusedDate, -7));
+          this.handleDateFocus(event, { date: addDays(focusedDate, -7), source });
           break;
         case 'ArrowDown':
-          this.handleDateFocus(addDays(focusedDate, 7));
+          this.handleDateFocus(event, { date: addDays(focusedDate, 7), source });
           break;
         case 'PageUp':
-          this.handleDateFocus(addMonths(focusedDate, -1));
+          this.handleDateFocus(event, { date: addMonths(focusedDate, -1), source });
           break;
         case 'PageDown':
-          this.handleDateFocus(addMonths(focusedDate, 1));
+          this.handleDateFocus(event, { date: addMonths(focusedDate, 1), source });
           break;
         case 'Home':
-          this.handleDateFocus(startOfMonth(focusedDate));
+          this.handleDateFocus(event, { date: startOfMonth(focusedDate), source });
           break;
         case 'End':
-          this.handleDateFocus(lastDayOfMonth(focusedDate));
+          this.handleDateFocus(event, { date: lastDayOfMonth(focusedDate), source });
           break;
         default:
           preventDefault = false;
@@ -179,7 +184,6 @@ const withCalendarState = (Calendar) => {
       return (
         <Calendar
           onDateClick={this.handleDateSelect}
-          onDateFocus={this.handleDateFocus}
           onDateKeyDown={this.handleDateKeyDown}
           onMonthChange={this.handleMonthChange}
 

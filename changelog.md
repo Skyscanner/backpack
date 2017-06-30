@@ -2,7 +2,11 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Breaking:**
+- bpk-component-calendar:
+- bpk-component-datepicker:
+  - The `onMonthChange` signature has changed from `onMonthChange(<Date>)`
+    to `onMonthChange(event, { month: <Date>, source: <string> })`
 
 ## 2017-06-28 - Fix "tablet-only" mixin/variable
 
