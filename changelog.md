@@ -2,9 +2,13 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-06-30 - onMonthChange callback structure
+
 **Breaking:**
-- bpk-component-calendar:
-- bpk-component-datepicker:
+- bpk-component-calendar: 3.3.2 => 4.0.0
+- bpk-component-datepicker: 6.1.3 => 7.0.0
   - The `onMonthChange` signature has changed from `onMonthChange(<Date>)`
     to `onMonthChange(event, { month: <Date>, source: <string> })`
 
