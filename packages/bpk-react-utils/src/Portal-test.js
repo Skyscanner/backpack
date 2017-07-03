@@ -5,6 +5,10 @@ import { render, unmountComponentAtNode } from 'react-dom';
 
 import Portal from './Portal';
 
+const KEYCODES = {
+  ESCAPE: 27,
+};
+
 describe('Portal', () => {
   it('should render correctly with no target', () => {
     const tree = renderer.create(
@@ -131,10 +135,14 @@ describe('Portal', () => {
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    const event = new MouseEvent('click');
+    const event = {
+      button: 0,
+      target: '<div>',
+    };
     portal.instance().onDocumentClick(event);
 
-    expect(onCloseSpy.mock.calls).toEqual([[event]]);
+    expect(onCloseSpy.mock.calls[0][0]).toEqual(event);
+    expect(onCloseSpy.mock.calls[0][1]).toEqual({ source: '<div>' });
   });
 
   it('should call the onClose handler on escape key', () => {
@@ -152,7 +160,7 @@ describe('Portal', () => {
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: 27 });
+    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
     document.dispatchEvent(event);
 
     expect(onCloseSpy.mock.calls.length).toEqual(1);
@@ -173,10 +181,11 @@ describe('Portal', () => {
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: 27 });
+    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE, key: 'Escape' });
     document.dispatchEvent(event);
 
-    expect(onCloseSpy.mock.calls).toEqual([[event]]);
+    expect(onCloseSpy.mock.calls[0][0]).toEqual(event);
+    expect(onCloseSpy.mock.calls[0][1]).toEqual({ source: 'ESCAPE' });
   });
 
   it('should not call the onClose handler on escape key if portal is closed', () => {
@@ -194,7 +203,7 @@ describe('Portal', () => {
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: 27 });
+    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
     document.dispatchEvent(event);
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
@@ -215,7 +224,7 @@ describe('Portal', () => {
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: 27 });
+    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
     document.dispatchEvent(event);
 
     expect(onCloseSpy.mock.calls.length).toEqual(1);

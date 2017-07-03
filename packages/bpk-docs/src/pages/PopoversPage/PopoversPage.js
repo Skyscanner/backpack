@@ -34,7 +34,7 @@ class PopoverContainer extends Component {
     });
   }
 
-  closePopover(e) {
+  closePopover() {
     this.setState({
       isOpen: false,
     });
