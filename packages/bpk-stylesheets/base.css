@@ -402,11 +402,11 @@ body {
   body.scaffold-font-size {
     font-size: 13px;
     /* stylelint-disable-line unit-blacklist, scale-unlimited/declaration-strict-value */ }
-  html[lang="ja-JP"] body.enable-jp-font-feature-settings,
-  html[lang="ja-jp"] body.enable-jp-font-feature-settings {
-    -webkit-font-feature-settings: "palt";
-       -moz-font-feature-settings: "palt";
-            font-feature-settings: "palt"; }
+  html[lang=ja-JP] body.enable-jp-font-feature-settings,
+  html[lang=ja-jp] body.enable-jp-font-feature-settings {
+    -webkit-font-feature-settings: 'palt';
+       -moz-font-feature-settings: 'palt';
+            font-feature-settings: 'palt'; }
 
 .hidden,
 .hide {
