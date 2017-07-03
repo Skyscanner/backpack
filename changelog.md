@@ -2,9 +2,11 @@
 
 ## UNRELEASED
 
-- bpk-grid-toggle: 
-- bpk-rtl-toggle: 
+- bpk-grid-toggle:
+- bpk-rtl-toggle:
   - Shortcuts have been added to allow grid and RTL to be toggled using ctrl+cmd+r and ctrl+cmd+g respectively
+- bpk-component-datepicker
+  - When there is no date set, do not pupulate "aria-label" with "Thursday, 1st January 1970"
 
 ## 2017-06-30 - onMonthChange callback structure
 

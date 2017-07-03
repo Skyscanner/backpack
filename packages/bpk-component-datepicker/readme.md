@@ -81,11 +81,11 @@ For more information on some these props, check the BpkCalendar documentation.
 | title                 | string               | true     | -                    |
 | id                    | string               | true     | -                    |
 | getApplicationElement | func                 | true     | -                    |
-| date                  | Date                 | true     | -                    |
 | daysOfWeek            | object               | true     | -                    |
 | formatDate            | func                 | true     | -                    |
 | formatDateFull        | func                 | true     | -                    |
 | formatMonth           | func                 | true     | -                    |
+| date                  | Date                 | false    | null                 |
 | DateComponent         | func                 | false    | BpkCalendarDate  (*) |
 | dateModifiers         | object               | false    | {}               (*) |
 | inputProps            | object               | false    | {}                   |
