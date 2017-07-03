@@ -405,7 +405,6 @@ body {
   html[lang=ja-JP] body.enable-jp-font-feature-settings,
   html[lang=ja-jp] body.enable-jp-font-feature-settings {
     -webkit-font-feature-settings: 'palt';
-       -moz-font-feature-settings: 'palt';
             font-feature-settings: 'palt'; }
 
 .hidden,
