@@ -16,6 +16,7 @@ const extendedRgbAse = require('!!file?name=[name].[hash].ase!./../../static/ext
 const extendedRgbClr = require('!!file?name=[name].[hash].clr!./../../static/extended_rgb.clr');
 const iconTemplate = require('!!file?name=[name].[hash].sketch!./../../static/icon-template.sketch');
 const responsiveGrid = require('!!file?name=[name].[hash].sketch!./../../static/responsive-grids.sketch');
+
 // TODO: Expose this when we release
 // const bookmarklet = require('!!raw-loader!uglify-loader!babel-loader!../../bag-check-bookmarklet/index.js');
 /* eslint-enable */
@@ -39,7 +40,7 @@ const ResourcesPage = () => (
               <BpkLink href={`/${coreRgbClr}`} blank>Mac</BpkLink>
             </BpkListItem>
           </BpkList>
-          <BpkHeading level="h3">Extended (for illustration only)</BpkHeading>
+          <BpkHeading level="h3">Extended (for marketing &amp; illustration only)</BpkHeading>
           <BpkList>
             <BpkListItem>
               <BpkLink href={`/${extendedRgbAse}`} blank>Adobe Swatch Exchange</BpkLink>
@@ -60,7 +61,7 @@ const ResourcesPage = () => (
               <BpkLink href={`/${responsiveGrid}`} blank>Responsive grids</BpkLink>
             </BpkListItem>
             <BpkListItem>
-              <BpkLink href={`/${iconTemplate}`} blank>Icon tempalte</BpkLink>
+              <BpkLink href={`/${iconTemplate}`} blank>Icon template</BpkLink>
             </BpkListItem>
             {/*
               // TODO: Expose this when release
@@ -69,8 +70,18 @@ const ResourcesPage = () => (
             </BpkListItem>
             */}
             <BpkListItem>
+              <BpkLink href="https://www.invisionapp.com/craft" blank>
+                Craft Plugin for Sketch
+              </BpkLink>
+            </BpkListItem>
+            <BpkListItem>
               <BpkLink href="https://www.dropbox.com/sh/0dqy5vbr1pjk0f4/AADHS3kRM_yGCqp5wyVMe09Ba?dl=0" blank>
                 Craft Library
+              </BpkLink>
+            </BpkListItem>
+            <BpkListItem>
+              <BpkLink href="https://animaapp.github.io/" blank>
+                Autolayout Plugin for Sketch
               </BpkLink>
             </BpkListItem>
           </BpkList>
