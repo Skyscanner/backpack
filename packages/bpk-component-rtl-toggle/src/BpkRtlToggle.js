@@ -16,10 +16,26 @@ class BpkRtlToggle extends React.Component {
     super(props);
 
     this.toggleRtl = this.toggleRtl.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
 
     this.state = {
       direction: getDirection(),
     };
+  }
+
+
+  componentWillMount() {
+    document.addEventListener('keydown', this.handleKeyDown);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyDown);
+  }
+
+  handleKeyDown(e) {
+    if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 'r') {
+      this.toggleRtl(e);
+    }
   }
 
   toggleRtl(e) {
@@ -35,7 +51,14 @@ class BpkRtlToggle extends React.Component {
   render() {
     const onOrOff = this.state.direction === DIRECTIONS.RTL ? 'off' : 'on';
 
-    return <BpkButtonLink onClick={this.toggleRtl}>Toggle RTL {onOrOff}</BpkButtonLink>;
+    return (
+      <BpkButtonLink
+        title="Keyboard Shortcut: ctrl + cmd + r"
+        onClick={this.toggleRtl}
+      >
+        Toggle RTL {onOrOff}
+      </BpkButtonLink>
+    );
   }
 }
 

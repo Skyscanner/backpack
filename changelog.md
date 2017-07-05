@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+- bpk-grid-toggle: 
+- bpk-rtl-toggle: 
+  - Shortcuts have been added to allow grid and RTL to be toggled using ctrl+cmd+r and ctrl+cmd+g respectively
 
 ## 2017-06-30 - onMonthChange callback structure
 

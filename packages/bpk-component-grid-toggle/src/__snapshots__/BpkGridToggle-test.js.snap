@@ -4,6 +4,7 @@ exports[`BpkGridToggle should render correctly 1`] = `
 <button
   className="bpk-link"
   onClick={[Function]}
+  title="Keyboard Shortcut: ctrl + cmd + g"
   type="button"
 >
   Toggle baseline grid 
@@ -15,6 +16,7 @@ exports[`BpkGridToggle should render correctly when toggled 1`] = `
 <button
   className="bpk-link"
   onClick={[Function]}
+  title="Keyboard Shortcut: ctrl + cmd + g"
   type="button"
 >
   Toggle baseline grid 
