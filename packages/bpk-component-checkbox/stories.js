@@ -1,5 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { colorGray700, spacingBase } from 'bpk-tokens/tokens/base.es6';
 
 import BpkCheckbox from './index';

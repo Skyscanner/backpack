@@ -1,5 +1,5 @@
 import BpkButton from 'bpk-component-button';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 

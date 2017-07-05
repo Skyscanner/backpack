@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BpkButton from 'bpk-component-button';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 
 import BpkFormValidation from './index';
 

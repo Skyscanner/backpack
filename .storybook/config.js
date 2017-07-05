@@ -1,5 +1,5 @@
 import React from 'react';
-import { configure, addDecorator } from '@kadira/storybook';
+import { configure, addDecorator } from '@storybook/react';
 
 import '../packages/bpk-stylesheets';
 import TOKENS from './../packages/bpk-tokens/tokens/base.common';

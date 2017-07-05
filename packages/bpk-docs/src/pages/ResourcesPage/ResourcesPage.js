@@ -9,13 +9,12 @@ import BpkContentContainer from 'bpk-component-content-container';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
 
 /* eslint-disable import/no-webpack-loader-syntax */
-const coreRgbAse = require('!!file?name=[name].[hash].ase!./../../static/core_rgb.ase');
-const coreRgbClr = require('!!file?name=[name].[hash].clr!./../../static/core_rgb.clr');
-const extendedRgbAse = require('!!file?name=[name].[hash].ase!./../../static/extended_rgb.ase');
-const extendedRgbClr = require('!!file?name=[name].[hash].clr!./../../static/extended_rgb.clr');
-const iconTemplate = require('!!file?name=[name].[hash].sketch!./../../static/icon-template.sketch');
-const responsiveGrid = require('!!file?name=[name].[hash].sketch!./../../static/responsive-grids.sketch');
-
+const coreRgbAse = require('!!file-loader?name=[name].[hash].ase!./../../static/core_rgb.ase');
+const coreRgbClr = require('!!file-loader?name=[name].[hash].clr!./../../static/core_rgb.clr');
+const extendedRgbAse = require('!!file-loader?name=[name].[hash].ase!./../../static/extended_rgb.ase');
+const extendedRgbClr = require('!!file-loader?name=[name].[hash].clr!./../../static/extended_rgb.clr');
+const iconTemplate = require('!!file-loader?name=[name].[hash].sketch!./../../static/icon-template.sketch');
+const responsiveGrid = require('!!file-loader?name=[name].[hash].sketch!./../../static/responsive-grids.sketch');
 // TODO: Expose this when we release
 // const bookmarklet = require('!!raw-loader!uglify-loader!babel-loader!../../bag-check-bookmarklet/index.js');
 /* eslint-enable */

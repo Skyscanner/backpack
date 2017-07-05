@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { cloneElement, Component } from 'react';
 import BpkSelect from 'bpk-component-select';
 import BpkCheckbox from 'bpk-component-checkbox';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 
 import BpkFieldset from './index';

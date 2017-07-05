@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkButton from 'bpk-component-button';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import BpkParagraph from 'bpk-component-paragraph';
 import BpkContentContainer from 'bpk-component-content-container';
 

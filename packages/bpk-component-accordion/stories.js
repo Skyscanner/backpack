@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import BpkCheckbox from 'bpk-component-checkbox';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 

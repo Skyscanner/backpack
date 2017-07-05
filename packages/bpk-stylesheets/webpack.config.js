@@ -1,6 +1,8 @@
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const postCssFlexbugsFixes = require('postcss-flexbugs-fixes');
+
 module.exports = {
   entry: {
     base: './index.js',
@@ -8,28 +10,86 @@ module.exports = {
 
   output: {
     filename: 'base.js',
-    path: '',
   },
 
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.js$/, exclude: /node_modules/, loader: 'babel',
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
       },
       {
-        test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!postcss!sass'),
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: () => [
+                  postCssFlexbugsFixes,
+                  autoprefixer({
+                    browsers: [
+                      '>1%',
+                      'last 4 versions',
+                      'Firefox ESR',
+                      'not ie < 9', // React doesn't support IE8 anyway
+                    ],
+                    flexbox: 'no-2009',
+                  }),
+                ],
+              },
+            },
+            {
+              loader: 'sass-loader',
+            },
+          ],
+        }),
       },
       {
-        test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css'),
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: () => [
+                  postCssFlexbugsFixes,
+                  autoprefixer({
+                    browsers: [
+                      '>1%',
+                      'last 4 versions',
+                      'Firefox ESR',
+                      'not ie < 9', // React doesn't support IE8 anyway
+                    ],
+                    flexbox: 'no-2009',
+                  }),
+                ],
+              },
+            },
+          ],
+        }),
       },
     ],
   },
 
   plugins: [
-    new ExtractTextPlugin('base.css'),
+    new ExtractTextPlugin({
+      filename: 'base.css',
+    }),
   ],
-
-  postcss() {
-    return [autoprefixer({ browsers: ['last 20 versions'] })];
-  },
 };

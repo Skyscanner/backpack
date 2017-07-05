@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 import webpack from 'webpack';
 import autoprefixer from 'autoprefixer';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
@@ -9,6 +10,7 @@ import * as ROUTES from './packages/bpk-docs/src/constants/routes';
 
 const { BPK_TOKENS } = process.env;
 const useCssModules = process.env.ENABLE_CSS_MODULES !== 'false';
+const isProduction = process.env.NODE_ENV === 'production';
 
 const staticSiteGeneratorConfig = {
   paths: [
@@ -71,61 +73,13 @@ const staticSiteGeneratorConfig = {
   ],
 };
 
-const config = {
-  entry: {
-    docs: './packages/bpk-docs/src/index.js',
-  },
+const sassOptions = {
+  data: BPK_TOKENS ? fs.readFileSync(`packages/bpk-tokens/tokens/${BPK_TOKENS}.scss`) : '',
+  functions: sassFunctions,
+};
 
-  output: {
-    filename: '[name]_[chunkhash].js',
-    path: 'dist',
-    libraryTarget: 'umd',
-  },
-
-  module: {
-    loaders: [
-      {
-        test: /\.jsx?$/, exclude: /node_modules\/(?!bpk-).*/, loader: 'babel',
-      },
-      {
-        test: /base\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!postcss!sass?config=sass'),
-      },
-      {
-        test: /\.scss$/,
-        exclude: /base\.scss$/,
-        loader: ExtractTextPlugin.extract(
-          'style',
-          [
-            `css?modules=${JSON.stringify(useCssModules)}&localIdentName=[local]-[hash:base64:5]`,
-            'postcss',
-            'sass?config=sass',
-          ],
-        ),
-      },
-      {
-        test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css'),
-      },
-      {
-        test: /\.(jpg|png|svg)$/, exclude: /node_modules/, loader: 'file?limit=10000&name=[name].[hash].[ext]',
-      },
-      {
-        test: /\.json$/, loader: 'json',
-      },
-      {
-        test: /favicon\.ico$/, loader: 'file?name=[name].[ext]',
-      },
-      {
-        test: /readme\.md$/, loader: 'raw',
-      },
-    ],
-  },
-
-  plugins: [
-    new ExtractTextPlugin('[name]_[contenthash].css'),
-    new StaticSiteGeneratorPlugin('docs', staticSiteGeneratorConfig.paths, staticSiteGeneratorConfig),
-  ],
-
-  postcss: () => [autoprefixer({
+const postCssPlugins = () => [
+  autoprefixer({
     browsers: [
       'last 2 versions',
       '> 10%',
@@ -135,28 +89,130 @@ const config = {
       'Firefox >= 34',
       'Opera >= 30',
     ],
-  })],
+  }),
+];
 
-  sass: {
-    data: BPK_TOKENS ? fs.readFileSync(`packages/bpk-tokens/tokens/${BPK_TOKENS}.scss`) : '',
-    functions: sassFunctions,
+const config = {
+  entry: {
+    docs: './packages/bpk-docs/src/index.js',
   },
+
+  output: {
+    filename: `[name]${isProduction ? '_[chunkhash]' : ''}.js`,
+    path: path.resolve(__dirname, 'dist'),
+    libraryTarget: 'umd',
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/, exclude: /node_modules\/(?!bpk-).*/, use: ['babel-loader'],
+      },
+      {
+        test: /base\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: postCssPlugins,
+              },
+            },
+            {
+              loader: 'sass-loader',
+              options: sassOptions,
+            },
+          ],
+        }),
+      },
+      {
+        test: /\.scss$/,
+        exclude: /base\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: useCssModules,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: postCssPlugins,
+              },
+            },
+            {
+              loader: 'sass-loader',
+              options: sassOptions,
+            },
+          ],
+        }),
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }),
+      },
+      {
+        test: /\.(jpg|png|svg)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'file-loader',
+            query: {
+              limit: 10000,
+              name: '[name]_[hash].[ext]',
+            },
+          },
+        ],
+      },
+      {
+        test: /favicon\.ico$/,
+        use: [
+          {
+            loader: 'file-loader',
+            query: {
+              name: '[name].[ext]',
+            },
+          },
+        ],
+      },
+      {
+        test: /readme\.md$/,
+        use: ['raw-loader'],
+      },
+    ],
+  },
+
+  plugins: [
+    new ExtractTextPlugin(`[name]${isProduction ? '_[contenthash]' : ''}.css`),
+  ],
 
   devServer: {
     host: '0.0.0.0',
+    historyApiFallback: {
+      index: 'index.html',
+    },
   },
 
 };
 
-if (process.env.NODE_ENV === 'production') {
+if (isProduction) {
   config.plugins.push(
+    new StaticSiteGeneratorPlugin({
+      entry: 'docs',
+      paths: staticSiteGeneratorConfig.paths,
+      locals: staticSiteGeneratorConfig,
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
       },
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         unused: true,
