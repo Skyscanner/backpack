@@ -137,12 +137,11 @@ describe('Portal', () => {
 
     const event = {
       button: 0,
-      target: '<div>',
     };
     portal.instance().onDocumentClick(event);
 
     expect(onCloseSpy.mock.calls[0][0]).toEqual(event);
-    expect(onCloseSpy.mock.calls[0][1]).toEqual({ source: '<div>' });
+    expect(onCloseSpy.mock.calls[0][1]).toEqual({ source: 'DOCUMENT_CLICK' });
   });
 
   it('should call the onClose handler on escape key', () => {
@@ -181,7 +180,7 @@ describe('Portal', () => {
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE, key: 'Escape' });
+    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
     document.dispatchEvent(event);
 
     expect(onCloseSpy.mock.calls[0][0]).toEqual(event);

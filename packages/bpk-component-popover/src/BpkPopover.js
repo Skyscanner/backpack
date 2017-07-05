@@ -59,9 +59,13 @@ const BpkPopover = (props) => {
                   <BpkCloseButton
                     className={getClassName('bpk-popover__close-button')}
                     label={closeButtonText}
-                    onClick={onClose}
+                    onClick={(event) => { props.onClose(event, { source: 'CLOSE_BUTTON' }); }}
                   />
-                : <BpkButtonLink onClick={onClose}>{closeButtonText}</BpkButtonLink>
+                : <BpkButtonLink
+                  onClick={(event) => {
+                    props.onClose(event, { source: 'CLOSE_LINK' });
+                  }}
+                >{closeButtonText}</BpkButtonLink>
                 }
               </header>
             ) : (
@@ -71,7 +75,11 @@ const BpkPopover = (props) => {
           <div className={bodyClassNames.join(' ')}>{children}</div>
           {!labelAsTitle && (
             <footer className={getClassName('bpk-popover__footer')}>
-              <BpkButtonLink onClick={onClose}>{closeButtonText}</BpkButtonLink>
+              <BpkButtonLink
+                onClick={(event) => {
+                  props.onClose(event, { source: 'CLOSE_LINK' });
+                }}
+              >{closeButtonText}</BpkButtonLink>
             </footer>
           )}
         </div>
