@@ -29,7 +29,7 @@ export default () => (
     <BpkStarRating
       rating={3.5}
       large
-      ratingLabel={(rating, maxRating) => `Rated ${r} out of ${m} stars`}
+      ratingLabel={(rating, maxRating) => `Rated ${rating} out of ${maxRating} stars`}
     />
     <InteractiveStarRating
       id="large-star-rating"
