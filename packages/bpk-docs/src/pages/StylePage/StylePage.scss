@@ -9,11 +9,17 @@
     }
   }
 
+  &__section-header {
+    margin-top: $bpk-spacing-md;
+  }
+
   &__copywrite-column {
     margin-bottom: $bpk-spacing-sm;
   }
 
   &__brand-guidelines {
-    text-align: center;
+    @include bpk-breakpoint-above-mobile {
+      text-align: center;
+    }
   }
 }

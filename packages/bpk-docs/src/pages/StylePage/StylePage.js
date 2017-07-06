@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import BpkLink from 'bpk-component-link';
 import BpkTile from 'bpk-component-tile';
@@ -7,6 +8,7 @@ import BpkHeading from 'bpk-component-heading';
 import BpkParagraph from 'bpk-component-paragraph';
 import { colors } from 'bpk-tokens/tokens/base.es6';
 import BpkRouterLink from 'bpk-component-router-link';
+import BpkContentContainer from 'bpk-component-content-container';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
 
 import * as ROUTES from './../../constants/routes';
@@ -21,7 +23,6 @@ import canadaImage from './canada_lake_lady.jpg';
 
 const getClassName = cssModules(STYLES);
 
-const pageTitle = 'Style';
 /* eslint-disable import/no-webpack-loader-syntax */
 const iconGuidelines = require('!!file?name=[name].[hash].pdf!./../../static/icon_guidelines.pdf');
 const illustrationGuidelines = require(
@@ -38,73 +39,100 @@ const brandGuidelines = require('!!file?name=[name].[hash].pdf!./../../static/br
 
 const StylePage = props => (
   <BpkGridContainer>
+    <Helmet title="Style" />
     <BpkGridRow>
       <BpkGridColumn width={12}>
-        <BpkHeading level="h1">{pageTitle}</BpkHeading>
-        <BpkParagraph>
-          Here you can find guides and information for creating assets in the Skyscanner style.
-        </BpkParagraph>
+        <BpkContentContainer>
+          <BpkHeading level="h1">Style</BpkHeading>
+          <BpkParagraph>
+            Here you can find guides and information for creating assets in the Skyscanner style.
+          </BpkParagraph>
+        </BpkContentContainer>
       </BpkGridColumn>
     </BpkGridRow>
     <BpkGridRow>
-      <BpkGridColumn width={12} padded={false}>
-        <BpkHeading level="h2" bottomMargin={false}>Icons</BpkHeading>
+      <BpkGridColumn padded={false} width={12}>
+        <BpkHeading level="h2" bottomMargin={false} className={getClassName('bpkdocs-style-page__section-header')}>
+          Icons
+        </BpkHeading>
       </BpkGridColumn>
     </BpkGridRow>
     <BpkGridRow>
       <BpkGridColumn width={6} mobileWidth={12} tabletWidth={12}>
-        <a href={`/${iconGuidelines}`} className={getClassName('bpkdocs-style-page__link')}>
+        <a
+          href={`/${iconGuidelines}`}
+          className={getClassName('bpkdocs-style-page__link')}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <BpkTile
             heading="How to draw icons"
             cta="Read the guidelines"
-            imageSource={iconsImage}
+            imageSource={`/${iconsImage}`}
           />
         </a>
       </BpkGridColumn>
       <BpkGridColumn width={3} mobileWidth={12} tabletWidth={6}>
         <BpkRouterLink to={ROUTES.ICONS} className={STYLES['bpkdocs-style-page__link']}>
           <BpkTile
-            heading="Using icons in code."
+            heading="Using icons in code"
             cta="Read the docs"
-            imageSource={sassImage}
+            imageSource={`/${sassImage}`}
             backgroundColor={colors.colorGreen500}
           />
         </BpkRouterLink>
       </BpkGridColumn>
       <BpkGridColumn width={3} mobileWidth={12} tabletWidth={6}>
-        <a href={`/${props.route.iconsSvgs}`} className={getClassName('bpkdocs-style-page__link')}>
+        <a
+          href={`/${props.route.iconsSvgs}`}
+          className={getClassName('bpkdocs-style-page__link')}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <BpkTile
-            heading="Using icons in sketch."
+            heading="Using icons in Sketch"
             cta="Download the SVGs"
-            imageSource={sketchImage}
+            imageSource={`/${sketchImage}`}
             backgroundColor={colors.colorRed500}
           />
         </a>
       </BpkGridColumn>
     </BpkGridRow>
     <BpkGridRow>
-      <BpkGridColumn width={12} padded={false}>
-        <BpkHeading level="h2" bottomMargin={false}>Illustration</BpkHeading>
+      <BpkGridColumn padded={false} width={12}>
+        <BpkHeading level="h2" bottomMargin={false} className={getClassName('bpkdocs-style-page__section-header')}>
+          Illustration
+        </BpkHeading>
       </BpkGridColumn>
     </BpkGridRow>
     <BpkGridRow>
       <BpkGridColumn width={9} mobileWidth={12} tabletWidth={6}>
-        <a href={`/${illustrationGuidelines}`} className={getClassName('bpkdocs-style-page__link')}>
+        <a
+          href={`/${illustrationGuidelines}`}
+          className={getClassName('bpkdocs-style-page__link')}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <BpkTile
-            heading="Illustration guidelines and best practices."
+            heading="Illustration guidelines and best practices"
             cta="Download the guide"
-            imageSource={illustrationImage}
+            imageSource={`/${illustrationImage}`}
             backgroundColor={colors.colorwhite}
             dark={false}
           />
         </a>
       </BpkGridColumn>
       <BpkGridColumn width={3} mobileWidth={12} tabletWidth={6}>
-        <a href={`/${illustrationSamples}`} className={getClassName('bpkdocs-style-page__link')}>
+        <a
+          href={`/${illustrationSamples}`}
+          className={getClassName('bpkdocs-style-page__link')}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <BpkTile
             heading="Illustration examples"
             cta="Download samples"
-            imageSource={illustrationSamplesImage}
+            imageSource={`/${illustrationSamplesImage}`}
             backgroundColor={colors.colorwhite}
             dark={false}
           />
@@ -113,35 +141,47 @@ const StylePage = props => (
     </BpkGridRow>
     <BpkGridRow>
       <BpkGridColumn
-        className={getClassName('bpkdocs-style-page__copywrite-column')}
+        padded={false}
         width={6}
         mobileWidth={12}
         tabletWidth={6}
-        padded={false}
+        className={getClassName('bpkdocs-style-page__copywrite-column')}
       >
-        <BpkHeading level="h2">Copywriting</BpkHeading>
-        <a href={`/${toneOfVoiceGuidelines}`} className={getClassName('bpkdocs-style-page__link')}>
+        <BpkHeading level="h2" className={getClassName('bpkdocs-style-page__section-header')}>
+          Copywriting
+        </BpkHeading>
+        <a
+          href={`/${toneOfVoiceGuidelines}`}
+          className={getClassName('bpkdocs-style-page__link')}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <BpkTile
-            heading="Illustration guidelines and best practices"
-            cta="Download this guide"
-            imageSource={toneOfVoiceImage}
+            heading="Tone of voice"
+            cta="Download the guide"
+            imageSource={`/${toneOfVoiceImage}`}
             backgroundColor={colors.colorYellow500}
           />
         </a>
       </BpkGridColumn>
       <BpkGridColumn
-        className={getClassName('bpkdocs-style-page__copywrite-column')}
-        width={6}
-        mobileWidth={12}
-        tabletWidth={6}
         padded={false}
+        width={6}
+        tabletWidth={6}
+        mobileWidth={12}
+        className={getClassName('bpkdocs-style-page__copywrite-column')}
       >
-        <BpkHeading level="h2">Photography</BpkHeading>
-        <a href={`/${photographyGuidelines}`} className={getClassName('bpkdocs-style-page__link')}>
+        <BpkHeading level="h2" className={getClassName('bpkdocs-style-page__section-header')}>Photography</BpkHeading>
+        <a
+          href={`/${photographyGuidelines}`}
+          className={getClassName('bpkdocs-style-page__link')}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <BpkTile
-            heading="Photography"
+            heading="Photography guildelines"
             cta="Check them out"
-            imageSource={canadaImage}
+            imageSource={`/${canadaImage}`}
             dark={false}
           />
         </a>
@@ -149,9 +189,11 @@ const StylePage = props => (
     </BpkGridRow>
     <BpkGridRow>
       <BpkGridColumn width={12}>
-        <BpkParagraph className={getClassName('bpkdocs-style-page__brand-guidelines')}>
-          Looking for brand guidelines? <BpkLink href={`/${brandGuidelines}`}>Grab them here.</BpkLink>
-        </BpkParagraph>
+        <BpkContentContainer>
+          <BpkParagraph className={getClassName('bpkdocs-style-page__brand-guidelines')}>
+            Looking for brand guidelines? <BpkLink href={`/${brandGuidelines}`}>Grab them here.</BpkLink>
+          </BpkParagraph>
+        </BpkContentContainer>
       </BpkGridColumn>
     </BpkGridRow>
   </BpkGridContainer>
