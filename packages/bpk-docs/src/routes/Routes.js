@@ -56,6 +56,9 @@ import UnitsPage from './../pages/UnitsPage';
 
 import ResourcesPage from './../pages/ResourcesPage';
 import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages';
+/* eslint-disable import/no-webpack-loader-syntax */
+const iconsSvgs = require('!!file?name=[name].[hash].zip!zip-it!./../../../bpk-svgs/src/icons/icons');
+/* eslint-enable */
 
 const Routes = (
   <Route path={ROUTES.HOME} component={DefaultLayout}>
@@ -67,8 +70,6 @@ const Routes = (
       <Route path={ROUTES.BACKPACK_REACT_SCRIPTS} component={BackpackReactScriptsPage} />
       <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
     </Route>
-
-    <Route path={ROUTES.STYLE} component={StylePage} />
 
     <Route path={ROUTES.DOCS} component={DocsLayout}>
       <IndexRedirect to={ROUTES.BONDS} />
@@ -120,7 +121,8 @@ const Routes = (
       <Route path={ROUTES.UNITS} component={UnitsPage} />
     </Route>
 
-    <Route path={ROUTES.RESOURCES} component={ResourcesPage} />
+    <Route path={ROUTES.STYLE} component={StylePage} iconsSvgs={iconsSvgs} />
+    <Route path={ROUTES.RESOURCES} component={ResourcesPage} iconsSvgs={iconsSvgs} />
     <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridColumnDemoPage} />
     <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridOffsetDemoPage} />
   </Route>

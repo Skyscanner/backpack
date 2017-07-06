@@ -18,6 +18,7 @@ const headerLinks = [
   { to: ROUTES.USING_BACKPACK, children: 'Using Backpack' },
   { to: ROUTES.DOCS, children: 'Components' },
   { to: ROUTES.PATTERNS, children: 'Patterns' },
+  { to: ROUTES.STYLE, children: 'Style' },
   { to: ROUTES.RESOURCES, children: 'Resources' },
   { href: 'http://git.prod.skyscanner.local/backpack/backpack', children: 'GitLab', blank: true },
 ];
@@ -47,12 +48,12 @@ const Header = (props) => {
     <header className={getClassName('bpkdocs-header')}>
       <BpkGridContainer>
         <BpkGridRow>
-          <BpkGridColumn width={3} mobileWidth={6}>
+          <BpkGridColumn width={2} mobileWidth={6}>
             <IndexLink to={ROUTES.HOME} className={getClassName('bpkdocs-header__logo-link')}>
               <span className={getClassName('bpkdocs-header__logo-link-text')}>Backpack</span>
             </IndexLink>
           </BpkGridColumn>
-          <BpkGridColumn width={9} mobileWidth={6}>
+          <BpkGridColumn width={10} mobileWidth={6}>
             <nav className={getClassName('bpkdocs-header__nav')}>
               <HamburgerButton
                 expanded={expanded}

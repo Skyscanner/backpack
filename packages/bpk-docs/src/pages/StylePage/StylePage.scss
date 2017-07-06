@@ -1,0 +1,19 @@
+@import '~bpk-mixins/index';
+
+.bpkdocs-style-page {
+  &__link {
+    text-decoration: none;
+
+    @include bpk-hover {
+      text-decoration: none;
+    }
+  }
+
+  &__copywrite-column {
+    margin-bottom: $bpk-spacing-sm;
+  }
+
+  &__brand-guidelines {
+    text-align: center;
+  }
+}
