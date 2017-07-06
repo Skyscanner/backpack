@@ -32,7 +32,7 @@ class App extends Component {
   constructor () {
     super();
 
-    this.onDateSelect = this.onDateSelect.bind(this);
+    this.handleDateSelect = this.handleDateSelect.bind(this);
 
     this.state = {
       selectedDate: null
