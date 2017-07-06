@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-
+import PropTypes from 'prop-types';
 import BpkLink from 'bpk-component-link';
 import BpkHeading from 'bpk-component-heading';
 import BpkParagraph from 'bpk-component-paragraph';
@@ -9,7 +9,6 @@ import BpkContentContainer from 'bpk-component-content-container';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
 
 /* eslint-disable import/no-webpack-loader-syntax */
-const iconsZip = require('!!file?name=[name].[hash].zip!zip-it!./../../../../bpk-svgs/src/icons/icons');
 const coreRgbAse = require('!!file?name=[name].[hash].ase!./../../static/core_rgb.ase');
 const coreRgbClr = require('!!file?name=[name].[hash].clr!./../../static/core_rgb.clr');
 const extendedRgbAse = require('!!file?name=[name].[hash].ase!./../../static/extended_rgb.ase');
@@ -21,8 +20,7 @@ const responsiveGrid = require('!!file?name=[name].[hash].sketch!./../../static/
 // const bookmarklet = require('!!raw-loader!uglify-loader!babel-loader!../../bag-check-bookmarklet/index.js');
 /* eslint-enable */
 
-
-const ResourcesPage = () => (
+const ResourcesPage = props => (
   <BpkGridContainer>
     <Helmet title="Resources" />
     <BpkGridRow>
@@ -52,7 +50,7 @@ const ResourcesPage = () => (
           <BpkHeading level="h2">Icons</BpkHeading>
           <BpkList>
             <BpkListItem>
-              <BpkLink href={`/${iconsZip}`}>Icons</BpkLink>
+              <BpkLink href={`/${props.route.iconsSvgs}`}>Icons</BpkLink>
             </BpkListItem>
           </BpkList>
           <BpkHeading level="h2">Sketch</BpkHeading>
@@ -90,5 +88,11 @@ const ResourcesPage = () => (
     </BpkGridRow>
   </BpkGridContainer>
 );
+
+ResourcesPage.propTypes = {
+  route: PropTypes.shape({
+    iconsSvgs: PropTypes.string,
+  }).isRequired,
+};
 
 export default ResourcesPage;

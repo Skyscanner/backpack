@@ -106,7 +106,7 @@ const config = {
         test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css'),
       },
       {
-        test: /\.(jpg|png)$/, exclude: /node_modules/, loader: 'file?limit=10000&name=[name]_[hash].[ext]',
+        test: /\.(jpg|png|svg)$/, exclude: /node_modules/, loader: 'file?limit=10000&name=[name].[ext]',
       },
       {
         test: /\.json$/, loader: 'json',
