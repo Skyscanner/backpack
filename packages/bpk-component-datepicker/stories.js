@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf, action } from '@kadira/storybook';
 
 import { weekDays, formatMonth, formatDateFull } from 'bpk-component-calendar/test-utils';
@@ -28,11 +29,11 @@ const inputPropsWithEventHandlers = {
 
 /* eslint-disable react/no-multi-comp */
 class CalendarContainer extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      date: new Date(),
+      date: props.date,
     };
   }
   render() {
@@ -49,6 +50,14 @@ class CalendarContainer extends Component {
     );
   }
 }
+
+CalendarContainer.propTypes = {
+  date: PropTypes.instanceOf(Date),
+};
+
+CalendarContainer.defaultProps = {
+  date: null,
+};
 
 class ReturnDatepicker extends Component {
   constructor() {
@@ -114,6 +123,22 @@ class ReturnDatepicker extends Component {
 
 storiesOf('bpk-component-datepicker', module)
   .add('Default', () => (
+    <div id="application-element">
+      <CalendarContainer
+        id="myDatepicker"
+        closeButtonText="Close"
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        title="Departure date"
+        getApplicationElement={() => document.getElementById('application-element')}
+        formatDate={formatDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        date={new Date()}
+      />
+    </div>
+  ))
+  .add('Without date set', () => (
     <div id="application-element">
       <CalendarContainer
         id="myDatepicker"

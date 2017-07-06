@@ -71,6 +71,8 @@ class BpkDatepicker extends Component {
       ...rest
     } = this.props;
 
+    const dateLabel = date ? formatDateFull(date) : '';
+
     // The following props are not used in render
     delete rest.onDateSelect;
 
@@ -82,7 +84,7 @@ class BpkDatepicker extends Component {
         className={getClassName('bpk-datepicker__input')}
         aria-live="assertive"
         aria-atomic="true"
-        aria-label={formatDateFull(date)}
+        aria-label={dateLabel}
         onChange={() => null}
         onOpen={this.onOpen}
         isOpen={this.state.isOpen}
