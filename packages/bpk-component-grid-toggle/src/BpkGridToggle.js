@@ -15,15 +15,27 @@ class BpkGridToggle extends React.Component {
     super(props);
 
     this.toggleGrid = this.toggleGrid.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
 
     this.state = {
       gridEnabled: false,
     };
   }
 
+  componentWillMount() {
+    document.addEventListener('keydown', this.handleKeyDown);
+  }
+
   componentWillUnmount() {
     document.querySelector(this.props.targetContainer)
       .classList.remove(GRID_CLASS_NAME);
+    document.removeEventListener('keydown', this.handleKeyDown);
+  }
+
+  handleKeyDown(e) {
+    if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 'g') {
+      this.toggleGrid(e);
+    }
   }
 
   toggleGrid(e) {
@@ -41,7 +53,14 @@ class BpkGridToggle extends React.Component {
     const { gridEnabled } = this.state;
     const onOrOff = gridEnabled ? 'off' : 'on';
 
-    return <BpkButtonLink onClick={this.toggleGrid}>Toggle baseline grid {onOrOff}</BpkButtonLink>;
+    return (
+      <BpkButtonLink
+        title="Keyboard Shortcut: ctrl + cmd + g"
+        onClick={this.toggleGrid}
+      >
+        Toggle baseline grid {onOrOff}
+      </BpkButtonLink>
+    );
   }
 }
 
@@ -54,4 +73,3 @@ BpkGridToggle.defaultProps = {
 };
 
 export default BpkGridToggle;
-

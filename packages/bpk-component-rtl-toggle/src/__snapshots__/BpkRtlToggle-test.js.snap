@@ -4,6 +4,7 @@ exports[`BpkRtlToggle should render correctly 1`] = `
 <button
   className="bpk-link"
   onClick={[Function]}
+  title="Keyboard Shortcut: ctrl + cmd + r"
   type="button"
 >
   Toggle RTL 
@@ -15,6 +16,7 @@ exports[`BpkRtlToggle should render correctly when toggled 1`] = `
 <button
   className="bpk-link"
   onClick={[Function]}
+  title="Keyboard Shortcut: ctrl + cmd + r"
   type="button"
 >
   Toggle RTL 
