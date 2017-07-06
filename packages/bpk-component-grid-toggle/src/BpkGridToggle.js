@@ -22,7 +22,7 @@ class BpkGridToggle extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     document.addEventListener('keydown', this.handleKeyDown);
   }
 
