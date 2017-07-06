@@ -8,6 +8,7 @@ build:
     - npm run build
     - npm test
     - npm run docs:dist:gzip
+    - test -e dist/index.html
 
 publish:
   s3_sync:
