@@ -9,6 +9,7 @@ build:
     - npm test
     - npm run docs:dist:gzip
     - test -e dist/index.html
+    - test -e dist/sassdoc/index.html
 
 publish:
   s3_sync:
