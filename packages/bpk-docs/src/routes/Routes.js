@@ -71,6 +71,8 @@ const Routes = (
       <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
     </Route>
 
+    <Route path={ROUTES.STYLE} component={StylePage} iconsSvgs={iconsSvgs} />
+
     <Route path={ROUTES.DOCS} component={DocsLayout}>
       <IndexRedirect to={ROUTES.BONDS} />
       <Route path={ROUTES.BONDS}>
@@ -121,7 +123,6 @@ const Routes = (
       <Route path={ROUTES.UNITS} component={UnitsPage} />
     </Route>
 
-    <Route path={ROUTES.STYLE} component={StylePage} iconsSvgs={iconsSvgs} />
     <Route path={ROUTES.RESOURCES} component={ResourcesPage} iconsSvgs={iconsSvgs} />
     <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridColumnDemoPage} />
     <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridOffsetDemoPage} />

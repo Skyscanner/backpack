@@ -14,11 +14,11 @@
     "react": "^15.0.0"
   },
   "dependencies": {
+    "bpk-component-icon": "^3.7.2",
     "bpk-mixins": "^15.6.1",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-component-heading": "^2.1.2",
     "bpk-react-utils": "^2.0.1"
   }
 }
