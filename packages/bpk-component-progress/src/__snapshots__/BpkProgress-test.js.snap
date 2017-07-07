@@ -45,7 +45,7 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "11.11111111111111%",
       }
     }
@@ -54,7 +54,7 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "22.22222222222222%",
       }
     }
@@ -63,7 +63,7 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "33.33333333333333%",
       }
     }
@@ -72,7 +72,7 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "44.44444444444444%",
       }
     }
@@ -81,7 +81,7 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "55.55555555555556%",
       }
     }
@@ -90,7 +90,7 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "66.66666666666666%",
       }
     }
@@ -99,7 +99,7 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "77.77777777777779%",
       }
     }
@@ -108,7 +108,7 @@ exports[`BpkProgress should render correctly with "small" and "stepped" attribut
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "88.88888888888889%",
       }
     }
@@ -277,7 +277,7 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "11.11111111111111%",
       }
     }
@@ -286,7 +286,7 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "22.22222222222222%",
       }
     }
@@ -295,7 +295,7 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "33.33333333333333%",
       }
     }
@@ -304,7 +304,7 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "44.44444444444444%",
       }
     }
@@ -313,7 +313,7 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "55.55555555555556%",
       }
     }
@@ -322,7 +322,7 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "66.66666666666666%",
       }
     }
@@ -331,7 +331,7 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "77.77777777777779%",
       }
     }
@@ -340,7 +340,7 @@ exports[`BpkProgress should render correctly with a "stepped" attribute 1`] = `
     className="bpk-progress__step"
     style={
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "rgb(255, 255, 255)",
         "left": "88.88888888888889%",
       }
     }
