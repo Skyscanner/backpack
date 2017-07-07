@@ -2,13 +2,17 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-07-07 - Add shortcuts to toggle components
+
 **Added:**
-- bpk-grid-toggle:
-- bpk-rtl-toggle:
+- bpk-component-grid-toggle: 0.1.2 => 0.2.0
+- bpk-component-rtl-toggle: 0.0.75 => 0.1.0
   - Shortcuts have been added to allow grid and RTL to be toggled using ctrl+cmd+r and ctrl+cmd+g respectively
 
 **Fixed:**
-- bpk-component-datepicker
+- bpk-component-datepicker: 7.0.0 => 7.0.1
   - When there is no date set, do not pupulate "aria-label" with "Thursday, 1st January 1970"
 
 ## 2017-06-30 - onMonthChange callback structure
