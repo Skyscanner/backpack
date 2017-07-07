@@ -31,7 +31,7 @@
     "docs:dist:gzip": "npm run docs:dist && gulp",
     "start": "npm run build && npm run storybook",
     "test": "npm run lint && npm run jest",
-    "check-owners": "node scripts/npm/check-owners.js",
+    "check-owners": "npm whoami && grep -E $(npm whoami) NPM_OWNERS && node scripts/npm/check-owners.js",
     "publish": "npm run check-owners && npm run build && git pull --rebase && npm run test && lerna publish"
   },
   "repository": {
