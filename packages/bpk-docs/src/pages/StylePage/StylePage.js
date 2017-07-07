@@ -7,7 +7,7 @@ import { cssModules } from 'bpk-react-utils';
 import BpkHeading from 'bpk-component-heading';
 import BpkParagraph from 'bpk-component-paragraph';
 import { colors } from 'bpk-tokens/tokens/base.es6';
-import BpkRouterLink from 'bpk-component-router-link';
+import { Link } from 'react-router';
 import BpkContentContainer from 'bpk-component-content-container';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
 
@@ -73,14 +73,14 @@ const StylePage = props => (
         </a>
       </BpkGridColumn>
       <BpkGridColumn width={3} mobileWidth={12} tabletWidth={6}>
-        <BpkRouterLink to={ROUTES.ICONS} className={STYLES['bpkdocs-style-page__link']}>
+        <Link to={ROUTES.ICONS} className={getClassName('bpkdocs-style-page__link')}>
           <BpkTile
             heading="Using icons in code"
             cta="Read the docs"
             imageSource={`/${sassImage}`}
             backgroundColor={colors.colorGreen500}
           />
-        </BpkRouterLink>
+        </Link>
       </BpkGridColumn>
       <BpkGridColumn width={3} mobileWidth={12} tabletWidth={6}>
         <a
