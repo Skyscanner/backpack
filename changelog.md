@@ -3,6 +3,9 @@
 ## UNRELEASED
 
 _Nothing yet..._
+**Fixed:**
+- bpk-component-progress
+  - Default value for stepColor is now colorWhite instead of bpkColorWhite
 
 ## 2017-07-07 - Add shortcuts to toggle components
 

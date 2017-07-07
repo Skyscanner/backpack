@@ -49,4 +49,4 @@ const Steps = () => (
 | onComplete               | func                          | false    | null          |
 | onCompleteTransitionEnd  | func                          | false    | null          |
 | stepped                  | bool                          | false    | false         |
-| stepColor                | string                        | false    | bpkColorWhite |
+| stepColor                | string                        | false    | colorWhite |

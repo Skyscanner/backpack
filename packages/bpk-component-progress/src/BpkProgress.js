@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { bpkColorWhite } from 'bpk-tokens/tokens/base.es6';
+import { colorWhite } from 'bpk-tokens/tokens/base.es6';
 import clamp from 'lodash.clamp';
 import { cssModules } from 'bpk-react-utils';
 
@@ -112,7 +112,7 @@ BpkProgress.propTypes = {
 BpkProgress.defaultProps = {
   className: null,
   stepped: false,
-  stepColor: bpkColorWhite,
+  stepColor: colorWhite,
   small: false,
   onComplete: () => null,
   onCompleteTransitionEnd: () => null,
