@@ -1,6 +1,6 @@
 {
   "name": "bpk-animate-height",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Animate height using CSS transitions.",
   "main": "index.js",
   "repository": {
@@ -16,6 +16,6 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-component-button": "^1.6.35"
+    "bpk-component-button": "^1.6.36"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "bpk-mixins",
-  "version": "15.6.1",
+  "version": "15.6.2",
   "description": "Sass mixins and variables for Backpack.",
   "main": "_index.scss",
   "repository": {
@@ -14,7 +14,7 @@
     "bpk-tokens": "^23.2.2"
   },
   "devDependencies": {
-    "bpk-react-utils": "^2.0.1"
+    "bpk-react-utils": "^2.0.2"
   },
   "peerDependencies": {
     "node-sass": "^4.1.1"
