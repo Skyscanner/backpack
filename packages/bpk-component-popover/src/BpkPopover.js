@@ -8,6 +8,10 @@ import STYLES from './bpk-popover.scss';
 import { ARROW_ID } from './constants';
 
 const getClassName = cssModules(STYLES);
+const EVENT_SOURCES = {
+  CLOSE_BUTTON: 'CLOSE_BUTTON',
+  CLOSE_LINK: 'CLOSE_LINK',
+};
 
 const BpkPopover = (props) => {
   const {
@@ -34,6 +38,14 @@ const BpkPopover = (props) => {
 
   const labelId = `bpk-popover-label-${id}`;
 
+  const bindEventSource = (source, callback) => (event) => {
+    if (event.persist) {
+      event.persist();
+    }
+
+    callback(event, { source });
+  };
+
   return (
     <TransitionInitialMount
       appearClassName={getClassName('bpk-popover--appear')}
@@ -59,13 +71,13 @@ const BpkPopover = (props) => {
                   <BpkCloseButton
                     className={getClassName('bpk-popover__close-button')}
                     label={closeButtonText}
-                    onClick={(event) => { props.onClose(event, { source: 'CLOSE_BUTTON' }); }}
+                    onClick={bindEventSource(EVENT_SOURCES.CLOSE_BUTTON, props.onClose)}
                   />
                 : <BpkButtonLink
-                  onClick={(event) => {
-                    props.onClose(event, { source: 'CLOSE_LINK' });
-                  }}
-                >{closeButtonText}</BpkButtonLink>
+                  onClick={bindEventSource(EVENT_SOURCES.CLOSE_LINK, props.onClose)}
+                >
+                  {closeButtonText}
+                </BpkButtonLink>
                 }
               </header>
             ) : (
@@ -76,10 +88,10 @@ const BpkPopover = (props) => {
           {!labelAsTitle && (
             <footer className={getClassName('bpk-popover__footer')}>
               <BpkButtonLink
-                onClick={(event) => {
-                  props.onClose(event, { source: 'CLOSE_LINK' });
-                }}
-              >{closeButtonText}</BpkButtonLink>
+                onClick={bindEventSource(EVENT_SOURCES.CLOSE_LINK, props.onClose)}
+              >
+                {closeButtonText}
+              </BpkButtonLink>
             </footer>
           )}
         </div>
