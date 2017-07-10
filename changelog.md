@@ -2,9 +2,13 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-07-10 - Add `source` arg to popover's `onClose`
+
 **Added:**
-- bpk-component-popover:
-- bpk-react-utils:
+- bpk-component-popover: 1.1.3 => 1.2.0
+- bpk-react-utils: 2.0.2 => 2.1.0
   - Add `source` argument to `onClose` callback:
 
     ```
