@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-07-10 - Fix undefined property access in progress bar component
+
 **Fixed:**
-- bpk-component-progress:
+- bpk-component-progress: 0.1.3 => 0.1.4
   - Fix for progress bar depending on undefined property `bpkColorWhite` -> `colorWhite`
 
 ## 2017-07-07 - Add shortcuts to toggle components
