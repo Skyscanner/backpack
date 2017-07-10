@@ -3,24 +3,19 @@ import PropTypes from 'prop-types';
 import BpkLink from 'bpk-component-link';
 import { cssModules } from 'bpk-react-utils';
 
-/* eslint-disable import/no-webpack-loader-syntax */
-import rawSassdocLogoSvg from 'raw!./../../static/sassdoc-logo.svg';
-/* eslint-enable */
+import sassdocLogoSvg from './../../static/sassdoc-logo.svg';
 
 import STYLES from './sassdoc-link.scss';
 
 const getClassName = cssModules(STYLES);
-const sassdocLogoSvg = { __html: rawSassdocLogoSvg };
 
-/* eslint-disable react/no-danger */
 const SassdocLink = props => (
   <aside className={getClassName('bpkdocs-sassdoc-link')}>
-    <span className={getClassName('bpkdocs-sassdoc-link__logo')} dangerouslySetInnerHTML={sassdocLogoSvg} />
+    <img className={getClassName('bpkdocs-sassdoc-link__logo')} src={`/${sassdocLogoSvg}`} alt="Sass docs logo" />
     Looking for &quot;{props.category}&quot; Sass variables and mixins? Check
     out <BpkLink href={`/sassdoc/#${props.sassdocId}`} blank>Backpack&apos;s Sassdoc</BpkLink>.
   </aside>
 );
-/* eslint-enable */
 
 SassdocLink.propTypes = {
   sassdocId: PropTypes.string.isRequired,
