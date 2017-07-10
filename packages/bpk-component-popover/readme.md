@@ -91,3 +91,13 @@ In order to attach the popover to a regular DOM element, provide a function whic
   <BpkParagraph>My popover content</BpkParagraph>
 </BpkPopover>
 ```
+
+### onClose
+
+```js
+const onClose = (event, {
+  source: <string>, // One of `DOCUMENT_CLICK`, `CLOSE_BUTTON`, `CLOSE_LINK`, `ESCAPE`
+}) => {
+  ...
+}
+```
