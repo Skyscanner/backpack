@@ -72,7 +72,7 @@ class App extends Component {
 | closeButtonText       | string                        | true     | -             |
 | tetherOptions         | See http://tether.io/#options | false    | { attachment: 'top center', constraints: [ { to: 'window', attachment: 'together', pin: true, }, ], } |
 | padded                | bool                          | false    | true          |
-| labelAsTitle          | bool                          | false    | true          |
+| labelAsTitle          | bool                          | false    | false         |
 | closeButtonIcon       | bool                          | false    | true          |
 | portalStyle           | object                        | false    | null          |
 | portalClassName       | string                        | false    | null          |

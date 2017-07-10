@@ -8,9 +8,18 @@ import STYLES from './bpk-popover.scss';
 import { ARROW_ID } from './constants';
 
 const getClassName = cssModules(STYLES);
+
 const EVENT_SOURCES = {
   CLOSE_BUTTON: 'CLOSE_BUTTON',
   CLOSE_LINK: 'CLOSE_LINK',
+};
+
+const bindEventSource = (source, callback) => (event) => {
+  if (event.persist) {
+    event.persist();
+  }
+
+  callback(event, { source });
 };
 
 const BpkPopover = (props) => {
@@ -37,14 +46,6 @@ const BpkPopover = (props) => {
   if (padded) { bodyClassNames.push(getClassName('bpk-popover__body--padded')); }
 
   const labelId = `bpk-popover-label-${id}`;
-
-  const bindEventSource = (source, callback) => (event) => {
-    if (event.persist) {
-      event.persist();
-    }
-
-    callback(event, { source });
-  };
 
   return (
     <TransitionInitialMount
