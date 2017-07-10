@@ -2,10 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
 **Fixed:**
-- bpk-component-progress
-  - Default value for stepColor is now colorWhite instead of bpkColorWhite
+- bpk-component-progress:
+  - Fix for progress bar depending on undefined property `bpkColorWhite` -> `colorWhite`
 
 ## 2017-07-07 - Add shortcuts to toggle components
 
