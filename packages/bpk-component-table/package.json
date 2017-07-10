@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-table",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Backpack table component.",
   "main": "index.js",
   "repository": {
@@ -13,8 +13,8 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^15.6.2",
-    "bpk-react-utils": "^2.0.2",
+    "bpk-mixins": "^15.6.3",
+    "bpk-react-utils": "^2.1.0",
     "prop-types": "^15.5.8"
   }
 }
