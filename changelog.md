@@ -2,7 +2,14 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-component-popover:
+- bpk-react-utils:
+  - Add `source` argument to `onClose` callback:
+
+    ```
+    onClose(event, { source: <string> })
+    ```
 
 ## 2017-07-10 - Fix undefined property access in progress bar component
 
