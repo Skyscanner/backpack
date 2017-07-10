@@ -50,26 +50,26 @@ class Portal extends Component {
     this.close();
   }
 
-  onDocumentClick(e) {
-    const isNotLeftClick = e.button && e.button !== 0;
+  onDocumentClick(event) {
+    const isNotLeftClick = event.button && event.button !== 0;
 
     const targetElement = this.getTargetElement();
     const isTargetClick = targetElement &&
-      (e.target === targetElement || targetElement.contains(e.target));
+      (event.target === targetElement || targetElement.contains(event.target));
 
     const isPortalClick = this.portalElement &&
-      (e.target === this.portalElement || this.portalElement.contains(e.target));
+      (event.target === this.portalElement || this.portalElement.contains(event.target));
 
     if (isNotLeftClick || isTargetClick || isPortalClick) {
       return;
     }
 
-    this.props.onClose();
+    this.props.onClose(event, { source: 'DOCUMENT_CLICK' });
   }
 
-  onDocumentKeyDown(e) {
-    if (e.keyCode === KEYCODES.ESCAPE && this.props.isOpen) {
-      this.props.onClose();
+  onDocumentKeyDown(event) {
+    if (event.keyCode === KEYCODES.ESCAPE && this.props.isOpen) {
+      this.props.onClose(event, { source: 'ESCAPE' });
     }
   }
 
