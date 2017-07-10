@@ -25,6 +25,7 @@ export const ICONS = '/components/atoms/icons';
 export const SPINNERS = '/components/atoms/spinners';
 export const FORMS = '/components/atoms/forms';
 export const CARDS = '/components/atoms/cards';
+export const CHIPS = '/components/atoms/chips';
 export const BADGE = '/components/atoms/badge';
 export const PANELS = '/components/atoms/panels';
 

@@ -28,6 +28,7 @@ const links = [
       { id: 'SPINNERS', route: routes.SPINNERS, children: 'Spinners' },
       { id: 'FORMS', route: routes.FORMS, children: 'Forms' },
       { id: 'CARDS', route: routes.CARDS, children: 'Cards' },
+      { id: 'CHIPS', route: routes.CHIPS, children: 'Chips' },
       { id: 'BADGE', route: routes.BADGE, children: 'Badge' },
       { id: 'PANELS', route: routes.PANELS, children: 'Panels' },
       { id: 'ILLUSTRATIONS', route: null, children: 'Illustrations' },

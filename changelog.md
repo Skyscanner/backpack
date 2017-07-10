@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-component-chip
+  - Introducing the new chip component: Docs: http://backpack.prod.aws.skyscnr.com/components/atoms/chips
 
 ## 2017-07-10 - Add `source` arg to popover's `onClose`
 

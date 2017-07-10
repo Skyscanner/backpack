@@ -41,6 +41,7 @@ const staticSiteGeneratorConfig = {
     ROUTES.SPINNERS,
     ROUTES.FORMS,
     ROUTES.CARDS,
+    ROUTES.CHIPS,
     ROUTES.BADGE,
     ROUTES.PANELS,
 

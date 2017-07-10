@@ -30,6 +30,7 @@ import IconsPage from './../pages/IconsPage';
 import SpinnersPage from './../pages/SpinnersPage';
 import FormsPage from './../pages/FormsPage';
 import CardsPage from './../pages/CardsPage';
+import ChipsPage from './../pages/ChipsPage';
 import BadgePage from './../pages/BadgePage';
 import PanelsPage from './../pages/PanelsPage';
 
@@ -93,6 +94,7 @@ const Routes = (
         <Route path={ROUTES.SPINNERS} component={SpinnersPage} />
         <Route path={ROUTES.FORMS} component={FormsPage} />
         <Route path={ROUTES.CARDS} component={CardsPage} />
+        <Route path={ROUTES.CHIPS} component={ChipsPage} />
         <Route path={ROUTES.BADGE} component={BadgePage} />
         <Route path={ROUTES.PANELS} component={PanelsPage} />
       </Route>
