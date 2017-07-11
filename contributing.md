@@ -84,7 +84,10 @@ If you want to add a new component, we will need the following:
 - Associated tokens
 - Sass mixin(s)
 - React component
-- Documentation
+- Stories
+- Tests
+- Documentation (Including main `readme.md`)
+
 
 ### Design
 

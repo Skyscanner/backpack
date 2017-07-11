@@ -16,8 +16,8 @@ class DefaultChipContainer extends Component {
     this.addRemovableChip = this.addRemovableChip.bind(this);
 
     this.state = {
-      chipNames: [],
-      nextChipId: 1,
+      chipNames: ['Example Chip 1', 'Example Chip 2'],
+      nextChipId: 3,
     };
   }
 
@@ -42,16 +42,13 @@ class DefaultChipContainer extends Component {
   render() {
     return (
       <div>
-        <BpkButton
-          style={{ marginBottom: spacingSm }}
-          onClick={this.addRemovableChip}
-        >
+        <BpkButton onClick={this.addRemovableChip} >
           Add removable chip!
         </BpkButton>
         <div>
           {this.state.chipNames.map((chipName, index) => (
             <span
-              style={{ display: 'inline-block', marginBottom: spacingSm, marginRight: spacingSm }}
+              style={{ display: 'inline-block', marginTop: spacingSm, marginRight: spacingSm }}
               key={index.toString()}
             >
               <BpkChip onClose={() => this.removeChip(chipName)}>

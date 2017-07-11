@@ -27,7 +27,7 @@ const BpkChip = (props) => {
 };
 
 BpkChip.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   onClose: PropTypes.func.isRequired,
 };
 
