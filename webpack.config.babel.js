@@ -137,6 +137,7 @@ const config = {
               loader: 'css-loader',
               options: {
                 modules: useCssModules,
+                localIdentName: '[local]-[hash:base64:5]',
               },
             },
             {
