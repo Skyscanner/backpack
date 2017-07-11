@@ -1,0 +1,9 @@
+@import '~bpk-mixins/index';
+
+.bpk-chip {
+  @include bpk-chip;
+
+  &__label {
+    @include bpk-chip__label;
+  }
+}

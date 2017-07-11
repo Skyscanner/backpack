@@ -25,6 +25,7 @@
     "bpk-component-calendar": "^4.0.3",
     "bpk-component-card": "^0.1.4",
     "bpk-component-checkbox": "^1.3.3",
+    "bpk-component-chip": "^0.0.1",
     "bpk-component-code": "^0.1.4",
     "bpk-component-content-container": "^1.1.4",
     "bpk-component-loading-button": "^0.1.4",

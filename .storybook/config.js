@@ -30,6 +30,7 @@ configure(() => {
   require('./../packages/bpk-component-calendar/stories');
   require('./../packages/bpk-component-card/stories');
   require('./../packages/bpk-component-checkbox/stories');
+  require('./../packages/bpk-component-chip/stories');
   require('./../packages/bpk-component-close-button/stories');
   require('./../packages/bpk-component-code/stories');
   require('./../packages/bpk-component-content-container/stories');
