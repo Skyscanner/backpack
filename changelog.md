@@ -6,6 +6,10 @@
 - bpk-component-chip
   - Introducing the new chip component: Docs: http://backpack.prod.aws.skyscnr.com/components/atoms/chips
 
+**Fixed:**
+- bpk-component-horizontal-nav
+  - Add tab and tablist roles for use by accessibility tools
+
 ## 2017-07-10 - Add `source` arg to popover's `onClose`
 
 **Added:**

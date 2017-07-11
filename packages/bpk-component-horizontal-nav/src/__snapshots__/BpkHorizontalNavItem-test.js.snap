@@ -2,7 +2,9 @@
 
 exports[`BpkHorizontalNavItem should render correctly 1`] = `
 <li
+  aria-selected="false"
   className="bpk-horizontal-nav__item"
+  role="tab"
 >
   <button
     className="bpk-horizontal-nav__link"
@@ -16,7 +18,9 @@ exports[`BpkHorizontalNavItem should render correctly 1`] = `
 
 exports[`BpkHorizontalNavItem should render correctly with "selected" prop 1`] = `
 <li
+  aria-selected="true"
   className="bpk-horizontal-nav__item"
+  role="tab"
 >
   <button
     className="bpk-horizontal-nav__link bpk-horizontal-nav__link--selected"
@@ -30,7 +34,9 @@ exports[`BpkHorizontalNavItem should render correctly with "selected" prop 1`] =
 
 exports[`BpkHorizontalNavItem should render correctly with "spaceAround" prop 1`] = `
 <li
+  aria-selected="false"
   className="bpk-horizontal-nav__item bpk-horizontal-nav__item--space-around"
+  role="tab"
 >
   <button
     className="bpk-horizontal-nav__link"
@@ -44,7 +50,9 @@ exports[`BpkHorizontalNavItem should render correctly with "spaceAround" prop 1`
 
 exports[`BpkHorizontalNavItem should render correctly with an "href" prop 1`] = `
 <li
+  aria-selected="false"
   className="bpk-horizontal-nav__item"
+  role="tab"
 >
   <a
     aria-disabled={false}
@@ -58,7 +66,9 @@ exports[`BpkHorizontalNavItem should render correctly with an "href" prop 1`] = 
 
 exports[`BpkHorizontalNavItem should render correctly with arbitrary props 1`] = `
 <li
+  aria-selected="false"
   className="bpk-horizontal-nav__item"
+  role="tab"
 >
   <button
     className="bpk-horizontal-nav__link"
@@ -74,7 +84,9 @@ exports[`BpkHorizontalNavItem should render correctly with arbitrary props 1`] =
 
 exports[`BpkHorizontalNavItem should render correctly with custom "className" prop 1`] = `
 <li
+  aria-selected="false"
   className="bpk-horizontal-nav__item"
+  role="tab"
 >
   <button
     className="bpk-horizontal-nav__link my-custom-class"

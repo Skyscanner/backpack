@@ -22,7 +22,15 @@ const BpkHorizontalNavItem = (props) => {
     ? <a href={href} className={innerClassNames.join(' ')} aria-disabled={selected} {...rest}>{children}</a>
     : <button type="button" className={innerClassNames.join(' ')} disabled={selected} {...rest}>{children}</button>;
 
-  return <li className={classNames.join(' ')}>{clickableElement}</li>;
+  return (
+    <li
+      role="tab"
+      aria-selected={selected ? 'true' : 'false'}
+      className={classNames.join(' ')}
+    >
+      {clickableElement}
+    </li>
+  );
 };
 
 BpkHorizontalNavItem.propTypes = {
