@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 
 import { colors } from 'bpk-tokens/tokens/base.es6';
 import BpkButton from '../bpk-component-button';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import BpkHeading from 'bpk-component-heading';
 import { spacingSm, colorGreen500 } from 'bpk-tokens/tokens/base.es6';
 import BpkTooltip from './index';

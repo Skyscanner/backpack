@@ -57,7 +57,7 @@ import UnitsPage from './../pages/UnitsPage';
 import ResourcesPage from './../pages/ResourcesPage';
 import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages';
 /* eslint-disable import/no-webpack-loader-syntax */
-const iconsSvgs = require('!!file?name=[name].[hash].zip!zip-it!./../../../bpk-svgs/src/icons/icons');
+const iconsSvgs = require('!!file-loader?name=[name].[hash].zip!zip-it-loader!./../../../bpk-svgs/src/icons/icons');
 /* eslint-enable */
 
 const Routes = (

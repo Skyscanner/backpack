@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import { spacingXs, spacingSm, onePixelRem, colorGray100 } from 'bpk-tokens/tokens/base.es6';
 
 import BpkHorizontalNav, { BpkHorizontalNavItem } from './index';

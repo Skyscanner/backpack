@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 
 import BpkButton from 'bpk-component-button';
 import ArrowRightIcon from 'bpk-component-icon/sm/long-arrow-right';

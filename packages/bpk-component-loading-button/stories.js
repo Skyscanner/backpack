@@ -1,5 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import { withButtonAlignment, withLargeButtonAlignment, withRtlSupport } from 'bpk-component-icon';
 import BaggageIconSm from 'bpk-component-icon/sm/baggage';
