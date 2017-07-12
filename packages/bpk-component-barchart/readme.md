@@ -61,8 +61,6 @@ export default () => (
 | BarComponent                            | func                                  | false    | BpkBarchartBar   |
 | disableDataTable                        | bool                                  | false    | false            |
 
-
-
 ### Prop Details
 
 #### data
