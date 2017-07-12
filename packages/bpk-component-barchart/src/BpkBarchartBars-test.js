@@ -1,5 +1,6 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import BpkBarchartBars from './BpkBarchartBars';
 import BpkBarchartBar from './BpkBarchartBar';
@@ -19,7 +20,7 @@ const xScale = scaleBand()
 
 describe('BpkBarchartBars', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
+    const tree = shallow(
       <BpkBarchartBars
         margin={margin}
         xScale={xScale}
@@ -33,12 +34,12 @@ describe('BpkBarchartBars', () => {
         getBarLabel={(point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
         BarComponent={BpkBarchartBar}
       />,
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    );
+    expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should render with "rounded" prop set to "false"', () => {
-    const tree = renderer.create(
+    const tree = shallow(
       <BpkBarchartBars
         margin={margin}
         xScale={xScale}
@@ -53,12 +54,12 @@ describe('BpkBarchartBars', () => {
         BarComponent={BpkBarchartBar}
         rounded={false}
       />,
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    );
+    expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should render correctly with "padding" prop', () => {
-    const tree = renderer.create(
+    const tree = shallow(
       <BpkBarchartBars
         margin={margin}
         xScale={xScale}
@@ -73,12 +74,12 @@ describe('BpkBarchartBars', () => {
         BarComponent={BpkBarchartBar}
         padding={0}
       />,
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    );
+    expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should render correctly with "onBarClick" prop', () => {
-    const tree = renderer.create(
+    const tree = shallow(
       <BpkBarchartBars
         margin={margin}
         xScale={xScale}
@@ -94,7 +95,28 @@ describe('BpkBarchartBars', () => {
         padding={0}
         onBarClick={() => null}
       />,
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly with "getBarSelection" prop', () => {
+    const tree = shallow(
+      <BpkBarchartBars
+        margin={margin}
+        xScale={xScale}
+        yScale={yScale}
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        maxYValue={50}
+        width={size}
+        height={size}
+        data={prices}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
+        BarComponent={BpkBarchartBar}
+        padding={0}
+        getBarSelection={point => point.month === 'Mar'}
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
   });
 });

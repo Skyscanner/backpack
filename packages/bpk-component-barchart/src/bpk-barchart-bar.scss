@@ -8,7 +8,7 @@
     mask: url(#bpk-barchart__def-mask);
   }
 
-  &--interactive {
+  &--interactive:not(.bpk-barchart__bar--selected) {
     cursor: pointer;
 
     @include bpk-hover {

@@ -14,7 +14,7 @@ import BpkBarchart, {
 } from './index';
 
 import { ORIENTATION_X, ORIENTATION_Y } from './src/orientation';
-import { withSelectedState } from './stories-components';
+import { withSelectedState } from './hocs';
 
 const RtlBarchart = updateOnDirectionChange(BpkBarchart);
 const SelectableBarChart = withSelectedState(RtlBarchart);

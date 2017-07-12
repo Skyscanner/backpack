@@ -57,7 +57,9 @@ export default () => (
 | yAxisTickValue                          | func                                  | false    | identity         |
 | yAxisNumTicks                           | number                                | false    | null             |
 | onBarClick                              | func                                  | false    | null             |
+| [onBarClick](#onbarclick)               | func                                  | false    | null             |
 | [getBarLabel](#getbarlabel)             | func                                  | false    | See prop details |
+| [getBarSelection](#getbarselection)     | func                                  | false    | See prop details |
 | BarComponent                            | func                                  | false    | BpkBarchartBar   |
 | disableDataTable                        | bool                                  | false    | false            |
 
@@ -106,19 +108,23 @@ An array of data points with a value for the x axis and y axis respectively. The
 
 The key in each data point that holds the value for the x axis of that data point.
 
-
-
 #### yScaleDataKey
 
 The key in each data point that holds the value for the y axis of that data point.
-
-
 
 #### outlierPercentage
 
 Values that are `outlierPercentage` percent above the mean of the whole dataset are considered outliers and rendered cut off instead of at their full height.
 
+#### onBarClick
 
+```javascript
+const onBarClick = (event, {
+  point: <Object>, // The `data` array object from the bar clicked
+}) => {
+  ...
+}
+```
 
 #### getBarLabel
 
@@ -127,5 +133,15 @@ By default the following function is used:
 ```javascript
 (point, xScaleDataKey, yScaleDataKey) => {
   return `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`;
+}
+```
+
+#### getBarSelection
+
+Must be a function which returns true based on the `point` argument:
+
+```javascript
+const getBarSelection = (point) => {
+  return point.myKnownProperty === 'foo';
 }
 ```
