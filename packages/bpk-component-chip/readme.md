@@ -24,3 +24,4 @@ export default () => (
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
 | onClose   | func     | yes      | -             |
+| children  | node     | yes      | -             |

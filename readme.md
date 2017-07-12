@@ -31,6 +31,7 @@ npm install [package-name] --save-dev
 | [`bpk-component-calendar`](/packages/bpk-component-calendar) | [![npm version](https://badge.fury.io/js/bpk-component-calendar.svg)](http://badge.fury.io/js/bpk-component-calendar) |
 | [`bpk-component-card`](/packages/bpk-component-card) | [![npm version](https://badge.fury.io/js/bpk-component-card.svg)](http://badge.fury.io/js/bpk-component-card) |
 | [`bpk-component-checkbox`](/packages/bpk-component-checkbox) | [![npm version](https://badge.fury.io/js/bpk-component-checkbox.svg)](http://badge.fury.io/js/bpk-component-checkbox) |
+| [`bpk-component-chip`](/packages/bpk-component-chip) | [![npm version](https://badge.fury.io/js/bpk-component-chip.svg)](http://badge.fury.io/js/bpk-component-chip) |
 | [`bpk-component-close-button`](/packages/bpk-component-close-button) | [![npm version](https://badge.fury.io/js/bpk-component-close-button.svg)](http://badge.fury.io/js/bpk-component-close-button) |
 | [`bpk-component-code`](/packages/bpk-component-code) | [![npm version](https://badge.fury.io/js/bpk-component-code.svg)](http://badge.fury.io/js/bpk-component-code) |
 | [`bpk-component-content-container`](/packages/bpk-component-content-container) | [![npm version](https://badge.fury.io/js/bpk-component-content-container.svg)](http://badge.fury.io/js/bpk-component-content-container) |

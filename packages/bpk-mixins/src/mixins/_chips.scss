@@ -1,6 +1,6 @@
 @mixin bpk-chip {
   display: inline-block;
-  padding: $bpk-spacing-xs;
+  padding: $bpk-spacing-xs $bpk-spacing-sm;
   border-radius: $bpk-border-radius-sm;
   background: $bpk-color-gray-100;
 }
