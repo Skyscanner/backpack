@@ -31,11 +31,13 @@ exports[`BpkModalDialog should render correctly 1`] = `
         type="button"
       >
         <svg
-          className="bpk-close-button__icon bpk-icon--align-to-button"
+          className="bpk-close-button__icon"
           height="18"
           style={
             Object {
               "height": "1.125rem",
+              "marginTop": "0.1875rem",
+              "verticalAlign": "top",
               "width": "1.125rem",
             }
           }
@@ -89,11 +91,13 @@ exports[`BpkModalDialog should render correctly when it has a className 1`] = `
         type="button"
       >
         <svg
-          className="bpk-close-button__icon bpk-icon--align-to-button"
+          className="bpk-close-button__icon"
           height="18"
           style={
             Object {
               "height": "1.125rem",
+              "marginTop": "0.1875rem",
+              "verticalAlign": "top",
               "width": "1.125rem",
             }
           }

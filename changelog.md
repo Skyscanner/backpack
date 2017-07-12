@@ -17,7 +17,13 @@
     - Added `getBarSelection` callback prop which can be used to indicate that a given bar is selected
   - `BpkBarchartBar`
     - Added `selected` prop
-    
+
+**Added:**
+- bpk-component-icon
+  - Replaced HOC's: `withButtonAlignment` & `withLargeButtonAlignment` with `withAlignment`
+  - `withAlignment` provides similar alignment functionality to a given component, taking as extra arguments the line height of the parent and icon components.
+  - `withButtonAlignment` & `withLargeButtonAlignment` are still available as wrappers around the new `withAlignment` function.
+
 **Fixed:**
 - bpk-component-banner-alert
   - Add alert role to notification for use by accessibility tools

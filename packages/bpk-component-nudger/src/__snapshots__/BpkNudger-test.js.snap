@@ -13,11 +13,13 @@ exports[`BpkNudger should render correctly 1`] = `
     type="button"
   >
     <svg
-      className="bpk-nudger__icon bpk-icon--align-to-button"
+      className="bpk-nudger__icon"
       height="18"
       style={
         Object {
           "height": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
           "width": "1.125rem",
         }
       }
@@ -48,11 +50,13 @@ exports[`BpkNudger should render correctly 1`] = `
     type="button"
   >
     <svg
-      className="bpk-nudger__icon bpk-icon--align-to-button"
+      className="bpk-nudger__icon"
       height="18"
       style={
         Object {
           "height": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
           "width": "1.125rem",
         }
       }
@@ -81,11 +85,13 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
     type="button"
   >
     <svg
-      className="bpk-nudger__icon bpk-icon--align-to-button"
+      className="bpk-nudger__icon"
       height="18"
       style={
         Object {
           "height": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
           "width": "1.125rem",
         }
       }
@@ -116,11 +122,13 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
     type="button"
   >
     <svg
-      className="bpk-nudger__icon bpk-icon--align-to-button"
+      className="bpk-nudger__icon"
       height="18"
       style={
         Object {
           "height": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
           "width": "1.125rem",
         }
       }
@@ -149,11 +157,13 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
     type="button"
   >
     <svg
-      className="bpk-nudger__icon bpk-nudger__icon--disabled bpk-icon--align-to-button"
+      className="bpk-nudger__icon bpk-nudger__icon--disabled"
       height="18"
       style={
         Object {
           "height": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
           "width": "1.125rem",
         }
       }
@@ -184,11 +194,13 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
     type="button"
   >
     <svg
-      className="bpk-nudger__icon bpk-icon--align-to-button"
+      className="bpk-nudger__icon"
       height="18"
       style={
         Object {
           "height": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
           "width": "1.125rem",
         }
       }
@@ -217,11 +229,13 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
     type="button"
   >
     <svg
-      className="bpk-nudger__icon bpk-icon--align-to-button"
+      className="bpk-nudger__icon"
       height="18"
       style={
         Object {
           "height": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
           "width": "1.125rem",
         }
       }
@@ -252,11 +266,13 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
     type="button"
   >
     <svg
-      className="bpk-nudger__icon bpk-nudger__icon--disabled bpk-icon--align-to-button"
+      className="bpk-nudger__icon bpk-nudger__icon--disabled"
       height="18"
       style={
         Object {
           "height": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
           "width": "1.125rem",
         }
       }
@@ -285,11 +301,13 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
     type="button"
   >
     <svg
-      className="bpk-nudger__icon bpk-nudger__icon--disabled bpk-icon--align-to-button"
+      className="bpk-nudger__icon bpk-nudger__icon--disabled"
       height="18"
       style={
         Object {
           "height": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
           "width": "1.125rem",
         }
       }
@@ -320,11 +338,13 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
     type="button"
   >
     <svg
-      className="bpk-nudger__icon bpk-icon--align-to-button"
+      className="bpk-nudger__icon"
       height="18"
       style={
         Object {
           "height": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
           "width": "1.125rem",
         }
       }
@@ -353,11 +373,13 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
     type="button"
   >
     <svg
-      className="bpk-nudger__icon bpk-icon--align-to-button"
+      className="bpk-nudger__icon"
       height="18"
       style={
         Object {
           "height": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
           "width": "1.125rem",
         }
       }
@@ -388,11 +410,13 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
     type="button"
   >
     <svg
-      className="bpk-nudger__icon bpk-nudger__icon--disabled bpk-icon--align-to-button"
+      className="bpk-nudger__icon bpk-nudger__icon--disabled"
       height="18"
       style={
         Object {
           "height": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
           "width": "1.125rem",
         }
       }
