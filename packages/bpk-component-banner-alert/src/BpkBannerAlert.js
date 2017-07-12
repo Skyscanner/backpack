@@ -21,6 +21,12 @@ export const ALERT_TYPES = {
   ERROR: 'error',
 };
 
+export const ARIA_LIVE = {
+  OFF: 'off',
+  ASSERTIVE: 'assertive',
+  POLITE: 'polite',
+};
+
 const getIconForType = (type) => {
   const map = {
     [ALERT_TYPES.SUCCESS]: <SuccessIcon className={getClassName('bpk-banner-alert__success-icon')} />,
@@ -86,7 +92,12 @@ class BpkBannerAlert extends Component {
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
       <section className={sectionClassNames.join(' ')}>
-        <header className={headerClassNames.join(' ')} onClick={this.onExpand}>
+        <header
+          role="alert"
+          aria-live={this.props.ariaLive}
+          className={headerClassNames.join(' ')}
+          onClick={this.onExpand}
+        >
           <span className={getClassName('bpk-banner-alert__icon')}>{getIconForType(this.props.type)}</span>
           &nbsp;
           <span className={getClassName('bpk-banner-alert__message')}>{this.props.message}</span>
@@ -115,11 +126,17 @@ BpkBannerAlert.propTypes = {
     ALERT_TYPES.ERROR,
   ]).isRequired,
   message: PropTypes.node.isRequired,
+  ariaLive: PropTypes.oneOf([
+    ARIA_LIVE.OFF,
+    ARIA_LIVE.ASSERTIVE,
+    ARIA_LIVE.POLITE,
+  ]),
   children: PropTypes.node,
   toggleButtonLabel: PropTypes.string,
 };
 
 BpkBannerAlert.defaultProps = {
+  ariaLive: ARIA_LIVE.ASSERTIVE,
   children: null,
   toggleButtonLabel: null,
 };

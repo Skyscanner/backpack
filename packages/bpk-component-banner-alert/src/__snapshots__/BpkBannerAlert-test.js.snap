@@ -5,8 +5,10 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
   className="bpk-banner-alert bpk-banner-alert--error"
 >
   <header
+    aria-live="assertive"
     className="bpk-banner-alert__header"
     onClick={[Function]}
+    role="alert"
   >
     <span
       className="bpk-banner-alert__icon"
@@ -45,8 +47,10 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
   className="bpk-banner-alert bpk-banner-alert--success"
 >
   <header
+    aria-live="assertive"
     className="bpk-banner-alert__header"
     onClick={[Function]}
+    role="alert"
   >
     <span
       className="bpk-banner-alert__icon"
@@ -85,8 +89,10 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
   className="bpk-banner-alert bpk-banner-alert--warn"
 >
   <header
+    aria-live="assertive"
     className="bpk-banner-alert__header"
     onClick={[Function]}
+    role="alert"
   >
     <span
       className="bpk-banner-alert__icon"
@@ -125,8 +131,10 @@ exports[`BpkBannerAlert should render correctly with a element based message 1`]
   className="bpk-banner-alert bpk-banner-alert--success"
 >
   <header
+    aria-live="assertive"
     className="bpk-banner-alert__header bpk-banner-alert__header--expandable"
     onClick={[Function]}
+    role="alert"
   >
     <span
       className="bpk-banner-alert__icon"
@@ -198,8 +206,10 @@ exports[`BpkBannerAlert should render correctly with child nodes 1`] = `
   className="bpk-banner-alert bpk-banner-alert--success"
 >
   <header
+    aria-live="assertive"
     className="bpk-banner-alert__header bpk-banner-alert__header--expandable"
     onClick={[Function]}
+    role="alert"
   >
     <span
       className="bpk-banner-alert__icon"
