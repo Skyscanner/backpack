@@ -24,6 +24,30 @@ exports[`BpkBarchartBar should render as an outlier 1`] = `
 </g>
 `;
 
+exports[`BpkBarchartBar should render as selected 1`] = `
+<g
+  className="bpk-barchart__bar-group"
+>
+  <title>
+    Bar
+  </title>
+  <rect
+    aria-label="Bar"
+    className="bpk-barchart__bar bpk-barchart__bar--selected"
+    height={100}
+    onClick={undefined}
+    onKeyDown={undefined}
+    role={undefined}
+    rx={3}
+    ry={3}
+    tabIndex={undefined}
+    width={20}
+    x={10}
+    y={10}
+  />
+</g>
+`;
+
 exports[`BpkBarchartBar should render correctly 1`] = `
 <g
   className="bpk-barchart__bar-group"

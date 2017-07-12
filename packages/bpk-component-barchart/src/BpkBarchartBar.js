@@ -32,12 +32,14 @@ const BpkBarchartBar = (props) => {
     label,
     onClick,
     outlier,
+    selected,
     ...rest
   } = props;
 
   const classNames = [getClassName('bpk-barchart__bar')];
   if (className) { classNames.push(className); }
   if (outlier) { classNames.push(getClassName('bpk-barchart__bar--outlier')); }
+  if (selected) { classNames.push(getClassName('bpk-barchart__bar--selected')); }
   if (onClick) { classNames.push(getClassName('bpk-barchart__bar--interactive')); }
 
   return (
@@ -71,12 +73,14 @@ BpkBarchartBar.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
   outlier: PropTypes.bool,
+  selected: PropTypes.bool,
 };
 
 BpkBarchartBar.defaultProps = {
   className: null,
   onClick: null,
   outlier: false,
+  selected: false,
 };
 
 export default BpkBarchartBar;

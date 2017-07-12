@@ -1,4 +1,4 @@
-@import '~bpk-tokens';
+@import '~bpk-mixins/index';
 
 .bpk-barchart__bar {
   fill: $bpk-color-blue-300;
@@ -11,12 +11,16 @@
   &--interactive {
     cursor: pointer;
 
-    &:hover {
+    @include bpk-hover {
       fill: $bpk-color-blue-500;
     }
 
     &:active {
       fill: $bpk-color-blue-600;
     }
+  }
+
+  &--selected {
+    fill: $bpk-color-blue-700;
   }
 }
