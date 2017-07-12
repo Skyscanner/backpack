@@ -1,13 +1,16 @@
 # Backpack changelog
 
 ## UNRELEASED
+_Nothing Yet_
+
+## 2017-07-12 - Add Chip component
 
 **Added:**
-- bpk-component-chip
+- bpk-component-chip: 0.0.1 => 1.0.0
   - Introducing the new chip component: Docs: http://backpack.prod.aws.skyscnr.com/components/atoms/chips
 
 **Fixed:**
-- bpk-component-horizontal-nav
+- bpk-component-horizontal-nav: 1.0.4 => 1.0.5
   - Add tab and tablist roles for use by accessibility tools
 
 ## 2017-07-10 - Add `source` arg to popover's `onClose`
