@@ -28,11 +28,13 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly 1`] = 
           className="bpk-accordion__icon-wrapper"
         >
           <svg
-            className="bpk-accordion__item-expand-icon bpk-icon--align-to-button"
+            className="bpk-accordion__item-expand-icon"
             height="18"
             style={
               Object {
                 "height": "1.125rem",
+                "marginTop": "0.1875rem",
+                "verticalAlign": "top",
                 "width": "1.125rem",
               }
             }
@@ -104,11 +106,13 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           className="bpk-accordion__icon-wrapper"
         >
           <svg
-            className="bpk-accordion__item-expand-icon bpk-icon--align-to-button"
+            className="bpk-accordion__item-expand-icon"
             height="18"
             style={
               Object {
                 "height": "1.125rem",
+                "marginTop": "0.1875rem",
+                "verticalAlign": "top",
                 "width": "1.125rem",
               }
             }
@@ -180,11 +184,13 @@ exports[`withAccordionItemState(BpkAccordionItem) should render correctly with "
           className="bpk-accordion__icon-wrapper"
         >
           <svg
-            className="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped bpk-icon--align-to-button"
+            className="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped"
             height="18"
             style={
               Object {
                 "height": "1.125rem",
+                "marginTop": "0.1875rem",
+                "verticalAlign": "top",
                 "width": "1.125rem",
               }
             }

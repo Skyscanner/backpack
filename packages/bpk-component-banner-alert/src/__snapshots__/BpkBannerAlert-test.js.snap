@@ -14,11 +14,13 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
       className="bpk-banner-alert__icon"
     >
       <svg
-        className="bpk-banner-alert__error-icon bpk-icon--align-to-button"
+        className="bpk-banner-alert__error-icon"
         height="18"
         style={
           Object {
             "height": "1.125rem",
+            "marginTop": "0.1875rem",
+            "verticalAlign": "top",
             "width": "1.125rem",
           }
         }
@@ -56,11 +58,13 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
       className="bpk-banner-alert__icon"
     >
       <svg
-        className="bpk-banner-alert__success-icon bpk-icon--align-to-button"
+        className="bpk-banner-alert__success-icon"
         height="18"
         style={
           Object {
             "height": "1.125rem",
+            "marginTop": "0.1875rem",
+            "verticalAlign": "top",
             "width": "1.125rem",
           }
         }
@@ -98,11 +102,13 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
       className="bpk-banner-alert__icon"
     >
       <svg
-        className="bpk-banner-alert__warn-icon bpk-icon--align-to-button"
+        className="bpk-banner-alert__warn-icon"
         height="18"
         style={
           Object {
             "height": "1.125rem",
+            "marginTop": "0.1875rem",
+            "verticalAlign": "top",
             "width": "1.125rem",
           }
         }
@@ -140,11 +146,13 @@ exports[`BpkBannerAlert should render correctly with a element based message 1`]
       className="bpk-banner-alert__icon"
     >
       <svg
-        className="bpk-banner-alert__success-icon bpk-icon--align-to-button"
+        className="bpk-banner-alert__success-icon"
         height="18"
         style={
           Object {
             "height": "1.125rem",
+            "marginTop": "0.1875rem",
+            "verticalAlign": "top",
             "width": "1.125rem",
           }
         }
@@ -179,11 +187,13 @@ exports[`BpkBannerAlert should render correctly with a element based message 1`]
         title="View more"
       >
         <svg
-          className="bpk-banner-alert__expand-icon bpk-icon--align-to-button"
+          className="bpk-banner-alert__expand-icon"
           height="18"
           style={
             Object {
               "height": "1.125rem",
+              "marginTop": "0.1875rem",
+              "verticalAlign": "top",
               "width": "1.125rem",
             }
           }
@@ -215,11 +225,13 @@ exports[`BpkBannerAlert should render correctly with child nodes 1`] = `
       className="bpk-banner-alert__icon"
     >
       <svg
-        className="bpk-banner-alert__success-icon bpk-icon--align-to-button"
+        className="bpk-banner-alert__success-icon"
         height="18"
         style={
           Object {
             "height": "1.125rem",
+            "marginTop": "0.1875rem",
+            "verticalAlign": "top",
             "width": "1.125rem",
           }
         }
@@ -249,11 +261,13 @@ exports[`BpkBannerAlert should render correctly with child nodes 1`] = `
         title="View more"
       >
         <svg
-          className="bpk-banner-alert__expand-icon bpk-icon--align-to-button"
+          className="bpk-banner-alert__expand-icon"
           height="18"
           style={
             Object {
               "height": "1.125rem",
+              "marginTop": "0.1875rem",
+              "verticalAlign": "top",
               "width": "1.125rem",
             }
           }
