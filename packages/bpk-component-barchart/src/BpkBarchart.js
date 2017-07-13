@@ -93,6 +93,7 @@ class BpkBarchart extends Component {
       yAxisNumTicks,
       onBarClick,
       getBarLabel,
+      getBarSelection,
       BarComponent,
       disableDataTable,
       ...rest
@@ -179,6 +180,7 @@ class BpkBarchart extends Component {
               outerPadding={showGridlines ? undefined : 0}
               onBarClick={onBarClick}
               getBarLabel={getBarLabel}
+              getBarSelection={getBarSelection}
               BarComponent={BarComponent}
             />
           </BpkChartMargin>
@@ -209,6 +211,7 @@ BpkBarchart.propTypes = {
   yAxisNumTicks: PropTypes.number,
   onBarClick: PropTypes.func,
   getBarLabel: PropTypes.func,
+  getBarSelection: PropTypes.func,
   BarComponent: PropTypes.func,
   disableDataTable: PropTypes.bool,
 };
@@ -227,6 +230,7 @@ BpkBarchart.defaultProps = {
   yAxisNumTicks: null,
   onBarClick: null,
   getBarLabel: (point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
+  getBarSelection: () => false,
   BarComponent: BpkBarchartBar,
   disableDataTable: false,
 };

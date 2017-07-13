@@ -1,7 +1,6 @@
 import React from 'react';
 import { number } from 'prop-types';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import BpkHeading from 'bpk-component-heading';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 import { lineHeightSm } from 'bpk-tokens/tokens/base.es6';
@@ -15,8 +14,10 @@ import BpkBarchart, {
 } from './index';
 
 import { ORIENTATION_X, ORIENTATION_Y } from './src/orientation';
+import { withSelectedState } from './hocs';
 
-const EnhancedBarchart = updateOnDirectionChange(BpkBarchart);
+const RtlBarchart = updateOnDirectionChange(BpkBarchart);
+const SelectableBarChart = withSelectedState(RtlBarchart);
 
 const data = require('./data');
 
@@ -107,7 +108,7 @@ storiesOf('bpk-component-barchart', module)
     );
   })
   .add('Default', () => (
-    <EnhancedBarchart
+    <RtlBarchart
       initialWidth={500}
       initialHeight={300}
       data={data.prices}
@@ -122,7 +123,7 @@ storiesOf('bpk-component-barchart', module)
     />
   ))
   .add('Default disabled data table', () => (
-    <EnhancedBarchart
+    <RtlBarchart
       initialWidth={500}
       initialHeight={300}
       data={data.prices}
@@ -138,7 +139,7 @@ storiesOf('bpk-component-barchart', module)
     />
   ))
   .add('Interactive', () => (
-    <EnhancedBarchart
+    <SelectableBarChart
       initialWidth={500}
       initialHeight={300}
       data={data.prices}
@@ -150,11 +151,10 @@ storiesOf('bpk-component-barchart', module)
       }}
       xAxisLabel="Month"
       yAxisLabel="Average Price (£)"
-      onBarClick={action('clicked a bar')}
     />
   ))
   .add('Outliers', () => (
-    <EnhancedBarchart
+    <RtlBarchart
       initialWidth={500}
       initialHeight={300}
       data={data.prices2}
@@ -169,7 +169,7 @@ storiesOf('bpk-component-barchart', module)
     />
   ))
   .add('Custom ticks', () => (
-    <EnhancedBarchart
+    <RtlBarchart
       initialWidth={500}
       initialHeight={300}
       data={data.prices}
@@ -186,7 +186,7 @@ storiesOf('bpk-component-barchart', module)
     />
   ))
   .add('Custom tick labels', () => (
-    <EnhancedBarchart
+    <RtlBarchart
       initialWidth={500}
       initialHeight={300}
       data={data.prices}
@@ -218,7 +218,7 @@ storiesOf('bpk-component-barchart', module)
     />
   ))
   .add('Grid lines', () => (
-    <EnhancedBarchart
+    <RtlBarchart
       initialWidth={500}
       initialHeight={300}
       data={data.prices}

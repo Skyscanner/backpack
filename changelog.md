@@ -2,6 +2,22 @@
 
 ## UNRELEASED
 
+**Breaking:**
+- bpk-component-barchart:
+  - The `onBarClick` callback prop has changed signature:
+
+    ```
+    const onBarClick = (e, source) => { ... } // old
+    const onBarClick = (e, { source }) => { ... } // new
+    ```
+
+**Added:**
+- bpk-component-barchart:
+  - `BpkBarchart`
+    - Added `getBarSelection` callback prop which can be used to indicate that a given bar is selected
+  - `BpkBarchartBar`
+    - Added `selected` prop
+    
 **Fixed:**
 - bpk-component-banner-alert
   - Add alert role to notification for use by accessibility tools

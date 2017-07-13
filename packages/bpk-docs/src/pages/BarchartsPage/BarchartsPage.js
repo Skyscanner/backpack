@@ -1,17 +1,19 @@
 import React from 'react';
-import BpkBarchart from 'bpk-component-barchart';
-import { BpkCode } from 'bpk-component-code';
 import BpkLink from 'bpk-component-link';
+import { BpkCode } from 'bpk-component-code';
+import BpkBarchart from 'bpk-component-barchart';
 import BpkParagraph from 'bpk-component-paragraph';
 import { onePixelRem } from 'bpk-tokens/tokens/base.es6';
-
+import { withSelectedState } from 'bpk-component-barchart/hocs';
 import barchartReadme from 'bpk-component-barchart/readme.md';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
+
 import data from 'bpk-component-barchart/data.json';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const EnhancedBarchart = updateOnDirectionChange(BpkBarchart);
+const InteractiveBarchart = withSelectedState(EnhancedBarchart);
 
 const components = [
   {
@@ -64,11 +66,12 @@ const components = [
     title: 'Interactive',
     blurb: [
       <BpkParagraph>
-        The bars can be made interactive by supplying the <BpkCode>onBarClick</BpkCode> prop.
+        The bars can be made interactive using
+        the <BpkCode>onBarClick</BpkCode> &amp; <BpkCode>getBarSelection</BpkCode> props.
       </BpkParagraph>,
     ],
     examples: [
-      <EnhancedBarchart
+      <InteractiveBarchart
         initialWidth={500}
         initialHeight={300}
         data={data.prices}
@@ -78,7 +81,6 @@ const components = [
         yAxisLabel="Average price (£)"
         xAxisLabel="Month"
         style={{ minWidth: `calc(500 * ${onePixelRem})` }}
-        onBarClick={() => null}
       />,
     ],
   },
