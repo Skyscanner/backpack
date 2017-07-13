@@ -32,5 +32,6 @@ export default () => (
 | ----------------- | -------------------- | -------- | ------------- |
 | type              | ALERT_TYPES (one of) | true     | -             |
 | message           | node                 | true     | -             |
+| ariaLive          | ARIA_LIVE (one of)   | false    | 'assertive'   |
 | children          | node                 | false    | null          |
 | toggleButtonLabel | string               | false    | null          |

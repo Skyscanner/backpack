@@ -1,7 +1,10 @@
 # Backpack changelog
 
 ## UNRELEASED
-_Nothing Yet_
+
+**Fixed:**
+- bpk-component-banner-alert
+  - Add alert role to notification for use by accessibility tools
 
 ## 2017-07-12 - Add Chip component
 
