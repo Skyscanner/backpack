@@ -42,6 +42,8 @@ const BpkBarchartBar = (props) => {
   if (selected) { classNames.push(getClassName('bpk-barchart__bar--selected')); }
   if (onClick) { classNames.push(getClassName('bpk-barchart__bar--interactive')); }
 
+  const isAriaPressed = !!(onClick && selected);
+
   return (
     <g className={getClassName('bpk-barchart__bar-group')}>
       <title>{label}</title>
@@ -57,6 +59,7 @@ const BpkBarchartBar = (props) => {
         onKeyDown={onClick ? handleKeyboardEvent(onClick) : undefined}
         tabIndex={onClick ? 0 : undefined}
         role={onClick ? 'button' : undefined}
+        aria-pressed={isAriaPressed}
         aria-label={label}
         {...rest}
       />

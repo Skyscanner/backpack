@@ -57,4 +57,19 @@ describe('BpkBarchartBar', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render as aria-pressed if onClick present and selected', () => {
+    const tree = renderer.create(
+      <BpkBarchartBar
+        x={10}
+        y={10}
+        width={20}
+        height={100}
+        label="Bar"
+        selected
+        onClick={() => null}
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

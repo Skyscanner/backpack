@@ -9,6 +9,7 @@ exports[`BpkBarchartBar should render as an outlier 1`] = `
   </title>
   <rect
     aria-label="Bar"
+    aria-pressed={false}
     className="bpk-barchart__bar bpk-barchart__bar--outlier"
     height={100}
     onClick={undefined}
@@ -17,6 +18,31 @@ exports[`BpkBarchartBar should render as an outlier 1`] = `
     rx={3}
     ry={3}
     tabIndex={undefined}
+    width={20}
+    x={10}
+    y={10}
+  />
+</g>
+`;
+
+exports[`BpkBarchartBar should render as aria-pressed if onClick present and selected 1`] = `
+<g
+  className="bpk-barchart__bar-group"
+>
+  <title>
+    Bar
+  </title>
+  <rect
+    aria-label="Bar"
+    aria-pressed={true}
+    className="bpk-barchart__bar bpk-barchart__bar--selected bpk-barchart__bar--interactive"
+    height={100}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    rx={3}
+    ry={3}
+    tabIndex={0}
     width={20}
     x={10}
     y={10}
@@ -33,6 +59,7 @@ exports[`BpkBarchartBar should render as selected 1`] = `
   </title>
   <rect
     aria-label="Bar"
+    aria-pressed={false}
     className="bpk-barchart__bar bpk-barchart__bar--selected"
     height={100}
     onClick={undefined}
@@ -57,6 +84,7 @@ exports[`BpkBarchartBar should render correctly 1`] = `
   </title>
   <rect
     aria-label="Bar"
+    aria-pressed={false}
     className="bpk-barchart__bar"
     height={100}
     onClick={undefined}
@@ -81,6 +109,7 @@ exports[`BpkBarchartBar should render with an onClick handler 1`] = `
   </title>
   <rect
     aria-label="Bar"
+    aria-pressed={false}
     className="bpk-barchart__bar bpk-barchart__bar--interactive"
     height={100}
     onClick={[Function]}
