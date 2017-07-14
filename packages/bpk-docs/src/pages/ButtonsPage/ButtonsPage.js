@@ -3,6 +3,8 @@ import BpkButton from 'bpk-component-button';
 import BpkParagraph from 'bpk-component-paragraph';
 import { colors, buttons } from 'bpk-tokens/tokens/base.es6';
 import { alignToButton, alignToLargeButton } from 'bpk-component-icon';
+import { BpkCode } from 'bpk-component-code';
+import BpkLink from 'bpk-component-link';
 import TestBpkSmallArrowIcon from 'bpk-component-icon/sm/long-arrow-right';
 import TestBpkLargeArrowIcon from 'bpk-component-icon/lg/long-arrow-right';
 import TestBpkSmallTrashIcon from 'bpk-component-icon/sm/trash';
@@ -234,6 +236,17 @@ const components = [
       ' ',
       <BpkButton link large disabled>Disabled</BpkButton>,
     ],
+  },
+  {
+    id: 'icon-alignment',
+    title: 'Icon alignment within buttons',
+    blurb: [
+      <BpkParagraph>
+        The <BpkLink href={ROUTES.ALIGNMENT}>Alignment</BpkLink> page gives examples of
+        icon alignment using HOCs provided in the <BpkCode>bpk-component-icon</BpkCode> package.
+      </BpkParagraph>,
+    ],
+    examples: [],
   },
 ];
 

@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
+import { BpkCode } from 'bpk-component-code';
 import BpkLink from 'bpk-component-link';
 import icons from 'bpk-component-icon/all';
 import BpkHeading from 'bpk-component-heading';
@@ -7,6 +8,7 @@ import BpkParagraph from 'bpk-component-paragraph';
 
 import iconReadme from 'bpk-component-icon/readme.md';
 
+import * as ROUTES from './../../constants/routes';
 import IconSearchApp from './../../components/IconSearchApp';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
@@ -42,6 +44,11 @@ const blurb = [
   </BpkParagraph>,
   <BpkHeading level="h2">Find the right icon</BpkHeading>,
   <IconSearchApp icons={iconsFinal} />,
+  <BpkHeading level="h2">Aligning icons within components</BpkHeading>,
+  <BpkParagraph>
+    The <BpkLink href={ROUTES.ALIGNMENT}>Alignment</BpkLink> page gives examples of icon alignment using
+    HOCs provided in the <BpkCode>bpk-component-icon</BpkCode> package.
+  </BpkParagraph>,
 ];
 
 const IconsPage = () => <DocsPageBuilder

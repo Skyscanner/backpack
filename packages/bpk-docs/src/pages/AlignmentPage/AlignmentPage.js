@@ -8,6 +8,7 @@ import BpkParagraph from 'bpk-component-paragraph';
 import BpkHeading from 'bpk-component-heading';
 import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import * as ROUTES from './../../constants/routes';
 
 const AlignedHeading4Arrow = withAlignment(LongArrowRightIcon, lineHeightBase, iconSizeSm);
 const AlignedHeading3Arrow = withAlignment(LongArrowRightIcon, lineHeightLg, iconSizeLg);
@@ -21,7 +22,7 @@ const components = [
     blurb: [
       <BpkParagraph>
         Aligning an icon within a heading can be done using <BpkCode >withAlignment</BpkCode>, providing
-        suitable spacings (see the <BpkLink href="/components/bonds/typesetting" >Typesetting section</BpkLink>).
+        suitable spacings (see the <BpkLink href={ROUTES.TYPESETTING} >Typesetting section</BpkLink>).
       </BpkParagraph>,
       <BpkParagraph>
         Using the HOC is done as follows:
@@ -86,7 +87,8 @@ const AlignedArrow = withAlignment(
     title: 'Icon alignment within a button',
     blurb: [
       <BpkParagraph>
-         HOC wrappers exist for common alignment tasks, such as aligning an icon within a button:
+         HOC wrappers exist for common alignment tasks, such as aligning an icon within a button.
+         Other examples can be seen in the <BpkLink href={ROUTES.BUTTONS}>Buttons page</BpkLink>.
       </BpkParagraph>,
       <BpkCodeBlock>
         {`import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
@@ -114,7 +116,8 @@ const AlignedArrow = withButtonAlignment(LongArrowRightIcon);
     title: 'Icon alignment within a large button',
     blurb: [
       <BpkParagraph>
-         Similarly, a HOC exists for aligning icons to a large button:
+         Similarly, a HOC exists for aligning icons to a large button.
+         Other examples can be seen in the <BpkLink href={ROUTES.BUTTONS}>Buttons page</BpkLink>.
           </BpkParagraph>,
       <BpkCodeBlock>
         {`import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
@@ -144,6 +147,13 @@ const AlignmentPage = () => <DocsPageBuilder
   blurb={[
     <BpkParagraph>
       Alignment higher-order-components (HOCs) allow components to be aligned vertically within a given space.
+    </BpkParagraph>,
+    <BpkHeading level="h2" >
+      Installation
+    </BpkHeading>,
+    <BpkParagraph>
+      The alignment HOCs are provided in the <BpkCode>bpk-components-icon</BpkCode> package.
+      See <BpkLink href={ROUTES.ICONS}>Icons</BpkLink> for installation instructions.
     </BpkParagraph>,
   ]}
   components={components}
