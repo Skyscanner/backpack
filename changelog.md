@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-07-14 - Selectable bar chart
+
 **Breaking:**
-- bpk-component-barchart:
+- bpk-component-barchart: 0.3.5 => 1.0.0
   - The `onBarClick` callback prop has changed signature:
 
     ```
@@ -12,20 +16,18 @@
     ```
 
 **Added:**
-- bpk-component-barchart:
+- bpk-component-barchart: 0.3.5 => 1.0.0
   - `BpkBarchart`
     - Added `getBarSelection` callback prop which can be used to indicate that a given bar is selected
   - `BpkBarchartBar`
     - Added `selected` prop
-
-**Added:**
-- bpk-component-icon
+- bpk-component-icon: 3.7.5 => 3.8.0
   - Replaced HOC's: `withButtonAlignment` & `withLargeButtonAlignment` with `withAlignment`
   - `withAlignment` provides similar alignment functionality to a given component, taking as extra arguments the line height of the parent and icon components.
   - `withButtonAlignment` & `withLargeButtonAlignment` are still available as wrappers around the new `withAlignment` function.
 
 **Fixed:**
-- bpk-component-banner-alert
+- bpk-component-banner-alert: 1.1.7 => 1.1.8
   - Add alert role to notification for use by accessibility tools
 
 ## 2017-07-12 - Add Chip component
