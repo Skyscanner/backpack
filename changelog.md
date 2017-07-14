@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Fixed:**
+- bpk-component-icon
+  - `withAlighnment` HOC updated to accept props. Existing styling will be spread with the new alignment styling.
 
 ## 2017-07-14 - Datepicker/Breakpoint exception fix
 
