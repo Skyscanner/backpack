@@ -2,9 +2,13 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-07-14 - Datepicker/Breakpoint exception fix
+
 **Fixed:**
-- bpk-component-breakpoint:
-- bpk-component-datepicker:
+- bpk-component-breakpoint: 0.1.27 => 0.1.28
+- bpk-component-datepicker: 7.0.5 => 7.0.6
   - Pinned `react-responsive` to v1.3.0 as a breaking change was released in v1.3.2
 
 ## 2017-07-14 - Selectable bar chart
