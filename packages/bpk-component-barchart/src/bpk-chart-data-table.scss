@@ -2,4 +2,9 @@
 
 .bpk-chart-data-table {
   @include bpk-visually-hidden;
+
+  thead,
+  tbody {
+    @include bpk-visually-hidden;
+  }
 }
