@@ -11,16 +11,17 @@ import { lockScroll, unlockScroll, storeScroll, restoreScroll } from './scroll-u
 
 const getClassName = cssModules(STYLES);
 
-const stopPropagation = (e) => {
-  e.stopPropagation();
-};
-
 class BpkModalDialog extends Component {
   constructor() {
     super();
 
-    this.onClose = this.onClose.bind(this);
     this.getDialogRef = this.getDialogRef.bind(this);
+    this.onContentMouseDown = this.onContentMouseDown.bind(this);
+    this.onContentMouseUp = this.onContentMouseUp.bind(this);
+    this.onOverlayMouseDown = this.onOverlayMouseDown.bind(this);
+    this.onOverlayMouseUp = this.onOverlayMouseUp.bind(this);
+
+    this.shouldClose = false;
   }
 
   componentDidMount() {
@@ -61,9 +62,23 @@ class BpkModalDialog extends Component {
     focusStore.restoreFocus();
   }
 
-  onClose(e) {
-    stopPropagation(e);
-    this.props.onClose();
+  onContentMouseDown(e) {
+    e.stopPropagation();
+    this.shouldClose = false;
+  }
+
+  onContentMouseUp() {
+    this.shouldClose = false;
+  }
+
+  onOverlayMouseDown() {
+    this.shouldClose = true;
+  }
+
+  onOverlayMouseUp() {
+    if (this.shouldClose) {
+      this.props.onClose();
+    }
   }
 
   getDialogRef(ref) {
@@ -91,7 +106,8 @@ class BpkModalDialog extends Component {
           tabIndex="-1"
           role="dialog"
           aria-labelledby={headingId}
-          onClick={stopPropagation}
+          onMouseDown={this.onContentMouseDown}
+          onMouseUp={this.onContentMouseUp}
           className={dialogClassNames.join(' ')}
           ref={this.getDialogRef}
         >
@@ -101,11 +117,11 @@ class BpkModalDialog extends Component {
             </h2>
             &nbsp;
             {this.props.closeText
-              ? <BpkButtonLink onClick={this.onClose}>{this.props.closeText}</BpkButtonLink>
+              ? <BpkButtonLink onClick={this.props.onClose}>{this.props.closeText}</BpkButtonLink>
               : <BpkCloseButton
                 className={getClassName('bpk-modal__dialog-close-button')}
                 label={this.props.closeLabel}
-                onClick={this.onClose}
+                onClick={this.props.onClose}
               />
             }
           </header>
@@ -125,7 +141,11 @@ class BpkModalDialog extends Component {
 
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
-      <div className={classNames.join(' ')} onClick={this.onClose}>
+      <div
+        className={classNames.join(' ')}
+        onMouseDown={this.onOverlayMouseDown}
+        onMouseUp={this.onOverlayMouseUp}
+      >
         {this.renderDialog()}
       </div>
     );

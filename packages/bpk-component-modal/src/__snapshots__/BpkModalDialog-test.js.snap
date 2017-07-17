@@ -3,13 +3,15 @@
 exports[`BpkModalDialog should render correctly 1`] = `
 <div
   className="bpk-modal"
-  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
 >
   <section
     aria-labelledby="bpk-modal-heading-my-modal"
     className="bpk-modal__dialog"
     id="my-modal"
-    onClick={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
     role="dialog"
     tabIndex="-1"
   >
@@ -63,13 +65,15 @@ exports[`BpkModalDialog should render correctly 1`] = `
 exports[`BpkModalDialog should render correctly when it has a className 1`] = `
 <div
   className="bpk-modal"
-  onClick={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
 >
   <section
     aria-labelledby="bpk-modal-heading-my-modal"
     className="bpk-modal__dialog my-classname"
     id="my-modal"
-    onClick={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
     role="dialog"
     tabIndex="-1"
   >
