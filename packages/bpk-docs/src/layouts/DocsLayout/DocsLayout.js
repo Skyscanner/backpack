@@ -66,6 +66,13 @@ const links = [
       { id: 'FILTERS', route: null, children: 'Filters' },
     ],
   },
+  {
+    id: 'UTILITIES',
+    category: 'Utilities',
+    links: [
+      { id: 'ALIGNMENT', route: routes.ALIGNMENT, children: 'Alignment' },
+    ],
+  },
 ];
 
 const DocsLayout = ({ children, ...rest }) => <SideNavLayout links={links} {...rest}>{children}</SideNavLayout>;

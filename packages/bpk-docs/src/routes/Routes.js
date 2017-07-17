@@ -50,6 +50,8 @@ import FieldsetsPage from './../pages/FieldsetsPage';
 import BarchartsPage from './../pages/BarchartsPage';
 import StarRatingPage from './../pages/StarRatingPage';
 
+import AlignmentPage from './../pages/AlignmentPage';
+
 import VerticalRhythmPage from './../pages/VerticalRhythmPage';
 import StatefulnessPage from './../pages/StatefulnessPage';
 import UnitsPage from './../pages/UnitsPage';
@@ -115,6 +117,10 @@ const Routes = (
         <Route path={ROUTES.FIELDSETS} component={FieldsetsPage} />
         <Route path={ROUTES.BARCHARTS} component={BarchartsPage} />
         <Route path={ROUTES.STAR_RATING} component={StarRatingPage} />
+      </Route>
+      <Route path={ROUTES.UTILITIES}>
+        <IndexRedirect to={ROUTES.ALIGNMENT} />
+        <Route path={ROUTES.ALIGNMENT} component={AlignmentPage} />
       </Route>
     </Route>
 

@@ -2,7 +2,6 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
 **Added:**
 - bpk-component-tooltip:
   - A custom class name can now be supplied when rendering `BpkTooltip`.
