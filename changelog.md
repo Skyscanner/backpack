@@ -48,7 +48,6 @@ _Nothing yet..._
 
 - bpk-component-icon:  3.8.0 => 3.9.0
   - withAlignment HOC updated to accept props. Existing styling will be spread with the new alignment styling.
--
 
 **Fixed:**
 - bpk-component-modal: 1.1.6 => 1.1.7
