@@ -21,4 +21,12 @@ describe('withAlignment', () => {
       }
     }
   });
+
+  it('should keep wrapped-component syling', () => {
+    const FloatingComponent = props => <div {...props} >test lineHeight {lineHeightLg} and iconsSize {iconSizeSm}</div>;
+    const AlignedFloatingComponent = withAlignment(FloatingComponent, lineHeightLg, iconSizeSm);
+
+    const tree = renderer.create(<AlignedFloatingComponent style={{ float: 'right'}} />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
