@@ -13,6 +13,9 @@
     "ZINDEX_POPOVER": {
       "value": "{!ZINDEX_POPOVER}"
     },
+    "ZINDEX_TOOLTIP": {
+      "value": "{!ZINDEX_TOOLTIP}"
+    },
     "ZINDEX_MODAL_SCRIM": {
       "value": "{!ZINDEX_MODAL_SCRIM}"
     },

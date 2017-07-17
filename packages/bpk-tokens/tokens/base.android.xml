@@ -312,6 +312,7 @@
   <color name="LINK_WHITE_VISITED_COLOR" category="text-colors">#ffffffff</color>
   <property name="ZINDEX_AUTOSUGGEST" category="z-indices">900</property>
   <property name="ZINDEX_POPOVER" category="z-indices">900</property>
+  <property name="ZINDEX_TOOLTIP" category="z-indices">900</property>
   <property name="ZINDEX_MODAL_SCRIM" category="z-indices">1000</property>
   <property name="ZINDEX_MODAL" category="z-indices">1100</property>
 </resources>

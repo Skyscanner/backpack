@@ -1,0 +1,5 @@
+@import '~bpk-mixins';
+
+.bpk-tooltip-portal {
+  z-index: $bpk-zindex-tooltip;
+}

@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-
-import { Portal } from 'bpk-react-utils';
+import { Portal, cssModules } from 'bpk-react-utils';
 import Tether, { getArrowPositionCallback, applyRTLTransforms } from 'bpk-tether';
 
 import BpkTooltip from './BpkTooltip';
 import { ARROW_ID } from './constants';
+import STYLES from './BpkTooltipPortal.scss';
+
+const getClassName = cssModules(STYLES);
 
 const hasTouchSupport = () => !!(
   (typeof window !== 'undefined') &&
@@ -75,8 +77,11 @@ class BpkTooltipPortal extends Component {
   }
 
   render() {
-    const { padded, target, children, hideOnTouchDevices, ...rest } = this.props;
+    const classNames = [getClassName('bpk-tooltip-portal')];
+    const { padded, target, children, hideOnTouchDevices, className, ...rest } = this.props;
     const renderPortal = !hasTouchSupport() || !hideOnTouchDevices;
+
+    if (className) { classNames.push(className); }
 
     delete rest.tetherOptions;
 
@@ -88,6 +93,7 @@ class BpkTooltipPortal extends Component {
           isOpen={this.state.isOpen}
           onOpen={this.onOpen}
           onClose={this.closeTooltip}
+          className={classNames.join(' ')}
         >
           <BpkTooltip padded={padded} {...rest}>
             { children }
@@ -110,6 +116,7 @@ BpkTooltipPortal.propTypes = {
     offset: PropTypes.string,
     constraints: PropTypes.array,
   }),
+  className: PropTypes.string,
 };
 
 BpkTooltipPortal.defaultProps = {
@@ -125,6 +132,7 @@ BpkTooltipPortal.defaultProps = {
       },
     ],
   },
+  className: null,
 };
 
 export default BpkTooltipPortal;

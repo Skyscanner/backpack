@@ -2,9 +2,16 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+**Added:**
+- bpk-component-tooltip:
+  - A custom class name can now be supplied when rendering `BpkTooltip`.
+
 **Fixed:**
 - bpk-component-icon
   - `withAlighnment` HOC updated to accept props. Existing styling will be spread with the new alignment styling.
+- bpk-component-tooltip:
+  - The tooltip now correctly sets an appropriate z-index.
 
 ## 2017-07-14 - Datepicker/Breakpoint exception fix
 
