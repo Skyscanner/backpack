@@ -1875,6 +1875,12 @@
     {
       "type": "number",
       "category": "z-indices",
+      "value": "900",
+      "name": "zindexTooltip"
+    },
+    {
+      "type": "number",
+      "category": "z-indices",
       "value": "1000",
       "name": "zindexModalScrim"
     },

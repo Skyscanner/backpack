@@ -311,6 +311,7 @@ module.exports = {
   linkWhiteVisitedColor: "rgb(255, 255, 255)",
   zindexAutosuggest: "900",
   zindexPopover: "900",
+  zindexTooltip: "900",
   zindexModalScrim: "1000",
   zindexModal: "1100"
 };

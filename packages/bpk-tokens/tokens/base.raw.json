@@ -88,6 +88,7 @@
     "ONE_PIXEL_REM": ".0625rem",
     "ZINDEX_AUTOSUGGEST": "900",
     "ZINDEX_POPOVER": "900",
+    "ZINDEX_TOOLTIP": "900",
     "ZINDEX_MODAL_SCRIM": "1000",
     "ZINDEX_MODAL": "1100"
   },
@@ -1964,6 +1965,12 @@
       "value": "900",
       "name": "ZINDEX_POPOVER"
     },
+    "ZINDEX_TOOLTIP": {
+      "type": "number",
+      "category": "z-indices",
+      "value": "900",
+      "name": "ZINDEX_TOOLTIP"
+    },
     "ZINDEX_MODAL_SCRIM": {
       "type": "number",
       "category": "z-indices",
@@ -2290,6 +2297,7 @@
     "LINK_WHITE_VISITED_COLOR",
     "ZINDEX_AUTOSUGGEST",
     "ZINDEX_POPOVER",
+    "ZINDEX_TOOLTIP",
     "ZINDEX_MODAL_SCRIM",
     "ZINDEX_MODAL"
   ]

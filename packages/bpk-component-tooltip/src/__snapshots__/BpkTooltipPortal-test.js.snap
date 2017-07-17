@@ -1,3 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkTooltipPortal should render correctly 1`] = `null`;
+exports[`BpkTooltipPortal should render correctly 1`] = `
+<Portal
+  className="bpk-tooltip-portal"
+  isOpen={false}
+  onClose={[Function]}
+  onOpen={[Function]}
+  target={
+    <div>
+      target
+    </div>
+  }
+  targetRef={[Function]}
+>
+  <section
+    className="bpk-tooltip"
+    id="my-tooltip"
+    role="dialog"
+    tabIndex="-1"
+  >
+    <span
+      className="bpk-tooltip__arrow"
+      id="js-bpk-popover-arrow"
+      role="presentation"
+    />
+    <div
+      className="bpk-tooltip__inner bpk-tooltip__inner--padded"
+    >
+      My tooltip content
+    </div>
+  </section>
+</Portal>
+`;
+
+exports[`BpkTooltipPortal should render correctly with a custom className 1`] = `
+<Portal
+  className="bpk-tooltip-portal my-custom-class"
+  isOpen={false}
+  onClose={[Function]}
+  onOpen={[Function]}
+  target={
+    <div>
+      target
+    </div>
+  }
+  targetRef={[Function]}
+>
+  <section
+    className="bpk-tooltip"
+    id="my-tooltip"
+    role="dialog"
+    tabIndex="-1"
+  >
+    <span
+      className="bpk-tooltip__arrow"
+      id="js-bpk-popover-arrow"
+      role="presentation"
+    />
+    <div
+      className="bpk-tooltip__inner bpk-tooltip__inner--padded"
+    >
+      My tooltip content
+    </div>
+  </section>
+</Portal>
+`;
