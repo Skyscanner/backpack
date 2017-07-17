@@ -8,6 +8,8 @@ _Nothing yet..._
   - A custom class name can now be supplied when rendering `BpkTooltip`.
 
 **Fixed:**
+- bpk-component-modal
+  - Fixed a bug where an on mouse down event starting inside the modal and ending outside the modal would incorrectly close the modal.
 - bpk-component-icon
   - `withAlighnment` HOC updated to accept props. Existing styling will be spread with the new alignment styling.
 - bpk-component-tooltip:
