@@ -46,6 +46,9 @@ export const FIELDSETS = '/components/molecules/fieldsets';
 export const BARCHARTS = '/components/molecules/barcharts';
 export const STAR_RATING = '/components/molecules/star-rating';
 
+export const UTILITIES = '/components/utilities';
+export const ALIGNMENT = '/components/utilities/alignment';
+
 export const PATTERNS = '/patterns';
 export const VERTICAL_RHYTHM = '/patterns/vertical-rhythm';
 export const STATEFULNESS = '/patterns/statefulness';

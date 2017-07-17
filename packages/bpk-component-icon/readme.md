@@ -45,13 +45,12 @@ import React from 'react';
 import BpkButton from 'bpk-component-button';
 import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
 import BpkLargeAccessibilityIcon from 'bpk-component-icon/lg/accessibility';
-import { withAlignment } from 'bpk-component-icon';
-import { lineHeightBase, iconSizeSm, lineHeightLg, iconSizeLg } from 'bpk-tokens/tokens/base.es6';
+import { withButtonAlignment, withLargeButtonAlignment } from 'bpk-component-icon';
 
 import './icons.scss';
 
-const AlignedBpkSmallFlightIcon = withAlignment(BpkSmallFlightIcon, lineHeightBase, iconSizeSm);
-const AlignedBpkLargeAccessibilityIcon = withAlignment(BpkLargeAccessibilityIcon, lineHeightLg, iconSizeLg);
+const AlignedBpkSmallFlightIcon = withButtonAlignment(BpkSmallFlightIcon);
+const AlignedBpkLargeAccessibilityIcon = withLargeButtonAlignment(BpkLargeAccessibilityIcon);
 
 export default () => (
   <div>
