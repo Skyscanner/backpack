@@ -2,16 +2,58 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-07-17 - Version stabilisation, Fix for Tooltip z-index, HOC for alignment, Fix for modal close bug
+
+**No change**:
+
+- bpk-animate-height: 0.0.22 => 1.0.0
+- bpk-component-badge: 0.1.5 => 1.0.0
+- bpk-component-blockquote: 0.1.5 => 1.0.0
+- bpk-component-breakpoint: 0.1.28 => 1.0.0
+- bpk-component-card: 0.1.5 => 1.0.0
+- bpk-component-close-button: 0.1.6 => 1.0.0
+- bpk-component-code: 0.1.5 => 1.0.0
+- bpk-component-fieldset: 0.3.6 => 1.0.0
+- bpk-component-form-validation: 0.1.5 => 1.0.0
+- bpk-component-grid-toggle: 0.2.2 => 1.0.0
+- bpk-component-link: 0.6.5 => 1.0.0
+- bpk-component-list: 0.1.5 => 1.0.0
+- bpk-component-loading-button: 0.1.6 => 1.0.0
+- bpk-component-mobile-scroll-container: 0.0.6 => 1.0.0
+- bpk-component-nudger: 0.1.6 => 1.0.0
+- bpk-component-panel: 0.1.5 => 1.0.0
+- bpk-component-paragraph: 0.3.5 => 1.0.0
+- bpk-component-progress: 0.1.6 => 1.0.0
+- bpk-component-router-link: 0.2.5 => 1.0.0
+- bpk-component-rtl-toggle: 0.1.2 => 1.0.0
+- bpk-component-star-rating: 0.0.11 => 1.0.0
+- bpk-component-table: 0.1.6 => 1.0.0
+- bpk-component-textarea: 0.1.5 => 1.0.0
+- bpk-component-ticket: 0.1.6 => 1.0.0
+- bpk-tether: 0.0.4 => 1.0.0
+  - The packages have been stablised at 1.0.0, but there are no breaking changes.
+
 **Added:**
-- bpk-component-tooltip:
+
+- bpk-component-tooltip: 1.1.5 => 1.2.0
   - A custom class name can now be supplied when rendering `BpkTooltip`.
 
+- bpk-mixins: 15.6.4 => 15.7.0
+  - Adds `$bpk-zindex-tooltip`
+
+- bpk-tokens: 23.2.2 => 23.3.0
+  - Adds value for tooltip z-index.
+
+- bpk-component-icon:  3.8.0 => 3.9.0
+  - withAlignment HOC updated to accept props. Existing styling will be spread with the new alignment styling.
+-
+
 **Fixed:**
-- bpk-component-modal
+- bpk-component-modal: 1.1.6 => 1.1.7
   - Fixed a bug where an on mouse down event starting inside the modal and ending outside the modal would incorrectly close the modal.
-- bpk-component-icon
-  - `withAlighnment` HOC updated to accept props. Existing styling will be spread with the new alignment styling.
-- bpk-component-tooltip:
+- bpk-component-tooltip: 1.1.5 => 1.2.0
   - The tooltip now correctly sets an appropriate z-index.
 
 ## 2017-07-14 - Datepicker/Breakpoint exception fix
