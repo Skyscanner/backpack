@@ -3,6 +3,9 @@
 ## UNRELEASED
 
 _Nothing yet..._
+**Fixed:**
+- bpk-component-barchart:
+  - Fixed a bug where in Chrome navigating a barchart using the keyboard would oveflow and hide half the bars.
 
 ## 2017-07-17 - Version stabilisation, Fix for Tooltip z-index, HOC for alignment, Fix for modal close bug
 
