@@ -2,15 +2,13 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
 **Fixed:**
 - bpk-component-barchart:
   - Fixed a bug where in Chrome navigating a barchart using the keyboard would oveflow and hide half the bars.
 
 ## 2017-07-17 - Version stabilisation, Fix for Tooltip z-index, HOC for alignment, Fix for modal close bug
 
-**No change**:
-
+**No change:**
 - bpk-animate-height: 0.0.22 => 1.0.0
 - bpk-component-badge: 0.1.5 => 1.0.0
 - bpk-component-blockquote: 0.1.5 => 1.0.0
@@ -39,7 +37,6 @@ _Nothing yet..._
   - The packages have been stablised at 1.0.0, but there are no breaking changes.
 
 **Added:**
-
 - bpk-component-tooltip: 1.1.5 => 1.2.0
   - A custom class name can now be supplied when rendering `BpkTooltip`.
 
@@ -50,11 +47,12 @@ _Nothing yet..._
   - Adds value for tooltip z-index.
 
 - bpk-component-icon:  3.8.0 => 3.9.0
-  - withAlignment HOC updated to accept props. Existing styling will be spread with the new alignment styling.
+  - `withAlignment` HOC updated to accept props. Existing styling will be spread with the new alignment styling.
 
 **Fixed:**
 - bpk-component-modal: 1.1.6 => 1.1.7
   - Fixed a bug where an on mouse down event starting inside the modal and ending outside the modal would incorrectly close the modal.
+
 - bpk-component-tooltip: 1.1.5 => 1.2.0
   - The tooltip now correctly sets an appropriate z-index.
 
