@@ -6,18 +6,45 @@ This document describes how to go about it. If you have any questions, get in to
 
 <!-- TOC depthFrom:2 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
 
+- [License](#license)
 - [Before you jump in](#before-you-jump-in)
 - [Getting started](#getting-started)
 - [Development tasks](#development-tasks)
 - [Adding a new component](#adding-a-new-component)
-	- [Design](#design)
-	- [Tokens](#tokens)
-	- [Sass mixins](#sass-mixins)
-	- [React component](#react-component)
-	- [Documentation](#documentation)
+- [Design](#design)
+- [Tokens](#tokens)
+- [Sass mixins](#sass-mixins)
+- [React component](#react-component)
+- [Documentation](#documentation)
 - [Publishing packages (Backpack squad members only)](#publishing-packages-backpack-squad-members-only)
 
 <!-- /TOC -->
+
+## License
+
+By contributing your code, you agree to license your contribution under the terms of the APLv2: <<LINK TO REPO LICENCE>>
+
+All files are released with the Apache 2.0 license.
+
+If you are adding a new file it should have a header comment like this:
+
+```
+Backpack - Skyscanner's Design System
+
+Copyright 2017 Skyscanner Ltd
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
 
 ## Before you jump in
 
