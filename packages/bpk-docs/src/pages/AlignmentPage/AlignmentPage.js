@@ -170,7 +170,7 @@ const AlignmentPage = () => <DocsPageBuilder
       Installation
     </BpkHeading>,
     <BpkParagraph>
-      The alignment HOCs are provided in the <BpkCode>bpk-components-icon</BpkCode> package.
+      The alignment HOCs are provided in the <BpkCode>bpk-component-icon</BpkCode> package.
       See <BpkLink href={ROUTES.ICONS}>Icons</BpkLink> for installation instructions.
     </BpkParagraph>,
   ]}
