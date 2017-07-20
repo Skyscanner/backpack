@@ -56,19 +56,20 @@ If you use it multiple times yourself, it might as well be a component, but mayb
 
 > I’m sure this should be in Backpack!
 
-Awesome! The diagram below should give you some more info in the high-level process:
-
-<img src="packages/bpk-docs/src/static/backpack-process-map.svg" style="max-width: 400px; width: 100%" />
+Awesome! The rest of this file should give you a good picture of the process.
 
 * * *
 
+Backpack development takes places on Github. If you don't have a Github account, you can create one
+on [github.com](https://github.com). You may want to [get added to the Skyscanner team](https://gojira.skyscanner.net/servicedesk/customer/portal/25/create/395) if you aren't already a member.
+
 When you are ready to jump into code, use the following workflow to add new components or change any existing ones:
 
-1. Fork the repo
+1. [Fork the repository](https://github.com/Skyscanner/backpack)
 2. Create a new branch
 3. Make your changes
 4. Commit and push your new branch
-5. Submit a [merge request](http://git.prod.skyscanner.local/backpack/backpack/merge_requests/)
+5. Submit a [pull request](https://github.com/Skyscanner/backpack/pulls)
 6. Notify someone in the Backpack Design System squad or drop a note in #backpack
 
 ## Getting started
