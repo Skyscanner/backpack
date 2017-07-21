@@ -3,6 +3,13 @@
 ## UNRELEASED
 
 _Nothing yet..._
+**Fixed:**
+- bpk-component-icon:
+  - Ensure icons are precisely aligned to the grid
+  - Scale the accessibility icon to fit the grid (20px)
+  - Center the close-circle and tick-circle icons in the middle of their container
+  - Fix missing glyph on the information--language-alert icon
+
 
 ## 2017-07-18 - Bar chart keyboard nav fix
 
