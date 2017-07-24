@@ -3,8 +3,14 @@
 ## UNRELEASED
 
 _Nothing yet..._
+
+## 2017-07-24 - Icon improvements and fixes
+
+**No change:**
+- All packages have moved to Github for development
+
 **Fixed:**
-- bpk-component-icon:
+- bpk-component-icon: 3.9.0 => 3.9.1
   - Ensure icons are precisely aligned to the grid
   - Scale the accessibility icon to fit the grid (20px)
   - Center the close-circle and tick-circle icons in the middle of their container
