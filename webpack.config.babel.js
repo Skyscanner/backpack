@@ -23,12 +23,15 @@ import autoprefixer from 'autoprefixer';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin';
 
+import { blockComment as licenseHeader } from './packages/bpk-tokens/formatters/license-header';
 import sassFunctions from './packages/bpk-mixins/sass-functions';
 import * as ROUTES from './packages/bpk-docs/src/constants/routes';
 
 const { BPK_TOKENS } = process.env;
 const useCssModules = process.env.ENABLE_CSS_MODULES !== 'false';
 const isProduction = process.env.NODE_ENV === 'production';
+const WrapperPlugin = require('wrapper-webpack-plugin');
+
 
 const staticSiteGeneratorConfig = {
   paths: Object.keys(ROUTES).map(key => ROUTES[key]),
@@ -78,6 +81,7 @@ const config = {
             {
               loader: 'postcss-loader',
               options: {
+                minimize: true,
                 plugins: postCssPlugins,
               },
             },
@@ -97,6 +101,7 @@ const config = {
             {
               loader: 'css-loader',
               options: {
+                minimize: true,
                 modules: useCssModules,
                 localIdentName: '[local]-[hash:base64:5]',
               },
@@ -104,6 +109,7 @@ const config = {
             {
               loader: 'postcss-loader',
               options: {
+                minimize: true,
                 plugins: postCssPlugins,
               },
             },
@@ -150,6 +156,10 @@ const config = {
   },
 
   plugins: [
+    new WrapperPlugin({
+      test: /\.css$/,
+      header: licenseHeader,
+    }),
     new ExtractTextPlugin(`[name]${isProduction ? '_[contenthash]' : ''}.css`),
   ],
 

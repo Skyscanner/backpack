@@ -6122,7 +6122,7 @@
     },
     "inherits": {
       "version": "2.0.3",
-      "from": "inherits@>=2.0.3 <3.0.0",
+      "from": "inherits@>=2.0.3 <2.1.0",
       "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz",
       "dev": true
     },
@@ -12142,6 +12142,12 @@
       "resolved": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-2.1.0.tgz",
       "dev": true
     },
+    "wrapper-webpack-plugin": {
+      "version": "1.0.0",
+      "from": "wrapper-webpack-plugin@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/wrapper-webpack-plugin/-/wrapper-webpack-plugin-1.0.0.tgz",
+      "dev": true
+    },
     "wrappy": {
       "version": "1.0.2",
       "from": "wrappy@>=1.0.0 <2.0.0",
@@ -12232,7 +12238,7 @@
     },
     "xtend": {
       "version": "4.0.1",
-      "from": "xtend@>=4.0.0 <5.0.0",
+      "from": "xtend@>=4.0.1 <4.1.0",
       "resolved": "https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz",
       "dev": true
     },
