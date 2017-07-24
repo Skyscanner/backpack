@@ -90,7 +90,7 @@
         "style-loader": {
           "version": "0.17.0",
           "from": "style-loader@>=0.17.0 <0.18.0",
-          "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/style-loader/-/style-loader-0.17.0.tgz",
+          "resolved": "https://registry.npmjs.org/style-loader/-/style-loader-0.17.0.tgz",
           "dev": true
         },
         "uuid": {
@@ -140,7 +140,7 @@
     "acorn-dynamic-import": {
       "version": "2.0.2",
       "from": "acorn-dynamic-import@>=2.0.0 <3.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/acorn-dynamic-import/-/acorn-dynamic-import-2.0.2.tgz",
+      "resolved": "https://registry.npmjs.org/acorn-dynamic-import/-/acorn-dynamic-import-2.0.2.tgz",
       "dev": true
     },
     "acorn-globals": {
@@ -822,7 +822,7 @@
     "babel-plugin-dynamic-import-node": {
       "version": "1.0.2",
       "from": "babel-plugin-dynamic-import-node@1.0.2",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/babel-plugin-dynamic-import-node/-/babel-plugin-dynamic-import-node-1.0.2.tgz",
+      "resolved": "https://registry.npmjs.org/babel-plugin-dynamic-import-node/-/babel-plugin-dynamic-import-node-1.0.2.tgz",
       "dev": true,
       "dependencies": {
         "babel-template": {
@@ -942,7 +942,7 @@
     "babel-plugin-syntax-dynamic-import": {
       "version": "6.18.0",
       "from": "babel-plugin-syntax-dynamic-import@6.18.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/babel-plugin-syntax-dynamic-import/-/babel-plugin-syntax-dynamic-import-6.18.0.tgz",
+      "resolved": "https://registry.npmjs.org/babel-plugin-syntax-dynamic-import/-/babel-plugin-syntax-dynamic-import-6.18.0.tgz",
       "dev": true
     },
     "babel-plugin-syntax-exponentiation-operator": {
@@ -1034,7 +1034,7 @@
     "babel-plugin-transform-class-properties": {
       "version": "6.24.1",
       "from": "babel-plugin-transform-class-properties@6.24.1",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/babel-plugin-transform-class-properties/-/babel-plugin-transform-class-properties-6.24.1.tgz",
+      "resolved": "https://registry.npmjs.org/babel-plugin-transform-class-properties/-/babel-plugin-transform-class-properties-6.24.1.tgz",
       "dev": true,
       "dependencies": {
         "babel-helper-function-name": {
@@ -1278,7 +1278,7 @@
     "babel-plugin-transform-react-constant-elements": {
       "version": "6.23.0",
       "from": "babel-plugin-transform-react-constant-elements@6.23.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/babel-plugin-transform-react-constant-elements/-/babel-plugin-transform-react-constant-elements-6.23.0.tgz",
+      "resolved": "https://registry.npmjs.org/babel-plugin-transform-react-constant-elements/-/babel-plugin-transform-react-constant-elements-6.23.0.tgz",
       "dev": true
     },
     "babel-plugin-transform-react-display-name": {
@@ -1314,7 +1314,7 @@
     "babel-plugin-transform-runtime": {
       "version": "6.23.0",
       "from": "babel-plugin-transform-runtime@6.23.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-6.23.0.tgz",
+      "resolved": "https://registry.npmjs.org/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-6.23.0.tgz",
       "dev": true
     },
     "babel-plugin-transform-strict-mode": {
@@ -1911,7 +1911,7 @@
     "brorand": {
       "version": "1.1.0",
       "from": "brorand@>=1.0.1 <2.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/brorand/-/brorand-1.1.0.tgz",
+      "resolved": "https://registry.npmjs.org/brorand/-/brorand-1.1.0.tgz",
       "dev": true
     },
     "browser-resolve": {
@@ -1957,7 +1957,7 @@
     "browserify-sign": {
       "version": "4.0.4",
       "from": "browserify-sign@>=4.0.0 <5.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/browserify-sign/-/browserify-sign-4.0.4.tgz",
+      "resolved": "https://registry.npmjs.org/browserify-sign/-/browserify-sign-4.0.4.tgz",
       "dev": true
     },
     "browserify-zlib": {
@@ -2729,13 +2729,13 @@
     "create-hash": {
       "version": "1.1.3",
       "from": "create-hash@>=1.1.0 <2.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/create-hash/-/create-hash-1.1.3.tgz",
+      "resolved": "https://registry.npmjs.org/create-hash/-/create-hash-1.1.3.tgz",
       "dev": true,
       "dependencies": {
         "ripemd160": {
           "version": "2.0.1",
           "from": "ripemd160@>=2.0.0 <3.0.0",
-          "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/ripemd160/-/ripemd160-2.0.1.tgz",
+          "resolved": "https://registry.npmjs.org/ripemd160/-/ripemd160-2.0.1.tgz",
           "dev": true
         },
         "sha.js": {
@@ -2749,7 +2749,7 @@
     "create-hmac": {
       "version": "1.1.6",
       "from": "create-hmac@>=1.1.0 <2.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/create-hmac/-/create-hmac-1.1.6.tgz",
+      "resolved": "https://registry.npmjs.org/create-hmac/-/create-hmac-1.1.6.tgz",
       "dev": true,
       "dependencies": {
         "ripemd160": {
@@ -3107,7 +3107,7 @@
     "detect-node": {
       "version": "2.0.3",
       "from": "detect-node@>=2.0.3 <3.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/detect-node/-/detect-node-2.0.3.tgz",
+      "resolved": "https://registry.npmjs.org/detect-node/-/detect-node-2.0.3.tgz",
       "dev": true
     },
     "diff": {
@@ -3316,7 +3316,7 @@
     "elliptic": {
       "version": "6.4.0",
       "from": "elliptic@>=6.0.0 <7.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/elliptic/-/elliptic-6.4.0.tgz",
+      "resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz",
       "dev": true
     },
     "emoji-regex": {
@@ -3815,13 +3815,13 @@
     "express": {
       "version": "4.15.3",
       "from": "express@>=4.13.3 <5.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/express/-/express-4.15.3.tgz",
+      "resolved": "https://registry.npmjs.org/express/-/express-4.15.3.tgz",
       "dev": true,
       "dependencies": {
         "debug": {
           "version": "2.6.7",
           "from": "debug@2.6.7",
-          "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/debug/-/debug-2.6.7.tgz",
+          "resolved": "https://registry.npmjs.org/debug/-/debug-2.6.7.tgz",
           "dev": true
         },
         "ms": {
@@ -3847,7 +3847,7 @@
     "external-editor": {
       "version": "2.0.4",
       "from": "external-editor@>=2.0.4 <3.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/external-editor/-/external-editor-2.0.4.tgz",
+      "resolved": "https://registry.npmjs.org/external-editor/-/external-editor-2.0.4.tgz",
       "dev": true,
       "dependencies": {
         "iconv-lite": {
@@ -3987,13 +3987,13 @@
     "finalhandler": {
       "version": "1.0.3",
       "from": "finalhandler@>=1.0.3 <1.1.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/finalhandler/-/finalhandler-1.0.3.tgz",
+      "resolved": "https://registry.npmjs.org/finalhandler/-/finalhandler-1.0.3.tgz",
       "dev": true,
       "dependencies": {
         "debug": {
           "version": "2.6.7",
           "from": "debug@2.6.7",
-          "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/debug/-/debug-2.6.7.tgz",
+          "resolved": "https://registry.npmjs.org/debug/-/debug-2.6.7.tgz",
           "dev": true
         },
         "ms": {
@@ -5037,13 +5037,13 @@
         "lodash.template": {
           "version": "4.4.0",
           "from": "lodash.template@>=4.0.2 <5.0.0",
-          "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/lodash.template/-/lodash.template-4.4.0.tgz",
+          "resolved": "https://registry.npmjs.org/lodash.template/-/lodash.template-4.4.0.tgz",
           "dev": true
         },
         "lodash.templatesettings": {
           "version": "4.1.0",
           "from": "lodash.templatesettings@>=4.0.0 <5.0.0",
-          "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/lodash.templatesettings/-/lodash.templatesettings-4.1.0.tgz",
+          "resolved": "https://registry.npmjs.org/lodash.templatesettings/-/lodash.templatesettings-4.1.0.tgz",
           "dev": true
         },
         "split2": {
@@ -5741,7 +5741,7 @@
     "handle-thing": {
       "version": "1.2.5",
       "from": "handle-thing@>=1.2.5 <2.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/handle-thing/-/handle-thing-1.2.5.tgz",
+      "resolved": "https://registry.npmjs.org/handle-thing/-/handle-thing-1.2.5.tgz",
       "dev": true
     },
     "handlebars": {
@@ -5815,7 +5815,7 @@
     "hash-base": {
       "version": "2.0.2",
       "from": "hash-base@>=2.0.0 <3.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/hash-base/-/hash-base-2.0.2.tgz",
+      "resolved": "https://registry.npmjs.org/hash-base/-/hash-base-2.0.2.tgz",
       "dev": true
     },
     "hash.js": {
@@ -5859,7 +5859,7 @@
     "hmac-drbg": {
       "version": "1.0.1",
       "from": "hmac-drbg@>=1.0.0 <2.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/hmac-drbg/-/hmac-drbg-1.0.1.tgz",
+      "resolved": "https://registry.npmjs.org/hmac-drbg/-/hmac-drbg-1.0.1.tgz",
       "dev": true
     },
     "hoek": {
@@ -5895,7 +5895,7 @@
     "hpack.js": {
       "version": "2.1.6",
       "from": "hpack.js@>=2.1.6 <3.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/hpack.js/-/hpack.js-2.1.6.tgz",
+      "resolved": "https://registry.npmjs.org/hpack.js/-/hpack.js-2.1.6.tgz",
       "dev": true
     },
     "html-comment-regex": {
@@ -5957,7 +5957,7 @@
     "http-deceiver": {
       "version": "1.2.7",
       "from": "http-deceiver@>=1.2.7 <2.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/http-deceiver/-/http-deceiver-1.2.7.tgz",
+      "resolved": "https://registry.npmjs.org/http-deceiver/-/http-deceiver-1.2.7.tgz",
       "dev": true
     },
     "http-errors": {
@@ -6007,7 +6007,7 @@
     "hyphenate-style-name": {
       "version": "1.0.2",
       "from": "hyphenate-style-name@>=1.0.2 <2.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/hyphenate-style-name/-/hyphenate-style-name-1.0.2.tgz",
+      "resolved": "https://registry.npmjs.org/hyphenate-style-name/-/hyphenate-style-name-1.0.2.tgz",
       "dev": true
     },
     "iconv-lite": {
@@ -6851,7 +6851,7 @@
     "jschardet": {
       "version": "1.4.2",
       "from": "jschardet@>=1.4.2 <2.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/jschardet/-/jschardet-1.4.2.tgz",
+      "resolved": "https://registry.npmjs.org/jschardet/-/jschardet-1.4.2.tgz",
       "dev": true
     },
     "jsdom": {
@@ -7121,7 +7121,7 @@
         "fs-extra": {
           "version": "3.0.1",
           "from": "fs-extra@>=3.0.1 <4.0.0",
-          "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/fs-extra/-/fs-extra-3.0.1.tgz",
+          "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-3.0.1.tgz",
           "dev": true
         },
         "glob": {
@@ -7339,7 +7339,7 @@
     "loader-runner": {
       "version": "2.3.0",
       "from": "loader-runner@>=2.3.0 <3.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/loader-runner/-/loader-runner-2.3.0.tgz",
+      "resolved": "https://registry.npmjs.org/loader-runner/-/loader-runner-2.3.0.tgz",
       "dev": true
     },
     "loader-utils": {
@@ -7767,7 +7767,7 @@
     "lodash.tail": {
       "version": "4.1.1",
       "from": "lodash.tail@>=4.1.1 <5.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/lodash.tail/-/lodash.tail-4.1.1.tgz",
+      "resolved": "https://registry.npmjs.org/lodash.tail/-/lodash.tail-4.1.1.tgz",
       "dev": true
     },
     "lodash.template": {
@@ -8073,7 +8073,7 @@
     "minimalistic-crypto-utils": {
       "version": "1.0.1",
       "from": "minimalistic-crypto-utils@>=1.0.0 <2.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz",
+      "resolved": "https://registry.npmjs.org/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz",
       "dev": true
     },
     "minimatch": {
@@ -8091,13 +8091,13 @@
     "mixin-object": {
       "version": "2.0.1",
       "from": "mixin-object@>=2.0.1 <3.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/mixin-object/-/mixin-object-2.0.1.tgz",
+      "resolved": "https://registry.npmjs.org/mixin-object/-/mixin-object-2.0.1.tgz",
       "dev": true,
       "dependencies": {
         "for-in": {
           "version": "0.1.8",
           "from": "for-in@>=0.1.3 <0.2.0",
-          "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/for-in/-/for-in-0.1.8.tgz",
+          "resolved": "https://registry.npmjs.org/for-in/-/for-in-0.1.8.tgz",
           "dev": true
         }
       }
@@ -8445,7 +8445,7 @@
     "obuf": {
       "version": "1.1.1",
       "from": "obuf@>=1.1.1 <2.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/obuf/-/obuf-1.1.1.tgz",
+      "resolved": "https://registry.npmjs.org/obuf/-/obuf-1.1.1.tgz",
       "dev": true
     },
     "on-finished": {
@@ -8605,7 +8605,7 @@
     "parse-asn1": {
       "version": "5.1.0",
       "from": "parse-asn1@>=5.0.0 <6.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/parse-asn1/-/parse-asn1-5.1.0.tgz",
+      "resolved": "https://registry.npmjs.org/parse-asn1/-/parse-asn1-5.1.0.tgz",
       "dev": true,
       "dependencies": {
         "browserify-aes": {
@@ -8727,7 +8727,7 @@
     "pbkdf2": {
       "version": "3.0.12",
       "from": "pbkdf2@>=3.0.3 <4.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/pbkdf2/-/pbkdf2-3.0.12.tgz",
+      "resolved": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.12.tgz",
       "dev": true,
       "dependencies": {
         "ripemd160": {
@@ -8795,7 +8795,7 @@
     "portfinder": {
       "version": "1.0.13",
       "from": "portfinder@>=1.0.9 <2.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/portfinder/-/portfinder-1.0.13.tgz",
+      "resolved": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.13.tgz",
       "dev": true,
       "dependencies": {
         "async": {
@@ -8877,7 +8877,7 @@
     "postcss-flexbugs-fixes": {
       "version": "3.0.0",
       "from": "postcss-flexbugs-fixes@>=3.0.0 <4.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/postcss-flexbugs-fixes/-/postcss-flexbugs-fixes-3.0.0.tgz",
+      "resolved": "https://registry.npmjs.org/postcss-flexbugs-fixes/-/postcss-flexbugs-fixes-3.0.0.tgz",
       "dev": true,
       "dependencies": {
         "ansi-styles": {
@@ -10293,7 +10293,7 @@
     "schema-utils": {
       "version": "0.3.0",
       "from": "schema-utils@>=0.3.0 <0.4.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/schema-utils/-/schema-utils-0.3.0.tgz",
+      "resolved": "https://registry.npmjs.org/schema-utils/-/schema-utils-0.3.0.tgz",
       "dev": true,
       "dependencies": {
         "ajv": {
@@ -10327,7 +10327,7 @@
     "select-hose": {
       "version": "2.0.0",
       "from": "select-hose@>=2.0.0 <3.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/select-hose/-/select-hose-2.0.0.tgz",
+      "resolved": "https://registry.npmjs.org/select-hose/-/select-hose-2.0.0.tgz",
       "dev": true
     },
     "selfsigned": {
@@ -10371,13 +10371,13 @@
     "send": {
       "version": "0.15.3",
       "from": "send@0.15.3",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/send/-/send-0.15.3.tgz",
+      "resolved": "https://registry.npmjs.org/send/-/send-0.15.3.tgz",
       "dev": true,
       "dependencies": {
         "debug": {
           "version": "2.6.7",
           "from": "debug@2.6.7",
-          "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/debug/-/debug-2.6.7.tgz",
+          "resolved": "https://registry.npmjs.org/debug/-/debug-2.6.7.tgz",
           "dev": true
         },
         "ms": {
@@ -10431,7 +10431,7 @@
     "serve-static": {
       "version": "1.12.3",
       "from": "serve-static@1.12.3",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/serve-static/-/serve-static-1.12.3.tgz",
+      "resolved": "https://registry.npmjs.org/serve-static/-/serve-static-1.12.3.tgz",
       "dev": true
     },
     "set-blocking": {
@@ -10461,19 +10461,19 @@
     "shallow-clone": {
       "version": "0.1.2",
       "from": "shallow-clone@>=0.1.2 <0.2.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/shallow-clone/-/shallow-clone-0.1.2.tgz",
+      "resolved": "https://registry.npmjs.org/shallow-clone/-/shallow-clone-0.1.2.tgz",
       "dev": true,
       "dependencies": {
         "kind-of": {
           "version": "2.0.1",
           "from": "kind-of@>=2.0.1 <3.0.0",
-          "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/kind-of/-/kind-of-2.0.1.tgz",
+          "resolved": "https://registry.npmjs.org/kind-of/-/kind-of-2.0.1.tgz",
           "dev": true
         },
         "lazy-cache": {
           "version": "0.2.7",
           "from": "lazy-cache@>=0.2.3 <0.3.0",
-          "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/lazy-cache/-/lazy-cache-0.2.7.tgz",
+          "resolved": "https://registry.npmjs.org/lazy-cache/-/lazy-cache-0.2.7.tgz",
           "dev": true
         }
       }
@@ -10615,7 +10615,7 @@
     "spdy": {
       "version": "3.4.7",
       "from": "spdy@>=3.4.1 <4.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/spdy/-/spdy-3.4.7.tgz",
+      "resolved": "https://registry.npmjs.org/spdy/-/spdy-3.4.7.tgz",
       "dev": true,
       "dependencies": {
         "debug": {
@@ -10635,7 +10635,7 @@
     "spdy-transport": {
       "version": "2.0.20",
       "from": "spdy-transport@>=2.0.18 <3.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/spdy-transport/-/spdy-transport-2.0.20.tgz",
+      "resolved": "https://registry.npmjs.org/spdy-transport/-/spdy-transport-2.0.20.tgz",
       "dev": true,
       "dependencies": {
         "debug": {
@@ -11599,7 +11599,7 @@
     "universalify": {
       "version": "0.1.0",
       "from": "universalify@>=0.1.0 <0.2.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/universalify/-/universalify-0.1.0.tgz",
+      "resolved": "https://registry.npmjs.org/universalify/-/universalify-0.1.0.tgz",
       "dev": true
     },
     "unpipe": {
@@ -11867,13 +11867,13 @@
     "watchpack": {
       "version": "1.3.1",
       "from": "watchpack@>=1.3.1 <2.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/watchpack/-/watchpack-1.3.1.tgz",
+      "resolved": "https://registry.npmjs.org/watchpack/-/watchpack-1.3.1.tgz",
       "dev": true
     },
     "wbuf": {
       "version": "1.7.2",
       "from": "wbuf@>=1.7.2 <2.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/wbuf/-/wbuf-1.7.2.tgz",
+      "resolved": "https://registry.npmjs.org/wbuf/-/wbuf-1.7.2.tgz",
       "dev": true
     },
     "wcwidth": {
