@@ -36,3 +36,10 @@ deploy:
   upload_dir: "/"
   skip_cleanup: true
   detect_encoding: true
+notifications:
+  slack:
+    rooms:
+      - secure: 0kcw0/iGqd4JPjvc+SBQmDIqeK427pCSw1xVyJooaknlIUlb3TyOaJdI1Wko92rUoYRfTJ/8eZv/GuL8U+kmA8ygu1ByfhFOg69Oyb55OThsgd+p8mMstjE62Rm+sN+8MBUEAllHGYVlKgKaO+HLPFor0fdYxl56CVVsPRWKOmJSXEn8EvuGrstSiiQU6pNZiJoQT3QpR43YhcmigMmTDkUNHgrvinWE0fprY9cLOpbuFJhZ7+OBL34hv/9Ox9QuD4Vb1rJvdeeW5ijVOrOh6JvqaR06JuutDn13q3VU6aJq0pNJwp5ujX84Aa5fQaC7HdcfdJ6ttuYheyoDPlNUyUQuBihg2c3F9tvivSmrvGLd4HV9NUjKZTY7XpYrDsEGcYGNAOO8XHG3PNaHcdM6+/0UclP2obLPVadTOvhEHPOGLRZorFmg7GTBBwafjMMREHTNYt++4JyYm5vUwcfGZX7qT/2YPCplmz1dYDjHmfeCygmYWr6KAP7bHq3wjnrje3BslRMBNu+nY2eaqmSAG5bLsOMUi9qy4+izsNgkVHpRg/uZA3yE+OVfMc5ycj+McrwK2ySrg1zd+/TrNJZTxW/5f9oHWR4kvYPeXcDNlL20fxw9L7CAhLi/Nx0RsC+wwbk+MC20G6vtE7gCsyv3QWyqxPeoJ6KuAoRQ2zCjcKA=
+    on_pull_requests: false
+    on_success: always
+    on_failure: change
