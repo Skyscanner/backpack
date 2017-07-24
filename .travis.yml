@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "7.5.0"
+env:
+  - NPM_CONFIG_LOGLEVEL=warn
+install:
+  - npm install
+  - npm run build
+script:
+  - npm test
+  - npm run docs:dist:gzip
+  - test -e dist/index.html
+  - test -e dist/sassdoc/index.html
+cache:
+  directories:
+    - "node_modules"
