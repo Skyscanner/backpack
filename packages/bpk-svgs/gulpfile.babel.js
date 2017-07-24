@@ -19,6 +19,7 @@
 import del from 'del';
 import _ from 'lodash';
 import gulp from 'gulp';
+import chmod from 'gulp-chmod';
 import clone from 'gulp-clone';
 import rename from 'gulp-rename';
 import svgmin from 'gulp-svgmin';
@@ -73,6 +74,7 @@ gulp.task('clean', () => del(['dist']));
 gulp.task('elements', () => {
   const optimised = gulp
     .src('src/elements/**/*.svg')
+    .pipe(chmod(0o644))
     .pipe(svgmin({
       plugins: [
         ...svgoCommonPlugins,
@@ -98,6 +100,7 @@ gulp.task('elements', () => {
 gulp.task('spinners', () => {
   const optimised = gulp
     .src('src/spinners/**/*.svg')
+    .pipe(chmod(0o644))
     .pipe(svgmin({
       plugins: [
         ...svgoCommonPlugins,
@@ -131,6 +134,7 @@ gulp.task('spinners', () => {
 */
 gulp.task('icons-common', () => gulp
   .src('src/icons/**/*.svg')
+  .pipe(chmod(0o644))
   .pipe(svgmin({
     plugins: [
       ...svgoCommonPlugins,
@@ -150,7 +154,8 @@ gulp.task('icons-common', () => gulp
 
 gulp.task('icons-sm', ['icons-common'], () => {
   const svgs = gulp
-    .src('src/icons/**/*.svg');
+    .src('src/icons/**/*.svg')
+    .pipe(chmod(0o644));
 
   const styleAttribute = `style="width:${smallIconSize};height:${smallIconSize}"`;
 
@@ -206,7 +211,8 @@ gulp.task('icons-sm', ['icons-common'], () => {
 
 gulp.task('icons-lg', ['icons-common'], () => {
   const svgs = gulp
-    .src('src/icons/**/*.svg');
+    .src('src/icons/**/*.svg')
+    .pipe(chmod(0o644));
 
   const styleAttribute = `style="width:${largeIconSize};height:${largeIconSize}"`;
 
