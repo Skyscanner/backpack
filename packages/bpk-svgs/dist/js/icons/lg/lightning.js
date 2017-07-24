@@ -4,7 +4,7 @@ export default class SVG extends React.Component {
     return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style={{
       width: "1.5rem",
       height: "1.5rem"
-    }} {...this.props}><path d="M17.242 10h-3.434l2.228-6.684A.999.999 0 0 0 15.088 2H9.256a1 1 0 0 0-.97.757l-2.5 10A1 1 0 0 0 6.756 14h3.827l-1.634 7.323c-.123.552.512.916.859.492l8.182-9.998c.574-.703.116-1.817-.748-1.817z" /></svg>;
+    }} {...this.props}><path d="M17.2 10h-3.4L16 3.3c.2-.5-.1-1.1-.6-1.3H9.3c-.5 0-.9.3-1 .8l-2.5 10c-.1.5.2 1 .7 1.2h4l-1.6 7.3c-.1.6.5.9.9.5l8.2-10c.6-.7.1-1.8-.8-1.8z" /></svg>;
   }
 
 }
