@@ -38,7 +38,7 @@ const headerLinks = [
   { to: ROUTES.DOCS, children: 'Components' },
   { to: ROUTES.PATTERNS, children: 'Patterns' },
   { to: ROUTES.RESOURCES, children: 'Resources' },
-  { href: 'http://git.prod.skyscanner.local/backpack/backpack', children: 'GitLab', blank: true },
+  { href: 'https://github.com/Skyscanner/backpack', children: 'Github', blank: true },
 ];
 
 const toNavList = (links, hideOnTablet) => {
