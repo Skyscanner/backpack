@@ -19,6 +19,7 @@
 @import '~normalize.css';
 @import '~bpk-mixins/index';
 
+// stylelint-disable-next-line selector-max-type
 html {
   font-size: $bpk-font-size-root;
   box-sizing: border-box;

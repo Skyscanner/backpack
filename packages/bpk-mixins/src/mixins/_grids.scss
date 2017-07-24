@@ -175,9 +175,7 @@
 @mixin bpk-grid__column--($size) {
   @if $size == 0 {
     display: none;
-  }
-
-  @else {
+  } @else {
     display: block;
     width: percentage($size / $bpk-grid-columns);
   }
@@ -232,9 +230,7 @@
     @include bpk-rtl {
       margin-right: 0;
     }
-  }
-
-  @else {
+  } @else {
     margin-left: percentage($size / $bpk-grid-columns);
 
     @include bpk-rtl {

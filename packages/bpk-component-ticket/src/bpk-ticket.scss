@@ -24,11 +24,11 @@
   position: relative;
   display: block;
   display: flex;
+  flex-direction: row;
+  align-items: stretch;
   color: $bpk-card-color;
   text-decoration: none;
   cursor: pointer;
-  align-items: stretch;
-  flex-direction: row;
 
   @include bpk-hover {
     .bpk-ticket__paper::after {
@@ -128,8 +128,8 @@
   &__punchline {
     position: relative;
     z-index: 1;
-    background-color: $bpk-card-background-color;
     flex: 0 0 auto;
+    background-color: $bpk-card-background-color;
 
     &--horizontal {
       height: $notch-size * 2;

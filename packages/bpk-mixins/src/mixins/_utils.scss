@@ -145,7 +145,8 @@
   //   leaving a duplicate rule which in turn will be 'uglified' out - so no worries there
   // - when processed through node-sass only, the `:global(...)` pseudo selector will be left
   //   intact and ignored by all browsers
-  :global(.bpk-no-touch-support) &:hover:not(:active):not(:disabled) { /* stylelint-disable-line selector-pseudo-class-no-unknown */
+  // stylelint-disable-next-line selector-pseudo-class-no-unknown
+  :global(.bpk-no-touch-support) &:hover:not(:active):not(:disabled) {
     @content;
   }
 }
