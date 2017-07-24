@@ -33,7 +33,7 @@ publish:
 
 notify:
   slack:
-    webhook_url: https://hooks.slack.com/services/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
+    webhook_url: $$SLACK_WEBHOOK_URL
     username: Backpack
     channel: backpack-private
     template: >
@@ -44,7 +44,7 @@ notify:
 
 notify:
   slack:
-    webhook_url: https://hooks.slack.com/services/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
+    webhook_url: $$SLACK_WEBHOOK_URL
     username: Backpack
     channel: backpack-private
     template: >
