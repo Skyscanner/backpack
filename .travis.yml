@@ -1,7 +1,8 @@
 language: node_js
 node_js:
-  - "7.5.0"
+  - 7.5.0
 env:
+  global:
   - NPM_CONFIG_LOGLEVEL=warn
 install:
   - npm install
@@ -13,4 +14,19 @@ script:
   - test -e dist/sassdoc/index.html
 cache:
   directories:
-    - "node_modules"
+  - node_modules
+deploy:
+  provider: s3
+  on:
+    branch: master
+  acl: public-read
+  region: eu-west-1
+  bucket: backpack.prod.aws.skyscnr.com
+  access_key_id:
+    secure: cKvYjYBzu37/tduxzBEsNlSlWmq8dgmalqPB4RUpaSvcmUK5xrWG4tJnvGSjTK5Zyuqc5cPbo94btQ6UjEKauBGUW9jH2/eG5Yi+PwJrxrlXyymETGDLPUDOOBqGqsu0/L8oEexwOGvF6TLnReBZ7IfPFWICf4Z/ipK2icDSct9VbE+EJKWwUxPt++kxa0YYzgv0E1maps/vafQVc77IaH+u/qT0plAv4mUZbXuvATqFXFcMeVvBn1cAZzqNTwy/Y8grpVaJOIITfAeW51LOGdBudJIohu2+yMG1cZyc4dwEEfbEMj3hpslosbSjSuZZDunDraIow7Vm84fYjpKCnt+xM+Cu2+PW1/SW00ExFLykf1stCrxN/R18M1/Eyormc7pc7/nv3snzzW3ouQPBMvVqFPZHEsj9ZbNk4p72EjJRHWHyE0fIKUlgDhCLXyaGFd06jgZ/IRvZB3Z5dtrzJ9lAFh3m+iqSIHpvXG0gOCi6TcRQRCwohGaPkzgUa8q4WBj3/mS4V0QIoXcPH0CCMULDRUTUTGjfc+GYZYD5guVg5ajvEV+9LunLUk4GaNhsJdQAZXvUaxwOpuV7YOJ+LE2h/66AzjoPOByFq39YPLZ+tnPC5QkTqHgpzMic8KOeGSqAGltDw8i9EUrId9zPqqD19wjNe2gnDj3JMTiFCik=
+  secret_acces_key:
+    secure: poG7xEQvEuoN2miBhzpTotToWmzQrCMD8umvHyiygypT4Ilyz1flRoZ5rMo39/Z+ryUW3SuEDQqVFLn2Ajp3H3nJWwUqdFy6JxvLxCVAykGV0P5UppFmCYks8aLwzZ1E9cHa3MkRRQgvJPflLpIUkI0mC22qlOU0oqcMHZ9E529tLixrAKFBxL3yOpGc9+hWWorYml1t4pbI9bhH9Y1UoRHsRvTtrz61YVjfxik9F0yuyYPbBb6Q1u+QfwX6yYML76wglaYnYxmUHdEIrR4oGqnslUUpe3wmfr8X48Z9vlQp08saseAmDffxHPq2AJDYvL7NsJcx6z1gfoHpTqn2ONMxSFpo4bmCBzwlIahEDJVGvJEoETUaWsiDcz8ZnNo/G1xewawZfU4p8U2aRzVfXb9+BRmHhU3Ld0zjn1u8jCJHr99vVX8M9a3Ve0oO5Xcvxrdz/uHydSoNe+Ue4pqG1OKntDjVN/54D2uw+RJPCOve8XJw9ZDtCj7mHDLlZxF0QLZ/H5kXfwlNNs1wstYbbkrXQHPyjxYvm47KcxHlvLuR1aZrk2DYfCmm1+eSU/E3sW75ED+xWcg9fS55fhdnHlXNB6eCa/5UIBxVevG6QS3jT37M/FoI9DxywncXpZooBqw8O7FoiMo/2NM6AxV78phSxfiOPuPbpflDPZWME5A=
+  local_dir: dist/
+  upload_dir: "/"
+  skip_cleanup: true
+  detect_encoding: true
