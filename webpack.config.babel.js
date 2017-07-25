@@ -81,7 +81,6 @@ const config = {
             {
               loader: 'postcss-loader',
               options: {
-                minimize: true,
                 plugins: postCssPlugins,
               },
             },
@@ -109,7 +108,6 @@ const config = {
             {
               loader: 'postcss-loader',
               options: {
-                minimize: true,
                 plugins: postCssPlugins,
               },
             },

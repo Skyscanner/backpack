@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-const autoprefixer = require('autoprefixer');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+import autoprefixer from 'autoprefixer';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-const postCssFlexbugsFixes = require('postcss-flexbugs-fixes');
-const WrapperPlugin = require('wrapper-webpack-plugin');
+import postCssFlexbugsFixes from 'postcss-flexbugs-fixes';
+import WrapperPlugin from 'wrapper-webpack-plugin';
 
-const licenseHeader = require('bpk-tokens').blockComment;
+import { blockComment as licenseHeader } from 'bpk-tokens/formatters/license-header';
 
 module.exports = {
   entry: {
@@ -55,7 +55,6 @@ module.exports = {
             {
               loader: 'postcss-loader',
               options: {
-                minimize: true,
                 plugins: () => [
                   postCssFlexbugsFixes,
                   autoprefixer({
@@ -91,7 +90,6 @@ module.exports = {
             {
               loader: 'postcss-loader',
               options: {
-                minimize: true,
                 plugins: () => [
                   postCssFlexbugsFixes,
                   autoprefixer({
