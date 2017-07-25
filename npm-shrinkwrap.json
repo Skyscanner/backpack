@@ -12168,6 +12168,12 @@
       "resolved": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-2.1.0.tgz",
       "dev": true
     },
+    "wrapper-webpack-plugin": {
+      "version": "1.0.0",
+      "from": "wrapper-webpack-plugin@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/wrapper-webpack-plugin/-/wrapper-webpack-plugin-1.0.0.tgz",
+      "dev": true
+    },
     "wrappy": {
       "version": "1.0.2",
       "from": "wrappy@>=1.0.0 <2.0.0",
