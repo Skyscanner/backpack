@@ -24,11 +24,11 @@
   <property name="DURATION_SM" category="animations">200ms</property>
   <property name="DURATION_BASE" category="animations">400ms</property>
   <color name="AUTOSUGGEST_LIST_BACKGROUND_COLOR" category="autosuggest">#ffffffff</color>
-  <color name="AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR" category="autosuggest">#e6e4ebff</color>
-  <color name="AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR" category="autosuggest">#f3f2f5ff</color>
+  <color name="AUTOSUGGEST_LIST_ITEM_ACTIVE_BACKGROUND_COLOR" category="autosuggest">#ffe6e4eb</color>
+  <color name="AUTOSUGGEST_LIST_ITEM_HIGHLIGHTED_BACKGROUND_COLOR" category="autosuggest">#fff3f2f5</color>
   <property name="BADGE_PADDING_Y" category="badges">0</property>
   <property name="BADGE_PADDING_X" category="badges">6</property>
-  <color name="BADGE_BACKGROUND_COLOR" category="badges">#ffbb00ff</color>
+  <color name="BADGE_BACKGROUND_COLOR" category="badges">#ffffbb00</color>
   <property name="BADGE_CENTERED_VERTICAL_ALIGN" category="badges">text-bottom</property>
   <property name="BORDER_RADIUS_XS" category="radii">3</property>
   <property name="BORDER_RADIUS_SM" category="radii">6</property>
@@ -53,13 +53,13 @@
   <property name="BUTTON_PADDING_X_ICON_ONLY" category="buttons">9</property>
   <property name="BUTTON_BORDER_RADIUS" category="buttons">18</property>
   <property name="BUTTON_BORDER_RADIUS_LG" category="buttons">21</property>
-  <color name="BUTTON_BACKGROUND_COLOR" category="buttons">#00d775ff</color>
+  <color name="BUTTON_BACKGROUND_COLOR" category="buttons">#ff00d775</color>
   <property name="BUTTON_BACKGROUND_IMAGE" category="buttons">linear-gradient(-180deg, #00d775 0, #00bd68 1)</property>
-  <color name="BUTTON_HOVER_BACKGROUND_COLOR" category="buttons">#00bd68ff</color>
+  <color name="BUTTON_HOVER_BACKGROUND_COLOR" category="buttons">#ff00bd68</color>
   <property name="BUTTON_HOVER_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_ACTIVE_BACKGROUND_COLOR" category="buttons">#00a85dff</color>
+  <color name="BUTTON_ACTIVE_BACKGROUND_COLOR" category="buttons">#ff00a85d</color>
   <property name="BUTTON_ACTIVE_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_DISABLED_BACKGROUND_COLOR" category="buttons">#e6e4ebff</color>
+  <color name="BUTTON_DISABLED_BACKGROUND_COLOR" category="buttons">#ffe6e4eb</color>
   <property name="BUTTON_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_COLOR" category="buttons">#ffffffff</color>
   <color name="BUTTON_HOVER_COLOR" category="buttons">#ffffffff</color>
@@ -68,7 +68,7 @@
   <property name="BUTTON_HOVER_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_ACTIVE_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_DISABLED_BOX_SHADOW" category="buttons">none</property>
-  <color name="BUTTON_DISABLED_COLOR" category="buttons">#b2aebdff</color>
+  <color name="BUTTON_DISABLED_COLOR" category="buttons">#ffb2aebd</color>
   <property name="BUTTON_FONT_SIZE" category="buttons">16</property>
   <property name="BUTTON_FONT_WEIGHT" category="buttons">700</property>
   <property name="BUTTON_LINE_HEIGHT" category="buttons">24</property>
@@ -84,31 +84,31 @@
   <property name="BUTTON_SECONDARY_HOVER_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_SECONDARY_ACTIVE_BACKGROUND_COLOR" category="buttons">#ffffffff</color>
   <property name="BUTTON_SECONDARY_ACTIVE_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR" category="buttons">#e6e4ebff</color>
+  <color name="BUTTON_SECONDARY_DISABLED_BACKGROUND_COLOR" category="buttons">#ffe6e4eb</color>
   <property name="BUTTON_SECONDARY_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_SECONDARY_COLOR" category="buttons">#00b2d6ff</color>
-  <color name="BUTTON_SECONDARY_HOVER_COLOR" category="buttons">#00b2d6ff</color>
-  <color name="BUTTON_SECONDARY_ACTIVE_COLOR" category="buttons">#00b2d6ff</color>
-  <color name="BUTTON_SECONDARY_DISABLED_COLOR" category="buttons">#b2aebdff</color>
+  <color name="BUTTON_SECONDARY_COLOR" category="buttons">#ff00b2d6</color>
+  <color name="BUTTON_SECONDARY_HOVER_COLOR" category="buttons">#ff00b2d6</color>
+  <color name="BUTTON_SECONDARY_ACTIVE_COLOR" category="buttons">#ff00b2d6</color>
+  <color name="BUTTON_SECONDARY_DISABLED_COLOR" category="buttons">#ffb2aebd</color>
   <property name="BUTTON_SECONDARY_BOX_SHADOW" category="buttons">0 0 0 2px #E6E4EB inset</property>
   <property name="BUTTON_SECONDARY_HOVER_BOX_SHADOW" category="buttons">0 0 0 2px #00b2d6 inset</property>
   <property name="BUTTON_SECONDARY_ACTIVE_BOX_SHADOW" category="buttons">0 0 0 3px #00b2d6 inset</property>
   <property name="BUTTON_SECONDARY_DISABLED_BOX_SHADOW" category="buttons">none</property>
-  <color name="BUTTON_DESTRUCTIVE_COLOR" category="buttons">#ff5452ff</color>
+  <color name="BUTTON_DESTRUCTIVE_COLOR" category="buttons">#ffff5452</color>
   <property name="BUTTON_DESTRUCTIVE_BOX_SHADOW" category="buttons">0 0 0 2px #E6E4EB inset</property>
-  <color name="BUTTON_DESTRUCTIVE_HOVER_COLOR" category="buttons">#ff5452ff</color>
+  <color name="BUTTON_DESTRUCTIVE_HOVER_COLOR" category="buttons">#ffff5452</color>
   <property name="BUTTON_DESTRUCTIVE_HOVER_BOX_SHADOW" category="buttons">0 0 0 2px #ff5452 inset</property>
-  <color name="BUTTON_DESTRUCTIVE_ACTIVE_COLOR" category="buttons">#ff5452ff</color>
+  <color name="BUTTON_DESTRUCTIVE_ACTIVE_COLOR" category="buttons">#ffff5452</color>
   <property name="BUTTON_DESTRUCTIVE_ACTIVE_BOX_SHADOW" category="buttons">0 0 0 3px #ff5452 inset</property>
-  <color name="BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR" category="buttons">#e6e4ebff</color>
+  <color name="BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_COLOR" category="buttons">#ffe6e4eb</color>
   <property name="BUTTON_DESTRUCTIVE_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_DESTRUCTIVE_DISABLED_COLOR" category="buttons">#b2aebdff</color>
+  <color name="BUTTON_DESTRUCTIVE_DISABLED_COLOR" category="buttons">#ffb2aebd</color>
   <property name="BUTTON_DESTRUCTIVE_DISABLED_BOX_SHADOW" category="buttons">none</property>
-  <color name="BUTTON_SELECTED_BACKGROUND_COLOR" category="buttons">#00b2d6ff</color>
+  <color name="BUTTON_SELECTED_BACKGROUND_COLOR" category="buttons">#ff00b2d6</color>
   <property name="BUTTON_SELECTED_BACKGROUND_IMAGE" category="buttons">linear-gradient(-180deg, #009dbd 0, #008ca8 1)</property>
-  <color name="BUTTON_SELECTED_HOVER_BACKGROUND_COLOR" category="buttons">#008ca8ff</color>
+  <color name="BUTTON_SELECTED_HOVER_BACKGROUND_COLOR" category="buttons">#ff008ca8</color>
   <property name="BUTTON_SELECTED_HOVER_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR" category="buttons">#00758cff</color>
+  <color name="BUTTON_SELECTED_ACTIVE_BACKGROUND_COLOR" category="buttons">#ff00758c</color>
   <property name="BUTTON_SELECTED_ACTIVE_BACKGROUND_IMAGE" category="buttons">none</property>
   <color name="BUTTON_SELECTED_COLOR" category="buttons">#ffffffff</color>
   <color name="BUTTON_SELECTED_HOVER_COLOR" category="buttons">#ffffffff</color>
@@ -118,84 +118,84 @@
   <property name="BUTTON_SELECTED_ACTIVE_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_SELECTED_DISABLED_BOX_SHADOW" category="buttons">none</property>
   <property name="BUTTON_FEATURED_BACKGROUND_IMAGE" category="buttons">linear-gradient(-180deg, #FA488A 0, #D92B6B 1)</property>
-  <color name="BUTTON_FEATURED_HOVER_BACKGROUND_COLOR" category="buttons">#d92b6bff</color>
-  <color name="BUTTON_FEATURED_ACTIVE_BACKGROUND_COLOR" category="buttons">#c50f52ff</color>
+  <color name="BUTTON_FEATURED_HOVER_BACKGROUND_COLOR" category="buttons">#ffd92b6b</color>
+  <color name="BUTTON_FEATURED_ACTIVE_BACKGROUND_COLOR" category="buttons">#ffc50f52</color>
   <property name="BUTTON_FEATURED_ACTIVE_BACKGROUND_IMAGE" category="buttons">none</property>
-  <color name="BUTTON_FEATURED_DISABLED_BACKGROUND_COLOR" category="buttons">#e6e4ebff</color>
+  <color name="BUTTON_FEATURED_DISABLED_BACKGROUND_COLOR" category="buttons">#ffe6e4eb</color>
   <property name="BUTTON_FEATURED_DISABLED_BACKGROUND_IMAGE" category="buttons">none</property>
   <property name="CALENDAR_PADDING" category="calendar">12</property>
   <property name="CALENDAR_DAY_SPACING" category="calendar">6</property>
   <property name="CALENDAR_DAY_SIZE" category="calendar">36</property>
-  <color name="CALENDAR_DAY_COLOR" category="calendar">#00b2d6ff</color>
+  <color name="CALENDAR_DAY_COLOR" category="calendar">#ff00b2d6</color>
   <color name="CALENDAR_DAY_BACKGROUND_COLOR" category="calendar">#ffffffff</color>
   <color name="CALENDAR_DAY_SELECTED_COLOR" category="calendar">#ffffffff</color>
-  <color name="CALENDAR_DAY_SELECTED_BACKGROUND_COLOR" category="calendar">#008ca8ff</color>
-  <color name="CALENDAR_DAY_HOVER_COLOR" category="calendar">#524c61ff</color>
-  <color name="CALENDAR_DAY_HOVER_BACKGROUND_COLOR" category="calendar">#f3f2f5ff</color>
-  <color name="CALENDAR_DAY_ACTIVE_COLOR" category="calendar">#252033ff</color>
-  <color name="CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR" category="calendar">#e6e4ebff</color>
-  <color name="CALENDAR_DAY_DISABLED_COLOR" category="calendar">#e6e4ebff</color>
+  <color name="CALENDAR_DAY_SELECTED_BACKGROUND_COLOR" category="calendar">#ff008ca8</color>
+  <color name="CALENDAR_DAY_HOVER_COLOR" category="calendar">#ff524c61</color>
+  <color name="CALENDAR_DAY_HOVER_BACKGROUND_COLOR" category="calendar">#fff3f2f5</color>
+  <color name="CALENDAR_DAY_ACTIVE_COLOR" category="calendar">#ff252033</color>
+  <color name="CALENDAR_DAY_ACTIVE_BACKGROUND_COLOR" category="calendar">#ffe6e4eb</color>
+  <color name="CALENDAR_DAY_DISABLED_COLOR" category="calendar">#ffe6e4eb</color>
   <color name="CALENDAR_DAY_DISABLED_BACKGROUND_COLOR" category="calendar">#ffffffff</color>
-  <color name="CALENDAR_DAY_OUTSIDE_COLOR" category="calendar">#b2aebdff</color>
+  <color name="CALENDAR_DAY_OUTSIDE_COLOR" category="calendar">#ffb2aebd</color>
   <color name="CALENDAR_DAY_OUTSIDE_BACKGROUND_COLOR" category="calendar">#ffffffff</color>
-  <color name="CALENDAR_NAV_ICON_FILL" category="calendar">#00b2d6ff</color>
-  <color name="CALENDAR_NAV_ICON_HOVER_FILL" category="calendar">#009dbdff</color>
-  <color name="CALENDAR_NAV_ICON_ACTIVE_FILL" category="calendar">#008ca8ff</color>
-  <color name="CALENDAR_NAV_ICON_DISABLED_FILL" category="calendar">#e6e4ebff</color>
+  <color name="CALENDAR_NAV_ICON_FILL" category="calendar">#ff00b2d6</color>
+  <color name="CALENDAR_NAV_ICON_HOVER_FILL" category="calendar">#ff009dbd</color>
+  <color name="CALENDAR_NAV_ICON_ACTIVE_FILL" category="calendar">#ff008ca8</color>
+  <color name="CALENDAR_NAV_ICON_DISABLED_FILL" category="calendar">#ffe6e4eb</color>
   <color name="CARD_BACKGROUND_COLOR" category="cards">#ffffffff</color>
-  <color name="CARD_COLOR" category="cards">#524c61ff</color>
+  <color name="CARD_COLOR" category="cards">#ff524c61</color>
   <property name="CARD_PADDING" category="cards">12</property>
   <color name="COLOR_WHITE" category="colors">#ffffffff</color>
-  <color name="COLOR_BLUE_50" category="colors">#e1f4f8ff</color>
-  <color name="COLOR_BLUE_100" category="colors">#cbeef5ff</color>
-  <color name="COLOR_BLUE_200" category="colors">#b0e4eeff</color>
-  <color name="COLOR_BLUE_300" category="colors">#7fd7e8ff</color>
-  <color name="COLOR_BLUE_400" category="colors">#40c4dfff</color>
-  <color name="COLOR_BLUE_500" category="colors">#00b2d6ff</color>
-  <color name="COLOR_BLUE_600" category="colors">#009dbdff</color>
-  <color name="COLOR_BLUE_700" category="colors">#008ca8ff</color>
-  <color name="COLOR_BLUE_800" category="colors">#00758cff</color>
-  <color name="COLOR_BLUE_900" category="colors">#005567ff</color>
-  <color name="COLOR_GRAY_50" category="colors">#f3f2f5ff</color>
-  <color name="COLOR_GRAY_100" category="colors">#e6e4ebff</color>
-  <color name="COLOR_GRAY_200" category="colors">#ccc9d4ff</color>
-  <color name="COLOR_GRAY_300" category="colors">#b2aebdff</color>
-  <color name="COLOR_GRAY_400" category="colors">#9a95a7ff</color>
-  <color name="COLOR_GRAY_500" category="colors">#817b8fff</color>
-  <color name="COLOR_GRAY_600" category="colors">#696179ff</color>
-  <color name="COLOR_GRAY_700" category="colors">#524c61ff</color>
-  <color name="COLOR_GRAY_800" category="colors">#3b344bff</color>
-  <color name="COLOR_GRAY_900" category="colors">#252033ff</color>
-  <color name="COLOR_GREEN_50" category="colors">#dff7ecff</color>
-  <color name="COLOR_GREEN_100" category="colors">#cbf5e2ff</color>
-  <color name="COLOR_GREEN_200" category="colors">#afedd1ff</color>
-  <color name="COLOR_GREEN_300" category="colors">#80e8b9ff</color>
-  <color name="COLOR_GREEN_400" category="colors">#40de97ff</color>
-  <color name="COLOR_GREEN_500" category="colors">#00d775ff</color>
-  <color name="COLOR_GREEN_600" category="colors">#00bd68ff</color>
-  <color name="COLOR_GREEN_700" category="colors">#00a85dff</color>
-  <color name="COLOR_GREEN_800" category="colors">#008c4dff</color>
-  <color name="COLOR_GREEN_900" category="colors">#006638ff</color>
-  <color name="COLOR_RED_50" category="colors">#fcf2f2ff</color>
-  <color name="COLOR_RED_100" category="colors">#ffd6d5ff</color>
-  <color name="COLOR_RED_200" category="colors">#ffbbbaff</color>
-  <color name="COLOR_RED_300" category="colors">#ff9694ff</color>
-  <color name="COLOR_RED_400" category="colors">#fe7471ff</color>
-  <color name="COLOR_RED_500" category="colors">#ff5452ff</color>
-  <color name="COLOR_RED_600" category="colors">#eb423fff</color>
-  <color name="COLOR_RED_700" category="colors">#de322fff</color>
-  <color name="COLOR_RED_800" category="colors">#cc1f1dff</color>
-  <color name="COLOR_RED_900" category="colors">#a80300ff</color>
-  <color name="COLOR_YELLOW_50" category="colors">#fff9e6ff</color>
-  <color name="COLOR_YELLOW_100" category="colors">#fff3cfff</color>
-  <color name="COLOR_YELLOW_200" category="colors">#ffecb8ff</color>
-  <color name="COLOR_YELLOW_300" category="colors">#ffe18cff</color>
-  <color name="COLOR_YELLOW_400" category="colors">#ffcf4aff</color>
-  <color name="COLOR_YELLOW_500" category="colors">#ffbb00ff</color>
-  <color name="COLOR_YELLOW_600" category="colors">#f0b000ff</color>
-  <color name="COLOR_YELLOW_700" category="colors">#e1a500ff</color>
-  <color name="COLOR_YELLOW_800" category="colors">#c28e00ff</color>
-  <color name="COLOR_YELLOW_900" category="colors">#9c7200ff</color>
+  <color name="COLOR_BLUE_50" category="colors">#ffe1f4f8</color>
+  <color name="COLOR_BLUE_100" category="colors">#ffcbeef5</color>
+  <color name="COLOR_BLUE_200" category="colors">#ffb0e4ee</color>
+  <color name="COLOR_BLUE_300" category="colors">#ff7fd7e8</color>
+  <color name="COLOR_BLUE_400" category="colors">#ff40c4df</color>
+  <color name="COLOR_BLUE_500" category="colors">#ff00b2d6</color>
+  <color name="COLOR_BLUE_600" category="colors">#ff009dbd</color>
+  <color name="COLOR_BLUE_700" category="colors">#ff008ca8</color>
+  <color name="COLOR_BLUE_800" category="colors">#ff00758c</color>
+  <color name="COLOR_BLUE_900" category="colors">#ff005567</color>
+  <color name="COLOR_GRAY_50" category="colors">#fff3f2f5</color>
+  <color name="COLOR_GRAY_100" category="colors">#ffe6e4eb</color>
+  <color name="COLOR_GRAY_200" category="colors">#ffccc9d4</color>
+  <color name="COLOR_GRAY_300" category="colors">#ffb2aebd</color>
+  <color name="COLOR_GRAY_400" category="colors">#ff9a95a7</color>
+  <color name="COLOR_GRAY_500" category="colors">#ff817b8f</color>
+  <color name="COLOR_GRAY_600" category="colors">#ff696179</color>
+  <color name="COLOR_GRAY_700" category="colors">#ff524c61</color>
+  <color name="COLOR_GRAY_800" category="colors">#ff3b344b</color>
+  <color name="COLOR_GRAY_900" category="colors">#ff252033</color>
+  <color name="COLOR_GREEN_50" category="colors">#ffdff7ec</color>
+  <color name="COLOR_GREEN_100" category="colors">#ffcbf5e2</color>
+  <color name="COLOR_GREEN_200" category="colors">#ffafedd1</color>
+  <color name="COLOR_GREEN_300" category="colors">#ff80e8b9</color>
+  <color name="COLOR_GREEN_400" category="colors">#ff40de97</color>
+  <color name="COLOR_GREEN_500" category="colors">#ff00d775</color>
+  <color name="COLOR_GREEN_600" category="colors">#ff00bd68</color>
+  <color name="COLOR_GREEN_700" category="colors">#ff00a85d</color>
+  <color name="COLOR_GREEN_800" category="colors">#ff008c4d</color>
+  <color name="COLOR_GREEN_900" category="colors">#ff006638</color>
+  <color name="COLOR_RED_50" category="colors">#fffcf2f2</color>
+  <color name="COLOR_RED_100" category="colors">#ffffd6d5</color>
+  <color name="COLOR_RED_200" category="colors">#ffffbbba</color>
+  <color name="COLOR_RED_300" category="colors">#ffff9694</color>
+  <color name="COLOR_RED_400" category="colors">#fffe7471</color>
+  <color name="COLOR_RED_500" category="colors">#ffff5452</color>
+  <color name="COLOR_RED_600" category="colors">#ffeb423f</color>
+  <color name="COLOR_RED_700" category="colors">#ffde322f</color>
+  <color name="COLOR_RED_800" category="colors">#ffcc1f1d</color>
+  <color name="COLOR_RED_900" category="colors">#ffa80300</color>
+  <color name="COLOR_YELLOW_50" category="colors">#fffff9e6</color>
+  <color name="COLOR_YELLOW_100" category="colors">#fffff3cf</color>
+  <color name="COLOR_YELLOW_200" category="colors">#ffffecb8</color>
+  <color name="COLOR_YELLOW_300" category="colors">#ffffe18c</color>
+  <color name="COLOR_YELLOW_400" category="colors">#ffffcf4a</color>
+  <color name="COLOR_YELLOW_500" category="colors">#ffffbb00</color>
+  <color name="COLOR_YELLOW_600" category="colors">#fff0b000</color>
+  <color name="COLOR_YELLOW_700" category="colors">#ffe1a500</color>
+  <color name="COLOR_YELLOW_800" category="colors">#ffc28e00</color>
+  <color name="COLOR_YELLOW_900" category="colors">#ff9c7200</color>
   <property name="PRIMARY_GRADIENT" category="colors">linear-gradient(135deg, #00b2d6 0, #02DDD8 1)</property>
   <property name="INPUT_HEIGHT" category="forms">36</property>
   <property name="INPUT_PADDING_X" category="forms">12</property>
@@ -204,11 +204,11 @@
   <property name="INPUT_BORDER" category="forms">solid .0625rem #E6E4EB</property>
   <property name="INPUT_BORDER_RADIUS" category="forms">3</property>
   <property name="INPUT_BACKGROUND" category="forms">#ffffff</property>
-  <color name="INPUT_COLOR" category="forms">#524c61ff</color>
-  <color name="INPUT_PLACEHOLDER_COLOR" category="forms">#817b8fff</color>
+  <color name="INPUT_COLOR" category="forms">#ff524c61</color>
+  <color name="INPUT_PLACEHOLDER_COLOR" category="forms">#ff817b8f</color>
   <property name="INPUT_PLACEHOLDER_FONT_STYLE" category="forms">italic</property>
-  <color name="INPUT_DISABLED_BORDER_COLOR" category="forms">#f3f2f5ff</color>
-  <color name="INPUT_DISABLED_COLOR" category="forms">#b2aebdff</color>
+  <color name="INPUT_DISABLED_BORDER_COLOR" category="forms">#fff3f2f5</color>
+  <color name="INPUT_DISABLED_COLOR" category="forms">#ffb2aebd</color>
   <property name="INPUT_LARGE_HEIGHT" category="forms">42</property>
   <property name="SELECT_HEIGHT" category="forms">36</property>
   <property name="SELECT_PADDING_TOP" category="forms">6</property>
@@ -218,30 +218,30 @@
   <property name="SELECT_BORDER_WIDTH" category="forms">1</property>
   <property name="SELECT_BORDER" category="forms">solid .0625rem #E6E4EB</property>
   <property name="SELECT_BORDER_RADIUS" category="forms">3</property>
-  <color name="SELECT_COLOR" category="forms">#524c61ff</color>
-  <color name="SELECT_DISABLED_BORDER_COLOR" category="forms">#f3f2f5ff</color>
-  <color name="SELECT_DISABLED_COLOR" category="forms">#b2aebdff</color>
+  <color name="SELECT_COLOR" category="forms">#ff524c61</color>
+  <color name="SELECT_DISABLED_BORDER_COLOR" category="forms">#fff3f2f5</color>
+  <color name="SELECT_DISABLED_COLOR" category="forms">#ffb2aebd</color>
   <property name="SELECT_LARGE_HEIGHT" category="forms">42</property>
-  <color name="LABEL_COLOR" category="forms">#524c61ff</color>
-  <color name="LABEL_DISABLED_COLOR" category="forms">#b2aebdff</color>
+  <color name="LABEL_COLOR" category="forms">#ff524c61</color>
+  <color name="LABEL_DISABLED_COLOR" category="forms">#ffb2aebd</color>
   <property name="LABEL_FONT_SIZE" category="forms">12</property>
   <property name="LABEL_LINE_HEIGHT" category="forms">18</property>
   <property name="FORM_VALIDATION_MARGIN" category="forms">0</property>
   <property name="FORM_VALIDATION_PADDING_Y" category="forms">6</property>
   <property name="FORM_VALIDATION_PADDING_X" category="forms">12</property>
-  <color name="FORM_VALIDATION_BACKGROUND_COLOR" category="forms">#ff5452ff</color>
+  <color name="FORM_VALIDATION_BACKGROUND_COLOR" category="forms">#ffff5452</color>
   <color name="FORM_VALIDATION_COLOR" category="forms">#ffffffff</color>
   <property name="FORM_VALIDATION_ARROW_SIZE" category="forms">6</property>
   <property name="FORM_VALIDATION_CHECKBOX_ARROW_LEFT" category="forms">24</property>
   <property name="TEXTAREA_MIN_HEIGHT" category="forms">2.625rem * 2</property>
-  <color name="REQUIRED_COLOR" category="forms">#ff5452ff</color>
+  <color name="REQUIRED_COLOR" category="forms">#ffff5452</color>
   <property name="GRID_COLUMNS" category="grids">12</property>
   <property name="GRID_GUTTER" category="grids">24</property>
   <property name="GRID_CONTAINER_PADDING" category="grids">24</property>
   <property name="GRID_CONTAINER_MOBILE_PADDING" category="grids">12</property>
   <property name="ICON_SIZE_SM" category="icons">18</property>
   <property name="ICON_SIZE_LG" category="icons">24</property>
-  <color name="MODAL_SCRIM_BACKGROUND_COLOR" category="modals">#b2aebdff</color>
+  <color name="MODAL_SCRIM_BACKGROUND_COLOR" category="modals">#ffb2aebd</color>
   <property name="MODAL_SCRIM_INITIAL_OPACITY" category="modals">0</property>
   <property name="MODAL_SCRIM_OPACITY" category="modals">.7</property>
   <property name="MODAL_SCRIM_MOBILE_OPACITY" category="modals">1</property>
@@ -251,23 +251,23 @@
   <property name="MODAL_MAX_WIDTH" category="modals">516</property>
   <property name="MODAL_WIDE_MAX_WIDTH" category="modals">804</property>
   <property name="MODAL_HEADER_PADDING" category="modals">12</property>
-  <color name="MODAL_CLOSE_ICON_FILL" category="modals">#817b8fff</color>
-  <color name="MODAL_CLOSE_ICON_HOVER_FILL" category="modals">#524c61ff</color>
+  <color name="MODAL_CLOSE_ICON_FILL" category="modals">#ff817b8f</color>
+  <color name="MODAL_CLOSE_ICON_HOVER_FILL" category="modals">#ff524c61</color>
   <property name="MODAL_CONTENT_PADDING" category="modals">12</property>
   <color name="BANNER_ALERT_BACKGROUND_COLOR" category="notifications">#ffffffff</color>
   <property name="BANNER_ALERT_HEADER_PADDING_Y" category="notifications">6</property>
   <property name="BANNER_ALERT_HEADER_PADDING_X" category="notifications">12</property>
-  <color name="BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR" category="notifications">#f3f2f5ff</color>
-  <color name="BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR" category="notifications">#e6e4ebff</color>
-  <color name="BANNER_ALERT_SUCCESS_COLOR" category="notifications">#00d775ff</color>
-  <color name="BANNER_ALERT_WARN_COLOR" category="notifications">#ffbb00ff</color>
-  <color name="BANNER_ALERT_ERROR_COLOR" category="notifications">#ff5452ff</color>
-  <color name="BANNER_ALERT_EXPAND_ICON_FILL" category="notifications">#524c61ff</color>
+  <color name="BANNER_ALERT_HEADER_EXPANDABLE_HOVER_BACKGROUND_COLOR" category="notifications">#fff3f2f5</color>
+  <color name="BANNER_ALERT_HEADER_EXPANDABLE_ACTIVE_BACKGROUND_COLOR" category="notifications">#ffe6e4eb</color>
+  <color name="BANNER_ALERT_SUCCESS_COLOR" category="notifications">#ff00d775</color>
+  <color name="BANNER_ALERT_WARN_COLOR" category="notifications">#ffffbb00</color>
+  <color name="BANNER_ALERT_ERROR_COLOR" category="notifications">#ffff5452</color>
+  <color name="BANNER_ALERT_EXPAND_ICON_FILL" category="notifications">#ff524c61</color>
   <property name="BANNER_ALERT_CHILDREN_PADDING_Y" category="notifications">6</property>
   <property name="BANNER_ALERT_CHILDREN_PADDING_X" category="notifications">12</property>
-  <color name="BANNER_ALERT_CHILDREN_COLOR" category="notifications">#817b8fff</color>
+  <color name="BANNER_ALERT_CHILDREN_COLOR" category="notifications">#ff817b8f</color>
   <property name="PANEL_PADDING" category="panels">12</property>
-  <color name="PANEL_BORDER_COLOR" category="panels">#e6e4ebff</color>
+  <color name="PANEL_BORDER_COLOR" category="panels">#ffe6e4eb</color>
   <color name="PANEL_BACKGROUND_COLOR" category="panels">#ffffffff</color>
   <property name="SPACING_XS" category="spacings">6</property>
   <property name="SPACING_SM" category="spacings">12</property>
@@ -277,9 +277,9 @@
   <property name="SPACING_XL" category="spacings">36</property>
   <property name="SPACING_XXL" category="spacings">42</property>
   <property name="ONE_PIXEL_REM" category="spacings">1</property>
-  <color name="STATE_SELECTED_BACKGROUND_COLOR" category="colors">#008ca8ff</color>
+  <color name="STATE_SELECTED_BACKGROUND_COLOR" category="colors">#ff008ca8</color>
   <property name="FONT_FAMILY_BASE" category="typesettings">-apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif</property>
-  <color name="FONT_COLOR_BASE" category="text-colors">#524c61ff</color>
+  <color name="FONT_COLOR_BASE" category="text-colors">#ff524c61</color>
   <property name="LINE_HEIGHT_SM" category="typesettings">18</property>
   <property name="LINE_HEIGHT_BASE" category="typesettings">24</property>
   <property name="LINE_HEIGHT_LG" category="typesettings">30</property>
@@ -320,15 +320,15 @@
   <property name="LIST_NESTED_MARGIN_BOTTOM" category="spacings">0</property>
   <property name="LIST_ITEM_MARGIN_TOP" category="spacings">0</property>
   <property name="LIST_ITEM_MARGIN_BOTTOM" category="spacings">0</property>
-  <color name="LINK_COLOR" category="text-colors">#00b2d6ff</color>
+  <color name="LINK_COLOR" category="text-colors">#ff00b2d6</color>
   <property name="LINK_TEXT_DECORATION" category="text-decorations">none</property>
-  <color name="LINK_HOVER_COLOR" category="text-colors">#524c61ff</color>
+  <color name="LINK_HOVER_COLOR" category="text-colors">#ff524c61</color>
   <property name="LINK_HOVER_TEXT_DECORATION" category="text-decorations">underline</property>
-  <color name="LINK_ACTIVE_COLOR" category="text-colors">#252033ff</color>
-  <color name="LINK_VISITED_COLOR" category="text-colors">#008ca8ff</color>
+  <color name="LINK_ACTIVE_COLOR" category="text-colors">#ff252033</color>
+  <color name="LINK_VISITED_COLOR" category="text-colors">#ff008ca8</color>
   <color name="LINK_WHITE_COLOR" category="text-colors">#ffffffff</color>
   <color name="LINK_WHITE_HOVER_COLOR" category="text-colors">#ffffffff</color>
-  <color name="LINK_WHITE_ACTIVE_COLOR" category="text-colors">#e6e4ebff</color>
+  <color name="LINK_WHITE_ACTIVE_COLOR" category="text-colors">#ffe6e4eb</color>
   <color name="LINK_WHITE_VISITED_COLOR" category="text-colors">#ffffffff</color>
   <property name="ZINDEX_AUTOSUGGEST" category="z-indices">900</property>
   <property name="ZINDEX_POPOVER" category="z-indices">900</property>
