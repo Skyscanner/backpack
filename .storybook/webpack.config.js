@@ -6,7 +6,7 @@ const postCssFlexbugsFixes = require('postcss-flexbugs-fixes');
 
 const BPK_TOKENS = process.env.BPK_TOKENS;
 const rootDir = path.resolve(__dirname, '../');
-const ENABLE_CSS_MODULES = process.env.ENABLE_CSS_MODULES === 'true';
+const ENABLE_CSS_MODULES = process.env.ENABLE_CSS_MODULES !== 'false';
 
 
 module.exports = {
