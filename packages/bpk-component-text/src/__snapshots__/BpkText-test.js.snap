@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkText should pass down unknown props 1`] = `
+<span
+  className="bpk-text bpk-text--base"
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly 1`] = `
+<span
+  className="bpk-text bpk-text--base"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with \`bold\` 1`] = `
+<span
+  className="bpk-text bpk-text--base bpk-text--bold"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with tageName="h1", textStyle="xxl" 1`] = `
+<h1
+  className="bpk-text bpk-text--xxl"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</h1>
+`;
+
+exports[`BpkText should render correctly with textStyle="base" 1`] = `
+<span
+  className="bpk-text bpk-text--base"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with textStyle="lg" 1`] = `
+<span
+  className="bpk-text bpk-text--lg"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with textStyle="sm" 1`] = `
+<span
+  className="bpk-text bpk-text--sm"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with textStyle="xl" 1`] = `
+<span
+  className="bpk-text bpk-text--xl"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with textStyle="xs" 1`] = `
+<span
+  className="bpk-text bpk-text--xs"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;
+
+exports[`BpkText should render correctly with textStyle="xxl" 1`] = `
+<span
+  className="bpk-text bpk-text--xxl"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</span>
+`;

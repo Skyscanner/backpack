@@ -1,0 +1,33 @@
+@import '~bpk-mixins';
+
+.bpk-text {
+  margin: 0;
+
+  &--xs {
+    @include bpk-text-xs;
+  }
+
+  &--sm {
+    @include bpk-text-sm;
+  }
+
+  &--base {
+    @include bpk-text-base;
+  }
+
+  &--lg {
+    @include bpk-text-lg;
+  }
+
+  &--xl {
+    @include bpk-text-xl;
+  }
+
+  &--xxl {
+    @include bpk-text-xxl;
+  }
+
+  &--bold {
+    @include bpk-text-bold;
+  }
+}

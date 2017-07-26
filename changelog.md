@@ -34,6 +34,8 @@
 - bpk-tokens:
   - New theme for iOS, with specific text styles and spacings
   - Text style tokens for the base theme, in line with the new iOS theme
+- bpk-component-text:
+  - **New component** `BpkText` is the new preferred method for rendering text of all kinds. It utilizes the newly added mixins and allows separation of text style and semantics.
 
 **Fixed:**
 - bpk-tokens:
