@@ -157,7 +157,8 @@ gulp.task('icons-sm', ['icons-common'], () => {
     .src('src/icons/**/*.svg')
     .pipe(chmod(0o644));
 
-  const styleAttribute = `style="width:${smallIconSize};height:${smallIconSize}"`;
+  const styleAttributes = `width:"${smallIconSize}", height:"${smallIconSize}"`;
+  const svg2reactOpts = { styleProp: styleAttributes };
 
   const react = svgs
     .pipe(clone())
@@ -165,12 +166,12 @@ gulp.task('icons-sm', ['icons-common'], () => {
       plugins: [
         {
           addAttributesToSVGElement: {
-            attribute: `width="${smallIconPxSize}" height="${smallIconPxSize}" ${styleAttribute}`,
+            attribute: `width="${smallIconPxSize}" height="${smallIconPxSize}"`,
           },
         },
       ],
     }))
-    .pipe(svg2react())
+    .pipe(svg2react(svg2reactOpts)) // <-- pass style as an react-svg-loader plugin argument?
     .pipe(rename({ extname: '.js' }))
     .pipe(gulp.dest('dist/js/icons/sm'));
 
@@ -214,7 +215,8 @@ gulp.task('icons-lg', ['icons-common'], () => {
     .src('src/icons/**/*.svg')
     .pipe(chmod(0o644));
 
-  const styleAttribute = `style="width:${largeIconSize};height:${largeIconSize}"`;
+  const styleAttributes = `width:"${largeIconSize}", height:"${largeIconSize}"`;
+  const svg2reactOpts = { styleProp: styleAttributes };
 
   const react = svgs
     .pipe(clone())
@@ -222,12 +224,12 @@ gulp.task('icons-lg', ['icons-common'], () => {
       plugins: [
         {
           addAttributesToSVGElement: {
-            attribute: `width="${largeIconPxSize}" height="${largeIconPxSize}" ${styleAttribute}`,
+            attribute: `width="${largeIconPxSize}" height="${largeIconPxSize}"`,
           },
         },
       ],
     }))
-    .pipe(svg2react())
+    .pipe(svg2react(svg2reactOpts)) // <-- pass style as an react-svg-loader plugin argument?
     .pipe(rename({ extname: '.js' }))
     .pipe(gulp.dest('dist/js/icons/lg'));
 

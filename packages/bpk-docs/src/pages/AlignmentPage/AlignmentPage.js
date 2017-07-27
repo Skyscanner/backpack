@@ -25,13 +25,16 @@ import BpkButton from 'bpk-component-button';
 import BpkParagraph from 'bpk-component-paragraph';
 import BpkHeading from 'bpk-component-heading';
 import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
+import AwardIcon from 'bpk-component-icon/lg/award';
+import LongArrowRightIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import * as ROUTES from './../../constants/routes';
 
-const AlignedHeading4Arrow = withAlignment(LongArrowRightIcon, lineHeightBase, iconSizeSm);
+const AlignedHeading4Arrow = withAlignment(LongArrowRightIconSm, lineHeightBase, iconSizeSm);
 const AlignedHeading3Arrow = withAlignment(LongArrowRightIcon, lineHeightLg, iconSizeLg);
-const AlignedButtonArrow = withButtonAlignment(LongArrowRightIcon);
+const AlignedButtonArrow = withButtonAlignment(LongArrowRightIconSm);
 const AlignedLargeButtonArrow = withLargeButtonAlignment(LongArrowRightIcon);
+const AlignedSpan = withAlignment('span', iconSizeLg, lineHeightBase);
 
 const components = [
   {
@@ -46,12 +49,12 @@ const components = [
         Using the HOC is done as follows:
       </BpkParagraph>,
       <BpkCodeBlock >
-        {`import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
+        {`import LongArrowRightIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import { withAlignment } from 'bpk-component-icon';
 import { lineHeightBase, iconSizeSm } from 'bpk-tokens/tokens/base.es6';
 
 const AlignedArrow = withAlignment(
-  LongArrowRightIcon, lineHeightBase, iconSizeSm
+  LongArrowRightIconSm, lineHeightBase, iconSizeSm
 );
 
 <BpkHeading level="h4" >
@@ -101,18 +104,54 @@ const AlignedArrow = withAlignment(
     ],
   },
   {
+    id: 'withIcon',
+    title: '"h4" heading alignment within an icon',
+    blurb: [
+      <BpkParagraph>
+        If wishing to use an icon taller than the heading, alignment must be performed on the heading as follows:
+      </BpkParagraph>,
+      <BpkCodeBlock >
+        {`import AwardIcon from 'bpk-component-icon/lg/award';
+import { withAlignment } from 'bpk-component-icon';
+import { iconSizeLg, lineHeightLg } from 'bpk-tokens/tokens/base.es6';
+
+const AlignedSpan = withAlignment(
+  'span', iconSizeLg, lineHeightBase
+);
+
+<BpkHeading level="h4" >
+  <AwardIcon fill={colors.colorGray700} />
+  <AlignedSpan >
+    &nbsp;
+    Heading Text
+  </AlignedSpan>
+</BpkHeading>
+`}
+      </BpkCodeBlock>,
+    ],
+    examples: [
+      <BpkHeading level="h4" >
+        <AwardIcon fill={colors.colorGray700} />
+        <AlignedSpan >
+          &nbsp;
+          Heading Text
+        </AlignedSpan>
+      </BpkHeading>,
+    ],
+  },
+  {
     id: 'withinButton',
     title: 'Icon alignment within a button',
     blurb: [
       <BpkParagraph>
-         HOC wrappers exist for common alignment tasks, such as aligning an icon within a button.
+        HOC wrappers exist for common alignment tasks, such as aligning an icon within a button.
          Other examples can be seen in the <BpkLink href={ROUTES.BUTTONS}>Buttons page</BpkLink>.
       </BpkParagraph>,
       <BpkCodeBlock>
-        {`import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
+        {`import LongArrowRightIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import { withButtonAlignment } from 'bpk-component-icon';
 
-const AlignedArrow = withButtonAlignment(LongArrowRightIcon);
+const AlignedArrow = withButtonAlignment(LongArrowRightIconSm);
 
 <BpkButton >
   Button Text
@@ -134,7 +173,7 @@ const AlignedArrow = withButtonAlignment(LongArrowRightIcon);
     title: 'Icon alignment within a large button',
     blurb: [
       <BpkParagraph>
-         Similarly, a HOC exists for aligning icons to a large button.
+        Similarly, a HOC exists for aligning icons to a large button.
          Other examples can be seen in the <BpkLink href={ROUTES.BUTTONS}>Buttons page</BpkLink>.
           </BpkParagraph>,
       <BpkCodeBlock>
@@ -172,6 +211,10 @@ const AlignmentPage = () => <DocsPageBuilder
     <BpkParagraph>
       The alignment HOCs are provided in the <BpkCode>bpk-component-icon</BpkCode> package.
       See <BpkLink href={ROUTES.ICONS}>Icons</BpkLink> for installation instructions.
+    </BpkParagraph>,
+    <BpkParagraph>
+      Note that the alignment HOCs do not support an offset &lt; 0. That is, when aligning two components,
+      the smaller must be aligned to the larger, not vice versa.
     </BpkParagraph>,
   ]}
   components={components}
