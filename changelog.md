@@ -3,6 +3,16 @@
 ## UNRELEASED
 
 **Breaking:**
+- bpk-mixins:
+  - Text mixins (`bpk-text-base`, `bpk-text-lg` etc.) now set letter-spacing and font-weight explicitly. This means you cannot set `font-weight` anymore before including the mixin. Instead, use the new `bpk-text-bold` mixin to bolden text:
+
+    ```scss
+    .selector {
+      @include bpk-text-lg;
+      @include bpk-text-bold;
+    }
+    ```
+
 - bpk-tokens:
   - Aliases in `.raw.json` format are now objects with a `value` property i.e.
 
@@ -17,6 +27,13 @@
     ```json
     "WHITE": "#ffffff",
     ```
+
+**Added:**
+- bpk-mixins:
+  - New `bpk-text-xs` mixin in addition to the existing text styles (sm, base, lg, xl, xxl)
+- bpk-tokens:
+  - New theme for iOS, with specific text styles and spacings
+  - Text style tokens for the base theme, in line with the new iOS theme
 
 **Fixed:**
 - bpk-tokens:
