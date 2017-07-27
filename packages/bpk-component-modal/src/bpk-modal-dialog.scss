@@ -98,9 +98,9 @@
 
   &__dialog-heading {
     margin: 0;
-    font-weight: 700;
 
     @include bpk-text-base;
+    @include bpk-text-bold;
   }
 
   &__dialog-close-button {

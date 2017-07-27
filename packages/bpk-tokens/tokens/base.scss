@@ -559,6 +559,8 @@ $bpk-font-size-lg: 1.5rem;
 $bpk-font-size-xl: 1.75rem;
 /// @group typesettings
 $bpk-font-size-xxl: 2.625rem;
+/// @group font-weights
+$bpk-font-weight-bold: 700;
 /// @group font-sizes
 $bpk-h-6-font-size: .75rem;
 /// @group font-sizes
@@ -637,6 +639,54 @@ $bpk-link-white-hover-color: rgb(255, 255, 255);
 $bpk-link-white-active-color: rgb(230, 228, 235);
 /// @group text-colors
 $bpk-link-white-visited-color: rgb(255, 255, 255);
+/// @group font-sizes
+$bpk-text-xs-font-size: .75rem;
+/// @group line-heights
+$bpk-text-xs-line-height: 1.125rem;
+/// @group font-weights
+$bpk-text-xs-font-weight: 400;
+/// @group letter-spacings
+$bpk-text-xs-letter-spacing: normal;
+/// @group font-sizes
+$bpk-text-sm-font-size: .75rem;
+/// @group line-heights
+$bpk-text-sm-line-height: 1.125rem;
+/// @group font-weights
+$bpk-text-sm-font-weight: 400;
+/// @group letter-spacings
+$bpk-text-sm-letter-spacing: normal;
+/// @group font-sizes
+$bpk-text-base-font-size: 1rem;
+/// @group line-heights
+$bpk-text-base-line-height: 1.5rem;
+/// @group font-weights
+$bpk-text-base-font-weight: 400;
+/// @group letter-spacings
+$bpk-text-base-letter-spacing: normal;
+/// @group font-sizes
+$bpk-text-lg-font-size: 1.5rem;
+/// @group line-heights
+$bpk-text-lg-line-height: 1.875rem;
+/// @group font-weights
+$bpk-text-lg-font-weight: 400;
+/// @group letter-spacings
+$bpk-text-lg-letter-spacing: normal;
+/// @group font-sizes
+$bpk-text-xl-font-size: 1.75rem;
+/// @group line-heights
+$bpk-text-xl-line-height: 2.625rem;
+/// @group font-weights
+$bpk-text-xl-font-weight: 400;
+/// @group letter-spacings
+$bpk-text-xl-letter-spacing: normal;
+/// @group font-sizes
+$bpk-text-xxl-font-size: 2.625rem;
+/// @group line-heights
+$bpk-text-xxl-line-height: 3.375rem;
+/// @group font-weights
+$bpk-text-xxl-font-weight: 400;
+/// @group letter-spacings
+$bpk-text-xxl-letter-spacing: normal;
 /// @group z-indices
 $bpk-zindex-autosuggest: 900;
 /// @group z-indices

@@ -198,6 +198,9 @@
     "FONT_SIZE_XXL": {
       "value": "2.625rem"
     },
+    "FONT_WEIGHT_BOLD": {
+      "value": "700"
+    },
     "SPACING_XS": {
       "value": ".375rem"
     },
@@ -2579,6 +2582,15 @@
       },
       "name": "FONT_SIZE_XXL"
     },
+    "FONT_WEIGHT_BOLD": {
+      "value": "700",
+      "type": "size",
+      "category": "font-weights",
+      ".alias": {
+        "value": "700"
+      },
+      "name": "FONT_WEIGHT_BOLD"
+    },
     "H6_FONT_SIZE": {
       "value": ".75rem",
       "type": "size",
@@ -2881,6 +2893,183 @@
         "value": "#ffffff"
       },
       "name": "LINK_WHITE_VISITED_COLOR"
+    },
+    "TEXT_XS_FONT_SIZE": {
+      "value": ".75rem",
+      "type": "size",
+      "category": "font-sizes",
+      ".alias": {
+        "value": ".75rem"
+      },
+      "name": "TEXT_XS_FONT_SIZE"
+    },
+    "TEXT_XS_LINE_HEIGHT": {
+      "value": "1.125rem",
+      "type": "number",
+      "category": "line-heights",
+      ".alias": {
+        "value": "1.125rem"
+      },
+      "name": "TEXT_XS_LINE_HEIGHT"
+    },
+    "TEXT_XS_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weights",
+      "name": "TEXT_XS_FONT_WEIGHT"
+    },
+    "TEXT_XS_LETTER_SPACING": {
+      "value": "normal",
+      "type": "size",
+      "category": "letter-spacings",
+      "name": "TEXT_XS_LETTER_SPACING"
+    },
+    "TEXT_SM_FONT_SIZE": {
+      "value": ".75rem",
+      "type": "size",
+      "category": "font-sizes",
+      ".alias": {
+        "value": ".75rem"
+      },
+      "name": "TEXT_SM_FONT_SIZE"
+    },
+    "TEXT_SM_LINE_HEIGHT": {
+      "value": "1.125rem",
+      "type": "number",
+      "category": "line-heights",
+      ".alias": {
+        "value": "1.125rem"
+      },
+      "name": "TEXT_SM_LINE_HEIGHT"
+    },
+    "TEXT_SM_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weights",
+      "name": "TEXT_SM_FONT_WEIGHT"
+    },
+    "TEXT_SM_LETTER_SPACING": {
+      "value": "normal",
+      "type": "size",
+      "category": "letter-spacings",
+      "name": "TEXT_SM_LETTER_SPACING"
+    },
+    "TEXT_BASE_FONT_SIZE": {
+      "value": "1rem",
+      "type": "size",
+      "category": "font-sizes",
+      ".alias": {
+        "value": "1rem"
+      },
+      "name": "TEXT_BASE_FONT_SIZE"
+    },
+    "TEXT_BASE_LINE_HEIGHT": {
+      "value": "1.5rem",
+      "type": "number",
+      "category": "line-heights",
+      ".alias": {
+        "value": "1.5rem"
+      },
+      "name": "TEXT_BASE_LINE_HEIGHT"
+    },
+    "TEXT_BASE_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weights",
+      "name": "TEXT_BASE_FONT_WEIGHT"
+    },
+    "TEXT_BASE_LETTER_SPACING": {
+      "value": "normal",
+      "type": "size",
+      "category": "letter-spacings",
+      "name": "TEXT_BASE_LETTER_SPACING"
+    },
+    "TEXT_LG_FONT_SIZE": {
+      "value": "1.5rem",
+      "type": "size",
+      "category": "font-sizes",
+      ".alias": {
+        "value": "1.5rem"
+      },
+      "name": "TEXT_LG_FONT_SIZE"
+    },
+    "TEXT_LG_LINE_HEIGHT": {
+      "value": "1.875rem",
+      "type": "number",
+      "category": "line-heights",
+      ".alias": {
+        "value": "1.875rem"
+      },
+      "name": "TEXT_LG_LINE_HEIGHT"
+    },
+    "TEXT_LG_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weights",
+      "name": "TEXT_LG_FONT_WEIGHT"
+    },
+    "TEXT_LG_LETTER_SPACING": {
+      "value": "normal",
+      "type": "size",
+      "category": "letter-spacings",
+      "name": "TEXT_LG_LETTER_SPACING"
+    },
+    "TEXT_XL_FONT_SIZE": {
+      "value": "1.75rem",
+      "type": "size",
+      "category": "font-sizes",
+      ".alias": {
+        "value": "1.75rem"
+      },
+      "name": "TEXT_XL_FONT_SIZE"
+    },
+    "TEXT_XL_LINE_HEIGHT": {
+      "value": "2.625rem",
+      "type": "number",
+      "category": "line-heights",
+      ".alias": {
+        "value": "2.625rem"
+      },
+      "name": "TEXT_XL_LINE_HEIGHT"
+    },
+    "TEXT_XL_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weights",
+      "name": "TEXT_XL_FONT_WEIGHT"
+    },
+    "TEXT_XL_LETTER_SPACING": {
+      "value": "normal",
+      "type": "size",
+      "category": "letter-spacings",
+      "name": "TEXT_XL_LETTER_SPACING"
+    },
+    "TEXT_XXL_FONT_SIZE": {
+      "value": "2.625rem",
+      "type": "size",
+      "category": "font-sizes",
+      ".alias": {
+        "value": "2.625rem"
+      },
+      "name": "TEXT_XXL_FONT_SIZE"
+    },
+    "TEXT_XXL_LINE_HEIGHT": {
+      "value": "3.375rem",
+      "type": "number",
+      "category": "line-heights",
+      "name": "TEXT_XXL_LINE_HEIGHT"
+    },
+    "TEXT_XXL_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weights",
+      "name": "TEXT_XXL_FONT_WEIGHT"
+    },
+    "TEXT_XXL_LETTER_SPACING": {
+      "value": "normal",
+      "type": "size",
+      "category": "letter-spacings",
+      "name": "TEXT_XXL_LETTER_SPACING"
     },
     "ZINDEX_AUTOSUGGEST": {
       "type": "number",
@@ -3200,6 +3389,7 @@
     "FONT_SIZE_LG",
     "FONT_SIZE_XL",
     "FONT_SIZE_XXL",
+    "FONT_WEIGHT_BOLD",
     "H6_FONT_SIZE",
     "H5_FONT_SIZE",
     "H4_FONT_SIZE",
@@ -3239,6 +3429,30 @@
     "LINK_WHITE_HOVER_COLOR",
     "LINK_WHITE_ACTIVE_COLOR",
     "LINK_WHITE_VISITED_COLOR",
+    "TEXT_XS_FONT_SIZE",
+    "TEXT_XS_LINE_HEIGHT",
+    "TEXT_XS_FONT_WEIGHT",
+    "TEXT_XS_LETTER_SPACING",
+    "TEXT_SM_FONT_SIZE",
+    "TEXT_SM_LINE_HEIGHT",
+    "TEXT_SM_FONT_WEIGHT",
+    "TEXT_SM_LETTER_SPACING",
+    "TEXT_BASE_FONT_SIZE",
+    "TEXT_BASE_LINE_HEIGHT",
+    "TEXT_BASE_FONT_WEIGHT",
+    "TEXT_BASE_LETTER_SPACING",
+    "TEXT_LG_FONT_SIZE",
+    "TEXT_LG_LINE_HEIGHT",
+    "TEXT_LG_FONT_WEIGHT",
+    "TEXT_LG_LETTER_SPACING",
+    "TEXT_XL_FONT_SIZE",
+    "TEXT_XL_LINE_HEIGHT",
+    "TEXT_XL_FONT_WEIGHT",
+    "TEXT_XL_LETTER_SPACING",
+    "TEXT_XXL_FONT_SIZE",
+    "TEXT_XXL_LINE_HEIGHT",
+    "TEXT_XXL_FONT_WEIGHT",
+    "TEXT_XXL_LETTER_SPACING",
     "ZINDEX_AUTOSUGGEST",
     "ZINDEX_POPOVER",
     "ZINDEX_TOOLTIP",

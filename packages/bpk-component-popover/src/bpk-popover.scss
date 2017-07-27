@@ -101,9 +101,9 @@
 
   &__heading {
     margin: 0;
-    font-weight: 700;
 
     @include bpk-text-base;
+    @include bpk-text-bold;
   }
 
   &__label {

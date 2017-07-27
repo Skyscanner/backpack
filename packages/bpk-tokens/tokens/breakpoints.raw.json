@@ -198,6 +198,9 @@
     "FONT_SIZE_XXL": {
       "value": "2.625rem"
     },
+    "FONT_WEIGHT_BOLD": {
+      "value": "700"
+    },
     "SPACING_XS": {
       "value": ".375rem"
     },

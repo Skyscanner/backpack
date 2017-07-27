@@ -26,15 +26,36 @@
 ///
 /// @param {variable} $font-size
 /// @param {variable} $line-height
+/// @param {variable} $font-weight false
+/// @param {variable} $letter-spacing false
 ///
 /// @access private
 
-@mixin _bpk-text-factory($font-size, $line-height) {
+@mixin _bpk-text-factory($font-size, $line-height, $font-weight: false, $letter-spacing: false) {
   font-size: $font-size;
   line-height: $line-height;
+
+  @if ($font-weight) {
+    font-weight: $font-weight;
+  }
+
+  @if ($letter-spacing) {
+    letter-spacing: $letter-spacing;
+  }
 }
 
-/// Small text and line height pairing.
+/// Extra small text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-xs();
+///   }
+
+@mixin bpk-text-xs {
+  @include _bpk-text-factory($bpk-text-sm-font-size, $bpk-text-sm-line-height, $bpk-text-sm-font-weight, $bpk-text-sm-letter-spacing);
+}
+
+/// Small text style
 ///
 /// @example scss
 ///   .selector {
@@ -42,10 +63,10 @@
 ///   }
 
 @mixin bpk-text-sm {
-  @include _bpk-text-factory($bpk-font-size-sm, $bpk-line-height-sm);
+  @include _bpk-text-factory($bpk-text-sm-font-size, $bpk-text-sm-line-height, $bpk-text-sm-font-weight, $bpk-text-sm-letter-spacing);
 }
 
-/// Base text and line height pairing.
+/// Base text style
 ///
 /// @example scss
 ///   .selector {
@@ -53,10 +74,10 @@
 ///   }
 
 @mixin bpk-text-base {
-  @include _bpk-text-factory($bpk-font-size-base, $bpk-line-height-base);
+  @include _bpk-text-factory($bpk-text-base-font-size, $bpk-text-base-line-height, $bpk-text-base-font-weight, $bpk-text-base-letter-spacing);
 }
 
-/// Large text and line height pairing.
+/// Large text style
 ///
 /// @example scss
 ///   .selector {
@@ -64,10 +85,10 @@
 ///   }
 
 @mixin bpk-text-lg {
-  @include _bpk-text-factory($bpk-font-size-lg, $bpk-line-height-lg);
+  @include _bpk-text-factory($bpk-text-lg-font-size, $bpk-text-lg-line-height, $bpk-text-lg-font-weight, $bpk-text-lg-letter-spacing);
 }
 
-/// Extra large text and line height pairing.
+/// Extra large text style
 ///
 /// @example scss
 ///   .selector {
@@ -75,10 +96,10 @@
 ///   }
 
 @mixin bpk-text-xl {
-  @include _bpk-text-factory($bpk-font-size-xl, $bpk-line-height-xl);
+  @include _bpk-text-factory($bpk-text-xl-font-size, $bpk-text-xl-line-height, $bpk-text-xl-font-weight, $bpk-text-xl-letter-spacing);
 }
 
-/// Extra extra large text and line height pairing.
+/// Extra extra large text style
 ///
 /// @example scss
 ///   .selector {
@@ -86,7 +107,19 @@
 ///   }
 
 @mixin bpk-text-xxl {
-  @include _bpk-text-factory($bpk-font-size-xxl, $bpk-line-height-xxl);
+  @include _bpk-text-factory($bpk-text-xxl-font-size, $bpk-text-xxl-line-height, $bpk-text-xxl-font-weight, $bpk-text-xxl-letter-spacing);
+}
+
+/// Bold text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-base();
+///     @include bpk-text-bold();
+///   }
+
+@mixin bpk-text-bold {
+  font-weight: $bpk-font-weight-bold;
 }
 
 /// Level 1 heading.
