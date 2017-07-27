@@ -103,9 +103,7 @@
     margin: 0;
 
     @include bpk-text-base;
-
-    // Temporary override as part of BPK-800; to be refactored after BPK-816 is done
-    font-weight: 700; // stylelint-disable-line order/order
+    @include bpk-text-bold;
   }
 
   &__label {

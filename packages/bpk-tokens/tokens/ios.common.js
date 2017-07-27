@@ -44,6 +44,7 @@ module.exports = {
   letterSpacingBase: "0",
   fontWeightNormal: "400",
   fontWeightSemibold: "600",
+  fontWeightBold: "700",
   fontWeightHeavy: "800",
   textXsFontSize: ".625rem",
   textXsFontWeight: "600",

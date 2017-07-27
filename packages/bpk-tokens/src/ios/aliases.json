@@ -16,6 +16,7 @@
     "LETTER_SPACING_BASE": "0",
     "FONT_WEIGHT_NORMAL": "400",
     "FONT_WEIGHT_SEMIBOLD": "600",
+    "FONT_WEIGHT_BOLD": "700",
     "FONT_WEIGHT_HEAVY": "800",
     "SPACING_XS": ".25rem",
     "SPACING_SM": ".5rem",

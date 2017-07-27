@@ -34,8 +34,7 @@
 
   &__price {
     @include bpk-text-lg;
-
-    font-weight: 700; // stylelint-disable-line order/order
+    @include bpk-text-bold;
   }
 
   &__main {

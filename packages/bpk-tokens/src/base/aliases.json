@@ -66,6 +66,7 @@
     "FONT_SIZE_LG": "1.5rem",
     "FONT_SIZE_XL": "1.75rem",
     "FONT_SIZE_XXL": "2.625rem",
+    "FONT_WEIGHT_BOLD": "700",
     "SPACING_XS": ".375rem",
     "SPACING_SM": ".75rem",
     "SPACING_MD": "1.125rem",

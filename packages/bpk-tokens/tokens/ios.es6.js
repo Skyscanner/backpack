@@ -42,6 +42,7 @@ export const letterSpacingSm = "-0.06px";
 export const letterSpacingBase = "0";
 export const fontWeightNormal = "400";
 export const fontWeightSemibold = "600";
+export const fontWeightBold = "700";
 export const fontWeightHeavy = "800";
 export const textXsFontSize = ".625rem";
 export const textXsFontWeight = "600";
@@ -120,4 +121,7 @@ textXxlFontSize,
 textXxlFontWeight,
 textXxlLineHeight,
 textXxlLetterSpacing,
+};
+export const fontWeights = {
+fontWeightBold,
 };

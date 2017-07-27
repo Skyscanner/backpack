@@ -45,6 +45,7 @@
   <property name="LETTER_SPACING_BASE" category="typesettings">0</property>
   <property name="FONT_WEIGHT_NORMAL" category="typesettings">400</property>
   <property name="FONT_WEIGHT_SEMIBOLD" category="typesettings">600</property>
+  <property name="FONT_WEIGHT_BOLD" category="font-weights">700</property>
   <property name="FONT_WEIGHT_HEAVY" category="typesettings">800</property>
   <property name="TEXT_XS_FONT_SIZE" category="typesettings">10</property>
   <property name="TEXT_XS_FONT_WEIGHT" category="typesettings">600</property>

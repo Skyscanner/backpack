@@ -288,6 +288,7 @@ export const fontSizeBase = "1rem";
 export const fontSizeLg = "1.5rem";
 export const fontSizeXl = "1.75rem";
 export const fontSizeXxl = "2.625rem";
+export const fontWeightBold = "700";
 export const h6FontSize = ".75rem";
 export const h5FontSize = ".75rem";
 export const h4FontSize = "1rem";
@@ -686,6 +687,21 @@ linkWhiteHoverColor,
 linkWhiteActiveColor,
 linkWhiteVisitedColor,
 };
+export const fontWeights = {
+fontWeightBold,
+h6FontWeight,
+h5FontWeight,
+h4FontWeight,
+h3FontWeight,
+h2FontWeight,
+h1FontWeight,
+textXsFontWeight,
+textSmFontWeight,
+textBaseFontWeight,
+textLgFontWeight,
+textXlFontWeight,
+textXxlFontWeight,
+};
 export const fontSizes = {
 h6FontSize,
 h5FontSize,
@@ -713,20 +729,6 @@ textBaseLineHeight,
 textLgLineHeight,
 textXlLineHeight,
 textXxlLineHeight,
-};
-export const fontWeights = {
-h6FontWeight,
-h5FontWeight,
-h4FontWeight,
-h3FontWeight,
-h2FontWeight,
-h1FontWeight,
-textXsFontWeight,
-textSmFontWeight,
-textBaseFontWeight,
-textLgFontWeight,
-textXlFontWeight,
-textXxlFontWeight,
 };
 export const textDecorations = {
 linkTextDecoration,

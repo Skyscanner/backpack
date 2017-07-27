@@ -290,6 +290,7 @@ module.exports = {
   fontSizeLg: "1.5rem",
   fontSizeXl: "1.75rem",
   fontSizeXxl: "2.625rem",
+  fontWeightBold: "700",
   h6FontSize: ".75rem",
   h5FontSize: ".75rem",
   h4FontSize: "1rem",

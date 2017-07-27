@@ -110,6 +110,18 @@
   @include _bpk-text-factory($bpk-text-xxl-font-size, $bpk-text-xxl-line-height, $bpk-text-xxl-font-weight, $bpk-text-xxl-letter-spacing);
 }
 
+/// Bold text style
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-base();
+///     @include bpk-text-bold();
+///   }
+
+@mixin bpk-text-bold {
+  font-weight: $bpk-font-weight-bold;
+}
+
 /// Level 1 heading.
 ///
 /// @example scss

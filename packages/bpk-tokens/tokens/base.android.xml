@@ -291,6 +291,7 @@
   <property name="FONT_SIZE_LG" category="typesettings">24</property>
   <property name="FONT_SIZE_XL" category="typesettings">28</property>
   <property name="FONT_SIZE_XXL" category="typesettings">42</property>
+  <property name="FONT_WEIGHT_BOLD" category="font-weights">700</property>
   <property name="H6_FONT_SIZE" category="font-sizes">12</property>
   <property name="H5_FONT_SIZE" category="font-sizes">12</property>
   <property name="H4_FONT_SIZE" category="font-sizes">16</property>

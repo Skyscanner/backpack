@@ -2305,6 +2305,15 @@
       "name": "fontSizeXxl"
     },
     {
+      "value": "700",
+      "type": "size",
+      "category": "font-weights",
+      ".alias": {
+        "value": "700"
+      },
+      "name": "fontWeightBold"
+    },
+    {
       "value": "12",
       "type": "size",
       "category": "font-sizes",
@@ -2611,12 +2620,18 @@
       "value": "12",
       "type": "size",
       "category": "font-sizes",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "textXsFontSize"
     },
     {
       "value": "18",
       "type": "number",
       "category": "line-heights",
+      ".alias": {
+        "value": "1.125rem"
+      },
       "name": "textXsLineHeight"
     },
     {
@@ -2635,12 +2650,18 @@
       "value": "12",
       "type": "size",
       "category": "font-sizes",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "textSmFontSize"
     },
     {
       "value": "18",
       "type": "number",
       "category": "line-heights",
+      ".alias": {
+        "value": "1.125rem"
+      },
       "name": "textSmLineHeight"
     },
     {
@@ -2659,12 +2680,18 @@
       "value": "16",
       "type": "size",
       "category": "font-sizes",
+      ".alias": {
+        "value": "1rem"
+      },
       "name": "textBaseFontSize"
     },
     {
       "value": "24",
       "type": "number",
       "category": "line-heights",
+      ".alias": {
+        "value": "1.5rem"
+      },
       "name": "textBaseLineHeight"
     },
     {
@@ -2683,12 +2710,18 @@
       "value": "24",
       "type": "size",
       "category": "font-sizes",
+      ".alias": {
+        "value": "1.5rem"
+      },
       "name": "textLgFontSize"
     },
     {
       "value": "30",
       "type": "number",
       "category": "line-heights",
+      ".alias": {
+        "value": "1.875rem"
+      },
       "name": "textLgLineHeight"
     },
     {
@@ -2707,12 +2740,18 @@
       "value": "28",
       "type": "size",
       "category": "font-sizes",
+      ".alias": {
+        "value": "1.75rem"
+      },
       "name": "textXlFontSize"
     },
     {
       "value": "42",
       "type": "number",
       "category": "line-heights",
+      ".alias": {
+        "value": "2.625rem"
+      },
       "name": "textXlLineHeight"
     },
     {
@@ -2731,6 +2770,9 @@
       "value": "42",
       "type": "size",
       "category": "font-sizes",
+      ".alias": {
+        "value": "2.625rem"
+      },
       "name": "textXxlFontSize"
     },
     {

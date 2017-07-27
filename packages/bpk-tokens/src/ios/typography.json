@@ -88,6 +88,11 @@
       "type": "number",
       "category": "typesettings"
     },
+    "FONT_WEIGHT_BOLD": {
+      "value": "{!FONT_WEIGHT_BOLD}",
+      "type": "size",
+      "category": "font-weights"
+    },
     "FONT_WEIGHT_HEAVY": {
       "value": "{!FONT_WEIGHT_HEAVY}",
       "type": "number",
