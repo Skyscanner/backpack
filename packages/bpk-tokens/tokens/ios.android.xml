@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  
+  Backpack - Skyscanner's Design System
+  
+  Copyright 2017 Skyscanner Ltd
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+    http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  
+-->
+<resources>
+  <property name="SPACING_XS" category="spacings">4</property>
+  <property name="SPACING_SM" category="spacings">8</property>
+  <property name="SPACING_MD" category="spacings">16</property>
+  <property name="SPACING_BASE" category="spacings">24</property>
+  <property name="SPACING_LG" category="spacings">32</property>
+  <property name="SPACING_XL" category="spacings">40</property>
+  <property name="SPACING_XXL" category="spacings">48</property>
+  <property name="ONE_PIXEL_REM" category="spacings">1</property>
+  <property name="FONT_SIZE_ROOT" category="typesettings">1</property>
+  <property name="FONT_SIZE_SM" category="typesettings">10</property>
+  <property name="FONT_SIZE_BASE" category="typesettings">14</property>
+  <property name="FONT_SIZE_LG" category="typesettings">16</property>
+  <property name="FONT_SIZE_XL" category="typesettings">24</property>
+  <property name="FONT_SIZE_XXL" category="typesettings">32</property>
+  <property name="LINE_HEIGHT_SM" category="typesettings">14</property>
+  <property name="LINE_HEIGHT_BASE" category="typesettings">16</property>
+  <property name="LINE_HEIGHT_LG" category="typesettings">24</property>
+  <property name="LINE_HEIGHT_XL" category="typesettings">32</property>
+  <property name="LINE_HEIGHT_XXL" category="typesettings">40</property>
+  <property name="LETTER_SPACING_XXS" category="typesettings">-0.2px</property>
+  <property name="LETTER_SPACING_XS" category="typesettings">-0.08px</property>
+  <property name="LETTER_SPACING_SM" category="typesettings">-0.06px</property>
+  <property name="LETTER_SPACING_BASE" category="typesettings">0</property>
+  <property name="FONT_WEIGHT_NORMAL" category="typesettings">400</property>
+  <property name="FONT_WEIGHT_SEMIBOLD" category="typesettings">600</property>
+  <property name="FONT_WEIGHT_HEAVY" category="typesettings">800</property>
+  <property name="TEXT_XS_FONT_SIZE" category="typesettings">10</property>
+  <property name="TEXT_XS_FONT_WEIGHT" category="typesettings">600</property>
+  <property name="TEXT_XS_LINE_HEIGHT" category="typesettings">14</property>
+  <property name="TEXT_XS_LETTER_SPACING" category="typesettings">-0.06px</property>
+  <property name="TEXT_SM_FONT_SIZE" category="typesettings">14</property>
+  <property name="TEXT_SM_FONT_WEIGHT" category="typesettings">400</property>
+  <property name="TEXT_SM_LINE_HEIGHT" category="typesettings">16</property>
+  <property name="TEXT_SM_LETTER_SPACING" category="typesettings">-0.2px</property>
+  <property name="TEXT_BASE_FONT_SIZE" category="typesettings">14</property>
+  <property name="TEXT_BASE_FONT_WEIGHT" category="typesettings">600</property>
+  <property name="TEXT_BASE_LINE_HEIGHT" category="typesettings">16</property>
+  <property name="TEXT_BASE_LETTER_SPACING" category="typesettings">0</property>
+  <property name="TEXT_LG_FONT_SIZE" category="typesettings">16</property>
+  <property name="TEXT_LG_FONT_WEIGHT" category="typesettings">600</property>
+  <property name="TEXT_LG_LINE_HEIGHT" category="typesettings">24</property>
+  <property name="TEXT_LG_LETTER_SPACING" category="typesettings">-0.08px</property>
+  <property name="TEXT_XL_FONT_SIZE" category="typesettings">24</property>
+  <property name="TEXT_XL_FONT_WEIGHT" category="typesettings">800</property>
+  <property name="TEXT_XL_LINE_HEIGHT" category="typesettings">32</property>
+  <property name="TEXT_XL_LETTER_SPACING" category="typesettings">0</property>
+  <property name="TEXT_XXL_FONT_SIZE" category="typesettings">32</property>
+  <property name="TEXT_XXL_FONT_WEIGHT" category="typesettings">800</property>
+  <property name="TEXT_XXL_LINE_HEIGHT" category="typesettings">40</property>
+  <property name="TEXT_XXL_LETTER_SPACING" category="typesettings">0</property>
+</resources>

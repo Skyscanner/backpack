@@ -330,6 +330,30 @@
   <color name="LINK_WHITE_HOVER_COLOR" category="text-colors">#ffffffff</color>
   <color name="LINK_WHITE_ACTIVE_COLOR" category="text-colors">#ffe6e4eb</color>
   <color name="LINK_WHITE_VISITED_COLOR" category="text-colors">#ffffffff</color>
+  <property name="TEXT_XS_FONT_SIZE" category="font-sizes">12</property>
+  <property name="TEXT_XS_LINE_HEIGHT" category="line-heights">18</property>
+  <property name="TEXT_XS_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="TEXT_XS_LETTER_SPACING" category="letter-spacings">normal</property>
+  <property name="TEXT_SM_FONT_SIZE" category="font-sizes">12</property>
+  <property name="TEXT_SM_LINE_HEIGHT" category="line-heights">18</property>
+  <property name="TEXT_SM_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="TEXT_SM_LETTER_SPACING" category="letter-spacings">normal</property>
+  <property name="TEXT_BASE_FONT_SIZE" category="font-sizes">16</property>
+  <property name="TEXT_BASE_LINE_HEIGHT" category="line-heights">24</property>
+  <property name="TEXT_BASE_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="TEXT_BASE_LETTER_SPACING" category="letter-spacings">normal</property>
+  <property name="TEXT_LG_FONT_SIZE" category="font-sizes">24</property>
+  <property name="TEXT_LG_LINE_HEIGHT" category="line-heights">30</property>
+  <property name="TEXT_LG_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="TEXT_LG_LETTER_SPACING" category="letter-spacings">normal</property>
+  <property name="TEXT_XL_FONT_SIZE" category="font-sizes">28</property>
+  <property name="TEXT_XL_LINE_HEIGHT" category="line-heights">42</property>
+  <property name="TEXT_XL_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="TEXT_XL_LETTER_SPACING" category="letter-spacings">normal</property>
+  <property name="TEXT_XXL_FONT_SIZE" category="font-sizes">42</property>
+  <property name="TEXT_XXL_LINE_HEIGHT" category="line-heights">54</property>
+  <property name="TEXT_XXL_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="TEXT_XXL_LETTER_SPACING" category="letter-spacings">normal</property>
   <property name="ZINDEX_AUTOSUGGEST" category="z-indices">900</property>
   <property name="ZINDEX_POPOVER" category="z-indices">900</property>
   <property name="ZINDEX_TOOLTIP" category="z-indices">900</property>

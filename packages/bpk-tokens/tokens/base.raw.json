@@ -2882,6 +2882,150 @@
       },
       "name": "LINK_WHITE_VISITED_COLOR"
     },
+    "TEXT_XS_FONT_SIZE": {
+      "value": ".75rem",
+      "type": "size",
+      "category": "font-sizes",
+      "name": "TEXT_XS_FONT_SIZE"
+    },
+    "TEXT_XS_LINE_HEIGHT": {
+      "value": "1.125rem",
+      "type": "number",
+      "category": "line-heights",
+      "name": "TEXT_XS_LINE_HEIGHT"
+    },
+    "TEXT_XS_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weights",
+      "name": "TEXT_XS_FONT_WEIGHT"
+    },
+    "TEXT_XS_LETTER_SPACING": {
+      "value": "normal",
+      "type": "size",
+      "category": "letter-spacings",
+      "name": "TEXT_XS_LETTER_SPACING"
+    },
+    "TEXT_SM_FONT_SIZE": {
+      "value": ".75rem",
+      "type": "size",
+      "category": "font-sizes",
+      "name": "TEXT_SM_FONT_SIZE"
+    },
+    "TEXT_SM_LINE_HEIGHT": {
+      "value": "1.125rem",
+      "type": "number",
+      "category": "line-heights",
+      "name": "TEXT_SM_LINE_HEIGHT"
+    },
+    "TEXT_SM_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weights",
+      "name": "TEXT_SM_FONT_WEIGHT"
+    },
+    "TEXT_SM_LETTER_SPACING": {
+      "value": "normal",
+      "type": "size",
+      "category": "letter-spacings",
+      "name": "TEXT_SM_LETTER_SPACING"
+    },
+    "TEXT_BASE_FONT_SIZE": {
+      "value": "1rem",
+      "type": "size",
+      "category": "font-sizes",
+      "name": "TEXT_BASE_FONT_SIZE"
+    },
+    "TEXT_BASE_LINE_HEIGHT": {
+      "value": "1.5rem",
+      "type": "number",
+      "category": "line-heights",
+      "name": "TEXT_BASE_LINE_HEIGHT"
+    },
+    "TEXT_BASE_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weights",
+      "name": "TEXT_BASE_FONT_WEIGHT"
+    },
+    "TEXT_BASE_LETTER_SPACING": {
+      "value": "normal",
+      "type": "size",
+      "category": "letter-spacings",
+      "name": "TEXT_BASE_LETTER_SPACING"
+    },
+    "TEXT_LG_FONT_SIZE": {
+      "value": "1.5rem",
+      "type": "size",
+      "category": "font-sizes",
+      "name": "TEXT_LG_FONT_SIZE"
+    },
+    "TEXT_LG_LINE_HEIGHT": {
+      "value": "1.875rem",
+      "type": "number",
+      "category": "line-heights",
+      "name": "TEXT_LG_LINE_HEIGHT"
+    },
+    "TEXT_LG_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weights",
+      "name": "TEXT_LG_FONT_WEIGHT"
+    },
+    "TEXT_LG_LETTER_SPACING": {
+      "value": "normal",
+      "type": "size",
+      "category": "letter-spacings",
+      "name": "TEXT_LG_LETTER_SPACING"
+    },
+    "TEXT_XL_FONT_SIZE": {
+      "value": "1.75rem",
+      "type": "size",
+      "category": "font-sizes",
+      "name": "TEXT_XL_FONT_SIZE"
+    },
+    "TEXT_XL_LINE_HEIGHT": {
+      "value": "2.625rem",
+      "type": "number",
+      "category": "line-heights",
+      "name": "TEXT_XL_LINE_HEIGHT"
+    },
+    "TEXT_XL_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weights",
+      "name": "TEXT_XL_FONT_WEIGHT"
+    },
+    "TEXT_XL_LETTER_SPACING": {
+      "value": "normal",
+      "type": "size",
+      "category": "letter-spacings",
+      "name": "TEXT_XL_LETTER_SPACING"
+    },
+    "TEXT_XXL_FONT_SIZE": {
+      "value": "2.625rem",
+      "type": "size",
+      "category": "font-sizes",
+      "name": "TEXT_XXL_FONT_SIZE"
+    },
+    "TEXT_XXL_LINE_HEIGHT": {
+      "value": "3.375rem",
+      "type": "number",
+      "category": "line-heights",
+      "name": "TEXT_XXL_LINE_HEIGHT"
+    },
+    "TEXT_XXL_FONT_WEIGHT": {
+      "value": "400",
+      "type": "number",
+      "category": "font-weights",
+      "name": "TEXT_XXL_FONT_WEIGHT"
+    },
+    "TEXT_XXL_LETTER_SPACING": {
+      "value": "normal",
+      "type": "size",
+      "category": "letter-spacings",
+      "name": "TEXT_XXL_LETTER_SPACING"
+    },
     "ZINDEX_AUTOSUGGEST": {
       "type": "number",
       "category": "z-indices",
@@ -3239,6 +3383,30 @@
     "LINK_WHITE_HOVER_COLOR",
     "LINK_WHITE_ACTIVE_COLOR",
     "LINK_WHITE_VISITED_COLOR",
+    "TEXT_XS_FONT_SIZE",
+    "TEXT_XS_LINE_HEIGHT",
+    "TEXT_XS_FONT_WEIGHT",
+    "TEXT_XS_LETTER_SPACING",
+    "TEXT_SM_FONT_SIZE",
+    "TEXT_SM_LINE_HEIGHT",
+    "TEXT_SM_FONT_WEIGHT",
+    "TEXT_SM_LETTER_SPACING",
+    "TEXT_BASE_FONT_SIZE",
+    "TEXT_BASE_LINE_HEIGHT",
+    "TEXT_BASE_FONT_WEIGHT",
+    "TEXT_BASE_LETTER_SPACING",
+    "TEXT_LG_FONT_SIZE",
+    "TEXT_LG_LINE_HEIGHT",
+    "TEXT_LG_FONT_WEIGHT",
+    "TEXT_LG_LETTER_SPACING",
+    "TEXT_XL_FONT_SIZE",
+    "TEXT_XL_LINE_HEIGHT",
+    "TEXT_XL_FONT_WEIGHT",
+    "TEXT_XL_LETTER_SPACING",
+    "TEXT_XXL_FONT_SIZE",
+    "TEXT_XXL_LINE_HEIGHT",
+    "TEXT_XXL_FONT_WEIGHT",
+    "TEXT_XXL_LETTER_SPACING",
     "ZINDEX_AUTOSUGGEST",
     "ZINDEX_POPOVER",
     "ZINDEX_TOOLTIP",

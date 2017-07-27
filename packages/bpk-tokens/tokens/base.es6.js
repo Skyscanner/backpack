@@ -327,6 +327,30 @@ export const linkWhiteColor = "rgb(255, 255, 255)";
 export const linkWhiteHoverColor = "rgb(255, 255, 255)";
 export const linkWhiteActiveColor = "rgb(230, 228, 235)";
 export const linkWhiteVisitedColor = "rgb(255, 255, 255)";
+export const textXsFontSize = ".75rem";
+export const textXsLineHeight = "1.125rem";
+export const textXsFontWeight = "400";
+export const textXsLetterSpacing = "normal";
+export const textSmFontSize = ".75rem";
+export const textSmLineHeight = "1.125rem";
+export const textSmFontWeight = "400";
+export const textSmLetterSpacing = "normal";
+export const textBaseFontSize = "1rem";
+export const textBaseLineHeight = "1.5rem";
+export const textBaseFontWeight = "400";
+export const textBaseLetterSpacing = "normal";
+export const textLgFontSize = "1.5rem";
+export const textLgLineHeight = "1.875rem";
+export const textLgFontWeight = "400";
+export const textLgLetterSpacing = "normal";
+export const textXlFontSize = "1.75rem";
+export const textXlLineHeight = "2.625rem";
+export const textXlFontWeight = "400";
+export const textXlLetterSpacing = "normal";
+export const textXxlFontSize = "2.625rem";
+export const textXxlLineHeight = "3.375rem";
+export const textXxlFontWeight = "400";
+export const textXxlLetterSpacing = "normal";
 export const zindexAutosuggest = "900";
 export const zindexPopover = "900";
 export const zindexTooltip = "900";
@@ -669,6 +693,12 @@ h4FontSize,
 h3FontSize,
 h2FontSize,
 h1FontSize,
+textXsFontSize,
+textSmFontSize,
+textBaseFontSize,
+textLgFontSize,
+textXlFontSize,
+textXxlFontSize,
 };
 export const lineHeights = {
 h6LineHeight,
@@ -677,6 +707,12 @@ h4LineHeight,
 h3LineHeight,
 h2LineHeight,
 h1LineHeight,
+textXsLineHeight,
+textSmLineHeight,
+textBaseLineHeight,
+textLgLineHeight,
+textXlLineHeight,
+textXxlLineHeight,
 };
 export const fontWeights = {
 h6FontWeight,
@@ -685,10 +721,24 @@ h4FontWeight,
 h3FontWeight,
 h2FontWeight,
 h1FontWeight,
+textXsFontWeight,
+textSmFontWeight,
+textBaseFontWeight,
+textLgFontWeight,
+textXlFontWeight,
+textXxlFontWeight,
 };
 export const textDecorations = {
 linkTextDecoration,
 linkHoverTextDecoration,
+};
+export const letterSpacings = {
+textXsLetterSpacing,
+textSmLetterSpacing,
+textBaseLetterSpacing,
+textLgLetterSpacing,
+textXlLetterSpacing,
+textXxlLetterSpacing,
 };
 export const zIndices = {
 zindexAutosuggest,

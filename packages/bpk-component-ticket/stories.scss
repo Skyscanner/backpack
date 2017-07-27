@@ -33,9 +33,9 @@
   }
 
   &__price {
-    font-weight: bold;
-
     @include bpk-text-lg;
+
+    font-weight: 700; // stylelint-disable-line order/order
   }
 
   &__main {
