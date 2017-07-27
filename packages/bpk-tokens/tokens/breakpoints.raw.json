@@ -1,144 +1,350 @@
 {
   "aliases": {
-    "WHITE": "#ffffff",
-    "BLUE_50": "#e1f4f8",
-    "BLUE_100": "#cbeef5",
-    "BLUE_200": "#b0e4ee",
-    "BLUE_300": "#7fd7e8",
-    "BLUE_400": "#40c4df",
-    "BLUE_500": "#00b2d6",
-    "BLUE_600": "#009dbd",
-    "BLUE_700": "#008ca8",
-    "BLUE_800": "#00758c",
-    "BLUE_900": "#005567",
-    "GRAY_50": "#F3F2F5",
-    "GRAY_100": "#E6E4EB",
-    "GRAY_200": "#CCC9D4",
-    "GRAY_300": "#B2AEBD",
-    "GRAY_400": "#9A95A7",
-    "GRAY_500": "#817B8F",
-    "GRAY_600": "#696179",
-    "GRAY_700": "#524C61",
-    "GRAY_800": "#3B344B",
-    "GRAY_900": "#252033",
-    "GREEN_50": "#dff7ec",
-    "GREEN_100": "#cbf5e2",
-    "GREEN_200": "#afedd1",
-    "GREEN_300": "#80e8b9",
-    "GREEN_400": "#40de97",
-    "GREEN_500": "#00d775",
-    "GREEN_600": "#00bd68",
-    "GREEN_700": "#00a85d",
-    "GREEN_800": "#008c4d",
-    "GREEN_900": "#006638",
-    "RED_50": "#fcf2f2",
-    "RED_100": "#ffd6d5",
-    "RED_200": "#ffbbba",
-    "RED_300": "#ff9694",
-    "RED_400": "#fe7471",
-    "RED_500": "#ff5452",
-    "RED_600": "#eb423f",
-    "RED_700": "#de322f",
-    "RED_800": "#cc1f1d",
-    "RED_900": "#a80300",
-    "YELLOW_50": "#FFF9E6",
-    "YELLOW_100": "#FFF3CF",
-    "YELLOW_200": "#FFECB8",
-    "YELLOW_300": "#FFE18C",
-    "YELLOW_400": "#FFCF4A",
-    "YELLOW_500": "#FFBB00",
-    "YELLOW_600": "#F0B000",
-    "YELLOW_700": "#E1A500",
-    "YELLOW_800": "#C28E00",
-    "YELLOW_900": "#9C7200",
-    "PINK_50": "#FDE4ED",
-    "PINK_100": "#FFBFD7",
-    "PINK_200": "#FF94BB",
-    "PINK_300": "#FF73A6",
-    "PINK_400": "#FF619B",
-    "PINK_500": "#FA488A",
-    "PINK_600": "#D92B6B",
-    "PINK_700": "#C50F52",
-    "PINK_800": "#B00C48",
-    "PINK_900": "#94053A",
-    "FONT_SIZE_SM": ".75rem",
-    "FONT_SIZE_BASE": "1rem",
-    "FONT_SIZE_LG": "1.5rem",
-    "FONT_SIZE_XL": "1.75rem",
-    "FONT_SIZE_XXL": "2.625rem",
-    "SPACING_XS": ".375rem",
-    "SPACING_SM": ".75rem",
-    "SPACING_MD": "1.125rem",
-    "SPACING_BASE": "1.5rem",
-    "SPACING_LG": "1.875rem",
-    "SPACING_XL": "2.250rem",
-    "SPACING_XXL": "2.625rem",
-    "BORDER_RADIUS_XS": ".1875rem",
-    "BORDER_RADIUS_SM": ".375rem",
-    "BORDER_RADIUS_PILL": "1.125rem",
-    "BORDER_RADIUS_PILL_LG": "1.3125rem",
-    "BORDER_SIZE_SM": "1px",
-    "BORDER_SIZE_LG": "2px",
-    "BORDER_SIZE_XL": "3px",
-    "BREAKPOINT_MOBILE": "32.25rem",
-    "BREAKPOINT_ABOVE_MOBILE": "32.3125rem",
-    "BREAKPOINT_TABLET": "50.25rem",
-    "BREAKPOINT_ABOVE_TABLET": "50.3125rem",
-    "BREAKPOINT_DESKTOP": "71.25rem",
-    "ONE_PIXEL_REM": ".0625rem",
-    "ZINDEX_AUTOSUGGEST": "900",
-    "ZINDEX_POPOVER": "900",
-    "ZINDEX_TOOLTIP": "900",
-    "ZINDEX_MODAL_SCRIM": "1000",
-    "ZINDEX_MODAL": "1100"
+    "WHITE": {
+      "value": "#ffffff"
+    },
+    "BLUE_50": {
+      "value": "#e1f4f8"
+    },
+    "BLUE_100": {
+      "value": "#cbeef5"
+    },
+    "BLUE_200": {
+      "value": "#b0e4ee"
+    },
+    "BLUE_300": {
+      "value": "#7fd7e8"
+    },
+    "BLUE_400": {
+      "value": "#40c4df"
+    },
+    "BLUE_500": {
+      "value": "#00b2d6"
+    },
+    "BLUE_600": {
+      "value": "#009dbd"
+    },
+    "BLUE_700": {
+      "value": "#008ca8"
+    },
+    "BLUE_800": {
+      "value": "#00758c"
+    },
+    "BLUE_900": {
+      "value": "#005567"
+    },
+    "GRAY_50": {
+      "value": "#F3F2F5"
+    },
+    "GRAY_100": {
+      "value": "#E6E4EB"
+    },
+    "GRAY_200": {
+      "value": "#CCC9D4"
+    },
+    "GRAY_300": {
+      "value": "#B2AEBD"
+    },
+    "GRAY_400": {
+      "value": "#9A95A7"
+    },
+    "GRAY_500": {
+      "value": "#817B8F"
+    },
+    "GRAY_600": {
+      "value": "#696179"
+    },
+    "GRAY_700": {
+      "value": "#524C61"
+    },
+    "GRAY_800": {
+      "value": "#3B344B"
+    },
+    "GRAY_900": {
+      "value": "#252033"
+    },
+    "GREEN_50": {
+      "value": "#dff7ec"
+    },
+    "GREEN_100": {
+      "value": "#cbf5e2"
+    },
+    "GREEN_200": {
+      "value": "#afedd1"
+    },
+    "GREEN_300": {
+      "value": "#80e8b9"
+    },
+    "GREEN_400": {
+      "value": "#40de97"
+    },
+    "GREEN_500": {
+      "value": "#00d775"
+    },
+    "GREEN_600": {
+      "value": "#00bd68"
+    },
+    "GREEN_700": {
+      "value": "#00a85d"
+    },
+    "GREEN_800": {
+      "value": "#008c4d"
+    },
+    "GREEN_900": {
+      "value": "#006638"
+    },
+    "RED_50": {
+      "value": "#fcf2f2"
+    },
+    "RED_100": {
+      "value": "#ffd6d5"
+    },
+    "RED_200": {
+      "value": "#ffbbba"
+    },
+    "RED_300": {
+      "value": "#ff9694"
+    },
+    "RED_400": {
+      "value": "#fe7471"
+    },
+    "RED_500": {
+      "value": "#ff5452"
+    },
+    "RED_600": {
+      "value": "#eb423f"
+    },
+    "RED_700": {
+      "value": "#de322f"
+    },
+    "RED_800": {
+      "value": "#cc1f1d"
+    },
+    "RED_900": {
+      "value": "#a80300"
+    },
+    "YELLOW_50": {
+      "value": "#FFF9E6"
+    },
+    "YELLOW_100": {
+      "value": "#FFF3CF"
+    },
+    "YELLOW_200": {
+      "value": "#FFECB8"
+    },
+    "YELLOW_300": {
+      "value": "#FFE18C"
+    },
+    "YELLOW_400": {
+      "value": "#FFCF4A"
+    },
+    "YELLOW_500": {
+      "value": "#FFBB00"
+    },
+    "YELLOW_600": {
+      "value": "#F0B000"
+    },
+    "YELLOW_700": {
+      "value": "#E1A500"
+    },
+    "YELLOW_800": {
+      "value": "#C28E00"
+    },
+    "YELLOW_900": {
+      "value": "#9C7200"
+    },
+    "PINK_50": {
+      "value": "#FDE4ED"
+    },
+    "PINK_100": {
+      "value": "#FFBFD7"
+    },
+    "PINK_200": {
+      "value": "#FF94BB"
+    },
+    "PINK_300": {
+      "value": "#FF73A6"
+    },
+    "PINK_400": {
+      "value": "#FF619B"
+    },
+    "PINK_500": {
+      "value": "#FA488A"
+    },
+    "PINK_600": {
+      "value": "#D92B6B"
+    },
+    "PINK_700": {
+      "value": "#C50F52"
+    },
+    "PINK_800": {
+      "value": "#B00C48"
+    },
+    "PINK_900": {
+      "value": "#94053A"
+    },
+    "FONT_SIZE_SM": {
+      "value": ".75rem"
+    },
+    "FONT_SIZE_BASE": {
+      "value": "1rem"
+    },
+    "FONT_SIZE_LG": {
+      "value": "1.5rem"
+    },
+    "FONT_SIZE_XL": {
+      "value": "1.75rem"
+    },
+    "FONT_SIZE_XXL": {
+      "value": "2.625rem"
+    },
+    "SPACING_XS": {
+      "value": ".375rem"
+    },
+    "SPACING_SM": {
+      "value": ".75rem"
+    },
+    "SPACING_MD": {
+      "value": "1.125rem"
+    },
+    "SPACING_BASE": {
+      "value": "1.5rem"
+    },
+    "SPACING_LG": {
+      "value": "1.875rem"
+    },
+    "SPACING_XL": {
+      "value": "2.250rem"
+    },
+    "SPACING_XXL": {
+      "value": "2.625rem"
+    },
+    "BORDER_RADIUS_XS": {
+      "value": ".1875rem"
+    },
+    "BORDER_RADIUS_SM": {
+      "value": ".375rem"
+    },
+    "BORDER_RADIUS_PILL": {
+      "value": "1.125rem"
+    },
+    "BORDER_RADIUS_PILL_LG": {
+      "value": "1.3125rem"
+    },
+    "BORDER_SIZE_SM": {
+      "value": "1px"
+    },
+    "BORDER_SIZE_LG": {
+      "value": "2px"
+    },
+    "BORDER_SIZE_XL": {
+      "value": "3px"
+    },
+    "BREAKPOINT_MOBILE": {
+      "value": "32.25rem"
+    },
+    "BREAKPOINT_ABOVE_MOBILE": {
+      "value": "32.3125rem"
+    },
+    "BREAKPOINT_TABLET": {
+      "value": "50.25rem"
+    },
+    "BREAKPOINT_ABOVE_TABLET": {
+      "value": "50.3125rem"
+    },
+    "BREAKPOINT_DESKTOP": {
+      "value": "71.25rem"
+    },
+    "ONE_PIXEL_REM": {
+      "value": ".0625rem"
+    },
+    "ZINDEX_AUTOSUGGEST": {
+      "value": "900"
+    },
+    "ZINDEX_POPOVER": {
+      "value": "900"
+    },
+    "ZINDEX_TOOLTIP": {
+      "value": "900"
+    },
+    "ZINDEX_MODAL_SCRIM": {
+      "value": "1000"
+    },
+    "ZINDEX_MODAL": {
+      "value": "1100"
+    }
   },
   "props": {
     "BREAKPOINT_MOBILE": {
       "category": "breakpoints",
       "value": "32.25rem",
       "type": "size",
+      ".alias": {
+        "value": "32.25rem"
+      },
       "name": "BREAKPOINT_MOBILE"
     },
     "BREAKPOINT_TABLET": {
       "category": "breakpoints",
       "value": "50.25rem",
       "type": "size",
+      ".alias": {
+        "value": "50.25rem"
+      },
       "name": "BREAKPOINT_TABLET"
     },
     "BREAKPOINT_DESKTOP": {
       "category": "breakpoints",
       "value": "71.25rem",
       "type": "size",
+      ".alias": {
+        "value": "71.25rem"
+      },
       "name": "BREAKPOINT_DESKTOP"
     },
     "BREAKPOINT_QUERY_MOBILE": {
       "category": "breakpoints",
       "value": "(max-width: 32.25rem)",
       "type": "media-query",
+      ".alias": {
+        "value": "32.25rem"
+      },
       "name": "BREAKPOINT_QUERY_MOBILE"
     },
     "BREAKPOINT_QUERY_TABLET": {
       "category": "breakpoints",
       "value": "(max-width: 50.25rem)",
       "type": "media-query",
+      ".alias": {
+        "value": "50.25rem"
+      },
       "name": "BREAKPOINT_QUERY_TABLET"
     },
     "BREAKPOINT_QUERY_TABLET_ONLY": {
       "category": "breakpoints",
       "value": "(min-width: 32.3125rem) and (max-width: 50.25rem)",
       "type": "media-query",
+      ".alias": {
+        "value": "50.25rem"
+      },
       "name": "BREAKPOINT_QUERY_TABLET_ONLY"
     },
     "BREAKPOINT_QUERY_ABOVE_MOBILE": {
       "category": "breakpoints",
       "value": "(min-width: 32.3125rem)",
       "type": "media-query",
+      ".alias": {
+        "value": "32.3125rem"
+      },
       "name": "BREAKPOINT_QUERY_ABOVE_MOBILE"
     },
     "BREAKPOINT_QUERY_ABOVE_TABLET": {
       "category": "breakpoints",
       "value": "(min-width: 50.3125rem)",
       "type": "media-query",
+      ".alias": {
+        "value": "50.3125rem"
+      },
       "name": "BREAKPOINT_QUERY_ABOVE_TABLET"
     }
   },

@@ -2,7 +2,25 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Breaking:**
+- bpk-tokens:
+  - Aliases in `.raw.json` format are now objects with a `value` property i.e.
+
+    ```json
+    "WHITE": {
+      "value": "#ffffff"
+    },
+    ```
+
+    ...instead of...
+
+    ```json
+    "WHITE": "#ffffff",
+    ```
+
+**Fixed:**
+- bpk-tokens:
+  - Android colours are now #AARRGGBB instead of #RRGGBBAA
 
 ## 2017-07-24 - Icon improvements and fixes
 

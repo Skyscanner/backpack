@@ -28,6 +28,9 @@
       "category": "buttons",
       "value": "rgb(52, 54, 61)",
       "type": "color",
+      ".alias": {
+        "value": "#34363D"
+      },
       "name": "buttonBackgroundColor"
     },
     {
@@ -40,6 +43,9 @@
       "category": "buttons",
       "value": "rgb(77, 80, 89)",
       "type": "color",
+      ".alias": {
+        "value": "#4D5059"
+      },
       "name": "buttonHoverBackgroundColor"
     },
     {
@@ -52,6 +58,9 @@
       "category": "buttons",
       "value": "rgb(77, 80, 89)",
       "type": "color",
+      ".alias": {
+        "value": "#4D5059"
+      },
       "name": "buttonActiveBackgroundColor"
     },
     {
@@ -64,6 +73,9 @@
       "category": "buttons",
       "value": "rgba(0, 0, 0, 0.5)",
       "type": "color",
+      ".alias": {
+        "value": "rgba(0,0,0,0.5)"
+      },
       "name": "buttonDisabledBackgroundColor"
     },
     {
@@ -76,6 +88,9 @@
       "category": "buttons",
       "value": "rgb(0, 221, 238)",
       "type": "color",
+      ".alias": {
+        "value": "#00DDEE"
+      },
       "name": "buttonColor"
     },
     {
@@ -88,6 +103,9 @@
       "category": "buttons",
       "value": "rgb(178, 174, 189)",
       "type": "color",
+      ".alias": {
+        "value": "#B2AEBD"
+      },
       "name": "buttonDisabledColor"
     },
     {
@@ -148,6 +166,9 @@
       "category": "buttons",
       "value": "rgba(0, 0, 0, 0.5)",
       "type": "color",
+      ".alias": {
+        "value": "rgba(0,0,0,0.5)"
+      },
       "name": "buttonSecondaryBackgroundColor"
     },
     {
@@ -160,6 +181,9 @@
       "category": "buttons",
       "value": "rgba(0, 187, 204, 0.2)",
       "type": "color",
+      ".alias": {
+        "value": "rgba(0,187,204,0.2)"
+      },
       "name": "buttonSecondaryHoverBackgroundColor"
     },
     {
@@ -172,6 +196,9 @@
       "category": "buttons",
       "value": "rgba(0, 187, 204, 0.2)",
       "type": "color",
+      ".alias": {
+        "value": "rgba(0,187,204,0.2)"
+      },
       "name": "buttonSecondaryActiveBackgroundColor"
     },
     {
@@ -184,6 +211,9 @@
       "category": "buttons",
       "value": "rgb(230, 228, 235)",
       "type": "color",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "buttonSecondaryDisabledBackgroundColor"
     },
     {
@@ -196,18 +226,27 @@
       "category": "buttons",
       "value": "rgb(52, 54, 61)",
       "type": "color",
+      ".alias": {
+        "value": "#34363D"
+      },
       "name": "buttonSecondaryColor"
     },
     {
       "category": "buttons",
       "value": "rgb(52, 54, 61)",
       "type": "color",
+      ".alias": {
+        "value": "#34363D"
+      },
       "name": "buttonSecondaryHoverColor"
     },
     {
       "category": "buttons",
       "value": "rgb(52, 54, 61)",
       "type": "color",
+      ".alias": {
+        "value": "#34363D"
+      },
       "name": "buttonSecondaryActiveColor"
     },
     {
@@ -268,6 +307,9 @@
       "category": "buttons",
       "value": "rgb(197, 0, 14)",
       "type": "color",
+      ".alias": {
+        "value": "#C5000E"
+      },
       "name": "buttonDestructiveColor"
     },
     {
@@ -280,6 +322,9 @@
       "category": "buttons",
       "value": "rgb(197, 0, 14)",
       "type": "color",
+      ".alias": {
+        "value": "#C5000E"
+      },
       "name": "buttonDestructiveHoverColor"
     },
     {
@@ -292,18 +337,27 @@
       "category": "buttons",
       "value": "rgb(255, 84, 82)",
       "type": "color",
+      ".alias": {
+        "value": "#ff5452"
+      },
       "name": "buttonDestructiveActiveColor"
     },
     {
       "category": "buttons",
       "value": "0 0 0 3px #ff5452 inset",
       "type": "box-shadow",
+      ".alias": {
+        "value": "#ff5452"
+      },
       "name": "buttonDestructiveActiveBoxShadow"
     },
     {
       "category": "buttons",
       "value": "rgb(230, 228, 235)",
       "type": "color",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "buttonDestructiveDisabledBackgroundColor"
     },
     {
@@ -316,6 +370,9 @@
       "category": "buttons",
       "value": "rgb(178, 174, 189)",
       "type": "color",
+      ".alias": {
+        "value": "#B2AEBD"
+      },
       "name": "buttonDestructiveDisabledColor"
     },
     {
@@ -334,6 +391,9 @@
       "category": "text-colors",
       "value": "rgb(0, 187, 204)",
       "type": "color",
+      ".alias": {
+        "value": "#00BBCC"
+      },
       "name": "linkColor"
     },
     {
@@ -346,6 +406,9 @@
       "category": "text-colors",
       "value": "rgb(52, 54, 61)",
       "type": "color",
+      ".alias": {
+        "value": "#34363D"
+      },
       "name": "linkHoverColor"
     },
     {
@@ -358,24 +421,36 @@
       "category": "text-colors",
       "value": "rgb(77, 80, 89)",
       "type": "color",
+      ".alias": {
+        "value": "#4D5059"
+      },
       "name": "linkActiveColor"
     },
     {
       "category": "text-colors",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#FFFFFF"
+      },
       "name": "linkWhiteColor"
     },
     {
       "category": "text-colors",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#FFFFFF"
+      },
       "name": "linkWhiteHoverColor"
     },
     {
       "category": "text-colors",
       "value": "rgb(247, 247, 247)",
       "type": "color",
+      ".alias": {
+        "value": "#F7F7F7"
+      },
       "name": "linkWhiteActiveColor"
     }
   ]

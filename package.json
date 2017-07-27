@@ -100,7 +100,7 @@
     "stylefmt": "^6.0.0",
     "stylelint": "^8.0.0",
     "stylelint-config-skyscanner": "^1.0.0",
-    "theo": "^4.3.0",
+    "theo": "^5.0.0",
     "tinycolor2": "^1.4.1",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.6.1",

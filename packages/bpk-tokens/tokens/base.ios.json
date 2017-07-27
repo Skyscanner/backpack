@@ -22,18 +22,27 @@
       "category": "autosuggest",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "autosuggestListBackgroundColor"
     },
     {
       "category": "autosuggest",
       "value": "rgb(230, 228, 235)",
       "type": "color",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "autosuggestListItemActiveBackgroundColor"
     },
     {
       "category": "autosuggest",
       "value": "rgb(243, 242, 245)",
       "type": "color",
+      ".alias": {
+        "value": "#F3F2F5"
+      },
       "name": "autosuggestListItemHighlightedBackgroundColor"
     },
     {
@@ -46,12 +55,18 @@
       "category": "badges",
       "value": "6",
       "type": "size",
+      ".alias": {
+        "value": ".375rem"
+      },
       "name": "badgePaddingX"
     },
     {
       "category": "badges",
       "value": "rgb(255, 187, 0)",
       "type": "color",
+      ".alias": {
+        "value": "#FFBB00"
+      },
       "name": "badgeBackgroundColor"
     },
     {
@@ -64,42 +79,63 @@
       "type": "size",
       "value": "3",
       "category": "radii",
+      ".alias": {
+        "value": ".1875rem"
+      },
       "name": "borderRadiusXs"
     },
     {
       "type": "size",
       "value": "6",
       "category": "radii",
+      ".alias": {
+        "value": ".375rem"
+      },
       "name": "borderRadiusSm"
     },
     {
       "type": "size",
       "value": "18",
       "category": "radii",
+      ".alias": {
+        "value": "1.125rem"
+      },
       "name": "borderRadiusPill"
     },
     {
       "type": "size",
       "value": "21",
       "category": "radii",
+      ".alias": {
+        "value": "1.3125rem"
+      },
       "name": "borderRadiusPillLg"
     },
     {
       "type": "size",
       "value": "1px",
       "category": "borders",
+      ".alias": {
+        "value": "1px"
+      },
       "name": "borderSizeSm"
     },
     {
       "type": "size",
       "value": "2px",
       "category": "borders",
+      ".alias": {
+        "value": "2px"
+      },
       "name": "borderSizeLg"
     },
     {
       "type": "size",
       "value": "3px",
       "category": "borders",
+      ".alias": {
+        "value": "3px"
+      },
       "name": "borderSizeXl"
     },
     {
@@ -124,60 +160,90 @@
       "category": "breakpoints",
       "value": "516",
       "type": "size",
+      ".alias": {
+        "value": "32.25rem"
+      },
       "name": "breakpointMobile"
     },
     {
       "category": "breakpoints",
       "value": "804",
       "type": "size",
+      ".alias": {
+        "value": "50.25rem"
+      },
       "name": "breakpointTablet"
     },
     {
       "category": "breakpoints",
       "value": "1140",
       "type": "size",
+      ".alias": {
+        "value": "71.25rem"
+      },
       "name": "breakpointDesktop"
     },
     {
       "category": "breakpoints",
       "value": "(max-width: 32.25rem)",
       "type": "media-query",
+      ".alias": {
+        "value": "32.25rem"
+      },
       "name": "breakpointQueryMobile"
     },
     {
       "category": "breakpoints",
       "value": "(max-width: 50.25rem)",
       "type": "media-query",
+      ".alias": {
+        "value": "50.25rem"
+      },
       "name": "breakpointQueryTablet"
     },
     {
       "category": "breakpoints",
       "value": "(min-width: 32.3125rem) and (max-width: 50.25rem)",
       "type": "media-query",
+      ".alias": {
+        "value": "50.25rem"
+      },
       "name": "breakpointQueryTabletOnly"
     },
     {
       "category": "breakpoints",
       "value": "(min-width: 32.3125rem)",
       "type": "media-query",
+      ".alias": {
+        "value": "32.3125rem"
+      },
       "name": "breakpointQueryAboveMobile"
     },
     {
       "category": "breakpoints",
       "value": "(min-width: 50.3125rem)",
       "type": "media-query",
+      ".alias": {
+        "value": "50.3125rem"
+      },
       "name": "breakpointQueryAboveTablet"
     },
     {
       "category": "buttons",
       "value": "6",
       "type": "size",
+      ".alias": {
+        "value": ".375rem"
+      },
       "name": "buttonPaddingY"
     },
     {
       "category": "buttons",
       "value": "18",
       "type": "size",
+      ".alias": {
+        "value": "1.125rem"
+      },
       "name": "buttonPaddingX"
     },
     {
@@ -190,30 +256,45 @@
       "category": "buttons",
       "value": "18",
       "type": "size",
+      ".alias": {
+        "value": "1.125rem"
+      },
       "name": "buttonBorderRadius"
     },
     {
       "category": "buttons",
       "value": "21",
       "type": "size",
+      ".alias": {
+        "value": "1.3125rem"
+      },
       "name": "buttonBorderRadiusLg"
     },
     {
       "category": "buttons",
       "value": "rgb(0, 215, 117)",
       "type": "color",
+      ".alias": {
+        "value": "#00d775"
+      },
       "name": "buttonBackgroundColor"
     },
     {
       "category": "buttons",
       "value": "linear-gradient(-180deg, #00d775 0, #00bd68 1)",
       "type": "background-image",
+      ".alias": {
+        "value": "#00bd68"
+      },
       "name": "buttonBackgroundImage"
     },
     {
       "category": "buttons",
       "value": "rgb(0, 189, 104)",
       "type": "color",
+      ".alias": {
+        "value": "#00bd68"
+      },
       "name": "buttonHoverBackgroundColor"
     },
     {
@@ -226,6 +307,9 @@
       "category": "buttons",
       "value": "rgb(0, 168, 93)",
       "type": "color",
+      ".alias": {
+        "value": "#00a85d"
+      },
       "name": "buttonActiveBackgroundColor"
     },
     {
@@ -238,6 +322,9 @@
       "category": "buttons",
       "value": "rgb(230, 228, 235)",
       "type": "color",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "buttonDisabledBackgroundColor"
     },
     {
@@ -250,18 +337,27 @@
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "buttonColor"
     },
     {
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "buttonHoverColor"
     },
     {
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "buttonActiveColor"
     },
     {
@@ -292,12 +388,18 @@
       "category": "buttons",
       "value": "rgb(178, 174, 189)",
       "type": "color",
+      ".alias": {
+        "value": "#B2AEBD"
+      },
       "name": "buttonDisabledColor"
     },
     {
       "category": "buttons",
       "value": "16",
       "type": "size",
+      ".alias": {
+        "value": "1rem"
+      },
       "name": "buttonFontSize"
     },
     {
@@ -310,6 +412,9 @@
       "category": "buttons",
       "value": "24",
       "type": "number",
+      ".alias": {
+        "value": "1.5rem"
+      },
       "name": "buttonLineHeight"
     },
     {
@@ -322,12 +427,18 @@
       "category": "buttons",
       "value": "6",
       "type": "size",
+      ".alias": {
+        "value": ".375rem"
+      },
       "name": "buttonLargePaddingY"
     },
     {
       "category": "buttons",
       "value": "24",
       "type": "size",
+      ".alias": {
+        "value": "1.5rem"
+      },
       "name": "buttonLargePaddingX"
     },
     {
@@ -340,18 +451,27 @@
       "category": "buttons",
       "value": "24",
       "type": "size",
+      ".alias": {
+        "value": "1.5rem"
+      },
       "name": "buttonLargeFontSize"
     },
     {
       "category": "buttons",
       "value": "30",
       "type": "number",
+      ".alias": {
+        "value": "1.875rem"
+      },
       "name": "buttonLargeLineHeight"
     },
     {
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "buttonSecondaryBackgroundColor"
     },
     {
@@ -364,6 +484,9 @@
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "buttonSecondaryHoverBackgroundColor"
     },
     {
@@ -376,6 +499,9 @@
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "buttonSecondaryActiveBackgroundColor"
     },
     {
@@ -388,6 +514,9 @@
       "category": "buttons",
       "value": "rgb(230, 228, 235)",
       "type": "color",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "buttonSecondaryDisabledBackgroundColor"
     },
     {
@@ -400,42 +529,63 @@
       "category": "buttons",
       "value": "rgb(0, 178, 214)",
       "type": "color",
+      ".alias": {
+        "value": "#00b2d6"
+      },
       "name": "buttonSecondaryColor"
     },
     {
       "category": "buttons",
       "value": "rgb(0, 178, 214)",
       "type": "color",
+      ".alias": {
+        "value": "#00b2d6"
+      },
       "name": "buttonSecondaryHoverColor"
     },
     {
       "category": "buttons",
       "value": "rgb(0, 178, 214)",
       "type": "color",
+      ".alias": {
+        "value": "#00b2d6"
+      },
       "name": "buttonSecondaryActiveColor"
     },
     {
       "category": "buttons",
       "value": "rgb(178, 174, 189)",
       "type": "color",
+      ".alias": {
+        "value": "#B2AEBD"
+      },
       "name": "buttonSecondaryDisabledColor"
     },
     {
       "category": "buttons",
       "value": "0 0 0 2px #E6E4EB inset",
       "type": "box-shadow",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "buttonSecondaryBoxShadow"
     },
     {
       "category": "buttons",
       "value": "0 0 0 2px #00b2d6 inset",
       "type": "box-shadow",
+      ".alias": {
+        "value": "#00b2d6"
+      },
       "name": "buttonSecondaryHoverBoxShadow"
     },
     {
       "category": "buttons",
       "value": "0 0 0 3px #00b2d6 inset",
       "type": "box-shadow",
+      ".alias": {
+        "value": "#00b2d6"
+      },
       "name": "buttonSecondaryActiveBoxShadow"
     },
     {
@@ -448,42 +598,63 @@
       "category": "buttons",
       "value": "rgb(255, 84, 82)",
       "type": "color",
+      ".alias": {
+        "value": "#ff5452"
+      },
       "name": "buttonDestructiveColor"
     },
     {
       "category": "buttons",
       "value": "0 0 0 2px #E6E4EB inset",
       "type": "box-shadow",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "buttonDestructiveBoxShadow"
     },
     {
       "category": "buttons",
       "value": "rgb(255, 84, 82)",
       "type": "color",
+      ".alias": {
+        "value": "#ff5452"
+      },
       "name": "buttonDestructiveHoverColor"
     },
     {
       "category": "buttons",
       "value": "0 0 0 2px #ff5452 inset",
       "type": "box-shadow",
+      ".alias": {
+        "value": "#ff5452"
+      },
       "name": "buttonDestructiveHoverBoxShadow"
     },
     {
       "category": "buttons",
       "value": "rgb(255, 84, 82)",
       "type": "color",
+      ".alias": {
+        "value": "#ff5452"
+      },
       "name": "buttonDestructiveActiveColor"
     },
     {
       "category": "buttons",
       "value": "0 0 0 3px #ff5452 inset",
       "type": "box-shadow",
+      ".alias": {
+        "value": "#ff5452"
+      },
       "name": "buttonDestructiveActiveBoxShadow"
     },
     {
       "category": "buttons",
       "value": "rgb(230, 228, 235)",
       "type": "color",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "buttonDestructiveDisabledBackgroundColor"
     },
     {
@@ -496,6 +667,9 @@
       "category": "buttons",
       "value": "rgb(178, 174, 189)",
       "type": "color",
+      ".alias": {
+        "value": "#B2AEBD"
+      },
       "name": "buttonDestructiveDisabledColor"
     },
     {
@@ -508,18 +682,27 @@
       "category": "buttons",
       "value": "rgb(0, 178, 214)",
       "type": "color",
+      ".alias": {
+        "value": "#00b2d6"
+      },
       "name": "buttonSelectedBackgroundColor"
     },
     {
       "category": "buttons",
       "value": "linear-gradient(-180deg, #009dbd 0, #008ca8 1)",
       "type": "background-image",
+      ".alias": {
+        "value": "#008ca8"
+      },
       "name": "buttonSelectedBackgroundImage"
     },
     {
       "category": "buttons",
       "value": "rgb(0, 140, 168)",
       "type": "color",
+      ".alias": {
+        "value": "#008ca8"
+      },
       "name": "buttonSelectedHoverBackgroundColor"
     },
     {
@@ -532,6 +715,9 @@
       "category": "buttons",
       "value": "rgb(0, 117, 140)",
       "type": "color",
+      ".alias": {
+        "value": "#00758c"
+      },
       "name": "buttonSelectedActiveBackgroundColor"
     },
     {
@@ -544,18 +730,27 @@
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "buttonSelectedColor"
     },
     {
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "buttonSelectedHoverColor"
     },
     {
       "category": "buttons",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "buttonSelectedActiveColor"
     },
     {
@@ -586,18 +781,27 @@
       "category": "buttons",
       "value": "linear-gradient(-180deg, #FA488A 0, #D92B6B 1)",
       "type": "background-image",
+      ".alias": {
+        "value": "#D92B6B"
+      },
       "name": "buttonFeaturedBackgroundImage"
     },
     {
       "category": "buttons",
       "value": "rgb(217, 43, 107)",
       "type": "color",
+      ".alias": {
+        "value": "#D92B6B"
+      },
       "name": "buttonFeaturedHoverBackgroundColor"
     },
     {
       "category": "buttons",
       "value": "rgb(197, 15, 82)",
       "type": "color",
+      ".alias": {
+        "value": "#C50F52"
+      },
       "name": "buttonFeaturedActiveBackgroundColor"
     },
     {
@@ -610,6 +814,9 @@
       "category": "buttons",
       "value": "rgb(230, 228, 235)",
       "type": "color",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "buttonFeaturedDisabledBackgroundColor"
     },
     {
@@ -622,498 +829,747 @@
       "category": "calendar",
       "value": "12",
       "type": "size",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "calendarPadding"
     },
     {
       "category": "calendar",
       "value": "6",
       "type": "size",
+      ".alias": {
+        "value": ".375rem"
+      },
       "name": "calendarDaySpacing"
     },
     {
       "category": "calendar",
       "value": "36",
       "type": "size",
+      ".alias": {
+        "value": "2.250rem"
+      },
       "name": "calendarDaySize"
     },
     {
       "category": "calendar",
       "value": "rgb(0, 178, 214)",
       "type": "color",
+      ".alias": {
+        "value": "#00b2d6"
+      },
       "name": "calendarDayColor"
     },
     {
       "category": "calendar",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "calendarDayBackgroundColor"
     },
     {
       "category": "calendar",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "calendarDaySelectedColor"
     },
     {
       "category": "calendar",
       "value": "rgb(0, 140, 168)",
       "type": "color",
+      ".alias": {
+        "value": "#008ca8"
+      },
       "name": "calendarDaySelectedBackgroundColor"
     },
     {
       "category": "calendar",
       "value": "rgb(82, 76, 97)",
       "type": "color",
+      ".alias": {
+        "value": "#524C61"
+      },
       "name": "calendarDayHoverColor"
     },
     {
       "category": "calendar",
       "value": "rgb(243, 242, 245)",
       "type": "color",
+      ".alias": {
+        "value": "#F3F2F5"
+      },
       "name": "calendarDayHoverBackgroundColor"
     },
     {
       "category": "calendar",
       "value": "rgb(37, 32, 51)",
       "type": "color",
+      ".alias": {
+        "value": "#252033"
+      },
       "name": "calendarDayActiveColor"
     },
     {
       "category": "calendar",
       "value": "rgb(230, 228, 235)",
       "type": "color",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "calendarDayActiveBackgroundColor"
     },
     {
       "category": "calendar",
       "value": "rgb(230, 228, 235)",
       "type": "color",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "calendarDayDisabledColor"
     },
     {
       "category": "calendar",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "calendarDayDisabledBackgroundColor"
     },
     {
       "category": "calendar",
       "value": "rgb(178, 174, 189)",
       "type": "color",
+      ".alias": {
+        "value": "#B2AEBD"
+      },
       "name": "calendarDayOutsideColor"
     },
     {
       "category": "calendar",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "calendarDayOutsideBackgroundColor"
     },
     {
       "category": "calendar",
       "value": "rgb(0, 178, 214)",
       "type": "color",
+      ".alias": {
+        "value": "#00b2d6"
+      },
       "name": "calendarNavIconFill"
     },
     {
       "category": "calendar",
       "value": "rgb(0, 157, 189)",
       "type": "color",
+      ".alias": {
+        "value": "#009dbd"
+      },
       "name": "calendarNavIconHoverFill"
     },
     {
       "category": "calendar",
       "value": "rgb(0, 140, 168)",
       "type": "color",
+      ".alias": {
+        "value": "#008ca8"
+      },
       "name": "calendarNavIconActiveFill"
     },
     {
       "category": "calendar",
       "value": "rgb(230, 228, 235)",
       "type": "color",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "calendarNavIconDisabledFill"
     },
     {
       "category": "cards",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "cardBackgroundColor"
     },
     {
       "category": "cards",
       "value": "rgb(82, 76, 97)",
       "type": "color",
+      ".alias": {
+        "value": "#524C61"
+      },
       "name": "cardColor"
     },
     {
       "category": "cards",
       "value": "12",
       "type": "size",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "cardPadding"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(255, 255, 255)",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "colorWhite"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(225, 244, 248)",
+      ".alias": {
+        "value": "#e1f4f8"
+      },
       "name": "colorBlue50"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(203, 238, 245)",
+      ".alias": {
+        "value": "#cbeef5"
+      },
       "name": "colorBlue100"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(176, 228, 238)",
+      ".alias": {
+        "value": "#b0e4ee"
+      },
       "name": "colorBlue200"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(127, 215, 232)",
+      ".alias": {
+        "value": "#7fd7e8"
+      },
       "name": "colorBlue300"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(64, 196, 223)",
+      ".alias": {
+        "value": "#40c4df"
+      },
       "name": "colorBlue400"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(0, 178, 214)",
+      ".alias": {
+        "value": "#00b2d6"
+      },
       "name": "colorBlue500"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(0, 157, 189)",
+      ".alias": {
+        "value": "#009dbd"
+      },
       "name": "colorBlue600"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(0, 140, 168)",
+      ".alias": {
+        "value": "#008ca8"
+      },
       "name": "colorBlue700"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(0, 117, 140)",
+      ".alias": {
+        "value": "#00758c"
+      },
       "name": "colorBlue800"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(0, 85, 103)",
+      ".alias": {
+        "value": "#005567"
+      },
       "name": "colorBlue900"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(243, 242, 245)",
+      ".alias": {
+        "value": "#F3F2F5"
+      },
       "name": "colorGray50"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(230, 228, 235)",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "colorGray100"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(204, 201, 212)",
+      ".alias": {
+        "value": "#CCC9D4"
+      },
       "name": "colorGray200"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(178, 174, 189)",
+      ".alias": {
+        "value": "#B2AEBD"
+      },
       "name": "colorGray300"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(154, 149, 167)",
+      ".alias": {
+        "value": "#9A95A7"
+      },
       "name": "colorGray400"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(129, 123, 143)",
+      ".alias": {
+        "value": "#817B8F"
+      },
       "name": "colorGray500"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(105, 97, 121)",
+      ".alias": {
+        "value": "#696179"
+      },
       "name": "colorGray600"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(82, 76, 97)",
+      ".alias": {
+        "value": "#524C61"
+      },
       "name": "colorGray700"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(59, 52, 75)",
+      ".alias": {
+        "value": "#3B344B"
+      },
       "name": "colorGray800"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(37, 32, 51)",
+      ".alias": {
+        "value": "#252033"
+      },
       "name": "colorGray900"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(223, 247, 236)",
+      ".alias": {
+        "value": "#dff7ec"
+      },
       "name": "colorGreen50"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(203, 245, 226)",
+      ".alias": {
+        "value": "#cbf5e2"
+      },
       "name": "colorGreen100"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(175, 237, 209)",
+      ".alias": {
+        "value": "#afedd1"
+      },
       "name": "colorGreen200"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(128, 232, 185)",
+      ".alias": {
+        "value": "#80e8b9"
+      },
       "name": "colorGreen300"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(64, 222, 151)",
+      ".alias": {
+        "value": "#40de97"
+      },
       "name": "colorGreen400"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(0, 215, 117)",
+      ".alias": {
+        "value": "#00d775"
+      },
       "name": "colorGreen500"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(0, 189, 104)",
+      ".alias": {
+        "value": "#00bd68"
+      },
       "name": "colorGreen600"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(0, 168, 93)",
+      ".alias": {
+        "value": "#00a85d"
+      },
       "name": "colorGreen700"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(0, 140, 77)",
+      ".alias": {
+        "value": "#008c4d"
+      },
       "name": "colorGreen800"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(0, 102, 56)",
+      ".alias": {
+        "value": "#006638"
+      },
       "name": "colorGreen900"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(252, 242, 242)",
+      ".alias": {
+        "value": "#fcf2f2"
+      },
       "name": "colorRed50"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(255, 214, 213)",
+      ".alias": {
+        "value": "#ffd6d5"
+      },
       "name": "colorRed100"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(255, 187, 186)",
+      ".alias": {
+        "value": "#ffbbba"
+      },
       "name": "colorRed200"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(255, 150, 148)",
+      ".alias": {
+        "value": "#ff9694"
+      },
       "name": "colorRed300"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(254, 116, 113)",
+      ".alias": {
+        "value": "#fe7471"
+      },
       "name": "colorRed400"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(255, 84, 82)",
+      ".alias": {
+        "value": "#ff5452"
+      },
       "name": "colorRed500"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(235, 66, 63)",
+      ".alias": {
+        "value": "#eb423f"
+      },
       "name": "colorRed600"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(222, 50, 47)",
+      ".alias": {
+        "value": "#de322f"
+      },
       "name": "colorRed700"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(204, 31, 29)",
+      ".alias": {
+        "value": "#cc1f1d"
+      },
       "name": "colorRed800"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(168, 3, 0)",
+      ".alias": {
+        "value": "#a80300"
+      },
       "name": "colorRed900"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(255, 249, 230)",
+      ".alias": {
+        "value": "#FFF9E6"
+      },
       "name": "colorYellow50"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(255, 243, 207)",
+      ".alias": {
+        "value": "#FFF3CF"
+      },
       "name": "colorYellow100"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(255, 236, 184)",
+      ".alias": {
+        "value": "#FFECB8"
+      },
       "name": "colorYellow200"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(255, 225, 140)",
+      ".alias": {
+        "value": "#FFE18C"
+      },
       "name": "colorYellow300"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(255, 207, 74)",
+      ".alias": {
+        "value": "#FFCF4A"
+      },
       "name": "colorYellow400"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(255, 187, 0)",
+      ".alias": {
+        "value": "#FFBB00"
+      },
       "name": "colorYellow500"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(240, 176, 0)",
+      ".alias": {
+        "value": "#F0B000"
+      },
       "name": "colorYellow600"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(225, 165, 0)",
+      ".alias": {
+        "value": "#E1A500"
+      },
       "name": "colorYellow700"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(194, 142, 0)",
+      ".alias": {
+        "value": "#C28E00"
+      },
       "name": "colorYellow800"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(156, 114, 0)",
+      ".alias": {
+        "value": "#9C7200"
+      },
       "name": "colorYellow900"
     },
     {
       "type": "background-image",
       "category": "colors",
       "value": "linear-gradient(135deg, #00b2d6 0, #02DDD8 1)",
+      ".alias": {
+        "value": "#00b2d6"
+      },
       "name": "primaryGradient"
     },
     {
       "category": "forms",
       "value": "36",
       "type": "size",
+      ".alias": {
+        "value": "2.250rem"
+      },
       "name": "inputHeight"
     },
     {
       "category": "forms",
       "value": "12",
       "type": "size",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "inputPaddingX"
     },
     {
       "category": "forms",
       "value": "6",
       "type": "size",
+      ".alias": {
+        "value": ".375rem"
+      },
       "name": "inputPaddingY"
     },
     {
       "category": "forms",
       "value": "1",
       "type": "size",
+      ".alias": {
+        "value": ".0625rem"
+      },
       "name": "inputBorderWidth"
     },
     {
       "category": "forms",
       "value": "solid .0625rem #E6E4EB",
       "type": "border",
+      ".alias": {
+        "value": ".0625rem"
+      },
       "name": "inputBorder"
     },
     {
       "category": "forms",
       "value": "3",
       "type": "radius",
+      ".alias": {
+        "value": ".1875rem"
+      },
       "name": "inputBorderRadius"
     },
     {
       "category": "forms",
       "value": "#ffffff",
       "type": "background",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "inputBackground"
     },
     {
       "category": "forms",
       "value": "rgb(82, 76, 97)",
       "type": "color",
+      ".alias": {
+        "value": "#524C61"
+      },
       "name": "inputColor"
     },
     {
       "category": "forms",
       "value": "rgb(129, 123, 143)",
       "type": "color",
+      ".alias": {
+        "value": "#817B8F"
+      },
       "name": "inputPlaceholderColor"
     },
     {
@@ -1126,114 +1582,171 @@
       "category": "forms",
       "value": "rgb(243, 242, 245)",
       "type": "color",
+      ".alias": {
+        "value": "#F3F2F5"
+      },
       "name": "inputDisabledBorderColor"
     },
     {
       "category": "forms",
       "value": "rgb(178, 174, 189)",
       "type": "color",
+      ".alias": {
+        "value": "#B2AEBD"
+      },
       "name": "inputDisabledColor"
     },
     {
       "category": "forms",
       "value": "42",
       "type": "size",
+      ".alias": {
+        "value": "2.625rem"
+      },
       "name": "inputLargeHeight"
     },
     {
       "category": "forms",
       "value": "36",
       "type": "size",
+      ".alias": {
+        "value": "2.250rem"
+      },
       "name": "selectHeight"
     },
     {
       "category": "forms",
       "value": "6",
       "type": "size",
+      ".alias": {
+        "value": ".375rem"
+      },
       "name": "selectPaddingTop"
     },
     {
       "category": "forms",
       "value": "30",
       "type": "size",
+      ".alias": {
+        "value": "1.875rem"
+      },
       "name": "selectPaddingRight"
     },
     {
       "category": "forms",
       "value": "6",
       "type": "size",
+      ".alias": {
+        "value": ".375rem"
+      },
       "name": "selectPaddingBottom"
     },
     {
       "category": "forms",
       "value": "12",
       "type": "size",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "selectPaddingLeft"
     },
     {
       "category": "forms",
       "value": "1",
       "type": "size",
+      ".alias": {
+        "value": ".0625rem"
+      },
       "name": "selectBorderWidth"
     },
     {
       "category": "forms",
       "value": "solid .0625rem #E6E4EB",
       "type": "border",
+      ".alias": {
+        "value": ".0625rem"
+      },
       "name": "selectBorder"
     },
     {
       "category": "forms",
       "value": "3",
       "type": "radius",
+      ".alias": {
+        "value": ".1875rem"
+      },
       "name": "selectBorderRadius"
     },
     {
       "category": "forms",
       "value": "rgb(82, 76, 97)",
       "type": "color",
+      ".alias": {
+        "value": "#524C61"
+      },
       "name": "selectColor"
     },
     {
       "category": "forms",
       "value": "rgb(243, 242, 245)",
       "type": "color",
+      ".alias": {
+        "value": "#F3F2F5"
+      },
       "name": "selectDisabledBorderColor"
     },
     {
       "category": "forms",
       "value": "rgb(178, 174, 189)",
       "type": "color",
+      ".alias": {
+        "value": "#B2AEBD"
+      },
       "name": "selectDisabledColor"
     },
     {
       "category": "forms",
       "value": "42",
       "type": "size",
+      ".alias": {
+        "value": "2.625rem"
+      },
       "name": "selectLargeHeight"
     },
     {
       "category": "forms",
       "value": "rgb(82, 76, 97)",
       "type": "color",
+      ".alias": {
+        "value": "#524C61"
+      },
       "name": "labelColor"
     },
     {
       "category": "forms",
       "value": "rgb(178, 174, 189)",
       "type": "color",
+      ".alias": {
+        "value": "#B2AEBD"
+      },
       "name": "labelDisabledColor"
     },
     {
       "category": "forms",
       "value": "12",
       "type": "size",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "labelFontSize"
     },
     {
       "category": "forms",
       "value": "18",
       "type": "number",
+      ".alias": {
+        "value": "1.125rem"
+      },
       "name": "labelLineHeight"
     },
     {
@@ -1246,48 +1759,72 @@
       "category": "forms",
       "value": "6",
       "type": "size",
+      ".alias": {
+        "value": ".375rem"
+      },
       "name": "formValidationPaddingY"
     },
     {
       "category": "forms",
       "value": "12",
       "type": "size",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "formValidationPaddingX"
     },
     {
       "category": "forms",
       "value": "rgb(255, 84, 82)",
       "type": "color",
+      ".alias": {
+        "value": "#ff5452"
+      },
       "name": "formValidationBackgroundColor"
     },
     {
       "category": "forms",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "formValidationColor"
     },
     {
       "category": "forms",
       "value": "6",
       "type": "size",
+      ".alias": {
+        "value": ".375rem"
+      },
       "name": "formValidationArrowSize"
     },
     {
       "category": "forms",
       "value": "24",
       "type": "size",
+      ".alias": {
+        "value": "1.5rem"
+      },
       "name": "formValidationCheckboxArrowLeft"
     },
     {
       "category": "forms",
       "value": "2.625rem * 2",
       "type": "size",
+      ".alias": {
+        "value": "2.625rem"
+      },
       "name": "textareaMinHeight"
     },
     {
       "category": "forms",
       "value": "rgb(255, 84, 82)",
       "type": "color",
+      ".alias": {
+        "value": "#ff5452"
+      },
       "name": "requiredColor"
     },
     {
@@ -1300,36 +1837,54 @@
       "category": "grids",
       "value": "24",
       "type": "size",
+      ".alias": {
+        "value": "1.5rem"
+      },
       "name": "gridGutter"
     },
     {
       "category": "grids",
       "value": "24",
       "type": "size",
+      ".alias": {
+        "value": "1.5rem"
+      },
       "name": "gridContainerPadding"
     },
     {
       "category": "grids",
       "value": "12",
       "type": "size",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "gridContainerMobilePadding"
     },
     {
       "type": "size",
       "category": "icons",
       "value": "18",
+      ".alias": {
+        "value": "1.125rem"
+      },
       "name": "iconSizeSm"
     },
     {
       "type": "size",
       "category": "icons",
       "value": "24",
+      ".alias": {
+        "value": "1.5rem"
+      },
       "name": "iconSizeLg"
     },
     {
       "category": "modals",
       "value": "rgb(178, 174, 189)",
       "type": "color",
+      ".alias": {
+        "value": "#B2AEBD"
+      },
       "name": "modalScrimBackgroundColor"
     },
     {
@@ -1354,6 +1909,9 @@
       "category": "modals",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "modalBackgroundColor"
     },
     {
@@ -1372,180 +1930,270 @@
       "category": "modals",
       "value": "516",
       "type": "size",
+      ".alias": {
+        "value": "32.25rem"
+      },
       "name": "modalMaxWidth"
     },
     {
       "category": "modals",
       "value": "804",
       "type": "size",
+      ".alias": {
+        "value": "50.25rem"
+      },
       "name": "modalWideMaxWidth"
     },
     {
       "category": "modals",
       "value": "12",
       "type": "box-shadow",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "modalHeaderPadding"
     },
     {
       "category": "modals",
       "value": "rgb(129, 123, 143)",
       "type": "color",
+      ".alias": {
+        "value": "#817B8F"
+      },
       "name": "modalCloseIconFill"
     },
     {
       "category": "modals",
       "value": "rgb(82, 76, 97)",
       "type": "color",
+      ".alias": {
+        "value": "#524C61"
+      },
       "name": "modalCloseIconHoverFill"
     },
     {
       "category": "modals",
       "value": "12",
       "type": "size",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "modalContentPadding"
     },
     {
       "category": "notifications",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "bannerAlertBackgroundColor"
     },
     {
       "category": "notifications",
       "value": "6",
       "type": "size",
+      ".alias": {
+        "value": ".375rem"
+      },
       "name": "bannerAlertHeaderPaddingY"
     },
     {
       "category": "notifications",
       "value": "12",
       "type": "size",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "bannerAlertHeaderPaddingX"
     },
     {
       "category": "notifications",
       "value": "rgb(243, 242, 245)",
       "type": "color",
+      ".alias": {
+        "value": "#F3F2F5"
+      },
       "name": "bannerAlertHeaderExpandableHoverBackgroundColor"
     },
     {
       "category": "notifications",
       "value": "rgb(230, 228, 235)",
       "type": "color",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "bannerAlertHeaderExpandableActiveBackgroundColor"
     },
     {
       "category": "notifications",
       "value": "rgb(0, 215, 117)",
       "type": "color",
+      ".alias": {
+        "value": "#00d775"
+      },
       "name": "bannerAlertSuccessColor"
     },
     {
       "category": "notifications",
       "value": "rgb(255, 187, 0)",
       "type": "color",
+      ".alias": {
+        "value": "#FFBB00"
+      },
       "name": "bannerAlertWarnColor"
     },
     {
       "category": "notifications",
       "value": "rgb(255, 84, 82)",
       "type": "color",
+      ".alias": {
+        "value": "#ff5452"
+      },
       "name": "bannerAlertErrorColor"
     },
     {
       "category": "notifications",
       "value": "rgb(82, 76, 97)",
       "type": "color",
+      ".alias": {
+        "value": "#524C61"
+      },
       "name": "bannerAlertExpandIconFill"
     },
     {
       "category": "notifications",
       "value": "6",
       "type": "size",
+      ".alias": {
+        "value": ".375rem"
+      },
       "name": "bannerAlertChildrenPaddingY"
     },
     {
       "category": "notifications",
       "value": "12",
       "type": "size",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "bannerAlertChildrenPaddingX"
     },
     {
       "category": "notifications",
       "value": "rgb(129, 123, 143)",
       "type": "color",
+      ".alias": {
+        "value": "#817B8F"
+      },
       "name": "bannerAlertChildrenColor"
     },
     {
       "category": "panels",
       "value": "12",
       "type": "size",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "panelPadding"
     },
     {
       "category": "panels",
       "value": "rgb(230, 228, 235)",
       "type": "color",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "panelBorderColor"
     },
     {
       "category": "panels",
       "value": "rgb(255, 255, 255)",
       "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "panelBackgroundColor"
     },
     {
       "type": "size",
       "category": "spacings",
       "value": "6",
+      ".alias": {
+        "value": ".375rem"
+      },
       "name": "spacingXs"
     },
     {
       "type": "size",
       "category": "spacings",
       "value": "12",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "spacingSm"
     },
     {
       "type": "size",
       "category": "spacings",
       "value": "18",
+      ".alias": {
+        "value": "1.125rem"
+      },
       "name": "spacingMd"
     },
     {
       "type": "size",
       "category": "spacings",
       "value": "24",
+      ".alias": {
+        "value": "1.5rem"
+      },
       "name": "spacingBase"
     },
     {
       "type": "size",
       "category": "spacings",
       "value": "30",
+      ".alias": {
+        "value": "1.875rem"
+      },
       "name": "spacingLg"
     },
     {
       "type": "size",
       "category": "spacings",
       "value": "36",
+      ".alias": {
+        "value": "2.250rem"
+      },
       "name": "spacingXl"
     },
     {
       "type": "size",
       "category": "spacings",
       "value": "42",
+      ".alias": {
+        "value": "2.625rem"
+      },
       "name": "spacingXxl"
     },
     {
       "type": "size",
       "category": "spacings",
       "value": "1",
+      ".alias": {
+        "value": ".0625rem"
+      },
       "name": "onePixelRem"
     },
     {
       "type": "color",
       "category": "colors",
       "value": "rgb(0, 140, 168)",
+      ".alias": {
+        "value": "#008ca8"
+      },
       "name": "stateSelectedBackgroundColor"
     },
     {
@@ -1558,30 +2206,45 @@
       "value": "rgb(82, 76, 97)",
       "type": "color",
       "category": "text-colors",
+      ".alias": {
+        "value": "#524C61"
+      },
       "name": "fontColorBase"
     },
     {
       "value": "18",
       "type": "number",
       "category": "typesettings",
+      ".alias": {
+        "value": "1.125rem"
+      },
       "name": "lineHeightSm"
     },
     {
       "value": "24",
       "type": "number",
       "category": "typesettings",
+      ".alias": {
+        "value": "1.5rem"
+      },
       "name": "lineHeightBase"
     },
     {
       "value": "30",
       "type": "number",
       "category": "typesettings",
+      ".alias": {
+        "value": "1.875rem"
+      },
       "name": "lineHeightLg"
     },
     {
       "value": "42",
       "type": "number",
       "category": "typesettings",
+      ".alias": {
+        "value": "2.625rem"
+      },
       "name": "lineHeightXl"
     },
     {
@@ -1600,96 +2263,144 @@
       "value": "12",
       "type": "size",
       "category": "typesettings",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "fontSizeSm"
     },
     {
       "value": "16",
       "type": "size",
       "category": "typesettings",
+      ".alias": {
+        "value": "1rem"
+      },
       "name": "fontSizeBase"
     },
     {
       "value": "24",
       "type": "size",
       "category": "typesettings",
+      ".alias": {
+        "value": "1.5rem"
+      },
       "name": "fontSizeLg"
     },
     {
       "value": "28",
       "type": "size",
       "category": "typesettings",
+      ".alias": {
+        "value": "1.75rem"
+      },
       "name": "fontSizeXl"
     },
     {
       "value": "42",
       "type": "size",
       "category": "typesettings",
+      ".alias": {
+        "value": "2.625rem"
+      },
       "name": "fontSizeXxl"
     },
     {
       "value": "12",
       "type": "size",
       "category": "font-sizes",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "h6FontSize"
     },
     {
       "value": "12",
       "type": "size",
       "category": "font-sizes",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "h5FontSize"
     },
     {
       "value": "16",
       "type": "size",
       "category": "font-sizes",
+      ".alias": {
+        "value": "1rem"
+      },
       "name": "h4FontSize"
     },
     {
       "value": "24",
       "type": "size",
       "category": "font-sizes",
+      ".alias": {
+        "value": "1.5rem"
+      },
       "name": "h3FontSize"
     },
     {
       "value": "28",
       "type": "size",
       "category": "font-sizes",
+      ".alias": {
+        "value": "1.75rem"
+      },
       "name": "h2FontSize"
     },
     {
       "value": "42",
       "type": "size",
       "category": "font-sizes",
+      ".alias": {
+        "value": "2.625rem"
+      },
       "name": "h1FontSize"
     },
     {
       "value": "18",
       "type": "number",
       "category": "line-heights",
+      ".alias": {
+        "value": "1.125rem"
+      },
       "name": "h6LineHeight"
     },
     {
       "value": "18",
       "type": "number",
       "category": "line-heights",
+      ".alias": {
+        "value": "1.125rem"
+      },
       "name": "h5LineHeight"
     },
     {
       "value": "24",
       "type": "number",
       "category": "line-heights",
+      ".alias": {
+        "value": "1.5rem"
+      },
       "name": "h4LineHeight"
     },
     {
       "value": "30",
       "type": "number",
       "category": "line-heights",
+      ".alias": {
+        "value": "1.875rem"
+      },
       "name": "h3LineHeight"
     },
     {
       "value": "42",
       "type": "number",
       "category": "line-heights",
+      ".alias": {
+        "value": "2.625rem"
+      },
       "name": "h2LineHeight"
     },
     {
@@ -1744,12 +2455,18 @@
       "value": "12",
       "type": "size",
       "category": "spacings",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "headingMarginBottom"
     },
     {
       "value": "30",
       "type": "size",
       "category": "spacings",
+      ".alias": {
+        "value": "1.875rem"
+      },
       "name": "headingContentMarginTop"
     },
     {
@@ -1762,6 +2479,9 @@
       "value": "12",
       "type": "size",
       "category": "spacings",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "pMarginBottom"
     },
     {
@@ -1774,6 +2494,9 @@
       "value": "12",
       "type": "size",
       "category": "spacings",
+      ".alias": {
+        "value": ".75rem"
+      },
       "name": "listMarginBottom"
     },
     {
@@ -1804,6 +2527,9 @@
       "value": "rgb(0, 178, 214)",
       "type": "color",
       "category": "text-colors",
+      ".alias": {
+        "value": "#00b2d6"
+      },
       "name": "linkColor"
     },
     {
@@ -1816,6 +2542,9 @@
       "value": "rgb(82, 76, 97)",
       "type": "color",
       "category": "text-colors",
+      ".alias": {
+        "value": "#524C61"
+      },
       "name": "linkHoverColor"
     },
     {
@@ -1828,66 +2557,99 @@
       "value": "rgb(37, 32, 51)",
       "type": "color",
       "category": "text-colors",
+      ".alias": {
+        "value": "#252033"
+      },
       "name": "linkActiveColor"
     },
     {
       "value": "rgb(0, 140, 168)",
       "type": "color",
       "category": "text-colors",
+      ".alias": {
+        "value": "#008ca8"
+      },
       "name": "linkVisitedColor"
     },
     {
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "category": "text-colors",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "linkWhiteColor"
     },
     {
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "category": "text-colors",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "linkWhiteHoverColor"
     },
     {
       "value": "rgb(230, 228, 235)",
       "type": "color",
       "category": "text-colors",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
       "name": "linkWhiteActiveColor"
     },
     {
       "value": "rgb(255, 255, 255)",
       "type": "color",
       "category": "text-colors",
+      ".alias": {
+        "value": "#ffffff"
+      },
       "name": "linkWhiteVisitedColor"
     },
     {
       "type": "number",
       "category": "z-indices",
       "value": "900",
+      ".alias": {
+        "value": "900"
+      },
       "name": "zindexAutosuggest"
     },
     {
       "type": "number",
       "category": "z-indices",
       "value": "900",
+      ".alias": {
+        "value": "900"
+      },
       "name": "zindexPopover"
     },
     {
       "type": "number",
       "category": "z-indices",
       "value": "900",
+      ".alias": {
+        "value": "900"
+      },
       "name": "zindexTooltip"
     },
     {
       "type": "number",
       "category": "z-indices",
       "value": "1000",
+      ".alias": {
+        "value": "1000"
+      },
       "name": "zindexModalScrim"
     },
     {
       "type": "number",
       "category": "z-indices",
       "value": "1100",
+      ".alias": {
+        "value": "1100"
+      },
       "name": "zindexModal"
     }
   ]

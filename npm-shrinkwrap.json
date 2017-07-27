@@ -12041,9 +12041,9 @@
       "dev": true
     },
     "theo": {
-      "version": "4.3.0",
-      "from": "theo@4.3.0",
-      "resolved": "https://registry.npmjs.org/theo/-/theo-4.3.0.tgz",
+      "version": "5.0.0",
+      "from": "theo@5.0.0",
+      "resolved": "https://registry.npmjs.org/theo/-/theo-5.0.0.tgz",
       "dev": true,
       "dependencies": {
         "through2": {
