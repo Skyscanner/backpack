@@ -54,6 +54,7 @@
     "bpk-component-spinner": "^2.1.7",
     "bpk-component-star-rating": "^1.0.1",
     "bpk-component-table": "^1.0.1",
+    "bpk-component-text": "^0.0.1",
     "bpk-component-textarea": "^1.0.1",
     "bpk-component-ticket": "^1.0.1",
     "bpk-component-tile": "^0.0.6",
