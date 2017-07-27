@@ -33,9 +33,7 @@
 
   @if $direction == 'left' {
     left: 0;
-  }
-
-  @else {
+  } @else {
     right: 0;
   }
 }
@@ -58,8 +56,8 @@
 
   &__scroller {
     white-space: nowrap;
-    overflow-y: hidden;
     overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
 
