@@ -18,10 +18,10 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
 import { storiesOf } from '@storybook/react';
-import BpkText, { withTextStyle } from 'bpk-component-text';
+import BpkText from 'bpk-component-text';
 import BpkContentContainer from 'bpk-component-content-container';
 
 import BpkPopover from './index';
@@ -30,7 +30,14 @@ import STYLES from './stories.scss';
 
 const getClassName = cssModules(STYLES);
 
-const Paragraph = withTextStyle(BpkText, 'base', 'p', getClassName('bpk-popover-paragraph'));
+const Paragraph = withDefaultProps(
+  BpkText,
+  {
+    textStyle: 'base',
+    tagName: 'p',
+    className: getClassName('bpk-popover-paragraph'),
+  },
+);
 
 class PopoverContainer extends Component {
   constructor() {

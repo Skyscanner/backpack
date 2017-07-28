@@ -18,12 +18,13 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withDefaultProps } from 'bpk-react-utils';
 
-import BpkText, { withTextStyle } from './index';
+import BpkText from './index';
 
 import STYLE from './stories.scss';
 
-const Paragraph = withTextStyle(BpkText, 'lg', 'p', STYLE['bpk-my-paragraph']);
+const Paragraph = withDefaultProps(BpkText, { textStyle: 'lg', tagName: 'p', className: STYLE['bpk-my-paragraph'] });
 
 storiesOf('bpk-component-text', module)
   .add('Default', () => (
@@ -64,7 +65,7 @@ storiesOf('bpk-component-text', module)
       non dictum mi ante eu arcu.
     </BpkText>
   ))
-  .add('withTextStyle', () => (
+  .add('using withDefaultProps', () => (
     <div>
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.

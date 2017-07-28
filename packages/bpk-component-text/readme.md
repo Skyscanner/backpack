@@ -19,14 +19,15 @@ export default () => (
 );
 ```
 
-When using the same style in many places repeating the `textStyle` and `tagName` props can become tedious in this case you can use `withTextStyle`
+When using the same style in many places repeating the `textStyle` and `tagName` props can become tedious in this case you can use `withDefaultProps` from `bpk-react-utils`.
 
 ```javascript
 import React from 'react';
-import BpkText, { withTextStyle } from 'bpk-component-text';
+import BpkText from 'bpk-component-text';
+import { withDefaultProps } from 'bpk-react-utils';
 
-const LargeParagraph = withTextStyle(BpkText, 'lg', 'p');
-const TinySpan = withTextStyle(BpkText, 'xs', 'span');
+const LargeParagraph = withDefaultProps(BpkText, { textStyle: 'lg', tagName: 'p' });
+const TinySpan = withDefaultProps(BpkText, { textStyle: 'xs', tagName: 'span' });
 
 export default () => (
   <div>

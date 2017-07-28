@@ -1,4 +1,3 @@
-
 /*
  * Backpack - Skyscanner's Design System
  *
@@ -19,44 +18,30 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import BpkText from './BpkText';
 
-import withTextStyle from './withTextStyle';
+import withDefaultProps from './withDefaultProps';
 
-describe('withTextStyle', () => {
+const TestComponent = 'TestComponent';
+
+describe('withDefaultProps', () => {
   it('should render correctly', () => {
-    const Heading1 = withTextStyle(BpkText, 'xxl', 'h1');
-
+    const Component = withDefaultProps(TestComponent, { a: 1, b: 2, c: { d: 3 } });
     const tree = renderer.create(
-      <Heading1>
+      <Component>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
         sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </Heading1>,
+      </Component>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with overwridden `className`', () => {
-    const Heading1 = withTextStyle(BpkText, 'xxl', 'h1', 'my-custom-class');
-
+  it('should merge classNames', () => {
+    const Component = withDefaultProps(TestComponent, { a: 1, b: 2, c: { d: 3 }, className: 'a' });
     const tree = renderer.create(
-      <Heading1>
+      <Component className="b">
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
         sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </Heading1>,
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should pass on all classNames', () => {
-    const Heading1 = withTextStyle(BpkText, 'xxl', 'h1', 'my-custom-class');
-
-
-    const tree = renderer.create(
-      <Heading1 className="my-other-custom-class">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </Heading1>,
+      </Component>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

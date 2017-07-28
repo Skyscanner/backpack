@@ -19,8 +19,8 @@
 import React from 'react';
 import { number } from 'prop-types';
 import { storiesOf } from '@storybook/react';
-import { cssModules } from 'bpk-react-utils';
-import BpkText, { withTextStyle } from 'bpk-component-text';
+import { cssModules, withDefaultProps } from 'bpk-react-utils';
+import BpkText from 'bpk-component-text';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 import { lineHeightSm } from 'bpk-tokens/tokens/base.es6';
 import { scaleLinear, scaleBand } from 'd3-scale';
@@ -39,7 +39,7 @@ import STYLES from './stories.scss';
 
 const getClassName = cssModules(STYLES);
 
-const Heading = withTextStyle(BpkText, 'lg', 'h1', getClassName('bpk-heading'));
+const Heading = withDefaultProps(BpkText, { textStyle: 'lg', tagName: 'h1', className: getClassName('bpk-heading') });
 
 const RtlBarchart = updateOnDirectionChange(BpkBarchart);
 const SelectableBarChart = withSelectedState(RtlBarchart);

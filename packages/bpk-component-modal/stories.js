@@ -19,10 +19,10 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, withDefaultProps } from 'bpk-react-utils';
 
 import BpkButton from 'bpk-component-button';
-import BpkText, { withTextStyle } from 'bpk-component-text';
+import BpkText from 'bpk-component-text';
 
 import BpkModal from './index';
 
@@ -30,7 +30,14 @@ import STYLES from './stories.scss';
 
 const getClassName = cssModules(STYLES);
 
-const Paragraph = withTextStyle(BpkText, 'base', 'p', getClassName('bpk-modal-paragraph'));
+const Paragraph = withDefaultProps(
+  BpkText,
+  {
+    textStyle: 'base',
+    tagName: 'p',
+    className: getClassName('bpk-modal-paragraph'),
+  },
+);
 
 class ModalContainer extends Component {
   constructor() {

@@ -18,7 +18,8 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import BpkText, { withTextStyle } from 'bpk-component-text';
+import { withDefaultProps } from 'bpk-react-utils';
+import BpkText from 'bpk-component-text';
 import { spacingSm, colorGreen500 } from 'bpk-tokens/tokens/base.es6';
 import BpkTooltip from './index';
 
@@ -31,7 +32,7 @@ const st = {
   textAlign: 'center',
 };
 
-const Heading = withTextStyle(BpkText, 'xxl', 'h1');
+const Heading = withDefaultProps(BpkText, { textStyle: 'xxl', tagName: 'h1' });
 
 storiesOf('bpk-component-tooltip', module)
   .add('Default', () => (

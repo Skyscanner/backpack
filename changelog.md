@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+**Added:**
+- bpk-react-utils:
+  - Added `withDefaultProp` HOC to simplify using the same component with the same props in many places.
+
 **Fixed:**
 - bpk-component-table
   - `BpkTableCell`'s now accept arbitrary props and classNames
