@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`withTextStyle should pass on all classNames 1`] = `
+<h1
+  className="bpk-text bpk-text--xxl my-custom-class my-other-custom-class"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</h1>
+`;
+
 exports[`withTextStyle should render correctly 1`] = `
 <h1
   className="bpk-text bpk-text--xxl"
