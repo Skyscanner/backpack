@@ -52,7 +52,12 @@
 ///   }
 
 @mixin bpk-text-xs {
-  @include _bpk-text-factory($bpk-text-sm-font-size, $bpk-text-sm-line-height, $bpk-text-sm-font-weight, $bpk-text-sm-letter-spacing);
+  @include _bpk-text-factory(
+    $bpk-text-xs-font-size,
+    $bpk-text-xs-line-height,
+    $bpk-text-xs-font-weight,
+    $bpk-text-xs-letter-spacing
+  );
 }
 
 /// Small text style
@@ -63,7 +68,12 @@
 ///   }
 
 @mixin bpk-text-sm {
-  @include _bpk-text-factory($bpk-text-sm-font-size, $bpk-text-sm-line-height, $bpk-text-sm-font-weight, $bpk-text-sm-letter-spacing);
+  @include _bpk-text-factory(
+    $bpk-text-sm-font-size,
+    $bpk-text-sm-line-height,
+    $bpk-text-sm-font-weight,
+    $bpk-text-sm-letter-spacing
+  );
 }
 
 /// Base text style
@@ -74,7 +84,12 @@
 ///   }
 
 @mixin bpk-text-base {
-  @include _bpk-text-factory($bpk-text-base-font-size, $bpk-text-base-line-height, $bpk-text-base-font-weight, $bpk-text-base-letter-spacing);
+  @include _bpk-text-factory(
+    $bpk-text-base-font-size,
+    $bpk-text-base-line-height,
+    $bpk-text-base-font-weight,
+    $bpk-text-base-letter-spacing
+  );
 }
 
 /// Large text style
@@ -85,7 +100,12 @@
 ///   }
 
 @mixin bpk-text-lg {
-  @include _bpk-text-factory($bpk-text-lg-font-size, $bpk-text-lg-line-height, $bpk-text-lg-font-weight, $bpk-text-lg-letter-spacing);
+  @include _bpk-text-factory(
+    $bpk-text-lg-font-size,
+    $bpk-text-lg-line-height,
+    $bpk-text-lg-font-weight,
+    $bpk-text-lg-letter-spacing
+  );
 }
 
 /// Extra large text style
@@ -96,7 +116,12 @@
 ///   }
 
 @mixin bpk-text-xl {
-  @include _bpk-text-factory($bpk-text-xl-font-size, $bpk-text-xl-line-height, $bpk-text-xl-font-weight, $bpk-text-xl-letter-spacing);
+  @include _bpk-text-factory(
+    $bpk-text-xl-font-size,
+    $bpk-text-xl-line-height,
+    $bpk-text-xl-font-weight,
+    $bpk-text-xl-letter-spacing
+  );
 }
 
 /// Extra extra large text style
@@ -107,7 +132,12 @@
 ///   }
 
 @mixin bpk-text-xxl {
-  @include _bpk-text-factory($bpk-text-xxl-font-size, $bpk-text-xxl-line-height, $bpk-text-xxl-font-weight, $bpk-text-xxl-letter-spacing);
+  @include _bpk-text-factory(
+    $bpk-text-xxl-font-size,
+    $bpk-text-xxl-line-height,
+    $bpk-text-xxl-font-weight,
+    $bpk-text-xxl-letter-spacing
+  );
 }
 
 /// Bold text style
@@ -566,27 +596,72 @@
 
 @mixin bpk-content-container--bare-html {
   h1 {
-    @include bpk-heading-1;
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-text-xxl;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-xl;
+    }
   }
 
   h2 {
-    @include bpk-heading-2;
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-text-xl;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-lg;
+    }
   }
 
   h3 {
-    @include bpk-heading-3;
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-text-lg;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-base;
+      @include bpk-text-bold;
+    }
   }
 
   h4 {
-    @include bpk-heading-4;
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-text-base;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-sm;
+      @include bpk-text-bold;
+    }
   }
 
   h5 {
-    @include bpk-heading-5;
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-text-sm;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-xs;
+      @include bpk-text-bold;
+    }
   }
 
   h6 {
-    @include bpk-heading-6;
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-text-xs;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-bold;
+    }
   }
 
   a {
@@ -594,7 +669,10 @@
   }
 
   p {
-    @include bpk-paragraph;
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-text-base;
   }
 
   ul,
