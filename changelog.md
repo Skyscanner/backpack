@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
+_Nothing yet_
+
+## 2017-07-28 - New Text component and mixins
+
 **Breaking:**
-- bpk-mixins:
+- bpk-mixins: 15.7.1 => 16.0.0
   - Text mixins (`bpk-text-base`, `bpk-text-lg` etc.) now set letter-spacing and font-weight explicitly. This means you cannot set `font-weight` anymore before including the mixin. Instead, use the new `bpk-text-bold` mixin to bolden text:
 
     ```scss
@@ -13,7 +17,7 @@
     }
     ```
 
-- bpk-tokens:
+- bpk-tokens: 23.3.1 => 24.0.0
   - Aliases in `.raw.json` format are now objects with a `value` property i.e.
 
     ```json
@@ -29,16 +33,16 @@
     ```
 
 **Added:**
-- bpk-mixins:
+- bpk-mixins: 15.7.1 => 16.0.0
   - New `bpk-text-xs` mixin in addition to the existing text styles (sm, base, lg, xl, xxl)
-- bpk-tokens:
+- bpk-tokens: 23.3.1 => 24.0.0
   - New theme for iOS, with specific text styles and spacings
   - Text style tokens for the base theme, in line with the new iOS theme
-- bpk-component-text:
+- bpk-component-text: 1.0.0
   - **New component** `BpkText` is the new preferred method for rendering text of all kinds. It utilizes the newly added mixins and allows separation of text style and semantics.
 
 **Fixed:**
-- bpk-tokens:
+- bpk-tokens: 23.3.1 => 24.0.0
   - Android colours are now #AARRGGBB instead of #RRGGBBAA
 
 ## 2017-07-24 - Icon improvements and fixes
