@@ -45,9 +45,9 @@ const components = [
     title: 'Text',
     blurb: [
       <Paragraph>
-        <BpkCode>BpkText</BpkCode> is the one stop shop for your text needs. It enables you to use the six backpack
-        defined text styles in combination with any of the heading tags, a span or a paragraph. You can mix different
-        text styles with the appropriate tag to achieve semantic markup while retaining control over how the text looks.
+        The Text component enables you to use the six backpack defined text styles in combination with any of the
+        heading tags, a span or a paragraph. You can mix different text styles with the
+        appropriate tag to achieve semantic markup while retaining control over how the text looks.
       </Paragraph>,
       <Paragraph>
         Note: Whilst <BpkCode>BpkText</BpkCode> allows for any combination of text size and heading levels,
@@ -83,7 +83,7 @@ const components = [
   },
   {
     id: 'paragraphs',
-    title: 'Paragaphs',
+    title: 'Paragraphs',
     examples: [
       <BpkParagraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam nemo umquam voluptatem appellavit, appellat;
