@@ -31,8 +31,6 @@ const nodeSassUrl = 'https://github.com/sass/node-sass';
 const sassLoaderUrl = 'https://github.com/jtangelder/sass-loader';
 const sassLoaderTildeUrl = 'https://github.com/jtangelder/sass-loader#imports';
 const nodeSassTildeImporterUrl = 'https://github.com/matthewdavidson/node-sass-tilde-importer';
-const webpackConfigExampleUrl =
-  'http://git.prod.skyscanner.local/backpack/backpack-react-example/blob/master/webpack.config.babel.js';
 
 const components = [
   {
@@ -73,7 +71,7 @@ ReactDom.render(myComponent, document.getElementById('react-mount'));
       <BpkBlockquote>
         <strong>Note:</strong> If you are looking to integrate Backpack components into an existing project, be
         aware that components are published uncompiled which means you&apos;ll need to accommodate for this in your
-        webpack config - here is an <BpkLink href={webpackConfigExampleUrl} blank>example</BpkLink>.
+        webpack config.
       </BpkBlockquote>,
     ],
     examples: [],
