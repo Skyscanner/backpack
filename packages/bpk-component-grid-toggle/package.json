@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-grid-toggle",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Backpack vertical grid toggle component.",
   "main": "index.js",
   "repository": {
@@ -13,8 +13,8 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-component-link": "^1.0.1",
-    "bpk-mixins": "^15.7.1",
+    "bpk-component-link": "^1.0.2",
+    "bpk-mixins": "^16.0.0",
     "bpk-react-utils": "^2.1.1",
     "prop-types": "^15.5.8"
   }
