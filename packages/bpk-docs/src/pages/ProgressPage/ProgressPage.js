@@ -17,21 +17,21 @@
  */
 
 import React from 'react';
-import BpkParagraph from 'bpk-component-paragraph';
 import progressReadme from 'bpk-component-progress/readme.md';
 
 import ProgressContainer from './ProgressContainer';
 import SteppedProgressContainer from './SteppedProgressContainer';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 const components = [
   {
     id: 'default',
     title: 'Default',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         This is the default progress bar which animates in and automatically hides when complete.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <ProgressContainer />,
@@ -41,10 +41,10 @@ const components = [
     id: 'small',
     title: 'Small',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         This is very similar to the default progress bar, but is a little thinner to fit nicely inline,
         e.g. at the top of a page.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <ProgressContainer small />,
@@ -54,10 +54,10 @@ const components = [
     id: 'stepped',
     title: 'Stepped',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         This option allows you to specify how many steps there are in a given task. These are great to guide users
         through longer processes such as completing a form.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <SteppedProgressContainer />,
@@ -69,10 +69,10 @@ const components = [
 const PopoversPage = () => <DocsPageBuilder
   title="Progress bars"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       Progress bars are a great way of providing feedback when a tasking is running. Unlike spinners,
       they give the user a clear idea of how long the given task will take.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={progressReadme}

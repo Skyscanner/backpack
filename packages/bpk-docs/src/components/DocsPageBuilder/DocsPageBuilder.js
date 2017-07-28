@@ -21,8 +21,6 @@ import keys from 'lodash/keys';
 import Helmet from 'react-helmet';
 import isString from 'lodash/isString';
 import BpkLink from 'bpk-component-link';
-import BpkHeading from 'bpk-component-heading';
-import BpkParagraph from 'bpk-component-paragraph';
 import PropTypes from 'prop-types';
 import React, { Children } from 'react';
 import { BpkList, BpkListItem } from 'bpk-component-list';
@@ -31,6 +29,8 @@ import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, Bp
 
 import SassdocLink from './../../components/SassdocLink';
 import PresentationBlock from './../../components/PresentationBlock';
+import Heading from './../../components/Heading';
+import Paragraph from './../../components/Paragraph';
 import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper';
 
 const flatten = Children.toArray;
@@ -47,7 +47,7 @@ const toNodes = (children) => {
     return null;
   }
 
-  return isString(children) ? [<BpkParagraph>{children}</BpkParagraph>] : children;
+  return isString(children) ? [<Paragraph>{children}</Paragraph>] : children;
 };
 
 
@@ -86,7 +86,7 @@ toSassdocLink.propTypes = {
 };
 
 const ComponentExample = (component) => {
-  const heading = <BpkHeading id={component.id} level="h2">{component.title}</BpkHeading>;
+  const heading = <Heading id={component.id} level="h2">{component.title}</Heading>;
 
   const examples = component.examples.length
     ? <PresentationBlock>{flatten(component.examples)}</PresentationBlock>
@@ -95,7 +95,7 @@ const ComponentExample = (component) => {
   const blurb = component.blurb ? toNodes(component.blurb) : null;
 
   const readme = component.readme ? flatten([
-    <BpkHeading id={`${component.id}-readme`} level="h2">{component.title} readme</BpkHeading>,
+    <Heading id={`${component.id}-readme`} level="h2">{component.title} readme</Heading>,
     <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(component.readme) }} bareHtml />,
   ]) : null;
 
@@ -110,14 +110,14 @@ const ComponentExample = (component) => {
 };
 
 const CustomSection = section => [
-  <BpkHeading id={section.id} level="h2">{section.title}</BpkHeading>,
+  <Heading id={section.id} level="h2">{section.title}</Heading>,
   flatten(section.content.map(toNodes)),
   section.examples
     ? <PresentationBlock>{flatten(section.examples)}</PresentationBlock>
     : null,
   section.readme
     ? flatten([
-      <BpkHeading id="readme" level="h2">Readme</BpkHeading>,
+      <Heading id="readme" level="h2">Readme</Heading>,
       <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(section.readme) }} bareHtml />,
     ])
     : null,
@@ -126,7 +126,7 @@ const CustomSection = section => [
 const DocsPageBuilder = props => (
   <BpkContentContainer>
     <Helmet title={props.title} />
-    <BpkHeading level="h1">{props.title}</BpkHeading>
+    <Heading level="h1">{props.title}</Heading>
     {flatten(toNodes(props.blurb))}
     {props.showMenu && (
       <BpkList>{flatten([...props.components, ...props.customSections].map(ExampleNavListItem))}</BpkList>
@@ -134,7 +134,7 @@ const DocsPageBuilder = props => (
     {props.tokenMap ? toTokenTable(props.tokenMap) : null}
     {flatten(props.components.map(ComponentExample))}
     {props.readme ? flatten([
-      <BpkHeading id="readme" level="h2">Readme</BpkHeading>,
+      <Heading id="readme" level="h2">Readme</Heading>,
       <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(props.readme) }} bareHtml />,
     ]) : null
     }

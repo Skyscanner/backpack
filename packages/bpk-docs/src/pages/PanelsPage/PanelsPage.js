@@ -18,20 +18,20 @@
 
 import React from 'react';
 import BpkPanel from 'bpk-component-panel';
-import BpkParagraph from 'bpk-component-paragraph';
 
 import panelReadme from 'bpk-component-panel/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 const components = [
   {
     id: 'default',
     title: 'Default',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         This is the default panel type which comes with padding already applied to get you up and running quickly.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkPanel>
@@ -67,11 +67,11 @@ const components = [
 const PanelsPage = () => <DocsPageBuilder
   title="Panel"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       Panels are useful for housing distinct areas of related content.
       Unlike cards these are not clickable. Be careful not to over use these,
       these should be used sparingly to avoid the UI becoming overly boxy.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={panelReadme}

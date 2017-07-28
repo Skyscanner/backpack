@@ -19,12 +19,12 @@
 import React, { Component } from 'react';
 import BpkChip from 'bpk-component-chip';
 import BpkButton from 'bpk-component-button';
-import BpkParagraph from 'bpk-component-paragraph';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 
 import chipReadme from 'bpk-component-chip/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 class DefaultChipContainer extends Component {
   constructor() {
@@ -85,10 +85,10 @@ const components = [
     id: 'default',
     title: 'Default',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         The default configuration displays a text value with a close button.
         This button can be assigned a custom action to remove itself from the view.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <DefaultChipContainer />,
@@ -99,9 +99,9 @@ const components = [
 const ChipsPage = () => <DocsPageBuilder
   title="Chips"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       Chips, sometimes called tags, are useful for displaying keywords or categories from common sets of data.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={chipReadme}

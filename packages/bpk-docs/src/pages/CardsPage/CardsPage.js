@@ -18,21 +18,21 @@
 
 import React from 'react';
 import BpkCard from 'bpk-component-card';
-import BpkParagraph from 'bpk-component-paragraph';
 
 import cardReadme from 'bpk-component-card/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 const components = [
   {
     id: 'default',
     title: 'Default',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         The default card comes with padding already applied to get you up and running quickly and has normal and
         hover states baked in.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkCard>
@@ -57,11 +57,11 @@ const components = [
 const CardsPage = () => <DocsPageBuilder
   title="Cards"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       Cards are used to group related items within the UI. They allow complex datasets to be broken down into
       individual, distinct areas for easy consumption. Cards are used as a signifier to give affordance
       to a clickable set of elements.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={cardReadme}

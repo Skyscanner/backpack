@@ -21,7 +21,6 @@ import BpkButton from 'bpk-component-button';
 import BpkSelect from 'bpk-component-select';
 import BpkCheckbox from 'bpk-component-checkbox';
 import BpkFieldset from 'bpk-component-fieldset';
-import BpkParagraph from 'bpk-component-paragraph';
 import BpkRouterLink from 'bpk-component-router-link';
 import readme from 'bpk-component-fieldset/readme.md';
 import PropTypes from 'prop-types';
@@ -31,6 +30,7 @@ import { cssModules } from 'bpk-react-utils';
 import STYLES from './fieldsets-page.scss';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 const getClassName = cssModules(STYLES);
 
@@ -175,12 +175,12 @@ const components = [
 const FieldsetPage = () => <DocsPageBuilder
   title="Fieldsets"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       Fieldsets encapsulate the composition of <BpkRouterLink to={`${ROUTES.FORMS}`}>form controls</BpkRouterLink>
       , <BpkRouterLink to={`${ROUTES.FORMS}#labels`}>labels</BpkRouterLink>
       &nbsp;&amp; <BpkRouterLink to={`${ROUTES.FORMS}#validation`}>validation messages</BpkRouterLink> with the
       necessary attributes to ensure good accessibility for screen readers.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={readme}

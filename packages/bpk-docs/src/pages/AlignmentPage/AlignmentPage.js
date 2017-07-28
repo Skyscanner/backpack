@@ -22,92 +22,98 @@ import { colors, lineHeightBase, iconSizeSm, lineHeightLg, iconSizeLg } from 'bp
 import { withAlignment, withButtonAlignment, withLargeButtonAlignment } from 'bpk-component-icon';
 import BpkLink from 'bpk-component-link';
 import BpkButton from 'bpk-component-button';
-import BpkParagraph from 'bpk-component-paragraph';
-import BpkHeading from 'bpk-component-heading';
+import BpkText from 'bpk-component-text';
 import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Heading from './../../components/Heading';
+import Paragraph from './../../components/Paragraph';
 import * as ROUTES from './../../constants/routes';
 
-const AlignedHeading4Arrow = withAlignment(LongArrowRightIcon, lineHeightBase, iconSizeSm);
-const AlignedHeading3Arrow = withAlignment(LongArrowRightIcon, lineHeightLg, iconSizeLg);
+const AlignedBaseArrow = withAlignment(LongArrowRightIcon, lineHeightBase, iconSizeSm);
+const AlignedLargeArrow = withAlignment(LongArrowRightIcon, lineHeightLg, iconSizeLg);
 const AlignedButtonArrow = withButtonAlignment(LongArrowRightIcon);
 const AlignedLargeButtonArrow = withLargeButtonAlignment(LongArrowRightIcon);
 
 const components = [
   {
-    id: 'withinHeading4',
-    title: 'Icon alignment within a "h4" heading',
+    id: 'withinBase',
+    title: 'Icon alignment within text with textStyle "base"',
     blurb: [
-      <BpkParagraph>
-        Aligning an icon within a heading can be done using <BpkCode >withAlignment</BpkCode>, providing
-        suitable spacings (see the <BpkLink href={ROUTES.TYPESETTING} >Typesetting section</BpkLink>).
-      </BpkParagraph>,
-      <BpkParagraph>
+      <Paragraph>
+        Aligning an icon within text with textStyle &quot;base&quot; can be done using
+        <BpkCode >withAlignment</BpkCode>, providing suitable spacings
+        (see the <BpkLink href={ROUTES.TYPESETTING} >Typesetting section</BpkLink>).
+      </Paragraph>,
+      <Paragraph>
         Using the HOC is done as follows:
-      </BpkParagraph>,
+      </Paragraph>,
       <BpkCodeBlock >
         {`import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import { withAlignment } from 'bpk-component-icon';
 import { lineHeightBase, iconSizeSm } from 'bpk-tokens/tokens/base.es6';
+import BpkText from 'bpk-component-text';
 
 const AlignedArrow = withAlignment(
   LongArrowRightIcon, lineHeightBase, iconSizeSm
 );
 
-<BpkHeading level="h4" >
-  Heading Text
-  <AlignedArrow />
-</BpkHeading>
+<BpkText textStyle="base">
+  Search
+  &nbsp;
+  <AlignedArrow fill={colors.colorGray700}/>
+</BpkText>
 `}
       </BpkCodeBlock>,
     ],
     examples: [
-      <BpkHeading level="h4" >
-        Heading Text
+      <BpkText textStyle="base" >
+        Search
         &nbsp;
-        <AlignedHeading4Arrow fill={colors.colorGray700} />
-      </BpkHeading>,
+        <AlignedBaseArrow fill={colors.colorGray700} />
+      </BpkText>,
     ],
   },
   {
-    id: 'withinHeading3',
-    title: 'Icon alignment within a "h3" heading',
+    id: 'withinLarge',
+    title: 'Icon alignment within text with textStyle "lg"',
     blurb: [
-      <BpkParagraph>
-        Similarly, within a larger heading, alignment can be achieved as follows:
-      </BpkParagraph>,
+      <Paragraph>
+        Similarly, within text with textStyle large, alignment can be achieved as follows:
+      </Paragraph>,
       <BpkCodeBlock >
         {`import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import { withAlignment } from 'bpk-component-icon';
 import { lineHeightLg, iconSizeLg } from 'bpk-tokens/tokens/base.es6';
+import BpkText from 'bpk-component-text';
 
 const AlignedArrow = withAlignment(
   LongArrowRightIcon, lineHeightLg, iconSizeLg
 );
 
-<BpkHeading level="h3" >
-  Heading Text
-  <AlignedArrow />
-</BpkHeading>
+<BpkText textStyle="lg" >
+  Search
+  &nbsp;
+  <AlignedArrow fill={colors.colorGray700}/>
+</BpkText>
 `}
       </BpkCodeBlock>,
     ],
     examples: [
-      <BpkHeading level="h3" >
-        Heading Text
+      <BpkText textStyle="lg" >
+        Search
         &nbsp;
-        <AlignedHeading3Arrow fill={colors.colorGray700} />
-      </BpkHeading>,
+        <AlignedLargeArrow fill={colors.colorGray700} />
+      </BpkText>,
     ],
   },
   {
     id: 'withinButton',
     title: 'Icon alignment within a button',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
          HOC wrappers exist for common alignment tasks, such as aligning an icon within a button.
          Other examples can be seen in the <BpkLink href={ROUTES.BUTTONS}>Buttons page</BpkLink>.
-      </BpkParagraph>,
+      </Paragraph>,
       <BpkCodeBlock>
         {`import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import { withButtonAlignment } from 'bpk-component-icon';
@@ -133,10 +139,10 @@ const AlignedArrow = withButtonAlignment(LongArrowRightIcon);
     id: 'withinLargeButton',
     title: 'Icon alignment within a large button',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
          Similarly, a HOC exists for aligning icons to a large button.
          Other examples can be seen in the <BpkLink href={ROUTES.BUTTONS}>Buttons page</BpkLink>.
-          </BpkParagraph>,
+          </Paragraph>,
       <BpkCodeBlock>
         {`import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import { withLargeButtonAlignment } from 'bpk-component-icon';
@@ -163,16 +169,16 @@ const AlignedArrow = withLargeButtonAlignment(LongArrowRightIcon);
 const AlignmentPage = () => <DocsPageBuilder
   title="Alignment"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       Alignment higher-order-components (HOCs) allow components to be aligned vertically within a given space.
-    </BpkParagraph>,
-    <BpkHeading level="h2" >
+    </Paragraph>,
+    <Heading level="h2" >
       Installation
-    </BpkHeading>,
-    <BpkParagraph>
+    </Heading>,
+    <Paragraph>
       The alignment HOCs are provided in the <BpkCode>bpk-component-icon</BpkCode> package.
       See <BpkLink href={ROUTES.ICONS}>Icons</BpkLink> for installation instructions.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
 />;

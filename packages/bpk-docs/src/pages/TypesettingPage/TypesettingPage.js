@@ -21,22 +21,21 @@ import pickBy from 'lodash/pickBy';
 import includes from 'lodash/includes';
 import TOKENS from 'bpk-tokens/tokens/base.common';
 
-import BpkParagraph from 'bpk-component-paragraph';
-
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 const components = [
   {
     id: 'font-families',
     title: 'Font families',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Rather than specify a single font across all Skyscanner products, we rely on the native font used on each
         device. The benefits of this are two-fold, firstly we can lean on the hard-work and expertise that OS vendors
         have expended in producing a font that works best on their respective platforms. Second, we avoid
         any drawbacks of serving a custom web-font; for example extra load time, and a so-called FOUT (flash of unstyled
         text). This will improve the user experience of our product on all devices.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [],
     tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'fontFamilyBase')),
@@ -45,10 +44,10 @@ const components = [
     id: 'font-sizes',
     title: 'Font sizes',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Backpack uses a set of 5 font-sizes which when used in conjunction with their retrospective line heights,
         produces text styles which align to the baseline grid.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [],
     tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'fontSize')),
@@ -57,10 +56,10 @@ const components = [
     id: 'line-heights',
     title: 'Line heights',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         The following line-heights should be paired with the font-sizes above to ensure text aligns with the baseline
         grid.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [],
     tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'lineHeight')),

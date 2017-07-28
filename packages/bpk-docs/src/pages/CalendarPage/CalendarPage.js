@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import BpkParagraph from 'bpk-component-paragraph';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkCalendar, {
@@ -28,6 +27,7 @@ import BpkCalendar, {
 
 import calendarReadme from 'bpk-component-calendar/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 import addMonths from '../../../../bpk-component-calendar/node_modules/date-fns/add_months';
 import {
   weekDays,
@@ -98,13 +98,13 @@ const components = [
     id: 'calendar',
     title: 'Default calendar',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         The default calendar configuration ships with navigation to select months, select a date, and the ability
         to navigate via keyboard.
-      </BpkParagraph>,
-      <BpkParagraph>
+      </Paragraph>,
+      <Paragraph>
         See the prop types table below for full list of config and default options.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <CalendarContainer
@@ -120,10 +120,10 @@ const components = [
     id: 'calendar-ar',
     title: 'Localised calendar',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         The calendar can be configured with locale data: month names, weekday names, weekend, first day of the week,
         date formatting.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <CalendarContainer
@@ -140,9 +140,9 @@ const components = [
     id: 'calendar-nav',
     title: 'Calendar navigation',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         The calendar nav component can be used independently to allow users to cycle through a group of months.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <CalendarNavContainer id="my-calendar-nav" />,
@@ -152,9 +152,9 @@ const components = [
     id: 'calendar-grid',
     title: 'Calendar grid',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Similarly the calendar grid can be used on its own (grid and header are separate components).
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkCalendarGridHeader
@@ -182,10 +182,10 @@ const components = [
 const CalendarPage = () => <DocsPageBuilder
   title="Calendar"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       Calendars are used for date selection.  They can be configured in different ways depending on the context,
       e.g. constrained to a date range, or with dates blocked out.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={calendarReadme}

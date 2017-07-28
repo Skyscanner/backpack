@@ -22,13 +22,14 @@ import Helmet from 'react-helmet';
 import { PropTypes as RouterPropTypes } from 'react-router';
 
 import BpkButton from 'bpk-component-button';
-import BpkHeading from 'bpk-component-heading';
-import BpkParagraph from 'bpk-component-paragraph';
 import { colorWhite } from 'bpk-tokens/tokens/base.es6';
 import { withLargeButtonAlignment, withRtlSupport } from 'bpk-component-icon';
 import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
 import { cssModules } from 'bpk-react-utils';
+
+import Heading from './../../components/Heading';
+import Paragraph from './../../components/Paragraph';
 
 import STYLES from './home-page.scss';
 import * as ROUTES from './../../constants/routes';
@@ -56,11 +57,11 @@ class HomePage extends React.Component {
           <BpkGridContainer>
             <BpkGridRow>
               <BpkGridColumn width={12}>
-                <BpkHeading level="h1">Backpack</BpkHeading>
-                <BpkHeading level="h2">
+                <Heading level="h1">Backpack</Heading>
+                <Heading level="h2">
                   Backpack is a collection of design resources, reusable components and guidelines for creating
                   Skyscanner products.
-                </BpkHeading>
+                </Heading>
                 <BpkButton large href={ROUTES.GETTING_STARTED} onClick={this.onGettingStartedClick}>
                   Get started <AlignedLongArrowRightAltIcon fill={colorWhite} />
                 </BpkButton>
@@ -71,17 +72,17 @@ class HomePage extends React.Component {
         <BpkGridContainer>
           <BpkGridRow>
             <BpkGridColumn width={6} tabletWidth={12}>
-              <BpkHeading level="h3">Mission</BpkHeading>
-              <BpkParagraph>
+              <Heading level="h3">Mission</Heading>
+              <Paragraph>
                 Bring Design and Engineering together to enable squads to create beautiful, coherent products at scale.
-              </BpkParagraph>
+              </Paragraph>
             </BpkGridColumn>
             <BpkGridColumn width={6} tabletWidth={12}>
-              <BpkHeading level="h3">About Backpack</BpkHeading>
-              <BpkParagraph>
+              <Heading level="h3">About Backpack</Heading>
+              <Paragraph>
                 Backpack is the foundation for all Skyscanner products. It builds on Atomic Design principals to help
                 visualise how these products are assembled.
-              </BpkParagraph>
+              </Paragraph>
             </BpkGridColumn>
           </BpkGridRow>
         </BpkGridContainer>

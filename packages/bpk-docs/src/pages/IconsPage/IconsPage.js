@@ -21,14 +21,14 @@ import React from 'react';
 import { BpkCode } from 'bpk-component-code';
 import BpkLink from 'bpk-component-link';
 import icons from 'bpk-component-icon/all';
-import BpkHeading from 'bpk-component-heading';
-import BpkParagraph from 'bpk-component-paragraph';
 
 import iconReadme from 'bpk-component-icon/readme.md';
 
 import * as ROUTES from './../../constants/routes';
 import IconSearchApp from './../../components/IconSearchApp';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Heading from './../../components/Heading';
+import Paragraph from './../../components/Paragraph';
 
 const friendlyNameMap = {
   sm: 'Small',
@@ -49,24 +49,24 @@ const iconsFinal = _(icons)
   .value();
 
 const blurb = [
-  <BpkParagraph>
+  <Paragraph>
     Backpack icons are crafted to display across web and native apps. Their clean, solid shapes effortlessly
     compliment the rest of Backpack.
-  </BpkParagraph>,
-  <BpkParagraph>
+  </Paragraph>,
+  <Paragraph>
     Icons are provided in two sizes: small (18px) and large (24px). Both are pixel-snapped for clarity at the intended
     usage sizes.
-  </BpkParagraph>,
-  <BpkParagraph>
+  </Paragraph>,
+  <Paragraph>
     The <BpkLink href="#readme">readme</BpkLink> for the component is available below the search tool.
-  </BpkParagraph>,
-  <BpkHeading level="h2">Find the right icon</BpkHeading>,
+  </Paragraph>,
+  <Heading level="h2">Find the right icon</Heading>,
   <IconSearchApp icons={iconsFinal} />,
-  <BpkHeading level="h2">Aligning icons within components</BpkHeading>,
-  <BpkParagraph>
+  <Heading level="h2">Aligning icons within components</Heading>,
+  <Paragraph>
     The <BpkLink href={ROUTES.ALIGNMENT}>Alignment</BpkLink> page gives examples of icon alignment using
     HOCs provided in the <BpkCode>bpk-component-icon</BpkCode> package.
-  </BpkParagraph>,
+  </Paragraph>,
 ];
 
 const IconsPage = () => <DocsPageBuilder

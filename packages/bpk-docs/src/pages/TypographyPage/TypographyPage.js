@@ -17,8 +17,6 @@
  */
 
 import React from 'react';
-import BpkHeading from 'bpk-component-heading';
-import BpkParagraph from 'bpk-component-paragraph';
 import BpkBlockquote from 'bpk-component-blockquote';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import { BpkCode, BpkCodeBlock } from 'bpk-component-code';

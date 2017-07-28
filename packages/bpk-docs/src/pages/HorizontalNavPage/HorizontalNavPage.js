@@ -18,11 +18,11 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import BpkParagraph from 'bpk-component-paragraph';
 import readme from 'bpk-component-horizontal-nav/readme.md';
 import BpkHorizontalNav, { BpkHorizontalNavItem } from 'bpk-component-horizontal-nav';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 class HorizontalNavContainer extends Component {
   constructor() {
@@ -105,10 +105,10 @@ const components = [
 const HorizontalNavPage = () => <DocsPageBuilder
   title="Horizontal navigation"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       A simple navigation component, ideal for representing a section of a page that links to other pages or views
       within the page.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={readme}
