@@ -23,4 +23,4 @@ import STYLES from './Paragraph.scss';
 
 const getClassName = cssModules(STYLES);
 
-export default withTextStyle(BpkText, 'base', 'p', getClassName('bpk-paragraph'));
+export default withTextStyle(BpkText, 'base', 'p', getClassName('bpk-docs-paragraph'));
