@@ -18,12 +18,19 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { cssModules } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
 import { storiesOf } from '@storybook/react';
-import BpkParagraph from 'bpk-component-paragraph';
+import BpkText, { withTextStyle } from 'bpk-component-text';
 import BpkContentContainer from 'bpk-component-content-container';
 
 import BpkPopover from './index';
+
+import STYLES from './stories.scss';
+
+const getClassName = cssModules(STYLES);
+
+const Paragraph = withTextStyle(BpkText, 'base', 'p', getClassName('bpk-popover-paragraph'));
 
 class PopoverContainer extends Component {
   constructor() {
@@ -90,24 +97,24 @@ class PopoverContainer extends Component {
           {...rest}
         >
           <BpkContentContainer>
-            <BpkParagraph>My popover content.</BpkParagraph>
-            <BpkParagraph>Some more popover content.</BpkParagraph>
+            <Paragraph>My popover content.</Paragraph>
+            <Paragraph>Some more popover content.</Paragraph>
             { changeProps
-              ? <BpkParagraph>
+              ? <Paragraph>
                 <BpkButton onClick={this.changeContent}>
                     Change content
                 </BpkButton>
                 <BpkButton onClick={this.changeTarget}>
                     Change target
                 </BpkButton>
-              </BpkParagraph>
+              </Paragraph>
               : null }
             { this.state.showLongContent
-              ? <BpkParagraph>
+              ? <Paragraph>
                   This is some long content.
                   This is some long content.
                   This is some long content.
-                </BpkParagraph>
+                </Paragraph>
               : null }
           </BpkContentContainer>
         </BpkPopover>
@@ -175,7 +182,7 @@ storiesOf('bpk-component-popover', module)
   .add('Repositioning', () => (
     // This story demonstrates the popover repositioning itself when props change (including children).
     <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
-      <BpkParagraph id="reposition-alt-target" style={{ float: 'right' }}>Different target</BpkParagraph>
+      <Paragraph id="reposition-alt-target" style={{ float: 'right' }}>Different target</Paragraph>
       <PopoverContainer
         changeProps
         tetherOptions={{

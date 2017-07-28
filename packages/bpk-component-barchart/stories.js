@@ -19,7 +19,8 @@
 import React from 'react';
 import { number } from 'prop-types';
 import { storiesOf } from '@storybook/react';
-import BpkHeading from 'bpk-component-heading';
+import { cssModules } from 'bpk-react-utils';
+import BpkText, { withTextStyle } from 'bpk-component-text';
 import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 import { lineHeightSm } from 'bpk-tokens/tokens/base.es6';
 import { scaleLinear, scaleBand } from 'd3-scale';
@@ -33,6 +34,12 @@ import BpkBarchart, {
 
 import { ORIENTATION_X, ORIENTATION_Y } from './src/orientation';
 import { withSelectedState } from './hocs';
+
+import STYLES from './stories.scss';
+
+const getClassName = cssModules(STYLES);
+
+const Heading = withTextStyle(BpkText, 'lg', 'h1', getClassName('bpk-heading'));
 
 const RtlBarchart = updateOnDirectionChange(BpkBarchart);
 const SelectableBarChart = withSelectedState(RtlBarchart);
@@ -96,7 +103,7 @@ storiesOf('bpk-component-barchart', module)
 
     return (
       <div>
-        <BpkHeading level="h3">Linear scale</BpkHeading>
+        <Heading>Linear scale</Heading>
         <Gridlines
           scale={scale}
           size={size}
@@ -106,7 +113,7 @@ storiesOf('bpk-component-barchart', module)
           size={size}
           numTicks={2}
         />
-        <BpkHeading level="h3">Band scale</BpkHeading>
+        <Heading>Band scale</Heading>
         <Gridlines
           scale={scale2}
           size={size}
