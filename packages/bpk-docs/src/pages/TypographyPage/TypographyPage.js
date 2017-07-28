@@ -27,8 +27,6 @@ import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, Bp
 import BpkText from 'bpk-component-text';
 
 import textReadme from 'bpk-component-text/readme.md';
-import headingReadme from 'bpk-component-heading/readme.md';
-import paragraphReadme from 'bpk-component-paragraph/readme.md';
 import linkReadme from 'bpk-component-link/readme.md';
 import listReadme from 'bpk-component-list/readme.md';
 import tableReadme from 'bpk-component-table/readme.md';
@@ -61,44 +59,6 @@ const components = [
       <BpkText textStyle="lg" tagName="h2">lg Heading(h2)</BpkText>,
     ],
     readme: textReadme,
-  },
-  {
-    id: 'headings',
-    title: 'Headings',
-    blurb: [
-      <Paragraph>
-        Backpack uses six heading levels which combine font-sizes and line heights. Headings used within a content
-        containers have and margins automatically applied.
-      </Paragraph>,
-    ],
-    examples: [
-      <BpkHeading level="h1">Heading 1</BpkHeading>,
-      <BpkHeading level="h2">Heading 2</BpkHeading>,
-      <BpkHeading level="h3">Heading 3</BpkHeading>,
-      <BpkHeading level="h4">Heading 4</BpkHeading>,
-      <BpkHeading level="h5">Heading 5</BpkHeading>,
-      <BpkHeading level="h6">Heading 6</BpkHeading>,
-    ],
-    readme: headingReadme,
-  },
-  {
-    id: 'paragraphs',
-    title: 'Paragraphs',
-    examples: [
-      <BpkParagraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam nemo umquam voluptatem appellavit, appellat;
-        Occultum facinus esse potuerit, gaudebit; Quaerimus enim finem bonorum. Quo igitur, inquit, modo?
-      </BpkParagraph>,
-      <BpkParagraph>
-        Quodsi ipsam honestatem undique pertectam atque absolutam. Cyrenaici quidem non recusant; Sed ego in hoc
-        resisto; Quae duo sunt, unum facit.
-      </BpkParagraph>,
-      <BpkParagraph>
-        Sed nunc, quod agimus; Et quidem, inquit, vehementer errat; Equidem e Cn. Venit ad extremum; Quis non odit
-        sordidos, vanos, leves, futtiles? Itaque ab his ordiamur.
-      </BpkParagraph>,
-    ],
-    readme: paragraphReadme,
   },
   {
     id: 'links',
