@@ -24,7 +24,7 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const createReactAppHref = 'https://github.com/facebookincubator/create-react-app';
 const backpackReactScriptsChangelogHref =
-  'http://git.prod.skyscanner.local/backpack/create-react-app/blob/master/packages/react-scripts/CHANGELOG.md';
+  'https://github.com/Skyscanner/backpack-react-scripts/blob/master/packages/react-scripts/CHANGELOG.md';
 
 const components = [
   {
