@@ -2,8 +2,10 @@
 
 ## UNRELEASED
 
-_Nothing yet_
-
+**Fixed:**
+- bpk-component-table
+  - `BpkTableCell`'s now accept arbitrary props and classNames
+  
 ## 2017-07-28 - New Text component and mixins
 
 **Breaking:**

@@ -7,3 +7,11 @@ exports[`BpkTableCell should render correctly 1`] = `
   Tabular data
 </td>
 `;
+
+exports[`BpkTableCell should render correctly with custom class 1`] = `
+<td
+  className="bpk-table__cell test"
+>
+  Tabular data
+</td>
+`;

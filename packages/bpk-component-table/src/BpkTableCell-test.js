@@ -25,4 +25,9 @@ describe('BpkTableCell', () => {
     const tree = renderer.create(<BpkTableCell>Tabular data</BpkTableCell>).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with custom class', () => {
+    const tree = renderer.create(<BpkTableCell className="test">Tabular data</BpkTableCell>).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
