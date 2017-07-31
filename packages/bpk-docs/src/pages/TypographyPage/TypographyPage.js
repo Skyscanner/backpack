@@ -41,20 +41,31 @@ const components = [
     title: 'Text',
     blurb: [
       <Paragraph>
-        The Text component enables you to use the six backpack defined text styles in combination with any of the
+        The text component enables you to use the five backpack defined text styles in combination with any of the
         heading tags, a span or a paragraph. You can mix different text styles with the
         appropriate tag to achieve semantic markup while retaining control over how the text looks.
       </Paragraph>,
-      <Paragraph>
-        Note: Whilst <BpkCode>BpkText</BpkCode> allows for any combination of text size and heading levels,
-        we recommend that visual hierarchy is maintained inline with the semantic structure.
-      </Paragraph>,
+      <BpkBlockquote>
+        <BpkText bold>Note:</BpkText> Whilst <BpkCode>BpkText</BpkCode> allows for any combination of text size and
+        heading levels, we recommend that visual hierarchy is maintained inline with the semantic structure.
+      </BpkBlockquote>,
     ],
     examples: [
-      <BpkText textStyle="base" tagName="p">Base paragraph</BpkText>,
-      <BpkText textStyle="xxl" tagName="h1">xxl Heading(h1)</BpkText>,
-      <BpkText textStyle="lg" tagName="h1">lg Heading(h1)</BpkText>,
-      <BpkText textStyle="lg" tagName="h2">lg Heading(h2)</BpkText>,
+      <BpkText textStyle="xxl" tagName="p">
+        Flights to Edinburgh
+      </BpkText>,
+      <BpkText textStyle="xl" tagName="p">
+        Flights to Edinburgh
+      </BpkText>,
+      <BpkText textStyle="lg" tagName="p">
+        Flights to Edinburgh
+      </BpkText>,
+      <BpkText textStyle="base" tagName="p">
+        Flights to Edinburgh
+      </BpkText>,
+      <BpkText textStyle="sm" tagName="p">
+        Flights to Edinburgh
+      </BpkText>,
     ],
     readme: textReadme,
   },

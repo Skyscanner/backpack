@@ -15,7 +15,12 @@ import React from 'react';
 import BpkText from 'bpk-component-text';
 
 export default () => (
-  <BpkText tagName="h1" textStyle="xl">My Heading</BpkText>
+  <BpkText tagName="h1" textStyle="xl">My heading</BpkText>
+  <BpkText tagName="p">My paragraph</BpkText>
+  <BpkText tagName="p" textStyle="lg">My callout paragraph</BpkText>
+  <BpkText tagName="p">
+    Text can be <BpkText tagName="span" bold>bold</BpkText>.
+  </BpkText>
 );
 ```
 

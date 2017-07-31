@@ -38,22 +38,22 @@ storiesOf('bpk-component-text', module)
   .add('Headings', () => (
     <div>
       <BpkText textStyle="xxl" tagName="h1">
-        H1 type xxl
+        The quick brown fox jumps over the lazy dog
       </BpkText>
       <BpkText textStyle="xl" tagName="h2">
-        H2 type xl
+        The quick brown fox jumps over the lazy dog
       </BpkText>
       <BpkText textStyle="lg" tagName="h3">
-        H3 type lg
+        The quick brown fox jumps over the lazy dog
       </BpkText>
       <BpkText textStyle="base" tagName="h4">
-        H4 type base
+        The quick brown fox jumps over the lazy dog
       </BpkText>
       <BpkText textStyle="sm" tagName="h5">
-        H5 type sm
+        The quick brown fox jumps over the lazy dog
       </BpkText>
-      <BpkText textStyle="sm" tagName="h6">
-        H6 type sm
+      <BpkText textStyle="xs" tagName="h6">
+        The quick brown fox jumps over the lazy dog
       </BpkText>
     </div>
   ))
@@ -84,7 +84,7 @@ storiesOf('bpk-component-text', module)
   .add('bold', () => (
     <div>
       <BpkText>
-        The man jumped over the shark tank. Tha was very <BpkText bold>bold</BpkText> indeed.
+        The man jumped over the shark tank. That was very <BpkText bold>bold</BpkText> indeed.
       </BpkText>
     </div>
   ));

@@ -26,6 +26,7 @@ import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import STYLES from './Heading.scss';
 
 const getClassName = cssModules(STYLES);
+const className = getClassName('bpk-docs-heading');
 
 const HEADINGS = {
   h1: {
@@ -35,7 +36,7 @@ const HEADINGS = {
         textStyle: 'xl',
         tagName: 'h1',
         bold: false,
-        className: ['bpk-docs-heading'].map(getClassName).join(' '),
+        className,
       },
     ),
     other: withDefaultProps(
@@ -44,7 +45,7 @@ const HEADINGS = {
         textStyle: 'xxl',
         tagName: 'h1',
         bold: false,
-        className: ['bpk-docs-heading'].map(getClassName).join(' '),
+        className,
       },
     ),
   },
@@ -55,7 +56,7 @@ const HEADINGS = {
         textStyle: 'lg',
         tagName: 'h2',
         bold: false,
-        className: ['bpk-docs-heading'].map(getClassName).join(' '),
+        className,
       },
     ),
     other: withDefaultProps(
@@ -64,7 +65,7 @@ const HEADINGS = {
         textStyle: 'xl',
         tagName: 'h2',
         bold: false,
-        className: ['bpk-docs-heading'].map(getClassName).join(' '),
+        className,
       },
     ),
   },
@@ -75,7 +76,7 @@ const HEADINGS = {
         textStyle: 'base',
         tagName: 'h3',
         bold: true,
-        className: ['bpk-docs-heading'].map(getClassName).join(' '),
+        className,
       },
     ),
     other: withDefaultProps(
@@ -84,7 +85,7 @@ const HEADINGS = {
         textStyle: 'lg',
         tagName: 'h3',
         bold: false,
-        className: ['bpk-docs-heading'].map(getClassName).join(' '),
+        className,
       },
     ),
   },
@@ -95,7 +96,7 @@ const HEADINGS = {
         textStyle: 'sm',
         tagName: 'h4',
         bold: true,
-        className: ['bpk-docs-heading'].map(getClassName).join(' '),
+        className,
       },
     ),
     other: withDefaultProps(
@@ -104,7 +105,7 @@ const HEADINGS = {
         textStyle: 'base',
         tagName: 'h4',
         bold: false,
-        className: ['bpk-docs-heading'].map(getClassName).join(' '),
+        className,
       },
     ),
   },
@@ -115,7 +116,7 @@ const HEADINGS = {
         textStyle: 'xs',
         tagName: 'h5',
         bold: true,
-        className: ['bpk-docs-heading'].map(getClassName).join(' '),
+        className,
       },
     ),
     other: withDefaultProps(
@@ -124,7 +125,7 @@ const HEADINGS = {
         textStyle: 'sm',
         tagName: 'h5',
         bold: false,
-        className: ['bpk-docs-heading'].map(getClassName).join(' '),
+        className,
       },
     ),
   },
@@ -135,7 +136,7 @@ const HEADINGS = {
         textStyle: 'xs',
         tagName: 'h6',
         bold: true,
-        className: ['bpk-docs-heading'].map(getClassName).join(' '),
+        className,
       },
     ),
     other: withDefaultProps(
@@ -144,7 +145,7 @@ const HEADINGS = {
         textStyle: 'sm',
         tagName: 'h6',
         bold: false,
-        className: ['bpk-docs-heading'].map(getClassName).join(' '),
+        className,
       },
     ),
   },
@@ -153,12 +154,19 @@ const HEADINGS = {
 const Heading = (props) => {
   const { level, ...rest } = props;
 
+  const Component = HEADINGS[level];
+
+  if (!Component.mobile || !Component.other) {
+    return null;
+  }
+
   return (
     <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-      {isMobile => HEADINGS[level][isMobile ? 'mobile' : 'other']({ ...rest })}
+      {isMobile => Component[isMobile ? 'mobile' : 'other']({ ...rest })}
     </BpkBreakpoint>
   );
 };
+
 
 Heading.propTypes = {
   level: PropTypes.oneOf(Object.keys(HEADINGS)).isRequired,
