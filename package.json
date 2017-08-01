@@ -90,7 +90,7 @@
     "react-dom": "^15.4.1",
     "react-helmet": "^3.3.0",
     "react-router": "^2.6.1",
-    "react-svg-loader": "^1.1.1",
+    "react-svg-loader": "file:///Users/georgegillams/Documents/projects/react-svg-loader/react-svg-loader-2.0.0-alpha.1.tgz",
     "react-test-renderer": "^15.4.1",
     "rimraf": "^2.5.4",
     "sass-loader": "^6.0.6",
