@@ -24,7 +24,8 @@
     background-color: $bpk-color-gray-50;
     text-align: center;
 
-    @include bpk-text-sm;
+    @include bpk-text;
+    @include bpk-text--sm;
     @include bpk-border-radius-xs;
     @include bpk-border-sm($bpk-color-gray-100);
   }

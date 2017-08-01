@@ -43,11 +43,11 @@
   }
 
   &__category-name {
-    margin: 0 0 $bpk-spacing-xs 0;
     padding: 0 0 0 $bpk-spacing-sm;
     color: $bpk-color-gray-300;
 
-    @include bpk-text-sm;
+    @include bpk-text;
+    @include bpk-text--sm;
   }
 
   &__link {

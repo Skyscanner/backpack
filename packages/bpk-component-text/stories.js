@@ -24,7 +24,11 @@ import BpkText from './index';
 
 import STYLE from './stories.scss';
 
-const Paragraph = withDefaultProps(BpkText, { textStyle: 'lg', tagName: 'p', className: STYLE['bpk-my-paragraph'] });
+const Paragraph = withDefaultProps(BpkText, {
+  textStyle: 'lg',
+  tagName: 'p',
+  className: STYLE['bpk-my-paragraph'],
+});
 
 storiesOf('bpk-component-text', module)
   .add('Default', () => (
@@ -82,9 +86,7 @@ storiesOf('bpk-component-text', module)
     </div>
   ))
   .add('bold', () => (
-    <div>
-      <BpkText>
-        The man jumped over the shark tank. That was very <BpkText bold>bold</BpkText> indeed.
-      </BpkText>
-    </div>
+    <BpkText tagName="p">
+      The man jumped over the shark tank. That was very <BpkText bold>bold</BpkText> indeed.
+    </BpkText>
   ));

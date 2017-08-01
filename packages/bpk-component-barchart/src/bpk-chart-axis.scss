@@ -23,13 +23,15 @@
     &-text {
       fill: $bpk-color-gray-500;
 
-      @include bpk-text-sm;
+      @include bpk-text;
+      @include bpk-text--sm;
     }
   }
 
   &__axis-label {
     fill: $bpk-color-gray-500;
 
-    @include bpk-text-sm;
+    @include bpk-text;
+    @include bpk-text--sm;
   }
 }

@@ -74,6 +74,7 @@
     color: $bpk-color-gray-500;
     text-align: center;
 
-    @include bpk-text-sm;
+    @include bpk-text;
+    @include bpk-text--sm;
   }
 }

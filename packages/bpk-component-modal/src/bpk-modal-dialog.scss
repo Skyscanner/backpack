@@ -97,10 +97,9 @@
   }
 
   &__dialog-heading {
-    margin: 0;
-
-    @include bpk-text-base;
-    @include bpk-text-bold;
+    @include bpk-text;
+    @include bpk-text--base;
+    @include bpk-text--bold;
   }
 
   &__dialog-close-button {

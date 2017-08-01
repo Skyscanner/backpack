@@ -156,7 +156,7 @@ const Heading = (props) => {
 
   const Component = HEADINGS[level];
 
-  if (!Component.mobile || !Component.other) {
+  if (!Component) {
     return null;
   }
 
