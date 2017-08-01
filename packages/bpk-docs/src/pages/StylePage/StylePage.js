@@ -22,12 +22,12 @@ import PropTypes from 'prop-types';
 import BpkLink from 'bpk-component-link';
 import BpkTile from 'bpk-component-tile';
 import { cssModules } from 'bpk-react-utils';
-import BpkHeading from 'bpk-component-heading';
-import BpkParagraph from 'bpk-component-paragraph';
 import { colors } from 'bpk-tokens/tokens/base.es6';
 import { Link } from 'react-router';
 import BpkContentContainer from 'bpk-component-content-container';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+import Heading from './../../components/Heading';
+import Paragraph from './../../components/Paragraph';
 
 import * as ROUTES from './../../constants/routes';
 import STYLES from './StylePage.scss';
@@ -54,6 +54,11 @@ const photographyGuidelines = require('!!file-loader?name=[name].[hash].pdf!./..
 const brandGuidelines = require('!!file-loader?name=[name].[hash].pdf!./../../static/brand_guidelines_17-10-16.pdf');
 /* eslint-enable */
 
+const noMarginClasses = [
+  getClassName('bpkdocs-style-page__section-header'),
+  getClassName('bpkdocs-style-page__section-header--no-bottom-margin'),
+].join(' ');
+
 
 const StylePage = props => (
   <BpkGridContainer>
@@ -61,18 +66,18 @@ const StylePage = props => (
     <BpkGridRow>
       <BpkGridColumn width={12}>
         <BpkContentContainer>
-          <BpkHeading level="h1">Style</BpkHeading>
-          <BpkParagraph>
+          <Heading level="h1">Style</Heading>
+          <Paragraph>
             Here you can find guides and information for creating assets in the Skyscanner style.
-          </BpkParagraph>
+          </Paragraph>
         </BpkContentContainer>
       </BpkGridColumn>
     </BpkGridRow>
     <BpkGridRow>
       <BpkGridColumn padded={false} width={12}>
-        <BpkHeading level="h2" bottomMargin={false} className={getClassName('bpkdocs-style-page__section-header')}>
+        <Heading level="h2" className={noMarginClasses}>
           Icons
-        </BpkHeading>
+        </Heading>
       </BpkGridColumn>
     </BpkGridRow>
     <BpkGridRow>
@@ -118,9 +123,9 @@ const StylePage = props => (
     </BpkGridRow>
     <BpkGridRow>
       <BpkGridColumn padded={false} width={12}>
-        <BpkHeading level="h2" bottomMargin={false} className={getClassName('bpkdocs-style-page__section-header')}>
+        <Heading level="h2" className={noMarginClasses}>
           Illustration
-        </BpkHeading>
+        </Heading>
       </BpkGridColumn>
     </BpkGridRow>
     <BpkGridRow>
@@ -165,9 +170,9 @@ const StylePage = props => (
         tabletWidth={6}
         className={getClassName('bpkdocs-style-page__copywrite-column')}
       >
-        <BpkHeading level="h2" className={getClassName('bpkdocs-style-page__section-header')}>
+        <Heading level="h2" className={getClassName('bpkdocs-style-page__section-header')}>
           Copywriting
-        </BpkHeading>
+        </Heading>
         <a
           href={`/${toneOfVoiceGuidelines}`}
           className={getClassName('bpkdocs-style-page__link')}
@@ -189,7 +194,7 @@ const StylePage = props => (
         mobileWidth={12}
         className={getClassName('bpkdocs-style-page__copywrite-column')}
       >
-        <BpkHeading level="h2" className={getClassName('bpkdocs-style-page__section-header')}>Photography</BpkHeading>
+        <Heading level="h2" className={getClassName('bpkdocs-style-page__section-header')}>Photography</Heading>
         <a
           href={`/${photographyGuidelines}`}
           className={getClassName('bpkdocs-style-page__link')}
@@ -208,9 +213,9 @@ const StylePage = props => (
     <BpkGridRow>
       <BpkGridColumn width={12}>
         <BpkContentContainer>
-          <BpkParagraph className={getClassName('bpkdocs-style-page__brand-guidelines')}>
+          <Paragraph className={getClassName('bpkdocs-style-page__brand-guidelines')}>
             Looking for brand guidelines? <BpkLink href={`/${brandGuidelines}`}>Grab them here.</BpkLink>
-          </BpkParagraph>
+          </Paragraph>
         </BpkContentContainer>
       </BpkGridColumn>
     </BpkGridRow>

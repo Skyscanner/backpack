@@ -22,7 +22,6 @@ import BpkLabel from 'bpk-component-label';
 import BpkSelect from 'bpk-component-select';
 import BpkCheckbox from 'bpk-component-checkbox';
 import BpkTextarea from 'bpk-component-textarea';
-import BpkParagraph from 'bpk-component-paragraph';
 import BpkRouterLink from 'bpk-component-router-link';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 import BpkFormValidation from 'bpk-component-form-validation';
@@ -41,6 +40,7 @@ import STYLES from './forms-page.scss';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import InputContainer from './InputContainer';
+import Paragraph from './../../components/Paragraph';
 import RadioContainer from './RadioContainer';
 
 const getClassName = cssModules(STYLES);
@@ -65,11 +65,11 @@ const components = [
     id: 'inputs',
     title: 'Inputs',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         When asking a user to input text, please be sure to use the appropriate type of input. Specifying email or
         number will ensure the correct keyboard is displayed (on supported devices) and also adds semantic meaning
         to the input.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <form className={formClassName}>
@@ -185,10 +185,10 @@ const components = [
     id: 'selects',
     title: 'Selects (aka dropdowns)',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Backpack selects override the default styles in most modern browsers. In some older browsers they simply fall
         back to the browser default.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <form className={formClassName}>
@@ -472,10 +472,10 @@ const components = [
     id: 'textareas',
     title: 'Textareas',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Textareas look almost identical to <BpkLink href="#inputs">inputs</BpkLink> except they allow long text to wrap
         across multiple lines.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <form className={formClassName}>
@@ -519,10 +519,10 @@ const components = [
     id: 'checkboxes',
     title: 'Checkboxes',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Similar to selects, checkboxes override the default styles in most modern browsers. In some older browsers
         they simply fall back to the browser default.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <form className={formClassName}>
@@ -573,10 +573,10 @@ const components = [
     id: 'radios',
     title: 'Radio buttons',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Again, Backpack overrides the browser default styles for radio buttons. In some older browsers they simply
         fall back to the browser default.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <RadioContainer value="apples" />,
@@ -589,12 +589,12 @@ const components = [
     id: 'labels',
     title: 'Labels',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Labels should always be used with form elements to provide context to the user. Relying on placeholders alone
         is not good practise. Have a look at
         the <BpkRouterLink to={ROUTES.FIELDSETS}>fieldset</BpkRouterLink> component which composes labels, fields and
         validation messages accordingly.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkLabel>This is a label</BpkLabel>,
@@ -607,14 +607,14 @@ const components = [
     id: 'validation',
     title: 'Validation',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Validation messages should be used to provide the user with specific feedback about an error with a particular
         form input field. They can be attached to <BpkLink href="#inputs">inputs</BpkLink>
         , <BpkLink href="#selects">selects</BpkLink> and <BpkLink href="#checkboxes">checkboxes</BpkLink>. They should
         either be displayed on form submit or on field blur. Have a look at
         the <BpkRouterLink to={ROUTES.FIELDSETS}>fieldset</BpkRouterLink> component which composes labels, fields and
         validation messages accordingly.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkFormValidation id="form_validation" expanded>Please enter a name</BpkFormValidation>,

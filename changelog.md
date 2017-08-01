@@ -2,6 +2,30 @@
 
 ## UNRELEASED
 
+**Added:**
+- bpk-react-utils:
+  - Added `withDefaultProp` HOC to simplify using the same component with the same props in many places.
+
+- bpk-mixins:
+  - Added BEM `bpk-text--XX` mixins for text styles. These are similar but subtley different to existing
+    `bpk-text-XX` mixins:
+    - By default, use the BEM-style mixins:
+
+      ```scss
+      .my-component {
+        @include bpk-text;     // resets margin
+        @include bpk-text--sm; // applies sm text style
+      }
+      ```
+    - If you want the text style but need to apply custom margin, use the `bpk-text-xx` standalone mixins:
+      ```scss
+      .my-component {
+        margin: $bpk-spacing-sm 0 $bpk-spacing-base 0; // applies custom margin
+
+        @include bpk-text-sm; // applies sm text style
+      }
+      ```
+
 **Fixed:**
 - bpk-component-table
   - `BpkTableCell`'s now accept arbitrary props and classNames

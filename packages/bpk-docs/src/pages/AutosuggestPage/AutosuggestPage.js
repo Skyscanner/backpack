@@ -20,7 +20,6 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkLink from 'bpk-component-link';
 import BpkLabel from 'bpk-component-label';
-import BpkParagraph from 'bpk-component-paragraph';
 import { withRtlSupport } from 'bpk-component-icon';
 import BpkRouterLink from 'bpk-component-router-link';
 import FlightIcon from 'bpk-component-icon/lg/flight';
@@ -30,6 +29,7 @@ import autosuggestReadme from 'bpk-component-autosuggest/readme.md';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
 
@@ -171,10 +171,10 @@ const components = [
     id: 'default',
     title: 'Default',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         This is the most basic method of displaying suggestions. Note that they can be indented (to indicate topology
         for example) - type &quot;a&quot; to see this demonstrated by the Glasgow office suggestion.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <AutosuggestExample
@@ -191,10 +191,10 @@ const components = [
     id: 'icon',
     title: 'Icons',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         You can insert a <BpkRouterLink to={ROUTES.ICONS}>Backpack icon</BpkRouterLink> next to each suggestion, useful
         for differentiation e.g. between airports, cities and countries.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <AutosuggestExample
@@ -264,13 +264,13 @@ const components = [
 const AutosuggestPage = () => <DocsPageBuilder
   title="Autosuggest"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       The Backpack autosuggest component is a lightweight wrapper
       around <BpkLink href={'http://react-autosuggest.js.org/'} blank>React Autosuggest</BpkLink>. It can be used to
       display suggestions for travel destinations, hotels, car hire and more - any data source can be used. Whilst you
       have full control over suggestion rendering, Backpack provides a built in suggestion component allowing you to
       display icons, sub-headings and more.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={autosuggestReadme}

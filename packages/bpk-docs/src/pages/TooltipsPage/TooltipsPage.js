@@ -17,9 +17,7 @@
  */
 
 import React from 'react';
-import BpkHeading from 'bpk-component-heading';
 import BpkTooltip from 'bpk-component-tooltip';
-import BpkParagraph from 'bpk-component-paragraph';
 import BpkRouterLink from 'bpk-component-router-link';
 import tooltipReadme from 'bpk-component-tooltip/readme.md';
 import { spacingSm, colorGreen500 } from 'bpk-tokens/tokens/base.es6';
@@ -27,6 +25,8 @@ import { cssModules } from 'bpk-react-utils';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Heading from './../../components/Heading';
+import Paragraph from './../../components/Paragraph';
 import STYLES from './tooltips-page.scss';
 
 const getClassName = cssModules(STYLES);
@@ -36,14 +36,14 @@ const components = [
     id: 'default',
     title: 'Default',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         By default, tooltips come with some padding so all you need to do is drop in some content.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkTooltip
         id="my-tooltip"
-        target={<BpkHeading level="h3" className={getClassName('bpkdocs-tooltips-page__heading')}>LHR</BpkHeading>}
+        target={<Heading level="h3" className={getClassName('bpkdocs-tooltips-page__heading')}>LHR</Heading>}
       >
         London Heathrow
       </BpkTooltip>,
@@ -53,9 +53,9 @@ const components = [
     id: 'alt-positioning',
     title: 'Alternative positioning',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Tooltips can also be positioned to either side of the target element.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkTooltip
@@ -70,7 +70,7 @@ const components = [
             },
           ],
         }}
-        target={<BpkHeading level="h3" className={getClassName('bpkdocs-tooltips-page__heading')}>EDI</BpkHeading>}
+        target={<Heading level="h3" className={getClassName('bpkdocs-tooltips-page__heading')}>EDI</Heading>}
       >
         Edinburgh
       </BpkTooltip>,
@@ -80,19 +80,19 @@ const components = [
     id: 'without-padding',
     title: 'Without padding',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Tooltips are also available without padding should you wish to display fullwidth content e.g. an image.
-      </BpkParagraph>,
-      <BpkParagraph>
+      </Paragraph>,
+      <Paragraph>
         An example of this can be seen below where a coloured border is included to denote directness for a tooltip
         used on the map.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkTooltip
         id="my-tooltip-3"
         padded={false}
-        target={<BpkHeading level="h3" className={getClassName('bpkdocs-tooltips-page__heading')}>JFK</BpkHeading>}
+        target={<Heading level="h3" className={getClassName('bpkdocs-tooltips-page__heading')}>JFK</Heading>}
       >
         <div
           style={{
@@ -112,20 +112,20 @@ const components = [
 const TooltipsPage = () => <DocsPageBuilder
   title="Tooltips"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       Tooltips appear on hover of a particular element and are used to provide additional context/information to the
       user. They generally are text-only and are triggered on pointer based interfaces.
-    </BpkParagraph>,
-    <BpkParagraph>
+    </Paragraph>,
+    <Paragraph>
       By default, <em>tooltips do not work on touch devices</em>. Using tooltips in touch-based interfaces is
       generally bad practise due to the lack of hover state.
       We also don&apos;t recommend using tooltips on interactive elements that can receive focus, such as links,
       buttons, and inputs.
-    </BpkParagraph>,
-    <BpkParagraph>
+    </Paragraph>,
+    <Paragraph>
       Tooltips do not manage focus. If you need to include interactive elements in a tooltip,
       a <BpkRouterLink to={ROUTES.POPOVERS}>popover</BpkRouterLink> might be better suited.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={tooltipReadme}

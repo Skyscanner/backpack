@@ -20,7 +20,6 @@ import React from 'react';
 import BpkLink from 'bpk-component-link';
 import { BpkCode } from 'bpk-component-code';
 import BpkBarchart from 'bpk-component-barchart';
-import BpkParagraph from 'bpk-component-paragraph';
 import { onePixelRem } from 'bpk-tokens/tokens/base.es6';
 import { withSelectedState } from 'bpk-component-barchart/hocs';
 import barchartReadme from 'bpk-component-barchart/readme.md';
@@ -29,6 +28,7 @@ import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 import data from 'bpk-component-barchart/data.json';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 const EnhancedBarchart = updateOnDirectionChange(BpkBarchart);
 const InteractiveBarchart = withSelectedState(EnhancedBarchart);
@@ -38,9 +38,9 @@ const components = [
     id: 'default',
     title: 'Default',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         By default, bar charts come with axis labels.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <EnhancedBarchart
@@ -60,9 +60,9 @@ const components = [
     id: 'gridlines',
     title: 'With gridlines',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         It is possible to show gridlines for each tick on the Y axis.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <EnhancedBarchart
@@ -83,10 +83,10 @@ const components = [
     id: 'ineractive',
     title: 'Interactive',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         The bars can be made interactive using
         the <BpkCode>onBarClick</BpkCode> &amp; <BpkCode>getBarSelection</BpkCode> props.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <InteractiveBarchart
@@ -106,10 +106,10 @@ const components = [
     id: 'outliers',
     title: 'Outliers',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Outliers can be capped to indicate they are far off the scale.
         In this case using <BpkLink href="#outlierpercentage"><BpkCode>outlierPercentage</BpkCode></BpkLink> of 15.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <EnhancedBarchart
@@ -131,16 +131,16 @@ const components = [
 const BarchartsPage = () => <DocsPageBuilder
   title="Bar charts"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       Bar charts are useful for displaying comparisons between categories of data.
       At Skyscanner bar charts are commonly used for displaying fare prices within a
       given time period e.g. a year, month or week.
-    </BpkParagraph>,
-    <BpkParagraph>
+    </Paragraph>,
+    <Paragraph>
       Depending on your need these can be configured to
       show a variety of details such as gridlines, labels and axis.
       They can also be configured to trigger actions on click such as opening a link.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={barchartReadme}

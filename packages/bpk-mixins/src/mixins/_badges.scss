@@ -36,7 +36,8 @@
   background-color: $bpk-badge-background-color;
 
   @include bpk-border-radius-xs;
-  @include bpk-text-sm;
+  @include bpk-text;
+  @include bpk-text--sm;
 }
 
 /// Centered badge. Modifies the bpk-badge mixin.

@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkText from './src/BpkText';
-import withTextStyle from './src/withTextStyle';
+import component from './src/BpkText';
 
-export { withTextStyle };
-export default BpkText;
+export default component;

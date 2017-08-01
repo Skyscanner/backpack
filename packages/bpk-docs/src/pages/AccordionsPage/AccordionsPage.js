@@ -18,8 +18,6 @@
 
 import React from 'react';
 import BpkCheckbox from 'bpk-component-checkbox';
-import BpkParagraph from 'bpk-component-paragraph';
-import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 import accordionsReadme from 'bpk-component-accordion/readme.md';
 import {
   BpkAccordion,
@@ -27,8 +25,10 @@ import {
   withSingleItemAccordionState,
   withAccordionItemState,
 } from 'bpk-component-accordion';
+import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
@@ -159,9 +159,9 @@ const components = [
     id: 'default',
     title: 'Default',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         By default, accordions allow only one section to be expanded at any time.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <SingleItemAccordion>
@@ -181,9 +181,9 @@ const components = [
     id: 'multiple-section-open',
     title: 'Multiple sections open',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Accordions can also be configured to allow multiple sections to be expanded simultaneously.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkAccordion>
@@ -204,12 +204,12 @@ const components = [
 const AccordionsPage = () => <DocsPageBuilder
   title="Accordions"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       An accordion is a vertically stacked set of elements, such as content or forms, that allow the user to toggle
       the display of sections of content. Each labeling element can be expanded or collapsed to reveal or hide its
       associated content. Accordions are commonly used to reduce the need to scroll when presenting multiple sections
       of content on a single page.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={accordionsReadme}

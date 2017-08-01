@@ -16,10 +16,6 @@
  * limitations under the License.
  */
 
-import Portal from './src/Portal';
-import cssModules from './src/cssModules';
-import TransitionInitialMount from './src/TransitionInitialMount';
-import withDefaultProps from './src/withDefaultProps';
+import component from './Heading';
 
-export { Portal, cssModules, TransitionInitialMount, withDefaultProps };
-export default { Portal, cssModules, TransitionInitialMount, withDefaultProps };
+export default component;

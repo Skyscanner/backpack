@@ -18,10 +18,10 @@
 
 import React, { Component } from 'react';
 import BpkNudger from 'bpk-component-nudger';
-import BpkParagraph from 'bpk-component-paragraph';
 import nudgersReadme from 'bpk-component-nudger/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 class NudgerContainer extends Component {
   constructor() {
@@ -56,10 +56,10 @@ const components = [
     id: 'default',
     title: 'Default',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Nudgers come with decrease and increase buttons to either side of the selected value. A minimum and maximum
         value needs to be provided.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <NudgerContainer />,
@@ -70,13 +70,13 @@ const components = [
 const NudgersPage = () => <DocsPageBuilder
   title="Nudgers"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       Nudgers allow users to quickly specify a value within a given range.
-    </BpkParagraph>,
-    <BpkParagraph>
+    </Paragraph>,
+    <Paragraph>
       They should only be used for small number ranges. If users have to click many times to get to the desired value,
       a different UI element might be better suited.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={nudgersReadme}

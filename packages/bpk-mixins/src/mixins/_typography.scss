@@ -44,82 +44,220 @@
   }
 }
 
-/// Extra small text style
+/// Text margin reset.
 ///
 /// @example scss
 ///   .selector {
-///     @include bpk-text-xs();
+///     @include bpk-text;
+///   }
+
+@mixin bpk-text {
+  margin: 0;
+}
+
+/// Extra small text style
+///
+/// @require {mixin} bpk-text
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text;
+///     @include bpk-text--xs;
+///   }
+
+@mixin bpk-text--xs {
+  @include _bpk-text-factory(
+    $bpk-text-xs-font-size,
+    $bpk-text-xs-line-height,
+    $bpk-text-xs-font-weight,
+    $bpk-text-xs-letter-spacing
+  );
+}
+
+/// Extra small text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-xs;
 ///   }
 
 @mixin bpk-text-xs {
-  @include _bpk-text-factory($bpk-text-sm-font-size, $bpk-text-sm-line-height, $bpk-text-sm-font-weight, $bpk-text-sm-letter-spacing);
+  @include bpk-text--xs;
 }
 
 /// Small text style
 ///
+/// @require {mixin} bpk-text
+///
 /// @example scss
 ///   .selector {
-///     @include bpk-text-sm();
+///     @include bpk-text;
+///     @include bpk-text--sm;
+///   }
+
+@mixin bpk-text--sm {
+  @include _bpk-text-factory(
+    $bpk-text-sm-font-size,
+    $bpk-text-sm-line-height,
+    $bpk-text-sm-font-weight,
+    $bpk-text-sm-letter-spacing
+  );
+}
+
+/// Small text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-sm;
 ///   }
 
 @mixin bpk-text-sm {
-  @include _bpk-text-factory($bpk-text-sm-font-size, $bpk-text-sm-line-height, $bpk-text-sm-font-weight, $bpk-text-sm-letter-spacing);
+  @include bpk-text--sm;
 }
 
 /// Base text style
 ///
+/// @require {mixin} bpk-text
+///
 /// @example scss
 ///   .selector {
-///     @include bpk-text-base();
+///     @include bpk-text;
+///     @include bpk-text--base;
+///   }
+
+@mixin bpk-text--base {
+  @include _bpk-text-factory(
+    $bpk-text-base-font-size,
+    $bpk-text-base-line-height,
+    $bpk-text-base-font-weight,
+    $bpk-text-base-letter-spacing
+  );
+}
+
+/// Base text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-base;
 ///   }
 
 @mixin bpk-text-base {
-  @include _bpk-text-factory($bpk-text-base-font-size, $bpk-text-base-line-height, $bpk-text-base-font-weight, $bpk-text-base-letter-spacing);
+  @include bpk-text--base;
 }
 
 /// Large text style
 ///
+/// @require {mixin} bpk-text
+///
 /// @example scss
 ///   .selector {
-///     @include bpk-text-lg();
+///     @include bpk-text;
+///     @include bpk-text--lg;
+///   }
+
+@mixin bpk-text--lg {
+  @include _bpk-text-factory(
+    $bpk-text-lg-font-size,
+    $bpk-text-lg-line-height,
+    $bpk-text-lg-font-weight,
+    $bpk-text-lg-letter-spacing
+  );
+}
+
+/// Large text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-lg;
 ///   }
 
 @mixin bpk-text-lg {
-  @include _bpk-text-factory($bpk-text-lg-font-size, $bpk-text-lg-line-height, $bpk-text-lg-font-weight, $bpk-text-lg-letter-spacing);
+  @include bpk-text--lg;
 }
 
 /// Extra large text style
 ///
+/// @require {mixin} bpk-text
+///
 /// @example scss
 ///   .selector {
-///     @include bpk-text-xl();
+///     @include bpk-text;
+///     @include bpk-text--xl;
+///   }
+
+@mixin bpk-text--xl {
+  @include _bpk-text-factory(
+    $bpk-text-xl-font-size,
+    $bpk-text-xl-line-height,
+    $bpk-text-xl-font-weight,
+    $bpk-text-xl-letter-spacing
+  );
+}
+
+/// Extra large text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-xl;
 ///   }
 
 @mixin bpk-text-xl {
-  @include _bpk-text-factory($bpk-text-xl-font-size, $bpk-text-xl-line-height, $bpk-text-xl-font-weight, $bpk-text-xl-letter-spacing);
+  @include bpk-text--xl;
 }
 
 /// Extra extra large text style
 ///
+/// @require {mixin} bpk-text
+///
 /// @example scss
 ///   .selector {
-///     @include bpk-text-xxl();
+///     @include bpk-text;
+///     @include bpk-text--xxl;
+///   }
+
+@mixin bpk-text--xxl {
+  @include _bpk-text-factory(
+    $bpk-text-xxl-font-size,
+    $bpk-text-xxl-line-height,
+    $bpk-text-xxl-font-weight,
+    $bpk-text-xxl-letter-spacing
+  );
+}
+
+/// Extra extra large text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-xxl;
 ///   }
 
 @mixin bpk-text-xxl {
-  @include _bpk-text-factory($bpk-text-xxl-font-size, $bpk-text-xxl-line-height, $bpk-text-xxl-font-weight, $bpk-text-xxl-letter-spacing);
+  @include bpk-text--xxl;
 }
 
 /// Bold text style
 ///
+/// @require {mixin} bpk-text
+///
 /// @example scss
 ///   .selector {
-///     @include bpk-text-base();
-///     @include bpk-text-bold();
+///     @include bpk-text;
+///     @include bpk-text--bold;
+///   }
+
+@mixin bpk-text--bold {
+  font-weight: $bpk-font-weight-bold;
+}
+
+/// Bold text style (without margin reset)
+///
+/// @example scss
+///   .selector {
+///     @include bpk-text-bold;
 ///   }
 
 @mixin bpk-text-bold {
-  font-weight: $bpk-font-weight-bold;
+  @include bpk-text--bold;
 }
 
 /// Level 1 heading.
@@ -566,27 +704,73 @@
 
 @mixin bpk-content-container--bare-html {
   h1 {
-    @include bpk-heading-1;
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-text-xxl;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-xl;
+    }
   }
 
   h2 {
-    @include bpk-heading-2;
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-text-xl;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-lg;
+    }
   }
 
   h3 {
-    @include bpk-heading-3;
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-text-lg;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-base;
+      @include bpk-text-bold;
+    }
   }
 
   h4 {
-    @include bpk-heading-4;
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-text-base;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-sm;
+      @include bpk-text-bold;
+    }
   }
 
   h5 {
-    @include bpk-heading-5;
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-text-sm;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-xs;
+      @include bpk-text-bold;
+    }
   }
 
   h6 {
-    @include bpk-heading-6;
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-text-sm;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-xs;
+      @include bpk-text-bold;
+    }
   }
 
   a {
@@ -594,7 +778,10 @@
   }
 
   p {
-    @include bpk-paragraph;
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+
+    @include bpk-text-base;
   }
 
   ul,

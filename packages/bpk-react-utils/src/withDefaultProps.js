@@ -19,15 +19,20 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const withTextStyle = (WrappedComponent, textStyle, tagName, className = null) => {
+const withDefaultProps = (WrappedComponent, defaultProps) => {
+  const { className: defaultClassName, ...defaultRest } = defaultProps;
+
   const component = (props) => {
-    const { children, ...rest } = props;
+    const { children, className: innerClassName, ...rest } = props;
+    const classNames = [];
+
+    if (defaultClassName) { classNames.push(defaultClassName); }
+    if (innerClassName) { classNames.push(innerClassName); }
 
     return (
       <WrappedComponent
-        textStyle={textStyle}
-        tagName={tagName}
-        className={className}
+        className={classNames.join(' ')}
+        {...defaultRest}
         {...rest}
       >
         {children}
@@ -37,11 +42,15 @@ const withTextStyle = (WrappedComponent, textStyle, tagName, className = null) =
 
   component.propTypes = {
     children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+  };
+  component.defaultProps = {
+    className: null,
   };
   const inputDisplayName = WrappedComponent.displayName || WrappedComponent.name || 'Text';
-  component.displayName = `withTextStyle(${inputDisplayName})`;
+  component.displayName = `withDefaultProps(${inputDisplayName})`;
 
   return component;
 };
 
-export default withTextStyle;
+export default withDefaultProps;

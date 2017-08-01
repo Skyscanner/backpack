@@ -56,9 +56,8 @@
   }
 
   &__cta {
-    margin: 0;
-
-    @include bpk-text-base;
+    @include bpk-text;
+    @include bpk-text--base;
   }
 
   &__cta-icon {

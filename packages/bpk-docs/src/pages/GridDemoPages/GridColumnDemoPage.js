@@ -19,8 +19,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import BpkHeading from 'bpk-component-heading';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+
+import Heading from './../../components/Heading';
 
 import Lozenge from './Lozenge';
 
@@ -32,7 +33,7 @@ const GridColumnDemoPage = () => (
     <BpkGridRow>
       <BpkGridColumn width={12}>
         <div style={{ textAlign: 'center' }}>
-          <BpkHeading level="h1">{pageTitle}</BpkHeading>
+          <Heading level="h1">{pageTitle}</Heading>
         </div>
       </BpkGridColumn>
     </BpkGridRow>

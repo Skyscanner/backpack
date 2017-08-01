@@ -17,12 +17,12 @@
  */
 
 import React from 'react';
-import BpkParagraph from 'bpk-component-paragraph';
 import BpkStarRating, { BpkInteractiveStarRating, withInteractiveStarRatingState } from 'bpk-component-star-rating';
 
 import starRatingReadme from 'bpk-component-star-rating/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 const InteractiveStarRating = withInteractiveStarRatingState(BpkInteractiveStarRating);
 
@@ -31,9 +31,9 @@ const components = [
     id: 'default',
     title: 'Default',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         By default, star ratings are shown in a static form. These can be set at half star intervals.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkStarRating rating={3.5} ratingLabel="3.5 stars" />,
@@ -42,7 +42,7 @@ const components = [
   {
     id: 'large',
     title: 'Large',
-    blurb: [<BpkParagraph>Similar to the default, but in a large size.</BpkParagraph>],
+    blurb: [<Paragraph>Similar to the default, but in a large size.</Paragraph>],
     examples: [
       <BpkStarRating rating={3.5} ratingLabel="3.5 stars" large />,
     ],
@@ -51,9 +51,9 @@ const components = [
     id: 'interactive',
     title: 'Interactive',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         This version allows users to leave feedback on a given feature or area by setting a rating.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <InteractiveStarRating
@@ -68,10 +68,10 @@ const components = [
 const StarRatingPage = () => <DocsPageBuilder
   title="Star Ratings"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       Star ratings are used for displaying a score within a given range.
       They can also be a good way of capturing user feedback on a particular feature.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={starRatingReadme}

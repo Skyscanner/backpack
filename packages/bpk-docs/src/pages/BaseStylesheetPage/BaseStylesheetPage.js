@@ -19,12 +19,13 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import BpkLink from 'bpk-component-link';
-import BpkHeading from 'bpk-component-heading';
-import BpkParagraph from 'bpk-component-paragraph';
 import BpkBlockquote from 'bpk-component-blockquote';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import { BpkCode, BpkCodeBlock } from 'bpk-component-code';
 import BpkContentContainer from 'bpk-component-content-container';
+
+import Heading from './../../components/Heading';
+import Paragraph from './../../components/Paragraph';
 
 const h5bpLink = 'https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#common-helpers';
 
@@ -32,12 +33,12 @@ const BaseStylesheetPage = () => (
   <section>
     <Helmet title="Base stylesheet" />
     <BpkContentContainer>
-      <BpkHeading level="h1">Base stylesheet</BpkHeading>
-      <BpkParagraph>
+      <Heading level="h1">Base stylesheet</Heading>
+      <Paragraph>
         All components are built on top of a super lightweight base stylesheet. Ensure you include this on the page when
         consuming any backpack components.
-      </BpkParagraph>
-      <BpkHeading level="h3">What&apos;s in it?</BpkHeading>
+      </Paragraph>
+      <Heading level="h3">What&apos;s in it?</Heading>
       <BpkList>
         <BpkListItem>
           For improved cross-browser rendering, we
@@ -70,9 +71,9 @@ const BaseStylesheetPage = () => (
         used to prevent hover effects on touch devices in downstream components) - make sure this is included in the
         head also.
       </BpkBlockquote>
-      <BpkHeading level="h3">Usage</BpkHeading>
+      <Heading level="h3">Usage</Heading>
       <BpkCodeBlock>npm install bpk-stylesheets --save-dev</BpkCodeBlock>
-      <BpkParagraph>Include in your HTML like so:</BpkParagraph>
+      <Paragraph>Include in your HTML like so:</Paragraph>
       <BpkCodeBlock>
         {`<!DOCTYPE html>
 <html lang="en">
@@ -85,9 +86,9 @@ const BaseStylesheetPage = () => (
 </html>
 `}
       </BpkCodeBlock>
-      <BpkParagraph>
+      <Paragraph>
         Alternatively you could import the uncompiled JavaScript/Sass directly and let Webpack split them out:
-      </BpkParagraph>
+      </Paragraph>
       <BpkCodeBlock>{'import \'bpk-stylesheets\';'}</BpkCodeBlock>
     </BpkContentContainer>
   </section>

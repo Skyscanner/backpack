@@ -97,6 +97,7 @@
     padding: $bpk-banner-alert-children-padding-y $bpk-banner-alert-children-padding-x;
     color: $bpk-banner-alert-children-color;
 
-    @include bpk-text-sm;
+    @include bpk-text;
+    @include bpk-text--sm;
   }
 }

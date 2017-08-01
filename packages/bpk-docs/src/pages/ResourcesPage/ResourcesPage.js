@@ -20,11 +20,12 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import BpkLink from 'bpk-component-link';
-import BpkHeading from 'bpk-component-heading';
-import BpkParagraph from 'bpk-component-paragraph';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import BpkContentContainer from 'bpk-component-content-container';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+
+import Heading from './../../components/Heading';
+import Paragraph from './../../components/Paragraph';
 
 /* eslint-disable import/no-webpack-loader-syntax */
 const coreRgbAse = require('!!file-loader?name=[name].[hash].ase!./../../static/core_rgb.ase');
@@ -43,10 +44,10 @@ const ResourcesPage = props => (
     <BpkGridRow>
       <BpkGridColumn width={12}>
         <BpkContentContainer>
-          <BpkHeading level="h1">Resources</BpkHeading>
-          <BpkParagraph>Here you can find a variety of resources to help you design Skyscanner products:</BpkParagraph>
-          <BpkHeading level="h2">Color palettes</BpkHeading>
-          <BpkHeading level="h3">Core</BpkHeading>
+          <Heading level="h1">Resources</Heading>
+          <Paragraph>Here you can find a variety of resources to help you design Skyscanner products:</Paragraph>
+          <Heading level="h2">Color palettes</Heading>
+          <Heading level="h3">Core</Heading>
           <BpkList>
             <BpkListItem>
               <BpkLink href={`/${coreRgbAse}`} blank>Adobe Swatch Exchange</BpkLink>
@@ -55,7 +56,7 @@ const ResourcesPage = props => (
               <BpkLink href={`/${coreRgbClr}`} blank>Mac</BpkLink>
             </BpkListItem>
           </BpkList>
-          <BpkHeading level="h3">Extended (for marketing &amp; illustration only)</BpkHeading>
+          <Heading level="h3">Extended (for marketing &amp; illustration only)</Heading>
           <BpkList>
             <BpkListItem>
               <BpkLink href={`/${extendedRgbAse}`} blank>Adobe Swatch Exchange</BpkLink>
@@ -64,13 +65,13 @@ const ResourcesPage = props => (
               <BpkLink href={`/${extendedRgbClr}`} blank>Mac</BpkLink>
             </BpkListItem>
           </BpkList>
-          <BpkHeading level="h2">Icons</BpkHeading>
+          <Heading level="h2">Icons</Heading>
           <BpkList>
             <BpkListItem>
               <BpkLink href={`/${props.route.iconsSvgs}`}>Icons</BpkLink>
             </BpkListItem>
           </BpkList>
-          <BpkHeading level="h2">Sketch</BpkHeading>
+          <Heading level="h2">Sketch</Heading>
           <BpkList>
             <BpkListItem>
               <BpkLink href={`/${responsiveGrid}`} blank>Responsive grids</BpkLink>

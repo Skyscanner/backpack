@@ -17,8 +17,6 @@
  */
 
 import React from 'react';
-import BpkHeading from 'bpk-component-heading';
-import BpkParagraph from 'bpk-component-paragraph';
 import BpkBlockquote from 'bpk-component-blockquote';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import { BpkCode, BpkCodeBlock } from 'bpk-component-code';
@@ -27,8 +25,6 @@ import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, Bp
 import BpkText from 'bpk-component-text';
 
 import textReadme from 'bpk-component-text/readme.md';
-import headingReadme from 'bpk-component-heading/readme.md';
-import paragraphReadme from 'bpk-component-paragraph/readme.md';
 import linkReadme from 'bpk-component-link/readme.md';
 import listReadme from 'bpk-component-list/readme.md';
 import tableReadme from 'bpk-component-table/readme.md';
@@ -45,60 +41,33 @@ const components = [
     title: 'Text',
     blurb: [
       <Paragraph>
-        The Text component enables you to use the six backpack defined text styles in combination with any of the
+        The text component enables you to use the five backpack defined text styles in combination with any of the
         heading tags, a span or a paragraph. You can mix different text styles with the
         appropriate tag to achieve semantic markup while retaining control over how the text looks.
       </Paragraph>,
-      <Paragraph>
-        Note: Whilst <BpkCode>BpkText</BpkCode> allows for any combination of text size and heading levels,
-        we recommend that visual hierarchy is maintained inline with the semantic structure.
-      </Paragraph>,
+      <BpkBlockquote>
+        <BpkText bold>Note:</BpkText> Whilst <BpkCode>BpkText</BpkCode> allows for any combination of text size and
+        heading levels, we recommend that visual hierarchy is maintained inline with the semantic structure.
+      </BpkBlockquote>,
     ],
     examples: [
-      <BpkText textStyle="base" tagName="p">Base paragraph</BpkText>,
-      <BpkText textStyle="xxl" tagName="h1">xxl Heading(h1)</BpkText>,
-      <BpkText textStyle="lg" tagName="h1">lg Heading(h1)</BpkText>,
-      <BpkText textStyle="lg" tagName="h2">lg Heading(h2)</BpkText>,
+      <BpkText textStyle="xxl" tagName="p">
+        Flights to Edinburgh
+      </BpkText>,
+      <BpkText textStyle="xl" tagName="p">
+        Flights to Edinburgh
+      </BpkText>,
+      <BpkText textStyle="lg" tagName="p">
+        Flights to Edinburgh
+      </BpkText>,
+      <BpkText textStyle="base" tagName="p">
+        Flights to Edinburgh
+      </BpkText>,
+      <BpkText textStyle="sm" tagName="p">
+        Flights to Edinburgh
+      </BpkText>,
     ],
     readme: textReadme,
-  },
-  {
-    id: 'headings',
-    title: 'Headings',
-    blurb: [
-      <Paragraph>
-        Backpack uses six heading levels which combine font-sizes and line heights. Headings used within a content
-        containers have and margins automatically applied.
-      </Paragraph>,
-    ],
-    examples: [
-      <BpkHeading level="h1">Heading 1</BpkHeading>,
-      <BpkHeading level="h2">Heading 2</BpkHeading>,
-      <BpkHeading level="h3">Heading 3</BpkHeading>,
-      <BpkHeading level="h4">Heading 4</BpkHeading>,
-      <BpkHeading level="h5">Heading 5</BpkHeading>,
-      <BpkHeading level="h6">Heading 6</BpkHeading>,
-    ],
-    readme: headingReadme,
-  },
-  {
-    id: 'paragraphs',
-    title: 'Paragraphs',
-    examples: [
-      <BpkParagraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam nemo umquam voluptatem appellavit, appellat;
-        Occultum facinus esse potuerit, gaudebit; Quaerimus enim finem bonorum. Quo igitur, inquit, modo?
-      </BpkParagraph>,
-      <BpkParagraph>
-        Quodsi ipsam honestatem undique pertectam atque absolutam. Cyrenaici quidem non recusant; Sed ego in hoc
-        resisto; Quae duo sunt, unum facit.
-      </BpkParagraph>,
-      <BpkParagraph>
-        Sed nunc, quod agimus; Et quidem, inquit, vehementer errat; Equidem e Cn. Venit ad extremum; Quis non odit
-        sordidos, vanos, leves, futtiles? Itaque ab his ordiamur.
-      </BpkParagraph>,
-    ],
-    readme: paragraphReadme,
   },
   {
     id: 'links',

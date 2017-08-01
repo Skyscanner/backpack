@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import BpkParagraph from 'bpk-component-paragraph';
 import React, { Component } from 'react';
 import BpkDatepicker from 'bpk-component-datepicker';
 import BpkRouterLink from 'bpk-component-router-link';
@@ -25,6 +24,7 @@ import datepickerReadme from 'bpk-component-datepicker/readme.md';
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import format from '../../../../bpk-component-calendar/node_modules/date-fns/format';
+import Paragraph from './../../components/Paragraph';
 import { weekDays } from '../../../../bpk-component-calendar/test-utils';
 
 const formatDate = date => format(date, 'DD/MM/YYYY');
@@ -55,12 +55,12 @@ const components = [
     id: 'datepicker',
     title: 'Default datepicker',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Default calendar, input and popover configuration.
-      </BpkParagraph>,
-      <BpkParagraph>
+      </Paragraph>,
+      <Paragraph>
         See the <BpkRouterLink to={ROUTES.CALENDAR}>BpkCalendar documentation</BpkRouterLink> for more examples.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <DatepickerContainer
@@ -82,11 +82,11 @@ const components = [
 const DatepickerPage = () => <DocsPageBuilder
   title="Datepicker"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       The datepicker is an input control that allows the user to pick a single date. It embeds
       a <BpkRouterLink to={ROUTES.CALENDAR}>calendar component</BpkRouterLink> in
       a <BpkRouterLink to={ROUTES.POPOVERS}>popover</BpkRouterLink>.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={datepickerReadme}

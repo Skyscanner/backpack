@@ -29,6 +29,10 @@
 
   &__section-header {
     margin-top: $bpk-spacing-md;
+
+    &--no-bottom-margin {
+      margin-bottom: 0;
+    }
   }
 
   &__copywrite-column {

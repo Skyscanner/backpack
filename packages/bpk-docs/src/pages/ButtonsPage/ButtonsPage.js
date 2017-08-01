@@ -18,7 +18,6 @@
 
 import React, { Component } from 'react';
 import BpkButton from 'bpk-component-button';
-import BpkParagraph from 'bpk-component-paragraph';
 import { colors, buttons } from 'bpk-tokens/tokens/base.es6';
 import { alignToButton, alignToLargeButton } from 'bpk-component-icon';
 import { BpkCode } from 'bpk-component-code';
@@ -39,6 +38,7 @@ import loadingButtonReadme from 'bpk-component-loading-button/readme.md';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 const AlignedBpkSmallArrowIcon = alignToButton(TestBpkSmallArrowIcon);
 const AlignedBpkLargeArrowIcon = alignToLargeButton(TestBpkLargeArrowIcon);
@@ -93,10 +93,10 @@ const components = [
     id: 'primary',
     title: 'Primary',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         The Backpack primary button is available in two sizes and comes with styles for hover, active, disabled and
         selected states.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkButton>Primary</BpkButton>,
@@ -117,10 +117,10 @@ const components = [
     id: 'secondary',
     title: 'Secondary',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Similar to the primary button, the secondary version is available in two sizes and comes with styles for
         hover, active, disabled and selected states.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkButton secondary>Secondary</BpkButton>,
@@ -141,9 +141,9 @@ const components = [
     id: 'featured',
     title: 'Featured',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         This button is reserved for featured buttons.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkButton featured>Featured</BpkButton>,
@@ -179,9 +179,9 @@ const components = [
     id: 'with-icons',
     title: 'With icons',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         All buttons support the nesting of icons, which is useful for improving affordance.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkButton>
@@ -198,9 +198,9 @@ const components = [
     id: 'icon-only',
     title: 'Icon-only buttons',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Buttons may contain only an icon (without visible text), which is useful for small screen sizes.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkButton iconOnly>
@@ -239,10 +239,10 @@ const components = [
     id: 'link-buttons',
     title: 'Link buttons',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Link buttons follow the same style as links and are used as a tertiary means of triggering actions. Like all
         other buttons, these are available in two sizes and have hover, active and disabled states.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkButton link>Link</BpkButton>,
@@ -259,10 +259,10 @@ const components = [
     id: 'icon-alignment',
     title: 'Icon alignment within buttons',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         The <BpkLink href={ROUTES.ALIGNMENT}>Alignment</BpkLink> page gives examples of
         icon alignment using HOCs provided in the <BpkCode>bpk-component-icon</BpkCode> package.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [],
   },
@@ -273,12 +273,12 @@ const customSections = [
     id: 'loading-buttons',
     title: 'Loading buttons',
     content: [
-      <BpkParagraph>
+      <Paragraph>
         Loading buttons support all the same props as
         the <BpkRouterLink to={ROUTES.BUTTONS}>button</BpkRouterLink> component. They are distinct in that they
         encapsulate the composition of <BpkRouterLink to={ROUTES.ICONS}>icons</BpkRouterLink> as well
         as <BpkRouterLink to={ROUTES.SPINNERS}>spinners</BpkRouterLink> to form a nice, compelling call to action.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <LoadingButtonContainer />,
@@ -292,10 +292,10 @@ const customSections = [
 const ButtonsPage = () => <DocsPageBuilder
   title="Buttons"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       On this page you’ll find examples and information on how to use the button component. If you provide an href, an
       anchor tag is rendered instead.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   sassdocId="buttons"

@@ -15,12 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import BpkText, { withTextStyle } from 'bpk-component-text';
+import BpkText from 'bpk-component-text';
 
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, withDefaultProps } from 'bpk-react-utils';
 
 import STYLES from './Paragraph.scss';
 
 const getClassName = cssModules(STYLES);
 
-export default withTextStyle(BpkText, 'base', 'p', getClassName('bpk-docs-paragraph'));
+export default withDefaultProps(BpkText,
+  {
+    textStyle: 'base',
+    tagName: 'p',
+    className: getClassName('bpk-docs-paragraph'),
+  },
+);

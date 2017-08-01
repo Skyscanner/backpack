@@ -26,7 +26,8 @@
   &__footer-copy {
     display: block;
 
-    @include bpk-text-sm;
+    @include bpk-text;
+    @include bpk-text--sm;
 
     &--align-right {
       text-align: right;

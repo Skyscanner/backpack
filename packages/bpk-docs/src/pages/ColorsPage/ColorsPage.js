@@ -17,7 +17,6 @@
  */
 
 import React from 'react';
-import BpkParagraph from 'bpk-component-paragraph';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import { colors, primaryGradient } from 'bpk-tokens/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
@@ -25,6 +24,7 @@ import { cssModules } from 'bpk-react-utils';
 import STYLES from './colors-page.scss';
 import ColorSwatch from './../../components/ColorSwatch';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 const getClassName = cssModules(STYLES);
 const containerClassName = getClassName('bpkdocs-colors-page__swatch-container');
@@ -34,17 +34,17 @@ const components = [
     id: 'primary',
     title: 'Primary',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Skyscanner’s primary brand colors are Blue-500 and White. All other colors in the palette are considered
         secondary to these.
-      </BpkParagraph>,
+      </Paragraph>,
       <div className={containerClassName}>
         <ColorSwatch name="color-blue-500" color={colors.colorBlue500} whiteColor />
         <ColorSwatch name="color-white" color={colors.colorWhite} border />
       </div>,
-      <BpkParagraph>
+      <Paragraph>
         Anything using Blue should be clickable, but not all things that are clickable need to be Blue.
-      </BpkParagraph>,
+      </Paragraph>,
       <BpkList>
         <BpkListItem>
           Links make use of Blue-500.
@@ -63,18 +63,18 @@ const components = [
     id: 'secondary',
     title: 'Secondary',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         The following colors are used in conjunction with the above and should always be used sparingly.
-      </BpkParagraph>,
+      </Paragraph>,
       <div className={containerClassName}>
         <ColorSwatch name="color-green-500" color={colors.colorGreen500} whiteColor />
         <ColorSwatch name="color-yellow-500" color={colors.colorYellow500} />
         <ColorSwatch name="color-red-500" color={colors.colorRed500} whiteColor />
       </div>,
-      <BpkParagraph>
+      <Paragraph>
         Green is used to denote, cheap, direct and generally anything positive. Yellow is used to guide the user and
         notify them of any warnings. Red is expensive, In-direct and must-read warnings such as errors.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [],
   },
@@ -82,10 +82,10 @@ const components = [
     id: 'grays',
     title: 'Grays',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         The gray palette has been carefully considered to work in a broad range of situations and be bold, yet subtle
         when required.
-      </BpkParagraph>,
+      </Paragraph>,
       <div className={containerClassName}>
         <ColorSwatch name="color-gray-50" color={colors.colorGray50} />
         <ColorSwatch name="color-gray-100" color={colors.colorGray100} />
@@ -94,9 +94,9 @@ const components = [
         <ColorSwatch name="color-gray-700" color={colors.colorGray700} whiteColor />
         <ColorSwatch name="color-gray-900" color={colors.colorGray900} whiteColor />
       </div>,
-      <BpkParagraph>
+      <Paragraph>
         Neutrals for typography and decorative elements.
-      </BpkParagraph>,
+      </Paragraph>,
       <BpkList>
         <BpkListItem>
           Gray-50 is useful for background colours especially when using cards.
@@ -115,9 +115,9 @@ const components = [
     id: 'gradients',
     title: 'Gradients',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         An optional gradient can be used to break up large swathes of blue. However, this should be used sparingly.
-      </BpkParagraph>,
+      </Paragraph>,
       <div className={containerClassName}>
         <ColorSwatch name="primary-gradient" gradient={primaryGradient} whiteColor />
       </div>,
@@ -129,14 +129,14 @@ const components = [
 const ColorsPage = () => <DocsPageBuilder
   title="Colors"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       Skyscanner makes use of a harmonious and vibrant palette, which you can see below. This made up of primary and
       secondary colours as well as a suite of grays.
-    </BpkParagraph>,
-    <BpkParagraph>
+    </Paragraph>,
+    <Paragraph>
       The Skyscanner product relies on a lot of white space, which should be considered at all times when pairing
       with additional colours.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   sassdocId="colors"

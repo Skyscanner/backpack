@@ -17,12 +17,12 @@
  */
 
 import React from 'react';
-import BpkParagraph from 'bpk-component-paragraph';
 import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert';
 
 import bannerAlertReadme from 'bpk-component-banner-alert/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 const longMessage = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
@@ -37,11 +37,11 @@ const components = [
     id: 'banner-alerts',
     title: 'Banner alerts',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         These are displayed to the user to provide feedback when an action has been performed. They are available in
         three styles to indicate success, warning or error and can be configured to display further information to
         user in the form of a collapsible panel.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <BpkBannerAlert message="Successful alert." type={ALERT_TYPES.SUCCESS} />,
@@ -88,10 +88,10 @@ const components = [
 const NotificationsPage = () => <DocsPageBuilder
   title="Notifications"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       Backpack supports a number of different types of notification styles, which can be used in different scenarios
       to provide messaging to the user.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   sassdocId="notifications"

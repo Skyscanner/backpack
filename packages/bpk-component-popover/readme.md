@@ -14,7 +14,7 @@ npm install bpk-component-popover --save-dev
 import React, { Component } from 'react';
 import BpkButton from 'bpk-component-button';
 import BpkPopover from 'bpk-component-popover';
-import BpkParagraph from 'bpk-component-paragraph';
+import BpkText from 'bpk-component-text';
 
 class App extends Component {
   constructor() {
@@ -52,7 +52,7 @@ class App extends Component {
         label="My popover"
         closeButtonText="Close"
       >
-        <BpkParagraph>My popover content</BpkParagraph>
+        <BpkText>My popover content</BpkText>
       </BpkPopover>
     );
   }
@@ -88,7 +88,7 @@ In order to attach the popover to a regular DOM element, provide a function whic
   label="My popover"
   closeButtonText="Close"
 >
-  <BpkParagraph>My popover content</BpkParagraph>
+  <BpkText>My popover content</BpkText>
 </BpkPopover>
 ```
 

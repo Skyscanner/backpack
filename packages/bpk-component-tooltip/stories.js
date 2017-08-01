@@ -18,7 +18,8 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import BpkHeading from 'bpk-component-heading';
+import { withDefaultProps } from 'bpk-react-utils';
+import BpkText from 'bpk-component-text';
 import { spacingSm, colorGreen500 } from 'bpk-tokens/tokens/base.es6';
 import BpkTooltip from './index';
 
@@ -31,12 +32,14 @@ const st = {
   textAlign: 'center',
 };
 
+const Heading = withDefaultProps(BpkText, { textStyle: 'xxl', tagName: 'h1' });
+
 storiesOf('bpk-component-tooltip', module)
   .add('Default', () => (
     <div style={st}>
       <BpkTooltip
         id="my-tooltip"
-        target={<BpkHeading level="h1">£295</BpkHeading>}
+        target={<Heading>£295</Heading>}
       >
         This is the cheapest price! 👍
       </BpkTooltip>
@@ -46,7 +49,7 @@ storiesOf('bpk-component-tooltip', module)
     <div style={st}>
       <BpkTooltip
         id="my-tooltip"
-        target={<BpkHeading level="h1">£295</BpkHeading>}
+        target={<Heading level="h1">£295</Heading>}
         tetherOptions={{
           attachment: 'middle left',
           constraints: [
@@ -66,7 +69,7 @@ storiesOf('bpk-component-tooltip', module)
     <div style={{ height: '500px', margin: '30px', textAlign: 'center' }}>
       <BpkTooltip
         id="my-tooltip"
-        target={<BpkHeading level="h1">£295</BpkHeading>}
+        target={<Heading level="h1">£295</Heading>}
         padded={false}
       >
         <div

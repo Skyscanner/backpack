@@ -29,12 +29,14 @@
   &__small {
     color: $bpk-color-gray-500;
 
-    @include bpk-text-sm;
+    @include bpk-text;
+    @include bpk-text--sm;
   }
 
   &__price {
-    @include bpk-text-lg;
-    @include bpk-text-bold;
+    @include bpk-text;
+    @include bpk-text--lg;
+    @include bpk-text--bold;
   }
 
   &__main {
@@ -57,6 +59,7 @@
   }
 
   &__time {
-    @include bpk-text-lg;
+    @include bpk-text;
+    @include bpk-text--lg;
   }
 }

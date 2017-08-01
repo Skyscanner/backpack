@@ -25,7 +25,7 @@
   "devDependencies": {
     "bpk-component-breakpoint": "^1.0.2",
     "bpk-component-content-container": "^1.1.8",
-    "bpk-component-heading": "^2.1.8",
+    "bpk-component-text": "^1.0.0",
     "bpk-component-rtl-toggle": "^1.0.2"
   }
 }

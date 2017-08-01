@@ -20,13 +20,13 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkModal from 'bpk-component-modal';
 import BpkButton from 'bpk-component-button';
-import BpkParagraph from 'bpk-component-paragraph';
 import { BpkButtonLink } from 'bpk-component-link';
 
 import modalReadme from 'bpk-component-modal/readme.md';
 
 import LoginFormExample from './LoginFormExample';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Paragraph from './../../components/Paragraph';
 
 class ModalContainer extends Component {
   constructor() {
@@ -92,7 +92,7 @@ const components = [
         buttonText="Open modal"
         getApplicationElement={() => document.getElementById('react-mount')}
       >
-        <BpkParagraph>You can put anything you want in here, including forms:</BpkParagraph>
+        <Paragraph>You can put anything you want in here, including forms:</Paragraph>
         <LoginFormExample />
       </ModalContainer>,
     ],
@@ -101,10 +101,10 @@ const components = [
     id: 'text-button',
     title: 'Text button',
     blurb: [
-      <BpkParagraph>
+      <Paragraph>
         Modals can be configured to display the close button as text - useful for when a close icon
         doesn&apos;t fit the context.
-      </BpkParagraph>,
+      </Paragraph>,
     ],
     examples: [
       <ModalContainer
@@ -113,7 +113,7 @@ const components = [
         buttonText="Open modal"
         getApplicationElement={() => document.getElementById('react-mount')}
       >
-        <BpkParagraph>You can put anything you want in here, including forms:</BpkParagraph>
+        <Paragraph>You can put anything you want in here, including forms:</Paragraph>
         <LoginFormExample />
       </ModalContainer>,
     ],
@@ -123,11 +123,11 @@ const components = [
 const ModalsPage = () => <DocsPageBuilder
   title="Modals"
   blurb={[
-    <BpkParagraph>
+    <Paragraph>
       Modals are used to display content or views that are separate from the rest of the app or page. When triggered,
       modals will emerge from the centre of the viewport with a backdrop to indicate their separation from everything
       else. On mobile viewports, they occupy the entire screen.
-    </BpkParagraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={modalReadme}

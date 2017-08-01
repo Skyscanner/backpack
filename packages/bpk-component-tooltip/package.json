@@ -19,7 +19,7 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-component-heading": "^2.1.8",
+    "bpk-component-text": "^1.0.0",
     "bpk-tokens": "^24.0.0"
   }
 }
