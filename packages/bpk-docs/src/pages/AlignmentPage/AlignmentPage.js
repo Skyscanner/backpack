@@ -119,7 +119,7 @@ const AlignedArrow = withAlignment(
       <BpkCodeBlock >
         {`import AwardIcon from 'bpk-component-icon/lg/award';
 import { withAlignment } from 'bpk-component-icon';
-import { iconSizeLg, lineHeightLg } from 'bpk-tokens/tokens/base.es6';
+import { iconSizeLg, lineHeightBase } from 'bpk-tokens/tokens/base.es6';
 import BpkText from 'bpk-component-text';
 
 const AlignedSpan = withAlignment(
@@ -141,8 +141,8 @@ const AlignedSpan = withAlignment(
         <AwardIcon fill={colors.colorGray700} />
         <AlignedSpan >
           &nbsp;
-    Search
-  </AlignedSpan>
+          Search
+        </AlignedSpan>
       </BpkText>,
     ],
   },
@@ -152,13 +152,13 @@ const AlignedSpan = withAlignment(
     blurb: [
       <Paragraph>
         HOC wrappers exist for common alignment tasks, such as aligning an icon within a button.
-         Other examples can be seen in the <BpkLink href={ROUTES.BUTTONS}>Buttons page</BpkLink>.
+        Other examples can be seen in the <BpkLink href={ROUTES.BUTTONS}>Buttons page</BpkLink>.
       </Paragraph>,
       <BpkCodeBlock>
         {`import LongArrowRightIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import { withButtonAlignment } from 'bpk-component-icon';
 
-const AlignedArrow = withButtonAlignment(LongArrowRightIcon);
+const AlignedArrow = withButtonAlignment(LongArrowRightIconSm);
 
 <BpkButton >
   Button Text
@@ -190,15 +190,16 @@ import { withLargeButtonAlignment } from 'bpk-component-icon';
 
 const AlignedArrow = withLargeButtonAlignment(LongArrowRightIcon);
 
-<BpkButton >
+<BpkButton large >
   Button Text
+  &nbsp;
   <AlignedArrow />
 </BpkButton>
 `}
       </BpkCodeBlock>,
     ],
     examples: [
-      <BpkButton large>
+      <BpkButton large >
         Button Text
         &nbsp;
         <AlignedLargeButtonArrow fill={colors.colorWhite} />
