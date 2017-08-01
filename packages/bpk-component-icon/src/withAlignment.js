@@ -18,18 +18,24 @@
 
 import React from 'react';
 
-export default function withAlignment(WrappedComponent, lineHeight, iconHeight) {
+export default function withAlignment(Component, objectHeight, subjectHeight) {
   return (props) => {
-    const { style, ...rest } = props;
-    const lineHeightDecimal = `${lineHeight}`.replace('rem', '');
-    const iconHeightDecimal = `${iconHeight}`.replace('rem', '');
-    const marginTopCalculated = (Math.max(0, lineHeightDecimal - iconHeightDecimal) / 2) + 'rem';
+    const { children, ...rest } = props;
+    const objectHeightDecimal = `${objectHeight}`.replace('rem', '');
+    const subjectHeightDecimal = `${subjectHeight}`.replace('rem', '');
+    const marginTopCalculated = (Math.max(0, objectHeightDecimal - subjectHeightDecimal) / 2) + 'rem';
 
     return (
-      <WrappedComponent
-        style={{ height: iconHeight, width: iconHeight, marginTop: marginTopCalculated, verticalAlign: 'top', ...style }}
-        {...rest}
-      />
+      <span
+        style={{
+          lineHeight: subjectHeight,
+          display: 'inline-block',
+          marginTop: marginTopCalculated,
+          verticalAlign: 'top'
+        }}
+      >
+        <Component {...rest} >{children}</Component>
+      </span>
     );
-  };
+  }
 }

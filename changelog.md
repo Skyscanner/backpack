@@ -29,7 +29,9 @@
 **Fixed:**
 - bpk-component-table
   - `BpkTableCell`'s now accept arbitrary props and classNames
-  
+- bpk-component-icon
+  - `withAlignment` HOC uses wrapping `span` to prevent overriding the style of an aligned component
+
 ## 2017-07-28 - New Text component and mixins
 
 **Breaking:**
