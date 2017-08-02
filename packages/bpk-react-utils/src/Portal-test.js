@@ -119,24 +119,38 @@ describe('Portal', () => {
 
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    portal.instance().onDocumentClick({
+    portal.instance().onDocumentMouseDown({
+      button: 1,
+    });
+    portal.instance().onDocumentMouseUp({
       button: 1,
     });
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    portal.instance().onDocumentClick({
+    portal.instance().onDocumentMouseDown({
+      button: 0,
+      target: portal.instance().getTargetElement(),
+    });
+    portal.instance().onDocumentMouseUp({
       button: 0,
       target: portal.instance().getTargetElement(),
     });
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    portal.instance().onDocumentClick({
+    portal.instance().onDocumentMouseDown({
+      button: 0,
+      target: portal.instance().portalElement,
+    });
+    portal.instance().onDocumentMouseUp({
       button: 0,
       target: portal.instance().portalElement,
     });
     expect(onCloseSpy.mock.calls.length).toEqual(0);
 
-    portal.instance().onDocumentClick({
+    portal.instance().onDocumentMouseDown({
+      button: 0,
+    });
+    portal.instance().onDocumentMouseUp({
       button: 0,
     });
     expect(onCloseSpy.mock.calls.length).toEqual(1);
@@ -156,7 +170,8 @@ describe('Portal', () => {
     const event = {
       button: 0,
     };
-    portal.instance().onDocumentClick(event);
+    portal.instance().onDocumentMouseDown(event);
+    portal.instance().onDocumentMouseUp(event);
 
     expect(onCloseSpy.mock.calls[0][0]).toEqual(event);
     expect(onCloseSpy.mock.calls[0][1]).toEqual({ source: 'DOCUMENT_CLICK' });
