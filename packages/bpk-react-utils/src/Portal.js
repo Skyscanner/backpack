@@ -39,6 +39,7 @@ class Portal extends Component {
     this.onDocumentMouseUp = this.onDocumentMouseUp.bind(this);
     this.onDocumentMouseDown = this.onDocumentMouseDown.bind(this);
     this.onDocumentKeyDown = this.onDocumentKeyDown.bind(this);
+    this.onDocumentMouseMove = this.onDocumentMouseMove.bind(this);
     this.getClickEventProperties = this.getClickEventProperties.bind(this);
   }
 
@@ -107,6 +108,10 @@ class Portal extends Component {
     }
   }
 
+  onDocumentMouseMove() {
+    this.shouldClose = false;
+  }
+
   getClickEventProperties(event) {
     const isNotLeftClick = event.button && event.button !== 0;
 
@@ -138,10 +143,12 @@ class Portal extends Component {
 
     this.portalElement = document.createElement('div');
     document.body.appendChild(this.portalElement);
+    document.addEventListener('touchstart', this.onDocumentMouseDown, false);
+    document.addEventListener('touchmove', this.onDocumentMouseMove, false);
+    document.addEventListener('touchend', this.onDocumentMouseUp, false);
     document.addEventListener('mousedown', this.onDocumentMouseDown, false);
     document.addEventListener('mouseup', this.onDocumentMouseUp, false);
-    document.addEventListener('touchstart', this.onDocumentMouseDown, false);
-    document.addEventListener('touchend', this.onDocumentMouseUp, false);
+    document.addEventListener('mousemove', this.onDocumentMouseMove, false);
     document.addEventListener('keydown', this.onDocumentKeyDown, false);
 
     if (this.props.style) {
@@ -162,10 +169,12 @@ class Portal extends Component {
 
     unmountComponentAtNode(this.portalElement);
     document.body.removeChild(this.portalElement);
+    document.removeEventListener('touchstart', this.onDocumentMouseDown, false);
+    document.removeEventListener('touchmove', this.onDocumentMouseMove, false);
+    document.removeEventListener('touchend', this.onDocumentMouseUp, false);
     document.removeEventListener('mousedown', this.onDocumentMouseDown, false);
     document.removeEventListener('mouseup', this.onDocumentMouseUp, false);
-    document.removeEventListener('touchstart', this.onDocumentMouseDown, false);
-    document.removeEventListener('touchend', this.onDocumentMouseUp, false);
+    document.removeEventListener('mousemove', this.onDocumentMouseMove, false);
     document.removeEventListener('keydown', this.onDocumentKeyDown, false);
     this.portalElement = null;
   }
