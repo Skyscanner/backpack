@@ -8,30 +8,34 @@
 
 - bpk-mixins:
   - Added BEM `bpk-text--XX` mixins for text styles. These are similar but subtley different to existing
-    `bpk-text-XX` mixins:
-    - By default, use the BEM-style mixins:
+    `bpk-text-XX` mixins
+  - By default, use the BEM-style mixins:
 
-      ```scss
-      .my-component {
-        @include bpk-text;     // resets margin
-        @include bpk-text--sm; // applies sm text style
-      }
-      ```
-    - If you want the text style but need to apply custom margin, use the `bpk-text-xx` standalone mixins:
-      ```scss
-      .my-component {
-        margin: $bpk-spacing-sm 0 $bpk-spacing-base 0; // applies custom margin
+    ```scss
+    .my-component {
+      @include bpk-text;     // resets margin
+      @include bpk-text--sm; // applies sm text style
+    }
+    ```
 
-        @include bpk-text-sm; // applies sm text style
-      }
-      ```
+  - If you want the text style but need to apply custom margin, use the `bpk-text-xx` standalone mixins:
+
+    ```scss
+    .my-component {
+      margin: $bpk-spacing-sm 0 $bpk-spacing-base 0; // applies custom margin
+
+      @include bpk-text-sm; // applies sm text style
+    }
+    ```
 
 **Fixed:**
-- bpk-component-table
+- bpk-component-table:
   - `BpkTableCell`'s now accept arbitrary props and classNames
-- bpk-component-icon
+
+- bpk-component-icon:
   - `withAlignment` HOC uses wrapping `span` to prevent overriding the style of an aligned component
-- bpk-component-breakpoint
+
+- bpk-component-breakpoint:
   - Unpinned `react-responsive` to ^v1.3.2 as the breaking change released in v1.3.2 has been resolved
 
 ## 2017-07-28 - New Text component and mixins
