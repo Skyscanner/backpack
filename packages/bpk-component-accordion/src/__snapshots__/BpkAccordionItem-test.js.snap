@@ -27,25 +27,34 @@ exports[`BpkAccordionItem should not render an "initiallyExpanded" attribute on 
         <span
           className="bpk-accordion__icon-wrapper"
         >
-          <svg
-            className="bpk-accordion__item-expand-icon"
-            height="18"
+          <span
             style={
               Object {
-                "height": "1.125rem",
+                "display": "inline-block",
+                "lineHeight": "1.125rem",
                 "marginTop": "0.1875rem",
                 "verticalAlign": "top",
-                "width": "1.125rem",
               }
             }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M12 17.5l-7.2-6.4c-.6-.5-.7-1.5-.1-2.1.5-.6 1.5-.7 2.1-.1l5.2 4.6 5.2-4.6c.6-.6 1.6-.5 2.1.1s.5 1.6-.1 2.1L12 17.5z"
-            />
-          </svg>
+            <svg
+              className="bpk-accordion__item-expand-icon"
+              height="18"
+              style={
+                Object {
+                  "height": "1.125rem",
+                  "width": "1.125rem",
+                }
+              }
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.5l-7.2-6.4c-.6-.5-.7-1.5-.1-2.1.5-.6 1.5-.7 2.1-.1l5.2 4.6 5.2-4.6c.6-.6 1.6-.5 2.1.1s.5 1.6-.1 2.1L12 17.5z"
+              />
+            </svg>
+          </span>
         </span>
       </span>
     </button>
@@ -105,25 +114,34 @@ exports[`BpkAccordionItem should render correctly 1`] = `
         <span
           className="bpk-accordion__icon-wrapper"
         >
-          <svg
-            className="bpk-accordion__item-expand-icon"
-            height="18"
+          <span
             style={
               Object {
-                "height": "1.125rem",
+                "display": "inline-block",
+                "lineHeight": "1.125rem",
                 "marginTop": "0.1875rem",
                 "verticalAlign": "top",
-                "width": "1.125rem",
               }
             }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M12 17.5l-7.2-6.4c-.6-.5-.7-1.5-.1-2.1.5-.6 1.5-.7 2.1-.1l5.2 4.6 5.2-4.6c.6-.6 1.6-.5 2.1.1s.5 1.6-.1 2.1L12 17.5z"
-            />
-          </svg>
+            <svg
+              className="bpk-accordion__item-expand-icon"
+              height="18"
+              style={
+                Object {
+                  "height": "1.125rem",
+                  "width": "1.125rem",
+                }
+              }
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.5l-7.2-6.4c-.6-.5-.7-1.5-.1-2.1.5-.6 1.5-.7 2.1-.1l5.2 4.6 5.2-4.6c.6-.6 1.6-.5 2.1.1s.5 1.6-.1 2.1L12 17.5z"
+              />
+            </svg>
+          </span>
         </span>
       </span>
     </button>
@@ -184,25 +202,34 @@ exports[`BpkAccordionItem should render correctly with "className" prop 1`] = `
         <span
           className="bpk-accordion__icon-wrapper"
         >
-          <svg
-            className="bpk-accordion__item-expand-icon"
-            height="18"
+          <span
             style={
               Object {
-                "height": "1.125rem",
+                "display": "inline-block",
+                "lineHeight": "1.125rem",
                 "marginTop": "0.1875rem",
                 "verticalAlign": "top",
-                "width": "1.125rem",
               }
             }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M12 17.5l-7.2-6.4c-.6-.5-.7-1.5-.1-2.1.5-.6 1.5-.7 2.1-.1l5.2 4.6 5.2-4.6c.6-.6 1.6-.5 2.1.1s.5 1.6-.1 2.1L12 17.5z"
-            />
-          </svg>
+            <svg
+              className="bpk-accordion__item-expand-icon"
+              height="18"
+              style={
+                Object {
+                  "height": "1.125rem",
+                  "width": "1.125rem",
+                }
+              }
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.5l-7.2-6.4c-.6-.5-.7-1.5-.1-2.1.5-.6 1.5-.7 2.1-.1l5.2 4.6 5.2-4.6c.6-.6 1.6-.5 2.1.1s.5 1.6-.1 2.1L12 17.5z"
+              />
+            </svg>
+          </span>
         </span>
       </span>
     </button>
@@ -262,25 +289,34 @@ exports[`BpkAccordionItem should render correctly with "expanded" prop 1`] = `
         <span
           className="bpk-accordion__icon-wrapper"
         >
-          <svg
-            className="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped"
-            height="18"
+          <span
             style={
               Object {
-                "height": "1.125rem",
+                "display": "inline-block",
+                "lineHeight": "1.125rem",
                 "marginTop": "0.1875rem",
                 "verticalAlign": "top",
-                "width": "1.125rem",
               }
             }
-            viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M12 17.5l-7.2-6.4c-.6-.5-.7-1.5-.1-2.1.5-.6 1.5-.7 2.1-.1l5.2 4.6 5.2-4.6c.6-.6 1.6-.5 2.1.1s.5 1.6-.1 2.1L12 17.5z"
-            />
-          </svg>
+            <svg
+              className="bpk-accordion__item-expand-icon bpk-accordion__item-expand-icon--flipped"
+              height="18"
+              style={
+                Object {
+                  "height": "1.125rem",
+                  "width": "1.125rem",
+                }
+              }
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.5l-7.2-6.4c-.6-.5-.7-1.5-.1-2.1.5-.6 1.5-.7 2.1-.1l5.2 4.6 5.2-4.6c.6-.6 1.6-.5 2.1.1s.5 1.6-.1 2.1L12 17.5z"
+              />
+            </svg>
+          </span>
         </span>
       </span>
     </button>

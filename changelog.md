@@ -29,6 +29,8 @@
 **Fixed:**
 - bpk-component-table
   - `BpkTableCell`'s now accept arbitrary props and classNames
+- bpk-component-icon
+  - `withAlignment` HOC uses wrapping `span` to prevent overriding the style of an aligned component
 - bpk-component-breakpoint
   - Unpinned `react-responsive` to ^v1.3.2 as the breaking change released in v1.3.2 has been resolved
 
