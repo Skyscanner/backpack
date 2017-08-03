@@ -21,4 +21,56 @@
 .bpk-docs-heading {
   margin-top: 0;
   margin-bottom: $bpk-spacing-sm;
+
+  &--h1 {
+    @include bpk-text-xxl;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-xl;
+    }
+  }
+
+  &--h2 {
+    @include bpk-text-xl;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-lg;
+    }
+  }
+
+  &--h3 {
+    @include bpk-text-lg;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-base;
+      @include bpk-text-bold;
+    }
+  }
+
+  &--h4 {
+    @include bpk-text-base;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-sm;
+      @include bpk-text-bold;
+    }
+  }
+
+  &--h5 {
+    @include bpk-text-sm;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-xs;
+      @include bpk-text-bold;
+    }
+  }
+
+  &--h6 {
+    @include bpk-text-sm;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-text-xs;
+      @include bpk-text-bold;
+    }
+  }
 }

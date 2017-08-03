@@ -18,158 +18,39 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import BpkText from 'bpk-component-text';
-import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
-
-import { cssModules, withDefaultProps } from 'bpk-react-utils';
+import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './Heading.scss';
 
 const getClassName = cssModules(STYLES);
-const className = getClassName('bpk-docs-heading');
 
-const HEADINGS = {
-  h1: {
-    mobile: withDefaultProps(
-      BpkText,
-      {
-        textStyle: 'xl',
-        tagName: 'h1',
-        bold: false,
-        className,
-      },
-    ),
-    other: withDefaultProps(
-      BpkText,
-      {
-        textStyle: 'xxl',
-        tagName: 'h1',
-        bold: false,
-        className,
-      },
-    ),
-  },
-  h2: {
-    mobile: withDefaultProps(
-      BpkText,
-      {
-        textStyle: 'lg',
-        tagName: 'h2',
-        bold: false,
-        className,
-      },
-    ),
-    other: withDefaultProps(
-      BpkText,
-      {
-        textStyle: 'xl',
-        tagName: 'h2',
-        bold: false,
-        className,
-      },
-    ),
-  },
-  h3: {
-    mobile: withDefaultProps(
-      BpkText,
-      {
-        textStyle: 'base',
-        tagName: 'h3',
-        bold: true,
-        className,
-      },
-    ),
-    other: withDefaultProps(
-      BpkText,
-      {
-        textStyle: 'lg',
-        tagName: 'h3',
-        bold: false,
-        className,
-      },
-    ),
-  },
-  h4: {
-    mobile: withDefaultProps(
-      BpkText,
-      {
-        textStyle: 'sm',
-        tagName: 'h4',
-        bold: true,
-        className,
-      },
-    ),
-    other: withDefaultProps(
-      BpkText,
-      {
-        textStyle: 'base',
-        tagName: 'h4',
-        bold: false,
-        className,
-      },
-    ),
-  },
-  h5: {
-    mobile: withDefaultProps(
-      BpkText,
-      {
-        textStyle: 'xs',
-        tagName: 'h5',
-        bold: true,
-        className,
-      },
-    ),
-    other: withDefaultProps(
-      BpkText,
-      {
-        textStyle: 'sm',
-        tagName: 'h5',
-        bold: false,
-        className,
-      },
-    ),
-  },
-  h6: {
-    mobile: withDefaultProps(
-      BpkText,
-      {
-        textStyle: 'xs',
-        tagName: 'h6',
-        bold: true,
-        className,
-      },
-    ),
-    other: withDefaultProps(
-      BpkText,
-      {
-        textStyle: 'sm',
-        tagName: 'h6',
-        bold: false,
-        className,
-      },
-    ),
-  },
+const HEADINGS_LEVELS = {
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  h4: 'h4',
+  h5: 'h5',
+  h6: 'h6',
 };
 
 const Heading = (props) => {
-  const { level, ...rest } = props;
+  const { level: TagName, className, ...rest } = props;
 
-  const Component = HEADINGS[level];
+  const classNames = [getClassName('bpk-docs-heading')];
+  classNames.push(getClassName(`bpk-docs-heading--${TagName}`));
 
-  if (!Component) {
-    return null;
-  }
+  if (className) { classNames.push(className); }
 
-  return (
-    <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-      {isMobile => Component[isMobile ? 'mobile' : 'other']({ ...rest })}
-    </BpkBreakpoint>
-  );
+  return <TagName className={classNames.join(' ')} {...rest} />;
 };
 
-
 Heading.propTypes = {
-  level: PropTypes.oneOf(Object.keys(HEADINGS)).isRequired,
+  level: PropTypes.oneOf(Object.keys(HEADINGS_LEVELS)).isRequired,
+  className: PropTypes.string,
+};
+
+Heading.defaultProps = {
+  className: null,
 };
 
 
