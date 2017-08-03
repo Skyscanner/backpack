@@ -5,14 +5,13 @@
 **Breaking:**
 - bpk-component-tooltip:
   - The `className` prop has been renamed to `portalClassName`.
+- bpk-component-barchart:
+  - Increased the tappable area of barchart bars by default
+  - Added new prop `padding` in BpkBarchartBar to support this behaviour
 
 **Added:**
 - bpk-component-tooltip:
   - Add `portalStyle` prop that enables styling the tooltip portal.
-
-**Fixed:**
-- bpk-component-barchart:
-  - Increased the tappable area of barchart bars
 
 ## 2017-08-03 - Deprecated Heading & Paragraph components
 

@@ -60,13 +60,8 @@ const BpkBarchartBar = (props) => {
   const tappableAreaClassNames = [getClassName('bpk-barchart-bar__tappable-area')];
 
   if (className) { classNames.push(className); }
-  if (selected) {
-    classNames.push(getClassName('bpk-barchart-bar--selected'));
-  }
-  if (onClick) {
-    classNames.push(getClassName('bpk-barchart-bar--interactive'));
-  }
-
+  if (selected) { classNames.push(getClassName('bpk-barchart-bar--selected')); }
+  if (onClick) { classNames.push(getClassName('bpk-barchart-bar--interactive')); }
   if (outlier) { rectClassNames.push(getClassName('bpk-barchart-bar__rect--outlier')); }
 
   const isAriaPressed = !!(onClick && selected);
