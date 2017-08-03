@@ -2,11 +2,12 @@
 
 ## UNRELEASED
 
-**Added:**
-- bpk-react-utils:
-  - Added `withDefaultProp` HOC to simplify using the same component with the same props in many places.
+_Nothing yet..._
 
-- bpk-mixins:
+## 2017-08-03 - New "BEM" style mixins plus :bug: fixes
+
+**Added:**
+- bpk-mixins: 16.0.0 => 16.1.0
   - Added BEM `bpk-text--XX` mixins for text styles. These are similar but subtley different to existing
     `bpk-text-XX` mixins
   - By default, use the BEM-style mixins:
@@ -28,14 +29,17 @@
     }
     ```
 
+- bpk-react-utils: 2.1.1 => 2.2.0
+  - Added `withDefaultProp` HOC to simplify using the same component with the same props in many places.
+
 **Fixed:**
-- bpk-component-table:
+- bpk-component-table: 1.0.2 => 1.0.3
   - `BpkTableCell`'s now accept arbitrary props and classNames
 
-- bpk-component-icon:
+- bpk-component-icon: 3.9.2 => 3.9.3
   - `withAlignment` HOC uses wrapping `span` to prevent overriding the style of an aligned component
 
-- bpk-component-breakpoint:
+- bpk-component-breakpoint: 1.0.2 => 1.0.3
   - Unpinned `react-responsive` to ^v1.3.2 as the breaking change released in v1.3.2 has been resolved
 
 ## 2017-07-28 - New Text component and mixins
