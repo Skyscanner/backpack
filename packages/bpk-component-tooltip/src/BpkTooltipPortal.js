@@ -96,7 +96,7 @@ class BpkTooltipPortal extends Component {
 
   render() {
     const classNames = [getClassName('bpk-tooltip-portal')];
-    const { padded, target, children, hideOnTouchDevices, className, ...rest } = this.props;
+    const { padded, target, children, hideOnTouchDevices, className, portalStyle, ...rest } = this.props;
     const renderPortal = !hasTouchSupport() || !hideOnTouchDevices;
 
     if (className) { classNames.push(className); }
@@ -111,6 +111,7 @@ class BpkTooltipPortal extends Component {
           isOpen={this.state.isOpen}
           onOpen={this.onOpen}
           onClose={this.closeTooltip}
+          style={portalStyle}
           className={classNames.join(' ')}
         >
           <BpkTooltip padded={padded} {...rest}>
@@ -134,6 +135,7 @@ BpkTooltipPortal.propTypes = {
     offset: PropTypes.string,
     constraints: PropTypes.array,
   }),
+  portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   className: PropTypes.string,
 };
 
@@ -150,6 +152,7 @@ BpkTooltipPortal.defaultProps = {
       },
     ],
   },
+  portalStyle: null,
   className: null,
 };
 

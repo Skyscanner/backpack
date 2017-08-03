@@ -3,6 +3,9 @@
 ## UNRELEASED
 
 _Nothing yet..._
+**Added:**
+- bpk-component-tooltip:
+  - Add `portalStyle` prop that enables styling the tooltip portal.
 
 ## 2017-08-03 - Deprecated Heading & Paragraph components
 

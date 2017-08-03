@@ -60,4 +60,18 @@ describe('BpkTooltipPortal', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with custom portal style', () => {
+    const tree = renderer.create(
+      <BpkTooltipPortal
+        id="my-tooltip"
+        target={<div>target</div>}
+        portalStyle={{ color: 'red' }}
+      >
+        My tooltip content
+      </BpkTooltipPortal>,
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
