@@ -2,20 +2,24 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-08-03 - New icons, mobile friendly barcharts, and more styling options for tooltips
+
 **Breaking:**
-- bpk-component-tooltip:
+- bpk-component-tooltip: 1.2.3 => 2.0.0
   - The `className` prop has been renamed to `portalClassName`.
-- bpk-component-barchart:
+- bpk-component-barchart: 1.0.6 => 2.0.0
   - Increased the tappable area of barchart bars by default
   - Added new prop `padding` in BpkBarchartBar to support this behaviour
 
 **Added:**
-- bpk-component-icon:
-- bpk-mixins:
-- bpk-svgs:
+- bpk-component-icon: 3.9.3 => 3.10.0
+- bpk-mixins: 16.1.0 => 16.2.0
+- bpk-svgs: 5.5.4 => 5.6.0
   - added 3 new icons (legroom-normal, legroom-extra, legroom-reduced)
-  
-- bpk-component-tooltip:
+
+- bpk-component-tooltip: 1.2.3 => 2.0.0
   - Add `portalStyle` prop that enables styling the tooltip portal.
 
 ## 2017-08-03 - Deprecated Heading & Paragraph components
