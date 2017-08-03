@@ -2,7 +2,14 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added**
+## New icons (legroom-normal, legroom-extra, legroom-reduced)
+
+**Added:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - added 3 new icons (legroom-normal, legroom-extra, legroom-reduced)
 
 ## 2017-08-03 - Deprecated Heading & Paragraph components
 
@@ -12,7 +19,7 @@ _Nothing yet..._
   - These components are now deprecated, please use `bpk-component-text` instead:
 
     **bpk-component-heading -> bpk-component-text:**
-    
+
     If you were relying on the baked-in bottom margin:
 
     ```
