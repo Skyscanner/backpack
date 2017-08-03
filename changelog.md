@@ -10,6 +10,11 @@
   - Added new prop `padding` in BpkBarchartBar to support this behaviour
 
 **Added:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - added 3 new icons (legroom-normal, legroom-extra, legroom-reduced)
+  
 - bpk-component-tooltip:
   - Add `portalStyle` prop that enables styling the tooltip portal.
 
