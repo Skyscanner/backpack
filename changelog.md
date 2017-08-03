@@ -4,7 +4,7 @@
 
 _Nothing yet..._
 
-## 2017-08-03 - New "BEM" style mixins plus :bug: fixes
+## 2017-08-03 - Additional "BEM" text mixins plus :bug: fixes
 
 **Added:**
 - bpk-mixins: 16.0.0 => 16.1.0
