@@ -51,35 +51,48 @@ const BpkBarchartBar = (props) => {
     onClick,
     outlier,
     selected,
+    padding,
     ...rest
   } = props;
 
-  const classNames = [getClassName('bpk-barchart__bar')];
+  const classNames = [getClassName('bpk-barchart-bar')];
+  const rectClassNames = [getClassName('bpk-barchart-bar__rect')];
+  const tappableAreaClassNames = [getClassName('bpk-barchart-bar__tappable-area')];
+
   if (className) { classNames.push(className); }
-  if (outlier) { classNames.push(getClassName('bpk-barchart__bar--outlier')); }
-  if (selected) { classNames.push(getClassName('bpk-barchart__bar--selected')); }
-  if (onClick) { classNames.push(getClassName('bpk-barchart__bar--interactive')); }
+  if (selected) { classNames.push(getClassName('bpk-barchart-bar--selected')); }
+  if (onClick) { classNames.push(getClassName('bpk-barchart-bar--interactive')); }
+  if (outlier) { rectClassNames.push(getClassName('bpk-barchart-bar__rect--outlier')); }
 
   const isAriaPressed = !!(onClick && selected);
+  const rectPadding = width * (padding / 2);
+  const rectWidth = width * (1 - padding);
 
   return (
-    <g className={getClassName('bpk-barchart__bar-group')}>
+    <g className={classNames.join(' ')} transform={`translate(${x}, ${y})`}>
       <title>{label}</title>
       <rect
-        className={classNames.join(' ')}
-        x={x}
-        y={y}
-        width={width}
+        className={rectClassNames.join(' ')}
+        x={rectPadding}
+        y={0}
+        width={rectWidth}
         height={height}
         rx={borderRadius}
         ry={borderRadius}
+        {...rest}
+      />
+      <rect
+        className={tappableAreaClassNames.join(' ')}
+        x={0}
+        y={0}
+        width={width}
+        height={height}
         onClick={onClick || undefined}
         onKeyDown={onClick ? handleKeyboardEvent(onClick) : undefined}
         tabIndex={onClick ? 0 : undefined}
         role={onClick ? 'button' : undefined}
         aria-pressed={isAriaPressed}
         aria-label={label}
-        {...rest}
       />
     </g>
   );
@@ -94,6 +107,7 @@ BpkBarchartBar.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
   outlier: PropTypes.bool,
+  padding: PropTypes.number,
   selected: PropTypes.bool,
 };
 
@@ -101,6 +115,7 @@ BpkBarchartBar.defaultProps = {
   className: null,
   onClick: null,
   outlier: false,
+  padding: 0,
   selected: false,
 };
 

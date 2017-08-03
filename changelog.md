@@ -2,10 +2,12 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
 **Breaking:**
 - bpk-component-tooltip:
   - The `className` prop has been renamed to `portalClassName`.
+- bpk-component-barchart:
+  - Increased the tappable area of barchart bars by default
+  - Added new prop `padding` in BpkBarchartBar to support this behaviour
 
 **Added:**
 - bpk-component-tooltip:
@@ -19,7 +21,7 @@ _Nothing yet..._
   - These components are now deprecated, please use `bpk-component-text` instead:
 
     **bpk-component-heading -> bpk-component-text:**
-    
+
     If you were relying on the baked-in bottom margin:
 
     ```

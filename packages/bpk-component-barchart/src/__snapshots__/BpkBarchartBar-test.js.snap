@@ -2,125 +2,198 @@
 
 exports[`BpkBarchartBar should render as an outlier 1`] = `
 <g
-  className="bpk-barchart__bar-group"
+  className="bpk-barchart-bar"
+  transform="translate(10, 10)"
 >
   <title>
     Bar
   </title>
   <rect
+    className="bpk-barchart-bar__rect bpk-barchart-bar__rect--outlier"
+    height={100}
+    rx={3}
+    ry={3}
+    width={20}
+    x={0}
+    y={0}
+  />
+  <rect
     aria-label="Bar"
     aria-pressed={false}
-    className="bpk-barchart__bar bpk-barchart__bar--outlier"
+    className="bpk-barchart-bar__tappable-area"
     height={100}
     onClick={undefined}
     onKeyDown={undefined}
     role={undefined}
-    rx={3}
-    ry={3}
     tabIndex={undefined}
     width={20}
-    x={10}
-    y={10}
+    x={0}
+    y={0}
   />
 </g>
 `;
 
 exports[`BpkBarchartBar should render as aria-pressed if onClick present and selected 1`] = `
 <g
-  className="bpk-barchart__bar-group"
+  className="bpk-barchart-bar bpk-barchart-bar--selected bpk-barchart-bar--interactive"
+  transform="translate(10, 10)"
 >
   <title>
     Bar
   </title>
   <rect
+    className="bpk-barchart-bar__rect"
+    height={100}
+    rx={3}
+    ry={3}
+    width={20}
+    x={0}
+    y={0}
+  />
+  <rect
     aria-label="Bar"
     aria-pressed={true}
-    className="bpk-barchart__bar bpk-barchart__bar--selected bpk-barchart__bar--interactive"
+    className="bpk-barchart-bar__tappable-area"
     height={100}
     onClick={[Function]}
     onKeyDown={[Function]}
     role="button"
-    rx={3}
-    ry={3}
     tabIndex={0}
     width={20}
-    x={10}
-    y={10}
+    x={0}
+    y={0}
   />
 </g>
 `;
 
 exports[`BpkBarchartBar should render as selected 1`] = `
 <g
-  className="bpk-barchart__bar-group"
+  className="bpk-barchart-bar bpk-barchart-bar--selected"
+  transform="translate(10, 10)"
 >
   <title>
     Bar
   </title>
   <rect
+    className="bpk-barchart-bar__rect"
+    height={100}
+    rx={3}
+    ry={3}
+    width={20}
+    x={0}
+    y={0}
+  />
+  <rect
     aria-label="Bar"
     aria-pressed={false}
-    className="bpk-barchart__bar bpk-barchart__bar--selected"
+    className="bpk-barchart-bar__tappable-area"
     height={100}
     onClick={undefined}
     onKeyDown={undefined}
     role={undefined}
-    rx={3}
-    ry={3}
     tabIndex={undefined}
     width={20}
-    x={10}
-    y={10}
+    x={0}
+    y={0}
   />
 </g>
 `;
 
 exports[`BpkBarchartBar should render correctly 1`] = `
 <g
-  className="bpk-barchart__bar-group"
+  className="bpk-barchart-bar"
+  transform="translate(10, 10)"
 >
   <title>
     Bar
   </title>
   <rect
+    className="bpk-barchart-bar__rect"
+    height={100}
+    rx={3}
+    ry={3}
+    width={20}
+    x={0}
+    y={0}
+  />
+  <rect
     aria-label="Bar"
     aria-pressed={false}
-    className="bpk-barchart__bar"
+    className="bpk-barchart-bar__tappable-area"
     height={100}
     onClick={undefined}
     onKeyDown={undefined}
     role={undefined}
-    rx={3}
-    ry={3}
     tabIndex={undefined}
     width={20}
-    x={10}
-    y={10}
+    x={0}
+    y={0}
+  />
+</g>
+`;
+
+exports[`BpkBarchartBar should render with "padding" prop 1`] = `
+<g
+  className="bpk-barchart-bar"
+  transform="translate(10, 10)"
+>
+  <title>
+    Bar
+  </title>
+  <rect
+    className="bpk-barchart-bar__rect"
+    height={100}
+    rx={3}
+    ry={3}
+    width={16}
+    x={2}
+    y={0}
+  />
+  <rect
+    aria-label="Bar"
+    aria-pressed={false}
+    className="bpk-barchart-bar__tappable-area"
+    height={100}
+    onClick={undefined}
+    onKeyDown={undefined}
+    role={undefined}
+    tabIndex={undefined}
+    width={20}
+    x={0}
+    y={0}
   />
 </g>
 `;
 
 exports[`BpkBarchartBar should render with an onClick handler 1`] = `
 <g
-  className="bpk-barchart__bar-group"
+  className="bpk-barchart-bar bpk-barchart-bar--interactive"
+  transform="translate(10, 10)"
 >
   <title>
     Bar
   </title>
   <rect
+    className="bpk-barchart-bar__rect"
+    height={100}
+    rx={3}
+    ry={3}
+    width={20}
+    x={0}
+    y={0}
+  />
+  <rect
     aria-label="Bar"
     aria-pressed={false}
-    className="bpk-barchart__bar bpk-barchart__bar--interactive"
+    className="bpk-barchart-bar__tappable-area"
     height={100}
     onClick={[Function]}
     onKeyDown={[Function]}
     role="button"
-    rx={3}
-    ry={3}
     tabIndex={0}
     width={20}
-    x={10}
-    y={10}
+    x={0}
+    y={0}
   />
 </g>
 `;
