@@ -35,4 +35,5 @@ const App = () => (
 | hideOnTouchDevices    | bool                          | false    | true          |
 | tetherOptions         | See http://tether.io/#options | false    | { attachment: 'top center', constraints: [ { to: 'window', attachment: 'together', pin: true, }, ], } |
 | padded                | bool                          | false    | true          |
-| className             | string                        | false    | null          |
+| portalStyle           | object                        | false    | null          |
+| portalClassName       | string                        | false    | null          |
