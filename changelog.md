@@ -2,7 +2,6 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
 **Breaking:**
 - bpk-component-tooltip:
   - The `className` prop has been renamed to `portalClassName`.
@@ -10,6 +9,10 @@ _Nothing yet..._
 **Added:**
 - bpk-component-tooltip:
   - Add `portalStyle` prop that enables styling the tooltip portal.
+
+**Fixed:**
+- bpk-component-barchart:
+  - Increased the tappable area of barchart bars
 
 ## 2017-08-03 - Deprecated Heading & Paragraph components
 
@@ -19,7 +22,7 @@ _Nothing yet..._
   - These components are now deprecated, please use `bpk-component-text` instead:
 
     **bpk-component-heading -> bpk-component-text:**
-    
+
     If you were relying on the baked-in bottom margin:
 
     ```

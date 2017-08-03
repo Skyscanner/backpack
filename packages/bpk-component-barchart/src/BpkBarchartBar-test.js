@@ -90,4 +90,18 @@ describe('BpkBarchartBar', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render with "padding" prop', () => {
+    const tree = renderer.create(
+      <BpkBarchartBar
+        x={10}
+        y={10}
+        width={20}
+        height={100}
+        label="Bar"
+        padding={0.2}
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

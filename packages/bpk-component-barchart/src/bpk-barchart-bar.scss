@@ -18,15 +18,10 @@
 
 @import '~bpk-mixins/index';
 
-.bpk-barchart__bar {
+.bpk-barchart-bar {
   fill: $bpk-color-blue-300;
-  shape-rendering: auto;
 
-  &--outlier {
-    mask: url(#bpk-barchart__def-mask);
-  }
-
-  &--interactive:not(.bpk-barchart__bar--selected) {
+  &--interactive:not(.bpk-barchart-bar--selected) {
     cursor: pointer;
 
     @include bpk-hover {
@@ -40,5 +35,18 @@
 
   &--selected {
     fill: $bpk-color-blue-700;
+  }
+
+  &__rect {
+    fill: inherit;
+    shape-rendering: auto;
+
+    &--outlier {
+      mask: url(#bpk-barchart__def-mask);
+    }
+  }
+
+  &__tappable-area {
+    fill: transparent;
   }
 }

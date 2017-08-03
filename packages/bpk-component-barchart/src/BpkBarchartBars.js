@@ -61,7 +61,9 @@ const BpkBarchartBars = (props) => {
   } = props;
 
   xScale.paddingOuter(outerPadding);
-  xScale.paddingInner(innerPadding);
+  // `innerPadding` is not set on the scale, but instead passed to the BarComponent
+  // This allows us to have full-width tappable areas, but with visibly padded bars.
+  xScale.paddingInner(0);
 
   const barWidth = xScale.bandwidth();
 
@@ -83,6 +85,7 @@ const BpkBarchartBars = (props) => {
             outlier={isOutlier(point, props)}
             onClick={onBarClick ? e => onBarClick(e, { point }) : null}
             selected={getBarSelection(point)}
+            padding={innerPadding}
             {...rest}
           />
         );
