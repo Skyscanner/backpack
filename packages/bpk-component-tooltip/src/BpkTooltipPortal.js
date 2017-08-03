@@ -96,10 +96,10 @@ class BpkTooltipPortal extends Component {
 
   render() {
     const classNames = [getClassName('bpk-tooltip-portal')];
-    const { padded, target, children, hideOnTouchDevices, className, portalStyle, ...rest } = this.props;
+    const { padded, target, children, hideOnTouchDevices, portalClassName, portalStyle, ...rest } = this.props;
     const renderPortal = !hasTouchSupport() || !hideOnTouchDevices;
 
-    if (className) { classNames.push(className); }
+    if (portalClassName) { classNames.push(portalClassName); }
 
     delete rest.tetherOptions;
 
@@ -136,7 +136,7 @@ BpkTooltipPortal.propTypes = {
     constraints: PropTypes.array,
   }),
   portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  className: PropTypes.string,
+  portalClassName: PropTypes.string,
 };
 
 BpkTooltipPortal.defaultProps = {
@@ -153,7 +153,7 @@ BpkTooltipPortal.defaultProps = {
     ],
   },
   portalStyle: null,
-  className: null,
+  portalClassName: null,
 };
 
 export default BpkTooltipPortal;

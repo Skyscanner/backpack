@@ -47,7 +47,21 @@ describe('BpkTooltipPortal', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with a custom className', () => {
+  it('should render correctly with a custom portal className', () => {
+    const tree = renderer.create(
+      <BpkTooltipPortal
+        id="my-tooltip"
+        target={<div>target</div>}
+        portalClassName="my-custom-class"
+      >
+        My tooltip content
+      </BpkTooltipPortal>,
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with a custom tooltip className', () => {
     const tree = renderer.create(
       <BpkTooltipPortal
         id="my-tooltip"

@@ -3,6 +3,10 @@
 ## UNRELEASED
 
 _Nothing yet..._
+**Breaking:**
+- bpk-component-tooltip:
+  - The `className` prop has been renamed to `portalClassName`.
+
 **Added:**
 - bpk-component-tooltip:
   - Add `portalStyle` prop that enables styling the tooltip portal.

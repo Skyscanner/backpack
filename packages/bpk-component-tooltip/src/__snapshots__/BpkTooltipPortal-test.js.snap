@@ -34,7 +34,7 @@ exports[`BpkTooltipPortal should render correctly 1`] = `
 </Portal>
 `;
 
-exports[`BpkTooltipPortal should render correctly with a custom className 1`] = `
+exports[`BpkTooltipPortal should render correctly with a custom portal className 1`] = `
 <Portal
   className="bpk-tooltip-portal my-custom-class"
   isOpen={false}
@@ -50,6 +50,40 @@ exports[`BpkTooltipPortal should render correctly with a custom className 1`] = 
 >
   <section
     className="bpk-tooltip"
+    id="my-tooltip"
+    role="dialog"
+    tabIndex="-1"
+  >
+    <span
+      className="bpk-tooltip__arrow"
+      id="js-bpk-popover-arrow"
+      role="presentation"
+    />
+    <div
+      className="bpk-tooltip__inner bpk-tooltip__inner--padded"
+    >
+      My tooltip content
+    </div>
+  </section>
+</Portal>
+`;
+
+exports[`BpkTooltipPortal should render correctly with a custom tooltip className 1`] = `
+<Portal
+  className="bpk-tooltip-portal"
+  isOpen={false}
+  onClose={[Function]}
+  onOpen={[Function]}
+  style={null}
+  target={
+    <div>
+      target
+    </div>
+  }
+  targetRef={[Function]}
+>
+  <section
+    className="bpk-tooltip my-custom-class"
     id="my-tooltip"
     role="dialog"
     tabIndex="-1"

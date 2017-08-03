@@ -36,4 +36,4 @@ const App = () => (
 | tetherOptions         | See http://tether.io/#options | false    | { attachment: 'top center', constraints: [ { to: 'window', attachment: 'together', pin: true, }, ], } |
 | padded                | bool                          | false    | true          |
 | portalStyle           | object                        | false    | null          |
-| className             | string                        | false    | null          |
+| portalClassName       | string                        | false    | null          |
