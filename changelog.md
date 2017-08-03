@@ -4,6 +4,57 @@
 
 _Nothing yet..._
 
+## 2017-08-03 - Deprecated Heading & Paragraph components
+
+**Changed:**
+- bpk-component-heading:
+- bpk-component-paragraph:
+  - These components are now deprecated, please use `bpk-component-text` instead:
+
+    **bpk-component-heading -> bpk-component-text:**
+    
+    If you were relying on the baked-in bottom margin:
+
+    ```
+    // old
+    <BpkHeading level="h1">My Heading</BpkHeading>
+
+    // new
+    <BpkText tagName="h1" textStyle="xxl" className="MyHeading">
+      My Heading
+    </BpkText>
+
+    .MyHeading {
+      margin-bottom: $bpk-spacing-sm;
+    }
+    ```
+
+    If you were opting out of the baked-in bottom margin:
+
+    ```
+    // old
+    <BpkHeading level="h1" bottomMargin={false}>My Heading</BpkHeading>
+
+    // new
+    <BpkText tagName="h1" textStyle="xxl">My Heading</BpkText>
+    ```
+
+    **bpk-component-paragrapg -> bpk-component-text:**
+
+    ```
+    // old
+    <BpkParagraph>My paragraph.</BpkParagraph>
+
+    // new
+    <BpkText tagName="p" textStyle="base" className="MyParagraph">
+      My paragraph.
+    </BpkText>
+
+    .MyParagraph {
+    margin-bottom: $bpk-spacing-sm;
+    }
+    ```
+
 ## 2017-08-03 - Additional "BEM" text mixins plus :bug: fixes
 
 **Added:**
