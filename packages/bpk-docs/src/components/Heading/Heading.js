@@ -24,20 +24,10 @@ import STYLES from './Heading.scss';
 
 const getClassName = cssModules(STYLES);
 
-const HEADINGS_LEVELS = {
-  h1: 'h1',
-  h2: 'h2',
-  h3: 'h3',
-  h4: 'h4',
-  h5: 'h5',
-  h6: 'h6',
-};
-
 const Heading = (props) => {
   const { level: TagName, className, ...rest } = props;
 
-  const classNames = [getClassName('bpk-docs-heading')];
-  classNames.push(getClassName(`bpk-docs-heading--${TagName}`));
+  const classNames = [getClassName('bpk-docs-heading'), getClassName(`bpk-docs-heading--${TagName}`)];
 
   if (className) { classNames.push(className); }
 
@@ -45,7 +35,7 @@ const Heading = (props) => {
 };
 
 Heading.propTypes = {
-  level: PropTypes.oneOf(Object.keys(HEADINGS_LEVELS)).isRequired,
+  level: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']).isRequired,
   className: PropTypes.string,
 };
 
