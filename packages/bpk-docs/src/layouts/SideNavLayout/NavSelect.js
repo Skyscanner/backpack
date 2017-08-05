@@ -25,7 +25,7 @@ import { browserHistory, PropTypes as RouterPropTypes } from 'react-router';
 
 import { linkPropType, categoryPropType, linksPropType } from './sideNavPropTypes';
 
-const getCategoryName = (links, location) => {
+const getCategoryName = (links, pathname) => {
   const reducer = (prev, link) => {
     const toCategory = innerLink => Object.assign({}, innerLink, { category: link.category });
     return prev.concat(link.links.map(toCategory));
@@ -33,7 +33,7 @@ const getCategoryName = (links, location) => {
 
   const reducedLinks = links.reduce(reducer, []);
 
-  return (_.find(reducedLinks, { route: location.pathname }) || {}).category || '';
+  return (_.find(reducedLinks, { route: pathname }) || {}).category || '';
 };
 
 const NavSelectItem = props => (
@@ -57,22 +57,26 @@ NavSelectCategory.propTypes = {
   link: categoryPropType.isRequired,
 };
 
-const NavSelect = props => (
-  <BpkFieldset label={getCategoryName(props.links, props.location)}>
-    <BpkSelect
-      id="side-nav-select"
-      name="side-nav-select"
-      value={props.location.pathname}
-      onChange={e => browserHistory.push(e.target.value)}
-    >
-      {props.links.map(
-        link => (link.category
-          ? <NavSelectCategory key={link.id} link={link} />
-          : <NavSelectItem key={link.id} link={link} />
-      ))}
-    </BpkSelect>
-  </BpkFieldset>
-);
+const NavSelect = (props) => {
+  const pathname = props.location.pathname.replace(/\/$/, '');
+
+  return (
+    <BpkFieldset label={getCategoryName(props.links, pathname)}>
+      <BpkSelect
+        id="side-nav-select"
+        name="side-nav-select"
+        value={pathname}
+        onChange={e => browserHistory.push(e.target.value)}
+      >
+        {props.links.map(
+          link => (link.category
+            ? <NavSelectCategory key={link.id} link={link} />
+            : <NavSelectItem key={link.id} link={link} />
+          ))}
+      </BpkSelect>
+    </BpkFieldset>
+  );
+};
 
 NavSelect.propTypes = {
   links: linksPropType.isRequired,
