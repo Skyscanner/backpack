@@ -20,22 +20,35 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkCloseButton from 'bpk-component-close-button';
+import BpkLink from 'bpk-component-link';
 
 import STYLES from './bpk-chip.scss';
 
 const getClassName = cssModules(STYLES);
 
 const BpkChip = (props) => {
-  const { children, onClose, ...rest } = props;
+  const { children, onClose, href, className, ...rest } = props;
+
+  const chipClassNames = [getClassName('bpk-chip')];
+  if (className) { chipClassNames.push(className); }
+
+  // TODO SHOULD WE COMBINE THESE TOO????
+  const labelClassNames = [getClassName('bpk-chip__label')];
+  if (className) { labelClassNames.push(className); }
 
   return (
     <div
-      className={getClassName('bpk-chip')}
+      className={chipClassNames.join(' ')}
       {...rest}
     >
-      <span className={getClassName('bpk-chip__label')} >
-        {children}
-      </span>
+      {href
+        ? <BpkLink href={href} className={labelClassNames.join(' ')} >
+          {children}
+        </BpkLink>
+        : <span className={labelClassNames.join(' ')} >
+          {children}
+        </span>
+      }
       <BpkCloseButton
         label={`close ${children.toString().toLowerCase()}`}
         onClick={onClose}
@@ -47,6 +60,13 @@ const BpkChip = (props) => {
 BpkChip.propTypes = {
   children: PropTypes.node.isRequired,
   onClose: PropTypes.func.isRequired,
+  href: PropTypes.string,
+  className: PropTypes.string,
+};
+
+BpkChip.defaultProps = {
+  href: null,
+  className: null,
 };
 
 export default BpkChip;
