@@ -2,7 +2,13 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-component-chip:
+  - Added optional href prop to the chip component
+
+**Fixed:**
+- bpk-component-chip:
+  - Fixed the inability for users of the chip component to add a custom class
 
 ## 2017-08-03 - New icons, mobile friendly barcharts, and more styling options for tooltips
 
