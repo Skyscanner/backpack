@@ -48,6 +48,7 @@
 
   &__dialog {
     width: 100%;
+    min-height: 100%;
     transform: scale(1);
     transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
     outline: 0;
@@ -56,6 +57,7 @@
 
     @include bpk-breakpoint-above-mobile {
       max-width: $bpk-modal-max-width;
+      min-height: auto;
       margin: auto;
 
       @include bpk-box-shadow-xl;

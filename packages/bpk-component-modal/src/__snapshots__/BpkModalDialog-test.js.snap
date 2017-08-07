@@ -4,14 +4,22 @@ exports[`BpkModalDialog should render correctly 1`] = `
 <div
   className="bpk-modal"
   onMouseDown={[Function]}
+  onMouseMove={[Function]}
   onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
 >
   <section
     aria-labelledby="bpk-modal-heading-my-modal"
     className="bpk-modal__dialog"
     id="my-modal"
     onMouseDown={[Function]}
+    onMouseMove={[Function]}
     onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
     role="dialog"
     tabIndex="-1"
   >
@@ -75,14 +83,22 @@ exports[`BpkModalDialog should render correctly when it has a className 1`] = `
 <div
   className="bpk-modal"
   onMouseDown={[Function]}
+  onMouseMove={[Function]}
   onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
 >
   <section
     aria-labelledby="bpk-modal-heading-my-modal"
     className="bpk-modal__dialog my-classname"
     id="my-modal"
     onMouseDown={[Function]}
+    onMouseMove={[Function]}
     onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
     role="dialog"
     tabIndex="-1"
   >
