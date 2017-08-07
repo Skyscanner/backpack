@@ -24,7 +24,31 @@ import BpkChip from './BpkChip';
 describe('BpkChip', () => {
   it('should render correctly', () => {
     const tree = shallow(
-      <BpkChip onClose={() => null} >This is a Chip!</BpkChip>,
+      <BpkChip onClose={() => null}>This is a Chip!</BpkChip>,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "className" attribute', () => {
+    const tree = shallow(
+      <BpkChip onClose={() => null} className="custom-class">This is a Chip!</BpkChip>,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "closeLabel" function attribute', () => {
+    const tree = shallow(
+      <BpkChip
+        onClose={() => null}
+        closeLabel={children => `custom close ${children.toString().toLowerCase()}`}
+      >This is a Chip!</BpkChip>,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "closeLabel" string attribute', () => {
+    const tree = shallow(
+      <BpkChip onClose={() => null} closeLabel="close it">This is a Chip!</BpkChip>,
     );
     expect(toJson(tree)).toMatchSnapshot();
   });

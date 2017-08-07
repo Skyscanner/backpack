@@ -26,18 +26,27 @@ import STYLES from './bpk-chip.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkChip = (props) => {
-  const { children, onClose, ...rest } = props;
+  const classNames = [getClassName('bpk-chip')];
+  const { children, className, onClose, closeLabel, ...rest } = props;
+
+  if (className) { classNames.push(className); }
+
+  const classNameFinal = classNames.join(' ');
+
+  const getCloseLabel = typeof closeLabel === 'string'
+    ? () => closeLabel
+    : closeLabel;
 
   return (
     <div
-      className={getClassName('bpk-chip')}
+      className={classNameFinal}
       {...rest}
     >
       <span className={getClassName('bpk-chip__label')} >
         {children}
       </span>
       <BpkCloseButton
-        label={`close ${children.toString().toLowerCase()}`}
+        label={getCloseLabel(children)}
         onClick={onClose}
       />
     </div>
@@ -46,7 +55,17 @@ const BpkChip = (props) => {
 
 BpkChip.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  closeLabel: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+  ]),
   onClose: PropTypes.func.isRequired,
+};
+
+BpkChip.defaultProps = {
+  className: null,
+  closeLabel: children => `close ${children.toString().toLowerCase()}`,
 };
 
 export default BpkChip;
