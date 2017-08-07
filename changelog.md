@@ -2,7 +2,10 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-component-chip:
+  - a `className` prop has been added to allow users to apply their own className
+  - a `closeLabel` prop has been added to allow users to specify the label on the close button within the chip
 
 ## 2017-08-03 - New icons, mobile friendly barcharts, and more styling options for tooltips
 
