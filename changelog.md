@@ -6,6 +6,9 @@
 - bpk-component-chip:
   - a `className` prop has been added to allow users to apply their own className
   - a `closeLabel` prop has been added to allow users to specify the label on the close button within the chip
+**Fixed:**
+- bpk-component-popover
+  - Fixed a bug where an on mouse down event starting inside the popover and ending outside the popover would incorrectly close the popover.
 
 ## 2017-08-03 - New icons, mobile friendly barcharts, and more styling options for tooltips
 

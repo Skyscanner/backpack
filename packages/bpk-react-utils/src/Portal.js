@@ -31,9 +31,15 @@ class Portal extends Component {
 
     this.portalElement = null;
 
+    // shouldClose is used to keep track of the user's mouse-down events in order to
+    // prevent the dialog closing if the mouse leaves / enters the portal during the click
+    this.shouldClose = false;
+
     this.close = this.close.bind(this);
-    this.onDocumentClick = this.onDocumentClick.bind(this);
+    this.onDocumentMouseUp = this.onDocumentMouseUp.bind(this);
+    this.onDocumentMouseDown = this.onDocumentMouseDown.bind(this);
     this.onDocumentKeyDown = this.onDocumentKeyDown.bind(this);
+    this.getClickEventProperties = this.getClickEventProperties.bind(this);
   }
 
   componentDidMount() {
@@ -68,7 +74,40 @@ class Portal extends Component {
     this.close();
   }
 
-  onDocumentClick(event) {
+  onDocumentMouseDown(event) {
+    const clickEventProperties = this.getClickEventProperties(event);
+    if (clickEventProperties.isNotLeftClick ||
+      clickEventProperties.isTargetClick ||
+      clickEventProperties.isPortalClick) {
+      this.shouldClose = false;
+      return;
+    }
+
+    this.shouldClose = true;
+  }
+
+  onDocumentMouseUp(event) {
+    const clickEventProperties = this.getClickEventProperties(event);
+
+    if (clickEventProperties.isNotLeftClick ||
+      clickEventProperties.isTargetClick ||
+      clickEventProperties.isPortalClick) {
+      this.shouldClose = false;
+      return;
+    }
+
+    if (this.shouldClose) {
+      this.props.onClose(event, { source: 'DOCUMENT_CLICK' });
+    }
+  }
+
+  onDocumentKeyDown(event) {
+    if (event.keyCode === KEYCODES.ESCAPE && this.props.isOpen) {
+      this.props.onClose(event, { source: 'ESCAPE' });
+    }
+  }
+
+  getClickEventProperties(event) {
     const isNotLeftClick = event.button && event.button !== 0;
 
     const targetElement = this.getTargetElement();
@@ -78,17 +117,11 @@ class Portal extends Component {
     const isPortalClick = this.portalElement &&
       (event.target === this.portalElement || this.portalElement.contains(event.target));
 
-    if (isNotLeftClick || isTargetClick || isPortalClick) {
-      return;
-    }
-
-    this.props.onClose(event, { source: 'DOCUMENT_CLICK' });
-  }
-
-  onDocumentKeyDown(event) {
-    if (event.keyCode === KEYCODES.ESCAPE && this.props.isOpen) {
-      this.props.onClose(event, { source: 'ESCAPE' });
-    }
+    return {
+      isNotLeftClick,
+      isTargetClick,
+      isPortalClick,
+    };
   }
 
   getTargetElement() {
@@ -105,8 +138,10 @@ class Portal extends Component {
 
     this.portalElement = document.createElement('div');
     document.body.appendChild(this.portalElement);
-    document.addEventListener('mouseup', this.onDocumentClick, false);
-    document.addEventListener('touchend', this.onDocumentClick, false);
+    document.addEventListener('mousedown', this.onDocumentMouseDown, false);
+    document.addEventListener('mouseup', this.onDocumentMouseUp, false);
+    document.addEventListener('touchstart', this.onDocumentMouseDown, false);
+    document.addEventListener('touchend', this.onDocumentMouseUp, false);
     document.addEventListener('keydown', this.onDocumentKeyDown, false);
 
     if (this.props.style) {
@@ -127,8 +162,10 @@ class Portal extends Component {
 
     unmountComponentAtNode(this.portalElement);
     document.body.removeChild(this.portalElement);
-    document.removeEventListener('mouseup', this.onDocumentClick, false);
-    document.removeEventListener('touchend', this.onDocumentClick, false);
+    document.removeEventListener('mousedown', this.onDocumentMouseDown, false);
+    document.removeEventListener('mouseup', this.onDocumentMouseUp, false);
+    document.removeEventListener('touchstart', this.onDocumentMouseDown, false);
+    document.removeEventListener('touchend', this.onDocumentMouseUp, false);
     document.removeEventListener('keydown', this.onDocumentKeyDown, false);
     this.portalElement = null;
   }
