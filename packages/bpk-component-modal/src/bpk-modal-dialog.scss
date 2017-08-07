@@ -50,6 +50,7 @@
     width: 100%;
     transform: scale(1);
     transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
+    min-height: 100%;
     outline: 0;
     background-color: $bpk-modal-background-color;
     opacity: $bpk-modal-opacity;
@@ -57,6 +58,7 @@
     @include bpk-breakpoint-above-mobile {
       max-width: $bpk-modal-max-width;
       margin: auto;
+      min-height: auto;
 
       @include bpk-box-shadow-xl;
       @include bpk-border-radius-sm;

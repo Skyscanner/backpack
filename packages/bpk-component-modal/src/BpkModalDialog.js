@@ -36,6 +36,7 @@ class BpkModalDialog extends Component {
     this.getDialogRef = this.getDialogRef.bind(this);
     this.onContentMouseDown = this.onContentMouseDown.bind(this);
     this.onContentMouseUp = this.onContentMouseUp.bind(this);
+    this.onDocumentMove = this.onDocumentMove.bind(this);
     this.onOverlayMouseDown = this.onOverlayMouseDown.bind(this);
     this.onOverlayMouseUp = this.onOverlayMouseUp.bind(this);
 
@@ -99,6 +100,10 @@ class BpkModalDialog extends Component {
     }
   }
 
+  onDocumentMove() {
+    this.shouldClose = false;
+  }
+
   getDialogRef(ref) {
     this.dialogElement = ref;
   }
@@ -124,7 +129,11 @@ class BpkModalDialog extends Component {
           tabIndex="-1"
           role="dialog"
           aria-labelledby={headingId}
+          onTouchStart={this.onContentMouseDown}
+          onTouchMove={this.onDocumentMove}
+          onTouchEnd={this.onContentMouseUp}
           onMouseDown={this.onContentMouseDown}
+          onMouseMove={this.onDocumentMove}
           onMouseUp={this.onContentMouseUp}
           className={dialogClassNames.join(' ')}
           ref={this.getDialogRef}
@@ -161,7 +170,11 @@ class BpkModalDialog extends Component {
     return (
       <div
         className={classNames.join(' ')}
+        onTouchStart={this.onOverlayMouseDown}
+        onTouchMove={this.onDocumentMove}
+        onTouchEnd={this.onOverlayMouseUp}
         onMouseDown={this.onOverlayMouseDown}
+        onMouseMove={this.onDocumentMove}
         onMouseUp={this.onOverlayMouseUp}
       >
         {this.renderDialog()}
