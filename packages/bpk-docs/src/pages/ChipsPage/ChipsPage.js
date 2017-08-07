@@ -69,7 +69,10 @@ class DefaultChipContainer extends Component {
               style={{ display: 'inline-block', marginTop: spacingSm, marginRight: spacingSm }}
               key={index.toString()}
             >
-              <BpkChip onClose={() => this.removeChip(chipName)}>
+              <BpkChip
+                onClose={() => this.removeChip(chipName)}
+                closeLabel={`Close ${chipName}`}
+              >
                 {chipName}
               </BpkChip>
             </span>
