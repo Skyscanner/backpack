@@ -19,19 +19,18 @@
 import fs from 'fs';
 import path from 'path';
 import webpack from 'webpack';
-import autoprefixer from 'autoprefixer';
+import WrapperPlugin from 'wrapper-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin';
 
-import { blockComment as licenseHeader } from './packages/bpk-tokens/formatters/license-header';
+import postCssPlugins from './scripts/webpack/postCssPlugins';
 import sassFunctions from './packages/bpk-mixins/sass-functions';
 import * as ROUTES from './packages/bpk-docs/src/constants/routes';
+import { blockComment as licenseHeader } from './packages/bpk-tokens/formatters/license-header';
 
-const { BPK_TOKENS } = process.env;
-const useCssModules = process.env.ENABLE_CSS_MODULES !== 'false';
-const isProduction = process.env.NODE_ENV === 'production';
-const WrapperPlugin = require('wrapper-webpack-plugin');
-
+const { NODE_ENV, BPK_TOKENS, ENABLE_CSS_MODULES } = process.env;
+const useCssModules = ENABLE_CSS_MODULES !== 'false';
+const isProduction = NODE_ENV === 'production';
 
 const staticSiteGeneratorConfig = {
   paths: Object.keys(ROUTES).map(key => ROUTES[key]),
@@ -41,20 +40,6 @@ const sassOptions = {
   data: BPK_TOKENS ? fs.readFileSync(`packages/bpk-tokens/tokens/${BPK_TOKENS}.scss`) : '',
   functions: sassFunctions,
 };
-
-const postCssPlugins = () => [
-  autoprefixer({
-    browsers: [
-      'last 2 versions',
-      '> 10%',
-      'Chrome >= 34',
-      'Safari >= 6',
-      'IE >= 9',
-      'Firefox >= 34',
-      'Opera >= 30',
-    ],
-  }),
-];
 
 const config = {
   entry: {
@@ -70,7 +55,9 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/, exclude: /node_modules\/(?!bpk-).*/, use: ['babel-loader'],
+        test: /\.jsx?$/,
+        use: ['babel-loader'],
+        exclude: /node_modules\/(?!bpk-).*/,
       },
       {
         test: /base\.scss$/,
@@ -100,6 +87,7 @@ const config = {
             {
               loader: 'css-loader',
               options: {
+                importLoaders: 1,
                 minimize: true,
                 modules: useCssModules,
                 localIdentName: '[local]-[hash:base64:5]',
@@ -120,7 +108,24 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }),
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+                minimize: true,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: postCssPlugins,
+              },
+            },
+          ],
+        }),
       },
       {
         test: /\.(jpg|png|svg)$/,
