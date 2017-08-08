@@ -16,13 +16,11 @@
  * limitations under the License.
  */
 
-import autoprefixer from 'autoprefixer';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-
-import postCssFlexbugsFixes from 'postcss-flexbugs-fixes';
 import WrapperPlugin from 'wrapper-webpack-plugin';
-
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import { blockComment as licenseHeader } from 'bpk-tokens/formatters/license-header';
+
+import postCssPlugins from './../../scripts/webpack/postCssPlugins';
 
 module.exports = {
   entry: {
@@ -55,18 +53,7 @@ module.exports = {
             {
               loader: 'postcss-loader',
               options: {
-                plugins: () => [
-                  postCssFlexbugsFixes,
-                  autoprefixer({
-                    browsers: [
-                      '>1%',
-                      'last 4 versions',
-                      'Firefox ESR',
-                      'not ie < 9', // React doesn't support IE8 anyway
-                    ],
-                    flexbox: 'no-2009',
-                  }),
-                ],
+                plugins: postCssPlugins,
               },
             },
             {
@@ -90,18 +77,7 @@ module.exports = {
             {
               loader: 'postcss-loader',
               options: {
-                plugins: () => [
-                  postCssFlexbugsFixes,
-                  autoprefixer({
-                    browsers: [
-                      '>1%',
-                      'last 4 versions',
-                      'Firefox ESR',
-                      'not ie < 9', // React doesn't support IE8 anyway
-                    ],
-                    flexbox: 'no-2009',
-                  }),
-                ],
+                plugins: postCssPlugins,
               },
             },
           ],
