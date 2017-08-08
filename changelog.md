@@ -2,16 +2,20 @@
 
 ## UNRELEASED
 
+_Nothing yet_
+
+## 2017-08-08 - Enhancements to Chip, bug fixed for popover and modal
+
 **Added:**
-- bpk-component-chip:
+- bpk-component-chip: 1.0.6 => 1.1.0
   - a `className` prop has been added to allow users to apply their own className
   - a `closeLabel` prop has been added to allow users to specify the label on the close button within the chip
 
 **Fixed:**
-- bpk-component-popover
+- bpk-component-popover: 1.2.7 => 1.2.8
   - Fixed a bug where an on mouse down event starting inside the popover and ending outside the popover would incorrectly close the popover.
   - Fixed issues with mouse interaction in Safari on iOS which caused scrolling behavior to incorrectly close portal elements.
-- bpk-component-modal
+- bpk-component-modal: 1.1.11 => 1.1.12
   - Fixed issue where clicking below the content in a full-screen modal caused it to incorrectly close.
   - Made touch-interaction consistent with `Portal` behavior.
 
