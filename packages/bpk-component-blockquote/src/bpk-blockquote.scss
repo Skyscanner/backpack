@@ -21,3 +21,7 @@
 .bpk-blockquote {
   @include bpk-blockquote;
 }
+
+.bpk-blockquote--extra-spacing {
+  @include bpk-blockquote--extra-spacing;
+}

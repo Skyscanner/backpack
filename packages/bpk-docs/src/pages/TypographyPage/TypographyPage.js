@@ -45,7 +45,7 @@ const components = [
         heading tags, a span or a paragraph. You can mix different text styles with the
         appropriate tag to achieve semantic markup while retaining control over how the text looks.
       </Paragraph>,
-      <BpkBlockquote>
+      <BpkBlockquote extraSpace>
         <BpkText bold>Note:</BpkText> Whilst <BpkCode>BpkText</BpkCode> allows for any combination of text size and
         heading levels, we recommend that visual hierarchy is maintained inline with the semantic structure.
       </BpkBlockquote>,
@@ -138,7 +138,7 @@ const components = [
     id: 'blockquotes',
     title: 'Blockquotes',
     examples: [
-      <BpkBlockquote>
+      <BpkBlockquote extraSpace>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
         sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
       </BpkBlockquote>,

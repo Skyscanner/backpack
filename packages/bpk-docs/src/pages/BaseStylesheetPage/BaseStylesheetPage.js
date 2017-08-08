@@ -65,7 +65,7 @@ const BaseStylesheetPage = () => (
         </BpkListItem>
         <BpkListItem>That&apos;s it!</BpkListItem>
       </BpkList>
-      <BpkBlockquote>
+      <BpkBlockquote extraSpace>
         <strong>Note:</strong> There is also a small amount of JavaScript that does
         &quot;<BpkLink href="https://modernizr.com/" blank>Modernizr</BpkLink> like&quot; feature detection (currently
         used to prevent hover effects on touch devices in downstream components) - make sure this is included in the

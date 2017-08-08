@@ -68,7 +68,7 @@ ReactDom.render(myComponent, document.getElementById('react-mount'));
           </BpkCodeBlock>
         </BpkListItem>
       </BpkList>,
-      <BpkBlockquote>
+      <BpkBlockquote extraSpace>
         <strong>Note:</strong> If you are looking to integrate Backpack components into an existing project, be
         aware that components are published uncompiled which means you&apos;ll need to accommodate for this in your
         webpack config.
@@ -98,7 +98,7 @@ ReactDom.render(myComponent, document.getElementById('react-mount'));
   @include bpk-button;
 }`}
       </BpkCodeBlock>,
-      <BpkBlockquote>
+      <BpkBlockquote extraSpace>
         <strong>Note</strong>: <BpkCode>bpk-mixins</BpkCode> only
         supports <BpkLink href={nodeSassUrl} blank>node-sass</BpkLink> and makes extensive use
         of <BpkLink href={sassLoaderTildeUrl} blank>sass-loader&apos;s</BpkLink> tilde importing mechanism. If you are
