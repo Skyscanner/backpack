@@ -148,7 +148,6 @@ class Portal extends Component {
     document.addEventListener('touchend', this.onDocumentMouseUp, false);
     document.addEventListener('mousedown', this.onDocumentMouseDown, false);
     document.addEventListener('mouseup', this.onDocumentMouseUp, false);
-    document.addEventListener('mousemove', this.onDocumentMouseMove, false);
     document.addEventListener('keydown', this.onDocumentKeyDown, false);
 
     if (this.props.style) {
@@ -174,7 +173,6 @@ class Portal extends Component {
     document.removeEventListener('touchend', this.onDocumentMouseUp, false);
     document.removeEventListener('mousedown', this.onDocumentMouseDown, false);
     document.removeEventListener('mouseup', this.onDocumentMouseUp, false);
-    document.removeEventListener('mousemove', this.onDocumentMouseMove, false);
     document.removeEventListener('keydown', this.onDocumentKeyDown, false);
     this.portalElement = null;
   }
