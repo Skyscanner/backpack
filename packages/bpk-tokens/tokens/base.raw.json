@@ -2225,7 +2225,7 @@
     "MODAL_HEADER_PADDING": {
       "category": "modals",
       "value": ".75rem",
-      "type": "box-shadow",
+      "type": "size",
       ".alias": {
         "value": ".75rem"
       },
