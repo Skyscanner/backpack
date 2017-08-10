@@ -35,3 +35,4 @@ export default () => (
 | ariaLive          | ARIA_LIVE (one of)   | false    | 'assertive'   |
 | children          | node                 | false    | null          |
 | toggleButtonLabel | string               | false    | null          |
+| className         | string               | no       | null          |
