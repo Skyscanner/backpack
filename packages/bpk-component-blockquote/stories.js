@@ -22,8 +22,14 @@ import { storiesOf } from '@storybook/react';
 import BpkBlockquote from './index';
 
 storiesOf('bpk-component-blockquote', module)
-  .add('Example', () => (
+  .add('Default example', () => (
     <BpkBlockquote>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+      sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </BpkBlockquote>
+  ))
+  .add('Example with additional spacing (above and below)', () => (
+    <BpkBlockquote extraSpace>
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
       sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </BpkBlockquote>

@@ -7,3 +7,11 @@ exports[`BpkBlockquote should render correctly 1`] = `
   Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 </blockquote>
 `;
+
+exports[`BpkBlockquote should render correctly with additional spacing 1`] = `
+<blockquote
+  className="bpk-blockquote bpk-blockquote--extra-spacing"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</blockquote>
+`;

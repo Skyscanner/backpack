@@ -83,7 +83,7 @@ const components = [
         building blocks: containers, rows and columns. Containers are used to encapsulate the entire layout (all rows).
         Rows are used to act as container to columns and columns are used to horizontally layout content.
       </Paragraph>,
-      <BpkBlockquote>
+      <BpkBlockquote extraSpace>
         <strong>Note:</strong> The Backpack grid is intended to be used for overall page layout as opposed to spacing
         out atom or molecule level components. Please stick to flexbox based techniques for more intricate
         layouts (or <BpkCode>display: table;</BpkCode> for browsers which lack support), just be sure to use the spacing

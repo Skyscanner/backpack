@@ -24,13 +24,31 @@ import STYLES from './bpk-blockquote.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkBlockquote = props => <blockquote className={getClassName('bpk-blockquote')}>{props.children}</blockquote>;
+const BpkBlockquote = (props) => {
+  const classNames = [getClassName('bpk-blockquote')];
+  if (props.extraSpace) {
+    classNames.push(getClassName('bpk-blockquote--extra-spacing'));
+  }
+
+  return (
+    <blockquote
+      className={classNames.join(' ')}
+    >
+      {props.children}
+    </blockquote>
+  );
+};
 
 BpkBlockquote.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
+  extraSpace: PropTypes.bool,
+};
+
+BpkBlockquote.defaultProps = {
+  extraSpace: false,
 };
 
 export default BpkBlockquote;

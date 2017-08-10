@@ -15,7 +15,7 @@ import React from 'react';
 import BpkBlockquote from 'bpk-component-blockquote';
 
 export default () => (
-  <BpkBlockquote>
+  <BpkBlockquote extraSpace>
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
     commodo ligula eget dolor. Aenean massa. Cum sociis natoque
     penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -25,6 +25,7 @@ export default () => (
 
 ## Props
 
-| Property  | PropType | Required | Default Value |
-| --------- | -------- | -------- | ------------- |
-| children  | -        | true     | -             |
+| Property    | PropType | Required | Default Value |
+| ----------- | -------- | -------- | ------------- |
+| children    | -        | true     | -             |
+| extraSpace  | bool     | false    | false         |

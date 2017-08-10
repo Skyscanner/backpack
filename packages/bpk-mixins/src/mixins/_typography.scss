@@ -17,6 +17,7 @@
  */
 
 @import '../bonds';
+@import './borders';
 
 ////
 /// @group typography
@@ -663,17 +664,36 @@
 
 @mixin bpk-blockquote {
   margin: 0 0 $bpk-spacing-sm 0;
-  padding: $bpk-spacing-sm;
-  border-left: solid $bpk-spacing-sm $bpk-color-gray-50;
+  padding: $bpk-spacing-xs $bpk-spacing-xs $bpk-spacing-xs $bpk-spacing-md;
+  color: $bpk-color-gray-500;
+
+  @include bpk-border-left-lg($bpk-color-blue-500);
 
   @include bpk-rtl {
-    border-right: solid $bpk-spacing-sm $bpk-color-gray-50;
+    padding: $bpk-spacing-xs $bpk-spacing-md $bpk-spacing-xs $bpk-spacing-xs;
     border-left: 0;
+
+    @include bpk-border-right-lg($bpk-color-blue-500);
   }
 
   > *:last-child {
     margin-bottom: 0;
   }
+}
+
+/// Adds additional spacing above and below blockquotes. Modifies the bpk-blockquote mixin.
+///
+/// @require {mixin} bpk-blockquote
+///
+/// @example scss
+///   .selector {
+///     @include bpk-blockquote();
+///     @include bpk-blockquote--extra-spacing();
+///   }
+
+@mixin bpk-blockquote--extra-spacing {
+  margin-top: $bpk-spacing-lg;
+  margin-bottom: $bpk-spacing-lg;
 }
 
 /// Content container.
