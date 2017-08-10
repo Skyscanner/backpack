@@ -97,38 +97,40 @@ class BpkBannerAlert extends Component {
   }
 
   render() {
+    const { children, className, type, ariaLive, message, toggleButtonLabel, ...rest } = this.props;
     const isExpanded = this.state.expanded;
-    const isExpandable = this.props.children;
+    const isExpandable = children;
     const showChildren = isExpandable && isExpanded;
 
     const headerClassNames = [getClassName('bpk-banner-alert__header')];
-    const sectionClassNames = ['bpk-banner-alert', `bpk-banner-alert--${this.props.type}`]
-      .map(className => getClassName(className));
+    const sectionClassNames = ['bpk-banner-alert', `bpk-banner-alert--${type}`]
+      .map(sectionClassName => getClassName(sectionClassName));
 
+    if (className) { sectionClassNames.push(className); }
     if (isExpandable) { headerClassNames.push(getClassName('bpk-banner-alert__header--expandable')); }
 
     /* eslint-disable jsx-a11y/no-static-element-interactions */
     return (
-      <section className={sectionClassNames.join(' ')}>
+      <section className={sectionClassNames.join(' ')} {...rest}>
         <header
           role="alert"
-          aria-live={this.props.ariaLive}
+          aria-live={ariaLive}
           className={headerClassNames.join(' ')}
           onClick={this.onExpand}
         >
-          <span className={getClassName('bpk-banner-alert__icon')}>{getIconForType(this.props.type)}</span>
+          <span className={getClassName('bpk-banner-alert__icon')}>{getIconForType(type)}</span>
           &nbsp;
-          <span className={getClassName('bpk-banner-alert__message')}>{this.props.message}</span>
+          <span className={getClassName('bpk-banner-alert__message')}>{message}</span>
           &nbsp;
           {isExpandable ? (
             <span className={getClassName('bpk-banner-alert__toggle')}>
-              <ToggleButton expanded={isExpanded} label={this.props.toggleButtonLabel} />
+              <ToggleButton expanded={isExpanded} label={toggleButtonLabel} />
             </span>
           ) : null}
         </header>
         {
           showChildren ?
-            <div className={getClassName('bpk-banner-alert__children-container')}>{this.props.children}</div>
+            <div className={getClassName('bpk-banner-alert__children-container')}>{children}</div>
             : null
         }
       </section>
@@ -151,12 +153,14 @@ BpkBannerAlert.propTypes = {
   ]),
   children: PropTypes.node,
   toggleButtonLabel: PropTypes.string,
+  className: PropTypes.string,
 };
 
 BpkBannerAlert.defaultProps = {
   ariaLive: ARIA_LIVE.ASSERTIVE,
   children: null,
   toggleButtonLabel: null,
+  className: null,
 };
 
 export default BpkBannerAlert;
