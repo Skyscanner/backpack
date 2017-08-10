@@ -1947,7 +1947,7 @@
     {
       "category": "modals",
       "value": "12",
-      "type": "box-shadow",
+      "type": "size",
       ".alias": {
         "value": ".75rem"
       },

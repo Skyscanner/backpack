@@ -44,7 +44,7 @@
     },
     "MODAL_HEADER_PADDING": {
       "value": "{!SPACING_SM}",
-      "type": "box-shadow"
+      "type": "size"
     },
     "MODAL_CLOSE_ICON_FILL": {
       "value": "{!GRAY_500}",
