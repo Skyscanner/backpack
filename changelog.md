@@ -4,6 +4,10 @@
 
 _Nothing yet!_
 
+**Fixed:**
+- bpk-tokens:
+  - Remove unused output formats for iOS and Android which aren't relevant when the platform is web.
+
 ## 2017-08-11 - Blockquote design changes and new props for banners
 
 **Added:**
