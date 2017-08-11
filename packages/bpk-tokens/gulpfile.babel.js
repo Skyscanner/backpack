@@ -42,6 +42,8 @@ const OUTPUT_MAP = {
   android: ['android.xml'],
 };
 
+const WEB_OUTPUTS = _(OUTPUT_MAP.web).map(format => ({ transform: 'web', format }));
+
 // Theo config
 
 theo.registerFormat('scss', bpkScss);
@@ -61,29 +63,31 @@ gulp.task('lint', () => {
     .pipe(jsonLint.failAfterError());
 });
 
-const convert = (options, done) => {
-  gulp.src(['./src/*.json'])
+const makeConverter = platform => (options, done) => {
+  let outputPath = 'tokens';
+
+  if (platform === 'ios' || platform === 'android') {
+    // For backwards compatibility we output web tokens
+    // in the root of `tokens`. Other platforms are scoped in
+    // tokens/{platform}
+    outputPath = `${outputPath}/${platform}`;
+  }
+
+
+  gulp.src([`./src/${platform}/*.json`])
     .pipe(theo.plugins.transform(options.transform))
     .on('error', done)
     .pipe(theo.plugins.format(options.format))
     .on('error', done)
-    .pipe(gulp.dest(path.resolve(__dirname, 'tokens')))
+    .pipe(gulp.dest(path.resolve(__dirname, outputPath)))
     .on('error', done)
     .on('finish', done);
 };
 
 gulp.task('tokens', ['clean', 'lint'], (done) => {
-  const outputs = _(OUTPUT_MAP)
-    .map((formats, transform) =>
-      formats.map(format => ({
-        format,
-        transform,
-      })),
-    )
-    .flatten()
-    .value();
+  const webConverter = makeConverter('web');
 
-  async.each(outputs, convert, done);
+  async.each(WEB_OUTPUTS, webConverter, done);
 });
 
 gulp.task('default', ['tokens']);
