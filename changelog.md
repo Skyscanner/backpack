@@ -2,12 +2,16 @@
 
 ## UNRELEASED
 
+_Nothing yet!_
+
+## 2017-08-11 - Blockquote design changes and new props for banners
+
 **Added:**
-- bpk-component-blockquote
+- bpk-component-blockquote: 1.0.5 => 1.1.0
   - Updated match Jon Hicks' design
 
 **Fixed:**
-- bpk-component-banner-alert
+- bpk-component-banner-alert: 1.1.14 => 1.2.0
   - Added support for a custom className and other arbitrary props
 
 ## 2017-08-08 - Enhancements to Chip, bug fixed for popover and modal
