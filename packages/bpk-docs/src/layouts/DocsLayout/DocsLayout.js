@@ -49,8 +49,8 @@ const links = [
       { id: 'CHIPS', route: routes.CHIPS, children: 'Chips' },
       { id: 'BADGE', route: routes.BADGE, children: 'Badge' },
       { id: 'PANELS', route: routes.PANELS, children: 'Panels' },
+      { id: 'IMAGES', route: routes.IMAGES, children: 'Images' },
       { id: 'ILLUSTRATIONS', route: null, children: 'Illustrations' },
-      { id: 'IMAGES', route: null, children: 'Image' },
     ],
   },
   {

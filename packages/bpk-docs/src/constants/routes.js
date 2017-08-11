@@ -46,6 +46,7 @@ export const CARDS = '/components/atoms/cards';
 export const CHIPS = '/components/atoms/chips';
 export const BADGE = '/components/atoms/badge';
 export const PANELS = '/components/atoms/panels';
+export const IMAGES = '/components/atoms/images';
 
 export const MOLECULES = '/components/molecules';
 export const BANNER_ALERTS = '/components/molecules/banner-alerts';

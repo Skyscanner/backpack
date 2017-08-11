@@ -1,0 +1,93 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2017 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '../bonds';
+
+////
+/// @group images
+////
+
+/// Image. Should be applied to containing element.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-image;
+///   }
+
+@mixin bpk-image {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  background-color: $bpk-color-gray-100;
+}
+
+/// Image content. Should be applied to the image element.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-image__content;
+///   }
+
+@mixin bpk-image__content {
+  transition: opacity $bpk-duration-base ease-in-out;
+  opacity: 0;
+}
+
+/// Show image content. Should be applied to the image element.
+/// Modifies bpk-image__content.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-image__content;
+///     @include bpk-image__content--show;
+///   }
+
+@mixin bpk-image__content--show {
+  opacity: 1;
+}
+
+/// Loading content. Should be applied to the loading element.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-image__spinner;
+///   }
+
+@mixin bpk-image__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  transition: opacity $bpk-duration-base ease-in-out;
+  opacity: 1;
+}
+
+/// Hide loading content. Should be applied to the loading element.
+/// Modifies bpk-image__spinner.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-image__spinner;
+///     @include bpk-image__spinner--hide;
+///   }
+
+@mixin bpk-image__spinner--hide {
+  opacity: 0;
+}
