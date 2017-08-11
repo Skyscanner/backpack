@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+**Added:**
+- bpk-component-blockquote
+  - Updated match Jon Hicks' design
+
 **Fixed:**
 - bpk-component-banner-alert
   - Added support for a custom className and other arbitrary props
