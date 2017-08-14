@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
-import page from './NotificationsPage';
+import * as ROUTES from './routes';
 
-export default page;
+// Deprecated routes, kept here for redirects
+export default {
+  '/components/molecules/notifications': ROUTES.BANNER_ALERTS,
+};

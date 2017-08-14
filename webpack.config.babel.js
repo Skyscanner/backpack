@@ -27,13 +27,17 @@ import postCssPlugins from './scripts/webpack/postCssPlugins';
 import sassFunctions from './packages/bpk-mixins/sass-functions';
 import * as ROUTES from './packages/bpk-docs/src/constants/routes';
 import { blockComment as licenseHeader } from './packages/bpk-tokens/formatters/license-header';
+import redirects from './packages/bpk-docs/src/constants/redirect-routes';
 
 const { NODE_ENV, BPK_TOKENS, ENABLE_CSS_MODULES } = process.env;
 const useCssModules = ENABLE_CSS_MODULES !== 'false';
 const isProduction = NODE_ENV === 'production';
 
 const staticSiteGeneratorConfig = {
-  paths: Object.keys(ROUTES).map(key => ROUTES[key]),
+  paths: [
+    ...Object.keys(ROUTES).map(key => ROUTES[key]),
+    ...Object.keys(redirects),
+  ],
 };
 
 const sassOptions = {

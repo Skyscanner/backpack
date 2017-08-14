@@ -57,7 +57,7 @@ const links = [
     id: 'MOLECULES',
     category: 'Molecules',
     links: [
-      { id: 'NOTIFICATIONS', route: routes.NOTIFICATIONS, children: 'Notifications' },
+      { id: 'BANNER_ALERTS', route: routes.BANNER_ALERTS, children: 'Banner alerts' },
       { id: 'MODALS', route: routes.MODALS, children: 'Modals' },
       { id: 'AUTOSUGGEST', route: routes.AUTOSUGGEST, children: 'Autosuggest' },
       { id: 'POPOVERS', route: routes.POPOVERS, children: 'Popovers' },

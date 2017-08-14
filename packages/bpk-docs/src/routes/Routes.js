@@ -17,9 +17,10 @@
  */
 
 import React from 'react';
-import { Route, IndexRoute, IndexRedirect, withRouter } from 'react-router';
+import { Route, IndexRoute, IndexRedirect, Redirect, withRouter } from 'react-router';
 
 import * as ROUTES from './../constants/routes';
+import redirects from './../constants/redirect-routes';
 
 import DefaultLayout from './../layouts/DefaultLayout';
 import DocsLayout from './../layouts/DocsLayout';
@@ -52,7 +53,7 @@ import ChipsPage from './../pages/ChipsPage';
 import BadgePage from './../pages/BadgePage';
 import PanelsPage from './../pages/PanelsPage';
 
-import NotificationsPage from './../pages/NotificationsPage';
+import BannerAlertsPage from './../pages/BannerAlertsPage';
 import ModalsPage from './../pages/ModalsPage';
 import AutosuggestPage from './../pages/AutosuggestPage';
 import PopoversPage from './../pages/PopoversPage';
@@ -119,8 +120,8 @@ const Routes = (
         <Route path={ROUTES.PANELS} component={PanelsPage} />
       </Route>
       <Route path={ROUTES.MOLECULES}>
-        <IndexRedirect to={ROUTES.NOTIFICATIONS} />
-        <Route path={ROUTES.NOTIFICATIONS} component={NotificationsPage} />
+        <IndexRedirect to={ROUTES.BANNER_ALERTS} />
+        <Route path={ROUTES.BANNER_ALERTS} component={BannerAlertsPage} />
         <Route path={ROUTES.MODALS} component={ModalsPage} />
         <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
         <Route path={ROUTES.POPOVERS} component={PopoversPage} />
@@ -152,6 +153,10 @@ const Routes = (
     <Route path={ROUTES.RESOURCES} component={ResourcesPage} iconsSvgs={iconsSvgs} />
     <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridColumnDemoPage} />
     <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridOffsetDemoPage} />
+
+    {
+      Object.keys(redirects).map(from => <Redirect from={from} to={redirects[from]} />)
+    }
   </Route>
 );
 
