@@ -20,7 +20,7 @@ import React from 'react';
 import { Route, IndexRoute, IndexRedirect, Redirect, withRouter } from 'react-router';
 
 import * as ROUTES from './../constants/routes';
-import * as REDIRECT_ROUTES from './../constants/redirect-routes';
+import redirects from './../constants/redirect-routes';
 
 import DefaultLayout from './../layouts/DefaultLayout';
 import DocsLayout from './../layouts/DocsLayout';
@@ -122,7 +122,6 @@ const Routes = (
       <Route path={ROUTES.MOLECULES}>
         <IndexRedirect to={ROUTES.BANNER_ALERTS} />
         <Route path={ROUTES.BANNER_ALERTS} component={BannerAlertsPage} />
-        <Redirect from={REDIRECT_ROUTES.NOTIFICATIONS} to={ROUTES.BANNER_ALERTS} />
         <Route path={ROUTES.MODALS} component={ModalsPage} />
         <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
         <Route path={ROUTES.POPOVERS} component={PopoversPage} />
@@ -154,6 +153,10 @@ const Routes = (
     <Route path={ROUTES.RESOURCES} component={ResourcesPage} iconsSvgs={iconsSvgs} />
     <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridColumnDemoPage} />
     <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridOffsetDemoPage} />
+
+    {
+      Object.keys(redirects).map(from => <Redirect from={from} to={redirects[from]} />)
+    }
   </Route>
 );
 

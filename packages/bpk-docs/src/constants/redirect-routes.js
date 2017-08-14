@@ -16,5 +16,9 @@
  * limitations under the License.
  */
 
-// Deprecated routes, kept here for forwarding
-export const NOTIFICATIONS = '/components/molecules/notifications'; // eslint-disable-line
+import * as ROUTES from './routes';
+
+// Deprecated routes, kept here for redirects
+export default {
+  '/components/molecules/notifications': ROUTES.BANNER_ALERTS,
+};
