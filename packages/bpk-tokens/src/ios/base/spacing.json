@@ -7,9 +7,6 @@
     "category": "spacings"
   },
   "props": {
-    "SPACING_XS": {
-      "value": "{!SPACING_XS}"
-    },
     "SPACING_SM": {
       "value": "{!SPACING_SM}"
     },
@@ -27,9 +24,6 @@
     },
     "SPACING_XXL": {
       "value": "{!SPACING_XXL}"
-    },
-    "ONE_PIXEL_REM": {
-      "value": "{!ONE_PIXEL_REM}"
     }
   }
 }
