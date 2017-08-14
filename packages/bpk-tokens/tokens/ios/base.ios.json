@@ -1,0 +1,931 @@
+{
+  "properties": [
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 255, 255)",
+      ".alias": {
+        "value": "#ffffff"
+      },
+      "name": "colorWhite"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(225, 244, 248)",
+      ".alias": {
+        "value": "#e1f4f8"
+      },
+      "name": "colorBlue50"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(203, 238, 245)",
+      ".alias": {
+        "value": "#cbeef5"
+      },
+      "name": "colorBlue100"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(176, 228, 238)",
+      ".alias": {
+        "value": "#b0e4ee"
+      },
+      "name": "colorBlue200"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(127, 215, 232)",
+      ".alias": {
+        "value": "#7fd7e8"
+      },
+      "name": "colorBlue300"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(64, 196, 223)",
+      ".alias": {
+        "value": "#40c4df"
+      },
+      "name": "colorBlue400"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 178, 214)",
+      ".alias": {
+        "value": "#00b2d6"
+      },
+      "name": "colorBlue500"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 157, 189)",
+      ".alias": {
+        "value": "#009dbd"
+      },
+      "name": "colorBlue600"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 140, 168)",
+      ".alias": {
+        "value": "#008ca8"
+      },
+      "name": "colorBlue700"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 117, 140)",
+      ".alias": {
+        "value": "#00758c"
+      },
+      "name": "colorBlue800"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 85, 103)",
+      ".alias": {
+        "value": "#005567"
+      },
+      "name": "colorBlue900"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(243, 242, 245)",
+      ".alias": {
+        "value": "#F3F2F5"
+      },
+      "name": "colorGray50"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(230, 228, 235)",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
+      "name": "colorGray100"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(204, 201, 212)",
+      ".alias": {
+        "value": "#CCC9D4"
+      },
+      "name": "colorGray200"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(178, 174, 189)",
+      ".alias": {
+        "value": "#B2AEBD"
+      },
+      "name": "colorGray300"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(154, 149, 167)",
+      ".alias": {
+        "value": "#9A95A7"
+      },
+      "name": "colorGray400"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(129, 123, 143)",
+      ".alias": {
+        "value": "#817B8F"
+      },
+      "name": "colorGray500"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(105, 97, 121)",
+      ".alias": {
+        "value": "#696179"
+      },
+      "name": "colorGray600"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(82, 76, 97)",
+      ".alias": {
+        "value": "#524C61"
+      },
+      "name": "colorGray700"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(59, 52, 75)",
+      ".alias": {
+        "value": "#3B344B"
+      },
+      "name": "colorGray800"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(37, 32, 51)",
+      ".alias": {
+        "value": "#252033"
+      },
+      "name": "colorGray900"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(223, 247, 236)",
+      ".alias": {
+        "value": "#dff7ec"
+      },
+      "name": "colorGreen50"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(203, 245, 226)",
+      ".alias": {
+        "value": "#cbf5e2"
+      },
+      "name": "colorGreen100"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(175, 237, 209)",
+      ".alias": {
+        "value": "#afedd1"
+      },
+      "name": "colorGreen200"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(128, 232, 185)",
+      ".alias": {
+        "value": "#80e8b9"
+      },
+      "name": "colorGreen300"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(64, 222, 151)",
+      ".alias": {
+        "value": "#40de97"
+      },
+      "name": "colorGreen400"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 215, 117)",
+      ".alias": {
+        "value": "#00d775"
+      },
+      "name": "colorGreen500"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 189, 104)",
+      ".alias": {
+        "value": "#00bd68"
+      },
+      "name": "colorGreen600"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 168, 93)",
+      ".alias": {
+        "value": "#00a85d"
+      },
+      "name": "colorGreen700"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 140, 77)",
+      ".alias": {
+        "value": "#008c4d"
+      },
+      "name": "colorGreen800"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(0, 102, 56)",
+      ".alias": {
+        "value": "#006638"
+      },
+      "name": "colorGreen900"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(252, 242, 242)",
+      ".alias": {
+        "value": "#fcf2f2"
+      },
+      "name": "colorRed50"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 214, 213)",
+      ".alias": {
+        "value": "#ffd6d5"
+      },
+      "name": "colorRed100"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 187, 186)",
+      ".alias": {
+        "value": "#ffbbba"
+      },
+      "name": "colorRed200"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 150, 148)",
+      ".alias": {
+        "value": "#ff9694"
+      },
+      "name": "colorRed300"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(254, 116, 113)",
+      ".alias": {
+        "value": "#fe7471"
+      },
+      "name": "colorRed400"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 84, 82)",
+      ".alias": {
+        "value": "#ff5452"
+      },
+      "name": "colorRed500"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(235, 66, 63)",
+      ".alias": {
+        "value": "#eb423f"
+      },
+      "name": "colorRed600"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(222, 50, 47)",
+      ".alias": {
+        "value": "#de322f"
+      },
+      "name": "colorRed700"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(204, 31, 29)",
+      ".alias": {
+        "value": "#cc1f1d"
+      },
+      "name": "colorRed800"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(168, 3, 0)",
+      ".alias": {
+        "value": "#a80300"
+      },
+      "name": "colorRed900"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 249, 230)",
+      ".alias": {
+        "value": "#FFF9E6"
+      },
+      "name": "colorYellow50"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 243, 207)",
+      ".alias": {
+        "value": "#FFF3CF"
+      },
+      "name": "colorYellow100"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 236, 184)",
+      ".alias": {
+        "value": "#FFECB8"
+      },
+      "name": "colorYellow200"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 225, 140)",
+      ".alias": {
+        "value": "#FFE18C"
+      },
+      "name": "colorYellow300"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 207, 74)",
+      ".alias": {
+        "value": "#FFCF4A"
+      },
+      "name": "colorYellow400"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(255, 187, 0)",
+      ".alias": {
+        "value": "#FFBB00"
+      },
+      "name": "colorYellow500"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(240, 176, 0)",
+      ".alias": {
+        "value": "#F0B000"
+      },
+      "name": "colorYellow600"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(225, 165, 0)",
+      ".alias": {
+        "value": "#E1A500"
+      },
+      "name": "colorYellow700"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(194, 142, 0)",
+      ".alias": {
+        "value": "#C28E00"
+      },
+      "name": "colorYellow800"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "rgb(156, 114, 0)",
+      ".alias": {
+        "value": "#9C7200"
+      },
+      "name": "colorYellow900"
+    },
+    {
+      "type": "size",
+      "category": "spacings",
+      "value": "4",
+      ".alias": {
+        "value": 4
+      },
+      "name": "spacingSm"
+    },
+    {
+      "type": "size",
+      "category": "spacings",
+      "value": "8",
+      ".alias": {
+        "value": 8
+      },
+      "name": "spacingMd"
+    },
+    {
+      "type": "size",
+      "category": "spacings",
+      "value": "16",
+      ".alias": {
+        "value": 16
+      },
+      "name": "spacingBase"
+    },
+    {
+      "type": "size",
+      "category": "spacings",
+      "value": "24",
+      ".alias": {
+        "value": 24
+      },
+      "name": "spacingLg"
+    },
+    {
+      "type": "size",
+      "category": "spacings",
+      "value": "32",
+      ".alias": {
+        "value": 32
+      },
+      "name": "spacingXl"
+    },
+    {
+      "type": "size",
+      "category": "spacings",
+      "value": "40",
+      ".alias": {
+        "value": 40
+      },
+      "name": "spacingXxl"
+    },
+    {
+      "value": "11",
+      "type": "size",
+      "category": "typesettings",
+      ".alias": {
+        "value": 11
+      },
+      "name": "fontSizeXs"
+    },
+    {
+      "value": "13",
+      "type": "size",
+      "category": "typesettings",
+      ".alias": {
+        "value": 13
+      },
+      "name": "fontSizeSm"
+    },
+    {
+      "value": "15",
+      "type": "size",
+      "category": "typesettings",
+      ".alias": {
+        "value": 15
+      },
+      "name": "fontSizeBase"
+    },
+    {
+      "value": "17",
+      "type": "size",
+      "category": "typesettings",
+      ".alias": {
+        "value": 17
+      },
+      "name": "fontSizeLg"
+    },
+    {
+      "value": "20",
+      "type": "size",
+      "category": "typesettings",
+      ".alias": {
+        "value": 20
+      },
+      "name": "fontSizeXl"
+    },
+    {
+      "value": "34",
+      "type": "size",
+      "category": "typesettings",
+      ".alias": {
+        "value": 34
+      },
+      "name": "fontSizeXxl"
+    },
+    {
+      "value": "13",
+      "type": "number",
+      "category": "typesettings",
+      ".alias": {
+        "value": 13
+      },
+      "name": "lineHeightXs"
+    },
+    {
+      "value": "18",
+      "type": "number",
+      "category": "typesettings",
+      ".alias": {
+        "value": 18
+      },
+      "name": "lineHeightSm"
+    },
+    {
+      "value": "20",
+      "type": "number",
+      "category": "typesettings",
+      ".alias": {
+        "value": 20
+      },
+      "name": "lineHeightBase"
+    },
+    {
+      "value": "22",
+      "type": "number",
+      "category": "typesettings",
+      ".alias": {
+        "value": 22
+      },
+      "name": "lineHeightLg"
+    },
+    {
+      "value": "24",
+      "type": "number",
+      "category": "typesettings",
+      ".alias": {
+        "value": 24
+      },
+      "name": "lineHeightXl"
+    },
+    {
+      "value": "41",
+      "type": "number",
+      "category": "typesettings",
+      ".alias": {
+        "value": 41
+      },
+      "name": "lineHeightXxl"
+    },
+    {
+      "value": "0.07",
+      "type": "number",
+      "category": "typesettings",
+      ".alias": {
+        "value": 0.07
+      },
+      "name": "letterSpacingXs"
+    },
+    {
+      "value": "-0.08",
+      "type": "number",
+      "category": "typesettings",
+      ".alias": {
+        "value": -0.08
+      },
+      "name": "letterSpacingSm"
+    },
+    {
+      "value": "-0.24",
+      "type": "number",
+      "category": "typesettings",
+      ".alias": {
+        "value": -0.24
+      },
+      "name": "letterSpacingBase"
+    },
+    {
+      "value": "0",
+      "type": "number",
+      "category": "typesettings",
+      ".alias": {
+        "value": 0
+      },
+      "name": "letterSpacingLg"
+    },
+    {
+      "value": "0.38",
+      "type": "number",
+      "category": "typesettings",
+      ".alias": {
+        "value": 0.38
+      },
+      "name": "letterSpacingXl"
+    },
+    {
+      "value": "0.41",
+      "type": "number",
+      "category": "typesettings",
+      ".alias": {
+        "value": 0.41
+      },
+      "name": "letterSpacingXxl"
+    },
+    {
+      "value": "400",
+      "type": "string",
+      "category": "font-weights",
+      ".alias": {
+        "value": "400"
+      },
+      "name": "fontWeightNormal"
+    },
+    {
+      "value": "600",
+      "type": "string",
+      "category": "font-weights",
+      ".alias": {
+        "value": "600"
+      },
+      "name": "fontWeightSemibold"
+    },
+    {
+      "value": "700",
+      "type": "string",
+      "category": "font-weights",
+      ".alias": {
+        "value": "700"
+      },
+      "name": "fontWeightBold"
+    },
+    {
+      "value": "800",
+      "type": "string",
+      "category": "font-weights",
+      ".alias": {
+        "value": "800"
+      },
+      "name": "fontWeightHeavy"
+    },
+    {
+      "value": "11",
+      "type": "size",
+      "category": "font-sizes",
+      ".alias": {
+        "value": 11
+      },
+      "name": "textXsFontSize"
+    },
+    {
+      "value": "400",
+      "type": "string",
+      "category": "font-weights",
+      ".alias": {
+        "value": "400"
+      },
+      "name": "textXsFontWeight"
+    },
+    {
+      "value": "13",
+      "type": "number",
+      "category": "line-heights",
+      ".alias": {
+        "value": 13
+      },
+      "name": "textXsLineHeight"
+    },
+    {
+      "value": "0.07",
+      "type": "number",
+      "category": "letter-spacings",
+      ".alias": {
+        "value": 0.07
+      },
+      "name": "textXsLetterSpacing"
+    },
+    {
+      "value": "13",
+      "type": "size",
+      "category": "font-sizes",
+      ".alias": {
+        "value": 13
+      },
+      "name": "textSmFontSize"
+    },
+    {
+      "value": "400",
+      "type": "string",
+      "category": "font-weights",
+      ".alias": {
+        "value": "400"
+      },
+      "name": "textSmFontWeight"
+    },
+    {
+      "value": "18",
+      "type": "number",
+      "category": "line-heights",
+      ".alias": {
+        "value": 18
+      },
+      "name": "textSmLineHeight"
+    },
+    {
+      "value": "-0.08",
+      "type": "number",
+      "category": "letter-spacings",
+      ".alias": {
+        "value": -0.08
+      },
+      "name": "textSmLetterSpacing"
+    },
+    {
+      "value": "15",
+      "type": "size",
+      "category": "font-sizes",
+      ".alias": {
+        "value": 15
+      },
+      "name": "textBaseFontSize"
+    },
+    {
+      "value": "400",
+      "type": "string",
+      "category": "font-weights",
+      ".alias": {
+        "value": "400"
+      },
+      "name": "textBaseFontWeight"
+    },
+    {
+      "value": "20",
+      "type": "number",
+      "category": "line-heights",
+      ".alias": {
+        "value": 20
+      },
+      "name": "textBaseLineHeight"
+    },
+    {
+      "value": "-0.24",
+      "type": "number",
+      "category": "letter-spacings",
+      ".alias": {
+        "value": -0.24
+      },
+      "name": "textBaseLetterSpacing"
+    },
+    {
+      "value": "17",
+      "type": "size",
+      "category": "font-sizes",
+      ".alias": {
+        "value": 17
+      },
+      "name": "textLgFontSize"
+    },
+    {
+      "value": "400",
+      "type": "string",
+      "category": "font-weights",
+      ".alias": {
+        "value": "400"
+      },
+      "name": "textLgFontWeight"
+    },
+    {
+      "value": "22",
+      "type": "number",
+      "category": "line-heights",
+      ".alias": {
+        "value": 22
+      },
+      "name": "textLgLineHeight"
+    },
+    {
+      "value": "0",
+      "type": "size",
+      "category": "letter-spacings",
+      ".alias": {
+        "value": 0
+      },
+      "name": "textLgLetterSpacing"
+    },
+    {
+      "value": "20",
+      "type": "size",
+      "category": "font-sizes",
+      ".alias": {
+        "value": 20
+      },
+      "name": "textXlFontSize"
+    },
+    {
+      "value": "400",
+      "type": "string",
+      "category": "font-weights",
+      ".alias": {
+        "value": "400"
+      },
+      "name": "textXlFontWeight"
+    },
+    {
+      "value": "24",
+      "type": "number",
+      "category": "line-heights",
+      ".alias": {
+        "value": 24
+      },
+      "name": "textXlLineHeight"
+    },
+    {
+      "value": "0.38",
+      "type": "number",
+      "category": "letter-spacings",
+      ".alias": {
+        "value": 0.38
+      },
+      "name": "textXlLetterSpacing"
+    },
+    {
+      "value": "34",
+      "type": "size",
+      "category": "font-sizes",
+      ".alias": {
+        "value": 34
+      },
+      "name": "textXxlFontSize"
+    },
+    {
+      "value": "700",
+      "type": "string",
+      "category": "font-weights",
+      ".alias": {
+        "value": "700"
+      },
+      "name": "textXxlFontWeight"
+    },
+    {
+      "value": "41",
+      "type": "number",
+      "category": "line-heights",
+      ".alias": {
+        "value": 41
+      },
+      "name": "textXxlLineHeight"
+    },
+    {
+      "value": "0.41",
+      "type": "number",
+      "category": "letter-spacings",
+      ".alias": {
+        "value": 0.41
+      },
+      "name": "textXxlLetterSpacing"
+    }
+  ]
+}

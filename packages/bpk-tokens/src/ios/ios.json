@@ -1,6 +1,0 @@
-{
-  "imports": [
-    "./ios/spacing.json",
-    "./ios/typography.json"
-  ]
-}
