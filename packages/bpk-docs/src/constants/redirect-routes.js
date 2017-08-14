@@ -16,6 +16,5 @@
  * limitations under the License.
  */
 
-import page from './NotificationsPage';
-
-export default page;
+// Deprecated routes, kept here for forwarding
+export const NOTIFICATIONS = '/components/molecules/notifications'; // eslint-disable-line

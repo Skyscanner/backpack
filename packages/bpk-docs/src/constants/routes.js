@@ -48,7 +48,7 @@ export const BADGE = '/components/atoms/badge';
 export const PANELS = '/components/atoms/panels';
 
 export const MOLECULES = '/components/molecules';
-export const NOTIFICATIONS = '/components/molecules/notifications';
+export const BANNER_ALERTS = '/components/molecules/banner-alerts';
 export const MODALS = '/components/molecules/modals';
 export const AUTOSUGGEST = '/components/molecules/autosuggest';
 export const POPOVERS = '/components/molecules/popovers';

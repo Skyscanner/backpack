@@ -34,25 +34,15 @@ const richMessage = <span style={{ fontWeight: 700 }}>Successful alert with cust
 
 const components = [
   {
-    id: 'banner-alerts',
-    title: 'Banner alerts',
+    id: 'default',
+    title: 'Default',
     blurb: [
       <Paragraph>
-        These are displayed to the user to provide feedback when an action has been performed. They are available in
-        three styles to indicate success, warning or error and can be configured to display further information to
-        user in the form of a collapsible panel.
+        Banner alerts come in three styles to indicate success, warning or error.
       </Paragraph>,
     ],
     examples: [
       <BpkBannerAlert message="Successful alert." type={ALERT_TYPES.SUCCESS} />,
-      <br />,
-      <BpkBannerAlert
-        message="Successful alert with more information."
-        type={ALERT_TYPES.SUCCESS}
-        toggleButtonLabel="See more"
-      >
-        {longMessage}
-      </BpkBannerAlert>,
       <br />,
       <BpkBannerAlert
         message={richMessage}
@@ -61,11 +51,30 @@ const components = [
       <br />,
       <BpkBannerAlert message="Warn alert." type={ALERT_TYPES.WARN} />,
       <br />,
-      <BpkBannerAlert message="Warn alert with more information." type={ALERT_TYPES.WARN} toggleButtonLabel="See more">
+      <BpkBannerAlert message="Error alert." type={ALERT_TYPES.ERROR} />,
+    ],
+  },
+  {
+    id: 'expandable',
+    title: 'Expandable',
+    blurb: [
+      <Paragraph>
+        They can be configured to display further information to the
+        user in the form of an expandable panel.
+      </Paragraph>,
+    ],
+    examples: [
+      <BpkBannerAlert
+        message="Successful alert with more information."
+        type={ALERT_TYPES.SUCCESS}
+        toggleButtonLabel="See more"
+      >
         {longMessage}
       </BpkBannerAlert>,
       <br />,
-      <BpkBannerAlert message="Error alert." type={ALERT_TYPES.ERROR} />,
+      <BpkBannerAlert message="Warn alert with more information." type={ALERT_TYPES.WARN} toggleButtonLabel="See more">
+        {longMessage}
+      </BpkBannerAlert>,
       <br />,
       <BpkBannerAlert
         message="Error alert with more information."
@@ -75,26 +84,19 @@ const components = [
         {longMessage}
       </BpkBannerAlert>,
     ],
-    readme: bannerAlertReadme,
-  },
-  {
-    id: 'toasts',
-    title: 'Toasts',
-    blurb: 'Coming soon',
-    examples: [],
   },
 ];
 
-const NotificationsPage = () => <DocsPageBuilder
-  title="Notifications"
+const BannerAlertsPage = () => <DocsPageBuilder
+  title="Banner alerts"
   blurb={[
     <Paragraph>
-      Backpack supports a number of different types of notification styles, which can be used in different scenarios
-      to provide messaging to the user.
+      Banner alerts provide feedback to the user when an action has been performed.
     </Paragraph>,
   ]}
   components={components}
   sassdocId="notifications"
+  readme={bannerAlertReadme}
 />;
 
-export default NotificationsPage;
+export default BannerAlertsPage;
