@@ -23,6 +23,8 @@ export const tokenTemplate = ({ name, value, type }) => {
   let formattedValue = value;
 
   switch (type) {
+    // TODO: Consider specializing color
+    case 'color':
     case 'string':
       formattedValue = `"${value.replace(/"/g, '\\"')}"`;
       break;

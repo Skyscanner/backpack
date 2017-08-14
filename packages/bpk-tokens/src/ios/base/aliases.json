@@ -1,4 +1,7 @@
 {
+  "imports": [
+    "../../common/base/colors.json"
+  ],
   "aliases": {
     "FONT_SIZE_XS": 11,
     "FONT_SIZE_SM": 13,

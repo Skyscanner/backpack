@@ -1,5 +1,6 @@
 {
   "imports": [
+    "./base/colors.json",
     "./base/spacing.json",
     "./base/typography.json"
   ]
