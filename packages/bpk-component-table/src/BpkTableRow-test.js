@@ -29,4 +29,13 @@ describe('BpkTableRow', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with custom props', () => {
+    const tree = renderer.create(
+      <BpkTableRow id="test" className="testing">
+        <td />
+      </BpkTableRow>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

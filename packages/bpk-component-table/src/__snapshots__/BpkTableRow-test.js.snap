@@ -5,3 +5,12 @@ exports[`BpkTableRow should render correctly 1`] = `
   <td />
 </tr>
 `;
+
+exports[`BpkTableRow should render correctly with custom props 1`] = `
+<tr
+  className="testing"
+  id="test"
+>
+  <td />
+</tr>
+`;
