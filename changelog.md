@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+**Fixed:**
+- bpk-component-table:
+  - `BpkTableRow` now accepts arbitrary props
+
 _Nothing yet_
 
 ## 2017-08-15 - Added new token outputs for iOS and Android (native and React Native)

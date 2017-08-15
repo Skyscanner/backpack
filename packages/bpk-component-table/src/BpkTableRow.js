@@ -19,7 +19,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const BpkTableRow = props => <tr>{props.children}</tr>;
+const BpkTableRow = (props) => {
+  const { children, ...rest } = props;
+  return (
+    <tr {...rest}>{children}</tr>
+  );
+};
 
 BpkTableRow.propTypes = {
   children: PropTypes.node.isRequired,
