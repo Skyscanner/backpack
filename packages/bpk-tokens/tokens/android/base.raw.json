@@ -184,70 +184,70 @@
       "value": "#94053A"
     },
     "FONT_SIZE_XS": {
-      "value": 11
+      "value": 12
     },
     "FONT_SIZE_SM": {
-      "value": 13
+      "value": 14
     },
     "FONT_SIZE_BASE": {
-      "value": 15
+      "value": 14
     },
     "FONT_SIZE_LG": {
-      "value": 17
+      "value": 16
     },
     "FONT_SIZE_XL": {
       "value": 20
     },
     "FONT_SIZE_XXL": {
-      "value": 34
-    },
-    "LINE_HEIGHT_XS": {
-      "value": 13
-    },
-    "LINE_HEIGHT_SM": {
-      "value": 18
-    },
-    "LINE_HEIGHT_BASE": {
-      "value": 20
-    },
-    "LINE_HEIGHT_LG": {
-      "value": 22
-    },
-    "LINE_HEIGHT_XL": {
       "value": 24
     },
+    "LINE_HEIGHT_XS": {
+      "value": 16
+    },
+    "LINE_HEIGHT_SM": {
+      "value": 20
+    },
+    "LINE_HEIGHT_BASE": {
+      "value": 24
+    },
+    "LINE_HEIGHT_LG": {
+      "value": 24
+    },
+    "LINE_HEIGHT_XL": {
+      "value": 28
+    },
     "LINE_HEIGHT_XXL": {
-      "value": 41
+      "value": 32
     },
     "LETTER_SPACING_XS": {
-      "value": 0.07
+      "value": 0
     },
     "LETTER_SPACING_SM": {
-      "value": -0.08
+      "value": 0
     },
     "LETTER_SPACING_BASE": {
-      "value": -0.24
+      "value": 0
     },
     "LETTER_SPACING_LG": {
       "value": 0
     },
     "LETTER_SPACING_XL": {
-      "value": 0.38
+      "value": 0
     },
     "LETTER_SPACING_XXL": {
-      "value": 0.41
+      "value": 0
     },
-    "FONT_WEIGHT_NORMAL": {
+    "FONT_WEIGHT_REGULAR": {
       "value": "400"
     },
-    "FONT_WEIGHT_SEMIBOLD": {
-      "value": "600"
+    "FONT_WEIGHT_MEDIUM": {
+      "value": "500"
     },
     "FONT_WEIGHT_BOLD": {
       "value": "700"
     },
-    "FONT_WEIGHT_HEAVY": {
-      "value": "800"
+    "FONT_WEIGHT_BLACK": {
+      "value": "900"
     },
     "SPACING_SM": {
       "value": 4
@@ -783,44 +783,44 @@
       "name": "SPACING_XXL"
     },
     "FONT_SIZE_XS": {
-      "value": "11",
-      "type": "size",
+      "value": "12",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
-        "value": 11
+        "value": 12
       },
       "name": "FONT_SIZE_XS"
     },
     "FONT_SIZE_SM": {
-      "value": "13",
-      "type": "size",
+      "value": "14",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
-        "value": 13
+        "value": 14
       },
       "name": "FONT_SIZE_SM"
     },
     "FONT_SIZE_BASE": {
-      "value": "15",
-      "type": "size",
+      "value": "14",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
-        "value": 15
+        "value": 14
       },
       "name": "FONT_SIZE_BASE"
     },
     "FONT_SIZE_LG": {
-      "value": "17",
-      "type": "size",
+      "value": "16",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
-        "value": 17
+        "value": 16
       },
       "name": "FONT_SIZE_LG"
     },
     "FONT_SIZE_XL": {
       "value": "20",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
         "value": 20
@@ -828,92 +828,92 @@
       "name": "FONT_SIZE_XL"
     },
     "FONT_SIZE_XXL": {
-      "value": "34",
-      "type": "size",
-      "category": "typesettings",
-      ".alias": {
-        "value": 34
-      },
-      "name": "FONT_SIZE_XXL"
-    },
-    "LINE_HEIGHT_XS": {
-      "value": "13",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": 13
-      },
-      "name": "LINE_HEIGHT_XS"
-    },
-    "LINE_HEIGHT_SM": {
-      "value": "18",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": 18
-      },
-      "name": "LINE_HEIGHT_SM"
-    },
-    "LINE_HEIGHT_BASE": {
-      "value": "20",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": 20
-      },
-      "name": "LINE_HEIGHT_BASE"
-    },
-    "LINE_HEIGHT_LG": {
-      "value": "22",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": 22
-      },
-      "name": "LINE_HEIGHT_LG"
-    },
-    "LINE_HEIGHT_XL": {
       "value": "24",
-      "type": "number",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
         "value": 24
       },
+      "name": "FONT_SIZE_XXL"
+    },
+    "LINE_HEIGHT_XS": {
+      "value": "16",
+      "type": "font-size",
+      "category": "typesettings",
+      ".alias": {
+        "value": 16
+      },
+      "name": "LINE_HEIGHT_XS"
+    },
+    "LINE_HEIGHT_SM": {
+      "value": "20",
+      "type": "font-size",
+      "category": "typesettings",
+      ".alias": {
+        "value": 20
+      },
+      "name": "LINE_HEIGHT_SM"
+    },
+    "LINE_HEIGHT_BASE": {
+      "value": "24",
+      "type": "font-size",
+      "category": "typesettings",
+      ".alias": {
+        "value": 24
+      },
+      "name": "LINE_HEIGHT_BASE"
+    },
+    "LINE_HEIGHT_LG": {
+      "value": "24",
+      "type": "font-size",
+      "category": "typesettings",
+      ".alias": {
+        "value": 24
+      },
+      "name": "LINE_HEIGHT_LG"
+    },
+    "LINE_HEIGHT_XL": {
+      "value": "28",
+      "type": "font-size",
+      "category": "typesettings",
+      ".alias": {
+        "value": 28
+      },
       "name": "LINE_HEIGHT_XL"
     },
     "LINE_HEIGHT_XXL": {
-      "value": "41",
+      "value": "32",
       "type": "number",
       "category": "typesettings",
       ".alias": {
-        "value": 41
+        "value": 32
       },
       "name": "LINE_HEIGHT_XXL"
     },
     "LETTER_SPACING_XS": {
-      "value": "0.07",
+      "value": "0",
       "type": "number",
       "category": "typesettings",
       ".alias": {
-        "value": 0.07
+        "value": 0
       },
       "name": "LETTER_SPACING_XS"
     },
     "LETTER_SPACING_SM": {
-      "value": "-0.08",
+      "value": "0",
       "type": "number",
       "category": "typesettings",
       ".alias": {
-        "value": -0.08
+        "value": 0
       },
       "name": "LETTER_SPACING_SM"
     },
     "LETTER_SPACING_BASE": {
-      "value": "-0.24",
+      "value": "0",
       "type": "number",
       "category": "typesettings",
       ".alias": {
-        "value": -0.24
+        "value": 0
       },
       "name": "LETTER_SPACING_BASE"
     },
@@ -927,29 +927,29 @@
       "name": "LETTER_SPACING_LG"
     },
     "LETTER_SPACING_XL": {
-      "value": "0.38",
+      "value": "0",
       "type": "number",
       "category": "typesettings",
       ".alias": {
-        "value": 0.38
+        "value": 0
       },
       "name": "LETTER_SPACING_XL"
     },
     "LETTER_SPACING_XXL": {
-      "value": "0.41",
+      "value": "0",
       "type": "number",
       "category": "typesettings",
       ".alias": {
-        "value": 0.41
+        "value": 0
       },
       "name": "LETTER_SPACING_XXL"
     },
     "TEXT_XS_FONT_SIZE": {
-      "value": "11",
-      "type": "size",
+      "value": "12",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
-        "value": 11
+        "value": 12
       },
       "name": "TEXT_XS_FONT_SIZE"
     },
@@ -963,29 +963,29 @@
       "name": "TEXT_XS_FONT_WEIGHT"
     },
     "TEXT_XS_LINE_HEIGHT": {
-      "value": "13",
-      "type": "number",
+      "value": "16",
+      "type": "font-size",
       "category": "line-heights",
       ".alias": {
-        "value": 13
+        "value": 16
       },
       "name": "TEXT_XS_LINE_HEIGHT"
     },
     "TEXT_XS_LETTER_SPACING": {
-      "value": "0.07",
+      "value": "0",
       "type": "number",
       "category": "letter-spacings",
       ".alias": {
-        "value": 0.07
+        "value": 0
       },
       "name": "TEXT_XS_LETTER_SPACING"
     },
     "TEXT_SM_FONT_SIZE": {
-      "value": "13",
-      "type": "size",
+      "value": "14",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
-        "value": 13
+        "value": 14
       },
       "name": "TEXT_SM_FONT_SIZE"
     },
@@ -999,29 +999,29 @@
       "name": "TEXT_SM_FONT_WEIGHT"
     },
     "TEXT_SM_LINE_HEIGHT": {
-      "value": "18",
-      "type": "number",
+      "value": "20",
+      "type": "font-size",
       "category": "line-heights",
       ".alias": {
-        "value": 18
+        "value": 20
       },
       "name": "TEXT_SM_LINE_HEIGHT"
     },
     "TEXT_SM_LETTER_SPACING": {
-      "value": "-0.08",
-      "type": "number",
+      "value": "0",
+      "type": "font-size",
       "category": "letter-spacings",
       ".alias": {
-        "value": -0.08
+        "value": 0
       },
       "name": "TEXT_SM_LETTER_SPACING"
     },
     "TEXT_BASE_FONT_SIZE": {
-      "value": "15",
-      "type": "size",
+      "value": "14",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
-        "value": 15
+        "value": 14
       },
       "name": "TEXT_BASE_FONT_SIZE"
     },
@@ -1035,29 +1035,29 @@
       "name": "TEXT_BASE_FONT_WEIGHT"
     },
     "TEXT_BASE_LINE_HEIGHT": {
-      "value": "20",
-      "type": "number",
+      "value": "24",
+      "type": "font-size",
       "category": "line-heights",
       ".alias": {
-        "value": 20
+        "value": 24
       },
       "name": "TEXT_BASE_LINE_HEIGHT"
     },
     "TEXT_BASE_LETTER_SPACING": {
-      "value": "-0.24",
-      "type": "number",
+      "value": "0",
+      "type": "font-size",
       "category": "letter-spacings",
       ".alias": {
-        "value": -0.24
+        "value": 0
       },
       "name": "TEXT_BASE_LETTER_SPACING"
     },
     "TEXT_LG_FONT_SIZE": {
-      "value": "17",
-      "type": "size",
+      "value": "16",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
-        "value": 17
+        "value": 16
       },
       "name": "TEXT_LG_FONT_SIZE"
     },
@@ -1071,17 +1071,17 @@
       "name": "TEXT_LG_FONT_WEIGHT"
     },
     "TEXT_LG_LINE_HEIGHT": {
-      "value": "22",
-      "type": "number",
+      "value": "24",
+      "type": "font-size",
       "category": "line-heights",
       ".alias": {
-        "value": 22
+        "value": 24
       },
       "name": "TEXT_LG_LINE_HEIGHT"
     },
     "TEXT_LG_LETTER_SPACING": {
       "value": "0",
-      "type": "size",
+      "type": "font-size",
       "category": "letter-spacings",
       ".alias": {
         "value": 0
@@ -1090,7 +1090,7 @@
     },
     "TEXT_XL_FONT_SIZE": {
       "value": "20",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": 20
@@ -1107,56 +1107,56 @@
       "name": "TEXT_XL_FONT_WEIGHT"
     },
     "TEXT_XL_LINE_HEIGHT": {
-      "value": "24",
-      "type": "number",
+      "value": "28",
+      "type": "font-size",
       "category": "line-heights",
       ".alias": {
-        "value": 24
+        "value": 28
       },
       "name": "TEXT_XL_LINE_HEIGHT"
     },
     "TEXT_XL_LETTER_SPACING": {
-      "value": "0.38",
-      "type": "number",
+      "value": "0",
+      "type": "font-size",
       "category": "letter-spacings",
       ".alias": {
-        "value": 0.38
+        "value": 0
       },
       "name": "TEXT_XL_LETTER_SPACING"
     },
     "TEXT_XXL_FONT_SIZE": {
-      "value": "34",
-      "type": "size",
+      "value": "24",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
-        "value": 34
+        "value": 24
       },
       "name": "TEXT_XXL_FONT_SIZE"
     },
     "TEXT_XXL_FONT_WEIGHT": {
-      "value": "700",
+      "value": "400",
       "type": "string",
       "category": "font-weights",
       ".alias": {
-        "value": "700"
+        "value": "400"
       },
       "name": "TEXT_XXL_FONT_WEIGHT"
     },
     "TEXT_XXL_LINE_HEIGHT": {
-      "value": "41",
-      "type": "number",
+      "value": "32",
+      "type": "font-size",
       "category": "line-heights",
       ".alias": {
-        "value": 41
+        "value": 32
       },
       "name": "TEXT_XXL_LINE_HEIGHT"
     },
     "TEXT_XXL_LETTER_SPACING": {
-      "value": "0.41",
+      "value": "0",
       "type": "number",
       "category": "letter-spacings",
       ".alias": {
-        "value": 0.41
+        "value": 0
       },
       "name": "TEXT_XXL_LETTER_SPACING"
     }

@@ -45,6 +45,7 @@ const OUTPUT_MAP = {
 
 const WEB_OUTPUTS = _(OUTPUT_MAP.web).map(format => ({ transform: 'web', format }));
 const IOS_OUTPUTS = _(OUTPUT_MAP.ios).map(format => ({ transform: 'ios', format }));
+const ANDROID_OUTPUTS = _(OUTPUT_MAP.android).map(format => ({ transform: 'android', format }));
 
 // Theo config
 
@@ -54,6 +55,14 @@ theo.registerFormat('es6.js', bpkEs6Js);
 theo.registerFormat('react.native.es6.js', bpkReactNativeEs6Js);
 theo.registerFormat('common.js', bpkCommonJs);
 theo.registerFormat('android.xml', bpkAndroid);
+
+theo.registerTransform('ios', [
+  ['color/hex8rgba'],
+]);
+
+theo.registerTransform('android', [
+  ['color/hex8rgba'],
+]);
 
 // Gulp task definitions
 
@@ -90,10 +99,12 @@ const makeConverter = platform => (options, done) => {
 gulp.task('tokens', ['clean', 'lint'], (done) => {
   const webConverter = makeConverter('web');
   const iosConverter = makeConverter('ios');
+  const androidConverter = makeConverter('android');
 
   async.parallel([
     callback => async.each(WEB_OUTPUTS, webConverter, callback),
     callback => async.each(IOS_OUTPUTS, iosConverter, callback),
+    callback => async.each(ANDROID_OUTPUTS, androidConverter, callback),
   ], done);
 });
 

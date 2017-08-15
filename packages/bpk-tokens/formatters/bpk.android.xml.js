@@ -17,12 +17,38 @@
  */
 
 import _ from 'lodash';
+import tinycolor from 'tinycolor2';
 import { xmlComment } from './license-header';
 
 const tagName = type => (type === 'color' ? 'color' : 'property');
 
+const valueTemplate = (value, type) => {
+  let formattedValue = value;
+
+  switch (type) {
+    case 'color': {
+      const formattedColor = tinycolor(value);
+      formattedValue = `${formattedColor.toHex8String().replace(/^#(.{6})(.{2})/, '#$2$1')}`;
+      break;
+    }
+    case 'string':
+      formattedValue = `${value.replace(/"/g, '\\"')}`;
+      break;
+    case 'size':
+      formattedValue = `${value}dp`;
+      break;
+    case 'font-size':
+      formattedValue = `${value}sp`;
+      break;
+    default:
+      formattedValue = value;
+      break;
+  }
+  return formattedValue;
+};
+
 export const tokenTemplate = ({ name, value, type, category }) => (
-  `  <${tagName(type)} name="${name.toUpperCase()}" category="${category}">${value.replace(/"/g, '\\"')}</${tagName(type)}>` // eslint-disable-line max-len
+  `  <${tagName(type)} name="${name.toUpperCase()}" category="${category}">${valueTemplate(value, type)}</${tagName(type)}>` // eslint-disable-line max-len
 );
 
 export default (json) => {
