@@ -2,12 +2,16 @@
 
 ## UNRELEASED
 
+_Nothing yet_
+
+## 2017-08-15 - Added new token outputs for iOS and Android (native and React Native)
+
 **Added:**
-- bpk-tokens:
+- bpk-tokens: 24.0.1 => 24.1.0
   - Added new outputs for the iOS and Android platforms in `bpk-tokens/tokens/ios/base.ios.json`, `bpk-tokens/tokens/ios/base.react.native.es6.js`, `bpk-tokens/tokens/android/base.android.xml` and `bpk-tokens/tokens/android/base.react.native.es6.js`. These interfaces are not to be considered stable yet however and they may still change.
 
 **Fixed:**
-- bpk-tokens:
+- bpk-tokens: 24.0.1 => 24.1.0
   - Remove unused output formats for iOS and Android which aren't relevant when the platform is web.
 
 ## 2017-08-11 - Blockquote design changes and new props for banners
