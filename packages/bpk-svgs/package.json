@@ -1,6 +1,6 @@
 {
   "name": "bpk-svgs",
-  "version": "5.6.1",
+  "version": "5.6.2",
   "description": "Backpack's library of SVG's.",
   "main": "_index.scss",
   "scripts": {
@@ -13,6 +13,6 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "bpk-tokens": "^24.0.1"
+    "bpk-tokens": "^24.1.0"
   }
 }
