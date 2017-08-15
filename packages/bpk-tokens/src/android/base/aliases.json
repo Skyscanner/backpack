@@ -1,0 +1,35 @@
+{
+  "imports": [
+    "../../common/base/colors.json"
+  ],
+  "aliases": {
+    "FONT_SIZE_XS": 12,
+    "FONT_SIZE_SM": 14,
+    "FONT_SIZE_BASE": 14,
+    "FONT_SIZE_LG": 16,
+    "FONT_SIZE_XL": 20,
+    "FONT_SIZE_XXL": 24,
+    "LINE_HEIGHT_XS": 16,
+    "LINE_HEIGHT_SM": 20,
+    "LINE_HEIGHT_BASE": 24,
+    "LINE_HEIGHT_LG": 24,
+    "LINE_HEIGHT_XL": 28,
+    "LINE_HEIGHT_XXL": 32,
+    "LETTER_SPACING_XS": 0,
+    "LETTER_SPACING_SM": 0,
+    "LETTER_SPACING_BASE": 0,
+    "LETTER_SPACING_LG": 0,
+    "LETTER_SPACING_XL": 0,
+    "LETTER_SPACING_XXL": 0,
+    "FONT_WEIGHT_REGULAR": "400",
+    "FONT_WEIGHT_MEDIUM": "500",
+    "FONT_WEIGHT_BOLD": "700",
+    "FONT_WEIGHT_BLACK": "900",
+    "SPACING_SM": 4,
+    "SPACING_MD": 8,
+    "SPACING_BASE": 16,
+    "SPACING_LG": 24,
+    "SPACING_XL": 32,
+    "SPACING_XXL": 40
+  }
+}

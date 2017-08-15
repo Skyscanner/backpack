@@ -3,7 +3,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 255, 255)",
+      "value": "#ffffffff",
       ".alias": {
         "value": "#ffffff"
       },
@@ -12,7 +12,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(225, 244, 248)",
+      "value": "#e1f4f8ff",
       ".alias": {
         "value": "#e1f4f8"
       },
@@ -21,7 +21,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(203, 238, 245)",
+      "value": "#cbeef5ff",
       ".alias": {
         "value": "#cbeef5"
       },
@@ -30,7 +30,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(176, 228, 238)",
+      "value": "#b0e4eeff",
       ".alias": {
         "value": "#b0e4ee"
       },
@@ -39,7 +39,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(127, 215, 232)",
+      "value": "#7fd7e8ff",
       ".alias": {
         "value": "#7fd7e8"
       },
@@ -48,7 +48,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(64, 196, 223)",
+      "value": "#40c4dfff",
       ".alias": {
         "value": "#40c4df"
       },
@@ -57,7 +57,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(0, 178, 214)",
+      "value": "#00b2d6ff",
       ".alias": {
         "value": "#00b2d6"
       },
@@ -66,7 +66,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(0, 157, 189)",
+      "value": "#009dbdff",
       ".alias": {
         "value": "#009dbd"
       },
@@ -75,7 +75,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(0, 140, 168)",
+      "value": "#008ca8ff",
       ".alias": {
         "value": "#008ca8"
       },
@@ -84,7 +84,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(0, 117, 140)",
+      "value": "#00758cff",
       ".alias": {
         "value": "#00758c"
       },
@@ -93,7 +93,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(0, 85, 103)",
+      "value": "#005567ff",
       ".alias": {
         "value": "#005567"
       },
@@ -102,7 +102,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(243, 242, 245)",
+      "value": "#f3f2f5ff",
       ".alias": {
         "value": "#F3F2F5"
       },
@@ -111,7 +111,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(230, 228, 235)",
+      "value": "#e6e4ebff",
       ".alias": {
         "value": "#E6E4EB"
       },
@@ -120,7 +120,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(204, 201, 212)",
+      "value": "#ccc9d4ff",
       ".alias": {
         "value": "#CCC9D4"
       },
@@ -129,7 +129,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(178, 174, 189)",
+      "value": "#b2aebdff",
       ".alias": {
         "value": "#B2AEBD"
       },
@@ -138,7 +138,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(154, 149, 167)",
+      "value": "#9a95a7ff",
       ".alias": {
         "value": "#9A95A7"
       },
@@ -147,7 +147,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(129, 123, 143)",
+      "value": "#817b8fff",
       ".alias": {
         "value": "#817B8F"
       },
@@ -156,7 +156,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(105, 97, 121)",
+      "value": "#696179ff",
       ".alias": {
         "value": "#696179"
       },
@@ -165,7 +165,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(82, 76, 97)",
+      "value": "#524c61ff",
       ".alias": {
         "value": "#524C61"
       },
@@ -174,7 +174,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(59, 52, 75)",
+      "value": "#3b344bff",
       ".alias": {
         "value": "#3B344B"
       },
@@ -183,7 +183,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(37, 32, 51)",
+      "value": "#252033ff",
       ".alias": {
         "value": "#252033"
       },
@@ -192,7 +192,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(223, 247, 236)",
+      "value": "#dff7ecff",
       ".alias": {
         "value": "#dff7ec"
       },
@@ -201,7 +201,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(203, 245, 226)",
+      "value": "#cbf5e2ff",
       ".alias": {
         "value": "#cbf5e2"
       },
@@ -210,7 +210,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(175, 237, 209)",
+      "value": "#afedd1ff",
       ".alias": {
         "value": "#afedd1"
       },
@@ -219,7 +219,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(128, 232, 185)",
+      "value": "#80e8b9ff",
       ".alias": {
         "value": "#80e8b9"
       },
@@ -228,7 +228,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(64, 222, 151)",
+      "value": "#40de97ff",
       ".alias": {
         "value": "#40de97"
       },
@@ -237,7 +237,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(0, 215, 117)",
+      "value": "#00d775ff",
       ".alias": {
         "value": "#00d775"
       },
@@ -246,7 +246,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(0, 189, 104)",
+      "value": "#00bd68ff",
       ".alias": {
         "value": "#00bd68"
       },
@@ -255,7 +255,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(0, 168, 93)",
+      "value": "#00a85dff",
       ".alias": {
         "value": "#00a85d"
       },
@@ -264,7 +264,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(0, 140, 77)",
+      "value": "#008c4dff",
       ".alias": {
         "value": "#008c4d"
       },
@@ -273,7 +273,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(0, 102, 56)",
+      "value": "#006638ff",
       ".alias": {
         "value": "#006638"
       },
@@ -282,7 +282,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(252, 242, 242)",
+      "value": "#fcf2f2ff",
       ".alias": {
         "value": "#fcf2f2"
       },
@@ -291,7 +291,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 214, 213)",
+      "value": "#ffd6d5ff",
       ".alias": {
         "value": "#ffd6d5"
       },
@@ -300,7 +300,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 187, 186)",
+      "value": "#ffbbbaff",
       ".alias": {
         "value": "#ffbbba"
       },
@@ -309,7 +309,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 150, 148)",
+      "value": "#ff9694ff",
       ".alias": {
         "value": "#ff9694"
       },
@@ -318,7 +318,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(254, 116, 113)",
+      "value": "#fe7471ff",
       ".alias": {
         "value": "#fe7471"
       },
@@ -327,7 +327,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 84, 82)",
+      "value": "#ff5452ff",
       ".alias": {
         "value": "#ff5452"
       },
@@ -336,7 +336,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(235, 66, 63)",
+      "value": "#eb423fff",
       ".alias": {
         "value": "#eb423f"
       },
@@ -345,7 +345,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(222, 50, 47)",
+      "value": "#de322fff",
       ".alias": {
         "value": "#de322f"
       },
@@ -354,7 +354,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(204, 31, 29)",
+      "value": "#cc1f1dff",
       ".alias": {
         "value": "#cc1f1d"
       },
@@ -363,7 +363,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(168, 3, 0)",
+      "value": "#a80300ff",
       ".alias": {
         "value": "#a80300"
       },
@@ -372,7 +372,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 249, 230)",
+      "value": "#fff9e6ff",
       ".alias": {
         "value": "#FFF9E6"
       },
@@ -381,7 +381,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 243, 207)",
+      "value": "#fff3cfff",
       ".alias": {
         "value": "#FFF3CF"
       },
@@ -390,7 +390,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 236, 184)",
+      "value": "#ffecb8ff",
       ".alias": {
         "value": "#FFECB8"
       },
@@ -399,7 +399,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 225, 140)",
+      "value": "#ffe18cff",
       ".alias": {
         "value": "#FFE18C"
       },
@@ -408,7 +408,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 207, 74)",
+      "value": "#ffcf4aff",
       ".alias": {
         "value": "#FFCF4A"
       },
@@ -417,7 +417,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(255, 187, 0)",
+      "value": "#ffbb00ff",
       ".alias": {
         "value": "#FFBB00"
       },
@@ -426,7 +426,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(240, 176, 0)",
+      "value": "#f0b000ff",
       ".alias": {
         "value": "#F0B000"
       },
@@ -435,7 +435,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(225, 165, 0)",
+      "value": "#e1a500ff",
       ".alias": {
         "value": "#E1A500"
       },
@@ -444,7 +444,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(194, 142, 0)",
+      "value": "#c28e00ff",
       ".alias": {
         "value": "#C28E00"
       },
@@ -453,7 +453,7 @@
     {
       "type": "color",
       "category": "colors",
-      "value": "rgb(156, 114, 0)",
+      "value": "#9c7200ff",
       ".alias": {
         "value": "#9C7200"
       },
@@ -674,42 +674,6 @@
         "value": 0.41
       },
       "name": "letterSpacingXxl"
-    },
-    {
-      "value": "400",
-      "type": "string",
-      "category": "font-weights",
-      ".alias": {
-        "value": "400"
-      },
-      "name": "fontWeightNormal"
-    },
-    {
-      "value": "600",
-      "type": "string",
-      "category": "font-weights",
-      ".alias": {
-        "value": "600"
-      },
-      "name": "fontWeightSemibold"
-    },
-    {
-      "value": "700",
-      "type": "string",
-      "category": "font-weights",
-      ".alias": {
-        "value": "700"
-      },
-      "name": "fontWeightBold"
-    },
-    {
-      "value": "800",
-      "type": "string",
-      "category": "font-weights",
-      ".alias": {
-        "value": "800"
-      },
-      "name": "fontWeightHeavy"
     },
     {
       "value": "11",

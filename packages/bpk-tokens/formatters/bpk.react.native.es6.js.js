@@ -17,14 +17,18 @@
  */
 
 import _ from 'lodash';
+import tinycolor from 'tinycolor2';
 import { blockComment } from './license-header';
 
-export const tokenTemplate = ({ name, value, type }) => {
+const tokenTemplate = ({ name, value, type }) => {
   let formattedValue = value;
 
   switch (type) {
-    // TODO: Consider specializing color
-    case 'color':
+    case 'color': {
+      const formattedColor = tinycolor(value);
+      formattedValue = `"${formattedColor.toRgbString()}"`;
+      break;
+    }
     case 'string':
       formattedValue = `"${value.replace(/"/g, '\\"')}"`;
       break;
