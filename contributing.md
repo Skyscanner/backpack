@@ -216,8 +216,8 @@ When adding documentation for a new component, add the new dependency in `packag
     - `npm run lerna diff <package-name>`
 - Make sure you are an owner of the npm packages (speak to a member of the Backpack squad)
 - **Do not run `npm publish`. Instead, run `npm run publish`** (this will run `lerna publish`).
-- You’ll be asked to specify a new version for every package that has changed. Options are *patch*, *minor* or *major*. These should directly align to the entries you put in the changelog in step 1.
+- You’ll be asked to specify a new version for every package that has changed. Options are *patch*, *minor* or *major*. These should directly align to the entries you put in the [changelog](/changelog.md) in step 1.
 - You’ll be asked at the end to confirm. Note you can still exit without making these changes.
-- Update the changelog with the package versions and update the title with today’s date and a brief summary of what has changed.
+- Update the [changelog](/changelog.md) with the package versions and update the title with today’s date and a brief summary of what has changed.
 - Commit and push to master.
 - Update the #backpack Slack channel and the [BackpackNeedToKnow](mailto:backpackneedtoknow@skyscanner.net) mailing list if necessary.
