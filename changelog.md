@@ -2,6 +2,12 @@
 
 ## UNRELEASED
 
+**Added:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - added 1 new icon (cloakroom)
+
 **Fixed:**
 - bpk-component-table:
   - `BpkTableRow` now accepts arbitrary props
