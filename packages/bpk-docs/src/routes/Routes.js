@@ -155,7 +155,7 @@ const Routes = (
     <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridOffsetDemoPage} />
 
     {
-      Object.keys(redirects).map(from => <Redirect from={from} to={redirects[from]} />)
+      Object.keys(redirects).map(from => <Redirect key={from} from={from} to={redirects[from]} />)
     }
   </Route>
 );
