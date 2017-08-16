@@ -11,8 +11,11 @@
 **Fixed:**
 - bpk-component-table:
   - `BpkTableRow` now accepts arbitrary props
-
-_Nothing yet_
+- bpk-component-icon:
+  - Fixed displayName of `withAlignment` HOC
+    **NOTE:** This may break your snapshot tests and thus your build. This is nothing to worry about and the
+    snapshots can safely be updated. Just make sure to perform the update in isolation so that all the
+    snapshot updates relate to this issue and don't introduce unrelated regressions.
 
 ## 2017-08-15 - Added new token outputs for iOS and Android (native and React Native)
 

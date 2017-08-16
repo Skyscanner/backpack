@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`withAlignment should keep wrapped-component syling 1`] = `
+exports[`withAlignment should keep wrapped-component styling 1`] = `
 <span
   style={
     Object {
@@ -224,4 +224,10 @@ exports[`withAlignment should render correctly 10`] = `
     1.5rem
   </div>
 </span>
+`;
+
+exports[`withAlignment should wrap the component display name 1`] = `
+<div>
+  <withAlignment(Component) />
+</div>
 `;

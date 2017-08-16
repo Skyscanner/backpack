@@ -19,6 +19,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import wrapDisplayName from 'recompose/wrapDisplayName';
+
 const withDefaultProps = (WrappedComponent, defaultProps) => {
   const { className: defaultClassName, ...defaultRest } = defaultProps;
 
@@ -47,8 +49,8 @@ const withDefaultProps = (WrappedComponent, defaultProps) => {
   component.defaultProps = {
     className: null,
   };
-  const inputDisplayName = WrappedComponent.displayName || WrappedComponent.name || 'Text';
-  component.displayName = `withDefaultProps(${inputDisplayName})`;
+
+  component.displayName = wrapDisplayName(WrappedComponent, 'withDefaultProps');
 
   return component;
 };

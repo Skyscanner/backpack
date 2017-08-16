@@ -17,9 +17,10 @@
  */
 
 import React from 'react';
+import wrapDisplayName from 'recompose/wrapDisplayName';
 
 export default function withAlignment(Component, objectHeight, subjectHeight) {
-  return (props) => {
+  const WithAlignment = (props) => {
     const { children, ...rest } = props;
     const objectHeightDecimal = `${objectHeight}`.replace('rem', '');
     const subjectHeightDecimal = `${subjectHeight}`.replace('rem', '');
@@ -37,5 +38,9 @@ export default function withAlignment(Component, objectHeight, subjectHeight) {
         <Component {...rest} >{children}</Component>
       </span>
     );
-  }
+  };
+
+  WithAlignment.displayName = wrapDisplayName(Component, 'withAlignment');
+
+  return WithAlignment;
 }

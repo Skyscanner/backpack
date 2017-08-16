@@ -19,6 +19,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
+import wrapDisplayName from 'recompose/wrapDisplayName';
+
 const withAccordionItemState = (ComposedComponent) => {
   class WithAccordionItemState extends Component {
     constructor(props) {
@@ -56,9 +58,7 @@ const withAccordionItemState = (ComposedComponent) => {
     onClick: null,
   };
 
-  const composedComponentName = ComposedComponent.displayName || ComposedComponent.name || 'Component';
-
-  WithAccordionItemState.displayName = `withAccordionItemState(${composedComponentName})`;
+  WithAccordionItemState.displayName = wrapDisplayName(ComposedComponent, 'withAccordionItemState');
 
   return WithAccordionItemState;
 };

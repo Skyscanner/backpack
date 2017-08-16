@@ -18,7 +18,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { cssModules } from 'bpk-react-utils';
+import wrapDisplayName from 'recompose/wrapDisplayName';
 
 import STYLES from './bpk-input.scss';
 
@@ -158,8 +160,7 @@ const withOpenEvents = (InputComponent) => {
     onKeyUp: null,
   };
 
-  const inputDisplayName = InputComponent.displayName || InputComponent.name || 'Input';
-  WithOpenEvents.displayName = `withOpenEvents(${inputDisplayName})`;
+  WithOpenEvents.displayName = wrapDisplayName(InputComponent, 'withOpenEvents');
 
   return WithOpenEvents;
 };

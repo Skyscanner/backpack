@@ -19,6 +19,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import wrapDisplayName from 'recompose/wrapDisplayName';
+
 export default (displayName, classNamesToAdd = []) => (ComposedComponent) => {
   const ClassNameModifierHOC = (props) => {
     let classNames = [];
@@ -38,9 +40,7 @@ export default (displayName, classNamesToAdd = []) => (ComposedComponent) => {
     className: null,
   };
 
-  const composedComponentName = ComposedComponent.displayName || ComposedComponent.name || 'Component';
-
-  ClassNameModifierHOC.displayName = `${displayName}(${composedComponentName})`;
+  ClassNameModifierHOC.displayName = wrapDisplayName(ComposedComponent, displayName);
 
   return ClassNameModifierHOC;
 };
