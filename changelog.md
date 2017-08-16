@@ -7,6 +7,8 @@
 - bpk-mixins:
 - bpk-svgs:
   - added 1 new icon (cloakroom)
+- bpk-tokens:
+  - Added common js output for react native. `bpk-tokens/tokens/{platform}/base.react.native.common.js`
 
 **Fixed:**
 - bpk-component-table:

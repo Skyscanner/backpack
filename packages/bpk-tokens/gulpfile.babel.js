@@ -28,6 +28,7 @@ import bpkScss from './formatters/bpk.scss';
 import bpkDefaultScss from './formatters/bpk.default.scss';
 import bpkEs6Js from './formatters/bpk.es6.js';
 import bpkReactNativeEs6Js from './formatters/bpk.react.native.es6.js';
+import bpkReactNativeCommonJs from './formatters/bpk.react.native.common.js';
 import bpkCommonJs from './formatters/bpk.common.js';
 import bpkAndroid from './formatters/bpk.android.xml';
 
@@ -39,8 +40,8 @@ const OUTPUT_MAP = {
     'common.js',
     'es6.js',
   ],
-  ios: ['ios.json', 'react.native.es6.js', 'raw.json'],
-  android: ['android.xml', 'react.native.es6.js', 'raw.json'],
+  ios: ['ios.json', 'react.native.common.js', 'react.native.es6.js', 'raw.json'],
+  android: ['android.xml', 'react.native.common.js', 'react.native.es6.js', 'raw.json'],
 };
 
 const WEB_OUTPUTS = _(OUTPUT_MAP.web).map(format => ({ transform: 'web', format }));
@@ -53,6 +54,7 @@ theo.registerFormat('scss', bpkScss);
 theo.registerFormat('default.scss', bpkDefaultScss);
 theo.registerFormat('es6.js', bpkEs6Js);
 theo.registerFormat('react.native.es6.js', bpkReactNativeEs6Js);
+theo.registerFormat('react.native.common.js', bpkReactNativeCommonJs);
 theo.registerFormat('common.js', bpkCommonJs);
 theo.registerFormat('android.xml', bpkAndroid);
 

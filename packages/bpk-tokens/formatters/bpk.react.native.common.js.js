@@ -20,22 +20,20 @@ import _ from 'lodash';
 import { blockComment } from './license-header';
 import valueTemplate from './react-native-value-template';
 
-const tokenTemplate = ({ name, value, type }) => `export const ${_.camelCase(name)} = ${valueTemplate(value, type)};`;
-
-
-export const categoryTemplate = (categoryName, props) => `export const ${_.camelCase(categoryName)} = {
-${_.map(props, prop => `${_.camelCase(prop.name)},`).join('\n')}
-};`;
+export const tokenTemplate = ({ name, value, type }) => (
+  `  ${_.camelCase(name)}: ${valueTemplate(value, type)}`
+);
 
 export default (json) => {
-  const categories = _(json.props).map(prop => prop.category).uniq().value();
+  const props = _.map(_.toPairs(json.props), x => x[1]);
 
-  const singleTokens = _.map(json.props, prop => tokenTemplate(prop)).join('\n');
-  const groupedTokens = categories
-    .map(category => categoryTemplate(
-      category,
-      _(json.props).filter({ category }).value()),
-    ).join('\n');
+  const lastLine = `${tokenTemplate(_.last(props))}`;
+  const singleTokens = _.map(_.take(props, props.length - 1), prop => tokenTemplate(prop)).join(',\n');
+  const source = `
+module.exports = {
+${singleTokens},
+${lastLine}
+};`;
 
-  return [blockComment, singleTokens, groupedTokens].join('\n');
+  return [blockComment, source].join('\n');
 };
