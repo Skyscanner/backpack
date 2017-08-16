@@ -19,6 +19,8 @@
 import PropTypes from 'prop-types';
 import React, { Component, Children, cloneElement } from 'react';
 
+import wrapDisplayName from 'recompose/wrapDisplayName';
+
 const getInitiallyExpanded = (children) => {
   const accordionItems = Children.toArray(children);
   const result = accordionItems.reduceRight((prev, item) => (item.props.initiallyExpanded ? item : prev), {});
@@ -64,9 +66,7 @@ const withSingleItemAccordionState = (ComposedComponent) => {
     children: PropTypes.node.isRequired,
   };
 
-  const composedComponentName = ComposedComponent.displayName || ComposedComponent.name || 'Component';
-
-  WithSingleItemAccordionState.displayName = `withSingleItemAccordionState(${composedComponentName})`;
+  WithSingleItemAccordionState.displayName = wrapDisplayName(ComposedComponent, 'withSingleItemAccordionState');
 
   return WithSingleItemAccordionState;
 };

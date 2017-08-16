@@ -18,6 +18,9 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import ReactShallowRenderer from 'react-test-renderer/shallow';
+import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import withAlignment from './withAlignment';
 import {
   lineHeightSm, lineHeightBase, lineHeightLg, lineHeightXl, lineHeightXxl,
@@ -40,11 +43,20 @@ describe('withAlignment', () => {
     }
   });
 
-  it('should keep wrapped-component syling', () => {
+  it('should keep wrapped-component styling', () => {
     const FloatingComponent = props => <div {...props} >test lineHeight {lineHeightLg} and iconsSize {iconSizeSm}</div>;
     const AlignedFloatingComponent = withAlignment(FloatingComponent, lineHeightLg, iconSizeSm);
 
     const tree = renderer.create(<AlignedFloatingComponent style={{ float: 'right'}} />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should wrap the component display name', () => {
+    const shallowRenderer = new ReactShallowRenderer();
+    const AlignedComponent = withAlignment(props => <div {...props} >test</div>, lineHeightLg, iconSizeSm);
+    const Wrapper = () => <div><AlignedComponent /></div>;
+
+    const tree = shallowRenderer.render(<Wrapper />);
     expect(tree).toMatchSnapshot();
   });
 });

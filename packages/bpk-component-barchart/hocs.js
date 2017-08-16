@@ -19,6 +19,8 @@
 import isEqual from 'lodash/isEqual';
 import React, { Component } from 'react';
 
+import wrapDisplayName from 'recompose/wrapDisplayName';
+
 // eslint-disable-next-line import/prefer-default-export
 export const withSelectedState = (ComposedComponent) => {
   class WithSelectedState extends Component {
@@ -57,9 +59,7 @@ export const withSelectedState = (ComposedComponent) => {
 
   }
 
-  const composedComponentName = ComposedComponent.displayName || ComposedComponent.name || 'Component';
-
-  WithSelectedState.displayName = `withSelectedState(${composedComponentName})`;
+  WithSelectedState.displayName = wrapDisplayName(ComposedComponent, 'withSelectedState');
 
   return WithSelectedState;
 };

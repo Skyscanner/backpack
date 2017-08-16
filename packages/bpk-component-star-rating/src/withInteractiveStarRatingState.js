@@ -19,6 +19,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
+import wrapDisplayName from 'recompose/wrapDisplayName';
+
 const withInteractiveStarRatingState = (InteractiveStarRating) => {
   class EnhancedComponent extends Component {
     constructor() {
@@ -78,9 +80,7 @@ const withInteractiveStarRatingState = (InteractiveStarRating) => {
     onRatingSelect: () => null,
   };
 
-  const enhancedComponentName = EnhancedComponent.displayName || EnhancedComponent.name || 'Component';
-
-  EnhancedComponent.displayName = `withInteractiveStarRatingState(${enhancedComponentName})`;
+  EnhancedComponent.displayName = wrapDisplayName(EnhancedComponent, 'withInteractiveStarRatingState');
 
   return EnhancedComponent;
 };

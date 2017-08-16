@@ -126,5 +126,8 @@
         "lines": 75
       }
     }
+  },
+  "dependencies": {
+    "recompose": "^0.24.0"
   }
 }

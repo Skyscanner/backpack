@@ -17,7 +17,11 @@
  */
 
 import React, { Component } from 'react';
+
+import wrapDisplayName from 'recompose/wrapDisplayName';
+
 import { getHtmlElement, DIRECTION_CHANGE_EVENT } from './utils';
+
 
 const updateOnDirectionChange = (EnhancedComponent) => {
   class UpdateOnDirectionChange extends Component {
@@ -43,9 +47,7 @@ const updateOnDirectionChange = (EnhancedComponent) => {
     }
   }
 
-  const enhancedComponentName = EnhancedComponent.displayName || EnhancedComponent.name || 'Component';
-
-  UpdateOnDirectionChange.displayName = `updateOnDirectionChange(${enhancedComponentName})`;
+  UpdateOnDirectionChange.displayName = wrapDisplayName(EnhancedComponent, 'updateOnDirectionChange');
 
   return UpdateOnDirectionChange;
 };
