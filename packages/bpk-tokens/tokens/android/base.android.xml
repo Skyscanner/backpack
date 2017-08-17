@@ -104,7 +104,7 @@
   <property name="TEXT_SM_LINE_HEIGHT" category="line-heights">20sp</property>
   <property name="TEXT_SM_LETTER_SPACING" category="letter-spacings">0sp</property>
   <property name="TEXT_BASE_FONT_SIZE" category="font-sizes">14sp</property>
-  <property name="TEXT_BASE_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="TEXT_BASE_FONT_WEIGHT" category="font-weights">500</property>
   <property name="TEXT_BASE_LINE_HEIGHT" category="line-heights">24sp</property>
   <property name="TEXT_BASE_LETTER_SPACING" category="letter-spacings">0sp</property>
   <property name="TEXT_LG_FONT_SIZE" category="font-sizes">16sp</property>
@@ -112,7 +112,7 @@
   <property name="TEXT_LG_LINE_HEIGHT" category="line-heights">24sp</property>
   <property name="TEXT_LG_LETTER_SPACING" category="letter-spacings">0sp</property>
   <property name="TEXT_XL_FONT_SIZE" category="font-sizes">20sp</property>
-  <property name="TEXT_XL_FONT_WEIGHT" category="font-weights">400</property>
+  <property name="TEXT_XL_FONT_WEIGHT" category="font-weights">500</property>
   <property name="TEXT_XL_LINE_HEIGHT" category="line-heights">28sp</property>
   <property name="TEXT_XL_LETTER_SPACING" category="letter-spacings">0sp</property>
   <property name="TEXT_XXL_FONT_SIZE" category="font-sizes">24sp</property>
