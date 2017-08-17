@@ -2,18 +2,22 @@
 
 ## UNRELEASED
 
+__Nothing yet...__
+
+## 2017-08-17 - New icons, customisable table rows, and common.js output for React Native
+
 **Added:**
-- bpk-component-icon:
-- bpk-mixins:
-- bpk-svgs:
+- bpk-component-icon: 3.10.3 => 3.11.0
+- bpk-mixins: 16.2.3 => 16.3.0
+- bpk-svgs: 5.6.2 => 5.7.0
   - added 1 new icon (cloakroom)
-- bpk-tokens:
+- bpk-tokens: 24.1.0 => 24.2.0
   - Added common js output for react native. `bpk-tokens/tokens/{platform}/base.react.native.common.js`
 
 **Fixed:**
-- bpk-component-table:
+- bpk-component-table: 1.0.7 => 1.0.8
   - `BpkTableRow` now accepts arbitrary props
-- bpk-component-icon:
+- bpk-component-icon: 3.10.3 => 3.11.0
   - Fixed displayName of `withAlignment` HOC
     **NOTE:** This may break your snapshot tests and thus your build. This is nothing to worry about and the
     snapshots can safely be updated. Just make sure to perform the update in isolation so that all the
