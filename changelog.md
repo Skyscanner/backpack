@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-__Nothing yet...__
+**Fixed:**
+- bpk-component-button:
+  - Fixed SyntheticEvent not being passed to the onClick handler.
 
 ## 2017-08-17 (2) - Fix a missing dependency in several components
 
