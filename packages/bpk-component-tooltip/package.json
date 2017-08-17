@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-tooltip",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Backpack tooltip component.",
   "main": "index.js",
   "repository": {
@@ -13,13 +13,13 @@
     "react": "^15.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^16.2.3",
-    "bpk-react-utils": "^2.2.1",
+    "bpk-mixins": "^16.3.0",
+    "bpk-react-utils": "^2.2.2",
     "bpk-tether": "^1.0.1",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-component-text": "^1.0.5",
-    "bpk-tokens": "^24.1.0"
+    "bpk-component-text": "^1.0.6",
+    "bpk-tokens": "^24.2.0"
   }
 }
