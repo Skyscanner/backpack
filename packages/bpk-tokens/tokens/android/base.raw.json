@@ -1026,11 +1026,11 @@
       "name": "TEXT_BASE_FONT_SIZE"
     },
     "TEXT_BASE_FONT_WEIGHT": {
-      "value": "400",
+      "value": "500",
       "type": "string",
       "category": "font-weights",
       ".alias": {
-        "value": "400"
+        "value": "500"
       },
       "name": "TEXT_BASE_FONT_WEIGHT"
     },
@@ -1098,11 +1098,11 @@
       "name": "TEXT_XL_FONT_SIZE"
     },
     "TEXT_XL_FONT_WEIGHT": {
-      "value": "400",
+      "value": "500",
       "type": "string",
       "category": "font-weights",
       ".alias": {
-        "value": "400"
+        "value": "500"
       },
       "name": "TEXT_XL_FONT_WEIGHT"
     },
