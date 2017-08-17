@@ -19,7 +19,7 @@
 import isEqual from 'lodash/isEqual';
 import React, { Component } from 'react';
 
-import wrapDisplayName from 'recompose/wrapDisplayName';
+import { wrapDisplayName } from 'bpk-react-utils';
 
 // eslint-disable-next-line import/prefer-default-export
 export const withSelectedState = (ComposedComponent) => {

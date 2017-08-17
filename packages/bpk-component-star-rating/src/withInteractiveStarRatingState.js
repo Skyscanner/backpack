@@ -19,7 +19,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import wrapDisplayName from 'recompose/wrapDisplayName';
+import { wrapDisplayName } from 'bpk-react-utils';
 
 const withInteractiveStarRatingState = (InteractiveStarRating) => {
   class EnhancedComponent extends Component {
