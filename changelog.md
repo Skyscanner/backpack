@@ -4,6 +4,21 @@
 
 __Nothing yet...__
 
+## 2017-08-17 (2) - Fix a missing dependency in several components
+
+**Added:**
+- bpk-react-utils: 2.2.2 => 2.3.0
+  - Expose recompose's `wrapDisplayName` utility function
+
+**Fixed:**
+- bpk-component-accordion: 1.1.15 => 1.1.16
+- bpk-component-barchart: 2.0.4 => 2.0.5
+- bpk-component-icon: 3.11.0 => 3.11.1
+- bpk-component-input: 3.2.15 => 3.2.16
+- bpk-component-rtl-toggle: 1.0.8 => 1.0.9
+- bpk-component-star-rating: 1.0.8 => 1.0.9
+  - Import `wrapDisplayName` from bpk-react-utils instead of directly from recompose
+
 ## 2017-08-17 - New icons, customisable table rows, and common.js output for React Native
 
 **Added:**
