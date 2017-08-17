@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - 7.5.0
+  - 7.10.1
 env:
   global:
     - NPM_CONFIG_LOGLEVEL=warn
