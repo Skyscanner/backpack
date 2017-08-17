@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
+import wrapDisplayName from 'recompose/wrapDisplayName';
 import Portal from './src/Portal';
 import cssModules from './src/cssModules';
 import TransitionInitialMount from './src/TransitionInitialMount';
 import withDefaultProps from './src/withDefaultProps';
 
-export { Portal, cssModules, TransitionInitialMount, withDefaultProps };
-export default { Portal, cssModules, TransitionInitialMount, withDefaultProps };
+export { Portal, cssModules, TransitionInitialMount, withDefaultProps, wrapDisplayName };
+export default { Portal, cssModules, TransitionInitialMount, withDefaultProps, wrapDisplayName };

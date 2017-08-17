@@ -19,7 +19,7 @@
 import PropTypes from 'prop-types';
 import React, { Component, Children, cloneElement } from 'react';
 
-import wrapDisplayName from 'recompose/wrapDisplayName';
+import { wrapDisplayName } from 'bpk-react-utils';
 
 const getInitiallyExpanded = (children) => {
   const accordionItems = Children.toArray(children);

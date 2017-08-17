@@ -127,7 +127,5 @@
       }
     }
   },
-  "dependencies": {
-    "recompose": "^0.24.0"
-  }
+  "dependencies": {}
 }
