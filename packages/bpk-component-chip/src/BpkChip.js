@@ -27,9 +27,11 @@ const getClassName = cssModules(STYLES);
 
 const BpkChip = (props) => {
   const classNames = [getClassName('bpk-chip')];
-  const { children, className, onClose, closeLabel, ...rest } = props;
+  const { children, className, onClose, closeLabel, selected, ...rest } = props;
 
   if (className) { classNames.push(className); }
+
+  if (selected) { classNames.push(getClassName('bpk-chip--selected')); }
 
   const classNameFinal = classNames.join(' ');
 
@@ -61,11 +63,13 @@ BpkChip.propTypes = {
     PropTypes.string,
   ]),
   onClose: PropTypes.func.isRequired,
+  selected: PropTypes.bool,
 };
 
 BpkChip.defaultProps = {
   className: null,
   closeLabel: children => `close ${children.toString().toLowerCase()}`,
+  selected: false,
 };
 
 export default BpkChip;

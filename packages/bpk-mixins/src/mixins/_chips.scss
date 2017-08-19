@@ -23,6 +23,10 @@
   background: $bpk-color-gray-100;
 }
 
+@mixin bpk-chip--selected {
+ background: $bpk-color-gray-300;
+}
+
 @mixin bpk-chip__label {
   display: inline-block;
   margin-top: 0;

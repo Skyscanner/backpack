@@ -16,72 +16,14 @@
  * limitations under the License.
  */
 
-import React, { Component } from 'react';
-import BpkChip from 'bpk-component-chip';
-import BpkButton from 'bpk-component-button';
-import { spacingSm } from 'bpk-tokens/tokens/base.es6';
+import React from 'react';
 
 import chipReadme from 'bpk-component-chip/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-
-class DefaultChipContainer extends Component {
-  constructor() {
-    super();
-
-    this.removeChip = this.removeChip.bind(this);
-    this.addRemovableChip = this.addRemovableChip.bind(this);
-
-    this.state = {
-      chipNames: ['Example Chip 1', 'Example Chip 2'],
-      nextChipId: 3,
-    };
-  }
-
-  addRemovableChip() {
-    const newChipNames = this.state.chipNames.slice(0);
-    newChipNames.push(`Example Chip ${this.state.nextChipId}`);
-    this.setState({
-      chipNames: newChipNames,
-      nextChipId: this.state.nextChipId + 1,
-    });
-  }
-
-  removeChip(chipName) {
-    const newChipNames = this.state.chipNames.slice(0);
-    const indexToRemove = newChipNames.indexOf(chipName);
-    newChipNames.splice(indexToRemove, 1);
-    this.setState({
-      chipNames: newChipNames,
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <BpkButton onClick={this.addRemovableChip} >
-          Add removable chip!
-        </BpkButton>
-        <div>
-          {this.state.chipNames.map((chipName, index) => (
-            <span
-              style={{ display: 'inline-block', marginTop: spacingSm, marginRight: spacingSm }}
-              key={index.toString()}
-            >
-              <BpkChip
-                onClose={() => this.removeChip(chipName)}
-                closeLabel={`Close ${chipName}`}
-              >
-                {chipName}
-              </BpkChip>
-            </span>
-          ))}
-        </div>
-      </div>
-    );
-  }
-}
+import DefaultChipContainer from './DefaultChipContainer';
+import DefaultChipInput from './DefaultChipInput';
 
 const components = [
   {
@@ -95,6 +37,19 @@ const components = [
     ],
     examples: [
       <DefaultChipContainer />,
+    ],
+  },
+  {
+    id: 'chipInput',
+    title: 'Input Field',
+    blurb: [
+      <Paragraph>
+        The `BpkChipInput` component present chips within a text-box such that user
+        input can be collected.
+      </Paragraph>,
+    ],
+    examples: [
+      <DefaultChipInput />,
     ],
   },
 ];

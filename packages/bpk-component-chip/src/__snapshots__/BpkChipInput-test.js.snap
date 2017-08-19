@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkChipInput should render correctly 1`] = `
+<BpkMobileScrollContainer
+  className="bpk-chip-input"
+  innerContainerTagName="div"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  style={null}
+>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close Lorem"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    Lorem
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close ipsum"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    ipsum
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close dolor"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    dolor
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close sit"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    sit
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close amet"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    amet
+  </BpkChip>
+  <BpkInput
+    className="bpk-chip-input__input"
+    docked={false}
+    dockedFirst={false}
+    dockedLast={false}
+    dockedMiddle={false}
+    id="input"
+    large={false}
+    name="input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    readOnly={false}
+    type="text"
+    valid={null}
+    value="numquae"
+  />
+</BpkMobileScrollContainer>
+`;
+
+exports[`BpkChipInput should render correctly with a "className" attribute 1`] = `
+<BpkMobileScrollContainer
+  className="bpk-chip-input bpk-test-class-name"
+  innerContainerTagName="div"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  style={null}
+>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close Lorem"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    Lorem
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close ipsum"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    ipsum
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close dolor"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    dolor
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close sit"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    sit
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close amet"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    amet
+  </BpkChip>
+  <BpkInput
+    className="bpk-chip-input__input"
+    docked={false}
+    dockedFirst={false}
+    dockedLast={false}
+    dockedMiddle={false}
+    id="input"
+    large={false}
+    name="input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    readOnly={false}
+    type="text"
+    valid={null}
+    value="numquae"
+  />
+</BpkMobileScrollContainer>
+`;
+
+exports[`BpkChipInput should render correctly with an item selected 1`] = `
+<BpkMobileScrollContainer
+  className="bpk-chip-input"
+  innerContainerTagName="div"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  style={null}
+>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close Lorem"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    Lorem
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close ipsum"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    ipsum
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close dolor"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#353595",
+      }
+    }
+  >
+    dolor
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close sit"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    sit
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close amet"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    amet
+  </BpkChip>
+  <BpkInput
+    className="bpk-chip-input__input"
+    docked={false}
+    dockedFirst={false}
+    dockedLast={false}
+    dockedMiddle={false}
+    id="input"
+    large={false}
+    name="input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    readOnly={true}
+    type="text"
+    valid={null}
+    value="numquae"
+  />
+</BpkMobileScrollContainer>
+`;
+
+exports[`BpkChipInput should render correctly with selectedColor set 1`] = `
+<BpkMobileScrollContainer
+  className="bpk-chip-input"
+  innerContainerTagName="div"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  style={null}
+>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close Lorem"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    Lorem
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close ipsum"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    ipsum
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close dolor"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    dolor
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close sit"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    sit
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Close amet"
+    onClick={[Function]}
+    onClose={[Function]}
+    style={null}
+  >
+    amet
+  </BpkChip>
+  <BpkInput
+    className="bpk-chip-input__input"
+    docked={false}
+    dockedFirst={false}
+    dockedLast={false}
+    dockedMiddle={false}
+    id="input"
+    large={false}
+    name="input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    readOnly={false}
+    type="text"
+    valid={null}
+    value="numquae"
+  />
+</BpkMobileScrollContainer>
+`;
