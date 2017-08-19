@@ -1,0 +1,331 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkChipInput should render correctly 1`] = `
+<div
+  className="bpk-chip-input"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    Lorem
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    ipsum
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    dolor
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    sit
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    amet
+  </BpkChip>
+  <input
+    className="bpk-chip-input__input"
+    id="input"
+    name="input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    placeholder="Add a chip..."
+    readOnly={false}
+    value="numquae"
+  />
+</div>
+`;
+
+exports[`BpkChipInput should render correctly with a "className" attribute 1`] = `
+<div
+  className="bpk-chip-input bpk-test-class-name"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    Lorem
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    ipsum
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    dolor
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    sit
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    amet
+  </BpkChip>
+  <input
+    className="bpk-chip-input__input"
+    id="input"
+    name="input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    placeholder="Add a chip..."
+    readOnly={false}
+    value="numquae"
+  />
+</div>
+`;
+
+exports[`BpkChipInput should render correctly with an item selected 1`] = `
+<div
+  className="bpk-chip-input"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    Lorem
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    ipsum
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={true}
+  >
+    dolor
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    sit
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    amet
+  </BpkChip>
+  <input
+    className="bpk-chip-input__input"
+    id="input"
+    name="input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    placeholder="Add a chip..."
+    readOnly={true}
+    value="numquae"
+  />
+</div>
+`;
+
+exports[`BpkChipInput should render correctly with closeLabel function 1`] = `
+<div
+  className="bpk-chip-input"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    Lorem
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    ipsum
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    dolor
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    sit
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    amet
+  </BpkChip>
+  <input
+    className="bpk-chip-input__input"
+    id="input"
+    name="input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    placeholder="Add a chip..."
+    readOnly={false}
+    value="numquae"
+  />
+</div>
+`;
+
+exports[`BpkChipInput should render correctly with closeLabel string 1`] = `
+<div
+  className="bpk-chip-input"
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Delete Chip"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    Lorem
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Delete Chip"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    ipsum
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Delete Chip"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    dolor
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Delete Chip"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    sit
+  </BpkChip>
+  <BpkChip
+    className="bpk-chip-input__chip"
+    closeLabel="Delete Chip"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  >
+    amet
+  </BpkChip>
+  <input
+    className="bpk-chip-input__input"
+    id="input"
+    name="input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    placeholder="Add a chip..."
+    readOnly={false}
+    value="numquae"
+  />
+</div>
+`;
