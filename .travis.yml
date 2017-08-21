@@ -12,7 +12,6 @@ script:
   - npm run docs:dist:gzip
   - test -e dist/index.html
   - test -e dist/sassdoc/index.html
-  - npm run danger
 cache:
   directories:
   - node_modules
