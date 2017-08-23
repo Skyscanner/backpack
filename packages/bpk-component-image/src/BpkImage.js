@@ -64,14 +64,17 @@ class BpkImage extends React.Component {
       getClassName('bpk-image__image--show'),
     ];
 
-    const fullWidthLimitingStyle = { maxWidth: width, maxHeight: height };
+    const nonFullWidthDimensions =
+      fullWidth
+        ? {}
+        : { maxWidth: width, maxHeight: height };
 
     // wraps a div with maxWidth and maxHeight set iff full-width is no required.
     // This ensures that the css / html do not reserve too much spacing
     // when width 100% is not being used
     return (
       <div
-        style={fullWidth && fullWidthLimitingStyle}
+        style={nonFullWidthDimensions}
       >
         <div
           ref={(div) => { this.placeholder = div; }}
