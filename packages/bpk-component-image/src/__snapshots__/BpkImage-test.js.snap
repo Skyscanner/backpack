@@ -1,12 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkImage should accept userland className 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "maxHeight": 544,
+      "maxWidth": 816,
+    }
+  }
+>
   <div
     className="bpk-image userland-classname"
     style={
       Object {
         "height": 0,
+        "paddingBottom": "66.66666666666667%",
         "width": 500,
       }
     }
@@ -101,29 +109,28 @@ exports[`BpkImage should accept userland className 1`] = `
     <img
       alt="image description"
       className="bpk-image__image bpk-image__image--show"
-      height={0}
       onLoad={[Function]}
       src="./path/to/image.jpg"
-      width={null}
     />
   </div>
-  <noscript>
-    <img
-      alt="image description"
-      src="./path/to/image.jpg"
-      width="100%"
-    />
-  </noscript>
 </div>
 `;
 
 exports[`BpkImage should accept userland styling 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "maxHeight": 544,
+      "maxWidth": 816,
+    }
+  }
+>
   <div
     className="bpk-image"
     style={
       Object {
         "height": 0,
+        "paddingBottom": "66.66666666666667%",
         "width": 500,
       }
     }
@@ -218,29 +225,28 @@ exports[`BpkImage should accept userland styling 1`] = `
     <img
       alt="image description"
       className="bpk-image__image bpk-image__image--show"
-      height={0}
       onLoad={[Function]}
       src="./path/to/image.jpg"
-      width={null}
     />
   </div>
-  <noscript>
-    <img
-      alt="image description"
-      src="./path/to/image.jpg"
-      width="100%"
-    />
-  </noscript>
 </div>
 `;
 
 exports[`BpkImage should have inView behavior 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "maxHeight": 544,
+      "maxWidth": 816,
+    }
+  }
+>
   <div
     className="bpk-image"
     style={
       Object {
         "height": 0,
+        "paddingBottom": "66.66666666666667%",
       }
     }
   >
@@ -332,23 +338,24 @@ exports[`BpkImage should have inView behavior 1`] = `
       </svg>
     </div>
   </div>
-  <noscript>
-    <img
-      alt="image description"
-      src="./path/to/image.jpg"
-      width="100%"
-    />
-  </noscript>
 </div>
 `;
 
 exports[`BpkImage should have loading behavior 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "maxHeight": 544,
+      "maxWidth": 816,
+    }
+  }
+>
   <div
     className="bpk-image"
     style={
       Object {
         "height": 0,
+        "paddingBottom": "66.66666666666667%",
       }
     }
   >
@@ -442,29 +449,28 @@ exports[`BpkImage should have loading behavior 1`] = `
     <img
       alt="image description"
       className="bpk-image__image"
-      height={0}
       onLoad={[Function]}
       src="./path/to/image.jpg"
-      width={null}
     />
   </div>
-  <noscript>
-    <img
-      alt="image description"
-      src="./path/to/image.jpg"
-      width="100%"
-    />
-  </noscript>
 </div>
 `;
 
 exports[`BpkImage should render correctly 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "maxHeight": 544,
+      "maxWidth": 816,
+    }
+  }
+>
   <div
     className="bpk-image"
     style={
       Object {
         "height": 0,
+        "paddingBottom": "66.66666666666667%",
       }
     }
   >
@@ -558,18 +564,9 @@ exports[`BpkImage should render correctly 1`] = `
     <img
       alt="image description"
       className="bpk-image__image bpk-image__image--show"
-      height={0}
       onLoad={[Function]}
       src="./path/to/image.jpg"
-      width={null}
     />
   </div>
-  <noscript>
-    <img
-      alt="image description"
-      src="./path/to/image.jpg"
-      width="100%"
-    />
-  </noscript>
 </div>
 `;

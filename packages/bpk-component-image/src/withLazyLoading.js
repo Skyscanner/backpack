@@ -38,6 +38,8 @@ export default function withLazyLoading(Component, document) {
     componentDidMount() {
       const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : false;
       document.addEventListener('scroll', this.checkInView, passiveArgs);
+      document.addEventListener('resize', this.checkInView);
+      document.addEventListener('fullscreenchange', this.checkInView);
       // call checkInView immediately incase the
       // component is already in view prior to scrolling
       this.checkInView();
@@ -56,6 +58,8 @@ export default function withLazyLoading(Component, document) {
 
     removeEventListeners() {
       document.removeEventListener('scroll', this.checkInView);
+      document.removeEventListener('resize', this.checkInView);
+      document.removeEventListener('fullscreenchange', this.checkInView);
     }
 
     checkInView() {
