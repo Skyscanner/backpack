@@ -41,6 +41,7 @@ class Portal extends Component {
     this.onDocumentKeyDown = this.onDocumentKeyDown.bind(this);
     this.onDocumentMouseMove = this.onDocumentMouseMove.bind(this);
     this.getClickEventProperties = this.getClickEventProperties.bind(this);
+    this.supportsPassiveEvents = this.supportsPassiveEvents.bind(this);
   }
 
   componentDidMount() {
@@ -141,11 +142,13 @@ class Portal extends Component {
       return;
     }
 
+    const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : false;
+
     this.portalElement = document.createElement('div');
     document.body.appendChild(this.portalElement);
-    document.addEventListener('touchstart', this.onDocumentMouseDown, false);
-    document.addEventListener('touchmove', this.onDocumentMouseMove, false);
-    document.addEventListener('touchend', this.onDocumentMouseUp, false);
+    document.addEventListener('touchstart', this.onDocumentMouseDown, passiveArgs);
+    document.addEventListener('touchmove', this.onDocumentMouseMove, passiveArgs);
+    document.addEventListener('touchend', this.onDocumentMouseUp, passiveArgs);
     document.addEventListener('mousedown', this.onDocumentMouseDown, false);
     document.addEventListener('mouseup', this.onDocumentMouseUp, false);
     document.addEventListener('keydown', this.onDocumentKeyDown, false);
@@ -168,13 +171,30 @@ class Portal extends Component {
 
     unmountComponentAtNode(this.portalElement);
     document.body.removeChild(this.portalElement);
-    document.removeEventListener('touchstart', this.onDocumentMouseDown, false);
-    document.removeEventListener('touchmove', this.onDocumentMouseMove, false);
-    document.removeEventListener('touchend', this.onDocumentMouseUp, false);
-    document.removeEventListener('mousedown', this.onDocumentMouseDown, false);
-    document.removeEventListener('mouseup', this.onDocumentMouseUp, false);
-    document.removeEventListener('keydown', this.onDocumentKeyDown, false);
+    document.removeEventListener('touchstart', this.onDocumentMouseDown);
+    document.removeEventListener('touchmove', this.onDocumentMouseMove);
+    document.removeEventListener('touchend', this.onDocumentMouseUp);
+    document.removeEventListener('mousedown', this.onDocumentMouseDown);
+    document.removeEventListener('mouseup', this.onDocumentMouseUp);
+    document.removeEventListener('keydown', this.onDocumentKeyDown);
     this.portalElement = null;
+  }
+
+  // This function is taken from modernizr
+  // See https://github.com/modernizr/modernizr
+  supportsPassiveEvents() { // eslint-disable-line
+    let supportsPassiveOption = false;
+    try {
+      const opts = Object.defineProperty({}, 'passive', {
+        get() {
+          supportsPassiveOption = true;
+        },
+      });
+      window.addEventListener('test', null, opts);
+    } catch (e) {
+      return false;
+    }
+    return supportsPassiveOption;
   }
 
   renderPortal() {

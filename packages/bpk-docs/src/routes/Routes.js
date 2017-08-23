@@ -52,6 +52,7 @@ import CardsPage from './../pages/CardsPage';
 import ChipsPage from './../pages/ChipsPage';
 import BadgePage from './../pages/BadgePage';
 import PanelsPage from './../pages/PanelsPage';
+import ImagesPage from './../pages/ImagesPage';
 
 import BannerAlertsPage from './../pages/BannerAlertsPage';
 import ModalsPage from './../pages/ModalsPage';
@@ -118,6 +119,7 @@ const Routes = (
         <Route path={ROUTES.CHIPS} component={ChipsPage} />
         <Route path={ROUTES.BADGE} component={BadgePage} />
         <Route path={ROUTES.PANELS} component={PanelsPage} />
+        <Route path={ROUTES.IMAGES} component={ImagesPage} />
       </Route>
       <Route path={ROUTES.MOLECULES}>
         <IndexRedirect to={ROUTES.BANNER_ALERTS} />

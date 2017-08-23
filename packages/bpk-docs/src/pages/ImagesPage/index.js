@@ -16,20 +16,6 @@
  * limitations under the License.
  */
 
-@import 'src/bonds';
-@import 'src/mixins/badges';
-@import 'src/mixins/borders';
-@import 'src/mixins/breakpoints';
-@import 'src/mixins/buttons';
-@import 'src/mixins/cards';
-@import 'src/mixins/chips';
-@import 'src/mixins/forms';
-@import 'src/mixins/grids';
-@import 'src/mixins/images';
-@import 'src/mixins/layers';
-@import 'src/mixins/panels';
-@import 'src/mixins/radii';
-@import 'src/mixins/shadows';
-@import 'src/mixins/svgs';
-@import 'src/mixins/typography';
-@import 'src/mixins/utils';
+import page from './ImagesPage';
+
+export default page;
