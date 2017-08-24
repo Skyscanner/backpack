@@ -2,12 +2,7 @@
 
 exports[`BpkImage should accept userland className 1`] = `
 <div
-  style={
-    Object {
-      "maxHeight": 544,
-      "maxWidth": 816,
-    }
-  }
+  style={Object {}}
 >
   <div
     className="bpk-image userland-classname"
@@ -118,12 +113,7 @@ exports[`BpkImage should accept userland className 1`] = `
 
 exports[`BpkImage should accept userland styling 1`] = `
 <div
-  style={
-    Object {
-      "maxHeight": 544,
-      "maxWidth": 816,
-    }
-  }
+  style={Object {}}
 >
   <div
     className="bpk-image"
@@ -234,12 +224,7 @@ exports[`BpkImage should accept userland styling 1`] = `
 
 exports[`BpkImage should have inView behavior 1`] = `
 <div
-  style={
-    Object {
-      "maxHeight": 544,
-      "maxWidth": 816,
-    }
-  }
+  style={Object {}}
 >
   <div
     className="bpk-image"
@@ -343,12 +328,7 @@ exports[`BpkImage should have inView behavior 1`] = `
 
 exports[`BpkImage should have loading behavior 1`] = `
 <div
-  style={
-    Object {
-      "maxHeight": 544,
-      "maxWidth": 816,
-    }
-  }
+  style={Object {}}
 >
   <div
     className="bpk-image"
@@ -458,12 +438,7 @@ exports[`BpkImage should have loading behavior 1`] = `
 
 exports[`BpkImage should render correctly 1`] = `
 <div
-  style={
-    Object {
-      "maxHeight": 544,
-      "maxWidth": 816,
-    }
-  }
+  style={Object {}}
 >
   <div
     className="bpk-image"
