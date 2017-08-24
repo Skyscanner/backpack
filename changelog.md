@@ -9,6 +9,9 @@
   - Added `withLazyLoading` HOC which allows `BpkImage` or `BpkBackgroundImage` to be loaded only when in view
   - Added `withLoadingBehavior` HOC which allows `BpkImage` or `BpkBackgroundImage` to be shown only once loaded, displaying a spinner until that point
 
+- bpk-component-icon:
+  - Added 1 new icon (unlock)
+
 **Fixed:**
 - bpk-component-button:
   - Fixed SyntheticEvent not being passed to the onClick handler.
