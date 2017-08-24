@@ -30,36 +30,13 @@ class BpkImage extends React.Component {
     super(props);
 
     this.onImageLoad = this.onImageLoad.bind(this);
-    this.handleWindowResize = this.handleWindowResize.bind(this);
 
     this.placeholder = null;
-
-    this.state = {
-      placeholderWidth: null,
-    };
-  }
-
-  componentDidMount() {
-    window.addEventListener('resize', this.handleWindowResize);
-    this.handleWindowResize();
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleWindowResize);
   }
 
   onImageLoad() {
     if (this.props.onLoad) {
       this.props.onLoad();
-    }
-  }
-
-  handleWindowResize() {
-    if (this.placeholder) {
-      const thisWidth = this.placeholder.clientWidth;
-      this.setState({
-        placeholderWidth: thisWidth,
-      });
     }
   }
 
@@ -71,6 +48,7 @@ class BpkImage extends React.Component {
     const spinnerClassNames = [getClassName('bpk-image__spinner')];
 
     const aspectRatio = width / height;
+    const aspectRatioPc = `${100 / aspectRatio}%`;
 
     if (!loading) {
       spinnerClassNames.push(getClassName('bpk-image__spinner--hide'));
@@ -81,19 +59,23 @@ class BpkImage extends React.Component {
       classNames.push(className);
     }
 
-    let finalStyle = style;
-    if (!fullWidth) {
-      finalStyle = { ...style, width, height };
-    }
+    const imgClassNamesNoScript = [
+      getClassName('bpk-image__image'),
+      getClassName('bpk-image__image--show'),
+    ];
 
-    const imageWidth = this.state.placeholderWidth;
-    const imageHeight = imageWidth / aspectRatio;
+    const fullWidthLimitingStyle = { maxWidth: width, maxHeight: height };
 
+    // wraps a div with maxWidth and maxHeight set iff full-width is no required.
+    // This ensures that the css / html do not reserve too much spacing
+    // when width 100% is not being used
     return (
-      <div>
+      <div
+        style={fullWidth && fullWidthLimitingStyle}
+      >
         <div
           ref={(div) => { this.placeholder = div; }}
-          style={{ ...finalStyle, height: imageHeight }}
+          style={{ ...style, height: 0, paddingBottom: aspectRatioPc }}
           className={classNames.join(' ')}
           {...rest}
         >
@@ -102,22 +84,23 @@ class BpkImage extends React.Component {
           </div>
           {inView &&
             <img
-              width={imageWidth}
-              height={imageHeight}
               className={imgClassNames.join(' ')}
               alt={altText}
               src={src}
               onLoad={this.onImageLoad}
             />
           }
+          {(typeof window === 'undefined' && (!inView || loading)) &&
+            <noscript
+              className={imgClassNamesNoScript.join(' ')}
+            >
+              <img
+                alt={altText}
+                src={src}
+              />
+            </noscript>
+          }
         </div>
-        <noscript>
-          <img
-            width={'100%'}
-            alt={altText}
-            src={src}
-          />
-        </noscript>
       </div>
     );
   }

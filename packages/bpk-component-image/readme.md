@@ -19,8 +19,8 @@ import BpkImage from 'bpk-component-image';
 export default () => (
   <BpkImage
     altText="image description"
-    maxWidth={816}
-    maxHeight={544}
+    width={816}
+    height={544}
     src="./path/to/image.jpg"
   />
 );
@@ -71,8 +71,8 @@ const FadingLazyLoadedImage = withLoadingBehavior(withLazyLoading(BpkImage, docu
 export default () => (
   <FadingLazyLoadedImage
     altText="image description"
-    maxWidth={816}
-    maxHeight={544}
+    width={816}
+    height={544}
     src="./path/to/image.jpg"
   />
 );

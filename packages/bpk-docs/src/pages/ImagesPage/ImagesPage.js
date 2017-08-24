@@ -163,7 +163,7 @@ const ImagesPage = () => <DocsPageBuilder
       <BpkCode>BpkBackgroundImage</BpkCode> will place a <BpkCode>div</BpkCode> tag in the DOM.
       Images will only be loaded when the inView prop is set to true. Using the <BpkCode>withLazyLoading</BpkCode> HOC
       will ensure that this only happens once the image is in view, saving user`s data and providing a smoother
-      experience. Similarly, the <BpkCode>withLoadingBehavior</BpkCode> HOC will allow a spinner to be shown until
+      experience. The <BpkCode>withLoadingBehavior</BpkCode> HOC will allow a spinner to be shown until
       the image gently fades in on load.
       By default, images will have a <BpkCode>width 100%</BpkCode>, but this can be prevented by setting
       <BpkCode>fullWidth</BpkCode> false.

@@ -34,6 +34,7 @@
   display: block;
   max-width: 100%;
   background-color: $bpk-color-gray-100;
+  overflow: hidden;
 }
 
 /// Image content. Should be applied to the image element.
@@ -44,6 +45,8 @@
 ///   }
 
 @mixin bpk-image__content {
+  position: absolute;
+  width: 100%;
   transition: opacity $bpk-duration-base ease-in-out;
   opacity: 0;
 }

@@ -80,6 +80,11 @@ class BpkBackgroundImage extends React.Component {
       contentClassNames.push(imageClassName);
     }
 
+    const contentClassNamesNoScript = [
+      getClassName('bpk-background-image__content'),
+      getClassName('bpk-background-image__content--show'),
+    ];
+
     return (
       <div
         className={classNames.join(' ')}
@@ -94,6 +99,18 @@ class BpkBackgroundImage extends React.Component {
         >
           {!loading && children}
         </div>
+        {(typeof window === 'undefined' && (!inView || loading)) &&
+          <noscript
+            className={contentClassNamesNoScript.join(' ')}
+            style={imageStyle}
+          >
+            <div
+              style={{ backgroundImage: `url(${src})`, ...imageStyle }}
+            >
+              {children}
+            </div>
+          </noscript>
+        }
       </div>
     );
   }
