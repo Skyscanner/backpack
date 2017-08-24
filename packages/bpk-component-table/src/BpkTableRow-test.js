@@ -30,12 +30,21 @@ describe('BpkTableRow', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with custom props', () => {
+  it('should render correctly with custom class', () => {
     const tree = renderer.create(
-      <BpkTableRow id="test" className="testing">
+      <BpkTableRow className="my-custom-class">
         <td />
       </BpkTableRow>,
-    ).toJSON();
+      ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with arbitrary props', () => {
+    const tree = renderer.create(
+      <BpkTableRow id="my-custom-id" data-foo="bar">
+        <td />
+      </BpkTableRow>,
+      ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

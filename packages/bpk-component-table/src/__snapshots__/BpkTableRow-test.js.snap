@@ -6,10 +6,18 @@ exports[`BpkTableRow should render correctly 1`] = `
 </tr>
 `;
 
-exports[`BpkTableRow should render correctly with custom props 1`] = `
+exports[`BpkTableRow should render correctly with arbitrary props 1`] = `
 <tr
-  className="testing"
-  id="test"
+  data-foo="bar"
+  id="my-custom-id"
+>
+  <td />
+</tr>
+`;
+
+exports[`BpkTableRow should render correctly with custom class 1`] = `
+<tr
+  className="my-custom-class"
 >
   <td />
 </tr>

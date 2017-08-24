@@ -24,15 +24,28 @@ import STYLES from './bpk-table.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkTableHeadCell = props =>
-  <th
-    className={['bpk-table__cell', 'bpk-table__cell--head'].map(getClassName).join(' ')}
-  >
-    {props.children}
-  </th>;
+const BpkTableHeadCell = (props) => {
+  const { className, ...rest } = props;
+
+  const classNames = ['bpk-table__cell', 'bpk-table__cell--head'].map(getClassName);
+
+  if (className) { classNames.push(className); }
+
+  return (
+    <th
+      {...rest}
+      className={classNames.join(' ')}
+    />
+  );
+};
 
 BpkTableHeadCell.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+};
+
+BpkTableHeadCell.defaultProps = {
+  className: null,
 };
 
 export default BpkTableHeadCell;

@@ -5,3 +5,20 @@ exports[`BpkTableHead should render correctly 1`] = `
   <th />
 </thead>
 `;
+
+exports[`BpkTableHead should render correctly with arbitrary props 1`] = `
+<thead
+  data-foo="bar"
+  id="my-custom-id"
+>
+  <th />
+</thead>
+`;
+
+exports[`BpkTableHead should render correctly with custom class 1`] = `
+<thead
+  className="my-custom-class"
+>
+  <th />
+</thead>
+`;

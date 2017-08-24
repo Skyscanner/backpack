@@ -25,4 +25,22 @@ describe('BpkTableHeadCell', () => {
     const tree = renderer.create(<BpkTableHeadCell>Heading</BpkTableHeadCell>).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with custom class', () => {
+    const tree = renderer.create(
+      <BpkTableHeadCell className="my-custom-class">
+        <th />
+      </BpkTableHeadCell>,
+      ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with arbitrary props', () => {
+    const tree = renderer.create(
+      <BpkTableHeadCell id="my-custom-id" data-foo="bar">
+        <th />
+      </BpkTableHeadCell>,
+      ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -16,6 +16,9 @@
 - bpk-component-button:
   - Fixed SyntheticEvent not being passed to the onClick handler.
 
+- bpk-component-table:
+  - `BpkTableBody`, `BpkTableHead`, `BpkTableHeadCell` & `BpkTableRow` now accept custom classes and arbitrary props
+
 ## 2017-08-17 (2) - Fix a missing dependency in several components
 
 **Added:**
