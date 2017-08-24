@@ -21,7 +21,7 @@
 // See http://danger.systems/js if you're not sure what this is.
 
 import includes from 'lodash.includes';
-import { danger, warn } from 'danger';
+import { danger, warn, message } from 'danger';
 
 const fileChanges = [...danger.git.modified_files, ...danger.git.created_files];
 
@@ -31,3 +31,6 @@ const packagesModified = fileChanges.filter(filePath => filePath.startsWith('pac
 if (packagesModified && !changelogModified) {
   warn('One or more packages have changed, but `changelog.md` wasn\'t updated.');
 }
+
+// Always be nice
+message('Thanks for the PR 🎉.');
