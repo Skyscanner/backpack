@@ -9,14 +9,19 @@
   - Added `withLazyLoading` HOC which allows `BpkImage` or `BpkBackgroundImage` to be loaded only when in view
   - Added `withLoadingBehavior` HOC which allows `BpkImage` or `BpkBackgroundImage` to be shown only once loaded, displaying a spinner until that point
 
-- bpk-component-icon:
+## 2017-08-25 - New unlock icon
+
+**Added:**
+- bpk-component-icon: 3.11.1 => 3.12.0
+- bpk-mixins: 16.3.1 => 16.4.0
+- bpk-svgs: 5.7.0 => 5.8.0
   - Added 1 new icon (unlock)
 
 **Fixed:**
-- bpk-component-button:
+- bpk-component-button: 1.6.48 => 1.6.49
   - Fixed SyntheticEvent not being passed to the onClick handler.
 
-- bpk-component-table:
+- bpk-component-table: 1.0.9 => 1.0.10
   - `BpkTableBody`, `BpkTableHead`, `BpkTableHeadCell` & `BpkTableRow` now accept custom classes and arbitrary props
 
 ## 2017-08-17 (2) - Fix a missing dependency in several components
