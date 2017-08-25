@@ -100,11 +100,9 @@ class BpkBackgroundImage extends React.Component {
           {!loading && children}
         </div>
         {(typeof window === 'undefined' && (!inView || loading)) &&
-          <noscript
-            className={contentClassNamesNoScript.join(' ')}
-            style={imageStyle}
-          >
+          <noscript >
             <div
+              className={contentClassNamesNoScript.join(' ')}
               style={{ backgroundImage: `url(${src})`, ...imageStyle }}
             >
               {children}

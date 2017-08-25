@@ -41,7 +41,7 @@ class BpkImage extends React.Component {
   }
 
   render() {
-    const { width, height, fullWidth, altText, className, inView, loading, onLoad, src, style, ...rest } = this.props;
+    const { width, height, fullWidth, altText, className, inView, loading, onLoad, style, ...rest } = this.props;
 
     const classNames = [getClassName('bpk-image')];
     const imgClassNames = [getClassName('bpk-image__image')];
@@ -80,7 +80,6 @@ class BpkImage extends React.Component {
           ref={(div) => { this.placeholder = div; }}
           style={{ ...style, height: 0, paddingBottom: aspectRatioPc }}
           className={classNames.join(' ')}
-          {...rest}
         >
           <div className={spinnerClassNames.join(' ')}>
             <BpkSpinner />
@@ -89,17 +88,16 @@ class BpkImage extends React.Component {
             <img
               className={imgClassNames.join(' ')}
               alt={altText}
-              src={src}
               onLoad={this.onImageLoad}
+              {...rest}
             />
           }
           {(typeof window === 'undefined' && (!inView || loading)) &&
-            <noscript
-              className={imgClassNamesNoScript.join(' ')}
-            >
+            <noscript >
               <img
+                className={imgClassNamesNoScript.join(' ')}
                 alt={altText}
-                src={src}
+                {...rest}
               />
             </noscript>
           }
