@@ -20,10 +20,10 @@ const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
 const formatMonth = date => format(date, 'MMMM YYYY');
 const daysOfWeek = [
   {
-    "name": "Monday",
-    "nameAbbr": "Mon",
-    "index": 1,
-    "isWeekend": false
+    name: 'Sunday',
+    nameAbbr: 'Sun',
+    index: 0,
+    isWeekend: true,
   },
   // ...
 ];
