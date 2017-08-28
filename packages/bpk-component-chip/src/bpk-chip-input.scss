@@ -16,9 +16,33 @@
  * limitations under the License.
  */
 
-import BpkChip from './src/BpkChip';
-import BpkChipInput from './src/BpkChipInput';
+@import '~bpk-mixins/index';
 
-export default BpkChip;
-export { BpkChipInput };
+.bpk-chip-input {
+  // TODO @include bpk-chip-input;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 0 $bpk-spacing-xs $bpk-spacing-xs;
+  border: $bpk-input-border;
+  border-radius: $bpk-input-border-radius;
+  background: $bpk-input-background;
+  color: $bpk-input-color;
 
+  &__chip {
+    margin: $bpk-spacing-xs $bpk-spacing-xs 0 0;
+  }
+
+  &__input {
+    flex:1 0 auto;
+    width: 250px;
+    max-width: 100%;
+    margin: $bpk-spacing-xs $bpk-spacing-xs 0 0;
+    border: 0;
+
+    &--placeholder {
+      color: $bpk-color-gray-300;
+    }
+  }
+}

@@ -21,6 +21,10 @@
 .bpk-chip {
   @include bpk-chip;
 
+  &--selected {
+    @include bpk-chip--selected;
+  }
+
   &__label {
     @include bpk-chip__label;
   }

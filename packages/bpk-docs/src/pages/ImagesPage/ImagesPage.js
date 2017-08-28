@@ -25,19 +25,21 @@ import imagesReadme from 'bpk-component-image/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
-import image1 from './image1.jpg';
-import image2 from './image2.jpg';
-import image3 from './image3.jpg';
-import image4 from './image4.jpg';
-import image5 from './image5.jpg';
-import image6 from './image6.jpg';
-import image7 from './image7.jpg';
 
 const documentIfExists = typeof window !== 'undefined' ? document : null;
 const FadingImage = withLoadingBehavior(BpkImage);
 const LazyLoadedImage = withLazyLoading(BpkImage, documentIfExists);
 const FadingLazyLoadedImage = withLoadingBehavior(withLazyLoading(BpkImage, documentIfExists));
 const FadingLazyLoadedBackgroundImage = withLoadingBehavior(withLazyLoading(BpkBackgroundImage, documentIfExists));
+
+const image1 = 'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
+const image2 = 'https://content.skyscnr.com/8bd0d1b67b1bda63e5567a4c402402f2/iceland.jpg';
+const image3 = 'https://content.skyscnr.com/200946ddb82b7c026e6e186a7037b1f8/machu-picchu.jpg';
+const image4 = 'https://content.skyscnr.com/8a8ac17b591b61e6fe5d8f63414561cd/amsterdam-the-netherlands.jpg';
+const image5 = 'https://content.skyscnr.com/6c8f0e633bde70798a9d6f0a26cb6016/andalsnes-norway.jpg';
+const image6 = 'https://content.skyscnr.com/46382d528f3f7c8d84628f4f73d03ea9/skogafoss-iceland.jpg';
+const image7 = 'https://content.skyscnr.com/9e31082c518f0bf15e48e0ab54cb652a/iceland.jpg';
+
 
 const components = [
   {
@@ -48,7 +50,21 @@ const components = [
         altText="Lake"
         width={816}
         height={544}
-        src={`/${image1}`}
+        src={image1}
+        srcSet={`${image1}?resize=280px:280px&quality=100 280w,
+          ${image1}?resize=320px:320px&quality=100 320w,
+          ${image1}?resize=480px:480px&quality=100 460w,
+          ${image1}?resize=520px:520px&quality=100 520w,
+          ${image1}?resize=800px:800px&quality=100 800w,
+          ${image1}?resize=1024px:1024px&quality=100 1024w,
+          ${image1}?resize=1200px:1200px&quality=100 1200w,
+          ${image1}?resize=1600px:1600px&quality=100 1600w,
+          ${image1}?resize=1920px:1920px&quality=100 1920w,
+          ${image1}?resize=2500px:2500px&quality=100 2500w`}
+        // If the viewport is wider than 1000px, then this image will
+        // take up ≈765px of the viewport. Otherwise, it will take
+        // up ≈ the full-width (100%) of the viewport.
+        sizes={'(min-width: 1150px) 765px, calc(100vw - 48px)'}
       />,
     ],
   },
@@ -57,11 +73,26 @@ const components = [
     title: 'Without full width',
     examples: [
       <BpkImage
-        altText="Lake"
+        altText="Waterfall"
         width={612}
         height={408}
         fullWidth={false}
-        src={`/${image2}`}
+        src={image2}
+        srcSet={`${image2}?resize=280px:280px&quality=100 280w,
+          ${image2}?resize=320px:320px&quality=100 320w,
+          ${image2}?resize=480px:480px&quality=100 460w,
+          ${image2}?resize=520px:520px&quality=100 520w,
+          ${image2}?resize=800px:800px&quality=100 800w,
+          ${image2}?resize=1024px:1024px&quality=100 1024w,
+          ${image2}?resize=1200px:1200px&quality=100 1200w,
+          ${image2}?resize=1600px:1600px&quality=100 1600w,
+          ${image2}?resize=1920px:1920px&quality=100 1920w,
+          ${image2}?resize=2500px:2500px&quality=100 2500w`}
+        // If the viewport is wider than 700px, then this image will take
+        // up ≈612px of the viewport. If the viewport is wider than 1000px,
+        // then this image will take up ≈765px of the viewport. Otherwise,
+        // it will take up ≈ the full-width (100%) of the viewport.
+        sizes={'(min-width: 700px) 612px, (min-width: 1150px) 765px, calc(100vw - 48px)'}
       />,
     ],
   },
@@ -73,7 +104,21 @@ const components = [
         altText="Waterfall"
         width={816}
         height={544}
-        src={`/${image3}`}
+        src={image3}
+        srcSet={`${image3}?resize=280px:280px&quality=100 280w,
+          ${image3}?resize=320px:320px&quality=100 320w,
+          ${image3}?resize=480px:480px&quality=100 460w,
+          ${image3}?resize=520px:520px&quality=100 520w,
+          ${image3}?resize=800px:800px&quality=100 800w,
+          ${image3}?resize=1024px:1024px&quality=100 1024w,
+          ${image3}?resize=1200px:1200px&quality=100 1200w,
+          ${image3}?resize=1600px:1600px&quality=100 1600w,
+          ${image3}?resize=1920px:1920px&quality=100 1920w,
+          ${image3}?resize=2500px:2500px&quality=100 2500w`}
+        // If the viewport is wider than 1000px, then this image will
+        // take up ≈765px of the viewport. Otherwise, it will take
+        // up ≈ the full-width (100%) of the viewport.
+        sizes={'(min-width: 1150px) 765px, calc(100vw - 48px)'}
       />,
     ],
   },
@@ -85,7 +130,21 @@ const components = [
         altText="Mountain"
         width={816}
         height={544}
-        src={`/${image4}`}
+        src={image4}
+        srcSet={`${image4}?resize=280px:280px&quality=100 280w,
+          ${image4}?resize=320px:320px&quality=100 320w,
+          ${image4}?resize=480px:480px&quality=100 460w,
+          ${image4}?resize=520px:520px&quality=100 520w,
+          ${image4}?resize=800px:800px&quality=100 800w,
+          ${image4}?resize=1024px:1024px&quality=100 1024w,
+          ${image4}?resize=1200px:1200px&quality=100 1200w,
+          ${image4}?resize=1600px:1600px&quality=100 1600w,
+          ${image4}?resize=1920px:1920px&quality=100 1920w,
+          ${image4}?resize=2500px:2500px&quality=100 2500w`}
+        // If the viewport is wider than 1000px, then this image will
+        // take up ≈765px of the viewport. Otherwise, it will take
+        // up ≈ the full-width (100%) of the viewport.
+        sizes={'(min-width: 1150px) 765px, calc(100vw - 48px)'}
       />,
     ],
   },
@@ -97,7 +156,21 @@ const components = [
         altText="Shop"
         width={816}
         height={544}
-        src={`/${image5}`}
+        src={image5}
+        srcSet={`${image5}?resize=280px:280px&quality=100 280w,
+          ${image5}?resize=320px:320px&quality=100 320w,
+          ${image5}?resize=480px:480px&quality=100 460w,
+          ${image5}?resize=520px:520px&quality=100 520w,
+          ${image5}?resize=800px:800px&quality=100 800w,
+          ${image5}?resize=1024px:1024px&quality=100 1024w,
+          ${image5}?resize=1200px:1200px&quality=100 1200w,
+          ${image5}?resize=1600px:1600px&quality=100 1600w,
+          ${image5}?resize=1920px:1920px&quality=100 1920w,
+          ${image5}?resize=2500px:2500px&quality=100 2500w`}
+        // If the viewport is wider than 1000px, then this image will
+        // take up ≈765px of the viewport. Otherwise, it will take
+        // up ≈ the full-width (100%) of the viewport.
+        sizes={'(min-width: 1150px) 765px, calc(100vw - 48px)'}
       />,
     ],
   },
@@ -117,7 +190,7 @@ const components = [
           backgroundSize: 'cover',
           backgroundPosition: '50% 50%',
         }}
-        src={`/${image6}`}
+        src={image6}
       >
         <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 25 }} >
           <BpkText tagName="h2" textStyle="lg" >Lorem ipsum dolor sit amet</BpkText>
@@ -142,7 +215,7 @@ const components = [
           backgroundSize: 'cover',
           backgroundPosition: '50% 50%',
         }}
-        src={`/${image7}`}
+        src={image7}
       >
         <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 25 }} >
           <BpkText tagName="h2" textStyle="lg" >Lorem ipsum dolor sit amet</BpkText>
