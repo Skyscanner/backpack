@@ -35,7 +35,8 @@ const getClassName = cssModules(STYLES);
 const headerLinks = [
   { to: ROUTES.USING_BACKPACK, children: 'Using Backpack' },
   { to: ROUTES.STYLE, children: 'Style' },
-  { to: ROUTES.DOCS, children: 'Components' },
+  { to: ROUTES.COMPONENTS, children: 'Components' },
+  { to: ROUTES.NATIVE, children: 'Native' },
   { to: ROUTES.PATTERNS, children: 'Patterns' },
   { to: ROUTES.RESOURCES, children: 'Resources' },
   { href: 'https://github.com/Skyscanner/backpack', children: 'Github', blank: true },

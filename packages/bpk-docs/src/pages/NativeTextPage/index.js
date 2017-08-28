@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import BpkTextPage from './pages/BpkTextPage';
+import page from './NativeTextPage';
 
-export default {
-  BpkTextPage,
-};
+export default page;

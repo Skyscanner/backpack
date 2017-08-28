@@ -1,7 +1,7 @@
 {
-  "name": "bpk-native-docs",
+  "name": "bpk-native-component-text",
   "version": "0.0.0",
-  "main": "src/index.js",
+  "main": "index.js",
   "description": "Backpack native documentation.",
   "repository": {
     "type": "git",
@@ -9,9 +9,6 @@
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
-  "files": [
-    "src"
-  ],
   "peerDependencies": {
     "react": "^16.0.0"
   },

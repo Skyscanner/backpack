@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import layout from './NativeLayout';
 
-export default React.version;
+export default layout;

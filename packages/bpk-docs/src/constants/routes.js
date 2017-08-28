@@ -18,15 +18,20 @@
 
 export const HOME = '/';
 
-export const DOCS = '/components';
+// TOP LEVEL
 export const USING_BACKPACK = '/using';
+export const STYLE = '/style';
+export const COMPONENTS = '/components';
+export const NATIVE = '/native';
+export const PATTERNS = '/patterns';
+export const RESOURCES = '/resources';
 
+// using/
 export const GETTING_STARTED = '/using/getting-started';
 export const BACKPACK_REACT_SCRIPTS = '/using/backpack-react-scripts';
 export const BASE_STYLESHEET = '/using/base-stylesheet';
 
-export const STYLE = '/style';
-
+// components/bonds/
 export const BONDS = '/components/bonds';
 export const COLORS = '/components/bonds/colors';
 export const TYPESETTING = '/components/bonds/typesetting';
@@ -36,6 +41,7 @@ export const BORDERS = '/components/bonds/borders';
 export const LAYOUT = '/components/bonds/layout';
 export const ANIMATION = '/components/bonds/animation';
 
+// components/atoms/
 export const ATOMS = '/components/atoms';
 export const TYPOGRAPHY = '/components/atoms/typography';
 export const BUTTONS = '/components/atoms/buttons';
@@ -48,6 +54,7 @@ export const BADGE = '/components/atoms/badge';
 export const PANELS = '/components/atoms/panels';
 export const IMAGES = '/components/atoms/images';
 
+// components/molecules/
 export const MOLECULES = '/components/molecules';
 export const BANNER_ALERTS = '/components/molecules/banner-alerts';
 export const MODALS = '/components/molecules/modals';
@@ -65,15 +72,18 @@ export const FIELDSETS = '/components/molecules/fieldsets';
 export const BARCHARTS = '/components/molecules/barcharts';
 export const STAR_RATING = '/components/molecules/star-rating';
 
+// components/utilities/
 export const UTILITIES = '/components/utilities';
 export const ALIGNMENT = '/components/utilities/alignment';
 
-export const PATTERNS = '/patterns';
+// native/
+export const NATIVE_TEXT = '/native/text';
+
+// patterns/
 export const VERTICAL_RHYTHM = '/patterns/vertical-rhythm';
 export const STATEFULNESS = '/patterns/statefulness';
 export const UNITS = '/patterns/units';
 
-export const RESOURCES = '/resources';
-
+// MISC
 export const GRID_COLUMN_DEMO = '/grid-column-demo';
 export const GRID_OFFSET_DEMO = '/grid-offset-demo';

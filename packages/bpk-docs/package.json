@@ -58,6 +58,7 @@
     "bpk-component-ticket": "^1.0.10",
     "bpk-component-tile": "^0.0.15",
     "bpk-component-tooltip": "^2.0.6",
+    "bpk-native-component-text": "^0.0.0",
     "bpk-mixins": "^16.4.0",
     "bpk-react-utils": "^2.3.1",
     "bpk-stylesheets": "^3.2.54",
