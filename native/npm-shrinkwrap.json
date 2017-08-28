@@ -1,0 +1,108 @@
+{
+  "name": "native",
+  "version": "0.0.0",
+  "dependencies": {
+    "asap": {
+      "version": "2.0.6",
+      "from": "asap@>=2.0.3 <2.1.0",
+      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/asap/-/asap-2.0.6.tgz",
+      "dev": true
+    },
+    "core-js": {
+      "version": "1.2.7",
+      "from": "core-js@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/core-js/-/core-js-1.2.7.tgz",
+      "dev": true
+    },
+    "encoding": {
+      "version": "0.1.12",
+      "from": "encoding@>=0.1.11 <0.2.0",
+      "resolved": "https://registry.npmjs.org/encoding/-/encoding-0.1.12.tgz",
+      "dev": true
+    },
+    "fbjs": {
+      "version": "0.8.14",
+      "from": "fbjs@>=0.8.9 <0.9.0",
+      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/fbjs/-/fbjs-0.8.14.tgz",
+      "dev": true
+    },
+    "iconv-lite": {
+      "version": "0.4.18",
+      "from": "iconv-lite@>=0.4.13 <0.5.0",
+      "resolved": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.18.tgz",
+      "dev": true
+    },
+    "is-stream": {
+      "version": "1.1.0",
+      "from": "is-stream@>=1.0.1 <2.0.0",
+      "resolved": "https://registry.npmjs.org/is-stream/-/is-stream-1.1.0.tgz",
+      "dev": true
+    },
+    "isomorphic-fetch": {
+      "version": "2.2.1",
+      "from": "isomorphic-fetch@>=2.1.1 <3.0.0",
+      "resolved": "https://registry.npmjs.org/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz",
+      "dev": true
+    },
+    "js-tokens": {
+      "version": "3.0.2",
+      "from": "js-tokens@>=3.0.0 <4.0.0",
+      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/js-tokens/-/js-tokens-3.0.2.tgz",
+      "dev": true
+    },
+    "loose-envify": {
+      "version": "1.3.1",
+      "from": "loose-envify@>=1.1.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/loose-envify/-/loose-envify-1.3.1.tgz",
+      "dev": true
+    },
+    "node-fetch": {
+      "version": "1.7.2",
+      "from": "node-fetch@>=1.0.1 <2.0.0",
+      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/node-fetch/-/node-fetch-1.7.2.tgz",
+      "dev": true
+    },
+    "object-assign": {
+      "version": "4.1.1",
+      "from": "object-assign@>=4.1.0 <5.0.0",
+      "resolved": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz",
+      "dev": true
+    },
+    "promise": {
+      "version": "7.3.1",
+      "from": "promise@>=7.1.1 <8.0.0",
+      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/promise/-/promise-7.3.1.tgz",
+      "dev": true
+    },
+    "prop-types": {
+      "version": "15.5.10",
+      "from": "prop-types@>=15.5.6 <16.0.0",
+      "resolved": "https://registry.npmjs.org/prop-types/-/prop-types-15.5.10.tgz",
+      "dev": true
+    },
+    "react": {
+      "version": "16.0.0-beta.5",
+      "from": "react@>=16.0.0-beta.5 <17.0.0",
+      "resolved": "https://registry.npmjs.org/react/-/react-16.0.0-beta.5.tgz",
+      "dev": true
+    },
+    "setimmediate": {
+      "version": "1.0.5",
+      "from": "setimmediate@>=1.0.5 <2.0.0",
+      "resolved": "https://registry.npmjs.org/setimmediate/-/setimmediate-1.0.5.tgz",
+      "dev": true
+    },
+    "ua-parser-js": {
+      "version": "0.7.14",
+      "from": "ua-parser-js@>=0.7.9 <0.8.0",
+      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/ua-parser-js/-/ua-parser-js-0.7.14.tgz",
+      "dev": true
+    },
+    "whatwg-fetch": {
+      "version": "2.0.3",
+      "from": "whatwg-fetch@>=0.10.0",
+      "resolved": "https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz",
+      "dev": true
+    }
+  }
+}
