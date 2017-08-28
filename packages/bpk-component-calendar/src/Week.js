@@ -47,6 +47,20 @@ const shallowEqualProps = (props1, props2, propList) => {
   Week - table row containing a week full of DateContainer components
 */
 class Week extends Component {
+  constructor() {
+    super();
+
+    this.onMouseDown = this.onMouseDown.bind(this);
+    this.onMouseUp = this.onMouseUp.bind(this);
+    this.onMouseClick = this.onMouseClick.bind(this);
+
+    this.state = { savedDate: null };
+  }
+
+  componentDidMount() {
+    document.addEventListener('mouseup', this.onMouseUp);
+  }
+
   shouldComponentUpdate(nextProps) {
     const shallowProps = [
       'DateComponent',
@@ -57,6 +71,7 @@ class Week extends Component {
       'markOutsideDays',
       'markToday',
       'onDateClick',
+      'onDateMouseDown',
       'onDateKeyDown',
       'preventKeyboardFocus',
       'showWeekendSeparator',
@@ -87,6 +102,30 @@ class Week extends Component {
     return false;
   }
 
+  componentWillUnmount() {
+    document.removeEventListener('mouseup', this.onMouseUp);
+  }
+
+  onMouseClick(date) {
+    this.props.onDateClick(date);
+    this.setState({ savedDate: null });
+  }
+
+  onMouseDown(date, month) {
+    if (isSameMonth(date, month)) {
+      this.props.onDateMouseDown(null, { date });
+    } else {
+      this.setState({ savedDate: date });
+    }
+  }
+
+  onMouseUp(event) {
+    if (this.state.savedDate != null) {
+      this.props.onDateMouseDown(event, { date: this.state.savedDate });
+      this.setState({ savedDate: null });
+    }
+  }
+
   render() {
     const {
       DateComponent,
@@ -100,7 +139,6 @@ class Week extends Component {
       maxDate,
       minDate,
       month,
-      onDateClick,
       onDateKeyDown,
       preventKeyboardFocus,
       selectedDate,
@@ -123,7 +161,8 @@ class Week extends Component {
             date={date}
             modifiers={dateModifiers}
             aria-label={formatDateFull(date)}
-            onClick={onDateClick}
+            onClick={() => { this.onMouseClick(date); }}
+            onMouseDown={() => { this.onMouseDown(date, month); }}
             onDateKeyDown={onDateKeyDown}
             preventKeyboardFocus={preventKeyboardFocus}
             isKeyboardFocusable={isKeyboardFocusable}
@@ -157,6 +196,7 @@ Week.propTypes = {
   maxDate: PropTypes.instanceOf(Date),
   minDate: PropTypes.instanceOf(Date),
   onDateClick: PropTypes.func,
+  onDateMouseDown: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   selectedDate: PropTypes.instanceOf(Date),
 };
@@ -166,6 +206,7 @@ Week.defaultProps = {
   maxDate: null,
   minDate: null,
   onDateClick: null,
+  onDateMouseDown: null,
   onDateKeyDown: null,
   selectedDate: null,
 };

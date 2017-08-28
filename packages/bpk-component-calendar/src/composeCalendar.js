@@ -44,6 +44,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       minDate,
       month,
       onDateClick,
+      onDateMouseDown,
       onDateKeyDown,
       onMonthChange,
       preventKeyboardFocus,
@@ -95,6 +96,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
           formatMonth={formatMonth}
           month={month}
           onDateClick={onDateClick}
+          onDateMouseDown={onDateMouseDown}
           onDateKeyDown={onDateKeyDown}
           preventKeyboardFocus={preventKeyboardFocus}
           showWeekendSeparator={showWeekendSeparator}
@@ -130,6 +132,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     markToday: PropTypes.bool,
     onMonthChange: PropTypes.func,
     onDateClick: PropTypes.func,
+    onDateMouseDown: PropTypes.func,
     onDateKeyDown: PropTypes.func,
     preventKeyboardFocus: PropTypes.bool,
     selectedDate: PropTypes.instanceOf(Date),
@@ -146,6 +149,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
     markToday: true,
     onMonthChange: () => null,
     onDateClick: () => null,
+    onDateMouseDown: () => null,
     onDateKeyDown: () => null,
     preventKeyboardFocus: false,
     selectedDate: null,

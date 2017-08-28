@@ -129,4 +129,27 @@ describe('BpkCalendarGrid', () => {
     expect(onDateClick.mock.calls.length).toBe(2);
     expect(onDateClick.mock.calls[1][0]).toEqual(new Date(2016, 9, 6));
   });
+
+  it('should call the onDateMouseDown callback', () => {
+    const onDateMouseDown = jest.fn();
+
+    const grid = mount(<BpkCalendarGrid
+      month={new Date('2016-10')}
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      DateComponent={BpkCalendarDate}
+      daysOfWeek={weekDays}
+      weekStartsOn={0}
+      showWeekendSeparator
+      onDateMouseDown={onDateMouseDown}
+    />);
+
+    grid.find('button').at(10).simulate('mouseDown');
+    expect(onDateMouseDown.mock.calls.length).toBe(1);
+    expect(onDateMouseDown.mock.calls[0][1].date).toEqual(new Date(2016, 9, 5));
+
+    grid.find('button').at(11).simulate('mouseDown');
+    expect(onDateMouseDown.mock.calls.length).toBe(2);
+    expect(onDateMouseDown.mock.calls[1][1].date).toEqual(new Date(2016, 9, 6));
+  });
 });

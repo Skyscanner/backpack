@@ -69,6 +69,7 @@ class BpkCalendarGrid extends Component {
       formatDateFull,
       formatMonth,
       onDateClick,
+      onDateMouseDown,
       onDateKeyDown,
       showWeekendSeparator,
       weekStartsOn,
@@ -111,6 +112,7 @@ class BpkCalendarGrid extends Component {
               month={month}
               dates={dates}
               onDateClick={onDateClick}
+              onDateMouseDown={onDateMouseDown}
               onDateKeyDown={onDateKeyDown}
               showWeekendSeparator={showWeekendSeparator}
               formatDateFull={formatDateFull}
@@ -152,6 +154,7 @@ BpkCalendarGrid.propTypes = {
   maxDate: PropTypes.instanceOf(Date),
   minDate: PropTypes.instanceOf(Date),
   onDateClick: PropTypes.func,
+  onDateMouseDown: PropTypes.func,
   onDateKeyDown: PropTypes.func,
   preventKeyboardFocus: PropTypes.bool,
   selectedDate: PropTypes.instanceOf(Date),
@@ -169,6 +172,7 @@ BpkCalendarGrid.defaultProps = {
   maxDate: null,
   minDate: null,
   onDateClick: null,
+  onDateMouseDown: null,
   onDateKeyDown: null,
   preventKeyboardFocus: false,
   selectedDate: null,
