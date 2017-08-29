@@ -93,9 +93,9 @@ describe('BpkImage', () => {
           ./path/to/image_640px.jpg 640w,
           ./path/to/image_1640px.jpg 1640w,
           ./path/to/image_3200px.jpg 3200w`}
-        sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 765px,
-          (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 292px),
-          calc(100vw - 72px)`}
+        sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 48rem,
+          (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 18rem),
+          calc(100vw - 4.5rem)`}
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();

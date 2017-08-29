@@ -10,8 +10,6 @@ npm install bpk-component-image --save-dev
 
 ## Usage
 
-### BpkImage
-
 ```js
 import React from 'react';
 import BpkImage from 'bpk-component-image';
@@ -27,38 +25,10 @@ export default () => (
       ./path/to/image_640px.jpg 640w,
       ./path/to/image_1640px.jpg 1640w,
       ./path/to/image_3200px.jpg 3200w`}]
-    sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 765px,
-      (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 292px),
-      calc(100vw - 72px)`}
+    sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 48rem,
+      (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 18rem),
+      calc(100vw - 4.5rem)`}
   />
-);
-```
-
-### BpkBackgroundImage
-
-```js
-import BpkText from 'bpk-component-text';
-import { BpkBackgroundImage } from 'bpk-component-image';
-
-export default () => (
-  <BpkBackgroundImage
-    style={{
-      width: '100%',
-      height: '20rem',
-    }}
-    imageStyle={{
-      width: '100%',
-      height: '100%',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      backgroundPosition: '50% 50%',
-    }}
-    src="./path/to/image.jpg"
-  >
-    <div className={'...'} >
-      <BpkText tagName="h2" textStyle="lg" >Lorem ipsum dolor sit amet</BpkText>
-    </div>
-  </BpkBackgroundImage>
 );
 ```
 
@@ -68,17 +38,17 @@ export default () => (
 
 `withLazyLoading` is a HOC which adds an `inView` prop to components.
 This boolean prop can be used to determine if the component has been brought into view within a user's browser window.
-The `BpkImage` and `BpkBackgroundImage` components will only load images if `inView` is true.
+The `BpkImage` component will only load images if `inView` is true.
 Using this HOC can make pages load faster and prevent data being used to display images which are never seen by the user.
 
 ```js
 import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
 import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 
-const FadingLazyLoadedImage = withLoadingBehavior(withLazyLoading(BpkImage, document));
+const LazyLoadedImage = withLazyLoading(BpkImage, document);
 
 export default () => (
-  <FadingLazyLoadedImage
+  <LazyLoadedImage
     altText="image description"
     width={816}
     height={544}
@@ -87,50 +57,41 @@ export default () => (
       ./path/to/image_640px.jpg 640w,
       ./path/to/image_1640px.jpg 1640w,
       ./path/to/image_3200px.jpg 3200w`}
-    sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 765px,
-      (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 292px),
-      calc(100vw - 72px)`}
+    sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 48rem,
+      (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 18rem),
+      calc(100vw - 4.5rem)`}
   />
 );
 ```
 
 ### withLoadingBehavior
-`withLoadingBehavior` is a HOC which provides `loading` state for `BpkImage` and `BpkBackgroundImage`. This allows the two components to have different behavior when loading.
+`withLoadingBehavior` is a HOC which provides `loading` state for `BpkImage`. This allows the component to have different behavior before and after loading completes.
 When the `loading` prop is set true, a spinner will be displayed. When this changes to false, the spinner will fade away and the loaded image and content will fade into view.
 
-Note that the image supplied to `BpkBackgroundImage` must be browser-cacheable, as the component is reliant on caching the image for use once loaded.
-
 ```js
-import { BpkBackgroundImage, withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
+import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
+import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 
-const FadingLazyLoadedBackgroundImage = withLoadingBehavior(withLazyLoading(BpkBackgroundImage, document));
+const FadingImage = withLoadingBehavior(BpkImage);
 
 export default () => (
-  <FadingLazyLoadedBackgroundImage
-    style={{
-      width: '100%',
-      height: '20rem',
-    }}
-    imageStyle={{
-      width: '100%',
-      height: '100%',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      backgroundPosition: '50% 50%',
-    }}
-    src="./path/to/image.jpg"
-  >
-    <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 25 }} >
-      <BpkText tagName="h2" textStyle="lg" >Lorem ipsum dolor sit amet</BpkText>
-      <BpkCode>consectetuer adipiscing elit</BpkCode>
-    </div>
-  </FadingLazyLoadedBackgroundImage>
+  <FadingImage
+    altText="image description"
+    width={816}
+    height={544}
+    src="./path/to/image_1640.jpg"
+    srcSet={`./path/to/image_320px.jpg 320w,
+      ./path/to/image_640px.jpg 640w,
+      ./path/to/image_1640px.jpg 1640w,
+      ./path/to/image_3200px.jpg 3200w`}
+    sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 48rem,
+      (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 18rem),
+      calc(100vw - 4.5rem)`}
+  />
 );
 ```
 
 ## Props
-
-### BpkImage
 
 | Property         | PropType  | Required | Default Value       |
 | ---------------- | --------- | -------- | ------------------- |
@@ -139,21 +100,6 @@ export default () => (
 | src              | string    | true     | -                   |
 | width            | number    | true     | -                   |
 | className        | string    | false    | null                |
-| fullWidth        | bool      | false    | true                |
-| inView           | bool      | false    | true                |
-| loading          | bool      | false    | false               |
-| onLoad           | func      | false    | null                |
-
-### BpkBackgroundImage
-
-| Property         | PropType  | Required | Default Value       |
-| ---------------- | --------- | -------- | ------------------- |
-| src              | string    | true     | -                   |
-| children         | node      | false    | null                |
-| className        | string    | false    | null                |
-| fullWidth        | bool      | false    | true                |
-| imageClassName   | string    | false    | null                |
-| imageStyle       | object    | false    | null                |
 | inView           | bool      | false    | true                |
 | loading          | bool      | false    | false               |
 | onLoad           | func      | false    | null                |
