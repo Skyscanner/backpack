@@ -23,8 +23,9 @@ import * as ROUTES from './../constants/routes';
 import redirects from './../constants/redirect-routes';
 
 import DefaultLayout from './../layouts/DefaultLayout';
-import DocsLayout from './../layouts/DocsLayout';
 import UsingLayout from './../layouts/UsingLayout';
+import DocsLayout from './../layouts/DocsLayout';
+import NativeLayout from './../layouts/NativeLayout';
 import PatternsLayout from './../layouts/PatternsLayout';
 
 import HomePage from './../pages/HomePage';
@@ -72,16 +73,18 @@ import StarRatingPage from './../pages/StarRatingPage';
 
 import AlignmentPage from './../pages/AlignmentPage';
 
+import NativeTextPage from './../pages/NativeTextPage';
+
 import VerticalRhythmPage from './../pages/VerticalRhythmPage';
 import StatefulnessPage from './../pages/StatefulnessPage';
 import UnitsPage from './../pages/UnitsPage';
 
-
 import ResourcesPage from './../pages/ResourcesPage';
+
 import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages';
-/* eslint-disable import/no-webpack-loader-syntax */
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
 const iconsSvgs = require('!!file-loader?name=[name].[hash].zip!zip-it-loader!./../../../bpk-svgs/src/icons/icons');
-/* eslint-enable */
 
 const Routes = (
   <Route path={ROUTES.HOME} component={DefaultLayout}>
@@ -96,7 +99,7 @@ const Routes = (
 
     <Route path={ROUTES.STYLE} component={StylePage} iconsSvgs={iconsSvgs} />
 
-    <Route path={ROUTES.DOCS} component={DocsLayout}>
+    <Route path={ROUTES.COMPONENTS} component={DocsLayout}>
       <IndexRedirect to={ROUTES.BONDS} />
       <Route path={ROUTES.BONDS}>
         <IndexRedirect to={ROUTES.COLORS} />
@@ -143,6 +146,11 @@ const Routes = (
         <IndexRedirect to={ROUTES.ALIGNMENT} />
         <Route path={ROUTES.ALIGNMENT} component={AlignmentPage} />
       </Route>
+    </Route>
+
+    <Route path={ROUTES.NATIVE} component={NativeLayout}>
+      <IndexRedirect to={ROUTES.NATIVE_TEXT} />
+      <Route path={ROUTES.NATIVE_TEXT} component={NativeTextPage} />
     </Route>
 
     <Route path={ROUTES.PATTERNS} component={PatternsLayout}>

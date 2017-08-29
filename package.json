@@ -6,7 +6,8 @@
   },
   "private": true,
   "scripts": {
-    "postinstall": "npm run bootstrap",
+    "postinstall:native": "(cd ./native && npm install)",
+    "postinstall": "npm run postinstall:native && npm run bootstrap",
     "bootstrap": "lerna bootstrap",
     "lerna": "lerna",
     "clean:dist": "rm -rf dist",
@@ -111,7 +112,7 @@
   },
   "jest": {
     "verbose": true,
-    "testRegex": "packages/.*-test\\.js$",
+    "testRegex": "(packages|native)/.*-test\\.js$",
     "transformIgnorePatterns": [
       "node_modules/(?!bpk)"
     ],
