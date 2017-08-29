@@ -21,12 +21,9 @@ export default () => (
     altText="image description"
     width={816}
     height={544}
-    src="./path/to/image.jpg"
-    srcSet={`./path/to/image_280.jpg 280w,
-      ./path/to/image_320.jpg 320w,
-      ./path/to/image_480.jpg 460w,
+    src="./path/to/image_1024.jpg"
+    srcSet={`./path/to/image_320.jpg 320w,
       ./path/to/image_520.jpg 520w,
-      ./path/to/image_800.jpg 800w,
       ./path/to/image_1024.jpg 1024w`}
     // If the viewport is wider than 1000px, then this image will
     // take up ≈765px of the viewport. Otherwise, it will take
@@ -83,12 +80,9 @@ export default () => (
     altText="image description"
     width={816}
     height={544}
-    src="./path/to/image.jpg"
-    srcSet={`./path/to/image_280.jpg 280w,
-      ./path/to/image_320.jpg 320w,
-      ./path/to/image_480.jpg 460w,
+    src="./path/to/image_1024.jpg"
+    srcSet={`./path/to/image_320.jpg 320w,
       ./path/to/image_520.jpg 520w,
-      ./path/to/image_800.jpg 800w,
       ./path/to/image_1024.jpg 1024w`}
     // If the viewport is wider than 1000px, then this image will
     // take up ≈765px of the viewport. Otherwise, it will take
