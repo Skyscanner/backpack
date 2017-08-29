@@ -79,8 +79,8 @@ const components = [
         altText="Waterfall"
         width={612}
         height={408}
-        fullWidth={false}
         src={image2}
+        style={{ maxWidth: 612, maxHeight: 408 }}
         srcSet={`${image2}?resize=280px:280px&quality=100 280w,
           ${image2}?resize=320px:320px&quality=100 320w,
           ${image2}?resize=460px:460px&quality=100 460w,

@@ -2,7 +2,11 @@
 
 exports[`BpkImage should accept userland className 1`] = `
 <div
-  style={Object {}}
+  style={
+    Object {
+      "width": 500,
+    }
+  }
 >
   <div
     className="bpk-image userland-classname"
@@ -10,7 +14,6 @@ exports[`BpkImage should accept userland className 1`] = `
       Object {
         "height": 0,
         "paddingBottom": "66.66666666666667%",
-        "width": 500,
       }
     }
   >
@@ -113,7 +116,11 @@ exports[`BpkImage should accept userland className 1`] = `
 
 exports[`BpkImage should accept userland styling 1`] = `
 <div
-  style={Object {}}
+  style={
+    Object {
+      "width": 500,
+    }
+  }
 >
   <div
     className="bpk-image"
@@ -121,7 +128,6 @@ exports[`BpkImage should accept userland styling 1`] = `
       Object {
         "height": 0,
         "paddingBottom": "66.66666666666667%",
-        "width": 500,
       }
     }
   >

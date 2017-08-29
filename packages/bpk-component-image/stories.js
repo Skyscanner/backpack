@@ -35,7 +35,7 @@ storiesOf('bpk-component-image', module)
       altText="image"
       width={612}
       height={408}
-      fullWidth={false}
+      style={{ maxWidth: 612, maxHeight: 408 }}
       src={image}
     />
   ))
@@ -73,7 +73,7 @@ storiesOf('bpk-component-image', module)
       altText="image"
       width={612}
       height={408}
-      fullWidth={false}
+      style={{ maxWidth: 612, maxHeight: 408 }}
       src={image}
     />
   ))
@@ -82,7 +82,7 @@ storiesOf('bpk-component-image', module)
       altText="image"
       width={612}
       height={408}
-      fullWidth={false}
+      style={{ maxWidth: 612, maxHeight: 408 }}
       src={image}
     />
   ))
@@ -91,7 +91,7 @@ storiesOf('bpk-component-image', module)
       altText="image"
       width={612}
       height={408}
-      fullWidth={false}
+      style={{ maxWidth: 612, maxHeight: 408 }}
       src={image}
     />
   ))
