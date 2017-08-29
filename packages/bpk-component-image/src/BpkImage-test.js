@@ -81,4 +81,25 @@ describe('BpkImage', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('should support srcSet', () => {
+    const tree = renderer.create(
+      <BpkImage
+        inView={false}
+        altText="image description"
+        width={816}
+        height={544}
+        srcSet={`./path/to/image_280.jpg 280w,
+          ./path/to/image_320.jpg 320w,
+          ./path/to/image_480.jpg 460w,
+          ./path/to/image_520.jpg 520w,
+          ./path/to/image_800.jpg 800w,
+          ./path/to/image_1024.jpg 1024w`}
+        // If the viewport is wider than 1000px, then this image will
+        // take up ≈765px of the viewport. Otherwise, it will take
+        // up ≈ the full-width (100%) of the viewport.
+        sizes={'(min-width: 1150px) 765px, calc(100vw - 48px)'}
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

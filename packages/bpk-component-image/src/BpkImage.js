@@ -41,7 +41,7 @@ class BpkImage extends React.Component {
   }
 
   render() {
-    const { width, height, fullWidth, altText, className, inView, loading, onLoad, style, ...rest } = this.props;
+    const { width, height, altText, className, inView, loading, onLoad, style, ...rest } = this.props;
 
     const classNames = [getClassName('bpk-image')];
     const imgClassNames = [getClassName('bpk-image__image')];
@@ -64,21 +64,16 @@ class BpkImage extends React.Component {
       getClassName('bpk-image__image--show'),
     ];
 
-    const nonFullWidthDimensions =
-      fullWidth
-        ? {}
-        : { maxWidth: width, maxHeight: height };
-
     // wraps a div with maxWidth and maxHeight set iff full-width is no required.
     // This ensures that the css / html do not reserve too much spacing
     // when width 100% is not being used
     return (
       <div
-        style={nonFullWidthDimensions}
+        style={style}
       >
         <div
           ref={(div) => { this.placeholder = div; }}
-          style={{ ...style, height: 0, paddingBottom: aspectRatioPc }}
+          style={{ height: 0, paddingBottom: aspectRatioPc }}
           className={classNames.join(' ')}
         >
           <div className={spinnerClassNames.join(' ')}>
@@ -112,7 +107,6 @@ BpkImage.propTypes = {
   height: PropTypes.number.isRequired,
   altText: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
-  fullWidth: PropTypes.bool,
   className: PropTypes.string,
   inView: PropTypes.bool,
   loading: PropTypes.bool,
@@ -121,7 +115,6 @@ BpkImage.propTypes = {
 };
 
 BpkImage.defaultProps = {
-  fullWidth: true,
   className: null,
   inView: true,
   loading: false,
