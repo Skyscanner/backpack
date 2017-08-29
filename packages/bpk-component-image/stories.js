@@ -21,8 +21,8 @@ import { storiesOf } from '@storybook/react';
 
 import BpkText from 'bpk-component-text';
 import BpkImage, { BpkBackgroundImage, withLazyLoading, withLoadingBehavior } from './index';
-import image from 'file-loader!./image.jpg'; // eslint-disable-line
 
+const image = 'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
 const documentIfExists = typeof window !== 'undefined' ? document : null;
 const FadingImage = withLoadingBehavior(BpkImage);
 const LazyLoadedImage = withLazyLoading(BpkImage, documentIfExists);
@@ -39,14 +39,28 @@ storiesOf('bpk-component-image', module)
       src={image}
     />
   ))
-    .add('Full Width', () => (
-      <BpkImage
-        altText="image"
-        width={612}
-        height={408}
-        src={image}
-      />
-    ))
+  .add('Full Width', () => (
+    <BpkImage
+      altText="image"
+      width={612}
+      height={408}
+      src={image}
+    />
+  ))
+  .add('Using SrcSet', () => (
+    <BpkImage
+      altText="image"
+      width={612}
+      height={408}
+      src={image}
+      srcSet={`${image}?resize=320px:213px&quality=100 320w,
+        ${image}?resize=640px:226px&quality=100 640w,
+        ${image}?resize=1640px:1427px&quality=100 1640w,
+        ${image}?resize=3200px:2133px&quality=100 3200w`}
+      // The image will take up all but 318px of the viewport.
+      sizes={'calc(100vw - 318px)'}
+    />
+  ))
   .add('With Animation', () => (
     <FadingImage
       altText="image"

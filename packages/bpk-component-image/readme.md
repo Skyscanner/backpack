@@ -15,13 +15,21 @@ npm install bpk-component-image --save-dev
 ```js
 import React from 'react';
 import BpkImage from 'bpk-component-image';
+import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 
 export default () => (
   <BpkImage
     altText="image description"
     width={816}
     height={544}
-    src="./path/to/image.jpg"
+    src="./path/to/image_1640.jpg"
+    srcSet={`./path/to/image_320px.jpg 320w,
+      ./path/to/image_640px.jpg 640w,
+      ./path/to/image_1640px.jpg 1640w,
+      ./path/to/image_3200px.jpg 3200w`}]
+    sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 765px,
+      (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 292px),
+      calc(100vw - 72px)`}
   />
 );
 ```
@@ -47,7 +55,7 @@ export default () => (
     }}
     src="./path/to/image.jpg"
   >
-    <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 25 }} >
+    <div className={'...'} >
       <BpkText tagName="h2" textStyle="lg" >Lorem ipsum dolor sit amet</BpkText>
     </div>
   </BpkBackgroundImage>
@@ -65,6 +73,7 @@ Using this HOC can make pages load faster and prevent data being used to display
 
 ```js
 import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
+import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 
 const FadingLazyLoadedImage = withLoadingBehavior(withLazyLoading(BpkImage, document));
 
@@ -73,7 +82,14 @@ export default () => (
     altText="image description"
     width={816}
     height={544}
-    src="./path/to/image.jpg"
+    src="./path/to/image_1640.jpg"
+    srcSet={`./path/to/image_320px.jpg 320w,
+      ./path/to/image_640px.jpg 640w,
+      ./path/to/image_1640px.jpg 1640w,
+      ./path/to/image_3200px.jpg 3200w`}
+    sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 765px,
+      (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 292px),
+      calc(100vw - 72px)`}
   />
 );
 ```

@@ -20,7 +20,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 
-import { BREAKPOINTS } from './BpkBreakpoint';
+import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 
 describe('BpkBreakpoint', () => {
   it('should render if the breakpoint is matched', () => {

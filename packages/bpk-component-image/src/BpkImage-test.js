@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 import BpkImage from './BpkImage';
 
 describe('BpkImage', () => {
@@ -69,7 +70,7 @@ describe('BpkImage', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('should have inView behavior', () => {
+  it('should have !inView behavior', () => {
     const tree = renderer.create(
       <BpkImage
         inView={false}
@@ -77,6 +78,24 @@ describe('BpkImage', () => {
         width={816}
         height={544}
         src="./path/to/image.jpg"
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('should support srcSet', () => {
+    const tree = renderer.create(
+      <BpkImage
+        altText="image description"
+        width={816}
+        height={544}
+        src="./path/to/image_1640.jpg"
+        srcSet={`./path/to/image_320px.jpg 320w,
+          ./path/to/image_640px.jpg 640w,
+          ./path/to/image_1640px.jpg 1640w,
+          ./path/to/image_3200px.jpg 3200w`}
+        sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 765px,
+          (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 292px),
+          calc(100vw - 72px)`}
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
