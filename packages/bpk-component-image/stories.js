@@ -53,13 +53,11 @@ storiesOf('bpk-component-image', module)
       width={612}
       height={408}
       src={image}
-      srcSet={`${image}?resize=320px:320px&quality=100 320w,
-        ${image}?resize=520px:520px&quality=100 520w,
-        ${image}?resize=1024px:1024px&quality=100 1024w,
-        ${image}?resize=1920px:1920px&quality=100 1920w`}
-      // If the viewport is wider than 1000px, then this image will
-      // take up ≈765px of the viewport. Otherwise, it will take
-      // up ≈ the full-width (100%) of the viewport.
+      srcSet={`${image}?resize=320px:213px&quality=100 320w,
+        ${image}?resize=640px:226px&quality=100 640w,
+        ${image}?resize=1640px:1427px&quality=100 1640w,
+        ${image}?resize=3200px:2133px&quality=100 3200w`}
+      // The image will take up all but 318px of the viewport.
       sizes={'calc(100vw - 318px)'}
     />
   ))

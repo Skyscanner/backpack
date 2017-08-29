@@ -21,6 +21,6 @@
   },
   "devDependencies": {
     "bpk-component-text": "^1.0.8",
-    "bpk-tokens": "^24.1.0"
+    "bpk-tokens": "^24.2.0"
   }
 }

@@ -22,6 +22,7 @@ import { BpkCode } from 'bpk-component-code';
 import BpkText from 'bpk-component-text';
 
 import imagesReadme from 'bpk-component-image/readme.md';
+import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
@@ -51,16 +52,17 @@ const components = [
         width={816}
         height={544}
         src={image1}
-        srcSet={`${image1}?resize=320px:320px&quality=100 320w,
-          ${image1}?resize=520px:520px&quality=100 520w,
-          ${image1}?resize=1024px:1024px&quality=100 1024w,
-          ${image1}?resize=1920px:1920px&quality=100 1920w`}
-        // If the viewport is wider than 1140px, then this image will
-        // take up ≈765px of the viewport. If the viewport
-        // is wider than 805px it will take up ≈ all but 292px
-        // Otherwise, it will take up ≈ all but 72px.
-        sizes={`(min-width: 1140px) 765px,
-          (min-width: 805px) calc(100vw - 292px),
+        srcSet={`${image1}?resize=320px:213px&quality=100 320w,
+          ${image1}?resize=640px:226px&quality=100 640w,
+          ${image1}?resize=1640px:1427px&quality=100 1640w,
+          ${image1}?resize=3200px:2133px&quality=100 3200w`}
+        // If the viewport is wider than the desktop-breakpoint,
+        // then the image will be 765px wide. If the viewport
+        // is wider than the tablet-breakpoint it will be 292px
+        // narrower than the viewport.
+        // Otherwise, it will take up all but 72px.
+        sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 765px,
+          (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 292px),
           calc(100vw - 72px)`}
       />,
     ],
@@ -75,13 +77,13 @@ const components = [
         height={408}
         fullWidth={false}
         src={image2}
-        srcSet={`${image2}?resize=320px:320px&quality=100 320w,
-          ${image2}?resize=520px:520px&quality=100 520w,
-          ${image2}?resize=1024px:1024px&quality=100 1024w,
-          ${image2}?resize=1920px:1920px&quality=100 1920w`}
-        // If the viewport is wider than 688px, then this image will
-        // take up 612px of the viewport. Otherwise, it will
-        // take up ≈ all but 72px.
+        srcSet={`${image2}?resize=320px:213px&quality=100 320w,
+          ${image2}?resize=640px:226px&quality=100 640w,
+          ${image2}?resize=1640px:1427px&quality=100 1640w,
+          ${image2}?resize=3200px:2133px&quality=100 3200w`}
+        // As the image has a max-width of 612px, if the viewport
+        // is wider than 688px the image will be 765px wide.
+        // Otherwise, it will take up all but 72px.
         sizes={`(min-width: 688px) 612px,
           calc(100vw - 72px)`}
       />,
@@ -96,16 +98,17 @@ const components = [
         width={816}
         height={544}
         src={image3}
-        srcSet={`${image3}?resize=320px:320px&quality=100 320w,
-          ${image3}?resize=520px:520px&quality=100 520w,
-          ${image3}?resize=1024px:1024px&quality=100 1024w,
-          ${image3}?resize=1920px:1920px&quality=100 1920w`}
-        // If the viewport is wider than 1140px, then this image will
-        // take up ≈765px of the viewport. If the viewport
-        // is wider than 805px it will take up ≈ all but 292px
-        // Otherwise, it will take up ≈ all but 72px.
-        sizes={`(min-width: 1140px) 765px,
-          (min-width: 805px) calc(100vw - 292px),
+        srcSet={`${image3}?resize=320px:213px&quality=100 320w,
+          ${image3}?resize=640px:226px&quality=100 640w,
+          ${image3}?resize=1640px:1427px&quality=100 1640w,
+          ${image3}?resize=3200px:2133px&quality=100 3200w`}
+        // If the viewport is wider than the desktop-breakpoint,
+        // then the image will be 765px wide. If the viewport
+        // is wider than the tablet-breakpoint it will be 292px
+        // narrower than the viewport.
+        // Otherwise, it will take up all but 72px.
+        sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 765px,
+          (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 292px),
           calc(100vw - 72px)`}
       />,
     ],
@@ -119,16 +122,17 @@ const components = [
         width={816}
         height={544}
         src={image4}
-        srcSet={`${image4}?resize=320px:320px&quality=100 320w,
-          ${image4}?resize=520px:520px&quality=100 520w,
-          ${image4}?resize=1024px:1024px&quality=100 1024w,
-          ${image4}?resize=1920px:1920px&quality=100 1920w`}
-        // If the viewport is wider than 1140px, then this image will
-        // take up ≈765px of the viewport. If the viewport
-        // is wider than 805px it will take up ≈ all but 292px
-        // Otherwise, it will take up ≈ all but 72px.
-        sizes={`(min-width: 1140px) 765px,
-          (min-width: 805px) calc(100vw - 292px),
+        srcSet={`${image4}?resize=320px:213px&quality=100 320w,
+          ${image4}?resize=640px:226px&quality=100 640w,
+          ${image4}?resize=1640px:1427px&quality=100 1640w,
+          ${image4}?resize=3200px:2133px&quality=100 3200w`}
+        // If the viewport is wider than the desktop-breakpoint,
+        // then the image will be 765px wide. If the viewport
+        // is wider than the tablet-breakpoint it will be 292px
+        // narrower than the viewport.
+        // Otherwise, it will take up all but 72px.
+        sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 765px,
+          (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 292px),
           calc(100vw - 72px)`}
       />,
     ],
@@ -142,16 +146,17 @@ const components = [
         width={816}
         height={544}
         src={image5}
-        srcSet={`${image5}?resize=320px:320px&quality=100 320w,
-          ${image5}?resize=520px:520px&quality=100 520w,
-          ${image5}?resize=1024px:1024px&quality=100 1024w,
-          ${image5}?resize=1920px:1920px&quality=100 1920w`}
-        // If the viewport is wider than 1140px, then this image will
-        // take up ≈765px of the viewport. If the viewport
-        // is wider than 805px it will take up ≈ all but 292px
-        // Otherwise, it will take up ≈ all but 72px.
-        sizes={`(min-width: 1140px) 765px,
-          (min-width: 805px) calc(100vw - 292px),
+        srcSet={`${image5}?resize=320px:213px&quality=100 320w,
+          ${image5}?resize=640px:226px&quality=100 640w,
+          ${image5}?resize=1640px:1427px&quality=100 1640w,
+          ${image5}?resize=3200px:2133px&quality=100 3200w`}
+        // If the viewport is wider than the desktop-breakpoint,
+        // then the image will be 765px wide. If the viewport
+        // is wider than the tablet-breakpoint it will be 292px
+        // narrower than the viewport.
+        // Otherwise, it will take up all but 72px.
+        sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 765px,
+          (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 292px),
           calc(100vw - 72px)`}
       />,
     ],
