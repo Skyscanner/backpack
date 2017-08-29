@@ -1,11 +1,11 @@
-# bpk-native-component-text
+# react-native-bpk-component-text
 
 > Backpack React Native text component.
 
 ## Installation
 
 ```sh
-npm install bpk-native-component-text --save-dev
+npm install react-native-bpk-component-text --save-dev
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install bpk-native-component-text --save-dev
 ```js
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import BpkText from 'bpk-native-component-text';
+import BpkText from 'react-native-bpk-component-text';
 import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
 
 export default class App extends Component {

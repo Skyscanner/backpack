@@ -19,8 +19,8 @@
 import React from 'react';
 
 import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
-import readme from 'bpk-native-component-text/readme.md';
-import defaultScreenshot from 'bpk-native-component-text/screenshots/default.png';
+import readme from 'react-native-bpk-component-text/readme.md';
+import defaultScreenshot from 'react-native-bpk-component-text/screenshots/default.png';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';

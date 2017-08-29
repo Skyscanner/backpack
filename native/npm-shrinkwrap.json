@@ -5,7 +5,7 @@
     "asap": {
       "version": "2.0.6",
       "from": "asap@>=2.0.3 <2.1.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/asap/-/asap-2.0.6.tgz",
+      "resolved": "https://registry.npmjs.org/asap/-/asap-2.0.6.tgz",
       "dev": true
     },
     "core-js": {
@@ -23,7 +23,7 @@
     "fbjs": {
       "version": "0.8.14",
       "from": "fbjs@>=0.8.9 <0.9.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/fbjs/-/fbjs-0.8.14.tgz",
+      "resolved": "https://registry.npmjs.org/fbjs/-/fbjs-0.8.14.tgz",
       "dev": true
     },
     "iconv-lite": {
@@ -47,7 +47,7 @@
     "js-tokens": {
       "version": "3.0.2",
       "from": "js-tokens@>=3.0.0 <4.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/js-tokens/-/js-tokens-3.0.2.tgz",
+      "resolved": "https://registry.npmjs.org/js-tokens/-/js-tokens-3.0.2.tgz",
       "dev": true
     },
     "loose-envify": {
@@ -59,7 +59,7 @@
     "node-fetch": {
       "version": "1.7.2",
       "from": "node-fetch@>=1.0.1 <2.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/node-fetch/-/node-fetch-1.7.2.tgz",
+      "resolved": "https://registry.npmjs.org/node-fetch/-/node-fetch-1.7.2.tgz",
       "dev": true
     },
     "object-assign": {
@@ -71,7 +71,7 @@
     "promise": {
       "version": "7.3.1",
       "from": "promise@>=7.1.1 <8.0.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/promise/-/promise-7.3.1.tgz",
+      "resolved": "https://registry.npmjs.org/promise/-/promise-7.3.1.tgz",
       "dev": true
     },
     "prop-types": {
@@ -95,7 +95,7 @@
     "ua-parser-js": {
       "version": "0.7.14",
       "from": "ua-parser-js@>=0.7.9 <0.8.0",
-      "resolved": "https://repository.prod.aws.skyscnr.com/artifactory/api/npm/npm-virtual/ua-parser-js/-/ua-parser-js-0.7.14.tgz",
+      "resolved": "https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-0.7.14.tgz",
       "dev": true
     },
     "whatwg-fetch": {
