@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android BpkText should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(37, 32, 51)",
+        "fontFamily": "sans-serif-medium",
+        "fontSize": 14,
+        "fontWeight": undefined,
+        "letterSpacing": undefined,
+        "lineHeight": 24,
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`Android BpkText should render correctly with textStyle="base" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(37, 32, 51)",
+        "fontFamily": "sans-serif-medium",
+        "fontSize": 14,
+        "fontWeight": undefined,
+        "letterSpacing": undefined,
+        "lineHeight": 24,
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`Android BpkText should render correctly with textStyle="lg" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(37, 32, 51)",
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": undefined,
+        "letterSpacing": undefined,
+        "lineHeight": 24,
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`Android BpkText should render correctly with textStyle="sm" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(37, 32, 51)",
+        "fontFamily": "sans-serif",
+        "fontSize": 14,
+        "fontWeight": undefined,
+        "letterSpacing": undefined,
+        "lineHeight": 20,
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`Android BpkText should render correctly with textStyle="xl" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(37, 32, 51)",
+        "fontFamily": "sans-serif-medium",
+        "fontSize": 20,
+        "fontWeight": undefined,
+        "letterSpacing": undefined,
+        "lineHeight": 28,
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`Android BpkText should render correctly with textStyle="xs" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(37, 32, 51)",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "fontWeight": undefined,
+        "letterSpacing": undefined,
+        "lineHeight": 16,
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`Android BpkText should render correctly with textStyle="xxl" 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(37, 32, 51)",
+        "fontFamily": "sans-serif",
+        "fontSize": 24,
+        "fontWeight": undefined,
+        "letterSpacing": undefined,
+        "lineHeight": 32,
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`Android BpkText should support overwriting styles 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(37, 32, 51)",
+        "fontFamily": "sans-serif-medium",
+        "fontSize": 14,
+        "fontWeight": undefined,
+        "letterSpacing": undefined,
+        "lineHeight": 24,
+      },
+      Object {
+        "color": "red",
+      },
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
