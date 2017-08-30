@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
+_Nothing Yet..._
+
+## 2017-08-30 - New image component
+
 **Added:**
-- bpk-component-image:
+- bpk-component-image: 1.0.0
   - Added `BpkImage` component
   - Added `BpkBackgroundImage` component which can be used to create a container with a background image
   - Added `withLazyLoading` HOC which allows `BpkImage` or `BpkBackgroundImage` to be loaded only when in view
