@@ -41,7 +41,7 @@ class BpkImage extends React.Component {
   }
 
   render() {
-    const { width, height, altText, className, inView, loading, onLoad, style, ...rest } = this.props;
+    const { width, height, altText, className, position, loading, onLoad, style, ...rest } = this.props;
 
     const classNames = [getClassName('bpk-image')];
     const imgClassNames = [getClassName('bpk-image__image')];
@@ -79,7 +79,7 @@ class BpkImage extends React.Component {
           <div className={spinnerClassNames.join(' ')}>
             <BpkSpinner />
           </div>
-          {inView &&
+          {position.inView &&
             <img
               className={imgClassNames.join(' ')}
               alt={altText}
@@ -87,7 +87,7 @@ class BpkImage extends React.Component {
               {...rest}
             />
           }
-          {(typeof window === 'undefined' && (!inView || loading)) &&
+          {(typeof window === 'undefined' && (!position.inView || loading)) &&
             <noscript >
               <img
                 className={imgClassNamesNoScript.join(' ')}
@@ -108,7 +108,7 @@ BpkImage.propTypes = {
   altText: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
   className: PropTypes.string,
-  inView: PropTypes.bool,
+  position: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   loading: PropTypes.bool,
   onLoad: PropTypes.func,
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
@@ -116,7 +116,7 @@ BpkImage.propTypes = {
 
 BpkImage.defaultProps = {
   className: null,
-  inView: true,
+  position: { inView: true },
   loading: false,
   onLoad: null,
   style: {},

@@ -19,25 +19,24 @@
 import React from 'react';
 import { wrapDisplayName } from 'bpk-react-utils';
 
-export default function withLazyLoading(Component, document) {
+export default function withLazyLoading(Component, document, keepIncluded = true) {
   class WithLazyLoading extends React.Component {
     constructor() {
       super();
 
-      this.setInView = this.setInView.bind(this);
       this.removeEventListeners = this.removeEventListeners.bind(this);
       this.checkInView = this.checkInView.bind(this);
-      this.isInViewPort = this.isInViewPort.bind(this);
+      this.getPosition = this.getPosition.bind(this);
       this.supportsPassiveEvents = this.supportsPassiveEvents.bind(this);
 
       this.state = {
-        inView: false,
+        position: { up: false, down: false, right: false, left: false, inView: false },
       };
     }
 
     componentDidMount() {
-      const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : false;
-      document.addEventListener('scroll', this.checkInView, passiveArgs);
+      const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : {};
+      document.addEventListener('scroll', this.checkInView, { capture: true, ...passiveArgs });
       document.addEventListener('resize', this.checkInView);
       document.addEventListener('fullscreenchange', this.checkInView);
       // call checkInView immediately incase the
@@ -47,25 +46,6 @@ export default function withLazyLoading(Component, document) {
 
     componentWillUnmount() {
       this.removeEventListeners();
-    }
-
-    setInView() {
-      this.setState(() => ({
-        inView: true,
-      }));
-      this.removeEventListeners();
-    }
-
-    removeEventListeners() {
-      document.removeEventListener('scroll', this.checkInView);
-      document.removeEventListener('resize', this.checkInView);
-      document.removeEventListener('fullscreenchange', this.checkInView);
-    }
-
-    checkInView() {
-      if (this.isInViewPort()) {
-        this.setInView();
-      }
     }
 
     // This function is taken from modernizr
@@ -85,18 +65,35 @@ export default function withLazyLoading(Component, document) {
       return supportsPassiveOption;
     }
 
-    isInViewPort() {
+    getPosition() {
       const rect = this.element.getBoundingClientRect();
 
       const viewPortHeight = Math.max(window.innerHeight, document.documentElement.clientHeight);
       const viewPortWidth = Math.max(window.innerWidth, document.documentElement.clientWidth);
 
-      return (
-        rect.bottom >= 0 &&
-        rect.right >= 0 &&
-        rect.top < viewPortHeight &&
-        rect.left < viewPortWidth
-      );
+      const up = rect.bottom <= 0;
+      const down = rect.top > viewPortHeight;
+      const right = rect.left > viewPortWidth;
+      const left = rect.right <= 0;
+      const inView = !(up || down || left || right);
+
+      return { up, down, left, right, inView };
+    }
+
+    checkInView() {
+      this.setState(() => ({
+        position: this.getPosition(),
+      }));
+      if (this.state.position.inView && keepIncluded) {
+        this.removeEventListeners();
+      }
+    }
+
+    removeEventListeners() {
+      const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : {};
+      document.removeEventListener('scroll', this.checkInView, { capture: true, ...passiveArgs });
+      document.removeEventListener('resize', this.checkInView);
+      document.removeEventListener('fullscreenchange', this.checkInView);
     }
 
     render() {
@@ -106,7 +103,7 @@ export default function withLazyLoading(Component, document) {
           ref={(element) => { this.element = element; }}
         >
           <Component
-            inView={this.state.inView}
+            position={this.state.position}
             {...this.props}
           />
         </div>

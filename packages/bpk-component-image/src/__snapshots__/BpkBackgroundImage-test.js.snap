@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkBackgroundImage should have inView behavior 1`] = `
+exports[`BpkBackgroundImage should have !included behavior 1`] = `
 <div
   className="bpk-background-image"
   style={
