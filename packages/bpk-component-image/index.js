@@ -17,14 +17,12 @@
  */
 
 import BpkImage from './src/BpkImage';
-import BpkBackgroundImage from './src/BpkBackgroundImage';
 import withLazyLoading from './src/withLazyLoading';
 import withLoadingBehavior from './src/withLoadingBehavior';
 
 export default BpkImage;
 
 export {
-  BpkBackgroundImage,
   withLazyLoading,
   withLoadingBehavior,
 };

@@ -2,7 +2,11 @@
 
 exports[`BpkImage should accept userland className 1`] = `
 <div
-  style={Object {}}
+  style={
+    Object {
+      "width": 500,
+    }
+  }
 >
   <div
     className="bpk-image userland-classname"
@@ -10,7 +14,6 @@ exports[`BpkImage should accept userland className 1`] = `
       Object {
         "height": 0,
         "paddingBottom": "66.66666666666667%",
-        "width": 500,
       }
     }
   >
@@ -113,7 +116,11 @@ exports[`BpkImage should accept userland className 1`] = `
 
 exports[`BpkImage should accept userland styling 1`] = `
 <div
-  style={Object {}}
+  style={
+    Object {
+      "width": 500,
+    }
+  }
 >
   <div
     className="bpk-image"
@@ -121,7 +128,6 @@ exports[`BpkImage should accept userland styling 1`] = `
       Object {
         "height": 0,
         "paddingBottom": "66.66666666666667%",
-        "width": 500,
       }
     }
   >
@@ -650,9 +656,9 @@ exports[`BpkImage should support srcSet 1`] = `
       alt="image description"
       className="bpk-image__image bpk-image__image--show"
       onLoad={[Function]}
-      sizes="(min-width: 71.25rem) 765px,
-              (min-width: 50.25rem) calc(100vw - 292px),
-              calc(100vw - 72px)"
+      sizes="(min-width: 71.25rem) 48rem,
+              (min-width: 50.25rem) calc(100vw - 18rem),
+              calc(100vw - 4.5rem)"
       src="./path/to/image_1640.jpg"
       srcSet="./path/to/image_320px.jpg 320w,
               ./path/to/image_640px.jpg 640w,
