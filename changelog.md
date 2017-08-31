@@ -9,9 +9,8 @@ _Nothing Yet..._
 **Added:**
 - bpk-component-image: 1.0.0
   - Added `BpkImage` component
-  - Added `BpkBackgroundImage` component which can be used to create a container with a background image
-  - Added `withLazyLoading` HOC which allows `BpkImage` or `BpkBackgroundImage` to be loaded only when in view
-  - Added `withLoadingBehavior` HOC which allows `BpkImage` or `BpkBackgroundImage` to be shown only once loaded, displaying a spinner until that point
+  - Added `withLazyLoading` HOC which allows `BpkImage` to be loaded only when in view
+  - Added `withLoadingBehavior` HOC which allows `BpkImage` to be shown only once loaded, displaying a spinner until that point
 
 ## 2017-08-25 - New unlock icon
 
