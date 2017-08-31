@@ -17,7 +17,9 @@
  */
 
 import React from 'react';
-import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
+import BpkImage, { BpkBackgroundImage, withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
+import { BpkCode } from 'bpk-component-code';
+import BpkText from 'bpk-component-text';
 
 import imagesReadme from 'bpk-component-image/readme.md';
 import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
@@ -29,12 +31,15 @@ const documentIfExists = typeof window !== 'undefined' ? document : null;
 const FadingImage = withLoadingBehavior(BpkImage);
 const LazyLoadedImage = withLazyLoading(BpkImage, documentIfExists);
 const FadingLazyLoadedImage = withLoadingBehavior(withLazyLoading(BpkImage, documentIfExists));
+const FadingLazyLoadedBackgroundImage = withLoadingBehavior(withLazyLoading(BpkBackgroundImage, documentIfExists));
 
 const image1 = 'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
 const image2 = 'https://content.skyscnr.com/8bd0d1b67b1bda63e5567a4c402402f2/iceland.jpg';
 const image3 = 'https://content.skyscnr.com/200946ddb82b7c026e6e186a7037b1f8/machu-picchu.jpg';
 const image4 = 'https://content.skyscnr.com/8a8ac17b591b61e6fe5d8f63414561cd/amsterdam-the-netherlands.jpg';
 const image5 = 'https://content.skyscnr.com/6c8f0e633bde70798a9d6f0a26cb6016/andalsnes-norway.jpg';
+const image6 = 'https://content.skyscnr.com/46382d528f3f7c8d84628f4f73d03ea9/skogafoss-iceland.jpg';
+const image7 = 'https://content.skyscnr.com/9e31082c518f0bf15e48e0ab54cb652a/iceland.jpg';
 
 const components = [
   {
@@ -153,6 +158,36 @@ const components = [
           (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 18rem),
           calc(100vw - 4.5rem)`}
       />,
+    ],
+  },
+  {
+    id: 'backgroundImage',
+    title: 'Background Image',
+    examples: [
+      <BpkBackgroundImage
+        style={{ height: '20rem' }}
+        src={image6}
+      >
+        <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 25 }} >
+          <BpkText tagName="h2" textStyle="lg" >Lorem ipsum dolor sit amet</BpkText>
+          <BpkCode>consectetuer adipiscing elit</BpkCode>
+        </div>
+      </BpkBackgroundImage>,
+    ],
+  },
+  {
+    id: 'backgroundImageWithLazyLoadingAndAnimation',
+    title: 'Background Image with lazy loading and animation',
+    examples: [
+      <FadingLazyLoadedBackgroundImage
+        style={{ height: '20rem' }}
+        src={image7}
+      >
+        <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 25 }} >
+          <BpkText tagName="h2" textStyle="lg" >Lorem ipsum dolor sit amet</BpkText>
+          <BpkCode>consectetuer adipiscing elit</BpkCode>
+        </div>
+      </FadingLazyLoadedBackgroundImage>,
     ],
   },
 ];

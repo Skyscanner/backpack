@@ -6,7 +6,6 @@ exports[`BpkBackgroundImage should have inView behavior 1`] = `
   style={
     Object {
       "height": "20rem",
-      "width": "100%",
     }
   }
 >
@@ -102,11 +101,6 @@ exports[`BpkBackgroundImage should have inView behavior 1`] = `
     style={
       Object {
         "backgroundImage": "",
-        "backgroundPosition": "50% 50%",
-        "backgroundRepeat": "no-repeat",
-        "backgroundSize": "cover",
-        "height": "100%",
-        "width": "100%",
       }
     }
   >
@@ -129,7 +123,6 @@ exports[`BpkBackgroundImage should have loading behavior 1`] = `
   style={
     Object {
       "height": "20rem",
-      "width": "100%",
     }
   }
 >
@@ -225,11 +218,6 @@ exports[`BpkBackgroundImage should have loading behavior 1`] = `
     style={
       Object {
         "backgroundImage": "",
-        "backgroundPosition": "50% 50%",
-        "backgroundRepeat": "no-repeat",
-        "backgroundSize": "cover",
-        "height": "100%",
-        "width": "100%",
       }
     }
   />
@@ -242,7 +230,6 @@ exports[`BpkBackgroundImage should render correctly 1`] = `
   style={
     Object {
       "height": "20rem",
-      "width": "100%",
     }
   }
 >

@@ -24,10 +24,7 @@ describe('BpkBackgroundImage', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
       <BpkBackgroundImage
-        style={{
-          width: '100%',
-          height: '20rem',
-        }}
+        style={{ height: '20rem' }}
         src="./path/to/image.jpg"
       >
         <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 25 }} />
@@ -39,17 +36,7 @@ describe('BpkBackgroundImage', () => {
     const tree = renderer.create(
       <BpkBackgroundImage
         loading
-        style={{
-          width: '100%',
-          height: '20rem',
-        }}
-        imageStyle={{
-          width: '100%',
-          height: '100%',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: '50% 50%',
-        }}
+        style={{ height: '20rem' }}
         src="./path/to/image.jpg"
       >
         <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 25 }} />
@@ -61,17 +48,7 @@ describe('BpkBackgroundImage', () => {
     const tree = renderer.create(
       <BpkBackgroundImage
         inView={false}
-        style={{
-          width: '100%',
-          height: '20rem',
-        }}
-        imageStyle={{
-          width: '100%',
-          height: '100%',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: '50% 50%',
-        }}
+        style={{ height: '20rem' }}
         src="./path/to/image.jpg"
       >
         <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 25 }} />

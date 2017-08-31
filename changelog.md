@@ -4,6 +4,10 @@
 
 _Nothing Yet..._
 
+**Added:**
+- bpk-component-image: 1.0.0
+  - Added `BpkBackgroundImage` component which can be used to create a container with a background image
+
 ## 2017-08-30 - New image component
 
 **Added:**
