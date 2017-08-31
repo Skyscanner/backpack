@@ -13,7 +13,6 @@ npm install bpk-component-datepicker --save-dev
 ```js
 import React, { Component } from 'react';
 import BpkDatepicker from 'bpk-component-datepicker';
-import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 import format from 'date-fns/format';
 
 const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
@@ -28,7 +27,7 @@ const daysOfWeek = [
   // ...
 ];
 
-class App extends Component {
+export default class App extends Component {
   constructor () {
     super();
 

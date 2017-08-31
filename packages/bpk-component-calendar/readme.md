@@ -28,7 +28,7 @@ const daysOfWeek = [
   // ...
 ];
 
-class App extends Component {
+export default class App extends Component {
   constructor () {
     super();
 
@@ -52,7 +52,7 @@ class App extends Component {
           id='dateInput'
           type={INPUT_TYPES.TEXT}
           name='date'
-          value={this.state.selectedDate.toString()}
+          value={(this.state.selectedDate || '').toString()}
           placeholder='Departure date'
         />
         <BpkCalendar
