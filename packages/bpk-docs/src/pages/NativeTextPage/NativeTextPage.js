@@ -42,7 +42,7 @@ const components = [
         src={`/${defaultScreenshot}`}
         width={375}
         height={667}
-        fullWidth={false}
+        style={{ width: '50%' }}
         altText="Default"
       />,
     ],
