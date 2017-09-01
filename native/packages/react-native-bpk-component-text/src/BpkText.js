@@ -77,7 +77,7 @@ const BpkText = (props) => {
 BpkText.propTypes = {
   children: PropTypes.node.isRequired,
   textStyle: PropTypes.oneOf(TEXT_STYLES),
-  style: Text.PropTypes.style,
+  style: Text.propTypes.style,
 };
 
 BpkText.defaultProps = {
