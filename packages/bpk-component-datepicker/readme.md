@@ -95,5 +95,6 @@ For more information on some these props, check the BpkCalendar documentation.
 | onDateSelect          | func                 | false    | null                 |
 | showWeekendSeparator  | bool                 | false    | true             (*) |
 | weekStartsOn          | number               | false    | 1                (*) |
+| initiallyFocusedDate  | Date                 | false    | null                 |
 
 > (*) Default value is defined on child component
