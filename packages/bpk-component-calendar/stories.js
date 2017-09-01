@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -44,18 +44,20 @@ import BpkCalendar, {
 import MonthViewCalendar from './stories-components';
 
 class CalendarContainer extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    const date = this.props.selectTodaysDate ? new Date() : null;
 
     this.state = {
-      date: new Date(),
+      date,
     };
   }
   render() {
     return (
       <BpkCalendar
         {...this.props}
-        date={this.state.date}
+        selectedDate={this.state.date}
         onDateSelect={(date) => {
           this.setState({ date, focusedDate: date });
           action('Selected day')(date);
@@ -65,6 +67,14 @@ class CalendarContainer extends Component {
     );
   }
 }
+
+CalendarContainer.propTypes = {
+  selectTodaysDate: PropTypes.bool,
+};
+
+CalendarContainer.defaultProps = {
+  selectTodaysDate: true,
+};
 
 storiesOf('bpk-component-calendar', module)
   .add('BpkCalendarNav', () => (
@@ -105,6 +115,18 @@ storiesOf('bpk-component-calendar', module)
       formatDateFull={formatDateFull}
       daysOfWeek={weekDays}
       changeMonthLabel="Change month"
+    />
+  ))
+  .add('Calendar - min date in the past, focusing today', () => (
+    <CalendarContainer
+      id="myCalendar"
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      daysOfWeek={weekDays}
+      changeMonthLabel="Change month"
+      minDate={new Date(2011, 1, 1)}
+      selectTodaysDate={false}
+      initiallyFocusedDate={new Date()}
     />
   ))
   .add('Calendar - Don\'t show weekend separator', () => (

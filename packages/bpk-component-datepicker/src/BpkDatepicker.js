@@ -86,6 +86,7 @@ class BpkDatepicker extends Component {
       showWeekendSeparator,
       title,
       weekStartsOn,
+      initiallyFocusedDate,
       ...rest
     } = this.props;
 
@@ -128,6 +129,7 @@ class BpkDatepicker extends Component {
         onMonthChange={onMonthChange}
         showWeekendSeparator={showWeekendSeparator}
         weekStartsOn={weekStartsOn}
+        initiallyFocusedDate={initiallyFocusedDate}
       />
     );
 
@@ -191,6 +193,7 @@ BpkDatepicker.propTypes = {
   onMonthChange: PropTypes.func,
   showWeekendSeparator: PropTypes.bool,
   weekStartsOn: PropTypes.number,
+  initiallyFocusedDate: PropTypes.instanceOf(Date),
 };
 
 BpkDatepicker.defaultProps = {
@@ -205,6 +208,7 @@ BpkDatepicker.defaultProps = {
   onMonthChange: null,
   showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
   weekStartsOn: BpkCalendar.defaultProps.weekStartsOn,
+  initiallyFocusedDate: null,
 };
 
 export default BpkDatepicker;

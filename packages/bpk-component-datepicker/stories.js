@@ -157,6 +157,23 @@ storiesOf('bpk-component-datepicker', module)
       />
     </div>
   ))
+  .add('Min date in the past', () => (
+    <div id="application-element">
+      <CalendarContainer
+        id="myDatepicker"
+        closeButtonText="Close"
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        title="Departure date"
+        getApplicationElement={() => document.getElementById('application-element')}
+        formatDate={formatDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        minDate={new Date(2011, 1, 2)}
+        initiallyFocusedDate={new Date()}
+      />
+    </div>
+  ))
   .add('Without date set', () => (
     <div id="application-element">
       <CalendarContainer
