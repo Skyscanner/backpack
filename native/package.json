@@ -28,7 +28,7 @@
   "jest": {
     "preset": "react-native",
     "verbose": true,
-    "testRegex": "packages/.*-test\\.js$",
+    "testRegex": ".*-test\\.js$",
     "transformIgnorePatterns": [
       "node_modules/(?!bpk)"
     ],
