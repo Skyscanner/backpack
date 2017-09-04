@@ -16,6 +16,7 @@ This document describes how to go about it. If you have any questions, get in to
 - [Sass mixins](#sass-mixins)
 - [React component](#react-component)
 - [Documentation](#documentation)
+- [React Native](#react-native)
 - [Publishing packages (Backpack squad members only)](#publishing-packages-backpack-squad-members-only)
 
 <!-- /TOC -->
@@ -208,21 +209,6 @@ If you need any help writing documentation, get in touch!
 
 When adding documentation for a new component, add the new dependency in `packages/bpk-docs/package.json` and run `npm run bootstrap` to install it.
 
-## Publishing packages (Backpack squad members only)
-
-- Update the [changelog](/changelog.md) with every package that has changed, separating out breaking changes (*major*), additions (*minor*) and fixes (*patch*) changes (you should see examples of this in previous entries). Make sure to add
-  them at the top under a heading of “UNRELEASED"
-  - Some useful commands for determining "what's changed?":
-    - `npm run lerna updated`
-    - `npm run lerna diff <package-name>`
-- Make sure you are an owner of the npm packages (speak to a member of the Backpack squad)
-- **Do not run `npm publish`. Instead, run `npm run publish`** (this will run `lerna publish`).
-- You’ll be asked to specify a new version for every package that has changed. Options are *patch*, *minor* or *major*. These should directly align to the entries you put in the [changelog](/changelog.md) in step 1.
-- You’ll be asked at the end to confirm. Note you can still exit without making these changes.
-- Update the [changelog](/changelog.md) with the package versions and update the title with today’s date and a brief summary of what has changed.
-- Commit and push to master.
-- Update the #backpack Slack channel and the [BackpackNeedToKnow](mailto:backpackneedtoknow@skyscanner.net) mailing list if necessary.
-
 ## React Native
 
 Backpack comes in two flavours: web and React Native. React Native (RN) components
@@ -301,3 +287,18 @@ Just like with the web, [Storybook](https://github.com/storybooks/storybook/tree
 
 Once Storybook is running, use `npm run ios` or `npm run android` to run storybook
 on a device.
+
+## Publishing packages (Backpack squad members only)
+
+- Update the [changelog](/changelog.md) with every package that has changed, separating out breaking changes (*major*), additions (*minor*) and fixes (*patch*) changes (you should see examples of this in previous entries). Make sure to add
+  them at the top under a heading of “UNRELEASED"
+  - Some useful commands for determining "what's changed?":
+    - `npm run lerna updated`
+    - `npm run lerna diff <package-name>`
+- Make sure you are an owner of the npm packages (speak to a member of the Backpack squad)
+- **Do not run `npm publish`. Instead, run `npm run publish`** (this will run `lerna publish`).
+- You’ll be asked to specify a new version for every package that has changed. Options are *patch*, *minor* or *major*. These should directly align to the entries you put in the [changelog](/changelog.md) in step 1.
+- You’ll be asked at the end to confirm. Note you can still exit without making these changes.
+- Update the [changelog](/changelog.md) with the package versions and update the title with today’s date and a brief summary of what has changed.
+- Commit and push to master.
+- Update the #backpack Slack channel and the [BackpackNeedToKnow](mailto:backpackneedtoknow@skyscanner.net) mailing list if necessary.
