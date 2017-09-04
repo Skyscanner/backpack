@@ -22,7 +22,6 @@ export const HOME = '/';
 export const USING_BACKPACK = '/using';
 export const STYLE = '/style';
 export const COMPONENTS = '/components';
-export const NATIVE = '/native';
 export const PATTERNS = '/patterns';
 export const RESOURCES = '/resources';
 
@@ -72,12 +71,13 @@ export const FIELDSETS = '/components/molecules/fieldsets';
 export const BARCHARTS = '/components/molecules/barcharts';
 export const STAR_RATING = '/components/molecules/star-rating';
 
+// components/native/
+export const NATIVE = '/components/native';
+export const NATIVE_TEXT = '/components/native/text';
+
 // components/utilities/
 export const UTILITIES = '/components/utilities';
 export const ALIGNMENT = '/components/utilities/alignment';
-
-// native/
-export const NATIVE_TEXT = '/native/text';
 
 // patterns/
 export const VERTICAL_RHYTHM = '/patterns/vertical-rhythm';

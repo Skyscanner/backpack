@@ -20,12 +20,12 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <BpkText textStyle='xxl'>Flights to London.</BpkText>
-        <BpkText textStyle='xl'>Flights to London.</BpkText>
-        <BpkText textStyle='lg'>Flights to London.</BpkText>
-        <BpkText textStyle='base'>Flights to London.</BpkText>
-        <BpkText textStyle='sm'>Flights to London.</BpkText>
-        <BpkText textStyle='xs'>Flights to London.</BpkText>
+        <BpkText textStyle='xxl'>Flights to Edinburgh.</BpkText>
+        <BpkText textStyle='xl'>Flights to Edinburgh.</BpkText>
+        <BpkText textStyle='lg'>Flights to Edinburgh.</BpkText>
+        <BpkText textStyle='base'>Flights to Edinburgh.</BpkText>
+        <BpkText textStyle='sm'>Flights to Edinburgh.</BpkText>
+        <BpkText textStyle='xs'>Flights to Edinburgh.</BpkText>
       </View>
     );
   }
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    padding: TOKENS.spacingSm,
+    padding: TOKENS.spacingBase,
   }
 });
 ```

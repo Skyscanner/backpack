@@ -17,34 +17,35 @@
  */
 
 import React from 'react';
-
-import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
+import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-text/readme.md';
-import defaultScreenshot from 'react-native-bpk-component-text/screenshots/default.png';
+import iosScreenshot from 'react-native-bpk-component-text/screenshots/ios.png';
+import androidScreenshot from 'react-native-bpk-component-text/screenshots/android.png';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
 
-const documentIfExists = typeof window !== 'undefined' ? document : null;
-const Image = withLoadingBehavior(withLazyLoading(BpkImage, documentIfExists));
+const reactNativeUrl = 'https://facebook.github.io/react-native/docs/text.html';
 
 const components = [
   {
-    id: 'default',
-    title: 'Default',
-    blurb: [
-      <Paragraph>
-        TODO
-      </Paragraph>,
-    ],
-    examples: [
-      <Image
-        src={`/${defaultScreenshot}`}
-        width={375}
-        height={667}
-        style={{ width: '50%' }}
-        altText="Default"
-      />,
+    id: 'text-styles',
+    title: 'Text styles',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshot}`,
+        altText: 'iOS Default Text Component',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidScreenshot}`,
+        altText: 'Android Default Text Component',
+      },
     ],
   },
 ];
@@ -53,11 +54,14 @@ const NativeTextPage = () => <DocsPageBuilder
   title="Text"
   blurb={[
     <Paragraph>
-      TODO
+      The Backpack text component encapsulates 6 different text styles tailored specifically for both Android and iOS.
+      It&#39;s a wrapper around the React Native <BpkLink href={reactNativeUrl}>Text component</BpkLink> therefore it
+      supports all the same behaviours and properties.
     </Paragraph>,
   ]}
   components={components}
   readme={readme}
+  showMenu={false}
 />;
 
 export default NativeTextPage;
