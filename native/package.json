@@ -29,9 +29,6 @@
     "preset": "react-native",
     "verbose": true,
     "testRegex": ".*-test\\.js$",
-    "transformIgnorePatterns": [
-      "node_modules/(?!bpk)"
-    ],
     "coverageThreshold": {
       "global": {
         "statements": 75,
