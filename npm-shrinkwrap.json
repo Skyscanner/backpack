@@ -889,12 +889,6 @@
         }
       }
     },
-    "babel-plugin-react-transform": {
-      "version": "2.0.2",
-      "from": "babel-plugin-react-transform@2.0.2",
-      "resolved": "https://registry.npmjs.org/babel-plugin-react-transform/-/babel-plugin-react-transform-2.0.2.tgz",
-      "dev": true
-    },
     "babel-plugin-syntax-async-functions": {
       "version": "6.13.0",
       "from": "babel-plugin-syntax-async-functions@>=6.8.0 <7.0.0",
@@ -1259,12 +1253,6 @@
       "version": "6.22.0",
       "from": "babel-plugin-transform-function-bind@>=6.22.0 <7.0.0",
       "resolved": "https://registry.npmjs.org/babel-plugin-transform-function-bind/-/babel-plugin-transform-function-bind-6.22.0.tgz",
-      "dev": true
-    },
-    "babel-plugin-transform-object-assign": {
-      "version": "6.22.0",
-      "from": "babel-plugin-transform-object-assign@>=6.5.0 <7.0.0",
-      "resolved": "https://registry.npmjs.org/babel-plugin-transform-object-assign/-/babel-plugin-transform-object-assign-6.22.0.tgz",
       "dev": true
     },
     "babel-plugin-transform-object-rest-spread": {
@@ -1722,12 +1710,6 @@
           "dev": true
         }
       }
-    },
-    "babel-preset-react-native": {
-      "version": "2.1.0",
-      "from": "babel-preset-react-native@2.1.0",
-      "resolved": "https://registry.npmjs.org/babel-preset-react-native/-/babel-preset-react-native-2.1.0.tgz",
-      "dev": true
     },
     "babel-preset-stage-0": {
       "version": "6.24.1",
@@ -9722,12 +9704,6 @@
       "resolved": "https://registry.npmjs.org/react-addons-test-utils/-/react-addons-test-utils-15.6.0.tgz",
       "dev": true
     },
-    "react-deep-force-update": {
-      "version": "1.1.1",
-      "from": "react-deep-force-update@>=1.0.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/react-deep-force-update/-/react-deep-force-update-1.1.1.tgz",
-      "dev": true
-    },
     "react-docgen": {
       "version": "2.17.0",
       "from": "react-docgen@>=2.15.0 <3.0.0",
@@ -9790,12 +9766,6 @@
       "version": "1.9.7",
       "from": "react-modal@>=1.7.7 <2.0.0",
       "resolved": "https://registry.npmjs.org/react-modal/-/react-modal-1.9.7.tgz",
-      "dev": true
-    },
-    "react-proxy": {
-      "version": "1.1.8",
-      "from": "react-proxy@>=1.1.7 <2.0.0",
-      "resolved": "https://registry.npmjs.org/react-proxy/-/react-proxy-1.1.8.tgz",
       "dev": true
     },
     "react-router": {
@@ -9944,12 +9914,6 @@
       "version": "15.6.1",
       "from": "react-test-renderer@15.6.1",
       "resolved": "https://registry.npmjs.org/react-test-renderer/-/react-test-renderer-15.6.1.tgz",
-      "dev": true
-    },
-    "react-transform-hmr": {
-      "version": "1.0.4",
-      "from": "react-transform-hmr@>=1.0.4 <2.0.0",
-      "resolved": "https://registry.npmjs.org/react-transform-hmr/-/react-transform-hmr-1.0.4.tgz",
       "dev": true
     },
     "read-cmd-shim": {
