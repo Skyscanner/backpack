@@ -222,3 +222,82 @@ When adding documentation for a new component, add the new dependency in `packag
 - Update the [changelog](/changelog.md) with the package versions and update the title with today’s date and a brief summary of what has changed.
 - Commit and push to master.
 - Update the #backpack Slack channel and the [BackpackNeedToKnow](mailto:backpackneedtoknow@skyscanner.net) mailing list if necessary.
+
+## React Native
+
+Backpack comes in two flavours: web and React Native. React Native (RN) components
+live inside `/native/packages`. The root of `/native` contains things to assist
+with running and testing RN components locally.
+
+### Prerequisites
+
+Before running RN components locally, you'll need a few things in place.
+
+#### iOS
+
+##### XCode
+
+Available from the [Mac App Store](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12). Once installed,
+open it and accept the licence agreement. You're free to close it after that.
+
+#### Android
+
+The following instructions heavily make use of [Homebrew](https://brew.sh/),
+which is available for macOS. Windows and Linux installation for these packages is also well-supported, but isn't currently documented here.
+
+In future, we intend to automate more of this to reduce the number of steps required.
+
+##### Java
+
+```
+brew cask install java
+```
+
+##### Android Studio and SDK
+
+```
+brew cask install android-studio
+```
+
+Open it once installed, and a setup wizard will guide you through installing lots of extra things like the Android SDK. You may be asked for your password during this.
+
+Add an environment variable pointing to the SDK location to your `~/.bash_profile`
+(or similarly used file):
+
+```
+echo "export ANDROID_HOME=\"$HOME/Library/Android/sdk\"" >> ~/.bash_profile
+```
+
+Accept the SDK licences:
+
+```
+$ANDROID_HOME/tools/bin/sdkmanager --licenses
+```
+
+Download an Android system image:
+
+```
+$ANDROID_HOME/tools/bin/sdkmanager "system-images;android-23;google_apis;x86"
+```
+
+Create an Android Virtual Device (AVD):
+
+```
+$ANDROID_HOME/tools/bin/avdmanager create avd -n "bpk-avd" -k "system-images;android-23;google_apis;x86"
+```
+
+Run the AVD:
+
+```
+$ANDROID_HOME/tools/emulator -avd bpk-avd
+```
+
+You should now have a functioning Android development environment, including a
+virtual device to run things on.
+
+### Storybook
+
+Just like with the web, [Storybook](https://github.com/storybooks/storybook/tree/master/app/react-native) is used to test RN components. Start it with `npm start:native`.
+
+Once Storybook is running, use `npm run ios` or `npm run android` to run storybook
+on a device.
