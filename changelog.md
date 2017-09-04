@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Fixed:**
+- bpk-component-image:
+  - Fixed issue where lazy-loading HOC would not detect scrolling within a div
 
 ## 2017-08-30 - Calendars/Datepickers can now set initally focused date / month
 

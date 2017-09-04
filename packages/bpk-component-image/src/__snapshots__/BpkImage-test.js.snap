@@ -9,7 +9,7 @@ exports[`BpkImage should accept userland className 1`] = `
   }
 >
   <div
-    className="bpk-image userland-classname"
+    className="bpk-image bpk-image--show userland-classname"
     style={
       Object {
         "height": 0,
@@ -123,7 +123,7 @@ exports[`BpkImage should accept userland styling 1`] = `
   }
 >
   <div
-    className="bpk-image"
+    className="bpk-image bpk-image--show"
     style={
       Object {
         "height": 0,
@@ -233,7 +233,7 @@ exports[`BpkImage should have !inView behavior 1`] = `
   style={Object {}}
 >
   <div
-    className="bpk-image"
+    className="bpk-image bpk-image--show"
     style={
       Object {
         "height": 0,
@@ -447,7 +447,7 @@ exports[`BpkImage should render correctly 1`] = `
   style={Object {}}
 >
   <div
-    className="bpk-image"
+    className="bpk-image bpk-image--show"
     style={
       Object {
         "height": 0,
@@ -557,7 +557,7 @@ exports[`BpkImage should support srcSet 1`] = `
   style={Object {}}
 >
   <div
-    className="bpk-image"
+    className="bpk-image bpk-image--show"
     style={
       Object {
         "height": 0,

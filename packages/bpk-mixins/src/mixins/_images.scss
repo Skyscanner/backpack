@@ -33,8 +33,14 @@
   position: relative;
   display: block;
   max-width: 100%;
+  transition: background-color $bpk-duration-base ease-in-out;
   background-color: $bpk-color-gray-100;
   overflow: hidden;
+  transition-delay: $bpk-duration-base;
+}
+
+@mixin bpk-image--show {
+  background-color: transparent;
 }
 
 /// Image content. Should be applied to the image element.

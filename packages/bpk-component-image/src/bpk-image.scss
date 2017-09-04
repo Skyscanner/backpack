@@ -21,6 +21,10 @@
 .bpk-image {
   @include bpk-image;
 
+  &--show {
+    @include bpk-image--show;
+  }
+
   &__image {
     @include bpk-image__content;
 
