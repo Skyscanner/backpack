@@ -66,6 +66,7 @@ npm install [package-name] --save-dev
 | [`bpk-stylesheets`](/packages/bpk-stylesheets) | [![npm version](https://badge.fury.io/js/bpk-stylesheets.svg)](http://badge.fury.io/js/bpk-stylesheets) |
 | [`bpk-svgs`](/packages/bpk-svgs) | [![npm version](https://badge.fury.io/js/bpk-svgs.svg)](http://badge.fury.io/js/bpk-svgs) |
 | [`bpk-tokens`](/packages/bpk-tokens) | [![npm version](https://badge.fury.io/js/bpk-tokens.svg)](http://badge.fury.io/js/bpk-tokens) |
+| [`react-native-bpk-component-text`](/native/packages/react-native-bpk-component-text) | [![npm version](https://badge.fury.io/js/bpk-tokens.svg)](http://badge.fury.io/js/react-native-bpk-component-text) |
 
 ## Contributing
 
