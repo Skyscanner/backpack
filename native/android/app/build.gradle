@@ -94,7 +94,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.skyscanner"
+        applicationId "com.backpack"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1

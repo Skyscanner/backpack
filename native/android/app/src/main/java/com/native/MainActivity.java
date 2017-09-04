@@ -1,4 +1,4 @@
-package com.skyscanner;
+package com.backpack;
 
 import com.facebook.react.ReactActivity;
 

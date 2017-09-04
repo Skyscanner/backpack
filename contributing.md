@@ -259,7 +259,7 @@ brew cask install java
 brew cask install android-studio
 ```
 
-Open it once installed, and a setup wizard will guide you through installing lots of extra things like the Android SDK (choose *Standard* installation). You may be asked for your password during this.
+Open it once installed, and a setup wizard will guide you through installing lots of extra things like the Android SDK (choose *Standard* installation). You may be asked for your password during this. Once that's done, you're free to close Android Studio.
 
 Add an environment variable pointing to the SDK location to your `~/.bash_profile`
 (or similarly used file):
