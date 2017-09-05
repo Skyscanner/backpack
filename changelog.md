@@ -2,11 +2,14 @@
 
 ## UNRELEASED
 
-_Nothing Yet..._
 **Added:**
 - bpk-component-calendar:
 - bpk-component-datepicker:
   - Added `initiallyFocusedDate` prop that allows controlling which date is initially focused when `selectedDate` is not specified. If not supplied `minDate` will receive focus as before.
+
+- react-native-bpk-component-text:
+  - **New component** `BpkText` is Backpack's first React Native component! It can be used on both iOS and Android
+    for displaying text in native apps.
 
 ## 2017-08-30 - New image component
 
@@ -15,9 +18,6 @@ _Nothing Yet..._
   - Added `BpkImage` component
   - Added `withLazyLoading` HOC which allows `BpkImage` to be loaded only when in view
   - Added `withLoadingBehavior` HOC which allows `BpkImage` to be shown only once loaded, displaying a spinner until that point
-- react-native-bpk-component-text
-  - **New component** `BpkText` is Backpack's first React Native component! It can be used on both iOS and Android
-    for adding text to apps.
 
 ## 2017-08-25 - New unlock icon
 
