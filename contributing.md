@@ -272,14 +272,9 @@ Create an Android Virtual Device (AVD):
 $ANDROID_HOME/tools/bin/avdmanager create avd -n "bpk-avd" -k "system-images;android-23;google_apis;x86"
 ```
 
-Run the AVD:
-
-```
-$ANDROID_HOME/tools/emulator -avd bpk-avd
-```
-
 You should now have a functioning Android development environment, including a
-virtual device to run things on.
+virtual device to run things on. You can run the AVD manually with `$ANDROID_HOME/tools/emulator -avd bpk-avd`,
+but `npm run android` will handle this for you, so it's not required.
 
 ### Storybook
 
