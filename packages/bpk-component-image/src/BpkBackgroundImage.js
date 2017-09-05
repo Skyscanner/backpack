@@ -21,7 +21,7 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import { BpkSpinner } from 'bpk-component-spinner';
 
-import STYLES from './bpk-background-image.scss';
+import STYLES from './bpk-image.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -63,13 +63,13 @@ class BpkBackgroundImage extends React.Component {
   render() {
     const { children, className, inView, loading, onLoad, src, imageStyle, imageClassName, ...rest } = this.props;
 
-    const classNames = [getClassName('bpk-background-image')];
-    const spinnerClassNames = [getClassName('bpk-background-image__spinner')];
-    const contentClassNames = [getClassName('bpk-background-image__content')];
+    const classNames = [getClassName('bpk-image')];
+    const spinnerClassNames = [getClassName('bpk-image__spinner')];
+    const contentClassNames = [getClassName('bpk-image__content')];
 
     if (!loading) {
-      spinnerClassNames.push(getClassName('bpk-background-image__spinner--hide'));
-      contentClassNames.push(getClassName('bpk-background-image__content--show'));
+      spinnerClassNames.push(getClassName('bpk--image__hide'));
+      contentClassNames.push(getClassName('bpk-image__shown'));
     }
 
     if (className) {

@@ -46,25 +46,19 @@ class BpkImage extends React.Component {
     const { width, height, altText, className, inView, loading, onLoad, style, ...rest } = this.props;
 
     const classNames = [getClassName('bpk-image')];
-    const imgClassNames = [getClassName('bpk-image__image')];
+    const imgClassNames = [getClassName('bpk-image__image'), getClassName('bpk-image__hidden')];
 
     const aspectRatio = width / height;
     const aspectRatioPc = `${100 / aspectRatio}%`;
 
     if (!loading) {
-      classNames.push(getClassName('bpk-image--show'));
-      spinnerClassNames.push(getClassName('bpk-image__spinner--hide'));
-      imgClassNames.push(getClassName('bpk-image__image--show'));
+      classNames.push(getClassName('bpk-image__no-background'));
+      imgClassNames.push(getClassName('bpk-image__shown'));
     }
 
     if (className) {
       classNames.push(className);
     }
-
-    const imgClassNamesNoScript = [
-      getClassName('bpk-image__image'),
-      getClassName('bpk-image__image--show'),
-    ];
 
     // wraps a div with maxWidth and maxHeight set iff full-width is no required.
     // This ensures that the css / html do not reserve too much spacing
@@ -80,8 +74,8 @@ class BpkImage extends React.Component {
         >
           <ReactCSSTransitionGroup
             transitionName={{
-              leave: getClassName('bpk-image__spinner'),
-              leaveActive: getClassName('bpk-image__spinner--hide'),
+              leave: getClassName('bpk-image__shown'),
+              leaveActive: getClassName('bpk-image__hidden'),
             }}
             transitionEnterTimeout={parseInt(animations.durationBase, 10)}
             transitionLeaveTimeout={parseInt(animations.durationBase, 10)}
@@ -94,7 +88,6 @@ class BpkImage extends React.Component {
           </ReactCSSTransitionGroup>
           {inView &&
             <img
-              opacity={0.5}
               className={imgClassNames.join(' ')}
               alt={altText}
               onLoad={this.onImageLoad}
@@ -104,7 +97,7 @@ class BpkImage extends React.Component {
           {(typeof window === 'undefined' && (!inView || loading)) &&
             <noscript >
               <img
-                className={imgClassNamesNoScript.join(' ')}
+                className={getClassName('bpk-image__image')}
                 alt={altText}
                 {...rest}
               />

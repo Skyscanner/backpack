@@ -2,7 +2,7 @@
 
 exports[`BpkBackgroundImage should have inView behavior 1`] = `
 <div
-  className="bpk-background-image"
+  className="bpk-image"
   style={
     Object {
       "height": "20rem",
@@ -11,7 +11,7 @@ exports[`BpkBackgroundImage should have inView behavior 1`] = `
   }
 >
   <div
-    className="bpk-background-image__spinner bpk-background-image__spinner--hide"
+    className="bpk-image__spinner bpk--image__hide"
   >
     <svg
       className="bpk-spinner"
@@ -98,7 +98,7 @@ exports[`BpkBackgroundImage should have inView behavior 1`] = `
     </svg>
   </div>
   <div
-    className="bpk-background-image__content bpk-background-image__content--show"
+    className="bpk-image__content bpk-image__shown"
     style={
       Object {
         "backgroundImage": "",
@@ -125,7 +125,7 @@ exports[`BpkBackgroundImage should have inView behavior 1`] = `
 
 exports[`BpkBackgroundImage should have loading behavior 1`] = `
 <div
-  className="bpk-background-image"
+  className="bpk-image"
   style={
     Object {
       "height": "20rem",
@@ -134,7 +134,7 @@ exports[`BpkBackgroundImage should have loading behavior 1`] = `
   }
 >
   <div
-    className="bpk-background-image__spinner"
+    className="bpk-image__spinner"
   >
     <svg
       className="bpk-spinner"
@@ -221,7 +221,7 @@ exports[`BpkBackgroundImage should have loading behavior 1`] = `
     </svg>
   </div>
   <div
-    className="bpk-background-image__content"
+    className="bpk-image__content"
     style={
       Object {
         "backgroundImage": "",
@@ -238,7 +238,7 @@ exports[`BpkBackgroundImage should have loading behavior 1`] = `
 
 exports[`BpkBackgroundImage should render correctly 1`] = `
 <div
-  className="bpk-background-image"
+  className="bpk-image"
   style={
     Object {
       "height": "20rem",
@@ -247,7 +247,7 @@ exports[`BpkBackgroundImage should render correctly 1`] = `
   }
 >
   <div
-    className="bpk-background-image__spinner bpk-background-image__spinner--hide"
+    className="bpk-image__spinner bpk--image__hide"
   >
     <svg
       className="bpk-spinner"
@@ -334,7 +334,7 @@ exports[`BpkBackgroundImage should render correctly 1`] = `
     </svg>
   </div>
   <div
-    className="bpk-background-image__content bpk-background-image__content--show"
+    className="bpk-image__content bpk-image__shown"
     style={
       Object {
         "backgroundImage": "url(./path/to/image.jpg)",

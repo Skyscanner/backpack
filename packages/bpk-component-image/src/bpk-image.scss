@@ -22,22 +22,14 @@
   position: relative;
   display: block;
   max-width: 100%;
+  transition: background-color $bpk-duration-base ease-in-out;
   background-color: $bpk-color-gray-100;
   overflow: hidden;
-
-  &--show {
-    @include bpk-image--show;
-  }
+  transition-delay: $bpk-duration-base;
 
   &__image {
     position: absolute;
     width: 100%;
-    transition: opacity $bpk-duration-base ease-in-out;
-    opacity: 0;
-
-    &--show {
-      opacity: 1;
-    }
   }
 
   &__spinner {
@@ -47,11 +39,19 @@
     display: block;
     align-items: center;
     transform: translate(-50%, -50%);
+  }
+
+  &__hidden {
+    transition: opacity $bpk-duration-base ease-in-out;
+    opacity: 0;
+  }
+
+  &__shown {
     transition: opacity $bpk-duration-base ease-in-out;
     opacity: 1;
+  }
 
-    &--hide {
-      opacity: 0;
-    }
+  &__no-background {
+    background-color: transparent;
   }
 }

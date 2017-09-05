@@ -24,6 +24,8 @@ export default function withLazyLoading(Component, document) {
     constructor() {
       super();
 
+      this.scrollEventArgs = null;
+
       this.setInView = this.setInView.bind(this);
       this.removeEventListeners = this.removeEventListeners.bind(this);
       this.checkInView = this.checkInView.bind(this);
@@ -37,7 +39,8 @@ export default function withLazyLoading(Component, document) {
 
     componentDidMount() {
       const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : {};
-      document.addEventListener('scroll', this.checkInView, { capture: true, ...passiveArgs });
+      this.scrollEventArgs = { capture: true, ...passiveArgs };
+      document.addEventListener('scroll', this.checkInView, this.scrollEventArgs);
       document.addEventListener('resize', this.checkInView);
       document.addEventListener('orientationchange', this.checkInView);
       document.addEventListener('fullscreenchange', this.checkInView);
@@ -58,8 +61,7 @@ export default function withLazyLoading(Component, document) {
     }
 
     removeEventListeners() {
-      const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : {};
-      document.removeEventListener('scroll', this.checkInView, { capture: true, ...passiveArgs });
+      document.removeEventListener('scroll', this.checkInView, this.scrollEventArgs);
       document.removeEventListener('resize', this.checkInView);
       document.removeEventListener('orientationchange', this.checkInView);
       document.removeEventListener('fullscreenchange', this.checkInView);
