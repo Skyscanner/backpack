@@ -283,7 +283,7 @@ virtual device to run things on.
 
 ### Storybook
 
-Just like with the web, [Storybook](https://github.com/storybooks/storybook/tree/master/app/react-native) is used to test RN components. Start it with `npm start:native`.
+Just like with the web, [Storybook](https://github.com/storybooks/storybook/tree/master/app/react-native) is used to test RN components. Start it with `npm run native`.
 
 Once Storybook is running, use `npm run ios` or `npm run android` to run storybook
 on a device.
