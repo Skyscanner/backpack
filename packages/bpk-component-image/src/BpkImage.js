@@ -52,11 +52,8 @@ class BpkImage extends React.Component {
     const aspectRatioPc = `${100 / aspectRatio}%`;
 
     if (!loading) {
-<<<<<<< HEAD
       classNames.push(getClassName('bpk-image--show'));
       spinnerClassNames.push(getClassName('bpk-image__spinner--hide'));
-=======
->>>>>>> Add transition group to image loading spinner to remove it from the DOM after the animation
       imgClassNames.push(getClassName('bpk-image__image--show'));
     }
 
