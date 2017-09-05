@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "react-native-bpk-component-text",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "description": "Backpack native documentation.",
   "repository": {
