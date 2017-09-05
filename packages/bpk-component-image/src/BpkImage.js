@@ -20,6 +20,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import { BpkSpinner } from 'bpk-component-spinner';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { animations } from 'bpk-tokens/tokens/base.es6';
 
 import STYLES from './bpk-image.scss';
 
@@ -45,14 +47,16 @@ class BpkImage extends React.Component {
 
     const classNames = [getClassName('bpk-image')];
     const imgClassNames = [getClassName('bpk-image__image')];
-    const spinnerClassNames = [getClassName('bpk-image__spinner')];
 
     const aspectRatio = width / height;
     const aspectRatioPc = `${100 / aspectRatio}%`;
 
     if (!loading) {
+<<<<<<< HEAD
       classNames.push(getClassName('bpk-image--show'));
       spinnerClassNames.push(getClassName('bpk-image__spinner--hide'));
+=======
+>>>>>>> Add transition group to image loading spinner to remove it from the DOM after the animation
       imgClassNames.push(getClassName('bpk-image__image--show'));
     }
 
@@ -77,11 +81,23 @@ class BpkImage extends React.Component {
           style={{ height: 0, paddingBottom: aspectRatioPc }}
           className={classNames.join(' ')}
         >
-          <div className={spinnerClassNames.join(' ')}>
-            <BpkSpinner />
-          </div>
+          <ReactCSSTransitionGroup
+            transitionName={{
+              leave: getClassName('bpk-image__spinner'),
+              leaveActive: getClassName('bpk-image__spinner--hide'),
+            }}
+            transitionEnterTimeout={parseInt(animations.durationBase, 10)}
+            transitionLeaveTimeout={parseInt(animations.durationBase, 10)}
+          >
+            {loading &&
+              <div className={getClassName('bpk-image__spinner')}>
+                <BpkSpinner />
+              </div>
+            }
+          </ReactCSSTransitionGroup>
           {inView &&
             <img
+              opacity={0.5}
               className={imgClassNames.join(' ')}
               alt={altText}
               onLoad={this.onImageLoad}
