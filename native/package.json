@@ -9,10 +9,6 @@
     "test": "jest",
     "storybook": "storybook start -p 7007"
   },
-  "dependencies": {
-    "react": "16.0.0-alpha.12",
-    "react-native": "0.47.2"
-  },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.6",
     "@storybook/addon-links": "^3.2.6",
@@ -23,7 +19,9 @@
     "jest": "20.0.4",
     "prop-types": "^15.5.10",
     "react-dom": "16.0.0-alpha.12",
-    "react-test-renderer": "16.0.0-alpha.12"
+    "react-test-renderer": "16.0.0-alpha.12",
+    "react": "16.0.0-alpha.12",
+    "react-native": "0.47.2"
   },
   "jest": {
     "preset": "react-native",
