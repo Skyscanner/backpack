@@ -263,17 +263,17 @@ $ANDROID_HOME/tools/bin/sdkmanager --licenses
 Download an Android system image:
 
 ```
-$ANDROID_HOME/tools/bin/sdkmanager "system-images;android-23;google_apis;x86"
+$ANDROID_HOME/tools/bin/sdkmanager "system-images;android-24;google_apis;x86"
 ```
 
 Create an Android Virtual Device (AVD):
 
 ```
-$ANDROID_HOME/tools/bin/avdmanager create avd -n "bpk-avd" -k "system-images;android-23;google_apis;x86"
+$ANDROID_HOME/tools/bin/avdmanager create avd --name "bpk-avd" --package "system-images;android-24;google_apis;x86" --device "Nexus 5X"
 ```
 
 You should now have a functioning Android development environment, including a
-virtual device to run things on. You can run the AVD manually with `$ANDROID_HOME/tools/emulator -avd bpk-avd`,
+virtual device to run things on. You can run the AVD manually with `$ANDROID_HOME/tools/emulator -avd bpk-avd -dpi-device 420 -skin 1080x1920`,
 but `npm run android` will handle this for you, so it's not required.
 
 ### Storybook
