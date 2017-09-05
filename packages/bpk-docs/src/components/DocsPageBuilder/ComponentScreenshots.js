@@ -29,21 +29,33 @@ const getClassName = cssModules(STYLES);
 const documentIfExists = typeof window !== 'undefined' ? document : null;
 const LazyLoadingImage = withLoadingBehavior(withLazyLoading(BpkImage, documentIfExists));
 
-const ComponentScreenshot = ({ title, ...rest }) => (
-  <div key={title} className={getClassName('bpkdocs-component-screenshots__item')}>
-    <dt className={getClassName('bpkdocs-component-screenshots__item-title')}>
-      <BpkText tagName="h3">{title}</BpkText>
-    </dt>
-    <dd className={getClassName('bpkdocs-component-screenshots__item-image-container')}>
-      <BpkPanel>
-        <LazyLoadingImage {...rest} />
-      </BpkPanel>
-    </dd>
-  </div>
-);
+let counter = 0;
+const generateId = (title = '') => {
+  counter += 1;
+  return `${title.toLowerCase().replace(' ', '-')}-${counter}`;
+};
+
+const ComponentScreenshot = ({ title, subText, ...rest }) => {
+  const subTextId = generateId(title);
+
+  return (
+    <div key={title} className={getClassName('bpkdocs-component-screenshots__item')}>
+      <dt className={getClassName('bpkdocs-component-screenshots__item-title')}>
+        <BpkText tagName="h3">{title}</BpkText>
+      </dt>
+      <dd className={getClassName('bpkdocs-component-screenshots__item-image-container')}>
+        <BpkPanel>
+          <LazyLoadingImage {...rest} aria-describedby={subTextId} />
+        </BpkPanel>
+        <BpkText id={subTextId} textStyle="xs">{subText}</BpkText>
+      </dd>
+    </div>
+  );
+};
 
 ComponentScreenshot.propTypes = {
   title: PropTypes.string.isRequired,
+  subText: PropTypes.string.isRequired,
 };
 
 const ComponentScreenshots = ({ screenshots, ...rest }) => (
@@ -55,11 +67,12 @@ const ComponentScreenshots = ({ screenshots, ...rest }) => (
 ComponentScreenshots.propTypes = {
   screenshots: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string,
-      src: PropTypes.string,
-      width: PropTypes.number,
-      height: PropTypes.number,
-      altText: PropTypes.string,
+      title: PropTypes.string.isRequired,
+      src: PropTypes.string.isRequired,
+      width: PropTypes.number.isRequired,
+      height: PropTypes.number.isRequired,
+      altText: PropTypes.string.isRequired,
+      subText: PropTypes.string.isRequired,
     }),
   ),
 };

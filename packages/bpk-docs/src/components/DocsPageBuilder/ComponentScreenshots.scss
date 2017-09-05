@@ -30,7 +30,7 @@
     margin-bottom: $bpk-spacing-md;
 
     @include bpk-breakpoint-above-mobile {
-      width: calc(100% - #{$bpk-spacing-base});
+      width: calc(50% - #{$bpk-spacing-base});
       margin-right: $bpk-spacing-base;
 
       @include bpk-rtl {

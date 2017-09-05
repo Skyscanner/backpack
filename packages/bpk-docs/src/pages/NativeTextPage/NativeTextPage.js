@@ -20,10 +20,10 @@ import React from 'react';
 import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-text/readme.md';
 import iosScreenshot from 'react-native-bpk-component-text/screenshots/ios.png';
-import androidScreenshot from 'react-native-bpk-component-text/screenshots/android.png';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
+import DocsPageBuilder from './../../components/DocsPageBuilder';
+import androidEmpty from './../../static/android_empty.svg';
 
 const reactNativeUrl = 'https://facebook.github.io/react-native/docs/text.html';
 
@@ -38,13 +38,15 @@ const components = [
         height: 1334,
         src: `/${iosScreenshot}`,
         altText: 'iOS Default Text Component',
+        subText: '(iPhone 7 Simulator)',
       },
       {
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidScreenshot}`,
+        src: `/${androidEmpty}`,
         altText: 'Android Default Text Component',
+        subText: '(Google Pixel Emulator)',
       },
     ],
   },
@@ -54,9 +56,10 @@ const NativeTextPage = () => <DocsPageBuilder
   title="Text"
   blurb={[
     <Paragraph>
-      The Backpack text component encapsulates 6 different text styles tailored specifically for both Android and iOS.
-      It&#39;s a wrapper around the React Native <BpkLink href={reactNativeUrl}>Text component</BpkLink> therefore it
-      supports all the same behaviours and properties.
+      The Backpack text component encapsulates 6 different text styles tailored specifically for both iOS and (soon to
+      be) Android. It&#39;s a wrapper around the React
+      Native <BpkLink href={reactNativeUrl}>Text component</BpkLink>, therefore it supports all the same behaviours and
+      properties.
     </Paragraph>,
   ]}
   components={components}

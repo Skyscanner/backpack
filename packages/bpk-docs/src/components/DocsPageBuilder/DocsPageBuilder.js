@@ -171,11 +171,12 @@ DocsPageBuilder.propTypes = {
       blurb: contentShape,
       screenshots: PropTypes.arrayOf(
         PropTypes.shape({
-          title: PropTypes.string,
-          src: PropTypes.string,
-          width: PropTypes.number,
-          height: PropTypes.number,
-          altText: PropTypes.string,
+          title: PropTypes.string.isRequired,
+          src: PropTypes.string.isRequired,
+          width: PropTypes.number.isRequired,
+          height: PropTypes.number.isRequired,
+          altText: PropTypes.string.isRequired,
+          subText: PropTypes.string.isRequired,
         }),
       ),
       examples: PropTypes.arrayOf(childrenPropType),
