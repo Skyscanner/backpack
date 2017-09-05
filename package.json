@@ -32,7 +32,7 @@
     "docs:dist": "npm run clean:dist && NODE_ENV=production webpack && npm run sassdoc",
     "docs:dist:gzip": "npm run docs:dist && gulp",
     "start": "npm run build && npm run storybook",
-    "start:native": "(cd ./native && npm run storybook)",
+    "native": "(cd ./native && npm run storybook)",
     "test": "npm run lint && npm run jest && npm run test:native",
     "test:native": "(cd ./native && npm test)",
     "ios": "(cd ./native && npm run ios)",
