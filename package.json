@@ -13,7 +13,8 @@
     "clean:dist": "rm -rf dist",
     "clean:lerna": "lerna clean --yes",
     "clean:node_modules": "rm -rf node_modules",
-    "clean": "npm run clean:dist && npm run clean:lerna && npm run clean:node_modules",
+    "clean:node_modules_native": "(cd ./native && rm -rf node_modules)",
+    "clean": "npm run clean:dist && npm run clean:lerna && npm run clean:node_modules && npm run clean:node_modules_native",
     "lint:scss": "stylelint 'packages/**/*.scss' --syntax scss",
     "lint:scss:fix": "stylefmt",
     "lint:js": "eslint . .storybook --ext .js,.jsx",
@@ -31,7 +32,11 @@
     "docs:dist": "npm run clean:dist && NODE_ENV=production webpack && npm run sassdoc",
     "docs:dist:gzip": "npm run docs:dist && gulp",
     "start": "npm run build && npm run storybook",
-    "test": "npm run lint && npm run jest",
+    "native": "(cd ./native && npm run storybook)",
+    "test": "npm run lint && npm run jest && npm run test:native",
+    "test:native": "(cd ./native && npm test)",
+    "ios": "(cd ./native && npm run ios)",
+    "android": "(cd ./native && npm run android)",
     "check-owners": "npm whoami && grep -E $(npm whoami) NPM_OWNERS && node scripts/npm/check-owners.js",
     "publish": "npm run check-owners && npm run build && git pull --rebase && npm run test && lerna publish",
     "danger": "danger"
@@ -112,7 +117,10 @@
   },
   "jest": {
     "verbose": true,
-    "testRegex": "(packages|native)/.*-test\\.js$",
+    "testRegex": "packages/.*-test\\.js$",
+    "testPathIgnorePatterns": [
+      "native/"
+    ],
     "transformIgnorePatterns": [
       "node_modules/(?!bpk)"
     ],

@@ -3,6 +3,6 @@
   "version": "independent",
   "packages": [
     "packages/*",
-    "native/*"
+    "native/packages/*"
   ]
 }

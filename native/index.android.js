@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
- import BpkText from './src/BpkText';
+import { AppRegistry } from 'react-native';
 
- export default BpkText;
+import App from './app/index';
+
+AppRegistry.registerComponent('native', () => App);
