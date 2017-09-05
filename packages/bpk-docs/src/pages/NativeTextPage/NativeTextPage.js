@@ -20,10 +20,10 @@ import React from 'react';
 import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-text/readme.md';
 import iosScreenshot from 'react-native-bpk-component-text/screenshots/ios.png';
+import androidEmpty from 'react-native-bpk-component-text/screenshots/android_empty.svg';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import androidEmpty from './../../static/android_empty.svg';
 
 const reactNativeUrl = 'https://facebook.github.io/react-native/docs/text.html';
 
