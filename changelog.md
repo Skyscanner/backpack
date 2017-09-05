@@ -2,14 +2,14 @@
 
 ## UNRELEASED
 
-**Added:**
-- bpk-component-calendar:
-- bpk-component-datepicker:
-  - Added `initiallyFocusedDate` prop that allows controlling which date is initially focused when `selectedDate` is not specified. If not supplied `minDate` will receive focus as before.
+_Nothing yet..._
 
-- react-native-bpk-component-text:
-  - **New component** `BpkText` is Backpack's first React Native component! It can be used on both iOS and Android
-    for displaying text in native apps.
+## 2017-08-30 - Calendars/Datepickers can now set initally focused date / month
+
+**Added:**
+ - bpk-component-calendar: 4.0.17 => 4.1.0
+ - bpk-component-datepicker: 7.0.18 => 7.1.0
+  - Added `initiallyFocusedDate` prop that allows controlling which date is initially focused when `selectedDate` is not specified. If not supplied `minDate` will receive focus as before.
 
 ## 2017-08-30 - New image component
 
