@@ -5,6 +5,7 @@
 **Fixed:**
 - bpk-component-image:
   - Fixed issue where lazy-loading HOC would not detect scrolling within a div
+  - Image background color will now be removed after the image is shown
 
 ## 2017-08-30 - Calendars/Datepickers can now set initally focused date / month
 
