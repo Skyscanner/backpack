@@ -25,7 +25,6 @@ import redirects from './../constants/redirect-routes';
 import DefaultLayout from './../layouts/DefaultLayout';
 import UsingLayout from './../layouts/UsingLayout';
 import DocsLayout from './../layouts/DocsLayout';
-import NativeLayout from './../layouts/NativeLayout';
 import PatternsLayout from './../layouts/PatternsLayout';
 
 import HomePage from './../pages/HomePage';
@@ -142,15 +141,14 @@ const Routes = (
         <Route path={ROUTES.BARCHARTS} component={BarchartsPage} />
         <Route path={ROUTES.STAR_RATING} component={StarRatingPage} />
       </Route>
+      <Route path={ROUTES.NATIVE}>
+        <IndexRedirect to={ROUTES.NATIVE_TEXT} />
+        <Route path={ROUTES.NATIVE_TEXT} component={NativeTextPage} />
+      </Route>
       <Route path={ROUTES.UTILITIES}>
         <IndexRedirect to={ROUTES.ALIGNMENT} />
         <Route path={ROUTES.ALIGNMENT} component={AlignmentPage} />
       </Route>
-    </Route>
-
-    <Route path={ROUTES.NATIVE} component={NativeLayout}>
-      <IndexRedirect to={ROUTES.NATIVE_TEXT} />
-      <Route path={ROUTES.NATIVE_TEXT} component={NativeTextPage} />
     </Route>
 
     <Route path={ROUTES.PATTERNS} component={PatternsLayout}>

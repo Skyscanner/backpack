@@ -85,6 +85,13 @@ const links = [
     ],
   },
   {
+    id: 'NATIVE',
+    category: 'Native',
+    links: [
+      { id: 'NATIVE_TEXT', route: routes.NATIVE_TEXT, children: 'Text' },
+    ],
+  },
+  {
     id: 'UTILITIES',
     category: 'Utilities',
     links: [

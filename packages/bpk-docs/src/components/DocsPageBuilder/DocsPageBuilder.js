@@ -27,10 +27,11 @@ import { BpkList, BpkListItem } from 'bpk-component-list';
 import BpkContentContainer from 'bpk-component-content-container';
 import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table';
 
-import SassdocLink from './../../components/SassdocLink';
-import PresentationBlock from './../../components/PresentationBlock';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
+import SassdocLink from './../../components/SassdocLink';
+import PresentationBlock from './../../components/PresentationBlock';
+import ComponentScreenshots from './ComponentScreenshots';
 import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper';
 
 const flatten = Children.toArray;
@@ -49,7 +50,6 @@ const toNodes = (children) => {
 
   return isString(children) ? [<Paragraph>{children}</Paragraph>] : children;
 };
-
 
 const markdownToHTML = readmeString => marked(readmeString
   .replace(/^#.*$/m, '') // remove first h1
@@ -80,6 +80,7 @@ const toTokenTable = tokens => (
 );
 
 const toSassdocLink = props => <SassdocLink sassdocId={props.sassdocId} category={props.category} />;
+
 toSassdocLink.propTypes = {
   sassdocId: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
@@ -88,8 +89,12 @@ toSassdocLink.propTypes = {
 const ComponentExample = (component) => {
   const heading = <Heading id={component.id} level="h2">{component.title}</Heading>;
 
-  const examples = component.examples.length
+  const examples = (component.examples || []).length
     ? <PresentationBlock>{flatten(component.examples)}</PresentationBlock>
+    : null;
+
+  const screenshots = (component.screenshots || []).length
+    ? <ComponentScreenshots screenshots={component.screenshots} />
     : null;
 
   const blurb = component.blurb ? toNodes(component.blurb) : null;
@@ -106,7 +111,7 @@ const ComponentExample = (component) => {
     category: component.title,
   }) : null;
 
-  return [heading, blurb, tokenMap, examples, readme, sassdocLink];
+  return [heading, blurb, tokenMap, screenshots, examples, readme, sassdocLink];
 };
 
 const CustomSection = section => [
@@ -164,6 +169,16 @@ DocsPageBuilder.propTypes = {
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       blurb: contentShape,
+      screenshots: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          src: PropTypes.string.isRequired,
+          width: PropTypes.number.isRequired,
+          height: PropTypes.number.isRequired,
+          altText: PropTypes.string.isRequired,
+          subText: PropTypes.string.isRequired,
+        }),
+      ),
       examples: PropTypes.arrayOf(childrenPropType),
       readme: PropTypes.string,
       tokenMap: PropTypes.object,
@@ -186,6 +201,7 @@ DocsPageBuilder.propTypes = {
 DocsPageBuilder.defaultProps = {
   blurb: null,
   components: [],
+  screenshots: [],
   showMenu: true,
   readme: null,
   tokenMap: null,
