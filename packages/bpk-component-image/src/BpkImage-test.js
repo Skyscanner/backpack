@@ -73,7 +73,7 @@ describe('BpkImage', () => {
   it('should have !inView behavior', () => {
     const tree = renderer.create(
       <BpkImage
-        inView={false}
+        position={{ inView: false }}
         altText="image description"
         width={816}
         height={544}

@@ -36,9 +36,9 @@ export default () => (
 
 ### withLazyLoading
 
-`withLazyLoading` is a HOC which adds an `inView` prop to components.
+`withLazyLoading` is a HOC which adds an `included` prop to components.
 This boolean prop can be used to determine if the component has been brought into view within a user's browser window.
-The `BpkImage` component will only load images if `inView` is true.
+The `BpkImage` component will only load images if `included` is true.
 Using this HOC can make pages load faster and prevent data being used to display images which are never seen by the user.
 
 ```js
@@ -100,6 +100,6 @@ export default () => (
 | src              | string    | true     | -                   |
 | width            | number    | true     | -                   |
 | className        | string    | false    | null                |
-| inView           | bool      | false    | true                |
+| included         | bool      | false    | true                |
 | loading          | bool      | false    | false               |
 | onLoad           | func      | false    | null                |

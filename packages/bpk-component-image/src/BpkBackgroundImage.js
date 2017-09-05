@@ -36,13 +36,13 @@ class BpkBackgroundImage extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.inView) {
+    if (this.props.included) {
       this.startImageLoad();
     }
   }
 
   componentWillReceiveProps(newProps) {
-    if (!this.props.inView && newProps.inView) {
+    if (!this.props.included && newProps.included) {
       this.startImageLoad();
     }
   }
@@ -61,7 +61,9 @@ class BpkBackgroundImage extends React.Component {
   }
 
   render() {
-    const { children, className, inView, loading, onLoad, src, imageStyle, imageClassName, ...rest } = this.props;
+    const {
+      children, className, included, loading, onLoad, src, imageStyle, imageClassName, ...rest
+    } = this.props;
 
     const classNames = [getClassName('bpk-background-image')];
     const spinnerClassNames = [getClassName('bpk-background-image__spinner')];
@@ -95,11 +97,11 @@ class BpkBackgroundImage extends React.Component {
         </div>
         <div
           className={contentClassNames.join(' ')}
-          style={{ backgroundImage: !inView || loading ? '' : `url(${src})`, ...imageStyle }}
+          style={{ backgroundImage: !included || loading ? '' : `url(${src})`, ...imageStyle }}
         >
           {!loading && children}
         </div>
-        {(typeof window === 'undefined' && (!inView || loading)) &&
+        {(typeof window === 'undefined' && (!included || loading)) &&
           <noscript >
             <div
               className={contentClassNamesNoScript.join(' ')}
@@ -120,7 +122,7 @@ BpkBackgroundImage.propTypes = {
   className: PropTypes.string,
   imageClassName: PropTypes.string,
   imageStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  inView: PropTypes.bool,
+  included: PropTypes.bool,
   loading: PropTypes.bool,
   onLoad: PropTypes.func,
 };
@@ -130,7 +132,7 @@ BpkBackgroundImage.defaultProps = {
   className: null,
   imageClassName: null,
   imageStyle: null,
-  inView: true,
+  included: true,
   loading: false,
   onLoad: null,
 };

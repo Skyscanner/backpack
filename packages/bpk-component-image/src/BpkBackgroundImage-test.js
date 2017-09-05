@@ -57,10 +57,10 @@ describe('BpkBackgroundImage', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('should have inView behavior', () => {
+  it('should have !included behavior', () => {
     const tree = renderer.create(
       <BpkBackgroundImage
-        inView={false}
+        included={false}
         style={{
           width: '100%',
           height: '20rem',
