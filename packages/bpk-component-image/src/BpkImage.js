@@ -51,6 +51,7 @@ class BpkImage extends React.Component {
     const aspectRatioPc = `${100 / aspectRatio}%`;
 
     if (!loading) {
+      classNames.push(getClassName('bpk-image--show'));
       spinnerClassNames.push(getClassName('bpk-image__spinner--hide'));
       imgClassNames.push(getClassName('bpk-image__image--show'));
     }

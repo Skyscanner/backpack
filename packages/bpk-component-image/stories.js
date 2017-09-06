@@ -20,6 +20,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import BpkText from 'bpk-component-text';
+import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 import BpkImage, { BpkBackgroundImage, withLazyLoading, withLoadingBehavior } from './index';
 
 const image = 'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
@@ -87,6 +88,35 @@ storiesOf('bpk-component-image', module)
       style={{ width: 612, height: 408 }}
       src={image}
     />
+  ))
+  .add('Within a scroll div', () => (
+    <BpkMobileScrollContainer >
+      <div
+        style={{ display: 'flex' }}
+      >
+        <FadingLazyLoadedImage
+          altText="image"
+          width={612}
+          height={408}
+          style={{ width: 612, height: 408 }}
+          src={image}
+        />
+        <FadingLazyLoadedImage
+          altText="image"
+          width={612}
+          height={408}
+          style={{ width: 612, height: 408 }}
+          src={image}
+        />
+        <FadingLazyLoadedImage
+          altText="image"
+          width={612}
+          height={408}
+          style={{ width: 612, height: 408 }}
+          src={image}
+        />
+      </div>
+    </BpkMobileScrollContainer>
   ))
   .add('Background Image', () => (
     <BpkBackgroundImage
