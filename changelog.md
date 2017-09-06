@@ -1,9 +1,12 @@
 # Backpack changelog
 
 ## UNRELEASED
+_Nothing Yet!_
+
+## 2017-09-06 - Bug fixes in BpkImage
 
 **Fixed:**
-- bpk-component-image:
+- bpk-component-image: 1.0.0 => 1.0.1
   - Fixed issue where lazy-loading HOC would not detect scrolling within a div
   - Image background color will now be removed after the image is shown
 
