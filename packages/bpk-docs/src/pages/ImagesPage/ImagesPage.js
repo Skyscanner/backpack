@@ -35,6 +35,7 @@ const image2 = 'https://content.skyscnr.com/8bd0d1b67b1bda63e5567a4c402402f2/ice
 const image3 = 'https://content.skyscnr.com/200946ddb82b7c026e6e186a7037b1f8/machu-picchu.jpg';
 const image4 = 'https://content.skyscnr.com/8a8ac17b591b61e6fe5d8f63414561cd/amsterdam-the-netherlands.jpg';
 const image5 = 'https://content.skyscnr.com/6c8f0e633bde70798a9d6f0a26cb6016/andalsnes-norway.jpg';
+const svgImage = 'https://content.skyscnr.com/e0d1dd10fca75cc17e8df5b0b454abb1/pinyin-image.svg';
 
 const components = [
   {
@@ -109,7 +110,7 @@ const components = [
   },
   {
     id: 'withLazyLoading',
-    title: 'Use with Lazy Loading',
+    title: 'Use with lazy loading',
     examples: [
       <LazyLoadedImage
         altText="Mountain"
@@ -133,7 +134,7 @@ const components = [
   },
   {
     id: 'withLazyLoadingAndAnimation',
-    title: 'Use with Lazy Loading and animation',
+    title: 'Use with lazy loading and animation',
     examples: [
       <FadingLazyLoadedImage
         altText="Shop"
@@ -152,6 +153,18 @@ const components = [
         sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 48rem,
           (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 18rem),
           calc(100vw - 4.5rem)`}
+      />,
+    ],
+  },
+  {
+    id: 'svgWithLazyLoadingAndAnimation',
+    title: 'An SVG with lazy loading and animation',
+    examples: [
+      <FadingLazyLoadedImage
+        altText="Shop"
+        width={816}
+        height={544}
+        src={svgImage}
       />,
     ],
   },

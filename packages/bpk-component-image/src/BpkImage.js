@@ -20,6 +20,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import { BpkSpinner } from 'bpk-component-spinner';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { animations } from 'bpk-tokens/tokens/base.es6';
 
 import STYLES from './bpk-image.scss';
 
@@ -44,26 +46,19 @@ class BpkImage extends React.Component {
     const { width, height, altText, className, inView, loading, onLoad, style, ...rest } = this.props;
 
     const classNames = [getClassName('bpk-image')];
-    const imgClassNames = [getClassName('bpk-image__image')];
-    const spinnerClassNames = [getClassName('bpk-image__spinner')];
+    const imgClassNames = [getClassName('bpk-image__image'), getClassName('bpk-image__hidden')];
 
     const aspectRatio = width / height;
     const aspectRatioPc = `${100 / aspectRatio}%`;
 
     if (!loading) {
-      classNames.push(getClassName('bpk-image--show'));
-      spinnerClassNames.push(getClassName('bpk-image__spinner--hide'));
-      imgClassNames.push(getClassName('bpk-image__image--show'));
+      classNames.push(getClassName('bpk-image__no-background'));
+      imgClassNames.push(getClassName('bpk-image__shown'));
     }
 
     if (className) {
       classNames.push(className);
     }
-
-    const imgClassNamesNoScript = [
-      getClassName('bpk-image__image'),
-      getClassName('bpk-image__image--show'),
-    ];
 
     // wraps a div with maxWidth and maxHeight set iff full-width is no required.
     // This ensures that the css / html do not reserve too much spacing
@@ -77,9 +72,20 @@ class BpkImage extends React.Component {
           style={{ height: 0, paddingBottom: aspectRatioPc }}
           className={classNames.join(' ')}
         >
-          <div className={spinnerClassNames.join(' ')}>
-            <BpkSpinner />
-          </div>
+          <ReactCSSTransitionGroup
+            transitionName={{
+              leave: getClassName('bpk-image__shown'),
+              leaveActive: getClassName('bpk-image__hidden'),
+            }}
+            transitionEnterTimeout={parseInt(animations.durationBase, 10)}
+            transitionLeaveTimeout={parseInt(animations.durationBase, 10)}
+          >
+            {loading &&
+              <div className={getClassName('bpk-image__spinner')}>
+                <BpkSpinner />
+              </div>
+            }
+          </ReactCSSTransitionGroup>
           {inView &&
             <img
               className={imgClassNames.join(' ')}
@@ -91,7 +97,7 @@ class BpkImage extends React.Component {
           {(typeof window === 'undefined' && (!inView || loading)) &&
             <noscript >
               <img
-                className={imgClassNamesNoScript.join(' ')}
+                className={getClassName('bpk-image__image')}
                 alt={altText}
                 {...rest}
               />
