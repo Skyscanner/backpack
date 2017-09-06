@@ -16,9 +16,24 @@
  * limitations under the License.
  */
 
-import BpkChip from './src/BpkChip';
-import BpkChipInput from './src/BpkChipInput';
+@import '~bpk-mixins/index';
 
-export default BpkChip;
-export { BpkChipInput };
+.bpk-chip-input {
+  @include bpk-chip-input;
 
+  &--focused {
+    @include bpk-chip-input--focused;
+  }
+
+  &__chip {
+    @include bpk-chip-input__chip;
+  }
+
+  &__input {
+    @include bpk-chip-input__input;
+
+    &--placeholder {
+      @include bpk-chip-input__input--placeholder;
+    }
+  }
+}

@@ -23,6 +23,10 @@
   background: $bpk-color-gray-100;
 }
 
+@mixin bpk-chip--selected {
+  background: $bpk-color-gray-300;
+}
+
 @mixin bpk-chip__label {
   display: inline-block;
   margin-top: 0;
@@ -34,4 +38,36 @@
     margin-right: 0;
     margin-left: $bpk-spacing-xs;
   }
+}
+
+@mixin bpk-chip-input {
+  display: flex;
+  width: 100%;
+  padding: 0 0 $bpk-spacing-xs $bpk-spacing-xs;
+  flex-flow: row wrap;
+  border: $bpk-input-border;
+  border-radius: $bpk-input-border-radius;
+  background: $bpk-input-background;
+  color: $bpk-input-color;
+}
+
+@mixin bpk-chip-input--focused {
+  outline: -webkit-focus-ring-color auto .3125rem;
+}
+
+@mixin bpk-chip-input__chip {
+  margin: $bpk-spacing-xs $bpk-spacing-xs 0 0;
+}
+
+@mixin bpk-chip-input__input {
+  width: 250;
+  max-width: 100%;
+  margin: $bpk-spacing-xs $bpk-spacing-xs 0 0;
+  flex: 1 0 auto;
+  border: 0;
+  outline: none !important; // stylelint-disable declaration-no-important
+}
+
+@mixin bpk-chip-input__input--placeholder {
+  color: $bpk-color-gray-300;
 }

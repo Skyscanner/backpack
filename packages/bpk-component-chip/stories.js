@@ -19,9 +19,22 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
 
-import BpkChip from './index';
+import BpkChip, { BpkChipInput } from './index';
 
 storiesOf('bpk-component-chip', module)
   .add('Default', () => (
     <BpkChip onClose={action('Chip closing!')} >This is a chip!</BpkChip>
+  ))
+  .add('Chip Input', () => (
+    <BpkChipInput
+      values={['Lorem', 'ipsum', 'dolor', 'sit', 'amet']}
+      selectedColor="#afafaf"
+      selectedItem="dolor"
+      placeholderText="Add a chip..."
+      textInputValue=""
+      onTextInputChanged={newValue => action(`text input changed to ${newValue}`)}
+      onSelectionChanged={newValue => action(`selection changed to ${newValue}`)}
+      valueAdded={newValue => action(`${newValue} added`)}
+      valueRemoved={removedValue => action(`${removedValue} removed`)}
+    />
   ));
