@@ -25,7 +25,6 @@ import redirects from './../constants/redirect-routes';
 import DefaultLayout from './../layouts/DefaultLayout';
 import UsingLayout from './../layouts/UsingLayout';
 import DocsLayout from './../layouts/DocsLayout';
-import PatternsLayout from './../layouts/PatternsLayout';
 
 import HomePage from './../pages/HomePage';
 
@@ -73,10 +72,6 @@ import StarRatingPage from './../pages/StarRatingPage';
 import AlignmentPage from './../pages/AlignmentPage';
 
 import NativeTextPage from './../pages/NativeTextPage';
-
-import VerticalRhythmPage from './../pages/VerticalRhythmPage';
-import StatefulnessPage from './../pages/StatefulnessPage';
-import UnitsPage from './../pages/UnitsPage';
 
 import ResourcesPage from './../pages/ResourcesPage';
 
@@ -149,13 +144,6 @@ const Routes = (
         <IndexRedirect to={ROUTES.ALIGNMENT} />
         <Route path={ROUTES.ALIGNMENT} component={AlignmentPage} />
       </Route>
-    </Route>
-
-    <Route path={ROUTES.PATTERNS} component={PatternsLayout}>
-      <IndexRedirect to={ROUTES.VERTICAL_RHYTHM} />
-      <Route path={ROUTES.VERTICAL_RHYTHM} component={VerticalRhythmPage} />
-      <Route path={ROUTES.STATEFULNESS} component={StatefulnessPage} />
-      <Route path={ROUTES.UNITS} component={UnitsPage} />
     </Route>
 
     <Route path={ROUTES.RESOURCES} component={ResourcesPage} iconsSvgs={iconsSvgs} />

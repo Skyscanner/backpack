@@ -22,7 +22,6 @@ export const HOME = '/';
 export const USING_BACKPACK = '/using';
 export const STYLE = '/style';
 export const COMPONENTS = '/components';
-export const PATTERNS = '/patterns';
 export const RESOURCES = '/resources';
 
 // using/
@@ -78,11 +77,6 @@ export const NATIVE_TEXT = '/components/native/text';
 // components/utilities/
 export const UTILITIES = '/components/utilities';
 export const ALIGNMENT = '/components/utilities/alignment';
-
-// patterns/
-export const VERTICAL_RHYTHM = '/patterns/vertical-rhythm';
-export const STATEFULNESS = '/patterns/statefulness';
-export const UNITS = '/patterns/units';
 
 // MISC
 export const GRID_COLUMN_DEMO = '/grid-column-demo';
