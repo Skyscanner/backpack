@@ -1,21 +1,21 @@
 /*
- * 
+ *
  * Backpack - Skyscanner's Design System
- * 
+ *
  * Copyright 2017 Skyscanner Ltd
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  */
 
 module.exports = {
@@ -70,6 +70,16 @@ module.exports = {
   colorYellow700: "rgb(225, 165, 0)",
   colorYellow800: "rgb(194, 142, 0)",
   colorYellow900: "rgb(156, 114, 0)",
+  colorPink50: "rgb(253, 228, 237)",
+  colorPink100: "rgb(255, 191, 215)",
+  colorPink200: "rgb(255, 148, 187)",
+  colorPink300: "rgb(255, 115, 166)",
+  colorPink400: "rgb(255, 97, 155)",
+  colorPink500: "rgb(250, 72, 138)",
+  colorPink600: "rgb(217, 43, 107)",
+  colorPink700: "rgb(197, 15, 82)",
+  colorPink800: "rgb(176, 12, 72)",
+  colorPink900: "rgb(148, 5, 58)",
   spacingSm: 4,
   spacingMd: 8,
   spacingBase: 16,
@@ -105,5 +115,6 @@ module.exports = {
   textXlLineHeight: 28,
   textXxlFontSize: 24,
   textXxlFontWeight: "400",
-  textXxlLineHeight: 32
+  textXxlLineHeight: 32,
+  textEmphasizedFontWeight: "500"
 };

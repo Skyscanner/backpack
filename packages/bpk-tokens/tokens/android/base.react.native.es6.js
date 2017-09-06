@@ -1,21 +1,21 @@
 /*
- * 
+ *
  * Backpack - Skyscanner's Design System
- * 
+ *
  * Copyright 2017 Skyscanner Ltd
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  */
 export const colorWhite = "rgb(255, 255, 255)";
 export const colorBlue50 = "rgb(225, 244, 248)";
@@ -68,6 +68,16 @@ export const colorYellow600 = "rgb(240, 176, 0)";
 export const colorYellow700 = "rgb(225, 165, 0)";
 export const colorYellow800 = "rgb(194, 142, 0)";
 export const colorYellow900 = "rgb(156, 114, 0)";
+export const colorPink50 = "rgb(253, 228, 237)";
+export const colorPink100 = "rgb(255, 191, 215)";
+export const colorPink200 = "rgb(255, 148, 187)";
+export const colorPink300 = "rgb(255, 115, 166)";
+export const colorPink400 = "rgb(255, 97, 155)";
+export const colorPink500 = "rgb(250, 72, 138)";
+export const colorPink600 = "rgb(217, 43, 107)";
+export const colorPink700 = "rgb(197, 15, 82)";
+export const colorPink800 = "rgb(176, 12, 72)";
+export const colorPink900 = "rgb(148, 5, 58)";
 export const spacingSm = 4;
 export const spacingMd = 8;
 export const spacingBase = 16;
@@ -104,6 +114,7 @@ export const textXlLineHeight = 28;
 export const textXxlFontSize = 24;
 export const textXxlFontWeight = "400";
 export const textXxlLineHeight = 32;
+export const textEmphasizedFontWeight = "500";
 export const colors = {
 colorWhite,
 colorBlue50,
@@ -156,6 +167,16 @@ colorYellow600,
 colorYellow700,
 colorYellow800,
 colorYellow900,
+colorPink50,
+colorPink100,
+colorPink200,
+colorPink300,
+colorPink400,
+colorPink500,
+colorPink600,
+colorPink700,
+colorPink800,
+colorPink900,
 };
 export const spacings = {
 spacingSm,
@@ -194,6 +215,7 @@ textBaseFontWeight,
 textLgFontWeight,
 textXlFontWeight,
 textXxlFontWeight,
+textEmphasizedFontWeight,
 };
 export const lineHeights = {
 textXsLineHeight,

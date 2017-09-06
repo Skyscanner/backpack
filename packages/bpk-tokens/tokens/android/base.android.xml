@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  
+
   Backpack - Skyscanner's Design System
-  
+
   Copyright 2017 Skyscanner Ltd
-  
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
-  
+
     http://www.apache.org/licenses/LICENSE-2.0
-  
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
-  
+
 -->
 <resources>
   <color name="COLOR_WHITE" category="colors">#ffffffff</color>
@@ -71,6 +71,16 @@
   <color name="COLOR_YELLOW_700" category="colors">#ffe1a500</color>
   <color name="COLOR_YELLOW_800" category="colors">#ffc28e00</color>
   <color name="COLOR_YELLOW_900" category="colors">#ff9c7200</color>
+  <color name="COLOR_PINK_50" category="colors">#fffde4ed</color>
+  <color name="COLOR_PINK_100" category="colors">#ffffbfd7</color>
+  <color name="COLOR_PINK_200" category="colors">#ffff94bb</color>
+  <color name="COLOR_PINK_300" category="colors">#ffff73a6</color>
+  <color name="COLOR_PINK_400" category="colors">#ffff619b</color>
+  <color name="COLOR_PINK_500" category="colors">#fffa488a</color>
+  <color name="COLOR_PINK_600" category="colors">#ffd92b6b</color>
+  <color name="COLOR_PINK_700" category="colors">#ffc50f52</color>
+  <color name="COLOR_PINK_800" category="colors">#ffb00c48</color>
+  <color name="COLOR_PINK_900" category="colors">#ff94053a</color>
   <property name="SPACING_SM" category="spacings">4dp</property>
   <property name="SPACING_MD" category="spacings">8dp</property>
   <property name="SPACING_BASE" category="spacings">16dp</property>
@@ -107,4 +117,5 @@
   <property name="TEXT_XXL_FONT_SIZE" category="font-sizes">24sp</property>
   <property name="TEXT_XXL_FONT_WEIGHT" category="font-weights">400</property>
   <property name="TEXT_XXL_LINE_HEIGHT" category="line-heights">32sp</property>
+  <property name="TEXT_EMPHASIZED_FONT_WEIGHT" category="font-weights">500</property>
 </resources>

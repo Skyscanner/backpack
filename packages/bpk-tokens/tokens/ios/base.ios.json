@@ -460,6 +460,96 @@
       "name": "colorYellow900"
     },
     {
+      "type": "color",
+      "category": "colors",
+      "value": "#fde4edff",
+      ".alias": {
+        "value": "#FDE4ED"
+      },
+      "name": "colorPink50"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffbfd7ff",
+      ".alias": {
+        "value": "#FFBFD7"
+      },
+      "name": "colorPink100"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#ff94bbff",
+      ".alias": {
+        "value": "#FF94BB"
+      },
+      "name": "colorPink200"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#ff73a6ff",
+      ".alias": {
+        "value": "#FF73A6"
+      },
+      "name": "colorPink300"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#ff619bff",
+      ".alias": {
+        "value": "#FF619B"
+      },
+      "name": "colorPink400"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#fa488aff",
+      ".alias": {
+        "value": "#FA488A"
+      },
+      "name": "colorPink500"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#d92b6bff",
+      ".alias": {
+        "value": "#D92B6B"
+      },
+      "name": "colorPink600"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#c50f52ff",
+      ".alias": {
+        "value": "#C50F52"
+      },
+      "name": "colorPink700"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#b00c48ff",
+      ".alias": {
+        "value": "#B00C48"
+      },
+      "name": "colorPink800"
+    },
+    {
+      "type": "color",
+      "category": "colors",
+      "value": "#94053aff",
+      ".alias": {
+        "value": "#94053A"
+      },
+      "name": "colorPink900"
+    },
+    {
       "type": "size",
       "category": "spacings",
       "value": "4",
@@ -782,6 +872,15 @@
         "value": 41
       },
       "name": "textXxlLineHeight"
+    },
+    {
+      "value": "600",
+      "type": "string",
+      "category": "font-weights",
+      ".alias": {
+        "value": "600"
+      },
+      "name": "textEmphasizedFontWeight"
     }
   ]
 }
