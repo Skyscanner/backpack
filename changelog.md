@@ -17,6 +17,10 @@ _Nothing Yet!_
 - bpk-component-datepicker: 7.0.18 => 7.1.0
   - Added `initiallyFocusedDate` prop that allows controlling which date is initially focused when `selectedDate` is not specified. If not supplied `minDate` will receive focus as before.
 
+**Added:**
+- bpk-component-image: 1.0.0
+  - Added `BpkBackgroundImage` component which can be used to create a container with a background image
+
 ## 2017-08-30 - New image component
 
 **Added:**
