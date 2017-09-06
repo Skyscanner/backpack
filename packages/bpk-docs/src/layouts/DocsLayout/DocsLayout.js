@@ -26,6 +26,7 @@ const links = [
   {
     id: 'BONDS',
     category: 'Bonds',
+    sort: true,
     links: [
       { id: 'COLORS', route: routes.COLORS, children: 'Colors' },
       { id: 'TYPESETTING', route: routes.TYPESETTING, children: 'Typesetting' },
@@ -37,8 +38,9 @@ const links = [
     ],
   },
   {
-    id: 'ATOMS',
-    category: 'Atoms',
+    id: 'COMPONENTS',
+    category: 'Web components',
+    sort: true,
     links: [
       { id: 'TYPOGRAPHY', route: routes.TYPOGRAPHY, children: 'Typography' },
       { id: 'BUTTONS', route: routes.BUTTONS, children: 'Buttons' },
@@ -51,12 +53,6 @@ const links = [
       { id: 'PANELS', route: routes.PANELS, children: 'Panels' },
       { id: 'IMAGES', route: routes.IMAGES, children: 'Images' },
       { id: 'ILLUSTRATIONS', route: null, children: 'Illustrations' },
-    ],
-  },
-  {
-    id: 'MOLECULES',
-    category: 'Molecules',
-    links: [
       { id: 'BANNER_ALERTS', route: routes.BANNER_ALERTS, children: 'Banner alerts' },
       { id: 'MODALS', route: routes.MODALS, children: 'Modals' },
       { id: 'AUTOSUGGEST', route: routes.AUTOSUGGEST, children: 'Autosuggest' },
@@ -86,7 +82,8 @@ const links = [
   },
   {
     id: 'NATIVE',
-    category: 'Native',
+    category: 'Native components',
+    sort: true,
     links: [
       { id: 'NATIVE_TEXT', route: routes.NATIVE_TEXT, children: 'Text' },
     ],
@@ -94,6 +91,7 @@ const links = [
   {
     id: 'UTILITIES',
     category: 'Utilities',
+    sort: true,
     links: [
       { id: 'ALIGNMENT', route: routes.ALIGNMENT, children: 'Alignment' },
     ],

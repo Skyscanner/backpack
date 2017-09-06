@@ -16,22 +16,28 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+export default links => links.sort((a, b) => {
+  const aHasRoute = !!a.route;
+  const bHasRoute = !!b.route;
 
-export const linkPropType = PropTypes.shape({
-  id: PropTypes.string.isRequired,
-  route: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  if (aHasRoute === bHasRoute) {
+    const aId = a.id.toLowerCase();
+    const bId = b.id.toLowerCase();
+
+    if (aId < bId) {
+      return -1;
+    }
+
+    if (aId > bId) {
+      return 1;
+    }
+
+    return 0;
+  }
+
+  if (aHasRoute && !bHasRoute) {
+    return -1;
+  }
+
+  return 1;
 });
-
-export const categoryPropType = PropTypes.shape({
-  id: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  links: PropTypes.arrayOf(linkPropType).isRequired,
-  sort: PropTypes.bool,
-});
-
-export const linksPropType = PropTypes.arrayOf(PropTypes.oneOfType([
-  linkPropType,
-  categoryPropType,
-]));
