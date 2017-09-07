@@ -35,20 +35,20 @@ const tokens = Platform.select({
 })();
 
 const styles = StyleSheet.create({
-  baseOuter: {
+  input: {
     borderColor: tokens.colorGray100,
     borderWidth: 1,
     borderRadius: tokens.spacingSm, // TODO SWAP OUT FOR CORRECT TOKEN
     padding: tokens.spacingSm * 3,
     flexDirection: 'row',
   },
-  baseText: {
+  text: {
     fontSize: tokens.textLgFontSize,
     color: tokens.colorGray700,
     width: 'auto',
     flex: 1,
   },
-  smallOuter: {
+  smallInput: {
     padding: tokens.spacingMd,
   },
   smallText: {
@@ -61,13 +61,7 @@ const styles = StyleSheet.create({
   disabledText: {
     color: tokens.colorGray100,
   },
-  errorOuter: {
-    // backgroundColor: colorRed100,
-  },
-  validOuter: {
-    // backgroundColor: colorGreen100,
-  },
-  baseIcon: {
+  icon: {
     flex: 0,
     width: 20,
     height: 20,
@@ -83,11 +77,11 @@ const BpkInput = (props) => {
 
   let iconSource = null;
 
-  const outerStyle = [styles.baseOuter];
-  const textStyle = [styles.baseText];
-  const iconStyle = [styles.baseIcon];
+  const style = [styles.input];
+  const textStyle = [styles.text];
+  const iconStyle = [styles.icon];
   if (small) {
-    outerStyle.push(styles.smallOuter);
+    style.push(styles.smallInput);
     textStyle.push(styles.smallText);
     iconStyle.push(styles.smallIcon);
   }
@@ -100,18 +94,18 @@ const BpkInput = (props) => {
   if (valid !== null) {
     iconSource = valid ? require('./tick-circle-green-500.png') : require('./exclamation-circle-red-500.png'); // eslint-disable-line
     if (valid) {
-      outerStyle.push(styles.validOuter);
+      style.push(styles.validOuter);
     } else {
-      outerStyle.push(styles.errorOuter);
+      style.push(styles.errorOuter);
     }
   }
 
-  if (innerStyle) { outerStyle.push(innerStyle); }
+  if (innerStyle) { style.push(innerStyle); }
 
 
   return (
     <View
-      style={outerStyle}
+      style={style}
     >
       <TextInput
         style={textStyle}
