@@ -20,12 +20,12 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <BpkText textStyle='xxl'>Flights to Edinburgh.</BpkText>
-        <BpkText textStyle='xl'>Flights to Edinburgh.</BpkText>
-        <BpkText textStyle='lg'>Flights to Edinburgh.</BpkText>
-        <BpkText textStyle='base'>Flights to Edinburgh.</BpkText>
-        <BpkText textStyle='sm'>Flights to Edinburgh.</BpkText>
-        <BpkText textStyle='xs'>Flights to Edinburgh.</BpkText>
+        <BpkText textStyle='xxl'>Flights to Edinburgh</BpkText>
+        <BpkText textStyle='xl'>Flights to Edinburgh</BpkText>
+        <BpkText textStyle='lg'>Flights to Edinburgh</BpkText>
+        <BpkText textStyle='base'>Flights to Edinburgh</BpkText>
+        <BpkText textStyle='sm'>Flights to Edinburgh</BpkText>
+        <BpkText textStyle='xs'>Flights to Edinburgh</BpkText>
       </View>
     );
   }

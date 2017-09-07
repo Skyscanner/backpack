@@ -219,24 +219,6 @@
     "LINE_HEIGHT_XXL": {
       "value": 41
     },
-    "LETTER_SPACING_XS": {
-      "value": 0.07
-    },
-    "LETTER_SPACING_SM": {
-      "value": -0.08
-    },
-    "LETTER_SPACING_BASE": {
-      "value": -0.24
-    },
-    "LETTER_SPACING_LG": {
-      "value": 0
-    },
-    "LETTER_SPACING_XL": {
-      "value": 0.38
-    },
-    "LETTER_SPACING_XXL": {
-      "value": 0.41
-    },
     "FONT_WEIGHT_NORMAL": {
       "value": "400"
     },
@@ -890,60 +872,6 @@
       },
       "name": "LINE_HEIGHT_XXL"
     },
-    "LETTER_SPACING_XS": {
-      "value": "0.07",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": 0.07
-      },
-      "name": "LETTER_SPACING_XS"
-    },
-    "LETTER_SPACING_SM": {
-      "value": "-0.08",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": -0.08
-      },
-      "name": "LETTER_SPACING_SM"
-    },
-    "LETTER_SPACING_BASE": {
-      "value": "-0.24",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": -0.24
-      },
-      "name": "LETTER_SPACING_BASE"
-    },
-    "LETTER_SPACING_LG": {
-      "value": "0",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": 0
-      },
-      "name": "LETTER_SPACING_LG"
-    },
-    "LETTER_SPACING_XL": {
-      "value": "0.38",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": 0.38
-      },
-      "name": "LETTER_SPACING_XL"
-    },
-    "LETTER_SPACING_XXL": {
-      "value": "0.41",
-      "type": "number",
-      "category": "typesettings",
-      ".alias": {
-        "value": 0.41
-      },
-      "name": "LETTER_SPACING_XXL"
-    },
     "TEXT_XS_FONT_SIZE": {
       "value": "11",
       "type": "size",
@@ -970,15 +898,6 @@
         "value": 13
       },
       "name": "TEXT_XS_LINE_HEIGHT"
-    },
-    "TEXT_XS_LETTER_SPACING": {
-      "value": "0.07",
-      "type": "number",
-      "category": "letter-spacings",
-      ".alias": {
-        "value": 0.07
-      },
-      "name": "TEXT_XS_LETTER_SPACING"
     },
     "TEXT_SM_FONT_SIZE": {
       "value": "13",
@@ -1007,15 +926,6 @@
       },
       "name": "TEXT_SM_LINE_HEIGHT"
     },
-    "TEXT_SM_LETTER_SPACING": {
-      "value": "-0.08",
-      "type": "number",
-      "category": "letter-spacings",
-      ".alias": {
-        "value": -0.08
-      },
-      "name": "TEXT_SM_LETTER_SPACING"
-    },
     "TEXT_BASE_FONT_SIZE": {
       "value": "15",
       "type": "size",
@@ -1042,15 +952,6 @@
         "value": 20
       },
       "name": "TEXT_BASE_LINE_HEIGHT"
-    },
-    "TEXT_BASE_LETTER_SPACING": {
-      "value": "-0.24",
-      "type": "number",
-      "category": "letter-spacings",
-      ".alias": {
-        "value": -0.24
-      },
-      "name": "TEXT_BASE_LETTER_SPACING"
     },
     "TEXT_LG_FONT_SIZE": {
       "value": "17",
@@ -1079,15 +980,6 @@
       },
       "name": "TEXT_LG_LINE_HEIGHT"
     },
-    "TEXT_LG_LETTER_SPACING": {
-      "value": "0",
-      "type": "size",
-      "category": "letter-spacings",
-      ".alias": {
-        "value": 0
-      },
-      "name": "TEXT_LG_LETTER_SPACING"
-    },
     "TEXT_XL_FONT_SIZE": {
       "value": "20",
       "type": "size",
@@ -1115,15 +1007,6 @@
       },
       "name": "TEXT_XL_LINE_HEIGHT"
     },
-    "TEXT_XL_LETTER_SPACING": {
-      "value": "0.38",
-      "type": "number",
-      "category": "letter-spacings",
-      ".alias": {
-        "value": 0.38
-      },
-      "name": "TEXT_XL_LETTER_SPACING"
-    },
     "TEXT_XXL_FONT_SIZE": {
       "value": "34",
       "type": "size",
@@ -1150,15 +1033,6 @@
         "value": 41
       },
       "name": "TEXT_XXL_LINE_HEIGHT"
-    },
-    "TEXT_XXL_LETTER_SPACING": {
-      "value": "0.41",
-      "type": "number",
-      "category": "letter-spacings",
-      ".alias": {
-        "value": 0.41
-      },
-      "name": "TEXT_XXL_LETTER_SPACING"
     }
   },
   "propKeys": [
@@ -1231,35 +1105,23 @@
     "LINE_HEIGHT_LG",
     "LINE_HEIGHT_XL",
     "LINE_HEIGHT_XXL",
-    "LETTER_SPACING_XS",
-    "LETTER_SPACING_SM",
-    "LETTER_SPACING_BASE",
-    "LETTER_SPACING_LG",
-    "LETTER_SPACING_XL",
-    "LETTER_SPACING_XXL",
     "TEXT_XS_FONT_SIZE",
     "TEXT_XS_FONT_WEIGHT",
     "TEXT_XS_LINE_HEIGHT",
-    "TEXT_XS_LETTER_SPACING",
     "TEXT_SM_FONT_SIZE",
     "TEXT_SM_FONT_WEIGHT",
     "TEXT_SM_LINE_HEIGHT",
-    "TEXT_SM_LETTER_SPACING",
     "TEXT_BASE_FONT_SIZE",
     "TEXT_BASE_FONT_WEIGHT",
     "TEXT_BASE_LINE_HEIGHT",
-    "TEXT_BASE_LETTER_SPACING",
     "TEXT_LG_FONT_SIZE",
     "TEXT_LG_FONT_WEIGHT",
     "TEXT_LG_LINE_HEIGHT",
-    "TEXT_LG_LETTER_SPACING",
     "TEXT_XL_FONT_SIZE",
     "TEXT_XL_FONT_WEIGHT",
     "TEXT_XL_LINE_HEIGHT",
-    "TEXT_XL_LETTER_SPACING",
     "TEXT_XXL_FONT_SIZE",
     "TEXT_XXL_FONT_WEIGHT",
-    "TEXT_XXL_LINE_HEIGHT",
-    "TEXT_XXL_LETTER_SPACING"
+    "TEXT_XXL_LINE_HEIGHT"
   ]
 }

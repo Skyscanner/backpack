@@ -3,6 +3,15 @@
 ## UNRELEASED
 
 _Nothing yet..._
+
+**Breaking:**
+- bpk-tokens:
+  - Removed tokens for react native text
+
+  **Added:**
+- react-native-bpk-component-text:
+  - New component, see http://backpack.prod.aws.skyscnr.com/components/native/text
+
 **Fixed:**
 - bpk-animate-height
 - bpk-component-accordion
