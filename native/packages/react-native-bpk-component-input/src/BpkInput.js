@@ -17,14 +17,14 @@
  */
 
 import {
+  View,
   TextInput,
+Image,
   Platform,
   StyleSheet,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { colorGray100, colorRed600, colorGreen600, colorGray300, colorGray700 }
-from 'bpk-tokens/tokens/ios/base.react.native.es6';
 
 const IOS_TOKENS = require('bpk-tokens/tokens/ios/base.react.native.common.js');
 const ANDROID_TOKENS = require('bpk-tokens/tokens/android/base.react.native.common.js');
@@ -35,60 +35,99 @@ const tokens = Platform.select({
 })();
 
 const styles = StyleSheet.create({
-  base: {
-    borderColor: colorGray100,
+  baseOuter: {
+    borderColor: tokens.colorGray100,
     borderWidth: 1,
     borderRadius: tokens.spacingSm, // TODO SWAP OUT FOR CORRECT TOKEN
-    // height: 48,
     padding: tokens.spacingSm * 3,
+    flexDirection: 'row',
+  },
+  baseText: {
     fontSize: tokens.textLgFontSize,
-    color: colorGray700,
+    color: tokens.colorGray700,
+    width: 'auto',
+    flex: 1,
   },
-  small: {
-    // height: 32,
+  smallOuter: {
     padding: tokens.spacingMd,
-    fontSize: tokens.textXsFontSize + 1,
   },
-  placeholder: {
+  smallText: {
+    fontSize: tokens.textXsFontSize,
+  },
+  placeholderText: {
     fontStyle: 'italic',
-    color: colorGray300,
+    color: tokens.colorGray300,
   },
-  disabled: {
-    color: colorGray100,
+  disabledText: {
+    color: tokens.colorGray100,
   },
-  error: {
-    backgroundColor: colorRed600,
+  errorOuter: {
+    // backgroundColor: colorRed100,
   },
-  valid: {
-    backgroundColor: colorGreen600,
+  validOuter: {
+    // backgroundColor: colorGreen100,
+  },
+  baseIcon: {
+    flex: 0,
+    width: 20,
+    height: 20,
+  },
+  smallIcon: {
+    width: 13,
+    height: 13,
   },
 });
 
 const BpkInput = (props) => {
   const { small, valid, onTextChanged, text, placeholderText, disabled, style: innerStyle, ...rest } = props;
 
-  const style = [styles.base];
-  if (small) { style.push(styles.small); }
-  if (disabled) { style.push(styles.disabled); }
-  if (text === '') { style.push(styles.placeholder); }
+  let iconSource = null;
+
+  const outerStyle = [styles.baseOuter];
+  const textStyle = [styles.baseText];
+  const iconStyle = [styles.baseIcon];
+  if (small) {
+    outerStyle.push(styles.smallOuter);
+    textStyle.push(styles.smallText);
+    iconStyle.push(styles.smallIcon);
+  }
+  if (disabled) {
+    textStyle.push(styles.disabledText);
+  }
+  if (text === '') {
+    textStyle.push(styles.placeholderText);
+  }
   if (valid !== null) {
+    iconSource = valid ? require('./tick-circle-green-500.png') : require('./exclamation-circle-red-500.png'); // eslint-disable-line
     if (valid) {
-      style.push(styles.valid);
+      outerStyle.push(styles.validOuter);
     } else {
-      style.push(styles.error);
+      outerStyle.push(styles.errorOuter);
     }
   }
-  if (innerStyle) { style.push(innerStyle); }
+
+  if (innerStyle) { outerStyle.push(innerStyle); }
+
 
   return (
-    <TextInput
-      style={style}
-      editable={!disabled}
-      value={text}
-      onChangeText={onTextChanged}
-      placeholder={placeholderText}
-      {...rest}
-    />
+    <View
+      style={outerStyle}
+    >
+      <TextInput
+        style={textStyle}
+        editable={!disabled}
+        value={text}
+        onChangeText={onTextChanged}
+        placeholder={placeholderText}
+        {...rest}
+      />
+      {iconSource &&
+        <Image
+          style={iconStyle}
+          source={iconSource}
+        />
+      }
+    </View>
   );
 };
 

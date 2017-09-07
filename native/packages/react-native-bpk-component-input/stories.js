@@ -45,7 +45,6 @@ storiesOf('BpkInput', module)
       />
       <BpkInput
         style={{ width: 300, height: 'auto', marginTop: 12 }}
-        small
         placeholderText={'valid'}
         text={'Invalid'}
         valid={false}
