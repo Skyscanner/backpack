@@ -1,7 +1,12 @@
 # Backpack changelog
 
 ## UNRELEASED
-_Nothing Yet!_
+
+**Added:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+  - Added fast train icon
 
 ## 2017-09-06 - Bug fixes in BpkImage
 
