@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "react-native-bpk-component-input",
+  "version": "0.0.1",
+  "main": "index.js",
+  "description": "Backpack native documentation.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-native": ">= 0.47.0"
+  },
+  "dependencies": {
+    "bpk-tokens": "^24.2.0",
+    "prop-types": "^15.5.8"
+  }
+}

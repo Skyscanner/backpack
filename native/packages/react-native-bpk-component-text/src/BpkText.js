@@ -46,6 +46,19 @@ const styleForTextStyle = (textStyle) => {
     }
   };
 
+  const determineIosFontFamily = (fontWeight) => {
+    let fontName = '.SFUIDisplay';
+    if (Platform.Version >= 11) {
+      fontName = '.SFProDisplay';
+    }
+    switch (fontWeight) {
+      case '700':
+        return `${fontName}-Bold`;
+      default:
+        return fontName;
+    }
+  };
+
   return {
     fontSize: tokens[`text${camelCasedStyle}FontSize`],
     lineHeight: tokens[`text${camelCasedStyle}LineHeight`],
@@ -53,7 +66,8 @@ const styleForTextStyle = (textStyle) => {
     letterSpacing: Platform.OS === 'ios' ? tokens[`text${camelCasedStyle}LetterSpacing`] : undefined,
     color: tokens.colorGray900,
     fontFamily: Platform.OS === 'android' ?
-      determineAndroidFontFamily(tokens[`text${camelCasedStyle}FontWeight`]) : undefined,
+      determineAndroidFontFamily(tokens[`text${camelCasedStyle}FontWeight`]) :
+      determineIosFontFamily(tokens[`text${camelCasedStyle}FontWeight`]),
   };
 };
 

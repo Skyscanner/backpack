@@ -6,6 +6,7 @@ import { getStorybookUI, configure } from '@storybook/react-native';
 // import stories
 configure(() => {
   // require('./stories');
+  require('../packages/react-native-bpk-component-input/stories');
   require('../packages/react-native-bpk-component-text/stories');
 }, module);
 
