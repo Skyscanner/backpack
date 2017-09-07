@@ -2,10 +2,14 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-09-07 - New fast train icon
+
 **Added:**
-- bpk-component-icon:
-- bpk-mixins:
-- bpk-svgs:
+- bpk-component-icon: 3.12.1 => 3.13.0
+- bpk-mixins: 16.4.1 => 16.5.0
+- bpk-svgs: 5.8.0 => 5.9.0
   - Added fast train icon
 
 ## 2017-09-06 - Bug fixes in BpkImage
