@@ -21,6 +21,7 @@ import { Link } from 'react-router';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './nav-list.scss';
+import sortLinks from './links-sorter';
 import { linkPropType, linksPropType, categoryPropType } from './sideNavPropTypes';
 
 const getClassName = cssModules(STYLES);
@@ -59,7 +60,10 @@ const NavListCategory = props => (
   <li className={getClassName('bpkdocs-side-nav-list__list-item')}>
     <span className={getClassName('bpkdocs-side-nav-list__category-name')}>{props.link.category}</span>
     <ul className={getClassName('bpkdocs-side-nav-list__category-list')}>
-      {props.link.links.map(link => <NavListItem key={link.id} link={link} />)}
+      {(props.link.sort
+        ? sortLinks(props.link.links)
+        : props.link.links
+      ).map(link => <NavListItem key={link.id} link={link} />)}
     </ul>
   </li>
 );

@@ -42,8 +42,11 @@ export default ((locals, callback) => {
   const assets = extractAssets(locals.webpackStats);
 
   match({ routes, location, history }, (error, redirectLocation, props) => {
-    if (error) {
-      return callback(error);
+    // Explicit check for null here due to odd behaviour with react router's match function
+    // It passes undefined in cases where matches are not found.
+    // So we use their error object if it is truthy, otherwise we create our own.
+    if (error !== null) {
+      return callback(error || new Error(`React Router failed to match ${JSON.stringify(location)}`));
     }
 
     if (redirectLocation) {

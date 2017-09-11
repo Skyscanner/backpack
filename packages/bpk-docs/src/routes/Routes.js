@@ -94,19 +94,16 @@ const Routes = (
     <Route path={ROUTES.STYLE} component={StylePage} iconsSvgs={iconsSvgs} />
 
     <Route path={ROUTES.COMPONENTS} component={DocsLayout}>
-      <IndexRedirect to={ROUTES.BONDS} />
-      <Route path={ROUTES.BONDS}>
-        <IndexRedirect to={ROUTES.COLORS} />
-        <Route path={ROUTES.COLORS} component={ColorsPage} />
-        <Route path={ROUTES.TYPESETTING} component={TypesettingPage} />
-        <Route path={ROUTES.RADII} component={RadiiPage} />
-        <Route path={ROUTES.SHADOWS} component={ShadowsPage} />
-        <Route path={ROUTES.BORDERS} component={BordersPage} />
-        <Route path={ROUTES.LAYOUT} component={LayoutPage} />
-        <Route path={ROUTES.ANIMATION} component={AnimationPage} />
-      </Route>
-      <Route path={ROUTES.ATOMS}>
-        <IndexRedirect to={ROUTES.TYPOGRAPHY} />
+      <IndexRedirect to={ROUTES.WEB_COMPONENTS} />
+      <Route path={ROUTES.COLORS} component={ColorsPage} />
+      <Route path={ROUTES.TYPESETTING} component={TypesettingPage} />
+      <Route path={ROUTES.RADII} component={RadiiPage} />
+      <Route path={ROUTES.SHADOWS} component={ShadowsPage} />
+      <Route path={ROUTES.BORDERS} component={BordersPage} />
+      <Route path={ROUTES.LAYOUT} component={LayoutPage} />
+      <Route path={ROUTES.ANIMATION} component={AnimationPage} />
+      <Route path={ROUTES.WEB_COMPONENTS}>
+        <IndexRedirect to={ROUTES.ACCORDIONS} />
         <Route path={ROUTES.TYPOGRAPHY} component={TypographyPage} />
         <Route path={ROUTES.BUTTONS} component={ButtonsPage} />
         <Route path={ROUTES.ICONS} component={IconsPage} />
@@ -117,9 +114,6 @@ const Routes = (
         <Route path={ROUTES.BADGE} component={BadgePage} />
         <Route path={ROUTES.PANELS} component={PanelsPage} />
         <Route path={ROUTES.IMAGES} component={ImagesPage} />
-      </Route>
-      <Route path={ROUTES.MOLECULES}>
-        <IndexRedirect to={ROUTES.BANNER_ALERTS} />
         <Route path={ROUTES.BANNER_ALERTS} component={BannerAlertsPage} />
         <Route path={ROUTES.MODALS} component={ModalsPage} />
         <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
@@ -136,7 +130,7 @@ const Routes = (
         <Route path={ROUTES.BARCHARTS} component={BarchartsPage} />
         <Route path={ROUTES.STAR_RATING} component={StarRatingPage} />
       </Route>
-      <Route path={ROUTES.NATIVE}>
+      <Route path={ROUTES.NATIVE_COMPONENTS}>
         <IndexRedirect to={ROUTES.NATIVE_TEXT} />
         <Route path={ROUTES.NATIVE_TEXT} component={NativeTextPage} />
       </Route>

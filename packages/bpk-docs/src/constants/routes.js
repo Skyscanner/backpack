@@ -30,7 +30,6 @@ export const BACKPACK_REACT_SCRIPTS = '/using/backpack-react-scripts';
 export const BASE_STYLESHEET = '/using/base-stylesheet';
 
 // components/bonds/
-export const BONDS = '/components/bonds';
 export const COLORS = '/components/bonds/colors';
 export const TYPESETTING = '/components/bonds/typesetting';
 export const RADII = '/components/bonds/radii';
@@ -39,39 +38,36 @@ export const BORDERS = '/components/bonds/borders';
 export const LAYOUT = '/components/bonds/layout';
 export const ANIMATION = '/components/bonds/animation';
 
-// components/atoms/
-export const ATOMS = '/components/atoms';
-export const TYPOGRAPHY = '/components/atoms/typography';
-export const BUTTONS = '/components/atoms/buttons';
-export const ICONS = '/components/atoms/icons';
-export const SPINNERS = '/components/atoms/spinners';
-export const FORMS = '/components/atoms/forms';
-export const CARDS = '/components/atoms/cards';
-export const CHIPS = '/components/atoms/chips';
-export const BADGE = '/components/atoms/badge';
-export const PANELS = '/components/atoms/panels';
-export const IMAGES = '/components/atoms/images';
-
-// components/molecules/
-export const MOLECULES = '/components/molecules';
-export const BANNER_ALERTS = '/components/molecules/banner-alerts';
-export const MODALS = '/components/molecules/modals';
-export const AUTOSUGGEST = '/components/molecules/autosuggest';
-export const POPOVERS = '/components/molecules/popovers';
-export const CALENDAR = '/components/molecules/calendar';
-export const DATEPICKER = '/components/molecules/datepicker';
-export const TOOLTIPS = '/components/molecules/tooltips';
-export const ACCORDIONS = '/components/molecules/accordions';
-export const NUDGERS = '/components/molecules/nudgers';
-export const PROGRESS = '/components/molecules/progress';
-export const TICKETS = '/components/molecules/tickets';
-export const HORIZONTAL_NAV = '/components/molecules/horizontal-nav';
-export const FIELDSETS = '/components/molecules/fieldsets';
-export const BARCHARTS = '/components/molecules/barcharts';
-export const STAR_RATING = '/components/molecules/star-rating';
+// components/web/
+export const WEB_COMPONENTS = '/components/web';
+export const TYPOGRAPHY = '/components/web/typography';
+export const BUTTONS = '/components/web/buttons';
+export const ICONS = '/components/web/icons';
+export const SPINNERS = '/components/web/spinners';
+export const FORMS = '/components/web/forms';
+export const CARDS = '/components/web/cards';
+export const CHIPS = '/components/web/chips';
+export const BADGE = '/components/web/badge';
+export const PANELS = '/components/web/panels';
+export const IMAGES = '/components/web/images';
+export const BANNER_ALERTS = '/components/web/banner-alerts';
+export const MODALS = '/components/web/modals';
+export const AUTOSUGGEST = '/components/web/autosuggest';
+export const POPOVERS = '/components/web/popovers';
+export const CALENDAR = '/components/web/calendar';
+export const DATEPICKER = '/components/web/datepicker';
+export const TOOLTIPS = '/components/web/tooltips';
+export const ACCORDIONS = '/components/web/accordions';
+export const NUDGERS = '/components/web/nudgers';
+export const PROGRESS = '/components/web/progress';
+export const TICKETS = '/components/web/tickets';
+export const HORIZONTAL_NAV = '/components/web/horizontal-nav';
+export const FIELDSETS = '/components/web/fieldsets';
+export const BARCHARTS = '/components/web/barcharts';
+export const STAR_RATING = '/components/web/star-rating';
 
 // components/native/
-export const NATIVE = '/components/native';
+export const NATIVE_COMPONENTS = '/components/native';
 export const NATIVE_TEXT = '/components/native/text';
 
 // components/utilities/

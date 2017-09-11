@@ -23,6 +23,7 @@ import BpkSelect from 'bpk-component-select';
 import BpkFieldset from 'bpk-component-fieldset';
 import { browserHistory, PropTypes as RouterPropTypes } from 'react-router';
 
+import sortLinks from './links-sorter';
 import { linkPropType, categoryPropType, linksPropType } from './sideNavPropTypes';
 
 const getCategoryName = (links, pathname) => {
@@ -49,7 +50,10 @@ NavSelectItem.propTypes = {
 
 const NavSelectCategory = props => (
   <optgroup label={props.link.category}>
-    {props.link.links.map(subLink => <NavSelectItem key={subLink.id} link={subLink} />)}
+    {(props.link.sort
+      ? sortLinks(props.link.links)
+      : props.link.links
+    ).map(subLink => <NavSelectItem key={subLink.id} link={subLink} />)}
   </optgroup>
 );
 
