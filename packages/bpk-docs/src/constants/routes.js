@@ -30,7 +30,6 @@ export const BACKPACK_REACT_SCRIPTS = '/using/backpack-react-scripts';
 export const BASE_STYLESHEET = '/using/base-stylesheet';
 
 // components/bonds/
-export const BONDS = '/components/bonds';
 export const COLORS = '/components/bonds/colors';
 export const TYPESETTING = '/components/bonds/typesetting';
 export const RADII = '/components/bonds/radii';
