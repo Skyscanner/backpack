@@ -29,7 +29,7 @@
     "storybook": "start-storybook -p 9001",
     "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,packages/bpk-svgs/dist/*,packages/bpk-tokens/tokens/base.default}.scss -d dist/sassdoc -v --strict --debug",
     "docs": "webpack-dev-server",
-    "docs:dist": "npm run clean:dist && NODE_ENV=production webpack && npm run sassdoc",
+    "docs:dist": "npm run clean:dist && NODE_ENV=production webpack --progress && npm run sassdoc",
     "docs:dist:gzip": "npm run docs:dist && gulp",
     "start": "npm run build && npm run storybook",
     "native": "(cd ./native && npm run storybook)",
