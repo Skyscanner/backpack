@@ -233,6 +233,12 @@ which is available for macOS. Windows and Linux installation for these packages 
 
 In future, we intend to automate more of this to reduce the number of steps required.
 
+##### Watchman (if not already installed)
+
+```
+brew install watchman
+```
+
 ##### Java
 
 ```
