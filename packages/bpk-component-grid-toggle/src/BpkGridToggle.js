@@ -62,9 +62,9 @@ class BpkGridToggle extends React.Component {
     document.querySelector(this.props.targetContainer)
       .classList.toggle(GRID_CLASS_NAME);
 
-    this.setState({
-      gridEnabled: !this.state.gridEnabled,
-    });
+    this.setState(state => ({
+      gridEnabled: !state.gridEnabled,
+    }));
   }
 
   render() {

@@ -3,6 +3,58 @@
 ## UNRELEASED
 
 _Nothing yet..._
+**Fixed:**
+- bpk-animate-height
+- bpk-component-accordion
+- bpk-component-autosuggest
+- bpk-component-badge
+- bpk-component-banner-alert
+- bpk-component-barchart
+- bpk-component-blockquote
+- bpk-component-breakpoint
+- bpk-component-button
+- bpk-component-calendar
+- bpk-component-card
+- bpk-component-checkbox
+- bpk-component-chip
+- bpk-component-close-button
+- bpk-component-code
+- bpk-component-content-container
+- bpk-component-datepicker
+- bpk-component-fieldset
+- bpk-component-form-validation
+- bpk-component-grid-toggle
+- bpk-component-grid
+- bpk-component-heading
+- bpk-component-horizontal-nav
+- bpk-component-icon
+- bpk-component-image
+- bpk-component-input
+- bpk-component-label
+- bpk-component-link
+- bpk-component-list
+- bpk-component-loading-button
+- bpk-component-mobile-scroll-container
+- bpk-component-modal
+- bpk-component-nudger
+- bpk-component-panel
+- bpk-component-paragraph
+- bpk-component-popover
+- bpk-component-progress
+- bpk-component-radio
+- bpk-component-router-link
+- bpk-component-rtl-toggle
+- bpk-component-select
+- bpk-component-spinner
+- bpk-component-star-rating
+- bpk-component-table
+- bpk-component-text
+- bpk-component-textarea
+- bpk-component-ticket
+- bpk-component-tile
+- bpk-component-tooltip
+- bpk-react-utils
+  - Prepared for React 16 by supporting it as a peer dependency.
 
 ## 2017-09-07 - New fast train icon
 

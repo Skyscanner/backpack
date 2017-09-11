@@ -92,10 +92,10 @@ class AnimateHeight extends Component {
         timeoutDuration = 50;
       }
 
-      this.setState({
+      this.setState((state, props) => ({
         height: newHeight,
-        overflow: this.props.transitionOverflow,
-      });
+        overflow: props.transitionOverflow,
+      }));
 
       if (shouldSetTimeout) {
         this.timeoutID = setTimeout(() => {

@@ -91,9 +91,9 @@ class BpkBannerAlert extends Component {
   }
 
   onExpand() {
-    this.setState({
-      expanded: !this.state.expanded,
-    });
+    this.setState(state => ({
+      expanded: !state.expanded,
+    }));
   }
 
   render() {
