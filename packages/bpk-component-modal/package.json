@@ -10,7 +10,7 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "peerDependencies": {
-    "react": "^15.4.0"
+    "react": "^15.4.0 || ^16.0.0"
   },
   "dependencies": {
     "a11y-focus-scope": "^1.1.3",
