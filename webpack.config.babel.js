@@ -167,7 +167,10 @@ const config = {
       test: /\.css$/,
       header: licenseHeader,
     }),
-    new ExtractTextPlugin(`[name]${isProduction ? '_[contenthash]' : ''}.css`),
+    new ExtractTextPlugin({
+      filename: `[name]${isProduction ? '_[contenthash]' : ''}.css`,
+      allChunks: true,
+    }),
   ],
 
   devServer: {

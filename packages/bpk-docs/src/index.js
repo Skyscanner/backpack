@@ -42,8 +42,8 @@ export default ((locals, callback) => {
   const assets = extractAssets(locals.webpackStats);
 
   match({ routes, location, history }, (error, redirectLocation, props) => {
-    if (error) {
-      return callback(error);
+    if (error !== null) {
+      return callback(error || new Error(`React Router failed to match ${JSON.stringify(location)}`));
     }
 
     if (redirectLocation) {
