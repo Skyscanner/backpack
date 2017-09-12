@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-text",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "description": "Backpack native documentation.",
   "repository": {
@@ -14,7 +14,7 @@
     "react-native": ">= 0.47.0"
   },
   "dependencies": {
-    "bpk-tokens": "^24.2.0",
+    "bpk-tokens": "^25.0.0",
     "prop-types": "^15.5.8"
   }
 }
