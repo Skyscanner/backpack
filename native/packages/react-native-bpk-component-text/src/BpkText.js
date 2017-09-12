@@ -36,6 +36,7 @@ const TEXT_STYLES = ['xs', 'sm', 'base', 'lg', 'xl', 'xxl'];
 
 const styleForTextStyle = (textStyle) => {
   const camelCasedStyle = textStyle[0].toUpperCase() + textStyle.slice(1);
+
   const determineAndroidFontFamily = (fontWeight) => {
     switch (fontWeight) {
       case '500':
@@ -50,10 +51,9 @@ const styleForTextStyle = (textStyle) => {
     fontSize: tokens[`text${camelCasedStyle}FontSize`],
     lineHeight: tokens[`text${camelCasedStyle}LineHeight`],
     fontWeight: Platform.OS === 'ios' ? tokens[`text${camelCasedStyle}FontWeight`] : undefined,
-    letterSpacing: Platform.OS === 'ios' ? tokens[`text${camelCasedStyle}LetterSpacing`] : undefined,
     color: tokens.colorGray900,
     fontFamily: Platform.OS === 'android' ?
-      determineAndroidFontFamily(tokens[`text${camelCasedStyle}FontWeight`]) : undefined,
+      determineAndroidFontFamily(tokens[`text${camelCasedStyle}FontWeight`]) : 'System',
   };
 };
 
