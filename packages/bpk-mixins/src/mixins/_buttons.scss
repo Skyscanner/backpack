@@ -30,15 +30,36 @@
 ///     @include bpk-button();
 ///   }
 
+$vars: (
+  primary-color: $bpk-button-background-color,
+  primary-contrast-color: $bpk-button-color,
+  primary-gradient-start-color: $bpk-color-green-500,
+  primary-gradient-end-color: $bpk-color-green-600,
+  primary-light-color: $bpk-color-green-600,
+  primary-light-contrast-color: $bpk-button-color,
+  primary-light-dark: $bpk-color-green-700,
+  primary-light-contrast-dark: $bpk-button-color,
+);
+
+@mixin gradient($startVarName, $endVarName) {
+  background-image: linear-gradient(-180deg, map-get($vars, $startVarName) 0%, map-get($vars, $endVarName) 100%);
+  background-image: linear-gradient(-180deg, var(--#{$startVarName}, map-get($vars, $startVarName)) 0%, var(--#{$endVarName}, map-get($vars, $endVarName)) 100%);
+}
+
+@mixin prop($property, $varName) {
+  #{$property}: map-get($vars, $varName);
+  #{$property}: var(--#{$varName}, map-get($vars, $varName));
+}
+
 @mixin bpk-button {
   display: inline-block;
   margin: 0;
   padding: $bpk-button-padding-y $bpk-button-padding-x;
   border: 0;
   border-radius: $bpk-button-border-radius;
-  background-color: $bpk-button-background-color;
-  background-image: $bpk-button-background-image;
-  color: $bpk-button-color;
+  @include prop(background-color, primary-color);
+  @include gradient(primary-gradient-start-color, primary-gradient-start-color);
+  @include prop(color, primary-contrast-color);
   font-size: $bpk-button-font-size;
   font-weight: $bpk-button-font-weight;
   line-height: $bpk-button-line-height;
@@ -50,16 +71,16 @@
   user-select: none;
 
   @include bpk-hover {
-    background-color: $bpk-button-hover-background-color;
-    background-image: $bpk-button-hover-background-image;
-    color: $bpk-button-hover-color;
+    @include prop(background-color, primary-light-color);
+    background-image: none;
+    @include prop(color, primary-light-contrast-color);
     box-shadow: $bpk-button-hover-box-shadow;
   }
 
   &:active {
-    background-color: $bpk-button-active-background-color;
-    background-image: $bpk-button-active-background-image;
-    color: $bpk-button-active-color;
+    @include prop(background-color, primary-dark-color);
+    background-image: none;
+    @include prop(color, primary-dark-contrast-color);
     box-shadow: $bpk-button-active-box-shadow;
   }
 
