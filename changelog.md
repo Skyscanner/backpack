@@ -4,69 +4,71 @@
 
 _Nothing yet..._
 
+## 2017-09-12 - New react-native Text component
+
 **Breaking:**
-- bpk-tokens:
+- bpk-tokens: 25.0.0 => 26.0.0
   - Removed tokens for react native text
 
   **Added:**
-- react-native-bpk-component-text:
+- react-native-bpk-component-text: 1.0.0 => 2.0.0
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/text
 
 **Fixed:**
-- bpk-animate-height
-- bpk-component-accordion
-- bpk-component-autosuggest
-- bpk-component-badge
-- bpk-component-banner-alert
-- bpk-component-barchart
-- bpk-component-blockquote
-- bpk-component-breakpoint
-- bpk-component-button
-- bpk-component-calendar
-- bpk-component-card
-- bpk-component-checkbox
-- bpk-component-chip
-- bpk-component-close-button
-- bpk-component-code
-- bpk-component-content-container
-- bpk-component-datepicker
-- bpk-component-fieldset
-- bpk-component-form-validation
-- bpk-component-grid-toggle
-- bpk-component-grid
-- bpk-component-heading
-- bpk-component-horizontal-nav
-- bpk-component-icon
-- bpk-component-image
-- bpk-component-input
-- bpk-component-label
-- bpk-component-link
-- bpk-component-list
-- bpk-component-loading-button
-- bpk-component-mobile-scroll-container
-- bpk-component-modal
-- bpk-component-nudger
-- bpk-component-panel
-- bpk-component-paragraph
-- bpk-component-popover
-- bpk-component-progress
-- bpk-component-radio
-- bpk-component-router-link
-- bpk-component-rtl-toggle
-- bpk-component-select
-- bpk-component-spinner
-- bpk-component-star-rating
-- bpk-component-table
-- bpk-component-text
-- bpk-component-textarea
-- bpk-component-ticket
-- bpk-component-tile
-- bpk-component-tooltip
-- bpk-react-utils
+- bpk-animate-height: 1.0.13 => 1.0.14
+- bpk-component-accordion: 1.1.20 => 1.1.21
+- bpk-component-autosuggest: 3.0.33 => 3.0.34
+- bpk-component-badge: 1.0.13 => 1.0.14
+- bpk-component-banner-alert: 1.2.7 => 1.2.8
+- bpk-component-barchart: 2.0.9 => 2.0.10
+- bpk-component-blockquote: 1.1.7 => 1.1.8
+- bpk-component-breakpoint: 1.0.13 => 1.0.14
+- bpk-component-button: 1.6.52 => 1.6.53
+- bpk-component-calendar: 4.1.3 => 4.1.4
+- bpk-component-card: 1.0.13 => 1.0.14
+- bpk-component-checkbox: 1.3.18 => 1.3.19
+- bpk-component-chip: 1.1.8 => 1.1.9
+- bpk-component-close-button: 1.0.13 => 1.0.14
+- bpk-component-code: 1.0.13 => 1.0.14
+- bpk-component-content-container: 1.1.19 => 1.1.20
+- bpk-component-datepicker: 7.1.3 => 7.1.4
+- bpk-component-fieldset: 1.0.13 => 1.0.14
+- bpk-component-form-validation: 1.0.13 => 1.0.14
+- bpk-component-grid-toggle: 1.0.13 => 1.0.14
+- bpk-component-grid: 1.1.19 => 1.1.20
+- bpk-component-heading: 2.1.19 => 2.1.20
+- bpk-component-horizontal-nav: 1.0.19 => 1.0.20
+- bpk-component-icon: 3.13.1 => 3.13.2
+- bpk-component-image: 1.0.3 => 1.0.4
+- bpk-component-input: 3.2.20 => 3.2.21
+- bpk-component-label: 3.2.19 => 3.2.20
+- bpk-component-link: 1.0.13 => 1.0.14
+- bpk-component-list: 1.0.13 => 1.0.14
+- bpk-component-loading-button: 1.0.13 => 1.0.14
+- bpk-component-mobile-scroll-container: 1.0.13 => 1.0.14
+- bpk-component-modal: 1.1.20 => 1.1.21
+- bpk-component-nudger: 1.0.13 => 1.0.14
+- bpk-component-panel: 1.0.13 => 1.0.14
+- bpk-component-paragraph: 1.0.13 => 1.0.14
+- bpk-component-popover: 1.2.16 => 1.2.17
+- bpk-component-progress: 1.0.13 => 1.0.14
+- bpk-component-radio: 1.1.19 => 1.1.20
+- bpk-component-router-link: 1.0.13 => 1.0.14
+- bpk-component-rtl-toggle: 1.0.13 => 1.0.14
+- bpk-component-select: 2.1.19 => 2.1.20
+- bpk-component-spinner: 2.1.19 => 2.1.20
+- bpk-component-star-rating: 1.0.13 => 1.0.14
+- bpk-component-table: 1.0.13 => 1.0.14
+- bpk-component-text: 1.0.11 => 1.0.12
+- bpk-component-textarea: 1.0.13 => 1.0.14
+- bpk-component-ticket: 1.0.13 => 1.0.14
+- bpk-component-tile: 0.0.18 => 0.0.19 (private)
+- bpk-component-tooltip: 2.0.9 => 2.0.10
+- bpk-react-utils: 2.3.2 => 2.3.3
   - Prepared for React 16 by supporting it as a peer dependency.
 
-## 2017-09-07 - New fast train icon
-
+  ## 2017-09-07 - New fast train icon
+  
 **Added:**
 - bpk-component-icon: 3.12.1 => 3.13.0
 - bpk-mixins: 16.4.1 => 16.5.0
