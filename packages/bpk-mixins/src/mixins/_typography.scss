@@ -482,19 +482,19 @@
   cursor: pointer;
   appearance: none;
 
-  @include prop(color, secondary-color);
+  @include prop(color, primary-color);
 
   @include bpk-hover {
-    @include prop(color, secondary-dark-color);
+    @include prop(color, primary-dark-color);
     text-decoration: $bpk-link-hover-text-decoration;
   }
 
   &:visited {
-    @include prop(color, secondary-dark-color);
+    @include prop(color, primary-dark-color);
   }
 
   &:active {
-    @include prop(color, secondary-dark-color);
+    @include prop(color, primary-dark-color);
     text-decoration: $bpk-link-hover-text-decoration;
   }
 }
