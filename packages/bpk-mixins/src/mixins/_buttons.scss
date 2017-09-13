@@ -173,23 +173,22 @@
 ///   }
 
 @mixin bpk-button--selected {
-  @include prop(background-color, primary-color);
-  @include gradient(primary-gradient-start-color, primary-gradient-end-color);
-  @include prop(color, primary-contrast-color);
+  background-color: $bpk-button-selected-background-color;
+  background-image: $bpk-button-selected-background-image;
+  color: $bpk-button-selected-color;
   box-shadow: $bpk-button-selected-box-shadow;
 
-
   @include bpk-hover {
-    @include prop(background-color, primary-dark-color);
-    @include prop(color, primary-dark-contrast-color);
-    background-image: none;
+    background-color: $bpk-button-selected-hover-background-color;
+    background-image: $bpk-button-selected-hover-background-image;
+    color: $bpk-button-selected-hover-color;
     box-shadow: $bpk-button-selected-hover-box-shadow;
   }
 
   &:active {
-    @include prop(background-color, primary-dark-color);
-    @include prop(color, primary-dark-contrast-color);
-    background-image: none;
+    background-color: $bpk-button-selected-active-background-color;
+    background-image: $bpk-button-selected-active-background-image;
+    color: $bpk-button-selected-active-color;
     box-shadow: $bpk-button-selected-active-box-shadow;
   }
 
