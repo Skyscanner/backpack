@@ -4,14 +4,16 @@
 
 _Nothing yet..._
 
-## 2017-09-12 - New react-native Text component
+## 2017-09-12 - New React Native Text component
+
+**_Note:_** _There was an issue during the package publishing step which resulted in all changed packages being published twice by mistake. Apologies for any confusion._
 
 **Breaking:**
 - bpk-tokens: 25.0.0 => 26.0.0
-  - Removed tokens for react native text
+  - Removed ios and android letter spacing tokens
 
-  **Added:**
-- react-native-bpk-component-text: 1.0.0 => 2.0.0
+**Added:**
+- react-native-bpk-component-text: 2.0.0
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/text
 
 **Fixed:**
@@ -67,8 +69,8 @@ _Nothing yet..._
 - bpk-react-utils: 2.3.2 => 2.3.3
   - Prepared for React 16 by supporting it as a peer dependency.
 
-  ## 2017-09-07 - New fast train icon
-  
+## 2017-09-07 - New fast train icon
+
 **Added:**
 - bpk-component-icon: 3.12.1 => 3.13.0
 - bpk-mixins: 16.4.1 => 16.5.0
