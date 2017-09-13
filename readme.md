@@ -41,6 +41,7 @@ npm install [package-name] --save-dev
 | [`bpk-component-heading`](/packages/bpk-component-heading) | [![npm version](https://badge.fury.io/js/bpk-component-heading.svg)](http://badge.fury.io/js/bpk-component-heading) |
 | [`bpk-component-horizontal-nav`](/packages/bpk-component-horizontal-nav) | [![npm version](https://badge.fury.io/js/bpk-component-horizontal-nav.svg)](http://badge.fury.io/js/bpk-component-horizontal-nav) |
 | [`bpk-component-icon`](/packages/bpk-component-icon) | [![npm version](https://badge.fury.io/js/bpk-component-icon.svg)](http://badge.fury.io/js/bpk-component-icon) |
+| [`bpk-component-image`](/packages/bpk-component-image) | [![npm version](https://badge.fury.io/js/bpk-component-image.svg)](http://badge.fury.io/js/bpk-component-image) |
 | [`bpk-component-input`](/packages/bpk-component-input) | [![npm version](https://badge.fury.io/js/bpk-component-input.svg)](http://badge.fury.io/js/bpk-component-input) |
 | [`bpk-component-label`](/packages/bpk-component-label) | [![npm version](https://badge.fury.io/js/bpk-component-label.svg)](http://badge.fury.io/js/bpk-component-label) |
 | [`bpk-component-link`](/packages/bpk-component-link) | [![npm version](https://badge.fury.io/js/bpk-component-link.svg)](http://badge.fury.io/js/bpk-component-link) |
