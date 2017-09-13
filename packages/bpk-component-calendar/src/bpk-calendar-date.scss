@@ -63,8 +63,8 @@
   }
 
   &--focused:not(:disabled):not(.bpk-calendar-date--selected) {
-    color: $bpk-state-selected-background-color;
-    box-shadow: 0 0 0 2px $bpk-state-selected-background-color inset;
+    @include prop(color, primary-color);
+    @include border(2px, primary-color);
   }
 
   &:disabled {
