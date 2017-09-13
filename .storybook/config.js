@@ -5,6 +5,8 @@ import '../packages/bpk-stylesheets';
 import TOKENS from './../packages/bpk-tokens/tokens/base.common';
 import BpkGridToggle from './../packages/bpk-component-grid-toggle';
 import BpkRtlToggle from './../packages/bpk-component-rtl-toggle';
+import BpkSelect from './../packages/bpk-component-select';
+import BpkLabel from './../packages/bpk-component-label';
 
 const VARIABLE_NAMES = [
 'primaryColor',
@@ -81,7 +83,7 @@ class ThemeProvider extends React.Component {
     this.updateCssVariables();
   }
   render() {
-    return (<div ref={div => {this.div = div}}>
+    return (<div ref={div => {this.div = div}} style={{ paddingTop: '.75rem' }}>
       {this.props.children}
     </div>);
   }
@@ -102,10 +104,12 @@ class ThemeSelector extends React.Component {
   }
   render() {
     return <div>
-      <label for="select-theme">Select theme:</label>
-      <select name="select-theme" id="select-theme" value={this.state.theme} onChange={this.changeTheme}>
-        {Object.keys(THEMES).map(themeName => <option value={themeName} key={themeName}>{themeName}</option>)}
-      </select>
+      <form style={{ width: '60%' }}>
+        <BpkLabel for="select-theme">Select theme:</BpkLabel>
+        <BpkSelect name="select-theme" id="select-theme" value={this.state.theme} onChange={this.changeTheme}>
+          {Object.keys(THEMES).map(themeName => <option value={themeName} key={themeName}>{themeName}</option>)}
+        </BpkSelect>
+      </form>
       <ThemeProvider theme={THEMES[this.state.theme]}>
         {this.props.children}
       </ThemeProvider>
