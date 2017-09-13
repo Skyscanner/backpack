@@ -478,22 +478,23 @@
   padding: 0;
   border: 0;
   background-color: transparent;
-  color: $bpk-link-color;
   text-decoration: $bpk-link-text-decoration;
   cursor: pointer;
   appearance: none;
 
+  @include prop(color, secondary-color);
+
   @include bpk-hover {
-    color: $bpk-link-hover-color;
+    @include prop(color, secondary-dark-color);
     text-decoration: $bpk-link-hover-text-decoration;
   }
 
   &:visited {
-    color: $bpk-link-visited-color;
+    @include prop(color, secondary-dark-color);
   }
 
   &:active {
-    color: $bpk-link-active-color;
+    @include prop(color, secondary-dark-color);
     text-decoration: $bpk-link-hover-text-decoration;
   }
 }

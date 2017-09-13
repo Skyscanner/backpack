@@ -30,27 +30,6 @@
 ///     @include bpk-button();
 ///   }
 
-$vars: (
-  primary-color: $bpk-button-background-color,
-  primary-contrast-color: $bpk-button-color,
-  primary-gradient-start-color: $bpk-color-green-500,
-  primary-gradient-end-color: $bpk-color-green-600,
-  primary-light-color: $bpk-color-green-600,
-  primary-light-contrast-color: $bpk-button-color,
-  primary-dark-color: $bpk-color-green-700,
-  primary-dark-contrast-color: $bpk-button-color,
-);
-
-@mixin gradient($startVarName, $endVarName) {
-  background-image: linear-gradient(-180deg, map-get($vars, $startVarName) 0%, map-get($vars, $endVarName) 100%);
-  background-image: linear-gradient(-180deg, var(--#{$startVarName}, map-get($vars, $startVarName)) 0%, var(--#{$endVarName}, map-get($vars, $endVarName)) 100%);
-}
-
-@mixin prop($property, $varName) {
-  #{$property}: map-get($vars, $varName);
-  #{$property}: var(--#{$varName}, map-get($vars, $varName));
-}
-
 @mixin bpk-button {
   display: inline-block;
   margin: 0;
