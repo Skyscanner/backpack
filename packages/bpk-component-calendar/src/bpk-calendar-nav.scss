@@ -46,29 +46,25 @@
     line-height: 100%; /* stylelint-disable-line scale-unlimited/declaration-strict-value */
     cursor: pointer;
     appearance: none;
-
-    @include bpk-hover {
-      .bpk-calendar-nav__icon {
-        fill: $bpk-calendar-nav-icon-hover-fill;
-      }
-    }
+    @include prop(color, primary-color);
 
     .bpk-calendar-nav__icon {
-      fill: $bpk-calendar-nav-icon-fill;
+      fill: currentColor;
 
       @include bpk-icon--rtl-support;
     }
 
-    &:active .bpk-calendar-nav__icon {
-      fill: $bpk-calendar-nav-icon-active-fill;
+    @include bpk-hover {
+      @include prop(color, primary-dark-color);
+    }
+
+    &:active {
+      @include prop(color, primary-dark-color);
     }
 
     &:disabled {
       cursor: not-allowed;
-
-      .bpk-calendar-nav__icon {
-        fill: $bpk-calendar-nav-icon-disabled-fill;
-      }
+      color: $bpk-calendar-nav-icon-disabled-fill;
     }
   }
 
