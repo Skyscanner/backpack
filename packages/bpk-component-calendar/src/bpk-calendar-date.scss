@@ -25,12 +25,14 @@
   border: none;
   border-radius: $bpk-border-radius-pill;
   background-color: $bpk-calendar-day-background-color;
-  color: $bpk-calendar-day-color;
   font-size: $bpk-font-size-base;
   text-align: center;
   cursor: pointer;
   appearance: none;
   box-sizing: border-box;
+
+  @include prop(color, primary-color);
+
 
   @include bpk-hover {
     &:not(.bpk-calendar-date--selected) {
@@ -54,8 +56,8 @@
   }
 
   &--selected {
-    background-color: $bpk-state-selected-background-color;
-    color: $bpk-calendar-day-selected-color;
+    @include prop(background-color, primary-color);
+    @include prop(color, primary-contrast-color);
     font-weight: bold;
     cursor: default;
   }
