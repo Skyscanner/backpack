@@ -176,7 +176,6 @@
   @include prop(background-color, secondary-color);
   @include gradient(secondary-gradient-start-color, secondary-gradient-end-color);
   @include prop(color, secondary-contrast-color);
-  background-image: none;
   box-shadow: $bpk-button-selected-box-shadow;
 
   @include bpk-hover {
