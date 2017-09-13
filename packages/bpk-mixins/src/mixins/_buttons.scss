@@ -36,9 +36,9 @@
   padding: $bpk-button-padding-y $bpk-button-padding-x;
   border: 0;
   border-radius: $bpk-button-border-radius;
-  @include prop(background-color, primary-color);
-  @include gradient(primary-gradient-start-color, primary-gradient-end-color);
-  @include prop(color, primary-contrast-color);
+  @include prop(background-color, cta-color);
+  @include gradient(cta-gradient-start-color, cta-gradient-end-color);
+  @include prop(color, cta-contrast-color);
   font-size: $bpk-button-font-size;
   font-weight: $bpk-button-font-weight;
   line-height: $bpk-button-line-height;
@@ -50,16 +50,16 @@
   user-select: none;
 
   @include bpk-hover {
-    @include prop(background-color, primary-light-color);
+    @include prop(background-color, cta-light-color);
     background-image: none;
-    @include prop(color, primary-light-contrast-color);
+    @include prop(color, cta-light-contrast-color);
     box-shadow: $bpk-button-hover-box-shadow;
   }
 
   &:active {
-    @include prop(background-color, primary-dark-color);
+    @include prop(background-color, cta-dark-color);
     background-image: none;
-    @include prop(color, primary-dark-contrast-color);
+    @include prop(color, cta-dark-contrast-color);
     box-shadow: $bpk-button-active-box-shadow;
   }
 
@@ -100,22 +100,22 @@
 ///   }
 
 @mixin bpk-button--secondary {
-  background-color: $bpk-button-secondary-background-color;
-  background-image: $bpk-button-secondary-background-image;
-  color: $bpk-button-secondary-color;
+  @include prop(background-color, secondary-color);
+  @include gradient(secondary-gradient-start-color, secondary-gradient-end-color);
+  @include prop(color, secondary-contrast-color);
   box-shadow: $bpk-button-secondary-box-shadow;
 
   @include bpk-hover {
-    background-color: $bpk-button-secondary-hover-background-color;
-    background-image: $bpk-button-secondary-hover-background-image;
-    color: $bpk-button-secondary-hover-color;
+    @include prop(background-color, secondary-dark-color);
+    @include prop(color, secondary-dark-contrast-color);
+    background-image: none;
     box-shadow: $bpk-button-secondary-hover-box-shadow;
   }
 
   &:active {
-    background-color: $bpk-button-secondary-active-background-color;
-    background-image: $bpk-button-secondary-active-background-image;
-    color: $bpk-button-secondary-active-color;
+    @include prop(background-color, secondary-dark-color);
+    @include prop(color, secondary-dark-contrast-color);
+    background-image: none;
     box-shadow: $bpk-button-secondary-active-box-shadow;
   }
 
@@ -172,22 +172,23 @@
 ///   }
 
 @mixin bpk-button--selected {
-  background-color: $bpk-button-selected-background-color;
-  background-image: $bpk-button-selected-background-image;
-  color: $bpk-button-selected-color;
+  @include prop(background-color, primary-color);
+  @include gradient(primary-gradient-start-color, primary-gradient-end-color);
+  @include prop(color, primary-contrast-color);
   box-shadow: $bpk-button-selected-box-shadow;
 
+
   @include bpk-hover {
-    background-color: $bpk-button-selected-hover-background-color;
-    background-image: $bpk-button-selected-hover-background-image;
-    color: $bpk-button-selected-hover-color;
+    @include prop(background-color, primary-dark-color);
+    @include prop(color, primary-dark-contrast-color);
+    background-image: none;
     box-shadow: $bpk-button-selected-hover-box-shadow;
   }
 
   &:active {
-    background-color: $bpk-button-selected-active-background-color;
-    background-image: $bpk-button-selected-active-background-image;
-    color: $bpk-button-selected-active-color;
+    @include prop(background-color, primary-dark-color);
+    @include prop(color, primary-dark-contrast-color);
+    background-image: none;
     box-shadow: $bpk-button-selected-active-box-shadow;
   }
 
