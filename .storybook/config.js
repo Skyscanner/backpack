@@ -9,86 +9,88 @@ import BpkSelect from './../packages/bpk-component-select';
 import BpkLabel from './../packages/bpk-component-label';
 
 const VARIABLE_NAMES = [
-'ctaColor',
-'ctaContrastColor',
-'ctaDarkColor',
-'ctaDarkContastColor',
-'ctaLightColor',
-'ctaLightContastColor',
-'ctaGradientStartColor',
-'ctaGradientEndColor',
-'primaryColor',
-'primaryContrastColor',
-'primaryDarkColor',
-'primaryDarkContastColor',
-'primaryLightColor',
-'primaryLightContastColor',
-'primaryGradientStartColor',
-'primaryGradientEndColor',
-'secondaryColor',
-'secondaryContrastColor',
-'secondaryDarkColor',
-'secondaryDarkContastColor',
-'secondaryLightColor',
-'secondaryLightContastColor',
-'secondaryGradientStartColor',
-'secondaryGradientEndColor',
-]
+  'ctaColor',
+  'ctaContrastColor',
+  'ctaDarkColor',
+  'ctaDarkContastColor',
+  'ctaLightColor',
+  'ctaLightContastColor',
+  'ctaGradientStartColor',
+  'ctaGradientEndColor',
+  'primaryColor',
+  'primaryContrastColor',
+  'primaryDarkColor',
+  'primaryDarkContastColor',
+  'primaryLightColor',
+  'primaryLightContastColor',
+  'primaryGradientStartColor',
+  'primaryGradientEndColor',
+  'secondaryColor',
+  'secondaryContrastColor',
+  'secondaryDarkColor',
+  'secondaryDarkContastColor',
+  'secondaryLightColor',
+  'secondaryLightContastColor',
+  'secondaryGradientStartColor',
+  'secondaryGradientEndColor',
+];
 
 const THEMES = {
-  base: {},
-  custom: {
-    ctaColor: '#FFBC2C',
-    ctaContrastColor: '#fff',
-    ctaDarkColor: '#d69814',
-    ctaDarkContastColor: '#fff',
-    ctaLightColor: '#ffd884',
-    ctaLightContastColor: '#4D4D4D',
-    ctaGradientStartColor: '#FFBC2C',
-    ctaGradientEndColor: '#d69814',
-    primaryColor: '#86B86B',
-    primaryContrastColor: '#fff',
-    primaryDarkColor: '#76a85B',
-    primaryDarkContastColor: '#fff',
-    primaryLightColor: '#96c87B',
-    primaryLightContastColor: '#4D4D4D',
-    primaryGradientStartColor: '#86B86B',
-    primaryGradientEndColor: '#76a85B',
-    secondaryColor: '#fff',
-    secondaryContrastColor: '#86B86B',
-    secondaryDarkColor: '#dfdfdf',
-    secondaryDarkContastColor: '#76a85B',
-    secondaryLightColor: '#fff',
-    secondaryLightContastColor: '#96c87B',
-    secondaryGradientStartColor: '#86B86B',
-    secondaryGradientEndColor: '#76a85B',
+  'Skyscanner': {},
+  'British Airways': {
+    ctaColor: '#eb2226',
+    ctaContrastColor: '#ffffff',
+    ctaDarkColor: '#b81a1c',
+    ctaDarkContastColor: '#ffffff',
+    ctaLightColor: '#EC2D31',
+    ctaLightContastColor: '#ffffff',
+    ctaGradientStartColor: '#eb2226',
+    ctaGradientEndColor: '#eb2226',
+    primaryColor: '#eb2226',
+    primaryContrastColor: '#ffffff',
+    primaryDarkColor: '#b81a1c',
+    primaryDarkContastColor: '#ffffff',
+    primaryLightColor: '#EC2D31',
+    primaryLightContastColor: '#ffffff',
+    primaryGradientStartColor: '#eb2226',
+    primaryGradientEndColor: '#eb2226',
+    secondaryColor: '#075AAA',
+    secondaryContrastColor: '#ffffff',
+    secondaryDarkColor: '#054898',
+    secondaryDarkContastColor: '#fff',
+    secondaryLightColor: '#086CBB',
+    secondaryLightContastColor: '#4D4D4D',
+    secondaryGradientStartColor: '#075AAA',
+    secondaryGradientEndColor: '#075AAA',
+    primaryButtonBorderRadius: '2px',
+    primaryButtonLargeBorderRadius: '4px',
   },
-  gazorpazorp: {
-    ctaColor: '#F23557',
-    ctaContrastColor: '#fff',
-    ctaDarkColor: '#bf2944',
-    ctaDarkContastColor: '#fff',
-    ctaLightColor: '#ff6581',
-    ctaLightContastColor: '#3B4A6B',
-    ctaGradientStartColor: '#F23557',
-    ctaGradientEndColor: '#ff6581',
-    primaryColor: '#F0D43A',
-    primaryContrastColor: '#3B4A6B',
-    primaryDarkColor: '#caaf1c',
-    primaryDarkContastColor: '#3B4A6B',
-    primaryLightColor: '#f9e264',
-    primaryLightContastColor: '#3B4A6B',
-    primaryGradientStartColor: '#F0D43A',
-    primaryGradientEndColor: '#d0c42A',
-    secondaryColor: '#fff',
-    secondaryContrastColor: '#3B4A6B',
-    secondaryDarkColor: '#dfdfdf',
-    secondaryDarkContastColor: '#3B4A6B',
-    secondaryLightColor: '#fff',
-    secondaryLightContastColor: '#3B4A6B',
-    secondaryGradientStartColor: '#F0D43A',
-    secondaryGradientEndColor: '#3B4A6B',
-  }
+  'KLM': {
+    ctaColor: '#00A1E4',
+    ctaContrastColor: '#ffffff',
+    ctaDarkColor: '#0091CD',
+    ctaDarkContastColor: '#ffffff',
+    ctaLightColor: '#0DA5E5',
+    ctaLightContastColor: '#ffffff',
+    ctaGradientStartColor: '#00A1E4',
+    ctaGradientEndColor: '#00A1E4',
+    primaryColor: '#00A1E4',
+    primaryContrastColor: '#ffffff',
+    primaryDarkColor: '#0091CD',
+    primaryDarkContastColor: '#ffffff',
+    primaryLightColor: '#0DA5E5',
+    primaryLightContastColor: '#ffffff',
+    primaryGradientStartColor: '#00A1E4',
+    primaryGradientEndColor: '#00A1E4',
+    secondaryColor: '#E77B2F',
+    secondaryContrastColor: '#ffffff',
+    secondaryDarkColor: '#CF6E2A',
+    secondaryDarkContastColor: '#ffffff',
+    secondaryLightColor: '#E88138',
+    secondaryLightContastColor: '#ffffff',
+    secondaryGradientStartColor: '#E77B2F',
+    secondaryGradientEndColor: '#E77B2F',
+  },
 };
 
 class ThemeProvider extends React.Component {
@@ -97,7 +99,12 @@ class ThemeProvider extends React.Component {
       const cssName = variableName.replace(/([A-Z])/g, function($1){
         return "-"+$1.toLowerCase();
       });
-      this.div.style.setProperty(`--${cssName}`, this.props.theme[variableName]);
+
+      if (this.props.theme[variableName]) {
+        this.div.style.setProperty(`--${cssName}`, this.props.theme[variableName]);
+      } else {
+        this.div.style.setProperty(`--${cssName}`, '');
+      }
     });
   }
   componentDidMount() {
@@ -117,7 +124,7 @@ class ThemeSelector extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      theme: 'base'
+      theme: 'Skyscanner'
     };
     this.changeTheme = this.changeTheme.bind(this);
   }
