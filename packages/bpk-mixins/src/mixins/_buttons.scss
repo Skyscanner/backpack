@@ -36,6 +36,7 @@
   padding: $bpk-button-padding-y $bpk-button-padding-x;
   border: 0;
   border-radius: $bpk-button-border-radius;
+  @include prop(border-radius, primary-button-border-radius);
   @include prop(background-color, cta-color);
   @include gradient(cta-gradient-start-color, cta-gradient-end-color);
   @include prop(color, cta-contrast-color);
@@ -84,7 +85,7 @@
 
 @mixin bpk-button--large {
   padding: $bpk-button-large-padding-y $bpk-button-large-padding-x;
-  border-radius: $bpk-button-border-radius-lg;
+  @include prop(border-radius, primary-button-large-border-radius);
   font-size: $bpk-button-large-font-size;
   line-height: $bpk-button-large-line-height;
 }
@@ -100,23 +101,23 @@
 ///   }
 
 @mixin bpk-button--secondary {
-  @include prop(background-color, secondary-color);
-  @include gradient(secondary-gradient-start-color, secondary-gradient-end-color);
-  @include prop(color, secondary-contrast-color);
-  box-shadow: $bpk-button-secondary-box-shadow;
+  @include prop(background-color, secondary-contrast-color);
+  background-image: none;
+  @include prop(color, secondary-color);
+  @include _bpk-border(2px, $bpk-color-gray-100, inset);
 
   @include bpk-hover {
-    @include prop(background-color, secondary-dark-color);
-    @include prop(color, secondary-dark-contrast-color);
+    @include prop(background-color, secondary-contrast-color);
     background-image: none;
-    box-shadow: $bpk-button-secondary-hover-box-shadow;
+    @include prop(color, secondary-color);
+    @include border(2px, secondary-color);
   }
 
   &:active {
-    @include prop(background-color, secondary-dark-color);
-    @include prop(color, secondary-dark-contrast-color);
+    @include prop(background-color, secondary-contrast-color);
     background-image: none;
-    box-shadow: $bpk-button-secondary-active-box-shadow;
+    @include prop(color, secondary-color);
+    @include border(3px, secondary-color);
   }
 
   &:disabled {

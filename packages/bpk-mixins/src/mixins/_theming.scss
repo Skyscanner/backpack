@@ -34,3 +34,8 @@ $vars: (
   #{$property}: map-get($vars, $varName);
   #{$property}: var(--#{$varName}, map-get($vars, $varName));
 }
+
+@mixin border($size, $colorName) {
+  box-shadow: 0 0 0 $size map-get($vars, $colorName) inset;
+  box-shadow: 0 0 0 $size var(--#{$colorName}, map-get($vars, $colorName)) inset;
+}
