@@ -37,8 +37,8 @@ $vars: (
   primary-gradient-end-color: $bpk-color-green-600,
   primary-light-color: $bpk-color-green-600,
   primary-light-contrast-color: $bpk-button-color,
-  primary-light-dark: $bpk-color-green-700,
-  primary-light-contrast-dark: $bpk-button-color,
+  primary-dark-color: $bpk-color-green-700,
+  primary-dark-contrast-color: $bpk-button-color,
 );
 
 @mixin gradient($startVarName, $endVarName) {
@@ -58,7 +58,7 @@ $vars: (
   border: 0;
   border-radius: $bpk-button-border-radius;
   @include prop(background-color, primary-color);
-  @include gradient(primary-gradient-start-color, primary-gradient-start-color);
+  @include gradient(primary-gradient-start-color, primary-gradient-end-color);
   @include prop(color, primary-contrast-color);
   font-size: $bpk-button-font-size;
   font-weight: $bpk-button-font-weight;
