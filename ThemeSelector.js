@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import BpkSelect from './packages/bpk-component-select';
 import BpkLabel from './packages/bpk-component-label';
@@ -99,7 +100,7 @@ class ThemeProvider extends React.Component {
 
   updateCssVariables() {
     VARIABLE_NAMES.forEach((variableName) => {
-      const cssName = variableName.replace(/([A-Z])/g, variable => '-' + variable.toLowerCase());
+      const cssName = variableName.replace(/([A-Z])/g, variable => `-${variable.toLowerCase()}`);
 
       if (this.props.theme[variableName]) {
         this.div.style.setProperty(`--${cssName}`, this.props.theme[variableName]);
@@ -110,27 +111,32 @@ class ThemeProvider extends React.Component {
   }
 
   render() {
-    return (<div ref={div => { this.div = div }} style={{ paddingTop: '.75rem' }}>
+    return (<div ref={(div) => { this.div = div; }} style={{ paddingTop: '.75rem' }}>
       {this.props.children}
     </div>);
   }
 }
 
-class ThemeSelector extends React.Component {
+ThemeProvider.propTypes = {
+  theme: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  children: PropTypes.node.isRequired,
+};
+
+class ThemeSelector extends React.Component { // eslint-disable-line react/no-multi-comp
   constructor(props) {
     super(props);
     this.state = {
-      theme: 'Skyscanner'
+      theme: 'Skyscanner',
     };
     this.changeTheme = this.changeTheme.bind(this);
   }
   changeTheme(e) {
     this.setState({
-      theme: e.target.value
+      theme: e.target.value,
     });
   }
   render() {
-    return <div>
+    return (<div>
       <form style={{ width: '60%' }}>
         <BpkLabel for="select-theme">Select theme:</BpkLabel>
         <BpkSelect name="select-theme" id="select-theme" value={this.state.theme} onChange={this.changeTheme}>
@@ -140,8 +146,12 @@ class ThemeSelector extends React.Component {
       <ThemeProvider theme={THEMES[this.state.theme]}>
         {this.props.children}
       </ThemeProvider>
-    </div>
+    </div>);
   }
 }
+
+ThemeSelector.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default ThemeSelector;

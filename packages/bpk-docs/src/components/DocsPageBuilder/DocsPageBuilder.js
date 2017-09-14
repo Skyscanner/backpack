@@ -25,7 +25,6 @@ import PropTypes from 'prop-types';
 import React, { Children } from 'react';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import BpkContentContainer from 'bpk-component-content-container';
-import ThemeSelector from '../../../../../ThemeSelector';
 import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table';
 
 import Heading from './../../components/Heading';
@@ -34,6 +33,7 @@ import SassdocLink from './../../components/SassdocLink';
 import PresentationBlock from './../../components/PresentationBlock';
 import ComponentScreenshots from './ComponentScreenshots';
 import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper';
+import ThemeSelector from '../../../../../ThemeSelector';
 
 const flatten = Children.toArray;
 const renderer = new marked.Renderer();
