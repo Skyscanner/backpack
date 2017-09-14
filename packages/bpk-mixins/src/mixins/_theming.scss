@@ -9,16 +9,16 @@ $vars: (
   cta-dark-contrast-color: $bpk-color-white,
   primary-color: $bpk-color-blue-500,
   primary-contrast-color: $bpk-color-white,
-  primary-gradient-start-color: $bpk-color-blue-500,
-  primary-gradient-end-color: $bpk-color-blue-500,
-  primary-light-color: $bpk-color-blue-700,
+  primary-gradient-start-color: $bpk-color-blue-600,
+  primary-gradient-end-color: $bpk-color-blue-700,
+  primary-light-color: $bpk-color-blue-600,
   primary-light-contrast-color: $bpk-color-white,
   primary-dark-color: $bpk-color-blue-900,
   primary-dark-contrast-color: $bpk-color-white,
   secondary-color: $bpk-color-blue-500,
   secondary-contrast-color: $bpk-color-white,
-  secondary-gradient-start-color: $bpk-color-blue-500,
-  secondary-gradient-end-color: $bpk-color-blue-500,
+  secondary-gradient-start-color: $bpk-color-blue-600,
+  secondary-gradient-end-color: $bpk-color-blue-700,
   secondary-light-color: $bpk-color-blue-600,
   secondary-light-contrast-color: $bpk-color-white,
   secondary-dark-color: $bpk-color-blue-700,
@@ -40,4 +40,24 @@ $vars: (
 @mixin border($size, $colorName) {
   box-shadow: 0 0 0 $size map-get($vars, $colorName) inset;
   box-shadow: 0 0 0 $size var(--#{$colorName}, map-get($vars, $colorName)) inset;
+}
+
+@mixin border-left($size, $colorName) {
+  box-shadow: $size 0 0 0 map-get($vars, $colorName) inset;
+  box-shadow: $size 0 0 0 var(--#{$colorName}, map-get($vars, $colorName)) inset;
+}
+
+@mixin border-right($size, $colorName) {
+  box-shadow: -$size 0 0 0 map-get($vars, $colorName) inset;
+  box-shadow: -$size 0 0 0 var(--#{$colorName}, map-get($vars, $colorName)) inset;
+}
+
+@mixin border-bottom($size, $colorName) {
+  box-shadow: 0 (-$size) 0 0 map-get($vars, $colorName) inset;
+  box-shadow: 0 (-$size) 0 0 var(--#{$colorName}, map-get($vars, $colorName)) inset;
+}
+
+@mixin border-top($size, $colorName) {
+  box-shadow: 0 $size 0 0 map-get($vars, $colorName) inset;
+  box-shadow: 0 $size 0 0 var(--#{$colorName}, map-get($vars, $colorName)) inset;
 }

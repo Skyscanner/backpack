@@ -21,6 +21,11 @@
 .bpk-nudger {
   &__button {
     position: relative;
+    @include prop(color, secondary-color);
+
+    &[disabled] {
+      @include prop(color, $bpk-button-disabled-color);
+    }
   }
 
   &__input {
@@ -37,10 +42,6 @@
   }
 
   &__icon {
-    fill: $bpk-button-secondary-color;
-
-    &--disabled {
-      fill: $bpk-button-disabled-color;
-    }
+    fill: currentColor;
   }
 }

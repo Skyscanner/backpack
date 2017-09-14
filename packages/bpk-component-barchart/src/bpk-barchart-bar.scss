@@ -19,22 +19,22 @@
 @import '~bpk-mixins/index';
 
 .bpk-barchart-bar {
-  fill: $bpk-color-blue-300;
+  @include prop(fill, primary-color);
 
   &--interactive:not(.bpk-barchart-bar--selected) {
     cursor: pointer;
 
     @include bpk-hover {
-      fill: $bpk-color-blue-500;
+      @include prop(fill, primary-light-color);
     }
 
     &:active {
-      fill: $bpk-color-blue-600;
+      @include prop(fill, primary-dark-color);
     }
   }
 
   &--selected {
-    fill: $bpk-color-blue-700;
+    @include prop(fill, primary-dark-color);
   }
 
   &__rect {

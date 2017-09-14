@@ -668,7 +668,7 @@
   padding: $bpk-spacing-xs $bpk-spacing-xs $bpk-spacing-xs $bpk-spacing-md;
   color: $bpk-color-gray-500;
 
-  @include bpk-border-left-lg($bpk-color-blue-500);
+  @include border-left($bpk-border-size-lg, primary-color);
 
   @include bpk-rtl {
     padding: $bpk-spacing-xs $bpk-spacing-md $bpk-spacing-xs $bpk-spacing-xs;

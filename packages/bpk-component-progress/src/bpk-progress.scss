@@ -39,7 +39,7 @@
     content: ' ';
     width: 0%;
     transition: width $bpk-duration-base ease-in-out;
-    background-color: $bpk-color-green-500;
+    @include prop(background-color, cta-color);
   }
 
   &__step {

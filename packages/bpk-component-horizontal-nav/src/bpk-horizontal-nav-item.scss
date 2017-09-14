@@ -35,13 +35,13 @@
     padding: $bpk-spacing-sm $bpk-spacing-base;
     border: 0;
     background: none;
-    color: $bpk-link-color;
     text-decoration: none;
     cursor: pointer;
 
-    @include bpk-hover {
-      color: $bpk-link-hover-color;
+    @include prop(color, primary-color);
 
+    @include bpk-hover {
+      @include prop(color, primary-dark-color);
       @include bpk-border-bottom-xl($bpk-color-gray-100);
     }
 
@@ -53,15 +53,14 @@
 
     &--selected {
       color: $bpk-font-color-base;
-
-      @include bpk-border-bottom-xl($bpk-state-selected-background-color);
+      @include border-bottom($bpk-border-size-xl, primary-color);
 
       @include bpk-hover {
-        @include bpk-border-bottom-xl($bpk-state-selected-background-color);
+        @include border-bottom($bpk-border-size-xl, primary-color);
       }
 
       &:active {
-        @include bpk-border-bottom-xl($bpk-state-selected-background-color);
+        @include border-bottom($bpk-border-size-xl, primary-color);
       }
     }
   }

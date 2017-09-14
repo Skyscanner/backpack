@@ -51,9 +51,7 @@ const BpkNudger = (props) => {
   const increaseDisabled = adjustedValue >= max;
 
   const minusIconClassNames = [getClassName('bpk-nudger__icon')];
-  if (decreaseDisabled) { minusIconClassNames.push(getClassName('bpk-nudger__icon--disabled')); }
   const plusIconClassNames = [getClassName('bpk-nudger__icon')];
-  if (increaseDisabled) { plusIconClassNames.push(getClassName('bpk-nudger__icon--disabled')); }
 
   return (
     <div className={classNames.join(' ')}>

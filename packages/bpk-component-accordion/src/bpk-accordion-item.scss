@@ -28,21 +28,22 @@
     padding: $bpk-spacing-xs 0;
     border: 0;
     background-color: transparent;
-    color: $bpk-link-color;
     text-align: left;
     cursor: pointer;
     appearance: none;
+
+    @include prop(color, primary-color);
 
     @include bpk-rtl {
       text-align: right;
     }
 
     @include bpk-hover {
-      color: $bpk-link-hover-color;
+      @include prop(color, primary-dark-color);
     }
 
     &:active {
-      color: $bpk-link-active-color;
+      @include prop(color, primary-dark-color);
     }
   }
 
