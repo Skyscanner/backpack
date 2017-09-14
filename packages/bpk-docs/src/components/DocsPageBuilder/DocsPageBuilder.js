@@ -25,6 +25,7 @@ import PropTypes from 'prop-types';
 import React, { Children } from 'react';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import BpkContentContainer from 'bpk-component-content-container';
+import ThemeSelector from '../../../../../ThemeSelector';
 import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table';
 
 import Heading from './../../components/Heading';
@@ -129,26 +130,28 @@ const CustomSection = section => [
 ];
 
 const DocsPageBuilder = props => (
-  <BpkContentContainer>
-    <Helmet title={props.title} />
-    <Heading level="h1">{props.title}</Heading>
-    {flatten(toNodes(props.blurb))}
-    {props.showMenu && (
-      <BpkList>{flatten([...props.components, ...props.customSections].map(ExampleNavListItem))}</BpkList>
-    )}
-    {props.tokenMap ? toTokenTable(props.tokenMap) : null}
-    {flatten(props.components.map(ComponentExample))}
-    {props.readme ? flatten([
-      <Heading id="readme" level="h2">Readme</Heading>,
-      <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(props.readme) }} bareHtml />,
-    ]) : null
-    }
-    {flatten(props.customSections.map(CustomSection))}
-    {props.sassdocId ? toSassdocLink({
-      sassdocId: props.sassdocId,
-      category: props.title,
-    }) : null}
-  </BpkContentContainer>
+  <ThemeSelector>
+    <BpkContentContainer>
+      <Helmet title={props.title} />
+      <Heading level="h1">{props.title}</Heading>
+      {flatten(toNodes(props.blurb))}
+      {props.showMenu && (
+        <BpkList>{flatten([...props.components, ...props.customSections].map(ExampleNavListItem))}</BpkList>
+      )}
+      {props.tokenMap ? toTokenTable(props.tokenMap) : null}
+      {flatten(props.components.map(ComponentExample))}
+      {props.readme ? flatten([
+        <Heading id="readme" level="h2">Readme</Heading>,
+        <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(props.readme) }} bareHtml />,
+      ]) : null
+      }
+      {flatten(props.customSections.map(CustomSection))}
+      {props.sassdocId ? toSassdocLink({
+        sassdocId: props.sassdocId,
+        category: props.title,
+      }) : null}
+    </BpkContentContainer>
+  </ThemeSelector>
 );
 
 const childrenPropType = PropTypes.oneOfType([
