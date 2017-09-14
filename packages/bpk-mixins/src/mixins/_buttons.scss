@@ -179,16 +179,16 @@
   box-shadow: $bpk-button-selected-box-shadow;
 
   @include bpk-hover {
-    @include prop(background-color, secondary-dark-color);
-    @include gradient(secondary-gradient-start-color, secondary-gradient-end-color);
-    @include prop(color, secondary-dark-contrast-color);
+    @include prop(background-color, secondary-light-color);
+    @include prop(color, secondary-light-contrast-color);
+    background-image: none;
     box-shadow: $bpk-button-selected-hover-box-shadow;
   }
 
   &:active {
     @include prop(background-color, secondary-dark-color);
-    @include gradient(secondary-gradient-start-color, secondary-gradient-end-color);
     @include prop(color, secondary-dark-contrast-color);
+    background-image: none;
     box-shadow: $bpk-button-selected-active-box-shadow;
   }
 
