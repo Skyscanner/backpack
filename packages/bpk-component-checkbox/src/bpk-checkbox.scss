@@ -23,10 +23,19 @@
 
   &__label {
     @include bpk-checkbox__label;
+    position: relative;
 
     &--small {
       @include bpk-checkbox__label--small;
     }
+  }
+
+  &__tick {
+    position: absolute;
+    left: 2px;
+    top: 3px;
+    max-width: 13px;
+    @include prop(fill, primary-color);
   }
 
   &--white {
@@ -38,7 +47,20 @@
   }
 
   &__input {
+    position: relative;
+    z-index: 2;
+
     @include bpk-checkbox__input;
+
+    background: none;
+    border: 1px solid $bpk-color-gray-100;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background: #fff;
+
+    &:checked {
+      background: none;
+    }
   }
 
   &__asterisk {

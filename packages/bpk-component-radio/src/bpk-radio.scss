@@ -31,5 +31,24 @@
 
   &__input {
     @include bpk-radio__input;
+    background: $bpk-color-white;
+    border-radius: 100%;
+    box-sizing: border-box;
+    border: 4px solid $bpk-color-white;
+    box-shadow: 0 0 0 1px $bpk-color-gray-100;
+
+    &:checked {
+      @include prop(background, primary-color);
+
+      &:disabled {
+        background: $bpk-color-gray-300;
+        border-color: $bpk-color-gray-50;
+      }
+    }
+
+    &:disabled {
+      border-color: $bpk-color-gray-50;
+      background: $bpk-color-gray-50;
+    }
   }
 }
