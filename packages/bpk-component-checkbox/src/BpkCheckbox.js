@@ -19,6 +19,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
+import TickIcon from 'bpk-component-icon/sm/tick';
 
 import STYLES from './bpk-checkbox.scss';
 
@@ -47,6 +48,7 @@ const BpkCheckbox = (props) => {
         disabled={disabled}
         {...rest}
       />
+      <TickIcon className={getClassName('bpk-checkbox__tick')} />
       <span className={labelClassNames.join(' ')}>
         {label}
         {required && (
