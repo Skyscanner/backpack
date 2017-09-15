@@ -2,7 +2,13 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- react-native-bpk-component-text:
+  - New `emphasize` prop
+
+**Fixed:**
+- react-native-bpk-component-text:
+  - Default color is now gray700
 
 ## 2017-09-12 - New React Native Text component
 

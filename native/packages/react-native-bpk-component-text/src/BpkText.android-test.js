@@ -46,6 +46,39 @@ describe('Android', () => {
       expect(tree).toMatchSnapshot();
     });
 
+    it('should render correctly with `emphasize` prop', () => {
+      const tree = renderer.create(
+        <BpkText emphasize>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkText>,
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly with `emphasize` & `textStyle` equal to `xxl`', () => {
+      const tree = renderer.create(
+        <BpkText emphasize textStyle="xxl">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkText>,
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should preserve user defined fontWeight', () => {
+      const tree = renderer.create(
+        <BpkText style={{ fontWeight: '900' }}>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkText>,
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
     it('should support overwriting styles', () => {
       const tree = renderer.create(
         <BpkText style={{ color: 'red' }}>

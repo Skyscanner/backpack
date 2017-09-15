@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`iOS BpkText should ignore user defined fontWeight 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+      },
+      Object {},
+      Object {},
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
 exports[`iOS BpkText should render correctly 1`] = `
 <Text
   accessible={true}
@@ -9,11 +33,62 @@ exports[`iOS BpkText should render correctly 1`] = `
   style={
     Array [
       Object {
-        "color": "rgb(37, 32, 51)",
+        "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
         "fontSize": 15,
         "fontWeight": "400",
         "lineHeight": 20,
+      },
+      Object {},
+      Object {},
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with \`emphasize\` & \`textStyle\` equal to \`xxl\` 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 34,
+        "fontWeight": "700",
+        "lineHeight": 41,
+      },
+      Object {},
+      Object {},
+    ]
+  }
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</Text>
+`;
+
+exports[`iOS BpkText should render correctly with \`emphasize\` prop 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "rgb(82, 76, 97)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+      },
+      Object {
+        "fontWeight": "600",
       },
       Object {},
     ]
@@ -32,12 +107,13 @@ exports[`iOS BpkText should render correctly with textStyle="base" 1`] = `
   style={
     Array [
       Object {
-        "color": "rgb(37, 32, 51)",
+        "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
         "fontSize": 15,
         "fontWeight": "400",
         "lineHeight": 20,
       },
+      Object {},
       Object {},
     ]
   }
@@ -55,12 +131,13 @@ exports[`iOS BpkText should render correctly with textStyle="lg" 1`] = `
   style={
     Array [
       Object {
-        "color": "rgb(37, 32, 51)",
+        "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
         "fontSize": 17,
         "fontWeight": "400",
         "lineHeight": 22,
       },
+      Object {},
       Object {},
     ]
   }
@@ -78,12 +155,13 @@ exports[`iOS BpkText should render correctly with textStyle="sm" 1`] = `
   style={
     Array [
       Object {
-        "color": "rgb(37, 32, 51)",
+        "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
         "fontSize": 13,
         "fontWeight": "400",
         "lineHeight": 18,
       },
+      Object {},
       Object {},
     ]
   }
@@ -101,12 +179,13 @@ exports[`iOS BpkText should render correctly with textStyle="xl" 1`] = `
   style={
     Array [
       Object {
-        "color": "rgb(37, 32, 51)",
+        "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
         "fontSize": 20,
         "fontWeight": "400",
         "lineHeight": 24,
       },
+      Object {},
       Object {},
     ]
   }
@@ -124,12 +203,13 @@ exports[`iOS BpkText should render correctly with textStyle="xs" 1`] = `
   style={
     Array [
       Object {
-        "color": "rgb(37, 32, 51)",
+        "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
         "fontSize": 11,
         "fontWeight": "400",
         "lineHeight": 13,
       },
+      Object {},
       Object {},
     ]
   }
@@ -147,12 +227,13 @@ exports[`iOS BpkText should render correctly with textStyle="xxl" 1`] = `
   style={
     Array [
       Object {
-        "color": "rgb(37, 32, 51)",
+        "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
         "fontSize": 34,
         "fontWeight": "700",
         "lineHeight": 41,
       },
+      Object {},
       Object {},
     ]
   }
@@ -170,12 +251,13 @@ exports[`iOS BpkText should support overwriting styles 1`] = `
   style={
     Array [
       Object {
-        "color": "rgb(37, 32, 51)",
+        "color": "rgb(82, 76, 97)",
         "fontFamily": "System",
         "fontSize": 15,
         "fontWeight": "400",
         "lineHeight": 20,
       },
+      Object {},
       Object {
         "color": "red",
       },

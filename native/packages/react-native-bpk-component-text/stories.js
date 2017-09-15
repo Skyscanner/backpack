@@ -1,41 +1,46 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-
+import { View, StyleSheet } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
-import { colorBlue500 } from 'bpk-tokens/tokens/ios/base.react.native.es6';
+import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
 
-import BpkText, { TEXT_STYLES } from '../../packages/react-native-bpk-component-text';
+import BpkText from './index';
 
 const styles = StyleSheet.create({
-  blueText: {
-    color: colorBlue500,
-  },
-  centered: {
+  container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    padding: TOKENS.spacingBase,
   },
 });
 
 storiesOf('BpkText', module)
-  .addDecorator(getStory =>
-    <View style={styles.centered}>
-      {getStory()}
-    </View>,
-  )
-  .add('Default', () => {
-    const text = 'Hello from BpkText';
-    const textStyles = TEXT_STYLES.map(style => <BpkText textStyle={style} key={`text-${style}`}>{text}</BpkText>);
-    textStyles.reverse();
-
-    return (
-      <View>
-        {textStyles}
-      </View>
-    );
-  })
-  .add('Extended Style', () =>
-    <BpkText textStyle="xxl" style={styles.blueText}>
-      Hello
-    </BpkText>,
-  );
+  .add('docs:text-styles', () => (
+    <View style={styles.container}>
+      <BpkText textStyle="xxl">Flights to Edinburgh</BpkText>
+      <BpkText textStyle="xl">Flights to Edinburgh</BpkText>
+      <BpkText textStyle="lg">Flights to Edinburgh</BpkText>
+      <BpkText textStyle="base">Flights to Edinburgh</BpkText>
+      <BpkText textStyle="sm">Flights to Edinburgh</BpkText>
+      <BpkText textStyle="xs">Flights to Edinburgh</BpkText>
+    </View>
+  ))
+  .add('Bold', () => (
+    <View style={styles.container}>
+      <BpkText textStyle="xxl" emphasize style={{ fontWeight: '900' }}>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="xl" emphasize>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="lg" emphasize>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="base" emphasize>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="sm" emphasize>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="xs" emphasize>Flights to Edinburgh</BpkText>
+    </View>
+  ))
+  .add('Colours', () => (
+    <View style={styles.container}>
+      <BpkText textStyle="xxl" style={{ color: TOKENS.colorBlue700 }}>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="xl" style={{ color: TOKENS.colorRed500 }}>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="lg" style={{ color: TOKENS.colorGreen500 }}>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="base" style={{ color: TOKENS.colorYellow500 }}>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="sm" style={{ color: TOKENS.colorBlue700 }}>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="xs" style={{ color: TOKENS.colorGray500 }}>Flights to Edinburgh</BpkText>
+    </View>
+  ));
