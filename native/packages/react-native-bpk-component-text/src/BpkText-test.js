@@ -16,13 +16,48 @@
  * limitations under the License.
  */
 
+import { StyleSheet } from 'react-native';
 import BpkText from './BpkText';
 
 describe('BpkText', () => {
-  it('should validate emphasize', () => {
+  it('should accept valid emphasize prop', () => {
+    expect(BpkText.propTypes.emphasize({
+      textStyle: 'sm',
+      emphasize: true,
+    }, 'emphasize', 'BpkText')).toEqual(false);
+  });
+
+  it('should error if emphasize prop is wrong type', () => {
+    expect(BpkText.propTypes.emphasize({
+      textStyle: 'sm',
+      emphasize: 'asdf',
+    }, 'emphasize', 'BpkText').toString()).toEqual('Error: Invalid prop `emphasize` of type `string` supplied to `BpkText`, expected `boolean`.'); // eslint-disable-line max-len
+  });
+
+  it('should error on invalid emphasize prop', () => {
     expect(BpkText.propTypes.emphasize({
       textStyle: 'xxl',
       emphasize: true,
-    }, 'emphasize', 'BpkText').toString()).toEqual('Error: Invalid prop `emphasize` of value `true` supplied to `BpkText`. `textStyle` value of `xxl` cannot be emphasized.');
+    }, 'emphasize', 'BpkText').toString()).toEqual('Error: Invalid prop `emphasize` of value `true` supplied to `BpkText`. `textStyle` value of `xxl` cannot be emphasized.'); // eslint-disable-line max-len
+  });
+
+  it('should accept valid style prop', () => {
+    expect(BpkText.propTypes.style({
+      style: StyleSheet.create({
+        breakingStyle: {
+          margin: 10,
+        },
+      }).breakingStyle,
+    }, 'style', 'BpkText')).toEqual(false);
+  });
+
+  it('should error on invalid style prop', () => {
+    expect(BpkText.propTypes.style({
+      style: StyleSheet.create({
+        breakingStyle: {
+          fontWeight: '200',
+        },
+      }).breakingStyle,
+    }, 'style', 'BpkText').toString()).toEqual('Error: Invalid prop `style` with `fontWeight` value `200` supplied to `BpkText`. Use `emphasize` prop instead.'); // eslint-disable-line max-len
   });
 });

@@ -1,31 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`iOS BpkText should ignore user defined fontWeight 1`] = `
-<Text
-  accessible={true}
-  allowFontScaling={true}
-  disabled={false}
-  ellipsizeMode="tail"
-  style={
-    Array [
-      Object {
-        "color": "rgb(82, 76, 97)",
-        "fontFamily": "System",
-        "fontSize": 15,
-        "fontWeight": "400",
-        "lineHeight": 20,
-      },
-      false,
-      Object {
-        "fontWeight": "900",
-      },
-    ]
-  }
->
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-</Text>
-`;
-
 exports[`iOS BpkText should render correctly 1`] = `
 <Text
   accessible={true}
@@ -42,32 +16,6 @@ exports[`iOS BpkText should render correctly 1`] = `
         "lineHeight": 20,
       },
       false,
-      Object {},
-    ]
-  }
->
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-</Text>
-`;
-
-exports[`iOS BpkText should render correctly with \`emphasize\` & \`textStyle\` equal to \`xxl\` 1`] = `
-<Text
-  accessible={true}
-  allowFontScaling={true}
-  disabled={false}
-  ellipsizeMode="tail"
-  style={
-    Array [
-      Object {
-        "color": "rgb(82, 76, 97)",
-        "fontFamily": "System",
-        "fontSize": 34,
-        "fontWeight": "700",
-        "lineHeight": 41,
-      },
-      Object {
-        "fontWeight": "600",
-      },
       Object {},
     ]
   }

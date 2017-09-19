@@ -29,10 +29,26 @@ const TEXT_STYLES = ['xs', 'sm', 'base', 'lg', 'xl', 'xxl'];
 
 const emphasizePropType = (props, propName, componentName) => {
   const value = props[propName];
+  if (typeof (value) !== 'boolean') {
+    return new Error(`Invalid prop \`${propName}\` of type \`${typeof (value)}\` supplied to \`${componentName}\`, expected \`boolean\`.`); // eslint-disable-line max-len
+  }
+
   const enabled = !!value;
 
   if (enabled && props.textStyle === 'xxl') {
-    return new Error(`Invalid prop \`${propName}\` of value \`${value}\` supplied to \`${componentName}\`. \`textStyle\` value of \`xxl\` cannot be emphasized.`);
+    return new Error(`Invalid prop \`${propName}\` of value \`${value}\` supplied to \`${componentName}\`. \`textStyle\` value of \`xxl\` cannot be emphasized.`); // eslint-disable-line max-len
+  }
+
+  return false;
+};
+
+const stylePropType = (props, propName, componentName) => {
+  const value = StyleSheet.flatten(props[propName]);
+
+  if (value === undefined) return false;
+
+  if (value.fontWeight) {
+    return new Error(`Invalid prop \`${propName}\` with \`fontWeight\` value \`${value.fontWeight}\` supplied to \`${componentName}\`. Use \`emphasize\` prop instead.`); // eslint-disable-line max-len
   }
 
   return false;
@@ -67,10 +83,6 @@ const styles = StyleSheet.create({
 const BpkText = (props) => {
   const { children, textStyle, style, emphasize, ...rest } = props;
 
-  // if (Platform.OS === 'ios' && StyleSheet.flatten(style).fontWeight) {
-  //   throw new Error('Your no allowed to do this!!');
-  // }
-
   return <Text style={[styles[textStyle], emphasize && styles.emphasize, style]} {...rest}>{children}</Text>;
 };
 
@@ -78,7 +90,7 @@ BpkText.propTypes = {
   children: PropTypes.node.isRequired,
   textStyle: PropTypes.oneOf(TEXT_STYLES),
   emphasize: emphasizePropType,
-  style: Text.propTypes.style,
+  style: stylePropType,
 };
 
 BpkText.defaultProps = {

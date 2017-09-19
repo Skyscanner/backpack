@@ -5,6 +5,7 @@
 **Added:**
 - react-native-bpk-component-text:
   - New `emphasize` prop
+  - Error messages when invalid fontWeight and emphasis are used
 
 - react-native-bpk-component-text-input:
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/input
@@ -12,6 +13,7 @@
 **Fixed:**
 - react-native-bpk-component-text:
   - Default color is now gray700
+  - Passing in a StyleSheet style prop is now supported
 
 ## 2017-09-12 - New React Native Text component
 

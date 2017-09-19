@@ -1,31 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Android BpkText should preserve user defined fontWeight 1`] = `
-<Text
-  accessible={true}
-  allowFontScaling={true}
-  disabled={false}
-  ellipsizeMode="tail"
-  style={
-    Array [
-      Object {
-        "color": "rgb(82, 76, 97)",
-        "fontFamily": "sans-serif-medium",
-        "fontSize": 14,
-        "fontWeight": undefined,
-        "lineHeight": 24,
-      },
-      false,
-      Object {
-        "fontWeight": "900",
-      },
-    ]
-  }
->
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-</Text>
-`;
-
 exports[`Android BpkText should render correctly 1`] = `
 <Text
   accessible={true}
@@ -42,32 +16,6 @@ exports[`Android BpkText should render correctly 1`] = `
         "lineHeight": 24,
       },
       false,
-      Object {},
-    ]
-  }
->
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-</Text>
-`;
-
-exports[`Android BpkText should render correctly with \`emphasize\` & \`textStyle\` equal to \`xxl\` 1`] = `
-<Text
-  accessible={true}
-  allowFontScaling={true}
-  disabled={false}
-  ellipsizeMode="tail"
-  style={
-    Array [
-      Object {
-        "color": "rgb(82, 76, 97)",
-        "fontFamily": "sans-serif",
-        "fontSize": 24,
-        "fontWeight": undefined,
-        "lineHeight": 32,
-      },
-      Object {
-        "fontWeight": "600",
-      },
       Object {},
     ]
   }
