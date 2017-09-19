@@ -16,6 +16,14 @@ import { View, StyleSheet } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: TOKENS.spacingBase,
+  }
+});
+
 export default class App extends Component {
   render() {
     return (
@@ -30,19 +38,12 @@ export default class App extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: TOKENS.spacingBase,
-  }
-});
 ```
 
 ## Props
 
 | Property    | PropType                                     | Required | Default Value |
 | ----------- | -------------------------------------------- | -------- | ------------- |
-| children    | -                                            | true     | -             |
-| textStyle   | oneOf('xxl', 'xl', 'lg', 'base', 'sm', 'xs') | false    | base          |
+| children    | node                                         | true     | -             |
+| textStyle   | oneOf('xxl', 'xl', 'lg', 'base', 'sm', 'xs') | false    | 'base'        |
+| emphasize   | bool                                         | false    | false         |
