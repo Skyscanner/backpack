@@ -15,7 +15,7 @@ exports[`Android BpkText should preserve user defined fontWeight 1`] = `
         "fontWeight": undefined,
         "lineHeight": 24,
       },
-      Object {},
+      false,
       Object {
         "fontWeight": "900",
       },
@@ -41,7 +41,7 @@ exports[`Android BpkText should render correctly 1`] = `
         "fontWeight": undefined,
         "lineHeight": 24,
       },
-      Object {},
+      false,
       Object {},
     ]
   }
@@ -117,7 +117,7 @@ exports[`Android BpkText should render correctly with textStyle="base" 1`] = `
         "fontWeight": undefined,
         "lineHeight": 24,
       },
-      Object {},
+      false,
       Object {},
     ]
   }
@@ -141,7 +141,7 @@ exports[`Android BpkText should render correctly with textStyle="lg" 1`] = `
         "fontWeight": undefined,
         "lineHeight": 24,
       },
-      Object {},
+      false,
       Object {},
     ]
   }
@@ -165,7 +165,7 @@ exports[`Android BpkText should render correctly with textStyle="sm" 1`] = `
         "fontWeight": undefined,
         "lineHeight": 20,
       },
-      Object {},
+      false,
       Object {},
     ]
   }
@@ -189,7 +189,7 @@ exports[`Android BpkText should render correctly with textStyle="xl" 1`] = `
         "fontWeight": undefined,
         "lineHeight": 28,
       },
-      Object {},
+      false,
       Object {},
     ]
   }
@@ -213,7 +213,7 @@ exports[`Android BpkText should render correctly with textStyle="xs" 1`] = `
         "fontWeight": undefined,
         "lineHeight": 16,
       },
-      Object {},
+      false,
       Object {},
     ]
   }
@@ -237,7 +237,7 @@ exports[`Android BpkText should render correctly with textStyle="xxl" 1`] = `
         "fontWeight": undefined,
         "lineHeight": 32,
       },
-      Object {},
+      false,
       Object {},
     ]
   }
@@ -261,7 +261,7 @@ exports[`Android BpkText should support overwriting styles 1`] = `
         "fontWeight": undefined,
         "lineHeight": 24,
       },
-      Object {},
+      false,
       Object {
         "color": "red",
       },

@@ -20,15 +20,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, Platform, StyleSheet } from 'react-native';
 
-const IOS_TOKENS = require('bpk-tokens/tokens/ios/base.react.native.common.js');
-const ANDROID_TOKENS = require('bpk-tokens/tokens/android/base.react.native.common.js');
-
 const tokens = Platform.select({
-  ios: () => IOS_TOKENS,
-  android: () => ANDROID_TOKENS,
+  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
+  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
 })();
 
 const TEXT_STYLES = ['xs', 'sm', 'base', 'lg', 'xl', 'xxl'];
+
+const emphasizePropType = (props, propName, componentName) => {
+  const value = props[propName];
+  const enabled = !!value;
+
+  if (enabled && props.textStyle === 'xxl') {
+    return new Error(`Invalid prop \`${propName}\` of value \`${value}\` supplied to \`${componentName}\`. \`textStyle\` value of \`xxl\` cannot be emphasized.`);
+  }
+
+  return false;
+};
 
 const getAndroidFontFamily = fontWeight =>
   (fontWeight === '500' ? 'sans-serif-medium' : 'sans-serif');
@@ -53,29 +61,23 @@ const styles = StyleSheet.create({
   lg: { ...getStyleByTextStyle('lg') },
   xl: { ...getStyleByTextStyle('xl') },
   xxl: { ...getStyleByTextStyle('xxl') },
+  emphasize: { fontWeight: '600' },
 });
 
 const BpkText = (props) => {
   const { children, textStyle, style, emphasize, ...rest } = props;
 
-  const emphasizedStyle = emphasize ? { fontWeight: '600' } : {};
-  const styleClone = Object.assign({}, style);
+  // if (Platform.OS === 'ios' && StyleSheet.flatten(style).fontWeight) {
+  //   throw new Error('Your no allowed to do this!!');
+  // }
 
-  if (Platform.OS === 'ios') {
-    delete styleClone.fontWeight;
-
-    if (textStyle === 'xxl') {
-      delete emphasizedStyle.fontWeight;
-    }
-  }
-
-  return <Text style={[styles[textStyle], emphasizedStyle, styleClone]} {...rest}>{children}</Text>;
+  return <Text style={[styles[textStyle], emphasize && styles.emphasize, style]} {...rest}>{children}</Text>;
 };
 
 BpkText.propTypes = {
   children: PropTypes.node.isRequired,
   textStyle: PropTypes.oneOf(TEXT_STYLES),
-  emphasize: PropTypes.bool,
+  emphasize: emphasizePropType,
   style: Text.propTypes.style,
 };
 

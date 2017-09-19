@@ -5,6 +5,7 @@
 **Added:**
 - react-native-bpk-component-text:
   - New `emphasize` prop
+
 - react-native-bpk-component-text-input:
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/input
 
