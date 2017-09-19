@@ -38,36 +38,18 @@ const components = [
     title: 'React components',
     blurb: [
       <Paragraph>
-        The recommended way to get started with Backpack is to
-        use <BpkRouterLink to={ROUTES.BACKPACK_REACT_SCRIPTS}>Backpack React Scripts</BpkRouterLink>.
-      </Paragraph>,
-      <Paragraph>
         All components are available to consume as React components, exposed as modules on the npm registry. They
-        encapsulate markup, style and logic which means that achieving a consistent look and feel across Skyscanner
-        products is as straightforward as:
+        encapsulate structure, style and logic which means that achieving a consistent look and feel across Skyscanner
+        products on web, iOS and Android is as straightforward as: installing a package, importing it in a view and
+        using it in JSX. Please see the Text component
+        for <BpkLink href={`${ROUTES.TYPOGRAPHY}#text-readme`} blank>web</BpkLink> and&nbsp;
+        <BpkLink href={ROUTES.NATIVE_TEXT} blank>native</BpkLink> as examples.
       </Paragraph>,
-      <BpkList ordered>
-        <BpkListItem>
-          <Paragraph>Installing the component as a dependency:</Paragraph>
-          <BpkCodeBlock>
-            {'npm install bpk-component-button --save'}
-          </BpkCodeBlock>
-        </BpkListItem>
-        <BpkListItem>
-          <Paragraph>Consuming it in your app:</Paragraph>
-          <BpkCodeBlock>{`import React from 'react';
-import ReactDom from 'react-dom';
-import BpkButton from 'bpk-component-button';
-
-const onClick = () => alert('Hello World!');
-const myComponent = <BpkButton onClick={onClick}>Click me</BpkButton>;
-
-ReactDom.render(myComponent, document.getElementById('react-mount'));
-`}
-          </BpkCodeBlock>
-        </BpkListItem>
-      </BpkList>,
       <BpkBlockquote extraSpace>
+        The recommended way to get started with Backpack on web is to
+        use <BpkRouterLink to={ROUTES.BACKPACK_REACT_SCRIPTS}>Backpack React Scripts</BpkRouterLink>.
+        <br />
+        <br />
         <strong>Note:</strong> If you are looking to integrate Backpack components into an existing project, be
         aware that components are published uncompiled which means you&apos;ll need to accommodate for this in your
         webpack config.
