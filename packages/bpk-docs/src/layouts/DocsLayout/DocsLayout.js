@@ -85,6 +85,7 @@ const links = [
     category: 'Native components',
     sort: true,
     links: [
+      { id: 'NATIVE_INPUT', route: routes.NATIVE_INPUT, children: 'Text input' },
       { id: 'NATIVE_TEXT', route: routes.NATIVE_TEXT, children: 'Text' },
     ],
   },

@@ -68,6 +68,7 @@ export const STAR_RATING = '/components/web/star-rating';
 
 // components/native/
 export const NATIVE_COMPONENTS = '/components/native';
+export const NATIVE_INPUT = '/components/native/text-input';
 export const NATIVE_TEXT = '/components/native/text';
 
 // components/utilities/
