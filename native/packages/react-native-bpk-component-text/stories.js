@@ -26,7 +26,7 @@ storiesOf('BpkText', module)
   ))
   .add('Bold', () => (
     <View style={styles.container}>
-      <BpkText textStyle="xxl" emphasize style={{ fontWeight: '900' }}>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="xxl">Flights to Edinburgh</BpkText>
       <BpkText textStyle="xl" emphasize>Flights to Edinburgh</BpkText>
       <BpkText textStyle="lg" emphasize>Flights to Edinburgh</BpkText>
       <BpkText textStyle="base" emphasize>Flights to Edinburgh</BpkText>
