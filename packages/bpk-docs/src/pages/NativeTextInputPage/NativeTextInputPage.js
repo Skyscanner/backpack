@@ -38,7 +38,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshot}`,
         altText: 'iOS Default Text Input Component',
-        subText: '(iPhone 7 Simulator)',
+        subText: '(iPhone 8 Simulator)',
       },
       {
         title: 'Android',
