@@ -23,7 +23,7 @@ This document describes how to go about it. If you have any questions, get in to
 
 ## License
 
-By contributing your code, you agree to license your contribution under the terms of the APLv2: <<LINK TO REPO LICENCE>>
+By contributing your code, you agree to license your contribution under the terms of the [APLv2](https://www.apache.org/licenses/LICENSE-2.0).
 
 All files are released with the Apache 2.0 license.
 
