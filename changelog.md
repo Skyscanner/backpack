@@ -6,15 +6,15 @@ _Nothing Yet!_
 ## 2017-09-20 - New React Native Text Input component
 
 **Added:**
- - react-native-bpk-component-text: 2.0.0 => 2.1.0
+- react-native-bpk-component-text: 2.0.0 => 2.1.0
   - New `emphasize` prop
   - Error messages when invalid fontWeight and emphasis are used
 
- - react-native-bpk-component-text-input: 0.0.1 => 1.0.0
-  - New component, see http://backpack.prod.aws.skyscnr.com/components/native/input
+- react-native-bpk-component-text-input: 0.0.1 => 1.0.0
+  - New component, see http://backpack.prod.aws.skyscnr.com/components/native/text-input
 
 **Fixed:**
-- react-native-bpk-component-text:
+- react-native-bpk-component-text: 2.0.0 => 2.1.0
   - Default color is now gray700
   - Passing in a StyleSheet style prop is now supported
 
