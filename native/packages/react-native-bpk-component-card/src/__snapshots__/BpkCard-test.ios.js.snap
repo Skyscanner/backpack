@@ -1,0 +1,384 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkCard should render correctly 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Example Card"
+  accessibilityTraits={undefined}
+  accessible={true}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      Array [
+        Array [
+          Object {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "elevation": 3,
+            "shadowColor": "rgb(37, 32, 51)",
+            "shadowOffset": Object {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 3,
+          },
+          Object {
+            "borderRadius": 8,
+          },
+          Object {
+            "padding": 16,
+          },
+        ],
+        null,
+      ],
+    ]
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "overflow": "hidden",
+        },
+        Object {
+          "borderRadius": 8,
+        },
+      ]
+    }
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 34,
+              "fontWeight": "700",
+              "lineHeight": 41,
+            },
+            false,
+            Object {},
+          ]
+        }
+      >
+        Flights to Edinburgh
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 20,
+              "fontWeight": "400",
+              "lineHeight": 24,
+            },
+            false,
+            Object {},
+          ]
+        }
+      >
+        Flights to Edinburgh
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 17,
+              "fontWeight": "400",
+              "lineHeight": 22,
+            },
+            false,
+            Object {},
+          ]
+        }
+      >
+        Flights to Edinburgh
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
+            },
+            false,
+            Object {},
+          ]
+        }
+      >
+        Flights to Edinburgh
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            false,
+            Object {},
+          ]
+        }
+      >
+        Flights to Edinburgh
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 11,
+              "fontWeight": "400",
+              "lineHeight": 13,
+            },
+            false,
+            Object {},
+          ]
+        }
+      >
+        Flights to Edinburgh
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`iOS BpkCard should render correctly without padding 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Example Card"
+  accessibilityTraits={undefined}
+  accessible={true}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      Array [
+        Array [
+          Object {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "elevation": 3,
+            "shadowColor": "rgb(37, 32, 51)",
+            "shadowOffset": Object {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 3,
+          },
+          Object {
+            "borderRadius": 8,
+          },
+        ],
+        null,
+      ],
+    ]
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "overflow": "hidden",
+        },
+        Object {
+          "borderRadius": 8,
+        },
+      ]
+    }
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 34,
+              "fontWeight": "700",
+              "lineHeight": 41,
+            },
+            false,
+            Object {},
+          ]
+        }
+      >
+        Flights to Edinburgh
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 20,
+              "fontWeight": "400",
+              "lineHeight": 24,
+            },
+            false,
+            Object {},
+          ]
+        }
+      >
+        Flights to Edinburgh
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 17,
+              "fontWeight": "400",
+              "lineHeight": 22,
+            },
+            false,
+            Object {},
+          ]
+        }
+      >
+        Flights to Edinburgh
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
+            },
+            false,
+            Object {},
+          ]
+        }
+      >
+        Flights to Edinburgh
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            false,
+            Object {},
+          ]
+        }
+      >
+        Flights to Edinburgh
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 11,
+              "fontWeight": "400",
+              "lineHeight": 13,
+            },
+            false,
+            Object {},
+          ]
+        }
+      >
+        Flights to Edinburgh
+      </Text>
+    </View>
+  </View>
+</View>
+`;

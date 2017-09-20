@@ -5,6 +5,10 @@
 **Fixed:**
 - react-native-bpk-component-text-input:
   - Made hit area larger to make activation of the Text Input easier on a touch-device
+**Added:**
+- react-native-bpk-component-card
+  - New component BpkCard
+
 
 ## 2017-09-21 - New React Native Button properties
 
