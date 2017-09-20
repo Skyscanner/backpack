@@ -27,7 +27,7 @@
   "jest": {
     "preset": "react-native",
     "verbose": true,
-    "testRegex": ".*-test\\.js$",
+    "testRegex": ".*-test(\\.ios)?(\\.android)?\\.js$",
     "coverageThreshold": {
       "global": {
         "statements": 75,
