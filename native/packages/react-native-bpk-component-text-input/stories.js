@@ -1,10 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Platform } from 'react-native';
-
 import { storiesOf } from '@storybook/react-native';
-
-import BpkTextInput from '../../packages/react-native-bpk-component-text-input';
-import BpkText from '../../packages/react-native-bpk-component-text';
+import { StyleSheet, View, Platform } from 'react-native';
+import BpkText from 'react-native-bpk-component-text';
+import BpkTextInput from './index';
 
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require

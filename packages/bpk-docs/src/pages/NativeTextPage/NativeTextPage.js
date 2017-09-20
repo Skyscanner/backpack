@@ -19,7 +19,7 @@
 import React from 'react';
 import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-text/readme.md';
-import iosScreenshot from 'react-native-bpk-component-text/screenshots/ios.png';
+import iosScreenshot from 'react-native-bpk-component-text/screenshots/ios/text-styles.png';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
