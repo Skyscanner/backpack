@@ -56,8 +56,9 @@ export default () => (
 | yAxisMargin                             | number                                | false    | 2.625            |
 | yAxisTickValue                          | func                                  | false    | identity         |
 | yAxisNumTicks                           | number                                | false    | null             |
-| onBarClick                              | func                                  | false    | null             |
 | [onBarClick](#onbarclick)               | func                                  | false    | null             |
+| [onBarHover](#onbarhover)               | func                                  | false    | null             |
+| [onBarTouch](#onbartouch)               | func                                  | false    | null             |
 | [getBarLabel](#getbarlabel)             | func                                  | false    | See prop details |
 | [getBarSelection](#getbarselection)     | func                                  | false    | See prop details |
 | BarComponent                            | func                                  | false    | BpkBarchartBar   |
@@ -121,6 +122,26 @@ Values that are `outlierPercentage` percent above the mean of the whole dataset 
 ```javascript
 const onBarClick = (event, {
   point: <Object>, // The `data` array object from the bar clicked
+}) => {
+  ...
+}
+```
+
+#### onBarHover
+
+```javascript
+const onBarHover = (event, {
+  point: <Object>, // The `data` array object from the bar hovered
+}) => {
+  ...
+}
+```
+
+#### onBarTouch
+
+```javascript
+const onBarTouch = (event, {
+  point: <Object>, // The `data` array object from the bar touched
 }) => {
   ...
 }

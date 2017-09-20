@@ -73,6 +73,38 @@ describe('BpkBarchart', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
+  it('should render with "onBarHover" prop', () => {
+    const tree = shallow(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        onBarHover={() => null}
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render with "onBarTouch" prop', () => {
+    const tree = shallow(
+      <BpkBarchart
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        xAxisLabel="Month"
+        yAxisLabel="Average price (£)"
+        initialWidth={size}
+        initialHeight={size}
+        data={prices}
+        onBarTouch={() => null}
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
   it('should render with "hideXAxisLabel" prop', () => {
     const tree = shallow(
       <BpkBarchart

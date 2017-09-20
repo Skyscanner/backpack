@@ -46,6 +46,8 @@ const BpkBarchartBars = (props) => {
     outerPadding,
     innerPadding,
     onBarClick,
+    onBarHover,
+    onBarTouch,
     data,
     xScaleDataKey,
     yScaleDataKey,
@@ -84,6 +86,8 @@ const BpkBarchartBars = (props) => {
             label={getBarLabel(point, xScaleDataKey, yScaleDataKey)}
             outlier={isOutlier(point, props)}
             onClick={onBarClick ? e => onBarClick(e, { point }) : null}
+            onHover={onBarHover ? e => onBarHover(e, { point }) : null}
+            onTouch={onBarTouch ? e => onBarTouch(e, { point }) : null}
             selected={getBarSelection(point)}
             padding={innerPadding}
             {...rest}
@@ -115,12 +119,16 @@ BpkBarchartBars.propTypes = {
   outerPadding: PropTypes.number,
   innerPadding: PropTypes.number,
   onBarClick: PropTypes.func,
+  onBarHover: PropTypes.func,
+  onBarTouch: PropTypes.func,
 };
 
 BpkBarchartBars.defaultProps = {
   outerPadding: 0.35,
   innerPadding: 0.35,
   onBarClick: null,
+  onBarHover: null,
+  onBarTouch: null,
   getBarSelection: () => false,
 };
 
