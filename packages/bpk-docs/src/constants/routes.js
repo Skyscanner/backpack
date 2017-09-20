@@ -65,6 +65,8 @@ export const HORIZONTAL_NAV = '/components/web/horizontal-nav';
 export const FIELDSETS = '/components/web/fieldsets';
 export const BARCHARTS = '/components/web/barcharts';
 export const STAR_RATING = '/components/web/star-rating';
+export const BREAKPOINTS = '/components/web/breakpoints';
+export const HORIZONTAL_GRID = '/components/web/horizontal-grid';
 
 // components/native/
 export const NATIVE_COMPONENTS = '/components/native';
