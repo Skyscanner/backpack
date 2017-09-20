@@ -1,0 +1,23 @@
+{
+  "name": "bpk-component-toast",
+  "version": "0.0.1",
+  "description": "Backpack toast component.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^15.0.0 || ^16.0.0"
+  },
+  "dependencies": {
+    "bpk-mixins": "^16.5.2",
+    "bpk-react-utils": "^2.3.3",
+    "prop-types": "^15.5.8",
+    "bpk-component-card": "^1.0.12",
+    "bpk-component-icon": "^3.13.0",
+    "bpk-component-close-button": "^1.0.14"
+  }
+}

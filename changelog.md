@@ -5,6 +5,8 @@
 **Added:**
 - react-native-bpk-component-card:
   - New component BpkCard
+- bpk-component-toast
+  - New component BpkToast
 
 ## 2017-09-25 - Bar chart bars now have hooks for hover and touch events
 

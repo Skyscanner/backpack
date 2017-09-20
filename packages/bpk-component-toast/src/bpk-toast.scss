@@ -1,0 +1,122 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2017 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins';
+
+@mixin bpk-toast-animation-pull-down {
+  animation: pull-down ease-in-out $bpk-duration-sm;
+  animation-fill-mode: forwards;
+}
+
+@mixin bpk-toast-animation-pull-up {
+  animation: pull-up ease-in-out $bpk-duration-sm;
+  animation-fill-mode: forwards;
+}
+
+@mixin bpk-toast-animation-bounce-in {
+  animation: bounce-in ease-in-out $bpk-duration-base;
+  animation-fill-mode: forwards;
+}
+
+.bpk-toast {
+  position: fixed;
+  bottom: 0;
+  z-index: $bpk-zindex-modal;
+  width: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba($bpk-color-gray-300, .2) 20%, rgba($bpk-color-gray-300, .8) 100%);
+
+  &.bpk-toast-animation-forward {
+    @include bpk-toast-animation-pull-up;
+
+    .bpk-toast__card {
+      @include bpk-toast-animation-bounce-in;
+    }
+  }
+
+  &.bpk-toast-animation-backward {
+    @include bpk-toast-animation-pull-down;
+  }
+
+  &__card {
+    display: flex;
+    width: 70%;
+    margin: $bpk-spacing-md auto 0;
+    flex-direction: row;
+    justify-content: space-between;
+    background: $bpk-color-white;
+    overflow: hidden;
+
+    &-exclamation {
+      display: flex;
+      padding: $bpk-spacing-sm $bpk-spacing-md;
+      flex-direction: column;
+      justify-content: center;
+      background: $bpk-color-blue-500;
+
+      &-circle {
+        fill: $bpk-color-white;
+      }
+    }
+
+    &-content {
+      @include bpk-card--padded;
+    }
+
+    &-close-button {
+      margin-right: $bpk-card-padding;
+    }
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: translate(0%, 100%);
+  }
+
+  40% {
+    transform: translate(0%, -30%);
+  }
+
+  60% {
+    transform: translate(0%, -50%);
+  }
+
+  100% {
+    transform: translate(0%, -10%);
+  }
+}
+
+@keyframes pull-up {
+  0% {
+    transform: translate(0%, 100%);
+  }
+
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes pull-down {
+  0% {
+    transform: translate(0%, 0%);
+  }
+
+  100% {
+    transform: translate(0%, 100%);
+  }
+}

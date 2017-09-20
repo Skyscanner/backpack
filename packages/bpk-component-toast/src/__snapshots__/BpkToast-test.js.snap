@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkToast should render correctly 1`] = `
+<div
+  className="bpk-toast bpk-toast-animation-forward "
+>
+  <div
+    className="bpk-card bpk-toast__card"
+    onClick={[Function]}
+    role="button"
+  >
+    <span
+      className="bpk-toast__card-exclamation"
+    >
+      <svg
+        className="bpk-toast__card-exclamation-circle"
+        height="24"
+        style={
+          Object {
+            "height": "1.5rem",
+            "width": "1.5rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM10.5 5.9c0-.5.4-.9.9-.9h1.1c.5 0 .9.4.9.9V13c0 .5-.4.9-.9.9h-1.1c-.5 0-.9-.4-.9-.9V5.9zm0 11.1c0-.5.5-1 1-1h1c.5 0 1 .5 1 1v1c0 .5-.5 1-1 1h-1c-.5 0-1-.5-1-1v-1z"
+        />
+      </svg>
+    </span>
+    <div
+      className="bpk-toast__card-content"
+    >
+      Your toast is ready
+    </div>
+    <button
+      aria-label={null}
+      className="bpk-close-button bpk-toast__card-close-button"
+      onClick={[Function]}
+      title={null}
+      type="button"
+    >
+      <span
+        style={
+          Object {
+            "display": "inline-block",
+            "lineHeight": "1.125rem",
+            "marginTop": "0.1875rem",
+            "verticalAlign": "top",
+          }
+        }
+      >
+        <svg
+          className="bpk-close-button__icon"
+          height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14.8 12l4.9-4.9c.4-.4.4-1 0-1.4l-1.4-1.4c-.4-.4-1-.4-1.4 0L12 9.2l-4.9-5c-.4-.4-1-.4-1.4 0L4.2 5.6c-.4.4-.4 1 0 1.4l5 5-4.9 4.9c-.4.4-.4 1 0 1.4l1.4 1.4c.4.4 1 .4 1.4 0l4.9-4.9 4.9 4.9c.4.4 1 .4 1.4 0l1.4-1.4c.4-.4.4-1 0-1.4L14.8 12z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`BpkToast should render correctly when it has a className 1`] = `
+<div
+  className="bpk-toast bpk-toast-animation-forward my-toast"
+>
+  <div
+    className="bpk-card bpk-toast__card"
+    onClick={[Function]}
+    role="button"
+  >
+    <span
+      className="bpk-toast__card-exclamation"
+    >
+      <svg
+        className="bpk-toast__card-exclamation-circle"
+        height="24"
+        style={
+          Object {
+            "height": "1.5rem",
+            "width": "1.5rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10zM10.5 5.9c0-.5.4-.9.9-.9h1.1c.5 0 .9.4.9.9V13c0 .5-.4.9-.9.9h-1.1c-.5 0-.9-.4-.9-.9V5.9zm0 11.1c0-.5.5-1 1-1h1c.5 0 1 .5 1 1v1c0 .5-.5 1-1 1h-1c-.5 0-1-.5-1-1v-1z"
+        />
+      </svg>
+    </span>
+    <div
+      className="bpk-toast__card-content"
+    >
+      Your toast is ready
+    </div>
+    <button
+      aria-label={null}
+      className="bpk-close-button bpk-toast__card-close-button"
+      onClick={[Function]}
+      title={null}
+      type="button"
+    >
+      <span
+        style={
+          Object {
+            "display": "inline-block",
+            "lineHeight": "1.125rem",
+            "marginTop": "0.1875rem",
+            "verticalAlign": "top",
+          }
+        }
+      >
+        <svg
+          className="bpk-close-button__icon"
+          height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14.8 12l4.9-4.9c.4-.4.4-1 0-1.4l-1.4-1.4c-.4-.4-1-.4-1.4 0L12 9.2l-4.9-5c-.4-.4-1-.4-1.4 0L4.2 5.6c-.4.4-.4 1 0 1.4l5 5-4.9 4.9c-.4.4-.4 1 0 1.4l1.4 1.4c.4.4 1 .4 1.4 0l4.9-4.9 4.9 4.9c.4.4 1 .4 1.4 0l1.4-1.4c.4-.4.4-1 0-1.4L14.8 12z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
+`;
