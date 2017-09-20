@@ -152,6 +152,11 @@
       "value": "{!LINE_HEIGHT_XXL}",
       "type": "number",
       "category": "line-heights"
+    },
+    "TEXT_EMPHASIZED_FONT_WEIGHT": {
+      "value": "{!FONT_WEIGHT_SEMIBOLD}",
+      "type": "string",
+      "category": "font-weights"
     }
   }
 }

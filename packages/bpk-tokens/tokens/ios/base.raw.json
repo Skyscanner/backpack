@@ -710,6 +710,96 @@
       },
       "name": "COLOR_YELLOW_900"
     },
+    "COLOR_PINK_50": {
+      "type": "color",
+      "category": "colors",
+      "value": "#fde4edff",
+      ".alias": {
+        "value": "#FDE4ED"
+      },
+      "name": "COLOR_PINK_50"
+    },
+    "COLOR_PINK_100": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ffbfd7ff",
+      ".alias": {
+        "value": "#FFBFD7"
+      },
+      "name": "COLOR_PINK_100"
+    },
+    "COLOR_PINK_200": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ff94bbff",
+      ".alias": {
+        "value": "#FF94BB"
+      },
+      "name": "COLOR_PINK_200"
+    },
+    "COLOR_PINK_300": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ff73a6ff",
+      ".alias": {
+        "value": "#FF73A6"
+      },
+      "name": "COLOR_PINK_300"
+    },
+    "COLOR_PINK_400": {
+      "type": "color",
+      "category": "colors",
+      "value": "#ff619bff",
+      ".alias": {
+        "value": "#FF619B"
+      },
+      "name": "COLOR_PINK_400"
+    },
+    "COLOR_PINK_500": {
+      "type": "color",
+      "category": "colors",
+      "value": "#fa488aff",
+      ".alias": {
+        "value": "#FA488A"
+      },
+      "name": "COLOR_PINK_500"
+    },
+    "COLOR_PINK_600": {
+      "type": "color",
+      "category": "colors",
+      "value": "#d92b6bff",
+      ".alias": {
+        "value": "#D92B6B"
+      },
+      "name": "COLOR_PINK_600"
+    },
+    "COLOR_PINK_700": {
+      "type": "color",
+      "category": "colors",
+      "value": "#c50f52ff",
+      ".alias": {
+        "value": "#C50F52"
+      },
+      "name": "COLOR_PINK_700"
+    },
+    "COLOR_PINK_800": {
+      "type": "color",
+      "category": "colors",
+      "value": "#b00c48ff",
+      ".alias": {
+        "value": "#B00C48"
+      },
+      "name": "COLOR_PINK_800"
+    },
+    "COLOR_PINK_900": {
+      "type": "color",
+      "category": "colors",
+      "value": "#94053aff",
+      ".alias": {
+        "value": "#94053A"
+      },
+      "name": "COLOR_PINK_900"
+    },
     "SPACING_SM": {
       "type": "size",
       "category": "spacings",
@@ -1033,6 +1123,15 @@
         "value": 41
       },
       "name": "TEXT_XXL_LINE_HEIGHT"
+    },
+    "TEXT_EMPHASIZED_FONT_WEIGHT": {
+      "value": "600",
+      "type": "string",
+      "category": "font-weights",
+      ".alias": {
+        "value": "600"
+      },
+      "name": "TEXT_EMPHASIZED_FONT_WEIGHT"
     }
   },
   "propKeys": [
@@ -1087,6 +1186,16 @@
     "COLOR_YELLOW_700",
     "COLOR_YELLOW_800",
     "COLOR_YELLOW_900",
+    "COLOR_PINK_50",
+    "COLOR_PINK_100",
+    "COLOR_PINK_200",
+    "COLOR_PINK_300",
+    "COLOR_PINK_400",
+    "COLOR_PINK_500",
+    "COLOR_PINK_600",
+    "COLOR_PINK_700",
+    "COLOR_PINK_800",
+    "COLOR_PINK_900",
     "SPACING_SM",
     "SPACING_MD",
     "SPACING_BASE",
@@ -1122,6 +1231,7 @@
     "TEXT_XL_LINE_HEIGHT",
     "TEXT_XXL_FONT_SIZE",
     "TEXT_XXL_FONT_WEIGHT",
-    "TEXT_XXL_LINE_HEIGHT"
+    "TEXT_XXL_LINE_HEIGHT",
+    "TEXT_EMPHASIZED_FONT_WEIGHT"
   ]
 }

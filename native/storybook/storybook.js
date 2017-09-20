@@ -5,6 +5,7 @@ import { getStorybookUI, configure } from '@storybook/react-native';
 configure(() => {
   require('../packages/react-native-bpk-component-text-input/stories');
   require('../packages/react-native-bpk-component-text/stories');
+  require('../packages/react-native-bpk-component-button/stories');
 }, module);
 /* eslint-enable global-require */
 

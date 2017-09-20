@@ -1,7 +1,10 @@
 # Backpack changelog
 
 ## UNRELEASED
-_Nothing Yet!_
+
+**Added:**
+- react-native-bpk-component-button
+  - New component, see http://backpack.prod.aws.skyscnr.com/components/native/button
 
 ## 2017-09-20 - New React Native Text Input component
 

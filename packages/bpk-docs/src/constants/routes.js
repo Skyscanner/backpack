@@ -70,6 +70,7 @@ export const STAR_RATING = '/components/web/star-rating';
 export const NATIVE_COMPONENTS = '/components/native';
 export const NATIVE_INPUT = '/components/native/text-input';
 export const NATIVE_TEXT = '/components/native/text';
+export const NATIVE_BUTTON = '/components/native/button';
 
 // components/utilities/
 export const UTILITIES = '/components/utilities';

@@ -67,6 +67,7 @@
     "react": "^15.0.0",
     "react-native-bpk-component-text": "^2.1.0",
     "react-native-bpk-component-text-input": "^1.0.0",
+    "react-native-bpk-component-button": "^0.0.1",
     "uglify-loader": "^1.4.0"
   }
 }

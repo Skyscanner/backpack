@@ -159,6 +159,36 @@
     },
     "COLOR_YELLOW_900": {
       "value": "{!YELLOW_900}"
+    },
+    "COLOR_PINK_50": {
+      "value": "{!PINK_50}"
+    },
+    "COLOR_PINK_100": {
+      "value": "{!PINK_100}"
+    },
+    "COLOR_PINK_200": {
+      "value": "{!PINK_200}"
+    },
+    "COLOR_PINK_300": {
+      "value": "{!PINK_300}"
+    },
+    "COLOR_PINK_400": {
+      "value": "{!PINK_400}"
+    },
+    "COLOR_PINK_500": {
+      "value": "{!PINK_500}"
+    },
+    "COLOR_PINK_600": {
+      "value": "{!PINK_600}"
+    },
+    "COLOR_PINK_700": {
+      "value": "{!PINK_700}"
+    },
+    "COLOR_PINK_800": {
+      "value": "{!PINK_800}"
+    },
+    "COLOR_PINK_900": {
+      "value": "{!PINK_900}"
     }
   }
 }
