@@ -1,13 +1,16 @@
 # Backpack changelog
 
 ## UNRELEASED
+_Nothing Yet!_
+
+## 2017-09-20 - New React Native Text Input component
 
 **Added:**
-- react-native-bpk-component-text:
+ - react-native-bpk-component-text: 2.0.0 => 2.1.0
   - New `emphasize` prop
   - Error messages when invalid fontWeight and emphasis are used
 
-- react-native-bpk-component-text-input:
+ - react-native-bpk-component-text-input: 0.0.1 => 1.0.0
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/input
 
 **Fixed:**
