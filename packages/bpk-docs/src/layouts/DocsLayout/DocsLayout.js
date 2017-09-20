@@ -78,6 +78,8 @@ const links = [
       { id: 'NUMERICAL_RATING', route: null, children: 'Numerical rating' },
       { id: 'FLIGHT_ITINERARIES', route: null, children: 'Flight itinerary' },
       { id: 'FILTERS', route: null, children: 'Filters' },
+      { id: 'BREAKPOINTS', route: routes.BREAKPOINTS, children: 'Breakpoints' },
+      { id: 'HORIZONTAL_GRID', route: routes.HORIZONTAL_GRID, children: 'Horizontal grid' },
     ],
   },
   {
