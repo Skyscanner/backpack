@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+_Nothing yet!_
+
+## 2017-09-20 - New React Native Button component
+
 **Added:**
 - react-native-bpk-component-button
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/button
