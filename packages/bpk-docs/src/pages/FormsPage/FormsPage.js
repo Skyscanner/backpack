@@ -138,7 +138,7 @@ const components = [
           id="input_email"
           name="input_email"
           value="example@example.com"
-          placeholder="Country, city or airport"
+          placeholder="Email address"
           onChange={() => null}
         />
       </form>,
@@ -150,7 +150,7 @@ const components = [
           id="input_number"
           name="input_number"
           value="0"
-          placeholder="Country, city or airport"
+          placeholder="Number of passengers"
           onChange={() => null}
         />
       </form>,
@@ -162,7 +162,7 @@ const components = [
           id="input_password"
           name="input_password"
           value="letmein"
-          placeholder="Country, city or airport"
+          placeholder="Password"
           onChange={() => null}
         />
       </form>,
@@ -174,7 +174,7 @@ const components = [
           id="input_telephone"
           name="input_telephone"
           value="+441234567890"
-          placeholder="Country, city or airport"
+          placeholder="Phone number"
           onChange={() => null}
         />
       </form>,
