@@ -26,6 +26,8 @@ import { View, Image } from 'react-native';
 import BpkButton from 'react-native-bpk-component-button';
 import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
 
+import { translationHelper } from 'translations';
+
 const ArrowImage = <Image source="require(./long-arrow-right.png)" style={{ height: 14, width: 16 }}/>;
 
 const styles = StyleSheet.create({
@@ -40,14 +42,14 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <BpkButton type="primary" title="Book flight" onPress={() => {}} />
-        <BpkButton type="featured" title="Book flight" onPress={() => {}} />
-        <BpkButton selected type="secondary" title="Book flight" onPress={() => {}} />
-        <BpkButton disabled type="destructive" title="Book flight" onPress={() => {}} />
-        <BpkButton large type="primary" title="Book flight" onPress={() => {}} />
+        <BpkButton type="primary" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
+        <BpkButton type="featured" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
+        <BpkButton selected type="secondary" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
+        <BpkButton disabled type="destructive" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
+        <BpkButton large type="primary" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
 
-        <BpkButton type="primary" title="Book flight" icon={ArrowImage} onPress={() => {}} />
-        <BpkButton type="featured" icon={ArrowImage} onPress={() => {}} />
+        <BpkButton type="primary" title={translationHelper.translate('BOOK_FLIGHT')} icon={ArrowImage} onPress={() => {}} />
+        <BpkButton type="featured" title={translationHelper.translate('BOOK_FLIGHT')} icon={ArrowImage} iconOnly onPress={() => {}} />
       </View>
     );
   }
@@ -56,12 +58,14 @@ export default class App extends Component {
 
 ## Props
 
-| Property    | PropType                                                  | Required | Default Value |
-| ----------- | --------------------------------------------------------- | -------- | ------------- |
-| onPress     | function                                                  | true     | -             |
-| disabled    | bool                                                      | false    | false         |
-| icon        | element                                                   | false    | null          |
-| large       | bool                                                      | false    | false         |
-| selected    | bool                                                      | false    | false         |
-| title       | string                                                    | false    | null          |
-| type        | oneOf('primary', 'featured', 'secondary', 'destructive')  | false    | null          |
+| Property              | PropType                                                  | Required | Default Value |
+| --------------------- | --------------------------------------------------------- | -------- | ------------- |
+| onPress               | function                                                  | true     | -             |
+| title                 | string                                                    | true     | -             |
+| accessibilityLabel    | string                                                    | false    | props.title   |
+| disabled              | bool                                                      | false    | false         |
+| icon                  | element                                                   | false    | null          |
+| iconOnly              | bool                                                      | false    | false         |
+| large                 | bool                                                      | false    | false         |
+| selected              | bool                                                      | false    | false         |
+| type                  | oneOf('primary', 'featured', 'secondary', 'destructive')  | false    | null          |
