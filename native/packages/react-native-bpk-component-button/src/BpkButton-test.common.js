@@ -92,6 +92,19 @@
          expect(tree).toMatchSnapshot();
        });
      });
+
+     it('should accept iconOnly prop when icon prop is supplied', () => {
+       expect(BpkButton.propTypes.icon({
+         iconOnly: true,
+         icon: <Image />,
+       }, 'icon', 'BpkButton')).toBeFalsy();
+     });
+
+     it('should accept iconOnly prop when icon prop is supplied', () => {
+       expect(BpkButton.propTypes.icon({
+         iconOnly: true,
+       }, 'icon', 'BpkButton').toString()).toEqual('Error: Invalid prop `icon` supplied to `BpkButton`. When `iconOnly` is enabled, `icon` must be supplied.'); // eslint-disable-line max-len
+     });
    });
  };
 

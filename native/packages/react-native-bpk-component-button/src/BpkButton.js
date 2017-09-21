@@ -30,7 +30,7 @@
 
  const BUTTON_TYPES = ['primary', 'featured', 'secondary', 'destructive'];
 
- const getStyleForElement = (elementType, { type, title, icon, selected, large, disabled, style }) => {
+ const getStyleForElement = (elementType, { type, title, icon, iconOnly, selected, large, disabled, style }) => {
    // Start with base style.
    const styleForElement = [styles.base[elementType]];
 
@@ -54,10 +54,9 @@
      styleForElement.push(styles.modifiers.disabled[elementType]);
    }
 
-   // If there's no title, it must be an icon only button.
-   if (!title) {
+   if (iconOnly) {
      styleForElement.push(large ? styles.modifiers.iconOnlyLarge[elementType] : styles.modifiers.iconOnly[elementType]);
-   } else if (icon) {
+   } else if (title && icon) {
      // If it has a title and icon, get the style for that.
      styleForElement.push(styles.modifiers[large ? 'textAndIconLarge' : 'textAndIcon'][elementType]);
    }
@@ -81,21 +80,36 @@
    return gradientColors;
  };
 
+ const iconPropType = (props, propName, componentName) => {
+   const hasIcon = props[propName];
+   if (props.iconOnly && !hasIcon) {
+     return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName}\`. When \`iconOnly\` is enabled, \`${propName}\` must be supplied.`); // eslint-disable-line max-len
+   }
+   return false;
+ };
+
  const BpkButton = (props) => {
    const {
      type,
      title,
      icon,
+     iconOnly,
      onPress,
      large,
      disabled,
      selected,
+     accessibilityLabel,
      style,
      ...rest
    } = props;
 
    if (!BUTTON_TYPES.includes(type)) {
      throw new Error(`"${type}" is not a valid button type. Valid types are ${BUTTON_TYPES.join(', ')}`);
+   }
+
+   const accessibilityTraits = ['button'];
+   if (disabled) {
+     accessibilityTraits.push('disabled');
    }
 
    // Note that TouchableHighlight isn't on Android, so TouchableFeedback
@@ -108,10 +122,13 @@
          selected={selected}
          onPress={onPress}
          underlayColor={styles.underlayColor}
+         accessibilityComponentType="button"
+         accessibilityLabel={accessibilityLabel || title}
+         accessibilityTraits={accessibilityTraits}
          {...rest}
        >
          <View style={getStyleForElement('view', props)}>
-           { title &&
+           { !iconOnly &&
              <BpkText
                textStyle={large ? 'lg' : 'sm'}
                emphasize
@@ -128,23 +145,26 @@
  };
 
  BpkButton.propTypes = {
-   title: PropTypes.string,
-   icon: PropTypes.element,
+   title: PropTypes.string.isRequired,
+   icon: iconPropType,
+   iconOnly: PropTypes.bool,
    onPress: PropTypes.func.isRequired,
    type: PropTypes.oneOf(BUTTON_TYPES),
    large: PropTypes.bool,
    disabled: PropTypes.bool,
    selected: PropTypes.bool,
+   accessibilityLabel: PropTypes.string,
    style: View.propTypes.style,
  };
 
  BpkButton.defaultProps = {
-   title: null,
    icon: null,
+   iconOnly: false,
    type: 'primary',
    large: false,
    disabled: false,
    selected: false,
+   accessibilityLabel: null,
    style: null,
  };
 

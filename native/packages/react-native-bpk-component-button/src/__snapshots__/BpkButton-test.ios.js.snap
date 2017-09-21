@@ -21,9 +21,13 @@ exports[`iOS BpkButton should render correctly 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -122,9 +126,13 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -234,9 +242,13 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -335,9 +347,13 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -436,9 +452,13 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -549,9 +569,13 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -656,14 +680,20 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
         "borderRadius": 100,
         "height": 32,
       },
-      undefined,
+      Object {
+        "width": 32,
+      },
     ]
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -706,43 +736,10 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
             "flexDirection": "row",
             "justifyContent": "center",
           },
-          Object {
-            "justifyContent": "space-between",
-          },
+          undefined,
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-              "lineHeight": 18,
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Array [
-              Object {
-                "backgroundColor": "transparent",
-                "color": "rgb(255, 255, 255)",
-              },
-              Object {
-                "marginRight": 4,
-              },
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
       <Image
         source="../rightarrow_360.png"
       />
@@ -772,9 +769,13 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -876,9 +877,13 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -987,9 +992,13 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -1096,9 +1105,13 @@ exports[`iOS BpkButton should support the "selected" property 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
