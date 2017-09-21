@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+_Nothing yet!_
+
+## 2017-09-21 - New React Native Button properties
+
 **Breaking:**
 - react-native-bpk-component-button
  - `title` prop is now required.
