@@ -656,9 +656,7 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
         "borderRadius": 100,
         "height": 32,
       },
-      Object {
-        "width": 32,
-      },
+      undefined,
     ]
   }
 >
@@ -708,10 +706,43 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
             "flexDirection": "row",
             "justifyContent": "center",
           },
-          undefined,
+          Object {
+            "justifyContent": "space-between",
+          },
         ]
       }
     >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              Object {
+                "marginRight": 4,
+              },
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
       <Image
         source="../rightarrow_360.png"
       />
