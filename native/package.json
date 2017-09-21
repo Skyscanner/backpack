@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
-    "android": "npm run android:emulator & node node_modules/react-native/local-cli/cli.js run-android",
+    "android": "yarn run android:emulator & node node_modules/react-native/local-cli/cli.js run-android",
     "android:emulator": "$ANDROID_HOME/tools/emulator -avd bpk-avd -dpi-device 420 -skin 1080x1920",
     "test": "jest",
     "storybook": "storybook start -p 7007"
