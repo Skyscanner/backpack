@@ -40,6 +40,8 @@ import RadiiPage from './../pages/RadiiPage';
 import ShadowsPage from './../pages/ShadowsPage';
 import BordersPage from './../pages/BordersPage';
 import LayoutPage from './../pages/LayoutPage';
+import BreakpointsPage from './../pages/BreakpointsPage';
+import HorizontalGridPage from './../pages/HorizontalGridPage';
 import AnimationPage from './../pages/AnimationPage';
 
 import TypographyPage from './../pages/TypographyPage';
@@ -131,6 +133,8 @@ const Routes = (
         <Route path={ROUTES.FIELDSETS} component={FieldsetsPage} />
         <Route path={ROUTES.BARCHARTS} component={BarchartsPage} />
         <Route path={ROUTES.STAR_RATING} component={StarRatingPage} />
+        <Route path={ROUTES.BREAKPOINTS} component={BreakpointsPage} />
+        <Route path={ROUTES.HORIZONTAL_GRID} component={HorizontalGridPage} />
       </Route>
       <Route path={ROUTES.NATIVE_COMPONENTS}>
         <IndexRedirect to={ROUTES.NATIVE_TEXT} />

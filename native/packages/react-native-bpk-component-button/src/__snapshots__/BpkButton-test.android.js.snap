@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`iOS BpkButton should render correctly 1`] = `
+exports[`Android BpkButton should render correctly 1`] = `
 <BVLinearGradient
   colors={
     Array [
-      4278245237,
-      4278238568,
+      -16722059,
+      -16728728,
     ]
   }
   end={undefined}
@@ -21,9 +21,13 @@ exports[`iOS BpkButton should render correctly 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -77,10 +81,10 @@ exports[`iOS BpkButton should render correctly 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-              "lineHeight": 18,
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": undefined,
+              "lineHeight": 20,
             },
             Object {
               "fontWeight": "600",
@@ -101,12 +105,12 @@ exports[`iOS BpkButton should render correctly 1`] = `
 </BVLinearGradient>
 `;
 
-exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
+exports[`Android BpkButton should render correctly with type="destructive" 1`] = `
 <BVLinearGradient
   colors={
     Array [
-      4294967295,
-      4294967295,
+      -1,
+      -1,
     ]
   }
   end={undefined}
@@ -122,9 +126,13 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -186,10 +194,10 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-              "lineHeight": 18,
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": undefined,
+              "lineHeight": 20,
             },
             Object {
               "fontWeight": "600",
@@ -213,12 +221,12 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
 </BVLinearGradient>
 `;
 
-exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
+exports[`Android BpkButton should render correctly with type="featured" 1`] = `
 <BVLinearGradient
   colors={
     Array [
-      4294592650,
-      4292422507,
+      -374646,
+      -2544789,
     ]
   }
   end={undefined}
@@ -234,9 +242,13 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -290,10 +302,10 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-              "lineHeight": 18,
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": undefined,
+              "lineHeight": 20,
             },
             Object {
               "fontWeight": "600",
@@ -314,12 +326,12 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
 </BVLinearGradient>
 `;
 
-exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
+exports[`Android BpkButton should render correctly with type="primary" 1`] = `
 <BVLinearGradient
   colors={
     Array [
-      4278245237,
-      4278238568,
+      -16722059,
+      -16728728,
     ]
   }
   end={undefined}
@@ -335,9 +347,13 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -391,10 +407,10 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-              "lineHeight": 18,
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": undefined,
+              "lineHeight": 20,
             },
             Object {
               "fontWeight": "600",
@@ -415,12 +431,12 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
 </BVLinearGradient>
 `;
 
-exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
+exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
 <BVLinearGradient
   colors={
     Array [
-      4294967295,
-      4294967295,
+      -1,
+      -1,
     ]
   }
   end={undefined}
@@ -436,9 +452,13 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -500,10 +520,10 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-              "lineHeight": 18,
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": undefined,
+              "lineHeight": 20,
             },
             Object {
               "fontWeight": "600",
@@ -527,12 +547,12 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
 </BVLinearGradient>
 `;
 
-exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
+exports[`Android BpkButton should support having an icon as well as a title 1`] = `
 <BVLinearGradient
   colors={
     Array [
-      4278245237,
-      4278238568,
+      -16722059,
+      -16728728,
     ]
   }
   end={undefined}
@@ -549,9 +569,13 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -609,10 +633,10 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-              "lineHeight": 18,
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": undefined,
+              "lineHeight": 20,
             },
             Object {
               "fontWeight": "600",
@@ -639,12 +663,12 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
 </BVLinearGradient>
 `;
 
-exports[`iOS BpkButton should support having only an icon 1`] = `
+exports[`Android BpkButton should support having only an icon 1`] = `
 <BVLinearGradient
   colors={
     Array [
-      4278245237,
-      4278238568,
+      -16722059,
+      -16728728,
     ]
   }
   end={undefined}
@@ -663,9 +687,13 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -720,12 +748,12 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
 </BVLinearGradient>
 `;
 
-exports[`iOS BpkButton should support overwriting styles 1`] = `
+exports[`Android BpkButton should support overwriting styles 1`] = `
 <BVLinearGradient
   colors={
     Array [
-      4278245237,
-      4278238568,
+      -16722059,
+      -16728728,
     ]
   }
   end={undefined}
@@ -741,9 +769,13 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -797,10 +829,10 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-              "lineHeight": 18,
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": undefined,
+              "lineHeight": 20,
             },
             Object {
               "fontWeight": "600",
@@ -821,12 +853,12 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
 </BVLinearGradient>
 `;
 
-exports[`iOS BpkButton should support the "disabled" property 1`] = `
+exports[`Android BpkButton should support the "disabled" property 1`] = `
 <BVLinearGradient
   colors={
     Array [
-      4278245237,
-      4278238568,
+      -16722059,
+      -16728728,
     ]
   }
   end={undefined}
@@ -845,9 +877,13 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -907,10 +943,10 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 17,
-              "fontWeight": "400",
-              "lineHeight": 22,
+              "fontFamily": "sans-serif",
+              "fontSize": 16,
+              "fontWeight": undefined,
+              "lineHeight": 24,
             },
             Object {
               "fontWeight": "600",
@@ -932,12 +968,12 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
 </BVLinearGradient>
 `;
 
-exports[`iOS BpkButton should support the "large" property 1`] = `
+exports[`Android BpkButton should support the "large" property 1`] = `
 <BVLinearGradient
   colors={
     Array [
-      4278245237,
-      4278238568,
+      -16722059,
+      -16728728,
     ]
   }
   end={undefined}
@@ -956,9 +992,13 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -1018,10 +1058,10 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 17,
-              "fontWeight": "400",
-              "lineHeight": 22,
+              "fontFamily": "sans-serif",
+              "fontSize": 16,
+              "fontWeight": undefined,
+              "lineHeight": 24,
             },
             Object {
               "fontWeight": "600",
@@ -1043,12 +1083,12 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
 </BVLinearGradient>
 `;
 
-exports[`iOS BpkButton should support the "selected" property 1`] = `
+exports[`Android BpkButton should support the "selected" property 1`] = `
 <BVLinearGradient
   colors={
     Array [
-      4278230461,
-      4278226088,
+      -16736835,
+      -16741208,
     ]
   }
   end={undefined}
@@ -1065,9 +1105,13 @@ exports[`iOS BpkButton should support the "selected" property 1`] = `
   }
 >
   <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
     accessible={true}
     hasTVPreferredFocus={undefined}
     hitSlop={undefined}
@@ -1125,10 +1169,10 @@ exports[`iOS BpkButton should support the "selected" property 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-              "lineHeight": 18,
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": undefined,
+              "lineHeight": 20,
             },
             Object {
               "fontWeight": "600",

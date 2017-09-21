@@ -16,13 +16,11 @@
  * limitations under the License.
  */
 
-import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-
 import BpkTextInput from './BpkTextInput';
 
-describe('iOS', () => {
+const commonTests = () => {
   describe('BpkTextInput', () => {
     it('should render correctly', () => {
       const tree = renderer.create(
@@ -30,6 +28,7 @@ describe('iOS', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
     it('should render placeholder correctly', () => {
       const tree = renderer.create(
         <BpkTextInput
@@ -39,6 +38,7 @@ describe('iOS', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
     it('should render small correctly', () => {
       const tree = renderer.create(
         <BpkTextInput
@@ -49,6 +49,7 @@ describe('iOS', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
     it('should render small placeholder correctly', () => {
       const tree = renderer.create(
         <BpkTextInput
@@ -59,6 +60,7 @@ describe('iOS', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
     it('should render valid correctly', () => {
       const tree = renderer.create(
         <BpkTextInput
@@ -69,6 +71,7 @@ describe('iOS', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
     it('should render small valid correctly', () => {
       const tree = renderer.create(
         <BpkTextInput
@@ -80,6 +83,7 @@ describe('iOS', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
     it('should render invalid correctly', () => {
       const tree = renderer.create(
         <BpkTextInput
@@ -90,6 +94,7 @@ describe('iOS', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
     it('should render small invalid correctly', () => {
       const tree = renderer.create(
         <BpkTextInput
@@ -101,6 +106,7 @@ describe('iOS', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
     it('should render disabled correctly', () => {
       const tree = renderer.create(
         <BpkTextInput
@@ -111,6 +117,7 @@ describe('iOS', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
     it('should render small disabled correctly', () => {
       const tree = renderer.create(
         <BpkTextInput
@@ -122,6 +129,7 @@ describe('iOS', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
     it('should apply user-styling correctly', () => {
       const tree = renderer.create(
         <BpkTextInput
@@ -133,4 +141,6 @@ describe('iOS', () => {
       expect(tree).toMatchSnapshot();
     });
   });
-});
+};
+
+export default commonTests;

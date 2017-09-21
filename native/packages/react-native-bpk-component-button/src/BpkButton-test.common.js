@@ -22,45 +22,35 @@
 
  import BpkButton, { BUTTON_TYPES } from './BpkButton';
 
- jest.mock('react-native', () => {
-   const reactNative = require.requireActual('react-native');
-   jest
-     .spyOn(reactNative.Platform, 'select')
-     .mockImplementation(obj => obj.ios || obj.default);
-   reactNative.Platform.OS = 'ios';
+ const commonTests = () => {
+   jest.mock('Image', () => 'Image');
 
-   return reactNative;
- });
-
- jest.mock('Image', () => 'Image');
-
- describe('iOS', () => {
    describe('BpkButton', () => {
      it('should render correctly', () => {
        const tree = renderer.create(
          <BpkButton title="Lorem ipsum" onPress={() => {}} />,
-       ).toJSON();
+      ).toJSON();
        expect(tree).toMatchSnapshot();
      });
 
      it('should support the "large" property', () => {
        const tree = renderer.create(
          <BpkButton large title="Lorem ipsum" onPress={() => {}} />,
-       ).toJSON();
+      ).toJSON();
        expect(tree).toMatchSnapshot();
      });
 
      it('should support the "selected" property', () => {
        const tree = renderer.create(
          <BpkButton selected title="Lorem ipsum" onPress={() => {}} />,
-       ).toJSON();
+      ).toJSON();
        expect(tree).toMatchSnapshot();
      });
 
      it('should support the "disabled" property', () => {
        const tree = renderer.create(
          <BpkButton large title="Lorem ipsum" onPress={() => {}} />,
-       ).toJSON();
+      ).toJSON();
        expect(tree).toMatchSnapshot();
      });
 
@@ -71,24 +61,26 @@
            title="Lorem ipsum"
            onPress={() => {}}
          />,
-       ).toJSON();
+      ).toJSON();
        expect(tree).toMatchSnapshot();
      });
 
      it('should support having only an icon', () => {
        const tree = renderer.create(
          <BpkButton
+           title="Lorem ipsum"
            icon={<Image source="../rightarrow_360.png" />}
+           iconOnly
            onPress={() => {}}
          />,
-       ).toJSON();
+      ).toJSON();
        expect(tree).toMatchSnapshot();
      });
 
      it('should support overwriting styles', () => {
        const tree = renderer.create(
          <BpkButton title="Lorem ipsum" onPress={() => {}} style={{ width: 100 }} />,
-       ).toJSON();
+      ).toJSON();
        expect(tree).toMatchSnapshot();
      });
 
@@ -96,9 +88,24 @@
        it(`should render correctly with type="${buttonType}"`, () => {
          const tree = renderer.create(
            <BpkButton type={buttonType} title="Lorem ipsum" onPress={() => {}} />,
-         ).toJSON();
+        ).toJSON();
          expect(tree).toMatchSnapshot();
        });
      });
+
+     it('should accept iconOnly prop when icon prop is supplied', () => {
+       expect(BpkButton.propTypes.icon({
+         iconOnly: true,
+         icon: <Image />,
+       }, 'icon', 'BpkButton')).toBeFalsy();
+     });
+
+     it('should accept iconOnly prop when icon prop is supplied', () => {
+       expect(BpkButton.propTypes.icon({
+         iconOnly: true,
+       }, 'icon', 'BpkButton').toString()).toEqual('Error: Invalid prop `icon` supplied to `BpkButton`. When `iconOnly` is enabled, `icon` must be supplied.'); // eslint-disable-line max-len
+     });
    });
- });
+ };
+
+ export default commonTests;

@@ -31,10 +31,10 @@ exports[`Android BpkTextInput should apply user-styling correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontFamily": "sans-serif-medium",
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 22,
+          "lineHeight": 24,
           "padding": 0,
         },
       ]
@@ -71,10 +71,10 @@ exports[`Android BpkTextInput should render correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontFamily": "sans-serif-medium",
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 22,
+          "lineHeight": 24,
           "padding": 0,
         },
       ]
@@ -112,10 +112,10 @@ exports[`Android BpkTextInput should render disabled correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontFamily": "sans-serif-medium",
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 22,
+          "lineHeight": 24,
           "padding": 0,
         },
         Object {
@@ -157,10 +157,10 @@ exports[`Android BpkTextInput should render invalid correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontFamily": "sans-serif-medium",
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 22,
+          "lineHeight": 24,
           "padding": 0,
         },
       ]
@@ -213,10 +213,10 @@ exports[`Android BpkTextInput should render placeholder correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontFamily": "sans-serif-medium",
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 22,
+          "lineHeight": 24,
           "padding": 0,
         },
         Object {
@@ -262,17 +262,17 @@ exports[`Android BpkTextInput should render small correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontFamily": "sans-serif-medium",
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 22,
+          "lineHeight": 24,
           "padding": 0,
         },
         Object {
-          "fontFamily": "System",
-          "fontSize": 11,
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
           "fontWeight": "400",
-          "lineHeight": 13,
+          "lineHeight": 16,
         },
       ]
     }
@@ -314,17 +314,17 @@ exports[`Android BpkTextInput should render small disabled correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontFamily": "sans-serif-medium",
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 22,
+          "lineHeight": 24,
           "padding": 0,
         },
         Object {
-          "fontFamily": "System",
-          "fontSize": 11,
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
           "fontWeight": "400",
-          "lineHeight": 13,
+          "lineHeight": 16,
         },
         Object {
           "color": "rgb(230, 228, 235)",
@@ -370,17 +370,17 @@ exports[`Android BpkTextInput should render small invalid correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontFamily": "sans-serif-medium",
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 22,
+          "lineHeight": 24,
           "padding": 0,
         },
         Object {
-          "fontFamily": "System",
-          "fontSize": 11,
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
           "fontWeight": "400",
-          "lineHeight": 13,
+          "lineHeight": 16,
         },
       ]
     }
@@ -441,17 +441,17 @@ exports[`Android BpkTextInput should render small placeholder correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontFamily": "sans-serif-medium",
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 22,
+          "lineHeight": 24,
           "padding": 0,
         },
         Object {
-          "fontFamily": "System",
-          "fontSize": 11,
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
           "fontWeight": "400",
-          "lineHeight": 13,
+          "lineHeight": 16,
         },
         Object {
           "fontStyle": "italic",
@@ -497,17 +497,17 @@ exports[`Android BpkTextInput should render small valid correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontFamily": "sans-serif-medium",
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 22,
+          "lineHeight": 24,
           "padding": 0,
         },
         Object {
-          "fontFamily": "System",
-          "fontSize": 11,
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
           "fontWeight": "400",
-          "lineHeight": 13,
+          "lineHeight": 16,
         },
       ]
     }
@@ -564,10 +564,10 @@ exports[`Android BpkTextInput should render valid correctly 1`] = `
         Object {
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontFamily": "sans-serif-medium",
+          "fontSize": 16,
           "fontWeight": "400",
-          "lineHeight": 22,
+          "lineHeight": 24,
           "padding": 0,
         },
       ]

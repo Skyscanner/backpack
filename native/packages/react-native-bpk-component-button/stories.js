@@ -136,7 +136,9 @@ const generateButtonStoryForType = type => (
       />
       <BpkButton
         type={type}
+        title="Icon only"
         icon={<ArrowImage type={type} />}
+        iconOnly
         onPress={action(`${type} icon only button clicked`)}
         style={buttonStyles}
       />
@@ -178,7 +180,9 @@ const generateButtonStoryForType = type => (
       <BpkButton
         large
         type={type}
+        title="Icon only"
         icon={<ArrowImage large type={type} />}
+        iconOnly
         onPress={action(`${type} icon only button clicked`)}
         style={buttonStyles}
       />

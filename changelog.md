@@ -2,6 +2,16 @@
 
 ## UNRELEASED
 
+**Breaking:**
+- react-native-bpk-component-button
+ - `title` prop is now required.
+
+**Added:**
+- react-native-bpk-component-button
+  - New `iconOnly` and `accessibilityLabel` props.
+
+## 2017-09-20 - New React Native Button component
+
 **Added:**
 - react-native-bpk-component-button
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/button

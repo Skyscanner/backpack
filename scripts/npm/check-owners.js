@@ -80,8 +80,9 @@ const verifyMaintainers = (data) => {
 
 console.log(`Maintainers are:\n  ${maintainers.join('\n  ')}\n`);
 
-readdir('packages/')
-  .then(packages => Q.all(packages.map(getPackageMaintainers)))
+Q.all([readdir('packages/'), readdir('native/packages/')])
+   // Q.all returns the results as an array, so destructure them all into one array.
+  .then(packages => Q.all([...packages[0], ...packages[1]].map(getPackageMaintainers)))
   .then(packages => packages.forEach(verifyMaintainers))
   .then(() => {
     if (failures) {

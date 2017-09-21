@@ -42,7 +42,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotPrimary}`,
         altText: 'iOS Primary Button Component',
-        subText: '(iPhone 7 Simulator)',
+        subText: '(iPhone 8 Simulator)',
       },
       {
         title: 'Android',
@@ -64,7 +64,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotSecondary}`,
         altText: 'iOS Secondary Button Component',
-        subText: '(iPhone 7 Simulator)',
+        subText: '(iPhone 8 Simulator)',
       },
       {
         title: 'Android',
@@ -86,7 +86,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotDestructive}`,
         altText: 'iOS Destructive Button Component',
-        subText: '(iPhone 7 Simulator)',
+        subText: '(iPhone 8 Simulator)',
       },
       {
         title: 'Android',
@@ -108,7 +108,7 @@ const components = [
         height: 1334,
         src: `/${iosScreenshotFeatured}`,
         altText: 'iOS Featured Button Component',
-        subText: '(iPhone 7 Simulator)',
+        subText: '(iPhone 8 Simulator)',
       },
       {
         title: 'Android',
@@ -132,7 +132,10 @@ const NativeTextPage = () => <DocsPageBuilder
     </Paragraph>,
     <Paragraph>
       There are four types of button: primary, secondary, destructive and featured. All button types can be
-      large, selected or disabled. They can have a title, an icon, or both.
+      large, selected or disabled.
+    </Paragraph>,
+    <Paragraph>
+      Buttons can be text only, icon only, or text and icon.
     </Paragraph>,
   ]}
   components={components}
