@@ -23,10 +23,31 @@
 import includes from 'lodash.includes';
 import { danger, warn, message } from 'danger';
 
-const fileChanges = [...danger.git.modified_files, ...danger.git.created_files];
+const createdFiles = danger.git.created_files;
+const modifiedFiles = danger.git.modified_files;
+const fileChanges = [...modifiedFiles, ...createdFiles];
 
 // Always be nice.
 message('Thanks for the PR 🎉.');
+
+const webComponentIntroduced = createdFiles.some(filePath => (
+  filePath.match(/packages\/bpk-component.+\/src\/.+\.js/)
+));
+
+if (webComponentIntroduced) {
+  message('It looks like you are introducing a web component');
+  warn('Ensure the component style is extensible via `className`');
+}
+
+const nativeComponentIntroduced = createdFiles.some(filePath => (
+  filePath.match(/native\/packages\/react-native-bpk-component.+\/src\/.+\.js/)
+));
+
+if (nativeComponentIntroduced) {
+  message('It looks like you are introducing a native component');
+  warn('Ensure the component style is extensible via `style`');
+}
+
 
 // If any of the packages have changed, the changelog should have been updated.
 const changelogModified = includes(fileChanges, 'changelog.md');
