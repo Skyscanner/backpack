@@ -7,7 +7,7 @@ _Nothing yet!_
 ## 2017-09-21 - New React Native Button properties
 
 **Breaking:**
-- react-native-bpk-component-button
+- react-native-bpk-component-button: 1.0.0 => 2.0.0
  - `title` prop is now required.
 
 **Added:**
@@ -17,7 +17,7 @@ _Nothing yet!_
 ## 2017-09-20 - New React Native Button component
 
 **Added:**
-- react-native-bpk-component-button
+- react-native-bpk-component-button: 0.0.1 => 1.0.0
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/button
 
 ## 2017-09-20 - New React Native Text Input component
