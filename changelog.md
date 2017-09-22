@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet!_
+**Fixed:**
+- react-native-bpk-component-text-input:
+  - Made hit area larger to make activation of the Text Input easier on a touch-device
 
 ## 2017-09-21 - New React Native Button properties
 

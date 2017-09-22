@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
     // TODO Replace with fontFamilyLg token once available
     fontFamily: Platform.OS === 'android' ? 'sans-serif-medium' : 'System',
     lineHeight: textLgLineHeight,
+    height: '100%',
   },
   smallInput: {
     paddingLeft: spacingMd,
