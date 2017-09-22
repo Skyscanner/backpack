@@ -13,7 +13,7 @@ npm install bpk-component-button --save-dev
 ```js
 import React from 'react';
 import { withButtonAlignment, withRtlSupport } from 'bpk-component-icon';
-import ArrowIcon from 'bpk-component-icon/sm/long-arrow-right-alt';
+import ArrowIcon from 'bpk-component-icon/sm/long-arrow-right';
 import BpkButton from 'bpk-component-button';
 
 const AlignedArrowIcon = withButtonAlignment(withRtlSupport(ArrowIcon));
