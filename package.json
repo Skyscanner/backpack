@@ -27,7 +27,7 @@
     "jest": "jest --coverage",
     "build:tokens": "lerna run tokens --scope bpk-tokens",
     "build:svgs": "lerna run svgs --scope bpk-svgs",
-    "build": "npm run build:tokens && npm run build:svgs && lerna run build",
+    "build": "npm run build:tokens && npm run build:svgs && lerna run build && (cd native && react-native link)",
     "storybook": "start-storybook -p 9001",
     "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,packages/bpk-svgs/dist/*,packages/bpk-tokens/tokens/base.default}.scss -d dist/sassdoc -v --strict --debug",
     "docs": "webpack-dev-server",
