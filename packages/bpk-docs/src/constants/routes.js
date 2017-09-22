@@ -71,7 +71,7 @@ export const HORIZONTAL_GRID = '/components/web/horizontal-grid';
 
 // components/native/
 export const NATIVE_COMPONENTS = '/components/native';
-export const NATIVE_INPUT = '/components/native/text-input';
+export const NATIVE_INPUTS = '/components/native/text-inputs';
 export const NATIVE_TEXT = '/components/native/text';
 export const NATIVE_BUTTONS = '/components/native/buttons';
 

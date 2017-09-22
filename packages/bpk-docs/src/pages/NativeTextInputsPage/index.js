@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import page from './NativeTextInputPage';
+import page from './NativeTextInputsPage';
 
 export default page;
