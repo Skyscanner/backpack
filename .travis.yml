@@ -1,19 +1,17 @@
 language: node_js
 node_js:
-  - 7.10.1
-env:
-  global:
-    - NPM_CONFIG_LOGLEVEL=warn
+  - 8.5.0
 install:
-  - npm install
-  - npm run build
+  - yarn
+  - yarn run build
 script:
-  - npm test
-  - npm run docs:dist:gzip
+  - yarn test
+  - yarn run docs:dist:gzip
   - test -e dist/index.html
   - test -e dist/sassdoc/index.html
-  - npm run danger
+  - yarn run danger
 cache:
+  yarn: true
   directories:
   - node_modules
 # This causes builds for merges and direct pushes to master.
