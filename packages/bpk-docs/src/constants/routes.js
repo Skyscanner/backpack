@@ -21,6 +21,7 @@ export const HOME = '/';
 // TOP LEVEL
 export const USING_BACKPACK = '/using';
 export const STYLE = '/style';
+export const TOKENS = '/tokens';
 export const COMPONENTS = '/components';
 export const RESOURCES = '/resources';
 
@@ -30,13 +31,13 @@ export const BACKPACK_REACT_SCRIPTS = '/using/backpack-react-scripts';
 export const BASE_STYLESHEET = '/using/base-stylesheet';
 
 // components/bonds/
-export const COLORS = '/components/bonds/colors';
-export const TYPESETTING = '/components/bonds/typesetting';
-export const RADII = '/components/bonds/radii';
-export const SHADOWS = '/components/bonds/shadows';
-export const BORDERS = '/components/bonds/borders';
-export const LAYOUT = '/components/bonds/layout';
-export const ANIMATION = '/components/bonds/animation';
+export const COLORS = '/tokens/colors';
+export const TYPESETTING = '/tokens/typesetting';
+export const RADII = '/tokens/radii';
+export const SHADOWS = '/tokens/shadows';
+export const BORDERS = '/tokens/borders';
+export const LAYOUT = '/tokens/layout';
+export const ANIMATION = '/tokens/animation';
 
 // components/web/
 export const WEB_COMPONENTS = '/components/web';

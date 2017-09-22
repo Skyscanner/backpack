@@ -24,20 +24,6 @@ import * as routes from './../../constants/routes';
 
 const links = [
   {
-    id: 'BONDS',
-    category: 'Bonds',
-    sort: true,
-    links: [
-      { id: 'COLORS', route: routes.COLORS, children: 'Colors' },
-      { id: 'TYPESETTING', route: routes.TYPESETTING, children: 'Typesetting' },
-      { id: 'LAYOUT', route: routes.LAYOUT, children: 'Layout' },
-      { id: 'RADII', route: routes.RADII, children: 'Radii' },
-      { id: 'SHADOWS', route: routes.SHADOWS, children: 'Shadows' },
-      { id: 'BORDERS', route: routes.BORDERS, children: 'Borders' },
-      { id: 'ANIMATION', route: routes.ANIMATION, children: 'Animation' },
-    ],
-  },
-  {
     id: 'COMPONENTS',
     category: 'Web components',
     sort: true,

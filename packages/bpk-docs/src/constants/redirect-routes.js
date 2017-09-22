@@ -20,6 +20,14 @@ import * as ROUTES from './routes';
 
 // Deprecated routes, kept here for redirects
 export default {
+  '/components/bonds': ROUTES.TOKENS,
+  '/components/bonds/colors': ROUTES.COLORS,
+  '/components/bonds/typesetting': ROUTES.TYPESETTING,
+  '/components/bonds/radii': ROUTES.RADII,
+  '/components/bonds/shadows': ROUTES.SHADOWS,
+  '/components/bonds/borders': ROUTES.BORDERS,
+  '/components/bonds/layout': ROUTES.LAYOUT,
+  '/components/bonds/animation': ROUTES.ANIMATION,
   '/components/atoms': ROUTES.WEB_COMPONENTS,
   '/components/atoms/typography': ROUTES.TYPOGRAPHY,
   '/components/atoms/buttons': ROUTES.BUTTONS,
