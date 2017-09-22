@@ -24,6 +24,7 @@ import redirects from './../constants/redirect-routes';
 
 import DefaultLayout from './../layouts/DefaultLayout';
 import UsingLayout from './../layouts/UsingLayout';
+import TokensLayout from './../layouts/TokensLayout';
 import DocsLayout from './../layouts/DocsLayout';
 
 import HomePage from './../pages/HomePage';
@@ -97,15 +98,19 @@ const Routes = (
 
     <Route path={ROUTES.STYLE} component={StylePage} iconsSvgs={iconsSvgs} />
 
-    <Route path={ROUTES.COMPONENTS} component={DocsLayout}>
-      <IndexRedirect to={ROUTES.WEB_COMPONENTS} />
+    <Route path={ROUTES.TOKENS} component={TokensLayout}>
+      <IndexRedirect to={ROUTES.ANIMATION} />
+      <Route path={ROUTES.ANIMATION} component={AnimationPage} />
+      <Route path={ROUTES.BORDERS} component={BordersPage} />
       <Route path={ROUTES.COLORS} component={ColorsPage} />
-      <Route path={ROUTES.TYPESETTING} component={TypesettingPage} />
+      <Route path={ROUTES.LAYOUT} component={LayoutPage} />
       <Route path={ROUTES.RADII} component={RadiiPage} />
       <Route path={ROUTES.SHADOWS} component={ShadowsPage} />
-      <Route path={ROUTES.BORDERS} component={BordersPage} />
-      <Route path={ROUTES.LAYOUT} component={LayoutPage} />
-      <Route path={ROUTES.ANIMATION} component={AnimationPage} />
+      <Route path={ROUTES.TYPESETTING} component={TypesettingPage} />
+    </Route>
+
+    <Route path={ROUTES.COMPONENTS} component={DocsLayout}>
+      <IndexRedirect to={ROUTES.WEB_COMPONENTS} />
       <Route path={ROUTES.WEB_COMPONENTS}>
         <IndexRedirect to={ROUTES.ACCORDIONS} />
         <Route path={ROUTES.TYPOGRAPHY} component={TypographyPage} />
