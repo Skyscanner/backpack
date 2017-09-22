@@ -25,12 +25,26 @@ import { danger, warn, message } from 'danger';
 
 const fileChanges = [...danger.git.modified_files, ...danger.git.created_files];
 
+// Always be nice.
+message('Thanks for the PR 🎉.');
+
 // If any of the packages have changed, the changelog should have been updated.
 const changelogModified = includes(fileChanges, 'changelog.md');
-const packagesModified = fileChanges.filter(filePath => filePath.startsWith('packages/')).length > 0;
+const packagesModified = fileChanges.some(filePath => (
+  filePath.startsWith('packages/') || filePath.startsWith('native/packages/')
+));
 if (packagesModified && !changelogModified) {
   warn('One or more packages have changed, but `changelog.md` wasn\'t updated.');
 }
 
-// Always be nice
-message('Thanks for the PR 🎉.');
+// If source files have changed, the snapshots should have been updated.
+const sourceFilesModified = fileChanges.some(filePath => (
+  // packages/(one or more chars)/src/(one or more chars).js
+  filePath.match(/packages\/.+\/src\/.+\.js/) && !includes(filePath, '-test.')
+));
+const snapshotsModified = fileChanges.some(filePath => (
+  filePath.endsWith('.js.snap')
+));
+if (sourceFilesModified && !snapshotsModified) {
+  warn('Package source files (e.g. `package/packageName/src/packageName.js`) were updated, but snapshots weren\'t. Have you checked that the tests still pass?'); // eslint-disable-line max-len
+}
