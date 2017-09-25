@@ -41,3 +41,16 @@ import { colors } from 'bpk-tokens/tokens/base.es6';
 
 console.log(colors.colorGray700);
 ```
+
+## Transparency
+
+It is possible to add opacity to Backpack color tokens as follows:
+
+```js
+import { colorBlue500 } from 'bpk-tokens/tokens/base.es6';
+import { setOpacity } from 'bpk-tokens';
+
+const transparentBlue500 = setOpacity(colorBlue500, 0.7);
+
+console.log(transparentBlue500);
+```
