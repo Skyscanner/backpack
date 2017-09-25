@@ -30,7 +30,7 @@
 
  const BUTTON_TYPES = ['primary', 'featured', 'secondary', 'destructive'];
 
- const getStyleForElement = (elementType, { type, title, icon, iconOnly, selected, large, disabled, style }) => {
+ const getStyleForElement = (elementType, { type, title, icon, iconOnly, selected, large, disabled }) => {
    // Start with base style.
    const styleForElement = [styles.base[elementType]];
 
@@ -59,11 +59,6 @@
    } else if (title && icon) {
      // If it has a title and icon, get the style for that.
      styleForElement.push(styles.modifiers[large ? 'textAndIconLarge' : 'textAndIcon'][elementType]);
-   }
-
-   // Userland styles.
-   if (style && style[elementType]) {
-     styleForElement.push(style[elementType]);
    }
 
    return styleForElement;
@@ -115,7 +110,7 @@
    // Note that TouchableHighlight isn't on Android, so TouchableFeedback
    // will need to be used to support it.
    return (
-     <LinearGradient style={getStyleForElement('container', props)} colors={getGradientColors(props)}>
+     <LinearGradient style={[getStyleForElement('container', props), style]} colors={getGradientColors(props)}>
        <TouchableHighlight
          style={getStyleForElement('button', props)}
          disabled={disabled}

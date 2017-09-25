@@ -13,10 +13,13 @@ exports[`iOS BpkButton should render correctly 1`] = `
   start={undefined}
   style={
     Array [
-      Object {
-        "borderRadius": 100,
-        "height": 32,
-      },
+      Array [
+        Object {
+          "borderRadius": 100,
+          "height": 32,
+        },
+      ],
+      null,
     ]
   }
 >
@@ -118,10 +121,13 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
   start={undefined}
   style={
     Array [
-      Object {
-        "borderRadius": 100,
-        "height": 32,
-      },
+      Array [
+        Object {
+          "borderRadius": 100,
+          "height": 32,
+        },
+      ],
+      null,
     ]
   }
 >
@@ -234,10 +240,13 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
   start={undefined}
   style={
     Array [
-      Object {
-        "borderRadius": 100,
-        "height": 32,
-      },
+      Array [
+        Object {
+          "borderRadius": 100,
+          "height": 32,
+        },
+      ],
+      null,
     ]
   }
 >
@@ -339,10 +348,13 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
   start={undefined}
   style={
     Array [
-      Object {
-        "borderRadius": 100,
-        "height": 32,
-      },
+      Array [
+        Object {
+          "borderRadius": 100,
+          "height": 32,
+        },
+      ],
+      null,
     ]
   }
 >
@@ -444,10 +456,13 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
   start={undefined}
   style={
     Array [
-      Object {
-        "borderRadius": 100,
-        "height": 32,
-      },
+      Array [
+        Object {
+          "borderRadius": 100,
+          "height": 32,
+        },
+      ],
+      null,
     ]
   }
 >
@@ -560,11 +575,14 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
   start={undefined}
   style={
     Array [
-      Object {
-        "borderRadius": 100,
-        "height": 32,
-      },
-      undefined,
+      Array [
+        Object {
+          "borderRadius": 100,
+          "height": 32,
+        },
+        undefined,
+      ],
+      null,
     ]
   }
 >
@@ -676,13 +694,16 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
   start={undefined}
   style={
     Array [
-      Object {
-        "borderRadius": 100,
-        "height": 32,
-      },
-      Object {
-        "width": 32,
-      },
+      Array [
+        Object {
+          "borderRadius": 100,
+          "height": 32,
+        },
+        Object {
+          "width": 32,
+        },
+      ],
+      null,
     ]
   }
 >
@@ -761,9 +782,14 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
   start={undefined}
   style={
     Array [
+      Array [
+        Object {
+          "borderRadius": 100,
+          "height": 32,
+        },
+      ],
       Object {
-        "borderRadius": 100,
-        "height": 32,
+        "width": 100,
       },
     ]
   }
@@ -866,13 +892,16 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
   start={undefined}
   style={
     Array [
-      Object {
-        "borderRadius": 100,
-        "height": 32,
-      },
-      Object {
-        "minHeight": 48,
-      },
+      Array [
+        Object {
+          "borderRadius": 100,
+          "height": 32,
+        },
+        Object {
+          "minHeight": 48,
+        },
+      ],
+      null,
     ]
   }
 >
@@ -981,13 +1010,16 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
   start={undefined}
   style={
     Array [
-      Object {
-        "borderRadius": 100,
-        "height": 32,
-      },
-      Object {
-        "minHeight": 48,
-      },
+      Array [
+        Object {
+          "borderRadius": 100,
+          "height": 32,
+        },
+        Object {
+          "minHeight": 48,
+        },
+      ],
+      null,
     ]
   }
 >
@@ -1096,11 +1128,14 @@ exports[`iOS BpkButton should support the "selected" property 1`] = `
   start={undefined}
   style={
     Array [
-      Object {
-        "borderRadius": 100,
-        "height": 32,
-      },
-      undefined,
+      Array [
+        Object {
+          "borderRadius": 100,
+          "height": 32,
+        },
+        undefined,
+      ],
+      null,
     ]
   }
 >
