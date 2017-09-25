@@ -17,6 +17,8 @@
  - `title` prop is now required.
 
 **Added:**
+- bpk-component-barchart
+  - Added support for hover and touch events on bars.
 - react-native-bpk-component-button
   - New `iconOnly` and `accessibilityLabel` props.
 
