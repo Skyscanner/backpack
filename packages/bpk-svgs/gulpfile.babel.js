@@ -16,15 +16,17 @@
  * limitations under the License.
  */
 
-import del from 'del';
 import _ from 'lodash';
-import gulp from 'gulp';
 import chmod from 'gulp-chmod';
 import clone from 'gulp-clone';
-import rename from 'gulp-rename';
-import svgmin from 'gulp-svgmin';
 import concat from 'gulp-concat';
+import del from 'del';
+import gulp from 'gulp';
+import gulpFilter from 'gulp-filter';
 import merge from 'merge-stream';
+import rename from 'gulp-rename';
+import svg2png from 'gulp-svg2png';
+import svgmin from 'gulp-svgmin';
 import tinycolor from 'tinycolor2';
 import tokens from 'bpk-tokens/tokens/base.raw.json';
 
@@ -119,6 +121,19 @@ gulp.task('spinners', () => {
     .pipe(rename({ extname: '.js' }))
     .pipe(gulp.dest('dist/js/spinners'));
 
+  const reactNative = [];
+  for (let i = 1; i < 4; i += 1) {
+    const rnSpinners = optimised
+        .pipe(gulpFilter('**/spinner.svg'))
+        .pipe(svg2png({ width: 24 * i }))
+        .pipe(rename({
+          suffix: `@${i}x`,
+        }))
+        .pipe(gulp.dest('dist/png/spinners/'));
+
+    reactNative.push(rnSpinners);
+  }
+
   const datauri = optimised
     .pipe(clone())
     .pipe(svg2datauri({ colors }))
@@ -126,7 +141,7 @@ gulp.task('spinners', () => {
     .pipe(sassMap('bpk-spinners'))
     .pipe(gulp.dest('dist/scss'));
 
-  return merge(react, datauri);
+  return merge(react, reactNative, datauri);
 });
 
 /*
@@ -174,6 +189,18 @@ gulp.task('icons-sm', ['icons-common'], () => {
     .pipe(rename({ extname: '.js' }))
     .pipe(gulp.dest('dist/js/icons/sm'));
 
+  const reactNative = [];
+  for (let i = 1; i < 4; i += 1) {
+    const rnIconsSm = svgs
+        .pipe(svg2png({ width: 18 * i }))
+        .pipe(rename({
+          suffix: `@${i}x`,
+        }))
+        .pipe(gulp.dest('dist/png/icons/sm/'));
+
+    reactNative.push(rnIconsSm);
+  }
+
   const datauri = svgs
     .pipe(clone())
     .pipe(svgmin({
@@ -206,7 +233,7 @@ gulp.task('icons-sm', ['icons-common'], () => {
     .pipe(sassMap('bpk-icons-no-color-sm'))
     .pipe(gulp.dest('dist/scss'));
 
-  return merge(react, datauri, rawDatauri);
+  return merge(react, reactNative, datauri, rawDatauri);
 });
 
 gulp.task('icons-lg', ['icons-common'], () => {
@@ -230,6 +257,18 @@ gulp.task('icons-lg', ['icons-common'], () => {
     .pipe(svg2react())
     .pipe(rename({ extname: '.js' }))
     .pipe(gulp.dest('dist/js/icons/lg'));
+
+  const reactNative = [];
+  for (let i = 1; i < 4; i += 1) {
+    const rnIconsLg = svgs
+        .pipe(svg2png({ width: 24 * i }))
+        .pipe(rename({
+          suffix: `@${i}x`,
+        }))
+        .pipe(gulp.dest('dist/png/icons/lg/'));
+
+    reactNative.push(rnIconsLg);
+  }
 
   const datauri = svgs
     .pipe(clone())
@@ -263,7 +302,7 @@ gulp.task('icons-lg', ['icons-common'], () => {
     .pipe(sassMap('bpk-icons-no-color-lg'))
     .pipe(gulp.dest('dist/scss'));
 
-  return merge(react, datauri, rawDatauri);
+  return merge(react, reactNative, datauri, rawDatauri);
 });
 
 gulp.task('default', ['elements', 'spinners', 'icons-sm', 'icons-lg']);
