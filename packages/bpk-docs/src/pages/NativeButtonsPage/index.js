@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import page from './NativeButtonPage';
+import page from './NativeButtonsPage';
 
 export default page;

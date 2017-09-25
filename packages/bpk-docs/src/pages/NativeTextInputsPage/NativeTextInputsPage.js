@@ -52,8 +52,8 @@ const components = [
   },
 ];
 
-const NativeInputPage = () => <DocsPageBuilder
-  title="Text input"
+const NativeTextInputsPage = () => <DocsPageBuilder
+  title="Text inputs"
   blurb={[
     <Paragraph>
       The Backpack input is a wrapper around
@@ -67,4 +67,4 @@ const NativeInputPage = () => <DocsPageBuilder
   showMenu={false}
 />;
 
-export default NativeInputPage;
+export default NativeTextInputsPage;

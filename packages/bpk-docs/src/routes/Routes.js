@@ -74,9 +74,9 @@ import StarRatingPage from './../pages/StarRatingPage';
 
 import AlignmentPage from './../pages/AlignmentPage';
 
-import NativeInputPage from './../pages/NativeTextInputPage';
+import NativeInputsPage from './../pages/NativeTextInputsPage';
 import NativeTextPage from './../pages/NativeTextPage';
-import NativeButtonPage from './../pages/NativeButtonPage';
+import NativeButtonsPage from './../pages/NativeButtonsPage';
 
 import ResourcesPage from './../pages/ResourcesPage';
 
@@ -143,9 +143,9 @@ const Routes = (
       </Route>
       <Route path={ROUTES.NATIVE_COMPONENTS}>
         <IndexRedirect to={ROUTES.NATIVE_TEXT} />
-        <Route path={ROUTES.NATIVE_INPUT} component={NativeInputPage} />
+        <Route path={ROUTES.NATIVE_INPUTS} component={NativeInputsPage} />
         <Route path={ROUTES.NATIVE_TEXT} component={NativeTextPage} />
-        <Route path={ROUTES.NATIVE_BUTTON} component={NativeButtonPage} />
+        <Route path={ROUTES.NATIVE_BUTTONS} component={NativeButtonsPage} />
       </Route>
       <Route path={ROUTES.UTILITIES}>
         <IndexRedirect to={ROUTES.ALIGNMENT} />
