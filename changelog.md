@@ -6,11 +6,14 @@
 - react-native-bpk-component-card:
   - New component BpkCard
 
-- bpk-component-barchart:
+## 2017-09-25 - Bar chart bars now have hooks for hover and touch events
+
+**Added:**
+- bpk-component-barchart: 2.0.13 => 2.1.0
   - Added support for hover and touch events on bars.
 
 **Fixed:**
-- react-native-bpk-component-text-input:
+- react-native-bpk-component-text-input: 1.0.3 => 1.0.4
   - Made tap area larger to make activation of the Text Input easier on a touch-device
 
 ## 2017-09-21 - New React Native Button properties
