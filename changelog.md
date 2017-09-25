@@ -6,7 +6,9 @@
 - react-native-bpk-component-card:
   - New component BpkCard
 
-- bpk-tokens:
+## 2017-09-25 - Color tokens can now be made opaque
+
+- bpk-tokens: 26.1.1 => 26.2.0
   - Color tokens can now be made opaque with `setOpacity`
 
 ## 2017-09-25 - Bar chart bars now have hooks for hover and touch events
