@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import SideNavLayout from './../SideNavLayout';
 import * as routes from './../../constants/routes';
@@ -30,11 +30,12 @@ const links = [
     links: [
       { id: 'COLORS', route: routes.COLORS, children: 'Colors' },
       { id: 'TYPESETTING', route: routes.TYPESETTING, children: 'Typesetting' },
-      { id: 'LAYOUT', route: routes.LAYOUT, children: 'Layout' },
+      { id: 'LAYOUT', route: routes.SPACINGS, children: 'Spacings' },
       { id: 'RADII', route: routes.RADII, children: 'Radii' },
       { id: 'SHADOWS', route: routes.SHADOWS, children: 'Shadows' },
       { id: 'BORDERS', route: routes.BORDERS, children: 'Borders' },
       { id: 'ANIMATION', route: routes.ANIMATION, children: 'Animation' },
+      { id: 'Z_INDEXES', route: routes.Z_INDEXES, children: 'Z-Indexes' },
     ],
   },
 ];

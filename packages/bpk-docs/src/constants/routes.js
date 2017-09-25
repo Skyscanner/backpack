@@ -36,8 +36,9 @@ export const TYPESETTING = '/tokens/typesetting';
 export const RADII = '/tokens/radii';
 export const SHADOWS = '/tokens/shadows';
 export const BORDERS = '/tokens/borders';
-export const LAYOUT = '/tokens/layout';
+export const SPACINGS = '/tokens/spacings';
 export const ANIMATION = '/tokens/animation';
+export const Z_INDEXES = '/tokens/z-indexes';
 
 // components/web/
 export const WEB_COMPONENTS = '/components/web';

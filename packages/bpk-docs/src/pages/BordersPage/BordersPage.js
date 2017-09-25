@@ -17,45 +17,16 @@
  */
 
 import React from 'react';
-import kebabCase from 'lodash/kebabCase';
-import { borders, colorGray100 } from 'bpk-tokens/tokens/base.es6';
-import { cssModules } from 'bpk-react-utils';
+import TOKENS from 'bpk-tokens/tokens/base.raw.json';
+import IOS_TOKENS from 'bpk-tokens/tokens/ios/base.raw.json';
+import ANDROID_TOKENS from 'bpk-tokens/tokens/android/base.raw.json';
 
-import STYLES from './borders-page.scss';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
-import PresentationBlock from './../../components/PresentationBlock';
-
-const getClassName = cssModules(STYLES);
+import { getPlatformTokens } from './../../helpers/tokens-helper';
 
 const BordersPage = () => <DocsPageBuilder
   title="Borders"
-  blurb={[
-    <Paragraph>
-      Borders help provide structure and division between elements. These should be used sparingly as a compliment to
-      color, type and shape to avoid the UI becoming filled with boxes.
-    </Paragraph>,
-    <PresentationBlock className={getClassName('bpkdocs-borders-page__examples')}>
-      {Object.keys(borders).map(tokenName => (
-        <div
-          key={tokenName}
-          className={getClassName('bpkdocs-borders-page__item')}
-        >
-          <div
-            className={getClassName('bpkdocs-borders-page__border-example')}
-            style={{
-              boxShadow: `0 0 0 ${borders[tokenName]} ${colorGray100} inset`,
-            }}
-          >
-            {kebabCase(tokenName)}
-          </div>
-        </div>
-      ))}
-    </PresentationBlock>,
-  ]}
-  components={[]}
-  tokenMap={borders}
-  sassdocId="borders"
+  tokenMap={getPlatformTokens(TOKENS, IOS_TOKENS, ANDROID_TOKENS, ({ category }) => category === 'borders')}
 />;
 
 export default BordersPage;

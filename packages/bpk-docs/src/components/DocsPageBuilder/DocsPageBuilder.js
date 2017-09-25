@@ -17,7 +17,6 @@
  */
 
 import marked from 'marked';
-import keys from 'lodash/keys';
 import Helmet from 'react-helmet';
 import isString from 'lodash/isString';
 import BpkLink from 'bpk-component-link';
@@ -25,14 +24,13 @@ import PropTypes from 'prop-types';
 import React, { Children } from 'react';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import BpkContentContainer from 'bpk-component-content-container';
-import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table';
 
+import TokenSwitcher from './TokenSwitcher';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
 import SassdocLink from './../../components/SassdocLink';
-import PresentationBlock from './../../components/PresentationBlock';
 import ComponentScreenshots from './ComponentScreenshots';
-import { formatTokenName, formatTokenValue } from './../../helpers/tokens-helper';
+import PresentationBlock from './../../components/PresentationBlock';
 
 const flatten = Children.toArray;
 const renderer = new marked.Renderer();
@@ -60,25 +58,6 @@ const markdownToHTML = readmeString => marked(readmeString
   .replace(/^# /gm, '## ') // replace h1 with h2
 , { renderer });
 
-const toTokenTable = tokens => (
-  <BpkTable>
-    <BpkTableHead>
-      <BpkTableRow>
-        <BpkTableHeadCell>Bond</BpkTableHeadCell>
-        <BpkTableHeadCell>Value</BpkTableHeadCell>
-      </BpkTableRow>
-    </BpkTableHead>
-    <BpkTableBody>
-      {keys(tokens).map(token => (
-        <BpkTableRow key={formatTokenName(token)}>
-          <BpkTableCell>{formatTokenName(token)}</BpkTableCell>
-          <BpkTableCell>{formatTokenValue(tokens[token])}</BpkTableCell>
-        </BpkTableRow>
-      ))}
-    </BpkTableBody>
-  </BpkTable>
-);
-
 const toSassdocLink = props => <SassdocLink sassdocId={props.sassdocId} category={props.category} />;
 
 toSassdocLink.propTypes = {
@@ -104,7 +83,7 @@ const ComponentExample = (component) => {
     <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(component.readme) }} bareHtml />,
   ]) : null;
 
-  const tokenMap = component.tokenMap ? toTokenTable(component.tokenMap) : null;
+  const tokenMap = component.tokenMap ? <TokenSwitcher tokens={component.tokenMap} /> : null;
 
   const sassdocLink = component.sassdocId ? toSassdocLink({
     sassdocId: component.sassdocId,
@@ -136,7 +115,7 @@ const DocsPageBuilder = props => (
     {props.showMenu && (
       <BpkList>{flatten([...props.components, ...props.customSections].map(ExampleNavListItem))}</BpkList>
     )}
-    {props.tokenMap ? toTokenTable(props.tokenMap) : null}
+    {props.tokenMap ? <TokenSwitcher tokens={props.tokenMap} /> : null}
     {flatten(props.components.map(ComponentExample))}
     {props.readme ? flatten([
       <Heading id="readme" level="h2">Readme</Heading>,
@@ -181,13 +160,21 @@ DocsPageBuilder.propTypes = {
       ),
       examples: PropTypes.arrayOf(childrenPropType),
       readme: PropTypes.string,
-      tokenMap: PropTypes.object,
+      tokenMap: PropTypes.shape({
+        web: PropTypes.object,
+        ios: PropTypes.object,
+        android: PropTypes.object,
+      }),
       sassdocId: PropTypes.string,
     }),
   ),
   showMenu: PropTypes.bool,
   readme: PropTypes.string,
-  tokenMap: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  tokenMap: PropTypes.shape({
+    web: PropTypes.object,
+    ios: PropTypes.object,
+    android: PropTypes.object,
+  }),
   customSections: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,

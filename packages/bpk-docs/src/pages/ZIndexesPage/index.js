@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import page from './LayoutPage';
+import page from './ZIndexesPage';
 
 export default page;
