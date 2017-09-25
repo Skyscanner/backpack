@@ -68,8 +68,9 @@ npm install [package-name] --save-dev
 | [`bpk-svgs`](/packages/bpk-svgs) | [![npm version](https://badge.fury.io/js/bpk-svgs.svg)](http://badge.fury.io/js/bpk-svgs) |
 | [`bpk-tokens`](/packages/bpk-tokens) | [![npm version](https://badge.fury.io/js/bpk-tokens.svg)](http://badge.fury.io/js/bpk-tokens) |
 | [`react-native-bpk-component-button`](/native/packages/react-native-bpk-component-button) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-button.svg)](http://badge.fury.io/js/react-native-bpk-component-button) |
-| [`react-native-bpk-component-text`](/native/packages/react-native-bpk-component-text) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-text.svg)](http://badge.fury.io/js/react-native-bpk-component-text) |
+| [`react-native-bpk-component-card`](/native/packages/react-native-bpk-component-card) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-card.svg)](http://badge.fury.io/js/react-native-bpk-component-card) |
 | [`react-native-bpk-component-text-input`](/native/packages/react-native-bpk-component-text-input) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-text-input.svg)](http://badge.fury.io/js/react-native-bpk-component-text-input) |
+| [`react-native-bpk-component-text`](/native/packages/react-native-bpk-component-text) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-text.svg)](http://badge.fury.io/js/react-native-bpk-component-text) |
 
 ## Contributing
 
