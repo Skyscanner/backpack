@@ -25,11 +25,13 @@ import {
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
+import BpkIcon from 'react-native-bpk-component-icon';
 
 const tickSmIcon = require('./icons/sm/tick-circle.png'); // eslint-disable-line import/no-unresolved
 const tickLgIcon = require('./icons/lg/tick-circle.png'); // eslint-disable-line import/no-unresolved
 const exclaimationSmIcon = require('./icons/sm/exclaimation-circle.png'); // eslint-disable-line import/no-unresolved
-const exclaimationLgIcon = require('./icons/lg/exclaimation-circle.png'); // eslint-disable-line import/no-unresolved
+const exclaimationLgIcon = require('./icons/lg/exclaimation-circle.png');
+ // eslint-disable-line import/no-unresolved
 
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
@@ -71,14 +73,13 @@ const styles = StyleSheet.create({
     height: (spacingLg * 2) - (1 * 2),
   },
   text: {
-    fontFamily: 'To The Point',
     flex: 1,
     padding: 0,
     fontSize: textLgFontSize,
     color: colorGray700,
     fontWeight: textLgFontWeight,
     // TODO Replace with fontFamilyLg token once available
-    // fontFamily: Platform.OS === 'android' ? 'sans-serif-medium' : 'System',
+    fontFamily: Platform.OS === 'android' ? 'sans-serif-medium' : 'System',
     lineHeight: textLgLineHeight,
     height: '100%',
   },
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
     fontSize: textXsFontSize,
     fontWeight: textXsFontWeight,
     // TODO Replace with fontFamilyXs token once available
-    // fontFamily: Platform.OS === 'android' ? 'sans-serif' : 'System',
+    fontFamily: Platform.OS === 'android' ? 'sans-serif' : 'System',
     lineHeight: textXsLineHeight,
   },
   placeholderText: {
@@ -177,9 +178,10 @@ const BpkTextInput = (props) => {
         {...rest}
       />
       {iconSource &&
-        <Image
-          style={iconStyle}
-          source={iconSource}
+        <BpkIcon
+          iconName="icon-name"
+          color={valid ? colorGreen500 : colorRed500}
+          small={small}
         />
       }
     </View>
