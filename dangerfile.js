@@ -23,10 +23,31 @@
 import includes from 'lodash.includes';
 import { danger, warn, message } from 'danger';
 
-const fileChanges = [...danger.git.modified_files, ...danger.git.created_files];
+const createdFiles = danger.git.created_files;
+const modifiedFiles = danger.git.modified_files;
+const fileChanges = [...modifiedFiles, ...createdFiles];
 
 // Always be nice.
 message('Thanks for the PR 🎉.');
+
+const webComponentIntroduced = createdFiles.some(filePath => (
+  filePath.match(/packages\/bpk-component.+\/src\/.+\.js/)
+));
+
+if (webComponentIntroduced) {
+  message('It looks like you are introducing a web component');
+  warn('Ensure the component style is extensible via `className`');
+}
+
+const nativeComponentIntroduced = createdFiles.some(filePath => (
+  filePath.match(/native\/packages\/react-native-bpk-component.+\/src\/.+\.js/)
+));
+
+if (nativeComponentIntroduced) {
+  message('It looks like you are introducing a native component');
+  warn('Ensure the component style is extensible via `style`');
+}
+
 
 // If any of the packages have changed, the changelog should have been updated.
 const changelogModified = includes(fileChanges, 'changelog.md');
@@ -38,13 +59,15 @@ if (packagesModified && !changelogModified) {
 }
 
 // If source files have changed, the snapshots should have been updated.
-const sourceFilesModified = fileChanges.some(filePath => (
+const componentSourceFilesModified = fileChanges.some(filePath => (
   // packages/(one or more chars)/src/(one or more chars).js
-  filePath.match(/packages\/.+\/src\/.+\.js/) && !includes(filePath, '-test.')
+  filePath.match(/packages\/.*bpk-component.+\/src\/.+\.js/) && !includes(filePath, '-test.')
 ));
+
 const snapshotsModified = fileChanges.some(filePath => (
   filePath.endsWith('.js.snap')
 ));
-if (sourceFilesModified && !snapshotsModified) {
+
+if (componentSourceFilesModified && !snapshotsModified) {
   warn('Package source files (e.g. `package/packageName/src/packageName.js`) were updated, but snapshots weren\'t. Have you checked that the tests still pass?'); // eslint-disable-line max-len
 }
