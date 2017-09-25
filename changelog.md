@@ -2,13 +2,16 @@
 
 ## UNRELEASED
 
-**Fixed:**
-- react-native-bpk-component-text-input:
-  - Made hit area larger to make activation of the Text Input easier on a touch-device
 **Added:**
-- react-native-bpk-component-card
+- react-native-bpk-component-card:
   - New component BpkCard
 
+- bpk-component-barchart:
+  - Added support for hover and touch events on bars.
+
+**Fixed:**
+- react-native-bpk-component-text-input:
+  - Made tap area larger to make activation of the Text Input easier on a touch-device
 
 ## 2017-09-21 - New React Native Button properties
 
@@ -17,9 +20,7 @@
  - `title` prop is now required.
 
 **Added:**
-- bpk-component-barchart
-  - Added support for hover and touch events on bars.
-- react-native-bpk-component-button
+- react-native-bpk-component-button: 1.0.0 => 2.0.0
   - New `iconOnly` and `accessibilityLabel` props.
 
 ## 2017-09-20 - New React Native Button component
