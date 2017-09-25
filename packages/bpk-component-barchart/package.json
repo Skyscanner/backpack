@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-barchart",
-  "version": "2.0.13",
+  "version": "2.1.0",
   "description": "Backpack bar chart component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-mobile-scroll-container": "^1.0.16",
+    "bpk-component-mobile-scroll-container": "^1.0.17",
     "bpk-mixins": "^16.5.4",
     "bpk-react-utils": "^2.3.4",
     "bpk-tokens": "^26.1.1",

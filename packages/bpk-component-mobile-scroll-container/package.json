@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-mobile-scroll-container",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Backpack mobile scroll container component.",
   "main": "index.js",
   "repository": {
@@ -19,7 +19,7 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "bpk-component-button": "^1.6.55",
+    "bpk-component-button": "^1.6.56",
     "bpk-component-table": "^0.0.100",
     "bpk-tokens": "^26.1.1"
   }
