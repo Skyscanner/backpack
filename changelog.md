@@ -17,7 +17,7 @@
 
 **Breaking:**
 - react-native-bpk-component-button: 1.0.0 => 2.0.0
- - `title` prop is now required.
+  - `title` prop is now required.
 
 **Added:**
 - react-native-bpk-component-button: 1.0.0 => 2.0.0
