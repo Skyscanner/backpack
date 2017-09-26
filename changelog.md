@@ -2,13 +2,15 @@
 
 ## UNRELEASED
 
-**Breaking:**
-- react-native-bpk-component-button
- - User styles are now handled in the same way as other components.
-
 **Added:**
 - react-native-bpk-component-card:
   - New component BpkCard
+
+## 2017-09-26 - User style fixes for native Button component
+
+**Breaking:**
+- react-native-bpk-component-button: 2.0.0 => 3.0.0
+ - User styles are now handled in the same way as other components.
 
 ## 2017-09-25 - Color tokens can now be made opaque
 
