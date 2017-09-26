@@ -91,7 +91,7 @@ const ResourcesPage = props => (
               </BpkLink>
             </BpkListItem>
             <BpkListItem>
-              <BpkLink href="https://www.dropbox.com/sh/0dqy5vbr1pjk0f4/AADHS3kRM_yGCqp5wyVMe09Ba?dl=0" blank>
+              <BpkLink href="https://www.dropbox.com/sh/3um2nc6ei6kgj28/AADk_AZ_hX_AyPMxYWFd5EhIa?dl=0" blank>
                 Craft Library
               </BpkLink>
             </BpkListItem>
