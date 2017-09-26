@@ -60,5 +60,14 @@ storiesOf('BpkBannerAlert', module)
       >
         <BpkText>ASDF</BpkText>
       </BpkBannerAlert>
+      <BpkBannerAlert
+        style={styles.bannerAlert}
+        type={ALERT_TYPES.ERROR}
+        message="test"
+        toggleButtonLabel="Expand"
+        expanded
+      >
+        <BpkText>ASDF</BpkText>
+      </BpkBannerAlert>
     </View>
   ));

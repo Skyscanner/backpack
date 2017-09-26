@@ -27,8 +27,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BpkText from 'react-native-bpk-component-text';
 
-const tickLgIcon = require('./icons/lg/tick-circle.png'); // eslint-disable-line import/no-unresolved
-const exclaimationLgIcon = require('./icons/lg/exclaimation-circle.png'); // eslint-disable-line import/no-unresolved
+const tickIcon = require('./icons/lg/tick-circle.png'); // eslint-disable-line import/no-unresolved
+const exclaimationIcon = require('./icons/lg/exclaimation-circle.png'); // eslint-disable-line import/no-unresolved
+const closeIcon = require('./icons/lg/close.png'); // eslint-disable-line import/no-unresolved
+const chevronUpIcon = require('./icons/lg/chevron-up.png'); // eslint-disable-line import/no-unresolved
+const chevronDownIcon = require('./icons/lg/chevron-down.png'); // eslint-disable-line import/no-unresolved
+
+const stylePropType = (props, propName, componentName) => {
+  const value = StyleSheet.flatten(props[propName]);
+
+  if (value === undefined) return false;
+
+  if (value.fontWeight) {
+    return new Error(`Invalid prop \`${propName}\` with \`fontWeight\` value \`${value.fontWeight}\` supplied to \`${componentName}\`. Use \`emphasize\` prop instead.`); // eslint-disable-line max-len
+  }
+
+  return false;
+};
 
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
@@ -87,11 +102,17 @@ const styles = StyleSheet.create({
   },
   text: {
     paddingLeft: 10,
+    flex: 1,
   },
   icon: {
     flex: 0,
     width: spacingLg,
     height: spacingLg,
+  },
+  actionIcon: {
+    tintColor: colorGray300,
+    width: spacingBase,
+    height: spacingBase,
   },
   successIcon: {
     tintColor: colorGreen500,
@@ -105,30 +126,43 @@ const styles = StyleSheet.create({
 });
 
 const BpkBannerAlert = (props) => {
-  const { type, message, toggleButtonLabel, style, ...rest } = props;
+  const { type, message, dismissable, expanded, toggleButtonLabel, style, ...rest } = props;
 
   let iconSource = null;
+  let actionIconSource = null;
 
   const styleFinal = [styles.banner];
   const textStyle = [styles.text];
   const iconStyle = [styles.icon];
+  const actionIconStyle = [styles.icon, styles.actionIcon];
 
   if (style) {
     styleFinal.push(style);
   }
 
   if (type === ALERT_TYPES.SUCCESS) {
-    iconSource = tickLgIcon;
+    iconSource = tickIcon;
     styleFinal.push(styles.successBanner);
     iconStyle.push(styles.successIcon);
   } else if (type === ALERT_TYPES.WARN) {
-    iconSource = exclaimationLgIcon;
+    iconSource = exclaimationIcon;
     styleFinal.push(styles.warnBanner);
     iconStyle.push(styles.warnIcon);
   } else if (type === ALERT_TYPES.ERROR) {
-    iconSource = exclaimationLgIcon;
+    iconSource = exclaimationIcon;
     styleFinal.push(styles.errorBanner);
     iconStyle.push(styles.errorIcon);
+  }
+
+
+  if (dismissable) {
+    actionIconSource = closeIcon;
+  } else if (props.children !== null) {
+    if (expanded) {
+      actionIconSource = chevronUpIcon;
+    } else {
+      actionIconSource = chevronDownIcon;
+    }
   }
 
   // if (small) {
@@ -149,12 +183,12 @@ const BpkBannerAlert = (props) => {
   //     if (small) {
   //       iconSource = tickSmIcon;
   //     } else {
-  //       iconSource = tickLgIcon;
+  //       iconSource = tickIcon;
   //     }
   //   } else if (small) {
   //     iconSource = exclaimationSmIcon;
   //   } else {
-  //     iconSource = exclaimationLgIcon;
+  //     iconSource = exclaimationIcon;
   //   }
 
 
@@ -186,6 +220,17 @@ const BpkBannerAlert = (props) => {
       >
         {message}
       </BpkText>
+      {actionIconSource &&
+        <Image
+          style={actionIconStyle}
+          source={actionIconSource}
+        />
+      }
+      {expanded &&
+      <View>
+        {props.children}
+      </View>
+      }
     </View>
   );
 };
@@ -197,14 +242,18 @@ BpkBannerAlert.propTypes = {
     ALERT_TYPES.WARN,
     ALERT_TYPES.ERROR,
   ]).isRequired,
+  children: PropTypes.node,
+  expanded: PropTypes.bool,
   toggleButtonLabel: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
   ]),
-  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  style: stylePropType,
 };
 
 BpkBannerAlert.defaultProps = {
+  children: null,
+  expanded: false,
   toggleButtonLabel: null,
   style: null,
 };
