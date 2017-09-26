@@ -21,6 +21,7 @@ import {
   Platform,
   StyleSheet,
   TouchableHighlight,
+  PixelRatio,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -46,9 +47,9 @@ const styles = StyleSheet.create({
     backgroundColor: colorWhite,
     elevation: 3,
     shadowColor: colorGray900,
-    shadowOffset: { width: 0, height: 1 },
+    shadowOffset: { width: 0, height: 1 / PixelRatio.get() },
     shadowOpacity: 0.3,
-    shadowRadius: 3,
+    shadowRadius: 3 / PixelRatio.get(),
   },
   common: {
     // TODO: update once tokens are available

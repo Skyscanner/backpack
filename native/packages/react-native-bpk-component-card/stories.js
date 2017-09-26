@@ -13,11 +13,6 @@ const tokens = Platform.select({
 const {
   spacingBase,
   colorGray50,
-  colorRed500,
-  colorGreen500,
-  colorYellow500,
-  colorBlue700,
-  colorGray500,
 } = tokens;
 
 const styles = StyleSheet.create({
@@ -36,12 +31,11 @@ const styles = StyleSheet.create({
 
 const cardContent = (
   <View>
-    <BpkText textStyle="xxl" style={{ color: colorBlue700 }}>Flights to Edinburgh</BpkText>
-    <BpkText textStyle="xl" style={{ color: colorRed500 }}>Flights to Edinburgh</BpkText>
-    <BpkText textStyle="lg" style={{ color: colorGreen500 }}>Flights to Edinburgh</BpkText>
-    <BpkText textStyle="base" style={{ color: colorYellow500 }}>Flights to Edinburgh</BpkText>
-    <BpkText textStyle="sm" style={{ color: colorBlue700 }}>Flights to Edinburgh</BpkText>
-    <BpkText textStyle="xs" style={{ color: colorGray500 }}>Flights to Edinburgh</BpkText>
+    <BpkText>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+      commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+      et magnis dis parturient montes, nascetur ridiculus mus.
+    </BpkText>
   </View>
 );
 

@@ -27,12 +27,11 @@ const commonTests = () => {
   describe('BpkCard', () => {
     const cardContent = (
       <View>
-        <BpkText textStyle="xxl">Flights to Edinburgh</BpkText>
-        <BpkText textStyle="xl">Flights to Edinburgh</BpkText>
-        <BpkText textStyle="lg">Flights to Edinburgh</BpkText>
-        <BpkText textStyle="base">Flights to Edinburgh</BpkText>
-        <BpkText textStyle="sm">Flights to Edinburgh</BpkText>
-        <BpkText textStyle="xs">Flights to Edinburgh</BpkText>
+        <BpkText>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkText>
       </View>
     );
     it('should render correctly', () => {
