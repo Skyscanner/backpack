@@ -215,6 +215,7 @@ const withCalendarState = (Calendar) => {
       return (
         <Calendar
           onDateClick={this.handleDateSelect}
+          onDateMouseDown={this.handleDateFocus}
           onDateKeyDown={this.handleDateKeyDown}
           onMonthChange={this.handleMonthChange}
 

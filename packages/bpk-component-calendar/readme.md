@@ -221,6 +221,7 @@ The BpkCalendarGrid component displays a month as a table.
 | minDate               | Date                 | false    | new Date()       |
 | onDateClick           | func                 | false    | null             |
 | onDateKeyDown         | func                 | false    | null             |
+| onDateMouseDown       | func                 | false    | null             |
 | preventKeyboardFocus  | bool                 | false    | false            |
 | selectedDate          | Date                 | false    | null             |
 | showWeekendSeparator  | bool                 | false    | true             |
@@ -242,6 +243,7 @@ The BpkCalendarDate component is used to render the content of a cell
 | isToday               | bool                 | false    | false            |
 | onClick               | func                 | false    | null             |
 | onDateKeyDown         | func                 | false    | null             |
+| onMouseDown           | func                 | false    | null             |
 | preventKeyboardFocus  | bool                 | false    | true             |
 
 ### Prop details

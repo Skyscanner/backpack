@@ -8,6 +8,7 @@ exports[`BpkCalendarDate should pass props through to button 1`] = `
   disabled={false}
   onClick={[Function]}
   onKeyDown={null}
+  onMouseDown={[Function]}
   tabIndex="-1"
   type="button"
 >
@@ -27,6 +28,7 @@ exports[`BpkCalendarDate should render a disabled button 1`] = `
   disabled={true}
   onClick={[Function]}
   onKeyDown={null}
+  onMouseDown={[Function]}
   tabIndex="-1"
   type="button"
 >
@@ -47,6 +49,7 @@ exports[`BpkCalendarDate should render a focused button with tabIndex 1`] = `
   focused={true}
   onClick={[Function]}
   onKeyDown={null}
+  onMouseDown={[Function]}
   tabIndex="-1"
   type="button"
 >
@@ -66,6 +69,7 @@ exports[`BpkCalendarDate should render correctly 1`] = `
   disabled={false}
   onClick={[Function]}
   onKeyDown={null}
+  onMouseDown={[Function]}
   tabIndex="-1"
   type="button"
 >
@@ -85,6 +89,7 @@ exports[`BpkCalendarDate should render with a click and keyDown handler 1`] = `
   disabled={false}
   onClick={[Function]}
   onKeyDown={[Function]}
+  onMouseDown={[Function]}
   tabIndex="-1"
   type="button"
 >

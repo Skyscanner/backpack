@@ -151,6 +151,11 @@
 - bpk-component-datepicker: 7.0.18 => 7.1.0
   - Added `initiallyFocusedDate` prop that allows controlling which date is initially focused when `selectedDate` is not specified. If not supplied `minDate` will receive focus as before.
 
+**Fixed:**
+- bpk-component-calendar:
+- bpk-component-datepicker:
+  - Fixed date-focus issue when a click is started on a date and completed outside. This will now result in the date-in-question being focused.
+
 ## 2017-08-30 - New image component
 
 **Added:**
