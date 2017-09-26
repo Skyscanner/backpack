@@ -118,7 +118,7 @@ const components = [
     examples: [
       <FieldsetContainer
         label="From"
-        validationMessage="Please enter a Country, city or airport"
+        validationMessage="Please enter a country, city or airport."
         validStates={[null, true, false]}
       >
         <BpkInput
@@ -136,7 +136,7 @@ const components = [
     examples: [
       <FieldsetContainer
         label="Cabin class"
-        validationMessage="Please select a cabin class"
+        validationMessage="Please select a cabin class."
         validStates={[true, false]}
       >
         <BpkSelect
