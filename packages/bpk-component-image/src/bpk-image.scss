@@ -19,25 +19,39 @@
 @import '~bpk-mixins/index';
 
 .bpk-image {
-  @include bpk-image;
-
-  &--show {
-    @include bpk-image--show;
-  }
+  position: relative;
+  display: block;
+  max-width: 100%;
+  transition: background-color $bpk-duration-base ease-in-out;
+  background-color: $bpk-color-gray-100;
+  overflow: hidden;
+  transition-delay: $bpk-duration-base;
 
   &__image {
-    @include bpk-image__content;
-
-    &--show {
-      @include bpk-image__content--show;
-    }
+    position: absolute;
+    width: 100%;
   }
 
   &__spinner {
-    @include bpk-image__spinner;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    align-items: center;
+    transform: translate(-50%, -50%);
+  }
 
-    &--hide {
-      @include bpk-image__spinner--hide;
-    }
+  &__hidden {
+    transition: opacity $bpk-duration-base ease-in-out;
+    opacity: 0;
+  }
+
+  &__shown {
+    transition: opacity $bpk-duration-base ease-in-out;
+    opacity: 1;
+  }
+
+  &__no-background {
+    background-color: transparent;
   }
 }

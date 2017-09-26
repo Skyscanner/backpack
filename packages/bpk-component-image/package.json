@@ -16,7 +16,8 @@
     "bpk-component-spinner": "^2.1.23",
     "bpk-mixins": "^16.5.5",
     "bpk-react-utils": "^2.3.4",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "react-addons-css-transition-group": "^15.6.0"
   },
   "devDependencies": {
     "bpk-component-mobile-scroll-container": "^1.0.18",
