@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+**Breaking:**
+- react-native-bpk-component-button
+ - User styles are now handled in the same way as other components.
+
 **Added:**
 - react-native-bpk-component-card:
   - New component BpkCard
