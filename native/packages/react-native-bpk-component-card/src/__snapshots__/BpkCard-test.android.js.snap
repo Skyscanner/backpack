@@ -29,11 +29,11 @@ exports[`Android BpkCard should render correctly 1`] = `
             "elevation": 3,
             "shadowColor": "rgb(37, 32, 51)",
             "shadowOffset": Object {
-              "height": 1,
+              "height": 0.5,
               "width": 0,
             },
             "shadowOpacity": 0.3,
-            "shadowRadius": 3,
+            "shadowRadius": 1.5,
           },
           Object {
             "borderRadius": 8,
@@ -71,69 +71,6 @@ exports[`Android BpkCard should render correctly 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 24,
-              "fontWeight": undefined,
-              "lineHeight": 32,
-            },
-            false,
-            Object {},
-          ]
-        }
-      >
-        Flights to Edinburgh
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif-medium",
-              "fontSize": 20,
-              "fontWeight": undefined,
-              "lineHeight": 28,
-            },
-            false,
-            Object {},
-          ]
-        }
-      >
-        Flights to Edinburgh
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 16,
-              "fontWeight": undefined,
-              "lineHeight": 24,
-            },
-            false,
-            Object {},
-          ]
-        }
-      >
-        Flights to Edinburgh
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif-medium",
               "fontSize": 14,
               "fontWeight": undefined,
@@ -144,49 +81,7 @@ exports[`Android BpkCard should render correctly 1`] = `
           ]
         }
       >
-        Flights to Edinburgh
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": undefined,
-              "lineHeight": 20,
-            },
-            false,
-            Object {},
-          ]
-        }
-      >
-        Flights to Edinburgh
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 12,
-              "fontWeight": undefined,
-              "lineHeight": 16,
-            },
-            false,
-            Object {},
-          ]
-        }
-      >
-        Flights to Edinburgh
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
       </Text>
     </View>
   </View>
@@ -222,11 +117,11 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
             "elevation": 3,
             "shadowColor": "rgb(37, 32, 51)",
             "shadowOffset": Object {
-              "height": 1,
+              "height": 0.5,
               "width": 0,
             },
             "shadowOpacity": 0.3,
-            "shadowRadius": 3,
+            "shadowRadius": 1.5,
           },
           Object {
             "borderRadius": 8,
@@ -261,69 +156,6 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 24,
-              "fontWeight": undefined,
-              "lineHeight": 32,
-            },
-            false,
-            Object {},
-          ]
-        }
-      >
-        Flights to Edinburgh
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif-medium",
-              "fontSize": 20,
-              "fontWeight": undefined,
-              "lineHeight": 28,
-            },
-            false,
-            Object {},
-          ]
-        }
-      >
-        Flights to Edinburgh
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 16,
-              "fontWeight": undefined,
-              "lineHeight": 24,
-            },
-            false,
-            Object {},
-          ]
-        }
-      >
-        Flights to Edinburgh
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif-medium",
               "fontSize": 14,
               "fontWeight": undefined,
@@ -334,49 +166,7 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
           ]
         }
       >
-        Flights to Edinburgh
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": undefined,
-              "lineHeight": 20,
-            },
-            false,
-            Object {},
-          ]
-        }
-      >
-        Flights to Edinburgh
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 12,
-              "fontWeight": undefined,
-              "lineHeight": 16,
-            },
-            false,
-            Object {},
-          ]
-        }
-      >
-        Flights to Edinburgh
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
       </Text>
     </View>
   </View>
