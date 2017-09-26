@@ -35,8 +35,11 @@
     @include bpk-visually-hidden;
   }
 
+  &__week {
+  }
+
   &__date {
-    padding: $bpk-calendar-day-spacing ($bpk-calendar-day-spacing / 2) 0 ($bpk-calendar-day-spacing / 2);
+    padding: $bpk-calendar-day-spacing / 2;
     text-align: center;
     vertical-align: middle;
 
