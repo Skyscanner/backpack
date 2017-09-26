@@ -70,4 +70,27 @@ describe('BpkTicket', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with a "stubClassName" attribute', () => {
+    const tree = renderer.create(
+      <BpkTicket stub="Ticket stub" stubClassName="custom-class">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </BpkTicket>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with a "stubProps" attribute', () => {
+    const stubProps = {
+      foo: 'bar',
+    };
+    const tree = renderer.create(
+      <BpkTicket stub="Ticket stub" stubClassName="custom-class" stubProps={stubProps}>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </BpkTicket>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

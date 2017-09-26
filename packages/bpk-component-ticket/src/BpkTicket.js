@@ -30,7 +30,7 @@ const isIE9 = () => {
 };
 
 const BpkTicket = (props) => {
-  const { children, href, padded, stub, vertical, className, ...rest } = props;
+  const { children, href, padded, stub, vertical, className, stubClassName, stubProps, ...rest } = props;
   const classNames = [getClassName('bpk-ticket')];
   const mainClassNames = ['bpk-ticket__paper', 'bpk-ticket__main'].map(getClassName);
   const stubClassNames = ['bpk-ticket__paper', 'bpk-ticket__stub'].map(getClassName);
@@ -40,6 +40,7 @@ const BpkTicket = (props) => {
   const fallback = isIE9();
 
   if (className) { classNames.push(className); }
+  if (stubClassName) { stubClassNames.push(stubClassName); }
   if (padded) {
     mainClassNames.push(getClassName('bpk-ticket__main--padded'));
     stubClassNames.push(getClassName('bpk-ticket__stub--padded'));
@@ -88,6 +89,7 @@ const BpkTicket = (props) => {
     <div
       key="stub"
       className={stubClassNames.join(' ')}
+      {...stubProps}
     >
       {stub}
     </div>,
@@ -115,6 +117,8 @@ BpkTicket.propTypes = {
   href: PropTypes.string,
   padded: PropTypes.bool,
   vertical: PropTypes.bool,
+  stubClassName: PropTypes.string,
+  stubProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 BpkTicket.defaultProps = {
@@ -122,6 +126,8 @@ BpkTicket.defaultProps = {
   href: null,
   padded: true,
   vertical: false,
+  stubClassName: null,
+  stubProps: {},
 };
 
 export default BpkTicket;
