@@ -304,3 +304,8 @@ on a device.
 - Update the [changelog](/changelog.md) with the package versions and update the title with today’s date and a brief summary of what has changed.
 - Commit and push to master.
 - Update the #backpack Slack channel and the [BackpackNeedToKnow](mailto:backpackneedtoknow@skyscanner.net) mailing list if necessary.
+
+## Publishing new components
+Whenever a new component is added make sure the version is 0.0.1 until it gets published.
+
+When a component is released for the first time on NPM remember to add the component to the Skyscanner org through the [NPM UI](https://www.npmjs.com/org/skyscanner/team/backpack/add-package), be careful to add only Backpack components to the organisation.
