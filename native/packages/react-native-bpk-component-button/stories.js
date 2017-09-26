@@ -72,10 +72,7 @@ const styles = StyleSheet.create({
   bottomMargin: {
     marginBottom: tokens.spacingSm,
   },
-});
-
-const buttonStyles = StyleSheet.create({
-  container: {
+  buttonStyles: {
     marginBottom: tokens.spacingMd,
     marginRight: tokens.spacingMd,
   },
@@ -111,28 +108,28 @@ const generateButtonStoryForType = type => (
         type={type}
         title="Button"
         onPress={action(`${type} pressed`)}
-        style={buttonStyles}
+        style={styles.buttonStyles}
       />
       <BpkButton
         type={type}
         selected
         title="Selected"
         onPress={action(`${type} selected pressed`)}
-        style={buttonStyles}
+        style={styles.buttonStyles}
       />
       <BpkButton
         type={type}
         disabled
         title="Disabled"
         onPress={action(`${type} disabled pressed, somehow`)}
-        style={buttonStyles}
+        style={styles.buttonStyles}
       />
       <BpkButton
         type={type}
         title="With icon"
         icon={<ArrowImage type={type} />}
         onPress={action(`${type} with icon clicked`)}
-        style={buttonStyles}
+        style={styles.buttonStyles}
       />
       <BpkButton
         type={type}
@@ -140,7 +137,7 @@ const generateButtonStoryForType = type => (
         icon={<ArrowImage type={type} />}
         iconOnly
         onPress={action(`${type} icon only button clicked`)}
-        style={buttonStyles}
+        style={styles.buttonStyles}
       />
     </View>
 
@@ -151,7 +148,7 @@ const generateButtonStoryForType = type => (
         type={type}
         title="Button"
         onPress={action(`${type} pressed`)}
-        style={buttonStyles}
+        style={styles.buttonStyles}
       />
       <BpkButton
         large
@@ -159,7 +156,7 @@ const generateButtonStoryForType = type => (
         selected
         title="Selected"
         onPress={action(`${type} selected pressed`)}
-        style={buttonStyles}
+        style={styles.buttonStyles}
       />
       <BpkButton
         large
@@ -167,7 +164,7 @@ const generateButtonStoryForType = type => (
         disabled
         title="Disabled"
         onPress={action(`${type} disabled pressed, somehow`)}
-        style={buttonStyles}
+        style={styles.buttonStyles}
       />
       <BpkButton
         large
@@ -175,7 +172,7 @@ const generateButtonStoryForType = type => (
         title="With icon"
         icon={<ArrowImage large type={type} />}
         onPress={action(`${type} with icon clicked`)}
-        style={buttonStyles}
+        style={styles.buttonStyles}
       />
       <BpkButton
         large
@@ -184,7 +181,7 @@ const generateButtonStoryForType = type => (
         icon={<ArrowImage large type={type} />}
         iconOnly
         onPress={action(`${type} icon only button clicked`)}
-        style={buttonStyles}
+        style={styles.buttonStyles}
       />
     </View>
   </View>
@@ -233,21 +230,21 @@ storiesOf('BpkButton', module)
         type="primary"
         title="I have a really long title"
         onPress={action('Button with long title pressed')}
-        style={buttonStyles}
+        style={styles.buttonStyles}
       />
       <BpkButton
         large
         type="primary"
         title="I also have a really long title"
         onPress={action('Large button with long title pressed')}
-        style={buttonStyles}
+        style={styles.buttonStyles}
       />
       <BpkButton
         type="primary"
         title="I have an absurdly long title and an icon and may cause wrapping"
         icon={<ArrowImage />}
         onPress={action('Button with icon and long title pressed')}
-        style={buttonStyles}
+        style={styles.buttonStyles}
       />
       <BpkButton
         large
@@ -255,7 +252,7 @@ storiesOf('BpkButton', module)
         title="I also have an absurdly long title and an icon and may cause wrapping"
         icon={<ArrowImage />}
         onPress={action('Large button with icon and long title pressed')}
-        style={buttonStyles}
+        style={styles.buttonStyles}
       />
     </View>
   ));
