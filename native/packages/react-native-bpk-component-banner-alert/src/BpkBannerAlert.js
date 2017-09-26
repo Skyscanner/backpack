@@ -18,17 +18,17 @@
 
 import {
   View,
-  TextInput,
   Image,
   Platform,
   StyleSheet,
+  TouchableHighlight,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 import BpkText from 'react-native-bpk-component-text';
 
 const tickIcon = require('./icons/lg/tick-circle.png'); // eslint-disable-line import/no-unresolved
-const exclaimationIcon = require('./icons/lg/exclaimation-circle.png'); // eslint-disable-line import/no-unresolved
+const exclamationIcon = require('./icons/lg/exclamation-circle.png'); // eslint-disable-line import/no-unresolved
 const closeIcon = require('./icons/lg/close.png'); // eslint-disable-line import/no-unresolved
 const chevronUpIcon = require('./icons/lg/chevron-up.png'); // eslint-disable-line import/no-unresolved
 const chevronDownIcon = require('./icons/lg/chevron-down.png'); // eslint-disable-line import/no-unresolved
@@ -53,21 +53,13 @@ const tokens = Platform.select({
 const {
   colorGray100,
   colorGray300,
-  colorGray700,
+  colorGray50,
   colorGreen500,
-  colorYellow500,
   colorRed500,
+  colorYellow500,
   spacingBase,
   spacingLg,
-  spacingMd,
   spacingSm,
-  spacingXl,
-  textLgFontSize,
-  textLgFontWeight,
-  textLgLineHeight,
-  textXsFontSize,
-  textXsFontWeight,
-  textXsLineHeight,
 } = tokens;
 
 export const ALERT_TYPES = {
@@ -78,18 +70,24 @@ export const ALERT_TYPES = {
 
 const styles = StyleSheet.create({
   banner: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
     borderColor: colorGray100,
       // TODO Replace with borderSm token once available
     borderWidth: 1,
       // TODO Replace with radiiSm token once available
     borderRadius: spacingSm,
+  },
+  content: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    // TODO Replace '1' with borderSm token once available
+    height: (spacingLg * 2) - (1 * 2),
     paddingLeft: spacingSm * 3,
     paddingRight: spacingSm * 3,
-      // TODO Replace '1' with borderSm token once available
-    height: (spacingLg * 2) - (1 * 2),
+  },
+  childStyle: {
+    padding: spacingSm * 3,
   },
   successBanner: {
     borderColor: colorGreen500,
@@ -126,15 +124,19 @@ const styles = StyleSheet.create({
 });
 
 const BpkBannerAlert = (props) => {
-  const { type, message, dismissable, expanded, toggleButtonLabel, style, ...rest } = props;
+  const { type, message, onPress, dismissable, expanded, toggleButtonLabel, style, children, ...rest } = props;
+
+  const clickable = dismissable || children !== null;
 
   let iconSource = null;
   let actionIconSource = null;
 
   const styleFinal = [styles.banner];
   const textStyle = [styles.text];
+  const contentStyle = [styles.content];
   const iconStyle = [styles.icon];
   const actionIconStyle = [styles.icon, styles.actionIcon];
+  const childStyle = [styles.childStyle];
 
   if (style) {
     styleFinal.push(style);
@@ -145,19 +147,18 @@ const BpkBannerAlert = (props) => {
     styleFinal.push(styles.successBanner);
     iconStyle.push(styles.successIcon);
   } else if (type === ALERT_TYPES.WARN) {
-    iconSource = exclaimationIcon;
+    iconSource = exclamationIcon;
     styleFinal.push(styles.warnBanner);
     iconStyle.push(styles.warnIcon);
   } else if (type === ALERT_TYPES.ERROR) {
-    iconSource = exclaimationIcon;
+    iconSource = exclamationIcon;
     styleFinal.push(styles.errorBanner);
     iconStyle.push(styles.errorIcon);
   }
 
-
   if (dismissable) {
     actionIconSource = closeIcon;
-  } else if (props.children !== null) {
+  } else if (children !== null) {
     if (expanded) {
       actionIconSource = chevronUpIcon;
     } else {
@@ -165,71 +166,36 @@ const BpkBannerAlert = (props) => {
     }
   }
 
-  // if (small) {
-  //   styleFinal.push(styles.smallInput);
-  //   textStyle.push(styles.smallText);
-  //   iconStyle.push(styles.smallIcon);
-  // }
-  // if (disabled) {
-  //   textStyle.push(styles.disabledText);
-  // }
-  // if (value === '') {
-  //   textStyle.push(styles.placeholderText);
-  // }
-  // if (valid !== null) {
-  //   // TODO Update to use Backpack-native Icon solution once implemented https://gojira.skyscanner.net/browse/BPK-841
-
-  //   if (valid) {
-  //     if (small) {
-  //       iconSource = tickSmIcon;
-  //     } else {
-  //       iconSource = tickIcon;
-  //     }
-  //   } else if (small) {
-  //     iconSource = exclaimationSmIcon;
-  //   } else {
-  //     iconSource = exclaimationIcon;
-  //   }
-
-
-  //   if (valid) {
-  //     styleFinal.push(styles.validOuter);
-  //     iconStyle.push(styles.validIcon);
-  //   } else {
-  //     styleFinal.push(styles.errorOuter);
-  //     iconStyle.push(styles.invalidIcon);
-  //   }
-  // }
-
-  // if (innerStyle) { styleFinal.push(innerStyle); }
-
   return (
     <View
       style={styleFinal}
       {...rest}
     >
-      {iconSource &&
-        <Image
-          style={iconStyle}
-          source={iconSource}
-        />
-      }
-      <BpkText
-        textStyle="lg"
-        style={textStyle}
+      <TouchableHighlight
+        accessibilityComponentType="button"
+        onPress={clickable ? onPress : null}
+        underlayColor={colorGray50}
       >
-        {message}
-      </BpkText>
-      {actionIconSource &&
-        <Image
-          style={actionIconStyle}
-          source={actionIconSource}
-        />
-      }
+        <View
+          style={contentStyle}
+        >
+          {iconSource &&
+            <Image
+              style={iconStyle}
+              source={iconSource}
+            />
+          }
+          <BpkText textStyle="lg" style={textStyle}>{message}</BpkText>
+          {actionIconSource &&
+            <Image
+              style={actionIconStyle}
+              source={actionIconSource}
+            />
+          }
+        </View>
+      </TouchableHighlight>
       {expanded &&
-      <View>
-        {props.children}
-      </View>
+        <View style={childStyle}>{props.children}</View>
       }
     </View>
   );
@@ -243,7 +209,9 @@ BpkBannerAlert.propTypes = {
     ALERT_TYPES.ERROR,
   ]).isRequired,
   children: PropTypes.node,
+  dismissable: PropTypes.bool,
   expanded: PropTypes.bool,
+  onPress: PropTypes.func,
   toggleButtonLabel: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
@@ -253,9 +221,11 @@ BpkBannerAlert.propTypes = {
 
 BpkBannerAlert.defaultProps = {
   children: null,
+  dismissable: false,
   expanded: false,
-  toggleButtonLabel: null,
+  onPress: () => null,
   style: null,
+  toggleButtonLabel: null,
 };
 
 export default BpkBannerAlert;

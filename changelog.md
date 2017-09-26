@@ -78,6 +78,9 @@
 - react-native-bpk-component-button: 3.0.5 => 3.1.0
   - Primary and secondary buttons can now be themed.
 
+- react-native-bpk-component-banner-alert:
+  - New component `BpkBannerAlert`, see http://backpack.prod.aws.skyscnr.com/components/native/banner-alerts/
+
 **Fixed:**
 - bpk-tokens: 26.3.0 => 26.4.0
   - Fixed package meta data to point to correct entry file
