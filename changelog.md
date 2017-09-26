@@ -2,6 +2,8 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
 ## 2017-09-26 - New native Card component
 
 **Added:**
