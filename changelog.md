@@ -5,6 +5,8 @@
 **Added:**
 - react-native-bpk-component-card:
   - New component BpkCard
+- bpk-component-toast
+  - New component BpkToast
 
 ## 2017-09-26 - User style fixes for native Button component
 
