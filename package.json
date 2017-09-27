@@ -103,6 +103,7 @@
     "react-router": "^2.6.1",
     "react-svg-loader": "^1.1.1",
     "react-test-renderer": "^15.4.1",
+    "react-transition-group": "^1.2.0",
     "rimraf": "^2.5.4",
     "sass-loader": "^6.0.6",
     "sassdoc": "^2.1.20",
