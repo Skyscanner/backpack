@@ -37,21 +37,21 @@ const commonTests = () => {
     it('should render correctly with `emphasize` prop', () => {
       const tree = renderer.create(
         <BpkText emphasize>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
         commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
         et magnis dis parturient montes, nascetur ridiculus mus.
       </BpkText>,
-    ).toJSON();
+      ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should support overwriting styles', () => {
       const tree = renderer.create(
         <BpkText style={{ color: 'red' }}>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
         sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
       </BpkText>,
-    ).toJSON();
+      ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
@@ -59,11 +59,11 @@ const commonTests = () => {
       it(`should render correctly with textStyle="${textStyle}"`, () => {
         const tree = renderer.create(
           <BpkText textStyle={textStyle}>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
           ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
           dis parturient montes, nascetur ridiculus mus.
         </BpkText>,
-      ).toJSON();
+        ).toJSON();
         expect(tree).toMatchSnapshot();
       });
     });
@@ -107,6 +107,11 @@ const commonTests = () => {
           },
         }).breakingStyle,
       }, 'style', 'BpkText').toString()).toEqual('Error: Invalid prop `style` with `fontWeight` value `200` supplied to `BpkText`. Use `emphasize` prop instead.'); // eslint-disable-line max-len
+    });
+    it('should return false on undefined style', () => {
+      expect(BpkText.propTypes.style({
+        style: undefined,
+      }, 'style', 'BpkText')).toBeFalsy();
     });
   });
 };
