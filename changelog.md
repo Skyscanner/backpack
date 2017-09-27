@@ -3,7 +3,7 @@
 ## UNRELEASED
 
 **Breaking:**
-- bpk-component-mixins:
+- bpk-mixins:
   - Removed image mixins as they are not applicable on their own
 
 **Fixed:**
