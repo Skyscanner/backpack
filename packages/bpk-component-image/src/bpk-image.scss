@@ -41,17 +41,17 @@
     transform: translate(-50%, -50%);
   }
 
-  &__hidden {
+  &--hidden {
     transition: opacity $bpk-duration-base ease-in-out;
     opacity: 0;
   }
 
-  &__shown {
+  &--shown {
     transition: opacity $bpk-duration-base ease-in-out;
     opacity: 1;
   }
 
-  &__no-background {
+  &--no-background {
     background-color: transparent;
   }
 }

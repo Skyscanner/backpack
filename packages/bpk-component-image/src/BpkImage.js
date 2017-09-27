@@ -46,14 +46,14 @@ class BpkImage extends React.Component {
     const { width, height, altText, className, inView, loading, onLoad, style, ...rest } = this.props;
 
     const classNames = [getClassName('bpk-image')];
-    const imgClassNames = [getClassName('bpk-image__image'), getClassName('bpk-image__hidden')];
+    const imgClassNames = [getClassName('bpk-image__image'), getClassName('bpk-image--hidden')];
 
     const aspectRatio = width / height;
     const aspectRatioPc = `${100 / aspectRatio}%`;
 
     if (!loading) {
-      classNames.push(getClassName('bpk-image__no-background'));
-      imgClassNames.push(getClassName('bpk-image__shown'));
+      classNames.push(getClassName('bpk-image--no-background'));
+      imgClassNames.push(getClassName('bpk-image--shown'));
     }
 
     if (className) {
@@ -74,8 +74,8 @@ class BpkImage extends React.Component {
         >
           <CSSTransitionGroup
             transitionName={{
-              leave: getClassName('bpk-image__shown'),
-              leaveActive: getClassName('bpk-image__hidden'),
+              leave: getClassName('bpk-image--shown'),
+              leaveActive: getClassName('bpk-image--hidden'),
             }}
             transitionEnterTimeout={parseInt(animations.durationBase, 10)}
             transitionLeaveTimeout={parseInt(animations.durationBase, 10)}

@@ -9,7 +9,7 @@ exports[`BpkImage should accept userland className 1`] = `
   }
 >
   <div
-    className="bpk-image bpk-image__no-background userland-classname"
+    className="bpk-image bpk-image--no-background userland-classname"
     style={
       Object {
         "height": 0,
@@ -19,7 +19,7 @@ exports[`BpkImage should accept userland className 1`] = `
   >
     <img
       alt="image description"
-      className="bpk-image__image bpk-image__hidden bpk-image__shown"
+      className="bpk-image__image bpk-image--hidden bpk-image--shown"
       onLoad={[Function]}
       src="./path/to/image.jpg"
     />
@@ -36,7 +36,7 @@ exports[`BpkImage should accept userland styling 1`] = `
   }
 >
   <div
-    className="bpk-image bpk-image__no-background"
+    className="bpk-image bpk-image--no-background"
     style={
       Object {
         "height": 0,
@@ -46,7 +46,7 @@ exports[`BpkImage should accept userland styling 1`] = `
   >
     <img
       alt="image description"
-      className="bpk-image__image bpk-image__hidden bpk-image__shown"
+      className="bpk-image__image bpk-image--hidden bpk-image--shown"
       onLoad={[Function]}
       src="./path/to/image.jpg"
     />
@@ -59,7 +59,7 @@ exports[`BpkImage should have !inView behavior 1`] = `
   style={Object {}}
 >
   <div
-    className="bpk-image bpk-image__no-background"
+    className="bpk-image bpk-image--no-background"
     style={
       Object {
         "height": 0,
@@ -172,7 +172,7 @@ exports[`BpkImage should have loading behavior 1`] = `
     </div>
     <img
       alt="image description"
-      className="bpk-image__image bpk-image__hidden"
+      className="bpk-image__image bpk-image--hidden"
       onLoad={[Function]}
       src="./path/to/image.jpg"
     />
@@ -185,7 +185,7 @@ exports[`BpkImage should render correctly 1`] = `
   style={Object {}}
 >
   <div
-    className="bpk-image bpk-image__no-background"
+    className="bpk-image bpk-image--no-background"
     style={
       Object {
         "height": 0,
@@ -195,7 +195,7 @@ exports[`BpkImage should render correctly 1`] = `
   >
     <img
       alt="image description"
-      className="bpk-image__image bpk-image__hidden bpk-image__shown"
+      className="bpk-image__image bpk-image--hidden bpk-image--shown"
       onLoad={[Function]}
       src="./path/to/image.jpg"
     />
@@ -208,7 +208,7 @@ exports[`BpkImage should support srcSet 1`] = `
   style={Object {}}
 >
   <div
-    className="bpk-image bpk-image__no-background"
+    className="bpk-image bpk-image--no-background"
     style={
       Object {
         "height": 0,
@@ -218,7 +218,7 @@ exports[`BpkImage should support srcSet 1`] = `
   >
     <img
       alt="image description"
-      className="bpk-image__image bpk-image__hidden bpk-image__shown"
+      className="bpk-image__image bpk-image--hidden bpk-image--shown"
       onLoad={[Function]}
       sizes="(min-width: 71.25rem) 48rem,
               (min-width: 50.25rem) calc(100vw - 18rem),
