@@ -2,7 +2,13 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Breaking:**
+- bpk-mixins:
+  - Removed image mixins as they are not applicable on their own
+
+**Fixed:**
+- bpk-component-image:
+  - Loading spinner will now be removed from DOM once image is displayed
 
 ## 2017-09-26 - Ability to add arbitrary props to ticket stubs
 

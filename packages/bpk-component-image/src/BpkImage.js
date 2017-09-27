@@ -20,10 +20,41 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import { BpkSpinner } from 'bpk-component-spinner';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import { animations } from 'bpk-tokens/tokens/base.es6';
 
 import STYLES from './bpk-image.scss';
 
 const getClassName = cssModules(STYLES);
+
+const Image = (props) => {
+  const { hidden, altText, onImageLoad, ...rest } = props;
+
+  const imgClassNames = [getClassName('bpk-image__img')];
+
+  if (hidden) {
+    imgClassNames.push(getClassName('bpk-image__img--hidden'));
+  }
+
+  return (
+    <img
+      className={imgClassNames.join(' ')}
+      alt={altText}
+      onLoad={onImageLoad}
+      {...rest}
+    />
+  );
+};
+
+Image.propTypes = {
+  altText: PropTypes.string.isRequired,
+  hidden: PropTypes.bool,
+  onImageLoad: PropTypes.func.isRequired,
+};
+
+Image.defaultProps = {
+  hidden: false,
+};
 
 class BpkImage extends React.Component {
   constructor(props) {
@@ -44,26 +75,17 @@ class BpkImage extends React.Component {
     const { width, height, altText, className, inView, loading, onLoad, style, ...rest } = this.props;
 
     const classNames = [getClassName('bpk-image')];
-    const imgClassNames = [getClassName('bpk-image__image')];
-    const spinnerClassNames = [getClassName('bpk-image__spinner')];
 
     const aspectRatio = width / height;
     const aspectRatioPc = `${100 / aspectRatio}%`;
 
     if (!loading) {
-      classNames.push(getClassName('bpk-image--show'));
-      spinnerClassNames.push(getClassName('bpk-image__spinner--hide'));
-      imgClassNames.push(getClassName('bpk-image__image--show'));
+      classNames.push(getClassName('bpk-image--no-background'));
     }
 
     if (className) {
       classNames.push(className);
     }
-
-    const imgClassNamesNoScript = [
-      getClassName('bpk-image__image'),
-      getClassName('bpk-image__image--show'),
-    ];
 
     // wraps a div with maxWidth and maxHeight set iff full-width is no required.
     // This ensures that the css / html do not reserve too much spacing
@@ -77,25 +99,27 @@ class BpkImage extends React.Component {
           style={{ height: 0, paddingBottom: aspectRatioPc }}
           className={classNames.join(' ')}
         >
-          <div className={spinnerClassNames.join(' ')}>
-            <BpkSpinner />
-          </div>
+          <CSSTransitionGroup
+            transitionName={{
+              leave: getClassName('bpk-image__spinner--shown'),
+              leaveActive: getClassName('bpk-image__spinner--hidden'),
+            }}
+            transitionEnterTimeout={parseInt(animations.durationBase, 10)}
+            transitionLeaveTimeout={parseInt(animations.durationBase, 10)}
+          >
+            {loading &&
+              <div className={getClassName('bpk-image__spinner')}>
+                <BpkSpinner />
+              </div>
+            }
+          </CSSTransitionGroup>
           {inView &&
-            <img
-              className={imgClassNames.join(' ')}
-              alt={altText}
-              onLoad={this.onImageLoad}
-              {...rest}
-            />
+            <Image hidden={loading} altText={altText} onImageLoad={this.onImageLoad} {...rest} />
           }
           {(typeof window === 'undefined' && (!inView || loading)) &&
-            <noscript >
-              <img
-                className={imgClassNamesNoScript.join(' ')}
-                alt={altText}
-                {...rest}
-              />
-            </noscript>
+          <noscript >
+            <Image altText={altText} {...rest} />
+          </noscript>
           }
         </div>
       </div>
@@ -104,10 +128,10 @@ class BpkImage extends React.Component {
 }
 
 BpkImage.propTypes = {
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
   altText: PropTypes.string.isRequired,
+  height: PropTypes.number.isRequired,
   src: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
   className: PropTypes.string,
   inView: PropTypes.bool,
   loading: PropTypes.bool,
