@@ -40,10 +40,9 @@ import TypesettingPage from './../pages/TypesettingPage';
 import RadiiPage from './../pages/RadiiPage';
 import ShadowsPage from './../pages/ShadowsPage';
 import BordersPage from './../pages/BordersPage';
-import LayoutPage from './../pages/LayoutPage';
-import BreakpointsPage from './../pages/BreakpointsPage';
-import HorizontalGridPage from './../pages/HorizontalGridPage';
+import SpacingsPage from './../pages/SpacingsPage';
 import AnimationPage from './../pages/AnimationPage';
+import ZIndexesPage from './../pages/ZIndexesPage';
 
 import TypographyPage from './../pages/TypographyPage';
 import ButtonsPage from './../pages/ButtonsPage';
@@ -55,7 +54,8 @@ import ChipsPage from './../pages/ChipsPage';
 import BadgePage from './../pages/BadgePage';
 import PanelsPage from './../pages/PanelsPage';
 import ImagesPage from './../pages/ImagesPage';
-
+import BreakpointsPage from './../pages/BreakpointsPage';
+import HorizontalGridPage from './../pages/HorizontalGridPage';
 import BannerAlertsPage from './../pages/BannerAlertsPage';
 import ModalsPage from './../pages/ModalsPage';
 import AutosuggestPage from './../pages/AutosuggestPage';
@@ -104,10 +104,11 @@ const Routes = (
       <Route path={ROUTES.ANIMATION} component={AnimationPage} />
       <Route path={ROUTES.BORDERS} component={BordersPage} />
       <Route path={ROUTES.COLORS} component={ColorsPage} />
-      <Route path={ROUTES.LAYOUT} component={LayoutPage} />
+      <Route path={ROUTES.SPACINGS} component={SpacingsPage} />
       <Route path={ROUTES.RADII} component={RadiiPage} />
       <Route path={ROUTES.SHADOWS} component={ShadowsPage} />
       <Route path={ROUTES.TYPESETTING} component={TypesettingPage} />
+      <Route path={ROUTES.Z_INDEXES} component={ZIndexesPage} />
     </Route>
 
     <Route path={ROUTES.COMPONENTS} component={DocsLayout}>

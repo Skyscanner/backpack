@@ -16,17 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import TOKENS from 'bpk-tokens/tokens/base.raw.json';
-import IOS_TOKENS from 'bpk-tokens/tokens/ios/base.raw.json';
-import ANDROID_TOKENS from 'bpk-tokens/tokens/android/base.raw.json';
+import page from './SpacingsPage';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
-import { getPlatformTokens } from './../../helpers/tokens-helper';
-
-const RadiiPage = () => <DocsPageBuilder
-  title="Radii"
-  tokenMap={getPlatformTokens(TOKENS, IOS_TOKENS, ANDROID_TOKENS, ({ category }) => category === 'radii')}
-/>;
-
-export default RadiiPage;
+export default page;

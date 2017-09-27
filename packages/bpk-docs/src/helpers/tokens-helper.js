@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import union from 'lodash/union';
 import kebabCase from 'lodash/kebabCase';
 
 export const toPx = (value) => {
@@ -36,5 +37,28 @@ export const formatTokenName = name => kebabCase(name);
 
 export const formatTokenValue = (value) => {
   const pxValue = toPx(value);
-  return pxValue ? `${value} (${pxValue})` : value;
+  const formatted = pxValue ? `${value} (${pxValue})` : value;
+  return formatted || '-';
+};
+
+export const getTokens = (tokens, keys = null) => {
+  const outTokens = {};
+  (keys || Object.keys(tokens)).forEach((key) => {
+    outTokens[key] = (tokens[key] || {}).value || null;
+  });
+  return outTokens;
+};
+
+export const getPlatformTokens = (webTokens, iosTokens, androidTokens, predicate) => {
+  const keys = union([
+    ...webTokens.propKeys.filter(key => predicate(webTokens.props[key])),
+    ...iosTokens.propKeys.filter(key => predicate(iosTokens.props[key])),
+    ...androidTokens.propKeys.filter(key => predicate(androidTokens.props[key])),
+  ]);
+
+  return {
+    web: getTokens(webTokens.props, keys),
+    ios: getTokens(iosTokens.props, keys),
+    android: getTokens(androidTokens.props, keys),
+  };
 };

@@ -17,32 +17,16 @@
  */
 
 import React from 'react';
-import pickBy from 'lodash/pickBy';
-import includes from 'lodash/includes';
-import TOKENS from 'bpk-tokens/tokens/base.common';
+import TOKENS from 'bpk-tokens/tokens/base.raw.json';
+import IOS_TOKENS from 'bpk-tokens/tokens/ios/base.raw.json';
+import ANDROID_TOKENS from 'bpk-tokens/tokens/android/base.raw.json';
+
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import { getPlatformTokens } from './../../helpers/tokens-helper';
 
-const components = [
-  {
-    id: 'durations',
-    title: 'Durations',
-    tokenMap: pickBy(TOKENS, (value, key) => includes(key, 'duration')),
-    examples: [],
-  },
-];
-
-const MotionPage = () => <DocsPageBuilder
+const AnimationPage = () => <DocsPageBuilder
   title="Animation"
-  blurb={[
-    <Paragraph>
-      Backpack components make use of animations to add delight to the user experience. Care has been taken to make
-      sure that they do not obstruct user flow and that they are performant across devices and browsers.
-    </Paragraph>,
-  ]}
-  components={components}
-  showMenu={false}
-  sassdocId="animation"
+  tokenMap={getPlatformTokens(TOKENS, IOS_TOKENS, ANDROID_TOKENS, ({ category }) => category === 'animations')}
 />;
 
-export default MotionPage;
+export default AnimationPage;
