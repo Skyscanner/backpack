@@ -38,3 +38,6 @@ yarn.lock
 buck-out/
 \.buckd/
 *.keystore
+
+#Jest
+coverage

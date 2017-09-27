@@ -883,8 +883,344 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
 <BVLinearGradient
   colors={
     Array [
+      -1645333,
+      -1645333,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 100,
+          "height": 32,
+        },
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+        "disabled",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 100,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": undefined,
+              "lineHeight": 20,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              Object {
+                "color": "rgb(178, 174, 189)",
+              },
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`Android BpkButton should support the "icon" and "large" property 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
       -16722059,
       -16728728,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 100,
+          "height": 32,
+        },
+        Object {
+          "minHeight": 48,
+        },
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 100,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+          Object {
+            "minHeight": 48,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+          },
+          undefined,
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+          Object {
+            "justifyContent": "space-between",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 16,
+              "fontWeight": undefined,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(255, 255, 255)",
+              },
+              undefined,
+              Object {
+                "marginRight": 4,
+              },
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`Android BpkButton should support the "iconOnly" and "large" property 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      -16722059,
+      -16728728,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 100,
+          "height": 32,
+        },
+        Object {
+          "minHeight": 48,
+        },
+        Object {
+          "width": 48,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 100,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+          Object {
+            "minHeight": 48,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+          },
+          undefined,
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+          undefined,
+        ]
+      }
+    />
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`Android BpkButton should support the "large" and secondary property 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      -1,
+      -1,
     ]
   }
   end={undefined}
@@ -940,9 +1276,17 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
             "paddingTop": 8,
           },
           Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+            "paddingBottom": 6,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 6,
+          },
+          Object {
             "minHeight": 48,
-            "paddingLeft": 16,
-            "paddingRight": 16,
+            "paddingLeft": 14,
+            "paddingRight": 14,
           },
         ],
       ]
@@ -984,6 +1328,9 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
               Object {
                 "backgroundColor": "transparent",
                 "color": "rgb(255, 255, 255)",
+              },
+              Object {
+                "color": "rgb(0, 178, 214)",
               },
               undefined,
             ],

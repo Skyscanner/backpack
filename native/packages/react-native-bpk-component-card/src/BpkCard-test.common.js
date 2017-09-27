@@ -24,6 +24,7 @@ import BpkText from '../../react-native-bpk-component-text';
 import BpkCard from './BpkCard';
 
 const commonTests = () => {
+  const onPressFn = jest.fn();
   describe('BpkCard', () => {
     const cardContent = (
       <View>
@@ -36,13 +37,13 @@ const commonTests = () => {
     );
     it('should render correctly', () => {
       const tree = renderer.create(
-        <BpkCard onPress={() => null} accessibilityLabel="Example Card">{cardContent}</BpkCard>,
+        <BpkCard onPress={onPressFn} accessibilityLabel="Example Card">{cardContent}</BpkCard>,
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
     it('should render correctly without padding', () => {
       const tree = renderer.create(
-        <BpkCard onPress={() => null} padded={false} accessibilityLabel="Example Card">{cardContent}</BpkCard>,
+        <BpkCard onPress={onPressFn} padded={false} accessibilityLabel="Example Card">{cardContent}</BpkCard>,
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
