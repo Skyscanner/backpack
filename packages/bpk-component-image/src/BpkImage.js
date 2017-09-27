@@ -27,6 +27,31 @@ import STYLES from './bpk-image.scss';
 
 const getClassName = cssModules(STYLES);
 
+const Image = (props) => {
+  const { shown, altText, onImageLoad, ...rest } = props;
+
+  const imgClassNames = [getClassName('bpk-image__img')];
+
+  if (!shown) {
+    imgClassNames.push(getClassName('bpk-image__img--hidden'));
+  }
+
+  return (
+    <img
+      className={imgClassNames.join(' ')}
+      alt={altText}
+      onLoad={onImageLoad}
+      {...rest}
+    />
+  );
+};
+
+Image.propTypes = {
+  altText: PropTypes.string.isRequired,
+  shown: PropTypes.bool.isRequired,
+  onImageLoad: PropTypes.func.isRequired,
+};
+
 class BpkImage extends React.Component {
   constructor(props) {
     super(props);
@@ -46,14 +71,12 @@ class BpkImage extends React.Component {
     const { width, height, altText, className, inView, loading, onLoad, style, ...rest } = this.props;
 
     const classNames = [getClassName('bpk-image')];
-    const imgClassNames = [getClassName('bpk-image__image'), getClassName('bpk-image--hidden')];
 
     const aspectRatio = width / height;
     const aspectRatioPc = `${100 / aspectRatio}%`;
 
     if (!loading) {
       classNames.push(getClassName('bpk-image--no-background'));
-      imgClassNames.push(getClassName('bpk-image--shown'));
     }
 
     if (className) {
@@ -74,33 +97,24 @@ class BpkImage extends React.Component {
         >
           <CSSTransitionGroup
             transitionName={{
-              leave: getClassName('bpk-image--shown'),
-              leaveActive: getClassName('bpk-image--hidden'),
+              leave: getClassName('bpk-image__spinner--shown'),
+              leaveActive: getClassName('bpk-image__spinner--hidden'),
             }}
             transitionEnterTimeout={parseInt(animations.durationBase, 10)}
             transitionLeaveTimeout={parseInt(animations.durationBase, 10)}
           >
             {loading &&
-            <div className={getClassName('bpk-image__spinner')}>
-              <BpkSpinner />
-            </div>
+              <div className={getClassName('bpk-image__spinner')}>
+                <BpkSpinner />
+              </div>
             }
           </CSSTransitionGroup>
           {inView &&
-          <img
-            className={imgClassNames.join(' ')}
-            alt={altText}
-            onLoad={this.onImageLoad}
-            {...rest}
-          />
+            <Image shown={!loading} altText={altText} onImageLoad={this.onImageLoad} {...rest} />
           }
           {(typeof window === 'undefined' && (!inView || loading)) &&
           <noscript >
-            <img
-              className={getClassName('bpk-image__image')}
-              alt={altText}
-              {...rest}
-            />
+            <Image shown altText={altText} {...rest} />
           </noscript>
           }
         </div>

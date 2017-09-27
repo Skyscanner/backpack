@@ -27,9 +27,15 @@
   overflow: hidden;
   transition-delay: $bpk-duration-base;
 
-  &__image {
+  &__img {
     position: absolute;
     width: 100%;
+    transition: opacity $bpk-duration-base ease-in-out;
+    opacity: 1;
+
+    &--hidden {
+      opacity: 0;
+    }
   }
 
   &__spinner {
@@ -39,16 +45,16 @@
     display: block;
     align-items: center;
     transform: translate(-50%, -50%);
-  }
 
-  &--hidden {
-    transition: opacity $bpk-duration-base ease-in-out;
-    opacity: 0;
-  }
+    &--hidden {
+      transition: opacity $bpk-duration-base ease-in-out;
+      opacity: 0;
+    }
 
-  &--shown {
-    transition: opacity $bpk-duration-base ease-in-out;
-    opacity: 1;
+    &--shown {
+      transition: opacity $bpk-duration-base ease-in-out;
+      opacity: 1;
+    }
   }
 
   &--no-background {
