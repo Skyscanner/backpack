@@ -28,11 +28,11 @@ import STYLES from './bpk-image.scss';
 const getClassName = cssModules(STYLES);
 
 const Image = (props) => {
-  const { shown, altText, onImageLoad, ...rest } = props;
+  const { hidden, altText, onImageLoad, ...rest } = props;
 
   const imgClassNames = [getClassName('bpk-image__img')];
 
-  if (!shown) {
+  if (hidden) {
     imgClassNames.push(getClassName('bpk-image__img--hidden'));
   }
 
@@ -48,8 +48,12 @@ const Image = (props) => {
 
 Image.propTypes = {
   altText: PropTypes.string.isRequired,
-  shown: PropTypes.bool.isRequired,
+  hidden: PropTypes.bool,
   onImageLoad: PropTypes.func.isRequired,
+};
+
+Image.defaultProps = {
+  hidden: false,
 };
 
 class BpkImage extends React.Component {
@@ -110,11 +114,11 @@ class BpkImage extends React.Component {
             }
           </CSSTransitionGroup>
           {inView &&
-            <Image shown={!loading} altText={altText} onImageLoad={this.onImageLoad} {...rest} />
+            <Image hidden={loading} altText={altText} onImageLoad={this.onImageLoad} {...rest} />
           }
           {(typeof window === 'undefined' && (!inView || loading)) &&
           <noscript >
-            <Image shown altText={altText} {...rest} />
+            <Image altText={altText} {...rest} />
           </noscript>
           }
         </div>
