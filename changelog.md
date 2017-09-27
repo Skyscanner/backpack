@@ -2,7 +2,12 @@
 
 ## UNRELEASED
 
-_Nothing Yet!_
+**Fixed:**
+- bpk-tokens:
+  - Fixed various `type` values for web, ios and android tokens e.g:
+    - `LINE_HEIGHT_XS`'s type was `font-size` but is now `size`
+    - `FONT_SIZE_XS`'s type was `size` but is now `font-size`
+    - etc
 
 ## 2017-09-27 - Image loading spinner will now be removed from DOM after fading
 

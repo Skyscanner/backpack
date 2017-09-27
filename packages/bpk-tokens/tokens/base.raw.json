@@ -2491,7 +2491,7 @@
     },
     "LINE_HEIGHT_SM": {
       "value": "1.125rem",
-      "type": "number",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": "1.125rem"
@@ -2500,7 +2500,7 @@
     },
     "LINE_HEIGHT_BASE": {
       "value": "1.5rem",
-      "type": "number",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": "1.5rem"
@@ -2509,7 +2509,7 @@
     },
     "LINE_HEIGHT_LG": {
       "value": "1.875rem",
-      "type": "number",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": "1.875rem"
@@ -2518,7 +2518,7 @@
     },
     "LINE_HEIGHT_XL": {
       "value": "2.625rem",
-      "type": "number",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": "2.625rem"
@@ -2533,13 +2533,13 @@
     },
     "FONT_SIZE_ROOT": {
       "value": "100%",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings",
       "name": "FONT_SIZE_ROOT"
     },
     "FONT_SIZE_SM": {
       "value": ".75rem",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
         "value": ".75rem"
@@ -2548,7 +2548,7 @@
     },
     "FONT_SIZE_BASE": {
       "value": "1rem",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
         "value": "1rem"
@@ -2557,7 +2557,7 @@
     },
     "FONT_SIZE_LG": {
       "value": "1.5rem",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
         "value": "1.5rem"
@@ -2566,7 +2566,7 @@
     },
     "FONT_SIZE_XL": {
       "value": "1.75rem",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
         "value": "1.75rem"
@@ -2575,7 +2575,7 @@
     },
     "FONT_SIZE_XXL": {
       "value": "2.625rem",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
         "value": "2.625rem"
@@ -2584,7 +2584,7 @@
     },
     "FONT_WEIGHT_BOLD": {
       "value": "700",
-      "type": "size",
+      "type": "string",
       "category": "font-weights",
       ".alias": {
         "value": "700"
@@ -2593,7 +2593,7 @@
     },
     "H6_FONT_SIZE": {
       "value": ".75rem",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": ".75rem"
@@ -2602,7 +2602,7 @@
     },
     "H5_FONT_SIZE": {
       "value": ".75rem",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": ".75rem"
@@ -2611,7 +2611,7 @@
     },
     "H4_FONT_SIZE": {
       "value": "1rem",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": "1rem"
@@ -2620,7 +2620,7 @@
     },
     "H3_FONT_SIZE": {
       "value": "1.5rem",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": "1.5rem"
@@ -2629,7 +2629,7 @@
     },
     "H2_FONT_SIZE": {
       "value": "1.75rem",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": "1.75rem"
@@ -2638,7 +2638,7 @@
     },
     "H1_FONT_SIZE": {
       "value": "2.625rem",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": "2.625rem"
@@ -2647,7 +2647,7 @@
     },
     "H6_LINE_HEIGHT": {
       "value": "1.125rem",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": "1.125rem"
@@ -2656,7 +2656,7 @@
     },
     "H5_LINE_HEIGHT": {
       "value": "1.125rem",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": "1.125rem"
@@ -2665,7 +2665,7 @@
     },
     "H4_LINE_HEIGHT": {
       "value": "1.5rem",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": "1.5rem"
@@ -2674,7 +2674,7 @@
     },
     "H3_LINE_HEIGHT": {
       "value": "1.875rem",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": "1.875rem"
@@ -2683,7 +2683,7 @@
     },
     "H2_LINE_HEIGHT": {
       "value": "2.625rem",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": "2.625rem"
@@ -2698,37 +2698,37 @@
     },
     "H6_FONT_WEIGHT": {
       "value": "700",
-      "type": "number",
+      "type": "string",
       "category": "font-weights",
       "name": "H6_FONT_WEIGHT"
     },
     "H5_FONT_WEIGHT": {
       "value": "700",
-      "type": "number",
+      "type": "string",
       "category": "font-weights",
       "name": "H5_FONT_WEIGHT"
     },
     "H4_FONT_WEIGHT": {
       "value": "700",
-      "type": "number",
+      "type": "string",
       "category": "font-weights",
       "name": "H4_FONT_WEIGHT"
     },
     "H3_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights",
       "name": "H3_FONT_WEIGHT"
     },
     "H2_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights",
       "name": "H2_FONT_WEIGHT"
     },
     "H1_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights",
       "name": "H1_FONT_WEIGHT"
     },
@@ -2896,7 +2896,7 @@
     },
     "TEXT_XS_FONT_SIZE": {
       "value": ".75rem",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": ".75rem"
@@ -2905,7 +2905,7 @@
     },
     "TEXT_XS_LINE_HEIGHT": {
       "value": "1.125rem",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": "1.125rem"
@@ -2914,7 +2914,7 @@
     },
     "TEXT_XS_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights",
       "name": "TEXT_XS_FONT_WEIGHT"
     },
@@ -2926,7 +2926,7 @@
     },
     "TEXT_SM_FONT_SIZE": {
       "value": ".75rem",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": ".75rem"
@@ -2935,7 +2935,7 @@
     },
     "TEXT_SM_LINE_HEIGHT": {
       "value": "1.125rem",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": "1.125rem"
@@ -2944,7 +2944,7 @@
     },
     "TEXT_SM_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights",
       "name": "TEXT_SM_FONT_WEIGHT"
     },
@@ -2956,7 +2956,7 @@
     },
     "TEXT_BASE_FONT_SIZE": {
       "value": "1rem",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": "1rem"
@@ -2965,7 +2965,7 @@
     },
     "TEXT_BASE_LINE_HEIGHT": {
       "value": "1.5rem",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": "1.5rem"
@@ -2974,7 +2974,7 @@
     },
     "TEXT_BASE_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights",
       "name": "TEXT_BASE_FONT_WEIGHT"
     },
@@ -2986,7 +2986,7 @@
     },
     "TEXT_LG_FONT_SIZE": {
       "value": "1.5rem",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": "1.5rem"
@@ -2995,7 +2995,7 @@
     },
     "TEXT_LG_LINE_HEIGHT": {
       "value": "1.875rem",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": "1.875rem"
@@ -3004,7 +3004,7 @@
     },
     "TEXT_LG_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights",
       "name": "TEXT_LG_FONT_WEIGHT"
     },
@@ -3016,7 +3016,7 @@
     },
     "TEXT_XL_FONT_SIZE": {
       "value": "1.75rem",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": "1.75rem"
@@ -3025,7 +3025,7 @@
     },
     "TEXT_XL_LINE_HEIGHT": {
       "value": "2.625rem",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": "2.625rem"
@@ -3034,7 +3034,7 @@
     },
     "TEXT_XL_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights",
       "name": "TEXT_XL_FONT_WEIGHT"
     },
@@ -3046,7 +3046,7 @@
     },
     "TEXT_XXL_FONT_SIZE": {
       "value": "2.625rem",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": "2.625rem"
@@ -3061,7 +3061,7 @@
     },
     "TEXT_XXL_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights",
       "name": "TEXT_XXL_FONT_WEIGHT"
     },

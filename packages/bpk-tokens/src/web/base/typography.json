@@ -15,22 +15,22 @@
     },
     "LINE_HEIGHT_SM": {
       "value": "{!SPACING_MD}",
-      "type": "number",
+      "type": "size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_BASE": {
       "value": "{!SPACING_BASE}",
-      "type": "number",
+      "type": "size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_LG": {
       "value": "{!SPACING_LG}",
-      "type": "number",
+      "type": "size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_XL": {
       "value": "{!SPACING_XXL}",
-      "type": "number",
+      "type": "size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_XXL": {
@@ -40,92 +40,92 @@
     },
     "FONT_SIZE_ROOT": {
       "value": "100%",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings"
     },
     "FONT_SIZE_SM": {
       "value": "{!FONT_SIZE_SM}",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings"
     },
     "FONT_SIZE_BASE": {
       "value": "{!FONT_SIZE_BASE}",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings"
     },
     "FONT_SIZE_LG": {
       "value": "{!FONT_SIZE_LG}",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings"
     },
     "FONT_SIZE_XL": {
       "value": "{!FONT_SIZE_XL}",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings"
     },
     "FONT_SIZE_XXL": {
       "value": "{!FONT_SIZE_XXL}",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings"
     },
     "FONT_WEIGHT_BOLD": {
       "value": "{!FONT_WEIGHT_BOLD}",
-      "type": "size",
+      "type": "string",
       "category": "font-weights"
     },
     "H6_FONT_SIZE": {
       "value": "{!FONT_SIZE_SM}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "H5_FONT_SIZE": {
       "value": "{!FONT_SIZE_SM}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "H4_FONT_SIZE": {
       "value": "{!FONT_SIZE_BASE}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "H3_FONT_SIZE": {
       "value": "{!FONT_SIZE_LG}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "H2_FONT_SIZE": {
       "value": "{!FONT_SIZE_XL}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "H1_FONT_SIZE": {
       "value": "{!FONT_SIZE_XXL}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "H6_LINE_HEIGHT": {
       "value": "{!SPACING_MD}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "H5_LINE_HEIGHT": {
       "value": "{!SPACING_MD}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "H4_LINE_HEIGHT": {
       "value": "{!SPACING_BASE}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "H3_LINE_HEIGHT": {
       "value": "{!SPACING_LG}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "H2_LINE_HEIGHT": {
       "value": "{!SPACING_XXL}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "H1_LINE_HEIGHT": {
@@ -135,32 +135,32 @@
     },
     "H6_FONT_WEIGHT": {
       "value": "700",
-      "type": "number",
+      "type": "string",
       "category": "font-weights"
     },
     "H5_FONT_WEIGHT": {
       "value": "700",
-      "type": "number",
+      "type": "string",
       "category": "font-weights"
     },
     "H4_FONT_WEIGHT": {
       "value": "700",
-      "type": "number",
+      "type": "string",
       "category": "font-weights"
     },
     "H3_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights"
     },
     "H2_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights"
     },
     "H1_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights"
     },
     "HEADING_MARGIN_TOP": {
@@ -270,17 +270,17 @@
     },
     "TEXT_XS_FONT_SIZE": {
       "value": "{!FONT_SIZE_SM}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "TEXT_XS_LINE_HEIGHT": {
       "value": "{!SPACING_MD}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_XS_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights"
     },
     "TEXT_XS_LETTER_SPACING": {
@@ -290,17 +290,17 @@
     },
     "TEXT_SM_FONT_SIZE": {
       "value": "{!FONT_SIZE_SM}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "TEXT_SM_LINE_HEIGHT": {
       "value": "{!SPACING_MD}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_SM_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights"
     },
     "TEXT_SM_LETTER_SPACING": {
@@ -310,17 +310,17 @@
     },
     "TEXT_BASE_FONT_SIZE": {
       "value": "{!FONT_SIZE_BASE}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "TEXT_BASE_LINE_HEIGHT": {
       "value": "{!SPACING_BASE}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_BASE_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights"
     },
     "TEXT_BASE_LETTER_SPACING": {
@@ -330,17 +330,17 @@
     },
     "TEXT_LG_FONT_SIZE": {
       "value": "{!FONT_SIZE_LG}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "TEXT_LG_LINE_HEIGHT": {
       "value": "{!SPACING_LG}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_LG_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights"
     },
     "TEXT_LG_LETTER_SPACING": {
@@ -350,17 +350,17 @@
     },
     "TEXT_XL_FONT_SIZE": {
       "value": "{!FONT_SIZE_XL}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "TEXT_XL_LINE_HEIGHT": {
       "value": "{!SPACING_XXL}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_XL_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights"
     },
     "TEXT_XL_LETTER_SPACING": {
@@ -370,7 +370,7 @@
     },
     "TEXT_XXL_FONT_SIZE": {
       "value": "{!FONT_SIZE_XXL}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "TEXT_XXL_LINE_HEIGHT": {
@@ -380,7 +380,7 @@
     },
     "TEXT_XXL_FONT_WEIGHT": {
       "value": "400",
-      "type": "number",
+      "type": "string",
       "category": "font-weights"
     },
     "TEXT_XXL_LETTER_SPACING": {

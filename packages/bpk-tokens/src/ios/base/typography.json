@@ -5,67 +5,67 @@
   "props": {
     "FONT_SIZE_XS": {
       "value": "{!FONT_SIZE_XS}",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings"
     },
     "FONT_SIZE_SM": {
       "value": "{!FONT_SIZE_SM}",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings"
     },
     "FONT_SIZE_BASE": {
       "value": "{!FONT_SIZE_BASE}",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings"
     },
     "FONT_SIZE_LG": {
       "value": "{!FONT_SIZE_LG}",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings"
     },
     "FONT_SIZE_XL": {
       "value": "{!FONT_SIZE_XL}",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings"
     },
     "FONT_SIZE_XXL": {
       "value": "{!FONT_SIZE_XXL}",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_XS": {
       "value": "{!LINE_HEIGHT_XS}",
-      "type": "number",
+      "type": "size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_SM": {
       "value": "{!LINE_HEIGHT_SM}",
-      "type": "number",
+      "type": "size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_BASE": {
       "value": "{!LINE_HEIGHT_BASE}",
-      "type": "number",
+      "type": "size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_LG": {
       "value": "{!LINE_HEIGHT_LG}",
-      "type": "number",
+      "type": "size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_XL": {
       "value": "{!LINE_HEIGHT_XL}",
-      "type": "number",
+      "type": "size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_XXL": {
       "value": "{!LINE_HEIGHT_XXL}",
-      "type": "number",
+      "type": "size",
       "category": "typesettings"
     },
     "TEXT_XS_FONT_SIZE": {
       "value": "{!FONT_SIZE_XS}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "TEXT_XS_FONT_WEIGHT": {
@@ -75,12 +75,12 @@
     },
     "TEXT_XS_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_XS}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_SM_FONT_SIZE": {
       "value": "{!FONT_SIZE_SM}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "TEXT_SM_FONT_WEIGHT": {
@@ -90,12 +90,12 @@
     },
     "TEXT_SM_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_SM}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_BASE_FONT_SIZE": {
       "value": "{!FONT_SIZE_BASE}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "TEXT_BASE_FONT_WEIGHT": {
@@ -105,12 +105,12 @@
     },
     "TEXT_BASE_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_BASE}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_LG_FONT_SIZE": {
       "value": "{!FONT_SIZE_LG}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "TEXT_LG_FONT_WEIGHT": {
@@ -120,12 +120,12 @@
     },
     "TEXT_LG_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_LG}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_XL_FONT_SIZE": {
       "value": "{!FONT_SIZE_XL}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "TEXT_XL_FONT_WEIGHT": {
@@ -135,12 +135,12 @@
     },
     "TEXT_XL_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_XL}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_XXL_FONT_SIZE": {
       "value": "{!FONT_SIZE_XXL}",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes"
     },
     "TEXT_XXL_FONT_WEIGHT": {
@@ -150,7 +150,7 @@
     },
     "TEXT_XXL_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_XXL}",
-      "type": "number",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_EMPHASIZED_FONT_WEIGHT": {

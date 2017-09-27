@@ -605,7 +605,7 @@
     },
     {
       "value": "11",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
         "value": 11
@@ -614,7 +614,7 @@
     },
     {
       "value": "13",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
         "value": 13
@@ -623,7 +623,7 @@
     },
     {
       "value": "15",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
         "value": 15
@@ -632,7 +632,7 @@
     },
     {
       "value": "17",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
         "value": 17
@@ -641,7 +641,7 @@
     },
     {
       "value": "20",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
         "value": 20
@@ -650,7 +650,7 @@
     },
     {
       "value": "34",
-      "type": "size",
+      "type": "font-size",
       "category": "typesettings",
       ".alias": {
         "value": 34
@@ -659,7 +659,7 @@
     },
     {
       "value": "13",
-      "type": "number",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": 13
@@ -668,7 +668,7 @@
     },
     {
       "value": "18",
-      "type": "number",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": 18
@@ -677,7 +677,7 @@
     },
     {
       "value": "20",
-      "type": "number",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": 20
@@ -686,7 +686,7 @@
     },
     {
       "value": "22",
-      "type": "number",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": 22
@@ -695,7 +695,7 @@
     },
     {
       "value": "24",
-      "type": "number",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": 24
@@ -704,7 +704,7 @@
     },
     {
       "value": "41",
-      "type": "number",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": 41
@@ -713,7 +713,7 @@
     },
     {
       "value": "11",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": 11
@@ -731,7 +731,7 @@
     },
     {
       "value": "13",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": 13
@@ -740,7 +740,7 @@
     },
     {
       "value": "13",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": 13
@@ -758,7 +758,7 @@
     },
     {
       "value": "18",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": 18
@@ -767,7 +767,7 @@
     },
     {
       "value": "15",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": 15
@@ -785,7 +785,7 @@
     },
     {
       "value": "20",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": 20
@@ -794,7 +794,7 @@
     },
     {
       "value": "17",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": 17
@@ -812,7 +812,7 @@
     },
     {
       "value": "22",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": 22
@@ -821,7 +821,7 @@
     },
     {
       "value": "20",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": 20
@@ -839,7 +839,7 @@
     },
     {
       "value": "24",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": 24
@@ -848,7 +848,7 @@
     },
     {
       "value": "34",
-      "type": "size",
+      "type": "font-size",
       "category": "font-sizes",
       ".alias": {
         "value": 34
@@ -866,7 +866,7 @@
     },
     {
       "value": "41",
-      "type": "number",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": 41
