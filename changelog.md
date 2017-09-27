@@ -2,7 +2,13 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Breaking:**
+- bpk-component-mixins:
+  - Removed image mixins as they are not applicable on their own
+
+**Fixed:**
+- bpk-component-image:
+  - Loading spinner will now be removed from DOM once image is displayed
 
 ## 2017-09-26 - Ability to add arbitrary props to ticket stubs
 
@@ -15,10 +21,6 @@ _Nothing yet..._
 **Added:**
 - react-native-bpk-component-card: 0.0.3 => 1.0.0
   - New component BpkCard, see http://backpack.prod.aws.skyscnr.com/components/native/cards/
-
-**Fixed:**
-- bpk-component-image:
-  - Loading spinner will now be removed from DOM once image is displayed
 
 ## 2017-09-26 - User style fixes for native Button component
 
