@@ -2,12 +2,16 @@
 
 ## UNRELEASED
 
+_Nothing Yet!_
+
+## 2017-09-27 - Image loading spinner will now be removed from DOM after fading
+
 **Breaking:**
-- bpk-mixins:
+- bpk-mixins: 16.5.5 => 17.0.0
   - Removed image mixins as they are not applicable on their own
 
 **Fixed:**
-- bpk-component-image:
+- bpk-component-image: 1.0.8 => 1.1.0
   - Loading spinner will now be removed from DOM once image is displayed
 
 ## 2017-09-26 - Ability to add arbitrary props to ticket stubs
