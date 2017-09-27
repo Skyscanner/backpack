@@ -20,8 +20,9 @@
 
 // See http://danger.systems/js if you're not sure what this is.
 
+import fs from 'fs';
 import includes from 'lodash.includes';
-import { danger, warn, message } from 'danger';
+import { danger, fail, warn, message } from 'danger';
 
 const createdFiles = danger.git.created_files;
 const modifiedFiles = danger.git.modified_files;
@@ -30,27 +31,28 @@ const fileChanges = [...modifiedFiles, ...createdFiles];
 // Always be nice.
 message('Thanks for the PR 🎉.');
 
+// Ensure new web components are extensible by consumers.
 const webComponentIntroduced = createdFiles.some(filePath => (
   filePath.match(/packages\/bpk-component.+\/src\/.+\.js/)
 ));
 
 if (webComponentIntroduced) {
-  message('It looks like you are introducing a web component');
-  warn('Ensure the component style is extensible via `className`');
+  message('It looks like you are introducing a web component.');
+  warn('Ensure the component style is extensible via `className`.');
 }
 
+// Ensure new native components are extensible by consumers.
 const nativeComponentIntroduced = createdFiles.some(filePath => (
   filePath.match(/native\/packages\/react-native-bpk-component.+\/src\/.+\.js/)
 ));
 
 if (nativeComponentIntroduced) {
-  message('It looks like you are introducing a native component');
-  warn('Ensure the component style is extensible via `style`');
+  message('It looks like you are introducing a native component.');
+  warn('Ensure the component style is extensible via `style`.');
 }
 
-
 // If any of the packages have changed, the changelog should have been updated.
-const changelogModified = includes(fileChanges, 'changelog.md');
+const changelogModified = includes(modifiedFiles, 'changelog.md');
 const packagesModified = fileChanges.some(filePath => (
   filePath.startsWith('packages/') || filePath.startsWith('native/packages/')
 ));
@@ -70,4 +72,28 @@ const snapshotsModified = fileChanges.some(filePath => (
 
 if (componentSourceFilesModified && !snapshotsModified) {
   warn('Package source files (e.g. `package/packageName/src/packageName.js`) were updated, but snapshots weren\'t. Have you checked that the tests still pass?'); // eslint-disable-line max-len
+}
+
+// Ensure shrinkwrap changes are intentional.
+const shrinkwrapUpdated = includes(modifiedFiles, 'changelog.md');
+if (shrinkwrapUpdated) {
+  warn('`npm-shrinkwrap.json` was updated. Ensure that this was intentional.');
+}
+
+// New files should include the Backpack license heading.
+const unlicensedFiles = createdFiles.filter((filePath) => {
+  if (filePath.match(/\.(js|css|scss|sh)/)) {
+    const fileContent = fs.readFileSync(filePath);
+    return !fileContent.includes('Licensed under the Apache License, Version 2.0 (the "License")');
+  }
+  return false;
+});
+if (unlicensedFiles.length > 0) {
+  fail(`These new files are do not include the license heading: ${unlicensedFiles.join(', ')}`);
+}
+
+// Encourage smaller PRs.
+const bigPRThreshold = 8;
+if (fileChanges.length > bigPRThreshold) {
+  warn(`This PR contains ${fileChanges.length} files (${createdFiles.length} new, ${modifiedFiles.length} modified). Consider splitting it into multiple PRs.`); // eslint-disable-line max-len
 }
