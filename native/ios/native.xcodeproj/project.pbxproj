@@ -36,8 +36,7 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		60D802631F62BDF400FA4879 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D802431F62BDCA00FA4879 /* libBVLinearGradient.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		998BB93550D6492DB3D0616F /* backpack-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76DD43E7ADF041EEB2C30592 /* backpack-icons.ttf */; };
-		4A56A9DBFABF42FF8F2D3EF1 /* To The Point.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C5DB6176287494C8754B536 /* To The Point.ttf */; };
+		2EC561943A834E9A91717EB3 /* BpkIcon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BAB16730FAD449998406040 /* BpkIcon.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,6 +301,7 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		76DD43E7ADF041EEB2C30592 /* backpack-icons.ttf */ = {isa = PBXFileReference; name = "backpack-icons.ttf"; path = "../../packages/bpk-svgs/dist/ttf/backpack-icons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9C5DB6176287494C8754B536 /* To The Point.ttf */ = {isa = PBXFileReference; name = "To The Point.ttf"; path = "../../packages/bpk-svgs/dist/ttf/To The Point.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9BAB16730FAD449998406040 /* BpkIcon.ttf */ = {isa = PBXFileReference; name = "BpkIcon.ttf"; path = "../../packages/bpk-svgs/dist/font/BpkIcon.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -551,6 +551,7 @@
 			children = (
 				76DD43E7ADF041EEB2C30592 /* backpack-icons.ttf */,
 				9C5DB6176287494C8754B536 /* To The Point.ttf */,
+				9BAB16730FAD449998406040 /* BpkIcon.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -965,6 +966,7 @@
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				998BB93550D6492DB3D0616F /* backpack-icons.ttf in Resources */,
 				4A56A9DBFABF42FF8F2D3EF1 /* To The Point.ttf in Resources */,
+				2EC561943A834E9A91717EB3 /* BpkIcon.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

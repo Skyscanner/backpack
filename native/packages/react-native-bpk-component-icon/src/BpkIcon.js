@@ -32,7 +32,7 @@ const {
 
 const styles = StyleSheet.create({
   icon: {
-    fontFamily: 'backpack-icons',
+    fontFamily: 'BpkIcon',
     fontSize: spacingLg,
   },
   small: {
@@ -49,7 +49,7 @@ const BpkIcon = (props) => {
     textStyleFinal.push(style);
   }
 
-  return (<Text style={textStyleFinal} {...rest} ></Text>);
+  return (<Text style={textStyleFinal} {...rest} >{'\uEA80'}</Text>);
 };
 
 BpkIcon.propTypes = {

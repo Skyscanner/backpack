@@ -11,7 +11,7 @@
     "storybook": "storybook start -p 7007 --root ../"
   },
   "rnpm": {
-   "assets": ["../packages/bpk-svgs/dist/ttf/"]
+   "assets": ["../packages/bpk-svgs/dist/font/"]
   },
   "devDependencies": {
     "@storybook/react-native": "^3.2.11",

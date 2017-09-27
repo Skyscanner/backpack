@@ -53,8 +53,7 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>backpack-icons.ttf</string>
-		<string>To The Point.ttf</string>
+		<string>BpkIcon.ttf</string>
 	</array>
 </dict>
 </plist>
