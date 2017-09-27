@@ -19,7 +19,7 @@ exports[`BpkImage should accept userland className 1`] = `
   >
     <img
       alt="image description"
-      className="bpk-image__image bpk-image--hidden bpk-image--shown"
+      className="bpk-image__img"
       onLoad={[Function]}
       src="./path/to/image.jpg"
     />
@@ -46,7 +46,7 @@ exports[`BpkImage should accept userland styling 1`] = `
   >
     <img
       alt="image description"
-      className="bpk-image__image bpk-image--hidden bpk-image--shown"
+      className="bpk-image__img"
       onLoad={[Function]}
       src="./path/to/image.jpg"
     />
@@ -172,7 +172,7 @@ exports[`BpkImage should have loading behavior 1`] = `
     </div>
     <img
       alt="image description"
-      className="bpk-image__image bpk-image--hidden"
+      className="bpk-image__img bpk-image__img--hidden"
       onLoad={[Function]}
       src="./path/to/image.jpg"
     />
@@ -195,7 +195,7 @@ exports[`BpkImage should render correctly 1`] = `
   >
     <img
       alt="image description"
-      className="bpk-image__image bpk-image--hidden bpk-image--shown"
+      className="bpk-image__img"
       onLoad={[Function]}
       src="./path/to/image.jpg"
     />
@@ -218,7 +218,7 @@ exports[`BpkImage should support srcSet 1`] = `
   >
     <img
       alt="image description"
-      className="bpk-image__image bpk-image--hidden bpk-image--shown"
+      className="bpk-image__img"
       onLoad={[Function]}
       sizes="(min-width: 71.25rem) 48rem,
               (min-width: 50.25rem) calc(100vw - 18rem),
