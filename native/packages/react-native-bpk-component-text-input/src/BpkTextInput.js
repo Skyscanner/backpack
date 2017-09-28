@@ -179,7 +179,7 @@ const BpkTextInput = (props) => {
       />
       {iconSource &&
         <BpkIcon
-          iconName="icon-name"
+          iconName={valid ? 'tick-circle' : 'exclamation-circle'}
           color={valid ? colorGreen500 : colorRed500}
           small={small}
         />

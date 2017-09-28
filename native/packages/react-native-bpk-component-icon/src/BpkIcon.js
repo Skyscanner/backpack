@@ -19,11 +19,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, Platform, StyleSheet, View } from 'react-native';
+import iconMappings from 'bpk-svgs/dist/font/mapping.json';
 
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
   android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
 })();
+
 
 const {
   spacingBase,
@@ -43,13 +45,21 @@ const styles = StyleSheet.create({
 const BpkIcon = (props) => {
   const { iconName, color, small, style, ...rest } = props;
 
+  let characterCode = 'EA01';
+  if (iconMappings[iconName]) {
+    characterCode = iconMappings[iconName];
+  } else {
+    // TODO Throw error as icon does not exist!
+  }
+
+
   const textStyleFinal = [styles.icon, small && styles.small];
   textStyleFinal.push({ color });
   if (style) {
     textStyleFinal.push(style);
   }
 
-  return (<Text style={textStyleFinal} {...rest} >{'\uEA80'}</Text>);
+  return (<Text style={textStyleFinal} {...rest} >{String.fromCharCode(parseInt(characterCode, 16))}</Text>);
 };
 
 BpkIcon.propTypes = {

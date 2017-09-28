@@ -8,6 +8,8 @@
 npm install react-native-bpk-component-icon --save-dev
 ```
 
+// TODO ADD INSTRUCTIONS FOR ADDING THE PODSPEC / GRADLE SCRIPT TO THE iOS / Android PROJECT IN WHICH THIS IS NOW BEING USED!
+
 ## Usage
 
 ```js

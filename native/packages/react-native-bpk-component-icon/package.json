@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "bpk-tokens": "^26.1.1",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "bpk-svgs": "^5.9.4"
   }
 }
