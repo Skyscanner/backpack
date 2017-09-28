@@ -63,7 +63,7 @@ if (packagesModified && !changelogModified) {
 // If source files have changed, the snapshots should have been updated.
 const componentSourceFilesModified = fileChanges.some(filePath => (
   // packages/(one or more chars)/src/(one or more chars).js
-  filePath.match(/packages\/.*bpk-component.+\/src\/.+\.js/) && !includes(filePath, '-test.')
+  filePath.match(/packages\/.*bpk-component.+\/src\/.+\.js/) && !filePath.includes('-test.')
 ));
 
 const snapshotsModified = fileChanges.some(filePath => (
@@ -82,14 +82,15 @@ if (shrinkwrapUpdated) {
 
 // New files should include the Backpack license heading.
 const unlicensedFiles = createdFiles.filter((filePath) => {
-  if (filePath.match(/\.(js|css|scss|sh)/)) {
+  // Applies to js, css, scss and sh files that are not located in dist folders.
+  if (filePath.match(/\.(js|css|scss|sh)/) && !filePath.includes('dist/')) {
     const fileContent = fs.readFileSync(filePath);
     return !fileContent.includes('Licensed under the Apache License, Version 2.0 (the "License")');
   }
   return false;
 });
 if (unlicensedFiles.length > 0) {
-  fail(`These new files are do not include the license heading: ${unlicensedFiles.join(', ')}`);
+  fail(`These new files do not include the license heading: ${unlicensedFiles.join(', ')}`);
 }
 
 // Encourage smaller PRs.
