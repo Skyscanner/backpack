@@ -16,9 +16,9 @@
       }
     },
     "@storybook/addon-links": {
-      "version": "3.1.6",
+      "version": "3.2.10",
       "from": "@storybook/addon-links@latest",
-      "resolved": "https://registry.npmjs.org/@storybook/addon-links/-/addon-links-3.1.6.tgz",
+      "resolved": "https://registry.npmjs.org/@storybook/addon-links/-/addon-links-3.2.10.tgz",
       "dev": true
     },
     "@storybook/addons": {
@@ -40,9 +40,9 @@
       "dev": true
     },
     "@storybook/react": {
-      "version": "3.1.9",
-      "from": "@storybook/react@3.1.9",
-      "resolved": "https://registry.npmjs.org/@storybook/react/-/react-3.1.9.tgz",
+      "version": "3.2.11",
+      "from": "@storybook/react@3.2.11",
+      "resolved": "https://registry.npmjs.org/@storybook/react/-/react-3.2.11.tgz",
       "dev": true,
       "dependencies": {
         "loader-utils": {
