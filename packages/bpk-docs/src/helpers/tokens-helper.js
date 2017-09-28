@@ -19,32 +19,60 @@
 import union from 'lodash/union';
 import kebabCase from 'lodash/kebabCase';
 
-export const toPx = (value) => {
-  let parsed = null;
-
-  if (/rem$/.test(value)) {
-    parsed = parseFloat(value.replace(/rem/, '')) * 16;
-  }
-
-  if (/%$/.test(value)) {
-    parsed = parseFloat((value.replace(/%/, '')) / 100) * 16;
-  }
-
-  return parsed ? `${parsed}px` : null;
-};
+// We don't set the root font size in the backpack base stylesheet, which means that the root font size falls back to
+// the browser default - typically 16px;
+const ROOT_FONT_SIZE = 16;
 
 export const formatTokenName = name => kebabCase(name);
 
-export const formatTokenValue = (value) => {
-  const pxValue = toPx(value);
-  const formatted = pxValue ? `${value} (${pxValue})` : value;
-  return formatted || '-';
+export const toPx = (value) => {
+  const parsed = parseFloat(value) * ROOT_FONT_SIZE;
+  return parsed ? `${parsed}px` : null;
+};
+
+const TOKEN_FORMAT_MAP = {
+  web: {
+    size: (value) => {
+      if (/rem$/.test(value)) {
+        return `${value} (${toPx(value)})`;
+      }
+      return value;
+    },
+    'font-size': (value) => {
+      if (/rem$/.test(value)) {
+        return `${value} (${toPx(value)})`;
+      }
+      if (/%$/.test(value)) {
+        return `${value} (${toPx(parseFloat(value) / 100)})`;
+      }
+      return value;
+    },
+  },
+  ios: {
+    size: value => (value ? `${value}pt` : value),
+    'font-size': value => (value ? `${value}pt` : value),
+  },
+  android: {
+    size: value => (value ? `${value}dp` : value),
+    'font-size': value => (value ? `${value}sp` : value),
+  },
+};
+
+export const getTokenValue = (token, platform) => {
+  const { value, type } = token || {};
+  const formats = TOKEN_FORMAT_MAP[platform] || {};
+
+  if (formats[type]) {
+    return formats[type](value);
+  }
+
+  return value || '-';
 };
 
 export const getTokens = (tokens, keys = null) => {
   const outTokens = {};
   (keys || Object.keys(tokens)).forEach((key) => {
-    outTokens[key] = (tokens[key] || {}).value || null;
+    outTokens[key] = tokens[key] || null;
   });
   return outTokens;
 };

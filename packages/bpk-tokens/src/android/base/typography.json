@@ -35,32 +35,32 @@
     },
     "LINE_HEIGHT_XS": {
       "value": "{!LINE_HEIGHT_XS}",
-      "type": "font-size",
+      "type": "size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_SM": {
       "value": "{!LINE_HEIGHT_SM}",
-      "type": "font-size",
+      "type": "size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_BASE": {
       "value": "{!LINE_HEIGHT_BASE}",
-      "type": "font-size",
+      "type": "size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_LG": {
       "value": "{!LINE_HEIGHT_LG}",
-      "type": "font-size",
+      "type": "size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_XL": {
       "value": "{!LINE_HEIGHT_XL}",
-      "type": "font-size",
+      "type": "size",
       "category": "typesettings"
     },
     "LINE_HEIGHT_XXL": {
       "value": "{!LINE_HEIGHT_XXL}",
-      "type": "number",
+      "type": "size",
       "category": "typesettings"
     },
     "TEXT_XS_FONT_SIZE": {
@@ -75,7 +75,7 @@
     },
     "TEXT_XS_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_XS}",
-      "type": "font-size",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_SM_FONT_SIZE": {
@@ -90,7 +90,7 @@
     },
     "TEXT_SM_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_SM}",
-      "type": "font-size",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_BASE_FONT_SIZE": {
@@ -105,7 +105,7 @@
     },
     "TEXT_BASE_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_BASE}",
-      "type": "font-size",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_LG_FONT_SIZE": {
@@ -120,7 +120,7 @@
     },
     "TEXT_LG_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_LG}",
-      "type": "font-size",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_XL_FONT_SIZE": {
@@ -135,7 +135,7 @@
     },
     "TEXT_XL_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_XL}",
-      "type": "font-size",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_XXL_FONT_SIZE": {
@@ -150,7 +150,7 @@
     },
     "TEXT_XXL_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_XXL}",
-      "type": "font-size",
+      "type": "size",
       "category": "line-heights"
     },
     "TEXT_EMPHASIZED_FONT_WEIGHT": {

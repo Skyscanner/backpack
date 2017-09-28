@@ -93,29 +93,29 @@
   <property name="FONT_SIZE_LG" category="typesettings">16sp</property>
   <property name="FONT_SIZE_XL" category="typesettings">20sp</property>
   <property name="FONT_SIZE_XXL" category="typesettings">24sp</property>
-  <property name="LINE_HEIGHT_XS" category="typesettings">16sp</property>
-  <property name="LINE_HEIGHT_SM" category="typesettings">20sp</property>
-  <property name="LINE_HEIGHT_BASE" category="typesettings">24sp</property>
-  <property name="LINE_HEIGHT_LG" category="typesettings">24sp</property>
-  <property name="LINE_HEIGHT_XL" category="typesettings">28sp</property>
-  <property name="LINE_HEIGHT_XXL" category="typesettings">32</property>
+  <property name="LINE_HEIGHT_XS" category="typesettings">16dp</property>
+  <property name="LINE_HEIGHT_SM" category="typesettings">20dp</property>
+  <property name="LINE_HEIGHT_BASE" category="typesettings">24dp</property>
+  <property name="LINE_HEIGHT_LG" category="typesettings">24dp</property>
+  <property name="LINE_HEIGHT_XL" category="typesettings">28dp</property>
+  <property name="LINE_HEIGHT_XXL" category="typesettings">32dp</property>
   <property name="TEXT_XS_FONT_SIZE" category="font-sizes">12sp</property>
   <property name="TEXT_XS_FONT_WEIGHT" category="font-weights">400</property>
-  <property name="TEXT_XS_LINE_HEIGHT" category="line-heights">16sp</property>
+  <property name="TEXT_XS_LINE_HEIGHT" category="line-heights">16dp</property>
   <property name="TEXT_SM_FONT_SIZE" category="font-sizes">14sp</property>
   <property name="TEXT_SM_FONT_WEIGHT" category="font-weights">400</property>
-  <property name="TEXT_SM_LINE_HEIGHT" category="line-heights">20sp</property>
+  <property name="TEXT_SM_LINE_HEIGHT" category="line-heights">20dp</property>
   <property name="TEXT_BASE_FONT_SIZE" category="font-sizes">14sp</property>
   <property name="TEXT_BASE_FONT_WEIGHT" category="font-weights">500</property>
-  <property name="TEXT_BASE_LINE_HEIGHT" category="line-heights">24sp</property>
+  <property name="TEXT_BASE_LINE_HEIGHT" category="line-heights">24dp</property>
   <property name="TEXT_LG_FONT_SIZE" category="font-sizes">16sp</property>
   <property name="TEXT_LG_FONT_WEIGHT" category="font-weights">400</property>
-  <property name="TEXT_LG_LINE_HEIGHT" category="line-heights">24sp</property>
+  <property name="TEXT_LG_LINE_HEIGHT" category="line-heights">24dp</property>
   <property name="TEXT_XL_FONT_SIZE" category="font-sizes">20sp</property>
   <property name="TEXT_XL_FONT_WEIGHT" category="font-weights">500</property>
-  <property name="TEXT_XL_LINE_HEIGHT" category="line-heights">28sp</property>
+  <property name="TEXT_XL_LINE_HEIGHT" category="line-heights">28dp</property>
   <property name="TEXT_XXL_FONT_SIZE" category="font-sizes">24sp</property>
   <property name="TEXT_XXL_FONT_WEIGHT" category="font-weights">400</property>
-  <property name="TEXT_XXL_LINE_HEIGHT" category="line-heights">32sp</property>
+  <property name="TEXT_XXL_LINE_HEIGHT" category="line-heights">32dp</property>
   <property name="TEXT_EMPHASIZED_FONT_WEIGHT" category="font-weights">500</property>
 </resources>

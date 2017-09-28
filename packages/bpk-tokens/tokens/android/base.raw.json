@@ -910,7 +910,7 @@
     },
     "LINE_HEIGHT_XS": {
       "value": "16",
-      "type": "font-size",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": 16
@@ -919,7 +919,7 @@
     },
     "LINE_HEIGHT_SM": {
       "value": "20",
-      "type": "font-size",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": 20
@@ -928,7 +928,7 @@
     },
     "LINE_HEIGHT_BASE": {
       "value": "24",
-      "type": "font-size",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": 24
@@ -937,7 +937,7 @@
     },
     "LINE_HEIGHT_LG": {
       "value": "24",
-      "type": "font-size",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": 24
@@ -946,7 +946,7 @@
     },
     "LINE_HEIGHT_XL": {
       "value": "28",
-      "type": "font-size",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": 28
@@ -955,7 +955,7 @@
     },
     "LINE_HEIGHT_XXL": {
       "value": "32",
-      "type": "number",
+      "type": "size",
       "category": "typesettings",
       ".alias": {
         "value": 32
@@ -982,7 +982,7 @@
     },
     "TEXT_XS_LINE_HEIGHT": {
       "value": "16",
-      "type": "font-size",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": 16
@@ -1009,7 +1009,7 @@
     },
     "TEXT_SM_LINE_HEIGHT": {
       "value": "20",
-      "type": "font-size",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": 20
@@ -1036,7 +1036,7 @@
     },
     "TEXT_BASE_LINE_HEIGHT": {
       "value": "24",
-      "type": "font-size",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": 24
@@ -1063,7 +1063,7 @@
     },
     "TEXT_LG_LINE_HEIGHT": {
       "value": "24",
-      "type": "font-size",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": 24
@@ -1090,7 +1090,7 @@
     },
     "TEXT_XL_LINE_HEIGHT": {
       "value": "28",
-      "type": "font-size",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": 28
@@ -1117,7 +1117,7 @@
     },
     "TEXT_XXL_LINE_HEIGHT": {
       "value": "32",
-      "type": "font-size",
+      "type": "size",
       "category": "line-heights",
       ".alias": {
         "value": 32
