@@ -1,7 +1,10 @@
 # Backpack changelog
 
 ## UNRELEASED
-- _Nothing yet!_
+
+**Added:**
+- react-native-bpk-theming
+ - New BpkThemeProvider utility.
 
 ## 2017-09-29 - Update tokens types value and add ttf icon font
 

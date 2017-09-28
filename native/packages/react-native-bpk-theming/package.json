@@ -1,0 +1,23 @@
+{
+  "name": "react-native-bpk-theming",
+  "version": "0.0.1",
+  "main": "index.js",
+  "description": "Backpack React Native theming utlities.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-native": ">= 0.47.0"
+  },
+  "dependencies": {
+    "theming": "^1.1.0"
+  },
+  "devDependencies": {
+    "react-native-bpk-component-text": "^2.1.5",
+    "bpk-tokens": "^26.2.0"
+  }
+}
