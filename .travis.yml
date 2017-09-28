@@ -1,9 +1,11 @@
 language: node_js
 node_js:
-  - 7.10.1
+  - 8.6.0
 env:
   global:
     - NPM_CONFIG_LOGLEVEL=warn
+before_install:
+  - npm install -g npm@5.4.2
 install:
   - npm install
   - npm run build
@@ -15,7 +17,7 @@ script:
   - test -e dist/sassdoc/index.html
 cache:
   directories:
-  - node_modules
+    - node_modules
 # This causes builds for merges and direct pushes to master.
 # Other branches are pull requests and build are triggered via the
 # pull request hook

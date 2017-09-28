@@ -1,11 +1,14 @@
 {
   "name": "backpack",
   "engines": {
-    "node": ">=6.0.0",
-    "npm": ">=4.0.0"
+    "node": "8.6.0",
+    "npm": "5.4.2"
   },
   "private": true,
   "scripts": {
+    "preinstall:node": "node --version | grep -q 8.6.0",
+    "preinstall:npm": "npm --version | grep -q 5.4.2",
+    "preinstall": "npm run preinstall:node && npm run preinstall:npm",
     "postinstall:native": "(cd ./native && npm install)",
     "postinstall": "npm run postinstall:native && npm run bootstrap",
     "bootstrap": "lerna bootstrap",
@@ -111,7 +114,7 @@
     "static-site-generator-webpack-plugin": "github:skyscanner/static-site-generator-webpack-plugin#7bac616",
     "style-loader": "^0.18.2",
     "stylefmt": "^6.0.0",
-    "stylelint": "^8.0.0",
+    "stylelint": "~8.0.0",
     "stylelint-config-skyscanner": "^1.0.0",
     "theo": "^5.0.0",
     "tinycolor2": "^1.4.1",
