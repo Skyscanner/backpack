@@ -16,16 +16,14 @@
  * limitations under the License.
  */
 
-import { Image } from 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import BpkIcon from 'react-native-bpk-component-icon';
 
 import BpkButton, { BUTTON_TYPES } from './BpkButton';
 
 const onPressFn = jest.fn();
 const commonTests = () => {
-  jest.mock('Image', () => 'Image');
-
   describe('BpkButton', () => {
     it('should render correctly', () => {
       const tree = renderer.create(
@@ -76,7 +74,7 @@ const commonTests = () => {
     it('should support having an icon as well as a title', () => {
       const tree = renderer.create(
         <BpkButton
-          icon={<Image source="../rightarrow_360.png" />}
+          icon={<BpkIcon iconName="long-arrow-right" color="white" />}
           title="Lorem ipsum"
           onPress={onPressFn}
         />,
@@ -87,7 +85,7 @@ const commonTests = () => {
       const tree = renderer.create(
         <BpkButton
           title="Lorem ipsum"
-          icon={<Image source="../rightarrow_360.png" />}
+          icon={<BpkIcon iconName="long-arrow-right" color="white" />}
           iconOnly
           onPress={onPressFn}
         />,
@@ -114,7 +112,7 @@ const commonTests = () => {
     it('should accept iconOnly prop when icon prop is supplied', () => {
       expect(BpkButton.propTypes.icon({
         iconOnly: true,
-        icon: <Image />,
+        icon: <BpkIcon iconName="long-arrow-right" color="white" />,
       }, 'icon', 'BpkButton')).toBeFalsy();
     });
 

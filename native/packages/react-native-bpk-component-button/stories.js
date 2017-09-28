@@ -21,7 +21,6 @@ import {
   StyleSheet,
   View,
   ScrollView,
-  Image,
   Platform,
 } from 'react-native';
 
@@ -30,11 +29,10 @@ import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 
+import BpkIcon from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
 
 import BpkButton, { BUTTON_TYPES } from './src/BpkButton';
-
-import ArrowImageSrc from './long-arrow-right-3x.png';
 
 const tokens = Platform.OS === 'ios' ?
   require('bpk-tokens/tokens/ios/base.react.native.common.js') :
@@ -87,7 +85,7 @@ const ArrowImage = ({ large, type }) => {
   if (type === 'secondary') {
     style.push(styles.imageSecondary);
   }
-  return <Image source={ArrowImageSrc} style={style} />;
+  return <BpkIcon iconName="long-arrow-right" color={tokens.colorWhite} small={!large} />;
 };
 
 ArrowImage.propTypes = {

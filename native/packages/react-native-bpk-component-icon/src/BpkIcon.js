@@ -26,6 +26,13 @@ const tokens = Platform.select({
   android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
 })();
 
+const iconNamePropType = (props, propName, componentName) => {
+  const iconName = props[propName];
+  if (!iconMappings[iconName]) {
+    return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName}\`. No icon matches the iconName provided.`); // eslint-disable-line max-len
+  }
+  return false;
+};
 
 const {
   spacingBase,
@@ -34,24 +41,22 @@ const {
 
 const styles = StyleSheet.create({
   icon: {
+    width: spacingLg,
     fontFamily: 'BpkIcon',
     fontSize: spacingLg,
+    lineHeight: spacingLg,
   },
   small: {
+    width: spacingBase,
     fontSize: spacingBase,
+    lineHeight: spacingBase,
   },
 });
 
 const BpkIcon = (props) => {
   const { iconName, color, small, style, ...rest } = props;
 
-  let characterCode = 'EA01';
-  if (iconMappings[iconName]) {
-    characterCode = iconMappings[iconName];
-  } else {
-    // TODO Throw error as icon does not exist!
-  }
-
+  const characterCode = iconMappings[iconName];
 
   const textStyleFinal = [styles.icon, small && styles.small];
   textStyleFinal.push({ color });
@@ -63,13 +68,14 @@ const BpkIcon = (props) => {
 };
 
 BpkIcon.propTypes = {
-  iconName: PropTypes.string.isRequired,
+  iconName: iconNamePropType,
   color: PropTypes.string.isRequired, // TODO Color Prop Type???
   small: PropTypes.bool,
   style: View.propTypes.style,
 };
 
 BpkIcon.defaultProps = {
+  iconName: '',
   small: false,
   style: null,
 };
