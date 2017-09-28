@@ -75,7 +75,7 @@ if (componentSourceFilesModified && !snapshotsModified) {
 }
 
 // Ensure shrinkwrap changes are intentional.
-const shrinkwrapUpdated = includes(modifiedFiles, 'changelog.md');
+const shrinkwrapUpdated = includes(modifiedFiles, 'npm-shrinkwrap.json');
 if (shrinkwrapUpdated) {
   warn('`npm-shrinkwrap.json` was updated. Ensure that this was intentional.');
 }
