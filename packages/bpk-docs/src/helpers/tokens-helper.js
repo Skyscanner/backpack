@@ -19,10 +19,14 @@
 import union from 'lodash/union';
 import kebabCase from 'lodash/kebabCase';
 
+// We don't set the root font size in the backpack base stylesheet, which means that the root font size falls back to
+// the browser default - typically 16px;
+const ROOT_FONT_SIZE = 16;
+
 export const formatTokenName = name => kebabCase(name);
 
 export const toPx = (value) => {
-  const parsed = parseFloat(value) * 16;
+  const parsed = parseFloat(value) * ROOT_FONT_SIZE;
   return parsed ? `${parsed}px` : null;
 };
 
