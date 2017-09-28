@@ -8,12 +8,10 @@
     "android": "npm run android:emulator & node node_modules/react-native/local-cli/cli.js run-android",
     "android:emulator": "$ANDROID_HOME/tools/emulator -avd bpk-avd -dpi-device 420 -skin 1080x1920",
     "test": "jest --coverage",
-    "storybook": "storybook start -p 7007"
+    "storybook": "storybook start -p 7007 --root ../"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.2.6",
-    "@storybook/addon-links": "^3.2.6",
-    "@storybook/react-native": "^3.2.8",
+    "@storybook/react-native": "^3.2.11",
     "babel-jest": "20.0.3",
     "babel-preset-react-native": "3.0.2",
     "bpk-tokens": "^24.2.0",
