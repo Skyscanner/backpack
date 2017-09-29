@@ -2,7 +2,7 @@
   "name": "react-native-bpk-component-text",
   "version": "2.1.6",
   "main": "index.js",
-  "description": "Backpack native documentation.",
+  "description": "Backpack React Native text component.",
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
