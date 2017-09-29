@@ -283,6 +283,7 @@ gulp.task('icons-font', ['icons-common'], () => {
        */
       normalize: true,
       fontHeight: 1001,
+      timestamp: 1436442578, // A static timestamp to prevent changes showing up in git, backpack's first commit!
     }));
 
 
