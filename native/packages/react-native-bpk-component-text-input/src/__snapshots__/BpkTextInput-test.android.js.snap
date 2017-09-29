@@ -172,21 +172,28 @@ exports[`Android BpkTextInput should render invalid correctly 1`] = `
     underlineColorAndroid="transparent"
     value="Input_text"
   />
-  <Image
-    source={1}
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
     style={
       Array [
         Object {
-          "flex": 0,
-          "height": 24,
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
           "width": 24,
         },
+        false,
         Object {
-          "tintColor": "rgb(255, 84, 82)",
+          "color": "rgb(255, 84, 82)",
         },
       ]
     }
-  />
+  >
+    
+  </Text>
 </View>
 `;
 
@@ -395,25 +402,32 @@ exports[`Android BpkTextInput should render small invalid correctly 1`] = `
     underlineColorAndroid="transparent"
     value="Input_text"
   />
-  <Image
-    source={1}
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
     style={
       Array [
         Object {
-          "flex": 0,
-          "height": 24,
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
           "width": 24,
         },
         Object {
-          "height": 16,
+          "fontSize": 16,
+          "lineHeight": 16,
           "width": 16,
         },
         Object {
-          "tintColor": "rgb(255, 84, 82)",
+          "color": "rgb(255, 84, 82)",
         },
       ]
     }
-  />
+  >
+    
+  </Text>
 </View>
 `;
 
@@ -524,25 +538,32 @@ exports[`Android BpkTextInput should render small valid correctly 1`] = `
     underlineColorAndroid="transparent"
     value="Input_text"
   />
-  <Image
-    source={1}
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
     style={
       Array [
         Object {
-          "flex": 0,
-          "height": 24,
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
           "width": 24,
         },
         Object {
-          "height": 16,
+          "fontSize": 16,
+          "lineHeight": 16,
           "width": 16,
         },
         Object {
-          "tintColor": "rgb(0, 215, 117)",
+          "color": "rgb(0, 215, 117)",
         },
       ]
     }
-  />
+  >
+    
+  </Text>
 </View>
 `;
 
@@ -586,20 +607,27 @@ exports[`Android BpkTextInput should render valid correctly 1`] = `
     underlineColorAndroid="transparent"
     value="Input_text"
   />
-  <Image
-    source={1}
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
     style={
       Array [
         Object {
-          "flex": 0,
-          "height": 24,
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
           "width": 24,
         },
+        false,
         Object {
-          "tintColor": "rgb(0, 215, 117)",
+          "color": "rgb(0, 215, 117)",
         },
       ]
     }
-  />
+  >
+    
+  </Text>
 </View>
 `;

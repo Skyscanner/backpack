@@ -121,6 +121,7 @@ const commonTests = () => {
         iconOnly: true,
       }, 'icon', 'BpkButton').toString()).toEqual('Error: Invalid prop `icon` supplied to `BpkButton`. When `iconOnly` is enabled, `icon` must be supplied.'); // eslint-disable-line max-len
     });
+
     it('should throw an error for invalid button type', () => {
       expect(() => renderer.create(
         <BpkButton

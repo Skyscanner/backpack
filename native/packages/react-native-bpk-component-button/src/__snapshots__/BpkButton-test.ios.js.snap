@@ -673,9 +673,28 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
       >
         Lorem ipsum
       </Text>
-      <Image
-        source="../rightarrow_360.png"
-      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+              "width": 24,
+            },
+            false,
+            Object {
+              "color": "white",
+            },
+          ]
+        }
+      >
+        
+      </Text>
     </View>
   </View>
 </BVLinearGradient>
@@ -761,9 +780,28 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
         ]
       }
     >
-      <Image
-        source="../rightarrow_360.png"
-      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+              "width": 24,
+            },
+            false,
+            Object {
+              "color": "white",
+            },
+          ]
+        }
+      >
+        
+      </Text>
     </View>
   </View>
 </BVLinearGradient>

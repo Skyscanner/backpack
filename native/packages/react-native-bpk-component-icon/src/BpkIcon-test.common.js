@@ -16,19 +16,60 @@
  * limitations under the License.
  */
 
-import { StyleSheet } from 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import BpkText, { TEXT_STYLES } from './BpkText';
+import BpkIcon from './BpkIcon';
 
 const commonTests = () => {
-  describe('BpkText', () => {
+  describe('BpkIcon', () => {
     it('should render correctly', () => {
       const tree = renderer.create(
-        <View TODO />,
+        <BpkIcon
+          iconName="beer"
+          color="blue"
+        />,
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
+    it('should render small icon correctly', () => {
+      const tree = renderer.create(
+        <BpkIcon
+          iconName="beer"
+          color="blue"
+          small
+        />,
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should apply user styling', () => {
+      const tree = renderer.create(
+        <BpkIcon
+          iconName="beer"
+          color="blue"
+          style={{ width: 50 }}
+        />,
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+  });
+
+  it('should apply user props', () => {
+    const tree = renderer.create(
+      <BpkIcon
+        iconName="beer"
+        color="blue"
+        someExtraProp
+      />,
+      ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should only accept iconName values which exist in the icon mapping', () => {
+    expect(BpkIcon.propTypes.iconName({
+      iconName: 'some-icon-that-does-not-exist',
+    }, 'iconName', 'BpkIcon').toString()).toEqual('Error: Invalid prop `iconName` supplied to `BpkIcon`. No icon matches the name `some-icon-that-does-not-exist`.'); // eslint-disable-line max-len
   });
 };
 

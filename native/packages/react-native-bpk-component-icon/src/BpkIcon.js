@@ -29,7 +29,7 @@ const tokens = Platform.select({
 const iconNamePropType = (props, propName, componentName) => {
   const iconName = props[propName];
   if (!iconMappings[iconName]) {
-    return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName}\`. No icon matches the iconName provided.`); // eslint-disable-line max-len
+    return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName}\`. No icon matches the name \`${iconName}\`.`); // eslint-disable-line max-len
   }
   return false;
 };

@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkIcon should apply user styling 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "fontFamily": "BpkIcon",
+        "fontSize": 24,
+        "lineHeight": 24,
+        "width": 24,
+      },
+      false,
+      Object {
+        "color": "blue",
+      },
+      Object {
+        "width": 50,
+      },
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`iOS BpkIcon should render correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "fontFamily": "BpkIcon",
+        "fontSize": 24,
+        "lineHeight": 24,
+        "width": 24,
+      },
+      false,
+      Object {
+        "color": "blue",
+      },
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`iOS BpkIcon should render small icon correctly 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "fontFamily": "BpkIcon",
+        "fontSize": 24,
+        "lineHeight": 24,
+        "width": 24,
+      },
+      Object {
+        "fontSize": 16,
+        "lineHeight": 16,
+        "width": 16,
+      },
+      Object {
+        "color": "blue",
+      },
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`iOS should apply user props 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  someExtraProp={true}
+  style={
+    Array [
+      Object {
+        "fontFamily": "BpkIcon",
+        "fontSize": 24,
+        "lineHeight": 24,
+        "width": 24,
+      },
+      false,
+      Object {
+        "color": "blue",
+      },
+    ]
+  }
+>
+  
+</Text>
+`;
