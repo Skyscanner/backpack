@@ -9,6 +9,10 @@
     - `FONT_SIZE_XS`'s type was `size` but is now `font-size`
     - etc
 
+**Added:**
+- bpk-svgs:
+  - Added ttf icon font
+
 ## 2017-09-27 - Image loading spinner will now be removed from DOM after fading
 
 **Breaking:**
