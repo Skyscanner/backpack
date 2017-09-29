@@ -19,19 +19,12 @@
 import {
   View,
   TextInput,
-  Image,
   Platform,
   StyleSheet,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 import BpkIcon from 'react-native-bpk-component-icon';
-
-const tickSmIcon = require('./icons/sm/tick-circle.png'); // eslint-disable-line import/no-unresolved
-const tickLgIcon = require('./icons/lg/tick-circle.png'); // eslint-disable-line import/no-unresolved
-const exclaimationSmIcon = require('./icons/sm/exclaimation-circle.png'); // eslint-disable-line import/no-unresolved
-const exclaimationLgIcon = require('./icons/lg/exclaimation-circle.png');
- // eslint-disable-line import/no-unresolved
 
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
@@ -107,12 +100,6 @@ const styles = StyleSheet.create({
     width: spacingLg,
     height: spacingLg,
   },
-  validIcon: {
-    tintColor: colorGreen500,
-  },
-  invalidIcon: {
-    tintColor: colorRed500,
-  },
   smallIcon: {
     width: spacingBase,
     height: spacingBase,
@@ -122,45 +109,17 @@ const styles = StyleSheet.create({
 const BpkTextInput = (props) => {
   const { small, valid, value, disabled, style: innerStyle, ...rest } = props;
 
-  let iconSource = null;
-
   const style = [styles.input];
   const textStyle = [styles.text];
-  const iconStyle = [styles.icon];
   if (small) {
     style.push(styles.smallInput);
     textStyle.push(styles.smallText);
-    iconStyle.push(styles.smallIcon);
   }
   if (disabled) {
     textStyle.push(styles.disabledText);
   }
   if (value === '') {
     textStyle.push(styles.placeholderText);
-  }
-  if (valid !== null) {
-    // TODO Update to use Backpack-native Icon solution once implemented https://gojira.skyscanner.net/browse/BPK-841
-
-    if (valid) {
-      if (small) {
-        iconSource = tickSmIcon;
-      } else {
-        iconSource = tickLgIcon;
-      }
-    } else if (small) {
-      iconSource = exclaimationSmIcon;
-    } else {
-      iconSource = exclaimationLgIcon;
-    }
-
-
-    if (valid) {
-      style.push(styles.validOuter);
-      iconStyle.push(styles.validIcon);
-    } else {
-      style.push(styles.errorOuter);
-      iconStyle.push(styles.invalidIcon);
-    }
   }
 
   if (innerStyle) { style.push(innerStyle); }
@@ -177,7 +136,7 @@ const BpkTextInput = (props) => {
         value={value}
         {...rest}
       />
-      {iconSource &&
+      {valid !== null &&
         <BpkIcon
           iconName={valid ? 'tick-circle' : 'exclamation-circle'}
           color={valid ? colorGreen500 : colorRed500}

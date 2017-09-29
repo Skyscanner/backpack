@@ -13,11 +13,42 @@ npm install react-native-bpk-component-icon --save-dev
 ## Usage
 
 ```js
-  // TODO
+import React, { Component } from 'react';
+import { View } from 'react-native';
+import BpkIcon from 'react-native-bpk-component-icon';
+import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: TOKENS.spacingBase,
+  }
+});
+
+export default class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <BpkIcon
+          iconName="beer"
+          color={TOKENS.colorBlue500}
+          small
+        />,
+        <BpkIcon
+          iconName="beer"
+          color={TOKENS.colorBlue500}
+        />,
+      </View>
+    );
+  }
+}
 ```
 
 ## Props
 
-| Property    | PropType                                     | Required | Default Value |
-| ----------- | -------------------------------------------- | -------- | ------------- |
-| TODO        | TODO                                         | TODO     | TODO          |
+| Property  | PropType  | Required | Default Value |
+| --------- | --------- | -------- | ------------- |
+| iconName  | string    | yes      | -             |
+| color     | string    | yes      | -             |
+| small     | boolean   | no       | false         |

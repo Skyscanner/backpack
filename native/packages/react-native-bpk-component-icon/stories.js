@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { Platform, View, StyleSheet } from 'react-native';
-import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
 import iconMappings from 'bpk-svgs/dist/font/mapping.json';
 import BpkIcon from './index';
 

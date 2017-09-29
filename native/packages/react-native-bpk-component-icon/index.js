@@ -19,4 +19,3 @@
  import BpkIcon from './src/BpkIcon';
 
  export default BpkIcon;
- export { BpkIcon };

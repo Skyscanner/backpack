@@ -147,7 +147,6 @@ exports[`iOS BpkTextInput should render invalid correctly 1`] = `
         "paddingLeft": 12,
         "paddingRight": 12,
       },
-      undefined,
     ]
   }
 >
@@ -371,7 +370,6 @@ exports[`iOS BpkTextInput should render small invalid correctly 1`] = `
         "paddingLeft": 8,
         "paddingRight": 8,
       },
-      undefined,
     ]
   }
 >
@@ -507,7 +505,6 @@ exports[`iOS BpkTextInput should render small valid correctly 1`] = `
         "paddingLeft": 8,
         "paddingRight": 8,
       },
-      undefined,
     ]
   }
 >
@@ -582,7 +579,6 @@ exports[`iOS BpkTextInput should render valid correctly 1`] = `
         "paddingLeft": 12,
         "paddingRight": 12,
       },
-      undefined,
     ]
   }
 >
