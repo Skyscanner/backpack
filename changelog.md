@@ -1,6 +1,9 @@
 # Backpack changelog
 
 ## UNRELEASED
+- _Nothing yet!_
+
+## 2017-09-9 - Update tokens types value and add ttf icon font
 
 **Fixed:**
 - bpk-tokens:
