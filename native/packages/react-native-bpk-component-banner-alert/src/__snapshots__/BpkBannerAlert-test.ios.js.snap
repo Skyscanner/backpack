@@ -14,7 +14,7 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
 >
   <View
     accessibilityComponentType="button"
-    accessibilityLabel={undefined}
+    accessibilityLabel={null}
     accessibilityTraits={undefined}
     accessible={true}
     hasTVPreferredFocus={undefined}

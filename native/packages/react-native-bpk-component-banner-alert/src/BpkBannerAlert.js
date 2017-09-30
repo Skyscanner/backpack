@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
 });
 
 const BpkBannerAlert = (props) => {
-  const { type, message, onPress, dismissable, expanded, toggleButtonLabel, style, children, ...rest } = props;
+  const { type, message, onPress, dismissable, expanded, actionButtonLabel, style, children, ...rest } = props;
 
   const clickable = dismissable || children !== null;
 
@@ -175,6 +175,7 @@ const BpkBannerAlert = (props) => {
         accessibilityComponentType="button"
         onPress={clickable ? onPress : null}
         underlayColor={colorGray50}
+        accessibilityLabel={actionButtonLabel}
       >
         <View
           style={contentStyle}
@@ -212,7 +213,7 @@ BpkBannerAlert.propTypes = {
   dismissable: PropTypes.bool,
   expanded: PropTypes.bool,
   onPress: PropTypes.func,
-  toggleButtonLabel: PropTypes.oneOfType([
+  actionButtonLabel: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
   ]),
@@ -225,7 +226,7 @@ BpkBannerAlert.defaultProps = {
   expanded: false,
   onPress: () => null,
   style: null,
-  toggleButtonLabel: null,
+  actionButtonLabel: null,
 };
 
 export default BpkBannerAlert;

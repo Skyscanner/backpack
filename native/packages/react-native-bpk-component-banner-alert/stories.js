@@ -50,6 +50,50 @@ const styles = StyleSheet.create({
   },
 });
 
+class ExpandableBannerAlert extends React.Component {
+  state = {
+    expanded: true,
+  }
+
+  onPress = () => {
+    this.setState({ expanded: !this.state.expanded });
+  };
+
+  render() {
+    return (
+      <BpkBannerAlert
+        {...this.props}
+        onPress={this.onPress}
+        expanded={this.state.expanded}
+      />
+    );
+  }
+}
+
+ // eslint-disable-next-line react/no-multi-comp
+class DismissableBannerAlert extends React.Component {
+  state = {
+    exists: true,
+  }
+
+  onPress = () => {
+    this.setState({ exists: false });
+  };
+
+  render() {
+    if (this.state.exists) {
+      return (
+        <BpkBannerAlert
+          {...this.props}
+          onPress={this.onPress}
+          dismissable
+        />
+      );
+    }
+    return null;
+  }
+}
+
 storiesOf('BpkBannerAlert', module)
   .addDecorator(getStory =>
     <View style={styles.centered}>
@@ -63,30 +107,20 @@ storiesOf('BpkBannerAlert', module)
         type={ALERT_TYPES.SUCCESS}
         message="test"
       />
-      <BpkBannerAlert
+      <DismissableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
         message="test"
-        toggleButtonLabel="Dismiss"
-        dismissable
+        actionButtonLabel="Dismiss"
       />
-      <BpkBannerAlert
+      <ExpandableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="test"
-        toggleButtonLabel="Expand"
+        actionButtonLabel="Expand"
       >
         <BpkText>ASDF</BpkText>
-      </BpkBannerAlert>
-      <BpkBannerAlert
-        style={styles.bannerAlert}
-        type={ALERT_TYPES.ERROR}
-        message="test"
-        toggleButtonLabel="Collapse"
-        expanded
-      >
-        <BpkText>ASDF</BpkText>
-      </BpkBannerAlert>
+      </ExpandableBannerAlert>
     </View>
   ))
   .add('docs:default', () => (
@@ -114,21 +148,21 @@ storiesOf('BpkBannerAlert', module)
         style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
         message="test"
-        toggleButtonLabel="Dismiss"
+        actionButtonLabel="Dismiss"
         dismissable
       />
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
         message="test"
-        toggleButtonLabel="Dismiss"
+        actionButtonLabel="Dismiss"
         dismissable
       />
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="test"
-        toggleButtonLabel="Dismiss"
+        actionButtonLabel="Dismiss"
         dismissable
       />
     </View>
@@ -139,42 +173,42 @@ storiesOf('BpkBannerAlert', module)
         style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
         message="test"
-        toggleButtonLabel="Expand"
+        actionButtonLabel="Expand"
         expanded={false}
       ><BpkText>ASDF</BpkText></BpkBannerAlert>
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
         message="test"
-        toggleButtonLabel="Collapse"
+        actionButtonLabel="Collapse"
         expanded
       ><BpkText>ASDF</BpkText></BpkBannerAlert>
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
         message="test"
-        toggleButtonLabel="Expand"
+        actionButtonLabel="Expand"
         expanded={false}
       ><BpkText>ASDF</BpkText></BpkBannerAlert>
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
         message="test"
-        toggleButtonLabel="Collapse"
+        actionButtonLabel="Collapse"
         expanded
       ><BpkText>ASDF</BpkText></BpkBannerAlert>
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="test"
-        toggleButtonLabel="Expand"
+        actionButtonLabel="Expand"
         expanded={false}
       ><BpkText>ASDF</BpkText></BpkBannerAlert>
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="test"
-        toggleButtonLabel="Collapse"
+        actionButtonLabel="Collapse"
         expanded
       ><BpkText>ASDF</BpkText></BpkBannerAlert>
     </View>
@@ -190,14 +224,14 @@ storiesOf('BpkBannerAlert', module)
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
         message="Lots and lots and lots and lots and lots and lots and lots and lots and lots and lots and lots of text"
-        toggleButtonLabel="Dismiss"
+        actionButtonLabel="Dismiss"
         dismissable
       />
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="Lots and lots and lots and lots and lots and lots and lots and lots and lots and lots and lots of text"
-        toggleButtonLabel="Expand"
+        actionButtonLabel="Expand"
       >
         <BpkText>
           Much, much, much, much, much, much, much, much, much, much, much, much, much, much, much, much more text
@@ -207,7 +241,7 @@ storiesOf('BpkBannerAlert', module)
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="Lots and lots and lots and lots and lots and lots and lots and lots and lots and lots and lots of text"
-        toggleButtonLabel="Collapse"
+        actionButtonLabel="Collapse"
         expanded
       >
         <BpkText>
