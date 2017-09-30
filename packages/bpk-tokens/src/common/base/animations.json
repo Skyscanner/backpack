@@ -1,0 +1,7 @@
+{
+  "aliases": {
+    "ANIMATION_DURATION_XS": "50ms",
+    "ANIMATION_DURATION_SM": "200ms",
+    "ANIMATION_DURATION_BASE": "400ms"
+  }
+}

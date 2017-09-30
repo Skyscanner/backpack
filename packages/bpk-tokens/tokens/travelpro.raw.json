@@ -75,6 +75,15 @@
     "BLACK_FIFTY_PERCENT": {
       "value": "rgba(0,0,0,0.5)"
     },
+    "ANIMATION_DURATION_XS": {
+      "value": "50ms"
+    },
+    "ANIMATION_DURATION_SM": {
+      "value": "200ms"
+    },
+    "ANIMATION_DURATION_BASE": {
+      "value": "400ms"
+    },
     "BLUE_50": {
       "value": "#e1f4f8"
     },

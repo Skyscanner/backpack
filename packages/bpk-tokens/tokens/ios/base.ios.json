@@ -145,6 +145,33 @@
       "name": "shadowXlRadius"
     },
     {
+      "type": "string",
+      "value": "50ms",
+      "category": "animations",
+      ".alias": {
+        "value": "50ms"
+      },
+      "name": "animationDurationXs"
+    },
+    {
+      "type": "string",
+      "value": "200ms",
+      "category": "animations",
+      ".alias": {
+        "value": "200ms"
+      },
+      "name": "animationDurationSm"
+    },
+    {
+      "type": "string",
+      "value": "400ms",
+      "category": "animations",
+      ".alias": {
+        "value": "400ms"
+      },
+      "name": "animationDurationBase"
+    },
+    {
       "type": "color",
       "category": "colors",
       "value": "#ffffffff",

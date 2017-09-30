@@ -1,5 +1,14 @@
 {
   "aliases": {
+    "ANIMATION_DURATION_XS": {
+      "value": "50ms"
+    },
+    "ANIMATION_DURATION_SM": {
+      "value": "200ms"
+    },
+    "ANIMATION_DURATION_BASE": {
+      "value": "400ms"
+    },
     "WHITE": {
       "value": "#ffffff"
     },
@@ -331,6 +340,33 @@
         "value": 40
       },
       "name": "BORDER_RADIUS_PILL"
+    },
+    "ANIMATION_DURATION_XS": {
+      "type": "string",
+      "value": "50ms",
+      "category": "animations",
+      ".alias": {
+        "value": "50ms"
+      },
+      "name": "ANIMATION_DURATION_XS"
+    },
+    "ANIMATION_DURATION_SM": {
+      "type": "string",
+      "value": "200ms",
+      "category": "animations",
+      ".alias": {
+        "value": "200ms"
+      },
+      "name": "ANIMATION_DURATION_SM"
+    },
+    "ANIMATION_DURATION_BASE": {
+      "type": "string",
+      "value": "400ms",
+      "category": "animations",
+      ".alias": {
+        "value": "400ms"
+      },
+      "name": "ANIMATION_DURATION_BASE"
     },
     "COLOR_WHITE": {
       "type": "color",
@@ -1284,6 +1320,9 @@
     "BORDER_SIZE_XL",
     "BORDER_RADIUS_SM",
     "BORDER_RADIUS_PILL",
+    "ANIMATION_DURATION_XS",
+    "ANIMATION_DURATION_SM",
+    "ANIMATION_DURATION_BASE",
     "COLOR_WHITE",
     "COLOR_BLUE_50",
     "COLOR_BLUE_100",

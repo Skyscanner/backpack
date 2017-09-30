@@ -37,6 +37,9 @@ export const shadowXlOffsetHeight = 12;
 export const shadowXlOffsetWidth = 0;
 export const shadowXlOpacity = 0.2;
 export const shadowXlRadius = 50;
+export const animationDurationXs = "50ms";
+export const animationDurationSm = "200ms";
+export const animationDurationBase = "400ms";
 export const colorWhite = "rgb(255, 255, 255)";
 export const colorBlue50 = "rgb(225, 244, 248)";
 export const colorBlue100 = "rgb(203, 238, 245)";
@@ -163,6 +166,11 @@ shadowXlOffsetHeight,
 shadowXlOffsetWidth,
 shadowXlOpacity,
 shadowXlRadius,
+};
+export const animations = {
+animationDurationXs,
+animationDurationSm,
+animationDurationBase,
 };
 export const colors = {
 colorWhite,

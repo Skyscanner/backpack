@@ -1,6 +1,7 @@
 {
   "imports": [
     "./base/borders.json",
+    "./base/animations.json",
     "./base/colors.json",
     "./base/elevation.json",
     "./base/spacing.json",

@@ -22,6 +22,9 @@ export const borderSizeLg = 2;
 export const borderSizeXl = 3;
 export const borderRadiusSm = 2;
 export const borderRadiusPill = 40;
+export const animationDurationXs = "50ms";
+export const animationDurationSm = "200ms";
+export const animationDurationBase = "400ms";
 export const colorWhite = "rgb(255, 255, 255)";
 export const colorBlue50 = "rgb(225, 244, 248)";
 export const colorBlue100 = "rgb(203, 238, 245)";
@@ -135,6 +138,11 @@ borderSizeXl,
 export const radii = {
 borderRadiusSm,
 borderRadiusPill,
+};
+export const animations = {
+animationDurationXs,
+animationDurationSm,
+animationDurationBase,
 };
 export const colors = {
 colorWhite,

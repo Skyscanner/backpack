@@ -1,0 +1,19 @@
+{
+  "global": {
+    "type": "string"
+  },
+  "props": {
+    "ANIMATION_DURATION_XS": {
+      "value": "{!ANIMATION_DURATION_XS}",
+      "category": "animations"
+    },
+    "ANIMATION_DURATION_SM": {
+      "value": "{!ANIMATION_DURATION_SM}",
+      "category": "animations"
+    },
+    "ANIMATION_DURATION_BASE": {
+      "value": "{!ANIMATION_DURATION_BASE}",
+      "category": "animations"
+    }
+  }
+}
