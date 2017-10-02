@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+ /* eslint-disable no-console */
+
 const { execSync } = require('child_process');
 
 const checkVersion = (command, name, expected) => {
@@ -30,9 +32,10 @@ const checkVersion = (command, name, expected) => {
   }
 
   if (version !== expected) {
+    const contributingLink = 'https://github.com/Skyscanner/backpack/blob/master/contributing.md#getting-started';
     console.log(`Expected ${name} version ${expected}, but got ${version}.  😱`);
     console.log('');
-    console.log(`Please follow Backpack's contributing guide (see https://github.com/Skyscanner/backpack/blob/master/contributing.md#getting-started).`);
+    console.log(`Please follow Backpack's contributing guide (see ${contributingLink}).`);
     console.log('');
     process.exit(1);
   }
@@ -44,5 +47,5 @@ console.log('');
 checkVersion('node --version', 'Node', '8.6.0');
 checkVersion('npm --version', 'npm', '5.4.2');
 
-console.log(`All good.  👍`);
+console.log('All good.  👍');
 console.log('');
