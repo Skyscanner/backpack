@@ -66,13 +66,12 @@ const BpkIcon = (props) => {
 };
 
 BpkIcon.propTypes = {
-  icon: PropTypes.oneOf(Object.keys(iconMappings)),
+  icon: PropTypes.oneOf(Object.keys(iconMappings)).isRequired,
   small: PropTypes.bool,
   style: Text.propTypes.style,
 };
 
 BpkIcon.defaultProps = {
-  icon: undefined,
   small: false,
   style: null,
 };
