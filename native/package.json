@@ -10,6 +10,9 @@
     "test": "jest --coverage",
     "storybook": "storybook start -p 7007 --root ../"
   },
+  "rnpm": {
+    "assets": ["../packages/bpk-svgs/dist/font/"]
+  },
   "devDependencies": {
     "@storybook/react-native": "^3.2.11",
     "babel-preset-react-native": "3.0.2",

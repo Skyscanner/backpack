@@ -5,6 +5,8 @@
 **Added:**
 - react-native-bpk-theming
  - New BpkThemeProvider utility.
+- react-native-bpk-component-icon:
+  - New component `BpkIcon`. See http://backpack.prod.aws.skyscnr.com/components/native/icon/
 
 ## 2017-09-29 - Update tokens types value and add ttf icon font
 
