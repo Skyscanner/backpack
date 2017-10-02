@@ -290,8 +290,8 @@ describe('Portal', () => {
 
   it('should call the onRender handler before the onOpen handler handler when props are updated', () => {
     let order = 0;
-    const onRender = () => (order = 1);
-    const onOpen = () => (order = 2);
+    const onRender = () => { order = 1; };
+    const onOpen = () => { order = 2; };
     const portal = mount(
       <Portal isOpen={false} onRender={onRender} onOpen={onOpen}>
         <div>My portal content</div>
@@ -304,8 +304,8 @@ describe('Portal', () => {
 
   it('should call the onRender handler before the onOpen handler handler when component is mounted', () => {
     let order = 0;
-    const onRender = () => (order = 1);
-    const onOpen = () => (order = 2);
+    const onRender = () => { order = 1; };
+    const onOpen = () => { order = 2; };
     mount(
       <Portal isOpen onRender={onRender} onOpen={onOpen}>
         <div>My portal content</div>
