@@ -3,15 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
-    "android": "npm run android:emulator & node node_modules/react-native/local-cli/cli.js run-android",
+    "link": "react-native link",
+    "start": "react-native start",
+    "ios": "react-native run-ios",
     "android:emulator": "$ANDROID_HOME/tools/emulator -avd bpk-avd -dpi-device 420 -skin 1080x1920",
+    "android": "npm run android:emulator & react-native run-android",
     "test": "jest --coverage",
     "storybook": "storybook start -p 7007 --root ../"
   },
   "rnpm": {
-    "assets": ["../packages/bpk-svgs/dist/font/"]
+    "assets": [
+      "../packages/bpk-svgs/dist/font/"
+    ]
   },
   "devDependencies": {
     "@storybook/react-native": "^3.2.11",
