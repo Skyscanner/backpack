@@ -76,6 +76,7 @@ import AlignmentPage from './../pages/AlignmentPage';
 
 import NativeButtonPage from './../pages/NativeButtonPage';
 import NativeCardsPage from './../pages/NativeCardsPage';
+import NativeIconsPage from './../pages/NativeIconsPage';
 import NativeInputPage from './../pages/NativeTextInputPage';
 import NativeTextPage from './../pages/NativeTextPage';
 
@@ -147,6 +148,7 @@ const Routes = (
         <IndexRedirect to={ROUTES.NATIVE_TEXT} />
         <Route path={ROUTES.NATIVE_BUTTON} component={NativeButtonPage} />
         <Route path={ROUTES.NATIVE_CARDS} component={NativeCardsPage} />
+        <Route path={ROUTES.NATIVE_ICONS} component={NativeIconsPage} />
         <Route path={ROUTES.NATIVE_INPUT} component={NativeInputPage} />
         <Route path={ROUTES.NATIVE_TEXT} component={NativeTextPage} />
       </Route>

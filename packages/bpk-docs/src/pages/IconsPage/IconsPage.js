@@ -45,13 +45,13 @@ const iconsFinal = _(icons)
       categoryName: getFriendlyName(categoryId),
       component: category[name],
     })),
-  )
+)
   .value();
 
 const blurb = [
   <Paragraph>
-    Backpack icons are crafted to display across web and native apps. Their clean, solid shapes effortlessly
-    compliment the rest of Backpack.
+    Backpack icons are crafted to display across web and <BpkLink href="/components/native/icons">native</BpkLink> apps.
+    Their clean, solid shapes effortlessly compliment the rest of Backpack.
   </Paragraph>,
   <Paragraph>
     Icons are provided in two sizes: small (18px) and large (24px). Both are pixel-snapped for clarity at the intended
