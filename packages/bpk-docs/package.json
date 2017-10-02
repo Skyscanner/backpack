@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.167",
+  "version": "0.0.168",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -65,11 +65,11 @@
     "bpk-tokens": "^26.2.1",
     "prop-types": "^15.5.8",
     "react": "^15.0.0",
-    "react-native-bpk-component-button": "^3.0.2",
-    "react-native-bpk-component-card": "^1.0.2",
-    "react-native-bpk-component-icon": "^0.0.1",
-    "react-native-bpk-component-text": "^2.1.6",
-    "react-native-bpk-component-text-input": "^1.0.7",
+    "react-native-bpk-component-button": "^3.0.3",
+    "react-native-bpk-component-card": "^1.0.3",
+    "react-native-bpk-component-icon": "^0.0.2",
+    "react-native-bpk-component-text": "^2.1.7",
+    "react-native-bpk-component-text-input": "^1.0.8",
     "uglify-loader": "^1.4.0"
   }
 }
