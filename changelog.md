@@ -1,12 +1,15 @@
 # Backpack changelog
 
 ## UNRELEASED
+- _Nothing yet!_
+
+## 2017-10-01 - Add React Native Icon component and Theme Provider
 
 **Added:**
-- react-native-bpk-theming
+- react-native-bpk-theming  0.0.1 => 1.0.0
  - New BpkThemeProvider utility.
-- react-native-bpk-component-icon:
-  - New component `BpkIcon`. See http://backpack.prod.aws.skyscnr.com/components/native/icon/
+- react-native-bpk-component-icon 0.0.1 => 0.0.2
+  - New component `BpkIcon`. See http://backpack.prod.aws.skyscnr.com/components/native/icons/
 
 ## 2017-09-29 - Update tokens types value and add ttf icon font
 
