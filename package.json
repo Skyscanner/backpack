@@ -1,10 +1,11 @@
 {
   "name": "backpack",
+  "version": "0.0.1",
+  "private": true,
   "engines": {
     "node": "8.6.0",
     "npm": "5.4.2"
   },
-  "private": true,
   "scripts": {
     "preinstall": "node ./scripts/npm/check-versions.js",
     "postinstall:native": "(cd ./native && npm install)",
