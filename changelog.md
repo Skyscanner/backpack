@@ -17,7 +17,8 @@ _Nothing yet..._
 
 **Added:**
 - react-native-bpk-theming  0.0.1 => 1.0.0
- - New BpkThemeProvider utility.
+  - New `BpkThemeProvider` and `withTheme` utilities.
+  
 - react-native-bpk-component-icon 0.0.1 => 0.0.2
   - New component `BpkIcon`. See http://backpack.prod.aws.skyscnr.com/components/native/icons/
 
