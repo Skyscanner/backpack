@@ -20,7 +20,9 @@ import { Image } from 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import BpkButton, { BUTTON_TYPES } from './BpkButton';
+import BpkThemeProvider from 'react-native-bpk-theming';
+
+import BpkButton, { propTypes, BUTTON_TYPES } from './BpkButton';
 
 const onPressFn = jest.fn();
 const commonTests = () => {
@@ -112,14 +114,14 @@ const commonTests = () => {
     });
 
     it('should accept iconOnly prop when icon prop is supplied', () => {
-      expect(BpkButton.propTypes.icon({
+      expect(propTypes.icon({
         iconOnly: true,
         icon: <Image />,
       }, 'icon', 'BpkButton')).toBeFalsy();
     });
 
     it('should accept iconOnly prop when icon prop is supplied', () => {
-      expect(BpkButton.propTypes.icon({
+      expect(propTypes.icon({
         iconOnly: true,
       }, 'icon', 'BpkButton').toString()).toEqual('Error: Invalid prop `icon` supplied to `BpkButton`. When `iconOnly` is enabled, `icon` must be supplied.'); // eslint-disable-line max-len
     });
@@ -132,6 +134,23 @@ const commonTests = () => {
           onPress={onPressFn}
         />,
       )).toThrow('"silly" is not a valid button type. Valid types are primary, featured, secondary, destructive');
+    });
+  });
+
+  describe('BpkButtonThemed', () => {
+    const themeAttributes = {
+      gradientStartColor: '#CE93D8',
+      gradientEndColor: '#AB47BC',
+      textColor: 'rgba(255, 255, 255, 0.8)',
+    };
+
+    it('should render correctly', () => {
+      const tree = renderer.create(
+        <BpkThemeProvider theme={themeAttributes}>
+          <BpkButton title="Lorem ipsum" type="primary" onPress={onPressFn} />
+        </BpkThemeProvider>,
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
     });
   });
 };

@@ -15,8 +15,10 @@
   },
   "dependencies": {
     "bpk-tokens": "^26.3.0",
+    "lodash": "^4.17.4",
     "prop-types": "^15.5.8",
     "react-native-bpk-component-text": "^2.1.9",
+    "react-native-bpk-theming": "^1.0.0",
     "react-native-linear-gradient": "^2.3.0"
   }
 }
