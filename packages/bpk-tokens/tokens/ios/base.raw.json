@@ -183,6 +183,9 @@
     "PINK_900": {
       "value": "#94053A"
     },
+    "FONT_FAMILY": {
+      "value": "\"System\""
+    },
     "FONT_SIZE_XS": {
       "value": 11
     },
@@ -854,6 +857,15 @@
       },
       "name": "SPACING_XXL"
     },
+    "FONT_FAMILY": {
+      "value": "\"System\"",
+      "type": "font",
+      "category": "typesettings",
+      ".alias": {
+        "value": "\"System\""
+      },
+      "name": "FONT_FAMILY"
+    },
     "FONT_SIZE_XS": {
       "value": "11",
       "type": "font-size",
@@ -1202,6 +1214,7 @@
     "SPACING_LG",
     "SPACING_XL",
     "SPACING_XXL",
+    "FONT_FAMILY",
     "FONT_SIZE_XS",
     "FONT_SIZE_SM",
     "FONT_SIZE_BASE",

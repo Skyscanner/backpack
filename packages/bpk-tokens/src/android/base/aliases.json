@@ -3,6 +3,8 @@
     "../../common/base/colors.json"
   ],
   "aliases": {
+    "FONT_FAMILY": "\"sans-serif\"",
+    "FONT_FAMILY_EMPHASIZE": "\"sans-serif-medium\"",
     "FONT_SIZE_XS": 12,
     "FONT_SIZE_SM": 14,
     "FONT_SIZE_BASE": 14,

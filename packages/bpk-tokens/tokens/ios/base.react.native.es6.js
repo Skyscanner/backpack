@@ -84,6 +84,7 @@ export const spacingBase = 16;
 export const spacingLg = 24;
 export const spacingXl = 32;
 export const spacingXxl = 40;
+export const fontFamily = "System";
 export const fontSizeXs = 11;
 export const fontSizeSm = 13;
 export const fontSizeBase = 15;
@@ -187,6 +188,7 @@ spacingXl,
 spacingXxl,
 };
 export const typesettings = {
+fontFamily,
 fontSizeXs,
 fontSizeSm,
 fontSizeBase,

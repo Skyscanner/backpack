@@ -86,6 +86,8 @@ module.exports = {
   spacingLg: 24,
   spacingXl: 32,
   spacingXxl: 40,
+  fontFamily: "sans-serif",
+  fontFamilyEmphasize: "sans-serif-medium",
   fontSizeXs: 12,
   fontSizeSm: 14,
   fontSizeBase: 14,

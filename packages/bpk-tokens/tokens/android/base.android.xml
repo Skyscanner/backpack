@@ -87,6 +87,8 @@
   <property name="SPACING_LG" category="spacings">24dp</property>
   <property name="SPACING_XL" category="spacings">32dp</property>
   <property name="SPACING_XXL" category="spacings">40dp</property>
+  <property name="FONT_FAMILY" category="typesettings">"sans-serif"</property>
+  <property name="FONT_FAMILY_EMPHASIZE" category="typesettings">"sans-serif-medium"</property>
   <property name="FONT_SIZE_XS" category="typesettings">12sp</property>
   <property name="FONT_SIZE_SM" category="typesettings">14sp</property>
   <property name="FONT_SIZE_BASE" category="typesettings">14sp</property>

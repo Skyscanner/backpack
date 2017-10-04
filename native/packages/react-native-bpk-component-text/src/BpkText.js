@@ -55,7 +55,7 @@ const stylePropType = (props, propName, componentName) => {
 };
 
 const getAndroidFontFamily = fontWeight =>
-  (fontWeight === '500' ? 'sans-serif-medium' : 'sans-serif');
+  (fontWeight === '500' ? tokens.fontFamilyEmphasize : tokens.fontFamily);
 
 const getStyleByTextStyle = (textStyle) => {
   const camelCasedStyle = textStyle[0].toUpperCase() + textStyle.slice(1);
@@ -65,7 +65,7 @@ const getStyleByTextStyle = (textStyle) => {
   const lineHeight = tokens[`text${camelCasedStyle}LineHeight`];
   const fontWeight = Platform.OS === 'ios' ? tokens[`text${camelCasedStyle}FontWeight`] : undefined;
   const androidFontFamily = getAndroidFontFamily(tokens[`text${camelCasedStyle}FontWeight`]);
-  const fontFamily = Platform.OS === 'android' ? androidFontFamily : 'System';
+  const fontFamily = Platform.OS === 'android' ? androidFontFamily : tokens.fontFamily;
 
   return { fontSize, lineHeight, fontWeight, color, fontFamily };
 };

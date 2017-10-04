@@ -183,6 +183,12 @@
     "PINK_900": {
       "value": "#94053A"
     },
+    "FONT_FAMILY": {
+      "value": "\"sans-serif\""
+    },
+    "FONT_FAMILY_EMPHASIZE": {
+      "value": "\"sans-serif-medium\""
+    },
     "FONT_SIZE_XS": {
       "value": 12
     },
@@ -854,6 +860,24 @@
       },
       "name": "SPACING_XXL"
     },
+    "FONT_FAMILY": {
+      "value": "\"sans-serif\"",
+      "type": "font",
+      "category": "typesettings",
+      ".alias": {
+        "value": "\"sans-serif\""
+      },
+      "name": "FONT_FAMILY"
+    },
+    "FONT_FAMILY_EMPHASIZE": {
+      "value": "\"sans-serif-medium\"",
+      "type": "font",
+      "category": "typesettings",
+      ".alias": {
+        "value": "\"sans-serif-medium\""
+      },
+      "name": "FONT_FAMILY_EMPHASIZE"
+    },
     "FONT_SIZE_XS": {
       "value": "12",
       "type": "font-size",
@@ -1202,6 +1226,8 @@
     "SPACING_LG",
     "SPACING_XL",
     "SPACING_XXL",
+    "FONT_FAMILY",
+    "FONT_FAMILY_EMPHASIZE",
     "FONT_SIZE_XS",
     "FONT_SIZE_SM",
     "FONT_SIZE_BASE",
