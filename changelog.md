@@ -5,6 +5,9 @@
 **Fixed:**
 - bpk-component-ticket:
   - Ticket notch now displays correctly in Safari 11
+  
+- bpk-stylesheets:
+  - Added ability to have `.enable-font-smoothing` class added to body element
 
 ## 2017-10-01 - Add React Native Icon component and Theme Provider
 
