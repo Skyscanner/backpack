@@ -21,7 +21,7 @@ import readme from 'react-native-bpk-component-icon/readme.md';
 
 import BpkLink from 'bpk-component-link';
 import iosScreenshotDefault from 'react-native-bpk-component-icon/screenshots/ios/icons.png';
-import androidEmpty from './../../static/android_empty.svg';
+import androidScreenshotDefault from 'react-native-bpk-component-icon/screenshots/android/icons.png';
 
 
 import Paragraph from './../../components/Paragraph';
@@ -45,7 +45,7 @@ const components = [
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidEmpty}`,
+        src: `/${androidScreenshotDefault}`,
         altText: 'Android Default icon Component',
         subText: '(Google Pixel Emulator)',
       },
@@ -66,7 +66,7 @@ const NativeIconsPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={readme}
-  showMenu
+  showMenu={false}
 />;
 
 export default NativeIconsPage;

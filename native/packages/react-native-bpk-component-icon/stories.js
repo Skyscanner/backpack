@@ -20,6 +20,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { Platform, View, StyleSheet } from 'react-native';
 import iconMappings from 'bpk-svgs/dist/font/iconMapping.json';
+import BpkText from 'react-native-bpk-component-text';
 import BpkIcon from './index';
 
 const tokens = Platform.select({
@@ -28,12 +29,17 @@ const tokens = Platform.select({
 })();
 
 const {
-  colorBlue700,
+  colorBlue500,
+  colorGreen500,
+  colorYellow500,
   spacingBase,
+  spacingSm,
 } = tokens;
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: 'center',
+    alignSelf: 'center',
     flex: 1,
     justifyContent: 'center',
     padding: spacingBase,
@@ -42,13 +48,91 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
+  column: {
+    flexDirection: 'column',
+    marginBottom: spacingBase,
+  },
+  singleRow: {
+    minWidth: 100,
+  },
+  singleIcon: {
+    paddingLeft: spacingSm,
+    paddingRight: spacingSm,
+  },
   icon: {
-    color: colorBlue700,
+    color: colorBlue500,
+  },
+  bottomMargin: {
+    marginBottom: spacingSm,
   },
 });
 
+const getSmallIcons = () => (<View style={styles.column}>
+  <BpkText textStyle="sm" style={styles.bottomMargin}>Small:</BpkText>
+  <View style={[styles.singleRow, styles.group]}>
+    <BpkIcon
+      style={styles.singleIcon}
+      icon="flight"
+      small
+    />
+    <BpkIcon
+      style={styles.singleIcon}
+      icon="cars"
+      small
+    />
+    <BpkIcon
+      style={styles.singleIcon}
+      icon="hotels"
+      small
+    />
+  </View>
+</View>);
+
+const getLargeIcons = () => (<View style={styles.column} >
+  <BpkText textStyle="sm" style={styles.bottomMargin}>Large:</BpkText>
+  <View style={[styles.singleRow, styles.group]}>
+    <BpkIcon
+      style={styles.singleIcon}
+      icon="flight"
+    />
+    <BpkIcon
+      style={styles.singleIcon}
+      icon="cars"
+    />
+    <BpkIcon
+      style={styles.singleIcon}
+      icon="hotels"
+    />
+  </View>
+</View>);
+
+const getColouredIcons = () => (<View style={styles.column} >
+  <BpkText textStyle="sm" style={styles.bottomMargin}>In any color:</BpkText>
+  <View style={[styles.singleRow, styles.group]}>
+    <BpkIcon
+      style={[styles.singleIcon, { color: colorBlue500 }]}
+      icon="flight"
+    />
+    <BpkIcon
+      style={[styles.singleIcon, { color: colorGreen500 }]}
+      icon="cars"
+    />
+    <BpkIcon
+      style={[styles.singleIcon, { color: colorYellow500 }]}
+      icon="hotels"
+    />
+  </View>
+</View>);
+
 storiesOf('BpkIcon', module)
   .add('docs:icons', () => (
+    <View style={styles.container}>
+      {getSmallIcons()}
+      {getLargeIcons()}
+      {getColouredIcons()}
+    </View >
+  ))
+  .add('docs:all-icons', () => (
     <View style={styles.container} >
       <View style={styles.group} >
         {Object.keys(iconMappings).map(name => (
@@ -61,4 +145,3 @@ storiesOf('BpkIcon', module)
       </View>
     </View>
   ));
-

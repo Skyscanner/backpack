@@ -10,7 +10,7 @@ npm install react-native-bpk-component-icon --save-dev
 
 ## Native usage
 
-### IOS
+### iOS
 
 Add the following to your `Podfile` and run `pod update`:
 
