@@ -1,7 +1,10 @@
 # Backpack changelog
 
 ## UNRELEASED
-- _Nothing yet!_
+
+**Fixed:**
+- bpk-component-ticket:
+  - Ticket notch now displays correctly in Safari 11
 
 ## 2017-10-01 - Add React Native Icon component and Theme Provider
 

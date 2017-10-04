@@ -173,7 +173,8 @@
       display: block;
       width: $notch-size * 4;
       height: $notch-size * 4;
-      border: $notch-size solid white;
+      transform: translate3d(0, 0, 0); // BPK-1011 fix rendering bug in safari 11
+      border: $notch-size solid $bpk-color-white;
       border-radius: $notch-size * 2;
       box-shadow: $bpk-box-shadow-sm inset;
     }
