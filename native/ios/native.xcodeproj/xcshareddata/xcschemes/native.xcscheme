@@ -30,7 +30,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
                BuildableName = "native.app"
-               BlueprintName = "native"
+               BlueprintName = "Backpack Native"
                ReferencedContainer = "container:native.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "nativeTests.xctest"
-               BlueprintName = "nativeTests"
+               BuildableName = "Backpack Native Tests.xctest"
+               BlueprintName = "Backpack Native Tests"
                ReferencedContainer = "container:native.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -54,6 +54,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -61,8 +62,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "nativeTests.xctest"
-               BlueprintName = "nativeTests"
+               BuildableName = "Backpack Native Tests.xctest"
+               BlueprintName = "Backpack Native Tests"
                ReferencedContainer = "container:native.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -72,7 +73,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "native.app"
-            BlueprintName = "native"
+            BlueprintName = "Backpack Native"
             ReferencedContainer = "container:native.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,6 +84,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -95,7 +97,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "native.app"
-            BlueprintName = "native"
+            BlueprintName = "Backpack Native"
             ReferencedContainer = "container:native.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -114,7 +116,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "native.app"
-            BlueprintName = "native"
+            BlueprintName = "Backpack Native"
             ReferencedContainer = "container:native.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
