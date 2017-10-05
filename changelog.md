@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Fixed:**
+- bpk-stylesheets:
+  - Removed `.enable-jp-font-feature-settings` class
 
 ## 2017-10-04 - Fixed ticket "notch" display issue in Safari 11
 
@@ -18,7 +20,7 @@ _Nothing yet..._
 **Added:**
 - react-native-bpk-theming  0.0.1 => 1.0.0
   - New `BpkThemeProvider` and `withTheme` utilities.
-  
+
 - react-native-bpk-component-icon 0.0.1 => 0.0.2
   - New component `BpkIcon`. See http://backpack.prod.aws.skyscnr.com/components/native/icons/
 

@@ -49,12 +49,6 @@ body {
   &.enable-font-smoothing {
     -webkit-font-smoothing: antialiased;
   }
-
-  &.enable-jp-font-feature-settings {
-    @include bpk-locale('ja-JP') {
-      font-feature-settings: 'palt';
-    }
-  }
 }
 
 .hidden,
