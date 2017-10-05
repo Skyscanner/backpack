@@ -6,6 +6,11 @@
 - bpk-stylesheets:
   - Removed `.enable-jp-font-feature-settings` class
 
+- bpk-mixins:
+- bpk-tokens:
+- bpk-svgs:
+  - Re-categorized `STATE_SELECTED_BACKGROUND_COLOR` as `states`
+
 ## 2017-10-04 - Fixed ticket "notch" display issue in Safari 11
 
 **Fixed:**
