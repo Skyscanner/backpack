@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-button",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "main": "index.js",
   "description": "Backpack React Native button component.",
   "repository": {
@@ -14,9 +14,9 @@
     "react-native": ">= 0.47.0"
   },
   "dependencies": {
-    "bpk-tokens": "^26.2.2",
+    "bpk-tokens": "^26.3.0",
     "prop-types": "^15.5.8",
-    "react-native-bpk-component-text": "^2.1.8",
+    "react-native-bpk-component-text": "^2.1.9",
     "react-native-linear-gradient": "^2.3.0"
   }
 }
