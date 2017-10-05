@@ -3,6 +3,16 @@
     "./aliases.json"
   ],
   "props": {
+    "FONT_FAMILY": {
+      "value": "{!FONT_FAMILY}",
+      "type": "font",
+      "category": "typesettings"
+    },
+    "FONT_FAMILY_EMPHASIZE": {
+      "value": "{!FONT_FAMILY_EMPHASIZE}",
+      "type": "font",
+      "category": "typesettings"
+    },
     "FONT_SIZE_XS": {
       "value": "{!FONT_SIZE_XS}",
       "type": "font-size",

@@ -86,6 +86,7 @@ module.exports = {
   spacingLg: 24,
   spacingXl: 32,
   spacingXxl: 40,
+  fontFamily: "System",
   fontSizeXs: 11,
   fontSizeSm: 13,
   fontSizeBase: 15,

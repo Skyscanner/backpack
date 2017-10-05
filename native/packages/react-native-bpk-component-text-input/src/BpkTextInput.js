@@ -76,8 +76,7 @@ const styles = StyleSheet.create({
     fontSize: textLgFontSize,
     color: colorGray700,
     fontWeight: textLgFontWeight,
-    // TODO Replace with fontFamilyLg token once available
-    fontFamily: Platform.OS === 'android' ? 'sans-serif-medium' : 'System',
+    fontFamily: Platform.OS === 'android' ? tokens.fontFamilyEmphasize : tokens.fontFamily,
     lineHeight: textLgLineHeight,
     height: '100%',
   },
@@ -90,8 +89,7 @@ const styles = StyleSheet.create({
   smallText: {
     fontSize: textXsFontSize,
     fontWeight: textXsFontWeight,
-    // TODO Replace with fontFamilyXs token once available
-    fontFamily: Platform.OS === 'android' ? 'sans-serif' : 'System',
+    fontFamily: tokens.fontFamily,
     lineHeight: textXsLineHeight,
   },
   placeholderText: {

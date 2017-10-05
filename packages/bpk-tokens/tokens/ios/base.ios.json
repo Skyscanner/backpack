@@ -604,6 +604,15 @@
       "name": "spacingXxl"
     },
     {
+      "value": "\"System\"",
+      "type": "font",
+      "category": "typesettings",
+      ".alias": {
+        "value": "\"System\""
+      },
+      "name": "fontFamily"
+    },
+    {
       "value": "11",
       "type": "font-size",
       "category": "typesettings",

@@ -84,6 +84,8 @@ export const spacingBase = 16;
 export const spacingLg = 24;
 export const spacingXl = 32;
 export const spacingXxl = 40;
+export const fontFamily = "sans-serif";
+export const fontFamilyEmphasize = "sans-serif-medium";
 export const fontSizeXs = 12;
 export const fontSizeSm = 14;
 export const fontSizeBase = 14;
@@ -187,6 +189,8 @@ spacingXl,
 spacingXxl,
 };
 export const typesettings = {
+fontFamily,
+fontFamilyEmphasize,
 fontSizeXs,
 fontSizeSm,
 fontSizeBase,
