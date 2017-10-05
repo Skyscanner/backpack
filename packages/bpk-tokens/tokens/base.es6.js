@@ -555,7 +555,6 @@ colorYellow700,
 colorYellow800,
 colorYellow900,
 primaryGradient,
-stateSelectedBackgroundColor,
 };
 export const forms = {
 inputHeight,
@@ -661,6 +660,9 @@ listNestedMarginTop,
 listNestedMarginBottom,
 listItemMarginTop,
 listItemMarginBottom,
+};
+export const states = {
+stateSelectedBackgroundColor,
 };
 export const typesettings = {
 fontFamilyBase,

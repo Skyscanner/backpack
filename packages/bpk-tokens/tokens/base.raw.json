@@ -2467,7 +2467,7 @@
     },
     "STATE_SELECTED_BACKGROUND_COLOR": {
       "type": "color",
-      "category": "colors",
+      "category": "states",
       "value": "rgb(0, 140, 168)",
       ".alias": {
         "value": "#008ca8"
