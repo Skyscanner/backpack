@@ -2,13 +2,22 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-10-05 - New native font family tokens
+
+**Added:**
+- bpk-tokens: 26.2.2 => 26.3.0
+  - iOS `FONT_FAMILY` token
+  - Android `FONT_FAMILY` & `FONT_FAMILY_EMPHASIZE` token
+
 **Fixed:**
-- bpk-stylesheets:
+- bpk-stylesheets: 3.2.64 => 3.2.65
   - Removed `.enable-jp-font-feature-settings` class
 
-- bpk-mixins:
-- bpk-tokens:
-- bpk-svgs:
+- bpk-mixins: 17.0.2 => 17.0.3
+- bpk-tokens: 26.2.2 => 26.3.0
+- bpk-svgs: 5.10.1 => 5.10.2
   - Re-categorized `STATE_SELECTED_BACKGROUND_COLOR` as `states`
 
 ## 2017-10-04 - Fixed ticket "notch" display issue in Safari 11
