@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "native-tvOS.app"
-               BlueprintName = "native-tvOS"
+               BuildableName = "Backpack Native-tvOS.app"
+               BlueprintName = "Backpack Native-tvOS"
                ReferencedContainer = "container:native.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "native-tvOSTests.xctest"
-               BlueprintName = "native-tvOSTests"
+               BuildableName = "Backpack Native-tvOSTests.xctest"
+               BlueprintName = "Backpack Native-tvOSTests"
                ReferencedContainer = "container:native.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -54,6 +54,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -61,8 +62,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "native-tvOSTests.xctest"
-               BlueprintName = "native-tvOSTests"
+               BuildableName = "Backpack Native-tvOSTests.xctest"
+               BlueprintName = "Backpack Native-tvOSTests"
                ReferencedContainer = "container:native.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -71,8 +72,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "native-tvOS.app"
-            BlueprintName = "native-tvOS"
+            BuildableName = "Backpack Native-tvOS.app"
+            BlueprintName = "Backpack Native-tvOS"
             ReferencedContainer = "container:native.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,6 +84,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -94,8 +96,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "native-tvOS.app"
-            BlueprintName = "native-tvOS"
+            BuildableName = "Backpack Native-tvOS.app"
+            BlueprintName = "Backpack Native-tvOS"
             ReferencedContainer = "container:native.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -113,8 +115,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "native-tvOS.app"
-            BlueprintName = "native-tvOS"
+            BuildableName = "Backpack Native-tvOS.app"
+            BlueprintName = "Backpack Native-tvOS"
             ReferencedContainer = "container:native.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
