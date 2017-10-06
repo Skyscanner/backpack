@@ -2,7 +2,32 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-svgs
+  - Added 17 new icons.
+    - alert--active
+    - alert--add
+    - alert--expired
+    - alert--remove
+    - baggage--add
+    - baggage--remove
+    - data
+    - device-mid
+    - device-wide
+    - direct
+    - landmark
+    - menu--horizontal
+    - menu--vertical
+    - thumbs-down
+    - thumbs-up
+    - window--reduce
+    - window
+  - Modified 5 icons
+    - expand
+    - stops
+    - new-window
+    - ticket
+    - time
 
 ## 2017-10-04 - Fixed ticket "notch" display issue in Safari 11
 
@@ -18,7 +43,7 @@ _Nothing yet..._
 **Added:**
 - react-native-bpk-theming  0.0.1 => 1.0.0
   - New `BpkThemeProvider` and `withTheme` utilities.
-  
+
 - react-native-bpk-component-icon 0.0.1 => 0.0.2
   - New component `BpkIcon`. See http://backpack.prod.aws.skyscnr.com/components/native/icons/
 

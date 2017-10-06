@@ -144,5 +144,8 @@
         "lines": 75
       }
     }
+  },
+  "dependencies": {
+    "npm": "^5.4.2"
   }
 }
