@@ -1,0 +1,17 @@
+{
+  "global": {
+    "type": "size",
+    "category": "borders"
+  },
+  "props": {
+    "BORDER_SIZE_SM": {
+      "value": "{!BORDER_SIZE_SM}"
+    },
+    "BORDER_SIZE_LG": {
+      "value": "{!BORDER_SIZE_LG}"
+    },
+    "BORDER_SIZE_XL": {
+      "value": "{!BORDER_SIZE_XL}"
+    }
+  }
+}

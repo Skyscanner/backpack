@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-tokens:
+  - iOS & Android border size tokens
 
 ## 2017-10-06 - React Native Icon Component
 - react-native-bpk-component-icon: 0.0.4 => 1.0.0

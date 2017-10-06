@@ -37,6 +37,7 @@ const tokens = Platform.select({
 })();
 
 const {
+  borderSizeSm,
   colorGray100,
   colorGray300,
   colorGray700,
@@ -61,13 +62,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderColor: colorGray100,
-      // TODO Replace with borderSm token once available
-    borderWidth: 1,
+    borderWidth: borderSizeSm,
       // TODO Replace with radiiSm token once available
     borderRadius: spacingSm,
     paddingLeft: spacingSm * 3,
     paddingRight: spacingSm * 3,
-      // TODO Replace '1' with borderSm token once available
     height: (spacingLg * 2) - (1 * 2),
   },
   text: {
@@ -83,7 +82,6 @@ const styles = StyleSheet.create({
   smallInput: {
     paddingLeft: spacingMd,
     paddingRight: spacingMd,
-      // TODO Replace '1' with borderSm token once available
     height: spacingXl - (1 * 2),
   },
   smallText: {

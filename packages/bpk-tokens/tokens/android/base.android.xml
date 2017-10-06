@@ -20,6 +20,9 @@
   
 -->
 <resources>
+  <property name="BORDER_SIZE_SM" category="borders">1dp</property>
+  <property name="BORDER_SIZE_LG" category="borders">2dp</property>
+  <property name="BORDER_SIZE_XL" category="borders">3dp</property>
   <color name="COLOR_WHITE" category="colors">#ffffffff</color>
   <color name="COLOR_BLUE_50" category="colors">#ffe1f4f8</color>
   <color name="COLOR_BLUE_100" category="colors">#ffcbeef5</color>
