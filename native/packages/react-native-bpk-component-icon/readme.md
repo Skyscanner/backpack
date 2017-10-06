@@ -8,20 +8,25 @@
 npm install react-native-bpk-component-icon --save-dev
 ```
 
-## Native usage
-
-### iOS
+### iOS installation
 
 Add the following to your `Podfile` and run `pod update`:
 
-`pod 'BpkIcons', :path => 'node_modules/react-native-bpk-component-icon'`
+```
+pod 'BpkIcons', :path => 'node_modules/react-native-bpk-component-icon'
+```
 
-### Android
+### Android installation
+
 This method has the advantage of fonts being copied from this module at build time so that the fonts and JS are always in sync, making upgrades painless.
 
 Edit `android/app/build.gradle` ( NOT `android/build.gradle` ) and add the following:
-`
-`apply from: "node_modules/react-native-bpk-component-icon/fonts.gradle"`
+
+```
+apply from: "node_modules/react-native-bpk-component-icon/fonts.gradle"
+```
+
+## Usage
 
 ```js
 import React, { Component } from 'react';
