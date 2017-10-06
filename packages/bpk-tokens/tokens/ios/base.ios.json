@@ -28,6 +28,105 @@
       "name": "borderSizeXl"
     },
     {
+      "value": "#252033ff",
+      "type": "color",
+      "category": "box-shadows",
+      ".alias": {
+        "value": "#252033"
+      },
+      "name": "shadowSmColor"
+    },
+    {
+      "value": 1,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "shadowSmOffsetHeight"
+    },
+    {
+      "value": 0,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "shadowSmOffsetWidth"
+    },
+    {
+      "value": 0.3,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "shadowSmOpacity"
+    },
+    {
+      "value": 3,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "shadowSmRadius"
+    },
+    {
+      "value": "#252033ff",
+      "type": "color",
+      "category": "box-shadows",
+      ".alias": {
+        "value": "#252033"
+      },
+      "name": "shadowLgColor"
+    },
+    {
+      "value": 4,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "shadowLgOffsetHeight"
+    },
+    {
+      "value": 0,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "shadowLgOffsetWidth"
+    },
+    {
+      "value": 0.25,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "shadowLgOpacity"
+    },
+    {
+      "value": 14,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "shadowLgRadius"
+    },
+    {
+      "value": "#252033ff",
+      "type": "color",
+      "category": "box-shadows",
+      ".alias": {
+        "value": "#252033"
+      },
+      "name": "shadowXlColor"
+    },
+    {
+      "value": 12,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "shadowXlOffsetHeight"
+    },
+    {
+      "value": 0,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "shadowXlOffsetWidth"
+    },
+    {
+      "value": 0.2,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "shadowXlOpacity"
+    },
+    {
+      "value": 50,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "shadowXlRadius"
+    },
+    {
       "type": "color",
       "category": "colors",
       "value": "#ffffffff",

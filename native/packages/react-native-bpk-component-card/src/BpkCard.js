@@ -33,10 +33,14 @@ const tokens = Platform.select({
 
 const {
   colorGray50,
-  colorGray900,
   colorWhite,
   elevationXs,
   spacingBase,
+  shadowSmColor,
+  shadowSmOffsetWidth,
+  shadowSmOffsetHeight,
+  shadowSmOpacity,
+  shadowSmRadius,
 } = tokens;
 
 /**
@@ -44,13 +48,12 @@ const {
  */
 const styles = StyleSheet.create({
   card: {
-    // TODO: update once tokens are available
     backgroundColor: colorWhite,
     elevation: elevationXs,
-    shadowColor: colorGray900,
-    shadowOffset: { width: 0, height: 1 / PixelRatio.get() },
-    shadowOpacity: 0.3,
-    shadowRadius: 3 / PixelRatio.get(),
+    shadowColor: shadowSmColor,
+    shadowOffset: { width: shadowSmOffsetWidth, height: shadowSmOffsetHeight / PixelRatio.get() },
+    shadowOpacity: shadowSmOpacity,
+    shadowRadius: shadowSmRadius / PixelRatio.get(),
   },
   common: {
     // TODO: update once tokens are available
