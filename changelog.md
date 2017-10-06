@@ -4,6 +4,9 @@
 
 _Nothing yet..._
 
+## 2017-10-06 - React Native Icon Component
+- react-native-bpk-component-icon: 0.0.4 => 1.0.0
+
 ## 2017-10-05 - New native font family tokens
 
 **Added:**
