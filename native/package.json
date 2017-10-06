@@ -28,6 +28,9 @@
     "preset": "react-native",
     "verbose": true,
     "testRegex": ".*-test(\\.ios)?(\\.android)?\\.js$",
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|bpk)"
+    ],
     "coverageThreshold": {
       "global": {
         "statements": 75,

@@ -36,6 +36,7 @@ const commonTests = () => {
     });
 
     it('should error when theme is not provided', () => {
+      jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
       expect(() => renderer.create(
         <BpkThemeProvider>
           <Text>Lorem ipsum</Text>

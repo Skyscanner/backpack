@@ -124,6 +124,7 @@ const commonTests = () => {
       }, 'icon', 'BpkButton').toString()).toEqual('Error: Invalid prop `icon` supplied to `BpkButton`. When `iconOnly` is enabled, `icon` must be supplied.'); // eslint-disable-line max-len
     });
     it('should throw an error for invalid button type', () => {
+      jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
       expect(() => renderer.create(
         <BpkButton
           title="Lorem ipsum"
