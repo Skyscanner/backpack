@@ -84,6 +84,11 @@
   <color name="COLOR_PINK_700" category="colors">#ffc50f52</color>
   <color name="COLOR_PINK_800" category="colors">#ffb00c48</color>
   <color name="COLOR_PINK_900" category="colors">#ff94053a</color>
+  <property name="ELEVATION_XS" category="elevation">2dp</property>
+  <property name="ELEVATION_SM" category="elevation">4dp</property>
+  <property name="ELEVATION_BASE" category="elevation">6dp</property>
+  <property name="ELEVATION_LG" category="elevation">16dp</property>
+  <property name="ELEVATION_XL" category="elevation">24dp</property>
   <property name="SPACING_SM" category="spacings">4dp</property>
   <property name="SPACING_MD" category="spacings">8dp</property>
   <property name="SPACING_BASE" category="spacings">16dp</property>

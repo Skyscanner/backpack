@@ -263,6 +263,21 @@
     },
     "BORDER_SIZE_XL": {
       "value": 3
+    },
+    "ELEVATION_XS": {
+      "value": 2
+    },
+    "ELEVATION_SM": {
+      "value": 4
+    },
+    "ELEVATION_BASE": {
+      "value": 6
+    },
+    "ELEVATION_LG": {
+      "value": 16
+    },
+    "ELEVATION_XL": {
+      "value": 24
     }
   },
   "props": {
@@ -842,6 +857,51 @@
       },
       "name": "COLOR_PINK_900"
     },
+    "ELEVATION_XS": {
+      "type": "size",
+      "category": "elevation",
+      "value": "2",
+      ".alias": {
+        "value": 2
+      },
+      "name": "ELEVATION_XS"
+    },
+    "ELEVATION_SM": {
+      "type": "size",
+      "category": "elevation",
+      "value": "4",
+      ".alias": {
+        "value": 4
+      },
+      "name": "ELEVATION_SM"
+    },
+    "ELEVATION_BASE": {
+      "type": "size",
+      "category": "elevation",
+      "value": "6",
+      ".alias": {
+        "value": 6
+      },
+      "name": "ELEVATION_BASE"
+    },
+    "ELEVATION_LG": {
+      "type": "size",
+      "category": "elevation",
+      "value": "16",
+      ".alias": {
+        "value": 16
+      },
+      "name": "ELEVATION_LG"
+    },
+    "ELEVATION_XL": {
+      "type": "size",
+      "category": "elevation",
+      "value": "24",
+      ".alias": {
+        "value": 24
+      },
+      "name": "ELEVATION_XL"
+    },
     "SPACING_SM": {
       "type": "size",
       "category": "spacings",
@@ -1259,6 +1319,11 @@
     "COLOR_PINK_700",
     "COLOR_PINK_800",
     "COLOR_PINK_900",
+    "ELEVATION_XS",
+    "ELEVATION_SM",
+    "ELEVATION_BASE",
+    "ELEVATION_LG",
+    "ELEVATION_XL",
     "SPACING_SM",
     "SPACING_MD",
     "SPACING_BASE",

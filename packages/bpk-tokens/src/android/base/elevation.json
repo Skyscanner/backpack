@@ -1,0 +1,23 @@
+{
+  "global": {
+    "type": "size",
+    "category": "elevation"
+  },
+  "props": {
+    "ELEVATION_XS": {
+      "value": "{!ELEVATION_XS}"
+    },
+    "ELEVATION_SM": {
+      "value": "{!ELEVATION_SM}"
+    },
+    "ELEVATION_BASE": {
+      "value": "{!ELEVATION_BASE}"
+    },
+    "ELEVATION_LG": {
+      "value": "{!ELEVATION_LG}"
+    },
+    "ELEVATION_XL": {
+      "value": "{!ELEVATION_XL}"
+    }
+  }
+}

@@ -81,6 +81,11 @@ export const colorPink600 = "rgb(217, 43, 107)";
 export const colorPink700 = "rgb(197, 15, 82)";
 export const colorPink800 = "rgb(176, 12, 72)";
 export const colorPink900 = "rgb(148, 5, 58)";
+export const elevationXs = 2;
+export const elevationSm = 4;
+export const elevationBase = 6;
+export const elevationLg = 16;
+export const elevationXl = 24;
 export const spacingSm = 4;
 export const spacingMd = 8;
 export const spacingBase = 16;
@@ -187,6 +192,13 @@ colorPink600,
 colorPink700,
 colorPink800,
 colorPink900,
+};
+export const elevation = {
+elevationXs,
+elevationSm,
+elevationBase,
+elevationLg,
+elevationXl,
 };
 export const spacings = {
 spacingSm,

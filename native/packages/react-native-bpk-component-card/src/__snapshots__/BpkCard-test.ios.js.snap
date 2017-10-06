@@ -26,7 +26,7 @@ exports[`iOS BpkCard should render correctly 1`] = `
         Array [
           Object {
             "backgroundColor": "rgb(255, 255, 255)",
-            "elevation": 3,
+            "elevation": undefined,
             "shadowColor": "rgb(37, 32, 51)",
             "shadowOffset": Object {
               "height": 0.5,
@@ -114,7 +114,7 @@ exports[`iOS BpkCard should render correctly without padding 1`] = `
         Array [
           Object {
             "backgroundColor": "rgb(255, 255, 255)",
-            "elevation": 3,
+            "elevation": undefined,
             "shadowColor": "rgb(37, 32, 51)",
             "shadowOffset": Object {
               "height": 0.5,

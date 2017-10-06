@@ -35,6 +35,7 @@ const {
   colorGray50,
   colorGray900,
   colorWhite,
+  elevationXs,
   spacingBase,
 } = tokens;
 
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
   card: {
     // TODO: update once tokens are available
     backgroundColor: colorWhite,
-    elevation: 3,
+    elevation: elevationXs,
     shadowColor: colorGray900,
     shadowOffset: { width: 0, height: 1 / PixelRatio.get() },
     shadowOpacity: 0.3,
@@ -56,7 +57,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   overflowHidden: {
-    // TODO: update once tokens are available
     overflow: 'hidden',
   },
   padded: {

@@ -29,6 +29,11 @@
     "SPACING_XXL": 40,
     "BORDER_SIZE_SM": 1,
     "BORDER_SIZE_LG": 2,
-    "BORDER_SIZE_XL": 3
+    "BORDER_SIZE_XL": 3,
+    "ELEVATION_XS": 2,
+    "ELEVATION_SM": 4,
+    "ELEVATION_BASE": 6,
+    "ELEVATION_LG": 16,
+    "ELEVATION_XL": 24
   }
 }
