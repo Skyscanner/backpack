@@ -2,8 +2,8 @@
   "properties": [
     {
       "type": "size",
-      "category": "borders",
       "value": "1",
+      "category": "borders",
       ".alias": {
         "value": 1
       },
@@ -11,8 +11,8 @@
     },
     {
       "type": "size",
-      "category": "borders",
       "value": "2",
+      "category": "borders",
       ".alias": {
         "value": 2
       },
@@ -20,12 +20,30 @@
     },
     {
       "type": "size",
-      "category": "borders",
       "value": "3",
+      "category": "borders",
       ".alias": {
         "value": 3
       },
       "name": "borderSizeXl"
+    },
+    {
+      "type": "size",
+      "value": "4",
+      "category": "radii",
+      ".alias": {
+        "value": 4
+      },
+      "name": "borderRadiusSm"
+    },
+    {
+      "type": "size",
+      "value": "40",
+      "category": "radii",
+      ".alias": {
+        "value": 40
+      },
+      "name": "borderRadiusPill"
     },
     {
       "value": "#252033ff",

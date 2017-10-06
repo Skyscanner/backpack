@@ -35,6 +35,7 @@ const {
   colorGray50,
   colorWhite,
   elevationXs,
+  borderRadiusSm,
   spacingBase,
   shadowSmColor,
   shadowSmOffsetWidth,
@@ -56,8 +57,7 @@ const styles = StyleSheet.create({
     shadowRadius: shadowSmRadius / PixelRatio.get(),
   },
   common: {
-    // TODO: update once tokens are available
-    borderRadius: 8,
+    borderRadius: borderRadiusSm,
   },
   overflowHidden: {
     overflow: 'hidden',

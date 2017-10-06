@@ -37,6 +37,7 @@ const tokens = Platform.select({
 })();
 
 const {
+  borderRadiusSm,
   borderSizeSm,
   colorGray100,
   colorGray300,
@@ -63,8 +64,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: colorGray100,
     borderWidth: borderSizeSm,
-      // TODO Replace with radiiSm token once available
-    borderRadius: spacingSm,
+    borderRadius: borderRadiusSm,
     paddingLeft: spacingSm * 3,
     paddingRight: spacingSm * 3,
     height: (spacingLg * 2) - (1 * 2),

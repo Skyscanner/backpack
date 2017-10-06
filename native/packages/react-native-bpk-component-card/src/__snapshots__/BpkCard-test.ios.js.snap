@@ -36,7 +36,7 @@ exports[`iOS BpkCard should render correctly 1`] = `
             "shadowRadius": 1.5,
           },
           Object {
-            "borderRadius": 8,
+            "borderRadius": 4,
           },
           Object {
             "padding": 16,
@@ -56,7 +56,7 @@ exports[`iOS BpkCard should render correctly 1`] = `
           "overflow": "hidden",
         },
         Object {
-          "borderRadius": 8,
+          "borderRadius": 4,
         },
       ]
     }
@@ -124,7 +124,7 @@ exports[`iOS BpkCard should render correctly without padding 1`] = `
             "shadowRadius": 1.5,
           },
           Object {
-            "borderRadius": 8,
+            "borderRadius": 4,
           },
         ],
         null,
@@ -141,7 +141,7 @@ exports[`iOS BpkCard should render correctly without padding 1`] = `
           "overflow": "hidden",
         },
         Object {
-          "borderRadius": 8,
+          "borderRadius": 4,
         },
       ]
     }
