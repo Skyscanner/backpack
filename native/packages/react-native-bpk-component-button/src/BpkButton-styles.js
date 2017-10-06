@@ -16,15 +16,19 @@
  * limitations under the License.
  */
 
+import { setOpacity } from 'bpk-tokens';
 import { Platform, StyleSheet } from 'react-native';
 
-const tokens = Platform.OS === 'ios' ?
-  require('bpk-tokens/tokens/ios/base.react.native.common.js') :
-  require('bpk-tokens/tokens/android/base.react.native.common.js')
-;
+const tokens = Platform.select({
+  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
+  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
+})();
 
 // Slight darkness to use when buttons are pressed in.
-const underlayColor = 'rgba(0, 0, 0, 0.15)';
+const underlayColor = Platform.select({
+  ios: () => setOpacity(tokens.underlayColor, tokens.underlayOpacity),
+  android: () => null,
+})();
 
 // A high number used as a borderRadius value produces circular corners.
 const roundedBorderRadius = 100;

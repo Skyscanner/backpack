@@ -1,0 +1,15 @@
+{
+  "global": {
+    "category": "touchables"
+  },
+  "props": {
+    "UNDERLAY_COLOR": {
+      "value": "{!GRAY_900}",
+      "type": "color"
+    },
+    "UNDERLAY_OPACITY": {
+      "value": "0.15",
+      "type": "number"
+    }
+  }
+}

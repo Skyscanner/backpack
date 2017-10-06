@@ -31,7 +31,7 @@ const ANDROID_ONLY_PROPS = [
   'ELEVATION_LG',
   'ELEVATION_XL',
 ];
-const IOS_ONLY_PROPS = [];
+const IOS_ONLY_PROPS = ['UNDERLAY_COLOR', 'UNDERLAY_OPACITY'];
 
 describe('React Native output', () => {
   it('Produces the same output for Android and iOS', () => {

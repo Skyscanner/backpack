@@ -87,6 +87,8 @@ export const spacingBase = 16;
 export const spacingLg = 24;
 export const spacingXl = 32;
 export const spacingXxl = 40;
+export const underlayColor = "rgb(37, 32, 51)";
+export const underlayOpacity = 0.15;
 export const fontFamily = "System";
 export const fontSizeXs = 11;
 export const fontSizeSm = 13;
@@ -194,6 +196,10 @@ spacingBase,
 spacingLg,
 spacingXl,
 spacingXxl,
+};
+export const touchables = {
+underlayColor,
+underlayOpacity,
 };
 export const typesettings = {
 fontFamily,

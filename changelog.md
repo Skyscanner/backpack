@@ -6,6 +6,12 @@
 - bpk-tokens:
   - iOS & Android border size tokens
   - Android elevation tokens
+  - iOS touchable highlight underlay tokens
+
+**Fixed:**
+- bpk-tokens:
+  - Fixed package meta data to point to correct entry file
+    i.e. `"main": "index.js",` instead of `"main": "tokens/base.default.scss",`
 
 ## 2017-10-06 - React Native Icon Component
 - react-native-bpk-component-icon: 0.0.4 => 1.0.0

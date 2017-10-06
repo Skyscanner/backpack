@@ -3,6 +3,7 @@
     "./base/borders.json",
     "./base/colors.json",
     "./base/spacing.json",
+    "./base/touchables.json",
     "./base/typography.json"
   ]
 }

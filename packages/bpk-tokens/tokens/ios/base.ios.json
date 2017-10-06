@@ -631,6 +631,21 @@
       "name": "spacingXxl"
     },
     {
+      "category": "touchables",
+      "value": "#252033ff",
+      "type": "color",
+      ".alias": {
+        "value": "#252033"
+      },
+      "name": "underlayColor"
+    },
+    {
+      "category": "touchables",
+      "value": "0.15",
+      "type": "number",
+      "name": "underlayOpacity"
+    },
+    {
       "value": "\"System\"",
       "type": "font",
       "category": "typesettings",

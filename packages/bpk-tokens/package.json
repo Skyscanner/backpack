@@ -2,7 +2,7 @@
   "name": "bpk-tokens",
   "version": "26.3.0",
   "description": "Backpack design tokens for colors, spacing, font, etc.",
-  "main": "tokens/base.default.scss",
+  "main": "index.js",
   "scripts": {
     "tokens": "gulp"
   },
