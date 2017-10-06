@@ -32,7 +32,7 @@ const roundedBorderRadius = 100;
 // These should probably be their own tokens.
 // For now they are derived from existing tokens.
 const largeHeight = tokens.spacingSm * 12;
-const buttonBorderWidth = tokens.spacingSm / 2;
+const buttonBorderWidth = tokens.borderSizeLg;
 
 // The base styles that are initially applied to all buttons.
 const base = StyleSheet.create({

@@ -17,6 +17,9 @@
  * limitations under the License.
  * 
  */
+export const borderSizeSm = 1;
+export const borderSizeLg = 2;
+export const borderSizeXl = 3;
 export const colorWhite = "rgb(255, 255, 255)";
 export const colorBlue50 = "rgb(225, 244, 248)";
 export const colorBlue100 = "rgb(203, 238, 245)";
@@ -117,6 +120,11 @@ export const textXxlFontSize = 24;
 export const textXxlFontWeight = "400";
 export const textXxlLineHeight = 32;
 export const textEmphasizedFontWeight = "500";
+export const borders = {
+borderSizeSm,
+borderSizeLg,
+borderSizeXl,
+};
 export const colors = {
 colorWhite,
 colorBlue50,

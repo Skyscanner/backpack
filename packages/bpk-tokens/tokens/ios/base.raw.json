@@ -251,9 +251,45 @@
     },
     "SPACING_XXL": {
       "value": 40
+    },
+    "BORDER_SIZE_SM": {
+      "value": 1
+    },
+    "BORDER_SIZE_LG": {
+      "value": 2
+    },
+    "BORDER_SIZE_XL": {
+      "value": 3
     }
   },
   "props": {
+    "BORDER_SIZE_SM": {
+      "type": "size",
+      "category": "borders",
+      "value": "1",
+      ".alias": {
+        "value": 1
+      },
+      "name": "BORDER_SIZE_SM"
+    },
+    "BORDER_SIZE_LG": {
+      "type": "size",
+      "category": "borders",
+      "value": "2",
+      ".alias": {
+        "value": 2
+      },
+      "name": "BORDER_SIZE_LG"
+    },
+    "BORDER_SIZE_XL": {
+      "type": "size",
+      "category": "borders",
+      "value": "3",
+      ".alias": {
+        "value": 3
+      },
+      "name": "BORDER_SIZE_XL"
+    },
     "COLOR_WHITE": {
       "type": "color",
       "category": "colors",
@@ -1147,6 +1183,9 @@
     }
   },
   "propKeys": [
+    "BORDER_SIZE_SM",
+    "BORDER_SIZE_LG",
+    "BORDER_SIZE_XL",
     "COLOR_WHITE",
     "COLOR_BLUE_50",
     "COLOR_BLUE_100",

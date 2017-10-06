@@ -1,6 +1,33 @@
 {
   "properties": [
     {
+      "type": "size",
+      "category": "borders",
+      "value": "1",
+      ".alias": {
+        "value": 1
+      },
+      "name": "borderSizeSm"
+    },
+    {
+      "type": "size",
+      "category": "borders",
+      "value": "2",
+      ".alias": {
+        "value": 2
+      },
+      "name": "borderSizeLg"
+    },
+    {
+      "type": "size",
+      "category": "borders",
+      "value": "3",
+      ".alias": {
+        "value": 3
+      },
+      "name": "borderSizeXl"
+    },
+    {
       "type": "color",
       "category": "colors",
       "value": "#ffffffff",
