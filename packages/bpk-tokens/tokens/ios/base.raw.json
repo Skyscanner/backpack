@@ -893,6 +893,21 @@
       },
       "name": "SPACING_XXL"
     },
+    "UNDERLAY_COLOR": {
+      "category": "touchables",
+      "value": "#252033ff",
+      "type": "color",
+      ".alias": {
+        "value": "#252033"
+      },
+      "name": "UNDERLAY_COLOR"
+    },
+    "UNDERLAY_OPACITY": {
+      "category": "touchables",
+      "value": "0.15",
+      "type": "number",
+      "name": "UNDERLAY_OPACITY"
+    },
     "FONT_FAMILY": {
       "value": "\"System\"",
       "type": "font",
@@ -1253,6 +1268,8 @@
     "SPACING_LG",
     "SPACING_XL",
     "SPACING_XXL",
+    "UNDERLAY_COLOR",
+    "UNDERLAY_OPACITY",
     "FONT_FAMILY",
     "FONT_SIZE_XS",
     "FONT_SIZE_SM",

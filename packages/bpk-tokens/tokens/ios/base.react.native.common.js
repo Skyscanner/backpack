@@ -89,6 +89,8 @@ module.exports = {
   spacingLg: 24,
   spacingXl: 32,
   spacingXxl: 40,
+  underlayColor: "rgb(37, 32, 51)",
+  underlayOpacity: 0.15,
   fontFamily: "System",
   fontSizeXs: 11,
   fontSizeSm: 13,
