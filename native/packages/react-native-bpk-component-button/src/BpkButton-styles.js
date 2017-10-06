@@ -172,12 +172,27 @@ const gradientColors = {
   disabled: [tokens.colorGray100, tokens.colorGray100],
 };
 
+const themeMappings = {
+  text: {
+    color: {
+      primary: 'buttonPrimaryTextColor',
+    },
+  },
+  gradient: {
+    primary: {
+      startColor: 'buttonPrimaryGradientStartColor',
+      endColor: 'buttonPrimaryGradientEndColor',
+    },
+  },
+};
+
 const styles = {
   base,
   types,
   modifiers,
   gradientColors,
   underlayColor,
+  themeMappings,
 };
 
 export default styles;

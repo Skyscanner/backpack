@@ -30,6 +30,7 @@ import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 
+import BpkThemeProvider from 'react-native-bpk-theming';
 import BpkText from 'react-native-bpk-component-text';
 
 import BpkButton, { BUTTON_TYPES } from './src/BpkButton';
@@ -98,6 +99,12 @@ ArrowImage.propTypes = {
 ArrowImage.defaultProps = {
   large: false,
   type: '',
+};
+
+const themeAttributes = {
+  buttonPrimaryGradientStartColor: '#fce134',
+  buttonPrimaryGradientEndColor: '#f8c42d',
+  buttonPrimaryTextColor: '#2d244c',
 };
 
 const generateButtonStoryForType = type => (
@@ -214,6 +221,14 @@ storiesOf('BpkButton', module)
     <View>
       {generateButtonStoryForType('featured')}
     </View>
+  ))
+  .add('docs:withTheme', () => (
+    <BpkThemeProvider theme={themeAttributes}>
+      <View>
+        <BpkText textStyle="xxl">Primary</BpkText>
+        {generateButtonStoryForType('primary')}
+      </View>
+    </BpkThemeProvider>
   ))
   .add('All Button Types', () => (
     <ScrollView>
