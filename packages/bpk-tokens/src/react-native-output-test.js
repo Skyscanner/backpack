@@ -23,7 +23,14 @@ import _ from 'lodash';
 import androidTokens from '../tokens/android/base.raw.json';
 import iosTokens from '../tokens/ios/base.raw.json';
 
-const ANDROID_ONLY_PROPS = ['FONT_FAMILY_EMPHASIZE'];
+const ANDROID_ONLY_PROPS = [
+  'FONT_FAMILY_EMPHASIZE',
+  'ELEVATION_XS',
+  'ELEVATION_SM',
+  'ELEVATION_BASE',
+  'ELEVATION_LG',
+  'ELEVATION_XL',
+];
 const IOS_ONLY_PROPS = [];
 
 describe('React Native output', () => {
