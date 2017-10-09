@@ -7,7 +7,7 @@ exports[`Android BpkTextInput should apply user-styling correctly 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "borderWidth": 1,
         "display": "flex",
         "flexDirection": "row",
@@ -53,7 +53,7 @@ exports[`Android BpkTextInput should render correctly 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "borderWidth": 1,
         "display": "flex",
         "flexDirection": "row",
@@ -94,7 +94,7 @@ exports[`Android BpkTextInput should render disabled correctly 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "borderWidth": 1,
         "display": "flex",
         "flexDirection": "row",
@@ -139,7 +139,7 @@ exports[`Android BpkTextInput should render invalid correctly 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "borderWidth": 1,
         "display": "flex",
         "flexDirection": "row",
@@ -197,7 +197,7 @@ exports[`Android BpkTextInput should render placeholder correctly 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "borderWidth": 1,
         "display": "flex",
         "flexDirection": "row",
@@ -242,7 +242,7 @@ exports[`Android BpkTextInput should render small correctly 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "borderWidth": 1,
         "display": "flex",
         "flexDirection": "row",
@@ -295,7 +295,7 @@ exports[`Android BpkTextInput should render small disabled correctly 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "borderWidth": 1,
         "display": "flex",
         "flexDirection": "row",
@@ -351,7 +351,7 @@ exports[`Android BpkTextInput should render small invalid correctly 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "borderWidth": 1,
         "display": "flex",
         "flexDirection": "row",
@@ -424,7 +424,7 @@ exports[`Android BpkTextInput should render small placeholder correctly 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "borderWidth": 1,
         "display": "flex",
         "flexDirection": "row",
@@ -480,7 +480,7 @@ exports[`Android BpkTextInput should render small valid correctly 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "borderWidth": 1,
         "display": "flex",
         "flexDirection": "row",
@@ -553,7 +553,7 @@ exports[`Android BpkTextInput should render valid correctly 1`] = `
       Object {
         "alignItems": "center",
         "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
+        "borderRadius": 2,
         "borderWidth": 1,
         "display": "flex",
         "flexDirection": "row",

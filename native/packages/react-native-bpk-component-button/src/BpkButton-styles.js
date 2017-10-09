@@ -30,9 +30,6 @@ const underlayColor = Platform.select({
   android: () => null,
 })();
 
-// A high number used as a borderRadius value produces circular corners.
-const roundedBorderRadius = 100;
-
 // These should probably be their own tokens.
 // For now they are derived from existing tokens.
 const largeHeight = tokens.spacingSm * 12;
@@ -43,13 +40,13 @@ const base = StyleSheet.create({
 
   // Applied to the outer LinearGradient element.
   container: {
-    borderRadius: roundedBorderRadius,
+    borderRadius: tokens.borderRadiusPill,
     height: tokens.spacingXl,
   },
 
   // Applied to the TouchableHighlight element.
   button: {
-    borderRadius: roundedBorderRadius,
+    borderRadius: tokens.borderRadiusPill,
     height: tokens.spacingXl,
     paddingTop: tokens.spacingMd,
     paddingBottom: tokens.spacingMd,

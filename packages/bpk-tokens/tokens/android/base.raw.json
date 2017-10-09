@@ -264,6 +264,12 @@
     "BORDER_SIZE_XL": {
       "value": 3
     },
+    "BORDER_RADIUS_SM": {
+      "value": 2
+    },
+    "BORDER_RADIUS_PILL": {
+      "value": 40
+    },
     "ELEVATION_XS": {
       "value": 2
     },
@@ -283,8 +289,8 @@
   "props": {
     "BORDER_SIZE_SM": {
       "type": "size",
-      "category": "borders",
       "value": "1",
+      "category": "borders",
       ".alias": {
         "value": 1
       },
@@ -292,8 +298,8 @@
     },
     "BORDER_SIZE_LG": {
       "type": "size",
-      "category": "borders",
       "value": "2",
+      "category": "borders",
       ".alias": {
         "value": 2
       },
@@ -301,12 +307,30 @@
     },
     "BORDER_SIZE_XL": {
       "type": "size",
-      "category": "borders",
       "value": "3",
+      "category": "borders",
       ".alias": {
         "value": 3
       },
       "name": "BORDER_SIZE_XL"
+    },
+    "BORDER_RADIUS_SM": {
+      "type": "size",
+      "value": "2",
+      "category": "radii",
+      ".alias": {
+        "value": 2
+      },
+      "name": "BORDER_RADIUS_SM"
+    },
+    "BORDER_RADIUS_PILL": {
+      "type": "size",
+      "value": "40",
+      "category": "radii",
+      ".alias": {
+        "value": 40
+      },
+      "name": "BORDER_RADIUS_PILL"
     },
     "COLOR_WHITE": {
       "type": "color",
@@ -1258,6 +1282,8 @@
     "BORDER_SIZE_SM",
     "BORDER_SIZE_LG",
     "BORDER_SIZE_XL",
+    "BORDER_RADIUS_SM",
+    "BORDER_RADIUS_PILL",
     "COLOR_WHITE",
     "COLOR_BLUE_50",
     "COLOR_BLUE_100",

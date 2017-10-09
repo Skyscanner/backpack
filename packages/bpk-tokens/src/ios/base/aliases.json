@@ -28,6 +28,8 @@
     "SPACING_XXL": 40,
     "BORDER_SIZE_SM": 1,
     "BORDER_SIZE_LG": 2,
-    "BORDER_SIZE_XL": 3
+    "BORDER_SIZE_XL": 3,
+    "BORDER_RADIUS_SM": 4,
+    "BORDER_RADIUS_PILL": 40
   }
 }

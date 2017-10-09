@@ -22,6 +22,8 @@ module.exports = {
   borderSizeSm: 1,
   borderSizeLg: 2,
   borderSizeXl: 3,
+  borderRadiusSm: 2,
+  borderRadiusPill: 40,
   colorWhite: "rgb(255, 255, 255)",
   colorBlue50: "rgb(225, 244, 248)",
   colorBlue100: "rgb(203, 238, 245)",

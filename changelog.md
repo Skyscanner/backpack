@@ -8,6 +8,8 @@
   - Android elevation tokens
   - iOS touchable highlight underlay tokens
   - iOS shadow tokens
+  - iOS & Android radii tokens
+
 - react-native-bpk-component-button
   - Added theming support
 

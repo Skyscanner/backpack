@@ -260,13 +260,19 @@
     },
     "BORDER_SIZE_XL": {
       "value": 3
+    },
+    "BORDER_RADIUS_SM": {
+      "value": 4
+    },
+    "BORDER_RADIUS_PILL": {
+      "value": 40
     }
   },
   "props": {
     "BORDER_SIZE_SM": {
       "type": "size",
-      "category": "borders",
       "value": "1",
+      "category": "borders",
       ".alias": {
         "value": 1
       },
@@ -274,8 +280,8 @@
     },
     "BORDER_SIZE_LG": {
       "type": "size",
-      "category": "borders",
       "value": "2",
+      "category": "borders",
       ".alias": {
         "value": 2
       },
@@ -283,12 +289,30 @@
     },
     "BORDER_SIZE_XL": {
       "type": "size",
-      "category": "borders",
       "value": "3",
+      "category": "borders",
       ".alias": {
         "value": 3
       },
       "name": "BORDER_SIZE_XL"
+    },
+    "BORDER_RADIUS_SM": {
+      "type": "size",
+      "value": "4",
+      "category": "radii",
+      ".alias": {
+        "value": 4
+      },
+      "name": "BORDER_RADIUS_SM"
+    },
+    "BORDER_RADIUS_PILL": {
+      "type": "size",
+      "value": "40",
+      "category": "radii",
+      ".alias": {
+        "value": 40
+      },
+      "name": "BORDER_RADIUS_PILL"
     },
     "SHADOW_SM_COLOR": {
       "value": "#252033ff",
@@ -1300,6 +1324,8 @@
     "BORDER_SIZE_SM",
     "BORDER_SIZE_LG",
     "BORDER_SIZE_XL",
+    "BORDER_RADIUS_SM",
+    "BORDER_RADIUS_PILL",
     "SHADOW_SM_COLOR",
     "SHADOW_SM_OFFSET_HEIGHT",
     "SHADOW_SM_OFFSET_WIDTH",

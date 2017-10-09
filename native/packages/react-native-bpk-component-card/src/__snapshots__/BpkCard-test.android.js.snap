@@ -36,7 +36,7 @@ exports[`Android BpkCard should render correctly 1`] = `
             "shadowRadius": NaN,
           },
           Object {
-            "borderRadius": 8,
+            "borderRadius": 2,
           },
           Object {
             "padding": 16,
@@ -56,7 +56,7 @@ exports[`Android BpkCard should render correctly 1`] = `
           "overflow": "hidden",
         },
         Object {
-          "borderRadius": 8,
+          "borderRadius": 2,
         },
       ]
     }
@@ -124,7 +124,7 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
             "shadowRadius": NaN,
           },
           Object {
-            "borderRadius": 8,
+            "borderRadius": 2,
           },
         ],
         null,
@@ -141,7 +141,7 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
           "overflow": "hidden",
         },
         Object {
-          "borderRadius": 8,
+          "borderRadius": 2,
         },
       ]
     }

@@ -22,6 +22,8 @@ module.exports = {
   borderSizeSm: 1,
   borderSizeLg: 2,
   borderSizeXl: 3,
+  borderRadiusSm: 4,
+  borderRadiusPill: 40,
   shadowSmColor: "rgb(37, 32, 51)",
   shadowSmOffsetHeight: 1,
   shadowSmOffsetWidth: 0,

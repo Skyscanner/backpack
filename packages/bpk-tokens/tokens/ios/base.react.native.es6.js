@@ -20,6 +20,8 @@
 export const borderSizeSm = 1;
 export const borderSizeLg = 2;
 export const borderSizeXl = 3;
+export const borderRadiusSm = 4;
+export const borderRadiusPill = 40;
 export const shadowSmColor = "rgb(37, 32, 51)";
 export const shadowSmOffsetHeight = 1;
 export const shadowSmOffsetWidth = 0;
@@ -140,6 +142,10 @@ export const borders = {
 borderSizeSm,
 borderSizeLg,
 borderSizeXl,
+};
+export const radii = {
+borderRadiusSm,
+borderRadiusPill,
 };
 export const boxShadows = {
 shadowSmColor,
