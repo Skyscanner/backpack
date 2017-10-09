@@ -23,7 +23,7 @@
  import React from 'react';
  import PropTypes from 'prop-types';
  import LinearGradient from 'react-native-linear-gradient';
- import xor from 'lodash/xor';
+ import difference from 'lodash/difference';
 
  import { withTheme } from 'react-native-bpk-theming';
  import BpkText from 'react-native-bpk-component-text';
@@ -31,6 +31,19 @@
  import styles from './BpkButton-styles';
 
  const BUTTON_TYPES = ['primary', 'featured', 'secondary', 'destructive'];
+ const REQUIRED_THEME_ATTRIBUTES = {
+   primary: [
+     styles.themeMappings.text.color.primary,
+     styles.themeMappings.gradient.primary.startColor,
+     styles.themeMappings.gradient.primary.endColor,
+   ],
+   secondary: [
+     styles.themeMappings.text.color.secondary,
+     styles.themeMappings.button.borderColor.secondary,
+     styles.themeMappings.gradient.secondary.startColor,
+   ],
+ };
+ const THEMEABLE_TYPES = Object.keys(REQUIRED_THEME_ATTRIBUTES);
 
  const getStyleForElement = (elementType, { type, title, icon, iconOnly, selected, large, disabled }) => {
    // Start with base style.
@@ -80,9 +93,12 @@
  };
 
  const getGradientColors = (theme, { type, disabled, selected }) => {
-   let gradientColors = theme ?
-   [theme.buttonPrimaryGradientStartColor, theme.buttonPrimaryGradientStartColor] :
-   styles.gradientColors[type];
+   let gradientColors = styles.gradientColors[type];
+
+   if (theme) {
+     const gradientThemeProps = styles.themeMappings.gradient[type];
+     gradientColors = [theme[gradientThemeProps.startColor], theme[gradientThemeProps.endColor]];
+   }
 
    if (selected) {
      gradientColors = styles.gradientColors.selected;
@@ -97,6 +113,24 @@
    const hasIcon = props[propName];
    if (props.iconOnly && !hasIcon) {
      return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName}\`. When \`iconOnly\` is enabled, \`${propName}\` must be supplied.`); // eslint-disable-line max-len
+   }
+   return false;
+ };
+
+ const isTypeThemeable = type => THEMEABLE_TYPES.includes(type);
+
+ const themeAttributesSupplied = (type, theme) => (
+   difference(REQUIRED_THEME_ATTRIBUTES[type], Object.keys(theme)).length === 0
+ );
+
+ const themePropType = (props, propName, componentName) => {
+   const type = props.type;
+   const theme = props.theme;
+   if (!theme) {
+     return false;
+   }
+   if (!themeAttributesSupplied(type, theme)) {
+     return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName}\`. For buttons of type \`${type}\`, the \`theme\` prop must include \`${REQUIRED_THEME_ATTRIBUTES[type].join(', ')}\``); // eslint-disable-line max-len
    }
    return false;
  };
@@ -122,20 +156,10 @@
      throw new Error(`"${type}" is not a valid button type. Valid types are ${BUTTON_TYPES.join(', ')}`);
    }
 
-   // Validate that correct theming attributes have been provided.
+   // Validate that button is themeable and all theming attributes
+   // have been supplied. If not, disable theming.
    if (theme) {
-     // Must provide disabled and selected states regardless of theme.
-     const attributesToSupply = [
-       // TODO this should support multiple types in future with some logic.
-       styles.themeMappings.text.color.primary,
-       styles.themeMappings.gradient.primary.startColor,
-       styles.themeMappings.gradient.primary.endColor,
-     ];
-
-     // If all attributes were not supplied, turn off theming.
-     // TODO allow all types to be themed.
-     const allAttributesSupplied = xor(attributesToSupply, Object.keys(theme)).length === 0;
-     if (!allAttributesSupplied || type !== 'primary') {
+     if (!isTypeThemeable(type) || !themeAttributesSupplied(type, theme)) {
        theme = null;
      }
    }
@@ -153,7 +177,7 @@
        style={[getStyleForElement('container', props), style]}
      >
        <TouchableHighlight
-         style={getStyleForElement('button', props)}
+         style={[getStyleForElement('button', props), getThemingForElement('button', theme, props)]}
          disabled={disabled}
          selected={selected}
          onPress={onPress}
@@ -191,11 +215,7 @@
    selected: PropTypes.bool,
    accessibilityLabel: PropTypes.string,
    style: View.propTypes.style,
-   theme: PropTypes.shape({
-     buttonPrimaryGradientStartColor: PropTypes.string.isRequired,
-     buttonPrimaryGradientEndColor: PropTypes.string.isRequired,
-     buttonPrimaryTextColor: PropTypes.string.isRequired,
-   }),
+   theme: themePropType,
  };
 
  BpkButton.propTypes = propTypes;

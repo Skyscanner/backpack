@@ -101,10 +101,22 @@ ArrowImage.defaultProps = {
   type: '',
 };
 
+const theme = {
+  contentColor: '#2d244c',
+  backgroundColor: '#fff',
+  brandColors: {
+    gradientStart: '#fce134',
+    gradientEnd: '#f8c42d',
+  },
+};
+
 const themeAttributes = {
-  buttonPrimaryGradientStartColor: '#fce134',
-  buttonPrimaryGradientEndColor: '#f8c42d',
-  buttonPrimaryTextColor: '#2d244c',
+  buttonPrimaryGradientStartColor: theme.brandColors.gradientStart,
+  buttonPrimaryGradientEndColor: theme.brandColors.gradientEnd,
+  buttonPrimaryTextColor: theme.contentColor,
+  buttonSecondaryBackgroundColor: theme.backgroundColor,
+  buttonSecondaryTextColor: theme.contentColor,
+  buttonSecondaryBorderColor: theme.contentColor,
 };
 
 const generateButtonStoryForType = type => (
@@ -227,6 +239,8 @@ storiesOf('BpkButton', module)
       <View>
         <BpkText textStyle="xxl">Primary</BpkText>
         {generateButtonStoryForType('primary')}
+        <BpkText textStyle="xxl">Secondary</BpkText>
+        {generateButtonStoryForType('secondary')}
       </View>
     </BpkThemeProvider>
   ))

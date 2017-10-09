@@ -11,7 +11,7 @@
   - iOS & Android radii tokens
 
 - react-native-bpk-component-button
-  - Added theming support
+  - Primary and secondary buttons can now be themed.
 
 **Fixed:**
 - bpk-tokens:

@@ -173,12 +173,22 @@ const themeMappings = {
   text: {
     color: {
       primary: 'buttonPrimaryTextColor',
+      secondary: 'buttonSecondaryTextColor',
+    },
+  },
+  button: {
+    borderColor: {
+      secondary: 'buttonSecondaryBorderColor',
     },
   },
   gradient: {
     primary: {
       startColor: 'buttonPrimaryGradientStartColor',
       endColor: 'buttonPrimaryGradientEndColor',
+    },
+    secondary: {
+      startColor: 'buttonSecondaryBackgroundColor',
+      endColor: 'buttonSecondaryBackgroundColor',
     },
   },
 };

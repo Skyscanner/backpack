@@ -125,6 +125,25 @@ const commonTests = () => {
         iconOnly: true,
       }, 'icon', 'BpkButton').toString()).toEqual('Error: Invalid prop `icon` supplied to `BpkButton`. When `iconOnly` is enabled, `icon` must be supplied.'); // eslint-disable-line max-len
     });
+
+    it('should reject theme property when some theme attributes are omitted', () => { // eslint-disable-line max-len
+      expect(propTypes.theme({
+        type: 'primary',
+        theme: {},
+      }, 'theme', 'BpkButton').toString()).toEqual('Error: Invalid prop `theme` supplied to `BpkButton`. For buttons of type `primary`, the `theme` prop must include `buttonPrimaryTextColor, buttonPrimaryGradientStartColor, buttonPrimaryGradientEndColor`'); // eslint-disable-line max-len
+    });
+
+    it('should accept theme property when correct attributes are supplied', () => { // eslint-disable-line max-len
+      expect(propTypes.theme({
+        type: 'primary',
+        theme: {
+          buttonPrimaryGradientStartColor: 'red',
+          buttonPrimaryGradientEndColor: 'green',
+          buttonPrimaryTextColor: 'blue',
+        },
+      }, 'theme', 'BpkButton')).toBeFalsy();
+    });
+
     it('should throw an error for invalid button type', () => {
       jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
       expect(() => renderer.create(
@@ -138,15 +157,14 @@ const commonTests = () => {
   });
 
   describe('BpkButtonThemed', () => {
-    const themeAttributes = {
-      gradientStartColor: '#CE93D8',
-      gradientEndColor: '#AB47BC',
-      textColor: 'rgba(255, 255, 255, 0.8)',
-    };
-
     it('should render correctly', () => {
+      const theme = {
+        buttonPrimaryTextColor: 'red',
+        buttonPrimaryGradientStartColor: 'green',
+        buttonPrimaryGradientEndColor: 'blue',
+      };
       const tree = renderer.create(
-        <BpkThemeProvider theme={themeAttributes}>
+        <BpkThemeProvider theme={theme}>
           <BpkButton title="Lorem ipsum" type="primary" onPress={onPressFn} />
         </BpkThemeProvider>,
       ).toJSON();
