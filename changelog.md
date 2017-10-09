@@ -369,6 +369,8 @@
 - react-native-bpk-component-banner-alert:
   - New component `BpkBannerAlert`, see https://backpack.github.io/components/native/banner-alerts/
 
+- New component `bpk-component-datatable`, from `react-virtualized`
+
 **Fixed:**
 - bpk-tokens: 26.3.0 => 26.4.0
   - Fixed package meta data to point to correct entry file
