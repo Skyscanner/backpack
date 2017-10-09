@@ -20,6 +20,21 @@
 export const borderSizeSm = 1;
 export const borderSizeLg = 2;
 export const borderSizeXl = 3;
+export const shadowSmColor = "rgb(37, 32, 51)";
+export const shadowSmOffsetHeight = 1;
+export const shadowSmOffsetWidth = 0;
+export const shadowSmOpacity = 0.3;
+export const shadowSmRadius = 3;
+export const shadowLgColor = "rgb(37, 32, 51)";
+export const shadowLgOffsetHeight = 4;
+export const shadowLgOffsetWidth = 0;
+export const shadowLgOpacity = 0.25;
+export const shadowLgRadius = 14;
+export const shadowXlColor = "rgb(37, 32, 51)";
+export const shadowXlOffsetHeight = 12;
+export const shadowXlOffsetWidth = 0;
+export const shadowXlOpacity = 0.2;
+export const shadowXlRadius = 50;
 export const colorWhite = "rgb(255, 255, 255)";
 export const colorBlue50 = "rgb(225, 244, 248)";
 export const colorBlue100 = "rgb(203, 238, 245)";
@@ -125,6 +140,23 @@ export const borders = {
 borderSizeSm,
 borderSizeLg,
 borderSizeXl,
+};
+export const boxShadows = {
+shadowSmColor,
+shadowSmOffsetHeight,
+shadowSmOffsetWidth,
+shadowSmOpacity,
+shadowSmRadius,
+shadowLgColor,
+shadowLgOffsetHeight,
+shadowLgOffsetWidth,
+shadowLgOpacity,
+shadowLgRadius,
+shadowXlColor,
+shadowXlOffsetHeight,
+shadowXlOffsetWidth,
+shadowXlOpacity,
+shadowXlRadius,
 };
 export const colors = {
 colorWhite,

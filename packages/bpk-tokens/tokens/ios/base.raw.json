@@ -290,6 +290,105 @@
       },
       "name": "BORDER_SIZE_XL"
     },
+    "SHADOW_SM_COLOR": {
+      "value": "#252033ff",
+      "type": "color",
+      "category": "box-shadows",
+      ".alias": {
+        "value": "#252033"
+      },
+      "name": "SHADOW_SM_COLOR"
+    },
+    "SHADOW_SM_OFFSET_HEIGHT": {
+      "value": 1,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "SHADOW_SM_OFFSET_HEIGHT"
+    },
+    "SHADOW_SM_OFFSET_WIDTH": {
+      "value": 0,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "SHADOW_SM_OFFSET_WIDTH"
+    },
+    "SHADOW_SM_OPACITY": {
+      "value": 0.3,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "SHADOW_SM_OPACITY"
+    },
+    "SHADOW_SM_RADIUS": {
+      "value": 3,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "SHADOW_SM_RADIUS"
+    },
+    "SHADOW_LG_COLOR": {
+      "value": "#252033ff",
+      "type": "color",
+      "category": "box-shadows",
+      ".alias": {
+        "value": "#252033"
+      },
+      "name": "SHADOW_LG_COLOR"
+    },
+    "SHADOW_LG_OFFSET_HEIGHT": {
+      "value": 4,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "SHADOW_LG_OFFSET_HEIGHT"
+    },
+    "SHADOW_LG_OFFSET_WIDTH": {
+      "value": 0,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "SHADOW_LG_OFFSET_WIDTH"
+    },
+    "SHADOW_LG_OPACITY": {
+      "value": 0.25,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "SHADOW_LG_OPACITY"
+    },
+    "SHADOW_LG_RADIUS": {
+      "value": 14,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "SHADOW_LG_RADIUS"
+    },
+    "SHADOW_XL_COLOR": {
+      "value": "#252033ff",
+      "type": "color",
+      "category": "box-shadows",
+      ".alias": {
+        "value": "#252033"
+      },
+      "name": "SHADOW_XL_COLOR"
+    },
+    "SHADOW_XL_OFFSET_HEIGHT": {
+      "value": 12,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "SHADOW_XL_OFFSET_HEIGHT"
+    },
+    "SHADOW_XL_OFFSET_WIDTH": {
+      "value": 0,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "SHADOW_XL_OFFSET_WIDTH"
+    },
+    "SHADOW_XL_OPACITY": {
+      "value": 0.2,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "SHADOW_XL_OPACITY"
+    },
+    "SHADOW_XL_RADIUS": {
+      "value": 50,
+      "type": "size",
+      "category": "box-shadows",
+      "name": "SHADOW_XL_RADIUS"
+    },
     "COLOR_WHITE": {
       "type": "color",
       "category": "colors",
@@ -1201,6 +1300,21 @@
     "BORDER_SIZE_SM",
     "BORDER_SIZE_LG",
     "BORDER_SIZE_XL",
+    "SHADOW_SM_COLOR",
+    "SHADOW_SM_OFFSET_HEIGHT",
+    "SHADOW_SM_OFFSET_WIDTH",
+    "SHADOW_SM_OPACITY",
+    "SHADOW_SM_RADIUS",
+    "SHADOW_LG_COLOR",
+    "SHADOW_LG_OFFSET_HEIGHT",
+    "SHADOW_LG_OFFSET_WIDTH",
+    "SHADOW_LG_OPACITY",
+    "SHADOW_LG_RADIUS",
+    "SHADOW_XL_COLOR",
+    "SHADOW_XL_OFFSET_HEIGHT",
+    "SHADOW_XL_OFFSET_WIDTH",
+    "SHADOW_XL_OPACITY",
+    "SHADOW_XL_RADIUS",
     "COLOR_WHITE",
     "COLOR_BLUE_50",
     "COLOR_BLUE_100",

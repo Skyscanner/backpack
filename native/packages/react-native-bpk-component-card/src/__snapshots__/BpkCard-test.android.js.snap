@@ -27,13 +27,13 @@ exports[`Android BpkCard should render correctly 1`] = `
           Object {
             "backgroundColor": "rgb(255, 255, 255)",
             "elevation": 2,
-            "shadowColor": "rgb(37, 32, 51)",
+            "shadowColor": undefined,
             "shadowOffset": Object {
-              "height": 0.5,
-              "width": 0,
+              "height": NaN,
+              "width": undefined,
             },
-            "shadowOpacity": 0.3,
-            "shadowRadius": 1.5,
+            "shadowOpacity": undefined,
+            "shadowRadius": NaN,
           },
           Object {
             "borderRadius": 8,
@@ -115,13 +115,13 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
           Object {
             "backgroundColor": "rgb(255, 255, 255)",
             "elevation": 2,
-            "shadowColor": "rgb(37, 32, 51)",
+            "shadowColor": undefined,
             "shadowOffset": Object {
-              "height": 0.5,
-              "width": 0,
+              "height": NaN,
+              "width": undefined,
             },
-            "shadowOpacity": 0.3,
-            "shadowRadius": 1.5,
+            "shadowOpacity": undefined,
+            "shadowRadius": NaN,
           },
           Object {
             "borderRadius": 8,

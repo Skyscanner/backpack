@@ -7,6 +7,7 @@
   - iOS & Android border size tokens
   - Android elevation tokens
   - iOS touchable highlight underlay tokens
+  - iOS shadow tokens
 - react-native-bpk-component-button
   - Added theming support
 
