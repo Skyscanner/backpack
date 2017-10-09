@@ -20,10 +20,10 @@ import React from 'react';
 import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-text/readme.md';
 import iosScreenshot from 'react-native-bpk-component-text/screenshots/ios/text-styles.png';
+import androidScreenshot from 'react-native-bpk-component-text/screenshots/android/text-styles.png';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import androidEmpty from './../../static/android_empty.svg';
 
 const reactNativeUrl = 'https://facebook.github.io/react-native/docs/text.html';
 
@@ -44,7 +44,7 @@ const components = [
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidEmpty}`,
+        src: `/${androidScreenshot}`,
         altText: 'Android Default Text Component',
         subText: '(Google Pixel Emulator)',
       },

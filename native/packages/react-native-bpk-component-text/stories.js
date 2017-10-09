@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
 
@@ -26,7 +26,7 @@ storiesOf('BpkText', module)
   ))
   .add('Bold', () => (
     <View style={styles.container}>
-      <BpkText textStyle="xxl">Flights to Edinburgh</BpkText>
+      <BpkText textStyle="xxl" emphasize={Platform.OS === 'android'}>Flights to Edinburgh</BpkText>
       <BpkText textStyle="xl" emphasize>Flights to Edinburgh</BpkText>
       <BpkText textStyle="lg" emphasize>Flights to Edinburgh</BpkText>
       <BpkText textStyle="base" emphasize>Flights to Edinburgh</BpkText>

@@ -109,7 +109,7 @@
       "category": "font-sizes"
     },
     "TEXT_BASE_FONT_WEIGHT": {
-      "value": "{!FONT_WEIGHT_MEDIUM}",
+      "value": "{!FONT_WEIGHT_REGULAR}",
       "type": "string",
       "category": "font-weights"
     },
@@ -139,7 +139,7 @@
       "category": "font-sizes"
     },
     "TEXT_XL_FONT_WEIGHT": {
-      "value": "{!FONT_WEIGHT_MEDIUM}",
+      "value": "{!FONT_WEIGHT_REGULAR}",
       "type": "string",
       "category": "font-weights"
     },
