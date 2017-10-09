@@ -13,6 +13,8 @@
 - react-native-bpk-component-button
   - Added theming support
 
+- New component `bpk-component-datatable`, from `react-virtualized`
+
 **Fixed:**
 - bpk-tokens:
   - Fixed package meta data to point to correct entry file
