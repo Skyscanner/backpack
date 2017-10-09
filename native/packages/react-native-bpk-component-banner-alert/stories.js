@@ -28,6 +28,7 @@ const tokens = Platform.select({
 })();
 
 const {
+  colorGray500,
   spacingSm,
   spacingBase,
 } = tokens;
@@ -47,6 +48,9 @@ const styles = StyleSheet.create({
   },
   bannerAlert: {
     marginBottom: spacingBase,
+  },
+  child: {
+    color: colorGray500,
   },
 });
 
@@ -105,21 +109,25 @@ storiesOf('BpkBannerAlert', module)
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
-        message="test"
+        message="Successful alert."
       />
       <DismissableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
-        message="test"
+        message="Warn alert with dismiss option."
         actionButtonLabel="Dismiss"
       />
       <ExpandableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
-        message="test"
+        message="Error alert with more information."
         actionButtonLabel="Expand"
       >
-        <BpkText>ASDF</BpkText>
+        <BpkText textStyle="sm" style={styles.child}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
+          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
+          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+        </BpkText>
       </ExpandableBannerAlert>
     </View>
   ))
@@ -128,89 +136,80 @@ storiesOf('BpkBannerAlert', module)
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
-        message="test"
+        message="Successful alert."
       />
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
-        message="test"
+        message="Warn alert."
       />
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
-        message="test"
+        message="Error alert."
       />
     </View>
   ))
   .add('docs:dismissable', () => (
     <View style={styles.container}>
-      <BpkBannerAlert
+      <DismissableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
-        message="test"
+        message="Successful alert with dismiss option."
         actionButtonLabel="Dismiss"
-        dismissable
       />
-      <BpkBannerAlert
+      <DismissableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
-        message="test"
+        message="Warn alert with dismiss option."
         actionButtonLabel="Dismiss"
-        dismissable
       />
-      <BpkBannerAlert
+      <DismissableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
-        message="test"
+        message="Error alert with dismiss option."
         actionButtonLabel="Dismiss"
-        dismissable
       />
     </View>
   ))
   .add('docs:expandable', () => (
     <View style={styles.container}>
-      <BpkBannerAlert
+      <ExpandableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
-        message="test"
-        actionButtonLabel="Expand"
-        expanded={false}
-      ><BpkText>ASDF</BpkText></BpkBannerAlert>
-      <BpkBannerAlert
-        style={styles.bannerAlert}
-        type={ALERT_TYPES.SUCCESS}
-        message="test"
+        message="Successful alert with more information."
         actionButtonLabel="Collapse"
-        expanded
-      ><BpkText>ASDF</BpkText></BpkBannerAlert>
-      <BpkBannerAlert
+      >
+        <BpkText textStyle="sm" style={styles.child}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
+          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
+          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+        </BpkText>
+      </ExpandableBannerAlert>
+      <ExpandableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
-        message="test"
-        actionButtonLabel="Expand"
-        expanded={false}
-      ><BpkText>ASDF</BpkText></BpkBannerAlert>
-      <BpkBannerAlert
-        style={styles.bannerAlert}
-        type={ALERT_TYPES.WARN}
-        message="test"
+        message="Warn alert with more information."
         actionButtonLabel="Collapse"
-        expanded
-      ><BpkText>ASDF</BpkText></BpkBannerAlert>
-      <BpkBannerAlert
+      >
+        <BpkText textStyle="sm" style={styles.child}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
+          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
+          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+        </BpkText>
+      </ExpandableBannerAlert>
+      <ExpandableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
-        message="test"
-        actionButtonLabel="Expand"
-        expanded={false}
-      ><BpkText>ASDF</BpkText></BpkBannerAlert>
-      <BpkBannerAlert
-        style={styles.bannerAlert}
-        type={ALERT_TYPES.ERROR}
-        message="test"
+        message="Error alert with more information."
         actionButtonLabel="Collapse"
-        expanded
-      ><BpkText>ASDF</BpkText></BpkBannerAlert>
+      >
+        <BpkText textStyle="sm" style={styles.child}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
+          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
+          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+        </BpkText>
+      </ExpandableBannerAlert>
     </View>
   ))
   .add('docs:edge-cases', () => (
@@ -218,34 +217,42 @@ storiesOf('BpkBannerAlert', module)
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
-        message="Lots and lots and lots and lots and lots and lots and lots and lots and lots and lots and lots of text"
+        message="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quisque sagittis sagittis purus, id blandit ipsum."
       />
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
-        message="Lots and lots and lots and lots and lots and lots and lots and lots and lots and lots and lots of text"
+        message="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quisque sagittis sagittis purus, id blandit ipsum."
         actionButtonLabel="Dismiss"
         dismissable
       />
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
-        message="Lots and lots and lots and lots and lots and lots and lots and lots and lots and lots and lots of text"
+        message="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quisque sagittis sagittis purus, id blandit ipsum."
         actionButtonLabel="Expand"
       >
-        <BpkText>
-          Much, much, much, much, much, much, much, much, much, much, much, much, much, much, much, much more text
+        <BpkText textStyle="sm" style={styles.child}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
+          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
+          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
       </BpkBannerAlert>
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
-        message="Lots and lots and lots and lots and lots and lots and lots and lots and lots and lots and lots of text"
+        message="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quisque sagittis sagittis purus, id blandit ipsum."
         actionButtonLabel="Collapse"
         expanded
       >
-        <BpkText>
-          Much, much, much, much, much, much, much, much, much, much, much, much, much, much, much, much more text
+        <BpkText textStyle="sm" style={styles.child}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
+          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
+          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
       </BpkBannerAlert>
     </View>

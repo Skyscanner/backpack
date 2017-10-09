@@ -51,15 +51,17 @@ const tokens = Platform.select({
 })();
 
 const {
-  colorGray100,
-  colorGray300,
   colorGray50,
+  colorGray100,
+  colorGray500,
+  colorGray700,
   colorGreen500,
   colorRed500,
   colorYellow500,
-  spacingBase,
-  spacingLg,
   spacingSm,
+  spacingBase,
+  spacingMd,
+  spacingXl,
 } = tokens;
 
 export const ALERT_TYPES = {
@@ -82,9 +84,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     // TODO Replace '1' with borderSm token once available
-    height: (spacingLg * 2) - (1 * 2),
-    paddingLeft: spacingSm * 3,
-    paddingRight: spacingSm * 3,
+    minHeight: spacingXl - (1 * 2),
+    paddingBottom: spacingSm,
+    paddingLeft: spacingMd,
+    paddingRight: spacingMd,
+    paddingTop: spacingSm,
   },
   childStyle: {
     padding: spacingSm * 3,
@@ -104,13 +108,16 @@ const styles = StyleSheet.create({
   },
   icon: {
     flex: 0,
-    width: spacingLg,
-    height: spacingLg,
-  },
-  actionIcon: {
-    tintColor: colorGray300,
     width: spacingBase,
     height: spacingBase,
+  },
+  actionIcon: {
+    tintColor: colorGray700,
+    width: spacingBase,
+    height: spacingBase,
+  },
+  closeIcon: {
+    tintColor: colorGray500,
   },
   successIcon: {
     tintColor: colorGreen500,
@@ -158,6 +165,7 @@ const BpkBannerAlert = (props) => {
 
   if (dismissable) {
     actionIconSource = closeIcon;
+    actionIconStyle.push(styles.closeIcon);
   } else if (children !== null) {
     if (expanded) {
       actionIconSource = chevronUpIcon;
@@ -186,7 +194,7 @@ const BpkBannerAlert = (props) => {
               source={iconSource}
             />
           }
-          <BpkText textStyle="lg" style={textStyle}>{message}</BpkText>
+          <BpkText textStyle="sm" style={textStyle}>{message}</BpkText>
           {actionIconSource &&
             <Image
               style={actionIconStyle}
