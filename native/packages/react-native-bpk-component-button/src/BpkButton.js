@@ -192,9 +192,9 @@
    accessibilityLabel: PropTypes.string,
    style: View.propTypes.style,
    theme: PropTypes.shape({
-     gradientStartColor: PropTypes.string.isRequired,
-     gradientEndColor: PropTypes.string.isRequired,
-     textColor: PropTypes.string.isRequired,
+     buttonPrimaryGradientStartColor: PropTypes.string.isRequired,
+     buttonPrimaryGradientEndColor: PropTypes.string.isRequired,
+     buttonPrimaryTextColor: PropTypes.string.isRequired,
    }),
  };
 
