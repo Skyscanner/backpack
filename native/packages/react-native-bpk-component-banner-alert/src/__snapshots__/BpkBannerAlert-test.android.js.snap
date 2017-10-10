@@ -75,6 +75,7 @@ exports[`Android BpkBannerAlert should accept user-stlying 1`] = `
             },
             false,
             Object {
+              "flex": 1,
               "flexGrow": 1,
               "paddingLeft": 4,
             },
@@ -160,6 +161,7 @@ exports[`Android BpkBannerAlert should render correctly 1`] = `
             },
             false,
             Object {
+              "flex": 1,
               "flexGrow": 1,
               "paddingLeft": 4,
             },
@@ -248,6 +250,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
             },
             false,
             Object {
+              "flex": 1,
               "flexGrow": 1,
               "paddingLeft": 4,
             },
@@ -417,6 +420,7 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
               },
               false,
               Object {
+                "flex": 1,
                 "flexGrow": 1,
                 "paddingLeft": 4,
               },
@@ -551,6 +555,7 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
               },
               false,
               Object {
+                "flex": 1,
                 "flexGrow": 1,
                 "paddingLeft": 4,
               },
@@ -718,6 +723,7 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
               },
               false,
               Object {
+                "flex": 1,
                 "flexGrow": 1,
                 "paddingLeft": 4,
               },

@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
     borderColor: colorRed500,
   },
   text: {
+    flex: 1,
     flexGrow: 1,
     paddingLeft: spacingSm,
   },
