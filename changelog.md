@@ -19,6 +19,18 @@
   - Fixed package meta data to point to correct entry file
     i.e. `"main": "index.js",` instead of `"main": "tokens/base.default.scss",`
 
+- react-native-bpk-theming:
+  - Removed TC39 stage 3 proposed syntax from `withTheme` HOC
+
+- react-native-bpk-component-button:
+- react-native-bpk-component-card:
+- react-native-bpk-component-icon:
+- react-native-bpk-component-text:
+- react-native-bpk-component-text-input:
+- react-native-bpk-theming:
+  - React 16 pre-release versions are now supported as peer dependencies
+  - i.e. `16.0.0-beta.5`, `16.0.0-rc.1` & `16.0.0` are good
+
 ## 2017-10-06 - React Native Icon Component
 - react-native-bpk-component-icon: 0.0.4 => 1.0.0
 
