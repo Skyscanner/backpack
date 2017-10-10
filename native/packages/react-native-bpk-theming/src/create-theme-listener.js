@@ -23,23 +23,14 @@ import PropTypes from 'prop-types';
 
 const createThemeListener = () => {
   const CHANNEL = '__THEMING__';
-  const contextTypes = {
-    [CHANNEL]: PropTypes.object,
-  };
 
-  function initial(context) {
-    return context[CHANNEL] ? context[CHANNEL].getState() : null;
-  }
+  const contextTypes = { [CHANNEL]: PropTypes.object };
 
-  function subscribe(context, cb) {
-    return context[CHANNEL] ? context[CHANNEL].subscribe(cb) : null;
-  }
+  const initial = context => (context[CHANNEL] ? context[CHANNEL].getState() : null);
 
-  return {
-    contextTypes,
-    initial,
-    subscribe,
-  };
+  const subscribe = (context, cb) => (context[CHANNEL] ? context[CHANNEL].subscribe(cb) : null);
+
+  return { contextTypes, initial, subscribe };
 };
 
 export default createThemeListener;

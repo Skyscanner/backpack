@@ -19,6 +19,9 @@
   - Fixed package meta data to point to correct entry file
     i.e. `"main": "index.js",` instead of `"main": "tokens/base.default.scss",`
 
+- react-native-bpk-theming:
+  - Removed TC39 stage 3 proposed syntax from `withTheme` HOC
+
 ## 2017-10-06 - React Native Icon Component
 - react-native-bpk-component-icon: 0.0.4 => 1.0.0
 

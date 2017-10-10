@@ -23,8 +23,6 @@ import renderer from 'react-test-renderer';
 import BpkThemeProvider from './BpkThemeProvider';
 
 const commonTests = () => {
-  jest.mock('Image', () => 'Image');
-
   describe('BpkThemeProvider', () => {
     it('should render correctly', () => {
       const tree = renderer.create(
@@ -41,7 +39,7 @@ const commonTests = () => {
         <BpkThemeProvider>
           <Text>Lorem ipsum</Text>
         </BpkThemeProvider>,
-      )).toThrow(TypeError);
+      )).toThrow('[ThemeProvider] Please make your theme prop a plain object');
     });
   });
 };

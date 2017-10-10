@@ -22,35 +22,43 @@ import React from 'react';
 
 import createThemeListener from './create-theme-listener';
 
+const getDisplayName = Component => (
+  Component.displayName || Component.name || 'Component'
+);
+
 const createWithTheme = () => {
   const themeListener = createThemeListener();
-  const getDisplayName = Component => (
-    Component.displayName || Component.name || 'Component'
-  );
-  return Component => (
-    class withTheme extends React.Component {
-      static displayName = `WithTheme(${getDisplayName(Component)})`;
-      static contextTypes = themeListener.contextTypes;
 
+  return (Component) => {
+    class WithTheme extends React.Component {
       constructor(props, context) {
         super(props, context);
         this.state = { theme: themeListener.initial(context) };
         this.setTheme = theme => this.setState({ theme });
       }
+
       componentDidMount() {
         this.unsubscribe = themeListener.subscribe(this.context, this.setTheme);
       }
+
       componentWillUnmount() {
         if (typeof this.unsubscribe === 'function') {
           this.unsubscribe();
         }
       }
+
       render() {
         const { theme } = this.state;
         return <Component theme={theme} {...this.props} />;
       }
     }
-  );
+
+    WithTheme.displayName = `withTheme(${getDisplayName(Component)})`;
+
+    WithTheme.contextTypes = themeListener.contextTypes;
+
+    return WithTheme;
+  };
 };
 
 export default createWithTheme;
