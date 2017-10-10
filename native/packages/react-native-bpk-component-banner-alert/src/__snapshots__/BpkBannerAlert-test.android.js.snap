@@ -85,31 +85,6 @@ exports[`Android BpkBannerAlert should accept user-stlying 1`] = `
       </Text>
     </View>
   </View>
-  <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 1,
-        "overflow": "hidden",
-      }
-    }
-  >
-    <View
-      onLayout={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "paddingBottom": 4,
-              "paddingLeft": 8,
-              "paddingRight": 8,
-            },
-          ]
-        }
-      />
-    </View>
-  </View>
 </View>
 `;
 
@@ -193,31 +168,6 @@ exports[`Android BpkBannerAlert should render correctly 1`] = `
       >
         Successful alert.
       </Text>
-    </View>
-  </View>
-  <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 1,
-        "overflow": "hidden",
-      }
-    }
-  >
-    <View
-      onLayout={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "paddingBottom": 4,
-              "paddingLeft": 8,
-              "paddingRight": 8,
-            },
-          ]
-        }
-      />
     </View>
   </View>
 </View>
@@ -360,31 +310,6 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
       />
     </View>
   </View>
-  <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 1,
-        "overflow": "hidden",
-      }
-    }
-  >
-    <View
-      onLayout={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "paddingBottom": 4,
-              "paddingLeft": 8,
-              "paddingRight": 8,
-            },
-          ]
-        }
-      />
-    </View>
-  </View>
 </View>
 `;
 
@@ -516,53 +441,6 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
             ]
           }
         />
-      </View>
-    </View>
-  </View>
-  <View
-    collapsable={undefined}
-    style={
-      Object {
-        "height": 1,
-        "overflow": "hidden",
-      }
-    }
-  >
-    <View
-      onLayout={[Function]}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "paddingBottom": 4,
-              "paddingLeft": 8,
-              "paddingRight": 8,
-            },
-          ]
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "sans-serif",
-                "fontSize": 14,
-                "fontWeight": undefined,
-                "lineHeight": 20,
-              },
-              false,
-              Object {},
-            ]
-          }
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
-        </Text>
       </View>
     </View>
   </View>
@@ -701,51 +579,37 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
     </View>
   </View>
   <View
-    collapsable={undefined}
     style={
-      Object {
-        "height": 1,
-        "overflow": "hidden",
-      }
+      Array [
+        Object {
+          "paddingBottom": 4,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+        },
+      ]
     }
   >
-    <View
-      onLayout={[Function]}
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": undefined,
+            "lineHeight": 20,
+          },
+          false,
+          Object {},
+        ]
+      }
     >
-      <View
-        style={
-          Array [
-            Object {
-              "paddingBottom": 4,
-              "paddingLeft": 8,
-              "paddingRight": 8,
-            },
-          ]
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "sans-serif",
-                "fontSize": 14,
-                "fontWeight": undefined,
-                "lineHeight": 20,
-              },
-              false,
-              Object {},
-            ]
-          }
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
-        </Text>
-      </View>
-    </View>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+    </Text>
   </View>
 </View>
 `;
@@ -882,51 +746,37 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
     </View>
   </View>
   <View
-    collapsable={undefined}
     style={
-      Object {
-        "height": 1,
-        "overflow": "hidden",
-      }
+      Array [
+        Object {
+          "paddingBottom": 4,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+        },
+      ]
     }
   >
-    <View
-      onLayout={[Function]}
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 14,
+            "fontWeight": undefined,
+            "lineHeight": 20,
+          },
+          false,
+          Object {},
+        ]
+      }
     >
-      <View
-        style={
-          Array [
-            Object {
-              "paddingBottom": 4,
-              "paddingLeft": 8,
-              "paddingRight": 8,
-            },
-          ]
-        }
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "color": "rgb(82, 76, 97)",
-                "fontFamily": "sans-serif",
-                "fontSize": 14,
-                "fontWeight": undefined,
-                "lineHeight": 20,
-              },
-              false,
-              Object {},
-            ]
-          }
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
-        </Text>
-      </View>
-    </View>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+    </Text>
   </View>
 </View>
 `;

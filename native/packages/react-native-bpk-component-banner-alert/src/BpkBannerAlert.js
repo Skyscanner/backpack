@@ -26,7 +26,6 @@ import {
 import React from 'react';
 import PropTypes from 'prop-types';
 import BpkText from 'react-native-bpk-component-text';
-import BpkAnimateHeight from './BpkAnimateHeight';
 
 const tickIcon = require('./icons/lg/tick-circle.png'); // eslint-disable-line import/no-unresolved
 const exclamationIcon = require('./icons/lg/exclamation-circle.png'); // eslint-disable-line import/no-unresolved
@@ -260,9 +259,9 @@ const BpkBannerAlert = (props) => {
         {banner}
         {dismissable && closeButtonComponent }
       </View>
-      <BpkAnimateHeight expanded={expanded}>
+      {expanded &&
         <View style={expandedChildContainer}>{props.children}</View>
-      </BpkAnimateHeight>
+      }
     </View>
   );
 };
