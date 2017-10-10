@@ -28,7 +28,7 @@
 - react-native-bpk-component-text:
 - react-native-bpk-component-text-input:
 - react-native-bpk-theming:
-  - React betas are now supported as peer dependencies as well
+  - React 16 pre-release versions are now supported as peer dependencies
   - i.e. `16.0.0-beta.5`, `16.0.0-rc.1` & `16.0.0` are good
 
 ## 2017-10-06 - React Native Icon Component
