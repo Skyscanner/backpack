@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Portal should render correctly with no target 1`] = `null`;
-
-exports[`Portal should render correctly with target 1`] = `
-<div>
-  Target
-</div>
-`;

@@ -52,7 +52,6 @@ const tokens = Platform.select({
 
 const {
   colorGray50,
-  colorGray100,
   colorGray500,
   colorGray700,
   colorGreen500,
@@ -71,140 +70,192 @@ export const ALERT_TYPES = {
 };
 
 const styles = StyleSheet.create({
-  banner: {
-    borderColor: colorGray100,
+  outerContainer: {
       // TODO Replace with borderSm token once available
     borderWidth: 1,
       // TODO Replace with radiiSm token once available
     borderRadius: spacingSm,
   },
-  content: {
-    width: '100%',
+  bannerContainer: {
+    flexGrow: 1,
+    display: 'flex',
+    flexDirection: 'row',
+    // TODO Replace '1' with borderSm token once available
+    minHeight: spacingXl - (1 * 2),
+  },
+  bannerContainerPadded: {
+    flexGrow: 1,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    // TODO Replace '1' with borderSm token once available
-    minHeight: spacingXl - (1 * 2),
     paddingBottom: spacingSm,
     paddingLeft: spacingMd,
     paddingRight: spacingMd,
     paddingTop: spacingSm,
   },
-  childStyle: {
-    padding: spacingSm * 3,
+  bannerContainerPaddedDismissable: {
+    paddingRight: 0,
   },
-  successBanner: {
+  closeButtonContainer: {
+    height: '100%',
+    width: ((2 * spacingMd) + spacingBase),
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  expandedChildContainer: {
+    paddingBottom: spacingSm,
+    paddingLeft: spacingMd,
+    paddingRight: spacingMd,
+  },
+  outerContainerSuccess: {
     borderColor: colorGreen500,
   },
-  warnBanner: {
+  outerContainerWarn: {
     borderColor: colorYellow500,
   },
-  errorBanner: {
+  outerContainerError: {
     borderColor: colorRed500,
   },
   text: {
-    paddingLeft: 10,
-    flex: 1,
+    flexGrow: 1,
+    paddingLeft: spacingSm,
   },
   icon: {
-    flex: 0,
     width: spacingBase,
     height: spacingBase,
   },
-  actionIcon: {
+  iconSuccess: {
+    tintColor: colorGreen500,
+  },
+  iconWarn: {
+    tintColor: colorYellow500,
+  },
+  iconError: {
+    tintColor: colorRed500,
+  },
+  button: {
     tintColor: colorGray700,
     width: spacingBase,
     height: spacingBase,
   },
-  closeIcon: {
+  buttonClose: {
     tintColor: colorGray500,
-  },
-  successIcon: {
-    tintColor: colorGreen500,
-  },
-  warnIcon: {
-    tintColor: colorYellow500,
-  },
-  errorIcon: {
-    tintColor: colorRed500,
   },
 });
 
 const BpkBannerAlert = (props) => {
   const { type, message, onPress, dismissable, expanded, actionButtonLabel, style, children, ...rest } = props;
 
-  const clickable = dismissable || children !== null;
+  const expandable = children !== null;
 
   let iconSource = null;
-  let actionIconSource = null;
+  let buttonIconSource = null;
 
-  const styleFinal = [styles.banner];
-  const textStyle = [styles.text];
-  const contentStyle = [styles.content];
+  const outerStyleFinal = [styles.outerContainer];
   const iconStyle = [styles.icon];
-  const actionIconStyle = [styles.icon, styles.actionIcon];
-  const childStyle = [styles.childStyle];
+  const buttonIconStyle = [styles.icon, styles.button];
+  const expandedChildContainer = [styles.expandedChildContainer];
 
   if (style) {
-    styleFinal.push(style);
+    outerStyleFinal.push(style);
   }
 
   if (type === ALERT_TYPES.SUCCESS) {
     iconSource = tickIcon;
-    styleFinal.push(styles.successBanner);
-    iconStyle.push(styles.successIcon);
+    outerStyleFinal.push(styles.outerContainerSuccess);
+    iconStyle.push(styles.iconSuccess);
   } else if (type === ALERT_TYPES.WARN) {
     iconSource = exclamationIcon;
-    styleFinal.push(styles.warnBanner);
-    iconStyle.push(styles.warnIcon);
+    outerStyleFinal.push(styles.outerContainerWarn);
+    iconStyle.push(styles.iconWarn);
   } else if (type === ALERT_TYPES.ERROR) {
     iconSource = exclamationIcon;
-    styleFinal.push(styles.errorBanner);
-    iconStyle.push(styles.errorIcon);
+    outerStyleFinal.push(styles.outerContainerError);
+    iconStyle.push(styles.iconError);
   }
 
   if (dismissable) {
-    actionIconSource = closeIcon;
-    actionIconStyle.push(styles.closeIcon);
+    buttonIconSource = closeIcon;
+    buttonIconStyle.push(styles.closeIcon);
   } else if (children !== null) {
     if (expanded) {
-      actionIconSource = chevronUpIcon;
+      buttonIconSource = chevronUpIcon;
     } else {
-      actionIconSource = chevronDownIcon;
+      buttonIconSource = chevronDownIcon;
     }
+  }
+
+  const iconComponent = (
+    <Image
+      style={iconStyle}
+      source={iconSource}
+    />
+  );
+
+  const textComponent = (
+    <BpkText textStyle="sm" style={styles.text}>{message}</BpkText>
+  );
+
+  const actionComponent = (
+    <Image
+      style={buttonIconStyle}
+      source={buttonIconSource}
+    />
+  );
+
+  const contentPaddedStyle = [styles.bannerContainerPadded];
+  if (dismissable) {
+    contentPaddedStyle.push(styles.bannerContainerPaddedDismissable);
+  }
+
+  let banner = (<View
+    style={[contentPaddedStyle]}
+  >
+    {iconComponent}
+    {textComponent}
+    {expandable && actionComponent}
+  </View>
+  );
+
+  if (expandable) {
+    banner = (
+      <TouchableHighlight
+        accessibilityComponentType="button"
+        onPress={onPress}
+        underlayColor={colorGray50}
+        accessibilityLabel={actionButtonLabel}
+        style={styles.bannerContainer}
+      >
+        {banner}
+      </TouchableHighlight>
+    );
   }
 
   return (
     <View
-      style={styleFinal}
+      style={outerStyleFinal}
       {...rest}
     >
-      <TouchableHighlight
-        accessibilityComponentType="button"
-        onPress={clickable ? onPress : null}
-        underlayColor={colorGray50}
-        accessibilityLabel={actionButtonLabel}
+      <View
+        style={styles.bannerContainer}
       >
-        <View
-          style={contentStyle}
+        {banner}
+        {dismissable &&
+        <TouchableHighlight
+          accessibilityComponentType="button"
+          onPress={onPress}
+          underlayColor={colorGray50}
+          accessibilityLabel={actionButtonLabel}
+          style={styles.closeButtonContainer}
         >
-          {iconSource &&
-            <Image
-              style={iconStyle}
-              source={iconSource}
-            />
-          }
-          <BpkText textStyle="sm" style={textStyle}>{message}</BpkText>
-          {actionIconSource &&
-            <Image
-              style={actionIconStyle}
-              source={actionIconSource}
-            />
-          }
-        </View>
-      </TouchableHighlight>
+          {actionComponent}
+        </TouchableHighlight>
+        }
+      </View>
       {expanded &&
-        <View style={childStyle}>{props.children}</View>
+        <View style={expandedChildContainer}>{props.children}</View>
       }
     </View>
   );

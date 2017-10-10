@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`BpkChartMargin should render correctly 1`] = `
-<g
-  transform="translate(40, 10)"
->
-  Children
-</g>
-`;
