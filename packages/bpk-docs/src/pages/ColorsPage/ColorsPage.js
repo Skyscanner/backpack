@@ -34,6 +34,7 @@ const components = [
     blurb: [
       <div className={containerClassName}>
         <ColorSwatch name="color-blue-500" color={colors.colorBlue500} whiteColor />
+        <ColorSwatch name="color-blue-700" color={colors.colorBlue700} whiteColor />
         <ColorSwatch name="color-white" color={colors.colorWhite} border />
       </div>,
     ],
