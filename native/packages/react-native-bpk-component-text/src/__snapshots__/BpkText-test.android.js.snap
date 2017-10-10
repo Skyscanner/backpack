@@ -10,12 +10,11 @@ exports[`Android BpkText should render correctly 1`] = `
     Array [
       Object {
         "color": "rgb(82, 76, 97)",
-        "fontFamily": "sans-serif-medium",
-        "fontSize": 14,
-        "fontWeight": undefined,
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
         "lineHeight": 24,
       },
-      false,
       Object {},
     ]
   }
@@ -34,13 +33,14 @@ exports[`Android BpkText should render correctly with \`emphasize\` prop 1`] = `
     Array [
       Object {
         "color": "rgb(82, 76, 97)",
-        "fontFamily": "sans-serif-medium",
-        "fontSize": 14,
-        "fontWeight": undefined,
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
         "lineHeight": 24,
       },
       Object {
-        "fontWeight": "600",
+        "fontFamily": "sans-serif-medium",
+        "fontWeight": "500",
       },
       Object {},
     ]
@@ -60,12 +60,11 @@ exports[`Android BpkText should render correctly with textStyle="base" 1`] = `
     Array [
       Object {
         "color": "rgb(82, 76, 97)",
-        "fontFamily": "sans-serif-medium",
-        "fontSize": 14,
-        "fontWeight": undefined,
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
         "lineHeight": 24,
       },
-      false,
       Object {},
     ]
   }
@@ -85,11 +84,10 @@ exports[`Android BpkText should render correctly with textStyle="lg" 1`] = `
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "sans-serif",
-        "fontSize": 16,
-        "fontWeight": undefined,
-        "lineHeight": 24,
+        "fontSize": 20,
+        "fontWeight": "400",
+        "lineHeight": 28,
       },
-      false,
       Object {},
     ]
   }
@@ -110,10 +108,9 @@ exports[`Android BpkText should render correctly with textStyle="sm" 1`] = `
         "color": "rgb(82, 76, 97)",
         "fontFamily": "sans-serif",
         "fontSize": 14,
-        "fontWeight": undefined,
+        "fontWeight": "400",
         "lineHeight": 20,
       },
-      false,
       Object {},
     ]
   }
@@ -132,12 +129,11 @@ exports[`Android BpkText should render correctly with textStyle="xl" 1`] = `
     Array [
       Object {
         "color": "rgb(82, 76, 97)",
-        "fontFamily": "sans-serif-medium",
-        "fontSize": 20,
-        "fontWeight": undefined,
-        "lineHeight": 28,
+        "fontFamily": "sans-serif",
+        "fontSize": 24,
+        "fontWeight": "400",
+        "lineHeight": 32,
       },
-      false,
       Object {},
     ]
   }
@@ -158,10 +154,9 @@ exports[`Android BpkText should render correctly with textStyle="xs" 1`] = `
         "color": "rgb(82, 76, 97)",
         "fontFamily": "sans-serif",
         "fontSize": 12,
-        "fontWeight": undefined,
-        "lineHeight": 16,
+        "fontWeight": "400",
+        "lineHeight": 18,
       },
-      false,
       Object {},
     ]
   }
@@ -181,11 +176,10 @@ exports[`Android BpkText should render correctly with textStyle="xxl" 1`] = `
       Object {
         "color": "rgb(82, 76, 97)",
         "fontFamily": "sans-serif",
-        "fontSize": 24,
-        "fontWeight": undefined,
-        "lineHeight": 32,
+        "fontSize": 34,
+        "fontWeight": "400",
+        "lineHeight": 40,
       },
-      false,
       Object {},
     ]
   }
@@ -204,12 +198,11 @@ exports[`Android BpkText should support overwriting styles 1`] = `
     Array [
       Object {
         "color": "rgb(82, 76, 97)",
-        "fontFamily": "sans-serif-medium",
-        "fontSize": 14,
-        "fontWeight": undefined,
+        "fontFamily": "sans-serif",
+        "fontSize": 16,
+        "fontWeight": "400",
         "lineHeight": 24,
       },
-      false,
       Object {
         "color": "red",
       },

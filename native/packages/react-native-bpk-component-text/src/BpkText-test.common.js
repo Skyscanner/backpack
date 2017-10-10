@@ -82,13 +82,6 @@ const commonTests = () => {
       }, 'emphasize', 'BpkText').toString()).toEqual('Error: Invalid prop `emphasize` of type `string` supplied to `BpkText`, expected `boolean`.'); // eslint-disable-line max-len
     });
 
-    it('should error on invalid emphasize prop', () => {
-      expect(BpkText.propTypes.emphasize({
-        textStyle: 'xxl',
-        emphasize: true,
-      }, 'emphasize', 'BpkText').toString()).toEqual('Error: Invalid prop `emphasize` of value `true` supplied to `BpkText`. `textStyle` value of `xxl` cannot be emphasized.'); // eslint-disable-line max-len
-    });
-
     it('should accept valid style prop', () => {
       expect(BpkText.propTypes.style({
         style: StyleSheet.create({

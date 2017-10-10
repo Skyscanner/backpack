@@ -16,13 +16,14 @@
  * limitations under the License.
  */
 
+import BpkText from './BpkText';
 import commonTests from './BpkText-test.common';
 
 jest.mock('react-native', () => {
   const reactNative = require.requireActual('react-native');
   jest
-      .spyOn(reactNative.Platform, 'select')
-      .mockImplementation(obj => obj.ios || obj.default);
+    .spyOn(reactNative.Platform, 'select')
+    .mockImplementation(obj => obj.ios || obj.default);
   reactNative.Platform.OS = 'ios';
 
   return reactNative;
@@ -30,4 +31,10 @@ jest.mock('react-native', () => {
 
 describe('iOS', () => {
   commonTests();
+  it('should error on invalid emphasize prop', () => {
+    expect(BpkText.propTypes.emphasize({
+      textStyle: 'xxl',
+      emphasize: true,
+    }, 'emphasize', 'BpkText').toString()).toEqual('Error: Invalid prop `emphasize` of value `true` supplied to `BpkText`. `textStyle` value of `xxl` cannot be emphasized.'); // eslint-disable-line max-len
+  });
 });

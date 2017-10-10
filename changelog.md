@@ -9,6 +9,7 @@
   - iOS touchable highlight underlay tokens
   - iOS shadow tokens
   - iOS & Android radii tokens
+  - Update Android text tokens
 
 - react-native-bpk-component-button
   - Primary and secondary buttons can now be themed.
