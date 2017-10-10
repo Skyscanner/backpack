@@ -21,8 +21,8 @@ import readme from 'react-native-bpk-component-card/readme.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-card/screenshots/ios/default.png';
 import iosScreenshotWithoutPadding from 'react-native-bpk-component-card/screenshots/ios/without-padding.png';
-import androidEmpty from './../../static/android_empty.svg';
-
+import androidScreenshotDefault from 'react-native-bpk-component-card/screenshots/android/default.png';
+import androidScreenshotWithoutPadding from 'react-native-bpk-component-card/screenshots/android/without-padding.png';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -45,7 +45,7 @@ const components = [
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidEmpty}`,
+        src: `/${androidScreenshotDefault}`,
         altText: 'Android Default Card Component',
         subText: '(Google Pixel Emulator)',
       },
@@ -68,7 +68,7 @@ const components = [
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidEmpty}`,
+        src: `/${androidScreenshotWithoutPadding}`,
         altText: 'Android Card Without Padding Component',
         subText: '(Google Pixel Emulator)',
       },

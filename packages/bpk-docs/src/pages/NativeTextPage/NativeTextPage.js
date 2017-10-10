@@ -21,6 +21,8 @@ import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-text/readme.md';
 import iosScreenshot from 'react-native-bpk-component-text/screenshots/ios/text-styles.png';
 import androidScreenshot from 'react-native-bpk-component-text/screenshots/android/text-styles.png';
+import iosScreenshotBold from 'react-native-bpk-component-text/screenshots/ios/text-bold.png';
+import androidScreenshotBold from 'react-native-bpk-component-text/screenshots/android/text-bold.png';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -29,8 +31,8 @@ const reactNativeUrl = 'https://facebook.github.io/react-native/docs/text.html';
 
 const components = [
   {
-    id: 'text-styles',
-    title: 'Text styles',
+    id: 'default',
+    title: 'Default',
     screenshots: [
       {
         title: 'iOS',
@@ -45,6 +47,28 @@ const components = [
         width: 1080,
         height: 1920,
         src: `/${androidScreenshot}`,
+        altText: 'Android Default Text Component',
+        subText: '(Google Pixel Emulator)',
+      },
+    ],
+  },
+  {
+    id: 'emphasize',
+    title: 'Emphasize',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotBold}`,
+        altText: 'iOS Default Text Component',
+        subText: '(iPhone 8 Simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidScreenshotBold}`,
         altText: 'Android Default Text Component',
         subText: '(Google Pixel Emulator)',
       },
