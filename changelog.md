@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-10-10 - React Native button components can now be themed
+
 **Added:**
-- bpk-tokens:
+- bpk-tokens: 26.3.0 => 26.4.0
   - iOS & Android border size tokens
   - Android elevation tokens
   - iOS touchable highlight underlay tokens
@@ -11,23 +15,23 @@
   - iOS & Android radii tokens
   - Update Android text tokens
 
-- react-native-bpk-component-button
+- react-native-bpk-component-button: 3.0.5 => 3.1.0
   - Primary and secondary buttons can now be themed.
 
 **Fixed:**
-- bpk-tokens:
+- bpk-tokens: 26.3.0 => 26.4.0
   - Fixed package meta data to point to correct entry file
     i.e. `"main": "index.js",` instead of `"main": "tokens/base.default.scss",`
 
-- react-native-bpk-theming:
+- react-native-bpk-theming: 1.0.2 => 1.0.3
   - Removed TC39 stage 3 proposed syntax from `withTheme` HOC
 
-- react-native-bpk-component-button:
-- react-native-bpk-component-card:
-- react-native-bpk-component-icon:
-- react-native-bpk-component-text:
-- react-native-bpk-component-text-input:
-- react-native-bpk-theming:
+- react-native-bpk-component-button: 3.0.5 => 3.1.0
+- react-native-bpk-component-card: 1.0.5 => 1.0.6
+- react-native-bpk-component-icon: 1.0.0 => 1.0.1
+- react-native-bpk-component-text-input: 1.0.10 => 1.0.11
+- react-native-bpk-component-text: 2.1.9 => 2.1.10
+- react-native-bpk-theming: 1.0.2 => 1.0.3
   - React 16 pre-release versions are now supported as peer dependencies
   - i.e. `16.0.0-beta.5`, `16.0.0-rc.1` & `16.0.0` are good
 
@@ -103,11 +107,20 @@
 - react-native-bpk-component-card: 0.0.3 => 1.0.0
   - New component BpkCard, see http://backpack.prod.aws.skyscnr.com/components/native/cards/
 
-## 2017-09-26 - User style fixes for native Button component
+## 2017-09-26 - Applying custom styles to buttons is less surprising
 
 **Breaking:**
 - react-native-bpk-component-button: 2.0.0 => 3.0.0
- - User styles are now handled in the same way as other components.
+  - Previously, applying custom `style` to the button was like so:
+    ```
+    style={{
+      container: {...}
+    }}
+    ```
+    Now things are more in line with expectations:
+    ```
+    style={{...}}
+    ```
 
 ## 2017-09-25 - Color tokens can now be made opaque
 
