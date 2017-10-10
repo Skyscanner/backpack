@@ -44,11 +44,9 @@ export default class App extends Component {
       <View style={styles.container}>
         <BpkButton type="primary" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
         <BpkButton type="featured" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
-        <BpkButton selected type="secondary" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
         <BpkButton disabled type="destructive" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
         <BpkButton large type="primary" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
 
-        <BpkButton type="primary" title={translationHelper.translate('BOOK_FLIGHT')} icon={ArrowImage} onPress={() => {}} />
         <BpkButton type="featured" title={translationHelper.translate('BOOK_FLIGHT')} icon={ArrowImage} iconOnly onPress={() => {}} />
       </View>
     );
@@ -67,5 +65,4 @@ export default class App extends Component {
 | icon                  | element                                                   | false    | null          |
 | iconOnly              | bool                                                      | false    | false         |
 | large                 | bool                                                      | false    | false         |
-| selected              | bool                                                      | false    | false         |
 | type                  | oneOf('primary', 'featured', 'secondary', 'destructive')  | false    | null          |

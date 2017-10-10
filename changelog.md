@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Breaking:**
+- react-native-bpk-component-button
+ - The `selected` state has been removed. Buttons using `selected` will fall back and become standard buttons.
 
 ## 2017-10-10 - React Native button components can now be themed
 

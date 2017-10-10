@@ -132,10 +132,10 @@ const NativeTextPage = () => <DocsPageBuilder
     </Paragraph>,
     <Paragraph>
       There are four types of button: primary, secondary, destructive and featured. All button types can be
-      large, selected or disabled.
+      large and disabled.
     </Paragraph>,
     <Paragraph>
-      Buttons can be text only, icon only, or text and icon.
+      Buttons can be text or icon based.
     </Paragraph>,
   ]}
   components={components}

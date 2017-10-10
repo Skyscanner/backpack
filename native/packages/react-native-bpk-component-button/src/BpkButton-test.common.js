@@ -49,12 +49,6 @@ const commonTests = () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('should support the "selected" property', () => {
-      const tree = renderer.create(
-        <BpkButton selected title="Lorem ipsum" onPress={onPressFn} />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
     it('should support the "iconOnly" and "large" property', () => {
       const tree = renderer.create(
         <BpkButton iconOnly large icon title="Lorem ipsum" onPress={onPressFn} />,

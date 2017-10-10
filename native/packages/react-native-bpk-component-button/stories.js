@@ -131,23 +131,9 @@ const generateButtonStoryForType = type => (
       />
       <BpkButton
         type={type}
-        selected
-        title="Selected"
-        onPress={action(`${type} selected pressed`)}
-        style={styles.buttonStyles}
-      />
-      <BpkButton
-        type={type}
         disabled
         title="Disabled"
         onPress={action(`${type} disabled pressed, somehow`)}
-        style={styles.buttonStyles}
-      />
-      <BpkButton
-        type={type}
-        title="With icon"
-        icon={<ArrowImage type={type} />}
-        onPress={action(`${type} with icon clicked`)}
         style={styles.buttonStyles}
       />
       <BpkButton
@@ -172,25 +158,9 @@ const generateButtonStoryForType = type => (
       <BpkButton
         large
         type={type}
-        selected
-        title="Selected"
-        onPress={action(`${type} selected pressed`)}
-        style={styles.buttonStyles}
-      />
-      <BpkButton
-        large
-        type={type}
         disabled
         title="Disabled"
         onPress={action(`${type} disabled pressed, somehow`)}
-        style={styles.buttonStyles}
-      />
-      <BpkButton
-        large
-        type={type}
-        title="With icon"
-        icon={<ArrowImage large type={type} />}
-        onPress={action(`${type} with icon clicked`)}
         style={styles.buttonStyles}
       />
       <BpkButton
@@ -266,21 +236,6 @@ storiesOf('BpkButton', module)
         type="primary"
         title="I also have a really long title"
         onPress={action('Large button with long title pressed')}
-        style={styles.buttonStyles}
-      />
-      <BpkButton
-        type="primary"
-        title="I have an absurdly long title and an icon and may cause wrapping"
-        icon={<ArrowImage />}
-        onPress={action('Button with icon and long title pressed')}
-        style={styles.buttonStyles}
-      />
-      <BpkButton
-        large
-        type="primary"
-        title="I also have an absurdly long title and an icon and may cause wrapping"
-        icon={<ArrowImage />}
-        onPress={action('Large button with icon and long title pressed')}
         style={styles.buttonStyles}
       />
     </View>

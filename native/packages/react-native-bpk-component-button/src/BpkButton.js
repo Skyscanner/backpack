@@ -45,7 +45,7 @@
  };
  const THEMEABLE_TYPES = Object.keys(REQUIRED_THEME_ATTRIBUTES);
 
- const getStyleForElement = (elementType, { type, title, icon, iconOnly, selected, large, disabled }) => {
+ const getStyleForElement = (elementType, { type, title, icon, iconOnly, large, disabled }) => {
    // Start with base style.
    const styleForElement = [styles.base[elementType]];
 
@@ -62,9 +62,7 @@
      }
      styleForElement.push(styles.modifiers[largeModifier][elementType]);
    }
-   if (selected) {
-     styleForElement.push(styles.modifiers.selected[elementType]);
-   }
+
    if (disabled) {
      styleForElement.push(styles.modifiers.disabled[elementType]);
    }
@@ -79,9 +77,9 @@
    return styleForElement;
  };
 
- const getThemingForElement = (elementType, theme, { type, selected, disabled }) => {
+ const getThemingForElement = (elementType, theme, { type, disabled }) => {
    const themeForElement = {};
-   if (theme && !selected && !disabled && styles.themeMappings[elementType]) {
+   if (theme && !disabled && styles.themeMappings[elementType]) {
      Object.keys(styles.themeMappings[elementType]).forEach((key) => {
        const values = styles.themeMappings[elementType][key];
        if (values[type]) {
@@ -92,7 +90,7 @@
    return themeForElement;
  };
 
- const getGradientColors = (theme, { type, disabled, selected }) => {
+ const getGradientColors = (theme, { type, disabled }) => {
    let gradientColors = styles.gradientColors[type];
 
    if (theme) {
@@ -100,9 +98,6 @@
      gradientColors = [theme[gradientThemeProps.startColor], theme[gradientThemeProps.endColor]];
    }
 
-   if (selected) {
-     gradientColors = styles.gradientColors.selected;
-   }
    if (disabled) {
      gradientColors = styles.gradientColors.disabled;
    }
@@ -144,7 +139,6 @@
      onPress,
      large,
      disabled,
-     selected,
      accessibilityLabel,
      style,
      ...rest
@@ -179,7 +173,6 @@
        <TouchableHighlight
          style={[getStyleForElement('button', props), getThemingForElement('button', theme, props)]}
          disabled={disabled}
-         selected={selected}
          onPress={onPress}
          underlayColor={styles.underlayColor}
          accessibilityComponentType="button"
@@ -212,7 +205,6 @@
    type: PropTypes.oneOf(BUTTON_TYPES),
    large: PropTypes.bool,
    disabled: PropTypes.bool,
-   selected: PropTypes.bool,
    accessibilityLabel: PropTypes.string,
    style: View.propTypes.style,
    theme: themePropType,
@@ -226,7 +218,6 @@
    type: 'primary',
    large: false,
    disabled: false,
-   selected: false,
    accessibilityLabel: null,
    style: null,
    theme: null,
