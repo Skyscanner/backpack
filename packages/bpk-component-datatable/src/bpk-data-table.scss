@@ -56,11 +56,12 @@
     &:not(.bpk-data-table__headerRow):hover {
       background-color: $bpk-color-gray-50;
       cursor: pointer;
+      @include bpk-border-left-xl($bpk-color-blue-500);
     }
 
     &--selected {
       background-color: $bpk-color-gray-100;
-      font-weight: bold;
+      @include bpk-border-left-xl($bpk-color-blue-500);
     }
   }
 }
