@@ -49,14 +49,17 @@ exports[`Android BpkButton should render correctly 1`] = `
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+          ],
+          Object {},
         ],
       ]
     }
@@ -86,11 +89,12 @@ exports[`Android BpkButton should render correctly 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
               "fontSize": 14,
-              "fontWeight": undefined,
+              "fontWeight": "400",
               "lineHeight": 20,
             },
             Object {
-              "fontWeight": "600",
+              "fontFamily": "sans-serif-medium",
+              "fontWeight": "500",
             },
             Array [
               Array [
@@ -160,22 +164,25 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-            "paddingBottom": 6,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 6,
-          },
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingBottom": 6,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 6,
+            },
+          ],
+          Object {},
         ],
       ]
     }
@@ -205,11 +212,12 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
               "fontSize": 14,
-              "fontWeight": undefined,
+              "fontWeight": "400",
               "lineHeight": 20,
             },
             Object {
-              "fontWeight": "600",
+              "fontFamily": "sans-serif-medium",
+              "fontWeight": "500",
             },
             Array [
               Array [
@@ -282,14 +290,17 @@ exports[`Android BpkButton should render correctly with type="featured" 1`] = `
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+          ],
+          Object {},
         ],
       ]
     }
@@ -319,11 +330,12 @@ exports[`Android BpkButton should render correctly with type="featured" 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
               "fontSize": 14,
-              "fontWeight": undefined,
+              "fontWeight": "400",
               "lineHeight": 20,
             },
             Object {
-              "fontWeight": "600",
+              "fontFamily": "sans-serif-medium",
+              "fontWeight": "500",
             },
             Array [
               Array [
@@ -393,14 +405,17 @@ exports[`Android BpkButton should render correctly with type="primary" 1`] = `
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+          ],
+          Object {},
         ],
       ]
     }
@@ -430,11 +445,12 @@ exports[`Android BpkButton should render correctly with type="primary" 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
               "fontSize": 14,
-              "fontWeight": undefined,
+              "fontWeight": "400",
               "lineHeight": 20,
             },
             Object {
-              "fontWeight": "600",
+              "fontFamily": "sans-serif-medium",
+              "fontWeight": "500",
             },
             Array [
               Array [
@@ -504,22 +520,25 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-            "paddingBottom": 6,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 6,
-          },
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingBottom": 6,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 6,
+            },
+          ],
+          Object {},
         ],
       ]
     }
@@ -549,11 +568,12 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
               "fontSize": 14,
-              "fontWeight": undefined,
+              "fontWeight": "400",
               "lineHeight": 20,
             },
             Object {
-              "fontWeight": "600",
+              "fontFamily": "sans-serif-medium",
+              "fontWeight": "500",
             },
             Array [
               Array [
@@ -627,15 +647,18 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
-          undefined,
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+            undefined,
+          ],
+          Object {},
         ],
       ]
     }
@@ -668,11 +691,12 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
               "fontSize": 14,
-              "fontWeight": undefined,
+              "fontWeight": "400",
               "lineHeight": 20,
             },
             Object {
-              "fontWeight": "600",
+              "fontFamily": "sans-serif-medium",
+              "fontWeight": "500",
             },
             Array [
               Array [
@@ -751,15 +775,18 @@ exports[`Android BpkButton should support having only an icon 1`] = `
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
-          undefined,
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+            undefined,
+          ],
+          Object {},
         ],
       ]
     }
@@ -838,14 +865,17 @@ exports[`Android BpkButton should support overwriting styles 1`] = `
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+          ],
+          Object {},
         ],
       ]
     }
@@ -875,11 +905,12 @@ exports[`Android BpkButton should support overwriting styles 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
               "fontSize": 14,
-              "fontWeight": undefined,
+              "fontWeight": "400",
               "lineHeight": 20,
             },
             Object {
-              "fontWeight": "600",
+              "fontFamily": "sans-serif-medium",
+              "fontWeight": "500",
             },
             Array [
               Array [
@@ -951,17 +982,20 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
-          Object {
-            "borderColor": "transparent",
-          },
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+            Object {
+              "borderColor": "transparent",
+            },
+          ],
+          Object {},
         ],
       ]
     }
@@ -992,11 +1026,12 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
               "fontSize": 14,
-              "fontWeight": undefined,
+              "fontWeight": "400",
               "lineHeight": 20,
             },
             Object {
-              "fontWeight": "600",
+              "fontFamily": "sans-serif-medium",
+              "fontWeight": "500",
             },
             Array [
               Array [
@@ -1073,20 +1108,23 @@ exports[`Android BpkButton should support the "icon" and "large" property 1`] = 
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
-          Object {
-            "minHeight": 48,
-            "paddingLeft": 16,
-            "paddingRight": 16,
-          },
-          undefined,
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+            Object {
+              "minHeight": 48,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+            },
+            undefined,
+          ],
+          Object {},
         ],
       ]
     }
@@ -1119,12 +1157,13 @@ exports[`Android BpkButton should support the "icon" and "large" property 1`] = 
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
-              "fontSize": 16,
-              "fontWeight": undefined,
-              "lineHeight": 24,
+              "fontSize": 20,
+              "fontWeight": "400",
+              "lineHeight": 28,
             },
             Object {
-              "fontWeight": "600",
+              "fontFamily": "sans-serif-medium",
+              "fontWeight": "500",
             },
             Array [
               Array [
@@ -1204,20 +1243,23 @@ exports[`Android BpkButton should support the "iconOnly" and "large" property 1`
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
-          Object {
-            "minHeight": 48,
-            "paddingLeft": 16,
-            "paddingRight": 16,
-          },
-          undefined,
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+            Object {
+              "minHeight": 48,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+            },
+            undefined,
+          ],
+          Object {},
         ],
       ]
     }
@@ -1294,27 +1336,30 @@ exports[`Android BpkButton should support the "large" and secondary property 1`]
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
-          Object {
-            "borderColor": "rgb(230, 228, 235)",
-            "borderWidth": 2,
-            "paddingBottom": 6,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 6,
-          },
-          Object {
-            "minHeight": 48,
-            "paddingLeft": 14,
-            "paddingRight": 14,
-          },
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+            Object {
+              "borderColor": "rgb(230, 228, 235)",
+              "borderWidth": 2,
+              "paddingBottom": 6,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 6,
+            },
+            Object {
+              "minHeight": 48,
+              "paddingLeft": 14,
+              "paddingRight": 14,
+            },
+          ],
+          Object {},
         ],
       ]
     }
@@ -1344,12 +1389,13 @@ exports[`Android BpkButton should support the "large" and secondary property 1`]
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
-              "fontSize": 16,
-              "fontWeight": undefined,
-              "lineHeight": 24,
+              "fontSize": 20,
+              "fontWeight": "400",
+              "lineHeight": 28,
             },
             Object {
-              "fontWeight": "600",
+              "fontFamily": "sans-serif-medium",
+              "fontWeight": "500",
             },
             Array [
               Array [
@@ -1426,19 +1472,22 @@ exports[`Android BpkButton should support the "large" property 1`] = `
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
-          Object {
-            "minHeight": 48,
-            "paddingLeft": 16,
-            "paddingRight": 16,
-          },
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+            Object {
+              "minHeight": 48,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+            },
+          ],
+          Object {},
         ],
       ]
     }
@@ -1468,12 +1517,13 @@ exports[`Android BpkButton should support the "large" property 1`] = `
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
-              "fontSize": 16,
-              "fontWeight": undefined,
-              "lineHeight": 24,
+              "fontSize": 20,
+              "fontWeight": "400",
+              "lineHeight": 28,
             },
             Object {
-              "fontWeight": "600",
+              "fontFamily": "sans-serif-medium",
+              "fontWeight": "500",
             },
             Array [
               Array [
@@ -1545,17 +1595,20 @@ exports[`Android BpkButton should support the "selected" property 1`] = `
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
-          Object {
-            "borderColor": "transparent",
-          },
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+            Object {
+              "borderColor": "transparent",
+            },
+          ],
+          Object {},
         ],
       ]
     }
@@ -1586,11 +1639,12 @@ exports[`Android BpkButton should support the "selected" property 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
               "fontSize": 14,
-              "fontWeight": undefined,
+              "fontWeight": "400",
               "lineHeight": 20,
             },
             Object {
-              "fontWeight": "600",
+              "fontFamily": "sans-serif-medium",
+              "fontWeight": "500",
             },
             Array [
               Array [
@@ -1618,8 +1672,8 @@ exports[`Android BpkButtonThemed should render correctly 1`] = `
 <BVLinearGradient
   colors={
     Array [
-      -16722059,
-      -16728728,
+      -16744448,
+      -16776961,
     ]
   }
   end={undefined}
@@ -1663,14 +1717,17 @@ exports[`Android BpkButtonThemed should render correctly 1`] = `
           "backgroundColor": "transparent",
         },
         Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingBottom": 8,
-            "paddingLeft": 12,
-            "paddingRight": 12,
-            "paddingTop": 8,
-          },
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingBottom": 8,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 8,
+            },
+          ],
+          Object {},
         ],
       ]
     }
@@ -1700,11 +1757,12 @@ exports[`Android BpkButtonThemed should render correctly 1`] = `
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
               "fontSize": 14,
-              "fontWeight": undefined,
+              "fontWeight": "400",
               "lineHeight": 20,
             },
             Object {
-              "fontWeight": "600",
+              "fontFamily": "sans-serif-medium",
+              "fontWeight": "500",
             },
             Array [
               Array [
@@ -1713,7 +1771,9 @@ exports[`Android BpkButtonThemed should render correctly 1`] = `
                   "color": "rgb(255, 255, 255)",
                 },
               ],
-              Object {},
+              Object {
+                "color": "red",
+              },
             ],
           ]
         }

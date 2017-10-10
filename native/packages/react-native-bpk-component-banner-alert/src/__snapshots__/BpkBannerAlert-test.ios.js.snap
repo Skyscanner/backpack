@@ -73,7 +73,6 @@ exports[`iOS BpkBannerAlert should accept user-stlying 1`] = `
               "fontWeight": "400",
               "lineHeight": 18,
             },
-            false,
             Object {
               "flex": 1,
               "flexGrow": 1,
@@ -159,7 +158,6 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
               "fontWeight": "400",
               "lineHeight": 18,
             },
-            false,
             Object {
               "flex": 1,
               "flexGrow": 1,
@@ -248,7 +246,6 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
               "fontWeight": "400",
               "lineHeight": 18,
             },
-            false,
             Object {
               "flex": 1,
               "flexGrow": 1,
@@ -418,7 +415,6 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
                 "fontWeight": "400",
                 "lineHeight": 18,
               },
-              false,
               Object {
                 "flex": 1,
                 "flexGrow": 1,
@@ -553,7 +549,6 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                 "fontWeight": "400",
                 "lineHeight": 18,
               },
-              false,
               Object {
                 "flex": 1,
                 "flexGrow": 1,
@@ -608,7 +603,6 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
             "fontWeight": "400",
             "lineHeight": 18,
           },
-          false,
           Object {},
         ]
       }
@@ -721,7 +715,6 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                 "fontWeight": "400",
                 "lineHeight": 18,
               },
-              false,
               Object {
                 "flex": 1,
                 "flexGrow": 1,
@@ -776,7 +769,6 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
             "fontWeight": "400",
             "lineHeight": 18,
           },
-          false,
           Object {},
         ]
       }

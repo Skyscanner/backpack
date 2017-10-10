@@ -76,7 +76,6 @@ exports[`iOS BpkCard should render correctly 1`] = `
               "fontWeight": "400",
               "lineHeight": 20,
             },
-            false,
             Object {},
           ]
         }
@@ -161,7 +160,6 @@ exports[`iOS BpkCard should render correctly without padding 1`] = `
               "fontWeight": "400",
               "lineHeight": 20,
             },
-            false,
             Object {},
           ]
         }
