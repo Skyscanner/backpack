@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkRouterLink should render correctly with a "className" attribute 1`] = `
+<a
+  className="bpk-router-link my-custom-class-1 my-custom-class-2"
+  onClick={[Function]}
+  style={Object {}}
+>
+  Link
+</a>
+`;
+
+exports[`BpkRouterLink should render correctly with a "to" attribute 1`] = `
+<a
+  className="bpk-router-link"
+  onClick={[Function]}
+  style={Object {}}
+>
+  Link
+</a>
+`;
+
+exports[`BpkRouterLink should render correctly with arbitrary attributes 1`] = `
+<a
+  className="bpk-router-link"
+  onClick={[Function]}
+  style={Object {}}
+  target="_blank"
+>
+  Link
+</a>
+`;

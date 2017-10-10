@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkListItem should render correctly 1`] = `
+<li
+  className="bpk-list__item"
+>
+  List item
+</li>
+`;

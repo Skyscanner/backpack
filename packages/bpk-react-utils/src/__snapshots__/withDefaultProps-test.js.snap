@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withDefaultProps should merge classNames 1`] = `
+<TestComponent
+  a={1}
+  b={2}
+  c={
+    Object {
+      "d": 3,
+    }
+  }
+  className="a b"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</TestComponent>
+`;
+
+exports[`withDefaultProps should render correctly 1`] = `
+<TestComponent
+  a={1}
+  b={2}
+  c={
+    Object {
+      "d": 3,
+    }
+  }
+  className=""
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</TestComponent>
+`;

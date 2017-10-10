@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkBreakpoint should render if the breakpoint is matched 1`] = `
+<div>
+  matches
+</div>
+`;
+
+exports[`BpkBreakpoint should render if the breakpoint is not matched 1`] = `
+<div>
+  does not match
+</div>
+`;

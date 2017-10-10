@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkCard should render correctly 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Example Card"
+  accessibilityTraits={undefined}
+  accessible={true}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      Array [
+        Array [
+          Object {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "elevation": undefined,
+            "shadowColor": "rgb(37, 32, 51)",
+            "shadowOffset": Object {
+              "height": 0.5,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1.5,
+          },
+          Object {
+            "borderRadius": 4,
+          },
+          Object {
+            "padding": 16,
+          },
+        ],
+        null,
+      ],
+    ]
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "overflow": "hidden",
+        },
+        Object {
+          "borderRadius": 4,
+        },
+      ]
+    }
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
+            },
+            false,
+            Object {},
+          ]
+        }
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`iOS BpkCard should render correctly without padding 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="Example Card"
+  accessibilityTraits={undefined}
+  accessible={true}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      Array [
+        Array [
+          Object {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "elevation": undefined,
+            "shadowColor": "rgb(37, 32, 51)",
+            "shadowOffset": Object {
+              "height": 0.5,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 1.5,
+          },
+          Object {
+            "borderRadius": 4,
+          },
+        ],
+        null,
+      ],
+    ]
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "overflow": "hidden",
+        },
+        Object {
+          "borderRadius": 4,
+        },
+      ]
+    }
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
+            },
+            false,
+            Object {},
+          ]
+        }
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </Text>
+    </View>
+  </View>
+</View>
+`;

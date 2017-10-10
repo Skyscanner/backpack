@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkRadio should render correctly 1`] = `
+<label
+  className="bpk-radio"
+>
+  <input
+    className="bpk-radio__input"
+    disabled={false}
+    name="radio"
+    type="radio"
+  />
+  Direct
+</label>
+`;
+
+exports[`BpkRadio should render correctly with checked attribute 1`] = `
+<label
+  className="bpk-radio"
+>
+  <input
+    checked={true}
+    className="bpk-radio__input"
+    disabled={false}
+    name="radio"
+    type="radio"
+  />
+  Direct
+</label>
+`;
+
+exports[`BpkRadio should render correctly with disabled attribute 1`] = `
+<label
+  className="bpk-radio bpk-radio--disabled"
+>
+  <input
+    className="bpk-radio__input"
+    disabled={true}
+    name="radio"
+    type="radio"
+  />
+  Direct
+</label>
+`;
+
+exports[`BpkRadio should render correctly with id attribute 1`] = `
+<label
+  className="bpk-radio"
+>
+  <input
+    className="bpk-radio__input"
+    disabled={false}
+    id="radio"
+    name="radio"
+    type="radio"
+  />
+  Direct
+</label>
+`;
+
+exports[`BpkRadio should render correctly with value attribute 1`] = `
+<label
+  className="bpk-radio"
+>
+  <input
+    className="bpk-radio__input"
+    disabled={false}
+    name="radio"
+    type="radio"
+    value="my-value"
+  />
+  Direct
+</label>
+`;
+
+exports[`BpkRadio should render correctly with white attribute 1`] = `
+<label
+  className="bpk-radio bpk-radio--white"
+>
+  <input
+    className="bpk-radio__input"
+    disabled={false}
+    name="radio"
+    type="radio"
+  />
+  Direct
+</label>
+`;

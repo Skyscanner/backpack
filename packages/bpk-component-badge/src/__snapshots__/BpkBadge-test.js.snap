@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkBadge should render correctly 1`] = `
+<span
+  className="bpk-badge"
+>
+  Promociando
+</span>
+`;
+
+exports[`BpkBadge should render correctly with a "centered" 1`] = `
+<span
+  className="bpk-badge bpk-badge--centered"
+>
+  Promociando
+</span>
+`;
+
+exports[`BpkBadge should render correctly with a "docked" attribute value equal to "left" 1`] = `
+<span
+  className="bpk-badge bpk-badge--docked-left"
+>
+  Promociando
+</span>
+`;
+
+exports[`BpkBadge should render correctly with a "docked" attribute value equal to "right" 1`] = `
+<span
+  className="bpk-badge bpk-badge--docked-right"
+>
+  Promociando
+</span>
+`;

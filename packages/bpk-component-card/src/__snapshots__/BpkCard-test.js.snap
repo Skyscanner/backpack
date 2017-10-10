@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkCard should render correctly 1`] = `
+<div
+  className="bpk-card bpk-card--padded"
+  role="button"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</div>
+`;
+
+exports[`BpkCard should render correctly with "padded" attribute equal to "false" 1`] = `
+<div
+  className="bpk-card"
+  role="button"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</div>
+`;
+
+exports[`BpkCard should render correctly with a "className" attribute 1`] = `
+<div
+  className="bpk-card bpk-card--padded custom-class"
+  role="button"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</div>
+`;
+
+exports[`BpkCard should render correctly with an "href" attribute 1`] = `
+<a
+  className="bpk-card bpk-card--padded"
+  href="//www.skyscanner.net"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</a>
+`;

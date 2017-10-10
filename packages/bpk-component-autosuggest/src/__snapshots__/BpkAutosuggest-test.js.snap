@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkAutosuggest should render correctly 1`] = `
+<div
+  className="bpk-autosuggest__container"
+>
+  <input
+    aria-activedescendant={null}
+    aria-autocomplete="list"
+    aria-expanded={false}
+    aria-haspopup={false}
+    aria-invalid={false}
+    aria-owns="react-autowhatever-1"
+    autoComplete="off"
+    className="bpk-input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    role="combobox"
+    style={Object {}}
+    type="text"
+    value="Edinburgh"
+  />
+  <div
+    className="bpk-autosuggest__suggestions-container"
+    id="react-autowhatever-1"
+  />
+</div>
+`;
+
+exports[`BpkAutosuggest should render correctly with an "alwaysRenderSuggestions" attribute 1`] = `
+<div
+  className="bpk-autosuggest__container bpk-autosuggest__container--open"
+>
+  <input
+    aria-activedescendant={null}
+    aria-autocomplete="list"
+    aria-expanded={true}
+    aria-haspopup={true}
+    aria-invalid={false}
+    aria-owns="react-autowhatever-1"
+    autoComplete="off"
+    className="bpk-input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    role="combobox"
+    style={Object {}}
+    type="text"
+    value="Edinburgh"
+  />
+  <div
+    className="bpk-autosuggest__suggestions-container bpk-autosuggest__suggestions-container--open"
+    id="react-autowhatever-1"
+  >
+    <ul
+      className="bpk-autosuggest__suggestions-list"
+      role="listbox"
+    >
+      <li
+        className="bpk-autosuggest__suggestion-item"
+        data-section-index={null}
+        data-suggestion-index={0}
+        id="react-autowhatever-1--item-0"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onTouchStart={[Function]}
+        role="option"
+      >
+        <span>
+          Edinburgh
+        </span>
+      </li>
+      <li
+        className="bpk-autosuggest__suggestion-item"
+        data-section-index={null}
+        data-suggestion-index={1}
+        id="react-autowhatever-1--item-1"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onTouchStart={[Function]}
+        role="option"
+      >
+        <span>
+          Glasgow
+        </span>
+      </li>
+      <li
+        className="bpk-autosuggest__suggestion-item"
+        data-section-index={null}
+        data-suggestion-index={2}
+        id="react-autowhatever-1--item-2"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onTouchStart={[Function]}
+        role="option"
+      >
+        <span>
+          London
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

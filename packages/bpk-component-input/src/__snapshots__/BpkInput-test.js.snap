@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkInput should render correctly 1`] = `
+<input
+  aria-invalid={false}
+  className="bpk-input"
+  id="test"
+  name="test"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`BpkInput should render correctly with "docked" attribute 1`] = `
+<input
+  aria-invalid={false}
+  className="bpk-input bpk-input--docked"
+  id="test"
+  name="test"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`BpkInput should render correctly with "dockedFirst" attribute 1`] = `
+<input
+  aria-invalid={false}
+  className="bpk-input bpk-input--docked-first"
+  id="test"
+  name="test"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`BpkInput should render correctly with "dockedLast" attribute 1`] = `
+<input
+  aria-invalid={false}
+  className="bpk-input bpk-input--docked-last"
+  id="test"
+  name="test"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`BpkInput should render correctly with "dockedMiddle" attribute 1`] = `
+<input
+  aria-invalid={false}
+  className="bpk-input bpk-input--docked-middle"
+  id="test"
+  name="test"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`BpkInput should render correctly with "large" attribute 1`] = `
+<input
+  aria-invalid={false}
+  className="bpk-input bpk-input--large"
+  id="test"
+  name="test"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`BpkInput should render correctly with additional props 1`] = `
+<input
+  aria-invalid={false}
+  className="bpk-input"
+  id="test"
+  name="test"
+  onChange={[Function]}
+  placeholder="Enter a country, city or airport"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`BpkInput should render correctly with type attribute 1`] = `
+<input
+  aria-invalid={false}
+  className="bpk-input"
+  id="test"
+  name="test"
+  type="password"
+  value=""
+/>
+`;
+
+exports[`BpkInput should render correctly with valid attribute set to "false" 1`] = `
+<input
+  aria-invalid={true}
+  className="bpk-input bpk-input--invalid"
+  id="test"
+  name="test"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`BpkInput should render correctly with valid attribute set to "true" 1`] = `
+<input
+  aria-invalid={false}
+  className="bpk-input bpk-input--valid"
+  id="test"
+  name="test"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`BpkInput should render correctly with value 1`] = `
+<input
+  aria-invalid={false}
+  className="bpk-input"
+  id="test"
+  name="test"
+  type="text"
+  value="My value"
+/>
+`;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkTableBody should render correctly 1`] = `
+<tbody>
+  <tr />
+</tbody>
+`;
+
+exports[`BpkTableBody should render correctly with arbitrary props 1`] = `
+<tbody
+  data-foo="bar"
+  id="my-custom-id"
+>
+  <tr />
+</tbody>
+`;
+
+exports[`BpkTableBody should render correctly with custom class 1`] = `
+<tbody
+  className="my-custom-class"
+>
+  <tr />
+</tbody>
+`;

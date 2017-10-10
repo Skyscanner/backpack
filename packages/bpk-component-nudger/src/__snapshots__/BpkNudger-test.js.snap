@@ -1,0 +1,541 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkNudger should render correctly 1`] = `
+<div
+  className="bpk-nudger"
+>
+  <button
+    aria-controls="nudger"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    disabled={false}
+    onClick={[Function]}
+    title="Decrease"
+    type="button"
+  >
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
+        }
+      }
+    >
+      <svg
+        className="bpk-nudger__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+        />
+      </svg>
+    </span>
+  </button>
+  <input
+    aria-live="assertive"
+    className="bpk-nudger__input"
+    id="nudger"
+    readOnly={true}
+    role="alert"
+    type="text"
+    value={2}
+  />
+  <button
+    aria-controls="nudger"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    disabled={false}
+    onClick={[Function]}
+    title="Increase"
+    type="button"
+  >
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
+        }
+      }
+    >
+      <svg
+        className="bpk-nudger__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
+<div
+  className="bpk-nudger my-nudger"
+>
+  <button
+    aria-controls="nudger"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    disabled={false}
+    onClick={[Function]}
+    title="Decrease"
+    type="button"
+  >
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
+        }
+      }
+    >
+      <svg
+        className="bpk-nudger__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+        />
+      </svg>
+    </span>
+  </button>
+  <input
+    aria-live="assertive"
+    className="bpk-nudger__input"
+    id="nudger"
+    readOnly={true}
+    role="alert"
+    type="text"
+    value={2}
+  />
+  <button
+    aria-controls="nudger"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    disabled={false}
+    onClick={[Function]}
+    title="Increase"
+    type="button"
+  >
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
+        }
+      }
+    >
+      <svg
+        className="bpk-nudger__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`BpkNudger should render correctly with a value < min 1`] = `
+<div
+  className="bpk-nudger"
+>
+  <button
+    aria-controls="nudger"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    disabled={true}
+    onClick={[Function]}
+    title="Decrease"
+    type="button"
+  >
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
+        }
+      }
+    >
+      <svg
+        className="bpk-nudger__icon bpk-nudger__icon--disabled"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+        />
+      </svg>
+    </span>
+  </button>
+  <input
+    aria-live="assertive"
+    className="bpk-nudger__input"
+    id="nudger"
+    readOnly={true}
+    role="alert"
+    type="text"
+    value={1}
+  />
+  <button
+    aria-controls="nudger"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    disabled={false}
+    onClick={[Function]}
+    title="Increase"
+    type="button"
+  >
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
+        }
+      }
+    >
+      <svg
+        className="bpk-nudger__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`BpkNudger should render correctly with a value = max 1`] = `
+<div
+  className="bpk-nudger"
+>
+  <button
+    aria-controls="nudger"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    disabled={false}
+    onClick={[Function]}
+    title="Decrease"
+    type="button"
+  >
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
+        }
+      }
+    >
+      <svg
+        className="bpk-nudger__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+        />
+      </svg>
+    </span>
+  </button>
+  <input
+    aria-live="assertive"
+    className="bpk-nudger__input"
+    id="nudger"
+    readOnly={true}
+    role="alert"
+    type="text"
+    value={9}
+  />
+  <button
+    aria-controls="nudger"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    disabled={true}
+    onClick={[Function]}
+    title="Increase"
+    type="button"
+  >
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
+        }
+      }
+    >
+      <svg
+        className="bpk-nudger__icon bpk-nudger__icon--disabled"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`BpkNudger should render correctly with a value = min 1`] = `
+<div
+  className="bpk-nudger"
+>
+  <button
+    aria-controls="nudger"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    disabled={true}
+    onClick={[Function]}
+    title="Decrease"
+    type="button"
+  >
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
+        }
+      }
+    >
+      <svg
+        className="bpk-nudger__icon bpk-nudger__icon--disabled"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+        />
+      </svg>
+    </span>
+  </button>
+  <input
+    aria-live="assertive"
+    className="bpk-nudger__input"
+    id="nudger"
+    readOnly={true}
+    role="alert"
+    type="text"
+    value={1}
+  />
+  <button
+    aria-controls="nudger"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    disabled={false}
+    onClick={[Function]}
+    title="Increase"
+    type="button"
+  >
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
+        }
+      }
+    >
+      <svg
+        className="bpk-nudger__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`BpkNudger should render correctly with a value > max 1`] = `
+<div
+  className="bpk-nudger"
+>
+  <button
+    aria-controls="nudger"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    disabled={false}
+    onClick={[Function]}
+    title="Decrease"
+    type="button"
+  >
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
+        }
+      }
+    >
+      <svg
+        className="bpk-nudger__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+        />
+      </svg>
+    </span>
+  </button>
+  <input
+    aria-live="assertive"
+    className="bpk-nudger__input"
+    id="nudger"
+    readOnly={true}
+    role="alert"
+    type="text"
+    value={9}
+  />
+  <button
+    aria-controls="nudger"
+    className="bpk-button bpk-button--secondary bpk-button--icon-only bpk-nudger__button"
+    disabled={true}
+    onClick={[Function]}
+    title="Increase"
+    type="button"
+  >
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
+        }
+      }
+    >
+      <svg
+        className="bpk-nudger__icon bpk-nudger__icon--disabled"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;

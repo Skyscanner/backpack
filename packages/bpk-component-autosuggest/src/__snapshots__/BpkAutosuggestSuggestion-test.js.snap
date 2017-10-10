@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkAutosuggestSuggestion should render correctly 1`] = `
+<section
+  className="bpk-autosuggest__suggestion"
+>
+  <div
+    className="bpk-autosuggest__suggestion-inner"
+  >
+    <span
+      className="bpk-autosuggest__suggestion-value"
+    >
+      Edinburgh
+    </span>
+  </div>
+</section>
+`;
+
+exports[`BpkAutosuggestSuggestion should render correctly with a "className" attribute 1`] = `
+<section
+  className="bpk-autosuggest__suggestion custom-class-1 custom-class-2"
+>
+  <div
+    className="bpk-autosuggest__suggestion-inner"
+  >
+    <span
+      className="bpk-autosuggest__suggestion-value"
+    >
+      Edinburgh
+    </span>
+  </div>
+</section>
+`;
+
+exports[`BpkAutosuggestSuggestion should render correctly with a "subHeading" attribute 1`] = `
+<section
+  className="bpk-autosuggest__suggestion"
+>
+  <div
+    className="bpk-autosuggest__suggestion-inner"
+  >
+    <span
+      className="bpk-autosuggest__suggestion-value"
+    >
+      Edinburgh
+    </span>
+    <small
+      className="bpk-autosuggest__suggestion-sub-heading"
+    >
+      United Kingdom
+    </small>
+  </div>
+</section>
+`;
+
+exports[`BpkAutosuggestSuggestion should render correctly with a "subHeading" attribute being an element 1`] = `
+<section
+  className="bpk-autosuggest__suggestion"
+>
+  <div
+    className="bpk-autosuggest__suggestion-inner"
+  >
+    <span
+      className="bpk-autosuggest__suggestion-value"
+    >
+      Edinburgh
+    </span>
+    <small
+      className="bpk-autosuggest__suggestion-sub-heading"
+    >
+      <strong>
+        United Kingdom
+      </strong>
+    </small>
+  </div>
+</section>
+`;
+
+exports[`BpkAutosuggestSuggestion should render correctly with a "tertiaryLabel" attribute 1`] = `
+<section
+  className="bpk-autosuggest__suggestion"
+>
+  <div
+    className="bpk-autosuggest__suggestion-inner"
+  >
+    <span
+      className="bpk-autosuggest__suggestion-value"
+    >
+      Edinburgh
+    </span>
+    <small
+      className="bpk-autosuggest__suggestion-sub-heading"
+    >
+      United Kingdom
+    </small>
+    <aside
+      className="bpk-autosuggest__suggestion-tertiary-label"
+    >
+      Scotland
+    </aside>
+  </div>
+</section>
+`;
+
+exports[`BpkAutosuggestSuggestion should render correctly with a "tertiaryLabel" attribute but without a "subHeading" attribute 1`] = `
+<section
+  className="bpk-autosuggest__suggestion"
+>
+  <div
+    className="bpk-autosuggest__suggestion-inner"
+  >
+    <span
+      className="bpk-autosuggest__suggestion-value"
+    >
+      Edinburgh
+    </span>
+    <small
+      className="bpk-autosuggest__suggestion-sub-heading"
+    />
+    <aside
+      className="bpk-autosuggest__suggestion-tertiary-label"
+    >
+      Scotland
+    </aside>
+  </div>
+</section>
+`;
+
+exports[`BpkAutosuggestSuggestion should render correctly with a "value" attribute being an element 1`] = `
+<section
+  className="bpk-autosuggest__suggestion"
+>
+  <div
+    className="bpk-autosuggest__suggestion-inner"
+  >
+    <span
+      className="bpk-autosuggest__suggestion-value"
+    >
+      <strong>
+        Edinburgh
+      </strong>
+    </span>
+  </div>
+</section>
+`;
+
+exports[`BpkAutosuggestSuggestion should render correctly with all available attributes 1`] = `
+<section
+  className="bpk-autosuggest__suggestion bpk-autosuggest__suggestion--indent"
+>
+  <svg
+    className="bpk-autosuggest__suggestion-icon"
+    height="24"
+    style={
+      Object {
+        "height": "1.5rem",
+        "width": "1.5rem",
+      }
+    }
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M17.8 20.1l.6-.6c.2-.2.3-.5.2-.8l-2.2-9.3 4.1-4.2c.5-.5.5-1.3 0-1.9-.5-.5-1.4-.5-1.9 0l-4.2 4.1-9.1-2c-.3-.1-.6 0-.8.2l-.6.6c-.4.4-.3 1.1.2 1.4l7.2 3.2-3.7 3.7-2.3-.8c-.3-.1-.6 0-.8.2L3 15.2l4.2 1.6L8.8 21l1.3-1.5c.2-.2.3-.6.2-.8l-.8-2.3 3.7-3.7 3.2 7.2c.3.5 1 .6 1.4.2z"
+    />
+  </svg>
+  <div
+    className="bpk-autosuggest__suggestion-inner"
+  >
+    <span
+      className="bpk-autosuggest__suggestion-value"
+    >
+      Edinburgh
+    </span>
+    <small
+      className="bpk-autosuggest__suggestion-sub-heading"
+    >
+      United Kingdom
+    </small>
+    <aside
+      className="bpk-autosuggest__suggestion-tertiary-label"
+    >
+      Scotland
+    </aside>
+  </div>
+</section>
+`;
+
+exports[`BpkAutosuggestSuggestion should render correctly with an "icon" attribute 1`] = `
+<section
+  className="bpk-autosuggest__suggestion"
+>
+  <svg
+    className="bpk-autosuggest__suggestion-icon"
+    height="24"
+    style={
+      Object {
+        "height": "1.5rem",
+        "width": "1.5rem",
+      }
+    }
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M17.8 20.1l.6-.6c.2-.2.3-.5.2-.8l-2.2-9.3 4.1-4.2c.5-.5.5-1.3 0-1.9-.5-.5-1.4-.5-1.9 0l-4.2 4.1-9.1-2c-.3-.1-.6 0-.8.2l-.6.6c-.4.4-.3 1.1.2 1.4l7.2 3.2-3.7 3.7-2.3-.8c-.3-.1-.6 0-.8.2L3 15.2l4.2 1.6L8.8 21l1.3-1.5c.2-.2.3-.6.2-.8l-.8-2.3 3.7-3.7 3.2 7.2c.3.5 1 .6 1.4.2z"
+    />
+  </svg>
+  <div
+    className="bpk-autosuggest__suggestion-inner"
+  >
+    <span
+      className="bpk-autosuggest__suggestion-value"
+    >
+      Edinburgh
+    </span>
+  </div>
+</section>
+`;
+
+exports[`BpkAutosuggestSuggestion should render correctly with an "indent" attribute 1`] = `
+<section
+  className="bpk-autosuggest__suggestion bpk-autosuggest__suggestion--indent"
+>
+  <div
+    className="bpk-autosuggest__suggestion-inner"
+  >
+    <span
+      className="bpk-autosuggest__suggestion-value"
+    >
+      Edinburgh
+    </span>
+  </div>
+</section>
+`;

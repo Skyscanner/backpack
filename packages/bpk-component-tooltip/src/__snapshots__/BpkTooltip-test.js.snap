@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkTooltip should render correctly 1`] = `
+<section
+  className="bpk-tooltip"
+  id="my-popover"
+  role="dialog"
+  tabIndex="-1"
+>
+  <span
+    className="bpk-tooltip__arrow"
+    id="js-bpk-popover-arrow"
+    role="presentation"
+  />
+  <div
+    className="bpk-tooltip__inner bpk-tooltip__inner--padded"
+  >
+    My tooltip content
+  </div>
+</section>
+`;
+
+exports[`BpkTooltip should render correctly with "className" attribute 1`] = `
+<section
+  className="bpk-tooltip my-custom-class"
+  id="my-tooltip"
+  role="dialog"
+  tabIndex="-1"
+>
+  <span
+    className="bpk-tooltip__arrow"
+    id="js-bpk-popover-arrow"
+    role="presentation"
+  />
+  <div
+    className="bpk-tooltip__inner bpk-tooltip__inner--padded"
+  >
+    My tooltip content
+  </div>
+</section>
+`;
+
+exports[`BpkTooltip should render correctly with "padded" attribute equal to false 1`] = `
+<section
+  className="bpk-tooltip"
+  id="my-tooltip"
+  role="dialog"
+  tabIndex="-1"
+>
+  <span
+    className="bpk-tooltip__arrow"
+    id="js-bpk-popover-arrow"
+    role="presentation"
+  />
+  <div
+    className="bpk-tooltip__inner"
+  >
+    My tooltip content
+  </div>
+</section>
+`;

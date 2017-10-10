@@ -1,0 +1,1726 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkButton should render correctly 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4278245237,
+      4278238568,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4294967295,
+      4294967295,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+            "paddingBottom": 6,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 6,
+          },
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "color": "rgb(255, 84, 82)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4294592650,
+      4292422507,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4278245237,
+      4278238568,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4294967295,
+      4294967295,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+            "paddingBottom": 6,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 6,
+          },
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4278245237,
+      4278238568,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+          undefined,
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "justifyContent": "space-between",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "marginRight": 4,
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+      <Image
+        source="../rightarrow_360.png"
+      />
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`iOS BpkButton should support having only an icon 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4278245237,
+      4278238568,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+        Object {
+          "width": 32,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+          undefined,
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Image
+        source="../rightarrow_360.png"
+      />
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`iOS BpkButton should support overwriting styles 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4278245237,
+      4278238568,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+      ],
+      Object {
+        "width": 100,
+      },
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`iOS BpkButton should support the "disabled" property 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4293321963,
+      4293321963,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+        "disabled",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "color": "rgb(178, 174, 189)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`iOS BpkButton should support the "icon" and "large" property 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4278245237,
+      4278238568,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+        Object {
+          "minHeight": 48,
+        },
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+          Object {
+            "minHeight": 48,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+          },
+          undefined,
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+          Object {
+            "justifyContent": "space-between",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 17,
+              "fontWeight": "400",
+              "lineHeight": 22,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+                Object {
+                  "marginRight": 4,
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`iOS BpkButton should support the "iconOnly" and "large" property 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4278245237,
+      4278238568,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+        Object {
+          "minHeight": 48,
+        },
+        Object {
+          "width": 48,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+          Object {
+            "minHeight": 48,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+          },
+          undefined,
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+          undefined,
+        ]
+      }
+    />
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`iOS BpkButton should support the "large" and secondary property 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4294967295,
+      4294967295,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+        Object {
+          "minHeight": 48,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+            "paddingBottom": 6,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 6,
+          },
+          Object {
+            "minHeight": 48,
+            "paddingLeft": 14,
+            "paddingRight": 14,
+          },
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 17,
+              "fontWeight": "400",
+              "lineHeight": 22,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+                undefined,
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`iOS BpkButton should support the "large" property 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4278245237,
+      4278238568,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+        Object {
+          "minHeight": 48,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+          Object {
+            "minHeight": 48,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+          },
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 17,
+              "fontWeight": "400",
+              "lineHeight": 22,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`iOS BpkButton should support the "selected" property 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4278230461,
+      4278226088,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`iOS BpkButtonThemed should render correctly 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4278245237,
+      4278238568,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingBottom": 8,
+            "paddingLeft": 12,
+            "paddingRight": 12,
+            "paddingTop": 8,
+          },
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "lineHeight": 18,
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
