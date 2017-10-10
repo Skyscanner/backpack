@@ -81,6 +81,7 @@ export const NATIVE_TEXT = '/components/native/text';
 // components/utilities/
 export const UTILITIES = '/components/utilities';
 export const ALIGNMENT = '/components/utilities/alignment';
+export const THEMING = '/components/utilities/theming';
 
 // MISC
 export const GRID_COLUMN_DEMO = '/grid-column-demo';

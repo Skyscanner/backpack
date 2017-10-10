@@ -65,4 +65,19 @@ export default class App extends Component {
 | icon                  | element                                                   | false    | null          |
 | iconOnly              | bool                                                      | false    | false         |
 | large                 | bool                                                      | false    | false         |
+| theme                 | See [Theme Props](#theme-props) below                     | false    | null          |
 | type                  | oneOf('primary', 'featured', 'secondary', 'destructive')  | false    | null          |
+
+## Theme Props
+
+### Primary
+
+* `buttonPrimaryTextColor`
+* `buttonPrimaryGradientStartColor`
+* `buttonPrimaryGradientEndColor`
+
+### Secondary
+
+* `buttonSecondaryTextColor`
+* `buttonSecondaryBackgroundColor`
+* `buttonSecondaryBorderColor`
