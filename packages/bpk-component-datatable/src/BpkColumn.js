@@ -26,4 +26,4 @@ const getClassName = cssModules(STYLES);
 
 const BpkColumn = props => <Column className={getClassName('bpk-column')} {...props} />;
 
-export default BpkColumn;
+export { BpkColumn, Column };

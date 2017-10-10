@@ -16,16 +16,18 @@
  * limitations under the License.
  */
 
+@import '~bpk-mixins/index';
+
 .bpk-column {
+  text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 
   &:first-child {
-    padding: 0 20px;
+    padding: 0 $bpk-spacing-base;
   }
 
   &:last-child {
-    padding: 0 20px;
+    padding: 0 $bpk-spacing-base;
   }
 }

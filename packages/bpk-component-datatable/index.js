@@ -15,9 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import BpkDataTable from './src/BpkDataTable';
 import { Column } from 'react-virtualized';
+import BpkDataTable from './src/BpkDataTable';
 
 const BpkColumn = Column;
 

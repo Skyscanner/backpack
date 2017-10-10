@@ -23,27 +23,26 @@ import { BpkDataTable, BpkColumn } from './index';
 
 const rows = [
   { name: 'Jose', description: 'Software Engineer', bla: 'Bla' },
-  { name: 'Rolf', description: 'Some guy', bla: 'Bla' }
+  { name: 'Rolf', description: 'Some guy', bla: 'Bla' },
 ];
 
 storiesOf('bpk-component-datatable', module)
   .add('Example', () => (
-    <BpkDataTable rows={rows} dir={document.querySelector('html').dir}>
+    <BpkDataTable rows={rows} height={300} dir={document.querySelector('html').dir}>
       <BpkColumn
-        label='Name'
-        dataKey='name'
+        label={'Name'}
+        dataKey={'name'}
         width={100}
       />
       <BpkColumn
-        label='Description'
-        dataKey='description'
+        label={'Description'}
+        dataKey={'description'}
         width={100}
         flexGrow={1}
       />
       <BpkColumn
-        label='Bla'
-        dataKey='bla'
-        disableSort
+        label={'Bla'}
+        dataKey={'bla'}
         width={100}
       />
     </BpkDataTable>

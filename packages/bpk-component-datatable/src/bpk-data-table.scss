@@ -16,23 +16,23 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+@import '~bpk-mixins';
 
 .bpk-data-table {
   width: 100%;
 
   &__headerColumn {
     display: flex;
+    height: 100%;
     flex-direction: row;
     align-items: center;
-    height: 100%;
-    
+
     &:first-child {
-      padding: 0 20px;
+      padding: 0 $bpk-spacing-base;
     }
 
     &:last-child {
-      padding: 0 20px;
+      padding: 0 $bpk-spacing-base;
     }
 
     &:hover {
@@ -44,13 +44,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 1px solid $bpk-color-gray-50;
+    border: $bpk-border-size-sm solid $bpk-color-gray-50;
     border-bottom: none;
     color: $bpk-color-gray-700;
     font-weight: normal;
 
     &:last-child {
-      border-bottom: 1px solid $bpk-color-gray-50;
+      border-bottom: $bpk-border-size-sm solid $bpk-color-gray-50;
     }
 
     &:not(.bpk-data-table__headerRow):hover {

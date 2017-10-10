@@ -1,0 +1,406 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkDataTable should render correctly in RTL 1`] = `
+<div
+  style={
+    Object {
+      "overflow": "visible",
+      "width": 0,
+    }
+  }
+>
+  <div
+    className="ReactVirtualized__Table bpk-data-table"
+    id={undefined}
+    role="grid"
+    style={Object {}}
+  >
+    <div
+      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__headerRow"
+      role="row"
+      style={
+        Object {
+          "height": 60,
+          "overflow": "hidden",
+          "paddingRight": 0,
+          "width": 0,
+        }
+      }
+    >
+      <div
+        aria-label="Bla"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="columnheader"
+        style={
+          Object {
+            "WebkitFlex": "0 1 100px",
+            "flex": "0 1 100px",
+            "msFlex": "0 1 100px",
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          className="ReactVirtualized__Table__headerTruncatedText"
+          title="Bla"
+        >
+          Bla
+        </span>
+      </div>
+      <div
+        aria-label="Description"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="columnheader"
+        style={
+          Object {
+            "WebkitFlex": "1 1 100px",
+            "flex": "1 1 100px",
+            "msFlex": "1 1 100px",
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          className="ReactVirtualized__Table__headerTruncatedText"
+          title="Description"
+        >
+          Description
+        </span>
+      </div>
+      <div
+        aria-label="Name"
+        aria-sort="ascending"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="columnheader"
+        style={
+          Object {
+            "WebkitFlex": "0 1 100px",
+            "flex": "0 1 100px",
+            "msFlex": "0 1 100px",
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          className="ReactVirtualized__Table__headerTruncatedText"
+          title="Name"
+        >
+          Name
+        </span>
+        <svg
+          className="ReactVirtualized__Table__sortableHeaderIcon ReactVirtualized__Table__sortableHeaderIcon--ASC"
+          height={18}
+          viewBox="0 0 24 24"
+          width={18}
+        >
+          <path
+            d="M7 14l5-5 5 5z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      aria-label="grid"
+      aria-readonly={true}
+      className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
+      id={undefined}
+      onScroll={[Function]}
+      role="rowgroup"
+      style={
+        Object {
+          "WebkitOverflowScrolling": "touch",
+          "boxSizing": "border-box",
+          "direction": "rtl",
+          "height": 140,
+          "overflowX": "hidden",
+          "overflowY": "hidden",
+          "position": "relative",
+          "width": 0,
+          "willChange": "transform",
+        }
+      }
+      tabIndex={0}
+    />
+  </div>
+</div>
+`;
+
+exports[`BpkDataTable should render correctly with multiple columns 1`] = `
+<div
+  style={
+    Object {
+      "overflow": "visible",
+      "width": 0,
+    }
+  }
+>
+  <div
+    className="ReactVirtualized__Table bpk-data-table"
+    id={undefined}
+    role="grid"
+    style={Object {}}
+  >
+    <div
+      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__headerRow"
+      role="row"
+      style={
+        Object {
+          "height": 60,
+          "overflow": "hidden",
+          "paddingRight": 0,
+          "width": 0,
+        }
+      }
+    >
+      <div
+        aria-label="Name"
+        aria-sort="ascending"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="columnheader"
+        style={
+          Object {
+            "WebkitFlex": "0 1 100px",
+            "flex": "0 1 100px",
+            "msFlex": "0 1 100px",
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          className="ReactVirtualized__Table__headerTruncatedText"
+          title="Name"
+        >
+          Name
+        </span>
+        <svg
+          className="ReactVirtualized__Table__sortableHeaderIcon ReactVirtualized__Table__sortableHeaderIcon--ASC"
+          height={18}
+          viewBox="0 0 24 24"
+          width={18}
+        >
+          <path
+            d="M7 14l5-5 5 5z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+      </div>
+      <div
+        aria-label="Description"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="columnheader"
+        style={
+          Object {
+            "WebkitFlex": "1 1 100px",
+            "flex": "1 1 100px",
+            "msFlex": "1 1 100px",
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          className="ReactVirtualized__Table__headerTruncatedText"
+          title="Description"
+        >
+          Description
+        </span>
+      </div>
+      <div
+        aria-label="Bla"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="columnheader"
+        style={
+          Object {
+            "WebkitFlex": "0 1 100px",
+            "flex": "0 1 100px",
+            "msFlex": "0 1 100px",
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          className="ReactVirtualized__Table__headerTruncatedText"
+          title="Bla"
+        >
+          Bla
+        </span>
+      </div>
+    </div>
+    <div
+      aria-label="grid"
+      aria-readonly={true}
+      className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
+      id={undefined}
+      onScroll={[Function]}
+      role="rowgroup"
+      style={
+        Object {
+          "WebkitOverflowScrolling": "touch",
+          "boxSizing": "border-box",
+          "direction": "ltr",
+          "height": 140,
+          "overflowX": "hidden",
+          "overflowY": "hidden",
+          "position": "relative",
+          "width": 0,
+          "willChange": "transform",
+        }
+      }
+      tabIndex={0}
+    />
+  </div>
+</div>
+`;
+
+exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
+<div
+  style={
+    Object {
+      "overflow": "visible",
+      "width": 0,
+    }
+  }
+>
+  <div
+    className="ReactVirtualized__Table bpk-data-table"
+    id={undefined}
+    role="grid"
+    style={Object {}}
+  >
+    <div
+      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__headerRow"
+      role="row"
+      style={
+        Object {
+          "height": 60,
+          "overflow": "hidden",
+          "paddingRight": 0,
+          "width": 0,
+        }
+      }
+    >
+      <div
+        aria-label="Name"
+        aria-sort="ascending"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="columnheader"
+        style={
+          Object {
+            "WebkitFlex": "0 1 100px",
+            "flex": "0 1 100px",
+            "msFlex": "0 1 100px",
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          className="ReactVirtualized__Table__headerTruncatedText"
+          title="Name"
+        >
+          Name
+        </span>
+        <svg
+          className="ReactVirtualized__Table__sortableHeaderIcon ReactVirtualized__Table__sortableHeaderIcon--ASC"
+          height={18}
+          viewBox="0 0 24 24"
+          width={18}
+        >
+          <path
+            d="M7 14l5-5 5 5z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+      </div>
+      <div
+        aria-label="Description"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="columnheader"
+        style={
+          Object {
+            "WebkitFlex": "1 1 100px",
+            "flex": "1 1 100px",
+            "msFlex": "1 1 100px",
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          className="ReactVirtualized__Table__headerTruncatedText"
+          title="Description"
+        >
+          Description
+        </span>
+      </div>
+      <div
+        aria-label="Bla"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="columnheader"
+        style={
+          Object {
+            "WebkitFlex": "0 1 100px",
+            "flex": "0 1 100px",
+            "msFlex": "0 1 100px",
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          className="ReactVirtualized__Table__headerTruncatedText"
+          title="Bla"
+        >
+          Bla
+        </span>
+      </div>
+    </div>
+    <div
+      aria-label="grid"
+      aria-readonly={true}
+      className="ReactVirtualized__Grid ReactVirtualized__Table__Grid"
+      id={undefined}
+      onScroll={[Function]}
+      role="rowgroup"
+      style={
+        Object {
+          "WebkitOverflowScrolling": "touch",
+          "boxSizing": "border-box",
+          "direction": "ltr",
+          "height": 140,
+          "overflowX": "hidden",
+          "overflowY": "hidden",
+          "position": "relative",
+          "width": 0,
+          "willChange": "transform",
+        }
+      }
+      tabIndex={0}
+    />
+  </div>
+</div>
+`;
