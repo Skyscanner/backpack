@@ -73,6 +73,7 @@ import BarchartsPage from './../pages/BarchartsPage';
 import StarRatingPage from './../pages/StarRatingPage';
 
 import AlignmentPage from './../pages/AlignmentPage';
+import ThemingPage from './../pages/ThemingPage';
 
 import NativeButtonPage from './../pages/NativeButtonPage';
 import NativeCardsPage from './../pages/NativeCardsPage';
@@ -155,6 +156,7 @@ const Routes = (
       <Route path={ROUTES.UTILITIES}>
         <IndexRedirect to={ROUTES.ALIGNMENT} />
         <Route path={ROUTES.ALIGNMENT} component={AlignmentPage} />
+        <Route path={ROUTES.THEMING} component={ThemingPage} />
       </Route>
     </Route>
 

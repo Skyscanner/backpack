@@ -91,6 +91,7 @@ const links = [
     sort: true,
     links: [
       { id: 'ALIGNMENT', route: routes.ALIGNMENT, children: 'Alignment' },
+      { id: 'THEMING', route: routes.THEMING, children: 'Theming' },
     ],
   },
 ];

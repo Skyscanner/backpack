@@ -29,6 +29,8 @@ import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import androidEmpty from './../../static/android_empty.svg';
 
+import { THEMING } from './../../constants/routes';
+
 const reactNativeUrl = 'https://facebook.github.io/react-native/docs/touchablehighlight.html';
 
 const components = [
@@ -136,6 +138,9 @@ const NativeTextPage = () => <DocsPageBuilder
     </Paragraph>,
     <Paragraph>
       Buttons can be text or icon based.
+    </Paragraph>,
+    <Paragraph>
+      Primary and secondary buttons can be <BpkLink href={THEMING}>themed</BpkLink>.
     </Paragraph>,
   ]}
   components={components}

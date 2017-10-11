@@ -16,17 +16,24 @@ import { View } from 'react-native';
 import BpkThemeProvider from 'react-native-bpk-theming';
 
 import BpkButton from 'react-native-bpk-component-button';
-import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
+
+import { translationHelper } from 'translations';
 
 const theme = {
-  color: TOKENS.colorBlue500
+  buttonPrimaryGradientStartColor: '#fce134',
+  buttonPrimaryGradientEndColor: '#f8c42d',
+  buttonPrimaryTextColor: '#2d244c',
+  buttonSecondaryBackgroundColor: '#fff',
+  buttonSecondaryTextColor: '#2d244c',
+  buttonSecondaryBorderColor: '#2d244c',
 };
 
 export default class App extends Component {
   render() {
     return (
-      <BpkThemeProvider theme={themes}>
-        <BpkButton title="Book flight" onPress={() => {}}/>
+      <BpkThemeProvider theme={theme}>
+        <BpkButton type="primary" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
+        <BpkButton type="secondary" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
       </BpkThemeProvider>
     );
   }
