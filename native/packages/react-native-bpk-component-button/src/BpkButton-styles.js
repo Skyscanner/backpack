@@ -116,14 +116,6 @@ const modifiers = {
       paddingRight: tokens.spacingBase - buttonBorderWidth,
     },
   }),
-  selected: StyleSheet.create({
-    text: {
-      color: tokens.colorWhite,
-    },
-    button: {
-      borderColor: 'transparent',
-    },
-  }),
   disabled: StyleSheet.create({
     button: {
       borderColor: 'transparent',
@@ -165,7 +157,6 @@ const gradientColors = {
   featured: ['rgb(250, 72, 138)', 'rgb(217, 43, 107)'], // TODO [tokens.colorPink500, tokens.colorPink600]
   destructive: [tokens.colorWhite, tokens.colorWhite],
   secondary: [tokens.colorWhite, tokens.colorWhite],
-  selected: [tokens.colorBlue600, tokens.colorBlue700],
   disabled: [tokens.colorGray100, tokens.colorGray100],
 };
 
