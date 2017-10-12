@@ -2,11 +2,18 @@
 
 ## UNRELEASED
 
+_Nothing Yet_
+
+## 2017-10-12 - New react Native icon component installation instructions and simpler React Native button API
+
 **Breaking:**
-- react-native-bpk-component-button
+
+- react-native-bpk-component-button:  3.1.0 => 4.0.0
  - The `selected` state has been removed. Buttons using `selected` will fall back and become standard buttons.
+
 **Updated:**
-- react-native-bpk-component-icon
+
+- react-native-bpk-component-icon: 1.0.1 => 1.0.2
   - update installation instruction
 
 ## 2017-10-10 - React Native button components can now be themed
@@ -72,7 +79,7 @@
 
 **Added:**
 - react-native-bpk-theming  0.0.1 => 1.0.0
-  - New `BpkThemeProvider` and `withTheme` utilities.
+  - New `BpkThemeProvider` and `withTheme` utilities. See http://backpack.prod.aws.skyscnr.com/components/utilities/theming
 
 - react-native-bpk-component-icon 0.0.1 => 0.0.2
   - New component `BpkIcon`. See http://backpack.prod.aws.skyscnr.com/components/native/icons/
