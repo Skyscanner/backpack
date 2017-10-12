@@ -10,11 +10,26 @@ npm install react-native-bpk-component-icon --save-dev
 
 ### iOS installation
 
-Add the following to your `Podfile` and run `pod update`:
+The most reliable way to install the file on iOS is manually, two simple steps are required:
+1. update the `Info.plist` file by adding
+    ```
+    <key>UIAppFonts</key>
+      <array>
+        <string>BpkIcon.ttf</string>
+      </array>
+    ```
+    if the entry `UIAppFonts` it's already there, just add `<string>BpkIcon.ttf</string>` inside the `<array>` like so
+    ```
+    <array>
+        ... existing entries
+        <string>BpkIcon.ttf</string>
+      </array>
+    ```
+2. In the `Build Phases` of your project, in the section `Copy Bundle Resources` add a reference to the `BpkIcon.ttf` file path like `/path/to/node_modules/bpk-svgs/dist/font/BpkIcon.ttf`, the end result should look like this
 
-```
-pod 'BpkIcons', :path => 'node_modules/react-native-bpk-component-icon'
-```
+![XcodeExample](screenshots/docs/build.png)
+
+Then rebuild the app
 
 ### Android installation
 
