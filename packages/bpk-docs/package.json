@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.172",
+  "version": "0.0.173",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -18,7 +18,7 @@
     "bpk-component-autosuggest": "^3.0.42",
     "bpk-component-badge": "^1.0.22",
     "bpk-component-banner-alert": "^1.2.16",
-    "bpk-component-barchart": "^2.1.6",
+    "bpk-component-barchart": "^2.1.7",
     "bpk-component-blockquote": "^1.1.16",
     "bpk-component-breakpoint": "^1.0.22",
     "bpk-component-button": "^1.6.62",
@@ -33,9 +33,9 @@
     "bpk-component-form-validation": "^1.0.23",
     "bpk-component-grid": "^1.1.28",
     "bpk-component-grid-toggle": "^1.0.22",
-    "bpk-component-horizontal-nav": "^1.0.29",
+    "bpk-component-horizontal-nav": "^1.0.30",
     "bpk-component-icon": "^3.13.10",
-    "bpk-component-image": "^1.1.4",
+    "bpk-component-image": "^1.1.5",
     "bpk-component-input": "^3.2.29",
     "bpk-component-label": "^3.2.28",
     "bpk-component-link": "^1.0.22",
@@ -65,12 +65,12 @@
     "bpk-tokens": "^26.4.0",
     "prop-types": "^15.5.8",
     "react": "^15.0.0",
-    "react-native-bpk-component-button": "^3.1.0",
-    "react-native-bpk-component-card": "^1.0.6",
-    "react-native-bpk-component-icon": "^1.0.1",
+    "react-native-bpk-component-button": "^4.0.0",
+    "react-native-bpk-component-card": "^1.0.7",
+    "react-native-bpk-component-icon": "^1.0.2",
     "react-native-bpk-component-text": "^2.1.10",
     "react-native-bpk-component-text-input": "^1.0.11",
-    "react-native-bpk-theming": "^1.0.3",
+    "react-native-bpk-theming": "^1.0.4",
     "uglify-loader": "^1.4.0"
   }
 }
