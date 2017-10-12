@@ -10,22 +10,9 @@ const tokens = Platform.select({
   android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
 })();
 
-const {
-  spacingBase,
-  colorGray50,
-} = tokens;
-
 const styles = StyleSheet.create({
-  centered: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: spacingBase,
-    width: '100%',
-    backgroundColor: colorGray50,
-  },
   container: {
-    marginBottom: spacingBase,
+    marginBottom: tokens.spacingBase,
   },
 });
 
@@ -42,11 +29,6 @@ const cardContent = (
 const press = () => null;
 
 storiesOf('BpkCard', module)
-  .addDecorator(getStory =>
-    <View style={styles.centered}>
-      {getStory()}
-    </View>,
-)
   .add('docs:default', () => (
     <BpkCard onPress={press}>{cardContent}</BpkCard>
   ))

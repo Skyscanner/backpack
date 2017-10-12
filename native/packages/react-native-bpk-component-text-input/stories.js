@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { StyleSheet, View, Platform } from 'react-native';
-import BpkText from 'react-native-bpk-component-text';
+import { StorySubheading } from '../../storybook/TextStyles';
 import BpkTextInput from './index';
 
 const tokens = Platform.select({
@@ -10,24 +10,11 @@ const tokens = Platform.select({
 })();
 
 const {
-  spacingSm,
   spacingBase,
   spacingXs,
 } = tokens;
 
 const styles = StyleSheet.create({
-  centered: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: spacingSm,
-    width: '100%',
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: spacingBase,
-  },
   label: {
     marginBottom: spacingXs,
   },
@@ -37,26 +24,21 @@ const styles = StyleSheet.create({
 });
 
 storiesOf('BpkTextInput', module)
-  .addDecorator(getStory =>
-    <View style={styles.centered}>
-      {getStory()}
-    </View>,
-  )
   .add('docs:text-inputs', () => (
-    <View style={styles.container}>
-      <BpkText style={styles.label} textStyle="sm">Input</BpkText>
+    <View>
+      <StorySubheading>Input</StorySubheading>
       <BpkTextInput
         style={styles.input}
         placeholder="Country, city, or airport"
         value="Edinburgh"
       />
-      <BpkText style={styles.label} textStyle="sm">Input (Placeholder)</BpkText>
+      <StorySubheading>Input (Placeholder)</StorySubheading>
       <BpkTextInput
         style={styles.input}
         placeholder="Country, city, or airport"
         value=""
       />
-      <BpkText style={styles.label} textStyle="sm">Valid input (small)</BpkText>
+      <StorySubheading>Valid input (small)</StorySubheading>
       <BpkTextInput
         style={styles.input}
         small
@@ -64,7 +46,7 @@ storiesOf('BpkTextInput', module)
         value="Edinburgh"
         valid
       />
-      <BpkText style={styles.label} textStyle="sm">Invalid input (small)</BpkText>
+      <StorySubheading>Invalid input (small)</StorySubheading>
       <BpkTextInput
         style={styles.input}
         small
@@ -72,7 +54,7 @@ storiesOf('BpkTextInput', module)
         value="Edinbrvgh"
         valid={false}
       />
-      <BpkText style={styles.label} textStyle="sm">Disabled input (small)</BpkText>
+      <StorySubheading>Disabled input (small)</StorySubheading>
       <BpkTextInput
         style={styles.input}
         small
@@ -80,7 +62,7 @@ storiesOf('BpkTextInput', module)
         placeholder="Country, city, or airport"
         value="Edinburgh"
       />
-      <BpkText style={styles.label} textStyle="sm">Password input (small)</BpkText>
+      <StorySubheading>Password input (small)</StorySubheading>
       <BpkTextInput
         style={styles.input}
         small
@@ -88,7 +70,7 @@ storiesOf('BpkTextInput', module)
         placeholder="password"
         value="password"
       />
-      <BpkText style={styles.label} textStyle="sm">Telephone input (small)</BpkText>
+      <StorySubheading>Telephone input (small)</StorySubheading>
       <BpkTextInput
         style={styles.input}
         small

@@ -46,12 +46,6 @@ const generateThemeAttributes = (gradientStartColor, gradientEndColor) => ({
 });
 
 const styles = StyleSheet.create({
-  centered: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingLeft: tokens.spacingMd,
-    paddingRight: tokens.spacingMd,
-  },
   bottomMargin: {
     marginBottom: tokens.spacingMd,
   },
@@ -114,11 +108,6 @@ class BpkThemePicker extends Component {
 }
 
 storiesOf('BpkTheming', module)
-  .addDecorator(getStory =>
-    <View style={styles.centered}>
-      {getStory()}
-    </View>,
-  )
   .add('Default', () => (
     <View>
       <BpkThemePicker />

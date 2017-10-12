@@ -20,7 +20,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { Platform, View, StyleSheet } from 'react-native';
 import iconMappings from 'bpk-svgs/dist/font/iconMapping.json';
-import BpkText from 'react-native-bpk-component-text';
+import { StorySubheading } from '../../storybook/TextStyles';
 import BpkIcon from './index';
 
 const tokens = Platform.select({
@@ -40,9 +40,6 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     alignSelf: 'center',
-    flex: 1,
-    justifyContent: 'center',
-    padding: spacingBase,
   },
   group: {
     flexDirection: 'row',
@@ -62,13 +59,10 @@ const styles = StyleSheet.create({
   icon: {
     color: colorBlue500,
   },
-  bottomMargin: {
-    marginBottom: spacingSm,
-  },
 });
 
 const getSmallIcons = () => (<View style={styles.column}>
-  <BpkText textStyle="sm" style={styles.bottomMargin}>Small:</BpkText>
+  <StorySubheading>Small</StorySubheading>
   <View style={[styles.singleRow, styles.group]}>
     <BpkIcon
       style={styles.singleIcon}
@@ -89,7 +83,7 @@ const getSmallIcons = () => (<View style={styles.column}>
 </View>);
 
 const getLargeIcons = () => (<View style={styles.column} >
-  <BpkText textStyle="sm" style={styles.bottomMargin}>Large:</BpkText>
+  <StorySubheading>Large</StorySubheading>
   <View style={[styles.singleRow, styles.group]}>
     <BpkIcon
       style={styles.singleIcon}
@@ -107,7 +101,7 @@ const getLargeIcons = () => (<View style={styles.column} >
 </View>);
 
 const getColouredIcons = () => (<View style={styles.column} >
-  <BpkText textStyle="sm" style={styles.bottomMargin}>In any color:</BpkText>
+  <StorySubheading>In any color</StorySubheading>
   <View style={[styles.singleRow, styles.group]}>
     <BpkIcon
       style={[styles.singleIcon, { color: colorBlue500 }]}
