@@ -23,25 +23,38 @@ import {
   Platform,
   Picker,
 } from 'react-native';
+
 import { storiesOf } from '@storybook/react-native';
+import { action } from '@storybook/addon-actions';
 
-import BpkText from 'react-native-bpk-component-text';
+import BpkButton from 'react-native-bpk-component-button';
 
-import BpkThemeProvider, { withTheme } from './index';
+import BpkThemeProvider from './index';
 
 const tokens = Platform.OS === 'ios' ?
   require('bpk-tokens/tokens/ios/base.react.native.common.js') :
   require('bpk-tokens/tokens/android/base.react.native.common.js')
 ;
 
-// TODO when a themeable component is created, import and use that
-// instead of making one here.
-const BpkThemeableText = withTheme((props) => {
-  const { theme, style: outerStyle, ...rest } = props;
-  const innerStyle = {
-    color: theme.textOnPrimaryColor,
-  };
-  return <BpkText {...rest} style={[outerStyle, innerStyle]} />;
+const generateThemeAttributes = (gradientStartColor, gradientEndColor) => ({
+  buttonPrimaryTextColor: tokens.colorWhite,
+  buttonPrimaryGradientStartColor: gradientStartColor,
+  buttonPrimaryGradientEndColor: gradientEndColor,
+  buttonSecondaryTextColor: gradientEndColor,
+  buttonSecondaryBackgroundColor: tokens.colorWhite,
+  buttonSecondaryBorderColor: gradientEndColor,
+});
+
+const styles = StyleSheet.create({
+  centered: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingLeft: tokens.spacingMd,
+    paddingRight: tokens.spacingMd,
+  },
+  bottomMargin: {
+    marginBottom: tokens.spacingMd,
+  },
 });
 
 class BpkThemePicker extends Component {
@@ -49,15 +62,9 @@ class BpkThemePicker extends Component {
     super();
 
     this.themes = {
-      blue: {
-        textOnPrimaryColor: tokens.colorBlue500,
-      },
-      green: {
-        textOnPrimaryColor: tokens.colorGreen500,
-      },
-      red: {
-        textOnPrimaryColor: tokens.colorRed500,
-      },
+      blue: generateThemeAttributes(tokens.colorBlue400, tokens.colorBlue500),
+      yellow: generateThemeAttributes(tokens.colorYellow400, tokens.colorYellow500),
+      red: generateThemeAttributes(tokens.colorRed400, tokens.colorRed500),
     };
 
     this.state = {
@@ -83,32 +90,28 @@ class BpkThemePicker extends Component {
           onValueChange={this.switchTheme}
         >
           <Picker.Item label="Blue" value="blue" />
-          <Picker.Item label="Green" value="green" />
+          <Picker.Item label="Yellow" value="yellow" />
           <Picker.Item label="Red" value="red" />
         </Picker>
         <BpkThemeProvider theme={this.state.theme}>
           <View>
-            <BpkThemeableText textStyle="xxl">Flights to Edinburgh</BpkThemeableText>
-            <BpkThemeableText textStyle="xl">Flights to Edinburgh</BpkThemeableText>
-            <BpkThemeableText textStyle="lg">Flights to Edinburgh</BpkThemeableText>
-            <BpkThemeableText textStyle="base">Flights to Edinburgh</BpkThemeableText>
-            <BpkThemeableText textStyle="sm">Flights to Edinburgh</BpkThemeableText>
-            <BpkThemeableText textStyle="xs">Flights to Edinburgh</BpkThemeableText>
+            <BpkButton
+              type="primary"
+              title="Book hotel"
+              onPress={action('primary themed button pressed')}
+              style={styles.bottomMargin}
+            />
+            <BpkButton
+              type="secondary"
+              title="Go back"
+              onPress={action('secondary themed button pressed')}
+            />
           </View>
         </BpkThemeProvider>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  centered: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingLeft: tokens.spacingMd,
-    paddingRight: tokens.spacingMd,
-  },
-});
 
 storiesOf('BpkTheming', module)
   .addDecorator(getStory =>
