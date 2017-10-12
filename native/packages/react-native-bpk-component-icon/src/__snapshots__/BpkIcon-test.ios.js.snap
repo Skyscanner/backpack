@@ -20,7 +20,7 @@ exports[`iOS BpkIcon should apply user props 1`] = `
     ]
   }
 >
-  
+  
 </Text>
 `;
 
@@ -41,7 +41,7 @@ exports[`iOS BpkIcon should render correctly 1`] = `
     ]
   }
 >
-  
+  
 </Text>
 `;
 
@@ -66,6 +66,6 @@ exports[`iOS BpkIcon should render small icon correctly 1`] = `
     ]
   }
 >
-  
+  
 </Text>
 `;
