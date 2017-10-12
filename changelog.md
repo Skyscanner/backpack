@@ -4,7 +4,7 @@
 
 _Nothing Yet_
 
-## 2017-10-12 - New react Native icon component installation instructions and simpler React Native button API
+## 2017-10-12 - New React Native icon component installation instructions and simpler React Native button API
 
 **Breaking:**
 
