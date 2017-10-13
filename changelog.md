@@ -32,6 +32,10 @@
     - ticket
     - time
 
+**Fixed:**
+- bpk-react-utils
+ - Upgraded [recompose](https://github.com/acdlite/recompose) dependency to support React 16.
+
 ## 2017-10-12 - New React Native icon component installation instructions and simpler React Native button API
 
 **Breaking:**
