@@ -31,7 +31,8 @@ import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 
 import BpkThemeProvider from 'react-native-bpk-theming';
-import BpkText from 'react-native-bpk-component-text';
+
+import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
 
 import BpkButton, { BUTTON_TYPES } from './src/BpkButton';
 
@@ -43,12 +44,6 @@ const tokens = Platform.OS === 'ios' ?
 ;
 
 const styles = StyleSheet.create({
-  centered: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingLeft: tokens.spacingMd,
-    paddingRight: tokens.spacingMd,
-  },
   btnContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -69,9 +64,6 @@ const styles = StyleSheet.create({
   },
   imageDestructive: {
     tintColor: tokens.colorRed500,
-  },
-  bottomMargin: {
-    marginBottom: tokens.spacingSm,
   },
   buttonStyles: {
     marginBottom: tokens.spacingMd,
@@ -121,7 +113,7 @@ const themeAttributes = {
 
 const generateButtonStoryForType = type => (
   <View key={type}>
-    <BpkText textStyle="sm" style={styles.bottomMargin}>Default</BpkText>
+    <StorySubheading>Default</StorySubheading>
     <View style={styles.btnContainer}>
       <BpkButton
         type={type}
@@ -146,7 +138,7 @@ const generateButtonStoryForType = type => (
       />
     </View>
 
-    <BpkText textStyle="sm" style={styles.bottomMargin}>Large</BpkText>
+    <StorySubheading>Large</StorySubheading>
     <View style={styles.btnContainer}>
       <BpkButton
         large
@@ -179,11 +171,6 @@ const generateButtonStoryForType = type => (
 const allButtonStories = BUTTON_TYPES.map(generateButtonStoryForType);
 
 storiesOf('BpkButton', module)
-  .addDecorator(getStory =>
-    <View style={styles.centered}>
-      {getStory()}
-    </View>,
-  )
   .add('docs:primary', () => (
     <View>
       {generateButtonStoryForType('primary')}
@@ -207,24 +194,24 @@ storiesOf('BpkButton', module)
   .add('docs:withTheme', () => (
     <BpkThemeProvider theme={themeAttributes}>
       <View>
-        <BpkText textStyle="xxl">Primary</BpkText>
+        <StoryHeading>Primary</StoryHeading>
         {generateButtonStoryForType('primary')}
-        <BpkText textStyle="xxl">Secondary</BpkText>
+        <StoryHeading>Secondary</StoryHeading>
         {generateButtonStoryForType('secondary')}
       </View>
     </BpkThemeProvider>
   ))
   .add('All Button Types', () => (
     <ScrollView>
-      <BpkText textStyle="xxl">All Types</BpkText>
+      <StoryHeading>All Types</StoryHeading>
       {allButtonStories}
     </ScrollView>
   ))
   .add('Edge Cases', () => (
     <View>
-      <BpkText textStyle="xxl">Edge Cases</BpkText>
+      <StoryHeading>Edge Cases</StoryHeading>
 
-      <BpkText textStyle="sm" style={styles.bottomMargin}>Long button titles</BpkText>
+      <StorySubheading>Long button titles</StorySubheading>
       <BpkButton
         type="primary"
         title="I have a really long title"
