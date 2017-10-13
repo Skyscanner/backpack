@@ -8,10 +8,32 @@ _Nothing Yet_
 **Added:**
 - bpk-svgs
   - Added 17 new icons
+  - alert--active
+  - alert--add
+  - alert--expired
+  - alert--remove
+  - baggage--add
+  - baggage--remove
+  - data
+  - device-mid
+  - device-wide
+  - direct
+  - landmark
+  - menu--horizontal
+  - menu--vertical
+  - thumbs-down
+  - thumbs-up
+  - window--reduce
+  - window
 
 **Updated:**
 - bpk-svgs
   - Modified 5 icons
+    - expand
+    - stops
+    - new-window
+    - ticket
+    - time
 
 **Fixed:**
 - bpk-react-utils
