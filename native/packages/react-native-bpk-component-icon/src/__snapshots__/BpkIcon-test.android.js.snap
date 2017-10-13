@@ -20,7 +20,7 @@ exports[`Android BpkIcon should apply user props 1`] = `
     ]
   }
 >
-  
+  
 </Text>
 `;
 
@@ -41,7 +41,7 @@ exports[`Android BpkIcon should render correctly 1`] = `
     ]
   }
 >
-  
+  
 </Text>
 `;
 
@@ -66,6 +66,6 @@ exports[`Android BpkIcon should render small icon correctly 1`] = `
     ]
   }
 >
-  
+  
 </Text>
 `;
