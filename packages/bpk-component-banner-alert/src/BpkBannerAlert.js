@@ -19,9 +19,11 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { withButtonAlignment } from 'bpk-component-icon';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import TickCircleIcon from 'bpk-component-icon/sm/tick-circle';
 import ChevronDownIcon from 'bpk-component-icon/sm/chevron-down';
 import InfoCircleIcon from 'bpk-component-icon/sm/information-circle';
+import { durationSm } from 'bpk-tokens/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-banner-alert.scss';
@@ -128,11 +130,22 @@ class BpkBannerAlert extends Component {
             </span>
           ) : null}
         </header>
-        {
-          showChildren ?
-            <div className={getClassName('bpk-banner-alert__children-container')}>{children}</div>
-            : null
-        }
+        <div>
+          <CSSTransitionGroup
+            transitionName={{
+              leave: getClassName('bpk-banner-alert__children-container--shown'),
+              leaveActive: getClassName('bpk-banner-alert__children-container--hidden'),
+              enter: getClassName('bpk-banner-alert__children-container--hidden'),
+              enterActive: getClassName('bpk-banner-alert__children-container--shown'),
+            }}
+            transitionEnterTimeout={parseInt(durationSm, 10)}
+            transitionLeaveTimeout={parseInt(durationSm, 10)}
+          >
+            {showChildren &&
+              <div className={getClassName('bpk-banner-alert__children-container')}>{children}</div>
+            }
+          </CSSTransitionGroup>
+        </div>
       </section>
     );
     /* eslint-enable */

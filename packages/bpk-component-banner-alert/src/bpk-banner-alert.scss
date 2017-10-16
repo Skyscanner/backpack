@@ -99,5 +99,17 @@
 
     @include bpk-text;
     @include bpk-text--sm;
+
+    &--hidden {
+      max-height: 0;
+      transition: max-height $bpk-duration-sm ease-in-out; // TODO TRY REMOVE THIS??
+      overflow: hidden; // TODO REMOVE?
+    }
+
+    &--shown {
+      max-height: auto;
+      transition: max-height $bpk-duration-sm ease-in-out; // TODO TRY REMOVE THIS??
+      overflow: hidden; // TODO REMOVE?
+    }
   }
 }
