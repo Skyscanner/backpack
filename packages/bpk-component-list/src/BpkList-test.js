@@ -38,4 +38,13 @@ describe('BpkList', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with a "className" attribute', () => {
+    const tree = renderer.create(
+      <BpkList className="test-list">
+        <li>list item</li>
+      </BpkList>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

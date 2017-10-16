@@ -3,6 +3,14 @@
 ## UNRELEASED
 _Nothing Yet_
 
+
+## 2017-10-16 - Reack Lists and List Items can now have a className attribute added
+
+**Updated:**
+- bpk-component-list
+  - The `className` attribute has been added to BpkList and BpkListItem, mirroring functionality from other props that implement it
+
+
 ## 2017-10-13 - 17 new icons added and 5 existing icons changed
 
 **Added:**

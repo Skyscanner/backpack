@@ -26,5 +26,14 @@ describe('BpkListItem', () => {
     const tree = renderer.create(<BpkListItem>List item</BpkListItem>).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with a "className" attribute', () => {
+    const tree = renderer.create(
+      <BpkListItem className="test-list-item">
+        List item
+      </BpkListItem>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
 
