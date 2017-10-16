@@ -1,12 +1,9 @@
 # Backpack changelog
 
 ## UNRELEASED
-_Nothing Yet_
+### 2017-10-16 - React Lists and List Items can now have a className attribute added
 
-
-## 2017-10-16 - Reack Lists and List Items can now have a className attribute added
-
-**Updated:**
+**Added:**
 - bpk-component-list
   - The `className` attribute has been added to BpkList and BpkListItem, mirroring functionality from other props that implement it
 
