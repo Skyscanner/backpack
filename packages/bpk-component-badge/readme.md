@@ -25,3 +25,4 @@ export default () => (
 | --------- | --------------- | -------- | ------------- |
 | centered  | bool            | false    | null          |
 | docked    | 'left', 'right' | false    | null          |
+| className | string          | false    | null          |
