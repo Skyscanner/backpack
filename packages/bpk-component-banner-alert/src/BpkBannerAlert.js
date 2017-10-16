@@ -19,9 +19,11 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { withButtonAlignment } from 'bpk-component-icon';
+import BpkAnimateHeight from 'bpk-animate-height';
 import TickCircleIcon from 'bpk-component-icon/sm/tick-circle';
 import ChevronDownIcon from 'bpk-component-icon/sm/chevron-down';
 import InfoCircleIcon from 'bpk-component-icon/sm/information-circle';
+import { durationSm } from 'bpk-tokens/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-banner-alert.scss';
@@ -128,11 +130,9 @@ class BpkBannerAlert extends Component {
             </span>
           ) : null}
         </header>
-        {
-          showChildren ?
-            <div className={getClassName('bpk-banner-alert__children-container')}>{children}</div>
-            : null
-        }
+        <BpkAnimateHeight duration={parseInt(durationSm, 10)} height={showChildren ? 'auto' : 0}>
+          <div className={getClassName('bpk-banner-alert__children-container')}>{children}</div>
+        </BpkAnimateHeight>
       </section>
     );
     /* eslint-enable */
