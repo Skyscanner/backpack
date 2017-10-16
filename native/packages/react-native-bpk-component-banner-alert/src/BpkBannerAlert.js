@@ -28,7 +28,7 @@ import PropTypes from 'prop-types';
 import BpkText from 'react-native-bpk-component-text';
 
 const tickIcon = require('./icons/lg/tick-circle.png'); // eslint-disable-line import/no-unresolved
-const exclamationIcon = require('./icons/lg/exclamation-circle.png'); // eslint-disable-line import/no-unresolved
+const informationIcon = require('./icons/lg/information-circle.png'); // eslint-disable-line import/no-unresolved
 const closeIcon = require('./icons/lg/close.png'); // eslint-disable-line import/no-unresolved
 const chevronUpIcon = require('./icons/lg/chevron-up.png'); // eslint-disable-line import/no-unresolved
 const chevronDownIcon = require('./icons/lg/chevron-down.png'); // eslint-disable-line import/no-unresolved
@@ -176,11 +176,11 @@ const BpkBannerAlert = (props) => {
     outerStyleFinal.push(styles.outerContainerSuccess);
     iconStyle.push(styles.iconSuccess);
   } else if (type === ALERT_TYPES.WARN) {
-    iconSource = exclamationIcon;
+    iconSource = informationIcon;
     outerStyleFinal.push(styles.outerContainerWarn);
     iconStyle.push(styles.iconWarn);
   } else if (type === ALERT_TYPES.ERROR) {
-    iconSource = exclamationIcon;
+    iconSource = informationIcon;
     outerStyleFinal.push(styles.outerContainerError);
     iconStyle.push(styles.iconError);
   }

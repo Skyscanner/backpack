@@ -10,6 +10,16 @@ exports[`BpkList should render correctly 1`] = `
 </ul>
 `;
 
+exports[`BpkList should render correctly with a "className" attribute 1`] = `
+<ul
+  className="bpk-list test-list"
+>
+  <li>
+    list item
+  </li>
+</ul>
+`;
+
 exports[`BpkList should render correctly with a "ordered" attribute 1`] = `
 <ol
   className="bpk-list"

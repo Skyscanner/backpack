@@ -50,6 +50,26 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
     </span>
      
   </header>
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "hidden",
+        "transition": "height 200ms ease ",
+      }
+    }
+  >
+    <div>
+      <div
+        className="bpk-banner-alert__children-container"
+      />
+    </div>
+  </div>
 </section>
 `;
 
@@ -103,6 +123,26 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
     </span>
      
   </header>
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "hidden",
+        "transition": "height 200ms ease ",
+      }
+    }
+  >
+    <div>
+      <div
+        className="bpk-banner-alert__children-container"
+      />
+    </div>
+  </div>
 </section>
 `;
 
@@ -156,6 +196,26 @@ exports[`BpkBannerAlert should render correctly with "type" attribute equal to "
     </span>
      
   </header>
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "hidden",
+        "transition": "height 200ms ease ",
+      }
+    }
+  >
+    <div>
+      <div
+        className="bpk-banner-alert__children-container"
+      />
+    </div>
+  </div>
 </section>
 `;
 
@@ -209,6 +269,26 @@ exports[`BpkBannerAlert should render correctly with a custom class name 1`] = `
     </span>
      
   </header>
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "hidden",
+        "transition": "height 200ms ease ",
+      }
+    }
+  >
+    <div>
+      <div
+        className="bpk-banner-alert__children-container"
+      />
+    </div>
+  </div>
 </section>
 `;
 
@@ -306,6 +386,28 @@ exports[`BpkBannerAlert should render correctly with a element based message 1`]
       </button>
     </span>
   </header>
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "hidden",
+        "transition": "height 200ms ease ",
+      }
+    }
+  >
+    <div>
+      <div
+        className="bpk-banner-alert__children-container"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </div>
+    </div>
+  </div>
 </section>
 `;
 
@@ -361,6 +463,26 @@ exports[`BpkBannerAlert should render correctly with arbitrary props 1`] = `
     </span>
      
   </header>
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "hidden",
+        "transition": "height 200ms ease ",
+      }
+    }
+  >
+    <div>
+      <div
+        className="bpk-banner-alert__children-container"
+      />
+    </div>
+  </div>
 </section>
 `;
 
@@ -453,5 +575,27 @@ exports[`BpkBannerAlert should render correctly with child nodes 1`] = `
       </button>
     </span>
   </header>
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "hidden",
+        "transition": "height 200ms ease ",
+      }
+    }
+  >
+    <div>
+      <div
+        className="bpk-banner-alert__children-container"
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      </div>
+    </div>
+  </div>
 </section>
 `;
