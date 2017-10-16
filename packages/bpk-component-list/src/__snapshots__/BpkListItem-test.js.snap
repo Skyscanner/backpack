@@ -7,3 +7,11 @@ exports[`BpkListItem should render correctly 1`] = `
   List item
 </li>
 `;
+
+exports[`BpkListItem should render correctly with a "className" attribute 1`] = `
+<li
+  className="bpk-list__item test-list-item"
+>
+  List item
+</li>
+`;

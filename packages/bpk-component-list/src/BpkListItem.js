@@ -24,13 +24,24 @@ import STYLES from './bpk-list.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkListItem = props => <li className={getClassName('bpk-list__item')}>{props.children}</li>;
+const BpkListItem = (props) => {
+  const classNames = [getClassName('bpk-list__item')];
+
+  if (props.className) { classNames.push(props.className); }
+
+  return (<li className={classNames.join(' ')}>{props.children}</li>);
+};
 
 BpkListItem.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
+  className: PropTypes.string,
+};
+
+BpkListItem.defaultProps = {
+  className: null,
 };
 
 export default BpkListItem;

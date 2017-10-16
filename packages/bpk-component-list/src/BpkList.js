@@ -26,8 +26,11 @@ const getClassName = cssModules(STYLES);
 
 const BpkList = (props) => {
   const TagName = props.ordered ? 'ol' : 'ul';
+  const classNames = [getClassName('bpk-list')];
 
-  return <TagName className={getClassName('bpk-list')}>{props.children}</TagName>;
+  if (props.className) { classNames.push(props.className); }
+
+  return <TagName className={classNames.join(' ')}>{props.children}</TagName>;
 };
 
 BpkList.propTypes = {
@@ -36,10 +39,12 @@ BpkList.propTypes = {
     PropTypes.node,
   ]).isRequired,
   ordered: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 BpkList.defaultProps = {
   ordered: false,
+  className: null,
 };
 
 export default (BpkList);

@@ -34,13 +34,15 @@ export default () => (
 
 ### BpkList
 
-| Property | PropType | Required | Default Value |
-| -------- | -------- | -------- | ------------- |
-| children | -        | true     | -             |
-| ordered  | bool     | false    | false         |
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| children  | -        | true     | -             |
+| ordered   | bool     | false    | false         |
+| className | string   | false    | null          |
 
 ### BpkListItem
 
-| Property | PropType | Required | Default Value |
-| -------- | -------- | -------- | ------------- |
-| children | -        | true     | -             |
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| children  | -        | true     | -             |
+| className | string   | false    | null          |
