@@ -1,6 +1,8 @@
 # Backpack changelog
 
 ## UNRELEASED
+_Nothing Yet_
+
 ### 2017-10-16 - React Lists and List Items can now have a className prop added
 
 **Added:**
