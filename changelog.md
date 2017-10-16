@@ -1,7 +1,9 @@
 # Backpack changelog
 
 ## UNRELEASED
-_Nothing Yet_
+**Added:**
+- bpk-component-banner-alert
+  - Added animation to expandable banner-alerts http://backpack.prod.aws.skyscnr.com/components/web/banner-alerts/
 
 ### 2017-10-16 - React Lists and List Items can now have a className prop added
 
