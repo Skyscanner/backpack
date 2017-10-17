@@ -31,6 +31,7 @@ import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
 
 const tickIcon = require('./icons/lg/tick-circle.png'); // eslint-disable-line import/no-unresolved
 const informationIcon = require('./icons/lg/information-circle.png'); // eslint-disable-line import/no-unresolved
+const neutralIcon = require('./icons/lg/information-circle.png'); // eslint-disable-line import/no-unresolved
 const closeIcon = require('./icons/lg/close.png'); // eslint-disable-line import/no-unresolved
 const chevronUpIcon = require('./icons/lg/chevron-up.png'); // eslint-disable-line import/no-unresolved
 const chevronDownIcon = require('./icons/lg/chevron-down.png'); // eslint-disable-line import/no-unresolved
@@ -69,6 +70,7 @@ const underlayColor = Platform.select({
 const {
   borderRadiusSm,
   borderSizeSm,
+  colorGray300,
   colorGray500,
   colorGray700,
   colorGreen500,
@@ -84,6 +86,7 @@ export const ALERT_TYPES = {
   SUCCESS: 'success',
   WARN: 'warn',
   ERROR: 'error',
+  NEUTRAL: 'neutral',
 };
 
 const styles = StyleSheet.create({
@@ -133,10 +136,14 @@ const styles = StyleSheet.create({
   outerContainerError: {
     borderColor: colorRed500,
   },
+  outerContainerNeutral: {
+    borderColor: colorGray300,
+  },
   text: {
     flex: 1,
     flexGrow: 1,
     paddingLeft: spacingSm,
+    color: colorGray700,
   },
   icon: {
     width: spacingBase,
@@ -150,6 +157,9 @@ const styles = StyleSheet.create({
   },
   iconError: {
     tintColor: colorRed500,
+  },
+  iconNeutral: {
+    tintColor: colorGray500,
   },
   button: {
     tintColor: colorGray700,
@@ -190,6 +200,10 @@ const BpkBannerAlert = (props) => {
     iconSource = informationIcon;
     outerStyleFinal.push(styles.outerContainerError);
     iconStyle.push(styles.iconError);
+  } else if (type === ALERT_TYPES.NEUTRAL) {
+    iconSource = neutralIcon;
+    outerStyleFinal.push(styles.outerContainerNeutral);
+    iconStyle.push(styles.iconNeutral);
   }
 
   if (dismissable) {
@@ -280,6 +294,7 @@ BpkBannerAlert.propTypes = {
     ALERT_TYPES.SUCCESS,
     ALERT_TYPES.WARN,
     ALERT_TYPES.ERROR,
+    ALERT_TYPES.NEUTRAL,
   ]).isRequired,
   children: PropTypes.node,
   dismissable: dismissablePropType,
