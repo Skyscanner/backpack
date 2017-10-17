@@ -72,7 +72,7 @@ const links = [
     category: 'Native components',
     sort: true,
     links: [
-      { id: 'NATIVE_BANNER_ALERT', route: routes.NATIVE_BANNER_ALERT, children: 'Banner alert' },
+      { id: 'NATIVE_BANNER_ALERT', route: routes.NATIVE_BANNER_ALERT, children: 'Banner alerts' },
       { id: 'NATIVE_BUTTON', route: routes.NATIVE_BUTTON, children: 'Button' },
       { id: 'NATIVE_CARDS', route: routes.NATIVE_CARDS, children: 'Cards' },
       { id: 'NATIVE_ICONS', route: routes.NATIVE_ICONS, children: 'Icons' },

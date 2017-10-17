@@ -10,7 +10,7 @@ __Nothing yet!__
   - Added animation to expandable banner-alerts http://backpack.prod.aws.skyscnr.com/components/web/banner-alerts/
 
 - react-native-bpk-component-banner-alert: 0.0.1 => 1.0.1
-  - New component `BpkBannerAlert`. See http://backpack.prod.aws.skyscnr.com/components/native/banner-alert/
+  - New component `BpkBannerAlert`. See http://backpack.prod.aws.skyscnr.com/components/native/banner-alerts/
 
 ### 2017-10-16 - React Lists and List Items can now have a className prop added
 
