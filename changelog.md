@@ -9,6 +9,9 @@
 - react-native-bpk-component-animate-height:
   - New component `BpkAnimateHeight`. See http://backpack.prod.aws.skyscnr.com/components/native/animate-height/
 
+- react-native-bpk-component-banner-alert:
+  - New component `BpkBannerAlert`. See http://backpack.prod.aws.skyscnr.com/components/native/banner-alert/
+
 ### 2017-10-16 - React Lists and List Items can now have a className prop added
 
 **Added:**
