@@ -3,13 +3,13 @@
 ## UNRELEASED
 __Nothing yet!__
 
-### 2017-10-17 - New native banner alert and animations for web banner alerts 
+### 2017-10-17 - New native banner alert and animations for web banner alerts
 
 **Added:**
-- bpk-component-banner-alert: 1.2.17 => 1.3.0
+- bpk-component-banner-alert: 1.2.17 => 1.3.1
   - Added animation to expandable banner-alerts http://backpack.prod.aws.skyscnr.com/components/web/banner-alerts/
 
-- react-native-bpk-component-banner-alert: 0.0.1 => 1.0.0
+- react-native-bpk-component-banner-alert: 0.0.1 => 1.0.1
   - New component `BpkBannerAlert`. See http://backpack.prod.aws.skyscnr.com/components/native/banner-alert/
 
 ### 2017-10-16 - React Lists and List Items can now have a className prop added
