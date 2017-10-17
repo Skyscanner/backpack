@@ -26,6 +26,10 @@ const commonTests = () => {
     it('should render correctly', () => {
       const tree = renderer.create(
         <BpkBannerAlert
+          type={ALERT_TYPES.NEUTRAL}
+          message="Neutral alert."
+        />,
+        <BpkBannerAlert
           type={ALERT_TYPES.SUCCESS}
           message="Successful alert."
         />,
@@ -43,6 +47,11 @@ const commonTests = () => {
 
     it('should render correctly dismissable', () => {
       const tree = renderer.create(
+        <BpkBannerAlert
+          type={ALERT_TYPES.NEUTRAL}
+          message="Neutral alert."
+          dismissable
+        />,
         <BpkBannerAlert
           type={ALERT_TYPES.SUCCESS}
           message="Successful alert."

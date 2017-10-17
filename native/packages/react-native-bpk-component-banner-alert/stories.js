@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
 
 class ExpandableBannerAlert extends React.Component {
   state = {
-    expanded: true,
+    expanded: false,
   }
 
   onAction = () => {
@@ -95,6 +95,11 @@ storiesOf('BpkBannerAlert', module)
     <View style={styles.container}>
       <BpkBannerAlert
         style={styles.bannerAlert}
+        type={ALERT_TYPES.NEUTRAL}
+        message="Neutral alert."
+      />
+      <BpkBannerAlert
+        style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
         message="Successful alert."
       />
@@ -122,6 +127,11 @@ storiesOf('BpkBannerAlert', module)
     <View style={styles.container}>
       <BpkBannerAlert
         style={styles.bannerAlert}
+        type={ALERT_TYPES.NEUTRAL}
+        message="Neutral alert."
+      />
+      <BpkBannerAlert
+        style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
         message="Successful alert."
       />
@@ -139,6 +149,12 @@ storiesOf('BpkBannerAlert', module)
   ))
   .add('docs:dismissable', () => (
     <View style={styles.container}>
+      <DismissableBannerAlert
+        style={styles.bannerAlert}
+        type={ALERT_TYPES.NEUTRAL}
+        message="Neutral alert with dismiss option."
+        actionButtonLabel="Dismiss"
+      />
       <DismissableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
@@ -161,6 +177,18 @@ storiesOf('BpkBannerAlert', module)
   ))
   .add('docs:expandable', () => (
     <View style={styles.container}>
+      <ExpandableBannerAlert
+        style={styles.bannerAlert}
+        type={ALERT_TYPES.NEUTRAL}
+        message="Neutral alert with more information."
+        actionButtonLabel="Collapse"
+      >
+        <BpkText textStyle="sm" style={styles.child}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
+          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
+          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+        </BpkText>
+      </ExpandableBannerAlert>
       <ExpandableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
@@ -201,6 +229,12 @@ storiesOf('BpkBannerAlert', module)
   ))
   .add('docs:edge-cases', () => (
     <View style={styles.container}>
+      <BpkBannerAlert
+        style={styles.bannerAlert}
+        type={ALERT_TYPES.NEUTRAL}
+        message="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quisque sagittis sagittis purus, id blandit ipsum."
+      />
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
