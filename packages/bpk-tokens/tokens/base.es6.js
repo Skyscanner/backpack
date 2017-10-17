@@ -259,6 +259,7 @@ export const bannerAlertHeaderExpandableActiveBackgroundColor = "rgb(230, 228, 2
 export const bannerAlertSuccessColor = "rgb(0, 215, 117)";
 export const bannerAlertWarnColor = "rgb(255, 187, 0)";
 export const bannerAlertErrorColor = "rgb(255, 84, 82)";
+export const bannerAlertNeutralColor = "rgb(129, 123, 143)";
 export const bannerAlertExpandIconFill = "rgb(82, 76, 97)";
 export const bannerAlertChildrenPaddingY = ".375rem";
 export const bannerAlertChildrenPaddingX = ".75rem";
@@ -630,6 +631,7 @@ bannerAlertHeaderExpandableActiveBackgroundColor,
 bannerAlertSuccessColor,
 bannerAlertWarnColor,
 bannerAlertErrorColor,
+bannerAlertNeutralColor,
 bannerAlertExpandIconFill,
 bannerAlertChildrenPaddingY,
 bannerAlertChildrenPaddingX,

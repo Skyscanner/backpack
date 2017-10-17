@@ -38,6 +38,10 @@
       "value": "{!RED_500}",
       "type": "color"
     },
+    "BANNER_ALERT_NEUTRAL_COLOR": {
+      "value": "{!GRAY_500}",
+      "type": "color"
+    },
     "BANNER_ALERT_EXPAND_ICON_FILL": {
       "value": "{!GRAY_700}",
       "type": "color"

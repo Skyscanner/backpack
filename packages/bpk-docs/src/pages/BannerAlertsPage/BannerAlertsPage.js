@@ -38,10 +38,12 @@ const components = [
     title: 'Default',
     blurb: [
       <Paragraph>
-        Banner alerts come in three styles to indicate success, warning or error.
+        Banner alerts come in four styles to indicate success, warning or error, or some neutral information.
       </Paragraph>,
     ],
     examples: [
+      <BpkBannerAlert message="Neutral alert." type={ALERT_TYPES.NEUTRAL} />,
+      <br />,
       <BpkBannerAlert message="Successful alert." type={ALERT_TYPES.SUCCESS} />,
       <br />,
       <BpkBannerAlert
@@ -64,6 +66,14 @@ const components = [
       </Paragraph>,
     ],
     examples: [
+      <BpkBannerAlert
+        message="Neutral alert with more information."
+        type={ALERT_TYPES.NEUTRAL}
+        toggleButtonLabel="See more"
+      >
+        {longMessage}
+      </BpkBannerAlert>,
+      <br />,
       <BpkBannerAlert
         message="Successful alert with more information."
         type={ALERT_TYPES.SUCCESS}
