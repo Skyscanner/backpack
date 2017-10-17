@@ -1,0 +1,24 @@
+{
+  "name": "react-native-bpk-component-banner-alert",
+  "version": "0.0.1",
+  "main": "index.js",
+  "description": "Backpack React Native banner alert component.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-native": ">= 0.47.0"
+  },
+  "dependencies": {
+    "bpk-tokens": "^26.4.0",
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
+    "react-native-bpk-component-text": "^2.1.11",
+    "react-native-bpk-component-animate-height": "^0.0.1"
+  }
+}
