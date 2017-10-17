@@ -18,6 +18,7 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "react-native-bpk-component-text": "^2.1.11"
+    "react-native-bpk-component-text": "^2.1.11",
+    "react-native-bpk-component-animate-height": "^0.0.1"
   }
 }

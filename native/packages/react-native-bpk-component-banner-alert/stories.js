@@ -29,18 +29,10 @@ const tokens = Platform.select({
 
 const {
   colorGray500,
-  spacingSm,
   spacingBase,
 } = tokens;
 
 const styles = StyleSheet.create({
-  centered: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: spacingSm,
-    width: '100%',
-  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -59,7 +51,7 @@ class ExpandableBannerAlert extends React.Component {
     expanded: true,
   }
 
-  onPress = () => {
+  onAction = () => {
     this.setState({ expanded: !this.state.expanded });
   };
 
@@ -67,7 +59,7 @@ class ExpandableBannerAlert extends React.Component {
     return (
       <BpkBannerAlert
         {...this.props}
-        onPress={this.onPress}
+        onAction={this.onAction}
         expanded={this.state.expanded}
       />
     );
@@ -80,7 +72,7 @@ class DismissableBannerAlert extends React.Component {
     exists: true,
   }
 
-  onPress = () => {
+  onAction = () => {
     this.setState({ exists: false });
   };
 
@@ -89,7 +81,7 @@ class DismissableBannerAlert extends React.Component {
       return (
         <BpkBannerAlert
           {...this.props}
-          onPress={this.onPress}
+          onAction={this.onAction}
           dismissable
         />
       );
@@ -99,11 +91,6 @@ class DismissableBannerAlert extends React.Component {
 }
 
 storiesOf('BpkBannerAlert', module)
-  .addDecorator(getStory =>
-    <View style={styles.centered}>
-      {getStory()}
-    </View>,
-  )
   .add('docs:banner-alerts', () => (
     <View style={styles.container}>
       <BpkBannerAlert

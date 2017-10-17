@@ -25,7 +25,9 @@ import {
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { setOpacity } from 'bpk-tokens';
 import BpkText from 'react-native-bpk-component-text';
+import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
 
 const tickIcon = require('./icons/lg/tick-circle.png'); // eslint-disable-line import/no-unresolved
 const informationIcon = require('./icons/lg/information-circle.png'); // eslint-disable-line import/no-unresolved
@@ -58,16 +60,23 @@ const tokens = Platform.select({
   android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
 })();
 
+// Slight darkness to use when buttons are pressed in.
+const underlayColor = Platform.select({
+  ios: () => setOpacity(tokens.underlayColor, tokens.underlayOpacity),
+  android: () => null,
+})();
+
 const {
-  colorGray50,
+  borderRadiusSm,
+  borderSizeSm,
   colorGray500,
   colorGray700,
   colorGreen500,
   colorRed500,
   colorYellow500,
-  spacingSm,
   spacingBase,
   spacingMd,
+  spacingSm,
   spacingXl,
 } = tokens;
 
@@ -79,17 +88,15 @@ export const ALERT_TYPES = {
 
 const styles = StyleSheet.create({
   outerContainer: {
-      // TODO Replace with borderSm token once available
-    borderWidth: 1,
-      // TODO Replace with radiiSm token once available
-    borderRadius: spacingSm,
+    borderWidth: borderSizeSm,
+    borderRadius: borderRadiusSm,
+    overflow: 'hidden',
   },
   bannerContainer: {
     flexGrow: 1,
     display: 'flex',
     flexDirection: 'row',
-    // TODO Replace '1' with borderSm token once available
-    minHeight: spacingXl - (1 * 2),
+    minHeight: spacingXl - (borderSizeSm * 2),
   },
   bannerContainerPadded: {
     flexGrow: 1,
@@ -155,7 +162,7 @@ const styles = StyleSheet.create({
 });
 
 const BpkBannerAlert = (props) => {
-  const { type, message, onPress, dismissable, expanded, actionButtonLabel, style, children, ...rest } = props;
+  const { type, message, onAction, dismissable, expanded, actionButtonLabel, style, children, ...rest } = props;
 
   const expandable = children !== null;
 
@@ -217,8 +224,8 @@ const BpkBannerAlert = (props) => {
   const closeButtonComponent = (
     <TouchableHighlight
       accessibilityComponentType="button"
-      onPress={onPress}
-      underlayColor={colorGray50}
+      onPress={onAction}
+      underlayColor={underlayColor}
       accessibilityLabel={actionButtonLabel}
       style={styles.closeButtonContainer}
     >
@@ -244,8 +251,8 @@ const BpkBannerAlert = (props) => {
     banner = (
       <TouchableHighlight
         accessibilityComponentType="button"
-        onPress={onPress}
-        underlayColor={colorGray50}
+        onPress={onAction}
+        underlayColor={underlayColor}
         accessibilityLabel={actionButtonLabel}
         style={styles.bannerContainer}
       >
@@ -260,9 +267,9 @@ const BpkBannerAlert = (props) => {
         {banner}
         {dismissable && closeButtonComponent }
       </View>
-      {expanded &&
+      <BpkAnimateHeight expanded={expanded}>
         <View style={expandedChildContainer}>{props.children}</View>
-      }
+      </BpkAnimateHeight>
     </View>
   );
 };
@@ -277,11 +284,8 @@ BpkBannerAlert.propTypes = {
   children: PropTypes.node,
   dismissable: dismissablePropType,
   expanded: PropTypes.bool,
-  onPress: PropTypes.func,
-  actionButtonLabel: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]),
+  onAction: PropTypes.func,
+  actionButtonLabel: PropTypes.string,
   style: stylePropType,
 };
 
@@ -289,7 +293,7 @@ BpkBannerAlert.defaultProps = {
   children: null,
   dismissable: false,
   expanded: false,
-  onPress: () => null,
+  onAction: () => null,
   style: null,
   actionButtonLabel: null,
 };

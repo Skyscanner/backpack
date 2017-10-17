@@ -13,7 +13,7 @@ npm install react-native-bpk-component-banner-alert --save-dev
 ```js
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import BpkText, {ALERT_TYPES} from 'react-native-bpk-component-text';
+import BpkText from 'react-native-bpk-component-text';
 import BpkBannerAlert, {ALERT_TYPES} from 'react-native-bpk-component-banner-alert';
 import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
 
@@ -64,7 +64,7 @@ export default class App extends Component {
           type={ALERT_TYPES.WARN}
           message={translationHelper.translate('WARN_MESSAGE')}
           actionButtonLabel="Dismiss"
-          onPress={this.onDismissablePress}
+          onAction={this.onDismissablePress}
           dismissable={this.state.showDismissable}
         />
         <BpkBannerAlert
@@ -72,7 +72,7 @@ export default class App extends Component {
           type={ALERT_TYPES.ERROR}
           message={translationHelper.translate('ERROR_MESSAGE')}
           actionButtonLabel={translationHelper.translate('EXPAND')}
-          onPress={this.onExpandablePress}
+          onAction={this.onExpandablePress}
           expanded={this.state.expanded}
         >
           <BpkText textStyle="sm" style={styles.child}>
@@ -93,8 +93,8 @@ export default class App extends Component {
 | ------------------ | ------------------- | -------- | ------------- |
 | message            | string              | yes      | -             |
 | type               | oneOf(ALERT_TYPES)  | yes      | -             |
-| actionButtonLabel  | oneOf(string, func) | no       | null          |
+| actionButtonLabel  | string              | no       | null          |
 | children           | node                | no       | null          |
 | dismissable        | boolean             | no       | false         |
 | expanded           | boolean             | no       | false         |
-| onPress            | func                | no       | () => null    |
+| onAction           | func                | no       | () => null    |
