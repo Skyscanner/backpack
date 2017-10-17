@@ -75,6 +75,7 @@ import StarRatingPage from './../pages/StarRatingPage';
 import AlignmentPage from './../pages/AlignmentPage';
 import ThemingPage from './../pages/ThemingPage';
 
+import NativeBannerAlertPage from './../pages/NativeBannerAlertPage';
 import NativeButtonPage from './../pages/NativeButtonPage';
 import NativeCardsPage from './../pages/NativeCardsPage';
 import NativeIconsPage from './../pages/NativeIconsPage';
@@ -147,6 +148,7 @@ const Routes = (
       </Route>
       <Route path={ROUTES.NATIVE_COMPONENTS}>
         <IndexRedirect to={ROUTES.NATIVE_TEXT} />
+        <Route path={ROUTES.NATIVE_BANNER_ALERT} component={NativeBannerAlertPage} />
         <Route path={ROUTES.NATIVE_BUTTON} component={NativeButtonPage} />
         <Route path={ROUTES.NATIVE_CARDS} component={NativeCardsPage} />
         <Route path={ROUTES.NATIVE_ICONS} component={NativeIconsPage} />

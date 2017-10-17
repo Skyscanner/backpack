@@ -72,6 +72,7 @@ const links = [
     category: 'Native components',
     sort: true,
     links: [
+      { id: 'NATIVE_BANNER_ALERT', route: routes.NATIVE_BANNER_ALERT, children: 'Banner alert' },
       { id: 'NATIVE_BUTTON', route: routes.NATIVE_BUTTON, children: 'Button' },
       { id: 'NATIVE_CARDS', route: routes.NATIVE_CARDS, children: 'Cards' },
       { id: 'NATIVE_ICONS', route: routes.NATIVE_ICONS, children: 'Icons' },
@@ -81,7 +82,6 @@ const links = [
       { id: 'NATIVE_STAR_RATING', route: null, children: 'Star rating' },
       { id: 'NATIVE_HORIZONTAL_NAV', route: null, children: 'Horizontal navigation' },
       { id: 'NATIVE_NUDGER', route: null, children: 'Nudger' },
-      { id: 'NATIVE_BANNER_ALERTS', route: null, children: 'Banner alerts' },
       { id: 'NATIVE_SWITCH', route: null, children: 'Switch' },
     ],
   },

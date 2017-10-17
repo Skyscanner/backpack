@@ -71,6 +71,7 @@ export const BREAKPOINTS = '/components/web/breakpoints';
 export const HORIZONTAL_GRID = '/components/web/horizontal-grid';
 
 // components/native/
+export const NATIVE_BANNER_ALERT = '/components/native/banner-alert';
 export const NATIVE_BUTTON = '/components/native/button';
 export const NATIVE_CARDS = '/components/native/cards';
 export const NATIVE_COMPONENTS = '/components/native';
