@@ -1,5 +1,14 @@
 {
   "aliases": {
+    "ANIMATION_DURATION_XS": {
+      "value": "50ms"
+    },
+    "ANIMATION_DURATION_SM": {
+      "value": "200ms"
+    },
+    "ANIMATION_DURATION_BASE": {
+      "value": "400ms"
+    },
     "WHITE": {
       "value": "#ffffff"
     },

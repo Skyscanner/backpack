@@ -2,6 +2,7 @@
   "imports": [
     "./base/borders.json",
     "./base/box-shadows.json",
+    "./base/animations.json",
     "./base/colors.json",
     "./base/spacing.json",
     "./base/touchables.json",

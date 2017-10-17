@@ -1,5 +1,6 @@
 {
   "imports": [
+    "../../common/base/animations.json",
     "../../common/base/colors.json"
   ],
   "aliases": {
