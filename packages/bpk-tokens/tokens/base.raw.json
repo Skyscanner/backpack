@@ -2339,6 +2339,15 @@
       },
       "name": "BANNER_ALERT_ERROR_COLOR"
     },
+    "BANNER_ALERT_NEUTRAL_COLOR": {
+      "category": "notifications",
+      "value": "rgb(129, 123, 143)",
+      "type": "color",
+      ".alias": {
+        "value": "#817B8F"
+      },
+      "name": "BANNER_ALERT_NEUTRAL_COLOR"
+    },
     "BANNER_ALERT_EXPAND_ICON_FILL": {
       "category": "notifications",
       "value": "rgb(82, 76, 97)",
@@ -3369,6 +3378,7 @@
     "BANNER_ALERT_SUCCESS_COLOR",
     "BANNER_ALERT_WARN_COLOR",
     "BANNER_ALERT_ERROR_COLOR",
+    "BANNER_ALERT_NEUTRAL_COLOR",
     "BANNER_ALERT_EXPAND_ICON_FILL",
     "BANNER_ALERT_CHILDREN_PADDING_Y",
     "BANNER_ALERT_CHILDREN_PADDING_X",

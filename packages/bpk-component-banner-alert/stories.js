@@ -30,6 +30,9 @@ sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rho
 ante in, vestibulum nulla.`;
 
 storiesOf('bpk-component-banner-alert', module)
+  .add('Neutral', () => (
+    <BpkBannerAlert message={message} type={ALERT_TYPES.NEUTRAL} />
+  ))
   .add('Success', () => (
     <BpkBannerAlert message={message} type={ALERT_TYPES.SUCCESS} />
   ))

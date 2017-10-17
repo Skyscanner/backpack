@@ -30,6 +30,7 @@ import STYLES from './bpk-banner-alert.scss';
 
 const getClassName = cssModules(STYLES);
 
+const NeutralIcon = withButtonAlignment(InfoCircleIcon);
 const WarnIcon = withButtonAlignment(InfoCircleIcon);
 const ErrorIcon = withButtonAlignment(InfoCircleIcon);
 const SuccessIcon = withButtonAlignment(TickCircleIcon);
@@ -39,6 +40,7 @@ export const ALERT_TYPES = {
   SUCCESS: 'success',
   WARN: 'warn',
   ERROR: 'error',
+  NEUTRAL: 'neutral',
 };
 
 export const ARIA_LIVE = {
@@ -52,6 +54,7 @@ const getIconForType = (type) => {
     [ALERT_TYPES.SUCCESS]: <SuccessIcon className={getClassName('bpk-banner-alert__success-icon')} />,
     [ALERT_TYPES.WARN]: <WarnIcon className={getClassName('bpk-banner-alert__warn-icon')} />,
     [ALERT_TYPES.ERROR]: <ErrorIcon className={getClassName('bpk-banner-alert__error-icon')} />,
+    [ALERT_TYPES.NEUTRAL]: <NeutralIcon className={getClassName('bpk-banner-alert__neutral-icon')} />,
   };
 
   return map[type];
@@ -144,6 +147,7 @@ BpkBannerAlert.propTypes = {
     ALERT_TYPES.SUCCESS,
     ALERT_TYPES.WARN,
     ALERT_TYPES.ERROR,
+    ALERT_TYPES.NEUTRAL,
   ]).isRequired,
   message: PropTypes.node.isRequired,
   ariaLive: PropTypes.oneOf([
