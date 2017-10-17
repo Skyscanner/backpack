@@ -75,6 +75,7 @@ exports[`iOS BpkBannerAlert should accept user-stlying 1`] = `
               "lineHeight": 18,
             },
             Object {
+              "color": "rgb(82, 76, 97)",
               "flex": 1,
               "flexGrow": 1,
               "paddingLeft": 4,
@@ -125,7 +126,7 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
         "overflow": "hidden",
       },
       Object {
-        "borderColor": "rgb(0, 215, 117)",
+        "borderColor": "rgb(178, 174, 189)",
       },
     ]
   }
@@ -167,7 +168,7 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
               "width": 16,
             },
             Object {
-              "tintColor": "rgb(0, 215, 117)",
+              "tintColor": "rgb(129, 123, 143)",
             },
           ]
         }
@@ -187,6 +188,7 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
               "lineHeight": 18,
             },
             Object {
+              "color": "rgb(82, 76, 97)",
               "flex": 1,
               "flexGrow": 1,
               "paddingLeft": 4,
@@ -194,7 +196,7 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
           ]
         }
       >
-        Successful alert.
+        Neutral alert.
       </Text>
     </View>
   </View>
@@ -237,7 +239,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
         "overflow": "hidden",
       },
       Object {
-        "borderColor": "rgb(0, 215, 117)",
+        "borderColor": "rgb(178, 174, 189)",
       },
     ]
   }
@@ -282,7 +284,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
               "width": 16,
             },
             Object {
-              "tintColor": "rgb(0, 215, 117)",
+              "tintColor": "rgb(129, 123, 143)",
             },
           ]
         }
@@ -302,6 +304,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
               "lineHeight": 18,
             },
             Object {
+              "color": "rgb(82, 76, 97)",
               "flex": 1,
               "flexGrow": 1,
               "paddingLeft": 4,
@@ -309,7 +312,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
           ]
         }
       >
-        Successful alert.
+        Neutral alert.
       </Text>
     </View>
     <View
@@ -498,6 +501,7 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
                 "lineHeight": 18,
               },
               Object {
+                "color": "rgb(82, 76, 97)",
                 "flex": 1,
                 "flexGrow": 1,
                 "paddingLeft": 4,
@@ -680,6 +684,7 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                 "lineHeight": 18,
               },
               Object {
+                "color": "rgb(82, 76, 97)",
                 "flex": 1,
                 "flexGrow": 1,
                 "paddingLeft": 4,
@@ -862,6 +867,7 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                 "lineHeight": 18,
               },
               Object {
+                "color": "rgb(82, 76, 97)",
                 "flex": 1,
                 "flexGrow": 1,
                 "paddingLeft": 4,
