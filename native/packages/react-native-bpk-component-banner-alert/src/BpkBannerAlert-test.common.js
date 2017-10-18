@@ -17,6 +17,7 @@
 */
 
 import React from 'react';
+import { View } from 'react-native';
 import renderer from 'react-test-renderer';
 import BpkText from 'react-native-bpk-component-text';
 import BpkBannerAlert, { ALERT_TYPES } from './BpkBannerAlert';
@@ -25,193 +26,257 @@ const commonTests = () => {
   describe('BpkBannerAlert', () => {
     it('should render correctly', () => {
       const tree = renderer.create(
-        <BpkBannerAlert
-          type={ALERT_TYPES.SUCCESS}
-          message="Successful alert."
-        />,
-        <BpkBannerAlert
-          type={ALERT_TYPES.WARN}
-          message="Warn alert."
-        />,
-        <BpkBannerAlert
-          type={ALERT_TYPES.ERROR}
-          message="Error alert."
-        />,
+        <View>
+          <BpkBannerAlert
+            type={ALERT_TYPES.NEUTRAL}
+            message="Neutral alert."
+          />
+          <BpkBannerAlert
+            type={ALERT_TYPES.SUCCESS}
+            message="Successful alert."
+          />
+          <BpkBannerAlert
+            type={ALERT_TYPES.WARN}
+            message="Warn alert."
+          />
+          <BpkBannerAlert
+            type={ALERT_TYPES.ERROR}
+            message="Error alert."
+          />
+        </View>,
     ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly dismissable', () => {
       const tree = renderer.create(
-        <BpkBannerAlert
-          type={ALERT_TYPES.SUCCESS}
-          message="Successful alert."
-          dismissable
-        />,
-        <BpkBannerAlert
-          type={ALERT_TYPES.WARN}
-          message="Warn alert."
-          dismissable
-        />,
-        <BpkBannerAlert
-          type={ALERT_TYPES.ERROR}
-          message="Error alert."
-          dismissable
-        />,
+        <View>
+          <BpkBannerAlert
+            type={ALERT_TYPES.NEUTRAL}
+            message="Neutral alert."
+            dismissable
+          />
+          <BpkBannerAlert
+            type={ALERT_TYPES.SUCCESS}
+            message="Successful alert."
+            dismissable
+          />
+          <BpkBannerAlert
+            type={ALERT_TYPES.WARN}
+            message="Warn alert."
+            dismissable
+          />
+          <BpkBannerAlert
+            type={ALERT_TYPES.ERROR}
+            message="Error alert."
+            dismissable
+          />
+        </View>,
         ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly expandable', () => {
       const tree = renderer.create(
-        <BpkBannerAlert
-          type={ALERT_TYPES.SUCCESS}
-          message="Successful alert."
-        >
+        <View>
+          <BpkBannerAlert
+            type={ALERT_TYPES.NEUTRAL}
+            message="Neutral alert."
+          >
 
-          <BpkText textStyle="sm">
+            <BpkText textStyle="sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
           </BpkText>
-        </BpkBannerAlert>,
-        <BpkBannerAlert
-          type={ALERT_TYPES.WARN}
-          message="Warn alert."
-        >
+          </BpkBannerAlert>
+          <BpkBannerAlert
+            type={ALERT_TYPES.SUCCESS}
+            message="Successful alert."
+          >
 
-          <BpkText textStyle="sm">
+            <BpkText textStyle="sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
           </BpkText>
-        </BpkBannerAlert>,
-        <BpkBannerAlert
-          type={ALERT_TYPES.ERROR}
-          message="Error alert."
-        >
+          </BpkBannerAlert>
+          <BpkBannerAlert
+            type={ALERT_TYPES.WARN}
+            message="Warn alert."
+          >
 
-          <BpkText textStyle="sm">
+            <BpkText textStyle="sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
           </BpkText>
-        </BpkBannerAlert>,
+          </BpkBannerAlert>
+          <BpkBannerAlert
+            type={ALERT_TYPES.ERROR}
+            message="Error alert."
+          >
+
+            <BpkText textStyle="sm">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
+            Pellentesque nec diam nec erat condimentum dapibus.
+            Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
+            Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          </BpkText>
+          </BpkBannerAlert>
+        </View>,
                 ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly expanded', () => {
       const tree = renderer.create(
-        <BpkBannerAlert
-          type={ALERT_TYPES.SUCCESS}
-          message="Successful alert."
-          expanded
-        >
+        <View>
+          <BpkBannerAlert
+            type={ALERT_TYPES.NEUTRAL}
+            message="Neutral alert."
+            expanded
+          >
 
-          <BpkText textStyle="sm">
+            <BpkText textStyle="sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
           </BpkText>
-        </BpkBannerAlert>,
-        <BpkBannerAlert
-          type={ALERT_TYPES.WARN}
-          message="Warn alert."
-          expanded
-        >
+          </BpkBannerAlert>
+          <BpkBannerAlert
+            type={ALERT_TYPES.SUCCESS}
+            message="Successful alert."
+            expanded
+          >
 
-          <BpkText textStyle="sm">
+            <BpkText textStyle="sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
           </BpkText>
-        </BpkBannerAlert>,
-        <BpkBannerAlert
-          type={ALERT_TYPES.ERROR}
-          message="Error alert."
-          expanded
-        >
+          </BpkBannerAlert>
+          <BpkBannerAlert
+            type={ALERT_TYPES.WARN}
+            message="Warn alert."
+            expanded
+          >
 
-          <BpkText textStyle="sm">
+            <BpkText textStyle="sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
           </BpkText>
-        </BpkBannerAlert>,
+          </BpkBannerAlert>
+          <BpkBannerAlert
+            type={ALERT_TYPES.ERROR}
+            message="Error alert."
+            expanded
+          >
+
+            <BpkText textStyle="sm">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
+            Pellentesque nec diam nec erat condimentum dapibus.
+            Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
+            Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          </BpkText>
+          </BpkBannerAlert>
+        </View>,
                         ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly long text', () => {
       const tree = renderer.create(
-        <BpkBannerAlert
-          type={ALERT_TYPES.SUCCESS}
-          message="Successful alert."
-          expanded
-        >
+        <View>
+          <BpkBannerAlert
+            type={ALERT_TYPES.NEUTRAL}
+            message="Neutral alert."
+            expanded
+          >
 
-          <BpkText textStyle="sm">
+            <BpkText textStyle="sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
           </BpkText>
-        </BpkBannerAlert>,
-        <BpkBannerAlert
-          type={ALERT_TYPES.WARN}
-          message="Warn alert."
-          expanded
-        >
+          </BpkBannerAlert>
+          <BpkBannerAlert
+            type={ALERT_TYPES.SUCCESS}
+            message="Successful alert."
+            expanded
+          >
 
-          <BpkText textStyle="sm">
+            <BpkText textStyle="sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
           </BpkText>
-        </BpkBannerAlert>,
-        <BpkBannerAlert
-          type={ALERT_TYPES.ERROR}
-          message="Error alert."
-          expanded
-        >
+          </BpkBannerAlert>
+          <BpkBannerAlert
+            type={ALERT_TYPES.WARN}
+            message="Warn alert."
+            expanded
+          >
 
-          <BpkText textStyle="sm">
+            <BpkText textStyle="sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
           </BpkText>
-        </BpkBannerAlert>,
+          </BpkBannerAlert>
+          <BpkBannerAlert
+            type={ALERT_TYPES.ERROR}
+            message="Error alert."
+            expanded
+          >
+
+            <BpkText textStyle="sm">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
+            Pellentesque nec diam nec erat condimentum dapibus.
+            Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
+            Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          </BpkText>
+          </BpkBannerAlert>
+        </View>,
                             ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should accept user-stlying', () => {
       const tree = renderer.create(
-        <BpkBannerAlert
-          style={{ width: 50 }}
-          type={ALERT_TYPES.SUCCESS}
-          message="Successful alert."
-        />,
-        <BpkBannerAlert
-          style={{ width: 50 }}
-          type={ALERT_TYPES.WARN}
-          message="Warn alert."
-        />,
-        <BpkBannerAlert
-          style={{ width: 50 }}
-          type={ALERT_TYPES.ERROR}
-          message="Error alert."
-        />,
-            ).toJSON();
+        <View>
+          <BpkBannerAlert
+            style={{ width: 50 }}
+            type={ALERT_TYPES.NEUTRAL}
+            message="Neutral alert."
+          />
+          <BpkBannerAlert
+            style={{ width: 50 }}
+            type={ALERT_TYPES.SUCCESS}
+            message="Successful alert."
+          />
+          <BpkBannerAlert
+            style={{ width: 50 }}
+            type={ALERT_TYPES.WARN}
+            message="Warn alert."
+          />
+          <BpkBannerAlert
+            style={{ width: 50 }}
+            type={ALERT_TYPES.ERROR}
+            message="Error alert."
+          />
+        </View>,
+        ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
