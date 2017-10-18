@@ -1,7 +1,10 @@
 # Backpack changelog
 
 ## UNRELEASED
-__Nothing yet!__
+**Added:**
+- bpk-component-banner-alert:
+- react-native-bpk-component-banner-alert:
+  - New neutral configurations for web and native banner alerts. See http://backpack.prod.aws.skyscnr.com/components/native/banner-alerts/  http://backpack.prod.aws.skyscnr.com/components/web/banner-alerts/
 
 ### 2017-10-17 - New native banner alert and animations for web banner alerts
 
