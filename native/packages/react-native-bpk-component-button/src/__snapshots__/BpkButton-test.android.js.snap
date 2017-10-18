@@ -1,22 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Android BpkButton should render correctly 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -16722059,
-      -16728728,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
       ],
       null,
@@ -24,111 +15,48 @@ exports[`Android BpkButton should render correctly 1`] = `
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`Android BpkButton should render correctly with type="destructive" 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -1,
-      -1,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
       ],
       null,
@@ -136,120 +64,48 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
-            },
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                Object {
-                  "color": "rgb(255, 84, 82)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`Android BpkButton should render correctly with type="featured" 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -374646,
-      -2544789,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
       ],
       null,
@@ -257,111 +113,48 @@ exports[`Android BpkButton should render correctly with type="featured" 1`] = `
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`Android BpkButton should render correctly with type="primary" 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -16722059,
-      -16728728,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
       ],
       null,
@@ -369,111 +162,48 @@ exports[`Android BpkButton should render correctly with type="primary" 1`] = `
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -1,
-      -1,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
       ],
       null,
@@ -481,120 +211,48 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
-            },
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`Android BpkButton should support elements as icons 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -16722059,
-      -16728728,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
         Object {
           "width": 32,
@@ -605,92 +263,48 @@ exports[`Android BpkButton should support elements as icons 1`] = `
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "paddingHorizontal": 0,
-            },
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-      >
-        foo
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`Android BpkButton should support having an icon as well as a title 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -16722059,
-      -16728728,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
         undefined,
       ],
@@ -699,152 +313,48 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            undefined,
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          Object {
-            "justifyContent": "space-between",
-          },
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                Object {
-                  "marginRight": 4,
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Object {
-              "fontSize": 16,
-              "lineHeight": 16,
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                Object {
-                  "marginRight": 4,
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`Android BpkButton should support having only an icon 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -16722059,
-      -16728728,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
         Object {
           "width": 32,
@@ -855,116 +365,48 @@ exports[`Android BpkButton should support having only an icon 1`] = `
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "paddingHorizontal": 0,
-            },
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Object {
-              "fontSize": 16,
-              "lineHeight": 16,
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`Android BpkButton should support overwriting styles 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -16722059,
-      -16728728,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
       ],
       Object {
@@ -974,111 +416,48 @@ exports[`Android BpkButton should support overwriting styles 1`] = `
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`Android BpkButton should support the "disabled" property 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -1645333,
-      -1645333,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
         undefined,
       ],
@@ -1087,119 +466,48 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-        "disabled",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "borderColor": "transparent",
-            },
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                Object {
-                  "color": "rgb(178, 174, 189)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`Android BpkButton should support the "icon" and "large" property 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -16722059,
-      -16728728,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
         Object {
           "minHeight": 48,
@@ -1211,155 +519,48 @@ exports[`Android BpkButton should support the "icon" and "large" property 1`] = 
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "minHeight": 48,
-              "paddingHorizontal": 16,
-            },
-            undefined,
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-          Object {
-            "justifyContent": "space-between",
-          },
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 20,
-              "fontWeight": "400",
-              "lineHeight": 28,
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-                Object {
-                  "marginRight": 4,
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-                Object {
-                  "marginRight": 4,
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`Android BpkButton should support the "iconOnly" and "large" property 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -16722059,
-      -16728728,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
         Object {
           "minHeight": 48,
@@ -1373,118 +574,48 @@ exports[`Android BpkButton should support the "iconOnly" and "large" property 1`
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "minHeight": 48,
-              "paddingHorizontal": 16,
-            },
-            Object {
-              "paddingHorizontal": 0,
-            },
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-          undefined,
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-                undefined,
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`Android BpkButton should support the "large" and secondary property 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -1,
-      -1,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
         Object {
           "minHeight": 48,
@@ -1495,126 +626,48 @@ exports[`Android BpkButton should support the "large" and secondary property 1`]
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
-            },
-            Object {
-              "minHeight": 48,
-              "paddingHorizontal": 14,
-            },
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 20,
-              "fontWeight": "400",
-              "lineHeight": 28,
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-                undefined,
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`Android BpkButton should support the "large" property 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -16722059,
-      -16728728,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
         Object {
           "minHeight": 48,
@@ -1625,117 +678,48 @@ exports[`Android BpkButton should support the "large" property 1`] = `
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "minHeight": 48,
-              "paddingHorizontal": 16,
-            },
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 20,
-              "fontWeight": "400",
-              "lineHeight": 28,
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`Android BpkButtonThemed should render correctly 1`] = `
-<BVLinearGradient
-  colors={
-    Array [
-      -16744448,
-      -16776961,
-    ]
-  }
-  end={undefined}
-  locations={null}
-  start={undefined}
+<View
   style={
     Array [
       Array [
         Object {
           "borderRadius": 40,
-          "height": 32,
+          "height": 36,
         },
       ],
       null,
@@ -1743,92 +727,36 @@ exports[`Android BpkButtonThemed should render correctly 1`] = `
   }
 >
   <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent",
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
         },
-        Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-          ],
-          Object {},
-        ],
+        undefined,
       ]
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
   >
-    <View
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ]
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-              ],
-              Object {
-                "color": "red",
-              },
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
   </View>
-</BVLinearGradient>
+</View>
 `;

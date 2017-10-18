@@ -36,8 +36,7 @@ import BpkButton, { BUTTON_TYPES } from './src/BpkButton';
 
 const tokens = Platform.OS === 'ios' ?
   require('bpk-tokens/tokens/ios/base.react.native.common.js') :
-  require('bpk-tokens/tokens/android/base.react.native.common.js')
-;
+  require('bpk-tokens/tokens/android/base.react.native.common.js');
 
 const styles = StyleSheet.create({
   btnContainer: {
@@ -53,7 +52,7 @@ const styles = StyleSheet.create({
 
 const theme = {
   contentColor: '#2d244c',
-  backgroundColor: '#fff',
+  backgroundColor: tokens.colorWhite,
   brandColors: {
     gradientStart: '#fce134',
     gradientEnd: '#f8c42d',
@@ -73,62 +72,73 @@ const getIconType = type => (
   type === 'destructive' ? 'trash' : 'long-arrow-right'
 );
 
-const generateButtonStoryForType = type => (
-  <View key={type}>
-    <StorySubheading>Default</StorySubheading>
-    <View style={styles.btnContainer}>
-      <BpkButton
-        type={type}
-        title="Button"
-        onPress={action(`${type} pressed`)}
-        style={styles.buttonStyles}
-      />
-      <BpkButton
-        type={type}
-        disabled
-        title="Disabled"
-        onPress={action(`${type} disabled pressed, somehow`)}
-        style={styles.buttonStyles}
-      />
-      <BpkButton
-        type={type}
-        title="Icon only"
-        icon={getIconType(type)}
-        iconOnly
-        onPress={action(`${type} icon only button clicked`)}
-        style={styles.buttonStyles}
-      />
-    </View>
+const generateButtonStoryForType = (type) => {
+  function getLargeVersion() {
+    return (
+      <View>
+        <StorySubheading>Large</StorySubheading>
+        <View style={styles.btnContainer}>
+          <BpkButton
+            large
+            type={type}
+            title="Button"
+            onPress={action(`${type} pressed`)}
+            style={styles.buttonStyles}
+          />
+          <BpkButton
+            large
+            type={type}
+            disabled
+            title="Disabled"
+            onPress={action(`${type} disabled pressed, somehow`)}
+            style={styles.buttonStyles}
+          />
+          <BpkButton
+            large
+            type={type}
+            title="Icon only"
+            icon={getIconType(type)}
+            iconOnly
+            onPress={action(`${type} icon only button clicked`)}
+            style={styles.buttonStyles}
+          />
+        </View>
+      </View>
+    );
+  }
+  return (
+    <View key={type}>
+      <StorySubheading>Default</StorySubheading>
+      <View style={styles.btnContainer}>
+        <BpkButton
+          type={type}
+          title="Button"
+          onPress={action(`${type} pressed`)}
+          style={styles.buttonStyles}
+        />
+        <BpkButton
+          type={type}
+          disabled
+          title="Disabled"
+          onPress={action(`${type} disabled pressed, somehow`)}
+          style={styles.buttonStyles}
+        />
+        {Platform.OS === 'ios' ?
+          <BpkButton
+            type={type}
+            title="Icon only"
+            icon={getIconType(type)}
+            iconOnly
+            onPress={action(`${type} icon only button clicked`)}
+            style={styles.buttonStyles}
+          />
+          : null}
 
-    <StorySubheading>Large</StorySubheading>
-    <View style={styles.btnContainer}>
-      <BpkButton
-        large
-        type={type}
-        title="Button"
-        onPress={action(`${type} pressed`)}
-        style={styles.buttonStyles}
-      />
-      <BpkButton
-        large
-        type={type}
-        disabled
-        title="Disabled"
-        onPress={action(`${type} disabled pressed, somehow`)}
-        style={styles.buttonStyles}
-      />
-      <BpkButton
-        large
-        type={type}
-        title="Icon only"
-        icon={getIconType(type)}
-        iconOnly
-        onPress={action(`${type} icon only button clicked`)}
-        style={styles.buttonStyles}
-      />
+      </View>
+      {Platform.OS === 'ios' ? getLargeVersion() : null}
     </View>
-  </View>
-);
+  );
+};
 
 const allButtonStories = BUTTON_TYPES.map(generateButtonStoryForType);
 const allThemedButtons = (
@@ -172,8 +182,33 @@ storiesOf('BpkButton', module)
       {allThemedButtons}
     </ScrollView>
   ))
-  .add('Edge Cases', () => (
-    <View>
+  .add('Edge Cases', () => {
+    function getLargeVersion() {
+      return (
+        <BpkButton
+          large
+          type="primary"
+          title="I also have a really long title"
+          onPress={action('Large button with long title pressed')}
+          style={styles.buttonStyles}
+        />
+      );
+    }
+    function getIconOnlyVersion() {
+      return (
+        <View>
+          <StorySubheading>Passing arbitrary components as the icon prop</StorySubheading>
+          <BpkButton
+            type="primary"
+            title="I am an icon"
+            icon={<Text>Foo</Text>}
+            iconOnly
+            onPress={action('Image component button pressed')}
+          />
+        </View>
+      );
+    }
+    return (<View>
       <StoryHeading>Edge Cases</StoryHeading>
 
       <StorySubheading>Long button titles</StorySubheading>
@@ -183,21 +218,12 @@ storiesOf('BpkButton', module)
         onPress={action('Button with long title pressed')}
         style={styles.buttonStyles}
       />
-      <BpkButton
-        large
-        type="primary"
-        title="I also have a really long title"
-        onPress={action('Large button with long title pressed')}
-        style={styles.buttonStyles}
-      />
+      {Platform.OS === 'ios' ?
+        <View>
+          {getLargeVersion()}
+          {getIconOnlyVersion()}
+        </View>
+        : null}
 
-      <StorySubheading>Passing arbitrary components as the icon prop</StorySubheading>
-      <BpkButton
-        type="primary"
-        title="I am an icon"
-        icon={<Text>Foo</Text>}
-        iconOnly
-        onPress={action('Image component button pressed')}
-      />
-    </View>
-  ));
+    </View>);
+  });
