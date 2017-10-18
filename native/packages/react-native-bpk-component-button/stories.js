@@ -18,14 +18,12 @@
 
 import React from 'react';
 import {
+  Text,
   StyleSheet,
   View,
   ScrollView,
-  Image,
   Platform,
 } from 'react-native';
-
-import PropTypes from 'prop-types';
 
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
@@ -35,8 +33,6 @@ import BpkThemeProvider from 'react-native-bpk-theming';
 import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
 
 import BpkButton, { BUTTON_TYPES } from './src/BpkButton';
-
-import ArrowImageSrc from './long-arrow-right-3x.png';
 
 const tokens = Platform.OS === 'ios' ?
   require('bpk-tokens/tokens/ios/base.react.native.common.js') :
@@ -49,49 +45,11 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
   },
-  image: {
-    height: 15,
-    width: 17,
-    tintColor: tokens.colorWhite,
-  },
-  imageLarge: {
-    height: 22,
-    width: 26,
-    tintColor: tokens.colorWhite,
-  },
-  imageSecondary: {
-    tintColor: tokens.colorBlue500,
-  },
-  imageDestructive: {
-    tintColor: tokens.colorRed500,
-  },
   buttonStyles: {
     marginBottom: tokens.spacingMd,
     marginRight: tokens.spacingMd,
   },
 });
-
-// Utility for creating arrow icons to show in the buttons.
-const ArrowImage = ({ large, type }) => {
-  const style = [large ? styles.imageLarge : styles.image];
-  if (type === 'destructive') {
-    style.push(styles.imageDestructive);
-  }
-  if (type === 'secondary') {
-    style.push(styles.imageSecondary);
-  }
-  return <Image source={ArrowImageSrc} style={style} />;
-};
-
-ArrowImage.propTypes = {
-  large: PropTypes.bool,
-  type: PropTypes.string,
-};
-
-ArrowImage.defaultProps = {
-  large: false,
-  type: '',
-};
 
 const theme = {
   contentColor: '#2d244c',
@@ -110,6 +68,10 @@ const themeAttributes = {
   buttonSecondaryTextColor: theme.contentColor,
   buttonSecondaryBorderColor: theme.contentColor,
 };
+
+const getIconType = type => (
+  type === 'destructive' ? 'trash' : 'long-arrow-right'
+);
 
 const generateButtonStoryForType = type => (
   <View key={type}>
@@ -131,7 +93,7 @@ const generateButtonStoryForType = type => (
       <BpkButton
         type={type}
         title="Icon only"
-        icon={<ArrowImage type={type} />}
+        icon={getIconType(type)}
         iconOnly
         onPress={action(`${type} icon only button clicked`)}
         style={styles.buttonStyles}
@@ -159,7 +121,7 @@ const generateButtonStoryForType = type => (
         large
         type={type}
         title="Icon only"
-        icon={<ArrowImage large type={type} />}
+        icon={getIconType(type)}
         iconOnly
         onPress={action(`${type} icon only button clicked`)}
         style={styles.buttonStyles}
@@ -169,6 +131,16 @@ const generateButtonStoryForType = type => (
 );
 
 const allButtonStories = BUTTON_TYPES.map(generateButtonStoryForType);
+const allThemedButtons = (
+  <BpkThemeProvider theme={themeAttributes}>
+    <View>
+      <StoryHeading>Primary</StoryHeading>
+      {generateButtonStoryForType('primary')}
+      <StoryHeading>Secondary</StoryHeading>
+      {generateButtonStoryForType('secondary')}
+    </View>
+  </BpkThemeProvider>
+);
 
 storiesOf('BpkButton', module)
   .add('docs:primary', () => (
@@ -191,20 +163,13 @@ storiesOf('BpkButton', module)
       {generateButtonStoryForType('featured')}
     </View>
   ))
-  .add('docs:withTheme', () => (
-    <BpkThemeProvider theme={themeAttributes}>
-      <View>
-        <StoryHeading>Primary</StoryHeading>
-        {generateButtonStoryForType('primary')}
-        <StoryHeading>Secondary</StoryHeading>
-        {generateButtonStoryForType('secondary')}
-      </View>
-    </BpkThemeProvider>
-  ))
+  .add('docs:withTheme', () => allThemedButtons)
   .add('All Button Types', () => (
     <ScrollView>
       <StoryHeading>All Types</StoryHeading>
       {allButtonStories}
+      <StoryHeading>Themed</StoryHeading>
+      {allThemedButtons}
     </ScrollView>
   ))
   .add('Edge Cases', () => (
@@ -224,6 +189,15 @@ storiesOf('BpkButton', module)
         title="I also have a really long title"
         onPress={action('Large button with long title pressed')}
         style={styles.buttonStyles}
+      />
+
+      <StorySubheading>Passing arbitrary components as the icon prop</StorySubheading>
+      <BpkButton
+        type="primary"
+        title="I am an icon"
+        icon={<Text>Foo</Text>}
+        iconOnly
+        onPress={action('Image component button pressed')}
       />
     </View>
   ));

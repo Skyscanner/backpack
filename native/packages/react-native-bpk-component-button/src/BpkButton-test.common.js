@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Image } from 'react-native';
+import { Text } from 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 
@@ -26,8 +26,7 @@ import BpkButton, { propTypes, BUTTON_TYPES } from './BpkButton';
 
 const onPressFn = jest.fn();
 const commonTests = () => {
-  jest.mock('Image', () => 'Image');
-
+  jest.mock('Text', () => 'Text');
   describe('BpkButton', () => {
     it('should render correctly', () => {
       const tree = renderer.create(
@@ -51,13 +50,13 @@ const commonTests = () => {
 
     it('should support the "iconOnly" and "large" property', () => {
       const tree = renderer.create(
-        <BpkButton iconOnly large icon title="Lorem ipsum" onPress={onPressFn} />,
+        <BpkButton iconOnly large icon="baggage" title="Lorem ipsum" onPress={onPressFn} />,
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
     it('should support the "icon" and "large" property', () => {
       const tree = renderer.create(
-        <BpkButton icon large title="Lorem ipsum" onPress={onPressFn} />,
+        <BpkButton icon="baggage" large title="Lorem ipsum" onPress={onPressFn} />,
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
@@ -72,7 +71,7 @@ const commonTests = () => {
     it('should support having an icon as well as a title', () => {
       const tree = renderer.create(
         <BpkButton
-          icon={<Image source="../rightarrow_360.png" />}
+          icon="baggage"
           title="Lorem ipsum"
           onPress={onPressFn}
         />,
@@ -83,7 +82,19 @@ const commonTests = () => {
       const tree = renderer.create(
         <BpkButton
           title="Lorem ipsum"
-          icon={<Image source="../rightarrow_360.png" />}
+          icon="baggage"
+          iconOnly
+          onPress={onPressFn}
+        />,
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should support elements as icons', () => {
+      const tree = renderer.create(
+        <BpkButton
+          title="Lorem ipsum"
+          icon={<Text>foo</Text>}
           iconOnly
           onPress={onPressFn}
         />,
@@ -110,7 +121,14 @@ const commonTests = () => {
     it('should accept iconOnly prop when icon prop is supplied', () => {
       expect(propTypes.icon({
         iconOnly: true,
-        icon: <Image />,
+        icon: 'baggage',
+      }, 'icon', 'BpkButton')).toBeFalsy();
+    });
+
+    it('should accept elements as the icon property', () => {
+      expect(propTypes.icon({
+        iconOnly: true,
+        icon: <Text>foo</Text>,
       }, 'icon', 'BpkButton')).toBeFalsy();
     });
 

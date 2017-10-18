@@ -48,10 +48,8 @@ const base = StyleSheet.create({
   button: {
     borderRadius: tokens.borderRadiusPill,
     height: tokens.spacingXl,
-    paddingTop: tokens.spacingMd,
-    paddingBottom: tokens.spacingMd,
-    paddingLeft: tokens.spacingSm * 3,
-    paddingRight: tokens.spacingSm * 3,
+    paddingVertical: tokens.spacingMd,
+    paddingHorizontal: tokens.spacingSm * 3,
   },
 
   // Applied to the View element that encloses the text and icon.
@@ -74,10 +72,8 @@ const outlineButtonStyle = {
   borderWidth: buttonBorderWidth,
 
   // minus the borderWidth so it's the same size as other buttons.
-  paddingTop: tokens.spacingMd - buttonBorderWidth,
-  paddingBottom: tokens.spacingMd - buttonBorderWidth,
-  paddingLeft: (tokens.spacingSm * 3) - buttonBorderWidth,
-  paddingRight: (tokens.spacingSm * 3) - buttonBorderWidth,
+  paddingVertical: tokens.spacingMd - buttonBorderWidth,
+  paddingHorizontal: (tokens.spacingSm * 3) - buttonBorderWidth,
 };
 
 const types = {
@@ -102,8 +98,7 @@ const modifiers = {
     },
     button: {
       minHeight: largeHeight,
-      paddingLeft: tokens.spacingBase,
-      paddingRight: tokens.spacingBase,
+      paddingHorizontal: tokens.spacingBase,
     },
   }),
   largeWithOutline: StyleSheet.create({
@@ -112,8 +107,7 @@ const modifiers = {
     },
     button: {
       minHeight: largeHeight,
-      paddingLeft: tokens.spacingBase - buttonBorderWidth,
-      paddingRight: tokens.spacingBase - buttonBorderWidth,
+      paddingHorizontal: tokens.spacingBase - buttonBorderWidth,
     },
   }),
   disabled: StyleSheet.create({
@@ -128,10 +122,16 @@ const modifiers = {
     container: {
       width: tokens.spacingXl,
     },
+    button: {
+      paddingHorizontal: 0,
+    },
   }),
   iconOnlyLarge: StyleSheet.create({
     container: {
       width: largeHeight,
+    },
+    button: {
+      paddingHorizontal: 0,
     },
   }),
   textAndIcon: StyleSheet.create({
