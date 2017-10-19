@@ -21,8 +21,10 @@ import readme from 'react-native-bpk-component-card/readme.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-card/screenshots/ios/default.png';
 import iosScreenshotWithoutPadding from 'react-native-bpk-component-card/screenshots/ios/without-padding.png';
+import iosScreenshotFocused from 'react-native-bpk-component-card/screenshots/ios/focused.png';
 import androidScreenshotDefault from 'react-native-bpk-component-card/screenshots/android/default.png';
 import androidScreenshotWithoutPadding from 'react-native-bpk-component-card/screenshots/android/without-padding.png';
+import androidScreenshotFocused from 'react-native-bpk-component-card/screenshots/android/focused.png';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -70,6 +72,29 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotWithoutPadding}`,
         altText: 'Android Card Without Padding Component',
+        subText: '(Google Pixel Emulator)',
+      },
+    ],
+  },
+  {
+    id: 'focused',
+    title: 'Focused',
+    blurb: 'Cards can be focused to make them appear more prominently.',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotFocused}`,
+        altText: 'iOS Card Focused Component',
+        subText: '(iPhone 8 Simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidScreenshotFocused}`,
+        altText: 'Android Card Focused Component',
         subText: '(Google Pixel Emulator)',
       },
     ],

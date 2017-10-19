@@ -35,6 +35,7 @@ const {
   colorGray50,
   colorWhite,
   elevationXs,
+  elevationLg,
   borderRadiusSm,
   spacingBase,
   shadowSmColor,
@@ -42,6 +43,11 @@ const {
   shadowSmOffsetHeight,
   shadowSmOpacity,
   shadowSmRadius,
+  shadowXlColor,
+  shadowXlOffsetWidth,
+  shadowXlOffsetHeight,
+  shadowXlOpacity,
+  shadowXlRadius,
 } = tokens;
 
 /**
@@ -65,15 +71,26 @@ const styles = StyleSheet.create({
   padded: {
     padding: spacingBase,
   },
+  focused: {
+    elevation: elevationLg,
+    shadowColor: shadowXlColor,
+    shadowOffset: { width: shadowXlOffsetWidth, height: shadowXlOffsetHeight / PixelRatio.get() },
+    shadowOpacity: shadowXlOpacity,
+    shadowRadius: shadowXlRadius / PixelRatio.get(),
+  },
 });
 
 const BpkCard = (props) => {
-  const { padded, children, onPress, style, ...rest } = props;
+  const { padded, children, focused, onPress, style, ...rest } = props;
 
   const cardBaseStyle = [styles.card, styles.common];
 
   if (padded) {
     cardBaseStyle.push(styles.padded);
+  }
+
+  if (focused) {
+    cardBaseStyle.push(styles.focused);
   }
 
   return (
@@ -95,6 +112,7 @@ const BpkCard = (props) => {
 
 BpkCard.propTypes = {
   children: PropTypes.node.isRequired,
+  focused: PropTypes.bool,
   onPress: PropTypes.func.isRequired,
   padded: PropTypes.bool,
   style: View.propTypes.style,
@@ -102,6 +120,7 @@ BpkCard.propTypes = {
 
 BpkCard.defaultProps = {
   children: null,
+  focused: false,
   padded: true,
   style: null,
 };
