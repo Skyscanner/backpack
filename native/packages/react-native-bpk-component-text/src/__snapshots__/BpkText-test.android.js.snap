@@ -40,7 +40,6 @@ exports[`Android BpkText should render correctly with \`emphasize\` prop 1`] = `
       },
       Object {
         "fontFamily": "sans-serif-medium",
-        "fontWeight": "500",
       },
       Object {},
     ]
