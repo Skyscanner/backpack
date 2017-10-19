@@ -94,7 +94,6 @@ exports[`Android BpkButton should render correctly 1`] = `
             },
             Object {
               "fontFamily": "sans-serif-medium",
-              "fontWeight": "500",
             },
             Array [
               Array [
@@ -217,7 +216,6 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
             },
             Object {
               "fontFamily": "sans-serif-medium",
-              "fontWeight": "500",
             },
             Array [
               Array [
@@ -335,7 +333,6 @@ exports[`Android BpkButton should render correctly with type="featured" 1`] = `
             },
             Object {
               "fontFamily": "sans-serif-medium",
-              "fontWeight": "500",
             },
             Array [
               Array [
@@ -450,7 +447,6 @@ exports[`Android BpkButton should render correctly with type="primary" 1`] = `
             },
             Object {
               "fontFamily": "sans-serif-medium",
-              "fontWeight": "500",
             },
             Array [
               Array [
@@ -573,7 +569,6 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
             },
             Object {
               "fontFamily": "sans-serif-medium",
-              "fontWeight": "500",
             },
             Array [
               Array [
@@ -696,7 +691,6 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
             },
             Object {
               "fontFamily": "sans-serif-medium",
-              "fontWeight": "500",
             },
             Array [
               Array [
@@ -910,7 +904,6 @@ exports[`Android BpkButton should support overwriting styles 1`] = `
             },
             Object {
               "fontFamily": "sans-serif-medium",
-              "fontWeight": "500",
             },
             Array [
               Array [
@@ -1031,7 +1024,6 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
             },
             Object {
               "fontFamily": "sans-serif-medium",
-              "fontWeight": "500",
             },
             Array [
               Array [
@@ -1163,7 +1155,6 @@ exports[`Android BpkButton should support the "icon" and "large" property 1`] = 
             },
             Object {
               "fontFamily": "sans-serif-medium",
-              "fontWeight": "500",
             },
             Array [
               Array [
@@ -1395,7 +1386,6 @@ exports[`Android BpkButton should support the "large" and secondary property 1`]
             },
             Object {
               "fontFamily": "sans-serif-medium",
-              "fontWeight": "500",
             },
             Array [
               Array [
@@ -1523,7 +1513,6 @@ exports[`Android BpkButton should support the "large" property 1`] = `
             },
             Object {
               "fontFamily": "sans-serif-medium",
-              "fontWeight": "500",
             },
             Array [
               Array [
@@ -1639,7 +1628,6 @@ exports[`Android BpkButtonThemed should render correctly 1`] = `
             },
             Object {
               "fontFamily": "sans-serif-medium",
-              "fontWeight": "500",
             },
             Array [
               Array [

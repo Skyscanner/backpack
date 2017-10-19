@@ -66,10 +66,11 @@ const getStyleByTextStyle = (textStyle) => {
 
 const getEmphasizeProperties = () => {
   const emphasizeProperties = {
-    fontWeight: tokens.textEmphasizedFontWeight,
   };
   if (Platform.OS === 'android') {
     emphasizeProperties.fontFamily = tokens.fontFamilyEmphasize;
+  } else {
+    emphasizeProperties.fontWeight = tokens.textEmphasizedFontWeight;
   }
   return emphasizeProperties;
 };
