@@ -1,8 +1,13 @@
 # Backpack changelog
 
 ## UNRELEASED
+
+**Changed:**
 - bpk-component-breakpoint
  - Upgraded react-responsive to v3.0.0 to fix propType warning.
+- react-native-bpk-component-button:
+ - The `icon` prop now accepts strings corresponding to a valid `BpkIcon`.
+ - Elements can still be passed in as before if required.
 
 ### 2017-10-18 - New neutral configuration for native and web banner alerts
 

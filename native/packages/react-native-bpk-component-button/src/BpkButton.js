@@ -26,6 +26,7 @@
  import difference from 'lodash/difference';
 
  import { withTheme } from 'react-native-bpk-theming';
+ import BpkIcon from 'react-native-bpk-component-icon';
  import BpkText from 'react-native-bpk-component-text';
 
  import styles from './BpkButton-styles';
@@ -105,8 +106,8 @@
  };
 
  const iconPropType = (props, propName, componentName) => {
-   const hasIcon = props[propName];
-   if (props.iconOnly && !hasIcon) {
+   const icon = props[propName];
+   if (props.iconOnly && !icon) {
      return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName}\`. When \`iconOnly\` is enabled, \`${propName}\` must be supplied.`); // eslint-disable-line max-len
    }
    return false;
@@ -143,7 +144,7 @@
      style,
      ...rest
    } = props;
-   let theme = props.theme;
+   let { theme } = props;
 
    // Validate the button type.
    if (!BUTTON_TYPES.includes(type)) {
@@ -162,6 +163,21 @@
    if (disabled) {
      accessibilityTraits.push('disabled');
    }
+
+   const textStyle = [
+     getStyleForElement('text', props),
+     getThemingForElement('text', theme, props),
+   ];
+
+   const renderIcon = () => {
+     if (!icon) {
+       return null;
+     }
+     if (typeof icon === 'string') {
+       return <BpkIcon icon={icon} style={textStyle} small={!large} />;
+     }
+     return icon;
+   };
 
    // Note that TouchableHighlight isn't on Android, so TouchableFeedback
    // will need to be used to support it.
@@ -185,12 +201,12 @@
              <BpkText
                textStyle={large ? 'lg' : 'sm'}
                emphasize
-               style={[getStyleForElement('text', props), getThemingForElement('text', theme, props)]}
+               style={textStyle}
              >
                {title}
              </BpkText>
            }
-           {icon}
+           { renderIcon() }
          </View>
        </TouchableHighlight>
      </LinearGradient>

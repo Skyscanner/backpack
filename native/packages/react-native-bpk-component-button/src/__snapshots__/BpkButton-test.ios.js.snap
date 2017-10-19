@@ -53,10 +53,8 @@ exports[`iOS BpkButton should render correctly 1`] = `
             Object {
               "borderRadius": 40,
               "height": 32,
-              "paddingBottom": 8,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 8,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
           ],
           Object {},
@@ -167,18 +165,14 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
             Object {
               "borderRadius": 40,
               "height": 32,
-              "paddingBottom": 8,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 8,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
               "borderWidth": 2,
-              "paddingBottom": 6,
-              "paddingLeft": 10,
-              "paddingRight": 10,
-              "paddingTop": 6,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
           ],
           Object {},
@@ -292,10 +286,8 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
             Object {
               "borderRadius": 40,
               "height": 32,
-              "paddingBottom": 8,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 8,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
           ],
           Object {},
@@ -406,10 +398,8 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
             Object {
               "borderRadius": 40,
               "height": 32,
-              "paddingBottom": 8,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 8,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
           ],
           Object {},
@@ -520,18 +510,14 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
             Object {
               "borderRadius": 40,
               "height": 32,
-              "paddingBottom": 8,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 8,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
               "borderWidth": 2,
-              "paddingBottom": 6,
-              "paddingLeft": 10,
-              "paddingRight": 10,
-              "paddingTop": 6,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
           ],
           Object {},
@@ -592,6 +578,102 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
 </BVLinearGradient>
 `;
 
+exports[`iOS BpkButton should support elements as icons 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4278245237,
+      4278238568,
+    ]
+  }
+  end={undefined}
+  locations={null}
+  start={undefined}
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+        Object {
+          "width": 32,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+        },
+        Array [
+          Array [
+            Object {
+              "borderRadius": 40,
+              "height": 32,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
+            },
+            Object {
+              "paddingHorizontal": 0,
+            },
+          ],
+          Object {},
+        ],
+      ]
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+      >
+        foo
+      </Text>
+    </View>
+  </View>
+</BVLinearGradient>
+`;
+
 exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
 <BVLinearGradient
   colors={
@@ -646,10 +728,8 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
             Object {
               "borderRadius": 40,
               "height": 32,
-              "paddingBottom": 8,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 8,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             undefined,
           ],
@@ -709,9 +789,40 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
       >
         Lorem ipsum
       </Text>
-      <Image
-        source="../rightarrow_360.png"
-      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "marginRight": 4,
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        
+      </Text>
     </View>
   </View>
 </BVLinearGradient>
@@ -773,12 +884,12 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
             Object {
               "borderRadius": 40,
               "height": 32,
-              "paddingBottom": 8,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 8,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
-            undefined,
+            Object {
+              "paddingHorizontal": 0,
+            },
           ],
           Object {},
         ],
@@ -800,9 +911,38 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
         ]
       }
     >
-      <Image
-        source="../rightarrow_360.png"
-      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        
+      </Text>
     </View>
   </View>
 </BVLinearGradient>
@@ -863,10 +1003,8 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
             Object {
               "borderRadius": 40,
               "height": 32,
-              "paddingBottom": 8,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 8,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
           ],
           Object {},
@@ -979,10 +1117,8 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
             Object {
               "borderRadius": 40,
               "height": 32,
-              "paddingBottom": 8,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 8,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "transparent",
@@ -1104,15 +1240,12 @@ exports[`iOS BpkButton should support the "icon" and "large" property 1`] = `
             Object {
               "borderRadius": 40,
               "height": 32,
-              "paddingBottom": 8,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 8,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "minHeight": 48,
-              "paddingLeft": 16,
-              "paddingRight": 16,
+              "paddingHorizontal": 16,
             },
             undefined,
           ],
@@ -1173,6 +1306,37 @@ exports[`iOS BpkButton should support the "icon" and "large" property 1`] = `
         }
       >
         Lorem ipsum
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+                Object {
+                  "marginRight": 4,
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        
       </Text>
     </View>
   </View>
@@ -1238,17 +1402,16 @@ exports[`iOS BpkButton should support the "iconOnly" and "large" property 1`] = 
             Object {
               "borderRadius": 40,
               "height": 32,
-              "paddingBottom": 8,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 8,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "minHeight": 48,
-              "paddingLeft": 16,
-              "paddingRight": 16,
+              "paddingHorizontal": 16,
             },
-            undefined,
+            Object {
+              "paddingHorizontal": 0,
+            },
           ],
           Object {},
         ],
@@ -1270,7 +1433,37 @@ exports[`iOS BpkButton should support the "iconOnly" and "large" property 1`] = 
           undefined,
         ]
       }
-    />
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+                undefined,
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
   </View>
 </BVLinearGradient>
 `;
@@ -1331,23 +1524,18 @@ exports[`iOS BpkButton should support the "large" and secondary property 1`] = `
             Object {
               "borderRadius": 40,
               "height": 32,
-              "paddingBottom": 8,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 8,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "borderColor": "rgb(230, 228, 235)",
               "borderWidth": 2,
-              "paddingBottom": 6,
-              "paddingLeft": 10,
-              "paddingRight": 10,
-              "paddingTop": 6,
+              "paddingHorizontal": 10,
+              "paddingVertical": 6,
             },
             Object {
               "minHeight": 48,
-              "paddingLeft": 14,
-              "paddingRight": 14,
+              "paddingHorizontal": 14,
             },
           ],
           Object {},
@@ -1466,15 +1654,12 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
             Object {
               "borderRadius": 40,
               "height": 32,
-              "paddingBottom": 8,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 8,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
             Object {
               "minHeight": 48,
-              "paddingLeft": 16,
-              "paddingRight": 16,
+              "paddingHorizontal": 16,
             },
           ],
           Object {},
@@ -1587,10 +1772,8 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
             Object {
               "borderRadius": 40,
               "height": 32,
-              "paddingBottom": 8,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 8,
+              "paddingHorizontal": 12,
+              "paddingVertical": 8,
             },
           ],
           Object {},
