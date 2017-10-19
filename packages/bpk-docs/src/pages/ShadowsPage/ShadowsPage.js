@@ -26,7 +26,9 @@ import { getPlatformTokens } from './../../helpers/tokens-helper';
 
 const ShadowsPage = () => <DocsPageBuilder
   title="Shadows"
-  tokenMap={getPlatformTokens(TOKENS, IOS_TOKENS, ANDROID_TOKENS, ({ category }) => category === 'box-shadows')}
+  tokenMap={getPlatformTokens(
+    TOKENS, IOS_TOKENS, ANDROID_TOKENS, ({ category }) => ['box-shadows', 'elevation'].includes(category),
+  )}
 />;
 
 export default ShadowsPage;
