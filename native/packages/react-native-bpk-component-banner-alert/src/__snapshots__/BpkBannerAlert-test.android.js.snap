@@ -47,20 +47,31 @@ exports[`Android BpkBannerAlert should accept user-stlying 1`] = `
           ]
         }
       >
-        <Image
-          source={1}
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
           style={
             Array [
               Object {
-                "height": 16,
-                "width": 16,
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
               },
               Object {
-                "tintColor": "rgb(129, 123, 143)",
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Object {
+                "color": "rgb(129, 123, 143)",
               },
             ]
           }
-        />
+        >
+          
+        </Text>
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -160,20 +171,31 @@ exports[`Android BpkBannerAlert should accept user-stlying 1`] = `
           ]
         }
       >
-        <Image
-          source={1}
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
           style={
             Array [
               Object {
-                "height": 16,
-                "width": 16,
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
               },
               Object {
-                "tintColor": "rgb(0, 215, 117)",
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Object {
+                "color": "rgb(255, 187, 0)",
               },
             ]
           }
-        />
+        >
+          
+        </Text>
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -273,20 +295,31 @@ exports[`Android BpkBannerAlert should accept user-stlying 1`] = `
           ]
         }
       >
-        <Image
-          source={1}
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
           style={
             Array [
               Object {
-                "height": 16,
-                "width": 16,
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
               },
               Object {
-                "tintColor": "rgb(255, 187, 0)",
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Object {
+                "color": "rgb(255, 187, 0)",
               },
             ]
           }
-        />
+        >
+          
+        </Text>
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -386,20 +419,31 @@ exports[`Android BpkBannerAlert should accept user-stlying 1`] = `
           ]
         }
       >
-        <Image
-          source={1}
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
           style={
             Array [
               Object {
-                "height": 16,
-                "width": 16,
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
               },
               Object {
-                "tintColor": "rgb(255, 84, 82)",
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Object {
+                "color": "rgb(255, 84, 82)",
               },
             ]
           }
-        />
+        >
+          
+        </Text>
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -501,20 +545,31 @@ exports[`Android BpkBannerAlert should render correctly 1`] = `
           ]
         }
       >
-        <Image
-          source={1}
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
           style={
             Array [
               Object {
-                "height": 16,
-                "width": 16,
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
               },
               Object {
-                "tintColor": "rgb(129, 123, 143)",
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Object {
+                "color": "rgb(129, 123, 143)",
               },
             ]
           }
-        />
+        >
+          
+        </Text>
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -611,20 +666,31 @@ exports[`Android BpkBannerAlert should render correctly 1`] = `
           ]
         }
       >
-        <Image
-          source={1}
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
           style={
             Array [
               Object {
-                "height": 16,
-                "width": 16,
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
               },
               Object {
-                "tintColor": "rgb(0, 215, 117)",
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Object {
+                "color": "rgb(255, 187, 0)",
               },
             ]
           }
-        />
+        >
+          
+        </Text>
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -721,20 +787,31 @@ exports[`Android BpkBannerAlert should render correctly 1`] = `
           ]
         }
       >
-        <Image
-          source={1}
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
           style={
             Array [
               Object {
-                "height": 16,
-                "width": 16,
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
               },
               Object {
-                "tintColor": "rgb(255, 187, 0)",
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Object {
+                "color": "rgb(255, 187, 0)",
               },
             ]
           }
-        />
+        >
+          
+        </Text>
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -831,20 +908,31 @@ exports[`Android BpkBannerAlert should render correctly 1`] = `
           ]
         }
       >
-        <Image
-          source={1}
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
           style={
             Array [
               Object {
-                "height": 16,
-                "width": 16,
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
               },
               Object {
-                "tintColor": "rgb(255, 84, 82)",
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Object {
+                "color": "rgb(255, 84, 82)",
               },
             ]
           }
-        />
+        >
+          
+        </Text>
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -949,20 +1037,31 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
           ]
         }
       >
-        <Image
-          source={1}
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
           style={
             Array [
               Object {
-                "height": 16,
-                "width": 16,
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
               },
               Object {
-                "tintColor": "rgb(129, 123, 143)",
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Object {
+                "color": "rgb(129, 123, 143)",
               },
             ]
           }
-        />
+        >
+          
+        </Text>
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -1023,23 +1122,33 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         testID={undefined}
         tvParallaxProperties={undefined}
       >
-        <Image
-          source={1}
-          style={
-            Array [
-              Object {
-                "height": 16,
-                "width": 16,
-              },
-              Object {
-                "height": 16,
-                "tintColor": "rgb(82, 76, 97)",
-                "width": 16,
-              },
-              undefined,
-            ]
-          }
-        />
+        <View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(129, 123, 143)",
+                },
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
     </View>
     <View
@@ -1114,20 +1223,31 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
           ]
         }
       >
-        <Image
-          source={1}
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
           style={
             Array [
               Object {
-                "height": 16,
-                "width": 16,
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
               },
               Object {
-                "tintColor": "rgb(0, 215, 117)",
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Object {
+                "color": "rgb(255, 187, 0)",
               },
             ]
           }
-        />
+        >
+          
+        </Text>
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -1188,23 +1308,33 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         testID={undefined}
         tvParallaxProperties={undefined}
       >
-        <Image
-          source={1}
-          style={
-            Array [
-              Object {
-                "height": 16,
-                "width": 16,
-              },
-              Object {
-                "height": 16,
-                "tintColor": "rgb(82, 76, 97)",
-                "width": 16,
-              },
-              undefined,
-            ]
-          }
-        />
+        <View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(129, 123, 143)",
+                },
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
     </View>
     <View
@@ -1279,20 +1409,31 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
           ]
         }
       >
-        <Image
-          source={1}
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
           style={
             Array [
               Object {
-                "height": 16,
-                "width": 16,
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
               },
               Object {
-                "tintColor": "rgb(255, 187, 0)",
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Object {
+                "color": "rgb(255, 187, 0)",
               },
             ]
           }
-        />
+        >
+          
+        </Text>
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -1353,23 +1494,33 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         testID={undefined}
         tvParallaxProperties={undefined}
       >
-        <Image
-          source={1}
-          style={
-            Array [
-              Object {
-                "height": 16,
-                "width": 16,
-              },
-              Object {
-                "height": 16,
-                "tintColor": "rgb(82, 76, 97)",
-                "width": 16,
-              },
-              undefined,
-            ]
-          }
-        />
+        <View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(129, 123, 143)",
+                },
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
     </View>
     <View
@@ -1444,20 +1595,31 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
           ]
         }
       >
-        <Image
-          source={1}
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
           style={
             Array [
               Object {
-                "height": 16,
-                "width": 16,
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
               },
               Object {
-                "tintColor": "rgb(255, 84, 82)",
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Object {
+                "color": "rgb(255, 84, 82)",
               },
             ]
           }
-        />
+        >
+          
+        </Text>
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -1518,23 +1680,33 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         testID={undefined}
         tvParallaxProperties={undefined}
       >
-        <Image
-          source={1}
-          style={
-            Array [
-              Object {
-                "height": 16,
-                "width": 16,
-              },
-              Object {
-                "height": 16,
-                "tintColor": "rgb(82, 76, 97)",
-                "width": 16,
-              },
-              undefined,
-            ]
-          }
-        />
+        <View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
+                },
+                Object {
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(129, 123, 143)",
+                },
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
     </View>
     <View
@@ -1643,20 +1815,31 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
             ]
           }
         >
-          <Image
-            source={1}
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "height": 16,
-                  "width": 16,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
                 },
                 Object {
-                  "tintColor": "rgb(129, 123, 143)",
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(129, 123, 143)",
                 },
               ]
             }
-          />
+          >
+            
+          </Text>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -1682,22 +1865,33 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
           >
             Neutral alert.
           </Text>
-          <Image
-            source={1}
-            style={
-              Array [
-                Object {
-                  "height": 16,
-                  "width": 16,
-                },
-                Object {
-                  "height": 16,
-                  "tintColor": "rgb(82, 76, 97)",
-                  "width": 16,
-                },
-              ]
-            }
-          />
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "BpkIcon",
+                    "fontSize": 24,
+                    "lineHeight": 24,
+                  },
+                  Object {
+                    "fontSize": 16,
+                    "lineHeight": 16,
+                  },
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -1823,20 +2017,31 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
             ]
           }
         >
-          <Image
-            source={1}
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "height": 16,
-                  "width": 16,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
                 },
                 Object {
-                  "tintColor": "rgb(0, 215, 117)",
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(255, 187, 0)",
                 },
               ]
             }
-          />
+          >
+            
+          </Text>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -1862,22 +2067,33 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
           >
             Successful alert.
           </Text>
-          <Image
-            source={1}
-            style={
-              Array [
-                Object {
-                  "height": 16,
-                  "width": 16,
-                },
-                Object {
-                  "height": 16,
-                  "tintColor": "rgb(82, 76, 97)",
-                  "width": 16,
-                },
-              ]
-            }
-          />
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "BpkIcon",
+                    "fontSize": 24,
+                    "lineHeight": 24,
+                  },
+                  Object {
+                    "fontSize": 16,
+                    "lineHeight": 16,
+                  },
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -2003,20 +2219,31 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
             ]
           }
         >
-          <Image
-            source={1}
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "height": 16,
-                  "width": 16,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
                 },
                 Object {
-                  "tintColor": "rgb(255, 187, 0)",
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(255, 187, 0)",
                 },
               ]
             }
-          />
+          >
+            
+          </Text>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -2042,22 +2269,33 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
           >
             Warn alert.
           </Text>
-          <Image
-            source={1}
-            style={
-              Array [
-                Object {
-                  "height": 16,
-                  "width": 16,
-                },
-                Object {
-                  "height": 16,
-                  "tintColor": "rgb(82, 76, 97)",
-                  "width": 16,
-                },
-              ]
-            }
-          />
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "BpkIcon",
+                    "fontSize": 24,
+                    "lineHeight": 24,
+                  },
+                  Object {
+                    "fontSize": 16,
+                    "lineHeight": 16,
+                  },
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -2183,20 +2421,31 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
             ]
           }
         >
-          <Image
-            source={1}
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "height": 16,
-                  "width": 16,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
                 },
                 Object {
-                  "tintColor": "rgb(255, 84, 82)",
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(255, 84, 82)",
                 },
               ]
             }
-          />
+          >
+            
+          </Text>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -2222,22 +2471,33 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
           >
             Error alert.
           </Text>
-          <Image
-            source={1}
-            style={
-              Array [
-                Object {
-                  "height": 16,
-                  "width": 16,
-                },
-                Object {
-                  "height": 16,
-                  "tintColor": "rgb(82, 76, 97)",
-                  "width": 16,
-                },
-              ]
-            }
-          />
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "BpkIcon",
+                    "fontSize": 24,
+                    "lineHeight": 24,
+                  },
+                  Object {
+                    "fontSize": 16,
+                    "lineHeight": 16,
+                  },
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -2368,20 +2628,31 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
             ]
           }
         >
-          <Image
-            source={1}
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "height": 16,
-                  "width": 16,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
                 },
                 Object {
-                  "tintColor": "rgb(129, 123, 143)",
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(129, 123, 143)",
                 },
               ]
             }
-          />
+          >
+            
+          </Text>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -2407,22 +2678,33 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
           >
             Neutral alert.
           </Text>
-          <Image
-            source={1}
-            style={
-              Array [
-                Object {
-                  "height": 16,
-                  "width": 16,
-                },
-                Object {
-                  "height": 16,
-                  "tintColor": "rgb(82, 76, 97)",
-                  "width": 16,
-                },
-              ]
-            }
-          />
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "BpkIcon",
+                    "fontSize": 24,
+                    "lineHeight": 24,
+                  },
+                  Object {
+                    "fontSize": 16,
+                    "lineHeight": 16,
+                  },
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -2548,20 +2830,31 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
             ]
           }
         >
-          <Image
-            source={1}
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "height": 16,
-                  "width": 16,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
                 },
                 Object {
-                  "tintColor": "rgb(0, 215, 117)",
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(255, 187, 0)",
                 },
               ]
             }
-          />
+          >
+            
+          </Text>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -2587,22 +2880,33 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
           >
             Successful alert.
           </Text>
-          <Image
-            source={1}
-            style={
-              Array [
-                Object {
-                  "height": 16,
-                  "width": 16,
-                },
-                Object {
-                  "height": 16,
-                  "tintColor": "rgb(82, 76, 97)",
-                  "width": 16,
-                },
-              ]
-            }
-          />
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "BpkIcon",
+                    "fontSize": 24,
+                    "lineHeight": 24,
+                  },
+                  Object {
+                    "fontSize": 16,
+                    "lineHeight": 16,
+                  },
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -2728,20 +3032,31 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
             ]
           }
         >
-          <Image
-            source={1}
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "height": 16,
-                  "width": 16,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
                 },
                 Object {
-                  "tintColor": "rgb(255, 187, 0)",
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(255, 187, 0)",
                 },
               ]
             }
-          />
+          >
+            
+          </Text>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -2767,22 +3082,33 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
           >
             Warn alert.
           </Text>
-          <Image
-            source={1}
-            style={
-              Array [
-                Object {
-                  "height": 16,
-                  "width": 16,
-                },
-                Object {
-                  "height": 16,
-                  "tintColor": "rgb(82, 76, 97)",
-                  "width": 16,
-                },
-              ]
-            }
-          />
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "BpkIcon",
+                    "fontSize": 24,
+                    "lineHeight": 24,
+                  },
+                  Object {
+                    "fontSize": 16,
+                    "lineHeight": 16,
+                  },
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -2908,20 +3234,31 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
             ]
           }
         >
-          <Image
-            source={1}
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "height": 16,
-                  "width": 16,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
                 },
                 Object {
-                  "tintColor": "rgb(255, 84, 82)",
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(255, 84, 82)",
                 },
               ]
             }
-          />
+          >
+            
+          </Text>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -2947,22 +3284,33 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
           >
             Error alert.
           </Text>
-          <Image
-            source={1}
-            style={
-              Array [
-                Object {
-                  "height": 16,
-                  "width": 16,
-                },
-                Object {
-                  "height": 16,
-                  "tintColor": "rgb(82, 76, 97)",
-                  "width": 16,
-                },
-              ]
-            }
-          />
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "BpkIcon",
+                    "fontSize": 24,
+                    "lineHeight": 24,
+                  },
+                  Object {
+                    "fontSize": 16,
+                    "lineHeight": 16,
+                  },
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -3093,20 +3441,31 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
             ]
           }
         >
-          <Image
-            source={1}
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "height": 16,
-                  "width": 16,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
                 },
                 Object {
-                  "tintColor": "rgb(129, 123, 143)",
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(129, 123, 143)",
                 },
               ]
             }
-          />
+          >
+            
+          </Text>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -3132,22 +3491,33 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
           >
             Neutral alert.
           </Text>
-          <Image
-            source={1}
-            style={
-              Array [
-                Object {
-                  "height": 16,
-                  "width": 16,
-                },
-                Object {
-                  "height": 16,
-                  "tintColor": "rgb(82, 76, 97)",
-                  "width": 16,
-                },
-              ]
-            }
-          />
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "BpkIcon",
+                    "fontSize": 24,
+                    "lineHeight": 24,
+                  },
+                  Object {
+                    "fontSize": 16,
+                    "lineHeight": 16,
+                  },
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -3273,20 +3643,31 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
             ]
           }
         >
-          <Image
-            source={1}
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "height": 16,
-                  "width": 16,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
                 },
                 Object {
-                  "tintColor": "rgb(0, 215, 117)",
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(255, 187, 0)",
                 },
               ]
             }
-          />
+          >
+            
+          </Text>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -3312,22 +3693,33 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
           >
             Successful alert.
           </Text>
-          <Image
-            source={1}
-            style={
-              Array [
-                Object {
-                  "height": 16,
-                  "width": 16,
-                },
-                Object {
-                  "height": 16,
-                  "tintColor": "rgb(82, 76, 97)",
-                  "width": 16,
-                },
-              ]
-            }
-          />
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "BpkIcon",
+                    "fontSize": 24,
+                    "lineHeight": 24,
+                  },
+                  Object {
+                    "fontSize": 16,
+                    "lineHeight": 16,
+                  },
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -3453,20 +3845,31 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
             ]
           }
         >
-          <Image
-            source={1}
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "height": 16,
-                  "width": 16,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
                 },
                 Object {
-                  "tintColor": "rgb(255, 187, 0)",
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(255, 187, 0)",
                 },
               ]
             }
-          />
+          >
+            
+          </Text>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -3492,22 +3895,33 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
           >
             Warn alert.
           </Text>
-          <Image
-            source={1}
-            style={
-              Array [
-                Object {
-                  "height": 16,
-                  "width": 16,
-                },
-                Object {
-                  "height": 16,
-                  "tintColor": "rgb(82, 76, 97)",
-                  "width": 16,
-                },
-              ]
-            }
-          />
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "BpkIcon",
+                    "fontSize": 24,
+                    "lineHeight": 24,
+                  },
+                  Object {
+                    "fontSize": 16,
+                    "lineHeight": 16,
+                  },
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
         </View>
       </View>
     </View>
@@ -3633,20 +4047,31 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
             ]
           }
         >
-          <Image
-            source={1}
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "height": 16,
-                  "width": 16,
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "BpkIcon",
+                  "fontSize": 24,
+                  "lineHeight": 24,
                 },
                 Object {
-                  "tintColor": "rgb(255, 84, 82)",
+                  "fontSize": 16,
+                  "lineHeight": 16,
+                },
+                Object {
+                  "color": "rgb(255, 84, 82)",
                 },
               ]
             }
-          />
+          >
+            
+          </Text>
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -3672,22 +4097,33 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
           >
             Error alert.
           </Text>
-          <Image
-            source={1}
-            style={
-              Array [
-                Object {
-                  "height": 16,
-                  "width": 16,
-                },
-                Object {
-                  "height": 16,
-                  "tintColor": "rgb(82, 76, 97)",
-                  "width": 16,
-                },
-              ]
-            }
-          />
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                    "fontFamily": "BpkIcon",
+                    "fontSize": 24,
+                    "lineHeight": 24,
+                  },
+                  Object {
+                    "fontSize": 16,
+                    "lineHeight": 16,
+                  },
+                  Object {
+                    "color": "rgb(82, 76, 97)",
+                  },
+                ]
+              }
+            >
+              
+            </Text>
+          </View>
         </View>
       </View>
     </View>
