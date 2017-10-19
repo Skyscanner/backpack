@@ -54,7 +54,8 @@ if (nativeComponentIntroduced) {
 // If any of the packages have changed, the changelog should have been updated.
 const changelogModified = includes(modifiedFiles, 'changelog.md');
 const packagesModified = fileChanges.some(filePath => (
-  filePath.startsWith('packages/') || filePath.startsWith('native/packages/')
+  (filePath.startsWith('packages/') || filePath.startsWith('native/packages/')) &&
+  !filePath.startsWith('packages/bpk-docs/')
 ));
 if (packagesModified && !changelogModified) {
   warn('One or more packages have changed, but `changelog.md` wasn\'t updated.');
