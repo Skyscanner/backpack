@@ -18,7 +18,6 @@
 
 import {
   View,
-  Image,
   Platform,
   StyleSheet,
   TouchableHighlight,
@@ -27,14 +26,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { setOpacity } from 'bpk-tokens';
 import BpkText from 'react-native-bpk-component-text';
+import BpkIcon from 'react-native-bpk-component-icon';
 import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
-
-const tickIcon = require('./icons/lg/tick-circle.png'); // eslint-disable-line import/no-unresolved
-const informationIcon = require('./icons/lg/information-circle.png'); // eslint-disable-line import/no-unresolved
-const neutralIcon = require('./icons/lg/information-circle.png'); // eslint-disable-line import/no-unresolved
-const closeIcon = require('./icons/lg/close.png'); // eslint-disable-line import/no-unresolved
-const chevronUpIcon = require('./icons/lg/chevron-up.png'); // eslint-disable-line import/no-unresolved
-const chevronDownIcon = require('./icons/lg/chevron-down.png'); // eslint-disable-line import/no-unresolved
 
 const stylePropType = (props, propName, componentName) => {
   const value = StyleSheet.flatten(props[propName]);
@@ -145,29 +138,23 @@ const styles = StyleSheet.create({
     paddingLeft: spacingSm,
     color: colorGray700,
   },
-  icon: {
-    width: spacingBase,
-    height: spacingBase,
-  },
   iconSuccess: {
-    tintColor: colorGreen500,
+    color: colorGreen500,
   },
   iconWarn: {
-    tintColor: colorYellow500,
+    color: colorYellow500,
   },
   iconError: {
-    tintColor: colorRed500,
+    color: colorRed500,
   },
   iconNeutral: {
-    tintColor: colorGray500,
+    color: colorGray500,
   },
-  button: {
-    tintColor: colorGray700,
-    width: spacingBase,
-    height: spacingBase,
+  buttonExpand: {
+    color: colorGray700,
   },
   buttonClose: {
-    tintColor: colorGray500,
+    color: colorGray500,
   },
 });
 
@@ -178,10 +165,10 @@ const BpkBannerAlert = (props) => {
 
   let iconSource = null;
   let buttonIconSource = null;
+  let iconStyle = null;
+  let buttonIconStyle = null;
 
   const outerStyleFinal = [styles.outerContainer];
-  const iconStyle = [styles.icon];
-  const buttonIconStyle = [styles.icon, styles.button];
   const expandedChildContainer = [styles.expandedChildContainer];
 
   if (style) {
@@ -189,38 +176,40 @@ const BpkBannerAlert = (props) => {
   }
 
   if (type === ALERT_TYPES.SUCCESS) {
-    iconSource = tickIcon;
+    iconSource = 'tick-circle';
     outerStyleFinal.push(styles.outerContainerSuccess);
-    iconStyle.push(styles.iconSuccess);
+    iconStyle = styles.iconWarn;
   } else if (type === ALERT_TYPES.WARN) {
-    iconSource = informationIcon;
+    iconSource = 'information-circle';
     outerStyleFinal.push(styles.outerContainerWarn);
-    iconStyle.push(styles.iconWarn);
+    iconStyle = styles.iconWarn;
   } else if (type === ALERT_TYPES.ERROR) {
-    iconSource = informationIcon;
+    iconSource = 'information-circle';
     outerStyleFinal.push(styles.outerContainerError);
-    iconStyle.push(styles.iconError);
+    iconStyle = styles.iconError;
   } else if (type === ALERT_TYPES.NEUTRAL) {
-    iconSource = neutralIcon;
+    iconSource = 'information-circle';
     outerStyleFinal.push(styles.outerContainerNeutral);
-    iconStyle.push(styles.iconNeutral);
+    iconStyle = styles.iconNeutral;
   }
 
   if (dismissable) {
-    buttonIconSource = closeIcon;
-    buttonIconStyle.push(styles.closeIcon);
+    buttonIconSource = 'close';
+    buttonIconStyle = styles.buttonClose;
   } else if (children !== null) {
+    buttonIconStyle = styles.buttonExpand;
     if (expanded) {
-      buttonIconSource = chevronUpIcon;
+      buttonIconSource = 'chevron-up';
     } else {
-      buttonIconSource = chevronDownIcon;
+      buttonIconSource = 'chevron-down';
     }
   }
 
   const iconComponent = (
-    <Image
+    <BpkIcon
       style={iconStyle}
-      source={iconSource}
+      icon={iconSource}
+      small
     />
   );
 
@@ -229,10 +218,15 @@ const BpkBannerAlert = (props) => {
   );
 
   const actionComponent = (
-    <Image
-      style={buttonIconStyle}
-      source={buttonIconSource}
-    />
+    <View>
+      {buttonIconSource &&
+        <BpkIcon
+          style={buttonIconStyle}
+          icon={buttonIconSource}
+          small
+        />
+    }
+    </View>
   );
 
   const closeButtonComponent = (
