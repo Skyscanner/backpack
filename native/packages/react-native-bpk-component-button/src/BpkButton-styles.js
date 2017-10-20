@@ -29,28 +29,42 @@ const underlayColor = Platform.select({
   ios: () => setOpacity(tokens.underlayColor, tokens.underlayOpacity),
   android: () => null,
 })();
+export const colorWhite = tokens.colorWhite;
 
 // These should probably be their own tokens.
 // For now they are derived from existing tokens.
 const largeHeight = tokens.spacingSm * 12;
-const buttonBorderWidth = tokens.borderSizeLg;
-
+const buttonBorderWidth = Platform.OS === 'android' ? 0 : tokens.borderSizeLg;
 // The base styles that are initially applied to all buttons.
 const base = StyleSheet.create({
 
   // Applied to the outer LinearGradient element.
-  container: {
-    borderRadius: tokens.borderRadiusPill,
-    height: tokens.spacingXl,
-  },
+  container: Platform.select({
+    ios: () => ({
+      borderRadius: tokens.borderRadiusPill,
+      height: tokens.spacingXl,
+    }),
+    android: () => ({
+      borderRadius: tokens.borderRadiusPill,
+      height: tokens.spacingXl + tokens.spacingSm,
+    }),
+  })(),
 
-  // Applied to the TouchableHighlight element.
-  button: {
-    borderRadius: tokens.borderRadiusPill,
-    height: tokens.spacingXl,
-    paddingVertical: tokens.spacingMd,
-    paddingHorizontal: tokens.spacingSm * 3,
-  },
+  // Applied to the TouchableHighlight/TouchableNativeFeedback element.
+  button: Platform.select({
+    ios: () => ({
+      borderRadius: tokens.borderRadiusPill,
+      height: tokens.spacingXl,
+      paddingVertical: tokens.spacingMd,
+      paddingHorizontal: tokens.spacingSm * 3,
+    }),
+    android: () => ({
+      borderRadius: tokens.borderRadiusPill,
+      height: tokens.spacingXl + tokens.spacingSm,
+      paddingVertical: tokens.spacingMd,
+      paddingHorizontal: tokens.spacingSm * 3,
+    }),
+  })(),
 
   // Applied to the View element that encloses the text and icon.
   view: {
@@ -61,10 +75,18 @@ const base = StyleSheet.create({
   },
 
   // Applied to the Text element.
-  text: {
-    backgroundColor: 'transparent',
-    color: tokens.colorWhite,
-  },
+  text: Platform.select({
+    ios: () => ({
+      backgroundColor: 'transparent',
+      color: tokens.colorWhite,
+
+    }),
+    android: () => ({
+      backgroundColor: 'transparent',
+      color: tokens.colorWhite,
+      lineHeight: tokens.lineHeightXs,
+    }),
+  })(),
 });
 
 const outlineButtonStyle = {
@@ -154,7 +176,7 @@ const modifiers = {
 
 const gradientColors = {
   primary: [tokens.colorGreen500, tokens.colorGreen600],
-  featured: ['rgb(250, 72, 138)', 'rgb(217, 43, 107)'], // TODO [tokens.colorPink500, tokens.colorPink600]
+  featured: [tokens.colorPink500, tokens.colorPink600],
   destructive: [tokens.colorWhite, tokens.colorWhite],
   secondary: [tokens.colorWhite, tokens.colorWhite],
   disabled: [tokens.colorGray100, tokens.colorGray100],

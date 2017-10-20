@@ -21,9 +21,10 @@ import commonTests from './BpkButton-test.common';
 jest.mock('react-native', () => {
   const reactNative = require.requireActual('react-native');
   jest
-      .spyOn(reactNative.Platform, 'select')
-      .mockImplementation(obj => obj.android || obj.default);
+    .spyOn(reactNative.Platform, 'select')
+    .mockImplementation(obj => obj.android || obj.default);
   reactNative.Platform.OS = 'android';
+  reactNative.TouchableNativeFeedback.SelectableBackgroundBorderless = jest.fn();
 
   return reactNative;
 });
