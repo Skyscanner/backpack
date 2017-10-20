@@ -23,7 +23,7 @@
     "react": "16.0.0-beta.5",
     "react-dom": "16.0.0-beta.5",
     "react-native": "^0.49.3",
-    "react-native-bpk-component-text": "^2.1.13",
+    "react-native-bpk-component-text": "^2.1.14",
     "react-test-renderer": "16.0.0-beta.5"
   },
   "jest": {
