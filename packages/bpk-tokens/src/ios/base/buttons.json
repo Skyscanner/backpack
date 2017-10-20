@@ -1,0 +1,27 @@
+{
+  "imports": [
+    "./aliases.json",
+    "./borders.json"
+  ],
+  "global": {
+    "type": "size",
+    "category": "spacings"
+  },
+  "props": {
+    "BUTTON_BORDER_WIDTH": {
+      "value": "{!BORDER_SIZE_LG}"
+    },
+    "BUTTON_HEIGHT": {
+      "value": "{!SPACING_XL}"
+    },
+    "BUTTON_PADDING_HORIZONTAL": {
+      "value": "{!SPACING_SM} * 3"
+    },
+    "BUTTON_LINE_HEIGHT_LARGE": {
+      "value": "{!SPACING_SM} * 12"
+    },
+    "BUTTON_PADDING_VERTICAL": {
+      "value": "{!SPACING_MD}"
+    }
+  }
+}

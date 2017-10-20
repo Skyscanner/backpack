@@ -278,6 +278,33 @@
     }
   },
   "props": {
+    "ANIMATION_DURATION_XS": {
+      "type": "string",
+      "value": "50ms",
+      "category": "animations",
+      ".alias": {
+        "value": "50ms"
+      },
+      "name": "ANIMATION_DURATION_XS"
+    },
+    "ANIMATION_DURATION_SM": {
+      "type": "string",
+      "value": "200ms",
+      "category": "animations",
+      ".alias": {
+        "value": "200ms"
+      },
+      "name": "ANIMATION_DURATION_SM"
+    },
+    "ANIMATION_DURATION_BASE": {
+      "type": "string",
+      "value": "400ms",
+      "category": "animations",
+      ".alias": {
+        "value": "400ms"
+      },
+      "name": "ANIMATION_DURATION_BASE"
+    },
     "BORDER_SIZE_SM": {
       "type": "size",
       "value": "1",
@@ -422,32 +449,50 @@
       "category": "box-shadows",
       "name": "SHADOW_XL_RADIUS"
     },
-    "ANIMATION_DURATION_XS": {
-      "type": "string",
-      "value": "50ms",
-      "category": "animations",
+    "BUTTON_BORDER_WIDTH": {
+      "type": "size",
+      "category": "spacings",
+      "value": "2",
       ".alias": {
-        "value": "50ms"
+        "value": 2
       },
-      "name": "ANIMATION_DURATION_XS"
+      "name": "BUTTON_BORDER_WIDTH"
     },
-    "ANIMATION_DURATION_SM": {
-      "type": "string",
-      "value": "200ms",
-      "category": "animations",
+    "BUTTON_HEIGHT": {
+      "type": "size",
+      "category": "spacings",
+      "value": "32",
       ".alias": {
-        "value": "200ms"
+        "value": 32
       },
-      "name": "ANIMATION_DURATION_SM"
+      "name": "BUTTON_HEIGHT"
     },
-    "ANIMATION_DURATION_BASE": {
-      "type": "string",
-      "value": "400ms",
-      "category": "animations",
+    "BUTTON_PADDING_HORIZONTAL": {
+      "type": "size",
+      "category": "spacings",
+      "value": "4 * 3",
       ".alias": {
-        "value": "400ms"
+        "value": 4
       },
-      "name": "ANIMATION_DURATION_BASE"
+      "name": "BUTTON_PADDING_HORIZONTAL"
+    },
+    "BUTTON_LINE_HEIGHT_LARGE": {
+      "type": "size",
+      "category": "spacings",
+      "value": "4 * 12",
+      ".alias": {
+        "value": 4
+      },
+      "name": "BUTTON_LINE_HEIGHT_LARGE"
+    },
+    "BUTTON_PADDING_VERTICAL": {
+      "type": "size",
+      "category": "spacings",
+      "value": "8",
+      ".alias": {
+        "value": 8
+      },
+      "name": "BUTTON_PADDING_VERTICAL"
     },
     "COLOR_WHITE": {
       "type": "color",
@@ -1357,6 +1402,9 @@
     }
   },
   "propKeys": [
+    "ANIMATION_DURATION_XS",
+    "ANIMATION_DURATION_SM",
+    "ANIMATION_DURATION_BASE",
     "BORDER_SIZE_SM",
     "BORDER_SIZE_LG",
     "BORDER_SIZE_XL",
@@ -1377,9 +1425,11 @@
     "SHADOW_XL_OFFSET_WIDTH",
     "SHADOW_XL_OPACITY",
     "SHADOW_XL_RADIUS",
-    "ANIMATION_DURATION_XS",
-    "ANIMATION_DURATION_SM",
-    "ANIMATION_DURATION_BASE",
+    "BUTTON_BORDER_WIDTH",
+    "BUTTON_HEIGHT",
+    "BUTTON_PADDING_HORIZONTAL",
+    "BUTTON_LINE_HEIGHT_LARGE",
+    "BUTTON_PADDING_VERTICAL",
     "COLOR_WHITE",
     "COLOR_BLUE_50",
     "COLOR_BLUE_100",

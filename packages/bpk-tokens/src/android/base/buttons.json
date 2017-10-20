@@ -1,0 +1,26 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "type": "size",
+    "category": "spacings"
+  },
+  "props": {
+    "BUTTON_BORDER_WIDTH": {
+      "value": 0
+    },
+    "BUTTON_HEIGHT": {
+      "value": "{!SPACING_XL} + {!SPACING_SM}"
+    },
+    "BUTTON_PADDING_HORIZONTAL": {
+      "value": "{!SPACING_SM} * 3"
+    },
+    "BUTTON_LINE_HEIGHT_LARGE": {
+      "value": "{!SPACING_SM} * 12"
+    },
+    "BUTTON_PADDING_VERTICAL": {
+      "value": "{!SPACING_MD}"
+    }
+  }
+}

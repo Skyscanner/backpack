@@ -20,14 +20,19 @@
   
 -->
 <resources>
+  <property name="ANIMATION_DURATION_XS" category="animations">50ms</property>
+  <property name="ANIMATION_DURATION_SM" category="animations">200ms</property>
+  <property name="ANIMATION_DURATION_BASE" category="animations">400ms</property>
   <property name="BORDER_SIZE_SM" category="borders">1dp</property>
   <property name="BORDER_SIZE_LG" category="borders">2dp</property>
   <property name="BORDER_SIZE_XL" category="borders">3dp</property>
   <property name="BORDER_RADIUS_SM" category="radii">2dp</property>
   <property name="BORDER_RADIUS_PILL" category="radii">40dp</property>
-  <property name="ANIMATION_DURATION_XS" category="animations">50ms</property>
-  <property name="ANIMATION_DURATION_SM" category="animations">200ms</property>
-  <property name="ANIMATION_DURATION_BASE" category="animations">400ms</property>
+  <property name="BUTTON_BORDER_WIDTH" category="spacings">0dp</property>
+  <property name="BUTTON_HEIGHT" category="spacings">32 + 4dp</property>
+  <property name="BUTTON_PADDING_HORIZONTAL" category="spacings">4 * 3dp</property>
+  <property name="BUTTON_LINE_HEIGHT_LARGE" category="spacings">4 * 12dp</property>
+  <property name="BUTTON_PADDING_VERTICAL" category="spacings">8dp</property>
   <color name="COLOR_WHITE" category="colors">#ffffffff</color>
   <color name="COLOR_BLUE_50" category="colors">#ffe1f4f8</color>
   <color name="COLOR_BLUE_100" category="colors">#ffcbeef5</color>

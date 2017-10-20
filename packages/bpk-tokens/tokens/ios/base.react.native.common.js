@@ -19,6 +19,9 @@
  */
 
 module.exports = {
+  animationDurationXs: "50ms",
+  animationDurationSm: "200ms",
+  animationDurationBase: "400ms",
   borderSizeSm: 1,
   borderSizeLg: 2,
   borderSizeXl: 3,
@@ -39,9 +42,11 @@ module.exports = {
   shadowXlOffsetWidth: 0,
   shadowXlOpacity: 0.2,
   shadowXlRadius: 50,
-  animationDurationXs: "50ms",
-  animationDurationSm: "200ms",
-  animationDurationBase: "400ms",
+  buttonBorderWidth: 2,
+  buttonHeight: 32,
+  buttonPaddingHorizontal: 4 * 3,
+  buttonLineHeightLarge: 4 * 12,
+  buttonPaddingVertical: 8,
   colorWhite: "rgb(255, 255, 255)",
   colorBlue50: "rgb(225, 244, 248)",
   colorBlue100: "rgb(203, 238, 245)",

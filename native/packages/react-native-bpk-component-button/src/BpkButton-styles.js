@@ -30,40 +30,22 @@ const underlayColor = Platform.select({
   android: () => null,
 })();
 
-// These should probably be their own tokens.
-// For now they are derived from existing tokens.
-const largeHeight = tokens.spacingSm * 12;
-const buttonBorderWidth = Platform.OS === 'android' ? 0 : tokens.borderSizeLg;
 // The base styles that are initially applied to all buttons.
 const base = StyleSheet.create({
 
   // Applied to the outer LinearGradient element.
-  container: Platform.select({
-    ios: () => ({
-      borderRadius: tokens.borderRadiusPill,
-      height: tokens.spacingXl,
-    }),
-    android: () => ({
-      borderRadius: tokens.borderRadiusPill,
-      height: tokens.spacingXl + tokens.spacingSm,
-    }),
-  })(),
+  container: {
+    borderRadius: tokens.borderRadiusPill,
+    height: tokens.buttonHeight,
+  },
 
   // Applied to the TouchableHighlight/TouchableNativeFeedback element.
-  button: Platform.select({
-    ios: () => ({
-      borderRadius: tokens.borderRadiusPill,
-      height: tokens.spacingXl,
-      paddingVertical: tokens.spacingMd,
-      paddingHorizontal: tokens.spacingSm * 3,
-    }),
-    android: () => ({
-      borderRadius: tokens.borderRadiusPill,
-      height: tokens.spacingXl + tokens.spacingSm,
-      paddingVertical: tokens.spacingMd,
-      paddingHorizontal: tokens.spacingSm * 3,
-    }),
-  })(),
+  button: {
+    borderRadius: tokens.borderRadiusPill,
+    height: tokens.buttonHeight,
+    paddingVertical: tokens.buttonPaddingVertical,
+    paddingHorizontal: tokens.buttonPaddingHorizontal,
+  },
 
   // Applied to the View element that encloses the text and icon.
   view: {
@@ -90,11 +72,11 @@ const base = StyleSheet.create({
 
 const outlineButtonStyle = {
   borderColor: tokens.colorGray100,
-  borderWidth: buttonBorderWidth,
+  borderWidth: tokens.buttonBorderWidth,
 
   // minus the borderWidth so it's the same size as other buttons.
-  paddingVertical: tokens.spacingMd - buttonBorderWidth,
-  paddingHorizontal: (tokens.spacingSm * 3) - buttonBorderWidth,
+  paddingVertical: tokens.buttonPaddingVertical - tokens.buttonBorderWidth,
+  paddingHorizontal: tokens.buttonPaddingHorizontal - tokens.buttonBorderWidth,
 };
 
 const types = {
@@ -115,20 +97,20 @@ const types = {
 const modifiers = {
   large: StyleSheet.create({
     container: {
-      minHeight: largeHeight,
+      minHeight: tokens.buttonLineHeightLarge,
     },
     button: {
-      minHeight: largeHeight,
+      minHeight: tokens.buttonLineHeightLarge,
       paddingHorizontal: tokens.spacingBase,
     },
   }),
   largeWithOutline: StyleSheet.create({
     container: {
-      minHeight: largeHeight,
+      minHeight: tokens.buttonLineHeightLarge,
     },
     button: {
-      minHeight: largeHeight,
-      paddingHorizontal: tokens.spacingBase - buttonBorderWidth,
+      minHeight: tokens.buttonLineHeightLarge,
+      paddingHorizontal: tokens.spacingBase - tokens.buttonBorderWidth,
     },
   }),
   disabled: StyleSheet.create({
@@ -149,7 +131,7 @@ const modifiers = {
   }),
   iconOnlyLarge: StyleSheet.create({
     container: {
-      width: largeHeight,
+      width: tokens.buttonLineHeightLarge,
     },
     button: {
       paddingHorizontal: 0,
