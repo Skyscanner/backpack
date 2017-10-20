@@ -70,7 +70,7 @@ const components = [
   },
 ];
 
-const TicketsPage = () => <DocsPageBuilder
+const TicketsPage = () => (<DocsPageBuilder
   title="Tickets"
   blurb={[
     <Paragraph>
@@ -81,6 +81,6 @@ const TicketsPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={ticketReadme}
-/>;
+/>);
 
 export default TicketsPage;

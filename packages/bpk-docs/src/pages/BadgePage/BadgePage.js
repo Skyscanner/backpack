@@ -49,7 +49,8 @@ const components = [
     id: 'docked',
     title: 'Docked',
     blurb: [<Paragraph>A badge can also be configured to have a top-right, or top-left modifier to pin it
-    to the corner of its parent.</Paragraph>],
+    to the corner of its parent.
+            </Paragraph>],
     examples: [
       <div className={getClassName('bpkdocs-badge-page__badge-container')}>
         <BpkBadge docked="right">Advert</BpkBadge>
@@ -73,7 +74,7 @@ const components = [
   },
 ];
 
-const BadgePage = () => <DocsPageBuilder
+const BadgePage = () => (<DocsPageBuilder
   title="Badge"
   blurb={[
     <Paragraph>
@@ -84,6 +85,6 @@ const BadgePage = () => <DocsPageBuilder
   components={components}
   readme={badgeReadme}
   sassdocId="badges"
-/>;
+/>);
 
 export default BadgePage;

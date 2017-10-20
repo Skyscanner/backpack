@@ -78,8 +78,8 @@ const components = [
         // As the image has a max-width of 32rem, if the viewport
         // is wider than 850w the image will be 32rem wide.
         // Otherwise, it will take up all but 4.5rem.
-        sizes={`(min-width: 850w) 32rem,
-          calc(100vw - 4.5rem)`}
+        sizes="(min-width: 850w) 32rem,
+          calc(100vw - 4.5rem)"
       />,
     ],
   },
@@ -158,7 +158,7 @@ const components = [
 ];
 
 
-const ImagesPage = () => <DocsPageBuilder
+const ImagesPage = () => (<DocsPageBuilder
   title="Images"
   blurb={[
     <Paragraph>
@@ -170,6 +170,6 @@ const ImagesPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={imagesReadme}
-/>;
+/>);
 
 export default ImagesPage;

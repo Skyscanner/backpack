@@ -53,7 +53,7 @@ const components = [
   },
 ];
 
-const NativeIconsPage = () => <DocsPageBuilder
+const NativeIconsPage = () => (<DocsPageBuilder
   title="Icons"
   blurb={[
     <Paragraph>
@@ -62,11 +62,11 @@ const NativeIconsPage = () => <DocsPageBuilder
     </Paragraph>,
     <Paragraph>
       View all icons on the <BpkLink href="/components/web/icons">icons page</BpkLink>.
-  </Paragraph>,
+    </Paragraph>,
   ]}
   components={components}
   readme={readme}
   showMenu={false}
-/>;
+/>);
 
 export default NativeIconsPage;

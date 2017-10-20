@@ -32,7 +32,8 @@ describe('BpkChartMargin', () => {
     const tree = renderer.create(
       <BpkChartMargin
         margin={margin}
-      >Children</BpkChartMargin>,
+      >Children
+      </BpkChartMargin>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

@@ -45,7 +45,9 @@ class FieldsetContainer extends Component {
   }
 
   render() {
-    const { children, validValue, isCheckbox, ...rest } = this.props;
+    const {
+      children, validValue, isCheckbox, ...rest
+    } = this.props;
 
     let isValid;
     if (isCheckbox) {

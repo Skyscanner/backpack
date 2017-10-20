@@ -96,7 +96,9 @@ class BpkTooltipPortal extends Component {
 
   render() {
     const classNames = [getClassName('bpk-tooltip-portal')];
-    const { padded, target, children, hideOnTouchDevices, portalClassName, portalStyle, ...rest } = this.props;
+    const {
+      padded, target, children, hideOnTouchDevices, portalClassName, portalStyle, ...rest
+    } = this.props;
     const renderPortal = !hasTouchSupport() || !hideOnTouchDevices;
 
     if (portalClassName) { classNames.push(portalClassName); }
@@ -119,7 +121,7 @@ class BpkTooltipPortal extends Component {
           </BpkTooltip>
         </Portal>
       )
-      : target
+        : target
     );
   }
 }

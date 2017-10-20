@@ -92,11 +92,12 @@ const BpkPopover = (props) => {
                     label={closeButtonText}
                     onClick={bindEventSource(EVENT_SOURCES.CLOSE_BUTTON, props.onClose)}
                   />
-                : <BpkButtonLink
-                  onClick={bindEventSource(EVENT_SOURCES.CLOSE_LINK, props.onClose)}
-                >
-                  {closeButtonText}
-                </BpkButtonLink>
+                :
+                  <BpkButtonLink
+                    onClick={bindEventSource(EVENT_SOURCES.CLOSE_LINK, props.onClose)}
+                  >
+                    {closeButtonText}
+                  </BpkButtonLink>
                 }
               </header>
             ) : (

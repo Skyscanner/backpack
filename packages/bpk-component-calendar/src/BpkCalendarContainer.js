@@ -68,7 +68,7 @@ const withCalendarState = (Calendar) => {
 
       // `date` is to be DEPRECATED in favour of `selectedDate`
       const rawSelectedDate = this.props.selectedDate || this.props.date;
-      const initiallyFocusedDate = this.props.initiallyFocusedDate;
+      const { initiallyFocusedDate } = this.props;
 
       this.state = {
         preventKeyboardFocus: true,
@@ -200,10 +200,10 @@ const withCalendarState = (Calendar) => {
 
       const sanitisedSelectedDate = rawSelectedDate
         ? dateToBoundaries(
-            rawSelectedDate,
-            sanitisedMinDate,
-            sanitisedMaxDate,
-          )
+          rawSelectedDate,
+          sanitisedMinDate,
+          sanitisedMaxDate,
+        )
         : null;
       const sanitisedFocusedDate = dateToBoundaries(
         this.state.focusedDate,

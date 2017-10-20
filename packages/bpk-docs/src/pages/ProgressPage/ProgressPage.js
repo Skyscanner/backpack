@@ -66,7 +66,7 @@ const components = [
 ];
 
 
-const PopoversPage = () => <DocsPageBuilder
+const PopoversPage = () => (<DocsPageBuilder
   title="Progress bars"
   blurb={[
     <Paragraph>
@@ -76,6 +76,6 @@ const PopoversPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={progressReadme}
-/>;
+/>);
 
 export default PopoversPage;

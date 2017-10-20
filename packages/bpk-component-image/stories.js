@@ -59,7 +59,7 @@ storiesOf('bpk-component-image', module)
         ${image}?resize=1640px:1427px&quality=100 1640w,
         ${image}?resize=3200px:2133px&quality=100 3200w`}
       // The image will take up all but 318px of the viewport.
-      sizes={'calc(100vw - 318px)'}
+      sizes="calc(100vw - 318px)"
     />
   ))
   .add('With Animation', () => (
@@ -157,5 +157,5 @@ storiesOf('bpk-component-image', module)
         <BpkText tagName="h2" textStyle="lg" >Lorem ipsum dolor sit amet</BpkText>
       </div>
     </FadingLazyLoadedBackgroundImage >
-  ))
-  ;
+  ));
+

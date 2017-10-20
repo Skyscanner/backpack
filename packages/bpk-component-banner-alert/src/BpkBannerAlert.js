@@ -102,23 +102,35 @@ class BpkBannerAlert extends Component {
   }
 
   render() {
-    const { children, className, type, ariaLive, message, toggleButtonLabel, ...rest } = this.props;
+    const {
+      children, className, type, ariaLive, message, toggleButtonLabel, ...rest
+    } = this.props;
     const isExpanded = this.state.expanded;
     const isExpandable = children;
     const showChildren = isExpandable && isExpanded;
+    const ariaRoles = ['alert'];
 
     const headerClassNames = [getClassName('bpk-banner-alert__header')];
     const sectionClassNames = ['bpk-banner-alert', `bpk-banner-alert--${type}`]
       .map(sectionClassName => getClassName(sectionClassName));
 
     if (className) { sectionClassNames.push(className); }
-    if (isExpandable) { headerClassNames.push(getClassName('bpk-banner-alert__header--expandable')); }
+    if (isExpandable) {
+      headerClassNames.push(getClassName('bpk-banner-alert__header--expandable'));
+      ariaRoles.push('button');
+    }
 
-    /* eslint-disable jsx-a11y/no-static-element-interactions */
+    /* eslint-disable
+    jsx-a11y/no-static-element-interactions,
+    jsx-a11y/click-events-have-key-events,
+    jsx-a11y/no-noninteractive-element-interactions
+    */
+    // Disabling 'click-events-have-key-events and interactive-supports-focus' because header element is not focusable.
+    // ToggleButton is focusable and works for this.
     return (
       <section className={sectionClassNames.join(' ')} {...rest}>
         <header
-          role="alert"
+          role={ariaRoles.join(' ')}
           aria-live={ariaLive}
           className={headerClassNames.join(' ')}
           onClick={this.onExpand}

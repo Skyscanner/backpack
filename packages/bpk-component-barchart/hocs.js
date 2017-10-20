@@ -56,7 +56,6 @@ export const withSelectedState = (ComposedComponent) => {
         />
       );
     }
-
   }
 
   WithSelectedState.displayName = wrapDisplayName(ComposedComponent, 'withSelectedState');

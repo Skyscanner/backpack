@@ -117,12 +117,12 @@ const components = [
   },
 ];
 
-const GettingStartedPage = () => <DocsPageBuilder
+const GettingStartedPage = () => (<DocsPageBuilder
   title="Getting started"
   blurb={[
     <Paragraph>Depending on the audience, there are a few ways to get started:</Paragraph>,
   ]}
   components={components}
-/>;
+/>);
 
 export default GettingStartedPage;

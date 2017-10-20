@@ -224,10 +224,11 @@ exports[`BpkImage should support srcSet 1`] = `
               (min-width: 50.25rem) calc(100vw - 18rem),
               calc(100vw - 4.5rem)"
       src="./path/to/image_1640.jpg"
-      srcSet="./path/to/image_320px.jpg 320w,
-              ./path/to/image_640px.jpg 640w,
-              ./path/to/image_1640px.jpg 1640w,
-              ./path/to/image_3200px.jpg 3200w"
+      srcSet="
+        ./path/to/image_320px.jpg 320w,
+        ./path/to/image_640px.jpg 640w,
+        ./path/to/image_1640px.jpg 1640w,
+        ./path/to/image_3200px.jpg 3200w"
     />
   </div>
 </div>

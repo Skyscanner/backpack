@@ -28,7 +28,7 @@ const commonTests = () => {
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
           commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
           et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>
+      </BpkText>
     );
 
     it('should render correctly collapsed', () => {
@@ -59,7 +59,7 @@ const commonTests = () => {
           {animateHeightContent}
           {animateHeightContent}
         </BpkAnimateHeight>,
-        ).toJSON();
+      ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 

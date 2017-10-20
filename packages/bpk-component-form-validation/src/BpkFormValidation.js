@@ -27,7 +27,9 @@ const getClassName = cssModules(STYLES);
 
 const BpkFormValidation = (props) => {
   const classNames = [getClassName('bpk-form-validation')];
-  const { children, expanded, isCheckbox, className, containerProps, ...rest } = props;
+  const {
+    children, expanded, isCheckbox, className, containerProps, ...rest
+  } = props;
 
   if (expanded) { classNames.push(getClassName('bpk-form-validation--appear')); }
   if (isCheckbox) { classNames.push(getClassName('bpk-form-validation--is-checkbox')); }

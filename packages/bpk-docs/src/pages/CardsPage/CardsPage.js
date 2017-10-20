@@ -54,7 +54,7 @@ const components = [
   },
 ];
 
-const CardsPage = () => <DocsPageBuilder
+const CardsPage = () => (<DocsPageBuilder
   title="Cards"
   blurb={[
     <Paragraph>
@@ -66,6 +66,6 @@ const CardsPage = () => <DocsPageBuilder
   components={components}
   readme={cardReadme}
   sassdocId="cards"
-/>;
+/>);
 
 export default CardsPage;

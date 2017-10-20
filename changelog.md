@@ -13,7 +13,11 @@ _Nothing Yet_
 
 **Added:**
 - react-native-bpk-component-button: react-native-bpk-component-button: 4.1.0 => 4.2.0
-  - Add Android support
+ - Add Android support
+
+ **Fixed:**
+ - bpk-component-nudger:
+   - Removed redundant `role="alert"` from nudger input
 
 ## 2017-10-20 - Icon support for native buttons and focused prop for native cards
 

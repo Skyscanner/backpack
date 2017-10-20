@@ -31,7 +31,9 @@ const ExpandIcon = withButtonAlignment(ChevronDownIcon);
 
 const BpkAccordionItem = (props) => {
   const iconClassNames = [getClassName('bpk-accordion__item-expand-icon')];
-  const { id, title, children, expanded, onClick, ...rest } = props;
+  const {
+    id, title, children, expanded, onClick, ...rest
+  } = props;
 
   // if this component is passed initiallyExpanded, this makes sure it doesn't
   // end up on the node. Not ideal as our container component shouldn't be passing

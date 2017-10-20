@@ -27,7 +27,9 @@ const getClassName = cssModules(STYLES);
 const BpkCheckbox = (props) => {
   const classNames = [getClassName('bpk-checkbox')];
   const labelClassNames = [getClassName('bpk-checkbox__label')];
-  const { name, label, required, disabled, white, className, smallLabel, ...rest } = props;
+  const {
+    name, label, required, disabled, white, className, smallLabel, ...rest
+  } = props;
 
   if (white) { classNames.push(getClassName('bpk-checkbox--white')); }
   if (disabled) { classNames.push(getClassName('bpk-checkbox--disabled')); }

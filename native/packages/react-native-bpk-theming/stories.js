@@ -33,8 +33,7 @@ import BpkThemeProvider from './index';
 
 const tokens = Platform.OS === 'ios' ?
   require('bpk-tokens/tokens/ios/base.react.native.common.js') :
-  require('bpk-tokens/tokens/android/base.react.native.common.js')
-;
+  require('bpk-tokens/tokens/android/base.react.native.common.js');
 
 const generateThemeAttributes = (gradientStartColor, gradientEndColor) => ({
   buttonPrimaryTextColor: tokens.colorWhite,

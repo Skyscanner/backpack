@@ -120,7 +120,7 @@ const components = [
   },
 ];
 
-const ModalsPage = () => <DocsPageBuilder
+const ModalsPage = () => (<DocsPageBuilder
   title="Modals"
   blurb={[
     <Paragraph>
@@ -132,6 +132,6 @@ const ModalsPage = () => <DocsPageBuilder
   components={components}
   readme={modalReadme}
   sassdocId="modals"
-/>;
+/>);
 
 export default ModalsPage;

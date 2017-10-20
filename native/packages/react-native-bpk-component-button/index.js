@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
- import BpkButton from './src/BpkButton';
+import BpkButton from './src/BpkButton';
 
- export default BpkButton;
+export default BpkButton;

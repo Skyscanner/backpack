@@ -300,7 +300,7 @@ exports[`BpkBannerAlert should render correctly with a element based message 1`]
     aria-live="assertive"
     className="bpk-banner-alert__header bpk-banner-alert__header--expandable"
     onClick={[Function]}
-    role="alert"
+    role="alert button"
   >
     <span
       className="bpk-banner-alert__icon"
@@ -494,7 +494,7 @@ exports[`BpkBannerAlert should render correctly with child nodes 1`] = `
     aria-live="assertive"
     className="bpk-banner-alert__header bpk-banner-alert__header--expandable"
     onClick={[Function]}
-    role="alert"
+    role="alert button"
   >
     <span
       className="bpk-banner-alert__icon"

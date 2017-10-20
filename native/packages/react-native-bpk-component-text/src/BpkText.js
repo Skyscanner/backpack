@@ -56,12 +56,16 @@ const stylePropType = (props, propName, componentName) => {
 
 const getStyleByTextStyle = (textStyle) => {
   const camelCasedStyle = textStyle[0].toUpperCase() + textStyle.slice(1);
-  const color = tokens.colorGray700;
-  const fontSize = tokens[`text${camelCasedStyle}FontSize`];
-  const lineHeight = tokens[`text${camelCasedStyle}LineHeight`];
-  const fontFamily = tokens.fontFamily;
-  const fontWeight = tokens[`text${camelCasedStyle}FontWeight`];
-  return { fontSize, lineHeight, color, fontFamily, fontWeight };
+  const {
+    colorGray700: color,
+    [`text${camelCasedStyle}FontSize`]: fontSize,
+    [`text${camelCasedStyle}LineHeight`]: lineHeight,
+    fontFamily,
+    [`text${camelCasedStyle}FontWeight`]: fontWeight,
+  } = tokens;
+  return {
+    fontSize, lineHeight, color, fontFamily, fontWeight,
+  };
 };
 
 const getEmphasizeProperties = () => {
@@ -85,7 +89,9 @@ const styles = StyleSheet.create({
 });
 
 const BpkText = (props) => {
-  const { children, textStyle, style, emphasize, ...rest } = props;
+  const {
+    children, textStyle, style, emphasize, ...rest
+  } = props;
   const finalStyle = [styles[textStyle]];
   if (emphasize) {
     finalStyle.push(getEmphasizeProperties(props));

@@ -26,7 +26,9 @@ const getClassName = cssModules(STYLES);
 
 const BpkCard = (props) => {
   const classNames = [getClassName('bpk-card')];
-  const { children, className, href, padded, ...rest } = props;
+  const {
+    children, className, href, padded, ...rest
+  } = props;
 
   if (padded) { classNames.push(getClassName('bpk-card--padded')); }
   if (className) { classNames.push(className); }

@@ -34,7 +34,9 @@ export const INPUT_TYPES = {
 
 const BpkInput = (props) => {
   const classNames = [getClassName('bpk-input')];
-  const { valid, large, docked, dockedFirst, dockedMiddle, dockedLast, className, ...rest } = props;
+  const {
+    valid, large, docked, dockedFirst, dockedMiddle, dockedLast, className, ...rest
+  } = props;
 
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid

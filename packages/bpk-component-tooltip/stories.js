@@ -41,7 +41,8 @@ storiesOf('bpk-component-tooltip', module)
         id="my-tooltip"
         target={<Heading>£295</Heading>}
       >
-        This is the cheapest price! 👍
+        This is the cheapest price!
+        <span role="img" aria-label="Thumbs up">👍</span>
       </BpkTooltip>
     </div>
   ))
@@ -61,7 +62,8 @@ storiesOf('bpk-component-tooltip', module)
           ],
         }}
       >
-        This is the cheapest price! 👍
+        This is the cheapest price!
+        <span role="img" aria-label="Thumbs up">👍</span>
       </BpkTooltip>
     </div>
   ))
@@ -91,7 +93,8 @@ storiesOf('bpk-component-tooltip', module)
         id="my-tooltip"
         target={<a href="//skyscanner.net" target="_blank" rel="noopener noreferrer">Click me!</a>}
       >
-        Find cheap flights here! ✈️
+        Find cheap flights here!
+        <span role="img" aria-label="Plane">✈️</span>
       </BpkTooltip>
     </div>
   ));

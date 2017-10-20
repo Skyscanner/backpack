@@ -134,6 +134,11 @@ class Portal extends Component {
     if (typeof this.props.target === 'function') {
       return this.props.target();
     }
+
+    // Whilst findDOMNode is planned for deprecation in a future implementation of react, since this is the only usage
+    // in backpack, we have decided to ignore this instance as it'll be deleted in favour of React 16 first class portal
+    // implementation (see https://reactjs.org/docs/portals.html).
+    // eslint-disable-next-line react/no-find-dom-node
     return this.props.target && findDOMNode(this);
   }
 
@@ -186,7 +191,7 @@ class Portal extends Component {
     let supportsPassiveOption = false;
     try {
       const opts = Object.defineProperty({}, 'passive', {
-        get() {
+        get() { // eslint-disable-line getter-return
           supportsPassiveOption = true;
         },
       });

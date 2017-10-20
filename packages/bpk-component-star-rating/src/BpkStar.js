@@ -36,7 +36,9 @@ export const STAR_TYPES = {
 };
 
 const BpkStar = (props) => {
-  const { type, large, className, ...rest } = props;
+  const {
+    type, large, className, ...rest
+  } = props;
   const iconClassNames = [getClassName('bpk-star')];
   const containerClassNames = ['bpk-star__container', 'bpk-star__container--half-star'].map(getClassName);
   const halfIconClassNamesLeft = ['bpk-star', 'bpk-star--half', 'bpk-star--filled'].map(getClassName);

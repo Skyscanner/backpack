@@ -159,7 +159,9 @@ const styles = StyleSheet.create({
 });
 
 const BpkBannerAlert = (props) => {
-  const { type, message, onAction, dismissable, expanded, actionButtonLabel, style, children, ...rest } = props;
+  const {
+    type, message, onAction, dismissable, expanded, actionButtonLabel, style, children, ...rest
+  } = props;
 
   const expandable = children !== null;
 
@@ -239,20 +241,19 @@ const BpkBannerAlert = (props) => {
     >
       {actionComponent}
     </TouchableHighlight>
-    );
+  );
 
   const contentPaddedStyle = [styles.bannerContainerPadded];
   if (dismissable) {
     contentPaddedStyle.push(styles.bannerContainerPaddedDismissable);
   }
 
-  let banner = (<View
-    style={[contentPaddedStyle]}
-  >
-    {iconComponent}
-    {textComponent}
-    {expandable && actionComponent}
-  </View>
+  let banner = (
+    <View style={[contentPaddedStyle]}>
+      {iconComponent}
+      {textComponent}
+      {expandable && actionComponent}
+    </View>
   );
 
   if (expandable) {

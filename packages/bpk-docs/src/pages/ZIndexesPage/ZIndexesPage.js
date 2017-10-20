@@ -24,9 +24,9 @@ import ANDROID_TOKENS from 'bpk-tokens/tokens/android/base.raw.json';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import { getPlatformTokens } from './../../helpers/tokens-helper';
 
-const ZIndexesPage = () => <DocsPageBuilder
+const ZIndexesPage = () => (<DocsPageBuilder
   title="Z-Indexes"
   tokenMap={getPlatformTokens(TOKENS, IOS_TOKENS, ANDROID_TOKENS, ({ category }) => category === 'z-indices')}
-/>;
+/>);
 
 export default ZIndexesPage;

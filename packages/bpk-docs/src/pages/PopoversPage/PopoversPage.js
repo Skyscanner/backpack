@@ -140,7 +140,7 @@ const components = [
   },
 ];
 
-const PopoversPage = () => <DocsPageBuilder
+const PopoversPage = () => (<DocsPageBuilder
   title="Popovers"
   blurb={[
     <Paragraph>
@@ -151,6 +151,6 @@ const PopoversPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={popoverReadme}
-/>;
+/>);
 
 export default PopoversPage;

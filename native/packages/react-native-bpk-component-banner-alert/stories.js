@@ -47,13 +47,19 @@ const styles = StyleSheet.create({
 });
 
 class ExpandableBannerAlert extends React.Component {
-  state = {
-    expanded: false,
+  constructor() {
+    super();
+
+    this.state = {
+      expanded: false,
+    };
+
+    this.onAction = this.onAction.bind(this);
   }
 
-  onAction = () => {
+  onAction() {
     this.setState({ expanded: !this.state.expanded });
-  };
+  }
 
   render() {
     return (
@@ -66,15 +72,21 @@ class ExpandableBannerAlert extends React.Component {
   }
 }
 
- // eslint-disable-next-line react/no-multi-comp
+// eslint-disable-next-line react/no-multi-comp
 class DismissableBannerAlert extends React.Component {
-  state = {
-    exists: true,
+  constructor() {
+    super();
+
+    this.state = {
+      exists: false,
+    };
+
+    this.onAction = this.onAction.bind(this);
   }
 
-  onAction = () => {
+  onAction() {
     this.setState({ exists: false });
-  };
+  }
 
   render() {
     if (this.state.exists) {
@@ -227,54 +239,54 @@ storiesOf('BpkBannerAlert', module)
       </ExpandableBannerAlert>
     </View>
   ))
-  .add('docs:edge-cases', () => (
-    <View style={styles.container}>
-      <BpkBannerAlert
-        style={styles.bannerAlert}
-        type={ALERT_TYPES.NEUTRAL}
-        message="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Quisque sagittis sagittis purus, id blandit ipsum."
-      />
-      <BpkBannerAlert
-        style={styles.bannerAlert}
-        type={ALERT_TYPES.SUCCESS}
-        message="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Quisque sagittis sagittis purus, id blandit ipsum."
-      />
-      <BpkBannerAlert
-        style={styles.bannerAlert}
-        type={ALERT_TYPES.WARN}
-        message="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Quisque sagittis sagittis purus, id blandit ipsum."
-        actionButtonLabel="Dismiss"
-        dismissable
-      />
-      <BpkBannerAlert
-        style={styles.bannerAlert}
-        type={ALERT_TYPES.ERROR}
-        message="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Quisque sagittis sagittis purus, id blandit ipsum."
-        actionButtonLabel="Expand"
-      >
-        <BpkText textStyle="sm" style={styles.child}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
-          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
-        </BpkText>
-      </BpkBannerAlert>
-      <BpkBannerAlert
-        style={styles.bannerAlert}
-        type={ALERT_TYPES.ERROR}
-        message="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Quisque sagittis sagittis purus, id blandit ipsum."
-        actionButtonLabel="Collapse"
-        expanded
-      >
-        <BpkText textStyle="sm" style={styles.child}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
-          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
-        </BpkText>
-      </BpkBannerAlert>
-    </View>
-  ));
+  .add('docs:edge-cases', () => {
+    const message = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Quisque sagittis sagittis purus, id blandit ipsum.`;
+
+    return (
+      <View style={styles.container}>
+        <BpkBannerAlert
+          style={styles.bannerAlert}
+          type={ALERT_TYPES.NEUTRAL}
+          message={message}
+        />
+        <BpkBannerAlert
+          style={styles.bannerAlert}
+          type={ALERT_TYPES.SUCCESS}
+          message={message}
+        />
+        <BpkBannerAlert
+          style={styles.bannerAlert}
+          type={ALERT_TYPES.WARN}
+          message={message}
+          actionButtonLabel="Dismiss"
+          dismissable
+        />
+        <BpkBannerAlert
+          style={styles.bannerAlert}
+          type={ALERT_TYPES.ERROR}
+          message={message}
+          actionButtonLabel="Expand"
+        >
+          <BpkText textStyle="sm" style={styles.child}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
+            Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec
+            mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          </BpkText>
+        </BpkBannerAlert>
+        <BpkBannerAlert
+          style={styles.bannerAlert}
+          type={ALERT_TYPES.ERROR}
+          message={message}
+          actionButtonLabel="Collapse"
+          expanded
+        >
+          <BpkText textStyle="sm" style={styles.child}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
+            Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec
+            mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          </BpkText>
+        </BpkBannerAlert>
+      </View>
+    );
+  });

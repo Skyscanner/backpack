@@ -106,12 +106,12 @@ npm start`}
   },
 ];
 
-const BackpackReactScriptsPage = () => <DocsPageBuilder
+const BackpackReactScriptsPage = () => (<DocsPageBuilder
   title="Backpack React Scripts"
   blurb={[
     <Paragraph>Create React + Backpack apps with no build configuration.</Paragraph>,
   ]}
   components={components}
-/>;
+/>);
 
 export default BackpackReactScriptsPage;

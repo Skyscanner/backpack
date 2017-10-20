@@ -625,11 +625,11 @@ const components = [
   },
 ];
 
-const FormsPage = () => <DocsPageBuilder
+const FormsPage = () => (<DocsPageBuilder
   title="Forms"
   blurb="Here you’ll find a range of common inputs for capturing user data."
   components={components}
   sassdocId="forms"
-/>;
+/>);
 
 export default FormsPage;

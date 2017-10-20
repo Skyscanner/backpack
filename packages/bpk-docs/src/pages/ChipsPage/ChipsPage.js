@@ -99,7 +99,7 @@ const components = [
   },
 ];
 
-const ChipsPage = () => <DocsPageBuilder
+const ChipsPage = () => (<DocsPageBuilder
   title="Chips"
   blurb={[
     <Paragraph>
@@ -109,6 +109,6 @@ const ChipsPage = () => <DocsPageBuilder
   components={components}
   readme={chipReadme}
   sassdocId="cards"
-/>;
+/>);
 
 export default ChipsPage;

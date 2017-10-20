@@ -49,7 +49,7 @@ module.exports = (opts = {}) => {
             if (err) {
               return cb(err, null);
             }
-            file.contents = new Buffer(result); // eslint-disable-line no-param-reassign
+            file.contents = Buffer.from(result); // eslint-disable-line no-param-reassign
             return cb(null, file);
           };
         },

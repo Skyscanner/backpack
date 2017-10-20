@@ -183,7 +183,7 @@ const AlignedArrow = withButtonAlignment(LongArrowRightIconSm);
       <Paragraph>
         Similarly, a HOC exists for aligning icons to a large button.
          Other examples can be seen in the <BpkLink href={ROUTES.BUTTONS}>Buttons page</BpkLink>.
-          </Paragraph>,
+      </Paragraph>,
       <BpkCodeBlock>
         {`import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
 import { withLargeButtonAlignment } from 'bpk-component-icon';
@@ -208,7 +208,7 @@ const AlignedArrow = withLargeButtonAlignment(LongArrowRightIcon);
   },
 ];
 
-const AlignmentPage = () => <DocsPageBuilder
+const AlignmentPage = () => (<DocsPageBuilder
   title="Alignment"
   blurb={[
     <Paragraph>
@@ -223,6 +223,6 @@ const AlignmentPage = () => <DocsPageBuilder
     </Paragraph>,
   ]}
   components={components}
-/>;
+/>);
 
 export default AlignmentPage;

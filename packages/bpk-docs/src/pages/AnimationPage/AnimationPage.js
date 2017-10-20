@@ -24,9 +24,9 @@ import ANDROID_TOKENS from 'bpk-tokens/tokens/android/base.raw.json';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import { getPlatformTokens } from './../../helpers/tokens-helper';
 
-const AnimationPage = () => <DocsPageBuilder
+const AnimationPage = () => (<DocsPageBuilder
   title="Animation"
   tokenMap={getPlatformTokens(TOKENS, IOS_TOKENS, ANDROID_TOKENS, ({ category }) => category === 'animations')}
-/>;
+/>);
 
 export default AnimationPage;

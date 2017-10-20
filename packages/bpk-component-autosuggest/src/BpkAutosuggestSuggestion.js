@@ -26,7 +26,9 @@ const getClassName = cssModules(STYLES);
 
 const BpkSuggestion = (props) => {
   const classNames = [getClassName('bpk-autosuggest__suggestion')];
-  const { indent, className, icon, subHeading, tertiaryLabel, value, ...rest } = props;
+  const {
+    indent, className, icon, subHeading, tertiaryLabel, value, ...rest
+  } = props;
   const Icon = icon;
 
   if (indent) { classNames.push(getClassName('bpk-autosuggest__suggestion--indent')); }

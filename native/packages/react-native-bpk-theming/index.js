@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
- import BpkThemeProvider, { withTheme } from './src/BpkThemeProvider';
+import BpkThemeProvider, { withTheme } from './src/BpkThemeProvider';
 
- export default BpkThemeProvider;
- export { withTheme };
+export default BpkThemeProvider;
+export { withTheme };

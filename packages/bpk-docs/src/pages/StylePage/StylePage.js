@@ -45,11 +45,11 @@ const getClassName = cssModules(STYLES);
 const iconGuidelines = require('!!file-loader?name=[name].[hash].pdf!./../../static/icon_guidelines.pdf');
 const illustrationGuidelines = require(
   '!!file-loader?name=[name].[hash].pdf!./../../static/Illustration_Guideline_2017_v6.pdf',
-  );
+);
 const illustrationSamples = require('!!file-loader?name=[name].[hash].zip!./../../static/illistration_samples.zip');
 const toneOfVoiceGuidelines = require(
   '!!file-loader?name=[name].[hash].pdf!./../../static/skyscanner_tone_of_voice_guide.pdf',
-  );
+);
 const photographyGuidelines = require('!!file-loader?name=[name].[hash].pdf!./../../static/photography_guidelines.pdf');
 const brandGuidelines = require('!!file-loader?name=[name].[hash].pdf!./../../static/brand_guidelines_17-10-16.pdf');
 /* eslint-enable */

@@ -209,7 +209,7 @@ describe('BpkPopoverPortal', () => {
       </BpkPopoverPortal>,
     );
 
-    const tether = portal.instance().tether;
+    const { tether } = portal.instance();
 
     portal.setProps({ target: <div>another target</div> }, () => {
       expect(portal.instance().tether).toBe(tether);

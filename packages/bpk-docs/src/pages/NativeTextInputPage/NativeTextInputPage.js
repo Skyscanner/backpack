@@ -52,7 +52,7 @@ const components = [
   },
 ];
 
-const NativeInputPage = () => <DocsPageBuilder
+const NativeInputPage = () => (<DocsPageBuilder
   title="Text input"
   blurb={[
     <Paragraph>
@@ -65,6 +65,6 @@ const NativeInputPage = () => <DocsPageBuilder
   components={components}
   readme={readme}
   showMenu={false}
-/>;
+/>);
 
 export default NativeInputPage;

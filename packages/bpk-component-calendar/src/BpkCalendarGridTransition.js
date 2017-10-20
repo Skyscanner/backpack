@@ -61,6 +61,8 @@ class BpkCalendarGridTransition extends Component {
     this.state = {
       isTransitioning: false,
       transitionValue: transitionValues.current,
+      // Used in a test so this is valid usage.
+      // eslint-disable-next-line react/no-unused-state
       currentMonth: props.month,
       months: [
         addMonths(props.month, -1),
@@ -98,6 +100,8 @@ class BpkCalendarGridTransition extends Component {
       }
 
       this.setState({
+        // Used in a test so this is valid usage.
+        // eslint-disable-next-line react/no-unused-state
         currentMonth: nextProps.month,
         months: [
           addMonths(nextProps.month, -1),
@@ -118,11 +122,13 @@ class BpkCalendarGridTransition extends Component {
   }
 
   onMonthTransitionEnd() {
-    const month = this.props.month;
+    const { month } = this.props;
 
     this.setState({
       transitionValue: transitionValues.current,
       isTransitioning: false,
+      // Used in a test so this is valid usage.
+      // eslint-disable-next-line react/no-unused-state
       currentMonth: month,
       months: [
         addMonths(month, -1),

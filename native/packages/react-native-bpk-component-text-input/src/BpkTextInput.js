@@ -114,7 +114,9 @@ const styles = StyleSheet.create({
 });
 
 const BpkTextInput = (props) => {
-  const { small, valid, value, disabled, style: innerStyle, ...rest } = props;
+  const {
+    small, valid, value, disabled, style: innerStyle, ...rest
+  } = props;
 
   let iconSource = null;
 

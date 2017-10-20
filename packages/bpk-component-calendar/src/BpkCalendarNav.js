@@ -38,7 +38,9 @@ import STYLES from './bpk-calendar-nav.scss';
 
 const getClassName = cssModules(STYLES);
 
-const changeMonth = ({ month, min, max, callback, source }) => (event) => {
+const changeMonth = ({
+  month, min, max, callback, source,
+}) => (event) => {
   // Safeguard for disabled buttons is due to React bug in Chrome: https://github.com/facebook/react/issues/8308
   // PR: https://github.com/facebook/react/pull/8329 - unresolved as of 22/12/2016
   if (isWithinRange(month, min, max)) {
@@ -72,7 +74,13 @@ const BpkCalendarNav = (props) => {
           type="button"
           className={getClassName('bpk-calendar-nav__button')}
           id={`${id}_month_nudger_previous`}
-          onClick={changeMonth({ month: prevMonth, min, max, callback: onMonthChange, source: 'PREV' })}
+          onClick={changeMonth({
+            month: prevMonth,
+            min,
+            max,
+            callback: onMonthChange,
+            source: 'PREV',
+          })}
           disabled={disabled || !isWithinRange(prevMonth, min, max)}
         >
           <ArrowLeftIcon className={getClassName('bpk-calendar-nav__icon')} />
@@ -110,7 +118,9 @@ const BpkCalendarNav = (props) => {
           type="button"
           className={getClassName('bpk-calendar-nav__button')}
           id={`${id}_month_nudger_next`}
-          onClick={changeMonth({ month: nextMonth, min, max, callback: onMonthChange, source: 'NEXT' })}
+          onClick={changeMonth({
+ month: nextMonth, min, max, callback: onMonthChange, source: 'NEXT',
+})}
           disabled={disabled || !isWithinRange(addMonths(baseMonth, 1), min, max)}
         >
           <ArrowRightIcon className={getClassName('bpk-calendar-nav__icon')} />

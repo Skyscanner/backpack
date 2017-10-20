@@ -26,7 +26,9 @@ const getClassName = cssModules(STYLES);
 
 const BpkGridRow = (props) => {
   const classNames = [getClassName('bpk-grid__row')];
-  const { children, padded, className, ...rest } = props;
+  const {
+    children, padded, className, ...rest
+  } = props;
 
   if (padded) { classNames.push(getClassName('bpk-grid__row--padded')); }
   if (className) { classNames.push(className); }

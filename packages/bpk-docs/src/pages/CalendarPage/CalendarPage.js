@@ -86,7 +86,7 @@ class CalendarContainer extends Component {
       <BpkCalendar
         {...this.props}
         date={this.state.date}
-        onDateSelect={date => this.setState({ date, focusedDate: date })}
+        onDateSelect={date => this.setState({ date })}
       />
     );
   }
@@ -179,7 +179,7 @@ const components = [
   },
 ];
 
-const CalendarPage = () => <DocsPageBuilder
+const CalendarPage = () => (<DocsPageBuilder
   title="Calendar"
   blurb={[
     <Paragraph>
@@ -190,6 +190,6 @@ const CalendarPage = () => <DocsPageBuilder
   components={components}
   readme={calendarReadme}
   sassdocId="calendar"
-/>;
+/>);
 
 export default CalendarPage;

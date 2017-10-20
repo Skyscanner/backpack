@@ -289,7 +289,7 @@ const customSections = [
   },
 ];
 
-const ButtonsPage = () => <DocsPageBuilder
+const ButtonsPage = () => (<DocsPageBuilder
   title="Buttons"
   blurb={[
     <Paragraph>
@@ -301,6 +301,6 @@ const ButtonsPage = () => <DocsPageBuilder
   sassdocId="buttons"
   readme={buttonReadme}
   customSections={customSections}
-/>;
+/>);
 
 export default ButtonsPage;

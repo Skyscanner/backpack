@@ -112,8 +112,12 @@ storiesOf('bpk-component-loading-button', module)
       <BpkLoadingButton link large onClick={action('large link button clicked')}>Button</BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton
-        link large selected onClick={action('large link button selected clicked')}
-      >Selected</BpkLoadingButton>
+        link
+        large
+        selected
+        onClick={action('large link button selected clicked')}
+      >Selected
+      </BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton link large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>Disabled</BpkLoadingButton>
       &nbsp;
@@ -128,7 +132,8 @@ storiesOf('bpk-component-loading-button', module)
         featured
         selected
         onClick={action('featured button selected clicked')}
-      >Selected</BpkLoadingButton>
+      >Selected
+      </BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton featured disabled onClick={action('THIS SHOULD NOT HAPPEN')}>Disabled</BpkLoadingButton>
       &nbsp;
@@ -138,8 +143,12 @@ storiesOf('bpk-component-loading-button', module)
       <BpkLoadingButton featured large onClick={action('featured button clicked')}>Button</BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton
-        featured large selected onClick={action('featured button selected clicked')}
-      >Selected</BpkLoadingButton>
+        featured
+        large
+        selected
+        onClick={action('featured button selected clicked')}
+      >Selected
+      </BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton featured large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>Disabled</BpkLoadingButton>
       &nbsp;
@@ -220,8 +229,12 @@ storiesOf('bpk-component-loading-button', module)
       <BpkLoadingButton href="#" large secondary onClick={action('secondary anchor clicked')}>Button</BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton
-        href="#" large destructive onClick={action('destructive anchor clicked')}
-      >Button</BpkLoadingButton>
+        href="#"
+        large
+        destructive
+        onClick={action('destructive anchor clicked')}
+      >Button
+      </BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton href="#" large link onClick={action('link anchor clicked')}>Button</BpkLoadingButton>
       &nbsp;
@@ -239,35 +252,62 @@ storiesOf('bpk-component-loading-button', module)
     const AlignedIconLg = withLargeButtonAlignment(withRtlSupport(BaggageIconLg));
     const iconLg = <AlignedIconLg />;
 
-    return (<div>
-      <BpkLoadingButton icon={iconSm} onClick={action('primary clicked')}>Button</BpkLoadingButton>
-      &nbsp;<BpkLoadingButton
-        selected iconSelected={iconSm} onClick={action('primary selected clicked')}
-      >Selected</BpkLoadingButton>
-      &nbsp;<BpkLoadingButton
-        disabled iconDisabled={iconSm} onClick={action('THIS SHOULD NOT HAPPEN')}
-      >Disabled</BpkLoadingButton>
-      &nbsp;<BpkLoadingButton
-        loading iconLoading={iconSm} onClick={action('THIS SHOULD NOT HAPPEN')}
-      >Loading</BpkLoadingButton>
-      &nbsp;<BpkLoadingButton iconOnly icon={iconSm} onClick={action('iconOnly clicked')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>&nbsp;
+    return (
+      <div>
+        <BpkLoadingButton icon={iconSm} onClick={action('primary clicked')}>Button</BpkLoadingButton>
+        <BpkLoadingButton
+          selected
+          iconSelected={iconSm}
+          onClick={action('primary selected clicked')}
+        >Selected
+        </BpkLoadingButton>
+        <BpkLoadingButton
+          disabled
+          iconDisabled={iconSm}
+          onClick={action('THIS SHOULD NOT HAPPEN')}
+        >Disabled
+        </BpkLoadingButton>
+        <BpkLoadingButton
+          loading
+          iconLoading={iconSm}
+          onClick={action('THIS SHOULD NOT HAPPEN')}
+        >Loading
+        </BpkLoadingButton>
+      &nbsp;
+        <BpkLoadingButton iconOnly icon={iconSm} onClick={action('iconOnly clicked')}>
+          <span className="visually-hidden">Search</span>
+        </BpkLoadingButton>&nbsp;
 
-      &nbsp;<BpkLoadingButton
-        large icon={iconLg} onClick={action('large primary clicked')}
-      >Button</BpkLoadingButton>
-      &nbsp;<BpkLoadingButton
-        large selected iconSelected={iconLg} onClick={action('large primary selected clicked')}
-      >Selected</BpkLoadingButton>
-      &nbsp;<BpkLoadingButton
-        large disabled iconDisabled={iconLg} onClick={action('THIS SHOULD NOT HAPPEN')}
-      >Disabled</BpkLoadingButton>
-      &nbsp;<BpkLoadingButton
-        large loading iconLoading={iconLg} onClick={action('THIS SHOULD NOT HAPPEN')}
-      >Loading</BpkLoadingButton>
-      &nbsp;<BpkLoadingButton large iconOnly icon={iconLg} onClick={action('large iconOnly clicked')}>
-        <span className="visually-hidden">Search</span>
-      </BpkLoadingButton>
-    </div>);
+        <BpkLoadingButton
+          large
+          icon={iconLg}
+          onClick={action('large primary clicked')}
+        >Button
+        </BpkLoadingButton>
+        <BpkLoadingButton
+          large
+          selected
+          iconSelected={iconLg}
+          onClick={action('large primary selected clicked')}
+        >Selected
+        </BpkLoadingButton>
+        <BpkLoadingButton
+          large
+          disabled
+          iconDisabled={iconLg}
+          onClick={action('THIS SHOULD NOT HAPPEN')}
+        >Disabled
+        </BpkLoadingButton>
+        <BpkLoadingButton
+          large
+          loading
+          iconLoading={iconLg}
+          onClick={action('THIS SHOULD NOT HAPPEN')}
+        >Loading
+        </BpkLoadingButton>
+      &nbsp;
+        <BpkLoadingButton large iconOnly icon={iconLg} onClick={action('large iconOnly clicked')}>
+          <span className="visually-hidden">Search</span>
+        </BpkLoadingButton>
+      </div>);
   });

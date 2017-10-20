@@ -27,7 +27,7 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 import { NATIVE_BUTTON } from './../../constants/routes';
 
-const NativeTextPage = () => <DocsPageBuilder
+const NativeTextPage = () => (<DocsPageBuilder
   title="Theming"
   blurb={[
     <Paragraph>
@@ -51,6 +51,6 @@ const NativeTextPage = () => <DocsPageBuilder
     </BpkBlockquote>,
   ]}
   readme={readme}
-/>;
+/>);
 
 export default NativeTextPage;

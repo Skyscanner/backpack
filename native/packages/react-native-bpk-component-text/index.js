@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
- import BpkText, { TEXT_STYLES } from './src/BpkText';
+import BpkText, { TEXT_STYLES } from './src/BpkText';
 
- export default BpkText;
- export {
-   TEXT_STYLES,
- };
+export default BpkText;
+export {
+  TEXT_STYLES,
+};

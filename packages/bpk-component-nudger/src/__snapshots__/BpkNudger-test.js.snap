@@ -46,7 +46,6 @@ exports[`BpkNudger should render correctly 1`] = `
     className="bpk-nudger__input"
     id="nudger"
     readOnly={true}
-    role="alert"
     type="text"
     value={2}
   />
@@ -136,7 +135,6 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
     className="bpk-nudger__input"
     id="nudger"
     readOnly={true}
-    role="alert"
     type="text"
     value={2}
   />
@@ -226,7 +224,6 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
     className="bpk-nudger__input"
     id="nudger"
     readOnly={true}
-    role="alert"
     type="text"
     value={1}
   />
@@ -316,7 +313,6 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
     className="bpk-nudger__input"
     id="nudger"
     readOnly={true}
-    role="alert"
     type="text"
     value={9}
   />
@@ -406,7 +402,6 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
     className="bpk-nudger__input"
     id="nudger"
     readOnly={true}
-    role="alert"
     type="text"
     value={1}
   />
@@ -496,7 +491,6 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
     className="bpk-nudger__input"
     id="nudger"
     readOnly={true}
-    role="alert"
     type="text"
     value={9}
   />

@@ -26,9 +26,9 @@ const Q = require('q');
 const readdir = Q.denodeify(fs.readdir);
 
 const maintainers = fs.readFileSync('NPM_OWNERS', { encoding: 'utf-8' })
-                      .split('\n')
-                      .filter(s => s.trim() !== '')
-                      .sort();
+  .split('\n')
+  .filter(s => s.trim() !== '')
+  .sort();
 
 let failures = false;
 
@@ -70,9 +70,7 @@ const verifyMaintainers = (data) => {
     // all good
     console.log(`${data.name} ✔︎`);
   } else {
-    console.log(
-      `${data.name}\n  Expected\n    ${maintainers.join(', ')}\n  but got\n    ${data.maintainers.sort().join(', ')}`
-    );
+    console.log(`${data.name}\n  Expected\n    ${maintainers.join(', ')}\n  but got\n    ${data.maintainers.sort().join(', ')}`); // eslint-disable-line max-len
     process.exitCode = 1;
     failures = true;
   }
@@ -81,7 +79,7 @@ const verifyMaintainers = (data) => {
 console.log(`Maintainers are:\n  ${maintainers.join('\n  ')}\n`);
 
 Q.all([readdir('packages/'), readdir('native/packages/')])
-   // Q.all returns the results as an array, so destructure them all into one array.
+// Q.all returns the results as an array, so destructure them all into one array.
   .then(packages => Q.all([...packages[0], ...packages[1]].map(getPackageMaintainers)))
   .then(packages => packages.forEach(verifyMaintainers))
   .then(() => {

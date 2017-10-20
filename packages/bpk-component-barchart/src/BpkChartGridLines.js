@@ -27,7 +27,9 @@ import STYLES from './bpk-chart-grid-lines.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkChartGridLines = (props) => {
-  const { orientation, scale, numTicks, width, height, margin, tickOffset, tickEvery, ...rest } = props;
+  const {
+    orientation, scale, numTicks, width, height, margin, tickOffset, tickEvery, ...rest
+  } = props;
 
   const ticks = scale.ticks ?
     scale.ticks(numTicks) :

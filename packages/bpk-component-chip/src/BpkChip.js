@@ -27,7 +27,9 @@ const getClassName = cssModules(STYLES);
 
 const BpkChip = (props) => {
   const classNames = [getClassName('bpk-chip')];
-  const { children, className, onClose, closeLabel, ...rest } = props;
+  const {
+    children, className, onClose, closeLabel, ...rest
+  } = props;
 
   if (className) { classNames.push(className); }
 

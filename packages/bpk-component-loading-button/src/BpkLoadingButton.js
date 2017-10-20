@@ -136,6 +136,7 @@ BpkLoadingButton.defaultProps = {
   secondary: false,
   selected: false,
   destructive: false,
+  link: false,
   loading: false,
   iconOnly: false,
   icon: null,

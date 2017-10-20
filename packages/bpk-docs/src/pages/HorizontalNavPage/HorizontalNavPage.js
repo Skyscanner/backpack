@@ -102,7 +102,7 @@ const components = [
   },
 ];
 
-const HorizontalNavPage = () => <DocsPageBuilder
+const HorizontalNavPage = () => (<DocsPageBuilder
   title="Horizontal navigation"
   blurb={[
     <Paragraph>
@@ -112,6 +112,6 @@ const HorizontalNavPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={readme}
-/>;
+/>);
 
 export default HorizontalNavPage;

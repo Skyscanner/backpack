@@ -24,11 +24,11 @@ import ANDROID_TOKENS from 'bpk-tokens/tokens/android/base.raw.json';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import { getPlatformTokens } from './../../helpers/tokens-helper';
 
-const SpacingsPage = () => <DocsPageBuilder
+const SpacingsPage = () => (<DocsPageBuilder
   title="Spacings"
   tokenMap={getPlatformTokens(TOKENS, IOS_TOKENS, ANDROID_TOKENS, ({ category, name }) =>
     category === 'spacings' && name.indexOf('SPACING') === 0,
   )}
-/>;
+/>);
 
 export default SpacingsPage;
