@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+**Added:**
+- react-native-bpk-component-card
+ - Now accepts a `focused` prop to add emphasis to a card. See http://backpack.prod.aws.skyscnr.com/components/native/cards/
+
 **Changed:**
 - bpk-component-breakpoint
  - Upgraded react-responsive to v3.0.0 to fix propType warning.

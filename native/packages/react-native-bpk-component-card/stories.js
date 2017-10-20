@@ -35,6 +35,9 @@ storiesOf('BpkCard', module)
   .add('docs:without-padding', () => (
     <BpkCard onPress={press} padded={false}>{cardContent}</BpkCard>
   ))
+  .add('docs:focused', () => (
+    <BpkCard onPress={press} focused>{cardContent}</BpkCard>
+  ))
   .add('All Cards', () => (
     <View>
       <View>
@@ -51,6 +54,16 @@ storiesOf('BpkCard', module)
           onPress={press}
           padded={false}
           style={styles.container}
+          accessibilityLabel="Example Card"
+        >
+          {cardContent}
+        </BpkCard>
+      </View>
+      <View>
+        <BpkCard
+          onPress={press}
+          style={styles.container}
+          focused
           accessibilityLabel="Example Card"
         >
           {cardContent}

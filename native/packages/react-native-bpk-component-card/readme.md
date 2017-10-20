@@ -40,6 +40,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <BpkCard onPress={() => null} accessibilityLabel="Example Card">{cardContent}</BpkCard>
         <BpkCard onPress={() => null} padded={false} accessibilityLabel="Example Card">{cardContent}</BpkCard>
+        <BpkCard onPress={() => null} focused accessibilityLabel="Example Card">{cardContent}</BpkCard>
       </View >
     );
   }
@@ -51,5 +52,6 @@ export default class App extends Component {
 | Property            | PropType  | Required | Default Value |
 | -----------         | --------- | -------- | ------------- |
 | children            | node      | true     | -             |
+| focused             | boolean   | false    | false         |
 | onPress             | function  | true     | -             |
 | padded              | boolean   | false    | true          |

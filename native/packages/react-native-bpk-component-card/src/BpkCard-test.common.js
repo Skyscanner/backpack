@@ -47,6 +47,12 @@ const commonTests = () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+    it('should render correctly with the "focused" state', () => {
+      const tree = renderer.create(
+        <BpkCard onPress={onPressFn} focused accessibilityLabel="Example Card">{cardContent}</BpkCard>,
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
   });
 };
 export default commonTests;
