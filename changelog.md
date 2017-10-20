@@ -2,16 +2,20 @@
 
 ## UNRELEASED
 
-**Added:**
-- react-native-bpk-component-card
- - Now accepts a `focused` prop to add emphasis to a card. See http://backpack.prod.aws.skyscnr.com/components/native/cards/
+_Nothing yet!_
 
-**Changed:**
-- bpk-component-breakpoint
- - Upgraded react-responsive to v3.0.0 to fix propType warning.
-- react-native-bpk-component-button:
+## 2017-10-20 - Icon support for native buttons and focused prop for native cards
+
+**Added:**
+- react-native-bpk-component-card: 1.0.10 => 1.1.0
+ - Now accepts a `focused` prop to add emphasis to a card. See http://backpack.prod.aws.skyscnr.com/components/native/cards/
+- react-native-bpk-component-button: 4.0.4 => 4.1.0
  - The `icon` prop now accepts strings corresponding to a valid `BpkIcon`.
  - Elements can still be passed in as before if required.
+
+**Changed:**
+- bpk-component-breakpoint: 1.0.25 => 1.0.26
+ - Upgraded react-responsive to v3.0.0 to fix propType warning.
 
 ### 2017-10-18 - New neutral configuration for native and web banner alerts
 
