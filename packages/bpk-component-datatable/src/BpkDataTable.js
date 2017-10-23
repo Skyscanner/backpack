@@ -20,7 +20,8 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Table, AutoSizer } from 'react-virtualized';
 import { cssModules } from 'bpk-react-utils';
-import _ from 'lodash';
+import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
+import { sortBy } from 'lodash';
 
 import STYLES from './bpk-data-table.scss';
 import { BpkColumn } from './BpkColumn';
@@ -28,12 +29,23 @@ import { BpkColumn } from './BpkColumn';
 const getClassName = cssModules(STYLES);
 
 const sortList = ({ sortBy, sortDirection, list }) => {
-  const sorted = _.sortBy(list, sortBy);
+  const sorted = sortBy(list, sortBy);
   if (sortDirection === 'DESC') {
-    return _.reverse(sorted);
+    return sorted.slice().reverse();
   }
   return sorted;
 };
+
+const SearchableHeaderRenderer = (props) => (
+  <div className={props.className} role="row" style={props.style}>
+    {props.columns.map(c => (
+      <div className={c.className} style={c.style}>
+        {c}
+        <BpkInput placeholder="Search..." type={INPUT_TYPES.TEXT} />
+      </div>
+    ))}
+  </div>
+);
 
 class BpkDataTable extends Component {
   constructor(props) {
@@ -42,10 +54,10 @@ class BpkDataTable extends Component {
     const sortBy = 'name';
     const sortDirection = 'ASC';
     const sortedList = sortList({ sortBy, sortDirection, list: props.rows });
-    let columns = _.cloneDeep(this.props.children);
+    let columns = this.props.children.slice();
 
     if (this.props.dir === 'rtl') {
-      columns = _.reverse(columns);
+      columns = columns.reverse();
     }
 
     this.state = {
@@ -87,6 +99,10 @@ class BpkDataTable extends Component {
     this.setState({ sortBy, sortDirection, sortedList });
   }
 
+  headerRenderer(args) {
+    return <SearchableHeaderRenderer {...args} />;
+  }
+
   render() {
     const { sortedList, sortDirection, sortBy } = this.state;
     const { height } = this.props;
@@ -98,7 +114,7 @@ class BpkDataTable extends Component {
             className={getClassName('bpk-data-table')}
             width={width}
             height={height}
-            headerHeight={60}
+            headerHeight={120}
             rowHeight={60}
             rowCount={sortedList.length}
             rowGetter={({ index }) => sortedList[index]}
@@ -109,6 +125,7 @@ class BpkDataTable extends Component {
             sortBy={sortBy}
             sortDirection={sortDirection}
             gridStyle={{ direction: this.props.dir }}
+            headerRowRenderer={this.headerRenderer}
           >
             {
               this.state.columns.map((child, index) => (
@@ -124,7 +141,7 @@ class BpkDataTable extends Component {
 
 BpkDataTable.propTypes = {
   rows: PropTypes.arrayOf(Object).isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
   height: PropTypes.number.isRequired,
   dir: PropTypes.string,
 };

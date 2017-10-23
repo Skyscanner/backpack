@@ -21,7 +21,6 @@
 .bpk-column {
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 
   &:first-child {
     padding: 0 $bpk-spacing-base;
