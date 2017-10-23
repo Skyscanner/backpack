@@ -29,7 +29,6 @@ const underlayColor = Platform.select({
   ios: () => setOpacity(tokens.underlayColor, tokens.underlayOpacity),
   android: () => null,
 })();
-export const colorWhite = tokens.colorWhite;
 
 // These should probably be their own tokens.
 // For now they are derived from existing tokens.

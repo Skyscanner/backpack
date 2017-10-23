@@ -28,6 +28,7 @@ jest.mock('react-native', () => {
   return reactNative;
 });
 
+jest.mock('./layout/BpkButtonContainer', () => require.requireActual('./layout/BpkButtonContainer.ios.js'));
 describe('iOS', () => {
   commonTests();
 });
