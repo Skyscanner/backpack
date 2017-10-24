@@ -2,6 +2,11 @@
 
 ## UNRELEASED
 
+**Fixed:**
+- react-native-bpk-component-button:
+- react-native-bpk-component-card:
+- react-native-bpk-component-animate-height:
+ - import ViewPropTypes to prevent native build to break at compile time
 **Added:**
 - react-native-bpk-component-button:
  - Add Android support

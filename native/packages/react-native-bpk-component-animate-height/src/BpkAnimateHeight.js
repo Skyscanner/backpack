@@ -20,6 +20,7 @@ import {
   View,
   Platform,
   Animated,
+  ViewPropTypes,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -82,7 +83,7 @@ class BpkAnimateHeight extends React.Component {
         toValue: finalValue,
         duration: animationDuration,
       },
-      ).start();
+    ).start();
   }
 
   render() {
@@ -113,7 +114,7 @@ BpkAnimateHeight.propTypes = {
   animationDuration: PropTypes.number.isRequired,
   expanded: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
-  style: View.propTypes.style,
+  style: ViewPropTypes.style,
 };
 
 BpkAnimateHeight.defaultProps = {

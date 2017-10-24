@@ -19,6 +19,7 @@
 import {
   View,
   TouchableNativeFeedback,
+  ViewPropTypes,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -81,7 +82,7 @@ BpkButtonContainer.propTypes = {
   accessibilityLabel: PropTypes.string,
   disabled: PropTypes.bool,
   iconOnly: PropTypes.bool,
-  style: View.propTypes.style,
+  style: ViewPropTypes.style,
   theme: themePropType,
 };
 
