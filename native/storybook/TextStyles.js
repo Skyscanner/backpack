@@ -19,11 +19,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Platform } from 'react-native';
-import BpkText from 'react-native-bpk-component-text';
+import BpkText from '../packages/react-native-bpk-component-text';
 
 const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
+  ios: () => require('../../packages/bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require,max-len
+  android: () => require('../../packages/bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require,max-len
 })();
 
 const StoryHeading = ({ children, ...rest }) => (

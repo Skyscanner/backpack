@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
- /* eslint-disable no-console */
+/* eslint-disable no-console */
 
 const fs = require('fs');
 const { execSync } = require('child_process');
@@ -54,17 +54,14 @@ const checkBpkDependencies = (packageFile, correctVersions) => {
   }
 };
 
-const getBpkPackageVersions = (packageFiles) => {
-  const bpkPackageVersions = {};
-
-  packageFiles.forEach((pf) => {
-    if (pf !== '') {
-      const pfContent = JSON.parse(fs.readFileSync(pf));
-      bpkPackageVersions[pfContent.name] = pfContent.version;
-    }
-  });
-  return bpkPackageVersions;
-};
+const getBpkPackageVersions = packageFiles => packageFiles.reduce((acc, pkg) => {
+  if (pkg === '' || pkg.includes('bpk-')) {
+    return acc;
+  }
+  const pfContent = JSON.parse(fs.readFileSync(pkg));
+  acc[pfContent.name] = pfContent.version;
+  return acc;
+}, {});
 
 console.log('Checking Backpack cross dependencies...');
 console.log('');

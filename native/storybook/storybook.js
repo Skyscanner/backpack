@@ -26,8 +26,8 @@ import {
 import { getStorybookUI, configure, addDecorator } from '@storybook/react-native';
 
 const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
+  ios: () => require('../../packages/bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require,max-len
+  android: () => require('../../packages/bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require,max-len
 })();
 
 const styles = StyleSheet.create({
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
 
 const CenterDecorator = getStory => (
   <View style={styles.centered}>
-    { getStory() }
+    {getStory()}
   </View>
 );
 
