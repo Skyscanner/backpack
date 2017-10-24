@@ -1,15 +1,19 @@
 # Backpack changelog
 
 ## UNRELEASED
+_Nothing Yet_
+
+## 2017-10-24 - Icon support for native buttons and focused prop for native cards
 
 **Fixed:**
-- react-native-bpk-component-button:
-- react-native-bpk-component-card:
-- react-native-bpk-component-animate-height:
- - import ViewPropTypes to prevent native build to break at compile time
+- react-native-bpk-component-button: react-native-bpk-component-button: 4.1.0 => 4.2.0
+- react-native-bpk-component-card:react-native-bpk-component-card: 1.1.0 => 1.1.1
+- react-native-bpk-component-animate-height:react-native-bpk-component-animate-height: 1.0.2 => 1.0.3
+  - import ViewPropTypes to prevent native build to break at compile time
+
 **Added:**
-- react-native-bpk-component-button:
- - Add Android support
+- react-native-bpk-component-button: react-native-bpk-component-button: 4.1.0 => 4.2.0
+  - Add Android support
 
 ## 2017-10-20 - Icon support for native buttons and focused prop for native cards
 
