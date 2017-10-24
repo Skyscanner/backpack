@@ -1,6 +1,33 @@
 {
   "properties": [
     {
+      "type": "string",
+      "value": "50ms",
+      "category": "animations",
+      ".alias": {
+        "value": "50ms"
+      },
+      "name": "animationDurationXs"
+    },
+    {
+      "type": "string",
+      "value": "200ms",
+      "category": "animations",
+      ".alias": {
+        "value": "200ms"
+      },
+      "name": "animationDurationSm"
+    },
+    {
+      "type": "string",
+      "value": "400ms",
+      "category": "animations",
+      ".alias": {
+        "value": "400ms"
+      },
+      "name": "animationDurationBase"
+    },
+    {
       "type": "size",
       "value": "1",
       "category": "borders",
@@ -145,31 +172,49 @@
       "name": "shadowXlRadius"
     },
     {
-      "type": "string",
-      "value": "50ms",
-      "category": "animations",
+      "type": "size",
+      "category": "spacings",
+      "value": "2",
       ".alias": {
-        "value": "50ms"
+        "value": 2
       },
-      "name": "animationDurationXs"
+      "name": "buttonBorderWidth"
     },
     {
-      "type": "string",
-      "value": "200ms",
-      "category": "animations",
+      "type": "size",
+      "category": "spacings",
+      "value": "32",
       ".alias": {
-        "value": "200ms"
+        "value": 32
       },
-      "name": "animationDurationSm"
+      "name": "buttonHeight"
     },
     {
-      "type": "string",
-      "value": "400ms",
-      "category": "animations",
+      "type": "size",
+      "category": "spacings",
+      "value": "4 * 3",
       ".alias": {
-        "value": "400ms"
+        "value": 4
       },
-      "name": "animationDurationBase"
+      "name": "buttonPaddingHorizontal"
+    },
+    {
+      "type": "size",
+      "category": "spacings",
+      "value": "4 * 12",
+      ".alias": {
+        "value": 4
+      },
+      "name": "buttonLineHeightLarge"
+    },
+    {
+      "type": "size",
+      "category": "spacings",
+      "value": "8",
+      ".alias": {
+        "value": 8
+      },
+      "name": "buttonPaddingVertical"
     },
     {
       "type": "color",

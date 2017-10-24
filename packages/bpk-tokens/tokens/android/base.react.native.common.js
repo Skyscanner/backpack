@@ -19,14 +19,19 @@
  */
 
 module.exports = {
+  animationDurationXs: "50ms",
+  animationDurationSm: "200ms",
+  animationDurationBase: "400ms",
   borderSizeSm: 1,
   borderSizeLg: 2,
   borderSizeXl: 3,
   borderRadiusSm: 2,
   borderRadiusPill: 40,
-  animationDurationXs: "50ms",
-  animationDurationSm: "200ms",
-  animationDurationBase: "400ms",
+  buttonBorderWidth: 0,
+  buttonHeight: 32 + 4,
+  buttonPaddingHorizontal: 4 * 3,
+  buttonLineHeightLarge: 4 * 12,
+  buttonPaddingVertical: 8,
   colorWhite: "rgb(255, 255, 255)",
   colorBlue50: "rgb(225, 244, 248)",
   colorBlue100: "rgb(203, 238, 245)",

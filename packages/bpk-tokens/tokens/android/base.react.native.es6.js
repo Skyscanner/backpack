@@ -17,14 +17,19 @@
  * limitations under the License.
  * 
  */
+export const animationDurationXs = "50ms";
+export const animationDurationSm = "200ms";
+export const animationDurationBase = "400ms";
 export const borderSizeSm = 1;
 export const borderSizeLg = 2;
 export const borderSizeXl = 3;
 export const borderRadiusSm = 2;
 export const borderRadiusPill = 40;
-export const animationDurationXs = "50ms";
-export const animationDurationSm = "200ms";
-export const animationDurationBase = "400ms";
+export const buttonBorderWidth = 0;
+export const buttonHeight = 32 + 4;
+export const buttonPaddingHorizontal = 4 * 3;
+export const buttonLineHeightLarge = 4 * 12;
+export const buttonPaddingVertical = 8;
 export const colorWhite = "rgb(255, 255, 255)";
 export const colorBlue50 = "rgb(225, 244, 248)";
 export const colorBlue100 = "rgb(203, 238, 245)";
@@ -130,6 +135,11 @@ export const textXxlFontSize = 34;
 export const textXxlFontWeight = "400";
 export const textXxlLineHeight = 40;
 export const textEmphasizedFontWeight = "500";
+export const animations = {
+animationDurationXs,
+animationDurationSm,
+animationDurationBase,
+};
 export const borders = {
 borderSizeSm,
 borderSizeLg,
@@ -139,10 +149,18 @@ export const radii = {
 borderRadiusSm,
 borderRadiusPill,
 };
-export const animations = {
-animationDurationXs,
-animationDurationSm,
-animationDurationBase,
+export const spacings = {
+buttonBorderWidth,
+buttonHeight,
+buttonPaddingHorizontal,
+buttonLineHeightLarge,
+buttonPaddingVertical,
+spacingSm,
+spacingMd,
+spacingBase,
+spacingLg,
+spacingXl,
+spacingXxl,
 };
 export const colors = {
 colorWhite,
@@ -213,14 +231,6 @@ elevationSm,
 elevationBase,
 elevationLg,
 elevationXl,
-};
-export const spacings = {
-spacingSm,
-spacingMd,
-spacingBase,
-spacingLg,
-spacingXl,
-spacingXxl,
 };
 export const typesettings = {
 fontFamily,
