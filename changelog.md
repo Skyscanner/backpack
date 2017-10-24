@@ -3,7 +3,7 @@
 ## UNRELEASED
 _Nothing Yet_
 
-## 2017-10-24 - Icon support for native buttons and focused prop for native cards
+## 2017-10-24 - Android support for button component
 
 **Fixed:**
 - react-native-bpk-component-button: react-native-bpk-component-button: 4.1.0 => 4.2.0
