@@ -25,7 +25,9 @@ The most reliable way to install the file on iOS is manually, two simple steps a
         <string>BpkIcon.ttf</string>
       </array>
     ```
-2. In the `Build Phases` of your project, in the section `Copy Bundle Resources` add a reference to the `BpkIcon.ttf` file path like `/path/to/node_modules/bpk-svgs/dist/font/BpkIcon.ttf`
+2. In the `Build Phases` of your project, in the section `Copy Bundle Resources` add a reference to the `BpkIcon.ttf` file path like `/path/to/node_modules/bpk-svgs/dist/font/BpkIcon.ttf`, the end result should look like this
+
+![XcodeExample](screenshots/docs/build.png)
 
 Then rebuild the app
 
