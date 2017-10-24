@@ -24,13 +24,10 @@ import iosScreenshotPrimary from 'react-native-bpk-component-button/screenshots/
 import iosScreenshotSecondary from 'react-native-bpk-component-button/screenshots/ios/secondary.png';
 import iosScreenshotDestructive from 'react-native-bpk-component-button/screenshots/ios/destructive.png';
 import iosScreenshotFeatured from 'react-native-bpk-component-button/screenshots/ios/featured.png';
-import androidScreenshotPrimary from 'react-native-bpk-component-button/screenshots/android/primary.png';
-import androidScreenshotSecondary from 'react-native-bpk-component-button/screenshots/android/secondary.png';
-import androidScreenshotDestructive from 'react-native-bpk-component-button/screenshots/android/destructive.png';
-import androidScreenshotFeatured from 'react-native-bpk-component-button/screenshots/android/featured.png';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import androidEmpty from './../../static/android_empty.svg';
 
 import { THEMING } from './../../constants/routes';
 
@@ -53,7 +50,7 @@ const components = [
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidScreenshotPrimary}`,
+        src: `/${androidEmpty}`,
         altText: 'Android Primary Button Component',
         subText: '(Google Pixel Emulator)',
       },
@@ -75,7 +72,7 @@ const components = [
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidScreenshotSecondary}`,
+        src: `/${androidEmpty}`,
         altText: 'Android Secondary Button Component',
         subText: '(Google Pixel Emulator)',
       },
@@ -97,7 +94,7 @@ const components = [
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidScreenshotDestructive}`,
+        src: `/${androidEmpty}`,
         altText: 'Android Destructive Button Component',
         subText: '(Google Pixel Emulator)',
       },
@@ -119,7 +116,7 @@ const components = [
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidScreenshotFeatured}`,
+        src: `/${androidEmpty}`,
         altText: 'Android Featured Button Component',
         subText: '(Google Pixel Emulator)',
       },
