@@ -21,6 +21,7 @@
 import {
   View,
   Platform,
+  ViewPropTypes,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -116,7 +117,7 @@ const propTypes = {
   icon: iconPropType,
   iconOnly: PropTypes.bool,
   large: PropTypes.bool,
-  style: View.propTypes.style,
+  style: ViewPropTypes.style,
   theme: themePropType,
   type: PropTypes.oneOf(BUTTON_TYPES),
 };

@@ -22,6 +22,7 @@ import {
   StyleSheet,
   TouchableHighlight,
   PixelRatio,
+  ViewPropTypes,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -115,7 +116,7 @@ BpkCard.propTypes = {
   focused: PropTypes.bool,
   onPress: PropTypes.func.isRequired,
   padded: PropTypes.bool,
-  style: View.propTypes.style,
+  style: ViewPropTypes.style,
 };
 
 BpkCard.defaultProps = {
