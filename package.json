@@ -99,7 +99,6 @@
     "postcss-loader": "^2.0.8",
     "prop-types": "^15.5.10",
     "punycode": "^2.1.0",
-    "q": "^1.5.1",
     "raw-loader": "^0.5.1",
     "react": "^15.4.1",
     "react-addons-test-utils": "^15.4.1",

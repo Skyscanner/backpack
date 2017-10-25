@@ -17,71 +17,71 @@
  */
 
 /* eslint-disable no-console */
-/* eslint-disable comma-dangle */
 
 const fs = require('fs');
+const util = require('util');
 const http = require('http');
-const Q = require('q');
 
-const readdir = Q.denodeify(fs.readdir);
+const readdir = util.promisify(fs.readdir);
 
-const maintainers = fs.readFileSync('NPM_OWNERS', { encoding: 'utf-8' })
+let failures = false;
+
+const owners = fs.readFileSync('NPM_OWNERS', { encoding: 'utf-8' })
   .split('\n')
   .filter(s => s.trim() !== '')
   .sort();
 
-let failures = false;
-
-const getPackageMaintainers = (pkg) => {
-  const deferred = Q.defer();
+const getPackageMaintainers = pkg => new Promise((resolve, reject) => {
   http.get(`http://registry.npmjs.org/${pkg}/`, (res) => {
     let body = '';
     res.setEncoding('utf8');
     res.on('data', (d) => {
       body += d;
     });
-    res.on('error', deferred.reject);
+    res.on('error', reject);
     res.on('end', () => {
       const pkgData = JSON.parse(body);
 
       if (pkgData.maintainers) {
-        deferred.resolve({
+        resolve({
           name: pkg,
           maintainers: pkgData.maintainers.map(m => m.name),
           new: false,
         });
       } else {
-        deferred.resolve({
+        resolve({
           name: pkg,
           new: true,
         });
       }
     });
   });
-  return deferred.promise;
-};
+});
 
 const verifyMaintainers = (data) => {
   if (data.new) {
     console.log(`${data.name} ⁇\n  Package does not seem to be in NPM registry (yet)`);
     return;
   }
-  if (data.maintainers.sort().join('') === maintainers.join('')) {
-    // all good
+
+  const sortedMaintainers = data.maintainers.sort();
+
+  if (sortedMaintainers.join('') === owners.join('')) {
     console.log(`${data.name} ✔︎`);
   } else {
-    console.log(`${data.name}\n  Expected\n    ${maintainers.join(', ')}\n  but got\n    ${data.maintainers.sort().join(', ')}`); // eslint-disable-line max-len
+    console.log(
+      `${data.name}\n  Expected\n    ${owners.join(', ')}\n  but got\n    ${sortedMaintainers.join(', ')}`,
+    );
     process.exitCode = 1;
     failures = true;
   }
 };
 
-console.log(`Maintainers are:\n  ${maintainers.join('\n  ')}\n`);
+console.log(`Maintainers are:\n  ${owners.join('\n  ')}\n`);
 
-Q.all([readdir('packages/'), readdir('native/packages/')])
-// Q.all returns the results as an array, so destructure them all into one array.
-  .then(packages => Q.all([...packages[0], ...packages[1]].map(getPackageMaintainers)))
-  .then(packages => packages.forEach(verifyMaintainers))
+Promise.all([readdir('packages/'), readdir('native/packages/')])
+  .then(packages => Promise.all([...packages[0], ...packages[1]].map(getPackageMaintainers)))
+  .then(maintainers => maintainers.forEach(verifyMaintainers))
   .then(() => {
     if (failures) {
       console.log('\nPlease fix your maintainer list before publishing.');
