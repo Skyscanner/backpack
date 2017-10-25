@@ -128,7 +128,7 @@ const components = [
   },
 ];
 
-const BarchartsPage = () => <DocsPageBuilder
+const BarchartsPage = () => (<DocsPageBuilder
   title="Bar charts"
   blurb={[
     <Paragraph>
@@ -144,6 +144,6 @@ const BarchartsPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={barchartReadme}
-/>;
+/>);
 
 export default BarchartsPage;

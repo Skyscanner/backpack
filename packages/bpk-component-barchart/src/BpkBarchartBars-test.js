@@ -30,7 +30,7 @@ const margin = {
   bottom: 30,
   left: 40,
 };
-const prices = data.prices;
+const { prices } = data;
 const size = 200;
 const yScale = scaleLinear().domain([0, 500]).range([0, size]);
 const xScale = scaleBand()

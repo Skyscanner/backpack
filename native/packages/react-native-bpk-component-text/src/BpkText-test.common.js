@@ -40,7 +40,7 @@ const commonTests = () => {
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
         commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
         et magnis dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
+        </BpkText>,
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
@@ -50,7 +50,7 @@ const commonTests = () => {
         <BpkText style={{ color: 'red' }}>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
         sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
+        </BpkText>,
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
@@ -62,7 +62,7 @@ const commonTests = () => {
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
           ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
           dis parturient montes, nascetur ridiculus mus.
-        </BpkText>,
+          </BpkText>,
         ).toJSON();
         expect(tree).toMatchSnapshot();
       });

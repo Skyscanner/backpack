@@ -55,9 +55,10 @@ describe('BpkLoadingButton', () => {
   });
 
   it('should render correctly with a "iconOnly" attribute', () => {
-    const tree = renderer.create(<BpkLoadingButton iconOnly>
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>).toJSON();
+    const tree = renderer.create(
+      <BpkLoadingButton iconOnly>
+        <span className="visually-hidden">Search</span>
+      </BpkLoadingButton>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -117,9 +118,10 @@ describe('BpkLoadingButton', () => {
   });
 
   it('should render correctly with "large" and "iconOnly" attributes', () => {
-    const tree = renderer.create(<BpkLoadingButton large iconOnly>
-      <span className="visually-hidden">Search</span>
-    </BpkLoadingButton>).toJSON();
+    const tree = renderer.create(
+      <BpkLoadingButton large iconOnly>
+        <span className="visually-hidden">Search</span>
+      </BpkLoadingButton>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 

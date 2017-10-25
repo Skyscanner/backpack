@@ -96,7 +96,7 @@ const components = [
   },
 ];
 
-const NativeBannerAlertPage = () => <DocsPageBuilder
+const NativeBannerAlertPage = () => (<DocsPageBuilder
   title="Banner Alerts"
   blurb={[
     <Paragraph>
@@ -111,6 +111,6 @@ const NativeBannerAlertPage = () => <DocsPageBuilder
   components={components}
   readme={readme}
   showMenu
-/>;
+/>);
 
 export default NativeBannerAlertPage;

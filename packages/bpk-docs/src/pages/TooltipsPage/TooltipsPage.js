@@ -109,7 +109,7 @@ const components = [
   },
 ];
 
-const TooltipsPage = () => <DocsPageBuilder
+const TooltipsPage = () => (<DocsPageBuilder
   title="Tooltips"
   blurb={[
     <Paragraph>
@@ -129,6 +129,6 @@ const TooltipsPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={tooltipReadme}
-/>;
+/>);
 
 export default TooltipsPage;

@@ -25,7 +25,9 @@ import STYLES from './bpk-badge.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkBadge = (props) => {
-  const { docked, centered, className, ...rest } = props;
+  const {
+    docked, centered, className, ...rest
+  } = props;
   const classNames = [getClassName('bpk-badge')];
 
   if (docked === 'right') { classNames.push(getClassName('bpk-badge--docked-right')); }

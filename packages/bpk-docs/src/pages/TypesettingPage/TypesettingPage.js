@@ -46,9 +46,9 @@ const components = [
   },
 ];
 
-const TypesettingPage = () => <DocsPageBuilder
+const TypesettingPage = () => (<DocsPageBuilder
   title="Typesetting"
   components={components}
-/>;
+/>);
 
 export default TypesettingPage;

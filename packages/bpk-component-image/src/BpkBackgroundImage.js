@@ -61,7 +61,9 @@ class BpkBackgroundImage extends React.Component {
   }
 
   render() {
-    const { children, className, inView, loading, onLoad, src, imageStyle, imageClassName, ...rest } = this.props;
+    const {
+      children, className, inView, loading, onLoad, src, imageStyle, imageClassName, ...rest
+    } = this.props;
 
     const classNames = [getClassName('bpk-background-image')];
     const spinnerClassNames = [getClassName('bpk-background-image__spinner')];

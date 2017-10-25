@@ -26,7 +26,9 @@ const getClassName = cssModules(STYLES);
 
 const BpkSelect = (props) => {
   const classNames = [getClassName('bpk-select')];
-  const { valid, large, docked, dockedFirst, dockedMiddle, dockedLast, className, ...rest } = props;
+  const {
+    valid, large, docked, dockedFirst, dockedMiddle, dockedLast, className, ...rest
+  } = props;
 
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid

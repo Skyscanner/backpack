@@ -56,7 +56,7 @@ const markdownToHTML = readmeString => marked(readmeString
   .replace(/^### /gm, '#### ') // replace h3 with h4
   .replace(/^## /gm, '### ') // replace h2 with h3
   .replace(/^# /gm, '## ') // replace h1 with h2
-, { renderer });
+  , { renderer });
 
 const toSassdocLink = props => <SassdocLink sassdocId={props.sassdocId} category={props.category} />;
 

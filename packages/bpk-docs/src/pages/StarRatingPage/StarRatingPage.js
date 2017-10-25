@@ -65,7 +65,7 @@ const components = [
   },
 ];
 
-const StarRatingPage = () => <DocsPageBuilder
+const StarRatingPage = () => (<DocsPageBuilder
   title="Star Ratings"
   blurb={[
     <Paragraph>
@@ -75,6 +75,6 @@ const StarRatingPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={starRatingReadme}
-/>;
+/>);
 
 export default StarRatingPage;

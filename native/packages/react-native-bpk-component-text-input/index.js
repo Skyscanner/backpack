@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
- import BpkTextInput from './src/BpkTextInput';
+import BpkTextInput from './src/BpkTextInput';
 
- export default BpkTextInput;
+export default BpkTextInput;

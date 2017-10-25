@@ -27,7 +27,9 @@ import STYLES from './bpk-chart-data-table.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkChartDataTable = (props) => {
-  const { data, xAxisLabel, yAxisLabel, xScaleDataKey, yScaleDataKey } = props;
+  const {
+    data, xAxisLabel, yAxisLabel, xScaleDataKey, yScaleDataKey,
+  } = props;
   const rows = data.map((point, i) => {
     const key = `chart-data-table-row-${i}`;
 

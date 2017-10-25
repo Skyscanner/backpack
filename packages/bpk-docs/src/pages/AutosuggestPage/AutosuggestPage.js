@@ -261,12 +261,12 @@ const components = [
   },
 ];
 
-const AutosuggestPage = () => <DocsPageBuilder
+const AutosuggestPage = () => (<DocsPageBuilder
   title="Autosuggest"
   blurb={[
     <Paragraph>
       The Backpack autosuggest component is a lightweight wrapper
-      around <BpkLink href={'http://react-autosuggest.js.org/'} blank>React Autosuggest</BpkLink>. It can be used to
+      around <BpkLink href="http://react-autosuggest.js.org/" blank>React Autosuggest</BpkLink>. It can be used to
       display suggestions for travel destinations, hotels, car hire and more - any data source can be used. Whilst you
       have full control over suggestion rendering, Backpack provides a built in suggestion component allowing you to
       display icons, sub-headings and more.
@@ -275,6 +275,6 @@ const AutosuggestPage = () => <DocsPageBuilder
   components={components}
   readme={autosuggestReadme}
   sassdocId="autosuggest"
-/>;
+/>);
 
 export default AutosuggestPage;

@@ -28,7 +28,9 @@ const getYPos = (point, { yScale, yScaleDataKey, maxYValue }) =>
 
 const getBarHeight = (
   point,
-  { height, margin, yScale, yScaleDataKey, maxYValue },
+  {
+    height, margin, yScale, yScaleDataKey, maxYValue,
+  },
 ) => {
   const barHeight =
     height -

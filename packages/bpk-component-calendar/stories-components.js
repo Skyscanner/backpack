@@ -67,11 +67,13 @@ const MyCalendarNav = ({
       <BpkButton
         iconOnly
         onClick={event => onMonthChange(event, { month: addMonths(month, -1), source: 'PREV' })}
-      ><LeftIcon fill="white" /></BpkButton>&nbsp;
+      ><LeftIcon fill="white" />
+      </BpkButton>&nbsp;
       <BpkButton
         iconOnly
         onClick={event => onMonthChange(event, { month: addMonths(month, 1), source: 'NEXT' })}
-      ><RightIcon fill="white" /></BpkButton>
+      ><RightIcon fill="white" />
+      </BpkButton>
     </div>
   </div>
 );

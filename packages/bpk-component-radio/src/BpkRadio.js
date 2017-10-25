@@ -26,7 +26,9 @@ const getClassName = cssModules(STYLES);
 
 const BpkRadio = (props) => {
   const classNames = [getClassName('bpk-radio')];
-  const { name, label, disabled, white, className, ...rest } = props;
+  const {
+    name, label, disabled, white, className, ...rest
+  } = props;
 
   if (white) { classNames.push(getClassName('bpk-radio--white')); }
   if (disabled) { classNames.push(getClassName('bpk-radio--disabled')); }

@@ -31,7 +31,7 @@ import {
 } from './../utils';
 
 const BpkButtonContainer = (props) => {
-  const theme = props.theme;
+  const { theme } = props;
   const containerStyle = getStyleForElement('container', props);
   const buttonStyle = getStyleForElement('button', props);
   const backgroundColor = getAndroidBackgroundColour(theme, props);
@@ -44,7 +44,7 @@ const BpkButtonContainer = (props) => {
     style,
     title,
     ...rest
-   } = props;
+  } = props;
 
   const accessibilityTraits = ['button'];
   if (disabled) {

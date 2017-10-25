@@ -64,7 +64,7 @@ const components = [
   },
 ];
 
-const PanelsPage = () => <DocsPageBuilder
+const PanelsPage = () => (<DocsPageBuilder
   title="Panel"
   blurb={[
     <Paragraph>
@@ -76,6 +76,6 @@ const PanelsPage = () => <DocsPageBuilder
   components={components}
   readme={panelReadme}
   sassdocId="panels"
-/>;
+/>);
 
 export default PanelsPage;

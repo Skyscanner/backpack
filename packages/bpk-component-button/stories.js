@@ -53,7 +53,7 @@ storiesOf('bpk-component-button', module)
         onClick={action('large secondary selected clicked')}
       >
         Selected
-      </BpkButton>
+            </BpkButton>
       &nbsp;<BpkButton secondary large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>Disabled</BpkButton>
     </div>
   ))

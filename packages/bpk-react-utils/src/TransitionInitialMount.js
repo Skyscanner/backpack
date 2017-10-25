@@ -30,7 +30,9 @@ const FirstChild = (props) => {
   return children[0] || null;
 };
 
-const TransitionInitialMount = ({ appearClassName, appearActiveClassName, transitionTimeout, children }) => (
+const TransitionInitialMount = ({
+  appearClassName, appearActiveClassName, transitionTimeout, children,
+}) => (
   <CSSTransitionGroup
     component={FirstChild}
     transitionName={{

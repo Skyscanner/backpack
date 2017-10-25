@@ -41,7 +41,8 @@ const NavSelectItem = props => (
   <option
     disabled={!props.link.route}
     value={props.link.route}
-  >{props.link.children}</option>
+  >{props.link.children}
+  </option>
 );
 
 NavSelectItem.propTypes = {

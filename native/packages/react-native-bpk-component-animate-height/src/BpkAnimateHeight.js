@@ -111,7 +111,7 @@ class BpkAnimateHeight extends React.Component {
 }
 
 BpkAnimateHeight.propTypes = {
-  animationDuration: PropTypes.number.isRequired,
+  animationDuration: PropTypes.number,
   expanded: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
   style: ViewPropTypes.style,

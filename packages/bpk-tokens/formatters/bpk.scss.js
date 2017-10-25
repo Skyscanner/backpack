@@ -28,7 +28,9 @@ export const variableTemplate = ({ name, value, type }) =>
 
 export const sassDocTemplate = ({ category }) => `/// @group ${category}`;
 
-export const template = ({ category, name, value, type }) =>
+export const template = ({
+  category, name, value, type,
+}) =>
   `${sassDocTemplate({ category })}\n${variableTemplate({ name, value, type })}`;
 
 export default json => [blockComment, _.map(json.props, prop => template(prop)).join('\n')].join('\n');

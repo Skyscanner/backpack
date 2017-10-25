@@ -46,7 +46,9 @@ const SelectableBarChart = withSelectedState(RtlBarchart);
 
 const data = require('./data');
 
-const margin = { top: 0, left: 40, bottom: 40, right: 0 };
+const margin = {
+  top: 0, left: 40, bottom: 40, right: 0,
+};
 
 const Gridlines = ({ size, ...rest }) => (
   <svg

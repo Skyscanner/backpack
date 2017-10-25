@@ -164,7 +164,7 @@ ReactDOM.render(<App />, ...);`}
   },
 ];
 
-const TypographyPage = () => <DocsPageBuilder
+const TypographyPage = () => (<DocsPageBuilder
   title="Typography"
   blurb={[
     <Paragraph>
@@ -174,6 +174,6 @@ const TypographyPage = () => <DocsPageBuilder
   ]}
   components={components}
   sassdocId="typography"
-/>;
+/>);
 
 export default TypographyPage;

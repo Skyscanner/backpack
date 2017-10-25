@@ -27,7 +27,7 @@ import * as routes from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
 
-const HorizontalGridPage = () => <DocsPageBuilder
+const HorizontalGridPage = () => (<DocsPageBuilder
   title="Horizontal grid"
   blurb={[
     <Paragraph>
@@ -70,6 +70,6 @@ const HorizontalGridPage = () => <DocsPageBuilder
   ]}
   readme={gridReadme}
   sassdocId="grids"
-/>;
+/>);
 
 export default HorizontalGridPage;

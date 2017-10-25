@@ -65,7 +65,7 @@ const components = [
   },
 ];
 
-const BreakpointsPage = () => <DocsPageBuilder
+const BreakpointsPage = () => (<DocsPageBuilder
   title="Breakpoints"
   blurb={[
     <Paragraph>
@@ -75,6 +75,6 @@ const BreakpointsPage = () => <DocsPageBuilder
   components={components}
   readme={breakpointReadme}
   sassdocId="breakpoints"
-/>;
+/>);
 
 export default BreakpointsPage;

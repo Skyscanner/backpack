@@ -22,7 +22,7 @@ import toJson from 'enzyme-to-json';
 import BpkChartDataTable from './BpkChartDataTable';
 import data from '../data.json';
 
-const prices = data.prices;
+const { prices } = data;
 
 describe('BpkChartDataTable', () => {
   it('should render correctly', () => {

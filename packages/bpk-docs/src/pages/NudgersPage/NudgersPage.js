@@ -67,7 +67,7 @@ const components = [
   },
 ];
 
-const NudgersPage = () => <DocsPageBuilder
+const NudgersPage = () => (<DocsPageBuilder
   title="Nudgers"
   blurb={[
     <Paragraph>
@@ -80,6 +80,6 @@ const NudgersPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={nudgersReadme}
-/>;
+/>);
 
 export default NudgersPage;

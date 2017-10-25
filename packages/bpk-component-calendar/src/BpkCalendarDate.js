@@ -105,7 +105,8 @@ class BpkCalendarDate extends PureComponent {
         aria-pressed={isSelected}
         ref={this.getButtonRef}
         {...buttonProps}
-      ><span aria-hidden="true">{ date.getDate() }</span></button>
+      ><span aria-hidden="true">{ date.getDate() }</span>
+      </button>
     );
   }
 }

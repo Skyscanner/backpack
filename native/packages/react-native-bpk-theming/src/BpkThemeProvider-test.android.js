@@ -21,8 +21,8 @@ import commonTests from './BpkThemeProvider-test.common';
 jest.mock('react-native', () => {
   const reactNative = require.requireActual('react-native');
   jest
-      .spyOn(reactNative.Platform, 'select')
-      .mockImplementation(obj => obj.ios || obj.default);
+    .spyOn(reactNative.Platform, 'select')
+    .mockImplementation(obj => obj.ios || obj.default);
   reactNative.Platform.OS = 'android';
 
   return reactNative;

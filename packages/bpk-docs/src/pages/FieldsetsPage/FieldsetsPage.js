@@ -70,7 +70,9 @@ class FieldsetContainer extends Component {
   }
 
   render() {
-    const { children, isCheckbox, validStates, ...rest } = this.props;
+    const {
+      children, isCheckbox, validStates, ...rest
+    } = this.props;
 
     const valid = validStates[this.state.validState];
 
@@ -172,7 +174,7 @@ const components = [
   },
 ];
 
-const FieldsetPage = () => <DocsPageBuilder
+const FieldsetPage = () => (<DocsPageBuilder
   title="Fieldsets"
   blurb={[
     <Paragraph>
@@ -184,6 +186,6 @@ const FieldsetPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={readme}
-/>;
+/>);
 
 export default FieldsetPage;

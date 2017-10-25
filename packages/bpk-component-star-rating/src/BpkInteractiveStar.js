@@ -27,7 +27,9 @@ import STYLES from './BpkInteractiveStar.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkInteractiveStar = (props) => {
-  const { selected, type, name, value, onClick, onMouseEnter, label, ...rest } = props;
+  const {
+    selected, type, name, value, onClick, onMouseEnter, label, ...rest
+  } = props;
   const buttonClassNames = [getClassName('bpk-interactive-star')];
   const iconClassNames = [getClassName('bpk-interactive-star__icon')];
 

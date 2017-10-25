@@ -27,7 +27,9 @@ const getClassName = cssModules(STYLES);
 const BpkHorizontalNavItem = (props) => {
   const classNames = [getClassName('bpk-horizontal-nav__item')];
   const innerClassNames = [getClassName('bpk-horizontal-nav__link')];
-  const { children, className, selected, spaceAround, href, ...rest } = props;
+  const {
+    children, className, selected, spaceAround, href, ...rest
+  } = props;
 
   // Outer classNames
   if (spaceAround) { classNames.push(getClassName('bpk-horizontal-nav__item--space-around')); }

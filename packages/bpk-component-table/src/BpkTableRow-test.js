@@ -35,7 +35,7 @@ describe('BpkTableRow', () => {
       <BpkTableRow className="my-custom-class">
         <td />
       </BpkTableRow>,
-      ).toJSON();
+    ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -44,7 +44,7 @@ describe('BpkTableRow', () => {
       <BpkTableRow id="my-custom-id" data-foo="bar">
         <td />
       </BpkTableRow>,
-      ).toJSON();
+    ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

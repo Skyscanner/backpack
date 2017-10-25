@@ -28,7 +28,9 @@ import STYLES from './bpk-image.scss';
 const getClassName = cssModules(STYLES);
 
 const Image = (props) => {
-  const { hidden, altText, onImageLoad, ...rest } = props;
+  const {
+    hidden, altText, onImageLoad, ...rest
+  } = props;
 
   const imgClassNames = [getClassName('bpk-image__img')];
 
@@ -72,7 +74,9 @@ class BpkImage extends React.Component {
   }
 
   render() {
-    const { width, height, altText, className, inView, loading, onLoad, style, ...rest } = this.props;
+    const {
+      width, height, altText, className, inView, loading, onLoad, style, ...rest
+    } = this.props;
 
     const classNames = [getClassName('bpk-image')];
 

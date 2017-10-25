@@ -50,7 +50,8 @@ const WeekDay = (props) => {
     <Element
       className={classNames.join(' ')}
       title={weekDay.name}
-    ><span aria-hidden="true">{ weekDay.nameAbbr }</span></Element>
+    ><span aria-hidden="true">{ weekDay.nameAbbr }</span>
+    </Element>
   );
 };
 

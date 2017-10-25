@@ -49,9 +49,9 @@ const getMaxYValue = (dataPoints, yScaleDataKey, outlierPercentage) => {
 
   return outlierPercentage !== null
     ? Math.min(
-        maxYValue,
-        (meanValue * (outlierPercentage / 100)) + meanValue,
-      )
+      maxYValue,
+      (meanValue * (outlierPercentage / 100)) + meanValue,
+    )
     : maxYValue;
 };
 

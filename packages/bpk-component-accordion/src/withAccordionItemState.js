@@ -40,7 +40,9 @@ const withAccordionItemState = (ComposedComponent) => {
     }
 
     render() {
-      const { initiallyExpanded, expanded, onClick, ...rest } = this.props;
+      const {
+        initiallyExpanded, expanded, onClick, ...rest
+      } = this.props;
 
       return <ComposedComponent expanded={this.state.expanded} onClick={this.onClick} {...rest} />;
     }

@@ -101,7 +101,7 @@ const components = [
   },
 ];
 
-const NativeCardsPage = () => <DocsPageBuilder
+const NativeCardsPage = () => (<DocsPageBuilder
   title="Cards"
   blurb={[
     <Paragraph>
@@ -113,6 +113,6 @@ const NativeCardsPage = () => <DocsPageBuilder
   components={components}
   readme={readme}
   showMenu
-/>;
+/>);
 
 export default NativeCardsPage;

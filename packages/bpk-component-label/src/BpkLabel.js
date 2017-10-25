@@ -25,7 +25,9 @@ import STYLES from './bpk-label.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkLabel = (props) => {
-  const { children, required, white, disabled, className, ...rest } = props;
+  const {
+    children, required, white, disabled, className, ...rest
+  } = props;
   const classNames = [getClassName('bpk-label')];
 
   if (white) { classNames.push(getClassName('bpk-label--white')); }

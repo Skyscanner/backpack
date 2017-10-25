@@ -31,7 +31,7 @@ describe('BpkTableHeadCell', () => {
       <BpkTableHeadCell className="my-custom-class">
         <th />
       </BpkTableHeadCell>,
-      ).toJSON();
+    ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -40,7 +40,7 @@ describe('BpkTableHeadCell', () => {
       <BpkTableHeadCell id="my-custom-id" data-foo="bar">
         <th />
       </BpkTableHeadCell>,
-      ).toJSON();
+    ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

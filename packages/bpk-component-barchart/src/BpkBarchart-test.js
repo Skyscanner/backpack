@@ -22,7 +22,7 @@ import toJson from 'enzyme-to-json';
 import BpkBarchart from './BpkBarchart';
 import data from '../data.json';
 
-const prices = data.prices;
+const { prices } = data;
 const size = 200;
 
 describe('BpkBarchart', () => {

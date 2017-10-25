@@ -27,7 +27,8 @@ describe('BpkInteractiveStarRating', () => {
     const tree = shallow(
       <BpkInteractiveStarRating
         getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
-        id="my-rating" rating={7}
+        id="my-rating"
+        rating={7}
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();
@@ -82,7 +83,8 @@ describe('BpkInteractiveStarRating', () => {
       <BpkInteractiveStarRating
         getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
         id="my-rating"
-        rating={5} large
+        rating={5}
+        large
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();
@@ -93,7 +95,8 @@ describe('BpkInteractiveStarRating', () => {
       <BpkInteractiveStarRating
         getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
         id="my-rating"
-        rating={5} maxRating={8}
+        rating={5}
+        maxRating={8}
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();

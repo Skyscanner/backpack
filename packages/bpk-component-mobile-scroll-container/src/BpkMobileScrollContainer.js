@@ -103,7 +103,9 @@ class BpkMobileScrollContainer extends Component {
 
   render() {
     const classNames = [getClassName('bpk-mobile-scroll-container')];
-    const { children, innerContainerTagName, className, style, ...rest } = this.props;
+    const {
+      children, innerContainerTagName, className, style, ...rest
+    } = this.props;
 
     if (className) { classNames.push(className); }
     if (this.state.scrollIndicatorClassName) { classNames.push(this.state.scrollIndicatorClassName); }

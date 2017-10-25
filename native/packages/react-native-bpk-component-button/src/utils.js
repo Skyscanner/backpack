@@ -40,7 +40,14 @@ const REQUIRED_THEME_ATTRIBUTES = {
 
 export const THEMEABLE_TYPES = Object.keys(REQUIRED_THEME_ATTRIBUTES);
 
-export const getStyleForElement = (elementType, { type, title, icon, iconOnly, large, disabled }) => {
+export const getStyleForElement = (elementType, {
+  type,
+  title,
+  icon,
+  iconOnly,
+  large,
+  disabled,
+}) => {
   // Start with base style.
   const styleForElement = [styles.base[elementType]];
 
@@ -113,8 +120,7 @@ export const themeAttributesSupplied = (type, theme) => (
 );
 
 export const themePropType = (props, propName, componentName) => {
-  const type = props.type;
-  const theme = props.theme;
+  const { type, theme } = props;
   if (!theme) {
     return false;
   }

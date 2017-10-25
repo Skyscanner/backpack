@@ -30,7 +30,9 @@ const isIE9 = () => {
 };
 
 const BpkTicket = (props) => {
-  const { children, href, padded, stub, vertical, className, stubClassName, stubProps, ...rest } = props;
+  const {
+    children, href, padded, stub, vertical, className, stubClassName, stubProps, ...rest
+  } = props;
   const classNames = [getClassName('bpk-ticket')];
   const mainClassNames = ['bpk-ticket__paper', 'bpk-ticket__main'].map(getClassName);
   const stubClassNames = ['bpk-ticket__paper', 'bpk-ticket__stub'].map(getClassName);

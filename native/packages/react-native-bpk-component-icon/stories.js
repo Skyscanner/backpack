@@ -61,62 +61,65 @@ const styles = StyleSheet.create({
   },
 });
 
-const getSmallIcons = () => (<View style={styles.column}>
-  <StorySubheading>Small</StorySubheading>
-  <View style={[styles.singleRow, styles.group]}>
-    <BpkIcon
-      style={styles.singleIcon}
-      icon="flight"
-      small
-    />
-    <BpkIcon
-      style={styles.singleIcon}
-      icon="cars"
-      small
-    />
-    <BpkIcon
-      style={styles.singleIcon}
-      icon="hotels"
-      small
-    />
-  </View>
-</View>);
+const getSmallIcons = () => (
+  <View style={styles.column}>
+    <StorySubheading>Small</StorySubheading>
+    <View style={[styles.singleRow, styles.group]}>
+      <BpkIcon
+        style={styles.singleIcon}
+        icon="flight"
+        small
+      />
+      <BpkIcon
+        style={styles.singleIcon}
+        icon="cars"
+        small
+      />
+      <BpkIcon
+        style={styles.singleIcon}
+        icon="hotels"
+        small
+      />
+    </View>
+  </View>);
 
-const getLargeIcons = () => (<View style={styles.column} >
-  <StorySubheading>Large</StorySubheading>
-  <View style={[styles.singleRow, styles.group]}>
-    <BpkIcon
-      style={styles.singleIcon}
-      icon="flight"
-    />
-    <BpkIcon
-      style={styles.singleIcon}
-      icon="cars"
-    />
-    <BpkIcon
-      style={styles.singleIcon}
-      icon="hotels"
-    />
-  </View>
-</View>);
+const getLargeIcons = () => (
+  <View style={styles.column} >
+    <StorySubheading>Large</StorySubheading>
+    <View style={[styles.singleRow, styles.group]}>
+      <BpkIcon
+        style={styles.singleIcon}
+        icon="flight"
+      />
+      <BpkIcon
+        style={styles.singleIcon}
+        icon="cars"
+      />
+      <BpkIcon
+        style={styles.singleIcon}
+        icon="hotels"
+      />
+    </View>
+  </View>);
 
-const getColouredIcons = () => (<View style={styles.column} >
-  <StorySubheading>In any color</StorySubheading>
-  <View style={[styles.singleRow, styles.group]}>
-    <BpkIcon
-      style={[styles.singleIcon, { color: colorBlue500 }]}
-      icon="flight"
-    />
-    <BpkIcon
-      style={[styles.singleIcon, { color: colorGreen500 }]}
-      icon="cars"
-    />
-    <BpkIcon
-      style={[styles.singleIcon, { color: colorYellow500 }]}
-      icon="hotels"
-    />
-  </View>
-</View>);
+const getColouredIcons = () => (
+  <View style={styles.column} >
+    <StorySubheading>In any color</StorySubheading>
+    <View style={[styles.singleRow, styles.group]}>
+      <BpkIcon
+        style={[styles.singleIcon, { color: colorBlue500 }]}
+        icon="flight"
+      />
+      <BpkIcon
+        style={[styles.singleIcon, { color: colorGreen500 }]}
+        icon="cars"
+      />
+      <BpkIcon
+        style={[styles.singleIcon, { color: colorYellow500 }]}
+        icon="hotels"
+      />
+    </View>
+  </View>);
 
 storiesOf('BpkIcon', module)
   .add('docs:icons', () => (

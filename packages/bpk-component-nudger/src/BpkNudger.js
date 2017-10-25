@@ -70,7 +70,6 @@ const BpkNudger = (props) => {
       </BpkButton>
       <input
         type="text"
-        role="alert"
         aria-live="assertive"
         readOnly
         value={adjustedValue}

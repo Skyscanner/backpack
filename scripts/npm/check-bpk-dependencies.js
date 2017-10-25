@@ -38,10 +38,12 @@ const checkBpkDependencyList = (dependencies, correctVersions, packageName) => {
 
 const checkBpkDependencies = (packageFile, correctVersions) => {
   const pfContent = JSON.parse(fs.readFileSync(packageFile));
-  const packageName = pfContent.name;
-  const peerDependencies = pfContent.peerDependencies;
-  const dependencies = pfContent.dependencies;
-  const devDependencies = pfContent.devDependencies;
+  const {
+    name: packageName,
+    peerDependencies,
+    dependencies,
+    devDependencies,
+  } = pfContent;
 
   if (peerDependencies !== undefined) {
     checkBpkDependencyList(peerDependencies, correctVersions, packageName);

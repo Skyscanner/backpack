@@ -36,7 +36,9 @@ describe('withDefaultProps', () => {
   });
 
   it('should merge classNames', () => {
-    const Component = withDefaultProps(TestComponent, { a: 1, b: 2, c: { d: 3 }, className: 'a' });
+    const Component = withDefaultProps(TestComponent, {
+      a: 1, b: 2, c: { d: 3 }, className: 'a',
+    });
     const tree = renderer.create(
       <Component className="b">
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum

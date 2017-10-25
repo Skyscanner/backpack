@@ -45,7 +45,7 @@ const iconsFinal = _(icons)
       categoryName: getFriendlyName(categoryId),
       component: category[name],
     })),
-)
+  )
   .value();
 
 const blurb = [
@@ -69,13 +69,13 @@ const blurb = [
   </Paragraph>,
 ];
 
-const IconsPage = () => <DocsPageBuilder
+const IconsPage = () => (<DocsPageBuilder
   title="Icons"
   blurb={blurb}
   components={[]}
   showMenu={false}
   readme={iconReadme}
   sassdocId="svgs-mixin-bpk-icon"
-/>;
+/>);
 
 export default IconsPage;

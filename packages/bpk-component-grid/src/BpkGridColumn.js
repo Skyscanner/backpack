@@ -24,7 +24,7 @@ import STYLES from './bpk-grid-column.scss';
 
 const getClassName = cssModules(STYLES);
 
-const isNumeric = n => !isNaN(parseFloat(n)) && isFinite(n);
+const isNumeric = n => !Number.isNaN(parseFloat(n)) && Number.isFinite(n);
 
 const BpkGridColumn = (props) => {
   const {

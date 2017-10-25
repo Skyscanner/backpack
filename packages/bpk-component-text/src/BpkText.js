@@ -30,7 +30,9 @@ const classes = {};
 TEXT_STYLES.forEach((textStyle) => { classes[textStyle] = getClassName(`bpk-text--${textStyle}`); });
 
 const BpkText = (props) => {
-  const { bold, className, children, tagName: TagName, textStyle, ...rest } = props;
+  const {
+    bold, className, children, tagName: TagName, textStyle, ...rest
+  } = props;
   const classNames = [getClassName('bpk-text'), classes[props.textStyle]];
 
   if (bold) { classNames.push(getClassName('bpk-text--bold')); }

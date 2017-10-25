@@ -44,7 +44,7 @@ const commonTests = () => {
             message="Error alert."
           />
         </View>,
-    ).toJSON();
+      ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
@@ -72,7 +72,7 @@ const commonTests = () => {
             dismissable
           />
         </View>,
-        ).toJSON();
+      ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
@@ -89,7 +89,7 @@ const commonTests = () => {
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
-          </BpkText>
+            </BpkText>
           </BpkBannerAlert>
           <BpkBannerAlert
             type={ALERT_TYPES.SUCCESS}
@@ -101,7 +101,7 @@ const commonTests = () => {
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
-          </BpkText>
+            </BpkText>
           </BpkBannerAlert>
           <BpkBannerAlert
             type={ALERT_TYPES.WARN}
@@ -113,7 +113,7 @@ const commonTests = () => {
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
-          </BpkText>
+            </BpkText>
           </BpkBannerAlert>
           <BpkBannerAlert
             type={ALERT_TYPES.ERROR}
@@ -125,10 +125,10 @@ const commonTests = () => {
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
-          </BpkText>
+            </BpkText>
           </BpkBannerAlert>
         </View>,
-                ).toJSON();
+      ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
@@ -146,7 +146,7 @@ const commonTests = () => {
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
-          </BpkText>
+            </BpkText>
           </BpkBannerAlert>
           <BpkBannerAlert
             type={ALERT_TYPES.SUCCESS}
@@ -159,7 +159,7 @@ const commonTests = () => {
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
-          </BpkText>
+            </BpkText>
           </BpkBannerAlert>
           <BpkBannerAlert
             type={ALERT_TYPES.WARN}
@@ -172,7 +172,7 @@ const commonTests = () => {
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
-          </BpkText>
+            </BpkText>
           </BpkBannerAlert>
           <BpkBannerAlert
             type={ALERT_TYPES.ERROR}
@@ -185,10 +185,10 @@ const commonTests = () => {
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
-          </BpkText>
+            </BpkText>
           </BpkBannerAlert>
         </View>,
-                        ).toJSON();
+      ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
@@ -206,7 +206,7 @@ const commonTests = () => {
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
-          </BpkText>
+            </BpkText>
           </BpkBannerAlert>
           <BpkBannerAlert
             type={ALERT_TYPES.SUCCESS}
@@ -219,7 +219,7 @@ const commonTests = () => {
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
-          </BpkText>
+            </BpkText>
           </BpkBannerAlert>
           <BpkBannerAlert
             type={ALERT_TYPES.WARN}
@@ -232,7 +232,7 @@ const commonTests = () => {
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
-          </BpkText>
+            </BpkText>
           </BpkBannerAlert>
           <BpkBannerAlert
             type={ALERT_TYPES.ERROR}
@@ -245,10 +245,10 @@ const commonTests = () => {
             Pellentesque nec diam nec erat condimentum dapibus.
             Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
             Integer rhoncus varius arcu, a fringilla libero laoreet at.
-          </BpkText>
+            </BpkText>
           </BpkBannerAlert>
         </View>,
-                            ).toJSON();
+      ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
@@ -276,7 +276,7 @@ const commonTests = () => {
             message="Error alert."
           />
         </View>,
-        ).toJSON();
+      ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 

@@ -28,7 +28,9 @@ const getClassName = cssModules(STYLES);
 const RtlArrowRightIcon = withRtlSupport(withButtonAlignment(ArrowRightIcon));
 
 const BpkTile = (props) => {
-  const { dark, backgroundColor, imageSource, className, cta, heading, ...rest } = props;
+  const {
+    dark, backgroundColor, imageSource, className, cta, heading, ...rest
+  } = props;
 
   const classNames = [getClassName('bpk-tile')];
   const scrimClassNames = [getClassName('bpk-tile__scrim')];

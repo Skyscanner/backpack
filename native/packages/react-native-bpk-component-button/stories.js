@@ -208,22 +208,23 @@ storiesOf('BpkButton', module)
         </View>
       );
     }
-    return (<View>
-      <StoryHeading>Edge Cases</StoryHeading>
+    return (
+      <View>
+        <StoryHeading>Edge Cases</StoryHeading>
 
-      <StorySubheading>Long button titles</StorySubheading>
-      <BpkButton
-        type="primary"
-        title="I have a really long title"
-        onPress={action('Button with long title pressed')}
-        style={styles.buttonStyles}
-      />
-      {Platform.OS === 'ios' ?
-        <View>
-          {getLargeVersion()}
-          {getIconOnlyVersion()}
-        </View>
+        <StorySubheading>Long button titles</StorySubheading>
+        <BpkButton
+          type="primary"
+          title="I have a really long title"
+          onPress={action('Button with long title pressed')}
+          style={styles.buttonStyles}
+        />
+        {Platform.OS === 'ios' ?
+          <View>
+            {getLargeVersion()}
+            {getIconOnlyVersion()}
+          </View>
         : null}
 
-    </View>);
+      </View>);
   });

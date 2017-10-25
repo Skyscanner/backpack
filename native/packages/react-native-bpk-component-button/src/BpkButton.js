@@ -56,7 +56,7 @@ const BpkButton = (props) => {
     title,
     type,
     ...rest
-   } = props;
+  } = props;
   let { theme } = props;
   // Validate the button type.
   if (!BUTTON_TYPES.includes(type)) {

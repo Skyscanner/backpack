@@ -24,7 +24,9 @@ import BpkModalScrim from './BpkModalScrim';
 import BpkModalDialog from './BpkModalDialog';
 
 const BpkModal = (props) => {
-  const { isOpen, onClose, target, ...rest } = props;
+  const {
+    isOpen, onClose, target, ...rest
+  } = props;
 
   delete rest.onClose;
 

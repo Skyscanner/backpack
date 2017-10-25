@@ -32,7 +32,7 @@ const encodeSvg = (svgContents, color) => {
     ? svgContents.replace(/(<svg[^>]+>)/im, colorOverride(color))
     : svgContents;
 
-  return `data:image/svg+xml;base64,${new Buffer(contents).toString('base64')}`;
+  return `data:image/svg+xml;base64,${Buffer.from(contents).toString('base64')}`;
 };
 
 const injectColorPlaceholder = (svgContents, svgName) => {
@@ -71,7 +71,7 @@ export default (opts = {}) => {
     }
 
     if (file.isBuffer()) {
-      file.contents = new Buffer( // eslint-disable-line no-param-reassign
+      file.contents = Buffer.from( // eslint-disable-line no-param-reassign
         svg2datauri(String(file.contents), path.basename(file.path).split('.')[0], opts.colors),
       );
       return cb(null, file);
@@ -100,7 +100,7 @@ export const sassMap = (mapName) => {
     }
 
     if (file.isBuffer()) {
-      file.contents = new Buffer( // eslint-disable-line no-param-reassign
+      file.contents = Buffer.from( // eslint-disable-line no-param-reassign
         mapTemplate({
           mapName,
           vars: String(file.contents),
@@ -128,7 +128,7 @@ export const svg2sassvar = () => {
     }
 
     if (file.isBuffer()) {
-      file.contents = new Buffer( // eslint-disable-line no-param-reassign
+      file.contents = Buffer.from( // eslint-disable-line no-param-reassign
         injectColorPlaceholder(String(file.contents), path.basename(file.path).split('.')[0]),
       );
       return cb(null, file);

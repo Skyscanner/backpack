@@ -41,7 +41,8 @@ describe('BpkChip', () => {
       <BpkChip
         onClose={() => null}
         closeLabel={children => `custom close ${children.toString().toLowerCase()}`}
-      >This is a Chip!</BpkChip>,
+      >This is a Chip!
+      </BpkChip>,
     );
     expect(toJson(tree)).toMatchSnapshot();
   });

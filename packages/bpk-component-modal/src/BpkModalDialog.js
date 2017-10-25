@@ -117,7 +117,7 @@ class BpkModalDialog extends Component {
 
     const headingId = `bpk-modal-heading-${this.props.id}`;
 
-    /* eslint-disable jsx-a11y/no-static-element-interactions */
+    /* eslint-disable jsx-a11y/no-static-element-interactions,jsx-a11y/no-noninteractive-element-interactions */
     return (
       <TransitionInitialMount
         appearClassName={getClassName('bpk-modal__dialog--appear')}

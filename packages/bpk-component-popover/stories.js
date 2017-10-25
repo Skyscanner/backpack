@@ -107,14 +107,15 @@ class PopoverContainer extends Component {
             <Paragraph>My popover content.</Paragraph>
             <Paragraph>Some more popover content.</Paragraph>
             { changeProps
-              ? <Paragraph>
-                <BpkButton onClick={this.changeContent}>
+              ?
+                <Paragraph>
+                  <BpkButton onClick={this.changeContent}>
                     Change content
-                </BpkButton>
-                <BpkButton onClick={this.changeTarget}>
+                  </BpkButton>
+                  <BpkButton onClick={this.changeTarget}>
                     Change target
-                </BpkButton>
-              </Paragraph>
+                  </BpkButton>
+                </Paragraph>
               : null }
             { this.state.showLongContent
               ? <Paragraph>

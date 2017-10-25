@@ -98,11 +98,11 @@ AnimateHeightDemo.defaultProps = {
 };
 
 storiesOf('BpkAnimateHeight', module)
-  .addDecorator(getStory =>
+  .addDecorator(getStory => (
     <View style={styles.centered}>
       {getStory()}
-    </View>,
-)
+    </View>
+  ))
   .add('docs:default', () => (
     <AnimateHeightDemo>{animateHeightContent}</AnimateHeightDemo>
   ));

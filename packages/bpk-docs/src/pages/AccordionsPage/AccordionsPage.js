@@ -201,7 +201,7 @@ const components = [
   },
 ];
 
-const AccordionsPage = () => <DocsPageBuilder
+const AccordionsPage = () => (<DocsPageBuilder
   title="Accordions"
   blurb={[
     <Paragraph>
@@ -213,6 +213,6 @@ const AccordionsPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={accordionsReadme}
-/>;
+/>);
 
 export default AccordionsPage;

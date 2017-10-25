@@ -44,7 +44,7 @@ class DatepickerContainer extends Component {
       <BpkDatepicker
         {...this.props}
         date={this.state.date}
-        onDateSelect={date => this.setState({ date, focusedDate: date })}
+        onDateSelect={date => this.setState({ date })}
       />
     );
   }
@@ -79,7 +79,7 @@ const components = [
   },
 ];
 
-const DatepickerPage = () => <DocsPageBuilder
+const DatepickerPage = () => (<DocsPageBuilder
   title="Datepicker"
   blurb={[
     <Paragraph>
@@ -90,6 +90,6 @@ const DatepickerPage = () => <DocsPageBuilder
   ]}
   components={components}
   readme={datepickerReadme}
-/>;
+/>);
 
 export default DatepickerPage;

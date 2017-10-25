@@ -55,12 +55,12 @@ const components = [
   },
 ];
 
-const SpinnersPage = () => <DocsPageBuilder
+const SpinnersPage = () => (<DocsPageBuilder
   title="Spinners"
   blurb={blurb}
   components={components}
   readme={spinnerReadme}
   sassdocId="svgs-mixin-bpk-spinner"
-/>;
+/>);
 
 export default SpinnersPage;

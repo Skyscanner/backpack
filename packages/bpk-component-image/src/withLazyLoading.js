@@ -77,7 +77,7 @@ export default function withLazyLoading(Component, document) {
       let supportsPassiveOption = false;
       try {
         const opts = Object.defineProperty({}, 'passive', {
-          get() {
+          get() { // eslint-disable-line getter-return
             supportsPassiveOption = true;
           },
         });

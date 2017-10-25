@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
- /* eslint-disable no-console */
+/* eslint-disable no-console */
 
 const { execSync } = require('child_process');
 

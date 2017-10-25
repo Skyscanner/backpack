@@ -79,9 +79,9 @@ const components = [
   },
 ];
 
-const ColorsPage = () => <DocsPageBuilder
+const ColorsPage = () => (<DocsPageBuilder
   title="Colors"
   components={components}
-/>;
+/>);
 
 export default ColorsPage;

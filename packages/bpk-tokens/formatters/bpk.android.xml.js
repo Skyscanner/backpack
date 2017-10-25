@@ -47,7 +47,9 @@ const valueTemplate = (value, type) => {
   return formattedValue;
 };
 
-export const tokenTemplate = ({ name, value, type, category }) => (
+export const tokenTemplate = ({
+  name, value, type, category,
+}) => (
   `  <${tagName(type)} name="${name.toUpperCase()}" category="${category}">${valueTemplate(value, type)}</${tagName(type)}>` // eslint-disable-line max-len
 );
 

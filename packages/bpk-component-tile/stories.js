@@ -26,7 +26,7 @@ storiesOf('bpk-component-tile', module)
   .add('Using Icons in Code', () => (
     <BpkTile
       heading="Using icons in code."
-      imageSource={'https://www.w3schools.com/css/trolltunga.jpg'}
+      imageSource="https://www.w3schools.com/css/trolltunga.jpg"
       backgroundColor={colors.colorGreen500}
       dark
     />
@@ -34,28 +34,28 @@ storiesOf('bpk-component-tile', module)
   .add('Using icons in sketch.', () => (
     <BpkTile
       heading="Using icons in sketch."
-      imageSource={'https://www.w3schools.com/css/trolltunga.jpg'}
+      imageSource="https://www.w3schools.com/css/trolltunga.jpg"
       backgroundColor={colors.colorRed500}
     />
   ))
   .add('Illustration', () => (
     <BpkTile
       heading="Illustration guidelines and best practices."
-      imageSource={'https://www.w3schools.com/css/trolltunga.jpg'}
+      imageSource="https://www.w3schools.com/css/trolltunga.jpg"
       backgroundColor={colors.colorwhite}
     />
   ))
   .add('Illustration examples', () => (
     <BpkTile
       heading="Illustration examples"
-      imageSource={'https://www.w3schools.com/css/trolltunga.jpg'}
+      imageSource="https://www.w3schools.com/css/trolltunga.jpg"
       backgroundColor={colors.colorwhite}
     />
   ))
   .add('Copywriting', () => (
     <BpkTile
       heading="Illustration guidelines and best practices"
-      imageSource={'https://www.w3schools.com/css/trolltunga.jpg'}
+      imageSource="https://www.w3schools.com/css/trolltunga.jpg"
       backgroundColor={colors.colorYellow500}
     />
   ));

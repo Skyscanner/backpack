@@ -59,7 +59,7 @@ class CalendarContainer extends Component {
         {...this.props}
         selectedDate={this.state.date}
         onDateSelect={(date) => {
-          this.setState({ date, focusedDate: date });
+          this.setState({ date });
           action('Selected day')(date);
         }}
         onMonthChange={action('Changed month')}
