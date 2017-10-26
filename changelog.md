@@ -7,6 +7,12 @@
   - bpk-svgs:
     - React svgs are now functional components as opposed to class components
 
+## 2017-10-30 - Added new slider component
+
+**Added:**
+- New component `BpkSlider`, see
+  http://backpack.prod.aws.skyscnr.com/components/web/sliders
+
 ## 2017-10-26 - Fix for Chrome 62 border radius leak
 
 **Fixed:**

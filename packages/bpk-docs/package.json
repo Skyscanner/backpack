@@ -50,6 +50,7 @@
     "bpk-component-router-link": "^1.0.27",
     "bpk-component-rtl-toggle": "^1.0.27",
     "bpk-component-select": "^2.1.33",
+    "bpk-component-slider": "^0.0.0",
     "bpk-component-spinner": "^2.1.33",
     "bpk-component-star-rating": "^1.0.27",
     "bpk-component-table": "^1.0.27",
