@@ -20,30 +20,37 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import withLazyLoading from './withLazyLoading';
 
+const createDocumentMock = () => {
+  const mock = jest.fn();
+
+  mock.addEventListener = jest.fn();
+  mock.removeEventListener = jest.fn();
+  mock.documentElement = jest.fn();
+
+  return mock;
+};
+
 describe('withLazyLoading', () => {
   it('should return the original component', () => {
-    const documentMock = jest.fn();
+    const documentMock = createDocumentMock();
     const MockImageComponent = () => (<div>Fake Image</div>);
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
-    const lazyLoadedImage = shallow(<LazyLoadedImage />);
+    const lazyLoadedImage = shallow(<LazyLoadedImage />, { disableLifecycleMethods: true });
     expect(lazyLoadedImage.first().is(MockImageComponent));
   });
 
   it('should add inView prop', () => {
-    const documentMock = jest.fn();
+    const documentMock = createDocumentMock();
     const MockImageComponent = () => (<div>Fake Image</div>);
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
-    const lazyLoadedImage = shallow(<LazyLoadedImage />);
+    const lazyLoadedImage = shallow(<LazyLoadedImage />, { disableLifecycleMethods: true });
     expect(lazyLoadedImage.hasOwnProperty('inView')); // eslint-disable-line no-prototype-builtins
   });
 
   it('scroll listener args should be correct when mounting', () => {
-    const documentMock = jest.fn();
-    documentMock.addEventListener = jest.fn();
-    documentMock.documentElement = jest.fn();
-    documentMock.documentElement.clientHeight = 450;
+    const documentMock = createDocumentMock();
 
     const MockImageComponent = () => (<div>Fake Image</div>);
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
@@ -56,11 +63,7 @@ describe('withLazyLoading', () => {
   });
 
   it('scroll listener args should be correct when unmounting', () => {
-    const documentMock = jest.fn();
-    documentMock.addEventListener = jest.fn();
-    documentMock.removeEventListener = jest.fn();
-    documentMock.documentElement = jest.fn();
-    documentMock.documentElement.clientHeight = 450;
+    const documentMock = createDocumentMock();
 
     const MockImageComponent = () => (<div>Fake Image</div>);
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);

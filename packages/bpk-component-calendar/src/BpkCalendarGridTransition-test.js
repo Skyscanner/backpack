@@ -47,11 +47,6 @@ describe('BpkCalendar', () => {
 
     // Next month
     calendar.setProps({ month: new Date(Date.UTC(2010, 2)) });
-    expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 1)));
-    expect(calendar.state('isTransitioning')).toBe(true);
-    expect(calendar.state('transitionValue')).toBe(-588);
-
-    calendar.instance().onMonthTransitionEnd();
     expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 2)));
     expect(calendar.state('isTransitioning')).toBe(false);
     expect(calendar.state('transitionValue')).toBe(-294);
@@ -69,11 +64,6 @@ describe('BpkCalendar', () => {
 
     // Previous month
     calendar.setProps({ month: new Date(Date.UTC(2010, 0)) });
-    expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 1)));
-    expect(calendar.state('isTransitioning')).toBe(true);
-    expect(calendar.state('transitionValue')).toBe(0);
-
-    calendar.instance().onMonthTransitionEnd();
     expect(calendar.state('currentMonth')).toEqual(new Date(Date.UTC(2010, 0)));
     expect(calendar.state('isTransitioning')).toBe(false);
     expect(calendar.state('transitionValue')).toBe(-294);

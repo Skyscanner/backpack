@@ -19,7 +19,7 @@
 import React from 'react';
 import { wrapDisplayName } from 'bpk-react-utils';
 
-export default function withLazyLoading(Component, document) {
+export default function withLazyLoading(Component, doc) {
   class WithLazyLoading extends React.Component {
     constructor() {
       super();
@@ -37,10 +37,10 @@ export default function withLazyLoading(Component, document) {
 
     componentDidMount() {
       const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : {};
-      document.addEventListener('scroll', this.checkInView, { capture: true, ...passiveArgs });
-      document.addEventListener('resize', this.checkInView);
-      document.addEventListener('orientationchange', this.checkInView);
-      document.addEventListener('fullscreenchange', this.checkInView);
+      doc.addEventListener('scroll', this.checkInView, { capture: true, ...passiveArgs });
+      doc.addEventListener('resize', this.checkInView);
+      doc.addEventListener('orientationchange', this.checkInView);
+      doc.addEventListener('fullscreenchange', this.checkInView);
       // call checkInView immediately incase the
       // component is already in view prior to scrolling
       this.checkInView();
@@ -59,10 +59,10 @@ export default function withLazyLoading(Component, document) {
 
     removeEventListeners() {
       const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : {};
-      document.removeEventListener('scroll', this.checkInView, { capture: true, ...passiveArgs });
-      document.removeEventListener('resize', this.checkInView);
-      document.removeEventListener('orientationchange', this.checkInView);
-      document.removeEventListener('fullscreenchange', this.checkInView);
+      doc.removeEventListener('scroll', this.checkInView, { capture: true, ...passiveArgs });
+      doc.removeEventListener('resize', this.checkInView);
+      doc.removeEventListener('orientationchange', this.checkInView);
+      doc.removeEventListener('fullscreenchange', this.checkInView);
     }
 
     checkInView() {
@@ -91,8 +91,8 @@ export default function withLazyLoading(Component, document) {
     isInViewPort() {
       const rect = this.element.getBoundingClientRect();
 
-      const viewPortHeight = Math.max(window.innerHeight, document.documentElement.clientHeight);
-      const viewPortWidth = Math.max(window.innerWidth, document.documentElement.clientWidth);
+      const viewPortHeight = Math.max(window.innerHeight, doc.documentElement.clientHeight);
+      const viewPortWidth = Math.max(window.innerWidth, doc.documentElement.clientWidth);
 
       return (
         rect.bottom >= 0 &&

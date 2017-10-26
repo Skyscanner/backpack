@@ -5,6 +5,7 @@ exports[`BpkBarchartBars should render correctly 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar0"
     label="Jan - 305"
     onClick={null}
     onHover={null}
@@ -19,6 +20,7 @@ exports[`BpkBarchartBars should render correctly 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar1"
     label="Feb - 348"
     onClick={null}
     onHover={null}
@@ -33,6 +35,7 @@ exports[`BpkBarchartBars should render correctly 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar2"
     label="Mar - 418"
     onClick={null}
     onHover={null}
@@ -47,6 +50,7 @@ exports[`BpkBarchartBars should render correctly 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar3"
     label="Apr - 448"
     onClick={null}
     onHover={null}
@@ -61,6 +65,7 @@ exports[`BpkBarchartBars should render correctly 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar4"
     label="May - 344"
     onClick={null}
     onHover={null}
@@ -75,6 +80,7 @@ exports[`BpkBarchartBars should render correctly 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar5"
     label="Jun - 322"
     onClick={null}
     onHover={null}
@@ -89,6 +95,7 @@ exports[`BpkBarchartBars should render correctly 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar6"
     label="Jul - 340"
     onClick={null}
     onHover={null}
@@ -103,6 +110,7 @@ exports[`BpkBarchartBars should render correctly 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar7"
     label="Aug - 327"
     onClick={null}
     onHover={null}
@@ -117,6 +125,7 @@ exports[`BpkBarchartBars should render correctly 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar8"
     label="Sep - 444"
     onClick={null}
     onHover={null}
@@ -131,6 +140,7 @@ exports[`BpkBarchartBars should render correctly 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar9"
     label="Oct - 422"
     onClick={null}
     onHover={null}
@@ -145,6 +155,7 @@ exports[`BpkBarchartBars should render correctly 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar10"
     label="Nov - 344"
     onClick={null}
     onHover={null}
@@ -159,6 +170,7 @@ exports[`BpkBarchartBars should render correctly 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar11"
     label="Dec - 301"
     onClick={null}
     onHover={null}
@@ -178,6 +190,7 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar0"
     label="Jan - 305"
     onClick={null}
     onHover={null}
@@ -192,6 +205,7 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar1"
     label="Feb - 348"
     onClick={null}
     onHover={null}
@@ -206,6 +220,7 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar2"
     label="Mar - 418"
     onClick={null}
     onHover={null}
@@ -220,6 +235,7 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar3"
     label="Apr - 448"
     onClick={null}
     onHover={null}
@@ -234,6 +250,7 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar4"
     label="May - 344"
     onClick={null}
     onHover={null}
@@ -248,6 +265,7 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar5"
     label="Jun - 322"
     onClick={null}
     onHover={null}
@@ -262,6 +280,7 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar6"
     label="Jul - 340"
     onClick={null}
     onHover={null}
@@ -276,6 +295,7 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar7"
     label="Aug - 327"
     onClick={null}
     onHover={null}
@@ -290,6 +310,7 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar8"
     label="Sep - 444"
     onClick={null}
     onHover={null}
@@ -304,6 +325,7 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar9"
     label="Oct - 422"
     onClick={null}
     onHover={null}
@@ -318,6 +340,7 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar10"
     label="Nov - 344"
     onClick={null}
     onHover={null}
@@ -332,6 +355,7 @@ exports[`BpkBarchartBars should render correctly with "getBarSelection" prop 1`]
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar11"
     label="Dec - 301"
     onClick={null}
     onHover={null}
@@ -351,6 +375,7 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar0"
     label="Jan - 305"
     onClick={[Function]}
     onHover={null}
@@ -365,6 +390,7 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar1"
     label="Feb - 348"
     onClick={[Function]}
     onHover={null}
@@ -379,6 +405,7 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar2"
     label="Mar - 418"
     onClick={[Function]}
     onHover={null}
@@ -393,6 +420,7 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar3"
     label="Apr - 448"
     onClick={[Function]}
     onHover={null}
@@ -407,6 +435,7 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar4"
     label="May - 344"
     onClick={[Function]}
     onHover={null}
@@ -421,6 +450,7 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar5"
     label="Jun - 322"
     onClick={[Function]}
     onHover={null}
@@ -435,6 +465,7 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar6"
     label="Jul - 340"
     onClick={[Function]}
     onHover={null}
@@ -449,6 +480,7 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar7"
     label="Aug - 327"
     onClick={[Function]}
     onHover={null}
@@ -463,6 +495,7 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar8"
     label="Sep - 444"
     onClick={[Function]}
     onHover={null}
@@ -477,6 +510,7 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar9"
     label="Oct - 422"
     onClick={[Function]}
     onHover={null}
@@ -491,6 +525,7 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar10"
     label="Nov - 344"
     onClick={[Function]}
     onHover={null}
@@ -505,6 +540,7 @@ exports[`BpkBarchartBars should render correctly with "onBarClick" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar11"
     label="Dec - 301"
     onClick={[Function]}
     onHover={null}
@@ -524,6 +560,7 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar0"
     label="Jan - 305"
     onClick={null}
     onHover={[Function]}
@@ -538,6 +575,7 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar1"
     label="Feb - 348"
     onClick={null}
     onHover={[Function]}
@@ -552,6 +590,7 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar2"
     label="Mar - 418"
     onClick={null}
     onHover={[Function]}
@@ -566,6 +605,7 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar3"
     label="Apr - 448"
     onClick={null}
     onHover={[Function]}
@@ -580,6 +620,7 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar4"
     label="May - 344"
     onClick={null}
     onHover={[Function]}
@@ -594,6 +635,7 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar5"
     label="Jun - 322"
     onClick={null}
     onHover={[Function]}
@@ -608,6 +650,7 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar6"
     label="Jul - 340"
     onClick={null}
     onHover={[Function]}
@@ -622,6 +665,7 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar7"
     label="Aug - 327"
     onClick={null}
     onHover={[Function]}
@@ -636,6 +680,7 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar8"
     label="Sep - 444"
     onClick={null}
     onHover={[Function]}
@@ -650,6 +695,7 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar9"
     label="Oct - 422"
     onClick={null}
     onHover={[Function]}
@@ -664,6 +710,7 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar10"
     label="Nov - 344"
     onClick={null}
     onHover={[Function]}
@@ -678,6 +725,7 @@ exports[`BpkBarchartBars should render correctly with "onBarHover" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar11"
     label="Dec - 301"
     onClick={null}
     onHover={[Function]}
@@ -697,6 +745,7 @@ exports[`BpkBarchartBars should render correctly with "onBarTouch" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar0"
     label="Jan - 305"
     onClick={null}
     onHover={null}
@@ -711,6 +760,7 @@ exports[`BpkBarchartBars should render correctly with "onBarTouch" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar1"
     label="Feb - 348"
     onClick={null}
     onHover={null}
@@ -725,6 +775,7 @@ exports[`BpkBarchartBars should render correctly with "onBarTouch" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar2"
     label="Mar - 418"
     onClick={null}
     onHover={null}
@@ -739,6 +790,7 @@ exports[`BpkBarchartBars should render correctly with "onBarTouch" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar3"
     label="Apr - 448"
     onClick={null}
     onHover={null}
@@ -753,6 +805,7 @@ exports[`BpkBarchartBars should render correctly with "onBarTouch" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar4"
     label="May - 344"
     onClick={null}
     onHover={null}
@@ -767,6 +820,7 @@ exports[`BpkBarchartBars should render correctly with "onBarTouch" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar5"
     label="Jun - 322"
     onClick={null}
     onHover={null}
@@ -781,6 +835,7 @@ exports[`BpkBarchartBars should render correctly with "onBarTouch" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar6"
     label="Jul - 340"
     onClick={null}
     onHover={null}
@@ -795,6 +850,7 @@ exports[`BpkBarchartBars should render correctly with "onBarTouch" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar7"
     label="Aug - 327"
     onClick={null}
     onHover={null}
@@ -809,6 +865,7 @@ exports[`BpkBarchartBars should render correctly with "onBarTouch" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar8"
     label="Sep - 444"
     onClick={null}
     onHover={null}
@@ -823,6 +880,7 @@ exports[`BpkBarchartBars should render correctly with "onBarTouch" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar9"
     label="Oct - 422"
     onClick={null}
     onHover={null}
@@ -837,6 +895,7 @@ exports[`BpkBarchartBars should render correctly with "onBarTouch" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar10"
     label="Nov - 344"
     onClick={null}
     onHover={null}
@@ -851,6 +910,7 @@ exports[`BpkBarchartBars should render correctly with "onBarTouch" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar11"
     label="Dec - 301"
     onClick={null}
     onHover={null}
@@ -870,6 +930,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar0"
     label="Jan - 305"
     onClick={null}
     onHover={null}
@@ -884,6 +945,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar1"
     label="Feb - 348"
     onClick={null}
     onHover={null}
@@ -898,6 +960,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar2"
     label="Mar - 418"
     onClick={null}
     onHover={null}
@@ -912,6 +975,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar3"
     label="Apr - 448"
     onClick={null}
     onHover={null}
@@ -926,6 +990,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar4"
     label="May - 344"
     onClick={null}
     onHover={null}
@@ -940,6 +1005,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar5"
     label="Jun - 322"
     onClick={null}
     onHover={null}
@@ -954,6 +1020,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar6"
     label="Jul - 340"
     onClick={null}
     onHover={null}
@@ -968,6 +1035,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar7"
     label="Aug - 327"
     onClick={null}
     onHover={null}
@@ -982,6 +1050,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar8"
     label="Sep - 444"
     onClick={null}
     onHover={null}
@@ -996,6 +1065,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar9"
     label="Oct - 422"
     onClick={null}
     onHover={null}
@@ -1010,6 +1080,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar10"
     label="Nov - 344"
     onClick={null}
     onHover={null}
@@ -1024,6 +1095,7 @@ exports[`BpkBarchartBars should render correctly with "padding" prop 1`] = `
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar11"
     label="Dec - 301"
     onClick={null}
     onHover={null}
@@ -1043,6 +1115,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar0"
     label="Jan - 305"
     onClick={null}
     onHover={null}
@@ -1058,6 +1131,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar1"
     label="Feb - 348"
     onClick={null}
     onHover={null}
@@ -1073,6 +1147,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar2"
     label="Mar - 418"
     onClick={null}
     onHover={null}
@@ -1088,6 +1163,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar3"
     label="Apr - 448"
     onClick={null}
     onHover={null}
@@ -1103,6 +1179,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar4"
     label="May - 344"
     onClick={null}
     onHover={null}
@@ -1118,6 +1195,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar5"
     label="Jun - 322"
     onClick={null}
     onHover={null}
@@ -1133,6 +1211,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar6"
     label="Jul - 340"
     onClick={null}
     onHover={null}
@@ -1148,6 +1227,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar7"
     label="Aug - 327"
     onClick={null}
     onHover={null}
@@ -1163,6 +1243,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar8"
     label="Sep - 444"
     onClick={null}
     onHover={null}
@@ -1178,6 +1259,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar9"
     label="Oct - 422"
     onClick={null}
     onHover={null}
@@ -1193,6 +1275,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar10"
     label="Nov - 344"
     onClick={null}
     onHover={null}
@@ -1208,6 +1291,7 @@ exports[`BpkBarchartBars should render with "rounded" prop set to "false" 1`] = 
   <BpkBarchartBar
     className={null}
     height={143}
+    key="bar11"
     label="Dec - 301"
     onClick={null}
     onHover={null}

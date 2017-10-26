@@ -15,7 +15,9 @@ exports[`BpkChartDataTable should render correctly 1`] = `
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr
+      key="chart-data-table-row-0"
+    >
       <td>
         Jan
       </td>
@@ -23,7 +25,9 @@ exports[`BpkChartDataTable should render correctly 1`] = `
         305
       </td>
     </tr>
-    <tr>
+    <tr
+      key="chart-data-table-row-1"
+    >
       <td>
         Feb
       </td>
@@ -31,7 +35,9 @@ exports[`BpkChartDataTable should render correctly 1`] = `
         348
       </td>
     </tr>
-    <tr>
+    <tr
+      key="chart-data-table-row-2"
+    >
       <td>
         Mar
       </td>
@@ -39,7 +45,9 @@ exports[`BpkChartDataTable should render correctly 1`] = `
         418
       </td>
     </tr>
-    <tr>
+    <tr
+      key="chart-data-table-row-3"
+    >
       <td>
         Apr
       </td>
@@ -47,7 +55,9 @@ exports[`BpkChartDataTable should render correctly 1`] = `
         448
       </td>
     </tr>
-    <tr>
+    <tr
+      key="chart-data-table-row-4"
+    >
       <td>
         May
       </td>
@@ -55,7 +65,9 @@ exports[`BpkChartDataTable should render correctly 1`] = `
         344
       </td>
     </tr>
-    <tr>
+    <tr
+      key="chart-data-table-row-5"
+    >
       <td>
         Jun
       </td>
@@ -63,7 +75,9 @@ exports[`BpkChartDataTable should render correctly 1`] = `
         322
       </td>
     </tr>
-    <tr>
+    <tr
+      key="chart-data-table-row-6"
+    >
       <td>
         Jul
       </td>
@@ -71,7 +85,9 @@ exports[`BpkChartDataTable should render correctly 1`] = `
         340
       </td>
     </tr>
-    <tr>
+    <tr
+      key="chart-data-table-row-7"
+    >
       <td>
         Aug
       </td>
@@ -79,7 +95,9 @@ exports[`BpkChartDataTable should render correctly 1`] = `
         327
       </td>
     </tr>
-    <tr>
+    <tr
+      key="chart-data-table-row-8"
+    >
       <td>
         Sep
       </td>
@@ -87,7 +105,9 @@ exports[`BpkChartDataTable should render correctly 1`] = `
         444
       </td>
     </tr>
-    <tr>
+    <tr
+      key="chart-data-table-row-9"
+    >
       <td>
         Oct
       </td>
@@ -95,7 +115,9 @@ exports[`BpkChartDataTable should render correctly 1`] = `
         422
       </td>
     </tr>
-    <tr>
+    <tr
+      key="chart-data-table-row-10"
+    >
       <td>
         Nov
       </td>
@@ -103,7 +125,9 @@ exports[`BpkChartDataTable should render correctly 1`] = `
         344
       </td>
     </tr>
-    <tr>
+    <tr
+      key="chart-data-table-row-11"
+    >
       <td>
         Dec
       </td>
