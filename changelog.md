@@ -3,8 +3,10 @@
 ## UNRELEASED
 _Nothing Yet_
 
+## 2017-10-26 - Fix for Chrome 62 border radius leak
+
 **Fixed:**
-- bpk-component-horizontal-nav:
+- bpk-component-horizontal-nav: 1.0.35 => 1.0.36
   - Explicitly set the border radius to 0 for BpkHorizontalNavItem.
 
 ## 2017-10-24 - Android support for button component
