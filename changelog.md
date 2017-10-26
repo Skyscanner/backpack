@@ -3,6 +3,10 @@
 ## UNRELEASED
 _Nothing Yet_
 
+**Fixed:**
+- bpk-component-horizontal-nav:
+  - Explicitly set the border radius to 0 for BpkHorizontalNavItem.
+
 ## 2017-10-24 - Android support for button component
 
 **Fixed:**
