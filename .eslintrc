@@ -10,22 +10,7 @@
     "import/no-extraneous-dependencies": 0,
     "react/prefer-stateless-function": [2, { "ignorePureComponents": true }],
 
-    // We've decided we don't want this for now as it makes writing JSX more painful.
-    // See https://github.com/airbnb/javascript/issues/1584#issuecomment-335667272
-    "function-paren-newline": 0,
-
-    // False positive on custom propTypes + isRequired. https://github.com/yannickcr/eslint-plugin-react/issues/1389
-    "react/no-typos": 0,
-
-    // See https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/339
-    "jsx-a11y/anchor-is-valid": ["error", {
-      "components": ["Link"],
-      "specialLink": ["to"],
-      "aspects": ["noHref", "invalidHref", "preferButton"],
-    }],
-
     // See https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/282
-    // We should probably change our code to adhere to the standard here.
     "jsx-a11y/label-has-for": [ 2, {
       "components": [ "Label" ],
       "required": {
