@@ -6,6 +6,9 @@
 - react-native-bpk-component-ticket:
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/ticket
   - _Note to Backpack squad members: This is still private so keep the versions below `1.0.0`_
+  
+- bpk-animate-height:
+  - New `onAnimationComplete` function prop which is invoked when expand / collapse completes.
 
 ## 2017-11-16 - New platform specific extensions for react native tokens
 
