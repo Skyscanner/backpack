@@ -6,6 +6,12 @@
 - react-native-bpk-component-ticket:
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/ticket
   - _Note to Backpack squad members: This is still private so keep the versions below `1.0.0`_
+  
+- bpk-animate-height:
+  - New `onAnimationComplete` function prop which is invoked when expand / collapse completes.
+
+- bpk-component-banner-alert:
+  - New "dismissable" and "animate on enter" configurations, both of which are animated. See http://backpack.prod.aws.skyscnr.com/components/web/banner-alerts
 
 ## 2017-11-16 - New platform specific extensions for react native tokens
 

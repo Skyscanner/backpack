@@ -5,6 +5,8 @@
 Note: This was forked from https://github.com/Stanko/react-animate-height. We have added functionality to
 set the display property of the container to `display: none;` when the height is equal to 0.
 
+More information on the easing values can be found at [http://easings.net/](http://easings.net/)
+
 ## Installation
 
 ```sh
@@ -43,10 +45,11 @@ class AnimateHeightContainer extends Component {
 
 ## Props
 
-| Property    | PropType         | Required | Default Value |
-| ----------- | ---------------- | -------- | ------------- |
-| children    | node             | true     | -             |
-| duration    | number           | true     | -             |
-| height      | string or number | true     | -             |
-| easing      | string           | false    | 'ease'        |
-| style       | object           | false    | {}            |
+| Property            | PropType         | Required | Default Value |
+| ------------------- | ---------------- | -------- | ------------- |
+| children            | node             | true     | -             |
+| duration            | number           | true     | -             |
+| height              | string or number | true     | -             |
+| easing              | string           | false    | 'ease'        |
+| onAnimationComplete | function         | false    | null          |
+| style               | object           | false    | {}            |
