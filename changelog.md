@@ -1,7 +1,11 @@
 # Backpack changelog
 
 ## UNRELEASED
-_Nothing Yet_
+
+**Fixed:**
+  - bpk-component-icon:
+  - bpk-svgs:
+    - React svgs are now functional components as opposed to class components
 
 ## 2017-10-26 - Fix for Chrome 62 border radius leak
 

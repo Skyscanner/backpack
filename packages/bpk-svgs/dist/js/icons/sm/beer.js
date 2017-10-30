@@ -1,10 +1,14 @@
-import React from "react";
-export default class SVG extends React.Component {
-  render() {
-    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style={{
-      width: "1.125rem",
-      height: "1.125rem"
-    }} {...this.props}><path d="M15 5V2.5c0-.3-.2-.5-.5-.5h-10c-.3 0-.5.2-.5.5V20c0 1.1.9 2 2 2h7c1.1 0 2-.9 2-2v-5c2.8 0 5-2.2 5-5s-2.2-5-5-5zM6 18.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-14c0-.3.2-.5.5-.5s.5.2.5.5v14zm2 0c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-14c0-.3.2-.5.5-.5s.5.2.5.5v14zm2 0c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-14c0-.3.2-.5.5-.5s.5.2.5.5v14zm5-5.5V7c1.7 0 3 1.3 3 3s-1.3 3-3 3z" /></svg>;
-  }
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-}
+import React from "react";
+export default ((_ref) => {
+  let {
+    styles = {}
+  } = _ref,
+      props = _objectWithoutProperties(_ref, ["styles"]);
+
+  return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style={{
+    width: "1.125rem",
+    height: "1.125rem"
+  }} {...props}><path d="M15 5V2.5c0-.3-.2-.5-.5-.5h-10c-.3 0-.5.2-.5.5V20c0 1.1.9 2 2 2h7c1.1 0 2-.9 2-2v-5c2.8 0 5-2.2 5-5s-2.2-5-5-5zM6 18.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-14c0-.3.2-.5.5-.5s.5.2.5.5v14zm2 0c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-14c0-.3.2-.5.5-.5s.5.2.5.5v14zm2 0c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-14c0-.3.2-.5.5-.5s.5.2.5.5v14zm5-5.5V7c1.7 0 3 1.3 3 3s-1.3 3-3 3z" /></svg>;
+});
