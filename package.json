@@ -97,6 +97,7 @@
     "marked": "^0.3.6",
     "merge-stream": "^1.0.1",
     "node-sass": "^4.5.3",
+    "postcss-flexbugs-fixes": "^3.2.0",
     "postcss-loader": "^2.0.8",
     "prop-types": "^15.5.10",
     "punycode": "^2.1.0",
