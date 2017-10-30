@@ -7,26 +7,31 @@ exports[`BpkStarRating should render correctly if you give it more than the max 
 >
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-1"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-2"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-3"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-4"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-5"
     large={false}
     type="full"
   />
@@ -40,26 +45,31 @@ exports[`BpkStarRating should render correctly with "large" attribute 1`] = `
 >
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-1"
     large={true}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-2"
     large={true}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-3"
     large={true}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-4"
     large={true}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-5"
     large={true}
     type="full"
   />
@@ -73,41 +83,49 @@ exports[`BpkStarRating should render correctly with "maxRating" attribute 1`] = 
 >
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-1"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-2"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-3"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-4"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-5"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-6"
     large={false}
     type="empty"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-7"
     large={false}
     type="empty"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-8"
     large={false}
     type="empty"
   />
@@ -121,26 +139,31 @@ exports[`BpkStarRating should render correctly with 0 stars 1`] = `
 >
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-1"
     large={false}
     type="empty"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-2"
     large={false}
     type="empty"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-3"
     large={false}
     type="empty"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-4"
     large={false}
     type="empty"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-5"
     large={false}
     type="empty"
   />
@@ -154,26 +177,31 @@ exports[`BpkStarRating should render correctly with 3 stars 1`] = `
 >
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-1"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-2"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-3"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-4"
     large={false}
     type="empty"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-5"
     large={false}
     type="empty"
   />
@@ -187,26 +215,31 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
 >
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-1"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-2"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-3"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-4"
     large={false}
     type="half"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-5"
     large={false}
     type="empty"
   />
@@ -220,26 +253,31 @@ exports[`BpkStarRating should render correctly with 5 stars 1`] = `
 >
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-1"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-2"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-3"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-4"
     large={false}
     type="full"
   />
   <withRtlSupport(BpkStar)
     className={null}
+    key="star-5"
     large={false}
     type="full"
   />

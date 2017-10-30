@@ -6,6 +6,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
   onMouseLeave={[Function]}
 >
   <BpkInteractiveStar
+    key="star-1"
     label="1 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -16,6 +17,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
     value={1}
   />
   <BpkInteractiveStar
+    key="star-2"
     label="2 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -26,6 +28,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
     value={2}
   />
   <BpkInteractiveStar
+    key="star-3"
     label="3 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -36,6 +39,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
     value={3}
   />
   <BpkInteractiveStar
+    key="star-4"
     label="4 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -46,6 +50,7 @@ exports[`BpkInteractiveStarRating should render 4 stars based on hoverRating as 
     value={4}
   />
   <BpkInteractiveStar
+    key="star-5"
     label="5 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -64,6 +69,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
   onMouseLeave={[Function]}
 >
   <BpkInteractiveStar
+    key="star-1"
     label="1 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -74,6 +80,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
     value={1}
   />
   <BpkInteractiveStar
+    key="star-2"
     label="2 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -84,6 +91,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
     value={2}
   />
   <BpkInteractiveStar
+    key="star-3"
     label="3 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -94,6 +102,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
     value={3}
   />
   <BpkInteractiveStar
+    key="star-4"
     label="4 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -104,6 +113,7 @@ exports[`BpkInteractiveStarRating should render correctly if you give it more th
     value={4}
   />
   <BpkInteractiveStar
+    key="star-5"
     label="5 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -122,6 +132,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
   onMouseLeave={[Function]}
 >
   <BpkInteractiveStar
+    key="star-1"
     label="1 out of 5 stars"
     large={true}
     name="my-rating_rating"
@@ -132,6 +143,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
     value={1}
   />
   <BpkInteractiveStar
+    key="star-2"
     label="2 out of 5 stars"
     large={true}
     name="my-rating_rating"
@@ -142,6 +154,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
     value={2}
   />
   <BpkInteractiveStar
+    key="star-3"
     label="3 out of 5 stars"
     large={true}
     name="my-rating_rating"
@@ -152,6 +165,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
     value={3}
   />
   <BpkInteractiveStar
+    key="star-4"
     label="4 out of 5 stars"
     large={true}
     name="my-rating_rating"
@@ -162,6 +176,7 @@ exports[`BpkInteractiveStarRating should render correctly with "large" attribute
     value={4}
   />
   <BpkInteractiveStar
+    key="star-5"
     label="5 out of 5 stars"
     large={true}
     name="my-rating_rating"
@@ -180,6 +195,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
   onMouseLeave={[Function]}
 >
   <BpkInteractiveStar
+    key="star-1"
     label="1 out of 8 stars"
     large={false}
     name="my-rating_rating"
@@ -190,6 +206,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     value={1}
   />
   <BpkInteractiveStar
+    key="star-2"
     label="2 out of 8 stars"
     large={false}
     name="my-rating_rating"
@@ -200,6 +217,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     value={2}
   />
   <BpkInteractiveStar
+    key="star-3"
     label="3 out of 8 stars"
     large={false}
     name="my-rating_rating"
@@ -210,6 +228,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     value={3}
   />
   <BpkInteractiveStar
+    key="star-4"
     label="4 out of 8 stars"
     large={false}
     name="my-rating_rating"
@@ -220,6 +239,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     value={4}
   />
   <BpkInteractiveStar
+    key="star-5"
     label="5 out of 8 stars"
     large={false}
     name="my-rating_rating"
@@ -230,6 +250,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     value={5}
   />
   <BpkInteractiveStar
+    key="star-6"
     label="6 out of 8 stars"
     large={false}
     name="my-rating_rating"
@@ -240,6 +261,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     value={6}
   />
   <BpkInteractiveStar
+    key="star-7"
     label="7 out of 8 stars"
     large={false}
     name="my-rating_rating"
@@ -250,6 +272,7 @@ exports[`BpkInteractiveStarRating should render correctly with "maxRating" attri
     value={7}
   />
   <BpkInteractiveStar
+    key="star-8"
     label="8 out of 8 stars"
     large={false}
     name="my-rating_rating"
@@ -268,6 +291,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
   onMouseLeave={[Function]}
 >
   <BpkInteractiveStar
+    key="star-1"
     label="1 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -278,6 +302,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
     value={1}
   />
   <BpkInteractiveStar
+    key="star-2"
     label="2 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -288,6 +313,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
     value={2}
   />
   <BpkInteractiveStar
+    key="star-3"
     label="3 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -298,6 +324,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
     value={3}
   />
   <BpkInteractiveStar
+    key="star-4"
     label="4 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -308,6 +335,7 @@ exports[`BpkInteractiveStarRating should render correctly with 0 stars 1`] = `
     value={4}
   />
   <BpkInteractiveStar
+    key="star-5"
     label="5 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -326,6 +354,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
   onMouseLeave={[Function]}
 >
   <BpkInteractiveStar
+    key="star-1"
     label="1 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -336,6 +365,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
     value={1}
   />
   <BpkInteractiveStar
+    key="star-2"
     label="2 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -346,6 +376,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
     value={2}
   />
   <BpkInteractiveStar
+    key="star-3"
     label="3 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -356,6 +387,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
     value={3}
   />
   <BpkInteractiveStar
+    key="star-4"
     label="4 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -366,6 +398,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3 stars 1`] = `
     value={4}
   />
   <BpkInteractiveStar
+    key="star-5"
     label="5 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -384,6 +417,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
   onMouseLeave={[Function]}
 >
   <BpkInteractiveStar
+    key="star-1"
     label="1 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -394,6 +428,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
     value={1}
   />
   <BpkInteractiveStar
+    key="star-2"
     label="2 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -404,6 +439,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
     value={2}
   />
   <BpkInteractiveStar
+    key="star-3"
     label="3 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -414,6 +450,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
     value={3}
   />
   <BpkInteractiveStar
+    key="star-4"
     label="4 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -424,6 +461,7 @@ exports[`BpkInteractiveStarRating should render correctly with 3.5 stars 1`] = `
     value={4}
   />
   <BpkInteractiveStar
+    key="star-5"
     label="5 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -442,6 +480,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
   onMouseLeave={[Function]}
 >
   <BpkInteractiveStar
+    key="star-1"
     label="1 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -452,6 +491,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
     value={1}
   />
   <BpkInteractiveStar
+    key="star-2"
     label="2 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -462,6 +502,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
     value={2}
   />
   <BpkInteractiveStar
+    key="star-3"
     label="3 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -472,6 +513,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
     value={3}
   />
   <BpkInteractiveStar
+    key="star-4"
     label="4 out of 5 stars"
     large={false}
     name="my-rating_rating"
@@ -482,6 +524,7 @@ exports[`BpkInteractiveStarRating should render correctly with 5 stars 1`] = `
     value={4}
   />
   <BpkInteractiveStar
+    key="star-5"
     label="5 out of 5 stars"
     large={false}
     name="my-rating_rating"
