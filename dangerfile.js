@@ -21,7 +21,7 @@
 // See http://danger.systems/js if you're not sure what this is.
 
 import fs from 'fs';
-import includes from 'lodash.includes';
+import { includes } from 'lodash';
 import { danger, fail, warn, message } from 'danger';
 
 const createdFiles = danger.git.created_files;
