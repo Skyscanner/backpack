@@ -69,6 +69,7 @@ export const BARCHARTS = '/components/web/barcharts';
 export const STAR_RATING = '/components/web/star-rating';
 export const BREAKPOINTS = '/components/web/breakpoints';
 export const HORIZONTAL_GRID = '/components/web/horizontal-grid';
+export const SLIDERS = '/components/web/sliders';
 
 // components/native/
 export const NATIVE_BANNER_ALERT = '/components/native/banner-alerts';
