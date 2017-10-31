@@ -4,6 +4,8 @@ exports[`Android BpkAnimateHeight should render correctly collapsed 1`] = `
 <View
   animationDuration={200}
   collapsable={undefined}
+  collapseDelay={0}
+  expandDelay={0}
   style={
     Object {
       "height": 1,
@@ -42,6 +44,8 @@ exports[`Android BpkAnimateHeight should render correctly expanded 1`] = `
 <View
   animationDuration={200}
   collapsable={undefined}
+  collapseDelay={0}
+  expandDelay={0}
   style={
     Object {
       "height": 1,
@@ -80,6 +84,8 @@ exports[`Android BpkAnimateHeight should render correctly with n children 1`] = 
 <View
   animationDuration={200}
   collapsable={undefined}
+  collapseDelay={0}
+  expandDelay={0}
   style={
     Object {
       "height": 1,
@@ -138,6 +144,8 @@ exports[`Android BpkAnimateHeight should render correctly with user styling padd
 <View
   animationDuration={200}
   collapsable={undefined}
+  collapseDelay={0}
+  expandDelay={0}
   style={
     Object {
       "height": 1,

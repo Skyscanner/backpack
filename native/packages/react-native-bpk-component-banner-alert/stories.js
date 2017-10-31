@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
+import PropTypes from 'prop-types';
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { StyleSheet, View, Platform } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
+import BpkButton from 'react-native-bpk-component-button';
 import BpkBannerAlert, { ALERT_TYPES } from './index';
 
 const tokens = Platform.select({
@@ -42,61 +44,55 @@ const styles = StyleSheet.create({
   },
 });
 
-class ExpandableBannerAlert extends React.Component {
+class BpkBannerAlertFadeDemo extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      expanded: false,
+      bannerAlertCount: 0,
     };
 
-    this.onAction = this.onAction.bind(this);
+    this.addBannerAlert = this.addBannerAlert.bind(this);
   }
 
-  onAction() {
-    this.setState({ expanded: !this.state.expanded });
+  addBannerAlert() {
+    this.setState({
+      bannerAlertCount: this.state.bannerAlertCount + 1,
+    });
   }
 
   render() {
     return (
-      <BpkBannerAlert
-        {...this.props}
-        onAction={this.onAction}
-        expanded={this.state.expanded}
-      />
+      <View>
+        <BpkButton
+          title="Add banner alert!"
+          onPress={this.addBannerAlert}
+          style={styles.bannerAlert}
+        />
+        <View>
+          {[...Array(this.state.bannerAlertCount)].map((e, i) => (
+            <BpkBannerAlert
+              key={i.toString()}
+              style={this.props.style}
+              message={this.props.message}
+              type={this.props.type}
+              fadeIn
+              dismissable
+              dismissButtonLabel={this.props.actionButtonLabel}
+            />
+        ))}
+        </View>
+      </View>
     );
   }
 }
 
-// eslint-disable-next-line react/no-multi-comp
-class DismissableBannerAlert extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      exists: true,
-    };
-
-    this.onAction = this.onAction.bind(this);
-  }
-
-  onAction() {
-    this.setState({ exists: false });
-  }
-
-  render() {
-    if (this.state.exists) {
-      return (
-        <BpkBannerAlert
-          {...this.props}
-          onAction={this.onAction}
-          dismissable
-        />
-      );
-    }
-    return null;
-  }
-}
+BpkBannerAlertFadeDemo.propTypes = {
+  actionButtonLabel: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]).isRequired,
+  type: PropTypes.string.isRequired,
+};
 
 storiesOf('BpkBannerAlert', module)
   .add('docs:banner-alerts', () => (
@@ -111,13 +107,14 @@ storiesOf('BpkBannerAlert', module)
         type={ALERT_TYPES.SUCCESS}
         message="Successful alert."
       />
-      <DismissableBannerAlert
+      <BpkBannerAlert
+        dismissable
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
         message="Warn alert with dismiss option."
         actionButtonLabel="Dismiss"
       />
-      <ExpandableBannerAlert
+      <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="Error alert with more information."
@@ -128,7 +125,7 @@ storiesOf('BpkBannerAlert', module)
           Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
           Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
-      </ExpandableBannerAlert>
+      </BpkBannerAlert>
     </View>
   ))
   .add('docs:default', () => (
@@ -155,37 +152,9 @@ storiesOf('BpkBannerAlert', module)
       />
     </View>
   ))
-  .add('docs:dismissable', () => (
-    <View>
-      <DismissableBannerAlert
-        style={styles.bannerAlert}
-        type={ALERT_TYPES.NEUTRAL}
-        message="Neutral alert with dismiss option."
-        actionButtonLabel="Dismiss"
-      />
-      <DismissableBannerAlert
-        style={styles.bannerAlert}
-        type={ALERT_TYPES.SUCCESS}
-        message="Successful alert with dismiss option."
-        actionButtonLabel="Dismiss"
-      />
-      <DismissableBannerAlert
-        style={styles.bannerAlert}
-        type={ALERT_TYPES.WARN}
-        message="Warn alert with dismiss option."
-        actionButtonLabel="Dismiss"
-      />
-      <DismissableBannerAlert
-        style={styles.bannerAlert}
-        type={ALERT_TYPES.ERROR}
-        message="Error alert with dismiss option."
-        actionButtonLabel="Dismiss"
-      />
-    </View>
-  ))
   .add('docs:expandable', () => (
-    <View>
-      <ExpandableBannerAlert
+    <View style={styles.container}>
+      <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.NEUTRAL}
         message="Neutral alert with more information."
@@ -196,8 +165,8 @@ storiesOf('BpkBannerAlert', module)
           Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
           Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
-      </ExpandableBannerAlert>
-      <ExpandableBannerAlert
+      </BpkBannerAlert>
+      <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
         message="Successful alert with more information."
@@ -208,8 +177,8 @@ storiesOf('BpkBannerAlert', module)
           Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
           Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
-      </ExpandableBannerAlert>
-      <ExpandableBannerAlert
+      </BpkBannerAlert>
+      <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
         message="Warn alert with more information."
@@ -220,8 +189,8 @@ storiesOf('BpkBannerAlert', module)
           Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
           Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
-      </ExpandableBannerAlert>
-      <ExpandableBannerAlert
+      </BpkBannerAlert>
+      <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="Error alert with more information."
@@ -232,8 +201,48 @@ storiesOf('BpkBannerAlert', module)
           Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
           Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
-      </ExpandableBannerAlert>
+      </BpkBannerAlert>
     </View>
+  ))
+  .add('docs:dismissable', () => (
+    <View style={styles.container}>
+      <BpkBannerAlert
+        dismissable
+        style={styles.bannerAlert}
+        type={ALERT_TYPES.NEUTRAL}
+        message="Neutral alert with dismiss option."
+        actionButtonLabel="Dismiss"
+      />
+      <BpkBannerAlert
+        dismissable
+        style={styles.bannerAlert}
+        type={ALERT_TYPES.SUCCESS}
+        message="Successful alert with dismiss option."
+        actionButtonLabel="Dismiss"
+      />
+      <BpkBannerAlert
+        dismissable
+        style={styles.bannerAlert}
+        type={ALERT_TYPES.WARN}
+        message="Warn alert with dismiss option."
+        actionButtonLabel="Dismiss"
+      />
+      <BpkBannerAlert
+        dismissable
+        style={styles.bannerAlert}
+        type={ALERT_TYPES.ERROR}
+        message="Error alert with dismiss option."
+        actionButtonLabel="Dismiss"
+      />
+    </View>
+  ))
+  .add('docs:fadeIn', () => (
+    <BpkBannerAlertFadeDemo
+      style={styles.bannerAlert}
+      type={ALERT_TYPES.NEUTRAL}
+      message="Neutral alert with dismiss option."
+      actionButtonLabel="Dismiss"
+    />
   ))
   .add('docs:edge-cases', () => {
     const message = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.

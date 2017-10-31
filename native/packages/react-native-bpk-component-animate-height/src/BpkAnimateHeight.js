@@ -48,13 +48,14 @@ class BpkAnimateHeight extends React.Component {
 
     this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
     this.setExpandedHeight = this.setExpandedHeight.bind(this);
-    this.resize = this.resize.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.expand = this.expand.bind(this);
+    this.collapse = this.collapse.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.expanded !== this.state.expanded) {
-      this.state.expanded = nextProps.expanded;
-      this.resize();
+      this.toggle();
     }
   }
 
@@ -64,24 +65,50 @@ class BpkAnimateHeight extends React.Component {
       // if the component has started expanded, we should now set the height of the container
       // why on earth does a value of 1 instead of 0 make this break!
       height: new Animated.Value(expandedImmediately ? height : 0),
+      expanded: expandedImmediately,
       heightSet: true,
       expandedHeight: height,
     });
   }
 
-  resize() {
+  toggle() {
+    if (this.state.expanded) {
+      this.collapse();
+    } else {
+      this.expand();
+    }
+  }
+
+  expand() {
     // overflow: hidden is not properly supported on Android,
     // which causes animation to look shoddy.
     // See https://facebook.github.io/react-native/releases/0.49/docs/layout-props.html#overflow
     const animationDuration = Platform.OS === 'ios' ? this.props.animationDuration : 0;
-
-    const finalValue = this.state.expanded ? this.state.expandedHeight : this.state.collapsedHeight;
+    this.state.expanded = true;
 
     Animated.timing(
       this.state.height,
       {
-        toValue: finalValue,
+        toValue: this.state.expandedHeight,
         duration: animationDuration,
+        delay: this.props.expandDelay,
+      },
+    ).start();
+  }
+
+  collapse() {
+    // overflow: hidden is not properly supported on Android,
+    // which causes animation to look shoddy.
+    // See https://facebook.github.io/react-native/releases/0.49/docs/layout-props.html#overflow
+    const animationDuration = Platform.OS === 'ios' ? this.props.animationDuration : 0;
+    this.state.expanded = false;
+
+    Animated.timing(
+      this.state.height,
+      {
+        toValue: this.state.collapsedHeight,
+        duration: animationDuration,
+        delay: this.props.collapseDelay,
       },
     ).start();
   }
@@ -114,11 +141,15 @@ BpkAnimateHeight.propTypes = {
   animationDuration: PropTypes.number,
   expanded: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
+  expandDelay: PropTypes.number,
+  collapseDelay: PropTypes.number,
   style: ViewPropTypes.style,
 };
 
 BpkAnimateHeight.defaultProps = {
   animationDuration: parseInt(animationDurationSm, 10),
+  expandDelay: 0,
+  collapseDelay: 0,
   style: null,
 };
 
