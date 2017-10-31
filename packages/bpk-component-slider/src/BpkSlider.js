@@ -25,6 +25,12 @@ import STYLES from './bpk-slider.scss';
 
 const getClassName = cssModules(STYLES);
 
+const getScriptDirection = () => {
+  if (typeof document === 'undefined') { return null; }
+  const html = document.querySelector('html');
+  return window.getComputedStyle(html, null).getPropertyValue('direction');
+};
+
 const BpkSlider = (props) => {
   const {
     min,
@@ -38,6 +44,7 @@ const BpkSlider = (props) => {
     onAfterChange,
   } = props;
 
+  const invert = getScriptDirection() === 'rtl';
   const sliderClass = [getClassName('bpk-slider')];
   const handleClass = [getClassName('bpk-slider__handle')];
   const barClass = [getClassName('bpk-slider__bar')];
@@ -54,6 +61,7 @@ const BpkSlider = (props) => {
       value={value}
       minDistance={minDistance}
       withBars
+      invert={invert}
       className={sliderClass.join(' ')}
       handleClassName={handleClass.join(' ')}
       handleActiveClassName={getClassName('bpk-slider__handle--active')}

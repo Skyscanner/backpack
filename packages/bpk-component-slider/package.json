@@ -19,5 +19,8 @@
     "bpk-tokens": "^26.4.5",
     "prop-types": "^15.5.8",
     "react-slider": "^0.9.0"
+  },
+  "devDependencies": {
+    "bpk-component-rtl-toggle": "^1.0.28"
   }
 }
