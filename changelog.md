@@ -2,20 +2,19 @@
 
 ## UNRELEASED
 
-**Fixed:**
-- bpk-component-icon:
-- bpk-svgs:
-  - React svgs are now functional components as opposed to class components
+**Added:**
+- New slider component, see http://backpack.prod.aws.skyscnr.com/components/web/sliders
 
-- bpk-mixins:
-- bpk-component-select:
+## 2017-10-31 - Fix for vertical alignment of text in select inputs
+
+**Fixed:**
+- bpk-mixins: 17.0.9 => 17.0.10
+- bpk-component-select: 2.1.33 => 2.1.34
   - Fixed text vertical alignment
 
-## 2017-10-30 - Added new slider component
-
-**Added:**
-- New component `BpkSlider`, see
-  http://backpack.prod.aws.skyscnr.com/components/web/sliders
+- bpk-component-icon: 3.14.4 => 3.14.5
+- bpk-svgs: 5.11.4 => 5.11.5
+  - React svgs are now functional components as opposed to class components
 
 ## 2017-10-26 - Fix for Chrome 62 border radius leak
 
