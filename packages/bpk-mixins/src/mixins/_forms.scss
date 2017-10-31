@@ -244,6 +244,7 @@
   background: $bpk-color-white url(map-get($bpk-icons-sm, arrow-down-gray-700)) no-repeat right $bpk-spacing-sm center;
   background-size: $bpk-spacing-md $bpk-spacing-md;
   color: $bpk-select-color;
+  line-height: $bpk-line-height-base - (2 * $bpk-select-border-width);
   appearance: none;
 
   @include bpk-rtl {

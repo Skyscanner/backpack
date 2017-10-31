@@ -3,9 +3,13 @@
 ## UNRELEASED
 
 **Fixed:**
-  - bpk-component-icon:
-  - bpk-svgs:
-    - React svgs are now functional components as opposed to class components
+- bpk-component-icon:
+- bpk-svgs:
+  - React svgs are now functional components as opposed to class components
+
+- bpk-mixins:
+- bpk-component-select:
+  - Fixed text vertical alignment
 
 ## 2017-10-30 - Added new slider component
 
