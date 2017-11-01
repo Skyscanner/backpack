@@ -1,0 +1,21 @@
+{
+  "name": "react-native-bpk-component-spinner",
+  "version": "0.0.0",
+  "main": "index.js",
+  "description": "Backpack React Native spinner component.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^16.0.0-alpha.1",
+    "react-native": ">= 0.47.0"
+  },
+  "dependencies": {
+    "bpk-tokens": "^26.4.4",
+    "prop-types": "^15.5.8",
+    "react-native-bpk-theming": "^1.0.12"
+  }
+}
