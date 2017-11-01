@@ -16,6 +16,12 @@
     "ZINDEX_TOOLTIP": {
       "value": "{!ZINDEX_TOOLTIP}"
     },
+    "ZINDEX_MODAL_SCRIM": {
+      "value": "{!ZINDEX_SCRIM}",
+      "meta": {
+        "deprecated": true
+      }
+    },
     "ZINDEX_SCRIM": {
       "value": "{!ZINDEX_SCRIM}"
     },

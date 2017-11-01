@@ -238,6 +238,10 @@ export const gridContainerPadding = "1.5rem";
 export const gridContainerMobilePadding = ".75rem";
 export const iconSizeSm = "1.125rem";
 export const iconSizeLg = "1.5rem";
+export const modalScrimBackgroundColor = "rgb(178, 174, 189)";
+export const modalScrimInitialOpacity = "0";
+export const modalScrimOpacity = ".7";
+export const modalScrimMobileOpacity = "1";
 export const modalBackgroundColor = "rgb(255, 255, 255)";
 export const modalInitialOpacity = "0";
 export const modalOpacity = "1";
@@ -356,6 +360,7 @@ export const textXxlLetterSpacing = "normal";
 export const zindexAutosuggest = "900";
 export const zindexPopover = "900";
 export const zindexTooltip = "900";
+export const zindexModalScrim = "1000";
 export const zindexScrim = "1000";
 export const zindexModal = "1100";
 export const animations = {
@@ -608,6 +613,10 @@ iconSizeSm,
 iconSizeLg,
 };
 export const modals = {
+modalScrimBackgroundColor,
+modalScrimInitialOpacity,
+modalScrimOpacity,
+modalScrimMobileOpacity,
 modalBackgroundColor,
 modalInitialOpacity,
 modalOpacity,
@@ -752,6 +761,7 @@ export const zIndices = {
 zindexAutosuggest,
 zindexPopover,
 zindexTooltip,
+zindexModalScrim,
 zindexScrim,
 zindexModal,
 };

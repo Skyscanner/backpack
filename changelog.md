@@ -4,7 +4,17 @@
 
 **Added:**
 - New slider component, see http://backpack.prod.aws.skyscnr.com/components/web/sliders
-- Renamed `bpk-modal-scrim` to `bpk-scrim`, and `BpkModalScrim` to `BpkScrim`  
+
+**Changed:**
+- bpk-component-modal:
+    - Renamed `bpk-modal-scrim` to `bpk-scrim`, and `BpkModalScrim` to `BpkScrim`
+- bpk-tokens and bpk-mixins:
+    - Deprecated:
+        - `$bpk-modal-scrim-background-color` in favour of `$bpk-scrim-background-color`
+        - `$bpk-modal-scrim-initial-opacity` in favour of `$bpk-scrim-initial-opacity`
+        - `$bpk-modal-scrim-opacity` in favour of `$bpk-scrim-opacity`
+        - `$bpk-modal-scrim-mobile-opacity` in favour of `$bpk-scrim-mobile-opacity`
+        - `$bpk-zindex-modal-scrim` in favour of `$bpk-zindex-scrim`
 
 ## 2017-10-31 - Fix for vertical alignment of text in select inputs
 

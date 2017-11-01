@@ -2165,6 +2165,45 @@
       },
       "name": "ICON_SIZE_LG"
     },
+    "MODAL_SCRIM_BACKGROUND_COLOR": {
+      "category": "modals",
+      "value": "rgb(178, 174, 189)",
+      "type": "color",
+      "meta": {
+        "deprecated": true
+      },
+      ".alias": {
+        "value": "#B2AEBD"
+      },
+      "name": "MODAL_SCRIM_BACKGROUND_COLOR"
+    },
+    "MODAL_SCRIM_INITIAL_OPACITY": {
+      "category": "modals",
+      "value": "0",
+      "type": "number",
+      "meta": {
+        "deprecated": true
+      },
+      "name": "MODAL_SCRIM_INITIAL_OPACITY"
+    },
+    "MODAL_SCRIM_OPACITY": {
+      "category": "modals",
+      "value": ".7",
+      "type": "number",
+      "meta": {
+        "deprecated": true
+      },
+      "name": "MODAL_SCRIM_OPACITY"
+    },
+    "MODAL_SCRIM_MOBILE_OPACITY": {
+      "category": "modals",
+      "value": "1",
+      "type": "number",
+      "meta": {
+        "deprecated": true
+      },
+      "name": "MODAL_SCRIM_MOBILE_OPACITY"
+    },
     "MODAL_BACKGROUND_COLOR": {
       "category": "modals",
       "value": "rgb(255, 255, 255)",
@@ -3116,6 +3155,18 @@
       },
       "name": "ZINDEX_TOOLTIP"
     },
+    "ZINDEX_MODAL_SCRIM": {
+      "type": "number",
+      "category": "z-indices",
+      "value": "1000",
+      "meta": {
+        "deprecated": true
+      },
+      ".alias": {
+        "value": "1000"
+      },
+      "name": "ZINDEX_MODAL_SCRIM"
+    },
     "ZINDEX_SCRIM": {
       "type": "number",
       "category": "z-indices",
@@ -3357,6 +3408,10 @@
     "GRID_CONTAINER_MOBILE_PADDING",
     "ICON_SIZE_SM",
     "ICON_SIZE_LG",
+    "MODAL_SCRIM_BACKGROUND_COLOR",
+    "MODAL_SCRIM_INITIAL_OPACITY",
+    "MODAL_SCRIM_OPACITY",
+    "MODAL_SCRIM_MOBILE_OPACITY",
     "MODAL_BACKGROUND_COLOR",
     "MODAL_INITIAL_OPACITY",
     "MODAL_OPACITY",
@@ -3475,6 +3530,7 @@
     "ZINDEX_AUTOSUGGEST",
     "ZINDEX_POPOVER",
     "ZINDEX_TOOLTIP",
+    "ZINDEX_MODAL_SCRIM",
     "ZINDEX_SCRIM",
     "ZINDEX_MODAL"
   ]

@@ -240,6 +240,10 @@ module.exports = {
   gridContainerMobilePadding: ".75rem",
   iconSizeSm: "1.125rem",
   iconSizeLg: "1.5rem",
+  modalScrimBackgroundColor: "rgb(178, 174, 189)",
+  modalScrimInitialOpacity: "0",
+  modalScrimOpacity: ".7",
+  modalScrimMobileOpacity: "1",
   modalBackgroundColor: "rgb(255, 255, 255)",
   modalInitialOpacity: "0",
   modalOpacity: "1",
@@ -358,6 +362,7 @@ module.exports = {
   zindexAutosuggest: "900",
   zindexPopover: "900",
   zindexTooltip: "900",
+  zindexModalScrim: "1000",
   zindexScrim: "1000",
   zindexModal: "1100"
 };
