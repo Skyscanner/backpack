@@ -5,6 +5,10 @@
 **Added:**
 - New slider component, see http://backpack.prod.aws.skyscnr.com/components/web/sliders
 
+**Fixed:**
+- bpk-component-popover:
+  - Fix for target element refocus after close
+
 ## 2017-10-31 - Fix for vertical alignment of text in select inputs
 
 **Fixed:**
