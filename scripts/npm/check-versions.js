@@ -18,22 +18,35 @@
 
 /* eslint-disable no-console */
 
+const semver = require('semver');
 const { execSync } = require('child_process');
 
-const checkVersion = (command, name, expected) => {
+const pkg = require('./../../package.json');
+
+const checkVersion = (engineName, command) => {
   let version = null;
 
   try {
     version = execSync(command).toString().replace('v', '').trim();
   } catch (e) {
-    console.log(`Unable to get ${name} version!  😱`);
+    console.log(`Unable to get ${engineName} version!  😱`);
     console.log('');
     process.exit(1);
   }
 
-  if (version !== expected) {
+  let expected = null;
+
+  try {
+    expected = pkg.engines[engineName];
+  } catch (e) {
+    console.log(`There is no engine named ${engineName} specified in package.json!  😱`);
+    console.log('');
+    process.exit(1);
+  }
+
+  if (!semver.satisfies(version, expected)) {
     const contributingLink = 'https://github.com/Skyscanner/backpack/blob/master/contributing.md#getting-started';
-    console.log(`Expected ${name} version ${expected}, but got ${version}.  😱`);
+    console.log(`Expected ${engineName} version to match ${expected}, but got ${version}.  😱`);
     console.log('');
     console.log(`Please follow Backpack's contributing guide (see ${contributingLink}).`);
     console.log('');
@@ -44,8 +57,8 @@ const checkVersion = (command, name, expected) => {
 console.log('Checking Node & npm versions...');
 console.log('');
 
-checkVersion('node --version', 'Node', '8.6.0');
-checkVersion('npm --version', 'npm', '5.4.2');
+checkVersion('node', 'node --version');
+checkVersion('npm', 'npm --version');
 
 console.log('All good.  👍');
 console.log('');
