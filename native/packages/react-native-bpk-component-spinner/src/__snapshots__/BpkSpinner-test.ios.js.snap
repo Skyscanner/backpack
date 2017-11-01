@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkSpinner should disable theming if the required attribute is omitted 1`] = `
+<ActivityIndicator
+  animating={true}
+  color="rgb(0, 178, 214)"
+  hidesWhenStopped={true}
+  size="large"
+  theme={Object {}}
+/>
+`;
+
+exports[`iOS BpkSpinner should render correctly 1`] = `
+<ActivityIndicator
+  animating={true}
+  color="rgb(0, 178, 214)"
+  hidesWhenStopped={true}
+  size="large"
+  theme={null}
+/>
+`;
+
+exports[`iOS BpkSpinner should support the "small" property 1`] = `
+<ActivityIndicator
+  animating={true}
+  color="rgb(0, 178, 214)"
+  hidesWhenStopped={true}
+  size="small"
+  theme={null}
+/>
+`;
+
+exports[`iOS BpkSpinner should support theming 1`] = `
+<ActivityIndicator
+  animating={true}
+  color="red"
+  hidesWhenStopped={true}
+  size="large"
+  theme={
+    Object {
+      "spinnerPrimaryColor": "red",
+    }
+  }
+/>
+`;
+
+exports[`iOS BpkSpinner should support type="dark" 1`] = `
+<ActivityIndicator
+  animating={true}
+  color="rgb(82, 76, 97)"
+  hidesWhenStopped={true}
+  size="large"
+  theme={null}
+/>
+`;
+
+exports[`iOS BpkSpinner should support type="light" 1`] = `
+<ActivityIndicator
+  animating={true}
+  color="rgb(255, 255, 255)"
+  hidesWhenStopped={true}
+  size="large"
+  theme={null}
+/>
+`;
+
+exports[`iOS BpkSpinner should support type="primary" 1`] = `
+<ActivityIndicator
+  animating={true}
+  color="rgb(0, 178, 214)"
+  hidesWhenStopped={true}
+  size="large"
+  theme={null}
+/>
+`;

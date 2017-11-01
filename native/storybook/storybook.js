@@ -55,6 +55,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-button/stories');
   require('../packages/react-native-bpk-component-card/stories');
   require('../packages/react-native-bpk-component-icon/stories');
+  require('../packages/react-native-bpk-component-spinner/stories');
   require('../packages/react-native-bpk-component-text-input/stories');
   require('../packages/react-native-bpk-component-text/stories');
   require('../packages/react-native-bpk-theming/stories');
