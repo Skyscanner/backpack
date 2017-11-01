@@ -460,14 +460,6 @@ $bpk-icon-size-sm: 1.125rem !default;
 /// @group icons
 $bpk-icon-size-lg: 1.5rem !default;
 /// @group modals
-$bpk-modal-scrim-background-color: rgb(178, 174, 189) !default;
-/// @group modals
-$bpk-modal-scrim-initial-opacity: 0 !default;
-/// @group modals
-$bpk-modal-scrim-opacity: .7 !default;
-/// @group modals
-$bpk-modal-scrim-mobile-opacity: 1 !default;
-/// @group modals
 $bpk-modal-background-color: rgb(255, 255, 255) !default;
 /// @group modals
 $bpk-modal-initial-opacity: 0 !default;
@@ -485,6 +477,14 @@ $bpk-modal-close-icon-fill: rgb(129, 123, 143) !default;
 $bpk-modal-close-icon-hover-fill: rgb(82, 76, 97) !default;
 /// @group modals
 $bpk-modal-content-padding: .75rem !default;
+/// @group scrims
+$bpk-scrim-background-color: rgb(178, 174, 189) !default;
+/// @group scrims
+$bpk-scrim-initial-opacity: 0 !default;
+/// @group scrims
+$bpk-scrim-opacity: .7 !default;
+/// @group scrims
+$bpk-scrim-mobile-opacity: 1 !default;
 /// @group notifications
 $bpk-banner-alert-background-color: rgb(255, 255, 255) !default;
 /// @group notifications
@@ -696,6 +696,6 @@ $bpk-zindex-popover: 900 !default;
 /// @group z-indices
 $bpk-zindex-tooltip: 900 !default;
 /// @group z-indices
-$bpk-zindex-modal-scrim: 1000 !default;
+$bpk-zindex-scrim: 1000 !default;
 /// @group z-indices
 $bpk-zindex-modal: 1100 !default;

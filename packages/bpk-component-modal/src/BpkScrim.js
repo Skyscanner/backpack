@@ -19,18 +19,18 @@
 import React from 'react';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-modal-scrim.scss';
+import STYLES from './bpk-scrim.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkModalScrim = () => (
+const BpkScrim = () => (
   <TransitionInitialMount
-    appearClassName={getClassName('bpk-modal-scrim--appear')}
-    appearActiveClassName={getClassName('bpk-modal-scrim--appear-active')}
+    appearClassName={getClassName('bpk-scrim--appear')}
+    appearActiveClassName={getClassName('bpk-scrim--appear-active')}
     transitionTimeout={200}
   >
-    <div className={getClassName('bpk-modal-scrim')} />
+    <div className={getClassName('bpk-scrim')} />
   </TransitionInitialMount>
 );
 
-export default BpkModalScrim;
+export default BpkScrim;

@@ -18,12 +18,12 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import BpkModalScrim from './BpkModalScrim';
+import BpkScrim from './BpkScrim';
 
-describe('BpkModalScrim', () => {
+describe('BpkScrim', () => {
   it('should render correctly', () => {
     const tree = renderer.create(
-      <BpkModalScrim />,
+      <BpkScrim />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
