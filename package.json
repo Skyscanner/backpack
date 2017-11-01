@@ -7,7 +7,7 @@
     "npm": "^5.5.1"
   },
   "scripts": {
-    "preinstall": "node ./scripts/npm/check-versions.js",
+    "preinstall": "node -e \"$(curl -fsSL https://raw.githubusercontent.com/Skyscanner/ensure-node-env/master/dist/index.js)\"",
     "postinstall:native": "(cd ./native && npm install)",
     "postinstall": "npm run postinstall:native && npm run bootstrap",
     "bootstrap": "lerna bootstrap",
