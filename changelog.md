@@ -4,6 +4,7 @@
 
 **Added:**
 - New slider component, see http://backpack.prod.aws.skyscnr.com/components/web/sliders
+- Renamed `bpk-modal-scrim` to `bpk-scrim`, and `BpkModalScrim` to `BpkScrim`  
 
 ## 2017-10-31 - Fix for vertical alignment of text in select inputs
 
