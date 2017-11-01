@@ -15,6 +15,9 @@
 - bpk-component-icon: 3.14.4 => 3.14.5
 - bpk-svgs: 5.11.4 => 5.11.5
   - React svgs are now functional components as opposed to class components
+  - **NOTE:** If you have backpack icon components in your snapshots tests you will see some snapshot failures as a
+    result of this change. To minimise against such failures in the future, shallow rendering should be used. In this
+    particular example using shallow rendering would have resulted in `Component` showing up instead of `SVG`.
 
 ## 2017-10-26 - Fix for Chrome 62 border radius leak
 
