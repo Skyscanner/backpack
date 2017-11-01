@@ -144,7 +144,7 @@ npm run build:tokens
 
 This will output different formats from the source JSON, for example Sass variables, a JavaScript module, Android and iOS resources.
 
-### Sass mixins
+### Sass mixins
 
 Every *atom-level component* (buttons, form elements, icons, cf [Atomic Design system](https://confluence.skyscannertools.net/pages/viewpage.action?pageId=14123039)) should not only come as a React component, but also as a set of Sass mixins for easy adoption.
 
