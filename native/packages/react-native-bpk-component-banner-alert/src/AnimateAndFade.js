@@ -17,13 +17,15 @@
  */
 
 import {
-  View,
   Platform,
+  Animated,
 } from 'react-native';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
-import TransitionGroup, { FadeInOutTransition } from 'react-native-transitiongroup';
+// import TransitionGroup, { FadeInOutTransition } from 'react-native-transitiongroup';
+// import FadeTransition from './FadeTransition';
+
 
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
@@ -43,14 +45,15 @@ class AnimateAndFade extends Component {
 
     this.state = {
       visible: !this.props.onEnter,
+      progress: new Animated.Value(0.01),
     };
 
-    this.onToggle = this.onToggle.bind(this);
-    this.hide = this.hide.bind(this);
+    // this.onToggle = this.onToggle.bind(this);
     this.show = this.show.bind(this);
+    this.hide = this.hide.bind(this);
+    this.toggle = this.toggle.bind(this);
   }
 
-  // Ok - I'll admit that this is a hack.
   // It may look like a motorcycle, but it's a choppa, baby. It's Zed's. Zed's dead, baby. Zed's dead.
   // see https://stanko.github.io/react-rerender-in-component-did-mount/
   componentDidMount() {
@@ -62,70 +65,56 @@ class AnimateAndFade extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.show !== this.props.show) {
-      this.onToggle();
+    if (nextProps.show !== this.state.visible) {
+      this.toggle();
     }
   }
 
-  onToggle() {
+  toggle() {
     if (this.state.visible) {
       this.hide();
-    } else if (!this.state.visible) {
+    } else {
       this.show();
     }
   }
 
-  show() {
-    this.setState({
-      visible: true,
-    });
-  }
-
   hide() {
+    Animated.timing(
+      this.state.progress,
+      {
+        toValue: 0,
+        duration: this.props.onLeave ? fadeDuration : 0,
+      },
+    ).start();
     this.setState({
       visible: false,
     });
   }
 
+  show() {
+    Animated.timing(
+      this.state.progress,
+      {
+        toValue: 1,
+        duration: this.props.onEnter ? fadeDuration : 0,
+        delay: animateHeightDuration,
+      },
+    ).start();
+    this.setState({
+      visible: true,
+    });
+  }
+
   render() {
-    const { children } = this.props;
-    const showPlaceholder = !this.state.visible;
-
-    const fadingComponent = (
-      <TransitionGroup>
-        <FadeInOutTransition
-          inDuration={this.props.onEnter ? fadeDuration : 0}
-          outDuration={this.props.onLeave ? fadeDuration : 0}
-          inDelay={animateHeightDuration}
-          style={{ flex: 0 }}
-        >
-          {this.state.visible &&
-              children
-           }
-        </FadeInOutTransition>
-      </TransitionGroup>
-    );
-
-
-    // While the expanding animation takes place, we render the child element
-    // close to invisible. If we don't do this, the animate-height container
-    // will take on height 0, and will never expand to allow the children to fade in
-    const placeholder = (
-      <View style={{ opacity: showPlaceholder ? 0.01 : 1 }}>
-        {showPlaceholder &&
-              children
-            }
-      </View>
-    );
-
     return (
       <BpkAnimateHeight
         duration={animateHeightDuration}
         expanded={this.state.visible}
         collapseDelay={fadeDuration}
       >
-        {placeholder}
-        {fadingComponent}
+        <Animated.View style={{ opacity: this.state.progress }}>
+          {this.props.children}
+        </Animated.View>
       </BpkAnimateHeight>
     );
     /* eslint-enable */
@@ -140,7 +129,7 @@ AnimateAndFade.propTypes = {
 };
 
 AnimateAndFade.defaultProps = {
-  show: false,
+  show: true,
   children: null,
 };
 

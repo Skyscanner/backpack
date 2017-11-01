@@ -23,6 +23,7 @@ import { StyleSheet, View, Platform } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import BpkButton from 'react-native-bpk-component-button';
 import BpkBannerAlert, { ALERT_TYPES } from './index';
+import AnimateAndFade from './src/AnimateAndFade';
 
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
@@ -95,6 +96,9 @@ BpkBannerAlertFadeDemo.propTypes = {
 };
 
 storiesOf('BpkBannerAlert', module)
+  .add('docs:remove', () => (
+    <AnimateAndFadeDemo />
+  ))
   .add('docs:banner-alerts', () => (
     <View>
       <BpkBannerAlert
@@ -121,9 +125,9 @@ storiesOf('BpkBannerAlert', module)
         actionButtonLabel="Expand"
       >
         <BpkText textStyle="sm" style={styles.child}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
-          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
+            Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
+            Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
       </BpkBannerAlert>
     </View>

@@ -41,9 +41,8 @@ class BpkAnimateHeight extends React.Component {
     this.state = {
       expanded: null,
       expandedHeight: null,
-      collapsedHeight: 0,
-      height: new Animated.Value(1),
-      heightSet: false,
+      collapsedHeight: 0.01,
+      height: new Animated.Value(this.state.collapsedHeight),
     };
 
     this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
@@ -59,16 +58,14 @@ class BpkAnimateHeight extends React.Component {
     }
   }
 
-  setExpandedHeight(event, expandedImmediately) {
+  setExpandedHeight(event) {
     const { height } = event.nativeEvent.layout;
-    this.setState({
-      // if the component has started expanded, we should now set the height of the container
-      // why on earth does a value of 1 instead of 0 make this break!
-      height: new Animated.Value(expandedImmediately ? height : 0),
-      expanded: expandedImmediately,
-      heightSet: true,
-      expandedHeight: height,
-    });
+    if (height !== 0) {
+      this.setState({
+        expandedHeight: height,
+        height: this.state.expanded ? new Animated.Value(height) : new Animated.Value(this.state.collapsedHeight),
+      });
+    }
   }
 
   toggle() {
@@ -128,7 +125,7 @@ class BpkAnimateHeight extends React.Component {
         {...rest}
       >
         <View
-          onLayout={event => (this.state.heightSet ? undefined : this.setExpandedHeight(event, expanded))}
+          onLayout={event => (this.setExpandedHeight(event))}
         >
           {this.props.children}
         </View>
