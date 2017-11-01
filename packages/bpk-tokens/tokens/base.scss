@@ -485,6 +485,14 @@ $bpk-modal-close-icon-fill: rgb(129, 123, 143);
 $bpk-modal-close-icon-hover-fill: rgb(82, 76, 97);
 /// @group modals
 $bpk-modal-content-padding: .75rem;
+/// @group scrims
+$bpk-scrim-background-color: rgb(178, 174, 189);
+/// @group scrims
+$bpk-scrim-initial-opacity: 0;
+/// @group scrims
+$bpk-scrim-opacity: .7;
+/// @group scrims
+$bpk-scrim-mobile-opacity: 1;
 /// @group notifications
 $bpk-banner-alert-background-color: rgb(255, 255, 255);
 /// @group notifications
@@ -697,5 +705,7 @@ $bpk-zindex-popover: 900;
 $bpk-zindex-tooltip: 900;
 /// @group z-indices
 $bpk-zindex-modal-scrim: 1000;
+/// @group z-indices
+$bpk-zindex-scrim: 1000;
 /// @group z-indices
 $bpk-zindex-modal: 1100;

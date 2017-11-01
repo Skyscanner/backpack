@@ -253,6 +253,10 @@ module.exports = {
   modalCloseIconFill: "rgb(129, 123, 143)",
   modalCloseIconHoverFill: "rgb(82, 76, 97)",
   modalContentPadding: ".75rem",
+  scrimBackgroundColor: "rgb(178, 174, 189)",
+  scrimInitialOpacity: "0",
+  scrimOpacity: ".7",
+  scrimMobileOpacity: "1",
   bannerAlertBackgroundColor: "rgb(255, 255, 255)",
   bannerAlertHeaderPaddingY: ".375rem",
   bannerAlertHeaderPaddingX: ".75rem",
@@ -359,5 +363,6 @@ module.exports = {
   zindexPopover: "900",
   zindexTooltip: "900",
   zindexModalScrim: "1000",
+  zindexScrim: "1000",
   zindexModal: "1100"
 };

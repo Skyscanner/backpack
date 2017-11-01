@@ -279,7 +279,7 @@
     "ZINDEX_TOOLTIP": {
       "value": "900"
     },
-    "ZINDEX_MODAL_SCRIM": {
+    "ZINDEX_SCRIM": {
       "value": "1000"
     },
     "ZINDEX_MODAL": {
@@ -2169,6 +2169,9 @@
       "category": "modals",
       "value": "rgb(178, 174, 189)",
       "type": "color",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": "#B2AEBD"
       },
@@ -2178,18 +2181,27 @@
       "category": "modals",
       "value": "0",
       "type": "number",
+      "meta": {
+        "deprecated": true
+      },
       "name": "MODAL_SCRIM_INITIAL_OPACITY"
     },
     "MODAL_SCRIM_OPACITY": {
       "category": "modals",
       "value": ".7",
       "type": "number",
+      "meta": {
+        "deprecated": true
+      },
       "name": "MODAL_SCRIM_OPACITY"
     },
     "MODAL_SCRIM_MOBILE_OPACITY": {
       "category": "modals",
       "value": "1",
       "type": "number",
+      "meta": {
+        "deprecated": true
+      },
       "name": "MODAL_SCRIM_MOBILE_OPACITY"
     },
     "MODAL_BACKGROUND_COLOR": {
@@ -2266,6 +2278,33 @@
         "value": ".75rem"
       },
       "name": "MODAL_CONTENT_PADDING"
+    },
+    "SCRIM_BACKGROUND_COLOR": {
+      "category": "scrims",
+      "value": "rgb(178, 174, 189)",
+      "type": "color",
+      ".alias": {
+        "value": "#B2AEBD"
+      },
+      "name": "SCRIM_BACKGROUND_COLOR"
+    },
+    "SCRIM_INITIAL_OPACITY": {
+      "category": "scrims",
+      "value": "0",
+      "type": "number",
+      "name": "SCRIM_INITIAL_OPACITY"
+    },
+    "SCRIM_OPACITY": {
+      "category": "scrims",
+      "value": ".7",
+      "type": "number",
+      "name": "SCRIM_OPACITY"
+    },
+    "SCRIM_MOBILE_OPACITY": {
+      "category": "scrims",
+      "value": "1",
+      "type": "number",
+      "name": "SCRIM_MOBILE_OPACITY"
     },
     "BANNER_ALERT_BACKGROUND_COLOR": {
       "category": "notifications",
@@ -3120,10 +3159,22 @@
       "type": "number",
       "category": "z-indices",
       "value": "1000",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": "1000"
       },
       "name": "ZINDEX_MODAL_SCRIM"
+    },
+    "ZINDEX_SCRIM": {
+      "type": "number",
+      "category": "z-indices",
+      "value": "1000",
+      ".alias": {
+        "value": "1000"
+      },
+      "name": "ZINDEX_SCRIM"
     },
     "ZINDEX_MODAL": {
       "type": "number",
@@ -3370,6 +3421,10 @@
     "MODAL_CLOSE_ICON_FILL",
     "MODAL_CLOSE_ICON_HOVER_FILL",
     "MODAL_CONTENT_PADDING",
+    "SCRIM_BACKGROUND_COLOR",
+    "SCRIM_INITIAL_OPACITY",
+    "SCRIM_OPACITY",
+    "SCRIM_MOBILE_OPACITY",
     "BANNER_ALERT_BACKGROUND_COLOR",
     "BANNER_ALERT_HEADER_PADDING_Y",
     "BANNER_ALERT_HEADER_PADDING_X",
@@ -3476,6 +3531,7 @@
     "ZINDEX_POPOVER",
     "ZINDEX_TOOLTIP",
     "ZINDEX_MODAL_SCRIM",
+    "ZINDEX_SCRIM",
     "ZINDEX_MODAL"
   ]
 }

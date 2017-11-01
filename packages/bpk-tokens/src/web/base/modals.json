@@ -8,19 +8,31 @@
   "props": {
     "MODAL_SCRIM_BACKGROUND_COLOR": {
       "value": "{!GRAY_300}",
-      "type": "color"
+      "type": "color",
+      "meta": {
+        "deprecated": true
+      }
     },
     "MODAL_SCRIM_INITIAL_OPACITY": {
       "value": "0",
-      "type": "number"
+      "type": "number",
+      "meta": {
+        "deprecated": true
+      }
     },
     "MODAL_SCRIM_OPACITY": {
       "value": ".7",
-      "type": "number"
+      "type": "number",
+      "meta": {
+        "deprecated": true
+      }
     },
     "MODAL_SCRIM_MOBILE_OPACITY": {
       "value": "1",
-      "type": "number"
+      "type": "number",
+      "meta": {
+        "deprecated": true
+      }
     },
     "MODAL_BACKGROUND_COLOR": {
       "value": "{!WHITE}",

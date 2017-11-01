@@ -351,7 +351,7 @@
     "ZINDEX_TOOLTIP": {
       "value": "900"
     },
-    "ZINDEX_MODAL_SCRIM": {
+    "ZINDEX_SCRIM": {
       "value": "1000"
     },
     "ZINDEX_MODAL": {

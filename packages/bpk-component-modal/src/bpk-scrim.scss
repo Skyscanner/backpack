@@ -18,32 +18,32 @@
 
 @import '~bpk-mixins/index';
 
-.bpk-modal-scrim {
+.bpk-scrim {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: $bpk-zindex-modal-scrim;
+  z-index: $bpk-zindex-scrim;
   transition: opacity $bpk-duration-xs ease-in-out;
-  background-color: $bpk-modal-scrim-background-color;
-  opacity: $bpk-modal-scrim-opacity;
+  background-color: $bpk-scrim-background-color;
+  opacity: $bpk-scrim-opacity;
   overflow: hidden;
 
   @include bpk-breakpoint-mobile {
     background-color: $bpk-modal-background-color;
-    opacity: $bpk-modal-scrim-mobile-opacity;
+    opacity: $bpk-scrim-mobile-opacity;
   }
 
   &--appear {
-    opacity: $bpk-modal-scrim-initial-opacity;
+    opacity: $bpk-scrim-initial-opacity;
   }
 
   &--appear-active {
-    opacity: $bpk-modal-scrim-opacity;
+    opacity: $bpk-scrim-opacity;
 
     @include bpk-breakpoint-mobile {
-      opacity: $bpk-modal-scrim-mobile-opacity;
+      opacity: $bpk-scrim-mobile-opacity;
     }
   }
 }

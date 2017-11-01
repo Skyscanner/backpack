@@ -1,0 +1,26 @@
+{
+  "imports": [
+    "./aliases.json"
+  ],
+  "global": {
+    "category": "scrims"
+  },
+  "props": {
+    "SCRIM_BACKGROUND_COLOR": {
+      "value": "{!GRAY_300}",
+      "type": "color"
+    },
+    "SCRIM_INITIAL_OPACITY": {
+      "value": "0",
+      "type": "number"
+    },
+    "SCRIM_OPACITY": {
+      "value": ".7",
+      "type": "number"
+    },
+    "SCRIM_MOBILE_OPACITY": {
+      "value": "1",
+      "type": "number"
+    }
+  }
+}

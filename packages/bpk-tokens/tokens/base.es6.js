@@ -251,6 +251,10 @@ export const modalHeaderPadding = ".75rem";
 export const modalCloseIconFill = "rgb(129, 123, 143)";
 export const modalCloseIconHoverFill = "rgb(82, 76, 97)";
 export const modalContentPadding = ".75rem";
+export const scrimBackgroundColor = "rgb(178, 174, 189)";
+export const scrimInitialOpacity = "0";
+export const scrimOpacity = ".7";
+export const scrimMobileOpacity = "1";
 export const bannerAlertBackgroundColor = "rgb(255, 255, 255)";
 export const bannerAlertHeaderPaddingY = ".375rem";
 export const bannerAlertHeaderPaddingX = ".75rem";
@@ -357,6 +361,7 @@ export const zindexAutosuggest = "900";
 export const zindexPopover = "900";
 export const zindexTooltip = "900";
 export const zindexModalScrim = "1000";
+export const zindexScrim = "1000";
 export const zindexModal = "1100";
 export const animations = {
 durationXs,
@@ -622,6 +627,12 @@ modalCloseIconFill,
 modalCloseIconHoverFill,
 modalContentPadding,
 };
+export const scrims = {
+scrimBackgroundColor,
+scrimInitialOpacity,
+scrimOpacity,
+scrimMobileOpacity,
+};
 export const notifications = {
 bannerAlertBackgroundColor,
 bannerAlertHeaderPaddingY,
@@ -751,5 +762,6 @@ zindexAutosuggest,
 zindexPopover,
 zindexTooltip,
 zindexModalScrim,
+zindexScrim,
 zindexModal,
 };
