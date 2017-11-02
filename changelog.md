@@ -2,19 +2,20 @@
 
 ## UNRELEASED
 
+**Added:**
 - bpk-component-slider:
   - New component `BpkSlider`. See http://backpack.prod.aws.skyscnr.com/components/web/sliders
   - **NOTE:** Don't release until we have fixed RTL support
+
+**Fixed:**
+- bpk-component-popover:
+  - Fix for target element refocus after close
 
 ## 2017-11-02 - New React Native Spinner component
 
 **Added:**
 - react-native-bpk-component-spinner: 0.0.1 => 1.0.0
   - New component `BpkSpinner`. See http://backpack.prod.aws.skyscnr.com/components/native/spinners
-
-**Fixed:**
-- bpk-component-popover:
-  - Fix for target element refocus after close
 
 ## 2017-10-31 - Fix for vertical alignment of text in select inputs
 
