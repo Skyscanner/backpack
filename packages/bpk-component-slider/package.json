@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "bpk-component-slider",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Backpack slider component.",
   "main": "index.js",
   "repository": {
