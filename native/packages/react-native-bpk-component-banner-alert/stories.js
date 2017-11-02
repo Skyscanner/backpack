@@ -27,10 +27,7 @@ const tokens = Platform.select({
   android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
 })();
 
-const {
-  colorGray500,
-  spacingBase,
-} = tokens;
+const { spacingBase } = tokens;
 
 const styles = StyleSheet.create({
   container: {
@@ -42,7 +39,6 @@ const styles = StyleSheet.create({
     marginBottom: spacingBase,
   },
   child: {
-    color: colorGray500,
   },
 });
 
@@ -78,7 +74,7 @@ class DismissableBannerAlert extends React.Component {
     super();
 
     this.state = {
-      exists: false,
+      exists: true,
     };
 
     this.onAction = this.onAction.bind(this);
@@ -104,7 +100,7 @@ class DismissableBannerAlert extends React.Component {
 
 storiesOf('BpkBannerAlert', module)
   .add('docs:banner-alerts', () => (
-    <View style={styles.container}>
+    <View>
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.NEUTRAL}
@@ -136,7 +132,7 @@ storiesOf('BpkBannerAlert', module)
     </View>
   ))
   .add('docs:default', () => (
-    <View style={styles.container}>
+    <View>
       <BpkBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.NEUTRAL}
@@ -160,7 +156,7 @@ storiesOf('BpkBannerAlert', module)
     </View>
   ))
   .add('docs:dismissable', () => (
-    <View style={styles.container}>
+    <View>
       <DismissableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.NEUTRAL}
@@ -188,7 +184,7 @@ storiesOf('BpkBannerAlert', module)
     </View>
   ))
   .add('docs:expandable', () => (
-    <View style={styles.container}>
+    <View>
       <ExpandableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.NEUTRAL}
@@ -244,7 +240,7 @@ storiesOf('BpkBannerAlert', module)
     Quisque sagittis sagittis purus, id blandit ipsum.`;
 
     return (
-      <View style={styles.container}>
+      <View>
         <BpkBannerAlert
           style={styles.bannerAlert}
           type={ALERT_TYPES.NEUTRAL}
