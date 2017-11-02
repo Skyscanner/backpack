@@ -2,9 +2,15 @@
 
 ## UNRELEASED
 
+_Nothing yet!_
+
+## 2017-11-02 - New slider and spinner components
+
 **Added:**
-- New slider component, see http://backpack.prod.aws.skyscnr.com/components/web/sliders
-- New `react-native-bpk-component-spinner` component 
+- `bpk-component-slider`: 0.0.1 => 1.0.0
+ - New component `BpkSlider`. See http://backpack.prod.aws.skyscnr.com/components/web/sliders
+- `react-native-bpk-component-spinner`: 0.0.1 => 1.0.0
+ - New component `BpkSpinner`. See http://backpack.prod.aws.skyscnr.com/components/native/spinners
 
 ## 2017-10-31 - Fix for vertical alignment of text in select inputs
 
