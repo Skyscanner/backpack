@@ -81,6 +81,7 @@ import NativeButtonPage from './../pages/NativeButtonPage';
 import NativeCardsPage from './../pages/NativeCardsPage';
 import NativeIconsPage from './../pages/NativeIconsPage';
 import NativeInputPage from './../pages/NativeTextInputPage';
+import NativeSpinnerPage from './../pages/NativeSpinnerPage';
 import NativeTextPage from './../pages/NativeTextPage';
 
 import ResourcesPage from './../pages/ResourcesPage';
@@ -155,6 +156,7 @@ const Routes = (
         <Route path={ROUTES.NATIVE_CARDS} component={NativeCardsPage} />
         <Route path={ROUTES.NATIVE_ICONS} component={NativeIconsPage} />
         <Route path={ROUTES.NATIVE_INPUT} component={NativeInputPage} />
+        <Route path={ROUTES.NATIVE_SPINNER} component={NativeSpinnerPage} />
         <Route path={ROUTES.NATIVE_TEXT} component={NativeTextPage} />
       </Route>
       <Route path={ROUTES.UTILITIES}>

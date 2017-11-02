@@ -77,6 +77,7 @@ const links = [
       { id: 'NATIVE_CARDS', route: routes.NATIVE_CARDS, children: 'Cards' },
       { id: 'NATIVE_ICONS', route: routes.NATIVE_ICONS, children: 'Icons' },
       { id: 'NATIVE_INPUT', route: routes.NATIVE_INPUT, children: 'Text input' },
+      { id: 'NATIVE_SPINNER', route: routes.NATIVE_SPINNER, children: 'Spinners' },
       { id: 'NATIVE_TEXT', route: routes.NATIVE_TEXT, children: 'Text' },
       { id: 'NATIVE_TICKETS', route: null, children: 'Tickets' },
       { id: 'NATIVE_STAR_RATING', route: null, children: 'Star rating' },

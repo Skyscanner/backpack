@@ -53,13 +53,13 @@ const generateAllSpinnerTypes = small => (
       <StorySubheading>Primary (Default)</StorySubheading>
       <BpkSpinner small={small} />
     </View>
-    <StorySubheading>Light (background added for illustration)</StorySubheading>
-    <View style={[styles.dark, styles.bottomMargin]}>
-      <BpkSpinner type="light" small={small} />
-    </View>
     <View style={styles.bottomMargin}>
       <StorySubheading>Dark</StorySubheading>
       <BpkSpinner type="dark" small={small} />
+    </View>
+    <StorySubheading>Light</StorySubheading>
+    <View style={[styles.dark, styles.bottomMargin]}>
+      <BpkSpinner type="light" small={small} />
     </View>
   </View>
 );
@@ -76,19 +76,15 @@ const getThemedButtons = () => (
 );
 
 storiesOf('BpkSpinner', module)
-  .add('docs:primary', () => (
-    <BpkSpinner />
-  ))
-  .add('docs:light', () => (
-    <View style={styles.dark}>
-      <BpkSpinner type="light" />
+  .add('docs:default', () => (
+    <View>
+      {generateAllSpinnerTypes()}
     </View>
   ))
-  .add('docs:dark', () => (
-    <BpkSpinner type="dark" />
-  ))
   .add('docs:small', () => (
-    <BpkSpinner small />
+    <View>
+      {generateAllSpinnerTypes(true)}
+    </View>
   ))
   .add('docs:withTheme', () => (
     <View>
