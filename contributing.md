@@ -76,7 +76,7 @@ When you are ready to jump into code, use the following workflow to add new comp
 ## Getting started
 
 > Backpack development requires Node LTS and npm `^5.5.1`. [Nvm](https://github.com/creationix/nvm) users can run
-`nvm use` to switch to `lts/*`. [Nave](https://github.com/isaacs/nave) users can use `nave auto`. You can also
+`nvm use` to switch to `lts/carbon`. [Nave](https://github.com/isaacs/nave) users can use `nave auto`. You can also
 download Node LTS using [their website](https://nodejs.org/en/). To install npm `^5.5.1`,
 run `npm install --global npm@^5.5.1`.
 
