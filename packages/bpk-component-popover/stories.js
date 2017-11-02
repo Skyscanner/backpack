@@ -79,7 +79,12 @@ class PopoverContainer extends Component {
   }
 
   render() {
-    const { targetFunction, changeProps, ...rest } = this.props;
+    const {
+      targetFunction,
+      changeProps,
+      id,
+      ...rest
+    } = this.props;
     let target = null;
     let openButton = <BpkButton onClick={this.openPopover}> Open </BpkButton>;
 
@@ -95,7 +100,7 @@ class PopoverContainer extends Component {
       <div>
         {openButton}
         <BpkPopover
-          id="my-popover"
+          id={`my-popover-${id}`}
           target={target}
           onClose={this.closePopover}
           isOpen={this.state.isOpen}
@@ -132,6 +137,7 @@ class PopoverContainer extends Component {
 }
 
 PopoverContainer.propTypes = {
+  id: PropTypes.string.isRequired,
   changeProps: PropTypes.bool,
   targetFunction: PropTypes.func,
 };
@@ -141,25 +147,34 @@ PopoverContainer.defaultProps = {
   targetFunction: null,
 };
 
+const Spacer = props => (
+  <div
+    className={getClassName('bpk-popover-spacer')}
+    {...props}
+  />
+);
+
 storiesOf('bpk-component-popover', module)
   .add('Default', () => (
-    <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
-      <PopoverContainer />
-    </div>
+    <Spacer>
+      <PopoverContainer id="my-popover-1" />
+      <PopoverContainer id="my-popover-2" />
+    </Spacer>
   ))
   .add('With label as title', () => (
-    <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
-      <PopoverContainer labelAsTitle />
-    </div>
+    <Spacer>
+      <PopoverContainer id="my-popover" labelAsTitle />
+    </Spacer>
   ))
   .add('With label as title but close button text', () => (
-    <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
-      <PopoverContainer labelAsTitle closeButtonIcon={false} />
-    </div>
+    <Spacer>
+      <PopoverContainer id="my-popover" labelAsTitle closeButtonIcon={false} />
+    </Spacer>
   ))
   .add('On the side', () => (
-    <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
+    <Spacer>
       <PopoverContainer
+        id="my-popover"
         tetherOptions={{
           attachment: 'middle left',
           constraints: [
@@ -171,27 +186,28 @@ storiesOf('bpk-component-popover', module)
           ],
         }}
       />
-    </div>
+    </Spacer>
   ))
   .add('Attach to external element', () => (
-    <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
+    <Spacer>
       <div id="attachElement">Pop over attached here</div>
       <p>&nbsp; </p>
-      <PopoverContainer targetFunction={() => document.getElementById('attachElement')} />
-    </div>
+      <PopoverContainer id="my-popover" targetFunction={() => document.getElementById('attachElement')} />
+    </Spacer>
   ))
   .add('Not rendering if external element does not exist', () => (
-    <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
+    <Spacer>
       <div id="attachElement">Popover does not open</div>
       <p>&nbsp; </p>
-      <PopoverContainer targetFunction={() => document.getElementById('doesNotExist')} />
-    </div>
+      <PopoverContainer id="my-popover" targetFunction={() => document.getElementById('doesNotExist')} />
+    </Spacer>
   ))
   .add('Repositioning', () => (
     // This story demonstrates the popover repositioning itself when props change (including children).
-    <div style={{ height: '1000px', margin: '30px', textAlign: 'center' }}>
+    <Spacer>
       <Paragraph id="reposition-alt-target" style={{ float: 'right' }}>Different target</Paragraph>
       <PopoverContainer
+        id="my-popover"
         changeProps
         tetherOptions={{
           attachment: 'top center',
@@ -204,5 +220,5 @@ storiesOf('bpk-component-popover', module)
           ],
         }}
       />
-    </div>
+    </Spacer>
   ));

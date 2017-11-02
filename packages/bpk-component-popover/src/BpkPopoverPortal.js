@@ -33,6 +33,7 @@ const onOpen = (popoverElement, targetElement) => {
   // If the target element does _not_ exist, the Portal does not open
   // Therefore we also shouldn't store and scope the focus
   if (targetElement) {
+    targetElement.focus();
     focusStore.storeFocus();
     focusScope.scopeFocus(popoverElement);
   }
