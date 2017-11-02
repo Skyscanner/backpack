@@ -7,8 +7,11 @@
   - New component `BpkSlider`. See http://backpack.prod.aws.skyscnr.com/components/web/sliders
   - **NOTE:** Don't release until we have fixed RTL support
 
+## 2017-11-02 - Popover fix for target element refocus
+
 **Fixed:**
-- bpk-component-popover:
+- bpk-component-datepicker: 7.1.21 => 7.1.22
+- bpk-component-popover: 1.2.33 => 1.2.34
   - Fix for target element refocus after close
 
 ## 2017-11-02 - New React Native Spinner component
