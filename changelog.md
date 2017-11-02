@@ -2,6 +2,9 @@
 
 ## UNRELEASED
 
+**Added:**
+- bpk-scrim-utils: 1.0.0
+  - New higher order component `withScrim`
 - react-native-bpk-component-horizontal-nav
  - New component `BpkHorizontalNav`. See http://backpack.prod.aws.skyscnr.com/components/native/horizontal-nav
 

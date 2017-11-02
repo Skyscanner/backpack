@@ -19,9 +19,11 @@
 import { Portal } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { withScrim } from 'bpk-scrim-utils';
 
-import BpkScrim from './BpkScrim';
 import BpkModalDialog from './BpkModalDialog';
+
+const ScrimBpkModalDialog = withScrim(BpkModalDialog);
 
 const BpkModal = (props) => {
   const {
@@ -32,10 +34,7 @@ const BpkModal = (props) => {
 
   return (
     <Portal isOpen={isOpen} onClose={onClose} target={target}>
-      <div>
-        <BpkScrim />
-        <BpkModalDialog onClose={onClose} {...rest} />
-      </div>
+      <ScrimBpkModalDialog onClose={onClose} padded {...rest} />
     </Portal>
   );
 };
