@@ -2,6 +2,9 @@
 
 ## UNRELEASED
 
+- react-native-bpk-component-horizontal-nav
+ - New component `BpkHorizontalNav`. See http://backpack.prod.aws.skyscnr.com/components/native/horizontal-nav
+
 ## 2017-11-07 - New slider component
 
 **Added:**
