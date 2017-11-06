@@ -17,6 +17,7 @@
  */
 
 import React from 'react';
+import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 import BpkInput, { INPUT_TYPES } from './BpkInput';
 
@@ -150,5 +151,22 @@ describe('BpkInput', () => {
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  it('should expose input reference to parent components', () => {
+    let inputRef;
+    const storeInputReference = (ref) => {
+      inputRef = ref;
+    };
+    const tree = mount(
+      <BpkInput
+        id="test"
+        name="test"
+        value=""
+        inputRef={storeInputReference}
+      />,
+    );
+    const input = tree.find('input').at(0).instance();
+    expect(input).toEqual(inputRef);
   });
 });

@@ -35,7 +35,7 @@ export const INPUT_TYPES = {
 const BpkInput = (props) => {
   const classNames = [getClassName('bpk-input')];
   const {
-    valid, large, docked, dockedFirst, dockedMiddle, dockedLast, className, ...rest
+    valid, large, docked, dockedFirst, dockedMiddle, dockedLast, className, inputRef, ...rest
   } = props;
 
   // Explicit check for false primitive value as undefined is
@@ -55,7 +55,7 @@ const BpkInput = (props) => {
   if (dockedLast) { classNames.push(getClassName('bpk-input--docked-last')); }
   if (className) { classNames.push(className); }
 
-  return <input className={classNames.join(' ')} aria-invalid={isInvalid} {...rest} />;
+  return <input className={classNames.join(' ')} ref={inputRef} aria-invalid={isInvalid} {...rest} />;
 };
 
 BpkInput.propTypes = {
@@ -76,6 +76,7 @@ BpkInput.propTypes = {
   dockedFirst: PropTypes.bool,
   dockedMiddle: PropTypes.bool,
   dockedLast: PropTypes.bool,
+  inputRef: PropTypes.func,
 };
 
 BpkInput.defaultProps = {
@@ -87,6 +88,7 @@ BpkInput.defaultProps = {
   dockedFirst: false,
   dockedMiddle: false,
   dockedLast: false,
+  inputRef: null,
 };
 
 export default BpkInput;
