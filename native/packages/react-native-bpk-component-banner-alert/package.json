@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-banner-alert",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "main": "index.js",
   "description": "Backpack React Native banner alert component.",
   "repository": {
