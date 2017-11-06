@@ -6,19 +6,23 @@
 - bpk-component-slider:
   - New component `BpkSlider`. See http://backpack.prod.aws.skyscnr.com/components/web/sliders
 
+## 2017-11-06 - Internet explorer compat and other bugfixes
+
 **Fixed:**
-- bpk-component-calendar:
+- bpk-component-calendar: 4.1.20 => 4.1.21
+- bpk-component-datepicker: 7.1.22 => 7.1.23
   - Fix for weekend separator not showing in Internet Explorer and Edge.
 
-- react-native-bpk-component-banner-alert:
+- react-native-bpk-component-banner-alert: 1.1.5 => 1.1.6
   - Fix icon color of success alert.
   - User style now takes precedence over encapsualted style.
 
-- bpk-component-banner-alert:
-- bpk-component-form-validation:
-- bpk-component-accordion:
-- bpk-animate-height:
-- bpk-component-grid:
+- bpk-animate-height: 1.0.30 => 1.0.31
+- bpk-component-accordion: 1.1.37 => 1.1.38
+- bpk-component-banner-alert: 1.3.5 => 1.3.6
+- bpk-component-fieldset: 1.0.30 => 1.0.31
+- bpk-component-form-validation: 1.0.30 => 1.0.31
+- bpk-component-grid: 1.1.35 => 1.1.36
   - Removed usage of `Number.isNaN` & `Number.isFinite` which are unsupported in IE
 
 ## 2017-11-02 - Popover fix for target element refocus
