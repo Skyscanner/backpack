@@ -24,7 +24,10 @@ import STYLES from './bpk-grid-column.scss';
 
 const getClassName = cssModules(STYLES);
 
-const isNumeric = n => !Number.isNaN(parseFloat(n)) && Number.isFinite(n);
+// Number properties compat is low, so we'll stick to the globals
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN#Browser_compatibility
+// eslint-disable-next-line no-restricted-globals
+const isNumeric = n => !isNaN(parseFloat(n)) && isFinite(n);
 
 const BpkGridColumn = (props) => {
   const {

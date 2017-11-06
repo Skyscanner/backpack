@@ -14,6 +14,13 @@
   - Fix icon color of success alert.
   - User style now takes precedence over encapsualted style.
 
+- bpk-component-banner-alert:
+- bpk-component-form-validation:
+- bpk-component-accordion:
+- bpk-animate-height:
+- bpk-component-grid:
+  - Removed usage of `Number.isNaN` & `Number.isFinite` which are unsupported in IE
+
 ## 2017-11-02 - Popover fix for target element refocus
 
 **Fixed:**
