@@ -299,6 +299,14 @@ const commonTests = () => {
         children: null,
       }, 'dismissable', 'BpkBannerAlert')).toEqual(false);
     });
+
+    it('should not throw if alert type not provided', () => {
+      jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
+      const willThrow = () => renderer.create(
+        <BpkBannerAlert message="Neutral alert." />,
+      );
+      expect(willThrow).not.toThrow();
+    });
   });
 };
 
