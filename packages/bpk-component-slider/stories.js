@@ -19,6 +19,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
+import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 import BpkSlider from './index';
 
 class SliderContainer extends Component {
@@ -59,27 +60,38 @@ class SliderContainer extends Component {
   }
 }
 
+const EnhancedSlider = updateOnDirectionChange(SliderContainer);
+
 storiesOf('bpk-component-slider', module)
   .add('Simple slider', () => (
-    <SliderContainer />
+    <EnhancedSlider
+      min={0}
+      value={50}
+    />
   ))
   .add('Simple large slider', () => (
-    <SliderContainer
+    <EnhancedSlider
+      min={0}
+      value={50}
       large
     />
   ))
   .add('Simple slider with steps', () => (
-    <SliderContainer
+    <EnhancedSlider
+      min={0}
+      value={50}
       step={10}
     />
   ))
   .add('Range slider', () => (
-    <SliderContainer
+    <EnhancedSlider
+      min={0}
       value={[20, 80]}
     />
   ))
   .add('Range slider with minimum distance', () => (
-    <SliderContainer
+    <EnhancedSlider
+      min={0}
       value={[20, 80]}
       minDistance={10}
     />

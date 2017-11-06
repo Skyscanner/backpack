@@ -5,7 +5,6 @@
 **Added:**
 - bpk-component-slider:
   - New component `BpkSlider`. See http://backpack.prod.aws.skyscnr.com/components/web/sliders
-  - **NOTE:** Don't release until we have fixed RTL support
 
 **Fixed:**
 - bpk-component-calendar:

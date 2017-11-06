@@ -18,10 +18,12 @@
 
 import React from 'react';
 import sliderReadme from 'bpk-component-slider/readme.md';
+import { updateOnDirectionChange } from 'bpk-component-rtl-toggle';
 import SliderContainer from './SliderContainer';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
 
+const EnhancedSlider = updateOnDirectionChange(SliderContainer);
 const components = [
   {
     id: 'default',
@@ -32,7 +34,7 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <SliderContainer />,
+      <EnhancedSlider />,
     ],
   },
   {
@@ -44,7 +46,7 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <SliderContainer large />,
+      <EnhancedSlider large />,
     ],
   },
   {
@@ -56,7 +58,7 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <SliderContainer
+      <EnhancedSlider
         value={[20, 80]}
         minDistance={0}
       />,
@@ -71,7 +73,7 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <SliderContainer
+      <EnhancedSlider
         value={[20, 80]}
         minDistance={0}
         step={10}
@@ -87,7 +89,7 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <SliderContainer
+      <EnhancedSlider
         value={[20, 80]}
         minDistance={15}
       />,
