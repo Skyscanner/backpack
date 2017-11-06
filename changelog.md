@@ -9,9 +9,10 @@
 **Fixed:**
 - bpk-component-calendar:
   - Fix for weekend separator not showing in Internet Explorer and Edge.
-  
+
 - react-native-bpk-component-banner-alert:
   - Fix icon color of success alert.
+  - User style now takes precedence over encapsualted style.
 
 ## 2017-11-02 - Popover fix for target element refocus
 

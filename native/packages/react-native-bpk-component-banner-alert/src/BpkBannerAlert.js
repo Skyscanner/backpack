@@ -140,6 +140,29 @@ const styles = StyleSheet.create({
   },
 });
 
+const alertTypeStyleMap = {
+  [ALERT_TYPES.SUCCESS]: {
+    iconSource: 'tick-circle',
+    outerStyle: styles.outerContainerSuccess,
+    iconStyle: styles.iconSuccess,
+  },
+  [ALERT_TYPES.WARN]: {
+    iconSource: 'information-circle',
+    outerStyle: styles.outerContainerWarn,
+    iconStyle: styles.iconWarn,
+  },
+  [ALERT_TYPES.ERROR]: {
+    iconSource: 'information-circle',
+    outerStyle: styles.outerContainerError,
+    iconStyle: styles.iconError,
+  },
+  [ALERT_TYPES.NEUTRAL]: {
+    iconSource: 'information-circle',
+    outerStyle: styles.outerContainerNeutral,
+    iconStyle: styles.iconNeutral,
+  },
+};
+
 const BpkBannerAlert = (props) => {
   const {
     type,
@@ -155,63 +178,16 @@ const BpkBannerAlert = (props) => {
 
   const expandable = children !== null;
 
-  let iconSource = null;
-  let buttonIconSource = null;
-  let iconStyle = null;
-  let buttonIconStyle = null;
-
   const outerStyleFinal = [styles.outerContainer];
   const contentPaddedStyle = [styles.bannerContainerPadded];
   const expandedChildContainer = [styles.expandedChildContainer];
+  const { iconSource, outerStyle, iconStyle } = alertTypeStyleMap[type];
 
-  if (style) {
-    outerStyleFinal.push(style);
-  }
+  outerStyleFinal.push(outerStyle);
+  if (style) { outerStyleFinal.push(style); }
+  if (dismissable) { contentPaddedStyle.push(styles.bannerContainerPaddedDismissable); }
 
-  if (type === ALERT_TYPES.SUCCESS) {
-    iconSource = 'tick-circle';
-    outerStyleFinal.push(styles.outerContainerSuccess);
-    iconStyle = styles.iconSuccess;
-  } else if (type === ALERT_TYPES.WARN) {
-    iconSource = 'information-circle';
-    outerStyleFinal.push(styles.outerContainerWarn);
-    iconStyle = styles.iconWarn;
-  } else if (type === ALERT_TYPES.ERROR) {
-    iconSource = 'information-circle';
-    outerStyleFinal.push(styles.outerContainerError);
-    iconStyle = styles.iconError;
-  } else if (type === ALERT_TYPES.NEUTRAL) {
-    iconSource = 'information-circle';
-    outerStyleFinal.push(styles.outerContainerNeutral);
-    iconStyle = styles.iconNeutral;
-  }
-
-  if (dismissable) {
-    buttonIconSource = 'close';
-    buttonIconStyle = styles.buttonClose;
-    contentPaddedStyle.push(styles.bannerContainerPaddedDismissable);
-  } else if (children !== null) {
-    buttonIconStyle = styles.buttonExpand;
-    if (expanded) {
-      buttonIconSource = 'chevron-up';
-    } else {
-      buttonIconSource = 'chevron-down';
-    }
-  }
-
-  const actionComponent = (
-    <View>
-      {buttonIconSource &&
-        <BpkIcon
-          style={buttonIconStyle}
-          icon={buttonIconSource}
-          small
-        />
-    }
-    </View>
-  );
-
-  let banner = (
+  const banner = (
     <View style={[contentPaddedStyle]}>
       <BpkIcon
         style={iconStyle}
@@ -219,28 +195,30 @@ const BpkBannerAlert = (props) => {
         small
       />
       <BpkText textStyle="sm" style={styles.text}>{message}</BpkText>
-      {expandable && actionComponent}
+      {expandable && (
+        <BpkIcon
+          style={styles.buttonExpand}
+          icon={expanded ? 'chevron-up' : 'chevron-down'}
+          small
+        />
+      )}
     </View>
   );
-
-  if (expandable) {
-    banner = (
-      <TouchableHighlight
-        accessibilityComponentType="button"
-        onPress={onAction}
-        underlayColor={underlayColor}
-        accessibilityLabel={actionButtonLabel}
-        style={styles.bannerContainer}
-      >
-        {banner}
-      </TouchableHighlight>
-    );
-  }
 
   return (
     <View style={outerStyleFinal} {...rest} >
       <View style={styles.bannerContainer} >
-        {banner}
+        {expandable ? (
+          <TouchableHighlight
+            accessibilityComponentType="button"
+            onPress={onAction}
+            underlayColor={underlayColor}
+            accessibilityLabel={actionButtonLabel}
+            style={styles.bannerContainer}
+          >
+            {banner}
+          </TouchableHighlight>
+        ) : banner}
         {dismissable && (
           <TouchableHighlight
             accessibilityComponentType="button"
@@ -249,7 +227,13 @@ const BpkBannerAlert = (props) => {
             accessibilityLabel={actionButtonLabel}
             style={styles.closeButtonContainer}
           >
-            {actionComponent}
+            <View>
+              <BpkIcon
+                style={styles.buttonClose}
+                icon="close"
+                small
+              />
+            </View>
           </TouchableHighlight>
         )}
       </View>
