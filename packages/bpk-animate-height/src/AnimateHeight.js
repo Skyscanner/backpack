@@ -19,7 +19,10 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-const isNumber = n => !Number.isNaN(parseFloat(n)) && Number.isFinite(n);
+// Number properties compat is low, so we'll stick to the globals
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN#Browser_compatibility
+// eslint-disable-next-line no-restricted-globals
+const isNumber = n => !isNaN(parseFloat(n)) && isFinite(n);
 
 const isTransitionEndSupported = () => !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
 
