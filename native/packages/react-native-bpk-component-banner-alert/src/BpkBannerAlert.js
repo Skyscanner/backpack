@@ -20,6 +20,7 @@ import {
   View,
   Platform,
   StyleSheet,
+  ViewPropTypes,
   TouchableHighlight,
 } from 'react-native';
 import React from 'react';
@@ -29,7 +30,7 @@ import BpkText from 'react-native-bpk-component-text';
 import BpkIcon from 'react-native-bpk-component-icon';
 import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
 
-import { stylePropType, dismissablePropType } from './customPropTypes';
+import { dismissablePropType } from './customPropTypes';
 
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
@@ -140,7 +141,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const alertTypeStyleMap = {
+const ALERT_TYPE_STYLES = {
   [ALERT_TYPES.SUCCESS]: {
     iconSource: 'tick-circle',
     outerStyle: styles.outerContainerSuccess,
@@ -178,13 +179,13 @@ const BpkBannerAlert = (props) => {
 
   const expandable = children !== null;
 
-  const outerStyleFinal = [styles.outerContainer];
+  const outerStyle = [styles.outerContainer];
   const contentPaddedStyle = [styles.bannerContainerPadded];
   const expandedChildContainer = [styles.expandedChildContainer];
-  const { iconSource, outerStyle, iconStyle } = alertTypeStyleMap[type];
+  const { iconSource, outerStyle: outerStyleForType, iconStyle } = ALERT_TYPE_STYLES[type] || {};
 
-  outerStyleFinal.push(outerStyle);
-  if (style) { outerStyleFinal.push(style); }
+  outerStyle.push(outerStyleForType);
+  if (style) { outerStyle.push(style); }
   if (dismissable) { contentPaddedStyle.push(styles.bannerContainerPaddedDismissable); }
 
   const banner = (
@@ -206,7 +207,7 @@ const BpkBannerAlert = (props) => {
   );
 
   return (
-    <View style={outerStyleFinal} {...rest} >
+    <View style={outerStyle} {...rest} >
       <View style={styles.bannerContainer} >
         {expandable ? (
           <TouchableHighlight
@@ -248,19 +249,19 @@ BpkBannerAlert.propTypes = {
   message: PropTypes.string.isRequired,
   type: PropTypes.oneOf(Object.keys(ALERT_TYPES).map(key => ALERT_TYPES[key])).isRequired,
   children: PropTypes.node,
+  style: ViewPropTypes.style,
   dismissable: dismissablePropType,
   expanded: PropTypes.bool,
   onAction: PropTypes.func,
   actionButtonLabel: PropTypes.string,
-  style: stylePropType,
 };
 
 BpkBannerAlert.defaultProps = {
   children: null,
+  style: null,
   dismissable: false,
   expanded: false,
   onAction: () => null,
-  style: null,
   actionButtonLabel: null,
 };
 
