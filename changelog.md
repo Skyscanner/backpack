@@ -2,12 +2,14 @@
 
 ## UNRELEASED
 
+## 2017-11-07 - New slider component
+
 **Added:**
-- bpk-component-slider:
+- bpk-component-slider: 1.0.0
   - New component `BpkSlider`. See http://backpack.prod.aws.skyscnr.com/components/web/sliders
 
 **Fixed:**
-- bpk-component-input:
+- bpk-component-input: 3.2.36 => 3.2.37
   - Expose BpkInput underlying DOM node ref to parent components.
 
 ## 2017-11-06 - Internet explorer compat and other bugfixes
