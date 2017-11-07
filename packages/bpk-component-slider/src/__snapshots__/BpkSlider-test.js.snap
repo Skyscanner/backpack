@@ -222,7 +222,7 @@ exports[`BpkSlider should render correctly with a "step" attribute 1`] = `
 
 exports[`BpkSlider should render correctly with a minimum distance between controls 1`] = `
 <div
-  className="bpk-slider bpk-slider--range bpk-slider--large"
+  className="bpk-slider bpk-slider--range"
   onClick={[Function]}
   onMouseDown={[Function]}
   style={
@@ -268,7 +268,7 @@ exports[`BpkSlider should render correctly with a minimum distance between contr
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={10}
-    className="bpk-slider__handle bpk-slider__handle--large bpk-slider__handle bpk-slider__handle--large-0 "
+    className="bpk-slider__handle bpk-slider__handle-0 "
     onFocus={[Function]}
     onMouseDown={[Function]}
     onTouchStart={[Function]}
@@ -287,7 +287,7 @@ exports[`BpkSlider should render correctly with a minimum distance between contr
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={90}
-    className="bpk-slider__handle bpk-slider__handle--large bpk-slider__handle bpk-slider__handle--large-1 "
+    className="bpk-slider__handle bpk-slider__handle-1 "
     onFocus={[Function]}
     onMouseDown={[Function]}
     onTouchStart={[Function]}
@@ -307,7 +307,7 @@ exports[`BpkSlider should render correctly with a minimum distance between contr
 
 exports[`BpkSlider should render correctly with a range of values 1`] = `
 <div
-  className="bpk-slider bpk-slider--range bpk-slider--large"
+  className="bpk-slider bpk-slider--range"
   onClick={[Function]}
   onMouseDown={[Function]}
   style={
@@ -353,7 +353,7 @@ exports[`BpkSlider should render correctly with a range of values 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={10}
-    className="bpk-slider__handle bpk-slider__handle--large bpk-slider__handle bpk-slider__handle--large-0 "
+    className="bpk-slider__handle bpk-slider__handle-0 "
     onFocus={[Function]}
     onMouseDown={[Function]}
     onTouchStart={[Function]}
@@ -372,7 +372,7 @@ exports[`BpkSlider should render correctly with a range of values 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={90}
-    className="bpk-slider__handle bpk-slider__handle--large bpk-slider__handle bpk-slider__handle--large-1 "
+    className="bpk-slider__handle bpk-slider__handle-1 "
     onFocus={[Function]}
     onMouseDown={[Function]}
     onTouchStart={[Function]}
