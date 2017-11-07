@@ -40,6 +40,7 @@ export default () => (
 | dockedFirst  | bool                 | false     | false            |
 | dockedMiddle | bool                 | false     | false            |
 | dockedLast   | bool                 | false     | false            |
+| inputRef     | func                 | false     | null             |
 
 Additionally, all native `<input />` attributes such as `placeholder` and `onChange` are supported.
 

@@ -6,6 +6,10 @@
 - bpk-component-slider:
   - New component `BpkSlider`. See http://backpack.prod.aws.skyscnr.com/components/web/sliders
 
+**Fixed:**
+- bpk-component-input:
+  - Expose BpkInput underlying DOM node ref to parent components.
+
 ## 2017-11-06 - Internet explorer compat and other bugfixes
 
 **Fixed:**
@@ -16,9 +20,6 @@
 - react-native-bpk-component-banner-alert: 1.1.5 => 1.1.6
   - Fix icon color of success alert.
   - User style now takes precedence over encapsualted style.
-  
-- bpk-component-input:
-  - Expose BpkInput underlying DOM node ref to parent components.
 
 - bpk-animate-height: 1.0.30 => 1.0.31
 - bpk-component-accordion: 1.1.37 => 1.1.38
