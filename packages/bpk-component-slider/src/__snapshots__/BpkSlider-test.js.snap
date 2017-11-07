@@ -112,7 +112,7 @@ exports[`BpkSlider should render correctly with a "className" attribute 1`] = `
 
 exports[`BpkSlider should render correctly with a "large" attribute 1`] = `
 <div
-  className="bpk-slider"
+  className="bpk-slider bpk-slider--large"
   onClick={[Function]}
   onMouseDown={[Function]}
   style={
@@ -222,7 +222,7 @@ exports[`BpkSlider should render correctly with a "step" attribute 1`] = `
 
 exports[`BpkSlider should render correctly with a minimum distance between controls 1`] = `
 <div
-  className="bpk-slider bpk-slider--range"
+  className="bpk-slider bpk-slider--range bpk-slider--large"
   onClick={[Function]}
   onMouseDown={[Function]}
   style={
@@ -307,7 +307,7 @@ exports[`BpkSlider should render correctly with a minimum distance between contr
 
 exports[`BpkSlider should render correctly with a range of values 1`] = `
 <div
-  className="bpk-slider bpk-slider--range"
+  className="bpk-slider bpk-slider--range bpk-slider--large"
   onClick={[Function]}
   onMouseDown={[Function]}
   style={

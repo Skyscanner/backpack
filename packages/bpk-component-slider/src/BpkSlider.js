@@ -45,13 +45,16 @@ const BpkSlider = (props) => {
   } = props;
 
   const invert = getScriptDirection() === 'rtl';
-  const sliderClass = [getClassName('bpk-slider')];
-  const handleClass = [getClassName('bpk-slider__handle')];
-  const barClass = [getClassName('bpk-slider__bar')];
+  const classNames = [getClassName('bpk-slider')];
+  const handleClassNames = [getClassName('bpk-slider__handle')];
+  const barClassNames = [getClassName('bpk-slider__bar')];
 
-  if (value.length) { sliderClass.push(getClassName('bpk-slider--range')); }
-  if (className) { sliderClass.push(getClassName(className)); }
-  if (large) { handleClass.push(getClassName('bpk-slider__handle--large')); }
+  if (value.length) { classNames.push(getClassName('bpk-slider--range')); }
+  if (className) { classNames.push(getClassName(className)); }
+  if (large) {
+    classNames.push(getClassName('bpk-slider--large'));
+    handleClassNames.push(getClassName('bpk-slider__handle--large'));
+  }
 
   return (
     <Slider
@@ -62,10 +65,10 @@ const BpkSlider = (props) => {
       minDistance={minDistance}
       withBars
       invert={invert}
-      className={sliderClass.join(' ')}
-      handleClassName={handleClass.join(' ')}
+      className={classNames.join(' ')}
+      handleClassName={handleClassNames.join(' ')}
       handleActiveClassName={getClassName('bpk-slider__handle--active')}
-      barClassName={barClass.join(' ')}
+      barClassName={barClassNames.join(' ')}
       onChange={onChange}
       onAfterChange={onAfterChange}
     />

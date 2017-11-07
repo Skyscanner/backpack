@@ -18,55 +18,36 @@
 
 @import '~bpk-mixins';
 
-$slider-track-size: 6 * $bpk-one-pixel-rem;
-$slider-control-size: 30 * $bpk-one-pixel-rem;
 $slider-control-inset-size: 20 * $bpk-one-pixel-rem;
-$slider-control-size-large: 42 * $bpk-one-pixel-rem;
-$slider-control-inset-size-large: 30 * $bpk-one-pixel-rem;
 
 .bpk-slider {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  height: $bpk-spacing-lg;
+  -webkit-tap-highlight-color: transparent;
 
-  // stylelint-disable-next-line selector-attribute-quotes
-  div[class$='0'] {
-    background: $bpk-color-blue-500;
-  }
-
-  &--range {
-    // stylelint-disable-next-line selector-attribute-quotes
-    div[class$='0'] {
-      background: $bpk-color-gray-100;
-    }
-    // stylelint-disable-next-line selector-attribute-quotes
-    div[class$='1'] {
-      background: $bpk-color-blue-500;
-    }
+  &--large {
+    height: $bpk-spacing-xxl;
   }
 
   &__handle {
-    width: $slider-control-size;
-    height: $slider-control-size;
+    display: flex;
+    width: $bpk-spacing-lg;
+    height: $bpk-spacing-lg;
+    justify-content: center;
+    align-items: center;
     border: $bpk-one-pixel-rem solid $bpk-color-gray-100;
-    border-radius: $slider-control-size;
+    border-radius: $bpk-border-radius-pill;
     background: $bpk-color-white;
-    box-shadow: $bpk-box-shadow-sm;
     cursor: pointer;
-    vertical-align: top;
+
+    @include bpk-box-shadow-sm;
 
     &::after {
       content: '';
       display: block;
       width: $slider-control-inset-size;
       height: $slider-control-inset-size;
-      margin-top: 4 * $bpk-one-pixel-rem;
-      margin-left: 4 * $bpk-one-pixel-rem;
-      border-radius: 38 * $bpk-one-pixel-rem;
+      border-radius: $bpk-border-radius-pill;
       box-shadow: inset 0 0 0 $bpk-one-pixel-rem $bpk-color-gray-200;
-
-      @include bpk-rtl {
-        margin-top: 4 * $bpk-one-pixel-rem;
-        margin-right: 4 * $bpk-one-pixel-rem;
-      }
     }
 
     &--active {
@@ -74,30 +55,38 @@ $slider-control-inset-size-large: 30 * $bpk-one-pixel-rem;
     }
 
     &--large {
-      top: -5 * $bpk-one-pixel-rem;
-      width: $slider-control-size-large;
-      height: $slider-control-size-large;
-      border-radius: $slider-control-size-large / 2;
+      width: $bpk-spacing-xxl;
+      height: $bpk-spacing-xxl;
+      border-radius: $bpk-border-radius-pill-lg;
 
       &::after {
-        width: $slider-control-inset-size-large;
-        height: $slider-control-inset-size-large;
-        margin-top: 5 * $bpk-one-pixel-rem;
-        margin-left: 5 * $bpk-one-pixel-rem;
-
-        @include bpk-rtl {
-          margin-top: 5 * $bpk-one-pixel-rem;
-          margin-right: 5 * $bpk-one-pixel-rem;
-        }
+        width: $bpk-spacing-lg;
+        height: $bpk-spacing-lg;
+        border-radius: $bpk-border-radius-pill-lg;
       }
     }
   }
 
   &__bar {
-    position: relative;
-    top: $slider-control-size / 2.5;
-    height: $slider-track-size;
-    border-radius: $slider-track-size / 2;
+    top: calc(50% - (#{$bpk-spacing-xs} / 2));
+    height: $bpk-spacing-xs;
+    border-radius: $bpk-border-radius-sm;
     background-color: $bpk-color-gray-100;
+  }
+
+  // stylelint-disable-next-line selector-attribute-quotes
+  > div[class$='0'] {
+    background: $bpk-color-blue-500;
+  }
+
+  &--range {
+    // stylelint-disable-next-line selector-attribute-quotes
+    > div[class$='0'] {
+      background: $bpk-color-gray-100;
+    }
+    // stylelint-disable-next-line selector-attribute-quotes
+    > div[class$='1'] {
+      background: $bpk-color-blue-500;
+    }
   }
 }
