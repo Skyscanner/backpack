@@ -23,12 +23,13 @@ import {
   ViewPropTypes,
   TouchableHighlight,
 } from 'react-native';
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { setOpacity } from 'bpk-tokens';
 import BpkText from 'react-native-bpk-component-text';
 import BpkIcon from 'react-native-bpk-component-icon';
 import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
+import AnimateAndFade from './AnimateAndFade';
 
 import { dismissablePropType } from './customPropTypes';
 
@@ -164,86 +165,116 @@ const ALERT_TYPE_STYLES = {
   },
 };
 
-const BpkBannerAlert = (props) => {
-  const {
-    type,
-    message,
-    onAction,
-    dismissable,
-    expanded,
-    actionButtonLabel,
-    style,
-    children,
-    ...rest
-  } = props;
+class BpkBannerAlert extends Component {
+  constructor(props) {
+    super(props);
 
-  const expandable = children !== null;
+    this.state = {
+      expanded: false,
+      dismissed: false,
+    };
 
-  const outerStyle = [styles.outerContainer];
-  const contentPaddedStyle = [styles.bannerContainerPadded];
-  const expandedChildContainer = [styles.expandedChildContainer];
-  const { iconSource, outerStyle: outerStyleForType, iconStyle } = ALERT_TYPE_STYLES[type] || {};
+    this.onToggleExpanded = this.onToggleExpanded.bind(this);
+    this.onDismiss = this.onDismiss.bind(this);
+  }
 
-  outerStyle.push(outerStyleForType);
-  if (style) { outerStyle.push(style); }
-  if (dismissable) { contentPaddedStyle.push(styles.bannerContainerPaddedDismissable); }
+  onDismiss() {
+    this.setState({ dismissed: true });
+    if (this.props.onAction !== null) {
+      this.props.onAction();
+    }
+  }
 
-  const banner = (
-    <View style={[contentPaddedStyle]}>
-      <BpkIcon
-        style={iconStyle}
-        icon={iconSource}
-        small
-      />
-      <BpkText textStyle="sm" style={styles.text}>{message}</BpkText>
-      {expandable && (
+  onToggleExpanded() {
+    this.setState({ expanded: !this.state.expanded });
+    if (this.props.onAction !== null) {
+      this.props.onAction();
+    }
+  }
+
+  render() {
+    const {
+      type,
+      message,
+      onAction,
+      dismissable,
+      animateOnEnter,
+      actionButtonLabel,
+      style,
+      children,
+      ...rest
+    } = this.props;
+
+    const outerStyle = [styles.outerContainer];
+    const contentPaddedStyle = [styles.bannerContainerPadded];
+    const expandedChildContainer = [styles.expandedChildContainer];
+    const { iconSource, outerStyle: outerStyleForType, iconStyle } = ALERT_TYPE_STYLES[type] || {};
+
+    const expandable = children !== null;
+    const show = !this.state.dismissed;
+
+    outerStyle.push(outerStyleForType);
+    if (dismissable) { contentPaddedStyle.push(styles.bannerContainerPaddedDismissable); }
+
+    const banner = (
+      <View style={[contentPaddedStyle]}>
         <BpkIcon
-          style={styles.buttonExpand}
-          icon={expanded ? 'chevron-up' : 'chevron-down'}
+          style={iconStyle}
+          icon={iconSource}
           small
         />
-      )}
-    </View>
-  );
-
-  return (
-    <View style={outerStyle} {...rest} >
-      <View style={styles.bannerContainer} >
-        {expandable ? (
-          <TouchableHighlight
-            accessibilityComponentType="button"
-            onPress={onAction}
-            underlayColor={underlayColor}
-            accessibilityLabel={actionButtonLabel}
-            style={styles.bannerContainer}
-          >
-            {banner}
-          </TouchableHighlight>
-        ) : banner}
-        {dismissable && (
-          <TouchableHighlight
-            accessibilityComponentType="button"
-            onPress={onAction}
-            underlayColor={underlayColor}
-            accessibilityLabel={actionButtonLabel}
-            style={styles.closeButtonContainer}
-          >
-            <View>
-              <BpkIcon
-                style={styles.buttonClose}
-                icon="close"
-                small
-              />
-            </View>
-          </TouchableHighlight>
+        <BpkText textStyle="sm" style={styles.text}>{message}</BpkText>
+        {expandable && (
+          <BpkIcon
+            style={styles.buttonExpand}
+            icon={this.state.expanded ? 'chevron-up' : 'chevron-down'}
+            small
+          />
         )}
       </View>
-      <BpkAnimateHeight expanded={expanded}>
-        <View style={expandedChildContainer}>{props.children}</View>
-      </BpkAnimateHeight>
-    </View>
-  );
-};
+    );
+
+    return (
+      <AnimateAndFade style={style} animateOnEnter={animateOnEnter} animateOnLeave show={show}>
+        <View style={outerStyle} {...rest} >
+          <View style={styles.bannerContainer} >
+            {expandable ? (
+              <TouchableHighlight
+                accessibilityComponentType="button"
+                onPress={this.onToggleExpanded}
+                underlayColor={underlayColor}
+                accessibilityLabel={actionButtonLabel}
+                style={styles.bannerContainer}
+              >
+                {banner}
+              </TouchableHighlight>
+               ) : banner}
+            {dismissable && (
+            <TouchableHighlight
+              accessibilityComponentType="button"
+              onPress={this.onDismiss}
+              underlayColor={underlayColor}
+              accessibilityLabel={actionButtonLabel}
+              style={styles.closeButtonContainer}
+            >
+              <View>
+                <BpkIcon
+                  style={styles.buttonClose}
+                  icon="close"
+                  small
+                />
+              </View>
+            </TouchableHighlight>
+           )}
+          </View>
+          <BpkAnimateHeight expanded={this.state.expanded}>
+            <View style={expandedChildContainer}>{this.props.children}</View>
+          </BpkAnimateHeight>
+        </View>
+      </AnimateAndFade>
+    );
+  }
+}
 
 BpkBannerAlert.propTypes = {
   message: PropTypes.string.isRequired,
@@ -251,7 +282,7 @@ BpkBannerAlert.propTypes = {
   children: PropTypes.node,
   style: ViewPropTypes.style,
   dismissable: dismissablePropType,
-  expanded: PropTypes.bool,
+  animateOnEnter: PropTypes.bool,
   onAction: PropTypes.func,
   actionButtonLabel: PropTypes.string,
 };
@@ -260,7 +291,7 @@ BpkBannerAlert.defaultProps = {
   children: null,
   style: null,
   dismissable: false,
-  expanded: false,
+  animateOnEnter: false,
   onAction: () => null,
   actionButtonLabel: null,
 };
