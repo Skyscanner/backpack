@@ -13,6 +13,9 @@
 - react-native-bpk-component-banner-alert:
   - Fix icon color of success alert.
   - User style now takes precedence over encapsualted style.
+  
+- bpk-component-input:
+  - Expose BpkInput underlying DOM node ref to parent components.
 
 ## 2017-11-02 - Popover fix for target element refocus
 
