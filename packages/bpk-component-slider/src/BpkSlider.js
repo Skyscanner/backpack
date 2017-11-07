@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-import Slider from 'react-slider';
-import { cssModules } from 'bpk-react-utils';
 import React from 'react';
+import Slider from 'react-slider';
+import PropTypes from 'prop-types';
+import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-slider.scss';
 
@@ -32,65 +32,42 @@ const getScriptDirection = () => {
 };
 
 const BpkSlider = (props) => {
-  const {
-    min,
-    max,
-    value,
-    step,
-    large,
-    minDistance,
-    className,
-    onChange,
-    onAfterChange,
-  } = props;
-
+  const { large, className, ...rest } = props;
   const invert = getScriptDirection() === 'rtl';
-  const sliderClass = [getClassName('bpk-slider')];
-  const handleClass = [getClassName('bpk-slider__handle')];
-  const barClass = [getClassName('bpk-slider__bar')];
+  const classNames = [getClassName('bpk-slider')];
+  const handleClassNames = [getClassName('bpk-slider__handle')];
+  const barClassNames = [getClassName('bpk-slider__bar')];
 
-  if (value.length) { sliderClass.push(getClassName('bpk-slider--range')); }
-  if (className) { sliderClass.push(getClassName(className)); }
-  if (large) { handleClass.push(getClassName('bpk-slider__handle--large')); }
+  const isRange = (rest.value || rest.defaultValue || []).length > 1;
+
+  if (isRange) { classNames.push(getClassName('bpk-slider--range')); }
+  if (className) { classNames.push(getClassName(className)); }
+  if (large) {
+    classNames.push(getClassName('bpk-slider--large'));
+    handleClassNames.push(getClassName('bpk-slider__handle--large'));
+  }
 
   return (
     <Slider
-      max={max}
-      min={min}
-      step={step}
-      value={value}
-      minDistance={minDistance}
+      {...rest}
       withBars
       invert={invert}
-      className={sliderClass.join(' ')}
-      handleClassName={handleClass.join(' ')}
+      className={classNames.join(' ')}
+      handleClassName={handleClassNames.join(' ')}
       handleActiveClassName={getClassName('bpk-slider__handle--active')}
-      barClassName={barClass.join(' ')}
-      onChange={onChange}
-      onAfterChange={onAfterChange}
+      barClassName={barClassNames.join(' ')}
     />
   );
 };
 
 BpkSlider.propTypes = {
-  min: PropTypes.number.isRequired,
-  max: PropTypes.number.isRequired,
-  value: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.number), PropTypes.number]).isRequired,
-  minDistance: PropTypes.number,
-  step: PropTypes.number,
   className: PropTypes.string,
   large: PropTypes.bool,
-  onChange: PropTypes.func,
-  onAfterChange: PropTypes.func,
 };
 
 BpkSlider.defaultProps = {
-  step: 1,
-  minDistance: 1,
   className: null,
   large: false,
-  onChange: null,
-  onAfterChange: null,
 };
 
 export default BpkSlider;

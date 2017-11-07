@@ -74,7 +74,6 @@ describe('BpkSlider', () => {
         min={0}
         max={100}
         value={[10, 90]}
-        large
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -87,7 +86,6 @@ describe('BpkSlider', () => {
         max={100}
         value={[10, 90]}
         minDistance={20}
-        large
       />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
