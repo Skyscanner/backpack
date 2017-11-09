@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     shadowRadius: shadowXlRadius / PixelRatio.get(),
   },
   cardInner: {
-    backgroundColor: 'transparent',
+    backgroundColor: 'transparent', // otherwise this view's corners would bleed outwith the outer container
   },
 });
 

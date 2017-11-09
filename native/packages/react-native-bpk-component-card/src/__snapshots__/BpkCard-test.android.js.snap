@@ -44,7 +44,13 @@ exports[`Android BpkCard should render correctly 1`] = `
   testID={undefined}
   tvParallaxProperties={undefined}
 >
-  <View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "transparent",
+      }
+    }
+  >
     <View>
       <Text
         accessible={true}
@@ -125,7 +131,13 @@ exports[`Android BpkCard should render correctly with the "focused" state 1`] = 
   testID={undefined}
   tvParallaxProperties={undefined}
 >
-  <View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "transparent",
+      }
+    }
+  >
     <View>
       <Text
         accessible={true}
@@ -193,7 +205,13 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
   testID={undefined}
   tvParallaxProperties={undefined}
 >
-  <View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "transparent",
+      }
+    }
+  >
     <View>
       <Text
         accessible={true}
