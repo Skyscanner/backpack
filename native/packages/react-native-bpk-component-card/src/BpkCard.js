@@ -57,66 +57,58 @@ const {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: colorWhite,
+    borderRadius: borderRadiusSm,
     elevation: elevationXs,
     shadowColor: shadowSmColor,
     shadowOffset: { width: shadowSmOffsetWidth, height: shadowSmOffsetHeight / PixelRatio.get() },
     shadowOpacity: shadowSmOpacity,
     shadowRadius: shadowSmRadius / PixelRatio.get(),
   },
-  common: {
-    borderRadius: borderRadiusSm,
-  },
-  overflowHidden: {
-    overflow: 'hidden',
-  },
-  padded: {
+  cardPadded: {
     padding: spacingBase,
   },
-  focused: {
+  cardFocused: {
     elevation: elevationLg,
     shadowColor: shadowXlColor,
     shadowOffset: { width: shadowXlOffsetWidth, height: shadowXlOffsetHeight / PixelRatio.get() },
     shadowOpacity: shadowXlOpacity,
     shadowRadius: shadowXlRadius / PixelRatio.get(),
   },
+  cardInner: {
+    backgroundColor: 'transparent', // otherwise this view's corners would bleed outwith the outer container
+  },
 });
 
 const BpkCard = (props) => {
   const {
-    padded, children, focused, onPress, style, ...rest
+    padded,
+    children,
+    focused,
+    style: userStyle,
+    ...rest
   } = props;
 
-  const cardBaseStyle = [styles.card, styles.common];
-
-  if (padded) {
-    cardBaseStyle.push(styles.padded);
-  }
-
-  if (focused) {
-    cardBaseStyle.push(styles.focused);
-  }
+  const style = [styles.card];
+  if (padded) { style.push(styles.cardPadded); }
+  if (focused) { style.push(styles.cardFocused); }
+  if (userStyle) { style.push(userStyle); }
 
   return (
     <TouchableHighlight
       accessibilityComponentType="button"
-      onPress={onPress}
-      style={[cardBaseStyle, style]}
       underlayColor={colorGray50}
+      style={style}
       {...rest}
     >
-      <View
-        style={[styles.overflowHidden, styles.common]}
-      >
-        {children}
-      </View>
+      <View style={styles.cardInner}>{children}</View>
     </TouchableHighlight>
   );
 };
 
 BpkCard.propTypes = {
   children: PropTypes.node.isRequired,
-  focused: PropTypes.bool,
   onPress: PropTypes.func.isRequired,
+  focused: PropTypes.bool,
   padded: PropTypes.bool,
   style: ViewPropTypes.style,
 };

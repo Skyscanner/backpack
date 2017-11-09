@@ -23,26 +23,21 @@ exports[`iOS BpkCard should render correctly 1`] = `
         "backgroundColor": "transparent",
       },
       Array [
-        Array [
-          Object {
-            "backgroundColor": "rgb(255, 255, 255)",
-            "elevation": undefined,
-            "shadowColor": "rgb(37, 32, 51)",
-            "shadowOffset": Object {
-              "height": 0.5,
-              "width": 0,
-            },
-            "shadowOpacity": 0.3,
-            "shadowRadius": 1.5,
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": 4,
+          "elevation": undefined,
+          "shadowColor": "rgb(37, 32, 51)",
+          "shadowOffset": Object {
+            "height": 0.5,
+            "width": 0,
           },
-          Object {
-            "borderRadius": 4,
-          },
-          Object {
-            "padding": 16,
-          },
-        ],
-        null,
+          "shadowOpacity": 0.3,
+          "shadowRadius": 1.5,
+        },
+        Object {
+          "padding": 16,
+        },
       ],
     ]
   }
@@ -51,14 +46,9 @@ exports[`iOS BpkCard should render correctly 1`] = `
 >
   <View
     style={
-      Array [
-        Object {
-          "overflow": "hidden",
-        },
-        Object {
-          "borderRadius": 4,
-        },
-      ]
+      Object {
+        "backgroundColor": "transparent",
+      }
     }
   >
     <View>
@@ -110,36 +100,31 @@ exports[`iOS BpkCard should render correctly with the "focused" state 1`] = `
         "backgroundColor": "transparent",
       },
       Array [
-        Array [
-          Object {
-            "backgroundColor": "rgb(255, 255, 255)",
-            "elevation": undefined,
-            "shadowColor": "rgb(37, 32, 51)",
-            "shadowOffset": Object {
-              "height": 0.5,
-              "width": 0,
-            },
-            "shadowOpacity": 0.3,
-            "shadowRadius": 1.5,
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": 4,
+          "elevation": undefined,
+          "shadowColor": "rgb(37, 32, 51)",
+          "shadowOffset": Object {
+            "height": 0.5,
+            "width": 0,
           },
-          Object {
-            "borderRadius": 4,
+          "shadowOpacity": 0.3,
+          "shadowRadius": 1.5,
+        },
+        Object {
+          "padding": 16,
+        },
+        Object {
+          "elevation": undefined,
+          "shadowColor": "rgb(37, 32, 51)",
+          "shadowOffset": Object {
+            "height": 6,
+            "width": 0,
           },
-          Object {
-            "padding": 16,
-          },
-          Object {
-            "elevation": undefined,
-            "shadowColor": "rgb(37, 32, 51)",
-            "shadowOffset": Object {
-              "height": 6,
-              "width": 0,
-            },
-            "shadowOpacity": 0.2,
-            "shadowRadius": 25,
-          },
-        ],
-        null,
+          "shadowOpacity": 0.2,
+          "shadowRadius": 25,
+        },
       ],
     ]
   }
@@ -148,14 +133,9 @@ exports[`iOS BpkCard should render correctly with the "focused" state 1`] = `
 >
   <View
     style={
-      Array [
-        Object {
-          "overflow": "hidden",
-        },
-        Object {
-          "borderRadius": 4,
-        },
-      ]
+      Object {
+        "backgroundColor": "transparent",
+      }
     }
   >
     <View>
@@ -207,23 +187,18 @@ exports[`iOS BpkCard should render correctly without padding 1`] = `
         "backgroundColor": "transparent",
       },
       Array [
-        Array [
-          Object {
-            "backgroundColor": "rgb(255, 255, 255)",
-            "elevation": undefined,
-            "shadowColor": "rgb(37, 32, 51)",
-            "shadowOffset": Object {
-              "height": 0.5,
-              "width": 0,
-            },
-            "shadowOpacity": 0.3,
-            "shadowRadius": 1.5,
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": 4,
+          "elevation": undefined,
+          "shadowColor": "rgb(37, 32, 51)",
+          "shadowOffset": Object {
+            "height": 0.5,
+            "width": 0,
           },
-          Object {
-            "borderRadius": 4,
-          },
-        ],
-        null,
+          "shadowOpacity": 0.3,
+          "shadowRadius": 1.5,
+        },
       ],
     ]
   }
@@ -232,14 +207,9 @@ exports[`iOS BpkCard should render correctly without padding 1`] = `
 >
   <View
     style={
-      Array [
-        Object {
-          "overflow": "hidden",
-        },
-        Object {
-          "borderRadius": 4,
-        },
-      ]
+      Object {
+        "backgroundColor": "transparent",
+      }
     }
   >
     <View>

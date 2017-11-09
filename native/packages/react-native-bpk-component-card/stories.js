@@ -1,73 +1,59 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import { StyleSheet, View, Platform } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
+import { storiesOf, action } from '@storybook/react-native';
+
 import BpkCard from './index';
 
+const content = (
+  <BpkText>
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+    commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+    et magnis dis parturient montes, nascetur ridiculus mus.
+  </BpkText>
+);
 
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
+const onPress = action('Card press');
 
 const styles = StyleSheet.create({
-  container: {
-    marginBottom: tokens.spacingBase,
+  allCardsContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-around',
   },
 });
 
-const cardContent = (
-  <View>
-    <BpkText>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-      commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-      et magnis dis parturient montes, nascetur ridiculus mus.
-    </BpkText>
-  </View>
-);
-
-const press = () => null;
-
 storiesOf('BpkCard', module)
   .add('docs:default', () => (
-    <BpkCard onPress={press}>{cardContent}</BpkCard>
+    <BpkCard onPress={onPress}>{content}</BpkCard>
   ))
   .add('docs:without-padding', () => (
-    <BpkCard onPress={press} padded={false}>{cardContent}</BpkCard>
+    <BpkCard onPress={onPress} padded={false}>{content}</BpkCard>
   ))
   .add('docs:focused', () => (
-    <BpkCard onPress={press} focused>{cardContent}</BpkCard>
+    <BpkCard onPress={onPress} focused>{content}</BpkCard>
   ))
   .add('All Cards', () => (
-    <View>
-      <View>
-        <BpkCard
-          onPress={press}
-          style={styles.container}
-          accessibilityLabel="Example Card"
-        >
-          {cardContent}
-        </BpkCard>
-      </View>
-      <View>
-        <BpkCard
-          onPress={press}
-          padded={false}
-          style={styles.container}
-          accessibilityLabel="Example Card"
-        >
-          {cardContent}
-        </BpkCard>
-      </View>
-      <View>
-        <BpkCard
-          onPress={press}
-          style={styles.container}
-          focused
-          accessibilityLabel="Example Card"
-        >
-          {cardContent}
-        </BpkCard>
-      </View>
+    <View style={styles.allCardsContainer}>
+      <BpkCard
+        onPress={onPress}
+        accessibilityLabel="Example Card"
+      >
+        {content}
+      </BpkCard>
+      <BpkCard
+        onPress={onPress}
+        padded={false}
+        accessibilityLabel="Example Card"
+      >
+        {content}
+      </BpkCard>
+      <BpkCard
+        onPress={onPress}
+        focused
+        accessibilityLabel="Example Card"
+      >
+        {content}
+      </BpkCard>
     </View>
   ));
