@@ -74,6 +74,9 @@ const styles = StyleSheet.create({
     shadowOpacity: shadowXlOpacity,
     shadowRadius: shadowXlRadius / PixelRatio.get(),
   },
+  cardInner: {
+    backgroundColor: 'transparent',
+  },
 });
 
 const BpkCard = (props) => {
@@ -97,7 +100,7 @@ const BpkCard = (props) => {
       style={style}
       {...rest}
     >
-      <View>{children}</View>
+      <View style={styles.cardInner}>{children}</View>
     </TouchableHighlight>
   );
 };
