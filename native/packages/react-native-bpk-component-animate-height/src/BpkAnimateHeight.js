@@ -41,47 +41,71 @@ class BpkAnimateHeight extends React.Component {
     this.state = {
       expanded: null,
       expandedHeight: null,
-      collapsedHeight: 0,
-      height: new Animated.Value(1),
-      heightSet: false,
+      collapsedHeight: 0.01,
+      height: new Animated.Value(0.01),
     };
 
     this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
     this.setExpandedHeight = this.setExpandedHeight.bind(this);
-    this.resize = this.resize.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.expand = this.expand.bind(this);
+    this.collapse = this.collapse.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.expanded !== this.state.expanded) {
-      this.state.expanded = nextProps.expanded;
-      this.resize();
+      this.toggle();
     }
   }
 
-  setExpandedHeight(event, expandedImmediately) {
+  setExpandedHeight(event) {
     const { height } = event.nativeEvent.layout;
-    this.setState({
-      // if the component has started expanded, we should now set the height of the container
-      // why on earth does a value of 1 instead of 0 make this break!
-      height: new Animated.Value(expandedImmediately ? height : 0),
-      heightSet: true,
-      expandedHeight: height,
-    });
+    if (height !== 0) {
+      this.setState({
+        expandedHeight: height,
+        height: this.state.expanded ? new Animated.Value(height) : new Animated.Value(this.state.collapsedHeight),
+      });
+    }
   }
 
-  resize() {
+  toggle() {
+    if (this.state.expanded) {
+      this.collapse();
+    } else {
+      this.expand();
+    }
+  }
+
+  expand() {
     // overflow: hidden is not properly supported on Android,
     // which causes animation to look shoddy.
     // See https://facebook.github.io/react-native/releases/0.49/docs/layout-props.html#overflow
     const animationDuration = Platform.OS === 'ios' ? this.props.animationDuration : 0;
-
-    const finalValue = this.state.expanded ? this.state.expandedHeight : this.state.collapsedHeight;
+    this.state.expanded = true;
 
     Animated.timing(
       this.state.height,
       {
-        toValue: finalValue,
+        toValue: this.state.expandedHeight,
         duration: animationDuration,
+        delay: this.props.expandDelay,
+      },
+    ).start();
+  }
+
+  collapse() {
+    // overflow: hidden is not properly supported on Android,
+    // which causes animation to look shoddy.
+    // See https://facebook.github.io/react-native/releases/0.49/docs/layout-props.html#overflow
+    const animationDuration = Platform.OS === 'ios' ? this.props.animationDuration : 0;
+    this.state.expanded = false;
+
+    Animated.timing(
+      this.state.height,
+      {
+        toValue: this.state.collapsedHeight,
+        duration: animationDuration,
+        delay: this.props.collapseDelay,
       },
     ).start();
   }
@@ -92,20 +116,23 @@ class BpkAnimateHeight extends React.Component {
     const { height } = this.state;
 
     return (
-      <Animated.View
-        style={{
-          ...style,
+      <View
+        style={style}
+        {...rest}
+      >
+        <Animated.View
+          style={{
           overflow: 'hidden',
           height,
         }}
-        {...rest}
-      >
-        <View
-          onLayout={event => (this.state.heightSet ? undefined : this.setExpandedHeight(event, expanded))}
         >
-          {this.props.children}
-        </View>
-      </Animated.View>
+          <View
+            onLayout={event => (this.setExpandedHeight(event))}
+          >
+            {this.props.children}
+          </View>
+        </Animated.View>
+      </View>
     );
   }
 }
@@ -114,11 +141,15 @@ BpkAnimateHeight.propTypes = {
   animationDuration: PropTypes.number,
   expanded: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
+  expandDelay: PropTypes.number,
+  collapseDelay: PropTypes.number,
   style: ViewPropTypes.style,
 };
 
 BpkAnimateHeight.defaultProps = {
   animationDuration: parseInt(animationDurationSm, 10),
+  expandDelay: 0,
+  collapseDelay: 0,
   style: null,
 };
 
