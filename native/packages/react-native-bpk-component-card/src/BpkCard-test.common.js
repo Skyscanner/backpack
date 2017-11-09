@@ -18,39 +18,74 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { View } from 'react-native';
 import BpkText from '../../react-native-bpk-component-text';
 
 import BpkCard from './BpkCard';
 
 const commonTests = () => {
-  const onPressFn = jest.fn();
+  const onPress = jest.fn();
+
   describe('BpkCard', () => {
-    const cardContent = (
-      <View>
-        <BpkText>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>
-      </View>
+    const content = (
+      <BpkText>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+        commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+        et magnis dis parturient montes, nascetur ridiculus mus.
+      </BpkText>
     );
+
     it('should render correctly', () => {
       const tree = renderer.create(
-        <BpkCard onPress={onPressFn} accessibilityLabel="Example Card">{cardContent}</BpkCard>,
+        <BpkCard
+          onPress={onPress}
+          accessibilityLabel="Example Card"
+        >
+          {content}
+        </BpkCard>,
       ).toJSON();
+
       expect(tree).toMatchSnapshot();
     });
+
     it('should render correctly without padding', () => {
       const tree = renderer.create(
-        <BpkCard onPress={onPressFn} padded={false} accessibilityLabel="Example Card">{cardContent}</BpkCard>,
+        <BpkCard
+          onPress={onPress}
+          padded={false}
+          accessibilityLabel="Example Card"
+        >
+          {content}
+        </BpkCard>,
       ).toJSON();
+
       expect(tree).toMatchSnapshot();
     });
+
     it('should render correctly with the "focused" state', () => {
       const tree = renderer.create(
-        <BpkCard onPress={onPressFn} focused accessibilityLabel="Example Card">{cardContent}</BpkCard>,
+        <BpkCard
+          onPress={onPress}
+          focused
+          accessibilityLabel="Example Card"
+        >
+          {content}
+        </BpkCard>,
       ).toJSON();
+
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly with arbitrary props', () => {
+      const tree = renderer.create(
+        <BpkCard
+          onPress={onPress}
+          accessibilityLabel="Example Card"
+          testID="arbitrary value" // <-- arbitrary prop
+        >
+          {content}
+        </BpkCard>,
+      ).toJSON();
+
       expect(tree).toMatchSnapshot();
     });
   });
