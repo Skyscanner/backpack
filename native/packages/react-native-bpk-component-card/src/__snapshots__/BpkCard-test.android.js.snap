@@ -23,44 +23,28 @@ exports[`Android BpkCard should render correctly 1`] = `
         "backgroundColor": "transparent",
       },
       Array [
-        Array [
-          Object {
-            "backgroundColor": "rgb(255, 255, 255)",
-            "elevation": 2,
-            "shadowColor": undefined,
-            "shadowOffset": Object {
-              "height": NaN,
-              "width": undefined,
-            },
-            "shadowOpacity": undefined,
-            "shadowRadius": NaN,
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": 2,
+          "elevation": 2,
+          "shadowColor": undefined,
+          "shadowOffset": Object {
+            "height": NaN,
+            "width": undefined,
           },
-          Object {
-            "borderRadius": 2,
-          },
-          Object {
-            "padding": 16,
-          },
-        ],
-        null,
+          "shadowOpacity": undefined,
+          "shadowRadius": NaN,
+        },
+        Object {
+          "padding": 16,
+        },
       ],
     ]
   }
   testID={undefined}
   tvParallaxProperties={undefined}
 >
-  <View
-    style={
-      Array [
-        Object {
-          "overflow": "hidden",
-        },
-        Object {
-          "borderRadius": 2,
-        },
-      ]
-    }
-  >
+  <View>
     <View>
       <Text
         accessible={true}
@@ -110,54 +94,38 @@ exports[`Android BpkCard should render correctly with the "focused" state 1`] = 
         "backgroundColor": "transparent",
       },
       Array [
-        Array [
-          Object {
-            "backgroundColor": "rgb(255, 255, 255)",
-            "elevation": 2,
-            "shadowColor": undefined,
-            "shadowOffset": Object {
-              "height": NaN,
-              "width": undefined,
-            },
-            "shadowOpacity": undefined,
-            "shadowRadius": NaN,
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": 2,
+          "elevation": 2,
+          "shadowColor": undefined,
+          "shadowOffset": Object {
+            "height": NaN,
+            "width": undefined,
           },
-          Object {
-            "borderRadius": 2,
+          "shadowOpacity": undefined,
+          "shadowRadius": NaN,
+        },
+        Object {
+          "padding": 16,
+        },
+        Object {
+          "elevation": 16,
+          "shadowColor": undefined,
+          "shadowOffset": Object {
+            "height": NaN,
+            "width": undefined,
           },
-          Object {
-            "padding": 16,
-          },
-          Object {
-            "elevation": 16,
-            "shadowColor": undefined,
-            "shadowOffset": Object {
-              "height": NaN,
-              "width": undefined,
-            },
-            "shadowOpacity": undefined,
-            "shadowRadius": NaN,
-          },
-        ],
-        null,
+          "shadowOpacity": undefined,
+          "shadowRadius": NaN,
+        },
       ],
     ]
   }
   testID={undefined}
   tvParallaxProperties={undefined}
 >
-  <View
-    style={
-      Array [
-        Object {
-          "overflow": "hidden",
-        },
-        Object {
-          "borderRadius": 2,
-        },
-      ]
-    }
-  >
+  <View>
     <View>
       <Text
         accessible={true}
@@ -207,41 +175,25 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
         "backgroundColor": "transparent",
       },
       Array [
-        Array [
-          Object {
-            "backgroundColor": "rgb(255, 255, 255)",
-            "elevation": 2,
-            "shadowColor": undefined,
-            "shadowOffset": Object {
-              "height": NaN,
-              "width": undefined,
-            },
-            "shadowOpacity": undefined,
-            "shadowRadius": NaN,
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": 2,
+          "elevation": 2,
+          "shadowColor": undefined,
+          "shadowOffset": Object {
+            "height": NaN,
+            "width": undefined,
           },
-          Object {
-            "borderRadius": 2,
-          },
-        ],
-        null,
+          "shadowOpacity": undefined,
+          "shadowRadius": NaN,
+        },
       ],
     ]
   }
   testID={undefined}
   tvParallaxProperties={undefined}
 >
-  <View
-    style={
-      Array [
-        Object {
-          "overflow": "hidden",
-        },
-        Object {
-          "borderRadius": 2,
-        },
-      ]
-    }
-  >
+  <View>
     <View>
       <Text
         accessible={true}
