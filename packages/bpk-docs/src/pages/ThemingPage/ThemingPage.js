@@ -25,7 +25,11 @@ import readme from 'react-native-bpk-theming/readme.md';
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
-import { NATIVE_BUTTON, NATIVE_SPINNER } from './../../constants/routes';
+import {
+  NATIVE_BUTTON,
+  NATIVE_HORIZONTAL_NAV,
+  NATIVE_SPINNER,
+} from './../../constants/routes';
 
 const NativeTextPage = () => (<DocsPageBuilder
   title="Theming"
@@ -43,6 +47,9 @@ const NativeTextPage = () => (<DocsPageBuilder
     <BpkList>
       <BpkListItem>
         <BpkLink href={NATIVE_BUTTON}>Button</BpkLink>
+      </BpkListItem>
+      <BpkListItem>
+        <BpkLink href={NATIVE_HORIZONTAL_NAV}>Horizontal navigation</BpkLink>
       </BpkListItem>
       <BpkListItem>
         <BpkLink href={NATIVE_SPINNER}>Spinner</BpkLink>

@@ -47,18 +47,18 @@ storiesOf('BpkHorizontalNav', module)
   .add('docs:default', () => (
     <View style={styles.bottomMargin}>
       <BpkHorizontalNav>
-        <BpkHorizontalNavItem title="Item" onPress={action('Nav item one pressed')} />
-        <BpkHorizontalNavItem selected title="Item" onPress={action('Nav item two pressed')} />
-        <BpkHorizontalNavItem title="Item" onPress={action('Nav item three pressed')} />
+        <BpkHorizontalNavItem title="Flights" onPress={action('Nav item one pressed')} />
+        <BpkHorizontalNavItem selected title="Hotels" onPress={action('Nav item two pressed')} />
+        <BpkHorizontalNavItem title="Car hire" onPress={action('Nav item three pressed')} />
       </BpkHorizontalNav>
     </View>
   ))
   .add('docs:spaceAround', () => (
     <View style={styles.bottomMargin}>
       <BpkHorizontalNav spaceAround>
-        <BpkHorizontalNavItem title="Item" onPress={action('Nav item one pressed')} />
-        <BpkHorizontalNavItem selected title="Item" onPress={action('Nav item two pressed')} />
-        <BpkHorizontalNavItem title="Item" onPress={action('Nav item three pressed')} />
+        <BpkHorizontalNavItem title="Flights" onPress={action('Nav item one pressed')} />
+        <BpkHorizontalNavItem selected title="Hotels" onPress={action('Nav item two pressed')} />
+        <BpkHorizontalNavItem title="Car hire" onPress={action('Nav item three pressed')} />
       </BpkHorizontalNav>
     </View>
   ))

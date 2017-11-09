@@ -79,6 +79,7 @@ import ThemingPage from './../pages/ThemingPage';
 import NativeBannerAlertPage from './../pages/NativeBannerAlertPage';
 import NativeButtonPage from './../pages/NativeButtonPage';
 import NativeCardsPage from './../pages/NativeCardsPage';
+import NativeHorizontalNavPage from './../pages/NativeHorizontalNavPage';
 import NativeIconsPage from './../pages/NativeIconsPage';
 import NativeInputPage from './../pages/NativeTextInputPage';
 import NativeSpinnerPage from './../pages/NativeSpinnerPage';
@@ -154,6 +155,7 @@ const Routes = (
         <Route path={ROUTES.NATIVE_BANNER_ALERT} component={NativeBannerAlertPage} />
         <Route path={ROUTES.NATIVE_BUTTON} component={NativeButtonPage} />
         <Route path={ROUTES.NATIVE_CARDS} component={NativeCardsPage} />
+        <Route path={ROUTES.NATIVE_HORIZONTAL_NAV} component={NativeHorizontalNavPage} />
         <Route path={ROUTES.NATIVE_ICONS} component={NativeIconsPage} />
         <Route path={ROUTES.NATIVE_INPUT} component={NativeInputPage} />
         <Route path={ROUTES.NATIVE_SPINNER} component={NativeSpinnerPage} />
