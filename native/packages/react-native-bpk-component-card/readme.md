@@ -27,20 +27,35 @@ const styles = StyleSheet.create({
 
 export default class App extends Component {
   render() {
-    const cardContent = (
-      <View>
-        <BpkText>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>
-      </View>
+    const content = (
+      <BpkText>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+        commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+        et magnis dis parturient montes, nascetur ridiculus mus.
+      </BpkText>
     );
     return (
       <View style={styles.container}>
-        <BpkCard onPress={() => null} accessibilityLabel="Example Card">{cardContent}</BpkCard>
-        <BpkCard onPress={() => null} padded={false} accessibilityLabel="Example Card">{cardContent}</BpkCard>
-        <BpkCard onPress={() => null} focused accessibilityLabel="Example Card">{cardContent}</BpkCard>
+        <BpkCard
+          onPress={() => null}
+          accessibilityLabel="Example Card"
+        >
+          {content}
+        </BpkCard>
+        <BpkCard
+          onPress={() => null}
+          accessibilityLabel="Example Card"
+          padded={false}
+        >
+          {content}
+        </BpkCard>
+        <BpkCard
+          onPress={() => null}
+          accessibilityLabel="Example Card"
+          focused
+        >
+          {content}
+        </BpkCard>
       </View >
     );
   }
@@ -52,6 +67,6 @@ export default class App extends Component {
 | Property            | PropType  | Required | Default Value |
 | -----------         | --------- | -------- | ------------- |
 | children            | node      | true     | -             |
-| focused             | bool      | false    | false         |
 | onPress             | func      | true     | -             |
+| focused             | bool      | false    | false         |
 | padded              | bool      | false    | true          |
