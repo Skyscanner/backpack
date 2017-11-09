@@ -19,19 +19,32 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-/* eslint-disable import/first */
 import BpkModalDialog from './BpkModalDialog';
-/* eslint-enable */
 
 describe('BpkModalDialog', () => {
+  let closeEvents;
+
+  beforeAll(() => {
+    closeEvents = {
+      onTouchStart: jest.fn(),
+      onTouchMove: jest.fn(),
+      onTouchEnd: jest.fn(),
+      onMouseDown: jest.fn(),
+      onMouseMove: jest.fn(),
+      onMouseUp: jest.fn(),
+    };
+  });
+
   it('should render correctly', () => {
     const tree = renderer.create(
       <BpkModalDialog
         id="my-modal"
         title="Modal title"
-        onClose={() => null}
+        onClose={jest.fn()}
         closeLabel="Close"
-        getApplicationElement={() => null}
+        closeEvents={closeEvents}
+        getDialogRef={jest.fn()}
+        isIphone={false}
       >
         Modal content
       </BpkModalDialog>,
@@ -45,9 +58,28 @@ describe('BpkModalDialog', () => {
         id="my-modal"
         className="my-classname"
         title="Modal title"
-        onClose={() => null}
+        onClose={jest.fn()}
         closeLabel="Close"
-        getApplicationElement={() => null}
+        closeEvents={closeEvents}
+        getDialogRef={jest.fn()}
+        isIphone={false}
+      >
+        Modal content
+      </BpkModalDialog>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly when is iPhone', () => {
+    const tree = renderer.create(
+      <BpkModalDialog
+        id="my-modal"
+        title="Modal title"
+        onClose={jest.fn()}
+        closeLabel="Close"
+        closeEvents={closeEvents}
+        getDialogRef={jest.fn()}
+        isIphone
       >
         Modal content
       </BpkModalDialog>,
