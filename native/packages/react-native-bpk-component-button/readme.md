@@ -58,7 +58,7 @@ export default class App extends Component {
 
 | Property              | PropType                                                                  | Required | Default Value |
 | --------------------- | ------------------------------------------------------------------------- | -------- | ------------- |
-| onPress               | function                                                                  | true     | -             |
+| onPress               | func                                                                      | true     | -             |
 | title                 | string                                                                    | true     | -             |
 | accessibilityLabel    | string                                                                    | false    | props.title   |
 | disabled              | bool                                                                      | false    | false         |
