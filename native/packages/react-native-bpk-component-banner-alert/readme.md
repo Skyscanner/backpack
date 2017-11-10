@@ -95,6 +95,6 @@ export default class App extends Component {
 | type               | oneOf(ALERT_TYPES)  | yes      | -             |
 | actionButtonLabel  | string              | no       | null          |
 | children           | node                | no       | null          |
-| dismissable        | boolean             | no       | false         |
-| expanded           | boolean             | no       | false         |
+| dismissable        | bool                | no       | false         |
+| expanded           | bool                | no       | false         |
 | onAction           | func                | no       | () => null    |

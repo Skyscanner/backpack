@@ -52,6 +52,6 @@ export default class App extends Component {
 | Property            | PropType  | Required | Default Value |
 | -----------         | --------- | -------- | ------------- |
 | children            | node      | true     | -             |
-| focused             | boolean   | false    | false         |
-| onPress             | function  | true     | -             |
-| padded              | boolean   | false    | true          |
+| focused             | bool      | false    | false         |
+| onPress             | func      | true     | -             |
+| padded              | bool      | false    | true          |

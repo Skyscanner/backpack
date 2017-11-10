@@ -79,4 +79,4 @@ export default class App extends Component {
 | Property  | PropType  | Required | Default Value |
 | --------- | --------- | -------- | ------------- |
 | icon      | string    | yes      | -             |
-| small     | boolean   | no       | false         |
+| small     | bool      | no       | false         |
