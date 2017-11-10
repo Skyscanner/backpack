@@ -140,7 +140,6 @@ storiesOf('BpkTicket', module)
             style={styles.ticketListItem}
             mainStyle={isEven ? null : styles.ticketMainStyle}
             vertical={isEven}
-
           >
             {content.mainContent}
           </BpkTicket>
