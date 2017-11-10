@@ -76,6 +76,9 @@ class AnimateHeightDemo extends React.Component {
       <View>
         <BpkAnimateHeight
           expanded={this.state.expanded}
+          expandDelay={this.props.expandDelay}
+          collapseDelay={this.props.collapseDelay}
+          animationDuration={this.props.animationDuration}
           style={{ marginBottom: spacingBase }}
         >
           {this.props.children}
@@ -91,10 +94,16 @@ AnimateHeightDemo.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]),
+  expandDelay: PropTypes.number,
+  collapseDelay: PropTypes.number,
+  animationDuration: PropTypes.number,
 };
 
 AnimateHeightDemo.defaultProps = {
   children: null,
+  expandDelay: 0,
+  collapseDelay: 0,
+  animationDuration: 400,
 };
 
 storiesOf('BpkAnimateHeight', module)
@@ -103,6 +112,15 @@ storiesOf('BpkAnimateHeight', module)
       {getStory()}
     </View>
   ))
-  .add('docs:default', () => (
+  .add('Default', () => (
     <AnimateHeightDemo>{animateHeightContent}</AnimateHeightDemo>
+  ))
+  .add('Custom animation duration', () => (
+    <AnimateHeightDemo animationDuration={5000}>{animateHeightContent}</AnimateHeightDemo>
+  ))
+  .add('With expand delay', () => (
+    <AnimateHeightDemo expandDelay={1000}>{animateHeightContent}</AnimateHeightDemo>
+  ))
+  .add('With collapse delay', () => (
+    <AnimateHeightDemo collapseDelay={1000}>{animateHeightContent}</AnimateHeightDemo>
   ));
