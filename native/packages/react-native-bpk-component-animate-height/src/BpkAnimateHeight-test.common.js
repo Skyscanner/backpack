@@ -19,7 +19,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import BpkText from '../../react-native-bpk-component-text';
-import BpkAnimateHeight from './BpkAnimateHeight';
+import BpkAnimateHeight, { ALERT_TYPES } from './BpkAnimateHeight';
 
 const commonTests = () => {
   describe('BpkAnimateHeight', () => {
@@ -31,31 +31,23 @@ const commonTests = () => {
       </BpkText>
     );
 
-    it('should render correctly collapsed', () => {
+    it('should render correctly when expandable', () => {
       const tree = renderer.create(
-        <BpkAnimateHeight
-          expanded={false}
-        >
+        <BpkAnimateHeight type={ALERT_TYPES.NEUTRAL} >
           {animateHeightContent}
         </BpkAnimateHeight>).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
-    it('should render correctly expanded', () => {
+    it('should render correctly when dismissable', () => {
       const tree = renderer.create(
-        <BpkAnimateHeight
-          expanded
-        >
-          {animateHeightContent}
-        </BpkAnimateHeight>).toJSON();
+        <BpkAnimateHeight type={ALERT_TYPES.NEUTRAL} message="Dismissable banner alert" dismissable />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly with n children', () => {
       const tree = renderer.create(
-        <BpkAnimateHeight
-          expanded
-        >
+        <BpkAnimateHeight type={ALERT_TYPES.NEUTRAL} >
           {animateHeightContent}
           {animateHeightContent}
         </BpkAnimateHeight>,
@@ -66,11 +58,41 @@ const commonTests = () => {
     it('should render correctly with user styling padding', () => {
       const tree = renderer.create(
         <BpkAnimateHeight
-          expanded
+          type={ALERT_TYPES.NEUTRAL}
           style={{ marginBottom: 12 }}
         >
           {animateHeightContent}
         </BpkAnimateHeight>).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly when animating on enter', () => {
+      const tree = renderer.create(
+        <BpkAnimateHeight
+          type={ALERT_TYPES.NEUTRAL}
+          animateOnEnter
+          style={{ marginBottom: 12 }}
+        >
+          {animateHeightContent}
+        </BpkAnimateHeight>).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly success', () => {
+      const tree = renderer.create(
+        <BpkAnimateHeight type={ALERT_TYPES.SUCCESS} message="Dismissable banner alert" dismissable />).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly warn', () => {
+      const tree = renderer.create(
+        <BpkAnimateHeight type={ALERT_TYPES.WARN} message="Dismissable banner alert" dismissable />).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly error', () => {
+      const tree = renderer.create(
+        <BpkAnimateHeight type={ALERT_TYPES.ERROR} message="Dismissable banner alert" dismissable />).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

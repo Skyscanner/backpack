@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`iOS BpkAnimateHeight should render correctly collapsed 1`] = `null`;
-
-exports[`iOS BpkAnimateHeight should render correctly expanded 1`] = `null`;
-
-exports[`iOS BpkAnimateHeight should render correctly with n children 1`] = `null`;
-
-exports[`iOS BpkAnimateHeight should render correctly with user styling padding 1`] = `null`;
