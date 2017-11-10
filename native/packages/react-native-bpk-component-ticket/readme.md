@@ -71,9 +71,9 @@ export default class App extends Component {
 | ---------- | --------- | -------- | ------------- |
 | children   | node      | true     | -             |
 | stub       | node      | true     | -             |
-| onPress    | function  | true     | -             |
-| vertical   | boolean   | false    | false         |
-| focused    | boolean   | false    | false         |
-| padded     | boolean   | false    | true          |
+| onPress    | func      | true     | -             |
+| vertical   | bool      | false    | false         |
+| focused    | bool      | false    | false         |
+| padded     | bool      | false    | true          |
 | mainStyle  | object    | false    | null          |
 | stubStyle  | object    | false    | null          |
