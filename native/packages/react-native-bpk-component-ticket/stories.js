@@ -23,10 +23,16 @@ import { storiesOf, action } from '@storybook/react-native';
 
 import BpkTicket from './index';
 
-const content = (
+const mainContent = (
   <BpkText>
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
     commodo ligula eget dolor. Aenean massa.
+  </BpkText>
+);
+
+const stubContent = (
+  <BpkText>
+    Lorem ipsum dolor sit amet.
   </BpkText>
 );
 
@@ -39,10 +45,7 @@ const styles = StyleSheet.create({
   ticketListItem: {
     marginTop: 20,
   },
-  ticketCustomMainStyle: {
-    flex: 2,
-  },
-  ticketCustomStubStyle: {
+  ticketMainStyle: {
     flex: 3,
   },
 });
@@ -52,39 +55,42 @@ storiesOf('BpkTicket', module)
     <BpkTicket
       onPress={onPress}
       accessibilityLabel="Example Ticket"
-      stub={content}
+      stub={stubContent}
+      mainStyle={styles.ticketMainStyle}
     >
-      {content}
+      {mainContent}
     </BpkTicket>
   ))
   .add('docs:vertical', () => (
     <BpkTicket
       onPress={onPress}
       accessibilityLabel="Example Ticket"
-      stub={content}
+      stub={stubContent}
       vertical
     >
-      {content}
+      {mainContent}
     </BpkTicket>
   ))
   .add('docs:without-padding', () => (
     <BpkTicket
       onPress={onPress}
       accessibilityLabel="Example Ticket"
-      stub={content}
+      stub={stubContent}
+      mainStyle={styles.ticketMainStyle}
       padded={false}
     >
-      {content}
+      {mainContent}
     </BpkTicket>
   ))
   .add('docs:focused', () => (
     <BpkTicket
       onPress={onPress}
       accessibilityLabel="Example Ticket"
-      stub={content}
+      stub={stubContent}
+      mainStyle={styles.ticketMainStyle}
       focused
     >
-      {content}
+      {mainContent}
     </BpkTicket>
   ))
   .add('All Tickets', () => (
@@ -92,65 +98,53 @@ storiesOf('BpkTicket', module)
       <BpkTicket
         onPress={onPress}
         accessibilityLabel="Example Ticket"
-        stub={content}
+        stub={stubContent}
         style={styles.ticketListItem}
+        mainStyle={styles.ticketMainStyle}
       >
-        {content}
+        {mainContent}
       </BpkTicket>
       <BpkTicket
         onPress={onPress}
         accessibilityLabel="Example Ticket"
-        stub={content}
+        stub={stubContent}
         style={styles.ticketListItem}
+        mainStyle={styles.ticketMainStyle}
         padded={false}
       >
-        {content}
+        {mainContent}
       </BpkTicket>
       <BpkTicket
         onPress={onPress}
         accessibilityLabel="Example Ticket"
-        stub={content}
+        stub={stubContent}
         style={styles.ticketListItem}
+        mainStyle={styles.ticketMainStyle}
         focused
       >
-        {content}
+        {mainContent}
       </BpkTicket>
     </ScrollView>
   ))
-  .add('Custom main style', () => (
-    <BpkTicket
-      onPress={onPress}
-      accessibilityLabel="Example Ticket"
-      stub={content}
-      mainStyle={styles.ticketCustomMainStyle}
-    >
-      {content}
-    </BpkTicket>
-  ))
-  .add('Custom stub style', () => (
-    <BpkTicket
-      onPress={onPress}
-      accessibilityLabel="Example Ticket"
-      stub={content}
-      stubStyle={styles.ticketCustomStubStyle}
-    >
-      {content}
-    </BpkTicket>
-  ))
   .add('Ticket list (perf)', () => (
     <ScrollView style={styles.ticketListScrollView}>
-      {Array(100).fill(content).map((ticketContent, index) => (
-        <BpkTicket
-          key={index} // eslint-disable-line react/no-array-index-key
-          onPress={onPress}
-          accessibilityLabel="Example Ticket"
-          stub={ticketContent}
-          style={styles.ticketListItem}
-          vertical={index % 2 === 0}
+      {Array(100).fill({ mainContent, stubContent }).map((content, index) => {
+        const isEven = index % 2 === 0;
 
-        >
-          {ticketContent}
-        </BpkTicket>
-      ))}
+        return (
+          <BpkTicket
+            key={index} // eslint-disable-line react/no-array-index-key
+            onPress={onPress}
+            accessibilityLabel="Example Ticket"
+            stub={content.stubContent}
+            style={styles.ticketListItem}
+            mainStyle={isEven ? null : styles.ticketMainStyle}
+            vertical={isEven}
+
+          >
+            {content.mainContent}
+          </BpkTicket>
+        );
+      })}
     </ScrollView>
   ));
