@@ -6,6 +6,10 @@
 - react-native-bpk-component-ticket:
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/ticket
 
+- react-native-bpk-component-animate-height:
+  - Added props for `expandDelay` and `collapseDelay`.
+  - Now removes itself from tree when collapsed to height 0.
+
 ## 2017-11-10 - New `withScrim` HOC, plus native horizontal nav and switch components
 
 **Added:**
