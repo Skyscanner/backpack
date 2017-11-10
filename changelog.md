@@ -14,7 +14,7 @@ _Nothing yet!_
   - New component `BpkHorizontalNav`. See http://backpack.prod.aws.skyscnr.com/components/native/horizontal-nav
 
 - react-native-bpk-component-switch: 1.0.0
-  - New component `BpkSwitch`.
+  - New component `BpkSwitch`. See http://backpack.prod.aws.skyscnr.com/components/native/switches
 
 
 ## 2017-11-07 - New slider component

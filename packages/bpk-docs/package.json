@@ -72,6 +72,7 @@
     "react-native-bpk-component-horizontal-nav": "^1.0.0",
     "react-native-bpk-component-icon": "^1.1.7",
     "react-native-bpk-component-spinner": "^1.0.1",
+    "react-native-bpk-component-switch": "^1.0.0",
     "react-native-bpk-component-text": "^2.1.17",
     "react-native-bpk-component-text-input": "^1.0.18",
     "react-native-bpk-theming": "^1.0.13",
