@@ -5,9 +5,13 @@
 **Added:**
 - bpk-scrim-utils:
   - New higher order component `withScrim`
-  
+
 - react-native-bpk-component-horizontal-nav:
   - New component `BpkHorizontalNav`. See http://backpack.prod.aws.skyscnr.com/components/native/horizontal-nav
+
+- react-native-bpk-component-switch
+  - New component `BpkSwitch`. See http://backpack.prod.aws.skyscnr.com/components/native/switch
+
 
 ## 2017-11-07 - New slider component
 
