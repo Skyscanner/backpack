@@ -27,6 +27,7 @@ import { action } from '@storybook/addon-actions';
 import BpkThemeProvider from 'react-native-bpk-theming';
 import BpkHorizontalNav, { BpkHorizontalNavItem } from './index';
 import { StorySubheading } from '../../storybook/TextStyles';
+import themeAttributes from '../../storybook/themeAttributes';
 
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
@@ -38,10 +39,6 @@ const styles = StyleSheet.create({
     marginBottom: tokens.spacingBase,
   },
 });
-
-const themeAttributes = {
-  horizontalNavSelectedTextColor: '#2d244c',
-};
 
 storiesOf('BpkHorizontalNav', module)
   .add('docs:default', () => (

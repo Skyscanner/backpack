@@ -26,6 +26,7 @@ import { storiesOf } from '@storybook/react-native';
 import BpkThemeProvider from 'react-native-bpk-theming';
 import BpkSwitch from './index';
 import { StorySubheading } from '../../storybook/TextStyles';
+import themeAttributes from '../../storybook/themeAttributes';
 
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
@@ -43,10 +44,6 @@ const styles = StyleSheet.create({
     marginBottom: tokens.spacingBase,
   },
 });
-
-const theme = {
-  switchPrimaryColor: '#2d244c',
-};
 
 // Simple state management for allowing toggling.
 class SwitchContainer extends Component {
@@ -84,7 +81,7 @@ storiesOf('BpkSwitch', module)
       </View>
       <View>
         <StorySubheading>Themed</StorySubheading>
-        <BpkThemeProvider theme={theme}>
+        <BpkThemeProvider theme={themeAttributes}>
           <SwitchContainer />
         </BpkThemeProvider>
       </View>
