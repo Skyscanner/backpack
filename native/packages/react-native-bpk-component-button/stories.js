@@ -31,6 +31,7 @@ import { action } from '@storybook/addon-actions';
 import BpkThemeProvider from 'react-native-bpk-theming';
 
 import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
+import themeAttributes from '../../storybook/themeAttributes';
 
 import BpkButton, { BUTTON_TYPES } from './src/BpkButton';
 
@@ -49,24 +50,6 @@ const styles = StyleSheet.create({
     marginRight: tokens.spacingMd,
   },
 });
-
-const theme = {
-  contentColor: '#2d244c',
-  backgroundColor: tokens.colorWhite,
-  brandColors: {
-    gradientStart: '#fce134',
-    gradientEnd: '#f8c42d',
-  },
-};
-
-const themeAttributes = {
-  buttonPrimaryGradientStartColor: theme.brandColors.gradientStart,
-  buttonPrimaryGradientEndColor: theme.brandColors.gradientEnd,
-  buttonPrimaryTextColor: theme.contentColor,
-  buttonSecondaryBackgroundColor: theme.backgroundColor,
-  buttonSecondaryTextColor: theme.contentColor,
-  buttonSecondaryBorderColor: theme.contentColor,
-};
 
 const getIconType = type => (
   type === 'destructive' ? 'trash' : 'long-arrow-right'

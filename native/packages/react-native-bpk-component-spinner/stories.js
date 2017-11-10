@@ -27,6 +27,7 @@ import { storiesOf } from '@storybook/react-native';
 import BpkThemeProvider from 'react-native-bpk-theming';
 import BpkSpinner from './index';
 import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
+import themeAttributes from '../../storybook/themeAttributes';
 
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
@@ -42,10 +43,6 @@ const styles = StyleSheet.create({
     marginBottom: tokens.spacingBase,
   },
 });
-
-const themeAttributes = {
-  spinnerPrimaryColor: '#2d244c',
-};
 
 const generateAllSpinnerTypes = small => (
   <View>
