@@ -2,15 +2,19 @@
 
 ## UNRELEASED
 
+_Nothing yet!_
+
+## 2017-11-10 - New `withScrim` HOC, plus native horizontal nav and switch components
+
 **Added:**
-- bpk-scrim-utils:
+- bpk-scrim-utils: 1.0.0
   - New higher order component `withScrim`
 
-- react-native-bpk-component-horizontal-nav:
+- react-native-bpk-component-horizontal-nav: 1.0.0
   - New component `BpkHorizontalNav`. See http://backpack.prod.aws.skyscnr.com/components/native/horizontal-nav
 
-- react-native-bpk-component-switch
-  - New component `BpkSwitch`. See http://backpack.prod.aws.skyscnr.com/components/native/switch
+- react-native-bpk-component-switch: 1.0.0
+  - New component `BpkSwitch`.
 
 
 ## 2017-11-07 - New slider component
