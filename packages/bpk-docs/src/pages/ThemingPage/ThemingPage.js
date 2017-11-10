@@ -29,6 +29,7 @@ import {
   NATIVE_BUTTON,
   NATIVE_HORIZONTAL_NAV,
   NATIVE_SPINNER,
+  NATIVE_SWITCH,
 } from './../../constants/routes';
 
 const NativeTextPage = () => (<DocsPageBuilder
@@ -53,6 +54,9 @@ const NativeTextPage = () => (<DocsPageBuilder
       </BpkListItem>
       <BpkListItem>
         <BpkLink href={NATIVE_SPINNER}>Spinner</BpkLink>
+      </BpkListItem>
+      <BpkListItem>
+        <BpkLink href={NATIVE_SWITCH}>Switch</BpkLink>
       </BpkListItem>
       <BpkListItem>More coming soon!</BpkListItem>
     </BpkList>,

@@ -76,10 +76,11 @@ export const NATIVE_BANNER_ALERT = '/components/native/banner-alerts';
 export const NATIVE_BUTTON = '/components/native/button';
 export const NATIVE_CARDS = '/components/native/cards';
 export const NATIVE_COMPONENTS = '/components/native';
-export const NATIVE_ICONS = '/components/native/icons';
 export const NATIVE_HORIZONTAL_NAV = '/components/native/horizontal-nav';
-export const NATIVE_SPINNER = '/components/native/spinners';
+export const NATIVE_ICONS = '/components/native/icons';
 export const NATIVE_INPUT = '/components/native/text-input';
+export const NATIVE_SPINNER = '/components/native/spinners';
+export const NATIVE_SWITCH = '/components/native/switches';
 export const NATIVE_TEXT = '/components/native/text';
 
 // components/utilities/
