@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-component-horizontal-nav",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "description": "Backpack React Native horizontal navigation component.",
   "repository": {
