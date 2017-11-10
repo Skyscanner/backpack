@@ -31,49 +31,31 @@ const styles = StyleSheet.create({
 });
 
 export default class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      showDismissable: true,
-      expanded: false,
-    };
-
-    this.onDismissablePress = this.onDismissablePress.bind(this);
-    this.onExpandablePress = this.onExpandablePress.bind(this);
-  }
-
-  onDismissablePress() {
-    this.setState({ showDismissable: false });
-  }
-
-  onExpandablePress() {
-    this.setState({ expanded: !this.state.expanded });
-  }
-
   render() {
     return (
       <View style={styles.container}>
         <BpkBannerAlert
           style={styles.bannerAlert}
-          type={ALERT_TYPES.SUCCESS}
-          message={translationHelper.translate('SUCCESS_MESSAGE')}
+          type={ALERT_TYPES.NEUTRAL}
+          message={translationHelper.translate('NEUTRAL_MESSAGE')}
         />
+          <BpkBannerAlert
+            style={styles.bannerAlert}
+            type={ALERT_TYPES.SUCCESS}
+            message={translationHelper.translate('SUCCESS_MESSAGE')}
+          />
         <BpkBannerAlert
           style={styles.bannerAlert}
           type={ALERT_TYPES.WARN}
           message={translationHelper.translate('WARN_MESSAGE')}
-          actionButtonLabel="Dismiss"
-          onAction={this.onDismissablePress}
-          dismissable={this.state.showDismissable}
+          actionButtonLabel={translationHelper.translate('DISMISS_MESSAGE')}
+          dismissable
         />
         <BpkBannerAlert
           style={styles.bannerAlert}
           type={ALERT_TYPES.ERROR}
           message={translationHelper.translate('ERROR_MESSAGE')}
-          actionButtonLabel={translationHelper.translate('EXPAND')}
-          onAction={this.onExpandablePress}
-          expanded={this.state.expanded}
+          actionButtonLabel={translationHelper.translate('EXPAND_MESSAGE')}
         >
           <BpkText textStyle="sm" style={styles.child}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
@@ -89,12 +71,11 @@ export default class App extends Component {
 
 ## Props
 
-| Property           | PropType            | Required | Default Value |
-| ------------------ | ------------------- | -------- | ------------- |
-| message            | string              | yes      | -             |
-| type               | oneOf(ALERT_TYPES)  | yes      | -             |
-| actionButtonLabel  | string              | no       | null          |
-| children           | node                | no       | null          |
-| dismissable        | bool                | no       | false         |
-| expanded           | bool                | no       | false         |
-| onAction           | func                | no       | () => null    |
+| Property          | PropType           | Required | Default Value |
+| ----------------- | ------------------ | -------- | ------------- |
+| message           | string             | yes      | -             |
+| type              | oneOf(ALERT_TYPES) | yes      | -             |
+| actionButtonLabel | string             | no       | null          |
+| children          | node               | no       | null          |
+| dismissable       | boolean            | no       | false         |
+| onAction          | func               | no       | () => null    |
