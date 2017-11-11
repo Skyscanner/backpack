@@ -15,8 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import focusScope from 'a11y-focus-scope';
-import focusStore from 'a11y-focus-store';
+import { scopeFocus, unscopeFocus } from 'a11y-focus-scope';
+import { restoreFocus, storeFocus } from 'a11y-focus-store';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { cssModules, wrapDisplayName } from 'bpk-react-utils';
@@ -57,9 +57,9 @@ const withScrim = (WrappedComponent) => {
         }
       }
 
-      focusStore.storeFocus();
+      storeFocus();
       if (this.dialogElement) {
-        focusScope.scopeFocus(this.dialogElement);
+        scopeFocus(this.dialogElement);
       }
     }
 
@@ -77,8 +77,8 @@ const withScrim = (WrappedComponent) => {
         }
       }
 
-      focusScope.unscopeFocus();
-      focusStore.restoreFocus();
+      unscopeFocus();
+      restoreFocus();
     }
 
     onContentMouseDown(e) {

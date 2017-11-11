@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-import focusStore from 'a11y-focus-store';
-import focusScope from 'a11y-focus-scope';
 import { Portal, cssModules } from 'bpk-react-utils';
+import { scopeFocus, unscopeFocus, restoreFocus, storeFocus } from 'bpk-scrim-utils';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Tether, { getArrowPositionCallback, applyRTLTransforms } from 'bpk-tether';
@@ -34,8 +33,8 @@ const onOpen = (popoverElement, targetElement) => {
   // Therefore we also shouldn't store and scope the focus
   if (targetElement) {
     targetElement.focus();
-    focusStore.storeFocus();
-    focusScope.scopeFocus(popoverElement);
+    storeFocus();
+    scopeFocus(popoverElement);
   }
 };
 
@@ -59,8 +58,8 @@ class BpkPopoverPortal extends Component {
       this.tether = null;
     }
 
-    focusScope.unscopeFocus();
-    focusStore.restoreFocus();
+    unscopeFocus();
+    restoreFocus();
 
     done();
   }
