@@ -1101,6 +1101,9 @@
       "category": "touchables",
       "value": "#252033ff",
       "type": "color",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": "#252033"
       },
@@ -1110,7 +1113,25 @@
       "category": "touchables",
       "value": "0.15",
       "type": "number",
+      "meta": {
+        "deprecated": true
+      },
       "name": "UNDERLAY_OPACITY"
+    },
+    "TOUCHABLE_OVERLAY_COLOR": {
+      "category": "touchables",
+      "value": "#252033ff",
+      "type": "color",
+      ".alias": {
+        "value": "#252033"
+      },
+      "name": "TOUCHABLE_OVERLAY_COLOR"
+    },
+    "TOUCHABLE_OVERLAY_OPACITY": {
+      "category": "touchables",
+      "value": "0.15",
+      "type": "number",
+      "name": "TOUCHABLE_OVERLAY_OPACITY"
     },
     "FONT_FAMILY": {
       "value": "\"System\"",
@@ -1499,6 +1520,8 @@
     "SPACING_XXL",
     "UNDERLAY_COLOR",
     "UNDERLAY_OPACITY",
+    "TOUCHABLE_OVERLAY_COLOR",
+    "TOUCHABLE_OVERLAY_OPACITY",
     "FONT_FAMILY",
     "FONT_SIZE_XS",
     "FONT_SIZE_SM",

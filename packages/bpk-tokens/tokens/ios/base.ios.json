@@ -823,6 +823,9 @@
       "category": "touchables",
       "value": "#252033ff",
       "type": "color",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": "#252033"
       },
@@ -832,7 +835,25 @@
       "category": "touchables",
       "value": "0.15",
       "type": "number",
+      "meta": {
+        "deprecated": true
+      },
       "name": "underlayOpacity"
+    },
+    {
+      "category": "touchables",
+      "value": "#252033ff",
+      "type": "color",
+      ".alias": {
+        "value": "#252033"
+      },
+      "name": "touchableOverlayColor"
+    },
+    {
+      "category": "touchables",
+      "value": "0.15",
+      "type": "number",
+      "name": "touchableOverlayOpacity"
     },
     {
       "value": "\"System\"",

@@ -114,6 +114,8 @@ export const spacingXl = 32;
 export const spacingXxl = 40;
 export const underlayColor = "rgb(37, 32, 51)";
 export const underlayOpacity = 0.15;
+export const touchableOverlayColor = "rgb(37, 32, 51)";
+export const touchableOverlayOpacity = 0.15;
 export const fontFamily = "System";
 export const fontSizeXs = 11;
 export const fontSizeSm = 13;
@@ -256,6 +258,8 @@ colorPink900,
 export const touchables = {
 underlayColor,
 underlayOpacity,
+touchableOverlayColor,
+touchableOverlayOpacity,
 };
 export const typesettings = {
 fontFamily,

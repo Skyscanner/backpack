@@ -6,9 +6,7 @@ exports[`Android BpkTicket should render correctly 1`] = `
   accessibilityLabel="Example Ticket"
   accessibilityTraits={undefined}
   accessible={true}
-  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
-  isTVSelectable={true}
   nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
@@ -20,26 +18,20 @@ exports[`Android BpkTicket should render correctly 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "transparent",
-      },
-      Array [
-        Object {
-          "backgroundColor": "rgb(255, 255, 255)",
-          "borderRadius": 2,
-          "elevation": 2,
-          "shadowColor": undefined,
-          "shadowOffset": Object {
-            "height": NaN,
-            "width": undefined,
-          },
-          "shadowOpacity": undefined,
-          "shadowRadius": NaN,
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 2,
+        "elevation": 2,
+        "shadowColor": undefined,
+        "shadowOffset": Object {
+          "height": NaN,
+          "width": undefined,
         },
-      ],
+        "shadowOpacity": undefined,
+        "shadowRadius": NaN,
+      },
     ]
   }
   testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -131,6 +123,20 @@ exports[`Android BpkTicket should render correctly 1`] = `
       </Text>
     </View>
   </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": undefined,
+        "bottom": 0,
+        "flex": 1,
+        "left": 0,
+        "opacity": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
 </View>
 `;
 
@@ -140,9 +146,7 @@ exports[`Android BpkTicket should render correctly with arbitrary props 1`] = `
   accessibilityLabel="Example Ticket"
   accessibilityTraits={undefined}
   accessible={true}
-  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
-  isTVSelectable={true}
   nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
@@ -154,26 +158,20 @@ exports[`Android BpkTicket should render correctly with arbitrary props 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "transparent",
-      },
-      Array [
-        Object {
-          "backgroundColor": "rgb(255, 255, 255)",
-          "borderRadius": 2,
-          "elevation": 2,
-          "shadowColor": undefined,
-          "shadowOffset": Object {
-            "height": NaN,
-            "width": undefined,
-          },
-          "shadowOpacity": undefined,
-          "shadowRadius": NaN,
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 2,
+        "elevation": 2,
+        "shadowColor": undefined,
+        "shadowOffset": Object {
+          "height": NaN,
+          "width": undefined,
         },
-      ],
+        "shadowOpacity": undefined,
+        "shadowRadius": NaN,
+      },
     ]
   }
   testID="arbitrary value"
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -265,6 +263,20 @@ exports[`Android BpkTicket should render correctly with arbitrary props 1`] = `
       </Text>
     </View>
   </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": undefined,
+        "bottom": 0,
+        "flex": 1,
+        "left": 0,
+        "opacity": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
 </View>
 `;
 
@@ -274,9 +286,7 @@ exports[`Android BpkTicket should render correctly with custom main style 1`] = 
   accessibilityLabel="Example Ticket"
   accessibilityTraits={undefined}
   accessible={true}
-  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
-  isTVSelectable={true}
   nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
@@ -288,26 +298,20 @@ exports[`Android BpkTicket should render correctly with custom main style 1`] = 
   style={
     Array [
       Object {
-        "backgroundColor": "transparent",
-      },
-      Array [
-        Object {
-          "backgroundColor": "rgb(255, 255, 255)",
-          "borderRadius": 2,
-          "elevation": 2,
-          "shadowColor": undefined,
-          "shadowOffset": Object {
-            "height": NaN,
-            "width": undefined,
-          },
-          "shadowOpacity": undefined,
-          "shadowRadius": NaN,
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 2,
+        "elevation": 2,
+        "shadowColor": undefined,
+        "shadowOffset": Object {
+          "height": NaN,
+          "width": undefined,
         },
-      ],
+        "shadowOpacity": undefined,
+        "shadowRadius": NaN,
+      },
     ]
   }
   testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -402,6 +406,20 @@ exports[`Android BpkTicket should render correctly with custom main style 1`] = 
       </Text>
     </View>
   </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": undefined,
+        "bottom": 0,
+        "flex": 1,
+        "left": 0,
+        "opacity": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
 </View>
 `;
 
@@ -411,9 +429,7 @@ exports[`Android BpkTicket should render correctly with custom stub style 1`] = 
   accessibilityLabel="Example Ticket"
   accessibilityTraits={undefined}
   accessible={true}
-  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
-  isTVSelectable={true}
   nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
@@ -425,26 +441,20 @@ exports[`Android BpkTicket should render correctly with custom stub style 1`] = 
   style={
     Array [
       Object {
-        "backgroundColor": "transparent",
-      },
-      Array [
-        Object {
-          "backgroundColor": "rgb(255, 255, 255)",
-          "borderRadius": 2,
-          "elevation": 2,
-          "shadowColor": undefined,
-          "shadowOffset": Object {
-            "height": NaN,
-            "width": undefined,
-          },
-          "shadowOpacity": undefined,
-          "shadowRadius": NaN,
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 2,
+        "elevation": 2,
+        "shadowColor": undefined,
+        "shadowOffset": Object {
+          "height": NaN,
+          "width": undefined,
         },
-      ],
+        "shadowOpacity": undefined,
+        "shadowRadius": NaN,
+      },
     ]
   }
   testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -539,6 +549,20 @@ exports[`Android BpkTicket should render correctly with custom stub style 1`] = 
       </Text>
     </View>
   </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": undefined,
+        "bottom": 0,
+        "flex": 1,
+        "left": 0,
+        "opacity": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
 </View>
 `;
 
@@ -548,9 +572,7 @@ exports[`Android BpkTicket should render correctly with the "focused" state 1`] 
   accessibilityLabel="Example Ticket"
   accessibilityTraits={undefined}
   accessible={true}
-  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
-  isTVSelectable={true}
   nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
@@ -562,36 +584,30 @@ exports[`Android BpkTicket should render correctly with the "focused" state 1`] 
   style={
     Array [
       Object {
-        "backgroundColor": "transparent",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 2,
+        "elevation": 2,
+        "shadowColor": undefined,
+        "shadowOffset": Object {
+          "height": NaN,
+          "width": undefined,
+        },
+        "shadowOpacity": undefined,
+        "shadowRadius": NaN,
       },
-      Array [
-        Object {
-          "backgroundColor": "rgb(255, 255, 255)",
-          "borderRadius": 2,
-          "elevation": 2,
-          "shadowColor": undefined,
-          "shadowOffset": Object {
-            "height": NaN,
-            "width": undefined,
-          },
-          "shadowOpacity": undefined,
-          "shadowRadius": NaN,
+      Object {
+        "elevation": 16,
+        "shadowColor": undefined,
+        "shadowOffset": Object {
+          "height": NaN,
+          "width": undefined,
         },
-        Object {
-          "elevation": 16,
-          "shadowColor": undefined,
-          "shadowOffset": Object {
-            "height": NaN,
-            "width": undefined,
-          },
-          "shadowOpacity": undefined,
-          "shadowRadius": NaN,
-        },
-      ],
+        "shadowOpacity": undefined,
+        "shadowRadius": NaN,
+      },
     ]
   }
   testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -683,6 +699,20 @@ exports[`Android BpkTicket should render correctly with the "focused" state 1`] 
       </Text>
     </View>
   </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": undefined,
+        "bottom": 0,
+        "flex": 1,
+        "left": 0,
+        "opacity": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
 </View>
 `;
 
@@ -692,9 +722,7 @@ exports[`Android BpkTicket should render correctly without padding 1`] = `
   accessibilityLabel="Example Ticket"
   accessibilityTraits={undefined}
   accessible={true}
-  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
-  isTVSelectable={true}
   nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
@@ -706,26 +734,20 @@ exports[`Android BpkTicket should render correctly without padding 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "transparent",
-      },
-      Array [
-        Object {
-          "backgroundColor": "rgb(255, 255, 255)",
-          "borderRadius": 2,
-          "elevation": 2,
-          "shadowColor": undefined,
-          "shadowOffset": Object {
-            "height": NaN,
-            "width": undefined,
-          },
-          "shadowOpacity": undefined,
-          "shadowRadius": NaN,
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": 2,
+        "elevation": 2,
+        "shadowColor": undefined,
+        "shadowOffset": Object {
+          "height": NaN,
+          "width": undefined,
         },
-      ],
+        "shadowOpacity": undefined,
+        "shadowRadius": NaN,
+      },
     ]
   }
   testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -811,5 +833,19 @@ exports[`Android BpkTicket should render correctly without padding 1`] = `
       </Text>
     </View>
   </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": undefined,
+        "bottom": 0,
+        "flex": 1,
+        "left": 0,
+        "opacity": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
 </View>
 `;

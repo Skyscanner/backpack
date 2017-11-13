@@ -1,9 +1,8 @@
 {
-  "private": true,
-  "name": "react-native-bpk-component-ticket",
+  "name": "react-native-bpk-component-touchable-overlay",
   "version": "0.0.0",
   "main": "index.js",
-  "description": "Backpack React Native ticket component.",
+  "description": "Backpack React Native touchable overlay component.",
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
@@ -16,9 +15,7 @@
   },
   "dependencies": {
     "bpk-tokens": "^26.4.5",
-    "prop-types": "^15.5.8",
-    "react-native-dash": "0.0.8",
-    "react-native-bpk-component-touchable-overlay": "^0.0.0"
+    "prop-types": "^15.5.8"
   },
   "devDependencies": {
     "react-native-bpk-component-text": "^2.1.17"

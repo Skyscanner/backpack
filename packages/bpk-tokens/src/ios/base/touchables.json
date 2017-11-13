@@ -5,9 +5,23 @@
   "props": {
     "UNDERLAY_COLOR": {
       "value": "{!GRAY_900}",
-      "type": "color"
+      "type": "color",
+      "meta": {
+        "deprecated": true
+      }
     },
     "UNDERLAY_OPACITY": {
+      "value": "0.15",
+      "type": "number",
+      "meta": {
+        "deprecated": true
+      }
+    },
+    "TOUCHABLE_OVERLAY_COLOR": {
+      "value": "{!GRAY_900}",
+      "type": "color"
+    },
+    "TOUCHABLE_OVERLAY_OPACITY": {
       "value": "0.15",
       "type": "number"
     }
