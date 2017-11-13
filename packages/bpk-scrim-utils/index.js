@@ -16,10 +16,15 @@
  * limitations under the License.
  */
 
-
+import { scopeFocus, unscopeFocus } from 'a11y-focus-scope';
+import { restoreFocus, storeFocus } from 'a11y-focus-store';
 import withScrim from './src/withScrim';
 
-export { withScrim };
+export { withScrim, scopeFocus, unscopeFocus, restoreFocus, storeFocus };
 export default {
   withScrim,
+  scopeFocus,
+  unscopeFocus,
+  restoreFocus,
+  storeFocus,
 };
