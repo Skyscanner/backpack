@@ -61,7 +61,7 @@ const components = [
         width: 750,
         height: 1334,
         src: `/${iosScreenshotBold}`,
-        altText: 'iOS Default Text Component',
+        altText: 'iOS Emphasized Text Component',
         subText: '(iPhone 8 Simulator)',
       },
       {
@@ -69,7 +69,7 @@ const components = [
         width: 1080,
         height: 1920,
         src: `/${androidScreenshotBold}`,
-        altText: 'Android Default Text Component',
+        altText: 'Android Emphasized Text Component',
         subText: '(Google Pixel Emulator)',
       },
     ],
@@ -88,7 +88,6 @@ const NativeTextPage = () => (<DocsPageBuilder
   ]}
   components={components}
   readme={readme}
-  showMenu={false}
 />);
 
 export default NativeTextPage;

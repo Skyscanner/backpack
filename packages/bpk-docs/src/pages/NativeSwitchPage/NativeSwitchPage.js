@@ -71,7 +71,7 @@ const NativeSwitchPage = () => (<DocsPageBuilder
   ]}
   components={components}
   readme={readme}
-  showMenu
+  showMenu={false}
 />);
 
 export default NativeSwitchPage;
