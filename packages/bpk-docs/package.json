@@ -75,6 +75,7 @@
     "react-native-bpk-component-switch": "^1.0.0",
     "react-native-bpk-component-text": "^2.1.17",
     "react-native-bpk-component-text-input": "^1.0.18",
+    "react-native-bpk-component-ticket": "^0.0.0",
     "react-native-bpk-theming": "^1.0.13",
     "uglify-loader": "^1.4.0"
   }
