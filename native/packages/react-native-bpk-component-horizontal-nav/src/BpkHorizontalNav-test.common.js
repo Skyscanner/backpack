@@ -18,14 +18,28 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import BpkHorizontalNav from './BpkHorizontalNav';
+import BpkHorizontalNavItem from './BpkHorizontalNavItem';
+
+jest.mock('./BpkHorizontalNavItem', () => 'BpkHorizontalNavItem');
 
 const commonTests = () => {
   describe('BpkHorizontalNav', () => {
     it('should render correctly', () => {
       const tree = renderer.create(
-        <BpkHorizontalNav>
+        <BpkHorizontalNav selectedId="0">
           My nav content.
+        </BpkHorizontalNav>,
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly with the "selected" prop', () => {
+      const tree = renderer.create(
+        <BpkHorizontalNav selectedId="0">
+          <BpkHorizontalNavItem id="0" />
+          <BpkHorizontalNavItem id="1" />
         </BpkHorizontalNav>,
       ).toJSON();
       expect(tree).toMatchSnapshot();
@@ -33,7 +47,7 @@ const commonTests = () => {
 
     it('should render correctly with custom "style" prop', () => {
       const tree = renderer.create(
-        <BpkHorizontalNav style={{ marginBottom: 10 }}>
+        <BpkHorizontalNav selectedId="0" style={{ marginBottom: 10 }}>
           My nav content.
         </BpkHorizontalNav>,
       ).toJSON();
@@ -42,7 +56,7 @@ const commonTests = () => {
 
     it('should render correctly with arbitrary props', () => {
       const tree = renderer.create(
-        <BpkHorizontalNav custom="custom-prop">
+        <BpkHorizontalNav selectedId="0" custom="custom-prop">
           My nav content.
         </BpkHorizontalNav>,
       ).toJSON();

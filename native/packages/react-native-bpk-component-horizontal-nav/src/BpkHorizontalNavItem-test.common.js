@@ -26,7 +26,7 @@ const commonTests = () => {
   describe('BpkHorizontalNavItem', () => {
     it('should render correctly', () => {
       const tree = renderer.create(
-        <BpkHorizontalNavItem title="Nav" onPress={onPressFn}>
+        <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn}>
           My nav content.
         </BpkHorizontalNavItem>,
       ).toJSON();
@@ -35,7 +35,7 @@ const commonTests = () => {
 
     it('should render correctly with "selected" prop', () => {
       const tree = renderer.create(
-        <BpkHorizontalNavItem title="Nav" onPress={onPressFn} selected>
+        <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn} selected>
           My nav content.
         </BpkHorizontalNavItem>,
       ).toJSON();
@@ -44,7 +44,7 @@ const commonTests = () => {
 
     it('should render correctly with "spaceAround" prop', () => {
       const tree = renderer.create(
-        <BpkHorizontalNavItem title="Nav" onPress={onPressFn} spaceAround>
+        <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn} spaceAround>
           My nav content.
         </BpkHorizontalNavItem>,
       ).toJSON();
@@ -53,7 +53,7 @@ const commonTests = () => {
 
     it('should render correctly with custom "style" prop', () => {
       const tree = renderer.create(
-        <BpkHorizontalNavItem title="Nav" onPress={onPressFn} style={{ marginBottom: 10 }}>
+        <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn} style={{ marginBottom: 10 }}>
           My nav content.
         </BpkHorizontalNavItem>,
       ).toJSON();
@@ -62,7 +62,7 @@ const commonTests = () => {
 
     it('should render correctly with arbitrary props', () => {
       const tree = renderer.create(
-        <BpkHorizontalNavItem title="Nav" onPress={onPressFn} custom="custom-prop">
+        <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn} custom="custom-prop">
           My nav content.
         </BpkHorizontalNavItem>,
       ).toJSON();
@@ -75,7 +75,7 @@ const commonTests = () => {
       };
       const tree = renderer.create(
         <BpkThemeProvider theme={theme}>
-          <BpkHorizontalNavItem title="Nav" onPress={onPressFn} custom="custom-prop">
+          <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn} custom="custom-prop">
           My nav content.
           </BpkHorizontalNavItem>
         </BpkThemeProvider>,
@@ -86,7 +86,7 @@ const commonTests = () => {
     it('should reject theme property when required theme attributes are omitted', () => { // eslint-disable-line max-len
       expect(propTypes.theme({
         theme: {},
-      }, 'theme', 'BpkHorizontalNavItem').toString()).toEqual('Error: Invalid prop `theme` supplied to `BpkHorizontalNavItem`. To theme a BpkHorizontalNavItem, the `theme` prop must include `horizontalNavSelectedTextColor`'); // eslint-disable-line max-len
+      }, 'theme', 'BpkHorizontalNavItem').toString()).toEqual('Error: Invalid prop `theme` supplied to `BpkHorizontalNavItem`. To theme a `BpkHorizontalNavItem`, the `theme` prop must include `horizontalNavSelectedTextColor`'); // eslint-disable-line max-len
     });
   });
 };

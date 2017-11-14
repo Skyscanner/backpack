@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android BpkHorizontalNavSelectedIndicator should render correctly 1`] = `
+<View
+  collapsable={undefined}
+  style={
+    Object {
+      "backgroundColor": "rgb(0, 140, 168)",
+      "height": 2,
+      "transform": Array [
+        Object {
+          "translateX": 0,
+        },
+      ],
+      "width": 100,
+    }
+  }
+/>
+`;
+
+exports[`Android BpkHorizontalNavSelectedIndicator should support theming 1`] = `
+<View
+  collapsable={undefined}
+  style={
+    Object {
+      "backgroundColor": "red",
+      "height": 2,
+      "transform": Array [
+        Object {
+          "translateX": 0,
+        },
+      ],
+      "width": 100,
+    }
+  }
+/>
+`;

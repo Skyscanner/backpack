@@ -22,6 +22,7 @@ import {
   Platform,
   StyleSheet,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import BpkThemeProvider from 'react-native-bpk-theming';
@@ -40,22 +41,61 @@ const styles = StyleSheet.create({
   },
 });
 
+class ManagedNav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { selectedId: '2' };
+  }
+  render() {
+    return (
+      <BpkHorizontalNav selectedId={this.state.selectedId}>
+        <BpkHorizontalNavItem id="0" onPress={() => { this.setState({ selectedId: '0' }); }} title="One" />
+        <BpkHorizontalNavItem id="1" onPress={() => { this.setState({ selectedId: '1' }); }} title="Two (Long Title)" />
+        <BpkHorizontalNavItem id="2" onPress={() => { this.setState({ selectedId: '2' }); }} title="Three" />
+      </BpkHorizontalNav>
+    );
+  }
+}
+
+const StoryNav = (props) => {
+  const { items, ...rest } = props;
+  return (
+    <BpkHorizontalNav selectedId="1" {...rest}>
+      { [...Array(items)].map((_, index) => (
+        <BpkHorizontalNavItem
+          title="Item"
+          id={index.toString()}
+          key={index.toString()}
+          onPress={action(`Nav item ${index} pressed`)}
+        />
+      ))}
+      <BpkHorizontalNavItem title="Disabled Item" disabled id="disabled" onPress={() => {}} />
+    </BpkHorizontalNav>
+  );
+};
+StoryNav.propTypes = {
+  items: PropTypes.number,
+};
+StoryNav.defaultProps = {
+  items: 2,
+};
+
 storiesOf('BpkHorizontalNav', module)
   .add('docs:default', () => (
     <View style={styles.bottomMargin}>
-      <BpkHorizontalNav>
-        <BpkHorizontalNavItem title="Flights" onPress={action('Nav item one pressed')} />
-        <BpkHorizontalNavItem selected title="Hotels" onPress={action('Nav item two pressed')} />
-        <BpkHorizontalNavItem title="Car hire" onPress={action('Nav item three pressed')} />
+      <BpkHorizontalNav selectedId="1">
+        <BpkHorizontalNavItem title="Flights" id="0" onPress={action('Nav item one pressed')} />
+        <BpkHorizontalNavItem title="Hotels" id="1" onPress={action('Nav item two pressed')} />
+        <BpkHorizontalNavItem title="Car hire" id="2" onPress={action('Nav item three pressed')} />
       </BpkHorizontalNav>
     </View>
   ))
   .add('docs:spaceAround', () => (
     <View style={styles.bottomMargin}>
-      <BpkHorizontalNav spaceAround>
-        <BpkHorizontalNavItem title="Flights" onPress={action('Nav item one pressed')} />
-        <BpkHorizontalNavItem selected title="Hotels" onPress={action('Nav item two pressed')} />
-        <BpkHorizontalNavItem title="Car hire" onPress={action('Nav item three pressed')} />
+      <BpkHorizontalNav spaceAround selectedId="1">
+        <BpkHorizontalNavItem title="Flights" id="0" onPress={action('Nav item one pressed')} />
+        <BpkHorizontalNavItem title="Hotels" id="1" onPress={action('Nav item two pressed')} />
+        <BpkHorizontalNavItem title="Car hire" id="2" onPress={action('Nav item three pressed')} />
       </BpkHorizontalNav>
     </View>
   ))
@@ -63,51 +103,29 @@ storiesOf('BpkHorizontalNav', module)
     <View>
       <View style={styles.bottomMargin}>
         <StorySubheading>Default</StorySubheading>
-        <BpkHorizontalNav>
-          <BpkHorizontalNavItem title="Item" onPress={action('Nav item one pressed')} />
-          <BpkHorizontalNavItem selected title="Item" onPress={action('Nav item two pressed')} />
-          <BpkHorizontalNavItem title="Item" onPress={action('Nav item three pressed')} />
-        </BpkHorizontalNav>
+        <StoryNav />
       </View>
       <View style={styles.bottomMargin}>
         <StorySubheading>Space Around</StorySubheading>
-        <BpkHorizontalNav spaceAround>
-          <BpkHorizontalNavItem title="Item" onPress={action('Nav item one pressed')} />
-          <BpkHorizontalNavItem selected title="Item" onPress={action('Nav item two pressed')} />
-          <BpkHorizontalNavItem title="Item" onPress={action('Nav item three pressed')} />
-        </BpkHorizontalNav>
+        <StoryNav spaceAround />
       </View>
       <View style={styles.bottomMargin}>
         <StorySubheading>Overflowing</StorySubheading>
-        <BpkHorizontalNav spaceAround>
-          <BpkHorizontalNavItem title="Item" onPress={action('Nav item one pressed')} />
-          <BpkHorizontalNavItem selected title="Item" onPress={action('Nav item two pressed')} />
-          <BpkHorizontalNavItem title="Item" onPress={action('Nav item three pressed')} />
-          <BpkHorizontalNavItem title="Item" onPress={action('Nav item one pressed')} />
-          <BpkHorizontalNavItem disabled title="Item" onPress={action('Nav item two pressed')} />
-          <BpkHorizontalNavItem title="Item" onPress={action('Nav item three pressed')} />
-        </BpkHorizontalNav>
+        <StoryNav items={5} />
       </View>
       <View style={styles.bottomMargin}>
         <StorySubheading>Space Around, Overflowing</StorySubheading>
-        <BpkHorizontalNav spaceAround>
-          <BpkHorizontalNavItem title="Item" onPress={action('Nav item one pressed')} />
-          <BpkHorizontalNavItem selected title="Item" onPress={action('Nav item two pressed')} />
-          <BpkHorizontalNavItem title="Item" onPress={action('Nav item three pressed')} />
-          <BpkHorizontalNavItem title="Item" onPress={action('Nav item one pressed')} />
-          <BpkHorizontalNavItem disabled title="Item" onPress={action('Nav item two pressed')} />
-          <BpkHorizontalNavItem title="Item" onPress={action('Nav item three pressed')} />
-        </BpkHorizontalNav>
+        <StoryNav items={5} spaceAround />
       </View>
       <View style={styles.bottomMargin}>
         <StorySubheading>Themed</StorySubheading>
         <BpkThemeProvider theme={themeAttributes}>
-          <BpkHorizontalNav>
-            <BpkHorizontalNavItem title="Menu Item" onPress={action('Nav item one pressed')} />
-            <BpkHorizontalNavItem selected title="Menu Item" onPress={action('Nav item two pressed')} />
-            <BpkHorizontalNavItem title="Menu Item" onPress={action('Nav item three pressed')} />
-          </BpkHorizontalNav>
+          <StoryNav />
         </BpkThemeProvider>
+      </View>
+      <View style={styles.bottomMargin}>
+        <StorySubheading>In a state management wrapper, for testing animation</StorySubheading>
+        <ManagedNav />
       </View>
     </View>
   ));

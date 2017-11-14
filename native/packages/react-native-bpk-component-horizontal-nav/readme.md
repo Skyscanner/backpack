@@ -28,10 +28,10 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <BpkHorizontalNav>
-          <BpkHorizontalNavItem selected title="Item One" onPress={() => {}} />
-          <BpkHorizontalNavItem title="Item Two" onPress={() => {}} />
-          <BpkHorizontalNavItem title="Item Three" onPress={() => {}} />
+        <BpkHorizontalNav selectedId="nav-1">
+          <BpkHorizontalNavItem id="nav-0" title="Item One" onPress={() => {}} />
+          <BpkHorizontalNavItem id="nav-1" title="Item Two" onPress={() => {}} />
+          <BpkHorizontalNavItem id="nav-2" title="Item Three" onPress={() => {}} />
         </BpkHorizontalNav>
       </View >
     );
@@ -43,20 +43,21 @@ export default class App extends Component {
 
 ### BpkHorizontalNav
 
-| Property            | PropType                              | Required | Default Value |
-| -----------         | ------------------------------------- | -------- | ------------- |
-| children            | node                                  | true     | -             |
-| spaceAround         | bool                                  | false    | false         |
+| Property            | PropType                                                    | Required | Default Value |
+| -----------         | ----------------------------------------------------------- | -------- | ------------- |
+| children            | node                                                        | true     | -             |
+| selectedId          | string (matching `id` prop of `BpkHorizontalNavItem` child) | true     | -             |
+| spaceAround         | bool                                                        | false    | false         |
 
 ### BpkHorizontalNavItem
 
 | Property            | PropType                              | Required | Default Value |
 | -----------         | ------------------------------------- | -------- | ------------- |
+| id                  | string                                | true     | -             |
 | onPress             | func                                  | true     | -             |
 | title               | string                                | true     | -             |
 | accessibilityLabel  | string                                | false    | props.title   |
 | disabled            | bool                                  | false    | false         |
-| selected            | bool                                  | false    | false         |
 | theme               | See [Theme Props](#theme-props) below | false    | null          |
 
 
