@@ -6,6 +6,10 @@
 - react-native-bpk-component-ticket:
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/ticket
 
+**Fixed:**
+- react-native-bpk-component-card
+  - Add support for android.
+
 ## 2017-11-10 - New `withScrim` HOC, plus native horizontal nav and switch components
 
 **Added:**

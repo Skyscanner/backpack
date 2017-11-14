@@ -20,8 +20,7 @@ import {
   View,
   Platform,
   StyleSheet,
-  TouchableHighlight,
-  PixelRatio,
+  TouchableNativeFeedback,
   ViewPropTypes,
 } from 'react-native';
 import React from 'react';
@@ -33,22 +32,11 @@ const tokens = Platform.select({
 })();
 
 const {
-  colorGray50,
   colorWhite,
   elevationXs,
   elevationLg,
   borderRadiusSm,
   spacingBase,
-  shadowSmColor,
-  shadowSmOffsetWidth,
-  shadowSmOffsetHeight,
-  shadowSmOpacity,
-  shadowSmRadius,
-  shadowXlColor,
-  shadowXlOffsetWidth,
-  shadowXlOffsetHeight,
-  shadowXlOpacity,
-  shadowXlRadius,
 } = tokens;
 
 /**
@@ -59,23 +47,12 @@ const styles = StyleSheet.create({
     backgroundColor: colorWhite,
     borderRadius: borderRadiusSm,
     elevation: elevationXs,
-    shadowColor: shadowSmColor,
-    shadowOffset: { width: shadowSmOffsetWidth, height: shadowSmOffsetHeight / PixelRatio.get() },
-    shadowOpacity: shadowSmOpacity,
-    shadowRadius: shadowSmRadius / PixelRatio.get(),
   },
   cardPadded: {
     padding: spacingBase,
   },
   cardFocused: {
     elevation: elevationLg,
-    shadowColor: shadowXlColor,
-    shadowOffset: { width: shadowXlOffsetWidth, height: shadowXlOffsetHeight / PixelRatio.get() },
-    shadowOpacity: shadowXlOpacity,
-    shadowRadius: shadowXlRadius / PixelRatio.get(),
-  },
-  cardInner: {
-    backgroundColor: 'transparent', // otherwise this view's corners would bleed outwith the outer container
   },
 });
 
@@ -94,14 +71,19 @@ const BpkCard = (props) => {
   if (userStyle) { style.push(userStyle); }
 
   return (
-    <TouchableHighlight
-      accessibilityComponentType="button"
-      underlayColor={colorGray50}
-      style={style}
-      {...rest}
-    >
-      <View style={styles.cardInner}>{children}</View>
-    </TouchableHighlight>
+
+    <View style={userStyle}>
+      <TouchableNativeFeedback
+        useForeground
+        accessibilityComponentType="button"
+        background={TouchableNativeFeedback.SelectableBackgroundBorderless()}
+        {...rest}
+      >
+        <View style={style}>
+          <View>{children}</View>
+        </View>
+      </TouchableNativeFeedback>
+    </View>
   );
 };
 
