@@ -31,7 +31,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <BpkTouchableOverlay
           onPress={() => null}
-          accessibilityLabel="Example Ticket"
+          accessibilityLabel="Example touchable overlay"
         >
           <BpkText>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
@@ -47,6 +47,8 @@ export default class App extends Component {
 
 ## Props
 
-| Property   | PropType  | Required | Default Value |
-| ---------- | --------- | -------- | ------------- |
-| children   | node      | true     | -             |
+| Property     | PropType            | Required | Default Value |
+| ------------ | ------------------- | -------- | ------------- |
+| children     | node                | true     | -             |
+| borderRadius | oneOf('sm', 'pill') | false    | null          |
+| overlayStyle | object              | false    | null          |

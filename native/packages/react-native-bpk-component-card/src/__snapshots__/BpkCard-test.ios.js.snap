@@ -65,16 +65,21 @@ exports[`iOS BpkCard should render correctly 1`] = `
   </View>
   <View
     style={
-      Object {
-        "backgroundColor": "rgb(37, 32, 51)",
-        "bottom": 0,
-        "flex": 1,
-        "left": 0,
-        "opacity": 0,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 4,
+        },
+      ]
     }
   />
 </View>
@@ -145,16 +150,21 @@ exports[`iOS BpkCard should render correctly with arbitrary props 1`] = `
   </View>
   <View
     style={
-      Object {
-        "backgroundColor": "rgb(37, 32, 51)",
-        "bottom": 0,
-        "flex": 1,
-        "left": 0,
-        "opacity": 0,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 4,
+        },
+      ]
     }
   />
 </View>
@@ -234,16 +244,21 @@ exports[`iOS BpkCard should render correctly with the "focused" state 1`] = `
   </View>
   <View
     style={
-      Object {
-        "backgroundColor": "rgb(37, 32, 51)",
-        "bottom": 0,
-        "flex": 1,
-        "left": 0,
-        "opacity": 0,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 4,
+        },
+      ]
     }
   />
 </View>
@@ -311,16 +326,21 @@ exports[`iOS BpkCard should render correctly without padding 1`] = `
   </View>
   <View
     style={
-      Object {
-        "backgroundColor": "rgb(37, 32, 51)",
-        "bottom": 0,
-        "flex": 1,
-        "left": 0,
-        "opacity": 0,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 4,
+        },
+      ]
     }
   />
 </View>

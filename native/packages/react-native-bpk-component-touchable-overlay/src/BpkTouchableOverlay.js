@@ -36,7 +36,13 @@ const styles = StyleSheet.create({
     backgroundColor: tokens.touchableOverlayColor,
     opacity: 0,
   },
-  showOverlay: {
+  overlayBorderRadiusSm: {
+    borderRadius: tokens.borderRadiusSm,
+  },
+  overlayBorderRadiusPill: {
+    borderRadius: tokens.borderRadiusPill,
+  },
+  overlayShow: {
     opacity: tokens.touchableOverlayOpacity,
   },
 });
@@ -44,7 +50,9 @@ const styles = StyleSheet.create({
 const BpkTouchableOverlay = (props) => {
   const {
     children,
+    borderRadius,
     style,
+    overlayStyle,
     onPressIn,
     onPressOut,
     ...rest
@@ -52,11 +60,16 @@ const BpkTouchableOverlay = (props) => {
 
   let overlayRef = null;
 
+  const overlayStyles = [styles.overlay];
+  if (borderRadius === 'sm') { overlayStyles.push(styles.overlayBorderRadiusSm); }
+  if (borderRadius === 'pill') { overlayStyles.push(styles.overlayBorderRadiusPill); }
+  if (overlayStyle) { overlayStyles.push(overlayStyle); }
+
   return (
     <TouchableWithoutFeedback
       {...rest}
       onPressIn={() => {
-        overlayRef.setNativeProps({ style: [styles.overlay, styles.showOverlay] });
+        overlayRef.setNativeProps({ style: [styles.overlay, styles.overlayShow] });
         if (onPressIn) { onPressIn(); }
       }}
       onPressOut={() => {
@@ -67,7 +80,7 @@ const BpkTouchableOverlay = (props) => {
       <View style={style}>
         {children}
         <View
-          style={styles.overlay}
+          style={overlayStyles}
           ref={(ref) => { overlayRef = ref; }}
         />
       </View>
@@ -77,13 +90,17 @@ const BpkTouchableOverlay = (props) => {
 
 BpkTouchableOverlay.propTypes = {
   children: PropTypes.node.isRequired,
+  borderRadius: PropTypes.oneOf(['sm', 'pill']),
   style: ViewPropTypes.style,
+  overlayStyle: ViewPropTypes.style,
   onPressIn: PropTypes.func,
   onPressOut: PropTypes.func,
 };
 
 BpkTouchableOverlay.defaultProps = {
+  borderRadius: null,
   style: null,
+  overlayStyle: null,
   onPressIn: null,
   onPressOut: null,
 };

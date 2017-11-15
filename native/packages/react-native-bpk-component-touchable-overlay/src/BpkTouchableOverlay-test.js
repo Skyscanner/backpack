@@ -71,4 +71,30 @@ describe('BpkTouchableOverlay', () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with border radius props', () => {
+    const tree = renderer.create(
+      <BpkTouchableOverlay
+        borderRadius="sm"
+        testID="arbitrary value"
+      >
+        {content}
+      </BpkTouchableOverlay>,
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with custom overlay styles', () => {
+    const tree = renderer.create(
+      <BpkTouchableOverlay
+        overlayStyle={styles.custom}
+        testID="arbitrary value"
+      >
+        {content}
+      </BpkTouchableOverlay>,
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

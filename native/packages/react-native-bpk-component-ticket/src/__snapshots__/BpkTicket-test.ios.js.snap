@@ -125,16 +125,18 @@ exports[`iOS BpkTicket should render correctly 1`] = `
   </View>
   <View
     style={
-      Object {
-        "backgroundColor": "rgb(37, 32, 51)",
-        "bottom": 0,
-        "flex": 1,
-        "left": 0,
-        "opacity": 0,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
     }
   />
 </View>
@@ -265,16 +267,18 @@ exports[`iOS BpkTicket should render correctly with arbitrary props 1`] = `
   </View>
   <View
     style={
-      Object {
-        "backgroundColor": "rgb(37, 32, 51)",
-        "bottom": 0,
-        "flex": 1,
-        "left": 0,
-        "opacity": 0,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
     }
   />
 </View>
@@ -408,16 +412,18 @@ exports[`iOS BpkTicket should render correctly with custom main style 1`] = `
   </View>
   <View
     style={
-      Object {
-        "backgroundColor": "rgb(37, 32, 51)",
-        "bottom": 0,
-        "flex": 1,
-        "left": 0,
-        "opacity": 0,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
     }
   />
 </View>
@@ -551,16 +557,18 @@ exports[`iOS BpkTicket should render correctly with custom stub style 1`] = `
   </View>
   <View
     style={
-      Object {
-        "backgroundColor": "rgb(37, 32, 51)",
-        "bottom": 0,
-        "flex": 1,
-        "left": 0,
-        "opacity": 0,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
     }
   />
 </View>
@@ -701,16 +709,18 @@ exports[`iOS BpkTicket should render correctly with the "focused" state 1`] = `
   </View>
   <View
     style={
-      Object {
-        "backgroundColor": "rgb(37, 32, 51)",
-        "bottom": 0,
-        "flex": 1,
-        "left": 0,
-        "opacity": 0,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
     }
   />
 </View>
@@ -835,16 +845,18 @@ exports[`iOS BpkTicket should render correctly without padding 1`] = `
   </View>
   <View
     style={
-      Object {
-        "backgroundColor": "rgb(37, 32, 51)",
-        "bottom": 0,
-        "flex": 1,
-        "left": 0,
-        "opacity": 0,
-        "position": "absolute",
-        "right": 0,
-        "top": 0,
-      }
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
     }
   />
 </View>

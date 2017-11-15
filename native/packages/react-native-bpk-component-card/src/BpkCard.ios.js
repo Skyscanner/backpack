@@ -88,6 +88,7 @@ const BpkCard = (props) => {
     <BpkTouchableOverlay
       accessibilityComponentType="button"
       style={style}
+      borderRadius="sm"
       {...rest}
     >
       <View style={styles.cardInner}>{children}</View>
