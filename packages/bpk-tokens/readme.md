@@ -10,7 +10,7 @@ npm install bpk-tokens --save-dev
 
 ## Usage
 
-Sass:
+### Sass:
 
 ```scss
 @import '~bpk-tokens/tokens/base.default.scss';
@@ -20,15 +20,28 @@ Sass:
 }
 ```
 
-JavaScript (CommonJS):
+### JavaScript (ES6 module):
+
+For React Native:
 
 ```js
-import TOKENS from 'bpk-tokens/tokens/base.common';
+// Individual tokens
+import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 
-console.log(TOKENS.spacingBase);
+console.log(spacingBase);
+
+// Whole token categories
+import { colors } from 'bpk-tokens/tokens/base.react.native';
+
+console.log(colors.colorGray700);
+
+// All tokens
+import * as tokens from 'bpk-tokens/tokens/base.react.native';
+
+console.log(tokens);
 ```
 
-JavaScript (ES6 module):
+For web:
 
 ```js
 // Individual tokens
@@ -40,6 +53,25 @@ console.log(spacingBase);
 import { colors } from 'bpk-tokens/tokens/base.es6';
 
 console.log(colors.colorGray700);
+
+// All tokens
+import * as tokens from 'bpk-tokens/tokens/base.es6';
+
+console.log(tokens);
+```
+
+### JavaScript (CommonJS):
+
+```js
+// Individual tokens
+import { spacingBase } from 'bpk-tokens/tokens/base.common';
+
+console.log(spacingBase);
+
+// All tokens
+import * as tokens from 'bpk-tokens/tokens/base.common';
+
+console.log(tokens);
 ```
 
 ## Transparency
@@ -47,7 +79,7 @@ console.log(colors.colorGray700);
 It is possible to add opacity to Backpack color tokens as follows:
 
 ```js
-import { colorBlue500 } from 'bpk-tokens/tokens/base.es6';
+import { colorBlue500 } from 'bpk-tokens/tokens/base.react.native';
 import { setOpacity } from 'bpk-tokens';
 
 const transparentBlue500 = setOpacity(colorBlue500, 0.7);

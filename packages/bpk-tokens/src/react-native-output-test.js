@@ -20,8 +20,8 @@
 
 import _ from 'lodash';
 
-import androidTokens from '../tokens/android/base.raw.json';
-import iosTokens from '../tokens/ios/base.raw.json';
+import androidTokens from '../tokens/base.raw.android.json';
+import iosTokens from '../tokens/base.raw.ios.json';
 
 const ANDROID_ONLY_PROPS = [
   'FONT_FAMILY_EMPHASIZE',
