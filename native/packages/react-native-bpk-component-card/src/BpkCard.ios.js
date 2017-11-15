@@ -20,19 +20,18 @@ import {
   PixelRatio,
   Platform,
   StyleSheet,
-  TouchableHighlight,
   View,
   ViewPropTypes,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
+import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
   android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
 })();
 const {
-  colorGray50,
   colorWhite,
   borderRadiusSm,
   spacingBase,
@@ -86,14 +85,14 @@ const BpkCard = (props) => {
   if (userStyle) { style.push(userStyle); }
 
   return (
-    <TouchableHighlight
+    <BpkTouchableOverlay
       accessibilityComponentType="button"
-      underlayColor={colorGray50}
       style={style}
+      borderRadius="sm"
       {...rest}
     >
       <View style={styles.cardInner}>{children}</View>
-    </TouchableHighlight>
+    </BpkTouchableOverlay>
   );
 };
 

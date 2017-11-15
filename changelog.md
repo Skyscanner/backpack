@@ -6,9 +6,12 @@
 - react-native-bpk-component-ticket:
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/ticket
 
+- react-native-bpk-component-touchable-overlay:
+  - Utility component to be used in favour of RN's TouchableHighlight (https://facebook.github.io/react-native/docs/touchablehighlight.html)
+
 **Fixed:**
-- react-native-bpk-component-card
-  - Add support for android.
+- react-native-bpk-component-card:
+  - Add support for android
 
 ## 2017-11-10 - New `withScrim` HOC, plus native horizontal nav and switch components
 

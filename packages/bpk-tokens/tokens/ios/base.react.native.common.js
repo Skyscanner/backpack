@@ -116,6 +116,8 @@ module.exports = {
   spacingXxl: 40,
   underlayColor: "rgb(37, 32, 51)",
   underlayOpacity: 0.15,
+  touchableOverlayColor: "rgb(37, 32, 51)",
+  touchableOverlayOpacity: 0.15,
   fontFamily: "System",
   fontSizeXs: 11,
   fontSizeSm: 13,

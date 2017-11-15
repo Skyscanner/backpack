@@ -62,6 +62,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-text/stories');
   require('../packages/react-native-bpk-component-ticket/stories');
   require('../packages/react-native-bpk-theming/stories');
+  require('../packages/react-native-bpk-component-touchable-overlay/stories');
 }, module);
 /* eslint-enable global-require */
 

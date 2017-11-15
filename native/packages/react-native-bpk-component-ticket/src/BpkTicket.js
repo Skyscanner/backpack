@@ -20,13 +20,13 @@ import {
   View,
   Platform,
   StyleSheet,
-  TouchableHighlight,
   PixelRatio,
   ViewPropTypes,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dash from 'react-native-dash';
+import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
@@ -34,7 +34,6 @@ const tokens = Platform.select({
 })();
 
 const {
-  colorGray50,
   colorGray100,
   colorWhite,
   elevationXs,
@@ -151,9 +150,8 @@ const BpkTicket = (props) => {
   if (userStubStyle) { stubStyle.push(userStubStyle); }
 
   return (
-    <TouchableHighlight
+    <BpkTouchableOverlay
       accessibilityComponentType="button"
-      underlayColor={colorGray50}
       style={style}
       {...rest}
     >
@@ -168,7 +166,7 @@ const BpkTicket = (props) => {
         />
         <View style={stubStyle}>{stub}</View>
       </View>
-    </TouchableHighlight>
+    </BpkTouchableOverlay>
   );
 };
 
