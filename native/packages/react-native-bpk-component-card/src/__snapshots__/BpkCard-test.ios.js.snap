@@ -26,7 +26,6 @@ exports[`iOS BpkCard should render correctly 1`] = `
         Object {
           "backgroundColor": "rgb(255, 255, 255)",
           "borderRadius": 4,
-          "elevation": undefined,
           "shadowColor": "rgb(37, 32, 51)",
           "shadowOffset": Object {
             "height": 0.5,
@@ -101,7 +100,6 @@ exports[`iOS BpkCard should render correctly with arbitrary props 1`] = `
         Object {
           "backgroundColor": "rgb(255, 255, 255)",
           "borderRadius": 4,
-          "elevation": undefined,
           "shadowColor": "rgb(37, 32, 51)",
           "shadowOffset": Object {
             "height": 0.5,
@@ -176,7 +174,6 @@ exports[`iOS BpkCard should render correctly with the "focused" state 1`] = `
         Object {
           "backgroundColor": "rgb(255, 255, 255)",
           "borderRadius": 4,
-          "elevation": undefined,
           "shadowColor": "rgb(37, 32, 51)",
           "shadowOffset": Object {
             "height": 0.5,
@@ -189,7 +186,6 @@ exports[`iOS BpkCard should render correctly with the "focused" state 1`] = `
           "padding": 16,
         },
         Object {
-          "elevation": undefined,
           "shadowColor": "rgb(37, 32, 51)",
           "shadowOffset": Object {
             "height": 6,
@@ -261,7 +257,6 @@ exports[`iOS BpkCard should render correctly without padding 1`] = `
         Object {
           "backgroundColor": "rgb(255, 255, 255)",
           "borderRadius": 4,
-          "elevation": undefined,
           "shadowColor": "rgb(37, 32, 51)",
           "shadowOffset": Object {
             "height": 0.5,

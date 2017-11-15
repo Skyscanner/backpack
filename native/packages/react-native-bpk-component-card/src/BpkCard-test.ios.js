@@ -28,6 +28,8 @@ jest.mock('react-native', () => {
   return reactNative;
 });
 
+jest.mock('./BpkCard', () => require.requireActual('./BpkCard.ios.js'));
+
 describe('iOS', () => {
   commonTests();
 });

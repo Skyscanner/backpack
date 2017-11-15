@@ -24,9 +24,13 @@ jest.mock('react-native', () => {
     .spyOn(reactNative.Platform, 'select')
     .mockImplementation(obj => obj.android || obj.default);
   reactNative.Platform.OS = 'android';
-
+  reactNative.TouchableNativeFeedback.SelectableBackgroundBorderless = jest.fn();
   return reactNative;
 });
+
+jest.mock('./BpkCard', () => require.requireActual('./BpkCard.android.js'));
+jest.mock('TouchableNativeFeedback',
+  () => require.requireActual('./../../../node_modules/react-native/Libraries/Components/Touchable/TouchableNativeFeedback.android')); // eslint-disable-line max-len
 
 describe('Android', () => {
   commonTests();

@@ -2,307 +2,252 @@
 
 exports[`Android BpkCard should render correctly 1`] = `
 <View
-  accessibilityComponentType="button"
-  accessibilityLabel="Example Card"
-  accessibilityTraits={undefined}
-  accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
-  isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Array [
+  style={null}
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Example Card"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
       Object {
-        "backgroundColor": "transparent",
-      },
+        "attribute": "selectableItemBackground",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
       Array [
         Object {
           "backgroundColor": "rgb(255, 255, 255)",
           "borderRadius": 2,
           "elevation": 2,
-          "shadowColor": undefined,
-          "shadowOffset": Object {
-            "height": NaN,
-            "width": undefined,
-          },
-          "shadowOpacity": undefined,
-          "shadowRadius": NaN,
         },
         Object {
           "padding": 16,
         },
-      ],
-    ]
-  }
-  testID={undefined}
-  tvParallaxProperties={undefined}
->
-  <View
-    style={
-      Object {
-        "backgroundColor": "transparent",
-      }
+      ]
     }
+    testID={undefined}
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "sans-serif",
-            "fontSize": 16,
-            "fontWeight": "400",
-            "lineHeight": 24,
-          },
-          Object {},
-        ]
-      }
-    >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-    </Text>
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "lineHeight": 24,
+            },
+            Object {},
+          ]
+        }
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </Text>
+    </View>
   </View>
 </View>
 `;
 
 exports[`Android BpkCard should render correctly with arbitrary props 1`] = `
 <View
-  accessibilityComponentType="button"
-  accessibilityLabel="Example Card"
-  accessibilityTraits={undefined}
-  accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
-  isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Array [
+  style={null}
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Example Card"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
       Object {
-        "backgroundColor": "transparent",
-      },
+        "attribute": "selectableItemBackground",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
       Array [
         Object {
           "backgroundColor": "rgb(255, 255, 255)",
           "borderRadius": 2,
           "elevation": 2,
-          "shadowColor": undefined,
-          "shadowOffset": Object {
-            "height": NaN,
-            "width": undefined,
-          },
-          "shadowOpacity": undefined,
-          "shadowRadius": NaN,
         },
         Object {
           "padding": 16,
         },
-      ],
-    ]
-  }
-  testID="arbitrary value"
-  tvParallaxProperties={undefined}
->
-  <View
-    style={
-      Object {
-        "backgroundColor": "transparent",
-      }
+      ]
     }
+    testID="arbitrary value"
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "sans-serif",
-            "fontSize": 16,
-            "fontWeight": "400",
-            "lineHeight": 24,
-          },
-          Object {},
-        ]
-      }
-    >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-    </Text>
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "lineHeight": 24,
+            },
+            Object {},
+          ]
+        }
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </Text>
+    </View>
   </View>
 </View>
 `;
 
 exports[`Android BpkCard should render correctly with the "focused" state 1`] = `
 <View
-  accessibilityComponentType="button"
-  accessibilityLabel="Example Card"
-  accessibilityTraits={undefined}
-  accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
-  isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Array [
+  style={null}
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Example Card"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
       Object {
-        "backgroundColor": "transparent",
-      },
+        "attribute": "selectableItemBackground",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
       Array [
         Object {
           "backgroundColor": "rgb(255, 255, 255)",
           "borderRadius": 2,
           "elevation": 2,
-          "shadowColor": undefined,
-          "shadowOffset": Object {
-            "height": NaN,
-            "width": undefined,
-          },
-          "shadowOpacity": undefined,
-          "shadowRadius": NaN,
         },
         Object {
           "padding": 16,
         },
         Object {
           "elevation": 16,
-          "shadowColor": undefined,
-          "shadowOffset": Object {
-            "height": NaN,
-            "width": undefined,
-          },
-          "shadowOpacity": undefined,
-          "shadowRadius": NaN,
         },
-      ],
-    ]
-  }
-  testID={undefined}
-  tvParallaxProperties={undefined}
->
-  <View
-    style={
-      Object {
-        "backgroundColor": "transparent",
-      }
+      ]
     }
+    testID={undefined}
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "sans-serif",
-            "fontSize": 16,
-            "fontWeight": "400",
-            "lineHeight": 24,
-          },
-          Object {},
-        ]
-      }
-    >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-    </Text>
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "lineHeight": 24,
+            },
+            Object {},
+          ]
+        }
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </Text>
+    </View>
   </View>
 </View>
 `;
 
 exports[`Android BpkCard should render correctly without padding 1`] = `
 <View
-  accessibilityComponentType="button"
-  accessibilityLabel="Example Card"
-  accessibilityTraits={undefined}
-  accessible={true}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
-  isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={
-    Array [
+  style={null}
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Example Card"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
       Object {
-        "backgroundColor": "transparent",
-      },
+        "attribute": "selectableItemBackground",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
       Array [
         Object {
           "backgroundColor": "rgb(255, 255, 255)",
           "borderRadius": 2,
           "elevation": 2,
-          "shadowColor": undefined,
-          "shadowOffset": Object {
-            "height": NaN,
-            "width": undefined,
-          },
-          "shadowOpacity": undefined,
-          "shadowRadius": NaN,
         },
-      ],
-    ]
-  }
-  testID={undefined}
-  tvParallaxProperties={undefined}
->
-  <View
-    style={
-      Object {
-        "backgroundColor": "transparent",
-      }
+      ]
     }
+    testID={undefined}
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "color": "rgb(82, 76, 97)",
-            "fontFamily": "sans-serif",
-            "fontSize": 16,
-            "fontWeight": "400",
-            "lineHeight": 24,
-          },
-          Object {},
-        ]
-      }
-    >
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-    </Text>
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "lineHeight": 24,
+            },
+            Object {},
+          ]
+        }
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </Text>
+    </View>
   </View>
 </View>
 `;
