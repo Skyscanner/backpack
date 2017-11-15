@@ -18,7 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import BpkText from '../../react-native-bpk-component-text';
+import BpkText from 'react-native-bpk-component-text';
 
 import BpkCard from './BpkCard';
 

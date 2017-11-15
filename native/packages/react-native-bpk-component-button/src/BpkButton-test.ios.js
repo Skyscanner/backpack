@@ -24,8 +24,14 @@ jest.mock('react-native', () => {
     .spyOn(reactNative.Platform, 'select')
     .mockImplementation(obj => obj.ios || obj.default);
   reactNative.Platform.OS = 'ios';
-  jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
   return reactNative;
+});
+
+jest.mock('react-native-linear-gradient', () => (props) => {
+  const React = require.requireActual('react');
+  const { View } = require.requireActual('react-native');
+
+  return <View {...props} />;
 });
 
 jest.mock('./layout/BpkButtonContainer', () => require.requireActual('./layout/BpkButtonContainer.ios.js'));

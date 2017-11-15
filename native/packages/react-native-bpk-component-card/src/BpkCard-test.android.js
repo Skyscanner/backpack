@@ -28,9 +28,16 @@ jest.mock('react-native', () => {
   return reactNative;
 });
 
-jest.mock('./BpkCard', () => require.requireActual('./BpkCard.android.js'));
-jest.mock('TouchableNativeFeedback',
-  () => require.requireActual('./../../../node_modules/react-native/Libraries/Components/Touchable/TouchableNativeFeedback.android')); // eslint-disable-line max-len
+jest.mock('./BpkCard', () => require.requireActual('./BpkCard.android'));
+
+jest.mock('bpk-tokens/tokens/base.react.native',
+  () => require.requireActual('bpk-tokens/tokens/base.react.native.android'));
+
+jest.mock('TouchableNativeFeedback', () => ({ children, ...rest }) => {
+  const { cloneElement } = require.requireActual('react');
+
+  return cloneElement(children, rest);
+});
 
 describe('Android', () => {
   commonTests();
