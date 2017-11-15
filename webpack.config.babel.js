@@ -22,6 +22,7 @@ import webpack from 'webpack';
 import WrapperPlugin from 'wrapper-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 import postCssPlugins from './scripts/webpack/postCssPlugins';
 import sassFunctions from './packages/bpk-mixins/sass-functions';
@@ -203,6 +204,10 @@ if (isProduction) {
         warnings: false,
       },
     }),
+    new CopyWebpackPlugin([
+      { from: 'packages/bpk-docs/src/README.md', to: 'README.md' },
+    ],
+    ),
   );
 }
 
