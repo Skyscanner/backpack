@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "react-native-bpk-component-ticket",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "description": "Backpack React Native ticket component.",
   "repository": {
@@ -15,12 +15,12 @@
     "react-native": ">= 0.47.0"
   },
   "dependencies": {
-    "bpk-tokens": "^26.4.5",
+    "bpk-tokens": "^26.5.0",
     "prop-types": "^15.5.8",
-    "react-native-dash": "0.0.8",
-    "react-native-bpk-component-touchable-overlay": "^0.0.0"
+    "react-native-bpk-component-touchable-overlay": "^1.0.0",
+    "react-native-dash": "0.0.8"
   },
   "devDependencies": {
-    "react-native-bpk-component-text": "^2.1.17"
+    "react-native-bpk-component-text": "^2.1.18"
   }
 }
