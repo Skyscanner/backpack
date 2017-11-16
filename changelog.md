@@ -5,21 +5,25 @@
 **Added:**
 - react-native-bpk-component-ticket:
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/ticket
+  - _Note to Backpack squad members: This is still private so keep the versions below `1.0.0`_
 
-- react-native-bpk-component-touchable-overlay:
-  - Utility component to be used in favour of RN's TouchableHighlight (https://facebook.github.io/react-native/docs/touchablehighlight.html)
-  
-- bpk-tokens:
+## 2017-11-16 - New platform specific extensions for react native tokens
+
+**Added:**
+- bpk-tokens: 26.4.5 => 26.5.0
   - React native tokens can now be imported like so:
     ```
     import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
     ```
 
-**Fixed:**
-- bpk-component-modal:
-  - Fixed appear animation  
+- react-native-bpk-component-touchable-overlay: 1.0.0
+  - Utility component to be used in favour of RN's TouchableHighlight (https://facebook.github.io/react-native/docs/touchablehighlight.html)
 
-- react-native-bpk-component-card:
+**Fixed:**
+- bpk-component-modal: 1.1.38 => 1.1.39
+  - Fixed appear animation
+
+- react-native-bpk-component-card: 1.1.4 => 1.1.5
   - Add support for android
 
 ## 2017-11-10 - New `withScrim` HOC, plus native horizontal nav and switch components
