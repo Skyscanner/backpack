@@ -8,6 +8,12 @@
 
 - react-native-bpk-component-touchable-overlay:
   - Utility component to be used in favour of RN's TouchableHighlight (https://facebook.github.io/react-native/docs/touchablehighlight.html)
+  
+- bpk-tokens:
+  - React native tokens can now be imported like so:
+    ```
+    import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
+    ```
 
 **Fixed:**
 - react-native-bpk-component-card:

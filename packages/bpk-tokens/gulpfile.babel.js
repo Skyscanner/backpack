@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-import path from 'path';
-import _ from 'lodash';
-import async from 'async';
 import del from 'del';
+import path from 'path';
 import gulp from 'gulp';
-import jsonLint from 'gulp-jsonlint';
 import theo from 'theo';
+import { flatten } from 'lodash';
+import gulpMerge from 'gulp-merge';
+import jsonLint from 'gulp-jsonlint';
 
 import bpkScss from './formatters/bpk.scss';
 import bpkDefaultScss from './formatters/bpk.default.scss';
@@ -32,7 +32,7 @@ import bpkReactNativeCommonJs from './formatters/bpk.react.native.common.js';
 import bpkCommonJs from './formatters/bpk.common.js';
 import bpkAndroid from './formatters/bpk.android.xml';
 
-const OUTPUT_MAP = {
+const PLATFORM_FORMATS = {
   web: [
     'scss',
     'default.scss',
@@ -40,33 +40,46 @@ const OUTPUT_MAP = {
     'common.js',
     'es6.js',
   ],
-  ios: ['ios.json', 'react.native.common.js', 'react.native.es6.js', 'raw.json'],
-  android: ['android.xml', 'react.native.common.js', 'react.native.es6.js', 'raw.json'],
+  ios: [
+    'ios.json',
+    'raw.ios.json',
+    'react.native.ios.js',
+    { format: 'react.native.es6.js', nest: true },
+    { format: 'react.native.common.js', nest: true },
+  ],
+  android: [
+    'android.xml',
+    'raw.android.json',
+    'react.native.android.js',
+    { format: 'react.native.es6.js', nest: true },
+    { format: 'react.native.common.js', nest: true },
+  ],
 };
 
-const WEB_OUTPUTS = _(OUTPUT_MAP.web).map(format => ({ transform: 'web', format }));
-const IOS_OUTPUTS = _(OUTPUT_MAP.ios).map(format => ({ transform: 'ios', format }));
-const ANDROID_OUTPUTS = _(OUTPUT_MAP.android).map(format => ({ transform: 'android', format }));
-
-// Theo config
+const tokenSets = flatten(Object.keys(PLATFORM_FORMATS).map(
+  platform => PLATFORM_FORMATS[platform].map(
+    format => (
+      typeof format !== 'string'
+        ? ({ platform, ...format })
+        : ({ platform, format })
+    ),
+  ),
+));
 
 theo.registerFormat('scss', bpkScss);
 theo.registerFormat('default.scss', bpkDefaultScss);
 theo.registerFormat('es6.js', bpkEs6Js);
+theo.registerFormat('raw.ios.json', json => JSON.stringify(json, null, 2));
+theo.registerFormat('raw.android.json', json => JSON.stringify(json, null, 2));
+theo.registerFormat('react.native.ios.js', bpkReactNativeEs6Js);
+theo.registerFormat('react.native.android.js', bpkReactNativeEs6Js);
 theo.registerFormat('react.native.es6.js', bpkReactNativeEs6Js);
 theo.registerFormat('react.native.common.js', bpkReactNativeCommonJs);
 theo.registerFormat('common.js', bpkCommonJs);
 theo.registerFormat('android.xml', bpkAndroid);
 
-theo.registerTransform('ios', [
-  ['color/hex8rgba'],
-]);
-
-theo.registerTransform('android', [
-  ['color/hex8rgba'],
-]);
-
-// Gulp task definitions
+theo.registerTransform('ios', [['color/hex8rgba']]);
+theo.registerTransform('android', [['color/hex8rgba']]);
 
 gulp.task('clean', () => del(['tokens']));
 
@@ -77,37 +90,24 @@ gulp.task('lint', () => {
     .pipe(jsonLint.failAfterError());
 });
 
-const makeConverter = platform => (options, done) => {
-  let outputPath = 'tokens';
-
-  if (platform === 'ios' || platform === 'android') {
-    // For backwards compatibility we output web tokens
-    // in the root of `tokens`. Other platforms are scoped in
-    // tokens/{platform}
-    outputPath = `${outputPath}/${platform}`;
-  }
-
-
-  gulp.src([`./src/${platform}/*.json`])
-    .pipe(theo.plugins.transform(options.transform))
-    .on('error', done)
-    .pipe(theo.plugins.format(options.format))
-    .on('error', done)
-    .pipe(gulp.dest(path.resolve(__dirname, outputPath)))
-    .on('error', done)
-    .on('finish', done);
-};
-
 gulp.task('tokens', ['clean', 'lint'], (done) => {
-  const webConverter = makeConverter('web');
-  const iosConverter = makeConverter('ios');
-  const androidConverter = makeConverter('android');
+  const streams = tokenSets.map(({ platform, format, nest }) => {
+    let outputPath = 'tokens';
 
-  async.parallel([
-    callback => async.each(WEB_OUTPUTS, webConverter, callback),
-    callback => async.each(IOS_OUTPUTS, iosConverter, callback),
-    callback => async.each(ANDROID_OUTPUTS, androidConverter, callback),
-  ], done);
+    if (nest) {
+      outputPath = `${outputPath}/${platform}`;
+    }
+
+    return gulp.src([`./src/${platform}/*.json`])
+      .pipe(theo.plugins.transform(platform))
+      .on('error', done)
+      .pipe(theo.plugins.format(format))
+      .on('error', done)
+      .pipe(gulp.dest(path.resolve(__dirname, outputPath)))
+      .on('error', done);
+  });
+
+  gulpMerge(streams).on('finish', done);
 });
 
 gulp.task('default', ['tokens']);

@@ -1,16 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`iOS BpkButton should render correctly 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4278245237,
-      4278238568,
+      "rgb(0, 215, 117)",
+      "rgb(0, 189, 104)",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -109,20 +106,17 @@ exports[`iOS BpkButton should render correctly 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4294967295,
-      4294967295,
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -230,20 +224,17 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4294592650,
-      4292422507,
+      "rgb(250, 72, 138)",
+      "rgb(217, 43, 107)",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -342,20 +333,17 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4278245237,
-      4278238568,
+      "rgb(0, 215, 117)",
+      "rgb(0, 189, 104)",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -454,20 +442,17 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4294967295,
-      4294967295,
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -575,20 +560,17 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`iOS BpkButton should support elements as icons 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4278245237,
-      4278238568,
+      "rgb(0, 215, 117)",
+      "rgb(0, 189, 104)",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -671,20 +653,17 @@ exports[`iOS BpkButton should support elements as icons 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4278245237,
-      4278238568,
+      "rgb(0, 215, 117)",
+      "rgb(0, 189, 104)",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -823,20 +802,17 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`iOS BpkButton should support having only an icon 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4278245237,
-      4278238568,
+      "rgb(0, 215, 117)",
+      "rgb(0, 189, 104)",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -943,20 +919,17 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`iOS BpkButton should support overwriting styles 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4278245237,
-      4278238568,
+      "rgb(0, 215, 117)",
+      "rgb(0, 189, 104)",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -1057,20 +1030,17 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`iOS BpkButton should support the "disabled" property 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4293321963,
-      4293321963,
+      "rgb(230, 228, 235)",
+      "rgb(230, 228, 235)",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -1178,20 +1148,17 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`iOS BpkButton should support the "icon" and "large" property 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4278245237,
-      4278238568,
+      "rgb(0, 215, 117)",
+      "rgb(0, 189, 104)",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -1336,20 +1303,17 @@ exports[`iOS BpkButton should support the "icon" and "large" property 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`iOS BpkButton should support the "iconOnly" and "large" property 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4278245237,
-      4278238568,
+      "rgb(0, 215, 117)",
+      "rgb(0, 189, 104)",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -1461,20 +1425,17 @@ exports[`iOS BpkButton should support the "iconOnly" and "large" property 1`] = 
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`iOS BpkButton should support the "large" and secondary property 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4294967295,
-      4294967295,
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -1591,20 +1552,17 @@ exports[`iOS BpkButton should support the "large" and secondary property 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`iOS BpkButton should support the "large" property 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4278245237,
-      4278238568,
+      "rgb(0, 215, 117)",
+      "rgb(0, 189, 104)",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -1712,20 +1670,17 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;
 
 exports[`iOS BpkButtonThemed should render correctly 1`] = `
-<BVLinearGradient
+<View
   colors={
     Array [
-      4278222848,
-      4278190335,
+      "green",
+      "blue",
     ]
   }
-  end={undefined}
-  locations={null}
-  start={undefined}
   style={
     Array [
       Array [
@@ -1826,5 +1781,5 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
       </Text>
     </View>
   </View>
-</BVLinearGradient>
+</View>
 `;

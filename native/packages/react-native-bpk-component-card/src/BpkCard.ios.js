@@ -18,20 +18,11 @@
 
 import {
   PixelRatio,
-  Platform,
   StyleSheet,
   View,
   ViewPropTypes,
 } from 'react-native';
-import React from 'react';
-import PropTypes from 'prop-types';
-import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
-
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
-const {
+import {
   colorWhite,
   borderRadiusSm,
   spacingBase,
@@ -45,7 +36,10 @@ const {
   shadowXlOffsetHeight,
   shadowXlOpacity,
   shadowXlRadius,
-} = tokens;
+} from 'bpk-tokens/tokens/base.react.native';
+import React from 'react';
+import PropTypes from 'prop-types';
+import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
 const styles = StyleSheet.create({
   card: {

@@ -19,7 +19,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import renderer from 'react-test-renderer';
-import BpkText from '../../react-native-bpk-component-text';
+import BpkText from 'react-native-bpk-component-text';
 
 import BpkTicket from './BpkTicket';
 

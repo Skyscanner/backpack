@@ -18,12 +18,13 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, ViewPropTypes, TouchableWithoutFeedback, Platform, StyleSheet } from 'react-native';
-
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
+import {
+  borderRadiusSm,
+  borderRadiusPill,
+  touchableOverlayColor,
+  touchableOverlayOpacity,
+} from 'bpk-tokens/tokens/base.react.native';
+import { View, ViewPropTypes, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   overlay: {
@@ -33,17 +34,17 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     left: 0,
-    backgroundColor: tokens.touchableOverlayColor,
+    backgroundColor: touchableOverlayColor,
     opacity: 0,
   },
   overlayBorderRadiusSm: {
-    borderRadius: tokens.borderRadiusSm,
+    borderRadius: borderRadiusSm,
   },
   overlayBorderRadiusPill: {
-    borderRadius: tokens.borderRadiusPill,
+    borderRadius: borderRadiusPill,
   },
   overlayShow: {
-    opacity: tokens.touchableOverlayOpacity,
+    opacity: touchableOverlayOpacity,
   },
 });
 

@@ -7,22 +7,8 @@ exports[`Android BpkCard should render correctly 1`] = `
   <View
     accessibilityComponentType="button"
     accessibilityLabel="Example Card"
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    nativeBackgroundAndroid={
-      Object {
-        "attribute": "selectableItemBackground",
-        "type": "ThemeAttrAndroid",
-      }
-    }
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+    background={undefined}
+    onPress={[Function]}
     style={
       Array [
         Object {
@@ -35,7 +21,7 @@ exports[`Android BpkCard should render correctly 1`] = `
         },
       ]
     }
-    testID={undefined}
+    useForeground={true}
   >
     <View>
       <Text
@@ -70,22 +56,8 @@ exports[`Android BpkCard should render correctly with arbitrary props 1`] = `
   <View
     accessibilityComponentType="button"
     accessibilityLabel="Example Card"
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    nativeBackgroundAndroid={
-      Object {
-        "attribute": "selectableItemBackground",
-        "type": "ThemeAttrAndroid",
-      }
-    }
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+    background={undefined}
+    onPress={[Function]}
     style={
       Array [
         Object {
@@ -99,6 +71,7 @@ exports[`Android BpkCard should render correctly with arbitrary props 1`] = `
       ]
     }
     testID="arbitrary value"
+    useForeground={true}
   >
     <View>
       <Text
@@ -133,22 +106,8 @@ exports[`Android BpkCard should render correctly with the "focused" state 1`] = 
   <View
     accessibilityComponentType="button"
     accessibilityLabel="Example Card"
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    nativeBackgroundAndroid={
-      Object {
-        "attribute": "selectableItemBackground",
-        "type": "ThemeAttrAndroid",
-      }
-    }
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+    background={undefined}
+    onPress={[Function]}
     style={
       Array [
         Object {
@@ -164,7 +123,7 @@ exports[`Android BpkCard should render correctly with the "focused" state 1`] = 
         },
       ]
     }
-    testID={undefined}
+    useForeground={true}
   >
     <View>
       <Text
@@ -199,22 +158,8 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
   <View
     accessibilityComponentType="button"
     accessibilityLabel="Example Card"
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    nativeBackgroundAndroid={
-      Object {
-        "attribute": "selectableItemBackground",
-        "type": "ThemeAttrAndroid",
-      }
-    }
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+    background={undefined}
+    onPress={[Function]}
     style={
       Array [
         Object {
@@ -224,7 +169,7 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
         },
       ]
     }
-    testID={undefined}
+    useForeground={true}
   >
     <View>
       <Text

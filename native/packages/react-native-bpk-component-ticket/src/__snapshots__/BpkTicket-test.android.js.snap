@@ -127,7 +127,7 @@ exports[`Android BpkTicket should render correctly 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "rgb(37, 32, 51)",
           "bottom": 0,
           "flex": 1,
           "left": 0,
@@ -269,7 +269,7 @@ exports[`Android BpkTicket should render correctly with arbitrary props 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "rgb(37, 32, 51)",
           "bottom": 0,
           "flex": 1,
           "left": 0,
@@ -414,7 +414,7 @@ exports[`Android BpkTicket should render correctly with custom main style 1`] = 
     style={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "rgb(37, 32, 51)",
           "bottom": 0,
           "flex": 1,
           "left": 0,
@@ -559,7 +559,7 @@ exports[`Android BpkTicket should render correctly with custom stub style 1`] = 
     style={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "rgb(37, 32, 51)",
           "bottom": 0,
           "flex": 1,
           "left": 0,
@@ -711,7 +711,7 @@ exports[`Android BpkTicket should render correctly with the "focused" state 1`] 
     style={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "rgb(37, 32, 51)",
           "bottom": 0,
           "flex": 1,
           "left": 0,
@@ -847,7 +847,7 @@ exports[`Android BpkTicket should render correctly without padding 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "rgb(37, 32, 51)",
           "bottom": 0,
           "flex": 1,
           "left": 0,

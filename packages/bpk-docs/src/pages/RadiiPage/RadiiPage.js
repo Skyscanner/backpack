@@ -18,8 +18,8 @@
 
 import React from 'react';
 import TOKENS from 'bpk-tokens/tokens/base.raw.json';
-import IOS_TOKENS from 'bpk-tokens/tokens/ios/base.raw.json';
-import ANDROID_TOKENS from 'bpk-tokens/tokens/android/base.raw.json';
+import IOS_TOKENS from 'bpk-tokens/tokens/base.raw.ios.json';
+import ANDROID_TOKENS from 'bpk-tokens/tokens/base.raw.android.json';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import { getPlatformTokens } from './../../helpers/tokens-helper';

@@ -18,30 +18,20 @@
 
 import {
   View,
-  Platform,
   StyleSheet,
   TouchableNativeFeedback,
   ViewPropTypes,
 } from 'react-native';
-import React from 'react';
-import PropTypes from 'prop-types';
-
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
-
-const {
+import {
   colorWhite,
   elevationXs,
   elevationLg,
   borderRadiusSm,
   spacingBase,
-} = tokens;
+} from 'bpk-tokens/tokens/base.react.native';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-/**
- * Define styles needed by the component
- */
 const styles = StyleSheet.create({
   card: {
     backgroundColor: colorWhite,
@@ -71,7 +61,6 @@ const BpkCard = (props) => {
   if (userStyle) { style.push(userStyle); }
 
   return (
-
     <View style={userStyle}>
       <TouchableNativeFeedback
         useForeground
