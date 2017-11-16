@@ -16,18 +16,11 @@
  * limitations under the License.
  */
 
-import {
-  ActivityIndicator,
-  Platform,
-} from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ActivityIndicator } from 'react-native';
 import { withTheme } from 'react-native-bpk-theming';
-
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
+import { colorBlue500, colorWhite, colorGray700 } from 'bpk-tokens/tokens/base.react.native';
 
 const SPINNER_TYPES = ['primary', 'light', 'dark'];
 
@@ -48,9 +41,9 @@ const themePropType = (props, propName, componentName) => {
 
 const getSpinnerColor = (theme, type) => {
   const colorMappings = {
-    primary: tokens.colorBlue500,
-    light: tokens.colorWhite,
-    dark: tokens.colorGray700,
+    primary: colorBlue500,
+    light: colorWhite,
+    dark: colorGray700,
   };
   if (theme && type === 'primary') {
     return theme[THEMING_ATTRIBUTE];

@@ -18,29 +18,24 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Platform } from 'react-native';
-import BpkText from '../packages/react-native-bpk-component-text';
 
-const tokens = Platform.select({
-  ios: () => require('../../packages/bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require,max-len
-  android: () => require('../../packages/bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require,max-len
-})();
+import BpkText from './../packages/react-native-bpk-component-text';
+import { spacingSm } from './../../packages/bpk-tokens/tokens/base.react.native';
 
 const StoryHeading = ({ children, ...rest }) => (
   <BpkText textStyle="xxl" {...rest}>{children}</BpkText>
 );
+
 StoryHeading.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
 const StorySubheading = ({ children, ...rest }) => (
-  <BpkText textStyle="sm" style={{ marginBottom: tokens.spacingSm }} {...rest}>{children}</BpkText>
+  <BpkText textStyle="sm" style={{ marginBottom: spacingSm }} {...rest}>{children}</BpkText>
 );
+
 StorySubheading.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export {
-  StoryHeading,
-  StorySubheading,
-};
+export { StoryHeading, StorySubheading };

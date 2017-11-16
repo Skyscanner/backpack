@@ -17,39 +17,41 @@
  */
 
 import {
-  TouchableNativeFeedback,
-  TouchableHighlight,
+  View,
   Platform,
   StyleSheet,
-  View,
   ViewPropTypes,
+  TouchableHighlight,
+  TouchableNativeFeedback,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { setOpacity } from 'bpk-tokens';
-import BpkText from 'react-native-bpk-component-text';
+import {
+  colorGray300,
+  colorGray700,
+  colorBlue700,
+  spacingMd,
+  spacingBase,
+  underlayColor,
+  underlayOpacity,
+} from 'bpk-tokens/tokens/base.react.native';
 import { withTheme } from 'react-native-bpk-theming';
+import BpkText from 'react-native-bpk-component-text';
 
 import { THEMING_ATTRIBUTE, themePropType } from './theming';
 
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
-
-const selectedColor = tokens.colorBlue700;
 const styles = StyleSheet.create({
   text: {
-    color: tokens.colorGray700,
-    paddingVertical: tokens.spacingMd,
-    paddingHorizontal: tokens.spacingBase,
+    color: colorGray700,
+    paddingVertical: spacingMd,
+    paddingHorizontal: spacingBase,
   },
   disabledText: {
-    color: tokens.colorGray300,
+    color: colorGray300,
   },
   selectedText: {
-    color: selectedColor,
+    color: colorBlue700,
   },
 });
 
@@ -87,7 +89,7 @@ const BpkHorizontalNavItem = (props) => {
   const formattedTitle = isAndroid ? title.toUpperCase() : title;
   const platformSpecificProps = isAndroid
     ? { background: TouchableNativeFeedback.SelectableBackgroundBorderless() }
-    : { underlayColor: setOpacity(tokens.underlayColor, tokens.underlayOpacity) };
+    : { underlayColor: setOpacity(underlayColor, underlayOpacity) };
 
   return (
     <Touchable
@@ -126,7 +128,5 @@ BpkHorizontalNavItem.defaultProps = {
   theme: null,
 };
 
+export { propTypes };
 export default withTheme(BpkHorizontalNavItem);
-export {
-  propTypes,
-};

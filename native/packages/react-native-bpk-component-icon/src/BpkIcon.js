@@ -18,19 +18,13 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, Platform, StyleSheet } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 import iconMappings from 'bpk-svgs/dist/font/iconMapping.json';
-
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
-
-const {
+import {
   spacingBase,
   spacingLg,
   colorGray700,
-} = tokens;
+} from 'bpk-tokens/tokens/base.react.native';
 
 const styles = StyleSheet.create({
   icon: {

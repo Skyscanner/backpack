@@ -18,31 +18,24 @@
 
 import {
   ScrollView,
-  Platform,
   StyleSheet,
   View,
   ViewPropTypes,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { colorGray100, borderSizeSm } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkHorizontalNavSelectedIndicator from './BpkHorizontalNavSelectedIndicator';
 import withAnimatedProps from './withAnimatedProps';
 
 const AnimatedIndicator = withAnimatedProps(BpkHorizontalNavSelectedIndicator, ['xOffset', 'width']);
 
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
-
 const styles = StyleSheet.create({
   horizontalNav: {
     borderColor: 'transparent',
-    borderBottomColor: tokens.colorGray100,
-    borderWidth: tokens.borderSizeSm,
-  },
-  horizontalNavInner: {
+    borderBottomColor: colorGray100,
+    borderWidth: borderSizeSm,
     flexDirection: 'row',
   },
   spaceAround: {

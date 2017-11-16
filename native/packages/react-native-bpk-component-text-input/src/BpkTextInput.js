@@ -25,18 +25,9 @@ import {
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
-
-const tickSmIcon = require('./icons/sm/tick-circle.png'); // eslint-disable-line import/no-unresolved
-const tickLgIcon = require('./icons/lg/tick-circle.png'); // eslint-disable-line import/no-unresolved
-const exclaimationSmIcon = require('./icons/sm/exclaimation-circle.png'); // eslint-disable-line import/no-unresolved
-const exclaimationLgIcon = require('./icons/lg/exclaimation-circle.png'); // eslint-disable-line import/no-unresolved
-
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
-
-const {
+import {
+  fontFamily,
+  fontFamilyEmphasize,
   borderRadiusSm,
   borderSizeSm,
   colorGray100,
@@ -55,7 +46,12 @@ const {
   textXsFontSize,
   textXsFontWeight,
   textXsLineHeight,
-} = tokens;
+} from 'bpk-tokens/tokens/base.react.native';
+
+const tickSmIcon = require('./icons/sm/tick-circle.png'); // eslint-disable-line import/no-unresolved
+const tickLgIcon = require('./icons/lg/tick-circle.png'); // eslint-disable-line import/no-unresolved
+const exclaimationSmIcon = require('./icons/sm/exclaimation-circle.png'); // eslint-disable-line import/no-unresolved
+const exclaimationLgIcon = require('./icons/lg/exclaimation-circle.png'); // eslint-disable-line import/no-unresolved
 
 const styles = StyleSheet.create({
   input: {
@@ -75,7 +71,7 @@ const styles = StyleSheet.create({
     fontSize: textLgFontSize,
     color: colorGray700,
     fontWeight: textLgFontWeight,
-    fontFamily: Platform.OS === 'android' ? tokens.fontFamilyEmphasize : tokens.fontFamily,
+    fontFamily: Platform.OS === 'android' ? fontFamilyEmphasize : fontFamily,
     lineHeight: textLgLineHeight,
     height: '100%',
   },
@@ -87,7 +83,7 @@ const styles = StyleSheet.create({
   smallText: {
     fontSize: textXsFontSize,
     fontWeight: textXsFontWeight,
-    fontFamily: tokens.fontFamily,
+    fontFamily,
     lineHeight: textXsLineHeight,
   },
   placeholderText: {

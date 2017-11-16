@@ -19,25 +19,21 @@
 import React from 'react';
 import {
   View,
-  Platform,
   StyleSheet,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import BpkThemeProvider from 'react-native-bpk-theming';
+import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
+
 import BpkHorizontalNav, { BpkHorizontalNavItem } from './index';
 import { StorySubheading } from '../../storybook/TextStyles';
 import themeAttributes from '../../storybook/themeAttributes';
 
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
-
 const styles = StyleSheet.create({
   bottomMargin: {
-    marginBottom: tokens.spacingBase,
+    marginBottom: spacingBase,
   },
 });
 

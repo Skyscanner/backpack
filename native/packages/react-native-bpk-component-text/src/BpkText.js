@@ -19,13 +19,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, Platform, StyleSheet } from 'react-native';
-
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
+import {
+  colorGray700,
+  fontFamily,
+  fontFamilyEmphasize,
+  textEmphasizedFontWeight,
+  textXsFontSize,
+  textXsFontWeight,
+  textXsLineHeight,
+  textSmFontSize,
+  textSmFontWeight,
+  textSmLineHeight,
+  textBaseFontSize,
+  textBaseFontWeight,
+  textBaseLineHeight,
+  textLgFontSize,
+  textLgFontWeight,
+  textLgLineHeight,
+  textXlFontSize,
+  textXlFontWeight,
+  textXlLineHeight,
+  textXxlFontSize,
+  textXxlFontWeight,
+  textXxlLineHeight,
+} from 'bpk-tokens/tokens/base.react.native';
 
 const TEXT_STYLES = ['xs', 'sm', 'base', 'lg', 'xl', 'xxl'];
+
+const TEXT_TOKENS = {
+  textXsFontSize,
+  textXsFontWeight,
+  textXsLineHeight,
+  textSmFontSize,
+  textSmFontWeight,
+  textSmLineHeight,
+  textBaseFontSize,
+  textBaseFontWeight,
+  textBaseLineHeight,
+  textLgFontSize,
+  textLgFontWeight,
+  textLgLineHeight,
+  textXlFontSize,
+  textXlFontWeight,
+  textXlLineHeight,
+  textXxlFontSize,
+  textXxlFontWeight,
+  textXxlLineHeight,
+};
 
 const emphasizePropType = (props, propName, componentName) => {
   const value = props[propName];
@@ -56,15 +96,19 @@ const stylePropType = (props, propName, componentName) => {
 
 const getStyleByTextStyle = (textStyle) => {
   const camelCasedStyle = textStyle[0].toUpperCase() + textStyle.slice(1);
+
   const {
-    colorGray700: color,
     [`text${camelCasedStyle}FontSize`]: fontSize,
     [`text${camelCasedStyle}LineHeight`]: lineHeight,
-    fontFamily,
     [`text${camelCasedStyle}FontWeight`]: fontWeight,
-  } = tokens;
+  } = TEXT_TOKENS;
+
   return {
-    fontSize, lineHeight, color, fontFamily, fontWeight,
+    color: colorGray700,
+    fontFamily,
+    fontSize,
+    lineHeight,
+    fontWeight,
   };
 };
 
@@ -72,9 +116,9 @@ const getEmphasizeProperties = () => {
   const emphasizeProperties = {
   };
   if (Platform.OS === 'android') {
-    emphasizeProperties.fontFamily = tokens.fontFamilyEmphasize;
+    emphasizeProperties.fontFamily = fontFamilyEmphasize;
   } else {
-    emphasizeProperties.fontWeight = tokens.textEmphasizedFontWeight;
+    emphasizeProperties.fontWeight = textEmphasizedFontWeight;
   }
   return emphasizeProperties;
 };

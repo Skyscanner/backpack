@@ -16,14 +16,11 @@
  * limitations under the License.
  */
 
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import difference from 'lodash/difference';
-import styles from './BpkButton-styles';
+import { colorWhite } from 'bpk-tokens/tokens/base.react.native';
 
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
+import styles from './BpkButton-styles';
 
 const REQUIRED_THEME_ATTRIBUTES = {
   primary: [
@@ -139,7 +136,7 @@ export const getAndroidBackgroundColour = (theme, props) => {
    * for iOS, can be made explicit in the style file if needed
    */
   const [mainColour] = getGradientColors(theme, props);
-  if (mainColour.toString() === tokens.colorWhite) {
+  if (mainColour.toString() === colorWhite) {
     return StyleSheet.create({ style }).style;
   }
   style.backgroundColor = mainColour;
