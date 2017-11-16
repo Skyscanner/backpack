@@ -38,8 +38,8 @@ const BpkModalDialog = (props) => {
   /* eslint-disable jsx-a11y/no-static-element-interactions,jsx-a11y/no-noninteractive-element-interactions */
   return (
     <TransitionInitialMount
-      appearClassName={getClassName('bpk-modal__dialog--appear')}
-      appearActiveClassName={getClassName('bpk-modal__dialog--appear-active')}
+      appearClassName={getClassName('bpk-modal--appear')}
+      appearActiveClassName={getClassName('bpk-modal--appear-active')}
       transitionTimeout={300}
     >
       <section

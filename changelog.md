@@ -16,6 +16,9 @@
     ```
 
 **Fixed:**
+- bpk-component-modal:
+  - Fixed appear animation  
+
 - react-native-bpk-component-card:
   - Add support for android
 
