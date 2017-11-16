@@ -83,7 +83,6 @@ const commonTests = () => {
             type={ALERT_TYPES.NEUTRAL}
             message="Neutral alert."
           >
-
             <BpkText textStyle="sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
             Pellentesque nec diam nec erat condimentum dapibus.
@@ -95,7 +94,6 @@ const commonTests = () => {
             type={ALERT_TYPES.SUCCESS}
             message="Successful alert."
           >
-
             <BpkText textStyle="sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
             Pellentesque nec diam nec erat condimentum dapibus.
@@ -107,7 +105,6 @@ const commonTests = () => {
             type={ALERT_TYPES.WARN}
             message="Warn alert."
           >
-
             <BpkText textStyle="sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
             Pellentesque nec diam nec erat condimentum dapibus.
@@ -119,127 +116,6 @@ const commonTests = () => {
             type={ALERT_TYPES.ERROR}
             message="Error alert."
           >
-
-            <BpkText textStyle="sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-            Pellentesque nec diam nec erat condimentum dapibus.
-            Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
-            Integer rhoncus varius arcu, a fringilla libero laoreet at.
-            </BpkText>
-          </BpkBannerAlert>
-        </View>,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render correctly expanded', () => {
-      const tree = renderer.create(
-        <View>
-          <BpkBannerAlert
-            type={ALERT_TYPES.NEUTRAL}
-            message="Neutral alert."
-            expanded
-          >
-
-            <BpkText textStyle="sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-            Pellentesque nec diam nec erat condimentum dapibus.
-            Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
-            Integer rhoncus varius arcu, a fringilla libero laoreet at.
-            </BpkText>
-          </BpkBannerAlert>
-          <BpkBannerAlert
-            type={ALERT_TYPES.SUCCESS}
-            message="Successful alert."
-            expanded
-          >
-
-            <BpkText textStyle="sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-            Pellentesque nec diam nec erat condimentum dapibus.
-            Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
-            Integer rhoncus varius arcu, a fringilla libero laoreet at.
-            </BpkText>
-          </BpkBannerAlert>
-          <BpkBannerAlert
-            type={ALERT_TYPES.WARN}
-            message="Warn alert."
-            expanded
-          >
-
-            <BpkText textStyle="sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-            Pellentesque nec diam nec erat condimentum dapibus.
-            Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
-            Integer rhoncus varius arcu, a fringilla libero laoreet at.
-            </BpkText>
-          </BpkBannerAlert>
-          <BpkBannerAlert
-            type={ALERT_TYPES.ERROR}
-            message="Error alert."
-            expanded
-          >
-
-            <BpkText textStyle="sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-            Pellentesque nec diam nec erat condimentum dapibus.
-            Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
-            Integer rhoncus varius arcu, a fringilla libero laoreet at.
-            </BpkText>
-          </BpkBannerAlert>
-        </View>,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render correctly long text', () => {
-      const tree = renderer.create(
-        <View>
-          <BpkBannerAlert
-            type={ALERT_TYPES.NEUTRAL}
-            message="Neutral alert."
-            expanded
-          >
-
-            <BpkText textStyle="sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-            Pellentesque nec diam nec erat condimentum dapibus.
-            Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
-            Integer rhoncus varius arcu, a fringilla libero laoreet at.
-            </BpkText>
-          </BpkBannerAlert>
-          <BpkBannerAlert
-            type={ALERT_TYPES.SUCCESS}
-            message="Successful alert."
-            expanded
-          >
-
-            <BpkText textStyle="sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-            Pellentesque nec diam nec erat condimentum dapibus.
-            Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
-            Integer rhoncus varius arcu, a fringilla libero laoreet at.
-            </BpkText>
-          </BpkBannerAlert>
-          <BpkBannerAlert
-            type={ALERT_TYPES.WARN}
-            message="Warn alert."
-            expanded
-          >
-
-            <BpkText textStyle="sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-            Pellentesque nec diam nec erat condimentum dapibus.
-            Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est.
-            Integer rhoncus varius arcu, a fringilla libero laoreet at.
-            </BpkText>
-          </BpkBannerAlert>
-          <BpkBannerAlert
-            type={ALERT_TYPES.ERROR}
-            message="Error alert."
-            expanded
-          >
-
             <BpkText textStyle="sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
             Pellentesque nec diam nec erat condimentum dapibus.

@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+**Breaking:**
+- react-native-bpk-component-banner-alert:
+  - Expanded / collapsed state, and dismissed state are now handled by the component, so these no longer have to be managed in userland
+
 **Added:**
 - react-native-bpk-component-ticket:
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/ticket
