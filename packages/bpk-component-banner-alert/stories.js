@@ -44,6 +44,9 @@ storiesOf('bpk-component-banner-alert', module)
   .add('Success (dismissable)', () => (
     <BpkBannerAlert dismissable message={message} type={ALERT_TYPES.SUCCESS} onDismiss={action('dismissed')} />
   ))
+  .add('Success (animate on enter)', () => (
+    <BpkBannerAlert animateOnEnter message={message} type={ALERT_TYPES.SUCCESS} onDismiss={action('dismissed')} />
+  ))
   .add('Success with React rendered message', () => (
     <BpkBannerAlert
       message={<span style={{ fontWeight: fontWeightBold }}>{message}</span>}
