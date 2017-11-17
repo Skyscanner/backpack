@@ -37,8 +37,7 @@ const webComponentIntroduced = createdFiles.some(filePath => (
 ));
 
 if (webComponentIntroduced) {
-  message('It looks like you are introducing a web component.');
-  warn('Ensure the component style is extensible via `className`.');
+  warn('It looks like you are introducing a web component. Ensure the component style is extensible via `className`.');
 }
 
 // Ensure new native components are extensible by consumers.
@@ -47,8 +46,7 @@ const nativeComponentIntroduced = createdFiles.some(filePath => (
 ));
 
 if (nativeComponentIntroduced) {
-  message('It looks like you are introducing a native component.');
-  warn('Ensure the component style is extensible via `style`.');
+  warn('It looks like you are introducing a native component. Ensure the component style is extensible via `style`.');
 }
 
 // If any of the packages have changed, the changelog should have been updated.
