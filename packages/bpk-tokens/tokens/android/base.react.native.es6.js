@@ -17,9 +17,9 @@
  * limitations under the License.
  * 
  */
-export const animationDurationXs = "50ms";
-export const animationDurationSm = "200ms";
-export const animationDurationBase = "400ms";
+export const animationDurationXs = 50;
+export const animationDurationSm = 200;
+export const animationDurationBase = 400;
 export const borderSizeSm = 1;
 export const borderSizeLg = 2;
 export const borderSizeXl = 3;

@@ -19,9 +19,9 @@
  */
 
 module.exports = {
-  animationDurationXs: "50ms",
-  animationDurationSm: "200ms",
-  animationDurationBase: "400ms",
+  animationDurationXs: 50,
+  animationDurationSm: 200,
+  animationDurationBase: 400,
   borderSizeSm: 1,
   borderSizeLg: 2,
   borderSizeXl: 3,

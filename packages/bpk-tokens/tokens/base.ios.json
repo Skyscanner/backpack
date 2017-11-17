@@ -1,7 +1,7 @@
 {
   "properties": [
     {
-      "type": "string",
+      "type": "duration",
       "value": "50ms",
       "category": "animations",
       ".alias": {
@@ -10,7 +10,7 @@
       "name": "animationDurationXs"
     },
     {
-      "type": "string",
+      "type": "duration",
       "value": "200ms",
       "category": "animations",
       ".alias": {
@@ -19,7 +19,7 @@
       "name": "animationDurationSm"
     },
     {
-      "type": "string",
+      "type": "duration",
       "value": "400ms",
       "category": "animations",
       ".alias": {

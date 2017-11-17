@@ -118,7 +118,7 @@ BpkAnimateHeight.propTypes = {
 };
 
 BpkAnimateHeight.defaultProps = {
-  animationDuration: parseInt(animationDurationSm, 10),
+  animationDuration: animationDurationSm,
   style: null,
 };
 

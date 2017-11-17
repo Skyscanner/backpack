@@ -1,6 +1,6 @@
 {
   "global": {
-    "type": "string"
+    "type": "duration"
   },
   "props": {
     "ANIMATION_DURATION_XS": {
