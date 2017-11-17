@@ -20,10 +20,16 @@ import {
   ScrollView,
   Platform,
   StyleSheet,
+  View,
   ViewPropTypes,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import BpkHorizontalNavSelectedIndicator from './BpkHorizontalNavSelectedIndicator';
+import withAnimatedProps from './withAnimatedProps';
+
+const AnimatedIndicator = withAnimatedProps(BpkHorizontalNavSelectedIndicator, ['xOffset', 'width']);
 
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
@@ -35,6 +41,8 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
     borderBottomColor: tokens.colorGray100,
     borderWidth: tokens.borderSizeSm,
+  },
+  horizontalNavInner: {
     flexDirection: 'row',
   },
   spaceAround: {
@@ -44,32 +52,92 @@ const styles = StyleSheet.create({
   },
 });
 
-const BpkHorizontalNav = (props) => {
-  const {
-    children,
-    spaceAround,
-    style,
-    ...rest
-  } = props;
-  const navStyle = [styles.horizontalNav];
-  if (spaceAround) {
-    navStyle.push(styles.spaceAround);
+class BpkHorizontalNav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      indicatorOffsetX: null,
+      indicatorWidth: null,
+    };
+    this.onChildLayout = this.onChildLayout.bind(this);
   }
-  return (
-    <ScrollView
-      alwaysBounceHorizontal={false}
-      contentContainerStyle={[navStyle, style]}
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      {...rest}
-    >
-      { children }
-    </ScrollView>
-  );
-};
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.selectedId && this.childrenPositions[nextProps.selectedId]) {
+      const nextLayoutProps = this.childrenPositions[nextProps.selectedId];
+      this.setState({
+        indicatorOffsetX: nextLayoutProps.x,
+        indicatorWidth: nextLayoutProps.width,
+      });
+    }
+  }
+
+  onChildLayout(event, id) {
+    const { width, x } = event.nativeEvent.layout;
+    this.childrenPositions[id] = { width, x };
+
+    // If the child in question is the initially selected one, the indicator can now be positioned.
+    if (this.props.selectedId === id) {
+      this.setState({
+        indicatorOffsetX: x,
+        indicatorWidth: width,
+      });
+    }
+  }
+
+  childrenPositions = {};
+
+  render() {
+    const {
+      children,
+      selectedId,
+      spaceAround,
+      style,
+      ...rest
+    } = this.props;
+
+    const navStyle = [styles.horizontalNav];
+    if (spaceAround) { navStyle.push(styles.spaceAround); }
+
+    const enhancedChildren = React.Children.map(children, child => (
+      React.isValidElement(child) && React.cloneElement(child, {
+        key: child.props.id,
+        selected: selectedId === child.props.id,
+
+        // Have children report their layout details after being laid out.
+        // This allows the selected indicator to be correctly positioned.
+        onLayout: event => this.onChildLayout(event, child.props.id),
+      })));
+
+    const renderIndicator = () => {
+      if (this.state.indicatorOffsetX === null) {
+        return null;
+      }
+      return <AnimatedIndicator xOffset={this.state.indicatorOffsetX} width={this.state.indicatorWidth} />;
+    };
+
+    return (
+      <ScrollView
+        alwaysBounceHorizontal={false}
+        contentContainerStyle={[navStyle, style]}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        {...rest}
+      >
+        <View>
+          <View style={styles.horizontalNavInner}>
+            {enhancedChildren}
+          </View>
+          { renderIndicator() }
+        </View>
+      </ScrollView>
+    );
+  }
+}
 
 BpkHorizontalNav.propTypes = {
   children: PropTypes.node.isRequired,
+  selectedId: PropTypes.string.isRequired,
   spaceAround: PropTypes.bool,
   style: ViewPropTypes.style,
 };

@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+**Breaking:**
+- react-native-bpk-component-horizontal-nav:
+ - `BpkHorizontalNavItem` no longer supports the `selected` prop. Instead, add an `id` prop to `BpkHorizontalNavItem` and a `selectedId` prop to `BpkHorizontalNav`. This allows the selected indicator line to animate when the `selectedId` prop changes. See http://backpack.prod.aws.skyscnr.com/components/native/horizontal-nav for an example.
+
 **Added:**
 - react-native-bpk-component-ticket:
   - New component, see http://backpack.prod.aws.skyscnr.com/components/native/ticket

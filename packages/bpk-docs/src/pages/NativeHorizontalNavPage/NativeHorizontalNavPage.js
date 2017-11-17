@@ -87,6 +87,9 @@ const NativeHorizontalNavPage = () => (<DocsPageBuilder
       to other pages or views within the page.
     </Paragraph>,
     <Paragraph>
+      It features an indicator line that animates automatically when the selected item changes.
+    </Paragraph>,
+    <Paragraph>
       The selected item can be <BpkLink href={THEMING}>themed</BpkLink>.
     </Paragraph>,
   ]}

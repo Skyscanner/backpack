@@ -10,7 +10,6 @@ exports[`Android BpkHorizontalNav should render correctly 1`] = `
           "borderBottomColor": "rgb(230, 228, 235)",
           "borderColor": "transparent",
           "borderWidth": 1,
-          "flexDirection": "row",
         },
       ],
       null,
@@ -20,7 +19,15 @@ exports[`Android BpkHorizontalNav should render correctly 1`] = `
   showsHorizontalScrollIndicator={false}
 >
   <View>
-    My nav content.
+    <View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      />
+    </View>
   </View>
 </RCTScrollView>
 `;
@@ -35,7 +42,6 @@ exports[`Android BpkHorizontalNav should render correctly with arbitrary props 1
           "borderBottomColor": "rgb(230, 228, 235)",
           "borderColor": "transparent",
           "borderWidth": 1,
-          "flexDirection": "row",
         },
       ],
       null,
@@ -46,7 +52,15 @@ exports[`Android BpkHorizontalNav should render correctly with arbitrary props 1
   showsHorizontalScrollIndicator={false}
 >
   <View>
-    My nav content.
+    <View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      />
+    </View>
   </View>
 </RCTScrollView>
 `;
@@ -61,7 +75,6 @@ exports[`Android BpkHorizontalNav should render correctly with custom "style" pr
           "borderBottomColor": "rgb(230, 228, 235)",
           "borderColor": "transparent",
           "borderWidth": 1,
-          "flexDirection": "row",
         },
       ],
       Object {
@@ -73,7 +86,58 @@ exports[`Android BpkHorizontalNav should render correctly with custom "style" pr
   showsHorizontalScrollIndicator={false}
 >
   <View>
-    My nav content.
+    <View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      />
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`Android BpkHorizontalNav should render correctly with the "selected" prop 1`] = `
+<RCTScrollView
+  alwaysBounceHorizontal={false}
+  contentContainerStyle={
+    Array [
+      Array [
+        Object {
+          "borderBottomColor": "rgb(230, 228, 235)",
+          "borderColor": "transparent",
+          "borderWidth": 1,
+        },
+      ],
+      null,
+    ]
+  }
+  horizontal={true}
+  showsHorizontalScrollIndicator={false}
+>
+  <View>
+    <View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <BpkHorizontalNavItem
+          id="0"
+          onLayout={[Function]}
+          selected={true}
+        />
+        <BpkHorizontalNavItem
+          id="1"
+          onLayout={[Function]}
+          selected={false}
+        />
+      </View>
+    </View>
   </View>
 </RCTScrollView>
 `;

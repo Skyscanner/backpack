@@ -31,14 +31,12 @@ import { setOpacity } from 'bpk-tokens';
 import BpkText from 'react-native-bpk-component-text';
 import { withTheme } from 'react-native-bpk-theming';
 
+import { THEMING_ATTRIBUTE, themePropType } from './theming';
+
 const tokens = Platform.select({
   ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
   android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
 })();
-
-// If theming is ever expanded to support other types, this should be changed
-// to something akin to BpkButton's theming functions.
-const THEMING_ATTRIBUTE = 'horizontalNavSelectedTextColor';
 
 const selectedColor = tokens.colorBlue700;
 const styles = StyleSheet.create({
@@ -53,22 +51,7 @@ const styles = StyleSheet.create({
   selectedText: {
     color: selectedColor,
   },
-  selectedIndicator: {
-    backgroundColor: selectedColor,
-    height: tokens.borderSizeLg,
-  },
 });
-
-const themePropType = (props, propName, componentName) => {
-  const { theme } = props;
-  if (!theme) {
-    return false;
-  }
-  if (!theme[THEMING_ATTRIBUTE]) {
-    return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName}\`. To theme a BpkHorizontalNavItem, the \`theme\` prop must include \`${THEMING_ATTRIBUTE}\``); // eslint-disable-line max-len
-  }
-  return false;
-};
 
 const BpkHorizontalNavItem = (props) => {
   const {
@@ -83,7 +66,6 @@ const BpkHorizontalNavItem = (props) => {
 
   const accessibilityTraits = ['button'];
   const textStyles = [styles.text];
-  const indicatorStyles = [styles.selectedIndicator];
 
   if (disabled) {
     accessibilityTraits.push('disabled');
@@ -93,14 +75,10 @@ const BpkHorizontalNavItem = (props) => {
     if (theme && theme[THEMING_ATTRIBUTE]) {
       const themeStyles = {
         selectedText: {
-          color: theme.horizontalNavSelectedTextColor,
-        },
-        selectedIndicator: {
-          backgroundColor: theme.horizontalNavSelectedTextColor,
+          color: theme[THEMING_ATTRIBUTE],
         },
       };
       textStyles.push(themeStyles.selectedText);
-      indicatorStyles.push(themeStyles.selectedIndicator);
     }
   }
 
@@ -122,13 +100,13 @@ const BpkHorizontalNavItem = (props) => {
     >
       <View style={style}>
         <BpkText style={textStyles}>{formattedTitle}</BpkText>
-        { (selected && !disabled) && <View style={indicatorStyles} />}
       </View>
     </Touchable>
   );
 };
 
 const propTypes = {
+  id: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   accessibilityLabel: PropTypes.string,

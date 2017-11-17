@@ -129,16 +129,6 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "selected" prop 1
     >
       Nav
     </Text>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(0, 140, 168)",
-            "height": 2,
-          },
-        ]
-      }
-    />
   </View>
 </View>
 `;
