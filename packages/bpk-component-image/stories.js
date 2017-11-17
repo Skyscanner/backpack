@@ -19,16 +19,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import BpkText from 'bpk-component-text';
 import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
-import BpkImage, { BpkBackgroundImage, withLazyLoading, withLoadingBehavior } from './index';
+import BpkImage, { /* BpkBackgroundImage, */ withLazyLoading, withLoadingBehavior } from './index';
 
 const image = 'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
 const documentIfExists = typeof window !== 'undefined' ? document : null;
 const FadingImage = withLoadingBehavior(BpkImage);
 const LazyLoadedImage = withLazyLoading(BpkImage, documentIfExists);
 const FadingLazyLoadedImage = withLoadingBehavior(withLazyLoading(BpkImage, documentIfExists));
-const FadingLazyLoadedBackgroundImage = withLoadingBehavior(withLazyLoading(BpkBackgroundImage, documentIfExists));
+// Unused, will be reinstated when BpkBackgroundImage is.
+// const FadingLazyLoadedBackgroundImage = withLoadingBehavior(withLazyLoading(BpkBackgroundImage, documentIfExists));
 
 storiesOf('bpk-component-image', module)
   .add('Default', () => (
@@ -117,45 +117,47 @@ storiesOf('bpk-component-image', module)
         />
       </div>
     </BpkMobileScrollContainer>
-  ))
-  .add('Background Image', () => (
-    <BpkBackgroundImage
-      style={{
-        width: '816',
-        height: '20rem',
-      }}
-      imageStyle={{
-        width: '100%',
-        height: '100%',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: '50% 50%',
-      }}
-      src={image}
-    >
-      <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 10 }} >
-        <BpkText tagName="h2" textStyle="lg" >Lorem ipsum dolor sit amet</BpkText>
-      </div>
-    </BpkBackgroundImage >
-  ))
-  .add('Background Image with Lazy Loading and Animation', () => (
-    <FadingLazyLoadedBackgroundImage
-      style={{
-        width: '816',
-        height: '20rem',
-      }}
-      imageStyle={{
-        width: '100%',
-        height: '100%',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: '50% 50%',
-      }}
-      src={image}
-    >
-      <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 10 }} >
-        <BpkText tagName="h2" textStyle="lg" >Lorem ipsum dolor sit amet</BpkText>
-      </div>
-    </FadingLazyLoadedBackgroundImage >
   ));
 
+// Commented out until BpkBackgroundImage is working.
+//
+// .add('Background Image', () => (
+//   <BpkBackgroundImage
+//     style={{
+//       width: '816',
+//       height: '20rem',
+//     }}
+//     imageStyle={{
+//       width: '100%',
+//       height: '100%',
+//       backgroundRepeat: 'no-repeat',
+//       backgroundSize: 'cover',
+//       backgroundPosition: '50% 50%',
+//     }}
+//     src={image}
+//   >
+//     <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 10 }} >
+//       <BpkText tagName="h2" textStyle="lg" >Lorem ipsum dolor sit amet</BpkText>
+//     </div>
+//   </BpkBackgroundImage >
+// ))
+// .add('Background Image with Lazy Loading and Animation', () => (
+//   <FadingLazyLoadedBackgroundImage
+//     style={{
+//       width: '816',
+//       height: '20rem',
+//     }}
+//     imageStyle={{
+//       width: '100%',
+//       height: '100%',
+//       backgroundRepeat: 'no-repeat',
+//       backgroundSize: 'cover',
+//       backgroundPosition: '50% 50%',
+//     }}
+//     src={image}
+//   >
+//     <div style={{ opacity: 0.7, marginLeft: 35, paddingTop: 10 }} >
+//       <BpkText tagName="h2" textStyle="lg" >Lorem ipsum dolor sit amet</BpkText>
+//     </div>
+//   </FadingLazyLoadedBackgroundImage >
+// ))
