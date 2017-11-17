@@ -10,6 +10,8 @@ npm install bpk-component-banner-alert --save-dev
 
 ## Usage
 
+### Non-dismissable
+
 ```js
 import React from 'react';
 import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert';
@@ -26,6 +28,48 @@ export default () => (
 );
 ```
 
+### Dismissable
+
+```js
+import React, { Component } from 'react';
+import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert';
+
+class DismissableBpkBannerAlert extends Component {
+  constructor() {
+    super();
+
+    this.setDismissed = this.setDismissed.bind(this);
+
+    this.state = {
+      show: true,
+    };
+  }
+
+  setDismissed() {
+    this.setState({
+      show: false,
+    });
+  }
+
+  render() {
+    return (
+      <BpkBannerAlert
+        message="Successful alert with more information."
+        type={ALERT_TYPES.SUCCESS}
+        dismissable
+        onDismiss={this.setDismissed}
+        show={this.state.show}
+        dismissButtonLabel="Dismiss"
+      />
+    );
+  }
+}
+
+export default () => (
+  <DismissableBpkBannerAlert />
+);
+```
+
 ## Props
 
 | Property          | PropType             | Required | Default Value |
@@ -34,5 +78,9 @@ export default () => (
 | message           | node                 | true     | -             |
 | ariaLive          | ARIA_LIVE (one of)   | false    | 'assertive'   |
 | children          | node                 | false    | null          |
+| dismissable       | bool                 | false    | false         |
+| dismissLabel      | string               | false    | null          |
+| onDismiss         | func                 | false    | null          |
+| show              | bool                 | false    | true          |
 | toggleButtonLabel | string               | false    | null          |
-| className         | string               | no       | null          |
+| className         | string               | false    | null          |

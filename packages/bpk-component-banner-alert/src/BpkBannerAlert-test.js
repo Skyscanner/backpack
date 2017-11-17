@@ -75,4 +75,18 @@ describe('BpkBannerAlert', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with dismissable option', () => {
+    const tree = renderer.create(
+      <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} dismissable />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with show set false', () => {
+    const tree = renderer.create(
+      <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} dismissable show={false} />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

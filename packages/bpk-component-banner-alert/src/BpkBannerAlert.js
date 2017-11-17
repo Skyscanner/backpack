@@ -20,6 +20,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { withButtonAlignment } from 'bpk-component-icon';
 import BpkAnimateHeight from 'bpk-animate-height';
+import BpkCloseButton from 'bpk-component-close-button';
 import TickCircleIcon from 'bpk-component-icon/sm/tick-circle';
 import ChevronDownIcon from 'bpk-component-icon/sm/chevron-down';
 import InfoCircleIcon from 'bpk-component-icon/sm/information-circle';
@@ -62,7 +63,6 @@ const getIconForType = (type) => {
 
 const ToggleButton = (props) => {
   const classNames = [getClassName('bpk-banner-alert__expand-icon')];
-
   if (props.expanded) { classNames.push(getClassName('bpk-banner-alert__expand-icon--flipped')); }
 
   return (
@@ -84,6 +84,23 @@ ToggleButton.propTypes = {
   expanded: PropTypes.bool.isRequired,
 };
 
+const DismissButton = (props) => {
+  const { label, ...rest } = props;
+
+  return (
+    <BpkCloseButton
+      className={getClassName('bpk-banner-alert__toggle-button')}
+      aria-label={label}
+      label={label}
+      {...rest}
+    />
+  );
+};
+
+DismissButton.propTypes = {
+  label: PropTypes.string.isRequired,
+};
+
 class BpkBannerAlert extends Component {
   constructor(props) {
     super(props);
@@ -93,6 +110,7 @@ class BpkBannerAlert extends Component {
     };
 
     this.onExpand = this.onExpand.bind(this);
+    this.onDismiss = this.onDismiss.bind(this);
   }
 
   onExpand() {
@@ -101,9 +119,25 @@ class BpkBannerAlert extends Component {
     }));
   }
 
+  onDismiss() {
+    if (this.props.onDismiss) {
+      this.props.onDismiss();
+    }
+  }
+
   render() {
     const {
-      children, className, type, ariaLive, message, toggleButtonLabel, ...rest
+      ariaLive,
+      children,
+      className,
+      dismissable,
+      dismissButtonLabel,
+      message,
+      onDismiss,
+      show,
+      type,
+      toggleButtonLabel,
+      ...rest
     } = this.props;
     const isExpanded = this.state.expanded;
     const isExpandable = children;
@@ -127,7 +161,7 @@ class BpkBannerAlert extends Component {
     */
     // Disabling 'click-events-have-key-events and interactive-supports-focus' because header element is not focusable.
     // ToggleButton is focusable and works for this.
-    return (
+    return !show ? null : (
       <section className={sectionClassNames.join(' ')} {...rest}>
         <header
           role={ariaRoles.join(' ')}
@@ -143,6 +177,9 @@ class BpkBannerAlert extends Component {
             <span className={getClassName('bpk-banner-alert__toggle')}>
               <ToggleButton expanded={isExpanded} label={toggleButtonLabel} />
             </span>
+          ) : null}
+          {dismissable ? (
+            <DismissButton onClick={this.onDismiss} label={dismissButtonLabel} />
           ) : null}
         </header>
         <BpkAnimateHeight duration={parseInt(durationSm, 10)} height={showChildren ? 'auto' : 0}>
@@ -168,6 +205,10 @@ BpkBannerAlert.propTypes = {
     ARIA_LIVE.POLITE,
   ]),
   children: PropTypes.node,
+  dismissable: PropTypes.bool,
+  dismissButtonLabel: PropTypes.string,
+  onDismiss: PropTypes.func,
+  show: PropTypes.bool,
   toggleButtonLabel: PropTypes.string,
   className: PropTypes.string,
 };
@@ -175,6 +216,10 @@ BpkBannerAlert.propTypes = {
 BpkBannerAlert.defaultProps = {
   ariaLive: ARIA_LIVE.ASSERTIVE,
   children: null,
+  dismissable: false,
+  dismissButtonLabel: null,
+  onDismiss: null,
+  show: true,
   toggleButtonLabel: null,
   className: null,
 };
