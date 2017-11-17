@@ -36,6 +36,8 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
     borderBottomColor: colorGray100,
     borderWidth: borderSizeSm,
+  },
+  horizontalNavInner: {
     flexDirection: 'row',
   },
   spaceAround: {
