@@ -63,6 +63,10 @@ export default class App extends Component {
 
 ## Theme Props
 
+### BpkHorizontalNav
+
+* `horizontalNavSelectedTextColor`
+
 ### BpkHorizontalNavItem
 
 * `horizontalNavSelectedTextColor`
