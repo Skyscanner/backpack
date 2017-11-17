@@ -279,7 +279,7 @@
   },
   "props": {
     "ANIMATION_DURATION_XS": {
-      "type": "string",
+      "type": "duration",
       "value": "50ms",
       "category": "animations",
       ".alias": {
@@ -288,7 +288,7 @@
       "name": "ANIMATION_DURATION_XS"
     },
     "ANIMATION_DURATION_SM": {
-      "type": "string",
+      "type": "duration",
       "value": "200ms",
       "category": "animations",
       ".alias": {
@@ -297,7 +297,7 @@
       "name": "ANIMATION_DURATION_SM"
     },
     "ANIMATION_DURATION_BASE": {
-      "type": "string",
+      "type": "duration",
       "value": "400ms",
       "category": "animations",
       ".alias": {

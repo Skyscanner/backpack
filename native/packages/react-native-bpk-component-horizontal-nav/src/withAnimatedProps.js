@@ -32,8 +32,8 @@
 
 import React from 'react';
 import { Animated } from 'react-native';
+import { animationDurationSm } from 'bpk-tokens/tokens/base.react.native';
 
-const ANIMATION_DURATION = 200; // milliseconds.
 
 const withAnimatedProps = (Component, propsToMonitor) => class extends React.Component {
   constructor(props) {
@@ -47,7 +47,7 @@ const withAnimatedProps = (Component, propsToMonitor) => class extends React.Com
     const animations = propsToMonitor.map(prop => (
       Animated.timing(this.state[prop], {
         toValue: nextProps[prop],
-        duration: ANIMATION_DURATION,
+        duration: animationDurationSm,
       })
     ));
     Animated.parallel(animations).start();

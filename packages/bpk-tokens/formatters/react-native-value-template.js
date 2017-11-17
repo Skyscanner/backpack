@@ -9,6 +9,11 @@ export default function (value, type) {
       formattedValue = `"${formattedColor.toRgbString()}"`;
       break;
     }
+    case 'duration': {
+      const parsedDuration = Number.parseInt(value, 10);
+      formattedValue = Number.isNaN(parsedDuration) ? value : parsedDuration;
+      break;
+    }
     case 'string':
       formattedValue = `"${value.replace(/"/g, '\\"')}"`;
       break;
