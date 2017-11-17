@@ -123,6 +123,9 @@ class AnimateHeight extends Component {
   onTransitionEnd() {
     if (this.contentElement && this.props.height === 0) {
       this.contentElement.style.display = 'none';
+      if (typeof this.props.onAnimationComplete === 'function') {
+        this.props.onAnimationComplete();
+      }
     }
     if (this.props.onAnimationComplete) {
       this.props.onAnimationComplete();

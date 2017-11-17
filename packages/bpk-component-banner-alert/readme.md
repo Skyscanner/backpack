@@ -34,5 +34,9 @@ export default () => (
 | message           | node                 | true     | -             |
 | ariaLive          | ARIA_LIVE (one of)   | false    | 'assertive'   |
 | children          | node                 | false    | null          |
-| toggleButtonLabel | string               | false    | null          |
 | className         | string               | no       | null          |
+| dismissable       | bool                 | false    | false         |
+| dismissLabel      | string               | false    | null          |
+| fadeIn            | bool                 | false    | false         |
+| onAction          | func                 | false    | null          |
+| toggleButtonLabel | string               | false    | null          |
