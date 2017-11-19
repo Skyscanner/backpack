@@ -11,6 +11,10 @@
 - bpk-component-banner-alert:
   - New "dismissable" configuration. See http://backpack.prod.aws.skyscnr.com/components/web/banner-alerts
 
+**Fixed:**
+- bpk-component-button:
+  - Svg's fill colour is automatically set to text colour.
+
 ## 2017-11-17 - New native horizontal nav interface and enhancements to `bpk-animate-height`
 
 **Breaking:**

@@ -53,4 +53,8 @@
   &--large-icon-only {
     @include bpk-button--large-icon-only;
   }
+
+  svg {
+    fill: currentColor;
+  }
 }
