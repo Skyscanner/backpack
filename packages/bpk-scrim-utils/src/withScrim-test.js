@@ -71,6 +71,17 @@ describe('BpkScrim', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
+    it('should render correctly with contentClassName', () => {
+      const tree = renderer.create(
+        <Component
+          onClose={jest.fn()}
+          getApplicationElement={jest.fn()}
+          contentClassName="contentClassName"
+        />,
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
   });
 
   describe('componentDidMount', () => {

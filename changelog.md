@@ -2,13 +2,15 @@
 
 ## UNRELEASED
 
-_Nothing yet_
+**Breaking:**
+- bpk-scrim-utils:
+  - Removed `padded` prop in favour of more generic `contentClassName`
 
 ## 2017-11-17 - New native horizontal nav interface and enhancements to `bpk-animate-height`
 
 **Breaking:**
 - react-native-bpk-component-horizontal-nav: 1.0.1 => 2.0.0
- - `BpkHorizontalNavItem` no longer supports the `selected` prop. Instead, add an `id` prop to `BpkHorizontalNavItem` and a `selectedId` prop to `BpkHorizontalNav`. This allows the selected indicator line to animate when the `selectedId` prop changes. See http://backpack.prod.aws.skyscnr.com/components/native/horizontal-nav for an example.
+  - `BpkHorizontalNavItem` no longer supports the `selected` prop. Instead, add an `id` prop to `BpkHorizontalNavItem` and a `selectedId` prop to `BpkHorizontalNav`. This allows the selected indicator line to animate when the `selectedId` prop changes. See http://backpack.prod.aws.skyscnr.com/components/native/horizontal-nav for an example.
 
 **Added:**
 - react-native-bpk-component-ticket: 1.0.32 => 1.1.0

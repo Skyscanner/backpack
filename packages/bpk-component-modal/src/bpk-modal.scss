@@ -18,31 +18,18 @@
 
 @import '~bpk-mixins/index';
 
-.bpk-scrim {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: $bpk-zindex-scrim;
-  transition: opacity $bpk-duration-xs ease-in-out;
-  background-color: $bpk-scrim-background-color;
-  opacity: $bpk-scrim-opacity;
-  overflow: hidden;
-
+.bpk-modal__container {
   @include bpk-breakpoint-mobile {
-    opacity: $bpk-scrim-mobile-opacity;
+    background-color: $bpk-modal-background-color;
   }
 
-  &--appear {
-    opacity: $bpk-scrim-initial-opacity;
+  @include bpk-breakpoint-above-mobile {
+    display: flex;
+    padding: $bpk-spacing-base;
   }
 
-  &--appear-active {
-    opacity: $bpk-scrim-opacity;
-
-    @include bpk-breakpoint-mobile {
-      opacity: $bpk-scrim-mobile-opacity;
-    }
+  // IE11 and below hack for buggy flexbox support
+  @media screen\0 {
+    display: block;
   }
 }
