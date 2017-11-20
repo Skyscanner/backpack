@@ -45,7 +45,11 @@ Using this HOC can make pages load faster and prevent data being used to display
 import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
 import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 
-const LazyLoadedImage = withLazyLoading(BpkImage, document);
+// Support for SSR
+const documentIfExists = typeof window !== 'undefined' ? document : null;
+// withLazyLoading will not use document when rendered server side so it's safe
+// pass null.
+const LazyLoadedImage = withLazyLoading(BpkImage, documentIfExists);
 
 export default () => (
   <LazyLoadedImage
@@ -76,6 +80,34 @@ const FadingImage = withLoadingBehavior(BpkImage);
 
 export default () => (
   <FadingImage
+    altText="image description"
+    width={816}
+    height={544}
+    src="./path/to/image_1640.jpg"
+    srcSet={`./path/to/image_320px.jpg 320w,
+      ./path/to/image_640px.jpg 640w,
+      ./path/to/image_1640px.jpg 1640w,
+      ./path/to/image_3200px.jpg 3200w`}
+    sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 48rem,
+      (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 18rem),
+      calc(100vw - 4.5rem)`}
+  />
+);
+```
+
+### All together now
+
+Combining `withLazyLoading` and `withLoadingBehavior` gives us a lazily loaded image that will show a spinner while the image loads.
+
+```js
+import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
+import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
+
+const documentIfExists = typeof window !== 'undefined' ? document : null;
+const FadingLazyLoadedImage = withLoadingBehavior(withLazyLoading(BpkImage, documentIfExists));
+
+export default () => (
+  <FadingLazyLoadedImage
     altText="image description"
     width={816}
     height={544}
