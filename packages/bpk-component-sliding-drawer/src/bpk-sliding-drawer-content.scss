@@ -33,9 +33,19 @@
 
   @include bpk-box-shadow-xl;
 
+  @include bpk-rtl {
+    right: auto;
+    left: 0;
+    transform: translate(-100%);
+  }
+
   &--entering,
   &--entered {
     transform: translate(0);
+
+    @include bpk-rtl {
+      transform: translate(0);
+    }
   }
 
   &--exiting {
@@ -45,6 +55,10 @@
   &--exiting,
   &--exited {
     transform: translate(100%);
+
+    @include bpk-rtl {
+      transform: translate(-100%);
+    }
   }
 
   &__header {
