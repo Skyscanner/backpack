@@ -9,7 +9,7 @@
 
 **Added:**
 - bpk-component-banner-alert:
-  - New "dismissable" configuration. See http://backpack.prod.aws.skyscnr.com/components/web/banner-alerts
+  - New `dismissable` configuration, see http://backpack.prod.aws.skyscnr.com/components/web/banner-alerts
 
 **Fixed:**
 - bpk-component-button:
@@ -22,11 +22,7 @@
   - `BpkHorizontalNavItem` no longer supports the `selected` prop. Instead, add an `id` prop to `BpkHorizontalNavItem` and a `selectedId` prop to `BpkHorizontalNav`. This allows the selected indicator line to animate when the `selectedId` prop changes. See http://backpack.prod.aws.skyscnr.com/components/native/horizontal-nav for an example.
 
 **Added:**
-- react-native-bpk-component-ticket: 1.0.32 => 1.1.0
-  - New component, see http://backpack.prod.aws.skyscnr.com/components/native/ticket
-  - _Note to Backpack squad members: This is still private so keep the versions below `1.0.0`_
-
-- bpk-animate-height:
+- bpk-animate-height: 1.0.32 => 1.1.0
   - New `onAnimationComplete` function prop which is invoked when expand / collapse completes.
 
 ## 2017-11-16 - New platform specific extensions for react native tokens
@@ -55,16 +51,16 @@
   - New higher order component `withScrim`
 
 - react-native-bpk-component-horizontal-nav: 1.0.0
-  - New component `BpkHorizontalNav`. See http://backpack.prod.aws.skyscnr.com/components/native/horizontal-nav
+  - New horizontal nav component, see http://backpack.prod.aws.skyscnr.com/components/native/horizontal-nav
 
 - react-native-bpk-component-switch: 1.0.0
-  - New component `BpkSwitch`. See http://backpack.prod.aws.skyscnr.com/components/native/switches
+  - New switch component, see http://backpack.prod.aws.skyscnr.com/components/native/switches
 
 ## 2017-11-07 - New slider component
 
 **Added:**
 - bpk-component-slider: 1.0.0
-  - New component `BpkSlider`. See http://backpack.prod.aws.skyscnr.com/components/web/sliders
+  - New slider component, ses http://backpack.prod.aws.skyscnr.com/components/web/sliders
 
 **Fixed:**
 - bpk-component-input: 3.2.36 => 3.2.37
@@ -100,7 +96,7 @@
 
 **Added:**
 - react-native-bpk-component-spinner: 0.0.1 => 1.0.0
-  - New component `BpkSpinner`. See http://backpack.prod.aws.skyscnr.com/components/native/spinners
+  - New spinner component, see http://backpack.prod.aws.skyscnr.com/components/native/spinners
 
 ## 2017-10-31 - Fix for vertical alignment of text in select inputs
 
@@ -125,14 +121,14 @@
 ## 2017-10-24 - Android support for button component
 
 **Fixed:**
-- react-native-bpk-component-button: react-native-bpk-component-button: 4.1.0 => 4.2.0
-- react-native-bpk-component-card:react-native-bpk-component-card: 1.1.0 => 1.1.1
-- react-native-bpk-component-animate-height:react-native-bpk-component-animate-height: 1.0.2 => 1.0.3
+- react-native-bpk-component-button: 4.1.0 => 4.2.0
+- react-native-bpk-component-card: 1.1.0 => 1.1.1
+- react-native-bpk-component-animate-height: 1.0.2 => 1.0.3
   - import ViewPropTypes to prevent native build to break at compile time
 
 **Added:**
 - react-native-bpk-component-button: react-native-bpk-component-button: 4.1.0 => 4.2.0
- - Add Android support
+  - Add Android support
 
  **Fixed:**
  - bpk-component-nudger:
@@ -142,10 +138,10 @@
 
 **Added:**
 - react-native-bpk-component-card: 1.0.10 => 1.1.0
- - Now accepts a `focused` prop to add emphasis to a card. See http://backpack.prod.aws.skyscnr.com/components/native/cards/
+  - Now accepts a `focused` prop to add emphasis to a card, see http://backpack.prod.aws.skyscnr.com/components/native/cards/
 - react-native-bpk-component-button: 4.0.4 => 4.1.0
- - The `icon` prop now accepts strings corresponding to a valid `BpkIcon`.
- - Elements can still be passed in as before if required.
+  - The `icon` prop now accepts strings corresponding to a valid `BpkIcon`.
+  - Elements can still be passed in as before if required.
 
 **Changed:**
 - bpk-component-breakpoint: 1.0.25 => 1.0.26
@@ -155,29 +151,29 @@
 
 **Added:**
 - react-native-bpk-component-banner-alert: 1.0.1 => 1.1.0
-  - New neutral configuration. See http://backpack.prod.aws.skyscnr.com/components/native/banner-alerts/
+  - New neutral configuration, see http://backpack.prod.aws.skyscnr.com/components/native/banner-alerts/
 
 ### 2017-10-17 - New native banner alert and animations for web banner alerts
 
 **Added:**
 - bpk-component-banner-alert: 1.2.17 => 1.3.1
   - Added animation to expandable banner-alerts + mew neutral configuration. See
-  - New neutral configuration. See http://backpack.prod.aws.skyscnr.com/components/web/banner-alerts/
+  - New neutral configuration, see http://backpack.prod.aws.skyscnr.com/components/web/banner-alerts/
 
 - react-native-bpk-component-banner-alert: 0.0.1 => 1.0.1
-  - New component `BpkBannerAlert`. See http://backpack.prod.aws.skyscnr.com/components/native/banner-alerts/
+  - New banner alert component, see http://backpack.prod.aws.skyscnr.com/components/native/banner-alerts/
 
 ### 2017-10-16 - React Lists and List Items can now have a className prop added
 
 **Added:**
-- bpk-component-list
+- bpk-component-list:
   - The `className` prop has been added to BpkList and BpkListItem, mirroring functionality in other components that implement the prop
 
 
 ## 2017-10-13 - 17 new icons added and 5 existing icons changed
 
 **Added:**
-- bpk-svgs
+- bpk-svgs:
   - Added 17 new icons
   - alert--active
   - alert--add
@@ -198,8 +194,8 @@
   - window
 
 **Updated:**
-- bpk-svgs
-  - Modified 5 icons
+- bpk-svgs:
+  - Modified 5 icons:
     - expand
     - stops
     - new-window
@@ -207,7 +203,7 @@
     - time
 
 **Fixed:**
-- bpk-react-utils
+- bpk-react-utils:
  - Upgraded [recompose](https://github.com/acdlite/recompose) dependency to support React 16.
 
 ## 2017-10-12 - New React Native icon component installation instructions and simpler React Native button API
@@ -288,10 +284,10 @@
 
 **Added:**
 - react-native-bpk-theming  0.0.1 => 1.0.0
-  - New `BpkThemeProvider` and `withTheme` utilities. See http://backpack.prod.aws.skyscnr.com/components/utilities/theming
+  - New `BpkThemeProvider` and `withTheme` utilities, see http://backpack.prod.aws.skyscnr.com/components/utilities/theming
 
 - react-native-bpk-component-icon 0.0.1 => 0.0.2
-  - New component `BpkIcon`. See http://backpack.prod.aws.skyscnr.com/components/native/icons/
+  - New icon component, see http://backpack.prod.aws.skyscnr.com/components/native/icons/
 
 ## 2017-09-29 - Update tokens types value and add ttf icon font
 
@@ -1915,7 +1911,7 @@
 
 **Fixed:**
 - bpk-component-button: 1.4.3 => 1.4.4
-  - onClick event no longer fires on disabled buttons in Chrome. See https://github.com/facebook/react/pull/8329
+  - onClick event no longer fires on disabled buttons in Chrome, see https://github.com/facebook/react/pull/8329
 
 **The following packages received a patch bump due to the dependency changes above:**
 - bpk-component-modal: 0.3.3 => 0.3.4
