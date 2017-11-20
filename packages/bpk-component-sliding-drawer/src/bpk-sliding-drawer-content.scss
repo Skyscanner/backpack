@@ -23,9 +23,9 @@
   right: 0;
   z-index: $bpk-zindex-sliding-drawer;
   width: 90%;
-  max-width: 400px;
+  max-width: 400 * $bpk-one-pixel-rem;
   height: 100%;
-  transform: translate(400px);
+  transform: translate(100%);
   transition: transform $bpk-duration-sm ease;
   outline: 0;
   background: $bpk-color-white;
@@ -44,7 +44,7 @@
 
   &--exiting,
   &--exited {
-    transform: translate(400px);
+    transform: translate(100%);
   }
 
   &__header {
