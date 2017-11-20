@@ -107,6 +107,7 @@ class BpkBannerAlert extends Component {
 
     this.state = {
       expanded: false,
+      dismissed: false,
     };
 
     this.onExpand = this.onExpand.bind(this);
@@ -120,6 +121,7 @@ class BpkBannerAlert extends Component {
   }
 
   onDismiss() {
+    this.setState({ dismissed: true });
     if (this.props.onDismiss) {
       this.props.onDismiss();
     }
@@ -134,12 +136,11 @@ class BpkBannerAlert extends Component {
       dismissButtonLabel,
       message,
       onDismiss,
-      show,
       type,
       toggleButtonLabel,
       ...rest
     } = this.props;
-    const isExpanded = this.state.expanded;
+    const { expanded: isExpanded, dismissed } = this.state;
     const isExpandable = children;
     const showChildren = isExpandable && isExpanded;
     const ariaRoles = ['alert'];
@@ -161,7 +162,7 @@ class BpkBannerAlert extends Component {
     */
     // Disabling 'click-events-have-key-events and interactive-supports-focus' because header element is not focusable.
     // ToggleButton is focusable and works for this.
-    return !show ? null : (
+    return dismissed ? null : (
       <section className={sectionClassNames.join(' ')} {...rest}>
         <header
           role={ariaRoles.join(' ')}
@@ -208,7 +209,6 @@ BpkBannerAlert.propTypes = {
   dismissable: PropTypes.bool,
   dismissButtonLabel: PropTypes.string,
   onDismiss: PropTypes.func,
-  show: PropTypes.bool,
   toggleButtonLabel: PropTypes.string,
   className: PropTypes.string,
 };
@@ -219,7 +219,6 @@ BpkBannerAlert.defaultProps = {
   dismissable: false,
   dismissButtonLabel: null,
   onDismiss: null,
-  show: true,
   toggleButtonLabel: null,
   className: null,
 };

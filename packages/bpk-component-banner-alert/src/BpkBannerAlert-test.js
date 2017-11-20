@@ -18,6 +18,8 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 import BpkBannerAlert, { ALERT_TYPES } from './BpkBannerAlert';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
@@ -78,15 +80,30 @@ describe('BpkBannerAlert', () => {
 
   it('should render correctly with dismissable option', () => {
     const tree = renderer.create(
-      <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} dismissable />,
+      <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} dismissable dismissButtonLabel="Dismiss" />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with show set false', () => {
-    const tree = renderer.create(
-      <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} dismissable show={false} />,
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('should render correctly when dismissed', () => {
+    const banner = shallow(
+      <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} dismissable dismissButtonLabel="Dismiss" />,
+    );
+    banner.find('DismissButton').at(0).simulate('click');
+
+    expect(shallowToJson(banner)).toMatchSnapshot();
+  });
+
+  it('should call "onDismiss" when dismissed', () => {
+    const onDismissMock = jest.fn();
+    const banner = shallow(
+      <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} dismissable onDismiss={onDismissMock} />,
+    );
+
+    expect(onDismissMock.mock.calls.length).toBe(0);
+
+    banner.find('DismissButton').at(0).simulate('click');
+
+    expect(onDismissMock.mock.calls.length).toBe(1);
   });
 });

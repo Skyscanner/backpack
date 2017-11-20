@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BpkBannerAlert should render correctly when dismissed 1`] = `""`;
+
 exports[`BpkBannerAlert should render correctly with "type" attribute equal to "error" 1`] = `
 <section
   className="bpk-banner-alert bpk-banner-alert--error"
@@ -650,10 +652,10 @@ exports[`BpkBannerAlert should render correctly with dismissable option 1`] = `
     </span>
      
     <button
-      aria-label={null}
+      aria-label="Dismiss"
       className="bpk-close-button bpk-banner-alert__toggle-button"
       onClick={[Function]}
-      title={null}
+      title="Dismiss"
       type="button"
     >
       <span
@@ -708,5 +710,3 @@ exports[`BpkBannerAlert should render correctly with dismissable option 1`] = `
   </div>
 </section>
 `;
-
-exports[`BpkBannerAlert should render correctly with show set false 1`] = `null`;
