@@ -25,6 +25,7 @@
   bottom: 0;
   left: 0;
   z-index: $bpk-zindex-scrim;
+  overflow: auto;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
