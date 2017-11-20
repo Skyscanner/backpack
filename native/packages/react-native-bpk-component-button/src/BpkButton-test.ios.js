@@ -18,23 +18,8 @@
 
 import commonTests from './BpkButton-test.common';
 
-jest.mock('react-native', () => {
-  const reactNative = require.requireActual('react-native');
-  jest
-    .spyOn(reactNative.Platform, 'select')
-    .mockImplementation(obj => obj.ios || obj.default);
-  reactNative.Platform.OS = 'ios';
-  return reactNative;
-});
+jest.mock('react-native-linear-gradient', () => 'View');
 
-jest.mock('react-native-linear-gradient', () => (props) => {
-  const React = require.requireActual('react');
-  const { View } = require.requireActual('react-native');
-
-  return <View {...props} />;
-});
-
-jest.mock('./layout/BpkButtonContainer', () => require.requireActual('./layout/BpkButtonContainer.ios.js'));
 describe('iOS', () => {
   commonTests();
 });

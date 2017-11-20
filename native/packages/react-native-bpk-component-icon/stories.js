@@ -17,24 +17,19 @@
  */
 
 import React from 'react';
+import { View, StyleSheet } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
-import { Platform, View, StyleSheet } from 'react-native';
-import iconMappings from 'bpk-svgs/dist/font/iconMapping.json';
-import { StorySubheading } from '../../storybook/TextStyles';
-import BpkIcon from './index';
-
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
-
-const {
+import {
   colorBlue500,
   colorGreen500,
   colorYellow500,
   spacingBase,
   spacingSm,
-} = tokens;
+} from 'bpk-tokens/tokens/base.react.native';
+import iconMappings from 'bpk-svgs/dist/font/iconMapping.json';
+
+import BpkIcon from './index';
+import { StorySubheading } from '../../storybook/TextStyles';
 
 const styles = StyleSheet.create({
   container: {

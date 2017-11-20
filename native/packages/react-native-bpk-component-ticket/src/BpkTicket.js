@@ -16,24 +16,10 @@
  * limitations under the License.
  */
 
-import {
-  View,
-  Platform,
-  StyleSheet,
-  PixelRatio,
-  ViewPropTypes,
-} from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dash from 'react-native-dash';
-import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
-
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
-
-const {
+import {
   colorGray100,
   colorWhite,
   elevationXs,
@@ -52,7 +38,9 @@ const {
   shadowXlOffsetHeight,
   shadowXlOpacity,
   shadowXlRadius,
-} = tokens;
+} from 'bpk-tokens/tokens/base.react.native';
+import { View, StyleSheet, PixelRatio, ViewPropTypes } from 'react-native';
+import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
 /**
  * Define styles needed by the component

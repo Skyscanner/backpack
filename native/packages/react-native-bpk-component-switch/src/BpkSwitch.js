@@ -16,26 +16,19 @@
  * limitations under the License.
  */
 
-import {
-  Platform,
-  Switch,
-} from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Platform, Switch } from 'react-native';
 import { withTheme } from 'react-native-bpk-theming';
-
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
+import { colorBlue500, colorGray100, colorGray50 } from 'bpk-tokens/tokens/base.react.native';
 
 // If theming is ever expanded to support other types, this should be changed
 // to something akin to BpkButton's theming functions.
 const THEMING_ATTRIBUTE = 'switchPrimaryColor';
 
 const getColors = (theme, value) => {
-  const primaryColor = theme ? theme[THEMING_ATTRIBUTE] : tokens.colorBlue500;
-  const secondaryColor = tokens.colorGray100;
+  const primaryColor = theme ? theme[THEMING_ATTRIBUTE] : colorBlue500;
+  const secondaryColor = colorGray100;
 
   // The color props mean different things based on the platform.
   const colors = Platform.select({
@@ -47,7 +40,7 @@ const getColors = (theme, value) => {
     },
     android: {
       tintColor: secondaryColor, // Track when OFF.
-      thumbTintColor: value ? primaryColor : tokens.colorGray50,
+      thumbTintColor: value ? primaryColor : colorGray50,
       onTintColor: secondaryColor, // Track when ON.
     },
   });

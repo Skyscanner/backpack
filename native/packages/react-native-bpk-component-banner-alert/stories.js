@@ -17,17 +17,12 @@
  */
 
 import React from 'react';
+import { StyleSheet, View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
-import { StyleSheet, View, Platform } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
+import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
+
 import BpkBannerAlert, { ALERT_TYPES } from './index';
-
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
-
-const { spacingBase } = tokens;
 
 const styles = StyleSheet.create({
   container: {

@@ -14,8 +14,8 @@ npm install react-native-bpk-component-banner-alert --save-dev
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
+import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 import BpkBannerAlert, {ALERT_TYPES} from 'react-native-bpk-component-banner-alert';
-import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
 
 import { translationHelper } from 'translations';
 
@@ -23,10 +23,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    padding: TOKENS.spacingBase,
+    padding: spacingBase,
   },
   bannerAlert: {
-    marginBottom: TOKENS.spacingBase,
+    marginBottom: spacingBase,
   }
 });
 

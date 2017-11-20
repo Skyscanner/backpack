@@ -17,30 +17,22 @@
  */
 
 import React from 'react';
-import {
-  View,
-  Platform,
-  ScrollView,
-  StyleSheet,
-} from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import BpkThemeProvider from 'react-native-bpk-theming';
-import BpkSpinner from './index';
-import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
-import themeAttributes from '../../storybook/themeAttributes';
+import { View, ScrollView, StyleSheet } from 'react-native';
+import { colorGray900, spacingBase } from 'bpk-tokens/tokens/base.react.native';
 
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
+import BpkSpinner from './index';
+import themeAttributes from '../../storybook/themeAttributes';
+import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
 
 const styles = StyleSheet.create({
   dark: {
-    backgroundColor: tokens.colorGray900,
-    padding: tokens.spacingBase,
+    backgroundColor: colorGray900,
+    padding: spacingBase,
   },
   bottomMargin: {
-    marginBottom: tokens.spacingBase,
+    marginBottom: spacingBase,
   },
 });
 

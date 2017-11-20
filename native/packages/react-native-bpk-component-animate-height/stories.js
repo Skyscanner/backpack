@@ -19,20 +19,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react-native';
-import { StyleSheet, View, Platform } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import BpkButton from 'react-native-bpk-component-button';
+import { spacingBase, colorGray50 } from 'bpk-tokens/tokens/base.react.native';
+
 import BpkAnimateHeight from './index';
-
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
-
-const {
-  spacingBase,
-  colorGray50,
-} = tokens;
 
 const styles = StyleSheet.create({
   centered: {

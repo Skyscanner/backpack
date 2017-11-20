@@ -13,14 +13,14 @@ npm install react-native-bpk-component-horizontal-nav --save-dev
 ```js
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import BpkHorizontalNav, { BpkHorizontalNavItem } from './index';
-import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
+import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
+import BpkHorizontalNav, { BpkHorizontalNavItem } from 'react-native-bpk-component-horizontal-nav';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    padding: TOKENS.spacingBase,
+    padding: spacingBase,
   }
 });
 

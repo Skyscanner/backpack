@@ -1,7 +1,13 @@
 import React from 'react';
+import {
+  colorRed500,
+  colorBlue700,
+  colorGray500,
+  colorGreen500,
+  colorYellow500,
+} from 'bpk-tokens/tokens/base.react.native';
 import { View, Platform } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
-import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
 
 import BpkText from './index';
 
@@ -28,11 +34,11 @@ storiesOf('BpkText', module)
   ))
   .add('Colours', () => (
     <View>
-      <BpkText textStyle="xxl" style={{ color: TOKENS.colorBlue700 }}>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="xl" style={{ color: TOKENS.colorRed500 }}>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="lg" style={{ color: TOKENS.colorGreen500 }}>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="base" style={{ color: TOKENS.colorYellow500 }}>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="sm" style={{ color: TOKENS.colorBlue700 }}>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="xs" style={{ color: TOKENS.colorGray500 }}>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="xxl" style={{ color: colorBlue700 }}>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="xl" style={{ color: colorRed500 }}>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="lg" style={{ color: colorGreen500 }}>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="base" style={{ color: colorYellow500 }}>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="sm" style={{ color: colorBlue700 }}>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="xs" style={{ color: colorGray500 }}>Flights to Edinburgh</BpkText>
     </View>
   ));

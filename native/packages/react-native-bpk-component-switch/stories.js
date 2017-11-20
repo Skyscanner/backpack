@@ -17,35 +17,26 @@
  */
 
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  View,
-} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import BpkThemeProvider from 'react-native-bpk-theming';
+import { spacingXl, spacingBase } from 'bpk-tokens/tokens/base.react.native';
+
 import BpkSwitch from './index';
 import { StorySubheading } from '../../storybook/TextStyles';
 import themeAttributes from '../../storybook/themeAttributes';
 
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
-
 const styles = StyleSheet.create({
-
   //  Necessary because on iOS the switches get left aligned, on Android right
   // aligned. This normalises it so that both screenshots are comparable.
   viewWidth: {
-    width: tokens.spacingXl * 1.5,
+    width: spacingXl * 1.5,
   },
   bottomMargin: {
-    marginBottom: tokens.spacingBase,
+    marginBottom: spacingBase,
   },
 });
 
-// Simple state management for allowing toggling.
 class SwitchContainer extends Component {
   constructor(props) {
     super(props);
@@ -59,8 +50,6 @@ class SwitchContainer extends Component {
 }
 
 storiesOf('BpkSwitch', module)
-
-  // State management not required in this story as it's just used for docs screenshots.
   .add('docs:default', () => (
     <View style={styles.viewWidth}>
       <View style={styles.bottomMargin}>

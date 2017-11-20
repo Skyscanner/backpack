@@ -17,25 +17,17 @@
  */
 
 import React from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  View,
-  Platform,
-} from 'react-native';
+import { AppRegistry, StyleSheet, View } from 'react-native';
 import { getStorybookUI, configure, addDecorator } from '@storybook/react-native';
 
-const tokens = Platform.select({
-  ios: () => require('../../packages/bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require,max-len
-  android: () => require('../../packages/bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require,max-len
-})();
+import { spacingBase } from './../../packages/bpk-tokens/tokens/base.react.native';
 
 const styles = StyleSheet.create({
   centered: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    padding: tokens.spacingBase,
+    padding: spacingBase,
     width: '100%',
   },
 });

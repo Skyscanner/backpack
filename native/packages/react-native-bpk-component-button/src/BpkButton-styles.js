@@ -17,79 +17,84 @@
  */
 
 import { setOpacity } from 'bpk-tokens';
+import {
+  colorWhite,
+  colorGray100,
+  colorGray300,
+  colorBlue500,
+  colorRed500,
+  colorGreen600,
+  colorGreen500,
+  colorPink500,
+  colorPink600,
+  buttonHeight,
+  buttonPaddingVertical,
+  buttonPaddingHorizontal,
+  buttonBorderWidth,
+  buttonLineHeightLarge,
+  lineHeightXs,
+  borderRadiusPill,
+  spacingSm,
+  spacingBase,
+  spacingXl,
+  underlayColor as underlayColorToken,
+  underlayOpacity,
+} from 'bpk-tokens/tokens/base.react.native';
 import { Platform, StyleSheet } from 'react-native';
 
-const tokens = Platform.select({
-  ios: () => require('bpk-tokens/tokens/ios/base.react.native.common.js'), // eslint-disable-line global-require
-  android: () => require('bpk-tokens/tokens/android/base.react.native.common.js'), // eslint-disable-line global-require
-})();
-
-// Slight darkness to use when buttons are pressed in.
 const underlayColor = Platform.select({
-  ios: () => setOpacity(tokens.underlayColor, tokens.underlayOpacity),
+  ios: () => setOpacity(underlayColorToken, underlayOpacity),
   android: () => null,
 })();
 
-// The base styles that are initially applied to all buttons.
 const base = StyleSheet.create({
-
-  // Applied to the outer LinearGradient element.
   container: {
-    borderRadius: tokens.borderRadiusPill,
-    height: tokens.buttonHeight,
+    borderRadius: borderRadiusPill,
+    height: buttonHeight,
   },
-
-  // Applied to the TouchableHighlight/TouchableNativeFeedback element.
   button: {
-    borderRadius: tokens.borderRadiusPill,
-    height: tokens.buttonHeight,
-    paddingVertical: tokens.buttonPaddingVertical,
-    paddingHorizontal: tokens.buttonPaddingHorizontal,
+    borderRadius: borderRadiusPill,
+    height: buttonHeight,
+    paddingVertical: buttonPaddingVertical,
+    paddingHorizontal: buttonPaddingHorizontal,
   },
-
-  // Applied to the View element that encloses the text and icon.
   view: {
     alignItems: 'center',
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
   },
-
-  // Applied to the Text element.
   text: Platform.select({
     ios: () => ({
       backgroundColor: 'transparent',
-      color: tokens.colorWhite,
-
+      color: colorWhite,
     }),
     android: () => ({
       backgroundColor: 'transparent',
-      color: tokens.colorWhite,
-      lineHeight: tokens.lineHeightXs,
+      color: colorWhite,
+      lineHeight: lineHeightXs,
     }),
   })(),
 });
 
 const outlineButtonStyle = {
-  borderColor: tokens.colorGray100,
-  borderWidth: tokens.buttonBorderWidth,
-
-  // minus the borderWidth so it's the same size as other buttons.
-  paddingVertical: tokens.buttonPaddingVertical - tokens.buttonBorderWidth,
-  paddingHorizontal: tokens.buttonPaddingHorizontal - tokens.buttonBorderWidth,
+  borderColor: colorGray100,
+  borderWidth: buttonBorderWidth,
+  paddingVertical: buttonPaddingVertical - buttonBorderWidth,
+  paddingHorizontal: buttonPaddingHorizontal - buttonBorderWidth,
 };
 
 const types = {
   secondary: StyleSheet.create({
     button: outlineButtonStyle,
     text: {
-      color: tokens.colorBlue500,
+      color: colorBlue500,
     },
   }),
   destructive: StyleSheet.create({
     button: outlineButtonStyle,
     text: {
-      color: tokens.colorRed500,
+      color: colorRed500,
     },
   }),
 };
@@ -97,20 +102,20 @@ const types = {
 const modifiers = {
   large: StyleSheet.create({
     container: {
-      minHeight: tokens.buttonLineHeightLarge,
+      minHeight: buttonLineHeightLarge,
     },
     button: {
-      minHeight: tokens.buttonLineHeightLarge,
-      paddingHorizontal: tokens.spacingBase,
+      minHeight: buttonLineHeightLarge,
+      paddingHorizontal: spacingBase,
     },
   }),
   largeWithOutline: StyleSheet.create({
     container: {
-      minHeight: tokens.buttonLineHeightLarge,
+      minHeight: buttonLineHeightLarge,
     },
     button: {
-      minHeight: tokens.buttonLineHeightLarge,
-      paddingHorizontal: tokens.spacingBase - tokens.buttonBorderWidth,
+      minHeight: buttonLineHeightLarge,
+      paddingHorizontal: spacingBase - buttonBorderWidth,
     },
   }),
   disabled: StyleSheet.create({
@@ -118,12 +123,12 @@ const modifiers = {
       borderColor: 'transparent',
     },
     text: {
-      color: tokens.colorGray300,
+      color: colorGray300,
     },
   }),
   iconOnly: StyleSheet.create({
     container: {
-      width: tokens.spacingXl,
+      width: spacingXl,
     },
     button: {
       paddingHorizontal: 0,
@@ -131,7 +136,7 @@ const modifiers = {
   }),
   iconOnlyLarge: StyleSheet.create({
     container: {
-      width: tokens.buttonLineHeightLarge,
+      width: buttonLineHeightLarge,
     },
     button: {
       paddingHorizontal: 0,
@@ -142,7 +147,7 @@ const modifiers = {
       justifyContent: 'space-between',
     },
     text: {
-      marginRight: tokens.spacingSm,
+      marginRight: spacingSm,
     },
   }),
   textAndIconLarge: StyleSheet.create({
@@ -150,17 +155,17 @@ const modifiers = {
       justifyContent: 'space-between',
     },
     text: {
-      marginRight: tokens.spacingSm,
+      marginRight: spacingSm,
     },
   }),
 };
 
 const gradientColors = {
-  primary: [tokens.colorGreen500, tokens.colorGreen600],
-  featured: [tokens.colorPink500, tokens.colorPink600],
-  destructive: [tokens.colorWhite, tokens.colorWhite],
-  secondary: [tokens.colorWhite, tokens.colorWhite],
-  disabled: [tokens.colorGray100, tokens.colorGray100],
+  primary: [colorGreen500, colorGreen600],
+  featured: [colorPink500, colorPink600],
+  destructive: [colorWhite, colorWhite],
+  secondary: [colorWhite, colorWhite],
+  disabled: [colorGray100, colorGray100],
 };
 
 const themeMappings = {

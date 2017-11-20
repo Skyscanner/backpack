@@ -18,16 +18,6 @@
 
 import commonTests from './BpkAnimateHeight-test.common';
 
-jest.mock('react-native', () => {
-  const reactNative = require.requireActual('react-native');
-  jest
-    .spyOn(reactNative.Platform, 'select')
-    .mockImplementation(obj => obj.ios || obj.default);
-  reactNative.Platform.OS = 'ios';
-
-  return reactNative;
-});
-
 describe('iOS', () => {
   commonTests();
 });
