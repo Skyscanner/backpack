@@ -9,7 +9,7 @@
 
 **Added:**
 - bpk-component-banner-alert:
-  - New `dismissable` configuration, see http://backpack.prod.aws.skyscnr.com/components/web/banner-alerts
+  - New `dismissable` configuration, see https://backpack.github.io/components/web/banner-alerts
 
 **Fixed:**
 - bpk-component-button:
@@ -19,7 +19,7 @@
 
 **Breaking:**
 - react-native-bpk-component-horizontal-nav: 1.0.1 => 2.0.0
-  - `BpkHorizontalNavItem` no longer supports the `selected` prop. Instead, add an `id` prop to `BpkHorizontalNavItem` and a `selectedId` prop to `BpkHorizontalNav`. This allows the selected indicator line to animate when the `selectedId` prop changes. See http://backpack.prod.aws.skyscnr.com/components/native/horizontal-nav for an example.
+  - `BpkHorizontalNavItem` no longer supports the `selected` prop. Instead, add an `id` prop to `BpkHorizontalNavItem` and a `selectedId` prop to `BpkHorizontalNav`. This allows the selected indicator line to animate when the `selectedId` prop changes. See https://backpack.github.io/components/native/horizontal-nav for an example.
 
 **Added:**
 - bpk-animate-height: 1.0.32 => 1.1.0
@@ -51,16 +51,16 @@
   - New higher order component `withScrim`
 
 - react-native-bpk-component-horizontal-nav: 1.0.0
-  - New horizontal nav component, see http://backpack.prod.aws.skyscnr.com/components/native/horizontal-nav
+  - New horizontal nav component, see https://backpack.github.io/components/native/horizontal-nav
 
 - react-native-bpk-component-switch: 1.0.0
-  - New switch component, see http://backpack.prod.aws.skyscnr.com/components/native/switches
+  - New switch component, see https://backpack.github.io/components/native/switches
 
 ## 2017-11-07 - New slider component
 
 **Added:**
 - bpk-component-slider: 1.0.0
-  - New slider component, ses http://backpack.prod.aws.skyscnr.com/components/web/sliders
+  - New slider component, ses https://backpack.github.io/components/web/sliders
 
 **Fixed:**
 - bpk-component-input: 3.2.36 => 3.2.37
@@ -96,7 +96,7 @@
 
 **Added:**
 - react-native-bpk-component-spinner: 0.0.1 => 1.0.0
-  - New spinner component, see http://backpack.prod.aws.skyscnr.com/components/native/spinners
+  - New spinner component, see https://backpack.github.io/components/native/spinners
 
 ## 2017-10-31 - Fix for vertical alignment of text in select inputs
 
@@ -138,7 +138,7 @@
 
 **Added:**
 - react-native-bpk-component-card: 1.0.10 => 1.1.0
-  - Now accepts a `focused` prop to add emphasis to a card, see http://backpack.prod.aws.skyscnr.com/components/native/cards/
+  - Now accepts a `focused` prop to add emphasis to a card, see https://backpack.github.io/components/native/cards/
 - react-native-bpk-component-button: 4.0.4 => 4.1.0
   - The `icon` prop now accepts strings corresponding to a valid `BpkIcon`.
   - Elements can still be passed in as before if required.
@@ -151,17 +151,17 @@
 
 **Added:**
 - react-native-bpk-component-banner-alert: 1.0.1 => 1.1.0
-  - New neutral configuration, see http://backpack.prod.aws.skyscnr.com/components/native/banner-alerts/
+  - New neutral configuration, see https://backpack.github.io/components/native/banner-alerts/
 
 ### 2017-10-17 - New native banner alert and animations for web banner alerts
 
 **Added:**
 - bpk-component-banner-alert: 1.2.17 => 1.3.1
   - Added animation to expandable banner-alerts + mew neutral configuration. See
-  - New neutral configuration, see http://backpack.prod.aws.skyscnr.com/components/web/banner-alerts/
+  - New neutral configuration, see https://backpack.github.io/components/web/banner-alerts/
 
 - react-native-bpk-component-banner-alert: 0.0.1 => 1.0.1
-  - New banner alert component, see http://backpack.prod.aws.skyscnr.com/components/native/banner-alerts/
+  - New banner alert component, see https://backpack.github.io/components/native/banner-alerts/
 
 ### 2017-10-16 - React Lists and List Items can now have a className prop added
 
@@ -233,7 +233,7 @@
   - Primary and secondary buttons can now be themed.
 
 - react-native-bpk-component-banner-alert:
-  - New component `BpkBannerAlert`, see http://backpack.prod.aws.skyscnr.com/components/native/banner-alerts/
+  - New component `BpkBannerAlert`, see https://backpack.github.io/components/native/banner-alerts/
 
 **Fixed:**
 - bpk-tokens: 26.3.0 => 26.4.0
@@ -284,10 +284,10 @@
 
 **Added:**
 - react-native-bpk-theming  0.0.1 => 1.0.0
-  - New `BpkThemeProvider` and `withTheme` utilities, see http://backpack.prod.aws.skyscnr.com/components/utilities/theming
+  - New `BpkThemeProvider` and `withTheme` utilities, see https://backpack.github.io/components/utilities/theming
 
 - react-native-bpk-component-icon 0.0.1 => 0.0.2
-  - New icon component, see http://backpack.prod.aws.skyscnr.com/components/native/icons/
+  - New icon component, see https://backpack.github.io/components/native/icons/
 
 ## 2017-09-29 - Update tokens types value and add ttf icon font
 
@@ -322,7 +322,7 @@
 
 **Added:**
 - react-native-bpk-component-card: 0.0.3 => 1.0.0
-  - New component BpkCard, see http://backpack.prod.aws.skyscnr.com/components/native/cards/
+  - New component BpkCard, see https://backpack.github.io/components/native/cards/
 
 ## 2017-09-26 - Applying custom styles to buttons is less surprising
 
@@ -368,7 +368,7 @@
 
 **Added:**
 - react-native-bpk-component-button: 0.0.1 => 1.0.0
-  - New component, see http://backpack.prod.aws.skyscnr.com/components/native/button
+  - New component, see https://backpack.github.io/components/native/button
 
 ## 2017-09-20 - New React Native Text Input component
 
@@ -378,7 +378,7 @@
   - Error messages when invalid fontWeight and emphasis are used
 
 - react-native-bpk-component-text-input: 0.0.1 => 1.0.0
-  - New component, see http://backpack.prod.aws.skyscnr.com/components/native/text-input
+  - New component, see https://backpack.github.io/components/native/text-input
 
 **Fixed:**
 - react-native-bpk-component-text: 2.0.0 => 2.1.0
@@ -395,7 +395,7 @@
 
 **Added:**
 - react-native-bpk-component-text: 2.0.0
-  - New component, see http://backpack.prod.aws.skyscnr.com/components/native/text
+  - New component, see https://backpack.github.io/components/native/text
 
 **Fixed:**
 - bpk-animate-height: 1.0.13 => 1.0.14
@@ -823,7 +823,7 @@
 
 **Added:**
 - bpk-component-chip: 0.0.1 => 1.0.0
-  - Introducing the new chip component: Docs: http://backpack.prod.aws.skyscnr.com/components/atoms/chips
+  - Introducing the new chip component: Docs: https://backpack.github.io/components/atoms/chips
 
 **Fixed:**
 - bpk-component-horizontal-nav: 1.0.4 => 1.0.5
@@ -892,7 +892,7 @@
 **Added:**
 - bpk-component-barchart: 0.3.0
     - Introducing the new bar chart component:
-      Docs: http://backpack.prod.aws.skyscnr.com/components/molecules/barcharts
+      Docs: https://backpack.github.io/components/molecules/barcharts
 
 **Fixed:**
 - bpk-component-star-rating: 0.0.4 => 0.0.5
@@ -923,7 +923,7 @@
 **Added:**
 - bpk-component-star-rating: 0.0.3
   - Introducing the new star rating component:
-    Docs: http://backpack.prod.aws.skyscnr.com/components/molecules/star-rating
+    Docs: https://backpack.github.io/components/molecules/star-rating
 
 **Fixed:**
 - bpk-component-input: 3.2.0 => 3.2.1
@@ -1001,7 +1001,7 @@
 - bpk-component-panel: 0.0.0 => 0.0.2
 - bpk-mixins: 23.1.0 => 23.2.1
 - bpk-tokens: 15.2.1 => 15.3.1
-  - New panel component (http://backpack.prod.aws.skyscnr.com/components/atoms/panels)
+  - New panel component (https://backpack.github.io/components/atoms/panels)
 
 :warning: `bpk-tokens@15.3.0`, and `bpk-mixins@23.2.0` were broken due to a previous bad release. Because many packages depend on these versions make sure you're not depending either of them.
 
@@ -1054,7 +1054,7 @@
     - Consumers using `BpkAccordionContainer` *with* `allowMultiple` should now use a regular
       `BpkAccordion` component with each `BpkAccordionItem` enhanced using the `withAccordionItemState` higher-order component
     - In each case, `BpkAccordionItem` will now use the `initiallyExpanded` prop for items that should be initially expanded
-    - Please refer to [the readme](http://backpack.prod.aws.skyscnr.com/components/molecules/accordions#readme) for examples
+    - Please refer to [the readme](https://backpack.github.io/components/molecules/accordions#readme) for examples
 
 **Added:**
 - bpk-component-input: 3.0.17 => 3.1.0
@@ -1143,7 +1143,7 @@
 
 **Added:**
 - bpk-component-textarea: 0.0.0 => 0.0.1
-  - New form validation component (http://backpack.prod.aws.skyscnr.com/components/atoms/forms#textareas)
+  - New form validation component (https://backpack.github.io/components/atoms/forms#textareas)
 
 **Fixed:**
 - bpk-component-datepicker: 6.0.2 => 6.0.3
@@ -1232,10 +1232,10 @@
   - Added `transitionOverflow` prop to customise the overflow behaviour during the transition
 
 - bpk-component-fieldset: 0.0.0 => 0.0.1
-  - New form validation component (http://backpack.prod.aws.skyscnr.com/components/atoms/forms#validation)
+  - New form validation component (https://backpack.github.io/components/atoms/forms#validation)
 
 - bpk-component-form-validation: 0.0.0 => 0.0.1
-  - New fieldset component (http://backpack.prod.aws.skyscnr.com/components/molecules/fieldsets)
+  - New fieldset component (https://backpack.github.io/components/molecules/fieldsets)
 
 - bpk-component-checkbox:
 - bpk-component-radio:
@@ -1303,7 +1303,7 @@
     - `@include bpk-border-right-sm($color);`
     - `@include bpk-border-bottom-sm($color);`
     - `@include bpk-border-left-sm($color);`
-  - Full docs here http://backpack.prod.aws.skyscnr.com/sassdoc/#borders-mixin-bpk-border-sm
+  - Full docs here https://backpack.github.io/sassdoc/#borders-mixin-bpk-border-sm
 
 **Fixed:**
 - bpk-mixins: 11.1.3 => 12.0.0
@@ -1321,7 +1321,7 @@
 
 **Added:**
 - bpk-component-horizontal-nav: 0.0.0 => 0.0.1
-  - New horizontal navigation component (http://backpack.prod.aws.skyscnr.com/components/molecules/horizontal-nav)
+  - New horizontal navigation component (https://backpack.github.io/components/molecules/horizontal-nav)
 
 ## 2017-04-13 - Introducing the new BpkTicket component
 
@@ -1386,7 +1386,7 @@
 
 **Added:**
 - bpk-component-cta-button: 0.0.0 => 0.0.1
-  - New call to action button component (http://backpack.prod.aws.skyscnr.com/components/atoms/calltoactions)
+  - New call to action button component (https://backpack.github.io/components/atoms/calltoactions)
 
 **Fixed:**
 - bpk-component-accordion: 0.0.2 => 0.0.3
@@ -1413,7 +1413,7 @@
 
 **Added:**
 - bpk-component-progress: 0.0.0 => 0.0.1
-  - New progress bar component (http://backpack.prod.aws.skyscnr.com/components/molecules/progress)
+  - New progress bar component (https://backpack.github.io/components/molecules/progress)
 
 ## 2017-03-27 - Ability to add custom style and className props to portal elements
 
@@ -1427,9 +1427,9 @@
 
 **Added:**
 - bpk-component-accordion: 0.0.0 => 0.0.1
-  - New accordion component (http://backpack.prod.aws.skyscnr.com/components/molecules/accordions/)
+  - New accordion component (https://backpack.github.io/components/molecules/accordions/)
 - bpk-component-nudger: 0.0.0 => 0.0.1
-  - New nudger component (http://backpack.prod.aws.skyscnr.com/components/molecules/nudgers/)
+  - New nudger component (https://backpack.github.io/components/molecules/nudgers/)
 - bpk-component-checkbox: 0.0.53 => 0.1.0
   - Added ability to add custom className and other arbitrary props
 - bpk-component-paragraph: 0.1.63 => 0.2.0
@@ -1794,11 +1794,11 @@
 
 **Added:**
 - bpk-component-calendar: 0.0.7
-  - New calendar component (http://backpack.prod.aws.skyscnr.com/components/molecules/calendar/)
+  - New calendar component (https://backpack.github.io/components/molecules/calendar/)
 - bpk-component-datepicker: 0.0.3
-  - New datepicker component (http://backpack.prod.aws.skyscnr.com/components/molecules/datepicker/)
+  - New datepicker component (https://backpack.github.io/components/molecules/datepicker/)
 - bpk-component-popover: 0.0.5
-  - New popover component (http://backpack.prod.aws.skyscnr.com/components/molecules/popovers/)
+  - New popover component (https://backpack.github.io/components/molecules/popovers/)
 
 ## 2017-01-26 - Input prop types are less strict & new portal implementation
 

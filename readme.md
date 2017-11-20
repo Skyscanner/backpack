@@ -6,7 +6,7 @@
 
 ## Documentation
 
-http://backpack.prod.aws.skyscnr.com/
+https://backpack.github.io/
 
 ## Usage
 

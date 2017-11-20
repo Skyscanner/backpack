@@ -182,7 +182,7 @@ Create a `readme.md` file that shows how to install and use your component. It s
 
 ### Documentation
 
-Our documentation consists of two parts: [Sassdoc](http://backpack.prod.aws.skyscnr.com/sassdoc/), which is automatically generated from the `bpk-mixin` sources, and the main [documentation](http://backpack.prod.aws.skyscnr.com/).
+Our documentation consists of two parts: [Sassdoc](https://backpack.github.io/sassdoc/), which is automatically generated from the `bpk-mixin` sources, and the main [documentation](https://backpack.github.io).
 
 #### Sassdoc
 
