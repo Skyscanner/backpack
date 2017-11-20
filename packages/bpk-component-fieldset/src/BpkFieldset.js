@@ -95,10 +95,18 @@ const BpkFieldset = (props) => {
   );
 };
 
+const labelPropType = (props, propName) => {
+  const { isCheckbox, label } = props;
+  if (!label && !isCheckbox) {
+    return new Error(`\`${propName}\` is required when \`isCheckbox\` is false.`); // eslint-disable-line max-len
+  }
+  return false;
+};
+
 BpkFieldset.propTypes = {
   children: PropTypes.node.isRequired,
+  label: labelPropType,
   disabled: PropTypes.bool,
-  label: PropTypes.string,
   valid: PropTypes.bool,
   required: PropTypes.bool,
   className: PropTypes.string,
@@ -108,8 +116,8 @@ BpkFieldset.propTypes = {
 };
 
 BpkFieldset.defaultProps = {
-  disabled: false,
   label: null,
+  disabled: false,
   valid: null,
   required: false,
   className: null,
