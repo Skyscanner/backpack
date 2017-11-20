@@ -5,7 +5,9 @@
 **Added:**
 - bpk-component-spinner:
   - New `type` prop. Options are `primary`, `light` or `dark`
-
+- bpk-theming:
+  - New `BpkTheming` utility, see https://backpack.github.io/components/utilities/theming.
+  
 ## 2017-11-21 - React Native cards can now have a dividing line
 
 **Added:**

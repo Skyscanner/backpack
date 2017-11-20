@@ -69,5 +69,6 @@ configure(() => {
   require('./../packages/bpk-component-tile/stories');
   require('./../packages/bpk-component-tooltip/stories');
   require('./../packages/bpk-mixins/stories');
+  require('./../packages/bpk-theming/stories');
 }, module);
 /* eslint-enable */

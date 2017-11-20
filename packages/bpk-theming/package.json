@@ -1,0 +1,23 @@
+{
+  "name": "bpk-theming",
+  "version": "0.0.0",
+  "main": "index.js",
+  "description": "Backpack theming utlities.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^15.0.0 || ^16.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "devDependencies": {
+    "bpk-component-select": "^2.1.37",
+    "bpk-react-utils": "^2.3.7",
+    "bpk-tokens": "^26.5.1"
+  }
+}
