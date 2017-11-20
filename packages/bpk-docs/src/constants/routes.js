@@ -82,7 +82,6 @@ export const NATIVE_INPUT = '/components/native/text-input';
 export const NATIVE_SPINNER = '/components/native/spinners';
 export const NATIVE_SWITCH = '/components/native/switches';
 export const NATIVE_TEXT = '/components/native/text';
-export const NATIVE_TICKETS = '/components/native/tickets';
 
 // components/utilities/
 export const UTILITIES = '/components/utilities';
