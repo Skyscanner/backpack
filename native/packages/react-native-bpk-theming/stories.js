@@ -17,36 +17,36 @@
  */
 
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  View,
-  Platform,
-  Picker,
-} from 'react-native';
-
-import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
-
+import { storiesOf } from '@storybook/react-native';
+import { StyleSheet, View, Picker } from 'react-native';
 import BpkButton from 'react-native-bpk-component-button';
+import {
+  spacingMd,
+  colorWhite,
+  colorRed400,
+  colorRed500,
+  colorBlue400,
+  colorBlue500,
+  colorYellow400,
+  colorYellow500,
+} from 'bpk-tokens/tokens/base.react.native';
 
 import BpkThemeProvider from './index';
 
-const tokens = Platform.OS === 'ios' ?
-  require('bpk-tokens/tokens/ios/base.react.native.common.js') :
-  require('bpk-tokens/tokens/android/base.react.native.common.js');
 
 const generateThemeAttributes = (gradientStartColor, gradientEndColor) => ({
-  buttonPrimaryTextColor: tokens.colorWhite,
+  buttonPrimaryTextColor: colorWhite,
   buttonPrimaryGradientStartColor: gradientStartColor,
   buttonPrimaryGradientEndColor: gradientEndColor,
   buttonSecondaryTextColor: gradientEndColor,
-  buttonSecondaryBackgroundColor: tokens.colorWhite,
+  buttonSecondaryBackgroundColor: colorWhite,
   buttonSecondaryBorderColor: gradientEndColor,
 });
 
 const styles = StyleSheet.create({
   bottomMargin: {
-    marginBottom: tokens.spacingMd,
+    marginBottom: spacingMd,
   },
 });
 
@@ -55,9 +55,9 @@ class BpkThemePicker extends Component {
     super();
 
     this.themes = {
-      blue: generateThemeAttributes(tokens.colorBlue400, tokens.colorBlue500),
-      yellow: generateThemeAttributes(tokens.colorYellow400, tokens.colorYellow500),
-      red: generateThemeAttributes(tokens.colorRed400, tokens.colorRed500),
+      blue: generateThemeAttributes(colorBlue400, colorBlue500),
+      yellow: generateThemeAttributes(colorYellow400, colorYellow500),
+      red: generateThemeAttributes(colorRed400, colorRed500),
     };
 
     this.state = {

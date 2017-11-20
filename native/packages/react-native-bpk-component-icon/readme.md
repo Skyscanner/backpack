@@ -42,16 +42,16 @@ apply from: "node_modules/react-native-bpk-component-icon/fonts.gradle"
 ## Usage
 
 ```js
-import React, { Component } from 'react';
 import { View } from 'react-native';
+import React, { Component } from 'react';
 import BpkIcon from 'react-native-bpk-component-icon';
-import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
+import { spacingBase, colorBlue500 } from 'bpk-tokens/tokens/base.react.native';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    padding: TOKENS.spacingBase,
+    padding: spacingBase,
   }
 });
 
@@ -61,12 +61,12 @@ export default class App extends Component {
       <View style={styles.container}>
         <BpkIcon
           icon="beer"
-          style={{ color: TOKENS.colorBlue500 }}
+          style={{ color: colorBlue500 }}
           small
         />
         <BpkIcon
           icon="beer"
-          style={{ color: TOKENS.colorBlue500 }}
+          style={{ color: colorBlue500 }}
         />
       </View>
     );

@@ -14,14 +14,14 @@ npm install react-native-bpk-component-touchable-overlay --save-dev
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
+import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
-import * as TOKENS from 'bpk-tokens/tokens/ios/base.react.native.es6';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    padding: TOKENS.spacingBase,
+    padding: spacingBase,
   }
 });
 

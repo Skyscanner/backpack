@@ -16,28 +16,22 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import {
   Text,
-  StyleSheet,
   View,
-  ScrollView,
   Platform,
+  ScrollView,
+  StyleSheet,
 } from 'react-native';
-
+import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
-
 import BpkThemeProvider from 'react-native-bpk-theming';
-
-import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
-import themeAttributes from '../../storybook/themeAttributes';
+import { spacingMd } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkButton, { BUTTON_TYPES } from './src/BpkButton';
-
-const tokens = Platform.OS === 'ios' ?
-  require('bpk-tokens/tokens/ios/base.react.native.common.js') :
-  require('bpk-tokens/tokens/android/base.react.native.common.js');
+import themeAttributes from '../../storybook/themeAttributes';
+import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
 
 const styles = StyleSheet.create({
   btnContainer: {
@@ -46,8 +40,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   buttonStyles: {
-    marginBottom: tokens.spacingMd,
-    marginRight: tokens.spacingMd,
+    marginBottom: spacingMd,
+    marginRight: spacingMd,
   },
 });
 
