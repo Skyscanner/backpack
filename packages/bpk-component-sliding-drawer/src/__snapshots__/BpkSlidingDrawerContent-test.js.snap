@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkSlidingDrawerContent should render correctly 1`] = `
+<section
+  aria-labelledby="bpk-sliding-drawer-heading-my-drawer"
+  className="bpk-sliding-drawer bpk-sliding-drawer--entered"
+  id="my-drawer"
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  role="dialog"
+  tabIndex="-1"
+>
+  <header
+    className="bpk-sliding-drawer__header"
+  >
+    <h2
+      className="bpk-sliding-drawer__heading"
+      id="bpk-sliding-drawer-heading-my-drawer"
+    >
+      Drawer title
+    </h2>
+     
+    <button
+      aria-label="Close"
+      className="bpk-close-button bpk-sliding-drawer__close-button"
+      onClick={[Function]}
+      title="Close"
+      type="button"
+    >
+      <span
+        style={
+          Object {
+            "display": "inline-block",
+            "lineHeight": "1.125rem",
+            "marginTop": "0.1875rem",
+            "verticalAlign": "top",
+          }
+        }
+      >
+        <svg
+          className="bpk-close-button__icon"
+          height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14.8 12l4.9-4.9c.4-.4.4-1 0-1.4l-1.4-1.4c-.4-.4-1-.4-1.4 0L12 9.2l-4.9-5c-.4-.4-1-.4-1.4 0L4.2 5.6c-.4.4-.4 1 0 1.4l5 5-4.9 4.9c-.4.4-.4 1 0 1.4l1.4 1.4c.4.4 1 .4 1.4 0l4.9-4.9 4.9 4.9c.4.4 1 .4 1.4 0l1.4-1.4c.4-.4.4-1 0-1.4L14.8 12z"
+          />
+        </svg>
+      </span>
+    </button>
+  </header>
+  <div
+    className="bpk-sliding-drawer__content"
+  >
+    Drawer content
+  </div>
+</section>
+`;
+
+exports[`BpkSlidingDrawerContent should render correctly when it has a className 1`] = `
+<section
+  aria-labelledby="bpk-sliding-drawer-heading-my-drawer"
+  className="bpk-sliding-drawer my-classname bpk-sliding-drawer--entered"
+  id="my-drawer"
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  role="dialog"
+  tabIndex="-1"
+>
+  <header
+    className="bpk-sliding-drawer__header"
+  >
+    <h2
+      className="bpk-sliding-drawer__heading"
+      id="bpk-sliding-drawer-heading-my-drawer"
+    >
+      Drawer title
+    </h2>
+     
+    <button
+      aria-label="Close"
+      className="bpk-close-button bpk-sliding-drawer__close-button"
+      onClick={[Function]}
+      title="Close"
+      type="button"
+    >
+      <span
+        style={
+          Object {
+            "display": "inline-block",
+            "lineHeight": "1.125rem",
+            "marginTop": "0.1875rem",
+            "verticalAlign": "top",
+          }
+        }
+      >
+        <svg
+          className="bpk-close-button__icon"
+          height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14.8 12l4.9-4.9c.4-.4.4-1 0-1.4l-1.4-1.4c-.4-.4-1-.4-1.4 0L12 9.2l-4.9-5c-.4-.4-1-.4-1.4 0L4.2 5.6c-.4.4-.4 1 0 1.4l5 5-4.9 4.9c-.4.4-.4 1 0 1.4l1.4 1.4c.4.4 1 .4 1.4 0l4.9-4.9 4.9 4.9c.4.4 1 .4 1.4 0l1.4-1.4c.4-.4.4-1 0-1.4L14.8 12z"
+          />
+        </svg>
+      </span>
+    </button>
+  </header>
+  <div
+    className="bpk-sliding-drawer__content"
+  >
+    Drawer content
+  </div>
+</section>
+`;
+
+exports[`BpkSlidingDrawerContent should render correctly with hideTitle 1`] = `
+<section
+  aria-labelledby="bpk-sliding-drawer-heading-my-drawer"
+  className="bpk-sliding-drawer bpk-sliding-drawer--entered"
+  id="my-drawer"
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  role="dialog"
+  tabIndex="-1"
+>
+  <header
+    className="bpk-sliding-drawer__header"
+  >
+    <h2
+      className="bpk-sliding-drawer__heading bpk-sliding-drawer__heading--visually-hidden"
+      id="bpk-sliding-drawer-heading-my-drawer"
+    >
+      Drawer title
+    </h2>
+     
+    <button
+      aria-label="Close"
+      className="bpk-close-button bpk-sliding-drawer__close-button"
+      onClick={[Function]}
+      title="Close"
+      type="button"
+    >
+      <span
+        style={
+          Object {
+            "display": "inline-block",
+            "lineHeight": "1.125rem",
+            "marginTop": "0.1875rem",
+            "verticalAlign": "top",
+          }
+        }
+      >
+        <svg
+          className="bpk-close-button__icon"
+          height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14.8 12l4.9-4.9c.4-.4.4-1 0-1.4l-1.4-1.4c-.4-.4-1-.4-1.4 0L12 9.2l-4.9-5c-.4-.4-1-.4-1.4 0L4.2 5.6c-.4.4-.4 1 0 1.4l5 5-4.9 4.9c-.4.4-.4 1 0 1.4l1.4 1.4c.4.4 1 .4 1.4 0l4.9-4.9 4.9 4.9c.4.4 1 .4 1.4 0l1.4-1.4c.4-.4.4-1 0-1.4L14.8 12z"
+          />
+        </svg>
+      </span>
+    </button>
+  </header>
+  <div
+    className="bpk-sliding-drawer__content"
+  >
+    Drawer content
+  </div>
+</section>
+`;

@@ -1,0 +1,85 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2017 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index';
+
+.bpk-sliding-drawer {
+  position: fixed;
+  right: 0;
+  z-index: $bpk-zindex-sliding-drawer;
+  width: 90%;
+  max-width: 400px;
+  height: 100%;
+  transform: translate(400px);
+  transition: transform $bpk-duration-sm ease;
+  outline: 0;
+  background: $bpk-color-white;
+  overflow-y: auto;
+
+  @include bpk-box-shadow-xl;
+
+  &--entering,
+  &--entered {
+    transform: translate(0);
+  }
+
+  &--exiting {
+    transition: transform $bpk-duration-xs ease;
+  }
+
+  &--exiting,
+  &--exited {
+    transform: translate(400px);
+  }
+
+  &__header {
+    display: flex;
+    padding: $bpk-spacing-base;
+    justify-content: space-between;
+
+    @include bpk-breakpoint-above-mobile {
+      padding: $bpk-spacing-lg;
+    }
+  }
+
+  &__heading {
+    @include bpk-text;
+    @include bpk-text--base;
+    @include bpk-text--bold;
+
+    &--visually-hidden {
+      @include bpk-visually-hidden;
+    }
+  }
+
+  &__close-button {
+    float: right;
+
+    @include bpk-rtl {
+      float: left;
+    }
+  }
+
+  &__content {
+    padding: 0 $bpk-spacing-base $bpk-spacing-base;
+
+    @include bpk-breakpoint-above-mobile {
+      padding: 0 $bpk-spacing-lg $bpk-spacing-lg;
+    }
+  }
+}

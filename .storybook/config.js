@@ -76,6 +76,7 @@ configure(() => {
   require('./../packages/bpk-component-mobile-scroll-container/stories');
   require('./../packages/bpk-component-modal/stories');
   require('./../packages/bpk-component-nudger/stories');
+  require('./../packages/bpk-component-sliding-drawer/stories');
   require('./../packages/bpk-component-panel/stories');
   require('./../packages/bpk-component-paragraph/stories');
   require('./../packages/bpk-component-popover/stories');
