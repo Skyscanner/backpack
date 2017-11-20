@@ -72,6 +72,7 @@ import FieldsetsPage from './../pages/FieldsetsPage';
 import BarchartsPage from './../pages/BarchartsPage';
 import StarRatingPage from './../pages/StarRatingPage';
 import SlidersPage from './../pages/SlidersPage';
+import DrawerPage from './../pages/DrawerPage';
 
 import AlignmentPage from './../pages/AlignmentPage';
 import ThemingPage from './../pages/ThemingPage';
@@ -150,6 +151,7 @@ const Routes = (
         <Route path={ROUTES.BREAKPOINTS} component={BreakpointsPage} />
         <Route path={ROUTES.HORIZONTAL_GRID} component={HorizontalGridPage} />
         <Route path={ROUTES.SLIDERS} component={SlidersPage} />
+        <Route path={ROUTES.DRAWER} component={DrawerPage} />
       </Route>
       <Route path={ROUTES.NATIVE_COMPONENTS}>
         <IndexRedirect to={ROUTES.NATIVE_TEXT} />
