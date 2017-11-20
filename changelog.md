@@ -8,6 +8,7 @@
   - Fixed modal white background on iPhone not showing
 - bpk-component-image:
   - `withLazyLoading` now applies styling options to the wrapper div it creates rather than the lazy loaded component.
+  - Any `className` provided to `BpkImage` is now applied to the outermost div in the component.
 
 **Added:**
 - bpk-component-banner-alert:
