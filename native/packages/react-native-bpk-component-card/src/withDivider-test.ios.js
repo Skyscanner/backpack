@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import BpkCard from './src/BpkCard';
-import withDivider from './src/withDivider';
+import commonTests from './withDivider-test.common';
 
-export { withDivider };
-export default BpkCard;
+describe('iOS', () => {
+  commonTests();
+});

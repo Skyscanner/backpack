@@ -21,13 +21,28 @@ import { ScrollView, StyleSheet } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import { storiesOf, action } from '@storybook/react-native';
 
-import BpkCard from './index';
+import BpkCard, { withDivider } from './index';
+
+const BpkCardWithDivider = withDivider(BpkCard);
 
 const content = (
   <BpkText>
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
     commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
     et magnis dis parturient montes, nascetur ridiculus mus.
+  </BpkText>
+);
+
+const mainContent = (
+  <BpkText>
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+    commodo ligula eget dolor. Aenean massa.
+  </BpkText>
+);
+
+const stubContent = (
+  <BpkText>
+    Lorem ipsum dolor sit amet.
   </BpkText>
 );
 
@@ -40,6 +55,9 @@ const styles = StyleSheet.create({
   cardListItem: {
     marginTop: 20,
   },
+  cardMainStyle: {
+    flex: 3,
+  },
 });
 
 storiesOf('BpkCard', module)
@@ -51,6 +69,44 @@ storiesOf('BpkCard', module)
   ))
   .add('docs:focused', () => (
     <BpkCard onPress={onPress} focused>{content}</BpkCard>
+  ))
+  .add('docs:with-divider', () => (
+    <BpkCardWithDivider
+      onPress={onPress}
+      stub={stubContent}
+      mainStyle={styles.cardMainStyle}
+    >
+      {mainContent}
+    </BpkCardWithDivider>
+  ))
+  .add('docs:with-divider-vertical', () => (
+    <BpkCardWithDivider
+      onPress={onPress}
+      stub={stubContent}
+      vertical
+    >
+      {mainContent}
+    </BpkCardWithDivider>
+  ))
+  .add('docs:with-divider-without-padding', () => (
+    <BpkCardWithDivider
+      onPress={onPress}
+      stub={stubContent}
+      mainStyle={styles.cardMainStyle}
+      padded={false}
+    >
+      {mainContent}
+    </BpkCardWithDivider>
+  ))
+  .add('docs:with-divider-focused', () => (
+    <BpkCardWithDivider
+      onPress={onPress}
+      stub={stubContent}
+      mainStyle={styles.cardMainStyle}
+      focused
+    >
+      {mainContent}
+    </BpkCardWithDivider>
   ))
   .add('All Cards', () => (
     <ScrollView style={styles.cardListScrollView}>
@@ -77,19 +133,69 @@ storiesOf('BpkCard', module)
       >
         {content}
       </BpkCard>
+      <BpkCardWithDivider
+        onPress={onPress}
+        stub={stubContent}
+        accessibilityLabel="Example Card"
+        style={styles.cardListItem}
+        mainStyle={styles.cardMainStyle}
+      >
+        {mainContent}
+      </BpkCardWithDivider>
+      <BpkCardWithDivider
+        onPress={onPress}
+        stub={stubContent}
+        accessibilityLabel="Example Card"
+        style={styles.cardListItem}
+        mainStyle={styles.cardMainStyle}
+        padded={false}
+      >
+        {mainContent}
+      </BpkCardWithDivider>
+      <BpkCardWithDivider
+        onPress={onPress}
+        stub={stubContent}
+        accessibilityLabel="Example Card"
+        style={styles.cardListItem}
+        mainStyle={styles.cardMainStyle}
+        focused
+      >
+        {mainContent}
+      </BpkCardWithDivider>
     </ScrollView>
   ))
   .add('Card list (perf)', () => (
     <ScrollView style={styles.cardListScrollView}>
-      {Array(100).fill(content).map((ticketContent, index) => (
+      {Array(100).fill(content).map((cardContent, index) => (
         <BpkCard
           key={index} // eslint-disable-line react/no-array-index-key
           onPress={onPress}
-          accessibilityLabel="Example Ticket"
+          accessibilityLabel="Example Card"
           style={styles.cardListItem}
         >
-          {ticketContent}
+          {cardContent}
         </BpkCard>
       ))}
+    </ScrollView>
+  ))
+  .add('Card with divider list (perf)', () => (
+    <ScrollView style={styles.cardListScrollView}>
+      {Array(100).fill({ mainContent, stubContent }).map((cardContent, index) => {
+        const isEven = index % 2 === 0;
+
+        return (
+          <BpkCardWithDivider
+            key={index} // eslint-disable-line react/no-array-index-key
+            onPress={onPress}
+            accessibilityLabel="Example Cadrd"
+            stub={cardContent.stubContent}
+            style={styles.cardListItem}
+            mainStyle={isEven ? null : styles.cardMainStyle}
+            vertical={isEven}
+          >
+            {cardContent.mainContent}
+          </BpkCardWithDivider>
+        );
+      })}
     </ScrollView>
   ));

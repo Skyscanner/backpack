@@ -70,13 +70,17 @@ const BpkCard = (props) => {
     children,
     focused,
     style: userStyle,
+    innerStyle: userInnerStyle,
     ...rest
   } = props;
 
   const style = [styles.card];
+  const innerStyle = [styles.cardInner];
+
   if (padded) { style.push(styles.cardPadded); }
   if (focused) { style.push(styles.cardFocused); }
   if (userStyle) { style.push(userStyle); }
+  if (userInnerStyle) { innerStyle.push(userInnerStyle); }
 
   return (
     <BpkTouchableOverlay
@@ -85,7 +89,7 @@ const BpkCard = (props) => {
       borderRadius="sm"
       {...rest}
     >
-      <View style={styles.cardInner}>{children}</View>
+      <View style={innerStyle}>{children}</View>
     </BpkTouchableOverlay>
   );
 };
@@ -96,12 +100,14 @@ BpkCard.propTypes = {
   focused: PropTypes.bool,
   padded: PropTypes.bool,
   style: ViewPropTypes.style,
+  innerStyle: ViewPropTypes.style,
 };
 
 BpkCard.defaultProps = {
   focused: false,
   padded: true,
   style: null,
+  innerStyle: null,
 };
 
 export default BpkCard;

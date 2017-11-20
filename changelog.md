@@ -14,6 +14,10 @@
 - bpk-component-banner-alert: 1.3.8 => 1.4.0
   - New `dismissable` configuration, see https://backpack.github.io/components/web/banner-alerts
 
+- react-native-bpk-component-card:
+  - `innerStyle` prop enables the ability to customise inner container styling
+  - `withDivider` HOC, see http://backpack.prod.aws.skyscnr.com/components/native/cards/#with-divider
+
 **Fixed:**
 - bpk-component-button: 1.6.71 => 1.6.72
   - Svg's fill colour is automatically set to text colour.
