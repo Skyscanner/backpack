@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 import { fontWeightBold } from 'bpk-tokens/tokens/base.es6';
-import PropTypes from 'prop-types';
-import { cssModules } from 'bpk-react-utils';
+import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert';
 import bannerAlertReadme from 'bpk-component-banner-alert/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -38,47 +37,18 @@ sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rho
 ante in, vestibulum nulla.`;
 const richMessage = <span style={{ fontWeight: fontWeightBold }}>Successful alert with custom rendered message</span>;
 
-class BpkBannerDismissable extends Component {
-  constructor() {
-    super();
-
-    this.setDismissed = this.setDismissed.bind(this);
-
-    this.state = {
-      show: true,
-    };
-  }
-
-  setDismissed() {
-    this.setState({
-      show: false,
-    });
-  }
-
-  render() {
-    return (
-      <BpkBannerAlert
-        className={componentClassName}
-        message={this.props.message}
-        type={this.props.type}
-        dismissable
-        onDismiss={this.setDismissed}
-        show={this.state.show}
-        dismissButtonLabel="Dismiss"
-      />
-    );
-  }
-}
-
-BpkBannerDismissable.propTypes = {
-  message: PropTypes.string,
-  type: PropTypes.string,
-};
-
-BpkBannerDismissable.defaultProps = {
-  message: null,
-  type: null,
-};
+const BannerAlert = withDefaultProps(BpkBannerAlert, {
+  className: componentClassName,
+});
+const BannerAlertExpandable = withDefaultProps(BpkBannerAlert, {
+  className: componentClassName,
+  toggleButtonLabel: 'See more',
+});
+const BannerAlertDismissable = withDefaultProps(BpkBannerAlert, {
+  className: componentClassName,
+  dismissable: true,
+  dismissButtonLabel: 'Dismiss',
+});
 
 const components = [
   {
@@ -90,28 +60,23 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <BpkBannerAlert
-        className={componentClassName}
+      <BannerAlert
         message="Neutral alert."
         type={ALERT_TYPES.NEUTRAL}
       />,
-      <BpkBannerAlert
-        className={componentClassName}
+      <BannerAlert
         message="Successful alert."
         type={ALERT_TYPES.SUCCESS}
       />,
-      <BpkBannerAlert
-        className={componentClassName}
+      <BannerAlert
         message={richMessage}
         type={ALERT_TYPES.SUCCESS}
       />,
-      <BpkBannerAlert
-        className={componentClassName}
+      <BannerAlert
         message="Warn alert."
         type={ALERT_TYPES.WARN}
       />,
-      <BpkBannerAlert
-        className={componentClassName}
+      <BannerAlert
         message="Error alert."
         type={ALERT_TYPES.ERROR}
       />,
@@ -127,38 +92,30 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <BpkBannerAlert
-        className={componentClassName}
+      <BannerAlertExpandable
         message="Neutral alert with more information."
         type={ALERT_TYPES.NEUTRAL}
-        toggleButtonLabel="See more"
       >
         {longMessage}
-      </BpkBannerAlert>,
-      <BpkBannerAlert
-        className={componentClassName}
+      </BannerAlertExpandable>,
+      <BannerAlertExpandable
         message="Successful alert with more information."
         type={ALERT_TYPES.SUCCESS}
-        toggleButtonLabel="See more"
       >
         {longMessage}
-      </BpkBannerAlert>,
-      <BpkBannerAlert
-        className={componentClassName}
+      </BannerAlertExpandable>,
+      <BannerAlertExpandable
         message="Warn alert with more information."
         type={ALERT_TYPES.WARN}
-        toggleButtonLabel="See more"
       >
         {longMessage}
-      </BpkBannerAlert>,
-      <BpkBannerAlert
-        className={componentClassName}
+      </BannerAlertExpandable>,
+      <BannerAlertExpandable
         message="Error alert with more information."
         type={ALERT_TYPES.ERROR}
-        toggleButtonLabel="See more"
       >
         {longMessage}
-      </BpkBannerAlert>,
+      </BannerAlertExpandable>,
     ],
   },
   {
@@ -170,33 +127,21 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <BpkBannerDismissable
-        className={componentClassName}
+      <BannerAlertDismissable
         message="Neutral alert with dismiss option."
         type={ALERT_TYPES.NEUTRAL}
-        dismissable
-        dismissButtonLabel="Dismiss"
       />,
-      <BpkBannerDismissable
-        className={componentClassName}
+      <BannerAlertDismissable
         message="Successful alert with dismiss option."
         type={ALERT_TYPES.SUCCESS}
-        dismissable
-        dismissButtonLabel="Dismiss"
       />,
-      <BpkBannerDismissable
-        className={componentClassName}
+      <BannerAlertDismissable
         message="Warn alert with dismiss option."
         type={ALERT_TYPES.WARN}
-        dismissable
-        dismissButtonLabel="Dismiss"
       />,
-      <BpkBannerDismissable
-        className={componentClassName}
+      <BannerAlertDismissable
         message="Error alert with dismiss option."
         type={ALERT_TYPES.ERROR}
-        dismissable
-        dismissButtonLabel="Dismiss"
       />,
     ],
   },
