@@ -2,7 +2,7 @@
 
 exports[`BpkLoadingButton should add only bpk specific classes if className prop is set to empty string 1`] = `
 <button
-  className="bpk-button bpk-button--secondary bpk-button--large bpk-loading-button bpk-loading-button--secondary"
+  className="bpk-button bpk-button--secondary bpk-button--large"
   disabled={false}
   onClick={null}
   type="button"
@@ -42,7 +42,7 @@ exports[`BpkLoadingButton should add only bpk specific classes if className prop
 
 exports[`BpkLoadingButton should render correctly 1`] = `
 <button
-  className="bpk-button bpk-loading-button"
+  className="bpk-button"
   disabled={false}
   onClick={null}
   type="button"
@@ -82,7 +82,7 @@ exports[`BpkLoadingButton should render correctly 1`] = `
 
 exports[`BpkLoadingButton should render correctly with "destructive selected" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--destructive bpk-button--selected bpk-loading-button bpk-loading-button--destructive bpk-loading-button--selected"
+  className="bpk-button bpk-button--destructive bpk-button--selected"
   disabled={false}
   onClick={null}
   type="button"
@@ -122,7 +122,7 @@ exports[`BpkLoadingButton should render correctly with "destructive selected" at
 
 exports[`BpkLoadingButton should render correctly with "large" and "destructive" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--destructive bpk-button--large bpk-loading-button bpk-loading-button--destructive"
+  className="bpk-button bpk-button--destructive bpk-button--large"
   disabled={false}
   onClick={null}
   type="button"
@@ -162,7 +162,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "destructive"
 
 exports[`BpkLoadingButton should render correctly with "large" and "disabled" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--large bpk-loading-button"
+  className="bpk-button bpk-button--large"
   disabled={true}
   onClick={null}
   type="button"
@@ -202,7 +202,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "disabled" at
 
 exports[`BpkLoadingButton should render correctly with "large" and "featured" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--large bpk-button--featured bpk-loading-button"
+  className="bpk-button bpk-button--large bpk-button--featured"
   disabled={false}
   onClick={null}
   type="button"
@@ -242,7 +242,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "featured" at
 
 exports[`BpkLoadingButton should render correctly with "large" and "iconOnly" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--large bpk-button--large-icon-only bpk-loading-button"
+  className="bpk-button bpk-button--large bpk-button--large-icon-only"
   disabled={false}
   onClick={null}
   type="button"
@@ -286,7 +286,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "iconOnly" at
 
 exports[`BpkLoadingButton should render correctly with "large" and "link" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--large bpk-button--link bpk-loading-button bpk-loading-button--link"
+  className="bpk-button bpk-button--large bpk-button--link"
   disabled={false}
   onClick={null}
   type="button"
@@ -326,7 +326,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "link" attrib
 
 exports[`BpkLoadingButton should render correctly with "large" and "loading" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--large bpk-loading-button"
+  className="bpk-button bpk-button--large"
   disabled={true}
   onClick={null}
   type="button"
@@ -421,7 +421,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "loading" att
 
 exports[`BpkLoadingButton should render correctly with "large" and "secondary" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--secondary bpk-button--large bpk-loading-button bpk-loading-button--secondary"
+  className="bpk-button bpk-button--secondary bpk-button--large"
   disabled={false}
   onClick={null}
   type="button"
@@ -461,7 +461,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "secondary" a
 
 exports[`BpkLoadingButton should render correctly with "large" and "selected" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--selected bpk-button--large bpk-loading-button bpk-loading-button--selected"
+  className="bpk-button bpk-button--selected bpk-button--large"
   disabled={false}
   onClick={null}
   type="button"
@@ -501,7 +501,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "selected" at
 
 exports[`BpkLoadingButton should render correctly with "link selected" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--selected bpk-button--link bpk-loading-button bpk-loading-button--selected bpk-loading-button--link"
+  className="bpk-button bpk-button--selected bpk-button--link"
   disabled={false}
   onClick={null}
   type="button"
@@ -541,7 +541,7 @@ exports[`BpkLoadingButton should render correctly with "link selected" attribute
 
 exports[`BpkLoadingButton should render correctly with "secondary selected" attributes 1`] = `
 <button
-  className="bpk-button bpk-button--secondary bpk-button--selected bpk-loading-button bpk-loading-button--secondary bpk-loading-button--selected"
+  className="bpk-button bpk-button--secondary bpk-button--selected"
   disabled={false}
   onClick={null}
   type="button"
@@ -581,7 +581,7 @@ exports[`BpkLoadingButton should render correctly with "secondary selected" attr
 
 exports[`BpkLoadingButton should render correctly with a "destructive" attribute 1`] = `
 <button
-  className="bpk-button bpk-button--destructive bpk-loading-button bpk-loading-button--destructive"
+  className="bpk-button bpk-button--destructive"
   disabled={false}
   onClick={null}
   type="button"
@@ -621,7 +621,7 @@ exports[`BpkLoadingButton should render correctly with a "destructive" attribute
 
 exports[`BpkLoadingButton should render correctly with a "disabled" attribute 1`] = `
 <button
-  className="bpk-button bpk-loading-button"
+  className="bpk-button"
   disabled={true}
   onClick={null}
   type="button"
@@ -661,7 +661,7 @@ exports[`BpkLoadingButton should render correctly with a "disabled" attribute 1`
 
 exports[`BpkLoadingButton should render correctly with a "featured" attribute 1`] = `
 <button
-  className="bpk-button bpk-button--featured bpk-loading-button"
+  className="bpk-button bpk-button--featured"
   disabled={false}
   onClick={null}
   type="button"
@@ -701,7 +701,7 @@ exports[`BpkLoadingButton should render correctly with a "featured" attribute 1`
 
 exports[`BpkLoadingButton should render correctly with a "href" attribute 1`] = `
 <a
-  className="bpk-button bpk-loading-button"
+  className="bpk-button"
   href="#"
   onClick={null}
 >
@@ -740,7 +740,7 @@ exports[`BpkLoadingButton should render correctly with a "href" attribute 1`] = 
 
 exports[`BpkLoadingButton should render correctly with a "icon" attribute 1`] = `
 <button
-  className="bpk-button bpk-loading-button"
+  className="bpk-button"
   disabled={false}
   onClick={null}
   type="button"
@@ -779,7 +779,7 @@ exports[`BpkLoadingButton should render correctly with a "icon" attribute 1`] = 
 
 exports[`BpkLoadingButton should render correctly with a "iconDisabled" attribute 1`] = `
 <button
-  className="bpk-button bpk-loading-button"
+  className="bpk-button"
   disabled={true}
   onClick={null}
   type="button"
@@ -818,7 +818,7 @@ exports[`BpkLoadingButton should render correctly with a "iconDisabled" attribut
 
 exports[`BpkLoadingButton should render correctly with a "iconLoading" attribute 1`] = `
 <button
-  className="bpk-button bpk-loading-button"
+  className="bpk-button"
   disabled={true}
   onClick={null}
   type="button"
@@ -857,7 +857,7 @@ exports[`BpkLoadingButton should render correctly with a "iconLoading" attribute
 
 exports[`BpkLoadingButton should render correctly with a "iconOnly" attribute 1`] = `
 <button
-  className="bpk-button bpk-button--icon-only bpk-loading-button"
+  className="bpk-button bpk-button--icon-only"
   disabled={false}
   onClick={null}
   type="button"
@@ -901,7 +901,7 @@ exports[`BpkLoadingButton should render correctly with a "iconOnly" attribute 1`
 
 exports[`BpkLoadingButton should render correctly with a "iconSelected" attribute 1`] = `
 <button
-  className="bpk-button bpk-button--selected bpk-loading-button bpk-loading-button--selected"
+  className="bpk-button bpk-button--selected"
   disabled={false}
   onClick={null}
   type="button"
@@ -940,7 +940,7 @@ exports[`BpkLoadingButton should render correctly with a "iconSelected" attribut
 
 exports[`BpkLoadingButton should render correctly with a "large" attribute 1`] = `
 <button
-  className="bpk-button bpk-button--large bpk-loading-button"
+  className="bpk-button bpk-button--large"
   disabled={false}
   onClick={null}
   type="button"
@@ -980,7 +980,7 @@ exports[`BpkLoadingButton should render correctly with a "large" attribute 1`] =
 
 exports[`BpkLoadingButton should render correctly with a "link" attribute 1`] = `
 <button
-  className="bpk-button bpk-button--link bpk-loading-button bpk-loading-button--link"
+  className="bpk-button bpk-button--link"
   disabled={false}
   onClick={null}
   type="button"
@@ -1020,7 +1020,7 @@ exports[`BpkLoadingButton should render correctly with a "link" attribute 1`] = 
 
 exports[`BpkLoadingButton should render correctly with a "loading" attribute 1`] = `
 <button
-  className="bpk-button bpk-loading-button"
+  className="bpk-button"
   disabled={true}
   onClick={null}
   type="button"
@@ -1115,7 +1115,7 @@ exports[`BpkLoadingButton should render correctly with a "loading" attribute 1`]
 
 exports[`BpkLoadingButton should render correctly with a "secondary" attribute 1`] = `
 <button
-  className="bpk-button bpk-button--secondary bpk-loading-button bpk-loading-button--secondary"
+  className="bpk-button bpk-button--secondary"
   disabled={false}
   onClick={null}
   type="button"
@@ -1155,7 +1155,7 @@ exports[`BpkLoadingButton should render correctly with a "secondary" attribute 1
 
 exports[`BpkLoadingButton should render correctly with a "selected" attribute 1`] = `
 <button
-  className="bpk-button bpk-button--selected bpk-loading-button bpk-loading-button--selected"
+  className="bpk-button bpk-button--selected"
   disabled={false}
   onClick={null}
   type="button"
@@ -1195,7 +1195,7 @@ exports[`BpkLoadingButton should render correctly with a "selected" attribute 1`
 
 exports[`BpkLoadingButton should respect the class names entered as a string 1`] = `
 <button
-  className="bpk-button bpk-button--secondary bpk-button--large bpk-loading-button custom-class-1 custom-class-2 bpk-loading-button--secondary"
+  className="bpk-button bpk-button--secondary bpk-button--large custom-class-1 custom-class-2"
   disabled={false}
   onClick={null}
   type="button"
