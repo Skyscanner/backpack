@@ -18,6 +18,8 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { fontWeightBold } from 'bpk-tokens/tokens/base.es6';
 
 import BpkBannerAlert, { ALERT_TYPES } from './index';
 
@@ -39,8 +41,14 @@ storiesOf('bpk-component-banner-alert', module)
   .add('Success (long message)', () => (
     <BpkBannerAlert message={longMessage} type={ALERT_TYPES.SUCCESS} />
   ))
+  .add('Success (dismissable)', () => (
+    <BpkBannerAlert dismissable message={message} type={ALERT_TYPES.SUCCESS} onDismiss={action('dismissed')} />
+  ))
   .add('Success with React rendered message', () => (
-    <BpkBannerAlert message={<span style={{ fontWeight: 700 }}>{message}</span>} type={ALERT_TYPES.SUCCESS} />
+    <BpkBannerAlert
+      message={<span style={{ fontWeight: fontWeightBold }}>{message}</span>}
+      type={ALERT_TYPES.SUCCESS}
+    />
   ))
   .add('Success with children', () => (
     <BpkBannerAlert message={message} type={ALERT_TYPES.SUCCESS} toggleButtonLabel="View more">

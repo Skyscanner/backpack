@@ -7,6 +7,10 @@
   - Removed `padded` prop in favour of more generic `contentClassName`
   - Fixed modal white background on iPhone not showing
 
+**Added:**
+- bpk-component-banner-alert:
+  - New "dismissable" configuration. See http://backpack.prod.aws.skyscnr.com/components/web/banner-alerts
+
 ## 2017-11-17 - New native horizontal nav interface and enhancements to `bpk-animate-height`
 
 **Breaking:**
