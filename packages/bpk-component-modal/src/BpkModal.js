@@ -16,13 +16,15 @@
  * limitations under the License.
  */
 
-import { Portal } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Portal, cssModules } from 'bpk-react-utils';
 import { withScrim } from 'bpk-scrim-utils';
 
 import BpkModalDialog from './BpkModalDialog';
+import STYLES from './bpk-modal.scss';
 
+const getClassName = cssModules(STYLES);
 const ScrimBpkModalDialog = withScrim(BpkModalDialog);
 
 const BpkModal = (props) => {
@@ -34,7 +36,7 @@ const BpkModal = (props) => {
 
   return (
     <Portal isOpen={isOpen} onClose={onClose} target={target}>
-      <ScrimBpkModalDialog onClose={onClose} padded {...rest} />
+      <ScrimBpkModalDialog onClose={onClose} {...rest} contentClassName={getClassName('bpk-modal__container')} />
     </Portal>
   );
 };

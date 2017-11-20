@@ -30,21 +30,6 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  @include bpk-breakpoint-above-mobile {
-    display: flex;
-  }
-
-  // IE11 and below hack for buggy flexbox support
-  @media screen\0 {
-    display: block;
-  }
-
-  &--padded {
-    @include bpk-breakpoint-above-mobile {
-      padding: $bpk-spacing-base;
-    }
-  }
-
   &--iphone-fix {
     position: absolute;
     display: block;
