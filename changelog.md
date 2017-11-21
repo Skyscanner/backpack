@@ -6,6 +6,9 @@
 - bpk-scrim-utils:
   - Removed `padded` prop in favour of more generic `contentClassName`
   - Fixed modal white background on iPhone not showing
+- bpk-component-image:
+  - `withLazyLoading` now applies styling options to the wrapper div it creates rather than the lazy loaded component.
+  - Any `className` provided to `BpkImage` is now applied to the outermost div in the component.
 
 **Added:**
 - bpk-component-banner-alert:
@@ -14,9 +17,10 @@
 **Fixed:**
 - bpk-component-button:
   - Svg's fill colour is automatically set to text colour.
-
 - bpk-component-banner-alert:
   - Prevented `dismissButton` being constructed on non-dismissable banner-alerts to fix prop warning.
+- bpk-component-image:
+  - The image no longer positions incorrectly when text-align center is applied to its parent.
 
 ## 2017-11-17 - New native horizontal nav interface and enhancements to `bpk-animate-height`
 

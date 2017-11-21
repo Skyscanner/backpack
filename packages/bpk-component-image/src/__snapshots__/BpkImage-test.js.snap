@@ -2,6 +2,7 @@
 
 exports[`BpkImage should accept userland className 1`] = `
 <div
+  className="userland-classname"
   style={
     Object {
       "width": 500,
@@ -9,7 +10,7 @@ exports[`BpkImage should accept userland className 1`] = `
   }
 >
   <div
-    className="bpk-image bpk-image--no-background userland-classname"
+    className="bpk-image bpk-image--no-background"
     style={
       Object {
         "height": 0,
@@ -29,6 +30,7 @@ exports[`BpkImage should accept userland className 1`] = `
 
 exports[`BpkImage should accept userland styling 1`] = `
 <div
+  className={null}
   style={
     Object {
       "width": 500,
@@ -56,6 +58,7 @@ exports[`BpkImage should accept userland styling 1`] = `
 
 exports[`BpkImage should have !inView behavior 1`] = `
 <div
+  className={null}
   style={Object {}}
 >
   <div
@@ -72,6 +75,7 @@ exports[`BpkImage should have !inView behavior 1`] = `
 
 exports[`BpkImage should have loading behavior 1`] = `
 <div
+  className={null}
   style={Object {}}
 >
   <div
@@ -182,6 +186,7 @@ exports[`BpkImage should have loading behavior 1`] = `
 
 exports[`BpkImage should render correctly 1`] = `
 <div
+  className={null}
   style={Object {}}
 >
   <div
@@ -205,6 +210,7 @@ exports[`BpkImage should render correctly 1`] = `
 
 exports[`BpkImage should support srcSet 1`] = `
 <div
+  className={null}
   style={Object {}}
 >
   <div

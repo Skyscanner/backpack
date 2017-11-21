@@ -17,6 +17,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { wrapDisplayName } from 'bpk-react-utils';
 
 export default function withLazyLoading(Component, document) {
@@ -103,19 +104,34 @@ export default function withLazyLoading(Component, document) {
     }
 
     render() {
+      const { style, className, ...rest } = this.props;
+
       return (
         <div
           id={this.placeholderReference}
           ref={(element) => { this.element = element; }}
+          style={style}
+          className={className}
         >
           <Component
             inView={this.state.inView}
-            {...this.props}
+            {...rest}
           />
         </div>
       );
     }
   }
   WithLazyLoading.displayName = wrapDisplayName(Component, 'withLazyLoading');
+
+  WithLazyLoading.propTypes = {
+    style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    className: PropTypes.string,
+  };
+
+  WithLazyLoading.defaultProps = {
+    style: null,
+    className: null,
+  };
+
   return WithLazyLoading;
 }

@@ -87,16 +87,13 @@ class BpkImage extends React.Component {
       classNames.push(getClassName('bpk-image--no-background'));
     }
 
-    if (className) {
-      classNames.push(className);
-    }
-
     // wraps a div with maxWidth and maxHeight set iff full-width is no required.
     // This ensures that the css / html do not reserve too much spacing
     // when width 100% is not being used
     return (
       <div
         style={style}
+        className={className}
       >
         <div
           ref={(div) => { this.placeholder = div; }}
