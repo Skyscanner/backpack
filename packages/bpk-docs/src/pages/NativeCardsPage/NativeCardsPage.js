@@ -61,7 +61,7 @@ const components = [
   },
   {
     id: 'without-padding',
-    title: 'Without Padding',
+    title: 'Without padding',
     blurb: 'For full flexibility, you can opt to remove the default padding e.g. to display full-bleed images.',
     screenshots: [
       {
@@ -107,7 +107,7 @@ const components = [
   },
   {
     id: 'with-divider',
-    title: 'With Divider',
+    title: 'With divider',
     blurb: 'Cards can have an added dividing line to divide their content into two distinct areas.',
     screenshots: [
       {
@@ -130,7 +130,7 @@ const components = [
   },
   {
     id: 'with-divider-arranged-vertically',
-    title: 'With Divider Arranged Vertically',
+    title: 'With divider arranged vertically',
     blurb: 'Cards can be configured to display both horizontally and vertically.',
     screenshots: [
       {

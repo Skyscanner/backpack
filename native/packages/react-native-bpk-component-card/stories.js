@@ -79,7 +79,7 @@ storiesOf('BpkCard', module)
       {mainContent}
     </BpkCardWithDivider>
   ))
-  .add('docs:with-divider-vertical', () => (
+  .add('docs:with-divider-arranged-vertically', () => (
     <BpkCardWithDivider
       onPress={onPress}
       stub={stubContent}
@@ -88,7 +88,7 @@ storiesOf('BpkCard', module)
       {mainContent}
     </BpkCardWithDivider>
   ))
-  .add('docs:with-divider-without-padding', () => (
+  .add('With divider no padding', () => (
     <BpkCardWithDivider
       onPress={onPress}
       stub={stubContent}
@@ -98,7 +98,7 @@ storiesOf('BpkCard', module)
       {mainContent}
     </BpkCardWithDivider>
   ))
-  .add('docs:with-divider-focused', () => (
+  .add('With divider focused', () => (
     <BpkCardWithDivider
       onPress={onPress}
       stub={stubContent}
