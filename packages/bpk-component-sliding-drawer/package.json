@@ -19,7 +19,7 @@
     "bpk-component-link": "^1.0.29",
     "bpk-mixins": "^17.0.11",
     "bpk-react-utils": "^2.3.7",
-    "bpk-scrim-utils": "^1.0.0",
+    "bpk-scrim-utils": "^2.0.0",
     "bpk-tokens": "^26.5.1",
     "prop-types": "^15.5.8",
     "react-transition-group": "^2.2.1"
