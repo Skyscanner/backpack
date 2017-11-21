@@ -1,11 +1,18 @@
 # Backpack changelog
 
+## UNRELEASED
+
+- react-native-bpk-component-card:
+  - `innerStyle` prop enables the ability to customise inner container styling
+  - `withDivider` HOC, see http://backpack.prod.aws.skyscnr.com/components/native/cards/#with-divider
+
 ## 2017-11-21 - Improved image positoning, dependency upgrades and interface clarifications
 
 **Breaking:**
 - bpk-scrim-utils: 1.0.2 => 2.0.0
   - Removed `padded` prop in favour of more generic `contentClassName`
   - Fixed modal white background on iPhone not showing
+
 - bpk-component-image: 1.1.15 => 2.0.0
   - `withLazyLoading` now applies styling options to the wrapper div it creates rather than the lazy loaded component.
   - Any `className` provided to `BpkImage` is now applied to the outermost div in the component.
@@ -14,20 +21,20 @@
 - bpk-component-banner-alert: 1.3.8 => 1.4.0
   - New `dismissable` configuration, see https://backpack.github.io/components/web/banner-alerts
 
-- react-native-bpk-component-card:
-  - `innerStyle` prop enables the ability to customise inner container styling
-  - `withDivider` HOC, see http://backpack.prod.aws.skyscnr.com/components/native/cards/#with-divider
-
 **Fixed:**
 - bpk-component-button: 1.6.71 => 1.6.72
   - Svg's fill colour is automatically set to text colour.
+
 - bpk-component-banner-alert: 1.3.8 => 1.4.0
   - Prevented `dismissButton` being constructed on non-dismissable banner-alerts to fix prop warning.
+
 - bpk-component-image: 1.1.15 => 2.0.0
   - The image no longer positions incorrectly when text-align center is applied to its parent.
-  - Upgraded [react-transition-group](https://github.com/reactjs/react-transition-group) dependency to support React 16.
+
 - bpk-react-utils: 2.3.7 => 2.3.8
+- bpk-component-image: 1.1.15 => 2.0.0
   - Upgraded [react-transition-group](https://github.com/reactjs/react-transition-group) dependency to support React 16.
+
 - bpk-component-fieldset: 1.0.34 => 1.0.35
   - BpkFieldset now correctly warns when the `label` prop is missing.
 
