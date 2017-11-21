@@ -17,7 +17,7 @@
     "bpk-mixins": "^17.0.13",
     "bpk-react-utils": "^2.3.7",
     "prop-types": "^15.5.8",
-    "react-transition-group": "^1.2.0"
+    "react-transition-group": "^2.2.1"
   },
   "devDependencies": {
     "bpk-component-mobile-scroll-container": "^1.0.34",

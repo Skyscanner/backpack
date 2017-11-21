@@ -22,6 +22,12 @@
 - bpk-component-image:
   - The image no longer positions incorrectly when text-align center is applied to its parent.
 
+- bpk-react-utils
+ - Upgraded [react-transition-group](https://github.com/reactjs/react-transition-group) dependency to support React 16.
+
+- bpk-component-image
+ - Upgraded [react-transition-group](https://github.com/reactjs/react-transition-group) dependency to support React 16.
+
 ## 2017-11-17 - New native horizontal nav interface and enhancements to `bpk-animate-height`
 
 **Breaking:**

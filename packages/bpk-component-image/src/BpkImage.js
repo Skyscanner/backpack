@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import { BpkSpinner } from 'bpk-component-spinner';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import CSSTransition from 'react-transition-group/CSSTransition';
 import { animations } from 'bpk-tokens/tokens/base.es6';
 
 import STYLES from './bpk-image.scss';
@@ -100,20 +100,19 @@ class BpkImage extends React.Component {
           style={{ height: 0, paddingBottom: aspectRatioPc }}
           className={classNames.join(' ')}
         >
-          <CSSTransitionGroup
-            transitionName={{
-              leave: getClassName('bpk-image__spinner--shown'),
-              leaveActive: getClassName('bpk-image__spinner--hidden'),
-            }}
-            transitionEnterTimeout={parseInt(animations.durationBase, 10)}
-            transitionLeaveTimeout={parseInt(animations.durationBase, 10)}
-          >
-            {loading &&
+          {loading &&
+            <CSSTransition
+              classNames={{
+                exit: getClassName('bpk-image__spinner--shown'),
+                exitActive: getClassName('bpk-image__spinner--hidden'),
+              }}
+              timeout={parseInt(animations.durationBase, 10)}
+            >
               <div className={getClassName('bpk-image__spinner')}>
                 <BpkSpinner />
               </div>
-            }
-          </CSSTransitionGroup>
+            </CSSTransition>
+          }
           {inView &&
             <Image hidden={loading} altText={altText} onImageLoad={this.onImageLoad} {...rest} />
           }

@@ -2,15 +2,19 @@
 
 exports[`TransitionInitialMount should render correctly 1`] = `
 <Component
-  component={[Function]}
-  transitionAppear={true}
-  transitionAppearTimeout={250}
-  transitionEnterTimeout={0}
-  transitionLeaveTimeout={0}
-  transitionName={
+  appear={true}
+  classNames={
     Object {
       "appear": "block--appear",
       "appearActive": "block--apear-active",
+    }
+  }
+  in={true}
+  timeout={
+    Object {
+      "appear": 250,
+      "enter": 0,
+      "exit": 0,
     }
   }
 >
