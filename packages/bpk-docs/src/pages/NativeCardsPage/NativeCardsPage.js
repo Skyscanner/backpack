@@ -20,11 +20,17 @@ import React from 'react';
 import readme from 'react-native-bpk-component-card/readme.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-card/screenshots/ios/default.png';
-import iosScreenshotWithoutPadding from 'react-native-bpk-component-card/screenshots/ios/without-padding.png';
-import iosScreenshotFocused from 'react-native-bpk-component-card/screenshots/ios/focused.png';
 import androidScreenshotDefault from 'react-native-bpk-component-card/screenshots/android/default.png';
-import androidScreenshotWithoutPadding from 'react-native-bpk-component-card/screenshots/android/without-padding.png';
+import iosScreenshotFocused from 'react-native-bpk-component-card/screenshots/ios/focused.png';
 import androidScreenshotFocused from 'react-native-bpk-component-card/screenshots/android/focused.png';
+import iosScreenshotWithoutPadding from 'react-native-bpk-component-card/screenshots/ios/without-padding.png';
+import androidScreenshotWithoutPadding from 'react-native-bpk-component-card/screenshots/android/without-padding.png';
+import iosScreenshotWithDivider from 'react-native-bpk-component-card/screenshots/ios/with-divider.png';
+import androidScreenshotWithDivider from 'react-native-bpk-component-card/screenshots/android/with-divider.png';
+import iosScreenshotWithDividerArrangedVertically
+  from 'react-native-bpk-component-card/screenshots/ios/with-divider-arranged-vertically.png';
+import androidScreenshotWithDividerArrangedVertically
+  from 'react-native-bpk-component-card/screenshots/android/with-divider-arranged-vertically.png';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -95,6 +101,52 @@ const components = [
         height: 1920,
         src: `/${androidScreenshotFocused}`,
         altText: 'Android Card Focused Component',
+        subText: '(Google Pixel Emulator)',
+      },
+    ],
+  },
+  {
+    id: 'with-divider',
+    title: 'With Divider',
+    blurb: 'Cards can have an added dividing line to divide their content into two distinct areas.',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotWithDivider}`,
+        altText: 'iOS Card With Divider Component',
+        subText: '(iPhone 8 Simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidScreenshotWithDivider}`,
+        altText: 'Android Card With Divider Component',
+        subText: '(Google Pixel Emulator)',
+      },
+    ],
+  },
+  {
+    id: 'with-divider-arranged-vertically',
+    title: 'With Divider Arranged Vertically',
+    blurb: 'Cards can be configured to display both horizontally and vertically.',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotWithDividerArrangedVertically}`,
+        altText: 'iOS Card With Divider Arranged Vertically Component',
+        subText: '(iPhone 8 Simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidScreenshotWithDividerArrangedVertically}`,
+        altText: 'Android Card With Divider Arranged Vertically Component',
         subText: '(Google Pixel Emulator)',
       },
     ],
