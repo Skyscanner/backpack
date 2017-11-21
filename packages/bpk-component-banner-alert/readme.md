@@ -54,7 +54,7 @@ class DismissableBpkBannerAlert extends Component {
   render() {
     return (
       <BpkBannerAlert
-        message="Successful alert with more information."
+        message="Successful alert with dismiss option."
         type={ALERT_TYPES.SUCCESS}
         dismissable
         onDismiss={this.setDismissed}

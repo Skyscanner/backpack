@@ -78,7 +78,7 @@ describe('BpkBannerAlert', () => {
 
   it('should render correctly with dismissable option', () => {
     const tree = renderer.create(
-      <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} dismissable />,
+      <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} dismissable dismissButtonLabel="Dismiss" />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
