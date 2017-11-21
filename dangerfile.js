@@ -23,6 +23,7 @@
 import fs from 'fs';
 import { includes } from 'lodash';
 import { danger, fail, warn, message } from 'danger';
+import { props, propKeys } from './packages/bpk-tokens/tokens/base.raw.ios.json';
 
 const createdFiles = danger.git.created_files;
 const modifiedFiles = danger.git.modified_files;
@@ -96,4 +97,39 @@ if (unlicensedFiles.length > 0) {
 const bigPRThreshold = 8;
 if (fileChanges.length > bigPRThreshold) {
   warn(`This PR contains ${fileChanges.length} files (${createdFiles.length} new, ${modifiedFiles.length} modified). Consider splitting it into multiple PRs.`); // eslint-disable-line max-len
+}
+
+// iOS tokens should not appear in Android snapshot files
+const androidSnapshotsWithIosTokens = fileChanges.filter((filePath) => {
+  if (!filePath.match(/\.android\.js\.snap$/)) {
+    return false;
+  }
+
+  const fileContent = fs.readFileSync(filePath).toString();
+
+  const formatToken = ({ value, type }) => {
+    const FORMATS = {
+      font: `"fontFamily": ${value},`,
+      'font-size': `"fontSize": ${value},`,
+    };
+
+    return FORMATS[type] || null;
+  };
+
+  return propKeys.some((tokenName) => {
+    const token = props[tokenName];
+
+    const formattedToken = formatToken(token);
+
+    if (!formattedToken) {
+      return false;
+    }
+
+    return fileContent.includes(formattedToken);
+  });
+});
+
+if (androidSnapshotsWithIosTokens.length > 0) {
+  // eslint-disable-next-line max-len
+  fail(`iOS tokens have been found in the following Android snapshots:\n  - ${androidSnapshotsWithIosTokens.join('\n  - ')}`);
 }
