@@ -80,7 +80,7 @@ class HomePage extends React.Component {
             <BpkGridColumn width={6} tabletWidth={12}>
               <Heading level="h3">About Backpack</Heading>
               <Paragraph>
-                Backpack is the foundation for all Skyscanner products. It builds on Atomic Design principals to help
+                Backpack is the foundation for all Skyscanner products. It builds on Atomic Design principles to help
                 visualise how these products are assembled.
               </Paragraph>
             </BpkGridColumn>
