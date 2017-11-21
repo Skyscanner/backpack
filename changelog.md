@@ -1,32 +1,32 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2017-11-21 - Improved image positoning, depnendecy upgrades and interface clarifications
 
 **Breaking:**
-- bpk-scrim-utils:
+- bpk-scrim-utils: 1.0.2 => 2.0.0
   - Removed `padded` prop in favour of more generic `contentClassName`
   - Fixed modal white background on iPhone not showing
-- bpk-component-image:
+- bpk-component-image: 1.1.15 => 2.0.0
   - `withLazyLoading` now applies styling options to the wrapper div it creates rather than the lazy loaded component.
   - Any `className` provided to `BpkImage` is now applied to the outermost div in the component.
 
 **Added:**
-- bpk-component-banner-alert:
+- bpk-component-banner-alert: 1.3.8 => 1.4.0
   - New `dismissable` configuration, see https://backpack.github.io/components/web/banner-alerts
 
 **Fixed:**
-- bpk-component-button:
+- bpk-component-button: 1.6.71 => 1.6.72
   - Svg's fill colour is automatically set to text colour.
-- bpk-component-banner-alert:
+- bpk-component-banner-alert: 1.3.8 => 1.4.0
   - Prevented `dismissButton` being constructed on non-dismissable banner-alerts to fix prop warning.
-- bpk-component-image:
+- bpk-component-image: 1.1.15 => 2.0.0
   - The image no longer positions incorrectly when text-align center is applied to its parent.
-
-- bpk-react-utils
- - Upgraded [react-transition-group](https://github.com/reactjs/react-transition-group) dependency to support React 16.
-
-- bpk-component-image
- - Upgraded [react-transition-group](https://github.com/reactjs/react-transition-group) dependency to support React 16.
+- bpk-react-utils: 2.3.7 => 2.3.8
+  - Upgraded [react-transition-group](https://github.com/reactjs/react-transition-group) dependency to support React 16.
+- bpk-component-image: 1.1.15 => 2.0.0
+  - Upgraded [react-transition-group](https://github.com/reactjs/react-transition-group) dependency to support React 16.
+- bpk-component-fieldset: 1.0.34 => 1.0.35
+  - BpkFieldset now correctly warns when the `label` prop is missing.
 
 ## 2017-11-17 - New native horizontal nav interface and enhancements to `bpk-animate-height`
 
