@@ -47,18 +47,16 @@ import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
 import BpkLargeAccessibilityIcon from 'bpk-component-icon/lg/accessibility';
 import { withButtonAlignment, withLargeButtonAlignment } from 'bpk-component-icon';
 
-import './icons.scss';
-
 const AlignedBpkSmallFlightIcon = withButtonAlignment(BpkSmallFlightIcon);
 const AlignedBpkLargeAccessibilityIcon = withLargeButtonAlignment(BpkLargeAccessibilityIcon);
 
 export default () => (
   <div>
     <BpkButton>
-      <AlignedBpkSmallFlightIcon className="abc-icon__flight" />
+      <AlignedBpkSmallFlightIcon />
     </BpkButton>
     <BpkButton large>
-      <AlignedBpkLargeAccessibilityIcon className="abc-icon__a11y" />
+      <AlignedBpkLargeAccessibilityIcon />
     </BpkButton>
   </div>
 );

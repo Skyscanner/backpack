@@ -20,7 +20,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import TOKENS from '../bpk-tokens/tokens/base.common';
 import { withButtonAlignment, withLargeButtonAlignment, withRtlSupport } from '../bpk-component-icon';
 import SmallLongArrowRightIcon from '../bpk-component-icon/sm/long-arrow-right';
 import LargeLongArrowRightIcon from '../bpk-component-icon/lg/long-arrow-right';
@@ -89,42 +88,42 @@ storiesOf('bpk-component-button', module)
     <div>
       <div>
         <BpkButton iconOnly onClick={action('iconOnly button clicked')}>
-          <AlignedSmallLongArrowRightIcon fill={TOKENS.colorWhite} />
+          <AlignedSmallLongArrowRightIcon />
         </BpkButton>&nbsp;
         <BpkButton iconOnly secondary onClick={action('iconOnly button secondary clicked')}>
-          <AlignedSmallLongArrowRightIcon fill={TOKENS.buttonSecondaryColor} />
+          <AlignedSmallLongArrowRightIcon />
         </BpkButton>&nbsp;
         <BpkButton iconOnly destructive onClick={action('iconOnly button destructive clicked')}>
-          <AlignedSmallLongArrowRightIcon fill={TOKENS.buttonDestructiveColor} />
+          <AlignedSmallLongArrowRightIcon />
         </BpkButton>&nbsp;
         <BpkButton iconOnly selected onClick={action('iconOnly button selected clicked')}>
-          <AlignedSmallLongArrowRightIcon fill={TOKENS.colorWhite} />
+          <AlignedSmallLongArrowRightIcon />
         </BpkButton>&nbsp;
         <BpkButton iconOnly disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-          <AlignedSmallLongArrowRightIcon fill={TOKENS.colorWhite} />
+          <AlignedSmallLongArrowRightIcon />
         </BpkButton>&nbsp;
         <BpkButton iconOnly featured onClick={action('iconOnly button featured clicked')}>
-          <AlignedSmallLongArrowRightIcon fill={TOKENS.colorWhite} />
+          <AlignedSmallLongArrowRightIcon />
         </BpkButton>&nbsp;
       </div>
       <div>
         <BpkButton iconOnly large onClick={action('large iconOnly button clicked')}>
-          <AlignedLargeLongArrowRightIcon fill={TOKENS.colorWhite} />
+          <AlignedLargeLongArrowRightIcon />
         </BpkButton>&nbsp;
         <BpkButton iconOnly large secondary onClick={action('large iconOnly button secondary clicked')}>
-          <AlignedLargeLongArrowRightIcon fill={TOKENS.buttonSecondaryColor} />
+          <AlignedLargeLongArrowRightIcon />
         </BpkButton>&nbsp;
         <BpkButton iconOnly large destructive onClick={action('large iconOnly button destructive clicked')}>
-          <AlignedLargeLongArrowRightIcon fill={TOKENS.buttonDestructiveColor} />
+          <AlignedLargeLongArrowRightIcon />
         </BpkButton>&nbsp;
         <BpkButton iconOnly large selected onClick={action('large iconOnly button selected clicked')}>
-          <AlignedLargeLongArrowRightIcon fill={TOKENS.colorWhite} />
+          <AlignedLargeLongArrowRightIcon />
         </BpkButton>&nbsp;
         <BpkButton iconOnly large disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
-          <AlignedLargeLongArrowRightIcon fill={TOKENS.colorWhite} />
+          <AlignedLargeLongArrowRightIcon />
         </BpkButton>&nbsp;
         <BpkButton iconOnly large featured onClick={action('large iconOnly button featured clicked')}>
-          <AlignedLargeLongArrowRightIcon fill={TOKENS.colorWhite} />
+          <AlignedLargeLongArrowRightIcon />
         </BpkButton>&nbsp;
       </div>
     </div>

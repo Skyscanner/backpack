@@ -650,10 +650,10 @@ exports[`BpkBannerAlert should render correctly with dismissable option 1`] = `
     </span>
      
     <button
-      aria-label={null}
+      aria-label="Dismiss"
       className="bpk-close-button bpk-banner-alert__toggle-button"
       onClick={[Function]}
-      title={null}
+      title="Dismiss"
       type="button"
     >
       <span

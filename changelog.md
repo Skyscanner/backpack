@@ -21,9 +21,8 @@
   - Prevented `dismissButton` being constructed on non-dismissable banner-alerts to fix prop warning.
 - bpk-component-image: 1.1.15 => 2.0.0
   - The image no longer positions incorrectly when text-align center is applied to its parent.
-- bpk-react-utils: 2.3.7 => 2.3.8
   - Upgraded [react-transition-group](https://github.com/reactjs/react-transition-group) dependency to support React 16.
-- bpk-component-image: 1.1.15 => 2.0.0
+- bpk-react-utils: 2.3.7 => 2.3.8
   - Upgraded [react-transition-group](https://github.com/reactjs/react-transition-group) dependency to support React 16.
 - bpk-component-fieldset: 1.0.34 => 1.0.35
   - BpkFieldset now correctly warns when the `label` prop is missing.
