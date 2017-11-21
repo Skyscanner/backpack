@@ -23,7 +23,9 @@ exports[`Android BpkCard should render correctly 1`] = `
     }
     useForeground={true}
   >
-    <View>
+    <View
+      style={null}
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -73,7 +75,122 @@ exports[`Android BpkCard should render correctly with arbitrary props 1`] = `
     testID="arbitrary value"
     useForeground={true}
   >
-    <View>
+    <View
+      style={null}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "lineHeight": 24,
+            },
+            Object {},
+          ]
+        }
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android BpkCard should render correctly with custom inner style 1`] = `
+<View
+  style={null}
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Example Card"
+    background={undefined}
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": 2,
+          "elevation": 2,
+        },
+        Object {
+          "padding": 16,
+        },
+      ]
+    }
+    useForeground={true}
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "lineHeight": 24,
+            },
+            Object {},
+          ]
+        }
+      >
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android BpkCard should render correctly with custom style 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Example Card"
+    background={undefined}
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": 2,
+          "elevation": 2,
+        },
+        Object {
+          "padding": 16,
+        },
+        Object {
+          "flex": 1,
+        },
+      ]
+    }
+    useForeground={true}
+  >
+    <View
+      style={null}
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -125,7 +242,9 @@ exports[`Android BpkCard should render correctly with the "focused" state 1`] = 
     }
     useForeground={true}
   >
-    <View>
+    <View
+      style={null}
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -171,7 +290,9 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
     }
     useForeground={true}
   >
-    <View>
+    <View
+      style={null}
+    >
       <Text
         accessible={true}
         allowFontScaling={true}

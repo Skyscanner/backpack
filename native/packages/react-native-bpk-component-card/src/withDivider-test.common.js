@@ -18,15 +18,23 @@
 
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import BpkText from 'react-native-bpk-component-text';
 
 import BpkCard from './BpkCard';
+import withDivider from './withDivider';
+
+const BpkCardWithDivider = withDivider(BpkCard);
 
 const commonTests = () => {
   const onPress = jest.fn();
+  let renderer;
 
-  describe('BpkCard', () => {
+  beforeAll(() => {
+    renderer = new ShallowRenderer();
+  });
+
+  describe('withDivider', () => {
     const content = (
       <BpkText>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
@@ -36,97 +44,93 @@ const commonTests = () => {
     );
 
     it('should render correctly', () => {
-      const tree = renderer.create(
-        <BpkCard
+      renderer.render(
+        <BpkCardWithDivider
           onPress={onPress}
           accessibilityLabel="Example Card"
+          stub={content}
         >
           {content}
-        </BpkCard>,
-      ).toJSON();
+        </BpkCardWithDivider>,
+      );
 
+      const tree = renderer.getRenderOutput();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly without padding', () => {
-      const tree = renderer.create(
-        <BpkCard
+      renderer.render(
+        <BpkCardWithDivider
           onPress={onPress}
+          accessibilityLabel="Example Card"
+          stub={content}
           padded={false}
-          accessibilityLabel="Example Card"
         >
           {content}
-        </BpkCard>,
-      ).toJSON();
+        </BpkCardWithDivider>,
+      );
 
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render correctly with the "focused" state', () => {
-      const tree = renderer.create(
-        <BpkCard
-          onPress={onPress}
-          focused
-          accessibilityLabel="Example Card"
-        >
-          {content}
-        </BpkCard>,
-      ).toJSON();
-
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render correctly with custom style', () => {
-      const styles = StyleSheet.create({
-        custom: {
-          flex: 1,
-        },
-      });
-
-      const tree = renderer.create(
-        <BpkCard
-          onPress={onPress}
-          accessibilityLabel="Example Card"
-          style={styles.custom}
-        >
-          {content}
-        </BpkCard>,
-      ).toJSON();
-
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render correctly with custom inner style', () => {
-      const styles = StyleSheet.create({
-        custom: {
-          flex: 1,
-        },
-      });
-
-      const tree = renderer.create(
-        <BpkCard
-          onPress={onPress}
-          accessibilityLabel="Example Card"
-          innerStyle={styles.custom}
-        >
-          {content}
-        </BpkCard>,
-      ).toJSON();
-
+      const tree = renderer.getRenderOutput();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly with arbitrary props', () => {
-      const tree = renderer.create(
-        <BpkCard
+      renderer.render(
+        <BpkCardWithDivider
           onPress={onPress}
           accessibilityLabel="Example Card"
+          stub={content}
           testID="arbitrary value" // <-- arbitrary prop
         >
           {content}
-        </BpkCard>,
-      ).toJSON();
+        </BpkCardWithDivider>,
+      );
 
+      const tree = renderer.getRenderOutput();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly with custom main style', () => {
+      const styles = StyleSheet.create({
+        main: {
+          flex: 2,
+        },
+      });
+
+      renderer.render(
+        <BpkCardWithDivider
+          onPress={onPress}
+          accessibilityLabel="Example Card"
+          stub={content}
+          mainStyle={styles.main}
+        >
+          {content}
+        </BpkCardWithDivider>,
+      );
+
+      const tree = renderer.getRenderOutput();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly with custom stub style', () => {
+      const styles = StyleSheet.create({
+        stub: {
+          flex: 3,
+        },
+      });
+
+      renderer.render(
+        <BpkCardWithDivider
+          onPress={onPress}
+          accessibilityLabel="Example Card"
+          stub={content}
+          stubStyle={styles.stub}
+        >
+          {content}
+        </BpkCardWithDivider>,
+      );
+
+      const tree = renderer.getRenderOutput();
       expect(tree).toMatchSnapshot();
     });
   });

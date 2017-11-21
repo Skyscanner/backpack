@@ -52,6 +52,7 @@ const BpkCard = (props) => {
     children,
     focused,
     style: userStyle,
+    innerStyle,
     ...rest
   } = props;
 
@@ -69,7 +70,7 @@ const BpkCard = (props) => {
         {...rest}
       >
         <View style={style}>
-          <View>{children}</View>
+          <View style={innerStyle}>{children}</View>
         </View>
       </TouchableNativeFeedback>
     </View>
@@ -82,12 +83,14 @@ BpkCard.propTypes = {
   focused: PropTypes.bool,
   padded: PropTypes.bool,
   style: ViewPropTypes.style,
+  innerStyle: ViewPropTypes.style,
 };
 
 BpkCard.defaultProps = {
   focused: false,
   padded: true,
   style: null,
+  innerStyle: null,
 };
 
 export default BpkCard;
