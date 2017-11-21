@@ -67,12 +67,18 @@ npm install [package-name] --save-dev
 | [`bpk-stylesheets`](/packages/bpk-stylesheets) | [![npm version](https://badge.fury.io/js/bpk-stylesheets.svg)](http://badge.fury.io/js/bpk-stylesheets) |
 | [`bpk-svgs`](/packages/bpk-svgs) | [![npm version](https://badge.fury.io/js/bpk-svgs.svg)](http://badge.fury.io/js/bpk-svgs) |
 | [`bpk-tokens`](/packages/bpk-tokens) | [![npm version](https://badge.fury.io/js/bpk-tokens.svg)](http://badge.fury.io/js/bpk-tokens) |
+| [`react-native-bpk-component-animate-height`](/native/packages/react-native-bpk-component-animate-height) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-animate-height.svg)](http://badge.fury.io/js/react-native-bpk-component-animate-height) |
+| [`react-native-bpk-component-banner-alert`](/native/packages/react-native-bpk-component-banner-alert) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-banner-alert.svg)](http://badge.fury.io/js/react-native-bpk-component-banner-alert) |
 | [`react-native-bpk-component-button`](/native/packages/react-native-bpk-component-button) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-button.svg)](http://badge.fury.io/js/react-native-bpk-component-button) |
 | [`react-native-bpk-component-card`](/native/packages/react-native-bpk-component-card) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-card.svg)](http://badge.fury.io/js/react-native-bpk-component-card) |
+| [`react-native-bpk-component-horizontal-nav`](/native/packages/react-native-bpk-component-horizontal-nav) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-horizontal-nav.svg)](http://badge.fury.io/js/react-native-bpk-component-horizontal-nav) |
 | [`react-native-bpk-component-icon`](/native/packages/react-native-bpk-component-icon) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-icon.svg)](http://badge.fury.io/js/react-native-bpk-component-icon) |
-| [`react-native-bpk-component-text-input`](/native/packages/react-native-bpk-component-text-input) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-text-input.svg)](http://badge.fury.io/js/react-native-bpk-component-text-input) |
+| [`react-native-bpk-component-spinner`](/native/packages/react-native-bpk-component-spinner) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-spinner.svg)](http://badge.fury.io/js/react-native-bpk-component-spinner) |
+| [`react-native-bpk-component-switch`](/native/packages/react-native-bpk-component-switch) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-switch.svg)](http://badge.fury.io/js/react-native-bpk-component-switch) |
 | [`react-native-bpk-component-text`](/native/packages/react-native-bpk-component-text) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-text.svg)](http://badge.fury.io/js/react-native-bpk-component-text) |
-| [`react-native-bpk-theming`](/native/packages/react-native-bpk-theming) | [![npm version](https://badge.fury.io/js/react-native-bpk-theming.svg)](http://badge.fury.io/js/react-native-bpk-component-theming) |
+| [`react-native-bpk-component-text-input`](/native/packages/react-native-bpk-component-text-input) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-text-input.svg)](http://badge.fury.io/js/react-native-bpk-component-text-input) |
+| [`react-native-bpk-component-touchable-overlay`](/native/packages/react-native-bpk-component-touchable-overlay) | [![npm version](https://badge.fury.io/js/react-native-bpk-component-touchable-overlay.svg)](http://badge.fury.io/js/react-native-bpk-component-touchable-overlay) |
+| [`react-native-bpk-theming`](/native/packages/react-native-bpk-theming) | [![npm version](https://badge.fury.io/js/react-native-bpk-theming.svg)](http://badge.fury.io/js/react-native-bpk-theming) |
 
 ## Contributing
 
