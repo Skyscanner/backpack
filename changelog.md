@@ -1,6 +1,6 @@
 # Backpack changelog
 
-## 2017-11-21 - Improved image positoning, depnendecy upgrades and interface clarifications
+## 2017-11-21 - Improved image positoning, dependency upgrades and interface clarifications
 
 **Breaking:**
 - bpk-scrim-utils: 1.0.2 => 2.0.0
