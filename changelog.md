@@ -2,7 +2,12 @@
 
 ## UNRELEASED
 
-- react-native-bpk-component-card:
+_Nothing yet..._
+
+## 2017-11-21 - React Native cards can now have a dividing line
+
+**Added:**
+- react-native-bpk-component-card: 1.1.7 => 1.2.0
   - `innerStyle` prop enables the ability to customise inner container styling
   - `withDivider` HOC, see http://backpack.prod.aws.skyscnr.com/components/native/cards/#with-divider
 
