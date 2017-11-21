@@ -23,7 +23,7 @@
 import fs from 'fs';
 import { includes } from 'lodash';
 import { danger, fail, warn, message } from 'danger';
-import { props, propKeys } from './packages/bpk-tokens/tokens/base.raw.ios.json';
+import { props as iosProps, propKeys as iosPropKeys } from './packages/bpk-tokens/tokens/base.raw.ios.json';
 
 const createdFiles = danger.git.created_files;
 const modifiedFiles = danger.git.modified_files;
@@ -116,8 +116,8 @@ const androidSnapshotsWithIosTokens = fileChanges.filter((filePath) => {
     return FORMATS[type] || null;
   };
 
-  return propKeys.some((tokenName) => {
-    const token = props[tokenName];
+  return iosPropKeys.some((tokenName) => {
+    const token = iosProps[tokenName];
 
     const formattedToken = formatToken(token);
 
