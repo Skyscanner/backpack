@@ -35,10 +35,10 @@ exports[`Android BpkCard should render correctly 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 16,
+              "fontFamily": "System",
+              "fontSize": 15,
               "fontWeight": "400",
-              "lineHeight": 24,
+              "lineHeight": 20,
             },
             Object {},
           ]
@@ -200,10 +200,10 @@ exports[`Android BpkCard should render correctly with custom style 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 16,
+              "fontFamily": "System",
+              "fontSize": 15,
               "fontWeight": "400",
-              "lineHeight": 24,
+              "lineHeight": 20,
             },
             Object {},
           ]
@@ -254,10 +254,10 @@ exports[`Android BpkCard should render correctly with the "focused" state 1`] = 
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 16,
+              "fontFamily": "System",
+              "fontSize": 15,
               "fontWeight": "400",
-              "lineHeight": 24,
+              "lineHeight": 20,
             },
             Object {},
           ]
@@ -302,10 +302,10 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
           Array [
             Object {
               "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 16,
+              "fontFamily": "System",
+              "fontSize": 15,
               "fontWeight": "400",
-              "lineHeight": 24,
+              "lineHeight": 20,
             },
             Object {},
           ]
