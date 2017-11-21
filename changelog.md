@@ -15,6 +15,9 @@
 - bpk-component-button:
   - Svg's fill colour is automatically set to text colour.
 
+- bpk-component-banner-alert:
+  - Prevented `dismissButton` being constructed on non-dismissable banner-alerts to fix prop warning.
+
 ## 2017-11-17 - New native horizontal nav interface and enhancements to `bpk-animate-height`
 
 **Breaking:**

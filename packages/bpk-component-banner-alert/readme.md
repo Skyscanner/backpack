@@ -72,15 +72,15 @@ export default () => (
 
 ## Props
 
-| Property          | PropType             | Required | Default Value |
-| ----------------- | -------------------- | -------- | ------------- |
-| type              | ALERT_TYPES (one of) | true     | -             |
-| message           | node                 | true     | -             |
-| ariaLive          | ARIA_LIVE (one of)   | false    | 'assertive'   |
-| children          | node                 | false    | null          |
-| dismissable       | bool                 | false    | false         |
-| dismissLabel      | string               | false    | null          |
-| onDismiss         | func                 | false    | null          |
-| show              | bool                 | false    | true          |
-| toggleButtonLabel | string               | false    | null          |
-| className         | string               | false    | null          |
+| Property           | PropType             | Required | Default Value |
+| ------------------ | -------------------- | -------- | ------------- |
+| type               | ALERT_TYPES (one of) | true     | -             |
+| message            | node                 | true     | -             |
+| ariaLive           | ARIA_LIVE (one of)   | false    | 'assertive'   |
+| children           | node                 | false    | null          |
+| dismissable        | bool                 | false    | false         |
+| dismissButtonLabel | string               | false    | null          |
+| onDismiss          | func                 | false    | null          |
+| show               | bool                 | false    | true          |
+| toggleButtonLabel  | string               | false    | null          |
+| className          | string               | false    | null          |
