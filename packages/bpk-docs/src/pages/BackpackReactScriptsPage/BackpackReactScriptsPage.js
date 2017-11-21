@@ -54,7 +54,7 @@ npm start`}
       <Paragraph>
         <BpkCode>backpack-react-scripts</BpkCode> is designed to be used in conjunction with
         Facebook&apos;s <BpkLink href={createReactAppHref} blank>Create React App</BpkLink>.
-        It is almost identical in terms of it&apos;s feature set, apart from some custom configuration which adds
+        It is almost identical in terms of its feature set, apart from some custom configuration which adds
         support for compilation of Backpack components (Sass stylesheets etc).
       </Paragraph>,
       <Paragraph>
@@ -77,7 +77,7 @@ npm start`}
         Modern front-end development can be quite daunting. Getting started with React, es2015, Babel, Webpack and
         friends is so complex that &quot;boilerplate&quot; projects have sprung up all over GitHub. The main problem
         with these boilerplate projects is that there are literally hundreds of them making it hard to know which one
-        to pick. Additionally once you have downloaded a boilerplate project, you&apos;ve just inadvertently inherited
+        to pick. Additionally, once you have downloaded a boilerplate project, you&apos;ve just inadvertently inherited
         a whole bunch of front-end tooling technical debt. If updates are made to the boilerplate project in the future,
         how are you supposed to upgrade?
       </Paragraph>,
@@ -87,8 +87,8 @@ npm start`}
         using <BpkCode>create-react-app my-app --scripts-version=backpack-react-scripts</BpkCode>, you&apos;ll notice
         that your project&apos;s <BpkCode>package.json</BpkCode> has a dependency
         on <BpkCode>backpack-react-scripts</BpkCode>. When we release new versions going forward (i.e. support for
-        server-side rendering etc), all you need to do is bump the version number and run <BpkCode>npm install</BpkCode>
-        to reap the rewards.
+        server-side rendering etc), all you need to do is bump the version number and
+        run <BpkCode>npm install</BpkCode> to reap the rewards.
       </Paragraph>,
     ],
     examples: [],

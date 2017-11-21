@@ -39,7 +39,7 @@ const components = [
     blurb: [
       <Paragraph>
         All components are available to consume as React components, exposed as modules on the npm registry. They
-        encapsulate structure, style and logic which means that achieving a consistent look and feel across Skyscanner
+        encapsulate structure, style, and logic which means that achieving a consistent look and feel across Skyscanner
         products on web, iOS and Android is as straightforward as: installing a package, importing it in a view and
         using it in JSX. Please see the Text component
         for <BpkLink href={`${ROUTES.TYPOGRAPHY}#text-readme`} blank>web</BpkLink> and&nbsp;

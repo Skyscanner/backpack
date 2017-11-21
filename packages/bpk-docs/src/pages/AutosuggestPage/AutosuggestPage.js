@@ -193,7 +193,7 @@ const components = [
     blurb: [
       <Paragraph>
         You can insert a <BpkRouterLink to={ROUTES.ICONS}>Backpack icon</BpkRouterLink> next to each suggestion, useful
-        for differentiation e.g. between airports, cities and countries.
+        for differentiation e.g. between airports, cities, and countries.
       </Paragraph>,
     ],
     examples: [
@@ -268,7 +268,7 @@ const AutosuggestPage = () => (<DocsPageBuilder
       The Backpack autosuggest component is a lightweight wrapper
       around <BpkLink href="http://react-autosuggest.js.org/" blank>React Autosuggest</BpkLink>. It can be used to
       display suggestions for travel destinations, hotels, car hire and more - any data source can be used. Whilst you
-      have full control over suggestion rendering, Backpack provides a built in suggestion component allowing you to
+      have full control over suggestion rendering, Backpack provides a built-in suggestion component allowing you to
       display icons, sub-headings and more.
     </Paragraph>,
   ]}
