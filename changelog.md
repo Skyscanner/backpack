@@ -9,7 +9,7 @@ _Nothing yet..._
 **Added:**
 - react-native-bpk-component-card: 1.1.7 => 1.2.0
   - `innerStyle` prop enables the ability to customise inner container styling
-  - `withDivider` HOC, see http://backpack.prod.aws.skyscnr.com/components/native/cards/#with-divider
+  - `withDivider` HOC, see https://backpack.github.io/components/native/cards/#with-divider
 
 ## 2017-11-21 - Improved image positoning, dependency upgrades and interface clarifications
 
