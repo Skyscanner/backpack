@@ -84,23 +84,6 @@ ToggleButton.propTypes = {
   expanded: PropTypes.bool.isRequired,
 };
 
-const DismissButton = (props) => {
-  const { label, ...rest } = props;
-
-  return (
-    <BpkCloseButton
-      className={getClassName('bpk-banner-alert__toggle-button')}
-      aria-label={label}
-      label={label}
-      {...rest}
-    />
-  );
-};
-
-DismissButton.propTypes = {
-  label: PropTypes.string.isRequired,
-};
-
 class BpkBannerAlert extends Component {
   constructor(props) {
     super(props);
@@ -179,7 +162,12 @@ class BpkBannerAlert extends Component {
             </span>
           ) : null}
           {dismissable ? (
-            <DismissButton onClick={this.onDismiss} label={dismissButtonLabel} />
+            <BpkCloseButton
+              className={getClassName('bpk-banner-alert__toggle-button')}
+              onClick={this.onDismiss}
+              aria-label={dismissButtonLabel}
+              label={dismissButtonLabel}
+            />
           ) : null}
         </header>
         <BpkAnimateHeight duration={parseInt(durationSm, 10)} height={showChildren ? 'auto' : 0}>
