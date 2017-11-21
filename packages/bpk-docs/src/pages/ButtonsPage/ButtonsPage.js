@@ -293,7 +293,7 @@ const ButtonsPage = () => (<DocsPageBuilder
   title="Buttons"
   blurb={[
     <Paragraph>
-      On this page you’ll find examples and information on how to use the button component. If you provide an href, an
+      On this page, you’ll find examples and information on how to use the button component. If you provide an href, an
       anchor tag is rendered instead.
     </Paragraph>,
   ]}

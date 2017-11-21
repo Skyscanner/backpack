@@ -82,7 +82,7 @@ const components = [
   {
     id: 'without-padding',
     title: 'Without Padding',
-    blurb: 'For full flexibility you can opt to remove the default padding and roll your own.',
+    blurb: 'For full flexibility, you can opt to remove the default padding and roll your own.',
     screenshots: [
       {
         title: 'iOS',

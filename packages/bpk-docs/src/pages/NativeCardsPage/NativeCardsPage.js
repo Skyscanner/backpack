@@ -56,7 +56,7 @@ const components = [
   {
     id: 'without-padding',
     title: 'Without Padding',
-    blurb: 'For full flexibility you can opt to remove the default padding e.g. to display full-bleed images.',
+    blurb: 'For full flexibility, you can opt to remove the default padding e.g. to display full-bleed images.',
     screenshots: [
       {
         title: 'iOS',

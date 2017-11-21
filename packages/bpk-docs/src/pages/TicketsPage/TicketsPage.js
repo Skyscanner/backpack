@@ -60,7 +60,7 @@ const components = [
   {
     id: 'without-padding',
     title: 'Without padding',
-    blurb: 'For full flexibility you can opt to remove the default padding and roll your own.',
+    blurb: 'For full flexibility, you can opt to remove the default padding and roll your own.',
     examples: [
       <BpkTicket stub="Lorem ipsum dolor sit amet." padded={false}>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum

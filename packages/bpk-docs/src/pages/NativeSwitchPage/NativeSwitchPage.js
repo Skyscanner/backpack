@@ -60,7 +60,7 @@ const NativeSwitchPage = () => (<DocsPageBuilder
   blurb={[
     <Paragraph>
       Switches allow users to toggle between two states, on or off.
-      These are often used as a replacement to radio buttons.
+      These are often used as a replacement for radio buttons.
       This component is a wrapper around the React
       Native <BpkLink href={reactNativeUrl}>Switch component</BpkLink>, therefore it supports all the
       same behaviours and properties.

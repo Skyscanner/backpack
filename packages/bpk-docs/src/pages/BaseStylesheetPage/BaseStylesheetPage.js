@@ -48,7 +48,7 @@ const BaseStylesheetPage = () => (
         <BpkListItem>
           The <BpkCode>box-sizing</BpkCode> is globally set on every element,
           including <BpkCode>*:before</BpkCode> and <BpkCode>*:after</BpkCode>,
-          to <BpkCode>border-box</BpkCode>. This ensures that the declared width of element is never
+          to <BpkCode>border-box</BpkCode>. This ensures that the declared width of an element is never
           exceeded due to padding or border.
         </BpkListItem>
         <BpkListItem>

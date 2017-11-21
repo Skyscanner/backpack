@@ -78,7 +78,7 @@ const AirlinesContent = () => (
     <CheckboxWrapper>
       <BpkCheckbox
         name="bmi-regional"
-        label="bmi regional"
+        label="BMI regional"
         onChange={() => null}
         checked
       />

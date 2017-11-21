@@ -44,7 +44,7 @@ const components = [
   {
     id: 'without-padding',
     title: 'Without padding',
-    blurb: 'For full flexibility you can opt to remove the default padding e.g. to display full-bleed images.',
+    blurb: 'For full flexibility, you can opt to remove the default padding e.g. to display full-bleed images.',
     examples: [
       <BpkCard padded={false}>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
