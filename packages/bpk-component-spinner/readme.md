@@ -34,3 +34,7 @@ export default () => (
 | Property      | PropType | Required | Default Value |
 | ------------- | -------- | -------- | ------------- |
 | alignToButton | bool     | false    | false         |
+
+## Theme Props
+
+* `spinnerPrimaryColor`
