@@ -1093,9 +1093,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -1105,22 +1103,16 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "alignItems": "center",
-              "display": "flex",
-              "flexDirection": "row",
-              "height": "100%",
-              "justifyContent": "center",
-              "width": 32,
-            },
-          ]
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": 32,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View>
           <Text
@@ -1149,6 +1141,22 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -1279,9 +1287,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -1291,22 +1297,16 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "alignItems": "center",
-              "display": "flex",
-              "flexDirection": "row",
-              "height": "100%",
-              "justifyContent": "center",
-              "width": 32,
-            },
-          ]
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": 32,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View>
           <Text
@@ -1335,6 +1335,22 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -1465,9 +1481,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -1477,22 +1491,16 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "alignItems": "center",
-              "display": "flex",
-              "flexDirection": "row",
-              "height": "100%",
-              "justifyContent": "center",
-              "width": 32,
-            },
-          ]
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": 32,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View>
           <Text
@@ -1521,6 +1529,22 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -1651,9 +1675,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -1663,22 +1685,16 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "alignItems": "center",
-              "display": "flex",
-              "flexDirection": "row",
-              "height": "100%",
-              "justifyContent": "center",
-              "width": 32,
-            },
-          ]
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "width": 32,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View>
           <Text
@@ -1707,6 +1723,22 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -1770,9 +1802,7 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -1782,20 +1812,14 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "display": "flex",
-              "flexDirection": "row",
-              "flexGrow": 1,
-              "minHeight": 30,
-            },
-          ]
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "minHeight": 30,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -1891,6 +1915,22 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -1970,9 +2010,7 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -1982,20 +2020,14 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "display": "flex",
-              "flexDirection": "row",
-              "flexGrow": 1,
-              "minHeight": 30,
-            },
-          ]
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "minHeight": 30,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -2091,6 +2123,22 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -2170,9 +2218,7 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -2182,20 +2228,14 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "display": "flex",
-              "flexDirection": "row",
-              "flexGrow": 1,
-              "minHeight": 30,
-            },
-          ]
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "minHeight": 30,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -2291,6 +2331,22 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -2370,9 +2426,7 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -2382,20 +2436,14 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "display": "flex",
-              "flexDirection": "row",
-              "flexGrow": 1,
-              "minHeight": 30,
-            },
-          ]
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "minHeight": 30,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -2491,6 +2539,22 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -2575,9 +2639,7 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -2587,20 +2649,14 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "display": "flex",
-              "flexDirection": "row",
-              "flexGrow": 1,
-              "minHeight": 30,
-            },
-          ]
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "minHeight": 30,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -2696,6 +2752,22 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -2775,9 +2847,7 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -2787,20 +2857,14 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "display": "flex",
-              "flexDirection": "row",
-              "flexGrow": 1,
-              "minHeight": 30,
-            },
-          ]
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "minHeight": 30,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -2896,6 +2960,22 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -2975,9 +3055,7 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -2987,20 +3065,14 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "display": "flex",
-              "flexDirection": "row",
-              "flexGrow": 1,
-              "minHeight": 30,
-            },
-          ]
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "minHeight": 30,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -3096,6 +3168,22 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -3175,9 +3263,7 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -3187,20 +3273,14 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "display": "flex",
-              "flexDirection": "row",
-              "flexGrow": 1,
-              "minHeight": 30,
-            },
-          ]
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "minHeight": 30,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -3296,6 +3376,22 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -3380,9 +3476,7 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -3392,20 +3486,14 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "display": "flex",
-              "flexDirection": "row",
-              "flexGrow": 1,
-              "minHeight": 30,
-            },
-          ]
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "minHeight": 30,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -3501,6 +3589,22 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -3580,9 +3684,7 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -3592,20 +3694,14 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "display": "flex",
-              "flexDirection": "row",
-              "flexGrow": 1,
-              "minHeight": 30,
-            },
-          ]
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "minHeight": 30,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -3701,6 +3797,22 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -3780,9 +3892,7 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -3792,20 +3902,14 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "display": "flex",
-              "flexDirection": "row",
-              "flexGrow": 1,
-              "minHeight": 30,
-            },
-          ]
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "minHeight": 30,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -3901,6 +4005,22 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View
@@ -3980,9 +4100,7 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
         accessibilityLabel={null}
         accessibilityTraits={undefined}
         accessible={true}
-        hasTVPreferredFocus={undefined}
         hitSlop={undefined}
-        isTVSelectable={true}
         nativeID={undefined}
         onLayout={undefined}
         onResponderGrant={[Function]}
@@ -3992,20 +4110,14 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-            },
-            Object {
-              "display": "flex",
-              "flexDirection": "row",
-              "flexGrow": 1,
-              "minHeight": 30,
-            },
-          ]
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "minHeight": 30,
+          }
         }
         testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -4101,6 +4213,22 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
             
           </Text>
         </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
       </View>
     </View>
     <View

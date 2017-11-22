@@ -18,14 +18,11 @@
 
 import {
   View,
-  Platform,
   StyleSheet,
   ViewPropTypes,
-  TouchableHighlight,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { setOpacity } from 'bpk-tokens';
 import {
   borderRadiusSm,
   borderSizeSm,
@@ -39,20 +36,13 @@ import {
   spacingMd,
   spacingSm,
   spacingXl,
-  underlayColor,
-  underlayOpacity,
 } from 'bpk-tokens/tokens/base.react.native';
 import BpkText from 'react-native-bpk-component-text';
 import BpkIcon from 'react-native-bpk-component-icon';
 import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
+import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
 import { dismissablePropType } from './customPropTypes';
-
-// Slight darkness to use when buttons are pressed in.
-const underlay = Platform.select({
-  ios: () => setOpacity(underlayColor, underlayOpacity),
-  android: () => null,
-})();
 
 export const ALERT_TYPES = {
   SUCCESS: 'success',
@@ -206,21 +196,19 @@ const BpkBannerAlert = (props) => {
     <View style={outerStyle} {...rest} >
       <View style={styles.bannerContainer} >
         {expandable ? (
-          <TouchableHighlight
+          <BpkTouchableOverlay
             accessibilityComponentType="button"
             onPress={onAction}
-            underlayColor={underlay}
             accessibilityLabel={actionButtonLabel}
             style={styles.bannerContainer}
           >
             {banner}
-          </TouchableHighlight>
+          </BpkTouchableOverlay>
         ) : banner}
         {dismissable && (
-          <TouchableHighlight
+          <BpkTouchableOverlay
             accessibilityComponentType="button"
             onPress={onAction}
-            underlayColor={underlay}
             accessibilityLabel={actionButtonLabel}
             style={styles.closeButtonContainer}
           >
@@ -231,7 +219,7 @@ const BpkBannerAlert = (props) => {
                 small
               />
             </View>
-          </TouchableHighlight>
+          </BpkTouchableOverlay>
         )}
       </View>
       <BpkAnimateHeight expanded={expanded}>

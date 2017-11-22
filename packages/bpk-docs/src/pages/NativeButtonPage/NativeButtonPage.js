@@ -34,7 +34,7 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 import { THEMING } from './../../constants/routes';
 
-const reactNativeUrl = 'https://facebook.github.io/react-native/docs/touchablehighlight.html';
+const reactNativeUrl = 'https://facebook.github.io/react-native/docs/touchablewithoutfeedback.html';
 
 const components = [
   {
@@ -132,7 +132,7 @@ const NativeTextPage = () => (<DocsPageBuilder
   blurb={[
     <Paragraph>
       The Backpack button component is for all your button pressing needs. It&#39;s a wrapper around the React
-      Native <BpkLink href={reactNativeUrl}>TouchableHighlight component</BpkLink>, therefore it supports all the
+      Native <BpkLink href={reactNativeUrl}>TouchableWithoutFeedback component</BpkLink>, therefore it supports all the
       same behaviours and properties.
     </Paragraph>,
     <Paragraph>

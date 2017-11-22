@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import { setOpacity } from 'bpk-tokens';
 import {
   colorWhite,
   colorGray100,
@@ -37,15 +36,8 @@ import {
   spacingSm,
   spacingBase,
   spacingXl,
-  underlayColor as underlayColorToken,
-  underlayOpacity,
 } from 'bpk-tokens/tokens/base.react.native';
 import { Platform, StyleSheet } from 'react-native';
-
-const underlayColor = Platform.select({
-  ios: () => setOpacity(underlayColorToken, underlayOpacity),
-  android: () => null,
-})();
 
 const base = StyleSheet.create({
   container: {
@@ -197,7 +189,6 @@ const styles = {
   types,
   modifiers,
   gradientColors,
-  underlayColor,
   themeMappings,
 };
 

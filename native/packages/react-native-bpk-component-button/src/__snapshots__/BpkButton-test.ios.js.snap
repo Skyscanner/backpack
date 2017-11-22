@@ -29,9 +29,7 @@ exports[`iOS BpkButton should render correctly 1`] = `
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -42,24 +40,18 @@ exports[`iOS BpkButton should render correctly 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -105,6 +97,25 @@ exports[`iOS BpkButton should render correctly 1`] = `
         Lorem ipsum
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -138,9 +149,7 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -151,30 +160,24 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -223,6 +226,25 @@ exports[`iOS BpkButton should render correctly with type="destructive" 1`] = `
         Lorem ipsum
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -256,9 +278,7 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -269,24 +289,18 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -332,6 +346,25 @@ exports[`iOS BpkButton should render correctly with type="featured" 1`] = `
         Lorem ipsum
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -365,9 +398,7 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -378,24 +409,18 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -441,6 +466,25 @@ exports[`iOS BpkButton should render correctly with type="primary" 1`] = `
         Lorem ipsum
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -474,9 +518,7 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -487,30 +529,24 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -559,6 +595,25 @@ exports[`iOS BpkButton should render correctly with type="secondary" 1`] = `
         Lorem ipsum
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -595,9 +650,7 @@ exports[`iOS BpkButton should support elements as icons 1`] = `
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -608,27 +661,21 @@ exports[`iOS BpkButton should support elements as icons 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "paddingHorizontal": 0,
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "paddingHorizontal": 0,
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -652,6 +699,25 @@ exports[`iOS BpkButton should support elements as icons 1`] = `
         foo
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -685,9 +751,7 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -698,24 +762,18 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -801,6 +859,25 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
         
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -837,9 +914,7 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -850,27 +925,21 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "paddingHorizontal": 0,
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "paddingHorizontal": 0,
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -918,6 +987,25 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
         
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -953,9 +1041,7 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -966,24 +1052,18 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -1029,6 +1109,25 @@ exports[`iOS BpkButton should support overwriting styles 1`] = `
         Lorem ipsum
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -1064,9 +1163,7 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -1077,27 +1174,21 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "borderColor": "transparent",
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -1147,6 +1238,25 @@ exports[`iOS BpkButton should support the "disabled" property 1`] = `
         Lorem ipsum
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -1183,9 +1293,7 @@ exports[`iOS BpkButton should support the "icon" and "large" property 1`] = `
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -1196,28 +1304,22 @@ exports[`iOS BpkButton should support the "icon" and "large" property 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "minHeight": 48,
-              "paddingHorizontal": 16,
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "minHeight": 48,
+            "paddingHorizontal": 16,
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -1302,6 +1404,25 @@ exports[`iOS BpkButton should support the "icon" and "large" property 1`] = `
         
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -1341,9 +1462,7 @@ exports[`iOS BpkButton should support the "iconOnly" and "large" property 1`] = 
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -1354,31 +1473,25 @@ exports[`iOS BpkButton should support the "iconOnly" and "large" property 1`] = 
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "minHeight": 48,
-              "paddingHorizontal": 16,
-            },
-            Object {
-              "paddingHorizontal": 0,
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "minHeight": 48,
+            "paddingHorizontal": 16,
+          },
+          Object {
+            "paddingHorizontal": 0,
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -1424,6 +1537,25 @@ exports[`iOS BpkButton should support the "iconOnly" and "large" property 1`] = 
         
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -1460,9 +1592,7 @@ exports[`iOS BpkButton should support the "large" and secondary property 1`] = `
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -1473,34 +1603,28 @@ exports[`iOS BpkButton should support the "large" and secondary property 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "borderColor": "rgb(230, 228, 235)",
-              "borderWidth": 2,
-              "paddingHorizontal": 10,
-              "paddingVertical": 6,
-            },
-            Object {
-              "minHeight": 48,
-              "paddingHorizontal": 14,
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 2,
+            "paddingHorizontal": 10,
+            "paddingVertical": 6,
+          },
+          Object {
+            "minHeight": 48,
+            "paddingHorizontal": 14,
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -1551,6 +1675,25 @@ exports[`iOS BpkButton should support the "large" and secondary property 1`] = `
         Lorem ipsum
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -1587,9 +1730,7 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -1600,28 +1741,22 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-            Object {
-              "minHeight": 48,
-              "paddingHorizontal": 16,
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "minHeight": 48,
+            "paddingHorizontal": 16,
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -1669,6 +1804,25 @@ exports[`iOS BpkButton should support the "large" property 1`] = `
         Lorem ipsum
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
@@ -1702,9 +1856,7 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
       ]
     }
     accessible={true}
-    hasTVPreferredFocus={undefined}
     hitSlop={undefined}
-    isTVSelectable={true}
     nativeID={undefined}
     onLayout={undefined}
     onResponderGrant={[Function]}
@@ -1715,24 +1867,18 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
         Array [
-          Array [
-            Object {
-              "borderRadius": 40,
-              "height": 32,
-              "paddingHorizontal": 12,
-              "paddingVertical": 8,
-            },
-          ],
-          Object {},
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
         ],
+        Object {},
       ]
     }
     testID={undefined}
-    tvParallaxProperties={undefined}
   >
     <View
       style={
@@ -1780,6 +1926,25 @@ exports[`iOS BpkButtonThemed should render correctly 1`] = `
         Lorem ipsum
       </Text>
     </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
   </View>
 </View>
 `;
