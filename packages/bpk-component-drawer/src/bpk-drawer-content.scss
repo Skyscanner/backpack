@@ -19,20 +19,23 @@
 @import '~bpk-mixins/index';
 
 .bpk-drawer {
-  float: right;
+  position: fixed;
+  right: 0;
   z-index: $bpk-zindex-drawer;
   width: 90%;
-  max-width: 400 * $bpk-one-pixel-rem;
-  min-height: 100%;
+  max-width: 67 * $bpk-spacing-xs;
+  height: 100%;
   transform: translate(100%);
   transition: transform $bpk-duration-sm ease;
   outline: 0;
   background: $bpk-color-white;
+  overflow-y: scroll;
 
   @include bpk-box-shadow-xl;
 
   @include bpk-rtl {
-    float: left;
+    right: auto;
+    left: 0;
     transform: translate(-100%);
   }
 
@@ -60,12 +63,10 @@
 
   &__header {
     display: flex;
-    padding: $bpk-spacing-base;
+    padding: $bpk-spacing-sm;
     justify-content: space-between;
 
-    @include bpk-breakpoint-above-mobile {
-      padding: $bpk-spacing-lg;
-    }
+    @include bpk-border-bottom-sm($bpk-color-gray-100);
   }
 
   &__heading {
@@ -87,10 +88,6 @@
   }
 
   &__content {
-    padding: 0 $bpk-spacing-base $bpk-spacing-base;
-
-    @include bpk-breakpoint-above-mobile {
-      padding: 0 $bpk-spacing-lg $bpk-spacing-lg;
-    }
+    padding: $bpk-spacing-sm;
   }
 }
