@@ -41,3 +41,12 @@ export default () => (
 | children | -        | true     | -             |
 | onClick  | func     | true     | -             |
 | white    | bool     | false    | false         |
+
+## Theme props
+
+For both BpkLink and BpkLinkButton the following theme attributes are required.
+
+* `linkTextColor`
+* `linkHoverColor`
+* `linkActiveColor`
+* `linkVisitedColor`

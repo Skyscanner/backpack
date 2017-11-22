@@ -19,6 +19,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
+import themeAttributes from './themeAttributes';
 
 import STYLES from './bpk-link.scss';
 
@@ -56,4 +57,5 @@ BpkButtonLink.defaultProps = {
   white: false,
 };
 
+export { themeAttributes };
 export default BpkButtonLink;

@@ -478,23 +478,26 @@
   padding: 0;
   border: 0;
   background-color: transparent;
-  color: $bpk-link-color;
   text-decoration: $bpk-link-text-decoration;
   cursor: pointer;
   appearance: none;
 
+  @include bpk-themeable-property(color, --bpk-link-color, $bpk-link-color);
+
   @include bpk-hover {
-    color: $bpk-link-hover-color;
     text-decoration: $bpk-link-hover-text-decoration;
+
+    @include bpk-themeable-property(color, --bpk-link-hover-color, $bpk-link-hover-color);
   }
 
   &:visited {
-    color: $bpk-link-visited-color;
+    @include bpk-themeable-property(color, --bpk-link-visited-color, $bpk-link-visited-color);
   }
 
   &:active {
-    color: $bpk-link-active-color;
     text-decoration: $bpk-link-hover-text-decoration;
+
+    @include bpk-themeable-property(color, --bpk-link-active-color, $bpk-link-active-color);
   }
 }
 

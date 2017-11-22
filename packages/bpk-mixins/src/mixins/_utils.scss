@@ -169,6 +169,22 @@
   }
 }
 
+/// Create a Backpack themeable property with
+/// fallback support for old browsers and when
+/// the CSS variable is not defined.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @bpk-themeable-property(color, --bpk-link-text-color, $fallback-text-color);
+///   }
+
+@mixin bpk-themeable-property($property, $variableName, $fallback) {
+  #{$property}: $fallback;
+  #{$property}: var($variableName, $fallback);
+}
+
 /// Replace part of a string with another string.
 ///
 /// @param {string} $string - The string inside which the replacement should take place.

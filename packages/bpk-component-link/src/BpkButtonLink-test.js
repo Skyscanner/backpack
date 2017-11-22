@@ -18,7 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import BpkButtonLink from './BpkButtonLink';
+import BpkButtonLink, { themeAttributes } from './BpkButtonLink';
 
 describe('BpkButtonLink', () => {
   it('should render correctly', () => {
@@ -41,5 +41,11 @@ describe('BpkButtonLink', () => {
   it('should render correctly with arbitrary attributes', () => {
     const tree = renderer.create(<BpkButtonLink onClick={() => null} id="test-id">Link</BpkButtonLink>).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  describe('themeAttributes', () => {
+    it('exports the expected themeAttributes', () => {
+      expect(themeAttributes).toEqual(['linkColor', 'linkHoverColor', 'linkActiveColor', 'linkVisitedColor']);
+    });
   });
 });

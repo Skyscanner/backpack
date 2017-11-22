@@ -18,7 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import BpkLink from './BpkLink';
+import BpkLink, { themeAttributes } from './BpkLink';
 
 describe('BpkLink', () => {
   it('should render correctly with a "href" attribute', () => {
@@ -44,5 +44,11 @@ describe('BpkLink', () => {
   it('should render correctly with arbitrary attributes', () => {
     const tree = renderer.create(<BpkLink href="#" id="test-id">Link</BpkLink>).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  describe('themeAttributes', () => {
+    it('exports the expected themeAttributes', () => {
+      expect(themeAttributes).toEqual(['linkColor', 'linkHoverColor', 'linkActiveColor', 'linkVisitedColor']);
+    });
   });
 });
