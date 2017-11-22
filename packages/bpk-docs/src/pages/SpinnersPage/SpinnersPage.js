@@ -37,9 +37,9 @@ const components = [
     title: 'Small',
     examples: [
       <SpinnerLayout>
-        <BpkSpinner />
-        <BpkSpinner type={SPINNER_TYPES.light} />
+        <BpkSpinner type={SPINNER_TYPES.primary} />
         <BpkSpinner type={SPINNER_TYPES.dark} />
+        <BpkSpinner type={SPINNER_TYPES.light} />
       </SpinnerLayout>,
     ],
   },
@@ -48,9 +48,9 @@ const components = [
     title: 'Large',
     examples: [
       <SpinnerLayout>
-        <BpkLargeSpinner />
-        <BpkLargeSpinner type={SPINNER_TYPES.light} />
+        <BpkLargeSpinner type={SPINNER_TYPES.primary} />
         <BpkLargeSpinner type={SPINNER_TYPES.dark} />
+        <BpkLargeSpinner type={SPINNER_TYPES.light} />
       </SpinnerLayout>,
     ],
   },
@@ -59,9 +59,9 @@ const components = [
     title: 'Extra large',
     examples: [
       <SpinnerLayout>
-        <BpkExtraLargeSpinner />
-        <BpkExtraLargeSpinner type={SPINNER_TYPES.light} />
+        <BpkExtraLargeSpinner type={SPINNER_TYPES.primary} />
         <BpkExtraLargeSpinner type={SPINNER_TYPES.dark} />
+        <BpkExtraLargeSpinner type={SPINNER_TYPES.light} />
       </SpinnerLayout>,
     ],
   },

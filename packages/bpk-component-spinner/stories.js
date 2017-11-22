@@ -26,22 +26,22 @@ import { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner, SPINNER_TYPES } from
 storiesOf('bpk-component-spinner', module)
   .add('Small', () => (
     <SpinnerLayout>
-      <BpkSpinner />
-      <BpkSpinner type={SPINNER_TYPES.light} />
+      <BpkSpinner type={SPINNER_TYPES.primary} />
       <BpkSpinner type={SPINNER_TYPES.dark} />
+      <BpkSpinner type={SPINNER_TYPES.light} />
     </SpinnerLayout>
   ))
   .add('Large', () => (
     <SpinnerLayout>
-      <BpkLargeSpinner />
-      <BpkLargeSpinner type={SPINNER_TYPES.light} />
+      <BpkLargeSpinner type={SPINNER_TYPES.primary} />
       <BpkLargeSpinner type={SPINNER_TYPES.dark} />
+      <BpkLargeSpinner type={SPINNER_TYPES.light} />
     </SpinnerLayout>
   ))
   .add('Extra large', () => (
     <SpinnerLayout>
-      <BpkExtraLargeSpinner />
-      <BpkExtraLargeSpinner type={SPINNER_TYPES.light} />
+      <BpkExtraLargeSpinner type={SPINNER_TYPES.primary} />
       <BpkExtraLargeSpinner type={SPINNER_TYPES.dark} />
+      <BpkExtraLargeSpinner type={SPINNER_TYPES.light} />
     </SpinnerLayout>
   ));

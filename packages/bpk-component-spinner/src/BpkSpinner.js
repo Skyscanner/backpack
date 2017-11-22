@@ -49,7 +49,7 @@ BpkSpinner.propTypes = {
 };
 
 BpkSpinner.defaultProps = {
-  type: SPINNER_TYPES.primary,
+  type: SPINNER_TYPES.dark,
   className: null,
   alignToButton: false,
 };

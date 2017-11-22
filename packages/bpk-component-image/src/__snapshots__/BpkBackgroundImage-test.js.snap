@@ -14,7 +14,7 @@ exports[`BpkBackgroundImage should have inView behavior 1`] = `
     className="bpk-background-image__spinner bpk-background-image__spinner--hide"
   >
     <svg
-      className="bpk-spinner"
+      className="bpk-spinner bpk-spinner--dark"
       height="18"
       viewBox="0 0 18 18"
       width="18"
@@ -137,7 +137,7 @@ exports[`BpkBackgroundImage should have loading behavior 1`] = `
     className="bpk-background-image__spinner"
   >
     <svg
-      className="bpk-spinner"
+      className="bpk-spinner bpk-spinner--dark"
       height="18"
       viewBox="0 0 18 18"
       width="18"
@@ -250,7 +250,7 @@ exports[`BpkBackgroundImage should render correctly 1`] = `
     className="bpk-background-image__spinner bpk-background-image__spinner--hide"
   >
     <svg
-      className="bpk-spinner"
+      className="bpk-spinner bpk-spinner--dark"
       height="18"
       viewBox="0 0 18 18"
       width="18"

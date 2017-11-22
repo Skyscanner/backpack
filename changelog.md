@@ -2,10 +2,6 @@
 
 ## UNRELEASED
 
-**Breaking:**
-- bpk-component-spinner:
-  - Default spinner color is now blue-500
-
 **Added:**
 - bpk-component-spinner:
   - New `type` prop. Options are `primary`, `light` or `dark`
