@@ -15,34 +15,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import React from 'react';
 import PropTypes from 'prop-types';
+import React, { Children } from 'react';
 import { cssModules } from 'bpk-react-utils';
-import XlSpinner from 'bpk-svgs/dist/js/spinners/xl';
 
-import STYLES from './bpk-spinner.scss';
-import SPINNER_TYPES from './spinnerTypes';
+import { SPINNER_TYPES } from './index';
+import STYLES from './SpinnerLayout.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkExtraLargeSpinner = (props) => {
-  const { type, className, ...rest } = props;
-  const classNames = ['bpk-spinner', 'bpk-spinner--extra-large', `bpk-spinner--${type}`].map(getClassName);
+const SpinnerLayout = ({ children }) => (
+  <div className={getClassName('bpk-spinner-layout')}>
+    {Children.map(children, (child) => {
+      const classNames = [getClassName('bpk-spinner-layout__spinner')];
 
-  if (className) { classNames.push(className); }
+      if (child.props.type === SPINNER_TYPES.light) {
+        classNames.push(getClassName('bpk-spinner-layout__spinner--light'));
+      }
 
-  return <XlSpinner className={classNames.join(' ')} {...rest} />;
+      return <div className={classNames.join(' ')}>{child}</div>;
+    })}
+  </div>
+);
+
+SpinnerLayout.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
-BpkExtraLargeSpinner.propTypes = {
-  type: PropTypes.oneOf(Object.keys(SPINNER_TYPES)),
-  className: PropTypes.string,
-};
-
-BpkExtraLargeSpinner.defaultProps = {
-  type: SPINNER_TYPES.primary,
-  className: null,
-};
-
-export default BpkExtraLargeSpinner;
+export default SpinnerLayout;

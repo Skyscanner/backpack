@@ -334,7 +334,7 @@ exports[`BpkLoadingButton should render correctly with "large" and "loading" att
   My button
    
   <svg
-    className="bpk-spinner bpk-spinner--large bpk-spinner--align-to-large-button"
+    className="bpk-spinner bpk-spinner--large bpk-spinner--primary bpk-spinner--align-to-large-button"
     height="24"
     viewBox="0 0 24 24"
     width="24"
@@ -1028,7 +1028,7 @@ exports[`BpkLoadingButton should render correctly with a "loading" attribute 1`]
   My button
    
   <svg
-    className="bpk-spinner bpk-spinner--align-to-button"
+    className="bpk-spinner bpk-spinner--dark bpk-spinner--align-to-button"
     height="18"
     viewBox="0 0 18 18"
     width="18"

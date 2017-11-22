@@ -16,8 +16,21 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins';
+@import '~bpk-mixins/index';
 
-.bpk-modal-paragraph {
-  margin-bottom: $bpk-spacing-xs;
+.bpk-spinner-layout {
+  display: flex;
+  flex-direction: column;
+
+  &__spinner {
+    display: flex;
+    padding: $bpk-spacing-base;
+    justify-content: center;
+
+    &--light {
+      background-color: $bpk-color-gray-700;
+
+      @include bpk-border-radius-xs;
+    }
+  }
 }

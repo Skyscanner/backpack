@@ -17,7 +17,8 @@
  */
 
 import BpkSpinner from './src/BpkSpinner';
+import SPINNER_TYPES from './src/spinnerTypes';
 import BpkLargeSpinner from './src/BpkLargeSpinner';
 import BpkExtraLargeSpinner from './src/BpkExtraLargeSpinner';
 
-export { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner };
+export { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner, SPINNER_TYPES };

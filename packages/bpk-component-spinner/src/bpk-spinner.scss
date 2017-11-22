@@ -19,9 +19,19 @@
 @import '~bpk-mixins/index';
 
 .bpk-spinner {
-  fill: $bpk-color-gray-700;
-
   @include bpk-spinner;
+
+  &--primary {
+    fill: $bpk-color-blue-500;
+  }
+
+  &--light {
+    fill: $bpk-color-white;
+  }
+
+  &--dark {
+    fill: $bpk-color-gray-700;
+  }
 
   &--large {
     @include bpk-spinner--lg;

@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins';
-
-.bpk-modal-paragraph {
-  margin-bottom: $bpk-spacing-xs;
-}
+export default {
+  primary: 'primary',
+  light: 'light',
+  dark: 'dark',
+};

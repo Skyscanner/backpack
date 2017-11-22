@@ -17,12 +17,12 @@
  */
 
 import React from 'react';
-import { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner } from 'bpk-component-spinner';
-
 import spinnerReadme from 'bpk-component-spinner/readme.md';
+import SpinnerLayout from 'bpk-component-spinner/SpinnerLayout';
+import { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
+import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const blurb = [
   <Paragraph>
@@ -36,21 +36,33 @@ const components = [
     id: 'small',
     title: 'Small',
     examples: [
-      <BpkSpinner />,
+      <SpinnerLayout>
+        <BpkSpinner type={SPINNER_TYPES.primary} />
+        <BpkSpinner type={SPINNER_TYPES.dark} />
+        <BpkSpinner type={SPINNER_TYPES.light} />
+      </SpinnerLayout>,
     ],
   },
   {
     id: 'large',
     title: 'Large',
     examples: [
-      <BpkLargeSpinner />,
+      <SpinnerLayout>
+        <BpkLargeSpinner type={SPINNER_TYPES.primary} />
+        <BpkLargeSpinner type={SPINNER_TYPES.dark} />
+        <BpkLargeSpinner type={SPINNER_TYPES.light} />
+      </SpinnerLayout>,
     ],
   },
   {
     id: 'extra-large',
     title: 'Extra large',
     examples: [
-      <BpkExtraLargeSpinner />,
+      <SpinnerLayout>
+        <BpkExtraLargeSpinner type={SPINNER_TYPES.primary} />
+        <BpkExtraLargeSpinner type={SPINNER_TYPES.dark} />
+        <BpkExtraLargeSpinner type={SPINNER_TYPES.light} />
+      </SpinnerLayout>,
     ],
   },
 ];
