@@ -19,23 +19,20 @@
 @import '~bpk-mixins/index';
 
 .bpk-sliding-drawer {
-  position: fixed;
-  right: 0;
+  float: right;
   z-index: $bpk-zindex-sliding-drawer;
   width: 90%;
   max-width: 400 * $bpk-one-pixel-rem;
-  height: 100%;
+  min-height: 100%;
   transform: translate(100%);
   transition: transform $bpk-duration-sm ease;
   outline: 0;
   background: $bpk-color-white;
-  overflow-y: auto;
 
   @include bpk-box-shadow-xl;
 
   @include bpk-rtl {
-    right: auto;
-    left: 0;
+    float: left;
     transform: translate(-100%);
   }
 

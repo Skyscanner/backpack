@@ -52,10 +52,8 @@ class BpkSlidingDrawer extends Component {
 
     const { show } = this.state;
 
-    delete rest.onClose;
-
     return (
-      <Portal isOpen={isOpen} onClose={onClose} target={target}>
+      <Portal isOpen={isOpen} onClose={this.hide} target={target}>
         <ScrimBpkSlidingDrawerContent
           show={show}
           onClose={this.hide}

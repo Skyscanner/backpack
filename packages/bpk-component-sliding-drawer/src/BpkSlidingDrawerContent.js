@@ -30,12 +30,11 @@ const getClassName = cssModules(STYLES);
 
 const BpkSlidingDrawerContent = (props) => {
   const contentClassNames = [getClassName('bpk-sliding-drawer')];
+  const headerClassNames = [getClassName('bpk-sliding-drawer__heading')];
 
   if (props.className) {
     contentClassNames.push(props.className);
   }
-
-  const headerClassNames = [getClassName('bpk-sliding-drawer__heading')];
 
   if (props.hideTitle) {
     headerClassNames.push(getClassName('bpk-sliding-drawer__heading--visually-hidden'));
