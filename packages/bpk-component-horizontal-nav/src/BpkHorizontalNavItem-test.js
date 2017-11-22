@@ -18,7 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import BpkHorizontalNavItem from './BpkHorizontalNavItem';
+import BpkHorizontalNavItem, { themeAttributes } from './BpkHorizontalNavItem';
 
 describe('BpkHorizontalNavItem', () => {
   it('should render correctly', () => {
@@ -73,5 +73,17 @@ describe('BpkHorizontalNavItem', () => {
       </BpkHorizontalNavItem>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  describe('themeAttributes', () => {
+    it('exports the expected themeAttributes', () => {
+      expect(themeAttributes).toEqual([
+        'horizontalNavLinkColor',
+        'horizontalNavLinkHoverColor',
+        'horizontalNavLinkActiveColor',
+        'horizontalNavLinkSelectedColor',
+        'horizontalNavBarSelectedColor',
+      ]);
+    });
   });
 });

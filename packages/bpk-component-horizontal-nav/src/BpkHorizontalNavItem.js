@@ -68,4 +68,14 @@ BpkHorizontalNavItem.defaultProps = {
   href: null,
 };
 
+const themeAttributes = [
+  'horizontalNavLinkColor',
+  'horizontalNavLinkHoverColor',
+  'horizontalNavLinkActiveColor',
+  'horizontalNavLinkSelectedColor',
+  'horizontalNavBarSelectedColor',
+];
+
+export { themeAttributes };
+
 export default BpkHorizontalNavItem;

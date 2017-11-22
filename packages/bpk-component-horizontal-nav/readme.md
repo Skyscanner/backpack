@@ -41,3 +41,11 @@ export default () => (
 | spaceAround | bool     | false    | false         |
 | selected    | bool     | false    | false         |
 | href        | string   | false    | null          |
+
+## Theme Props
+
+* `horizontalNavLinkColor`,
+* `horizontalNavLinkHoverColor`,
+* `horizontalNavLinkActiveColor`,
+* `horizontalNavLinkSelectedColor`,
+* `horizontalNavBarSelectedColor`,

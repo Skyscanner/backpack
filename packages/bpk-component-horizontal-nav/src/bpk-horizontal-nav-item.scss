@@ -36,33 +36,34 @@
     border: 0;
     border-radius: 0;
     background: none;
-    color: $bpk-link-color;
     text-decoration: none;
     cursor: pointer;
 
-    @include bpk-hover {
-      color: $bpk-link-hover-color;
+    @include bpk-themeable-property(color, --bpk-horizontal-nav-link-color, $bpk-link-color);
 
+    @include bpk-hover {
       @include bpk-border-bottom-xl($bpk-color-gray-100);
+      @include bpk-themeable-property(color, --bpk-horizontal-nav-link-hover-color, $bpk-link-hover-color);
     }
 
     &:active {
-      color: $bpk-link-active-color;
-
       @include bpk-border-bottom-xl($bpk-color-gray-200);
+      @include bpk-themeable-property(color, --bpk-horizontal-nav-link-active-color, $bpk-link-active-color);
     }
 
     &--selected {
-      color: $bpk-font-color-base;
-
       @include bpk-border-bottom-xl($bpk-state-selected-background-color);
+      @include bpk-border-bottom-xl(var(--bpk-horizontal-nav-bar-selected-color, $bpk-state-selected-background-color));
+      @include bpk-themeable-property(color, --bpk-horizontal-nav-link-selected-color, $bpk-font-color-base);
 
       @include bpk-hover {
         @include bpk-border-bottom-xl($bpk-state-selected-background-color);
+        @include bpk-border-bottom-xl(var(--bpk-horizontal-nav-bar-selected-color, $bpk-state-selected-background-color));
       }
 
       &:active {
         @include bpk-border-bottom-xl($bpk-state-selected-background-color);
+        @include bpk-border-bottom-xl(var(--bpk-horizontal-nav-bar-selected-color, $bpk-state-selected-background-color));
       }
     }
   }
