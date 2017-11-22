@@ -41,5 +41,5 @@ export default class App extends Component {
 | Property            | PropType        | Required | Default Value |
 | -----------         | --------------- | -------- | ------------- |
 | children            | node            | true     | -             |
-| theme               | object          | true     | -             |
+| theme               | object          | false    | null          |
 | themeAttributes     | arrayOf(string) | true     | -             |

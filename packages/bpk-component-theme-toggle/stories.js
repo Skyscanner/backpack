@@ -19,22 +19,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { updateOnThemeChange } from 'bpk-component-theme-toggle';
+import BpkThemeToggle from './index';
 
-import BpkThemeProvider from './index';
-import BpkThemeableText, {
-  themeAttributes as buttonThemeAttributes,
-} from './bpk-themeable-text/BpkThemeableText';
-
-const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
-
-const BpkThemePicker = () => (
-  <EnhancedThemeProvider themeAttributes={[...buttonThemeAttributes]}>
-    <BpkThemeableText>Hello world</BpkThemeableText>
-  </EnhancedThemeProvider>
-);
-
-storiesOf('bpk-theming', module)
-  .add('Default', () => (
-    <BpkThemePicker />
+storiesOf('bpk-component-theme-toggle', module)
+  .add('Example', () => (
+    <BpkThemeToggle />
   ));

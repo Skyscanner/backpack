@@ -5,6 +5,9 @@
 **Added:**
 - bpk-theming:
   - New web theming utility, see https://backpack.github.io/components/utilities/theming
+- bpk-component-theme-toggle:
+  - New component to help switching themes on the fly
+
 
 ## 2017-11-23 - Fix accidental breaking change in web spinners
 

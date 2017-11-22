@@ -17,24 +17,20 @@
  */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import renderer from 'react-test-renderer';
+import BpkThemeToggle from './BpkThemeToggle';
 
-import { updateOnThemeChange } from 'bpk-component-theme-toggle';
+describe('BpkThemeToggle', () => {
+  it('should render correctly', () => {
+    const tree = renderer.create(<BpkThemeToggle />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-import BpkThemeProvider from './index';
-import BpkThemeableText, {
-  themeAttributes as buttonThemeAttributes,
-} from './bpk-themeable-text/BpkThemeableText';
-
-const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
-
-const BpkThemePicker = () => (
-  <EnhancedThemeProvider themeAttributes={[...buttonThemeAttributes]}>
-    <BpkThemeableText>Hello world</BpkThemeableText>
-  </EnhancedThemeProvider>
-);
-
-storiesOf('bpk-theming', module)
-  .add('Default', () => (
-    <BpkThemePicker />
-  ));
+  it('should render correctly when clicked', () => {
+    const component = renderer.create(<BpkThemeToggle />);
+    let tree = component.toJSON();
+    tree.props.onClick({ preventDefault: () => null });
+    tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});

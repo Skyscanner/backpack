@@ -21,13 +21,19 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkRtlToggle from 'bpk-component-rtl-toggle';
 import BpkGridToggle from 'bpk-component-grid-toggle';
+import BpkThemeToggle, { updateOnThemeChange } from 'bpk-component-theme-toggle';
+import BpkThemeProvider from 'bpk-theming';
+
 import { PropTypes as RouterPropTypes } from 'react-router';
 import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
 import { cssModules } from 'bpk-react-utils';
 
+import themeAttributes from './../../themeableAttributes';
+
 import STYLES from './default-layout.scss';
 import Header from '../../components/Header';
 
+const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 const getClassName = cssModules(STYLES);
 
 class DefaultLayout extends Component {
@@ -61,7 +67,7 @@ class DefaultLayout extends Component {
     const { children } = this.props;
 
     return (
-      <div>
+      <EnhancedThemeProvider themeAttributes={[...themeAttributes]}>
         <Helmet titleTemplate="%s | Backpack" />
         <Header
           expanded={this.state.headerExpanded}
@@ -83,12 +89,12 @@ class DefaultLayout extends Component {
                     .join(' ')
                 }
               >
-                <BpkGridToggle /> | <BpkRtlToggle />
+                <BpkGridToggle /> | <BpkRtlToggle /> | <BpkThemeToggle />
               </small>
             </BpkGridColumn>
           </BpkGridRow>
         </BpkGridContainer>
-      </div>
+      </EnhancedThemeProvider>
     );
   }
 }

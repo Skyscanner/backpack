@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkThemeToggle should render correctly 1`] = `
+<button
+  className="bpk-link"
+  onClick={[Function]}
+  title="Switch Theme"
+  type="button"
+>
+  Switch Theme
+</button>
+`;
+
+exports[`BpkThemeToggle should render correctly when clicked 1`] = `
+<button
+  className="bpk-link"
+  onClick={[Function]}
+  title="Switch Theme"
+  type="button"
+>
+  Switch Theme
+</button>
+`;

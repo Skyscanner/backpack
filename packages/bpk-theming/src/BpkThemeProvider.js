@@ -19,7 +19,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const uniq = (arr) => {
+const uniq = (arr = []) => {
   const seen = {};
   return arr.filter(((item) => {
     if (seen.hasOwnProperty[item]) {
@@ -31,6 +31,9 @@ const uniq = (arr) => {
 };
 
 const createStyle = (theme, themeAttributes) => {
+  if (!theme) {
+    return {};
+  }
   const flattenedThemeAttributes = [].concat(...themeAttributes);
   let style = {};
   const missingThemeAttributes = [];
@@ -65,7 +68,9 @@ const BpkThemeProvider = (props) => {
 const themeAttributesPropType = (props, propName, componentName) => {
   const { theme } = props;
   let { themeAttributes } = props;
-
+  if (!theme) {
+    return null;
+  }
   // Validate types.
   if (!themeAttributes) {
     return new Error(`${componentName}: \`themeAttributes\` is required.`);
@@ -99,9 +104,12 @@ const themeAttributesPropType = (props, propName, componentName) => {
 
 BpkThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,
-  theme: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   themeAttributes: themeAttributesPropType, // eslint-disable-line react/require-default-props
   // (disabled because isRequired is inside the custom validator)
+};
+BpkThemeProvider.defaultProps = {
+  theme: null,
 };
 
 export default BpkThemeProvider;
