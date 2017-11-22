@@ -19,11 +19,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import BpkSlidingDrawerContent from './BpkSlidingDrawerContent';
+import BpkDrawerContent from './BpkDrawerContent';
 
 jest.mock('react-transition-group/Transition', () => ({ children }) => children('entered'));
 
-describe('BpkSlidingDrawerContent', () => {
+describe('BpkDrawerContent', () => {
   let closeEvents;
 
   beforeAll(() => {
@@ -39,7 +39,7 @@ describe('BpkSlidingDrawerContent', () => {
 
   it('should render correctly', () => {
     const tree = renderer.create(
-      <BpkSlidingDrawerContent
+      <BpkDrawerContent
         id="my-drawer"
         title="Drawer title"
         onClose={jest.fn()}
@@ -50,14 +50,14 @@ describe('BpkSlidingDrawerContent', () => {
         isIphone={false}
       >
         Drawer content
-      </BpkSlidingDrawerContent>,
+      </BpkDrawerContent>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly when it has a className', () => {
     const tree = renderer.create(
-      <BpkSlidingDrawerContent
+      <BpkDrawerContent
         id="my-drawer"
         className="my-classname"
         title="Drawer title"
@@ -69,14 +69,14 @@ describe('BpkSlidingDrawerContent', () => {
         isIphone={false}
       >
         Drawer content
-      </BpkSlidingDrawerContent>,
+      </BpkDrawerContent>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with hideTitle', () => {
     const tree = renderer.create(
-      <BpkSlidingDrawerContent
+      <BpkDrawerContent
         id="my-drawer"
         title="Drawer title"
         onClose={jest.fn()}
@@ -87,7 +87,7 @@ describe('BpkSlidingDrawerContent', () => {
         hideTitle
       >
         Drawer content
-      </BpkSlidingDrawerContent>,
+      </BpkDrawerContent>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

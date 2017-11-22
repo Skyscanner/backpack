@@ -1,7 +1,7 @@
 {
-  "name": "bpk-component-sliding-drawer",
+  "name": "bpk-component-drawer",
   "version": "0.0.1",
-  "description": "Backpack sliding drawer component.",
+  "description": "Backpack drawer component.",
   "main": "index.js",
   "private": true,
   "repository": {

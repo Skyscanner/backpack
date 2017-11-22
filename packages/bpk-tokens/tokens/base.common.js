@@ -378,5 +378,5 @@ module.exports = {
   zindexModalScrim: "1000",
   zindexScrim: "1000",
   zindexModal: "1100",
-  zindexSlidingDrawer: "1100"
+  zindexDrawer: "1100"
 };

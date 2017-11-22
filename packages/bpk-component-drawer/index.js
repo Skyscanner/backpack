@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import BpkSlidingDrawer from './src/BpkSlidingDrawer';
+import BpkDrawer from './src/BpkDrawer';
 
-export default BpkSlidingDrawer;
+export default BpkDrawer;

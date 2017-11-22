@@ -60,6 +60,7 @@ configure(() => {
   require('./../packages/bpk-component-code/stories');
   require('./../packages/bpk-component-content-container/stories');
   require('./../packages/bpk-component-datepicker/stories');
+  require('./../packages/bpk-component-drawer/stories');
   require('./../packages/bpk-component-fieldset/stories');
   require('./../packages/bpk-component-form-validation/stories');
   require('./../packages/bpk-component-grid/stories');
@@ -85,7 +86,6 @@ configure(() => {
   require('./../packages/bpk-component-rtl-toggle/stories');
   require('./../packages/bpk-component-select/stories');
   require('./../packages/bpk-component-slider/stories');
-  require('./../packages/bpk-component-sliding-drawer/stories');
   require('./../packages/bpk-component-spinner/stories');
   require('./../packages/bpk-component-star-rating/stories');
   require('./../packages/bpk-component-table/stories');

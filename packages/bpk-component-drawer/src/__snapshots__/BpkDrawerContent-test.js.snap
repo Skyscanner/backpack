@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BpkSlidingDrawerContent should render correctly 1`] = `
+exports[`BpkDrawerContent should render correctly 1`] = `
 <section
-  aria-labelledby="bpk-sliding-drawer-heading-my-drawer"
-  className="bpk-sliding-drawer bpk-sliding-drawer--entered"
+  aria-labelledby="bpk-drawer-heading-my-drawer"
+  className="bpk-drawer bpk-drawer--entered"
   id="my-drawer"
   onMouseDown={[Function]}
   onMouseMove={[Function]}
@@ -15,18 +15,18 @@ exports[`BpkSlidingDrawerContent should render correctly 1`] = `
   tabIndex="-1"
 >
   <header
-    className="bpk-sliding-drawer__header"
+    className="bpk-drawer__header"
   >
     <h2
-      className="bpk-sliding-drawer__heading"
-      id="bpk-sliding-drawer-heading-my-drawer"
+      className="bpk-drawer__heading"
+      id="bpk-drawer-heading-my-drawer"
     >
       Drawer title
     </h2>
      
     <button
       aria-label="Close"
-      className="bpk-close-button bpk-sliding-drawer__close-button"
+      className="bpk-close-button bpk-drawer__close-button"
       onClick={[Function]}
       title="Close"
       type="button"
@@ -62,17 +62,17 @@ exports[`BpkSlidingDrawerContent should render correctly 1`] = `
     </button>
   </header>
   <div
-    className="bpk-sliding-drawer__content"
+    className="bpk-drawer__content"
   >
     Drawer content
   </div>
 </section>
 `;
 
-exports[`BpkSlidingDrawerContent should render correctly when it has a className 1`] = `
+exports[`BpkDrawerContent should render correctly when it has a className 1`] = `
 <section
-  aria-labelledby="bpk-sliding-drawer-heading-my-drawer"
-  className="bpk-sliding-drawer my-classname bpk-sliding-drawer--entered"
+  aria-labelledby="bpk-drawer-heading-my-drawer"
+  className="bpk-drawer my-classname bpk-drawer--entered"
   id="my-drawer"
   onMouseDown={[Function]}
   onMouseMove={[Function]}
@@ -84,18 +84,18 @@ exports[`BpkSlidingDrawerContent should render correctly when it has a className
   tabIndex="-1"
 >
   <header
-    className="bpk-sliding-drawer__header"
+    className="bpk-drawer__header"
   >
     <h2
-      className="bpk-sliding-drawer__heading"
-      id="bpk-sliding-drawer-heading-my-drawer"
+      className="bpk-drawer__heading"
+      id="bpk-drawer-heading-my-drawer"
     >
       Drawer title
     </h2>
      
     <button
       aria-label="Close"
-      className="bpk-close-button bpk-sliding-drawer__close-button"
+      className="bpk-close-button bpk-drawer__close-button"
       onClick={[Function]}
       title="Close"
       type="button"
@@ -131,17 +131,17 @@ exports[`BpkSlidingDrawerContent should render correctly when it has a className
     </button>
   </header>
   <div
-    className="bpk-sliding-drawer__content"
+    className="bpk-drawer__content"
   >
     Drawer content
   </div>
 </section>
 `;
 
-exports[`BpkSlidingDrawerContent should render correctly with hideTitle 1`] = `
+exports[`BpkDrawerContent should render correctly with hideTitle 1`] = `
 <section
-  aria-labelledby="bpk-sliding-drawer-heading-my-drawer"
-  className="bpk-sliding-drawer bpk-sliding-drawer--entered"
+  aria-labelledby="bpk-drawer-heading-my-drawer"
+  className="bpk-drawer bpk-drawer--entered"
   id="my-drawer"
   onMouseDown={[Function]}
   onMouseMove={[Function]}
@@ -153,18 +153,18 @@ exports[`BpkSlidingDrawerContent should render correctly with hideTitle 1`] = `
   tabIndex="-1"
 >
   <header
-    className="bpk-sliding-drawer__header"
+    className="bpk-drawer__header"
   >
     <h2
-      className="bpk-sliding-drawer__heading bpk-sliding-drawer__heading--visually-hidden"
-      id="bpk-sliding-drawer-heading-my-drawer"
+      className="bpk-drawer__heading bpk-drawer__heading--visually-hidden"
+      id="bpk-drawer-heading-my-drawer"
     >
       Drawer title
     </h2>
      
     <button
       aria-label="Close"
-      className="bpk-close-button bpk-sliding-drawer__close-button"
+      className="bpk-close-button bpk-drawer__close-button"
       onClick={[Function]}
       title="Close"
       type="button"
@@ -200,7 +200,7 @@ exports[`BpkSlidingDrawerContent should render correctly with hideTitle 1`] = `
     </button>
   </header>
   <div
-    className="bpk-sliding-drawer__content"
+    className="bpk-drawer__content"
   >
     Drawer content
   </div>

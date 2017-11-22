@@ -285,7 +285,7 @@
     "ZINDEX_MODAL": {
       "value": "1100"
     },
-    "ZINDEX_SLIDING_DRAWER": {
+    "ZINDEX_DRAWER": {
       "value": "1100"
     }
   },
@@ -3317,14 +3317,14 @@
       },
       "name": "ZINDEX_MODAL"
     },
-    "ZINDEX_SLIDING_DRAWER": {
+    "ZINDEX_DRAWER": {
       "type": "number",
       "category": "z-indices",
       "value": "1100",
       ".alias": {
         "value": "1100"
       },
-      "name": "ZINDEX_SLIDING_DRAWER"
+      "name": "ZINDEX_DRAWER"
     }
   },
   "propKeys": [
@@ -3687,6 +3687,6 @@
     "ZINDEX_MODAL_SCRIM",
     "ZINDEX_SCRIM",
     "ZINDEX_MODAL",
-    "ZINDEX_SLIDING_DRAWER"
+    "ZINDEX_DRAWER"
   ]
 }

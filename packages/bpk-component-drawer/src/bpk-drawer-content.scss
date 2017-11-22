@@ -18,9 +18,9 @@
 
 @import '~bpk-mixins/index';
 
-.bpk-sliding-drawer {
+.bpk-drawer {
   float: right;
-  z-index: $bpk-zindex-sliding-drawer;
+  z-index: $bpk-zindex-drawer;
   width: 90%;
   max-width: 400 * $bpk-one-pixel-rem;
   min-height: 100%;

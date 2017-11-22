@@ -28,8 +28,8 @@
     "ZINDEX_MODAL": {
       "value": "{!ZINDEX_MODAL}"
     },
-    "ZINDEX_SLIDING_DRAWER": {
-      "value": "{!ZINDEX_SLIDING_DRAWER}"
+    "ZINDEX_DRAWER": {
+      "value": "{!ZINDEX_DRAWER}"
     }
   }
 }

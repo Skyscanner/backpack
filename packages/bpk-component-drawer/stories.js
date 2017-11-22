@@ -24,7 +24,7 @@ import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
 import BpkText from 'bpk-component-text';
 
-import BpkSlidingDrawer from './index';
+import BpkDrawer from './index';
 
 import STYLES from './stories.scss';
 
@@ -35,7 +35,7 @@ const Paragraph = withDefaultProps(
   {
     textStyle: 'base',
     tagName: 'p',
-    className: getClassName('bpk-sliding-drawer-paragraph'),
+    className: getClassName('bpk-drawer-paragraph'),
   },
 );
 
@@ -111,7 +111,7 @@ class DrawerContainer extends Component {
             ipsum, non sodales ante placerat in. Suspendisse malesuada auctor erat, vel pulvinar erat dignissim vitae.
           </Paragraph>
         </div>
-        <BpkSlidingDrawer
+        <BpkDrawer
           id="my-drawer"
           className="my-classname"
           isOpen={this.state.isOpen}
@@ -127,7 +127,7 @@ DrawerContainer.propTypes = {
   buttonText: PropTypes.string.isRequired,
 };
 
-storiesOf('bpk-component-sliding-drawer', module)
+storiesOf('bpk-component-drawer', module)
   .add('Default', () => (
     <DrawerContainer
       title="Drawer title"

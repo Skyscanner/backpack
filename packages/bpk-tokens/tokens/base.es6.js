@@ -376,7 +376,7 @@ export const zindexTooltip = "900";
 export const zindexModalScrim = "1000";
 export const zindexScrim = "1000";
 export const zindexModal = "1100";
-export const zindexSlidingDrawer = "1100";
+export const zindexDrawer = "1100";
 export const animations = {
 durationXs,
 durationSm,
@@ -793,5 +793,5 @@ zindexTooltip,
 zindexModalScrim,
 zindexScrim,
 zindexModal,
-zindexSlidingDrawer,
+zindexDrawer,
 };

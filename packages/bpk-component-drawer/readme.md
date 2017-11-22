@@ -1,18 +1,18 @@
-# bpk-component-sliding-drawer
+# bpk-component-drawer
 
-> Backpack sliding drawer component.
+> Backpack drawer component.
 
 ## Installation
 
 ```sh
-npm install bpk-component-sliding-drawer --save-dev
+npm install bpk-component-drawer --save-dev
 ```
 
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import BpkSlidingDrawer from 'bpk-component-sliding-drawer';
+import BpkDrawer from 'bpk-component-drawer';
 import BpkButton from 'bpk-component-button';
 
 class App extends Component {
@@ -45,7 +45,7 @@ class App extends Component {
         <div id="application-container">
           <BpkButton onClick={this.onOpen}>Open drawer</BpkButton>
         </div>
-        <BpkSlidingDrawer
+        <BpkDrawer
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           title="Drawer title"
@@ -55,7 +55,7 @@ class App extends Component {
           }
         >
           This is a drawer. You can put anything you want in here.
-        </BpkSlidingDrawer>
+        </BpkDrawer>
       </div>
     );
   }

@@ -21,11 +21,11 @@ import React, { Component } from 'react';
 import { Portal } from 'bpk-react-utils';
 import { withScrim } from 'bpk-scrim-utils';
 
-import BpkSlidingDrawerContent from './BpkSlidingDrawerContent';
+import BpkDrawerContent from './BpkDrawerContent';
 
-const ScrimBpkSlidingDrawerContent = withScrim(BpkSlidingDrawerContent);
+const ScrimBpkDrawerContent = withScrim(BpkDrawerContent);
 
-class BpkSlidingDrawer extends Component {
+class BpkDrawer extends Component {
   constructor() {
     super();
 
@@ -54,7 +54,7 @@ class BpkSlidingDrawer extends Component {
 
     return (
       <Portal isOpen={isOpen} onClose={this.hide} target={target}>
-        <ScrimBpkSlidingDrawerContent
+        <ScrimBpkDrawerContent
           show={show}
           onClose={this.hide}
           onExited={this.onExited}
@@ -65,14 +65,14 @@ class BpkSlidingDrawer extends Component {
   }
 }
 
-BpkSlidingDrawer.propTypes = {
+BpkDrawer.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   target: PropTypes.element,
 };
 
-BpkSlidingDrawer.defaultProps = {
+BpkDrawer.defaultProps = {
   target: null,
 };
 
-export default BpkSlidingDrawer;
+export default BpkDrawer;

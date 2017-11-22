@@ -24,23 +24,23 @@ import { cssModules } from 'bpk-react-utils';
 import { BpkButtonLink } from 'bpk-component-link';
 import BpkCloseButton from 'bpk-component-close-button';
 
-import STYLES from './bpk-sliding-drawer-content.scss';
+import STYLES from './bpk-drawer-content.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkSlidingDrawerContent = (props) => {
-  const contentClassNames = [getClassName('bpk-sliding-drawer')];
-  const headerClassNames = [getClassName('bpk-sliding-drawer__heading')];
+const BpkDrawerContent = (props) => {
+  const contentClassNames = [getClassName('bpk-drawer')];
+  const headerClassNames = [getClassName('bpk-drawer__heading')];
 
   if (props.className) {
     contentClassNames.push(props.className);
   }
 
   if (props.hideTitle) {
-    headerClassNames.push(getClassName('bpk-sliding-drawer__heading--visually-hidden'));
+    headerClassNames.push(getClassName('bpk-drawer__heading--visually-hidden'));
   }
 
-  const headingId = `bpk-sliding-drawer-heading-${props.id}`;
+  const headingId = `bpk-drawer-heading-${props.id}`;
 
   return (
     <Transition
@@ -61,11 +61,11 @@ const BpkSlidingDrawerContent = (props) => {
           role="dialog"
           key="dialog"
           aria-labelledby={headingId}
-          className={[contentClassNames.join(' '), getClassName(`bpk-sliding-drawer--${status}`)].join(' ')}
+          className={[contentClassNames.join(' '), getClassName(`bpk-drawer--${status}`)].join(' ')}
           ref={props.getDialogRef}
           {...props.closeEvents}
         >
-          <header className={getClassName('bpk-sliding-drawer__header')}>
+          <header className={getClassName('bpk-drawer__header')}>
             <h2 id={headingId} className={headerClassNames.join(' ')}>
               {props.title}
             </h2>
@@ -73,13 +73,13 @@ const BpkSlidingDrawerContent = (props) => {
             {props.closeText
               ? <BpkButtonLink onClick={props.onClose}>{props.closeText}</BpkButtonLink>
               : <BpkCloseButton
-                className={getClassName('bpk-sliding-drawer__close-button')}
+                className={getClassName('bpk-drawer__close-button')}
                 label={props.closeLabel}
                 onClick={props.onClose}
               />
             }
           </header>
-          <div className={getClassName('bpk-sliding-drawer__content')}>
+          <div className={getClassName('bpk-drawer__content')}>
             {props.children}
           </div>
         </section>
@@ -88,7 +88,7 @@ const BpkSlidingDrawerContent = (props) => {
   );
 };
 
-BpkSlidingDrawerContent.propTypes = {
+BpkDrawerContent.propTypes = {
   getDialogRef: PropTypes.func.isRequired,
   closeEvents: PropTypes.shape({
     onTouchStart: PropTypes.func,
@@ -110,7 +110,7 @@ BpkSlidingDrawerContent.propTypes = {
   hideTitle: PropTypes.bool,
 };
 
-BpkSlidingDrawerContent.defaultProps = {
+BpkDrawerContent.defaultProps = {
   className: null,
   closeLabel: null,
   closeText: null,
@@ -118,4 +118,4 @@ BpkSlidingDrawerContent.defaultProps = {
   hideTitle: false,
 };
 
-export default BpkSlidingDrawerContent;
+export default BpkDrawerContent;
