@@ -22,12 +22,19 @@ import { cssModules } from 'bpk-react-utils';
 import SmSpinner from 'bpk-svgs/dist/js/spinners/sm';
 
 import STYLES from './bpk-spinner.scss';
+import SPINNER_TYPES from './spinnerTypes';
 
 const getClassName = cssModules(STYLES);
 
 const BpkSpinner = (props) => {
-  const classNames = [getClassName('bpk-spinner')];
-  const { className, alignToButton, ...rest } = props;
+  const {
+    type,
+    className,
+    alignToButton,
+    ...rest
+  } = props;
+
+  const classNames = ['bpk-spinner', `bpk-spinner--${type}`].map(getClassName);
 
   if (alignToButton) { classNames.push(getClassName('bpk-spinner--align-to-button')); }
   if (className) { classNames.push(className); }
@@ -36,11 +43,13 @@ const BpkSpinner = (props) => {
 };
 
 BpkSpinner.propTypes = {
+  type: PropTypes.oneOf(Object.keys(SPINNER_TYPES)),
   className: PropTypes.string,
   alignToButton: PropTypes.bool,
 };
 
 BpkSpinner.defaultProps = {
+  type: SPINNER_TYPES.primary,
   className: null,
   alignToButton: false,
 };

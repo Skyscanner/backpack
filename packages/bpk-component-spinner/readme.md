@@ -12,37 +12,22 @@ npm install bpk-component-spinner --save-dev
 
 ```js
 import React from 'react';
-import { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner } from 'bpk-component-spinner';
-
-import './spinners.scss';
+import { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner, SPINNER_TYPES } from 'bpk-component-spinner';
 
 export default () => (
   <div>
-    <BpkSpinner className="abc-spinner" />
-    <BpkLargeSpinner className="abc-spinner--large" />
-    <BpkExtraLargeSpinner className="abc-spinner--extra-large" />
+    <BpkSpinner />
+    <BpkLargeSpinner type={SPINNER_TYPES.light} />
+    <BpkExtraLargeSpinner type={SPINNER_TYPES.dark} />
   </div>
 );
 ```
 
-*spinners.scss:*
-```scss
-@import '~bpk-mixins';
-
-.abc-spinner {
-  fill: $bpk-color-white;
-
-  &--large {
-    fill: $bpk-color-blue-500;
-  }
-
-  &--extra-large {
-    fill: $bpk-color-gray-700;
-  }
-}
-```
-
 ## Props
+
+| Property | PropType                          | Required | Default Value       |
+| -------- | --------------------------------- | -------- | ------------------- |
+| type     | oneOf('primary', 'light', 'dark') | false    | 'primary'           |
 
 > `BpkSpinner` & `BpkLargeSpinner` only
 

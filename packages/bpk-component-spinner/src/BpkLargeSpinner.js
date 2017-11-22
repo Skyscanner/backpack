@@ -22,12 +22,19 @@ import { cssModules } from 'bpk-react-utils';
 import LgSpinner from 'bpk-svgs/dist/js/spinners/lg';
 
 import STYLES from './bpk-spinner.scss';
+import SPINNER_TYPES from './spinnerTypes';
 
 const getClassName = cssModules(STYLES);
 
 const BpkLargeSpinner = (props) => {
-  const classNames = ['bpk-spinner', 'bpk-spinner--large'].map(getClassName);
-  const { className, alignToButton, ...rest } = props;
+  const {
+    type,
+    className,
+    alignToButton,
+    ...rest
+  } = props;
+
+  const classNames = ['bpk-spinner', 'bpk-spinner--large', `bpk-spinner--${type}`].map(getClassName);
 
   if (alignToButton) { classNames.push(getClassName('bpk-spinner--align-to-large-button')); }
   if (className) { classNames.push(className); }
@@ -36,11 +43,13 @@ const BpkLargeSpinner = (props) => {
 };
 
 BpkLargeSpinner.propTypes = {
+  type: PropTypes.oneOf(Object.keys(SPINNER_TYPES)),
   className: PropTypes.string,
   alignToButton: PropTypes.bool,
 };
 
 BpkLargeSpinner.defaultProps = {
+  type: SPINNER_TYPES.primary,
   className: null,
   alignToButton: false,
 };

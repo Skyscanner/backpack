@@ -18,11 +18,23 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import BpkSpinner from './BpkSpinner';
+import SPINNER_TYPES from './spinnerTypes';
 
 describe('BpkSpinner', () => {
   it('should render correctly', () => {
     const tree = renderer.create(<BpkSpinner />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with type as light', () => {
+    const tree = renderer.create(<BpkSpinner type={SPINNER_TYPES.light} />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with type as dark', () => {
+    const tree = renderer.create(<BpkSpinner type={SPINNER_TYPES.dark} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
