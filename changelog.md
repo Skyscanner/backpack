@@ -29,6 +29,10 @@
   - New web theming utility, see https://backpack.github.io/components/utilities/theming
 - bpk-component-theme-toggle: 1.0.0
   - New component to help switching themes on the fly
+- bpk-mixins:
+  - Adds `$bpk-zindex-drawer`
+- bpk-tokens:
+  - Adds value for drawer z-index.
 
 ## 2017-11-23 - Fix accidental breaking change in web spinners
 
