@@ -13,23 +13,20 @@ npm install bpk-theming --save-dev
 ```js
 import BpkThemeProvider from 'bpk-theming';
 
-import BpkButton, {themeAttributes as buttonThemeAttributes} from 'bpk-component-button';
+import BpkLink, {themeAttributes as linkThemeAttributes} from 'bpk-component-link';
 
 const theme = {
-  buttonPrimaryGradientStartColor: '#fce134',
-  buttonPrimaryGradientEndColor: '#f8c42d',
-  buttonPrimaryTextColor: '#2d244c',
-  buttonSecondaryBackgroundColor: '#fff',
-  buttonSecondaryTextColor: '#2d244c',
-  buttonSecondaryBorderColor: '#2d244c',
+  linkTextColor: '#c00',
+  linkHoverColor: '#d00',
+  linkActiveColor: '#a00',
+  linkVisitedColor: '#800',
 };
 
 export default class App extends Component {
   render() {
     return (
-      <BpkThemeProvider theme={theme} themeAttributes={[...buttonThemeAttributes]}>
-        <BpkButton type="primary" onClick={() => {}}>Primary</BpkButton>
-        <BpkButton type="secondary" onClick={() => {}}>Secondary</BpkButton>
+      <BpkThemeProvider theme={theme} themeAttributes={[...linkThemeAttributes]}>
+        <BpkLink onClick={() => {}}>Book flight</BpkLink>
       </BpkThemeProvider>
     );
   }
