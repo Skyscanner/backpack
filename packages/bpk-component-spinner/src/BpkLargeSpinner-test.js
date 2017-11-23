@@ -33,8 +33,8 @@ describe('BpkLargeSpinner', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with type as dark', () => {
-    const tree = renderer.create(<BpkLargeSpinner type={SPINNER_TYPES.dark} />).toJSON();
+  it('should render correctly with type as primary', () => {
+    const tree = renderer.create(<BpkLargeSpinner type={SPINNER_TYPES.primary} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
