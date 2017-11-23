@@ -34,7 +34,6 @@ const getClassName = cssModules(STYLES);
 
 const headerLinks = [
   { to: ROUTES.USING_BACKPACK, children: 'Using Backpack' },
-  { to: ROUTES.STYLE, children: 'Style' },
   { to: ROUTES.TOKENS, children: 'Tokens' },
   { to: ROUTES.COMPONENTS, children: 'Components' },
   { to: ROUTES.RESOURCES, children: 'Resources' },
