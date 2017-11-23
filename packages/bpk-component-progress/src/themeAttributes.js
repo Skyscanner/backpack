@@ -16,8 +16,4 @@
  * limitations under the License.
  */
 
-import BpkProgress from './src/BpkProgress';
-import themeAttributes from './src/themeAttributes';
-
-export default BpkProgress;
-export { themeAttributes };
+export default ['progressBarFillColor'];
