@@ -258,9 +258,9 @@ exports[`BpkSpinner should render correctly with a "className" attribute 1`] = `
 </svg>
 `;
 
-exports[`BpkSpinner should render correctly with type as dark 1`] = `
+exports[`BpkSpinner should render correctly with type as light 1`] = `
 <svg
-  className="bpk-spinner bpk-spinner--dark"
+  className="bpk-spinner bpk-spinner--light"
   height="18"
   viewBox="0 0 18 18"
   width="18"
@@ -344,9 +344,9 @@ exports[`BpkSpinner should render correctly with type as dark 1`] = `
 </svg>
 `;
 
-exports[`BpkSpinner should render correctly with type as light 1`] = `
+exports[`BpkSpinner should render correctly with type as primary 1`] = `
 <svg
-  className="bpk-spinner bpk-spinner--light"
+  className="bpk-spinner bpk-spinner--primary"
   height="18"
   viewBox="0 0 18 18"
   width="18"
