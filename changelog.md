@@ -2,6 +2,7 @@
 
 ## UNRELEASED
 
+**Added:**
 - bpk-theming:
   - New web theming utility, see https://backpack.github.io/components/utilities/theming
 
