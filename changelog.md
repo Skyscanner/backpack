@@ -2,18 +2,21 @@
 
 ## UNRELEASED
 
-**Added:**
-- bpk-component-spinner:
-  - New `type` prop. Options are `primary`, `light` or `dark`
 - bpk-theming:
-  - New `BpkTheming` utility, see https://backpack.github.io/components/utilities/theming.
-  
+  - New web theming utility, see https://backpack.github.io/components/utilities/theming
+
+## 2017-11-23 - Web spinners can now be primary, light or dark
+
+**Added:**
+- bpk-component-spinner: 2.1.38 => 2.2.0
+  - New `type` prop. Options are `primary`, `light` or `dark`
+
 **Fixed:**
-- react-native-bpk-banner-alert:
-- react-native-bpk-button:
-- react-native-bpk-horizontal-nav:
- - Replaced `TouchableHighlight` with `BpkTouchableOverlay`.
-  
+- react-native-bpk-component-banner-alert: 1.1.9 => 1.1.10
+- react-native-bpk-component-button: 4.2.6 => 4.2.7
+- react-native-bpk-component-horizontal-nav: 2.0.1 => 2.0.2
+  - Replaced `TouchableHighlight` with `BpkTouchableOverlay`.
+
 ## 2017-11-21 - React Native cards can now have a dividing line
 
 **Added:**
