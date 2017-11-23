@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-image",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Backpack image component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-spinner": "^2.2.0",
+    "bpk-component-spinner": "^2.2.1",
     "bpk-mixins": "^17.0.15",
     "bpk-react-utils": "^2.3.8",
     "prop-types": "^15.5.8",
