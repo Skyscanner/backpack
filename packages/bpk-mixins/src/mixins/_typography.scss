@@ -671,12 +671,14 @@
   color: $bpk-color-gray-500;
 
   @include bpk-border-left-lg($bpk-color-blue-500);
+  @include bpk-border-left-lg(var(--bpk-blockquote-bar-color, $bpk-color-blue-500));
 
   @include bpk-rtl {
     padding: $bpk-spacing-xs $bpk-spacing-md $bpk-spacing-xs $bpk-spacing-xs;
     border-left: 0;
 
     @include bpk-border-right-lg($bpk-color-blue-500);
+    @include bpk-border-right-lg(var(--bpk-blockquote-bar-color, $bpk-color-blue-500));
   }
 
   > *:last-child {

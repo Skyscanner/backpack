@@ -40,4 +40,3 @@ describe('BpkBlockquote', () => {
     expect(tree).toMatchSnapshot();
   });
 });
-

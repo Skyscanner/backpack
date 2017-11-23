@@ -29,3 +29,7 @@ export default () => (
 | ----------- | -------- | -------- | ------------- |
 | children    | -        | true     | -             |
 | extraSpace  | bool     | false    | false         |
+
+## Theme Props
+
+* `blockquoteBarColor`
