@@ -20,6 +20,10 @@ import {
 } from 'bpk-tokens/tokens/base.es6';
 
 const bpkCustomTheme = {
+  accordionActiveColor: '#1a1331',
+  accordionColor: '#461963',
+  accordionHoverColor: '#2d244c',
+
   barchartBarBackgroundColorNormal: '#865f9e',
   barchartBarBackgroundColorHover: '#461962',
   barchartBarBackgroundColorActive: '#2d244c',

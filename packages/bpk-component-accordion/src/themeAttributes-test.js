@@ -16,10 +16,14 @@
  * limitations under the License.
  */
 
-import BpkAccordion from './src/BpkAccordion';
-import BpkAccordionItem from './src/BpkAccordionItem';
-import withSingleItemAccordionState from './src/withSingleItemAccordionState';
-import withAccordionItemState from './src/withAccordionItemState';
-import themeAttributes from './src/themeAttributes';
+import themeAttributes from './themeAttributes';
 
-export { BpkAccordion, BpkAccordionItem, withSingleItemAccordionState, withAccordionItemState, themeAttributes };
+describe('themeAttributes', () => {
+  it('should export the expected themeAttributes', () => {
+    expect(themeAttributes).toEqual([
+      'accordionColor',
+      'accordionHoverColor',
+      'accordionActiveColor',
+    ]);
+  });
+});

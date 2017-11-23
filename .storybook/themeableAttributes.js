@@ -20,9 +20,10 @@ import { primaryThemeAttributes, secondaryThemeAttributes } from './../packages/
 
 /* eslint-disable global-require */
 export default {
-  'bpk-component-button': [...primaryThemeAttributes, ...secondaryThemeAttributes],
+  'bpk-component-accordion': require('./../packages/bpk-component-accordion').themeAttributes,
+  'bpk-component-barchart': require('./../packages/bpk-component-barchart').themeAttributes,
   'bpk-component-blockquote': require('./../packages/bpk-component-blockquote').themeAttributes,
+  'bpk-component-button': [...primaryThemeAttributes, ...secondaryThemeAttributes],
   'bpk-component-horizontal-nav': require('./../packages/bpk-component-horizontal-nav').themeAttributes,
   'bpk-component-spinner': require('./../packages/bpk-component-spinner').themeAttributes,
-  'bpk-component-barchart': require('./../packages/bpk-component-barchart').themeAttributes,
 };

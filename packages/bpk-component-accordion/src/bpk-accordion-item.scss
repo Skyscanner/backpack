@@ -28,21 +28,22 @@
     padding: $bpk-spacing-xs 0;
     border: 0;
     background-color: transparent;
-    color: $bpk-link-color;
     text-align: left;
     cursor: pointer;
     appearance: none;
+
+    @include bpk-themeable-property(color, --bpk-accordion-color, $bpk-link-color);
 
     @include bpk-rtl {
       text-align: right;
     }
 
     @include bpk-hover {
-      color: $bpk-link-hover-color;
+      @include bpk-themeable-property(color, --bpk-accordion-hover-color, $bpk-link-hover-color);
     }
 
     &:active {
-      color: $bpk-link-active-color;
+      @include bpk-themeable-property(color, --bpk-accordion-active-color, $bpk-link-active-color);
     }
   }
 
@@ -62,14 +63,14 @@
   }
 
   &__item-expand-icon {
-    fill: $bpk-link-color;
+    @include bpk-themeable-property(fill, --bpk-accordion-color, $bpk-link-color);
 
     @include bpk-hover {
-      fill: $bpk-link-hover-color;
+      @include bpk-themeable-property(fill, --bpk-accordion-hover-color, $bpk-link-hover-color);
     }
 
     &:active {
-      fill: $bpk-link-active-color;
+      @include bpk-themeable-property(fill, --bpk-accordion-active-color, $bpk-link-active-color);
     }
 
     &--flipped {
