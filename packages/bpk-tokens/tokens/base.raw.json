@@ -570,10 +570,31 @@
       "category": "buttons",
       "value": "linear-gradient(-180deg, #00d775 0%, #00bd68 100%)",
       "type": "background-image",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": "#00bd68"
       },
       "name": "BUTTON_BACKGROUND_IMAGE"
+    },
+    "BUTTON_GRADIENT_START_COLOR": {
+      "category": "buttons",
+      "value": "rgb(0, 215, 117)",
+      "type": "color",
+      ".alias": {
+        "value": "#00d775"
+      },
+      "name": "BUTTON_GRADIENT_START_COLOR"
+    },
+    "BUTTON_GRADIENT_END_COLOR": {
+      "category": "buttons",
+      "value": "rgb(0, 189, 104)",
+      "type": "color",
+      ".alias": {
+        "value": "#00bd68"
+      },
+      "name": "BUTTON_GRADIENT_END_COLOR"
     },
     "BUTTON_HOVER_BACKGROUND_COLOR": {
       "category": "buttons",
@@ -852,6 +873,9 @@
       "category": "buttons",
       "value": "0 0 0 2px #E6E4EB inset",
       "type": "box-shadow",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": "#E6E4EB"
       },
@@ -861,6 +885,9 @@
       "category": "buttons",
       "value": "0 0 0 2px #00b2d6 inset",
       "type": "box-shadow",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": "#00b2d6"
       },
@@ -870,10 +897,40 @@
       "category": "buttons",
       "value": "0 0 0 3px #00b2d6 inset",
       "type": "box-shadow",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": "#00b2d6"
       },
       "name": "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW"
+    },
+    "BUTTON_SECONDARY_BORDER_COLOR": {
+      "category": "buttons",
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
+      "name": "BUTTON_SECONDARY_BORDER_COLOR"
+    },
+    "BUTTON_SECONDARY_HOVER_BORDER_COLOR": {
+      "category": "buttons",
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      ".alias": {
+        "value": "#00b2d6"
+      },
+      "name": "BUTTON_SECONDARY_HOVER_BORDER_COLOR"
+    },
+    "BUTTON_SECONDARY_ACTIVE_BORDER_COLOR": {
+      "category": "buttons",
+      "value": "rgb(0, 178, 214)",
+      "type": "color",
+      ".alias": {
+        "value": "#00b2d6"
+      },
+      "name": "BUTTON_SECONDARY_ACTIVE_BORDER_COLOR"
     },
     "BUTTON_SECONDARY_DISABLED_BOX_SHADOW": {
       "category": "buttons",
@@ -3222,6 +3279,8 @@
     "BUTTON_BORDER_RADIUS_LG",
     "BUTTON_BACKGROUND_COLOR",
     "BUTTON_BACKGROUND_IMAGE",
+    "BUTTON_GRADIENT_START_COLOR",
+    "BUTTON_GRADIENT_END_COLOR",
     "BUTTON_HOVER_BACKGROUND_COLOR",
     "BUTTON_HOVER_BACKGROUND_IMAGE",
     "BUTTON_ACTIVE_BACKGROUND_COLOR",
@@ -3260,6 +3319,9 @@
     "BUTTON_SECONDARY_BOX_SHADOW",
     "BUTTON_SECONDARY_HOVER_BOX_SHADOW",
     "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW",
+    "BUTTON_SECONDARY_BORDER_COLOR",
+    "BUTTON_SECONDARY_HOVER_BORDER_COLOR",
+    "BUTTON_SECONDARY_ACTIVE_BORDER_COLOR",
     "BUTTON_SECONDARY_DISABLED_BOX_SHADOW",
     "BUTTON_DESTRUCTIVE_COLOR",
     "BUTTON_DESTRUCTIVE_BOX_SHADOW",

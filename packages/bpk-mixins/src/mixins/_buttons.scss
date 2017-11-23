@@ -37,8 +37,8 @@
   border: 0;
   border-radius: $bpk-button-border-radius;
   background-color: $bpk-button-background-color;
-  background-image: $bpk-button-background-image;
-  color: $bpk-button-color;
+  background-image: linear-gradient(-180deg, $bpk-button-gradient-start-color 0%, $bpk-button-gradient-end-color 100%);
+  background-image: linear-gradient(-180deg, var(--bpk-button-primary-gradient-start-color, $bpk-button-gradient-start-color) 0%, var(--bpk-button-primary-gradient-end-color, $bpk-button-gradient-end-color) 100%);
   font-size: $bpk-button-font-size;
   font-weight: $bpk-button-font-weight;
   line-height: $bpk-button-line-height;
@@ -49,18 +49,22 @@
   vertical-align: middle;
   user-select: none;
 
+  @include bpk-themeable-property(color, --bpk-button-primary-text-color, $bpk-button-color);
+
   @include bpk-hover {
-    background-color: $bpk-button-hover-background-color;
     background-image: $bpk-button-hover-background-image;
     color: $bpk-button-hover-color;
     box-shadow: $bpk-button-hover-box-shadow;
+
+    @include bpk-themeable-property(background-color, --bpk-button-primary-hover-background-color, $bpk-button-hover-background-color);
   }
 
   &:active {
-    background-color: $bpk-button-active-background-color;
     background-image: $bpk-button-active-background-image;
     color: $bpk-button-active-color;
     box-shadow: $bpk-button-active-box-shadow;
+
+    @include bpk-themeable-property(background-color, --bpk-button-primary-active-background-color, $bpk-button-active-background-color);
   }
 
   &:disabled {
@@ -100,23 +104,31 @@
 ///   }
 
 @mixin bpk-button--secondary {
-  background-color: $bpk-button-secondary-background-color;
   background-image: $bpk-button-secondary-background-image;
-  color: $bpk-button-secondary-color;
-  box-shadow: $bpk-button-secondary-box-shadow;
+
+  @include bpk-themeable-property(color, --bpk-button-secondary-text-color, $bpk-button-secondary-color);
+  @include bpk-themeable-property(background-color, --bpk-button-secondary-background-color, $bpk-button-secondary-background-color);
+  @include bpk-border-lg($bpk-button-secondary-border-color);
+  @include bpk-border-lg(var(--bpk-button-secondary-border-color, $bpk-button-secondary-border-color));
 
   @include bpk-hover {
-    background-color: $bpk-button-secondary-hover-background-color;
     background-image: $bpk-button-secondary-hover-background-image;
-    color: $bpk-button-secondary-hover-color;
     box-shadow: $bpk-button-secondary-hover-box-shadow;
+
+    @include bpk-themeable-property(color, --bpk-button-secondary-hover-text-color, $bpk-button-secondary-hover-color);
+    @include bpk-themeable-property(background-color, --bpk-button-secondary-hover-background-color, $bpk-button-secondary-hover-background-color);
+    @include bpk-border-lg($bpk-button-secondary-hover-border-color);
+    @include bpk-border-lg(var(--bpk-button-secondary-hover-border-color, $bpk-button-secondary-hover-border-color));
   }
 
   &:active {
-    background-color: $bpk-button-secondary-active-background-color;
     background-image: $bpk-button-secondary-active-background-image;
-    color: $bpk-button-secondary-active-color;
     box-shadow: $bpk-button-secondary-active-box-shadow;
+
+    @include bpk-themeable-property(color, --bpk-button-secondary-active-text-color, $bpk-button-secondary-active-color);
+    @include bpk-themeable-property(background-color, --bpk-button-secondary-active-background-color, $bpk-button-secondary-active-background-color);
+    @include bpk-border-xl($bpk-button-secondary-active-border-color);
+    @include bpk-border-xl(var(--bpk-button-secondary-active-border-color, $bpk-button-secondary-active-border-color));
   }
 
   &:disabled {

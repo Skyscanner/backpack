@@ -52,6 +52,8 @@ export const buttonBorderRadius = "1.125rem";
 export const buttonBorderRadiusLg = "1.3125rem";
 export const buttonBackgroundColor = "rgb(0, 215, 117)";
 export const buttonBackgroundImage = "linear-gradient(-180deg, #00d775 0%, #00bd68 100%)";
+export const buttonGradientStartColor = "rgb(0, 215, 117)";
+export const buttonGradientEndColor = "rgb(0, 189, 104)";
 export const buttonHoverBackgroundColor = "rgb(0, 189, 104)";
 export const buttonHoverBackgroundImage = "none";
 export const buttonActiveBackgroundColor = "rgb(0, 168, 93)";
@@ -90,6 +92,9 @@ export const buttonSecondaryDisabledColor = "rgb(178, 174, 189)";
 export const buttonSecondaryBoxShadow = "0 0 0 2px #E6E4EB inset";
 export const buttonSecondaryHoverBoxShadow = "0 0 0 2px #00b2d6 inset";
 export const buttonSecondaryActiveBoxShadow = "0 0 0 3px #00b2d6 inset";
+export const buttonSecondaryBorderColor = "rgb(230, 228, 235)";
+export const buttonSecondaryHoverBorderColor = "rgb(0, 178, 214)";
+export const buttonSecondaryActiveBorderColor = "rgb(0, 178, 214)";
 export const buttonSecondaryDisabledBoxShadow = "none";
 export const buttonDestructiveColor = "rgb(255, 84, 82)";
 export const buttonDestructiveBoxShadow = "0 0 0 2px #E6E4EB inset";
@@ -413,6 +418,8 @@ buttonBorderRadius,
 buttonBorderRadiusLg,
 buttonBackgroundColor,
 buttonBackgroundImage,
+buttonGradientStartColor,
+buttonGradientEndColor,
 buttonHoverBackgroundColor,
 buttonHoverBackgroundImage,
 buttonActiveBackgroundColor,
@@ -451,6 +458,9 @@ buttonSecondaryDisabledColor,
 buttonSecondaryBoxShadow,
 buttonSecondaryHoverBoxShadow,
 buttonSecondaryActiveBoxShadow,
+buttonSecondaryBorderColor,
+buttonSecondaryHoverBorderColor,
+buttonSecondaryActiveBorderColor,
 buttonSecondaryDisabledBoxShadow,
 buttonDestructiveColor,
 buttonDestructiveBoxShadow,

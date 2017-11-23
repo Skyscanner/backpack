@@ -17,5 +17,15 @@
  */
 
 import BpkButton from './src/BpkButton';
+import {
+  primaryThemeAttributes,
+  secondaryThemeAttributes,
+  linkThemeAttributes,
+} from './src/themeAttributes';
 
+export {
+  primaryThemeAttributes,
+  secondaryThemeAttributes,
+  linkThemeAttributes,
+};
 export default BpkButton;
