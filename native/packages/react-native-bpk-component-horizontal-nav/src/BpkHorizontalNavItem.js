@@ -21,23 +21,20 @@ import {
   Platform,
   StyleSheet,
   ViewPropTypes,
-  TouchableHighlight,
   TouchableNativeFeedback,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { setOpacity } from 'bpk-tokens';
 import {
   colorGray300,
   colorGray700,
   colorBlue700,
   spacingMd,
   spacingBase,
-  underlayColor,
-  underlayOpacity,
 } from 'bpk-tokens/tokens/base.react.native';
 import { withTheme } from 'react-native-bpk-theming';
 import BpkText from 'react-native-bpk-component-text';
+import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
 import { THEMING_ATTRIBUTE, themePropType } from './theming';
 
@@ -85,11 +82,11 @@ const BpkHorizontalNavItem = (props) => {
   }
 
   const isAndroid = Platform.OS === 'android';
-  const Touchable = isAndroid ? TouchableNativeFeedback : TouchableHighlight;
+  const Touchable = isAndroid ? TouchableNativeFeedback : BpkTouchableOverlay;
   const formattedTitle = isAndroid ? title.toUpperCase() : title;
   const platformSpecificProps = isAndroid
     ? { background: TouchableNativeFeedback.SelectableBackgroundBorderless() }
-    : { underlayColor: setOpacity(underlayColor, underlayOpacity) };
+    : {};
 
   return (
     <Touchable

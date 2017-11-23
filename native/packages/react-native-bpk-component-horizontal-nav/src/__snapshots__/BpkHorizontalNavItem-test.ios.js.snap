@@ -10,9 +10,7 @@ exports[`iOS BpkHorizontalNavItem should render correctly 1`] = `
     ]
   }
   accessible={true}
-  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
-  isTVSelectable={true}
   nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
@@ -21,16 +19,8 @@ exports[`iOS BpkHorizontalNavItem should render correctly 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={
-    Array [
-      Object {
-        "backgroundColor": "transparent",
-      },
-      undefined,
-    ]
-  }
+  style={null}
   testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={null}
@@ -62,6 +52,22 @@ exports[`iOS BpkHorizontalNavItem should render correctly 1`] = `
       Nav
     </Text>
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
@@ -75,9 +81,7 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "selected" prop 1
     ]
   }
   accessible={true}
-  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
-  isTVSelectable={true}
   nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
@@ -86,16 +90,8 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "selected" prop 1
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={
-    Array [
-      Object {
-        "backgroundColor": "transparent",
-      },
-      undefined,
-    ]
-  }
+  style={null}
   testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={null}
@@ -130,6 +126,22 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "selected" prop 1
       Nav
     </Text>
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
@@ -143,9 +155,7 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "spaceAround" pro
     ]
   }
   accessible={true}
-  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
-  isTVSelectable={true}
   nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
@@ -154,16 +164,8 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "spaceAround" pro
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={
-    Array [
-      Object {
-        "backgroundColor": "transparent",
-      },
-      undefined,
-    ]
-  }
+  style={null}
   testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={null}
@@ -195,6 +197,22 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "spaceAround" pro
       Nav
     </Text>
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
@@ -208,9 +226,7 @@ exports[`iOS BpkHorizontalNavItem should render correctly with arbitrary props 1
     ]
   }
   accessible={true}
-  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
-  isTVSelectable={true}
   nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
@@ -219,16 +235,8 @@ exports[`iOS BpkHorizontalNavItem should render correctly with arbitrary props 1
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={
-    Array [
-      Object {
-        "backgroundColor": "transparent",
-      },
-      undefined,
-    ]
-  }
+  style={null}
   testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={null}
@@ -260,6 +268,22 @@ exports[`iOS BpkHorizontalNavItem should render correctly with arbitrary props 1
       Nav
     </Text>
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
@@ -273,9 +297,7 @@ exports[`iOS BpkHorizontalNavItem should render correctly with custom "style" pr
     ]
   }
   accessible={true}
-  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
-  isTVSelectable={true}
   nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
@@ -284,16 +306,8 @@ exports[`iOS BpkHorizontalNavItem should render correctly with custom "style" pr
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={
-    Array [
-      Object {
-        "backgroundColor": "transparent",
-      },
-      undefined,
-    ]
-  }
+  style={null}
   testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -329,6 +343,22 @@ exports[`iOS BpkHorizontalNavItem should render correctly with custom "style" pr
       Nav
     </Text>
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
@@ -342,9 +372,7 @@ exports[`iOS BpkHorizontalNavItem should support theming 1`] = `
     ]
   }
   accessible={true}
-  hasTVPreferredFocus={undefined}
   hitSlop={undefined}
-  isTVSelectable={true}
   nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
@@ -353,16 +381,8 @@ exports[`iOS BpkHorizontalNavItem should support theming 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={
-    Array [
-      Object {
-        "backgroundColor": "transparent",
-      },
-      undefined,
-    ]
-  }
+  style={null}
   testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={null}
@@ -394,5 +414,21 @@ exports[`iOS BpkHorizontalNavItem should support theming 1`] = `
       Nav
     </Text>
   </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgb(37, 32, 51)",
+          "bottom": 0,
+          "flex": 1,
+          "left": 0,
+          "opacity": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+      ]
+    }
+  />
 </View>
 `;

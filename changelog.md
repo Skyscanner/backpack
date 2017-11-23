@@ -8,6 +8,12 @@
 - bpk-theming:
   - New `BpkTheming` utility, see https://backpack.github.io/components/utilities/theming.
   
+**Fixed:**
+- react-native-bpk-banner-alert:
+- react-native-bpk-button:
+- react-native-bpk-horizontal-nav:
+ - Replaced `TouchableHighlight` with `BpkTouchableOverlay`.
+  
 ## 2017-11-21 - React Native cards can now have a dividing line
 
 **Added:**

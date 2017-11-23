@@ -16,13 +16,11 @@
  * limitations under the License.
  */
 
-import {
-  TouchableHighlight,
-  ViewPropTypes,
-} from 'react-native';
+import { ViewPropTypes } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 import LinearGradient from 'react-native-linear-gradient';
+import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
 import {
   getStyleForElement,
@@ -30,7 +28,6 @@ import {
   getGradientColors,
   themePropType,
 } from './../utils';
-import styles from './../BpkButton-styles';
 
 const BpkButtonContainer = (props) => {
   const { theme } = props;
@@ -58,18 +55,18 @@ const BpkButtonContainer = (props) => {
       colors={gradientColors}
       style={[containerStyle, style]}
     >
-      <TouchableHighlight
+      <BpkTouchableOverlay
         accessibilityComponentType="button"
         accessibilityLabel={accessibilityLabel || title}
         accessibilityTraits={accessibilityTraits}
+        borderRadius="pill"
         disabled={disabled}
         onPress={onPress}
         style={[buttonStyle, buttonTheme]}
-        underlayColor={styles.underlayColor}
         {...rest}
       >
         {children}
-      </TouchableHighlight>
+      </BpkTouchableOverlay>
     </LinearGradient>);
 };
 

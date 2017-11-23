@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "bpk-tokens": "^26.5.1",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "react-native-bpk-component-touchable-overlay": "^1.0.2"
   },
   "devDependencies": {
     "react-native-bpk-component-animate-height": "^1.0.9",
