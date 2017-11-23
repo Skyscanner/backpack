@@ -6,9 +6,12 @@
 - bpk-theming:
   - New web theming utility, see https://backpack.github.io/components/utilities/theming
 
+## 2017-11-23 - Fix accidental breaking change in web spinners
+
 **Fixed:**
-- bpk-component-spinner:
-  - Fixed accidental breaking change in large and extra large spinners: default `type` is now `dark`
+- bpk-component-loading-button: 1.0.35 => 1.0.36
+- bpk-component-spinner: 2.2.0 => 2.2.1
+  - Large and extra large now should have a default `type` of `dark`
 
 ## 2017-11-23 - Web spinners can now be primary, light or dark
 
