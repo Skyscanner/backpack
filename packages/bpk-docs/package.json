@@ -65,6 +65,7 @@
     "bpk-react-utils": "^2.3.8",
     "bpk-stylesheets": "^3.2.77",
     "bpk-svgs": "^5.11.8",
+    "bpk-theming": "^0.0.1",
     "bpk-tokens": "^26.5.1",
     "prop-types": "^15.5.8",
     "react": "^15.0.0",
