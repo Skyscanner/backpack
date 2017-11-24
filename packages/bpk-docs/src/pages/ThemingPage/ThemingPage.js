@@ -26,13 +26,17 @@ import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 import {
+  ACCORDIONS,
+  BARCHARTS,
+  BUTTONS,
+  HORIZONTAL_NAV,
+  PROGRESS,
   NATIVE_BUTTON,
   NATIVE_HORIZONTAL_NAV,
   NATIVE_SPINNER,
   NATIVE_SWITCH,
   SPINNERS,
   TYPOGRAPHY,
-  HORIZONTAL_NAV,
 } from './../../constants/routes';
 
 const CONTEXT_API_URL = 'https://reactjs.org/docs/context.html';
@@ -68,13 +72,28 @@ const components = [
       <Paragraph>The following web components are themeable:</Paragraph>,
       <BpkList>
         <BpkListItem>
+          <BpkLink href={ACCORDIONS}>Accordions</BpkLink>
+        </BpkListItem>
+        <BpkListItem>
+          <BpkLink href={BARCHARTS}>Bar charts</BpkLink>
+        </BpkListItem>
+        <BpkListItem>
+          <BpkLink href={`${TYPOGRAPHY}#blockquotes`}>Blockquotes</BpkLink>
+        </BpkListItem>
+        <BpkListItem>
+          <BpkLink href={BUTTONS}>Buttons</BpkLink>
+        </BpkListItem>
+        <BpkListItem>
           <BpkLink href={HORIZONTAL_NAV}>Horizontal navigation</BpkLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={SPINNERS}>Spinner</BpkLink>
+          <BpkLink href={`${TYPOGRAPHY}#links`}>Links</BpkLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={`${TYPOGRAPHY}#links`}>Link</BpkLink>
+          <BpkLink href={PROGRESS}>Progress bars</BpkLink>
+        </BpkListItem>
+        <BpkListItem>
+          <BpkLink href={SPINNERS}>Spinner</BpkLink>
         </BpkListItem>
       </BpkList>,
     ],
