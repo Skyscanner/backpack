@@ -90,3 +90,9 @@ export default () => (
 | Property                       | PropType | Required | Default Value |
 | ------------------------------ | -------- | -------- | ------------- |
 | ~~expanded~~ initiallyExpanded | bool     | false    | false         |
+
+## Theme Props
+
+* `accordionColor`,
+* `accordionHoverColor`,
+* `accordionActiveColor`,

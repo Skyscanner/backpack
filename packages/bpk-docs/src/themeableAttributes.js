@@ -20,6 +20,7 @@ import { primaryThemeAttributes, secondaryThemeAttributes } from 'bpk-component-
 
 /* eslint-disable global-require */
 export default [
+  require('bpk-component-accordion').themeAttributes,
   require('bpk-component-barchart').themeAttributes,
   require('bpk-component-blockquote').themeAttributes,
   [...primaryThemeAttributes, ...secondaryThemeAttributes],
