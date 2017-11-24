@@ -20,11 +20,19 @@ import {
 } from 'bpk-tokens/tokens/base.es6';
 
 const bpkCustomTheme = {
+  barchartBarBackgroundColorNormal: '#865f9e',
+  barchartBarBackgroundColorHover: '#461962',
+  barchartBarBackgroundColorActive: '#2d244c',
+  barchartBarBackgroundColorSelected: '#1a1331',
+
+  blockquoteBarColor: '#461962',
+
   buttonPrimaryTextColor: '#2d244c',
   buttonPrimaryHoverTextColor: '#2d244c',
   buttonPrimaryActiveTextColor: '#2d244c',
   buttonPrimaryGradientStartColor: '#fce134',
   buttonPrimaryGradientEndColor: '#f8c42d',
+  buttonPrimaryBackgroundColor: '#f8c42d',
   buttonPrimaryHoverBackgroundColor: '#f8c42d',
   buttonPrimaryActiveBackgroundColor: '#d99916',
 
@@ -38,8 +46,6 @@ const bpkCustomTheme = {
   buttonSecondaryHoverBackgroundColor: '#ffffff',
   buttonSecondaryActiveBackgroundColor: '#ffffff',
 
-  blockquoteBarColor: '#461962',
-
   horizontalNavBarSelectedColor: '#461962',
   horizontalNavLinkActiveColor: '#2d244c',
   horizontalNavLinkColor: colorBlue500,
@@ -47,10 +53,6 @@ const bpkCustomTheme = {
   horizontalNavLinkSelectedColor: '#491962',
 
   spinnerPrimaryColor: '#461962',
-  barchartBarBackgroundColorNormal: '#865f9e',
-  barchartBarBackgroundColorHover: '#461962',
-  barchartBarBackgroundColorActive: '#2d244c',
-  barchartBarBackgroundColorSelected: '#1a1331',
 };
 
 export default bpkCustomTheme;

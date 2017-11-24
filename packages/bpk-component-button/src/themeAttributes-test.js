@@ -29,6 +29,7 @@ describe('themeAttributes', () => {
       'buttonPrimaryActiveTextColor',
       'buttonPrimaryGradientStartColor',
       'buttonPrimaryGradientEndColor',
+      'buttonPrimaryBackgroundColor',
       'buttonPrimaryHoverBackgroundColor',
       'buttonPrimaryActiveBackgroundColor',
     ]);

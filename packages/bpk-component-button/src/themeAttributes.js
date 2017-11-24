@@ -22,6 +22,7 @@ export const primaryThemeAttributes = [
   'buttonPrimaryActiveTextColor',
   'buttonPrimaryGradientStartColor',
   'buttonPrimaryGradientEndColor',
+  'buttonPrimaryBackgroundColor',
   'buttonPrimaryHoverBackgroundColor',
   'buttonPrimaryActiveBackgroundColor',
 ];

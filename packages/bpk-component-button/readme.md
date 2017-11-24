@@ -60,6 +60,7 @@ Primary:
 * `buttonPrimaryActiveTextColor`
 * `buttonPrimaryGradientStartColor`
 * `buttonPrimaryGradientEndColor`
+* `buttonPrimaryBackgroundColor`
 * `buttonPrimaryHoverBackgroundColor`
 * `buttonPrimaryActiveBackgroundColor`
 

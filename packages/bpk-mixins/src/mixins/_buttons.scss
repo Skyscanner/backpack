@@ -36,7 +36,7 @@
   padding: $bpk-button-padding-y $bpk-button-padding-x;
   border: 0;
   border-radius: $bpk-button-border-radius;
-  background-color: $bpk-button-background-color;
+  background-image: linear-gradient(-180deg, $bpk-button-gradient-start-color 0%, $bpk-button-gradient-end-color 100%);
   background-image: linear-gradient(-180deg, var(--bpk-button-primary-gradient-start-color, $bpk-button-gradient-start-color) 0%, var(--bpk-button-primary-gradient-end-color, $bpk-button-gradient-end-color) 100%);
   font-size: $bpk-button-font-size;
   font-weight: $bpk-button-font-weight;
@@ -49,6 +49,7 @@
   user-select: none;
 
   @include bpk-themeable-property(color, --bpk-button-primary-text-color, $bpk-button-color);
+  @include bpk-themeable-property(background-color, --bpk-button-primary-background-color, $bpk-button-background-color);
 
   @include bpk-hover {
     background-image: $bpk-button-hover-background-image;
