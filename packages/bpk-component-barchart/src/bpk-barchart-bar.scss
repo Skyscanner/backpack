@@ -19,22 +19,22 @@
 @import '~bpk-mixins/index';
 
 .bpk-barchart-bar {
-  @include bpk-themeable-property(fill, --bpk-barchart-bar-background-color-normal, $bpk-color-blue-300);
+  @include bpk-themeable-property(fill, --bpk-barchart-bar-background-color, $bpk-color-blue-300);
 
   &--interactive:not(.bpk-barchart-bar--selected) {
     cursor: pointer;
 
     @include bpk-hover {
-      @include bpk-themeable-property(fill, --bpk-barchart-bar-background-color-hover, $bpk-color-blue-500);
+      @include bpk-themeable-property(fill, --bpk-barchart-bar-hover-background-color, $bpk-color-blue-500);
     }
 
     &:active {
-      @include bpk-themeable-property(fill, --bpk-barchart-bar-background-color-active, $bpk-color-blue-600);
+      @include bpk-themeable-property(fill, --bpk-barchart-bar-active-background-color, $bpk-color-blue-600);
     }
   }
 
   &--selected {
-    @include bpk-themeable-property(fill, --bpk-barchart-bar-background-color-selected, $bpk-color-blue-700);
+    @include bpk-themeable-property(fill, --bpk-barchart-bar-selected-background-color, $bpk-color-blue-700);
   }
 
   &__rect {

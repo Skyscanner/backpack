@@ -66,10 +66,10 @@ export default () => (
 
 ### Theme Props
 
-* `barchartBarBackgroundColorNormal`
-* `barchartBarBackgroundColorHover`
-* `barchartBarBackgroundColorActive`
-* `barchartBarBackgroundColorSelected`
+* `barchartBarBackgroundColor`
+* `barchartBarHoverBackgroundColor`
+* `barchartBarActiveBackgroundColor`
+* `barchartBarSelectedBackgroundColor`
 
 ### Prop Details
 

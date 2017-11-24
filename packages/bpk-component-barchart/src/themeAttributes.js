@@ -17,8 +17,8 @@
  */
 
 export default [
-  'barchartBarBackgroundColorNormal',
-  'barchartBarBackgroundColorHover',
-  'barchartBarBackgroundColorActive',
-  'barchartBarBackgroundColorSelected',
+  'barchartBarBackgroundColor',
+  'barchartBarHoverBackgroundColor',
+  'barchartBarActiveBackgroundColor',
+  'barchartBarSelectedBackgroundColor',
 ];
