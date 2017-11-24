@@ -64,6 +64,13 @@ export default () => (
 | BarComponent                            | func                                  | false    | BpkBarchartBar   |
 | disableDataTable                        | bool                                  | false    | false            |
 
+### Theme Props
+
+* `barchartBarBackgroundColorNormal`
+* `barchartBarBackgroundColorHover`
+* `barchartBarBackgroundColorActive`
+* `barchartBarBackgroundColorSelected`
+
 ### Prop Details
 
 #### data
