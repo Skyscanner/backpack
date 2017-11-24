@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
-import BpkProgress from './src/BpkProgress';
-import themeAttributes from './src/themeAttributes';
+import themeAttributes from './themeAttributes';
 
-export default BpkProgress;
-export { themeAttributes };
+describe('themeAttributes', () => {
+  it('exports the expected themeAttributes', () => {
+    expect(themeAttributes).toEqual(['progressBarFillColor']);
+  });
+});
