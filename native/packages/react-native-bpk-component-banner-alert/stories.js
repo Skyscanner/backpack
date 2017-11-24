@@ -17,9 +17,11 @@
  */
 
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ViewPropTypes } from 'react-native';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react-native';
 import BpkText from 'react-native-bpk-component-text';
+import BpkButton from 'react-native-bpk-component-button';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkBannerAlert, { ALERT_TYPES } from './index';
@@ -45,10 +47,10 @@ class ExpandableBannerAlert extends React.Component {
       expanded: false,
     };
 
-    this.onAction = this.onAction.bind(this);
+    this.onToggleExpanded = this.onToggleExpanded.bind(this);
   }
 
-  onAction() {
+  onToggleExpanded() {
     this.setState({ expanded: !this.state.expanded });
   }
 
@@ -56,8 +58,9 @@ class ExpandableBannerAlert extends React.Component {
     return (
       <BpkBannerAlert
         {...this.props}
-        onAction={this.onAction}
+        onToggleExpanded={this.onToggleExpanded}
         expanded={this.state.expanded}
+        toggleExpandedButtonLabel={this.state.expanded ? 'Collapse' : 'Expand'}
       />
     );
   }
@@ -69,29 +72,83 @@ class DismissableBannerAlert extends React.Component {
     super();
 
     this.state = {
-      exists: true,
+      show: true,
     };
 
-    this.onAction = this.onAction.bind(this);
+    this.onDismiss = this.onDismiss.bind(this);
   }
 
-  onAction() {
-    this.setState({ exists: false });
+  onDismiss() {
+    this.setState({ show: false });
   }
 
   render() {
-    if (this.state.exists) {
-      return (
-        <BpkBannerAlert
-          {...this.props}
-          onAction={this.onAction}
-          dismissable
-        />
-      );
-    }
-    return null;
+    return (
+      <BpkBannerAlert
+        {...this.props}
+        show={this.state.show}
+        onDismiss={this.onDismiss}
+        dismissable
+      />
+    );
   }
 }
+
+
+// eslint-disable-next-line react/no-multi-comp
+class BpkBannerAlertFadeDemo extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      bannerAlertCount: 0,
+    };
+
+    this.addBannerAlert = this.addBannerAlert.bind(this);
+  }
+
+  addBannerAlert() {
+    this.setState({
+      bannerAlertCount: this.state.bannerAlertCount + 1,
+    });
+  }
+
+  render() {
+    return (
+      <View>
+        <BpkButton
+          title="Add banner alert!"
+          onPress={this.addBannerAlert}
+          style={styles.bannerAlert}
+        />
+        <View>
+          {[...Array(this.state.bannerAlertCount)].map((e, i) => (
+            <DismissableBannerAlert
+              key={i.toString()}
+              style={this.props.style}
+              message={this.props.message}
+              type={this.props.type}
+              animateOnEnter
+              dismissable
+              dismissButtonLabel={this.props.dismissButtonLabel}
+            />
+        ))}
+        </View>
+      </View>
+    );
+  }
+}
+
+BpkBannerAlertFadeDemo.propTypes = {
+  dismissButtonLabel: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+  style: ViewPropTypes.style,
+  type: PropTypes.string.isRequired,
+};
+
+BpkBannerAlertFadeDemo.defaultProps = {
+  style: null,
+};
 
 storiesOf('BpkBannerAlert', module)
   .add('docs:banner-alerts', () => (
@@ -110,18 +167,17 @@ storiesOf('BpkBannerAlert', module)
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
         message="Warn alert with dismiss option."
-        actionButtonLabel="Dismiss"
+        dismissButtonLabel="Dismiss"
       />
       <ExpandableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="Error alert with more information."
-        actionButtonLabel="Expand"
       >
         <BpkText textStyle="sm" style={styles.child}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
-          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec
+          mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
       </ExpandableBannerAlert>
     </View>
@@ -156,25 +212,25 @@ storiesOf('BpkBannerAlert', module)
         style={styles.bannerAlert}
         type={ALERT_TYPES.NEUTRAL}
         message="Neutral alert with dismiss option."
-        actionButtonLabel="Dismiss"
+        dismissButtonLabel="Dismiss"
       />
       <DismissableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
         message="Successful alert with dismiss option."
-        actionButtonLabel="Dismiss"
+        dismissButtonLabel="Dismiss"
       />
       <DismissableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
         message="Warn alert with dismiss option."
-        actionButtonLabel="Dismiss"
+        dismissButtonLabel="Dismiss"
       />
       <DismissableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="Error alert with dismiss option."
-        actionButtonLabel="Dismiss"
+        dismissButtonLabel="Dismiss"
       />
     </View>
   ))
@@ -184,55 +240,59 @@ storiesOf('BpkBannerAlert', module)
         style={styles.bannerAlert}
         type={ALERT_TYPES.NEUTRAL}
         message="Neutral alert with more information."
-        actionButtonLabel="Collapse"
       >
         <BpkText textStyle="sm" style={styles.child}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
-          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec
+          mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
       </ExpandableBannerAlert>
       <ExpandableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
         message="Successful alert with more information."
-        actionButtonLabel="Collapse"
       >
         <BpkText textStyle="sm" style={styles.child}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
-          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec
+          mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
       </ExpandableBannerAlert>
       <ExpandableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
         message="Warn alert with more information."
-        actionButtonLabel="Collapse"
       >
         <BpkText textStyle="sm" style={styles.child}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
-          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec
+          mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
       </ExpandableBannerAlert>
       <ExpandableBannerAlert
         style={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="Error alert with more information."
-        actionButtonLabel="Collapse"
       >
         <BpkText textStyle="sm" style={styles.child}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi.
-          Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec
+          mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
       </ExpandableBannerAlert>
     </View>
   ))
+  .add('docs:fade-in', () => (
+    <BpkBannerAlertFadeDemo
+      style={styles.bannerAlert}
+      message="Banner alert with dismiss option"
+      dismissButtonLabel="Dismiss"
+      type={ALERT_TYPES.SUCCESS}
+    />
+  ))
   .add('docs:edge-cases', () => {
-    const message = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Quisque sagittis sagittis purus, id blandit ipsum.`;
+    // eslint-disable-next-line max-len
+    const message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.';
 
     return (
       <View>
@@ -253,18 +313,6 @@ storiesOf('BpkBannerAlert', module)
           actionButtonLabel="Dismiss"
           dismissable
         />
-        <BpkBannerAlert
-          style={styles.bannerAlert}
-          type={ALERT_TYPES.ERROR}
-          message={message}
-          actionButtonLabel="Expand"
-        >
-          <BpkText textStyle="sm" style={styles.child}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-            Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec
-            mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
-          </BpkText>
-        </BpkBannerAlert>
         <BpkBannerAlert
           style={styles.bannerAlert}
           type={ALERT_TYPES.ERROR}

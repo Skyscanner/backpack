@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import commonTests from './BpkBannerAlert-test.common';
+import commonTests from './AnimateAndFade-test.common';
 
 jest.mock('react-native', () => {
   const reactNative = require.requireActual('react-native');

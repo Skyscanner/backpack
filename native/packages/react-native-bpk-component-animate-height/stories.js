@@ -95,7 +95,7 @@ AnimateHeightDemo.defaultProps = {
   children: null,
   expandDelay: 0,
   collapseDelay: 0,
-  animationDuration: parseInt(animationDurationBase, 10),
+  animationDuration: animationDurationBase,
 };
 
 storiesOf('BpkAnimateHeight', module)
