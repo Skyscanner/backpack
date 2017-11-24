@@ -25,5 +25,6 @@ export default [
   require('bpk-component-blockquote').themeAttributes,
   [...primaryThemeAttributes, ...secondaryThemeAttributes],
   require('bpk-component-horizontal-nav').themeAttributes,
+  require('bpk-component-nudger').themeAttributes,
   require('bpk-component-spinner').themeAttributes,
 ].filter(attrs => !!attrs);
