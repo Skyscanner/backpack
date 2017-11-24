@@ -50,3 +50,28 @@ export default () => (
 | featured    | bool     | false    | false         |
 | iconOnly    | bool     | false    | false         |
 | onClick     | func     | false    | null          |
+
+## Theme Props
+
+Primary:
+
+* `buttonPrimaryTextColor`
+* `buttonPrimaryHoverTextColor`
+* `buttonPrimaryActiveTextColor`
+* `buttonPrimaryGradientStartColor`
+* `buttonPrimaryGradientEndColor`
+* `buttonPrimaryBackgroundColor`
+* `buttonPrimaryHoverBackgroundColor`
+* `buttonPrimaryActiveBackgroundColor`
+
+Secondary:
+
+* `buttonSecondaryTextColor`
+* `buttonSecondaryHoverTextColor`
+* `buttonSecondaryActiveTextColor`
+* `buttonSecondaryBorderColor`
+* `buttonSecondaryHoverBorderColor`
+* `buttonSecondaryActiveBorderColor`
+* `buttonSecondaryBackgroundColor`
+* `buttonSecondaryHoverBackgroundColor`
+* `buttonSecondaryActiveBackgroundColor`

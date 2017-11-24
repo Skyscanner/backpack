@@ -88,6 +88,10 @@ $bpk-button-background-color: rgb(0, 215, 117) !default;
 /// @group buttons
 $bpk-button-background-image: linear-gradient(-180deg, #00d775 0%, #00bd68 100%) !default;
 /// @group buttons
+$bpk-button-gradient-start-color: rgb(0, 215, 117) !default;
+/// @group buttons
+$bpk-button-gradient-end-color: rgb(0, 189, 104) !default;
+/// @group buttons
 $bpk-button-hover-background-color: rgb(0, 189, 104) !default;
 /// @group buttons
 $bpk-button-hover-background-image: none !default;
@@ -164,6 +168,12 @@ $bpk-button-secondary-hover-box-shadow: 0 0 0 2px #00b2d6 inset !default;
 /// @group buttons
 $bpk-button-secondary-active-box-shadow: 0 0 0 3px #00b2d6 inset !default;
 /// @group buttons
+$bpk-button-secondary-border-color: rgb(230, 228, 235) !default;
+/// @group buttons
+$bpk-button-secondary-hover-border-color: rgb(0, 178, 214) !default;
+/// @group buttons
+$bpk-button-secondary-active-border-color: rgb(0, 178, 214) !default;
+/// @group buttons
 $bpk-button-secondary-disabled-box-shadow: none !default;
 /// @group buttons
 $bpk-button-destructive-color: rgb(255, 84, 82) !default;
@@ -213,6 +223,12 @@ $bpk-button-selected-active-box-shadow: none !default;
 $bpk-button-selected-disabled-box-shadow: none !default;
 /// @group buttons
 $bpk-button-featured-background-image: linear-gradient(-180deg, #FA488A 0%, #D92B6B 100%) !default;
+/// @group buttons
+$bpk-button-featured-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-featured-hover-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-featured-active-color: rgb(255, 255, 255) !default;
 /// @group buttons
 $bpk-button-featured-hover-background-color: rgb(217, 43, 107) !default;
 /// @group buttons

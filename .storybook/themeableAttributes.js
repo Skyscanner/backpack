@@ -15,8 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import { primaryThemeAttributes, secondaryThemeAttributes } from './../packages/bpk-component-button';
+
 /* eslint-disable global-require */
 export default {
+  'bpk-component-button': [...primaryThemeAttributes, ...secondaryThemeAttributes],
   'bpk-component-blockquote': require('./../packages/bpk-component-blockquote').themeAttributes,
   'bpk-component-horizontal-nav': require('./../packages/bpk-component-horizontal-nav').themeAttributes,
   'bpk-component-spinner': require('./../packages/bpk-component-spinner').themeAttributes,

@@ -32,7 +32,18 @@
     },
     "BUTTON_BACKGROUND_IMAGE": {
       "value": "linear-gradient(-180deg, {!GREEN_500} 0%, {!GREEN_600} 100%)",
-      "type": "background-image"
+      "type": "background-image",
+      "meta": {
+        "deprecated": true
+      }
+    },
+    "BUTTON_GRADIENT_START_COLOR": {
+      "value": "{!GREEN_500}",
+      "type": "color"
+    },
+    "BUTTON_GRADIENT_END_COLOR": {
+      "value": "{!GREEN_600}",
+      "type": "color"
     },
     "BUTTON_HOVER_BACKGROUND_COLOR": {
       "value": "{!GREEN_600}",
@@ -176,15 +187,36 @@
     },
     "BUTTON_SECONDARY_BOX_SHADOW": {
       "value": "0 0 0 2px {!GRAY_100} inset",
-      "type": "box-shadow"
+      "type": "box-shadow",
+      "meta": {
+        "deprecated": true
+      }
     },
     "BUTTON_SECONDARY_HOVER_BOX_SHADOW": {
       "value": "0 0 0 2px {!BLUE_500} inset",
-      "type": "box-shadow"
+      "type": "box-shadow",
+      "meta": {
+        "deprecated": true
+      }
     },
     "BUTTON_SECONDARY_ACTIVE_BOX_SHADOW": {
       "value": "0 0 0 3px {!BLUE_500} inset",
-      "type": "box-shadow"
+      "type": "box-shadow",
+      "meta": {
+        "deprecated": true
+      }
+    },
+    "BUTTON_SECONDARY_BORDER_COLOR": {
+      "value": "{!GRAY_100}",
+      "type": "color"
+    },
+    "BUTTON_SECONDARY_HOVER_BORDER_COLOR": {
+      "value": "{!BLUE_500}",
+      "type": "color"
+    },
+    "BUTTON_SECONDARY_ACTIVE_BORDER_COLOR": {
+      "value": "{!BLUE_500}",
+      "type": "color"
     },
     "BUTTON_SECONDARY_DISABLED_BOX_SHADOW": {
       "value": "none",
@@ -285,6 +317,18 @@
     "BUTTON_FEATURED_BACKGROUND_IMAGE": {
       "value": "linear-gradient(-180deg, {!PINK_500} 0%, {!PINK_600} 100%)",
       "type": "background-image"
+    },
+    "BUTTON_FEATURED_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "BUTTON_FEATURED_HOVER_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
+    },
+    "BUTTON_FEATURED_ACTIVE_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color"
     },
     "BUTTON_FEATURED_HOVER_BACKGROUND_COLOR": {
       "value": "{!PINK_600}",
