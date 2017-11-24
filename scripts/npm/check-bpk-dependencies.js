@@ -57,7 +57,7 @@ const checkBpkDependencies = (packageFile, correctVersions) => {
 };
 
 const getBpkPackageVersions = packageFiles => packageFiles.reduce((acc, pkg) => {
-  if (pkg === '' || pkg.includes('bpk-')) {
+  if (pkg === '' || !pkg.includes('bpk-')) {
     return acc;
   }
   const pfContent = JSON.parse(fs.readFileSync(pkg));
