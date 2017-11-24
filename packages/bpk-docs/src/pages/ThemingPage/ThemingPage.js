@@ -38,7 +38,7 @@ const NativeTextPage = () => (<DocsPageBuilder
     <Paragraph>
       Backpack has full theming support through its theme provider component.
       This component provides a theme to all themeable components underneath itself via the context API.
-      In the render tree all themeable components will have access to the provided theme, even
+      In the render tree, all themeable components will have access to the provided theme, even
       when they are multiple levels deep.
     </Paragraph>,
     <Paragraph>

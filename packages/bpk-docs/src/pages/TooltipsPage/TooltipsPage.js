@@ -118,7 +118,7 @@ const TooltipsPage = () => (<DocsPageBuilder
     </Paragraph>,
     <Paragraph>
       By default, <em>tooltips do not work on touch devices</em>. Using tooltips in touch-based interfaces is
-      generally bad practise due to the lack of hover state.
+      generally bad practice due to the lack of hover state.
       We also don&apos;t recommend using tooltips on interactive elements that can receive focus, such as links,
       buttons, and inputs.
     </Paragraph>,
