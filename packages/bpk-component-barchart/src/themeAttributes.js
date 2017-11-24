@@ -15,11 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* eslint-disable global-require */
+
 export default [
-  require('bpk-component-barchart').themeAttributes,
-  require('bpk-component-blockquote').themeAttributes,
-  require('bpk-component-button').themeAttributes,
-  require('bpk-component-horizontal-nav').themeAttributes,
-  require('bpk-component-spinner').themeAttributes,
-].filter(attrs => !!attrs);
+  'barchartBarBackgroundColorNormal',
+  'barchartBarBackgroundColorHover',
+  'barchartBarBackgroundColorActive',
+  'barchartBarBackgroundColorSelected',
+];

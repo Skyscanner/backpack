@@ -22,6 +22,7 @@ import BpkBarchartDefs from './src/BpkBarchartDefs';
 import BpkChartAxis from './src/BpkChartAxis';
 import BpkChartGridLines from './src/BpkChartGridLines';
 import BpkChartMargin from './src/BpkChartMargin';
+import themeAttributes from './src/themeAttributes';
 
 export default BpkBarchart;
 
@@ -31,4 +32,5 @@ export {
   BpkChartAxis,
   BpkChartGridLines,
   BpkChartMargin,
+  themeAttributes,
 };

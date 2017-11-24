@@ -27,6 +27,10 @@ const bpkCustomTheme = {
   horizontalNavLinkHoverColor: colorBlue500,
   horizontalNavLinkSelectedColor: '#491962',
   spinnerPrimaryColor: '#461962',
+  barchartBarBackgroundColorNormal: '#865f9e',
+  barchartBarBackgroundColorHover: '#461962',
+  barchartBarBackgroundColorActive: '#2d244c',
+  barchartBarBackgroundColorSelected: '#1a1331',
 };
 
 export default bpkCustomTheme;
