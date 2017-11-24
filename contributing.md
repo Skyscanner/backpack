@@ -10,6 +10,7 @@ This document describes how to go about it. If you have any questions, get in to
 - [Before you jump in](#before-you-jump-in)
 - [Getting started](#getting-started)
 - [Development tasks](#development-tasks)
+- [Decisions](#decisions)
 - [Adding a new component](#adding-a-new-component)
 - [Design](#design)
 - [Tokens](#tokens)
@@ -104,6 +105,11 @@ ENABLE_CSS_MODULES=true npm start # Start development test harness complete with
 npm test                          # Lints .js & .scss files and runs unit tests
 npm run build                     # Runs the build process for all packages
 ```
+
+## Decisions
+
+See the [decisions directory](/decisions) for an organised list of cultural and code decisions
+made concerning this monorepo.
 
 ## Adding a new component
 
