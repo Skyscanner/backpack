@@ -20,5 +20,4 @@ export default {
   'bpk-component-blockquote': require('./../packages/bpk-component-blockquote').themeAttributes,
   'bpk-component-horizontal-nav': require('./../packages/bpk-component-horizontal-nav').themeAttributes,
   'bpk-component-spinner': require('./../packages/bpk-component-spinner').themeAttributes,
-  'bpk-theming': require('./../packages/bpk-theming/bpk-themeable-text/BpkThemeableText').themeAttributes,
 };
