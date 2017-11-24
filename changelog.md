@@ -96,6 +96,10 @@
 - react-native-bpk-component-card: 1.1.4 => 1.1.5
   - Add support for android
 
+- react-native-bpk-component-animate-height:
+  - Added props for `expandDelay` and `collapseDelay`.
+  - Now removes itself from the tree when collapsed to `height: 0`.
+
 ## 2017-11-10 - New `withScrim` HOC, plus native horizontal nav and switch components
 
 **Added:**
