@@ -62,6 +62,11 @@ const bpkCustomTheme = {
   buttonSecondaryHoverBackgroundColor: theme.white,
   buttonSecondaryActiveBackgroundColor: theme.white,
 
+  linkColor: theme.primaryColor300,
+  linkHoverColor: theme.primaryColor500,
+  linkActiveColor: theme.primaryColor600,
+  linkVisitedColor: theme.primaryColor700,
+
   horizontalNavBarSelectedColor: theme.primaryColor500,
   horizontalNavLinkActiveColor: theme.primaryColor600,
   horizontalNavLinkColor: colorBlue500,

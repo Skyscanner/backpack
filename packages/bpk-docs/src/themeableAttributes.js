@@ -24,6 +24,7 @@ export default [
   require('bpk-component-barchart').themeAttributes,
   require('bpk-component-blockquote').themeAttributes,
   [...primaryThemeAttributes, ...secondaryThemeAttributes],
+  require('bpk-component-link').themeAttributes,
   require('bpk-component-horizontal-nav').themeAttributes,
   require('bpk-component-spinner').themeAttributes,
 ].filter(attrs => !!attrs);
