@@ -23,26 +23,32 @@ import { withScrim } from 'bpk-scrim-utils';
 
 import BpkDrawerContent from './BpkDrawerContent';
 
-const ScrimBpkDrawerContent = withScrim(BpkDrawerContent);
+const BpkScrimDrawerContent = withScrim(BpkDrawerContent);
 
 class BpkDrawer extends Component {
   constructor() {
     super();
 
     this.state = {
-      show: true,
+      isDrawerShown: true,
     };
 
-    this.onExited = this.onExited.bind(this);
+    this.onCloseAnimationComplete = this.onCloseAnimationComplete.bind(this);
     this.hide = this.hide.bind(this);
   }
-  onExited() {
+
+  componentWillReceiveProps(nextProps) {
+    if (!this.props.isOpen && nextProps.isOpen) {
+      this.setState({ isDrawerShown: true });
+    }
+  }
+
+  onCloseAnimationComplete() {
     this.props.onClose();
-    this.setState({ show: true }); // needed to show the drawer if it is reopened
   }
 
   hide() {
-    this.setState({ show: false });
+    this.setState({ isDrawerShown: false });
   }
 
   render() {
@@ -50,14 +56,14 @@ class BpkDrawer extends Component {
       isOpen, onClose, target, ...rest
     } = this.props;
 
-    const { show } = this.state;
+    const { isDrawerShown } = this.state;
 
     return (
       <Portal isOpen={isOpen} onClose={this.hide} target={target}>
-        <ScrimBpkDrawerContent
-          show={show}
+        <BpkScrimDrawerContent
+          isDrawerShown={isDrawerShown}
           onClose={this.hide}
-          onExited={this.onExited}
+          onCloseAnimationComplete={this.onCloseAnimationComplete}
           {...rest}
         />
       </Portal>

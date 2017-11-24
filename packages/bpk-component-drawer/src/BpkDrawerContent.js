@@ -51,8 +51,8 @@ const BpkDrawerContent = (props) => {
       appear
       enter={false}
       exit
-      in={props.show}
-      onExited={props.onExited}
+      in={props.isDrawerShown}
+      onExited={props.onCloseAnimationComplete}
     >
       {status => (
         <section
@@ -98,8 +98,8 @@ BpkDrawerContent.propTypes = {
     onMouseMove: PropTypes.func,
     onMouseUp: PropTypes.func,
   }).isRequired,
-  show: PropTypes.bool,
-  onExited: PropTypes.func.isRequired,
+  isDrawerShown: PropTypes.bool,
+  onCloseAnimationComplete: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
@@ -114,7 +114,7 @@ BpkDrawerContent.defaultProps = {
   className: null,
   closeLabel: null,
   closeText: null,
-  show: true,
+  isDrawerShown: true,
   hideTitle: false,
 };
 
