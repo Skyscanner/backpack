@@ -224,6 +224,12 @@ $bpk-button-selected-disabled-box-shadow: none !default;
 /// @group buttons
 $bpk-button-featured-background-image: linear-gradient(-180deg, #FA488A 0%, #D92B6B 100%) !default;
 /// @group buttons
+$bpk-button-featured-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-featured-hover-color: rgb(255, 255, 255) !default;
+/// @group buttons
+$bpk-button-featured-active-color: rgb(255, 255, 255) !default;
+/// @group buttons
 $bpk-button-featured-hover-background-color: rgb(217, 43, 107) !default;
 /// @group buttons
 $bpk-button-featured-active-background-color: rgb(197, 15, 82) !default;

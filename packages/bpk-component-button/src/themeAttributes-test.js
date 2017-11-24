@@ -25,6 +25,8 @@ describe('themeAttributes', () => {
   it('should export the correct primary theme attributes', () => {
     expect(primaryThemeAttributes).toEqual([
       'buttonPrimaryTextColor',
+      'buttonPrimaryHoverTextColor',
+      'buttonPrimaryActiveTextColor',
       'buttonPrimaryGradientStartColor',
       'buttonPrimaryGradientEndColor',
       'buttonPrimaryHoverBackgroundColor',

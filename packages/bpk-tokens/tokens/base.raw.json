@@ -1130,6 +1130,33 @@
       },
       "name": "BUTTON_FEATURED_BACKGROUND_IMAGE"
     },
+    "BUTTON_FEATURED_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
+      "name": "BUTTON_FEATURED_COLOR"
+    },
+    "BUTTON_FEATURED_HOVER_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
+      "name": "BUTTON_FEATURED_HOVER_COLOR"
+    },
+    "BUTTON_FEATURED_ACTIVE_COLOR": {
+      "category": "buttons",
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      ".alias": {
+        "value": "#ffffff"
+      },
+      "name": "BUTTON_FEATURED_ACTIVE_COLOR"
+    },
     "BUTTON_FEATURED_HOVER_BACKGROUND_COLOR": {
       "category": "buttons",
       "value": "rgb(217, 43, 107)",
@@ -3347,6 +3374,9 @@
     "BUTTON_SELECTED_ACTIVE_BOX_SHADOW",
     "BUTTON_SELECTED_DISABLED_BOX_SHADOW",
     "BUTTON_FEATURED_BACKGROUND_IMAGE",
+    "BUTTON_FEATURED_COLOR",
+    "BUTTON_FEATURED_HOVER_COLOR",
+    "BUTTON_FEATURED_ACTIVE_COLOR",
     "BUTTON_FEATURED_HOVER_BACKGROUND_COLOR",
     "BUTTON_FEATURED_ACTIVE_BACKGROUND_COLOR",
     "BUTTON_FEATURED_ACTIVE_BACKGROUND_IMAGE",

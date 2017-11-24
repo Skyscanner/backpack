@@ -56,6 +56,8 @@ export default () => (
 Primary:
 
 * `buttonPrimaryTextColor`
+* `buttonPrimaryHoverTextColor`
+* `buttonPrimaryActiveTextColor`
 * `buttonPrimaryGradientStartColor`
 * `buttonPrimaryGradientEndColor`
 * `buttonPrimaryHoverBackgroundColor`

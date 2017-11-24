@@ -18,6 +18,8 @@
 
 export const primaryThemeAttributes = [
   'buttonPrimaryTextColor',
+  'buttonPrimaryHoverTextColor',
+  'buttonPrimaryActiveTextColor',
   'buttonPrimaryGradientStartColor',
   'buttonPrimaryGradientEndColor',
   'buttonPrimaryHoverBackgroundColor',

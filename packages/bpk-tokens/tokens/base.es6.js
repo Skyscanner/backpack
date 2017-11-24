@@ -120,6 +120,9 @@ export const buttonSelectedHoverBoxShadow = "none";
 export const buttonSelectedActiveBoxShadow = "none";
 export const buttonSelectedDisabledBoxShadow = "none";
 export const buttonFeaturedBackgroundImage = "linear-gradient(-180deg, #FA488A 0%, #D92B6B 100%)";
+export const buttonFeaturedColor = "rgb(255, 255, 255)";
+export const buttonFeaturedHoverColor = "rgb(255, 255, 255)";
+export const buttonFeaturedActiveColor = "rgb(255, 255, 255)";
 export const buttonFeaturedHoverBackgroundColor = "rgb(217, 43, 107)";
 export const buttonFeaturedActiveBackgroundColor = "rgb(197, 15, 82)";
 export const buttonFeaturedActiveBackgroundImage = "none";
@@ -486,6 +489,9 @@ buttonSelectedHoverBoxShadow,
 buttonSelectedActiveBoxShadow,
 buttonSelectedDisabledBoxShadow,
 buttonFeaturedBackgroundImage,
+buttonFeaturedColor,
+buttonFeaturedHoverColor,
+buttonFeaturedActiveColor,
 buttonFeaturedHoverBackgroundColor,
 buttonFeaturedActiveBackgroundColor,
 buttonFeaturedActiveBackgroundImage,
