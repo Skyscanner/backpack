@@ -60,6 +60,7 @@ npm install [package-name] --save-dev
 | [`bpk-component-spinner`](/packages/bpk-component-spinner) | [![npm version](https://badge.fury.io/js/bpk-component-spinner.svg)](http://badge.fury.io/js/bpk-component-spinner) |
 | [`bpk-component-table`](/packages/bpk-component-table) | [![npm version](https://badge.fury.io/js/bpk-component-table.svg)](http://badge.fury.io/js/bpk-component-table) |
 | [`bpk-component-text`](/packages/bpk-component-text) | [![npm version](https://badge.fury.io/js/bpk-component-text.svg)](http://badge.fury.io/js/bpk-component-text) |
+| [`bpk-theming`](/packages/bpk-theming) | [![npm version](https://badge.fury.io/js/bpk-theming.svg)](http://badge.fury.io/js/bpk-theming) |
 | [`bpk-component-ticket`](/packages/bpk-component-ticket) | [![npm version](https://badge.fury.io/js/bpk-component-ticket.svg)](http://badge.fury.io/js/bpk-component-ticket) |
 | [`bpk-component-tooltip`](/packages/bpk-component-tooltip) | [![npm version](https://badge.fury.io/js/bpk-component-tooltip.svg)](http://badge.fury.io/js/bpk-component-tooltip) |
 | [`bpk-mixins`](/packages/bpk-mixins) | [![npm version](https://badge.fury.io/js/bpk-mixins.svg)](http://badge.fury.io/js/bpk-mixins) |

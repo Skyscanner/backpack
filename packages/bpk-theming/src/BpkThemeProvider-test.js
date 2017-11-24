@@ -72,17 +72,6 @@ describe('BpkThemeProvider', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should reject themeAttribute prop when it is not present', () => {
-    expect(BpkThemeProvider.propTypes.themeAttributes({
-    }, 'themeAttributes', 'BpkThemeProvider').toString()).toEqual('Error: BpkThemeProvider: `themeAttributes` is required.'); // eslint-disable-line max-len
-  });
-
-  it('should reject themeAttribute prop when it is not an array', () => {
-    expect(BpkThemeProvider.propTypes.themeAttributes({
-      themeAttributes: 'foo',
-    }, 'themeAttributes', 'BpkThemeProvider').toString()).toEqual('Error: BpkThemeProvider: `themeAttributes` must be an array.'); // eslint-disable-line max-len
-  });
-
   it('should warn about missing theme attributes', () => {
     expect(BpkThemeProvider.propTypes.themeAttributes({
       theme: {},
