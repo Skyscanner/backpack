@@ -42,7 +42,7 @@ const components = [
     title: 'Small',
     blurb: [
       <Paragraph>
-        This is very similar to the default progress bar, but is a little thinner to fit nicely inline,
+        This is very similar to the default progress bar but is a little thinner to fit nicely inline,
         e.g. at the top of a page.
       </Paragraph>,
     ],
