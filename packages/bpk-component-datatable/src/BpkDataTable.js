@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Table, AutoSizer } from 'react-virtualized';
 import { cssModules } from 'bpk-react-utils';
-import _ from 'lodash';
+import _sortBy from 'lodash/sortBy';
 
 import STYLES from './bpk-data-table.scss';
 import { BpkColumn } from './BpkColumn';
@@ -28,9 +28,9 @@ import { BpkColumn } from './BpkColumn';
 const getClassName = cssModules(STYLES);
 
 const sortList = ({ sortBy, sortDirection, list }) => {
-  const sorted = _.sortBy(list, sortBy);
+  const sorted = _sortBy(list, sortBy);
   if (sortDirection === 'DESC') {
-    return _.reverse(sorted);
+    sorted.reverse();
   }
   return sorted;
 };
@@ -42,10 +42,10 @@ class BpkDataTable extends Component {
     const sortBy = 'name';
     const sortDirection = 'ASC';
     const sortedList = sortList({ sortBy, sortDirection, list: props.rows });
-    let columns = _.cloneDeep(this.props.children);
+    let columns = this.props.children.slice();
 
     if (this.props.dir === 'rtl') {
-      columns = _.reverse(columns);
+      columns.reverse();
     }
 
     this.state = {
@@ -124,7 +124,7 @@ class BpkDataTable extends Component {
 
 BpkDataTable.propTypes = {
   rows: PropTypes.arrayOf(Object).isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
   height: PropTypes.number.isRequired,
   dir: PropTypes.string,
 };

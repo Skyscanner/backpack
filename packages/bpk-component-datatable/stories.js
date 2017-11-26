@@ -44,6 +44,7 @@ storiesOf('bpk-component-datatable', module)
         label={'Bla'}
         dataKey={'bla'}
         width={100}
+        disableSort
       />
     </BpkDataTable>
   ));
