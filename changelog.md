@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+**Breaking:**
+- bpk-component-horizontal-nav:
+  - New look in line with the native component
+
 **Added:**
 - bpk-theming:
   - New web theming utility, see https://backpack.github.io/components/utilities/theming

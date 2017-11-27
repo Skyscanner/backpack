@@ -471,6 +471,16 @@ $bpk-grid-gutter: 1.5rem !default;
 $bpk-grid-container-padding: 1.5rem !default;
 /// @group grids
 $bpk-grid-container-mobile-padding: .75rem !default;
+/// @group horizontal-nav
+$bpk-horizontal-nav-link-color: rgb(82, 76, 97) !default;
+/// @group horizontal-nav
+$bpk-horizontal-nav-link-hover-color: rgb(59, 52, 75) !default;
+/// @group horizontal-nav
+$bpk-horizontal-nav-link-active-color: rgb(37, 32, 51) !default;
+/// @group horizontal-nav
+$bpk-horizontal-nav-link-selected-color: rgb(0, 178, 214) !default;
+/// @group horizontal-nav
+$bpk-horizontal-nav-bar-selected-color: rgb(0, 178, 214) !default;
 /// @group icons
 $bpk-icon-size-sm: 1.125rem !default;
 /// @group icons

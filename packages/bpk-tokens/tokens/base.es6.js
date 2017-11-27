@@ -244,6 +244,11 @@ export const gridColumns = "12";
 export const gridGutter = "1.5rem";
 export const gridContainerPadding = "1.5rem";
 export const gridContainerMobilePadding = ".75rem";
+export const horizontalNavLinkColor = "rgb(82, 76, 97)";
+export const horizontalNavLinkHoverColor = "rgb(59, 52, 75)";
+export const horizontalNavLinkActiveColor = "rgb(37, 32, 51)";
+export const horizontalNavLinkSelectedColor = "rgb(0, 178, 214)";
+export const horizontalNavBarSelectedColor = "rgb(0, 178, 214)";
 export const iconSizeSm = "1.125rem";
 export const iconSizeLg = "1.5rem";
 export const modalScrimBackgroundColor = "rgb(178, 174, 189)";
@@ -623,6 +628,13 @@ gridColumns,
 gridGutter,
 gridContainerPadding,
 gridContainerMobilePadding,
+};
+export const horizontalNav = {
+horizontalNavLinkColor,
+horizontalNavLinkHoverColor,
+horizontalNavLinkActiveColor,
+horizontalNavLinkSelectedColor,
+horizontalNavBarSelectedColor,
 };
 export const icons = {
 iconSizeSm,

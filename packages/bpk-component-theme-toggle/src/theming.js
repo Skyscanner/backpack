@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 import {
-  colorBlue500,
+  horizontalNavLinkColor,
+  horizontalNavLinkHoverColor,
+  horizontalNavLinkActiveColor,
 } from 'bpk-tokens/tokens/base.es6';
 
 const theme = {
@@ -68,10 +70,10 @@ const bpkCustomTheme = {
   linkVisitedColor: theme.primaryColor700,
 
   horizontalNavBarSelectedColor: theme.primaryColor500,
-  horizontalNavLinkActiveColor: theme.primaryColor600,
-  horizontalNavLinkColor: colorBlue500,
-  horizontalNavLinkHoverColor: colorBlue500,
   horizontalNavLinkSelectedColor: theme.primaryColor500,
+  horizontalNavLinkColor,
+  horizontalNavLinkHoverColor,
+  horizontalNavLinkActiveColor,
 
   spinnerPrimaryColor: theme.primaryColor500,
 };
