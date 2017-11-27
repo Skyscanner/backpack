@@ -2231,6 +2231,51 @@
       },
       "name": "GRID_CONTAINER_MOBILE_PADDING"
     },
+    "HORIZONTAL_NAV_LINK_COLOR": {
+      "type": "color",
+      "category": "horizontal-nav",
+      "value": "rgb(82, 76, 97)",
+      ".alias": {
+        "value": "#524C61"
+      },
+      "name": "HORIZONTAL_NAV_LINK_COLOR"
+    },
+    "HORIZONTAL_NAV_LINK_HOVER_COLOR": {
+      "type": "color",
+      "category": "horizontal-nav",
+      "value": "rgb(59, 52, 75)",
+      ".alias": {
+        "value": "#3B344B"
+      },
+      "name": "HORIZONTAL_NAV_LINK_HOVER_COLOR"
+    },
+    "HORIZONTAL_NAV_LINK_ACTIVE_COLOR": {
+      "type": "color",
+      "category": "horizontal-nav",
+      "value": "rgb(37, 32, 51)",
+      ".alias": {
+        "value": "#252033"
+      },
+      "name": "HORIZONTAL_NAV_LINK_ACTIVE_COLOR"
+    },
+    "HORIZONTAL_NAV_LINK_SELECTED_COLOR": {
+      "type": "color",
+      "category": "horizontal-nav",
+      "value": "rgb(0, 178, 214)",
+      ".alias": {
+        "value": "#00b2d6"
+      },
+      "name": "HORIZONTAL_NAV_LINK_SELECTED_COLOR"
+    },
+    "HORIZONTAL_NAV_BAR_SELECTED_COLOR": {
+      "type": "color",
+      "category": "horizontal-nav",
+      "value": "rgb(0, 178, 214)",
+      ".alias": {
+        "value": "#00b2d6"
+      },
+      "name": "HORIZONTAL_NAV_BAR_SELECTED_COLOR"
+    },
     "ICON_SIZE_SM": {
       "type": "size",
       "category": "icons",
@@ -3498,6 +3543,11 @@
     "GRID_GUTTER",
     "GRID_CONTAINER_PADDING",
     "GRID_CONTAINER_MOBILE_PADDING",
+    "HORIZONTAL_NAV_LINK_COLOR",
+    "HORIZONTAL_NAV_LINK_HOVER_COLOR",
+    "HORIZONTAL_NAV_LINK_ACTIVE_COLOR",
+    "HORIZONTAL_NAV_LINK_SELECTED_COLOR",
+    "HORIZONTAL_NAV_BAR_SELECTED_COLOR",
     "ICON_SIZE_SM",
     "ICON_SIZE_LG",
     "MODAL_SCRIM_BACKGROUND_COLOR",
