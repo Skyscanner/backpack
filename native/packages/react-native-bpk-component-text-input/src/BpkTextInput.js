@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
 
 const BpkTextInput = (props) => {
   const {
-    small, valid, value, disabled, style: innerStyle, ...rest
+    small, valid, value, disabled, style: innerStyle, inputRef, ...rest
   } = props;
 
   let iconSource = null;
@@ -167,6 +167,7 @@ const BpkTextInput = (props) => {
         style={textStyle}
         editable={!disabled}
         value={value}
+        ref={inputRef}
         {...rest}
       />
       {iconSource &&
@@ -185,6 +186,7 @@ BpkTextInput.propTypes = {
   style: TextInput.propTypes.style,
   valid: PropTypes.bool,
   value: PropTypes.string.isRequired,
+  inputRef: PropTypes.func,
 };
 
 BpkTextInput.defaultProps = {
@@ -192,6 +194,7 @@ BpkTextInput.defaultProps = {
   small: false,
   style: null,
   valid: null,
+  inputRef: null,
 };
 
 export default BpkTextInput;

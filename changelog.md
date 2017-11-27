@@ -3,6 +3,10 @@
 ## UNRELEASED
  _Nothing Yet_
 
+**Added:**
+- react-native-bpk-component-text-input:
+  - Added new `inputRef` component to capture the `TextInput` ref.
+
 ## 2017-11-27 - Web theming support
 
 **Breaking:**
