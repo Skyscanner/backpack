@@ -61,3 +61,6 @@ class App extends Component {
 | value                 | number                        | true     | -             |
 | className             | string                        | false    | null          |
 
+## Theme Props
+
+Same as [secondary button](/components/web/buttons#theme-props)

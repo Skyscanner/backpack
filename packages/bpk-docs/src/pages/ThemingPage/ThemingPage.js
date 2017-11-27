@@ -35,6 +35,7 @@ import {
   NATIVE_HORIZONTAL_NAV,
   NATIVE_SPINNER,
   NATIVE_SWITCH,
+  NUDGERS,
   SPINNERS,
   TYPOGRAPHY,
 } from './../../constants/routes';
@@ -88,6 +89,9 @@ const components = [
         </BpkListItem>
         <BpkListItem>
           <BpkLink href={`${TYPOGRAPHY}#links`}>Links</BpkLink>
+        </BpkListItem>
+        <BpkListItem>
+          <BpkLink href={NUDGERS}>Nudgers</BpkLink>
         </BpkListItem>
         <BpkListItem>
           <BpkLink href={PROGRESS}>Progress bars</BpkLink>
