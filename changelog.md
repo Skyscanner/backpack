@@ -23,7 +23,7 @@
     - bpk-component-spinners
 - bpk-theming: 1.0.0
   - New web theming utility, see https://backpack.github.io/components/utilities/theming
-- bpk-component-theme-toggle: gst1.0.0
+- bpk-component-theme-toggle: 1.0.0
   - New component to help switching themes on the fly
 
 ## 2017-11-23 - Fix accidental breaking change in web spinners
