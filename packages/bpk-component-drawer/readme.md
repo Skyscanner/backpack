@@ -72,6 +72,7 @@ class App extends Component {
 | --------------------- | -------------------- | -------- | ------------- |
 | id                    | string               | true     | -             |
 | className             | string               | true     | -             |
+| contentClassName      | string               | true     | -             |
 | children              | node                 | true     | -             |
 | isOpen                | bool                 | true     | -             |
 | onClose               | func                 | true     | -             |

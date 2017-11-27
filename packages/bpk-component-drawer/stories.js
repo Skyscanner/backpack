@@ -249,4 +249,18 @@ storiesOf('bpk-component-drawer', module)
     >
       This is a default drawer. You can put anything you want in here.
     </DrawerContainer>
+  ))
+  .add('With full height content', () => (
+    <DrawerContainer
+      title="Drawer title"
+      closeLabel="Close drawer"
+      buttonText="Open drawer"
+      getApplicationElement={() => document.getElementById('application-container')}
+      contentClassName={getClassName('bpk-drawer-content-container')}
+    >
+      This is a flex drawer. You can put anything you want in here.
+      <BpkButton secondary className={getClassName('bpk-drawer-button')}>
+        I don&apos;t do anything.
+      </BpkButton>
+    </DrawerContainer>
   ));

@@ -21,10 +21,12 @@
 .bpk-drawer {
   position: fixed;
   right: 0;
+  display: flex;
   z-index: $bpk-zindex-drawer;
   width: 90%;
   max-width: 67 * $bpk-spacing-xs;
   height: 100%;
+  flex-direction: column;
   transform: translate(100%);
   transition: transform $bpk-duration-sm ease;
   outline: 0;
@@ -66,6 +68,7 @@
     min-height: #{2 * $bpk-spacing-sm + $bpk-text-base-line-height}; // keep height the same if visually hidden title
     padding: $bpk-spacing-sm;
     justify-content: space-between;
+    flex: 0 0;
 
     @include bpk-border-bottom-sm($bpk-color-gray-100);
   }
@@ -90,5 +93,6 @@
 
   &__content {
     padding: $bpk-spacing-sm;
+    flex: 1 1 100%;
   }
 }

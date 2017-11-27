@@ -29,15 +29,20 @@ import STYLES from './bpk-drawer-content.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkDrawerContent = (props) => {
-  const contentClassNames = [getClassName('bpk-drawer')];
+  const drawerClassNames = [getClassName('bpk-drawer')];
   const headerClassNames = [getClassName('bpk-drawer__heading')];
+  const contentClassNames = [getClassName('bpk-drawer__content')];
 
   if (props.className) {
-    contentClassNames.push(props.className);
+    drawerClassNames.push(props.className);
   }
 
   if (props.hideTitle) {
     headerClassNames.push(getClassName('bpk-drawer__heading--visually-hidden'));
+  }
+
+  if (props.contentClassName) {
+    contentClassNames.push(props.contentClassName);
   }
 
   const headingId = `bpk-drawer-heading-${props.id}`;
@@ -61,7 +66,7 @@ const BpkDrawerContent = (props) => {
           role="dialog"
           key="dialog"
           aria-labelledby={headingId}
-          className={[contentClassNames.join(' '), getClassName(`bpk-drawer--${status}`)].join(' ')}
+          className={[drawerClassNames.join(' '), getClassName(`bpk-drawer--${status}`)].join(' ')}
           ref={props.getDialogRef}
           {...props.closeEvents}
         >
@@ -79,7 +84,7 @@ const BpkDrawerContent = (props) => {
               />
             }
           </header>
-          <div className={getClassName('bpk-drawer__content')}>
+          <div className={contentClassNames.join(' ')}>
             {props.children}
           </div>
         </section>
@@ -103,6 +108,7 @@ BpkDrawerContent.propTypes = {
   onClose: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
+  contentClassName: PropTypes.string,
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   closeLabel: PropTypes.string,
@@ -112,6 +118,7 @@ BpkDrawerContent.propTypes = {
 
 BpkDrawerContent.defaultProps = {
   className: null,
+  contentClassName: null,
   closeLabel: null,
   closeText: null,
   isDrawerShown: true,
