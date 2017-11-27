@@ -1,17 +1,30 @@
 # Backpack changelog
 
 ## UNRELEASED
+ _Nothing Yet
+
+## 2017-11-27 - Web theming support
 
 **Breaking:**
-- bpk-component-horizontal-nav:
+- bpk-component-horizontal-nav: 1.0.43 => 2.0.0
   - New look in line with the native component
 
 **Added:**
-- bpk-theming:
+- Theming support:
+  Theming support added for:
+    - bpk-component-accordion
+    - bpk-component-barchart
+    - bpk-component-blockquote
+    - bpk-component-button
+    - bpk-component-horizontal-nav
+    - bpk-component-link
+    - bpk-component-nudgers
+    - bpk-component-progress
+    - bpk-component-spinners
+- bpk-theming: 1.0.0
   - New web theming utility, see https://backpack.github.io/components/utilities/theming
-- bpk-component-theme-toggle:
+- bpk-component-theme-toggle: gst1.0.0
   - New component to help switching themes on the fly
-
 
 ## 2017-11-23 - Fix accidental breaking change in web spinners
 
