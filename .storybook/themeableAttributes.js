@@ -28,4 +28,5 @@ export default {
   'bpk-component-horizontal-nav': require('./../packages/bpk-component-horizontal-nav').themeAttributes,
   'bpk-component-nudger': require('./../packages/bpk-component-nudger').themeAttributes,
   'bpk-component-spinner': require('./../packages/bpk-component-spinner').themeAttributes,
+  'bpk-component-progress': require('./../packages/bpk-component-progress').themeAttributes,
 };
