@@ -76,6 +76,8 @@ const bpkCustomTheme = {
   horizontalNavLinkActiveColor,
 
   spinnerPrimaryColor: theme.primaryColor500,
+
+  progressBarFillColor: theme.primaryColor500,
 };
 
 export default bpkCustomTheme;
