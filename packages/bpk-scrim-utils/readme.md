@@ -30,7 +30,7 @@ const BoxWithScrim = withScrim(Box);
 - `onClose` should be set as the `onClick` action on a button or a link
 - `isIphone` can be used to apply iPhone only styles or behaviour, as it has different scrolling behaviour
 
-`contentClassName` can be used to apply styles to the full-screen container into which the enriched component is inserted
+`containerClassName` can be used to apply styles to the full-screen container into which the enriched component is inserted
  (eg. `display: flex` or `display: grid`)
 
 ### Props
@@ -40,4 +40,4 @@ const BoxWithScrim = withScrim(Box);
 | onClose               | func     | true     | -             |
 | getApplicationElement | func     | true     | -             |
 | isIphone              | bool     | false    | /iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : '')|
-| contentClassName      | string   | false    | ''            |
+| containerClassName    | string   | false    | ''            |

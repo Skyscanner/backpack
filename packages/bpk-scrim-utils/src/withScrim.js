@@ -112,13 +112,13 @@ const withScrim = (WrappedComponent) => {
       const {
         isIphone,
         getApplicationElement,
-        contentClassName,
+        containerClassName,
         ...rest
       } = this.props;
 
       const classNames = [getClassName('bpk-scrim-content')];
       if (isIphone) { classNames.push(getClassName('bpk-scrim-content--iphone-fix')); }
-      classNames.push(contentClassName);
+      classNames.push(containerClassName);
 
       const closeEvents = {
         onTouchStart: this.onContentMouseDown,
@@ -161,12 +161,12 @@ const withScrim = (WrappedComponent) => {
     onClose: PropTypes.func.isRequired,
     getApplicationElement: PropTypes.func.isRequired,
     isIphone: PropTypes.bool,
-    contentClassName: PropTypes.string,
+    containerClassName: PropTypes.string,
   };
 
   component.defaultProps = {
     isIphone: /iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : ''),
-    contentClassName: '',
+    containerClassName: '',
   };
 
   return component;

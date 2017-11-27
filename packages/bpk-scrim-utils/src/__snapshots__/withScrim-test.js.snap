@@ -66,13 +66,13 @@ exports[`BpkScrim render should render correctly when is iPhone 1`] = `
 </div>
 `;
 
-exports[`BpkScrim render should render correctly with contentClassName 1`] = `
+exports[`BpkScrim render should render correctly with containerClassName 1`] = `
 <div>
   <div
     className="bpk-scrim"
   />
   <div
-    className="bpk-scrim-content contentClassName"
+    className="bpk-scrim-content containerClassName"
     onMouseDown={[Function]}
     onMouseMove={[Function]}
     onMouseUp={[Function]}
