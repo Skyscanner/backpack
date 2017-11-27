@@ -63,6 +63,7 @@
 
   &__header {
     display: flex;
+    min-height: #{2 * $bpk-spacing-sm + $bpk-text-base-line-height}; // keep height the same if visually hidden title
     padding: $bpk-spacing-sm;
     justify-content: space-between;
 
