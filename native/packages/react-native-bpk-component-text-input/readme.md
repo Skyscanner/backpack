@@ -91,3 +91,4 @@ export default class App extends Component {
 | small       | bool      | false    | false         |
 | style       | style     | false    | null          |
 | valid       | bool      | false    | null          |
+| inputRef    | func      | false    | null          |
