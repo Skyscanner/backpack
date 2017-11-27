@@ -1,7 +1,7 @@
 # Backpack changelog
 
 ## UNRELEASED
- _Nothing Yet
+ _Nothing Yet_
 
 ## 2017-11-27 - Web theming support
 
