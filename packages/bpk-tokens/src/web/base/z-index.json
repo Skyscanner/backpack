@@ -27,6 +27,9 @@
     },
     "ZINDEX_MODAL": {
       "value": "{!ZINDEX_MODAL}"
+    },
+    "ZINDEX_DRAWER": {
+      "value": "{!ZINDEX_DRAWER}"
     }
   }
 }

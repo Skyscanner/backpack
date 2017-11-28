@@ -34,6 +34,7 @@
     "ZINDEX_POPOVER": "900",
     "ZINDEX_TOOLTIP": "900",
     "ZINDEX_SCRIM": "1000",
-    "ZINDEX_MODAL": "1100"
+    "ZINDEX_MODAL": "1100",
+    "ZINDEX_DRAWER": "1100"
   }
 }

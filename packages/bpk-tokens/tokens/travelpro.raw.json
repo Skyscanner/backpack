@@ -356,6 +356,9 @@
     },
     "ZINDEX_MODAL": {
       "value": "1100"
+    },
+    "ZINDEX_DRAWER": {
+      "value": "1100"
     }
   },
   "props": {
