@@ -1,6 +1,6 @@
 # Backpack changelog
 
-## UNRELEASED
+## 2017-11-28 - Add support for refs in react-native-bpk-component-input
  _Nothing Yet_
 
 **Added:**
