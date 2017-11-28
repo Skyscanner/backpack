@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-component-banner-alert:
+  - `withBannerAlertState` HOC, see https://backpack.github.io/components/web/banner-alerts/#withBannerAlertState
 
 ## 2017-12-14 - React Native text inputs now correctly support placeholders
 

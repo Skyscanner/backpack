@@ -21,7 +21,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { fontWeightBold } from 'bpk-tokens/tokens/base.es6';
 
-import BpkBannerAlert, { ALERT_TYPES } from './index';
+import BpkBannerAlert, { ALERT_TYPES, withBannerAlertState } from './index';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 const longMessage = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
@@ -30,6 +30,8 @@ nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fr
 porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.`;
+
+const BannerAlertState = withBannerAlertState(BpkBannerAlert);
 
 storiesOf('bpk-component-banner-alert', module)
   .add('Neutral', () => (
@@ -42,7 +44,13 @@ storiesOf('bpk-component-banner-alert', module)
     <BpkBannerAlert message={longMessage} type={ALERT_TYPES.SUCCESS} />
   ))
   .add('Success (dismissable)', () => (
-    <BpkBannerAlert dismissable message={message} type={ALERT_TYPES.SUCCESS} onDismiss={action('dismissed')} />
+    <BpkBannerAlert
+      dismissable
+      dismissButtonLabel="Dismiss"
+      message={message}
+      type={ALERT_TYPES.SUCCESS}
+      onDismiss={action('dismissed')}
+    />
   ))
   .add('Success (animate on enter)', () => (
     <BpkBannerAlert animateOnEnter message={message} type={ALERT_TYPES.SUCCESS} onDismiss={action('dismissed')} />
@@ -68,4 +76,17 @@ storiesOf('bpk-component-banner-alert', module)
   ))
   .add('Error', () => (
     <BpkBannerAlert message={message} type={ALERT_TYPES.ERROR} />
+  ))
+  .add('Success (dismissable behaviour)', () => (
+    <BannerAlertState dismissable dismissButtonLabel="Dismiss" message={message} type={ALERT_TYPES.SUCCESS} />
+  ))
+  .add('Success (expandable behaviour)', () => (
+    <BannerAlertState message={message} type={ALERT_TYPES.SUCCESS} toggleButtonLabel="View more">
+      {longMessage}
+    </BannerAlertState>
+  ))
+  .add('Success (automatically dismissed after 5 seconds)', () => (
+    <BannerAlertState hideAfter={5} message={message} type={ALERT_TYPES.SUCCESS} toggleButtonLabel="View more">
+      {longMessage}
+    </BannerAlertState>
   ));
