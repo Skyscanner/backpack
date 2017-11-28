@@ -67,7 +67,7 @@ const BpkDrawerContent = (props) => {
           key="dialog"
           aria-labelledby={headingId}
           className={[drawerClassNames.join(' '), getClassName(`bpk-drawer--${status}`)].join(' ')}
-          ref={props.getDialogRef}
+          ref={props.dialogRef}
           {...props.closeEvents}
         >
           <header className={getClassName('bpk-drawer__header')}>
@@ -94,7 +94,7 @@ const BpkDrawerContent = (props) => {
 };
 
 BpkDrawerContent.propTypes = {
-  getDialogRef: PropTypes.func.isRequired,
+  dialogRef: PropTypes.func.isRequired,
   closeEvents: PropTypes.shape({
     onTouchStart: PropTypes.func,
     onTouchMove: PropTypes.func,

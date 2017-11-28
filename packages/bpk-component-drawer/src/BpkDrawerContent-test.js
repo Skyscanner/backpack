@@ -46,7 +46,7 @@ describe('BpkDrawerContent', () => {
         onCloseAnimationComplete={jest.fn()}
         closeLabel="Close"
         closeEvents={closeEvents}
-        getDialogRef={jest.fn()}
+        dialogRef={jest.fn()}
         isIphone={false}
       >
         Drawer content
@@ -65,7 +65,7 @@ describe('BpkDrawerContent', () => {
         onCloseAnimationComplete={jest.fn()}
         closeLabel="Close"
         closeEvents={closeEvents}
-        getDialogRef={jest.fn()}
+        dialogRef={jest.fn()}
         isIphone={false}
       >
         Drawer content
@@ -84,7 +84,7 @@ describe('BpkDrawerContent', () => {
         onCloseAnimationComplete={jest.fn()}
         closeLabel="Close"
         closeEvents={closeEvents}
-        getDialogRef={jest.fn()}
+        dialogRef={jest.fn()}
         isIphone={false}
       >
         Drawer content
@@ -102,7 +102,7 @@ describe('BpkDrawerContent', () => {
         onCloseAnimationComplete={jest.fn()}
         closeLabel="Close"
         closeEvents={closeEvents}
-        getDialogRef={jest.fn()}
+        dialogRef={jest.fn()}
         hideTitle
       >
         Drawer content

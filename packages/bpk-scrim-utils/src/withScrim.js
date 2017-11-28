@@ -38,7 +38,7 @@ const withScrim = (WrappedComponent) => {
       this.onDocumentMove = this.onDocumentMove.bind(this);
       this.onOverlayMouseDown = this.onOverlayMouseDown.bind(this);
       this.onOverlayMouseUp = this.onOverlayMouseUp.bind(this);
-      this.getDialogRef = this.getDialogRef.bind(this);
+      this.dialogRef = this.dialogRef.bind(this);
 
       this.shouldClose = false;
     }
@@ -104,7 +104,7 @@ const withScrim = (WrappedComponent) => {
       this.shouldClose = false;
     }
 
-    getDialogRef(ref) {
+    dialogRef(ref) {
       this.dialogElement = ref;
     }
 
@@ -145,7 +145,7 @@ const withScrim = (WrappedComponent) => {
             <WrappedComponent
               {...rest}
               isIphone={isIphone}
-              getDialogRef={this.getDialogRef}
+              dialogRef={this.dialogRef}
               closeEvents={closeEvents}
             />
           </div>

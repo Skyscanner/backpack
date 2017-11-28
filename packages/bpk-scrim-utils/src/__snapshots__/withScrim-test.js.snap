@@ -25,7 +25,7 @@ exports[`BpkScrim render should render correctly 1`] = `
           "onTouchStart": [Function],
         }
       }
-      getDialogRef={[Function]}
+      dialogRef={[Function]}
       isIphone={false}
       onClose={[Function]}
     />
@@ -58,7 +58,7 @@ exports[`BpkScrim render should render correctly when is iPhone 1`] = `
           "onTouchStart": [Function],
         }
       }
-      getDialogRef={[Function]}
+      dialogRef={[Function]}
       isIphone={true}
       onClose={[Function]}
     />
@@ -91,7 +91,7 @@ exports[`BpkScrim render should render correctly with containerClassName 1`] = `
           "onTouchStart": [Function],
         }
       }
-      getDialogRef={[Function]}
+      dialogRef={[Function]}
       isIphone={false}
       onClose={[Function]}
     />

@@ -48,7 +48,7 @@ const BpkModalDialog = (props) => {
         role="dialog"
         aria-labelledby={headingId}
         className={classNames.join(' ')}
-        ref={props.getDialogRef}
+        ref={props.dialogRef}
         {...props.closeEvents}
       >
         <header className={getClassName('bpk-modal__header')}>
@@ -84,7 +84,7 @@ BpkModalDialog.propTypes = {
   closeText: PropTypes.string,
   wide: PropTypes.bool,
   isIphone: PropTypes.bool.isRequired,
-  getDialogRef: PropTypes.func.isRequired,
+  dialogRef: PropTypes.func.isRequired,
   closeEvents: PropTypes.shape({
     onTouchStart: PropTypes.func,
     onTouchMove: PropTypes.func,
