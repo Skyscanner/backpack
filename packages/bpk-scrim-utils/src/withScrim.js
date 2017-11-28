@@ -38,7 +38,7 @@ const withScrim = (WrappedComponent) => {
       this.onDocumentMove = this.onDocumentMove.bind(this);
       this.onOverlayMouseDown = this.onOverlayMouseDown.bind(this);
       this.onOverlayMouseUp = this.onOverlayMouseUp.bind(this);
-      this.getDialogRef = this.getDialogRef.bind(this);
+      this.dialogRef = this.dialogRef.bind(this);
 
       this.shouldClose = false;
     }
@@ -104,7 +104,7 @@ const withScrim = (WrappedComponent) => {
       this.shouldClose = false;
     }
 
-    getDialogRef(ref) {
+    dialogRef(ref) {
       this.dialogElement = ref;
     }
 
@@ -112,13 +112,13 @@ const withScrim = (WrappedComponent) => {
       const {
         isIphone,
         getApplicationElement,
-        contentClassName,
+        containerClassName,
         ...rest
       } = this.props;
 
       const classNames = [getClassName('bpk-scrim-content')];
       if (isIphone) { classNames.push(getClassName('bpk-scrim-content--iphone-fix')); }
-      classNames.push(contentClassName);
+      classNames.push(containerClassName);
 
       const closeEvents = {
         onTouchStart: this.onContentMouseDown,
@@ -145,7 +145,7 @@ const withScrim = (WrappedComponent) => {
             <WrappedComponent
               {...rest}
               isIphone={isIphone}
-              getDialogRef={this.getDialogRef}
+              dialogRef={this.dialogRef}
               closeEvents={closeEvents}
             />
           </div>
@@ -161,12 +161,12 @@ const withScrim = (WrappedComponent) => {
     onClose: PropTypes.func.isRequired,
     getApplicationElement: PropTypes.func.isRequired,
     isIphone: PropTypes.bool,
-    contentClassName: PropTypes.string,
+    containerClassName: PropTypes.string,
   };
 
   component.defaultProps = {
     isIphone: /iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : ''),
-    contentClassName: '',
+    containerClassName: '',
   };
 
   return component;

@@ -46,7 +46,7 @@ describe('BpkDrawerContent', () => {
         onCloseAnimationComplete={jest.fn()}
         closeLabel="Close"
         closeEvents={closeEvents}
-        getDialogRef={jest.fn()}
+        dialogRef={jest.fn()}
         isIphone={false}
       >
         Drawer content
@@ -65,7 +65,26 @@ describe('BpkDrawerContent', () => {
         onCloseAnimationComplete={jest.fn()}
         closeLabel="Close"
         closeEvents={closeEvents}
-        getDialogRef={jest.fn()}
+        dialogRef={jest.fn()}
+        isIphone={false}
+      >
+        Drawer content
+      </BpkDrawerContent>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly when it has a contentClassName', () => {
+    const tree = renderer.create(
+      <BpkDrawerContent
+        id="my-drawer"
+        contentClassName="my-classname"
+        title="Drawer title"
+        onClose={jest.fn()}
+        onCloseAnimationComplete={jest.fn()}
+        closeLabel="Close"
+        closeEvents={closeEvents}
+        dialogRef={jest.fn()}
         isIphone={false}
       >
         Drawer content
@@ -83,7 +102,7 @@ describe('BpkDrawerContent', () => {
         onCloseAnimationComplete={jest.fn()}
         closeLabel="Close"
         closeEvents={closeEvents}
-        getDialogRef={jest.fn()}
+        dialogRef={jest.fn()}
         hideTitle
       >
         Drawer content

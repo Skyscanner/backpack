@@ -72,12 +72,12 @@ describe('BpkScrim', () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('should render correctly with contentClassName', () => {
+    it('should render correctly with containerClassName', () => {
       const tree = renderer.create(
         <Component
           onClose={jest.fn()}
           getApplicationElement={jest.fn()}
-          contentClassName="contentClassName"
+          containerClassName="containerClassName"
         />,
       ).toJSON();
       expect(tree).toMatchSnapshot();

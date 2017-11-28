@@ -43,7 +43,7 @@ describe('BpkModalDialog', () => {
         onClose={jest.fn()}
         closeLabel="Close"
         closeEvents={closeEvents}
-        getDialogRef={jest.fn()}
+        dialogRef={jest.fn()}
         isIphone={false}
       >
         Modal content
@@ -61,7 +61,7 @@ describe('BpkModalDialog', () => {
         onClose={jest.fn()}
         closeLabel="Close"
         closeEvents={closeEvents}
-        getDialogRef={jest.fn()}
+        dialogRef={jest.fn()}
         isIphone={false}
       >
         Modal content
@@ -78,7 +78,7 @@ describe('BpkModalDialog', () => {
         onClose={jest.fn()}
         closeLabel="Close"
         closeEvents={closeEvents}
-        getDialogRef={jest.fn()}
+        dialogRef={jest.fn()}
         isIphone
       >
         Modal content

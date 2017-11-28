@@ -36,7 +36,7 @@ const BpkModal = (props) => {
 
   return (
     <Portal isOpen={isOpen} onClose={onClose} target={target}>
-      <ScrimBpkModalDialog onClose={onClose} {...rest} contentClassName={getClassName('bpk-modal__container')} />
+      <ScrimBpkModalDialog onClose={onClose} {...rest} containerClassName={getClassName('bpk-modal__container')} />
     </Portal>
   );
 };

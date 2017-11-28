@@ -21,3 +21,12 @@
 .bpk-drawer-paragraph {
   margin-bottom: $bpk-spacing-xs;
 }
+
+.bpk-drawer-content-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.bpk-drawer-button {
+  margin: auto auto 0;
+}
