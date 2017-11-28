@@ -24,6 +24,7 @@ export default {
   'bpk-component-barchart': require('./../packages/bpk-component-barchart').themeAttributes,
   'bpk-component-blockquote': require('./../packages/bpk-component-blockquote').themeAttributes,
   'bpk-component-button': [...primaryThemeAttributes, ...secondaryThemeAttributes],
+  'bpk-component-calendar': require('./../packages/bpk-component-calendar').themeAttributes,
   'bpk-component-link': require('./../packages/bpk-component-link').themeAttributes,
   'bpk-component-horizontal-nav': require('./../packages/bpk-component-horizontal-nav').themeAttributes,
   'bpk-component-nudger': require('./../packages/bpk-component-nudger').themeAttributes,

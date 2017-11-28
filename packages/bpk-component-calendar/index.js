@@ -24,6 +24,7 @@ import BpkCalendarDate from './src/BpkCalendarDate';
 import composeCalendar from './src/composeCalendar';
 import CustomPropTypes from './src/custom-proptypes';
 import * as DateUtils from './src/date-utils';
+import themeAttributes from './src/themeAttributes';
 
 export default BpkCalendarContainer;
 
@@ -36,4 +37,5 @@ export {
   DateUtils,
   composeCalendar,
   withCalendarState,
+  themeAttributes,
 };

@@ -19,6 +19,8 @@ import {
   horizontalNavLinkColor,
   horizontalNavLinkHoverColor,
   horizontalNavLinkActiveColor,
+  calendarDayHoverColor,
+  calendarDayActiveColor,
 } from 'bpk-tokens/tokens/base.es6';
 
 const theme = {
@@ -78,6 +80,17 @@ const bpkCustomTheme = {
   spinnerPrimaryColor: theme.primaryColor500,
 
   progressBarFillColor: theme.primaryColor500,
+
+  calendarDateTextColor: theme.primaryColor500,
+  calendarDateTextHoverColor: calendarDayHoverColor,
+  calendarDateTextActiveColor: calendarDayActiveColor,
+  calendarDateTextFocusColor: theme.primaryColor500,
+  calendarDateTextSelectedColor: theme.white,
+  calendarDateSelectedBackgroundColor: theme.primaryColor700,
+  calendarDateFocusedBorderColor: theme.primaryColor500,
+  calendarNudgerIconColor: theme.primaryColor500,
+  calendarNudgerIconHoverColor: theme.primaryColor600,
+  calendarNudgerIconActiveColor: theme.primaryColor700,
 };
 
 export default bpkCustomTheme;
