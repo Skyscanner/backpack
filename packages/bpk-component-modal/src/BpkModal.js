@@ -29,13 +29,17 @@ const ScrimBpkModalDialog = withScrim(BpkModalDialog);
 
 const BpkModal = (props) => {
   const {
-    isOpen, onClose, target, ...rest
+    isOpen,
+    onClose,
+    target,
+    renderTarget,
+    ...rest
   } = props;
 
   delete rest.onClose;
 
   return (
-    <Portal isOpen={isOpen} onClose={onClose} target={target}>
+    <Portal isOpen={isOpen} onClose={onClose} target={target} renderTarget={renderTarget}>
       <ScrimBpkModalDialog onClose={onClose} {...rest} containerClassName={getClassName('bpk-modal__container')} />
     </Portal>
   );
@@ -44,10 +48,12 @@ const BpkModal = (props) => {
 BpkModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  target: PropTypes.element,
+  renderTarget: PropTypes.instanceOf(Element),
+  target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
 };
 
 BpkModal.defaultProps = {
+  renderTarget: null,
   target: null,
 };
 

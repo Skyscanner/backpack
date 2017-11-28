@@ -26,6 +26,7 @@ export default [
   [...primaryThemeAttributes, ...secondaryThemeAttributes],
   require('bpk-component-link').themeAttributes,
   require('bpk-component-horizontal-nav').themeAttributes,
+  require('bpk-component-modal').themeAttributes,
   require('bpk-component-nudger').themeAttributes,
   require('bpk-component-spinner').themeAttributes,
   require('bpk-component-progress').themeAttributes,

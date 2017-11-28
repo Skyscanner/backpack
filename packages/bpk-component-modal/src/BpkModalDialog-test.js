@@ -70,6 +70,45 @@ describe('BpkModalDialog', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with wide prop', () => {
+    const tree = renderer.create(
+      <BpkModalDialog
+        id="my-modal"
+        className="my-classname"
+        wide
+        title="Modal title"
+        onClose={jest.fn()}
+        closeLabel="Close"
+        closeEvents={closeEvents}
+        dialogRef={jest.fn()}
+        isIphone={false}
+      >
+        Modal content
+      </BpkModalDialog>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with closeText prop', () => {
+    const tree = renderer.create(
+      <BpkModalDialog
+        id="my-modal"
+        className="my-classname"
+        closeText="Dismiss"
+        title="Modal title"
+        onClose={jest.fn()}
+        closeLabel="Close"
+        closeEvents={closeEvents}
+        dialogRef={jest.fn()}
+        isIphone={false}
+      >
+        Modal content
+      </BpkModalDialog>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+
   it('should render correctly when is iPhone', () => {
     const tree = renderer.create(
       <BpkModalDialog

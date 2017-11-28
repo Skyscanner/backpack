@@ -2,6 +2,20 @@
 
 exports[`Portal should render correctly with no target 1`] = `null`;
 
+exports[`Portal should render correctly with renderTarget 1`] = `null`;
+
+exports[`Portal should render correctly with renderTarget 2`] = `
+<div>
+  <div>
+    <div
+      data-reactroot=""
+    >
+      My portal content
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Portal should render correctly with target 1`] = `
 <div>
   Target

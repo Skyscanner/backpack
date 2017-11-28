@@ -190,6 +190,9 @@ if (isProduction) {
       entry: 'docs',
       paths: staticSiteGeneratorConfig.paths,
       locals: staticSiteGeneratorConfig,
+      globals: {
+        Element: {},
+      },
     }),
     new webpack.DefinePlugin({
       'process.env': {
