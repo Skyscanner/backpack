@@ -1,6 +1,11 @@
 # Backpack changelog
 
 ## UNRELEASED
+**Breaking:**
+-bpk-scrim-utils:
+  - Renamed prop: `contentClassName` to `containerClassName` to better reflect usage
+  - Renamed prop it passes to wrapped component: `getDialogRef` to `dialogRef` to align with convention
+
 **Added:**
 - bpk-mixins:
   - Adds `$bpk-zindex-drawer`
