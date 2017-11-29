@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkPaginationBreak default 1`] = `
+<div>
+  ...
+</div>
+`;
+
+exports[`BpkPaginationBreak should display custom break label 1`] = `
+<div>
+  |
+</div>
+`;

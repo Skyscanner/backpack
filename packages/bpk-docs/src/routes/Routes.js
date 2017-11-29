@@ -70,6 +70,7 @@ import TicketsPage from './../pages/TicketsPage';
 import HorizontalNavPage from './../pages/HorizontalNavPage';
 import FieldsetsPage from './../pages/FieldsetsPage';
 import BarchartsPage from './../pages/BarchartsPage';
+import PaginationPage from './../pages/PaginationPage';
 import StarRatingPage from './../pages/StarRatingPage';
 import SlidersPage from './../pages/SlidersPage';
 import DrawerPage from './../pages/DrawerPage';
@@ -143,6 +144,7 @@ const Routes = (
         <Route path={ROUTES.ACCORDIONS} component={AccordionsPage} />
         <Route path={ROUTES.NUDGERS} component={NudgersPage} />
         <Route path={ROUTES.PROGRESS} component={ProgressPage} />
+        <Route path={ROUTES.PAGINATION} component={PaginationPage} />
         <Route path={ROUTES.TICKETS} component={TicketsPage} />
         <Route path={ROUTES.HORIZONTAL_NAV} component={HorizontalNavPage} />
         <Route path={ROUTES.FIELDSETS} component={FieldsetsPage} />

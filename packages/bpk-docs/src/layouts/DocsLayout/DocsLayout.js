@@ -53,7 +53,7 @@ const links = [
       { id: 'FIELDSETS', route: routes.FIELDSETS, children: 'Fieldsets' },
       { id: 'STAR_RATINGS', route: routes.STAR_RATING, children: 'Star rating' },
       { id: 'BAR_CHARTS', route: routes.BARCHARTS, children: 'Bar charts' },
-      { id: 'PAGINATION', route: null, children: 'Pagination' },
+      { id: 'PAGINATION', route: routes.PAGINATION, children: 'Pagination' },
       { id: 'SLIDERS', route: routes.SLIDERS, children: 'Sliders' },
       { id: 'DRAWER', route: routes.DRAWER, children: 'Drawer' },
       { id: 'CAROUSELS', route: null, children: 'Carousel' },

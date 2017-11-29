@@ -44,6 +44,7 @@
     "bpk-component-loading-button": "^1.0.38",
     "bpk-component-modal": "^1.1.45",
     "bpk-component-nudger": "^1.0.37",
+    "bpk-component-pagination": "^0.0.0",
     "bpk-component-panel": "^1.0.35",
     "bpk-component-popover": "^1.2.41",
     "bpk-component-progress": "^1.0.37",
