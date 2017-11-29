@@ -36,6 +36,7 @@ npm install [package-name] --save-dev
 | [`bpk-component-code`](/packages/bpk-component-code) | [![npm version](https://badge.fury.io/js/bpk-component-code.svg)](http://badge.fury.io/js/bpk-component-code) |
 | [`bpk-component-content-container`](/packages/bpk-component-content-container) | [![npm version](https://badge.fury.io/js/bpk-component-content-container.svg)](http://badge.fury.io/js/bpk-component-content-container) |
 | [`bpk-component-datepicker`](/packages/bpk-component-datepicker) | [![npm version](https://badge.fury.io/js/bpk-component-datepicker.svg)](http://badge.fury.io/js/bpk-component-datepicker) |
+| [`bpk-component-definition-list`](/packages/bpk-component-definition-list) | [![npm version](https://badge.fury.io/js/bpk-component-definition-list.svg)](http://badge.fury.io/js/bpk-component-definition-list) |
 | [`bpk-component-grid`](/packages/bpk-component-grid) | [![npm version](https://badge.fury.io/js/bpk-component-grid.svg)](http://badge.fury.io/js/bpk-component-grid) |
 | [`bpk-component-grid-toggle`](/packages/bpk-component-grid-toggle) | [![npm version](https://badge.fury.io/js/bpk-component-grid-toggle.svg)](http://badge.fury.io/js/bpk-component-grid-toggle) |
 | [`bpk-component-heading`](/packages/bpk-component-heading) | [![npm version](https://badge.fury.io/js/bpk-component-heading.svg)](http://badge.fury.io/js/bpk-component-heading) |

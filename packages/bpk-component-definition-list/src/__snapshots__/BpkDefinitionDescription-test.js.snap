@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkDefinitionDescription should render correctly 1`] = `
+<dd
+  className="bpk-definition-list__description"
+>
+  Definition
+</dd>
+`;
+
+exports[`BpkDefinitionDescription should render correctly with a "className" attribute 1`] = `
+<dd
+  className="bpk-definition-list__description test-definition"
+>
+  Definition
+</dd>
+`;
+
+exports[`BpkDefinitionDescription should render correctly with other attributes 1`] = `
+<dd
+  className="bpk-definition-list__description"
+  title="this is the description"
+>
+  Definition
+</dd>
+`;
