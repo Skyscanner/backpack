@@ -29,6 +29,7 @@ import {
   ACCORDIONS,
   BARCHARTS,
   BUTTONS,
+  CALENDAR,
   HORIZONTAL_NAV,
   PROGRESS,
   NATIVE_BUTTON,
@@ -83,6 +84,9 @@ const components = [
         </BpkListItem>
         <BpkListItem>
           <BpkLink href={BUTTONS}>Buttons</BpkLink>
+        </BpkListItem>
+        <BpkListItem>
+          <BpkLink href={CALENDAR}>Calendars</BpkLink>
         </BpkListItem>
         <BpkListItem>
           <BpkLink href={HORIZONTAL_NAV}>Horizontal navigation</BpkLink>

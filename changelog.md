@@ -11,6 +11,8 @@
   - Adds `$bpk-zindex-drawer`
 - bpk-tokens:
   - Adds value for drawer z-index.
+- bpk-component-calendar:
+  - Calendar now supports theming.
 
 ## 2017-11-28 - Add support for refs in react-native-bpk-component-input
 

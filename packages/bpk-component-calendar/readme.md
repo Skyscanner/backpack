@@ -322,4 +322,16 @@ const onMonthChange = (event, {
 
 Sets the date that is focused initially, this prop has no effect if `selectedDate` or the deprecated `date` prop are specified in which case the date specified in those props is focused. If no selected date is set and `initiallyFocusedDate` is not set the focused date is the `minDate`(defaults to today if it has not been explicitly set).
 
+## Theme Props
+
+* `calendarDateTextColor`
+* `calendarDateTextHoverColor`
+* `calendarDateTextActiveColor`
+* `calendarDateTextFocusColor`
+* `calendarDateTextSelectedColor`
+* `calendarDateSelectedBackgroundColor`
+* `calendarDateFocusedBorderColor`
+* `calendarNudgerIconColor`
+* `calendarNudgerIconHoverColor`
+* `calendarNudgerIconActiveColor`
 
