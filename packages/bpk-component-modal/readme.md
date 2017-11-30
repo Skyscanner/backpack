@@ -66,6 +66,9 @@ class App extends Component {
   the root element for your application is by returning it's DOM node via the function passed to the
   `getApplicationElement` prop (see the example above).
 
+> **Theming:** In order to theme the modal a `renderTarget` needs to be supplied as a DOM reference of a node in
+  the scope of `BpkThemeProvider`, the modal will be rendered as child element of the given node.
+
 ## Props
 
 | Property              | PropType             | Required | Default Value |
@@ -79,4 +82,12 @@ class App extends Component {
 | getApplicationElement | func                 | true     | -             |
 | closeLabel            | string               | false    | null          |
 | closeText             | string               | false    | null          |
+| renderTarget          | node     | false    | null          |
 | wide                  | bool                 | false    | false         |
+
+## Theme Props
+
+Both all the props from [link](/components/web/typography#links) and
+
+* `modalCloseButtonColor`
+* `modalCloseButtonHoverColor`

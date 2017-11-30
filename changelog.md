@@ -13,6 +13,12 @@
   - Adds value for drawer z-index.
 - bpk-component-calendar:
   - Calendar now supports theming.
+- bpk-component-modal:
+  - Modal now supports theming.
+- bpk-component-close-button:
+  - Close button now supports theming.
+- bpk-react-utils:
+  - Portal now accepts a `renderTarget` DOM element to render the portal in.
 
 ## 2017-11-28 - Add support for refs in react-native-bpk-component-input
 
