@@ -65,7 +65,6 @@ class ModalContainer extends Component {
 
   render() {
     const { buttonText, ...rest } = this.props;
-    const renderTarget = document.getElementById('renderTarget');
 
     return (
       <div>
@@ -114,13 +113,13 @@ class ModalContainer extends Component {
         </div>
         <BpkModal
           id="my-modal"
-          renderTarget={renderTarget}
+          renderTarget={this.renderTarget}
           className="my-classname"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           {...rest}
         />
-        <div id="renderTarget" />
+        <div ref={(target) => { this.renderTarget = target; }} />
       </div>
     );
   }

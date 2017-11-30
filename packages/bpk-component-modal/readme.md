@@ -53,9 +53,11 @@ class App extends Component {
           getApplicationElement={() =>
             document.getElementById('application-container')
           }
+          renderTarget={this.renderTarget}
         >
           This is a modal. You can put anything you want in here.
         </BpkModal>
+         <div ref={(target) => { this.renderTarget = target; }} />
       </div>
     );
   }
@@ -82,7 +84,7 @@ class App extends Component {
 | getApplicationElement | func                 | true     | -             |
 | closeLabel            | string               | false    | null          |
 | closeText             | string               | false    | null          |
-| renderTarget          | node     | false    | null          |
+| renderTarget          | node                 | false    | null          |
 | wide                  | bool                 | false    | false         |
 
 ## Theme Props

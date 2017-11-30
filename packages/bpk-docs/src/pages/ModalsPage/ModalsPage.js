@@ -71,13 +71,13 @@ class ModalContainer extends Component {
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           wide={this.state.wide}
-          renderTarget={() => document.getElementById('theamableModalTarget')}
+          renderTarget={this.theamableModalTarget}
           {...rest}
         >
           <div>{children}</div>
           <BpkButtonLink onClick={this.toggleWidth}>Toggle width</BpkButtonLink>
         </BpkModal>
-        <div id="theamableModalTarget" />
+        <div ref={(target) => { this.theamableModalTarget = target; }} />
       </div>
     );
   }
