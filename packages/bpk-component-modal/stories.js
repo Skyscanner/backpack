@@ -111,7 +111,15 @@ class ModalContainer extends Component {
             ipsum, non sodales ante placerat in. Suspendisse malesuada auctor erat, vel pulvinar erat dignissim vitae.
           </Paragraph>
         </div>
-        <BpkModal id="my-modal" className="my-classname" isOpen={this.state.isOpen} onClose={this.onClose} {...rest} />
+        <BpkModal
+          id="my-modal"
+          renderTarget={this.renderTarget}
+          className="my-classname"
+          isOpen={this.state.isOpen}
+          onClose={this.onClose}
+          {...rest}
+        />
+        <div ref={(target) => { this.renderTarget = target; }} />
       </div>
     );
   }

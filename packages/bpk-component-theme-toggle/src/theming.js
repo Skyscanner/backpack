@@ -77,6 +77,9 @@ const bpkCustomTheme = {
   horizontalNavLinkHoverColor,
   horizontalNavLinkActiveColor,
 
+  modalCloseButtonColor: theme.primaryColor300,
+  modalCloseButtonHoverColor: theme.primaryColor500,
+
   spinnerPrimaryColor: theme.primaryColor500,
 
   progressBarFillColor: theme.primaryColor500,

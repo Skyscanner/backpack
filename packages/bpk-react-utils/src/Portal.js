@@ -142,6 +142,13 @@ class Portal extends Component {
     return this.props.target && findDOMNode(this);
   }
 
+  getRenderTarget() {
+    if (this.props.renderTarget) {
+      return this.props.renderTarget;
+    }
+    return document.body;
+  }
+
   open() {
     if (this.portalElement) {
       return;
@@ -150,7 +157,7 @@ class Portal extends Component {
     const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : false;
 
     this.portalElement = document.createElement('div');
-    document.body.appendChild(this.portalElement);
+    this.getRenderTarget().appendChild(this.portalElement);
     document.addEventListener('touchstart', this.onDocumentMouseDown, passiveArgs);
     document.addEventListener('touchmove', this.onDocumentMouseMove, passiveArgs);
     document.addEventListener('touchend', this.onDocumentMouseUp, passiveArgs);
@@ -175,7 +182,7 @@ class Portal extends Component {
     }
 
     unmountComponentAtNode(this.portalElement);
-    document.body.removeChild(this.portalElement);
+    this.getRenderTarget().removeChild(this.portalElement);
     document.removeEventListener('touchstart', this.onDocumentMouseDown);
     document.removeEventListener('touchmove', this.onDocumentMouseMove);
     document.removeEventListener('touchend', this.onDocumentMouseUp);
@@ -224,25 +231,27 @@ class Portal extends Component {
 Portal.propTypes = {
   children: PropTypes.node.isRequired,
   isOpen: PropTypes.bool.isRequired,
-  target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
-  onOpen: PropTypes.func,
-  onClose: PropTypes.func,
-  onRender: PropTypes.func,
-  targetRef: PropTypes.func,
   beforeClose: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
-  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   className: PropTypes.string,
+  onClose: PropTypes.func,
+  onOpen: PropTypes.func,
+  onRender: PropTypes.func,
+  renderTarget: PropTypes.instanceOf(Element),
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+  targetRef: PropTypes.func,
 };
 
 Portal.defaultProps = {
-  target: null,
-  onOpen: () => null,
-  onClose: () => null,
-  onRender: () => null,
-  targetRef: null,
   beforeClose: null,
-  style: null,
   className: null,
+  onClose: () => null,
+  onOpen: () => null,
+  onRender: () => null,
+  renderTarget: null,
+  style: null,
+  target: null,
+  targetRef: null,
 };
 
 export default Portal;

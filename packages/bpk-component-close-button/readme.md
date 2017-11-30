@@ -25,3 +25,8 @@ export default () => (
 | -------- | -------- | -------- | ------------- |
 | label    | string   | true     | -             |
 | onClick  | func     | true     | -             |
+
+## Theme Props
+
+* `modalCloseButtonColor`
+* `modalCloseButtonHoverColor`

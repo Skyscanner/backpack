@@ -2,7 +2,13 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- bpk-component-modal:
+  - Modal now supports theming.
+- bpk-component-close-button:
+  - Close button now supports theming.
+- bpk-react-utils:
+  - Portal now accepts a `renderTarget` DOM element to render the portal in.
 
 ## 2017-11-30 - New Drawer component and theming support for calendar
 

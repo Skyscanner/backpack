@@ -53,9 +53,11 @@ class App extends Component {
           getApplicationElement={() =>
             document.getElementById('application-container')
           }
+          renderTarget={this.renderTarget}
         >
           This is a modal. You can put anything you want in here.
         </BpkModal>
+         <div ref={(target) => { this.renderTarget = target; }} />
       </div>
     );
   }
@@ -65,6 +67,9 @@ class App extends Component {
 > **Note:** In order to "hide" your application from screenreaders whilst the modal is open you need to let it know what
   the root element for your application is by returning it's DOM node via the function passed to the
   `getApplicationElement` prop (see the example above).
+
+> **Theming:** In order to theme the modal a `renderTarget` needs to be supplied as a DOM reference of a node in
+  the scope of `BpkThemeProvider`, the modal will be rendered as child element of the given node.
 
 ## Props
 
@@ -79,4 +84,12 @@ class App extends Component {
 | getApplicationElement | func                 | true     | -             |
 | closeLabel            | string               | false    | null          |
 | closeText             | string               | false    | null          |
+| renderTarget          | instance of Element  | false    | null          |
 | wide                  | bool                 | false    | false         |
+
+## Theme Props
+
+Both all the props from [link](/components/web/typography#links) and
+
+* `modalCloseButtonColor`
+* `modalCloseButtonHoverColor`

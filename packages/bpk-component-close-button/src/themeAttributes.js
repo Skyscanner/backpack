@@ -1,3 +1,4 @@
+
 /*
  * Backpack - Skyscanner's Design System
  *
@@ -16,8 +17,7 @@
  * limitations under the License.
  */
 
-import BpkModal from './src/BpkModal';
-import themeAttributes from './src/themeAttributes';
-
-export default BpkModal;
-export { themeAttributes };
+export default [
+  'modalCloseButtonColor',
+  'modalCloseButtonHoverColor',
+];
