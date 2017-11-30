@@ -144,7 +144,6 @@ class Portal extends Component {
 
   getRenderTarget() {
     if (this.props.renderTarget) {
-      if (typeof this.props.renderTarget === 'function') return this.props.renderTarget();
       return this.props.renderTarget;
     }
     return document.body;

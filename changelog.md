@@ -2,6 +2,7 @@
 
 ## UNRELEASED
 
+**Added:**
 - bpk-component-modal:
   - Modal now supports theming.
 - bpk-component-close-button:

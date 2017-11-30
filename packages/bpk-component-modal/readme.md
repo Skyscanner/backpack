@@ -84,7 +84,7 @@ class App extends Component {
 | getApplicationElement | func                 | true     | -             |
 | closeLabel            | string               | false    | null          |
 | closeText             | string               | false    | null          |
-| renderTarget          | node                 | false    | null          |
+| renderTarget          | instance of Element  | false    | null          |
 | wide                  | bool                 | false    | false         |
 
 ## Theme Props
