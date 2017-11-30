@@ -144,6 +144,7 @@ class Portal extends Component {
 
   getRenderTarget() {
     if (this.props.renderTarget) {
+      if (typeof this.props.renderTarget === 'function') return this.props.renderTarget();
       return this.props.renderTarget;
     }
     return document.body;
@@ -236,7 +237,7 @@ Portal.propTypes = {
   onClose: PropTypes.func,
   onOpen: PropTypes.func,
   onRender: PropTypes.func,
-  renderTarget: PropTypes.instanceOf(Element),
+  renderTarget: PropTypes.oneOfType([PropTypes.instanceOf(Element), PropTypes.func]),
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
   targetRef: PropTypes.func,
