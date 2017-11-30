@@ -44,10 +44,10 @@ const withScrim = (WrappedComponent) => {
     }
 
     componentDidMount() {
-      const { isIphone, getApplicationElement } = this.props;
+      const { isIphone, getApplicationElement, visibleBackground } = this.props;
       const applicationElement = getApplicationElement();
 
-      if (isIphone && applicationElement) {
+      if (isIphone && applicationElement && !visibleBackground) {
         storeScroll();
         applicationElement.style.display = 'none';
       } else {
@@ -64,10 +64,10 @@ const withScrim = (WrappedComponent) => {
     }
 
     componentWillUnmount() {
-      const { isIphone, getApplicationElement } = this.props;
+      const { isIphone, getApplicationElement, visibleBackground } = this.props;
       const applicationElement = getApplicationElement();
 
-      if (isIphone && applicationElement) {
+      if (isIphone && applicationElement && !visibleBackground) {
         applicationElement.style.display = '';
         restoreScroll();
       } else {
@@ -113,11 +113,14 @@ const withScrim = (WrappedComponent) => {
         isIphone,
         getApplicationElement,
         containerClassName,
+        visibleBackground,
         ...rest
       } = this.props;
 
       const classNames = [getClassName('bpk-scrim-content')];
-      if (isIphone) { classNames.push(getClassName('bpk-scrim-content--iphone-fix')); }
+      if (isIphone && !visibleBackground) {
+        classNames.push(getClassName('bpk-scrim-content--iphone-fix'));
+      }
       classNames.push(containerClassName);
 
       const closeEvents = {
@@ -132,7 +135,7 @@ const withScrim = (WrappedComponent) => {
       return (
         /* eslint-disable jsx-a11y/no-static-element-interactions */
         <div>
-          <BpkScrim />
+          <BpkScrim visibleBackground={visibleBackground} />
           <div
             className={classNames.join(' ')}
             onTouchStart={this.onOverlayMouseDown}
@@ -162,11 +165,13 @@ const withScrim = (WrappedComponent) => {
     getApplicationElement: PropTypes.func.isRequired,
     isIphone: PropTypes.bool,
     containerClassName: PropTypes.string,
+    visibleBackground: PropTypes.bool,
   };
 
   component.defaultProps = {
     isIphone: /iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : ''),
     containerClassName: '',
+    visibleBackground: false,
   };
 
   return component;

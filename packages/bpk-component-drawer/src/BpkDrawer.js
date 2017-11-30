@@ -69,6 +69,7 @@ class BpkDrawer extends Component {
           onClose={this.hide}
           onCloseAnimationComplete={this.onCloseAnimationComplete}
           containerClassName={getClassName('bpk-drawer__container')}
+          hideBackgroundOnMobile
           {...rest}
         />
       </Portal>

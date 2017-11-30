@@ -74,6 +74,7 @@ import PaginationPage from './../pages/PaginationPage';
 import StarRatingPage from './../pages/StarRatingPage';
 import SlidersPage from './../pages/SlidersPage';
 import DrawerPage from './../pages/DrawerPage';
+import DialogsPage from './../pages/DialogsPage';
 
 import AlignmentPage from './../pages/AlignmentPage';
 import ThemingPage from './../pages/ThemingPage';
@@ -155,6 +156,7 @@ const Routes = (
         <Route path={ROUTES.HORIZONTAL_GRID} component={HorizontalGridPage} />
         <Route path={ROUTES.SLIDERS} component={SlidersPage} />
         <Route path={ROUTES.DRAWER} component={DrawerPage} />
+        <Route path={ROUTES.DIALOGS} component={DialogsPage} />
       </Route>
       <Route path={ROUTES.NATIVE_COMPONENTS}>
         <IndexRedirect to={ROUTES.NATIVE_TEXT} />

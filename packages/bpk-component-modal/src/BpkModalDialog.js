@@ -32,6 +32,10 @@ const BpkModalDialog = (props) => {
   if (props.wide) { classNames.push(getClassName('bpk-modal--wide')); }
   if (props.className) { classNames.push(props.className); }
   if (props.isIphone) { classNames.push(getClassName('bpk-modal--iphone-fix')); }
+  if (props.dialog) { classNames.push(getClassName('bpk-modal--dialog')); }
+
+  const headerClassNames = [getClassName('bpk-modal__header')];
+  if (!props.title) { headerClassNames.push(getClassName('bpk-modal__header--no-title')); }
 
   const headingId = `bpk-modal-heading-${props.id}`;
 
@@ -51,20 +55,22 @@ const BpkModalDialog = (props) => {
         ref={props.dialogRef}
         {...props.closeEvents}
       >
-        <header className={getClassName('bpk-modal__header')}>
-          <h2 id={headingId} className={getClassName('bpk-modal__heading')}>
-            {props.title}
-          </h2>
-          &nbsp;
-          {props.closeText
-            ? <BpkButtonLink onClick={props.onClose}>{props.closeText}</BpkButtonLink>
-            : <BpkCloseButton
-              className={getClassName('bpk-modal__close-button')}
-              label={props.closeLabel}
-              onClick={props.onClose}
-            />
-          }
-        </header>
+        {props.dismissible && (
+          <header className={headerClassNames.join(' ')}>
+            <h2 id={headingId} className={getClassName('bpk-modal__heading')}>
+              {props.title}
+            </h2>
+            &nbsp;
+            {props.closeText
+              ? <BpkButtonLink onClick={props.onClose}>{props.closeText}</BpkButtonLink>
+              : <BpkCloseButton
+                className={getClassName('bpk-modal__close-button')}
+                label={props.closeLabel}
+                onClick={props.onClose}
+              />
+            }
+          </header>
+        )}
         <div className={getClassName('bpk-modal__content')}>
           {props.children}
         </div>
@@ -78,10 +84,12 @@ BpkModalDialog.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
   onClose: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
+  title: PropTypes.string,
   closeLabel: PropTypes.string,
   closeText: PropTypes.string,
+  dialog: PropTypes.bool,
+  dismissible: PropTypes.bool,
   wide: PropTypes.bool,
   isIphone: PropTypes.bool.isRequired,
   dialogRef: PropTypes.func.isRequired,
@@ -96,9 +104,12 @@ BpkModalDialog.propTypes = {
 };
 
 BpkModalDialog.defaultProps = {
+  title: null,
   className: null,
   closeLabel: null,
   closeText: null,
+  dismissible: true,
+  dialog: false,
   wide: false,
 };
 
