@@ -46,6 +46,7 @@ class App extends Component {
           <BpkButton onClick={this.onOpen}>Open drawer</BpkButton>
         </div>
         <BpkDrawer
+          id="my-drawer"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           title="Drawer title"

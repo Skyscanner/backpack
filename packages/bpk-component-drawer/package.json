@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Backpack drawer component.",
   "main": "index.js",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"

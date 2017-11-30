@@ -38,7 +38,7 @@ class ModalContainer extends Component {
 
     this.state = {
       isOpen: false,
-      wide: false,
+      hideTitle: false,
     };
   }
 
@@ -56,7 +56,7 @@ class ModalContainer extends Component {
 
   toggleWidth() {
     this.setState(state => ({
-      wide: !state.wide,
+      hideTitle: !state.hideTitle,
     }));
   }
 
@@ -66,7 +66,7 @@ class ModalContainer extends Component {
     return (
       <div>
         <BpkButton onClick={this.onOpen}>{buttonText}</BpkButton>
-        <BpkModal id="my-modal" isOpen={this.state.isOpen} onClose={this.onClose} wide={this.state.wide} {...rest}>
+        <BpkModal id="my-modal" isOpen={this.state.isOpen} onClose={this.onClose} wide={this.state.hideTitle} {...rest}>
           <div>{children}</div>
           <BpkButtonLink onClick={this.toggleWidth}>Toggle width</BpkButtonLink>
         </BpkModal>

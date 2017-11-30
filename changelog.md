@@ -13,6 +13,8 @@
   - Adds value for drawer z-index.
 - bpk-component-calendar:
   - Calendar now supports theming.
+- bpk-component-drawer:
+  - A new component which creates a drawer that slides into view from the side of the screen
 
 ## 2017-11-28 - Add support for refs in react-native-bpk-component-input
 
