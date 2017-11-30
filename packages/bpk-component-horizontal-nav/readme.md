@@ -44,8 +44,8 @@ export default () => (
 
 ## Theme Props
 
-* `horizontalNavLinkColor`,
-* `horizontalNavLinkHoverColor`,
-* `horizontalNavLinkActiveColor`,
-* `horizontalNavLinkSelectedColor`,
-* `horizontalNavBarSelectedColor`,
+* `horizontalNavLinkColor`
+* `horizontalNavLinkHoverColor`
+* `horizontalNavLinkActiveColor`
+* `horizontalNavLinkSelectedColor`
+* `horizontalNavBarSelectedColor`
