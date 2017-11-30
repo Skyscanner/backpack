@@ -38,7 +38,7 @@ class ModalContainer extends Component {
 
     this.state = {
       isOpen: false,
-      wide: false,
+      hideTitle: false,
     };
   }
 
@@ -56,7 +56,7 @@ class ModalContainer extends Component {
 
   toggleWidth() {
     this.setState(state => ({
-      wide: !state.wide,
+      hideTitle: !state.hideTitle,
     }));
   }
 
@@ -70,7 +70,7 @@ class ModalContainer extends Component {
           id="my-modal"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
-          wide={this.state.wide}
+          wide={this.state.hideTitle}
           renderTarget={this.theamableModalTarget}
           {...rest}
         >

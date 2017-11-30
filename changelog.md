@@ -1,24 +1,30 @@
 # Backpack changelog
 
 ## UNRELEASED
-**Breaking:**
--bpk-scrim-utils:
-  - Renamed prop: `contentClassName` to `containerClassName` to better reflect usage
-  - Renamed prop it passes to wrapped component: `getDialogRef` to `dialogRef` to align with convention
 
-**Added:**
-- bpk-mixins:
-  - Adds `$bpk-zindex-drawer`
-- bpk-tokens:
-  - Adds value for drawer z-index.
-- bpk-component-calendar:
-  - Calendar now supports theming.
 - bpk-component-modal:
   - Modal now supports theming.
 - bpk-component-close-button:
   - Close button now supports theming.
 - bpk-react-utils:
   - Portal now accepts a `renderTarget` DOM element to render the portal in.
+
+## 2017-11-30 - New Drawer component and theming support for calendar
+
+**Breaking:**
+-bpk-scrim-utils: 2.0.2 => 3.0.0
+  - Renamed prop: `contentClassName` to `containerClassName` to better reflect usage
+  - Renamed prop it passes to wrapped component: `getDialogRef` to `dialogRef` to align with convention
+
+**Added:**
+- bpk-mixins: 17.0.16 => 17.1.0
+  - Adds `$bpk-zindex-drawer`
+- bpk-tokens: 26.5.2 => 26.6.0
+  - Adds value for drawer z-index.
+- bpk-component-calendar: 4.1.27 => 4.2.0
+  - Calendar now supports theming.
+- bpk-component-drawer: 1.0.0
+  - A new component which creates a drawer that slides into view from the side of the screen
 
 ## 2017-11-28 - Add support for refs in react-native-bpk-component-input
 
