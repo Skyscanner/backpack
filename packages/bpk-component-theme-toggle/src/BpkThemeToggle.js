@@ -31,9 +31,24 @@ class BpkThemeToggle extends React.Component {
   constructor(props) {
     super(props);
     this.switchTheme = this.switchTheme.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
     this.state = {
       enableCustomTheme: false,
     };
+  }
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyDown);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyDown);
+  }
+
+  handleKeyDown(e) {
+    if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 't') {
+      this.switchTheme(e);
+    }
   }
 
   switchTheme(e) {
@@ -46,12 +61,14 @@ class BpkThemeToggle extends React.Component {
   }
 
   render() {
+    const themeName = this.state.enableCustomTheme ? 'Skyscanner' : 'custom';
+
     return (
       <BpkButtonLink
-        title="Switch Theme"
+        title="Keyboard Shortcut: ctrl + cmd + t"
         onClick={this.switchTheme}
       >
-        Switch Theme
+        Switch Theme to {themeName}
       </BpkButtonLink>
     );
   }

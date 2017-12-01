@@ -41,7 +41,6 @@ class BpkRtlToggle extends React.Component {
     };
   }
 
-
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeyDown);
   }
