@@ -4,10 +4,11 @@ exports[`BpkThemeToggle should render correctly 1`] = `
 <button
   className="bpk-link"
   onClick={[Function]}
-  title="Switch Theme"
+  title="Keyboard Shortcut: ctrl + cmd + t"
   type="button"
 >
-  Switch Theme
+  Switch Theme to 
+  custom
 </button>
 `;
 
@@ -15,9 +16,10 @@ exports[`BpkThemeToggle should render correctly when clicked 1`] = `
 <button
   className="bpk-link"
   onClick={[Function]}
-  title="Switch Theme"
+  title="Keyboard Shortcut: ctrl + cmd + t"
   type="button"
 >
-  Switch Theme
+  Switch Theme to 
+  Skyscanner
 </button>
 `;
