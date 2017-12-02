@@ -28,5 +28,6 @@ export default () => (
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
 | children  | -        | true     | -             |
+| className | string   | false    | null          |
 | href      | string   | false    | null          |
 | padded    | bool     | false    | true          |
