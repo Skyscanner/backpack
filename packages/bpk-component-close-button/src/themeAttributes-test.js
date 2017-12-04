@@ -21,8 +21,9 @@ import themeAttributes from './themeAttributes';
 describe('themeAttributes', () => {
   it('exports the expected themeAttributes', () => {
     expect(themeAttributes).toEqual([
-      'modalCloseButtonColor',
-      'modalCloseButtonHoverColor',
+      'closeButtonColor',
+      'closeButtonHoverColor',
+      'closeButtonActiveColor',
     ]);
   });
 });

@@ -2388,6 +2388,9 @@
       "category": "modals",
       "value": "rgb(129, 123, 143)",
       "type": "color",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": "#817B8F"
       },
@@ -2397,6 +2400,9 @@
       "category": "modals",
       "value": "rgb(82, 76, 97)",
       "type": "color",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": "#524C61"
       },

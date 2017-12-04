@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import BpkSlidingDrawer from 'bpk-component-drawer';
+import BpkDrawer from 'bpk-component-drawer';
 import BpkButton from 'bpk-component-button';
 import { BpkButtonLink } from 'bpk-component-link';
 
@@ -65,7 +65,7 @@ class DrawerContainer extends Component {
     return (
       <div>
         <BpkButton onClick={this.onOpen}>Open Drawer</BpkButton>
-        <BpkSlidingDrawer
+        <BpkDrawer
           id="my-drawer"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
@@ -76,7 +76,7 @@ class DrawerContainer extends Component {
         >
           <div>{children}</div>
           <BpkButtonLink onClick={this.toggleTitle}>Toggle show title</BpkButtonLink>
-        </BpkSlidingDrawer>
+        </BpkDrawer>
       </div>
     );
   }
@@ -119,10 +119,10 @@ const components = [
 ];
 
 const DrawerPage = () => (<DocsPageBuilder
-  title="Drawers"
+  title="Drawer"
   blurb={[
     <Paragraph>
-      Sliding drawers are used to display content or views that are separate from the rest of the app or page. When
+      Drawers are used to display content or views that are separate from the rest of the app or page. When
       triggered, drawers will slide in from the side of the viewport with a backdrop to indicate their separation from
       everything else. On mobile viewports, they leave a sliver of the backdrop visible to allow for easier closing.
     </Paragraph>,

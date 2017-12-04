@@ -18,6 +18,7 @@
  */
 
 export default [
-  'modalCloseButtonColor',
-  'modalCloseButtonHoverColor',
+  'closeButtonColor',
+  'closeButtonHoverColor',
+  'closeButtonActiveColor',
 ];

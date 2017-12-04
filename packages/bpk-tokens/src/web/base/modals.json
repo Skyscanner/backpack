@@ -60,11 +60,17 @@
     },
     "MODAL_CLOSE_ICON_FILL": {
       "value": "{!GRAY_500}",
-      "type": "color"
+      "type": "color",
+      "meta": {
+        "deprecated": true
+      }
     },
     "MODAL_CLOSE_ICON_HOVER_FILL": {
       "value": "{!GRAY_700}",
-      "type": "color"
+      "type": "color",
+      "meta": {
+        "deprecated": true
+      }
     },
     "MODAL_CONTENT_PADDING": {
       "value": "{!SPACING_SM}",

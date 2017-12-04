@@ -41,7 +41,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div id="modal-container">
         <div id="application-container">
           <BpkButton onClick={this.onOpen}>Open modal</BpkButton>
         </div>
@@ -53,11 +53,12 @@ class App extends Component {
           getApplicationElement={() =>
             document.getElementById('application-container')
           }
-          renderTarget={this.renderTarget}
+          renderTarget={() =>
+            document.getElementById('modal-container')
+          }
         >
           This is a modal. You can put anything you want in here.
         </BpkModal>
-         <div ref={(target) => { this.renderTarget = target; }} />
       </div>
     );
   }
@@ -68,8 +69,8 @@ class App extends Component {
   the root element for your application is by returning it's DOM node via the function passed to the
   `getApplicationElement` prop (see the example above).
 
-> **Theming:** In order to theme the modal a `renderTarget` needs to be supplied as a DOM reference of a node in
-  the scope of `BpkThemeProvider`, the modal will be rendered as child element of the given node.
+> **Theming:** In order to theme the modal, a `renderTarget` needs to be supplied as a function which returns a DOM node
+  in the scope of a `BpkThemeProvider`.
 
 ## Props
 
@@ -84,12 +85,15 @@ class App extends Component {
 | getApplicationElement | func                 | true     | -             |
 | closeLabel            | string               | false    | null          |
 | closeText             | string               | false    | null          |
-| renderTarget          | instance of Element  | false    | null          |
+| renderTarget          | func                 | false    | null          |
 | wide                  | bool                 | false    | false         |
 
 ## Theme Props
 
-Both all the props from [link](/components/web/typography#links) and
-
-* `modalCloseButtonColor`
-* `modalCloseButtonHoverColor`
+* `linkColor`
+* `linkHoverColor`
+* `linkActiveColor`
+* `linkVisitedColor`
+* `closeButtonColor`
+* `closeButtonHoverColor`
+* `closeButtonActiveColor`

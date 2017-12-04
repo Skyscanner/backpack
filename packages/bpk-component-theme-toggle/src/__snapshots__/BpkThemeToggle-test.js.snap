@@ -7,8 +7,8 @@ exports[`BpkThemeToggle should render correctly 1`] = `
   title="Keyboard Shortcut: ctrl + cmd + t"
   type="button"
 >
-  Switch Theme to 
-  custom
+  Toggle theme 
+  on
 </button>
 `;
 
@@ -19,7 +19,7 @@ exports[`BpkThemeToggle should render correctly when clicked 1`] = `
   title="Keyboard Shortcut: ctrl + cmd + t"
   type="button"
 >
-  Switch Theme to 
-  Skyscanner
+  Toggle theme 
+  off
 </button>
 `;

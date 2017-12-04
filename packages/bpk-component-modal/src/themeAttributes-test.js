@@ -25,8 +25,9 @@ describe('themeAttributes', () => {
       'linkHoverColor',
       'linkActiveColor',
       'linkVisitedColor',
-      'modalCloseButtonColor',
-      'modalCloseButtonHoverColor',
+      'closeButtonColor',
+      'closeButtonHoverColor',
+      'closeButtonActiveColor',
     ]);
   });
 });
