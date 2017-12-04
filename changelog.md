@@ -9,6 +9,9 @@
   - Close button now supports theming.
 - bpk-react-utils:
   - Portal now accepts a `renderTarget` DOM element to render the portal in.
+- bpk-component-checkbox:
+- bpk-component-radio:
+  - Now supports theming.
 
 **Fixed:**
 - bpk-theming:
