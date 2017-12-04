@@ -48,7 +48,7 @@ const BpkModal = (props) => {
 BpkModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  renderTarget: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+  renderTarget: PropTypes.func,
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
 };
 

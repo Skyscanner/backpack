@@ -52,7 +52,7 @@ export default class App extends Component {
           changeMonthLabel="Change month"
           closeButtonText="Close"
           title="Departure date"
-          getApplicationElement={() => document.getElementById('react-mount')}
+          getApplicationElement={() => document.getElementById('application-container')}
           formatDate={formatDate}
           formatMonth={formatMonth}
           formatDateFull={formatDateFull}

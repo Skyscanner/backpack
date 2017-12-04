@@ -72,7 +72,7 @@ const components = [
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
         title="Select date"
-        getApplicationElement={() => document.getElementById('react-mount')}
+        getApplicationElement={() => document.getElementById('application-container')}
         inputProps={{ placeholder: 'Select date' }}
       />,
     ],

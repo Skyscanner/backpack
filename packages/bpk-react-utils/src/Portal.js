@@ -243,7 +243,7 @@ Portal.propTypes = {
   onOpen: PropTypes.func,
   onRender: PropTypes.func,
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  renderTarget: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+  renderTarget: PropTypes.func,
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
   targetRef: PropTypes.func,
 };

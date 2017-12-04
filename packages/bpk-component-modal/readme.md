@@ -74,19 +74,19 @@ class App extends Component {
 
 ## Props
 
-| Property              | PropType             | Required | Default Value |
-| --------------------- | -------------------- | -------- | ------------- |
-| id                    | string               | true     | -             |
-| className             | string               | true     | -             |
-| children              | node                 | true     | -             |
-| isOpen                | bool                 | true     | -             |
-| onClose               | func                 | true     | -             |
-| title                 | string               | true     | -             |
-| getApplicationElement | func                 | true     | -             |
-| closeLabel            | string               | false    | null          |
-| closeText             | string               | false    | null          |
-| renderTarget          | func                 | false    | null          |
-| wide                  | bool                 | false    | false         |
+| Property              | PropType | Required | Default Value |
+| --------------------- | -------- | -------- | ------------- |
+| id                    | string   | true     | -             |
+| className             | string   | true     | -             |
+| children              | node     | true     | -             |
+| isOpen                | bool     | true     | -             |
+| onClose               | func     | true     | -             |
+| title                 | string   | true     | -             |
+| getApplicationElement | func     | true     | -             |
+| closeLabel            | string   | false    | null          |
+| closeText             | string   | false    | null          |
+| renderTarget          | func     | false    | null          |
+| wide                  | bool     | false    | false         |
 
 ## Theme Props
 

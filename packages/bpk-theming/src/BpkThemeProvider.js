@@ -55,11 +55,18 @@ const createStyle = (theme, themeAttributes) => {
 };
 
 const BpkThemeProvider = (props) => {
-  const { children, theme, themeAttributes } = props;
+  const {
+    children,
+    theme,
+    themeAttributes,
+    ...rest
+  } = props;
+
   const dedupedThemeAttributes = uniq(themeAttributes);
   const style = createStyle(theme, dedupedThemeAttributes);
+
   return (
-    <div style={style}>
+    <div style={style} {...rest}>
       {children}
     </div>
   );

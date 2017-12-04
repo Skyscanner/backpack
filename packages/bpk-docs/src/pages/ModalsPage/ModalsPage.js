@@ -71,13 +71,13 @@ class ModalContainer extends Component {
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           wide={this.state.hideTitle}
-          renderTarget={this.theamableModalTarget}
+          getApplicationElement={() => document.getElementById('application-container')}
+          renderTarget={() => document.getElementById('portal-taget')}
           {...rest}
         >
           <div>{children}</div>
           <BpkButtonLink onClick={this.toggleWidth}>Toggle width</BpkButtonLink>
         </BpkModal>
-        <div ref={(target) => { this.theamableModalTarget = target; }} />
       </div>
     );
   }
@@ -98,7 +98,6 @@ const components = [
         title="Modal title"
         closeLabel="Close modal"
         buttonText="Open modal"
-        getApplicationElement={() => document.getElementById('react-mount')}
       >
         <Paragraph>You can put anything you want in here, including forms:</Paragraph>
         <LoginFormExample />
@@ -119,7 +118,6 @@ const components = [
         title="Modal title"
         closeText="Done"
         buttonText="Open modal"
-        getApplicationElement={() => document.getElementById('react-mount')}
       >
         <Paragraph>You can put anything you want in here, including forms:</Paragraph>
         <LoginFormExample />
