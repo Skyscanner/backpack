@@ -6,6 +6,10 @@
     "category": "forms"
   },
   "props": {
+    "CHECKBOX_CHECKED_TICK_COLOR": {
+      "value": "{!BLUE_700}",
+      "type": "color"
+    },
     "INPUT_HEIGHT": {
       "value": "{!SPACING_XL}",
       "type": "size"

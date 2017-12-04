@@ -1865,6 +1865,15 @@
       },
       "name": "PRIMARY_GRADIENT"
     },
+    "CHECKBOX_CHECKED_TICK_COLOR": {
+      "category": "forms",
+      "value": "rgb(0, 140, 168)",
+      "type": "color",
+      ".alias": {
+        "value": "#008ca8"
+      },
+      "name": "CHECKBOX_CHECKED_TICK_COLOR"
+    },
     "INPUT_HEIGHT": {
       "category": "forms",
       "value": "2.250rem",
@@ -3519,6 +3528,7 @@
     "COLOR_YELLOW_800",
     "COLOR_YELLOW_900",
     "PRIMARY_GRADIENT",
+    "CHECKBOX_CHECKED_TICK_COLOR",
     "INPUT_HEIGHT",
     "INPUT_PADDING_X",
     "INPUT_PADDING_Y",

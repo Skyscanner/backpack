@@ -16,9 +16,6 @@
  * limitations under the License.
  */
 
-import BpkCheckbox from './src/BpkCheckbox';
-import themeAttributes from './src/themeAttributes';
-
-export default BpkCheckbox;
-export { themeAttributes };
-
+export default [
+  'checkboxCheckedColor',
+];

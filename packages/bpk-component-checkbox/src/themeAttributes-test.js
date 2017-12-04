@@ -16,32 +16,12 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+import themeAttributes from './themeAttributes';
 
-.bpk-checkbox {
-  @include bpk-checkbox;
-
-  &__label {
-    @include bpk-checkbox__label;
-
-    &--small {
-      @include bpk-checkbox__label--small;
-    }
-  }
-
-  &--white {
-    @include bpk-checkbox--white;
-  }
-
-  &--disabled {
-    @include bpk-checkbox--disabled;
-  }
-
-  &__input {
-    @include bpk-checkbox__input;
-  }
-
-  &__asterisk {
-    color: $bpk-required-color;
-  }
-}
+describe('themeAttributes', () => {
+  it('exports the expected attributes', () => {
+    expect(themeAttributes).toEqual([
+      'checkboxCheckedColor',
+    ]);
+  });
+});

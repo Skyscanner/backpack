@@ -95,6 +95,8 @@ const bpkCustomTheme = {
   calendarNudgerIconColor: theme.primaryColor500,
   calendarNudgerIconHoverColor: theme.primaryColor600,
   calendarNudgerIconActiveColor: theme.primaryColor700,
+
+  checkboxCheckedColor: theme.primaryColor500,
 };
 
 export default bpkCustomTheme;
