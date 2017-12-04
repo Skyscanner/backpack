@@ -67,33 +67,35 @@ class DefaultLayout extends Component {
     const { children } = this.props;
 
     return (
-      <EnhancedThemeProvider themeAttributes={[...themeAttributes]}>
-        <Helmet titleTemplate="%s | Backpack" />
-        <Header
-          expanded={this.state.headerExpanded}
-          onHamburgerClick={this.onHamburgerClick}
-        />
-        <main>{children}</main>
-        <BpkGridContainer className={getClassName('bpkdocs-default-layout__footer-container')}>
-          <BpkGridRow>
-            <BpkGridColumn width={6} mobileWidth={12}>
-              <small className={getClassName('bpkdocs-default-layout__footer-copy')}>
-                &copy; Skyscanner {new Date().getFullYear()}
-              </small>
-            </BpkGridColumn>
-            <BpkGridColumn width={6} mobileWidth={12}>
-              <small
-                className={
-                  ['bpkdocs-default-layout__footer-copy', 'bpkdocs-default-layout__footer-copy--align-right']
-                    .map(getClassName)
-                    .join(' ')
-                }
-              >
-                <BpkGridToggle /> | <BpkRtlToggle /> | <BpkThemeToggle />
-              </small>
-            </BpkGridColumn>
-          </BpkGridRow>
-        </BpkGridContainer>
+      <EnhancedThemeProvider themeAttributes={[...themeAttributes]} id="portal-taget">
+        <div id="application-container">
+          <Helmet titleTemplate="%s | Backpack" />
+          <Header
+            expanded={this.state.headerExpanded}
+            onHamburgerClick={this.onHamburgerClick}
+          />
+          <main>{children}</main>
+          <BpkGridContainer className={getClassName('bpkdocs-default-layout__footer-container')}>
+            <BpkGridRow>
+              <BpkGridColumn width={6} mobileWidth={12}>
+                <small className={getClassName('bpkdocs-default-layout__footer-copy')}>
+                  &copy; Skyscanner {new Date().getFullYear()}
+                </small>
+              </BpkGridColumn>
+              <BpkGridColumn width={6} mobileWidth={12}>
+                <small
+                  className={
+                    ['bpkdocs-default-layout__footer-copy', 'bpkdocs-default-layout__footer-copy--align-right']
+                      .map(getClassName)
+                      .join(' ')
+                  }
+                >
+                  <BpkGridToggle /> | <BpkRtlToggle /> | <BpkThemeToggle />
+                </small>
+              </BpkGridColumn>
+            </BpkGridRow>
+          </BpkGridContainer>
+        </div>
       </EnhancedThemeProvider>
     );
   }

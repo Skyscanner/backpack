@@ -34,6 +34,19 @@ describe('BpkThemeProvider', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with arbitrary props', () => {
+    const tree = renderer.create(
+      <BpkThemeProvider
+        theme={{ color: 'white' }}
+        themeAttributes={['color']}
+        id="arbitrary"
+      >
+        <p>Lorem Ipsum</p>
+      </BpkThemeProvider>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should correctly flatten the themeAttribute prop', () => {
     const tree = renderer.create(
       <BpkThemeProvider

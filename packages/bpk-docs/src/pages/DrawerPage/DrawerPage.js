@@ -70,7 +70,7 @@ class DrawerContainer extends Component {
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           title="Drawer title"
-          getApplicationElement={() => document.getElementById('react-mount')}
+          getApplicationElement={() => document.getElementById('application-container')}
           hideTitle={this.state.hideTitle}
           {...rest}
         >

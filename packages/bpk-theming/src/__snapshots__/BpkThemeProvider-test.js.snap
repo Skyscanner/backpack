@@ -29,6 +29,21 @@ exports[`BpkThemeProvider should render correctly 1`] = `
 </div>
 `;
 
+exports[`BpkThemeProvider should render correctly with arbitrary props 1`] = `
+<div
+  id="arbitrary"
+  style={
+    Object {
+      "--bpk-color": "white",
+    }
+  }
+>
+  <p>
+    Lorem Ipsum
+  </p>
+</div>
+`;
+
 exports[`BpkThemeProvider should render without theming when theme is missing attributes 1`] = `
 <div
   style={Object {}}

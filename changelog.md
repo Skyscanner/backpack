@@ -10,6 +10,10 @@
 - bpk-react-utils:
   - Portal now accepts a `renderTarget` DOM element to render the portal in.
 
+**Fixed:**
+- bpk-theming:
+  - The theme provider now accepts arbitrary props (such as `id`)
+
 ## 2017-11-30 - New Drawer component and theming support for calendar
 
 **Breaking:**
