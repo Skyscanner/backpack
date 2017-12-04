@@ -42,22 +42,30 @@ class App extends Component {
 
   render() {
     return (
-      <BpkPopover
-        id="my-popover"
-        target={
-          <BpkButton onClick={this.openPopover}>Open</BpkButton>
-        }
-        onClose={this.closePopover}
-        isOpen={this.state.isOpen}
-        label="My popover"
-        closeButtonText="Close"
-      >
-        <BpkText>My popover content</BpkText>
-      </BpkPopover>
+      <div id="popover-container">
+        <BpkPopover
+          id="my-popover"
+          target={
+            <BpkButton onClick={this.openPopover}>Open</BpkButton>
+          }
+          onClose={this.closePopover}
+          isOpen={this.state.isOpen}
+          label="My popover"
+          closeButtonText="Close"
+          renderTarget={() =>
+            document.getElementById('popover-container')
+          }
+        >
+          <BpkText>My popover content</BpkText>
+        </BpkPopover>
+      </div>
     );
   }
 }
 ```
+
+> **Theming:** In order to theme the modal, a `renderTarget` needs to be supplied as a function which returns a DOM node
+  in the scope of a `BpkThemeProvider`.
 
 ## Props
 
@@ -76,6 +84,7 @@ class App extends Component {
 | closeButtonIcon       | bool                          | false    | true          |
 | portalStyle           | object                        | false    | null          |
 | portalClassName       | string                        | false    | null          |
+| renderTarget          | func                          | false    | null          |
 
 In order to attach the popover to a regular DOM element, provide a function which returns it to `target`:
 
@@ -101,3 +110,13 @@ const onClose = (event, {
   ...
 }
 ```
+
+## Theme Props
+
+* `linkColor`
+* `linkHoverColor`
+* `linkActiveColor`
+* `linkVisitedColor`
+* `closeButtonColor`
+* `closeButtonHoverColor`
+* `closeButtonActiveColor`

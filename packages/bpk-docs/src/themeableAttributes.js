@@ -30,5 +30,6 @@ export default [
   require('bpk-component-modal').themeAttributes,
   require('bpk-component-nudger').themeAttributes,
   require('bpk-component-spinner').themeAttributes,
+  require('bpk-component-popover').themeAttributes,
   require('bpk-component-progress').themeAttributes,
 ].filter(attrs => !!attrs);

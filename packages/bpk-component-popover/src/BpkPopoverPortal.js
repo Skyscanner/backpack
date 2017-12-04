@@ -94,6 +94,7 @@ class BpkPopoverPortal extends Component {
       onClose,
       portalStyle,
       portalClassName,
+      renderTarget,
       ...rest
     } = this.props;
 
@@ -106,14 +107,15 @@ class BpkPopoverPortal extends Component {
 
     return (
       <Portal
-        target={target}
+        beforeClose={this.beforeClose}
+        className={classNames.join(' ')}
         isOpen={isOpen}
         onClose={onClose}
         onOpen={onOpen}
         onRender={this.onRender}
-        beforeClose={this.beforeClose}
         style={portalStyle}
-        className={classNames.join(' ')}
+        renderTarget={renderTarget}
+        target={target}
       >
         <BpkPopover onClose={onClose} {...rest} />
       </Portal>
@@ -133,6 +135,7 @@ BpkPopoverPortal.propTypes = {
   }),
   portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   portalClassName: PropTypes.string,
+  renderTarget: PropTypes.func,
 };
 
 BpkPopoverPortal.defaultProps = {
@@ -148,6 +151,7 @@ BpkPopoverPortal.defaultProps = {
   },
   portalStyle: null,
   portalClassName: null,
+  renderTarget: null,
 };
 
 export default BpkPopoverPortal;

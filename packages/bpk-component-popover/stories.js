@@ -97,22 +97,25 @@ class PopoverContainer extends Component {
       openButton = null;
     }
     return (
-      <div>
+      <div id="popover-container">
         {openButton}
         <BpkPopover
+          closeButtonText="Close"
           id={`my-popover-${id}`}
-          target={target}
-          onClose={this.closePopover}
           isOpen={this.state.isOpen}
           label="My popover"
-          closeButtonText="Close"
+          onClose={this.closePopover}
+          renderTarget={() =>
+            document.getElementById('popover-container')
+          }
+          target={target}
           {...rest}
         >
           <BpkContentContainer>
             <Paragraph>My popover content.</Paragraph>
             <Paragraph>Some more popover content.</Paragraph>
-            { changeProps
-              ?
+            {
+              changeProps ?
                 <Paragraph>
                   <BpkButton onClick={this.changeContent}>
                     Change content
@@ -121,14 +124,16 @@ class PopoverContainer extends Component {
                     Change target
                   </BpkButton>
                 </Paragraph>
-              : null }
-            { this.state.showLongContent
+                :
+                null
+            }
+            {this.state.showLongContent
               ? <Paragraph>
-                  This is some long content.
+                This is some long content.
                   This is some long content.
                   This is some long content.
                 </Paragraph>
-              : null }
+              : null}
           </BpkContentContainer>
         </BpkPopover>
       </div>

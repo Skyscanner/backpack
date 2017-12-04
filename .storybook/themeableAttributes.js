@@ -31,5 +31,6 @@ export default {
   'bpk-component-modal': require('./../packages/bpk-component-modal').themeAttributes,
   'bpk-component-nudger': require('./../packages/bpk-component-nudger').themeAttributes,
   'bpk-component-spinner': require('./../packages/bpk-component-spinner').themeAttributes,
+  'bpk-component-popover': require('./../packages/bpk-component-popover').themeAttributes,
   'bpk-component-progress': require('./../packages/bpk-component-progress').themeAttributes,
 };

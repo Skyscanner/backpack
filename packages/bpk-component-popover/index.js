@@ -17,5 +17,7 @@
  */
 
 import BpkPopoverPortal from './src/BpkPopoverPortal';
+import themeAttributes from './src/themeAttributes';
 
 export default BpkPopoverPortal;
+export { themeAttributes };

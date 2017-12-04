@@ -5,6 +5,8 @@
 **Added:**
 - bpk-component-modal:
   - Modal now supports theming.
+- bpk-component-popover:
+  - Popover now supports theming.
 - bpk-component-close-button:
   - Close button now supports theming.
 - bpk-react-utils:
