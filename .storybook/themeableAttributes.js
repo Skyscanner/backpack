@@ -25,6 +25,7 @@ export default {
   'bpk-component-blockquote': require('./../packages/bpk-component-blockquote').themeAttributes,
   'bpk-component-button': [...primaryThemeAttributes, ...secondaryThemeAttributes],
   'bpk-component-calendar': require('./../packages/bpk-component-calendar').themeAttributes,
+  'bpk-component-close-button': require('./../packages/bpk-component-close-button').themeAttributes,
   'bpk-component-link': require('./../packages/bpk-component-link').themeAttributes,
   'bpk-component-horizontal-nav': require('./../packages/bpk-component-horizontal-nav').themeAttributes,
   'bpk-component-modal': require('./../packages/bpk-component-modal').themeAttributes,

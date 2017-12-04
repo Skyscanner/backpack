@@ -28,5 +28,6 @@ export default () => (
 
 ## Theme Props
 
-* `modalCloseButtonColor`
-* `modalCloseButtonHoverColor`
+* `closeButtonColor`
+* `closeButtonHoverColor`
+* `closeButtonActiveColor`

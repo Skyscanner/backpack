@@ -34,8 +34,10 @@ describe('BpkModal', () => {
       onMouseUp: jest.fn(),
     };
   });
+
   it('should render correctly in the given target if renderTarget is supplied', () => {
-    const div = document.createElement('div');
+    const customRenderTarget = document.createElement('div');
+
     const tree = renderer.create(
       <BpkModal
         id="my-modal"
@@ -47,13 +49,13 @@ describe('BpkModal', () => {
         isIphone={false}
         getApplicationElement={jest.fn()}
         isOpen
-        renderTarget={div}
+        renderTarget={() => customRenderTarget}
       >
         Modal content inside a custom target
       </BpkModal>,
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
-    expect(div).toMatchSnapshot();
+    expect(customRenderTarget).toMatchSnapshot();
   });
 });

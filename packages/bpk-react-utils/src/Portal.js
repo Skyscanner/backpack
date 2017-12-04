@@ -143,10 +143,11 @@ class Portal extends Component {
   }
 
   getRenderTarget() {
-    if (this.props.renderTarget) {
-      return this.props.renderTarget;
+    if (typeof this.props.renderTarget === 'function') {
+      return this.props.renderTarget();
     }
-    return document.body;
+
+    return this.props.renderTarget || document.body;
   }
 
   open() {
@@ -154,10 +155,11 @@ class Portal extends Component {
       return;
     }
 
-    const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : false;
 
     this.portalElement = document.createElement('div');
     this.getRenderTarget().appendChild(this.portalElement);
+
+    const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : false;
     document.addEventListener('touchstart', this.onDocumentMouseDown, passiveArgs);
     document.addEventListener('touchmove', this.onDocumentMouseMove, passiveArgs);
     document.addEventListener('touchend', this.onDocumentMouseUp, passiveArgs);
@@ -168,11 +170,13 @@ class Portal extends Component {
     if (this.props.style) {
       assign(this.portalElement.style, this.props.style);
     }
+
     if (this.props.className) {
       this.portalElement.className = this.props.className;
     }
 
     this.renderPortal();
+
     this.props.onOpen(this.portalElement, this.getTargetElement());
   }
 
@@ -183,12 +187,14 @@ class Portal extends Component {
 
     unmountComponentAtNode(this.portalElement);
     this.getRenderTarget().removeChild(this.portalElement);
+
     document.removeEventListener('touchstart', this.onDocumentMouseDown);
     document.removeEventListener('touchmove', this.onDocumentMouseMove);
     document.removeEventListener('touchend', this.onDocumentMouseUp);
     document.removeEventListener('mousedown', this.onDocumentMouseDown);
     document.removeEventListener('mouseup', this.onDocumentMouseUp);
     document.removeEventListener('keydown', this.onDocumentKeyDown);
+
     this.portalElement = null;
   }
 
@@ -236,8 +242,8 @@ Portal.propTypes = {
   onClose: PropTypes.func,
   onOpen: PropTypes.func,
   onRender: PropTypes.func,
-  renderTarget: PropTypes.instanceOf(Element),
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  renderTarget: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
   targetRef: PropTypes.func,
 };
@@ -248,8 +254,8 @@ Portal.defaultProps = {
   onClose: () => null,
   onOpen: () => null,
   onRender: () => null,
-  renderTarget: null,
   style: null,
+  renderTarget: null,
   target: null,
   targetRef: null,
 };

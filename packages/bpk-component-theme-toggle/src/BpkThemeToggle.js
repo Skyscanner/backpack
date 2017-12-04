@@ -61,14 +61,12 @@ class BpkThemeToggle extends React.Component {
   }
 
   render() {
-    const themeName = this.state.enableCustomTheme ? 'Skyscanner' : 'custom';
-
     return (
       <BpkButtonLink
         title="Keyboard Shortcut: ctrl + cmd + t"
         onClick={this.switchTheme}
       >
-        Switch Theme to {themeName}
+        Toggle theme {this.state.enableCustomTheme ? 'off' : 'on'}
       </BpkButtonLink>
     );
   }
