@@ -10,6 +10,10 @@
       "value": "{!BLUE_700}",
       "type": "color"
     },
+    "RADIO_CHECKED_CIRCLE_COLOR": {
+      "value": "{!BLUE_700}",
+      "type": "color"
+    },
     "INPUT_HEIGHT": {
       "value": "{!SPACING_XL}",
       "type": "size"

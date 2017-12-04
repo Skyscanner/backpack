@@ -16,20 +16,12 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+import themeAttributes from './themeAttributes';
 
-.bpk-radio {
-  @include bpk-radio;
-
-  &--white {
-    @include bpk-radio--white;
-  }
-
-  &--disabled {
-    @include bpk-radio--disabled;
-  }
-
-  &__input {
-    @include bpk-radio__input;
-  }
-}
+describe('themeAttributes', () => {
+  it('exports the expected attributes', () => {
+    expect(themeAttributes).toEqual([
+      'radioCheckedColor',
+    ]);
+  });
+});

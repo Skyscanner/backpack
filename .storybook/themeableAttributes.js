@@ -33,4 +33,5 @@ export default {
   'bpk-component-nudger': require('./../packages/bpk-component-nudger').themeAttributes,
   'bpk-component-spinner': require('./../packages/bpk-component-spinner').themeAttributes,
   'bpk-component-progress': require('./../packages/bpk-component-progress').themeAttributes,
+  'bpk-component-radio': require('./../packages/bpk-component-radio').themeAttributes,
 };

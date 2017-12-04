@@ -1,0 +1,70 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2017 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index';
+
+$bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
+
+.bpk-radio {
+  @include bpk-radio;
+
+  &--white {
+    @include bpk-radio--white;
+  }
+
+  &--disabled {
+    @include bpk-radio--disabled;
+  }
+
+  &__input {
+    @include bpk-radio__input;
+
+    &:checked {
+      background: url(map-get($bpk-elements, radio-normal)) no-repeat;
+
+      + .bpk-radio__circle {
+        display: block;
+      }
+
+      &:disabled {
+        background: url(map-get($bpk-elements, radio-checked-disabled)) no-repeat;
+
+        + .bpk-radio__circle {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    top: ($bpk-spacing-base - $bpk-radio-circle-size) / 2;
+    left: ($bpk-spacing-md - $bpk-radio-circle-size) / 2;
+    display: none;
+    width: $bpk-radio-circle-size;
+    height: $bpk-radio-circle-size;
+    border-radius: 50%;
+
+    @include bpk-themeable-property(background, --bpk-radio-checked-color, $bpk-radio-checked-circle-color);
+
+    @include bpk-rtl {
+      right: ($bpk-spacing-md - $bpk-radio-circle-size) / 2;
+      left: auto;
+    }
+  }
+}

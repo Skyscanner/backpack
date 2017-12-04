@@ -203,6 +203,7 @@ export const colorYellow800 = "rgb(194, 142, 0)";
 export const colorYellow900 = "rgb(156, 114, 0)";
 export const primaryGradient = "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)";
 export const checkboxCheckedTickColor = "rgb(0, 140, 168)";
+export const radioCheckedCircleColor = "rgb(0, 140, 168)";
 export const inputHeight = "2.250rem";
 export const inputPaddingX = ".75rem";
 export const inputPaddingY = ".375rem";
@@ -587,6 +588,7 @@ primaryGradient,
 };
 export const forms = {
 checkboxCheckedTickColor,
+radioCheckedCircleColor,
 inputHeight,
 inputPaddingX,
 inputPaddingY,
