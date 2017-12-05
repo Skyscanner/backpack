@@ -41,6 +41,7 @@ import {
   NATIVE_SWITCH,
   NUDGERS,
   SPINNERS,
+  SLIDERS,
   TYPOGRAPHY,
 } from './../../constants/routes';
 
@@ -114,6 +115,9 @@ const components = [
         </BpkListItem>
         <BpkListItem>
           <BpkLink href={SPINNERS}>Spinner</BpkLink>
+        </BpkListItem>
+        <BpkListItem>
+          <BpkLink href={SLIDERS}>Sliders</BpkLink>
         </BpkListItem>
       </BpkList>,
     ],

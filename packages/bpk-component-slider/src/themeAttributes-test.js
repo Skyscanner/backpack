@@ -1,3 +1,4 @@
+
 /*
  * Backpack - Skyscanner's Design System
  *
@@ -16,8 +17,10 @@
  * limitations under the License.
  */
 
-import BpkSlider from './src/BpkSlider';
-import themeAttributes from './src/themeAttributes';
+import themeAttributes from './themeAttributes';
 
-export default BpkSlider;
-export { themeAttributes };
+describe('themeAttributes', () => {
+  it('should export the correct theme attributes', () => {
+    expect(themeAttributes).toEqual(['sliderBarColor']);
+  });
+});

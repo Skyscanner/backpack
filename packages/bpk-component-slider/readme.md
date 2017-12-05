@@ -35,3 +35,7 @@ const Slider = () => (
 | ------------------------ | ----------------------------- | -------- | ------------- |
 | className                | string                        | false    | null          |
 | large                    | bool                          | false    | false         |
+
+## Theme Props
+
+* `sliderBarColor`

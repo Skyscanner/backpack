@@ -79,6 +79,8 @@ const bpkCustomTheme = {
 
   spinnerPrimaryColor: theme.primaryColor500,
 
+  sliderBarColor: theme.primaryColor500,
+
   progressBarFillColor: theme.primaryColor500,
 
   calendarDateTextColor: theme.primaryColor500,
