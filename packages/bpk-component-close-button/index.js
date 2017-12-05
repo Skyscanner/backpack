@@ -17,7 +17,5 @@
  */
 
 import BpkCloseButton from './src/BpkCloseButton';
-import themeAttributes from './src/themeAttributes';
 
 export default BpkCloseButton;
-export { themeAttributes };

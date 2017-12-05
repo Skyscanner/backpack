@@ -117,6 +117,3 @@ const onClose = (event, {
 * `linkHoverColor`
 * `linkActiveColor`
 * `linkVisitedColor`
-* `closeButtonColor`
-* `closeButtonHoverColor`
-* `closeButtonActiveColor`

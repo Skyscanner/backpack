@@ -94,6 +94,3 @@ class App extends Component {
 * `linkHoverColor`
 * `linkActiveColor`
 * `linkVisitedColor`
-* `closeButtonColor`
-* `closeButtonHoverColor`
-* `closeButtonActiveColor`
