@@ -5,9 +5,10 @@
 **Added:**
 - bpk-component-pagination:
   - New pagination component, see https://backpack.github.io/components/web/pagination
-
 - bpk-component-drawer:
   - Drawer now supports theming.
+- bpk-component-slider:
+  - Slider now supports theming.
 
 ## 2017-12-05 - More theming support - modals, popovers, datepickers, checkboxes and radio buttons!
 

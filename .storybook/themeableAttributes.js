@@ -31,6 +31,7 @@ import { themeAttributes as nudgerThemeAttributes } from './../packages/bpk-comp
 import { themeAttributes as popoverThemeAttributes } from './../packages/bpk-component-popover';
 import { themeAttributes as progressThemeAttributes } from './../packages/bpk-component-progress';
 import { themeAttributes as radioThemeAttributes } from './../packages/bpk-component-radio';
+import { themeAttributes as sliderThemeAttributes } from './../packages/bpk-component-slider';
 import { themeAttributes as spinnerThemeAttributes } from './../packages/bpk-component-spinner';
 
 export default [
@@ -50,5 +51,6 @@ export default [
   ...popoverThemeAttributes,
   ...progressThemeAttributes,
   ...radioThemeAttributes,
+  ...sliderThemeAttributes,
   ...spinnerThemeAttributes,
 ];

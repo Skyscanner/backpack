@@ -36,7 +36,7 @@ $slider-control-inset-size: 20 * $bpk-one-pixel-rem;
     align-items: center;
     border: $bpk-one-pixel-rem solid $bpk-color-gray-100;
     border-radius: $bpk-border-radius-pill;
-    background: $bpk-color-white;
+    background-color: $bpk-color-white;
     cursor: pointer;
 
     @include bpk-box-shadow-sm;
@@ -76,17 +76,17 @@ $slider-control-inset-size: 20 * $bpk-one-pixel-rem;
 
   // stylelint-disable-next-line selector-attribute-quotes
   > div[class$='0'] {
-    background: $bpk-color-blue-500;
+    @include bpk-themeable-property(background-color, --bpk-slider-bar-color, $bpk-color-blue-500);
   }
 
   &--range {
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='0'] {
-      background: $bpk-color-gray-100;
+      background-color: $bpk-color-gray-100;
     }
     // stylelint-disable-next-line selector-attribute-quotes
     > div[class$='1'] {
-      background: $bpk-color-blue-500;
+      @include bpk-themeable-property(background-color, --bpk-slider-bar-color, $bpk-color-blue-500);
     }
   }
 }
