@@ -30,7 +30,7 @@ describe('BpkPagination', () => {
     />);
 
     expect(pagination.find({ label: 'next' }).length).toBe(1);
-    expect(pagination.find({ label: 'previous' }).length).toBe(0);
+    expect(pagination.find({ label: 'previous', disabled: true }).length).toBe(1);
   });
 
   it('should display backward nudger when not on the first page', () => {
@@ -42,7 +42,7 @@ describe('BpkPagination', () => {
     />);
 
     expect(pagination.find({ label: 'next' }).length).toBe(1);
-    expect(pagination.find({ label: 'previous' }).length).toBe(1);
+    expect(pagination.find({ label: 'previous', disabled: false }).length).toBe(1);
   });
 
   it('should not display forward nudger when on last page', () => {
@@ -53,7 +53,7 @@ describe('BpkPagination', () => {
       nextLabel="next"
     />);
 
-    expect(pagination.find({ label: 'next' }).length).toBe(0);
+    expect(pagination.find({ label: 'next', disabled: true }).length).toBe(1);
     expect(pagination.find({ label: 'previous' }).length).toBe(1);
   });
 
@@ -86,7 +86,7 @@ describe('BpkPagination', () => {
       onPageChange={onPageChange}
     />);
 
-    const forwardNudger = pagination.find('BpkPaginationNudger');
+    const forwardNudger = pagination.find('BpkPaginationNudger').at(1);
     const page = pagination.find('BpkPaginationList');
     expect(page.prop('selectedPageIndex')).toEqual(0);
     expect(onPageChange.mock.calls.length).toBe(0);

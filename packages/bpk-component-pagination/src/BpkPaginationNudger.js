@@ -37,7 +37,7 @@ const nudgerIcon = forward =>
 
 const BpkPaginationNudger = (props) => {
   const {
-    label, onNudge, forward,
+    label, onNudge, forward, disabled,
   } = props;
 
   return (
@@ -46,6 +46,7 @@ const BpkPaginationNudger = (props) => {
         type="button"
         className={getClassName('bpk-pagination-nudger__button')}
         onClick={onNudge}
+        disabled={disabled}
       >
         {nudgerIcon(forward)}
         <span
@@ -62,10 +63,12 @@ BpkPaginationNudger.propTypes = {
   label: PropTypes.string.isRequired,
   onNudge: PropTypes.func.isRequired,
   forward: PropTypes.bool,
+  disabled: PropTypes.bool,
 };
 
 BpkPaginationNudger.defaultProps = {
   forward: false,
+  disabled: false,
 };
 
 export default BpkPaginationNudger;

@@ -6,6 +6,7 @@ exports[`BpkPaginationNudger should display backward nudger 1`] = `
 >
   <button
     className="bpk-pagination-nudger__button"
+    disabled={false}
     onClick={[Function]}
     type="button"
   >
@@ -52,6 +53,7 @@ exports[`BpkPaginationNudger should display forward nudger 1`] = `
 >
   <button
     className="bpk-pagination-nudger__button"
+    disabled={false}
     onClick={[Function]}
     type="button"
   >

@@ -55,25 +55,23 @@ const BpkPagination = (props) => {
 
   return (
     <section className={classNames.join('')} {...rest}>
-      { hasPreviousPage &&
-        <BpkPaginationNudger
-          label={previousLabel}
-          onNudge={() => pageChanged(selectedPageIndex - 1)}
-        />
-      }
+      <BpkPaginationNudger
+        label={previousLabel}
+        onNudge={() => pageChanged(selectedPageIndex - 1)}
+        disabled={!hasPreviousPage}
+      />
       <BpkPaginationList
         selectedPageIndex={selectedPageIndex}
         pageCount={pageCount}
         onPageChange={pageChanged}
         visibleRange={visibleRange}
       />
-      { hasNextPage &&
-        <BpkPaginationNudger
-          label={nextLabel}
-          onNudge={() => pageChanged(selectedPageIndex + 1)}
-          forward
-        />
-      }
+      <BpkPaginationNudger
+        label={nextLabel}
+        onNudge={() => pageChanged(selectedPageIndex + 1)}
+        forward
+        disabled={!hasNextPage}
+      />
     </section>
   );
 };

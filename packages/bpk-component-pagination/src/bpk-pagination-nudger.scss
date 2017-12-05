@@ -40,6 +40,11 @@
       color: $bpk-color-blue-600;
     }
 
+    &:disabled {
+      color: $bpk-color-gray-100;
+      cursor: not-allowed;
+    }
+
     .bpk-pagination-nudger__icon {
       fill: currentColor;
 
