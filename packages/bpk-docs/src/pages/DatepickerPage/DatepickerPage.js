@@ -73,6 +73,7 @@ const components = [
         changeMonthLabel="Change month"
         title="Select date"
         getApplicationElement={() => document.getElementById('application-container')}
+        renderTarget={() => document.getElementById('portal-taget')}
         inputProps={{ placeholder: 'Select date' }}
       />,
     ],

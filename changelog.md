@@ -9,6 +9,8 @@
   - Popover now supports theming.
 - bpk-component-close-button:
   - Close button now supports theming.
+- bpk-component-datepicker:
+  - Datepickers now support theming.
 - bpk-react-utils:
   - Portal now accepts a `renderTarget` DOM element to render the portal in.
 - bpk-component-checkbox:

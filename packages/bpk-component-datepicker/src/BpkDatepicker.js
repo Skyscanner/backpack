@@ -87,6 +87,7 @@ class BpkDatepicker extends Component {
       title,
       weekStartsOn,
       initiallyFocusedDate,
+      renderTarget,
       ...rest
     } = this.props;
 
@@ -141,6 +142,7 @@ class BpkDatepicker extends Component {
               <BpkModal
                 id={`${id}-modal`}
                 target={inputComponent}
+                renderTarget={renderTarget}
                 onClose={this.onClose}
                 isOpen={this.state.isOpen}
                 title={title}
@@ -154,6 +156,7 @@ class BpkDatepicker extends Component {
               <BpkPopover
                 id={`${id}-popover`}
                 target={inputComponent}
+                renderTarget={renderTarget}
                 onClose={this.onClose}
                 isOpen={this.state.isOpen}
                 label={title}
@@ -194,6 +197,7 @@ BpkDatepicker.propTypes = {
   showWeekendSeparator: PropTypes.bool,
   weekStartsOn: PropTypes.number,
   initiallyFocusedDate: PropTypes.instanceOf(Date),
+  renderTarget: PropTypes.func,
 };
 
 BpkDatepicker.defaultProps = {
@@ -209,6 +213,7 @@ BpkDatepicker.defaultProps = {
   showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
   weekStartsOn: BpkCalendar.defaultProps.weekStartsOn,
   initiallyFocusedDate: null,
+  renderTarget: null,
 };
 
 export default BpkDatepicker;
