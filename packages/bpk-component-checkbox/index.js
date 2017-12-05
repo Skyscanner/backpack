@@ -17,6 +17,8 @@
  */
 
 import BpkCheckbox from './src/BpkCheckbox';
+import themeAttributes from './src/themeAttributes';
 
 export default BpkCheckbox;
+export { themeAttributes };
 

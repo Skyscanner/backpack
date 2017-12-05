@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-radio.scss';
+import STYLES from './BpkRadio.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -47,6 +47,7 @@ const BpkRadio = (props) => {
         disabled={disabled}
         {...rest}
       />
+      <div className={getClassName('bpk-radio__circle')} />
       {label}
     </label>
   );

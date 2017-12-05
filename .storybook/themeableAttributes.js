@@ -25,6 +25,7 @@ export default {
   'bpk-component-blockquote': require('./../packages/bpk-component-blockquote').themeAttributes,
   'bpk-component-button': [...primaryThemeAttributes, ...secondaryThemeAttributes],
   'bpk-component-calendar': require('./../packages/bpk-component-calendar').themeAttributes,
+  'bpk-component-checkbox': require('./../packages/bpk-component-checkbox').themeAttributes,
   'bpk-component-close-button': require('./../packages/bpk-component-close-button').themeAttributes,
   'bpk-component-link': require('./../packages/bpk-component-link').themeAttributes,
   'bpk-component-horizontal-nav': require('./../packages/bpk-component-horizontal-nav').themeAttributes,
@@ -33,4 +34,5 @@ export default {
   'bpk-component-spinner': require('./../packages/bpk-component-spinner').themeAttributes,
   'bpk-component-popover': require('./../packages/bpk-component-popover').themeAttributes,
   'bpk-component-progress': require('./../packages/bpk-component-progress').themeAttributes,
+  'bpk-component-radio': require('./../packages/bpk-component-radio').themeAttributes,
 };

@@ -16,20 +16,6 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
-
-.bpk-radio {
-  @include bpk-radio;
-
-  &--white {
-    @include bpk-radio--white;
-  }
-
-  &--disabled {
-    @include bpk-radio--disabled;
-  }
-
-  &__input {
-    @include bpk-radio__input;
-  }
-}
+export default [
+  'checkboxCheckedColor',
+];

@@ -204,6 +204,8 @@ module.exports = {
   colorYellow800: "rgb(194, 142, 0)",
   colorYellow900: "rgb(156, 114, 0)",
   primaryGradient: "linear-gradient(135deg, #00b2d6 0%, #02DDD8 100%)",
+  checkboxCheckedTickColor: "rgb(0, 140, 168)",
+  radioCheckedCircleColor: "rgb(0, 140, 168)",
   inputHeight: "2.250rem",
   inputPaddingX: ".75rem",
   inputPaddingY: ".375rem",

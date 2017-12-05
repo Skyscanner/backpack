@@ -10,6 +10,9 @@ exports[`BpkRadio should render correctly 1`] = `
     name="radio"
     type="radio"
   />
+  <div
+    className="bpk-radio__circle"
+  />
   Direct
 </label>
 `;
@@ -25,6 +28,9 @@ exports[`BpkRadio should render correctly with checked attribute 1`] = `
     name="radio"
     type="radio"
   />
+  <div
+    className="bpk-radio__circle"
+  />
   Direct
 </label>
 `;
@@ -38,6 +44,9 @@ exports[`BpkRadio should render correctly with disabled attribute 1`] = `
     disabled={true}
     name="radio"
     type="radio"
+  />
+  <div
+    className="bpk-radio__circle"
   />
   Direct
 </label>
@@ -54,6 +63,9 @@ exports[`BpkRadio should render correctly with id attribute 1`] = `
     name="radio"
     type="radio"
   />
+  <div
+    className="bpk-radio__circle"
+  />
   Direct
 </label>
 `;
@@ -69,6 +81,9 @@ exports[`BpkRadio should render correctly with value attribute 1`] = `
     type="radio"
     value="my-value"
   />
+  <div
+    className="bpk-radio__circle"
+  />
   Direct
 </label>
 `;
@@ -82,6 +97,9 @@ exports[`BpkRadio should render correctly with white attribute 1`] = `
     disabled={false}
     name="radio"
     type="radio"
+  />
+  <div
+    className="bpk-radio__circle"
   />
   Direct
 </label>

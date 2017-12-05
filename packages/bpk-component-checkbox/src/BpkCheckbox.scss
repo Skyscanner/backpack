@@ -1,0 +1,92 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2017 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '~bpk-mixins/index';
+
+.bpk-checkbox {
+  @include bpk-checkbox;
+
+  &__label {
+    @include bpk-checkbox__label;
+
+    &--small {
+      @include bpk-checkbox__label--small;
+    }
+  }
+
+  &--white {
+    @include bpk-checkbox--white;
+  }
+
+  &--disabled {
+    @include bpk-checkbox--disabled;
+  }
+
+  &__input {
+    @include bpk-checkbox__input;
+
+    &:checked {
+      background: url(map-get($bpk-elements, checkbox-normal)) no-repeat;
+
+      + .bpk-checkbox__icon {
+        display: block;
+
+        @include bpk-themeable-property(fill, --bpk-checkbox-checked-color, $bpk-checkbox-checked-tick-color);
+
+        // Disable for IE10/IE11 since background for the input doesn't work.
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          display: none;
+        }
+      }
+
+      &:disabled {
+        + .bpk-checkbox__icon {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: ($bpk-spacing-base - $bpk-spacing-sm) / 2;
+    left: ($bpk-spacing-base - $bpk-spacing-sm) / 4;
+    display: none;
+    width: $bpk-spacing-sm;
+    height: $bpk-spacing-sm;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    vertical-align: text-bottom;
+    appearance: none;
+
+    @include bpk-rtl {
+      right: ($bpk-spacing-base - $bpk-spacing-sm) / 4;
+      left: auto;
+    }
+
+    @media screen\0 {
+      background: none !important; /* stylelint-disable-line declaration-no-important */
+    }
+  }
+
+  &__asterisk {
+    color: $bpk-required-color;
+  }
+}

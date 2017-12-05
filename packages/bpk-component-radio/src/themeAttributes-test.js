@@ -16,9 +16,12 @@
  * limitations under the License.
  */
 
-import BpkRadio from './src/BpkRadio';
-import themeAttributes from './src/themeAttributes';
+import themeAttributes from './themeAttributes';
 
-export default BpkRadio;
-export { themeAttributes };
-
+describe('themeAttributes', () => {
+  it('exports the expected attributes', () => {
+    expect(themeAttributes).toEqual([
+      'radioCheckedColor',
+    ]);
+  });
+});

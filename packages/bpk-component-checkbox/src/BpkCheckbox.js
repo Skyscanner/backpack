@@ -19,8 +19,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
+import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 
-import STYLES from './bpk-checkbox.scss';
+import Tick from 'bpk-component-icon/sm/tick';
+
+import STYLES from './BpkCheckbox.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -48,6 +51,10 @@ const BpkCheckbox = (props) => {
         name={name}
         disabled={disabled}
         {...rest}
+      />
+      <Tick
+        className={getClassName('bpk-checkbox__icon')}
+        style={{ width: spacingSm, height: spacingSm }}
       />
       <span className={labelClassNames.join(' ')}>
         {label}
