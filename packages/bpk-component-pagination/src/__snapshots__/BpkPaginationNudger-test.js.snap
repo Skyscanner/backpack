@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkPaginationNudger should display backward nudger 1`] = `
+<div
+  className="bpk-pagination-nudger"
+>
+  <button
+    className="bpk-pagination-nudger__button"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
+        }
+      }
+    >
+      <svg
+        className="bpk-pagination-nudger__icon bpk-icon--rtl-support"
+        height="24"
+        style={
+          Object {
+            "height": "1.5rem",
+            "width": "1.5rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13.7 19.7L6.6 12l7.1-7.7c.6-.6 1.7-.2 1.7.7v14c0 .9-1.1 1.4-1.7.7z"
+        />
+      </svg>
+    </span>
+    <span
+      className="bpk-pagination-nudger__text--hidden"
+    >
+      previous
+    </span>
+  </button>
+</div>
+`;
+
+exports[`BpkPaginationNudger should display forward nudger 1`] = `
+<div
+  className="bpk-pagination-nudger"
+>
+  <button
+    className="bpk-pagination-nudger__button"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "lineHeight": "1.125rem",
+          "marginTop": "0.1875rem",
+          "verticalAlign": "top",
+        }
+      }
+    >
+      <svg
+        className="bpk-pagination-nudger__icon bpk-icon--rtl-support"
+        height="24"
+        style={
+          Object {
+            "height": "1.5rem",
+            "width": "1.5rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9.9 19.7L17 12 9.9 4.4c-.7-.7-1.7-.2-1.7.7v14c0 .8 1 1.3 1.7.6z"
+        />
+      </svg>
+    </span>
+    <span
+      className="bpk-pagination-nudger__text--hidden"
+    >
+      next
+    </span>
+  </button>
+</div>
+`;
