@@ -57,15 +57,21 @@ class CalendarContainer extends Component {
   }
   render() {
     return (
-      <BpkDatepicker
-        {...this.props}
-        date={this.state.date}
-        onDateSelect={(date) => {
-          this.setState({ date });
-          action('Selected date')(date);
-        }}
-        onMonthChange={action('Changed month')}
-      />
+      <div id="datepicker-element">
+        <div id="application-element">
+          <BpkDatepicker
+            {...this.props}
+            date={this.state.date}
+            onDateSelect={(date) => {
+              this.setState({ date });
+              action('Selected date')(date);
+            }}
+            onMonthChange={action('Changed month')}
+            getApplicationElement={() => document.getElementById('application-element')}
+            renderTarget={() => document.getElementById('datepicker-element')}
+          />
+        </div>
+      </div>
     );
   }
 }
@@ -89,51 +95,56 @@ class ReturnDatepicker extends Component {
       returnDate: startOfDay(addDays(new Date(), 4)),
     };
   }
+
   render() {
     return (
-      <div style={{ display: 'flex' }} id="application-element">
-        <BpkDatepicker
-          id="depart"
-          closeButtonText="Close"
-          daysOfWeek={weekDays}
-          changeMonthLabel="Change month"
-          title="Departure date"
-          getApplicationElement={() => document.getElementById('application-element')}
-          formatDate={formatDate}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          inputProps={inputProps}
-          date={this.state.departDate}
-          onDateSelect={(departDate) => {
-            this.setState({
-              departDate,
-              returnDate: dateToBoundaries(this.state.returnDate, departDate, this.maxDate),
-            });
-            action('Selected departure date')(departDate);
-          }}
-          onMonthChange={action('Changed month')}
-        />
-        <BpkDatepicker
-          id="return"
-          closeButtonText="Close"
-          daysOfWeek={weekDays}
-          changeMonthLabel="Change month"
-          title="Return date"
-          getApplicationElement={() => document.getElementById('application-element')}
-          formatDate={formatDate}
-          formatMonth={formatMonth}
-          formatDateFull={formatDateFull}
-          inputProps={inputProps}
-          date={this.state.returnDate}
-          onDateSelect={(returnDate) => {
-            this.setState({
-              returnDate,
-              departDate: dateToBoundaries(this.state.departDate, this.minDate, returnDate),
-            });
-            action('Selected return date')(returnDate);
-          }}
-          onMonthChange={action('Changed month')}
-        />
+      <div id="datepicker-element">
+        <div style={{ display: 'flex' }} id="application-element">
+          <BpkDatepicker
+            id="depart"
+            closeButtonText="Close"
+            daysOfWeek={weekDays}
+            changeMonthLabel="Change month"
+            title="Departure date"
+            getApplicationElement={() => document.getElementById('application-element')}
+            renderTarget={() => document.getElementById('datepicker-element')}
+            formatDate={formatDate}
+            formatMonth={formatMonth}
+            formatDateFull={formatDateFull}
+            inputProps={inputProps}
+            date={this.state.departDate}
+            onDateSelect={(departDate) => {
+              this.setState({
+                departDate,
+                returnDate: dateToBoundaries(this.state.returnDate, departDate, this.maxDate),
+              });
+              action('Selected departure date')(departDate);
+            }}
+            onMonthChange={action('Changed month')}
+          />
+          <BpkDatepicker
+            id="return"
+            closeButtonText="Close"
+            daysOfWeek={weekDays}
+            changeMonthLabel="Change month"
+            title="Return date"
+            getApplicationElement={() => document.getElementById('application-element')}
+            renderTarget={() => document.getElementById('datepicker-element')}
+            formatDate={formatDate}
+            formatMonth={formatMonth}
+            formatDateFull={formatDateFull}
+            inputProps={inputProps}
+            date={this.state.returnDate}
+            onDateSelect={(returnDate) => {
+              this.setState({
+                returnDate,
+                departDate: dateToBoundaries(this.state.departDate, this.minDate, returnDate),
+              });
+              action('Selected return date')(returnDate);
+            }}
+            onMonthChange={action('Changed month')}
+          />
+        </div>
       </div>
     );
   }
@@ -149,7 +160,6 @@ storiesOf('bpk-component-datepicker', module)
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
         title="Departure date"
-        getApplicationElement={() => document.getElementById('application-element')}
         formatDate={formatDate}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -165,7 +175,6 @@ storiesOf('bpk-component-datepicker', module)
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
         title="Departure date"
-        getApplicationElement={() => document.getElementById('application-element')}
         formatDate={formatDate}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -182,7 +191,6 @@ storiesOf('bpk-component-datepicker', module)
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
         title="Departure date"
-        getApplicationElement={() => document.getElementById('application-element')}
         formatDate={formatDate}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}
@@ -197,7 +205,6 @@ storiesOf('bpk-component-datepicker', module)
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
         title="Departure date"
-        getApplicationElement={() => document.getElementById('application-element')}
         formatDate={formatDate}
         formatMonth={formatMonth}
         formatDateFull={formatDateFull}

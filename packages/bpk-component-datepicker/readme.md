@@ -64,6 +64,9 @@ export default class App extends Component {
 }
 ```
 
+> **Theming:** In order to theme the modal, a `renderTarget` needs to be supplied as a function which returns a DOM node
+  in the scope of a `BpkThemeProvider`.
+
 ## Props
 
 For more information on some these props, check the BpkCalendar documentation.
@@ -96,5 +99,26 @@ For more information on some these props, check the BpkCalendar documentation.
 | showWeekendSeparator  | bool                 | false    | true             (*) |
 | weekStartsOn          | number               | false    | 1                (*) |
 | initiallyFocusedDate  | Date                 | false    | null                 |
+| renderTarget          | func                 | false    | null                 |
 
 > (*) Default value is defined on child component
+
+## Theme Props
+
+* `calendarDateTextColor`
+* `calendarDateTextHoverColor`
+* `calendarDateTextActiveColor`
+* `calendarDateTextFocusColor`
+* `calendarDateTextSelectedColor`
+* `calendarDateSelectedBackgroundColor`
+* `calendarDateFocusedBorderColor`
+* `calendarNudgerIconColor`
+* `calendarNudgerIconHoverColor`
+* `calendarNudgerIconActiveColor`
+* `closeButtonColor`
+* `closeButtonHoverColor`
+* `closeButtonActiveColor`
+* `linkColor`
+* `linkHoverColor`
+* `linkActiveColor`
+* `linkVisitedColor`

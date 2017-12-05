@@ -16,8 +16,12 @@
  * limitations under the License.
  */
 
-import BpkDatepicker from './src/BpkDatepicker';
-import themeAttributes from './src/themeAttributes';
+import { themeAttributes as calendarAttributes } from 'bpk-component-calendar';
+import { themeAttributes as modalAttributes } from 'bpk-component-modal';
+import { themeAttributes as popoverAttributes } from 'bpk-component-popover';
 
-export default BpkDatepicker;
-export { themeAttributes };
+export default [
+  ...calendarAttributes,
+  ...popoverAttributes,
+  ...modalAttributes,
+].filter((attribute, index, attributes) => attributes.indexOf(attribute) === index);
