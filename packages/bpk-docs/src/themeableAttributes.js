@@ -16,23 +16,37 @@
  * limitations under the License.
  */
 
+import { themeAttributes as accordionThemeAttributes } from 'bpk-component-accordion';
+import { themeAttributes as barchartThemeAttributes } from 'bpk-component-barchart';
+import { themeAttributes as blockquoteThemeAttributes } from 'bpk-component-blockquote';
 import { primaryThemeAttributes, secondaryThemeAttributes } from 'bpk-component-button';
+import { themeAttributes as calendarThemeAttributes } from 'bpk-component-calendar';
+import { themeAttributes as checkboxThemeAttributes } from 'bpk-component-checkbox';
+import { themeAttributes as datepickerThemeAttributes } from 'bpk-component-datepicker';
+import { themeAttributes as horizontalNavThemeAttributes } from 'bpk-component-horizontal-nav';
+import { themeAttributes as linkThemeAttributes } from 'bpk-component-link';
+import { themeAttributes as modalThemeAttributes } from 'bpk-component-modal';
+import { themeAttributes as nudgerThemeAttributes } from 'bpk-component-nudger';
+import { themeAttributes as popoverThemeAttributes } from 'bpk-component-popover';
+import { themeAttributes as progressThemeAttributes } from 'bpk-component-progress';
+import { themeAttributes as radioThemeAttributes } from 'bpk-component-radio';
+import { themeAttributes as spinnerThemeAttributes } from 'bpk-component-spinner';
 
-/* eslint-disable global-require */
 export default [
-  require('bpk-component-accordion').themeAttributes,
-  require('bpk-component-barchart').themeAttributes,
-  require('bpk-component-blockquote').themeAttributes,
-  [...primaryThemeAttributes, ...secondaryThemeAttributes],
-  require('bpk-component-calendar').themeAttributes,
-  require('bpk-component-datepicker').themeAttributes,
-  require('bpk-component-checkbox').themeAttributes,
-  require('bpk-component-horizontal-nav').themeAttributes,
-  require('bpk-component-link').themeAttributes,
-  require('bpk-component-modal').themeAttributes,
-  require('bpk-component-nudger').themeAttributes,
-  require('bpk-component-popover').themeAttributes,
-  require('bpk-component-progress').themeAttributes,
-  require('bpk-component-radio').themeAttributes,
-  require('bpk-component-spinner').themeAttributes,
-].filter(attrs => !!attrs);
+  ...accordionThemeAttributes,
+  ...barchartThemeAttributes,
+  ...blockquoteThemeAttributes,
+  ...primaryThemeAttributes,
+  ...secondaryThemeAttributes,
+  ...calendarThemeAttributes,
+  ...checkboxThemeAttributes,
+  ...datepickerThemeAttributes,
+  ...horizontalNavThemeAttributes,
+  ...linkThemeAttributes,
+  ...modalThemeAttributes,
+  ...nudgerThemeAttributes,
+  ...popoverThemeAttributes,
+  ...progressThemeAttributes,
+  ...radioThemeAttributes,
+  ...spinnerThemeAttributes,
+];
