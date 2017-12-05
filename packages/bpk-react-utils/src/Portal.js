@@ -147,7 +147,7 @@ class Portal extends Component {
       return this.props.renderTarget();
     }
 
-    return this.props.renderTarget || document.body;
+    return document.body;
   }
 
   open() {

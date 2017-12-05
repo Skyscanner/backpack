@@ -74,13 +74,14 @@ class PopoverContainer extends Component {
               onOpen={this.openPopover}
               onChange={() => null}
             />
-          :
+            :
             <BpkButton onClick={this.openPopover}>Open</BpkButton>
         }
         onClose={this.closePopover}
         isOpen={this.state.isOpen}
         label="My popover"
         closeButtonText="Close"
+        renderTarget={() => document.getElementById('portal-taget')}
         {...rest}
       />
     );

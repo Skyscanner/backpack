@@ -49,7 +49,7 @@ describe('Portal', () => {
   it('should render correctly with renderTarget', () => {
     const div = document.createElement('div');
     const tree = renderer.create(
-      <Portal isOpen renderTarget={div}>
+      <Portal isOpen renderTarget={() => div}>
         <div>My portal content</div>
       </Portal>,
     ).toJSON();
