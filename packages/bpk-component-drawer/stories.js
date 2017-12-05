@@ -67,7 +67,7 @@ class DrawerContainer extends Component {
     const { buttonText, ...rest } = this.props;
 
     return (
-      <div>
+      <div id="drawer-container">
         <div id="application-container">
           <BpkButton onClick={this.onOpen}>{buttonText}</BpkButton>
           <Paragraph>
@@ -116,6 +116,7 @@ class DrawerContainer extends Component {
           className="my-classname"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
+          renderTarget={() => document.getElementById('drawer-container')}
           {...rest}
         />
       </div>

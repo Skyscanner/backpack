@@ -15,9 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { themeAttributes as linkAttributes } from 'bpk-component-link';
 
-import BpkDrawer from './src/BpkDrawer';
-import themeAttributes from './src/themeAttributes';
-
-export default BpkDrawer;
-export { themeAttributes };
+export default [...linkAttributes];

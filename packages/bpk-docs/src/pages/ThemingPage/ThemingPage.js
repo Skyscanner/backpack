@@ -30,6 +30,8 @@ import {
   BARCHARTS,
   BUTTONS,
   CALENDAR,
+  DATEPICKER,
+  DRAWER,
   HORIZONTAL_NAV,
   MODALS,
   PROGRESS,
@@ -88,6 +90,12 @@ const components = [
         </BpkListItem>
         <BpkListItem>
           <BpkLink href={CALENDAR}>Calendars</BpkLink>
+        </BpkListItem>
+        <BpkListItem>
+          <BpkLink href={DATEPICKER}>Datepickers</BpkLink>
+        </BpkListItem>
+        <BpkListItem>
+          <BpkLink href={DRAWER}>Drawers</BpkLink>
         </BpkListItem>
         <BpkListItem>
           <BpkLink href={HORIZONTAL_NAV}>Horizontal navigation</BpkLink>
