@@ -3,27 +3,30 @@
 ## UNRELEASED
 
 **Added:**
-- bpk-component-pagination
+- bpk-component-pagination:
   - New pagination component, see https://backpack.github.io/components/web/pagination
 
-- bpk-component-modal:
+## 2017-12-05 - More theming support - modals, popovers, datepickers, checkboxes and radio buttons!
+
+**Added:**
+- bpk-component-modal: 1.1.45 => 1.2.0
   - Modal now supports theming.
 
-- bpk-component-popover:
+- bpk-component-popover: 1.2.41 => 1.3.0
   - Popover now supports theming.
 
-- bpk-component-datepicker:
+- bpk-component-datepicker: 7.1.32 => 7.2.0
   - Datepickers now support theming.
 
-- bpk-react-utils:
+- bpk-react-utils: 2.3.8 => 2.4.0
   - Portal now accepts a `renderTarget` DOM element to render the portal in.
 
-- bpk-component-checkbox:
-- bpk-component-radio:
+- bpk-component-checkbox: 1.3.40 => 1.4.0
+- bpk-component-radio: 1.1.41 => 1.2.0
   - Now supports theming.
 
 **Fixed:**
-- bpk-theming:
+- bpk-theming: 1.0.0 => 1.0.1
   - The theme provider now accepts arbitrary props (such as `id`)
 
 ## 2017-11-30 - New Drawer component and theming support for calendar
