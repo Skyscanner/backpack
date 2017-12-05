@@ -28,9 +28,9 @@ import themeableAttributes from './themeableAttributes';
 
 const EnhancedThemeProvider = updateOnThemeChange(BpkThemeProvider);
 
-addDecorator((story, meta) => (
+addDecorator(story => (
   <div style={{ padding: TOKENS.spacingBase }}>
-    <EnhancedThemeProvider themeAttributes={themeableAttributes[meta.kind]}>
+    <EnhancedThemeProvider themeAttributes={themeableAttributes}>
       {story()}
     </EnhancedThemeProvider>
     <br />
