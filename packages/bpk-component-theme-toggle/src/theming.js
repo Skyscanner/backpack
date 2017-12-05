@@ -24,14 +24,14 @@ import {
 } from 'bpk-tokens/tokens/base.es6';
 
 const theme = {
-  primaryColor300: '#865f9e',
-  primaryColor500: '#461962',
-  primaryColor600: '#2d244c',
-  primaryColor700: '#1a1331',
-  secondaryColor300: '#feee8b',
-  secondaryColor500: '#fce134',
-  secondaryColor600: '#f8c42d',
-  secondaryColor700: '#d99916',
+  primaryColor300: '#E57373',
+  primaryColor500: '#F44336',
+  primaryColor600: '#E53935',
+  primaryColor700: '#D32F2F',
+  secondaryColor300: '#7986CB',
+  secondaryColor500: '#3F51B5',
+  secondaryColor600: '#303F9F',
+  secondaryColor700: '#263490',
   white: '#fff',
 };
 
@@ -47,9 +47,9 @@ const bpkCustomTheme = {
 
   blockquoteBarColor: theme.primaryColor500,
 
-  buttonPrimaryTextColor: theme.primaryColor600,
-  buttonPrimaryHoverTextColor: theme.primaryColor600,
-  buttonPrimaryActiveTextColor: theme.primaryColor600,
+  buttonPrimaryTextColor: theme.white,
+  buttonPrimaryHoverTextColor: theme.white,
+  buttonPrimaryActiveTextColor: theme.white,
   buttonPrimaryGradientStartColor: theme.secondaryColor500,
   buttonPrimaryGradientEndColor: theme.secondaryColor600,
   buttonPrimaryBackgroundColor: theme.secondaryColor600,
