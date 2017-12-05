@@ -67,6 +67,9 @@ class App extends Component {
   the root element for your application is by returning it's DOM node via the function passed to the
   `getApplicationElement` prop (see the example above).
 
+> **Theming:** In order to theme the drawer, a `renderTarget` needs to be supplied as a function which returns a DOM node
+  in the scope of a `BpkThemeProvider`.
+
 ## Props
 
 | Property              | PropType             | Required | Default Value |
@@ -82,3 +85,11 @@ class App extends Component {
 | closeLabel            | string               | false    | null          |
 | closeText             | string               | false    | null          |
 | hideTitle             | bool                 | false    | false         |
+| renderTarget          | func                 | false    | null          |
+
+## Theme Props
+
+* `linkColor`
+* `linkHoverColor`
+* `linkActiveColor`
+* `linkVisitedColor`

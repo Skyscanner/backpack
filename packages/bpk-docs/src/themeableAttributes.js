@@ -23,6 +23,7 @@ import { primaryThemeAttributes, secondaryThemeAttributes } from 'bpk-component-
 import { themeAttributes as calendarThemeAttributes } from 'bpk-component-calendar';
 import { themeAttributes as checkboxThemeAttributes } from 'bpk-component-checkbox';
 import { themeAttributes as datepickerThemeAttributes } from 'bpk-component-datepicker';
+import { themeAttributes as drawerThemeAttributes } from 'bpk-component-drawer';
 import { themeAttributes as horizontalNavThemeAttributes } from 'bpk-component-horizontal-nav';
 import { themeAttributes as linkThemeAttributes } from 'bpk-component-link';
 import { themeAttributes as modalThemeAttributes } from 'bpk-component-modal';
@@ -41,6 +42,7 @@ export default [
   ...calendarThemeAttributes,
   ...checkboxThemeAttributes,
   ...datepickerThemeAttributes,
+  ...drawerThemeAttributes,
   ...horizontalNavThemeAttributes,
   ...linkThemeAttributes,
   ...modalThemeAttributes,

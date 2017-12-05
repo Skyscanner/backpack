@@ -57,13 +57,13 @@ class BpkDrawer extends Component {
 
   render() {
     const {
-      isOpen, onClose, target, ...rest
+      isOpen, onClose, target, renderTarget, ...rest
     } = this.props;
 
     const { isDrawerShown } = this.state;
 
     return (
-      <Portal isOpen={isOpen} onClose={this.hide} target={target}>
+      <Portal isOpen={isOpen} onClose={this.hide} target={target} renderTarget={renderTarget}>
         <BpkScrimDrawerContent
           isDrawerShown={isDrawerShown}
           onClose={this.hide}
@@ -79,10 +79,12 @@ class BpkDrawer extends Component {
 BpkDrawer.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
+  renderTarget: PropTypes.func,
   target: PropTypes.element,
 };
 
 BpkDrawer.defaultProps = {
+  renderTarget: null,
   target: null,
 };
 
