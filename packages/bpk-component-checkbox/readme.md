@@ -34,3 +34,6 @@ export default () => (
 | white      | bool     | false    | false         |
 | smallLabel | bool     | false    | false         |
 
+## Theme Props
+
++ `checkboxCheckedColor`
