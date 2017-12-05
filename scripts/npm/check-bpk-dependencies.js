@@ -120,7 +120,8 @@ if (errors.length === 0) {
   console.log('All good.  👍');
 } else if (process.argv.includes('--fix') || process.argv.includes('-f')) {
   fixDependencyErrors(packageFiles);
-  console.log('\nAll fixed.  👍\n\nNow remember to run\n\t _____________\n\t|             |\n\t| npm install |\n\t|_____________|');
+  console.log('\nAll fixed.  👍\n\n');
+  console.log('Now remember to run\n\t _____________\n\t|             |\n\t| npm install |\n\t|_____________|');
 } else {
   console.log('Some Backpack cross dependencies are outdated  😱');
   console.log('');
