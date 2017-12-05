@@ -115,9 +115,6 @@ For more information on some these props, check the BpkCalendar documentation.
 * `calendarNudgerIconColor`
 * `calendarNudgerIconHoverColor`
 * `calendarNudgerIconActiveColor`
-* `closeButtonColor`
-* `closeButtonHoverColor`
-* `closeButtonActiveColor`
 * `linkColor`
 * `linkHoverColor`
 * `linkActiveColor`

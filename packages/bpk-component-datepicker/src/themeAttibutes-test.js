@@ -35,9 +35,6 @@ describe('themeAttributes', () => {
       'linkHoverColor',
       'linkActiveColor',
       'linkVisitedColor',
-      'closeButtonColor',
-      'closeButtonHoverColor',
-      'closeButtonActiveColor',
     ]);
   });
 });

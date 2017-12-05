@@ -25,9 +25,3 @@ export default () => (
 | -------- | -------- | -------- | ------------- |
 | label    | string   | true     | -             |
 | onClick  | func     | true     | -             |
-
-## Theme Props
-
-* `closeButtonColor`
-* `closeButtonHoverColor`
-* `closeButtonActiveColor`

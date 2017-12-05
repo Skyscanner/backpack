@@ -17,6 +17,5 @@
   */
 
 import { themeAttributes as linkAttributes } from 'bpk-component-link';
-import { themeAttributes as closeButtonAttributes } from 'bpk-component-close-button';
 
-export default [...linkAttributes, ...closeButtonAttributes];
+export default [...linkAttributes];

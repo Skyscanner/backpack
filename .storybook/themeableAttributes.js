@@ -26,7 +26,6 @@ export default {
   'bpk-component-button': [...primaryThemeAttributes, ...secondaryThemeAttributes],
   'bpk-component-calendar': require('./../packages/bpk-component-calendar').themeAttributes,
   'bpk-component-checkbox': require('./../packages/bpk-component-checkbox').themeAttributes,
-  'bpk-component-close-button': require('./../packages/bpk-component-close-button').themeAttributes,
   'bpk-component-datepicker': require('./../packages/bpk-component-datepicker').themeAttributes,
   'bpk-component-horizontal-nav': require('./../packages/bpk-component-horizontal-nav').themeAttributes,
   'bpk-component-link': require('./../packages/bpk-component-link').themeAttributes,

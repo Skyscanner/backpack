@@ -26,14 +26,14 @@
   appearance: none;
 
   &__icon {
-    @include bpk-themeable-property(fill, --bpk-close-button-color, $bpk-color-gray-500);
+    fill: $bpk-color-gray-500;
 
     @include bpk-hover {
-      @include bpk-themeable-property(fill, --bpk-close-button-hover-color, $bpk-color-gray-700);
+      fill: $bpk-color-gray-700;
     }
 
     &:active {
-      @include bpk-themeable-property(fill, --bpk-close-button-active-color, $bpk-color-gray-900);
+      fill: $bpk-color-gray-900;
     }
   }
 }
