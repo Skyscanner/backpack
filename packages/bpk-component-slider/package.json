@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-slider",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Backpack slider component.",
   "main": "index.js",
   "repository": {
@@ -13,13 +13,13 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^17.1.0",
-    "bpk-react-utils": "^2.3.8",
-    "bpk-tokens": "^26.6.0",
+    "bpk-mixins": "^17.2.0",
+    "bpk-react-utils": "^2.4.0",
+    "bpk-tokens": "^26.7.0",
     "prop-types": "^15.5.8",
     "react-slider": "^0.9.0"
   },
   "devDependencies": {
-    "bpk-component-rtl-toggle": "^1.0.35"
+    "bpk-component-rtl-toggle": "^1.0.36"
   }
 }
