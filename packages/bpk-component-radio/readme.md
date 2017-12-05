@@ -31,3 +31,7 @@ export default () => (
 | name      | string   | true     | -             |
 | label     | string   | true     | -             |
 | white     | bool     | false    | false         |
+
+## Theme Props
+
++ `radioCheckedColor`
