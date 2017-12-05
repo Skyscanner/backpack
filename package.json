@@ -37,6 +37,7 @@
     "start": "npm run build && npm run storybook",
     "native": "(cd ./native && npm run storybook)",
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
+    "fix-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js --fix",
     "test": "npm run lint && npm run check-bpk-dependencies && npm run jest && npm run test:native",
     "test:native": "(cd ./native && npm test)",
     "ios": "(cd ./native && npm run ios)",
