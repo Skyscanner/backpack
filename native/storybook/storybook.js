@@ -49,6 +49,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-horizontal-nav/stories');
   require('../packages/react-native-bpk-component-icon/stories');
   require('../packages/react-native-bpk-component-spinner/stories');
+  require('../packages/react-native-bpk-component-star-rating/stories');
   require('../packages/react-native-bpk-component-switch/stories');
   require('../packages/react-native-bpk-component-text-input/stories');
   require('../packages/react-native-bpk-component-text/stories');

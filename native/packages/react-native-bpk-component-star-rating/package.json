@@ -1,0 +1,21 @@
+{
+  "name": "react-native-bpk-component-star-rating",
+  "version": "0.0.0",
+  "description": "Backpack React Native rating star component.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^16.0.0-alpha.1",
+    "react-native": ">= 0.47.0"
+  },
+  "dependencies": {
+    "react-native-bpk-component-icon": "^1.1.13",
+    "bpk-tokens": "^26.7.0",
+    "prop-types": "^15.5.8"
+  }
+}
