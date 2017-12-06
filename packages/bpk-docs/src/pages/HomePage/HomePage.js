@@ -74,7 +74,7 @@ class HomePage extends React.Component {
             <BpkGridColumn width={6} tabletWidth={12}>
               <Heading level="h3">Mission</Heading>
               <Paragraph>
-                Bring Design and Engineering together to enable squads to create beautiful, coherent products at scale.
+              To enable design and engineering to build coherent, beautiful and usable products quickly and without pain.
               </Paragraph>
             </BpkGridColumn>
             <BpkGridColumn width={6} tabletWidth={12}>

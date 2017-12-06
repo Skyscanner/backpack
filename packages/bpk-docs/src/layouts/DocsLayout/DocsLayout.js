@@ -82,7 +82,6 @@ const links = [
       { id: 'NATIVE_SPINNER', route: routes.NATIVE_SPINNER, children: 'Spinners' },
       { id: 'NATIVE_SWITCH', route: routes.NATIVE_SWITCH, children: 'Switches' },
       { id: 'NATIVE_TEXT', route: routes.NATIVE_TEXT, children: 'Text' },
-      { id: 'NATIVE_TICKETS', route: null, children: 'Tickets' },
       { id: 'NATIVE_STAR_RATING', route: null, children: 'Star rating' },
       { id: 'NATIVE_NUDGER', route: null, children: 'Nudger' },
     ],
