@@ -27,7 +27,7 @@ const getClassName = cssModules(STYLES);
 
 const BpkPaginationList = (props) => {
   const {
-    selectedPageIndex, pageCount, onPageChange, visibleRange,
+    selectedPageIndex, pageCount, onPageChange, visibleRange, pageLabelFormatter,
   } = props;
 
   const shoulderRange = Math.ceil(visibleRange / 2);
@@ -48,9 +48,10 @@ const BpkPaginationList = (props) => {
     } else if (!isPageOutOfRange || isFirstPage || isLastPage) {
       pageView = (
         <BpkPaginationPage
-          label={i + 1}
+          page={i + 1}
           onSelect={() => onPageChange(i)}
           isSelected={selectedPageIndex === i}
+          pageLabelFormatter={pageLabelFormatter}
         />
       );
     }
@@ -80,6 +81,7 @@ BpkPaginationList.propTypes = {
   pageCount: PropTypes.number.isRequired,
   visibleRange: PropTypes.number.isRequired,
   onPageChange: PropTypes.func.isRequired,
+  pageLabelFormatter: PropTypes.func.isRequired,
 };
 
 export default BpkPaginationList;

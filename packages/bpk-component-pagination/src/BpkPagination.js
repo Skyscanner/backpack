@@ -43,6 +43,8 @@ const BpkPagination = (props) => {
     selectedPageIndex,
     visibleRange,
     className,
+    paginationLabel,
+    pageLabelFormatter,
     ...rest
   } = props;
 
@@ -54,7 +56,11 @@ const BpkPagination = (props) => {
   const hasNextPage = selectedPageIndex !== pageCount - 1;
 
   return (
-    <section className={classNames.join('')} {...rest}>
+    <nav
+      className={classNames.join('')}
+      aria-label={paginationLabel}
+      {...rest}
+    >
       <BpkPaginationNudger
         label={previousLabel}
         onNudge={() => pageChanged(selectedPageIndex - 1)}
@@ -65,6 +71,7 @@ const BpkPagination = (props) => {
         pageCount={pageCount}
         onPageChange={pageChanged}
         visibleRange={visibleRange}
+        pageLabelFormatter={pageLabelFormatter}
       />
       <BpkPaginationNudger
         label={nextLabel}
@@ -72,7 +79,7 @@ const BpkPagination = (props) => {
         forward
         disabled={!hasNextPage}
       />
-    </section>
+    </nav>
   );
 };
 
@@ -82,6 +89,8 @@ BpkPagination.propTypes = {
   pageCount: PropTypes.number.isRequired,
   previousLabel: PropTypes.string.isRequired,
   nextLabel: PropTypes.string.isRequired,
+  paginationLabel: PropTypes.string.isRequired,
+  pageLabelFormatter: PropTypes.func.isRequired,
   visibleRange: PropTypes.number,
   className: PropTypes.string,
 };

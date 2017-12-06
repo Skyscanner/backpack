@@ -55,7 +55,7 @@ const links = [
       { id: 'BAR_CHARTS', route: routes.BARCHARTS, children: 'Bar charts' },
       { id: 'SLIDERS', route: routes.SLIDERS, children: 'Sliders' },
       { id: 'DRAWER', route: routes.DRAWER, children: 'Drawer' },
-      { id: 'PAGINATION', route: null, children: 'Pagination' },
+      { id: 'PAGINATION', route: routes.PAGINATION, children: 'Pagination' },
       { id: 'CAROUSELS', route: null, children: 'Carousel' },
       { id: 'TOASTS', route: null, children: 'Toast' },
       { id: 'VERTICAL_NAV', route: null, children: 'Vertical navigation' },
