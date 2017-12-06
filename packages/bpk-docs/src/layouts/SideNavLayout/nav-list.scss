@@ -51,8 +51,9 @@
   }
 
   &__link {
-    color: $bpk-link-color;
     text-decoration: $bpk-link-text-decoration;
+
+    @include bpk-themeable-property(color, --bpk-link-color, $bpk-link-color);
 
     @include bpk-hover {
       background-color: $bpk-color-gray-50;
@@ -65,23 +66,26 @@
     }
 
     &--active {
-      background-color: $bpk-color-blue-500;
       color: $bpk-color-white;
       font-weight: bold;
       text-decoration: none;
 
+      @include bpk-themeable-property(background-color, --bpk-link-active-color, $bpk-color-blue-500);
+
       @include bpk-hover {
-        background-color: $bpk-color-blue-500;
         color: $bpk-color-white;
         font-weight: bold;
         text-decoration: none;
+
+        @include bpk-themeable-property(background-color, --bpk-link-active-color, $bpk-color-blue-500);
       }
 
       &:active {
-        background-color: $bpk-color-blue-500;
         color: $bpk-color-white;
         font-weight: bold;
         text-decoration: none;
+
+        @include bpk-themeable-property(background-color, --bpk-link-active-color, $bpk-color-blue-500);
       }
     }
   }
