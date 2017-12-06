@@ -18,7 +18,7 @@ const Pagination = () => (
   <BpkPagination
     pageCount={20}
     selectedPageIndex={0}
-    onPageChange={(pageIndex) => alert(`page ${pageIndex + 1}`)}}
+    onPageChange={pageIndex => alert(`page ${pageIndex + 1}`)}
     previousLabel="previous"
     nextLabel="next"
     visibleRange={3}
@@ -38,3 +38,19 @@ const Pagination = () => (
 | onPageChange      | func                 | false    | null          |
 | visibleRange      | number               | false    | 3             |
 | className         | string               | false    | null          |
+
+## Theme Props
+
+* `buttonSecondaryTextColor`
+* `buttonSecondaryHoverTextColor`
+* `buttonSecondaryActiveTextColor`
+* `buttonSecondaryBorderColor`
+* `buttonSecondaryHoverBorderColor`
+* `buttonSecondaryActiveBorderColor`
+* `buttonSecondaryBackgroundColor`
+* `buttonSecondaryHoverBackgroundColor`
+* `buttonSecondaryActiveBackgroundColor`
+* `paginationNudgerActiveColor`
+* `paginationNudgerColor`
+* `paginationNudgerHoverColor`
+* `paginationSelectedBackgroundColor`

@@ -26,19 +26,20 @@ import STYLES from './bpk-pagination-page.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkPaginationPage = (props) => {
+  const classNames = [getClassName('bpk-pagination-page')];
   const {
     label, onSelect, isSelected,
   } = props;
 
+  if (isSelected) { classNames.push(getClassName('bpk-pagination-page--selected')); }
+
   return (
     <BpkButton
-      iconOnly
       secondary
-      selected={isSelected}
       onClick={onSelect}
-      className={getClassName('bpk-pagination-page')}
+      className={classNames.join(' ')}
     >
-      <span>{ label }</span>
+      <span>{label}</span>
     </BpkButton>
   );
 };

@@ -23,3 +23,38 @@
   height: $bpk-spacing-xl;
   padding: 0;
 }
+
+.bpk-pagination-page--selected {
+  background-image: $bpk-button-secondary-background-image;
+  color: $bpk-button-selected-color;
+  box-shadow: $bpk-button-selected-box-shadow;
+  cursor: auto;
+
+  @include bpk-themeable-property(background-color, --bpk-pagination-selected-background-color, $bpk-color-blue-700);
+  @include bpk-border-lg($bpk-color-blue-700);
+  @include bpk-border-lg(var(--bpk-pagination-selected-background-color, $bpk-color-blue-700));
+
+  @include bpk-hover {
+    background-image: $bpk-button-selected-hover-background-image;
+    color: $bpk-button-selected-hover-color;
+    box-shadow: $bpk-button-selected-hover-box-shadow;
+
+    @include bpk-themeable-property(background-color, --bpk-pagination-selected-background-color, $bpk-color-blue-700);
+    @include bpk-border-lg($bpk-color-blue-700);
+    @include bpk-border-lg(var(--bpk-pagination-selected-background-color, $bpk-color-blue-700));
+  }
+
+  &:active {
+    background-image: $bpk-button-selected-active-background-image;
+    color: $bpk-button-selected-active-color;
+    box-shadow: $bpk-button-selected-active-box-shadow;
+
+    @include bpk-themeable-property(background-color, --bpk-pagination-selected-background-color, $bpk-color-blue-700);
+    @include bpk-border-lg($bpk-color-blue-700);
+    @include bpk-border-lg(var(--bpk-pagination-selected-background-color, $bpk-color-blue-700));
+  }
+
+  &:disabled {
+    box-shadow: $bpk-button-selected-disabled-box-shadow;
+  }
+}

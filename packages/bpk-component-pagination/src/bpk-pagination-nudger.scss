@@ -27,17 +27,18 @@
     padding: 0 $bpk-spacing-xs;
     border: none;
     background: none;
-    color: $bpk-color-blue-500;
     line-height: 100%; /* stylelint-disable-line scale-unlimited/declaration-strict-value */
     cursor: pointer;
     appearance: none;
 
+    @include bpk-themeable-property(color, --bpk-pagination-nudger-color, $bpk-color-blue-500);
+
     @include bpk-hover {
-      color: $bpk-color-blue-700;
+      @include bpk-themeable-property(color, --bpk-pagination-nudger-hover-color, $bpk-color-blue-700);
     }
 
     &:active {
-      color: $bpk-color-blue-600;
+      @include bpk-themeable-property(color, --bpk-pagination-nudger-active-color, $bpk-color-blue-600);
     }
 
     &:disabled {

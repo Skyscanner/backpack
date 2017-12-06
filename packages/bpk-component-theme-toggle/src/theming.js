@@ -21,6 +21,7 @@ import {
   horizontalNavLinkActiveColor,
   calendarDayHoverColor,
   calendarDayActiveColor,
+  colorGray100,
 } from 'bpk-tokens/tokens/base.es6';
 
 const theme = {
@@ -59,7 +60,7 @@ const bpkCustomTheme = {
   buttonSecondaryTextColor: theme.primaryColor500,
   buttonSecondaryHoverTextColor: theme.primaryColor600,
   buttonSecondaryActiveTextColor: theme.primaryColor700,
-  buttonSecondaryBorderColor: theme.primaryColor500,
+  buttonSecondaryBorderColor: colorGray100,
   buttonSecondaryHoverBorderColor: theme.primaryColor600,
   buttonSecondaryActiveBorderColor: theme.primaryColor700,
   buttonSecondaryBackgroundColor: theme.white,
@@ -80,6 +81,11 @@ const bpkCustomTheme = {
   spinnerPrimaryColor: theme.primaryColor500,
 
   sliderBarColor: theme.primaryColor500,
+
+  paginationNudgerActiveColor: theme.primaryColor500,
+  paginationNudgerColor: theme.primaryColor500,
+  paginationNudgerHoverColor: theme.primaryColor700,
+  paginationSelectedBackgroundColor: theme.primaryColor700,
 
   progressBarFillColor: theme.primaryColor500,
 
