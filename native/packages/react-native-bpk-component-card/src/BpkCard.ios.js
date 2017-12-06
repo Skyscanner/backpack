@@ -17,7 +17,6 @@
  */
 
 import {
-  PixelRatio,
   StyleSheet,
   View,
   ViewPropTypes,
@@ -26,17 +25,8 @@ import {
   colorWhite,
   borderRadiusSm,
   spacingBase,
-  shadowSmColor,
-  shadowSmOffsetWidth,
-  shadowSmOffsetHeight,
-  shadowSmOpacity,
-  shadowSmRadius,
-  shadowXlColor,
-  shadowXlOffsetWidth,
-  shadowXlOffsetHeight,
-  shadowXlOpacity,
-  shadowXlRadius,
 } from 'bpk-tokens/tokens/base.react.native';
+import { shadows } from 'react-native-bpk-styles';
 import React from 'react';
 import PropTypes from 'prop-types';
 import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
@@ -45,20 +35,12 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: colorWhite,
     borderRadius: borderRadiusSm,
-    shadowColor: shadowSmColor,
-    shadowOffset: { width: shadowSmOffsetWidth, height: shadowSmOffsetHeight / PixelRatio.get() },
-    shadowOpacity: shadowSmOpacity,
-    shadowRadius: shadowSmRadius / PixelRatio.get(),
+    ...shadows.base(),
   },
   cardPadded: {
     padding: spacingBase,
   },
-  cardFocused: {
-    shadowColor: shadowXlColor,
-    shadowOffset: { width: shadowXlOffsetWidth, height: shadowXlOffsetHeight / PixelRatio.get() },
-    shadowOpacity: shadowXlOpacity,
-    shadowRadius: shadowXlRadius / PixelRatio.get(),
-  },
+  cardFocused: shadows.large(),
   cardInner: {
     backgroundColor: 'transparent', // otherwise this view's corners would bleed outwith the outer container
   },
