@@ -2,12 +2,14 @@
 
 ## UNRELEASED
 
+__Nothing yet...__
+
+## 2017-12-06 - More theming support
+
 **Added:**
-- bpk-component-pagination:
-  - New pagination component, see https://backpack.github.io/components/web/pagination
-- bpk-component-drawer:
+- bpk-component-drawer: 1.0.1 => 1.1.0
   - Drawer now supports theming.
-- bpk-component-slider:
+- bpk-component-slider: 1.0.7 => 1.1.0
   - Slider now supports theming.
 
 ## 2017-12-05 - More theming support - modals, popovers, datepickers, checkboxes and radio buttons!
