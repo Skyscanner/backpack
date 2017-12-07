@@ -1,189 +1,85 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { Component } from 'react';
+import { View, StyleSheet } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
-import { spacingBase, spacingXs } from 'bpk-tokens/tokens/base.react.native';
+import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkTextInput from './index';
-import { StorySubheading } from '../../storybook/TextStyles';
 
 const styles = StyleSheet.create({
-  label: {
-    marginBottom: spacingXs,
-  },
   input: {
     marginBottom: spacingBase,
   },
 });
 
+class StatefulBpkTextInput extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: this.props.initialValue, // eslint-disable-line react/prop-types
+    };
+
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(value) {
+    this.setState(() => ({ value }));
+  }
+
+  render() {
+    return <BpkTextInput {...this.props} value={this.state.value} onChangeText={this.onChange} />;
+  }
+}
+
 storiesOf('BpkTextInput', module)
   .add('docs:text-inputs', () => (
     <View>
-      <StorySubheading>Input</StorySubheading>
-      <BpkTextInput
+      <StatefulBpkTextInput
+        label="Input"
+        initialValue=""
         style={styles.input}
-        placeholder="Country, city, or airport"
-        value="Edinburgh"
       />
-      <StorySubheading>Input (Placeholder)</StorySubheading>
-      <BpkTextInput
+      <StatefulBpkTextInput
+        label="Input with value"
+        initialValue="Edinburgh"
         style={styles.input}
-        placeholder="Country, city, or airport"
-        value=""
       />
-      <StorySubheading>Valid input (small)</StorySubheading>
-      <BpkTextInput
+      <StatefulBpkTextInput
+        label="Input with multiline value"
+        initialValue="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+        multiline
         style={styles.input}
-        small
-        placeholder="Country, city, or airport"
-        value="Edinburgh"
+      />
+      <StatefulBpkTextInput
+        label="Valid input"
+        initialValue="Edinburgh"
         valid
-      />
-      <StorySubheading>Invalid input (small)</StorySubheading>
-      <BpkTextInput
         style={styles.input}
-        small
-        placeholder="Country, city, or airport"
-        value="Edinbrvgh"
+      />
+      <StatefulBpkTextInput
+        label="Invalid input"
+        initialValue="Edinbvrgh"
         valid={false}
-      />
-      <StorySubheading>Disabled input (small)</StorySubheading>
-      <BpkTextInput
+        validationMessage="'Edinbvrgh' is not a valid city."
         style={styles.input}
-        small
+      />
+      <StatefulBpkTextInput
+        label="Disabled input"
+        initialValue=""
         disabled
-        placeholder="Country, city, or airport"
-        value="Edinburgh"
-      />
-      <StorySubheading>Password input (small)</StorySubheading>
-      <BpkTextInput
         style={styles.input}
-        small
+      />
+      <StatefulBpkTextInput
+        label="Password"
+        initialValue="letmein"
         secureTextEntry
-        placeholder="password"
-        value="password"
-      />
-      <StorySubheading>Telephone input (small)</StorySubheading>
-      <BpkTextInput
         style={styles.input}
-        small
+      />
+      <StatefulBpkTextInput
+        label="Phone number"
+        initialValue="+441234567890"
         keyboardType="phone-pad"
-        placeholder="Phone number"
-        value="+441234567890"
-      />
-    </View>
-  ))
-  .add('Default', () => (
-    <View>
-      <BpkTextInput
         style={styles.input}
-        placeholder="Country, city, or airport"
-        value="Edinburgh"
-      />
-      <BpkTextInput
-        style={styles.input}
-        small
-        placeholder="Country, city, or airport"
-        value="Edinburgh"
-      />
-    </View>
-  ))
-  .add('Valid', () => (
-    <View>
-      <BpkTextInput
-        style={styles.input}
-        placeholder="Country, city, or airport"
-        value="Edinburgh"
-        valid
-      />
-      <BpkTextInput
-        style={styles.input}
-        small
-        placeholder="Country, city, or airport"
-        value="Edinburgh"
-        valid
-      />
-    </View>
-  ))
-  .add('Invalid', () => (
-    <View>
-      <BpkTextInput
-        style={styles.input}
-        placeholder="Country, city, or airport"
-        value="Edinbrvgh"
-        valid={false}
-      />
-      <BpkTextInput
-        style={styles.input}
-        small
-        placeholder="Country, city, or airport"
-        value="Edinbrvgh"
-        valid={false}
-      />
-    </View>
-  ))
-  .add('Placeholder', () => (
-    <View>
-      <BpkTextInput
-        style={styles.input}
-        placeholder="Country, city, or airport"
-        value=""
-      />
-      <BpkTextInput
-        style={styles.input}
-        small
-        placeholder="Country, city, or airport"
-        value=""
-      />
-    </View>
-  ))
-  .add('Disabled', () => (
-    <View>
-      <BpkTextInput
-        style={styles.input}
-        disabled
-        placeholder="Country, city, or airport"
-        value="Edinburgh"
-      />
-      <BpkTextInput
-        style={styles.input}
-        small
-        disabled
-        placeholder="Country, city, or airport"
-        value="Edinburgh"
-      />
-    </View>
-  ))
-  .add('Password', () => (
-    <View>
-      <BpkTextInput
-        style={styles.input}
-        secureTextEntry
-        placeholder="password"
-        value="password"
-      />
-      <BpkTextInput
-        style={styles.input}
-        small
-        secureTextEntry
-        placeholder="password"
-        value="password"
-      />
-    </View>
-  ))
-  .add('Telephone', () => (
-    <View>
-      <BpkTextInput
-        style={styles.input}
-        keyboardType="phone-pad"
-        placeholder="Phone number"
-        value="+441234567890"
-      />
-      <BpkTextInput
-        style={styles.input}
-        small
-        keyboardType="phone-pad"
-        placeholder="Phone number"
-        value="+441234567890"
       />
     </View>
   ));

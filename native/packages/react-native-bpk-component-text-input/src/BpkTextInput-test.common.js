@@ -17,127 +17,26 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import BpkTextInput from './BpkTextInput';
 
 const commonTests = () => {
   describe('BpkTextInput', () => {
+    let renderer;
+
+    beforeEach(() => {
+      renderer = new ShallowRenderer();
+    });
+
     it('should render correctly', () => {
-      const tree = renderer.create(
-        <BpkTextInput value="Input_text" />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render placeholder correctly', () => {
-      const tree = renderer.create(
+      renderer.render(
         <BpkTextInput
-          placeholder="placeholder_text"
+          label="Name"
           value=""
         />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
+      );
 
-    it('should render small correctly', () => {
-      const tree = renderer.create(
-        <BpkTextInput
-          placeholder="placeholder_text"
-          value="Input_text"
-          small
-        />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render small placeholder correctly', () => {
-      const tree = renderer.create(
-        <BpkTextInput
-          placeholder="placeholder_text"
-          value=""
-          small
-        />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render valid correctly', () => {
-      const tree = renderer.create(
-        <BpkTextInput
-          placeholder="placeholder_text"
-          value="Input_text"
-          valid
-        />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render small valid correctly', () => {
-      const tree = renderer.create(
-        <BpkTextInput
-          placeholder="placeholder_text"
-          value="Input_text"
-          valid
-          small
-        />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render invalid correctly', () => {
-      const tree = renderer.create(
-        <BpkTextInput
-          placeholder="placeholder_text"
-          value="Input_text"
-          valid={false}
-        />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render small invalid correctly', () => {
-      const tree = renderer.create(
-        <BpkTextInput
-          placeholder="placeholder_text"
-          value="Input_text"
-          valid={false}
-          small
-        />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render disabled correctly', () => {
-      const tree = renderer.create(
-        <BpkTextInput
-          placeholder="placeholder_text"
-          value="Input_text"
-          disabled
-        />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render small disabled correctly', () => {
-      const tree = renderer.create(
-        <BpkTextInput
-          placeholder="placeholder_text"
-          value="Input_text"
-          disabled
-          small
-        />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should apply user-styling correctly', () => {
-      const tree = renderer.create(
-        <BpkTextInput
-          style={{ width: 200, backgroundColor: 'blue' }}
-          placeholder="placeholder_text"
-          value="Input_text"
-        />,
-      ).toJSON();
+      const tree = renderer.getRenderOutput();
       expect(tree).toMatchSnapshot();
     });
   });
