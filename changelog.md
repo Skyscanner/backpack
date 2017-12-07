@@ -2,6 +2,15 @@
 
 ## UNRELEASED
 
+**Breaking:**
+- react-native-bpk-component-text-input:
+  - Now supports Android.
+  - A new floating label text design.
+  - The `small` prop has been removed. Existing components using it will now get the standard size.
+  - The `disabled` prop has been replaced with `editable`, to follow React Native's built in [TextInput](https://facebook.github.io/react-native/docs/textinput.html) component.
+  - A new optional prop, `validationMessage`, allows a message to be shown when `valid={false}`.
+  - A new required `label` prop.
+
 ## 2017-12-12 - Pagination and native star rating components
 
 **Fixed:**

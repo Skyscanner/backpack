@@ -16,185 +16,138 @@
  * limitations under the License.
  */
 
-import {
-  View,
-  TextInput,
-  Image,
-  Platform,
-  StyleSheet,
-} from 'react-native';
-import React from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import {
-  fontFamily,
-  fontFamilyEmphasize,
-  borderRadiusSm,
-  borderSizeSm,
-  colorGray100,
-  colorGray300,
-  colorGray700,
-  colorGreen500,
-  colorRed500,
-  spacingBase,
-  spacingLg,
-  spacingMd,
-  spacingSm,
-  spacingXl,
-  textLgFontSize,
-  textLgFontWeight,
-  textLgLineHeight,
-  textXsFontSize,
-  textXsFontWeight,
-  textXsLineHeight,
-} from 'bpk-tokens/tokens/base.react.native';
+  Animated,
+  TextInput,
+  View,
+  ViewPropTypes,
+} from 'react-native';
+import BpkText from 'react-native-bpk-component-text';
+import { animationDurationSm } from 'bpk-tokens/tokens/base.react.native';
+import { ValidIcon, InvalidIcon } from './BpkTextInputIcons';
+import { getLabelStyle, getInputContainerStyle, styles } from './styles';
 
-const tickSmIcon = require('./icons/sm/tick-circle.png'); // eslint-disable-line import/no-unresolved
-const tickLgIcon = require('./icons/lg/tick-circle.png'); // eslint-disable-line import/no-unresolved
-const exclaimationSmIcon = require('./icons/sm/exclaimation-circle.png'); // eslint-disable-line import/no-unresolved
-const exclaimationLgIcon = require('./icons/lg/exclaimation-circle.png'); // eslint-disable-line import/no-unresolved
+class BpkTextInput extends Component {
+  constructor(props) {
+    super(props);
 
-const styles = StyleSheet.create({
-  input: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderColor: colorGray100,
-    borderWidth: borderSizeSm,
-    borderRadius: borderRadiusSm,
-    paddingLeft: spacingSm * 3,
-    paddingRight: spacingSm * 3,
-    height: (spacingLg * 2) - (1 * 2),
-  },
-  text: {
-    flex: 1,
-    padding: 0,
-    fontSize: textLgFontSize,
-    color: colorGray700,
-    fontWeight: textLgFontWeight,
-    fontFamily: Platform.OS === 'android' ? fontFamilyEmphasize : fontFamily,
-    lineHeight: textLgLineHeight,
-    height: '100%',
-  },
-  smallInput: {
-    paddingLeft: spacingMd,
-    paddingRight: spacingMd,
-    height: spacingXl - (1 * 2),
-  },
-  smallText: {
-    fontSize: textXsFontSize,
-    fontWeight: textXsFontWeight,
-    fontFamily,
-    lineHeight: textXsLineHeight,
-  },
-  placeholderText: {
-    fontStyle: 'italic',
-  },
-  disabledText: {
-    color: colorGray100,
-  },
-  icon: {
-    flex: 0,
-    width: spacingLg,
-    height: spacingLg,
-  },
-  validIcon: {
-    tintColor: colorGreen500,
-  },
-  invalidIcon: {
-    tintColor: colorRed500,
-  },
-  smallIcon: {
-    width: spacingBase,
-    height: spacingBase,
-  },
-});
+    this.state = {
+      isFocused: false,
+    };
 
-const BpkTextInput = (props) => {
-  const {
-    small, valid, value, disabled, style: innerStyle, inputRef, ...rest
-  } = props;
+    this.animatedValues = {
+      color: new Animated.Value(this.getColorAnimatedValue()),
+      labelPosition: new Animated.Value(this.getLabelPositionAnimatedValue()),
+    };
 
-  let iconSource = null;
-
-  const style = [styles.input];
-  const textStyle = [styles.text];
-  const iconStyle = [styles.icon];
-  if (small) {
-    style.push(styles.smallInput);
-    textStyle.push(styles.smallText);
-    iconStyle.push(styles.smallIcon);
-  }
-  if (disabled) {
-    textStyle.push(styles.disabledText);
-  }
-  if (value === '') {
-    textStyle.push(styles.placeholderText);
-  }
-  if (valid !== null) {
-    // TODO Update to use Backpack-native Icon solution once implemented https://gojira.skyscanner.net/browse/BPK-841
-
-    if (valid) {
-      if (small) {
-        iconSource = tickSmIcon;
-      } else {
-        iconSource = tickLgIcon;
-      }
-    } else if (small) {
-      iconSource = exclaimationSmIcon;
-    } else {
-      iconSource = exclaimationLgIcon;
-    }
-
-
-    if (valid) {
-      style.push(styles.validOuter);
-      iconStyle.push(styles.validIcon);
-    } else {
-      style.push(styles.errorOuter);
-      iconStyle.push(styles.invalidIcon);
-    }
+    this.onFocus = this.onFocus.bind(this);
+    this.onBlur = this.onBlur.bind(this);
   }
 
-  if (innerStyle) { style.push(innerStyle); }
+  componentDidUpdate() {
+    Animated.parallel([
+      Animated.timing(this.animatedValues.color, {
+        toValue: this.getColorAnimatedValue(),
+        duration: animationDurationSm,
+      }),
+      Animated.timing(this.animatedValues.labelPosition, {
+        toValue: this.getLabelPositionAnimatedValue(),
+        duration: animationDurationSm,
+      }),
+    ]).start();
+  }
 
-  return (
-    <View
-      style={style}
-    >
-      <TextInput
-        underlineColorAndroid="transparent"
-        placeholderTextColor={colorGray300}
-        style={textStyle}
-        editable={!disabled}
-        value={value}
-        ref={inputRef}
-        {...rest}
-      />
-      {iconSource &&
-        <Image
-          style={iconStyle}
-          source={iconSource}
-        />
-      }
-    </View>
-  );
-};
+  onFocus() {
+    this.setState(() => ({ isFocused: true }), this.props.onFocus);
+  }
+
+  onBlur() {
+    this.setState(() => ({ isFocused: false }), this.props.onBlur);
+  }
+
+  getColorAnimatedValue() {
+    return this.state.isFocused ? 1 : 0;
+  }
+
+  getLabelPositionAnimatedValue() {
+    return (this.props.value || this.state.isFocused) ? 0 : 1;
+  }
+
+  render() {
+    const { isFocused } = this.state;
+    const {
+      inputRef,
+      validationMessage,
+      editable,
+      label,
+      value,
+      style: userStyle,
+      valid,
+      onFocus,
+      onBlur,
+      ...rest
+    } = this.props;
+
+    const validityIcon = valid ? <ValidIcon /> : (valid === false && <InvalidIcon />);
+
+    const animatedLabelStyle = getLabelStyle(
+      this.animatedValues.color,
+      this.animatedValues.labelPosition,
+      { value, valid, editable },
+    );
+
+    const animatedInputStyle = getInputContainerStyle(this.animatedValues.color, valid);
+
+    return (
+      <View style={[styles.container, userStyle]}>
+        <Animated.Text style={animatedLabelStyle}>{label}</Animated.Text>
+        <Animated.View style={animatedInputStyle}>
+          <TextInput
+            editable={editable}
+            value={value || ''}
+            style={styles.input}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            ref={inputRef}
+            underlineColorAndroid="transparent"
+            {...rest}
+          />
+          { !isFocused && validityIcon }
+        </Animated.View>
+        { valid === false && validationMessage && (
+          <BpkText textStyle="xs" style={styles.validationMessage}>
+            {validationMessage}
+          </BpkText>
+        )}
+      </View>
+    );
+  }
+}
 
 BpkTextInput.propTypes = {
-  disabled: PropTypes.bool,
-  small: PropTypes.bool,
-  style: TextInput.propTypes.style,
-  valid: PropTypes.bool,
+  label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
+  clearButtonMode: TextInput.propTypes.clearButtonMode,
   inputRef: PropTypes.func,
+  validationMessage: PropTypes.string,
+  valid: PropTypes.oneOf(true, false, null),
+  editable: PropTypes.bool,
+  style: ViewPropTypes.style,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
 };
 
 BpkTextInput.defaultProps = {
-  disabled: false,
-  small: false,
-  style: null,
-  valid: null,
+  clearButtonMode: 'while-editing',
   inputRef: null,
+  validationMessage: null,
+  valid: null,
+  editable: true,
+  style: null,
+  onFocus: null,
+  onBlur: null,
 };
 
 export default BpkTextInput;
