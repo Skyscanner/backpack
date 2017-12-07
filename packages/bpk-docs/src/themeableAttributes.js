@@ -28,6 +28,7 @@ import { themeAttributes as horizontalNavThemeAttributes } from 'bpk-component-h
 import { themeAttributes as linkThemeAttributes } from 'bpk-component-link';
 import { themeAttributes as modalThemeAttributes } from 'bpk-component-modal';
 import { themeAttributes as nudgerThemeAttributes } from 'bpk-component-nudger';
+import { themeAttributes as paginationThemeAttributes } from 'bpk-component-pagination';
 import { themeAttributes as popoverThemeAttributes } from 'bpk-component-popover';
 import { themeAttributes as progressThemeAttributes } from 'bpk-component-progress';
 import { themeAttributes as radioThemeAttributes } from 'bpk-component-radio';
@@ -48,6 +49,7 @@ export default [
   ...linkThemeAttributes,
   ...modalThemeAttributes,
   ...nudgerThemeAttributes,
+  ...paginationThemeAttributes,
   ...popoverThemeAttributes,
   ...progressThemeAttributes,
   ...radioThemeAttributes,

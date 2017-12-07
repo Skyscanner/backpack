@@ -17,5 +17,7 @@
  */
 
 import BpkPagination from './src/BpkPagination';
+import themeAttributes from './src/themeAttributes';
 
 export default BpkPagination;
+export { themeAttributes };
