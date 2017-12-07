@@ -59,7 +59,8 @@ class HomePage extends React.Component {
               <BpkGridColumn width={12}>
                 <Heading level="h1">Backpack</Heading>
                 <Heading level="h2">
-                  Backpack is a collection of design resources, reusable components and guidelines for creating
+                  Backpack is a collection of design resources, reusable
+                  components and guidelines for creating
                   Skyscanner products.
                 </Heading>
                 <BpkButton large href={ROUTES.GETTING_STARTED} onClick={this.onGettingStartedClick}>
@@ -74,13 +75,15 @@ class HomePage extends React.Component {
             <BpkGridColumn width={6} tabletWidth={12}>
               <Heading level="h3">Mission</Heading>
               <Paragraph>
-              To enable design and engineering to build coherent, beautiful and usable products quickly and without pain.
+              To enable design and engineering to build coherent, beautiful
+              and usable products quickly and without pain.
               </Paragraph>
             </BpkGridColumn>
             <BpkGridColumn width={6} tabletWidth={12}>
               <Heading level="h3">About Backpack</Heading>
               <Paragraph>
-                Backpack is the foundation for all Skyscanner products. It builds on Atomic Design principles to help
+                Backpack is the foundation for all Skyscanner products. It
+                builds on Atomic Design principles to help
                 visualise how these products are assembled.
               </Paragraph>
             </BpkGridColumn>
