@@ -27,6 +27,10 @@ describe('BpkPagination', () => {
       selectedPageIndex={0}
       previousLabel="previous"
       nextLabel="next"
+      paginationLabel="Pagination Navigation"
+      pageLabelFormatter={(page, isSelected) =>
+        `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+      }
     />);
 
     expect(pagination.find({ label: 'next' }).length).toBe(1);
@@ -39,6 +43,10 @@ describe('BpkPagination', () => {
       selectedPageIndex={1}
       previousLabel="previous"
       nextLabel="next"
+      paginationLabel="Pagination Navigation"
+      pageLabelFormatter={(page, isSelected) =>
+        `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+      }
     />);
 
     expect(pagination.find({ label: 'next' }).length).toBe(1);
@@ -51,6 +59,10 @@ describe('BpkPagination', () => {
       selectedPageIndex={1}
       previousLabel="previous"
       nextLabel="next"
+      paginationLabel="Pagination Navigation"
+      pageLabelFormatter={(page, isSelected) =>
+        `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+      }
     />);
 
     expect(pagination.find({ label: 'next', disabled: true }).length).toBe(1);
@@ -65,6 +77,10 @@ describe('BpkPagination', () => {
       previousLabel="previous"
       nextLabel="next"
       onPageChange={onPageChange}
+      paginationLabel="Pagination Navigation"
+      pageLabelFormatter={(page, isSelected) =>
+        `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+      }
     />);
 
     const page = pagination.find('ul');
@@ -84,6 +100,10 @@ describe('BpkPagination', () => {
       previousLabel="previous"
       nextLabel="next"
       onPageChange={onPageChange}
+      paginationLabel="Pagination Navigation"
+      pageLabelFormatter={(page, isSelected) =>
+        `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+      }
     />);
 
     const forwardNudger = pagination.find('BpkPaginationNudger').at(1);
