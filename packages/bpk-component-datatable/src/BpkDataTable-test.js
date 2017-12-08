@@ -18,6 +18,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import BpkDataTable from './BpkDataTable';
 import { Column as BpkColumn } from './BpkColumn';
 
@@ -82,6 +83,30 @@ describe('BpkDataTable', () => {
   it('should render correctly in RTL', () => {
     const tree = renderer.create(
       <BpkDataTable rows={rows} height={200} dir={'rtl'}>
+        <BpkColumn
+          label={'Name'}
+          dataKey={'name'}
+          width={100}
+        />
+        <BpkColumn
+          label={'Description'}
+          dataKey={'description'}
+          width={100}
+          flexGrow={1}
+        />
+        <BpkColumn
+          label={'Bla'}
+          dataKey={'bla'}
+          width={100}
+        />
+      </BpkDataTable>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with a specified width', () => {
+    const tree = renderer.create(
+      <BpkDataTable rows={rows} height={200} width={400}>
         <BpkColumn
           label={'Name'}
           dataKey={'name'}

@@ -87,37 +87,45 @@ class BpkDataTable extends Component {
     this.setState({ sortBy, sortDirection, sortedList });
   }
 
-  render() {
+  renderTable(width) {
     const { sortedList, sortDirection, sortBy } = this.state;
     const { height } = this.props;
 
     return (
-      <AutoSizer disableHeight>
-        {({ width }) =>
-          <Table
-            className={getClassName('bpk-data-table')}
-            width={width}
-            height={height}
-            headerHeight={60}
-            rowHeight={60}
-            rowCount={sortedList.length}
-            rowGetter={({ index }) => sortedList[index]}
-            headerClassName={getClassName('bpk-data-table__headerColumn')}
-            rowClassName={this.rowStyle}
-            onRowClick={this.rowClicked}
-            sort={this.sort}
-            sortBy={sortBy}
-            sortDirection={sortDirection}
-            gridStyle={{ direction: this.props.dir }}
-          >
-            {
-              this.state.columns.map((child, index) => (
-                BpkColumn({ ...child.props, key: index })
-              ))
-            }
-          </Table>
-        }
-      </AutoSizer>
+      <Table
+        className={getClassName('bpk-data-table')}
+        width={width}
+        height={height}
+        headerHeight={60}
+        rowHeight={60}
+        rowCount={sortedList.length}
+        rowGetter={({ index }) => sortedList[index]}
+        headerClassName={getClassName('bpk-data-table__headerColumn')}
+        rowClassName={this.rowStyle}
+        onRowClick={this.rowClicked}
+        sort={this.sort}
+        sortBy={sortBy}
+        sortDirection={sortDirection}
+        gridStyle={{ direction: this.props.dir }}
+      >
+      {
+        this.state.columns.map((child, index) => (
+          BpkColumn({ ...child.props, key: index })
+        ))
+      }
+    </Table>
+    );
+  }
+
+  render() {
+    const { width } = this.props;
+
+    if (width !== null) {
+      return this.renderTable(width);
+    }
+
+    return (
+      <AutoSizer disableHeight children={({ width }) => this.renderTable(width)} />
     );
   }
 }
@@ -126,10 +134,12 @@ BpkDataTable.propTypes = {
   rows: PropTypes.arrayOf(Object).isRequired,
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
   height: PropTypes.number.isRequired,
+  width: PropTypes.number,
   dir: PropTypes.string,
 };
 
 BpkDataTable.defaultProps = {
+  width: null,
   dir: 'ltr',
 };
 
