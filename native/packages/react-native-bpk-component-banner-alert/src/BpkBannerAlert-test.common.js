@@ -24,6 +24,7 @@ import BpkBannerAlert, { ALERT_TYPES } from './BpkBannerAlert';
 
 const commonTests = () => {
   describe('BpkBannerAlert', () => {
+    Date.now = jest.fn(() => 1503187200000);
     it('should render correctly', () => {
       const tree = renderer.create(
         <View>
@@ -271,6 +272,102 @@ const commonTests = () => {
             message="Warn alert."
           />
           <BpkBannerAlert
+            style={{ width: 50 }}
+            type={ALERT_TYPES.ERROR}
+            message="Error alert."
+          />
+        </View>,
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly when not shown', () => {
+      const tree = renderer.create(
+        <View>
+          <BpkBannerAlert
+            show={false}
+            style={{ width: 50 }}
+            type={ALERT_TYPES.NEUTRAL}
+            message="Neutral alert."
+          />
+          <BpkBannerAlert
+            show={false}
+            style={{ width: 50 }}
+            type={ALERT_TYPES.SUCCESS}
+            message="Successful alert."
+          />
+          <BpkBannerAlert
+            show={false}
+            style={{ width: 50 }}
+            type={ALERT_TYPES.WARN}
+            message="Warn alert."
+          />
+          <BpkBannerAlert
+            show={false}
+            style={{ width: 50 }}
+            type={ALERT_TYPES.ERROR}
+            message="Error alert."
+          />
+        </View>,
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly with animateOnEnter', () => {
+      const tree = renderer.create(
+        <View>
+          <BpkBannerAlert
+            animateOnEnter
+            style={{ width: 50 }}
+            type={ALERT_TYPES.NEUTRAL}
+            message="Neutral alert."
+          />
+          <BpkBannerAlert
+            animateOnEnter
+            style={{ width: 50 }}
+            type={ALERT_TYPES.SUCCESS}
+            message="Successful alert."
+          />
+          <BpkBannerAlert
+            animateOnEnter
+            style={{ width: 50 }}
+            type={ALERT_TYPES.WARN}
+            message="Warn alert."
+          />
+          <BpkBannerAlert
+            animateOnEnter
+            style={{ width: 50 }}
+            type={ALERT_TYPES.ERROR}
+            message="Error alert."
+          />
+        </View>,
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly with animateOnLeave', () => {
+      const tree = renderer.create(
+        <View>
+          <BpkBannerAlert
+            animateOnLeave
+            style={{ width: 50 }}
+            type={ALERT_TYPES.NEUTRAL}
+            message="Neutral alert."
+          />
+          <BpkBannerAlert
+            animateOnLeave
+            style={{ width: 50 }}
+            type={ALERT_TYPES.SUCCESS}
+            message="Successful alert."
+          />
+          <BpkBannerAlert
+            animateOnLeave
+            style={{ width: 50 }}
+            type={ALERT_TYPES.WARN}
+            message="Warn alert."
+          />
+          <BpkBannerAlert
+            animateOnLeave
             style={{ width: 50 }}
             type={ALERT_TYPES.ERROR}
             message="Error alert."

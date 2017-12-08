@@ -20,7 +20,6 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import AnimateAndFade from './AnimateAndFade';
 
-
 const message = <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>;
 
 describe('AnimateAndFade', () => {

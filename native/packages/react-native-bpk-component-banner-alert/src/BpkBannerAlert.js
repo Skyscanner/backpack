@@ -19,10 +19,13 @@
 import {
   View,
   StyleSheet,
-  ViewPropTypes,
 } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
+import BpkText from 'react-native-bpk-component-text';
+import BpkIcon from 'react-native-bpk-component-icon';
+import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
+
 import {
   borderRadiusSm,
   borderSizeSm,
@@ -32,17 +35,16 @@ import {
   colorGreen500,
   colorRed500,
   colorYellow500,
+  lineHeightSm,
   spacingBase,
   spacingMd,
   spacingSm,
   spacingXl,
 } from 'bpk-tokens/tokens/base.react.native';
-import BpkText from 'react-native-bpk-component-text';
-import BpkIcon from 'react-native-bpk-component-icon';
-import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
 import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
 import { dismissablePropType } from './customPropTypes';
+import AnimateAndFade from './AnimateAndFade';
 
 export const ALERT_TYPES = {
   SUCCESS: 'success',
@@ -67,11 +69,9 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
     paddingBottom: spacingSm,
     paddingLeft: spacingMd,
     paddingRight: spacingMd,
-    paddingTop: spacingSm,
   },
   bannerContainerPaddedDismissable: {
     paddingRight: 0,
@@ -81,7 +81,6 @@ const styles = StyleSheet.create({
     width: ((2 * spacingMd) + spacingBase),
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'center',
   },
   expandedChildContainer: {
@@ -106,6 +105,12 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     paddingLeft: spacingSm,
     color: colorGray700,
+    // Calculate the padding required to align the text within the banner
+    paddingTop: ((spacingXl - (2 * borderSizeSm)) - lineHeightSm) / 2,
+  },
+  icon: {
+    // Calculate the padding required to align the icon within the banner
+    paddingTop: ((spacingXl - (2 * borderSizeSm)) - spacingBase) / 2,
   },
   iconSuccess: {
     color: colorGreen500,
@@ -118,6 +123,10 @@ const styles = StyleSheet.create({
   },
   iconNeutral: {
     color: colorGray500,
+  },
+  button: {
+    // Calculate the padding required to align the button within the banner
+    paddingTop: ((spacingXl - (2 * borderSizeSm)) - spacingBase) / 2,
   },
   buttonExpand: {
     color: colorGray700,
@@ -154,11 +163,15 @@ const BpkBannerAlert = (props) => {
   const {
     type,
     message,
-    onAction,
+    onDismiss,
+    onToggleExpanded,
     dismissable,
     expanded,
-    actionButtonLabel,
-    style,
+    dismissButtonLabel,
+    toggleExpandedButtonLabel,
+    show,
+    animateOnEnter,
+    animateOnLeave,
     children,
     ...rest
   } = props;
@@ -171,20 +184,19 @@ const BpkBannerAlert = (props) => {
   const { iconSource, outerStyle: outerStyleForType, iconStyle } = ALERT_TYPE_STYLES[type] || {};
 
   outerStyle.push(outerStyleForType);
-  if (style) { outerStyle.push(style); }
   if (dismissable) { contentPaddedStyle.push(styles.bannerContainerPaddedDismissable); }
 
   const banner = (
     <View style={[contentPaddedStyle]}>
       <BpkIcon
-        style={iconStyle}
+        style={[styles.icon, iconStyle]}
         icon={iconSource}
         small
       />
       <BpkText textStyle="sm" style={styles.text}>{message}</BpkText>
       {expandable && (
         <BpkIcon
-          style={styles.buttonExpand}
+          style={[styles.button, styles.buttonExpand]}
           icon={expanded ? 'chevron-up' : 'chevron-down'}
           small
         />
@@ -193,39 +205,49 @@ const BpkBannerAlert = (props) => {
   );
 
   return (
-    <View style={outerStyle} {...rest} >
-      <View style={styles.bannerContainer} >
-        {expandable ? (
-          <BpkTouchableOverlay
-            accessibilityComponentType="button"
-            onPress={onAction}
-            accessibilityLabel={actionButtonLabel}
-            style={styles.bannerContainer}
-          >
-            {banner}
-          </BpkTouchableOverlay>
+    <AnimateAndFade
+      animateOnEnter={animateOnEnter}
+      animateOnLeave={dismissable || animateOnLeave}
+      style={outerStyle}
+      show={show}
+      {...rest}
+    >
+      <View
+        style={outerStyle}
+      >
+        <View style={styles.bannerContainer} >
+          {expandable ? (
+            <BpkTouchableOverlay
+              accessibilityComponentType="button"
+              onPress={onToggleExpanded}
+              accessibilityLabel={toggleExpandedButtonLabel}
+              style={styles.bannerContainer}
+            >
+              {banner}
+            </BpkTouchableOverlay>
         ) : banner}
-        {dismissable && (
+          {dismissable && (
           <BpkTouchableOverlay
             accessibilityComponentType="button"
-            onPress={onAction}
-            accessibilityLabel={actionButtonLabel}
+            onPress={onDismiss}
+            accessibilityLabel={dismissButtonLabel}
             style={styles.closeButtonContainer}
           >
             <View>
               <BpkIcon
-                style={styles.buttonClose}
+                style={[styles.button, styles.buttonClose]}
                 icon="close"
                 small
               />
             </View>
           </BpkTouchableOverlay>
         )}
+        </View>
+        <BpkAnimateHeight expanded={expanded}>
+          <View style={expandedChildContainer}>{props.children}</View>
+        </BpkAnimateHeight>
       </View>
-      <BpkAnimateHeight expanded={expanded}>
-        <View style={expandedChildContainer}>{props.children}</View>
-      </BpkAnimateHeight>
-    </View>
+    </AnimateAndFade>
   );
 };
 
@@ -233,20 +255,28 @@ BpkBannerAlert.propTypes = {
   message: PropTypes.string.isRequired,
   type: PropTypes.oneOf(Object.keys(ALERT_TYPES).map(key => ALERT_TYPES[key])).isRequired,
   children: PropTypes.node,
-  style: ViewPropTypes.style,
   dismissable: dismissablePropType,
   expanded: PropTypes.bool,
-  onAction: PropTypes.func,
-  actionButtonLabel: PropTypes.string,
+  show: PropTypes.bool,
+  animateOnEnter: PropTypes.bool,
+  animateOnLeave: PropTypes.bool,
+  onToggleExpanded: PropTypes.func,
+  onDismiss: PropTypes.func,
+  dismissButtonLabel: PropTypes.string,
+  toggleExpandedButtonLabel: PropTypes.string,
 };
 
 BpkBannerAlert.defaultProps = {
   children: null,
-  style: null,
   dismissable: false,
+  show: true,
   expanded: false,
-  onAction: () => null,
-  actionButtonLabel: null,
+  animateOnEnter: false,
+  animateOnLeave: false,
+  onToggleExpanded: null,
+  onDismiss: null,
+  dismissButtonLabel: null,
+  toggleExpandedButtonLabel: null,
 };
 
 export default BpkBannerAlert;

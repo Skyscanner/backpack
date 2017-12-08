@@ -7,6 +7,9 @@
   - New `dismissable` configuration. See https://backpack.github.io/components/web/banner-alerts
   - New animations available when `show` is toggled. See https://backpack.github.io/components/web/banner-alerts
 
+- react-native-bpk-component-banner-alert:
+  - New animations available when `show` is toggled. See https://backpack.github.io/components/native/banner-alerts
+
 ## 2017-12-06 - More theming support
 
 **Added:**

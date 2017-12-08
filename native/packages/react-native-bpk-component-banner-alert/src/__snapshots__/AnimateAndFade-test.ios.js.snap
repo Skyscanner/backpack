@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS AnimateAndFade should render correctly 1`] = `
+<View
+  animateOnEnter={false}
+  animateOnLeave={false}
+  duration={200}
+  show={true}
+  style={null}
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "height": 0.01,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+    >
+      <View
+        collapsable={undefined}
+        style={
+          Object {
+            "opacity": 0.01,
+          }
+        }
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        </div>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`iOS AnimateAndFade should render correctly when show is false 1`] = `
+<View
+  animateOnEnter={false}
+  animateOnLeave={false}
+  duration={200}
+  show={false}
+  style={null}
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "height": 0.01,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+    >
+      <View
+        collapsable={undefined}
+        style={
+          Object {
+            "opacity": 0.01,
+          }
+        }
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        </div>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`iOS AnimateAndFade should render correctly with animateOnEnter 1`] = `null`;
+
+exports[`iOS AnimateAndFade should render correctly with animateOnLeave 1`] = `
+<View
+  animateOnEnter={false}
+  animateOnLeave={true}
+  duration={200}
+  show={true}
+  shown={true}
+  style={null}
+>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "height": 0.01,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+    >
+      <View
+        collapsable={undefined}
+        style={
+          Object {
+            "opacity": 0.01,
+          }
+        }
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        </div>
+      </View>
+    </View>
+  </View>
+</View>
+`;
