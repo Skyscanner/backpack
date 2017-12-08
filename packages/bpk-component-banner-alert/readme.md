@@ -76,6 +76,8 @@ export default () => (
 | ------------------ | -------------------- | -------- | ------------- |
 | type               | ALERT_TYPES (one of) | true     | -             |
 | message            | node                 | true     | -             |
+| animateOnEnter     | bool                 | false    | false         |
+| animateOnLeave     | bool                 | false    | false         |
 | ariaLive           | ARIA_LIVE (one of)   | false    | 'assertive'   |
 | children           | node                 | false    | null          |
 | dismissable        | bool                 | false    | false         |

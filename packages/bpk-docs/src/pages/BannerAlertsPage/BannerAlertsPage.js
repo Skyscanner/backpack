@@ -21,6 +21,7 @@ import { fontWeightBold } from 'bpk-tokens/tokens/base.es6';
 import PropTypes from 'prop-types';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert';
+import BpkButton from 'bpk-component-button';
 import bannerAlertReadme from 'bpk-component-banner-alert/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
@@ -56,15 +57,18 @@ class BpkBannerDismissable extends Component {
   }
 
   render() {
+    const { message, type, ...rest } = this.props;
+
     return (
       <BpkBannerAlert
         className={componentClassName}
-        message={this.props.message}
-        type={this.props.type}
+        message={message}
+        type={type}
         dismissable
         onDismiss={this.setDismissed}
         show={this.state.show}
         dismissButtonLabel="Dismiss"
+        {...rest}
       />
     );
   }
@@ -76,6 +80,59 @@ BpkBannerDismissable.propTypes = {
 };
 
 BpkBannerDismissable.defaultProps = {
+  message: null,
+  type: null,
+};
+
+// eslint-disable-next-line react/no-multi-comp
+class BpkBannerAlertFadeDemo extends Component {
+  constructor() {
+    super();
+
+    this.addBannerAlert = this.addBannerAlert.bind(this);
+
+    this.state = {
+      bannerAlertCount: 0,
+    };
+  }
+
+  addBannerAlert() {
+    this.setState({
+      bannerAlertCount: this.state.bannerAlertCount += 1,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <BpkButton
+          className={componentClassName}
+          onClick={this.addBannerAlert}
+        >
+            Add banner alert!
+        </BpkButton>
+        {[...Array(this.state.bannerAlertCount)].map((e, i) => (
+          <BpkBannerDismissable
+            className={componentClassName}
+            key={i.toString()}
+            message={this.props.message}
+            type={this.props.type}
+            animateOnEnter
+            dismissable
+            dismissButtonLabel="Dismiss"
+          />
+        ))}
+      </div>
+    );
+  }
+}
+
+BpkBannerAlertFadeDemo.propTypes = {
+  message: PropTypes.string,
+  type: PropTypes.string,
+};
+
+BpkBannerAlertFadeDemo.defaultProps = {
   message: null,
   type: null,
 };
@@ -180,6 +237,24 @@ const components = [
       <BpkBannerDismissable
         message="Error alert with dismiss option."
         type={ALERT_TYPES.ERROR}
+      />,
+    ],
+  },
+  {
+    id: 'animateOnEnter',
+    title: 'With Enter Animation',
+    blurb: [
+      <Paragraph>
+        Banner alerts can be configured to animate when first added to the DOM.
+      </Paragraph>,
+    ],
+    examples: [
+      <BpkBannerAlertFadeDemo
+        className={componentClassName}
+        message="Neutral alert with dismiss option."
+        type={ALERT_TYPES.NEUTRAL}
+        dismissable
+        dismissButtonLabel="Dismiss"
       />,
     ],
   },

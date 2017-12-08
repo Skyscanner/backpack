@@ -89,4 +89,18 @@ describe('BpkBannerAlert', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with animateOnEnter', () => {
+    const tree = renderer.create(
+      <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} dismissable animateOnEnter />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with animateOnLeave', () => {
+    const tree = renderer.create(
+      <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} dismissable animateOnLeave />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

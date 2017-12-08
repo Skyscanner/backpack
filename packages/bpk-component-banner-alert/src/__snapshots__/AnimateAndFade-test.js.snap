@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnimateAndFade should render correctly 1`] = `
+<div
+  className={null}
+  onTransitionEnd={[Function]}
+  style={
+    Object {
+      "MozTransition": "height 200ms ease ",
+      "OTransition": "height 200ms ease ",
+      "WebkitTransition": "height 200ms ease ",
+      "height": "auto",
+      "msTransition": "height 200ms ease ",
+      "overflow": "visible",
+      "transition": "height 200ms ease ",
+    }
+  }
+>
+  <div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AnimateAndFade should render correctly when shown 1`] = `
+<div
+  className={null}
+  onTransitionEnd={[Function]}
+  style={
+    Object {
+      "MozTransition": "height 200ms ease ",
+      "OTransition": "height 200ms ease ",
+      "WebkitTransition": "height 200ms ease ",
+      "height": "auto",
+      "msTransition": "height 200ms ease ",
+      "overflow": "visible",
+      "transition": "height 200ms ease ",
+    }
+  }
+>
+  <div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AnimateAndFade should render correctly with animateOnEnter 1`] = `
+<div
+  className={null}
+  onTransitionEnd={[Function]}
+  style={
+    Object {
+      "MozTransition": "height 200ms ease ",
+      "OTransition": "height 200ms ease ",
+      "WebkitTransition": "height 200ms ease ",
+      "height": 0,
+      "msTransition": "height 200ms ease ",
+      "overflow": "hidden",
+      "transition": "height 200ms ease ",
+    }
+  }
+>
+  <div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AnimateAndFade should render correctly with userland className 1`] = `
+<div
+  className="userland-class-name"
+  onTransitionEnd={[Function]}
+  style={
+    Object {
+      "MozTransition": "height 200ms ease ",
+      "OTransition": "height 200ms ease ",
+      "WebkitTransition": "height 200ms ease ",
+      "height": "auto",
+      "msTransition": "height 200ms ease ",
+      "overflow": "visible",
+      "transition": "height 200ms ease ",
+    }
+  }
+>
+  <div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    </div>
+  </div>
+</div>
+`;
