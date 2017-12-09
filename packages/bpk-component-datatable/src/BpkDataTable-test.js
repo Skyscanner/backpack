@@ -150,5 +150,28 @@ describe('BpkDataTable', () => {
     expect(onRowClick).toHaveBeenCalledTimes(1);
     expect(onRowClick).toHaveBeenCalledWith(rows[1]);
   });
+
+  it('should re-render when rows prop is updated', () => {
+    const wrapper = mount(
+      <BpkDataTable rows={rows} height={200} width={400}>
+        <BpkColumn
+          label={'Name'}
+          dataKey={'name'}
+          width={100}
+        />
+        <BpkColumn
+          label={'Description'}
+          dataKey={'description'}
+          width={100}
+        />
+      </BpkDataTable>,
+    );
+
+    wrapper.setProps({ rows: [] });
+    expect(wrapper.find('.bpk-data-table__row')).toHaveLength(1);
+
+    wrapper.setProps({ rows: [rows[0]] });
+    expect(wrapper.find('.bpk-data-table__row')).toHaveLength(2);
+  });
 });
 

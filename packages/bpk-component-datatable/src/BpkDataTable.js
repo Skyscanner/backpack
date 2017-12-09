@@ -42,9 +42,9 @@ class BpkDataTable extends Component {
     const sortBy = 'name';
     const sortDirection = 'ASC';
     const sortedList = sortList({ sortBy, sortDirection, list: props.rows });
-    let columns = this.props.children.slice();
+    let columns = props.children.slice();
 
-    if (this.props.dir === 'rtl') {
+    if (props.dir === 'rtl') {
       columns.reverse();
     }
 
@@ -60,6 +60,14 @@ class BpkDataTable extends Component {
     this.rowClicked = this.rowClicked.bind(this);
     this.rowStyle = this.rowStyle.bind(this);
     this.sort = this.sort.bind(this);
+  }
+
+  componentWillReceiveProps({ rows }) {
+    if (rows !== this.state.rows) {
+      const { sortBy, sortDirection } = this.state;
+      const sortedList = sortList({ sortBy, sortDirection, list: rows });
+      this.setState({ rows, sortedList, rowSelected: undefined });
+    }
   }
 
   rowClicked({ index }) {
@@ -91,8 +99,8 @@ class BpkDataTable extends Component {
   }
 
   renderTable(width) {
-    const { sortedList, sortDirection, sortBy } = this.state;
-    const { height } = this.props;
+    const { sortedList, sortDirection, sortBy, columns } = this.state;
+    const { height, dir } = this.props;
 
     return (
       <Table
@@ -109,10 +117,10 @@ class BpkDataTable extends Component {
         sort={this.sort}
         sortBy={sortBy}
         sortDirection={sortDirection}
-        gridStyle={{ direction: this.props.dir }}
+        gridStyle={{ direction: dir }}
       >
       {
-        this.state.columns.map((child, index) => (
+        columns.map((child, index) => (
           BpkColumn({ ...child.props, key: index })
         ))
       }
