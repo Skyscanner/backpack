@@ -1,6 +1,6 @@
 # bpk-component-datatable
 
-> Backpack datatable component, which takes up the entire width of the parent.
+> Backpack datatable component (using react-virtualised).
 
 ## Installation
 
@@ -19,8 +19,10 @@ const rows = [
   { name: 'Rolf', description: 'Manager' }
 ]
 
+const onRowClick = row => alert(JSON.stringify(row));
+
 export default () => (
-  <BpkDataTable rows={rows} height={200} dir={'rtl'}>
+  <BpkDataTable rows={rows} height={200} dir={'rtl'} onRowClick={onRowClick}>
     <BpkColumn
       label={'Name'}
       dataKey={'name'}
@@ -40,18 +42,20 @@ export default () => (
 
 ### BpkDataTable
 
-| Property   | PropType                | Required | Default Value |  
-| ---------- | ----------------------- | -------- | ------------- |  
-| rows       | arrayOf(Object)         | yes      | -             |  
-| children   | node                    | yes      | -             |  
-| height     | number                  | yes      | -             |  
-| dir        | string                  | no       | 'ltr'         |  
+| Property   | PropType                | Required | Default Value        |
+| ---------- | ----------------------- | -------- | -------------------- |
+| rows       | arrayOf(Object)         | yes      | -                    |
+| children   | node                    | yes      | -                    |
+| height     | number                  | yes      | -                    |
+| onRowClick | function                | no       | -                    |
+| width      | number                  | no       | full width of parent |
+| dir        | string                  | no       | 'ltr'                |
 
 ### BpkColumn
 
-| Property   | PropType                | Required | Default Value |  
-| ---------- | ----------------------- | -------- | ------------- |  
-| label      | string                  | yes      | -             |  
-| dataKey    | string                  | yes      | -             |  
-| width      | number                  | yes      | -             |  
-| flexGrow   | number                  | no       | 0             |  
+| Property   | PropType                | Required | Default Value |
+| ---------- | ----------------------- | -------- | ------------- |
+| label      | string                  | yes      | -             |
+| dataKey    | string                  | yes      | -             |
+| width      | number                  | yes      | -             |
+| flexGrow   | number                  | no       | 0             |
