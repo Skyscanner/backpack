@@ -26,9 +26,16 @@ const rows = [
   { name: 'Rolf', description: 'Some guy', bla: 'Bla' },
 ];
 
+const onRowClick = console.log.bind(console);
+
 storiesOf('bpk-component-datatable', module)
   .add('Example', () => (
-    <BpkDataTable rows={rows} height={300} dir={document.querySelector('html').dir}>
+    <BpkDataTable
+      rows={rows}
+      height={300}
+      dir={document.querySelector('html').dir}
+      onRowClick={onRowClick}
+    >
       <BpkColumn
         label={'Name'}
         dataKey={'name'}

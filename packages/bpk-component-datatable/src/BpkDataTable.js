@@ -68,6 +68,9 @@ class BpkDataTable extends Component {
     } else {
       this.setState({ rowSelected: index });
     }
+    if (this.props.onRowClick !== undefined) {
+      this.props.onRowClick(this.state.rows[index]);
+    }
   }
 
   rowStyle({ index }) {
@@ -134,11 +137,13 @@ BpkDataTable.propTypes = {
   rows: PropTypes.arrayOf(Object).isRequired,
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
   height: PropTypes.number.isRequired,
+  onRowClick: PropTypes.func,
   width: PropTypes.number,
   dir: PropTypes.string,
 };
 
 BpkDataTable.defaultProps = {
+  onRowClick: null,
   width: null,
   dir: 'ltr',
 };

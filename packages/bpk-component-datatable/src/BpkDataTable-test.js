@@ -127,5 +127,28 @@ describe('BpkDataTable', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should call the onRowClick callback when a row is clicked', () => {
+    const onRowClick = jest.fn();
+    const wrapper = mount(
+      <BpkDataTable rows={rows} height={200} width={400} onRowClick={onRowClick}>
+        <BpkColumn
+          label={'Name'}
+          dataKey={'name'}
+          width={100}
+        />
+        <BpkColumn
+          label={'Description'}
+          dataKey={'description'}
+          width={100}
+        />
+      </BpkDataTable>,
+    );
+
+    wrapper.find('.bpk-data-table__row').last().simulate('click');
+
+    expect(onRowClick).toHaveBeenCalledTimes(1);
+    expect(onRowClick).toHaveBeenCalledWith(rows[1]);
+  });
 });
 
