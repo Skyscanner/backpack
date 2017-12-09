@@ -26,7 +26,8 @@ const rows = [
   { name: 'Rolf', description: 'Some guy', bla: 'Bla' },
 ];
 
-const onRowClick = console.log.bind(console);
+// eslint-disable-next-line no-alert
+const onRowClick = row => alert(JSON.stringify(row));
 
 storiesOf('bpk-component-datatable', module)
   .add('Example', () => (
@@ -37,19 +38,19 @@ storiesOf('bpk-component-datatable', module)
       onRowClick={onRowClick}
     >
       <BpkColumn
-        label={'Name'}
-        dataKey={'name'}
+        label="Name"
+        dataKey="name"
         width={100}
       />
       <BpkColumn
-        label={'Description'}
-        dataKey={'description'}
+        label="Description"
+        dataKey="description"
         width={100}
         flexGrow={1}
       />
       <BpkColumn
-        label={'Bla'}
-        dataKey={'bla'}
+        label="Bla"
+        dataKey="bla"
         width={100}
         disableSort
       />

@@ -42,7 +42,7 @@ class BpkDataTable extends Component {
     const sortBy = 'name';
     const sortDirection = 'ASC';
     const sortedList = sortList({ sortBy, sortDirection, list: props.rows });
-    let columns = props.children.slice();
+    const columns = props.children.slice();
 
     if (props.dir === 'rtl') {
       columns.reverse();
@@ -99,7 +99,12 @@ class BpkDataTable extends Component {
   }
 
   renderTable(width) {
-    const { sortedList, sortDirection, sortBy, columns } = this.state;
+    const {
+      sortedList,
+      sortDirection,
+      sortBy,
+      columns,
+    } = this.state;
     const { height, dir } = this.props;
 
     return (
@@ -119,24 +124,22 @@ class BpkDataTable extends Component {
         sortDirection={sortDirection}
         gridStyle={{ direction: dir }}
       >
-      {
+        {
         columns.map((child, index) => (
           BpkColumn({ ...child.props, key: index })
         ))
-      }
-    </Table>
+        }
+      </Table>
     );
   }
 
   render() {
-    const { width } = this.props;
-
-    if (width !== null) {
-      return this.renderTable(width);
+    if (this.props.width !== null) {
+      return this.renderTable(this.props.width);
     }
 
     return (
-      <AutoSizer disableHeight children={({ width }) => this.renderTable(width)} />
+      <AutoSizer disableHeight>{({ width }) => this.renderTable(width)}</AutoSizer>
     );
   }
 }

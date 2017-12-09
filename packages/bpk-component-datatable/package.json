@@ -13,8 +13,8 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^17.0.5",
-    "bpk-react-utils": "^2.3.6",
+    "bpk-mixins": "^17.2.0",
+    "bpk-react-utils": "^2.4.0",
     "prop-types": "^15.5.8",
     "react-table": "^6.6.0",
     "react-virtualized": "^9.10.1"
