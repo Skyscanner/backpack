@@ -103,7 +103,7 @@ const BpkBannerAlert = (props) => {
     animateOnLeave,
     ariaLive,
     children,
-    className,
+    bannerClassName,
     dismissable,
     dismissButtonLabel,
     message,
@@ -123,26 +123,28 @@ const BpkBannerAlert = (props) => {
   const sectionClassNames = ['bpk-banner-alert', `bpk-banner-alert--${type}`]
     .map(sectionClassName => getClassName(sectionClassName));
 
+  if (bannerClassName) { sectionClassNames.push(bannerClassName); }
+
   if (isExpandable) {
     headerClassNames.push(getClassName('bpk-banner-alert__header--expandable'));
     ariaRoles.push('button');
   }
 
   /* eslint-disable
-  jsx-a11y/no-static-element-interactions,
-  jsx-a11y/click-events-have-key-events,
-  jsx-a11y/no-noninteractive-element-interactions
-  */
+    jsx-a11y/no-static-element-interactions,
+    jsx-a11y/click-events-have-key-events,
+    jsx-a11y/no-noninteractive-element-interactions
+    */
   // Disabling 'click-events-have-key-events and interactive-supports-focus' because header element is not focusable.
   // ToggleButton is focusable and works for this.
   return (
     <AnimateAndFade
-      className={className}
       animateOnEnter={animateOnEnter}
       animateOnLeave={dismissable || animateOnLeave}
       show={show}
+      {...rest}
     >
-      <section className={sectionClassNames.join(' ')} {...rest}>
+      <section className={sectionClassNames.join(' ')}>
         <header
           role={ariaRoles.join(' ')}
           aria-live={ariaLive}
@@ -201,7 +203,7 @@ BpkBannerAlert.propTypes = {
   dismissButtonLabel: PropTypes.string,
   onDismiss: PropTypes.func,
   show: PropTypes.bool,
-  className: PropTypes.string,
+  bannerClassName: PropTypes.string,
 };
 
 BpkBannerAlert.defaultProps = {
@@ -216,7 +218,7 @@ BpkBannerAlert.defaultProps = {
   dismissButtonLabel: null,
   onDismiss: null,
   show: true,
-  className: null,
+  bannerClassName: null,
 };
 
 export default BpkBannerAlert;

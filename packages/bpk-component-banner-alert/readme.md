@@ -112,6 +112,7 @@ const BannerAlertState = withBannerAlertState(BpkBannerAlert);
 | animateOnEnter     | bool                 | false    | false         |
 | animateOnLeave     | bool                 | false    | false         |
 | ariaLive           | ARIA_LIVE (one of)   | false    | 'assertive'   |
+| bannerClassName    | string               | false    | null          |
 | children           | node                 | false    | null          |
 | dismissable        | bool                 | false    | false         |
 | dismissButtonLabel | string               | false    | null          |

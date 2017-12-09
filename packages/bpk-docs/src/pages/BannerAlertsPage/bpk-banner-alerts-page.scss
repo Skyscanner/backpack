@@ -19,7 +19,11 @@
 @import '~bpk-mixins/index';
 
 .bpk-banner-alerts-page {
-  &__component:not(:last-child) {
-    margin-bottom: $bpk-spacing-base;
+  &__component {
+    margin-top: $bpk-spacing-base;
+  }
+
+  &__demo {
+    margin-top: -$bpk-spacing-base;
   }
 }
