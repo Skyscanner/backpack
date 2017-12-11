@@ -58,6 +58,12 @@ const commonTests = () => {
       );
       expect(renderer.getRenderOutput()).toMatchSnapshot();
     });
+    it('should render correctly with ratingLabel passed as a string', () => {
+      renderer.render(
+        <BpkStarRating rating={3} maxRating={10} ratingLabel="Star rating" />,
+      );
+      expect(renderer.getRenderOutput()).toMatchSnapshot();
+    });
   });
 };
 
