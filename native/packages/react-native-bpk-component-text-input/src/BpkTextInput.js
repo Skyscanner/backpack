@@ -96,8 +96,9 @@ class BpkTextInput extends Component {
   }
 
   labelColorValue() {
-    const { value, valid } = this.props;
+    const { value, valid, disabled } = this.props;
 
+    if (disabled) { return colorGray100; }
     if (!value) { return colorGray300; }
 
     return valid === false ? colorRed500 : colorGray500;

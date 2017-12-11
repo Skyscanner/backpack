@@ -17,27 +17,99 @@
  */
 
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
+import TestRenderer from 'react-test-renderer';
+import { StyleSheet, TextInput } from 'react-native';
+
 import BpkTextInput from './BpkTextInput';
 
 const commonTests = () => {
   describe('BpkTextInput', () => {
-    let renderer;
-
-    beforeEach(() => {
-      renderer = new ShallowRenderer();
-    });
-
     it('should render correctly', () => {
-      renderer.render(
+      const testRenderer = TestRenderer.create(
         <BpkTextInput
           label="Name"
           value=""
         />,
       );
 
-      const tree = renderer.getRenderOutput();
-      expect(tree).toMatchSnapshot();
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with arbitrary props', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkTextInput
+          label="Name"
+          value=""
+          testId="arbitrary"
+        />,
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with custom style', () => {
+      const styles = StyleSheet.create({
+        custom: {
+          marginLeft: 10,
+        },
+      });
+
+      const testRenderer = TestRenderer.create(
+        <BpkTextInput
+          label="Name"
+          value=""
+          style={styles.custom}
+        />,
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with value', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkTextInput
+          label="Name"
+          value="Joe"
+        />,
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with valid', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkTextInput
+          label="Name"
+          value=""
+          valid
+        />,
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with valid false', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkTextInput
+          label="Name"
+          value=""
+          valid={false}
+        />,
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with disabled', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkTextInput
+          label="Name"
+          value=""
+          disabled
+        />,
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
     });
   });
 };

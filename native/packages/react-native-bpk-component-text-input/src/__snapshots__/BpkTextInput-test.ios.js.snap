@@ -11,7 +11,12 @@ exports[`iOS BpkTextInput should render correctly 1`] = `
     ]
   }
 >
-  <AnimatedComponent
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
     style={
       Object {
         "color": "rgba(178, 174, 189, 1)",
@@ -25,34 +30,508 @@ exports[`iOS BpkTextInput should render correctly 1`] = `
     }
   >
     Name
-  </AnimatedComponent>
-  <AnimatedComponent
+  </Text>
+  <View
+    collapsable={undefined}
     style={
       Object {
+        "alignItems": "center",
         "borderBottomColor": "rgba(230, 228, 235, 1)",
         "borderBottomWidth": 1,
+        "flexDirection": "row",
       }
     }
   >
     <TextInput
       editable={true}
       onBlur={[Function]}
+      onChangeText={null}
       onFocus={[Function]}
       style={
         Object {
           "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
+          "flex": 1,
           "fontSize": 15,
           "fontWeight": "400",
           "lineHeight": 20,
           "minHeight": 28,
           "paddingBottom": 4,
+          "paddingLeft": 0,
+          "paddingRight": 0,
           "paddingTop": 4,
         }
       }
-      valid={null}
+      underlineColorAndroid="transparent"
       value=""
     />
-  </AnimatedComponent>
+  </View>
+</View>
+`;
+
+exports[`iOS BpkTextInput should render correctly with arbitrary props 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingTop": 18,
+      },
+      null,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "rgba(178, 174, 189, 1)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 21,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(230, 228, 235, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      editable={true}
+      onBlur={[Function]}
+      onChangeText={null}
+      onFocus={[Function]}
+      style={
+        Object {
+          "borderBottomWidth": 0,
+          "color": "rgb(82, 76, 97)",
+          "flex": 1,
+          "fontSize": 15,
+          "fontWeight": "400",
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingBottom": 4,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "paddingTop": 4,
+        }
+      }
+      testId="arbitrary"
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+</View>
+`;
+
+exports[`iOS BpkTextInput should render correctly with custom style 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingTop": 18,
+      },
+      Object {
+        "marginLeft": 10,
+      },
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "rgba(178, 174, 189, 1)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 21,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(230, 228, 235, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      editable={true}
+      onBlur={[Function]}
+      onChangeText={null}
+      onFocus={[Function]}
+      style={
+        Object {
+          "borderBottomWidth": 0,
+          "color": "rgb(82, 76, 97)",
+          "flex": 1,
+          "fontSize": 15,
+          "fontWeight": "400",
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingBottom": 4,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "paddingTop": 4,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+</View>
+`;
+
+exports[`iOS BpkTextInput should render correctly with disabled 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingTop": 18,
+      },
+      null,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "rgba(230, 228, 235, 1)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 21,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(230, 228, 235, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      editable={false}
+      onBlur={[Function]}
+      onChangeText={null}
+      onFocus={[Function]}
+      style={
+        Object {
+          "borderBottomWidth": 0,
+          "color": "rgb(82, 76, 97)",
+          "flex": 1,
+          "fontSize": 15,
+          "fontWeight": "400",
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingBottom": 4,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "paddingTop": 4,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+</View>
+`;
+
+exports[`iOS BpkTextInput should render correctly with valid 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingTop": 18,
+      },
+      null,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "rgba(178, 174, 189, 1)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 21,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(230, 228, 235, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      editable={true}
+      onBlur={[Function]}
+      onChangeText={null}
+      onFocus={[Function]}
+      style={
+        Object {
+          "borderBottomWidth": 0,
+          "color": "rgb(82, 76, 97)",
+          "flex": 1,
+          "fontSize": 15,
+          "fontWeight": "400",
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingBottom": 4,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "paddingTop": 4,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "lineHeight": 24,
+          },
+          Object {
+            "fontSize": 16,
+            "lineHeight": 16,
+          },
+          Object {
+            "color": "rgb(0, 215, 117)",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`iOS BpkTextInput should render correctly with valid false 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingTop": 18,
+      },
+      null,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "rgba(178, 174, 189, 1)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 21,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(255, 84, 82, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      editable={true}
+      onBlur={[Function]}
+      onChangeText={null}
+      onFocus={[Function]}
+      style={
+        Object {
+          "borderBottomWidth": 0,
+          "color": "rgb(82, 76, 97)",
+          "flex": 1,
+          "fontSize": 15,
+          "fontWeight": "400",
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingBottom": 4,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "paddingTop": 4,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "lineHeight": 24,
+          },
+          Object {
+            "fontSize": 16,
+            "lineHeight": 16,
+          },
+          Object {
+            "color": "rgb(255, 84, 82)",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`iOS BpkTextInput should render correctly with value 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingTop": 18,
+      },
+      null,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "rgba(129, 123, 143, 1)",
+        "fontFamily": "System",
+        "fontSize": 13,
+        "fontWeight": "400",
+        "lineHeight": 18,
+        "position": "absolute",
+        "top": 0,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(230, 228, 235, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      editable={true}
+      onBlur={[Function]}
+      onChangeText={null}
+      onFocus={[Function]}
+      style={
+        Object {
+          "borderBottomWidth": 0,
+          "color": "rgb(82, 76, 97)",
+          "flex": 1,
+          "fontSize": 15,
+          "fontWeight": "400",
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingBottom": 4,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "paddingTop": 4,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value="Joe"
+    />
+  </View>
 </View>
 `;
