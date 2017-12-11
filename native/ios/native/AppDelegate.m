@@ -11,6 +11,7 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <React/RCTI18nUtil.h>
 
 @implementation AppDelegate
 
@@ -32,6 +33,8 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  [[RCTI18nUtil sharedInstance] allowRTL:YES];
+
   return YES;
 }
 

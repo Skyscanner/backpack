@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android BpkStar should render correctly when empty 1`] = `
+<View
+  accessible={false}
+  style={
+    Object {
+      "height": 12,
+      "width": 12,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
+        },
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "rgb(230, 228, 235)",
+            "fontSize": 12,
+            "left": 0,
+            "lineHeight": 12,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "zIndex": 1,
+          },
+        ],
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`Android BpkStar should render correctly when full 1`] = `
+<View
+  accessible={false}
+  style={
+    Object {
+      "height": 12,
+      "width": 12,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
+        },
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "rgb(230, 228, 235)",
+            "fontSize": 12,
+            "left": 0,
+            "lineHeight": 12,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "zIndex": 1,
+          },
+        ],
+      ]
+    }
+  >
+    
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
+        },
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "rgb(230, 228, 235)",
+            "fontSize": 12,
+            "left": 0,
+            "lineHeight": 12,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "zIndex": 1,
+          },
+          Object {
+            "zIndex": 2,
+          },
+          Object {
+            "color": "rgb(255, 187, 0)",
+          },
+        ],
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`Android BpkStar should render correctly when half 1`] = `
+<View
+  accessible={false}
+  style={
+    Object {
+      "height": 12,
+      "width": 12,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
+        },
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "rgb(230, 228, 235)",
+            "fontSize": 12,
+            "left": 0,
+            "lineHeight": 12,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "zIndex": 1,
+          },
+        ],
+      ]
+    }
+  >
+    
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
+        },
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "rgb(230, 228, 235)",
+            "fontSize": 12,
+            "left": 0,
+            "lineHeight": 12,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "zIndex": 1,
+          },
+          Object {
+            "zIndex": 2,
+          },
+          Object {
+            "color": "rgb(255, 187, 0)",
+          },
+        ],
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;

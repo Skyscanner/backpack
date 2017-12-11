@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkStarRating should render correctly 1`] = `
+<View
+  accessibilityLabel="3 out of 5 stars"
+  accessible={true}
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="empty"
+  />
+  <BpkStar
+    type="empty"
+  />
+</View>
+`;
+
+exports[`iOS BpkStarRating should render correctly with custom \`maxRating\` attribute 1`] = `
+<View
+  accessibilityLabel="3 out of 10 stars"
+  accessible={true}
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="empty"
+  />
+  <BpkStar
+    type="empty"
+  />
+  <BpkStar
+    type="empty"
+  />
+  <BpkStar
+    type="empty"
+  />
+  <BpkStar
+    type="empty"
+  />
+  <BpkStar
+    type="empty"
+  />
+  <BpkStar
+    type="empty"
+  />
+</View>
+`;
+
+exports[`iOS BpkStarRating should render correctly with ratingLabel passed as a string 1`] = `
+<View
+  accessibilityLabel="Star rating"
+  accessible={true}
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="empty"
+  />
+  <BpkStar
+    type="empty"
+  />
+  <BpkStar
+    type="empty"
+  />
+  <BpkStar
+    type="empty"
+  />
+  <BpkStar
+    type="empty"
+  />
+  <BpkStar
+    type="empty"
+  />
+  <BpkStar
+    type="empty"
+  />
+</View>
+`;
+
+exports[`iOS BpkStarRating should render correctly with stars rounded down 1`] = `
+<View
+  accessibilityLabel="3.3 out of 5 stars"
+  accessible={true}
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="empty"
+  />
+  <BpkStar
+    type="empty"
+  />
+</View>
+`;
+
+exports[`iOS BpkStarRating should render correctly with stars rounded down to half star 1`] = `
+<View
+  accessibilityLabel="3.7 out of 5 stars"
+  accessible={true}
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="full"
+  />
+  <BpkStar
+    type="half"
+  />
+  <BpkStar
+    type="empty"
+  />
+</View>
+`;
