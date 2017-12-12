@@ -18,6 +18,7 @@
 
 import commonTests from './BpkBannerAlert-test.common';
 
+jest.useFakeTimers();
 jest.mock('react-native', () => {
   const reactNative = require.requireActual('react-native');
   jest

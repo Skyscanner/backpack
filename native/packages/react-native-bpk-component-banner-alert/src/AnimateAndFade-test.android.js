@@ -18,6 +18,7 @@
 
 import commonTests from './AnimateAndFade-test.common';
 
+jest.useFakeTimers();
 jest.mock('react-native', () => {
   const reactNative = require.requireActual('react-native');
   jest
