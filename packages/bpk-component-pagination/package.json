@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-pagination",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Backpack pagination component.",
   "main": "index.js",
   "repository": {
