@@ -57,8 +57,8 @@ class BpkDataTable extends Component {
       rowSelected: undefined,
     };
 
-    this.rowClicked = this.rowClicked.bind(this);
-    this.rowStyle = this.rowStyle.bind(this);
+    this.onRowClicked = this.onRowClicked.bind(this);
+    this.rowClassName = this.rowClassName.bind(this);
     this.sort = this.sort.bind(this);
   }
 
@@ -70,7 +70,7 @@ class BpkDataTable extends Component {
     }
   }
 
-  rowClicked({ index }) {
+  onRowClicked({ index }) {
     if (this.state.rowSelected === index) {
       this.setState({ rowSelected: undefined });
     } else {
@@ -81,7 +81,7 @@ class BpkDataTable extends Component {
     }
   }
 
-  rowStyle({ index }) {
+  rowClassName({ index }) {
     const classNames = [getClassName('bpk-data-table__row')];
     if (this.state.rowSelected === index) {
       classNames.push(getClassName('bpk-data-table__row--selected'));
@@ -117,8 +117,8 @@ class BpkDataTable extends Component {
         rowCount={sortedList.length}
         rowGetter={({ index }) => sortedList[index]}
         headerClassName={getClassName('bpk-data-table__headerColumn')}
-        rowClassName={this.rowStyle}
-        onRowClick={this.rowClicked}
+        rowClassName={this.rowClassName}
+        onRowClick={this.onRowClicked}
         sort={this.sort}
         sortBy={sortBy}
         sortDirection={sortDirection}

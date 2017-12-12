@@ -1,6 +1,6 @@
 # bpk-component-datatable
 
-> Backpack datatable component (using react-virtualised).
+> Backpack datatable component.
 
 ## Installation
 

@@ -10,6 +10,9 @@
 - react-native-bpk-component-banner-alert:
   - New animations available when `show` is toggled. See https://backpack.github.io/components/native/banner-alerts
 
+- bpk-component-datatable:
+  - New data table component, see https://backpack.github.io/components/web/datatables
+
 ## 2017-12-06 - More theming support
 
 **Added:**
@@ -368,8 +371,6 @@
 
 - react-native-bpk-component-banner-alert:
   - New component `BpkBannerAlert`, see https://backpack.github.io/components/native/banner-alerts/
-
-- New component `bpk-component-datatable`, from `react-virtualized`
 
 **Fixed:**
 - bpk-tokens: 26.3.0 => 26.4.0
