@@ -1,4 +1,4 @@
-# bpk-component-autosuggest
+# bpk-component-pagination
 
 > Backpack pagination component.
 
