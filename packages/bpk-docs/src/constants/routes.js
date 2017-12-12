@@ -82,6 +82,7 @@ export const NATIVE_HORIZONTAL_NAV = '/components/native/horizontal-nav';
 export const NATIVE_ICONS = '/components/native/icons';
 export const NATIVE_INPUT = '/components/native/text-input';
 export const NATIVE_SPINNER = '/components/native/spinners';
+export const NATIVE_STAR_RATING = '/components/native/star-rating';
 export const NATIVE_SWITCH = '/components/native/switches';
 export const NATIVE_TEXT = '/components/native/text';
 
