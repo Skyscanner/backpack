@@ -6,10 +6,10 @@
 
 **Added:**
 - bpk-component-pagination: 1.0.0
- - New pagination component. See https://backpack.github.io/components/web/pagination.
+  - New pagination component. See https://backpack.github.io/components/web/pagination.
 
 - react-native-bpk-component-star-rating: 1.0.0
- - New star rating component. See https://backpack.github.io/components/native/star-rating.
+  - New star rating component. See https://backpack.github.io/components/native/star-rating.
 
 - bpk-component-banner-alert: 1.4.5 => 1.5.0
   - New `dismissable` configuration. See https://backpack.github.io/components/web/banner-alerts
