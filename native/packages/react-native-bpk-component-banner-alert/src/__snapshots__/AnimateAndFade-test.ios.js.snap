@@ -28,9 +28,14 @@ exports[`iOS AnimateAndFade should render correctly 1`] = `
           }
         }
       >
-        <div>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+        >
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        </div>
+        </Text>
       </View>
     </View>
   </View>
@@ -65,9 +70,14 @@ exports[`iOS AnimateAndFade should render correctly when show is false 1`] = `
           }
         }
       >
-        <div>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+        >
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        </div>
+        </Text>
       </View>
     </View>
   </View>
@@ -105,9 +115,14 @@ exports[`iOS AnimateAndFade should render correctly with animateOnLeave 1`] = `
           }
         }
       >
-        <div>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+        >
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        </div>
+        </Text>
       </View>
     </View>
   </View>

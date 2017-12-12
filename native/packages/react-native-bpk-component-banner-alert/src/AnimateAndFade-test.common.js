@@ -17,10 +17,13 @@
 */
 
 import React from 'react';
+import {
+  Text,
+} from 'react-native';
 import renderer from 'react-test-renderer';
 import AnimateAndFade from './AnimateAndFade';
 
-const child = <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>;
+const child = <Text>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</Text>;
 
 const commonTests = () => {
   Date.now = jest.fn(() => 1503187200000);

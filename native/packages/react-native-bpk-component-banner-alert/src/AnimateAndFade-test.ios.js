@@ -18,6 +18,7 @@
 
 import commonTests from './AnimateAndFade-test.common';
 
+jest.useFakeTimers();
 describe('iOS', () => {
   commonTests();
 });

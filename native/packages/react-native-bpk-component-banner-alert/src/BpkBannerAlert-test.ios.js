@@ -18,6 +18,7 @@
 
 import commonTests from './BpkBannerAlert-test.common';
 
+jest.useFakeTimers();
 describe('iOS', () => {
   commonTests();
 });
