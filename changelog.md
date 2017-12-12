@@ -2,12 +2,20 @@
 
 ## UNRELEASED
 
+## 2017-12-12 - Pagination and native star rating components
+
 **Added:**
-- bpk-component-banner-alert:
+- bpk-component-pagination: 1.0.0
+ - New pagination component. See https://backpack.github.io/components/web/pagination.
+
+- react-native-bpk-component-star-rating: 1.0.0
+ - New star rating component. See https://backpack.github.io/components/native/star-rating.
+
+- bpk-component-banner-alert: 1.4.5 => 1.5.0
   - New `dismissable` configuration. See https://backpack.github.io/components/web/banner-alerts
   - New animations available when `show` is toggled. See https://backpack.github.io/components/web/banner-alerts
 
-- react-native-bpk-component-banner-alert:
+- react-native-bpk-component-banner-alert: 1.1.13 => 1.2.0
   - New animations available when `show` is toggled. See https://backpack.github.io/components/native/banner-alerts
 
 ## 2017-12-06 - More theming support
