@@ -44,7 +44,7 @@ const BpkPagination = (props) => {
     visibleRange,
     className,
     paginationLabel,
-    pageLabelFormatter,
+    pageLabel,
     ...rest
   } = props;
 
@@ -71,7 +71,7 @@ const BpkPagination = (props) => {
         pageCount={pageCount}
         onPageChange={pageChanged}
         visibleRange={visibleRange}
-        pageLabelFormatter={pageLabelFormatter}
+        pageLabel={pageLabel}
       />
       <BpkPaginationNudger
         label={nextLabel}
@@ -90,7 +90,7 @@ BpkPagination.propTypes = {
   previousLabel: PropTypes.string.isRequired,
   nextLabel: PropTypes.string.isRequired,
   paginationLabel: PropTypes.string.isRequired,
-  pageLabelFormatter: PropTypes.func.isRequired,
+  pageLabel: PropTypes.func.isRequired,
   visibleRange: PropTypes.number,
   className: PropTypes.string,
 };

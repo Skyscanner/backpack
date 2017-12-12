@@ -28,7 +28,7 @@ describe('BpkPagination', () => {
       previousLabel="previous"
       nextLabel="next"
       paginationLabel="Pagination Navigation"
-      pageLabelFormatter={(page, isSelected) =>
+      pageLabel={(page, isSelected) =>
         `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
       }
     />);
@@ -44,7 +44,7 @@ describe('BpkPagination', () => {
       previousLabel="previous"
       nextLabel="next"
       paginationLabel="Pagination Navigation"
-      pageLabelFormatter={(page, isSelected) =>
+      pageLabel={(page, isSelected) =>
         `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
       }
     />);
@@ -60,7 +60,7 @@ describe('BpkPagination', () => {
       previousLabel="previous"
       nextLabel="next"
       paginationLabel="Pagination Navigation"
-      pageLabelFormatter={(page, isSelected) =>
+      pageLabel={(page, isSelected) =>
         `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
       }
     />);
@@ -78,7 +78,7 @@ describe('BpkPagination', () => {
       nextLabel="next"
       onPageChange={onPageChange}
       paginationLabel="Pagination Navigation"
-      pageLabelFormatter={(page, isSelected) =>
+      pageLabel={(page, isSelected) =>
         `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
       }
     />);
@@ -101,7 +101,7 @@ describe('BpkPagination', () => {
       nextLabel="next"
       onPageChange={onPageChange}
       paginationLabel="Pagination Navigation"
-      pageLabelFormatter={(page, isSelected) =>
+      pageLabel={(page, isSelected) =>
         `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
       }
     />);

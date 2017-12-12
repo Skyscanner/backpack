@@ -22,7 +22,7 @@ const Pagination = () => (
     previousLabel="previous"
     nextLabel="next"
     visibleRange={3}
-    pageLabelFormatter={(page, isSelected) => `page ${page}`}
+    pageLabel={(page, isSelected) => `page ${page}`}
   />
 );
 
@@ -37,7 +37,7 @@ const Pagination = () => (
 | previousLabel     | string               | true     | -             |
 | nextLabel         | string               | true     | -             |
 | paginationLabel   | string               | true     | -             |
-| pageLabelFormatter| func                 | true     | -             |
+| pageLabel         | func                 | true     | -             |
 | onPageChange      | func                 | false    | null          |
 | visibleRange      | number               | false    | 3             |
 | className         | string               | false    | null          |

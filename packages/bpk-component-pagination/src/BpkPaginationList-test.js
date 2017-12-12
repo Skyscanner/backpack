@@ -28,7 +28,7 @@ describe('BpkPaginationList', () => {
       selectedPageIndex={0}
       visibleRange={3}
       onPageChange={() => null}
-      pageLabelFormatter={(page, isSelected) =>
+      pageLabel={(page, isSelected) =>
         `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
       }
     />);
@@ -46,7 +46,7 @@ describe('BpkPaginationList', () => {
       selectedPageIndex={5}
       visibleRange={3}
       onPageChange={() => null}
-      pageLabelFormatter={(page, isSelected) =>
+      pageLabel={(page, isSelected) =>
         `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
       }
     />);
@@ -66,7 +66,7 @@ describe('BpkPaginationList', () => {
       selectedPageIndex={0}
       visibleRange={3}
       onPageChange={() => null}
-      pageLabelFormatter={(page, isSelected) =>
+      pageLabel={(page, isSelected) =>
         `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
       }
     />);

@@ -47,7 +47,7 @@ class PaginationContainer extends Component {
           nextLabel="next"
           visibleRange={visibleRange}
           paginationLabel="Pagination Navigation"
-          pageLabelFormatter={(page, isSelected) =>
+          pageLabel={(page, isSelected) =>
             `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
           }
         />
