@@ -4,6 +4,12 @@
 
 ## 2017-12-12 - Pagination and native star rating components
 
+**Fixed:**
+- bpk-component-banner-alert: 1.5.0 => 1.5.1
+  - fix missing dependecy
+
+## 2017-12-12 - Pagination and native star rating components
+
 **Added:**
 - bpk-component-pagination: 1.0.0
   - New pagination component. See https://backpack.github.io/components/web/pagination.
