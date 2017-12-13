@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
+_Nothing yet!_
+
+## 2017-12-13 - Native text input redesign with Android support
+
 **Breaking:**
-- react-native-bpk-component-text-input:
+- react-native-bpk-component-text-input: 1.1.3 => 2.0.0
   - Now supports Android.
   - A new floating label text design.
   - The `placeholder` prop has been removed. If supplied, it will be ignored.
@@ -12,7 +16,7 @@
   - A new optional prop, `validationMessage`, allows a message to be shown when `valid={false}`.
   - A new required `label` prop.
 
-## 2017-12-12 - Pagination and native star rating components
+## 2017-12-12 - Fix missing dependency
 
 **Fixed:**
 - bpk-component-banner-alert: 1.5.0 => 1.5.1
