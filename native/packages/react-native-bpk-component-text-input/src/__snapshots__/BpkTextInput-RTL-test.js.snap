@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Android BpkTextInput should render correctly 1`] = `
+exports[`RTL BpkTextInput should render correctly 1`] = `
 <View
   style={
     Array [
       Object {
-        "paddingTop": 20,
+        "paddingTop": 18,
       },
       null,
     ]
@@ -20,12 +20,12 @@ exports[`Android BpkTextInput should render correctly 1`] = `
     style={
       Object {
         "color": "rgba(178, 174, 189, 1)",
-        "fontFamily": "sans-serif",
-        "fontSize": 16,
+        "fontFamily": "System",
+        "fontSize": 15,
         "fontWeight": "400",
-        "lineHeight": 24,
+        "lineHeight": 20,
         "position": "absolute",
-        "top": 23,
+        "top": 21,
       }
     }
   >
@@ -52,13 +52,13 @@ exports[`Android BpkTextInput should render correctly 1`] = `
           "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontSize": 16,
+          "fontSize": 15,
           "fontWeight": "400",
-          "lineHeight": 24,
-          "minHeight": 32,
+          "lineHeight": 20,
+          "minHeight": 28,
           "paddingHorizontal": 0,
           "paddingVertical": 4,
-          "textAlign": "left",
+          "textAlign": "right",
         }
       }
       underlineColorAndroid="transparent"
@@ -68,12 +68,12 @@ exports[`Android BpkTextInput should render correctly 1`] = `
 </View>
 `;
 
-exports[`Android BpkTextInput should render correctly with arbitrary props 1`] = `
+exports[`RTL BpkTextInput should render correctly with arbitrary props 1`] = `
 <View
   style={
     Array [
       Object {
-        "paddingTop": 20,
+        "paddingTop": 18,
       },
       null,
     ]
@@ -88,12 +88,12 @@ exports[`Android BpkTextInput should render correctly with arbitrary props 1`] =
     style={
       Object {
         "color": "rgba(178, 174, 189, 1)",
-        "fontFamily": "sans-serif",
-        "fontSize": 16,
+        "fontFamily": "System",
+        "fontSize": 15,
         "fontWeight": "400",
-        "lineHeight": 24,
+        "lineHeight": 20,
         "position": "absolute",
-        "top": 23,
+        "top": 21,
       }
     }
   >
@@ -120,13 +120,13 @@ exports[`Android BpkTextInput should render correctly with arbitrary props 1`] =
           "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontSize": 16,
+          "fontSize": 15,
           "fontWeight": "400",
-          "lineHeight": 24,
-          "minHeight": 32,
+          "lineHeight": 20,
+          "minHeight": 28,
           "paddingHorizontal": 0,
           "paddingVertical": 4,
-          "textAlign": "left",
+          "textAlign": "right",
         }
       }
       testId="arbitrary"
@@ -137,12 +137,12 @@ exports[`Android BpkTextInput should render correctly with arbitrary props 1`] =
 </View>
 `;
 
-exports[`Android BpkTextInput should render correctly with custom style 1`] = `
+exports[`RTL BpkTextInput should render correctly with custom style 1`] = `
 <View
   style={
     Array [
       Object {
-        "paddingTop": 20,
+        "paddingTop": 18,
       },
       Object {
         "marginLeft": 10,
@@ -159,12 +159,12 @@ exports[`Android BpkTextInput should render correctly with custom style 1`] = `
     style={
       Object {
         "color": "rgba(178, 174, 189, 1)",
-        "fontFamily": "sans-serif",
-        "fontSize": 16,
+        "fontFamily": "System",
+        "fontSize": 15,
         "fontWeight": "400",
-        "lineHeight": 24,
+        "lineHeight": 20,
         "position": "absolute",
-        "top": 23,
+        "top": 21,
       }
     }
   >
@@ -191,13 +191,13 @@ exports[`Android BpkTextInput should render correctly with custom style 1`] = `
           "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontSize": 16,
+          "fontSize": 15,
           "fontWeight": "400",
-          "lineHeight": 24,
-          "minHeight": 32,
+          "lineHeight": 20,
+          "minHeight": 28,
           "paddingHorizontal": 0,
           "paddingVertical": 4,
-          "textAlign": "left",
+          "textAlign": "right",
         }
       }
       underlineColorAndroid="transparent"
@@ -207,12 +207,12 @@ exports[`Android BpkTextInput should render correctly with custom style 1`] = `
 </View>
 `;
 
-exports[`Android BpkTextInput should render correctly with editable=false 1`] = `
+exports[`RTL BpkTextInput should render correctly with editable=false 1`] = `
 <View
   style={
     Array [
       Object {
-        "paddingTop": 20,
+        "paddingTop": 18,
       },
       null,
     ]
@@ -227,12 +227,12 @@ exports[`Android BpkTextInput should render correctly with editable=false 1`] = 
     style={
       Object {
         "color": "rgba(230, 228, 235, 1)",
-        "fontFamily": "sans-serif",
-        "fontSize": 16,
+        "fontFamily": "System",
+        "fontSize": 15,
         "fontWeight": "400",
-        "lineHeight": 24,
+        "lineHeight": 20,
         "position": "absolute",
-        "top": 23,
+        "top": 21,
       }
     }
   >
@@ -259,13 +259,13 @@ exports[`Android BpkTextInput should render correctly with editable=false 1`] = 
           "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontSize": 16,
+          "fontSize": 15,
           "fontWeight": "400",
-          "lineHeight": 24,
-          "minHeight": 32,
+          "lineHeight": 20,
+          "minHeight": 28,
           "paddingHorizontal": 0,
           "paddingVertical": 4,
-          "textAlign": "left",
+          "textAlign": "right",
         }
       }
       underlineColorAndroid="transparent"
@@ -275,12 +275,12 @@ exports[`Android BpkTextInput should render correctly with editable=false 1`] = 
 </View>
 `;
 
-exports[`Android BpkTextInput should render correctly with inputRef set 1`] = `
+exports[`RTL BpkTextInput should render correctly with inputRef set 1`] = `
 <View
   style={
     Array [
       Object {
-        "paddingTop": 20,
+        "paddingTop": 18,
       },
       null,
     ]
@@ -295,12 +295,12 @@ exports[`Android BpkTextInput should render correctly with inputRef set 1`] = `
     style={
       Object {
         "color": "rgba(178, 174, 189, 1)",
-        "fontFamily": "sans-serif",
-        "fontSize": 16,
+        "fontFamily": "System",
+        "fontSize": 15,
         "fontWeight": "400",
-        "lineHeight": 24,
+        "lineHeight": 20,
         "position": "absolute",
-        "top": 23,
+        "top": 21,
       }
     }
   >
@@ -327,13 +327,13 @@ exports[`Android BpkTextInput should render correctly with inputRef set 1`] = `
           "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontSize": 16,
+          "fontSize": 15,
           "fontWeight": "400",
-          "lineHeight": 24,
-          "minHeight": 32,
+          "lineHeight": 20,
+          "minHeight": 28,
           "paddingHorizontal": 0,
           "paddingVertical": 4,
-          "textAlign": "left",
+          "textAlign": "right",
         }
       }
       underlineColorAndroid="transparent"
@@ -343,12 +343,12 @@ exports[`Android BpkTextInput should render correctly with inputRef set 1`] = `
 </View>
 `;
 
-exports[`Android BpkTextInput should render correctly with valid 1`] = `
+exports[`RTL BpkTextInput should render correctly with valid 1`] = `
 <View
   style={
     Array [
       Object {
-        "paddingTop": 20,
+        "paddingTop": 18,
       },
       null,
     ]
@@ -363,12 +363,12 @@ exports[`Android BpkTextInput should render correctly with valid 1`] = `
     style={
       Object {
         "color": "rgba(178, 174, 189, 1)",
-        "fontFamily": "sans-serif",
-        "fontSize": 16,
+        "fontFamily": "System",
+        "fontSize": 15,
         "fontWeight": "400",
-        "lineHeight": 24,
+        "lineHeight": 20,
         "position": "absolute",
-        "top": 23,
+        "top": 21,
       }
     }
   >
@@ -395,13 +395,13 @@ exports[`Android BpkTextInput should render correctly with valid 1`] = `
           "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontSize": 16,
+          "fontSize": 15,
           "fontWeight": "400",
-          "lineHeight": 24,
-          "minHeight": 32,
+          "lineHeight": 20,
+          "minHeight": 28,
           "paddingHorizontal": 0,
           "paddingVertical": 4,
-          "textAlign": "left",
+          "textAlign": "right",
         }
       }
       underlineColorAndroid="transparent"
@@ -427,7 +427,7 @@ exports[`Android BpkTextInput should render correctly with valid 1`] = `
           Array [
             Object {
               "position": "absolute",
-              "right": 6,
+              "right": 9,
             },
             Object {
               "color": "rgb(0, 215, 117)",
@@ -442,12 +442,12 @@ exports[`Android BpkTextInput should render correctly with valid 1`] = `
 </View>
 `;
 
-exports[`Android BpkTextInput should render correctly with valid false 1`] = `
+exports[`RTL BpkTextInput should render correctly with valid false 1`] = `
 <View
   style={
     Array [
       Object {
-        "paddingTop": 20,
+        "paddingTop": 18,
       },
       null,
     ]
@@ -462,12 +462,12 @@ exports[`Android BpkTextInput should render correctly with valid false 1`] = `
     style={
       Object {
         "color": "rgba(178, 174, 189, 1)",
-        "fontFamily": "sans-serif",
-        "fontSize": 16,
+        "fontFamily": "System",
+        "fontSize": 15,
         "fontWeight": "400",
-        "lineHeight": 24,
+        "lineHeight": 20,
         "position": "absolute",
-        "top": 23,
+        "top": 21,
       }
     }
   >
@@ -494,13 +494,13 @@ exports[`Android BpkTextInput should render correctly with valid false 1`] = `
           "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontSize": 16,
+          "fontSize": 15,
           "fontWeight": "400",
-          "lineHeight": 24,
-          "minHeight": 32,
+          "lineHeight": 20,
+          "minHeight": 28,
           "paddingHorizontal": 0,
           "paddingVertical": 4,
-          "textAlign": "left",
+          "textAlign": "right",
         }
       }
       underlineColorAndroid="transparent"
@@ -526,7 +526,7 @@ exports[`Android BpkTextInput should render correctly with valid false 1`] = `
           Array [
             Object {
               "position": "absolute",
-              "right": 6,
+              "right": 9,
             },
             Object {
               "color": "rgb(255, 84, 82)",
@@ -541,12 +541,12 @@ exports[`Android BpkTextInput should render correctly with valid false 1`] = `
 </View>
 `;
 
-exports[`Android BpkTextInput should render correctly with valid false and a validation message 1`] = `
+exports[`RTL BpkTextInput should render correctly with valid false and a validation message 1`] = `
 <View
   style={
     Array [
       Object {
-        "paddingTop": 20,
+        "paddingTop": 18,
       },
       null,
     ]
@@ -561,12 +561,12 @@ exports[`Android BpkTextInput should render correctly with valid false and a val
     style={
       Object {
         "color": "rgba(178, 174, 189, 1)",
-        "fontFamily": "sans-serif",
-        "fontSize": 16,
+        "fontFamily": "System",
+        "fontSize": 15,
         "fontWeight": "400",
-        "lineHeight": 24,
+        "lineHeight": 20,
         "position": "absolute",
-        "top": 23,
+        "top": 21,
       }
     }
   >
@@ -593,13 +593,13 @@ exports[`Android BpkTextInput should render correctly with valid false and a val
           "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontSize": 16,
+          "fontSize": 15,
           "fontWeight": "400",
-          "lineHeight": 24,
-          "minHeight": 32,
+          "lineHeight": 20,
+          "minHeight": 28,
           "paddingHorizontal": 0,
           "paddingVertical": 4,
-          "textAlign": "left",
+          "textAlign": "right",
         }
       }
       underlineColorAndroid="transparent"
@@ -625,7 +625,7 @@ exports[`Android BpkTextInput should render correctly with valid false and a val
           Array [
             Object {
               "position": "absolute",
-              "right": 6,
+              "right": 9,
             },
             Object {
               "color": "rgb(255, 84, 82)",
@@ -646,10 +646,10 @@ exports[`Android BpkTextInput should render correctly with valid false and a val
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "fontFamily": "sans-serif",
-          "fontSize": 12,
+          "fontFamily": "System",
+          "fontSize": 11,
           "fontWeight": "400",
-          "lineHeight": 18,
+          "lineHeight": 13,
         },
         Object {
           "color": "rgb(255, 84, 82)",
@@ -663,12 +663,12 @@ exports[`Android BpkTextInput should render correctly with valid false and a val
 </View>
 `;
 
-exports[`Android BpkTextInput should render correctly with value 1`] = `
+exports[`RTL BpkTextInput should render correctly with value 1`] = `
 <View
   style={
     Array [
       Object {
-        "paddingTop": 20,
+        "paddingTop": 18,
       },
       null,
     ]
@@ -683,10 +683,10 @@ exports[`Android BpkTextInput should render correctly with value 1`] = `
     style={
       Object {
         "color": "rgba(129, 123, 143, 1)",
-        "fontFamily": "sans-serif",
-        "fontSize": 14,
+        "fontFamily": "System",
+        "fontSize": 13,
         "fontWeight": "400",
-        "lineHeight": 20,
+        "lineHeight": 18,
         "position": "absolute",
         "top": 0,
       }
@@ -715,13 +715,13 @@ exports[`Android BpkTextInput should render correctly with value 1`] = `
           "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontSize": 16,
+          "fontSize": 15,
           "fontWeight": "400",
-          "lineHeight": 24,
-          "minHeight": 32,
+          "lineHeight": 20,
+          "minHeight": 28,
           "paddingHorizontal": 0,
           "paddingVertical": 4,
-          "textAlign": "left",
+          "textAlign": "right",
         }
       }
       underlineColorAndroid="transparent"

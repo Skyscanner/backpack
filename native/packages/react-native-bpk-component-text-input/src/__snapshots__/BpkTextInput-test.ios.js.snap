@@ -1,605 +1,732 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`iOS BpkTextInput should apply user-styling correctly 1`] = `
-<View
-  style={
-    Array [
-      Object {
-        "alignItems": "center",
-        "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "borderWidth": 1,
-        "display": "flex",
-        "flexDirection": "row",
-        "height": 46,
-        "paddingLeft": 12,
-        "paddingRight": 12,
-      },
-      Object {
-        "backgroundColor": "blue",
-        "width": 200,
-      },
-    ]
-  }
->
-  <TextInput
-    editable={true}
-    placeholder="placeholder_text"
-    placeholderTextColor="rgb(178, 174, 189)"
-    style={
-      Array [
-        Object {
-          "color": "rgb(82, 76, 97)",
-          "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
-          "fontWeight": "400",
-          "height": "100%",
-          "lineHeight": 22,
-          "padding": 0,
-        },
-      ]
-    }
-    underlineColorAndroid="transparent"
-    value="Input_text"
-  />
-</View>
-`;
-
 exports[`iOS BpkTextInput should render correctly 1`] = `
 <View
   style={
     Array [
       Object {
-        "alignItems": "center",
-        "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "borderWidth": 1,
-        "display": "flex",
-        "flexDirection": "row",
-        "height": 46,
-        "paddingLeft": 12,
-        "paddingRight": 12,
+        "paddingTop": 18,
       },
+      null,
     ]
   }
 >
-  <TextInput
-    editable={true}
-    placeholderTextColor="rgb(178, 174, 189)"
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
     style={
-      Array [
+      Object {
+        "color": "rgba(178, 174, 189, 1)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 21,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(230, 228, 235, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      clearButtonMode="while-editing"
+      editable={true}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      style={
         Object {
+          "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 15,
           "fontWeight": "400",
-          "height": "100%",
-          "lineHeight": 22,
-          "padding": 0,
-        },
-      ]
-    }
-    underlineColorAndroid="transparent"
-    value="Input_text"
-  />
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingHorizontal": 0,
+          "paddingVertical": 4,
+          "textAlign": "left",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
 </View>
 `;
 
-exports[`iOS BpkTextInput should render disabled correctly 1`] = `
+exports[`iOS BpkTextInput should render correctly with arbitrary props 1`] = `
 <View
   style={
     Array [
       Object {
-        "alignItems": "center",
-        "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "borderWidth": 1,
-        "display": "flex",
-        "flexDirection": "row",
-        "height": 46,
-        "paddingLeft": 12,
-        "paddingRight": 12,
+        "paddingTop": 18,
       },
+      null,
     ]
   }
 >
-  <TextInput
-    editable={false}
-    placeholder="placeholder_text"
-    placeholderTextColor="rgb(178, 174, 189)"
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
     style={
-      Array [
+      Object {
+        "color": "rgba(178, 174, 189, 1)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 21,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(230, 228, 235, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      clearButtonMode="while-editing"
+      editable={true}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      style={
         Object {
+          "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 15,
           "fontWeight": "400",
-          "height": "100%",
-          "lineHeight": 22,
-          "padding": 0,
-        },
-        Object {
-          "color": "rgb(230, 228, 235)",
-        },
-      ]
-    }
-    underlineColorAndroid="transparent"
-    value="Input_text"
-  />
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingHorizontal": 0,
+          "paddingVertical": 4,
+          "textAlign": "left",
+        }
+      }
+      testId="arbitrary"
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
 </View>
 `;
 
-exports[`iOS BpkTextInput should render invalid correctly 1`] = `
+exports[`iOS BpkTextInput should render correctly with custom style 1`] = `
 <View
   style={
     Array [
       Object {
-        "alignItems": "center",
-        "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "borderWidth": 1,
-        "display": "flex",
-        "flexDirection": "row",
-        "height": 46,
-        "paddingLeft": 12,
-        "paddingRight": 12,
+        "paddingTop": 18,
       },
-      undefined,
+      Object {
+        "marginLeft": 10,
+      },
     ]
   }
 >
-  <TextInput
-    editable={true}
-    placeholder="placeholder_text"
-    placeholderTextColor="rgb(178, 174, 189)"
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
     style={
-      Array [
+      Object {
+        "color": "rgba(178, 174, 189, 1)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 21,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(230, 228, 235, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      clearButtonMode="while-editing"
+      editable={true}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      style={
         Object {
+          "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 15,
           "fontWeight": "400",
-          "height": "100%",
-          "lineHeight": 22,
-          "padding": 0,
-        },
-      ]
-    }
-    underlineColorAndroid="transparent"
-    value="Input_text"
-  />
-  <Image
-    source={1}
-    style={
-      Array [
-        Object {
-          "flex": 0,
-          "height": 24,
-          "width": 24,
-        },
-        Object {
-          "tintColor": "rgb(255, 84, 82)",
-        },
-      ]
-    }
-  />
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingHorizontal": 0,
+          "paddingVertical": 4,
+          "textAlign": "left",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
 </View>
 `;
 
-exports[`iOS BpkTextInput should render placeholder correctly 1`] = `
+exports[`iOS BpkTextInput should render correctly with editable=false 1`] = `
 <View
   style={
     Array [
       Object {
-        "alignItems": "center",
-        "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "borderWidth": 1,
-        "display": "flex",
-        "flexDirection": "row",
-        "height": 46,
-        "paddingLeft": 12,
-        "paddingRight": 12,
+        "paddingTop": 18,
       },
+      null,
     ]
   }
 >
-  <TextInput
-    editable={true}
-    placeholder="placeholder_text"
-    placeholderTextColor="rgb(178, 174, 189)"
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
     style={
-      Array [
+      Object {
+        "color": "rgba(230, 228, 235, 1)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 21,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(230, 228, 235, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      clearButtonMode="while-editing"
+      editable={false}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      style={
         Object {
+          "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 15,
           "fontWeight": "400",
-          "height": "100%",
-          "lineHeight": 22,
-          "padding": 0,
-        },
-        Object {
-          "fontStyle": "italic",
-        },
-      ]
-    }
-    underlineColorAndroid="transparent"
-    value=""
-  />
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingHorizontal": 0,
+          "paddingVertical": 4,
+          "textAlign": "left",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
 </View>
 `;
 
-exports[`iOS BpkTextInput should render small correctly 1`] = `
+exports[`iOS BpkTextInput should render correctly with inputRef set 1`] = `
 <View
   style={
     Array [
       Object {
-        "alignItems": "center",
-        "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "borderWidth": 1,
-        "display": "flex",
-        "flexDirection": "row",
-        "height": 46,
-        "paddingLeft": 12,
-        "paddingRight": 12,
+        "paddingTop": 18,
       },
-      Object {
-        "height": 30,
-        "paddingLeft": 8,
-        "paddingRight": 8,
-      },
+      null,
     ]
   }
 >
-  <TextInput
-    editable={true}
-    placeholder="placeholder_text"
-    placeholderTextColor="rgb(178, 174, 189)"
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "rgba(178, 174, 189, 1)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 21,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(230, 228, 235, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      clearButtonMode="while-editing"
+      editable={true}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      style={
+        Object {
+          "borderBottomWidth": 0,
+          "color": "rgb(82, 76, 97)",
+          "flex": 1,
+          "fontSize": 15,
+          "fontWeight": "400",
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingHorizontal": 0,
+          "paddingVertical": 4,
+          "textAlign": "left",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+</View>
+`;
+
+exports[`iOS BpkTextInput should render correctly with valid 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingTop": 18,
+      },
+      null,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "rgba(178, 174, 189, 1)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 21,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(230, 228, 235, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      clearButtonMode="while-editing"
+      editable={true}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      style={
+        Object {
+          "borderBottomWidth": 0,
+          "color": "rgb(82, 76, 97)",
+          "flex": 1,
+          "fontSize": 15,
+          "fontWeight": "400",
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingHorizontal": 0,
+          "paddingVertical": 4,
+          "textAlign": "left",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "lineHeight": 24,
+          },
+          Object {
+            "fontSize": 16,
+            "lineHeight": 16,
+          },
+          Array [
+            Object {
+              "position": "absolute",
+              "right": 6,
+            },
+            Object {
+              "color": "rgb(0, 215, 117)",
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`iOS BpkTextInput should render correctly with valid false 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingTop": 18,
+      },
+      null,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "rgba(178, 174, 189, 1)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 21,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(255, 84, 82, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      clearButtonMode="while-editing"
+      editable={true}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      style={
+        Object {
+          "borderBottomWidth": 0,
+          "color": "rgb(82, 76, 97)",
+          "flex": 1,
+          "fontSize": 15,
+          "fontWeight": "400",
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingHorizontal": 0,
+          "paddingVertical": 4,
+          "textAlign": "left",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "lineHeight": 24,
+          },
+          Object {
+            "fontSize": 16,
+            "lineHeight": 16,
+          },
+          Array [
+            Object {
+              "position": "absolute",
+              "right": 6,
+            },
+            Object {
+              "color": "rgb(255, 84, 82)",
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`iOS BpkTextInput should render correctly with valid false and a validation message 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingTop": 18,
+      },
+      null,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "rgba(178, 174, 189, 1)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 21,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(255, 84, 82, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      clearButtonMode="while-editing"
+      editable={true}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      style={
+        Object {
+          "borderBottomWidth": 0,
+          "color": "rgb(82, 76, 97)",
+          "flex": 1,
+          "fontSize": 15,
+          "fontWeight": "400",
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingHorizontal": 0,
+          "paddingVertical": 4,
+          "textAlign": "left",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "lineHeight": 24,
+          },
+          Object {
+            "fontSize": 16,
+            "lineHeight": 16,
+          },
+          Array [
+            Object {
+              "position": "absolute",
+              "right": 6,
+            },
+            Object {
+              "color": "rgb(255, 84, 82)",
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
     style={
       Array [
         Object {
           "color": "rgb(82, 76, 97)",
-          "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
-          "fontWeight": "400",
-          "height": "100%",
-          "lineHeight": 22,
-          "padding": 0,
-        },
-        Object {
           "fontFamily": "System",
           "fontSize": 11,
           "fontWeight": "400",
           "lineHeight": 13,
         },
+        Object {
+          "color": "rgb(255, 84, 82)",
+          "paddingTop": 4,
+        },
       ]
     }
-    underlineColorAndroid="transparent"
-    value="Input_text"
-  />
+  >
+    Nope
+  </Text>
 </View>
 `;
 
-exports[`iOS BpkTextInput should render small disabled correctly 1`] = `
+exports[`iOS BpkTextInput should render correctly with value 1`] = `
 <View
   style={
     Array [
       Object {
-        "alignItems": "center",
-        "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "borderWidth": 1,
-        "display": "flex",
-        "flexDirection": "row",
-        "height": 46,
-        "paddingLeft": 12,
-        "paddingRight": 12,
+        "paddingTop": 18,
       },
-      Object {
-        "height": 30,
-        "paddingLeft": 8,
-        "paddingRight": 8,
-      },
+      null,
     ]
   }
 >
-  <TextInput
-    editable={false}
-    placeholder="placeholder_text"
-    placeholderTextColor="rgb(178, 174, 189)"
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
     style={
-      Array [
-        Object {
-          "color": "rgb(82, 76, 97)",
-          "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
-          "fontWeight": "400",
-          "height": "100%",
-          "lineHeight": 22,
-          "padding": 0,
-        },
-        Object {
-          "fontFamily": "System",
-          "fontSize": 11,
-          "fontWeight": "400",
-          "lineHeight": 13,
-        },
-        Object {
-          "color": "rgb(230, 228, 235)",
-        },
-      ]
+      Object {
+        "color": "rgba(129, 123, 143, 1)",
+        "fontFamily": "System",
+        "fontSize": 13,
+        "fontWeight": "400",
+        "lineHeight": 18,
+        "position": "absolute",
+        "top": 0,
+      }
     }
-    underlineColorAndroid="transparent"
-    value="Input_text"
-  />
-</View>
-`;
-
-exports[`iOS BpkTextInput should render small invalid correctly 1`] = `
-<View
-  style={
-    Array [
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
       Object {
         "alignItems": "center",
-        "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "borderWidth": 1,
-        "display": "flex",
+        "borderBottomColor": "rgba(230, 228, 235, 1)",
+        "borderBottomWidth": 1,
         "flexDirection": "row",
-        "height": 46,
-        "paddingLeft": 12,
-        "paddingRight": 12,
-      },
-      Object {
-        "height": 30,
-        "paddingLeft": 8,
-        "paddingRight": 8,
-      },
-      undefined,
-    ]
-  }
->
-  <TextInput
-    editable={true}
-    placeholder="placeholder_text"
-    placeholderTextColor="rgb(178, 174, 189)"
-    style={
-      Array [
+      }
+    }
+  >
+    <TextInput
+      clearButtonMode="while-editing"
+      editable={true}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      style={
         Object {
+          "borderBottomWidth": 0,
           "color": "rgb(82, 76, 97)",
           "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
+          "fontSize": 15,
           "fontWeight": "400",
-          "height": "100%",
-          "lineHeight": 22,
-          "padding": 0,
-        },
-        Object {
-          "fontFamily": "System",
-          "fontSize": 11,
-          "fontWeight": "400",
-          "lineHeight": 13,
-        },
-      ]
-    }
-    underlineColorAndroid="transparent"
-    value="Input_text"
-  />
-  <Image
-    source={1}
-    style={
-      Array [
-        Object {
-          "flex": 0,
-          "height": 24,
-          "width": 24,
-        },
-        Object {
-          "height": 16,
-          "width": 16,
-        },
-        Object {
-          "tintColor": "rgb(255, 84, 82)",
-        },
-      ]
-    }
-  />
-</View>
-`;
-
-exports[`iOS BpkTextInput should render small placeholder correctly 1`] = `
-<View
-  style={
-    Array [
-      Object {
-        "alignItems": "center",
-        "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "borderWidth": 1,
-        "display": "flex",
-        "flexDirection": "row",
-        "height": 46,
-        "paddingLeft": 12,
-        "paddingRight": 12,
-      },
-      Object {
-        "height": 30,
-        "paddingLeft": 8,
-        "paddingRight": 8,
-      },
-    ]
-  }
->
-  <TextInput
-    editable={true}
-    placeholder="placeholder_text"
-    placeholderTextColor="rgb(178, 174, 189)"
-    style={
-      Array [
-        Object {
-          "color": "rgb(82, 76, 97)",
-          "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
-          "fontWeight": "400",
-          "height": "100%",
-          "lineHeight": 22,
-          "padding": 0,
-        },
-        Object {
-          "fontFamily": "System",
-          "fontSize": 11,
-          "fontWeight": "400",
-          "lineHeight": 13,
-        },
-        Object {
-          "fontStyle": "italic",
-        },
-      ]
-    }
-    underlineColorAndroid="transparent"
-    value=""
-  />
-</View>
-`;
-
-exports[`iOS BpkTextInput should render small valid correctly 1`] = `
-<View
-  style={
-    Array [
-      Object {
-        "alignItems": "center",
-        "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "borderWidth": 1,
-        "display": "flex",
-        "flexDirection": "row",
-        "height": 46,
-        "paddingLeft": 12,
-        "paddingRight": 12,
-      },
-      Object {
-        "height": 30,
-        "paddingLeft": 8,
-        "paddingRight": 8,
-      },
-      undefined,
-    ]
-  }
->
-  <TextInput
-    editable={true}
-    placeholder="placeholder_text"
-    placeholderTextColor="rgb(178, 174, 189)"
-    style={
-      Array [
-        Object {
-          "color": "rgb(82, 76, 97)",
-          "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
-          "fontWeight": "400",
-          "height": "100%",
-          "lineHeight": 22,
-          "padding": 0,
-        },
-        Object {
-          "fontFamily": "System",
-          "fontSize": 11,
-          "fontWeight": "400",
-          "lineHeight": 13,
-        },
-      ]
-    }
-    underlineColorAndroid="transparent"
-    value="Input_text"
-  />
-  <Image
-    source={1}
-    style={
-      Array [
-        Object {
-          "flex": 0,
-          "height": 24,
-          "width": 24,
-        },
-        Object {
-          "height": 16,
-          "width": 16,
-        },
-        Object {
-          "tintColor": "rgb(0, 215, 117)",
-        },
-      ]
-    }
-  />
-</View>
-`;
-
-exports[`iOS BpkTextInput should render valid correctly 1`] = `
-<View
-  style={
-    Array [
-      Object {
-        "alignItems": "center",
-        "borderColor": "rgb(230, 228, 235)",
-        "borderRadius": 4,
-        "borderWidth": 1,
-        "display": "flex",
-        "flexDirection": "row",
-        "height": 46,
-        "paddingLeft": 12,
-        "paddingRight": 12,
-      },
-      undefined,
-    ]
-  }
->
-  <TextInput
-    editable={true}
-    placeholder="placeholder_text"
-    placeholderTextColor="rgb(178, 174, 189)"
-    style={
-      Array [
-        Object {
-          "color": "rgb(82, 76, 97)",
-          "flex": 1,
-          "fontFamily": "System",
-          "fontSize": 17,
-          "fontWeight": "400",
-          "height": "100%",
-          "lineHeight": 22,
-          "padding": 0,
-        },
-      ]
-    }
-    underlineColorAndroid="transparent"
-    value="Input_text"
-  />
-  <Image
-    source={1}
-    style={
-      Array [
-        Object {
-          "flex": 0,
-          "height": 24,
-          "width": 24,
-        },
-        Object {
-          "tintColor": "rgb(0, 215, 117)",
-        },
-      ]
-    }
-  />
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingHorizontal": 0,
+          "paddingVertical": 4,
+          "textAlign": "left",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value="Joe"
+    />
+  </View>
 </View>
 `;

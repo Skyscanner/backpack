@@ -17,128 +17,125 @@
  */
 
 import React from 'react';
-import renderer from 'react-test-renderer';
+import TestRenderer from 'react-test-renderer';
+import { StyleSheet } from 'react-native';
+
 import BpkTextInput from './BpkTextInput';
 
 const commonTests = () => {
   describe('BpkTextInput', () => {
     it('should render correctly', () => {
-      const tree = renderer.create(
-        <BpkTextInput value="Input_text" />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render placeholder correctly', () => {
-      const tree = renderer.create(
+      const testRenderer = TestRenderer.create(
         <BpkTextInput
-          placeholder="placeholder_text"
+          label="Name"
           value=""
         />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
     });
 
-    it('should render small correctly', () => {
-      const tree = renderer.create(
+    it('should render correctly with arbitrary props', () => {
+      const testRenderer = TestRenderer.create(
         <BpkTextInput
-          placeholder="placeholder_text"
-          value="Input_text"
-          small
-        />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render small placeholder correctly', () => {
-      const tree = renderer.create(
-        <BpkTextInput
-          placeholder="placeholder_text"
+          label="Name"
           value=""
-          small
+          testId="arbitrary"
         />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
     });
 
-    it('should render valid correctly', () => {
-      const tree = renderer.create(
+    it('should render correctly with custom style', () => {
+      const styles = StyleSheet.create({
+        custom: {
+          marginLeft: 10,
+        },
+      });
+
+      const testRenderer = TestRenderer.create(
         <BpkTextInput
-          placeholder="placeholder_text"
-          value="Input_text"
+          label="Name"
+          value=""
+          style={styles.custom}
+        />,
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with value', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkTextInput
+          label="Name"
+          value="Joe"
+        />,
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with valid', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkTextInput
+          label="Name"
+          value=""
           valid
         />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
     });
 
-    it('should render small valid correctly', () => {
-      const tree = renderer.create(
+    it('should render correctly with valid false', () => {
+      const testRenderer = TestRenderer.create(
         <BpkTextInput
-          placeholder="placeholder_text"
-          value="Input_text"
-          valid
-          small
-        />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should render invalid correctly', () => {
-      const tree = renderer.create(
-        <BpkTextInput
-          placeholder="placeholder_text"
-          value="Input_text"
+          label="Name"
+          value=""
           valid={false}
         />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
     });
 
-    it('should render small invalid correctly', () => {
-      const tree = renderer.create(
+    it('should render correctly with valid false and a validation message', () => {
+      const testRenderer = TestRenderer.create(
         <BpkTextInput
-          placeholder="placeholder_text"
-          value="Input_text"
+          label="Name"
+          value=""
           valid={false}
-          small
+          validationMessage="Nope"
         />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
     });
 
-    it('should render disabled correctly', () => {
-      const tree = renderer.create(
+    it('should render correctly with editable=false', () => {
+      const testRenderer = TestRenderer.create(
         <BpkTextInput
-          placeholder="placeholder_text"
-          value="Input_text"
-          disabled
+          label="Name"
+          value=""
+          editable={false}
         />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
     });
 
-    it('should render small disabled correctly', () => {
-      const tree = renderer.create(
+    it('should render correctly with inputRef set', () => {
+      let inputRef = null; // eslint-disable-line no-unused-vars
+      const testRenderer = TestRenderer.create(
         <BpkTextInput
-          placeholder="placeholder_text"
-          value="Input_text"
-          disabled
-          small
+          label="Name"
+          value=""
+          inputRef={(ref) => { inputRef = ref; }}
         />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
+      );
 
-    it('should apply user-styling correctly', () => {
-      const tree = renderer.create(
-        <BpkTextInput
-          style={{ width: 200, backgroundColor: 'blue' }}
-          placeholder="placeholder_text"
-          value="Input_text"
-        />,
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
+      expect(testRenderer.toJSON()).toMatchSnapshot();
     });
   });
 };
