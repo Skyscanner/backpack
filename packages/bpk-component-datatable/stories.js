@@ -34,7 +34,6 @@ storiesOf('bpk-component-datatable', module)
     <BpkDataTable
       rows={rows}
       height={300}
-      dir={document.querySelector('html').dir}
       onRowClick={onRowClick}
     >
       <BpkColumn

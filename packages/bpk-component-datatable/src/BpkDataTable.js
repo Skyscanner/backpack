@@ -42,17 +42,11 @@ class BpkDataTable extends Component {
     const sortBy = 'name';
     const sortDirection = 'ASC';
     const sortedList = sortList({ sortBy, sortDirection, list: props.rows });
-    const columns = props.children.slice();
-
-    if (props.dir === 'rtl') {
-      columns.reverse();
-    }
 
     this.state = {
       sortedList,
       sortBy,
       sortDirection,
-      columns,
       rows: props.rows,
       rowSelected: undefined,
     };
@@ -103,9 +97,8 @@ class BpkDataTable extends Component {
       sortedList,
       sortDirection,
       sortBy,
-      columns,
     } = this.state;
-    const { height, dir } = this.props;
+    const { height, children } = this.props;
 
     return (
       <Table
@@ -122,13 +115,9 @@ class BpkDataTable extends Component {
         sort={this.sort}
         sortBy={sortBy}
         sortDirection={sortDirection}
-        gridStyle={{ direction: dir }}
+        gridStyle={{ direction: undefined }} // This is required for rows to automatically respect rtl
       >
-        {
-        columns.map((child, index) => (
-          BpkColumn({ ...child.props, key: index })
-        ))
-        }
+        { children.map((child, index) => BpkColumn({ ...child.props, key: index })) }
       </Table>
     );
   }
@@ -150,13 +139,11 @@ BpkDataTable.propTypes = {
   height: PropTypes.number.isRequired,
   onRowClick: PropTypes.func,
   width: PropTypes.number,
-  dir: PropTypes.string,
 };
 
 BpkDataTable.defaultProps = {
   onRowClick: null,
   width: null,
-  dir: 'ltr',
 };
 
 export default BpkDataTable;

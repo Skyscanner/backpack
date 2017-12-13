@@ -22,7 +22,7 @@ const rows = [
 const onRowClick = row => alert(JSON.stringify(row));
 
 export default () => (
-  <BpkDataTable rows={rows} height={200} dir={'rtl'} onRowClick={onRowClick}>
+  <BpkDataTable rows={rows} height={200} onRowClick={onRowClick}>
     <BpkColumn
       label={'Name'}
       dataKey={'name'}
@@ -49,7 +49,6 @@ export default () => (
 | height     | number                  | yes      | -                    |
 | onRowClick | function                | no       | -                    |
 | width      | number                  | no       | full width of parent |
-| dir        | string                  | no       | 'ltr'                |
 
 ### BpkColumn
 
