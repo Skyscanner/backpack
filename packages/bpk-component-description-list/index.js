@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
-import buildComponent from './ComponentFactory';
+import BpkDescriptionList from './src/BpkDescriptionList';
+import BpkDescriptionTerm from './src/BpkDescriptionTerm';
+import BpkDescriptionDetails from './src/BpkDescriptionDetails';
 
-export default buildComponent('dt', 'bpk-definition-list__term');
+export { BpkDescriptionList, BpkDescriptionTerm, BpkDescriptionDetails };

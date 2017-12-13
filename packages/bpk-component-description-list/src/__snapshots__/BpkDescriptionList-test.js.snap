@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkDescriptionList should render correctly 1`] = `
+<dl
+  className="bpk-description-list"
+>
+  <dt>
+    term
+  </dt>
+  <dd>
+    description
+  </dd>
+</dl>
+`;
+
+exports[`BpkDescriptionList should render correctly with a "className" attribute 1`] = `
+<dl
+  className="bpk-description-list test-description-list"
+>
+  <dt>
+    term
+  </dt>
+  <dd>
+    description
+  </dd>
+</dl>
+`;
+
+exports[`BpkDescriptionList should render correctly with other attributes 1`] = `
+<dl
+  className="bpk-description-list"
+  title="this is a description list"
+>
+  <dt>
+    term
+  </dt>
+  <dd>
+    description
+  </dd>
+</dl>
+`;

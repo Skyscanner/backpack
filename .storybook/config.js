@@ -58,7 +58,7 @@ configure(() => {
   require('./../packages/bpk-component-chip/stories');
   require('./../packages/bpk-component-close-button/stories');
   require('./../packages/bpk-component-code/stories');
-  require('./../packages/bpk-component-definition-list/stories');
+  require('./../packages/bpk-component-description-list/stories');
   require('./../packages/bpk-component-content-container/stories');
   require('./../packages/bpk-component-datepicker/stories');
   require('./../packages/bpk-component-drawer/stories');

@@ -17,19 +17,21 @@
  */
 
 import React from 'react';
+import BpkText from 'bpk-component-text';
 import BpkBlockquote from 'bpk-component-blockquote';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import { BpkCode, BpkCodeBlock } from 'bpk-component-code';
 import BpkLink, { BpkButtonLink } from 'bpk-component-link';
+import { BpkDescriptionList, BpkDescriptionTerm, BpkDescriptionDetails } from 'bpk-component-description-list';
 import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table';
-import BpkText from 'bpk-component-text';
 
 import textReadme from 'bpk-component-text/readme.md';
 import linkReadme from 'bpk-component-link/readme.md';
 import listReadme from 'bpk-component-list/readme.md';
+import codeReadme from 'bpk-component-code/readme.md';
 import tableReadme from 'bpk-component-table/readme.md';
 import blockquoteReadme from 'bpk-component-blockquote/readme.md';
-import codeReadme from 'bpk-component-code/readme.md';
+import descriptionListReadme from 'bpk-component-description-list/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
@@ -102,6 +104,30 @@ const components = [
       </BpkList>,
     ],
     readme: listReadme,
+  },
+  {
+    id: 'description-lists',
+    title: 'Description lists',
+    examples: [
+      <BpkDescriptionList>
+        <BpkDescriptionTerm>Airport code</BpkDescriptionTerm>
+        <BpkDescriptionDetails>
+          The three digit code which is unique to a specific airport. eg. LHR for Heathrow or LGW for Gatwick.
+        </BpkDescriptionDetails>
+        <BpkDescriptionTerm>Boarding pass</BpkDescriptionTerm>
+        <BpkDescriptionDetails>
+          A card given to the passenger after check-in which allocates a seat number or indicates a boarding pattern.
+          The stub of the card should be retained after going through the boarding gate to show to the flight crew once
+          reaching the aircraft.
+        </BpkDescriptionDetails>
+        <BpkDescriptionTerm>Charter</BpkDescriptionTerm>
+        <BpkDescriptionDetails>
+          An aircraft which is used by a specific group be it customers of a particular holiday company or an
+          individual party.
+        </BpkDescriptionDetails>
+      </BpkDescriptionList>,
+    ],
+    readme: descriptionListReadme,
   },
   {
     id: 'tables',

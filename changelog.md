@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet!_
+**Added:**
+- bpk-component-description-list:
+  - New description list component. See https://backpack.github.io/components/web/typography#description-lists.
 
 ## 2017-12-13 - Fix banner alert `react-transition-group` dependency issues
 
