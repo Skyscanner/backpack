@@ -21,7 +21,7 @@
 .bpk-data-table {
   width: 100%;
 
-  &__headerColumn {
+  &__header-column {
     display: flex;
     height: 100%;
     flex-direction: row;
@@ -53,7 +53,7 @@
       border-bottom: $bpk-border-size-sm solid $bpk-color-gray-50;
     }
 
-    &:not(.bpk-data-table__headerRow):hover {
+    &:not(.bpk-data-table__header-row):hover {
       background-color: $bpk-color-gray-50;
       cursor: pointer;
 

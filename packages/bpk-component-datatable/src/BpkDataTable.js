@@ -87,7 +87,7 @@ class BpkDataTable extends Component {
       classNames.push(getClassName('bpk-data-table__row--selected'));
     }
     if (index === -1) {
-      classNames.push(getClassName('bpk-data-table__headerRow'));
+      classNames.push(getClassName('bpk-data-table__header-row'));
     }
     return classNames;
   }
@@ -116,7 +116,7 @@ class BpkDataTable extends Component {
         rowHeight={60}
         rowCount={sortedList.length}
         rowGetter={({ index }) => sortedList[index]}
-        headerClassName={getClassName('bpk-data-table__headerColumn')}
+        headerClassName={getClassName('bpk-data-table__header-column')}
         rowClassName={this.rowClassName}
         onRowClick={this.onRowClicked}
         sort={this.sort}

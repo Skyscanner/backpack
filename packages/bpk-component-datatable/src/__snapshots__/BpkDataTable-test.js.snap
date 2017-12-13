@@ -16,7 +16,7 @@ exports[`BpkDataTable should render correctly in RTL 1`] = `
     style={Object {}}
   >
     <div
-      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__headerRow"
+      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
       role="row"
       style={
         Object {
@@ -29,7 +29,7 @@ exports[`BpkDataTable should render correctly in RTL 1`] = `
     >
       <div
         aria-label="Bla"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -51,7 +51,7 @@ exports[`BpkDataTable should render correctly in RTL 1`] = `
       </div>
       <div
         aria-label="Description"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -74,7 +74,7 @@ exports[`BpkDataTable should render correctly in RTL 1`] = `
       <div
         aria-label="Name"
         aria-sort="ascending"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -143,7 +143,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
   style={Object {}}
 >
   <div
-    className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__headerRow"
+    className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
     role="row"
     style={
       Object {
@@ -157,7 +157,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
     <div
       aria-label="Name"
       aria-sort="ascending"
-      className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+      className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="columnheader"
@@ -193,7 +193,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
     </div>
     <div
       aria-label="Description"
-      className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+      className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="columnheader"
@@ -215,7 +215,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
     </div>
     <div
       aria-label="Bla"
-      className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+      className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="columnheader"
@@ -422,7 +422,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
     style={Object {}}
   >
     <div
-      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__headerRow"
+      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
       role="row"
       style={
         Object {
@@ -436,7 +436,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
       <div
         aria-label="Name"
         aria-sort="ascending"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -472,7 +472,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
       </div>
       <div
         aria-label="Description"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -494,7 +494,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
       </div>
       <div
         aria-label="Bla"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -557,7 +557,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
     style={Object {}}
   >
     <div
-      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__headerRow"
+      className="ReactVirtualized__Table__headerRow bpk-data-table__row bpk-data-table__header-row"
       role="row"
       style={
         Object {
@@ -571,7 +571,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
       <div
         aria-label="Name"
         aria-sort="ascending"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -607,7 +607,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
       </div>
       <div
         aria-label="Description"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -629,7 +629,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
       </div>
       <div
         aria-label="Bla"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__headerColumn ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
