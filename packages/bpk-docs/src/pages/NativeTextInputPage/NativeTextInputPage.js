@@ -20,10 +20,10 @@ import React from 'react';
 import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-text-input/readme.md';
 import iosScreenshot from 'react-native-bpk-component-text-input/screenshots/ios/text-inputs.png';
+import androidScreenshot from 'react-native-bpk-component-text-input/screenshots/android/text-inputs.png';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import androidEmpty from './../../static/android_empty.svg';
 
 const reactNativeUrl = 'https://facebook.github.io/react-native/docs/textinput.html';
 
@@ -37,15 +37,15 @@ const components = [
         width: 750,
         height: 1334,
         src: `/${iosScreenshot}`,
-        altText: 'iOS Default Text Input Component',
+        altText: 'iOS Text Input Component',
         subText: '(iPhone 8 Simulator)',
       },
       {
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidEmpty}`,
-        altText: 'Android Default Text Input Component',
+        src: `/${androidScreenshot}`,
+        altText: 'Android Text Input Component',
         subText: '(Google Pixel Emulator)',
       },
     ],
