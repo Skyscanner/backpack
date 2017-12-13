@@ -1,5 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`RTL BpkTextInput should ignore when placeholder is provided 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingTop": 18,
+      },
+      null,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "rgba(178, 174, 189, 1)",
+        "fontFamily": "System",
+        "fontSize": 15,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 21,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(230, 228, 235, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      clearButtonMode="while-editing"
+      editable={true}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      placeholder={null}
+      style={
+        Object {
+          "borderBottomWidth": 0,
+          "color": "rgb(82, 76, 97)",
+          "flex": 1,
+          "fontSize": 15,
+          "fontWeight": "400",
+          "lineHeight": 20,
+          "minHeight": 28,
+          "paddingHorizontal": 0,
+          "paddingVertical": 4,
+          "textAlign": "right",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+</View>
+`;
+
 exports[`RTL BpkTextInput should render correctly 1`] = `
 <View
   style={
@@ -47,6 +116,7 @@ exports[`RTL BpkTextInput should render correctly 1`] = `
       editable={true}
       onBlur={[Function]}
       onFocus={[Function]}
+      placeholder={null}
       style={
         Object {
           "borderBottomWidth": 0,
@@ -115,6 +185,7 @@ exports[`RTL BpkTextInput should render correctly with arbitrary props 1`] = `
       editable={true}
       onBlur={[Function]}
       onFocus={[Function]}
+      placeholder={null}
       style={
         Object {
           "borderBottomWidth": 0,
@@ -186,6 +257,7 @@ exports[`RTL BpkTextInput should render correctly with custom style 1`] = `
       editable={true}
       onBlur={[Function]}
       onFocus={[Function]}
+      placeholder={null}
       style={
         Object {
           "borderBottomWidth": 0,
@@ -254,6 +326,7 @@ exports[`RTL BpkTextInput should render correctly with editable=false 1`] = `
       editable={false}
       onBlur={[Function]}
       onFocus={[Function]}
+      placeholder={null}
       style={
         Object {
           "borderBottomWidth": 0,
@@ -322,6 +395,7 @@ exports[`RTL BpkTextInput should render correctly with inputRef set 1`] = `
       editable={true}
       onBlur={[Function]}
       onFocus={[Function]}
+      placeholder={null}
       style={
         Object {
           "borderBottomWidth": 0,
@@ -390,6 +464,7 @@ exports[`RTL BpkTextInput should render correctly with valid 1`] = `
       editable={true}
       onBlur={[Function]}
       onFocus={[Function]}
+      placeholder={null}
       style={
         Object {
           "borderBottomWidth": 0,
@@ -489,6 +564,7 @@ exports[`RTL BpkTextInput should render correctly with valid false 1`] = `
       editable={true}
       onBlur={[Function]}
       onFocus={[Function]}
+      placeholder={null}
       style={
         Object {
           "borderBottomWidth": 0,
@@ -588,6 +664,7 @@ exports[`RTL BpkTextInput should render correctly with valid false and a validat
       editable={true}
       onBlur={[Function]}
       onFocus={[Function]}
+      placeholder={null}
       style={
         Object {
           "borderBottomWidth": 0,
@@ -710,6 +787,7 @@ exports[`RTL BpkTextInput should render correctly with value 1`] = `
       editable={true}
       onBlur={[Function]}
       onFocus={[Function]}
+      placeholder={null}
       style={
         Object {
           "borderBottomWidth": 0,

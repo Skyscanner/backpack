@@ -137,6 +137,18 @@ const commonTests = () => {
 
       expect(testRenderer.toJSON()).toMatchSnapshot();
     });
+
+    it('should ignore when placeholder is provided', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkTextInput
+          label="Name"
+          value=""
+          placeholder="Placeholder"
+        />,
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
   });
 };
 

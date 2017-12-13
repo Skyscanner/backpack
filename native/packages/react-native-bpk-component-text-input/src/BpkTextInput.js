@@ -113,6 +113,7 @@ class BpkTextInput extends Component {
             ref={inputRef}
             underlineColorAndroid="transparent"
             {...rest}
+            placeholder={null} // Override any placeholders passed in by users.
           />
           { !isFocused && validityIcon }
         </Animated.View>
