@@ -17,11 +17,6 @@
  */
 
 import { View, StyleSheet } from 'react-native';
-import React from 'react';
-import PropTypes from 'prop-types';
-import BpkText from 'react-native-bpk-component-text';
-import BpkIcon from 'react-native-bpk-component-icon';
-import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
 
 import {
   borderRadiusSm,
@@ -38,9 +33,17 @@ import {
   spacingSm,
   spacingXl,
 } from 'bpk-tokens/tokens/base.react.native';
+
+import React from 'react';
+import PropTypes from 'prop-types';
+import BpkText from 'react-native-bpk-component-text';
+import BpkIcon from 'react-native-bpk-component-icon';
+import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
+
 import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
 import { dismissablePropType } from './customPropTypes';
+
 import AnimateAndFade from './AnimateAndFade';
 
 export const ALERT_TYPES = {
