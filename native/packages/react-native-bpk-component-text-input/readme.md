@@ -88,3 +88,6 @@ export default class App extends Component {
 | valid                       | oneOf(true, false, null)                                    | false    | null          |
 | validationMessage           | string                                                      | false    | null          |
 | style                       | style                                                       | false    | null          |
+
+*Note:* *TextInput*'s [`placeholder` prop](https://facebook.github.io/react-native/docs/textinput.html#placeholder) will
+be ignored if supplied.
