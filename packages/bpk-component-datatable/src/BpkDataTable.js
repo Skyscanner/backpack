@@ -36,18 +36,17 @@ const sortList = ({ sortBy, sortDirection, list }) => {
 };
 
 class BpkDataTable extends Component {
-  constructor(props) {
-    super(props);
+  constructor({ rows }) {
+    super();
 
     const sortBy = 'name';
     const sortDirection = 'ASC';
-    const sortedList = sortList({ sortBy, sortDirection, list: props.rows });
+    const sortedList = sortList({ sortBy, sortDirection, list: rows });
 
     this.state = {
       sortedList,
       sortBy,
       sortDirection,
-      rows: props.rows,
       rowSelected: undefined,
     };
 
@@ -57,10 +56,10 @@ class BpkDataTable extends Component {
   }
 
   componentWillReceiveProps({ rows }) {
-    if (rows !== this.state.rows) {
+    if (rows !== this.props.rows) {
       const { sortBy, sortDirection } = this.state;
       const sortedList = sortList({ sortBy, sortDirection, list: rows });
-      this.setState({ rows, sortedList, rowSelected: undefined });
+      this.setState({ sortedList, rowSelected: undefined });
     }
   }
 
@@ -71,7 +70,7 @@ class BpkDataTable extends Component {
       this.setState({ rowSelected: index });
     }
     if (this.props.onRowClick !== undefined) {
-      this.props.onRowClick(this.state.rows[index]);
+      this.props.onRowClick(this.props.rows[index]);
     }
   }
 
@@ -87,7 +86,7 @@ class BpkDataTable extends Component {
   }
 
   sort({ sortBy, sortDirection }) {
-    const sortedList = sortList({ sortBy, sortDirection, list: this.state.rows });
+    const sortedList = sortList({ sortBy, sortDirection, list: this.props.rows });
 
     this.setState({ sortBy, sortDirection, sortedList });
   }
