@@ -22,15 +22,15 @@ import { storiesOf } from '@storybook/react';
 import { BpkDataTable, BpkColumn } from './index';
 
 const rows = [
-  { name: 'Jose', description: 'Software Engineer', bla: 'Bla' },
-  { name: 'Rolf', description: 'Some guy', bla: 'Bla' },
+  { name: 'Albert', description: 'Reaching the end of the alphabet', bla: 'Bla' },
+  { name: 'Rolf', description: 'At the beginning of the alphabet', bla: 'Alb' },
 ];
 
 // eslint-disable-next-line no-alert
 const onRowClick = row => alert(JSON.stringify(row));
 
 storiesOf('bpk-component-datatable', module)
-  .add('Example', () => (
+  .add('Autowidth Example', () => (
     <BpkDataTable
       rows={rows}
       height={300}
@@ -51,7 +51,56 @@ storiesOf('bpk-component-datatable', module)
         label="Bla"
         dataKey="bla"
         width={100}
+      />
+    </BpkDataTable>
+  ))
+  .add('Fixed Width Example', () => (
+    <BpkDataTable
+      rows={rows}
+      height={300}
+      width={400}
+      onRowClick={onRowClick}
+    >
+      <BpkColumn
+        label="Name"
+        dataKey="name"
+        width={100}
+      />
+      <BpkColumn
+        label="Description"
+        dataKey="description"
+        width={100}
+        flexGrow={1}
+      />
+      <BpkColumn
+        label="Bla"
+        dataKey="bla"
+        width={100}
+      />
+    </BpkDataTable>
+  ))
+  .add('Disabled Sort Example', () => (
+    <BpkDataTable
+      rows={rows}
+      height={300}
+      onRowClick={onRowClick}
+    >
+      <BpkColumn
+        label="Name"
+        dataKey="name"
+        width={100}
+      />
+      <BpkColumn
+        label="Description (Disabled Sorting)"
+        dataKey="description"
+        width={100}
+        flexGrow={1}
         disableSort
+      />
+      <BpkColumn
+        label="Bla"
+        dataKey="bla"
+        width={100}
       />
     </BpkDataTable>
   ));
