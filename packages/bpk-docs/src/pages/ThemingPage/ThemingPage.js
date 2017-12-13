@@ -19,6 +19,7 @@
 import React from 'react';
 import BpkLink from 'bpk-component-link';
 import { BpkList, BpkListItem } from 'bpk-component-list';
+import BpkBlockquote from 'bpk-component-blockquote';
 import nativeReadme from 'react-native-bpk-theming/readme.md';
 import webReadme from 'bpk-theming/readme.md';
 
@@ -120,6 +121,11 @@ const components = [
           <BpkLink href={SLIDERS}>Sliders</BpkLink>
         </BpkListItem>
       </BpkList>,
+      <BpkBlockquote>
+        {/* eslint-disable max-len */}
+        <strong>Note:</strong> Backpack&#39;s theming is based on <BpkLink href={CSS_VARIABLES_URL} blank>CSS Variables</BpkLink> and thus will not be supported in some browsers. In these cases Backpack components will gracefully degrade to the default Skyscanner theme. For an overview of this check <BpkLink href="https://caniuse.com/#feat=css-variables" blank>caniuse</BpkLink>.
+        {/* eslint-enable max-len */}
+      </BpkBlockquote>,
     ],
     readme: webReadme,
   },
