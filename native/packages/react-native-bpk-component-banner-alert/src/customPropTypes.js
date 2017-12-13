@@ -1,3 +1,5 @@
+import { isString } from 'util';
+
 /*
 * Backpack - Skyscanner's Design System
 *
@@ -27,5 +29,33 @@ export const dismissablePropType = (props, propName, componentName) => {
 
   return false;
 };
+export const toggleExpandedButtonLabelPropType = (
+  props,
+  propName,
+  componentName,
+) => {
+  if (!props[propName] && props.children !== null) {
+    return new Error(
+      `Invalid prop \`${propName}\` with value \`${
+        props[propName]
+      }\` supplied to \`${componentName}\`.`,
+    ); // eslint-disable-line max-len
+  }
 
-export default { dismissablePropType };
+  return false;
+};
+export const dismissableLabelPropType = (props, propName, componentName) => {
+  if (props.dismissable && (!props[propName] || !isString(props[propName]))) {
+    return new Error(
+      `Invalid prop \`${propName}\` with value \`${
+        props[propName]
+      }\` supplied to \`${componentName}\`.`,
+    ); // eslint-disable-line max-len
+  }
+  return false;
+};
+export default {
+  dismissablePropType,
+  toggleExpandedButtonLabelPropType,
+  dismissableLabelPropType,
+};

@@ -16,12 +16,10 @@
  * limitations under the License.
  */
 
-import { View, StyleSheet } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
-import BpkText from 'react-native-bpk-component-text';
-import BpkIcon from 'react-native-bpk-component-icon';
-import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
+
+import { View, StyleSheet } from 'react-native';
 
 import {
   borderRadiusSm,
@@ -38,10 +36,19 @@ import {
   spacingSm,
   spacingXl,
 } from 'bpk-tokens/tokens/base.react.native';
+
+import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
+import BpkIcon from 'react-native-bpk-component-icon';
+import BpkText from 'react-native-bpk-component-text';
 import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
-import { dismissablePropType } from './customPropTypes';
 import AnimateAndFade from './AnimateAndFade';
+
+import {
+  dismissablePropType,
+  toggleExpandedButtonLabelPropType,
+  dismissableLabelPropType,
+} from './customPropTypes';
 
 export const ALERT_TYPES = {
   SUCCESS: 'success',
@@ -251,30 +258,29 @@ const BpkBannerAlert = props => {
 
 BpkBannerAlert.propTypes = {
   message: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(Object.keys(ALERT_TYPES).map(key => ALERT_TYPES[key]))
-    .isRequired,
-  children: PropTypes.node,
-  dismissable: dismissablePropType,
-  expanded: PropTypes.bool,
-  show: PropTypes.bool,
+  type: PropTypes.oneOf(Object.values(ALERT_TYPES)).isRequired,
   animateOnEnter: PropTypes.bool,
   animateOnLeave: PropTypes.bool,
-  onToggleExpanded: PropTypes.func,
+  children: PropTypes.node,
+  dismissable: dismissablePropType,
+  dismissButtonLabel: dismissableLabelPropType,
+  expanded: PropTypes.bool,
   onDismiss: PropTypes.func,
-  dismissButtonLabel: PropTypes.string,
-  toggleExpandedButtonLabel: PropTypes.string,
+  onToggleExpanded: PropTypes.func,
+  show: PropTypes.bool,
+  toggleExpandedButtonLabel: toggleExpandedButtonLabelPropType,
 };
 
 BpkBannerAlert.defaultProps = {
-  children: null,
-  dismissable: false,
-  show: true,
-  expanded: false,
   animateOnEnter: false,
   animateOnLeave: false,
-  onToggleExpanded: null,
-  onDismiss: null,
+  children: null,
+  dismissable: false,
   dismissButtonLabel: null,
+  expanded: false,
+  onDismiss: null,
+  onToggleExpanded: null,
+  show: true,
   toggleExpandedButtonLabel: null,
 };
 

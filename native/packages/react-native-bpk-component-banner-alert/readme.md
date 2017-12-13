@@ -17,6 +17,8 @@ import BpkText from 'react-native-bpk-component-text';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 import BpkBannerAlert, {ALERT_TYPES} from 'react-native-bpk-component-banner-alert';
 
+import { translationHelper } from 'translations';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -25,7 +27,7 @@ const styles = StyleSheet.create({
   },
   bannerAlert: {
     marginBottom: spacingBase,
-  }
+  },
 });
 
 export default class App extends Component {
