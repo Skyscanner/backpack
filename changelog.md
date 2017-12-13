@@ -4,6 +4,11 @@
 
 _Nothing yet!_
 
+## 2017-12-13 - Fix banner alert `react-transition-group` dependency issues
+
+- bpk-component-banner-alert: 1.5.1 => 1.5.2
+  - Downgraded `react-transition-group` to `^1.2.1`.
+
 ## 2017-12-13 - Native text input redesign with Android support
 
 **Breaking:**
