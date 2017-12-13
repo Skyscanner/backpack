@@ -103,4 +103,30 @@ storiesOf('bpk-component-datatable', module)
         width={100}
       />
     </BpkDataTable>
+  ))
+  .add('Custom row and header heights', () => (
+    <BpkDataTable
+      rows={rows}
+      height={300}
+      headerHeight={80}
+      rowHeight={30}
+      onRowClick={onRowClick}
+    >
+      <BpkColumn
+        label="Name"
+        dataKey="name"
+        width={100}
+      />
+      <BpkColumn
+        label="Description"
+        dataKey="description"
+        width={100}
+        flexGrow={1}
+      />
+      <BpkColumn
+        label="Bla"
+        dataKey="bla"
+        width={100}
+      />
+    </BpkDataTable>
   ));

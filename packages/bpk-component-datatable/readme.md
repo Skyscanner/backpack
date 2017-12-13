@@ -42,13 +42,15 @@ export default () => (
 
 ### BpkDataTable
 
-| Property   | PropType                | Required | Default Value        |
-| ---------- | ----------------------- | -------- | -------------------- |
-| rows       | arrayOf(Object)         | yes      | -                    |
-| children   | node                    | yes      | -                    |
-| height     | number                  | yes      | -                    |
-| onRowClick | function                | no       | -                    |
-| width      | number                  | no       | full width of parent |
+| Property     | PropType                | Required | Default Value        |
+| ------------ | ----------------------- | -------- | -------------------- |
+| rows         | arrayOf(Object)         | yes      | -                    |
+| children     | node                    | yes      | -                    |
+| height       | number                  | yes      | -                    |
+| onRowClick   | function                | no       | -                    |
+| width        | number                  | no       | full width of parent |
+| headerHeight | number                  | no       | 60                   |
+| rowHeight    | number                  | no       | 60                   |
 
 ### BpkColumn
 

@@ -97,15 +97,21 @@ class BpkDataTable extends Component {
       sortDirection,
       sortBy,
     } = this.state;
-    const { height, children } = this.props;
+
+    const {
+      height,
+      children,
+      headerHeight,
+      rowHeight,
+    } = this.props;
 
     return (
       <Table
         className={getClassName('bpk-data-table')}
         width={width}
         height={height}
-        headerHeight={60}
-        rowHeight={60}
+        headerHeight={headerHeight}
+        rowHeight={rowHeight}
         rowCount={sortedList.length}
         rowGetter={({ index }) => sortedList[index]}
         headerClassName={getClassName('bpk-data-table__header-column')}
@@ -138,11 +144,15 @@ BpkDataTable.propTypes = {
   height: PropTypes.number.isRequired,
   onRowClick: PropTypes.func,
   width: PropTypes.number,
+  headerHeight: PropTypes.number,
+  rowHeight: PropTypes.number,
 };
 
 BpkDataTable.defaultProps = {
   onRowClick: null,
   width: null,
+  headerHeight: 60,
+  rowHeight: 60,
 };
 
 export default BpkDataTable;
