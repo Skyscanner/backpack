@@ -33,47 +33,41 @@ export default class App extends Component {
       <View style={styles.container}>
         <BpkTextInput
           style={styles.input}
-          placeholder="Country, city, or airport"
-          value="Edinburgh"
-        />
-        <BpkTextInput
-          style={styles.input}
-          placeholder="Country, city, or airport"
           value=""
         />
         <BpkTextInput
           style={styles.input}
-          small
-          placeholder="Country, city, or airport"
+          value="Edinburgh"
+        />
+        <BpkTextInput
+          style={styles.input}
+          value="Edinburgh is the capital of Scotland. Come for the castle, stay for the penguin parade at the zoo."
+          multiline
+        />
+        <BpkTextInput
+          style={styles.input}
           value="Edinburgh"
           valid
         />
         <BpkTextInput
           style={styles.input}
-          small
-          placeholder="Country, city, or airport"
           value="Edinbrvgh"
           valid={false}
+          validationMessage="Edinbvrgh is not a valid city."
         />
         <BpkTextInput
           style={styles.input}
-          small
-          disabled
-          placeholder="Country, city, or airport"
+          editable={false}
           value="Edinburgh"
         />
         <BpkTextInput
           style={styles.input}
-          small
           secureTextEntry
-          placeholder="password"
           value="password"
         />
         <BpkTextInput
           style={styles.input}
-          small
           keyboardType="phone-pad"
-          placeholder="Phone number"
           value="+441234567890"
         />
       </View>
@@ -84,11 +78,13 @@ export default class App extends Component {
 
 ## Props
 
-| Property    | PropType  | Required | Default Value |
-| ----------- | --------- | -------- | ------------- |
-| value       | string    | true     | -             |
-| disabled    | bool      | false    | false         |
-| small       | bool      | false    | false         |
-| style       | style     | false    | null          |
-| valid       | bool      | false    | null          |
-| inputRef    | func      | false    | null          |
+| Property                    | PropType                                                    | Required | Default Value |
+| --------------------------- | ----------------------------------------------------------- | -------- | ------------- |
+| label                       | string                                                      | true     | -             |
+| value                       | string                                                      | true     | -             |
+| clearButtonMode (iOS only)  | oneOf('never', 'while-editing', 'unless-editing', 'always') | false    | while-editing |
+| editable                    | bool                                                        | false    | true          |
+| inputRef                    | func                                                        | false    | null          |
+| valid                       | oneOf(true, false, null)                                    | false    | null          |
+| validationMessage           | string                                                      | false    | null          |
+| style                       | style                                                       | false    | null          |
