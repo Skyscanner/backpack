@@ -17,10 +17,12 @@
  */
 
 import React from 'react';
-import { BpkButtonLink } from 'bpk-component-link';
+import BpkSelect from 'bpk-component-select';
 
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
-import bpkCustomTheme from './theming';
+import bpkCustomThemes from './theming';
+
+const availableThemes = Object.keys(bpkCustomThemes);
 
 const setTheme = (theme) => {
   const htmlElement = getHtmlElement();
@@ -30,10 +32,11 @@ const setTheme = (theme) => {
 class BpkThemeToggle extends React.Component {
   constructor(props) {
     super(props);
-    this.switchTheme = this.switchTheme.bind(this);
+    this.cycleTheme = this.cycleTheme.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
-      enableCustomTheme: false,
+      selectedTheme: '',
     };
   }
 
@@ -47,27 +50,46 @@ class BpkThemeToggle extends React.Component {
 
   handleKeyDown(e) {
     if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 't') {
-      this.switchTheme(e);
+      this.cycleTheme();
     }
   }
 
-  switchTheme(e) {
-    e.preventDefault();
+  handleChange(e) {
+    const selectedTheme = e.target.value;
+    this.setState({ selectedTheme });
+    setTheme(bpkCustomThemes[selectedTheme]);
+  }
 
-    const theme = !this.state.enableCustomTheme ? bpkCustomTheme : null;
-    setTheme(theme);
-
-    this.setState({ enableCustomTheme: !this.state.enableCustomTheme });
+  cycleTheme() {
+    let { selectedTheme } = this.state;
+    let selectedIndex = selectedTheme ? (availableThemes.indexOf(selectedTheme) + 1) : 0;
+    if (selectedIndex >= availableThemes.length) {
+      selectedIndex = 0;
+    }
+    selectedTheme = availableThemes[selectedIndex];
+    this.setState({ selectedTheme });
+    setTheme(bpkCustomThemes[selectedTheme]);
   }
 
   render() {
+    const { ...rest } = this.props;
     return (
-      <BpkButtonLink
-        title="Keyboard Shortcut: ctrl + cmd + t"
-        onClick={this.switchTheme}
-      >
-        Toggle theme {this.state.enableCustomTheme ? 'off' : 'on'}
-      </BpkButtonLink>
+      <div {...rest}>
+        <BpkSelect
+          id="theme-select"
+          name="theme-select"
+          value={this.state.selectedTheme}
+          onChange={this.handleChange}
+        >
+          <option value="" hidden>Change theme</option>
+          <option value="skyscanner">None</option>
+          { availableThemes.map(themeName => (
+            <option key={themeName} value={themeName}>
+              {themeName}
+            </option>
+      ))}
+        </BpkSelect>
+      </div>
     );
   }
 }

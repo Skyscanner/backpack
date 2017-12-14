@@ -23,6 +23,11 @@
     @include bpk-border-top-sm($bpk-color-gray-100);
   }
 
+  &__footer-row {
+    display: flex;
+    align-items: center;
+  }
+
   &__footer-copy {
     display: block;
 
@@ -44,5 +49,10 @@
         }
       }
     }
+  }
+
+  &__theme-switcher {
+    display: inline-block;
+    margin-left: $bpk-spacing-xs;
   }
 }

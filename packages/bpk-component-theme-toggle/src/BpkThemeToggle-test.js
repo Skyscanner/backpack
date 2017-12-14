@@ -25,12 +25,4 @@ describe('BpkThemeToggle', () => {
     const tree = renderer.create(<BpkThemeToggle />).toJSON();
     expect(tree).toMatchSnapshot();
   });
-
-  it('should render correctly when clicked', () => {
-    const component = renderer.create(<BpkThemeToggle />);
-    let tree = component.toJSON();
-    tree.props.onClick({ preventDefault: () => null });
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
 });

@@ -1,25 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkThemeToggle should render correctly 1`] = `
-<button
-  className="bpk-link"
-  onClick={[Function]}
-  title="Keyboard Shortcut: ctrl + cmd + t"
-  type="button"
->
-  Toggle theme 
-  on
-</button>
-`;
-
-exports[`BpkThemeToggle should render correctly when clicked 1`] = `
-<button
-  className="bpk-link"
-  onClick={[Function]}
-  title="Keyboard Shortcut: ctrl + cmd + t"
-  type="button"
->
-  Toggle theme 
-  off
-</button>
+<div>
+  <select
+    aria-invalid={false}
+    className="bpk-select"
+    id="theme-select"
+    name="theme-select"
+    onChange={[Function]}
+    value=""
+  >
+    <option
+      hidden={true}
+      value=""
+    >
+      Change theme
+    </option>
+    <option
+      value="skyscanner"
+    >
+      None
+    </option>
+    <option
+      value="London"
+    >
+      London
+    </option>
+    <option
+      value="Hong Kong"
+    >
+      Hong Kong
+    </option>
+    <option
+      value="Doha"
+    >
+      Doha
+    </option>
+  </select>
+</div>
 `;
