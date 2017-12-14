@@ -32,40 +32,49 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <BpkTextInput
+          label="Airport"
           style={styles.input}
           value=""
+          placeholder="3 letter airport code"
         />
         <BpkTextInput
+          label="City"
           style={styles.input}
           value="Edinburgh"
         />
         <BpkTextInput
+          label="City information"
           style={styles.input}
           value="Edinburgh is the capital of Scotland. Come for the castle, stay for the penguin parade at the zoo."
           multiline
         />
         <BpkTextInput
+          label="City"
           style={styles.input}
           value="Edinburgh"
           valid
         />
         <BpkTextInput
+          label="City"
           style={styles.input}
           value="Edinbrvgh"
           valid={false}
           validationMessage="Edinbvrgh is not a valid city."
         />
         <BpkTextInput
+          label="City"
           style={styles.input}
           editable={false}
           value="Edinburgh"
         />
         <BpkTextInput
+          label="Password"
           style={styles.input}
           secureTextEntry
           value="password"
         />
         <BpkTextInput
+          label="Phone number"
           style={styles.input}
           keyboardType="phone-pad"
           value="+441234567890"
@@ -88,6 +97,3 @@ export default class App extends Component {
 | valid                       | oneOf(true, false, null)                                    | false    | null          |
 | validationMessage           | string                                                      | false    | null          |
 | style                       | style                                                       | false    | null          |
-
-*Note:* *TextInput*'s [`placeholder` prop](https://facebook.github.io/react-native/docs/textinput.html#placeholder) will
-be ignored if supplied.

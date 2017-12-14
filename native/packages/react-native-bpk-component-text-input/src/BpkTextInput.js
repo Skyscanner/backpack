@@ -79,6 +79,7 @@ class BpkTextInput extends Component {
     const { isFocused } = this.state;
     const {
       inputRef,
+      placeholder,
       validationMessage,
       editable,
       label,
@@ -113,7 +114,7 @@ class BpkTextInput extends Component {
             ref={inputRef}
             underlineColorAndroid="transparent"
             {...rest}
-            placeholder={null} // Override any placeholders passed in by users.
+            placeholder={isFocused ? placeholder : null}
           />
           { !isFocused && validityIcon }
         </Animated.View>
@@ -131,24 +132,26 @@ BpkTextInput.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   clearButtonMode: TextInput.propTypes.clearButtonMode,
-  inputRef: PropTypes.func,
-  validationMessage: PropTypes.string,
-  valid: PropTypes.oneOf(true, false, null),
   editable: PropTypes.bool,
-  style: ViewPropTypes.style,
-  onFocus: PropTypes.func,
+  inputRef: PropTypes.func,
   onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
+  placeholder: PropTypes.string,
+  style: ViewPropTypes.style,
+  valid: PropTypes.oneOf(true, false, null),
+  validationMessage: PropTypes.string,
 };
 
 BpkTextInput.defaultProps = {
   clearButtonMode: 'while-editing',
-  inputRef: null,
-  validationMessage: null,
-  valid: null,
   editable: true,
-  style: null,
-  onFocus: null,
+  inputRef: null,
   onBlur: null,
+  onFocus: null,
+  placeholder: null,
+  style: null,
+  valid: null,
+  validationMessage: null,
 };
 
 export default BpkTextInput;

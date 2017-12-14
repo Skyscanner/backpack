@@ -38,6 +38,7 @@ storiesOf('BpkTextInput', module)
         label="Input"
         initialValue=""
         style={styles.input}
+        placeholder="3 letter airport code"
       />
       <StatefulBpkTextInput
         label="Input with value"

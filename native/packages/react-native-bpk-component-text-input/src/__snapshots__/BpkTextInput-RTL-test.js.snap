@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RTL BpkTextInput should ignore when placeholder is provided 1`] = `
+exports[`RTL BpkTextInput should ignore when placeholder is provided, as element is not focused 1`] = `
 <View
   style={
     Array [

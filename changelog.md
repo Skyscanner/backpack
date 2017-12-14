@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- react-native-bpk-component-text-input:
+  - Reinstated `placeholder` prop support.
 
 ## 2017-12-14 - New description list component
 

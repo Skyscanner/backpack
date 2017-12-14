@@ -138,7 +138,7 @@ const commonTests = () => {
       expect(testRenderer.toJSON()).toMatchSnapshot();
     });
 
-    it('should ignore when placeholder is provided', () => {
+    it('should ignore when placeholder is provided, as element is not focused', () => {
       const testRenderer = TestRenderer.create(
         <BpkTextInput
           label="Name"
