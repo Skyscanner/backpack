@@ -16,17 +16,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import buildComponent from './ComponentFactory';
 
-import { BpkDefinitionList, BpkDefinitionTerm, BpkDefinitionDescription } from './index';
-
-storiesOf('bpk-component-definition-list', module)
-  .add('Definition List', () => (
-    <BpkDefinitionList>
-      <BpkDefinitionTerm>Apples</BpkDefinitionTerm>
-      <BpkDefinitionDescription>A fruit</BpkDefinitionDescription>
-      <BpkDefinitionTerm>Pears</BpkDefinitionTerm>
-      <BpkDefinitionDescription>Another fruit</BpkDefinitionDescription>
-    </BpkDefinitionList>
-  ));
+export default buildComponent('dt', 'bpk-description-list__term');

@@ -16,16 +16,6 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+import buildComponent from './ComponentFactory';
 
-.bpk-definition-list {
-  margin-top: 0;
-
-  &__term {
-    font-weight: $bpk-font-weight-bold;
-  }
-
-  &__description {
-    margin-left: $bpk-spacing-lg;
-  }
-}
+export default buildComponent('dl', 'bpk-description-list');

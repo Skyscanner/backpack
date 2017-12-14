@@ -18,4 +18,4 @@
 
 import buildComponent from './ComponentFactory';
 
-export default buildComponent('dl', 'bpk-definition-list');
+export default buildComponent('dd', 'bpk-description-list__details');

@@ -1,8 +1,7 @@
 {
-  "name": "bpk-component-definition-list",
+  "name": "bpk-component-description-list",
   "version": "0.0.2",
-  "description": "Backpack definition list component.",
-  "private": true,
+  "description": "Backpack description list component.",
   "main": "index.js",
   "repository": {
     "type": "git",

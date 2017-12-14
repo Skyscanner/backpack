@@ -16,8 +16,17 @@
  * limitations under the License.
  */
 
-import BpkDefinitionList from './src/BpkDefinitionList';
-import BpkDefinitionDescription from './src/BpkDefinitionDescription';
-import BpkDefinitionTerm from './src/BpkDefinitionTerm';
+import React from 'react';
+import { storiesOf } from '@storybook/react';
 
-export { BpkDefinitionList, BpkDefinitionDescription, BpkDefinitionTerm };
+import { BpkDescriptionList, BpkDescriptionTerm, BpkDescriptionDetails } from './index';
+
+storiesOf('bpk-component-description-list', module)
+  .add('Description List', () => (
+    <BpkDescriptionList>
+      <BpkDescriptionTerm>Apples</BpkDescriptionTerm>
+      <BpkDescriptionDetails>A fruit</BpkDescriptionDetails>
+      <BpkDescriptionTerm>Pears</BpkDescriptionTerm>
+      <BpkDescriptionDetails>Another fruit</BpkDescriptionDetails>
+    </BpkDescriptionList>
+  ));

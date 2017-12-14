@@ -18,31 +18,36 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import BpkDescriptionList from './BpkDescriptionList';
 
-import BpkDefinitionTerm from './BpkDefinitionTerm';
-
-describe('BpkDefinitionTerm', () => {
+describe('BpkDescriptionList', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkDefinitionTerm>Term</BpkDefinitionTerm>).toJSON();
+    const tree = renderer.create(
+      <BpkDescriptionList>
+        <dt>term</dt>
+        <dd>description</dd>
+      </BpkDescriptionList>,
+    ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
     const tree = renderer.create(
-      <BpkDefinitionTerm className="test-term">
-        Term
-      </BpkDefinitionTerm>,
+      <BpkDescriptionList className="test-description-list">
+        <dt>term</dt>
+        <dd>description</dd>
+      </BpkDescriptionList>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with a other attributes', () => {
+  it('should render correctly with other attributes', () => {
     const tree = renderer.create(
-      <BpkDefinitionTerm title="this is a term">
-        Term
-      </BpkDefinitionTerm>,
+      <BpkDescriptionList title="this is a description list">
+        <dt>term</dt>
+        <dd>description</dd>
+      </BpkDescriptionList>,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
-

@@ -1,44 +1,44 @@
-# bpk-component-definition-list
+# bpk-component-description-list
 
-> Backpack definition list component.
+> Backpack description list component.
 
 ## Installation
 
 ```sh
-npm install bpk-component-definition-list --save-dev
+npm install bpk-component-description-list --save-dev
 ```
 
 ## Usage
 
 ```js
 import React from 'react';
-import { BpkDefinitionList, BpkDefinitionTerm, BpkDefinitionDescription } from 'bpk-component-definition-list';
+import { BpkDescriptionList, BpkDescriptionTerm, BpkDescriptionDetails } from 'bpk-component-description-list';
 
 export default () => (
-  <BpkDefinitionList>
-    <BpkDefinitionTerm>Apple</BpkDefinitionTerm>
-    <BpkDefinitionDescription>A fruit</BpkDefinitionDescription>
-  </BpkDefinitionList>
+  <BpkDescriptionList>
+    <BpkDescriptionTerm>Apple</BpkDescriptionTerm>
+    <BpkDescriptionDetails>A fruit</BpkDescriptionDetails>
+  </BpkDescriptionList>
 );
 ```
 
 ## Props
 
-### BpkDefinitionList
+### BpkDescriptionList
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
 | children  | -        | true     | -             |
 | className | string   | false    | null          |
 
-### BpkDefinitionTerm
+### BpkDescriptionTerm
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
 | children  | -        | true     | -             |
 | className | string   | false    | null          |
 
-### BpkDefinitionDescription
+### BpkDescriptionDetails
 
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
