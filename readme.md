@@ -35,6 +35,7 @@ npm install [package-name] --save-dev
 | [`bpk-component-close-button`](/packages/bpk-component-close-button) | [![npm version](https://badge.fury.io/js/bpk-component-close-button.svg)](http://badge.fury.io/js/bpk-component-close-button) |
 | [`bpk-component-code`](/packages/bpk-component-code) | [![npm version](https://badge.fury.io/js/bpk-component-code.svg)](http://badge.fury.io/js/bpk-component-code) |
 | [`bpk-component-content-container`](/packages/bpk-component-content-container) | [![npm version](https://badge.fury.io/js/bpk-component-content-container.svg)](http://badge.fury.io/js/bpk-component-content-container) |
+| [`bpk-component-datatable`](/packages/bpk-component-datatable) | [![npm version](https://badge.fury.io/js/bpk-component-datatable.svg)](http://badge.fury.io/js/bpk-component-datatable) |
 | [`bpk-component-datepicker`](/packages/bpk-component-datepicker) | [![npm version](https://badge.fury.io/js/bpk-component-datepicker.svg)](http://badge.fury.io/js/bpk-component-datepicker) |
 | [`bpk-component-description-list`](/packages/bpk-component-description-list) | [![npm version](https://badge.fury.io/js/bpk-component-description-list.svg)](http://badge.fury.io/js/bpk-component-description-list) |
 | [`bpk-component-grid`](/packages/bpk-component-grid) | [![npm version](https://badge.fury.io/js/bpk-component-grid.svg)](http://badge.fury.io/js/bpk-component-grid) |
