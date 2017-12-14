@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.203",
+  "version": "0.0.204",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -29,7 +29,7 @@
     "bpk-component-code": "^1.0.36",
     "bpk-component-content-container": "^1.1.42",
     "bpk-component-datepicker": "^7.2.0",
-    "bpk-component-description-list": "^0.0.2",
+    "bpk-component-description-list": "^1.0.0",
     "bpk-component-drawer": "^1.1.0",
     "bpk-component-fieldset": "^1.0.40",
     "bpk-component-form-validation": "^1.0.39",

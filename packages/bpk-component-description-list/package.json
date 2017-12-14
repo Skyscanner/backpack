@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-description-list",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Backpack description list component.",
   "main": "index.js",
   "repository": {
