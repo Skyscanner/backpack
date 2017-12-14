@@ -12,7 +12,7 @@ npm install bpk-component-datatable --save-dev
 
 ```js
 import React from 'react';
-import BpkDataTable from 'bpk-component-datatable';
+import { BpkDataTable, BpkDataTableColumn } from 'bpk-component-datatable';
 
 const rows = [
   { name: 'Jose', description: 'Software Engineer' },
@@ -23,12 +23,12 @@ const onRowClick = row => alert(JSON.stringify(row));
 
 export default () => (
   <BpkDataTable rows={rows} height={200} onRowClick={onRowClick}>
-    <BpkColumn
+    <BpkDataTableColumn
       label={'Name'}
       dataKey={'name'}
       width={100}
     />
-    <BpkColumn
+    <BpkDataTableColumn
       label={'Description'}
       dataKey={'description'}
       width={100}
@@ -52,11 +52,6 @@ export default () => (
 | headerHeight | number                  | no       | 60                   |
 | rowHeight    | number                  | no       | 60                   |
 
-### BpkColumn
+### BpkDataTableColumn
 
-| Property   | PropType                | Required | Default Value |
-| ---------- | ----------------------- | -------- | ------------- |
-| label      | string                  | yes      | -             |
-| dataKey    | string                  | yes      | -             |
-| width      | number                  | yes      | -             |
-| flexGrow   | number                  | no       | 0             |
+Supports all properties defined in [`Column`](https://github.com/bvaughn/react-virtualized/blob/master/docs/Column.md) (from `react-virtualized`)

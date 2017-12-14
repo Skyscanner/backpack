@@ -24,6 +24,18 @@ import STYLES from './bpk-column.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkColumn = props => <Column className={getClassName('bpk-column')} {...props} />;
+const BpkDataTableColumn = () => null;
 
-export { BpkColumn, Column };
+BpkDataTableColumn.toColumn = (bpkDataTableColumn, key) => {
+  const { className, ...rest } = bpkDataTableColumn.props;
+  const classNames = [getClassName('bpk-column')];
+
+  if (className) { classNames.push(className); }
+
+  return <Column className={classNames.join(' ')} key={key} {...rest} />;
+};
+
+BpkDataTableColumn.propTypes = { ...Column.propTypes };
+BpkDataTableColumn.defaultProps = { ...Column.defaultProps };
+
+export default BpkDataTableColumn;

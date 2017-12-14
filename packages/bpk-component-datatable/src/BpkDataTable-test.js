@@ -20,7 +20,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import BpkDataTable from './BpkDataTable';
-import { Column as BpkColumn } from './BpkColumn';
+import BpkDataTableColumn from './BpkDataTableColumn';
 
 jest.mock('react-dom', () => ({
   findDOMNode: () => ({}),
@@ -35,18 +35,18 @@ describe('BpkDataTable', () => {
   it('should render correctly with multiple columns', () => {
     const tree = renderer.create(
       <BpkDataTable rows={rows} height={200}>
-        <BpkColumn
+        <BpkDataTableColumn
           label="Name"
           dataKey="name"
           width={100}
         />
-        <BpkColumn
+        <BpkDataTableColumn
           label="Description"
           dataKey="description"
           width={100}
           flexGrow={1}
         />
-        <BpkColumn
+        <BpkDataTableColumn
           label="Bla"
           dataKey="bla"
           width={100}
@@ -59,18 +59,18 @@ describe('BpkDataTable', () => {
   it('should render correctly with no data; only headers', () => {
     const tree = renderer.create(
       <BpkDataTable rows={[]} height={200}>
-        <BpkColumn
+        <BpkDataTableColumn
           label="Name"
           dataKey="name"
           width={100}
         />
-        <BpkColumn
+        <BpkDataTableColumn
           label="Description"
           dataKey="description"
           width={100}
           flexGrow={1}
         />
-        <BpkColumn
+        <BpkDataTableColumn
           label="Bla"
           dataKey="bla"
           width={100}
@@ -83,18 +83,18 @@ describe('BpkDataTable', () => {
   it('should render correctly with a specified width', () => {
     const tree = renderer.create(
       <BpkDataTable rows={rows} height={200} width={400}>
-        <BpkColumn
+        <BpkDataTableColumn
           label="Name"
           dataKey="name"
           width={100}
         />
-        <BpkColumn
+        <BpkDataTableColumn
           label="Description"
           dataKey="description"
           width={100}
           flexGrow={1}
         />
-        <BpkColumn
+        <BpkDataTableColumn
           label="Bla"
           dataKey="bla"
           width={100}
@@ -108,12 +108,12 @@ describe('BpkDataTable', () => {
     const onRowClick = jest.fn();
     const wrapper = mount(
       <BpkDataTable rows={rows} height={200} width={400} onRowClick={onRowClick}>
-        <BpkColumn
+        <BpkDataTableColumn
           label="Name"
           dataKey="name"
           width={100}
         />
-        <BpkColumn
+        <BpkDataTableColumn
           label="Description"
           dataKey="description"
           width={100}
@@ -130,12 +130,12 @@ describe('BpkDataTable', () => {
   it('should re-render when rows prop is updated', () => {
     const wrapper = mount(
       <BpkDataTable rows={rows} height={200} width={400}>
-        <BpkColumn
+        <BpkDataTableColumn
           label="Name"
           dataKey="name"
           width={100}
         />
-        <BpkColumn
+        <BpkDataTableColumn
           label="Description"
           dataKey="description"
           width={100}

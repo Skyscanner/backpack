@@ -23,7 +23,7 @@ import { cssModules } from 'bpk-react-utils';
 import _sortBy from 'lodash/sortBy';
 
 import STYLES from './bpk-data-table.scss';
-import { BpkColumn } from './BpkColumn';
+import BpkDataTableColumn from './BpkDataTableColumn';
 
 const getClassName = cssModules(STYLES);
 
@@ -122,7 +122,7 @@ class BpkDataTable extends Component {
         sortDirection={sortDirection}
         gridStyle={{ direction: undefined }} // This is required for rows to automatically respect rtl
       >
-        { children.map((child, index) => BpkColumn({ ...child.props, key: index })) }
+        { children.map(BpkDataTableColumn.toColumn) }
       </Table>
     );
   }
@@ -140,7 +140,7 @@ class BpkDataTable extends Component {
 
 BpkDataTable.propTypes = {
   rows: PropTypes.arrayOf(Object).isRequired,
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: PropTypes.arrayOf(Object).isRequired,
   height: PropTypes.number.isRequired,
   onRowClick: PropTypes.func,
   width: PropTypes.number,

@@ -19,7 +19,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { BpkDataTable, BpkColumn } from './index';
+import { BpkDataTable, BpkDataTableColumn } from './index';
 
 const rows = [
   { name: 'Albert', description: 'Reaching the end of the alphabet', bla: 'Bla' },
@@ -36,18 +36,18 @@ storiesOf('bpk-component-datatable', module)
       height={300}
       onRowClick={onRowClick}
     >
-      <BpkColumn
+      <BpkDataTableColumn
         label="Name"
         dataKey="name"
         width={100}
       />
-      <BpkColumn
+      <BpkDataTableColumn
         label="Description"
         dataKey="description"
         width={100}
         flexGrow={1}
       />
-      <BpkColumn
+      <BpkDataTableColumn
         label="Bla"
         dataKey="bla"
         width={100}
@@ -61,18 +61,18 @@ storiesOf('bpk-component-datatable', module)
       width={400}
       onRowClick={onRowClick}
     >
-      <BpkColumn
+      <BpkDataTableColumn
         label="Name"
         dataKey="name"
         width={100}
       />
-      <BpkColumn
+      <BpkDataTableColumn
         label="Description"
         dataKey="description"
         width={100}
         flexGrow={1}
       />
-      <BpkColumn
+      <BpkDataTableColumn
         label="Bla"
         dataKey="bla"
         width={100}
@@ -85,19 +85,19 @@ storiesOf('bpk-component-datatable', module)
       height={300}
       onRowClick={onRowClick}
     >
-      <BpkColumn
+      <BpkDataTableColumn
         label="Name"
         dataKey="name"
         width={100}
       />
-      <BpkColumn
+      <BpkDataTableColumn
         label="Description (Disabled Sorting)"
         dataKey="description"
         width={100}
         flexGrow={1}
         disableSort
       />
-      <BpkColumn
+      <BpkDataTableColumn
         label="Bla"
         dataKey="bla"
         width={100}
@@ -112,18 +112,18 @@ storiesOf('bpk-component-datatable', module)
       rowHeight={30}
       onRowClick={onRowClick}
     >
-      <BpkColumn
+      <BpkDataTableColumn
         label="Name"
         dataKey="name"
         width={100}
       />
-      <BpkColumn
+      <BpkDataTableColumn
         label="Description"
         dataKey="description"
         width={100}
         flexGrow={1}
       />
-      <BpkColumn
+      <BpkDataTableColumn
         label="Bla"
         dataKey="bla"
         width={100}
