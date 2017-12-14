@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Table, AutoSizer } from 'react-virtualized';
+import { Table, AutoSizer, SortDirection } from 'react-virtualized';
 import { cssModules } from 'bpk-react-utils';
 import _sortBy from 'lodash/sortBy';
 
@@ -36,11 +36,11 @@ const sortList = ({ sortBy, sortDirection, list }) => {
 };
 
 class BpkDataTable extends Component {
-  constructor({ rows }) {
+  constructor({ rows, children }) {
     super();
 
-    const sortBy = 'name';
-    const sortDirection = 'ASC';
+    const sortBy = children.length > 0 ? children[0].props.dataKey : undefined;
+    const sortDirection = SortDirection.ASC;
     const sortedList = sortList({ sortBy, sortDirection, list: rows });
 
     this.state = {
