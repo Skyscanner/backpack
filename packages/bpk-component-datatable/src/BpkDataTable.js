@@ -103,11 +103,15 @@ class BpkDataTable extends Component {
       children,
       headerHeight,
       rowHeight,
+      className,
     } = this.props;
+
+    const classNames = [getClassName('bpk-data-table')];
+    if (className) { classNames.push(className); }
 
     return (
       <Table
-        className={getClassName('bpk-data-table')}
+        className={classNames.join(' ')}
         width={width}
         height={height}
         headerHeight={headerHeight}
@@ -146,6 +150,7 @@ BpkDataTable.propTypes = {
   width: PropTypes.number,
   headerHeight: PropTypes.number,
   rowHeight: PropTypes.number,
+  className: PropTypes.string,
 };
 
 BpkDataTable.defaultProps = {
@@ -153,6 +158,7 @@ BpkDataTable.defaultProps = {
   width: null,
   headerHeight: 60,
   rowHeight: 60,
+  className: null,
 };
 
 export default BpkDataTable;

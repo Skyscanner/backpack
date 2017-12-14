@@ -51,6 +51,7 @@ export default () => (
 | width        | number                  | no       | full width of parent |
 | headerHeight | number                  | no       | 60                   |
 | rowHeight    | number                  | no       | 60                   |
+| className    | number                  | no       | -                    |
 
 ### BpkDataTableColumn
 
