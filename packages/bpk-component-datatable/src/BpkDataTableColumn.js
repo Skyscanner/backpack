@@ -20,7 +20,7 @@ import React from 'react';
 import { Column } from 'react-virtualized';
 import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-column.scss';
+import STYLES from './bpk-data-table-column.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -28,7 +28,7 @@ const BpkDataTableColumn = () => null;
 
 BpkDataTableColumn.toColumn = (bpkDataTableColumn, key) => {
   const { className, ...rest } = bpkDataTableColumn.props;
-  const classNames = [getClassName('bpk-column')];
+  const classNames = [getClassName('bpk-data-table-column')];
 
   if (className) { classNames.push(className); }
 

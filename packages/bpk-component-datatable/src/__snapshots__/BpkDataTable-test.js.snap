@@ -292,7 +292,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
         tabIndex={0}
       >
         <div
-          className="ReactVirtualized__Table__rowColumn bpk-column"
+          className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
           role="gridcell"
           style={
             Object {
@@ -307,7 +307,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
           Jose
         </div>
         <div
-          className="ReactVirtualized__Table__rowColumn bpk-column"
+          className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
           role="gridcell"
           style={
             Object {
@@ -322,7 +322,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
           Software Engineer
         </div>
         <div
-          className="ReactVirtualized__Table__rowColumn bpk-column"
+          className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
           role="gridcell"
           style={
             Object {
@@ -356,7 +356,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
         tabIndex={0}
       >
         <div
-          className="ReactVirtualized__Table__rowColumn bpk-column"
+          className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
           role="gridcell"
           style={
             Object {
@@ -371,7 +371,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
           Rolf
         </div>
         <div
-          className="ReactVirtualized__Table__rowColumn bpk-column"
+          className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
           role="gridcell"
           style={
             Object {
@@ -386,7 +386,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
           Some guy
         </div>
         <div
-          className="ReactVirtualized__Table__rowColumn bpk-column"
+          className="ReactVirtualized__Table__rowColumn bpk-data-table-column"
           role="gridcell"
           style={
             Object {

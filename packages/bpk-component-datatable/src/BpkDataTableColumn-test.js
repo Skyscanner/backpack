@@ -40,11 +40,11 @@ describe('BpkDataTableColumn', () => {
     });
     it('sets a default className', () => {
       const { props } = toColumn();
-      expect(props.className).toBe('bpk-column');
+      expect(props.className).toBe('bpk-data-table-column');
     });
     it('adds additional classNames', () => {
       const { props } = toColumn({ className: 'custom-class-name' });
-      expect(props.className).toBe('bpk-column custom-class-name');
+      expect(props.className).toBe('bpk-data-table-column custom-class-name');
     });
     it('passess all additional props', () => {
       const additionalProps = { something: 1, somethingFn: () => true };
