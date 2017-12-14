@@ -24,6 +24,8 @@ import STYLES from './bpk-data-table-column.scss';
 
 const getClassName = cssModules(STYLES);
 
+// BpkDataTableColumn is just a props wrapper since Table only accepts Column children
+// BpkDataTable uses BpkDataTableColumn.toColumn to convert BpkDataTableColumn to Columns
 const BpkDataTableColumn = () => null;
 
 BpkDataTableColumn.toColumn = (bpkDataTableColumn, key) => {
