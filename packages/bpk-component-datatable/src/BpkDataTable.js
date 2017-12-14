@@ -21,11 +21,13 @@ import React, { Component } from 'react';
 import { Table, AutoSizer, SortDirection } from 'react-virtualized';
 import { cssModules } from 'bpk-react-utils';
 import _sortBy from 'lodash/sortBy';
+import _omit from 'lodash/omit';
 
 import STYLES from './bpk-data-table.scss';
 import BpkDataTableColumn from './BpkDataTableColumn';
 
 const getClassName = cssModules(STYLES);
+const omittedTableProps = ['rowGetter', 'rowCount', 'sortBy', 'sortDirection', 'sort'];
 
 const sortList = ({ sortBy, sortDirection, list }) => {
   const sorted = _sortBy(list, sortBy);
@@ -99,32 +101,31 @@ class BpkDataTable extends Component {
     } = this.state;
 
     const {
-      height,
       children,
-      headerHeight,
-      rowHeight,
       className,
+      headerClassName,
+      ...restOfProps
     } = this.props;
 
     const classNames = [getClassName('bpk-data-table')];
     if (className) { classNames.push(className); }
 
+    const headerClassNames = [getClassName('bpk-data-table__header-column')];
+    if (headerClassName) { headerClassNames.push(headerClassName); }
+
     return (
       <Table
+        {...restOfProps}
         className={classNames.join(' ')}
         width={width}
-        height={height}
-        headerHeight={headerHeight}
-        rowHeight={rowHeight}
         rowCount={sortedList.length}
         rowGetter={({ index }) => sortedList[index]}
-        headerClassName={getClassName('bpk-data-table__header-column')}
+        headerClassName={headerClassNames.join(' ')}
         rowClassName={this.rowClassName}
         onRowClick={this.onRowClicked}
         sort={this.sort}
         sortBy={sortBy}
         sortDirection={sortDirection}
-        gridStyle={{ direction: undefined }} // This is required for rows to automatically respect rtl
       >
         { children.map(BpkDataTableColumn.toColumn) }
       </Table>
@@ -143,22 +144,20 @@ class BpkDataTable extends Component {
 }
 
 BpkDataTable.propTypes = {
+  ..._omit(Table.propTypes, omittedTableProps),
   rows: PropTypes.arrayOf(Object).isRequired,
   children: PropTypes.arrayOf(Object).isRequired,
-  height: PropTypes.number.isRequired,
-  onRowClick: PropTypes.func,
   width: PropTypes.number,
   headerHeight: PropTypes.number,
-  rowHeight: PropTypes.number,
   className: PropTypes.string,
 };
 
 BpkDataTable.defaultProps = {
-  onRowClick: null,
+  ...Table.defaultProps,
   width: null,
   headerHeight: 60,
   rowHeight: 60,
-  className: null,
+  gridStyle: { direction: undefined }, // This is required for rows to automatically respect rtl
 };
 
 export default BpkDataTable;

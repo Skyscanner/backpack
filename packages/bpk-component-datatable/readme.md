@@ -42,16 +42,20 @@ export default () => (
 
 ### BpkDataTable
 
+Supports all properties defined in [`Table`](https://github.com/bvaughn/react-virtualized/blob/master/docs/Table.md) (from `react-virtualized`),
+in addition to the following:
+
+
 | Property     | PropType                | Required | Default Value        |
 | ------------ | ----------------------- | -------- | -------------------- |
 | rows         | arrayOf(Object)         | yes      | -                    |
 | children     | node                    | yes      | -                    |
 | height       | number                  | yes      | -                    |
-| onRowClick   | function                | no       | -                    |
 | width        | number                  | no       | full width of parent |
 | headerHeight | number                  | no       | 60                   |
 | rowHeight    | number                  | no       | 60                   |
-| className    | number                  | no       | -                    |
+
+
 
 ### BpkDataTableColumn
 
