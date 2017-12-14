@@ -24,16 +24,10 @@
   &__header-column {
     display: flex;
     height: 100%;
+    padding: $bpk-spacing-sm;
     flex-direction: row;
     align-items: center;
-
-    &:first-child {
-      padding: 0 $bpk-spacing-base;
-    }
-
-    &:last-child {
-      padding: 0 $bpk-spacing-base;
-    }
+    outline-offset: -(4 * $bpk-one-pixel-rem);
 
     &:hover {
       cursor: pointer;
@@ -46,6 +40,7 @@
     align-items: center;
     border: $bpk-border-size-sm solid $bpk-color-gray-50;
     border-bottom: none;
+    outline-offset: -(4 * $bpk-one-pixel-rem);
     color: $bpk-color-gray-700;
     font-weight: normal;
 
@@ -58,12 +53,20 @@
       cursor: pointer;
 
       @include bpk-border-left-xl($bpk-color-blue-500);
+
+      @include bpk-rtl {
+        @include bpk-border-right-xl($bpk-color-blue-500);
+      }
     }
 
     &--selected {
       background-color: $bpk-color-gray-100;
 
       @include bpk-border-left-xl($bpk-color-blue-500);
+
+      @include bpk-rtl {
+        @include bpk-border-right-xl($bpk-color-blue-500);
+      }
     }
   }
 }

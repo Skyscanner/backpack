@@ -19,15 +19,8 @@
 @import '~bpk-mixins/index';
 
 .bpk-column {
+  padding: $bpk-spacing-sm;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-
-  &:first-child {
-    padding: 0 $bpk-spacing-base;
-  }
-
-  &:last-child {
-    padding: 0 $bpk-spacing-base;
-  }
 }
