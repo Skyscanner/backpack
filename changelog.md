@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
-**Added:**
-- react-native-bpk-component-text-input:
+_Nothing yet..._
+
+## 2017-12-14 - React Native text inputs now correctly support placeholders
+
+**Fixed:**
+- react-native-bpk-component-text-input: 2.0.0 => 2.0.1
   - Reinstated `placeholder` prop support.
 
 ## 2017-12-14 - New description list component
@@ -50,9 +54,6 @@
 
 - react-native-bpk-component-banner-alert: 1.1.13 => 1.2.0
   - New animations available when `show` is toggled. See https://backpack.github.io/components/native/banner-alerts
-
-- bpk-component-datatable:
-  - New data table component, see https://backpack.github.io/components/web/datatables
 
 ## 2017-12-06 - More theming support
 
