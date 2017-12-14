@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-datatable",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Backpack datatable component.",
   "main": "index.js",
   "repository": {
