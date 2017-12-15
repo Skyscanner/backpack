@@ -19,7 +19,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import zip from 'lodash/zip';
-import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table';
+import {
+  BpkTable,
+  BpkTableHead,
+  BpkTableBody,
+  BpkTableRow,
+  BpkTableHeadCell,
+  BpkTableCell,
+} from 'bpk-component-table';
 
 const UsageTable = (props) => {
   const { data, ...rest } = props;
