@@ -129,6 +129,17 @@ const TooltipsPage = () => (<DocsPageBuilder
   ]}
   components={components}
   readme={tooltipReadme}
+  usageTable={{
+    dos: [
+      'Use to provide additional information about an element on the page, shown on hover.',
+      'Text-only works best.',
+    ],
+    donts: [
+      'Don\'t use on touch devices (try using a popover instead).',
+      'Don\'t use for long or complex content or when content includes interaction (try using a popover or modal).',
+      'Don\'t use on interactive elements that can receive focus such as links, buttons and inputs.',
+    ],
+  }}
 />);
 
 export default TooltipsPage;
