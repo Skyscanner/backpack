@@ -188,6 +188,12 @@ DocsPageBuilder.propTypes = {
     }),
   ),
   sassdocId: PropTypes.string,
+  usageTable: PropTypes.shape({
+    data: PropTypes.shape({
+      dos: PropTypes.arrayOf(PropTypes.string.isRequired),
+      donts: PropTypes.arrayOf(PropTypes.string.isRequired),
+    }),
+  }),
 };
 
 DocsPageBuilder.defaultProps = {
@@ -199,6 +205,7 @@ DocsPageBuilder.defaultProps = {
   tokenMap: null,
   customSections: [],
   sassdocId: null,
+  usageTable: null,
 };
 
 export default DocsPageBuilder;
