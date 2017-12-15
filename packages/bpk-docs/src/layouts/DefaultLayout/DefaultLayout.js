@@ -67,7 +67,7 @@ class DefaultLayout extends Component {
     const { children } = this.props;
 
     return (
-      <EnhancedThemeProvider themeAttributes={[...themeAttributes]} id="portal-taget">
+      <EnhancedThemeProvider themeAttributes={themeAttributes} id="portal-taget">
         <div id="application-container">
           <Helmet titleTemplate="%s | Backpack" />
           <Header
@@ -76,7 +76,7 @@ class DefaultLayout extends Component {
           />
           <main>{children}</main>
           <BpkGridContainer className={getClassName('bpkdocs-default-layout__footer-container')}>
-            <BpkGridRow>
+            <BpkGridRow className={getClassName('bpkdocs-default-layout__footer-row')}>
               <BpkGridColumn width={6} mobileWidth={12}>
                 <small className={getClassName('bpkdocs-default-layout__footer-copy')}>
                   &copy; Skyscanner {new Date().getFullYear()}
@@ -90,7 +90,9 @@ class DefaultLayout extends Component {
                       .join(' ')
                   }
                 >
-                  <BpkGridToggle /> | <BpkRtlToggle /> | <BpkThemeToggle />
+                  <BpkGridToggle />&nbsp;
+                  | <BpkRtlToggle />&nbsp;
+                  <BpkThemeToggle className={getClassName('bpkdocs-default-layout__theme-switcher')} />
                 </small>
               </BpkGridColumn>
             </BpkGridRow>

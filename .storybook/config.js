@@ -38,7 +38,9 @@ addDecorator(story => (
     <br />
     <BpkRtlToggle />
     <br />
-    <BpkThemeToggle />
+    <div style={{ width: '10rem' }}>
+      <BpkThemeToggle />
+    </div>
   </div>),
 );
 /* eslint-disable global-require */
