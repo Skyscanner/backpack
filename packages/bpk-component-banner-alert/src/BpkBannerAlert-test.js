@@ -85,21 +85,39 @@ describe('BpkBannerAlert', () => {
 
   it('should render correctly with show set false', () => {
     const tree = renderer.create(
-      <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} dismissable show={false} />,
+      <BpkBannerAlert
+        type={ALERT_TYPES.WARN}
+        message={message}
+        dismissable
+        dismissButtonLabel="Dismiss"
+        show={false}
+      />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with animateOnEnter', () => {
     const tree = renderer.create(
-      <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} dismissable animateOnEnter />,
+      <BpkBannerAlert
+        type={ALERT_TYPES.WARN}
+        message={message}
+        dismissable
+        dismissButtonLabel="Dismiss"
+        animateOnEnter
+      />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with animateOnLeave', () => {
     const tree = renderer.create(
-      <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} dismissable animateOnLeave />,
+      <BpkBannerAlert
+        type={ALERT_TYPES.WARN}
+        message={message}
+        dismissable
+        dismissButtonLabel="Dismiss"
+        animateOnLeave
+      />,
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

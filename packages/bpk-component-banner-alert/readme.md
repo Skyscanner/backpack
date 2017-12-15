@@ -70,7 +70,40 @@ export default () => (
 );
 ```
 
+### withBannerAlertState(BpkBannerAlert)
+
+```js
+import React, { Component } from 'react';
+import BpkBannerAlert, { ALERT_TYPES, withBannerAlertState } from 'bpk-component-banner-alert';
+
+const BannerAlertState = withBannerAlertState(BpkBannerAlert);
+
+<BannerAlertState
+  dismissable
+  dismissButtonLabel="Dismiss"
+  message="Successful alert with dismiss option."
+  type={ALERT_TYPES.SUCCESS}
+/>
+
+<BannerAlertState
+  message="Successful alert that will disappear after 5 seconds."
+  hideAfter={5}
+  type={ALERT_TYPES.SUCCESS}
+/>
+
+<BannerAlertState
+  message="Successful alert with expandable option."
+  type={ALERT_TYPES.SUCCESS}
+  toggleButtonLabel="View more"
+>
+  Lorem ipsum dolor sit amet.
+</BannerAlertState>
+```
+
+
 ## Props
+
+### BpkBannerAlert
 
 | Property           | PropType             | Required | Default Value |
 | ------------------ | -------------------- | -------- | ------------- |
@@ -84,5 +117,14 @@ export default () => (
 | dismissButtonLabel | string               | false    | null          |
 | onDismiss          | func                 | false    | null          |
 | show               | bool                 | false    | true          |
+| expanded           | bool                 | false    | false         |
 | toggleButtonLabel  | string               | false    | null          |
+| onExpandToggle     | func                 | false    | null          |
 | className          | string               | false    | null          |
+
+### withBannerAlertState(BpkBannerAlert)
+
+| Property       | PropType | Required | Default Value |
+| -------------- | -------- | -------- | ------------- |
+| hideAfter      | number   | false    | null          |
+| onDismiss      | func     | false    | null          |

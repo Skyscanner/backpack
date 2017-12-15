@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import { withButtonAlignment } from 'bpk-component-icon';
 import BpkAnimateHeight from 'bpk-animate-height';
 import BpkCloseButton from 'bpk-component-close-button';
@@ -85,110 +85,98 @@ ToggleButton.propTypes = {
   expanded: PropTypes.bool.isRequired,
 };
 
-class BpkBannerAlert extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      expanded: false,
-    };
-
-    this.onExpand = this.onExpand.bind(this);
-    this.onDismiss = this.onDismiss.bind(this);
-  }
-
-  onExpand() {
-    this.setState(state => ({
-      expanded: !state.expanded,
-    }));
-  }
-
-  onDismiss() {
-    if (this.props.onDismiss) {
-      this.props.onDismiss();
+const BpkBannerAlert = (props) => {
+  const onBannerExpandToggle = () => {
+    if (props.onExpandToggle) {
+      props.onExpandToggle();
     }
+  };
+
+  const onBannerDismiss = () => {
+    if (props.onDismiss) {
+      props.onDismiss();
+    }
+  };
+
+  const {
+    animateOnEnter,
+    animateOnLeave,
+    ariaLive,
+    children,
+    className,
+    dismissable,
+    dismissButtonLabel,
+    message,
+    onDismiss,
+    show,
+    type,
+    toggleButtonLabel,
+    expanded,
+    onExpandToggle,
+    ...rest
+  } = props;
+  const isExpandable = children;
+  const showChildren = isExpandable && expanded;
+  const ariaRoles = ['alert'];
+
+  const headerClassNames = [getClassName('bpk-banner-alert__header')];
+  const sectionClassNames = ['bpk-banner-alert', `bpk-banner-alert--${type}`]
+    .map(sectionClassName => getClassName(sectionClassName));
+
+  if (isExpandable) {
+    headerClassNames.push(getClassName('bpk-banner-alert__header--expandable'));
+    ariaRoles.push('button');
   }
 
-  render() {
-    const {
-      animateOnEnter,
-      animateOnLeave,
-      ariaLive,
-      children,
-      className,
-      dismissable,
-      dismissButtonLabel,
-      message,
-      onDismiss,
-      show,
-      type,
-      toggleButtonLabel,
-      ...rest
-    } = this.props;
-    const isExpanded = this.state.expanded;
-    const isExpandable = children;
-    const showChildren = isExpandable && isExpanded;
-    const ariaRoles = ['alert'];
-
-    const headerClassNames = [getClassName('bpk-banner-alert__header')];
-    const sectionClassNames = ['bpk-banner-alert', `bpk-banner-alert--${type}`]
-      .map(sectionClassName => getClassName(sectionClassName));
-
-    if (isExpandable) {
-      headerClassNames.push(getClassName('bpk-banner-alert__header--expandable'));
-      ariaRoles.push('button');
-    }
-
-    /* eslint-disable
-    jsx-a11y/no-static-element-interactions,
-    jsx-a11y/click-events-have-key-events,
-    jsx-a11y/no-noninteractive-element-interactions
-    */
-    // Disabling 'click-events-have-key-events and interactive-supports-focus' because header element is not focusable.
-    // ToggleButton is focusable and works for this.
-    return (
-      <AnimateAndFade
-        className={className}
-        animateOnEnter={animateOnEnter}
-        animateOnLeave={dismissable || animateOnLeave}
-        show={show}
-      >
-        <section className={sectionClassNames.join(' ')} {...rest}>
-          <header
-            role={ariaRoles.join(' ')}
-            aria-live={ariaLive}
-            className={headerClassNames.join(' ')}
-            onClick={this.onExpand}
-          >
-            <span className={getClassName('bpk-banner-alert__icon')}>{getIconForType(type)}</span>
-          &nbsp;
-            <span className={getClassName('bpk-banner-alert__message')}>{message}</span>
-          &nbsp;
-            {isExpandable && (
-              <span className={getClassName('bpk-banner-alert__toggle')}>
-                <ToggleButton expanded={isExpanded} label={toggleButtonLabel} />
-              </span>
+  /* eslint-disable
+  jsx-a11y/no-static-element-interactions,
+  jsx-a11y/click-events-have-key-events,
+  jsx-a11y/no-noninteractive-element-interactions
+  */
+  // Disabling 'click-events-have-key-events and interactive-supports-focus' because header element is not focusable.
+  // ToggleButton is focusable and works for this.
+  return (
+    <AnimateAndFade
+      className={className}
+      animateOnEnter={animateOnEnter}
+      animateOnLeave={dismissable || animateOnLeave}
+      show={show}
+    >
+      <section className={sectionClassNames.join(' ')} {...rest}>
+        <header
+          role={ariaRoles.join(' ')}
+          aria-live={ariaLive}
+          className={headerClassNames.join(' ')}
+          onClick={onBannerExpandToggle}
+        >
+          <span className={getClassName('bpk-banner-alert__icon')}>{getIconForType(type)}</span>
+        &nbsp;
+          <span className={getClassName('bpk-banner-alert__message')}>{message}</span>
+        &nbsp;
+          {isExpandable && (
+            <span className={getClassName('bpk-banner-alert__toggle')}>
+              <ToggleButton expanded={expanded} label={toggleButtonLabel} />
+            </span>
+        )}
+          {dismissable && (
+            <span className={getClassName('bpk-banner-alert__toggle')}>
+              <BpkCloseButton
+                className={getClassName('bpk-banner-alert__toggle-button')}
+                onClick={onBannerDismiss}
+                aria-label={dismissButtonLabel}
+                label={dismissButtonLabel}
+              />
+            </span>
           )}
-            {dismissable && (
-              <span className={getClassName('bpk-banner-alert__toggle')}>
-                <BpkCloseButton
-                  className={getClassName('bpk-banner-alert__toggle-button')}
-                  onClick={this.onDismiss}
-                  aria-label={dismissButtonLabel}
-                  label={dismissButtonLabel}
-                />
-              </span>
-            )}
-          </header>
-          <BpkAnimateHeight duration={parseInt(durationSm, 10)} height={showChildren ? 'auto' : 0}>
-            <div className={getClassName('bpk-banner-alert__children-container')}>{children}</div>
-          </BpkAnimateHeight>
-        </section>
-      </AnimateAndFade>
-    );
-    /* eslint-enable */
-  }
-}
+        </header>
+        <BpkAnimateHeight duration={parseInt(durationSm, 10)} height={showChildren ? 'auto' : 0}>
+          <div className={getClassName('bpk-banner-alert__children-container')}>{children}</div>
+        </BpkAnimateHeight>
+      </section>
+    </AnimateAndFade>
+  );
+  /* eslint-enable */
+};
 
 BpkBannerAlert.propTypes = {
   type: PropTypes.oneOf([
@@ -206,11 +194,13 @@ BpkBannerAlert.propTypes = {
   animateOnEnter: PropTypes.bool,
   animateOnLeave: PropTypes.bool,
   children: PropTypes.node,
+  expanded: PropTypes.bool,
+  toggleButtonLabel: PropTypes.string,
+  onExpandToggle: PropTypes.func,
   dismissable: PropTypes.bool,
   dismissButtonLabel: PropTypes.string,
   onDismiss: PropTypes.func,
   show: PropTypes.bool,
-  toggleButtonLabel: PropTypes.string,
   className: PropTypes.string,
 };
 
@@ -219,11 +209,13 @@ BpkBannerAlert.defaultProps = {
   animateOnLeave: false,
   ariaLive: ARIA_LIVE.ASSERTIVE,
   children: null,
+  expanded: false,
+  toggleButtonLabel: null,
+  onExpandToggle: null,
   dismissable: false,
   dismissButtonLabel: null,
   onDismiss: null,
   show: true,
-  toggleButtonLabel: null,
   className: null,
 };
 

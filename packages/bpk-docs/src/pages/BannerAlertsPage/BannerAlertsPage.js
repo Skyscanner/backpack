@@ -258,6 +258,19 @@ const components = [
       />,
     ],
   },
+  {
+    id: 'withBannerAlertState',
+    title: 'withBannerAlertState',
+    blurb: [
+      <Paragraph>
+        Most common use of &quot;expandable&quot; and &quot;dismissable&quot; can be easily achieved
+        using the &quot;withBannerAlertState&quot; HOC.
+      </Paragraph>,
+      <Paragraph>
+        It also adds the option to automatically dismiss a banner after a certain period of time has elapsed.
+      </Paragraph>,
+    ],
+  },
 ];
 
 const BannerAlertsPage = () => (<DocsPageBuilder

@@ -570,10 +570,10 @@ exports[`BpkBannerAlert should render correctly with animateOnEnter 1`] = `
           className="bpk-banner-alert__toggle"
         >
           <button
-            aria-label={null}
+            aria-label="Dismiss"
             className="bpk-close-button bpk-banner-alert__toggle-button"
             onClick={[Function]}
-            title={null}
+            title="Dismiss"
             type="button"
           >
             <span
@@ -701,10 +701,10 @@ exports[`BpkBannerAlert should render correctly with animateOnLeave 1`] = `
           className="bpk-banner-alert__toggle"
         >
           <button
-            aria-label={null}
+            aria-label="Dismiss"
             className="bpk-close-button bpk-banner-alert__toggle-button"
             onClick={[Function]}
-            title={null}
+            title="Dismiss"
             type="button"
           >
             <span
@@ -1188,10 +1188,10 @@ exports[`BpkBannerAlert should render correctly with show set false 1`] = `
           className="bpk-banner-alert__toggle"
         >
           <button
-            aria-label={null}
+            aria-label="Dismiss"
             className="bpk-close-button bpk-banner-alert__toggle-button"
             onClick={[Function]}
-            title={null}
+            title="Dismiss"
             type="button"
           >
             <span

@@ -17,6 +17,7 @@
  */
 
 import BpkBannerAlert, { ALERT_TYPES } from './src/BpkBannerAlert';
+import withBannerAlertState from './src/withBannerAlertState';
 
-export { ALERT_TYPES };
+export { ALERT_TYPES, withBannerAlertState };
 export default BpkBannerAlert;
