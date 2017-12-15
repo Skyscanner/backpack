@@ -28,6 +28,7 @@ import BpkContentContainer from 'bpk-component-content-container';
 import TokenSwitcher from './TokenSwitcher';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
+import UsageTable from './../../components/UsageTable';
 import SassdocLink from './../../components/SassdocLink';
 import ComponentScreenshots from './ComponentScreenshots';
 import PresentationBlock from './../../components/PresentationBlock';
@@ -117,6 +118,10 @@ const DocsPageBuilder = props => (
     )}
     {props.tokenMap ? <TokenSwitcher tokens={props.tokenMap} /> : null}
     {flatten(props.components.map(ComponentExample))}
+    {props.usageTable ? flatten([
+      <Heading id="usage" level="h2">Do&apos;s & Dont&apos;s</Heading>,
+      <UsageTable data={props.usageTable} />,
+    ]) : null}
     {props.readme ? flatten([
       <Heading id="readme" level="h2">Readme</Heading>,
       <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(props.readme) }} bareHtml />,
