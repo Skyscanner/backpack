@@ -43,10 +43,11 @@ const withDefaultProps = (WrappedComponent, defaultProps) => {
   };
 
   component.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
     className: PropTypes.string,
   };
   component.defaultProps = {
+    children: null,
     className: null,
   };
 

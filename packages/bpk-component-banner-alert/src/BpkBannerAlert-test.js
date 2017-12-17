@@ -69,6 +69,17 @@ describe('BpkBannerAlert', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with a custom banner-alert class name', () => {
+    const tree = renderer.create(
+      <BpkBannerAlert
+        type={ALERT_TYPES.WARN}
+        message={message}
+        bannerClassName="custom-class"
+      />,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with arbitrary props', () => {
     const tree = renderer.create(
       <BpkBannerAlert type={ALERT_TYPES.WARN} message={message} id="custom-id" hidden="hidden" />,
