@@ -24,3 +24,20 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+.bpk-data-table-column__header {
+  display: inline-block;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.bpk-data-table-column__sort-icon {
+  margin: 0 0 0 $bpk-spacing-xs;
+  fill: $bpk-color-gray-700;
+
+  @include bpk-rtl {
+    margin: 0 $bpk-spacing-xs 0 0;
+  }
+}

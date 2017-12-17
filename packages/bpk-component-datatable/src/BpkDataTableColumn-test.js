@@ -18,7 +18,7 @@
 
 import React from 'react';
 import { Column } from 'react-virtualized';
-import BpkDataTableColumn from './BpkDataTableColumn';
+import BpkDataTableColumn, { bpkHeaderRenderer } from './BpkDataTableColumn';
 
 const defaultProps = { label: 'Name', dataKey: 'name', width: 100 };
 
@@ -26,8 +26,11 @@ describe('BpkDataTableColumn', () => {
   it('has the same propTypes as react-virtualized Column', () => {
     expect(BpkDataTableColumn.propTypes).toEqual(Column.propTypes);
   });
-  it('has the same defaultProps as react-virtualized Column', () => {
-    expect(BpkDataTableColumn.defaultProps).toEqual(Column.defaultProps);
+  it('has the same defaultProps as react-virtualized Column, with the exception of headerRenderer', () => {
+    expect(BpkDataTableColumn.defaultProps).toEqual({
+      ...Column.defaultProps,
+      headerRenderer: bpkHeaderRenderer,
+    });
   });
   describe('toColumn', () => {
     const toColumn = (props = {}) =>

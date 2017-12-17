@@ -44,23 +44,26 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
         tabIndex={0}
       >
         <span
-          className="ReactVirtualized__Table__headerTruncatedText"
+          className="bpk-data-table-column__header"
           title="Name"
         >
           Name
         </span>
         <svg
-          className="ReactVirtualized__Table__sortableHeaderIcon ReactVirtualized__Table__sortableHeaderIcon--ASC"
-          height={18}
+          className="bpk-data-table-column__sort-icon bpk-icon--rtl-support"
+          height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
           viewBox="0 0 24 24"
-          width={18}
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M7 14l5-5 5 5z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
+            d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
           />
         </svg>
       </div>
@@ -80,7 +83,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
         tabIndex={0}
       >
         <span
-          className="ReactVirtualized__Table__headerTruncatedText"
+          className="bpk-data-table-column__header"
           title="Description"
         >
           Description
@@ -102,7 +105,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
         tabIndex={0}
       >
         <span
-          className="ReactVirtualized__Table__headerTruncatedText"
+          className="bpk-data-table-column__header"
           title="Bla"
         >
           Bla
@@ -171,23 +174,26 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
       tabIndex={0}
     >
       <span
-        className="ReactVirtualized__Table__headerTruncatedText"
+        className="bpk-data-table-column__header"
         title="Name"
       >
         Name
       </span>
       <svg
-        className="ReactVirtualized__Table__sortableHeaderIcon ReactVirtualized__Table__sortableHeaderIcon--ASC"
-        height={18}
+        className="bpk-data-table-column__sort-icon bpk-icon--rtl-support"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
         viewBox="0 0 24 24"
-        width={18}
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M7 14l5-5 5 5z"
-        />
-        <path
-          d="M0 0h24v24H0z"
-          fill="none"
+          d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
         />
       </svg>
     </div>
@@ -207,7 +213,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
       tabIndex={0}
     >
       <span
-        className="ReactVirtualized__Table__headerTruncatedText"
+        className="bpk-data-table-column__header"
         title="Description"
       >
         Description
@@ -229,7 +235,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
       tabIndex={0}
     >
       <span
-        className="ReactVirtualized__Table__headerTruncatedText"
+        className="bpk-data-table-column__header"
         title="Bla"
       >
         Bla
@@ -450,23 +456,26 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
         tabIndex={0}
       >
         <span
-          className="ReactVirtualized__Table__headerTruncatedText"
+          className="bpk-data-table-column__header"
           title="Name"
         >
           Name
         </span>
         <svg
-          className="ReactVirtualized__Table__sortableHeaderIcon ReactVirtualized__Table__sortableHeaderIcon--ASC"
-          height={18}
+          className="bpk-data-table-column__sort-icon bpk-icon--rtl-support"
+          height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
           viewBox="0 0 24 24"
-          width={18}
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M7 14l5-5 5 5z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
+            d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
           />
         </svg>
       </div>
@@ -486,7 +495,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
         tabIndex={0}
       >
         <span
-          className="ReactVirtualized__Table__headerTruncatedText"
+          className="bpk-data-table-column__header"
           title="Description"
         >
           Description
@@ -508,7 +517,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
         tabIndex={0}
       >
         <span
-          className="ReactVirtualized__Table__headerTruncatedText"
+          className="bpk-data-table-column__header"
           title="Bla"
         >
           Bla
@@ -585,23 +594,26 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
         tabIndex={0}
       >
         <span
-          className="ReactVirtualized__Table__headerTruncatedText"
+          className="bpk-data-table-column__header"
           title="Name"
         >
           Name
         </span>
         <svg
-          className="ReactVirtualized__Table__sortableHeaderIcon ReactVirtualized__Table__sortableHeaderIcon--ASC"
-          height={18}
+          className="bpk-data-table-column__sort-icon bpk-icon--rtl-support"
+          height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
           viewBox="0 0 24 24"
-          width={18}
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M7 14l5-5 5 5z"
-          />
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
+            d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
           />
         </svg>
       </div>
@@ -621,7 +633,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
         tabIndex={0}
       >
         <span
-          className="ReactVirtualized__Table__headerTruncatedText"
+          className="bpk-data-table-column__header"
           title="Description"
         >
           Description
@@ -643,7 +655,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
         tabIndex={0}
       >
         <span
-          className="ReactVirtualized__Table__headerTruncatedText"
+          className="bpk-data-table-column__header"
           title="Bla"
         >
           Bla
