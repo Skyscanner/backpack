@@ -35,6 +35,15 @@
     @include bpk-border-radius-sm;
   }
 
+  &--dialog {
+    width: auto;
+
+    @include bpk-breakpoint-mobile {
+      @include bpk-box-shadow-xl;
+      @include bpk-border-radius-sm;
+    }
+  }
+
   &--wide {
     @include bpk-breakpoint-above-mobile {
       max-width: $bpk-modal-wide-max-width;
@@ -66,6 +75,11 @@
     justify-content: space-between;
 
     @include bpk-border-bottom-sm($bpk-color-gray-100);
+
+    &--no-title {
+      padding-bottom: 0;
+      box-shadow: none;
+    }
   }
 
   &__heading {

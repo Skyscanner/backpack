@@ -30,6 +30,7 @@
     "bpk-component-content-container": "^1.1.42",
     "bpk-component-datepicker": "^7.2.0",
     "bpk-component-description-list": "^1.0.0",
+    "bpk-component-dialog": "^0.0.0",
     "bpk-component-drawer": "^1.1.0",
     "bpk-component-fieldset": "^1.0.40",
     "bpk-component-form-validation": "^1.0.39",

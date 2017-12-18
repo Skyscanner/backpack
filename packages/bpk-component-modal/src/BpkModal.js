@@ -33,6 +33,7 @@ const BpkModal = (props) => {
     onClose,
     target,
     renderTarget,
+    hideBackgroundOnMobile,
     ...rest
   } = props;
 
@@ -40,7 +41,12 @@ const BpkModal = (props) => {
 
   return (
     <Portal isOpen={isOpen} onClose={onClose} target={target} renderTarget={renderTarget}>
-      <ScrimBpkModalDialog onClose={onClose} {...rest} containerClassName={getClassName('bpk-modal__container')} />
+      <ScrimBpkModalDialog
+        onClose={onClose}
+        containerClassName={getClassName('bpk-modal__container')}
+        hideBackgroundOnMobile={hideBackgroundOnMobile}
+        {...rest}
+      />
     </Portal>
   );
 };
@@ -50,11 +56,13 @@ BpkModal.propTypes = {
   onClose: PropTypes.func.isRequired,
   renderTarget: PropTypes.func,
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+  hideBackgroundOnMobile: PropTypes.bool,
 };
 
 BpkModal.defaultProps = {
   renderTarget: null,
   target: null,
+  hideBackgroundOnMobile: true,
 };
 
 export default BpkModal;

@@ -16,35 +16,8 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins/index';
+@import '~bpk-mixins';
 
-.bpk-scrim {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: $bpk-zindex-scrim;
-  transition: opacity $bpk-duration-xs ease-in-out;
-  background-color: $bpk-scrim-background-color;
-  opacity: $bpk-scrim-opacity;
-  overflow: hidden;
-
-  &--appear {
-    opacity: $bpk-scrim-initial-opacity;
-  }
-
-  &--appear-active {
-    opacity: $bpk-scrim-opacity;
-
-    @include bpk-breakpoint-mobile {
-      opacity: $bpk-scrim-mobile-opacity;
-    }
-  }
-
-  &--hide-background {
-    @include bpk-breakpoint-mobile {
-      opacity: $bpk-scrim-mobile-opacity;
-    }
-  }
+.bpk-dialog-paragraph {
+  margin-bottom: $bpk-spacing-xs;
 }

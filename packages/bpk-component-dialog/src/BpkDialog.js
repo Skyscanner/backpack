@@ -18,36 +18,42 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
+import { cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-scrim.scss';
+import BpkModal from 'bpk-component-modal';
+import STYLES from './bpk-dialog.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkScrim = (props) => {
-  const classNames = [getClassName('bpk-scrim')];
-
-  if (props.hideBackgroundOnMobile) {
-    classNames.push(getClassName('bpk-scrim--hide-background'));
-  }
+const BpkDialog = (props) => {
+  const {
+    isOpen, onClose, target, dismissible, ...rest
+  } = props;
 
   return (
-    <TransitionInitialMount
-      appearClassName={getClassName('bpk-scrim--appear')}
-      appearActiveClassName={getClassName('bpk-scrim--appear-active')}
-      transitionTimeout={200}
-    >
-      <div className={classNames.join(' ')} />
-    </TransitionInitialMount>
+    <BpkModal
+      isOpen={isOpen}
+      onClose={dismissible ? onClose : () => {}}
+      target={target}
+      containerClassName={getClassName('bpk-dialog__container')}
+      dismissible={dismissible}
+      visibleBackground
+      dialog
+      {...rest}
+    />
   );
 };
 
-BpkScrim.propTypes = {
-  hideBackgroundOnMobile: PropTypes.bool,
+BpkDialog.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  target: PropTypes.element,
+  dismissible: PropTypes.bool,
 };
 
-BpkScrim.defaultProps = {
-  hideBackgroundOnMobile: false,
+BpkDialog.defaultProps = {
+  target: null,
+  dismissible: true,
 };
 
-export default BpkScrim;
+export default BpkDialog;
