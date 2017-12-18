@@ -2,6 +2,6 @@
 
 exports[`BpkScrim should render correctly 1`] = `
 <div
-  className="bpk-scrim"
+  className="bpk-scrim bpk-scrim--full-screen"
 />
 `;

@@ -131,6 +131,26 @@ const components = [
       </ModalContainer>,
     ],
   },
+  {
+    id: 'text-button',
+    title: 'No full screen on mobile',
+    blurb: [
+      <Paragraph>Modals can be non full screen on mobile widths.</Paragraph>,
+    ],
+    examples: [
+      <ModalContainer
+        title="Modal title"
+        closeLabel="Close modal"
+        buttonText="Open modal"
+        fullScreenOnMobile={false}
+      >
+        <Paragraph>
+          You can put anything you want in here, including forms:
+        </Paragraph>
+        <LoginFormExample />
+      </ModalContainer>,
+    ],
+  },
 ];
 
 const ModalsPage = () => (

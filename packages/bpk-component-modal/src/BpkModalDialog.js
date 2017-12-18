@@ -39,6 +39,10 @@ const BpkModalDialog = props => {
     classNames.push(getClassName('bpk-modal--iphone-fix'));
   }
 
+  if (props.fullScreenOnMobile) {
+    classNames.push(getClassName('bpk-modal--full-screen'));
+  }
+
   const headingId = `bpk-modal-heading-${props.id}`;
 
   /* eslint-disable jsx-a11y/no-static-element-interactions,jsx-a11y/no-noninteractive-element-interactions */
@@ -93,6 +97,7 @@ BpkModalDialog.propTypes = {
   closeText: PropTypes.string,
   wide: PropTypes.bool,
   isIphone: PropTypes.bool.isRequired,
+  fullScreenOnMobile: PropTypes.bool.isRequired,
   dialogRef: PropTypes.func.isRequired,
   closeEvents: PropTypes.shape({
     onTouchStart: PropTypes.func,

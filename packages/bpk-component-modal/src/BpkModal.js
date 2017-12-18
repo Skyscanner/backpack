@@ -28,7 +28,20 @@ const getClassName = cssModules(STYLES);
 const ScrimBpkModalDialog = withScrim(BpkModalDialog);
 
 const BpkModal = props => {
-  const { isOpen, onClose, target, renderTarget, ...rest } = props;
+  const {
+    isOpen,
+    onClose,
+    target,
+    renderTarget,
+    fullScreenOnMobile,
+    ...rest
+  } = props;
+
+  const containerClass = [getClassName('bpk-modal__container')];
+
+  if (fullScreenOnMobile) {
+    containerClass.push(getClassName('bpk-modal__container--full-screen'));
+  }
 
   delete rest.onClose;
 
@@ -41,8 +54,9 @@ const BpkModal = props => {
     >
       <ScrimBpkModalDialog
         onClose={onClose}
+        fullScreenOnMobile={fullScreenOnMobile}
         {...rest}
-        containerClassName={getClassName('bpk-modal__container')}
+        containerClassName={containerClass.join(' ')}
       />
     </Portal>
   );
@@ -53,11 +67,13 @@ BpkModal.propTypes = {
   onClose: PropTypes.func.isRequired,
   renderTarget: PropTypes.func,
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+  fullScreenOnMobile: PropTypes.bool,
 };
 
 BpkModal.defaultProps = {
   renderTarget: null,
   target: null,
+  fullScreenOnMobile: true,
 };
 
 export default BpkModal;

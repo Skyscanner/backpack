@@ -134,4 +134,23 @@ describe('BpkModalDialog', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly when it does not fills the screen on mobile', () => {
+    const tree = renderer
+      .create(
+        <BpkModalDialog
+          id="my-modal"
+          title="Modal title"
+          onClose={jest.fn()}
+          closeLabel="Close"
+          closeEvents={closeEvents}
+          dialogRef={jest.fn()}
+          fullScreenOnMobile={false}
+        >
+          Modal content
+        </BpkModalDialog>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

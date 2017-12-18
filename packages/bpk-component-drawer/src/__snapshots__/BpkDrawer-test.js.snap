@@ -9,7 +9,7 @@ exports[`BpkDrawer should render correctly in the given target if renderTarget i
       data-reactroot=""
     >
       <div
-        class="bpk-scrim"
+        class="bpk-scrim bpk-scrim--full-screen"
       />
       <div
         class="bpk-scrim-content bpk-drawer__container"

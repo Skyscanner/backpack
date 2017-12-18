@@ -3,7 +3,7 @@
 exports[`BpkScrim render should render correctly 1`] = `
 <div>
   <div
-    className="bpk-scrim"
+    className="bpk-scrim bpk-scrim--full-screen"
   />
   <div
     className="bpk-scrim-content "
@@ -26,6 +26,7 @@ exports[`BpkScrim render should render correctly 1`] = `
         }
       }
       dialogRef={[Function]}
+      fullScreenOnMobile={true}
       isIphone={false}
       onClose={[Function]}
     />
@@ -36,7 +37,7 @@ exports[`BpkScrim render should render correctly 1`] = `
 exports[`BpkScrim render should render correctly when is iPhone 1`] = `
 <div>
   <div
-    className="bpk-scrim"
+    className="bpk-scrim bpk-scrim--full-screen"
   />
   <div
     className="bpk-scrim-content bpk-scrim-content--iphone-fix "
@@ -59,6 +60,7 @@ exports[`BpkScrim render should render correctly when is iPhone 1`] = `
         }
       }
       dialogRef={[Function]}
+      fullScreenOnMobile={true}
       isIphone={true}
       onClose={[Function]}
     />
@@ -69,7 +71,7 @@ exports[`BpkScrim render should render correctly when is iPhone 1`] = `
 exports[`BpkScrim render should render correctly with containerClassName 1`] = `
 <div>
   <div
-    className="bpk-scrim"
+    className="bpk-scrim bpk-scrim--full-screen"
   />
   <div
     className="bpk-scrim-content containerClassName"
@@ -92,6 +94,7 @@ exports[`BpkScrim render should render correctly with containerClassName 1`] = `
         }
       }
       dialogRef={[Function]}
+      fullScreenOnMobile={true}
       isIphone={false}
       onClose={[Function]}
     />

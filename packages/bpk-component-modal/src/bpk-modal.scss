@@ -19,17 +19,19 @@
 @import '~bpk-mixins/index';
 
 .bpk-modal__container {
-  @include bpk-breakpoint-mobile {
-    background-color: $bpk-modal-background-color;
-  }
-
-  @include bpk-breakpoint-above-mobile {
-    display: flex;
-    padding: $bpk-spacing-base;
-  }
+  display: flex;
+  padding: $bpk-spacing-base;
 
   // IE11 and below hack for buggy flexbox support
   @media screen\0 {
     display: block;
+  }
+
+  &--full-screen {
+    @include bpk-breakpoint-mobile {
+      display: block;
+      padding: 0;
+      background-color: $bpk-modal-background-color;
+    }
   }
 }
