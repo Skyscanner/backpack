@@ -146,6 +146,17 @@ const ModalsPage = () => (
     ]}
     components={components}
     readme={modalReadme}
+    usageTable={{
+      dos: [
+        'Use when users need to regain context of where they are in the UI.',
+        'Use when users need to focus on a separate task/information in relation to their current goal.',
+      ],
+      donts: [
+        "Don't use for alerts, errors and confirmations - use a dialog instead.",
+        `Don't overuse modals as interruptions, as they will get in the way of the
+      user's main tasks, and may disrupt context.`,
+      ],
+    }}
     sassdocId="modals"
   />
 );

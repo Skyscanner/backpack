@@ -160,7 +160,7 @@ const TooltipsPage = () => (
     usageTable={{
       dos: [
         'Use to provide additional information about an element on the page, shown on hover.',
-        'Text-only works best.',
+        'Use text only where possible.',
       ],
       donts: [
         "Don't use on touch devices (try using a popover instead).",
