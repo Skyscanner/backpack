@@ -46,14 +46,14 @@ Supports all properties defined in [`Table`](https://github.com/bvaughn/react-vi
 in addition to the following:
 
 
-| Property     | PropType                | Required | Default Value        |
-| ------------ | ----------------------- | -------- | -------------------- |
-| rows         | arrayOf(Object)         | yes      | -                    |
-| children     | node                    | yes      | -                    |
-| height       | number                  | yes      | -                    |
-| width        | number                  | no       | full width of parent |
-| headerHeight | number                  | no       | 60                   |
-| rowHeight    | number                  | no       | 60                   |
+| Property     | PropType                    | Required | Default Value        |
+| ------------ | --------------------------- | -------- | -------------------- |
+| rows         | arrayOf(Object)             | true     | -                    |
+| children     | arrayOf(BpkDataTableColumn) | true     | -                    |
+| height       | number                      | true     | -                    |
+| width        | number                      | false    | full width of parent |
+| headerHeight | number                      | false    | 60                   |
+| rowHeight    | number                      | false    | 60                   |
 
 
 
