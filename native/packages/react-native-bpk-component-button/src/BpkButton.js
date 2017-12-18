@@ -18,11 +18,7 @@
 
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
-import {
-  View,
-  Platform,
-  ViewPropTypes,
-} from 'react-native';
+import { View, Platform, ViewPropTypes } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -43,8 +39,7 @@ import BpkButtonContainer from './layout/BpkButtonContainer';
 
 const BUTTON_TYPES = ['primary', 'featured', 'secondary', 'destructive'];
 
-
-const BpkButton = (props) => {
+const BpkButton = props => {
   const {
     accessibilityLabel,
     disabled,
@@ -60,7 +55,11 @@ const BpkButton = (props) => {
   let { theme } = props;
   // Validate the button type.
   if (!BUTTON_TYPES.includes(type)) {
-    throw new Error(`"${type}" is not a valid button type. Valid types are ${BUTTON_TYPES.join(', ')}`);
+    throw new Error(
+      `"${type}" is not a valid button type. Valid types are ${BUTTON_TYPES.join(
+        ', ',
+      )}`,
+    );
   }
 
   // Validate that button is themeable and all theming attributes
@@ -76,7 +75,9 @@ const BpkButton = (props) => {
       return null;
     }
     if (typeof icon === 'string') {
-      return <BpkIcon icon={icon} style={textStyle(theme, props)} small={!large} />;
+      return (
+        <BpkIcon icon={icon} style={textStyle(theme, props)} small={!large} />
+      );
     }
     return icon;
   };
@@ -94,7 +95,7 @@ const BpkButton = (props) => {
       {...rest}
     >
       <View style={getStyleForElement('view', props)}>
-        {!iconOnly &&
+        {!iconOnly && (
           <BpkText
             textStyle={large ? 'lg' : 'sm'}
             emphasize
@@ -102,7 +103,7 @@ const BpkButton = (props) => {
           >
             {Platform.OS === 'android' ? title.toUpperCase() : title}
           </BpkText>
-        }
+        )}
         {renderIcon()}
       </View>
     </BpkButtonContainer>
@@ -136,7 +137,4 @@ BpkButton.defaultProps = {
 };
 
 export default withTheme(BpkButton);
-export {
-  propTypes,
-  BUTTON_TYPES,
-};
+export { propTypes, BUTTON_TYPES };

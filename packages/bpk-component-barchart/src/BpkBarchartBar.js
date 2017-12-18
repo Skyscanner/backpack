@@ -31,7 +31,7 @@ const KEYCODES = {
   SPACEBAR: 32,
 };
 
-const handleKeyboardEvent = callback => (event) => {
+const handleKeyboardEvent = callback => event => {
   if (event.keyCode === KEYCODES.ENTER || event.keyCode === KEYCODES.SPACEBAR) {
     event.preventDefault();
     callback(event);
@@ -40,7 +40,7 @@ const handleKeyboardEvent = callback => (event) => {
 
 const borderRadius = remToPx(borderRadiusXs);
 
-const BpkBarchartBar = (props) => {
+const BpkBarchartBar = props => {
   const {
     x,
     y,
@@ -59,12 +59,22 @@ const BpkBarchartBar = (props) => {
 
   const classNames = [getClassName('bpk-barchart-bar')];
   const rectClassNames = [getClassName('bpk-barchart-bar__rect')];
-  const tappableAreaClassNames = [getClassName('bpk-barchart-bar__tappable-area')];
+  const tappableAreaClassNames = [
+    getClassName('bpk-barchart-bar__tappable-area'),
+  ];
 
-  if (className) { classNames.push(className); }
-  if (selected) { classNames.push(getClassName('bpk-barchart-bar--selected')); }
-  if (onClick || onHover || onTouch) { classNames.push(getClassName('bpk-barchart-bar--interactive')); }
-  if (outlier) { rectClassNames.push(getClassName('bpk-barchart-bar__rect--outlier')); }
+  if (className) {
+    classNames.push(className);
+  }
+  if (selected) {
+    classNames.push(getClassName('bpk-barchart-bar--selected'));
+  }
+  if (onClick || onHover || onTouch) {
+    classNames.push(getClassName('bpk-barchart-bar--interactive'));
+  }
+  if (outlier) {
+    rectClassNames.push(getClassName('bpk-barchart-bar__rect--outlier'));
+  }
 
   const isAriaPressed = !!(onClick && selected);
   const rectPadding = width * (padding / 2);

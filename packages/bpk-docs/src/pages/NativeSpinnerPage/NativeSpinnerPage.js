@@ -30,13 +30,15 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 import { THEMING } from './../../constants/routes';
 
-const reactNativeUrl = 'https://facebook.github.io/react-native/docs/activityindicator.html';
+const reactNativeUrl =
+  'https://facebook.github.io/react-native/docs/activityindicator.html';
 
 const components = [
   {
     id: 'default',
     title: 'Default',
-    blurb: 'By default, spinners come in a large size and are available in three types: primary, dark and light.', // eslint-disable-line max-len
+    blurb:
+      'By default, spinners come in a large size and are available in three types: primary, dark and light.', // eslint-disable-line max-len
     screenshots: [
       {
         title: 'iOS',
@@ -59,7 +61,8 @@ const components = [
   {
     id: 'small',
     title: 'Small',
-    blurb: 'Spinners can also appear in a smaller size in the same types as mentioned above.',
+    blurb:
+      'Spinners can also appear in a smaller size in the same types as mentioned above.',
     screenshots: [
       {
         title: 'iOS',
@@ -81,22 +84,25 @@ const components = [
   },
 ];
 
-const NativeSpinnerPage = () => (<DocsPageBuilder
-  title="Spinners"
-  blurb={[
-    <Paragraph>
-      Spinners are used to to indicate that a part of the product is loading or performing a task.
-      These are available in two sizes, small and large. It&#39;s a wrapper around the React
-      Native <BpkLink href={reactNativeUrl}>ActivityIndicator component</BpkLink>, therefore it supports all the
-      same behaviours and properties.
-    </Paragraph>,
-    <Paragraph>
-      Primary spinners can be <BpkLink href={THEMING}>themed</BpkLink>.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={readme}
-  showMenu
-/>);
+const NativeSpinnerPage = () => (
+  <DocsPageBuilder
+    title="Spinners"
+    blurb={[
+      <Paragraph>
+        Spinners are used to to indicate that a part of the product is loading
+        or performing a task. These are available in two sizes, small and large.
+        It&#39;s a wrapper around the React Native{' '}
+        <BpkLink href={reactNativeUrl}>ActivityIndicator component</BpkLink>,
+        therefore it supports all the same behaviours and properties.
+      </Paragraph>,
+      <Paragraph>
+        Primary spinners can be <BpkLink href={THEMING}>themed</BpkLink>.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={readme}
+    showMenu
+  />
+);
 
 export default NativeSpinnerPage;

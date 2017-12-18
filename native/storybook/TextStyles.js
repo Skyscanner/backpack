@@ -23,7 +23,9 @@ import BpkText from './../packages/react-native-bpk-component-text';
 import { spacingSm } from './../../packages/bpk-tokens/tokens/base.react.native';
 
 const StoryHeading = ({ children, ...rest }) => (
-  <BpkText textStyle="xxl" {...rest}>{children}</BpkText>
+  <BpkText textStyle="xxl" {...rest}>
+    {children}
+  </BpkText>
 );
 
 StoryHeading.propTypes = {
@@ -31,7 +33,9 @@ StoryHeading.propTypes = {
 };
 
 const StorySubheading = ({ children, ...rest }) => (
-  <BpkText textStyle="sm" style={{ marginBottom: spacingSm }} {...rest}>{children}</BpkText>
+  <BpkText textStyle="sm" style={{ marginBottom: spacingSm }} {...rest}>
+    {children}
+  </BpkText>
 );
 
 StorySubheading.propTypes = {

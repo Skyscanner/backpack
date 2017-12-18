@@ -25,21 +25,25 @@ import BpkThemeProvider from './BpkThemeProvider';
 const commonTests = () => {
   describe('BpkThemeProvider', () => {
     it('should render correctly', () => {
-      const tree = renderer.create(
-        <BpkThemeProvider theme={{ color: 'white' }}>
-          <Text>Lorem ipsum</Text>
-        </BpkThemeProvider>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkThemeProvider theme={{ color: 'white' }}>
+            <Text>Lorem ipsum</Text>
+          </BpkThemeProvider>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should error when theme is not provided', () => {
       jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
-      expect(() => renderer.create(
-        <BpkThemeProvider>
-          <Text>Lorem ipsum</Text>
-        </BpkThemeProvider>,
-      )).toThrow('[ThemeProvider] Please make your theme prop a plain object');
+      expect(() =>
+        renderer.create(
+          <BpkThemeProvider>
+            <Text>Lorem ipsum</Text>
+          </BpkThemeProvider>,
+        ),
+      ).toThrow('[ThemeProvider] Please make your theme prop a plain object');
     });
   });
 };

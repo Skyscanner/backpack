@@ -23,7 +23,11 @@ import { IndexLink } from 'react-router';
 import BpkLink from 'bpk-component-link';
 import AnimateHeight from 'bpk-animate-height';
 import BpkRouterLink from 'bpk-component-router-link';
-import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+import {
+  BpkGridContainer,
+  BpkGridRow,
+  BpkGridColumn,
+} from 'bpk-component-grid';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './Header.scss';
@@ -37,28 +41,45 @@ const headerLinks = [
   { to: ROUTES.TOKENS, children: 'Tokens' },
   { to: ROUTES.COMPONENTS, children: 'Components' },
   { to: ROUTES.RESOURCES, children: 'Resources' },
-  { href: 'https://github.com/Skyscanner/backpack', children: 'GitHub', blank: true },
+  {
+    href: 'https://github.com/Skyscanner/backpack',
+    children: 'GitHub',
+    blank: true,
+  },
 ];
 
 const toNavList = (links, hideOnTablet) => {
   const classNames = [getClassName('bpkdocs-header__nav-list')];
 
-  if (hideOnTablet) { classNames.push(getClassName('bpkdocs-header__nav-list--hide-on-tablet')); }
+  if (hideOnTablet) {
+    classNames.push(getClassName('bpkdocs-header__nav-list--hide-on-tablet'));
+  }
 
   return (
     <ul className={classNames.join(' ')}>
       {links.map((link = {}) => (
-        <li key={link.to || link.href} className={getClassName('bpkdocs-header__nav-list-item')}>
-          {link.to
-            ? <BpkRouterLink className={getClassName('bpkdocs-header__nav-list-link')} {...link} />
-            : <BpkLink className={getClassName('bpkdocs-header__nav-list-link')} {...link} />}
+        <li
+          key={link.to || link.href}
+          className={getClassName('bpkdocs-header__nav-list-item')}
+        >
+          {link.to ? (
+            <BpkRouterLink
+              className={getClassName('bpkdocs-header__nav-list-link')}
+              {...link}
+            />
+          ) : (
+            <BpkLink
+              className={getClassName('bpkdocs-header__nav-list-link')}
+              {...link}
+            />
+          )}
         </li>
-        ))}
+      ))}
     </ul>
   );
 };
 
-const Header = (props) => {
+const Header = props => {
   const { expanded, onHamburgerClick } = props;
 
   return (
@@ -66,8 +87,13 @@ const Header = (props) => {
       <BpkGridContainer>
         <BpkGridRow>
           <BpkGridColumn width={2} mobileWidth={6}>
-            <IndexLink to={ROUTES.HOME} className={getClassName('bpkdocs-header__logo-link')}>
-              <span className={getClassName('bpkdocs-header__logo-link-text')}>Backpack</span>
+            <IndexLink
+              to={ROUTES.HOME}
+              className={getClassName('bpkdocs-header__logo-link')}
+            >
+              <span className={getClassName('bpkdocs-header__logo-link-text')}>
+                Backpack
+              </span>
             </IndexLink>
           </BpkGridColumn>
           <BpkGridColumn width={10} mobileWidth={6}>
@@ -82,16 +108,13 @@ const Header = (props) => {
           </BpkGridColumn>
         </BpkGridRow>
       </BpkGridContainer>
-      <AnimateHeight
-        height={expanded ? 'auto' : 0}
-        duration={200}
-      >
-        <BpkGridContainer className={getClassName('bpkdocs-header__tablet-nav-container')}>
+      <AnimateHeight height={expanded ? 'auto' : 0} duration={200}>
+        <BpkGridContainer
+          className={getClassName('bpkdocs-header__tablet-nav-container')}
+        >
           <BpkGridRow>
             <BpkGridColumn width={12} padded={false}>
-              <nav>
-                {toNavList(headerLinks)}
-              </nav>
+              <nav>{toNavList(headerLinks)}</nav>
             </BpkGridColumn>
           </BpkGridRow>
         </BpkGridContainer>
@@ -99,7 +122,6 @@ const Header = (props) => {
     </header>
   );
 };
-
 
 Header.propTypes = {
   expanded: PropTypes.bool.isRequired,

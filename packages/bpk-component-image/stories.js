@@ -20,13 +20,19 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
-import BpkImage, { /* BpkBackgroundImage, */ withLazyLoading, withLoadingBehavior } from './index';
+import BpkImage, {
+  /* BpkBackgroundImage, */ withLazyLoading,
+  withLoadingBehavior,
+} from './index';
 
-const image = 'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
+const image =
+  'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
 const documentIfExists = typeof window !== 'undefined' ? document : null;
 const FadingImage = withLoadingBehavior(BpkImage);
 const LazyLoadedImage = withLazyLoading(BpkImage, documentIfExists);
-const FadingLazyLoadedImage = withLoadingBehavior(withLazyLoading(BpkImage, documentIfExists));
+const FadingLazyLoadedImage = withLoadingBehavior(
+  withLazyLoading(BpkImage, documentIfExists),
+);
 // Unused, will be reinstated when BpkBackgroundImage is.
 // const FadingLazyLoadedBackgroundImage = withLoadingBehavior(withLazyLoading(BpkBackgroundImage, documentIfExists));
 
@@ -41,12 +47,7 @@ storiesOf('bpk-component-image', module)
     />
   ))
   .add('Full Width', () => (
-    <BpkImage
-      altText="image"
-      width={612}
-      height={408}
-      src={image}
-    />
+    <BpkImage altText="image" width={612} height={408} src={image} />
   ))
   .add('Using SrcSet', () => (
     <BpkImage
@@ -90,10 +91,8 @@ storiesOf('bpk-component-image', module)
     />
   ))
   .add('Within a scroll div', () => (
-    <BpkMobileScrollContainer >
-      <div
-        style={{ display: 'flex' }}
-      >
+    <BpkMobileScrollContainer>
+      <div style={{ display: 'flex' }}>
         <FadingLazyLoadedImage
           altText="image"
           width={612}

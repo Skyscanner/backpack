@@ -22,14 +22,13 @@ import React from 'react';
 
 import createThemeListener from './create-theme-listener';
 
-const getDisplayName = Component => (
-  Component.displayName || Component.name || 'Component'
-);
+const getDisplayName = Component =>
+  Component.displayName || Component.name || 'Component';
 
 const createWithTheme = () => {
   const themeListener = createThemeListener();
 
-  return (Component) => {
+  return Component => {
     class WithTheme extends React.Component {
       constructor(props, context) {
         super(props, context);

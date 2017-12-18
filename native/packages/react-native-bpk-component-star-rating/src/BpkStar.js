@@ -56,15 +56,17 @@ const styles = StyleSheet.create({
   },
 });
 
-const BpkStar = (props) => {
-  const {
-    type, ...rest
-  } = props;
+const BpkStar = props => {
+  const { type, ...rest } = props;
   const iconType = type === STAR_TYPES.FULL ? 'star' : 'star-half';
 
   const commonStarStyles = [styles.star];
 
-  const foregroundStarStyles = [...commonStarStyles, styles.foregroundStar, styles.filled];
+  const foregroundStarStyles = [
+    ...commonStarStyles,
+    styles.foregroundStar,
+    styles.filled,
+  ];
 
   if (I18nManager.isRTL && type === STAR_TYPES.HALF) {
     foregroundStarStyles.push(styles.rightToLeftHalfStar);
@@ -78,17 +80,16 @@ const BpkStar = (props) => {
   return (
     <View style={styles.container} {...rest} accessible={false}>
       <BpkIcon icon="star" style={commonStarStyles} />
-      {type !== STAR_TYPES.EMPTY && <BpkIcon icon={iconType} style={foregroundStarStyles} />}
+      {type !== STAR_TYPES.EMPTY && (
+        <BpkIcon icon={iconType} style={foregroundStarStyles} />
+      )}
     </View>
   );
 };
 
 BpkStar.propTypes = {
-  type: PropTypes.oneOf([
-    STAR_TYPES.EMPTY,
-    STAR_TYPES.HALF,
-    STAR_TYPES.FULL,
-  ]).isRequired,
+  type: PropTypes.oneOf([STAR_TYPES.EMPTY, STAR_TYPES.HALF, STAR_TYPES.FULL])
+    .isRequired,
 };
 
 export default BpkStar;

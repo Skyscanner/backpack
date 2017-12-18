@@ -47,6 +47,9 @@ export default function withLoadingBehavior(Component) {
       );
     }
   }
-  WithLoadingBehavior.displayName = wrapDisplayName(Component, 'withLoadingBehavior');
+  WithLoadingBehavior.displayName = wrapDisplayName(
+    Component,
+    'withLoadingBehavior',
+  );
   return WithLoadingBehavior;
 }

@@ -24,11 +24,13 @@ import STYLES from './bpk-content-container.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkContentContainer = (props) => {
+const BpkContentContainer = props => {
   const TagName = props.tagName;
   const classNames = [getClassName('bpk-content-container')];
 
-  if (props.bareHtml) { classNames.push(getClassName('bpk-content-container--bare-html')); }
+  if (props.bareHtml) {
+    classNames.push(getClassName('bpk-content-container--bare-html'));
+  }
 
   /* eslint-disable react/no-danger-with-children */
   return (
@@ -59,4 +61,3 @@ BpkContentContainer.defaultProps = {
 };
 
 export default BpkContentContainer;
-

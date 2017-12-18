@@ -30,14 +30,11 @@ import STYLES from './stories.scss';
 
 const getClassName = cssModules(STYLES);
 
-const Paragraph = withDefaultProps(
-  BpkText,
-  {
-    textStyle: 'base',
-    tagName: 'p',
-    className: getClassName('bpk-popover-paragraph'),
-  },
-);
+const Paragraph = withDefaultProps(BpkText, {
+  textStyle: 'base',
+  tagName: 'p',
+  className: getClassName('bpk-popover-paragraph'),
+});
 
 class PopoverContainer extends Component {
   constructor() {
@@ -79,12 +76,7 @@ class PopoverContainer extends Component {
   }
 
   render() {
-    const {
-      targetFunction,
-      changeProps,
-      id,
-      ...rest
-    } = this.props;
+    const { targetFunction, changeProps, id, ...rest } = this.props;
     let target = null;
     let openButton = <BpkButton onClick={this.openPopover}> Open </BpkButton>;
 
@@ -105,35 +97,27 @@ class PopoverContainer extends Component {
           isOpen={this.state.isOpen}
           label="My popover"
           onClose={this.closePopover}
-          renderTarget={() =>
-            document.getElementById('popover-container')
-          }
+          renderTarget={() => document.getElementById('popover-container')}
           target={target}
           {...rest}
         >
           <BpkContentContainer>
             <Paragraph>My popover content.</Paragraph>
             <Paragraph>Some more popover content.</Paragraph>
-            {
-              changeProps ?
-                <Paragraph>
-                  <BpkButton onClick={this.changeContent}>
-                    Change content
-                  </BpkButton>
-                  <BpkButton onClick={this.changeTarget}>
-                    Change target
-                  </BpkButton>
-                </Paragraph>
-                :
-                null
-            }
-            {this.state.showLongContent
-              ? <Paragraph>
-                This is some long content.
-                  This is some long content.
-                  This is some long content.
-                </Paragraph>
-              : null}
+            {changeProps ? (
+              <Paragraph>
+                <BpkButton onClick={this.changeContent}>
+                  Change content
+                </BpkButton>
+                <BpkButton onClick={this.changeTarget}>Change target</BpkButton>
+              </Paragraph>
+            ) : null}
+            {this.state.showLongContent ? (
+              <Paragraph>
+                This is some long content. This is some long content. This is
+                some long content.
+              </Paragraph>
+            ) : null}
           </BpkContentContainer>
         </BpkPopover>
       </div>
@@ -153,10 +137,7 @@ PopoverContainer.defaultProps = {
 };
 
 const Spacer = props => (
-  <div
-    className={getClassName('bpk-popover-spacer')}
-    {...props}
-  />
+  <div className={getClassName('bpk-popover-spacer')} {...props} />
 );
 
 storiesOf('bpk-component-popover', module)
@@ -197,20 +178,28 @@ storiesOf('bpk-component-popover', module)
     <Spacer>
       <div id="attachElement">Pop over attached here</div>
       <p>&nbsp; </p>
-      <PopoverContainer id="my-popover" targetFunction={() => document.getElementById('attachElement')} />
+      <PopoverContainer
+        id="my-popover"
+        targetFunction={() => document.getElementById('attachElement')}
+      />
     </Spacer>
   ))
   .add('Not rendering if external element does not exist', () => (
     <Spacer>
       <div id="attachElement">Popover does not open</div>
       <p>&nbsp; </p>
-      <PopoverContainer id="my-popover" targetFunction={() => document.getElementById('doesNotExist')} />
+      <PopoverContainer
+        id="my-popover"
+        targetFunction={() => document.getElementById('doesNotExist')}
+      />
     </Spacer>
   ))
   .add('Repositioning', () => (
     // This story demonstrates the popover repositioning itself when props change (including children).
     <Spacer>
-      <Paragraph id="reposition-alt-target" style={{ float: 'right' }}>Different target</Paragraph>
+      <Paragraph id="reposition-alt-target" style={{ float: 'right' }}>
+        Different target
+      </Paragraph>
       <PopoverContainer
         id="my-popover"
         changeProps

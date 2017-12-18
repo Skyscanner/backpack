@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const BpkCard = (props) => {
+const BpkCard = props => {
   const {
     padded,
     children,
@@ -57,9 +57,15 @@ const BpkCard = (props) => {
   } = props;
 
   const style = [styles.card];
-  if (padded) { style.push(styles.cardPadded); }
-  if (focused) { style.push(styles.cardFocused); }
-  if (userStyle) { style.push(userStyle); }
+  if (padded) {
+    style.push(styles.cardPadded);
+  }
+  if (focused) {
+    style.push(styles.cardFocused);
+  }
+  if (userStyle) {
+    style.push(userStyle);
+  }
 
   return (
     <View style={userStyle}>

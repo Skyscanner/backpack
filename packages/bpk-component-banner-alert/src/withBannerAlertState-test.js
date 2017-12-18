@@ -26,7 +26,6 @@ import BpkCloseButton from 'bpk-component-close-button';
 import BpkBannerAlert, { ALERT_TYPES } from './BpkBannerAlert';
 import withBannerAlertState from './withBannerAlertState';
 
-
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 const longMessage = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
@@ -45,27 +44,23 @@ const EnhancedComponent = withBannerAlertState(BannerAlert);
 
 describe('withBannerAlertState(BpkBannerAlert)', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <EnhancedComponent />,
-    ).toJSON();
+    const tree = renderer.create(<EnhancedComponent />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly collapsed', () => {
-    const tree = renderer.create(
-      <EnhancedComponent expanded={false}>
-        {longMessage}
-      </EnhancedComponent>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <EnhancedComponent expanded={false}>{longMessage}</EnhancedComponent>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly expanded', () => {
-    const tree = renderer.create(
-      <EnhancedComponent expanded>
-        {longMessage}
-      </EnhancedComponent>,
-    ).toJSON();
+    const tree = renderer
+      .create(<EnhancedComponent expanded>{longMessage}</EnhancedComponent>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -73,9 +68,7 @@ describe('withBannerAlertState(BpkBannerAlert)', () => {
     jest.useFakeTimers();
 
     const tree = renderer.create(
-      <EnhancedComponent hideAfter={3}>
-        {longMessage}
-      </EnhancedComponent>,
+      <EnhancedComponent hideAfter={3}>{longMessage}</EnhancedComponent>,
     );
 
     expect(tree.toJSON()).toMatchSnapshot();
@@ -92,7 +85,10 @@ describe('withBannerAlertState(BpkBannerAlert)', () => {
       <EnhancedComponent dismissable onDismiss={onDismissMock} />,
     );
 
-    wrapper.find(BpkCloseButton).first().simulate('click');
+    wrapper
+      .find(BpkCloseButton)
+      .first()
+      .simulate('click');
     expect(onDismissMock).toBeCalled();
   });
 
@@ -118,7 +114,10 @@ describe('withBannerAlertState(BpkBannerAlert)', () => {
       </EnhancedComponent>,
     );
 
-    wrapper.find('button').first().simulate('click');
+    wrapper
+      .find('button')
+      .first()
+      .simulate('click');
     expect(onExpandMock).toBeCalled();
   });
 });

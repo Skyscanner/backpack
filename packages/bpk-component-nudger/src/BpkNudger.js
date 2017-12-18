@@ -32,7 +32,7 @@ const getClassName = cssModules(STYLES);
 const AlignedMinusIcon = withButtonAlignment(MinusIcon);
 const AlignedPlusIcon = withButtonAlignment(PlusIcon);
 
-const BpkNudger = (props) => {
+const BpkNudger = props => {
   const {
     id,
     min,
@@ -44,16 +44,22 @@ const BpkNudger = (props) => {
     decreaseButtonLabel,
   } = props;
   const classNames = [getClassName('bpk-nudger')];
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   const adjustedValue = Math.floor(clamp(value, min, max));
   const decreaseDisabled = adjustedValue <= min;
   const increaseDisabled = adjustedValue >= max;
 
   const minusIconClassNames = [getClassName('bpk-nudger__icon')];
-  if (decreaseDisabled) { minusIconClassNames.push(getClassName('bpk-nudger__icon--disabled')); }
+  if (decreaseDisabled) {
+    minusIconClassNames.push(getClassName('bpk-nudger__icon--disabled'));
+  }
   const plusIconClassNames = [getClassName('bpk-nudger__icon')];
-  if (increaseDisabled) { plusIconClassNames.push(getClassName('bpk-nudger__icon--disabled')); }
+  if (increaseDisabled) {
+    plusIconClassNames.push(getClassName('bpk-nudger__icon--disabled'));
+  }
 
   return (
     <div className={classNames.join(' ')}>

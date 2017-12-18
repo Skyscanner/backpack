@@ -71,7 +71,9 @@ class ModalContainer extends Component {
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           wide={this.state.hideTitle}
-          getApplicationElement={() => document.getElementById('application-container')}
+          getApplicationElement={() =>
+            document.getElementById('application-container')
+          }
           renderTarget={() => document.getElementById('portal-taget')}
           {...rest}
         >
@@ -92,14 +94,17 @@ const components = [
   {
     id: 'default',
     title: 'Default modal',
-    blurb: 'The default modal has a title and a close button and comes in 2 widths, regular and wide.',
+    blurb:
+      'The default modal has a title and a close button and comes in 2 widths, regular and wide.',
     examples: [
       <ModalContainer
         title="Modal title"
         closeLabel="Close modal"
         buttonText="Open modal"
       >
-        <Paragraph>You can put anything you want in here, including forms:</Paragraph>
+        <Paragraph>
+          You can put anything you want in here, including forms:
+        </Paragraph>
         <LoginFormExample />
       </ModalContainer>,
     ],
@@ -109,8 +114,8 @@ const components = [
     title: 'Text button',
     blurb: [
       <Paragraph>
-        Modals can be configured to display the close button as text - useful for when a close icon
-        doesn&apos;t fit the context.
+        Modals can be configured to display the close button as text - useful
+        for when a close icon doesn&apos;t fit the context.
       </Paragraph>,
     ],
     examples: [
@@ -119,25 +124,30 @@ const components = [
         closeText="Done"
         buttonText="Open modal"
       >
-        <Paragraph>You can put anything you want in here, including forms:</Paragraph>
+        <Paragraph>
+          You can put anything you want in here, including forms:
+        </Paragraph>
         <LoginFormExample />
       </ModalContainer>,
     ],
   },
 ];
 
-const ModalsPage = () => (<DocsPageBuilder
-  title="Modals"
-  blurb={[
-    <Paragraph>
-      Modals are used to display content or views that are separate from the rest of the app or page. When triggered,
-      modals will emerge from the centre of the viewport with a backdrop to indicate their separation from everything
-      else. On mobile viewports, they occupy the entire screen.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={modalReadme}
-  sassdocId="modals"
-/>);
+const ModalsPage = () => (
+  <DocsPageBuilder
+    title="Modals"
+    blurb={[
+      <Paragraph>
+        Modals are used to display content or views that are separate from the
+        rest of the app or page. When triggered, modals will emerge from the
+        centre of the viewport with a backdrop to indicate their separation from
+        everything else. On mobile viewports, they occupy the entire screen.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={modalReadme}
+    sassdocId="modals"
+  />
+);
 
 export default ModalsPage;

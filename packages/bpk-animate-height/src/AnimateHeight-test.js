@@ -24,35 +24,30 @@ import AnimateHeight from './AnimateHeight';
 
 describe('AnimateHeight', () => {
   it('should render correctly with "height" attribute equal to "auto"', () => {
-    const tree = renderer.create(
-      <AnimateHeight
-        duration={200}
-        height="auto"
-      >
-        Content.
-      </AnimateHeight>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <AnimateHeight duration={200} height="auto">
+          Content.
+        </AnimateHeight>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with "height" attribute equal to "200"', () => {
-    const tree = renderer.create(
-      <AnimateHeight
-        duration={200}
-        height={200}
-      >
-        Content.
-      </AnimateHeight>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <AnimateHeight duration={200} height={200}>
+          Content.
+        </AnimateHeight>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should set "display: none;" on contentElement if height is 0', () => {
     const tree = mount(
-      <AnimateHeight
-        duration={0}
-        height={0}
-      >
+      <AnimateHeight duration={0} height={0}>
         Content.
       </AnimateHeight>,
       { lifecycleExperimental: true }, // See https://github.com/airbnb/enzyme/pull/318
@@ -66,15 +61,13 @@ describe('AnimateHeight', () => {
   });
 
   it('should render correctly with "transitionOverflow" attribute equal to "visible"', () => {
-    const tree = renderer.create(
-      <AnimateHeight
-        duration={200}
-        height={200}
-        transitionOverflow="visible"
-      >
-        Content.
-      </AnimateHeight>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <AnimateHeight duration={200} height={200} transitionOverflow="visible">
+          Content.
+        </AnimateHeight>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

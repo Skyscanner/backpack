@@ -16,11 +16,7 @@
  * limitations under the License.
  */
 
-import {
-  View,
-  TouchableNativeFeedback,
-  ViewPropTypes,
-} from 'react-native';
+import { View, TouchableNativeFeedback, ViewPropTypes } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -30,7 +26,7 @@ import {
   themePropType,
 } from './../utils';
 
-const BpkButtonContainer = (props) => {
+const BpkButtonContainer = props => {
   const { theme } = props;
   const containerStyle = getStyleForElement('container', props);
   const buttonStyle = getStyleForElement('button', props);
@@ -52,9 +48,7 @@ const BpkButtonContainer = (props) => {
   }
 
   return (
-    <View
-      style={[containerStyle, style]}
-    >
+    <View style={[containerStyle, style]}>
       <TouchableNativeFeedback
         accessibilityComponentType="button"
         accessibilityLabel={accessibilityLabel || title}
@@ -64,11 +58,7 @@ const BpkButtonContainer = (props) => {
         onPress={onPress}
         {...rest}
       >
-        <View
-          style={[buttonStyle, backgroundColor]}
-        >
-          {children}
-        </View>
+        <View style={[buttonStyle, backgroundColor]}>{children}</View>
       </TouchableNativeFeedback>
     </View>
   );

@@ -23,31 +23,19 @@ import BpkIcon from './BpkIcon';
 const commonTests = () => {
   describe('BpkIcon', () => {
     it('should render correctly', () => {
-      const tree = renderer.create(
-        <BpkIcon
-          icon="beer"
-        />,
-      ).toJSON();
+      const tree = renderer.create(<BpkIcon icon="beer" />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render small icon correctly', () => {
-      const tree = renderer.create(
-        <BpkIcon
-          icon="beer"
-          small
-        />,
-      ).toJSON();
+      const tree = renderer.create(<BpkIcon icon="beer" small />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should apply user props', () => {
-      const tree = renderer.create(
-        <BpkIcon
-          icon="beer"
-          style={{ color: 'blue' }}
-        />,
-      ).toJSON();
+      const tree = renderer
+        .create(<BpkIcon icon="beer" style={{ color: 'blue' }} />)
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

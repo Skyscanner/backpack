@@ -35,10 +35,11 @@ class AnimateHeightContainer extends Component {
   }
 
   onClick() {
-    this.setState((prevState) => {
-      const height = prevState.height !== this.props.fromHeight
-        ? this.props.fromHeight
-        : this.props.toHeight;
+    this.setState(prevState => {
+      const height =
+        prevState.height !== this.props.fromHeight
+          ? this.props.fromHeight
+          : this.props.toHeight;
 
       return { height };
     });
@@ -56,22 +57,17 @@ class AnimateHeightContainer extends Component {
   }
 }
 
-
 AnimateHeightContainer.propTypes = {
-  fromHeight: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]).isRequired,
-  toHeight: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]).isRequired,
+  fromHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
+  toHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
 };
 
-storiesOf('bpk-animate-height', module)
-  .add('Example', () => (
-    <AnimateHeightContainer fromHeight="auto" toHeight={0} duration={300}>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-      sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-    </AnimateHeightContainer>
-  ));
+storiesOf('bpk-animate-height', module).add('Example', () => (
+  <AnimateHeightContainer fromHeight="auto" toHeight={0} duration={300}>
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+    parturient montes, nascetur ridiculus mus.
+  </AnimateHeightContainer>
+));

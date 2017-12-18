@@ -24,87 +24,134 @@ import BpkText, { TEXT_STYLES } from './BpkText';
 const commonTests = () => {
   describe('BpkText', () => {
     it('should render correctly', () => {
-      const tree = renderer.create(
-        <BpkText>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkText>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </BpkText>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly with `emphasize` prop', () => {
-      const tree = renderer.create(
-        <BpkText emphasize>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-        commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-        et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkText emphasize>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </BpkText>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should support overwriting styles', () => {
-      const tree = renderer.create(
-        <BpkText style={{ color: 'red' }}>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkText style={{ color: 'red' }}>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </BpkText>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
-    TEXT_STYLES.forEach((textStyle) => {
+    TEXT_STYLES.forEach(textStyle => {
       it(`should render correctly with textStyle="${textStyle}"`, () => {
-        const tree = renderer.create(
-          <BpkText textStyle={textStyle}>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-          ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-          dis parturient montes, nascetur ridiculus mus.
-          </BpkText>,
-        ).toJSON();
+        const tree = renderer
+          .create(
+            <BpkText textStyle={textStyle}>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </BpkText>,
+          )
+          .toJSON();
         expect(tree).toMatchSnapshot();
       });
     });
 
     it('should accept valid emphasize prop', () => {
-      expect(BpkText.propTypes.emphasize({
-        textStyle: 'sm',
-        emphasize: true,
-      }, 'emphasize', 'BpkText')).toEqual(false);
+      expect(
+        BpkText.propTypes.emphasize(
+          {
+            textStyle: 'sm',
+            emphasize: true,
+          },
+          'emphasize',
+          'BpkText',
+        ),
+      ).toEqual(false);
     });
 
     it('should error if emphasize prop is wrong type', () => {
-      expect(BpkText.propTypes.emphasize({
-        textStyle: 'sm',
-        emphasize: 'asdf',
-      }, 'emphasize', 'BpkText').toString()).toEqual('Error: Invalid prop `emphasize` of type `string` supplied to `BpkText`, expected `boolean`.'); // eslint-disable-line max-len
+      expect(
+        BpkText.propTypes
+          .emphasize(
+            {
+              textStyle: 'sm',
+              emphasize: 'asdf',
+            },
+            'emphasize',
+            'BpkText',
+          )
+          .toString(),
+      ).toEqual(
+        'Error: Invalid prop `emphasize` of type `string` supplied to `BpkText`, expected `boolean`.',
+      ); // eslint-disable-line max-len
     });
 
     it('should accept valid style prop', () => {
-      expect(BpkText.propTypes.style({
-        style: StyleSheet.create({
-          breakingStyle: {
-            margin: 10,
+      expect(
+        BpkText.propTypes.style(
+          {
+            style: StyleSheet.create({
+              breakingStyle: {
+                margin: 10,
+              },
+            }).breakingStyle,
           },
-        }).breakingStyle,
-      }, 'style', 'BpkText')).toEqual(false);
+          'style',
+          'BpkText',
+        ),
+      ).toEqual(false);
     });
 
     it('should error on invalid style prop', () => {
-      expect(BpkText.propTypes.style({
-        style: StyleSheet.create({
-          breakingStyle: {
-            fontWeight: '200',
-          },
-        }).breakingStyle,
-      }, 'style', 'BpkText').toString()).toEqual('Error: Invalid prop `style` with `fontWeight` value `200` supplied to `BpkText`. Use `emphasize` prop instead.'); // eslint-disable-line max-len
+      expect(
+        BpkText.propTypes
+          .style(
+            {
+              style: StyleSheet.create({
+                breakingStyle: {
+                  fontWeight: '200',
+                },
+              }).breakingStyle,
+            },
+            'style',
+            'BpkText',
+          )
+          .toString(),
+      ).toEqual(
+        'Error: Invalid prop `style` with `fontWeight` value `200` supplied to `BpkText`. Use `emphasize` prop instead.',
+      ); // eslint-disable-line max-len
     });
     it('should return false on undefined style', () => {
-      expect(BpkText.propTypes.style({
-        style: undefined,
-      }, 'style', 'BpkText')).toBeFalsy();
+      expect(
+        BpkText.propTypes.style(
+          {
+            style: undefined,
+          },
+          'style',
+          'BpkText',
+        ),
+      ).toBeFalsy();
     });
   });
 };

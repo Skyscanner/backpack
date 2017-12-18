@@ -29,7 +29,7 @@ import {
   themePropType,
 } from './../utils';
 
-const BpkButtonContainer = (props) => {
+const BpkButtonContainer = props => {
   const { theme } = props;
   const gradientColors = getGradientColors(theme, props);
   const containerStyle = getStyleForElement('container', props);
@@ -51,10 +51,7 @@ const BpkButtonContainer = (props) => {
     accessibilityTraits.push('disabled');
   }
   return (
-    <LinearGradient
-      colors={gradientColors}
-      style={[containerStyle, style]}
-    >
+    <LinearGradient colors={gradientColors} style={[containerStyle, style]}>
       <BpkTouchableOverlay
         accessibilityComponentType="button"
         accessibilityLabel={accessibilityLabel || title}
@@ -67,7 +64,8 @@ const BpkButtonContainer = (props) => {
       >
         {children}
       </BpkTouchableOverlay>
-    </LinearGradient>);
+    </LinearGradient>
+  );
 };
 
 BpkButtonContainer.propTypes = {
@@ -90,7 +88,6 @@ BpkButtonContainer.defaultProps = {
   large: false,
   style: null,
   theme: null,
-
 };
 
 export default BpkButtonContainer;

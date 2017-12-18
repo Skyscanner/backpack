@@ -31,7 +31,6 @@ export const categoryPropType = PropTypes.shape({
   sort: PropTypes.bool,
 });
 
-export const linksPropType = PropTypes.arrayOf(PropTypes.oneOfType([
-  linkPropType,
-  categoryPropType,
-]));
+export const linksPropType = PropTypes.arrayOf(
+  PropTypes.oneOfType([linkPropType, categoryPropType]),
+);

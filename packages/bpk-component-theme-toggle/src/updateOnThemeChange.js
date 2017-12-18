@@ -22,7 +22,7 @@ import { wrapDisplayName } from 'bpk-react-utils';
 
 import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
 
-const updateOnThemeChange = (EnhancedComponent) => {
+const updateOnThemeChange = EnhancedComponent => {
   class UpdateOnThemeChange extends Component {
     constructor() {
       super();
@@ -33,11 +33,19 @@ const updateOnThemeChange = (EnhancedComponent) => {
     }
 
     componentDidMount() {
-      getHtmlElement().addEventListener(THEME_CHANGE_EVENT, this.onThemeChange, false);
+      getHtmlElement().addEventListener(
+        THEME_CHANGE_EVENT,
+        this.onThemeChange,
+        false,
+      );
     }
 
     componentWillUnmount() {
-      getHtmlElement().removeEventListener(THEME_CHANGE_EVENT, this.onThemeChange, false);
+      getHtmlElement().removeEventListener(
+        THEME_CHANGE_EVENT,
+        this.onThemeChange,
+        false,
+      );
     }
 
     onThemeChange(e) {
@@ -47,14 +55,14 @@ const updateOnThemeChange = (EnhancedComponent) => {
     }
 
     render() {
-      return (<EnhancedComponent
-        theme={this.state.theme}
-        {...this.props}
-      />);
+      return <EnhancedComponent theme={this.state.theme} {...this.props} />;
     }
   }
 
-  UpdateOnThemeChange.displayName = wrapDisplayName(EnhancedComponent, 'updateOnThemeChange');
+  UpdateOnThemeChange.displayName = wrapDisplayName(
+    EnhancedComponent,
+    'updateOnThemeChange',
+  );
 
   UpdateOnThemeChange.propTypes = {
     children: PropTypes.node.isRequired,

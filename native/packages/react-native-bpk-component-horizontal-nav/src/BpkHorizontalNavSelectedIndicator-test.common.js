@@ -20,14 +20,16 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import BpkThemeProvider from 'react-native-bpk-theming';
 
-import BpkHorizontalNavSelectedIndicator, { propTypes } from './BpkHorizontalNavSelectedIndicator';
+import BpkHorizontalNavSelectedIndicator, {
+  propTypes,
+} from './BpkHorizontalNavSelectedIndicator';
 
 const commonTests = () => {
   describe('BpkHorizontalNavSelectedIndicator', () => {
     it('should render correctly', () => {
-      const tree = renderer.create(
-        <BpkHorizontalNavSelectedIndicator xOffset={0} width={100} />,
-      ).toJSON();
+      const tree = renderer
+        .create(<BpkHorizontalNavSelectedIndicator xOffset={0} width={100} />)
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
@@ -35,18 +37,31 @@ const commonTests = () => {
       const theme = {
         horizontalNavSelectedTextColor: 'red',
       };
-      const tree = renderer.create(
-        <BpkThemeProvider theme={theme}>
-          <BpkHorizontalNavSelectedIndicator xOffset={0} width={100} />
-        </BpkThemeProvider>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkThemeProvider theme={theme}>
+            <BpkHorizontalNavSelectedIndicator xOffset={0} width={100} />
+          </BpkThemeProvider>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
-    it('should reject theme property when required theme attributes are omitted', () => { // eslint-disable-line max-len
-      expect(propTypes.theme({
-        theme: {},
-      }, 'theme', 'BpkHorizontalNavSelectedIndicator').toString()).toEqual('Error: Invalid prop `theme` supplied to `BpkHorizontalNavSelectedIndicator`. To theme a `BpkHorizontalNavSelectedIndicator`, the `theme` prop must include `horizontalNavSelectedTextColor`'); // eslint-disable-line max-len
+    it('should reject theme property when required theme attributes are omitted', () => {
+      // eslint-disable-line max-len
+      expect(
+        propTypes
+          .theme(
+            {
+              theme: {},
+            },
+            'theme',
+            'BpkHorizontalNavSelectedIndicator',
+          )
+          .toString(),
+      ).toEqual(
+        'Error: Invalid prop `theme` supplied to `BpkHorizontalNavSelectedIndicator`. To theme a `BpkHorizontalNavSelectedIndicator`, the `theme` prop must include `horizontalNavSelectedTextColor`',
+      ); // eslint-disable-line max-len
     });
   });
 };

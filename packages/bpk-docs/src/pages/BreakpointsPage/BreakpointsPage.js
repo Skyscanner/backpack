@@ -28,8 +28,12 @@ import STYLES from './breakpoints-page.scss';
 
 const getClassName = cssModules(STYLES);
 
-const MediaQueryStatus = (props) => {
-  const className = getClassName(props.isActive ? 'bpk-breakpoints-demo--active' : 'bpk-breakpoints-demo--inactive');
+const MediaQueryStatus = props => {
+  const className = getClassName(
+    props.isActive
+      ? 'bpk-breakpoints-demo--active'
+      : 'bpk-breakpoints-demo--inactive',
+  );
 
   return <div className={className}>{props.children}</div>;
 };
@@ -46,35 +50,52 @@ const components = [
     examples: [
       <div className={getClassName('bpk-breakpoints-demo')}>
         <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-          {isActive => <MediaQueryStatus isActive={isActive}>MOBILE</MediaQueryStatus>}
+          {isActive => (
+            <MediaQueryStatus isActive={isActive}>MOBILE</MediaQueryStatus>
+          )}
         </BpkBreakpoint>
         <BpkBreakpoint query={BREAKPOINTS.TABLET}>
-          {isActive => <MediaQueryStatus isActive={isActive}>TABLET</MediaQueryStatus>}
+          {isActive => (
+            <MediaQueryStatus isActive={isActive}>TABLET</MediaQueryStatus>
+          )}
         </BpkBreakpoint>
         <BpkBreakpoint query={BREAKPOINTS.TABLET_ONLY}>
-          {isActive => <MediaQueryStatus isActive={isActive}>TABLET ONLY</MediaQueryStatus>}
+          {isActive => (
+            <MediaQueryStatus isActive={isActive}>TABLET ONLY</MediaQueryStatus>
+          )}
         </BpkBreakpoint>
         <BpkBreakpoint query={BREAKPOINTS.ABOVE_MOBILE}>
-          {isActive => <MediaQueryStatus isActive={isActive}>ABOVE MOBILE</MediaQueryStatus>}
+          {isActive => (
+            <MediaQueryStatus isActive={isActive}>
+              ABOVE MOBILE
+            </MediaQueryStatus>
+          )}
         </BpkBreakpoint>
         <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
-          {isActive => <MediaQueryStatus isActive={isActive}>ABOVE TABLET</MediaQueryStatus>}
+          {isActive => (
+            <MediaQueryStatus isActive={isActive}>
+              ABOVE TABLET
+            </MediaQueryStatus>
+          )}
         </BpkBreakpoint>
       </div>,
     ],
   },
 ];
 
-const BreakpointsPage = () => (<DocsPageBuilder
-  title="Breakpoints"
-  blurb={[
-    <Paragraph>
-      To simplify things, Backpack uses only three breakpoints optimised for mobile, tablet and desktop viewports.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={breakpointReadme}
-  sassdocId="breakpoints"
-/>);
+const BreakpointsPage = () => (
+  <DocsPageBuilder
+    title="Breakpoints"
+    blurb={[
+      <Paragraph>
+        To simplify things, Backpack uses only three breakpoints optimised for
+        mobile, tablet and desktop viewports.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={breakpointReadme}
+    sassdocId="breakpoints"
+  />
+);
 
 export default BreakpointsPage;

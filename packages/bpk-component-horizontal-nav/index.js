@@ -17,7 +17,9 @@
  */
 
 import BpkHorizontalNav from './src/BpkHorizontalNav';
-import BpkHorizontalNavItem, { themeAttributes } from './src/BpkHorizontalNavItem';
+import BpkHorizontalNavItem, {
+  themeAttributes,
+} from './src/BpkHorizontalNavItem';
 
 export { BpkHorizontalNavItem, themeAttributes };
 export default BpkHorizontalNav;

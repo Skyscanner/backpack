@@ -22,7 +22,9 @@ import { storiesOf } from '@storybook/react-native';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 import BpkStarRating, { BpkStar, STAR_TYPES } from './index';
 
-const StarRating = props => <BpkStarRating ratingLabel={(r, m) => `${r} out of ${m} stars`} {...props} />;
+const StarRating = props => (
+  <BpkStarRating ratingLabel={(r, m) => `${r} out of ${m} stars`} {...props} />
+);
 const styles = StyleSheet.create({
   container: {
     padding: spacingBase,
@@ -88,7 +90,6 @@ storiesOf('BpkStar', module)
       <Text>Full Star</Text>
       <BpkStar type={STAR_TYPES.FULL} />
     </View>
-
   ))
   .add('Half', () => (
     <View style={styles.container}>

@@ -26,7 +26,7 @@ import STYLES from './bpk-fieldset.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkFieldset = (props) => {
+const BpkFieldset = props => {
   const {
     children,
     label,
@@ -67,7 +67,9 @@ const BpkFieldset = (props) => {
 
   const clonedChildren = cloneElement(children, childrenProps);
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
     <fieldset className={classNames.join(' ')} {...rest}>
@@ -98,7 +100,9 @@ const BpkFieldset = (props) => {
 const labelPropType = (props, propName) => {
   const { isCheckbox, label } = props;
   if (!label && !isCheckbox) {
-    return new Error(`\`${propName}\` is required when \`isCheckbox\` is false.`); // eslint-disable-line max-len
+    return new Error(
+      `\`${propName}\` is required when \`isCheckbox\` is false.`,
+    ); // eslint-disable-line max-len
   }
   return false;
 };

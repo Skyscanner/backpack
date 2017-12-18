@@ -17,14 +17,19 @@
  */
 
 import React from 'react';
-import BpkStarRating, { BpkInteractiveStarRating, withInteractiveStarRatingState } from 'bpk-component-star-rating';
+import BpkStarRating, {
+  BpkInteractiveStarRating,
+  withInteractiveStarRatingState,
+} from 'bpk-component-star-rating';
 
 import starRatingReadme from 'bpk-component-star-rating/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
 
-const InteractiveStarRating = withInteractiveStarRatingState(BpkInteractiveStarRating);
+const InteractiveStarRating = withInteractiveStarRatingState(
+  BpkInteractiveStarRating,
+);
 
 const components = [
   {
@@ -32,49 +37,54 @@ const components = [
     title: 'Default',
     blurb: [
       <Paragraph>
-        By default, star ratings are shown in a static form. These can be set at half star intervals.
+        By default, star ratings are shown in a static form. These can be set at
+        half star intervals.
       </Paragraph>,
     ],
-    examples: [
-      <BpkStarRating rating={3.5} ratingLabel="3.5 stars" />,
-    ],
+    examples: [<BpkStarRating rating={3.5} ratingLabel="3.5 stars" />],
   },
   {
     id: 'large',
     title: 'Large',
-    blurb: [<Paragraph>Similar to the default, but in a large size.</Paragraph>],
-    examples: [
-      <BpkStarRating rating={3.5} ratingLabel="3.5 stars" large />,
+    blurb: [
+      <Paragraph>Similar to the default, but in a large size.</Paragraph>,
     ],
+    examples: [<BpkStarRating rating={3.5} ratingLabel="3.5 stars" large />],
   },
   {
     id: 'interactive',
     title: 'Interactive',
     blurb: [
       <Paragraph>
-        This version allows users to leave feedback on a given feature or area by setting a rating.
+        This version allows users to leave feedback on a given feature or area
+        by setting a rating.
       </Paragraph>,
     ],
     examples: [
       <InteractiveStarRating
         id="my-star-rating"
         large
-        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
       />,
     ],
   },
 ];
 
-const StarRatingPage = () => (<DocsPageBuilder
-  title="Star Ratings"
-  blurb={[
-    <Paragraph>
-      Star ratings are used for displaying a score within a given range.
-      They can also be a good way of capturing user feedback on a particular feature.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={starRatingReadme}
-/>);
+const StarRatingPage = () => (
+  <DocsPageBuilder
+    title="Star Ratings"
+    blurb={[
+      <Paragraph>
+        Star ratings are used for displaying a score within a given range. They
+        can also be a good way of capturing user feedback on a particular
+        feature.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={starRatingReadme}
+  />
+);
 
 export default StarRatingPage;

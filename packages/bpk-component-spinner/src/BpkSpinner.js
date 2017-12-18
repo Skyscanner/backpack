@@ -26,18 +26,17 @@ import SPINNER_TYPES from './spinnerTypes';
 
 const getClassName = cssModules(STYLES);
 
-const BpkSpinner = (props) => {
-  const {
-    type,
-    className,
-    alignToButton,
-    ...rest
-  } = props;
+const BpkSpinner = props => {
+  const { type, className, alignToButton, ...rest } = props;
 
   const classNames = ['bpk-spinner', `bpk-spinner--${type}`].map(getClassName);
 
-  if (alignToButton) { classNames.push(getClassName('bpk-spinner--align-to-button')); }
-  if (className) { classNames.push(className); }
+  if (alignToButton) {
+    classNames.push(getClassName('bpk-spinner--align-to-button'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
   return <SmSpinner className={classNames.join(' ')} {...rest} />;
 };

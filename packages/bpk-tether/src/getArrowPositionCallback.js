@@ -26,7 +26,11 @@ const hasClass = (el, className) => {
   return new RegExp(`(^| )${className}( |$)`, 'gi').test(el.className);
 };
 
-const getArrowPositionCallback = (popoverElement = {}, arrowId, classNamePrefix = 'bpk-popover-tether') => {
+const getArrowPositionCallback = (
+  popoverElement = {},
+  arrowId,
+  classNamePrefix = 'bpk-popover-tether',
+) => {
   let arrowElement = null;
 
   if (popoverElement.querySelector) {
@@ -37,20 +41,20 @@ const getArrowPositionCallback = (popoverElement = {}, arrowId, classNamePrefix 
     return () => null;
   }
 
-  return (props) => {
+  return props => {
     const { top, left, targetPos } = props;
 
     const shouldApplyLeftOffset =
-      hasClass(popoverElement, `${classNamePrefix}-element-attached-top`)
-      || hasClass(popoverElement, `${classNamePrefix}-element-attached-bottom`);
+      hasClass(popoverElement, `${classNamePrefix}-element-attached-top`) ||
+      hasClass(popoverElement, `${classNamePrefix}-element-attached-bottom`);
 
     if (shouldApplyLeftOffset) {
-      const leftOffset = (targetPos.left + (targetPos.width / 2)) - left;
+      const leftOffset = targetPos.left + targetPos.width / 2 - left;
 
       arrowElement.style.top = '';
       arrowElement.style.left = `${leftOffset}px`;
     } else {
-      const topOffset = (targetPos.top + (targetPos.height / 2)) - top;
+      const topOffset = targetPos.top + targetPos.height / 2 - top;
 
       arrowElement.style.top = `${topOffset}px`;
       arrowElement.style.left = '';

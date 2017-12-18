@@ -21,4 +21,3 @@ import themeAttributes from './src/themeAttributes';
 
 export default BpkRadio;
 export { themeAttributes };
-

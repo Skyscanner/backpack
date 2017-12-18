@@ -24,11 +24,13 @@ import STYLES from './bpk-paragraph.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkParagraph = (props) => {
+const BpkParagraph = props => {
   const classNames = [getClassName('bpk-paragraph')];
   const { className, ...rest } = props;
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   return <p className={classNames.join(' ')} {...rest} />;
 };
@@ -43,4 +45,3 @@ BpkParagraph.defaultProps = {
 };
 
 export default BpkParagraph;
-

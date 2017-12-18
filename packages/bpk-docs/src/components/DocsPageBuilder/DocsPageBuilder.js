@@ -42,7 +42,7 @@ const ExampleNavListItem = component => (
   </BpkListItem>
 );
 
-const toNodes = (children) => {
+const toNodes = children => {
   if (!children) {
     return null;
   }
@@ -50,61 +50,88 @@ const toNodes = (children) => {
   return isString(children) ? [<Paragraph>{children}</Paragraph>] : children;
 };
 
-const markdownToHTML = readmeString => marked(readmeString
-  .replace(/^#.*$/m, '') // remove first h1
-  .replace(/^>.*$/m, '') // remove first blockquote
-  .replace(/^#### /gm, '##### ') // replace h4 with h5
-  .replace(/^### /gm, '#### ') // replace h3 with h4
-  .replace(/^## /gm, '### ') // replace h2 with h3
-  .replace(/^# /gm, '## ') // replace h1 with h2
-  , { renderer });
+const markdownToHTML = readmeString =>
+  marked(
+    readmeString
+      .replace(/^#.*$/m, '') // remove first h1
+      .replace(/^>.*$/m, '') // remove first blockquote
+      .replace(/^#### /gm, '##### ') // replace h4 with h5
+      .replace(/^### /gm, '#### ') // replace h3 with h4
+      .replace(/^## /gm, '### ') // replace h2 with h3
+      .replace(/^# /gm, '## '), // replace h1 with h2
+    { renderer },
+  );
 
-const toSassdocLink = props => <SassdocLink sassdocId={props.sassdocId} category={props.category} />;
+const toSassdocLink = props => (
+  <SassdocLink sassdocId={props.sassdocId} category={props.category} />
+);
 
 toSassdocLink.propTypes = {
   sassdocId: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
 };
 
-const ComponentExample = (component) => {
-  const heading = <Heading id={component.id} level="h2">{component.title}</Heading>;
+const ComponentExample = component => {
+  const heading = (
+    <Heading id={component.id} level="h2">
+      {component.title}
+    </Heading>
+  );
 
-  const examples = (component.examples || []).length
-    ? <PresentationBlock>{flatten(component.examples)}</PresentationBlock>
-    : null;
+  const examples = (component.examples || []).length ? (
+    <PresentationBlock>{flatten(component.examples)}</PresentationBlock>
+  ) : null;
 
-  const screenshots = (component.screenshots || []).length
-    ? <ComponentScreenshots screenshots={component.screenshots} />
-    : null;
+  const screenshots = (component.screenshots || []).length ? (
+    <ComponentScreenshots screenshots={component.screenshots} />
+  ) : null;
 
   const blurb = component.blurb ? toNodes(component.blurb) : null;
 
-  const readme = component.readme ? flatten([
-    <Heading id={`${component.id}-readme`} level="h2">{component.title} readme</Heading>,
-    <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(component.readme) }} bareHtml />,
-  ]) : null;
+  const readme = component.readme
+    ? flatten([
+        <Heading id={`${component.id}-readme`} level="h2">
+          {component.title} readme
+        </Heading>,
+        <BpkContentContainer
+          dangerouslySetInnerHTML={{ __html: markdownToHTML(component.readme) }}
+          bareHtml
+        />,
+      ])
+    : null;
 
-  const tokenMap = component.tokenMap ? <TokenSwitcher tokens={component.tokenMap} /> : null;
+  const tokenMap = component.tokenMap ? (
+    <TokenSwitcher tokens={component.tokenMap} />
+  ) : null;
 
-  const sassdocLink = component.sassdocId ? toSassdocLink({
-    sassdocId: component.sassdocId,
-    category: component.title,
-  }) : null;
+  const sassdocLink = component.sassdocId
+    ? toSassdocLink({
+        sassdocId: component.sassdocId,
+        category: component.title,
+      })
+    : null;
 
   return [heading, blurb, tokenMap, screenshots, examples, readme, sassdocLink];
 };
 
 const CustomSection = section => [
-  <Heading id={section.id} level="h2">{section.title}</Heading>,
+  <Heading id={section.id} level="h2">
+    {section.title}
+  </Heading>,
   flatten(section.content.map(toNodes)),
-  section.examples
-    ? <PresentationBlock>{flatten(section.examples)}</PresentationBlock>
-    : null,
+  section.examples ? (
+    <PresentationBlock>{flatten(section.examples)}</PresentationBlock>
+  ) : null,
   section.readme
     ? flatten([
-      <Heading id="readme" level="h2">Readme</Heading>,
-      <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(section.readme) }} bareHtml />,
-    ])
+        <Heading id="readme" level="h2">
+          Readme
+        </Heading>,
+        <BpkContentContainer
+          dangerouslySetInnerHTML={{ __html: markdownToHTML(section.readme) }}
+          bareHtml
+        />,
+      ])
     : null,
 ];
 
@@ -114,24 +141,42 @@ const DocsPageBuilder = props => (
     <Heading level="h1">{props.title}</Heading>
     {flatten(toNodes(props.blurb))}
     {props.showMenu && (
-      <BpkList>{flatten([...props.components, ...props.customSections].map(ExampleNavListItem))}</BpkList>
+      <BpkList>
+        {flatten(
+          [...props.components, ...props.customSections].map(
+            ExampleNavListItem,
+          ),
+        )}
+      </BpkList>
     )}
     {props.tokenMap ? <TokenSwitcher tokens={props.tokenMap} /> : null}
     {flatten(props.components.map(ComponentExample))}
-    {props.usageTable ? flatten([
-      <Heading id="usage" level="h2">Do&apos;s & Dont&apos;s</Heading>,
-      <UsageTable data={props.usageTable} />,
-    ]) : null}
-    {props.readme ? flatten([
-      <Heading id="readme" level="h2">Readme</Heading>,
-      <BpkContentContainer dangerouslySetInnerHTML={{ __html: markdownToHTML(props.readme) }} bareHtml />,
-    ]) : null
-    }
+    {props.usageTable
+      ? flatten([
+          <Heading id="usage" level="h2">
+            Do&apos;s & Dont&apos;s
+          </Heading>,
+          <UsageTable data={props.usageTable} />,
+        ])
+      : null}
+    {props.readme
+      ? flatten([
+          <Heading id="readme" level="h2">
+            Readme
+          </Heading>,
+          <BpkContentContainer
+            dangerouslySetInnerHTML={{ __html: markdownToHTML(props.readme) }}
+            bareHtml
+          />,
+        ])
+      : null}
     {flatten(props.customSections.map(CustomSection))}
-    {props.sassdocId ? toSassdocLink({
-      sassdocId: props.sassdocId,
-      category: props.title,
-    }) : null}
+    {props.sassdocId
+      ? toSassdocLink({
+          sassdocId: props.sassdocId,
+          category: props.title,
+        })
+      : null}
   </BpkContentContainer>
 );
 
@@ -140,10 +185,7 @@ const childrenPropType = PropTypes.oneOfType([
   PropTypes.node,
 ]);
 
-const contentShape = PropTypes.oneOfType([
-  PropTypes.string,
-  childrenPropType,
-]);
+const contentShape = PropTypes.oneOfType([PropTypes.string, childrenPropType]);
 
 DocsPageBuilder.propTypes = {
   title: PropTypes.string.isRequired,

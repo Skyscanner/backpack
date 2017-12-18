@@ -24,16 +24,22 @@ import STYLES from './bpk-grid-row.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkGridRow = (props) => {
+const BpkGridRow = props => {
   const classNames = [getClassName('bpk-grid__row')];
-  const {
-    children, padded, className, ...rest
-  } = props;
+  const { children, padded, className, ...rest } = props;
 
-  if (padded) { classNames.push(getClassName('bpk-grid__row--padded')); }
-  if (className) { classNames.push(className); }
+  if (padded) {
+    classNames.push(getClassName('bpk-grid__row--padded'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
-  return <div className={classNames.join(' ')} {...rest}>{children}</div>;
+  return (
+    <div className={classNames.join(' ')} {...rest}>
+      {children}
+    </div>
+  );
 };
 
 BpkGridRow.propTypes = {

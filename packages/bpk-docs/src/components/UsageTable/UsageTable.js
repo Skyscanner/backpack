@@ -28,7 +28,7 @@ import {
   BpkTableCell,
 } from 'bpk-component-table';
 
-const UsageTable = (props) => {
+const UsageTable = props => {
   const { data, ...rest } = props;
   const { dos, donts } = data;
 
@@ -45,11 +45,7 @@ const UsageTable = (props) => {
       <BpkTableBody>
         {rows.map(cells => (
           <BpkTableRow>
-            {cells.map(cell => (
-              <BpkTableCell>
-                {cell}
-              </BpkTableCell>
-            ))}
+            {cells.map(cell => <BpkTableCell>{cell}</BpkTableCell>)}
           </BpkTableRow>
         ))}
       </BpkTableBody>

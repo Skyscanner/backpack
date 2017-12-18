@@ -26,41 +26,45 @@ const readdir = util.promisify(fs.readdir);
 
 let failures = false;
 
-const owners = fs.readFileSync('NPM_OWNERS', { encoding: 'utf-8' })
+const owners = fs
+  .readFileSync('NPM_OWNERS', { encoding: 'utf-8' })
   .split('\n')
   .filter(s => s.trim() !== '')
   .sort();
 
-const getPackageMaintainers = pkg => new Promise((resolve, reject) => {
-  http.get(`http://registry.npmjs.org/${pkg}/`, (res) => {
-    let body = '';
-    res.setEncoding('utf8');
-    res.on('data', (d) => {
-      body += d;
-    });
-    res.on('error', reject);
-    res.on('end', () => {
-      const pkgData = JSON.parse(body);
+const getPackageMaintainers = pkg =>
+  new Promise((resolve, reject) => {
+    http.get(`http://registry.npmjs.org/${pkg}/`, res => {
+      let body = '';
+      res.setEncoding('utf8');
+      res.on('data', d => {
+        body += d;
+      });
+      res.on('error', reject);
+      res.on('end', () => {
+        const pkgData = JSON.parse(body);
 
-      if (pkgData.maintainers) {
-        resolve({
-          name: pkg,
-          maintainers: pkgData.maintainers.map(m => m.name),
-          new: false,
-        });
-      } else {
-        resolve({
-          name: pkg,
-          new: true,
-        });
-      }
+        if (pkgData.maintainers) {
+          resolve({
+            name: pkg,
+            maintainers: pkgData.maintainers.map(m => m.name),
+            new: false,
+          });
+        } else {
+          resolve({
+            name: pkg,
+            new: true,
+          });
+        }
+      });
     });
   });
-});
 
-const verifyMaintainers = (data) => {
+const verifyMaintainers = data => {
   if (data.new) {
-    console.log(`${data.name} ⁇\n  Package does not seem to be in NPM registry (yet)`);
+    console.log(
+      `${data.name} ⁇\n  Package does not seem to be in NPM registry (yet)`,
+    );
     return;
   }
 
@@ -70,7 +74,9 @@ const verifyMaintainers = (data) => {
     console.log(`${data.name} ✔︎`);
   } else {
     console.log(
-      `${data.name}\n  Expected\n    ${owners.join(', ')}\n  but got\n    ${sortedMaintainers.join(', ')}`,
+      `${data.name}\n  Expected\n    ${owners.join(
+        ', ',
+      )}\n  but got\n    ${sortedMaintainers.join(', ')}`,
     );
     process.exitCode = 1;
     failures = true;
@@ -80,7 +86,9 @@ const verifyMaintainers = (data) => {
 console.log(`Maintainers are:\n  ${owners.join('\n  ')}\n`);
 
 Promise.all([readdir('packages/'), readdir('native/packages/')])
-  .then(packages => Promise.all([...packages[0], ...packages[1]].map(getPackageMaintainers)))
+  .then(packages =>
+    Promise.all([...packages[0], ...packages[1]].map(getPackageMaintainers)),
+  )
   .then(maintainers => maintainers.forEach(verifyMaintainers))
   .then(() => {
     if (failures) {

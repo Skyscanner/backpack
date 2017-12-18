@@ -25,15 +25,26 @@ import STYLES from './bpk-form-validation.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkFormValidation = (props) => {
+const BpkFormValidation = props => {
   const classNames = [getClassName('bpk-form-validation')];
   const {
-    children, expanded, isCheckbox, className, containerProps, ...rest
+    children,
+    expanded,
+    isCheckbox,
+    className,
+    containerProps,
+    ...rest
   } = props;
 
-  if (expanded) { classNames.push(getClassName('bpk-form-validation--appear')); }
-  if (isCheckbox) { classNames.push(getClassName('bpk-form-validation--is-checkbox')); }
-  if (className) { classNames.push(className); }
+  if (expanded) {
+    classNames.push(getClassName('bpk-form-validation--appear'));
+  }
+  if (isCheckbox) {
+    classNames.push(getClassName('bpk-form-validation--is-checkbox'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
     <AnimateHeight
@@ -43,7 +54,9 @@ const BpkFormValidation = (props) => {
       {...containerProps}
     >
       <div className={getClassName('bpk-form-validation__container')}>
-        <div className={classNames.join(' ')} {...rest}>{children}</div>
+        <div className={classNames.join(' ')} {...rest}>
+          {children}
+        </div>
       </div>
     </AnimateHeight>
   );

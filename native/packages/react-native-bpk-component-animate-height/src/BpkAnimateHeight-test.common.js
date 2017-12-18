@@ -26,52 +26,52 @@ const commonTests = () => {
   describe('BpkAnimateHeight', () => {
     const animateHeightContent = (
       <BpkText>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-        commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-        et magnis dis parturient montes, nascetur ridiculus mus.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
       </BpkText>
     );
 
     it('should render correctly collapsed', () => {
-      const tree = renderer.create(
-        <BpkAnimateHeight
-          expanded={false}
-        >
-          {animateHeightContent}
-        </BpkAnimateHeight>).toJSON();
+      const tree = renderer
+        .create(
+          <BpkAnimateHeight expanded={false}>
+            {animateHeightContent}
+          </BpkAnimateHeight>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly expanded', () => {
-      const tree = renderer.create(
-        <BpkAnimateHeight
-          expanded
-        >
-          {animateHeightContent}
-        </BpkAnimateHeight>).toJSON();
+      const tree = renderer
+        .create(
+          <BpkAnimateHeight expanded>{animateHeightContent}</BpkAnimateHeight>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly with n children', () => {
-      const tree = renderer.create(
-        <BpkAnimateHeight
-          expanded
-        >
-          {animateHeightContent}
-          {animateHeightContent}
-        </BpkAnimateHeight>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkAnimateHeight expanded>
+            {animateHeightContent}
+            {animateHeightContent}
+          </BpkAnimateHeight>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly with user styling padding', () => {
-      const tree = renderer.create(
-        <BpkAnimateHeight
-          expanded
-          style={{ marginBottom: 12 }}
-        >
-          {animateHeightContent}
-        </BpkAnimateHeight>).toJSON();
+      const tree = renderer
+        .create(
+          <BpkAnimateHeight expanded style={{ marginBottom: 12 }}>
+            {animateHeightContent}
+          </BpkAnimateHeight>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

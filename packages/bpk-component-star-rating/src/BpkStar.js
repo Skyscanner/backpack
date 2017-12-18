@@ -35,14 +35,23 @@ export const STAR_TYPES = {
   FULL: 'full',
 };
 
-const BpkStar = (props) => {
-  const {
-    type, large, className, ...rest
-  } = props;
+const BpkStar = props => {
+  const { type, large, className, ...rest } = props;
   const iconClassNames = [getClassName('bpk-star')];
-  const containerClassNames = ['bpk-star__container', 'bpk-star__container--half-star'].map(getClassName);
-  const halfIconClassNamesLeft = ['bpk-star', 'bpk-star--half', 'bpk-star--filled'].map(getClassName);
-  const halfIconClassNamesRight = ['bpk-star', 'bpk-star--half', 'bpk-star--half-flipped'].map(getClassName);
+  const containerClassNames = [
+    'bpk-star__container',
+    'bpk-star__container--half-star',
+  ].map(getClassName);
+  const halfIconClassNamesLeft = [
+    'bpk-star',
+    'bpk-star--half',
+    'bpk-star--filled',
+  ].map(getClassName);
+  const halfIconClassNamesRight = [
+    'bpk-star',
+    'bpk-star--half',
+    'bpk-star--half-flipped',
+  ].map(getClassName);
 
   let Icon = SmallIcon;
   let HalfIcon = HalfSmallIcon;
@@ -55,7 +64,9 @@ const BpkStar = (props) => {
   }
 
   if (type === STAR_TYPES.HALF) {
-    if (className) { containerClassNames.push(className); }
+    if (className) {
+      containerClassNames.push(className);
+    }
     return (
       <span className={containerClassNames.join(' ')} {...rest}>
         <HalfIcon className={halfIconClassNamesLeft.join(' ')} />
@@ -68,17 +79,16 @@ const BpkStar = (props) => {
     iconClassNames.push(getClassName('bpk-star--filled'));
   }
 
-  if (className) { iconClassNames.push(className); }
+  if (className) {
+    iconClassNames.push(className);
+  }
 
   return <Icon className={iconClassNames.join(' ')} {...rest} />;
 };
 
 BpkStar.propTypes = {
-  type: PropTypes.oneOf([
-    STAR_TYPES.EMPTY,
-    STAR_TYPES.HALF,
-    STAR_TYPES.FULL,
-  ]).isRequired,
+  type: PropTypes.oneOf([STAR_TYPES.EMPTY, STAR_TYPES.HALF, STAR_TYPES.FULL])
+    .isRequired,
   className: PropTypes.string,
   large: PropTypes.bool,
 };

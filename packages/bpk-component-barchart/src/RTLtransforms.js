@@ -21,17 +21,20 @@ const DIRECTIONS = {
   RTL: 'rtl',
 };
 
-const getDirection = () => (
-  ((typeof document !== 'undefined' && document.documentElement.dir) || DIRECTIONS.LTR).toLowerCase()
-);
+const getDirection = () =>
+  (
+    (typeof document !== 'undefined' && document.documentElement.dir) ||
+    DIRECTIONS.LTR
+  ).toLowerCase();
 
 const isRTL = () => getDirection() === DIRECTIONS.RTL;
 
-const rtlConditionalValue = (ltrValue, rtlValue) => (isRTL() ? rtlValue : ltrValue);
+const rtlConditionalValue = (ltrValue, rtlValue) =>
+  isRTL() ? rtlValue : ltrValue;
 
 const applyArrayRTLTransform = arr => (isRTL() ? arr.slice(0).reverse() : arr);
 
-const applyMarginRTLTransform = (obj) => {
+const applyMarginRTLTransform = obj => {
   if (!isRTL()) {
     return obj;
   }

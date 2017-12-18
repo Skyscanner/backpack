@@ -22,89 +22,107 @@ import BpkPagination from './BpkPagination';
 
 describe('BpkPagination', () => {
   it('should display forward nudger', () => {
-    const pagination = mount(<BpkPagination
-      pageCount={20}
-      selectedPageIndex={0}
-      previousLabel="previous"
-      nextLabel="next"
-      paginationLabel="Pagination Navigation"
-      pageLabel={(page, isSelected) =>
-        `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
-      }
-    />);
+    const pagination = mount(
+      <BpkPagination
+        pageCount={20}
+        selectedPageIndex={0}
+        previousLabel="previous"
+        nextLabel="next"
+        paginationLabel="Pagination Navigation"
+        pageLabel={(page, isSelected) =>
+          `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+        }
+      />,
+    );
 
     expect(pagination.find({ label: 'next' }).length).toBe(1);
-    expect(pagination.find({ label: 'previous', disabled: true }).length).toBe(1);
+    expect(pagination.find({ label: 'previous', disabled: true }).length).toBe(
+      1,
+    );
   });
 
   it('should display backward nudger when not on the first page', () => {
-    const pagination = mount(<BpkPagination
-      pageCount={20}
-      selectedPageIndex={1}
-      previousLabel="previous"
-      nextLabel="next"
-      paginationLabel="Pagination Navigation"
-      pageLabel={(page, isSelected) =>
-        `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
-      }
-    />);
+    const pagination = mount(
+      <BpkPagination
+        pageCount={20}
+        selectedPageIndex={1}
+        previousLabel="previous"
+        nextLabel="next"
+        paginationLabel="Pagination Navigation"
+        pageLabel={(page, isSelected) =>
+          `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+        }
+      />,
+    );
 
     expect(pagination.find({ label: 'next' }).length).toBe(1);
-    expect(pagination.find({ label: 'previous', disabled: false }).length).toBe(1);
+    expect(pagination.find({ label: 'previous', disabled: false }).length).toBe(
+      1,
+    );
   });
 
   it('should not display forward nudger when on last page', () => {
-    const pagination = mount(<BpkPagination
-      pageCount={2}
-      selectedPageIndex={1}
-      previousLabel="previous"
-      nextLabel="next"
-      paginationLabel="Pagination Navigation"
-      pageLabel={(page, isSelected) =>
-        `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
-      }
-    />);
+    const pagination = mount(
+      <BpkPagination
+        pageCount={2}
+        selectedPageIndex={1}
+        previousLabel="previous"
+        nextLabel="next"
+        paginationLabel="Pagination Navigation"
+        pageLabel={(page, isSelected) =>
+          `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+        }
+      />,
+    );
 
     expect(pagination.find({ label: 'next', disabled: true }).length).toBe(1);
     expect(pagination.find({ label: 'previous' }).length).toBe(1);
   });
 
-  it('should call the \'onPageChange\' callback when page is selected', () => {
+  it("should call the 'onPageChange' callback when page is selected", () => {
     const onPageChange = jest.fn();
-    const pagination = mount(<BpkPagination
-      pageCount={20}
-      selectedPageIndex={0}
-      previousLabel="previous"
-      nextLabel="next"
-      onPageChange={onPageChange}
-      paginationLabel="Pagination Navigation"
-      pageLabel={(page, isSelected) =>
-        `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
-      }
-    />);
+    const pagination = mount(
+      <BpkPagination
+        pageCount={20}
+        selectedPageIndex={0}
+        previousLabel="previous"
+        nextLabel="next"
+        onPageChange={onPageChange}
+        paginationLabel="Pagination Navigation"
+        pageLabel={(page, isSelected) =>
+          `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+        }
+      />,
+    );
 
     const page = pagination.find('ul');
     expect(onPageChange.mock.calls.length).toBe(0);
 
-    page.find('li').at(4).find('button').simulate('click');
+    page
+      .find('li')
+      .at(4)
+      .find('button')
+      .simulate('click');
 
     expect(onPageChange.mock.calls.length).toBe(1);
     expect(onPageChange.mock.calls[0][0]).toEqual(19);
   });
 
-  it('should call the \'onPageChange\' callback when nudger is clicked', () => {
+  it("should call the 'onPageChange' callback when nudger is clicked", () => {
     const onPageChange = jest.fn();
-    const pagination = mount(<BpkPagination
-      pageCount={20}
-      selectedPageIndex={0}
-      previousLabel="previous"
-      nextLabel="next"
-      onPageChange={onPageChange}
-      paginationLabel="Pagination Navigation"
-      pageLabel={(page, isSelected) =>
-        `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
-      }
-    />);
+    const pagination = mount(
+      <BpkPagination
+        pageCount={20}
+        selectedPageIndex={0}
+        previousLabel="previous"
+        nextLabel="next"
+        onPageChange={onPageChange}
+        paginationLabel="Pagination Navigation"
+        pageLabel={(page, isSelected) =>
+          `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+        }
+      />,
+    );
 
     const forwardNudger = pagination.find('BpkPaginationNudger').at(1);
     const page = pagination.find('BpkPaginationList');

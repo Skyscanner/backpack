@@ -27,16 +27,27 @@ const getClassName = cssModules(STYLES);
 const TEXT_STYLES = ['xs', 'sm', 'base', 'lg', 'xl', 'xxl'];
 
 const classes = {};
-TEXT_STYLES.forEach((textStyle) => { classes[textStyle] = getClassName(`bpk-text--${textStyle}`); });
+TEXT_STYLES.forEach(textStyle => {
+  classes[textStyle] = getClassName(`bpk-text--${textStyle}`);
+});
 
-const BpkText = (props) => {
+const BpkText = props => {
   const {
-    bold, className, children, tagName: TagName, textStyle, ...rest
+    bold,
+    className,
+    children,
+    tagName: TagName,
+    textStyle,
+    ...rest
   } = props;
   const classNames = [getClassName('bpk-text'), classes[props.textStyle]];
 
-  if (bold) { classNames.push(getClassName('bpk-text--bold')); }
-  if (className) { classNames.push(className); }
+  if (bold) {
+    classNames.push(getClassName('bpk-text--bold'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
     <TagName className={classNames.join(' ')} {...rest}>

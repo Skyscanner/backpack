@@ -38,9 +38,7 @@ const components = [
     id: 'default',
     title: 'Default',
     blurb: [
-      <Paragraph>
-        By default, bar charts come with axis labels.
-      </Paragraph>,
+      <Paragraph>By default, bar charts come with axis labels.</Paragraph>,
     ],
     examples: [
       <EnhancedBarchart
@@ -84,8 +82,8 @@ const components = [
     title: 'Interactive',
     blurb: [
       <Paragraph>
-        The bars can be made interactive using
-        the <BpkCode>onBarClick</BpkCode> &amp; <BpkCode>getBarSelection</BpkCode> props.
+        The bars can be made interactive using the <BpkCode>onBarClick</BpkCode>{' '}
+        &amp; <BpkCode>getBarSelection</BpkCode> props.
       </Paragraph>,
     ],
     examples: [
@@ -107,8 +105,12 @@ const components = [
     title: 'Outliers',
     blurb: [
       <Paragraph>
-        Outliers can be capped to indicate they are far off the scale.
-        In this case using <BpkLink href="#outlierpercentage"><BpkCode>outlierPercentage</BpkCode></BpkLink> of 15.
+        Outliers can be capped to indicate they are far off the scale. In this
+        case using{' '}
+        <BpkLink href="#outlierpercentage">
+          <BpkCode>outlierPercentage</BpkCode>
+        </BpkLink>{' '}
+        of 15.
       </Paragraph>,
     ],
     examples: [
@@ -128,22 +130,24 @@ const components = [
   },
 ];
 
-const BarchartsPage = () => (<DocsPageBuilder
-  title="Bar charts"
-  blurb={[
-    <Paragraph>
-      Bar charts are useful for displaying comparisons between categories of data.
-      At Skyscanner, bar charts are commonly used for displaying fare prices within a
-      given time period e.g. a year, month or week.
-    </Paragraph>,
-    <Paragraph>
-      Depending on your need these can be configured to
-      show a variety of details such as gridlines, labels, and axis.
-      They can also be configured to trigger actions on click such as opening a link.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={barchartReadme}
-/>);
+const BarchartsPage = () => (
+  <DocsPageBuilder
+    title="Bar charts"
+    blurb={[
+      <Paragraph>
+        Bar charts are useful for displaying comparisons between categories of
+        data. At Skyscanner, bar charts are commonly used for displaying fare
+        prices within a given time period e.g. a year, month or week.
+      </Paragraph>,
+      <Paragraph>
+        Depending on your need these can be configured to show a variety of
+        details such as gridlines, labels, and axis. They can also be configured
+        to trigger actions on click such as opening a link.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={barchartReadme}
+  />
+);
 
 export default BarchartsPage;

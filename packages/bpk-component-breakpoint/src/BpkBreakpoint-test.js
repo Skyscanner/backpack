@@ -28,11 +28,15 @@ describe('BpkBreakpoint', () => {
     const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
     jest.mock('react-responsive', () => props => props.children(true));
 
-    const tree = renderer.create(
-      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-        {matches => (matches ? <div>matches</div> : <div>does not match</div>)}
-      </BpkBreakpoint>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+          {matches =>
+            matches ? <div>matches</div> : <div>does not match</div>
+          }
+        </BpkBreakpoint>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -41,11 +45,15 @@ describe('BpkBreakpoint', () => {
     const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
     jest.mock('react-responsive', () => props => props.children(false));
 
-    const tree = renderer.create(
-      <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-        {matches => (matches ? <div>matches</div> : <div>does not match</div>)}
-      </BpkBreakpoint>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
+          {matches =>
+            matches ? <div>matches</div> : <div>does not match</div>
+          }
+        </BpkBreakpoint>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -72,7 +80,7 @@ describe('BpkBreakpoint', () => {
       window.console.warning = oldWarning;
     });
 
-    it('should not error if the \'query\' prop is an allowed value', () => {
+    it("should not error if the 'query' prop is an allowed value", () => {
       mount(
         <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
           {() => <div />}
@@ -81,16 +89,14 @@ describe('BpkBreakpoint', () => {
       expect(errorOrWarningSpy.mock.calls.length).toBe(0);
     });
 
-    it('should error if the \'query\' prop is not an allowed value', () => {
+    it("should error if the 'query' prop is not an allowed value", () => {
       mount(
-        <BpkBreakpoint query="A RANDOM STRING">
-          {() => <div />}
-        </BpkBreakpoint>,
+        <BpkBreakpoint query="A RANDOM STRING">{() => <div />}</BpkBreakpoint>,
       );
       expect(errorOrWarningSpy.mock.calls.length).toBe(1);
     });
 
-    it('should not error if the \'query\' prop is not an allowed value but \'legacy\' prop is true', () => {
+    it("should not error if the 'query' prop is not an allowed value but 'legacy' prop is true", () => {
       mount(
         <BpkBreakpoint query="A RANDOM STRING" legacy>
           {() => <div />}

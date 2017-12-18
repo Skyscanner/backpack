@@ -29,13 +29,18 @@ jest.mock('react-native', () => {
   return reactNative;
 });
 
-jest.mock('./../node_modules/react-native-bpk-component-text/node_modules/bpk-tokens/tokens/base.react.native',
-  () => require.requireActual('bpk-tokens/tokens/base.react.native.android.js'));
+jest.mock(
+  './../node_modules/react-native-bpk-component-text/node_modules/bpk-tokens/tokens/base.react.native',
+  () => require.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+);
 
-jest.mock('bpk-tokens/tokens/base.react.native',
-  () => require.requireActual('bpk-tokens/tokens/base.react.native.android.js'));
+jest.mock('bpk-tokens/tokens/base.react.native', () =>
+  require.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+);
 
-jest.mock('./layout/BpkButtonContainer', () => require.requireActual('./layout/BpkButtonContainer.android.js'));
+jest.mock('./layout/BpkButtonContainer', () =>
+  require.requireActual('./layout/BpkButtonContainer.android.js'),
+);
 
 describe('Android', () => {
   commonTests();

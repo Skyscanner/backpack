@@ -54,12 +54,7 @@ export default class ProgressContainer extends Component {
         </BpkButton>
         &nbsp;
         <div className={getClassName('bpkdocs-progress-container__flex-grow')}>
-          <BpkProgress
-            min={0}
-            max={100}
-            value={progress}
-            {...this.props}
-          />
+          <BpkProgress min={0} max={100} value={progress} {...this.props} />
         </div>
       </div>
     );

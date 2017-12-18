@@ -21,7 +21,9 @@ import renderer from 'react-test-renderer';
 
 import BpkDrawerContent from './BpkDrawerContent';
 
-jest.mock('react-transition-group/Transition', () => ({ children }) => children('entered'));
+jest.mock('react-transition-group/Transition', () => ({ children }) =>
+  children('entered'),
+);
 
 describe('BpkDrawerContent', () => {
   let closeEvents;
@@ -38,76 +40,84 @@ describe('BpkDrawerContent', () => {
   });
 
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <BpkDrawerContent
-        id="my-drawer"
-        title="Drawer title"
-        onClose={jest.fn()}
-        onCloseAnimationComplete={jest.fn()}
-        closeLabel="Close"
-        closeEvents={closeEvents}
-        dialogRef={jest.fn()}
-        isIphone={false}
-      >
-        Drawer content
-      </BpkDrawerContent>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkDrawerContent
+          id="my-drawer"
+          title="Drawer title"
+          onClose={jest.fn()}
+          onCloseAnimationComplete={jest.fn()}
+          closeLabel="Close"
+          closeEvents={closeEvents}
+          dialogRef={jest.fn()}
+          isIphone={false}
+        >
+          Drawer content
+        </BpkDrawerContent>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly when it has a className', () => {
-    const tree = renderer.create(
-      <BpkDrawerContent
-        id="my-drawer"
-        className="my-classname"
-        title="Drawer title"
-        onClose={jest.fn()}
-        onCloseAnimationComplete={jest.fn()}
-        closeLabel="Close"
-        closeEvents={closeEvents}
-        dialogRef={jest.fn()}
-        isIphone={false}
-      >
-        Drawer content
-      </BpkDrawerContent>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkDrawerContent
+          id="my-drawer"
+          className="my-classname"
+          title="Drawer title"
+          onClose={jest.fn()}
+          onCloseAnimationComplete={jest.fn()}
+          closeLabel="Close"
+          closeEvents={closeEvents}
+          dialogRef={jest.fn()}
+          isIphone={false}
+        >
+          Drawer content
+        </BpkDrawerContent>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly when it has a contentClassName', () => {
-    const tree = renderer.create(
-      <BpkDrawerContent
-        id="my-drawer"
-        contentClassName="my-classname"
-        title="Drawer title"
-        onClose={jest.fn()}
-        onCloseAnimationComplete={jest.fn()}
-        closeLabel="Close"
-        closeEvents={closeEvents}
-        dialogRef={jest.fn()}
-        isIphone={false}
-      >
-        Drawer content
-      </BpkDrawerContent>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkDrawerContent
+          id="my-drawer"
+          contentClassName="my-classname"
+          title="Drawer title"
+          onClose={jest.fn()}
+          onCloseAnimationComplete={jest.fn()}
+          closeLabel="Close"
+          closeEvents={closeEvents}
+          dialogRef={jest.fn()}
+          isIphone={false}
+        >
+          Drawer content
+        </BpkDrawerContent>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with hideTitle', () => {
-    const tree = renderer.create(
-      <BpkDrawerContent
-        id="my-drawer"
-        title="Drawer title"
-        onClose={jest.fn()}
-        onCloseAnimationComplete={jest.fn()}
-        closeLabel="Close"
-        closeEvents={closeEvents}
-        dialogRef={jest.fn()}
-        hideTitle
-      >
-        Drawer content
-      </BpkDrawerContent>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkDrawerContent
+          id="my-drawer"
+          title="Drawer title"
+          onClose={jest.fn()}
+          onCloseAnimationComplete={jest.fn()}
+          closeLabel="Close"
+          closeEvents={closeEvents}
+          dialogRef={jest.fn()}
+          hideTitle
+        >
+          Drawer content
+        </BpkDrawerContent>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

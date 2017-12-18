@@ -25,15 +25,13 @@ import STYLES from './bpk-pagination.scss';
 
 const getClassName = cssModules(STYLES);
 
-const handlePageChange = (onPageChange, pageCount) => (nextPageIndex) => {
-  if (onPageChange &&
-    nextPageIndex < pageCount &&
-    nextPageIndex >= 0) {
+const handlePageChange = (onPageChange, pageCount) => nextPageIndex => {
+  if (onPageChange && nextPageIndex < pageCount && nextPageIndex >= 0) {
     onPageChange(nextPageIndex);
   }
 };
 
-const BpkPagination = (props) => {
+const BpkPagination = props => {
   const classNames = [getClassName('bpk-pagination')];
   const {
     pageCount,
@@ -48,7 +46,9 @@ const BpkPagination = (props) => {
     ...rest
   } = props;
 
-  if (className) { classNames.push(getClassName(className)); }
+  if (className) {
+    classNames.push(getClassName(className));
+  }
 
   const pageChanged = handlePageChange(onPageChange, pageCount);
 
@@ -56,11 +56,7 @@ const BpkPagination = (props) => {
   const hasNextPage = selectedPageIndex !== pageCount - 1;
 
   return (
-    <nav
-      className={classNames.join('')}
-      aria-label={paginationLabel}
-      {...rest}
-    >
+    <nav className={classNames.join('')} aria-label={paginationLabel} {...rest}>
       <BpkPaginationNudger
         label={previousLabel}
         onNudge={() => pageChanged(selectedPageIndex - 1)}

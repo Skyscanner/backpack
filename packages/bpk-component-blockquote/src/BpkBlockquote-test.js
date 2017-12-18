@@ -22,21 +22,27 @@ import BpkBlockquote from './BpkBlockquote';
 
 describe('BpkBlockquote', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <BpkBlockquote>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </BpkBlockquote>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkBlockquote>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkBlockquote>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('should render correctly with additional spacing', () => {
-    const tree = renderer.create(
-      <BpkBlockquote extraSpace>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </BpkBlockquote>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkBlockquote extraSpace>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkBlockquote>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

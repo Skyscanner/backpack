@@ -21,13 +21,16 @@ import React, { Component, Children, cloneElement } from 'react';
 
 import { wrapDisplayName } from 'bpk-react-utils';
 
-const getInitiallyExpanded = (children) => {
+const getInitiallyExpanded = children => {
   const accordionItems = Children.toArray(children);
-  const result = accordionItems.reduceRight((prev, item) => (item.props.initiallyExpanded ? item : prev), {});
+  const result = accordionItems.reduceRight(
+    (prev, item) => (item.props.initiallyExpanded ? item : prev),
+    {},
+  );
   return (result || {}).key || null;
 };
 
-const withSingleItemAccordionState = (ComposedComponent) => {
+const withSingleItemAccordionState = ComposedComponent => {
   class WithSingleItemAccordionState extends Component {
     constructor(props) {
       super(props);
@@ -66,10 +69,12 @@ const withSingleItemAccordionState = (ComposedComponent) => {
     children: PropTypes.node.isRequired,
   };
 
-  WithSingleItemAccordionState.displayName = wrapDisplayName(ComposedComponent, 'withSingleItemAccordionState');
+  WithSingleItemAccordionState.displayName = wrapDisplayName(
+    ComposedComponent,
+    'withSingleItemAccordionState',
+  );
 
   return WithSingleItemAccordionState;
 };
-
 
 export default withSingleItemAccordionState;

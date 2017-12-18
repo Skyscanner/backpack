@@ -96,21 +96,25 @@ const components = [
   },
 ];
 
-const NativeBannerAlertPage = () => (<DocsPageBuilder
-  title="Banner Alerts"
-  blurb={[
-    <Paragraph>
-      Banner alerts provide feedback to the user when an action has been performed.
-    </Paragraph>,
-    <Paragraph>
-      Banner alerts come in four styles to indicate success, warning or error, or some neutral information.
-      They can be configured to be dissmissible, or to display further information to the user in the form of
-      an expandable panel.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={readme}
-  showMenu
-/>);
+const NativeBannerAlertPage = () => (
+  <DocsPageBuilder
+    title="Banner Alerts"
+    blurb={[
+      <Paragraph>
+        Banner alerts provide feedback to the user when an action has been
+        performed.
+      </Paragraph>,
+      <Paragraph>
+        Banner alerts come in four styles to indicate success, warning or error,
+        or some neutral information. They can be configured to be dissmissible,
+        or to display further information to the user in the form of an
+        expandable panel.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={readme}
+    showMenu
+  />
+);
 
 export default NativeBannerAlertPage;

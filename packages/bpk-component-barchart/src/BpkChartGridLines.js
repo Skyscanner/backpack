@@ -26,27 +26,37 @@ import STYLES from './bpk-chart-grid-lines.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkChartGridLines = (props) => {
+const BpkChartGridLines = props => {
   const {
-    orientation, scale, numTicks, width, height, margin, tickOffset, tickEvery, ...rest
+    orientation,
+    scale,
+    numTicks,
+    width,
+    height,
+    margin,
+    tickOffset,
+    tickEvery,
+    ...rest
   } = props;
 
-  const ticks = scale.ticks ?
-    scale.ticks(numTicks) :
-    scale.domain().filter((tick, i) => ((i - tickOffset) % tickEvery) === 0);
+  const ticks = scale.ticks
+    ? scale.ticks(numTicks)
+    : scale.domain().filter((tick, i) => (i - tickOffset) % tickEvery === 0);
   const position = (scale.bandwidth ? center : identity)(scale.copy());
 
-  const lineProps = (tick) => {
+  const lineProps = tick => {
     const value = position(tick);
-    return (orientation === ORIENTATION_X) ? {
-      x1: value,
-      x2: value,
-      y2: height - margin.top - margin.bottom,
-    } : {
-      x2: width - margin.left - margin.right,
-      y1: value,
-      y2: value,
-    };
+    return orientation === ORIENTATION_X
+      ? {
+          x1: value,
+          x2: value,
+          y2: height - margin.top - margin.bottom,
+        }
+      : {
+          x2: width - margin.left - margin.right,
+          y1: value,
+          y2: value,
+        };
   };
 
   const toLine = (tick, i) => (
@@ -59,9 +69,7 @@ const BpkChartGridLines = (props) => {
   );
 
   return (
-    <g className={getClassName('bpk-chart__grid-lines')}>
-      {ticks.map(toLine)}
-    </g>
+    <g className={getClassName('bpk-chart__grid-lines')}>{ticks.map(toLine)}</g>
   );
 };
 

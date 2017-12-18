@@ -27,61 +27,66 @@ class StatefulBpkTextInput extends Component {
   }
 
   render() {
-    return <BpkTextInput {...this.props} value={this.state.value} onChangeText={this.onChange} />;
+    return (
+      <BpkTextInput
+        {...this.props}
+        value={this.state.value}
+        onChangeText={this.onChange}
+      />
+    );
   }
 }
 
-storiesOf('BpkTextInput', module)
-  .add('docs:text-inputs', () => (
-    <ScrollView>
-      <StatefulBpkTextInput
-        label="Input"
-        initialValue=""
-        style={styles.input}
-        placeholder="3 letter airport code"
-      />
-      <StatefulBpkTextInput
-        label="Input with value"
-        initialValue="Edinburgh"
-        style={styles.input}
-      />
-      <StatefulBpkTextInput
-        label="Input with multiline value"
-        initialValue="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." // eslint-disable-line max-len
-        multiline
-        style={styles.input}
-        autoGrow
-      />
-      <StatefulBpkTextInput
-        label="Valid input"
-        initialValue="Edinburgh"
-        valid
-        style={styles.input}
-      />
-      <StatefulBpkTextInput
-        label="Invalid input"
-        initialValue="Edinbvrgh"
-        valid={false}
-        validationMessage="'Edinbvrgh' is not a valid city."
-        style={styles.input}
-      />
-      <StatefulBpkTextInput
-        label="Non-editable input"
-        initialValue=""
-        editable={false}
-        style={styles.input}
-      />
-      <StatefulBpkTextInput
-        label="Password"
-        initialValue="letmein"
-        secureTextEntry
-        style={styles.input}
-      />
-      <StatefulBpkTextInput
-        label="Phone number"
-        initialValue="+441234567890"
-        keyboardType="phone-pad"
-        style={styles.input}
-      />
-    </ScrollView>
-  ));
+storiesOf('BpkTextInput', module).add('docs:text-inputs', () => (
+  <ScrollView>
+    <StatefulBpkTextInput
+      label="Input"
+      initialValue=""
+      style={styles.input}
+      placeholder="3 letter airport code"
+    />
+    <StatefulBpkTextInput
+      label="Input with value"
+      initialValue="Edinburgh"
+      style={styles.input}
+    />
+    <StatefulBpkTextInput
+      label="Input with multiline value"
+      initialValue="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." // eslint-disable-line max-len
+      multiline
+      style={styles.input}
+      autoGrow
+    />
+    <StatefulBpkTextInput
+      label="Valid input"
+      initialValue="Edinburgh"
+      valid
+      style={styles.input}
+    />
+    <StatefulBpkTextInput
+      label="Invalid input"
+      initialValue="Edinbvrgh"
+      valid={false}
+      validationMessage="'Edinbvrgh' is not a valid city."
+      style={styles.input}
+    />
+    <StatefulBpkTextInput
+      label="Non-editable input"
+      initialValue=""
+      editable={false}
+      style={styles.input}
+    />
+    <StatefulBpkTextInput
+      label="Password"
+      initialValue="letmein"
+      secureTextEntry
+      style={styles.input}
+    />
+    <StatefulBpkTextInput
+      label="Phone number"
+      initialValue="+441234567890"
+      keyboardType="phone-pad"
+      style={styles.input}
+    />
+  </ScrollView>
+));

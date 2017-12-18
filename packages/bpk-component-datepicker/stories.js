@@ -21,8 +21,18 @@ import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import { weekDays, formatMonth, formatDateFull } from 'bpk-component-calendar/test-utils';
-import { format, dateToBoundaries, addMonths, addDays, startOfDay } from 'bpk-component-calendar/src/date-utils';
+import {
+  weekDays,
+  formatMonth,
+  formatDateFull,
+} from 'bpk-component-calendar/test-utils';
+import {
+  format,
+  dateToBoundaries,
+  addMonths,
+  addDays,
+  startOfDay,
+} from 'bpk-component-calendar/src/date-utils';
 import BpkDatepicker from './index';
 
 const formatDate = date => format(date, 'DD/MM/YYYY');
@@ -62,12 +72,14 @@ class CalendarContainer extends Component {
           <BpkDatepicker
             {...this.props}
             date={this.state.date}
-            onDateSelect={(date) => {
+            onDateSelect={date => {
               this.setState({ date });
               action('Selected date')(date);
             }}
             onMonthChange={action('Changed month')}
-            getApplicationElement={() => document.getElementById('application-element')}
+            getApplicationElement={() =>
+              document.getElementById('application-element')
+            }
             renderTarget={() => document.getElementById('datepicker-element')}
           />
         </div>
@@ -106,17 +118,23 @@ class ReturnDatepicker extends Component {
             daysOfWeek={weekDays}
             changeMonthLabel="Change month"
             title="Departure date"
-            getApplicationElement={() => document.getElementById('application-element')}
+            getApplicationElement={() =>
+              document.getElementById('application-element')
+            }
             renderTarget={() => document.getElementById('datepicker-element')}
             formatDate={formatDate}
             formatMonth={formatMonth}
             formatDateFull={formatDateFull}
             inputProps={inputProps}
             date={this.state.departDate}
-            onDateSelect={(departDate) => {
+            onDateSelect={departDate => {
               this.setState({
                 departDate,
-                returnDate: dateToBoundaries(this.state.returnDate, departDate, this.maxDate),
+                returnDate: dateToBoundaries(
+                  this.state.returnDate,
+                  departDate,
+                  this.maxDate,
+                ),
               });
               action('Selected departure date')(departDate);
             }}
@@ -128,17 +146,23 @@ class ReturnDatepicker extends Component {
             daysOfWeek={weekDays}
             changeMonthLabel="Change month"
             title="Return date"
-            getApplicationElement={() => document.getElementById('application-element')}
+            getApplicationElement={() =>
+              document.getElementById('application-element')
+            }
             renderTarget={() => document.getElementById('datepicker-element')}
             formatDate={formatDate}
             formatMonth={formatMonth}
             formatDateFull={formatDateFull}
             inputProps={inputProps}
             date={this.state.returnDate}
-            onDateSelect={(returnDate) => {
+            onDateSelect={returnDate => {
               this.setState({
                 returnDate,
-                departDate: dateToBoundaries(this.state.departDate, this.minDate, returnDate),
+                departDate: dateToBoundaries(
+                  this.state.departDate,
+                  this.minDate,
+                  returnDate,
+                ),
               });
               action('Selected return date')(returnDate);
             }}
@@ -212,6 +236,4 @@ storiesOf('bpk-component-datepicker', module)
       />
     </div>
   ))
-  .add('Depart & Return', () => (
-    <ReturnDatepicker />
-  ));
+  .add('Depart & Return', () => <ReturnDatepicker />);

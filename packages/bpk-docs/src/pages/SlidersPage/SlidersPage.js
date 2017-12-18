@@ -29,61 +29,29 @@ const components = [
   {
     id: 'default',
     title: 'Default',
-    blurb: [
-      <Paragraph>
-        This is the default slider.
-      </Paragraph>,
-    ],
-    examples: [
-      <EnhancedSlider
-        min={0}
-        max={100}
-        value={0}
-      />,
-    ],
+    blurb: [<Paragraph>This is the default slider.</Paragraph>],
+    examples: [<EnhancedSlider min={0} max={100} value={0} />],
   },
   {
     id: 'large',
     title: 'Large',
     blurb: [
-      <Paragraph>
-        This is a bigger version of the default slider.
-      </Paragraph>,
+      <Paragraph>This is a bigger version of the default slider.</Paragraph>,
     ],
-    examples: [
-      <EnhancedSlider
-        min={0}
-        max={100}
-        value={0}
-        large
-      />,
-    ],
+    examples: [<EnhancedSlider min={0} max={100} value={0} large />],
   },
   {
     id: 'range',
     title: 'Range',
-    blurb: [
-      <Paragraph>
-        There can be a range of values.
-      </Paragraph>,
-    ],
+    blurb: [<Paragraph>There can be a range of values.</Paragraph>],
     examples: [
-      <EnhancedSlider
-        min={0}
-        max={100}
-        value={[20, 80]}
-        minDistance={0}
-      />,
+      <EnhancedSlider min={0} max={100} value={[20, 80]} minDistance={0} />,
     ],
   },
   {
     id: 'stepped',
     title: 'Stepped',
-    blurb: [
-      <Paragraph>
-        You can set steps.
-      </Paragraph>,
-    ],
+    blurb: [<Paragraph>You can set steps.</Paragraph>],
     examples: [
       <EnhancedSlider
         min={0}
@@ -103,16 +71,10 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <EnhancedSlider
-        min={0}
-        max={100}
-        value={[20, 80]}
-        minDistance={15}
-      />,
+      <EnhancedSlider min={0} max={100} value={[20, 80]} minDistance={15} />,
     ],
   },
 ];
-
 
 const SlidersPage = () => (
   <DocsPageBuilder

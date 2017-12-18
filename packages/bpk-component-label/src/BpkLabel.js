@@ -24,15 +24,19 @@ import STYLES from './bpk-label.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkLabel = (props) => {
-  const {
-    children, required, white, disabled, className, ...rest
-  } = props;
+const BpkLabel = props => {
+  const { children, required, white, disabled, className, ...rest } = props;
   const classNames = [getClassName('bpk-label')];
 
-  if (white) { classNames.push(getClassName('bpk-label--white')); }
-  if (disabled) { classNames.push(getClassName('bpk-label--disabled')); }
-  if (className) { classNames.push(className); }
+  if (white) {
+    classNames.push(getClassName('bpk-label--white'));
+  }
+  if (disabled) {
+    classNames.push(getClassName('bpk-label--disabled'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
     // The BpkFieldset component addresses the issue of enforcing `htmlFor`

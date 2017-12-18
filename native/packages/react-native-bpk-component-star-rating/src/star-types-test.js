@@ -46,4 +46,3 @@ describe('star-types', () => {
     });
   });
 });
-

@@ -20,41 +20,59 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import BpkMobileScrollContainer, {
-  computeScrollBarAwareHeight, computeScrollIndicatorClassName,
+  computeScrollBarAwareHeight,
+  computeScrollIndicatorClassName,
 } from './BpkMobileScrollContainer';
 
-const makeMockScroller = (scrollLeft, scrollWidth, offsetWidth, offsetHeight = 0) => ({
-  scrollLeft, scrollWidth, offsetWidth, offsetHeight,
+const makeMockScroller = (
+  scrollLeft,
+  scrollWidth,
+  offsetWidth,
+  offsetHeight = 0,
+) => ({
+  scrollLeft,
+  scrollWidth,
+  offsetWidth,
+  offsetHeight,
 });
 
 describe('BpkMobileScrollContainer', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <BpkMobileScrollContainer>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </BpkMobileScrollContainer>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkMobileScrollContainer>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkMobileScrollContainer>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a custom "className" attribute', () => {
-    const tree = renderer.create(
-      <BpkMobileScrollContainer className="my-custom-class">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </BpkMobileScrollContainer>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkMobileScrollContainer className="my-custom-class">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkMobileScrollContainer>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a custom "style" attribute', () => {
-    const tree = renderer.create(
-      <BpkMobileScrollContainer style={{ backgroundColor: 'red' }}>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </BpkMobileScrollContainer>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkMobileScrollContainer style={{ backgroundColor: 'red' }}>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkMobileScrollContainer>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -85,18 +103,26 @@ describe('BpkMobileScrollContainer', () => {
 
         const classNames = computeScrollIndicatorClassName(scrollerEl);
 
-        expect(classNames).toContain('bpk-mobile-scroll-container--left-indicator');
-        expect(classNames).toContain('bpk-mobile-scroll-container--right-indicator');
+        expect(classNames).toContain(
+          'bpk-mobile-scroll-container--left-indicator',
+        );
+        expect(classNames).toContain(
+          'bpk-mobile-scroll-container--right-indicator',
+        );
       });
     });
 
     describe('computeScrollBarAwareHeight', () => {
       it('should return null if scrollerEl is null', () => {
-        expect(computeScrollBarAwareHeight(null, { offsetHeight: 50 })).toBeNull();
+        expect(
+          computeScrollBarAwareHeight(null, { offsetHeight: 50 }),
+        ).toBeNull();
       });
 
       it('should return null if innerEl is null', () => {
-        expect(computeScrollBarAwareHeight(makeMockScroller(10, 200, 200), null)).toBeNull();
+        expect(
+          computeScrollBarAwareHeight(makeMockScroller(10, 200, 200), null),
+        ).toBeNull();
       });
 
       it('should return scroll bar aware height when scroll bar is visible', () => {

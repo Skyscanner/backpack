@@ -28,18 +28,19 @@ const styles = StyleSheet.create({
   },
 });
 
-const BpkStarRating = (props) => {
-  const {
-    ratingLabel, rating, maxRating, ...rest
-  } = props;
+const BpkStarRating = props => {
+  const { ratingLabel, rating, maxRating, ...rest } = props;
 
-  const stars = (new Array(maxRating)).fill(undefined).map((_, i) => {
+  const stars = new Array(maxRating).fill(undefined).map((_, i) => {
     const type = getTypeByRating(i + 1, rating);
 
     return <BpkStar type={type} key={`star-${i}`} />; // eslint-disable-line react/no-array-index-key
   });
 
-  const label = typeof ratingLabel === 'string' ? ratingLabel : ratingLabel(rating, maxRating);
+  const label =
+    typeof ratingLabel === 'string'
+      ? ratingLabel
+      : ratingLabel(rating, maxRating);
 
   return (
     <View
@@ -54,10 +55,8 @@ const BpkStarRating = (props) => {
 };
 
 BpkStarRating.propTypes = {
-  ratingLabel: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]).isRequired,
+  ratingLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+    .isRequired,
   rating: PropTypes.number,
   maxRating: PropTypes.number,
 };

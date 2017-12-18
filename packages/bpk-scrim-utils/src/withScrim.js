@@ -22,13 +22,18 @@ import React, { Component } from 'react';
 import { cssModules, wrapDisplayName } from 'bpk-react-utils';
 
 import BpkScrim from './BpkScrim';
-import { lockScroll, restoreScroll, storeScroll, unlockScroll } from './scroll-utils';
+import {
+  lockScroll,
+  restoreScroll,
+  storeScroll,
+  unlockScroll,
+} from './scroll-utils';
 
 import STYLES from './bpk-scrim-content.scss';
 
 const getClassName = cssModules(STYLES);
 
-const withScrim = (WrappedComponent) => {
+const withScrim = WrappedComponent => {
   class component extends Component {
     constructor() {
       super();
@@ -117,7 +122,9 @@ const withScrim = (WrappedComponent) => {
       } = this.props;
 
       const classNames = [getClassName('bpk-scrim-content')];
-      if (isIphone) { classNames.push(getClassName('bpk-scrim-content--iphone-fix')); }
+      if (isIphone) {
+        classNames.push(getClassName('bpk-scrim-content--iphone-fix'));
+      }
       classNames.push(containerClassName);
 
       const closeEvents = {
@@ -165,7 +172,9 @@ const withScrim = (WrappedComponent) => {
   };
 
   component.defaultProps = {
-    isIphone: /iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : ''),
+    isIphone: /iPhone/i.test(
+      typeof window !== 'undefined' ? window.navigator.platform : '',
+    ),
     containerClassName: '',
   };
 

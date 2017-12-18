@@ -24,11 +24,13 @@ import STYLES from './bpk-textarea.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkTextarea = (props) => {
+const BpkTextarea = props => {
   const classNames = [getClassName('bpk-textarea')];
   const { className, ...rest } = props;
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   return <textarea className={classNames.join(' ')} {...rest} />;
 };

@@ -25,54 +25,66 @@ import STYLES from './bpk-pagination-list.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkPaginationList = (props) => {
+const BpkPaginationList = props => {
   const {
-    selectedPageIndex, pageCount, onPageChange, visibleRange, pageLabel,
+    selectedPageIndex,
+    pageCount,
+    onPageChange,
+    visibleRange,
+    pageLabel,
   } = props;
 
   const shoulderRange = Math.ceil(visibleRange / 2);
   const isFirstPageSelected = selectedPageIndex === 0;
   const isLastPageSelected = selectedPageIndex === pageCount - 1;
-  const displayRange = isFirstPageSelected || isLastPageSelected ? shoulderRange + 1 : shoulderRange;
+  const displayRange =
+    isFirstPageSelected || isLastPageSelected
+      ? shoulderRange + 1
+      : shoulderRange;
 
-  const children = new Array(pageCount).fill(undefined).map((_, i) => {
-    const isFirstPage = i === 0;
-    const isLastPage = i === (pageCount - 1);
-    const isFirstPageInRange = (i === (selectedPageIndex - displayRange)) && !isFirstPage;
-    const isLastPageInRange = (i === (selectedPageIndex + displayRange)) && !isLastPage;
-    const isPageOutOfRange = (i < selectedPageIndex - displayRange) || (i > selectedPageIndex + displayRange);
+  const children = new Array(pageCount)
+    .fill(undefined)
+    .map((_, i) => {
+      const isFirstPage = i === 0;
+      const isLastPage = i === pageCount - 1;
+      const isFirstPageInRange =
+        i === selectedPageIndex - displayRange && !isFirstPage;
+      const isLastPageInRange =
+        i === selectedPageIndex + displayRange && !isLastPage;
+      const isPageOutOfRange =
+        i < selectedPageIndex - displayRange ||
+        i > selectedPageIndex + displayRange;
 
-    let pageView = null;
-    if (isFirstPageInRange || isLastPageInRange) {
-      pageView = <BpkPaginationBreak />;
-    } else if (!isPageOutOfRange || isFirstPage || isLastPage) {
-      pageView = (
-        <BpkPaginationPage
-          page={i + 1}
-          onSelect={() => onPageChange(i)}
-          isSelected={selectedPageIndex === i}
-          pageLabel={pageLabel}
-        />
-      );
-    }
+      let pageView = null;
+      if (isFirstPageInRange || isLastPageInRange) {
+        pageView = <BpkPaginationBreak />;
+      } else if (!isPageOutOfRange || isFirstPage || isLastPage) {
+        pageView = (
+          <BpkPaginationPage
+            page={i + 1}
+            onSelect={() => onPageChange(i)}
+            isSelected={selectedPageIndex === i}
+            pageLabel={pageLabel}
+          />
+        );
+      }
 
-    if (pageView !== null) {
-      return (
-        <li
-          key={i} // eslint-disable-line react/no-array-index-key
-          className={getClassName('bpk-pagination-page-list__item')}
-        >
-          { pageView }
-        </li>
-      );
-    }
-    return null;
-  }).filter(page => !!page);
+      if (pageView !== null) {
+        return (
+          <li
+            key={i} // eslint-disable-line react/no-array-index-key
+            className={getClassName('bpk-pagination-page-list__item')}
+          >
+            {pageView}
+          </li>
+        );
+      }
+      return null;
+    })
+    .filter(page => !!page);
 
   return (
-    <ul className={getClassName('bpk-pagination-page-list')}>
-      { children }
-    </ul>
+    <ul className={getClassName('bpk-pagination-page-list')}>{children}</ul>
   );
 };
 

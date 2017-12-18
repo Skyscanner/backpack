@@ -22,7 +22,7 @@ import React, { Component } from 'react';
 import { wrapDisplayName } from 'bpk-react-utils';
 
 // eslint-disable-next-line import/prefer-default-export
-export const withSelectedState = (ComposedComponent) => {
+export const withSelectedState = ComposedComponent => {
   class WithSelectedState extends Component {
     constructor() {
       super();
@@ -58,7 +58,10 @@ export const withSelectedState = (ComposedComponent) => {
     }
   }
 
-  WithSelectedState.displayName = wrapDisplayName(ComposedComponent, 'withSelectedState');
+  WithSelectedState.displayName = wrapDisplayName(
+    ComposedComponent,
+    'withSelectedState',
+  );
 
   return WithSelectedState;
 };

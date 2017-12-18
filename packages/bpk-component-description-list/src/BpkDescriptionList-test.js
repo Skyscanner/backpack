@@ -22,32 +22,38 @@ import BpkDescriptionList from './BpkDescriptionList';
 
 describe('BpkDescriptionList', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <BpkDescriptionList>
-        <dt>term</dt>
-        <dd>description</dd>
-      </BpkDescriptionList>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkDescriptionList>
+          <dt>term</dt>
+          <dd>description</dd>
+        </BpkDescriptionList>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer.create(
-      <BpkDescriptionList className="test-description-list">
-        <dt>term</dt>
-        <dd>description</dd>
-      </BpkDescriptionList>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkDescriptionList className="test-description-list">
+          <dt>term</dt>
+          <dd>description</dd>
+        </BpkDescriptionList>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with other attributes', () => {
-    const tree = renderer.create(
-      <BpkDescriptionList title="this is a description list">
-        <dt>term</dt>
-        <dd>description</dd>
-      </BpkDescriptionList>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkDescriptionList title="this is a description list">
+          <dt>term</dt>
+          <dd>description</dd>
+        </BpkDescriptionList>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

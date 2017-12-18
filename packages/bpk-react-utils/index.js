@@ -22,7 +22,17 @@ import cssModules from './src/cssModules';
 import TransitionInitialMount from './src/TransitionInitialMount';
 import withDefaultProps from './src/withDefaultProps';
 
-export { Portal, cssModules, TransitionInitialMount, withDefaultProps, wrapDisplayName };
+export {
+  Portal,
+  cssModules,
+  TransitionInitialMount,
+  withDefaultProps,
+  wrapDisplayName,
+};
 export default {
-  Portal, cssModules, TransitionInitialMount, withDefaultProps, wrapDisplayName,
+  Portal,
+  cssModules,
+  TransitionInitialMount,
+  withDefaultProps,
+  wrapDisplayName,
 };

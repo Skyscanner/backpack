@@ -76,17 +76,21 @@ const components = [
   },
 ];
 
-const NativeTextPage = () => (<DocsPageBuilder
-  title="Text"
-  blurb={[
-    <Paragraph>
-      The Backpack text component encapsulates six different text styles tailored specifically for both iOS and Android.
-      It&#39;s a wrapper around the React Native <BpkLink href={reactNativeUrl}>Text component</BpkLink>,
-      therefore it supports all the same behaviours and properties.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={readme}
-/>);
+const NativeTextPage = () => (
+  <DocsPageBuilder
+    title="Text"
+    blurb={[
+      <Paragraph>
+        The Backpack text component encapsulates six different text styles
+        tailored specifically for both iOS and Android. It&#39;s a wrapper
+        around the React Native{' '}
+        <BpkLink href={reactNativeUrl}>Text component</BpkLink>, therefore it
+        supports all the same behaviours and properties.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={readme}
+  />
+);
 
 export default NativeTextPage;

@@ -25,25 +25,27 @@ import STYLES from './bpk-link.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkLink = (props) => {
-  const {
-    children,
-    className,
-    href,
-    onClick,
-    blank,
-    white,
-    ...rest
-  } = props;
+const BpkLink = props => {
+  const { children, className, href, onClick, blank, white, ...rest } = props;
 
   const classNames = [getClassName('bpk-link')];
   const target = blank ? '_blank' : null;
 
-  if (white) { classNames.push(getClassName('bpk-link--white')); }
-  if (className) { classNames.push(className); }
+  if (white) {
+    classNames.push(getClassName('bpk-link--white'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
-    <a className={classNames.join(' ')} href={href} onClick={onClick} target={target} {...rest}>
+    <a
+      className={classNames.join(' ')}
+      href={href}
+      onClick={onClick}
+      target={target}
+      {...rest}
+    >
       {children}
     </a>
   );

@@ -30,52 +30,50 @@ const components = [
     title: 'Default',
     blurb: [
       <Paragraph>
-        This is the default progress bar which animates in and automatically hides when complete.
+        This is the default progress bar which animates in and automatically
+        hides when complete.
       </Paragraph>,
     ],
-    examples: [
-      <ProgressContainer />,
-    ],
+    examples: [<ProgressContainer />],
   },
   {
     id: 'small',
     title: 'Small',
     blurb: [
       <Paragraph>
-        This is very similar to the default progress bar but is a little thinner to fit nicely inline,
-        e.g. at the top of a page.
+        This is very similar to the default progress bar but is a little thinner
+        to fit nicely inline, e.g. at the top of a page.
       </Paragraph>,
     ],
-    examples: [
-      <ProgressContainer small />,
-    ],
+    examples: [<ProgressContainer small />],
   },
   {
     id: 'stepped',
     title: 'Stepped',
     blurb: [
       <Paragraph>
-        This option allows you to specify how many steps there are in a given task. These are great to guide users
-        through longer processes such as completing a form.
+        This option allows you to specify how many steps there are in a given
+        task. These are great to guide users through longer processes such as
+        completing a form.
       </Paragraph>,
     ],
-    examples: [
-      <SteppedProgressContainer />,
-    ],
+    examples: [<SteppedProgressContainer />],
   },
 ];
 
-
-const PopoversPage = () => (<DocsPageBuilder
-  title="Progress bars"
-  blurb={[
-    <Paragraph>
-      Progress bars are a great way of providing feedback when a tasking is running. Unlike spinners,
-      they give the user a clear idea of how long the given task will take.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={progressReadme}
-/>);
+const PopoversPage = () => (
+  <DocsPageBuilder
+    title="Progress bars"
+    blurb={[
+      <Paragraph>
+        Progress bars are a great way of providing feedback when a tasking is
+        running. Unlike spinners, they give the user a clear idea of how long
+        the given task will take.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={progressReadme}
+  />
+);
 
 export default PopoversPage;

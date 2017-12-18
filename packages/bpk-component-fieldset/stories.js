@@ -45,26 +45,21 @@ class FieldsetContainer extends Component {
   }
 
   render() {
-    const {
-      children, validValue, isCheckbox, ...rest
-    } = this.props;
+    const { children, validValue, isCheckbox, ...rest } = this.props;
 
     let isValid;
     if (isCheckbox) {
       isValid = this.state.checked === validValue;
     } else {
-      isValid = this.state.value === ''
-        ? undefined
-        : this.state.value === validValue;
+      isValid =
+        this.state.value === '' ? undefined : this.state.value === validValue;
     }
 
     const dynamicChildrenProps = isCheckbox
       ? { checked: this.state.checked }
       : { value: this.state.value, valid: isValid };
 
-    const dynamicFieldsetProps = isCheckbox
-      ? { valid: isValid }
-      : {};
+    const dynamicFieldsetProps = isCheckbox ? { valid: isValid } : {};
 
     const clonedChildren = cloneElement(children, {
       onChange: this.onChange,
@@ -72,11 +67,7 @@ class FieldsetContainer extends Component {
     });
 
     return (
-      <BpkFieldset
-        isCheckbox={isCheckbox}
-        {...rest}
-        {...dynamicFieldsetProps}
-      >
+      <BpkFieldset isCheckbox={isCheckbox} {...rest} {...dynamicFieldsetProps}>
         {clonedChildren}
       </BpkFieldset>
     );
@@ -85,10 +76,8 @@ class FieldsetContainer extends Component {
 
 FieldsetContainer.propTypes = {
   children: PropTypes.node.isRequired,
-  validValue: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.bool,
-  ]).isRequired,
+  validValue: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
+    .isRequired,
   isCheckbox: PropTypes.bool,
 };
 
@@ -118,16 +107,14 @@ storiesOf('bpk-component-fieldset', module)
       validationMessage="Please select a fruit (Orange is correct!)"
       validValue="oranges"
     >
-      <BpkSelect
-        id="fruits_select"
-        name="fruits"
-        value=""
-      >
+      <BpkSelect id="fruits_select" name="fruits" value="">
         <option value="">Please select...</option>
         <option value="apples">Apples</option>
         <option value="oranges">Oranges</option>
         <option value="pears">Pears</option>
-        <option value="tomato" disabled>Tomato</option>
+        <option value="tomato" disabled>
+          Tomato
+        </option>
       </BpkSelect>
     </FieldsetContainer>
   ))
@@ -167,16 +154,14 @@ storiesOf('bpk-component-fieldset', module)
       validValue="oranges"
       required
     >
-      <BpkSelect
-        id="required_select"
-        name="fruits"
-        value=""
-      >
+      <BpkSelect id="required_select" name="fruits" value="">
         <option value="">Please select...</option>
         <option value="apples">Apples</option>
         <option value="oranges">Oranges</option>
         <option value="pears">Pears</option>
-        <option value="tomato" disabled>Tomato</option>
+        <option value="tomato" disabled>
+          Tomato
+        </option>
       </BpkSelect>
     </FieldsetContainer>
   ))
@@ -217,16 +202,14 @@ storiesOf('bpk-component-fieldset', module)
       validValue="oranges"
       disabled
     >
-      <BpkSelect
-        id="fruits_select"
-        name="fruits"
-        value=""
-      >
+      <BpkSelect id="fruits_select" name="fruits" value="">
         <option value="">Please select...</option>
         <option value="apples">Apples</option>
         <option value="oranges">Oranges</option>
         <option value="pears">Pears</option>
-        <option value="tomato" disabled>Tomato</option>
+        <option value="tomato" disabled>
+          Tomato
+        </option>
       </BpkSelect>
     </FieldsetContainer>
   ))

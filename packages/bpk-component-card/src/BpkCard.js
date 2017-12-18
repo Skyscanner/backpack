@@ -24,22 +24,32 @@ import STYLES from './bpk-card.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkCard = (props) => {
+const BpkCard = props => {
   const classNames = [getClassName('bpk-card')];
-  const {
-    children, className, href, padded, ...rest
-  } = props;
+  const { children, className, href, padded, ...rest } = props;
 
-  if (padded) { classNames.push(getClassName('bpk-card--padded')); }
-  if (className) { classNames.push(className); }
+  if (padded) {
+    classNames.push(getClassName('bpk-card--padded'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
   const classNameFinal = classNames.join(' ');
 
   if (href) {
-    return <a href={href} className={classNameFinal} {...rest}>{children}</a>;
+    return (
+      <a href={href} className={classNameFinal} {...rest}>
+        {children}
+      </a>
+    );
   }
 
-  return <div role="button" className={classNameFinal} {...rest}>{children}</div>;
+  return (
+    <div role="button" className={classNameFinal} {...rest}>
+      {children}
+    </div>
+  );
 };
 
 BpkCard.propTypes = {

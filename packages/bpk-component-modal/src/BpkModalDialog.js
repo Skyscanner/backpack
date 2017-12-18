@@ -26,12 +26,18 @@ import STYLES from './bpk-modal-dialog.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkModalDialog = (props) => {
+const BpkModalDialog = props => {
   const classNames = [getClassName('bpk-modal')];
 
-  if (props.wide) { classNames.push(getClassName('bpk-modal--wide')); }
-  if (props.className) { classNames.push(props.className); }
-  if (props.isIphone) { classNames.push(getClassName('bpk-modal--iphone-fix')); }
+  if (props.wide) {
+    classNames.push(getClassName('bpk-modal--wide'));
+  }
+  if (props.className) {
+    classNames.push(props.className);
+  }
+  if (props.isIphone) {
+    classNames.push(getClassName('bpk-modal--iphone-fix'));
+  }
 
   const headingId = `bpk-modal-heading-${props.id}`;
 
@@ -56,14 +62,17 @@ const BpkModalDialog = (props) => {
             {props.title}
           </h2>
           &nbsp;
-          {props.closeText
-            ? <BpkButtonLink onClick={props.onClose}>{props.closeText}</BpkButtonLink>
-            : <BpkCloseButton
+          {props.closeText ? (
+            <BpkButtonLink onClick={props.onClose}>
+              {props.closeText}
+            </BpkButtonLink>
+          ) : (
+            <BpkCloseButton
               className={getClassName('bpk-modal__close-button')}
               label={props.closeLabel}
               onClick={props.onClose}
             />
-          }
+          )}
         </header>
         <div className={getClassName('bpk-modal__content')}>
           {props.children}

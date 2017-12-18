@@ -33,25 +33,17 @@ import Paragraph from './../../components/Paragraph';
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
 
-const CheckboxWrapper = props => <div style={{ padding: `${spacingSm} 0` }} {...props} />;
+const CheckboxWrapper = props => (
+  <div style={{ padding: `${spacingSm} 0` }} {...props} />
+);
 
 const StopsContent = () => (
   <form>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="direct"
-        label="Direct"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="direct" label="Direct" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="1-stop"
-        label="1 stop"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="1-stop" label="1 stop" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
       <BpkCheckbox
@@ -160,7 +152,8 @@ const components = [
     title: 'Default',
     blurb: [
       <Paragraph>
-        By default, accordions allow only one section to be expanded at any time.
+        By default, accordions allow only one section to be expanded at any
+        time.
       </Paragraph>,
     ],
     examples: [
@@ -182,7 +175,8 @@ const components = [
     title: 'Multiple sections open',
     blurb: [
       <Paragraph>
-        Accordions can also be configured to allow multiple sections to be expanded simultaneously.
+        Accordions can also be configured to allow multiple sections to be
+        expanded simultaneously.
       </Paragraph>,
     ],
     examples: [
@@ -201,18 +195,21 @@ const components = [
   },
 ];
 
-const AccordionsPage = () => (<DocsPageBuilder
-  title="Accordions"
-  blurb={[
-    <Paragraph>
-      An accordion is a vertically stacked set of elements, such as content or forms, that allow the user to toggle
-      the display of sections of content. Each labeling element can be expanded or collapsed to reveal or hide its
-      associated content. Accordions are commonly used to reduce the need to scroll when presenting multiple sections
-      of content on a single page.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={accordionsReadme}
-/>);
+const AccordionsPage = () => (
+  <DocsPageBuilder
+    title="Accordions"
+    blurb={[
+      <Paragraph>
+        An accordion is a vertically stacked set of elements, such as content or
+        forms, that allow the user to toggle the display of sections of content.
+        Each labeling element can be expanded or collapsed to reveal or hide its
+        associated content. Accordions are commonly used to reduce the need to
+        scroll when presenting multiple sections of content on a single page.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={accordionsReadme}
+  />
+);
 
 export default AccordionsPage;

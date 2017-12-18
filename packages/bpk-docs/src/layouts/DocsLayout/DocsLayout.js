@@ -38,7 +38,11 @@ const links = [
       { id: 'BADGE', route: routes.BADGE, children: 'Badge' },
       { id: 'PANELS', route: routes.PANELS, children: 'Panels' },
       { id: 'IMAGES', route: routes.IMAGES, children: 'Images' },
-      { id: 'BANNER_ALERTS', route: routes.BANNER_ALERTS, children: 'Banner alerts' },
+      {
+        id: 'BANNER_ALERTS',
+        route: routes.BANNER_ALERTS,
+        children: 'Banner alerts',
+      },
       { id: 'MODALS', route: routes.MODALS, children: 'Modals' },
       { id: 'AUTOSUGGEST', route: routes.AUTOSUGGEST, children: 'Autosuggest' },
       { id: 'POPOVERS', route: routes.POPOVERS, children: 'Popovers' },
@@ -49,9 +53,17 @@ const links = [
       { id: 'NUDGERS', route: routes.NUDGERS, children: 'Nudgers' },
       { id: 'PROGRESS', route: routes.PROGRESS, children: 'Progress bars' },
       { id: 'TICKETS', route: routes.TICKETS, children: 'Tickets' },
-      { id: 'HORIZONTAL_NAV', route: routes.HORIZONTAL_NAV, children: 'Horizontal navigation' },
+      {
+        id: 'HORIZONTAL_NAV',
+        route: routes.HORIZONTAL_NAV,
+        children: 'Horizontal navigation',
+      },
       { id: 'FIELDSETS', route: routes.FIELDSETS, children: 'Fieldsets' },
-      { id: 'STAR_RATINGS', route: routes.STAR_RATING, children: 'Star rating' },
+      {
+        id: 'STAR_RATINGS',
+        route: routes.STAR_RATING,
+        children: 'Star rating',
+      },
       { id: 'BAR_CHARTS', route: routes.BARCHARTS, children: 'Bar charts' },
       { id: 'SLIDERS', route: routes.SLIDERS, children: 'Sliders' },
       { id: 'DRAWER', route: routes.DRAWER, children: 'Drawer' },
@@ -65,7 +77,11 @@ const links = [
       { id: 'FLIGHT_ITINERARIES', route: null, children: 'Flight itinerary' },
       { id: 'DIALOGS', route: null, children: 'Dialogs' },
       { id: 'BREAKPOINTS', route: routes.BREAKPOINTS, children: 'Breakpoints' },
-      { id: 'HORIZONTAL_GRID', route: routes.HORIZONTAL_GRID, children: 'Horizontal grid' },
+      {
+        id: 'HORIZONTAL_GRID',
+        route: routes.HORIZONTAL_GRID,
+        children: 'Horizontal grid',
+      },
     ],
   },
   {
@@ -73,15 +89,39 @@ const links = [
     category: 'Native components',
     sort: true,
     links: [
-      { id: 'NATIVE_BANNER_ALERT', route: routes.NATIVE_BANNER_ALERT, children: 'Banner alerts' },
+      {
+        id: 'NATIVE_BANNER_ALERT',
+        route: routes.NATIVE_BANNER_ALERT,
+        children: 'Banner alerts',
+      },
       { id: 'NATIVE_BUTTON', route: routes.NATIVE_BUTTON, children: 'Button' },
       { id: 'NATIVE_CARDS', route: routes.NATIVE_CARDS, children: 'Cards' },
-      { id: 'NATIVE_HORIZONTAL_NAV', route: routes.NATIVE_HORIZONTAL_NAV, children: 'Horizontal navigation' },
+      {
+        id: 'NATIVE_HORIZONTAL_NAV',
+        route: routes.NATIVE_HORIZONTAL_NAV,
+        children: 'Horizontal navigation',
+      },
       { id: 'NATIVE_ICONS', route: routes.NATIVE_ICONS, children: 'Icons' },
-      { id: 'NATIVE_INPUT', route: routes.NATIVE_INPUT, children: 'Text input' },
-      { id: 'NATIVE_SPINNER', route: routes.NATIVE_SPINNER, children: 'Spinners' },
-      { id: 'NATIVE_STAR_RATING', route: routes.NATIVE_STAR_RATING, children: 'Star Rating' },
-      { id: 'NATIVE_SWITCH', route: routes.NATIVE_SWITCH, children: 'Switches' },
+      {
+        id: 'NATIVE_INPUT',
+        route: routes.NATIVE_INPUT,
+        children: 'Text input',
+      },
+      {
+        id: 'NATIVE_SPINNER',
+        route: routes.NATIVE_SPINNER,
+        children: 'Spinners',
+      },
+      {
+        id: 'NATIVE_STAR_RATING',
+        route: routes.NATIVE_STAR_RATING,
+        children: 'Star Rating',
+      },
+      {
+        id: 'NATIVE_SWITCH',
+        route: routes.NATIVE_SWITCH,
+        children: 'Switches',
+      },
       { id: 'NATIVE_TEXT', route: routes.NATIVE_TEXT, children: 'Text' },
       { id: 'NATIVE_NUDGER', route: null, children: 'Nudger' },
     ],
@@ -97,7 +137,11 @@ const links = [
   },
 ];
 
-const DocsLayout = ({ children, ...rest }) => <SideNavLayout links={links} {...rest}>{children}</SideNavLayout>;
+const DocsLayout = ({ children, ...rest }) => (
+  <SideNavLayout links={links} {...rest}>
+    {children}
+  </SideNavLayout>
+);
 
 DocsLayout.propTypes = {
   children: PropTypes.oneOfType([

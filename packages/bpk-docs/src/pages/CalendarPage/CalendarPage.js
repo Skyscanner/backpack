@@ -99,11 +99,12 @@ const components = [
     title: 'Default calendar',
     blurb: [
       <Paragraph>
-        The default calendar configuration ships with navigation to select months, select a date, and the ability
-        to navigate via keyboard.
+        The default calendar configuration ships with navigation to select
+        months, select a date, and the ability to navigate via keyboard.
       </Paragraph>,
       <Paragraph>
-        See the prop types table below for full list of config and default options.
+        See the prop types table below for full list of config and default
+        options.
       </Paragraph>,
     ],
     examples: [
@@ -121,8 +122,8 @@ const components = [
     title: 'Localised calendar',
     blurb: [
       <Paragraph>
-        The calendar can be configured with locale data: month names, weekday names, weekend, first day of the week,
-        date formatting.
+        The calendar can be configured with locale data: month names, weekday
+        names, weekend, first day of the week, date formatting.
       </Paragraph>,
     ],
     examples: [
@@ -141,19 +142,19 @@ const components = [
     title: 'Calendar navigation',
     blurb: [
       <Paragraph>
-        The calendar nav component can be used independently to allow users to cycle through a group of months.
+        The calendar nav component can be used independently to allow users to
+        cycle through a group of months.
       </Paragraph>,
     ],
-    examples: [
-      <CalendarNavContainer id="my-calendar-nav" />,
-    ],
+    examples: [<CalendarNavContainer id="my-calendar-nav" />],
   },
   {
     id: 'calendar-grid',
     title: 'Calendar grid',
     blurb: [
       <Paragraph>
-        Similarly the calendar grid can be used on its own (grid and header are separate components).
+        Similarly the calendar grid can be used on its own (grid and header are
+        separate components).
       </Paragraph>,
     ],
     examples: [
@@ -179,17 +180,20 @@ const components = [
   },
 ];
 
-const CalendarPage = () => (<DocsPageBuilder
-  title="Calendar"
-  blurb={[
-    <Paragraph>
-      Calendars are used for date selection.  They can be configured in different ways depending on the context,
-      e.g. constrained to a date range, or with dates blocked out.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={calendarReadme}
-  sassdocId="calendar"
-/>);
+const CalendarPage = () => (
+  <DocsPageBuilder
+    title="Calendar"
+    blurb={[
+      <Paragraph>
+        Calendars are used for date selection. They can be configured in
+        different ways depending on the context, e.g. constrained to a date
+        range, or with dates blocked out.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={calendarReadme}
+    sassdocId="calendar"
+  />
+);
 
 export default CalendarPage;

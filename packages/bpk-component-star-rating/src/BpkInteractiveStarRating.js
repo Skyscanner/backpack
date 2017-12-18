@@ -35,7 +35,7 @@ export const getTypeByRating = (starNumber, rating) => {
   return STAR_TYPES.FULL;
 };
 
-const BpkInteractiveStarRating = (props) => {
+const BpkInteractiveStarRating = props => {
   const {
     className,
     getStarLabel,
@@ -56,7 +56,9 @@ const BpkInteractiveStarRating = (props) => {
 
   const currentRating = displayRating > maxRating ? maxRating : displayRating;
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   for (let starNumber = 1; starNumber <= maxRating; starNumber += 1) {
     const type = getTypeByRating(starNumber, currentRating);
@@ -77,11 +79,7 @@ const BpkInteractiveStarRating = (props) => {
   }
 
   return (
-    <div
-      {...rest}
-      className={classNames.join(' ')}
-      onMouseLeave={onMouseLeave}
-    >
+    <div {...rest} className={classNames.join(' ')} onMouseLeave={onMouseLeave}>
       {stars}
     </div>
   );

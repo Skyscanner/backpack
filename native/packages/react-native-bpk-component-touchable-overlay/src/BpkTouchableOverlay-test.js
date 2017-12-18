@@ -32,68 +32,67 @@ describe('BpkTouchableOverlay', () => {
 
   const content = (
     <BpkText>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-        commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-        et magnis dis parturient montes, nascetur ridiculus mus.
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+      ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+      dis parturient montes, nascetur ridiculus mus.
     </BpkText>
   );
 
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <BpkTouchableOverlay>
-        {content}
-      </BpkTouchableOverlay>,
-    ).toJSON();
+    const tree = renderer
+      .create(<BpkTouchableOverlay>{content}</BpkTouchableOverlay>)
+      .toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with custom style prop', () => {
-    const tree = renderer.create(
-      <BpkTouchableOverlay
-        style={styles.custom}
-      >
-        {content}
-      </BpkTouchableOverlay>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkTouchableOverlay style={styles.custom}>
+          {content}
+        </BpkTouchableOverlay>,
+      )
+      .toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer.create(
-      <BpkTouchableOverlay
-        testID="arbitrary value"
-      >
-        {content}
-      </BpkTouchableOverlay>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkTouchableOverlay testID="arbitrary value">
+          {content}
+        </BpkTouchableOverlay>,
+      )
+      .toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with border radius props', () => {
-    const tree = renderer.create(
-      <BpkTouchableOverlay
-        borderRadius="sm"
-        testID="arbitrary value"
-      >
-        {content}
-      </BpkTouchableOverlay>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkTouchableOverlay borderRadius="sm" testID="arbitrary value">
+          {content}
+        </BpkTouchableOverlay>,
+      )
+      .toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with custom overlay styles', () => {
-    const tree = renderer.create(
-      <BpkTouchableOverlay
-        overlayStyle={styles.custom}
-        testID="arbitrary value"
-      >
-        {content}
-      </BpkTouchableOverlay>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkTouchableOverlay
+          overlayStyle={styles.custom}
+          testID="arbitrary value"
+        >
+          {content}
+        </BpkTouchableOverlay>,
+      )
+      .toJSON();
 
     expect(tree).toMatchSnapshot();
   });

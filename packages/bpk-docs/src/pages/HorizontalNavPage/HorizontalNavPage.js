@@ -19,7 +19,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import readme from 'bpk-component-horizontal-nav/readme.md';
-import BpkHorizontalNav, { BpkHorizontalNavItem } from 'bpk-component-horizontal-nav';
+import BpkHorizontalNav, {
+  BpkHorizontalNavItem,
+} from 'bpk-component-horizontal-nav';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
@@ -88,30 +90,28 @@ const components = [
     id: 'default',
     title: 'Default',
     blurb: 'By default, navigation items are left aligned.',
-    examples: [
-      <HorizontalNavContainer />,
-    ],
+    examples: [<HorizontalNavContainer />],
   },
   {
     id: 'space-around',
     title: 'Space around',
     blurb: 'Navigation items can be configured to have space around them.',
-    examples: [
-      <HorizontalNavContainer spaceAround />,
-    ],
+    examples: [<HorizontalNavContainer spaceAround />],
   },
 ];
 
-const HorizontalNavPage = () => (<DocsPageBuilder
-  title="Horizontal navigation"
-  blurb={[
-    <Paragraph>
-      A simple navigation component, ideal for representing a section of a page that links to other pages or views
-      within the page.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={readme}
-/>);
+const HorizontalNavPage = () => (
+  <DocsPageBuilder
+    title="Horizontal navigation"
+    blurb={[
+      <Paragraph>
+        A simple navigation component, ideal for representing a section of a
+        page that links to other pages or views within the page.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={readme}
+  />
+);
 
 export default HorizontalNavPage;

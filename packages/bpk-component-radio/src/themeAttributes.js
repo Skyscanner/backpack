@@ -16,6 +16,4 @@
  * limitations under the License.
  */
 
-export default [
-  'radioCheckedColor',
-];
+export default ['radioCheckedColor'];

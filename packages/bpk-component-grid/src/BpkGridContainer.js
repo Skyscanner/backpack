@@ -24,17 +24,25 @@ import STYLES from './bpk-grid-container.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkGridContainer = (props) => {
-  const {
-    children, className, debug, fullWidth, ...rest
-  } = props;
+const BpkGridContainer = props => {
+  const { children, className, debug, fullWidth, ...rest } = props;
   const classNames = [getClassName('bpk-grid__container')];
 
-  if (debug) { classNames.push(getClassName('bpk-grid__container--debug')); }
-  if (fullWidth) { classNames.push(getClassName('bpk-grid__container--full-width')); }
-  if (className) { classNames.push(className); }
+  if (debug) {
+    classNames.push(getClassName('bpk-grid__container--debug'));
+  }
+  if (fullWidth) {
+    classNames.push(getClassName('bpk-grid__container--full-width'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
-  return <div className={classNames.join(' ')} {...rest}>{children}</div>;
+  return (
+    <div className={classNames.join(' ')} {...rest}>
+      {children}
+    </div>
+  );
 };
 
 BpkGridContainer.propTypes = {

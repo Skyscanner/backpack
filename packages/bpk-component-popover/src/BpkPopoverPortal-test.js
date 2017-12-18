@@ -37,35 +37,39 @@ import BpkPopoverPortal from './BpkPopoverPortal';
 
 describe('BpkPopoverPortal', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <BpkPopoverPortal
-        id="my-popover"
-        target={<div>target</div>}
-        isOpen={false}
-        onClose={() => null}
-        label="My popover"
-        closeButtonText="Close"
-      >
-        <div>My popover content</div>
-      </BpkPopoverPortal>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkPopoverPortal
+          id="my-popover"
+          target={<div>target</div>}
+          isOpen={false}
+          onClose={() => null}
+          label="My popover"
+          closeButtonText="Close"
+        >
+          <div>My popover content</div>
+        </BpkPopoverPortal>,
+      )
+      .toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
   it('should not render anything if target is a function', () => {
-    const tree = renderer.create(
-      <BpkPopoverPortal
-        id="my-popover"
-        target={() => 'test'}
-        isOpen={false}
-        onClose={() => null}
-        label="My popover"
-        closeButtonText="Close"
-      >
-        <div>My popover content</div>
-      </BpkPopoverPortal>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkPopoverPortal
+          id="my-popover"
+          target={() => 'test'}
+          isOpen={false}
+          onClose={() => null}
+          label="My popover"
+          closeButtonText="Close"
+        >
+          <div>My popover content</div>
+        </BpkPopoverPortal>,
+      )
+      .toJSON();
 
     expect(tree).toMatchSnapshot();
   });
@@ -113,7 +117,7 @@ describe('BpkPopoverPortal', () => {
     });
   });
 
-  it('should trap and restore focus', (done) => {
+  it('should trap and restore focus', done => {
     const focusStore = require('a11y-focus-store'); // eslint-disable-line global-require
     const focusScope = require('a11y-focus-scope'); // eslint-disable-line global-require
 
@@ -148,7 +152,7 @@ describe('BpkPopoverPortal', () => {
     });
   });
 
-  it('should reposition when props are updated', (done) => {
+  it('should reposition when props are updated', done => {
     const portal = mount(
       <BpkPopoverPortal
         id="my-popover"
@@ -173,7 +177,7 @@ describe('BpkPopoverPortal', () => {
     });
   });
 
-  it('should not reposition if not open', (done) => {
+  it('should not reposition if not open', done => {
     const portal = mount(
       <BpkPopoverPortal
         id="my-popover"
@@ -195,7 +199,7 @@ describe('BpkPopoverPortal', () => {
     });
   });
 
-  it('should not create multiple tether instances when repositioning', (done) => {
+  it('should not create multiple tether instances when repositioning', done => {
     const portal = mount(
       <BpkPopoverPortal
         id="my-popover"

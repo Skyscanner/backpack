@@ -20,8 +20,6 @@ import themeAttributes from './themeAttributes';
 
 describe('themeAttributes', () => {
   it('exports the expected attributes', () => {
-    expect(themeAttributes).toEqual([
-      'checkboxCheckedColor',
-    ]);
+    expect(themeAttributes).toEqual(['checkboxCheckedColor']);
   });
 });

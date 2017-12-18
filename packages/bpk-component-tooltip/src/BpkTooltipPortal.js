@@ -19,7 +19,10 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Portal, cssModules } from 'bpk-react-utils';
-import Tether, { getArrowPositionCallback, applyRTLTransforms } from 'bpk-tether';
+import Tether, {
+  getArrowPositionCallback,
+  applyRTLTransforms,
+} from 'bpk-tether';
 
 import BpkTooltip from './BpkTooltip';
 import { ARROW_ID } from './constants';
@@ -27,10 +30,12 @@ import STYLES from './BpkTooltipPortal.scss';
 
 const getClassName = cssModules(STYLES);
 
-const hasTouchSupport = () => !!(
-  (typeof window !== 'undefined') &&
-    (('ontouchstart' in window) || (window.DocumentTouch && document instanceof window.DocumentTouch))
-);
+const hasTouchSupport = () =>
+  !!(
+    typeof window !== 'undefined' &&
+    ('ontouchstart' in window ||
+      (window.DocumentTouch && document instanceof window.DocumentTouch))
+  );
 
 class BpkTooltipPortal extends Component {
   constructor(props) {
@@ -70,7 +75,10 @@ class BpkTooltipPortal extends Component {
       ...applyRTLTransforms(this.props.tetherOptions),
     });
 
-    this.tether.on('position', getArrowPositionCallback(tooltipElement, ARROW_ID, 'bpk-tooltip-tether'));
+    this.tether.on(
+      'position',
+      getArrowPositionCallback(tooltipElement, ARROW_ID, 'bpk-tooltip-tether'),
+    );
 
     this.tether.position();
   }
@@ -97,31 +105,40 @@ class BpkTooltipPortal extends Component {
   render() {
     const classNames = [getClassName('bpk-tooltip-portal')];
     const {
-      padded, target, children, hideOnTouchDevices, portalClassName, portalStyle, ...rest
+      padded,
+      target,
+      children,
+      hideOnTouchDevices,
+      portalClassName,
+      portalStyle,
+      ...rest
     } = this.props;
     const renderPortal = !hasTouchSupport() || !hideOnTouchDevices;
 
-    if (portalClassName) { classNames.push(portalClassName); }
+    if (portalClassName) {
+      classNames.push(portalClassName);
+    }
 
     delete rest.tetherOptions;
 
-    return (
-      renderPortal ? (
-        <Portal
-          target={target}
-          targetRef={(targetRef) => { this.targetRef = targetRef; }}
-          isOpen={this.state.isOpen}
-          onOpen={this.onOpen}
-          onClose={this.closeTooltip}
-          style={portalStyle}
-          className={classNames.join(' ')}
-        >
-          <BpkTooltip padded={padded} {...rest}>
-            { children }
-          </BpkTooltip>
-        </Portal>
-      )
-        : target
+    return renderPortal ? (
+      <Portal
+        target={target}
+        targetRef={targetRef => {
+          this.targetRef = targetRef;
+        }}
+        isOpen={this.state.isOpen}
+        onOpen={this.onOpen}
+        onClose={this.closeTooltip}
+        style={portalStyle}
+        className={classNames.join(' ')}
+      >
+        <BpkTooltip padded={padded} {...rest}>
+          {children}
+        </BpkTooltip>
+      </Portal>
+    ) : (
+      target
     );
   }
 }

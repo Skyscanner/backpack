@@ -24,9 +24,11 @@ import bpkCustomThemes from './theming';
 
 const availableThemes = Object.keys(bpkCustomThemes);
 
-const setTheme = (theme) => {
+const setTheme = theme => {
   const htmlElement = getHtmlElement();
-  htmlElement.dispatchEvent(new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme } }));
+  htmlElement.dispatchEvent(
+    new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme } }),
+  );
 };
 
 class BpkThemeToggle extends React.Component {
@@ -62,7 +64,9 @@ class BpkThemeToggle extends React.Component {
 
   cycleTheme() {
     let { selectedTheme } = this.state;
-    let selectedIndex = selectedTheme ? (availableThemes.indexOf(selectedTheme) + 1) : 0;
+    let selectedIndex = selectedTheme
+      ? availableThemes.indexOf(selectedTheme) + 1
+      : 0;
     if (selectedIndex >= availableThemes.length) {
       selectedIndex = 0;
     }
@@ -81,13 +85,15 @@ class BpkThemeToggle extends React.Component {
           value={this.state.selectedTheme}
           onChange={this.handleChange}
         >
-          <option value="" hidden>Change theme</option>
+          <option value="" hidden>
+            Change theme
+          </option>
           <option value="skyscanner">None</option>
-          { availableThemes.map(themeName => (
+          {availableThemes.map(themeName => (
             <option key={themeName} value={themeName}>
               {themeName}
             </option>
-      ))}
+          ))}
         </BpkSelect>
       </div>
     );

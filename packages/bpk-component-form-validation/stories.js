@@ -43,9 +43,7 @@ class FormValidationContainer extends Component {
     return (
       <div>
         <div style={{ textAlign: 'center' }}>
-          <BpkButton onClick={this.toggleExpanded}>
-            Toggle
-          </BpkButton>
+          <BpkButton onClick={this.toggleExpanded}>Toggle</BpkButton>
         </div>
         <BpkFormValidation expanded={this.state.expanded} {...this.props} />
       </div>
@@ -53,9 +51,8 @@ class FormValidationContainer extends Component {
   }
 }
 
-storiesOf('bpk-component-form-validation', module)
-  .add('Default', () => (
-    <FormValidationContainer id="my-validation-message">
-      A validation message
-    </FormValidationContainer>
-  ));
+storiesOf('bpk-component-form-validation', module).add('Default', () => (
+  <FormValidationContainer id="my-validation-message">
+    A validation message
+  </FormValidationContainer>
+));

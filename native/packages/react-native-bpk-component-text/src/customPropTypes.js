@@ -20,14 +20,18 @@ import { Platform, StyleSheet } from 'react-native';
 
 export const emphasizePropType = (props, propName, componentName) => {
   const value = props[propName];
-  if (typeof (value) !== 'boolean') {
-    return new Error(`Invalid prop \`${propName}\` of type \`${typeof (value)}\` supplied to \`${componentName}\`, expected \`boolean\`.`); // eslint-disable-line max-len
+  if (typeof value !== 'boolean') {
+    return new Error(
+      `Invalid prop \`${propName}\` of type \`${typeof value}\` supplied to \`${componentName}\`, expected \`boolean\`.`,
+    ); // eslint-disable-line max-len
   }
 
   const enabled = !!value;
 
   if (Platform.OS === 'ios' && (enabled && props.textStyle === 'xxl')) {
-    return new Error(`Invalid prop \`${propName}\` of value \`${value}\` supplied to \`${componentName}\`. \`textStyle\` value of \`xxl\` cannot be emphasized.`); // eslint-disable-line max-len
+    return new Error(
+      `Invalid prop \`${propName}\` of value \`${value}\` supplied to \`${componentName}\`. \`textStyle\` value of \`xxl\` cannot be emphasized.`,
+    ); // eslint-disable-line max-len
   }
 
   return false;
@@ -39,7 +43,11 @@ export const stylePropType = (props, propName, componentName) => {
   if (value === undefined) return false;
 
   if (value.fontWeight) {
-    return new Error(`Invalid prop \`${propName}\` with \`fontWeight\` value \`${value.fontWeight}\` supplied to \`${componentName}\`. Use \`emphasize\` prop instead.`); // eslint-disable-line max-len
+    return new Error(
+      `Invalid prop \`${propName}\` with \`fontWeight\` value \`${
+        value.fontWeight
+      }\` supplied to \`${componentName}\`. Use \`emphasize\` prop instead.`,
+    ); // eslint-disable-line max-len
   }
 
   return false;

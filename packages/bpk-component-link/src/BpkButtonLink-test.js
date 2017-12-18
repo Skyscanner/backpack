@@ -22,30 +22,53 @@ import BpkButtonLink, { themeAttributes } from './BpkButtonLink';
 
 describe('BpkButtonLink', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkButtonLink onClick={() => null}>Link</BpkButtonLink>).toJSON();
+    const tree = renderer
+      .create(<BpkButtonLink onClick={() => null}>Link</BpkButtonLink>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" atribute', () => {
-    const tree = renderer.create(
-      <BpkButtonLink onClick={() => null} className="test-class">Link</BpkButtonLink>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkButtonLink onClick={() => null} className="test-class">
+          Link
+        </BpkButtonLink>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with "white" attribute', () => {
-    const tree = renderer.create(<BpkButtonLink onClick={() => null} white>Link</BpkButtonLink>).toJSON();
+    const tree = renderer
+      .create(
+        <BpkButtonLink onClick={() => null} white>
+          Link
+        </BpkButtonLink>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary attributes', () => {
-    const tree = renderer.create(<BpkButtonLink onClick={() => null} id="test-id">Link</BpkButtonLink>).toJSON();
+    const tree = renderer
+      .create(
+        <BpkButtonLink onClick={() => null} id="test-id">
+          Link
+        </BpkButtonLink>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   describe('themeAttributes', () => {
     it('exports the expected themeAttributes', () => {
-      expect(themeAttributes).toEqual(['linkColor', 'linkHoverColor', 'linkActiveColor', 'linkVisitedColor']);
+      expect(themeAttributes).toEqual([
+        'linkColor',
+        'linkHoverColor',
+        'linkActiveColor',
+        'linkVisitedColor',
+      ]);
     });
   });
 });

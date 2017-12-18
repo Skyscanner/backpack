@@ -25,7 +25,9 @@ import ColorSwatch from './../../components/ColorSwatch';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 const getClassName = cssModules(STYLES);
-const containerClassName = getClassName('bpkdocs-colors-page__swatch-container');
+const containerClassName = getClassName(
+  'bpkdocs-colors-page__swatch-container',
+);
 
 const components = [
   {
@@ -33,8 +35,16 @@ const components = [
     title: 'Primary',
     blurb: [
       <div className={containerClassName}>
-        <ColorSwatch name="color-blue-500" color={colors.colorBlue500} whiteColor />
-        <ColorSwatch name="color-blue-700" color={colors.colorBlue700} whiteColor />
+        <ColorSwatch
+          name="color-blue-500"
+          color={colors.colorBlue500}
+          whiteColor
+        />
+        <ColorSwatch
+          name="color-blue-700"
+          color={colors.colorBlue700}
+          whiteColor
+        />
         <ColorSwatch name="color-white" color={colors.colorWhite} border />
       </div>,
     ],
@@ -45,9 +55,17 @@ const components = [
     title: 'Secondary',
     blurb: [
       <div className={containerClassName}>
-        <ColorSwatch name="color-green-500" color={colors.colorGreen500} whiteColor />
+        <ColorSwatch
+          name="color-green-500"
+          color={colors.colorGreen500}
+          whiteColor
+        />
         <ColorSwatch name="color-yellow-500" color={colors.colorYellow500} />
-        <ColorSwatch name="color-red-500" color={colors.colorRed500} whiteColor />
+        <ColorSwatch
+          name="color-red-500"
+          color={colors.colorRed500}
+          whiteColor
+        />
       </div>,
     ],
     examples: [],
@@ -59,10 +77,26 @@ const components = [
       <div className={containerClassName}>
         <ColorSwatch name="color-gray-50" color={colors.colorGray50} />
         <ColorSwatch name="color-gray-100" color={colors.colorGray100} />
-        <ColorSwatch name="color-gray-300" color={colors.colorGray300} whiteColor />
-        <ColorSwatch name="color-gray-500" color={colors.colorGray500} whiteColor />
-        <ColorSwatch name="color-gray-700" color={colors.colorGray700} whiteColor />
-        <ColorSwatch name="color-gray-900" color={colors.colorGray900} whiteColor />
+        <ColorSwatch
+          name="color-gray-300"
+          color={colors.colorGray300}
+          whiteColor
+        />
+        <ColorSwatch
+          name="color-gray-500"
+          color={colors.colorGray500}
+          whiteColor
+        />
+        <ColorSwatch
+          name="color-gray-700"
+          color={colors.colorGray700}
+          whiteColor
+        />
+        <ColorSwatch
+          name="color-gray-900"
+          color={colors.colorGray900}
+          whiteColor
+        />
       </div>,
     ],
     examples: [],
@@ -72,16 +106,19 @@ const components = [
     title: 'Gradients',
     blurb: [
       <div className={containerClassName}>
-        <ColorSwatch name="primary-gradient" gradient={primaryGradient} whiteColor />
+        <ColorSwatch
+          name="primary-gradient"
+          gradient={primaryGradient}
+          whiteColor
+        />
       </div>,
     ],
     examples: [],
   },
 ];
 
-const ColorsPage = () => (<DocsPageBuilder
-  title="Colors"
-  components={components}
-/>);
+const ColorsPage = () => (
+  <DocsPageBuilder title="Colors" components={components} />
+);
 
 export default ColorsPage;

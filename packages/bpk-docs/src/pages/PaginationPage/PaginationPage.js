@@ -45,13 +45,17 @@ class PaginationContainer extends Component {
         <BpkPagination
           pageCount={pageCount}
           selectedPageIndex={this.state.pageIndex}
-          onPageChange={(pageIndex) => { this.handleChange(pageIndex); }}
+          onPageChange={pageIndex => {
+            this.handleChange(pageIndex);
+          }}
           previousLabel="previous"
           nextLabel="next"
           visibleRange={visibleRange}
           paginationLabel="Pagination Navigation"
           pageLabel={(page, isSelected) =>
-            `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+            `Go to page ${page}${
+              isSelected ? ', this is the current page' : ''
+            }.`
           }
         />
       </div>
@@ -69,26 +73,20 @@ PaginationContainer.defaultProps = {
   selectedPageIndex: 0,
 };
 
-
 const components = [
   {
     id: 'default',
     title: 'Default',
-    blurb: [
-      <Paragraph>
-        This is the default pagination.
-      </Paragraph>,
-    ],
-    examples: [
-      <PaginationContainer pageCount={20} />,
-    ],
+    blurb: [<Paragraph>This is the default pagination.</Paragraph>],
+    examples: [<PaginationContainer pageCount={20} />],
   },
   {
     id: 'visible-range',
     title: 'Visible range',
     blurb: [
       <Paragraph>
-        Customize the range of pages to be displayed in the middle. e.g. visibleRange={5}
+        Customize the range of pages to be displayed in the middle. e.g.
+        visibleRange={5}
       </Paragraph>,
     ],
     examples: [
@@ -106,7 +104,8 @@ const PaginationPage = () => (
     title="Pagination"
     blurb={[
       <Paragraph>
-        The Backpack pagination component is used to indicate a series of related content exists across multiple pages.
+        The Backpack pagination component is used to indicate a series of
+        related content exists across multiple pages.
       </Paragraph>,
     ]}
     components={components}

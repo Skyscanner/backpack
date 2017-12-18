@@ -1,9 +1,14 @@
 {
-  "extends": "skyscanner",
+  "extends": [
+      "skyscanner",
+      "prettier",
+      "prettier/react"
+  ],
   "env": {
     "browser": true,
     "jest": true
   },
+  "plugins": ["prettier"],
   "settings": {
     "import/resolver": {
       "node": {
@@ -17,10 +22,7 @@
     }
   },
   "rules": {
-    "max-len": [
-      2,
-      120
-    ],
+    "prettier/prettier": "error",
     "react/jsx-filename-extension": 0,
     "import/no-extraneous-dependencies": 0,
     "react/prefer-stateless-function": [

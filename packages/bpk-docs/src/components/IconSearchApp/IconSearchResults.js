@@ -27,24 +27,30 @@ import Heading from '../Heading';
 
 const getClassName = cssModules(STYLES);
 
-const IconSearchResults = (props) => {
+const IconSearchResults = props => {
   const categories = _.groupBy(props.icons, 'categoryName');
   const categoryNames = Object.keys(categories);
 
   return (
     <div>
-      <Heading level="h3" className={getClassName('bpkdocs-icon-search-results__heading')}>Results</Heading>
+      <Heading
+        level="h3"
+        className={getClassName('bpkdocs-icon-search-results__heading')}
+      >
+        Results
+      </Heading>
       <dl className={getClassName('bpkdocs-icon-search-results__list')}>
-        {categoryNames.length > 0
-          ? categoryNames.map(categoryName => (
+        {categoryNames.length > 0 ? (
+          categoryNames.map(categoryName => (
             <IconSearchResult
               key={categoryName}
               categoryName={categoryName}
               icons={categories[categoryName]}
             />
           ))
-          : <div>There are no icons by that name.</div>
-        }
+        ) : (
+          <div>There are no icons by that name.</div>
+        )}
       </dl>
     </div>
   );

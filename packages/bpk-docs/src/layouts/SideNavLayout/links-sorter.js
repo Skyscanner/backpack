@@ -16,28 +16,29 @@
  * limitations under the License.
  */
 
-export default links => links.sort((a, b) => {
-  const aHasRoute = !!a.route;
-  const bHasRoute = !!b.route;
+export default links =>
+  links.sort((a, b) => {
+    const aHasRoute = !!a.route;
+    const bHasRoute = !!b.route;
 
-  if (aHasRoute === bHasRoute) {
-    const aId = a.id.toLowerCase();
-    const bId = b.id.toLowerCase();
+    if (aHasRoute === bHasRoute) {
+      const aId = a.id.toLowerCase();
+      const bId = b.id.toLowerCase();
 
-    if (aId < bId) {
+      if (aId < bId) {
+        return -1;
+      }
+
+      if (aId > bId) {
+        return 1;
+      }
+
+      return 0;
+    }
+
+    if (aHasRoute && !bHasRoute) {
       return -1;
     }
 
-    if (aId > bId) {
-      return 1;
-    }
-
-    return 0;
-  }
-
-  if (aHasRoute && !bHasRoute) {
-    return -1;
-  }
-
-  return 1;
-});
+    return 1;
+  });

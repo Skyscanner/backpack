@@ -29,9 +29,16 @@ const getClassName = cssModules(STYLES);
 
 const SassdocLink = props => (
   <aside className={getClassName('bpkdocs-sassdoc-link')}>
-    <img className={getClassName('bpkdocs-sassdoc-link__logo')} src={`/${sassdocLogoSvg}`} alt="Sass docs logo" />
+    <img
+      className={getClassName('bpkdocs-sassdoc-link__logo')}
+      src={`/${sassdocLogoSvg}`}
+      alt="Sass docs logo"
+    />
     Looking for &quot;{props.category}&quot; Sass variables and mixins? Check
-    out <BpkLink href={`/sassdoc/#${props.sassdocId}`} blank>Backpack&apos;s Sassdoc</BpkLink>.
+    out{' '}
+    <BpkLink href={`/sassdoc/#${props.sassdocId}`} blank>
+      Backpack&apos;s Sassdoc
+    </BpkLink>.
   </aside>
 );
 

@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const BpkHorizontalNavItem = (props) => {
+const BpkHorizontalNavItem = props => {
   const {
     accessibilityLabel,
     disabled,

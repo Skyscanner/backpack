@@ -25,7 +25,11 @@ import { cssModules } from 'bpk-react-utils';
 import { colors } from 'bpk-tokens/tokens/base.es6';
 import { Link } from 'react-router';
 import BpkContentContainer from 'bpk-component-content-container';
-import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+import {
+  BpkGridContainer,
+  BpkGridRow,
+  BpkGridColumn,
+} from 'bpk-component-grid';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
 
@@ -43,13 +47,9 @@ const getClassName = cssModules(STYLES);
 
 /* eslint-disable import/no-webpack-loader-syntax */
 const iconGuidelines = require('!!file-loader?name=[name].[hash].pdf!./../../static/icon_guidelines.pdf');
-const illustrationGuidelines = require(
-  '!!file-loader?name=[name].[hash].pdf!./../../static/Illustration_Guideline_2017_v6.pdf',
-);
+const illustrationGuidelines = require('!!file-loader?name=[name].[hash].pdf!./../../static/Illustration_Guideline_2017_v6.pdf');
 const illustrationSamples = require('!!file-loader?name=[name].[hash].zip!./../../static/illistration_samples.zip');
-const toneOfVoiceGuidelines = require(
-  '!!file-loader?name=[name].[hash].pdf!./../../static/skyscanner_tone_of_voice_guide.pdf',
-);
+const toneOfVoiceGuidelines = require('!!file-loader?name=[name].[hash].pdf!./../../static/skyscanner_tone_of_voice_guide.pdf');
 const photographyGuidelines = require('!!file-loader?name=[name].[hash].pdf!./../../static/photography_guidelines.pdf');
 const brandGuidelines = require('!!file-loader?name=[name].[hash].pdf!./../../static/brand_guidelines_17-10-16.pdf');
 /* eslint-enable */
@@ -59,7 +59,6 @@ const noMarginClasses = [
   getClassName('bpkdocs-style-page__section-header--no-bottom-margin'),
 ].join(' ');
 
-
 const StylePage = props => (
   <BpkGridContainer>
     <Helmet title="Style" />
@@ -68,7 +67,8 @@ const StylePage = props => (
         <BpkContentContainer>
           <Heading level="h1">Style</Heading>
           <Paragraph>
-            Here you can find guides and information for creating assets in the Skyscanner style.
+            Here you can find guides and information for creating assets in the
+            Skyscanner style.
           </Paragraph>
         </BpkContentContainer>
       </BpkGridColumn>
@@ -96,7 +96,10 @@ const StylePage = props => (
         </a>
       </BpkGridColumn>
       <BpkGridColumn width={3} mobileWidth={12} tabletWidth={6}>
-        <Link to={ROUTES.ICONS} className={getClassName('bpkdocs-style-page__link')}>
+        <Link
+          to={ROUTES.ICONS}
+          className={getClassName('bpkdocs-style-page__link')}
+        >
           <BpkTile
             heading="Using icons in code"
             cta="Read the docs"
@@ -170,7 +173,10 @@ const StylePage = props => (
         tabletWidth={6}
         className={getClassName('bpkdocs-style-page__copywrite-column')}
       >
-        <Heading level="h2" className={getClassName('bpkdocs-style-page__section-header')}>
+        <Heading
+          level="h2"
+          className={getClassName('bpkdocs-style-page__section-header')}
+        >
           Copywriting
         </Heading>
         <a
@@ -194,7 +200,12 @@ const StylePage = props => (
         mobileWidth={12}
         className={getClassName('bpkdocs-style-page__copywrite-column')}
       >
-        <Heading level="h2" className={getClassName('bpkdocs-style-page__section-header')}>Photography</Heading>
+        <Heading
+          level="h2"
+          className={getClassName('bpkdocs-style-page__section-header')}
+        >
+          Photography
+        </Heading>
         <a
           href={`/${photographyGuidelines}`}
           className={getClassName('bpkdocs-style-page__link')}
@@ -213,8 +224,11 @@ const StylePage = props => (
     <BpkGridRow>
       <BpkGridColumn width={12}>
         <BpkContentContainer>
-          <Paragraph className={getClassName('bpkdocs-style-page__brand-guidelines')}>
-            Looking for brand guidelines? <BpkLink href={`/${brandGuidelines}`}>Grab them here.</BpkLink>
+          <Paragraph
+            className={getClassName('bpkdocs-style-page__brand-guidelines')}
+          >
+            Looking for brand guidelines?{' '}
+            <BpkLink href={`/${brandGuidelines}`}>Grab them here.</BpkLink>
           </Paragraph>
         </BpkContentContainer>
       </BpkGridColumn>

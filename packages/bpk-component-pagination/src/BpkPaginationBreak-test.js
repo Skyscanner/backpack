@@ -27,9 +27,9 @@ describe('BpkPaginationBreak', () => {
   });
 
   it('should display custom break label', () => {
-    const tree = renderer.create(<BpkPaginationBreak
-      breakLabel="|"
-    />).toJSON();
+    const tree = renderer
+      .create(<BpkPaginationBreak breakLabel="|" />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

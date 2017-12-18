@@ -20,6 +20,4 @@ import BpkHorizontalNav from './src/BpkHorizontalNav';
 import BpkHorizontalNavItem from './src/BpkHorizontalNavItem';
 
 export default BpkHorizontalNav;
-export {
-  BpkHorizontalNavItem,
-};
+export { BpkHorizontalNavItem };

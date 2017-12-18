@@ -31,9 +31,7 @@ const getClassName = cssModules(STYLES);
 const spacing = remToPx(spacingXs);
 const lineHeight = remToPx(lineHeightSm);
 
-const getAxisConfig = ({
-  orientation, margin, height, width, scale,
-}) => {
+const getAxisConfig = ({ orientation, margin, height, width, scale }) => {
   const position = (scale.bandwidth ? center : identity)(scale.copy());
 
   if (orientation === ORIENTATION_X) {
@@ -55,7 +53,10 @@ const getAxisConfig = ({
   }
 
   const containerTranslateX = rtlConditionalValue(0, width - margin.right);
-  const labelTranslateX = rtlConditionalValue(lineHeight - margin.left, margin.right - spacing);
+  const labelTranslateX = rtlConditionalValue(
+    lineHeight - margin.left,
+    margin.right - spacing,
+  );
   const labelTranslateY = (height - margin.top - margin.bottom) / 2;
 
   return {
@@ -75,7 +76,7 @@ const getAxisConfig = ({
   };
 };
 
-const BpkChartAxis = (props) => {
+const BpkChartAxis = props => {
   const {
     orientation,
     numTicks,
@@ -90,13 +91,13 @@ const BpkChartAxis = (props) => {
     ...rest
   } = props;
 
-  const {
-    textProps, tickPosition, containerProps, labelProps,
-  } = getAxisConfig(props);
+  const { textProps, tickPosition, containerProps, labelProps } = getAxisConfig(
+    props,
+  );
 
-  const ticks = scale.ticks ?
-    scale.ticks(numTicks) :
-    scale.domain().filter((tick, i) => ((i - tickOffset) % tickEvery) === 0);
+  const ticks = scale.ticks
+    ? scale.ticks(numTicks)
+    : scale.domain().filter((tick, i) => (i - tickOffset) % tickEvery === 0);
 
   return (
     <g
@@ -117,14 +118,15 @@ const BpkChartAxis = (props) => {
           </text>
         </g>
       ))}
-      { label &&
+      {label && (
         <text
           className={getClassName('bpk-chart__axis-label')}
           textAnchor="middle"
           {...labelProps}
-        >{ label }
+        >
+          {label}
         </text>
-      }
+      )}
     </g>
   );
 };

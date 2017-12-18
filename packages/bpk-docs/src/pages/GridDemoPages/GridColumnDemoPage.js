@@ -19,7 +19,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+import {
+  BpkGridContainer,
+  BpkGridRow,
+  BpkGridColumn,
+} from 'bpk-component-grid';
 
 import Heading from './../../components/Heading';
 

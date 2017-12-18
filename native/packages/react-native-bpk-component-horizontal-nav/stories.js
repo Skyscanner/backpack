@@ -17,10 +17,7 @@
  */
 
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-} from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
@@ -45,19 +42,37 @@ class ManagedNav extends React.Component {
   render() {
     return (
       <BpkHorizontalNav selectedId={this.state.selectedId}>
-        <BpkHorizontalNavItem id="0" onPress={() => { this.setState({ selectedId: '0' }); }} title="One" />
-        <BpkHorizontalNavItem id="1" onPress={() => { this.setState({ selectedId: '1' }); }} title="Two (Long Title)" />
-        <BpkHorizontalNavItem id="2" onPress={() => { this.setState({ selectedId: '2' }); }} title="Three" />
+        <BpkHorizontalNavItem
+          id="0"
+          onPress={() => {
+            this.setState({ selectedId: '0' });
+          }}
+          title="One"
+        />
+        <BpkHorizontalNavItem
+          id="1"
+          onPress={() => {
+            this.setState({ selectedId: '1' });
+          }}
+          title="Two (Long Title)"
+        />
+        <BpkHorizontalNavItem
+          id="2"
+          onPress={() => {
+            this.setState({ selectedId: '2' });
+          }}
+          title="Three"
+        />
       </BpkHorizontalNav>
     );
   }
 }
 
-const StoryNav = (props) => {
+const StoryNav = props => {
   const { items, ...rest } = props;
   return (
     <BpkHorizontalNav selectedId="1" {...rest}>
-      { [...Array(items)].map((_, index) => (
+      {[...Array(items)].map((_, index) => (
         <BpkHorizontalNavItem
           title="Item"
           id={index.toString()}
@@ -65,7 +80,12 @@ const StoryNav = (props) => {
           onPress={action(`Nav item ${index} pressed`)}
         />
       ))}
-      <BpkHorizontalNavItem title="Disabled Item" disabled id="disabled" onPress={() => {}} />
+      <BpkHorizontalNavItem
+        title="Disabled Item"
+        disabled
+        id="disabled"
+        onPress={() => {}}
+      />
     </BpkHorizontalNav>
   );
 };
@@ -80,18 +100,42 @@ storiesOf('BpkHorizontalNav', module)
   .add('docs:default', () => (
     <View style={styles.bottomMargin}>
       <BpkHorizontalNav selectedId="1">
-        <BpkHorizontalNavItem title="Flights" id="0" onPress={action('Nav item one pressed')} />
-        <BpkHorizontalNavItem title="Hotels" id="1" onPress={action('Nav item two pressed')} />
-        <BpkHorizontalNavItem title="Car hire" id="2" onPress={action('Nav item three pressed')} />
+        <BpkHorizontalNavItem
+          title="Flights"
+          id="0"
+          onPress={action('Nav item one pressed')}
+        />
+        <BpkHorizontalNavItem
+          title="Hotels"
+          id="1"
+          onPress={action('Nav item two pressed')}
+        />
+        <BpkHorizontalNavItem
+          title="Car hire"
+          id="2"
+          onPress={action('Nav item three pressed')}
+        />
       </BpkHorizontalNav>
     </View>
   ))
   .add('docs:spaceAround', () => (
     <View style={styles.bottomMargin}>
       <BpkHorizontalNav spaceAround selectedId="1">
-        <BpkHorizontalNavItem title="Flights" id="0" onPress={action('Nav item one pressed')} />
-        <BpkHorizontalNavItem title="Hotels" id="1" onPress={action('Nav item two pressed')} />
-        <BpkHorizontalNavItem title="Car hire" id="2" onPress={action('Nav item three pressed')} />
+        <BpkHorizontalNavItem
+          title="Flights"
+          id="0"
+          onPress={action('Nav item one pressed')}
+        />
+        <BpkHorizontalNavItem
+          title="Hotels"
+          id="1"
+          onPress={action('Nav item two pressed')}
+        />
+        <BpkHorizontalNavItem
+          title="Car hire"
+          id="2"
+          onPress={action('Nav item three pressed')}
+        />
       </BpkHorizontalNav>
     </View>
   ))
@@ -120,7 +164,9 @@ storiesOf('BpkHorizontalNav', module)
         </BpkThemeProvider>
       </View>
       <View style={styles.bottomMargin}>
-        <StorySubheading>In a state management wrapper, for testing animation</StorySubheading>
+        <StorySubheading>
+          In a state management wrapper, for testing animation
+        </StorySubheading>
         <ManagedNav />
       </View>
     </View>

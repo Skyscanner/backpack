@@ -22,72 +22,44 @@ import BpkSlider from './BpkSlider';
 
 describe('BpkSlider', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <BpkSlider
-        min={0}
-        max={100}
-        value={25}
-      />,
-    ).toJSON();
+    const tree = renderer
+      .create(<BpkSlider min={0} max={100} value={25} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer.create(
-      <BpkSlider
-        min={0}
-        max={100}
-        value={25}
-        className="my-slider"
-      />,
-    ).toJSON();
+    const tree = renderer
+      .create(<BpkSlider min={0} max={100} value={25} className="my-slider" />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a "large" attribute', () => {
-    const tree = renderer.create(
-      <BpkSlider
-        min={0}
-        max={9}
-        value={2}
-        large
-      />,
-    ).toJSON();
+    const tree = renderer
+      .create(<BpkSlider min={0} max={9} value={2} large />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a "step" attribute', () => {
-    const tree = renderer.create(
-      <BpkSlider
-        min={0}
-        max={100}
-        value={2}
-        step={10}
-      />,
-    ).toJSON();
+    const tree = renderer
+      .create(<BpkSlider min={0} max={100} value={2} step={10} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a range of values', () => {
-    const tree = renderer.create(
-      <BpkSlider
-        min={0}
-        max={100}
-        value={[10, 90]}
-      />,
-    ).toJSON();
+    const tree = renderer
+      .create(<BpkSlider min={0} max={100} value={[10, 90]} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a minimum distance between controls', () => {
-    const tree = renderer.create(
-      <BpkSlider
-        min={0}
-        max={100}
-        value={[10, 90]}
-        minDistance={20}
-      />,
-    ).toJSON();
+    const tree = renderer
+      .create(<BpkSlider min={0} max={100} value={[10, 90]} minDistance={20} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -21,11 +21,17 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkRtlToggle from 'bpk-component-rtl-toggle';
 import BpkGridToggle from 'bpk-component-grid-toggle';
-import BpkThemeToggle, { updateOnThemeChange } from 'bpk-component-theme-toggle';
+import BpkThemeToggle, {
+  updateOnThemeChange,
+} from 'bpk-component-theme-toggle';
 import BpkThemeProvider from 'bpk-theming';
 
 import { PropTypes as RouterPropTypes } from 'react-router';
-import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+import {
+  BpkGridContainer,
+  BpkGridRow,
+  BpkGridColumn,
+} from 'bpk-component-grid';
 import { cssModules } from 'bpk-react-utils';
 
 import themeAttributes from './../../themeableAttributes';
@@ -67,7 +73,10 @@ class DefaultLayout extends Component {
     const { children } = this.props;
 
     return (
-      <EnhancedThemeProvider themeAttributes={themeAttributes} id="portal-taget">
+      <EnhancedThemeProvider
+        themeAttributes={themeAttributes}
+        id="portal-taget"
+      >
         <div id="application-container">
           <Helmet titleTemplate="%s | Backpack" />
           <Header
@@ -75,24 +84,36 @@ class DefaultLayout extends Component {
             onHamburgerClick={this.onHamburgerClick}
           />
           <main>{children}</main>
-          <BpkGridContainer className={getClassName('bpkdocs-default-layout__footer-container')}>
-            <BpkGridRow className={getClassName('bpkdocs-default-layout__footer-row')}>
+          <BpkGridContainer
+            className={getClassName('bpkdocs-default-layout__footer-container')}
+          >
+            <BpkGridRow
+              className={getClassName('bpkdocs-default-layout__footer-row')}
+            >
               <BpkGridColumn width={6} mobileWidth={12}>
-                <small className={getClassName('bpkdocs-default-layout__footer-copy')}>
+                <small
+                  className={getClassName(
+                    'bpkdocs-default-layout__footer-copy',
+                  )}
+                >
                   &copy; Skyscanner {new Date().getFullYear()}
                 </small>
               </BpkGridColumn>
               <BpkGridColumn width={6} mobileWidth={12}>
                 <small
-                  className={
-                    ['bpkdocs-default-layout__footer-copy', 'bpkdocs-default-layout__footer-copy--align-right']
-                      .map(getClassName)
-                      .join(' ')
-                  }
+                  className={[
+                    'bpkdocs-default-layout__footer-copy',
+                    'bpkdocs-default-layout__footer-copy--align-right',
+                  ]
+                    .map(getClassName)
+                    .join(' ')}
                 >
-                  <BpkGridToggle />&nbsp;
-                  | <BpkRtlToggle />&nbsp;
-                  <BpkThemeToggle className={getClassName('bpkdocs-default-layout__theme-switcher')} />
+                  <BpkGridToggle />&nbsp; | <BpkRtlToggle />&nbsp;
+                  <BpkThemeToggle
+                    className={getClassName(
+                      'bpkdocs-default-layout__theme-switcher',
+                    )}
+                  />
                 </small>
               </BpkGridColumn>
             </BpkGridRow>

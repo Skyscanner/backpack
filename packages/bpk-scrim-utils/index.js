@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-
 import withScrim from './src/withScrim';
 
 export { withScrim };

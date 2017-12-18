@@ -33,110 +33,87 @@ const rows = [
 
 describe('BpkDataTable', () => {
   it('should render correctly with multiple columns', () => {
-    const tree = renderer.create(
-      <BpkDataTable rows={rows} height={200}>
-        <BpkDataTableColumn
-          label="Name"
-          dataKey="name"
-          width={100}
-        />
-        <BpkDataTableColumn
-          label="Description"
-          dataKey="description"
-          width={100}
-          flexGrow={1}
-        />
-        <BpkDataTableColumn
-          label="Bla"
-          dataKey="bla"
-          width={100}
-        />
-      </BpkDataTable>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkDataTable rows={rows} height={200}>
+          <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+          <BpkDataTableColumn
+            label="Description"
+            dataKey="description"
+            width={100}
+            flexGrow={1}
+          />
+          <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+        </BpkDataTable>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with no data; only headers', () => {
-    const tree = renderer.create(
-      <BpkDataTable rows={[]} height={200}>
-        <BpkDataTableColumn
-          label="Name"
-          dataKey="name"
-          width={100}
-        />
-        <BpkDataTableColumn
-          label="Description"
-          dataKey="description"
-          width={100}
-          flexGrow={1}
-        />
-        <BpkDataTableColumn
-          label="Bla"
-          dataKey="bla"
-          width={100}
-        />
-      </BpkDataTable>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkDataTable rows={[]} height={200}>
+          <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+          <BpkDataTableColumn
+            label="Description"
+            dataKey="description"
+            width={100}
+            flexGrow={1}
+          />
+          <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+        </BpkDataTable>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a specified width', () => {
-    const tree = renderer.create(
-      <BpkDataTable rows={rows} height={200} width={400}>
-        <BpkDataTableColumn
-          label="Name"
-          dataKey="name"
-          width={100}
-        />
-        <BpkDataTableColumn
-          label="Description"
-          dataKey="description"
-          width={100}
-          flexGrow={1}
-        />
-        <BpkDataTableColumn
-          label="Bla"
-          dataKey="bla"
-          width={100}
-        />
-      </BpkDataTable>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkDataTable rows={rows} height={200} width={400}>
+          <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+          <BpkDataTableColumn
+            label="Description"
+            dataKey="description"
+            width={100}
+            flexGrow={1}
+          />
+          <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+        </BpkDataTable>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a custom className', () => {
-    const tree = renderer.create(
-      <BpkDataTable rows={rows} height={200} className="custom-data-table">
-        <BpkDataTableColumn
-          label="Name"
-          dataKey="name"
-          width={100}
-        />
-        <BpkDataTableColumn
-          label="Description"
-          dataKey="description"
-          width={100}
-          flexGrow={1}
-        />
-        <BpkDataTableColumn
-          label="Bla"
-          dataKey="bla"
-          width={100}
-        />
-      </BpkDataTable>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkDataTable rows={rows} height={200} className="custom-data-table">
+          <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+          <BpkDataTableColumn
+            label="Description"
+            dataKey="description"
+            width={100}
+            flexGrow={1}
+          />
+          <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
+        </BpkDataTable>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should call the onRowClick callback when a row is clicked', () => {
     const onRowClick = jest.fn();
     const wrapper = mount(
-      <BpkDataTable rows={rows} height={200} width={400} onRowClick={onRowClick}>
-        <BpkDataTableColumn
-          label="Name"
-          dataKey="name"
-          width={100}
-        />
+      <BpkDataTable
+        rows={rows}
+        height={200}
+        width={400}
+        onRowClick={onRowClick}
+      >
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
@@ -145,7 +122,10 @@ describe('BpkDataTable', () => {
       </BpkDataTable>,
     );
 
-    wrapper.find('.bpk-data-table__row').last().simulate('click');
+    wrapper
+      .find('.bpk-data-table__row')
+      .last()
+      .simulate('click');
 
     expect(onRowClick).toHaveBeenCalledTimes(1);
     expect(onRowClick).toHaveBeenCalledWith(rows[1]);
@@ -154,11 +134,7 @@ describe('BpkDataTable', () => {
   it('should re-render when rows prop is updated', () => {
     const wrapper = mount(
       <BpkDataTable rows={rows} height={200} width={400}>
-        <BpkDataTableColumn
-          label="Name"
-          dataKey="name"
-          width={100}
-        />
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
         <BpkDataTableColumn
           label="Description"
           dataKey="description"
@@ -174,4 +150,3 @@ describe('BpkDataTable', () => {
     expect(wrapper.find('.bpk-data-table__row')).toHaveLength(2);
   });
 });
-

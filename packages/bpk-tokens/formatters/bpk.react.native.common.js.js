@@ -20,15 +20,16 @@ import _ from 'lodash';
 import { blockComment } from './license-header';
 import valueTemplate from './react-native-value-template';
 
-export const tokenTemplate = ({ name, value, type }) => (
-  `  ${_.camelCase(name)}: ${valueTemplate(value, type)}`
-);
+export const tokenTemplate = ({ name, value, type }) =>
+  `  ${_.camelCase(name)}: ${valueTemplate(value, type)}`;
 
-export default (json) => {
+export default json => {
   const props = _.map(_.toPairs(json.props), x => x[1]);
 
   const lastLine = `${tokenTemplate(_.last(props))}`;
-  const singleTokens = _.map(_.take(props, props.length - 1), prop => tokenTemplate(prop)).join(',\n');
+  const singleTokens = _.map(_.take(props, props.length - 1), prop =>
+    tokenTemplate(prop),
+  ).join(',\n');
   const source = `
 module.exports = {
 ${singleTokens},

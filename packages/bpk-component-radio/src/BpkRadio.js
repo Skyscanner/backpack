@@ -24,15 +24,19 @@ import STYLES from './BpkRadio.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkRadio = (props) => {
+const BpkRadio = props => {
   const classNames = [getClassName('bpk-radio')];
-  const {
-    name, label, disabled, white, className, ...rest
-  } = props;
+  const { name, label, disabled, white, className, ...rest } = props;
 
-  if (white) { classNames.push(getClassName('bpk-radio--white')); }
-  if (disabled) { classNames.push(getClassName('bpk-radio--disabled')); }
-  if (className) { classNames.push(className); }
+  if (white) {
+    classNames.push(getClassName('bpk-radio--white'));
+  }
+  if (disabled) {
+    classNames.push(getClassName('bpk-radio--disabled'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
   // This is awkward because the label-has-for rule enforces an 'id' / 'for' pairing
   // when it's not really necessary for nested inputs.

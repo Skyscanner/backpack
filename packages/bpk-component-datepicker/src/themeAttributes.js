@@ -24,4 +24,6 @@ export default [
   ...calendarAttributes,
   ...popoverAttributes,
   ...modalAttributes,
-].filter((attribute, index, attributes) => attributes.indexOf(attribute) === index);
+].filter(
+  (attribute, index, attributes) => attributes.indexOf(attribute) === index,
+);

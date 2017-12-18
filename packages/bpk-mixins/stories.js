@@ -39,12 +39,8 @@ storiesOf('bpk-mixins', module)
   ))
   .add('bpk-breakpoint-*', () => (
     <div>
-      <div className={getClassName('bpk-breakpoint-mobile')}>
-        MOBILE
-      </div>
-      <div className={getClassName('bpk-breakpoint-tablet')}>
-        TABLET
-      </div>
+      <div className={getClassName('bpk-breakpoint-mobile')}>MOBILE</div>
+      <div className={getClassName('bpk-breakpoint-tablet')}>TABLET</div>
       <div className={getClassName('bpk-breakpoint-tablet-only')}>
         TABLET ONLY
       </div>

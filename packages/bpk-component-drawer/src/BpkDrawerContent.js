@@ -28,7 +28,7 @@ import STYLES from './bpk-drawer-content.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkDrawerContent = (props) => {
+const BpkDrawerContent = props => {
   const drawerClassNames = [getClassName('bpk-drawer')];
   const headerClassNames = [getClassName('bpk-drawer__heading')];
   const contentClassNames = [getClassName('bpk-drawer__content')];
@@ -66,7 +66,10 @@ const BpkDrawerContent = (props) => {
           role="dialog"
           key="dialog"
           aria-labelledby={headingId}
-          className={[drawerClassNames.join(' '), getClassName(`bpk-drawer--${status}`)].join(' ')}
+          className={[
+            drawerClassNames.join(' '),
+            getClassName(`bpk-drawer--${status}`),
+          ].join(' ')}
           ref={props.dialogRef}
           {...props.closeEvents}
         >
@@ -75,20 +78,21 @@ const BpkDrawerContent = (props) => {
               {props.title}
             </h2>
             &nbsp;
-            {props.closeText
-              ? <BpkButtonLink onClick={props.onClose}>{props.closeText}</BpkButtonLink>
-              : <BpkCloseButton
+            {props.closeText ? (
+              <BpkButtonLink onClick={props.onClose}>
+                {props.closeText}
+              </BpkButtonLink>
+            ) : (
+              <BpkCloseButton
                 className={getClassName('bpk-drawer__close-button')}
                 label={props.closeLabel}
                 onClick={props.onClose}
               />
-            }
+            )}
           </header>
-          <div className={contentClassNames.join(' ')}>
-            {props.children}
-          </div>
+          <div className={contentClassNames.join(' ')}>{props.children}</div>
         </section>
-        )}
+      )}
     </Transition>
   );
 };

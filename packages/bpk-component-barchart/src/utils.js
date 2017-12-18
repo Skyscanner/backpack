@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-const center = (scale) => {
+const center = scale => {
   let offset = scale.bandwidth() / 2;
   if (scale.round()) {
     offset = Math.round(offset);
@@ -26,7 +26,7 @@ const center = (scale) => {
 
 const identity = x => x;
 
-const remToPx = (value) => {
+const remToPx = value => {
   let parsed = null;
 
   if (/rem$/.test(value)) {
@@ -36,8 +36,4 @@ const remToPx = (value) => {
   return parsed || null;
 };
 
-export {
-  center,
-  identity,
-  remToPx,
-};
+export { center, identity, remToPx };

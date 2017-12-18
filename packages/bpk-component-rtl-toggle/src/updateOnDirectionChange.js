@@ -22,8 +22,7 @@ import { wrapDisplayName } from 'bpk-react-utils';
 
 import { getHtmlElement, DIRECTION_CHANGE_EVENT } from './utils';
 
-
-const updateOnDirectionChange = (EnhancedComponent) => {
+const updateOnDirectionChange = EnhancedComponent => {
   class UpdateOnDirectionChange extends Component {
     constructor() {
       super();
@@ -31,11 +30,19 @@ const updateOnDirectionChange = (EnhancedComponent) => {
     }
 
     componentDidMount() {
-      getHtmlElement().addEventListener(DIRECTION_CHANGE_EVENT, this.onDirectionChange, false);
+      getHtmlElement().addEventListener(
+        DIRECTION_CHANGE_EVENT,
+        this.onDirectionChange,
+        false,
+      );
     }
 
     componentWillUnmount() {
-      getHtmlElement().removeEventListener(DIRECTION_CHANGE_EVENT, this.onDirectionChange, false);
+      getHtmlElement().removeEventListener(
+        DIRECTION_CHANGE_EVENT,
+        this.onDirectionChange,
+        false,
+      );
     }
 
     onDirectionChange() {
@@ -47,7 +54,10 @@ const updateOnDirectionChange = (EnhancedComponent) => {
     }
   }
 
-  UpdateOnDirectionChange.displayName = wrapDisplayName(EnhancedComponent, 'updateOnDirectionChange');
+  UpdateOnDirectionChange.displayName = wrapDisplayName(
+    EnhancedComponent,
+    'updateOnDirectionChange',
+  );
 
   return UpdateOnDirectionChange;
 };

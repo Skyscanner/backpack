@@ -23,7 +23,12 @@ import focusScope from 'a11y-focus-scope';
 import focusStore from 'a11y-focus-store';
 
 import withScrim from './withScrim';
-import { lockScroll, restoreScroll, storeScroll, unlockScroll } from './scroll-utils';
+import {
+  lockScroll,
+  restoreScroll,
+  storeScroll,
+  unlockScroll,
+} from './scroll-utils';
 
 jest.mock('a11y-focus-scope', () => ({
   scopeFocus: jest.fn(),
@@ -51,35 +56,41 @@ describe('BpkScrim', () => {
     });
 
     it('should render correctly', () => {
-      const tree = renderer.create(
-        <Component
-          onClose={jest.fn()}
-          getApplicationElement={jest.fn()}
-          isIphone={false}
-        />,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <Component
+            onClose={jest.fn()}
+            getApplicationElement={jest.fn()}
+            isIphone={false}
+          />,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly when is iPhone', () => {
-      const tree = renderer.create(
-        <Component
-          onClose={jest.fn()}
-          getApplicationElement={jest.fn()}
-          isIphone
-        />,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <Component
+            onClose={jest.fn()}
+            getApplicationElement={jest.fn()}
+            isIphone
+          />,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly with containerClassName', () => {
-      const tree = renderer.create(
-        <Component
-          onClose={jest.fn()}
-          getApplicationElement={jest.fn()}
-          containerClassName="containerClassName"
-        />,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <Component
+            onClose={jest.fn()}
+            getApplicationElement={jest.fn()}
+            containerClassName="containerClassName"
+          />,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
   });
@@ -89,7 +100,7 @@ describe('BpkScrim', () => {
     let Component;
 
     beforeEach(() => {
-      TestComponent = () => (<div>TestComponent</div>);
+      TestComponent = () => <div>TestComponent</div>;
       Component = withScrim(TestComponent);
     });
 
@@ -128,7 +139,7 @@ describe('BpkScrim', () => {
     let Component;
 
     beforeEach(() => {
-      TestComponent = () => (<div>TestComponent</div>);
+      TestComponent = () => <div>TestComponent</div>;
       Component = withScrim(TestComponent);
     });
 

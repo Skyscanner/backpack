@@ -23,38 +23,54 @@ import BpkAccordionItem from './BpkAccordionItem';
 
 describe('BpkAccordionItem', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <BpkAccordionItem id="my-accordion" title="My accordion item">
-        My accordion content
-      </BpkAccordionItem>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkAccordionItem id="my-accordion" title="My accordion item">
+          My accordion content
+        </BpkAccordionItem>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with "expanded" prop', () => {
-    const tree = renderer.create(
-      <BpkAccordionItem id="my-accordion" title="My accordion item" expanded>
-        My accordion content
-      </BpkAccordionItem>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkAccordionItem id="my-accordion" title="My accordion item" expanded>
+          My accordion content
+        </BpkAccordionItem>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with "className" prop', () => {
-    const tree = renderer.create(
-      <BpkAccordionItem id="my-accordion" title="My accordion item" className="my-custom-class">
-        My accordion content
-      </BpkAccordionItem>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkAccordionItem
+          id="my-accordion"
+          title="My accordion item"
+          className="my-custom-class"
+        >
+          My accordion content
+        </BpkAccordionItem>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should not render an "initiallyExpanded" attribute on the html node', () => {
-    const tree = renderer.create(
-      <BpkAccordionItem id="my-accordion" title="My accordion item" initiallyExpanded>
-        My accordion content
-      </BpkAccordionItem>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkAccordionItem
+          id="my-accordion"
+          title="My accordion item"
+          initiallyExpanded
+        >
+          My accordion content
+        </BpkAccordionItem>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

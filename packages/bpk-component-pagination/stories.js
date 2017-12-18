@@ -42,13 +42,17 @@ class PaginationContainer extends Component {
         <BpkPagination
           pageCount={pageCount}
           selectedPageIndex={this.state.pageIndex}
-          onPageChange={(pageIndex) => { this.handleChange(pageIndex); }}
+          onPageChange={pageIndex => {
+            this.handleChange(pageIndex);
+          }}
           previousLabel="previous"
           nextLabel="next"
           visibleRange={visibleRange}
           paginationLabel="Pagination Navigation"
           pageLabel={(page, isSelected) =>
-            `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+            `Go to page ${page}${
+              isSelected ? ', this is the current page' : ''
+            }.`
           }
         />
       </div>
@@ -67,15 +71,9 @@ PaginationContainer.defaultProps = {
 };
 
 storiesOf('bpk-component-pagination', module)
-  .add('Pagination - default', () => (
-    <PaginationContainer pageCount={20} />
-  ))
+  .add('Pagination - default', () => <PaginationContainer pageCount={20} />)
   .add('Pagination - 5 visible pages', () => (
     <PaginationContainer pageCount={20} visibleRange={5} />
   ))
-  .add('Pagination - 2 pages', () => (
-    <PaginationContainer pageCount={2} />
-  ))
-  .add('Pagination - single page', () => (
-    <PaginationContainer pageCount={1} />
-  ));
+  .add('Pagination - 2 pages', () => <PaginationContainer pageCount={2} />)
+  .add('Pagination - single page', () => <PaginationContainer pageCount={1} />);

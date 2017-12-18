@@ -26,10 +26,7 @@ const commonTests = () => {
   describe('BpkTextInput', () => {
     it('should render correctly', () => {
       const testRenderer = TestRenderer.create(
-        <BpkTextInput
-          label="Name"
-          value=""
-        />,
+        <BpkTextInput label="Name" value="" />,
       );
 
       expect(testRenderer.toJSON()).toMatchSnapshot();
@@ -37,11 +34,7 @@ const commonTests = () => {
 
     it('should render correctly with arbitrary props', () => {
       const testRenderer = TestRenderer.create(
-        <BpkTextInput
-          label="Name"
-          value=""
-          testId="arbitrary"
-        />,
+        <BpkTextInput label="Name" value="" testId="arbitrary" />,
       );
 
       expect(testRenderer.toJSON()).toMatchSnapshot();
@@ -55,11 +48,7 @@ const commonTests = () => {
       });
 
       const testRenderer = TestRenderer.create(
-        <BpkTextInput
-          label="Name"
-          value=""
-          style={styles.custom}
-        />,
+        <BpkTextInput label="Name" value="" style={styles.custom} />,
       );
 
       expect(testRenderer.toJSON()).toMatchSnapshot();
@@ -67,10 +56,7 @@ const commonTests = () => {
 
     it('should render correctly with value', () => {
       const testRenderer = TestRenderer.create(
-        <BpkTextInput
-          label="Name"
-          value="Joe"
-        />,
+        <BpkTextInput label="Name" value="Joe" />,
       );
 
       expect(testRenderer.toJSON()).toMatchSnapshot();
@@ -78,11 +64,7 @@ const commonTests = () => {
 
     it('should render correctly with valid', () => {
       const testRenderer = TestRenderer.create(
-        <BpkTextInput
-          label="Name"
-          value=""
-          valid
-        />,
+        <BpkTextInput label="Name" value="" valid />,
       );
 
       expect(testRenderer.toJSON()).toMatchSnapshot();
@@ -90,11 +72,7 @@ const commonTests = () => {
 
     it('should render correctly with valid false', () => {
       const testRenderer = TestRenderer.create(
-        <BpkTextInput
-          label="Name"
-          value=""
-          valid={false}
-        />,
+        <BpkTextInput label="Name" value="" valid={false} />,
       );
 
       expect(testRenderer.toJSON()).toMatchSnapshot();
@@ -115,11 +93,7 @@ const commonTests = () => {
 
     it('should render correctly with editable=false', () => {
       const testRenderer = TestRenderer.create(
-        <BpkTextInput
-          label="Name"
-          value=""
-          editable={false}
-        />,
+        <BpkTextInput label="Name" value="" editable={false} />,
       );
 
       expect(testRenderer.toJSON()).toMatchSnapshot();
@@ -131,7 +105,9 @@ const commonTests = () => {
         <BpkTextInput
           label="Name"
           value=""
-          inputRef={(ref) => { inputRef = ref; }}
+          inputRef={ref => {
+            inputRef = ref;
+          }}
         />,
       );
 
@@ -140,11 +116,7 @@ const commonTests = () => {
 
     it('should ignore when placeholder is provided, as element is not focused', () => {
       const testRenderer = TestRenderer.create(
-        <BpkTextInput
-          label="Name"
-          value=""
-          placeholder="Placeholder"
-        />,
+        <BpkTextInput label="Name" value="" placeholder="Placeholder" />,
       );
 
       expect(testRenderer.toJSON()).toMatchSnapshot();

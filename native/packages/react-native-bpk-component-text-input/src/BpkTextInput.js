@@ -18,12 +18,7 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import {
-  Animated,
-  TextInput,
-  View,
-  ViewPropTypes,
-} from 'react-native';
+import { Animated, TextInput, View, ViewPropTypes } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import { animationDurationSm } from 'bpk-tokens/tokens/base.react.native';
 import { ValidIcon, InvalidIcon } from './BpkTextInputIcons';
@@ -72,7 +67,7 @@ class BpkTextInput extends Component {
   }
 
   getLabelPositionAnimatedValue() {
-    return (this.props.value || this.state.isFocused) ? 0 : 1;
+    return this.props.value || this.state.isFocused ? 0 : 1;
   }
 
   render() {
@@ -91,7 +86,11 @@ class BpkTextInput extends Component {
       ...rest
     } = this.props;
 
-    const validityIcon = valid ? <ValidIcon /> : (valid === false && <InvalidIcon />);
+    const validityIcon = valid ? (
+      <ValidIcon />
+    ) : (
+      valid === false && <InvalidIcon />
+    );
 
     const animatedLabelStyle = getLabelStyle(
       this.animatedValues.color,
@@ -99,7 +98,10 @@ class BpkTextInput extends Component {
       { value, valid, editable },
     );
 
-    const animatedInputStyle = getInputContainerStyle(this.animatedValues.color, valid);
+    const animatedInputStyle = getInputContainerStyle(
+      this.animatedValues.color,
+      valid,
+    );
 
     return (
       <View style={[styles.container, userStyle]}>
@@ -116,13 +118,14 @@ class BpkTextInput extends Component {
             {...rest}
             placeholder={isFocused ? placeholder : null}
           />
-          { !isFocused && validityIcon }
+          {!isFocused && validityIcon}
         </Animated.View>
-        { valid === false && validationMessage && (
-          <BpkText textStyle="xs" style={styles.validationMessage}>
-            {validationMessage}
-          </BpkText>
-        )}
+        {valid === false &&
+          validationMessage && (
+            <BpkText textStyle="xs" style={styles.validationMessage}>
+              {validationMessage}
+            </BpkText>
+          )}
       </View>
     );
   }

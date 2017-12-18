@@ -26,7 +26,8 @@ import STYLES from './bpk-progress.scss';
 
 const getClassName = cssModules(STYLES);
 
-const isTransitionEndSupported = () => !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
+const isTransitionEndSupported = () =>
+  !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
 
 const renderSteps = (numberOfSteps, stepColor) => {
   const steps = [];
@@ -48,7 +49,9 @@ class BpkProgress extends Component {
   constructor() {
     super();
 
-    this.handleCompleteTransitionEnd = this.handleCompleteTransitionEnd.bind(this);
+    this.handleCompleteTransitionEnd = this.handleCompleteTransitionEnd.bind(
+      this,
+    );
   }
 
   componentDidUpdate(previousProps) {
@@ -82,12 +85,16 @@ class BpkProgress extends Component {
       ...rest
     } = this.props;
     const classNames = [getClassName('bpk-progress')];
-    if (className) { classNames.push(className); }
-    if (small) { classNames.push(getClassName('bpk-progress--small')); }
+    if (className) {
+      classNames.push(className);
+    }
+    if (small) {
+      classNames.push(getClassName('bpk-progress--small'));
+    }
 
     const adjustedValue = clamp(value, min, max);
     const percentage = 100 * (adjustedValue / (max - min));
-    const numberOfSteps = stepped ? (max - min - 1) : 0;
+    const numberOfSteps = stepped ? max - min - 1 : 0;
 
     delete rest.onComplete;
     delete rest.onCompleteTransitionEnd;
@@ -108,7 +115,7 @@ class BpkProgress extends Component {
           style={{ width: `${percentage}%` }}
           onTransitionEnd={this.handleCompleteTransitionEnd}
         />
-        { renderSteps(numberOfSteps, stepColor) }
+        {renderSteps(numberOfSteps, stepColor)}
       </div>
     );
   }

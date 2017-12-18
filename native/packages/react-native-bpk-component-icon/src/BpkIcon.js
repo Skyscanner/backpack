@@ -39,12 +39,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapCharacterCode = characterCode => String.fromCharCode(parseInt(characterCode, 16));
+const mapCharacterCode = characterCode =>
+  String.fromCharCode(parseInt(characterCode, 16));
 
-const BpkIcon = (props) => {
-  const {
-    icon, small, style, ...rest
-  } = props;
+const BpkIcon = props => {
+  const { icon, small, style, ...rest } = props;
 
   const characterCode = iconMappings[icon];
 
@@ -58,7 +57,11 @@ const BpkIcon = (props) => {
     textStyleFinal.push(style);
   }
 
-  return (<Text style={textStyleFinal} {...rest} >{mapCharacterCode(characterCode)}</Text>);
+  return (
+    <Text style={textStyleFinal} {...rest}>
+      {mapCharacterCode(characterCode)}
+    </Text>
+  );
 };
 
 BpkIcon.propTypes = {

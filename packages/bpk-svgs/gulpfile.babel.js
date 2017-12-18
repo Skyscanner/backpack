@@ -33,7 +33,7 @@ import fs from 'fs';
 import svg2react from './tasks/svg2react';
 import svg2datauri, { sassMap, svg2sassvar } from './tasks/svg2datauri';
 
-const remToPx = (value) => {
+const remToPx = value => {
   let parsed = null;
 
   if (/rem$/.test(value)) {
@@ -77,16 +77,18 @@ gulp.task('elements', () => {
   const optimised = gulp
     .src('src/elements/**/*.svg')
     .pipe(chmod(0o644))
-    .pipe(svgmin({
-      plugins: [
-        ...svgoCommonPlugins,
-        {
-          removeAttrs: {
-            attrs: ['id', 'class', 'data-name'],
+    .pipe(
+      svgmin({
+        plugins: [
+          ...svgoCommonPlugins,
+          {
+            removeAttrs: {
+              attrs: ['id', 'class', 'data-name'],
+            },
           },
-        },
-      ],
-    }))
+        ],
+      }),
+    )
     .pipe(gulp.dest('src/elements'));
 
   return optimised
@@ -103,16 +105,18 @@ gulp.task('spinners', () => {
   const optimised = gulp
     .src('src/spinners/**/*.svg')
     .pipe(chmod(0o644))
-    .pipe(svgmin({
-      plugins: [
-        ...svgoCommonPlugins,
-        {
-          removeAttrs: {
-            attrs: ['id', 'class', 'data-name', 'fill', 'fill-rule'],
+    .pipe(
+      svgmin({
+        plugins: [
+          ...svgoCommonPlugins,
+          {
+            removeAttrs: {
+              attrs: ['id', 'class', 'data-name', 'fill', 'fill-rule'],
+            },
           },
-        },
-      ],
-    }))
+        ],
+      }),
+    )
     .pipe(gulp.dest('src/spinners'));
 
   const react = optimised
@@ -134,59 +138,74 @@ gulp.task('spinners', () => {
 /*
   ICONS
 */
-gulp.task('icons-common', () => gulp
-  .src('src/icons/**/*.svg')
-  .pipe(chmod(0o644))
-  .pipe(svgmin({
-    plugins: [
-      ...svgoCommonPlugins,
-      {
-        removeAttrs: {
-          attrs: ['id', 'class', 'data-name', 'fill', 'fill-rule', 'width', 'height', 'viewBox'],
-        },
-      },
-      {
-        addAttributesToSVGElement: {
-          attribute: `viewBox="0 0 ${largeIconPxSize} ${largeIconPxSize}"`,
-        },
-      },
-    ],
-  }))
-  .pipe(gulp.dest('src/icons')));
+gulp.task('icons-common', () =>
+  gulp
+    .src('src/icons/**/*.svg')
+    .pipe(chmod(0o644))
+    .pipe(
+      svgmin({
+        plugins: [
+          ...svgoCommonPlugins,
+          {
+            removeAttrs: {
+              attrs: [
+                'id',
+                'class',
+                'data-name',
+                'fill',
+                'fill-rule',
+                'width',
+                'height',
+                'viewBox',
+              ],
+            },
+          },
+          {
+            addAttributesToSVGElement: {
+              attribute: `viewBox="0 0 ${largeIconPxSize} ${largeIconPxSize}"`,
+            },
+          },
+        ],
+      }),
+    )
+    .pipe(gulp.dest('src/icons')),
+);
 
 gulp.task('icons-sm', ['icons-common'], () => {
-  const svgs = gulp
-    .src('src/icons/**/*.svg')
-    .pipe(chmod(0o644));
+  const svgs = gulp.src('src/icons/**/*.svg').pipe(chmod(0o644));
 
   const styleAttribute = `style="width:${smallIconSize};height:${smallIconSize}"`;
 
   const react = svgs
     .pipe(clone())
-    .pipe(svgmin({
-      plugins: [
-        {
-          addAttributesToSVGElement: {
-            attribute: `width="${smallIconPxSize}" height="${smallIconPxSize}" ${styleAttribute}`,
+    .pipe(
+      svgmin({
+        plugins: [
+          {
+            addAttributesToSVGElement: {
+              attribute: `width="${smallIconPxSize}" height="${smallIconPxSize}" ${styleAttribute}`,
+            },
           },
-        },
-      ],
-    }))
+        ],
+      }),
+    )
     .pipe(svg2react())
     .pipe(rename({ extname: '.js' }))
     .pipe(gulp.dest('dist/js/icons/sm'));
 
   const datauri = svgs
     .pipe(clone())
-    .pipe(svgmin({
-      plugins: [
-        {
-          addAttributesToSVGElement: {
-            attribute: `width="${smallIconPxSize}" height="${smallIconPxSize}"`,
+    .pipe(
+      svgmin({
+        plugins: [
+          {
+            addAttributesToSVGElement: {
+              attribute: `width="${smallIconPxSize}" height="${smallIconPxSize}"`,
+            },
           },
-        },
-      ],
-    }))
+        ],
+      }),
+    )
     .pipe(svg2datauri({ colors }))
     .pipe(concat('_icons-sm.scss'))
     .pipe(sassMap('bpk-icons-sm'))
@@ -194,15 +213,17 @@ gulp.task('icons-sm', ['icons-common'], () => {
 
   const rawDatauri = svgs
     .pipe(clone())
-    .pipe(svgmin({
-      plugins: [
-        {
-          addAttributesToSVGElement: {
-            attribute: `width="${smallIconPxSize}" height="${smallIconPxSize}"`,
+    .pipe(
+      svgmin({
+        plugins: [
+          {
+            addAttributesToSVGElement: {
+              attribute: `width="${smallIconPxSize}" height="${smallIconPxSize}"`,
+            },
           },
-        },
-      ],
-    }))
+        ],
+      }),
+    )
     .pipe(svg2sassvar())
     .pipe(concat('_icons-no-color-sm.scss'))
     .pipe(sassMap('bpk-icons-no-color-sm'))
@@ -212,38 +233,40 @@ gulp.task('icons-sm', ['icons-common'], () => {
 });
 
 gulp.task('icons-lg', ['icons-common'], () => {
-  const svgs = gulp
-    .src('src/icons/**/*.svg')
-    .pipe(chmod(0o644));
+  const svgs = gulp.src('src/icons/**/*.svg').pipe(chmod(0o644));
 
   const styleAttribute = `style="width:${largeIconSize};height:${largeIconSize}"`;
 
   const react = svgs
     .pipe(clone())
-    .pipe(svgmin({
-      plugins: [
-        {
-          addAttributesToSVGElement: {
-            attribute: `width="${largeIconPxSize}" height="${largeIconPxSize}" ${styleAttribute}`,
+    .pipe(
+      svgmin({
+        plugins: [
+          {
+            addAttributesToSVGElement: {
+              attribute: `width="${largeIconPxSize}" height="${largeIconPxSize}" ${styleAttribute}`,
+            },
           },
-        },
-      ],
-    }))
+        ],
+      }),
+    )
     .pipe(svg2react())
     .pipe(rename({ extname: '.js' }))
     .pipe(gulp.dest('dist/js/icons/lg'));
 
   const datauri = svgs
     .pipe(clone())
-    .pipe(svgmin({
-      plugins: [
-        {
-          addAttributesToSVGElement: {
-            attribute: `width="${largeIconPxSize}" height="${largeIconPxSize}"`,
+    .pipe(
+      svgmin({
+        plugins: [
+          {
+            addAttributesToSVGElement: {
+              attribute: `width="${largeIconPxSize}" height="${largeIconPxSize}"`,
+            },
           },
-        },
-      ],
-    }))
+        ],
+      }),
+    )
     .pipe(svg2datauri({ colors }))
     .pipe(concat('_icons-lg.scss'))
     .pipe(sassMap('bpk-icons-lg'))
@@ -251,15 +274,17 @@ gulp.task('icons-lg', ['icons-common'], () => {
 
   const rawDatauri = svgs
     .pipe(clone())
-    .pipe(svgmin({
-      plugins: [
-        {
-          addAttributesToSVGElement: {
-            attribute: `width="${largeIconPxSize}" height="${largeIconPxSize}"`,
+    .pipe(
+      svgmin({
+        plugins: [
+          {
+            addAttributesToSVGElement: {
+              attribute: `width="${largeIconPxSize}" height="${largeIconPxSize}"`,
+            },
           },
-        },
-      ],
-    }))
+        ],
+      }),
+    )
     .pipe(svg2sassvar())
     .pipe(concat('_icons-no-color-lg.scss'))
     .pipe(sassMap('bpk-icons-no-color-lg'))
@@ -272,53 +297,58 @@ gulp.task('icons-font', ['icons-common'], () => {
   const generateFont = gulp
     .src('src/icons/**/*.svg')
     .pipe(chmod(0o644))
-    .pipe(iconfont({
-      fontName: 'BpkIcon', // required
-      prependUnicode: false,
-      formats: ['ttf', 'eot', 'woff'], // default, 'woff2' and 'svg' are available
-      /**
-       * Normalize and fontHeight(>1000) are needed in order to have all the glyphs rendered
-       * correctly, for more info go to the npm package docs
-       * https://www.npmjs.com/package/gulp-iconfont
-       */
-      normalize: true,
-      fontHeight: 1001,
-      timestamp: 1436442578, // A static timestamp to prevent changes showing up in git, backpack's first commit!
-    }));
+    .pipe(
+      iconfont({
+        fontName: 'BpkIcon', // required
+        prependUnicode: false,
+        formats: ['ttf', 'eot', 'woff'], // default, 'woff2' and 'svg' are available
+        /**
+         * Normalize and fontHeight(>1000) are needed in order to have all the glyphs rendered
+         * correctly, for more info go to the npm package docs
+         * https://www.npmjs.com/package/gulp-iconfont
+         */
+        normalize: true,
+        fontHeight: 1001,
+        timestamp: 1436442578, // A static timestamp to prevent changes showing up in git, backpack's first commit!
+      }),
+    );
 
+  const saveFont = generateFont.pipe(clone()).pipe(gulp.dest('dist/font'));
 
-  const saveFont = generateFont
-    .pipe(clone())
-    .pipe(gulp.dest('dist/font'));
-
-  const saveMapping = generateFont
-    .on('glyphs', (glyphs) => {
-      const baseDir = 'dist/font';
-      // Og all the glyphs generate a key value pair with name and code
-      const mapping = glyphs.reduce((acc, glyph) => {
-        // use punycode to get the text representation of the unicode
-        acc[glyph.name] = punycode.ucs2
-          .decode(glyph.unicode[0])
-          .map(point => `${point.toString(16).toUpperCase()}`).join('');
-        return acc;
-      }, {});
-      /**
-       * Create font base folder folder
-       * This is a SYNC operation, it'll block the event loop
-       * being this a cli tool, we can safely have sync operations
-       */
-      if (!fs.existsSync(baseDir)) {
-        fs.mkdirSync(baseDir);
-      }
-      // Create a wirable stream to a json file
-      const mappingStream = fs.createWriteStream(`${baseDir}/iconMapping.json`, {
-        flags: 'w',
-      });
-      mappingStream.write(JSON.stringify(mapping, null, 4));
-      mappingStream.end();
+  const saveMapping = generateFont.on('glyphs', glyphs => {
+    const baseDir = 'dist/font';
+    // Og all the glyphs generate a key value pair with name and code
+    const mapping = glyphs.reduce((acc, glyph) => {
+      // use punycode to get the text representation of the unicode
+      acc[glyph.name] = punycode.ucs2
+        .decode(glyph.unicode[0])
+        .map(point => `${point.toString(16).toUpperCase()}`)
+        .join('');
+      return acc;
+    }, {});
+    /**
+     * Create font base folder folder
+     * This is a SYNC operation, it'll block the event loop
+     * being this a cli tool, we can safely have sync operations
+     */
+    if (!fs.existsSync(baseDir)) {
+      fs.mkdirSync(baseDir);
+    }
+    // Create a wirable stream to a json file
+    const mappingStream = fs.createWriteStream(`${baseDir}/iconMapping.json`, {
+      flags: 'w',
     });
+    mappingStream.write(JSON.stringify(mapping, null, 4));
+    mappingStream.end();
+  });
 
   return merge(saveFont, saveMapping);
 });
 
-gulp.task('default', ['elements', 'spinners', 'icons-sm', 'icons-lg', 'icons-font']);
+gulp.task('default', [
+  'elements',
+  'spinners',
+  'icons-sm',
+  'icons-lg',
+  'icons-font',
+]);

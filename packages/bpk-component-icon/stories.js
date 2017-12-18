@@ -24,18 +24,28 @@ import BpkButton from '../bpk-component-button';
 import { BpkList, BpkListItem } from '../bpk-component-list';
 
 import { sm, lg } from './all';
-import { withButtonAlignment, withLargeButtonAlignment, withRtlSupport } from './index';
+import {
+  withButtonAlignment,
+  withLargeButtonAlignment,
+  withRtlSupport,
+} from './index';
 import SmallLongArrowRightIcon from './sm/long-arrow-right';
 import LargeLongArrowRightIcon from './lg/long-arrow-right';
 
-const AlignedSmallLongArrowRightIcon = withButtonAlignment(SmallLongArrowRightIcon);
-const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(LargeLongArrowRightIcon);
-const RtlAlignedLargeLongArrowRightIcon = withRtlSupport(withLargeButtonAlignment(LargeLongArrowRightIcon));
+const AlignedSmallLongArrowRightIcon = withButtonAlignment(
+  SmallLongArrowRightIcon,
+);
+const AlignedLargeLongArrowRightIcon = withLargeButtonAlignment(
+  LargeLongArrowRightIcon,
+);
+const RtlAlignedLargeLongArrowRightIcon = withRtlSupport(
+  withLargeButtonAlignment(LargeLongArrowRightIcon),
+);
 
 storiesOf('bpk-component-icon', module)
   .add('Small icons', () => (
     <BpkList>
-      {Object.keys(sm).map((icon) => {
+      {Object.keys(sm).map(icon => {
         const Icon = sm[icon];
         return (
           <BpkListItem key={icon}>
@@ -47,7 +57,7 @@ storiesOf('bpk-component-icon', module)
   ))
   .add('Large icons', () => (
     <BpkList>
-      {Object.keys(lg).map((icon) => {
+      {Object.keys(lg).map(icon => {
         const Icon = lg[icon];
         return (
           <BpkListItem key={icon}>

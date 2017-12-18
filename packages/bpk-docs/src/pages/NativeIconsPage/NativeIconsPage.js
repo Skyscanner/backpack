@@ -23,7 +23,6 @@ import BpkLink from 'bpk-component-link';
 import iosScreenshotDefault from 'react-native-bpk-component-icon/screenshots/ios/icons.png';
 import androidScreenshotDefault from 'react-native-bpk-component-icon/screenshots/android/icons.png';
 
-
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
@@ -53,20 +52,23 @@ const components = [
   },
 ];
 
-const NativeIconsPage = () => (<DocsPageBuilder
-  title="Icons"
-  blurb={[
-    <Paragraph>
-      Backpack icons are crafted to display across web and native apps.
-      Their clean, solid shapes effortlessly compliment the rest of Backpack.
-    </Paragraph>,
-    <Paragraph>
-      View all icons on the <BpkLink href="/components/web/icons">icons page</BpkLink>.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={readme}
-  showMenu={false}
-/>);
+const NativeIconsPage = () => (
+  <DocsPageBuilder
+    title="Icons"
+    blurb={[
+      <Paragraph>
+        Backpack icons are crafted to display across web and native apps. Their
+        clean, solid shapes effortlessly compliment the rest of Backpack.
+      </Paragraph>,
+      <Paragraph>
+        View all icons on the{' '}
+        <BpkLink href="/components/web/icons">icons page</BpkLink>.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={readme}
+    showMenu={false}
+  />
+);
 
 export default NativeIconsPage;

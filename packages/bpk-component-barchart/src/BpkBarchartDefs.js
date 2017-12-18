@@ -27,17 +27,18 @@ const GRADIENT_ATTRIBUTES = {
 
 const BpkBarchartDefs = () => (
   <defs>
-    <linearGradient
-      id="bpk-barchart__def-gradient"
-      {...GRADIENT_ATTRIBUTES}
-    >
+    <linearGradient id="bpk-barchart__def-gradient" {...GRADIENT_ATTRIBUTES}>
       <stop offset="0" stopColor="white" stopOpacity="0" />
       <stop offset="10%" stopColor="white" stopOpacity="1" />
     </linearGradient>
-    <mask
-      id="bpk-barchart__def-mask"
-    >
-      <rect x="0" y="0" width="100%" height="100%" fill="url(#bpk-barchart__def-gradient)" />
+    <mask id="bpk-barchart__def-mask">
+      <rect
+        x="0"
+        y="0"
+        width="100%"
+        height="100%"
+        fill="url(#bpk-barchart__def-gradient)"
+      />
     </mask>
   </defs>
 );

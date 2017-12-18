@@ -29,7 +29,7 @@ const findReplace = (file, findReplaces) => {
       return console.log(err);
     }
     let result = data;
-    findReplaces.forEach((fr) => {
+    findReplaces.forEach(fr => {
       const splitFile = result.split(fr.find);
       if (splitFile.length === 1) {
         return null;
@@ -38,7 +38,7 @@ const findReplace = (file, findReplaces) => {
       return null;
     });
 
-    fs.writeFile(file, result, 'utf8', (err2) => {
+    fs.writeFile(file, result, 'utf8', err2 => {
       if (err2) return console.log(err2);
       return null;
     });
@@ -46,30 +46,40 @@ const findReplace = (file, findReplaces) => {
   });
 };
 
-const fixDependencyErrors = (packageFiles) => {
+const fixDependencyErrors = packageFiles => {
   const findReplaces = [];
-  errors.forEach((error) => {
+  errors.forEach(error => {
     findReplaces.push({
-      find: new RegExp(`\\"${error.dependency}\\"\\:[ ]+\\"\\^[0-9]+\\.[0-9]+\\.[0-9]+\\"`, 'g'),
+      find: new RegExp(
+        `\\"${error.dependency}\\"\\:[ ]+\\"\\^[0-9]+\\.[0-9]+\\.[0-9]+\\"`,
+        'g',
+      ),
       replace: `"${error.dependency}": "${error.correctDependencyVersion}"`,
     });
     // eslint-disable-next-line max-len
-    console.log(`${error.dependency} dependency upgraded from ${error.dependencyVersion} to ${error.correctDependencyVersion}`);
+    console.log(
+      `${error.dependency} dependency upgraded from ${
+        error.dependencyVersion
+      } to ${error.correctDependencyVersion}`,
+    );
   });
 
-  packageFiles.forEach((file) => {
+  packageFiles.forEach(file => {
     findReplace(file, findReplaces);
   });
 };
 
 const checkBpkDependencyList = (dependencies, correctVersions, packageName) => {
-  Object.keys(dependencies).forEach((dependency) => {
+  Object.keys(dependencies).forEach(dependency => {
     if (Object.keys(correctVersions).indexOf(dependency) !== -1) {
       const dependencyVersion = dependencies[dependency];
       const correctDependencyVersion = `^${correctVersions[dependency]}`;
       if (dependencyVersion !== correctDependencyVersion) {
         errors.push({
-          packageName, dependency, dependencyVersion, correctDependencyVersion,
+          packageName,
+          dependency,
+          dependencyVersion,
+          correctDependencyVersion,
         });
       }
     }
@@ -96,23 +106,26 @@ const checkBpkDependencies = (packageFile, correctVersions) => {
   }
 };
 
-const getBpkPackageVersions = packageFiles => packageFiles.reduce((acc, pkg) => {
-  if (pkg === '' || !pkg.includes('bpk-')) {
+const getBpkPackageVersions = packageFiles =>
+  packageFiles.reduce((acc, pkg) => {
+    if (pkg === '' || !pkg.includes('bpk-')) {
+      return acc;
+    }
+    const pfContent = JSON.parse(fs.readFileSync(pkg));
+    acc[pfContent.name] = pfContent.version;
     return acc;
-  }
-  const pfContent = JSON.parse(fs.readFileSync(pkg));
-  acc[pfContent.name] = pfContent.version;
-  return acc;
-}, {});
+  }, {});
 
 console.log('Checking Backpack cross dependencies...');
 console.log('');
 
-let packageFiles = execSync('find . -name package.json | grep -v node_modules').toString().split('\n');
+let packageFiles = execSync('find . -name package.json | grep -v node_modules')
+  .toString()
+  .split('\n');
 packageFiles = packageFiles.filter(s => s !== '');
 const bpkPackageVersions = getBpkPackageVersions(packageFiles);
 
-packageFiles.forEach((pf) => {
+packageFiles.forEach(pf => {
   checkBpkDependencies(pf, bpkPackageVersions);
 });
 
@@ -121,13 +134,19 @@ if (errors.length === 0) {
 } else if (process.argv.includes('--fix') || process.argv.includes('-f')) {
   fixDependencyErrors(packageFiles);
   console.log('\nAll fixed.  👍\n\n');
-  console.log('Now remember to run\n\t _____________\n\t|             |\n\t| npm install |\n\t|_____________|');
+  console.log(
+    'Now remember to run\n\t _____________\n\t|             |\n\t| npm install |\n\t|_____________|',
+  );
 } else {
   console.log('Some Backpack cross dependencies are outdated  😱');
   console.log('');
-  errors.forEach((error) => {
+  errors.forEach(error => {
     // eslint-disable-next-line max-len
-    console.log(`${error.packageName} depends on ${error.dependency} ${error.dependencyVersion}, it should be ${error.correctDependencyVersion}`);
+    console.log(
+      `${error.packageName} depends on ${error.dependency} ${
+        error.dependencyVersion
+      }, it should be ${error.correctDependencyVersion}`,
+    );
   });
   console.log('');
   process.exit(1);

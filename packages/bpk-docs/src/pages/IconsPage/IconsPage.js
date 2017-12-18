@@ -50,32 +50,37 @@ const iconsFinal = _(icons)
 
 const blurb = [
   <Paragraph>
-    Backpack icons are crafted to display across web and <BpkLink href="/components/native/icons">native</BpkLink> apps.
-    Their clean, solid shapes effortlessly compliment the rest of Backpack.
+    Backpack icons are crafted to display across web and{' '}
+    <BpkLink href="/components/native/icons">native</BpkLink> apps. Their clean,
+    solid shapes effortlessly compliment the rest of Backpack.
   </Paragraph>,
   <Paragraph>
-    Icons are provided in two sizes: small (18px) and large (24px). Both are pixel-snapped for clarity at the intended
-    usage sizes.
+    Icons are provided in two sizes: small (18px) and large (24px). Both are
+    pixel-snapped for clarity at the intended usage sizes.
   </Paragraph>,
   <Paragraph>
-    The <BpkLink href="#readme">readme</BpkLink> for the component is available below the search tool.
+    The <BpkLink href="#readme">readme</BpkLink> for the component is available
+    below the search tool.
   </Paragraph>,
   <Heading level="h2">Find the right icon</Heading>,
   <IconSearchApp icons={iconsFinal} />,
   <Heading level="h2">Aligning icons within components</Heading>,
   <Paragraph>
-    The <BpkLink href={ROUTES.ALIGNMENT}>Alignment</BpkLink> page gives examples of icon alignment using
-    HOCs provided in the <BpkCode>bpk-component-icon</BpkCode> package.
+    The <BpkLink href={ROUTES.ALIGNMENT}>Alignment</BpkLink> page gives examples
+    of icon alignment using HOCs provided in the{' '}
+    <BpkCode>bpk-component-icon</BpkCode> package.
   </Paragraph>,
 ];
 
-const IconsPage = () => (<DocsPageBuilder
-  title="Icons"
-  blurb={blurb}
-  components={[]}
-  showMenu={false}
-  readme={iconReadme}
-  sassdocId="svgs-mixin-bpk-icon"
-/>);
+const IconsPage = () => (
+  <DocsPageBuilder
+    title="Icons"
+    blurb={blurb}
+    components={[]}
+    showMenu={false}
+    readme={iconReadme}
+    sassdocId="svgs-mixin-bpk-icon"
+  />
+);
 
 export default IconsPage;

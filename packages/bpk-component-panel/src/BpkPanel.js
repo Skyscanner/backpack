@@ -24,15 +24,19 @@ import STYLES from './bpk-panel.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkPanel = (props) => {
+const BpkPanel = props => {
   const classNames = [getClassName('bpk-panel')];
-  const {
-    children, className, padded, fullWidth, ...rest
-  } = props;
+  const { children, className, padded, fullWidth, ...rest } = props;
 
-  if (padded) { classNames.push(getClassName('bpk-panel--padded')); }
-  if (fullWidth) { classNames.push(getClassName('bpk-panel--full-width')); }
-  if (className) { classNames.push(className); }
+  if (padded) {
+    classNames.push(getClassName('bpk-panel--padded'));
+  }
+  if (fullWidth) {
+    classNames.push(getClassName('bpk-panel--full-width'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
     <section className={classNames.join(' ')} {...rest}>

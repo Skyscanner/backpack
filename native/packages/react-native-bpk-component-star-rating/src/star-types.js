@@ -34,4 +34,3 @@ export const getTypeByRating = (starNumber, rating) => {
 
   return STAR_TYPES.EMPTY;
 };
-

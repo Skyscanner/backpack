@@ -22,7 +22,9 @@ import '../packages/bpk-stylesheets';
 import TOKENS from './../packages/bpk-tokens/tokens/base.common';
 import BpkGridToggle from './../packages/bpk-component-grid-toggle';
 import BpkRtlToggle from './../packages/bpk-component-rtl-toggle';
-import BpkThemeToggle, { updateOnThemeChange } from './../packages/bpk-component-theme-toggle';
+import BpkThemeToggle, {
+  updateOnThemeChange,
+} from './../packages/bpk-component-theme-toggle';
 import BpkThemeProvider from './../packages/bpk-theming';
 import themeableAttributes from './themeableAttributes';
 
@@ -41,8 +43,8 @@ addDecorator(story => (
     <div style={{ width: '10rem' }}>
       <BpkThemeToggle />
     </div>
-  </div>),
-);
+  </div>
+));
 /* eslint-disable global-require */
 configure(() => {
   require('./../packages/bpk-animate-height/stories');

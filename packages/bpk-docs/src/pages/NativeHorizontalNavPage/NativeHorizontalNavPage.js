@@ -57,7 +57,8 @@ const components = [
   {
     id: 'space-around',
     title: 'Space Around',
-    blurb: 'Navigation items can be configured to occupy the full width of their container.',
+    blurb:
+      'Navigation items can be configured to occupy the full width of their container.',
     screenshots: [
       {
         title: 'iOS',
@@ -79,23 +80,26 @@ const components = [
   },
 ];
 
-const NativeHorizontalNavPage = () => (<DocsPageBuilder
-  title="Horizontal Navigation"
-  blurb={[
-    <Paragraph>
-      A simple navigation component, ideal for representing a section of a page that links
-      to other pages or views within the page.
-    </Paragraph>,
-    <Paragraph>
-      It features an indicator line that animates automatically when the selected item changes.
-    </Paragraph>,
-    <Paragraph>
-      The selected item can be <BpkLink href={THEMING}>themed</BpkLink>.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={readme}
-  showMenu
-/>);
+const NativeHorizontalNavPage = () => (
+  <DocsPageBuilder
+    title="Horizontal Navigation"
+    blurb={[
+      <Paragraph>
+        A simple navigation component, ideal for representing a section of a
+        page that links to other pages or views within the page.
+      </Paragraph>,
+      <Paragraph>
+        It features an indicator line that animates automatically when the
+        selected item changes.
+      </Paragraph>,
+      <Paragraph>
+        The selected item can be <BpkLink href={THEMING}>themed</BpkLink>.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={readme}
+    showMenu
+  />
+);
 
 export default NativeHorizontalNavPage;

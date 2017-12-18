@@ -26,9 +26,9 @@ const commonTests = () => {
   let accessibilityLabel = null;
   beforeEach(() => {
     renderer = new ShallowRenderer();
-    accessibilityLabel = (rating, maxRating) => `${rating} out of ${maxRating} stars`;
+    accessibilityLabel = (rating, maxRating) =>
+      `${rating} out of ${maxRating} stars`;
   });
-
 
   describe('BpkStarRating', () => {
     it('should render correctly', () => {
@@ -54,7 +54,11 @@ const commonTests = () => {
 
     it('should render correctly with custom `maxRating` attribute', () => {
       renderer.render(
-        <BpkStarRating rating={3} maxRating={10} ratingLabel={accessibilityLabel} />,
+        <BpkStarRating
+          rating={3}
+          maxRating={10}
+          ratingLabel={accessibilityLabel}
+        />,
       );
       expect(renderer.getRenderOutput()).toMatchSnapshot();
     });

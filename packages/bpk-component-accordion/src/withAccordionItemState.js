@@ -21,7 +21,7 @@ import React, { Component } from 'react';
 
 import { wrapDisplayName } from 'bpk-react-utils';
 
-const withAccordionItemState = (ComposedComponent) => {
+const withAccordionItemState = ComposedComponent => {
   class WithAccordionItemState extends Component {
     constructor(props) {
       super(props);
@@ -34,17 +34,24 @@ const withAccordionItemState = (ComposedComponent) => {
     }
 
     onClick() {
-      this.setState(prevState => ({
-        expanded: !prevState.expanded,
-      }), this.props.onClick);
+      this.setState(
+        prevState => ({
+          expanded: !prevState.expanded,
+        }),
+        this.props.onClick,
+      );
     }
 
     render() {
-      const {
-        initiallyExpanded, expanded, onClick, ...rest
-      } = this.props;
+      const { initiallyExpanded, expanded, onClick, ...rest } = this.props;
 
-      return <ComposedComponent expanded={this.state.expanded} onClick={this.onClick} {...rest} />;
+      return (
+        <ComposedComponent
+          expanded={this.state.expanded}
+          onClick={this.onClick}
+          {...rest}
+        />
+      );
     }
   }
 
@@ -60,7 +67,10 @@ const withAccordionItemState = (ComposedComponent) => {
     onClick: null,
   };
 
-  WithAccordionItemState.displayName = wrapDisplayName(ComposedComponent, 'withAccordionItemState');
+  WithAccordionItemState.displayName = wrapDisplayName(
+    ComposedComponent,
+    'withAccordionItemState',
+  );
 
   return WithAccordionItemState;
 };

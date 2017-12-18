@@ -88,6 +88,4 @@ storiesOf('bpk-component-nudger', module)
       increaseButtonLabel="Increase"
     />
   ))
-  .add('Stateful example', () => (
-    <NudgerContainer />
-  ));
+  .add('Stateful example', () => <NudgerContainer />);

@@ -37,14 +37,10 @@ const REQUIRED_THEME_ATTRIBUTES = {
 
 export const THEMEABLE_TYPES = Object.keys(REQUIRED_THEME_ATTRIBUTES);
 
-export const getStyleForElement = (elementType, {
-  type,
-  title,
-  icon,
-  iconOnly,
-  large,
-  disabled,
-}) => {
+export const getStyleForElement = (
+  elementType,
+  { type, title, icon, iconOnly, large, disabled },
+) => {
   // Start with base style.
   const styleForElement = [styles.base[elementType]];
 
@@ -67,19 +63,29 @@ export const getStyleForElement = (elementType, {
   }
 
   if (iconOnly) {
-    styleForElement.push(large ? styles.modifiers.iconOnlyLarge[elementType] : styles.modifiers.iconOnly[elementType]);
+    styleForElement.push(
+      large
+        ? styles.modifiers.iconOnlyLarge[elementType]
+        : styles.modifiers.iconOnly[elementType],
+    );
   } else if (title && icon) {
     // If it has a title and icon, get the style for that.
-    styleForElement.push(styles.modifiers[large ? 'textAndIconLarge' : 'textAndIcon'][elementType]);
+    styleForElement.push(
+      styles.modifiers[large ? 'textAndIconLarge' : 'textAndIcon'][elementType],
+    );
   }
 
   return styleForElement;
 };
 
-export const getThemingForElement = (elementType, theme, { type, disabled }) => {
+export const getThemingForElement = (
+  elementType,
+  theme,
+  { type, disabled },
+) => {
   const themeForElement = {};
   if (theme && !disabled && styles.themeMappings[elementType]) {
-    Object.keys(styles.themeMappings[elementType]).forEach((key) => {
+    Object.keys(styles.themeMappings[elementType]).forEach(key => {
       const values = styles.themeMappings[elementType][key];
       if (values[type]) {
         themeForElement[key] = theme[values[type]];
@@ -93,7 +99,10 @@ export const getGradientColors = (theme, { type, disabled }) => {
   let gradientColors = styles.gradientColors[type];
   if (theme) {
     const gradientThemeProps = styles.themeMappings.gradient[type];
-    gradientColors = [theme[gradientThemeProps.startColor], theme[gradientThemeProps.endColor]].filter(item => !!item);
+    gradientColors = [
+      theme[gradientThemeProps.startColor],
+      theme[gradientThemeProps.endColor],
+    ].filter(item => !!item);
   }
 
   if (disabled) {
@@ -105,16 +114,17 @@ export const getGradientColors = (theme, { type, disabled }) => {
 export const iconPropType = (props, propName, componentName) => {
   const icon = props[propName];
   if (props.iconOnly && !icon) {
-    return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName}\`. When \`iconOnly\` is enabled, \`${propName}\` must be supplied.`); // eslint-disable-line max-len
+    return new Error(
+      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. When \`iconOnly\` is enabled, \`${propName}\` must be supplied.`,
+    ); // eslint-disable-line max-len
   }
   return false;
 };
 
 export const isTypeThemeable = type => THEMEABLE_TYPES.includes(type);
 
-export const themeAttributesSupplied = (type, theme) => (
-  difference(REQUIRED_THEME_ATTRIBUTES[type], Object.keys(theme)).length === 0
-);
+export const themeAttributesSupplied = (type, theme) =>
+  difference(REQUIRED_THEME_ATTRIBUTES[type], Object.keys(theme)).length === 0;
 
 export const themePropType = (props, propName, componentName) => {
   const { type, theme } = props;
@@ -122,7 +132,11 @@ export const themePropType = (props, propName, componentName) => {
     return false;
   }
   if (!themeAttributesSupplied(type, theme)) {
-    return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName}\`. For buttons of type \`${type}\`, the \`theme\` prop must include \`${REQUIRED_THEME_ATTRIBUTES[type].join(', ')}\``); // eslint-disable-line max-len
+    return new Error(
+      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. For buttons of type \`${type}\`, the \`theme\` prop must include \`${REQUIRED_THEME_ATTRIBUTES[
+        type
+      ].join(', ')}\``,
+    ); // eslint-disable-line max-len
   }
   return false;
 };
@@ -143,7 +157,7 @@ export const getAndroidBackgroundColour = (theme, props) => {
   return StyleSheet.create({ style }).style;
 };
 
-export const textStyle = (theme, props) => ([
+export const textStyle = (theme, props) => [
   getStyleForElement('text', props),
   getThemingForElement('text', theme, props),
-]);
+];

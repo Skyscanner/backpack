@@ -38,7 +38,10 @@ export default function withLazyLoading(Component, document) {
 
     componentDidMount() {
       const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : {};
-      document.addEventListener('scroll', this.checkInView, { capture: true, ...passiveArgs });
+      document.addEventListener('scroll', this.checkInView, {
+        capture: true,
+        ...passiveArgs,
+      });
       document.addEventListener('resize', this.checkInView);
       document.addEventListener('orientationchange', this.checkInView);
       document.addEventListener('fullscreenchange', this.checkInView);
@@ -60,7 +63,10 @@ export default function withLazyLoading(Component, document) {
 
     removeEventListeners() {
       const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : {};
-      document.removeEventListener('scroll', this.checkInView, { capture: true, ...passiveArgs });
+      document.removeEventListener('scroll', this.checkInView, {
+        capture: true,
+        ...passiveArgs,
+      });
       document.removeEventListener('resize', this.checkInView);
       document.removeEventListener('orientationchange', this.checkInView);
       document.removeEventListener('fullscreenchange', this.checkInView);
@@ -74,11 +80,13 @@ export default function withLazyLoading(Component, document) {
 
     // This function is taken from modernizr
     // See https://github.com/modernizr/modernizr
-    supportsPassiveEvents() { // eslint-disable-line
+    // eslint-disable-next-line
+    supportsPassiveEvents() {
       let supportsPassiveOption = false;
       try {
         const opts = Object.defineProperty({}, 'passive', {
-          get() { // eslint-disable-line getter-return
+          // eslint-disable-next-line getter-return
+          get() {
             supportsPassiveOption = true;
           },
         });
@@ -92,8 +100,14 @@ export default function withLazyLoading(Component, document) {
     isInViewPort() {
       const rect = this.element.getBoundingClientRect();
 
-      const viewPortHeight = Math.max(window.innerHeight, document.documentElement.clientHeight);
-      const viewPortWidth = Math.max(window.innerWidth, document.documentElement.clientWidth);
+      const viewPortHeight = Math.max(
+        window.innerHeight,
+        document.documentElement.clientHeight,
+      );
+      const viewPortWidth = Math.max(
+        window.innerWidth,
+        document.documentElement.clientWidth,
+      );
 
       return (
         rect.bottom >= 0 &&
@@ -109,14 +123,13 @@ export default function withLazyLoading(Component, document) {
       return (
         <div
           id={this.placeholderReference}
-          ref={(element) => { this.element = element; }}
+          ref={element => {
+            this.element = element;
+          }}
           style={style}
           className={className}
         >
-          <Component
-            inView={this.state.inView}
-            {...rest}
-          />
+          <Component inView={this.state.inView} {...rest} />
         </div>
       );
     }

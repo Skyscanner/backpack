@@ -25,32 +25,23 @@ import STYLES from './bpk-chip.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkChip = (props) => {
+const BpkChip = props => {
   const classNames = [getClassName('bpk-chip')];
-  const {
-    children, className, onClose, closeLabel, ...rest
-  } = props;
+  const { children, className, onClose, closeLabel, ...rest } = props;
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   const classNameFinal = classNames.join(' ');
 
-  const getCloseLabel = typeof closeLabel === 'string'
-    ? () => closeLabel
-    : closeLabel;
+  const getCloseLabel =
+    typeof closeLabel === 'string' ? () => closeLabel : closeLabel;
 
   return (
-    <div
-      className={classNameFinal}
-      {...rest}
-    >
-      <span className={getClassName('bpk-chip__label')} >
-        {children}
-      </span>
-      <BpkCloseButton
-        label={getCloseLabel(children)}
-        onClick={onClose}
-      />
+    <div className={classNameFinal} {...rest}>
+      <span className={getClassName('bpk-chip__label')}>{children}</span>
+      <BpkCloseButton label={getCloseLabel(children)} onClick={onClose} />
     </div>
   );
 };
@@ -58,10 +49,7 @@ const BpkChip = (props) => {
 BpkChip.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  closeLabel: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string,
-  ]),
+  closeLabel: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   onClose: PropTypes.func.isRequired,
 };
 

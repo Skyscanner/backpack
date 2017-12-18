@@ -39,7 +39,11 @@ import STYLES from './stories.scss';
 
 const getClassName = cssModules(STYLES);
 
-const Heading = withDefaultProps(BpkText, { textStyle: 'lg', tagName: 'h1', className: getClassName('bpk-heading') });
+const Heading = withDefaultProps(BpkText, {
+  textStyle: 'lg',
+  tagName: 'h1',
+  className: getClassName('bpk-heading'),
+});
 
 const RtlBarchart = updateOnDirectionChange(BpkBarchart);
 const SelectableBarChart = withSelectedState(RtlBarchart);
@@ -47,15 +51,14 @@ const SelectableBarChart = withSelectedState(RtlBarchart);
 const data = require('./data');
 
 const margin = {
-  top: 0, left: 40, bottom: 40, right: 0,
+  top: 0,
+  left: 40,
+  bottom: 40,
+  right: 0,
 };
 
 const Gridlines = ({ size, ...rest }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size}>
     <BpkChartMargin margin={margin}>
       <BpkChartAxis
         orientation={ORIENTATION_X}
@@ -94,43 +97,34 @@ Gridlines.propTypes = { size: number.isRequired };
 storiesOf('bpk-component-barchart', module)
   .add('Axes and Gridlines', () => {
     const dataset = [
-      [5, 20], [480, 90], [250, 50], [100, 33], [330, 95],
-      [410, 12], [475, 44], [25, 67], [85, 21], [220, 88],
+      [5, 20],
+      [480, 90],
+      [250, 50],
+      [100, 33],
+      [330, 95],
+      [410, 12],
+      [475, 44],
+      [25, 67],
+      [85, 21],
+      [220, 88],
     ];
     const size = 440;
     const scale = scaleLinear()
-      .domain([5, 480]).range([0, size - 40]);
+      .domain([5, 480])
+      .range([0, size - 40]);
     const scale2 = scaleBand()
-      .domain(dataset.map(d => d[0])).range([0, size - 40]);
+      .domain(dataset.map(d => d[0]))
+      .range([0, size - 40]);
 
     return (
       <div>
         <Heading>Linear scale</Heading>
-        <Gridlines
-          scale={scale}
-          size={size}
-        />
-        <Gridlines
-          scale={scale}
-          size={size}
-          numTicks={2}
-        />
+        <Gridlines scale={scale} size={size} />
+        <Gridlines scale={scale} size={size} numTicks={2} />
         <Heading>Band scale</Heading>
-        <Gridlines
-          scale={scale2}
-          size={size}
-        />
-        <Gridlines
-          scale={scale2}
-          size={size}
-          tickEvery={2}
-        />
-        <Gridlines
-          scale={scale2}
-          size={size}
-          tickEvery={2}
-          tickOffset={1}
-        />
+        <Gridlines scale={scale2} size={size} />
+        <Gridlines scale={scale2} size={size} tickEvery={2} />
+        <Gridlines scale={scale2} size={size} tickEvery={2} tickOffset={1} />
       </div>
     );
   })
@@ -223,21 +217,27 @@ storiesOf('bpk-component-barchart', module)
         maxWidth: '580px',
       }}
       xAxisLabel="Month"
-      xAxisMargin={(3 * remToPx(lineHeightSm)) + 12}
-      xAxisTickValue={(tick) => {
+      xAxisMargin={3 * remToPx(lineHeightSm) + 12}
+      xAxisTickValue={tick => {
         let season = '❄️';
-        if (['Mar', 'Apr', 'May'].indexOf(tick) > -1) { season = '🌻'; }
-        if (['Jun', 'Jul', 'Aug'].indexOf(tick) > -1) { season = '☀️'; }
-        if (['Sep', 'Oct', 'Nov'].indexOf(tick) > -1) { season = '🍁'; }
-        return ([
+        if (['Mar', 'Apr', 'May'].indexOf(tick) > -1) {
+          season = '🌻';
+        }
+        if (['Jun', 'Jul', 'Aug'].indexOf(tick) > -1) {
+          season = '☀️';
+        }
+        if (['Sep', 'Oct', 'Nov'].indexOf(tick) > -1) {
+          season = '🍁';
+        }
+        return [
           <tspan x="0" dy="0" style={{ fontWeight: 'bold' }} key="month">
             {tick}
           </tspan>,
           <tspan x="0" dy={remToPx(lineHeightSm)} key="season">
-            { season }
+            {season}
           </tspan>,
           <tspan key="ltr">&lrm;</tspan>,
-        ]);
+        ];
       }}
       yAxisLabel="Average Price"
       yAxisMargin={4 * remToPx(lineHeightSm)}

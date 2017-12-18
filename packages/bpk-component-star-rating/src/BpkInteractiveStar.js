@@ -26,9 +26,16 @@ import STYLES from './BpkInteractiveStar.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkInteractiveStar = (props) => {
+const BpkInteractiveStar = props => {
   const {
-    selected, type, name, value, onClick, onMouseEnter, label, ...rest
+    selected,
+    type,
+    name,
+    value,
+    onClick,
+    onMouseEnter,
+    label,
+    ...rest
   } = props;
   const buttonClassNames = [getClassName('bpk-interactive-star')];
   const iconClassNames = [getClassName('bpk-interactive-star__icon')];
@@ -47,11 +54,7 @@ const BpkInteractiveStar = (props) => {
       aria-pressed={selected}
       type="button"
     >
-      <BpkStar
-        className={iconClassNames.join(' ')}
-        type={type}
-        {...rest}
-      />
+      <BpkStar className={iconClassNames.join(' ')} type={type} {...rest} />
     </button>
   );
 };
@@ -61,10 +64,7 @@ BpkInteractiveStar.propTypes = {
   name: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   onMouseEnter: PropTypes.func.isRequired,
-  type: PropTypes.oneOf([
-    STAR_TYPES.EMPTY,
-    STAR_TYPES.FULL,
-  ]).isRequired,
+  type: PropTypes.oneOf([STAR_TYPES.EMPTY, STAR_TYPES.FULL]).isRequired,
   value: PropTypes.number.isRequired,
   selected: PropTypes.bool,
 };

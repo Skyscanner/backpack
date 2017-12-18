@@ -25,20 +25,20 @@ const ROOT_FONT_SIZE = 16;
 
 export const formatTokenName = name => kebabCase(name);
 
-export const toPx = (value) => {
+export const toPx = value => {
   const parsed = parseFloat(value) * ROOT_FONT_SIZE;
   return parsed ? `${parsed}px` : null;
 };
 
 const TOKEN_FORMAT_MAP = {
   web: {
-    size: (value) => {
+    size: value => {
       if (/rem$/.test(value)) {
         return `${value} (${toPx(value)})`;
       }
       return value;
     },
-    'font-size': (value) => {
+    'font-size': value => {
       if (/rem$/.test(value)) {
         return `${value} (${toPx(value)})`;
       }
@@ -71,17 +71,24 @@ export const getTokenValue = (token, platform) => {
 
 export const getTokens = (tokens, keys = null) => {
   const outTokens = {};
-  (keys || Object.keys(tokens)).forEach((key) => {
+  (keys || Object.keys(tokens)).forEach(key => {
     outTokens[key] = tokens[key] || null;
   });
   return outTokens;
 };
 
-export const getPlatformTokens = (webTokens, iosTokens, androidTokens, predicate) => {
+export const getPlatformTokens = (
+  webTokens,
+  iosTokens,
+  androidTokens,
+  predicate,
+) => {
   const keys = union([
     ...webTokens.propKeys.filter(key => predicate(webTokens.props[key])),
     ...iosTokens.propKeys.filter(key => predicate(iosTokens.props[key])),
-    ...androidTokens.propKeys.filter(key => predicate(androidTokens.props[key])),
+    ...androidTokens.propKeys.filter(key =>
+      predicate(androidTokens.props[key]),
+    ),
   ]);
 
   return {

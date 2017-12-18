@@ -22,8 +22,5 @@ import {
   secondaryThemeAttributes,
 } from './src/themeAttributes';
 
-export {
-  primaryThemeAttributes,
-  secondaryThemeAttributes,
-};
+export { primaryThemeAttributes, secondaryThemeAttributes };
 export default BpkButton;

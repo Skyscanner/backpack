@@ -27,12 +27,15 @@ import './index.scss';
 
   // touch support
   classNames.push(
-    (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) // eslint-disable-line
+    'ontouchstart' in window ||
+    (window.DocumentTouch && document instanceof DocumentTouch) // eslint-disable-line
       ? 'touch-support'
       : 'no-touch-support',
   );
 
   // add more feature tests here...
 
-  document.documentElement.className += ` ${classNames.map(className => `bpk-${className}`).join(' ')}`;
+  document.documentElement.className += ` ${classNames
+    .map(className => `bpk-${className}`)
+    .join(' ')}`;
 })();

@@ -33,13 +33,7 @@ import bpkCommonJs from './formatters/bpk.common.js';
 import bpkAndroid from './formatters/bpk.android.xml';
 
 const PLATFORM_FORMATS = {
-  web: [
-    'scss',
-    'default.scss',
-    'raw.json',
-    'common.js',
-    'es6.js',
-  ],
+  web: ['scss', 'default.scss', 'raw.json', 'common.js', 'es6.js'],
   ios: [
     'ios.json',
     'raw.ios.json',
@@ -56,15 +50,16 @@ const PLATFORM_FORMATS = {
   ],
 };
 
-const tokenSets = flatten(Object.keys(PLATFORM_FORMATS).map(
-  platform => PLATFORM_FORMATS[platform].map(
-    format => (
-      typeof format !== 'string'
-        ? ({ platform, ...format })
-        : ({ platform, format })
+const tokenSets = flatten(
+  Object.keys(PLATFORM_FORMATS).map(platform =>
+    PLATFORM_FORMATS[platform].map(
+      format =>
+        typeof format !== 'string'
+          ? { platform, ...format }
+          : { platform, format },
     ),
   ),
-));
+);
 
 theo.registerFormat('scss', bpkScss);
 theo.registerFormat('default.scss', bpkDefaultScss);
@@ -84,13 +79,14 @@ theo.registerTransform('android', [['color/hex8rgba']]);
 gulp.task('clean', () => del(['tokens']));
 
 gulp.task('lint', () => {
-  gulp.src('./src/**/*.json')
+  gulp
+    .src('./src/**/*.json')
     .pipe(jsonLint())
     .pipe(jsonLint.reporter())
     .pipe(jsonLint.failAfterError());
 });
 
-gulp.task('tokens', ['clean', 'lint'], (done) => {
+gulp.task('tokens', ['clean', 'lint'], done => {
   const streams = tokenSets.map(({ platform, format, nest }) => {
     let outputPath = 'tokens';
 
@@ -98,7 +94,8 @@ gulp.task('tokens', ['clean', 'lint'], (done) => {
       outputPath = `${outputPath}/${platform}`;
     }
 
-    return gulp.src([`./src/${platform}/*.json`])
+    return gulp
+      .src([`./src/${platform}/*.json`])
       .pipe(theo.plugins.transform(platform))
       .on('error', done)
       .pipe(theo.plugins.format(format))

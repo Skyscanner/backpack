@@ -28,12 +28,9 @@ describe('BpkListItem', () => {
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer.create(
-      <BpkListItem className="test-list-item">
-        List item
-      </BpkListItem>,
-    ).toJSON();
+    const tree = renderer
+      .create(<BpkListItem className="test-list-item">List item</BpkListItem>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
-

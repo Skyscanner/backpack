@@ -24,18 +24,14 @@ import STYLES from './bpk-blockquote.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkBlockquote = (props) => {
+const BpkBlockquote = props => {
   const classNames = [getClassName('bpk-blockquote')];
   if (props.extraSpace) {
     classNames.push(getClassName('bpk-blockquote--extra-spacing'));
   }
 
   return (
-    <blockquote
-      className={classNames.join(' ')}
-    >
-      {props.children}
-    </blockquote>
+    <blockquote className={classNames.join(' ')}>{props.children}</blockquote>
   );
 };
 

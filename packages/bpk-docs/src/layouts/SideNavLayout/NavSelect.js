@@ -24,11 +24,16 @@ import BpkFieldset from 'bpk-component-fieldset';
 import { browserHistory, PropTypes as RouterPropTypes } from 'react-router';
 
 import sortLinks from './links-sorter';
-import { linkPropType, categoryPropType, linksPropType } from './sideNavPropTypes';
+import {
+  linkPropType,
+  categoryPropType,
+  linksPropType,
+} from './sideNavPropTypes';
 
 const getCategoryName = (links, pathname) => {
   const reducer = (prev, link) => {
-    const toCategory = innerLink => Object.assign({}, innerLink, { category: link.category });
+    const toCategory = innerLink =>
+      Object.assign({}, innerLink, { category: link.category });
     return prev.concat(link.links.map(toCategory));
   };
 
@@ -38,10 +43,8 @@ const getCategoryName = (links, pathname) => {
 };
 
 const NavSelectItem = props => (
-  <option
-    disabled={!props.link.route}
-    value={props.link.route}
-  >{props.link.children}
+  <option disabled={!props.link.route} value={props.link.route}>
+    {props.link.children}
   </option>
 );
 
@@ -51,10 +54,9 @@ NavSelectItem.propTypes = {
 
 const NavSelectCategory = props => (
   <optgroup label={props.link.category}>
-    {(props.link.sort
-      ? sortLinks(props.link.links)
-      : props.link.links
-    ).map(subLink => <NavSelectItem key={subLink.id} link={subLink} />)}
+    {(props.link.sort ? sortLinks(props.link.links) : props.link.links).map(
+      subLink => <NavSelectItem key={subLink.id} link={subLink} />,
+    )}
   </optgroup>
 );
 
@@ -62,7 +64,7 @@ NavSelectCategory.propTypes = {
   link: categoryPropType.isRequired,
 };
 
-const NavSelect = (props) => {
+const NavSelect = props => {
   const pathname = props.location.pathname.replace(/\/$/, '');
 
   return (
@@ -74,10 +76,13 @@ const NavSelect = (props) => {
         onChange={e => browserHistory.push(e.target.value)}
       >
         {props.links.map(
-          link => (link.category
-            ? <NavSelectCategory key={link.id} link={link} />
-            : <NavSelectItem key={link.id} link={link} />
-          ))}
+          link =>
+            link.category ? (
+              <NavSelectCategory key={link.id} link={link} />
+            ) : (
+              <NavSelectItem key={link.id} link={link} />
+            ),
+        )}
       </BpkSelect>
     </BpkFieldset>
   );

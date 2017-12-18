@@ -1,6 +1,6 @@
 import tinycolor from 'tinycolor2';
 
-export default function (value, type) {
+export default function(value, type) {
   let formattedValue = value;
 
   switch (type) {

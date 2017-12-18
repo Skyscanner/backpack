@@ -22,8 +22,19 @@ import BpkBlockquote from 'bpk-component-blockquote';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import { BpkCode, BpkCodeBlock } from 'bpk-component-code';
 import BpkLink, { BpkButtonLink } from 'bpk-component-link';
-import { BpkDescriptionList, BpkDescriptionTerm, BpkDescriptionDetails } from 'bpk-component-description-list';
-import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table';
+import {
+  BpkDescriptionList,
+  BpkDescriptionTerm,
+  BpkDescriptionDetails,
+} from 'bpk-component-description-list';
+import {
+  BpkTable,
+  BpkTableHead,
+  BpkTableBody,
+  BpkTableRow,
+  BpkTableHeadCell,
+  BpkTableCell,
+} from 'bpk-component-table';
 
 import textReadme from 'bpk-component-text/readme.md';
 import linkReadme from 'bpk-component-link/readme.md';
@@ -36,20 +47,21 @@ import descriptionListReadme from 'bpk-component-description-list/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
 
-
 const components = [
   {
     id: 'text',
     title: 'Text',
     blurb: [
       <Paragraph>
-        The text component enables you to use the five backpack defined text styles in combination with any of the
-        heading tags, a span or a paragraph. You can mix different text styles with the
-        appropriate tag to achieve semantic markup while retaining control over how the text looks.
+        The text component enables you to use the five backpack defined text
+        styles in combination with any of the heading tags, a span or a
+        paragraph. You can mix different text styles with the appropriate tag to
+        achieve semantic markup while retaining control over how the text looks.
       </Paragraph>,
       <BpkBlockquote extraSpace>
-        <BpkText bold>Note:</BpkText> Whilst <BpkCode>BpkText</BpkCode> allows for any combination of text size and
-        heading levels, we recommend that visual hierarchy is maintained inline with the semantic structure.
+        <BpkText bold>Note:</BpkText> Whilst <BpkCode>BpkText</BpkCode> allows
+        for any combination of text size and heading levels, we recommend that
+        visual hierarchy is maintained inline with the semantic structure.
       </BpkBlockquote>,
     ],
     examples: [
@@ -76,8 +88,8 @@ const components = [
     title: 'Links',
     examples: [
       <div>
-        Links can be both <BpkLink href="#">anchor tags</BpkLink> as well
-        as <BpkButtonLink onClick={() => null}>button tags</BpkButtonLink>.
+        Links can be both <BpkLink href="#">anchor tags</BpkLink> as well as{' '}
+        <BpkButtonLink onClick={() => null}>button tags</BpkButtonLink>.
       </div>,
     ],
     readme: linkReadme,
@@ -88,7 +100,8 @@ const components = [
     examples: [
       <BpkList>
         <BpkListItem>Apples</BpkListItem>
-        <BpkListItem>Oranges
+        <BpkListItem>
+          Oranges
           <BpkList>
             <BpkListItem>Tangerines</BpkListItem>
             <BpkListItem>Mandarins</BpkListItem>
@@ -112,18 +125,20 @@ const components = [
       <BpkDescriptionList>
         <BpkDescriptionTerm>Airport code</BpkDescriptionTerm>
         <BpkDescriptionDetails>
-          The three digit code which is unique to a specific airport. eg. LHR for Heathrow or LGW for Gatwick.
+          The three digit code which is unique to a specific airport. eg. LHR
+          for Heathrow or LGW for Gatwick.
         </BpkDescriptionDetails>
         <BpkDescriptionTerm>Boarding pass</BpkDescriptionTerm>
         <BpkDescriptionDetails>
-          A card given to the passenger after check-in which allocates a seat number or indicates a boarding pattern.
-          The stub of the card should be retained after going through the boarding gate to show to the flight crew once
-          reaching the aircraft.
+          A card given to the passenger after check-in which allocates a seat
+          number or indicates a boarding pattern. The stub of the card should be
+          retained after going through the boarding gate to show to the flight
+          crew once reaching the aircraft.
         </BpkDescriptionDetails>
         <BpkDescriptionTerm>Charter</BpkDescriptionTerm>
         <BpkDescriptionDetails>
-          An aircraft which is used by a specific group be it customers of a particular holiday company or an
-          individual party.
+          An aircraft which is used by a specific group be it customers of a
+          particular holiday company or an individual party.
         </BpkDescriptionDetails>
       </BpkDescriptionList>,
     ],
@@ -165,8 +180,9 @@ const components = [
     title: 'Blockquotes',
     examples: [
       <BpkBlockquote extraSpace>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
       </BpkBlockquote>,
     ],
     readme: blockquoteReadme,
@@ -176,11 +192,13 @@ const components = [
     title: 'Code',
     examples: [
       <Paragraph>
-        We recommend using React from npm with a bundler like webpack. You can use
-        the <BpkCode>react</BpkCode> and <BpkCode>react-dom</BpkCode> packages. After installing it
-        using <BpkCode>npm install --save react react-dom</BpkCode>, you can use:
+        We recommend using React from npm with a bundler like webpack. You can
+        use the <BpkCode>react</BpkCode> and <BpkCode>react-dom</BpkCode>{' '}
+        packages. After installing it using{' '}
+        <BpkCode>npm install --save react react-dom</BpkCode>, you can use:
       </Paragraph>,
-      <BpkCodeBlock>{`import React from 'react';
+      <BpkCodeBlock>
+        {`import React from 'react';
 import ReactDOM from 'react-dom';
 
 ReactDOM.render(<App />, ...);`}
@@ -190,16 +208,18 @@ ReactDOM.render(<App />, ...);`}
   },
 ];
 
-const TypographyPage = () => (<DocsPageBuilder
-  title="Typography"
-  blurb={[
-    <Paragraph>
-      Backpack has a number of components to help with typography including headings, paragraphs, links, lists and
-      more.
-    </Paragraph>,
-  ]}
-  components={components}
-  sassdocId="typography"
-/>);
+const TypographyPage = () => (
+  <DocsPageBuilder
+    title="Typography"
+    blurb={[
+      <Paragraph>
+        Backpack has a number of components to help with typography including
+        headings, paragraphs, links, lists and more.
+      </Paragraph>,
+    ]}
+    components={components}
+    sassdocId="typography"
+  />
+);
 
 export default TypographyPage;

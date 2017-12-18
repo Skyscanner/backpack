@@ -29,7 +29,8 @@ const components = [
   {
     id: 'default',
     title: 'Default',
-    blurb: 'By default, star ratings are shown in a static form. These can be set at half star intervals. ', // eslint-disable-line max-len
+    blurb:
+      'By default, star ratings are shown in a static form. These can be set at half star intervals. ', // eslint-disable-line max-len
     screenshots: [
       {
         title: 'iOS',
@@ -51,16 +52,18 @@ const components = [
   },
 ];
 
-const NativeStarRatingPage = () => (<DocsPageBuilder
-  title="Star Ratings"
-  blurb={[
-    <Paragraph>
-      Star ratings are used for displaying a score within a given range.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={readme}
-  showMenu={false}
-/>);
+const NativeStarRatingPage = () => (
+  <DocsPageBuilder
+    title="Star Ratings"
+    blurb={[
+      <Paragraph>
+        Star ratings are used for displaying a score within a given range.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={readme}
+    showMenu={false}
+  />
+);
 
 export default NativeStarRatingPage;

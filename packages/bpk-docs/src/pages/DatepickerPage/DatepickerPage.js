@@ -55,11 +55,13 @@ const components = [
     id: 'datepicker',
     title: 'Default datepicker',
     blurb: [
+      <Paragraph>Default calendar, input and popover configuration.</Paragraph>,
       <Paragraph>
-        Default calendar, input and popover configuration.
-      </Paragraph>,
-      <Paragraph>
-        See the <BpkRouterLink to={ROUTES.CALENDAR}>BpkCalendar documentation</BpkRouterLink> for more examples.
+        See the{' '}
+        <BpkRouterLink to={ROUTES.CALENDAR}>
+          BpkCalendar documentation
+        </BpkRouterLink>{' '}
+        for more examples.
       </Paragraph>,
     ],
     examples: [
@@ -72,7 +74,9 @@ const components = [
         daysOfWeek={weekDays}
         changeMonthLabel="Change month"
         title="Select date"
-        getApplicationElement={() => document.getElementById('application-container')}
+        getApplicationElement={() =>
+          document.getElementById('application-container')
+        }
         renderTarget={() => document.getElementById('portal-taget')}
         inputProps={{ placeholder: 'Select date' }}
       />,
@@ -80,17 +84,20 @@ const components = [
   },
 ];
 
-const DatepickerPage = () => (<DocsPageBuilder
-  title="Datepicker"
-  blurb={[
-    <Paragraph>
-      The datepicker is an input control that allows the user to pick a single date. It embeds
-      a <BpkRouterLink to={ROUTES.CALENDAR}>calendar component</BpkRouterLink> in
-      a <BpkRouterLink to={ROUTES.POPOVERS}>popover</BpkRouterLink>.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={datepickerReadme}
-/>);
+const DatepickerPage = () => (
+  <DocsPageBuilder
+    title="Datepicker"
+    blurb={[
+      <Paragraph>
+        The datepicker is an input control that allows the user to pick a single
+        date. It embeds a{' '}
+        <BpkRouterLink to={ROUTES.CALENDAR}>calendar component</BpkRouterLink>{' '}
+        in a <BpkRouterLink to={ROUTES.POPOVERS}>popover</BpkRouterLink>.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={datepickerReadme}
+  />
+);
 
 export default DatepickerPage;

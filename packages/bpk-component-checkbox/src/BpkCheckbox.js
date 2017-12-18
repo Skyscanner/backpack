@@ -27,17 +27,32 @@ import STYLES from './BpkCheckbox.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkCheckbox = (props) => {
+const BpkCheckbox = props => {
   const classNames = [getClassName('bpk-checkbox')];
   const labelClassNames = [getClassName('bpk-checkbox__label')];
   const {
-    name, label, required, disabled, white, className, smallLabel, ...rest
+    name,
+    label,
+    required,
+    disabled,
+    white,
+    className,
+    smallLabel,
+    ...rest
   } = props;
 
-  if (white) { classNames.push(getClassName('bpk-checkbox--white')); }
-  if (disabled) { classNames.push(getClassName('bpk-checkbox--disabled')); }
-  if (smallLabel) { labelClassNames.push(getClassName('bpk-checkbox__label--small')); }
-  if (className) { classNames.push(className); }
+  if (white) {
+    classNames.push(getClassName('bpk-checkbox--white'));
+  }
+  if (disabled) {
+    classNames.push(getClassName('bpk-checkbox--disabled'));
+  }
+  if (smallLabel) {
+    labelClassNames.push(getClassName('bpk-checkbox__label--small'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
   // This is awkward because the label-has-for rule enforces an 'id' / 'for' pairing
   // when it's not really necessary for nested inputs.

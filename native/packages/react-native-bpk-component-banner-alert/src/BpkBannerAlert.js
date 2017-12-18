@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-import {
-  View,
-  StyleSheet,
-} from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 import BpkText from 'react-native-bpk-component-text';
@@ -63,7 +60,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     display: 'flex',
     flexDirection: 'row',
-    minHeight: spacingXl - (borderSizeSm * 2),
+    minHeight: spacingXl - borderSizeSm * 2,
   },
   bannerContainerPadded: {
     flexGrow: 1,
@@ -78,7 +75,7 @@ const styles = StyleSheet.create({
   },
   closeButtonContainer: {
     height: '100%',
-    width: ((2 * spacingMd) + spacingBase),
+    width: 2 * spacingMd + spacingBase,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -106,11 +103,11 @@ const styles = StyleSheet.create({
     paddingLeft: spacingSm,
     color: colorGray700,
     // Calculate the padding required to align the text within the banner
-    paddingTop: ((spacingXl - (2 * borderSizeSm)) - lineHeightSm) / 2,
+    paddingTop: (spacingXl - 2 * borderSizeSm - lineHeightSm) / 2,
   },
   icon: {
     // Calculate the padding required to align the icon within the banner
-    paddingTop: ((spacingXl - (2 * borderSizeSm)) - spacingBase) / 2,
+    paddingTop: (spacingXl - 2 * borderSizeSm - spacingBase) / 2,
   },
   iconSuccess: {
     color: colorGreen500,
@@ -126,7 +123,7 @@ const styles = StyleSheet.create({
   },
   button: {
     // Calculate the padding required to align the button within the banner
-    paddingTop: ((spacingXl - (2 * borderSizeSm)) - spacingBase) / 2,
+    paddingTop: (spacingXl - 2 * borderSizeSm - spacingBase) / 2,
   },
   buttonExpand: {
     color: colorGray700,
@@ -159,7 +156,7 @@ const ALERT_TYPE_STYLES = {
   },
 };
 
-const BpkBannerAlert = (props) => {
+const BpkBannerAlert = props => {
   const {
     type,
     message,
@@ -181,19 +178,20 @@ const BpkBannerAlert = (props) => {
   const outerStyle = [styles.outerContainer];
   const contentPaddedStyle = [styles.bannerContainerPadded];
   const expandedChildContainer = [styles.expandedChildContainer];
-  const { iconSource, outerStyle: outerStyleForType, iconStyle } = ALERT_TYPE_STYLES[type] || {};
+  const { iconSource, outerStyle: outerStyleForType, iconStyle } =
+    ALERT_TYPE_STYLES[type] || {};
 
   outerStyle.push(outerStyleForType);
-  if (dismissable) { contentPaddedStyle.push(styles.bannerContainerPaddedDismissable); }
+  if (dismissable) {
+    contentPaddedStyle.push(styles.bannerContainerPaddedDismissable);
+  }
 
   const banner = (
     <View style={[contentPaddedStyle]}>
-      <BpkIcon
-        style={[styles.icon, iconStyle]}
-        icon={iconSource}
-        small
-      />
-      <BpkText textStyle="sm" style={styles.text}>{message}</BpkText>
+      <BpkIcon style={[styles.icon, iconStyle]} icon={iconSource} small />
+      <BpkText textStyle="sm" style={styles.text}>
+        {message}
+      </BpkText>
       {expandable && (
         <BpkIcon
           style={[styles.button, styles.buttonExpand]}
@@ -212,10 +210,8 @@ const BpkBannerAlert = (props) => {
       show={show}
       {...rest}
     >
-      <View
-        style={outerStyle}
-      >
-        <View style={styles.bannerContainer} >
+      <View style={outerStyle}>
+        <View style={styles.bannerContainer}>
           {expandable ? (
             <BpkTouchableOverlay
               accessibilityComponentType="button"
@@ -225,23 +221,25 @@ const BpkBannerAlert = (props) => {
             >
               {banner}
             </BpkTouchableOverlay>
-        ) : banner}
+          ) : (
+            banner
+          )}
           {dismissable && (
-          <BpkTouchableOverlay
-            accessibilityComponentType="button"
-            onPress={onDismiss}
-            accessibilityLabel={dismissButtonLabel}
-            style={styles.closeButtonContainer}
-          >
-            <View>
-              <BpkIcon
-                style={[styles.button, styles.buttonClose]}
-                icon="close"
-                small
-              />
-            </View>
-          </BpkTouchableOverlay>
-        )}
+            <BpkTouchableOverlay
+              accessibilityComponentType="button"
+              onPress={onDismiss}
+              accessibilityLabel={dismissButtonLabel}
+              style={styles.closeButtonContainer}
+            >
+              <View>
+                <BpkIcon
+                  style={[styles.button, styles.buttonClose]}
+                  icon="close"
+                  small
+                />
+              </View>
+            </BpkTouchableOverlay>
+          )}
         </View>
         <BpkAnimateHeight expanded={expanded}>
           <View style={expandedChildContainer}>{props.children}</View>
@@ -253,7 +251,8 @@ const BpkBannerAlert = (props) => {
 
 BpkBannerAlert.propTypes = {
   message: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(Object.keys(ALERT_TYPES).map(key => ALERT_TYPES[key])).isRequired,
+  type: PropTypes.oneOf(Object.keys(ALERT_TYPES).map(key => ALERT_TYPES[key]))
+    .isRequired,
   children: PropTypes.node,
   dismissable: dismissablePropType,
   expanded: PropTypes.bool,

@@ -38,7 +38,9 @@ const getClassName = cssModules(STYLES);
 const shallowEqualProps = (props1, props2, propList) => {
   let i = 0;
   for (; i < propList.length; i += 1) {
-    if (props1[propList[i]] !== props2[propList[i]]) { return false; }
+    if (props1[propList[i]] !== props2[propList[i]]) {
+      return false;
+    }
   }
   return true;
 };
@@ -64,17 +66,29 @@ class Week extends Component {
       'dates',
     ];
 
-    if (!shallowEqualProps(this.props, nextProps, shallowProps)) { return true; }
-    if (
-      (isSameWeek(nextProps.focusedDate, nextProps.dates[0], { weekStartsOn: nextProps.weekStartsOn })
-        || isSameWeek(this.props.focusedDate, this.props.dates[0], { weekStartsOn: this.props.weekStartsOn })
-      ) && this.props.focusedDate !== nextProps.focusedDate) {
+    if (!shallowEqualProps(this.props, nextProps, shallowProps)) {
       return true;
     }
     if (
-      (isSameWeek(nextProps.selectedDate, nextProps.dates[0], { weekStartsOn: nextProps.weekStartsOn })
-        || isSameWeek(this.props.selectedDate, this.props.dates[0], { weekStartsOn: this.props.weekStartsOn })
-      ) && this.props.selectedDate !== nextProps.selectedDate) {
+      (isSameWeek(nextProps.focusedDate, nextProps.dates[0], {
+        weekStartsOn: nextProps.weekStartsOn,
+      }) ||
+        isSameWeek(this.props.focusedDate, this.props.dates[0], {
+          weekStartsOn: this.props.weekStartsOn,
+        })) &&
+      this.props.focusedDate !== nextProps.focusedDate
+    ) {
+      return true;
+    }
+    if (
+      (isSameWeek(nextProps.selectedDate, nextProps.dates[0], {
+        weekStartsOn: nextProps.weekStartsOn,
+      }) ||
+        isSameWeek(this.props.selectedDate, this.props.dates[0], {
+          weekStartsOn: this.props.weekStartsOn,
+        })) &&
+      this.props.selectedDate !== nextProps.selectedDate
+    ) {
       return true;
     }
     if (!isSameDay(nextProps.minDate, this.props.minDate)) {
@@ -111,30 +125,37 @@ class Week extends Component {
     const lastDayOfWeekendIndex = getLastDayOfWeekend(daysOfWeek);
 
     return (
-      <tr
-        className={getClassName('bpk-calendar-grid__week')}
-      >{ this.props.dates.map(date => (
-        <DateContainer
-          key={date.getDate()}
-          weekendStart={showWeekendSeparator && firstDayOfWeekendIndex === getDay(date)}
-          weekendEnd={showWeekendSeparator && lastDayOfWeekendIndex === getDay(date)}
-        >
-          <DateComponent
-            date={date}
-            modifiers={dateModifiers}
-            aria-label={formatDateFull(date)}
-            onClick={onDateClick}
-            onDateKeyDown={onDateKeyDown}
-            preventKeyboardFocus={preventKeyboardFocus}
-            isKeyboardFocusable={isKeyboardFocusable}
-            isFocused={isSameDay(date, focusedDate)}
-            isSelected={isSameDay(date, selectedDate)}
-            isBlocked={(minDate && maxDate) ? !isWithinRange(date, minDate, maxDate) : false}
-            isOutside={markOutsideDays && !isSameMonth(date, month)}
-            isToday={markToday && isToday(date)}
-          />
-        </DateContainer>
-      ))}
+      <tr className={getClassName('bpk-calendar-grid__week')}>
+        {this.props.dates.map(date => (
+          <DateContainer
+            key={date.getDate()}
+            weekendStart={
+              showWeekendSeparator && firstDayOfWeekendIndex === getDay(date)
+            }
+            weekendEnd={
+              showWeekendSeparator && lastDayOfWeekendIndex === getDay(date)
+            }
+          >
+            <DateComponent
+              date={date}
+              modifiers={dateModifiers}
+              aria-label={formatDateFull(date)}
+              onClick={onDateClick}
+              onDateKeyDown={onDateKeyDown}
+              preventKeyboardFocus={preventKeyboardFocus}
+              isKeyboardFocusable={isKeyboardFocusable}
+              isFocused={isSameDay(date, focusedDate)}
+              isSelected={isSameDay(date, selectedDate)}
+              isBlocked={
+                minDate && maxDate
+                  ? !isWithinRange(date, minDate, maxDate)
+                  : false
+              }
+              isOutside={markOutsideDays && !isSameMonth(date, month)}
+              isToday={markToday && isToday(date)}
+            />
+          </DateContainer>
+        ))}
       </tr>
     );
   }
@@ -173,19 +194,17 @@ Week.defaultProps = {
 /*
   DateContainer - one for each date in the grid; wraps the actual BpkCalendarDate (or custom) component
 */
-const DateContainer = (props) => {
+const DateContainer = props => {
   const classNames = [getClassName('bpk-calendar-grid__date')];
 
-  if (props.weekendStart) { classNames.push(getClassName('bpk-calendar-grid__date--weekend-start')); }
-  if (props.weekendEnd) { classNames.push(getClassName('bpk-calendar-grid__date--weekend-end')); }
+  if (props.weekendStart) {
+    classNames.push(getClassName('bpk-calendar-grid__date--weekend-start'));
+  }
+  if (props.weekendEnd) {
+    classNames.push(getClassName('bpk-calendar-grid__date--weekend-end'));
+  }
 
-  return (
-    <td
-      className={classNames.join(' ')}
-    >
-      { props.children }
-    </td>
-  );
+  return <td className={classNames.join(' ')}>{props.children}</td>;
 };
 
 DateContainer.propTypes = {

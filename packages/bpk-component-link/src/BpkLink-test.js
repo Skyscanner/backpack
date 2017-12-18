@@ -27,28 +27,57 @@ describe('BpkLink', () => {
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer.create(<BpkLink href="#" className="test-class">Link</BpkLink>).toJSON();
+    const tree = renderer
+      .create(
+        <BpkLink href="#" className="test-class">
+          Link
+        </BpkLink>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a "blank" attribute', () => {
-    const tree = renderer.create(<BpkLink href="#" blank>Link (new window)</BpkLink>).toJSON();
+    const tree = renderer
+      .create(
+        <BpkLink href="#" blank>
+          Link (new window)
+        </BpkLink>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a "white" attribute', () => {
-    const tree = renderer.create(<BpkLink href="#" white>Link</BpkLink>).toJSON();
+    const tree = renderer
+      .create(
+        <BpkLink href="#" white>
+          Link
+        </BpkLink>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary attributes', () => {
-    const tree = renderer.create(<BpkLink href="#" id="test-id">Link</BpkLink>).toJSON();
+    const tree = renderer
+      .create(
+        <BpkLink href="#" id="test-id">
+          Link
+        </BpkLink>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   describe('themeAttributes', () => {
     it('exports the expected themeAttributes', () => {
-      expect(themeAttributes).toEqual(['linkColor', 'linkHoverColor', 'linkActiveColor', 'linkVisitedColor']);
+      expect(themeAttributes).toEqual([
+        'linkColor',
+        'linkHoverColor',
+        'linkActiveColor',
+        'linkVisitedColor',
+      ]);
     });
   });
 });

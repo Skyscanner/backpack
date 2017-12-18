@@ -26,7 +26,7 @@ import STYLES from './bpk-calendar.scss';
 const getClassName = cssModules(STYLES);
 
 const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
-  const BpkCalendar = (props) => {
+  const BpkCalendar = props => {
     const classNames = [getClassName('bpk-calendar')];
 
     const {
@@ -53,22 +53,30 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
       fixedWidth,
     } = props;
 
-    if (className) { classNames.push(className); }
-    if (fixedWidth) { classNames.push(getClassName('bpk-calendar--fixed')); }
+    if (className) {
+      classNames.push(className);
+    }
+    if (fixedWidth) {
+      classNames.push(getClassName('bpk-calendar--fixed'));
+    }
 
     const headerClasses = [];
     // If the Nav is present add `bpk-calendar__header` which
     // adds spacing between the nav and header.
-    if (Nav) { headerClasses.push(getClassName('bpk-calendar__header')); }
+    if (Nav) {
+      headerClasses.push(getClassName('bpk-calendar__header'));
+    }
 
     const gridClasses = [];
     // If the GridHeader is not present add `bpk-calendar__grid` which
     // adds spacing between the nav and grid.
-    if (!GridHeader && Nav) { gridClasses.push(getClassName('bpk-calendar__grid')); }
+    if (!GridHeader && Nav) {
+      gridClasses.push(getClassName('bpk-calendar__grid'));
+    }
 
     return (
       <div className={classNames.join(' ')}>
-        { Nav && (
+        {Nav && (
           <Nav
             changeMonthLabel={changeMonthLabel}
             formatMonth={formatMonth}
@@ -79,7 +87,7 @@ const composeCalendar = (Nav, GridHeader, Grid, CalendarDate) => {
             onMonthChange={onMonthChange}
           />
         )}
-        { GridHeader && (
+        {GridHeader && (
           <GridHeader
             daysOfWeek={daysOfWeek}
             showWeekendSeparator={showWeekendSeparator}

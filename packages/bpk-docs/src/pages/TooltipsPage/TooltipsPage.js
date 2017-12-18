@@ -37,13 +37,21 @@ const components = [
     title: 'Default',
     blurb: [
       <Paragraph>
-        By default, tooltips come with some padding so all you need to do is drop in some content.
+        By default, tooltips come with some padding so all you need to do is
+        drop in some content.
       </Paragraph>,
     ],
     examples: [
       <BpkTooltip
         id="my-tooltip"
-        target={<Heading level="h3" className={getClassName('bpkdocs-tooltips-page__heading')}>LHR</Heading>}
+        target={
+          <Heading
+            level="h3"
+            className={getClassName('bpkdocs-tooltips-page__heading')}
+          >
+            LHR
+          </Heading>
+        }
       >
         London Heathrow
       </BpkTooltip>,
@@ -70,7 +78,14 @@ const components = [
             },
           ],
         }}
-        target={<Heading level="h3" className={getClassName('bpkdocs-tooltips-page__heading')}>EDI</Heading>}
+        target={
+          <Heading
+            level="h3"
+            className={getClassName('bpkdocs-tooltips-page__heading')}
+          >
+            EDI
+          </Heading>
+        }
       >
         Edinburgh
       </BpkTooltip>,
@@ -81,18 +96,26 @@ const components = [
     title: 'Without padding',
     blurb: [
       <Paragraph>
-        Tooltips are also available without padding should you wish to display fullwidth content e.g. an image.
+        Tooltips are also available without padding should you wish to display
+        fullwidth content e.g. an image.
       </Paragraph>,
       <Paragraph>
-        An example of this can be seen below where a coloured border is included to denote directness for a tooltip
-        used on the map.
+        An example of this can be seen below where a coloured border is included
+        to denote directness for a tooltip used on the map.
       </Paragraph>,
     ],
     examples: [
       <BpkTooltip
         id="my-tooltip-3"
         padded={false}
-        target={<Heading level="h3" className={getClassName('bpkdocs-tooltips-page__heading')}>JFK</Heading>}
+        target={
+          <Heading
+            level="h3"
+            className={getClassName('bpkdocs-tooltips-page__heading')}
+          >
+            JFK
+          </Heading>
+        }
       >
         <div
           style={{
@@ -109,37 +132,43 @@ const components = [
   },
 ];
 
-const TooltipsPage = () => (<DocsPageBuilder
-  title="Tooltips"
-  blurb={[
-    <Paragraph>
-      Tooltips appear on hover of a particular element and are used to provide additional context/information to the
-      user. They generally are text-only and are triggered on pointer based interfaces.
-    </Paragraph>,
-    <Paragraph>
-      By default, <em>tooltips do not work on touch devices</em>. Using tooltips in touch-based interfaces is
-      generally bad practice due to the lack of hover state.
-      We also don&apos;t recommend using tooltips on interactive elements that can receive focus, such as links,
-      buttons, and inputs.
-    </Paragraph>,
-    <Paragraph>
-      Tooltips do not manage focus. If you need to include interactive elements in a tooltip,
-      a <BpkRouterLink to={ROUTES.POPOVERS}>popover</BpkRouterLink> might be better suited.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={tooltipReadme}
-  usageTable={{
-    dos: [
-      'Use to provide additional information about an element on the page, shown on hover.',
-      'Text-only works best.',
-    ],
-    donts: [
-      'Don\'t use on touch devices (try using a popover instead).',
-      'Don\'t use for long or complex content or when content includes interaction (try using a popover or modal).',
-      'Don\'t use on interactive elements that can receive focus such as links, buttons and inputs.',
-    ],
-  }}
-/>);
+const TooltipsPage = () => (
+  <DocsPageBuilder
+    title="Tooltips"
+    blurb={[
+      <Paragraph>
+        Tooltips appear on hover of a particular element and are used to provide
+        additional context/information to the user. They generally are text-only
+        and are triggered on pointer based interfaces.
+      </Paragraph>,
+      <Paragraph>
+        By default, <em>tooltips do not work on touch devices</em>. Using
+        tooltips in touch-based interfaces is generally bad practice due to the
+        lack of hover state. We also don&apos;t recommend using tooltips on
+        interactive elements that can receive focus, such as links, buttons, and
+        inputs.
+      </Paragraph>,
+      <Paragraph>
+        Tooltips do not manage focus. If you need to include interactive
+        elements in a tooltip, a{' '}
+        <BpkRouterLink to={ROUTES.POPOVERS}>popover</BpkRouterLink> might be
+        better suited.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={tooltipReadme}
+    usageTable={{
+      dos: [
+        'Use to provide additional information about an element on the page, shown on hover.',
+        'Text-only works best.',
+      ],
+      donts: [
+        "Don't use on touch devices (try using a popover instead).",
+        "Don't use for long or complex content or when content includes interaction (try using a popover or modal).",
+        "Don't use on interactive elements that can receive focus such as links, buttons and inputs.",
+      ],
+    }}
+  />
+);
 
 export default TooltipsPage;

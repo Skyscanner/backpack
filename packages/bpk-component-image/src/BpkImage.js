@@ -27,10 +27,8 @@ import STYLES from './bpk-image.scss';
 
 const getClassName = cssModules(STYLES);
 
-const Image = (props) => {
-  const {
-    hidden, altText, onImageLoad, ...rest
-  } = props;
+const Image = props => {
+  const { hidden, altText, onImageLoad, ...rest } = props;
 
   const imgClassNames = [getClassName('bpk-image__img')];
 
@@ -75,7 +73,15 @@ class BpkImage extends React.Component {
 
   render() {
     const {
-      width, height, altText, className, inView, loading, onLoad, style, ...rest
+      width,
+      height,
+      altText,
+      className,
+      inView,
+      loading,
+      onLoad,
+      style,
+      ...rest
     } = this.props;
 
     const classNames = [getClassName('bpk-image')];
@@ -91,16 +97,15 @@ class BpkImage extends React.Component {
     // This ensures that the css / html do not reserve too much spacing
     // when width 100% is not being used
     return (
-      <div
-        style={style}
-        className={className}
-      >
+      <div style={style} className={className}>
         <div
-          ref={(div) => { this.placeholder = div; }}
+          ref={div => {
+            this.placeholder = div;
+          }}
           style={{ height: 0, paddingBottom: aspectRatioPc }}
           className={classNames.join(' ')}
         >
-          {loading &&
+          {loading && (
             <CSSTransition
               classNames={{
                 exit: getClassName('bpk-image__spinner--shown'),
@@ -112,15 +117,21 @@ class BpkImage extends React.Component {
                 <BpkSpinner />
               </div>
             </CSSTransition>
-          }
-          {inView &&
-            <Image hidden={loading} altText={altText} onImageLoad={this.onImageLoad} {...rest} />
-          }
-          {(typeof window === 'undefined' && (!inView || loading)) &&
-          <noscript >
-            <Image altText={altText} {...rest} />
-          </noscript>
-          }
+          )}
+          {inView && (
+            <Image
+              hidden={loading}
+              altText={altText}
+              onImageLoad={this.onImageLoad}
+              {...rest}
+            />
+          )}
+          {typeof window === 'undefined' &&
+            (!inView || loading) && (
+              <noscript>
+                <Image altText={altText} {...rest} />
+              </noscript>
+            )}
         </div>
       </div>
     );

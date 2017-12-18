@@ -28,17 +28,23 @@ import STYLES from './bpk-pagination-nudger.scss';
 
 const getClassName = cssModules(STYLES);
 const AlignedArrowLeftIcon = withButtonAlignment(withRtlSupport(ArrowLeftIcon));
-const AlignedArrowRightIcon = withButtonAlignment(withRtlSupport(ArrowRightIcon));
+const AlignedArrowRightIcon = withButtonAlignment(
+  withRtlSupport(ArrowRightIcon),
+);
 
 const nudgerIcon = forward =>
-  (forward ?
-    <AlignedArrowRightIcon className={getClassName('bpk-pagination-nudger__icon')} /> :
-    <AlignedArrowLeftIcon className={getClassName('bpk-pagination-nudger__icon')} />);
+  forward ? (
+    <AlignedArrowRightIcon
+      className={getClassName('bpk-pagination-nudger__icon')}
+    />
+  ) : (
+    <AlignedArrowLeftIcon
+      className={getClassName('bpk-pagination-nudger__icon')}
+    />
+  );
 
-const BpkPaginationNudger = (props) => {
-  const {
-    label, onNudge, forward, disabled,
-  } = props;
+const BpkPaginationNudger = props => {
+  const { label, onNudge, forward, disabled } = props;
 
   return (
     <div className={getClassName('bpk-pagination-nudger')}>
@@ -49,9 +55,7 @@ const BpkPaginationNudger = (props) => {
         disabled={disabled}
       >
         {nudgerIcon(forward)}
-        <span
-          className={getClassName('bpk-pagination-nudger__text--hidden')}
-        >
+        <span className={getClassName('bpk-pagination-nudger__text--hidden')}>
           {label}
         </span>
       </button>

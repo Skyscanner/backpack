@@ -22,7 +22,4 @@ import withLoadingBehavior from './src/withLoadingBehavior';
 
 export default BpkImage;
 
-export {
-  withLazyLoading,
-  withLoadingBehavior,
-};
+export { withLazyLoading, withLoadingBehavior };

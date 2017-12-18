@@ -19,13 +19,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BpkPaginationBreak = (props) => {
+const BpkPaginationBreak = props => {
   const { breakLabel } = props;
-  return (
-    <div>
-      {breakLabel}
-    </div>
-  );
+  return <div>{breakLabel}</div>;
 };
 
 BpkPaginationBreak.propTypes = {
@@ -37,4 +33,3 @@ BpkPaginationBreak.defaultProps = {
 };
 
 export default BpkPaginationBreak;
-

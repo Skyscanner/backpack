@@ -18,7 +18,11 @@
 
 import React from 'react';
 import { AppRegistry, StyleSheet, View } from 'react-native';
-import { getStorybookUI, configure, addDecorator } from '@storybook/react-native';
+import {
+  getStorybookUI,
+  configure,
+  addDecorator,
+} from '@storybook/react-native';
 
 import { spacingBase } from './../../packages/bpk-tokens/tokens/base.react.native';
 
@@ -33,9 +37,7 @@ const styles = StyleSheet.create({
 });
 
 const CenterDecorator = getStory => (
-  <View style={styles.centered}>
-    {getStory()}
-  </View>
+  <View style={styles.centered}>{getStory()}</View>
 );
 
 addDecorator(CenterDecorator);

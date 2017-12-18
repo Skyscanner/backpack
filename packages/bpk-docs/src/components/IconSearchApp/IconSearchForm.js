@@ -27,11 +27,14 @@ import STYLES from './IconSearchForm.scss';
 const getClassName = cssModules(STYLES);
 const FILTER_INPUT_ID = 'icon_search_form_filter';
 
-const IconSearchForm = (props) => {
+const IconSearchForm = props => {
   const { filterValue, onFilterChange } = props;
 
   return (
-    <form onSubmit={e => e.preventDefault()} className={getClassName('bpkdocs-icon-search-form')}>
+    <form
+      onSubmit={e => e.preventDefault()}
+      className={getClassName('bpkdocs-icon-search-form')}
+    >
       <fieldset className={getClassName('bpkdocs-icon-search-form__fieldset')}>
         <BpkLabel htmlFor={FILTER_INPUT_ID}>Filter</BpkLabel>
         <BpkInput

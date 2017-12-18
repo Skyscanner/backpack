@@ -16,7 +16,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 `;
 
-
 export const xmlComment = `
 <!--
 ${TEXT.replace(/^/gm, '  ')}
@@ -25,4 +24,3 @@ ${TEXT.replace(/^/gm, '  ')}
 export const blockComment = `/*
 ${TEXT.replace(/^/gm, ' * ')}
  */`;
-

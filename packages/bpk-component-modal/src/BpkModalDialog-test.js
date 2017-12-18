@@ -36,93 +36,102 @@ describe('BpkModalDialog', () => {
   });
 
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <BpkModalDialog
-        id="my-modal"
-        title="Modal title"
-        onClose={jest.fn()}
-        closeLabel="Close"
-        closeEvents={closeEvents}
-        dialogRef={jest.fn()}
-        isIphone={false}
-      >
-        Modal content
-      </BpkModalDialog>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkModalDialog
+          id="my-modal"
+          title="Modal title"
+          onClose={jest.fn()}
+          closeLabel="Close"
+          closeEvents={closeEvents}
+          dialogRef={jest.fn()}
+          isIphone={false}
+        >
+          Modal content
+        </BpkModalDialog>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly when it has a className', () => {
-    const tree = renderer.create(
-      <BpkModalDialog
-        id="my-modal"
-        className="my-classname"
-        title="Modal title"
-        onClose={jest.fn()}
-        closeLabel="Close"
-        closeEvents={closeEvents}
-        dialogRef={jest.fn()}
-        isIphone={false}
-      >
-        Modal content
-      </BpkModalDialog>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkModalDialog
+          id="my-modal"
+          className="my-classname"
+          title="Modal title"
+          onClose={jest.fn()}
+          closeLabel="Close"
+          closeEvents={closeEvents}
+          dialogRef={jest.fn()}
+          isIphone={false}
+        >
+          Modal content
+        </BpkModalDialog>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with wide prop', () => {
-    const tree = renderer.create(
-      <BpkModalDialog
-        id="my-modal"
-        className="my-classname"
-        wide
-        title="Modal title"
-        onClose={jest.fn()}
-        closeLabel="Close"
-        closeEvents={closeEvents}
-        dialogRef={jest.fn()}
-        isIphone={false}
-      >
-        Modal content
-      </BpkModalDialog>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkModalDialog
+          id="my-modal"
+          className="my-classname"
+          wide
+          title="Modal title"
+          onClose={jest.fn()}
+          closeLabel="Close"
+          closeEvents={closeEvents}
+          dialogRef={jest.fn()}
+          isIphone={false}
+        >
+          Modal content
+        </BpkModalDialog>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with closeText prop', () => {
-    const tree = renderer.create(
-      <BpkModalDialog
-        id="my-modal"
-        className="my-classname"
-        closeText="Dismiss"
-        title="Modal title"
-        onClose={jest.fn()}
-        closeLabel="Close"
-        closeEvents={closeEvents}
-        dialogRef={jest.fn()}
-        isIphone={false}
-      >
-        Modal content
-      </BpkModalDialog>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkModalDialog
+          id="my-modal"
+          className="my-classname"
+          closeText="Dismiss"
+          title="Modal title"
+          onClose={jest.fn()}
+          closeLabel="Close"
+          closeEvents={closeEvents}
+          dialogRef={jest.fn()}
+          isIphone={false}
+        >
+          Modal content
+        </BpkModalDialog>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-
   it('should render correctly when is iPhone', () => {
-    const tree = renderer.create(
-      <BpkModalDialog
-        id="my-modal"
-        title="Modal title"
-        onClose={jest.fn()}
-        closeLabel="Close"
-        closeEvents={closeEvents}
-        dialogRef={jest.fn()}
-        isIphone
-      >
-        Modal content
-      </BpkModalDialog>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkModalDialog
+          id="my-modal"
+          title="Modal title"
+          onClose={jest.fn()}
+          closeLabel="Close"
+          closeEvents={closeEvents}
+          dialogRef={jest.fn()}
+          isIphone
+        >
+          Modal content
+        </BpkModalDialog>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

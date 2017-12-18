@@ -60,45 +60,26 @@ const getSmallIcons = () => (
   <View style={styles.column}>
     <StorySubheading>Small</StorySubheading>
     <View style={[styles.singleRow, styles.group]}>
-      <BpkIcon
-        style={styles.singleIcon}
-        icon="flight"
-        small
-      />
-      <BpkIcon
-        style={styles.singleIcon}
-        icon="cars"
-        small
-      />
-      <BpkIcon
-        style={styles.singleIcon}
-        icon="hotels"
-        small
-      />
+      <BpkIcon style={styles.singleIcon} icon="flight" small />
+      <BpkIcon style={styles.singleIcon} icon="cars" small />
+      <BpkIcon style={styles.singleIcon} icon="hotels" small />
     </View>
-  </View>);
+  </View>
+);
 
 const getLargeIcons = () => (
-  <View style={styles.column} >
+  <View style={styles.column}>
     <StorySubheading>Large</StorySubheading>
     <View style={[styles.singleRow, styles.group]}>
-      <BpkIcon
-        style={styles.singleIcon}
-        icon="flight"
-      />
-      <BpkIcon
-        style={styles.singleIcon}
-        icon="cars"
-      />
-      <BpkIcon
-        style={styles.singleIcon}
-        icon="hotels"
-      />
+      <BpkIcon style={styles.singleIcon} icon="flight" />
+      <BpkIcon style={styles.singleIcon} icon="cars" />
+      <BpkIcon style={styles.singleIcon} icon="hotels" />
     </View>
-  </View>);
+  </View>
+);
 
 const getColouredIcons = () => (
-  <View style={styles.column} >
+  <View style={styles.column}>
     <StorySubheading>In any color</StorySubheading>
     <View style={[styles.singleRow, styles.group]}>
       <BpkIcon
@@ -114,7 +95,8 @@ const getColouredIcons = () => (
         icon="hotels"
       />
     </View>
-  </View>);
+  </View>
+);
 
 storiesOf('BpkIcon', module)
   .add('docs:icons', () => (
@@ -122,17 +104,13 @@ storiesOf('BpkIcon', module)
       {getSmallIcons()}
       {getLargeIcons()}
       {getColouredIcons()}
-    </View >
+    </View>
   ))
   .add('docs:all-icons', () => (
-    <View style={styles.container} >
-      <View style={styles.group} >
+    <View style={styles.container}>
+      <View style={styles.group}>
         {Object.keys(iconMappings).map(name => (
-          <BpkIcon
-            key={name}
-            icon={name}
-            style={styles.icon}
-          />
+          <BpkIcon key={name} icon={name} style={styles.icon} />
         ))}
       </View>
     </View>

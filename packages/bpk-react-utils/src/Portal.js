@@ -78,9 +78,11 @@ class Portal extends Component {
 
   onDocumentMouseDown(event) {
     const clickEventProperties = this.getClickEventProperties(event);
-    if (clickEventProperties.isNotLeftClick ||
+    if (
+      clickEventProperties.isNotLeftClick ||
       clickEventProperties.isTargetClick ||
-      clickEventProperties.isPortalClick) {
+      clickEventProperties.isPortalClick
+    ) {
       this.shouldClose = false;
       return;
     }
@@ -91,9 +93,11 @@ class Portal extends Component {
   onDocumentMouseUp(event) {
     const clickEventProperties = this.getClickEventProperties(event);
 
-    if (clickEventProperties.isNotLeftClick ||
+    if (
+      clickEventProperties.isNotLeftClick ||
       clickEventProperties.isTargetClick ||
-      clickEventProperties.isPortalClick) {
+      clickEventProperties.isPortalClick
+    ) {
       this.shouldClose = false;
       return;
     }
@@ -117,11 +121,14 @@ class Portal extends Component {
     const isNotLeftClick = event.button && event.button !== 0;
 
     const targetElement = this.getTargetElement();
-    const isTargetClick = targetElement &&
+    const isTargetClick =
+      targetElement &&
       (event.target === targetElement || targetElement.contains(event.target));
 
-    const isPortalClick = this.portalElement &&
-      (event.target === this.portalElement || this.portalElement.contains(event.target));
+    const isPortalClick =
+      this.portalElement &&
+      (event.target === this.portalElement ||
+        this.portalElement.contains(event.target));
 
     return {
       isNotLeftClick,
@@ -155,13 +162,22 @@ class Portal extends Component {
       return;
     }
 
-
     this.portalElement = document.createElement('div');
     this.getRenderTarget().appendChild(this.portalElement);
 
-    const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : false;
-    document.addEventListener('touchstart', this.onDocumentMouseDown, passiveArgs);
-    document.addEventListener('touchmove', this.onDocumentMouseMove, passiveArgs);
+    const passiveArgs = this.supportsPassiveEvents()
+      ? { passive: true }
+      : false;
+    document.addEventListener(
+      'touchstart',
+      this.onDocumentMouseDown,
+      passiveArgs,
+    );
+    document.addEventListener(
+      'touchmove',
+      this.onDocumentMouseMove,
+      passiveArgs,
+    );
     document.addEventListener('touchend', this.onDocumentMouseUp, passiveArgs);
     document.addEventListener('mousedown', this.onDocumentMouseDown, false);
     document.addEventListener('mouseup', this.onDocumentMouseUp, false);
@@ -200,11 +216,13 @@ class Portal extends Component {
 
   // This function is taken from modernizr
   // See https://github.com/modernizr/modernizr
-  supportsPassiveEvents() { // eslint-disable-line
+  // eslint-disable-next-line class-methods-use-this
+  supportsPassiveEvents() {
     let supportsPassiveOption = false;
     try {
       const opts = Object.defineProperty({}, 'passive', {
-        get() { // eslint-disable-line getter-return
+        // eslint-disable-next-line getter-return
+        get() {
           supportsPassiveOption = true;
         },
       });
