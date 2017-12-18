@@ -32,9 +32,12 @@ const margin = {
 };
 const { prices } = data;
 const size = 200;
-const yScale = scaleLinear().domain([0, 500]).range([0, size]);
+const yScale = scaleLinear()
+  .domain([0, 500])
+  .range([0, size]);
 const xScale = scaleBand()
-  .domain(prices.map(d => d.month)).range([0, size]);
+  .domain(prices.map(d => d.month))
+  .range([0, size]);
 
 describe('BpkBarchartBars', () => {
   it('should render correctly', () => {
@@ -49,7 +52,9 @@ describe('BpkBarchartBars', () => {
         width={size}
         height={size}
         data={prices}
-        getBarLabel={(point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
+          `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
+        }
         BarComponent={BpkBarchartBar}
       />,
     );
@@ -68,7 +73,9 @@ describe('BpkBarchartBars', () => {
         width={size}
         height={size}
         data={prices}
-        getBarLabel={(point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
+          `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
+        }
         BarComponent={BpkBarchartBar}
         rounded={false}
       />,
@@ -88,7 +95,9 @@ describe('BpkBarchartBars', () => {
         width={size}
         height={size}
         data={prices}
-        getBarLabel={(point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
+          `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
+        }
         BarComponent={BpkBarchartBar}
         padding={0}
       />,
@@ -108,7 +117,9 @@ describe('BpkBarchartBars', () => {
         width={size}
         height={size}
         data={prices}
-        getBarLabel={(point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
+          `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
+        }
         BarComponent={BpkBarchartBar}
         padding={0}
         onBarClick={() => null}
@@ -129,7 +140,9 @@ describe('BpkBarchartBars', () => {
         width={size}
         height={size}
         data={prices}
-        getBarLabel={(point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
+          `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
+        }
         BarComponent={BpkBarchartBar}
         padding={0}
         onBarHover={() => null}
@@ -150,7 +163,9 @@ describe('BpkBarchartBars', () => {
         width={size}
         height={size}
         data={prices}
-        getBarLabel={(point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
+          `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
+        }
         BarComponent={BpkBarchartBar}
         padding={0}
         onBarTouch={() => null}
@@ -171,7 +186,9 @@ describe('BpkBarchartBars', () => {
         width={size}
         height={size}
         data={prices}
-        getBarLabel={(point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
+          `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
+        }
         BarComponent={BpkBarchartBar}
         padding={0}
         getBarSelection={point => point.month === 'Mar'}

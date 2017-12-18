@@ -51,20 +51,30 @@ export const ARIA_LIVE = {
   POLITE: 'polite',
 };
 
-const getIconForType = (type) => {
+const getIconForType = type => {
   const map = {
-    [ALERT_TYPES.SUCCESS]: <SuccessIcon className={getClassName('bpk-banner-alert__success-icon')} />,
-    [ALERT_TYPES.WARN]: <WarnIcon className={getClassName('bpk-banner-alert__warn-icon')} />,
-    [ALERT_TYPES.ERROR]: <ErrorIcon className={getClassName('bpk-banner-alert__error-icon')} />,
-    [ALERT_TYPES.NEUTRAL]: <NeutralIcon className={getClassName('bpk-banner-alert__neutral-icon')} />,
+    [ALERT_TYPES.SUCCESS]: (
+      <SuccessIcon className={getClassName('bpk-banner-alert__success-icon')} />
+    ),
+    [ALERT_TYPES.WARN]: (
+      <WarnIcon className={getClassName('bpk-banner-alert__warn-icon')} />
+    ),
+    [ALERT_TYPES.ERROR]: (
+      <ErrorIcon className={getClassName('bpk-banner-alert__error-icon')} />
+    ),
+    [ALERT_TYPES.NEUTRAL]: (
+      <NeutralIcon className={getClassName('bpk-banner-alert__neutral-icon')} />
+    ),
   };
 
   return map[type];
 };
 
-const ToggleButton = (props) => {
+const ToggleButton = props => {
   const classNames = [getClassName('bpk-banner-alert__expand-icon')];
-  if (props.expanded) { classNames.push(getClassName('bpk-banner-alert__expand-icon--flipped')); }
+  if (props.expanded) {
+    classNames.push(getClassName('bpk-banner-alert__expand-icon--flipped'));
+  }
 
   return (
     <button
@@ -73,9 +83,7 @@ const ToggleButton = (props) => {
       aria-expanded={props.expanded}
       title={props.label}
     >
-      <ExpandIcon
-        className={classNames.join(' ')}
-      />
+      <ExpandIcon className={classNames.join(' ')} />
     </button>
   );
 };
@@ -85,7 +93,7 @@ ToggleButton.propTypes = {
   expanded: PropTypes.bool.isRequired,
 };
 
-const BpkBannerAlert = (props) => {
+const BpkBannerAlert = props => {
   const onBannerExpandToggle = () => {
     if (props.onExpandToggle) {
       props.onExpandToggle();
@@ -120,10 +128,14 @@ const BpkBannerAlert = (props) => {
   const ariaRoles = ['alert'];
 
   const headerClassNames = [getClassName('bpk-banner-alert__header')];
-  const sectionClassNames = ['bpk-banner-alert', `bpk-banner-alert--${type}`]
-    .map(sectionClassName => getClassName(sectionClassName));
+  const sectionClassNames = [
+    'bpk-banner-alert',
+    `bpk-banner-alert--${type}`,
+  ].map(sectionClassName => getClassName(sectionClassName));
 
-  if (bannerClassName) { sectionClassNames.push(bannerClassName); }
+  if (bannerClassName) {
+    sectionClassNames.push(bannerClassName);
+  }
 
   if (isExpandable) {
     headerClassNames.push(getClassName('bpk-banner-alert__header--expandable'));
@@ -151,15 +163,19 @@ const BpkBannerAlert = (props) => {
           className={headerClassNames.join(' ')}
           onClick={onBannerExpandToggle}
         >
-          <span className={getClassName('bpk-banner-alert__icon')}>{getIconForType(type)}</span>
-        &nbsp;
-          <span className={getClassName('bpk-banner-alert__message')}>{message}</span>
-        &nbsp;
+          <span className={getClassName('bpk-banner-alert__icon')}>
+            {getIconForType(type)}
+          </span>
+          &nbsp;
+          <span className={getClassName('bpk-banner-alert__message')}>
+            {message}
+          </span>
+          &nbsp;
           {isExpandable && (
             <span className={getClassName('bpk-banner-alert__toggle')}>
               <ToggleButton expanded={expanded} label={toggleButtonLabel} />
             </span>
-        )}
+          )}
           {dismissable && (
             <span className={getClassName('bpk-banner-alert__toggle')}>
               <BpkCloseButton
@@ -171,8 +187,13 @@ const BpkBannerAlert = (props) => {
             </span>
           )}
         </header>
-        <BpkAnimateHeight duration={parseInt(durationSm, 10)} height={showChildren ? 'auto' : 0}>
-          <div className={getClassName('bpk-banner-alert__children-container')}>{children}</div>
+        <BpkAnimateHeight
+          duration={parseInt(durationSm, 10)}
+          height={showChildren ? 'auto' : 0}
+        >
+          <div className={getClassName('bpk-banner-alert__children-container')}>
+            {children}
+          </div>
         </BpkAnimateHeight>
       </section>
     </AnimateAndFade>

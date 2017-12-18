@@ -25,7 +25,9 @@ import STYLES from './bpk-code-block.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkCodeBlock = ({ children }) => {
-  const classNames = ['bpk-code', 'bpk-code--block'].map(className => getClassName(className));
+  const classNames = ['bpk-code', 'bpk-code--block'].map(className =>
+    getClassName(className),
+  );
 
   return (
     <pre className={getClassName('bpk-code__pre')}>

@@ -24,11 +24,15 @@ import STYLES from './bpk-heading.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkHeading = (props) => {
+const BpkHeading = props => {
   const classNames = [getClassName(`bpk-heading-${props.level}`)];
 
-  if (props.className) { classNames.push(props.className); }
-  if (!props.bottomMargin) { classNames.push(getClassName('bpk-heading--no-bottom-margin')); }
+  if (props.className) {
+    classNames.push(props.className);
+  }
+  if (!props.bottomMargin) {
+    classNames.push(getClassName('bpk-heading--no-bottom-margin'));
+  }
 
   return (
     <props.level className={classNames.join(' ')} id={props.id}>

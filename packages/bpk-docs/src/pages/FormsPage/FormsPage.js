@@ -55,10 +55,18 @@ const placeClassName = getClassName('bpkdocs-forms-page__place');
 const dateClassName = getClassName('bpkdocs-forms-page__date');
 const numberClassName = getClassName('bpkdocs-forms-page__number');
 const timeClassName = getClassName('bpkdocs-forms-page__time');
-const destinationClassName = getClassName('bpkdocs-forms-page__hotels-destination');
-const pickupClassName = getClassName('bpkdocs-forms-page__car-hire-pickup-location');
-const containerClassName = ['bpkdocs-forms-page__form', 'bpkdocs-forms-page__form--desktop-only']
-  .map(getClassName).join(' ');
+const destinationClassName = getClassName(
+  'bpkdocs-forms-page__hotels-destination',
+);
+const pickupClassName = getClassName(
+  'bpkdocs-forms-page__car-hire-pickup-location',
+);
+const containerClassName = [
+  'bpkdocs-forms-page__form',
+  'bpkdocs-forms-page__form--desktop-only',
+]
+  .map(getClassName)
+  .join(' ');
 
 const components = [
   {
@@ -66,9 +74,10 @@ const components = [
     title: 'Inputs',
     blurb: [
       <Paragraph>
-        When asking a user to input text, please be sure to use the appropriate type of input. Specifying email or
-        number will ensure the correct keyboard is displayed (on supported devices) and also adds semantic meaning
-        to the input.
+        When asking a user to input text, please be sure to use the appropriate
+        type of input. Specifying email or number will ensure the correct
+        keyboard is displayed (on supported devices) and also adds semantic
+        meaning to the input.
       </Paragraph>,
     ],
     examples: [
@@ -119,7 +128,9 @@ const components = [
         />
       </form>,
       <form className={formClassName}>
-        <BpkLabel htmlFor="input_disabled" disabled>Disabled input</BpkLabel>
+        <BpkLabel htmlFor="input_disabled" disabled>
+          Disabled input
+        </BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
           id="input_disabled"
@@ -186,8 +197,8 @@ const components = [
     title: 'Selects (aka dropdowns)',
     blurb: [
       <Paragraph>
-        Backpack selects override the default styles in most modern browsers. In some older browsers they simply fall
-        back to the browser default.
+        Backpack selects override the default styles in most modern browsers. In
+        some older browsers they simply fall back to the browser default.
       </Paragraph>,
     ],
     examples: [
@@ -216,7 +227,9 @@ const components = [
           onChange={() => null}
           valid={false}
         >
-          <option value="" hidden>Please select...</option>
+          <option value="" hidden>
+            Please select...
+          </option>
           <option value="economy">Economy</option>
           <option value="premium_economy">Premium Economy</option>
           <option value="business">Business class</option>
@@ -224,7 +237,9 @@ const components = [
         </InputContainer>
       </form>,
       <form className={formClassName}>
-        <BpkLabel htmlFor="select_disabled" disabled>Disabled select</BpkLabel>
+        <BpkLabel htmlFor="select_disabled" disabled>
+          Disabled select
+        </BpkLabel>
         <InputContainer
           FormComponent={BpkSelect}
           id="select_disabled"
@@ -245,7 +260,8 @@ const components = [
   {
     id: 'docked-inputs-and-selects',
     title: 'Docked inputs & selects',
-    blurb: 'Both inputs and selects can be docked together to build a one-line form.',
+    blurb:
+      'Both inputs and selects can be docked together to build a one-line form.',
     examples: [
       <div className={getClassName('bpkdocs-forms-page__viewport-alert')}>
         <BpkBannerAlert
@@ -255,10 +271,18 @@ const components = [
       </div>,
       <form className={containerClassName}>
         <div>
-          <BpkLabel htmlFor="input_origin" className={placeClassName}>From</BpkLabel>
-          <BpkLabel htmlFor="input_destination" className={placeClassName}>To</BpkLabel>
-          <BpkLabel htmlFor="input_outbound" className={dateClassName}>Depart</BpkLabel>
-          <BpkLabel htmlFor="input_inbound" className={dateClassName}>Return</BpkLabel>
+          <BpkLabel htmlFor="input_origin" className={placeClassName}>
+            From
+          </BpkLabel>
+          <BpkLabel htmlFor="input_destination" className={placeClassName}>
+            To
+          </BpkLabel>
+          <BpkLabel htmlFor="input_outbound" className={dateClassName}>
+            Depart
+          </BpkLabel>
+          <BpkLabel htmlFor="input_inbound" className={dateClassName}>
+            Return
+          </BpkLabel>
         </div>
         <div>
           <InputContainer
@@ -298,7 +322,9 @@ const components = [
             FormComponent={BpkInput}
             id="input_inbound"
             name="input_inbound"
-            value={new Date(new Date().getTime() + (24 * 60 * 60 * 1000)).toLocaleDateString()}
+            value={new Date(
+              new Date().getTime() + 24 * 60 * 60 * 1000,
+            ).toLocaleDateString()}
             placeholder="Country, city or airport"
             onChange={() => null}
             className={dateClassName}
@@ -315,10 +341,18 @@ const components = [
           >
             Find hotel deals
           </BpkLabel>
-          <BpkLabel htmlFor="input_checkin" className={dateClassName}>Check-in</BpkLabel>
-          <BpkLabel htmlFor="input_checkout" className={dateClassName}>Check-out</BpkLabel>
-          <BpkLabel htmlFor="input_guests" className={numberClassName}>Guests</BpkLabel>
-          <BpkLabel htmlFor="input_rooms" className={numberClassName}>Rooms</BpkLabel>
+          <BpkLabel htmlFor="input_checkin" className={dateClassName}>
+            Check-in
+          </BpkLabel>
+          <BpkLabel htmlFor="input_checkout" className={dateClassName}>
+            Check-out
+          </BpkLabel>
+          <BpkLabel htmlFor="input_guests" className={numberClassName}>
+            Guests
+          </BpkLabel>
+          <BpkLabel htmlFor="input_rooms" className={numberClassName}>
+            Rooms
+          </BpkLabel>
         </div>
         <div>
           <InputContainer
@@ -347,7 +381,9 @@ const components = [
             FormComponent={BpkInput}
             id="input_checkout"
             name="input_checkout"
-            value={new Date(new Date().getTime() + (24 * 60 * 60 * 1000)).toLocaleDateString()}
+            value={new Date(
+              new Date().getTime() + 24 * 60 * 60 * 1000,
+            ).toLocaleDateString()}
             placeholder=""
             onChange={() => null}
             className={dateClassName}
@@ -388,16 +424,21 @@ const components = [
       </form>,
       <form className={containerClassName}>
         <div>
-          <BpkLabel
-            htmlFor="input_pickup_location"
-            className={pickupClassName}
-          >
+          <BpkLabel htmlFor="input_pickup_location" className={pickupClassName}>
             Pick-up location
           </BpkLabel>
-          <BpkLabel htmlFor="input_pickup_date" className={dateClassName}>Pick-up date</BpkLabel>
-          <BpkLabel htmlFor="input_pickup_time" className={timeClassName}>Pick-up time</BpkLabel>
-          <BpkLabel htmlFor="input_dropoff_date" className={dateClassName}>Drop-off date</BpkLabel>
-          <BpkLabel htmlFor="input_dropoff_time" className={timeClassName}>Drop-off time</BpkLabel>
+          <BpkLabel htmlFor="input_pickup_date" className={dateClassName}>
+            Pick-up date
+          </BpkLabel>
+          <BpkLabel htmlFor="input_pickup_time" className={timeClassName}>
+            Pick-up time
+          </BpkLabel>
+          <BpkLabel htmlFor="input_dropoff_date" className={dateClassName}>
+            Drop-off date
+          </BpkLabel>
+          <BpkLabel htmlFor="input_dropoff_time" className={timeClassName}>
+            Drop-off time
+          </BpkLabel>
         </div>
         <div>
           <InputContainer
@@ -442,7 +483,9 @@ const components = [
             FormComponent={BpkInput}
             id="input_dropoff_date"
             name="input_dropoff_date"
-            value={new Date(new Date().getTime() + (24 * 60 * 60 * 1000)).toLocaleDateString()}
+            value={new Date(
+              new Date().getTime() + 24 * 60 * 60 * 1000,
+            ).toLocaleDateString()}
             placeholder=""
             onChange={() => null}
             className={dateClassName}
@@ -473,8 +516,9 @@ const components = [
     title: 'Textareas',
     blurb: [
       <Paragraph>
-        Textareas look almost identical to <BpkLink href="#inputs">inputs</BpkLink> except they allow long text to wrap
-        across multiple lines.
+        Textareas look almost identical to{' '}
+        <BpkLink href="#inputs">inputs</BpkLink> except they allow long text to
+        wrap across multiple lines.
       </Paragraph>,
     ],
     examples: [
@@ -490,7 +534,9 @@ const components = [
         />
       </form>,
       <form className={formClassName}>
-        <BpkLabel htmlFor="textarea_placeholder">Textarea (placeholder)</BpkLabel>
+        <BpkLabel htmlFor="textarea_placeholder">
+          Textarea (placeholder)
+        </BpkLabel>
         <InputContainer
           FormComponent={BpkTextarea}
           id="textarea_placeholder"
@@ -501,7 +547,9 @@ const components = [
         />
       </form>,
       <form className={formClassName}>
-        <BpkLabel htmlFor="textarea_disabled" disabled>Disabled textarea</BpkLabel>
+        <BpkLabel htmlFor="textarea_disabled" disabled>
+          Disabled textarea
+        </BpkLabel>
         <InputContainer
           FormComponent={BpkTextarea}
           id="textarea_disabled"
@@ -520,8 +568,9 @@ const components = [
     title: 'Checkboxes',
     blurb: [
       <Paragraph>
-        Similar to selects, checkboxes override the default styles in most modern browsers. In some older browsers
-        they simply fall back to the browser default.
+        Similar to selects, checkboxes override the default styles in most
+        modern browsers. In some older browsers they simply fall back to the
+        browser default.
       </Paragraph>,
     ],
     examples: [
@@ -574,8 +623,8 @@ const components = [
     title: 'Radio buttons',
     blurb: [
       <Paragraph>
-        Again, Backpack overrides the browser default styles for radio buttons. In some older browsers they simply
-        fall back to the browser default.
+        Again, Backpack overrides the browser default styles for radio buttons.
+        In some older browsers they simply fall back to the browser default.
       </Paragraph>,
     ],
     examples: [
@@ -590,10 +639,11 @@ const components = [
     title: 'Labels',
     blurb: [
       <Paragraph>
-        Labels should always be used with form elements to provide context to the user. Relying on placeholders alone
-        is not good practise. Have a look at
-        the <BpkRouterLink to={ROUTES.FIELDSETS}>fieldset</BpkRouterLink> component which composes labels, fields and
-        validation messages accordingly.
+        Labels should always be used with form elements to provide context to
+        the user. Relying on placeholders alone is not good practise. Have a
+        look at the{' '}
+        <BpkRouterLink to={ROUTES.FIELDSETS}>fieldset</BpkRouterLink> component
+        which composes labels, fields and validation messages accordingly.
       </Paragraph>,
     ],
     examples: [
@@ -608,28 +658,36 @@ const components = [
     title: 'Validation',
     blurb: [
       <Paragraph>
-        Validation messages should be used to provide the user with specific feedback about an error with a particular
-        form input field. They can be attached to <BpkLink href="#inputs">inputs</BpkLink>
-        , <BpkLink href="#selects">selects</BpkLink> and <BpkLink href="#checkboxes">checkboxes</BpkLink>. They should
-        either be displayed on form submit or on field blur. Have a look at
-        the <BpkRouterLink to={ROUTES.FIELDSETS}>fieldset</BpkRouterLink> component which composes labels, fields and
-        validation messages accordingly.
+        Validation messages should be used to provide the user with specific
+        feedback about an error with a particular form input field. They can be
+        attached to <BpkLink href="#inputs">inputs</BpkLink>
+        , <BpkLink href="#selects">selects</BpkLink> and{' '}
+        <BpkLink href="#checkboxes">checkboxes</BpkLink>. They should either be
+        displayed on form submit or on field blur. Have a look at the{' '}
+        <BpkRouterLink to={ROUTES.FIELDSETS}>fieldset</BpkRouterLink> component
+        which composes labels, fields and validation messages accordingly.
       </Paragraph>,
     ],
     examples: [
-      <BpkFormValidation id="form_validation" expanded>Please enter a name</BpkFormValidation>,
+      <BpkFormValidation id="form_validation" expanded>
+        Please enter a name
+      </BpkFormValidation>,
       <br />,
-      <BpkFormValidation id="form_validation" expanded isCheckbox>This is required</BpkFormValidation>,
+      <BpkFormValidation id="form_validation" expanded isCheckbox>
+        This is required
+      </BpkFormValidation>,
     ],
     readme: validationReadme,
   },
 ];
 
-const FormsPage = () => (<DocsPageBuilder
-  title="Forms"
-  blurb="Here you’ll find a range of common inputs for capturing user data."
-  components={components}
-  sassdocId="forms"
-/>);
+const FormsPage = () => (
+  <DocsPageBuilder
+    title="Forms"
+    blurb="Here you’ll find a range of common inputs for capturing user data."
+    components={components}
+    sassdocId="forms"
+  />
+);
 
 export default FormsPage;

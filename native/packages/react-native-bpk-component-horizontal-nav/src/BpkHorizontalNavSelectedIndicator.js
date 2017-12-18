@@ -17,16 +17,15 @@
  */
 
 import React from 'react';
-import {
-  Animated,
-  StyleSheet,
-} from 'react-native';
+import { Animated, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { withTheme } from 'react-native-bpk-theming';
-import { colorBlue700, borderSizeLg } from 'bpk-tokens/tokens/base.react.native';
+import {
+  colorBlue700,
+  borderSizeLg,
+} from 'bpk-tokens/tokens/base.react.native';
 
 import { THEMING_ATTRIBUTE, themePropType } from './theming';
-
 
 const styles = StyleSheet.create({
   selectedIndicator: {
@@ -35,14 +34,18 @@ const styles = StyleSheet.create({
   },
 });
 
-const BpkHorizontalNavSelectedIndicator = (props) => {
+const BpkHorizontalNavSelectedIndicator = props => {
   const { theme, xOffset, width } = props;
   const style = [styles.selectedIndicator];
-  if (theme && theme[THEMING_ATTRIBUTE]) { style.push({ backgroundColor: theme[THEMING_ATTRIBUTE] }); }
+  if (theme && theme[THEMING_ATTRIBUTE]) {
+    style.push({ backgroundColor: theme[THEMING_ATTRIBUTE] });
+  }
   const animationStyles = {
-    transform: [{
-      translateX: xOffset,
-    }],
+    transform: [
+      {
+        translateX: xOffset,
+      },
+    ],
     width,
   };
   return <Animated.View style={[style, animationStyles]} />;
@@ -50,8 +53,10 @@ const BpkHorizontalNavSelectedIndicator = (props) => {
 
 const propTypes = {
   theme: themePropType,
-  xOffset: PropTypes.oneOfType([PropTypes.number, PropTypes.instanceOf(Object)]).isRequired,
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.instanceOf(Object)]).isRequired,
+  xOffset: PropTypes.oneOfType([PropTypes.number, PropTypes.instanceOf(Object)])
+    .isRequired,
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.instanceOf(Object)])
+    .isRequired,
 };
 
 BpkHorizontalNavSelectedIndicator.propTypes = propTypes;
@@ -61,6 +66,4 @@ BpkHorizontalNavSelectedIndicator.defaultProps = {
 };
 
 export default withTheme(BpkHorizontalNavSelectedIndicator);
-export {
-  propTypes,
-};
+export { propTypes };

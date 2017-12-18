@@ -24,7 +24,9 @@ import STYLES from './bpk-code.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkCode = props => <code className={getClassName('bpk-code')}>{props.children}</code>;
+const BpkCode = props => (
+  <code className={getClassName('bpk-code')}>{props.children}</code>
+);
 
 BpkCode.propTypes = {
   children: PropTypes.oneOfType([

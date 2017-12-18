@@ -34,31 +34,31 @@ import React from 'react';
 import { Animated } from 'react-native';
 import { animationDurationSm } from 'bpk-tokens/tokens/base.react.native';
 
-
-const withAnimatedProps = (Component, propsToMonitor) => class extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    propsToMonitor.forEach((prop) => {
-      this.state[prop] = new Animated.Value(props[prop]);
-    });
-  }
-  componentWillReceiveProps(nextProps) {
-    const animations = propsToMonitor.map(prop => (
-      Animated.timing(this.state[prop], {
-        toValue: nextProps[prop],
-        duration: animationDurationSm,
-      })
-    ));
-    Animated.parallel(animations).start();
-  }
-  render() {
-    const newProps = {};
-    propsToMonitor.forEach((prop) => {
-      newProps[prop] = this.state[prop];
-    });
-    return <Component {...this.props} {...newProps} />;
-  }
-};
+const withAnimatedProps = (Component, propsToMonitor) =>
+  class extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {};
+      propsToMonitor.forEach(prop => {
+        this.state[prop] = new Animated.Value(props[prop]);
+      });
+    }
+    componentWillReceiveProps(nextProps) {
+      const animations = propsToMonitor.map(prop =>
+        Animated.timing(this.state[prop], {
+          toValue: nextProps[prop],
+          duration: animationDurationSm,
+        }),
+      );
+      Animated.parallel(animations).start();
+    }
+    render() {
+      const newProps = {};
+      propsToMonitor.forEach(prop => {
+        newProps[prop] = this.state[prop];
+      });
+      return <Component {...this.props} {...newProps} />;
+    }
+  };
 
 export default withAnimatedProps;

@@ -65,7 +65,7 @@ class PopoverContainer extends Component {
       <BpkPopover
         id="my-popover"
         target={
-          input ?
+          input ? (
             <EnhancedInput
               id="input"
               name="input"
@@ -74,8 +74,9 @@ class PopoverContainer extends Component {
               onOpen={this.openPopover}
               onChange={() => null}
             />
-            :
+          ) : (
             <BpkButton onClick={this.openPopover}>Open</BpkButton>
+          )
         }
         onClose={this.closePopover}
         isOpen={this.state.isOpen}
@@ -95,24 +96,22 @@ const components = [
     title: 'Default',
     blurb: [
       <Paragraph>
-        By default, popovers come with a small textual close button at the bottom.
+        By default, popovers come with a small textual close button at the
+        bottom.
       </Paragraph>,
     ],
-    examples: [
-      <PopoverContainer>{loremIpsum}</PopoverContainer>,
-    ],
+    examples: [<PopoverContainer>{loremIpsum}</PopoverContainer>],
   },
   {
     id: 'with-title',
     title: 'With title',
     blurb: [
       <Paragraph>
-        Popovers can be configured to have a title, this is displayed at the top opposite a close button.
+        Popovers can be configured to have a title, this is displayed at the top
+        opposite a close button.
       </Paragraph>,
     ],
-    examples: [
-      <PopoverContainer labelAsTitle>{loremIpsum}</PopoverContainer>,
-    ],
+    examples: [<PopoverContainer labelAsTitle>{loremIpsum}</PopoverContainer>],
   },
   {
     id: 'with-title-and-text-button',
@@ -123,7 +122,9 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <PopoverContainer labelAsTitle closeButtonIcon={false}>{loremIpsum}</PopoverContainer>,
+      <PopoverContainer labelAsTitle closeButtonIcon={false}>
+        {loremIpsum}
+      </PopoverContainer>,
     ],
   },
   {
@@ -131,27 +132,29 @@ const components = [
     title: 'Opened by an input',
     blurb: [
       <Paragraph>
-        You can use a <BpkRouterLink to={ROUTES.FORMS}>BpkInput</BpkRouterLink> enhanced
-        with the <BpkCode>withOpenEvents</BpkCode> higher-order component to open popovers.
+        You can use a <BpkRouterLink to={ROUTES.FORMS}>BpkInput</BpkRouterLink>{' '}
+        enhanced with the <BpkCode>withOpenEvents</BpkCode> higher-order
+        component to open popovers.
       </Paragraph>,
     ],
-    examples: [
-      <PopoverContainer input>{loremIpsum}</PopoverContainer>,
-    ],
+    examples: [<PopoverContainer input>{loremIpsum}</PopoverContainer>],
   },
 ];
 
-const PopoversPage = () => (<DocsPageBuilder
-  title="Popovers"
-  blurb={[
-    <Paragraph>
-      Use popovers to display content or functionality that is related to a particular element in your app or page.
-      When opened, popovers will position themselves below the target element and attempt to stay in the viewport at
-      all times.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={popoverReadme}
-/>);
+const PopoversPage = () => (
+  <DocsPageBuilder
+    title="Popovers"
+    blurb={[
+      <Paragraph>
+        Use popovers to display content or functionality that is related to a
+        particular element in your app or page. When opened, popovers will
+        position themselves below the target element and attempt to stay in the
+        viewport at all times.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={popoverReadme}
+  />
+);
 
 export default PopoversPage;

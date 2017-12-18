@@ -34,16 +34,12 @@ const styles = StyleSheet.create({
 
 const textContent = (
   <BpkText style={styles.text}>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-    commodo ligula eget dolor. Aenean massa.
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+    ligula eget dolor. Aenean massa.
   </BpkText>
 );
 
-const viewContent = (
-  <View style={styles.view}>
-    {textContent}
-  </View>
-);
+const viewContent = <View style={styles.view}>{textContent}</View>;
 
 const onPress = action('Touchable overlay press');
 

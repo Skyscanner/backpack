@@ -32,7 +32,7 @@ const EVENT_SOURCES = {
   CLOSE_LINK: 'CLOSE_LINK',
 };
 
-const bindEventSource = (source, callback) => (event) => {
+const bindEventSource = (source, callback) => event => {
   if (event.persist) {
     event.persist();
   }
@@ -40,7 +40,7 @@ const bindEventSource = (source, callback) => (event) => {
   callback(event, { source });
 };
 
-const BpkPopover = (props) => {
+const BpkPopover = props => {
   const {
     id,
     onClose,
@@ -58,10 +58,14 @@ const BpkPopover = (props) => {
   const bodyClassNames = [];
 
   // outer classNames
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   // inner classNames
-  if (padded) { bodyClassNames.push(getClassName('bpk-popover__body--padded')); }
+  if (padded) {
+    bodyClassNames.push(getClassName('bpk-popover__body--padded'));
+  }
 
   const labelId = `bpk-popover-label-${id}`;
 
@@ -79,36 +83,51 @@ const BpkPopover = (props) => {
         className={classNames.join(' ')}
         {...rest}
       >
-        <span id={ARROW_ID} className={getClassName('bpk-popover__arrow')} role="presentation" />
+        <span
+          id={ARROW_ID}
+          className={getClassName('bpk-popover__arrow')}
+          role="presentation"
+        />
         <div className={getClassName('bpk-popover__inner')}>
-          {labelAsTitle
-            ? (
-              <header className={getClassName('bpk-popover__header')}>
-                <h2 id={labelId} className={getClassName('bpk-popover__heading')}>{label}</h2>
-                &nbsp;
-                {closeButtonIcon ?
-                  <BpkCloseButton
-                    className={getClassName('bpk-popover__close-button')}
-                    label={closeButtonText}
-                    onClick={bindEventSource(EVENT_SOURCES.CLOSE_BUTTON, props.onClose)}
-                  />
-                :
-                  <BpkButtonLink
-                    onClick={bindEventSource(EVENT_SOURCES.CLOSE_LINK, props.onClose)}
-                  >
-                    {closeButtonText}
-                  </BpkButtonLink>
-                }
-              </header>
-            ) : (
-              <span id={labelId} className={getClassName('bpk-popover__label')}>{label}</span>
-            )
-          }
+          {labelAsTitle ? (
+            <header className={getClassName('bpk-popover__header')}>
+              <h2 id={labelId} className={getClassName('bpk-popover__heading')}>
+                {label}
+              </h2>
+              &nbsp;
+              {closeButtonIcon ? (
+                <BpkCloseButton
+                  className={getClassName('bpk-popover__close-button')}
+                  label={closeButtonText}
+                  onClick={bindEventSource(
+                    EVENT_SOURCES.CLOSE_BUTTON,
+                    props.onClose,
+                  )}
+                />
+              ) : (
+                <BpkButtonLink
+                  onClick={bindEventSource(
+                    EVENT_SOURCES.CLOSE_LINK,
+                    props.onClose,
+                  )}
+                >
+                  {closeButtonText}
+                </BpkButtonLink>
+              )}
+            </header>
+          ) : (
+            <span id={labelId} className={getClassName('bpk-popover__label')}>
+              {label}
+            </span>
+          )}
           <div className={bodyClassNames.join(' ')}>{children}</div>
           {!labelAsTitle && (
             <footer className={getClassName('bpk-popover__footer')}>
               <BpkButtonLink
-                onClick={bindEventSource(EVENT_SOURCES.CLOSE_LINK, props.onClose)}
+                onClick={bindEventSource(
+                  EVENT_SOURCES.CLOSE_LINK,
+                  props.onClose,
+                )}
               >
                 {closeButtonText}
               </BpkButtonLink>

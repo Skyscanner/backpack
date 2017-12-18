@@ -27,7 +27,8 @@ import STYLES from './bpk-calendar-date.scss';
 const getClassName = cssModules(STYLES);
 
 const navigatedByMonthNudger = () =>
-  document.activeElement.id && document.activeElement.id.indexOf('month_nudger') !== -1;
+  document.activeElement.id &&
+  document.activeElement.id.indexOf('month_nudger') !== -1;
 
 class BpkCalendarDate extends PureComponent {
   constructor() {
@@ -47,16 +48,30 @@ class BpkCalendarDate extends PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    if (!this.props.isKeyboardFocusable || this.props.preventKeyboardFocus || navigatedByMonthNudger()) { return; }
+    if (
+      !this.props.isKeyboardFocusable ||
+      this.props.preventKeyboardFocus ||
+      navigatedByMonthNudger()
+    ) {
+      return;
+    }
 
     // Giving focus after keyboard navigation
-    if (!prevProps.isFocused && this.props.isFocused && this.props.isKeyboardFocusable) {
+    if (
+      !prevProps.isFocused &&
+      this.props.isFocused &&
+      this.props.isKeyboardFocusable
+    ) {
       this.button.focus();
       return;
     }
 
     // Giving focus after changing months with transition
-    if (this.props.isFocused && !prevProps.isKeyboardFocusable && this.props.isKeyboardFocusable) {
+    if (
+      this.props.isFocused &&
+      !prevProps.isKeyboardFocusable &&
+      this.props.isKeyboardFocusable
+    ) {
       this.button.focus();
     }
   }
@@ -81,15 +96,29 @@ class BpkCalendarDate extends PureComponent {
     } = this.props;
     const classNames = [getClassName('bpk-calendar-date')];
 
-    Object.keys(modifiers).forEach((modifier) => {
-      if (modifiers[modifier](this.props)) { classNames.push(getClassName(`bpk-calendar-date--modifier-${modifier}`)); }
+    Object.keys(modifiers).forEach(modifier => {
+      if (modifiers[modifier](this.props)) {
+        classNames.push(
+          getClassName(`bpk-calendar-date--modifier-${modifier}`),
+        );
+      }
     });
 
-    if (isFocused) { classNames.push(getClassName('bpk-calendar-date--focused')); }
-    if (isSelected) { classNames.push(getClassName('bpk-calendar-date--selected')); }
-    if (isBlocked) { classNames.push(getClassName('bpk-calendar-date--blocked')); }
-    if (isOutside) { classNames.push(getClassName('bpk-calendar-date--outside')); }
-    if (isToday) { classNames.push(getClassName('bpk-calendar-date--today')); }
+    if (isFocused) {
+      classNames.push(getClassName('bpk-calendar-date--focused'));
+    }
+    if (isSelected) {
+      classNames.push(getClassName('bpk-calendar-date--selected'));
+    }
+    if (isBlocked) {
+      classNames.push(getClassName('bpk-calendar-date--blocked'));
+    }
+    if (isOutside) {
+      classNames.push(getClassName('bpk-calendar-date--outside'));
+    }
+    if (isToday) {
+      classNames.push(getClassName('bpk-calendar-date--today'));
+    }
 
     delete buttonProps.preventKeyboardFocus;
 
@@ -99,13 +128,18 @@ class BpkCalendarDate extends PureComponent {
         className={classNames.join(' ')}
         aria-label={date.getDate()}
         disabled={isBlocked}
-        tabIndex={(isKeyboardFocusable && isFocused) ? '0' : '-1'}
-        onClick={() => { if (onClick) { onClick(date); } }}
+        tabIndex={isKeyboardFocusable && isFocused ? '0' : '-1'}
+        onClick={() => {
+          if (onClick) {
+            onClick(date);
+          }
+        }}
         onKeyDown={onDateKeyDown}
         aria-pressed={isSelected}
         ref={this.getButtonRef}
         {...buttonProps}
-      ><span aria-hidden="true">{ date.getDate() }</span>
+      >
+        <span aria-hidden="true">{date.getDate()}</span>
       </button>
     );
   }

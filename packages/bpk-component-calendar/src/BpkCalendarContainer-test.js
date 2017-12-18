@@ -29,44 +29,56 @@ const createNodeMock = () => ({
 
 describe('BpkCalendarContainer', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkCalendarContainer
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
-      id="myCalendar"
-      minDate={new Date(2010, 1, 15)}
-      maxDate={new Date(2010, 2, 15)}
-      selectedDate={new Date(2010, 1, 15)}
-    />, { createNodeMock }).toJSON();
+    const tree = renderer
+      .create(
+        <BpkCalendarContainer
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          daysOfWeek={weekDays}
+          changeMonthLabel="Change month"
+          id="myCalendar"
+          minDate={new Date(2010, 1, 15)}
+          maxDate={new Date(2010, 2, 15)}
+          selectedDate={new Date(2010, 1, 15)}
+        />,
+        { createNodeMock },
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should focus the correct date when `initiallyFocusedDate` is set and selected date is not', () => {
-    const tree = renderer.create(<BpkCalendarContainer
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
-      id="myCalendar"
-      minDate={new Date(2010, 1, 15)}
-      maxDate={new Date(2010, 2, 15)}
-      initiallyFocusedDate={new Date(2010, 1, 28)}
-    />, { createNodeMock }).toJSON();
+    const tree = renderer
+      .create(
+        <BpkCalendarContainer
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          daysOfWeek={weekDays}
+          changeMonthLabel="Change month"
+          id="myCalendar"
+          minDate={new Date(2010, 1, 15)}
+          maxDate={new Date(2010, 2, 15)}
+          initiallyFocusedDate={new Date(2010, 1, 28)}
+        />,
+        { createNodeMock },
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should change the month', () => {
-    const calendar = mount(<BpkCalendarContainer
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
-      id="myCalendar"
-      minDate={new Date(2010, 1, 15)}
-      maxDate={new Date(2010, 2, 15)}
-      selectedDate={new Date(2010, 1, 15)}
-    />);
+    const calendar = mount(
+      <BpkCalendarContainer
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        id="myCalendar"
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        selectedDate={new Date(2010, 1, 15)}
+      />,
+    );
 
     let grid = calendar.find('BpkCalendarGridTransition');
     const nav = calendar.find('BpkCalendarNav');
@@ -83,17 +95,19 @@ describe('BpkCalendarContainer', () => {
   it('should call the onDateSelect callback', () => {
     const onDateSelect = jest.fn();
 
-    const calendar = mount(<BpkCalendarContainer
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
-      id="myCalendar"
-      minDate={new Date(2010, 1, 15)}
-      maxDate={new Date(2010, 2, 15)}
-      selectedDate={new Date(2010, 1, 15)}
-      onDateSelect={onDateSelect}
-    />);
+    const calendar = mount(
+      <BpkCalendarContainer
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        id="myCalendar"
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        selectedDate={new Date(2010, 1, 15)}
+        onDateSelect={onDateSelect}
+      />,
+    );
 
     const grid = calendar.find('BpkCalendarGridTransition');
 
@@ -110,17 +124,19 @@ describe('BpkCalendarContainer', () => {
     const oldSetState = BpkCalendarContainer.prototype.setState;
     BpkCalendarContainer.prototype.setState = setStateSpy;
 
-    const calendar = mount(<BpkCalendarContainer
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
-      id="myCalendar"
-      minDate={new Date(2010, 1, 15)}
-      maxDate={new Date(2010, 2, 15)}
-      selectedDate={new Date(2010, 1, 15)}
-      onDateSelect={null}
-    />);
+    const calendar = mount(
+      <BpkCalendarContainer
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        id="myCalendar"
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        selectedDate={new Date(2010, 1, 15)}
+        onDateSelect={null}
+      />,
+    );
 
     const grid = calendar.find('BpkCalendarGridTransition');
 
@@ -137,52 +153,72 @@ describe('BpkCalendarContainer', () => {
     const persist = jest.fn();
     const origin = new Date(2010, 2, 1);
 
-    const calendar = mount(<BpkCalendarContainer
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
-      id="myCalendar"
-      minDate={new Date(2010, 1, 15)}
-      maxDate={new Date(2010, 2, 15)}
-      selectedDate={origin}
-    />);
+    const calendar = mount(
+      <BpkCalendarContainer
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        id="myCalendar"
+        minDate={new Date(2010, 1, 15)}
+        maxDate={new Date(2010, 2, 15)}
+        selectedDate={origin}
+      />,
+    );
 
     expect(calendar.state('focusedDate')).toEqual(origin);
 
-    calendar.instance().handleDateKeyDown({ key: 'S', preventDefault, persist });
+    calendar
+      .instance()
+      .handleDateKeyDown({ key: 'S', preventDefault, persist });
     expect(calendar.state('focusedDate')).toEqual(origin);
     expect(preventDefault.mock.calls.length).toEqual(0);
 
-    calendar.instance().handleDateKeyDown({ key: 'ArrowRight', preventDefault, persist });
+    calendar
+      .instance()
+      .handleDateKeyDown({ key: 'ArrowRight', preventDefault, persist });
     expect(calendar.state('focusedDate')).toEqual(addDays(origin, 1));
     expect(preventDefault.mock.calls.length).toEqual(1);
 
-    calendar.instance().handleDateKeyDown({ key: 'ArrowDown', preventDefault, persist });
+    calendar
+      .instance()
+      .handleDateKeyDown({ key: 'ArrowDown', preventDefault, persist });
     expect(calendar.state('focusedDate')).toEqual(addDays(origin, 8));
     expect(preventDefault.mock.calls.length).toEqual(2);
 
-    calendar.instance().handleDateKeyDown({ key: 'ArrowLeft', preventDefault, persist });
+    calendar
+      .instance()
+      .handleDateKeyDown({ key: 'ArrowLeft', preventDefault, persist });
     expect(calendar.state('focusedDate')).toEqual(addDays(origin, 7));
     expect(preventDefault.mock.calls.length).toEqual(3);
 
-    calendar.instance().handleDateKeyDown({ key: 'ArrowUp', preventDefault, persist });
+    calendar
+      .instance()
+      .handleDateKeyDown({ key: 'ArrowUp', preventDefault, persist });
     expect(calendar.state('focusedDate')).toEqual(origin);
     expect(preventDefault.mock.calls.length).toEqual(4);
 
-    calendar.instance().handleDateKeyDown({ key: 'End', preventDefault, persist });
+    calendar
+      .instance()
+      .handleDateKeyDown({ key: 'End', preventDefault, persist });
     expect(calendar.state('focusedDate')).toEqual(addDays(origin, 14));
     expect(preventDefault.mock.calls.length).toEqual(5);
 
-    calendar.instance().handleDateKeyDown({ key: 'Home', preventDefault, persist });
+    calendar
+      .instance()
+      .handleDateKeyDown({ key: 'Home', preventDefault, persist });
     expect(calendar.state('focusedDate')).toEqual(origin);
     expect(preventDefault.mock.calls.length).toEqual(6);
 
-    calendar.instance().handleDateKeyDown({ key: 'PageDown', preventDefault, persist });
+    calendar
+      .instance()
+      .handleDateKeyDown({ key: 'PageDown', preventDefault, persist });
     expect(calendar.state('focusedDate')).toEqual(addDays(origin, 14));
     expect(preventDefault.mock.calls.length).toEqual(7);
 
-    calendar.instance().handleDateKeyDown({ key: 'PageUp', preventDefault, persist });
+    calendar
+      .instance()
+      .handleDateKeyDown({ key: 'PageUp', preventDefault, persist });
     expect(calendar.state('focusedDate')).toEqual(addDays(origin, -14));
     expect(preventDefault.mock.calls.length).toEqual(8);
   });
@@ -193,25 +229,34 @@ describe('BpkCalendarContainer', () => {
     const onMonthChange = jest.fn();
     const origin = new Date(2010, 1, 27);
 
-    const calendar = mount(<BpkCalendarContainer
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      daysOfWeek={weekDays}
-      changeMonthLabel="Change month"
-      id="myCalendar"
-      minDate={new Date(2010, 1, 1)}
-      maxDate={new Date(2010, 2, 30)}
-      selectedDate={origin}
-      onMonthChange={onMonthChange}
-    />);
+    const calendar = mount(
+      <BpkCalendarContainer
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        changeMonthLabel="Change month"
+        id="myCalendar"
+        minDate={new Date(2010, 1, 1)}
+        maxDate={new Date(2010, 2, 30)}
+        selectedDate={origin}
+        onMonthChange={onMonthChange}
+      />,
+    );
 
-    calendar.instance().handleDateKeyDown({ key: 'ArrowRight', preventDefault, persist });
+    calendar
+      .instance()
+      .handleDateKeyDown({ key: 'ArrowRight', preventDefault, persist });
     expect(calendar.state('focusedDate')).toEqual(addDays(origin, 1));
     expect(preventDefault.mock.calls.length).toEqual(1);
     expect(onMonthChange.mock.calls.length).toEqual(0);
 
-    calendar.instance().handleDateKeyDown({ key: 'ArrowRight', preventDefault, persist });
+    calendar
+      .instance()
+      .handleDateKeyDown({ key: 'ArrowRight', preventDefault, persist });
     expect(onMonthChange.mock.calls.length).toEqual(1);
-    expect(onMonthChange.mock.calls[0][1]).toEqual({ month: new Date(2010, 2, 1), source: 'GRID' });
+    expect(onMonthChange.mock.calls[0][1]).toEqual({
+      month: new Date(2010, 2, 1),
+      source: 'GRID',
+    });
   });
 });

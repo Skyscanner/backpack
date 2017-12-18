@@ -19,7 +19,10 @@
 import { themeAttributes as accordionThemeAttributes } from './../packages/bpk-component-accordion';
 import { themeAttributes as barchartThemeAttributes } from './../packages/bpk-component-barchart';
 import { themeAttributes as blockquoteThemeAttributes } from './../packages/bpk-component-blockquote';
-import { primaryThemeAttributes, secondaryThemeAttributes } from './../packages/bpk-component-button';
+import {
+  primaryThemeAttributes,
+  secondaryThemeAttributes,
+} from './../packages/bpk-component-button';
 import { themeAttributes as calendarThemeAttributes } from './../packages/bpk-component-calendar';
 import { themeAttributes as checkboxThemeAttributes } from './../packages/bpk-component-checkbox';
 import { themeAttributes as datepickerThemeAttributes } from './../packages/bpk-component-datepicker';

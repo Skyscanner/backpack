@@ -18,8 +18,17 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import BpkHorizontalNav, { BpkHorizontalNavItem } from 'bpk-component-horizontal-nav';
-import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableHeadCell, BpkTableCell } from 'bpk-component-table';
+import BpkHorizontalNav, {
+  BpkHorizontalNavItem,
+} from 'bpk-component-horizontal-nav';
+import {
+  BpkTable,
+  BpkTableHead,
+  BpkTableBody,
+  BpkTableRow,
+  BpkTableHeadCell,
+  BpkTableCell,
+} from 'bpk-component-table';
 
 import { formatTokenName, getTokenValue } from './../../helpers/tokens-helper';
 
@@ -64,7 +73,7 @@ class TokenSwitcher extends Component {
     return (
       <div>
         <BpkHorizontalNav>
-          {Object.keys(platforms).map((platform) => {
+          {Object.keys(platforms).map(platform => {
             const { id, name } = platforms[platform];
 
             return (
@@ -87,13 +96,15 @@ class TokenSwitcher extends Component {
             </BpkTableRow>
           </BpkTableHead>
           <BpkTableBody>
-            {Object.keys(selectedTokens).map((tokenName) => {
+            {Object.keys(selectedTokens).map(tokenName => {
               const token = selectedTokens[tokenName];
 
               return (
                 <BpkTableRow key={tokenName}>
                   <BpkTableCell>{formatTokenName(tokenName)}</BpkTableCell>
-                  <BpkTableCell>{getTokenValue(token, selectedPlatform)}</BpkTableCell>
+                  <BpkTableCell>
+                    {getTokenValue(token, selectedPlatform)}
+                  </BpkTableCell>
                 </BpkTableRow>
               );
             })}

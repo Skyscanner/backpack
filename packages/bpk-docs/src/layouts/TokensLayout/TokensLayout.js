@@ -40,7 +40,11 @@ const links = [
   },
 ];
 
-const TokensLayout = ({ children, ...rest }) => <SideNavLayout links={links} {...rest}>{children}</SideNavLayout>;
+const TokensLayout = ({ children, ...rest }) => (
+  <SideNavLayout links={links} {...rest}>
+    {children}
+  </SideNavLayout>
+);
 
 TokensLayout.propTypes = {
   children: PropTypes.node.isRequired,

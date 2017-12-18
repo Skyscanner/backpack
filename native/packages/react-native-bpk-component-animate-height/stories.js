@@ -22,7 +22,11 @@ import { storiesOf } from '@storybook/react-native';
 import { StyleSheet, View } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import BpkButton from 'react-native-bpk-component-button';
-import { spacingBase, colorGray50, animationDurationBase } from 'bpk-tokens/tokens/base.react.native';
+import {
+  spacingBase,
+  colorGray50,
+  animationDurationBase,
+} from 'bpk-tokens/tokens/base.react.native';
 
 import BpkAnimateHeight from './index';
 
@@ -42,9 +46,9 @@ const styles = StyleSheet.create({
 
 const animateHeightContent = (
   <BpkText>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-    commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-    et magnis dis parturient montes, nascetur ridiculus mus.
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+    parturient montes, nascetur ridiculus mus.
   </BpkText>
 );
 
@@ -99,20 +103,22 @@ AnimateHeightDemo.defaultProps = {
 };
 
 storiesOf('BpkAnimateHeight', module)
-  .addDecorator(getStory => (
-    <View style={styles.centered}>
-      {getStory()}
-    </View>
-  ))
+  .addDecorator(getStory => <View style={styles.centered}>{getStory()}</View>)
   .add('Default', () => (
     <AnimateHeightDemo>{animateHeightContent}</AnimateHeightDemo>
   ))
   .add('Custom animation duration', () => (
-    <AnimateHeightDemo animationDuration={5000}>{animateHeightContent}</AnimateHeightDemo>
+    <AnimateHeightDemo animationDuration={5000}>
+      {animateHeightContent}
+    </AnimateHeightDemo>
   ))
   .add('With expand delay', () => (
-    <AnimateHeightDemo expandDelay={1000}>{animateHeightContent}</AnimateHeightDemo>
+    <AnimateHeightDemo expandDelay={1000}>
+      {animateHeightContent}
+    </AnimateHeightDemo>
   ))
   .add('With collapse delay', () => (
-    <AnimateHeightDemo collapseDelay={1000}>{animateHeightContent}</AnimateHeightDemo>
+    <AnimateHeightDemo collapseDelay={1000}>
+      {animateHeightContent}
+    </AnimateHeightDemo>
   ));

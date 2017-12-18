@@ -29,12 +29,9 @@ const margin = {
 
 describe('BpkChartMargin', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <BpkChartMargin
-        margin={margin}
-      >Children
-      </BpkChartMargin>,
-    ).toJSON();
+    const tree = renderer
+      .create(<BpkChartMargin margin={margin}>Children</BpkChartMargin>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

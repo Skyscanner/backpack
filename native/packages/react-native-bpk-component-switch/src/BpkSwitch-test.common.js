@@ -27,16 +27,12 @@ const commonTests = () => {
     // Currently necessary because of https://github.com/facebook/react-native/issues/16247
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
     it('should render correctly', () => {
-      const tree = renderer.create(
-        <BpkSwitch />,
-      ).toJSON();
+      const tree = renderer.create(<BpkSwitch />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should support the "value" prop', () => {
-      const tree = renderer.create(
-        <BpkSwitch value />,
-      ).toJSON();
+      const tree = renderer.create(<BpkSwitch value />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
@@ -44,28 +40,43 @@ const commonTests = () => {
       const theme = {
         switchPrimaryColor: 'red',
       };
-      const tree = renderer.create(
-        <BpkThemeProvider theme={theme}>
-          <BpkSwitch />
-        </BpkThemeProvider>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkThemeProvider theme={theme}>
+            <BpkSwitch />
+          </BpkThemeProvider>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
-    it('should reject theme property when required theme attributes are omitted', () => { // eslint-disable-line max-len
-      expect(propTypes.theme({
-        type: 'primary',
-        theme: {},
-      }, 'theme', 'BpkSwitch').toString()).toEqual('Error: Invalid prop `theme` supplied to `BpkSwitch`. For themed switches, `theme` prop must include `switchPrimaryColor`'); // eslint-disable-line max-len
+    it('should reject theme property when required theme attributes are omitted', () => {
+      // eslint-disable-line max-len
+      expect(
+        propTypes
+          .theme(
+            {
+              type: 'primary',
+              theme: {},
+            },
+            'theme',
+            'BpkSwitch',
+          )
+          .toString(),
+      ).toEqual(
+        'Error: Invalid prop `theme` supplied to `BpkSwitch`. For themed switches, `theme` prop must include `switchPrimaryColor`',
+      ); // eslint-disable-line max-len
     });
 
     it('should disable theming if the required attribute is omitted', () => {
       const theme = {};
-      const tree = renderer.create(
-        <BpkThemeProvider theme={theme}>
-          <BpkSwitch />
-        </BpkThemeProvider>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkThemeProvider theme={theme}>
+            <BpkSwitch />
+          </BpkThemeProvider>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

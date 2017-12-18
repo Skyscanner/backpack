@@ -27,24 +27,20 @@ const BpkCardWithDivider = withDivider(BpkCard);
 
 const content = (
   <BpkText>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-    commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-    et magnis dis parturient montes, nascetur ridiculus mus.
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+    parturient montes, nascetur ridiculus mus.
   </BpkText>
 );
 
 const mainContent = (
   <BpkText>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-    commodo ligula eget dolor. Aenean massa.
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+    ligula eget dolor. Aenean massa.
   </BpkText>
 );
 
-const stubContent = (
-  <BpkText>
-    Lorem ipsum dolor sit amet.
-  </BpkText>
-);
+const stubContent = <BpkText>Lorem ipsum dolor sit amet.</BpkText>;
 
 const onPress = action('Card press');
 
@@ -61,14 +57,16 @@ const styles = StyleSheet.create({
 });
 
 storiesOf('BpkCard', module)
-  .add('docs:default', () => (
-    <BpkCard onPress={onPress}>{content}</BpkCard>
-  ))
+  .add('docs:default', () => <BpkCard onPress={onPress}>{content}</BpkCard>)
   .add('docs:without-padding', () => (
-    <BpkCard onPress={onPress} padded={false}>{content}</BpkCard>
+    <BpkCard onPress={onPress} padded={false}>
+      {content}
+    </BpkCard>
   ))
   .add('docs:focused', () => (
-    <BpkCard onPress={onPress} focused>{content}</BpkCard>
+    <BpkCard onPress={onPress} focused>
+      {content}
+    </BpkCard>
   ))
   .add('docs:with-divider', () => (
     <BpkCardWithDivider
@@ -80,11 +78,7 @@ storiesOf('BpkCard', module)
     </BpkCardWithDivider>
   ))
   .add('docs:with-divider-arranged-vertically', () => (
-    <BpkCardWithDivider
-      onPress={onPress}
-      stub={stubContent}
-      vertical
-    >
+    <BpkCardWithDivider onPress={onPress} stub={stubContent} vertical>
       {mainContent}
     </BpkCardWithDivider>
   ))
@@ -166,36 +160,40 @@ storiesOf('BpkCard', module)
   ))
   .add('Card list (perf)', () => (
     <ScrollView style={styles.cardListScrollView}>
-      {Array(100).fill(content).map((cardContent, index) => (
-        <BpkCard
-          key={index} // eslint-disable-line react/no-array-index-key
-          onPress={onPress}
-          accessibilityLabel="Example Card"
-          style={styles.cardListItem}
-        >
-          {cardContent}
-        </BpkCard>
-      ))}
+      {Array(100)
+        .fill(content)
+        .map((cardContent, index) => (
+          <BpkCard
+            key={index} // eslint-disable-line react/no-array-index-key
+            onPress={onPress}
+            accessibilityLabel="Example Card"
+            style={styles.cardListItem}
+          >
+            {cardContent}
+          </BpkCard>
+        ))}
     </ScrollView>
   ))
   .add('Card with divider list (perf)', () => (
     <ScrollView style={styles.cardListScrollView}>
-      {Array(100).fill({ mainContent, stubContent }).map((cardContent, index) => {
-        const isEven = index % 2 === 0;
+      {Array(100)
+        .fill({ mainContent, stubContent })
+        .map((cardContent, index) => {
+          const isEven = index % 2 === 0;
 
-        return (
-          <BpkCardWithDivider
-            key={index} // eslint-disable-line react/no-array-index-key
-            onPress={onPress}
-            accessibilityLabel="Example Cadrd"
-            stub={cardContent.stubContent}
-            style={styles.cardListItem}
-            mainStyle={isEven ? null : styles.cardMainStyle}
-            vertical={isEven}
-          >
-            {cardContent.mainContent}
-          </BpkCardWithDivider>
-        );
-      })}
+          return (
+            <BpkCardWithDivider
+              key={index} // eslint-disable-line react/no-array-index-key
+              onPress={onPress}
+              accessibilityLabel="Example Cadrd"
+              stub={cardContent.stubContent}
+              style={styles.cardListItem}
+              mainStyle={isEven ? null : styles.cardMainStyle}
+              vertical={isEven}
+            >
+              {cardContent.mainContent}
+            </BpkCardWithDivider>
+          );
+        })}
     </ScrollView>
   ));

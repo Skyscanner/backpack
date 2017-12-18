@@ -23,9 +23,19 @@ describe('iOS', () => {
   commonTests();
 
   it('should error on invalid emphasize prop', () => {
-    expect(BpkText.propTypes.emphasize({
-      textStyle: 'xxl',
-      emphasize: true,
-    }, 'emphasize', 'BpkText').toString()).toEqual('Error: Invalid prop `emphasize` of value `true` supplied to `BpkText`. `textStyle` value of `xxl` cannot be emphasized.'); // eslint-disable-line max-len
+    expect(
+      BpkText.propTypes
+        .emphasize(
+          {
+            textStyle: 'xxl',
+            emphasize: true,
+          },
+          'emphasize',
+          'BpkText',
+        )
+        .toString(),
+    ).toEqual(
+      'Error: Invalid prop `emphasize` of value `true` supplied to `BpkText`. `textStyle` value of `xxl` cannot be emphasized.',
+    ); // eslint-disable-line max-len
   });
 });

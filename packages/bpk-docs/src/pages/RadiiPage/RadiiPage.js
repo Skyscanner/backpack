@@ -24,9 +24,16 @@ import ANDROID_TOKENS from 'bpk-tokens/tokens/base.raw.android.json';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import { getPlatformTokens } from './../../helpers/tokens-helper';
 
-const RadiiPage = () => (<DocsPageBuilder
-  title="Radii"
-  tokenMap={getPlatformTokens(TOKENS, IOS_TOKENS, ANDROID_TOKENS, ({ category }) => category === 'radii')}
-/>);
+const RadiiPage = () => (
+  <DocsPageBuilder
+    title="Radii"
+    tokenMap={getPlatformTokens(
+      TOKENS,
+      IOS_TOKENS,
+      ANDROID_TOKENS,
+      ({ category }) => category === 'radii',
+    )}
+  />
+);
 
 export default RadiiPage;

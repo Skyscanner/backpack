@@ -26,12 +26,14 @@ import STYLES from './bpk-slider.scss';
 const getClassName = cssModules(STYLES);
 
 const getScriptDirection = () => {
-  if (typeof document === 'undefined') { return null; }
+  if (typeof document === 'undefined') {
+    return null;
+  }
   const html = document.querySelector('html');
   return window.getComputedStyle(html, null).getPropertyValue('direction');
 };
 
-const BpkSlider = (props) => {
+const BpkSlider = props => {
   const { large, className, ...rest } = props;
   const invert = getScriptDirection() === 'rtl';
   const classNames = [getClassName('bpk-slider')];
@@ -40,8 +42,12 @@ const BpkSlider = (props) => {
 
   const isRange = (rest.value || rest.defaultValue || []).length > 1;
 
-  if (isRange) { classNames.push(getClassName('bpk-slider--range')); }
-  if (className) { classNames.push(getClassName(className)); }
+  if (isRange) {
+    classNames.push(getClassName('bpk-slider--range'));
+  }
+  if (className) {
+    classNames.push(getClassName(className));
+  }
   if (large) {
     classNames.push(getClassName('bpk-slider--large'));
     handleClassNames.push(getClassName('bpk-slider__handle--large'));

@@ -44,7 +44,12 @@ class SwitchContainer extends Component {
   }
   render() {
     return (
-      <BpkSwitch value={this.state.value} onValueChange={(value) => { this.setState({ value }); }} />
+      <BpkSwitch
+        value={this.state.value}
+        onValueChange={value => {
+          this.setState({ value });
+        }}
+      />
     );
   }
 }

@@ -28,9 +28,15 @@ const buildComponent = (TagName, baseClassName) => {
   const Component = ({ className, children, ...rest }) => {
     const classNames = [getClassName(baseClassName)];
 
-    if (className) { classNames.push(className); }
+    if (className) {
+      classNames.push(className);
+    }
 
-    return <TagName className={classNames.join(' ')} {...rest}>{children}</TagName>;
+    return (
+      <TagName className={classNames.join(' ')} {...rest}>
+        {children}
+      </TagName>
+    );
   };
 
   Component.propTypes = {

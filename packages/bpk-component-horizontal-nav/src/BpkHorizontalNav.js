@@ -25,12 +25,14 @@ import STYLES from './bpk-horizontal-nav.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkHorizontalNav = (props) => {
+const BpkHorizontalNav = props => {
   const classNames = [getClassName('bpk-horizontal-nav')];
   const { children, className, ...rest } = props;
 
   // Outer classNames
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
     <BpkMobileScrollContainer
@@ -53,4 +55,3 @@ BpkHorizontalNav.defaultProps = {
 };
 
 export default BpkHorizontalNav;
-

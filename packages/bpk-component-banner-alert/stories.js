@@ -53,7 +53,12 @@ storiesOf('bpk-component-banner-alert', module)
     />
   ))
   .add('Success (animate on enter)', () => (
-    <BpkBannerAlert animateOnEnter message={message} type={ALERT_TYPES.SUCCESS} onDismiss={action('dismissed')} />
+    <BpkBannerAlert
+      animateOnEnter
+      message={message}
+      type={ALERT_TYPES.SUCCESS}
+      onDismiss={action('dismissed')}
+    />
   ))
   .add('Success with React rendered message', () => (
     <BpkBannerAlert
@@ -62,12 +67,20 @@ storiesOf('bpk-component-banner-alert', module)
     />
   ))
   .add('Success with children', () => (
-    <BpkBannerAlert message={message} type={ALERT_TYPES.SUCCESS} toggleButtonLabel="View more">
+    <BpkBannerAlert
+      message={message}
+      type={ALERT_TYPES.SUCCESS}
+      toggleButtonLabel="View more"
+    >
       {longMessage}
     </BpkBannerAlert>
   ))
   .add('Success with children (long message)', () => (
-    <BpkBannerAlert message={longMessage} type={ALERT_TYPES.SUCCESS} toggleButtonLabel="View more">
+    <BpkBannerAlert
+      message={longMessage}
+      type={ALERT_TYPES.SUCCESS}
+      toggleButtonLabel="View more"
+    >
       {longMessage}
     </BpkBannerAlert>
   ))
@@ -78,15 +91,29 @@ storiesOf('bpk-component-banner-alert', module)
     <BpkBannerAlert message={message} type={ALERT_TYPES.ERROR} />
   ))
   .add('Success (dismissable behaviour)', () => (
-    <BannerAlertState dismissable dismissButtonLabel="Dismiss" message={message} type={ALERT_TYPES.SUCCESS} />
+    <BannerAlertState
+      dismissable
+      dismissButtonLabel="Dismiss"
+      message={message}
+      type={ALERT_TYPES.SUCCESS}
+    />
   ))
   .add('Success (expandable behaviour)', () => (
-    <BannerAlertState message={message} type={ALERT_TYPES.SUCCESS} toggleButtonLabel="View more">
+    <BannerAlertState
+      message={message}
+      type={ALERT_TYPES.SUCCESS}
+      toggleButtonLabel="View more"
+    >
       {longMessage}
     </BannerAlertState>
   ))
   .add('Success (automatically dismissed after 5 seconds)', () => (
-    <BannerAlertState hideAfter={5} message={message} type={ALERT_TYPES.SUCCESS} toggleButtonLabel="View more">
+    <BannerAlertState
+      hideAfter={5}
+      message={message}
+      type={ALERT_TYPES.SUCCESS}
+      toggleButtonLabel="View more"
+    >
       {longMessage}
     </BannerAlertState>
   ));

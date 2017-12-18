@@ -32,10 +32,18 @@ export const INPUT_TYPES = {
   TEL: 'tel',
 };
 
-const BpkInput = (props) => {
+const BpkInput = props => {
   const classNames = [getClassName('bpk-input')];
   const {
-    valid, large, docked, dockedFirst, dockedMiddle, dockedLast, className, inputRef, ...rest
+    valid,
+    large,
+    docked,
+    dockedFirst,
+    dockedMiddle,
+    dockedLast,
+    className,
+    inputRef,
+    ...rest
   } = props;
 
   // Explicit check for false primitive value as undefined is
@@ -48,14 +56,33 @@ const BpkInput = (props) => {
     classNames.push(getClassName('bpk-input--invalid'));
   }
 
-  if (large) { classNames.push(getClassName('bpk-input--large')); }
-  if (docked) { classNames.push(getClassName('bpk-input--docked')); }
-  if (dockedFirst) { classNames.push(getClassName('bpk-input--docked-first')); }
-  if (dockedMiddle) { classNames.push(getClassName('bpk-input--docked-middle')); }
-  if (dockedLast) { classNames.push(getClassName('bpk-input--docked-last')); }
-  if (className) { classNames.push(className); }
+  if (large) {
+    classNames.push(getClassName('bpk-input--large'));
+  }
+  if (docked) {
+    classNames.push(getClassName('bpk-input--docked'));
+  }
+  if (dockedFirst) {
+    classNames.push(getClassName('bpk-input--docked-first'));
+  }
+  if (dockedMiddle) {
+    classNames.push(getClassName('bpk-input--docked-middle'));
+  }
+  if (dockedLast) {
+    classNames.push(getClassName('bpk-input--docked-last'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
-  return <input className={classNames.join(' ')} ref={inputRef} aria-invalid={isInvalid} {...rest} />;
+  return (
+    <input
+      className={classNames.join(' ')}
+      ref={inputRef}
+      aria-invalid={isInvalid}
+      {...rest}
+    />
+  );
 };
 
 BpkInput.propTypes = {

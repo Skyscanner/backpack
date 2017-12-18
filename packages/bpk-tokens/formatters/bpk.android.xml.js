@@ -28,7 +28,9 @@ const valueTemplate = (value, type) => {
   switch (type) {
     case 'color': {
       const formattedColor = tinycolor(value);
-      formattedValue = `${formattedColor.toHex8String().replace(/^#(.{6})(.{2})/, '#$2$1')}`;
+      formattedValue = `${formattedColor
+        .toHex8String()
+        .replace(/^#(.{6})(.{2})/, '#$2$1')}`;
       break;
     }
     case 'string':
@@ -47,13 +49,15 @@ const valueTemplate = (value, type) => {
   return formattedValue;
 };
 
-export const tokenTemplate = ({
-  name, value, type, category,
-}) => (
-  `  <${tagName(type)} name="${name.toUpperCase()}" category="${category}">${valueTemplate(value, type)}</${tagName(type)}>` // eslint-disable-line max-len
-);
+export const tokenTemplate = ({ name, value, type, category }) =>
+  `  <${tagName(
+    type,
+  )} name="${name.toUpperCase()}" category="${category}">${valueTemplate(
+    value,
+    type,
+  )}</${tagName(type)}>`; // eslint-disable-line max-len
 
-export default (json) => {
+export default json => {
   const singleTokens = _.map(json.props, tokenTemplate).join('\n');
   const source = `<?xml version="1.0" encoding="utf-8"?>
 ${xmlComment}

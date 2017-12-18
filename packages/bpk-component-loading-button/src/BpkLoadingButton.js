@@ -21,11 +21,15 @@ import React from 'react';
 import BpkButton from 'bpk-component-button';
 
 import { BpkSpinner, BpkLargeSpinner } from 'bpk-component-spinner';
-import { withButtonAlignment, withLargeButtonAlignment, withRtlSupport } from 'bpk-component-icon';
+import {
+  withButtonAlignment,
+  withLargeButtonAlignment,
+  withRtlSupport,
+} from 'bpk-component-icon';
 import ArrowIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import ArrowIconLg from 'bpk-component-icon/lg/long-arrow-right';
 
-const getPropsIcon = (props) => {
+const getPropsIcon = props => {
   const {
     disabled,
     loading,
@@ -46,24 +50,18 @@ const getPropsIcon = (props) => {
   return icon;
 };
 
-const getSpinner = large => (
-  large ?
-    <BpkLargeSpinner alignToButton /> :
-    <BpkSpinner alignToButton />
-);
+const getSpinner = large =>
+  large ? <BpkLargeSpinner alignToButton /> : <BpkSpinner alignToButton />;
 
-const getEnabledIcon = (large) => {
-  const AlignedIcon = large ?
-    withLargeButtonAlignment(withRtlSupport(ArrowIconLg)) :
-    withButtonAlignment(withRtlSupport(ArrowIconSm));
+const getEnabledIcon = large => {
+  const AlignedIcon = large
+    ? withLargeButtonAlignment(withRtlSupport(ArrowIconLg))
+    : withButtonAlignment(withRtlSupport(ArrowIconSm));
   return <AlignedIcon />;
 };
 
-const getDefaultIcon = (props) => {
-  const {
-    loading,
-    large,
-  } = props;
+const getDefaultIcon = props => {
+  const { loading, large } = props;
 
   if (loading) {
     return getSpinner(large);
@@ -71,7 +69,7 @@ const getDefaultIcon = (props) => {
   return getEnabledIcon(large);
 };
 
-const BpkLoadingButton = (props) => {
+const BpkLoadingButton = props => {
   const {
     children,
     disabled,
@@ -86,16 +84,14 @@ const BpkLoadingButton = (props) => {
 
   const showBtnDisabled = disabled || loading;
 
-  const spacer = (iconOnly) ? '' : '\u00A0';
+  const spacer = iconOnly ? '' : '\u00A0';
   const buttonIcon = getPropsIcon(props) || getDefaultIcon(props);
 
   return (
-    <BpkButton
-      iconOnly={iconOnly}
-      disabled={showBtnDisabled}
-      {...rest}
-    >
-      {children}{spacer}{buttonIcon}
+    <BpkButton iconOnly={iconOnly} disabled={showBtnDisabled} {...rest}>
+      {children}
+      {spacer}
+      {buttonIcon}
     </BpkButton>
   );
 };

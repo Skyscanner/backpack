@@ -22,7 +22,9 @@ import BpkParagraph from './BpkParagraph';
 
 describe('BpkParagraph', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<BpkParagraph>My paragraph</BpkParagraph>).toJSON();
+    const tree = renderer
+      .create(<BpkParagraph>My paragraph</BpkParagraph>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

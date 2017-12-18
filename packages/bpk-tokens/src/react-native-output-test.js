@@ -56,7 +56,9 @@ const IOS_ONLY_PROPS = [
 
 describe('React Native output', () => {
   it('Produces the same output for Android and iOS', () => {
-    const androidCommonProps = _(androidTokens.propKeys).without(...ANDROID_ONLY_PROPS);
+    const androidCommonProps = _(androidTokens.propKeys).without(
+      ...ANDROID_ONLY_PROPS,
+    );
     const iosCommonProps = _(iosTokens.propKeys).without(...IOS_ONLY_PROPS);
     expect(androidCommonProps).toEqual(iosCommonProps);
   });

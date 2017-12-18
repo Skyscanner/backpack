@@ -27,10 +27,8 @@ import iosScreenshotWithoutPadding from 'react-native-bpk-component-card/screens
 import androidScreenshotWithoutPadding from 'react-native-bpk-component-card/screenshots/android/without-padding.png';
 import iosScreenshotWithDivider from 'react-native-bpk-component-card/screenshots/ios/with-divider.png';
 import androidScreenshotWithDivider from 'react-native-bpk-component-card/screenshots/android/with-divider.png';
-import iosScreenshotWithDividerArrangedVertically
-  from 'react-native-bpk-component-card/screenshots/ios/with-divider-arranged-vertically.png';
-import androidScreenshotWithDividerArrangedVertically
-  from 'react-native-bpk-component-card/screenshots/android/with-divider-arranged-vertically.png';
+import iosScreenshotWithDividerArrangedVertically from 'react-native-bpk-component-card/screenshots/ios/with-divider-arranged-vertically.png';
+import androidScreenshotWithDividerArrangedVertically from 'react-native-bpk-component-card/screenshots/android/with-divider-arranged-vertically.png';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -39,7 +37,8 @@ const components = [
   {
     id: 'default',
     title: 'Default',
-    blurb: 'The default card comes with padding already applied to get you up and running quickly.',
+    blurb:
+      'The default card comes with padding already applied to get you up and running quickly.',
     screenshots: [
       {
         title: 'iOS',
@@ -62,7 +61,8 @@ const components = [
   {
     id: 'without-padding',
     title: 'Without padding',
-    blurb: 'For full flexibility, you can opt to remove the default padding e.g. to display full-bleed images.',
+    blurb:
+      'For full flexibility, you can opt to remove the default padding e.g. to display full-bleed images.',
     screenshots: [
       {
         title: 'iOS',
@@ -108,7 +108,8 @@ const components = [
   {
     id: 'with-divider',
     title: 'With divider',
-    blurb: 'Cards can have an added dividing line to divide their content into two distinct areas.',
+    blurb:
+      'Cards can have an added dividing line to divide their content into two distinct areas.',
     screenshots: [
       {
         title: 'iOS',
@@ -131,7 +132,8 @@ const components = [
   {
     id: 'with-divider-arranged-vertically',
     title: 'With divider arranged vertically',
-    blurb: 'Cards can be configured to display both horizontally and vertically.',
+    blurb:
+      'Cards can be configured to display both horizontally and vertically.',
     screenshots: [
       {
         title: 'iOS',
@@ -153,18 +155,21 @@ const components = [
   },
 ];
 
-const NativeCardsPage = () => (<DocsPageBuilder
-  title="Cards"
-  blurb={[
-    <Paragraph>
-      Cards are used to group related items within the UI.
-      They allow complex datasets to be broken down into individual, distinct areas for easy consumption.
-      Cards are used as a signifier to give affordance to a clickable set of elements.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={readme}
-  showMenu
-/>);
+const NativeCardsPage = () => (
+  <DocsPageBuilder
+    title="Cards"
+    blurb={[
+      <Paragraph>
+        Cards are used to group related items within the UI. They allow complex
+        datasets to be broken down into individual, distinct areas for easy
+        consumption. Cards are used as a signifier to give affordance to a
+        clickable set of elements.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={readme}
+    showMenu
+  />
+);
 
 export default NativeCardsPage;

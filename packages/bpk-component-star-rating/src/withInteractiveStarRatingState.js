@@ -21,7 +21,7 @@ import React, { Component } from 'react';
 
 import { wrapDisplayName } from 'bpk-react-utils';
 
-const withInteractiveStarRatingState = (InteractiveStarRating) => {
+const withInteractiveStarRatingState = InteractiveStarRating => {
   class EnhancedComponent extends Component {
     constructor() {
       super();
@@ -80,7 +80,10 @@ const withInteractiveStarRatingState = (InteractiveStarRating) => {
     onRatingSelect: () => null,
   };
 
-  EnhancedComponent.displayName = wrapDisplayName(EnhancedComponent, 'withInteractiveStarRatingState');
+  EnhancedComponent.displayName = wrapDisplayName(
+    EnhancedComponent,
+    'withInteractiveStarRatingState',
+  );
 
   return EnhancedComponent;
 };

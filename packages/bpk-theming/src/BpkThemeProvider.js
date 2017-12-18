@@ -21,13 +21,13 @@ import PropTypes from 'prop-types';
 
 const uniq = (arr = []) => {
   const seen = {};
-  return arr.filter(((item) => {
+  return arr.filter(item => {
     if (seen.hasOwnProperty[item]) {
       return false;
     }
     seen[item] = true;
     return true;
-  }));
+  });
 };
 
 const createStyle = (theme, themeAttributes) => {
@@ -37,9 +37,12 @@ const createStyle = (theme, themeAttributes) => {
   const flattenedThemeAttributes = [].concat(...themeAttributes);
   let style = {};
   const missingThemeAttributes = [];
-  flattenedThemeAttributes.forEach((attribute) => {
+  flattenedThemeAttributes.forEach(attribute => {
     if (theme[attribute]) {
-      const cssName = attribute.replace(/([A-Z])/g, variable => `-${variable.toLowerCase()}`);
+      const cssName = attribute.replace(
+        /([A-Z])/g,
+        variable => `-${variable.toLowerCase()}`,
+      );
       const value = theme[attribute];
       style[`--bpk-${cssName}`] = value;
     } else {
@@ -54,13 +57,8 @@ const createStyle = (theme, themeAttributes) => {
   return style;
 };
 
-const BpkThemeProvider = (props) => {
-  const {
-    children,
-    theme,
-    themeAttributes,
-    ...rest
-  } = props;
+const BpkThemeProvider = props => {
+  const { children, theme, themeAttributes, ...rest } = props;
 
   const dedupedThemeAttributes = uniq(themeAttributes);
   const style = createStyle(theme, dedupedThemeAttributes);
@@ -89,7 +87,7 @@ const themeAttributesPropType = (props, propName, componentName) => {
   themeAttributes = [].concat(...themeAttributes);
   const extraneousThemeAttributes = Object.assign({}, theme);
   const missingThemeAttributes = [];
-  themeAttributes.forEach((attribute) => {
+  themeAttributes.forEach(attribute => {
     if (theme[attribute]) {
       delete extraneousThemeAttributes[attribute];
     } else {
@@ -98,10 +96,18 @@ const themeAttributesPropType = (props, propName, componentName) => {
   });
   const errors = [];
   if (missingThemeAttributes.length > 0) {
-    errors.push(`${componentName}: To apply theming, the theme prop must include \`${themeAttributes.join(', ')}\` (missing \`${missingThemeAttributes.join(', ')}\`)`); // eslint-disable-line max-len
+    errors.push(
+      `${componentName}: To apply theming, the theme prop must include \`${themeAttributes.join(
+        ', ',
+      )}\` (missing \`${missingThemeAttributes.join(', ')}\`)`,
+    ); // eslint-disable-line max-len
   }
   if (Object.keys(extraneousThemeAttributes).length > 0) {
-    errors.push(`${componentName}: Extraneous theme attributes supplied: \`${Object.keys(extraneousThemeAttributes).join(', ')}\`.`); // eslint-disable-line max-len
+    errors.push(
+      `${componentName}: Extraneous theme attributes supplied: \`${Object.keys(
+        extraneousThemeAttributes,
+      ).join(', ')}\`.`,
+    ); // eslint-disable-line max-len
   }
   if (errors.length > 0) {
     return new Error(errors.join('\n'));

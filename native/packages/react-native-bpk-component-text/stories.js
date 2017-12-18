@@ -24,21 +24,45 @@ storiesOf('BpkText', module)
   ))
   .add('Bold', () => (
     <View>
-      <BpkText textStyle="xxl" emphasize={Platform.OS === 'android'}>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="xl" emphasize>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="lg" emphasize>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="base" emphasize>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="sm" emphasize>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="xs" emphasize>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="xxl" emphasize={Platform.OS === 'android'}>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="xl" emphasize>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="lg" emphasize>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="base" emphasize>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="sm" emphasize>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="xs" emphasize>
+        Flights to Edinburgh
+      </BpkText>
     </View>
   ))
   .add('Colours', () => (
     <View>
-      <BpkText textStyle="xxl" style={{ color: colorBlue700 }}>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="xl" style={{ color: colorRed500 }}>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="lg" style={{ color: colorGreen500 }}>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="base" style={{ color: colorYellow500 }}>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="sm" style={{ color: colorBlue700 }}>Flights to Edinburgh</BpkText>
-      <BpkText textStyle="xs" style={{ color: colorGray500 }}>Flights to Edinburgh</BpkText>
+      <BpkText textStyle="xxl" style={{ color: colorBlue700 }}>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="xl" style={{ color: colorRed500 }}>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="lg" style={{ color: colorGreen500 }}>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="base" style={{ color: colorYellow500 }}>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="sm" style={{ color: colorBlue700 }}>
+        Flights to Edinburgh
+      </BpkText>
+      <BpkText textStyle="xs" style={{ color: colorGray500 }}>
+        Flights to Edinburgh
+      </BpkText>
     </View>
   ));

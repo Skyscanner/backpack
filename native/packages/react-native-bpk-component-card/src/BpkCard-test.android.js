@@ -30,11 +30,14 @@ jest.mock('react-native', () => {
 
 jest.mock('./BpkCard', () => require.requireActual('./BpkCard.android'));
 
-jest.mock('./../node_modules/react-native-bpk-component-text/node_modules/bpk-tokens/tokens/base.react.native',
-  () => require.requireActual('bpk-tokens/tokens/base.react.native.android.js'));
+jest.mock(
+  './../node_modules/react-native-bpk-component-text/node_modules/bpk-tokens/tokens/base.react.native',
+  () => require.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+);
 
-jest.mock('bpk-tokens/tokens/base.react.native',
-  () => require.requireActual('bpk-tokens/tokens/base.react.native.android.js'));
+jest.mock('bpk-tokens/tokens/base.react.native', () =>
+  require.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+);
 
 jest.mock('TouchableNativeFeedback', () => ({ children, ...rest }) => {
   const { cloneElement } = require.requireActual('react');

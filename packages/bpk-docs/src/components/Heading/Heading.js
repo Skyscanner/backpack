@@ -24,12 +24,17 @@ import STYLES from './Heading.scss';
 
 const getClassName = cssModules(STYLES);
 
-const Heading = (props) => {
+const Heading = props => {
   const { level: TagName, className, ...rest } = props;
 
-  const classNames = [getClassName('bpk-docs-heading'), getClassName(`bpk-docs-heading--${TagName}`)];
+  const classNames = [
+    getClassName('bpk-docs-heading'),
+    getClassName(`bpk-docs-heading--${TagName}`),
+  ];
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   return <TagName className={classNames.join(' ')} {...rest} />;
 };
@@ -42,6 +47,5 @@ Heading.propTypes = {
 Heading.defaultProps = {
   className: null,
 };
-
 
 export default Heading;

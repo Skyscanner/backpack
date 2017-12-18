@@ -37,22 +37,30 @@ describe('BpkStar', () => {
   });
 
   it('should render correctly with a large empty star', () => {
-    const tree = renderer.create(<BpkStar type={STAR_TYPES.EMPTY} large />).toJSON();
+    const tree = renderer
+      .create(<BpkStar type={STAR_TYPES.EMPTY} large />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a large half star', () => {
-    const tree = renderer.create(<BpkStar type={STAR_TYPES.HALF} large />).toJSON();
+    const tree = renderer
+      .create(<BpkStar type={STAR_TYPES.HALF} large />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a large full star', () => {
-    const tree = renderer.create(<BpkStar type={STAR_TYPES.FULL} large />).toJSON();
+    const tree = renderer
+      .create(<BpkStar type={STAR_TYPES.FULL} large />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" prop', () => {
-    const tree = renderer.create(<BpkStar type={STAR_TYPES.FULL} className="my-class" />).toJSON();
+    const tree = renderer
+      .create(<BpkStar type={STAR_TYPES.FULL} className="my-class" />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

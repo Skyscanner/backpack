@@ -38,9 +38,7 @@ import STYLES from './bpk-calendar-nav.scss';
 
 const getClassName = cssModules(STYLES);
 
-const changeMonth = ({
-  month, min, max, callback, source,
-}) => (event) => {
+const changeMonth = ({ month, min, max, callback, source }) => event => {
   // Safeguard for disabled buttons is due to React bug in Chrome: https://github.com/facebook/react/issues/8308
   // PR: https://github.com/facebook/react/pull/8329 - unresolved as of 22/12/2016
   if (isWithinRange(month, min, max)) {
@@ -49,7 +47,7 @@ const changeMonth = ({
   }
 };
 
-const BpkCalendarNav = (props) => {
+const BpkCalendarNav = props => {
   const {
     id,
     month,
@@ -84,10 +82,8 @@ const BpkCalendarNav = (props) => {
           disabled={disabled || !isWithinRange(prevMonth, min, max)}
         >
           <ArrowLeftIcon className={getClassName('bpk-calendar-nav__icon')} />
-          <span
-            className={getClassName('bpk-calendar-nav__text--hidden')}
-          >
-            { formatMonth(addMonths(baseMonth, -1)) }
+          <span className={getClassName('bpk-calendar-nav__text--hidden')}>
+            {formatMonth(addMonths(baseMonth, -1))}
           </span>
         </button>
       </div>
@@ -96,20 +92,25 @@ const BpkCalendarNav = (props) => {
           htmlFor={`${id}_select`}
           className={getClassName('bpk-calendar-nav__text--hidden')}
         >
-          { changeMonthLabel }
+          {changeMonthLabel}
         </label>
         <BpkSelect
           id={`${id}_select`}
           name="months"
           value={formatIsoMonth(baseMonth)}
           disabled={disabled}
-          onChange={(event) => {
+          onChange={event => {
             event.persist();
-            onMonthChange(event, { month: parseIsoDate(event.target.value), source: 'SELECT' });
+            onMonthChange(event, {
+              month: parseIsoDate(event.target.value),
+              source: 'SELECT',
+            });
           }}
         >
-          { navigatableMonths.map(m => (
-            <option value={formatIsoMonth(m)} key={m.toString()}>{ formatMonth(m) }</option>
+          {navigatableMonths.map(m => (
+            <option value={formatIsoMonth(m)} key={m.toString()}>
+              {formatMonth(m)}
+            </option>
           ))}
         </BpkSelect>
       </div>
@@ -119,15 +120,19 @@ const BpkCalendarNav = (props) => {
           className={getClassName('bpk-calendar-nav__button')}
           id={`${id}_month_nudger_next`}
           onClick={changeMonth({
- month: nextMonth, min, max, callback: onMonthChange, source: 'NEXT',
-})}
-          disabled={disabled || !isWithinRange(addMonths(baseMonth, 1), min, max)}
+            month: nextMonth,
+            min,
+            max,
+            callback: onMonthChange,
+            source: 'NEXT',
+          })}
+          disabled={
+            disabled || !isWithinRange(addMonths(baseMonth, 1), min, max)
+          }
         >
           <ArrowRightIcon className={getClassName('bpk-calendar-nav__icon')} />
-          <span
-            className={getClassName('bpk-calendar-nav__text--hidden')}
-          >
-            { formatMonth(addMonths(baseMonth, 1)) }
+          <span className={getClassName('bpk-calendar-nav__text--hidden')}>
+            {formatMonth(addMonths(baseMonth, 1))}
           </span>
         </button>
       </div>

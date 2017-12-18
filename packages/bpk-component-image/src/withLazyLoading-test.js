@@ -33,45 +33,53 @@ const createDocumentMock = () => {
 describe('withLazyLoading', () => {
   it('should return the original component', () => {
     const documentMock = createDocumentMock();
-    const MockImageComponent = () => (<div>Fake Image</div>);
+    const MockImageComponent = () => <div>Fake Image</div>;
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
-    const lazyLoadedImage = shallow(<LazyLoadedImage />, { disableLifecycleMethods: true });
+    const lazyLoadedImage = shallow(<LazyLoadedImage />, {
+      disableLifecycleMethods: true,
+    });
     expect(lazyLoadedImage.first().is(MockImageComponent));
   });
 
   it('should add inView prop', () => {
     const documentMock = createDocumentMock();
-    const MockImageComponent = () => (<div>Fake Image</div>);
+    const MockImageComponent = () => <div>Fake Image</div>;
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
-    const lazyLoadedImage = shallow(<LazyLoadedImage />, { disableLifecycleMethods: true });
+    const lazyLoadedImage = shallow(<LazyLoadedImage />, {
+      disableLifecycleMethods: true,
+    });
     expect(lazyLoadedImage.hasOwnProperty('inView')); // eslint-disable-line no-prototype-builtins
   });
 
   it('scroll listener args should be correct when mounting', () => {
     const documentMock = createDocumentMock();
 
-    const MockImageComponent = () => (<div>Fake Image</div>);
+    const MockImageComponent = () => <div>Fake Image</div>;
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
     mount(<LazyLoadedImage />);
 
     expect(documentMock.addEventListener.mock.calls.length).toBe(4);
     expect(documentMock.addEventListener.mock.calls[0][0]).toEqual('scroll');
-    expect(documentMock.addEventListener.mock.calls[0][2]).toEqual({ capture: true });
+    expect(documentMock.addEventListener.mock.calls[0][2]).toEqual({
+      capture: true,
+    });
   });
 
   it('scroll listener args should be correct when unmounting', () => {
     const documentMock = createDocumentMock();
 
-    const MockImageComponent = () => (<div>Fake Image</div>);
+    const MockImageComponent = () => <div>Fake Image</div>;
     const LazyLoadedImage = withLazyLoading(MockImageComponent, documentMock);
 
     mount(<LazyLoadedImage />).unmount();
 
     expect(documentMock.removeEventListener.mock.calls.length).toBe(4);
     expect(documentMock.removeEventListener.mock.calls[0][0]).toEqual('scroll');
-    expect(documentMock.removeEventListener.mock.calls[0][2]).toEqual({ capture: true });
+    expect(documentMock.removeEventListener.mock.calls[0][2]).toEqual({
+      capture: true,
+    });
   });
 });

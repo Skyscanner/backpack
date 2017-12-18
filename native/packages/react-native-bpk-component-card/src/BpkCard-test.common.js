@@ -29,49 +29,48 @@ const commonTests = () => {
   describe('BpkCard', () => {
     const content = (
       <BpkText>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-        commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-        et magnis dis parturient montes, nascetur ridiculus mus.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
       </BpkText>
     );
 
     it('should render correctly', () => {
-      const tree = renderer.create(
-        <BpkCard
-          onPress={onPress}
-          accessibilityLabel="Example Card"
-        >
-          {content}
-        </BpkCard>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkCard onPress={onPress} accessibilityLabel="Example Card">
+            {content}
+          </BpkCard>,
+        )
+        .toJSON();
 
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly without padding', () => {
-      const tree = renderer.create(
-        <BpkCard
-          onPress={onPress}
-          padded={false}
-          accessibilityLabel="Example Card"
-        >
-          {content}
-        </BpkCard>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkCard
+            onPress={onPress}
+            padded={false}
+            accessibilityLabel="Example Card"
+          >
+            {content}
+          </BpkCard>,
+        )
+        .toJSON();
 
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly with the "focused" state', () => {
-      const tree = renderer.create(
-        <BpkCard
-          onPress={onPress}
-          focused
-          accessibilityLabel="Example Card"
-        >
-          {content}
-        </BpkCard>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkCard onPress={onPress} focused accessibilityLabel="Example Card">
+            {content}
+          </BpkCard>,
+        )
+        .toJSON();
 
       expect(tree).toMatchSnapshot();
     });
@@ -83,15 +82,17 @@ const commonTests = () => {
         },
       });
 
-      const tree = renderer.create(
-        <BpkCard
-          onPress={onPress}
-          accessibilityLabel="Example Card"
-          style={styles.custom}
-        >
-          {content}
-        </BpkCard>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkCard
+            onPress={onPress}
+            accessibilityLabel="Example Card"
+            style={styles.custom}
+          >
+            {content}
+          </BpkCard>,
+        )
+        .toJSON();
 
       expect(tree).toMatchSnapshot();
     });
@@ -103,29 +104,33 @@ const commonTests = () => {
         },
       });
 
-      const tree = renderer.create(
-        <BpkCard
-          onPress={onPress}
-          accessibilityLabel="Example Card"
-          innerStyle={styles.custom}
-        >
-          {content}
-        </BpkCard>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkCard
+            onPress={onPress}
+            accessibilityLabel="Example Card"
+            innerStyle={styles.custom}
+          >
+            {content}
+          </BpkCard>,
+        )
+        .toJSON();
 
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly with arbitrary props', () => {
-      const tree = renderer.create(
-        <BpkCard
-          onPress={onPress}
-          accessibilityLabel="Example Card"
-          testID="arbitrary value" // <-- arbitrary prop
-        >
-          {content}
-        </BpkCard>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkCard
+            onPress={onPress}
+            accessibilityLabel="Example Card"
+            testID="arbitrary value" // <-- arbitrary prop
+          >
+            {content}
+          </BpkCard>,
+        )
+        .toJSON();
 
       expect(tree).toMatchSnapshot();
     });

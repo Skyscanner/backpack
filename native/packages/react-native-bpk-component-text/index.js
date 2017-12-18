@@ -19,6 +19,4 @@
 import BpkText, { TEXT_STYLES } from './src/BpkText';
 
 export default BpkText;
-export {
-  TEXT_STYLES,
-};
+export { TEXT_STYLES };

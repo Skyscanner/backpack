@@ -27,36 +27,49 @@ const EnhancedComponent = withAccordionItemState(BpkAccordionItem);
 
 describe('withAccordionItemState(BpkAccordionItem)', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <EnhancedComponent id="my-accordion" title="My accordion item">
-        My accordion content
-      </EnhancedComponent>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <EnhancedComponent id="my-accordion" title="My accordion item">
+          My accordion content
+        </EnhancedComponent>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with "expanded" prop', () => {
-    const tree = renderer.create(
-      <EnhancedComponent id="my-accordion" title="My accordion item" expanded>
-        My accordion content
-      </EnhancedComponent>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <EnhancedComponent id="my-accordion" title="My accordion item" expanded>
+          My accordion content
+        </EnhancedComponent>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with "initiallyExpanded" prop', () => {
-    const tree = renderer.create(
-      <EnhancedComponent id="my-accordion" title="My accordion item" initiallyExpanded>
-        My accordion content
-      </EnhancedComponent>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <EnhancedComponent
+          id="my-accordion"
+          title="My accordion item"
+          initiallyExpanded
+        >
+          My accordion content
+        </EnhancedComponent>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-
   it('should toggle "expanded" on click', () => {
     const accordionItem = shallow(
-      <EnhancedComponent id="my-accordion" title="My accordion item" initiallyExpanded>
+      <EnhancedComponent
+        id="my-accordion"
+        title="My accordion item"
+        initiallyExpanded
+      >
         My accordion content
       </EnhancedComponent>,
     );

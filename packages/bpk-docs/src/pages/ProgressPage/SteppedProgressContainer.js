@@ -45,12 +45,7 @@ export default class SteppedProgressContainer extends Component {
   render() {
     return (
       <div>
-        <BpkProgress
-          min={0}
-          max={5}
-          value={this.state.progress}
-          stepped
-        />
+        <BpkProgress min={0} max={5} value={this.state.progress} stepped />
         <br />
         <div className={getClassName('bpkdocs-progress-container__flex')}>
           <BpkButton
@@ -60,7 +55,7 @@ export default class SteppedProgressContainer extends Component {
           >
             Back
           </BpkButton>
-          <span>{ `Step ${this.state.progress} of 5` }</span>
+          <span>{`Step ${this.state.progress} of 5`}</span>
           <BpkButton
             onClick={() => this.setProgress(this.state.progress + 1)}
             disabled={this.state.progress === 5}

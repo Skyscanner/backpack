@@ -22,4 +22,10 @@ import BpkLargeSpinner from './src/BpkLargeSpinner';
 import BpkExtraLargeSpinner from './src/BpkExtraLargeSpinner';
 import themeAttributes from './src/themeAttributes';
 
-export { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner, SPINNER_TYPES, themeAttributes };
+export {
+  BpkSpinner,
+  BpkLargeSpinner,
+  BpkExtraLargeSpinner,
+  SPINNER_TYPES,
+  themeAttributes,
+};

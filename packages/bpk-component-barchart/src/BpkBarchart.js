@@ -33,7 +33,10 @@ import BpkChartGridLines from './BpkChartGridLines';
 import BpkBarchartBar from './BpkBarchartBar';
 import dataProp from './customPropTypes';
 import { identity, remToPx } from './utils';
-import { applyArrayRTLTransform, applyMarginRTLTransform } from './RTLtransforms';
+import {
+  applyArrayRTLTransform,
+  applyMarginRTLTransform,
+} from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import STYLES from './bpk-barchart.scss';
 
@@ -43,15 +46,11 @@ const spacing = remToPx(spacingXs);
 const lineHeight = remToPx(lineHeightSm);
 
 const getMaxYValue = (dataPoints, yScaleDataKey, outlierPercentage) => {
-  const meanValue =
-    dataPoints.reduce((d, t) => d + t, 0) / dataPoints.length;
+  const meanValue = dataPoints.reduce((d, t) => d + t, 0) / dataPoints.length;
   const maxYValue = Math.max(...dataPoints);
 
   return outlierPercentage !== null
-    ? Math.min(
-      maxYValue,
-      (meanValue * (outlierPercentage / 100)) + meanValue,
-    )
+    ? Math.min(maxYValue, meanValue * (outlierPercentage / 100) + meanValue)
     : maxYValue;
 };
 
@@ -128,11 +127,17 @@ class BpkBarchart extends Component {
     });
 
     const classNames = [getClassName('bpk-barchart')];
-    if (className) { classNames.push(className); }
+    if (className) {
+      classNames.push(className);
+    }
 
     const width = this.state.width - margin.left - margin.right;
     const height = this.state.height - margin.bottom - margin.top;
-    const maxYValue = getMaxYValue(data.map(d => d[yScaleDataKey]), yScaleDataKey, outlierPercentage);
+    const maxYValue = getMaxYValue(
+      data.map(d => d[yScaleDataKey]),
+      yScaleDataKey,
+      outlierPercentage,
+    );
 
     this.xScale.rangeRound([0, width]);
     this.xScale.domain(transformedData.map(d => d[xScaleDataKey]));
@@ -141,25 +146,27 @@ class BpkBarchart extends Component {
 
     return (
       <BpkMobileScrollContainer>
-        {!disableDataTable && <BpkChartDataTable
-          data={data}
-          xScaleDataKey={xScaleDataKey}
-          yScaleDataKey={yScaleDataKey}
-          xAxisLabel={xAxisLabel}
-          yAxisLabel={yAxisLabel}
-        />}
+        {!disableDataTable && (
+          <BpkChartDataTable
+            data={data}
+            xScaleDataKey={xScaleDataKey}
+            yScaleDataKey={yScaleDataKey}
+            xAxisLabel={xAxisLabel}
+            yAxisLabel={yAxisLabel}
+          />
+        )}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className={classNames.join(' ')}
           width={this.state.width}
           height={this.state.height}
-          ref={(svgEl) => { this.svgEl = svgEl; }}
+          ref={svgEl => {
+            this.svgEl = svgEl;
+          }}
           {...rest}
         >
           <BpkBarchartDefs />
-          <BpkChartMargin
-            margin={margin}
-          >
+          <BpkChartMargin margin={margin}>
             <BpkChartAxis
               orientation={ORIENTATION_Y}
               width={this.state.width}
@@ -181,13 +188,15 @@ class BpkBarchart extends Component {
               tickOffset={xAxisTickOffset}
               label={xAxisLabel}
             />
-            { showGridlines && <BpkChartGridLines
-              orientation={ORIENTATION_Y}
-              width={this.state.width}
-              height={this.state.height}
-              margin={margin}
-              scale={this.yScale}
-            /> }
+            {showGridlines && (
+              <BpkChartGridLines
+                orientation={ORIENTATION_Y}
+                width={this.state.width}
+                height={this.state.height}
+                margin={margin}
+                scale={this.yScale}
+              />
+            )}
             <BpkBarchartBars
               height={this.state.height}
               margin={margin}
@@ -249,13 +258,14 @@ BpkBarchart.defaultProps = {
   xAxisTickValue: identity,
   xAxisTickOffset: 0,
   xAxisTickEvery: 1,
-  yAxisMargin: (4 * lineHeight) + spacing,
+  yAxisMargin: 4 * lineHeight + spacing,
   yAxisTickValue: identity,
   yAxisNumTicks: null,
   onBarClick: null,
   onBarHover: null,
   onBarTouch: null,
-  getBarLabel: (point, xScaleDataKey, yScaleDataKey) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
+  getBarLabel: (point, xScaleDataKey, yScaleDataKey) =>
+    `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
   getBarSelection: () => false,
   BarComponent: BpkBarchartBar,
   disableDataTable: false,

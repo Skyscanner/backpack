@@ -16,5 +16,5 @@
  * limitations under the License.
  */
 
-export default (styles = {}) =>
-  className => (styles[className] ? styles[className] : className);
+export default (styles = {}) => className =>
+  styles[className] ? styles[className] : className;

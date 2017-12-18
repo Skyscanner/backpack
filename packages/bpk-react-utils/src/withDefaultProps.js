@@ -24,12 +24,16 @@ import wrapDisplayName from 'recompose/wrapDisplayName';
 const withDefaultProps = (WrappedComponent, defaultProps) => {
   const { className: defaultClassName, ...defaultRest } = defaultProps;
 
-  const component = (props) => {
+  const component = props => {
     const { children, className: innerClassName, ...rest } = props;
     const classNames = [];
 
-    if (defaultClassName) { classNames.push(defaultClassName); }
-    if (innerClassName) { classNames.push(innerClassName); }
+    if (defaultClassName) {
+      classNames.push(defaultClassName);
+    }
+    if (innerClassName) {
+      classNames.push(innerClassName);
+    }
 
     return (
       <WrappedComponent

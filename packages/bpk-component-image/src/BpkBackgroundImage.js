@@ -62,7 +62,15 @@ class BpkBackgroundImage extends React.Component {
 
   render() {
     const {
-      children, className, inView, loading, onLoad, src, imageStyle, imageClassName, ...rest
+      children,
+      className,
+      inView,
+      loading,
+      onLoad,
+      src,
+      imageStyle,
+      imageClassName,
+      ...rest
     } = this.props;
 
     const classNames = [getClassName('bpk-background-image')];
@@ -70,8 +78,12 @@ class BpkBackgroundImage extends React.Component {
     const contentClassNames = [getClassName('bpk-background-image__content')];
 
     if (!loading) {
-      spinnerClassNames.push(getClassName('bpk-background-image__spinner--hide'));
-      contentClassNames.push(getClassName('bpk-background-image__content--show'));
+      spinnerClassNames.push(
+        getClassName('bpk-background-image__spinner--hide'),
+      );
+      contentClassNames.push(
+        getClassName('bpk-background-image__content--show'),
+      );
     }
 
     if (className) {
@@ -88,29 +100,30 @@ class BpkBackgroundImage extends React.Component {
     ];
 
     return (
-      <div
-        className={classNames.join(' ')}
-        {...rest}
-      >
+      <div className={classNames.join(' ')} {...rest}>
         <div className={spinnerClassNames.join(' ')}>
           <BpkSpinner />
         </div>
         <div
           className={contentClassNames.join(' ')}
-          style={{ backgroundImage: !inView || loading ? '' : `url(${src})`, ...imageStyle }}
+          style={{
+            backgroundImage: !inView || loading ? '' : `url(${src})`,
+            ...imageStyle,
+          }}
         >
           {!loading && children}
         </div>
-        {(typeof window === 'undefined' && (!inView || loading)) &&
-          <noscript >
-            <div
-              className={contentClassNamesNoScript.join(' ')}
-              style={{ backgroundImage: `url(${src})`, ...imageStyle }}
-            >
-              {children}
-            </div>
-          </noscript>
-        }
+        {typeof window === 'undefined' &&
+          (!inView || loading) && (
+            <noscript>
+              <div
+                className={contentClassNamesNoScript.join(' ')}
+                style={{ backgroundImage: `url(${src})`, ...imageStyle }}
+              >
+                {children}
+              </div>
+            </noscript>
+          )}
       </div>
     );
   }

@@ -136,38 +136,36 @@ class BpkDatepicker extends Component {
 
     return (
       <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
-        {isMobile => (
-          isMobile
-            ? (
-              <BpkModal
-                id={`${id}-modal`}
-                target={inputComponent}
-                renderTarget={renderTarget}
-                onClose={this.onClose}
-                isOpen={this.state.isOpen}
-                title={title}
-                closeLabel={closeButtonText}
-                getApplicationElement={getApplicationElement}
-              >
-                {calendarComponent}
-              </BpkModal>
-            )
-            : (
-              <BpkPopover
-                id={`${id}-popover`}
-                target={inputComponent}
-                renderTarget={renderTarget}
-                onClose={this.onClose}
-                isOpen={this.state.isOpen}
-                label={title}
-                closeButtonText={closeButtonText}
-                tabIndex={0}
-                {...rest}
-              >
-                {calendarComponent}
-              </BpkPopover>
-            )
-        )}
+        {isMobile =>
+          isMobile ? (
+            <BpkModal
+              id={`${id}-modal`}
+              target={inputComponent}
+              renderTarget={renderTarget}
+              onClose={this.onClose}
+              isOpen={this.state.isOpen}
+              title={title}
+              closeLabel={closeButtonText}
+              getApplicationElement={getApplicationElement}
+            >
+              {calendarComponent}
+            </BpkModal>
+          ) : (
+            <BpkPopover
+              id={`${id}-popover`}
+              target={inputComponent}
+              renderTarget={renderTarget}
+              onClose={this.onClose}
+              isOpen={this.state.isOpen}
+              label={title}
+              closeButtonText={closeButtonText}
+              tabIndex={0}
+              {...rest}
+            >
+              {calendarComponent}
+            </BpkPopover>
+          )
+        }
       </BpkBreakpoint>
     );
   }

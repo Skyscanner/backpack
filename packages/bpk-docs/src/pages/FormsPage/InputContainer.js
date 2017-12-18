@@ -47,12 +47,7 @@ class InputContainer extends Component {
         onChange: e => this.setState({ value: e.target.value }),
       };
     }
-    return (
-      <FormComponent
-        {...rest}
-        {...overrideProps}
-      />
-    );
+    return <FormComponent {...rest} {...overrideProps} />;
   }
 }
 

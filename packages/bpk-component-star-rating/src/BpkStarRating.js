@@ -39,53 +39,41 @@ export const getTypeByRating = (starNumber, rating) => {
   return STAR_TYPES.EMPTY;
 };
 
-const BpkStarRating = (props) => {
-  const {
-    rating,
-    ratingLabel,
-    maxRating,
-    large,
-    className,
-    ...rest
-  } = props;
+const BpkStarRating = props => {
+  const { rating, ratingLabel, maxRating, large, className, ...rest } = props;
 
   const stars = [];
   const classNames = [getClassName('bpk-star-rating')];
 
   const currentRating = rating > maxRating ? maxRating : rating;
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   for (let starNumber = 1; starNumber <= maxRating; starNumber += 1) {
     const type = getTypeByRating(starNumber, currentRating);
 
     stars.push(
-      <BpkStar
-        key={`star-${starNumber}`}
-        type={type}
-        large={large}
-      />,
+      <BpkStar key={`star-${starNumber}`} type={type} large={large} />,
     );
   }
 
-  const label = typeof ratingLabel === 'string' ? ratingLabel : ratingLabel(rating, maxRating);
+  const label =
+    typeof ratingLabel === 'string'
+      ? ratingLabel
+      : ratingLabel(rating, maxRating);
 
   return (
-    <div
-      {...rest}
-      aria-label={label}
-      className={classNames.join(' ')}
-    >
+    <div {...rest} aria-label={label} className={classNames.join(' ')}>
       {stars}
     </div>
   );
 };
 
 BpkStarRating.propTypes = {
-  ratingLabel: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-  ]).isRequired,
+  ratingLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+    .isRequired,
   className: PropTypes.string,
   large: PropTypes.bool,
   maxRating: PropTypes.number,

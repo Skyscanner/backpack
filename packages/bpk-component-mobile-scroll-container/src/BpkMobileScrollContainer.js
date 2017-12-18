@@ -30,11 +30,11 @@ const computeScrollBarAwareHeight = (scrollerEl, innerEl) => {
     return null;
   }
 
-  const scrollBarVisibile = (scrollerEl.offsetHeight - innerEl.offsetHeight) > 0;
+  const scrollBarVisibile = scrollerEl.offsetHeight - innerEl.offsetHeight > 0;
   return scrollBarVisibile ? `${innerEl.offsetHeight / 16}rem` : 'auto';
 };
 
-const computeScrollIndicatorClassName = (scrollerEl) => {
+const computeScrollIndicatorClassName = scrollerEl => {
   if (!scrollerEl) {
     return null;
   }
@@ -42,9 +42,15 @@ const computeScrollIndicatorClassName = (scrollerEl) => {
   const classNames = [];
   const { scrollLeft, scrollWidth, offsetWidth } = scrollerEl;
 
-  if (scrollLeft > 0) { classNames.push(getClassName('bpk-mobile-scroll-container--left-indicator')); }
-  if (scrollLeft < (scrollWidth - offsetWidth)) {
-    classNames.push(getClassName('bpk-mobile-scroll-container--right-indicator'));
+  if (scrollLeft > 0) {
+    classNames.push(
+      getClassName('bpk-mobile-scroll-container--left-indicator'),
+    );
+  }
+  if (scrollLeft < scrollWidth - offsetWidth) {
+    classNames.push(
+      getClassName('bpk-mobile-scroll-container--right-indicator'),
+    );
   }
 
   return classNames;
@@ -60,7 +66,9 @@ class BpkMobileScrollContainer extends Component {
     };
 
     this.setScrollBarAwareHeight = this.setScrollBarAwareHeight.bind(this);
-    this.setScrollIndicatorClassName = this.setScrollIndicatorClassName.bind(this);
+    this.setScrollIndicatorClassName = this.setScrollIndicatorClassName.bind(
+      this,
+    );
     this.onWindowResize = debounce(this.onWindowResize.bind(this), 100);
   }
 
@@ -92,7 +100,10 @@ class BpkMobileScrollContainer extends Component {
   }
 
   setScrollBarAwareHeight() {
-    const computedHeight = computeScrollBarAwareHeight(this.scrollerEl, this.innerEl);
+    const computedHeight = computeScrollBarAwareHeight(
+      this.scrollerEl,
+      this.innerEl,
+    );
 
     if (!computedHeight) {
       return;
@@ -104,11 +115,19 @@ class BpkMobileScrollContainer extends Component {
   render() {
     const classNames = [getClassName('bpk-mobile-scroll-container')];
     const {
-      children, innerContainerTagName, className, style, ...rest
+      children,
+      innerContainerTagName,
+      className,
+      style,
+      ...rest
     } = this.props;
 
-    if (className) { classNames.push(className); }
-    if (this.state.scrollIndicatorClassName) { classNames.push(this.state.scrollIndicatorClassName); }
+    if (className) {
+      classNames.push(className);
+    }
+    if (this.state.scrollIndicatorClassName) {
+      classNames.push(this.state.scrollIndicatorClassName);
+    }
 
     const InnerContainer = innerContainerTagName;
 
@@ -119,12 +138,16 @@ class BpkMobileScrollContainer extends Component {
         style={{ ...style, height: this.state.computedHeight }}
       >
         <div
-          ref={(el) => { this.scrollerEl = el; }}
+          ref={el => {
+            this.scrollerEl = el;
+          }}
           onScroll={this.setScrollIndicatorClassName}
           className={getClassName('bpk-mobile-scroll-container__scroller')}
         >
           <InnerContainer
-            ref={(el) => { this.innerEl = el; }}
+            ref={el => {
+              this.innerEl = el;
+            }}
             className={getClassName('bpk-mobile-scroll-container__inner')}
           >
             {children}

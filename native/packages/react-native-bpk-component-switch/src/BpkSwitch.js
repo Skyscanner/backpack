@@ -20,7 +20,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Platform, Switch } from 'react-native';
 import { withTheme } from 'react-native-bpk-theming';
-import { colorBlue500, colorGray100, colorGray50 } from 'bpk-tokens/tokens/base.react.native';
+import {
+  colorBlue500,
+  colorGray100,
+  colorGray50,
+} from 'bpk-tokens/tokens/base.react.native';
 
 // If theming is ever expanded to support other types, this should be changed
 // to something akin to BpkButton's theming functions.
@@ -53,12 +57,14 @@ const themePropType = (props, propName, componentName) => {
     return false;
   }
   if (!theme[THEMING_ATTRIBUTE]) {
-    return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName}\`. For themed switches, \`theme\` prop must include \`${THEMING_ATTRIBUTE}\``); // eslint-disable-line max-len
+    return new Error(
+      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. For themed switches, \`theme\` prop must include \`${THEMING_ATTRIBUTE}\``,
+    ); // eslint-disable-line max-len
   }
   return false;
 };
 
-const BpkSwitch = (props) => {
+const BpkSwitch = props => {
   const { value, ...rest } = props;
   let { theme } = props;
 
@@ -83,6 +89,4 @@ BpkSwitch.defaultProps = {
 };
 
 export default withTheme(BpkSwitch);
-export {
-  propTypes,
-};
+export { propTypes };

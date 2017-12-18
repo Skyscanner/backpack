@@ -19,14 +19,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BpkChartMargin = (props) => {
+const BpkChartMargin = props => {
   const { children, margin, ...rest } = props;
 
   return (
-    <g
-      transform={`translate(${margin.left}, ${margin.top})`}
-      {...rest}
-    >
+    <g transform={`translate(${margin.left}, ${margin.top})`} {...rest}>
       {children}
     </g>
   );

@@ -17,7 +17,10 @@
  */
 
 import React from 'react';
-import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
+import BpkImage, {
+  withLazyLoading,
+  withLoadingBehavior,
+} from 'bpk-component-image';
 
 import imagesReadme from 'bpk-component-image/readme.md';
 import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
@@ -28,13 +31,20 @@ import Paragraph from './../../components/Paragraph';
 const documentIfExists = typeof window !== 'undefined' ? document : null;
 const FadingImage = withLoadingBehavior(BpkImage);
 const LazyLoadedImage = withLazyLoading(BpkImage, documentIfExists);
-const FadingLazyLoadedImage = withLoadingBehavior(withLazyLoading(BpkImage, documentIfExists));
+const FadingLazyLoadedImage = withLoadingBehavior(
+  withLazyLoading(BpkImage, documentIfExists),
+);
 
-const image1 = 'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
-const image2 = 'https://content.skyscnr.com/8bd0d1b67b1bda63e5567a4c402402f2/iceland.jpg';
-const image3 = 'https://content.skyscnr.com/200946ddb82b7c026e6e186a7037b1f8/machu-picchu.jpg';
-const image4 = 'https://content.skyscnr.com/8a8ac17b591b61e6fe5d8f63414561cd/amsterdam-the-netherlands.jpg';
-const image5 = 'https://content.skyscnr.com/6c8f0e633bde70798a9d6f0a26cb6016/andalsnes-norway.jpg';
+const image1 =
+  'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
+const image2 =
+  'https://content.skyscnr.com/8bd0d1b67b1bda63e5567a4c402402f2/iceland.jpg';
+const image3 =
+  'https://content.skyscnr.com/200946ddb82b7c026e6e186a7037b1f8/machu-picchu.jpg';
+const image4 =
+  'https://content.skyscnr.com/8a8ac17b591b61e6fe5d8f63414561cd/amsterdam-the-netherlands.jpg';
+const image5 =
+  'https://content.skyscnr.com/6c8f0e633bde70798a9d6f0a26cb6016/andalsnes-norway.jpg';
 
 const components = [
   {
@@ -157,19 +167,22 @@ const components = [
   },
 ];
 
-
-const ImagesPage = () => (<DocsPageBuilder
-  title="Images"
-  blurb={[
-    <Paragraph>
-      Images can be used to improve the visual appeal of an article or webpage. To give a more responsive
-      user experience, images can be lazy-loaded to save time and data. A spinner can be shown before an
-      image is loaded, at which point the image can gently fade in. To improve user-experience further,
-      different sized images can be loaded depending on the user`s display and browser size.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={imagesReadme}
-/>);
+const ImagesPage = () => (
+  <DocsPageBuilder
+    title="Images"
+    blurb={[
+      <Paragraph>
+        Images can be used to improve the visual appeal of an article or
+        webpage. To give a more responsive user experience, images can be
+        lazy-loaded to save time and data. A spinner can be shown before an
+        image is loaded, at which point the image can gently fade in. To improve
+        user-experience further, different sized images can be loaded depending
+        on the user`s display and browser size.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={imagesReadme}
+  />
+);
 
 export default ImagesPage;

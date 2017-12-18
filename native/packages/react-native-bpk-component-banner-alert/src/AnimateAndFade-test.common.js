@@ -17,60 +17,50 @@
 */
 
 import React from 'react';
-import {
-  Text,
-} from 'react-native';
+import { Text } from 'react-native';
 import renderer from 'react-test-renderer';
 import AnimateAndFade from './AnimateAndFade';
 
-const child = <Text>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</Text>;
+const child = (
+  <Text>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</Text>
+);
 
 const commonTests = () => {
   Date.now = jest.fn(() => 1503187200000);
   describe('AnimateAndFade', () => {
     it('should render correctly', () => {
-      const tree = renderer.create(
-        <AnimateAndFade
-          show
-        >
-          {child}
-        </AnimateAndFade>,
-      ).toJSON();
+      const tree = renderer
+        .create(<AnimateAndFade show>{child}</AnimateAndFade>)
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly when show is false', () => {
-      const tree = renderer.create(
-        <AnimateAndFade
-          show={false}
-        >
-          {child}
-        </AnimateAndFade>,
-      ).toJSON();
+      const tree = renderer
+        .create(<AnimateAndFade show={false}>{child}</AnimateAndFade>)
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly with animateOnEnter', () => {
-      const tree = renderer.create(
-        <AnimateAndFade
-          shown
-          animateOnEnter
-        >
-          {child}
-        </AnimateAndFade>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <AnimateAndFade shown animateOnEnter>
+            {child}
+          </AnimateAndFade>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly with animateOnLeave', () => {
-      const tree = renderer.create(
-        <AnimateAndFade
-          shown
-          animateOnLeave
-        >
-          {child}
-        </AnimateAndFade>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <AnimateAndFade shown animateOnLeave>
+            {child}
+          </AnimateAndFade>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

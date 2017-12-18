@@ -52,7 +52,10 @@ function getCalendarMonthWeeks(month, weekStartsOn) {
   const weeksInMonth = [];
 
   for (let i = 0; i < 6; i += 1) {
-    const currentWeek = eachDay(currentDay, lastDayOfWeek(currentDay, { weekStartsOn }));
+    const currentWeek = eachDay(
+      currentDay,
+      lastDayOfWeek(currentDay, { weekStartsOn }),
+    );
     weeksInMonth.push(currentWeek);
     currentDay = addWeeks(currentDay, 1);
   }
@@ -63,7 +66,8 @@ function getCalendarMonthWeeks(month, weekStartsOn) {
 function getLastDayOfWeekend(daysOfWeek) {
   const weekend = daysOfWeek.map(day => day.isWeekend);
 
-  if (weekend[0] && weekend[6]) { // weekend stretches over turn the of the week
+  if (weekend[0] && weekend[6]) {
+    // weekend stretches over turn the of the week
     return daysOfWeek[weekend.indexOf(false) - 1].index;
   }
   return daysOfWeek[weekend.lastIndexOf(true)].index;
@@ -72,7 +76,8 @@ function getLastDayOfWeekend(daysOfWeek) {
 function getFirstDayOfWeekend(daysOfWeek) {
   const weekend = daysOfWeek.map(day => day.isWeekend);
 
-  if (weekend[0] && weekend[6]) { // weekend stretches over turn the of the week
+  if (weekend[0] && weekend[6]) {
+    // weekend stretches over turn the of the week
     return daysOfWeek[weekend.lastIndexOf(false) + 1].index;
   }
   return daysOfWeek[weekend.indexOf(true)].index;
@@ -118,10 +123,8 @@ const dateToBoundaries = (date, minDate, maxDate) => {
   return maxDate;
 };
 
-const setMonthYear = (date, newMonth, newYear) => setYear(
-  setMonth(date, newMonth),
-  newYear,
-);
+const setMonthYear = (date, newMonth, newYear) =>
+  setYear(setMonth(date, newMonth), newYear);
 
 const parseIsoDate = parse;
 const formatIsoDate = date => format(date, 'YYYY-MM-DD');

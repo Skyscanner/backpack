@@ -37,8 +37,9 @@ describe('BpkLabel', () => {
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer.create(<BpkLabel className="test">Origin</BpkLabel>).toJSON();
+    const tree = renderer
+      .create(<BpkLabel className="test">Origin</BpkLabel>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
-

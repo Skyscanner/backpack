@@ -24,12 +24,14 @@ import STYLES from './bpk-list.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkListItem = (props) => {
+const BpkListItem = props => {
   const classNames = [getClassName('bpk-list__item')];
 
-  if (props.className) { classNames.push(props.className); }
+  if (props.className) {
+    classNames.push(props.className);
+  }
 
-  return (<li className={classNames.join(' ')}>{props.children}</li>);
+  return <li className={classNames.join(' ')}>{props.children}</li>;
 };
 
 BpkListItem.propTypes = {

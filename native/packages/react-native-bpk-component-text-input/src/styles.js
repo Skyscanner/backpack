@@ -19,19 +19,15 @@
 import { StyleSheet, I18nManager } from 'react-native';
 import {
   borderSizeSm,
-
   colorBlue500,
   colorGray100,
   colorGray300,
   colorGray500,
   colorGray700,
   colorRed500,
-
   fontFamily,
-
   spacingMd,
   spacingSm,
-
   textBaseFontSize,
   textBaseFontWeight,
   textBaseLineHeight,
@@ -81,12 +77,20 @@ const animatedStyles = StyleSheet.create({
 });
 
 const getLabelColorValue = (value, valid, editable) => {
-  if (!editable) { return colorGray100; }
-  if (!value) { return colorGray300; }
+  if (!editable) {
+    return colorGray100;
+  }
+  if (!value) {
+    return colorGray300;
+  }
   return valid === false ? colorRed500 : colorGray500;
 };
 
-const getLabelStyle = (animatedColorValue, animatedLabelValue, { value, valid, editable }) => {
+const getLabelStyle = (
+  animatedColorValue,
+  animatedLabelValue,
+  { value, valid, editable },
+) => {
   const animatedStyle = {
     color: animatedColorValue.interpolate({
       inputRange: INPUT_RANGE,
@@ -123,8 +127,4 @@ const getInputContainerStyle = (animatedColorValue, valid) => {
   return [animatedStyles.inputContainer, animatedStyle];
 };
 
-export {
-  getLabelStyle,
-  getInputContainerStyle,
-  styles,
-};
+export { getLabelStyle, getInputContainerStyle, styles };

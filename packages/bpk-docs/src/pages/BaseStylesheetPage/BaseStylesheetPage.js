@@ -27,7 +27,8 @@ import BpkContentContainer from 'bpk-component-content-container';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
 
-const h5bpLink = 'https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#common-helpers';
+const h5bpLink =
+  'https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#common-helpers';
 
 const BaseStylesheetPage = () => (
   <section>
@@ -35,41 +36,52 @@ const BaseStylesheetPage = () => (
     <BpkContentContainer>
       <Heading level="h1">Base stylesheet</Heading>
       <Paragraph>
-        All components are built on top of a super lightweight base stylesheet. Ensure you include this on the page when
-        consuming any backpack components.
+        All components are built on top of a super lightweight base stylesheet.
+        Ensure you include this on the page when consuming any backpack
+        components.
       </Paragraph>
       <Heading level="h3">What&apos;s in it?</Heading>
       <BpkList>
         <BpkListItem>
-          For improved cross-browser rendering, we
-          use <BpkLink href="http://necolas.github.io/normalize.css/" blank>Normalize.css</BpkLink> to
-          correct small inconsistencies across browsers and devices.
+          For improved cross-browser rendering, we use{' '}
+          <BpkLink href="http://necolas.github.io/normalize.css/" blank>
+            Normalize.css
+          </BpkLink>{' '}
+          to correct small inconsistencies across browsers and devices.
         </BpkListItem>
         <BpkListItem>
           The <BpkCode>box-sizing</BpkCode> is globally set on every element,
           including <BpkCode>*:before</BpkCode> and <BpkCode>*:after</BpkCode>,
-          to <BpkCode>border-box</BpkCode>. This ensures that the declared width of an element is never
-          exceeded due to padding or border.
+          to <BpkCode>border-box</BpkCode>. This ensures that the declared width
+          of an element is never exceeded due to padding or border.
         </BpkListItem>
         <BpkListItem>
-          The default <BpkCode >color</BpkCode>, <BpkCode>font-family</BpkCode>,
+          The default <BpkCode>color</BpkCode>, <BpkCode>font-family</BpkCode>,
           &nbsp;<BpkCode>font-size</BpkCode> & <BpkCode>line-height</BpkCode>.
         </BpkListItem>
         <BpkListItem>
-          Utility classes based on
-          the <BpkLink href={h5bpLink} blank>HTML5 Boilerplate common helpers</BpkLink>,
-          including: &nbsp;<BpkCode>.hidden</BpkCode>,
-          &nbsp;<BpkCode>.visuallyhidden</BpkCode>,
-          &nbsp;<BpkCode>.visuallyhidden.focusable</BpkCode>,
-          &nbsp;<BpkCode>.invisible</BpkCode> and <BpkCode>.clearfix</BpkCode>.
+          Utility classes based on the{' '}
+          <BpkLink href={h5bpLink} blank>
+            HTML5 Boilerplate common helpers
+          </BpkLink>, including: &nbsp;<BpkCode>.hidden</BpkCode>, &nbsp;<BpkCode
+          >
+            .visuallyhidden
+          </BpkCode>, &nbsp;<BpkCode>.visuallyhidden.focusable</BpkCode>, &nbsp;<BpkCode
+          >
+            .invisible
+          </BpkCode>{' '}
+          and <BpkCode>.clearfix</BpkCode>.
         </BpkListItem>
         <BpkListItem>That&apos;s it!</BpkListItem>
       </BpkList>
       <BpkBlockquote extraSpace>
-        <strong>Note:</strong> There is also a small amount of JavaScript that does
-        &quot;<BpkLink href="https://modernizr.com/" blank>Modernizr</BpkLink> like&quot; feature detection (currently
-        used to prevent hover effects on touch devices in downstream components) - make sure this is included in the
-        head also.
+        <strong>Note:</strong> There is also a small amount of JavaScript that
+        does &quot;<BpkLink href="https://modernizr.com/" blank>
+          Modernizr
+        </BpkLink>{' '}
+        like&quot; feature detection (currently used to prevent hover effects on
+        touch devices in downstream components) - make sure this is included in
+        the head also.
       </BpkBlockquote>
       <Heading level="h3">Usage</Heading>
       <BpkCodeBlock>npm install bpk-stylesheets --save-dev</BpkCodeBlock>
@@ -87,9 +99,10 @@ const BaseStylesheetPage = () => (
 `}
       </BpkCodeBlock>
       <Paragraph>
-        Alternatively you could import the uncompiled JavaScript/Sass directly and let Webpack split them out:
+        Alternatively you could import the uncompiled JavaScript/Sass directly
+        and let Webpack split them out:
       </Paragraph>
-      <BpkCodeBlock>{'import \'bpk-stylesheets\';'}</BpkCodeBlock>
+      <BpkCodeBlock>import &apos;bpk-stylesheets&apos;&semi;</BpkCodeBlock>
     </BpkContentContainer>
   </section>
 );

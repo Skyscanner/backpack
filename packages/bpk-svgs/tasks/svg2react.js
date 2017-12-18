@@ -25,7 +25,8 @@ const PLUGIN_NAME = 'svg2react';
 module.exports = (opts = {}) => {
   const stream = new Transform({ objectMode: true });
 
-  stream._transform = (file, encoding, cb) => { // eslint-disable-line no-underscore-dangle
+  // eslint-disable-next-line no-underscore-dangle
+  stream._transform = (file, encoding, cb) => {
     if (file.isNull()) {
       return cb(null, file);
     }
@@ -40,20 +41,23 @@ module.exports = (opts = {}) => {
         svgo: opts,
       })}`;
 
-      return loader.apply({
-        query,
-        cacheable() {},
-        addDependency() {},
-        async() {
-          return (err, result) => {
-            if (err) {
-              return cb(err, null);
-            }
-            file.contents = Buffer.from(result); // eslint-disable-line no-param-reassign
-            return cb(null, file);
-          };
+      return loader.apply(
+        {
+          query,
+          cacheable() {},
+          addDependency() {},
+          async() {
+            return (err, result) => {
+              if (err) {
+                return cb(err, null);
+              }
+              file.contents = Buffer.from(result); // eslint-disable-line no-param-reassign
+              return cb(null, file);
+            };
+          },
         },
-      }, [String(file.contents)]);
+        [String(file.contents)],
+      );
     }
 
     return cb(new PluginError(PLUGIN_NAME, 'Data type not supported'));

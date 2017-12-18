@@ -23,7 +23,7 @@ export const extractAssets = ({ compilation }) => {
   chunks.forEach(({ name, files = [] }) => {
     assets[name] = {};
 
-    files.forEach((path) => {
+    files.forEach(path => {
       switch (true) {
         case /\.js$/.test(path):
           assets[name].js = path;

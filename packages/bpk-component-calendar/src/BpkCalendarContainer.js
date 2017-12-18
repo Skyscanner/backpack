@@ -43,10 +43,17 @@ const focusedDateHasChanged = (currentProps, nextProps) => {
   const rawNextSelectedDate = nextProps.selectedDate || nextProps.date;
   const rawSelectedDate = currentProps.selectedDate || currentProps.date;
 
-  return rawNextSelectedDate && !isSameDay(rawNextSelectedDate, rawSelectedDate);
+  return (
+    rawNextSelectedDate && !isSameDay(rawNextSelectedDate, rawSelectedDate)
+  );
 };
 
-const determineFocusedDate = (rawSelectedDate, initiallyFocusedDate, minDate, maxDate) => {
+const determineFocusedDate = (
+  rawSelectedDate,
+  initiallyFocusedDate,
+  minDate,
+  maxDate,
+) => {
   if (rawSelectedDate) {
     return dateToBoundaries(rawSelectedDate, minDate, maxDate);
   }
@@ -58,7 +65,7 @@ const determineFocusedDate = (rawSelectedDate, initiallyFocusedDate, minDate, ma
   return minDate;
 };
 
-const withCalendarState = (Calendar) => {
+const withCalendarState = Calendar => {
   class BpkCalendarContainer extends Component {
     constructor(props) {
       super(props);
@@ -72,9 +79,13 @@ const withCalendarState = (Calendar) => {
 
       this.state = {
         preventKeyboardFocus: true,
-        focusedDate: determineFocusedDate(rawSelectedDate, initiallyFocusedDate, minDate, maxDate),
+        focusedDate: determineFocusedDate(
+          rawSelectedDate,
+          initiallyFocusedDate,
+          minDate,
+          maxDate,
+        ),
       };
-
 
       this.handleDateSelect = this.handleDateSelect.bind(this);
       this.handleDateFocus = this.handleDateFocus.bind(this);
@@ -104,14 +115,17 @@ const withCalendarState = (Calendar) => {
       );
       const didMonthChange = !isSameMonth(this.state.focusedDate, focusedDate);
 
-      this.setState({
-        preventKeyboardFocus: false,
-        focusedDate,
-      }, () => {
-        if (onMonthChange && didMonthChange) {
-          onMonthChange(event, { month: startOfMonth(focusedDate), source });
-        }
-      });
+      this.setState(
+        {
+          preventKeyboardFocus: false,
+          focusedDate,
+        },
+        () => {
+          if (onMonthChange && didMonthChange) {
+            onMonthChange(event, { month: startOfMonth(focusedDate), source });
+          }
+        },
+      );
     }
 
     handleDateSelect(date) {
@@ -133,7 +147,11 @@ const withCalendarState = (Calendar) => {
 
     handleMonthChange(event, { month, source }) {
       this.handleDateFocus(event, {
-        date: setMonthYear(this.state.focusedDate, month.getMonth(), month.getFullYear()),
+        date: setMonthYear(
+          this.state.focusedDate,
+          month.getMonth(),
+          month.getFullYear(),
+        ),
         source,
       });
     }
@@ -147,28 +165,52 @@ const withCalendarState = (Calendar) => {
 
       switch (event.key) {
         case 'ArrowRight':
-          this.handleDateFocus(event, { date: addDays(focusedDate, reverse * 1), source });
+          this.handleDateFocus(event, {
+            date: addDays(focusedDate, reverse * 1),
+            source,
+          });
           break;
         case 'ArrowLeft':
-          this.handleDateFocus(event, { date: addDays(focusedDate, reverse * -1), source });
+          this.handleDateFocus(event, {
+            date: addDays(focusedDate, reverse * -1),
+            source,
+          });
           break;
         case 'ArrowUp':
-          this.handleDateFocus(event, { date: addDays(focusedDate, -7), source });
+          this.handleDateFocus(event, {
+            date: addDays(focusedDate, -7),
+            source,
+          });
           break;
         case 'ArrowDown':
-          this.handleDateFocus(event, { date: addDays(focusedDate, 7), source });
+          this.handleDateFocus(event, {
+            date: addDays(focusedDate, 7),
+            source,
+          });
           break;
         case 'PageUp':
-          this.handleDateFocus(event, { date: addMonths(focusedDate, -1), source });
+          this.handleDateFocus(event, {
+            date: addMonths(focusedDate, -1),
+            source,
+          });
           break;
         case 'PageDown':
-          this.handleDateFocus(event, { date: addMonths(focusedDate, 1), source });
+          this.handleDateFocus(event, {
+            date: addMonths(focusedDate, 1),
+            source,
+          });
           break;
         case 'Home':
-          this.handleDateFocus(event, { date: startOfMonth(focusedDate), source });
+          this.handleDateFocus(event, {
+            date: startOfMonth(focusedDate),
+            source,
+          });
           break;
         case 'End':
-          this.handleDateFocus(event, { date: lastDayOfMonth(focusedDate), source });
+          this.handleDateFocus(event, {
+            date: lastDayOfMonth(focusedDate),
+            source,
+          });
           break;
         default:
           preventDefault = false;
@@ -199,11 +241,7 @@ const withCalendarState = (Calendar) => {
       const rawSelectedDate = selectedDate || date;
 
       const sanitisedSelectedDate = rawSelectedDate
-        ? dateToBoundaries(
-          rawSelectedDate,
-          sanitisedMinDate,
-          sanitisedMaxDate,
-        )
+        ? dateToBoundaries(rawSelectedDate, sanitisedMinDate, sanitisedMaxDate)
         : null;
       const sanitisedFocusedDate = dateToBoundaries(
         this.state.focusedDate,
@@ -217,14 +255,11 @@ const withCalendarState = (Calendar) => {
           onDateClick={this.handleDateSelect}
           onDateKeyDown={this.handleDateKeyDown}
           onMonthChange={this.handleMonthChange}
-
           month={month}
           preventKeyboardFocus={this.state.preventKeyboardFocus}
           selectedDate={sanitisedSelectedDate}
           focusedDate={sanitisedFocusedDate}
-
           {...calendarProps}
-
           minDate={sanitisedMinDate}
           maxDate={sanitisedMaxDate}
         />
@@ -258,10 +293,12 @@ const withCalendarState = (Calendar) => {
   return BpkCalendarContainer;
 };
 
-export default withCalendarState(composeCalendar(
-  BpkCalendarNav,
-  BpkCalendarGridHeader,
-  TransitioningBpkCalendarGrid,
-  BpkCalendarDate,
-));
+export default withCalendarState(
+  composeCalendar(
+    BpkCalendarNav,
+    BpkCalendarGridHeader,
+    TransitioningBpkCalendarGrid,
+    BpkCalendarDate,
+  ),
+);
 export { withCalendarState };

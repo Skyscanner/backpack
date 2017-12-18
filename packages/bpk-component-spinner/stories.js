@@ -20,8 +20,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import SpinnerLayout from './SpinnerLayout';
-import { BpkSpinner, BpkLargeSpinner, BpkExtraLargeSpinner, SPINNER_TYPES } from './index';
-
+import {
+  BpkSpinner,
+  BpkLargeSpinner,
+  BpkExtraLargeSpinner,
+  SPINNER_TYPES,
+} from './index';
 
 storiesOf('bpk-component-spinner', module)
   .add('Small', () => (

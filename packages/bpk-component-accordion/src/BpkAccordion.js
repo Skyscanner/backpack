@@ -24,11 +24,13 @@ import STYLES from './bpk-accordion.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkAccordion = (props) => {
+const BpkAccordion = props => {
   const classNames = [getClassName('bpk-accordion')];
   const { children, className, ...rest } = props;
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
     <dl className={classNames.join(' ')} {...rest}>

@@ -24,7 +24,12 @@ import {
   touchableOverlayColor,
   touchableOverlayOpacity,
 } from 'bpk-tokens/tokens/base.react.native';
-import { View, ViewPropTypes, TouchableWithoutFeedback, StyleSheet } from 'react-native';
+import {
+  View,
+  ViewPropTypes,
+  TouchableWithoutFeedback,
+  StyleSheet,
+} from 'react-native';
 
 const styles = StyleSheet.create({
   overlay: {
@@ -48,7 +53,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const BpkTouchableOverlay = (props) => {
+const BpkTouchableOverlay = props => {
   const {
     children,
     borderRadius,
@@ -62,27 +67,41 @@ const BpkTouchableOverlay = (props) => {
   let overlayRef = null;
 
   const overlayStyles = [styles.overlay];
-  if (borderRadius === 'sm') { overlayStyles.push(styles.overlayBorderRadiusSm); }
-  if (borderRadius === 'pill') { overlayStyles.push(styles.overlayBorderRadiusPill); }
-  if (overlayStyle) { overlayStyles.push(overlayStyle); }
+  if (borderRadius === 'sm') {
+    overlayStyles.push(styles.overlayBorderRadiusSm);
+  }
+  if (borderRadius === 'pill') {
+    overlayStyles.push(styles.overlayBorderRadiusPill);
+  }
+  if (overlayStyle) {
+    overlayStyles.push(overlayStyle);
+  }
 
   return (
     <TouchableWithoutFeedback
       {...rest}
       onPressIn={() => {
-        overlayRef.setNativeProps({ style: [styles.overlay, styles.overlayShow] });
-        if (onPressIn) { onPressIn(); }
+        overlayRef.setNativeProps({
+          style: [styles.overlay, styles.overlayShow],
+        });
+        if (onPressIn) {
+          onPressIn();
+        }
       }}
       onPressOut={() => {
         overlayRef.setNativeProps({ style: [styles.overlay] });
-        if (onPressOut) { onPressOut(); }
+        if (onPressOut) {
+          onPressOut();
+        }
       }}
     >
       <View style={style}>
         {children}
         <View
           style={overlayStyles}
-          ref={(ref) => { overlayRef = ref; }}
+          ref={ref => {
+            overlayRef = ref;
+          }}
         />
       </View>
     </TouchableWithoutFeedback>

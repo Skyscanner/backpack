@@ -38,22 +38,24 @@ describe('BpkDrawer', () => {
   it('should render correctly in the given target if renderTarget is supplied', () => {
     const customRenderTarget = document.createElement('div');
 
-    const tree = renderer.create(
-      <BpkDrawer
-        id="my-drawer"
-        title="Drawer title"
-        onClose={jest.fn()}
-        closeLabel="Close"
-        closeEvents={closeEvents}
-        dialogRef={jest.fn()}
-        isIphone={false}
-        getApplicationElement={jest.fn()}
-        isOpen
-        renderTarget={() => customRenderTarget}
-      >
-        Drawer content
-      </BpkDrawer>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkDrawer
+          id="my-drawer"
+          title="Drawer title"
+          onClose={jest.fn()}
+          closeLabel="Close"
+          closeEvents={closeEvents}
+          dialogRef={jest.fn()}
+          isIphone={false}
+          getApplicationElement={jest.fn()}
+          isOpen
+          renderTarget={() => customRenderTarget}
+        >
+          Drawer content
+        </BpkDrawer>,
+      )
+      .toJSON();
 
     expect(tree).toMatchSnapshot();
     expect(customRenderTarget).toMatchSnapshot();

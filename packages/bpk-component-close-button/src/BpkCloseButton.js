@@ -28,13 +28,13 @@ const getClassName = cssModules(STYLES);
 
 const CloseButtonIcon = withButtonAlignment(CloseIcon);
 
-const BpkCloseButton = (props) => {
+const BpkCloseButton = props => {
   const classNames = [getClassName('bpk-close-button')];
-  const {
-    label, onClick, className, ...rest
-  } = props;
+  const { label, onClick, className, ...rest } = props;
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
     <button

@@ -27,7 +27,13 @@ import STYLES from './bpk-data-table.scss';
 import BpkDataTableColumn from './BpkDataTableColumn';
 
 const getClassName = cssModules(STYLES);
-const omittedTableProps = ['rowGetter', 'rowCount', 'sortBy', 'sortDirection', 'sort'];
+const omittedTableProps = [
+  'rowGetter',
+  'rowCount',
+  'sortBy',
+  'sortDirection',
+  'sort',
+];
 
 const sortList = ({ sortBy, sortDirection, list }) => {
   const sorted = _sortBy(list, sortBy);
@@ -88,30 +94,29 @@ class BpkDataTable extends Component {
   }
 
   sort({ sortBy, sortDirection }) {
-    const sortedList = sortList({ sortBy, sortDirection, list: this.props.rows });
+    const sortedList = sortList({
+      sortBy,
+      sortDirection,
+      list: this.props.rows,
+    });
 
     this.setState({ sortBy, sortDirection, sortedList });
   }
 
   renderTable(width) {
-    const {
-      sortedList,
-      sortDirection,
-      sortBy,
-    } = this.state;
+    const { sortedList, sortDirection, sortBy } = this.state;
 
-    const {
-      children,
-      className,
-      headerClassName,
-      ...restOfProps
-    } = this.props;
+    const { children, className, headerClassName, ...restOfProps } = this.props;
 
     const classNames = [getClassName('bpk-data-table')];
-    if (className) { classNames.push(className); }
+    if (className) {
+      classNames.push(className);
+    }
 
     const headerClassNames = [getClassName('bpk-data-table__header-column')];
-    if (headerClassName) { headerClassNames.push(headerClassName); }
+    if (headerClassName) {
+      headerClassNames.push(headerClassName);
+    }
 
     return (
       <Table
@@ -127,7 +132,7 @@ class BpkDataTable extends Component {
         sortBy={sortBy}
         sortDirection={sortDirection}
       >
-        { children.map(BpkDataTableColumn.toColumn) }
+        {children.map(BpkDataTableColumn.toColumn)}
       </Table>
     );
   }
@@ -138,7 +143,9 @@ class BpkDataTable extends Component {
     }
 
     return (
-      <AutoSizer disableHeight>{({ width }) => this.renderTable(width)}</AutoSizer>
+      <AutoSizer disableHeight>
+        {({ width }) => this.renderTable(width)}
+      </AutoSizer>
     );
   }
 }

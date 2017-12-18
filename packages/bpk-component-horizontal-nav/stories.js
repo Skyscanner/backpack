@@ -18,7 +18,12 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { spacingXs, spacingSm, onePixelRem, colorGray100 } from 'bpk-tokens/tokens/base.es6';
+import {
+  spacingXs,
+  spacingSm,
+  onePixelRem,
+  colorGray100,
+} from 'bpk-tokens/tokens/base.es6';
 
 import BpkHorizontalNav, { BpkHorizontalNavItem } from './index';
 
@@ -50,15 +55,17 @@ storiesOf('bpk-component-horizontal-nav', module)
   .add('Anchor tags', () => (
     <BpkHorizontalNav>
       <BpkHorizontalNavItem href="#">Flights</BpkHorizontalNavItem>
-      <BpkHorizontalNavItem selected href="#">Hotels</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem selected href="#">
+        Hotels
+      </BpkHorizontalNavItem>
       <BpkHorizontalNavItem href="#">Car hire</BpkHorizontalNavItem>
     </BpkHorizontalNav>
   ))
   .add('Extreme example', () => (
     <BpkHorizontalNav>
       <BpkHorizontalNavItem selected>
-        Flights Flights Flights Flights Flights Flights Flights Flights Flights Flights Flights Flights Flights
-        Flights Flights Flights
+        Flights Flights Flights Flights Flights Flights Flights Flights Flights
+        Flights Flights Flights Flights Flights Flights Flights
       </BpkHorizontalNavItem>
       <BpkHorizontalNavItem>
         HotelsHotelsHotelsHotelsHotelsHotels

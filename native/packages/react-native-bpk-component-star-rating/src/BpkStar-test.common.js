@@ -24,15 +24,9 @@ import BpkStar from './BpkStar';
 
 const commonTests = () => {
   describe('BpkStar', () => {
-    [
-      STAR_TYPES.EMPTY,
-      STAR_TYPES.FULL,
-      STAR_TYPES.HALF,
-    ].forEach((state) => {
+    [STAR_TYPES.EMPTY, STAR_TYPES.FULL, STAR_TYPES.HALF].forEach(state => {
       it(`should render correctly when ${state}`, () => {
-        const tree = renderer.create(
-          <BpkStar type={state} />,
-        ).toJSON();
+        const tree = renderer.create(<BpkStar type={state} />).toJSON();
         expect(tree).toMatchSnapshot();
       });
     });

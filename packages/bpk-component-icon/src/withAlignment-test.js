@@ -23,19 +23,41 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import withAlignment from './withAlignment';
 import {
-  lineHeightSm, lineHeightBase, lineHeightLg, lineHeightXl, lineHeightXxl,
-  iconSizeSm, iconSizeBase, iconSizeLg, iconSizeXl, iconSizeXxl
+  lineHeightSm,
+  lineHeightBase,
+  lineHeightLg,
+  lineHeightXl,
+  lineHeightXxl,
+  iconSizeSm,
+  iconSizeBase,
+  iconSizeLg,
+  iconSizeXl,
+  iconSizeXxl,
 } from 'bpk-tokens/tokens/base.es6';
 
 describe('withAlignment', () => {
-  const lineHeights = [lineHeightSm, lineHeightBase, lineHeightLg, lineHeightXl, lineHeightXxl];
+  const lineHeights = [
+    lineHeightSm,
+    lineHeightBase,
+    lineHeightLg,
+    lineHeightXl,
+    lineHeightXxl,
+  ];
   const iconSizes = [iconSizeSm, iconSizeLg];
 
   it('should render correctly', () => {
     for (var l = 0; l < lineHeights.length; l++) {
       for (var i = 0; i < iconSizes.length; i++) {
-        const MyComponent = props => <div {...props}>test lineHeight {lineHeights[l]} and iconsSize {iconSizes[i]}</div>;
-        const MyAlignedComponent = withAlignment(MyComponent, lineHeights[l], iconSizes[i]);
+        const MyComponent = props => (
+          <div {...props}>
+            test lineHeight {lineHeights[l]} and iconsSize {iconSizes[i]}
+          </div>
+        );
+        const MyAlignedComponent = withAlignment(
+          MyComponent,
+          lineHeights[l],
+          iconSizes[i],
+        );
 
         const tree = renderer.create(<MyAlignedComponent />).toJSON();
         expect(tree).toMatchSnapshot();
@@ -44,17 +66,35 @@ describe('withAlignment', () => {
   });
 
   it('should keep wrapped-component styling', () => {
-    const FloatingComponent = props => <div {...props} >test lineHeight {lineHeightLg} and iconsSize {iconSizeSm}</div>;
-    const AlignedFloatingComponent = withAlignment(FloatingComponent, lineHeightLg, iconSizeSm);
+    const FloatingComponent = props => (
+      <div {...props}>
+        test lineHeight {lineHeightLg} and iconsSize {iconSizeSm}
+      </div>
+    );
+    const AlignedFloatingComponent = withAlignment(
+      FloatingComponent,
+      lineHeightLg,
+      iconSizeSm,
+    );
 
-    const tree = renderer.create(<AlignedFloatingComponent style={{ float: 'right'}} />).toJSON();
+    const tree = renderer
+      .create(<AlignedFloatingComponent style={{ float: 'right' }} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should wrap the component display name', () => {
     const shallowRenderer = new ReactShallowRenderer();
-    const AlignedComponent = withAlignment(props => <div {...props} >test</div>, lineHeightLg, iconSizeSm);
-    const Wrapper = () => <div><AlignedComponent /></div>;
+    const AlignedComponent = withAlignment(
+      props => <div {...props}>test</div>,
+      lineHeightLg,
+      iconSizeSm,
+    );
+    const Wrapper = () => (
+      <div>
+        <AlignedComponent />
+      </div>
+    );
 
     const tree = shallowRenderer.render(<Wrapper />);
     expect(tree).toMatchSnapshot();

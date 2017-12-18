@@ -17,9 +17,7 @@
  */
 const THEME_CHANGE_EVENT = 'bpkchangetheme';
 
-const getHtmlElement = () => (typeof document !== 'undefined' ? document.querySelector('html') : {});
+const getHtmlElement = () =>
+  typeof document !== 'undefined' ? document.querySelector('html') : {};
 
-export {
-  THEME_CHANGE_EVENT,
-  getHtmlElement,
-};
+export { THEME_CHANGE_EVENT, getHtmlElement };

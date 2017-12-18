@@ -37,7 +37,9 @@ describe('EnhancedComponent', () => {
     component.instance().forceUpdate = forceUpdateSpy;
     expect(forceUpdateSpy).not.toHaveBeenCalled();
 
-    getHtmlElement().dispatchEvent(new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme: null } }));
+    getHtmlElement().dispatchEvent(
+      new CustomEvent(THEME_CHANGE_EVENT, { detail: { theme: null } }),
+    );
 
     expect(forceUpdateSpy).toHaveBeenCalled();
   });

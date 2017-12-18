@@ -16,13 +16,7 @@
  * limitations under the License.
  */
 
-import {
-  Text,
-  View,
-  Platform,
-  ScrollView,
-  StyleSheet,
-} from 'react-native';
+import { Text, View, Platform, ScrollView, StyleSheet } from 'react-native';
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
@@ -45,11 +39,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const getIconType = type => (
-  type === 'destructive' ? 'trash' : 'long-arrow-right'
-);
+const getIconType = type =>
+  type === 'destructive' ? 'trash' : 'long-arrow-right';
 
-const generateButtonStoryForType = (type) => {
+const generateButtonStoryForType = type => {
   function getLargeVersion() {
     return (
       <View>
@@ -100,7 +93,7 @@ const generateButtonStoryForType = (type) => {
           onPress={action(`${type} disabled pressed, somehow`)}
           style={styles.buttonStyles}
         />
-        {Platform.OS === 'ios' ?
+        {Platform.OS === 'ios' ? (
           <BpkButton
             type={type}
             title="Icon only"
@@ -109,8 +102,7 @@ const generateButtonStoryForType = (type) => {
             onPress={action(`${type} icon only button clicked`)}
             style={styles.buttonStyles}
           />
-          : null}
-
+        ) : null}
       </View>
       {Platform.OS === 'ios' ? getLargeVersion() : null}
     </View>
@@ -131,24 +123,16 @@ const allThemedButtons = (
 
 storiesOf('BpkButton', module)
   .add('docs:primary', () => (
-    <View>
-      {generateButtonStoryForType('primary')}
-    </View>
+    <View>{generateButtonStoryForType('primary')}</View>
   ))
   .add('docs:secondary', () => (
-    <View>
-      {generateButtonStoryForType('secondary')}
-    </View>
+    <View>{generateButtonStoryForType('secondary')}</View>
   ))
   .add('docs:destructive', () => (
-    <View>
-      {generateButtonStoryForType('destructive')}
-    </View>
+    <View>{generateButtonStoryForType('destructive')}</View>
   ))
   .add('docs:featured', () => (
-    <View>
-      {generateButtonStoryForType('featured')}
-    </View>
+    <View>{generateButtonStoryForType('featured')}</View>
   ))
   .add('docs:withTheme', () => allThemedButtons)
   .add('All Button Types', () => (
@@ -174,7 +158,9 @@ storiesOf('BpkButton', module)
     function getIconOnlyVersion() {
       return (
         <View>
-          <StorySubheading>Passing arbitrary components as the icon prop</StorySubheading>
+          <StorySubheading>
+            Passing arbitrary components as the icon prop
+          </StorySubheading>
           <BpkButton
             type="primary"
             title="I am an icon"
@@ -196,12 +182,12 @@ storiesOf('BpkButton', module)
           onPress={action('Button with long title pressed')}
           style={styles.buttonStyles}
         />
-        {Platform.OS === 'ios' ?
+        {Platform.OS === 'ios' ? (
           <View>
             {getLargeVersion()}
             {getIconOnlyVersion()}
           </View>
-        : null}
-
-      </View>);
+        ) : null}
+      </View>
+    );
   });

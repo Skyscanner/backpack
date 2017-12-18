@@ -23,79 +23,106 @@ import BpkThemeProvider from './BpkThemeProvider';
 
 describe('BpkThemeProvider', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <BpkThemeProvider
-        theme={{ color: 'white' }}
-        themeAttributes={['color']}
-      >
-        <p>Lorem Ipsum</p>
-      </BpkThemeProvider>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkThemeProvider
+          theme={{ color: 'white' }}
+          themeAttributes={['color']}
+        >
+          <p>Lorem Ipsum</p>
+        </BpkThemeProvider>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer.create(
-      <BpkThemeProvider
-        theme={{ color: 'white' }}
-        themeAttributes={['color']}
-        id="arbitrary"
-      >
-        <p>Lorem Ipsum</p>
-      </BpkThemeProvider>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkThemeProvider
+          theme={{ color: 'white' }}
+          themeAttributes={['color']}
+          id="arbitrary"
+        >
+          <p>Lorem Ipsum</p>
+        </BpkThemeProvider>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should correctly flatten the themeAttribute prop', () => {
-    const tree = renderer.create(
-      <BpkThemeProvider
-        theme={{ color: 'white', background: 'black' }}
-        themeAttributes={[['color'], ['background']]}
-      >
-        <p>Lorem Ipsum</p>
-      </BpkThemeProvider>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkThemeProvider
+          theme={{ color: 'white', background: 'black' }}
+          themeAttributes={[['color'], ['background']]}
+        >
+          <p>Lorem Ipsum</p>
+        </BpkThemeProvider>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render without theming when theme is missing attributes', () => {
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
-    const tree = renderer.create(
-      <BpkThemeProvider
-        theme={{}}
-        themeAttributes={['color']}
-      >
-        <p>Lorem Ipsum</p>
-      </BpkThemeProvider>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkThemeProvider theme={{}} themeAttributes={['color']}>
+          <p>Lorem Ipsum</p>
+        </BpkThemeProvider>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should strip out extraneous theme attributes', () => {
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
-    const tree = renderer.create(
-      <BpkThemeProvider
-        theme={{ a: 'a', color: 'white' }}
-        themeAttributes={['color']}
-      >
-        <p>Lorem Ipsum</p>
-      </BpkThemeProvider>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkThemeProvider
+          theme={{ a: 'a', color: 'white' }}
+          themeAttributes={['color']}
+        >
+          <p>Lorem Ipsum</p>
+        </BpkThemeProvider>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should warn about missing theme attributes', () => {
-    expect(BpkThemeProvider.propTypes.themeAttributes({
-      theme: {},
-      themeAttributes: ['one'],
-    }, 'themeAttributes', 'BpkThemeProvider').toString()).toEqual('Error: BpkThemeProvider: To apply theming, the theme prop must include `one` (missing `one`)'); // eslint-disable-line max-len
+    expect(
+      BpkThemeProvider.propTypes
+        .themeAttributes(
+          {
+            theme: {},
+            themeAttributes: ['one'],
+          },
+          'themeAttributes',
+          'BpkThemeProvider',
+        )
+        .toString(),
+    ).toEqual(
+      'Error: BpkThemeProvider: To apply theming, the theme prop must include `one` (missing `one`)',
+    ); // eslint-disable-line max-len
   });
 
   it('should warn about extraneous theme attributes', () => {
-    expect(BpkThemeProvider.propTypes.themeAttributes({
-      theme: { one: 'a', two: 'a' },
-      themeAttributes: ['one'],
-    }, 'themeAttributes', 'BpkThemeProvider').toString()).toEqual('Error: BpkThemeProvider: Extraneous theme attributes supplied: `two`.'); // eslint-disable-line max-len
+    expect(
+      BpkThemeProvider.propTypes
+        .themeAttributes(
+          {
+            theme: { one: 'a', two: 'a' },
+            themeAttributes: ['one'],
+          },
+          'themeAttributes',
+          'BpkThemeProvider',
+        )
+        .toString(),
+    ).toEqual(
+      'Error: BpkThemeProvider: Extraneous theme attributes supplied: `two`.',
+    ); // eslint-disable-line max-len
   });
 });

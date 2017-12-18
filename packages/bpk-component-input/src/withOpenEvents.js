@@ -30,21 +30,21 @@ const KEYCODES = {
   SPACEBAR: 32,
 };
 
-const handleKeyEvent = (keyCode, callback) => (e) => {
+const handleKeyEvent = (keyCode, callback) => e => {
   if (e.keyCode === keyCode) {
     e.preventDefault();
     callback();
   }
 };
 
-const withEventHandler = (fn, eventHandler) => (e) => {
+const withEventHandler = (fn, eventHandler) => e => {
   fn(e);
   if (eventHandler) {
     eventHandler(e);
   }
 };
 
-const withOpenEvents = (InputComponent) => {
+const withOpenEvents = InputComponent => {
   class WithOpenEvents extends React.Component {
     constructor(props) {
       super(props);
@@ -102,18 +102,29 @@ const withOpenEvents = (InputComponent) => {
       delete rest.isOpen;
 
       const classNames = [getClassName('bpk-input--with-open-events')];
-      if (className) { classNames.push(className); }
+      if (className) {
+        classNames.push(className);
+      }
 
       const eventHandlers = {
         onClick: withEventHandler(onOpen, onClick),
-        onKeyDown: withEventHandler(handleKeyEvent(KEYCODES.ENTER, onOpen), onKeyDown),
-        onKeyUp: withEventHandler(handleKeyEvent(KEYCODES.SPACEBAR, onOpen), onKeyUp),
+        onKeyDown: withEventHandler(
+          handleKeyEvent(KEYCODES.ENTER, onOpen),
+          onKeyDown,
+        ),
+        onKeyUp: withEventHandler(
+          handleKeyEvent(KEYCODES.SPACEBAR, onOpen),
+          onKeyUp,
+        ),
       };
 
       if (hasTouchSupport) {
         // Prevents the mobile keyboard from opening (iOS / Android)
         eventHandlers.readOnly = 'readOnly';
-        eventHandlers.onTouchEnd = withEventHandler(this.handleTouchEnd, onTouchEnd);
+        eventHandlers.onTouchEnd = withEventHandler(
+          this.handleTouchEnd,
+          onTouchEnd,
+        );
       } else {
         eventHandlers.onFocus = withEventHandler(this.handleFocus, onFocus);
         eventHandlers.onBlur = withEventHandler(this.handleBlur, onBlur);
@@ -147,7 +158,12 @@ const withOpenEvents = (InputComponent) => {
   WithOpenEvents.defaultProps = {
     // Custom props
     isOpen: false,
-    hasTouchSupport: !!(typeof window !== 'undefined' && (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)), // eslint-disable-line
+    hasTouchSupport: !!(
+      typeof window !== 'undefined' &&
+      ('ontouchstart' in window ||
+        // eslint-disable-next-line no-undef
+        (window.DocumentTouch && document instanceof DocumentTouch))
+    ),
     onOpen: null,
     // Input props
     className: null,
@@ -159,7 +175,10 @@ const withOpenEvents = (InputComponent) => {
     onKeyUp: null,
   };
 
-  WithOpenEvents.displayName = wrapDisplayName(InputComponent, 'withOpenEvents');
+  WithOpenEvents.displayName = wrapDisplayName(
+    InputComponent,
+    'withOpenEvents',
+  );
 
   return WithOpenEvents;
 };

@@ -24,25 +24,48 @@ import STYLES from './bpk-select.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkSelect = (props) => {
+const BpkSelect = props => {
   const classNames = [getClassName('bpk-select')];
   const {
-    valid, large, docked, dockedFirst, dockedMiddle, dockedLast, className, ...rest
+    valid,
+    large,
+    docked,
+    dockedFirst,
+    dockedMiddle,
+    dockedLast,
+    className,
+    ...rest
   } = props;
 
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
 
-  if (large) { classNames.push(getClassName('bpk-select--large')); }
-  if (docked) { classNames.push(getClassName('bpk-select--docked')); }
-  if (dockedFirst) { classNames.push(getClassName('bpk-select--docked-first')); }
-  if (dockedMiddle) { classNames.push(getClassName('bpk-select--docked-middle')); }
-  if (dockedLast) { classNames.push(getClassName('bpk-select--docked-last')); }
-  if (className) { classNames.push(className); }
+  if (large) {
+    classNames.push(getClassName('bpk-select--large'));
+  }
+  if (docked) {
+    classNames.push(getClassName('bpk-select--docked'));
+  }
+  if (dockedFirst) {
+    classNames.push(getClassName('bpk-select--docked-first'));
+  }
+  if (dockedMiddle) {
+    classNames.push(getClassName('bpk-select--docked-middle'));
+  }
+  if (dockedLast) {
+    classNames.push(getClassName('bpk-select--docked-last'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
-    <select className={classNames.join(' ')} aria-invalid={isInvalid} {...rest} />
+    <select
+      className={classNames.join(' ')}
+      aria-invalid={isInvalid}
+      {...rest}
+    />
   );
 };
 

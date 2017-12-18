@@ -16,20 +16,21 @@
  * limitations under the License.
  */
 
-import {
-  ScrollView,
-  StyleSheet,
-  View,
-  ViewPropTypes,
-} from 'react-native';
+import { ScrollView, StyleSheet, View, ViewPropTypes } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { colorGray100, borderSizeSm } from 'bpk-tokens/tokens/base.react.native';
+import {
+  colorGray100,
+  borderSizeSm,
+} from 'bpk-tokens/tokens/base.react.native';
 
 import BpkHorizontalNavSelectedIndicator from './BpkHorizontalNavSelectedIndicator';
 import withAnimatedProps from './withAnimatedProps';
 
-const AnimatedIndicator = withAnimatedProps(BpkHorizontalNavSelectedIndicator, ['xOffset', 'width']);
+const AnimatedIndicator = withAnimatedProps(BpkHorizontalNavSelectedIndicator, [
+  'xOffset',
+  'width',
+]);
 
 const styles = StyleSheet.create({
   horizontalNav: {
@@ -83,32 +84,37 @@ class BpkHorizontalNav extends React.Component {
   childrenPositions = {};
 
   render() {
-    const {
-      children,
-      selectedId,
-      spaceAround,
-      style,
-      ...rest
-    } = this.props;
+    const { children, selectedId, spaceAround, style, ...rest } = this.props;
 
     const navStyle = [styles.horizontalNav];
-    if (spaceAround) { navStyle.push(styles.spaceAround); }
+    if (spaceAround) {
+      navStyle.push(styles.spaceAround);
+    }
 
-    const enhancedChildren = React.Children.map(children, child => (
-      React.isValidElement(child) && React.cloneElement(child, {
-        key: child.props.id,
-        selected: selectedId === child.props.id,
+    const enhancedChildren = React.Children.map(
+      children,
+      child =>
+        React.isValidElement(child) &&
+        React.cloneElement(child, {
+          key: child.props.id,
+          selected: selectedId === child.props.id,
 
-        // Have children report their layout details after being laid out.
-        // This allows the selected indicator to be correctly positioned.
-        onLayout: event => this.onChildLayout(event, child.props.id),
-      })));
+          // Have children report their layout details after being laid out.
+          // This allows the selected indicator to be correctly positioned.
+          onLayout: event => this.onChildLayout(event, child.props.id),
+        }),
+    );
 
     const renderIndicator = () => {
       if (this.state.indicatorOffsetX === null) {
         return null;
       }
-      return <AnimatedIndicator xOffset={this.state.indicatorOffsetX} width={this.state.indicatorWidth} />;
+      return (
+        <AnimatedIndicator
+          xOffset={this.state.indicatorOffsetX}
+          width={this.state.indicatorWidth}
+        />
+      );
     };
 
     return (
@@ -120,10 +126,8 @@ class BpkHorizontalNav extends React.Component {
         {...rest}
       >
         <View>
-          <View style={styles.horizontalNavInner}>
-            {enhancedChildren}
-          </View>
-          { renderIndicator() }
+          <View style={styles.horizontalNavInner}>{enhancedChildren}</View>
+          {renderIndicator()}
         </View>
       </ScrollView>
     );

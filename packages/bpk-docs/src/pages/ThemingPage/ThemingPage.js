@@ -47,7 +47,8 @@ import {
 } from './../../constants/routes';
 
 const CONTEXT_API_URL = 'https://reactjs.org/docs/context.html';
-const CSS_VARIABLES_URL = 'https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables';
+const CSS_VARIABLES_URL =
+  'https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables';
 
 const components = [
   {
@@ -123,7 +124,16 @@ const components = [
       </BpkList>,
       <BpkBlockquote>
         {/* eslint-disable max-len */}
-        <strong>Note:</strong> Backpack&#39;s theming is based on <BpkLink href={CSS_VARIABLES_URL} blank>CSS Variables</BpkLink> and thus will not be supported in some browsers. In these cases Backpack components will gracefully degrade to the default Skyscanner theme. For an overview of this check <BpkLink href="https://caniuse.com/#feat=css-variables" blank>caniuse</BpkLink>.
+        <strong>Note:</strong> Backpack&#39;s theming is based on{' '}
+        <BpkLink href={CSS_VARIABLES_URL} blank>
+          CSS Variables
+        </BpkLink>{' '}
+        and thus will not be supported in some browsers. In these cases Backpack
+        components will gracefully degrade to the default Skyscanner theme. For
+        an overview of this check{' '}
+        <BpkLink href="https://caniuse.com/#feat=css-variables" blank>
+          caniuse
+        </BpkLink>.
         {/* eslint-enable max-len */}
       </BpkBlockquote>,
     ],
@@ -131,26 +141,29 @@ const components = [
   },
 ];
 
-
-const ThemingPage = () => (<DocsPageBuilder
-  title="Theming"
-  blurb={[
-    <Paragraph>
-      Backpack has full theming support through its theme provider component.
-      This component provides a theme to all themeable components underneath itself.
-      In the render tree, all themeable components will have access to the provided theme, even
-      when they are multiple levels deep.
-    </Paragraph>,
-    <Paragraph>
-      In React Native, this is achieved using React&apos;s <BpkLink href={CONTEXT_API_URL}>context API</BpkLink>.
-      On the web, <BpkLink href={CSS_VARIABLES_URL}>CSS variables</BpkLink> are used.
-    </Paragraph>,
-    <Paragraph>
-      Each themeable component lists the theme attributes it requires in its readme.
-    </Paragraph>,
-  ]}
-  components={components}
-  showMenu={false}
-/>);
+const ThemingPage = () => (
+  <DocsPageBuilder
+    title="Theming"
+    blurb={[
+      <Paragraph>
+        Backpack has full theming support through its theme provider component.
+        This component provides a theme to all themeable components underneath
+        itself. In the render tree, all themeable components will have access to
+        the provided theme, even when they are multiple levels deep.
+      </Paragraph>,
+      <Paragraph>
+        In React Native, this is achieved using React&apos;s{' '}
+        <BpkLink href={CONTEXT_API_URL}>context API</BpkLink>. On the web,{' '}
+        <BpkLink href={CSS_VARIABLES_URL}>CSS variables</BpkLink> are used.
+      </Paragraph>,
+      <Paragraph>
+        Each themeable component lists the theme attributes it requires in its
+        readme.
+      </Paragraph>,
+    ]}
+    components={components}
+    showMenu={false}
+  />
+);
 
 export default ThemingPage;

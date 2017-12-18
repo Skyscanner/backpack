@@ -16,6 +16,4 @@
  * limitations under the License.
  */
 
-export default [
-  'checkboxCheckedColor',
-];
+export default ['checkboxCheckedColor'];

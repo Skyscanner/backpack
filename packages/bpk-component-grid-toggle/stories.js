@@ -21,7 +21,6 @@ import { storiesOf } from '@storybook/react';
 
 import BpkGridToggle from './index';
 
-storiesOf('bpk-component-grid-toggle', module)
-  .add('Example', () => (
-    <BpkGridToggle />
-  ));
+storiesOf('bpk-component-grid-toggle', module).add('Example', () => (
+  <BpkGridToggle />
+));

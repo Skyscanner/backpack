@@ -24,14 +24,18 @@ import STYLES from './bpk-table.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkTableCell = (props) => {
+const BpkTableCell = props => {
   const classNames = [getClassName('bpk-table__cell')];
   const { className, ...rest } = props;
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
-    <td className={classNames.join(' ')} {...rest}>{props.children}</td>
+    <td className={classNames.join(' ')} {...rest}>
+      {props.children}
+    </td>
   );
 };
 

@@ -25,13 +25,13 @@ import STYLES from './bpk-pagination-page.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkPaginationPage = (props) => {
+const BpkPaginationPage = props => {
   const classNames = [getClassName('bpk-pagination-page')];
-  const {
-    page, onSelect, isSelected, pageLabel,
-  } = props;
+  const { page, onSelect, isSelected, pageLabel } = props;
 
-  if (isSelected) { classNames.push(getClassName('bpk-pagination-page--selected')); }
+  if (isSelected) {
+    classNames.push(getClassName('bpk-pagination-page--selected'));
+  }
 
   return (
     <BpkButton
@@ -41,7 +41,7 @@ const BpkPaginationPage = (props) => {
       aria-label={pageLabel(page, isSelected)}
       aria-current={isSelected}
     >
-      <span>{ page }</span>
+      <span>{page}</span>
     </BpkButton>
   );
 };

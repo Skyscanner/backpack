@@ -23,4 +23,11 @@ import BpkTableRow from './src/BpkTableRow';
 import BpkTableCell from './src/BpkTableCell';
 import BpkTableHeadCell from './src/BpkTableHeadCell';
 
-export { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableCell, BpkTableHeadCell };
+export {
+  BpkTable,
+  BpkTableHead,
+  BpkTableBody,
+  BpkTableRow,
+  BpkTableCell,
+  BpkTableHeadCell,
+};

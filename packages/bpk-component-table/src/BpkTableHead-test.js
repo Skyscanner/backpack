@@ -22,29 +22,35 @@ import BpkTableHead from './BpkTableHead';
 
 describe('BpkTableHead', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <BpkTableHead>
-        <th />
-      </BpkTableHead>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkTableHead>
+          <th />
+        </BpkTableHead>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with custom class', () => {
-    const tree = renderer.create(
-      <BpkTableHead className="my-custom-class">
-        <th />
-      </BpkTableHead>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkTableHead className="my-custom-class">
+          <th />
+        </BpkTableHead>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
-    const tree = renderer.create(
-      <BpkTableHead id="my-custom-id" data-foo="bar">
-        <th />
-      </BpkTableHead>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkTableHead id="my-custom-id" data-foo="bar">
+          <th />
+        </BpkTableHead>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

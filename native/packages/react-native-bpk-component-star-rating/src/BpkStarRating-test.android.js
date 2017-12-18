@@ -28,8 +28,9 @@ jest.mock('react-native', () => {
   return reactNative;
 });
 
-jest.mock('bpk-tokens/tokens/base.react.native',
-  () => require.requireActual('bpk-tokens/tokens/base.react.native.android.js'));
+jest.mock('bpk-tokens/tokens/base.react.native', () =>
+  require.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+);
 
 describe('Android', () => {
   commonTests();

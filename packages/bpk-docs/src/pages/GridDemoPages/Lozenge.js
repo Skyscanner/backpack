@@ -25,7 +25,9 @@ import STYLES from './grid-demo-pages.scss';
 const getClassName = cssModules(STYLES);
 
 const Lozenge = ({ children }) => (
-  <div className={getClassName('bpkdocs-grid-demo-pages__lozenge')}>{children}</div>
+  <div className={getClassName('bpkdocs-grid-demo-pages__lozenge')}>
+    {children}
+  </div>
 );
 
 Lozenge.propTypes = {

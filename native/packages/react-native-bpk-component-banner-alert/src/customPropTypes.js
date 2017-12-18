@@ -18,7 +18,11 @@
 
 export const dismissablePropType = (props, propName, componentName) => {
   if (props[propName] && props.children !== null) {
-    return new Error(`Invalid prop \`${propName}\` with value \`${props[propName]}\` supplied to \`${componentName}\`. Banner alert cannot be expanded to show children if it is dismissable.`); // eslint-disable-line max-len
+    return new Error(
+      `Invalid prop \`${propName}\` with value \`${
+        props[propName]
+      }\` supplied to \`${componentName}\`. Banner alert cannot be expanded to show children if it is dismissable.`,
+    ); // eslint-disable-line max-len
   }
 
   return false;

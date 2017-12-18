@@ -64,7 +64,7 @@ const offices = [
     country: 'United States',
   },
   {
-    name: 'Shenzhen Bao\'an International',
+    name: "Shenzhen Bao'an International",
     code: 'SZX',
     country: 'China',
   },
@@ -80,16 +80,19 @@ const offices = [
   },
 ];
 
-const getSuggestions = (value) => {
+const getSuggestions = value => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
-  return inputLength === 0 ? [] : offices.filter(office =>
-    office.name.toLowerCase().indexOf(inputValue) !== -1,
-  );
+  return inputLength === 0
+    ? []
+    : offices.filter(
+        office => office.name.toLowerCase().indexOf(inputValue) !== -1,
+      );
 };
 
-const getSuggestionValue = suggestion => `${suggestion.name} (${suggestion.code})`;
+const getSuggestionValue = suggestion =>
+  `${suggestion.name} (${suggestion.code})`;
 
 class AutosuggestExample extends React.Component {
   constructor() {
@@ -101,8 +104,12 @@ class AutosuggestExample extends React.Component {
     };
 
     this.onChange = this.onChange.bind(this);
-    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this);
-    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this);
+    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(
+      this,
+    );
+    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(
+      this,
+    );
   }
 
   onChange(e, { newValue }) {

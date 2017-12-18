@@ -26,7 +26,10 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 Object.assign = assign;
 
 const TransitionInitialMount = ({
-  appearClassName, appearActiveClassName, transitionTimeout, children,
+  appearClassName,
+  appearActiveClassName,
+  transitionTimeout,
+  children,
 }) => (
   <CSSTransition
     classNames={{

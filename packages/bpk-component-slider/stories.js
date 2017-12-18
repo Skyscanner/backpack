@@ -38,7 +38,11 @@ class SliderContainer extends Component {
   }
 
   render() {
-    const valueComponent = (min, max) => <p>{min} - {max}</p>;
+    const valueComponent = (min, max) => (
+      <p>
+        {min} - {max}
+      </p>
+    );
     const min = this.props.min || 0;
     return (
       <div>
@@ -63,41 +67,20 @@ class SliderContainer extends Component {
 const EnhancedSlider = updateOnDirectionChange(SliderContainer);
 
 storiesOf('bpk-component-slider', module)
-  .add('Simple slider', () => (
-    <EnhancedSlider
-      min={0}
-      value={50}
-    />
-  ))
-  .add('Simple large slider', () => (
-    <EnhancedSlider
-      min={0}
-      value={50}
-      large
-    />
-  ))
+  .add('Simple slider', () => <EnhancedSlider min={0} value={50} />)
+  .add('Simple large slider', () => <EnhancedSlider min={0} value={50} large />)
   .add('Simple slider with steps', () => (
-    <EnhancedSlider
-      min={0}
-      value={50}
-      step={10}
-    />
+    <EnhancedSlider min={0} value={50} step={10} />
   ))
-  .add('Range slider', () => (
-    <EnhancedSlider
-      min={0}
-      value={[20, 80]}
-    />
-  ))
+  .add('Range slider', () => <EnhancedSlider min={0} value={[20, 80]} />)
   .add('Range slider with minimum distance', () => (
-    <EnhancedSlider
-      min={0}
-      value={[20, 80]}
-      minDistance={10}
-    />
+    <EnhancedSlider min={0} value={[20, 80]} minDistance={10} />
   ));
 
 SliderContainer.propTypes = {
   min: PropTypes.number.isRequired,
-  value: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.number), PropTypes.number]).isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.number),
+    PropTypes.number,
+  ]).isRequired,
 };

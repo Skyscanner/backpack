@@ -32,8 +32,12 @@ import BpkStarRating, { BpkStar, STAR_TYPES } from './index';
 import BpkInteractiveStarRating from './src/BpkInteractiveStarRating';
 import withInteractiveStarRatingState from './src/withInteractiveStarRatingState';
 
-const InteractiveStarRating = withInteractiveStarRatingState(BpkInteractiveStarRating);
-const StarRating = props => <BpkStarRating ratingLabel={(r, m) => `${r} out of ${m} stars`} {...props} />;
+const InteractiveStarRating = withInteractiveStarRatingState(
+  BpkInteractiveStarRating,
+);
+const StarRating = props => (
+  <BpkStarRating ratingLabel={(r, m) => `${r} out of ${m} stars`} {...props} />
+);
 
 storiesOf('bpk-component-star-rating', module)
   .add('BpkStar examples', () => (
@@ -48,18 +52,30 @@ storiesOf('bpk-component-star-rating', module)
       <BpkTableBody>
         <BpkTableRow>
           <BpkTableCell>Empty</BpkTableCell>
-          <BpkTableCell><BpkStar type={STAR_TYPES.EMPTY} /></BpkTableCell>
-          <BpkTableCell><BpkStar type={STAR_TYPES.EMPTY} large /></BpkTableCell>
+          <BpkTableCell>
+            <BpkStar type={STAR_TYPES.EMPTY} />
+          </BpkTableCell>
+          <BpkTableCell>
+            <BpkStar type={STAR_TYPES.EMPTY} large />
+          </BpkTableCell>
         </BpkTableRow>
         <BpkTableRow>
           <BpkTableCell>Half</BpkTableCell>
-          <BpkTableCell><BpkStar type={STAR_TYPES.HALF} /></BpkTableCell>
-          <BpkTableCell><BpkStar type={STAR_TYPES.HALF} large /></BpkTableCell>
+          <BpkTableCell>
+            <BpkStar type={STAR_TYPES.HALF} />
+          </BpkTableCell>
+          <BpkTableCell>
+            <BpkStar type={STAR_TYPES.HALF} large />
+          </BpkTableCell>
         </BpkTableRow>
         <BpkTableRow>
           <BpkTableCell>Full</BpkTableCell>
-          <BpkTableCell><BpkStar type={STAR_TYPES.FULL} /></BpkTableCell>
-          <BpkTableCell><BpkStar type={STAR_TYPES.FULL} large /></BpkTableCell>
+          <BpkTableCell>
+            <BpkStar type={STAR_TYPES.FULL} />
+          </BpkTableCell>
+          <BpkTableCell>
+            <BpkStar type={STAR_TYPES.FULL} large />
+          </BpkTableCell>
         </BpkTableRow>
       </BpkTableBody>
     </BpkTable>
@@ -110,13 +126,17 @@ storiesOf('bpk-component-star-rating', module)
     <div>
       <InteractiveStarRating
         id="small-star-rating"
-        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
         onRatingSelect={action('rating selected')}
       />
       <br />
       <InteractiveStarRating
         id="large-star-rating"
-        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
         onRatingSelect={action('large rating selected')}
         large
       />

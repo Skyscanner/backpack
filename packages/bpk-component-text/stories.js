@@ -33,10 +33,10 @@ const Paragraph = withDefaultProps(BpkText, {
 storiesOf('bpk-component-text', module)
   .add('Default', () => (
     <BpkText>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Pellentesque imperdiet lobortis tellus, non rhoncus erat tincidunt id.
-      Pellentesque consectetur, dolor nec vulputate vehicula, ex metus mattis ante,
-      non dictum mi ante eu arcu.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+      imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
+      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non
+      dictum mi ante eu arcu.
     </BpkText>
   ))
   .add('Headings', () => (
@@ -63,30 +63,31 @@ storiesOf('bpk-component-text', module)
   ))
   .add('Paragraph', () => (
     <BpkText textStyle="base" tagName="p">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Pellentesque imperdiet lobortis tellus, non rhoncus erat tincidunt id.
-      Pellentesque consectetur, dolor nec vulputate vehicula, ex metus mattis ante,
-      non dictum mi ante eu arcu.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+      imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
+      consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non
+      dictum mi ante eu arcu.
     </BpkText>
   ))
   .add('using withDefaultProps', () => (
     <div>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Pellentesque imperdiet lobortis tellus, non rhoncus erat tincidunt id.
-        Pellentesque consectetur, dolor nec vulputate vehicula, ex metus mattis ante,
-        non dictum mi ante eu arcu.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+        imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
+        consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non
+        dictum mi ante eu arcu.
       </Paragraph>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Pellentesque imperdiet lobortis tellus, non rhoncus erat tincidunt id.
-        Pellentesque consectetur, dolor nec vulputate vehicula, ex metus mattis ante,
-        non dictum mi ante eu arcu.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+        imperdiet lobortis tellus, non rhoncus erat tincidunt id. Pellentesque
+        consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non
+        dictum mi ante eu arcu.
       </Paragraph>
     </div>
   ))
   .add('bold', () => (
     <BpkText tagName="p">
-      The man jumped over the shark tank. That was very <BpkText bold>bold</BpkText> indeed.
+      The man jumped over the shark tank. That was very{' '}
+      <BpkText bold>bold</BpkText> indeed.
     </BpkText>
   ));

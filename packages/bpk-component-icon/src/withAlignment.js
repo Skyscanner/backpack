@@ -20,11 +20,12 @@ import React from 'react';
 import { wrapDisplayName } from 'bpk-react-utils';
 
 export default function withAlignment(Component, objectHeight, subjectHeight) {
-  const WithAlignment = (props) => {
+  const WithAlignment = props => {
     const { children, ...rest } = props;
     const objectHeightDecimal = `${objectHeight}`.replace('rem', '');
     const subjectHeightDecimal = `${subjectHeight}`.replace('rem', '');
-    const marginTopCalculated = (Math.max(0, objectHeightDecimal - subjectHeightDecimal) / 2) + 'rem';
+    const marginTopCalculated =
+      Math.max(0, objectHeightDecimal - subjectHeightDecimal) / 2 + 'rem';
 
     return (
       <span
@@ -32,10 +33,10 @@ export default function withAlignment(Component, objectHeight, subjectHeight) {
           lineHeight: subjectHeight,
           display: 'inline-block',
           marginTop: marginTopCalculated,
-          verticalAlign: 'top'
+          verticalAlign: 'top',
         }}
       >
-        <Component {...rest} >{children}</Component>
+        <Component {...rest}>{children}</Component>
       </span>
     );
   };

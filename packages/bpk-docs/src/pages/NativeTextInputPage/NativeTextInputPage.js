@@ -25,7 +25,8 @@ import androidScreenshot from 'react-native-bpk-component-text-input/screenshots
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 
-const reactNativeUrl = 'https://facebook.github.io/react-native/docs/textinput.html';
+const reactNativeUrl =
+  'https://facebook.github.io/react-native/docs/textinput.html';
 
 const components = [
   {
@@ -52,19 +53,20 @@ const components = [
   },
 ];
 
-const NativeInputPage = () => (<DocsPageBuilder
-  title="Text input"
-  blurb={[
-    <Paragraph>
-      The Backpack input is a wrapper around
-      the React Native <BpkLink href={reactNativeUrl}>TextInput component</BpkLink>,
-      therefore it supports all the same behaviours and
-      properties.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={readme}
-  showMenu={false}
-/>);
+const NativeInputPage = () => (
+  <DocsPageBuilder
+    title="Text input"
+    blurb={[
+      <Paragraph>
+        The Backpack input is a wrapper around the React Native{' '}
+        <BpkLink href={reactNativeUrl}>TextInput component</BpkLink>, therefore
+        it supports all the same behaviours and properties.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={readme}
+    showMenu={false}
+  />
+);
 
 export default NativeInputPage;

@@ -16,4 +16,9 @@
  * limitations under the License.
  */
 
-export default ['linkColor', 'linkHoverColor', 'linkActiveColor', 'linkVisitedColor'];
+export default [
+  'linkColor',
+  'linkHoverColor',
+  'linkActiveColor',
+  'linkVisitedColor',
+];

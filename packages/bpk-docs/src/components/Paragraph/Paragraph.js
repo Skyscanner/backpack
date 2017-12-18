@@ -23,10 +23,8 @@ import STYLES from './Paragraph.scss';
 
 const getClassName = cssModules(STYLES);
 
-export default withDefaultProps(BpkText,
-  {
-    textStyle: 'base',
-    tagName: 'p',
-    className: getClassName('bpk-docs-paragraph'),
-  },
-);
+export default withDefaultProps(BpkText, {
+  textStyle: 'base',
+  tagName: 'p',
+  className: getClassName('bpk-docs-paragraph'),
+});

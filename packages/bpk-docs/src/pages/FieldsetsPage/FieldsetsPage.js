@@ -56,10 +56,10 @@ class FieldsetContainer extends Component {
   }
 
   toggleStates() {
-    this.setState((prevState) => {
+    this.setState(prevState => {
       let nextValidState = prevState.validState + 1;
 
-      if (nextValidState > (this.props.validStates.length - 1)) {
+      if (nextValidState > this.props.validStates.length - 1) {
         nextValidState = 0;
       }
 
@@ -70,9 +70,7 @@ class FieldsetContainer extends Component {
   }
 
   render() {
-    const {
-      children, isCheckbox, validStates, ...rest
-    } = this.props;
+    const { children, isCheckbox, validStates, ...rest } = this.props;
 
     const valid = validStates[this.state.validState];
 
@@ -141,11 +139,7 @@ const components = [
         validationMessage="Please select a cabin class."
         validStates={[true, false]}
       >
-        <BpkSelect
-          id="cabin_class_select"
-          name="cabin_class"
-          value=""
-        >
+        <BpkSelect id="cabin_class_select" name="cabin_class" value="">
           <option value="">Please select...</option>
           <option value="economy">Economy</option>
           <option value="premium_economy">Premium Economy</option>
@@ -174,18 +168,25 @@ const components = [
   },
 ];
 
-const FieldsetPage = () => (<DocsPageBuilder
-  title="Fieldsets"
-  blurb={[
-    <Paragraph>
-      Fieldsets encapsulate the composition of <BpkRouterLink to={`${ROUTES.FORMS}`}>form controls</BpkRouterLink>
-      , <BpkRouterLink to={`${ROUTES.FORMS}#labels`}>labels</BpkRouterLink>
-      &nbsp;&amp; <BpkRouterLink to={`${ROUTES.FORMS}#validation`}>validation messages</BpkRouterLink> with the
-      necessary attributes to ensure good accessibility for screen readers.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={readme}
-/>);
+const FieldsetPage = () => (
+  <DocsPageBuilder
+    title="Fieldsets"
+    blurb={[
+      <Paragraph>
+        Fieldsets encapsulate the composition of{' '}
+        <BpkRouterLink to={`${ROUTES.FORMS}`}>form controls</BpkRouterLink>
+        , <BpkRouterLink to={`${ROUTES.FORMS}#labels`}>labels</BpkRouterLink>
+        &nbsp;&amp;{' '}
+        <BpkRouterLink to={`${ROUTES.FORMS}#validation`}>
+          validation messages
+        </BpkRouterLink>{' '}
+        with the necessary attributes to ensure good accessibility for screen
+        readers.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={readme}
+  />
+);
 
 export default FieldsetPage;

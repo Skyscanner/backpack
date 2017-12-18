@@ -24,11 +24,13 @@ import STYLES from './bpk-list.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkList = (props) => {
+const BpkList = props => {
   const TagName = props.ordered ? 'ol' : 'ul';
   const classNames = [getClassName('bpk-list')];
 
-  if (props.className) { classNames.push(props.className); }
+  if (props.className) {
+    classNames.push(props.className);
+  }
 
   return <TagName className={classNames.join(' ')}>{props.children}</TagName>;
 };
@@ -47,4 +49,4 @@ BpkList.defaultProps = {
   className: null,
 };
 
-export default (BpkList);
+export default BpkList;

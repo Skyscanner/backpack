@@ -46,10 +46,12 @@
     "check-owners": "npm whoami && grep -E $(npm whoami) NPM_OWNERS && node scripts/npm/check-owners.js",
     "publish": "npm run check-owners && npm run build && git pull --rebase && npm run test && lerna publish",
     "danger": "danger",
-    "prettier": "prettier --config .prettierrc --write \"{packages,native,scripts}/**/*.js\" dangerfile.js webpack.config.babel.js"
+    "prettier": "prettier --config .prettierrc --write \"**/*.js\""
   },
   "lint-staged": {
-    "*.js": ["eslint"]
+    "*.js": [
+      "eslint"
+    ]
   },
   "repository": {
     "type": "git",

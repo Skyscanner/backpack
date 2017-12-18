@@ -25,61 +25,72 @@ import BpkSpinner, { propTypes, SPINNER_TYPES } from './BpkSpinner';
 const commonTests = () => {
   describe('BpkSpinner', () => {
     it('should render correctly', () => {
-      const tree = renderer.create(
-        <BpkSpinner />,
-      ).toJSON();
+      const tree = renderer.create(<BpkSpinner />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should support the "small" property', () => {
-      const tree = renderer.create(
-        <BpkSpinner small />,
-      ).toJSON();
+      const tree = renderer.create(<BpkSpinner small />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
-    SPINNER_TYPES.forEach((spinnerType) => {
+    SPINNER_TYPES.forEach(spinnerType => {
       it(`should support type="${spinnerType}"`, () => {
-        const tree = renderer.create(
-          <BpkSpinner type={spinnerType} />,
-        ).toJSON();
+        const tree = renderer
+          .create(<BpkSpinner type={spinnerType} />)
+          .toJSON();
         expect(tree).toMatchSnapshot();
       });
     });
 
     it('should throw an error for invalid spinner type', () => {
       jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
-      expect(() => renderer.create(
-        <BpkSpinner type="silly" />,
-      )).toThrow('"silly" is not a valid spinner type. Valid types are primary, light, dark');
+      expect(() => renderer.create(<BpkSpinner type="silly" />)).toThrow(
+        '"silly" is not a valid spinner type. Valid types are primary, light, dark',
+      );
     });
 
     it('should support theming', () => {
       const theme = {
         spinnerPrimaryColor: 'red',
       };
-      const tree = renderer.create(
-        <BpkThemeProvider theme={theme}>
-          <BpkSpinner />
-        </BpkThemeProvider>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkThemeProvider theme={theme}>
+            <BpkSpinner />
+          </BpkThemeProvider>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
-    it('should reject theme property when required theme attributes are omitted', () => { // eslint-disable-line max-len
-      expect(propTypes.theme({
-        type: 'primary',
-        theme: {},
-      }, 'theme', 'BpkSpinner').toString()).toEqual('Error: Invalid prop `theme` supplied to `BpkSpinner`. For spinners of type `primary`, the `theme` prop must include `spinnerPrimaryColor`'); // eslint-disable-line max-len
+    it('should reject theme property when required theme attributes are omitted', () => {
+      // eslint-disable-line max-len
+      expect(
+        propTypes
+          .theme(
+            {
+              type: 'primary',
+              theme: {},
+            },
+            'theme',
+            'BpkSpinner',
+          )
+          .toString(),
+      ).toEqual(
+        'Error: Invalid prop `theme` supplied to `BpkSpinner`. For spinners of type `primary`, the `theme` prop must include `spinnerPrimaryColor`',
+      ); // eslint-disable-line max-len
     });
 
     it('should disable theming if the required attribute is omitted', () => {
       const theme = {};
-      const tree = renderer.create(
-        <BpkThemeProvider theme={theme} type="primary">
-          <BpkSpinner />
-        </BpkThemeProvider>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkThemeProvider theme={theme} type="primary">
+            <BpkSpinner />
+          </BpkThemeProvider>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

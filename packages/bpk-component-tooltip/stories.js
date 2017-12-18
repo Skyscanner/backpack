@@ -37,12 +37,11 @@ const Heading = withDefaultProps(BpkText, { textStyle: 'xxl', tagName: 'h1' });
 storiesOf('bpk-component-tooltip', module)
   .add('Default', () => (
     <div style={st}>
-      <BpkTooltip
-        id="my-tooltip"
-        target={<Heading>£295</Heading>}
-      >
+      <BpkTooltip id="my-tooltip" target={<Heading>£295</Heading>}>
         This is the cheapest price!
-        <span role="img" aria-label="Thumbs up">👍</span>
+        <span role="img" aria-label="Thumbs up">
+          👍
+        </span>
       </BpkTooltip>
     </div>
   ))
@@ -63,7 +62,9 @@ storiesOf('bpk-component-tooltip', module)
         }}
       >
         This is the cheapest price!
-        <span role="img" aria-label="Thumbs up">👍</span>
+        <span role="img" aria-label="Thumbs up">
+          👍
+        </span>
       </BpkTooltip>
     </div>
   ))
@@ -91,10 +92,16 @@ storiesOf('bpk-component-tooltip', module)
     <div style={st}>
       <BpkTooltip
         id="my-tooltip"
-        target={<a href="//skyscanner.net" target="_blank" rel="noopener noreferrer">Click me!</a>}
+        target={
+          <a href="//skyscanner.net" target="_blank" rel="noopener noreferrer">
+            Click me!
+          </a>
+        }
       >
         Find cheap flights here!
-        <span role="img" aria-label="Plane">✈️</span>
+        <span role="img" aria-label="Plane">
+          ✈️
+        </span>
       </BpkTooltip>
     </div>
   ));

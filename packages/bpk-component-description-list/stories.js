@@ -19,14 +19,20 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { BpkDescriptionList, BpkDescriptionTerm, BpkDescriptionDetails } from './index';
+import {
+  BpkDescriptionList,
+  BpkDescriptionTerm,
+  BpkDescriptionDetails,
+} from './index';
 
-storiesOf('bpk-component-description-list', module)
-  .add('Description List', () => (
+storiesOf('bpk-component-description-list', module).add(
+  'Description List',
+  () => (
     <BpkDescriptionList>
       <BpkDescriptionTerm>Apples</BpkDescriptionTerm>
       <BpkDescriptionDetails>A fruit</BpkDescriptionDetails>
       <BpkDescriptionTerm>Pears</BpkDescriptionTerm>
       <BpkDescriptionDetails>Another fruit</BpkDescriptionDetails>
     </BpkDescriptionList>
-  ));
+  ),
+);

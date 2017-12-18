@@ -24,7 +24,8 @@ import React, { Component } from 'react';
 // eslint-disable-next-line no-restricted-globals
 const isNumber = n => !isNaN(parseFloat(n)) && isFinite(n);
 
-const isTransitionEndSupported = () => !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
+const isTransitionEndSupported = () =>
+  !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
 
 class AnimateHeight extends Component {
   constructor(props) {
@@ -53,9 +54,7 @@ class AnimateHeight extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const {
-      height,
-    } = this.props;
+    const { height } = this.props;
 
     // Check if 'height' prop has changed
     if (this.contentElement && nextProps.height !== height) {
@@ -139,10 +138,7 @@ class AnimateHeight extends Component {
       ...rest
     } = this.props;
 
-    const {
-      height,
-      overflow,
-    } = this.state;
+    const { height, overflow } = this.state;
 
     const componentStyle = {
       ...style,
@@ -164,8 +160,12 @@ class AnimateHeight extends Component {
         onTransitionEnd={this.onTransitionEnd}
         {...rest}
       >
-        <div ref={(el) => { this.contentElement = el; }}>
-          { children }
+        <div
+          ref={el => {
+            this.contentElement = el;
+          }}
+        >
+          {children}
         </div>
       </div>
     );
@@ -175,10 +175,7 @@ class AnimateHeight extends Component {
 AnimateHeight.propTypes = {
   children: PropTypes.node.isRequired,
   duration: PropTypes.number.isRequired,
-  height: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]).isRequired,
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   easing: PropTypes.string,
   transitionOverflow: PropTypes.string,
   onAnimationComplete: PropTypes.func,

@@ -28,27 +28,39 @@ const components = [
   {
     id: 'font-families',
     title: 'Font families',
-    tokenMap: getPlatformTokens(TOKENS, IOS_TOKENS, ANDROID_TOKENS, ({ name }) => name === 'FONT_FAMILY_BASE'),
+    tokenMap: getPlatformTokens(
+      TOKENS,
+      IOS_TOKENS,
+      ANDROID_TOKENS,
+      ({ name }) => name === 'FONT_FAMILY_BASE',
+    ),
   },
   {
     id: 'font-sizes',
     title: 'Font sizes',
-    tokenMap: getPlatformTokens(TOKENS, IOS_TOKENS, ANDROID_TOKENS, ({ name, category }) =>
-      category === 'typesettings' && name.indexOf('FONT_SIZE') === 0,
+    tokenMap: getPlatformTokens(
+      TOKENS,
+      IOS_TOKENS,
+      ANDROID_TOKENS,
+      ({ name, category }) =>
+        category === 'typesettings' && name.indexOf('FONT_SIZE') === 0,
     ),
   },
   {
     id: 'line-heights',
     title: 'Line heights',
-    tokenMap: getPlatformTokens(TOKENS, IOS_TOKENS, ANDROID_TOKENS, ({ name, category }) =>
-      category === 'typesettings' && name.indexOf('LINE_HEIGHT') === 0,
+    tokenMap: getPlatformTokens(
+      TOKENS,
+      IOS_TOKENS,
+      ANDROID_TOKENS,
+      ({ name, category }) =>
+        category === 'typesettings' && name.indexOf('LINE_HEIGHT') === 0,
     ),
   },
 ];
 
-const TypesettingPage = () => (<DocsPageBuilder
-  title="Typesetting"
-  components={components}
-/>);
+const TypesettingPage = () => (
+  <DocsPageBuilder title="Typesetting" components={components} />
+);
 
 export default TypesettingPage;

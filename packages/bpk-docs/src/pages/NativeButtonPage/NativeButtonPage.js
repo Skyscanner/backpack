@@ -34,7 +34,8 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 import { THEMING } from './../../constants/routes';
 
-const reactNativeUrl = 'https://facebook.github.io/react-native/docs/touchablewithoutfeedback.html';
+const reactNativeUrl =
+  'https://facebook.github.io/react-native/docs/touchablewithoutfeedback.html';
 
 const components = [
   {
@@ -127,28 +128,32 @@ const components = [
   },
 ];
 
-const NativeTextPage = () => (<DocsPageBuilder
-  title="Buttons"
-  blurb={[
-    <Paragraph>
-      The Backpack button component is for all your button pressing needs. It&#39;s a wrapper around the React
-      Native <BpkLink href={reactNativeUrl}>TouchableWithoutFeedback component</BpkLink>, therefore it supports all the
-      same behaviours and properties.
-    </Paragraph>,
-    <Paragraph>
-      There are four types of button: primary, secondary, destructive and featured. All button types can be
-      large and disabled.
-    </Paragraph>,
-    <Paragraph>
-      Buttons can be text or icon based.
-    </Paragraph>,
-    <Paragraph>
-      Primary and secondary buttons can be <BpkLink href={THEMING}>themed</BpkLink>.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={readme}
-  showMenu
-/>);
+const NativeTextPage = () => (
+  <DocsPageBuilder
+    title="Buttons"
+    blurb={[
+      <Paragraph>
+        The Backpack button component is for all your button pressing needs.
+        It&#39;s a wrapper around the React Native{' '}
+        <BpkLink href={reactNativeUrl}>
+          TouchableWithoutFeedback component
+        </BpkLink>, therefore it supports all the same behaviours and
+        properties.
+      </Paragraph>,
+      <Paragraph>
+        There are four types of button: primary, secondary, destructive and
+        featured. All button types can be large and disabled.
+      </Paragraph>,
+      <Paragraph>Buttons can be text or icon based.</Paragraph>,
+      <Paragraph>
+        Primary and secondary buttons can be{' '}
+        <BpkLink href={THEMING}>themed</BpkLink>.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={readme}
+    showMenu
+  />
+);
 
 export default NativeTextPage;

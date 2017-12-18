@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-import {
-  Animated,
-  ViewPropTypes,
-} from 'react-native';
+import { Animated, ViewPropTypes } from 'react-native';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
@@ -55,7 +52,11 @@ class AnimateAndFade extends Component {
   animate(show) {
     Animated.timing(this.state.opacity, {
       toValue: show ? 1 : 0,
-      duration: ((show && this.props.animateOnEnter) || (!show && this.props.animateOnLeave)) ? FADE_DURATION : 0,
+      duration:
+        (show && this.props.animateOnEnter) ||
+        (!show && this.props.animateOnLeave)
+          ? FADE_DURATION
+          : 0,
       delay: show ? ANIMATE_HEIGHT_DURATION : 0,
     }).start();
     this.setState({ visible: show });

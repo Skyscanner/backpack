@@ -25,21 +25,24 @@ import STYLES from './bpk-link.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkButtonLink = (props) => {
-  const {
-    children,
-    className,
-    onClick,
-    white,
-    ...rest
-  } = props;
+const BpkButtonLink = props => {
+  const { children, className, onClick, white, ...rest } = props;
   const classNames = [getClassName('bpk-link')];
 
-  if (white) { classNames.push(getClassName('bpk-link--white')); }
-  if (className) { classNames.push(className); }
+  if (white) {
+    classNames.push(getClassName('bpk-link--white'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
-    <button type="button" className={classNames.join(' ')} onClick={onClick} {...rest}>
+    <button
+      type="button"
+      className={classNames.join(' ')}
+      onClick={onClick}
+      {...rest}
+    >
       {children}
     </button>
   );

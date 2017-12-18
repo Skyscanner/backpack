@@ -22,7 +22,11 @@ import { storiesOf } from '@storybook/react';
 import { BpkDataTable, BpkDataTableColumn } from './index';
 
 const rows = [
-  { name: 'Albert', description: 'Reaching the end of the alphabet', bla: 'Bla' },
+  {
+    name: 'Albert',
+    description: 'Reaching the end of the alphabet',
+    bla: 'Bla',
+  },
   { name: 'Rolf', description: 'At the beginning of the alphabet', bla: 'Alb' },
 ];
 
@@ -31,65 +35,32 @@ const onRowClick = row => alert(JSON.stringify(row));
 
 storiesOf('bpk-component-datatable', module)
   .add('Autowidth Example', () => (
-    <BpkDataTable
-      rows={rows}
-      height={300}
-      onRowClick={onRowClick}
-    >
-      <BpkDataTableColumn
-        label="Name"
-        dataKey="name"
-        width={100}
-      />
+    <BpkDataTable rows={rows} height={300} onRowClick={onRowClick}>
+      <BpkDataTableColumn label="Name" dataKey="name" width={100} />
       <BpkDataTableColumn
         label="Description"
         dataKey="description"
         width={100}
         flexGrow={1}
       />
-      <BpkDataTableColumn
-        label="Bla"
-        dataKey="bla"
-        width={100}
-      />
+      <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
     </BpkDataTable>
   ))
   .add('Fixed Width Example', () => (
-    <BpkDataTable
-      rows={rows}
-      height={300}
-      width={400}
-      onRowClick={onRowClick}
-    >
-      <BpkDataTableColumn
-        label="Name"
-        dataKey="name"
-        width={100}
-      />
+    <BpkDataTable rows={rows} height={300} width={400} onRowClick={onRowClick}>
+      <BpkDataTableColumn label="Name" dataKey="name" width={100} />
       <BpkDataTableColumn
         label="Description"
         dataKey="description"
         width={100}
         flexGrow={1}
       />
-      <BpkDataTableColumn
-        label="Bla"
-        dataKey="bla"
-        width={100}
-      />
+      <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
     </BpkDataTable>
   ))
   .add('Disabled Sort Example', () => (
-    <BpkDataTable
-      rows={rows}
-      height={300}
-      onRowClick={onRowClick}
-    >
-      <BpkDataTableColumn
-        label="Name"
-        dataKey="name"
-        width={100}
-      />
+    <BpkDataTable rows={rows} height={300} onRowClick={onRowClick}>
+      <BpkDataTableColumn label="Name" dataKey="name" width={100} />
       <BpkDataTableColumn
         label="Description (Disabled Sorting)"
         dataKey="description"
@@ -97,11 +68,7 @@ storiesOf('bpk-component-datatable', module)
         flexGrow={1}
         disableSort
       />
-      <BpkDataTableColumn
-        label="Bla"
-        dataKey="bla"
-        width={100}
-      />
+      <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
     </BpkDataTable>
   ))
   .add('Custom row and header heights', () => (
@@ -112,21 +79,13 @@ storiesOf('bpk-component-datatable', module)
       rowHeight={30}
       onRowClick={onRowClick}
     >
-      <BpkDataTableColumn
-        label="Name"
-        dataKey="name"
-        width={100}
-      />
+      <BpkDataTableColumn label="Name" dataKey="name" width={100} />
       <BpkDataTableColumn
         label="Description"
         dataKey="description"
         width={100}
         flexGrow={1}
       />
-      <BpkDataTableColumn
-        label="Bla"
-        dataKey="bla"
-        width={100}
-      />
+      <BpkDataTableColumn label="Bla" dataKey="bla" width={100} />
     </BpkDataTable>
   ));

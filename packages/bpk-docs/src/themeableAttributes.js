@@ -19,7 +19,10 @@
 import { themeAttributes as accordionThemeAttributes } from 'bpk-component-accordion';
 import { themeAttributes as barchartThemeAttributes } from 'bpk-component-barchart';
 import { themeAttributes as blockquoteThemeAttributes } from 'bpk-component-blockquote';
-import { primaryThemeAttributes, secondaryThemeAttributes } from 'bpk-component-button';
+import {
+  primaryThemeAttributes,
+  secondaryThemeAttributes,
+} from 'bpk-component-button';
 import { themeAttributes as calendarThemeAttributes } from 'bpk-component-calendar';
 import { themeAttributes as checkboxThemeAttributes } from 'bpk-component-checkbox';
 import { themeAttributes as datepickerThemeAttributes } from 'bpk-component-datepicker';

@@ -42,13 +42,18 @@ class IconSearchApp extends Component {
     const { icons } = this.props;
     const { filterValue } = this.state;
 
-    return icons.filter(icon => icon.name.indexOf(filterValue.toLowerCase()) !== -1);
+    return icons.filter(
+      icon => icon.name.indexOf(filterValue.toLowerCase()) !== -1,
+    );
   }
 
   render() {
     return (
       <div>
-        <IconSearchForm filterValue={this.state.filterValue} onFilterChange={this.onFilterChange} />
+        <IconSearchForm
+          filterValue={this.state.filterValue}
+          onFilterChange={this.onFilterChange}
+        />
         <IconSearchResults icons={this.getFilteredIcons()} />
       </div>
     );

@@ -65,21 +65,9 @@ const getThemedButtons = () => (
 );
 
 storiesOf('BpkSpinner', module)
-  .add('docs:default', () => (
-    <View>
-      {generateAllSpinnerTypes()}
-    </View>
-  ))
-  .add('docs:small', () => (
-    <View>
-      {generateAllSpinnerTypes(true)}
-    </View>
-  ))
-  .add('docs:withTheme', () => (
-    <View>
-      {getThemedButtons()}
-    </View>
-  ))
+  .add('docs:default', () => <View>{generateAllSpinnerTypes()}</View>)
+  .add('docs:small', () => <View>{generateAllSpinnerTypes(true)}</View>)
+  .add('docs:withTheme', () => <View>{getThemedButtons()}</View>)
   .add('All types', () => (
     <ScrollView>
       <StoryHeading>Default</StoryHeading>
@@ -87,6 +75,6 @@ storiesOf('BpkSpinner', module)
       <StoryHeading>Small</StoryHeading>
       {generateAllSpinnerTypes(true)}
       <StoryHeading>Themed</StoryHeading>
-      { getThemedButtons() }
+      {getThemedButtons()}
     </ScrollView>
   ));

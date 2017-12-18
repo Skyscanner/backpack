@@ -25,47 +25,72 @@ const commonTests = () => {
   const onPressFn = jest.fn();
   describe('BpkHorizontalNavItem', () => {
     it('should render correctly', () => {
-      const tree = renderer.create(
-        <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn}>
-          My nav content.
-        </BpkHorizontalNavItem>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn}>
+            My nav content.
+          </BpkHorizontalNavItem>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly with "selected" prop', () => {
-      const tree = renderer.create(
-        <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn} selected>
-          My nav content.
-        </BpkHorizontalNavItem>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn} selected>
+            My nav content.
+          </BpkHorizontalNavItem>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly with "spaceAround" prop', () => {
-      const tree = renderer.create(
-        <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn} spaceAround>
-          My nav content.
-        </BpkHorizontalNavItem>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkHorizontalNavItem
+            id="0"
+            title="Nav"
+            onPress={onPressFn}
+            spaceAround
+          >
+            My nav content.
+          </BpkHorizontalNavItem>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly with custom "style" prop', () => {
-      const tree = renderer.create(
-        <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn} style={{ marginBottom: 10 }}>
-          My nav content.
-        </BpkHorizontalNavItem>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkHorizontalNavItem
+            id="0"
+            title="Nav"
+            onPress={onPressFn}
+            style={{ marginBottom: 10 }}
+          >
+            My nav content.
+          </BpkHorizontalNavItem>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render correctly with arbitrary props', () => {
-      const tree = renderer.create(
-        <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn} custom="custom-prop">
-          My nav content.
-        </BpkHorizontalNavItem>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkHorizontalNavItem
+            id="0"
+            title="Nav"
+            onPress={onPressFn}
+            custom="custom-prop"
+          >
+            My nav content.
+          </BpkHorizontalNavItem>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
@@ -73,20 +98,38 @@ const commonTests = () => {
       const theme = {
         horizontalNavSelectedTextColor: 'red',
       };
-      const tree = renderer.create(
-        <BpkThemeProvider theme={theme}>
-          <BpkHorizontalNavItem id="0" title="Nav" onPress={onPressFn} custom="custom-prop">
-          My nav content.
-          </BpkHorizontalNavItem>
-        </BpkThemeProvider>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkThemeProvider theme={theme}>
+            <BpkHorizontalNavItem
+              id="0"
+              title="Nav"
+              onPress={onPressFn}
+              custom="custom-prop"
+            >
+              My nav content.
+            </BpkHorizontalNavItem>
+          </BpkThemeProvider>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
-    it('should reject theme property when required theme attributes are omitted', () => { // eslint-disable-line max-len
-      expect(propTypes.theme({
-        theme: {},
-      }, 'theme', 'BpkHorizontalNavItem').toString()).toEqual('Error: Invalid prop `theme` supplied to `BpkHorizontalNavItem`. To theme a `BpkHorizontalNavItem`, the `theme` prop must include `horizontalNavSelectedTextColor`'); // eslint-disable-line max-len
+    it('should reject theme property when required theme attributes are omitted', () => {
+      // eslint-disable-line max-len
+      expect(
+        propTypes
+          .theme(
+            {
+              theme: {},
+            },
+            'theme',
+            'BpkHorizontalNavItem',
+          )
+          .toString(),
+      ).toEqual(
+        'Error: Invalid prop `theme` supplied to `BpkHorizontalNavItem`. To theme a `BpkHorizontalNavItem`, the `theme` prop must include `horizontalNavSelectedTextColor`',
+      ); // eslint-disable-line max-len
     });
   });
 };

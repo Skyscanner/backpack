@@ -70,13 +70,17 @@ class DrawerContainer extends Component {
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           title="Drawer title"
-          getApplicationElement={() => document.getElementById('application-container')}
+          getApplicationElement={() =>
+            document.getElementById('application-container')
+          }
           hideTitle={this.state.hideTitle}
           renderTarget={() => document.getElementById('portal-taget')}
           {...rest}
         >
           <div>{children}</div>
-          <BpkButtonLink onClick={this.toggleTitle}>Toggle show title</BpkButtonLink>
+          <BpkButtonLink onClick={this.toggleTitle}>
+            Toggle show title
+          </BpkButtonLink>
         </BpkDrawer>
       </div>
     );
@@ -93,9 +97,7 @@ const components = [
     title: 'Default drawer',
     blurb: 'The default drawer has a title and a close button',
     examples: [
-      <DrawerContainer
-        closeLabel="Close drawer"
-      >
+      <DrawerContainer closeLabel="Close drawer">
         <Paragraph>You can put anything you want in here</Paragraph>
       </DrawerContainer>,
     ],
@@ -105,31 +107,33 @@ const components = [
     title: 'Text button',
     blurb: [
       <Paragraph>
-        Drawers can be configured to display the close button as text - useful for when a close icon
-        doesn&apos;t fit the context.
+        Drawers can be configured to display the close button as text - useful
+        for when a close icon doesn&apos;t fit the context.
       </Paragraph>,
     ],
     examples: [
-      <DrawerContainer
-        closeText="Close drawer"
-      >
+      <DrawerContainer closeText="Close drawer">
         <Paragraph>You can put anything you want in here</Paragraph>
       </DrawerContainer>,
     ],
   },
 ];
 
-const DrawerPage = () => (<DocsPageBuilder
-  title="Drawer"
-  blurb={[
-    <Paragraph>
-      Drawers are used to display content or views that are separate from the rest of the app or page. When
-      triggered, drawers will slide in from the side of the viewport with a backdrop to indicate their separation from
-      everything else. On mobile viewports, they leave a sliver of the backdrop visible to allow for easier closing.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={drawerReadme}
-/>);
+const DrawerPage = () => (
+  <DocsPageBuilder
+    title="Drawer"
+    blurb={[
+      <Paragraph>
+        Drawers are used to display content or views that are separate from the
+        rest of the app or page. When triggered, drawers will slide in from the
+        side of the viewport with a backdrop to indicate their separation from
+        everything else. On mobile viewports, they leave a sliver of the
+        backdrop visible to allow for easier closing.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={drawerReadme}
+  />
+);
 
 export default DrawerPage;

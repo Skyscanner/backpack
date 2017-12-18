@@ -16,11 +16,7 @@
  * limitations under the License.
  */
 
-import {
-  StyleSheet,
-  View,
-  ViewPropTypes,
-} from 'react-native';
+import { StyleSheet, View, ViewPropTypes } from 'react-native';
 import {
   colorWhite,
   borderRadiusSm,
@@ -46,7 +42,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const BpkCard = (props) => {
+const BpkCard = props => {
   const {
     padded,
     children,
@@ -59,10 +55,18 @@ const BpkCard = (props) => {
   const style = [styles.card];
   const innerStyle = [styles.cardInner];
 
-  if (padded) { style.push(styles.cardPadded); }
-  if (focused) { style.push(styles.cardFocused); }
-  if (userStyle) { style.push(userStyle); }
-  if (userInnerStyle) { innerStyle.push(userInnerStyle); }
+  if (padded) {
+    style.push(styles.cardPadded);
+  }
+  if (focused) {
+    style.push(styles.cardFocused);
+  }
+  if (userStyle) {
+    style.push(userStyle);
+  }
+  if (userInnerStyle) {
+    innerStyle.push(userInnerStyle);
+  }
 
   return (
     <BpkTouchableOverlay

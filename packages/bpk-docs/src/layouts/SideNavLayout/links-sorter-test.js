@@ -20,17 +20,9 @@ import sortLinks from './links-sorter';
 
 describe('links-sorter', () => {
   it('should sort alphabetically', () => {
-    const links = [
-      { id: 'c' },
-      { id: 'a' },
-      { id: 'b' },
-    ];
+    const links = [{ id: 'c' }, { id: 'a' }, { id: 'b' }];
 
-    expect(sortLinks(links)).toEqual([
-      { id: 'a' },
-      { id: 'b' },
-      { id: 'c' },
-    ]);
+    expect(sortLinks(links)).toEqual([{ id: 'a' }, { id: 'b' }, { id: 'c' }]);
   });
 
   it('should secondary sort by route existence', () => {

@@ -30,13 +30,13 @@ const getClassName = cssModules(STYLES);
 const CloseButtonIcon = withButtonAlignment(CloseIcon);
 const MenuButtonIcon = withButtonAlignment(MenuIcon);
 
-const HamburgerButton = (props) => {
+const HamburgerButton = props => {
   const classNames = [getClassName('bpkdocs-hamburger-button')];
-  const {
-    expanded, onClick, className, ...rest
-  } = props;
+  const { expanded, onClick, className, ...rest } = props;
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
     <button

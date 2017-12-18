@@ -21,7 +21,14 @@ import BpkButton from 'bpk-component-button';
 import { storiesOf } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
 import { onePixelRem } from 'bpk-tokens/tokens/base.es6';
-import { BpkTable, BpkTableHead, BpkTableBody, BpkTableRow, BpkTableCell, BpkTableHeadCell } from 'bpk-component-table';
+import {
+  BpkTable,
+  BpkTableHead,
+  BpkTableBody,
+  BpkTableRow,
+  BpkTableCell,
+  BpkTableHeadCell,
+} from 'bpk-component-table';
 
 import BpkMobileScrollContainer from './index';
 

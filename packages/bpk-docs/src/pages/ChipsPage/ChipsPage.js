@@ -60,13 +60,17 @@ class DefaultChipContainer extends Component {
   render() {
     return (
       <div>
-        <BpkButton onClick={this.addRemovableChip} >
+        <BpkButton onClick={this.addRemovableChip}>
           Add removable chip!
         </BpkButton>
         <div>
           {this.state.chipNames.map((chipName, index) => (
             <span
-              style={{ display: 'inline-block', marginTop: spacingSm, marginRight: spacingSm }}
+              style={{
+                display: 'inline-block',
+                marginTop: spacingSm,
+                marginRight: spacingSm,
+              }}
               key={index.toString()}
             >
               <BpkChip
@@ -90,25 +94,27 @@ const components = [
     blurb: [
       <Paragraph>
         The default configuration displays a text value with a close button.
-        This button can be assigned a custom action to remove itself from the view.
+        This button can be assigned a custom action to remove itself from the
+        view.
       </Paragraph>,
     ],
-    examples: [
-      <DefaultChipContainer />,
-    ],
+    examples: [<DefaultChipContainer />],
   },
 ];
 
-const ChipsPage = () => (<DocsPageBuilder
-  title="Chips"
-  blurb={[
-    <Paragraph>
-      Chips, sometimes called tags, are useful for displaying keywords or categories from common sets of data.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={chipReadme}
-  sassdocId="cards"
-/>);
+const ChipsPage = () => (
+  <DocsPageBuilder
+    title="Chips"
+    blurb={[
+      <Paragraph>
+        Chips, sometimes called tags, are useful for displaying keywords or
+        categories from common sets of data.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={chipReadme}
+    sassdocId="cards"
+  />
+);
 
 export default ChipsPage;

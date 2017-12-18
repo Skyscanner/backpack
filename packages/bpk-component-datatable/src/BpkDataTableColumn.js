@@ -32,7 +32,9 @@ BpkDataTableColumn.toColumn = (bpkDataTableColumn, key) => {
   const { className, ...rest } = bpkDataTableColumn.props;
   const classNames = [getClassName('bpk-data-table-column')];
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   return <Column className={classNames.join(' ')} key={key} {...rest} />;
 };

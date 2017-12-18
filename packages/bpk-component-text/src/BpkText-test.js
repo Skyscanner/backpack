@@ -22,53 +22,68 @@ import BpkText from './BpkText';
 
 describe('BpkText', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <BpkText>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkText>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkText>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with `bold`', () => {
-    const tree = renderer.create(
-      <BpkText bold>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkText bold>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkText>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with tageName="h1", textStyle="xxl"', () => {
-    const tree = renderer.create(
-      <BpkText textStyle="xxl" tagName="h1">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkText textStyle="xxl" tagName="h1">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkText>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should pass down unknown props', () => {
-    const tree = renderer.create(
-      <BpkText style={{ color: 'red' }}>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </BpkText>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <BpkText style={{ color: 'red' }}>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkText>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  ['xs', 'sm', 'base', 'lg', 'xl', 'xxl'].forEach((textStyle) => {
+  ['xs', 'sm', 'base', 'lg', 'xl', 'xxl'].forEach(textStyle => {
     it(`should render correctly with textStyle="${textStyle}"`, () => {
-      const tree = renderer.create(
-        <BpkText textStyle={textStyle}>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-          sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        </BpkText>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkText textStyle={textStyle}>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </BpkText>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

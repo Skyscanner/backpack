@@ -17,7 +17,13 @@
  */
 
 import React from 'react';
-import { Route, IndexRoute, IndexRedirect, Redirect, withRouter } from 'react-router';
+import {
+  Route,
+  IndexRoute,
+  IndexRedirect,
+  Redirect,
+  withRouter,
+} from 'react-router';
 
 import * as ROUTES from './../constants/routes';
 import redirects from './../constants/redirect-routes';
@@ -91,7 +97,10 @@ import NativeTextPage from './../pages/NativeTextPage';
 
 import ResourcesPage from './../pages/ResourcesPage';
 
-import { GridColumnDemoPage, GridOffsetDemoPage } from './../pages/GridDemoPages';
+import {
+  GridColumnDemoPage,
+  GridOffsetDemoPage,
+} from './../pages/GridDemoPages';
 
 // eslint-disable-next-line import/no-webpack-loader-syntax
 const iconsSvgs = require('!!file-loader?name=[name].[hash].zip!zip-it-loader!./../../../bpk-svgs/src/icons/icons');
@@ -103,7 +112,10 @@ const Routes = (
     <Route path={ROUTES.USING_BACKPACK} component={UsingLayout}>
       <IndexRedirect to={ROUTES.GETTING_STARTED} />
       <Route path={ROUTES.GETTING_STARTED} component={GettingStartedPage} />
-      <Route path={ROUTES.BACKPACK_REACT_SCRIPTS} component={BackpackReactScriptsPage} />
+      <Route
+        path={ROUTES.BACKPACK_REACT_SCRIPTS}
+        component={BackpackReactScriptsPage}
+      />
       <Route path={ROUTES.BASE_STYLESHEET} component={BaseStylesheetPage} />
     </Route>
 
@@ -158,14 +170,23 @@ const Routes = (
       </Route>
       <Route path={ROUTES.NATIVE_COMPONENTS}>
         <IndexRedirect to={ROUTES.NATIVE_TEXT} />
-        <Route path={ROUTES.NATIVE_BANNER_ALERT} component={NativeBannerAlertPage} />
+        <Route
+          path={ROUTES.NATIVE_BANNER_ALERT}
+          component={NativeBannerAlertPage}
+        />
         <Route path={ROUTES.NATIVE_BUTTON} component={NativeButtonPage} />
         <Route path={ROUTES.NATIVE_CARDS} component={NativeCardsPage} />
-        <Route path={ROUTES.NATIVE_HORIZONTAL_NAV} component={NativeHorizontalNavPage} />
+        <Route
+          path={ROUTES.NATIVE_HORIZONTAL_NAV}
+          component={NativeHorizontalNavPage}
+        />
         <Route path={ROUTES.NATIVE_ICONS} component={NativeIconsPage} />
         <Route path={ROUTES.NATIVE_INPUT} component={NativeInputPage} />
         <Route path={ROUTES.NATIVE_SPINNER} component={NativeSpinnerPage} />
-        <Route path={ROUTES.NATIVE_STAR_RATING} component={NativeStarRatingPage} />
+        <Route
+          path={ROUTES.NATIVE_STAR_RATING}
+          component={NativeStarRatingPage}
+        />
         <Route path={ROUTES.NATIVE_SWITCH} component={NativeSwitchPage} />
         <Route path={ROUTES.NATIVE_TEXT} component={NativeTextPage} />
       </Route>
@@ -176,13 +197,17 @@ const Routes = (
       </Route>
     </Route>
 
-    <Route path={ROUTES.RESOURCES} component={ResourcesPage} iconsSvgs={iconsSvgs} />
+    <Route
+      path={ROUTES.RESOURCES}
+      component={ResourcesPage}
+      iconsSvgs={iconsSvgs}
+    />
     <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridColumnDemoPage} />
     <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridOffsetDemoPage} />
 
-    {
-      Object.keys(redirects).map(from => <Redirect key={from} from={from} to={redirects[from]} />)
-    }
+    {Object.keys(redirects).map(from => (
+      <Redirect key={from} from={from} to={redirects[from]} />
+    ))}
   </Route>
 );
 

@@ -35,8 +35,7 @@ const styles = StyleSheet.create({
   bannerAlert: {
     marginBottom: spacingBase,
   },
-  child: {
-  },
+  child: {},
 });
 
 class ExpandableBannerAlert extends React.Component {
@@ -94,7 +93,6 @@ class DismissableBannerAlert extends React.Component {
   }
 }
 
-
 // eslint-disable-next-line react/no-multi-comp
 class BpkBannerAlertFadeDemo extends React.Component {
   constructor() {
@@ -132,7 +130,7 @@ class BpkBannerAlertFadeDemo extends React.Component {
               dismissable
               dismissButtonLabel={this.props.dismissButtonLabel}
             />
-        ))}
+          ))}
         </View>
       </View>
     );
@@ -175,9 +173,11 @@ storiesOf('BpkBannerAlert', module)
         message="Error alert with more information."
       >
         <BpkText textStyle="sm" style={styles.child}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec
-          mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+          sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
+          erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,
+          facilisis nec mi. Donec et congue odio, nec laoreet est. Integer
+          rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
       </ExpandableBannerAlert>
     </View>
@@ -242,9 +242,11 @@ storiesOf('BpkBannerAlert', module)
         message="Neutral alert with more information."
       >
         <BpkText textStyle="sm" style={styles.child}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec
-          mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+          sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
+          erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,
+          facilisis nec mi. Donec et congue odio, nec laoreet est. Integer
+          rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
       </ExpandableBannerAlert>
       <ExpandableBannerAlert
@@ -253,9 +255,11 @@ storiesOf('BpkBannerAlert', module)
         message="Successful alert with more information."
       >
         <BpkText textStyle="sm" style={styles.child}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec
-          mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+          sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
+          erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,
+          facilisis nec mi. Donec et congue odio, nec laoreet est. Integer
+          rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
       </ExpandableBannerAlert>
       <ExpandableBannerAlert
@@ -264,9 +268,11 @@ storiesOf('BpkBannerAlert', module)
         message="Warn alert with more information."
       >
         <BpkText textStyle="sm" style={styles.child}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec
-          mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+          sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
+          erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,
+          facilisis nec mi. Donec et congue odio, nec laoreet est. Integer
+          rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
       </ExpandableBannerAlert>
       <ExpandableBannerAlert
@@ -275,9 +281,11 @@ storiesOf('BpkBannerAlert', module)
         message="Error alert with more information."
       >
         <BpkText textStyle="sm" style={styles.child}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-          Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec
-          mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+          sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
+          erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,
+          facilisis nec mi. Donec et congue odio, nec laoreet est. Integer
+          rhoncus varius arcu, a fringilla libero laoreet at.
         </BpkText>
       </ExpandableBannerAlert>
     </View>
@@ -292,7 +300,8 @@ storiesOf('BpkBannerAlert', module)
   ))
   .add('docs:edge-cases', () => {
     // eslint-disable-next-line max-len
-    const message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.';
+    const message =
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.';
 
     return (
       <View>
@@ -321,9 +330,11 @@ storiesOf('BpkBannerAlert', module)
           expanded
         >
           <BpkText textStyle="sm" style={styles.child}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum.
-            Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec
-            mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+            sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
+            erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,
+            facilisis nec mi. Donec et congue odio, nec laoreet est. Integer
+            rhoncus varius arcu, a fringilla libero laoreet at.
           </BpkText>
         </BpkBannerAlert>
       </View>

@@ -19,14 +19,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import BpkInteractiveStarRating, { getTypeByRating } from './BpkInteractiveStarRating';
+import BpkInteractiveStarRating, {
+  getTypeByRating,
+} from './BpkInteractiveStarRating';
 import { STAR_TYPES } from './BpkStar';
 
 describe('BpkInteractiveStarRating', () => {
   it('should render correctly if you give it more than the max rating allowed', () => {
     const tree = shallow(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
         id="my-rating"
         rating={7}
       />,
@@ -37,7 +41,9 @@ describe('BpkInteractiveStarRating', () => {
   it('should render correctly with 0 stars', () => {
     const tree = shallow(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
         id="my-rating"
         rating={0}
       />,
@@ -48,7 +54,9 @@ describe('BpkInteractiveStarRating', () => {
   it('should render correctly with 3 stars', () => {
     const tree = shallow(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
         id="my-rating"
         rating={3}
       />,
@@ -59,7 +67,9 @@ describe('BpkInteractiveStarRating', () => {
   it('should render correctly with 3.5 stars', () => {
     const tree = shallow(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
         id="my-rating"
         rating={3.5}
       />,
@@ -70,7 +80,9 @@ describe('BpkInteractiveStarRating', () => {
   it('should render correctly with 5 stars', () => {
     const tree = shallow(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
         id="my-rating"
         rating={5}
       />,
@@ -81,7 +93,9 @@ describe('BpkInteractiveStarRating', () => {
   it('should render correctly with "large" attribute', () => {
     const tree = shallow(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
         id="my-rating"
         rating={5}
         large
@@ -93,7 +107,9 @@ describe('BpkInteractiveStarRating', () => {
   it('should render correctly with "maxRating" attribute', () => {
     const tree = shallow(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
         id="my-rating"
         rating={5}
         maxRating={8}
@@ -105,7 +121,9 @@ describe('BpkInteractiveStarRating', () => {
   it('should render 4 stars based on hoverRating as it has priority over rating', () => {
     const tree = shallow(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
         id="my-rating"
         rating={3}
         hoverRating={4}
@@ -118,7 +136,9 @@ describe('BpkInteractiveStarRating', () => {
     const onRatingHover = jest.fn();
     const tree = shallow(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
         id="my-star-rating"
         onRatingHover={onRatingHover}
       />,
@@ -133,7 +153,9 @@ describe('BpkInteractiveStarRating', () => {
     const onRatingSelect = jest.fn();
     const tree = shallow(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
         id="my-star-rating"
         onRatingSelect={onRatingSelect}
       />,

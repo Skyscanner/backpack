@@ -26,9 +26,11 @@ const createThemeListener = () => {
 
   const contextTypes = { [CHANNEL]: PropTypes.object };
 
-  const initial = context => (context[CHANNEL] ? context[CHANNEL].getState() : null);
+  const initial = context =>
+    context[CHANNEL] ? context[CHANNEL].getState() : null;
 
-  const subscribe = (context, cb) => (context[CHANNEL] ? context[CHANNEL].subscribe(cb) : null);
+  const subscribe = (context, cb) =>
+    context[CHANNEL] ? context[CHANNEL].subscribe(cb) : null;
 
   return { contextTypes, initial, subscribe };
 };

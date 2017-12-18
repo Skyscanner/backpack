@@ -28,7 +28,8 @@ describe('BpkStarRating', () => {
       <BpkStarRating
         ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
         rating={7}
-      />);
+      />,
+    );
     expect(toJson(tree)).toMatchSnapshot();
   });
 

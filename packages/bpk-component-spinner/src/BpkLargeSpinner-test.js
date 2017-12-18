@@ -29,17 +29,23 @@ describe('BpkLargeSpinner', () => {
   });
 
   it('should render correctly with type as light', () => {
-    const tree = renderer.create(<BpkLargeSpinner type={SPINNER_TYPES.light} />).toJSON();
+    const tree = renderer
+      .create(<BpkLargeSpinner type={SPINNER_TYPES.light} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with type as primary', () => {
-    const tree = renderer.create(<BpkLargeSpinner type={SPINNER_TYPES.primary} />).toJSON();
+    const tree = renderer
+      .create(<BpkLargeSpinner type={SPINNER_TYPES.primary} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
-    const tree = renderer.create(<BpkLargeSpinner className="my-custom-class" />).toJSON();
+    const tree = renderer
+      .create(<BpkLargeSpinner className="my-custom-class" />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 

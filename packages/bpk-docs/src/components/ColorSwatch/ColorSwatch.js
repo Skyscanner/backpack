@@ -24,7 +24,7 @@ import STYLES from './color-swatch.scss';
 
 const getClassName = cssModules(STYLES);
 
-const ColorSwatch = (props) => {
+const ColorSwatch = props => {
   const style = {
     backgroundColor: props.color,
     backgroundImage: props.gradient,
@@ -32,10 +32,18 @@ const ColorSwatch = (props) => {
 
   const classNames = [getClassName('bpkdocs-color-swatch')];
 
-  if (props.whiteColor) { classNames.push(getClassName('bpkdocs-color-swatch--light')); }
-  if (props.border) { classNames.push(getClassName('bpkdocs-color-swatch--border')); }
+  if (props.whiteColor) {
+    classNames.push(getClassName('bpkdocs-color-swatch--light'));
+  }
+  if (props.border) {
+    classNames.push(getClassName('bpkdocs-color-swatch--border'));
+  }
 
-  return <div style={style} className={classNames.join(' ')}>{props.name}</div>;
+  return (
+    <div style={style} className={classNames.join(' ')}>
+      {props.name}
+    </div>
+  );
 };
 
 ColorSwatch.propTypes = {

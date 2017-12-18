@@ -21,13 +21,18 @@ import PropTypes from 'prop-types';
 import BpkText from 'bpk-component-text';
 import BpkPanel from 'bpk-component-panel';
 import { cssModules } from 'bpk-react-utils';
-import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
+import BpkImage, {
+  withLazyLoading,
+  withLoadingBehavior,
+} from 'bpk-component-image';
 
 import STYLES from './ComponentScreenshots.scss';
 
 const getClassName = cssModules(STYLES);
 const documentIfExists = typeof window !== 'undefined' ? document : null;
-const LazyLoadingImage = withLoadingBehavior(withLazyLoading(BpkImage, documentIfExists));
+const LazyLoadingImage = withLoadingBehavior(
+  withLazyLoading(BpkImage, documentIfExists),
+);
 
 let counter = 0;
 const generateId = (title = '') => {
@@ -39,15 +44,24 @@ const ComponentScreenshot = ({ title, subText, ...rest }) => {
   const subTextId = generateId(title);
 
   return (
-    <div key={title} className={getClassName('bpkdocs-component-screenshots__item')}>
+    <div
+      key={title}
+      className={getClassName('bpkdocs-component-screenshots__item')}
+    >
       <dt className={getClassName('bpkdocs-component-screenshots__item-title')}>
         <BpkText tagName="h3">{title}</BpkText>
       </dt>
-      <dd className={getClassName('bpkdocs-component-screenshots__item-image-container')}>
+      <dd
+        className={getClassName(
+          'bpkdocs-component-screenshots__item-image-container',
+        )}
+      >
         <BpkPanel>
           <LazyLoadingImage {...rest} aria-describedby={subTextId} />
         </BpkPanel>
-        <BpkText id={subTextId} textStyle="xs">{subText}</BpkText>
+        <BpkText id={subTextId} textStyle="xs">
+          {subText}
+        </BpkText>
       </dd>
     </div>
   );

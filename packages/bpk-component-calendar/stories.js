@@ -34,7 +34,7 @@ import {
 } from './test-utils';
 
 import BpkCalendar, {
-  // BpkCalendarView,
+// BpkCalendarView,
   BpkCalendarGrid,
   BpkCalendarGridHeader,
   BpkCalendarNav,
@@ -58,7 +58,7 @@ class CalendarContainer extends Component {
       <BpkCalendar
         {...this.props}
         selectedDate={this.state.date}
-        onDateSelect={(date) => {
+        onDateSelect={date => {
           this.setState({ date });
           action('Selected day')(date);
         }}
@@ -129,7 +129,7 @@ storiesOf('bpk-component-calendar', module)
       initiallyFocusedDate={new Date()}
     />
   ))
-  .add('Calendar - Don\'t show weekend separator', () => (
+  .add("Calendar - Don't show weekend separator", () => (
     <CalendarContainer
       id="myCalendar"
       formatMonth={formatMonth}
@@ -189,7 +189,7 @@ storiesOf('bpk-component-calendar', module)
       maxDate={new Date(2020, 5, 15)}
     />
   ))
-  .add('Calendar - Don\'t mark today', () => (
+  .add("Calendar - Don't mark today", () => (
     <CalendarContainer
       id="myCalendar"
       formatMonth={formatMonth}
@@ -199,7 +199,7 @@ storiesOf('bpk-component-calendar', module)
       markToday={false}
     />
   ))
-  .add('Calendar - Don\'t mark outside days', () => (
+  .add("Calendar - Don't mark outside days", () => (
     <CalendarContainer
       id="myCalendar"
       formatMonth={formatMonth}
@@ -209,6 +209,4 @@ storiesOf('bpk-component-calendar', module)
       markOutsideDays={false}
     />
   ))
-  .add('Custom composed calendar', () => (
-    <MonthViewCalendar />
-  ));
+  .add('Custom composed calendar', () => <MonthViewCalendar />);

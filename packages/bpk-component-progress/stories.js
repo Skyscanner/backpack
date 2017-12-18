@@ -62,7 +62,7 @@ class ProgressContainer extends Component {
           {...rest}
         />
         <br />
-        { steps.map(step => (
+        {steps.map(step => (
           <BpkButton
             key={step}
             secondary
@@ -70,10 +70,9 @@ class ProgressContainer extends Component {
             selected={step === this.state.progress}
             style={{ marginRight: '1rem' }}
           >
-            { step }
+            {step}
           </BpkButton>
         ))}
-
       </div>
     );
   }

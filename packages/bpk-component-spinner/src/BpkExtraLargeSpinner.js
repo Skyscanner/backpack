@@ -26,11 +26,17 @@ import SPINNER_TYPES from './spinnerTypes';
 
 const getClassName = cssModules(STYLES);
 
-const BpkExtraLargeSpinner = (props) => {
+const BpkExtraLargeSpinner = props => {
   const { type, className, ...rest } = props;
-  const classNames = ['bpk-spinner', 'bpk-spinner--extra-large', `bpk-spinner--${type}`].map(getClassName);
+  const classNames = [
+    'bpk-spinner',
+    'bpk-spinner--extra-large',
+    `bpk-spinner--${type}`,
+  ].map(getClassName);
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   return <XlSpinner className={classNames.join(' ')} {...rest} />;
 };

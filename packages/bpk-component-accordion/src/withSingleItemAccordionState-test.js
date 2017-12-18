@@ -27,35 +27,41 @@ const EnhancedComponent = withSingleItemAccordionState(BpkAccordion);
 
 describe('withSingleItemAccordionState(BpkAccordion)', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <EnhancedComponent>
-        <div>Accordion Item 1</div>
-        <div>Accordion Item 2</div>
-        <div>Accordion Item 3</div>
-      </EnhancedComponent>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <EnhancedComponent>
+          <div>Accordion Item 1</div>
+          <div>Accordion Item 2</div>
+          <div>Accordion Item 3</div>
+        </EnhancedComponent>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with custom initially expanded item', () => {
-    const tree = renderer.create(
-      <EnhancedComponent>
-        <div>Accordion Item 1</div>
-        <div initiallyExpanded>Accordion Item 2</div>
-        <div>Accordion Item 3</div>
-      </EnhancedComponent>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <EnhancedComponent>
+          <div>Accordion Item 1</div>
+          <div initiallyExpanded>Accordion Item 2</div>
+          <div>Accordion Item 3</div>
+        </EnhancedComponent>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly even when multiple items are marked as initially expanded', () => {
-    const tree = renderer.create(
-      <EnhancedComponent>
-        <div>Accordion Item 1</div>
-        <div initiallyExpanded>Accordion Item 2</div>
-        <div initiallyExpanded>Accordion Item 3</div>
-      </EnhancedComponent>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <EnhancedComponent>
+          <div>Accordion Item 1</div>
+          <div initiallyExpanded>Accordion Item 2</div>
+          <div initiallyExpanded>Accordion Item 3</div>
+        </EnhancedComponent>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -70,10 +76,16 @@ describe('withSingleItemAccordionState(BpkAccordion)', () => {
 
     expect(accordionContainer.state('expanded')).toEqual('.1');
 
-    accordionContainer.findWhere(e => e.text() === 'Accordion Item 1').first().prop('onClick')();
+    accordionContainer
+      .findWhere(e => e.text() === 'Accordion Item 1')
+      .first()
+      .prop('onClick')();
     expect(accordionContainer.state('expanded')).toEqual('.0');
 
-    accordionContainer.findWhere(e => e.text() === 'Accordion Item 3').first().prop('onClick')();
+    accordionContainer
+      .findWhere(e => e.text() === 'Accordion Item 3')
+      .first()
+      .prop('onClick')();
     expect(accordionContainer.state('expanded')).toEqual('.2');
   });
 });

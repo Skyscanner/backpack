@@ -29,7 +29,9 @@ const BREAKPOINTS = {
   ABOVE_TABLET: TOKENS.breakpointQueryAboveTablet,
 };
 
-const BpkBreakpoint = props => <MediaQuery query={props.query}>{props.children}</MediaQuery>;
+const BpkBreakpoint = props => (
+  <MediaQuery query={props.query}>{props.children}</MediaQuery>
+);
 
 const queryValidator = (props, ...rest) => {
   if (!props.legacy) {

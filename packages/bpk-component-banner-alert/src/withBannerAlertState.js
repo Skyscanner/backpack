@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 
 import { wrapDisplayName } from 'bpk-react-utils';
 
-const withBannerAlertState = (WrappedComponent) => {
+const withBannerAlertState = WrappedComponent => {
   class component extends Component {
     constructor(props) {
       super(props);
@@ -69,7 +69,14 @@ const withBannerAlertState = (WrappedComponent) => {
 
     render() {
       const {
-        onDismiss, onExpandToggle, expanded, show, hideAfter, animateOnLeave, children, ...rest
+        onDismiss,
+        onExpandToggle,
+        expanded,
+        show,
+        hideAfter,
+        animateOnLeave,
+        children,
+        ...rest
       } = this.props;
 
       return (
@@ -87,7 +94,10 @@ const withBannerAlertState = (WrappedComponent) => {
     }
   }
 
-  component.displayName = wrapDisplayName(WrappedComponent, 'withBannerAlertState');
+  component.displayName = wrapDisplayName(
+    WrappedComponent,
+    'withBannerAlertState',
+  );
 
   component.propTypes = {
     onDismiss: PropTypes.func,
@@ -113,4 +123,3 @@ const withBannerAlertState = (WrappedComponent) => {
 };
 
 export default withBannerAlertState;
-

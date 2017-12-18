@@ -26,12 +26,11 @@ const themePropType = (props, propName, componentName) => {
     return false;
   }
   if (!theme[THEMING_ATTRIBUTE]) {
-    return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName}\`. To theme a \`${componentName}\`, the \`theme\` prop must include \`${THEMING_ATTRIBUTE}\``); // eslint-disable-line max-len
+    return new Error(
+      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. To theme a \`${componentName}\`, the \`theme\` prop must include \`${THEMING_ATTRIBUTE}\``,
+    ); // eslint-disable-line max-len
   }
   return false;
 };
 
-export {
-  THEMING_ATTRIBUTE,
-  themePropType,
-};
+export { THEMING_ATTRIBUTE, themePropType };

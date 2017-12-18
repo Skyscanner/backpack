@@ -19,7 +19,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { PropTypes as RouterPropTypes } from 'react-router';
-import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+import {
+  BpkGridContainer,
+  BpkGridRow,
+  BpkGridColumn,
+} from 'bpk-component-grid';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './side-nav-layout.scss';
@@ -35,7 +39,9 @@ const SideNavLayout = ({ children, links, location }) => (
       <BpkGridColumn
         width={12}
         padded={false}
-        className={getClassName('bpkdocs-side-nav-layout__nav-select-container')}
+        className={getClassName(
+          'bpkdocs-side-nav-layout__nav-select-container',
+        )}
       >
         <NavSelect links={links} location={location} />
       </BpkGridColumn>
@@ -45,7 +51,9 @@ const SideNavLayout = ({ children, links, location }) => (
       >
         <NavList links={links} />
       </BpkGridColumn>
-      <BpkGridColumn width={9} tabletWidth={12}>{children}</BpkGridColumn>
+      <BpkGridColumn width={9} tabletWidth={12}>
+        {children}
+      </BpkGridColumn>
     </BpkGridRow>
   </BpkGridContainer>
 );

@@ -42,7 +42,9 @@ const staticSiteGeneratorConfig = {
 };
 
 const sassOptions = {
-  data: BPK_TOKENS ? fs.readFileSync(`packages/bpk-tokens/tokens/${BPK_TOKENS}.scss`) : '',
+  data: BPK_TOKENS
+    ? fs.readFileSync(`packages/bpk-tokens/tokens/${BPK_TOKENS}.scss`)
+    : '',
   functions: sassFunctions,
 };
 
@@ -181,7 +183,6 @@ const config = {
       index: 'index.html',
     },
   },
-
 };
 
 if (isProduction) {
@@ -206,8 +207,7 @@ if (isProduction) {
     }),
     new CopyWebpackPlugin([
       { from: 'packages/bpk-docs/src/README.md', to: 'README.md' },
-    ],
-    ),
+    ]),
   );
 }
 

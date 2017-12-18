@@ -20,48 +20,44 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import AnimateAndFade from './AnimateAndFade';
 
-const message = <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>;
+const message = (
+  <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
+);
 
 describe('AnimateAndFade', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <AnimateAndFade >
-        {message}
-      </AnimateAndFade>,
-    ).toJSON();
+    const tree = renderer
+      .create(<AnimateAndFade>{message}</AnimateAndFade>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly when shown', () => {
-    const tree = renderer.create(
-      <AnimateAndFade show>
-        {message}
-      </AnimateAndFade>,
-    ).toJSON();
+    const tree = renderer
+      .create(<AnimateAndFade show>{message}</AnimateAndFade>)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with animateOnEnter', () => {
-    const tree = renderer.create(
-      <AnimateAndFade
-        show
-        animateOnEnter
-      >
-        {message}
-      </AnimateAndFade>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <AnimateAndFade show animateOnEnter>
+          {message}
+        </AnimateAndFade>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should render correctly with userland className', () => {
-    const tree = renderer.create(
-      <AnimateAndFade
-        className="userland-class-name"
-        show
-      >
-        {message}
-      </AnimateAndFade>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <AnimateAndFade className="userland-class-name" show>
+          {message}
+        </AnimateAndFade>,
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

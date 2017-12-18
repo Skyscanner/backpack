@@ -35,7 +35,8 @@ const components = [
     title: 'Default',
     blurb: [
       <Paragraph>
-        The default behaviour for a badge is to sit next to other objects with text aligned to the baseline.
+        The default behaviour for a badge is to sit next to other objects with
+        text aligned to the baseline.
       </Paragraph>,
     ],
     examples: [
@@ -48,9 +49,12 @@ const components = [
   {
     id: 'docked',
     title: 'Docked',
-    blurb: [<Paragraph>A badge can also be configured to have a top-right, or top-left modifier to pin it
-    to the corner of its parent.
-            </Paragraph>],
+    blurb: [
+      <Paragraph>
+        A badge can also be configured to have a top-right, or top-left modifier
+        to pin it to the corner of its parent.
+      </Paragraph>,
+    ],
     examples: [
       <div className={getClassName('bpkdocs-badge-page__badge-container')}>
         <BpkBadge docked="right">Advert</BpkBadge>
@@ -62,29 +66,39 @@ const components = [
     title: 'Visually centered',
     blurb: [
       <Paragraph>
-        Using this configuration will visually center the badge. Note: the text will not align to the baseline.
+        Using this configuration will visually center the badge. Note: the text
+        will not align to the baseline.
       </Paragraph>,
     ],
     examples: [
-      <BpkBadge centered className={badgeClassName}>Apples</BpkBadge>,
-      <BpkBadge centered className={badgeClassName}>Bananas</BpkBadge>,
-      <BpkBadge centered className={badgeClassName}>Strawberries</BpkBadge>,
+      <BpkBadge centered className={badgeClassName}>
+        Apples
+      </BpkBadge>,
+      <BpkBadge centered className={badgeClassName}>
+        Bananas
+      </BpkBadge>,
+      <BpkBadge centered className={badgeClassName}>
+        Strawberries
+      </BpkBadge>,
       <BpkBadge centered>Pears</BpkBadge>,
     ],
   },
 ];
 
-const BadgePage = () => (<DocsPageBuilder
-  title="Badge"
-  blurb={[
-    <Paragraph>
-      Badges are labels which hold small amounts of information. They are currently available in one colour.
-      Badges are most often used as counters, such as an indication of unread notifications.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={badgeReadme}
-  sassdocId="badges"
-/>);
+const BadgePage = () => (
+  <DocsPageBuilder
+    title="Badge"
+    blurb={[
+      <Paragraph>
+        Badges are labels which hold small amounts of information. They are
+        currently available in one colour. Badges are most often used as
+        counters, such as an indication of unread notifications.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={badgeReadme}
+    sassdocId="badges"
+  />
+);
 
 export default BadgePage;

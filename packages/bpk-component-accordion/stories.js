@@ -21,30 +21,27 @@ import { storiesOf } from '@storybook/react';
 import BpkCheckbox from 'bpk-component-checkbox';
 import { spacingSm } from 'bpk-tokens/tokens/base.es6';
 
-import { BpkAccordion, withSingleItemAccordionState, BpkAccordionItem, withAccordionItemState } from './index';
+import {
+  BpkAccordion,
+  withSingleItemAccordionState,
+  BpkAccordionItem,
+  withAccordionItemState,
+} from './index';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
 
-const CheckboxWrapper = props => <div style={{ padding: `${spacingSm} 0` }} {...props} />;
+const CheckboxWrapper = props => (
+  <div style={{ padding: `${spacingSm} 0` }} {...props} />
+);
 
 const StopsContent = () => (
   <form>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="direct"
-        label="Direct"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="direct" label="Direct" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="1-stop"
-        label="1 stop"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="1-stop" label="1 stop" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
       <BpkCheckbox
@@ -166,7 +163,11 @@ storiesOf('bpk-component-accordion', module)
       <BpkAccordionItem id="stops" title="Stops">
         <StopsContent />
       </BpkAccordionItem>
-      <BpkAccordionItem id="departure-times" title="Departure times" initiallyExpanded>
+      <BpkAccordionItem
+        id="departure-times"
+        title="Departure times"
+        initiallyExpanded
+      >
         <AirlinesContent />
       </BpkAccordionItem>
       <BpkAccordionItem id="journey-duration" title="Journey duration">
@@ -179,10 +180,18 @@ storiesOf('bpk-component-accordion', module)
       <StatefulAccordionItem id="stops" title="Stops" initiallyExpanded>
         <StopsContent />
       </StatefulAccordionItem>
-      <StatefulAccordionItem id="departure-times" title="Departure times" initiallyExpanded>
+      <StatefulAccordionItem
+        id="departure-times"
+        title="Departure times"
+        initiallyExpanded
+      >
         <AirlinesContent />
       </StatefulAccordionItem>
-      <StatefulAccordionItem id="journey-duration" title="Journey duration" initiallyExpanded>
+      <StatefulAccordionItem
+        id="journey-duration"
+        title="Journey duration"
+        initiallyExpanded
+      >
         <AirportsContent />
       </StatefulAccordionItem>
     </BpkAccordion>
@@ -192,10 +201,18 @@ storiesOf('bpk-component-accordion', module)
       <StatefulAccordionItem id="stops" title="Stops">
         <StopsContent />
       </StatefulAccordionItem>
-      <StatefulAccordionItem id="departure-times" title="Departure times" initiallyExpanded>
+      <StatefulAccordionItem
+        id="departure-times"
+        title="Departure times"
+        initiallyExpanded
+      >
         <AirlinesContent />
       </StatefulAccordionItem>
-      <StatefulAccordionItem id="journey-duration" title="Journey duration" initiallyExpanded>
+      <StatefulAccordionItem
+        id="journey-duration"
+        title="Journey duration"
+        initiallyExpanded
+      >
         <AirportsContent />
       </StatefulAccordionItem>
     </BpkAccordion>

@@ -29,7 +29,7 @@ const getClassName = cssModules(STYLES);
 // eslint-disable-next-line no-restricted-globals
 const isNumeric = n => !isNaN(parseFloat(n)) && isFinite(n);
 
-const BpkGridColumn = (props) => {
+const BpkGridColumn = props => {
   const {
     children,
     width,
@@ -44,20 +44,48 @@ const BpkGridColumn = (props) => {
     ...rest
   } = props;
 
-  const classNames = ['bpk-grid__column', `bpk-grid__column--${width}`].map(getClassName);
+  const classNames = ['bpk-grid__column', `bpk-grid__column--${width}`].map(
+    getClassName,
+  );
 
-  if (isNumeric(mobileWidth)) { classNames.push(getClassName(`bpk-grid__column--mobile-${mobileWidth}`)); }
-  if (isNumeric(tabletWidth)) { classNames.push(getClassName(`bpk-grid__column--tablet-${tabletWidth}`)); }
-  if (isNumeric(offset)) { classNames.push(getClassName(`bpk-grid__column--offset-${offset}`)); }
-  if (isNumeric(mobileOffset)) { classNames.push(getClassName(`bpk-grid__column--offset-mobile-${mobileOffset}`)); }
-  if (isNumeric(tabletOffset)) { classNames.push(getClassName(`bpk-grid__column--offset-tablet-${tabletOffset}`)); }
-  if (padded) { classNames.push(getClassName('bpk-grid__column--padded')); }
-  if (debug) { classNames.push(getClassName('bpk-grid__column--debug')); }
-  if (className) { classNames.push(className); }
+  if (isNumeric(mobileWidth)) {
+    classNames.push(getClassName(`bpk-grid__column--mobile-${mobileWidth}`));
+  }
+  if (isNumeric(tabletWidth)) {
+    classNames.push(getClassName(`bpk-grid__column--tablet-${tabletWidth}`));
+  }
+  if (isNumeric(offset)) {
+    classNames.push(getClassName(`bpk-grid__column--offset-${offset}`));
+  }
+  if (isNumeric(mobileOffset)) {
+    classNames.push(
+      getClassName(`bpk-grid__column--offset-mobile-${mobileOffset}`),
+    );
+  }
+  if (isNumeric(tabletOffset)) {
+    classNames.push(
+      getClassName(`bpk-grid__column--offset-tablet-${tabletOffset}`),
+    );
+  }
+  if (padded) {
+    classNames.push(getClassName('bpk-grid__column--padded'));
+  }
+  if (debug) {
+    classNames.push(getClassName('bpk-grid__column--debug'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
     <div className={classNames.join(' ')} {...rest}>
-      {debug ? <div className={getClassName('bpk-grid__column-debugger')}>{children}</div> : children}
+      {debug ? (
+        <div className={getClassName('bpk-grid__column-debugger')}>
+          {children}
+        </div>
+      ) : (
+        children
+      )}
     </div>
   );
 };

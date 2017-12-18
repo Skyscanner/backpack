@@ -57,29 +57,30 @@ const components = [
     title: 'Default',
     blurb: [
       <Paragraph>
-        Nudgers come with decrease and increase buttons to either side of the selected value. A minimum and maximum
-        value need to be provided.
+        Nudgers come with decrease and increase buttons to either side of the
+        selected value. A minimum and maximum value need to be provided.
       </Paragraph>,
     ],
-    examples: [
-      <NudgerContainer />,
-    ],
+    examples: [<NudgerContainer />],
   },
 ];
 
-const NudgersPage = () => (<DocsPageBuilder
-  title="Nudgers"
-  blurb={[
-    <Paragraph>
-      Nudgers allow users to quickly specify a value within a given range.
-    </Paragraph>,
-    <Paragraph>
-      They should only be used for small number ranges. If users have to click many times to get to the desired value,
-      a different UI element might be better suited.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={nudgersReadme}
-/>);
+const NudgersPage = () => (
+  <DocsPageBuilder
+    title="Nudgers"
+    blurb={[
+      <Paragraph>
+        Nudgers allow users to quickly specify a value within a given range.
+      </Paragraph>,
+      <Paragraph>
+        They should only be used for small number ranges. If users have to click
+        many times to get to the desired value, a different UI element might be
+        better suited.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={nudgersReadme}
+  />
+);
 
 export default NudgersPage;

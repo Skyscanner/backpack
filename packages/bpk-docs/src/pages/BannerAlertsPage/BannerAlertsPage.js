@@ -21,7 +21,10 @@ import { durationSm, fontWeightBold } from 'bpk-tokens/tokens/base.es6';
 import PropTypes from 'prop-types';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkAnimateHeight from 'bpk-animate-height';
-import BpkBannerAlert, { ALERT_TYPES, withBannerAlertState } from 'bpk-component-banner-alert';
+import BpkBannerAlert, {
+  ALERT_TYPES,
+  withBannerAlertState,
+} from 'bpk-component-banner-alert';
 import BpkButton from 'bpk-component-button';
 import bannerAlertReadme from 'bpk-component-banner-alert/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -43,7 +46,11 @@ nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fr
 porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.`;
-const richMessage = <span style={{ fontWeight: fontWeightBold }}>Successful alert with custom rendered message</span>;
+const richMessage = (
+  <span style={{ fontWeight: fontWeightBold }}>
+    Successful alert with custom rendered message
+  </span>
+);
 
 class BpkBannerDismissable extends Component {
   constructor() {
@@ -128,7 +135,9 @@ class BpkBannerAlertDismissDemo extends Component {
   }
 
   setDismissed(index) {
-    const updatedBannerAlerts = JSON.parse(JSON.stringify(this.state.bannerAlerts));
+    const updatedBannerAlerts = JSON.parse(
+      JSON.stringify(this.state.bannerAlerts),
+    );
     updatedBannerAlerts[index].show = false;
     this.setState({
       bannerAlerts: updatedBannerAlerts,
@@ -158,13 +167,16 @@ class BpkBannerAlertDismissDemo extends Component {
             type={b.type}
           />
         ))}
-        <BpkAnimateHeight height={this.state.dirty ? 'auto' : 0} duration={parseInt(durationSm, 10)} >
+        <BpkAnimateHeight
+          height={this.state.dirty ? 'auto' : 0}
+          duration={parseInt(durationSm, 10)}
+        >
           <BpkButton
             className={componentClassName}
             onClick={this.reset}
             destructive
           >
-          Reset
+            Reset
           </BpkButton>
         </BpkAnimateHeight>
       </div>
@@ -186,18 +198,14 @@ class BpkBannerAlertFadeDemo extends Component {
 
   addBannerAlert() {
     this.setState({
-      bannerAlertCount: this.state.bannerAlertCount += 1,
+      bannerAlertCount: (this.state.bannerAlertCount += 1),
     });
   }
 
   render() {
     return (
       <div>
-        <BpkButton
-          onClick={this.addBannerAlert}
-        >
-            Add banner alert!
-        </BpkButton>
+        <BpkButton onClick={this.addBannerAlert}>Add banner alert!</BpkButton>
         {[...Array(this.state.bannerAlertCount)].map((e, i) => (
           <BpkBannerDismissable
             bannerClassName={componentClassName}
@@ -230,30 +238,16 @@ const components = [
     title: 'Default',
     blurb: [
       <Paragraph>
-        Banner alerts come in four styles to indicate success, warning or error, or some neutral information.
+        Banner alerts come in four styles to indicate success, warning or error,
+        or some neutral information.
       </Paragraph>,
     ],
     examples: [
-      <BannerAlert
-        message="Neutral alert."
-        type={ALERT_TYPES.NEUTRAL}
-      />,
-      <BannerAlert
-        message="Successful alert."
-        type={ALERT_TYPES.SUCCESS}
-      />,
-      <BannerAlert
-        message={richMessage}
-        type={ALERT_TYPES.SUCCESS}
-      />,
-      <BannerAlert
-        message="Warn alert."
-        type={ALERT_TYPES.WARN}
-      />,
-      <BannerAlert
-        message="Error alert."
-        type={ALERT_TYPES.ERROR}
-      />,
+      <BannerAlert message="Neutral alert." type={ALERT_TYPES.NEUTRAL} />,
+      <BannerAlert message="Successful alert." type={ALERT_TYPES.SUCCESS} />,
+      <BannerAlert message={richMessage} type={ALERT_TYPES.SUCCESS} />,
+      <BannerAlert message="Warn alert." type={ALERT_TYPES.WARN} />,
+      <BannerAlert message="Error alert." type={ALERT_TYPES.ERROR} />,
     ],
   },
   {
@@ -261,8 +255,8 @@ const components = [
     title: 'Expandable',
     blurb: [
       <Paragraph>
-        They can be configured to display further information to the
-        user in the form of an expandable panel.
+        They can be configured to display further information to the user in the
+        form of an expandable panel.
       </Paragraph>,
     ],
     examples: [
@@ -271,19 +265,19 @@ const components = [
         type={ALERT_TYPES.NEUTRAL}
       >
         {longMessage}
-      </BannerAlert >,
+      </BannerAlert>,
       <BannerAlert
         message="Successful alert with more information."
         type={ALERT_TYPES.SUCCESS}
       >
         {longMessage}
-      </BannerAlert >,
+      </BannerAlert>,
       <BannerAlert
         message="Warn alert with more information."
         type={ALERT_TYPES.WARN}
       >
         {longMessage}
-      </BannerAlert >,
+      </BannerAlert>,
       <BannerAlert
         message="Error alert with more information."
         type={ALERT_TYPES.ERROR}
@@ -297,7 +291,8 @@ const components = [
     title: 'Dismissable',
     blurb: [
       <Paragraph>
-        Banner alerts can be configured to include a close icon so that the user can dismiss them.
+        Banner alerts can be configured to include a close icon so that the user
+        can dismiss them.
       </Paragraph>,
     ],
     examples: [
@@ -330,26 +325,30 @@ const components = [
     title: 'withBannerAlertState',
     blurb: [
       <Paragraph>
-        Most common use of &quot;expandable&quot; and &quot;dismissable&quot; can be easily achieved
-        using the &quot;withBannerAlertState&quot; HOC.
+        Most common use of &quot;expandable&quot; and &quot;dismissable&quot;
+        can be easily achieved using the &quot;withBannerAlertState&quot; HOC.
       </Paragraph>,
       <Paragraph>
-        It also adds the option to automatically dismiss a banner after a certain period of time has elapsed.
+        It also adds the option to automatically dismiss a banner after a
+        certain period of time has elapsed.
       </Paragraph>,
     ],
   },
 ];
 
-const BannerAlertsPage = () => (<DocsPageBuilder
-  title="Banner alerts"
-  blurb={[
-    <Paragraph>
-      Banner alerts provide feedback to the user when an action has been performed.
-    </Paragraph>,
-  ]}
-  components={components}
-  sassdocId="notifications"
-  readme={bannerAlertReadme}
-/>);
+const BannerAlertsPage = () => (
+  <DocsPageBuilder
+    title="Banner alerts"
+    blurb={[
+      <Paragraph>
+        Banner alerts provide feedback to the user when an action has been
+        performed.
+      </Paragraph>,
+    ]}
+    components={components}
+    sassdocId="notifications"
+    readme={bannerAlertReadme}
+  />
+);
 
 export default BannerAlertsPage;

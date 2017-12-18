@@ -21,7 +21,6 @@ import { storiesOf } from '@storybook/react';
 
 import BpkThemeToggle from './index';
 
-storiesOf('bpk-component-theme-toggle', module)
-  .add('Example', () => (
-    <BpkThemeToggle />
-  ));
+storiesOf('bpk-component-theme-toggle', module).add('Example', () => (
+  <BpkThemeToggle />
+));

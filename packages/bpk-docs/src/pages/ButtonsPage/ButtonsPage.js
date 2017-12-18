@@ -64,10 +64,7 @@ class LoadingButtonContainer extends Component {
     this.setState({
       loading: true,
     });
-    setTimeout(
-      () => this.setState({ loading: false }),
-      2000,
-    );
+    setTimeout(() => this.setState({ loading: false }), 2000);
   }
 
   render() {
@@ -94,8 +91,8 @@ const components = [
     title: 'Primary',
     blurb: [
       <Paragraph>
-        The Backpack primary button is available in two sizes and comes with styles for hover, active, disabled and
-        selected states.
+        The Backpack primary button is available in two sizes and comes with
+        styles for hover, active, disabled and selected states.
       </Paragraph>,
     ],
     examples: [
@@ -108,9 +105,13 @@ const components = [
       <br />,
       <BpkButton large>Primary</BpkButton>,
       ' ',
-      <BpkButton large selected>Selected</BpkButton>,
+      <BpkButton large selected>
+        Selected
+      </BpkButton>,
       ' ',
-      <BpkButton large disabled>Disabled</BpkButton>,
+      <BpkButton large disabled>
+        Disabled
+      </BpkButton>,
     ],
   },
   {
@@ -118,46 +119,65 @@ const components = [
     title: 'Secondary',
     blurb: [
       <Paragraph>
-        Similar to the primary button, the secondary version is available in two sizes and comes with styles for
-        hover, active, disabled and selected states.
+        Similar to the primary button, the secondary version is available in two
+        sizes and comes with styles for hover, active, disabled and selected
+        states.
       </Paragraph>,
     ],
     examples: [
       <BpkButton secondary>Secondary</BpkButton>,
       ' ',
-      <BpkButton secondary selected>Selected</BpkButton>,
+      <BpkButton secondary selected>
+        Selected
+      </BpkButton>,
       ' ',
-      <BpkButton secondary disabled>Disabled</BpkButton>,
+      <BpkButton secondary disabled>
+        Disabled
+      </BpkButton>,
       <br />,
       <br />,
-      <BpkButton large secondary>Secondary</BpkButton>,
+      <BpkButton large secondary>
+        Secondary
+      </BpkButton>,
       ' ',
-      <BpkButton large secondary selected>Selected</BpkButton>,
+      <BpkButton large secondary selected>
+        Selected
+      </BpkButton>,
       ' ',
-      <BpkButton large secondary disabled>Disabled</BpkButton>,
+      <BpkButton large secondary disabled>
+        Disabled
+      </BpkButton>,
     ],
   },
   {
     id: 'featured',
     title: 'Featured',
     blurb: [
-      <Paragraph>
-        This button is reserved for featured buttons.
-      </Paragraph>,
+      <Paragraph>This button is reserved for featured buttons.</Paragraph>,
     ],
     examples: [
       <BpkButton featured>Featured</BpkButton>,
       ' ',
-      <BpkButton featured selected>Selected</BpkButton>,
+      <BpkButton featured selected>
+        Selected
+      </BpkButton>,
       ' ',
-      <BpkButton featured disabled>Disabled</BpkButton>,
+      <BpkButton featured disabled>
+        Disabled
+      </BpkButton>,
       <br />,
       <br />,
-      <BpkButton large featured>Featured</BpkButton>,
+      <BpkButton large featured>
+        Featured
+      </BpkButton>,
       ' ',
-      <BpkButton large featured selected>Selected</BpkButton>,
+      <BpkButton large featured selected>
+        Selected
+      </BpkButton>,
       ' ',
-      <BpkButton large featured disabled>Disabled</BpkButton>,
+      <BpkButton large featured disabled>
+        Disabled
+      </BpkButton>,
     ],
   },
   {
@@ -167,12 +187,18 @@ const components = [
     examples: [
       <BpkButton destructive>Destructive</BpkButton>,
       ' ',
-      <BpkButton destructive disabled>Disabled</BpkButton>,
+      <BpkButton destructive disabled>
+        Disabled
+      </BpkButton>,
       <br />,
       <br />,
-      <BpkButton large destructive>Destructive</BpkButton>,
+      <BpkButton large destructive>
+        Destructive
+      </BpkButton>,
       ' ',
-      <BpkButton large destructive disabled>Disabled</BpkButton>,
+      <BpkButton large destructive disabled>
+        Disabled
+      </BpkButton>,
     ],
   },
   {
@@ -180,7 +206,8 @@ const components = [
     title: 'With icons',
     blurb: [
       <Paragraph>
-        All buttons support the nesting of icons, which is useful for improving affordance.
+        All buttons support the nesting of icons, which is useful for improving
+        affordance.
       </Paragraph>,
     ],
     examples: [
@@ -199,7 +226,8 @@ const components = [
     title: 'Icon-only buttons',
     blurb: [
       <Paragraph>
-        Buttons may contain only an icon (without visible text), which is useful for small screen sizes.
+        Buttons may contain only an icon (without visible text), which is useful
+        for small screen sizes.
       </Paragraph>,
     ],
     examples: [
@@ -240,19 +268,26 @@ const components = [
     title: 'Link buttons',
     blurb: [
       <Paragraph>
-        Link buttons follow the same style as links and are used as a tertiary means of triggering actions. Like all
-        other buttons, these are available in two sizes and have hover, active and disabled states.
+        Link buttons follow the same style as links and are used as a tertiary
+        means of triggering actions. Like all other buttons, these are available
+        in two sizes and have hover, active and disabled states.
       </Paragraph>,
     ],
     examples: [
       <BpkButton link>Link</BpkButton>,
       ' ',
-      <BpkButton link disabled>Disabled</BpkButton>,
+      <BpkButton link disabled>
+        Disabled
+      </BpkButton>,
       <br />,
       <br />,
-      <BpkButton link large>Link</BpkButton>,
+      <BpkButton link large>
+        Link
+      </BpkButton>,
       ' ',
-      <BpkButton link large disabled>Disabled</BpkButton>,
+      <BpkButton link large disabled>
+        Disabled
+      </BpkButton>,
     ],
   },
   {
@@ -260,8 +295,9 @@ const components = [
     title: 'Icon alignment within buttons',
     blurb: [
       <Paragraph>
-        The <BpkLink href={ROUTES.ALIGNMENT}>Alignment</BpkLink> page gives examples of
-        icon alignment using HOCs provided in the <BpkCode>bpk-component-icon</BpkCode> package.
+        The <BpkLink href={ROUTES.ALIGNMENT}>Alignment</BpkLink> page gives
+        examples of icon alignment using HOCs provided in the{' '}
+        <BpkCode>bpk-component-icon</BpkCode> package.
       </Paragraph>,
     ],
     examples: [],
@@ -274,10 +310,12 @@ const customSections = [
     title: 'Loading buttons',
     content: [
       <Paragraph>
-        Loading buttons support all the same props as
-        the <BpkRouterLink to={ROUTES.BUTTONS}>button</BpkRouterLink> component. They are distinct in that they
-        encapsulate the composition of <BpkRouterLink to={ROUTES.ICONS}>icons</BpkRouterLink> as well
-        as <BpkRouterLink to={ROUTES.SPINNERS}>spinners</BpkRouterLink> to form a nice, compelling call to action.
+        Loading buttons support all the same props as the{' '}
+        <BpkRouterLink to={ROUTES.BUTTONS}>button</BpkRouterLink> component.
+        They are distinct in that they encapsulate the composition of{' '}
+        <BpkRouterLink to={ROUTES.ICONS}>icons</BpkRouterLink> as well as{' '}
+        <BpkRouterLink to={ROUTES.SPINNERS}>spinners</BpkRouterLink> to form a
+        nice, compelling call to action.
       </Paragraph>,
     ],
     examples: [
@@ -289,18 +327,21 @@ const customSections = [
   },
 ];
 
-const ButtonsPage = () => (<DocsPageBuilder
-  title="Buttons"
-  blurb={[
-    <Paragraph>
-      On this page, you’ll find examples and information on how to use the button component. If you provide an href, an
-      anchor tag is rendered instead.
-    </Paragraph>,
-  ]}
-  components={components}
-  sassdocId="buttons"
-  readme={buttonReadme}
-  customSections={customSections}
-/>);
+const ButtonsPage = () => (
+  <DocsPageBuilder
+    title="Buttons"
+    blurb={[
+      <Paragraph>
+        On this page, you’ll find examples and information on how to use the
+        button component. If you provide an href, an anchor tag is rendered
+        instead.
+      </Paragraph>,
+    ]}
+    components={components}
+    sassdocId="buttons"
+    readme={buttonReadme}
+    customSections={customSections}
+  />
+);
 
 export default ButtonsPage;

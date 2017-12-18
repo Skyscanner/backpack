@@ -26,23 +26,39 @@ const getClassName = cssModules(STYLES);
 
 const isIE9 = () => {
   if (typeof window === 'undefined') return false;
-  return (window.navigator.appVersion.indexOf('MSIE 9.') !== -1);
+  return window.navigator.appVersion.indexOf('MSIE 9.') !== -1;
 };
 
-const BpkTicket = (props) => {
+const BpkTicket = props => {
   const {
-    children, href, padded, stub, vertical, className, stubClassName, stubProps, ...rest
+    children,
+    href,
+    padded,
+    stub,
+    vertical,
+    className,
+    stubClassName,
+    stubProps,
+    ...rest
   } = props;
   const classNames = [getClassName('bpk-ticket')];
-  const mainClassNames = ['bpk-ticket__paper', 'bpk-ticket__main'].map(getClassName);
-  const stubClassNames = ['bpk-ticket__paper', 'bpk-ticket__stub'].map(getClassName);
+  const mainClassNames = ['bpk-ticket__paper', 'bpk-ticket__main'].map(
+    getClassName,
+  );
+  const stubClassNames = ['bpk-ticket__paper', 'bpk-ticket__stub'].map(
+    getClassName,
+  );
   const punchlineClassNames = [getClassName('bpk-ticket__punchline')];
   const startNotchClassNames = [getClassName('bpk-ticket__notch')];
   const endNotchClassNames = [getClassName('bpk-ticket__notch')];
   const fallback = isIE9();
 
-  if (className) { classNames.push(className); }
-  if (stubClassName) { stubClassNames.push(stubClassName); }
+  if (className) {
+    classNames.push(className);
+  }
+  if (stubClassName) {
+    stubClassNames.push(stubClassName);
+  }
   if (padded) {
     mainClassNames.push(getClassName('bpk-ticket__main--padded'));
     stubClassNames.push(getClassName('bpk-ticket__stub--padded'));
@@ -65,7 +81,10 @@ const BpkTicket = (props) => {
     } else {
       classNames.push(getClassName('bpk-ticket--fallback'));
       mainClassNames.push(getClassName('bpk-ticket__paper--fallback'));
-      stubClassNames.push(getClassName('bpk-ticket__paper--fallback'), getClassName('bpk-ticket__stub--fallback'));
+      stubClassNames.push(
+        getClassName('bpk-ticket__paper--fallback'),
+        getClassName('bpk-ticket__stub--fallback'),
+      );
       punchlineClassNames.push(getClassName('bpk-ticket__punchline--fallback'));
     }
   }
@@ -73,10 +92,7 @@ const BpkTicket = (props) => {
   const classNameFinal = classNames.join(' ');
 
   const contents = [
-    <div
-      key="main"
-      className={mainClassNames.join(' ')}
-    >
+    <div key="main" className={mainClassNames.join(' ')}>
       {children}
     </div>,
     <div
@@ -88,11 +104,7 @@ const BpkTicket = (props) => {
       <div className={startNotchClassNames.join(' ')} />
       <div className={endNotchClassNames.join(' ')} />
     </div>,
-    <div
-      key="stub"
-      className={stubClassNames.join(' ')}
-      {...stubProps}
-    >
+    <div key="stub" className={stubClassNames.join(' ')} {...stubProps}>
       {stub}
     </div>,
   ];
@@ -100,14 +112,14 @@ const BpkTicket = (props) => {
   if (href) {
     return (
       <a href={href} className={classNameFinal} {...rest}>
-        { contents }
+        {contents}
       </a>
     );
   }
 
   return (
     <div role="button" className={classNameFinal} {...rest}>
-      { contents }
+      {contents}
     </div>
   );
 };

@@ -32,13 +32,15 @@ const components = [
     title: 'Default',
     blurb: [
       <Paragraph>
-        The default ticket positions its stub content to the right of the main content.
+        The default ticket positions its stub content to the right of the main
+        content.
       </Paragraph>,
     ],
     examples: [
       <BpkTicket stub="Lorem ipsum dolor sit amet.">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
       </BpkTicket>,
     ],
   },
@@ -46,41 +48,45 @@ const components = [
     id: 'vertical',
     title: 'Vertical',
     blurb: [
-      <Paragraph>
-        The stub can be positioned to the bottom as well.
-      </Paragraph>,
+      <Paragraph>The stub can be positioned to the bottom as well.</Paragraph>,
     ],
     examples: [
       <BpkTicket stub="Lorem ipsum dolor sit amet." vertical>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
       </BpkTicket>,
     ],
   },
   {
     id: 'without-padding',
     title: 'Without padding',
-    blurb: 'For full flexibility, you can opt to remove the default padding and roll your own.',
+    blurb:
+      'For full flexibility, you can opt to remove the default padding and roll your own.',
     examples: [
       <BpkTicket stub="Lorem ipsum dolor sit amet." padded={false}>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
       </BpkTicket>,
     ],
   },
 ];
 
-const TicketsPage = () => (<DocsPageBuilder
-  title="Tickets"
-  blurb={[
-    <Paragraph>
-      Tickets combine the look and feel of <BpkRouterLink to={ROUTES.CARDS}>Cards</BpkRouterLink> with
-      an added separation line to divide their content into two distinct areas.
-      They can be configured to display both horizontally and vertically.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={ticketReadme}
-/>);
+const TicketsPage = () => (
+  <DocsPageBuilder
+    title="Tickets"
+    blurb={[
+      <Paragraph>
+        Tickets combine the look and feel of{' '}
+        <BpkRouterLink to={ROUTES.CARDS}>Cards</BpkRouterLink> with an added
+        separation line to divide their content into two distinct areas. They
+        can be configured to display both horizontally and vertically.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={ticketReadme}
+  />
+);
 
 export default TicketsPage;

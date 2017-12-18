@@ -16,11 +16,7 @@
  * limitations under the License.
  */
 
-import {
-  View,
-  StyleSheet,
-  ViewPropTypes,
-} from 'react-native';
+import { View, StyleSheet, ViewPropTypes } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dash from 'react-native-dash';
@@ -72,8 +68,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const withDivider = (CardComponent) => {
-  const WithDivider = (props) => {
+const withDivider = CardComponent => {
+  const WithDivider = props => {
     const {
       children,
       stub,
@@ -89,7 +85,6 @@ const withDivider = (CardComponent) => {
     const punchlineStyle = [styles.cardPunchline];
     const stubStyle = [styles.cardStub];
 
-
     if (padded) {
       mainStyle.push(styles.cardMainPadded);
       stubStyle.push(styles.cardStubPadded);
@@ -100,15 +95,15 @@ const withDivider = (CardComponent) => {
       punchlineStyle.push(styles.cardPunchlineVertical);
       stubStyle.push(styles.cardStubVertical);
     }
-    if (userMainStyle) { mainStyle.push(userMainStyle); }
-    if (userStubStyle) { stubStyle.push(userStubStyle); }
+    if (userMainStyle) {
+      mainStyle.push(userMainStyle);
+    }
+    if (userStubStyle) {
+      stubStyle.push(userStubStyle);
+    }
 
     return (
-      <CardComponent
-        padded={false}
-        innerStyle={innerStyle}
-        {...rest}
-      >
+      <CardComponent padded={false} innerStyle={innerStyle} {...rest}>
         <View style={mainStyle}>{children}</View>
         <Dash
           style={punchlineStyle}

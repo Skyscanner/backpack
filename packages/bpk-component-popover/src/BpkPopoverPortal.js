@@ -21,7 +21,10 @@ import focusScope from 'a11y-focus-scope';
 import { Portal, cssModules } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Tether, { getArrowPositionCallback, applyRTLTransforms } from 'bpk-tether';
+import Tether, {
+  getArrowPositionCallback,
+  applyRTLTransforms,
+} from 'bpk-tether';
 
 import STYLES from './bpk-popover.scss';
 import BpkPopover from './BpkPopover';
@@ -79,7 +82,14 @@ class BpkPopoverPortal extends Component {
 
     if (!this.tether) {
       this.tether = new Tether(options);
-      this.tether.on('position', getArrowPositionCallback(popoverElement, ARROW_ID, 'bpk-popover-tether'));
+      this.tether.on(
+        'position',
+        getArrowPositionCallback(
+          popoverElement,
+          ARROW_ID,
+          'bpk-popover-tether',
+        ),
+      );
     } else {
       this.tether.setOptions(options);
     }
@@ -100,7 +110,9 @@ class BpkPopoverPortal extends Component {
 
     const classNames = [getClassName('bpk-popover-portal')];
 
-    if (portalClassName) { classNames.push(portalClassName); }
+    if (portalClassName) {
+      classNames.push(portalClassName);
+    }
 
     delete rest.onClose;
     delete rest.tetherOptions;

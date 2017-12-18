@@ -33,7 +33,9 @@ storiesOf('bpk-component-select', module)
       <option value="apples">Apples</option>
       <option value="oranges">Oranges</option>
       <option value="pears">Pears</option>
-      <option value="tomato" disabled>Tomato</option>
+      <option value="tomato" disabled>
+        Tomato
+      </option>
     </BpkSelect>
   ))
   .add('Invalid', () => (
@@ -44,11 +46,15 @@ storiesOf('bpk-component-select', module)
       onChange={action('select changed')}
       valid={false}
     >
-      <option value="" hidden>Please select...</option>
+      <option value="" hidden>
+        Please select...
+      </option>
       <option value="apples">Apples</option>
       <option value="oranges">Oranges</option>
       <option value="pears">Pears</option>
-      <option value="tomato" disabled>Tomato</option>
+      <option value="tomato" disabled>
+        Tomato
+      </option>
     </BpkSelect>
   ))
   .add('Disabled', () => (
@@ -62,7 +68,9 @@ storiesOf('bpk-component-select', module)
       <option value="apples">Apples</option>
       <option value="oranges">Oranges</option>
       <option value="pears">Pears</option>
-      <option value="tomato" disabled>Tomato</option>
+      <option value="tomato" disabled>
+        Tomato
+      </option>
     </BpkSelect>
   ))
   .add('Large', () => (
@@ -76,7 +84,9 @@ storiesOf('bpk-component-select', module)
       <option value="apples">Apples</option>
       <option value="oranges">Oranges</option>
       <option value="pears">Pears</option>
-      <option value="tomato" disabled>Tomato</option>
+      <option value="tomato" disabled>
+        Tomato
+      </option>
     </BpkSelect>
   ))
   .add('Docked', () => (
@@ -92,7 +102,9 @@ storiesOf('bpk-component-select', module)
         <option value="apples">Apples</option>
         <option value="oranges">Oranges</option>
         <option value="pears">Pears</option>
-        <option value="tomato" disabled>Tomato</option>
+        <option value="tomato" disabled>
+          Tomato
+        </option>
       </BpkSelect>
       <BpkSelect
         id="large"
@@ -105,7 +117,9 @@ storiesOf('bpk-component-select', module)
         <option value="apples">Apples</option>
         <option value="oranges">Oranges</option>
         <option value="pears">Pears</option>
-        <option value="tomato" disabled>Tomato</option>
+        <option value="tomato" disabled>
+          Tomato
+        </option>
       </BpkSelect>
       <BpkSelect
         id="large"
@@ -119,7 +133,9 @@ storiesOf('bpk-component-select', module)
         <option value="apples">Apples</option>
         <option value="oranges">Oranges</option>
         <option value="pears">Pears</option>
-        <option value="tomato" disabled>Tomato</option>
+        <option value="tomato" disabled>
+          Tomato
+        </option>
       </BpkSelect>
       <BpkSelect
         id="large"
@@ -132,7 +148,9 @@ storiesOf('bpk-component-select', module)
         <option value="apples">Apples</option>
         <option value="oranges">Oranges</option>
         <option value="pears">Pears</option>
-        <option value="tomato" disabled>Tomato</option>
+        <option value="tomato" disabled>
+          Tomato
+        </option>
       </BpkSelect>
     </div>
   ))
@@ -150,7 +168,9 @@ storiesOf('bpk-component-select', module)
           <option value="apples">Apples</option>
           <option value="oranges">Oranges</option>
           <option value="pears">Pears</option>
-          <option value="tomato" disabled>Tomato</option>
+          <option value="tomato" disabled>
+            Tomato
+          </option>
         </BpkSelect>
       </div>
       <div style={{ width: '100%' }}>
@@ -165,7 +185,9 @@ storiesOf('bpk-component-select', module)
           <option value="apples">Apples</option>
           <option value="oranges">Oranges</option>
           <option value="pears">Pears</option>
-          <option value="tomato" disabled>Tomato</option>
+          <option value="tomato" disabled>
+            Tomato
+          </option>
         </BpkSelect>
       </div>
       <div style={{ width: '100%' }}>
@@ -181,7 +203,9 @@ storiesOf('bpk-component-select', module)
           <option value="apples">Apples</option>
           <option value="oranges">Oranges</option>
           <option value="pears">Pears</option>
-          <option value="tomato" disabled>Tomato</option>
+          <option value="tomato" disabled>
+            Tomato
+          </option>
         </BpkSelect>
       </div>
       <div style={{ width: '100%' }}>
@@ -196,7 +220,9 @@ storiesOf('bpk-component-select', module)
           <option value="apples">Apples</option>
           <option value="oranges">Oranges</option>
           <option value="pears">Pears</option>
-          <option value="tomato" disabled>Tomato</option>
+          <option value="tomato" disabled>
+            Tomato
+          </option>
         </BpkSelect>
       </div>
     </div>

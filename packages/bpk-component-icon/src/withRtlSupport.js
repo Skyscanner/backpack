@@ -23,4 +23,6 @@ import classNameModifierHOCFactory from './classNameModifierHOCFactory';
 
 const getClassName = cssModules(STYLES);
 
-export default classNameModifierHOCFactory('withRtlSupport', [getClassName('bpk-icon--rtl-support')]);
+export default classNameModifierHOCFactory('withRtlSupport', [
+  getClassName('bpk-icon--rtl-support'),
+]);

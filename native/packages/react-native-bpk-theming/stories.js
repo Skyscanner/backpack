@@ -34,7 +34,6 @@ import {
 
 import BpkThemeProvider from './index';
 
-
 const generateThemeAttributes = (gradientStartColor, gradientEndColor) => ({
   buttonPrimaryTextColor: colorWhite,
   buttonPrimaryGradientStartColor: gradientStartColor,
@@ -106,9 +105,8 @@ class BpkThemePicker extends Component {
   }
 }
 
-storiesOf('BpkTheming', module)
-  .add('Default', () => (
-    <View>
-      <BpkThemePicker />
-    </View>
-  ));
+storiesOf('BpkTheming', module).add('Default', () => (
+  <View>
+    <BpkThemePicker />
+  </View>
+));

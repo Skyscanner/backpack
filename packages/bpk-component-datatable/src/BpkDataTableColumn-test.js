@@ -31,8 +31,9 @@ describe('BpkDataTableColumn', () => {
   });
   describe('toColumn', () => {
     const toColumn = (props = {}) =>
-      BpkDataTableColumn
-        .toColumn(<BpkDataTableColumn {...defaultProps} {...props} />);
+      BpkDataTableColumn.toColumn(
+        <BpkDataTableColumn {...defaultProps} {...props} />,
+      );
 
     it('creates a react-virtualized Column', () => {
       const { type } = toColumn();

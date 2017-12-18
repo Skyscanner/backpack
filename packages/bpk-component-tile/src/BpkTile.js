@@ -27,9 +27,15 @@ import STYLES from './bpk-tile.scss';
 const getClassName = cssModules(STYLES);
 const RtlArrowRightIcon = withRtlSupport(withButtonAlignment(ArrowRightIcon));
 
-const BpkTile = (props) => {
+const BpkTile = props => {
   const {
-    dark, backgroundColor, imageSource, className, cta, heading, ...rest
+    dark,
+    backgroundColor,
+    imageSource,
+    className,
+    cta,
+    heading,
+    ...rest
   } = props;
 
   const classNames = [getClassName('bpk-tile')];
@@ -37,7 +43,9 @@ const BpkTile = (props) => {
   const headingClassNames = [getClassName('bpk-tile__heading')];
   const ctaIconClassNames = [getClassName('bpk-tile__cta-icon')];
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   if (dark) {
     scrimClassNames.push(getClassName('bpk-tile__scrim--dark'));
@@ -50,11 +58,12 @@ const BpkTile = (props) => {
   if (backgroundColor) {
     return (
       <div className={classNameFinal} style={{ backgroundColor }} {...rest}>
-        <div className={getClassName('bpk-tile__illustration')} style={{ backgroundImage: `url(${imageSource})` }} />
+        <div
+          className={getClassName('bpk-tile__illustration')}
+          style={{ backgroundImage: `url(${imageSource})` }}
+        />
         <div className={scrimClassNames.join(' ')}>
-          <h3 className={headingClassNames.join(' ')}>
-            {heading}
-          </h3>
+          <h3 className={headingClassNames.join(' ')}>{heading}</h3>
           <p className={getClassName('bpk-tile__cta')}>
             {cta} <RtlArrowRightIcon className={ctaIconClassNames.join(' ')} />
           </p>
@@ -64,11 +73,13 @@ const BpkTile = (props) => {
   }
 
   return (
-    <div className={classNameFinal} style={{ backgroundImage: `url(${imageSource})` }} {...rest}>
+    <div
+      className={classNameFinal}
+      style={{ backgroundImage: `url(${imageSource})` }}
+      {...rest}
+    >
       <div className={scrimClassNames.join(' ')}>
-        <h3 className={headingClassNames.join(' ')}>
-          {heading}
-        </h3>
+        <h3 className={headingClassNames.join(' ')}>{heading}</h3>
         <p className={getClassName('bpk-tile__cta')}>
           {cta} <RtlArrowRightIcon className={ctaIconClassNames.join(' ')} />
         </p>

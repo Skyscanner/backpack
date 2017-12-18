@@ -19,7 +19,11 @@
 import React from 'react';
 import { StyleSheet, I18nManager } from 'react-native';
 import BpkIcon from 'react-native-bpk-component-icon';
-import { colorRed500, colorGreen500, spacingSm } from 'bpk-tokens/tokens/base.react.native';
+import {
+  colorRed500,
+  colorGreen500,
+  spacingSm,
+} from 'bpk-tokens/tokens/base.react.native';
 
 // Required so that it appears in the same place as the clear button.
 // TODO put these into tokens because this isn't so nice.
@@ -43,7 +47,11 @@ const ValidIcon = () => (
 );
 
 const InvalidIcon = () => (
-  <BpkIcon icon="exclamation-circle" small style={[styles.icon, styles.invalid]} />
+  <BpkIcon
+    icon="exclamation-circle"
+    small
+    style={[styles.icon, styles.invalid]}
+  />
 );
 
 export { ValidIcon, InvalidIcon };

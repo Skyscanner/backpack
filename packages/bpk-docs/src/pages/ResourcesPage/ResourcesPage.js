@@ -22,7 +22,11 @@ import PropTypes from 'prop-types';
 import BpkLink from 'bpk-component-link';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import BpkContentContainer from 'bpk-component-content-container';
-import { BpkGridContainer, BpkGridRow, BpkGridColumn } from 'bpk-component-grid';
+import {
+  BpkGridContainer,
+  BpkGridRow,
+  BpkGridColumn,
+} from 'bpk-component-grid';
 
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
@@ -45,24 +49,37 @@ const ResourcesPage = props => (
       <BpkGridColumn width={12}>
         <BpkContentContainer>
           <Heading level="h1">Resources</Heading>
-          <Paragraph>Here you can find a variety of resources to help you design Skyscanner products:</Paragraph>
+          <Paragraph>
+            Here you can find a variety of resources to help you design
+            Skyscanner products:
+          </Paragraph>
           <Heading level="h2">Color palettes</Heading>
           <Heading level="h3">Core</Heading>
           <BpkList>
             <BpkListItem>
-              <BpkLink href={`/${coreRgbAse}`} blank>Adobe Swatch Exchange</BpkLink>
+              <BpkLink href={`/${coreRgbAse}`} blank>
+                Adobe Swatch Exchange
+              </BpkLink>
             </BpkListItem>
             <BpkListItem>
-              <BpkLink href={`/${coreRgbClr}`} blank>Mac</BpkLink>
+              <BpkLink href={`/${coreRgbClr}`} blank>
+                Mac
+              </BpkLink>
             </BpkListItem>
           </BpkList>
-          <Heading level="h3">Extended (for marketing &amp; illustration only)</Heading>
+          <Heading level="h3">
+            Extended (for marketing &amp; illustration only)
+          </Heading>
           <BpkList>
             <BpkListItem>
-              <BpkLink href={`/${extendedRgbAse}`} blank>Adobe Swatch Exchange</BpkLink>
+              <BpkLink href={`/${extendedRgbAse}`} blank>
+                Adobe Swatch Exchange
+              </BpkLink>
             </BpkListItem>
             <BpkListItem>
-              <BpkLink href={`/${extendedRgbClr}`} blank>Mac</BpkLink>
+              <BpkLink href={`/${extendedRgbClr}`} blank>
+                Mac
+              </BpkLink>
             </BpkListItem>
           </BpkList>
           <Heading level="h2">Icons</Heading>
@@ -74,10 +91,14 @@ const ResourcesPage = props => (
           <Heading level="h2">Sketch</Heading>
           <BpkList>
             <BpkListItem>
-              <BpkLink href={`/${responsiveGrid}`} blank>Responsive grids</BpkLink>
+              <BpkLink href={`/${responsiveGrid}`} blank>
+                Responsive grids
+              </BpkLink>
             </BpkListItem>
             <BpkListItem>
-              <BpkLink href={`/${iconTemplate}`} blank>Icon template</BpkLink>
+              <BpkLink href={`/${iconTemplate}`} blank>
+                Icon template
+              </BpkLink>
             </BpkListItem>
             {/*
               // TODO: Expose this when release
@@ -91,7 +112,10 @@ const ResourcesPage = props => (
               </BpkLink>
             </BpkListItem>
             <BpkListItem>
-              <BpkLink href="https://www.dropbox.com/sh/3um2nc6ei6kgj28/AADk_AZ_hX_AyPMxYWFd5EhIa?dl=0" blank>
+              <BpkLink
+                href="https://www.dropbox.com/sh/3um2nc6ei6kgj28/AADk_AZ_hX_AyPMxYWFd5EhIa?dl=0"
+                blank
+              >
                 Craft Library
               </BpkLink>
             </BpkListItem>

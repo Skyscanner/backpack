@@ -24,16 +24,22 @@ import STYLES from './bpk-badge.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkBadge = (props) => {
-  const {
-    docked, centered, className, ...rest
-  } = props;
+const BpkBadge = props => {
+  const { docked, centered, className, ...rest } = props;
   const classNames = [getClassName('bpk-badge')];
 
-  if (docked === 'right') { classNames.push(getClassName('bpk-badge--docked-right')); }
-  if (docked === 'left') { classNames.push(getClassName('bpk-badge--docked-left')); }
-  if (centered) { classNames.push(getClassName('bpk-badge--centered')); }
-  if (className) { classNames.push(className); }
+  if (docked === 'right') {
+    classNames.push(getClassName('bpk-badge--docked-right'));
+  }
+  if (docked === 'left') {
+    classNames.push(getClassName('bpk-badge--docked-left'));
+  }
+  if (centered) {
+    classNames.push(getClassName('bpk-badge--centered'));
+  }
+  if (className) {
+    classNames.push(className);
+  }
 
   return <span className={classNames.join(' ')} {...rest} />;
 };

@@ -26,7 +26,6 @@ const theme = {
 };
 
 const themeAttributes = {
-
   // Used in BpkButton.
   buttonPrimaryGradientStartColor: theme.brandColors.gradientStart,
   buttonPrimaryGradientEndColor: theme.brandColors.gradientEnd,

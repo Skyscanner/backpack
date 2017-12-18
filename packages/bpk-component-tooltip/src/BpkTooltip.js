@@ -25,23 +25,21 @@ import { ARROW_ID } from './constants';
 
 const getClassName = cssModules(STYLES);
 
-const BpkTooltip = (props) => {
-  const {
-    id,
-    children,
-    className,
-    padded,
-    ...rest
-  } = props;
+const BpkTooltip = props => {
+  const { id, children, className, padded, ...rest } = props;
 
   const classNames = [getClassName('bpk-tooltip')];
   const innerClassNames = [getClassName('bpk-tooltip__inner')];
 
   // outer classNames
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   // inner classNames
-  if (padded) { innerClassNames.push(getClassName('bpk-tooltip__inner--padded')); }
+  if (padded) {
+    innerClassNames.push(getClassName('bpk-tooltip__inner--padded'));
+  }
 
   return (
     <TransitionInitialMount
@@ -56,10 +54,12 @@ const BpkTooltip = (props) => {
         className={classNames.join(' ')}
         {...rest}
       >
-        <span id={ARROW_ID} className={getClassName('bpk-tooltip__arrow')} role="presentation" />
-        <div className={innerClassNames.join(' ')}>
-          {children}
-        </div>
+        <span
+          id={ARROW_ID}
+          className={getClassName('bpk-tooltip__arrow')}
+          role="presentation"
+        />
+        <div className={innerClassNames.join(' ')}>{children}</div>
       </section>
     </TransitionInitialMount>
   );

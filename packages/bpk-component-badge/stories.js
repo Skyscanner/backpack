@@ -22,10 +22,16 @@ import { colorGray700, spacingXxl } from 'bpk-tokens/tokens/base.es6';
 
 import BpkBadge from './index';
 
-const DockedContainer = props => (<div
-  {...props}
-  style={{ backgroundColor: colorGray700, minHeight: spacingXxl, position: 'relative' }}
-/>);
+const DockedContainer = props => (
+  <div
+    {...props}
+    style={{
+      backgroundColor: colorGray700,
+      minHeight: spacingXxl,
+      position: 'relative',
+    }}
+  />
+);
 
 storiesOf('bpk-component-badge', module)
   .add('Default', () => (

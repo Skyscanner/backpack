@@ -28,7 +28,8 @@ import DocsPageBuilder from './../../components/DocsPageBuilder';
 
 import { THEMING } from './../../constants/routes';
 
-const reactNativeUrl = 'https://facebook.github.io/react-native/docs/switch.html';
+const reactNativeUrl =
+  'https://facebook.github.io/react-native/docs/switch.html';
 
 const components = [
   {
@@ -55,23 +56,25 @@ const components = [
   },
 ];
 
-const NativeSwitchPage = () => (<DocsPageBuilder
-  title="Switch"
-  blurb={[
-    <Paragraph>
-      Switches allow users to toggle between two states, on or off.
-      These are often used as a replacement for radio buttons.
-      This component is a wrapper around the React
-      Native <BpkLink href={reactNativeUrl}>Switch component</BpkLink>, therefore it supports all the
-      same behaviours and properties.
-    </Paragraph>,
-    <Paragraph>
-      Switches can be <BpkLink href={THEMING}>themed</BpkLink>.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={readme}
-  showMenu={false}
-/>);
+const NativeSwitchPage = () => (
+  <DocsPageBuilder
+    title="Switch"
+    blurb={[
+      <Paragraph>
+        Switches allow users to toggle between two states, on or off. These are
+        often used as a replacement for radio buttons. This component is a
+        wrapper around the React Native{' '}
+        <BpkLink href={reactNativeUrl}>Switch component</BpkLink>, therefore it
+        supports all the same behaviours and properties.
+      </Paragraph>,
+      <Paragraph>
+        Switches can be <BpkLink href={THEMING}>themed</BpkLink>.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={readme}
+    showMenu={false}
+  />
+);
 
 export default NativeSwitchPage;

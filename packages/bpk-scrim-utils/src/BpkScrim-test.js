@@ -22,9 +22,7 @@ import BpkScrim from './BpkScrim';
 
 describe('BpkScrim', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(
-      <BpkScrim />,
-    ).toJSON();
+    const tree = renderer.create(<BpkScrim />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -21,13 +21,17 @@ import React from 'react';
 
 import { wrapDisplayName } from 'bpk-react-utils';
 
-export default (displayName, classNamesToAdd = []) => (ComposedComponent) => {
-  const ClassNameModifierHOC = (props) => {
+export default (displayName, classNamesToAdd = []) => ComposedComponent => {
+  const ClassNameModifierHOC = props => {
     let classNames = [];
     const { className, ...rest } = props;
 
-    if (className) { classNames.push(className); }
-    classNames = classNamesToAdd.length ? classNames.concat(classNamesToAdd) : classNames;
+    if (className) {
+      classNames.push(className);
+    }
+    classNames = classNamesToAdd.length
+      ? classNames.concat(classNamesToAdd)
+      : classNames;
 
     return <ComposedComponent className={classNames.join(' ')} {...rest} />;
   };
@@ -40,7 +44,10 @@ export default (displayName, classNamesToAdd = []) => (ComposedComponent) => {
     className: null,
   };
 
-  ClassNameModifierHOC.displayName = wrapDisplayName(ComposedComponent, displayName);
+  ClassNameModifierHOC.displayName = wrapDisplayName(
+    ComposedComponent,
+    displayName,
+  );
 
   return ClassNameModifierHOC;
 };

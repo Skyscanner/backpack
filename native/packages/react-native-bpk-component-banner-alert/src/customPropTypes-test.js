@@ -23,27 +23,41 @@ import { dismissablePropType } from './customPropTypes';
 describe('customPropTypes', () => {
   describe('dismissablePropType', () => {
     it('should error if dismissable and expandable', () => {
-      const result = dismissablePropType({
-        dismissable: true,
-        children: (<BpkText textStyle="sm">CHILD</BpkText>),
-      }, 'dismissable', 'BpkBannerAlert').toString();
+      const result = dismissablePropType(
+        {
+          dismissable: true,
+          children: <BpkText textStyle="sm">CHILD</BpkText>,
+        },
+        'dismissable',
+        'BpkBannerAlert',
+      ).toString();
 
-      expect(result).toEqual('Error: Invalid prop `dismissable` with value `true` supplied to `BpkBannerAlert`. Banner alert cannot be expanded to show children if it is dismissable.'); // eslint-disable-line max-len
+      expect(result).toEqual(
+        'Error: Invalid prop `dismissable` with value `true` supplied to `BpkBannerAlert`. Banner alert cannot be expanded to show children if it is dismissable.',
+      ); // eslint-disable-line max-len
     });
 
     it('should not error if only expandable', () => {
-      const result = dismissablePropType({
-        children: (<BpkText textStyle="sm">CHILD</BpkText>),
-      }, 'dismissable', 'BpkBannerAlert');
+      const result = dismissablePropType(
+        {
+          children: <BpkText textStyle="sm">CHILD</BpkText>,
+        },
+        'dismissable',
+        'BpkBannerAlert',
+      );
 
       expect(result).toEqual(false);
     });
 
     it('should not error if only dismissable', () => {
-      const result = dismissablePropType({
-        dismissable: true,
-        children: null,
-      }, 'dismissable', 'BpkBannerAlert');
+      const result = dismissablePropType(
+        {
+          dismissable: true,
+          children: null,
+        },
+        'dismissable',
+        'BpkBannerAlert',
+      );
 
       expect(result).toEqual(false);
     });

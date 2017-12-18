@@ -20,22 +20,35 @@ import _ from 'lodash';
 import { blockComment } from './license-header';
 import valueTemplate from './react-native-value-template';
 
-const tokenTemplate = ({ name, value, type }) => `export const ${_.camelCase(name)} = ${valueTemplate(value, type)};`;
+const tokenTemplate = ({ name, value, type }) =>
+  `export const ${_.camelCase(name)} = ${valueTemplate(value, type)};`;
 
-
-export const categoryTemplate = (categoryName, props) => `export const ${_.camelCase(categoryName)} = {
+export const categoryTemplate = (
+  categoryName,
+  props,
+) => `export const ${_.camelCase(categoryName)} = {
 ${_.map(props, prop => `${_.camelCase(prop.name)},`).join('\n')}
 };`;
 
-export default (json) => {
-  const categories = _(json.props).map(prop => prop.category).uniq().value();
+export default json => {
+  const categories = _(json.props)
+    .map(prop => prop.category)
+    .uniq()
+    .value();
 
-  const singleTokens = _.map(json.props, prop => tokenTemplate(prop)).join('\n');
+  const singleTokens = _.map(json.props, prop => tokenTemplate(prop)).join(
+    '\n',
+  );
   const groupedTokens = categories
-    .map(category => categoryTemplate(
-      category,
-      _(json.props).filter({ category }).value()),
-    ).join('\n');
+    .map(category =>
+      categoryTemplate(
+        category,
+        _(json.props)
+          .filter({ category })
+          .value(),
+      ),
+    )
+    .join('\n');
 
   return [blockComment, singleTokens, groupedTokens].join('\n');
 };

@@ -34,8 +34,14 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              data: BPK_TOKENS ?
-                fs.readFileSync(path.join(rootDir, `packages/bpk-tokens/tokens/${BPK_TOKENS}.scss`)) : '',
+              data: BPK_TOKENS
+                ? fs.readFileSync(
+                    path.join(
+                      rootDir,
+                      `packages/bpk-tokens/tokens/${BPK_TOKENS}.scss`,
+                    ),
+                  )
+                : '',
               functions: sassFunctions,
             },
           },

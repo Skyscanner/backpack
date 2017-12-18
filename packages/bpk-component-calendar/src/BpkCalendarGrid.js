@@ -43,19 +43,30 @@ class BpkCalendarGrid extends Component {
 
     // We cache expensive calculations (and identities) in state
     this.state = {
-      calendarMonthWeeks: getCalendarMonthWeeks(props.month, props.weekStartsOn),
+      calendarMonthWeeks: getCalendarMonthWeeks(
+        props.month,
+        props.weekStartsOn,
+      ),
       daysOfWeek: orderDaysOfWeek(props.daysOfWeek, props.weekStartsOn),
     };
   }
 
   componentWillReceiveProps(nextProps) {
     // We cache expensive calculations (and identities) in state
-    if (nextProps.daysOfWeek !== this.props.daysOfWeek
-        || !isSameMonth(nextProps.month, this.props.month)
-        || nextProps.weekStartsOn !== this.props.weekStartsOn) {
+    if (
+      nextProps.daysOfWeek !== this.props.daysOfWeek ||
+      !isSameMonth(nextProps.month, this.props.month) ||
+      nextProps.weekStartsOn !== this.props.weekStartsOn
+    ) {
       this.setState({
-        calendarMonthWeeks: getCalendarMonthWeeks(nextProps.month, nextProps.weekStartsOn),
-        daysOfWeek: orderDaysOfWeek(nextProps.daysOfWeek, nextProps.weekStartsOn),
+        calendarMonthWeeks: getCalendarMonthWeeks(
+          nextProps.month,
+          nextProps.weekStartsOn,
+        ),
+        daysOfWeek: orderDaysOfWeek(
+          nextProps.daysOfWeek,
+          nextProps.weekStartsOn,
+        ),
       });
     }
   }
@@ -82,20 +93,19 @@ class BpkCalendarGrid extends Component {
       maxDate,
     } = this.props;
 
-    const {
-      calendarMonthWeeks,
-      daysOfWeek,
-    } = this.state;
+    const { calendarMonthWeeks, daysOfWeek } = this.state;
 
     const classNames = [getClassName('bpk-calendar-grid')];
-    if (className) { classNames.push(className); }
+    if (className) {
+      classNames.push(className);
+    }
 
     return (
-      <table className={classNames.join(' ')} aria-hidden={!isKeyboardFocusable}>
-        <caption
-          className={getClassName('bpk-calendar-grid__caption')}
-          hidden
-        >
+      <table
+        className={classNames.join(' ')}
+        aria-hidden={!isKeyboardFocusable}
+      >
+        <caption className={getClassName('bpk-calendar-grid__caption')} hidden>
           {formatMonth(month)}
         </caption>
         <BpkCalendarGridHeader
@@ -105,7 +115,7 @@ class BpkCalendarGrid extends Component {
           weekStartsOn={weekStartsOn}
         />
         <tbody>
-          { calendarMonthWeeks.map(dates => (
+          {calendarMonthWeeks.map(dates => (
             <Week
               key={formatIsoDate(dates[0])}
               month={month}
@@ -120,7 +130,6 @@ class BpkCalendarGrid extends Component {
               preventKeyboardFocus={preventKeyboardFocus}
               isKeyboardFocusable={isKeyboardFocusable}
               weekStartsOn={weekStartsOn}
-
               markToday={markToday}
               markOutsideDays={markOutsideDays}
               selectedDate={selectedDate}
@@ -128,7 +137,7 @@ class BpkCalendarGrid extends Component {
               minDate={minDate}
               maxDate={maxDate}
             />
-          )) }
+          ))}
         </tbody>
       </table>
     );

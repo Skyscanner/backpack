@@ -90,10 +90,9 @@ class AnimateAndFade extends Component {
   }
 
   render() {
-    const {
-      children, animateOnEnter, animateOnLeave, className,
-    } = this.props;
-    const showPlaceholder = !this.state.visible && !this.state.hideAnimationInProgress;
+    const { children, animateOnEnter, animateOnLeave, className } = this.props;
+    const showPlaceholder =
+      !this.state.visible && !this.state.hideAnimationInProgress;
     // While the expanding animation takes place, we render the child element
     // close to invisible. If we don't do this, the animate-height container
     // will take on height 0, and will never expand to allow the children to fade in
@@ -104,20 +103,16 @@ class AnimateAndFade extends Component {
         duration={ANIMATION_DURATION}
         height={this.state.isExpanded ? 'auto' : 0}
       >
-        {showPlaceholder && (
-          <div style={{ opacity: 0.35 }}>
-            {children}
-          </div>
-        )}
+        {showPlaceholder && <div style={{ opacity: 0.35 }}>{children}</div>}
         <CSSTransitionGroup
           transitionName={{
-          leave: getClassName('bpk-animate-and-fade--leave'),
-          leaveActive: getClassName('bpk-animate-and-fade--leave-active'),
-          enter: getClassName('bpk-animate-and-fade--enter'),
-          enterActive: getClassName('bpk-animate-and-fade--enter-active'),
-          appear: getClassName('bpk-animate-and-fade--appear'),
-          appearActive: getClassName('bpk-animate-and-fade--appear-active'),
-        }}
+            leave: getClassName('bpk-animate-and-fade--leave'),
+            leaveActive: getClassName('bpk-animate-and-fade--leave-active'),
+            enter: getClassName('bpk-animate-and-fade--enter'),
+            enterActive: getClassName('bpk-animate-and-fade--enter-active'),
+            appear: getClassName('bpk-animate-and-fade--appear'),
+            appearActive: getClassName('bpk-animate-and-fade--appear-active'),
+          }}
           transitionLeave={animateOnLeave}
           transitionEnter={animateOnEnter}
           transitionAppear={animateOnEnter}

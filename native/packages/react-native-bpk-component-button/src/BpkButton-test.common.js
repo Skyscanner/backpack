@@ -29,142 +29,218 @@ const commonTests = () => {
   jest.mock('Text', () => 'Text');
   describe('BpkButton', () => {
     it('should render correctly', () => {
-      const tree = renderer.create(
-        <BpkButton title="Lorem ipsum" onPress={onPressFn} />,
-      ).toJSON();
+      const tree = renderer
+        .create(<BpkButton title="Lorem ipsum" onPress={onPressFn} />)
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should support the "large" property', () => {
-      const tree = renderer.create(
-        <BpkButton large title="Lorem ipsum" onPress={onPressFn} />,
-      ).toJSON();
+      const tree = renderer
+        .create(<BpkButton large title="Lorem ipsum" onPress={onPressFn} />)
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
     it('should support the "large" and secondary property', () => {
-      const tree = renderer.create(
-        <BpkButton large title="Lorem ipsum" type="secondary" onPress={onPressFn} />,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkButton
+            large
+            title="Lorem ipsum"
+            type="secondary"
+            onPress={onPressFn}
+          />,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should support the "iconOnly" and "large" property', () => {
-      const tree = renderer.create(
-        <BpkButton iconOnly large icon="baggage" title="Lorem ipsum" onPress={onPressFn} />,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkButton
+            iconOnly
+            large
+            icon="baggage"
+            title="Lorem ipsum"
+            onPress={onPressFn}
+          />,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
     it('should support the "icon" and "large" property', () => {
-      const tree = renderer.create(
-        <BpkButton icon="baggage" large title="Lorem ipsum" onPress={onPressFn} />,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkButton
+            icon="baggage"
+            large
+            title="Lorem ipsum"
+            onPress={onPressFn}
+          />,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should support the "disabled" property', () => {
-      const tree = renderer.create(
-        <BpkButton disabled title="Lorem ipsum" onPress={onPressFn} />,
-      ).toJSON();
+      const tree = renderer
+        .create(<BpkButton disabled title="Lorem ipsum" onPress={onPressFn} />)
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should support having an icon as well as a title', () => {
-      const tree = renderer.create(
-        <BpkButton
-          icon="baggage"
-          title="Lorem ipsum"
-          onPress={onPressFn}
-        />,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkButton icon="baggage" title="Lorem ipsum" onPress={onPressFn} />,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
     it('should support having only an icon', () => {
-      const tree = renderer.create(
-        <BpkButton
-          title="Lorem ipsum"
-          icon="baggage"
-          iconOnly
-          onPress={onPressFn}
-        />,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkButton
+            title="Lorem ipsum"
+            icon="baggage"
+            iconOnly
+            onPress={onPressFn}
+          />,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should support elements as icons', () => {
-      const tree = renderer.create(
-        <BpkButton
-          title="Lorem ipsum"
-          icon={<Text>foo</Text>}
-          iconOnly
-          onPress={onPressFn}
-        />,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkButton
+            title="Lorem ipsum"
+            icon={<Text>foo</Text>}
+            iconOnly
+            onPress={onPressFn}
+          />,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should support overwriting styles', () => {
-      const tree = renderer.create(
-        <BpkButton title="Lorem ipsum" onPress={onPressFn} style={{ width: 100 }} />,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkButton
+            title="Lorem ipsum"
+            onPress={onPressFn}
+            style={{ width: 100 }}
+          />,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
-    BUTTON_TYPES.forEach((buttonType) => {
+    BUTTON_TYPES.forEach(buttonType => {
       it(`should render correctly with type="${buttonType}"`, () => {
-        const tree = renderer.create(
-          <BpkButton type={buttonType} title="Lorem ipsum" onPress={onPressFn} />,
-        ).toJSON();
+        const tree = renderer
+          .create(
+            <BpkButton
+              type={buttonType}
+              title="Lorem ipsum"
+              onPress={onPressFn}
+            />,
+          )
+          .toJSON();
         expect(tree).toMatchSnapshot();
       });
     });
 
     it('should accept iconOnly prop when icon prop is supplied', () => {
-      expect(propTypes.icon({
-        iconOnly: true,
-        icon: 'baggage',
-      }, 'icon', 'BpkButton')).toBeFalsy();
+      expect(
+        propTypes.icon(
+          {
+            iconOnly: true,
+            icon: 'baggage',
+          },
+          'icon',
+          'BpkButton',
+        ),
+      ).toBeFalsy();
     });
 
     it('should accept elements as the icon property', () => {
-      expect(propTypes.icon({
-        iconOnly: true,
-        icon: <Text>foo</Text>,
-      }, 'icon', 'BpkButton')).toBeFalsy();
+      expect(
+        propTypes.icon(
+          {
+            iconOnly: true,
+            icon: <Text>foo</Text>,
+          },
+          'icon',
+          'BpkButton',
+        ),
+      ).toBeFalsy();
     });
 
     it('should accept iconOnly prop when icon prop is supplied', () => {
-      expect(propTypes.icon({
-        iconOnly: true,
-      }, 'icon', 'BpkButton').toString()).toEqual('Error: Invalid prop `icon` supplied to `BpkButton`. When `iconOnly` is enabled, `icon` must be supplied.'); // eslint-disable-line max-len
+      expect(
+        propTypes
+          .icon(
+            {
+              iconOnly: true,
+            },
+            'icon',
+            'BpkButton',
+          )
+          .toString(),
+      ).toEqual(
+        'Error: Invalid prop `icon` supplied to `BpkButton`. When `iconOnly` is enabled, `icon` must be supplied.',
+      ); // eslint-disable-line max-len
     });
 
-    it('should reject theme property when some theme attributes are omitted', () => { // eslint-disable-line max-len
-      expect(propTypes.theme({
-        type: 'primary',
-        theme: {},
-      }, 'theme', 'BpkButton').toString()).toEqual('Error: Invalid prop `theme` supplied to `BpkButton`. For buttons of type `primary`, the `theme` prop must include `buttonPrimaryTextColor, buttonPrimaryGradientStartColor, buttonPrimaryGradientEndColor`'); // eslint-disable-line max-len
+    it('should reject theme property when some theme attributes are omitted', () => {
+      // eslint-disable-line max-len
+      expect(
+        propTypes
+          .theme(
+            {
+              type: 'primary',
+              theme: {},
+            },
+            'theme',
+            'BpkButton',
+          )
+          .toString(),
+      ).toEqual(
+        'Error: Invalid prop `theme` supplied to `BpkButton`. For buttons of type `primary`, the `theme` prop must include `buttonPrimaryTextColor, buttonPrimaryGradientStartColor, buttonPrimaryGradientEndColor`',
+      ); // eslint-disable-line max-len
     });
 
-    it('should accept theme property when correct attributes are supplied', () => { // eslint-disable-line max-len
-      expect(propTypes.theme({
-        type: 'primary',
-        theme: {
-          buttonPrimaryGradientStartColor: 'red',
-          buttonPrimaryGradientEndColor: 'green',
-          buttonPrimaryTextColor: 'blue',
-        },
-      }, 'theme', 'BpkButton')).toBeFalsy();
+    it('should accept theme property when correct attributes are supplied', () => {
+      // eslint-disable-line max-len
+      expect(
+        propTypes.theme(
+          {
+            type: 'primary',
+            theme: {
+              buttonPrimaryGradientStartColor: 'red',
+              buttonPrimaryGradientEndColor: 'green',
+              buttonPrimaryTextColor: 'blue',
+            },
+          },
+          'theme',
+          'BpkButton',
+        ),
+      ).toBeFalsy();
     });
 
     it('should throw an error for invalid button type', () => {
       jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
-      expect(() => renderer.create(
-        <BpkButton
-          title="Lorem ipsum"
-          type="silly"
-          onPress={onPressFn}
-        />,
-      )).toThrow('"silly" is not a valid button type. Valid types are primary, featured, secondary, destructive');
+      expect(() =>
+        renderer.create(
+          <BpkButton title="Lorem ipsum" type="silly" onPress={onPressFn} />,
+        ),
+      ).toThrow(
+        '"silly" is not a valid button type. Valid types are primary, featured, secondary, destructive',
+      );
     });
   });
 
@@ -175,11 +251,13 @@ const commonTests = () => {
         buttonPrimaryGradientStartColor: 'green',
         buttonPrimaryGradientEndColor: 'blue',
       };
-      const tree = renderer.create(
-        <BpkThemeProvider theme={theme}>
-          <BpkButton title="Lorem ipsum" type="primary" onPress={onPressFn} />
-        </BpkThemeProvider>,
-      ).toJSON();
+      const tree = renderer
+        .create(
+          <BpkThemeProvider theme={theme}>
+            <BpkButton title="Lorem ipsum" type="primary" onPress={onPressFn} />
+          </BpkThemeProvider>,
+        )
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

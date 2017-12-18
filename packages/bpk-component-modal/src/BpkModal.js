@@ -27,20 +27,23 @@ import STYLES from './bpk-modal.scss';
 const getClassName = cssModules(STYLES);
 const ScrimBpkModalDialog = withScrim(BpkModalDialog);
 
-const BpkModal = (props) => {
-  const {
-    isOpen,
-    onClose,
-    target,
-    renderTarget,
-    ...rest
-  } = props;
+const BpkModal = props => {
+  const { isOpen, onClose, target, renderTarget, ...rest } = props;
 
   delete rest.onClose;
 
   return (
-    <Portal isOpen={isOpen} onClose={onClose} target={target} renderTarget={renderTarget}>
-      <ScrimBpkModalDialog onClose={onClose} {...rest} containerClassName={getClassName('bpk-modal__container')} />
+    <Portal
+      isOpen={isOpen}
+      onClose={onClose}
+      target={target}
+      renderTarget={renderTarget}
+    >
+      <ScrimBpkModalDialog
+        onClose={onClose}
+        {...rest}
+        containerClassName={getClassName('bpk-modal__container')}
+      />
     </Portal>
   );
 };

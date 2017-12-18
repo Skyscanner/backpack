@@ -16,9 +16,12 @@
  * limitations under the License.
  */
 
-import { calendarDaySize, calendarDaySpacing } from 'bpk-tokens/tokens/base.es6';
+import {
+  calendarDaySize,
+  calendarDaySpacing,
+} from 'bpk-tokens/tokens/base.es6';
 
-const remToPx = (value) => {
+const remToPx = value => {
   let parsed = null;
 
   if (/rem$/.test(value)) {
@@ -28,11 +31,10 @@ const remToPx = (value) => {
   return parsed || null;
 };
 
-export const getCalendarGridWidth = () => 7 * (
-  remToPx(calendarDaySize) + remToPx(calendarDaySpacing)
-);
+export const getCalendarGridWidth = () =>
+  7 * (remToPx(calendarDaySize) + remToPx(calendarDaySpacing));
 
-export const getTransformStyles = (transformValue) => {
+export const getTransformStyles = transformValue => {
   const transform = `translateX(${transformValue}px)`;
   return {
     transform,
@@ -47,5 +49,5 @@ export const getScriptDirection = () => {
   return window.getComputedStyle(html, null).getPropertyValue('direction');
 };
 
-
-export const isTransitionEndSupported = () => !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
+export const isTransitionEndSupported = () =>
+  !!(typeof window !== 'undefined' && 'TransitionEvent' in window);

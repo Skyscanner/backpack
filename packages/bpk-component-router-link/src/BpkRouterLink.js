@@ -25,13 +25,13 @@ import STYLES from './bpk-router-link.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkRouterLink = (props) => {
+const BpkRouterLink = props => {
   const classNames = [getClassName('bpk-router-link')];
-  const {
-    children, to, className, ...rest
-  } = props;
+  const { children, to, className, ...rest } = props;
 
-  if (className) { classNames.push(className); }
+  if (className) {
+    classNames.push(className);
+  }
 
   return (
     <Link

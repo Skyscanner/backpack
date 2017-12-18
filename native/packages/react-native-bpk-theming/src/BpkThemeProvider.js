@@ -24,6 +24,4 @@ const BpkThemeProvider = ThemeProvider;
 
 export default BpkThemeProvider;
 const withTheme = createWithTheme();
-export {
-  withTheme,
-};
+export { withTheme };

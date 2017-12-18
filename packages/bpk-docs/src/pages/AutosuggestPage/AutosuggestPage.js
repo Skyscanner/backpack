@@ -23,7 +23,9 @@ import BpkLabel from 'bpk-component-label';
 import { withRtlSupport } from 'bpk-component-icon';
 import BpkRouterLink from 'bpk-component-router-link';
 import FlightIcon from 'bpk-component-icon/lg/flight';
-import BpkAutosuggest, { BpkAutosuggestSuggestion } from 'bpk-component-autosuggest';
+import BpkAutosuggest, {
+  BpkAutosuggestSuggestion,
+} from 'bpk-component-autosuggest';
 
 import autosuggestReadme from 'bpk-component-autosuggest/readme.md';
 
@@ -71,7 +73,7 @@ const offices = [
     country: 'United States',
   },
   {
-    name: 'Shenzhen Bao\'an International',
+    name: "Shenzhen Bao'an International",
     code: 'SZX',
     country: 'China',
   },
@@ -87,16 +89,19 @@ const offices = [
   },
 ];
 
-const getSuggestions = (value) => {
+const getSuggestions = value => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
-  return inputLength === 0 ? [] : offices.filter(office =>
-    office.name.toLowerCase().indexOf(inputValue) !== -1,
-  );
+  return inputLength === 0
+    ? []
+    : offices.filter(
+        office => office.name.toLowerCase().indexOf(inputValue) !== -1,
+      );
 };
 
-const getSuggestionValue = suggestion => `${suggestion.name} (${suggestion.code})`;
+const getSuggestionValue = suggestion =>
+  `${suggestion.name} (${suggestion.code})`;
 
 let instances = 0;
 
@@ -113,8 +118,12 @@ class AutosuggestExample extends Component {
     };
 
     this.onChange = this.onChange.bind(this);
-    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this);
-    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this);
+    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(
+      this,
+    );
+    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(
+      this,
+    );
   }
 
   onChange(e, { newValue }) {
@@ -172,8 +181,9 @@ const components = [
     title: 'Default',
     blurb: [
       <Paragraph>
-        This is the most basic method of displaying suggestions. Note that they can be indented (to indicate topology
-        for example) - type &quot;a&quot; to see this demonstrated by the Glasgow office suggestion.
+        This is the most basic method of displaying suggestions. Note that they
+        can be indented (to indicate topology for example) - type &quot;a&quot;
+        to see this demonstrated by the Glasgow office suggestion.
       </Paragraph>,
     ],
     examples: [
@@ -192,8 +202,10 @@ const components = [
     title: 'Icons',
     blurb: [
       <Paragraph>
-        You can insert a <BpkRouterLink to={ROUTES.ICONS}>Backpack icon</BpkRouterLink> next to each suggestion, useful
-        for differentiation e.g. between airports, cities, and countries.
+        You can insert a{' '}
+        <BpkRouterLink to={ROUTES.ICONS}>Backpack icon</BpkRouterLink> next to
+        each suggestion, useful for differentiation e.g. between airports,
+        cities, and countries.
       </Paragraph>,
     ],
     examples: [
@@ -211,7 +223,8 @@ const components = [
   {
     id: 'sub-heading',
     title: 'Sub-headings',
-    blurb: 'Additional suggestion information can be displayed as a sub-heading.',
+    blurb:
+      'Additional suggestion information can be displayed as a sub-heading.',
     examples: [
       <AutosuggestExample
         renderSuggestion={suggestion => (
@@ -227,7 +240,8 @@ const components = [
   {
     id: 'tertiary-label',
     title: 'Tertiary label',
-    blurb: 'If sub-headings are not enough, you can add some tertiary information too.',
+    blurb:
+      'If sub-headings are not enough, you can add some tertiary information too.',
     examples: [
       <AutosuggestExample
         renderSuggestion={suggestion => (
@@ -261,20 +275,25 @@ const components = [
   },
 ];
 
-const AutosuggestPage = () => (<DocsPageBuilder
-  title="Autosuggest"
-  blurb={[
-    <Paragraph>
-      The Backpack autosuggest component is a lightweight wrapper
-      around <BpkLink href="http://react-autosuggest.js.org/" blank>React Autosuggest</BpkLink>. It can be used to
-      display suggestions for travel destinations, hotels, car hire and more - any data source can be used. Whilst you
-      have full control over suggestion rendering, Backpack provides a built-in suggestion component allowing you to
-      display icons, sub-headings and more.
-    </Paragraph>,
-  ]}
-  components={components}
-  readme={autosuggestReadme}
-  sassdocId="autosuggest"
-/>);
+const AutosuggestPage = () => (
+  <DocsPageBuilder
+    title="Autosuggest"
+    blurb={[
+      <Paragraph>
+        The Backpack autosuggest component is a lightweight wrapper around{' '}
+        <BpkLink href="http://react-autosuggest.js.org/" blank>
+          React Autosuggest
+        </BpkLink>. It can be used to display suggestions for travel
+        destinations, hotels, car hire and more - any data source can be used.
+        Whilst you have full control over suggestion rendering, Backpack
+        provides a built-in suggestion component allowing you to display icons,
+        sub-headings and more.
+      </Paragraph>,
+    ]}
+    components={components}
+    readme={autosuggestReadme}
+    sassdocId="autosuggest"
+  />
+);
 
 export default AutosuggestPage;

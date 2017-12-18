@@ -20,7 +20,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ActivityIndicator } from 'react-native';
 import { withTheme } from 'react-native-bpk-theming';
-import { colorBlue500, colorWhite, colorGray700 } from 'bpk-tokens/tokens/base.react.native';
+import {
+  colorBlue500,
+  colorWhite,
+  colorGray700,
+} from 'bpk-tokens/tokens/base.react.native';
 
 const SPINNER_TYPES = ['primary', 'light', 'dark'];
 
@@ -34,7 +38,9 @@ const themePropType = (props, propName, componentName) => {
     return false;
   }
   if (type === 'primary' && !theme[THEMING_ATTRIBUTE]) {
-    return new Error(`Invalid prop \`${propName}\` supplied to \`${componentName}\`. For spinners of type \`${type}\`, the \`theme\` prop must include \`${THEMING_ATTRIBUTE}\``); // eslint-disable-line max-len
+    return new Error(
+      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. For spinners of type \`${type}\`, the \`theme\` prop must include \`${THEMING_ATTRIBUTE}\``,
+    ); // eslint-disable-line max-len
   }
   return false;
 };
@@ -51,13 +57,17 @@ const getSpinnerColor = (theme, type) => {
   return colorMappings[type];
 };
 
-const BpkSpinner = (props) => {
+const BpkSpinner = props => {
   const { small, type, ...rest } = props;
   let { theme } = props;
 
   // Validate type.
   if (!SPINNER_TYPES.includes(type)) {
-    throw new Error(`"${type}" is not a valid spinner type. Valid types are ${SPINNER_TYPES.join(', ')}`);
+    throw new Error(
+      `"${type}" is not a valid spinner type. Valid types are ${SPINNER_TYPES.join(
+        ', ',
+      )}`,
+    );
   }
 
   // Validate that spinner is themeable and correct theming attribute has been
@@ -90,7 +100,4 @@ BpkSpinner.defaultProps = {
 };
 
 export default withTheme(BpkSpinner);
-export {
-  propTypes,
-  SPINNER_TYPES,
-};
+export { propTypes, SPINNER_TYPES };

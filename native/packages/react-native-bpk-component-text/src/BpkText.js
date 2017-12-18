@@ -69,7 +69,7 @@ const TEXT_TOKENS = {
   textXxlLineHeight,
 };
 
-const getStyleByTextStyle = (textStyle) => {
+const getStyleByTextStyle = textStyle => {
   const camelCasedStyle = textStyle[0].toUpperCase() + textStyle.slice(1);
 
   const {
@@ -108,14 +108,8 @@ const styles = StyleSheet.create({
   xxl: { ...getStyleByTextStyle('xxl') },
 });
 
-const BpkText = (props) => {
-  const {
-    children,
-    textStyle,
-    style,
-    emphasize,
-    ...rest
-  } = props;
+const BpkText = props => {
+  const { children, textStyle, style, emphasize, ...rest } = props;
 
   const finalStyle = [styles[textStyle]];
 
@@ -125,7 +119,11 @@ const BpkText = (props) => {
 
   finalStyle.push(style);
 
-  return <Text style={finalStyle} {...rest}>{children}</Text>;
+  return (
+    <Text style={finalStyle} {...rest}>
+      {children}
+    </Text>
+  );
 };
 
 BpkText.propTypes = {

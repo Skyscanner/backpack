@@ -23,60 +23,95 @@ import BpkPaginationBreak from './BpkPaginationBreak';
 
 describe('BpkPaginationList', () => {
   it('should display first 3 pages when the first page is selected', () => {
-    const paginationList = shallow(<BpkPaginationList
-      pageCount={20}
-      selectedPageIndex={0}
-      visibleRange={3}
-      onPageChange={() => null}
-      pageLabel={(page, isSelected) =>
-        `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
-      }
-    />);
+    const paginationList = shallow(
+      <BpkPaginationList
+        pageCount={20}
+        selectedPageIndex={0}
+        visibleRange={3}
+        onPageChange={() => null}
+        pageLabel={(page, isSelected) =>
+          `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+        }
+      />,
+    );
 
     const list = paginationList.find('li');
 
     expect(list.length).toBe(5);
     expect(list.at(3).contains(<BpkPaginationBreak />)).toBe(true);
-    expect(list.at(4).find('BpkPaginationPage').prop('page')).toBe(20);
+    expect(
+      list
+        .at(4)
+        .find('BpkPaginationPage')
+        .prop('page'),
+    ).toBe(20);
   });
 
   it('should display two ellipses when the 6th page is selected', () => {
-    const paginationList = shallow(<BpkPaginationList
-      pageCount={20}
-      selectedPageIndex={5}
-      visibleRange={3}
-      onPageChange={() => null}
-      pageLabel={(page, isSelected) =>
-        `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
-      }
-    />);
+    const paginationList = shallow(
+      <BpkPaginationList
+        pageCount={20}
+        selectedPageIndex={5}
+        visibleRange={3}
+        onPageChange={() => null}
+        pageLabel={(page, isSelected) =>
+          `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+        }
+      />,
+    );
 
     const list = paginationList.find('li');
 
     expect(list.length).toBe(7);
     expect(list.at(1).contains(<BpkPaginationBreak />)).toBe(true);
     expect(list.at(5).contains(<BpkPaginationBreak />)).toBe(true);
-    expect(list.at(4).find('BpkPaginationPage').prop('page')).toBe(7);
+    expect(
+      list
+        .at(4)
+        .find('BpkPaginationPage')
+        .prop('page'),
+    ).toBe(7);
   });
 
-
   it('should display all pages when there are only 4 pages', () => {
-    const paginationList = shallow(<BpkPaginationList
-      pageCount={4}
-      selectedPageIndex={0}
-      visibleRange={3}
-      onPageChange={() => null}
-      pageLabel={(page, isSelected) =>
-        `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
-      }
-    />);
+    const paginationList = shallow(
+      <BpkPaginationList
+        pageCount={4}
+        selectedPageIndex={0}
+        visibleRange={3}
+        onPageChange={() => null}
+        pageLabel={(page, isSelected) =>
+          `Go to page ${page}${isSelected ? ', this is the current page' : ''}.`
+        }
+      />,
+    );
 
     const list = paginationList.find('li');
 
     expect(list.length).toBe(4);
-    expect(list.at(0).find('BpkPaginationPage').prop('page')).toBe(1);
-    expect(list.at(1).find('BpkPaginationPage').prop('page')).toBe(2);
-    expect(list.at(2).find('BpkPaginationPage').prop('page')).toBe(3);
-    expect(list.at(3).find('BpkPaginationPage').prop('page')).toBe(4);
+    expect(
+      list
+        .at(0)
+        .find('BpkPaginationPage')
+        .prop('page'),
+    ).toBe(1);
+    expect(
+      list
+        .at(1)
+        .find('BpkPaginationPage')
+        .prop('page'),
+    ).toBe(2);
+    expect(
+      list
+        .at(2)
+        .find('BpkPaginationPage')
+        .prop('page'),
+    ).toBe(3);
+    expect(
+      list
+        .at(3)
+        .find('BpkPaginationPage')
+        .prop('page'),
+    ).toBe(4);
   });
 });

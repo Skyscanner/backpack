@@ -22,7 +22,7 @@ import { getHtmlElement, DIRECTIONS, DIRECTION_CHANGE_EVENT } from './utils';
 
 const getDirection = () => getHtmlElement().dir || DIRECTIONS.LTR;
 
-const setDirection = (direction) => {
+const setDirection = direction => {
   const htmlElement = getHtmlElement();
 
   htmlElement.dir = direction;
@@ -58,7 +58,8 @@ class BpkRtlToggle extends React.Component {
   toggleRtl(e) {
     e.preventDefault();
 
-    const direction = getDirection() === DIRECTIONS.RTL ? DIRECTIONS.LTR : DIRECTIONS.RTL;
+    const direction =
+      getDirection() === DIRECTIONS.RTL ? DIRECTIONS.LTR : DIRECTIONS.RTL;
 
     setDirection(direction);
 

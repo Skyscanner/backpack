@@ -20,9 +20,10 @@ let scrollOffset = 0;
 
 const getWindow = () => (typeof window !== 'undefined' ? window : null);
 
-const getBodyElement = () => (
-  typeof document !== 'undefined' && typeof document.body !== 'undefined' ? document.body : null
-);
+const getBodyElement = () =>
+  typeof document !== 'undefined' && typeof document.body !== 'undefined'
+    ? document.body
+    : null;
 
 const getScrollBarWidth = () => {
   let scrollBarWidth = 0;

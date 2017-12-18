@@ -45,7 +45,8 @@ class BpkGridToggle extends React.Component {
   }
 
   componentWillUnmount() {
-    document.querySelector(this.props.targetContainer)
+    document
+      .querySelector(this.props.targetContainer)
       .classList.remove(GRID_CLASS_NAME);
     document.removeEventListener('keydown', this.handleKeyDown);
   }
@@ -59,7 +60,8 @@ class BpkGridToggle extends React.Component {
   toggleGrid(e) {
     e.preventDefault();
 
-    document.querySelector(this.props.targetContainer)
+    document
+      .querySelector(this.props.targetContainer)
       .classList.toggle(GRID_CLASS_NAME);
 
     this.setState(state => ({
