@@ -11,16 +11,52 @@ npm install bpk-component-horizontal-nav --save-dev
 ## Usage
 
 ```js
-import React from 'react';
+import React, { Component } from 'react';
 import BpkHorizontalNav, { BpkHorizontalNavItem } from 'bpk-component-horizontal-nav';
 
-export default () => (
-  <BpkHorizontalNav>
-    <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-    <BpkHorizontalNavItem selected>Hotels</BpkHorizontalNavItem>
-    <BpkHorizontalNavItem>Car hire</BpkHorizontalNavItem>
-  </BpkHorizontalNav>
-)
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selected: 'flights',
+    };
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick(e) {
+    this.setState({
+      selected: e.target.name,
+    });
+  }
+
+  render() {
+    return (
+      <BpkHorizontalNav>
+        <BpkHorizontalNavItem
+          name="flights"
+          selected={this.state.selected === 'flights'}
+          onClick={this.onClick}
+        >
+          Flights
+        </BpkHorizontalNavItem>
+        <BpkHorizontalNavItem
+          name="hotels"
+          selected={this.state.selected === 'hotels'}
+          onClick={this.onClick}
+        >
+          Hotels
+        </BpkHorizontalNavItem>
+        <BpkHorizontalNavItem
+          name="car-hire"
+          selected={this.state.selected === 'car-hire'}
+          onClick={this.onClick}
+        >
+          Car hire
+        </BpkHorizontalNavItem>
+      </BpkHorizontalNav>
+    );
+  }
+};
 ```
 
 ## Props

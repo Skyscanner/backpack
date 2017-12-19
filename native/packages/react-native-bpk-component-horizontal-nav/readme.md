@@ -12,31 +12,44 @@ npm install react-native-bpk-component-horizontal-nav --save-dev
 
 ```js
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 import BpkHorizontalNav, { BpkHorizontalNavItem } from 'react-native-bpk-component-horizontal-nav';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: spacingBase,
-  }
-});
-
 export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedId: 'flights',
+    };
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <BpkHorizontalNav selectedId="nav-1">
-          <BpkHorizontalNavItem id="nav-0" title="Item One" onPress={() => {}} />
-          <BpkHorizontalNavItem id="nav-1" title="Item Two" onPress={() => {}} />
-          <BpkHorizontalNavItem id="nav-2" title="Item Three" onPress={() => {}} />
-        </BpkHorizontalNav>
-      </View >
+      <BpkHorizontalNav selectedId={this.state.selectedId}>
+        <BpkHorizontalNavItem
+          id="flights"
+          title="Flights"
+          onPress={() => {
+            this.setState({ selectedId: 'flights' });
+          }}
+        />
+        <BpkHorizontalNavItem
+          id="hotels"
+          title="Hotels"
+          onPress={() => {
+            this.setState({ selectedId: 'hotels' });
+          }}
+        />
+        <BpkHorizontalNavItem
+          id="car-hire"
+          title="Car hire"
+          onPress={() => {
+            this.setState({ selectedId: 'car-hire' });
+          }}
+        />
+      </BpkHorizontalNav>
     );
   }
-}
+};
 ```
 
 ## Props
