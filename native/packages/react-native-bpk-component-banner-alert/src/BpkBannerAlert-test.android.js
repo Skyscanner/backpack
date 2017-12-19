@@ -24,10 +24,16 @@ jest.mock('react-native', () => {
   jest
     .spyOn(reactNative.Platform, 'select')
     .mockImplementation(obj => obj.android || obj.default);
+  reactNative.TouchableNativeFeedback.SelectableBackgroundBorderless = jest.fn();
+
   reactNative.Platform.OS = 'android';
 
   return reactNative;
 });
+
+jest.mock('./BpkBannerAlert', () =>
+  require.requireActual('./BpkBannerAlert.android.js'),
+);
 
 jest.mock(
   './../node_modules/react-native-bpk-component-text/node_modules/bpk-tokens/tokens/base.react.native',
