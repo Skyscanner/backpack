@@ -77,7 +77,6 @@
     "css-loader": "^0.28.4",
     "danger": "^1.2.0",
     "del": "^3.0.0",
-    "empty": "^0.10.1",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-15": "^1.0.5",
     "enzyme-to-json": "^3.1.4",
@@ -154,9 +153,9 @@
       "node_modules/(?!bpk)"
     ],
     "moduleNameMapper": {
-      "react-transition-group/CSSTransition": "<rootDir>/scripts/jest/cssTransitionStub.js",
-      "^.+\\.scss$": "<rootDir>/scripts/jest/styleStub.js",
-      "^.+\\.svg$": "<rootDir>/scripts/jest/fileStub.js"
+      "react-transition-group/CSSTransition": "<rootDir>/scripts/stubs/cssTransitionStub.js",
+      "^.+\\.scss$": "<rootDir>/scripts/stubs/styleStub.js",
+      "^.+\\.svg$": "<rootDir>/scripts/stubs/fileStub.js"
     },
     "coverageThreshold": {
       "global": {

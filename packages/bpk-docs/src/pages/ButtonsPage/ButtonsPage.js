@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-import React, { Component } from 'react';
+/* @flow */
+
+import * as React from 'react';
 import BpkButton from 'bpk-component-button';
 import { colors, buttons } from 'bpk-tokens/tokens/base.es6';
 import { alignToButton, alignToLargeButton } from 'bpk-component-icon';
@@ -49,35 +51,29 @@ const AlignedBpkLargeHelpIcon = alignToLargeButton(TestBpkLargeHelpIcon);
 const AlignedBpkSmallSearchIcon = alignToButton(TestBpkSmallSearchIcon);
 const AlignedBpkLargeSearchIcon = alignToLargeButton(TestBpkLargeSearchIcon);
 
-class LoadingButtonContainer extends Component {
+class LoadingButtonContainer extends React.Component<{}, { loading: boolean }> {
   constructor() {
     super();
 
     this.state = {
       loading: false,
     };
-
-    this.onClick = this.onClick.bind(this);
   }
 
-  onClick() {
+  onClick = () => {
     this.setState({
       loading: true,
     });
+
     setTimeout(() => this.setState({ loading: false }), 2000);
-  }
+  };
 
   render() {
-    const { ...rest } = this.props;
-
-    delete rest.onClick;
-    delete rest.loading;
-
     return (
       <BpkLoadingButton
+        {...this.props}
         loading={this.state.loading}
         onClick={this.onClick}
-        {...this.props}
       >
         Search
       </BpkLoadingButton>

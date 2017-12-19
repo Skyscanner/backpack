@@ -8,6 +8,7 @@
 [lints]
 
 [options]
-module.name_mapper='.*\(.s?css\)' -> 'empty/object'
+module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/scripts/stubs/styleStub.js'
+module.name_mapper.extension='md' -> '<PROJECT_ROOT>/scripts/stubs/fileStub.js'
 
 [strict]
