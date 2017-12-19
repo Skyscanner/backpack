@@ -1,14 +1,19 @@
 {
+  "parser": "babel-eslint",
   "extends": [
       "skyscanner",
       "prettier",
-      "prettier/react"
+      "prettier/react",
+      "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "prettier",
+    "flowtype"
   ],
   "env": {
     "browser": true,
     "jest": true
   },
-  "plugins": ["prettier"],
   "settings": {
     "import/resolver": {
       "node": {
@@ -25,6 +30,14 @@
     "prettier/prettier": "error",
     "react/jsx-filename-extension": 0,
     "import/no-extraneous-dependencies": 0,
+    // We want to keep prop-types alongside flow types so we relax this rule to allow us to specify defaults for
+    // required flow props
+    "react/default-props-match-prop-types": [
+      2,
+      {
+        "allowRequiredDefaults": true
+      }
+    ],
     "react/prefer-stateless-function": [
       2,
       {

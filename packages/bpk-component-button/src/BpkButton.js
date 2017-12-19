@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow */
+
+import * as React from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import STYLES from './bpk-button.scss';
 
@@ -30,7 +32,23 @@ const cssModules = (styles = {}) => className =>
 
 const getClassName = cssModules(STYLES);
 
-const BpkButton = props => {
+type Props = {
+  children: React.Node,
+  href: ?string,
+  className: ?string,
+  disabled: boolean,
+  onClick: ?(event: SyntheticEvent<>) => void,
+  submit: boolean,
+  secondary: boolean,
+  selected: boolean,
+  destructive: boolean,
+  large: boolean,
+  link: boolean,
+  iconOnly: boolean,
+  featured: boolean,
+};
+
+const BpkButton = (props: Props) => {
   const {
     children,
     href,
@@ -115,10 +133,7 @@ const BpkButton = props => {
 };
 
 BpkButton.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
+  children: PropTypes.node.isRequired,
   href: PropTypes.string,
   className: PropTypes.string,
   disabled: PropTypes.bool,

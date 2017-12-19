@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import BpkButton from './src/BpkButton';
 import {
   primaryThemeAttributes,

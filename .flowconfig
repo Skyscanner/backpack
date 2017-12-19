@@ -1,0 +1,13 @@
+[ignore]
+.*/node_modules/jsonlint/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+module.name_mapper='.*\(.s?css\)' -> 'empty/object'
+
+[strict]
