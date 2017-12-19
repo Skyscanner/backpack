@@ -25,6 +25,7 @@ import _omit from 'lodash/omit';
 
 import STYLES from './bpk-data-table.scss';
 import BpkDataTableColumn from './BpkDataTableColumn';
+import hasChildrenOfType from './hasChildrenOfType';
 
 const getClassName = cssModules(STYLES);
 const omittedTableProps = [
@@ -153,7 +154,7 @@ class BpkDataTable extends Component {
 BpkDataTable.propTypes = {
   ..._omit(Table.propTypes, omittedTableProps),
   rows: PropTypes.arrayOf(Object).isRequired,
-  children: PropTypes.arrayOf(Object).isRequired,
+  children: hasChildrenOfType(BpkDataTableColumn),
   width: PropTypes.number,
   headerHeight: PropTypes.number,
   className: PropTypes.string,

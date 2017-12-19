@@ -17,12 +17,47 @@
  */
 
 import React from 'react';
-import { Column } from 'react-virtualized';
+import { Column, SortDirection } from 'react-virtualized';
 import { cssModules } from 'bpk-react-utils';
+import BpkSmallArrowDownIcon from 'bpk-component-icon/sm/arrow-down';
+import BpkSmallArrowUpIcon from 'bpk-component-icon/sm/arrow-up';
+import { withRtlSupport } from 'bpk-component-icon';
 
 import STYLES from './bpk-data-table-column.scss';
 
 const getClassName = cssModules(STYLES);
+const DownIcon = withRtlSupport(BpkSmallArrowDownIcon);
+const UpIcon = withRtlSupport(BpkSmallArrowUpIcon);
+
+export const bpkHeaderRenderer = ({
+  dataKey,
+  label,
+  sortBy,
+  sortDirection,
+}) => {
+  const showSortIndicator = sortBy === dataKey;
+  const children = [
+    <span
+      className={getClassName('bpk-data-table-column__header')}
+      key="label"
+      title={label}
+    >
+      {label}
+    </span>,
+  ];
+
+  if (showSortIndicator) {
+    const Icon = sortDirection === SortDirection.ASC ? DownIcon : UpIcon;
+    children.push(
+      <Icon
+        className={getClassName('bpk-data-table-column__sort-icon')}
+        key="sortIcon"
+      />,
+    );
+  }
+
+  return children;
+};
 
 // BpkDataTableColumn is just a props wrapper since Table only accepts Column children
 // BpkDataTable uses BpkDataTableColumn.toColumn to convert BpkDataTableColumn to Columns
@@ -40,6 +75,9 @@ BpkDataTableColumn.toColumn = (bpkDataTableColumn, key) => {
 };
 
 BpkDataTableColumn.propTypes = { ...Column.propTypes };
-BpkDataTableColumn.defaultProps = { ...Column.defaultProps };
+BpkDataTableColumn.defaultProps = {
+  ...Column.defaultProps,
+  headerRenderer: bpkHeaderRenderer,
+};
 
 export default BpkDataTableColumn;
