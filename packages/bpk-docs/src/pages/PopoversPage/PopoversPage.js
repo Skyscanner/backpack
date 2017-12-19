@@ -154,6 +154,19 @@ const PopoversPage = () => (
     ]}
     components={components}
     readme={popoverReadme}
+    usageTable={{
+      dos: [
+        'Use to provide additional information related to an element on the page.',
+        'Use when content is too long for a tooltip.',
+        'Use when the user needs to access additional functionality, without losing their current place in the UI.',
+        'Use when you want a contextual relationship with an element on screen that a modal or dialog can’t provide.',
+        'Use for feature prompts / onboarding.',
+      ],
+      donts: [
+        "Don't use for complex content on a mobile - in this case a modal may be a better bet.",
+        "Don't use when you want content to be accessed on hover.",
+      ],
+    }}
   />
 );
 
