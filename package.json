@@ -28,6 +28,7 @@
     "jest:update": "jest --updateSnapshot",
     "jest:watch": "jest --watch",
     "jest": "jest --coverage",
+    "flow": "flow",
     "build:tokens": "lerna run tokens --scope bpk-tokens",
     "build:svgs": "lerna run svgs --scope bpk-svgs",
     "build": "npm run build:tokens && npm run build:svgs && lerna run build && (cd ./native && npm run link)",
@@ -39,7 +40,7 @@
     "native": "(cd ./native && npm run storybook)",
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
     "fix-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js --fix",
-    "test": "npm run lint && npm run check-bpk-dependencies && npm run jest && npm run test:native",
+    "test": "npm run lint && npm run check-bpk-dependencies && npm run jest && npm run test:native && npm run flow",
     "test:native": "(cd ./native && npm test)",
     "ios": "(cd ./native && npm run ios)",
     "android": "(cd ./native && npm run android)",
@@ -68,6 +69,7 @@
     "babel-eslint": "^8.0.2",
     "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
@@ -83,6 +85,7 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-skyscanner": "^3.0.0",
+    "eslint-plugin-flowtype": "^2.40.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^2.3.1",
@@ -90,6 +93,7 @@
     "eslint_d": "^5.2.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
+    "flow-bin": "^0.61.0",
     "gulp": "^3.9.1",
     "gulp-chmod": "^2.0.0",
     "gulp-cli": "^1.2.2",
@@ -150,9 +154,9 @@
       "node_modules/(?!bpk)"
     ],
     "moduleNameMapper": {
-      "react-transition-group/CSSTransition": "<rootDir>/scripts/jest/cssTransitionStub.js",
-      "^.+\\.scss$": "<rootDir>/scripts/jest/styleStub.js",
-      "^.+\\.svg$": "<rootDir>/scripts/jest/fileStub.js"
+      "react-transition-group/CSSTransition": "<rootDir>/scripts/stubs/cssTransitionStub.js",
+      "^.+\\.scss$": "<rootDir>/scripts/stubs/styleStub.js",
+      "^.+\\.svg$": "<rootDir>/scripts/stubs/fileStub.js"
     },
     "coverageThreshold": {
       "global": {

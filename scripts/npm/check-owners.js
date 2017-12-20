@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 /* eslint-disable no-console */
 
 const fs = require('fs');
