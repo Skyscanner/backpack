@@ -70,8 +70,16 @@ const UsageTable = props => {
                 key={cellIndex.toString()}
                 className={getClassName('bpkdocs-dos-and-donts__cell')}
               >
-                {getIcon(cell, cellIndex)}
-                {cell}
+                <div
+                  className={getClassName('bpkdocs-dos-and-donts__container')}
+                >
+                  {getIcon(cell, cellIndex)}
+                  <span
+                    className={getClassName('bpkdocs-dos-and-donts__content')}
+                  >
+                    {cell}
+                  </span>
+                </div>
               </BpkTableCell>
             ))}
           </BpkTableRow>

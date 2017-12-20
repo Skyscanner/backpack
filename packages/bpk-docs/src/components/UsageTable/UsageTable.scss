@@ -21,15 +21,25 @@
 .bpkdocs-dos-and-donts {
 
   &__cell {
-    display: flex;
-    align-items: center;
+    vertical-align: top;
   }
 
+  &__container {
+    display: flex;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  $icon-margin: $bpk-spacing-xs;
   &__do-icon {
     fill: $bpk-color-green-500;
+    margin-right: $icon-margin;
   }
 
   &__dont-icon {
     fill: $bpk-color-red-500;
+    margin-right: $icon-margin;
   }
 }
