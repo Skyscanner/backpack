@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import React from 'react';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
@@ -24,30 +23,14 @@ import STYLES from './bpk-scrim.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkScrim = props => {
-  const classNames = [getClassName('bpk-scrim')];
-
-  if (props.fullScreenOnMobile) {
-    classNames.push(getClassName('bpk-scrim--full-screen'));
-  }
-
-  return (
-    <TransitionInitialMount
-      appearClassName={getClassName('bpk-scrim--appear')}
-      appearActiveClassName={getClassName('bpk-scrim--appear-active')}
-      transitionTimeout={200}
-    >
-      <div className={classNames.join(' ')} />
-    </TransitionInitialMount>
-  );
-};
-
-BpkScrim.propTypes = {
-  fullScreenOnMobile: PropTypes.bool,
-};
-
-BpkScrim.defaultProps = {
-  fullScreenOnMobile: true,
-};
+const BpkScrim = () => (
+  <TransitionInitialMount
+    appearClassName={getClassName('bpk-scrim--appear')}
+    appearActiveClassName={getClassName('bpk-scrim--appear-active')}
+    transitionTimeout={200}
+  >
+    <div className={getClassName('bpk-scrim')} />
+  </TransitionInitialMount>
+);
 
 export default BpkScrim;

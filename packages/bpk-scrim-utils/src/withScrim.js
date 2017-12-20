@@ -118,7 +118,6 @@ const withScrim = WrappedComponent => {
         isIphone,
         getApplicationElement,
         containerClassName,
-        fullScreenOnMobile,
         ...rest
       } = this.props;
 
@@ -140,7 +139,7 @@ const withScrim = WrappedComponent => {
       return (
         /* eslint-disable jsx-a11y/no-static-element-interactions */
         <div>
-          <BpkScrim fullScreenOnMobile={fullScreenOnMobile} />
+          <BpkScrim />
           <div
             className={classNames.join(' ')}
             onTouchStart={this.onOverlayMouseDown}
@@ -152,7 +151,6 @@ const withScrim = WrappedComponent => {
           >
             <WrappedComponent
               {...rest}
-              fullScreenOnMobile={fullScreenOnMobile}
               isIphone={isIphone}
               dialogRef={this.dialogRef}
               closeEvents={closeEvents}
@@ -171,7 +169,6 @@ const withScrim = WrappedComponent => {
     getApplicationElement: PropTypes.func.isRequired,
     isIphone: PropTypes.bool,
     containerClassName: PropTypes.string,
-    fullScreenOnMobile: PropTypes.bool,
   };
 
   component.defaultProps = {
@@ -179,7 +176,6 @@ const withScrim = WrappedComponent => {
       typeof window !== 'undefined' ? window.navigator.platform : '',
     ),
     containerClassName: '',
-    fullScreenOnMobile: true,
   };
 
   return component;

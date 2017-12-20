@@ -55,8 +55,8 @@ const BpkModal = props => {
       <ScrimBpkModalDialog
         onClose={onClose}
         fullScreenOnMobile={fullScreenOnMobile}
-        {...rest}
         containerClassName={containerClass.join(' ')}
+        {...rest}
       />
     </Portal>
   );

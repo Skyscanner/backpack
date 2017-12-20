@@ -29,7 +29,6 @@ const BoxWithScrim = withScrim(Box);
 - `closeEvents` should be spread on the visible container on top of the scrim; they are used to close handle clicking, tapping, or dragging between component and scrim
 - `onClose` should be set as the `onClick` action on a button or a link
 - `isIphone` can be used to apply iPhone only styles or behaviour, as it has different scrolling behaviour
-- `fullScreenOnMobile` on mobile's width, the component fills the whole screen.
 
 `containerClassName` can be used to apply styles to the full-screen container into which the enriched component is inserted
  (eg. `display: flex` or `display: grid`)
@@ -42,4 +41,3 @@ const BoxWithScrim = withScrim(Box);
 | getApplicationElement | func     | true     | -             |
 | isIphone              | bool     | false    | /iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : '')|
 | containerClassName    | string   | false    | ''            |
-| fullScreenOnMobile    | bool     | false    | true          |

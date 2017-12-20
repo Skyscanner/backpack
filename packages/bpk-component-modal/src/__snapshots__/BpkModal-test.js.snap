@@ -9,7 +9,7 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
       data-reactroot=""
     >
       <div
-        class="bpk-scrim bpk-scrim--full-screen"
+        class="bpk-scrim"
       />
       <div
         class="bpk-scrim-content bpk-modal__container bpk-modal__container--full-screen"
