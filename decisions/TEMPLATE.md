@@ -2,11 +2,11 @@
 
 # Title <!-- e.g. "Squad colour coordination" -->
 
-## Decision
-<!-- e.g. "On Wednesdays we wear pink" -->
-
 ## TL;DR
 <!-- Only if long enough to merit one. -->
+
+## Decision
+<!-- e.g. "On Wednesdays we wear pink" -->
 
 ## Thinking
 <!-- e.g. "Because a study showed that pink improves coding ability on Wednesdays" -->
