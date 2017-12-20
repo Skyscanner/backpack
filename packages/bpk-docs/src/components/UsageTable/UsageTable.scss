@@ -19,7 +19,6 @@
 @import '~bpk-mixins/index';
 
 .bpkdocs-dos-and-donts {
-
   &__cell {
     vertical-align: top;
   }
@@ -32,11 +31,11 @@
     flex: 1;
   }
 
-  &__do-icon, &__dont-icon {
-    margin-right: $bpk-spacing-xs;
+  &__do-icon,
+  &__dont-icon {
     margin-top: $bpk-spacing-xs / 2;
+    margin-right: $bpk-spacing-xs;
   }
-
 
   &__do-icon {
     fill: $bpk-color-green-500;
