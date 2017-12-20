@@ -32,14 +32,17 @@
     flex: 1;
   }
 
-  $icon-margin: $bpk-spacing-xs;
+  &__do-icon, &__dont-icon {
+    margin-right: $bpk-spacing-xs;
+    margin-top: $bpk-spacing-xs / 2;
+  }
+
+
   &__do-icon {
     fill: $bpk-color-green-500;
-    margin-right: $icon-margin;
   }
 
   &__dont-icon {
     fill: $bpk-color-red-500;
-    margin-right: $icon-margin;
   }
 }

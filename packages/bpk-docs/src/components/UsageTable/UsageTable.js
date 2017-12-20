@@ -28,8 +28,8 @@ import {
   BpkTableCell,
 } from 'bpk-component-table';
 import { cssModules } from 'bpk-react-utils';
-import BpkTickIcon from 'bpk-component-icon/lg/tick-circle';
-import BpkCloseIcon from 'bpk-component-icon/lg/close-circle';
+import BpkTickIcon from 'bpk-component-icon/sm/tick-circle';
+import BpkCloseIcon from 'bpk-component-icon/sm/close-circle';
 
 import STYLES from './UsageTable.scss';
 
