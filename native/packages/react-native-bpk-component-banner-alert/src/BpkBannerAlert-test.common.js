@@ -53,21 +53,25 @@ const commonTests = () => {
               type={ALERT_TYPES.NEUTRAL}
               message="Neutral alert."
               dismissable
+              dismissButtonLabel="Dismiss"
             />
             <BpkBannerAlert
               type={ALERT_TYPES.SUCCESS}
               message="Successful alert."
               dismissable
+              dismissButtonLabel="Dismiss"
             />
             <BpkBannerAlert
               type={ALERT_TYPES.WARN}
               message="Warn alert."
               dismissable
+              dismissButtonLabel="Dismiss"
             />
             <BpkBannerAlert
               type={ALERT_TYPES.ERROR}
               message="Error alert."
               dismissable
+              dismissButtonLabel="Dismiss"
             />
           </View>,
         )
@@ -79,7 +83,11 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <View>
-            <BpkBannerAlert type={ALERT_TYPES.NEUTRAL} message="Neutral alert.">
+            <BpkBannerAlert
+              type={ALERT_TYPES.NEUTRAL}
+              message="Neutral alert."
+              toggleExpandedButtonLabel="Expand"
+            >
               <BpkText textStyle="sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
                 sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam
@@ -91,6 +99,7 @@ const commonTests = () => {
             <BpkBannerAlert
               type={ALERT_TYPES.SUCCESS}
               message="Successful alert."
+              toggleExpandedButtonLabel="Expand"
             >
               <BpkText textStyle="sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -100,7 +109,11 @@ const commonTests = () => {
                 est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
               </BpkText>
             </BpkBannerAlert>
-            <BpkBannerAlert type={ALERT_TYPES.WARN} message="Warn alert.">
+            <BpkBannerAlert
+              type={ALERT_TYPES.WARN}
+              message="Warn alert."
+              toggleExpandedButtonLabel="Expand"
+            >
               <BpkText textStyle="sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
                 sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam
@@ -109,7 +122,11 @@ const commonTests = () => {
                 est. Integer rhoncus varius arcu, a fringilla libero laoreet at.
               </BpkText>
             </BpkBannerAlert>
-            <BpkBannerAlert type={ALERT_TYPES.ERROR} message="Error alert.">
+            <BpkBannerAlert
+              type={ALERT_TYPES.ERROR}
+              message="Error alert."
+              toggleExpandedButtonLabel="Expand"
+            >
               <BpkText textStyle="sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
                 sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam
@@ -132,6 +149,7 @@ const commonTests = () => {
               type={ALERT_TYPES.NEUTRAL}
               message="Neutral alert."
               expanded
+              toggleExpandedButtonLabel="Expand"
             >
               <BpkText textStyle="sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -145,6 +163,7 @@ const commonTests = () => {
               type={ALERT_TYPES.SUCCESS}
               message="Successful alert."
               expanded
+              toggleExpandedButtonLabel="Expand"
             >
               <BpkText textStyle="sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -158,6 +177,7 @@ const commonTests = () => {
               type={ALERT_TYPES.WARN}
               message="Warn alert."
               expanded
+              toggleExpandedButtonLabel="Expand"
             >
               <BpkText textStyle="sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -171,6 +191,7 @@ const commonTests = () => {
               type={ALERT_TYPES.ERROR}
               message="Error alert."
               expanded
+              toggleExpandedButtonLabel="Expand"
             >
               <BpkText textStyle="sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -194,6 +215,7 @@ const commonTests = () => {
               type={ALERT_TYPES.NEUTRAL}
               message="Neutral alert."
               expanded
+              toggleExpandedButtonLabel="Expand"
             >
               <BpkText textStyle="sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -207,6 +229,7 @@ const commonTests = () => {
               type={ALERT_TYPES.SUCCESS}
               message="Successful alert."
               expanded
+              toggleExpandedButtonLabel="Expand"
             >
               <BpkText textStyle="sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -220,6 +243,7 @@ const commonTests = () => {
               type={ALERT_TYPES.WARN}
               message="Warn alert."
               expanded
+              toggleExpandedButtonLabel="Expand"
             >
               <BpkText textStyle="sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -233,6 +257,7 @@ const commonTests = () => {
               type={ALERT_TYPES.ERROR}
               message="Error alert."
               expanded
+              toggleExpandedButtonLabel="Expand"
             >
               <BpkText textStyle="sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque

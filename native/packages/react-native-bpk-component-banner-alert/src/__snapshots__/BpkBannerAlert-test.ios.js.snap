@@ -1252,7 +1252,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
               </View>
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Dismiss"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -1470,7 +1470,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
               </View>
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Dismiss"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -1688,7 +1688,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
               </View>
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Dismiss"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -1906,7 +1906,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
               </View>
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Dismiss"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -2053,7 +2053,7 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
             >
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Expand"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -2265,7 +2265,7 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
             >
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Expand"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -2477,7 +2477,7 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
             >
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Expand"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -2689,7 +2689,7 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
             >
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Expand"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -2906,7 +2906,7 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
             >
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Expand"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -3166,7 +3166,7 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
             >
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Expand"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -3426,7 +3426,7 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
             >
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Expand"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -3686,7 +3686,7 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
             >
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Expand"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -3951,7 +3951,7 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
             >
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Expand"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -4211,7 +4211,7 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
             >
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Expand"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -4471,7 +4471,7 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
             >
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Expand"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}
@@ -4731,7 +4731,7 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
             >
               <View
                 accessibilityComponentType="button"
-                accessibilityLabel={null}
+                accessibilityLabel="Expand"
                 accessibilityTraits={undefined}
                 accessible={true}
                 hitSlop={undefined}

@@ -3,6 +3,9 @@
 ## UNRELEASED
 
 **Added:**
+- react-native-bpk-component-banner-alert:
+  - Android support
+
 - bpk-component-banner-alert:
   - `withBannerAlertState` HOC, see https://backpack.github.io/components/web/banner-alerts/#withBannerAlertState
   - `bannerClassdName` prop added to allow stlying to be applied to the internal banner rather than the outer container. See https://backpack.github.io/components/web/banner-alerts/#props

@@ -319,14 +319,14 @@ storiesOf('BpkBannerAlert', module)
           style={styles.bannerAlert}
           type={ALERT_TYPES.WARN}
           message={message}
-          actionButtonLabel="Dismiss"
+          dismissButtonLabel="Dismiss"
           dismissable
         />
         <BpkBannerAlert
           style={styles.bannerAlert}
           type={ALERT_TYPES.ERROR}
           message={message}
-          actionButtonLabel="Collapse"
+          toggleExpandedButtonLabel="Collapse"
           expanded
         >
           <BpkText textStyle="sm" style={styles.child}>
