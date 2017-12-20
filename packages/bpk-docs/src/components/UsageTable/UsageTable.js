@@ -27,12 +27,32 @@ import {
   BpkTableHeadCell,
   BpkTableCell,
 } from 'bpk-component-table';
+import { cssModules } from 'bpk-react-utils';
+import BpkTickIcon from 'bpk-component-icon/sm/tick-circle';
+import BpkCloseIcon from 'bpk-component-icon/sm/close-circle';
+
+import STYLES from './UsageTable.scss';
+
+const getClassName = cssModules(STYLES);
 
 const UsageTable = props => {
   const { data, ...rest } = props;
   const { dos, donts } = data;
 
   const rows = zip(dos, donts);
+
+  const getIcon = (cell, index) => {
+    if (!cell) {
+      return null;
+    }
+    return index % 2 === 0 ? (
+      <BpkTickIcon className={getClassName('bpkdocs-dos-and-donts__do-icon')} />
+    ) : (
+      <BpkCloseIcon
+        className={getClassName('bpkdocs-dos-and-donts__dont-icon')}
+      />
+    );
+  };
 
   return (
     <BpkTable {...rest}>
@@ -43,9 +63,25 @@ const UsageTable = props => {
         </BpkTableRow>
       </BpkTableHead>
       <BpkTableBody>
-        {rows.map(cells => (
-          <BpkTableRow>
-            {cells.map(cell => <BpkTableCell>{cell}</BpkTableCell>)}
+        {rows.map((cells, rowIndex) => (
+          <BpkTableRow key={rowIndex.toString()}>
+            {cells.map((cell, cellIndex) => (
+              <BpkTableCell
+                key={cellIndex.toString()}
+                className={getClassName('bpkdocs-dos-and-donts__cell')}
+              >
+                <div
+                  className={getClassName('bpkdocs-dos-and-donts__container')}
+                >
+                  {getIcon(cell, cellIndex)}
+                  <span
+                    className={getClassName('bpkdocs-dos-and-donts__content')}
+                  >
+                    {cell}
+                  </span>
+                </div>
+              </BpkTableCell>
+            ))}
           </BpkTableRow>
         ))}
       </BpkTableBody>
