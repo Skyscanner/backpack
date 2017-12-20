@@ -8,7 +8,10 @@
 
 - bpk-component-banner-alert:
   - `withBannerAlertState` HOC, see https://backpack.github.io/components/web/banner-alerts/#withBannerAlertState
-  - `bannerClassdName` prop added to allow stlying to be applied to the internal banner rather than the outer container. See https://backpack.github.io/components/web/banner-alerts/#props
+  - `bannerClassName` prop added to allow stlying to be applied to the internal banner rather than the outer container. See https://backpack.github.io/components/web/banner-alerts/#props
+
+- bpk-component-modal:
+  - The full screen behaviour on mobile can now be turned off by setting `fullScreenOnMobile` to false
 
 ## 2017-12-14 - React Native text inputs now correctly support placeholders
 

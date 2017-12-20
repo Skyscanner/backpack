@@ -21,18 +21,23 @@
 .bpk-modal {
   z-index: $bpk-zindex-modal;
   width: 100%;
+  max-width: $bpk-modal-max-width;
+  margin: auto;
   transform: scale(1);
   transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
   outline: 0;
   background-color: $bpk-modal-background-color;
   opacity: $bpk-modal-opacity;
 
-  @include bpk-breakpoint-above-mobile {
-    max-width: $bpk-modal-max-width;
-    margin: auto;
+  @include bpk-box-shadow-xl;
+  @include bpk-border-radius-sm;
 
-    @include bpk-box-shadow-xl;
-    @include bpk-border-radius-sm;
+  &--full-screen {
+    @include bpk-breakpoint-mobile {
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
   }
 
   &--wide {

@@ -8,11 +8,11 @@
 npm install bpk-scrim-utils --save-dev
 ```
 
-```js 
+```js
 import { withScrim } from 'bpk-scrim-utils';
 
 const Box = props => (
-  <div 
+  <div
     ref={props.dialogRef}
     {...props.closeEvents}
   >

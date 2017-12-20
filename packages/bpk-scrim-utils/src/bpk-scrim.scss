@@ -30,8 +30,10 @@
   opacity: $bpk-scrim-opacity;
   overflow: hidden;
 
-  @include bpk-breakpoint-mobile {
-    opacity: $bpk-scrim-mobile-opacity;
+  &--full-screen {
+    @include bpk-breakpoint-mobile {
+      opacity: $bpk-scrim-mobile-opacity;
+    }
   }
 
   &--appear {
