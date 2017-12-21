@@ -89,8 +89,9 @@ console.log(`Maintainers are:\n  ${owners.join('\n  ')}\n`);
 
 Promise.all([readdir('packages/'), readdir('native/packages/')])
   .then(packages =>
-    Promise.all([...packages[0], ...packages[1]].map(getPackageMaintainers)),
+    [...packages[0], ...packages[1]].filter(i => !i.startsWith('.')),
   )
+  .then(packages => Promise.all(packages.map(getPackageMaintainers)))
   .then(maintainers => maintainers.forEach(verifyMaintainers))
   .then(() => {
     if (failures) {
