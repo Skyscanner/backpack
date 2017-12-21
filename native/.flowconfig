@@ -1,0 +1,53 @@
+[ignore]
+; Ignore templates for 'react-native init'
+<PROJECT_ROOT>/node_modules/react-native/local-cli/templates/.*
+
+<PROJECT_ROOT>/react-native-bpk-*/node_modules/.*
+
+; Ignore RN jest
+<PROJECT_ROOT>/node_modules/react-native/jest/.*
+
+; Ignore RNTester
+<PROJECT_ROOT>/node_modules/react-native/RNTester/.*
+
+; Ignore the website subdir
+<PROJECT_ROOT>/node_modules/react-native/website/.*
+
+; Ignore the Dangerfile
+<PROJECT_ROOT>/node_modules/react-native/danger/dangerfile.js
+
+; Ignore Fbemitter
+<PROJECT_ROOT>/node_modules/fbemitter/.*
+
+; Ignore "BUCK" generated dirs
+<PROJECT_ROOT>/node_modules/react-native/\.buckd/
+
+; Ignore unexpected extra "@providesModule"
+.*/node_modules/.*/node_modules/fbjs/.*
+
+; Ignore polyfills
+<PROJECT_ROOT>/node_modules/react-native/Libraries/polyfills/.*
+
+; Ignore various node_modules
+<PROJECT_ROOT>/node_modules/react-native-gesture-handler/.*
+<PROJECT_ROOT>/node_modules/expo/.*
+<PROJECT_ROOT>/node_modules/react-navigation/.*
+<PROJECT_ROOT>/node_modules/xdl/.*
+<PROJECT_ROOT>/node_modules/reqwest/.*
+<PROJECT_ROOT>/node_modules/metro-bundler/.*
+
+[include]
+
+[libs]
+node_modules/native/react-native/Libraries/react-native/react-native-interface.js
+node_modules/react-native/flow/
+
+[options]
+emoji=true
+
+unsafe.enable_getters_and_setters=true
+
+module.file_ext=.js
+module.file_ext=.json
+module.file_ext=.ios.js
+module.file_ext=.android.js
