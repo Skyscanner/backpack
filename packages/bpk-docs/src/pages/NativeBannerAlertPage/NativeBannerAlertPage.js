@@ -23,9 +23,12 @@ import iosScreenshotDefault from 'react-native-bpk-component-banner-alert/screen
 import iosScreenshotDismissable from 'react-native-bpk-component-banner-alert/screenshots/ios/dismissable.png';
 import iosScreenshotExpandable from 'react-native-bpk-component-banner-alert/screenshots/ios/expandable.png';
 
+import androidScreenshotDefault from 'react-native-bpk-component-banner-alert/screenshots/android/default.png';
+import androidScreenshotDismissable from 'react-native-bpk-component-banner-alert/screenshots/android/dismissable.png';
+import androidScreenshotExpandable from 'react-native-bpk-component-banner-alert/screenshots/android/expandable.png';
+
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import androidEmpty from './../../static/android_empty.svg';
 
 const components = [
   {
@@ -44,7 +47,7 @@ const components = [
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidEmpty}`,
+        src: `/${androidScreenshotDefault}`,
         altText: 'Android Default Banner Alert Component',
         subText: '(Google Pixel Emulator)',
       },
@@ -66,7 +69,7 @@ const components = [
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidEmpty}`,
+        src: `/${androidScreenshotDismissable}`,
         altText: 'Android Dismissable Banner Alert Component',
         subText: '(Google Pixel Emulator)',
       },
@@ -88,7 +91,7 @@ const components = [
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidEmpty}`,
+        src: `/${androidScreenshotExpandable}`,
         altText: 'Android Expandable Banner Alert Component',
         subText: '(Google Pixel Emulator)',
       },
