@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-close-button",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "description": "Backpack close button component.",
   "main": "index.js",
   "repository": {
@@ -13,9 +13,9 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-icon": "^3.14.14",
-    "bpk-mixins": "^17.2.0",
-    "bpk-react-utils": "^2.4.0",
+    "bpk-component-icon": "^3.14.15",
+    "bpk-mixins": "^17.2.1",
+    "bpk-react-utils": "^2.4.1",
     "prop-types": "^15.5.8"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-drawer",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Backpack drawer component.",
   "main": "index.js",
   "repository": {
@@ -13,18 +13,18 @@
     "react": "^15.4.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-close-button": "^1.0.37",
-    "bpk-component-icon": "^3.14.14",
-    "bpk-component-link": "^1.0.36",
-    "bpk-mixins": "^17.2.0",
-    "bpk-react-utils": "^2.4.0",
-    "bpk-scrim-utils": "^3.0.1",
-    "bpk-tokens": "^26.7.0",
+    "bpk-component-close-button": "^1.0.38",
+    "bpk-component-icon": "^3.14.15",
+    "bpk-component-link": "^1.0.37",
+    "bpk-mixins": "^17.2.1",
+    "bpk-react-utils": "^2.4.1",
+    "bpk-scrim-utils": "^3.0.2",
+    "bpk-tokens": "^26.7.1",
     "prop-types": "^15.5.8",
     "react-transition-group": "^2.2.1"
   },
   "devDependencies": {
-    "bpk-component-button": "^1.6.77",
-    "bpk-component-text": "^1.0.34"
+    "bpk-component-button": "^1.6.78",
+    "bpk-component-text": "^1.0.35"
   }
 }
