@@ -2,9 +2,11 @@
 
 ## UNRELEASED
 
-_Nothing Yet_
+**Fixed:**
+- bpk-component-button:
+  - Fixed react warnings about `PropTypes` and `createClass`.
 
-## 2017-12-21 - Android Support for React Native Banner Alert 
+## 2017-12-21 - Android Support for React Native Banner Alert
 
 **Added:**
 - react-native-bpk-component-banner-alert: 1.2.0 => 2.0.0

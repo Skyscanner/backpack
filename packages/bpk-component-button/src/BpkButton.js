@@ -18,7 +18,7 @@
 
 /* @flow */
 
-import * as React from 'react';
+import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 
 import STYLES from './bpk-button.scss';
@@ -33,7 +33,7 @@ const cssModules = (styles = {}) => className =>
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  children: React.Node,
+  children: Node,
   href: ?string,
   className: ?string,
   disabled: boolean,
