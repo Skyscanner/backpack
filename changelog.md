@@ -7,14 +7,14 @@ _Nothing Yet_
 ## 2017-12-21 - Android Support for React Native Banner Alert 
 
 **Added:**
-- react-native-bpk-component-banner-alert:
+- react-native-bpk-component-banner-alert: 1.2.0 => 2.0.0
   - Android support
 
-- bpk-component-banner-alert:
+- bpk-component-banner-alert: 1.5.2 => 1.6.0
   - `withBannerAlertState` HOC, see https://backpack.github.io/components/web/banner-alerts/#withBannerAlertState
   - `bannerClassName` prop added to allow stlying to be applied to the internal banner rather than the outer container. See https://backpack.github.io/components/web/banner-alerts/#props
 
-- bpk-component-modal:
+- bpk-component-modal: 1.2.0 => 1.3.0
   - The full screen behaviour on mobile can now be turned off by setting `fullScreenOnMobile` to false
 
 ## 2017-12-14 - React Native text inputs now correctly support placeholders
