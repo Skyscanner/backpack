@@ -18,7 +18,7 @@
 
 /* @flow */
 
-import * as React from 'react';
+import React, { Component } from 'react';
 import BpkButton from 'bpk-component-button';
 import { colors, buttons } from 'bpk-tokens/tokens/base.es6';
 import { alignToButton, alignToLargeButton } from 'bpk-component-icon';
@@ -51,7 +51,7 @@ const AlignedBpkLargeHelpIcon = alignToLargeButton(TestBpkLargeHelpIcon);
 const AlignedBpkSmallSearchIcon = alignToButton(TestBpkSmallSearchIcon);
 const AlignedBpkLargeSearchIcon = alignToLargeButton(TestBpkLargeSearchIcon);
 
-class LoadingButtonContainer extends React.Component<{}, { loading: boolean }> {
+class LoadingButtonContainer extends Component<{}, { loading: boolean }> {
   constructor() {
     super();
 
