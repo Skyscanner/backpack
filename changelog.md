@@ -2,8 +2,12 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2017-12-21 - Fix web button warnings
+
 **Fixed:**
-- bpk-component-button:
+- bpk-component-button: 1.6.78 => 1.6.79
   - Fixed react warnings about `PropTypes` and `createClass`.
 
 ## 2017-12-21 - Android Support for React Native Banner Alert
