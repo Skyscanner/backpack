@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-button",
-  "version": "1.6.78",
+  "version": "1.6.79",
   "description": "Backpack button component.",
   "main": "index.js",
   "repository": {
