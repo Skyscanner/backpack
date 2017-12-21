@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+_Nothing Yet_
+
+## 2017-12-21 - Android Support for React Native Banner Alert 
+
 **Added:**
 - react-native-bpk-component-banner-alert:
   - Android support
