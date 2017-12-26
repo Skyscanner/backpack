@@ -164,3 +164,48 @@ const MyComponent = (props) => (
 | appearClassName       | string   | true     | -             |
 | appearActiveClassName | string   | true     | -             |
 | transitionTimeout     | number   | true     | -             |
+
+## hasChildrenOfType.js
+
+A prop type checker that allows you to restrict a component's children to a specific type.
+
+### Usage
+
+```js
+import React from 'react';
+import { hasChildrenOfType } from 'bpk-react-utils';
+
+const Child = () => <span>Child</span>;
+
+const Parent = ({ children }) => <div>{ children }</div>;
+Parent.propTypes = {
+  children: hasChildrenOfType(Child),
+};
+
+// Valid:
+const WithValidChildren = () => (
+  <Parent>
+    <Child />
+    <Child />
+  </Parent>
+);
+
+// Invalid (will get prop type validation errors):
+const WithInvalidChildren = () => (
+  <Parent>
+    <Child />
+    <div>something else</div>
+  </Parent>
+);
+```
+
+### Parameters
+
+```js
+function hasChildrenOfType(Type, atLeast = 1)
+```
+
+| Parameter  | Description                     | Required | Default Value |
+| ---------- | ------------------------------- | -------- | ------------- |
+| `Type`     | The component type to check for | true     | -             |
+| `atLeast`  | The mimumum number of children  | false    | 1             |

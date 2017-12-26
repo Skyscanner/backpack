@@ -3,6 +3,9 @@
 ## UNRELEASED
 
 _Nothing yet..._
+**Added**:
+- bpk-react-utils:
+  - Added 'hasChildrenOfType' prop type checker
 
 ## 2017-12-21 - Fix web button warnings
 
