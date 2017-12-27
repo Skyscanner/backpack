@@ -24,7 +24,7 @@ import renderer from 'react-test-renderer';
 import { withDefaultProps } from 'bpk-react-utils';
 import BpkCloseButton from 'bpk-component-close-button';
 
-import BpkBannerAlert, { ALERT_TYPES } from './BpkBannerAlert';
+import BpkBannerAlert, { ALERT_TYPES, CONFIGURATION } from './BpkBannerAlert';
 import withBannerAlertState from './withBannerAlertState';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
@@ -52,7 +52,12 @@ describe('withBannerAlertState(BpkBannerAlert)', () => {
   it('should render correctly collapsed', () => {
     const tree = renderer
       .create(
-        <EnhancedComponent expanded={false}>{longMessage}</EnhancedComponent>,
+        <EnhancedComponent
+          expanded={false}
+          configuration={CONFIGURATION.EXPANDABLE}
+        >
+          {longMessage}
+        </EnhancedComponent>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -60,7 +65,11 @@ describe('withBannerAlertState(BpkBannerAlert)', () => {
 
   it('should render correctly expanded', () => {
     const tree = renderer
-      .create(<EnhancedComponent expanded>{longMessage}</EnhancedComponent>)
+      .create(
+        <EnhancedComponent expanded configuration={CONFIGURATION.EXPANDABLE}>
+          {longMessage}
+        </EnhancedComponent>,
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -69,7 +78,9 @@ describe('withBannerAlertState(BpkBannerAlert)', () => {
     jest.useFakeTimers();
 
     const tree = renderer.create(
-      <EnhancedComponent hideAfter={3}>{longMessage}</EnhancedComponent>,
+      <EnhancedComponent hideAfter={3} configuration={CONFIGURATION.EXPANDABLE}>
+        {longMessage}
+      </EnhancedComponent>,
     );
 
     expect(tree.toJSON()).toMatchSnapshot();
@@ -83,7 +94,10 @@ describe('withBannerAlertState(BpkBannerAlert)', () => {
     const onDismissMock = jest.fn();
 
     const wrapper = mount(
-      <EnhancedComponent dismissable onDismiss={onDismissMock} />,
+      <EnhancedComponent
+        onDismiss={onDismissMock}
+        configuration={CONFIGURATION.DISMISSABLE}
+      />,
     );
 
     wrapper
@@ -98,7 +112,11 @@ describe('withBannerAlertState(BpkBannerAlert)', () => {
     const onDismissMock = jest.fn();
 
     mount(
-      <EnhancedComponent dismissable hideAfter={3} onDismiss={onDismissMock} />,
+      <EnhancedComponent
+        hideAfter={3}
+        onDismiss={onDismissMock}
+        CONFIGURATION={CONFIGURATION.DISMISSABLE}
+      />,
     );
 
     jest.runAllTimers();
@@ -110,7 +128,10 @@ describe('withBannerAlertState(BpkBannerAlert)', () => {
     const onExpandMock = jest.fn();
 
     const wrapper = mount(
-      <EnhancedComponent onExpandToggle={onExpandMock}>
+      <EnhancedComponent
+        onExpandToggle={onExpandMock}
+        configuration={CONFIGURATION.EXPANDABLE}
+      >
         {longMessage}
       </EnhancedComponent>,
     );

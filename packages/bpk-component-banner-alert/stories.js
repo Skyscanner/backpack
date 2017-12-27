@@ -22,7 +22,11 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { fontWeightBold } from 'bpk-tokens/tokens/base.es6';
 
-import BpkBannerAlert, { ALERT_TYPES, withBannerAlertState } from './index';
+import BpkBannerAlert, {
+  ALERT_TYPES,
+  withBannerAlertState,
+  CONFIGURATION,
+} from './index';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 const longMessage = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
@@ -46,12 +50,22 @@ storiesOf('bpk-component-banner-alert', module)
   ))
   .add('Success (dismissable)', () => (
     <BpkBannerAlert
-      dismissable
+      configuration={CONFIGURATION.DISMISSABLE}
       dismissButtonLabel="Dismiss"
       message={message}
       type={ALERT_TYPES.SUCCESS}
       onDismiss={action('dismissed')}
     />
+  ))
+  .add('Success(expandable)', () => (
+    <BpkBannerAlert
+      configuration={CONFIGURATION.EXPANDABLE}
+      message={message}
+      type={ALERT_TYPES.SUCCESS}
+      toggleButtonLabel="View more"
+    >
+      {longMessage}
+    </BpkBannerAlert>
   ))
   .add('Success (animate on enter)', () => (
     <BpkBannerAlert
@@ -67,24 +81,6 @@ storiesOf('bpk-component-banner-alert', module)
       type={ALERT_TYPES.SUCCESS}
     />
   ))
-  .add('Success with children', () => (
-    <BpkBannerAlert
-      message={message}
-      type={ALERT_TYPES.SUCCESS}
-      toggleButtonLabel="View more"
-    >
-      {longMessage}
-    </BpkBannerAlert>
-  ))
-  .add('Success with children (long message)', () => (
-    <BpkBannerAlert
-      message={longMessage}
-      type={ALERT_TYPES.SUCCESS}
-      toggleButtonLabel="View more"
-    >
-      {longMessage}
-    </BpkBannerAlert>
-  ))
   .add('Warn', () => (
     <BpkBannerAlert message={message} type={ALERT_TYPES.WARN} />
   ))
@@ -93,7 +89,7 @@ storiesOf('bpk-component-banner-alert', module)
   ))
   .add('Success (dismissable behaviour)', () => (
     <BannerAlertState
-      dismissable
+      configuration={CONFIGURATION.DISMISSABLE}
       dismissButtonLabel="Dismiss"
       message={message}
       type={ALERT_TYPES.SUCCESS}
@@ -101,6 +97,7 @@ storiesOf('bpk-component-banner-alert', module)
   ))
   .add('Success (expandable behaviour)', () => (
     <BannerAlertState
+      configuration={CONFIGURATION.EXPANDABLE}
       message={message}
       type={ALERT_TYPES.SUCCESS}
       toggleButtonLabel="View more"
@@ -110,6 +107,7 @@ storiesOf('bpk-component-banner-alert', module)
   ))
   .add('Success (automatically dismissed after 5 seconds)', () => (
     <BannerAlertState
+      configuration={CONFIGURATION.EXPANDABLE}
       hideAfter={5}
       message={message}
       type={ALERT_TYPES.SUCCESS}

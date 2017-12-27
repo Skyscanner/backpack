@@ -53,6 +53,20 @@
 - react-native-bpk-component-icon: 1.1.15 => 1.2.0
   - `icons` object is now exposed, allowing users to refer to icon names using a constant.
 
+**Breaking:**
+- bpk-component-banner-alert:
+  - Removed `dismissable` property in favour of `configuration`.
+  - A banner alert with `children` will no longer be auotmatically expandable. Use the newly introduce `configuration` prop instead.
+
+**Added:**
+- bpk-component-banner-alert:
+  - Introduced new prop `configuration` to set the configuration of a banner alert.
+    Valid values are `CONFIGURATION.NONE`, `CONFIGURATION.DISMISSABLE` and `CONFIGURATION.EXPANDABLE`.
+    `CONFIGURATION.NONE` is the default. `CONFIGURATION` is available as an export and can be imported with
+    ```javascript
+    import BpkBannerAlert, { CONFIGURATION } from 'bpk-component-banner-alert';
+    ```
+
 ## 2017-12-21 - Fix web button warnings
 
 **Fixed:**

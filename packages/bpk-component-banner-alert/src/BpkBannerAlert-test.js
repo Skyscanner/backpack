@@ -19,7 +19,7 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import BpkBannerAlert, { ALERT_TYPES } from './BpkBannerAlert';
+import BpkBannerAlert, { ALERT_TYPES, CONFIGURATION } from './BpkBannerAlert';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 
@@ -52,6 +52,7 @@ describe('BpkBannerAlert', () => {
           type={ALERT_TYPES.SUCCESS}
           message={message}
           toggleButtonLabel="View more"
+          configuration={CONFIGURATION.EXPANDABLE}
         >
           {message}
         </BpkBannerAlert>,
@@ -71,6 +72,7 @@ describe('BpkBannerAlert', () => {
             </p>
           }
           toggleButtonLabel="View more"
+          configuration={CONFIGURATION.EXPANDABLE}
         >
           {message}
         </BpkBannerAlert>,
@@ -125,7 +127,7 @@ describe('BpkBannerAlert', () => {
         <BpkBannerAlert
           type={ALERT_TYPES.WARN}
           message={message}
-          dismissable
+          configuration={CONFIGURATION.DISMISSABLE}
           dismissButtonLabel="Dismiss"
         />,
       )
@@ -139,7 +141,7 @@ describe('BpkBannerAlert', () => {
         <BpkBannerAlert
           type={ALERT_TYPES.WARN}
           message={message}
-          dismissable
+          configuration={CONFIGURATION.DISMISSABLE}
           dismissButtonLabel="Dismiss"
           show={false}
         />,
@@ -154,7 +156,7 @@ describe('BpkBannerAlert', () => {
         <BpkBannerAlert
           type={ALERT_TYPES.WARN}
           message={message}
-          dismissable
+          configuration={CONFIGURATION.DISMISSABLE}
           dismissButtonLabel="Dismiss"
           animateOnEnter
         />,
@@ -169,7 +171,7 @@ describe('BpkBannerAlert', () => {
         <BpkBannerAlert
           type={ALERT_TYPES.WARN}
           message={message}
-          dismissable
+          configuration={CONFIGURATION.DISMISSABLE}
           dismissButtonLabel="Dismiss"
           animateOnLeave
         />,

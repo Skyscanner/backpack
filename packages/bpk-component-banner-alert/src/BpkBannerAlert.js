@@ -54,6 +54,12 @@ export const ARIA_LIVE = {
   POLITE: 'polite',
 };
 
+export const CONFIGURATION = {
+  NONE: 'none',
+  DISMISSABLE: 'dismissable',
+  EXPANDABLE: 'expandable',
+};
+
 const getIconForType = (type: AlertTypeValue) => {
   const map: { [AlertTypeValue]: Node } = {
     [ALERT_TYPES.SUCCESS]: (
@@ -98,6 +104,7 @@ const ToggleButton = (props: ToggleButtonProps) => {
 
 type Props = {
   type: AlertTypeValue,
+  configuration: $Values<typeof CONFIGURATION>,
   message: Node,
   ariaLive: $Values<typeof ARIA_LIVE>,
   animateOnEnter: boolean,
@@ -106,7 +113,6 @@ type Props = {
   expanded: boolean,
   toggleButtonLabel: ?string,
   onExpandToggle: ?() => void,
-  dismissable: boolean,
   dismissButtonLabel: ?string,
   onDismiss: ?() => void,
   show: boolean,
@@ -132,18 +138,19 @@ const BpkBannerAlert = (props: Props) => {
     ariaLive,
     children,
     bannerClassName,
-    dismissable,
     dismissButtonLabel,
     message,
     onDismiss,
     show,
     type,
+    configuration,
     toggleButtonLabel,
     expanded,
     onExpandToggle,
     ...rest
   } = props;
-  const isExpandable = children;
+  const isExpandable = configuration === CONFIGURATION.EXPANDABLE;
+  const dismissable = configuration === CONFIGURATION.DISMISSABLE;
   const showChildren = isExpandable && expanded;
   const ariaRoles = ['alert'];
 
@@ -240,7 +247,6 @@ BpkBannerAlert.propTypes = {
   expanded: PropTypes.bool,
   toggleButtonLabel: PropTypes.string,
   onExpandToggle: PropTypes.func,
-  dismissable: PropTypes.bool,
   dismissButtonLabel: PropTypes.string,
   onDismiss: PropTypes.func,
   show: PropTypes.bool,
@@ -251,11 +257,11 @@ BpkBannerAlert.defaultProps = {
   animateOnEnter: false,
   animateOnLeave: false,
   ariaLive: ARIA_LIVE.ASSERTIVE,
+  configuration: CONFIGURATION.NONE,
   children: null,
   expanded: false,
   toggleButtonLabel: null,
   onExpandToggle: null,
-  dismissable: false,
   dismissButtonLabel: null,
   onDismiss: null,
   show: true,
