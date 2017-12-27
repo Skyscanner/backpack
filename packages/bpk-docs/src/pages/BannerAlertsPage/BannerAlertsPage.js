@@ -15,8 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
-import React, { Component } from 'react';
+import React, { Component, type Node } from 'react';
 import { durationSm, fontWeightBold } from 'bpk-tokens/tokens/base.es6';
 import PropTypes from 'prop-types';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
@@ -53,24 +54,43 @@ const richMessage = (
   </span>
 );
 
-class ToggleShowBanner extends Component {
+type ToggleShowBannerProps = {
+  initiallyShown: boolean,
+  className: ?string,
+};
+
+type ToggleShowBannerState = {
+  show: boolean,
+};
+
+class ToggleShowBanner extends Component<
+  ToggleShowBannerProps,
+  ToggleShowBannerState,
+> {
+  static propTypes = {
+    initiallyShown: PropTypes.bool.isRequired,
+    className: PropTypes.string,
+  };
+
+  static defaultProps = {
+    className: null,
+  };
+
   constructor(props) {
     super(props);
-
-    this.toggle = this.toggle.bind(this);
 
     this.state = {
       show: this.props.initiallyShown,
     };
   }
 
-  toggle() {
+  toggle = (): void => {
     this.setState({
       show: !this.state.show,
     });
-  }
+  };
 
-  render() {
+  render(): Node {
     return (
       <div className={this.props.className}>
         <BpkCheckBox
@@ -92,17 +112,28 @@ class ToggleShowBanner extends Component {
   }
 }
 
-ToggleShowBanner.propTypes = {
-  initiallyShown: PropTypes.bool.isRequired,
-  className: PropTypes.string,
+type Props = {
+  message: ?string,
+  type: string,
 };
 
-ToggleShowBanner.defaultProps = {
-  className: null,
+type State = {
+  show: boolean,
 };
 
 // eslint-disable-next-line react/no-multi-comp
-class BpkBannerDismissable extends Component {
+class BpkBannerDismissable extends Component<Props, State> {
+  setDismissed: Function;
+
+  static propTypes = {
+    type: PropTypes.string.isRequired,
+    message: PropTypes.string,
+  };
+
+  static defaultProps = {
+    message: null,
+  };
+
   constructor() {
     super();
 
@@ -137,18 +168,21 @@ class BpkBannerDismissable extends Component {
   }
 }
 
-BpkBannerDismissable.propTypes = {
-  message: PropTypes.string,
-  type: PropTypes.string,
+type BannerAlertConfig = {
+  show: boolean,
+  message: string,
+  type: string,
 };
-
-BpkBannerDismissable.defaultProps = {
-  message: null,
-  type: null,
+type DismissDemoState = {
+  dirty: boolean,
+  bannerAlerts: Array<BannerAlertConfig>,
 };
-
 // eslint-disable-next-line react/no-multi-comp
-class BpkBannerAlertDismissDemo extends Component {
+class BpkBannerAlertDismissDemo extends Component<any, DismissDemoState> {
+  reset: Function;
+  setDismissed: Function;
+  bannerAlerts: Array<BannerAlertConfig>;
+
   constructor() {
     super();
 
@@ -234,8 +268,25 @@ class BpkBannerAlertDismissDemo extends Component {
   }
 }
 
+type FadeDemoProps = {
+  type: string,
+  message: ?string,
+};
+type FadeDemoState = {
+  bannerAlertCount: number,
+};
 // eslint-disable-next-line react/no-multi-comp
-class BpkBannerAlertFadeDemo extends Component {
+class BpkBannerAlertFadeDemo extends Component<FadeDemoProps, FadeDemoState> {
+  addBannerAlert: Function;
+
+  static propTypes = {
+    type: PropTypes.string.isRequired,
+    message: PropTypes.string,
+  };
+
+  static defaultProps = {
+    message: null,
+  };
   constructor() {
     super();
 
@@ -271,16 +322,6 @@ class BpkBannerAlertFadeDemo extends Component {
     );
   }
 }
-
-BpkBannerAlertFadeDemo.propTypes = {
-  message: PropTypes.string,
-  type: PropTypes.string,
-};
-
-BpkBannerAlertFadeDemo.defaultProps = {
-  message: null,
-  type: null,
-};
 
 const components = [
   {
