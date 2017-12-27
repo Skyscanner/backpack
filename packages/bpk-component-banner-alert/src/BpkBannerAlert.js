@@ -15,9 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { withButtonAlignment } from 'bpk-component-icon';
 import BpkAnimateHeight from 'bpk-animate-height';
 import BpkCloseButton from 'bpk-component-close-button';
@@ -45,14 +46,16 @@ export const ALERT_TYPES = {
   NEUTRAL: 'neutral',
 };
 
+type AlertTypeValue = $Values<typeof ALERT_TYPES>;
+
 export const ARIA_LIVE = {
   OFF: 'off',
   ASSERTIVE: 'assertive',
   POLITE: 'polite',
 };
 
-const getIconForType = type => {
-  const map = {
+const getIconForType = (type: AlertTypeValue) => {
+  const map: { [AlertTypeValue]: Node } = {
     [ALERT_TYPES.SUCCESS]: (
       <SuccessIcon className={getClassName('bpk-banner-alert__success-icon')} />
     ),
@@ -70,7 +73,12 @@ const getIconForType = type => {
   return map[type];
 };
 
-const ToggleButton = props => {
+type ToggleButtonProps = {
+  label: ?string,
+  expanded: boolean,
+};
+
+const ToggleButton = (props: ToggleButtonProps) => {
   const classNames = [getClassName('bpk-banner-alert__expand-icon')];
   if (props.expanded) {
     classNames.push(getClassName('bpk-banner-alert__expand-icon--flipped'));
@@ -88,12 +96,24 @@ const ToggleButton = props => {
   );
 };
 
-ToggleButton.propTypes = {
-  label: PropTypes.string.isRequired,
-  expanded: PropTypes.bool.isRequired,
+type Props = {
+  type: AlertTypeValue,
+  message: Node,
+  ariaLive: $Values<typeof ARIA_LIVE>,
+  animateOnEnter: boolean,
+  animateOnLeave: boolean,
+  children: Node,
+  expanded: boolean,
+  toggleButtonLabel: ?string,
+  onExpandToggle: ?() => void,
+  dismissable: boolean,
+  dismissButtonLabel: ?string,
+  onDismiss: ?() => void,
+  show: boolean,
+  bannerClassName: ?string,
 };
 
-const BpkBannerAlert = props => {
+const BpkBannerAlert = (props: Props) => {
   const onBannerExpandToggle = () => {
     if (props.onExpandToggle) {
       props.onExpandToggle();
@@ -202,18 +222,9 @@ const BpkBannerAlert = props => {
 };
 
 BpkBannerAlert.propTypes = {
-  type: PropTypes.oneOf([
-    ALERT_TYPES.SUCCESS,
-    ALERT_TYPES.WARN,
-    ALERT_TYPES.ERROR,
-    ALERT_TYPES.NEUTRAL,
-  ]).isRequired,
+  type: PropTypes.oneOf(Object.values(ALERT_TYPES)).isRequired,
   message: PropTypes.node.isRequired,
-  ariaLive: PropTypes.oneOf([
-    ARIA_LIVE.OFF,
-    ARIA_LIVE.ASSERTIVE,
-    ARIA_LIVE.POLITE,
-  ]),
+  ariaLive: PropTypes.oneOf(Object.values(ARIA_LIVE)),
   animateOnEnter: PropTypes.bool,
   animateOnLeave: PropTypes.bool,
   children: PropTypes.node,

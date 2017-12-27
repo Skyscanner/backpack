@@ -15,14 +15,55 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import React, { Component } from 'react';
+/* @flow */
+
+import React, { type Node, type ComponentType, Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { wrapDisplayName } from 'bpk-react-utils';
 
-const withBannerAlertState = WrappedComponent => {
-  class component extends Component {
-    constructor(props) {
+const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
+  type Props = {
+    onDismiss: ?() => void,
+    onExpandToggle: ?(boolean) => void,
+    expanded: boolean,
+    show: boolean,
+    hideAfter: ?number,
+    animateOnLeave: boolean,
+    children: Node,
+  };
+
+  type State = {
+    expanded: boolean,
+    show: boolean,
+  };
+
+  class component extends Component<Props, State> {
+    onExpandToggle: Function;
+    onDismiss: Function;
+    hideIntervalId: ?number;
+
+    static propTypes = {
+      onDismiss: PropTypes.func,
+      onExpandToggle: PropTypes.func,
+      expanded: PropTypes.bool,
+      show: PropTypes.bool,
+      hideAfter: PropTypes.number,
+      animateOnLeave: PropTypes.bool,
+      children: PropTypes.node,
+    };
+
+    static defaultProps = {
+      onDismiss: null,
+      onExpandToggle: null,
+      expanded: false,
+      show: true,
+      hideAfter: null,
+      animateOnLeave: false,
+      children: null,
+    };
+
+    constructor(props: Props) {
       super(props);
 
       this.state = {
@@ -30,6 +71,7 @@ const withBannerAlertState = WrappedComponent => {
         show: true,
       };
 
+      this.hideIntervalId = null;
       this.onExpandToggle = this.onExpandToggle.bind(this);
       this.onDismiss = this.onDismiss.bind(this);
     }
@@ -98,26 +140,6 @@ const withBannerAlertState = WrappedComponent => {
     WrappedComponent,
     'withBannerAlertState',
   );
-
-  component.propTypes = {
-    onDismiss: PropTypes.func,
-    onExpandToggle: PropTypes.func,
-    expanded: PropTypes.bool,
-    show: PropTypes.bool,
-    hideAfter: PropTypes.number,
-    animateOnLeave: PropTypes.bool,
-    children: PropTypes.node,
-  };
-
-  component.defaultProps = {
-    onDismiss: null,
-    onExpandToggle: null,
-    expanded: false,
-    show: true,
-    hideAfter: null,
-    animateOnLeave: false,
-    children: null,
-  };
 
   return component;
 };

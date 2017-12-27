@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import BpkBannerAlert, { ALERT_TYPES } from './src/BpkBannerAlert';
 import withBannerAlertState from './src/withBannerAlertState';
