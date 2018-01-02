@@ -33,16 +33,16 @@ const makeMockScroller = (
   offsetHeight = 0,
 ): HTMLElement => {
   const element = document.createElement('div');
-  element.setAttribute('scrollLeft', `${scrollLeft}`);
-  element.setAttribute('scrollWidth', `${scrollWidth}`);
-  element.setAttribute('offsetWidth', `${offsetWidth}`);
-  element.setAttribute('offsetHeight', `${offsetHeight}`);
+  Object.defineProperty(element, 'scrollLeft', { value: scrollLeft });
+  Object.defineProperty(element, 'scrollWidth', { value: scrollWidth });
+  Object.defineProperty(element, 'offsetWidth', { value: offsetWidth });
+  Object.defineProperty(element, 'offsetHeight', { value: offsetHeight });
   return element;
 };
 
 const makeMockInnerEl = (offsetHeight): HTMLElement => {
   const element = document.createElement('div');
-  element.setAttribute('offsetHeight', `${offsetHeight}`);
+  Object.defineProperty(element, 'offsetHeight', { value: offsetHeight });
   return element;
 };
 
