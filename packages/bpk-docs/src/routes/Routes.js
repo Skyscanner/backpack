@@ -63,6 +63,7 @@ import ImagesPage from './../pages/ImagesPage';
 import BreakpointsPage from './../pages/BreakpointsPage';
 import HorizontalGridPage from './../pages/HorizontalGridPage';
 import BannerAlertsPage from './../pages/BannerAlertsPage';
+import MobileScrollContainerPage from './../pages/MobileScrollContainerPage';
 import ModalsPage from './../pages/ModalsPage';
 import AutosuggestPage from './../pages/AutosuggestPage';
 import PopoversPage from './../pages/PopoversPage';
@@ -148,6 +149,10 @@ const Routes = (
         <Route path={ROUTES.PANELS} component={PanelsPage} />
         <Route path={ROUTES.IMAGES} component={ImagesPage} />
         <Route path={ROUTES.BANNER_ALERTS} component={BannerAlertsPage} />
+        <Route
+          path={ROUTES.MOBILE_SCROLL_CONTAINER}
+          component={MobileScrollContainerPage}
+        />
         <Route path={ROUTES.MODALS} component={ModalsPage} />
         <Route path={ROUTES.AUTOSUGGEST} component={AutosuggestPage} />
         <Route path={ROUTES.POPOVERS} component={PopoversPage} />

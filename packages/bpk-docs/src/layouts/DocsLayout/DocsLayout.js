@@ -43,6 +43,11 @@ const links = [
         route: routes.BANNER_ALERTS,
         children: 'Banner alerts',
       },
+      {
+        id: 'MOBILE_SCROLL_CONTAINER',
+        route: routes.MOBILE_SCROLL_CONTAINER,
+        children: 'Mobile scroll container',
+      },
       { id: 'MODALS', route: routes.MODALS, children: 'Modals' },
       { id: 'AUTOSUGGEST', route: routes.AUTOSUGGEST, children: 'Autosuggest' },
       { id: 'POPOVERS', route: routes.POPOVERS, children: 'Popovers' },

@@ -113,7 +113,6 @@ const ChipsPage = () => (
     ]}
     components={components}
     readme={chipReadme}
-    sassdocId="cards"
   />
 );
 
