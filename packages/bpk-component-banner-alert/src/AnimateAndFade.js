@@ -15,9 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { type Node, Component } from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkAnimateHeight from 'bpk-animate-height';
 import { durationSm } from 'bpk-tokens/tokens/base.es6';
@@ -29,8 +30,41 @@ const getClassName = cssModules(STYLES);
 
 const ANIMATION_DURATION = parseInt(durationSm, 10);
 
-class AnimateAndFade extends Component {
-  constructor(props) {
+type Props = {
+  animateOnEnter: boolean,
+  animateOnLeave: boolean,
+  children: Node,
+  show: boolean,
+  className: ?string,
+};
+
+type State = {
+  isExpanded: boolean,
+  visible: boolean,
+  hideAnimationInProgress: boolean,
+  inDom: boolean,
+};
+
+class AnimateAndFade extends Component<Props, State> {
+  onFadeComplete: Function;
+  onAnimateHeightComplete: Function;
+  toggle: Function;
+
+  static propTypes = {
+    animateOnEnter: PropTypes.bool,
+    animateOnLeave: PropTypes.bool,
+    children: PropTypes.node.isRequired,
+    show: PropTypes.bool.isRequired,
+    className: PropTypes.string,
+  };
+
+  static defaultProps = {
+    animateOnEnter: false,
+    animateOnLeave: false,
+    className: null,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -51,7 +85,7 @@ class AnimateAndFade extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Props) {
     if (nextProps.show === this.props.show) {
       return;
     }
@@ -127,19 +161,5 @@ class AnimateAndFade extends Component {
     ) : null;
   }
 }
-
-AnimateAndFade.propTypes = {
-  animateOnEnter: PropTypes.bool,
-  animateOnLeave: PropTypes.bool,
-  children: PropTypes.node.isRequired,
-  show: PropTypes.bool.isRequired,
-  className: PropTypes.string,
-};
-
-AnimateAndFade.defaultProps = {
-  animateOnEnter: false,
-  animateOnLeave: false,
-  className: null,
-};
 
 export default AnimateAndFade;
