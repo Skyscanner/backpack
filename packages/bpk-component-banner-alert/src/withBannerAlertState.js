@@ -39,8 +39,6 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
   };
 
   class component extends Component<Props, State> {
-    onExpandToggle: Function;
-    onDismiss: Function;
     hideIntervalId: ?number;
 
     static propTypes = {
@@ -72,8 +70,6 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
       };
 
       this.hideIntervalId = null;
-      this.onExpandToggle = this.onExpandToggle.bind(this);
-      this.onDismiss = this.onDismiss.bind(this);
     }
 
     componentWillMount() {
@@ -92,22 +88,22 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
       }
     }
 
-    onExpandToggle() {
+    onExpandToggle = () => {
       const expanded = !this.state.expanded;
       this.setState({ expanded });
 
       if (this.props.onExpandToggle) {
         this.props.onExpandToggle(expanded);
       }
-    }
+    };
 
-    onDismiss() {
+    onDismiss = () => {
       this.setState({ show: false });
 
       if (this.props.onDismiss) {
         this.props.onDismiss();
       }
-    }
+    };
 
     render() {
       const {
