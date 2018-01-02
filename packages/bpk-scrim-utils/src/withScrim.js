@@ -100,7 +100,7 @@ const withScrim = WrappedComponent => {
     }
 
     onOverlayMouseUp() {
-      if (this.shouldClose) {
+      if (this.props.closeOnScrimClick && this.shouldClose) {
         this.props.onClose();
       }
     }
@@ -169,6 +169,7 @@ const withScrim = WrappedComponent => {
     getApplicationElement: PropTypes.func.isRequired,
     isIphone: PropTypes.bool,
     containerClassName: PropTypes.string,
+    closeOnScrimClick: PropTypes.bool,
   };
 
   component.defaultProps = {
@@ -176,6 +177,7 @@ const withScrim = WrappedComponent => {
       typeof window !== 'undefined' ? window.navigator.platform : '',
     ),
     containerClassName: '',
+    closeOnScrimClick: true,
   };
 
   return component;
