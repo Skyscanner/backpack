@@ -13,7 +13,7 @@ npm install bpk-component-image --save-dev
 ```js
 import React from 'react';
 import BpkImage from 'bpk-component-image';
-import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
+import { breakpointDesktop, breakpointTablet } from 'bpk-tokens/tokens/base.es6';
 
 export default () => (
   <BpkImage
@@ -25,8 +25,8 @@ export default () => (
       ./path/to/image_640px.jpg 640w,
       ./path/to/image_1640px.jpg 1640w,
       ./path/to/image_3200px.jpg 3200w`}]
-    sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 48rem,
-      (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 18rem),
+    sizes={`(min-width: ${breakpointDesktop}) 48rem,
+      (min-width: ${breakpointTablet}) calc(100vw - 18rem),
       calc(100vw - 4.5rem)`}
   />
 );
@@ -43,7 +43,7 @@ Using this HOC can make pages load faster and prevent data being used to display
 
 ```js
 import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
-import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
+import { breakpointDesktop, breakpointTablet } from 'bpk-tokens/tokens/base.es6';
 
 // Support for SSR
 const documentIfExists = typeof window !== 'undefined' ? document : null;
@@ -61,8 +61,8 @@ export default () => (
       ./path/to/image_640px.jpg 640w,
       ./path/to/image_1640px.jpg 1640w,
       ./path/to/image_3200px.jpg 3200w`}
-    sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 48rem,
-      (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 18rem),
+    sizes={`(min-width: ${breakpointDesktop}) 48rem,
+      (min-width: ${breakpointTablet}) calc(100vw - 18rem),
       calc(100vw - 4.5rem)`}
   />
 );
@@ -74,7 +74,7 @@ When the `loading` prop is set true, a spinner will be displayed. When this chan
 
 ```js
 import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
-import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
+import { breakpointDesktop, breakpointTablet } from 'bpk-tokens/tokens/base.es6';
 
 const FadingImage = withLoadingBehavior(BpkImage);
 
@@ -88,8 +88,8 @@ export default () => (
       ./path/to/image_640px.jpg 640w,
       ./path/to/image_1640px.jpg 1640w,
       ./path/to/image_3200px.jpg 3200w`}
-    sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 48rem,
-      (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 18rem),
+    sizes={`(min-width: ${breakpointDesktop}) 48rem,
+      (min-width: ${breakpointTablet}) calc(100vw - 18rem),
       calc(100vw - 4.5rem)`}
   />
 );
@@ -101,7 +101,7 @@ Combining `withLazyLoading` and `withLoadingBehavior` gives us a lazily loaded i
 
 ```js
 import BpkImage, { withLazyLoading, withLoadingBehavior } from 'bpk-component-image';
-import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
+import { breakpointDesktop, breakpointTablet } from 'bpk-tokens/tokens/base.es6';
 
 const documentIfExists = typeof window !== 'undefined' ? document : null;
 const FadingLazyLoadedImage = withLoadingBehavior(withLazyLoading(BpkImage, documentIfExists));
@@ -116,8 +116,8 @@ export default () => (
       ./path/to/image_640px.jpg 640w,
       ./path/to/image_1640px.jpg 1640w,
       ./path/to/image_3200px.jpg 3200w`}
-    sizes={`(min-width: ${BREAKPOINTS.breakpointDesktop}) 48rem,
-      (min-width: ${BREAKPOINTS.breakpointTablet}) calc(100vw - 18rem),
+    sizes={`(min-width: ${breakpointDesktop}) 48rem,
+      (min-width: ${breakpointTablet}) calc(100vw - 18rem),
       calc(100vw - 4.5rem)`}
   />
 );
