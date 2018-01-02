@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -27,7 +28,7 @@ const message = (
 describe('AnimateAndFade', () => {
   it('should render correctly', () => {
     const tree = renderer
-      .create(<AnimateAndFade>{message}</AnimateAndFade>)
+      .create(<AnimateAndFade show={false}>{message}</AnimateAndFade>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

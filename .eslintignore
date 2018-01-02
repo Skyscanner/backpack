@@ -1,4 +1,5 @@
 node_modules
+flow-typed
 dist
 coverage
 /packages/bpk-stylesheets/base.js
