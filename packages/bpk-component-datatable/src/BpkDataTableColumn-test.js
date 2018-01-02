@@ -18,7 +18,8 @@
 
 import React from 'react';
 import { Column } from 'react-virtualized';
-import BpkDataTableColumn, { bpkHeaderRenderer } from './BpkDataTableColumn';
+import BpkDataTableColumn from './BpkDataTableColumn';
+import bpkHeaderRenderer from './bpkHeaderRenderer';
 
 const defaultProps = { label: 'Name', dataKey: 'name', width: 100 };
 

@@ -18,6 +18,16 @@
 
 @import '~bpk-mixins';
 
+$bpk-border-size-datatable: $bpk-border-size-xl * 2;
+
+@mixin bpk-datatable-border-left() {
+  @include _bpk-border-left($bpk-border-size-datatable, $bpk-color-blue-500, inset);
+}
+
+@mixin bpk-datatable-border-right() {
+  @include _bpk-border-right($bpk-border-size-datatable, $bpk-color-blue-500, inset);
+}
+
 .bpk-data-table {
   width: 100%;
 
@@ -52,20 +62,20 @@
       background-color: $bpk-color-gray-50;
       cursor: pointer;
 
-      @include bpk-border-left-xl($bpk-color-blue-500);
+      @include bpk-datatable-border-left;
 
       @include bpk-rtl {
-        @include bpk-border-right-xl($bpk-color-blue-500);
+        @include bpk-datatable-border-right;
       }
     }
 
     &--selected {
       background-color: $bpk-color-gray-100;
 
-      @include bpk-border-left-xl($bpk-color-blue-500);
+      @include bpk-datatable-border-left;
 
       @include bpk-rtl {
-        @include bpk-border-right-xl($bpk-color-blue-500);
+        @include bpk-datatable-border-right;
       }
     }
   }

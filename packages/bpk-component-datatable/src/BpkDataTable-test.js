@@ -104,6 +104,61 @@ describe('BpkDataTable', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should sort rows if header is clicked', () => {
+    const wrapper = mount(
+      <BpkDataTable rows={rows} height={200} width={400}>
+        <BpkDataTableColumn label="Name" dataKey="name" width={100} />
+        <BpkDataTableColumn
+          label="Description"
+          dataKey="description"
+          width={100}
+        />
+      </BpkDataTable>,
+    );
+
+    let cell = wrapper
+      .find('.bpk-data-table__row .bpk-data-table-column')
+      .last();
+    expect(cell.text()).toBe('Some guy');
+
+    wrapper
+      .find('.bpk-data-table-column__header[title="Name"]')
+      .simulate('click');
+
+    cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').last();
+    expect(cell.text()).toBe('Software Engineer');
+  });
+
+  it('should not sort rows if header with disableSort is clicked', () => {
+    const wrapper = mount(
+      <BpkDataTable rows={rows} height={200} width={400}>
+        <BpkDataTableColumn
+          label="Name"
+          dataKey="name"
+          width={100}
+          disableSort
+        />
+        <BpkDataTableColumn
+          label="Description"
+          dataKey="description"
+          width={100}
+        />
+      </BpkDataTable>,
+    );
+
+    let cell = wrapper
+      .find('.bpk-data-table__row .bpk-data-table-column')
+      .last();
+    expect(cell.text()).toBe('Some guy');
+
+    wrapper
+      .find('.bpk-data-table-column__header[title="Name"]')
+      .simulate('click');
+
+    cell = wrapper.find('.bpk-data-table__row .bpk-data-table-column').last();
+    expect(cell.text()).toBe('Some guy');
+  });
+
   it('should call the onRowClick callback when a row is clicked', () => {
     const onRowClick = jest.fn();
     const wrapper = mount(
