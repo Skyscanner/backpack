@@ -283,7 +283,7 @@ If set to false, the calendar is of fluid width and will take up the space of it
 
 #### formatDateFull
 
-A function to format a full, human-readable date, for example: "Friday, 13th January 2017":
+A function to format a full, human-readable date, for example: "Monday, 8th January 2018":
 
 ```js
 import format from 'date-fns/format';
@@ -293,7 +293,7 @@ const formatDateFull = date => format(date, 'dddd, Do MMMM YYYY');
 
 #### formatMonth
 
-A function to format a human-readable month, for example: "January 2017":
+A function to format a human-readable month, for example: "January 2018":
 
 If you just need to quickly prototype, use the following from [date-fns](https://date-fns.org/docs/format#usage):
 
