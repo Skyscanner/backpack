@@ -46,10 +46,6 @@ type State = {
 };
 
 class AnimateAndFade extends Component<Props, State> {
-  onFadeComplete: Function;
-  onAnimateHeightComplete: Function;
-  toggle: Function;
-
   static propTypes = {
     animateOnEnter: PropTypes.bool,
     animateOnLeave: PropTypes.bool,
@@ -73,10 +69,6 @@ class AnimateAndFade extends Component<Props, State> {
       hideAnimationInProgress: false,
       inDom: true,
     };
-
-    this.onFadeComplete = this.onFadeComplete.bind(this);
-    this.onAnimateHeightComplete = this.onAnimateHeightComplete.bind(this);
-    this.toggle = this.toggle.bind(this);
   }
 
   componentDidMount() {
@@ -92,7 +84,7 @@ class AnimateAndFade extends Component<Props, State> {
     this.toggle();
   }
 
-  onAnimateHeightComplete() {
+  onAnimateHeightComplete = () => {
     if (this.state.isExpanded) {
       return;
     }
@@ -100,15 +92,15 @@ class AnimateAndFade extends Component<Props, State> {
       inDom: false,
       hideAnimationInProgress: false,
     });
-  }
+  };
 
-  onFadeComplete() {
+  onFadeComplete = () => {
     if (!this.state.visible && this.state.hideAnimationInProgress) {
       this.setState({ isExpanded: false });
     }
-  }
+  };
 
-  toggle() {
+  toggle = () => {
     if (this.state.visible && this.state.isExpanded) {
       this.setState({
         hideAnimationInProgress: true,
@@ -121,7 +113,7 @@ class AnimateAndFade extends Component<Props, State> {
         visible: true,
       });
     }
-  }
+  };
 
   render() {
     const { children, animateOnEnter, animateOnLeave, className } = this.props;
