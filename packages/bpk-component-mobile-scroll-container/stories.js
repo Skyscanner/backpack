@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
 import BpkButton from 'bpk-component-button';
 import { storiesOf } from '@storybook/react';

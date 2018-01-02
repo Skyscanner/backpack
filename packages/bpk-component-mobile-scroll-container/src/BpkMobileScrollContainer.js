@@ -16,16 +16,21 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
-import React, { Component } from 'react';
+import React, { Component, type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-mobile-scroll-container.scss';
 
 const getClassName = cssModules(STYLES);
 
-const computeScrollBarAwareHeight = (scrollerEl, innerEl) => {
+const computeScrollBarAwareHeight = (
+  scrollerEl: ?HTMLElement,
+  innerEl: ?HTMLElement,
+): ?string => {
   if (!(scrollerEl && innerEl)) {
     return null;
   }
@@ -34,7 +39,7 @@ const computeScrollBarAwareHeight = (scrollerEl, innerEl) => {
   return scrollBarVisibile ? `${innerEl.offsetHeight / 16}rem` : 'auto';
 };
 
-const computeScrollIndicatorClassName = scrollerEl => {
+const computeScrollIndicatorClassName = (scrollerEl: ?HTMLElement) => {
   if (!scrollerEl) {
     return null;
   }
@@ -56,20 +61,42 @@ const computeScrollIndicatorClassName = scrollerEl => {
   return classNames;
 };
 
-class BpkMobileScrollContainer extends Component {
+type Props = {
+  children: Node,
+  innerContainerTagName: string,
+  className: ?string,
+  style: ?Object,
+};
+
+type State = {
+  computedHeight: ?string,
+  scrollIndicatorClassName: ?string,
+};
+
+class BpkMobileScrollContainer extends Component<Props, State> {
+  innerEl: ?HTMLElement;
+  scrollerEl: ?HTMLElement;
+
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    innerContainerTagName: PropTypes.string,
+    className: PropTypes.string,
+    style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  };
+
+  static defaultProps = {
+    innerContainerTagName: 'div',
+    className: null,
+    style: null,
+  };
+
   constructor() {
     super();
 
     this.state = {
       computedHeight: 'auto',
-      scrollIndicatorClassName: '',
+      scrollIndicatorClassName: null,
     };
-
-    this.setScrollBarAwareHeight = this.setScrollBarAwareHeight.bind(this);
-    this.setScrollIndicatorClassName = this.setScrollIndicatorClassName.bind(
-      this,
-    );
-    this.onWindowResize = debounce(this.onWindowResize.bind(this), 100);
   }
 
   componentDidMount() {
@@ -82,12 +109,12 @@ class BpkMobileScrollContainer extends Component {
     window.removeEventListener('resize', this.onWindowResize);
   }
 
-  onWindowResize() {
+  onWindowResize = debounce(() => {
     this.setScrollBarAwareHeight();
     this.setScrollIndicatorClassName();
-  }
+  }, 100);
 
-  setScrollIndicatorClassName() {
+  setScrollIndicatorClassName = () => {
     const classNames = computeScrollIndicatorClassName(this.scrollerEl);
 
     if (!classNames) {
@@ -97,9 +124,9 @@ class BpkMobileScrollContainer extends Component {
     this.setState(() => ({
       scrollIndicatorClassName: classNames.join(' '),
     }));
-  }
+  };
 
-  setScrollBarAwareHeight() {
+  setScrollBarAwareHeight = () => {
     const computedHeight = computeScrollBarAwareHeight(
       this.scrollerEl,
       this.innerEl,
@@ -110,7 +137,7 @@ class BpkMobileScrollContainer extends Component {
     }
 
     this.setState(() => ({ computedHeight }));
-  }
+  };
 
   render() {
     const classNames = [getClassName('bpk-mobile-scroll-container')];
@@ -157,19 +184,6 @@ class BpkMobileScrollContainer extends Component {
     );
   }
 }
-
-BpkMobileScrollContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-  innerContainerTagName: PropTypes.string,
-  className: PropTypes.string,
-  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
-
-BpkMobileScrollContainer.defaultProps = {
-  innerContainerTagName: 'div',
-  className: null,
-  style: null,
-};
 
 export default BpkMobileScrollContainer;
 export { computeScrollBarAwareHeight, computeScrollIndicatorClassName };
