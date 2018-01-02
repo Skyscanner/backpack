@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import BpkMobileScrollContainer from './src/BpkMobileScrollContainer';
 
 export default BpkMobileScrollContainer;

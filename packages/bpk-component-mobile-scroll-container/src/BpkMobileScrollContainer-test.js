@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 
@@ -29,12 +31,20 @@ const makeMockScroller = (
   scrollWidth,
   offsetWidth,
   offsetHeight = 0,
-) => ({
-  scrollLeft,
-  scrollWidth,
-  offsetWidth,
-  offsetHeight,
-});
+): HTMLElement => {
+  const element = document.createElement('div');
+  Object.defineProperty(element, 'scrollLeft', { value: scrollLeft });
+  Object.defineProperty(element, 'scrollWidth', { value: scrollWidth });
+  Object.defineProperty(element, 'offsetWidth', { value: offsetWidth });
+  Object.defineProperty(element, 'offsetHeight', { value: offsetHeight });
+  return element;
+};
+
+const makeMockInnerEl = (offsetHeight): HTMLElement => {
+  const element = document.createElement('div');
+  Object.defineProperty(element, 'offsetHeight', { value: offsetHeight });
+  return element;
+};
 
 describe('BpkMobileScrollContainer', () => {
   it('should render correctly', () => {
@@ -115,7 +125,7 @@ describe('BpkMobileScrollContainer', () => {
     describe('computeScrollBarAwareHeight', () => {
       it('should return null if scrollerEl is null', () => {
         expect(
-          computeScrollBarAwareHeight(null, { offsetHeight: 50 }),
+          computeScrollBarAwareHeight(null, makeMockInnerEl(50)),
         ).toBeNull();
       });
 
@@ -127,14 +137,14 @@ describe('BpkMobileScrollContainer', () => {
 
       it('should return scroll bar aware height when scroll bar is visible', () => {
         const scrollerEl = makeMockScroller(0, 200, 200, 300);
-        const innerEl = { offsetHeight: 288 };
+        const innerEl = makeMockInnerEl(288);
 
         expect(computeScrollBarAwareHeight(scrollerEl, innerEl)).toBe('18rem');
       });
 
       it('should return scroll bar aware height when scroll bar is not visible', () => {
         const scrollerEl = makeMockScroller(0, 200, 200, 280);
-        const innerEl = { offsetHeight: 288 };
+        const innerEl = makeMockInnerEl(288);
 
         expect(computeScrollBarAwareHeight(scrollerEl, innerEl)).toBe('auto');
       });
