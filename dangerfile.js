@@ -95,8 +95,12 @@ if (shrinkwrapUpdated) {
 
 // New files should include the Backpack license heading.
 const unlicensedFiles = createdFiles.filter(filePath => {
-  // Applies to js, css, scss and sh files that are not located in dist folders.
-  if (filePath.match(/\.(js|css|scss|sh)$/) && !filePath.includes('dist/')) {
+  // Applies to js, css, scss and sh files that are not located in dist or flow-typed folders.
+  if (
+    filePath.match(/\.(js|css|scss|sh)$/) &&
+    !filePath.includes('dist/') &&
+    !filePath.includes('flow-typed/')
+  ) {
     const fileContent = fs.readFileSync(filePath);
     return !fileContent.includes(
       'Licensed under the Apache License, Version 2.0 (the "License")',
