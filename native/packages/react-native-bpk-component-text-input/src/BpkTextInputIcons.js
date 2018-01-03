@@ -18,7 +18,7 @@
 
 import React from 'react';
 import { StyleSheet, I18nManager } from 'react-native';
-import BpkIcon from 'react-native-bpk-component-icon';
+import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 import {
   colorRed500,
   colorGreen500,
@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
 });
 
 const ValidIcon = () => (
-  <BpkIcon icon="tick" small style={[styles.icon, styles.valid]} />
+  <BpkIcon icon={icons.tick} small style={[styles.icon, styles.valid]} />
 );
 
 const InvalidIcon = () => (
   <BpkIcon
-    icon="exclamation-circle"
+    icon={icons['exclamation-circle']}
     small
     style={[styles.icon, styles.invalid]}
   />

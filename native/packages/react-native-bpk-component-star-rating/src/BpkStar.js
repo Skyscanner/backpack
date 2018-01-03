@@ -19,7 +19,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { I18nManager, StyleSheet, View } from 'react-native';
-import BpkIcon from 'react-native-bpk-component-icon';
+import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 import {
   spacingMd,
   spacingSm,
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 
 const BpkStar = props => {
   const { type, ...rest } = props;
-  const iconType = type === STAR_TYPES.FULL ? 'star' : 'star-half';
+  const iconType = type === STAR_TYPES.FULL ? icons.star : icons['star-half'];
 
   const commonStarStyles = [styles.star];
 
@@ -74,12 +74,12 @@ const BpkStar = props => {
 
   /*
    * Here we render two stars that are absolutely positioned inside a View.
-   * We always render a gray star(background) and then conditionally render
+   * We always render a gray star (background) and then conditionally render
    * a yellow half star or star ontop of it.
    */
   return (
     <View style={styles.container} {...rest} accessible={false}>
-      <BpkIcon icon="star" style={commonStarStyles} />
+      <BpkIcon icon={icons.star} style={commonStarStyles} />
       {type !== STAR_TYPES.EMPTY && (
         <BpkIcon icon={iconType} style={foregroundStarStyles} />
       )}

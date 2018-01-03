@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Added:**
+- react-native-bpk-component-icon:
+ - `icons` object is now exposed, allowing users to refer to icon names using a constant. 
 
 ## 2017-12-21 - Fix web button warnings
 

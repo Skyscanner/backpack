@@ -43,7 +43,7 @@ import {
 } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
-import BpkIcon from 'react-native-bpk-component-icon';
+import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
 
 import AnimateAndFade from './AnimateAndFade';
@@ -101,25 +101,25 @@ const styles = StyleSheet.create({
 
 const ALERT_TYPE_STYLES = {
   [ALERT_TYPES.SUCCESS]: {
-    iconSource: 'tick-circle',
+    iconSource: icons['tick-circle'],
     iconStyle: {
       color: colorGreen500,
     },
   },
   [ALERT_TYPES.WARN]: {
-    iconSource: 'information-circle',
+    iconSource: icons['information-circle'],
     iconStyle: {
       color: colorYellow500,
     },
   },
   [ALERT_TYPES.ERROR]: {
-    iconSource: 'information-circle',
+    iconSource: icons['information-circle'],
     iconStyle: {
       color: colorRed500,
     },
   },
   [ALERT_TYPES.NEUTRAL]: {
-    iconSource: 'information-circle',
+    iconSource: icons['information-circle'],
     iconStyle: {
       color: colorGray500,
     },
@@ -153,7 +153,7 @@ const ExpandableIcon = ({ expanded }) => (
   <View style={styles.dismissableContainer}>
     <BpkIcon
       style={styles.icon}
-      icon={expanded ? 'chevron-up' : 'chevron-down'}
+      icon={expanded ? icons['chevron-up'] : icons['chevron-down']}
       small
     />
   </View>

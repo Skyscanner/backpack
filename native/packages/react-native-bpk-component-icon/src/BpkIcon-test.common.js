@@ -18,23 +18,25 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
-import BpkIcon from './BpkIcon';
+import BpkIcon, { icons } from './BpkIcon';
 
 const commonTests = () => {
   describe('BpkIcon', () => {
     it('should render correctly', () => {
-      const tree = renderer.create(<BpkIcon icon="beer" />).toJSON();
+      const tree = renderer.create(<BpkIcon icon={icons.beer} />).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should render small icon correctly', () => {
-      const tree = renderer.create(<BpkIcon icon="beer" small />).toJSON();
+      const tree = renderer
+        .create(<BpkIcon icon={icons.beer} small />)
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     it('should apply user props', () => {
       const tree = renderer
-        .create(<BpkIcon icon="beer" style={{ color: 'blue' }} />)
+        .create(<BpkIcon icon={icons.beer} style={{ color: 'blue' }} />)
         .toJSON();
       expect(tree).toMatchSnapshot();
     });
