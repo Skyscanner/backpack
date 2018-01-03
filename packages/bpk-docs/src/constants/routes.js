@@ -53,6 +53,8 @@ export const BADGE = '/components/web/badge';
 export const PANELS = '/components/web/panels';
 export const IMAGES = '/components/web/images';
 export const BANNER_ALERTS = '/components/web/banner-alerts';
+export const MOBILE_SCROLL_CONTAINER =
+  '/components/web/mobile-scroll-container';
 export const MODALS = '/components/web/modals';
 export const AUTOSUGGEST = '/components/web/autosuggest';
 export const POPOVERS = '/components/web/popovers';
