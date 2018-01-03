@@ -227,7 +227,12 @@ const BpkBannerAlert = props => {
 
 BpkBannerAlert.propTypes = {
   message: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(Object.values(ALERT_TYPES)).isRequired,
+  type: PropTypes.oneOf([
+    ALERT_TYPES.SUCCESS,
+    ALERT_TYPES.WARN,
+    ALERT_TYPES.ERROR,
+    ALERT_TYPES.NEUTRAL,
+  ]).isRequired,
   animateOnEnter: PropTypes.bool,
   animateOnLeave: PropTypes.bool,
   children: PropTypes.node,
