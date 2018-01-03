@@ -1,5 +1,6 @@
 [ignore]
 .*/node_modules/jsonlint/.*
+.*/native/node_modules/.*
 
 [include]
 
@@ -10,6 +11,13 @@
 [options]
 module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/scripts/stubs/styleStub.js'
 module.name_mapper.extension='md' -> '<PROJECT_ROOT>/scripts/stubs/fileStub.js'
+module.name_mapper='\(react-native\)' -> '<PROJECT_ROOT>/scripts/stubs/jsModuleStub.js'
+module.name_mapper='\(@storybook/react-native\)' -> '<PROJECT_ROOT>/scripts/stubs/jsModuleStub.js'
 emoji=true
+
+module.file_ext=.js
+module.file_ext=.json
+module.file_ext=.ios.js
+module.file_ext=.android.js
 
 [strict]

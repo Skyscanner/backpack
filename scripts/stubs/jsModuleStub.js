@@ -16,9 +16,4 @@
  * limitations under the License.
  */
 
-/* @flow */
-
-import BpkIcon, { icons } from './src/BpkIcon';
-
-export default BpkIcon;
-export { icons };
+export default {};

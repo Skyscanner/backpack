@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, StyleSheet } from 'react-native';
@@ -42,7 +44,13 @@ const styles = StyleSheet.create({
 const mapCharacterCode = characterCode =>
   String.fromCharCode(parseInt(characterCode, 16));
 
-const BpkIcon = props => {
+type Props = {
+  icon: string,
+  small?: boolean,
+  style?: {} | Array<{}>,
+};
+
+const BpkIcon = (props: Props) => {
   const { icon, small, style, ...rest } = props;
 
   const characterCode = iconMappings[icon];
@@ -79,7 +87,7 @@ BpkIcon.defaultProps = {
 Expose icon mapping keys as both key and value
 so they can be used by consumers.
 */
-const icons = {};
+const icons: Object = {};
 Object.keys(iconMappings).forEach(name => {
   icons[name] = name;
 });
