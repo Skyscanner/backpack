@@ -19,11 +19,13 @@
 /* @flow */
 
 import React from 'react';
+import BpkRouterLink from 'bpk-component-router-link';
 import mobileScrollContainerReadme from 'bpk-component-mobile-scroll-container/readme.md';
 
 import BlockExample from './BlockExample';
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import { BARCHARTS, HORIZONTAL_NAV } from './../../constants/routes';
 
 const components = [
   {
@@ -42,10 +44,11 @@ const MobileScrollContainerPage = () => (
         viewport and container fluidity in mind i.e. horizontal list items
         should stack on top of each other and overflowing text should wrap on to
         the next line. There are some cases where it is desireable to maintain a
-        fixed width on certain content (see bar charts and horizontal
-        navigation). Mobile scroll containers will hide overflowing content and
-        display a fading indicator to let the user know that the content is
-        scrollable.
+        fixed width on certain content (see{' '}
+        <BpkRouterLink to={BARCHARTS}>bar charts</BpkRouterLink> and{' '}
+        <BpkRouterLink to={HORIZONTAL_NAV}>horizontal navigation</BpkRouterLink>).
+        Mobile scroll containers will hide overflowing content and display a
+        fading indicator to let the user know that the content is scrollable.
       </Paragraph>,
     ]}
     components={components}
