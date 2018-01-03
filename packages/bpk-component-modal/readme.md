@@ -88,6 +88,7 @@ class App extends Component {
 | renderTarget          | func     | false    | null          |
 | wide                  | bool     | false    | false         |
 | fullScreenOnMobile    | bool     | false    | true          |
+| closeOnScrimClick     | bool     | false    | true          |
 
 ## Theme Props
 

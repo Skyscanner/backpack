@@ -2,13 +2,16 @@
 
 ## UNRELEASED
 
-_Nothing yet.._
+**Added:**
+- bpk-component-modal:
+- bpk-scrim-utils:
+  - New `closeOnScrimClick` prop, which is `true` by default.
 
 ## 2018-01-03 - New native icons constant
 
 **Added:**
 - react-native-bpk-component-icon: 1.1.15 => 1.2.0
- - `icons` object is now exposed, allowing users to refer to icon names using a constant.
+  - `icons` object is now exposed, allowing users to refer to icon names using a constant.
 
 ## 2017-12-21 - Fix web button warnings
 
