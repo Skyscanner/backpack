@@ -18,6 +18,7 @@
 
 import React from 'react';
 import BpkLink from 'bpk-component-link';
+import BpkRouterLink from 'bpk-component-router-link';
 import { BpkList, BpkListItem } from 'bpk-component-list';
 import BpkBlockquote from 'bpk-component-blockquote';
 import nativeReadme from 'react-native-bpk-theming/readme.md';
@@ -58,16 +59,18 @@ const components = [
       <Paragraph>The following native components are themeable:</Paragraph>,
       <BpkList>
         <BpkListItem>
-          <BpkLink href={NATIVE_BUTTON}>Button</BpkLink>
+          <BpkRouterLink to={NATIVE_BUTTON}>Button</BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={NATIVE_HORIZONTAL_NAV}>Horizontal navigation</BpkLink>
+          <BpkRouterLink to={NATIVE_HORIZONTAL_NAV}>
+            Horizontal navigation
+          </BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={NATIVE_SPINNER}>Spinner</BpkLink>
+          <BpkRouterLink to={NATIVE_SPINNER}>Spinner</BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={NATIVE_SWITCH}>Switch</BpkLink>
+          <BpkRouterLink to={NATIVE_SWITCH}>Switch</BpkRouterLink>
         </BpkListItem>
       </BpkList>,
     ],
@@ -80,46 +83,50 @@ const components = [
       <Paragraph>The following web components are themeable:</Paragraph>,
       <BpkList>
         <BpkListItem>
-          <BpkLink href={ACCORDIONS}>Accordions</BpkLink>
+          <BpkRouterLink to={ACCORDIONS}>Accordions</BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={BARCHARTS}>Bar charts</BpkLink>
+          <BpkRouterLink to={BARCHARTS}>Bar charts</BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={`${TYPOGRAPHY}#blockquotes`}>Blockquotes</BpkLink>
+          <BpkRouterLink to={`${TYPOGRAPHY}#blockquotes`}>
+            Blockquotes
+          </BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={BUTTONS}>Buttons</BpkLink>
+          <BpkRouterLink to={BUTTONS}>Buttons</BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={CALENDAR}>Calendars</BpkLink>
+          <BpkRouterLink to={CALENDAR}>Calendars</BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={DATEPICKER}>Datepickers</BpkLink>
+          <BpkRouterLink to={DATEPICKER}>Datepickers</BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={DRAWER}>Drawers</BpkLink>
+          <BpkRouterLink to={DRAWER}>Drawers</BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={HORIZONTAL_NAV}>Horizontal navigation</BpkLink>
+          <BpkRouterLink to={HORIZONTAL_NAV}>
+            Horizontal navigation
+          </BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={MODALS}>Modals</BpkLink>
+          <BpkRouterLink to={MODALS}>Modals</BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={`${TYPOGRAPHY}#links`}>Links</BpkLink>
+          <BpkRouterLink to={`${TYPOGRAPHY}#links`}>Links</BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={NUDGERS}>Nudgers</BpkLink>
+          <BpkRouterLink to={NUDGERS}>Nudgers</BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={PROGRESS}>Progress bars</BpkLink>
+          <BpkRouterLink to={PROGRESS}>Progress bars</BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={SPINNERS}>Spinner</BpkLink>
+          <BpkRouterLink to={SPINNERS}>Spinner</BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
-          <BpkLink href={SLIDERS}>Sliders</BpkLink>
+          <BpkRouterLink to={SLIDERS}>Sliders</BpkRouterLink>
         </BpkListItem>
       </BpkList>,
       <BpkBlockquote>
@@ -153,8 +160,13 @@ const ThemingPage = () => (
       </Paragraph>,
       <Paragraph>
         In React Native, this is achieved using React&apos;s{' '}
-        <BpkLink href={CONTEXT_API_URL}>context API</BpkLink>. On the web,{' '}
-        <BpkLink href={CSS_VARIABLES_URL}>CSS variables</BpkLink> are used.
+        <BpkLink href={CONTEXT_API_URL} blank>
+          context API
+        </BpkLink>. On the web,{' '}
+        <BpkLink href={CSS_VARIABLES_URL} blank>
+          CSS variables
+        </BpkLink>{' '}
+        are used.
       </Paragraph>,
       <Paragraph>
         Each themeable component lists the theme attributes it requires in its
