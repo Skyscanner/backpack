@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2018 Skyscanner Ltd
+ * Copyright 2017 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,22 +16,36 @@
  * limitations under the License.
  */
 /* @flow */
+
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import {
   type CommonProps,
+  type OnDismissHandler,
   COMMON_PROP_TYPES,
   COMMON_DEFAULT_PROPS,
 } from './common-types';
-import BpkBannerAlertInner from './BpkBannerAlertInner';
+import BpkBannerAlertInner, { CONFIGURATION } from './BpkBannerAlertInner';
 
 type Props = {
-  ...CommonProps,
+  ...$Exact<CommonProps>,
+  dismissButtonLabel: string,
+  onDismiss: OnDismissHandler,
 };
 
-const BpkBannerAlert = (props: Props) => <BpkBannerAlertInner {...props} />;
+const BpkBannerAlertDismissable = (props: Props) => (
+  <BpkBannerAlertInner configuration={CONFIGURATION.DISMISSABLE} {...props} />
+);
 
-BpkBannerAlert.propTypes = COMMON_PROP_TYPES;
-BpkBannerAlert.defaultProps = COMMON_DEFAULT_PROPS;
+BpkBannerAlertDismissable.propTypes = {
+  ...COMMON_PROP_TYPES,
+  dismissButtonLabel: PropTypes.string.isRequired,
+  onDismiss: PropTypes.func,
+};
+BpkBannerAlertDismissable.defaultProps = {
+  ...COMMON_DEFAULT_PROPS,
+  onDismiss: null,
+};
 
-export default BpkBannerAlert;
+export default BpkBannerAlertDismissable;

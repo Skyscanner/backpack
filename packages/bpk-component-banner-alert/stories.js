@@ -26,6 +26,8 @@ import BpkBannerAlert, {
   ALERT_TYPES,
   withBannerAlertState,
   CONFIGURATION,
+  BpkBannerAlertDismissable,
+  BpkBannerAlertExpandable,
 } from './index';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
@@ -49,8 +51,7 @@ storiesOf('bpk-component-banner-alert', module)
     <BpkBannerAlert message={longMessage} type={ALERT_TYPES.SUCCESS} />
   ))
   .add('Success (dismissable)', () => (
-    <BpkBannerAlert
-      configuration={CONFIGURATION.DISMISSABLE}
+    <BpkBannerAlertDismissable
       dismissButtonLabel="Dismiss"
       message={message}
       type={ALERT_TYPES.SUCCESS}
@@ -58,14 +59,13 @@ storiesOf('bpk-component-banner-alert', module)
     />
   ))
   .add('Success(expandable)', () => (
-    <BpkBannerAlert
-      configuration={CONFIGURATION.EXPANDABLE}
+    <BpkBannerAlertExpandable
       message={message}
       type={ALERT_TYPES.SUCCESS}
       toggleButtonLabel="View more"
     >
       {longMessage}
-    </BpkBannerAlert>
+    </BpkBannerAlertExpandable>
   ))
   .add('Success (animate on enter)', () => (
     <BpkBannerAlert

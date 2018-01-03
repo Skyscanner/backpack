@@ -60,12 +60,10 @@
 
 **Added:**
 - bpk-component-banner-alert:
-  - Introduced new prop `configuration` to set the configuration of a banner alert.
-    Valid values are `CONFIGURATION.NONE`, `CONFIGURATION.DISMISSABLE` and `CONFIGURATION.EXPANDABLE`.
-    `CONFIGURATION.NONE` is the default. `CONFIGURATION` is available as an export and can be imported with
-    ```javascript
-    import BpkBannerAlert, { CONFIGURATION } from 'bpk-component-banner-alert';
-    ```
+  - Introduced new component for the different banner alert configurations.
+    - `BpkBannerAlert` is now the basic banner alert.
+    - `BpkBannerAlertDismissable` is a banner alert with a dismiss behaviour.
+    - `BpkBannerAlertExpandable` is a banner alert with expandable behaviour.
 
 ## 2017-12-21 - Fix web button warnings
 

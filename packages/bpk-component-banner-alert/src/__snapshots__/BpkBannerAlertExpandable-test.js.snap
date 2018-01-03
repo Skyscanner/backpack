@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkBannerAlertExpandable should render correctly 1`] = `
+<BpkBannerAlertInner
+  animateOnEnter={false}
+  animateOnLeave={false}
+  bannerClassName={null}
+  configuration="expandable"
+  dismissButtonLabel={null}
+  expanded={false}
+  message="Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+  onDismiss={null}
+  onExpandToggle={[Function]}
+  show={true}
+  toggleButtonLabel="Show details"
+  type="success"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
+blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
+nec mi.
+</BpkBannerAlertInner>
+`;
+
+exports[`BpkBannerAlertExpandable should render correctly expanded 1`] = `
+<BpkBannerAlertInner
+  animateOnEnter={false}
+  animateOnLeave={false}
+  bannerClassName={null}
+  configuration="expandable"
+  dismissButtonLabel={null}
+  expanded={true}
+  message="Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+  onDismiss={null}
+  onExpandToggle={[Function]}
+  show={true}
+  toggleButtonLabel="Show details"
+  type="success"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
+blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
+nec mi.
+</BpkBannerAlertInner>
+`;

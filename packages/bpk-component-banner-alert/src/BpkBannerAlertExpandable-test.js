@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2018 Skyscanner Ltd
+ * Copyright 2017 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,37 +21,40 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import BpkBannerAlert from './BpkBannerAlert';
+import BpkBannerAlertExpandable from './BpkBannerAlertExpandable';
 import { ALERT_TYPES } from './common-types';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
+const innerMessage = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
+blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
+nec mi.`;
 
-describe('BpkBannerAlert', () => {
+describe('BpkBannerAlertExpandable', () => {
   it('should render correctly', () => {
     const tree = shallow(
-      <BpkBannerAlert type={ALERT_TYPES.SUCCESS} message={message} />,
+      <BpkBannerAlertExpandable
+        type={ALERT_TYPES.SUCCESS}
+        message={message}
+        toggleButtonLabel="Show details"
+        onExpandToggle={jest.fn()}
+      >
+        {innerMessage}
+      </BpkBannerAlertExpandable>,
     );
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should render correctly hidden', () => {
+  it('should render correctly expanded', () => {
     const tree = shallow(
-      <BpkBannerAlert
-        show={false}
+      <BpkBannerAlertExpandable
         type={ALERT_TYPES.SUCCESS}
         message={message}
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render correctly with custom bannerClassName', () => {
-    const tree = shallow(
-      <BpkBannerAlert
-        bannerClassName="custom-banner-class-name"
-        type={ALERT_TYPES.SUCCESS}
-        message={message}
-      />,
+        toggleButtonLabel="Show details"
+        onExpandToggle={jest.fn()}
+        expanded
+      >
+        {innerMessage}
+      </BpkBannerAlertExpandable>,
     );
     expect(toJson(tree)).toMatchSnapshot();
   });
