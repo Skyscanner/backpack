@@ -7,6 +7,10 @@
 - bpk-scrim-utils:
   - New `closeOnScrimClick` prop, which is `true` by default.
 
+**Fixed:**
+- bpk-component-banner-alert:
+  - Removed usage of `Object.values`.
+
 ## 2018-01-03 - New native icons constant
 
 **Added:**
