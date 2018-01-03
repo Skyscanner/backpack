@@ -222,9 +222,18 @@ const BpkBannerAlert = (props: Props) => {
 };
 
 BpkBannerAlert.propTypes = {
-  type: PropTypes.oneOf(Object.values(ALERT_TYPES)).isRequired,
+  type: PropTypes.oneOf([
+    ALERT_TYPES.SUCCESS,
+    ALERT_TYPES.WARN,
+    ALERT_TYPES.ERROR,
+    ALERT_TYPES.NEUTRAL,
+  ]).isRequired,
   message: PropTypes.node.isRequired,
-  ariaLive: PropTypes.oneOf(Object.values(ARIA_LIVE)),
+  ariaLive: PropTypes.oneOf([
+    ARIA_LIVE.OFF,
+    ARIA_LIVE.ASSERTIVE,
+    ARIA_LIVE.POLITE,
+  ]),
   animateOnEnter: PropTypes.bool,
   animateOnLeave: PropTypes.bool,
   children: PropTypes.node,
