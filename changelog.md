@@ -3,6 +3,9 @@
 ## UNRELEASED
 
 _Nothing yet..._
+**Added**:
+- bpk-react-utils:
+  - Added 'hasChildrenOfType' prop type checker
 
 ## 2018-01-03 - New `closeOnScrimClick` prop for scrims and a web banner alert fix
 

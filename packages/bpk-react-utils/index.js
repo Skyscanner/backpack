@@ -21,6 +21,7 @@ import Portal from './src/Portal';
 import cssModules from './src/cssModules';
 import TransitionInitialMount from './src/TransitionInitialMount';
 import withDefaultProps from './src/withDefaultProps';
+import hasChildrenOfType from './src/hasChildrenOfType';
 
 export {
   Portal,
@@ -28,6 +29,7 @@ export {
   TransitionInitialMount,
   withDefaultProps,
   wrapDisplayName,
+  hasChildrenOfType,
 };
 export default {
   Portal,
@@ -35,4 +37,5 @@ export default {
   TransitionInitialMount,
   withDefaultProps,
   wrapDisplayName,
+  hasChildrenOfType,
 };
