@@ -74,21 +74,26 @@ class App extends Component {
 
 ## Props
 
-| Property              | PropType | Required | Default Value |
-| --------------------- | -------- | -------- | ------------- |
-| id                    | string   | true     | -             |
-| className             | string   | true     | -             |
-| children              | node     | true     | -             |
-| isOpen                | bool     | true     | -             |
-| onClose               | func     | true     | -             |
-| title                 | string   | true     | -             |
-| getApplicationElement | func     | true     | -             |
-| closeLabel            | string   | false    | null          |
-| closeText             | string   | false    | null          |
-| renderTarget          | func     | false    | null          |
-| wide                  | bool     | false    | false         |
-| fullScreenOnMobile    | bool     | false    | true          |
-| closeOnScrimClick     | bool     | false    | true          |
+| Property              | PropType | Required | Default Value    |
+| --------------------- | -------- | -------- | ---------------- |
+| id                    | string   | true     | -                |
+| className             | string   | true     | -                |
+| children              | node     | true     | -                |
+| isOpen                | bool     | true     | -                |
+| onClose               | func     | true     | -                |
+| getApplicationElement | func     | true     | -                |
+| title                 | string   | false    | See prop details |
+| closeLabel            | string   | false    | null             |
+| closeText             | string   | false    | null             |
+| renderTarget          | func     | false    | null             |
+| wide                  | bool     | false    | false            |
+| fullScreenOnMobile    | bool     | false    | true             |
+| closeOnScrimClick     | bool     | false    | true             |
+| showHeader            | bool     | false    | true             |
+
+### Prop Details
+
+title is required unless `showHeader` is false.
 
 ## Theme Props
 

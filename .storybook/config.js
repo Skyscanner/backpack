@@ -66,6 +66,7 @@ configure(() => {
   require('./../packages/bpk-component-datatable/stories');
   require('./../packages/bpk-component-datepicker/stories');
   require('./../packages/bpk-component-description-list/stories');
+  require('./../packages/bpk-component-dialog/stories');
   require('./../packages/bpk-component-drawer/stories');
   require('./../packages/bpk-component-fieldset/stories');
   require('./../packages/bpk-component-form-validation/stories');
