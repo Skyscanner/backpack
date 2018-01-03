@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
-import BpkIcon from './src/BpkIcon';
+import BpkIcon, { icons } from './src/BpkIcon';
 
 export default BpkIcon;
+export { icons };

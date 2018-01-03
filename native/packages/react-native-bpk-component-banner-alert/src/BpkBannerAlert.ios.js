@@ -38,7 +38,7 @@ import {
 } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
-import BpkIcon from 'react-native-bpk-component-icon';
+import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
 import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
@@ -142,22 +142,22 @@ const styles = StyleSheet.create({
 
 const ALERT_TYPE_STYLES = {
   [ALERT_TYPES.SUCCESS]: {
-    iconSource: 'tick-circle',
+    iconSource: icons['tick-circle'],
     outerStyle: styles.outerContainerSuccess,
     iconStyle: styles.iconSuccess,
   },
   [ALERT_TYPES.WARN]: {
-    iconSource: 'information-circle',
+    iconSource: icons['information-circle'],
     outerStyle: styles.outerContainerWarn,
     iconStyle: styles.iconWarn,
   },
   [ALERT_TYPES.ERROR]: {
-    iconSource: 'information-circle',
+    iconSource: icons['information-circle'],
     outerStyle: styles.outerContainerError,
     iconStyle: styles.iconError,
   },
   [ALERT_TYPES.NEUTRAL]: {
-    iconSource: 'information-circle',
+    iconSource: icons['information-circle'],
     outerStyle: styles.outerContainerNeutral,
     iconStyle: styles.iconNeutral,
   },
@@ -202,7 +202,7 @@ const BpkBannerAlert = props => {
       {expandable && (
         <BpkIcon
           style={[styles.button, styles.buttonExpand]}
-          icon={expanded ? 'chevron-up' : 'chevron-down'}
+          icon={expanded ? icons['chevron-up'] : icons['chevron-down']}
           small
         />
       )}

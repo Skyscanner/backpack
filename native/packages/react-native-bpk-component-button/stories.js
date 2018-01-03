@@ -21,6 +21,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import BpkThemeProvider from 'react-native-bpk-theming';
+import { icons } from 'react-native-bpk-component-icon';
 import { spacingMd } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkButton, { BUTTON_TYPES } from './src/BpkButton';
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
 });
 
 const getIconType = type =>
-  type === 'destructive' ? 'trash' : 'long-arrow-right';
+  type === 'destructive' ? icons.trash : icons['long-arrow-right'];
 
 const generateButtonStoryForType = type => {
   function getLargeVersion() {

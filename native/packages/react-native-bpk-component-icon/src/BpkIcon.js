@@ -75,4 +75,14 @@ BpkIcon.defaultProps = {
   style: null,
 };
 
+/*
+Expose icon mapping keys as both key and value
+so they can be used by consumers.
+*/
+const icons = {};
+Object.keys(iconMappings).forEach(name => {
+  icons[name] = name;
+});
+
 export default BpkIcon;
+export { icons };
