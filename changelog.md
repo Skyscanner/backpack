@@ -2,13 +2,17 @@
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 2018-01-03 - New `closeOnScrimClick` prop for scrims and a web banner alert fix
+
 **Added:**
-- bpk-component-modal:
-- bpk-scrim-utils:
+- bpk-component-modal: 1.3.2 => 1.4.0
+- bpk-scrim-utils: 3.0.3 => 3.1.0
   - New `closeOnScrimClick` prop, which is `true` by default.
 
 **Fixed:**
-- bpk-component-banner-alert:
+- bpk-component-banner-alert: 1.6.2 => 1.6.3
   - Removed usage of `Object.values`.
 
 ## 2018-01-03 - New native icons constant
