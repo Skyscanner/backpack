@@ -187,6 +187,7 @@ exports[`BpkBarchart should render correctly 1`] = `
         }
         maxYValue={448}
         onBarClick={null}
+        onBarFocus={null}
         onBarHover={null}
         onBarTouch={null}
         outerPadding={0}
@@ -329,6 +330,7 @@ exports[`BpkBarchart should render with "disableDataTable" prop 1`] = `
         }
         maxYValue={448}
         onBarClick={null}
+        onBarFocus={null}
         onBarHover={null}
         onBarTouch={null}
         outerPadding={0}
@@ -529,6 +531,7 @@ exports[`BpkBarchart should render with "getBarLabel" prop 1`] = `
         }
         maxYValue={448}
         onBarClick={null}
+        onBarFocus={null}
         onBarHover={null}
         onBarTouch={null}
         outerPadding={0}
@@ -730,6 +733,7 @@ exports[`BpkBarchart should render with "hideXAxisLabel" prop 1`] = `
         }
         maxYValue={448}
         onBarClick={null}
+        onBarFocus={null}
         onBarHover={null}
         onBarTouch={null}
         outerPadding={0}
@@ -931,6 +935,7 @@ exports[`BpkBarchart should render with "hideYAxisLabel" prop 1`] = `
         }
         maxYValue={448}
         onBarClick={null}
+        onBarFocus={null}
         onBarHover={null}
         onBarTouch={null}
         outerPadding={0}
@@ -1131,6 +1136,7 @@ exports[`BpkBarchart should render with "onBarClick" prop 1`] = `
         }
         maxYValue={448}
         onBarClick={[Function]}
+        onBarFocus={null}
         onBarHover={null}
         onBarTouch={null}
         outerPadding={0}
@@ -1331,6 +1337,7 @@ exports[`BpkBarchart should render with "onBarHover" prop 1`] = `
         }
         maxYValue={448}
         onBarClick={null}
+        onBarFocus={null}
         onBarHover={[Function]}
         onBarTouch={null}
         outerPadding={0}
@@ -1531,6 +1538,7 @@ exports[`BpkBarchart should render with "onBarTouch" prop 1`] = `
         }
         maxYValue={448}
         onBarClick={null}
+        onBarFocus={null}
         onBarHover={null}
         onBarTouch={[Function]}
         outerPadding={0}
@@ -1748,6 +1756,7 @@ exports[`BpkBarchart should render with "showGridlines" prop 1`] = `
         }
         maxYValue={448}
         onBarClick={null}
+        onBarFocus={null}
         onBarHover={null}
         onBarTouch={null}
         outerPadding={0.35}
