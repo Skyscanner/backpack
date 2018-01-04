@@ -87,10 +87,10 @@ if (componentSourceFilesModified && !snapshotsModified) {
   ); // eslint-disable-line max-len
 }
 
-// Ensure shrinkwrap changes are intentional.
-const shrinkwrapUpdated = includes(modifiedFiles, 'npm-shrinkwrap.json');
-if (shrinkwrapUpdated) {
-  warn('`npm-shrinkwrap.json` was updated. Ensure that this was intentional.');
+// Ensure package-lock changes are intentional.
+const lockFileUpdated = includes(modifiedFiles, 'package-lock.json');
+if (lockFileUpdated) {
+  warn('`package-lock.json` was updated. Ensure that this was intentional.');
 }
 
 // New files should include the Backpack license heading.
