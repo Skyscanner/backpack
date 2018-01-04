@@ -37,7 +37,7 @@ const components = [
 
 const MobileScrollContainerPage = () => (
   <DocsPageBuilder
-    title="Mobile scoll container"
+    title="Mobile scroll container"
     blurb={[
       <Paragraph>
         In the majority of cases, components and content should be designed with
