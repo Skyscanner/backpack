@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-_Nothing yet..._
+**Changed:**
+- bpk-component-popover:
+ - On mobile screen sizes, popovers now have a margin to prevent them from filling the entire width of their container.
 
 ## 2018-01-03 - New `closeOnScrimClick` prop for scrims and a web banner alert fix
 
