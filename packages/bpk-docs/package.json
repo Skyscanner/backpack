@@ -1,6 +1,6 @@
 {
   "name": "bpk-docs",
-  "version": "0.0.209",
+  "version": "0.0.210",
   "main": "index.js",
   "description": "Backpack documentation site.",
   "repository": {
@@ -18,7 +18,7 @@
     "bpk-component-autosuggest": "^3.0.60",
     "bpk-component-badge": "^1.0.39",
     "bpk-component-banner-alert": "^1.6.3",
-    "bpk-component-barchart": "^2.1.27",
+    "bpk-component-barchart": "^2.2.0",
     "bpk-component-blockquote": "^1.1.32",
     "bpk-component-breakpoint": "^1.0.39",
     "bpk-component-button": "^1.6.80",
@@ -72,17 +72,17 @@
     "bpk-tokens": "^26.7.2",
     "prop-types": "^15.5.8",
     "react": "^15.0.0",
-    "react-native-bpk-component-banner-alert": "^2.0.2",
-    "react-native-bpk-component-button": "^4.2.13",
+    "react-native-bpk-component-banner-alert": "^2.0.3",
+    "react-native-bpk-component-button": "^4.2.14",
     "react-native-bpk-component-card": "^1.2.6",
-    "react-native-bpk-component-horizontal-nav": "^2.0.8",
-    "react-native-bpk-component-icon": "^1.2.0",
-    "react-native-bpk-component-spinner": "^1.0.11",
-    "react-native-bpk-component-star-rating": "^1.0.2",
-    "react-native-bpk-component-switch": "^1.0.10",
+    "react-native-bpk-component-horizontal-nav": "^2.0.9",
+    "react-native-bpk-component-icon": "^1.2.1",
+    "react-native-bpk-component-spinner": "^1.0.12",
+    "react-native-bpk-component-star-rating": "^1.0.3",
+    "react-native-bpk-component-switch": "^1.0.11",
     "react-native-bpk-component-text": "^2.1.26",
-    "react-native-bpk-component-text-input": "^2.0.3",
-    "react-native-bpk-theming": "^1.0.23",
+    "react-native-bpk-component-text-input": "^2.0.4",
+    "react-native-bpk-theming": "^1.0.24",
     "uglify-loader": "^1.4.0"
   }
 }
