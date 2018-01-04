@@ -29,6 +29,11 @@
   outline: 0;
   opacity: 1;
 
+  @include bpk-breakpoint-mobile {
+    margin-right: $bpk-spacing-sm;
+    margin-left: $bpk-spacing-sm;
+  }
+
   @include bpk-breakpoint-above-mobile {
     max-width: $bpk-breakpoint-mobile;
     transition: opacity $bpk-duration-xs ease-in-out;
