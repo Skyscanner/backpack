@@ -8,11 +8,13 @@
 
 ## 2018-01-04 - Fixing BpkBarChart events for bar hovering and focus
 
-**Fixed:**
-- bpk-component-barchart:
-  - `onBarHover` now correctly attaches hover event.
+**Added:**
+- bpk-component-barchart: 2.1.27 => 2.2.0
   - New `onBarFocus` function prop that is invoked when a bar is focused.
 
+**Fixed:**
+- bpk-component-barchart: 2.1.27 => 2.2.0
+  - `onBarHover` now correctly attaches hover event.
 
 ## 2018-01-03 - New `closeOnScrimClick` prop for scrims and a web banner alert fix
 
