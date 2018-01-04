@@ -4,6 +4,12 @@
 
 _Nothing yet..._
 
+## 2018-01-04 - Fixed bar hovering for bar chart component
+
+**Fixed:**
+- bpk-component-barchart: 2.1.27 => 2.1.28
+  - `onBarHover` now correctly attaches hover event.
+
 ## 2018-01-03 - New `closeOnScrimClick` prop for scrims and a web banner alert fix
 
 **Added:**
