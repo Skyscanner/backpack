@@ -69,22 +69,22 @@ class App extends Component {
 
 ## Props
 
-| Property              | PropType                      | Required | Default Value |
-| --------------------- | ----------------------------- | -------- | ------------- |
-| id                    | string                        | true     | -             |
-| children              | node                          | true     | -             |
-| target                | element or func               | true     | -             |
-| isOpen                | bool                          | true     | -             |
-| onClose               | func                          | true     | -             |
-| label                 | string                        | true     | -             |
-| closeButtonText       | string                        | true     | -             |
-| tetherOptions         | See http://tether.io/#options | false    | { attachment: 'top center', constraints: [ { to: 'window', attachment: 'together', pin: true, }, ], } |
-| padded                | bool                          | false    | true          |
-| labelAsTitle          | bool                          | false    | false         |
-| closeButtonIcon       | bool                          | false    | true          |
-| portalStyle           | object                        | false    | null          |
-| portalClassName       | string                        | false    | null          |
-| renderTarget          | func                          | false    | null          |
+| Property              | PropType                                  | Required | Default Value |
+| --------------------- | ----------------------------------------- | -------- | ------------- |
+| id                    | string                                    | true     | -             |
+| children              | node                                      | true     | -             |
+| target                | element or func                           | true     | -             |
+| isOpen                | bool                                      | true     | -             |
+| onClose               | func                                      | true     | -             |
+| label                 | string                                    | true     | -             |
+| closeButtonText       | string                                    | true     | -             |
+| placement             | oneOf(['top', 'right', 'bottom', 'left']) | false    | 'bottom'      |
+| padded                | bool                                      | false    | true          |
+| labelAsTitle          | bool                                      | false    | false         |
+| closeButtonIcon       | bool                                      | false    | true          |
+| portalStyle           | object                                    | false    | null          |
+| portalClassName       | string                                    | false    | null          |
+| renderTarget          | func                                      | false    | null          |
 
 In order to attach the popover to a regular DOM element, provide a function which returns it to `target`:
 

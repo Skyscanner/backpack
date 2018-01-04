@@ -19,7 +19,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
-
 import {
   weekDays,
   formatMonth,
@@ -27,6 +26,16 @@ import {
 } from 'bpk-component-calendar/test-utils';
 import { format } from 'bpk-component-calendar/src/date-utils';
 
+jest.mock(
+  './../node_modules/bpk-component-popover/node_modules/popper.js',
+  () =>
+    class Popper {
+      scheduleUpdate = () => {};
+      destroy = () => {};
+    },
+);
+
+// eslint-disable-next-line import/first
 import BpkDatepicker from './BpkDatepicker';
 
 const formatDate = date => format(date, 'DD/MM/YYYY');
@@ -58,6 +67,7 @@ describe('BpkDatepicker', () => {
         />,
       )
       .toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 

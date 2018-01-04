@@ -27,13 +27,13 @@ const App = () => (
 
 ## Props
 
-| Property              | PropType                      | Required | Default Value |
-| --------------------- | ----------------------------- | -------- | ------------- |
-| id                    | string                        | true     | -             |
-| children              | node                          | true     | -             |
-| target                | node                          | true     | -             |
-| hideOnTouchDevices    | bool                          | false    | true          |
-| tetherOptions         | See http://tether.io/#options | false    | { attachment: 'top center', constraints: [ { to: 'window', attachment: 'together', pin: true, }, ], } |
-| padded                | bool                          | false    | true          |
-| portalStyle           | object                        | false    | null          |
-| portalClassName       | string                        | false    | null          |
+| Property              | PropType                                  | Required | Default Value |
+| --------------------- | ----------------------------------------- | -------- | ------------- |
+| id                    | string                                    | true     | -             |
+| children              | node                                      | true     | -             |
+| target                | node                                      | true     | -             |
+| hideOnTouchDevices    | bool                                      | false    | true          |
+| placement             | oneOf(['top', 'right', 'bottom', 'left']) | false    | 'bottom'      |
+| padded                | bool                                      | false    | true          |
+| portalStyle           | object                                    | false    | null          |
+| portalClassName       | string                                    | false    | null          |

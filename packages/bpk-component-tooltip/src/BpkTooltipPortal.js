@@ -16,17 +16,14 @@
  * limitations under the License.
  */
 
+import Popper from 'popper.js';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Portal, cssModules } from 'bpk-react-utils';
-import Tether, {
-  getArrowPositionCallback,
-  applyRTLTransforms,
-} from 'bpk-tether';
 
 import BpkTooltip from './BpkTooltip';
 import { ARROW_ID } from './constants';
-import STYLES from './BpkTooltipPortal.scss';
+import STYLES from './BpkTooltip.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -45,7 +42,7 @@ class BpkTooltipPortal extends Component {
       isOpen: false,
     };
 
-    this.tether = null;
+    this.popper = null;
     this.targetRef = null;
 
     this.onOpen = this.onOpen.bind(this);
@@ -68,24 +65,21 @@ class BpkTooltipPortal extends Component {
   }
 
   onOpen(tooltipElement, targetElement) {
-    this.tether = new Tether({
-      classPrefix: 'bpk-tooltip-tether',
-      element: tooltipElement,
-      target: targetElement,
-      ...applyRTLTransforms(this.props.tetherOptions),
+    this.popper = new Popper(targetElement, tooltipElement, {
+      placement: this.props.placement,
+      modifiers: {
+        arrow: {
+          element: `#${ARROW_ID}`,
+        },
+      },
     });
 
-    this.tether.on(
-      'position',
-      getArrowPositionCallback(tooltipElement, ARROW_ID, 'bpk-tooltip-tether'),
-    );
-
-    this.tether.position();
+    this.popper.scheduleUpdate();
   }
 
   beforeClose(done) {
-    this.tether.destroy();
-    this.tether = null;
+    this.popper.destroy();
+    this.popper = null;
 
     done();
   }
@@ -108,6 +102,7 @@ class BpkTooltipPortal extends Component {
       padded,
       target,
       children,
+      placement,
       hideOnTouchDevices,
       portalClassName,
       portalStyle,
@@ -118,8 +113,6 @@ class BpkTooltipPortal extends Component {
     if (portalClassName) {
       classNames.push(portalClassName);
     }
-
-    delete rest.tetherOptions;
 
     return renderPortal ? (
       <Portal
@@ -146,31 +139,17 @@ class BpkTooltipPortal extends Component {
 BpkTooltipPortal.propTypes = {
   target: PropTypes.node.isRequired,
   children: PropTypes.node.isRequired,
+  placement: PropTypes.oneOf(Popper.placements),
   hideOnTouchDevices: PropTypes.bool,
   padded: PropTypes.bool,
-  tetherOptions: PropTypes.shape({
-    attachment: PropTypes.string,
-    targetAttachment: PropTypes.string,
-    offset: PropTypes.string,
-    constraints: PropTypes.array,
-  }),
   portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   portalClassName: PropTypes.string,
 };
 
 BpkTooltipPortal.defaultProps = {
+  placement: 'bottom',
   hideOnTouchDevices: true,
   padded: true,
-  tetherOptions: {
-    attachment: 'top center',
-    constraints: [
-      {
-        to: 'window',
-        attachment: 'together',
-        pin: true,
-      },
-    ],
-  },
   portalStyle: null,
   portalClassName: null,
 };

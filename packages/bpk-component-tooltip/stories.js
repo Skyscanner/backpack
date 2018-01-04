@@ -49,17 +49,8 @@ storiesOf('bpk-component-tooltip', module)
     <div style={st}>
       <BpkTooltip
         id="my-tooltip"
-        target={<Heading level="h1">£295</Heading>}
-        tetherOptions={{
-          attachment: 'middle left',
-          constraints: [
-            {
-              to: 'window',
-              attachment: 'together',
-              pin: true,
-            },
-          ],
-        }}
+        target={<Heading>£295</Heading>}
+        placement="right"
       >
         This is the cheapest price!
         <span role="img" aria-label="Thumbs up">
@@ -72,7 +63,7 @@ storiesOf('bpk-component-tooltip', module)
     <div style={{ height: '500px', margin: '30px', textAlign: 'center' }}>
       <BpkTooltip
         id="my-tooltip"
-        target={<Heading level="h1">£295</Heading>}
+        target={<Heading>£295</Heading>}
         padded={false}
       >
         <div

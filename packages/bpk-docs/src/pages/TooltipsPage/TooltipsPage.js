@@ -68,16 +68,7 @@ const components = [
     examples: [
       <BpkTooltip
         id="my-tooltip-2"
-        tetherOptions={{
-          attachment: 'middle left',
-          constraints: [
-            {
-              to: 'window',
-              attachment: 'together',
-              pin: true,
-            },
-          ],
-        }}
+        placement="right"
         target={
           <Heading
             level="h3"
