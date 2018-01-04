@@ -151,6 +151,29 @@ describe('BpkBarchartBars', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
+  it('should render correctly with "onBarFocus" prop', () => {
+    const tree = shallow(
+      <BpkBarchartBars
+        margin={margin}
+        xScale={xScale}
+        yScale={yScale}
+        xScaleDataKey="month"
+        yScaleDataKey="price"
+        maxYValue={50}
+        width={size}
+        height={size}
+        data={prices}
+        getBarLabel={(point, xScaleDataKey, yScaleDataKey) =>
+          `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`
+        }
+        BarComponent={BpkBarchartBar}
+        padding={0}
+        onBarFocus={() => null}
+      />,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
   it('should render correctly with "onBarTouch" prop', () => {
     const tree = shallow(
       <BpkBarchartBars

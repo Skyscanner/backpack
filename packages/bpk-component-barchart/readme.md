@@ -58,6 +58,7 @@ export default () => (
 | yAxisNumTicks                           | number                                | false    | null             |
 | [onBarClick](#onbarclick)               | func                                  | false    | null             |
 | [onBarHover](#onbarhover)               | func                                  | false    | null             |
+| [onBarFocus](#onbarfocus)               | func                                  | false    | null             |
 | [onBarTouch](#onbartouch)               | func                                  | false    | null             |
 | [getBarLabel](#getbarlabel)             | func                                  | false    | See prop details |
 | [getBarSelection](#getbarselection)     | func                                  | false    | See prop details |
@@ -139,6 +140,16 @@ const onBarClick = (event, {
 ```javascript
 const onBarHover = (event, {
   point: <Object>, // The `data` array object from the bar hovered
+}) => {
+  ...
+}
+```
+
+#### onBarFocus
+
+```javascript
+const onBarFocus = (event, {
+  point: <Object>, // The `data` array object from the bar focused
 }) => {
   ...
 }

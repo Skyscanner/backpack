@@ -110,6 +110,7 @@ class BpkBarchart extends Component {
       yAxisNumTicks,
       onBarClick,
       onBarHover,
+      onBarFocus,
       onBarTouch,
       getBarLabel,
       getBarSelection,
@@ -209,6 +210,7 @@ class BpkBarchart extends Component {
               outerPadding={showGridlines ? undefined : 0}
               onBarClick={onBarClick}
               onBarHover={onBarHover}
+              onBarFocus={onBarFocus}
               onBarTouch={onBarTouch}
               getBarLabel={getBarLabel}
               getBarSelection={getBarSelection}
@@ -242,6 +244,7 @@ BpkBarchart.propTypes = {
   yAxisNumTicks: PropTypes.number,
   onBarClick: PropTypes.func,
   onBarHover: PropTypes.func,
+  onBarFocus: PropTypes.func,
   onBarTouch: PropTypes.func,
   getBarLabel: PropTypes.func,
   getBarSelection: PropTypes.func,
@@ -263,6 +266,7 @@ BpkBarchart.defaultProps = {
   yAxisNumTicks: null,
   onBarClick: null,
   onBarHover: null,
+  onBarFocus: null,
   onBarTouch: null,
   getBarLabel: (point, xScaleDataKey, yScaleDataKey) =>
     `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
