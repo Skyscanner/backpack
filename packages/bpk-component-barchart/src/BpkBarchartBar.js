@@ -100,7 +100,8 @@ const BpkBarchartBar = props => {
         width={width}
         height={height}
         onClick={onClick || undefined}
-        onHover={onHover || undefined}
+        onMouseOver={onHover || undefined}
+        onFocus={onHover || undefined}
         onTouch={onTouch || undefined}
         onKeyDown={onClick ? handleKeyboardEvent(onClick) : undefined}
         tabIndex={onClick ? 0 : undefined}
