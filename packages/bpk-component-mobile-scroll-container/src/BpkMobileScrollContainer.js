@@ -28,7 +28,7 @@ import STYLES from './bpk-mobile-scroll-container.scss';
 const getClassName = cssModules(STYLES);
 
 const computeScrollBarAwareHeight = (
-  scrollerEl: ?HTMLElement,
+  scrollerEl: HTMLElement,
   innerEl: ?HTMLElement,
 ): ?string => {
   if (!(scrollerEl && innerEl)) {
@@ -65,7 +65,7 @@ type Props = {
   children: Node,
   innerContainerTagName: string,
   className: ?string,
-  style: ?Object,
+  style: ?Object | Array<Object>,
 };
 
 type State = {
@@ -74,8 +74,10 @@ type State = {
 };
 
 class BpkMobileScrollContainer extends Component<Props, State> {
+  curDown: ?boolean;
+  curXPos: ?Number;
   innerEl: ?HTMLElement;
-  scrollerEl: ?HTMLElement;
+  scrollerEl: HTMLElement;
 
   static propTypes = {
     children: PropTypes.node.isRequired,
@@ -102,12 +104,36 @@ class BpkMobileScrollContainer extends Component<Props, State> {
   componentDidMount() {
     this.setScrollBarAwareHeight();
     this.setScrollIndicatorClassName();
-    window.addEventListener('resize', this.onWindowResize);
+    this.scrollerEl.addEventListener('resize', this.onWindowResize);
+    this.scrollerEl.addEventListener('mousemove', this.onMouseMove);
+    this.scrollerEl.addEventListener('mousedown', this.onMouseDown);
+    this.scrollerEl.addEventListener('mouseup', this.onMouseUp);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.onWindowResize);
+    this.scrollerEl.removeEventListener('resize', this.onWindowResize);
+    this.scrollerEl.removeEventListener('mousemove', this.onMouseMove);
+    this.scrollerEl.removeEventListener('mousedown', this.onMouseDown);
+    this.scrollerEl.removeEventListener('mouseup', this.onMouseUp);
   }
+
+  onMouseMove = (e: Object) => {
+    if (this.curDown) {
+      this.scrollerEl.scrollLeft =
+        this.scrollerEl.scrollLeft + (+this.curXPos - e.offsetX);
+    }
+  };
+
+  onMouseUp = () => {
+    this.curDown = false;
+    this.scrollerEl.style.cursor = '';
+  };
+
+  onMouseDown = (e: Object) => {
+    this.curXPos = e.offsetX;
+    this.curDown = true;
+    this.scrollerEl.style.cursor = '-webkit-grabbing';
+  };
 
   onWindowResize = debounce(() => {
     this.setScrollBarAwareHeight();
