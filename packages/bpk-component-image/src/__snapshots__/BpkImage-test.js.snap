@@ -56,6 +56,15 @@ exports[`BpkImage should accept userland styling 1`] = `
 </div>
 `;
 
+exports[`BpkImage should call onLoadCallback 1`] = `
+<img
+  alt="image description"
+  className="bpk-image__img"
+  onLoad={[Function]}
+  src="./path/to/image.jpg"
+/>
+`;
+
 exports[`BpkImage should have !inView behavior 1`] = `
 <div
   className={null}
@@ -182,6 +191,15 @@ exports[`BpkImage should have loading behavior 1`] = `
     />
   </div>
 </div>
+`;
+
+exports[`BpkImage should load even without onLoadCallback 1`] = `
+<img
+  alt="image description"
+  className="bpk-image__img"
+  onLoad={[Function]}
+  src="./path/to/image.jpg"
+/>
 `;
 
 exports[`BpkImage should render correctly 1`] = `
