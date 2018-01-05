@@ -37,8 +37,9 @@ export type CommonProps = {
   bannerClassName: ?string,
 };
 
-export type OnExpandToggleHandler = ?() => void;
+export type OnExpandToggleHandler = ?(boolean) => void;
 export type OnDismissHandler = ?() => void;
+export type OnHideHandler = ?() => void;
 
 export const COMMON_PROP_TYPES = {
   type: PropTypes.oneOf([

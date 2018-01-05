@@ -25,7 +25,6 @@ import { fontWeightBold } from 'bpk-tokens/tokens/base.es6';
 import BpkBannerAlert, {
   ALERT_TYPES,
   withBannerAlertState,
-  CONFIGURATION,
   BpkBannerAlertDismissable,
   BpkBannerAlertExpandable,
 } from './index';
@@ -38,7 +37,12 @@ porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.`;
 
-const BannerAlertState = withBannerAlertState(BpkBannerAlert);
+const BpkBannerAlertDismissableState = withBannerAlertState(
+  BpkBannerAlertDismissable,
+);
+const BpkBannerAlertExpandableState = withBannerAlertState(
+  BpkBannerAlertExpandable,
+);
 
 storiesOf('bpk-component-banner-alert', module)
   .add('Neutral', () => (
@@ -88,31 +92,28 @@ storiesOf('bpk-component-banner-alert', module)
     <BpkBannerAlert message={message} type={ALERT_TYPES.ERROR} />
   ))
   .add('Success (dismissable behaviour)', () => (
-    <BannerAlertState
-      configuration={CONFIGURATION.DISMISSABLE}
+    <BpkBannerAlertDismissableState
       dismissButtonLabel="Dismiss"
       message={message}
       type={ALERT_TYPES.SUCCESS}
     />
   ))
   .add('Success (expandable behaviour)', () => (
-    <BannerAlertState
-      configuration={CONFIGURATION.EXPANDABLE}
+    <BpkBannerAlertExpandableState
       message={message}
       type={ALERT_TYPES.SUCCESS}
       toggleButtonLabel="View more"
     >
       {longMessage}
-    </BannerAlertState>
+    </BpkBannerAlertExpandableState>
   ))
   .add('Success (automatically dismissed after 5 seconds)', () => (
-    <BannerAlertState
-      configuration={CONFIGURATION.EXPANDABLE}
+    <BpkBannerAlertExpandableState
       hideAfter={5}
       message={message}
       type={ALERT_TYPES.SUCCESS}
       toggleButtonLabel="View more"
     >
       {longMessage}
-    </BannerAlertState>
+    </BpkBannerAlertExpandableState>
   ));

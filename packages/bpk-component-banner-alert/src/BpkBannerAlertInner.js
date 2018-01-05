@@ -117,18 +117,6 @@ type Props = {
 };
 
 const BpkBannerAlertInner = (props: Props) => {
-  const onBannerExpandToggle = () => {
-    if (props.onExpandToggle) {
-      props.onExpandToggle();
-    }
-  };
-
-  const onBannerDismiss = () => {
-    if (props.onDismiss) {
-      props.onDismiss();
-    }
-  };
-
   const {
     animateOnEnter,
     animateOnLeave,
@@ -145,6 +133,19 @@ const BpkBannerAlertInner = (props: Props) => {
     onExpandToggle,
     ...rest
   } = props;
+
+  const onBannerExpandToggle = () => {
+    if (props.onExpandToggle) {
+      props.onExpandToggle(!expanded);
+    }
+  };
+
+  const onBannerDismiss = () => {
+    if (props.onDismiss) {
+      props.onDismiss();
+    }
+  };
+
   const isExpandable = configuration === CONFIGURATION.EXPANDABLE;
   const dismissable = configuration === CONFIGURATION.DISMISSABLE;
   const showChildren = isExpandable && expanded;

@@ -22,10 +22,16 @@ import PropTypes from 'prop-types';
 
 import { wrapDisplayName } from 'bpk-react-utils';
 
+import {
+  type OnDismissHandler,
+  type OnExpandToggleHandler,
+} from './common-types';
+
 const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
   type Props = {
-    onDismiss: ?() => void,
-    onExpandToggle: ?(boolean) => void,
+    onDismiss: OnDismissHandler,
+    onExpandToggle: OnExpandToggleHandler,
+    onHide: ?() => void,
     expanded: boolean,
     show: boolean,
     hideAfter: ?number,
@@ -44,6 +50,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
     static propTypes = {
       onDismiss: PropTypes.func,
       onExpandToggle: PropTypes.func,
+      onHide: PropTypes.func,
       expanded: PropTypes.bool,
       show: PropTypes.bool,
       hideAfter: PropTypes.number,
@@ -54,6 +61,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
     static defaultProps = {
       onDismiss: null,
       onExpandToggle: null,
+      onHide: null,
       expanded: false,
       show: true,
       hideAfter: null,
@@ -77,7 +85,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
 
       if (hideAfter && hideAfter > 0) {
         this.hideIntervalId = setTimeout(() => {
-          this.onDismiss();
+          this.onHide();
         }, hideAfter * 1000);
       }
     }
@@ -105,6 +113,14 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
       }
     };
 
+    onHide = () => {
+      this.setState({ show: false });
+
+      if (this.props.onHide) {
+        this.props.onHide();
+      }
+    };
+
     render() {
       const {
         onDismiss,
@@ -114,6 +130,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
         hideAfter,
         animateOnLeave,
         children,
+        onHide,
         ...rest
       } = this.props;
 
