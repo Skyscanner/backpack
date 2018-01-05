@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+const [path, ...command] = process.argv.slice(2);
+
+const { exec } = require('child_process');
+
+const cmd = exec(`${command.join(' ')}`, { cwd: path });
+
+cmd.stdout.on('data', console.log);
+cmd.stderr.on('data', console.error);
+cmd.on('close', process.exit);
