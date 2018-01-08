@@ -18,11 +18,13 @@
 #
 set -e
 
-cat NPM_OWNERS
+NPM_OWNERS="$( node scripts/npm/get-owners.js )"
+
+echo "$NPM_OWNERS"
 read -p "Do you want to add the above owners to all packages (y/n)? " confirm
 
 if [ "$confirm" != "y" ]; then
-  echo "Ok bye."
+  echo "Ok bye. 💁"
   exit 0
 fi
 
@@ -36,6 +38,6 @@ do
       npm owner add $username $package
     fi
   done
-done < NPM_OWNERS
+done <<< "$NPM_OWNERS"
 
-echo "Success."
+echo "Success. 🎉"

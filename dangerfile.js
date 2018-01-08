@@ -28,12 +28,22 @@ import {
   propKeys as iosPropKeys,
 } from './packages/bpk-tokens/tokens/base.raw.ios.json';
 
+import * as meta from './meta.json';
+
+const BACKPACK_SQUAD_MEMBERS = meta.maintainers.map(
+  maintainer => maintainer.github,
+);
+const author = danger.github.pr.user.login;
+const isPrExternal = !BACKPACK_SQUAD_MEMBERS.includes(author);
+
 const createdFiles = danger.git.created_files;
 const modifiedFiles = danger.git.modified_files;
 const fileChanges = [...modifiedFiles, ...createdFiles];
 
-// Always be nice.
-message('Thanks for the PR 🎉.');
+// Be nice to our neighbours.
+if (isPrExternal) {
+  message('Thanks for the PR 🎉.');
+}
 
 // Ensure new web components are extensible by consumers.
 const webComponentIntroduced = createdFiles.some(filePath =>

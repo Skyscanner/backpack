@@ -22,7 +22,7 @@ read -p "Username: " username
 read -p "Are you sure you want to remove $username from all packages (y/n)? " confirm
 
 if [ "$confirm" != "y" ]; then
-  echo "Ok bye."
+  echo "Ok bye. 💁"
   exit 0
 fi
 
@@ -34,6 +34,4 @@ for f in packages/*; do
   fi
 done
 
-sed -i '' "/$username/d" NPM_OWNERS
-
-echo "Success."
+echo "Removed '${username}' from all packages. Remember to remove them from meta.json.";
