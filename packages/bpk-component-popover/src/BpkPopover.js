@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { BpkButtonLink } from 'bpk-component-link';
 import BpkCloseButton from 'bpk-component-close-button';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
@@ -40,7 +42,19 @@ const bindEventSource = (source, callback) => event => {
   callback(event, { source });
 };
 
-const BpkPopover = props => {
+export type Props = {
+  id: string,
+  onClose: Function,
+  label: string,
+  closeButtonText: string,
+  children: Node,
+  className: ?string,
+  padded: boolean,
+  labelAsTitle: boolean,
+  closeButtonIcon: boolean,
+};
+
+const BpkPopover = (props: Props) => {
   const {
     id,
     onClose,

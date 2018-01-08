@@ -144,7 +144,7 @@ class BpkTooltipPortal extends Component {
 }
 
 BpkTooltipPortal.propTypes = {
-  target: PropTypes.element.isRequired,
+  target: PropTypes.node.isRequired,
   children: PropTypes.node.isRequired,
   hideOnTouchDevices: PropTypes.bool,
   padded: PropTypes.bool,

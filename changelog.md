@@ -6,6 +6,14 @@
 - bpk-component-popover:
  - On mobile screen sizes, popovers now have a margin to prevent them from filling the entire width of their container.
 
+**Fixed:**
+- bpk-component-popover:
+- bpk-react-utils:
+  - `target` prop type is now correctly `oneOf([function, node])` instead of `oneOf([function, element])`
+
+- bpk-component-tooltip:
+  - `target` prop type is now correct;y `node` instead of `element`
+
 ## 2018-01-04 - Fixing BpkBarChart events for bar hovering and focus
 
 **Added:**
