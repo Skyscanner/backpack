@@ -57,6 +57,7 @@
       @include bpk-themeable-property(color, --bpk-horizontal-nav-link-selected-color, $bpk-horizontal-nav-link-selected-color);
 
       @include bpk-hover {
+        @include bpk-themeable-property(color, --bpk-horizontal-nav-link-selected-color, $bpk-horizontal-nav-link-selected-color);
         @include bpk-border-bottom-xl($bpk-horizontal-nav-bar-selected-color);
         @include bpk-border-bottom-xl(var(--bpk-horizontal-nav-bar-selected-color, $bpk-horizontal-nav-bar-selected-color));
       }

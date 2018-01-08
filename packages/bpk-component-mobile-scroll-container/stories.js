@@ -72,6 +72,6 @@ storiesOf('bpk-component-mobile-scroll-container', module)
   ))
   .add('Bar chart', () => (
     <BpkButton onClick={linkTo('bpk-component-barchart', 'Default')}>
-      See horizontal nav example
+      See bar chart example
     </BpkButton>
   ));
