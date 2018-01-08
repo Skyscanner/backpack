@@ -28,7 +28,7 @@ import STYLES from './bpk-mobile-scroll-container.scss';
 const getClassName = cssModules(STYLES);
 
 const computeScrollBarAwareHeight = (
-  scrollerEl: ?HTMLElement,
+  scrollerEl: HTMLElement,
   innerEl: ?HTMLElement,
 ): ?string => {
   if (!(scrollerEl && innerEl)) {
@@ -65,17 +65,19 @@ type Props = {
   children: Node,
   innerContainerTagName: string,
   className: ?string,
-  style: ?Object,
+  style: ?Object | Array<Object>,
 };
 
 type State = {
+  curDown: ?boolean,
   computedHeight: ?string,
   scrollIndicatorClassName: ?string,
 };
 
 class BpkMobileScrollContainer extends Component<Props, State> {
+  curXPos: ?Number;
   innerEl: ?HTMLElement;
-  scrollerEl: ?HTMLElement;
+  scrollerEl: HTMLElement;
 
   static propTypes = {
     children: PropTypes.node.isRequired,
@@ -94,6 +96,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     super();
 
     this.state = {
+      curDown: false,
       computedHeight: 'auto',
       scrollIndicatorClassName: null,
     };
@@ -102,11 +105,19 @@ class BpkMobileScrollContainer extends Component<Props, State> {
   componentDidMount() {
     this.setScrollBarAwareHeight();
     this.setScrollIndicatorClassName();
-    window.addEventListener('resize', this.onWindowResize);
+    this.scrollerEl.addEventListener('resize', this.onWindowResize);
+    this.scrollerEl.addEventListener('mousemove', this.performDrag);
+    this.scrollerEl.addEventListener('mousedown', this.enableDragging);
+    this.scrollerEl.addEventListener('mouseup', this.disableDragging);
+    this.scrollerEl.addEventListener('mouseleave', this.disableDragging);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.onWindowResize);
+    this.scrollerEl.removeEventListener('resize', this.onWindowResize);
+    this.scrollerEl.removeEventListener('mousemove', this.performDrag);
+    this.scrollerEl.removeEventListener('mousedown', this.enableDragging);
+    this.scrollerEl.removeEventListener('mouseup', this.disableDragging);
+    this.scrollerEl.removeEventListener('mouseleave', this.disableDragging);
   }
 
   onWindowResize = debounce(() => {
@@ -139,6 +150,22 @@ class BpkMobileScrollContainer extends Component<Props, State> {
     this.setState(() => ({ computedHeight }));
   };
 
+  enableDragging = (e: Object) => {
+    this.curXPos = e.offsetX;
+    this.setState({ curDown: true });
+  };
+
+  disableDragging = () => {
+    this.setState({ curDown: false });
+  };
+
+  performDrag = (e: Object) => {
+    if (this.state.curDown) {
+      this.scrollerEl.scrollLeft =
+        this.scrollerEl.scrollLeft + (+this.curXPos - e.offsetX);
+    }
+  };
+
   render() {
     const classNames = [getClassName('bpk-mobile-scroll-container')];
     const {
@@ -156,6 +183,15 @@ class BpkMobileScrollContainer extends Component<Props, State> {
       classNames.push(this.state.scrollIndicatorClassName);
     }
 
+    const scrollerClassNames = [
+      getClassName('bpk-mobile-scroll-container__scroller'),
+    ];
+    if (this.state.curDown) {
+      scrollerClassNames.push(
+        getClassName('bpk-mobile-scroll-container__scroller--dragging'),
+      );
+    }
+
     const InnerContainer = innerContainerTagName;
 
     return (
@@ -169,7 +205,7 @@ class BpkMobileScrollContainer extends Component<Props, State> {
             this.scrollerEl = el;
           }}
           onScroll={this.setScrollIndicatorClassName}
-          className={getClassName('bpk-mobile-scroll-container__scroller')}
+          className={scrollerClassNames.join(' ')}
         >
           <InnerContainer
             ref={el => {

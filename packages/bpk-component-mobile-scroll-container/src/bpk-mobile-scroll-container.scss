@@ -64,6 +64,10 @@
     &::-webkit-scrollbar {
       display: none;
     }
+
+    &--dragging {
+      cursor: grabbing;
+    }
   }
 
   &__inner {

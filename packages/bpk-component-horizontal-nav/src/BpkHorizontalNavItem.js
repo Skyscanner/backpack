@@ -55,7 +55,7 @@ const BpkHorizontalNavItem = props => {
     <button
       type="button"
       className={innerClassNames.join(' ')}
-      disabled={selected}
+      aria-disabled={selected}
       {...rest}
     >
       {children}
