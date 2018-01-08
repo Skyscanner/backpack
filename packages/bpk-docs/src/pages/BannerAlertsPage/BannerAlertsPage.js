@@ -24,8 +24,9 @@ import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkAnimateHeight from 'bpk-animate-height';
 import BpkBannerAlert, {
   ALERT_TYPES,
+  BpkBannerAlertDismissable,
+  BpkBannerAlertExpandable,
   withBannerAlertState,
-  CONFIGURATION,
 } from 'bpk-component-banner-alert';
 import BpkCheckBox from 'bpk-component-checkbox';
 import BpkButton from 'bpk-component-button';
@@ -38,10 +39,26 @@ import STYLES from './bpk-banner-alerts-page.scss';
 const getClassName = cssModules(STYLES);
 const componentClassName = getClassName('bpk-banner-alerts-page__component');
 
-const BannerAlert = withDefaultProps(withBannerAlertState(BpkBannerAlert), {
+const BannerAlert = withDefaultProps(BpkBannerAlert, {
   className: componentClassName,
   toggleButtonLabel: 'See more',
 });
+
+const BannerAlertExpandable = withDefaultProps(
+  withBannerAlertState(BpkBannerAlertExpandable),
+  {
+    className: componentClassName,
+    toggleButtonLabel: 'See more',
+  },
+);
+
+const BannerAlertDismissable = withDefaultProps(
+  withBannerAlertState(BpkBannerAlertExpandable),
+  {
+    className: componentClassName,
+    dismissButtonLabel: 'Dismiss',
+  },
+);
 
 const longMessage = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id
 blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis
@@ -109,62 +126,6 @@ class ToggleShowBanner extends Component<
           animateOnLeave
         />
       </div>
-    );
-  }
-}
-
-type Props = {
-  message: ?string,
-  type: string,
-};
-
-type State = {
-  show: boolean,
-};
-
-// eslint-disable-next-line react/no-multi-comp
-class BpkBannerDismissable extends Component<Props, State> {
-  setDismissed: Function;
-
-  static propTypes = {
-    type: PropTypes.string.isRequired,
-    message: PropTypes.string,
-  };
-
-  static defaultProps = {
-    message: null,
-  };
-
-  constructor() {
-    super();
-
-    this.setDismissed = this.setDismissed.bind(this);
-
-    this.state = {
-      show: true,
-    };
-  }
-
-  setDismissed() {
-    this.setState({
-      show: false,
-    });
-  }
-
-  render() {
-    const { message, type, ...rest } = this.props;
-
-    return (
-      <BpkBannerAlert
-        bannerClassName={componentClassName}
-        message={message}
-        type={type}
-        dismissable
-        onDismiss={this.setDismissed}
-        show={this.state.show}
-        dismissButtonLabel="Dismiss"
-        {...rest}
-      />
     );
   }
 }
@@ -241,9 +202,8 @@ class BpkBannerAlertDismissDemo extends Component<any, DismissDemoState> {
     return (
       <div className={getClassName('bpk-banner-alerts-page__demo')}>
         {this.state.bannerAlerts.map((b, i) => (
-          <BpkBannerAlert
+          <BpkBannerAlertDismissable
             bannerClassName={componentClassName}
-            configuration={CONFIGURATION.DISMISSABLE}
             dismissButtonLabel="Dismiss"
             key={i.toString()}
             message={b.message}
@@ -270,7 +230,6 @@ class BpkBannerAlertDismissDemo extends Component<any, DismissDemoState> {
 }
 
 type FadeDemoProps = {
-  configuration: string,
   type: string,
   message: ?string,
 };
@@ -282,7 +241,6 @@ class BpkBannerAlertFadeDemo extends Component<FadeDemoProps, FadeDemoState> {
   addBannerAlert: Function;
 
   static propTypes = {
-    configuration: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     message: PropTypes.string,
   };
@@ -311,14 +269,12 @@ class BpkBannerAlertFadeDemo extends Component<FadeDemoProps, FadeDemoState> {
       <div>
         <BpkButton onClick={this.addBannerAlert}>Add banner alert!</BpkButton>
         {[...Array(this.state.bannerAlertCount)].map((e, i) => (
-          <BpkBannerDismissable
-            configuration={this.props.configuration}
+          <BannerAlertDismissable
             bannerClassName={componentClassName}
             key={i.toString()}
             message={this.props.message}
             type={this.props.type}
             animateOnEnter
-            dismissable
             dismissButtonLabel="Dismiss"
           />
         ))}
@@ -355,34 +311,30 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <BannerAlert
+      <BannerAlertExpandable
         message="neutral alert with more information."
         type={ALERT_TYPES.NEUTRAL}
-        configuration={CONFIGURATION.EXPANDABLE}
       >
         {longMessage}
-      </BannerAlert>,
-      <BannerAlert
+      </BannerAlertExpandable>,
+      <BannerAlertExpandable
         message="Successful alert with more information."
         type={ALERT_TYPES.SUCCESS}
-        configuration={CONFIGURATION.EXPANDABLE}
       >
         {longMessage}
-      </BannerAlert>,
-      <BannerAlert
+      </BannerAlertExpandable>,
+      <BannerAlertExpandable
         message="Warn alert with more information."
         type={ALERT_TYPES.WARN}
-        configuration={CONFIGURATION.EXPANDABLE}
       >
         {longMessage}
-      </BannerAlert>,
-      <BannerAlert
+      </BannerAlertExpandable>,
+      <BannerAlertExpandable
         message="Error alert with more information."
         type={ALERT_TYPES.ERROR}
-        configuration={CONFIGURATION.EXPANDABLE}
       >
         {longMessage}
-      </BannerAlert>,
+      </BannerAlertExpandable>,
     ],
   },
   {
@@ -414,7 +366,6 @@ const components = [
         bannerClassName={componentClassName}
         message="Neutral alert with dismiss option."
         type={ALERT_TYPES.NEUTRAL}
-        configuration={CONFIGURATION.DISMISSABLE}
         dismissButtonLabel="Dismiss"
       />,
     ],
