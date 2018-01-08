@@ -45,7 +45,7 @@
     "test:native": "(cd ./native && npm test)",
     "ios": "(cd ./native && npm run ios)",
     "android": "(cd ./native && npm run android)",
-    "check-owners": "npm whoami && grep -E $(npm whoami) NPM_OWNERS && node scripts/npm/check-owners.js",
+    "check-owners": "npm whoami && ( node scripts/npm/get-owners.js | grep -E $(npm whoami) ) && node scripts/npm/check-owners.js",
     "publish": "npm run check-owners && npm run build && git pull --rebase && npm run test && lerna publish",
     "danger": "danger",
     "prettier": "prettier --config .prettierrc --write \"**/*.js\""

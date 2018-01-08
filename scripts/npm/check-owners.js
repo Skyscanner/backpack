@@ -26,13 +26,11 @@ const http = require('http');
 
 const readdir = util.promisify(fs.readdir);
 
+const meta = require('../../meta.json');
+
 let failures = false;
 
-const owners = fs
-  .readFileSync('NPM_OWNERS', { encoding: 'utf-8' })
-  .split('\n')
-  .filter(s => s.trim() !== '')
-  .sort();
+const owners = meta.maintainers.map(maintainer => maintainer.npm).sort();
 
 const getPackageMaintainers = pkg =>
   new Promise((resolve, reject) => {

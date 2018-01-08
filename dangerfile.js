@@ -28,16 +28,11 @@ import {
   propKeys as iosPropKeys,
 } from './packages/bpk-tokens/tokens/base.raw.ios.json';
 
-const BACKPACK_SQUAD_MEMBERS = [
-  'georgegillams',
-  'jamesf3rguson',
-  'k0nserv',
-  'matteo-hertel',
-  'matthewdavidson',
-  'shaundon',
-  // TODO Will needs a GitHub account.
-  // TODO Use the API for this. It requires auth though so this is ok for now.
-];
+import * as meta from './meta.json';
+
+const BACKPACK_SQUAD_MEMBERS = meta.maintainers.map(
+  maintainer => maintainer.github,
+);
 const author = danger.github.pr.user.login;
 const isPrExternal = !BACKPACK_SQUAD_MEMBERS.includes(author);
 
