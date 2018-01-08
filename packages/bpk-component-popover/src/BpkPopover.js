@@ -49,7 +49,7 @@ export type Props = {
     props: {
       source: $Values<typeof EVENT_SOURCES>,
     },
-  ) => void,
+  ) => mixed,
   label: string,
   closeButtonText: string,
   children: Node,

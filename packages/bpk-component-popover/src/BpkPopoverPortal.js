@@ -46,9 +46,8 @@ const onOpen = (popoverElement, targetElement) => {
 
 export type Props = {
   ...$Exact<PopoverProps>,
-  target: Function | Node,
+  target: (() => HTMLElement) | Node,
   isOpen: boolean,
-  onClose: Function,
   tetherOptions: Object,
   portalStyle: ?Object,
   portalClassName: ?string,

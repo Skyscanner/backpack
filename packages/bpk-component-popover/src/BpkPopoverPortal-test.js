@@ -61,7 +61,7 @@ describe('BpkPopoverPortal', () => {
       .create(
         <BpkPopoverPortal
           id="my-popover"
-          target={() => 'test'}
+          target={() => document.createElement('button')}
           isOpen={false}
           onClose={() => null}
           label="My popover"
