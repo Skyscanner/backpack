@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
 import Shallow from 'react-test-renderer/shallow';
 import { mount } from 'enzyme';
@@ -31,9 +33,8 @@ jest.mock('a11y-focus-scope', () => ({
   unscopeFocus: jest.fn(),
 }));
 
-/* eslint-disable import/first */
+// eslint-disable-next-line import/first
 import BpkPopoverPortal from './BpkPopoverPortal';
-/* eslint-enable */
 
 describe('BpkPopoverPortal', () => {
   it('should render correctly', () => {
@@ -60,7 +61,7 @@ describe('BpkPopoverPortal', () => {
       .create(
         <BpkPopoverPortal
           id="my-popover"
-          target={() => 'test'}
+          target={() => document.createElement('button')}
           isOpen={false}
           onClose={() => null}
           label="My popover"
@@ -99,7 +100,7 @@ describe('BpkPopoverPortal', () => {
 
     it('should render correctly with portalStyle added to portal component', () => {
       const shallowRenderer = Shallow.createRenderer();
-      const customStyle = { color: 'red' };
+      const customStyle: ?Object = { color: 'red' };
       const result = shallowRenderer.render(
         <BpkPopoverPortal
           id="my-popover"

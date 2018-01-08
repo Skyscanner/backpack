@@ -16,15 +16,17 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, type Node } from 'react';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
 import { storiesOf } from '@storybook/react';
 import BpkText from 'bpk-component-text';
 import BpkContentContainer from 'bpk-component-content-container';
 
-import BpkPopover from './index';
+import BpkPopover, { type Props as PopoverProps } from './index';
 
 import STYLES from './stories.scss';
 
@@ -36,44 +38,65 @@ const Paragraph = withDefaultProps(BpkText, {
   className: getClassName('bpk-popover-paragraph'),
 });
 
-class PopoverContainer extends Component {
+type Props = {
+  ...$Diff<PopoverProps, { children: Node }>,
+  id: string,
+  changeProps: boolean,
+  targetFunction: ?() => ?HTMLElement,
+};
+
+type State = {
+  isOpen: boolean,
+  showLongContent: boolean,
+  changedTarget: ?() => ?HTMLElement,
+};
+
+class PopoverContainer extends Component<Props, State> {
+  static propTypes = {
+    id: PropTypes.string.isRequired,
+    changeProps: PropTypes.bool,
+    targetFunction: PropTypes.func,
+  };
+
+  static defaultProps = {
+    changeProps: false,
+    targetFunction: null,
+  };
+
   constructor() {
     super();
 
     this.state = {
       isOpen: false,
       showLongContent: false,
+      changedTarget: null,
     };
-
-    this.openPopover = this.openPopover.bind(this);
-    this.closePopover = this.closePopover.bind(this);
-    this.changeContent = this.changeContent.bind(this);
-    this.changeTarget = this.changeTarget.bind(this);
   }
 
-  openPopover() {
+  openPopover = () => {
     this.setState({
       isOpen: true,
     });
-  }
+  };
 
-  closePopover() {
+  closePopover = () => {
     this.setState({
       isOpen: false,
     });
-  }
+  };
 
-  changeContent() {
+  changeContent = () => {
     this.setState({
       showLongContent: true,
     });
-  }
+  };
 
-  changeTarget() {
-    this.setState({
-      changedTarget: () => document.getElementById('reposition-alt-target'),
-    });
-  }
+  changeTarget = () => {
+    const changedTarget = (): ?HTMLElement =>
+      document.getElementById('reposition-alt-target');
+
+    this.setState({ changedTarget });
+  };
 
   render() {
     const { targetFunction, changeProps, id, ...rest } = this.props;
@@ -88,6 +111,10 @@ class PopoverContainer extends Component {
       target = openButton;
       openButton = null;
     }
+
+    const renderTarget: ?Function = (): ?HTMLElement =>
+      document.getElementById('popover-container');
+
     return (
       <div id="popover-container">
         {openButton}
@@ -97,7 +124,7 @@ class PopoverContainer extends Component {
           isOpen={this.state.isOpen}
           label="My popover"
           onClose={this.closePopover}
-          renderTarget={() => document.getElementById('popover-container')}
+          renderTarget={renderTarget}
           target={target}
           {...rest}
         >
@@ -124,17 +151,6 @@ class PopoverContainer extends Component {
     );
   }
 }
-
-PopoverContainer.propTypes = {
-  id: PropTypes.string.isRequired,
-  changeProps: PropTypes.bool,
-  targetFunction: PropTypes.func,
-};
-
-PopoverContainer.defaultProps = {
-  changeProps: false,
-  targetFunction: null,
-};
 
 const Spacer = props => (
   <div className={getClassName('bpk-popover-spacer')} {...props} />

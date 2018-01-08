@@ -63,16 +63,16 @@ class MyComponent extends Component {
 
 ### Props
 
-| Property     | PropType               | Required | Default Value |
-| ------------ | ---------------------- | -------- | ------------- |
-| children     | node                   | true     | -             |
-| isOpen       | bool                   | true     | -             |
-| beforeClose  | func                   | false    | null          |
-| onClose      | func                   | false    | noop          |
-| onOpen       | func                   | false    | noop          |
-| onRender     | func                   | false    | noop          |
-| renderTarget | func                   | false    | null          |
-| target       | oneOf([node, element]) | false    | null          |
+| Property     | PropType                | Required | Default Value |
+| ------------ | ----------------------- | -------- | ------------- |
+| children     | node                    | true     | -             |
+| isOpen       | bool                    | true     | -             |
+| beforeClose  | func                    | false    | null          |
+| onClose      | func                    | false    | noop          |
+| onOpen       | func                    | false    | noop          |
+| onRender     | func                    | false    | noop          |
+| renderTarget | func                    | false    | null          |
+| target       | oneOf([function, node]) | false    | null          |
 
 ## cssModules.js
 

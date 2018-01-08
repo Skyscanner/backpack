@@ -16,18 +16,20 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import focusStore from 'a11y-focus-store';
 import focusScope from 'a11y-focus-scope';
 import { Portal, cssModules } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, type Node } from 'react';
 import Tether, {
   getArrowPositionCallback,
   applyRTLTransforms,
 } from 'bpk-tether';
 
 import STYLES from './bpk-popover.scss';
-import BpkPopover from './BpkPopover';
+import BpkPopover, { type Props as PopoverProps } from './BpkPopover';
 import { ARROW_ID } from './constants';
 
 const getClassName = cssModules(STYLES);
@@ -42,21 +44,63 @@ const onOpen = (popoverElement, targetElement) => {
   }
 };
 
-class BpkPopoverPortal extends Component {
+export type Props = {
+  ...$Exact<PopoverProps>,
+  target: (() => HTMLElement) | Node,
+  isOpen: boolean,
+  tetherOptions: Object,
+  portalStyle: ?Object,
+  portalClassName: ?string,
+  renderTarget: ?() => HTMLElement,
+};
+
+class BpkPopoverPortal extends Component<Props> {
+  tether: ?Tether;
+
+  static propTypes = {
+    ...BpkPopover.propTypes,
+    target: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
+    isOpen: PropTypes.bool.isRequired,
+    onClose: PropTypes.func.isRequired,
+    tetherOptions: PropTypes.shape({
+      attachment: PropTypes.string,
+      targetAttachment: PropTypes.string,
+      offset: PropTypes.string,
+      constraints: PropTypes.array,
+    }),
+    portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    portalClassName: PropTypes.string,
+    renderTarget: PropTypes.func,
+  };
+
+  static defaultProps = {
+    ...BpkPopover.defaultProps,
+    tetherOptions: {
+      attachment: 'top center',
+      constraints: [
+        {
+          to: 'window',
+          attachment: 'together',
+          pin: true,
+        },
+      ],
+    },
+    portalStyle: null,
+    portalClassName: null,
+    renderTarget: null,
+  };
+
   constructor() {
     super();
 
     this.tether = null;
-
-    this.onRender = this.onRender.bind(this);
-    this.beforeClose = this.beforeClose.bind(this);
   }
 
-  onRender(popoverElement, targetElement) {
+  onRender = (popoverElement: HTMLElement, targetElement: ?HTMLElement) => {
     this.position(popoverElement, targetElement);
-  }
+  };
 
-  beforeClose(done) {
+  beforeClose = (done: () => void) => {
     if (this.tether) {
       this.tether.destroy();
       this.tether = null;
@@ -66,9 +110,9 @@ class BpkPopoverPortal extends Component {
     focusStore.restoreFocus();
 
     done();
-  }
+  };
 
-  position(popoverElement, targetElement) {
+  position(popoverElement: HTMLElement, targetElement: ?HTMLElement) {
     if (!targetElement) {
       return;
     }
@@ -94,7 +138,9 @@ class BpkPopoverPortal extends Component {
       this.tether.setOptions(options);
     }
 
-    this.tether.position();
+    if (this.tether) {
+      this.tether.position();
+    }
   }
 
   render() {
@@ -105,6 +151,7 @@ class BpkPopoverPortal extends Component {
       portalStyle,
       portalClassName,
       renderTarget,
+      tetherOptions,
       ...rest
     } = this.props;
 
@@ -113,9 +160,6 @@ class BpkPopoverPortal extends Component {
     if (portalClassName) {
       classNames.push(portalClassName);
     }
-
-    delete rest.onClose;
-    delete rest.tetherOptions;
 
     return (
       <Portal
@@ -134,36 +178,5 @@ class BpkPopoverPortal extends Component {
     );
   }
 }
-
-BpkPopoverPortal.propTypes = {
-  target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]).isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  tetherOptions: PropTypes.shape({
-    attachment: PropTypes.string,
-    targetAttachment: PropTypes.string,
-    offset: PropTypes.string,
-    constraints: PropTypes.array,
-  }),
-  portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  portalClassName: PropTypes.string,
-  renderTarget: PropTypes.func,
-};
-
-BpkPopoverPortal.defaultProps = {
-  tetherOptions: {
-    attachment: 'top center',
-    constraints: [
-      {
-        to: 'window',
-        attachment: 'together',
-        pin: true,
-      },
-    ],
-  },
-  portalStyle: null,
-  portalClassName: null,
-  renderTarget: null,
-};
 
 export default BpkPopoverPortal;

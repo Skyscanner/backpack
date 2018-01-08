@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { BpkButtonLink } from 'bpk-component-link';
 import BpkCloseButton from 'bpk-component-close-button';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
@@ -40,7 +42,24 @@ const bindEventSource = (source, callback) => event => {
   callback(event, { source });
 };
 
-const BpkPopover = props => {
+export type Props = {
+  id: string,
+  onClose: (
+    event: SyntheticEvent<>,
+    props: {
+      source: $Values<typeof EVENT_SOURCES>,
+    },
+  ) => mixed,
+  label: string,
+  closeButtonText: string,
+  children: Node,
+  padded: boolean,
+  labelAsTitle: boolean,
+  closeButtonIcon: boolean,
+  className: ?string,
+};
+
+const BpkPopover = (props: Props) => {
   const {
     id,
     onClose,
@@ -145,17 +164,17 @@ BpkPopover.propTypes = {
   label: PropTypes.string.isRequired,
   closeButtonText: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  className: PropTypes.string,
   padded: PropTypes.bool,
   labelAsTitle: PropTypes.bool,
   closeButtonIcon: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 BpkPopover.defaultProps = {
-  className: null,
   padded: true,
   labelAsTitle: false,
   closeButtonIcon: true,
+  className: null,
 };
 
 export default BpkPopover;
