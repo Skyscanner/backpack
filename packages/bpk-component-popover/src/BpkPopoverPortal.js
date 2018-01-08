@@ -50,9 +50,9 @@ export type Props = {
   isOpen: boolean,
   onClose: Function,
   tetherOptions: Object,
-  portalStyle: ?HTMLElement,
+  portalStyle: ?Object,
   portalClassName: ?string,
-  renderTarget: ?Function,
+  renderTarget: ?() => HTMLElement,
 };
 
 class BpkPopoverPortal extends Component<Props> {
@@ -101,7 +101,7 @@ class BpkPopoverPortal extends Component<Props> {
     this.position(popoverElement, targetElement);
   };
 
-  beforeClose = (done: Function) => {
+  beforeClose = (done: () => void) => {
     if (this.tether) {
       this.tether.destroy();
       this.tether = null;

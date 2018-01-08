@@ -29,7 +29,7 @@ describe('BpkPopover', () => {
       .create(
         <BpkPopover
           id="my-popover"
-          onClose={() => null}
+          onClose={() => {}}
           label="My popover"
           closeButtonText="Close"
         >
@@ -46,7 +46,7 @@ describe('BpkPopover', () => {
       .create(
         <BpkPopover
           id="my-popover"
-          onClose={() => null}
+          onClose={() => {}}
           label="My popover"
           closeButtonText="Close"
           padded={false}
@@ -64,7 +64,7 @@ describe('BpkPopover', () => {
       .create(
         <BpkPopover
           id="my-popover"
-          onClose={() => null}
+          onClose={() => {}}
           label="My popover"
           closeButtonText="Close"
           className="my-custom-class"
@@ -82,7 +82,7 @@ describe('BpkPopover', () => {
       .create(
         <BpkPopover
           id="my-popover"
-          onClose={() => null}
+          onClose={() => {}}
           label="My popover"
           closeButtonText="Close"
           labelAsTitle

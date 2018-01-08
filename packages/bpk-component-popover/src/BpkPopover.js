@@ -44,14 +44,19 @@ const bindEventSource = (source, callback) => event => {
 
 export type Props = {
   id: string,
-  onClose: Function,
+  onClose: (
+    event: SyntheticEvent<>,
+    props: {
+      source: $Values<typeof EVENT_SOURCES>,
+    },
+  ) => void,
   label: string,
   closeButtonText: string,
   children: Node,
-  className: ?string,
   padded: boolean,
   labelAsTitle: boolean,
   closeButtonIcon: boolean,
+  className: ?string,
 };
 
 const BpkPopover = (props: Props) => {
@@ -159,17 +164,17 @@ BpkPopover.propTypes = {
   label: PropTypes.string.isRequired,
   closeButtonText: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  className: PropTypes.string,
   padded: PropTypes.bool,
   labelAsTitle: PropTypes.bool,
   closeButtonIcon: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 BpkPopover.defaultProps = {
-  className: null,
   padded: true,
   labelAsTitle: false,
   closeButtonIcon: true,
+  className: null,
 };
 
 export default BpkPopover;

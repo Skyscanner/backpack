@@ -42,13 +42,13 @@ type Props = {
   ...$Diff<PopoverProps, { children: Node }>,
   id: string,
   changeProps: boolean,
-  targetFunction: ?Function,
+  targetFunction: ?() => ?HTMLElement,
 };
 
 type State = {
   isOpen: boolean,
   showLongContent: boolean,
-  changedTarget: ?Function,
+  changedTarget: ?() => ?HTMLElement,
 };
 
 class PopoverContainer extends Component<Props, State> {

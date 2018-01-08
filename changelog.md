@@ -12,7 +12,7 @@
   - `target` prop type is now correctly `oneOf([function, node])` instead of `oneOf([function, element])`
 
 - bpk-component-tooltip:
-  - `target` prop type is now correct;y `node` instead of `element`
+  - `target` prop type is now correctly `node` instead of `element`
 
 ## 2018-01-04 - Fixing BpkBarChart events for bar hovering and focus
 
