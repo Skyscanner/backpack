@@ -601,9 +601,9 @@ exports[`BpkBannerAlert should render correctly with animateOnEnter 1`] = `
       "MozTransition": "height 200ms ease ",
       "OTransition": "height 200ms ease ",
       "WebkitTransition": "height 200ms ease ",
-      "height": "auto",
+      "height": 0,
       "msTransition": "height 200ms ease ",
-      "overflow": "visible",
+      "overflow": "hidden",
       "transition": "height 200ms ease ",
     }
   }
