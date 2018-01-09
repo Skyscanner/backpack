@@ -30,7 +30,7 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
       <div
         aria-label="Name"
         aria-sort="ascending"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -49,27 +49,48 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
         >
           Name
         </span>
-        <svg
-          className="bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          className="bpk-data-table-column__sort-icons"
         >
-          <path
-            d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
-          />
-        </svg>
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.3 15.7L12 8.6l7.7 7.1c.6.6.2 1.7-.7 1.7H5c-.9 0-1.3-1-.7-1.7z"
+            />
+          </svg>
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
+            />
+          </svg>
+        </div>
       </div>
       <div
         aria-label="Description"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -88,10 +109,48 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
         >
           Description
         </span>
+        <div
+          className="bpk-data-table-column__sort-icons"
+        >
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.3 15.7L12 8.6l7.7 7.1c.6.6.2 1.7-.7 1.7H5c-.9 0-1.3-1-.7-1.7z"
+            />
+          </svg>
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
+            />
+          </svg>
+        </div>
       </div>
       <div
         aria-label="Bla"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -110,6 +169,44 @@ exports[`BpkDataTable should render correctly with a custom className 1`] = `
         >
           Bla
         </span>
+        <div
+          className="bpk-data-table-column__sort-icons"
+        >
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.3 15.7L12 8.6l7.7 7.1c.6.6.2 1.7-.7 1.7H5c-.9 0-1.3-1-.7-1.7z"
+            />
+          </svg>
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
+            />
+          </svg>
+        </div>
       </div>
     </div>
     <div
@@ -160,7 +257,7 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
     <div
       aria-label="Name"
       aria-sort="ascending"
-      className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
+      className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="columnheader"
@@ -179,27 +276,48 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
       >
         Name
       </span>
-      <svg
-        className="bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-        height="18"
-        style={
-          Object {
-            "height": "1.125rem",
-            "width": "1.125rem",
-          }
-        }
-        viewBox="0 0 24 24"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        className="bpk-data-table-column__sort-icons"
       >
-        <path
-          d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
-        />
-      </svg>
+        <svg
+          className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+          height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.3 15.7L12 8.6l7.7 7.1c.6.6.2 1.7-.7 1.7H5c-.9 0-1.3-1-.7-1.7z"
+          />
+        </svg>
+        <svg
+          className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+          height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
+          />
+        </svg>
+      </div>
     </div>
     <div
       aria-label="Description"
-      className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
+      className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="columnheader"
@@ -218,10 +336,48 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
       >
         Description
       </span>
+      <div
+        className="bpk-data-table-column__sort-icons"
+      >
+        <svg
+          className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+          height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.3 15.7L12 8.6l7.7 7.1c.6.6.2 1.7-.7 1.7H5c-.9 0-1.3-1-.7-1.7z"
+          />
+        </svg>
+        <svg
+          className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+          height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
+          />
+        </svg>
+      </div>
     </div>
     <div
       aria-label="Bla"
-      className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
+      className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="columnheader"
@@ -240,6 +396,44 @@ exports[`BpkDataTable should render correctly with a specified width 1`] = `
       >
         Bla
       </span>
+      <div
+        className="bpk-data-table-column__sort-icons"
+      >
+        <svg
+          className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+          height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.3 15.7L12 8.6l7.7 7.1c.6.6.2 1.7-.7 1.7H5c-.9 0-1.3-1-.7-1.7z"
+          />
+        </svg>
+        <svg
+          className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+          height="18"
+          style={
+            Object {
+              "height": "1.125rem",
+              "width": "1.125rem",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
+          />
+        </svg>
+      </div>
     </div>
   </div>
   <div
@@ -442,7 +636,7 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
       <div
         aria-label="Name"
         aria-sort="ascending"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -461,27 +655,48 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
         >
           Name
         </span>
-        <svg
-          className="bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          className="bpk-data-table-column__sort-icons"
         >
-          <path
-            d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
-          />
-        </svg>
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.3 15.7L12 8.6l7.7 7.1c.6.6.2 1.7-.7 1.7H5c-.9 0-1.3-1-.7-1.7z"
+            />
+          </svg>
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
+            />
+          </svg>
+        </div>
       </div>
       <div
         aria-label="Description"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -500,10 +715,48 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
         >
           Description
         </span>
+        <div
+          className="bpk-data-table-column__sort-icons"
+        >
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.3 15.7L12 8.6l7.7 7.1c.6.6.2 1.7-.7 1.7H5c-.9 0-1.3-1-.7-1.7z"
+            />
+          </svg>
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
+            />
+          </svg>
+        </div>
       </div>
       <div
         aria-label="Bla"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -522,6 +775,44 @@ exports[`BpkDataTable should render correctly with multiple columns 1`] = `
         >
           Bla
         </span>
+        <div
+          className="bpk-data-table-column__sort-icons"
+        >
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.3 15.7L12 8.6l7.7 7.1c.6.6.2 1.7-.7 1.7H5c-.9 0-1.3-1-.7-1.7z"
+            />
+          </svg>
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
+            />
+          </svg>
+        </div>
       </div>
     </div>
     <div
@@ -580,7 +871,7 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
       <div
         aria-label="Name"
         aria-sort="ascending"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -599,27 +890,48 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
         >
           Name
         </span>
-        <svg
-          className="bpk-data-table-column__sort-icon bpk-icon--rtl-support"
-          height="18"
-          style={
-            Object {
-              "height": "1.125rem",
-              "width": "1.125rem",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          className="bpk-data-table-column__sort-icons"
         >
-          <path
-            d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
-          />
-        </svg>
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.3 15.7L12 8.6l7.7 7.1c.6.6.2 1.7-.7 1.7H5c-.9 0-1.3-1-.7-1.7z"
+            />
+          </svg>
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-data-table-column__sort-icon--selected bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
+            />
+          </svg>
+        </div>
       </div>
       <div
         aria-label="Description"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -638,10 +950,48 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
         >
           Description
         </span>
+        <div
+          className="bpk-data-table-column__sort-icons"
+        >
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.3 15.7L12 8.6l7.7 7.1c.6.6.2 1.7-.7 1.7H5c-.9 0-1.3-1-.7-1.7z"
+            />
+          </svg>
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
+            />
+          </svg>
+        </div>
       </div>
       <div
         aria-label="Bla"
-        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column ReactVirtualized__Table__sortableHeaderColumn"
+        className="ReactVirtualized__Table__headerColumn bpk-data-table__header-column"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="columnheader"
@@ -660,6 +1010,44 @@ exports[`BpkDataTable should render correctly with no data; only headers 1`] = `
         >
           Bla
         </span>
+        <div
+          className="bpk-data-table-column__sort-icons"
+        >
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--up bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.3 15.7L12 8.6l7.7 7.1c.6.6.2 1.7-.7 1.7H5c-.9 0-1.3-1-.7-1.7z"
+            />
+          </svg>
+          <svg
+            className="bpk-data-table-column__sort-icon bpk-data-table-column__sort-icon--down bpk-icon--rtl-support"
+            height="18"
+            style={
+              Object {
+                "height": "1.125rem",
+                "width": "1.125rem",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.7 10.3L12 17.4l-7.7-7.1c-.6-.6-.2-1.7.7-1.7h14c.9 0 1.3 1.1.7 1.7z"
+            />
+          </svg>
+        </div>
       </div>
     </div>
     <div

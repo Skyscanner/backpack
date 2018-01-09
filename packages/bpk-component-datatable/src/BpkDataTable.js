@@ -26,6 +26,7 @@ import _omit from 'lodash/omit';
 import STYLES from './bpk-data-table.scss';
 import BpkDataTableColumn from './BpkDataTableColumn';
 import hasChildrenOfType from './hasChildrenOfType';
+import { getSortIconDirection } from './bpkHeaderRenderer';
 
 const getClassName = cssModules(STYLES);
 const omittedTableProps = [
@@ -34,7 +35,21 @@ const omittedTableProps = [
   'sortBy',
   'sortDirection',
   'sort',
+  'onHeaderClick',
 ];
+
+const getSortDirection = (state, newSortBy, newSortDirection) => {
+  const { sortBy, sortDirection } = state;
+  if (newSortDirection !== null) {
+    return newSortDirection;
+  }
+  if (sortBy === newSortBy) {
+    return sortDirection === SortDirection.ASC
+      ? SortDirection.DESC
+      : SortDirection.ASC;
+  }
+  return SortDirection.ASC;
+};
 
 const sortList = ({ sortBy, sortDirection, list }) => {
   const sorted = _sortBy(list, sortBy);
@@ -61,7 +76,7 @@ class BpkDataTable extends Component {
 
     this.onRowClicked = this.onRowClicked.bind(this);
     this.rowClassName = this.rowClassName.bind(this);
-    this.sort = this.sort.bind(this);
+    this.onHeaderClick = this.onHeaderClick.bind(this);
   }
 
   componentWillReceiveProps({ rows }) {
@@ -83,6 +98,28 @@ class BpkDataTable extends Component {
     }
   }
 
+  onHeaderClick({ dataKey: sortBy, event }) {
+    const disableSort =
+      this.props.children.find(child => child.props.dataKey === sortBy).props
+        .disableSort === true;
+    if (disableSort) {
+      return;
+    }
+
+    const sortDirection = getSortDirection(
+      this.state,
+      sortBy,
+      getSortIconDirection(event.target),
+    );
+    const sortedList = sortList({
+      sortBy,
+      sortDirection,
+      list: this.props.rows,
+    });
+
+    this.setState({ sortBy, sortDirection, sortedList });
+  }
+
   rowClassName({ index }) {
     const classNames = [getClassName('bpk-data-table__row')];
     if (this.state.rowSelected === index) {
@@ -92,16 +129,6 @@ class BpkDataTable extends Component {
       classNames.push(getClassName('bpk-data-table__header-row'));
     }
     return classNames;
-  }
-
-  sort({ sortBy, sortDirection }) {
-    const sortedList = sortList({
-      sortBy,
-      sortDirection,
-      list: this.props.rows,
-    });
-
-    this.setState({ sortBy, sortDirection, sortedList });
   }
 
   renderTable(width) {
@@ -129,7 +156,7 @@ class BpkDataTable extends Component {
         headerClassName={headerClassNames.join(' ')}
         rowClassName={this.rowClassName}
         onRowClick={this.onRowClicked}
-        sort={this.sort}
+        onHeaderClick={this.onHeaderClick}
         sortBy={sortBy}
         sortDirection={sortDirection}
       >

@@ -23,6 +23,15 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+
+  &:first-child {
+    margin-left: $bpk-border-size-xl;
+
+    @include bpk-rtl {
+      margin-right: $bpk-border-size-xl;
+      margin-left: 0;
+    }
+  }
 }
 
 .bpk-data-table-column__header {
@@ -33,11 +42,30 @@
   overflow: hidden;
 }
 
-.bpk-data-table-column__sort-icon {
+.bpk-data-table-column__sort-icons {
   margin: 0 0 0 $bpk-spacing-xs;
-  fill: $bpk-color-gray-700;
 
   @include bpk-rtl {
     margin: 0 $bpk-spacing-xs 0 0;
   }
+}
+
+.bpk-data-table-column__sort-icon {
+  display: block;
+  fill: $bpk-color-gray-300;
+
+  &:hover {
+    fill: $bpk-color-gray-500;
+  }
+
+  &--selected {
+    &,
+    &:hover {
+      fill: $bpk-color-blue-700;
+    }
+  }
+}
+
+.bpk-data-table-column__sort-icon--up {
+  margin-bottom: -($bpk-spacing-xs);
 }
