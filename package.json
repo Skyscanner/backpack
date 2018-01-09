@@ -8,8 +8,7 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "preinstall":
-      "node -e \"$(curl -fsSL https://raw.githubusercontent.com/Skyscanner/ensure-node-env/master/dist/index.js)\"",
+    "preinstall": "node -e \"$(curl -fsSL https://raw.githubusercontent.com/Skyscanner/ensure-node-env/master/dist/index.js)\"",
     "postinstall:native": "(cd ./native && npm install)",
     "postinstall": "npm run postinstall:native && npm run bootstrap",
     "bootstrap": "lerna bootstrap",
@@ -18,8 +17,7 @@
     "clean:lerna": "lerna clean --yes",
     "clean:node_modules": "rm -rf node_modules",
     "clean:node_modules_native": "(cd ./native && rm -rf node_modules)",
-    "clean":
-      "npm run clean:dist && npm run clean:lerna && npm run clean:node_modules && npm run clean:node_modules_native",
+    "clean": "npm run clean:dist && npm run clean:lerna && npm run clean:node_modules && npm run clean:node_modules_native",
     "lint:scss": "stylelint 'packages/**/*.scss' --syntax scss",
     "lint:scss:fix": "stylefmt",
     "lint:js": "eslint . .storybook --ext .js,.jsx",
@@ -34,32 +32,28 @@
     "flow-typed": "flow-typed",
     "build:tokens": "lerna run tokens --scope bpk-tokens",
     "build:svgs": "lerna run svgs --scope bpk-svgs",
-    "build":
-      "npm run build:tokens && npm run build:svgs && lerna run build && (cd ./native && npm run link)",
+    "build": "npm run build:tokens && npm run build:svgs && lerna run build && (cd ./native && npm run link)",
     "storybook": "start-storybook -p 9001",
-    "sassdoc":
-      "sassdoc {packages/bpk-mixins/src/**/*,packages/bpk-svgs/dist/*,packages/bpk-tokens/tokens/base.default}.scss -d dist/sassdoc -v --strict --debug",
+    "sassdoc": "sassdoc {packages/bpk-mixins/src/**/*,packages/bpk-svgs/dist/*,packages/bpk-tokens/tokens/base.default}.scss -d dist/sassdoc -v --strict --debug",
     "docs": "webpack-dev-server --open",
-    "docs:dist":
-      "npm run clean:dist && NODE_ENV=production webpack --progress && npm run sassdoc",
+    "docs:dist": "npm run clean:dist && NODE_ENV=production webpack --progress && npm run sassdoc",
     "start": "npm run build && npm run storybook",
     "native": "./subshell ./native npm run storybook",
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
     "fix-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js --fix",
-    "test":
-      "npm run lint && npm run check-bpk-dependencies && npm run jest && npm run test:native && npm run flow",
+    "test": "npm run lint && npm run check-bpk-dependencies && npm run jest && npm run test:native && npm run flow",
     "test:native": "./subshell ./native npm test",
     "ios": "(cd ./native && npm run ios)",
     "android": "(cd ./native && npm run android)",
-    "check-owners":
-      "npm whoami && ( node scripts/npm/get-owners.js | grep -E $(npm whoami) ) && node scripts/npm/check-owners.js",
-    "publish":
-      "npm run check-owners && npm run build && git pull --rebase && npm run flow stop && npm run test && lerna publish",
+    "check-owners": "npm whoami && ( node scripts/npm/get-owners.js | grep -E $(npm whoami) ) && node scripts/npm/check-owners.js",
+    "publish": "npm run check-owners && npm run build && git pull --rebase && npm run flow stop && npm run test && lerna publish",
     "danger": "danger",
     "prettier": "prettier --config .prettierrc --write \"**/*.js\""
   },
   "lint-staged": {
-    "*.js": ["eslint"]
+    "*.js": [
+      "eslint"
+    ]
   },
   "repository": {
     "type": "git",
@@ -137,8 +131,7 @@
     "rimraf": "^2.5.4",
     "sass-loader": "^6.0.6",
     "sassdoc": "^2.4.0",
-    "static-site-generator-webpack-plugin":
-      "github:skyscanner/static-site-generator-webpack-plugin#7bac616",
+    "static-site-generator-webpack-plugin": "github:skyscanner/static-site-generator-webpack-plugin#7bac616",
     "style-loader": "^0.19.0",
     "stylefmt": "^6.0.0",
     "stylelint": "^8.2.0",
@@ -152,13 +145,18 @@
   },
   "jest": {
     "verbose": true,
-    "setupFiles": ["<rootDir>/scripts/jest/setup.js"],
+    "setupFiles": [
+      "<rootDir>/scripts/jest/setup.js"
+    ],
     "testRegex": "packages/.*-test\\.js$",
-    "testPathIgnorePatterns": ["native/"],
-    "transformIgnorePatterns": ["node_modules/(?!bpk)"],
+    "testPathIgnorePatterns": [
+      "native/"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!bpk)"
+    ],
     "moduleNameMapper": {
-      "react-transition-group/CSSTransition":
-        "<rootDir>/scripts/stubs/cssTransitionStub.js",
+      "react-transition-group/CSSTransition": "<rootDir>/scripts/stubs/cssTransitionStub.js",
       "^.+\\.scss$": "<rootDir>/scripts/stubs/styleStub.js",
       "^.+\\.svg$": "<rootDir>/scripts/stubs/fileStub.js"
     },
