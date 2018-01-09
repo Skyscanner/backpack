@@ -1,16 +1,19 @@
 # Backpack changelog
 
 ## UNRELEASED
+_Nothing Yet!_
+
+## 2018-01-09 - Prop tweaks, including fix for banner-alert when `show` is `false`
 
 **Fixed:**
-- bpk-component-banner-alert:
+- bpk-component-banner-alert: 1.6.3 => 1.6.4
   - Fixed issue where banner was shown if `show` was initially set `false`.
 
-- bpk-component-popover:
-- bpk-react-utils:
+- bpk-component-popover: 1.3.3 => 1.3.4
+- bpk-react-utils: 2.4.2 => 2.4.3
   - `target` prop type is now correctly `oneOf([function, node])` instead of `oneOf([function, element])`
 
-- bpk-component-tooltip:
+- bpk-component-tooltip: 2.0.34 => 2.0.35
   - `target` prop type is now correctly `node` instead of `element`
 
 ## 2018-01-04 - Fixing BpkBarChart events for bar hovering and focus
