@@ -18,6 +18,8 @@
 
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import * as BREAKPOINTS from 'bpk-tokens/tokens/breakpoints.es6';
 import BpkImage from './BpkImage';
 
@@ -84,6 +86,37 @@ describe('BpkImage', () => {
       .toJSON();
 
     expect(tree).toMatchSnapshot();
+  });
+
+  it('should call onLoadCallback', () => {
+    const onLoad = jest.fn();
+    const wrapper = mount(
+      <BpkImage
+        onLoad={onLoad}
+        altText="image description"
+        width={816}
+        height={544}
+        src="./path/to/image.jpg"
+      />,
+    )
+      .find('img')
+      .simulate('load');
+    expect(onLoad.mock.calls.length).toBe(1);
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  it('should load even without onLoadCallback', () => {
+    const wrapper = mount(
+      <BpkImage
+        altText="image description"
+        width={816}
+        height={544}
+        src="./path/to/image.jpg"
+      />,
+    )
+      .find('img')
+      .simulate('load');
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   it('should have !inView behavior', () => {

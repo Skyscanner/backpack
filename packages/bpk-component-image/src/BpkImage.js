@@ -15,9 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
+import React, { type Node, Component } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 import { BpkSpinner } from 'bpk-component-spinner';
 import CSSTransition from 'react-transition-group/CSSTransition';
@@ -27,7 +28,25 @@ import STYLES from './bpk-image.scss';
 
 const getClassName = cssModules(STYLES);
 
-const Image = props => {
+type BpkImageProps = {
+  altText: string,
+  height: number,
+  inView: boolean,
+  loading: boolean,
+  src: string,
+  width: number,
+  className: ?string,
+  onLoad: ?() => mixed,
+  style: ?{}, // eslint-disable-line react/forbid-prop-types
+};
+
+type ImageProps = {
+  altText: string,
+  hidden: boolean,
+  onImageLoad: ?() => mixed,
+};
+
+const Image = (props: ImageProps): Node => {
   const { hidden, altText, onImageLoad, ...rest } = props;
 
   const imgClassNames = [getClassName('bpk-image__img')];
@@ -56,22 +75,23 @@ Image.defaultProps = {
   hidden: false,
 };
 
-class BpkImage extends React.Component {
-  constructor(props) {
+class BpkImage extends Component<BpkImageProps> {
+  onImageLoad: () => mixed;
+  placeholder: ?HTMLElement;
+  static defaultProps: {};
+
+  constructor(props: BpkImageProps): void {
     super(props);
-
     this.onImageLoad = this.onImageLoad.bind(this);
-
-    this.placeholder = null;
   }
 
-  onImageLoad() {
+  onImageLoad(): void {
     if (this.props.onLoad) {
       this.props.onLoad();
     }
   }
 
-  render() {
+  render(): Node {
     const {
       width,
       height,
@@ -129,7 +149,11 @@ class BpkImage extends React.Component {
           {typeof window === 'undefined' &&
             (!inView || loading) && (
               <noscript>
-                <Image altText={altText} {...rest} />
+                <Image
+                  altText={altText}
+                  onImageLoad={this.onImageLoad}
+                  {...rest}
+                />
               </noscript>
             )}
         </div>

@@ -15,14 +15,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
-import React from 'react';
+import React, { type Node, type ComponentType } from 'react';
 import PropTypes from 'prop-types';
 import { wrapDisplayName } from 'bpk-react-utils';
 
-export default function withLazyLoading(Component, document) {
-  class WithLazyLoading extends React.Component {
-    constructor() {
+type WithLazyLoadingProps = {
+  className: ?string,
+  style: ?{},
+};
+
+type WithLazyLoadingState = {
+  inView: boolean,
+};
+
+export default function withLazyLoading(
+  Component: ComponentType<any>,
+  documentRef: window,
+): ComponentType<any> {
+  class WithLazyLoading extends React.Component<
+    WithLazyLoadingProps,
+    WithLazyLoadingState,
+  > {
+    checkInView: () => void;
+    element: ?HTMLElement;
+    isInViewPort: () => boolean;
+    placeholderReference: string;
+    removeEventListeners: () => void;
+    setInView: () => void;
+    state: WithLazyLoadingState;
+    supportsPassiveEvents: () => boolean;
+
+    static defaultProps: {};
+
+    constructor(): void {
       super();
 
       this.setInView = this.setInView.bind(this);
@@ -30,49 +57,50 @@ export default function withLazyLoading(Component, document) {
       this.checkInView = this.checkInView.bind(this);
       this.isInViewPort = this.isInViewPort.bind(this);
       this.supportsPassiveEvents = this.supportsPassiveEvents.bind(this);
-
       this.state = {
         inView: false,
       };
     }
 
-    componentDidMount() {
-      const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : {};
-      document.addEventListener('scroll', this.checkInView, {
+    componentDidMount(): void {
+      documentRef.addEventListener('scroll', this.checkInView, {
         capture: true,
-        ...passiveArgs,
+        ...this.getPassiveArgs(),
       });
-      document.addEventListener('resize', this.checkInView);
-      document.addEventListener('orientationchange', this.checkInView);
-      document.addEventListener('fullscreenchange', this.checkInView);
+      documentRef.addEventListener('resize', this.checkInView);
+      documentRef.addEventListener('orientationchange', this.checkInView);
+      documentRef.addEventListener('fullscreenchange', this.checkInView);
       // call checkInView immediately incase the
       // component is already in view prior to scrolling
       this.checkInView();
     }
 
-    componentWillUnmount() {
+    componentWillUnmount(): void {
       this.removeEventListeners();
     }
 
-    setInView() {
-      this.setState(() => ({
+    setInView(): void {
+      this.setState((): {} => ({
         inView: true,
       }));
       this.removeEventListeners();
     }
 
-    removeEventListeners() {
-      const passiveArgs = this.supportsPassiveEvents() ? { passive: true } : {};
-      document.removeEventListener('scroll', this.checkInView, {
-        capture: true,
-        ...passiveArgs,
-      });
-      document.removeEventListener('resize', this.checkInView);
-      document.removeEventListener('orientationchange', this.checkInView);
-      document.removeEventListener('fullscreenchange', this.checkInView);
+    getPassiveArgs(): {} {
+      return this.supportsPassiveEvents() ? { passive: true } : {};
     }
 
-    checkInView() {
+    removeEventListeners(): void {
+      documentRef.removeEventListener('scroll', this.checkInView, {
+        capture: true,
+        ...this.getPassiveArgs(),
+      });
+      documentRef.removeEventListener('resize', this.checkInView);
+      documentRef.removeEventListener('orientationchange', this.checkInView);
+      documentRef.removeEventListener('fullscreenchange', this.checkInView);
+    }
+
+    checkInView(): void {
       if (this.isInViewPort()) {
         this.setInView();
       }
@@ -81,32 +109,36 @@ export default function withLazyLoading(Component, document) {
     // This function is taken from modernizr
     // See https://github.com/modernizr/modernizr
     // eslint-disable-next-line
-    supportsPassiveEvents() {
+    supportsPassiveEvents(): boolean {
       let supportsPassiveOption = false;
       try {
+        // $FlowFixMe
         const opts = Object.defineProperty({}, 'passive', {
           // eslint-disable-next-line getter-return
           get() {
             supportsPassiveOption = true;
+            return supportsPassiveOption;
           },
         });
         window.addEventListener('test', null, opts);
+        window.removeEventListener('test');
       } catch (e) {
         return false;
       }
       return supportsPassiveOption;
     }
 
-    isInViewPort() {
+    isInViewPort(): boolean {
+      if (!this.element) return false;
       const rect = this.element.getBoundingClientRect();
 
       const viewPortHeight = Math.max(
         window.innerHeight,
-        document.documentElement.clientHeight,
+        documentRef.documentElement.clientHeight,
       );
       const viewPortWidth = Math.max(
         window.innerWidth,
-        document.documentElement.clientWidth,
+        documentRef.documentElement.clientWidth,
       );
 
       return (
@@ -117,7 +149,7 @@ export default function withLazyLoading(Component, document) {
       );
     }
 
-    render() {
+    render(): Node {
       const { style, className, ...rest } = this.props;
 
       return (
