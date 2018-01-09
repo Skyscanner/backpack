@@ -41,6 +41,7 @@ type Props = {
 type State = {
   isExpanded: boolean,
   visible: boolean,
+  initiateShow: boolean,
   hideAnimationInProgress: boolean,
   inDom: boolean,
 };
@@ -63,18 +64,15 @@ class AnimateAndFade extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    this.state = {
-      isExpanded: !this.props.animateOnEnter,
-      visible: !this.props.animateOnEnter,
-      hideAnimationInProgress: false,
-      inDom: true,
-    };
-  }
+    const initiallyShown = this.props.show;
 
-  componentDidMount() {
-    if (this.props.animateOnEnter) {
-      this.toggle();
-    }
+    this.state = {
+      isExpanded: initiallyShown,
+      visible: initiallyShown,
+      initiateShow: false,
+      hideAnimationInProgress: false,
+      inDom: initiallyShown,
+    };
   }
 
   componentWillReceiveProps(nextProps: Props) {
@@ -84,7 +82,20 @@ class AnimateAndFade extends Component<Props, State> {
     this.toggle();
   }
 
-  onAnimateHeightComplete = () => {
+  componentDidUpdate() {
+    if (this.state.initiateShow) {
+      // React doesn't like us calling setState from componentDidUpdate as it can lead to an infinite re-renders.
+      // I think it is ok here, however, as this will only happen conditionally (ie once)
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({
+        initiateShow: false,
+        isExpanded: true,
+        visible: true,
+      });
+    }
+  }
+
+  onAnimateHeightComplete() {
     if (this.state.isExpanded) {
       return;
     }
@@ -92,7 +103,7 @@ class AnimateAndFade extends Component<Props, State> {
       inDom: false,
       hideAnimationInProgress: false,
     });
-  };
+  }
 
   onFadeComplete = () => {
     if (!this.state.visible && this.state.hideAnimationInProgress) {
@@ -109,8 +120,7 @@ class AnimateAndFade extends Component<Props, State> {
     } else if (!this.state.visible && !this.state.isExpanded) {
       this.setState({
         inDom: true,
-        isExpanded: true,
-        visible: true,
+        initiateShow: true,
       });
     }
   };

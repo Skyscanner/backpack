@@ -25,6 +25,7 @@ import BpkBannerAlert, {
   ALERT_TYPES,
   withBannerAlertState,
 } from 'bpk-component-banner-alert';
+import BpkCheckBox from 'bpk-component-checkbox';
 import BpkButton from 'bpk-component-button';
 import bannerAlertReadme from 'bpk-component-banner-alert/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -52,6 +53,55 @@ const richMessage = (
   </span>
 );
 
+class ToggleShowBanner extends Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+
+    this.state = {
+      show: this.props.initiallyShown,
+    };
+  }
+
+  toggle() {
+    this.setState({
+      show: !this.state.show,
+    });
+  }
+
+  render() {
+    return (
+      <div className={this.props.className}>
+        <BpkCheckBox
+          name="show"
+          label="show"
+          checked={this.state.show}
+          onChange={this.toggle}
+        />
+        <BpkBannerAlert
+          bannerClassName={componentClassName}
+          message={this.state.show ? 'show = true' : 'show = false'}
+          type={ALERT_TYPES.SUCCESS}
+          show={this.state.show}
+          animateOnEnter
+          animateOnLeave
+        />
+      </div>
+    );
+  }
+}
+
+ToggleShowBanner.propTypes = {
+  initiallyShown: PropTypes.bool.isRequired,
+  className: PropTypes.string,
+};
+
+ToggleShowBanner.defaultProps = {
+  className: null,
+};
+
+// eslint-disable-next-line react/no-multi-comp
 class BpkBannerDismissable extends Component {
   constructor() {
     super();
@@ -318,6 +368,15 @@ const components = [
         dismissable
         dismissButtonLabel="Dismiss"
       />,
+    ],
+  },
+  {
+    id: 'toggleShow',
+    title: 'Toggle show prop',
+    blurb: [],
+    examples: [
+      <ToggleShowBanner initiallyShown={false} />,
+      <ToggleShowBanner initiallyShown className={componentClassName} />,
     ],
   },
   {
