@@ -47,6 +47,8 @@ type State = {
 };
 
 class AnimateAndFade extends Component<Props, State> {
+  toggleImmediately: boolean;
+
   static propTypes = {
     animateOnEnter: PropTypes.bool,
     animateOnLeave: PropTypes.bool,
@@ -64,7 +66,8 @@ class AnimateAndFade extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    const initiallyShown = this.props.show;
+    this.toggleImmediately = this.props.show && this.props.animateOnEnter;
+    const initiallyShown = this.toggleImmediately ? false : this.props.show;
 
     this.state = {
       isExpanded: initiallyShown,
@@ -73,6 +76,12 @@ class AnimateAndFade extends Component<Props, State> {
       hideAnimationInProgress: false,
       inDom: initiallyShown,
     };
+  }
+
+  componentDidMount() {
+    if (this.toggleImmediately) {
+      this.toggle();
+    }
   }
 
   componentWillReceiveProps(nextProps: Props) {
@@ -95,7 +104,7 @@ class AnimateAndFade extends Component<Props, State> {
     }
   }
 
-  onAnimateHeightComplete() {
+  onAnimateHeightComplete = () => {
     if (this.state.isExpanded) {
       return;
     }
@@ -103,7 +112,7 @@ class AnimateAndFade extends Component<Props, State> {
       inDom: false,
       hideAnimationInProgress: false,
     });
-  }
+  };
 
   onFadeComplete = () => {
     if (!this.state.visible && this.state.hideAnimationInProgress) {
