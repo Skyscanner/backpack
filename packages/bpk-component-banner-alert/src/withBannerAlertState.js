@@ -26,6 +26,7 @@ import {
   type OnDismissHandler,
   type OnExpandToggleHandler,
 } from './common-types';
+import BpkBannertAlertExpandable from './BpkBannerAlertExpandable';
 
 const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
   type Props = {
@@ -53,7 +54,23 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
       onHide: PropTypes.func,
       expanded: PropTypes.bool,
       show: PropTypes.bool,
-      hideAfter: PropTypes.number,
+      hideAfter: (
+        props: Object,
+        propName: string,
+        componentName: string,
+        ...rest: mixed[]
+      ) => {
+        if (
+          WrappedComponent === BpkBannertAlertExpandable &&
+          typeof props[propName] === 'number'
+        ) {
+          return new Error(
+            `Invalid prop \`${propName}\` supplied to ${componentName}. \`${propName}\` is not supported for expandable banner alerts.`,
+          );
+        }
+
+        return PropTypes.number(props, propName, componentName, ...rest);
+      },
       animateOnLeave: PropTypes.bool,
       children: PropTypes.node,
     };
@@ -83,7 +100,11 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
     componentWillMount() {
       const { hideAfter } = this.props;
 
-      if (hideAfter && hideAfter > 0) {
+      if (
+        WrappedComponent !== BpkBannertAlertExpandable &&
+        hideAfter &&
+        hideAfter > 0
+      ) {
         this.hideIntervalId = setTimeout(() => {
           this.onHide();
         }, hideAfter * 1000);

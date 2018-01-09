@@ -108,12 +108,10 @@ storiesOf('bpk-component-banner-alert', module)
     </BpkBannerAlertExpandableState>
   ))
   .add('Success (automatically dismissed after 5 seconds)', () => (
-    <BpkBannerAlertExpandableState
+    <BpkBannerAlertDismissableState
       hideAfter={5}
       message={message}
       type={ALERT_TYPES.SUCCESS}
-      toggleButtonLabel="View more"
-    >
-      {longMessage}
-    </BpkBannerAlertExpandableState>
+      dismissButtonLabel="Dismiss"
+    />
   ));

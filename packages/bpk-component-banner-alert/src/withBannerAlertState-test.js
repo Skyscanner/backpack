@@ -19,7 +19,6 @@
 
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
 import toJson from 'enzyme-to-json';
 
 import BpkCloseButton from 'bpk-component-close-button';
@@ -122,48 +121,6 @@ describe('withBannerAlertState(BpkBannerAlertExpandable)', () => {
       </BpkBannerAlertExpandableState>,
     );
     expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render correctly and hide after some seconds', () => {
-    jest.useFakeTimers();
-
-    const tree = renderer.create(
-      <BpkBannerAlertExpandableState
-        message={message}
-        type={ALERT_TYPES.SUCCESS}
-        toggleButtonLabel="View more"
-        hideAfter={3}
-      >
-        {longMessage}
-      </BpkBannerAlertExpandableState>,
-    );
-
-    expect(tree.toJSON()).toMatchSnapshot();
-
-    jest.runAllTimers();
-
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
-
-  it('should call provided `onHide` when hidding automatically', () => {
-    jest.useFakeTimers();
-    const onHideMock = jest.fn();
-
-    mount(
-      <BpkBannerAlertExpandableState
-        message={message}
-        type={ALERT_TYPES.SUCCESS}
-        toggleButtonLabel="View more"
-        hideAfter={3}
-        onHide={onHideMock}
-      >
-        {longMessage}
-      </BpkBannerAlertExpandableState>,
-    );
-
-    jest.runAllTimers();
-
-    expect(onHideMock).toBeCalled();
   });
 
   it('should call provided "onExpandToggle"', () => {
