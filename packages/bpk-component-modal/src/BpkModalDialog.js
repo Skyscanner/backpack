@@ -24,6 +24,8 @@ import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-modal-dialog.scss';
 
+import titlePropType from './customPropTypes';
+
 const getClassName = cssModules(STYLES);
 
 const BpkModalDialog = props => {
@@ -61,23 +63,25 @@ const BpkModalDialog = props => {
         ref={props.dialogRef}
         {...props.closeEvents}
       >
-        <header className={getClassName('bpk-modal__header')}>
-          <h2 id={headingId} className={getClassName('bpk-modal__heading')}>
-            {props.title}
-          </h2>
-          &nbsp;
-          {props.closeText ? (
-            <BpkButtonLink onClick={props.onClose}>
-              {props.closeText}
-            </BpkButtonLink>
-          ) : (
-            <BpkCloseButton
-              className={getClassName('bpk-modal__close-button')}
-              label={props.closeLabel}
-              onClick={props.onClose}
-            />
-          )}
-        </header>
+        {props.showHeader && (
+          <header className={getClassName('bpk-modal__header')}>
+            <h2 id={headingId} className={getClassName('bpk-modal__heading')}>
+              {props.title}
+            </h2>
+            &nbsp;
+            {props.closeText ? (
+              <BpkButtonLink onClick={props.onClose}>
+                {props.closeText}
+              </BpkButtonLink>
+            ) : (
+              <BpkCloseButton
+                className={getClassName('bpk-modal__close-button')}
+                label={props.closeLabel}
+                onClick={props.onClose}
+              />
+            )}
+          </header>
+        )}
         <div className={getClassName('bpk-modal__content')}>
           {props.children}
         </div>
@@ -91,13 +95,14 @@ BpkModalDialog.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
   onClose: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
+  title: titlePropType,
   children: PropTypes.node.isRequired,
   closeLabel: PropTypes.string,
   closeText: PropTypes.string,
   wide: PropTypes.bool,
   isIphone: PropTypes.bool.isRequired,
   fullScreenOnMobile: PropTypes.bool.isRequired,
+  showHeader: PropTypes.bool,
   dialogRef: PropTypes.func.isRequired,
   closeEvents: PropTypes.shape({
     onTouchStart: PropTypes.func,
@@ -110,10 +115,12 @@ BpkModalDialog.propTypes = {
 };
 
 BpkModalDialog.defaultProps = {
+  title: null,
   className: null,
   closeLabel: null,
   closeText: null,
   wide: false,
+  showHeader: true,
 };
 
 export default BpkModalDialog;

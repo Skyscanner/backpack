@@ -3,7 +3,7 @@
 exports[`BpkModalDialog should render correctly 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal"
+  className="bpk-modal bpk-modal--full-screen"
   id="my-modal"
   onMouseDown={[Function]}
   onMouseMove={[Function]}
@@ -72,7 +72,7 @@ exports[`BpkModalDialog should render correctly 1`] = `
 exports[`BpkModalDialog should render correctly when is iPhone 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal bpk-modal--iphone-fix"
+  className="bpk-modal bpk-modal--iphone-fix bpk-modal--full-screen"
   id="my-modal"
   onMouseDown={[Function]}
   onMouseMove={[Function]}
@@ -210,7 +210,7 @@ exports[`BpkModalDialog should render correctly when it does not fills the scree
 exports[`BpkModalDialog should render correctly when it has a className 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal my-classname"
+  className="bpk-modal my-classname bpk-modal--full-screen"
   id="my-modal"
   onMouseDown={[Function]}
   onMouseMove={[Function]}
@@ -279,7 +279,7 @@ exports[`BpkModalDialog should render correctly when it has a className 1`] = `
 exports[`BpkModalDialog should render correctly with closeText prop 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal my-classname"
+  className="bpk-modal my-classname bpk-modal--full-screen"
   id="my-modal"
   onMouseDown={[Function]}
   onMouseMove={[Function]}
@@ -319,7 +319,7 @@ exports[`BpkModalDialog should render correctly with closeText prop 1`] = `
 exports[`BpkModalDialog should render correctly with wide prop 1`] = `
 <section
   aria-labelledby="bpk-modal-heading-my-modal"
-  className="bpk-modal bpk-modal--wide my-classname"
+  className="bpk-modal bpk-modal--wide my-classname bpk-modal--full-screen"
   id="my-modal"
   onMouseDown={[Function]}
   onMouseMove={[Function]}

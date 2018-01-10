@@ -46,6 +46,7 @@ describe('BpkModalDialog', () => {
           closeEvents={closeEvents}
           dialogRef={jest.fn()}
           isIphone={false}
+          fullScreenOnMobile
         >
           Modal content
         </BpkModalDialog>,
@@ -66,6 +67,7 @@ describe('BpkModalDialog', () => {
           closeEvents={closeEvents}
           dialogRef={jest.fn()}
           isIphone={false}
+          fullScreenOnMobile
         >
           Modal content
         </BpkModalDialog>,
@@ -87,6 +89,7 @@ describe('BpkModalDialog', () => {
           closeEvents={closeEvents}
           dialogRef={jest.fn()}
           isIphone={false}
+          fullScreenOnMobile
         >
           Modal content
         </BpkModalDialog>,
@@ -108,6 +111,7 @@ describe('BpkModalDialog', () => {
           closeEvents={closeEvents}
           dialogRef={jest.fn()}
           isIphone={false}
+          fullScreenOnMobile
         >
           Modal content
         </BpkModalDialog>,
@@ -127,6 +131,7 @@ describe('BpkModalDialog', () => {
           closeEvents={closeEvents}
           dialogRef={jest.fn()}
           isIphone
+          fullScreenOnMobile
         >
           Modal content
         </BpkModalDialog>,
@@ -146,6 +151,7 @@ describe('BpkModalDialog', () => {
           closeEvents={closeEvents}
           dialogRef={jest.fn()}
           fullScreenOnMobile={false}
+          isIphone={false}
         >
           Modal content
         </BpkModalDialog>,
