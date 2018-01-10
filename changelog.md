@@ -1,9 +1,6 @@
 # Backpack changelog
 
 ## UNRELEASED
-_Nothing Yet!_
-
-## 2018-01-09 - Prop tweaks, including fix for banner-alert when `show` is `false`
 
 **Breaking:**
 - bpk-component-datepicker:
@@ -15,6 +12,8 @@ _Nothing Yet!_
 
 - bpk-component-popover:
   - On mobile screen sizes, popovers now have a margin to prevent them from filling the entire width of their container.
+
+## 2018-01-09 - Prop tweaks, including fix for banner-alert when `show` is `false`
 
 **Fixed:**
 - bpk-component-banner-alert: 1.6.3 => 1.6.4
