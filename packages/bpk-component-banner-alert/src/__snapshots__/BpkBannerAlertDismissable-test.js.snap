@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkBannerAlertDismissable should render correctly 1`] = `
+<BpkBannerAlertInner
+  animateOnEnter={false}
+  animateOnLeave={false}
+  bannerClassName={null}
+  configuration="dismissable"
+  dismissButtonLabel="Dismiss"
+  expanded={false}
+  message="Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+  onDismiss={[Function]}
+  onExpandToggle={null}
+  show={true}
+  toggleButtonLabel={null}
+  type="success"
+/>
+`;

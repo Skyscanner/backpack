@@ -13,6 +13,20 @@
 - bpk-component-popover:
   - On mobile screen sizes, popovers now have a margin to prevent them from filling the entire width of their container.
 
+- bpk-component-banner-alert:
+  - Removed `dismissable` property in favour of `BpkBannerAlertDismissable`.
+  - A banner alert with `children` will no longer be auotmatically expandable. Use the newly introduced `BpkBannerAlertExpandable` component instead.
+  - The `ariaLive` prop has been removed from `BpkBannerAlert`.
+  - `hideAfter` in `withBannerAlertState` is no longer valid for expandable banner alerts.
+  - See the [migration guide](packages/bpk-component-banner-alert/docs/migrating-from-v1-to-v2.md).
+
+**Added:**
+- bpk-component-banner-alert:
+  - Introduced new component for the different banner alert configurations.
+    - `BpkBannerAlert` is now the default banner alert.
+    - `BpkBannerAlertDismissable` is a banner alert with a dismiss behaviour.
+    - `BpkBannerAlertExpandable` is a banner alert with expandable behaviour.
+
 ## 2018-01-09 - Prop tweaks, including fix for banner-alert when `show` is `false`
 
 **Fixed:**

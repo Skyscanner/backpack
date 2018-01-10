@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2018 Skyscanner Ltd
+ * Copyright 2017 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,36 +21,19 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import BpkBannerAlert from './BpkBannerAlert';
+import BpkBannerAlertDismissable from './BpkBannerAlertDismissable';
 import { ALERT_TYPES } from './common-types';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
 
-describe('BpkBannerAlert', () => {
+describe('BpkBannerAlertDismissable', () => {
   it('should render correctly', () => {
     const tree = shallow(
-      <BpkBannerAlert type={ALERT_TYPES.SUCCESS} message={message} />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render correctly hidden', () => {
-    const tree = shallow(
-      <BpkBannerAlert
-        show={false}
+      <BpkBannerAlertDismissable
         type={ALERT_TYPES.SUCCESS}
         message={message}
-      />,
-    );
-    expect(toJson(tree)).toMatchSnapshot();
-  });
-
-  it('should render correctly with custom bannerClassName', () => {
-    const tree = shallow(
-      <BpkBannerAlert
-        bannerClassName="custom-banner-class-name"
-        type={ALERT_TYPES.SUCCESS}
-        message={message}
+        dismissButtonLabel="Dismiss"
+        onDismiss={jest.fn()}
       />,
     );
     expect(toJson(tree)).toMatchSnapshot();

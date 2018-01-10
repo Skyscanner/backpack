@@ -22,10 +22,17 @@ import PropTypes from 'prop-types';
 
 import { wrapDisplayName } from 'bpk-react-utils';
 
+import {
+  type OnDismissHandler,
+  type OnExpandToggleHandler,
+} from './common-types';
+import BpkBannertAlertExpandable from './BpkBannerAlertExpandable';
+
 const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
   type Props = {
-    onDismiss: ?() => void,
-    onExpandToggle: ?(boolean) => void,
+    onDismiss: OnDismissHandler,
+    onExpandToggle: OnExpandToggleHandler,
+    onHide: ?() => void,
     expanded: boolean,
     show: boolean,
     hideAfter: ?number,
@@ -44,9 +51,26 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
     static propTypes = {
       onDismiss: PropTypes.func,
       onExpandToggle: PropTypes.func,
+      onHide: PropTypes.func,
       expanded: PropTypes.bool,
       show: PropTypes.bool,
-      hideAfter: PropTypes.number,
+      hideAfter: (
+        props: Object,
+        propName: string,
+        componentName: string,
+        ...rest: mixed[]
+      ) => {
+        if (
+          WrappedComponent === BpkBannertAlertExpandable &&
+          typeof props[propName] === 'number'
+        ) {
+          return new Error(
+            `Invalid prop \`${propName}\` supplied to ${componentName}. \`${propName}\` is not supported for expandable banner alerts.`,
+          );
+        }
+
+        return PropTypes.number(props, propName, componentName, ...rest);
+      },
       animateOnLeave: PropTypes.bool,
       children: PropTypes.node,
     };
@@ -54,6 +78,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
     static defaultProps = {
       onDismiss: null,
       onExpandToggle: null,
+      onHide: null,
       expanded: false,
       show: true,
       hideAfter: null,
@@ -75,9 +100,13 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
     componentWillMount() {
       const { hideAfter } = this.props;
 
-      if (hideAfter && hideAfter > 0) {
+      if (
+        WrappedComponent !== BpkBannertAlertExpandable &&
+        hideAfter &&
+        hideAfter > 0
+      ) {
         this.hideIntervalId = setTimeout(() => {
-          this.onDismiss();
+          this.onHide();
         }, hideAfter * 1000);
       }
     }
@@ -105,6 +134,14 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
       }
     };
 
+    onHide = () => {
+      this.setState({ show: false });
+
+      if (this.props.onHide) {
+        this.props.onHide();
+      }
+    };
+
     render() {
       const {
         onDismiss,
@@ -114,6 +151,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
         hideAfter,
         animateOnLeave,
         children,
+        onHide,
         ...rest
       } = this.props;
 

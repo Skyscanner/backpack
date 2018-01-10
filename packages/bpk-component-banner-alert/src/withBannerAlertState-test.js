@@ -18,13 +18,15 @@
 /* @flow */
 
 import React from 'react';
-import { mount } from 'enzyme';
-import renderer from 'react-test-renderer';
+import { mount, shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-import { withDefaultProps } from 'bpk-react-utils';
 import BpkCloseButton from 'bpk-component-close-button';
 
-import BpkBannerAlert, { ALERT_TYPES } from './BpkBannerAlert';
+import { ALERT_TYPES } from './common-types';
+import BpkBannerAlertDismissable from './BpkBannerAlertDismissable';
+import BpkBannerAlertExpandable from './BpkBannerAlertExpandable';
+
 import withBannerAlertState from './withBannerAlertState';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
@@ -35,55 +37,34 @@ porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.`;
 
-const BannerAlert = withDefaultProps(BpkBannerAlert, {
-  message,
-  type: ALERT_TYPES.SUCCESS,
-  toggleButtonLabel: 'View more',
-  dismissButtonLabel: 'Dismiss',
-});
-const EnhancedComponent = withBannerAlertState(BannerAlert);
-
-describe('withBannerAlertState(BpkBannerAlert)', () => {
+const BpkBannerAlertDismissableState = withBannerAlertState(
+  BpkBannerAlertDismissable,
+);
+const BpkBannerAlertExpandableState = withBannerAlertState(
+  BpkBannerAlertExpandable,
+);
+describe('withBannerAlertState(BpkBannerAlertDismissable)', () => {
   it('should render correctly', () => {
-    const tree = renderer.create(<EnhancedComponent />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render correctly collapsed', () => {
-    const tree = renderer
-      .create(
-        <EnhancedComponent expanded={false}>{longMessage}</EnhancedComponent>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render correctly expanded', () => {
-    const tree = renderer
-      .create(<EnhancedComponent expanded>{longMessage}</EnhancedComponent>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render correctly and hide after some seconds', () => {
-    jest.useFakeTimers();
-
-    const tree = renderer.create(
-      <EnhancedComponent hideAfter={3}>{longMessage}</EnhancedComponent>,
+    const tree = shallow(
+      <BpkBannerAlertDismissableState
+        type={ALERT_TYPES.SUCCESS}
+        message={message}
+        dismissButtonLabel="Dismiss"
+      />,
     );
-
-    expect(tree.toJSON()).toMatchSnapshot();
-
-    jest.runAllTimers();
-
-    expect(tree.toJSON()).toMatchSnapshot();
+    expect(toJson(tree)).toMatchSnapshot();
   });
 
-  it('should call provided "onDismiss"', () => {
+  it('should call provided `onDismiss`', () => {
     const onDismissMock = jest.fn();
 
     const wrapper = mount(
-      <EnhancedComponent dismissable onDismiss={onDismissMock} />,
+      <BpkBannerAlertDismissableState
+        type={ALERT_TYPES.SUCCESS}
+        message={message}
+        onDismiss={onDismissMock}
+        dismissButtonLabel="Dismiss"
+      />,
     );
 
     wrapper
@@ -93,26 +74,67 @@ describe('withBannerAlertState(BpkBannerAlert)', () => {
     expect(onDismissMock).toBeCalled();
   });
 
-  it('should call provided "onDismiss" when hidding automatically', () => {
+  it('should call provided `onHide` when hidding automatically', () => {
     jest.useFakeTimers();
-    const onDismissMock = jest.fn();
+    const onHideMock = jest.fn();
 
     mount(
-      <EnhancedComponent dismissable hideAfter={3} onDismiss={onDismissMock} />,
+      <BpkBannerAlertDismissableState
+        type={ALERT_TYPES.SUCCESS}
+        message={message}
+        hideAfter={3}
+        onHide={onHideMock}
+        dismissButtonLabel="Dismiss"
+      />,
     );
 
     jest.runAllTimers();
 
-    expect(onDismissMock).toBeCalled();
+    expect(onHideMock).toBeCalled();
+  });
+});
+
+describe('withBannerAlertState(BpkBannerAlertExpandable)', () => {
+  it('should render correctly collapsed', () => {
+    const tree = shallow(
+      <BpkBannerAlertExpandableState
+        type={ALERT_TYPES.SUCCESS}
+        message={message}
+        expanded={false}
+        toggleButtonLabel="View more"
+      >
+        {longMessage}
+      </BpkBannerAlertExpandableState>,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
+  });
+
+  it('should render correctly expanded', () => {
+    const tree = shallow(
+      <BpkBannerAlertExpandableState
+        message={message}
+        type={ALERT_TYPES.SUCCESS}
+        toggleButtonLabel="View more"
+        expanded
+      >
+        {longMessage}
+      </BpkBannerAlertExpandableState>,
+    );
+    expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should call provided "onExpandToggle"', () => {
     const onExpandMock = jest.fn();
 
     const wrapper = mount(
-      <EnhancedComponent onExpandToggle={onExpandMock}>
+      <BpkBannerAlertExpandableState
+        message={message}
+        type={ALERT_TYPES.SUCCESS}
+        toggleButtonLabel="View more"
+        onExpandToggle={onExpandMock}
+      >
         {longMessage}
-      </EnhancedComponent>,
+      </BpkBannerAlertExpandableState>,
     );
 
     wrapper

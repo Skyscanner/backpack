@@ -10,21 +10,17 @@ npm install bpk-component-banner-alert --save-dev
 
 ## Usage
 
-### Non-dismissable
+### Default
 
 ```js
 import React from 'react';
 import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert';
 
-const longMessage = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec erat condimentum dapibus. Nunc diam augue, egestas id egestas ut, facilisis nec mi. Donec et congue odio, nec laoreet est. Integer rhoncus varius arcu, a fringilla libero laoreet at. Mauris porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan et. Suspendisse vehicula ullamcorper sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis ante in, vestibulum nulla.';
-
 export default () => (
   <BpkBannerAlert
     message="Successful alert with more information."
     type={ALERT_TYPES.SUCCESS}
-  >
-    {longMessage}
-  </BpkBannerAlert>
+  />
 );
 ```
 
@@ -32,7 +28,7 @@ export default () => (
 
 ```js
 import React, { Component } from 'react';
-import BpkBannerAlert, { ALERT_TYPES } from 'bpk-component-banner-alert';
+import { ALERT_TYPES, BpkBannerAlertDismissable } from 'bpk-component-banner-alert';
 
 class DismissableBpkBannerAlert extends Component {
   constructor() {
@@ -53,10 +49,9 @@ class DismissableBpkBannerAlert extends Component {
 
   render() {
     return (
-      <BpkBannerAlert
+      <BpkBannerAlertDismissable
         message="Successful alert with dismiss option."
         type={ALERT_TYPES.SUCCESS}
-        dismissable
         onDismiss={this.setDismissed}
         show={this.state.show}
         dismissButtonLabel="Dismiss"
@@ -74,30 +69,30 @@ export default () => (
 
 ```js
 import React, { Component } from 'react';
-import BpkBannerAlert, { ALERT_TYPES, withBannerAlertState } from 'bpk-component-banner-alert';
+import { ALERT_TYPES, withBannerAlertState, BpkBannerAlertDismissable, BpkBannerAlertExpandable } from 'bpk-component-banner-alert';
 
-const BannerAlertState = withBannerAlertState(BpkBannerAlert);
+const BannerAlertDismissableState = withBannerAlertState(BpkBannerAlertDismissable);
+const BannerAlertExpandableState = withBannerAlertState(BpkBannerAlertExpandable);
 
-<BannerAlertState
-  dismissable
+<BannerAlertDismissableState
   dismissButtonLabel="Dismiss"
   message="Successful alert with dismiss option."
   type={ALERT_TYPES.SUCCESS}
 />
 
-<BannerAlertState
+<BannerAlertDismissableState
   message="Successful alert that will disappear after 5 seconds."
   hideAfter={5}
   type={ALERT_TYPES.SUCCESS}
 />
 
-<BannerAlertState
+<BannerAlertExpandableState
   message="Successful alert with expandable option."
   type={ALERT_TYPES.SUCCESS}
   toggleButtonLabel="View more"
 >
   Lorem ipsum dolor sit amet.
-</BannerAlertState>
+</BannerAlertExpandableState>
 ```
 
 
@@ -105,27 +100,45 @@ const BannerAlertState = withBannerAlertState(BpkBannerAlert);
 
 ### BpkBannerAlert
 
-| Property           | PropType             | Required | Default Value |
-| ------------------ | -------------------- | -------- | ------------- |
-| type               | ALERT_TYPES (one of) | true     | -             |
-| message            | node                 | true     | -             |
-| animateOnEnter     | bool                 | false    | false         |
-| animateOnLeave     | bool                 | false    | false         |
-| ariaLive           | ARIA_LIVE (one of)   | false    | 'assertive'   |
-| bannerClassName    | string               | false    | null          |
-| children           | node                 | false    | null          |
-| dismissable        | bool                 | false    | false         |
-| dismissButtonLabel | string               | false    | null          |
-| onDismiss          | func                 | false    | null          |
-| show               | bool                 | false    | true          |
-| expanded           | bool                 | false    | false         |
-| toggleButtonLabel  | string               | false    | null          |
-| onExpandToggle     | func                 | false    | null          |
-| className          | string               | false    | null          |
+| Property           | PropType               | Required | Default Value |
+| ------------------ | ---------------------- | -------- | ------------- |
+| type               | ALERT_TYPES (one of)   | true     | -             |
+| message            | node                   | true     | -             |
+| animateOnEnter     | bool                   | false    | false         |
+| animateOnLeave     | bool                   | false    | false         |
+| bannerClassName    | string                 | false    | null          |
+| show               | bool                   | false    | true          |
+
+### BpkBannerAlertDismissable
+
+| Property           | PropType               | Required | Default Value |
+| ------------------ | ---------------------- | -------- | ------------- |
+| type               | ALERT_TYPES (one of)   | true     | -             |
+| message            | node                   | true     | -             |
+| animateOnEnter     | bool                   | false    | false         |
+| animateOnLeave     | bool                   | false    | false         |
+| bannerClassName    | string                 | false    | null          |
+| dismissButtonLabel | string                 | false    | null          |
+| onDismiss          | func                   | false    | null          |
+| show               | bool                   | false    | true          |
+
+### BpkBannerAlertExpandable
+
+| Property           | PropType               | Required | Default Value |
+| ------------------ | ---------------------- | -------- | ------------- |
+| type               | ALERT_TYPES (one of)   | true     | -             |
+| message            | node                   | true     | -             |
+| animateOnEnter     | bool                   | false    | false         |
+| animateOnLeave     | bool                   | false    | false         |
+| bannerClassName    | string                 | false    | null          |
+| show               | bool                   | false    | true          |
+| expanded           | bool                   | false    | false         |
+| toggleButtonLabel  | string                 | false    | null          |
+| onExpandToggle     | func                   | false    | null          |
 
 ### withBannerAlertState(BpkBannerAlert)
 
-| Property       | PropType | Required | Default Value |
-| -------------- | -------- | -------- | ------------- |
-| hideAfter      | number   | false    | null          |
-| onDismiss      | func     | false    | null          |
+| Property  | PropType | Required | Default Value |
+| --------- | -------- | -------- | ------------- |
+| hideAfter | number   | false    | null          |
+| onHide    | func     | false    | null          |

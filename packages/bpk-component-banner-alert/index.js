@@ -17,8 +17,16 @@
  */
 /* @flow */
 
-import BpkBannerAlert, { ALERT_TYPES } from './src/BpkBannerAlert';
+import BpkBannerAlert from './src/BpkBannerAlert';
+import BpkBannerAlertDismissable from './src/BpkBannerAlertDismissable';
+import BpkBannerAlertExpandable from './src/BpkBannerAlertExpandable';
+import { ALERT_TYPES } from './src/common-types';
 import withBannerAlertState from './src/withBannerAlertState';
 
-export { ALERT_TYPES, withBannerAlertState };
+export {
+  ALERT_TYPES,
+  BpkBannerAlertDismissable,
+  BpkBannerAlertExpandable,
+  withBannerAlertState,
+};
 export default BpkBannerAlert;
