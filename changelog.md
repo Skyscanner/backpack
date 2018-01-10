@@ -2,18 +2,22 @@
 
 ## UNRELEASED
 
+__Nothing yet...__
+
+## 2018-01-10 - Replacing Tether with Popper.js and new API for web banner alerts
+
 **Breaking:**
-- bpk-component-datepicker:
-- bpk-component-popover:
-- bpk-component-tooltip:
+- bpk-component-datepicker: 7.2.5 => 8.0.0
+- bpk-component-popover: 1.3.4 => 2.0.0
+- bpk-component-tooltip:  2.0.35 => 3.0.0
   - Swapped out tether positioning library in favour of popper.js
   - Removed `tetherOptions` prop
   - Added `placement` prop, accepts either `top`, `right`, `bottom` or `left`
 
-- bpk-component-popover:
+- bpk-component-popover: 1.3.4 => 2.0.0
   - On mobile screen sizes, popovers now have a margin to prevent them from filling the entire width of their container.
 
-- bpk-component-banner-alert:
+- bpk-component-banner-alert: 1.6.4 => 2.0.0
   - Removed `dismissable` property in favour of `BpkBannerAlertDismissable`.
   - A banner alert with `children` will no longer be auotmatically expandable. Use the newly introduced `BpkBannerAlertExpandable` component instead.
   - The `ariaLive` prop has been removed from `BpkBannerAlert`.
@@ -21,7 +25,7 @@
   - See the [migration guide](packages/bpk-component-banner-alert/docs/migrating-from-v1-to-v2.md).
 
 **Added:**
-- bpk-component-banner-alert:
+- bpk-component-banner-alert: 1.6.4 => 2.0.0
   - Introduced new component for the different banner alert configurations.
     - `BpkBannerAlert` is now the default banner alert.
     - `BpkBannerAlertDismissable` is a banner alert with a dismiss behaviour.
