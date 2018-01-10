@@ -18,8 +18,6 @@
 
 /* @flow */
 
-import BpkThemeProvider, { withTheme } from './src/BpkThemeProvider';
-
-export type { Theme } from './src/types';
-export default BpkThemeProvider;
-export { withTheme };
+export type Theme = {
+  [string]: string,
+};
