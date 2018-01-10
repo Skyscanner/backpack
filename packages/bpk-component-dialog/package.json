@@ -15,12 +15,12 @@
   },
   "dependencies": {
     "prop-types": "^15.5.8",
-    "bpk-component-modal": "^1.4.0"
+    "bpk-component-modal": "^1.4.2"
   },
   "devDependencies": {
-    "bpk-component-button": "^1.6.80",
-    "bpk-component-text": "^1.0.36",
-    "bpk-mixins": "^17.2.2",
-    "bpk-react-utils": "^2.4.2"
+    "bpk-component-button": "^1.6.82",
+    "bpk-component-text": "^1.0.38",
+    "bpk-mixins": "^17.2.4",
+    "bpk-react-utils": "^2.4.3"
   }
 }
