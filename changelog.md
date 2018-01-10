@@ -16,9 +16,6 @@ _Nothing Yet!_
 - bpk-component-popover:
   - On mobile screen sizes, popovers now have a margin to prevent them from filling the entire width of their container.
 
-- bpk-mixins:
-  - TODO: I think we should just YOLO this and not make it breaking.
-
 **Fixed:**
 - bpk-component-banner-alert: 1.6.3 => 1.6.4
   - Fixed issue where banner was shown if `show` was initially set `false`.
