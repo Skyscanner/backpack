@@ -92,11 +92,15 @@ class BpkPopoverPortal extends Component<Props> {
       return;
     }
 
-    if (!this.popper || targetElement !== this.previousTargetElement) {
-      if (this.popper) {
-        this.popper.destroy();
-      }
+    const targetElementHasChanged =
+      targetElement !== this.previousTargetElement;
 
+    if (targetElementHasChanged && this.popper) {
+      this.popper.destroy();
+      this.popper = null;
+    }
+
+    if (!this.popper) {
       this.popper = new Popper(targetElement, popoverElement, {
         placement: this.props.placement,
         onCreate: () => {
