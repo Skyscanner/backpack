@@ -93,7 +93,9 @@ class App extends Component {
 
 ### Prop Details
 
-title is required unless `showHeader` is false.
+#### title
+
+This is required unless `dismissible` is false.
 
 ## Theme Props
 

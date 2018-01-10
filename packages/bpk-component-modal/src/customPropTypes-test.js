@@ -16,28 +16,28 @@
  * limitations under the License.
  */
 
-import modalDataProp from './customPropTypes';
+import titlePropType from './customPropTypes';
 
 const goodData = { title: 'Modal title', showHeader: true };
 const goodData2 = { showHeader: false };
 const badData = { showHeader: true };
 
-describe('modalDataProp', () => {
+describe('titlePropType', () => {
   it('should fail if show header is true and there is no title', () => {
-    const result = modalDataProp(badData, 'title', 'BpkModal');
+    const result = titlePropType(badData, 'title', 'BpkModal');
 
     expect(result).not.toBeFalsy();
     expect(result).toEqual(expect.any(Error));
   });
 
   it('should return null for valid data', () => {
-    const result = modalDataProp(goodData, 'title', 'BpkModal');
+    const result = titlePropType(goodData, 'title', 'BpkModal');
 
     expect(result).toBeFalsy();
   });
 
   it('should be valid to pass no title if showHeader is false', () => {
-    const result = modalDataProp(goodData2, 'title', 'BpkModal');
+    const result = titlePropType(goodData2, 'title', 'BpkModal');
 
     expect(result).toBeFalsy();
   });

@@ -41,18 +41,20 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div id="dialog-container">
         <div id="application-container">
           <BpkButton onClick={this.onOpen}>Open dialog</BpkButton>
         </div>
         <BpkDialog
+          closeLabel="Close dialog"
+          id="my-dialog"
+          className="my-classname"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
-          title="Dialog title"
-          closeLabel="Close dialog"
           getApplicationElement={() =>
             document.getElementById('application-container')
           }
+          renderTarget={() => document.getElementById('dialog-container')}
         >
           This is a dialog. You can put anything you want in here.
         </BpkDialog>
@@ -83,4 +85,6 @@ class App extends Component {
 
 ### Prop Details
 
-title is required unless `dismissible` is false.
+#### title
+
+This is required unless `dismissible` is false.

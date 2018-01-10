@@ -18,11 +18,10 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import BpkText from 'bpk-component-text';
+import BpkButton from 'bpk-component-button';
 import { storiesOf } from '@storybook/react';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
-
-import BpkButton from 'bpk-component-button';
-import BpkText from 'bpk-component-text';
 
 import BpkDialog from './index';
 
@@ -67,20 +66,6 @@ class DialogContainer extends Component {
       <div id="dialog-container">
         <div id="application-container">
           <BpkButton onClick={this.onOpen}>Open dialog</BpkButton>
-          <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut egestas
-            sit amet nisi nec ultrices. In efficitur justo ac tristique
-            ultricies. Mauris luctus felis arcu, a porttitor turpis aliquet
-            faucibus. Aenean nibh nulla, dictum sit amet efficitur cursus,
-            molestie vitae enim. Aenean vel nunc purus. Vestibulum consectetur
-            luctus eros ac bibendum. Donec pretium nunc mi, sed iaculis nibh
-            aliquet in. Integer ut accumsan orci, non hendrerit nunc. Quisque
-            ante enim, convallis lacinia arcu eu, tincidunt dignissim nunc.
-            Nulla facilisi. Curabitur mattis sapien imperdiet, dignissim ligula
-            id, maximus erat. Morbi sed eros vitae augue accumsan dictum sit
-            amet eu lectus. Integer vitae consectetur libero, sed porttitor
-            urna.
-          </Paragraph>
         </div>
         <BpkDialog
           closeLabel="Close dialog"
@@ -88,10 +73,10 @@ class DialogContainer extends Component {
           className="my-classname"
           isOpen={this.state.isOpen}
           onClose={this.onClose}
-          renderTarget={() => document.getElementById('dialog-container')}
           getApplicationElement={() =>
             document.getElementById('application-container')
           }
+          renderTarget={() => document.getElementById('dialog-container')}
           {...rest}
         >
           {this.props.children}
@@ -109,14 +94,16 @@ DialogContainer.propTypes = {
 storiesOf('bpk-component-dialog', module)
   .add('Default', () => (
     <DialogContainer title="Dialog title">
-      <p>This is a default dialog. You can put anything you want in here.</p>
+      <Paragraph>
+        This is a default dialog. You can put anything you want in here.
+      </Paragraph>
     </DialogContainer>
   ))
   .add('Not dismissible', () => (
     <DialogContainer dismissible={false}>
-      <p>
+      <Paragraph>
         This is not dismissible. To close it you must bind the `onClose`
         function to a component inside the dialog, like the button below.
-      </p>
+      </Paragraph>
     </DialogContainer>
   ));
