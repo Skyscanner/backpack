@@ -47,7 +47,7 @@ const mapCharacterCode = characterCode =>
 type Props = {
   icon: string,
   small?: boolean,
-  style?: {} | Array<{}>,
+  style?: Object | Array<Object>,
 };
 
 const BpkIcon = (props: Props) => {

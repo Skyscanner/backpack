@@ -16,13 +16,16 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import { StyleSheet } from 'react-native';
 import difference from 'lodash/difference';
 import { colorWhite } from 'bpk-tokens/tokens/base.react.native';
+import { type Theme } from 'react-native-bpk-theming';
 
 import styles from './BpkButton-styles';
 
-const REQUIRED_THEME_ATTRIBUTES = {
+const REQUIRED_THEME_ATTRIBUTES: Object = {
   primary: [
     styles.themeMappings.text.color.primary,
     styles.themeMappings.gradient.primary.startColor,
@@ -38,9 +41,9 @@ const REQUIRED_THEME_ATTRIBUTES = {
 export const THEMEABLE_TYPES = Object.keys(REQUIRED_THEME_ATTRIBUTES);
 
 export const getStyleForElement = (
-  elementType,
-  { type, title, icon, iconOnly, large, disabled },
-) => {
+  elementType: string,
+  { type, title, icon, iconOnly, large, disabled }: Object,
+): Array<Object> => {
   // Start with base style.
   const styleForElement = [styles.base[elementType]];
 
@@ -79,23 +82,27 @@ export const getStyleForElement = (
 };
 
 export const getThemingForElement = (
-  elementType,
-  theme,
-  { type, disabled },
-) => {
+  elementType: string,
+  theme: ?Theme,
+  { type, disabled }: Object,
+): Object => {
+  const suppliedTheme = theme; // This is purely to stop Flow from compaining.
   const themeForElement = {};
-  if (theme && !disabled && styles.themeMappings[elementType]) {
+  if (suppliedTheme && !disabled && styles.themeMappings[elementType]) {
     Object.keys(styles.themeMappings[elementType]).forEach(key => {
       const values = styles.themeMappings[elementType][key];
       if (values[type]) {
-        themeForElement[key] = theme[values[type]];
+        themeForElement[key] = suppliedTheme[values[type]];
       }
     });
   }
   return themeForElement;
 };
 
-export const getGradientColors = (theme, { type, disabled }) => {
+export const getGradientColors = (
+  theme: ?Theme,
+  { type, disabled }: Object,
+): Array<string> => {
   let gradientColors = styles.gradientColors[type];
   if (theme) {
     const gradientThemeProps = styles.themeMappings.gradient[type];
@@ -111,25 +118,34 @@ export const getGradientColors = (theme, { type, disabled }) => {
   return gradientColors;
 };
 
-export const iconPropType = (props, propName, componentName) => {
+export const iconPropType = (
+  props: Object,
+  propName: string,
+  componentName: string,
+): ?Error => {
   const icon = props[propName];
   if (props.iconOnly && !icon) {
     return new Error(
       `Invalid prop \`${propName}\` supplied to \`${componentName}\`. When \`iconOnly\` is enabled, \`${propName}\` must be supplied.`,
     ); // eslint-disable-line max-len
   }
-  return false;
+  return null;
 };
 
-export const isTypeThemeable = type => THEMEABLE_TYPES.includes(type);
+export const isTypeThemeable = (type: string): boolean =>
+  THEMEABLE_TYPES.includes(type);
 
-export const themeAttributesSupplied = (type, theme) =>
+export const themeAttributesSupplied = (type: string, theme: Theme): boolean =>
   difference(REQUIRED_THEME_ATTRIBUTES[type], Object.keys(theme)).length === 0;
 
-export const themePropType = (props, propName, componentName) => {
+export const themePropType = (
+  props: Object,
+  propName: string,
+  componentName: string,
+): ?Error => {
   const { type, theme } = props;
   if (!theme) {
-    return false;
+    return null;
   }
   if (!themeAttributesSupplied(type, theme)) {
     return new Error(
@@ -138,10 +154,13 @@ export const themePropType = (props, propName, componentName) => {
       ].join(', ')}\``,
     ); // eslint-disable-line max-len
   }
-  return false;
+  return null;
 };
 
-export const getAndroidBackgroundColour = (theme, props) => {
+export const getAndroidBackgroundColour = (
+  theme: ?Theme,
+  props: Object,
+): Object => {
   const style = {
     backgroundColor: 'transparent',
   };
@@ -157,7 +176,10 @@ export const getAndroidBackgroundColour = (theme, props) => {
   return StyleSheet.create({ style }).style;
 };
 
-export const textStyle = (theme, props) => [
+// 'Array<any>' because getStyleForElement returns an array but
+// getThemingForElement returns an object. React Native is fine with this
+// in stylesheets.
+export const textStyle = (theme: ?Theme, props: Object): Array<any> => [
   getStyleForElement('text', props),
   getThemingForElement('text', theme, props),
 ];

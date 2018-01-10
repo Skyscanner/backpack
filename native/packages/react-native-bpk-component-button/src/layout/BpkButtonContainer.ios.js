@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import { ViewPropTypes } from 'react-native';
+/* @flow */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import LinearGradient from 'react-native-linear-gradient';
@@ -26,10 +27,21 @@ import {
   getStyleForElement,
   getThemingForElement,
   getGradientColors,
-  themePropType,
 } from './../utils';
 
-const BpkButtonContainer = props => {
+import {
+  type CommonProps,
+  COMMON_PROP_TYPES,
+  COMMON_DEFAULT_PROPS,
+} from './../common-types';
+
+type Props = {
+  ...$Exact<CommonProps>,
+  children: Node,
+  large: boolean,
+};
+
+const BpkButtonContainer = (props: Props) => {
   const { theme } = props;
   const gradientColors = getGradientColors(theme, props);
   const containerStyle = getStyleForElement('container', props);
@@ -69,25 +81,14 @@ const BpkButtonContainer = props => {
 };
 
 BpkButtonContainer.propTypes = {
+  ...COMMON_PROP_TYPES,
   children: PropTypes.node.isRequired,
-  onPress: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  accessibilityLabel: PropTypes.string,
-  disabled: PropTypes.bool,
-  iconOnly: PropTypes.bool,
   large: PropTypes.bool,
-  style: ViewPropTypes.style,
-  theme: themePropType,
 };
 
 BpkButtonContainer.defaultProps = {
-  accessibilityLabel: null,
-  disabled: false,
-  iconOnly: false,
+  ...COMMON_DEFAULT_PROPS,
   large: false,
-  style: null,
-  theme: null,
 };
 
 export default BpkButtonContainer;

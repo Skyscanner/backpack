@@ -22,7 +22,8 @@ import renderer from 'react-test-renderer';
 
 import BpkThemeProvider from 'react-native-bpk-theming';
 
-import BpkButton, { propTypes, BUTTON_TYPES } from './BpkButton';
+import BpkButton, { propTypes } from './BpkButton';
+import { BUTTON_TYPES } from './common-types';
 
 const onPressFn = jest.fn();
 const commonTests = () => {
@@ -139,7 +140,7 @@ const commonTests = () => {
       expect(tree).toMatchSnapshot();
     });
 
-    BUTTON_TYPES.forEach(buttonType => {
+    Object.keys(BUTTON_TYPES).forEach(buttonType => {
       it(`should render correctly with type="${buttonType}"`, () => {
         const tree = renderer
           .create(
@@ -239,7 +240,7 @@ const commonTests = () => {
           <BpkButton title="Lorem ipsum" type="silly" onPress={onPressFn} />,
         ),
       ).toThrow(
-        '"silly" is not a valid button type. Valid types are primary, featured, secondary, destructive',
+        '"silly" is not a valid button type. Valid types are primary, secondary, destructive, featured',
       );
     });
   });
