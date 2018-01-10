@@ -19,7 +19,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-jest.mock('bpk-tether');
 jest.mock('bpk-react-utils', () => {
   const original = require.requireActual('bpk-react-utils');
 

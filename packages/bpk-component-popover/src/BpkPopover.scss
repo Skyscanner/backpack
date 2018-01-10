@@ -18,16 +18,39 @@
 
 @import '~bpk-mixins';
 
+$arrow-size: $bpk-spacing-sm;
+
 .bpk-popover-portal {
   z-index: $bpk-zindex-popover;
+
+  @include bpk-breakpoint-mobile {
+    margin-right: $bpk-spacing-sm;
+    margin-left: $bpk-spacing-sm;
+  }
+
+  &[x-placement=top] {
+    margin-bottom: $arrow-size;
+  }
+
+  &[x-placement=right] {
+    margin-left: $arrow-size;
+  }
+
+  &[x-placement=bottom] {
+    margin-top: $arrow-size;
+  }
+
+  &[x-placement=left] {
+    margin-right: $arrow-size;
+  }
 }
 
 .bpk-popover {
-  $arrow-size: $bpk-spacing-sm;
-
   transition: opacity $bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
+
+  @include bpk-layer;
 
   @include bpk-breakpoint-above-mobile {
     max-width: $bpk-breakpoint-mobile;
@@ -42,47 +65,24 @@
     opacity: 1;
   }
 
-  // FIXME: Remove use of :global when/if https://github.com/HubSpot/tether/pull/245
-  // is merged.
-  :global(.bpk-popover-tether-element-attached-top) & {
-    padding-top: $bpk-spacing-sm;
-  }
-
-  :global(.bpk-popover-tether-element-attached-right) & {
-    margin-left: -$bpk-spacing-sm;
-    padding-right: $bpk-spacing-sm;
-  }
-
-  :global(.bpk-popover-tether-element-attached-bottom) & {
-    padding-bottom: $bpk-spacing-sm;
-  }
-
-  :global(.bpk-popover-tether-element-attached-left) & {
-    padding-left: $bpk-spacing-sm;
-  }
-
   &__arrow {
     @include bpk-layer-arrow($arrow-size);
 
-    :global(.bpk-popover-tether-element-attached-top) & {
-      @include bpk-layer-arrow-top($arrow-size);
-    }
-
-    :global(.bpk-popover-tether-element-attached-right) & {
-      @include bpk-layer-arrow-right($arrow-size);
-    }
-
-    :global(.bpk-popover-tether-element-attached-bottom) & {
+    .bpk-popover-portal[x-placement=top] & {
       @include bpk-layer-arrow-bottom($arrow-size);
     }
 
-    :global(.bpk-popover-tether-element-attached-left) & {
+    .bpk-popover-portal[x-placement=right] & {
       @include bpk-layer-arrow-left($arrow-size);
     }
-  }
 
-  &__inner {
-    @include bpk-layer;
+    .bpk-popover-portal[x-placement=bottom] & {
+      @include bpk-layer-arrow-top($arrow-size);
+    }
+
+    .bpk-popover-portal[x-placement=left] & {
+      @include bpk-layer-arrow-right($arrow-size);
+    }
   }
 
   &__body {

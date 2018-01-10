@@ -24,7 +24,7 @@ import { BpkButtonLink } from 'bpk-component-link';
 import BpkCloseButton from 'bpk-component-close-button';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-popover.scss';
+import STYLES from './BpkPopover.scss';
 import { ARROW_ID } from './constants';
 
 const getClassName = cssModules(STYLES);
@@ -107,41 +107,22 @@ const BpkPopover = (props: Props) => {
           className={getClassName('bpk-popover__arrow')}
           role="presentation"
         />
-        <div className={getClassName('bpk-popover__inner')}>
-          {labelAsTitle ? (
-            <header className={getClassName('bpk-popover__header')}>
-              <h2 id={labelId} className={getClassName('bpk-popover__heading')}>
-                {label}
-              </h2>
-              &nbsp;
-              {closeButtonIcon ? (
-                <BpkCloseButton
-                  className={getClassName('bpk-popover__close-button')}
-                  label={closeButtonText}
-                  onClick={bindEventSource(
-                    EVENT_SOURCES.CLOSE_BUTTON,
-                    props.onClose,
-                  )}
-                />
-              ) : (
-                <BpkButtonLink
-                  onClick={bindEventSource(
-                    EVENT_SOURCES.CLOSE_LINK,
-                    props.onClose,
-                  )}
-                >
-                  {closeButtonText}
-                </BpkButtonLink>
-              )}
-            </header>
-          ) : (
-            <span id={labelId} className={getClassName('bpk-popover__label')}>
+        {labelAsTitle ? (
+          <header className={getClassName('bpk-popover__header')}>
+            <h2 id={labelId} className={getClassName('bpk-popover__heading')}>
               {label}
-            </span>
-          )}
-          <div className={bodyClassNames.join(' ')}>{children}</div>
-          {!labelAsTitle && (
-            <footer className={getClassName('bpk-popover__footer')}>
+            </h2>
+            &nbsp;
+            {closeButtonIcon ? (
+              <BpkCloseButton
+                className={getClassName('bpk-popover__close-button')}
+                label={closeButtonText}
+                onClick={bindEventSource(
+                  EVENT_SOURCES.CLOSE_BUTTON,
+                  props.onClose,
+                )}
+              />
+            ) : (
               <BpkButtonLink
                 onClick={bindEventSource(
                   EVENT_SOURCES.CLOSE_LINK,
@@ -150,9 +131,23 @@ const BpkPopover = (props: Props) => {
               >
                 {closeButtonText}
               </BpkButtonLink>
-            </footer>
-          )}
-        </div>
+            )}
+          </header>
+        ) : (
+          <span id={labelId} className={getClassName('bpk-popover__label')}>
+            {label}
+          </span>
+        )}
+        <div className={bodyClassNames.join(' ')}>{children}</div>
+        {!labelAsTitle && (
+          <footer className={getClassName('bpk-popover__footer')}>
+            <BpkButtonLink
+              onClick={bindEventSource(EVENT_SOURCES.CLOSE_LINK, props.onClose)}
+            >
+              {closeButtonText}
+            </BpkButtonLink>
+          </footer>
+        )}
       </section>
     </TransitionInitialMount>
   );

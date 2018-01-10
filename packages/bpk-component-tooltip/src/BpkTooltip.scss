@@ -18,9 +18,29 @@
 
 @import '~bpk-mixins';
 
-.bpk-tooltip {
-  $arrow-size: $bpk-spacing-xs;
+$arrow-size: $bpk-spacing-xs;
 
+.bpk-tooltip-portal {
+  z-index: $bpk-zindex-tooltip;
+
+  &[x-placement=top] {
+    margin-bottom: $arrow-size;
+  }
+
+  &[x-placement=right] {
+    margin-left: $arrow-size;
+  }
+
+  &[x-placement=bottom] {
+    margin-top: $arrow-size;
+  }
+
+  &[x-placement=left] {
+    margin-right: $arrow-size;
+  }
+}
+
+.bpk-tooltip {
   transition: opacity $bpk-duration-sm ease-in-out, transform $bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
@@ -28,22 +48,22 @@
   &--appear {
     opacity: 0;
 
-    :global(.bpk-tooltip-tether-element-attached-top) &:not(.bpk-tooltip--appear-active) {
-      transform: translate(0, 1rem);
-      transition: none;
-    }
-
-    :global(.bpk-tooltip-tether-element-attached-bottom) &:not(.bpk-tooltip--appear-active) {
+    .bpk-tooltip-portal[x-placement=top] &:not(.bpk-tooltip--appear-active) {
       transform: translate(0, -1rem);
       transition: none;
     }
 
-    :global(.bpk-tooltip-tether-element-attached-left) &:not(.bpk-tooltip--appear-active) {
+    .bpk-tooltip-portal[x-placement=right] &:not(.bpk-tooltip--appear-active) {
       transform: translate(1rem, 0);
       transition: none;
     }
 
-    :global(.bpk-tooltip-tether-element-attached-right) &:not(.bpk-tooltip--appear-active) {
+    .bpk-tooltip-portal[x-placement=bottom] &:not(.bpk-tooltip--appear-active) {
+      transform: translate(0, 1rem);
+      transition: none;
+    }
+
+    .bpk-tooltip-portal[x-placement=left] &:not(.bpk-tooltip--appear-active) {
       transform: translate(-1rem, 0);
       transition: none;
     }
@@ -55,40 +75,23 @@
     opacity: 1;
   }
 
-  :global(.bpk-tooltip-tether-element-attached-top) & {
-    padding-top: $arrow-size;
-  }
-
-  :global(.bpk-tooltip-tether-element-attached-right) & {
-    margin-left: -$arrow-size;
-    padding-right: $arrow-size;
-  }
-
-  :global(.bpk-tooltip-tether-element-attached-bottom) & {
-    padding-bottom: $arrow-size;
-  }
-
-  :global(.bpk-tooltip-tether-element-attached-left) & {
-    padding-left: $arrow-size;
-  }
-
   &__arrow {
     @include bpk-layer-arrow($arrow-size);
 
-    :global(.bpk-tooltip-tether-element-attached-top) & {
-      @include bpk-layer-arrow-top($arrow-size);
-    }
-
-    :global(.bpk-tooltip-tether-element-attached-right) & {
-      @include bpk-layer-arrow-right($arrow-size);
-    }
-
-    :global(.bpk-tooltip-tether-element-attached-bottom) & {
+    .bpk-tooltip-portal[x-placement=top] & {
       @include bpk-layer-arrow-bottom($arrow-size);
     }
 
-    :global(.bpk-tooltip-tether-element-attached-left) & {
+    .bpk-tooltip-portal[x-placement=right] & {
       @include bpk-layer-arrow-left($arrow-size);
+    }
+
+    .bpk-tooltip-portal[x-placement=bottom] & {
+      @include bpk-layer-arrow-top($arrow-size);
+    }
+
+    .bpk-tooltip-portal[x-placement=left] & {
+      @include bpk-layer-arrow-right($arrow-size);
     }
   }
 

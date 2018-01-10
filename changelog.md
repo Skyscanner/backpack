@@ -5,6 +5,17 @@ _Nothing Yet!_
 
 ## 2018-01-09 - Prop tweaks, including fix for banner-alert when `show` is `false`
 
+**Breaking:**
+- bpk-component-datepicker:
+- bpk-component-popover:
+- bpk-component-tooltip:
+  - Swapped out tether positioning library in favour of popper.js
+  - Removed `tetherOptions` prop
+  - Added `placement` prop, accepts either `top`, `right`, `bottom` or `left`
+
+- bpk-component-popover:
+  - On mobile screen sizes, popovers now have a margin to prevent them from filling the entire width of their container.
+
 **Fixed:**
 - bpk-component-banner-alert: 1.6.3 => 1.6.4
   - Fixed issue where banner was shown if `show` was initially set `false`.

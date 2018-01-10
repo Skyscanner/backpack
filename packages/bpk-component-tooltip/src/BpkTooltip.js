@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
-import STYLES from './bpk-tooltip.scss';
+import STYLES from './BpkTooltip.scss';
 import { ARROW_ID } from './constants';
 
 const getClassName = cssModules(STYLES);
