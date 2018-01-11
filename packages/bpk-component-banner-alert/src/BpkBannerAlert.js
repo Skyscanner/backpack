@@ -26,7 +26,7 @@ import {
 import BpkBannerAlertInner from './BpkBannerAlertInner';
 
 type Props = {
-  ...CommonProps,
+  ...$Exact<CommonProps>,
 };
 
 const BpkBannerAlert = (props: Props) => <BpkBannerAlertInner {...props} />;
