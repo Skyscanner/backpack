@@ -4,5 +4,14 @@
   "packages": [
     "packages/*",
     "native/packages/*"
-  ]
+  ],
+  "commands": {
+    "bootstrap": {
+      "ignore": "bpk-tether"
+    },
+    "publish": {
+      "ignore": "bpk-tether",
+      "allowBranch": "master"
+    }
+  }
 }
