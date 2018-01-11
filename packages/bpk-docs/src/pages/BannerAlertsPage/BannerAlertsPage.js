@@ -53,7 +53,7 @@ const BannerAlertExpandable = withDefaultProps(
 );
 
 const BannerAlertDismissable = withDefaultProps(
-  withBannerAlertState(BpkBannerAlertExpandable),
+  withBannerAlertState(BpkBannerAlertDismissable),
   {
     className: componentClassName,
     dismissButtonLabel: 'Dismiss',
