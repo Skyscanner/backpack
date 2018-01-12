@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
-import { View, Platform, ViewPropTypes } from 'react-native';
-import React from 'react';
+import { View, Platform } from 'react-native';
+import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 
 import { withTheme } from 'react-native-bpk-theming';
@@ -30,16 +32,26 @@ import {
   isTypeThemeable,
   themeAttributesSupplied,
   getStyleForElement,
-  iconPropType,
-  themePropType,
   textStyle,
+  iconPropType,
 } from './utils';
+
+import {
+  type CommonProps,
+  BUTTON_TYPES,
+  COMMON_PROP_TYPES,
+  COMMON_DEFAULT_PROPS,
+} from './common-types';
 
 import BpkButtonContainer from './layout/BpkButtonContainer';
 
-const BUTTON_TYPES = ['primary', 'featured', 'secondary', 'destructive'];
+type Props = {
+  ...$Exact<CommonProps>,
+  large: boolean,
+  icon: ?Node,
+};
 
-const BpkButton = props => {
+const BpkButton = (props: Props) => {
   const {
     accessibilityLabel,
     disabled,
@@ -54,11 +66,11 @@ const BpkButton = props => {
   } = props;
   let { theme } = props;
   // Validate the button type.
-  if (!BUTTON_TYPES.includes(type)) {
+  if (!Object.values(BUTTON_TYPES).includes(type)) {
     throw new Error(
-      `"${type}" is not a valid button type. Valid types are ${BUTTON_TYPES.join(
-        ', ',
-      )}`,
+      `"${type}" is not a valid button type. Valid types are ${Object.keys(
+        BUTTON_TYPES,
+      ).join(', ')}`,
     );
   }
 
@@ -70,7 +82,7 @@ const BpkButton = props => {
     }
   }
 
-  const renderIcon = () => {
+  const renderIcon = (): ?Node => {
     if (!icon) {
       return null;
     }
@@ -111,30 +123,16 @@ const BpkButton = props => {
 };
 
 const propTypes = {
-  onPress: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  accessibilityLabel: PropTypes.string,
-  disabled: PropTypes.bool,
-  icon: iconPropType,
-  iconOnly: PropTypes.bool,
+  ...COMMON_PROP_TYPES,
   large: PropTypes.bool,
-  style: ViewPropTypes.style,
-  theme: themePropType,
-  type: PropTypes.oneOf(BUTTON_TYPES),
+  icon: iconPropType,
 };
-
 BpkButton.propTypes = propTypes;
-
 BpkButton.defaultProps = {
-  accessibilityLabel: null,
-  disabled: false,
-  icon: null,
-  iconOnly: false,
+  ...COMMON_DEFAULT_PROPS,
   large: false,
-  style: null,
-  theme: null,
-  type: 'primary',
+  icon: null,
 };
 
 export default withTheme(BpkButton);
-export { propTypes, BUTTON_TYPES };
+export { propTypes };

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import { Text, View, Platform, ScrollView, StyleSheet } from 'react-native';
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
@@ -24,7 +26,8 @@ import BpkThemeProvider from 'react-native-bpk-theming';
 import { icons } from 'react-native-bpk-component-icon';
 import { spacingMd } from 'bpk-tokens/tokens/base.react.native';
 
-import BpkButton, { BUTTON_TYPES } from './src/BpkButton';
+import BpkButton from './src/BpkButton';
+import { BUTTON_TYPES } from './src/common-types';
 import themeAttributes from '../../storybook/themeAttributes';
 import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
 
@@ -43,7 +46,7 @@ const styles = StyleSheet.create({
 const getIconType = type =>
   type === 'destructive' ? icons.trash : icons['long-arrow-right'];
 
-const generateButtonStoryForType = type => {
+const generateButtonStoryForType = (type: string) => {
   function getLargeVersion() {
     return (
       <View>
@@ -110,7 +113,9 @@ const generateButtonStoryForType = type => {
   );
 };
 
-const allButtonStories = BUTTON_TYPES.map(generateButtonStoryForType);
+const allButtonStories = Object.keys(BUTTON_TYPES).map(
+  generateButtonStoryForType,
+);
 const allThemedButtons = (
   <BpkThemeProvider theme={themeAttributes}>
     <View>

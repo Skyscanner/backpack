@@ -16,17 +16,26 @@
  * limitations under the License.
  */
 
-import { View, TouchableNativeFeedback, ViewPropTypes } from 'react-native';
-import React from 'react';
+/* @flow */
+
+import { View, TouchableNativeFeedback } from 'react-native';
+import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  getStyleForElement,
-  getAndroidBackgroundColour,
-  themePropType,
-} from './../utils';
+import { getStyleForElement, getAndroidBackgroundColour } from './../utils';
 
-const BpkButtonContainer = props => {
+import {
+  type CommonProps,
+  COMMON_PROP_TYPES,
+  COMMON_DEFAULT_PROPS,
+} from './../common-types';
+
+type Props = {
+  ...$Exact<CommonProps>,
+  children: Node,
+};
+
+const BpkButtonContainer = (props: Props) => {
   const { theme } = props;
   const containerStyle = getStyleForElement('container', props);
   const buttonStyle = getStyleForElement('button', props);
@@ -65,23 +74,10 @@ const BpkButtonContainer = props => {
 };
 
 BpkButtonContainer.propTypes = {
+  ...COMMON_PROP_TYPES,
   children: PropTypes.node.isRequired,
-  onPress: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  accessibilityLabel: PropTypes.string,
-  disabled: PropTypes.bool,
-  iconOnly: PropTypes.bool,
-  style: ViewPropTypes.style,
-  theme: themePropType,
 };
 
-BpkButtonContainer.defaultProps = {
-  accessibilityLabel: null,
-  disabled: false,
-  iconOnly: false,
-  style: null,
-  theme: null,
-};
+BpkButtonContainer.defaultProps = COMMON_DEFAULT_PROPS;
 
 export default BpkButtonContainer;
