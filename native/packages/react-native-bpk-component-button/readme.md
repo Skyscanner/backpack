@@ -47,6 +47,8 @@ export default class App extends Component {
         <BpkButton disabled type="destructive" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
         <BpkButton large type="primary" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
 
+        <BpkButton type="featured" title={translationHelper.translate('BOOK_FLIGHT')} icon="baggage" onPress={() => {}} />
+
         <BpkButton type="featured" title={translationHelper.translate('BOOK_FLIGHT')} icon="baggage" iconOnly onPress={() => {}} />
       </View>
     );

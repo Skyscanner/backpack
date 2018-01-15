@@ -33,7 +33,7 @@ import {
   themeAttributesSupplied,
   getStyleForElement,
   textStyle,
-  iconPropType,
+  iconStyle,
 } from './utils';
 
 import {
@@ -48,7 +48,6 @@ import BpkButtonContainer from './layout/BpkButtonContainer';
 type Props = {
   ...$Exact<CommonProps>,
   large: boolean,
-  icon: ?Node,
 };
 
 const BpkButton = (props: Props) => {
@@ -88,7 +87,7 @@ const BpkButton = (props: Props) => {
     }
     if (typeof icon === 'string') {
       return (
-        <BpkIcon icon={icon} style={textStyle(theme, props)} small={!large} />
+        <BpkIcon icon={icon} style={iconStyle(theme, props)} small={!large} />
       );
     }
     return icon;
@@ -97,6 +96,7 @@ const BpkButton = (props: Props) => {
     <BpkButtonContainer
       accessibilityLabel={accessibilityLabel}
       disabled={disabled}
+      icon={icon}
       iconOnly={iconOnly}
       onPress={onPress}
       style={style}
@@ -125,13 +125,11 @@ const BpkButton = (props: Props) => {
 const propTypes = {
   ...COMMON_PROP_TYPES,
   large: PropTypes.bool,
-  icon: iconPropType,
 };
 BpkButton.propTypes = propTypes;
 BpkButton.defaultProps = {
   ...COMMON_DEFAULT_PROPS,
   large: false,
-  icon: null,
 };
 
 export default withTheme(BpkButton);

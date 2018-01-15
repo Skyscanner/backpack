@@ -36,6 +36,7 @@ import {
   lineHeightXs,
   borderRadiusPill,
   spacingSm,
+  spacingMd,
   spacingBase,
   spacingXl,
 } from 'bpk-tokens/tokens/base.react.native';
@@ -67,6 +68,12 @@ const base = StyleSheet.create({
       backgroundColor: 'transparent',
       color: colorWhite,
       lineHeight: lineHeightXs,
+    }),
+  })(),
+  icon: Platform.select({
+    ios: () => null,
+    android: () => ({
+      lineHeight: spacingBase,
     }),
   })(),
 });
@@ -137,6 +144,10 @@ const modifiers = {
     },
   }),
   textAndIcon: StyleSheet.create({
+    button: {
+      paddingLeft: buttonPaddingHorizontal,
+      paddingRight: spacingSm,
+    },
     view: {
       justifyContent: 'space-between',
     },
@@ -145,6 +156,10 @@ const modifiers = {
     },
   }),
   textAndIconLarge: StyleSheet.create({
+    button: {
+      paddingLeft: spacingBase,
+      paddingRight: spacingMd,
+    },
     view: {
       justifyContent: 'space-between',
     },

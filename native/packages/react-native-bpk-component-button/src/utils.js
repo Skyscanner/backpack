@@ -183,3 +183,8 @@ export const textStyle = (theme: ?Theme, props: Object): Array<any> => [
   getStyleForElement('text', props),
   getThemingForElement('text', theme, props),
 ];
+
+export const iconStyle = (theme: ?Theme, props: Object): Array<any> => [
+  ...textStyle(theme, props),
+  getStyleForElement('icon', props),
+];
