@@ -2,7 +2,10 @@
 
 ## UNRELEASED
 
-__Nothing yet...__
+**Added:**
+
+- react-native-bpk-component-button:
+ - New `iconAlignment` prop allows icons inside buttons to be leading or trailing.
 
 ## 2018-01-10 - Replacing Tether with Popper.js and new API for web banner alerts
 

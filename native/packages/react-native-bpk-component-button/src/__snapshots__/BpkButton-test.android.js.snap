@@ -49,6 +49,107 @@ exports[`Android BpkButton should render correctly 1`] = `
 </View>
 `;
 
+exports[`Android BpkButton should render correctly with iconAlignment="leading" 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 36,
+        },
+        undefined,
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
+      }
+    >
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButton should render correctly with iconAlignment="trailing" 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 36,
+        },
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
+      }
+    >
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
+  </View>
+</View>
+`;
+
 exports[`Android BpkButton should render correctly with type="destructive" 1`] = `
 <View
   style={

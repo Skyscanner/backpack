@@ -36,7 +36,6 @@ import {
   lineHeightXs,
   borderRadiusPill,
   spacingSm,
-  spacingMd,
   spacingBase,
   spacingXl,
 } from 'bpk-tokens/tokens/base.react.native';
@@ -144,26 +143,27 @@ const modifiers = {
     },
   }),
   textAndIcon: StyleSheet.create({
-    button: {
-      paddingLeft: buttonPaddingHorizontal,
-      paddingRight: spacingSm,
-    },
     view: {
       justifyContent: 'space-between',
     },
-    text: {
-      marginRight: spacingSm,
+    icon: {
+      marginLeft: spacingSm,
     },
   }),
   textAndIconLarge: StyleSheet.create({
-    button: {
-      paddingLeft: spacingBase,
-      paddingRight: spacingMd,
-    },
     view: {
       justifyContent: 'space-between',
     },
-    text: {
+    icon: {
+      marginLeft: spacingSm,
+    },
+  }),
+  iconLeading: StyleSheet.create({
+    view: {
+      flexDirection: 'row-reverse',
+    },
+    icon: {
+      marginLeft: 0,
       marginRight: spacingSm,
     },
   }),

@@ -23,7 +23,7 @@ import renderer from 'react-test-renderer';
 import BpkThemeProvider from 'react-native-bpk-theming';
 
 import BpkButton, { propTypes } from './BpkButton';
-import { BUTTON_TYPES } from './common-types';
+import { BUTTON_TYPES, ICON_ALIGNMENTS } from './common-types';
 
 const onPressFn = jest.fn();
 const commonTests = () => {
@@ -99,6 +99,7 @@ const commonTests = () => {
         .toJSON();
       expect(tree).toMatchSnapshot();
     });
+
     it('should support having only an icon', () => {
       const tree = renderer
         .create(
@@ -147,6 +148,23 @@ const commonTests = () => {
             <BpkButton
               type={buttonType}
               title="Lorem ipsum"
+              onPress={onPressFn}
+            />,
+          )
+          .toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+
+    Object.keys(ICON_ALIGNMENTS).forEach(alignmentType => {
+      it(`should render correctly with iconAlignment="${alignmentType}"`, () => {
+        const tree = renderer
+          .create(
+            <BpkButton
+              type={BUTTON_TYPES.primary}
+              title="Lorem ipsum"
+              icon="baggage"
+              iconAlignment={alignmentType}
               onPress={onPressFn}
             />,
           )

@@ -38,15 +38,18 @@ import {
 
 import {
   type CommonProps,
+  type IconAlignment,
   BUTTON_TYPES,
   COMMON_PROP_TYPES,
   COMMON_DEFAULT_PROPS,
+  ICON_ALIGNMENTS,
 } from './common-types';
 
 import BpkButtonContainer from './layout/BpkButtonContainer';
 
 type Props = {
   ...$Exact<CommonProps>,
+  iconAlignment: IconAlignment,
   large: boolean,
 };
 
@@ -124,11 +127,13 @@ const BpkButton = (props: Props) => {
 
 const propTypes = {
   ...COMMON_PROP_TYPES,
+  iconAlignment: PropTypes.oneOf(Object.keys(ICON_ALIGNMENTS)),
   large: PropTypes.bool,
 };
 BpkButton.propTypes = propTypes;
 BpkButton.defaultProps = {
   ...COMMON_DEFAULT_PROPS,
+  iconAlignment: ICON_ALIGNMENTS.trailing,
   large: false,
 };
 
