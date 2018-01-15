@@ -74,6 +74,7 @@ export const BREAKPOINTS = '/components/web/breakpoints';
 export const HORIZONTAL_GRID = '/components/web/horizontal-grid';
 export const SLIDERS = '/components/web/sliders';
 export const DRAWER = '/components/web/drawer';
+export const DIALOGS = '/components/web/dialogs';
 
 // components/native/
 export const NATIVE_BANNER_ALERT = '/components/native/banner-alerts';
