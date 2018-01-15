@@ -55,6 +55,7 @@ const BpkButtonContainer = (props: Props) => {
     onPress,
     style,
     title,
+    icon,
     ...rest
   } = props;
   const accessibilityTraits = ['button'];

@@ -19,10 +19,11 @@
 /* @flow */
 
 import { ViewPropTypes } from 'react-native';
+import { type Node } from 'react';
 import PropTypes from 'prop-types';
 import { type Theme } from 'react-native-bpk-theming';
 
-import { themePropType } from './utils';
+import { themePropType, iconPropType } from './utils';
 
 export const BUTTON_TYPES = {
   primary: 'primary',
@@ -38,6 +39,7 @@ export type CommonProps = {
   title: string,
   accessibilityLabel: ?string,
   disabled: boolean,
+  icon: ?Node,
   iconOnly: boolean,
   style: ?(Object | Array<Object>),
   type: ButtonType,
@@ -49,6 +51,7 @@ export const COMMON_PROP_TYPES = {
   title: PropTypes.string.isRequired,
   accessibilityLabel: PropTypes.string,
   disabled: PropTypes.bool,
+  icon: iconPropType,
   iconOnly: PropTypes.bool,
   style: ViewPropTypes.style,
   theme: themePropType,
@@ -58,6 +61,7 @@ export const COMMON_PROP_TYPES = {
 export const COMMON_DEFAULT_PROPS = {
   accessibilityLabel: null,
   disabled: false,
+  icon: null,
   iconOnly: false,
   style: null,
   theme: null,

@@ -737,6 +737,7 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
           "borderRadius": 40,
           "height": 32,
         },
+        undefined,
       ],
       null,
     ]
@@ -768,6 +769,10 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
             "height": 32,
             "paddingHorizontal": 12,
             "paddingVertical": 8,
+          },
+          Object {
+            "paddingLeft": 12,
+            "paddingRight": 4,
           },
         ],
         Object {},
@@ -852,6 +857,10 @@ exports[`iOS BpkButton should support having an icon as well as a title 1`] = `
                 },
               ],
               Object {},
+              Array [
+                null,
+                undefined,
+              ],
             ],
           ]
         }
@@ -980,6 +989,10 @@ exports[`iOS BpkButton should support having only an icon 1`] = `
                 undefined,
               ],
               Object {},
+              Array [
+                null,
+                undefined,
+              ],
             ],
           ]
         }
@@ -1279,6 +1292,7 @@ exports[`iOS BpkButton should support the "icon" and "large" property 1`] = `
         Object {
           "minHeight": 48,
         },
+        undefined,
       ],
       null,
     ]
@@ -1314,6 +1328,10 @@ exports[`iOS BpkButton should support the "icon" and "large" property 1`] = `
           Object {
             "minHeight": 48,
             "paddingHorizontal": 16,
+          },
+          Object {
+            "paddingLeft": 16,
+            "paddingRight": 8,
           },
         ],
         Object {},
@@ -1397,6 +1415,11 @@ exports[`iOS BpkButton should support the "icon" and "large" property 1`] = `
                 },
               ],
               Object {},
+              Array [
+                null,
+                undefined,
+                undefined,
+              ],
             ],
           ]
         }
@@ -1530,6 +1553,11 @@ exports[`iOS BpkButton should support the "iconOnly" and "large" property 1`] = 
                 undefined,
               ],
               Object {},
+              Array [
+                null,
+                undefined,
+                undefined,
+              ],
             ],
           ]
         }

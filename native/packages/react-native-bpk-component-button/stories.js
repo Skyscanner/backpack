@@ -70,6 +70,14 @@ const generateButtonStoryForType = (type: string) => {
           <BpkButton
             large
             type={type}
+            title="With icon"
+            icon={getIconType(type)}
+            onPress={action(`${type} button with icon clicked`)}
+            style={styles.buttonStyles}
+          />
+          <BpkButton
+            large
+            type={type}
             title="Icon only"
             icon={getIconType(type)}
             iconOnly
@@ -95,6 +103,13 @@ const generateButtonStoryForType = (type: string) => {
           disabled
           title="Disabled"
           onPress={action(`${type} disabled pressed, somehow`)}
+          style={styles.buttonStyles}
+        />
+        <BpkButton
+          type={type}
+          title="With icon"
+          icon={getIconType(type)}
+          onPress={action(`${type} button with icon clicked`)}
           style={styles.buttonStyles}
         />
         {Platform.OS === 'ios' ? (
