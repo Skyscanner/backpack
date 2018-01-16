@@ -46,7 +46,7 @@ const withBannerAlertState = (WrappedComponent: ComponentType<any>) => {
   };
 
   class component extends Component<Props, State> {
-    hideIntervalId: ?number;
+    hideIntervalId: ?TimeoutID;
 
     static propTypes = {
       onDismiss: PropTypes.func,
