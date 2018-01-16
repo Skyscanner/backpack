@@ -3,9 +3,17 @@
 ## UNRELEASED
 
 **Added:**
-
 - react-native-bpk-component-button:
- - New `iconAlignment` prop allows icons inside buttons to be leading or trailing.
+  - New `iconAlignment` prop allows icons inside buttons to be leading or trailing.
+
+**Fixed:**
+- bpk-component-banner-alert:
+- bpk-component-chip:
+- bpk-component-close-button:
+- bpk-component-drawer:
+- bpk-component-modal:
+- bpk-component-popover:
+  - Close button hover / active styles now work in firefox.
 
 ## 2018-01-10 - Replacing Tether with Popper.js and new API for web banner alerts
 
