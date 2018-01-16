@@ -5,12 +5,12 @@ exports[`BpkModalDialog should render correctly 1`] = `
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal bpk-modal--full-screen"
   id="my-modal"
-  onMouseDown={[MockFunction]}
-  onMouseMove={[MockFunction]}
-  onMouseUp={[MockFunction]}
-  onTouchEnd={[MockFunction]}
-  onTouchMove={[MockFunction]}
-  onTouchStart={[MockFunction]}
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
   role="dialog"
   tabIndex="-1"
 >
@@ -27,7 +27,7 @@ exports[`BpkModalDialog should render correctly 1`] = `
     <button
       aria-label="Close"
       className="bpk-close-button bpk-modal__close-button"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       title="Close"
       type="button"
     >
@@ -74,12 +74,12 @@ exports[`BpkModalDialog should render correctly when is iPhone 1`] = `
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal bpk-modal--iphone-fix bpk-modal--full-screen"
   id="my-modal"
-  onMouseDown={[MockFunction]}
-  onMouseMove={[MockFunction]}
-  onMouseUp={[MockFunction]}
-  onTouchEnd={[MockFunction]}
-  onTouchMove={[MockFunction]}
-  onTouchStart={[MockFunction]}
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
   role="dialog"
   tabIndex="-1"
 >
@@ -96,7 +96,7 @@ exports[`BpkModalDialog should render correctly when is iPhone 1`] = `
     <button
       aria-label="Close"
       className="bpk-close-button bpk-modal__close-button"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       title="Close"
       type="button"
     >
@@ -143,12 +143,12 @@ exports[`BpkModalDialog should render correctly when it does not fills the scree
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal"
   id="my-modal"
-  onMouseDown={[MockFunction]}
-  onMouseMove={[MockFunction]}
-  onMouseUp={[MockFunction]}
-  onTouchEnd={[MockFunction]}
-  onTouchMove={[MockFunction]}
-  onTouchStart={[MockFunction]}
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
   role="dialog"
   tabIndex="-1"
 >
@@ -165,7 +165,7 @@ exports[`BpkModalDialog should render correctly when it does not fills the scree
     <button
       aria-label="Close"
       className="bpk-close-button bpk-modal__close-button"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       title="Close"
       type="button"
     >
@@ -212,12 +212,12 @@ exports[`BpkModalDialog should render correctly when it has a className 1`] = `
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal my-classname bpk-modal--full-screen"
   id="my-modal"
-  onMouseDown={[MockFunction]}
-  onMouseMove={[MockFunction]}
-  onMouseUp={[MockFunction]}
-  onTouchEnd={[MockFunction]}
-  onTouchMove={[MockFunction]}
-  onTouchStart={[MockFunction]}
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
   role="dialog"
   tabIndex="-1"
 >
@@ -234,7 +234,7 @@ exports[`BpkModalDialog should render correctly when it has a className 1`] = `
     <button
       aria-label="Close"
       className="bpk-close-button bpk-modal__close-button"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       title="Close"
       type="button"
     >
@@ -281,12 +281,12 @@ exports[`BpkModalDialog should render correctly with closeText prop 1`] = `
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal my-classname bpk-modal--full-screen"
   id="my-modal"
-  onMouseDown={[MockFunction]}
-  onMouseMove={[MockFunction]}
-  onMouseUp={[MockFunction]}
-  onTouchEnd={[MockFunction]}
-  onTouchMove={[MockFunction]}
-  onTouchStart={[MockFunction]}
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
   role="dialog"
   tabIndex="-1"
 >
@@ -302,7 +302,7 @@ exports[`BpkModalDialog should render correctly with closeText prop 1`] = `
      
     <button
       className="bpk-link"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       type="button"
     >
       Dismiss
@@ -321,12 +321,12 @@ exports[`BpkModalDialog should render correctly with wide prop 1`] = `
   aria-labelledby="bpk-modal-heading-my-modal"
   className="bpk-modal bpk-modal--wide my-classname bpk-modal--full-screen"
   id="my-modal"
-  onMouseDown={[MockFunction]}
-  onMouseMove={[MockFunction]}
-  onMouseUp={[MockFunction]}
-  onTouchEnd={[MockFunction]}
-  onTouchMove={[MockFunction]}
-  onTouchStart={[MockFunction]}
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
   role="dialog"
   tabIndex="-1"
 >
@@ -343,7 +343,7 @@ exports[`BpkModalDialog should render correctly with wide prop 1`] = `
     <button
       aria-label="Close"
       className="bpk-close-button bpk-modal__close-button"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       title="Close"
       type="button"
     >

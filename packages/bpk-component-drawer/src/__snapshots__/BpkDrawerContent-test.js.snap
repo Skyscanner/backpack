@@ -5,12 +5,12 @@ exports[`BpkDrawerContent should render correctly 1`] = `
   aria-labelledby="bpk-drawer-heading-my-drawer"
   className="bpk-drawer bpk-drawer--entered"
   id="my-drawer"
-  onMouseDown={[MockFunction]}
-  onMouseMove={[MockFunction]}
-  onMouseUp={[MockFunction]}
-  onTouchEnd={[MockFunction]}
-  onTouchMove={[MockFunction]}
-  onTouchStart={[MockFunction]}
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
   role="dialog"
   tabIndex="-1"
 >
@@ -27,7 +27,7 @@ exports[`BpkDrawerContent should render correctly 1`] = `
     <button
       aria-label="Close"
       className="bpk-close-button bpk-drawer__close-button"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       title="Close"
       type="button"
     >
@@ -74,12 +74,12 @@ exports[`BpkDrawerContent should render correctly when it has a className 1`] = 
   aria-labelledby="bpk-drawer-heading-my-drawer"
   className="bpk-drawer my-classname bpk-drawer--entered"
   id="my-drawer"
-  onMouseDown={[MockFunction]}
-  onMouseMove={[MockFunction]}
-  onMouseUp={[MockFunction]}
-  onTouchEnd={[MockFunction]}
-  onTouchMove={[MockFunction]}
-  onTouchStart={[MockFunction]}
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
   role="dialog"
   tabIndex="-1"
 >
@@ -96,7 +96,7 @@ exports[`BpkDrawerContent should render correctly when it has a className 1`] = 
     <button
       aria-label="Close"
       className="bpk-close-button bpk-drawer__close-button"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       title="Close"
       type="button"
     >
@@ -143,12 +143,12 @@ exports[`BpkDrawerContent should render correctly when it has a contentClassName
   aria-labelledby="bpk-drawer-heading-my-drawer"
   className="bpk-drawer bpk-drawer--entered"
   id="my-drawer"
-  onMouseDown={[MockFunction]}
-  onMouseMove={[MockFunction]}
-  onMouseUp={[MockFunction]}
-  onTouchEnd={[MockFunction]}
-  onTouchMove={[MockFunction]}
-  onTouchStart={[MockFunction]}
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
   role="dialog"
   tabIndex="-1"
 >
@@ -165,7 +165,7 @@ exports[`BpkDrawerContent should render correctly when it has a contentClassName
     <button
       aria-label="Close"
       className="bpk-close-button bpk-drawer__close-button"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       title="Close"
       type="button"
     >
@@ -212,12 +212,12 @@ exports[`BpkDrawerContent should render correctly with hideTitle 1`] = `
   aria-labelledby="bpk-drawer-heading-my-drawer"
   className="bpk-drawer bpk-drawer--entered"
   id="my-drawer"
-  onMouseDown={[MockFunction]}
-  onMouseMove={[MockFunction]}
-  onMouseUp={[MockFunction]}
-  onTouchEnd={[MockFunction]}
-  onTouchMove={[MockFunction]}
-  onTouchStart={[MockFunction]}
+  onMouseDown={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
   role="dialog"
   tabIndex="-1"
 >
@@ -234,7 +234,7 @@ exports[`BpkDrawerContent should render correctly with hideTitle 1`] = `
     <button
       aria-label="Close"
       className="bpk-close-button bpk-drawer__close-button"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       title="Close"
       type="button"
     >
