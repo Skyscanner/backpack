@@ -21,6 +21,9 @@ import 'bpk-stylesheets/base.css';
 
 import './static/favicon.ico';
 import appleTouchIcon from './static/apple-touch-icon.png';
+import ogImage from './static/og-image.png';
+
+const SITE_URL = 'https://backpack.github.io';
 
 export default ({ head = {}, html = '', assets = {} }) => `<!doctype html>
 
@@ -31,6 +34,12 @@ export default ({ head = {}, html = '', assets = {} }) => `<!doctype html>
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
+  <meta property="og:url" content="${SITE_URL}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Backpack">
+  <meta property="og:image" content="${SITE_URL}/${ogImage}">
+  <meta property="og:description" content="Skyscanner's design system.">
+  <meta name="twitter:card" content="summary" />
   ${head.title.toString()}
   <link rel="stylesheet" href="/${assets.docs.css}">
   <link rel="apple-touch-icon" sizes="180x180" href="/${appleTouchIcon}">
