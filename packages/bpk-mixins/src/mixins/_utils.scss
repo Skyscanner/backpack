@@ -163,8 +163,8 @@
 ///   }
 
 @mixin bpk-locale($locale) {
-  html[lang=#{$locale}] &,
-  html[lang=#{to_lower_case($locale)}] & {
+  html[lang='#{$locale}'] &,
+  html[lang='#{to_lower_case($locale)}'] & {
     @content;
   }
 }
