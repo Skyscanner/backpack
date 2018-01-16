@@ -40,6 +40,10 @@
     @include bpk-breakpoint-tablet {
       background-position: $bpk-spacing-sm;
     }
+
+    @include bpk-rtl {
+      background-position: right $bpk-spacing-base center;
+    }
   }
 
   &__logo-link-text {
