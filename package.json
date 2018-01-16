@@ -47,7 +47,7 @@
     "android": "(cd ./native && npm run android)",
     "check-owners": "npm whoami && ( node scripts/npm/get-owners.js | grep -E $(npm whoami) ) && node scripts/npm/check-owners.js",
     "publish": "npm run check-owners && npm run build && git pull --rebase && npm run flow stop && npm run test && lerna publish",
-    "danger": "danger",
+    "danger": "danger ci",
     "prettier": "prettier --config .prettierrc --write \"**/*.js\""
   },
   "lint-staged": {
@@ -77,7 +77,7 @@
     "color": "^2.0.1",
     "copy-webpack-plugin": "^4.2.3",
     "css-loader": "^0.28.4",
-    "danger": "^1.2.0",
+    "danger": "^3.0.4",
     "del": "^3.0.0",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-15": "^1.0.5",
