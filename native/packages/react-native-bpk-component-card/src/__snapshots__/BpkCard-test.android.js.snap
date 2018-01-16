@@ -8,7 +8,7 @@ exports[`Android BpkCard should render correctly 1`] = `
     accessibilityComponentType="button"
     accessibilityLabel="Example Card"
     background={undefined}
-    onPress={[Function]}
+    onPress={[MockFunction]}
     style={
       Array [
         Object {
@@ -59,7 +59,7 @@ exports[`Android BpkCard should render correctly with arbitrary props 1`] = `
     accessibilityComponentType="button"
     accessibilityLabel="Example Card"
     background={undefined}
-    onPress={[Function]}
+    onPress={[MockFunction]}
     style={
       Array [
         Object {
@@ -111,7 +111,7 @@ exports[`Android BpkCard should render correctly with custom inner style 1`] = `
     accessibilityComponentType="button"
     accessibilityLabel="Example Card"
     background={undefined}
-    onPress={[Function]}
+    onPress={[MockFunction]}
     style={
       Array [
         Object {
@@ -170,7 +170,7 @@ exports[`Android BpkCard should render correctly with custom style 1`] = `
     accessibilityComponentType="button"
     accessibilityLabel="Example Card"
     background={undefined}
-    onPress={[Function]}
+    onPress={[MockFunction]}
     style={
       Array [
         Object {
@@ -224,7 +224,7 @@ exports[`Android BpkCard should render correctly with the "focused" state 1`] = 
     accessibilityComponentType="button"
     accessibilityLabel="Example Card"
     background={undefined}
-    onPress={[Function]}
+    onPress={[MockFunction]}
     style={
       Array [
         Object {
@@ -278,7 +278,7 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
     accessibilityComponentType="button"
     accessibilityLabel="Example Card"
     background={undefined}
-    onPress={[Function]}
+    onPress={[MockFunction]}
     style={
       Array [
         Object {
