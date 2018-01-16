@@ -42,7 +42,7 @@ export const THEMEABLE_TYPES = Object.keys(REQUIRED_THEME_ATTRIBUTES);
 
 export const getStyleForElement = (
   elementType: string,
-  { type, title, icon, iconOnly, large, disabled }: Object,
+  { type, title, icon, iconAlignment, iconOnly, large, disabled }: Object,
 ): Array<Object> => {
   // Start with base style.
   const styleForElement = [styles.base[elementType]];
@@ -76,6 +76,10 @@ export const getStyleForElement = (
     styleForElement.push(
       styles.modifiers[large ? 'textAndIconLarge' : 'textAndIcon'][elementType],
     );
+
+    if (iconAlignment === 'leading') {
+      styleForElement.push(styles.modifiers.iconLeading[elementType]);
+    }
   }
 
   return styleForElement;

@@ -49,6 +49,8 @@ export default class App extends Component {
 
         <BpkButton type="featured" title={translationHelper.translate('BOOK_FLIGHT')} icon="baggage" onPress={() => {}} />
 
+        <BpkButton type="primary" title={translationHelper.translate('BOOK_FLIGHT')} icon="baggage" iconAlignment="leading" onPress={() => {}} />
+
         <BpkButton type="featured" title={translationHelper.translate('BOOK_FLIGHT')} icon="baggage" iconOnly onPress={() => {}} />
       </View>
     );
@@ -65,6 +67,7 @@ export default class App extends Component {
 | accessibilityLabel    | string                                                                    | false    | props.title   |
 | disabled              | bool                                                                      | false    | false         |
 | icon                  | oneOf(string, element) Strings must be a [BpkIcon](/components/web/icons) | false    | null          |
+| iconAlignment         | oneOf('leading', 'trailing')                                              | false    | trailing      |
 | iconOnly              | bool                                                                      | false    | false         |
 | large                 | bool                                                                      | false    | false         |
 | theme                 | See [Theme Props](#theme-props) below                                     | false    | null          |

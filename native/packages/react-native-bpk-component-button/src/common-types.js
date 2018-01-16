@@ -34,6 +34,13 @@ export const BUTTON_TYPES = {
 
 export type ButtonType = $Keys<typeof BUTTON_TYPES>;
 
+export const ICON_ALIGNMENTS = {
+  leading: 'leading',
+  trailing: 'trailing',
+};
+
+export type IconAlignment = $Keys<typeof ICON_ALIGNMENTS>;
+
 export type CommonProps = {
   onPress: (event: SyntheticEvent<>) => void,
   title: string,
