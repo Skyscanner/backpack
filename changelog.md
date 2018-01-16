@@ -2,18 +2,22 @@
 
 ## UNRELEASED
 
+_Nothing yet._
+
+## 2018-01-16 - New native button prop for positioning icons
+
 **Added:**
-- react-native-bpk-component-button:
+- react-native-bpk-component-button: 4.2.16 => 4.3.0
   - New `iconAlignment` prop allows icons inside buttons to be leading or trailing.
 
 **Fixed:**
-- bpk-component-banner-alert:
-- bpk-component-chip:
-- bpk-component-close-button:
-- bpk-component-drawer:
-- bpk-component-modal:
-- bpk-component-popover:
-  - Close button hover / active styles now work in firefox.
+- bpk-component-banner-alert: 2.0.0 => 2.0.1
+- bpk-component-chip: 1.1.36 => 1.1.37
+- bpk-component-close-button: 1.0.41 => 1.0.42
+- bpk-component-drawer: 1.1.6 => 1.1.7
+- bpk-component-modal: 1.4.2 => 1.4.3
+- bpk-component-popover: 2.0.0 => 2.0.1
+  - Close button hover / active styles now work in Firefox.
 
 ## 2018-01-10 - Replacing Tether with Popper.js and new API for web banner alerts
 
