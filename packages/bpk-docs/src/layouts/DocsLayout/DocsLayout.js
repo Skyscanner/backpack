@@ -73,6 +73,7 @@ const links = [
       { id: 'SLIDERS', route: routes.SLIDERS, children: 'Sliders' },
       { id: 'DRAWER', route: routes.DRAWER, children: 'Drawer' },
       { id: 'PAGINATION', route: routes.PAGINATION, children: 'Pagination' },
+      { id: 'DIALOGS', route: routes.DIALOGS, children: 'Dialogs' },
       { id: 'CAROUSELS', route: null, children: 'Carousel' },
       { id: 'TOASTS', route: null, children: 'Toast' },
       { id: 'VERTICAL_NAV', route: null, children: 'Vertical navigation' },
@@ -80,7 +81,6 @@ const links = [
       { id: 'BREADCRUMBS', route: null, children: 'Breadcrumbs' },
       { id: 'NUMERICAL_RATING', route: null, children: 'Numerical rating' },
       { id: 'FLIGHT_ITINERARIES', route: null, children: 'Flight itinerary' },
-      { id: 'DIALOGS', route: null, children: 'Dialogs' },
       { id: 'BREAKPOINTS', route: routes.BREAKPOINTS, children: 'Breakpoints' },
       {
         id: 'HORIZONTAL_GRID',

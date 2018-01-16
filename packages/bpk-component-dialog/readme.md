@@ -88,3 +88,10 @@ class App extends Component {
 #### title
 
 This is required unless `dismissible` is false.
+
+## Theme Props
+
+* `linkColor`
+* `linkHoverColor`
+* `linkActiveColor`
+* `linkVisitedColor`
