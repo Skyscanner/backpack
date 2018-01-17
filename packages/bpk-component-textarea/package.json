@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-textarea",
-  "version": "1.0.40",
+  "version": "1.0.41",
   "description": "Backpack textarea component.",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-mixins": "^17.2.4",
+    "bpk-mixins": "^17.2.5",
     "bpk-react-utils": "^2.4.3",
     "prop-types": "^15.5.8"
   }
