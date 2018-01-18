@@ -12,6 +12,12 @@
  - Drawer components are now full-width on mobile screen sizes.
  - The header now remains fixed to the top of the screen when the drawer content overflows.
 
+**Added**
+ - bpk-react-utils:
+   - Portal now accepts a `closeOnEscPressed` prop.
+ - bpk-component-modal:
+   - Modal now accepts a `closeOnEscPressed` prop.
+
 ## 2018-01-16 - New native button prop for positioning icons
 
 **Added:**

@@ -215,6 +215,32 @@ describe('Portal', () => {
     expect(onCloseSpy.mock.calls.length).toEqual(1);
   });
 
+  it('should not close on escape key if closeOnEscPressed is false', () => {
+    const mountPoint = document.createElement('div');
+    document.body.appendChild(mountPoint);
+
+    const onCloseSpy = jest.fn();
+
+    render(
+      <Portal
+        isOpen
+        onClose={onCloseSpy}
+        target={<div>target</div>}
+        closeOnEscPressed={false}
+      >
+        <div>My portal content</div>
+      </Portal>,
+      mountPoint,
+    );
+
+    expect(onCloseSpy.mock.calls.length).toEqual(0);
+
+    const event = new KeyboardEvent('keydown', { keyCode: KEYCODES.ESCAPE });
+    document.dispatchEvent(event);
+
+    expect(onCloseSpy.mock.calls.length).toEqual(0);
+  });
+
   it('should propagate the escape key event to the onClose handler', () => {
     const mountPoint = document.createElement('div');
     document.body.appendChild(mountPoint);

@@ -4,6 +4,7 @@ exports[`BpkPopoverPortal Custom Portal props should render correctly with porta
 <Portal
   beforeClose={[Function]}
   className="bpk-popover-portal my-custom-classname"
+  closeOnEscPressed={true}
   isOpen={false}
   onClose={[Function]}
   onOpen={[Function]}
@@ -38,6 +39,7 @@ exports[`BpkPopoverPortal Custom Portal props should render correctly with porta
 <Portal
   beforeClose={[Function]}
   className="bpk-popover-portal"
+  closeOnEscPressed={true}
   isOpen={false}
   onClose={[Function]}
   onOpen={[Function]}

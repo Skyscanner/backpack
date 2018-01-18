@@ -108,7 +108,11 @@ class Portal extends Component {
   }
 
   onDocumentKeyDown(event) {
-    if (event.keyCode === KEYCODES.ESCAPE && this.props.isOpen) {
+    if (
+      event.keyCode === KEYCODES.ESCAPE &&
+      this.props.isOpen &&
+      this.props.closeOnEscPressed
+    ) {
       this.props.onClose(event, { source: 'ESCAPE' });
     }
   }
@@ -264,6 +268,7 @@ Portal.propTypes = {
   renderTarget: PropTypes.func,
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   targetRef: PropTypes.func,
+  closeOnEscPressed: PropTypes.bool,
 };
 
 Portal.defaultProps = {
@@ -276,6 +281,7 @@ Portal.defaultProps = {
   renderTarget: null,
   target: null,
   targetRef: null,
+  closeOnEscPressed: true,
 };
 
 export default Portal;
