@@ -76,46 +76,6 @@ describe('BpkLoadingButton', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with a "selected" attribute', () => {
-    const tree = renderer
-      .create(<BpkLoadingButton selected>My button</BpkLoadingButton>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render correctly with "secondary selected" attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkLoadingButton secondary selected>
-          My button
-        </BpkLoadingButton>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render correctly with "destructive selected" attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkLoadingButton destructive selected>
-          My button
-        </BpkLoadingButton>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render correctly with "link selected" attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkLoadingButton link selected>
-          My button
-        </BpkLoadingButton>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
   it('should render correctly with a "disabled" attribute', () => {
     const tree = renderer
       .create(<BpkLoadingButton disabled>My button</BpkLoadingButton>)
@@ -192,17 +152,6 @@ describe('BpkLoadingButton', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with "large" and "selected" attributes', () => {
-    const tree = renderer
-      .create(
-        <BpkLoadingButton large selected>
-          My button
-        </BpkLoadingButton>,
-      )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
   it('should render correctly with "large" and "disabled" attributes', () => {
     const tree = renderer
       .create(
@@ -230,19 +179,6 @@ describe('BpkLoadingButton', () => {
     const icon = <AlignedIcon />;
     const tree = renderer
       .create(<BpkLoadingButton icon={icon}>My button</BpkLoadingButton>)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render correctly with a "iconSelected" attribute', () => {
-    const AlignedIcon = withButtonAlignment(BaggageIcon);
-    const icon = <AlignedIcon />;
-    const tree = renderer
-      .create(
-        <BpkLoadingButton selected iconSelected={icon}>
-          My button
-        </BpkLoadingButton>,
-      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

@@ -30,22 +30,12 @@ import ArrowIconSm from 'bpk-component-icon/sm/long-arrow-right';
 import ArrowIconLg from 'bpk-component-icon/lg/long-arrow-right';
 
 const getPropsIcon = props => {
-  const {
-    disabled,
-    loading,
-    selected,
-    icon,
-    iconSelected,
-    iconDisabled,
-    iconLoading,
-  } = props;
+  const { disabled, loading, icon, iconDisabled, iconLoading } = props;
 
   if (loading) {
     return iconLoading;
   } else if (disabled) {
     return iconDisabled;
-  } else if (selected) {
-    return iconSelected;
   }
   return icon;
 };
@@ -76,7 +66,6 @@ const BpkLoadingButton = props => {
     loading,
     iconOnly,
     icon,
-    iconSelected,
     iconDisabled,
     iconLoading,
     ...rest
@@ -101,13 +90,11 @@ BpkLoadingButton.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   secondary: PropTypes.bool,
-  selected: PropTypes.bool,
   destructive: PropTypes.bool,
   link: PropTypes.bool,
   loading: PropTypes.bool,
   iconOnly: PropTypes.bool,
   icon: PropTypes.element,
-  iconSelected: PropTypes.element,
   iconDisabled: PropTypes.element,
   iconLoading: PropTypes.element,
 };
@@ -116,13 +103,11 @@ BpkLoadingButton.defaultProps = {
   className: null,
   disabled: false,
   secondary: false,
-  selected: false,
   destructive: false,
   link: false,
   loading: false,
   iconOnly: false,
   icon: null,
-  iconSelected: null,
   iconDisabled: null,
   iconLoading: null,
 };
