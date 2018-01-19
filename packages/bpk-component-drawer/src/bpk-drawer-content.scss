@@ -41,6 +41,11 @@
     transform: translate(-100%);
   }
 
+  @include bpk-breakpoint-mobile {
+    width: 100%;
+    max-width: 100%;
+  }
+
   &--entering,
   &--entered {
     transform: translate(0);
@@ -92,7 +97,9 @@
   }
 
   &__content {
+    height: 100%;
     padding: $bpk-spacing-sm;
     flex: 1 1 100%;
+    overflow-y: auto;
   }
 }

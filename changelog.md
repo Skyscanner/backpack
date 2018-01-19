@@ -7,6 +7,11 @@
 - bpk-component-loading-button:
  - Removed `selected` prop. See the [migration guide](packages/bpk-component-button/docs/migrating-from-v1-to-v2.md).
 
+**Fixed:**
+- bpk-component-drawer:
+ - Drawer components are now full-width on mobile screen sizes.
+ - The header now remains fixed to the top of the screen when the drawer content overflows.
+
 ## 2018-01-16 - New native button prop for positioning icons
 
 **Added:**
