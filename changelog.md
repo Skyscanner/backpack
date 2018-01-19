@@ -4,6 +4,11 @@
 
 _Nothing yet._
 
+**Fixed:**
+- bpk-component-drawer:
+ - Drawer components are now full-width on mobile screen sizes.
+ - The header now remains fixed to the top of the screen when the drawer content overflows.
+
 ## 2018-01-16 - New native button prop for positioning icons
 
 **Added:**
