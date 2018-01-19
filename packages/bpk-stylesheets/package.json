@@ -1,6 +1,6 @@
 {
   "name": "bpk-stylesheets",
-  "version": "3.2.85",
+  "version": "3.2.86",
   "description": "Backpack's stylesheets.",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "dependencies": {
-    "bpk-mixins": "^17.2.5",
+    "bpk-mixins": "^17.2.6",
     "bpk-tokens": "^26.7.2",
     "normalize.css": "4.2.0"
   }
