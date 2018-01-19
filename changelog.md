@@ -4,6 +4,8 @@
 
 _Nothing yet._
 
+## 2018-01-19 - Remove `selected` prop from button
+
 **Breaking:**
 - bpk-component-button: 1.6.83 => 2.0.0
 - bpk-component-loading-button: 1.0.45 => 2.0.0
