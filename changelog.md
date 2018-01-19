@@ -2,20 +2,22 @@
 
 ## UNRELEASED
 
+_Nothing yet._
+
 **Breaking:**
-- bpk-component-button:
-- bpk-component-loading-button:
- - Removed `selected` prop. See the [migration guide](packages/bpk-component-button/docs/migrating-from-v1-to-v2.md).
+- bpk-component-button: 1.6.83 => 2.0.0
+- bpk-component-loading-button: 1.0.45 => 2.0.0
+  - Removed `selected` prop. See the [migration guide](packages/bpk-component-button/docs/migrating-from-v1-to-v2.md).
 
 **Fixed:**
-- bpk-component-drawer:
- - Drawer components are now full-width on mobile screen sizes.
- - The header now remains fixed to the top of the screen when the drawer content overflows.
+- bpk-component-drawer: 1.1.8 => 1.1.9
+  - Drawer components are now full-width on mobile screen sizes.
+  - The header now remains fixed to the top of the screen when the drawer content overflows.
 
 **Added**
- - bpk-react-utils:
+ - bpk-react-utils: 2.4.3 => 2.5.0
    - Portal now accepts a `closeOnEscPressed` prop.
- - bpk-component-modal:
+ - bpk-component-modal: 1.4.4 => 1.5.0
    - Modal now accepts a `closeOnEscPressed` prop.
 
 ## 2018-01-16 - New native button prop for positioning icons
