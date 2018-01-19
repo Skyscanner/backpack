@@ -1,5 +1,7 @@
 # Backpack Design System
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Skyscanner/backpack.svg)](https://greenkeeper.io/)
+
 > Backpack is a collection of design resources, reusable components and guidelines for creating Skyscanner's products.
 
 [![Build Status](https://travis-ci.org/Skyscanner/backpack.svg?branch=master)](https://travis-ci.org/Skyscanner/backpack)
