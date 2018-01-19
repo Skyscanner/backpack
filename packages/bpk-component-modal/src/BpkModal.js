@@ -35,6 +35,7 @@ const BpkModal = props => {
     renderTarget,
     fullScreenOnMobile,
     closeOnScrimClick,
+    closeOnEscPressed,
     ...rest
   } = props;
 
@@ -52,6 +53,7 @@ const BpkModal = props => {
       onClose={onClose}
       target={target}
       renderTarget={renderTarget}
+      closeOnEscPressed={closeOnEscPressed}
     >
       <ScrimBpkModalDialog
         onClose={onClose}
@@ -71,6 +73,7 @@ BpkModal.propTypes = {
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
   fullScreenOnMobile: PropTypes.bool,
   closeOnScrimClick: PropTypes.bool,
+  closeOnEscPressed: PropTypes.bool,
 };
 
 BpkModal.defaultProps = {
@@ -78,6 +81,7 @@ BpkModal.defaultProps = {
   target: null,
   fullScreenOnMobile: true,
   closeOnScrimClick: true,
+  closeOnEscPressed: true,
 };
 
 export default BpkModal;

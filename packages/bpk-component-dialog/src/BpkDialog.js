@@ -29,6 +29,7 @@ const BpkDialog = props => {
       {...rest}
       closeOnScrimClick={dismissible}
       showHeader={dismissible}
+      closeOnEscPressed={dismissible}
       fullScreenOnMobile={false}
     />
   );

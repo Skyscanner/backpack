@@ -90,6 +90,7 @@ class App extends Component {
 | fullScreenOnMobile    | bool     | false    | true             |
 | closeOnScrimClick     | bool     | false    | true             |
 | showHeader            | bool     | false    | true             |
+| closeOnEscPressed     | bool     | false    | true             |
 
 ### Prop Details
 
