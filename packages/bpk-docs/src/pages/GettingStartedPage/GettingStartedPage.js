@@ -32,6 +32,7 @@ const sassLoaderUrl = 'https://github.com/jtangelder/sass-loader';
 const sassLoaderTildeUrl = 'https://github.com/jtangelder/sass-loader#imports';
 const nodeSassTildeImporterUrl =
   'https://github.com/matthewdavidson/node-sass-tilde-importer';
+const backpackIOS = 'https://github.com/skyscanner/backpack-ios';
 
 const components = [
   {
@@ -66,6 +67,21 @@ const components = [
         published uncompiled which means you&apos;ll need to accommodate for
         this in your webpack config.
       </BpkBlockquote>,
+    ],
+    examples: [],
+  },
+  {
+    id: 'backpack-ios',
+    title: 'Backpack CocoaPod',
+    blurb: [
+      <Paragraph>
+        <BpkLink href={backpackIOS} blank>
+          Backpack for iOS
+        </BpkLink>{' '}
+        is distributed as a CocoaPod. The pod contains several subspecs for
+        different aspects of Backpack such as color, typography and individual
+        components.
+      </Paragraph>,
     ],
     examples: [],
   },
