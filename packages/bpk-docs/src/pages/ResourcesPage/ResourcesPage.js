@@ -100,30 +100,6 @@ const ResourcesPage = props => (
                 Icon template
               </BpkLink>
             </BpkListItem>
-            {/*
-              // TODO: Expose this when release
-            <BpkListItem>
-              <BpkLink href={`javascript:(function(){${bookmarklet}})();`}>Backcheck</BpkLink>
-            </BpkListItem>
-            */}
-            <BpkListItem>
-              <BpkLink href="https://www.invisionapp.com/craft" blank>
-                Craft Plugin for Sketch
-              </BpkLink>
-            </BpkListItem>
-            <BpkListItem>
-              <BpkLink
-                href="https://www.dropbox.com/sh/3um2nc6ei6kgj28/AADk_AZ_hX_AyPMxYWFd5EhIa?dl=0"
-                blank
-              >
-                Craft Library
-              </BpkLink>
-            </BpkListItem>
-            <BpkListItem>
-              <BpkLink href="https://animaapp.github.io/" blank>
-                Autolayout Plugin for Sketch
-              </BpkLink>
-            </BpkListItem>
           </BpkList>
         </BpkContentContainer>
       </BpkGridColumn>
