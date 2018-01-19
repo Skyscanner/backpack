@@ -88,22 +88,16 @@ const components = [
     blurb: [
       <Paragraph>
         The Backpack primary button is available in two sizes and comes with
-        styles for hover, active, disabled and selected states.
+        styles for hover, active and disabled states.
       </Paragraph>,
     ],
     examples: [
       <BpkButton>Primary</BpkButton>,
       ' ',
-      <BpkButton selected>Selected</BpkButton>,
-      ' ',
       <BpkButton disabled>Disabled</BpkButton>,
       <br />,
       <br />,
       <BpkButton large>Primary</BpkButton>,
-      ' ',
-      <BpkButton large selected>
-        Selected
-      </BpkButton>,
       ' ',
       <BpkButton large disabled>
         Disabled
@@ -116,16 +110,11 @@ const components = [
     blurb: [
       <Paragraph>
         Similar to the primary button, the secondary version is available in two
-        sizes and comes with styles for hover, active, disabled and selected
-        states.
+        sizes and comes with styles for hover, active and disabled states.
       </Paragraph>,
     ],
     examples: [
       <BpkButton secondary>Secondary</BpkButton>,
-      ' ',
-      <BpkButton secondary selected>
-        Selected
-      </BpkButton>,
       ' ',
       <BpkButton secondary disabled>
         Disabled
@@ -134,10 +123,6 @@ const components = [
       <br />,
       <BpkButton large secondary>
         Secondary
-      </BpkButton>,
-      ' ',
-      <BpkButton large secondary selected>
-        Selected
       </BpkButton>,
       ' ',
       <BpkButton large secondary disabled>
@@ -154,10 +139,6 @@ const components = [
     examples: [
       <BpkButton featured>Featured</BpkButton>,
       ' ',
-      <BpkButton featured selected>
-        Selected
-      </BpkButton>,
-      ' ',
       <BpkButton featured disabled>
         Disabled
       </BpkButton>,
@@ -165,10 +146,6 @@ const components = [
       <br />,
       <BpkButton large featured>
         Featured
-      </BpkButton>,
-      ' ',
-      <BpkButton large featured selected>
-        Selected
       </BpkButton>,
       ' ',
       <BpkButton large featured disabled>

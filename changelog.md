@@ -2,7 +2,10 @@
 
 ## UNRELEASED
 
-_Nothing yet._
+**Breaking:**
+- bpk-component-button:
+- bpk-component-loading-button:
+ - Removed `selected` prop. See the [migration guide](packages/bpk-component-button/docs/migrating-from-v1-to-v2.md).
 
 ## 2018-01-16 - New native button prop for positioning icons
 

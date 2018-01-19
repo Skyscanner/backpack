@@ -23,7 +23,6 @@ export default () => (
   <div>
     <BpkLoadingButton>Primary</BpkLoadingButton>
     <BpkLoadingButton large>Large primary</BpkLoadingButton>
-    <BpkLoadingButton selected>Selected</BpkLoadingButton>
     <BpkLoadingButton secondary>Secondary</BpkLoadingButton>
     <BpkLoadingButton iconOnly>
       <span className="visually-hidden">Search</span>
@@ -42,9 +41,7 @@ export default () => (
 | disabled     | bool     | false    | false         |
 | secondary    | bool     | false    | false         |
 | destructive  | bool     | false    | false         |
-| selected     | bool     | false    | false         |
 | loading      | bool     | false    | false         |
 | iconOnly     | bool     | false    | false         |
 | icon         | element  | false    | null          |
-| iconSelected | element  | false    | null          |
 | iconDisabled | element  | false    | null          |

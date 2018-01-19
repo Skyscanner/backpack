@@ -42,21 +42,11 @@ storiesOf('bpk-component-button', module)
   .add('Primary', () => (
     <div>
       &nbsp;<BpkButton onClick={action('primary clicked')}>Button</BpkButton>
-      &nbsp;<BpkButton selected onClick={action('primary selected clicked')}>
-        Selected
-      </BpkButton>
       &nbsp;<BpkButton disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
         Disabled
       </BpkButton>
       &nbsp;<BpkButton large onClick={action('large primary clicked')}>
         Button
-      </BpkButton>
-      &nbsp;<BpkButton
-        large
-        selected
-        onClick={action('large primary selected clicked')}
-      >
-        Selected
       </BpkButton>
       &nbsp;<BpkButton
         large
@@ -74,13 +64,6 @@ storiesOf('bpk-component-button', module)
       </BpkButton>
       &nbsp;<BpkButton
         secondary
-        selected
-        onClick={action('secondary selected clicked')}
-      >
-        Selected
-      </BpkButton>
-      &nbsp;<BpkButton
-        secondary
         disabled
         onClick={action('THIS SHOULD NOT HAPPEN')}
       >
@@ -92,14 +75,6 @@ storiesOf('bpk-component-button', module)
         onClick={action('large secondary clicked')}
       >
         Button
-      </BpkButton>
-      &nbsp;<BpkButton
-        secondary
-        large
-        selected
-        onClick={action('large secondary selected clicked')}
-      >
-        Selected
       </BpkButton>
       &nbsp;<BpkButton
         secondary
@@ -145,26 +120,11 @@ storiesOf('bpk-component-button', module)
       &nbsp;<BpkButton link onClick={action('link button clicked')}>
         Button
       </BpkButton>
-      &nbsp;<BpkButton
-        link
-        selected
-        onClick={action('link button selected clicked')}
-      >
-        Selected
-      </BpkButton>
       &nbsp;<BpkButton link disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
         Disabled
       </BpkButton>
       &nbsp;<BpkButton link large onClick={action('large link button clicked')}>
         Button
-      </BpkButton>
-      &nbsp;<BpkButton
-        link
-        large
-        selected
-        onClick={action('large link button selected clicked')}
-      >
-        Selected
       </BpkButton>
       &nbsp;<BpkButton
         link
@@ -183,13 +143,6 @@ storiesOf('bpk-component-button', module)
       </BpkButton>
       &nbsp;<BpkButton
         featured
-        selected
-        onClick={action('featured button selected clicked')}
-      >
-        Selected
-      </BpkButton>
-      &nbsp;<BpkButton
-        featured
         disabled
         onClick={action('THIS SHOULD NOT HAPPEN')}
       >
@@ -201,14 +154,6 @@ storiesOf('bpk-component-button', module)
         onClick={action('featured button clicked')}
       >
         Button
-      </BpkButton>
-      &nbsp;<BpkButton
-        featured
-        large
-        selected
-        onClick={action('featured button selected clicked')}
-      >
-        Selected
       </BpkButton>
       &nbsp;<BpkButton
         featured
@@ -237,13 +182,6 @@ storiesOf('bpk-component-button', module)
           iconOnly
           destructive
           onClick={action('iconOnly button destructive clicked')}
-        >
-          <AlignedSmallLongArrowRightIcon />
-        </BpkButton>&nbsp;
-        <BpkButton
-          iconOnly
-          selected
-          onClick={action('iconOnly button selected clicked')}
         >
           <AlignedSmallLongArrowRightIcon />
         </BpkButton>&nbsp;
@@ -279,14 +217,6 @@ storiesOf('bpk-component-button', module)
           large
           destructive
           onClick={action('large iconOnly button destructive clicked')}
-        >
-          <AlignedLargeLongArrowRightIcon />
-        </BpkButton>&nbsp;
-        <BpkButton
-          iconOnly
-          large
-          selected
-          onClick={action('large iconOnly button selected clicked')}
         >
           <AlignedLargeLongArrowRightIcon />
         </BpkButton>&nbsp;

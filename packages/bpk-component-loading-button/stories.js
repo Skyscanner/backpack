@@ -38,10 +38,6 @@ storiesOf('bpk-component-loading-button', module)
         Button
       </BpkLoadingButton>
       &nbsp;
-      <BpkLoadingButton selected onClick={action('primary selected clicked')}>
-        Selected
-      </BpkLoadingButton>
-      &nbsp;
       <BpkLoadingButton disabled onClick={action('THIS SHOULD NOT HAPPEN')}>
         Disabled
       </BpkLoadingButton>
@@ -51,14 +47,6 @@ storiesOf('bpk-component-loading-button', module)
       </BpkLoadingButton>&nbsp; &nbsp;
       <BpkLoadingButton large onClick={action('large primary clicked')}>
         Button
-      </BpkLoadingButton>
-      &nbsp;
-      <BpkLoadingButton
-        large
-        selected
-        onClick={action('large primary selected clicked')}
-      >
-        Selected
       </BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton
@@ -87,14 +75,6 @@ storiesOf('bpk-component-loading-button', module)
       &nbsp;
       <BpkLoadingButton
         secondary
-        selected
-        onClick={action('secondary selected clicked')}
-      >
-        Selected
-      </BpkLoadingButton>
-      &nbsp;
-      <BpkLoadingButton
-        secondary
         disabled
         onClick={action('THIS SHOULD NOT HAPPEN')}
       >
@@ -114,15 +94,6 @@ storiesOf('bpk-component-loading-button', module)
         onClick={action('large secondary clicked')}
       >
         Button
-      </BpkLoadingButton>
-      &nbsp;
-      <BpkLoadingButton
-        secondary
-        large
-        selected
-        onClick={action('large secondary selected clicked')}
-      >
-        Selected
       </BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton
@@ -200,14 +171,6 @@ storiesOf('bpk-component-loading-button', module)
       &nbsp;
       <BpkLoadingButton
         link
-        selected
-        onClick={action('link button selected clicked')}
-      >
-        Selected
-      </BpkLoadingButton>
-      &nbsp;
-      <BpkLoadingButton
-        link
         disabled
         onClick={action('THIS SHOULD NOT HAPPEN')}
       >
@@ -224,15 +187,6 @@ storiesOf('bpk-component-loading-button', module)
         onClick={action('large link button clicked')}
       >
         Button
-      </BpkLoadingButton>
-      &nbsp;
-      <BpkLoadingButton
-        link
-        large
-        selected
-        onClick={action('large link button selected clicked')}
-      >
-        Selected
       </BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton
@@ -262,14 +216,6 @@ storiesOf('bpk-component-loading-button', module)
       &nbsp;
       <BpkLoadingButton
         featured
-        selected
-        onClick={action('featured button selected clicked')}
-      >
-        Selected
-      </BpkLoadingButton>
-      &nbsp;
-      <BpkLoadingButton
-        featured
         disabled
         onClick={action('THIS SHOULD NOT HAPPEN')}
       >
@@ -289,15 +235,6 @@ storiesOf('bpk-component-loading-button', module)
         onClick={action('featured button clicked')}
       >
         Button
-      </BpkLoadingButton>
-      &nbsp;
-      <BpkLoadingButton
-        featured
-        large
-        selected
-        onClick={action('featured button selected clicked')}
-      >
-        Selected
       </BpkLoadingButton>
       &nbsp;
       <BpkLoadingButton
@@ -334,11 +271,6 @@ storiesOf('bpk-component-loading-button', module)
       />&nbsp;
       <BpkLoadingButton
         iconOnly
-        selected
-        onClick={action('iconOnly button selected clicked')}
-      />&nbsp;
-      <BpkLoadingButton
-        iconOnly
         disabled
         onClick={action('THIS SHOULD NOT HAPPEN')}
       />&nbsp;
@@ -369,12 +301,6 @@ storiesOf('bpk-component-loading-button', module)
         onClick={action('large iconOnly button destructive clicked')}
       />
       &nbsp;
-      <BpkLoadingButton
-        iconOnly
-        large
-        selected
-        onClick={action('large iconOnly button selected clicked')}
-      />&nbsp;
       <BpkLoadingButton
         iconOnly
         large
@@ -574,13 +500,6 @@ storiesOf('bpk-component-loading-button', module)
           Button
         </BpkLoadingButton>
         <BpkLoadingButton
-          selected
-          iconSelected={iconSm}
-          onClick={action('primary selected clicked')}
-        >
-          Selected
-        </BpkLoadingButton>
-        <BpkLoadingButton
           disabled
           iconDisabled={iconSm}
           onClick={action('THIS SHOULD NOT HAPPEN')}
@@ -608,14 +527,6 @@ storiesOf('bpk-component-loading-button', module)
           onClick={action('large primary clicked')}
         >
           Button
-        </BpkLoadingButton>
-        <BpkLoadingButton
-          large
-          selected
-          iconSelected={iconLg}
-          onClick={action('large primary selected clicked')}
-        >
-          Selected
         </BpkLoadingButton>
         <BpkLoadingButton
           large

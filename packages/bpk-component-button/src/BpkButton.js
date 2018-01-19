@@ -40,7 +40,6 @@ type Props = {
   onClick: ?(event: SyntheticEvent<>) => void,
   submit: boolean,
   secondary: boolean,
-  selected: boolean,
   destructive: boolean,
   large: boolean,
   link: boolean,
@@ -57,7 +56,6 @@ const BpkButton = (props: Props) => {
     disabled,
     submit,
     secondary,
-    selected,
     destructive,
     featured,
     large,
@@ -73,9 +71,6 @@ const BpkButton = (props: Props) => {
   }
   if (destructive) {
     classNames.push(getClassName('bpk-button--destructive'));
-  }
-  if (selected) {
-    classNames.push(getClassName('bpk-button--selected'));
   }
   if (large) {
     classNames.push(getClassName('bpk-button--large'));
@@ -140,7 +135,6 @@ BpkButton.propTypes = {
   onClick: PropTypes.func,
   submit: PropTypes.bool,
   secondary: PropTypes.bool,
-  selected: PropTypes.bool,
   destructive: PropTypes.bool,
   large: PropTypes.bool,
   link: PropTypes.bool,
@@ -155,7 +149,6 @@ BpkButton.defaultProps = {
   onClick: null,
   submit: false,
   secondary: false,
-  selected: false,
   destructive: false,
   large: false,
   link: false,

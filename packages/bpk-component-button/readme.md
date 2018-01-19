@@ -22,7 +22,6 @@ export default () => (
   <div>
     <BpkButton>Primary</BpkButton>
     <BpkButton large>Large primary</BpkButton>
-    <BpkButton selected>Selected</BpkButton>
     <BpkButton secondary>Secondary</BpkButton>
     <BpkButton link>Link</BpkButton>
     <BpkButton iconOnly>
@@ -44,7 +43,6 @@ export default () => (
 | submit      | bool     | false    | false         |
 | secondary   | bool     | false    | false         |
 | destructive | bool     | false    | false         |
-| selected    | bool     | false    | false         |
 | large       | bool     | false    | false         |
 | link        | bool     | false    | false         |
 | featured    | bool     | false    | false         |
