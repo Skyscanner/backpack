@@ -1,7 +1,9 @@
 #!/usr/bin/env node
-const { spawn } = require('child_process');
+const { spawnSync } = require('child_process');
 
 const [path, ...rest] = process.argv.slice(2);
 const [command, ...args] = rest.slice(0);
 
-spawn(command, args, { cwd: path, stdio: 'inherit' });
+const result = spawnSync(command, args, { cwd: path, stdio: 'inherit' });
+
+process.exit(result.status);
