@@ -68,7 +68,7 @@
     "autoprefixer": "^7.2.5",
     "babel-core": "^6.21.0",
     "babel-eslint": "^8.2.1",
-    "babel-jest": "^22.1.0",
+    "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
@@ -107,7 +107,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-svgmin": "^1.2.3",
     "husky": "^0.14.3",
-    "jest": "^22.1.3",
+    "jest": "^21.2.1",
     "json-loader": "^0.5.4",
     "lerna": "^2.7.1",
     "lint-staged": "^6.0.0",
@@ -121,13 +121,13 @@
     "prop-types": "^15.5.10",
     "punycode": "^2.1.0",
     "raw-loader": "^0.5.1",
-    "react": "^16.2.0",
+    "react": "^15.4.1",
     "react-addons-test-utils": "^15.4.1",
-    "react-dom": "^16.2.0",
+    "react-dom": "^15.4.1",
     "react-helmet": "^5.2.0",
-    "react-router": "^4.2.0",
+    "react-router": "^2.6.1",
     "react-svg-loader": "^2.1.0",
-    "react-test-renderer": "^16.2.0",
+    "react-test-renderer": "^15.4.1",
     "rimraf": "^2.5.4",
     "sass-loader": "^6.0.6",
     "sassdoc": "^2.5.0",
@@ -168,5 +168,15 @@
         "lines": 75
       }
     }
+  },
+  "greenkeeper": {
+    "ignore": [
+      "react",
+      "react-dom",
+      "react-router",
+      "react-test-renderer",
+      "jest",
+      "babel-jest"
+    ]
   }
 }
