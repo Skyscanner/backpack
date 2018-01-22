@@ -1,10 +1,7 @@
 #!/usr/bin/env node
-const [path, ...command] = process.argv.slice(2);
+const { spawn } = require('child_process');
 
-const { exec } = require('child_process');
+const [path, ...rest] = process.argv.slice(2);
+const [command, ...args] = rest.slice(0);
 
-const cmd = exec(`${command.join(' ')}`, { cwd: path });
-
-cmd.stdout.on('data', console.log);
-cmd.stderr.on('data', console.error);
-cmd.on('close', process.exit);
+spawn(command, args, { cwd: path, stdio: 'inherit' });
