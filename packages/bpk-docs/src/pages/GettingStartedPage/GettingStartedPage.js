@@ -139,24 +139,68 @@ const components = [
     title: 'Sketch resources',
     blurb: [
       <Paragraph>
-        We use the Craft plugin (from InVision) to help share components and
-        keep Sketch files in sync. To use this:
+        Sketch is the preferred tool of choice for designing with Backpack. Its
+        plugin-based architecture makes it highly extensible and customisable.
+        We make heavy use of the Autolayout plugin from Anima to ensure symbols
+        can be resized with ease. You can download that below. As well as this
+        we use Sketch libraries to keep everyone in sync. These are split by
+        platform. You can also grab the latest versions of these below.
       </Paragraph>,
+      <Paragraph>To get started, follow the steps below.</Paragraph>,
       <BpkList ordered>
         <BpkListItem>
           Download and install the{' '}
-          <BpkLink href="https://labs.invisionapp.com/craft" blank>
-            Craft plugin
-          </BpkLink>.
+          <BpkLink href="https://animaapp.github.io/" blank>
+            Autolayout plugin
+          </BpkLink>{' '}
+          for Sketch.
         </BpkListItem>
         <BpkListItem>
-          Download the Backpack Craft library from{' '}
-          <BpkRouterLink to={ROUTES.RESOURCES}>Downloads</BpkRouterLink>.
+          Download the Backpack Sketch libraries:
+          <BpkList>
+            <BpkListItem>
+              <BpkLink
+                href="https://www.dropbox.com/s/1vtsdoidc1if5s5/_Backpack_Web_Sketch_Library.sketch?dl=0"
+                blank
+              >
+                Web Sketch library
+              </BpkLink>
+            </BpkListItem>
+            <BpkListItem>
+              <BpkLink
+                href="https://www.dropbox.com/s/zti3oxttt7t4mtk/_Backpack_iOS_Sketch_Library.sketch?dl=0"
+                blank
+              >
+                iOS Sketch library
+              </BpkLink>
+            </BpkListItem>
+            <BpkListItem>
+              <BpkLink
+                href="https://www.dropbox.com/s/bbz8j1w4iqy1n41/_Backpack_Android_Sketch_Library.sketch?dl=0"
+                blank
+              >
+                Android Sketch library
+              </BpkLink>
+            </BpkListItem>
+          </BpkList>
         </BpkListItem>
+        <BpkListItem>Import the library/libraries in Sketch.</BpkListItem>
         <BpkListItem>
-          Import the Backpack Craft Library into Sketch.
+          <BpkLink
+            href="https://www.dropbox.com/s/remeifqag21zej8/Backpack_Sketch_Template.sketch?dl=0"
+            blank
+          >
+            Grab the Sketch template.
+          </BpkLink>{' '}
+          This is used to manage color and type styles since Sketch libraries do
+          not currently have support for syncing color palettes or type styles.
         </BpkListItem>
       </BpkList>,
+      <BpkBlockquote>
+        Note: You will need to have <strong>SF Pro</strong> and{' '}
+        <strong>Roboto</strong> fonts installed for these libraries to work
+        properly. These can be downloaded from Apple and Google.
+      </BpkBlockquote>,
     ],
     examples: [],
   },
