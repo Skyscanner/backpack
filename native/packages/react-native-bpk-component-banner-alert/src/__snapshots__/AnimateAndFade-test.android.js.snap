@@ -31,7 +31,6 @@ exports[`Android AnimateAndFade should render correctly 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
         >
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -73,7 +72,6 @@ exports[`Android AnimateAndFade should render correctly when show is false 1`] =
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
         >
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -118,7 +116,6 @@ exports[`Android AnimateAndFade should render correctly with animateOnLeave 1`] 
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
         >
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit.

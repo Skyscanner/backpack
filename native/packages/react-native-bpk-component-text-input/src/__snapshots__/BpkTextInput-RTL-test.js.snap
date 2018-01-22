@@ -15,7 +15,6 @@ exports[`RTL BpkTextInput should ignore when placeholder is provided, as element
     accessible={true}
     allowFontScaling={true}
     collapsable={undefined}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -43,6 +42,7 @@ exports[`RTL BpkTextInput should ignore when placeholder is provided, as element
     }
   >
     <TextInput
+      allowFontScaling={true}
       clearButtonMode="while-editing"
       editable={true}
       onBlur={[Function]}
@@ -84,7 +84,6 @@ exports[`RTL BpkTextInput should render correctly 1`] = `
     accessible={true}
     allowFontScaling={true}
     collapsable={undefined}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -112,6 +111,7 @@ exports[`RTL BpkTextInput should render correctly 1`] = `
     }
   >
     <TextInput
+      allowFontScaling={true}
       clearButtonMode="while-editing"
       editable={true}
       onBlur={[Function]}
@@ -153,7 +153,6 @@ exports[`RTL BpkTextInput should render correctly with arbitrary props 1`] = `
     accessible={true}
     allowFontScaling={true}
     collapsable={undefined}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -181,6 +180,7 @@ exports[`RTL BpkTextInput should render correctly with arbitrary props 1`] = `
     }
   >
     <TextInput
+      allowFontScaling={true}
       clearButtonMode="while-editing"
       editable={true}
       onBlur={[Function]}
@@ -225,7 +225,6 @@ exports[`RTL BpkTextInput should render correctly with custom style 1`] = `
     accessible={true}
     allowFontScaling={true}
     collapsable={undefined}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -253,6 +252,7 @@ exports[`RTL BpkTextInput should render correctly with custom style 1`] = `
     }
   >
     <TextInput
+      allowFontScaling={true}
       clearButtonMode="while-editing"
       editable={true}
       onBlur={[Function]}
@@ -294,7 +294,6 @@ exports[`RTL BpkTextInput should render correctly with editable=false 1`] = `
     accessible={true}
     allowFontScaling={true}
     collapsable={undefined}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -322,6 +321,7 @@ exports[`RTL BpkTextInput should render correctly with editable=false 1`] = `
     }
   >
     <TextInput
+      allowFontScaling={true}
       clearButtonMode="while-editing"
       editable={false}
       onBlur={[Function]}
@@ -363,7 +363,6 @@ exports[`RTL BpkTextInput should render correctly with inputRef set 1`] = `
     accessible={true}
     allowFontScaling={true}
     collapsable={undefined}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -391,6 +390,7 @@ exports[`RTL BpkTextInput should render correctly with inputRef set 1`] = `
     }
   >
     <TextInput
+      allowFontScaling={true}
       clearButtonMode="while-editing"
       editable={true}
       onBlur={[Function]}
@@ -432,7 +432,6 @@ exports[`RTL BpkTextInput should render correctly with valid 1`] = `
     accessible={true}
     allowFontScaling={true}
     collapsable={undefined}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -460,6 +459,7 @@ exports[`RTL BpkTextInput should render correctly with valid 1`] = `
     }
   >
     <TextInput
+      allowFontScaling={true}
       clearButtonMode="while-editing"
       editable={true}
       onBlur={[Function]}
@@ -485,7 +485,6 @@ exports[`RTL BpkTextInput should render correctly with valid 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -532,7 +531,6 @@ exports[`RTL BpkTextInput should render correctly with valid false 1`] = `
     accessible={true}
     allowFontScaling={true}
     collapsable={undefined}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -560,6 +558,7 @@ exports[`RTL BpkTextInput should render correctly with valid false 1`] = `
     }
   >
     <TextInput
+      allowFontScaling={true}
       clearButtonMode="while-editing"
       editable={true}
       onBlur={[Function]}
@@ -585,7 +584,6 @@ exports[`RTL BpkTextInput should render correctly with valid false 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -632,7 +630,6 @@ exports[`RTL BpkTextInput should render correctly with valid false and a validat
     accessible={true}
     allowFontScaling={true}
     collapsable={undefined}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -660,6 +657,7 @@ exports[`RTL BpkTextInput should render correctly with valid false and a validat
     }
   >
     <TextInput
+      allowFontScaling={true}
       clearButtonMode="while-editing"
       editable={true}
       onBlur={[Function]}
@@ -685,7 +683,6 @@ exports[`RTL BpkTextInput should render correctly with valid false and a validat
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -717,7 +714,6 @@ exports[`RTL BpkTextInput should render correctly with valid false and a validat
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -755,7 +751,6 @@ exports[`RTL BpkTextInput should render correctly with value 1`] = `
     accessible={true}
     allowFontScaling={true}
     collapsable={undefined}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -783,6 +778,7 @@ exports[`RTL BpkTextInput should render correctly with value 1`] = `
     }
   >
     <TextInput
+      allowFontScaling={true}
       clearButtonMode="while-editing"
       editable={true}
       onBlur={[Function]}

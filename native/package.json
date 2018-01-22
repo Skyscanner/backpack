@@ -17,12 +17,12 @@
     ]
   },
   "devDependencies": {
-    "@storybook/react-native": "^3.3.9",
+    "@storybook/react-native": "^3.3.10",
     "babel-preset-react-native": "^4.0.0",
-    "react": "16.0.0-beta.5",
-    "react-dom": "16.0.0-beta.5",
-    "react-native": "^0.49.3",
-    "react-test-renderer": "16.0.0-beta.5"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-native": "^0.52.0",
+    "react-test-renderer": "^16.2.0"
   },
   "jest": {
     "preset": "react-native",

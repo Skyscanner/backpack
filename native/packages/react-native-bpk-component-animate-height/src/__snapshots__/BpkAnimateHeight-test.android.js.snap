@@ -19,7 +19,6 @@ exports[`Android BpkAnimateHeight should render correctly expanded 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -58,7 +57,6 @@ exports[`Android BpkAnimateHeight should render correctly with n children 1`] = 
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -78,7 +76,6 @@ exports[`Android BpkAnimateHeight should render correctly with n children 1`] = 
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -123,7 +120,6 @@ exports[`Android BpkAnimateHeight should render correctly with user styling padd
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
