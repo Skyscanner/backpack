@@ -143,6 +143,15 @@ const DialogsPage = () => (
     ]}
     components={components}
     readme={dialogReadme}
+    usageTable={{
+      dos: [
+        'Use when users are in a certain situation which needs acknowledgement.',
+        'Use when users need to confirm or make a choice.',
+      ],
+      donts: [
+        "Don't use when users need to focus on a separate task or gain context of where they are in the UI - use a modal instead.",
+      ],
+    }}
     sassdocId="dialogs"
   />
 );
