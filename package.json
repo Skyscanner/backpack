@@ -168,5 +168,15 @@
         "lines": 75
       }
     }
+  },
+  "greenkeeper": {
+    "ignore": [
+      "react",
+      "react-dom",
+      "react-router",
+      "react-test-renderer",
+      "jest",
+      "babel-jest"
+    ]
   }
 }
