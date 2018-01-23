@@ -33,6 +33,25 @@
     @include bpk-input--large;
   }
 
+  &--clearable {
+    @include bpk-input--clearable;
+
+    &__container {
+      @include bpk-input__container;
+    }
+
+    &__clear-button {
+      opacity: 0;
+
+      @include bpk-input__clear-button;
+    }
+
+    // Display the clear button when a clearable input is focused.
+    &:focus + &__clear-button {
+      opacity: 1;
+    }
+  }
+
   &--docked {
     @include bpk-input--docked;
 

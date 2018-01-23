@@ -128,6 +128,20 @@ const components = [
         />
       </form>,
       <form className={formClassName}>
+        <BpkLabel htmlFor="input_clearable">Clearable input</BpkLabel>
+        <InputContainer
+          FormComponent={BpkInput}
+          id="input_clearable"
+          name="input_clearable"
+          value="Edinburgh"
+          placeholder="Country, city or airport"
+          onChange={() => null}
+          clearable
+          onClear={() => null}
+          clearButtonLabel="Clear field"
+        />
+      </form>,
+      <form className={formClassName}>
         <BpkLabel htmlFor="input_disabled" disabled>
           Disabled input
         </BpkLabel>
@@ -293,7 +307,7 @@ const components = [
             placeholder="Country, city or airport"
             onChange={() => null}
             className={placeClassName}
-            docked
+            dockedFirst
             large
           />
           <InputContainer
@@ -304,7 +318,7 @@ const components = [
             placeholder="Country, city or airport"
             onChange={() => null}
             className={placeClassName}
-            docked
+            dockedMiddle
             large
           />
           <InputContainer
@@ -312,10 +326,10 @@ const components = [
             id="input_outbound"
             name="input_outbound"
             value={new Date().toLocaleDateString()}
-            placeholder="Country, city or airport"
+            placeholder="Depature date"
             onChange={() => null}
             className={dateClassName}
-            docked
+            dockedMiddle
             large
           />
           <InputContainer
@@ -325,10 +339,10 @@ const components = [
             value={new Date(
               new Date().getTime() + 24 * 60 * 60 * 1000,
             ).toLocaleDateString()}
-            placeholder="Country, city or airport"
+            placeholder="Return date"
             onChange={() => null}
             className={dateClassName}
-            docked
+            dockedLast
             large
           />
         </div>
@@ -363,7 +377,7 @@ const components = [
             placeholder="Destination or hotel name"
             onChange={() => null}
             className={destinationClassName}
-            docked
+            dockedFirst
             large
           />
           <InputContainer
@@ -374,7 +388,7 @@ const components = [
             placeholder=""
             onChange={() => null}
             className={dateClassName}
-            docked
+            dockedMiddle
             large
           />
           <InputContainer
@@ -387,7 +401,7 @@ const components = [
             placeholder=""
             onChange={() => null}
             className={dateClassName}
-            docked
+            dockedMiddle
             large
           />
           <InputContainer
@@ -397,7 +411,7 @@ const components = [
             value="2"
             onChange={() => null}
             className={numberClassName}
-            docked
+            dockedMiddle
             large
           >
             <option value={0}>0</option>
@@ -412,7 +426,7 @@ const components = [
             value="1"
             onChange={() => null}
             className={numberClassName}
-            docked
+            dockedLast
             large
           >
             <option value={0}>0</option>
@@ -449,7 +463,7 @@ const components = [
             placeholder="City or airport"
             onChange={() => null}
             className={pickupClassName}
-            docked
+            dockedFirst
             large
           />
           <InputContainer
@@ -460,7 +474,7 @@ const components = [
             placeholder=""
             onChange={() => null}
             className={dateClassName}
-            docked
+            dockedMiddle
             large
           />
           <InputContainer
@@ -471,7 +485,7 @@ const components = [
             placeholder=""
             onChange={() => null}
             className={timeClassName}
-            docked
+            dockedMiddle
             large
           >
             <option value="10:00">10:00</option>
@@ -489,7 +503,7 @@ const components = [
             placeholder=""
             onChange={() => null}
             className={dateClassName}
-            docked
+            dockedMiddle
             large
           />
           <InputContainer
@@ -499,7 +513,7 @@ const components = [
             value="10:00"
             onChange={() => null}
             className={timeClassName}
-            docked
+            dockedLast
             large
           >
             <option value="10:00">10:00</option>

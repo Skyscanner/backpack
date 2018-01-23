@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-_Nothing yet!_
+**Added:**
+- bpk-component-input
+  - Added `clearable`, `onClear` and `clearButtonLabel` props. These allow inputs to have an optional clear button that appears when the input is focused.
 
 ## 2018-01-25 - New link styles
 

@@ -65,6 +65,48 @@ describe('BpkInput', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "clearable" attribute', () => {
+    // Will report a proptypes error because 'onClear' and 'clearButtonLabel'
+    // are missing. Swallow that as it's tested in customPropTypes-test.js.
+    jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
+    const tree = renderer
+      .create(<BpkInput id="test" name="test" value="" clearable />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "onClear" attribute', () => {
+    const tree = renderer
+      .create(<BpkInput id="test" name="test" value="" onClear={() => {}} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "clearButtonLabel" attribute', () => {
+    const tree = renderer
+      .create(
+        <BpkInput id="test" name="test" value="" clearButtonLabel="test" />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "clearable", "onClear" and "clearButtonLabel" attributes', () => {
+    const tree = renderer
+      .create(
+        <BpkInput
+          id="test"
+          name="test"
+          value=""
+          clearable
+          onClear={() => {}}
+          clearButtonLabel="test"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with type attribute', () => {
     const tree = renderer
       .create(

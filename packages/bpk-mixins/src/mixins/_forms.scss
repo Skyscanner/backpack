@@ -118,6 +118,69 @@
   }
 }
 
+/// Clearable form input. Modifies the bpk-input mixin.
+///
+/// @require {mixin} bpk-input
+///
+/// @example scss
+///   .selector {
+///     @include bpk-input();
+///     @include bpk-input--clearable();
+///   }
+
+@mixin bpk-input--clearable {
+  padding-right: $bpk-spacing-base;
+
+  @include bpk-rtl {
+    padding-left: $bpk-spacing-base;
+  }
+
+  &:focus {
+    background: $bpk-input-background;
+  }
+}
+
+/// Clearable form input container. Modifies the bpk-input mixin.
+///
+/// @require {mixin} bpk-input
+///
+/// @example scss
+///   .selector {
+///     @include bpk-input();
+///     @include bpk-input__container();
+///   }
+
+@mixin bpk-input__container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/// Clearable (clear button) form input. Modifies the bpk-input mixin.
+///
+/// @require {mixin} bpk-input
+///
+/// @example scss
+///   .selector {
+///     @include bpk-input();
+///     @include bpk-input__clear-button();
+///   }
+
+@mixin bpk-input__clear-button {
+  position: absolute;
+  right: $bpk-spacing-sm;
+  height: $bpk-input-height;
+
+  @include bpk-rtl {
+    right: inherit;
+    left: $bpk-spacing-sm;
+  }
+
+  &--large {
+    @include bpk-input--large;
+  }
+}
+
 /// Large form input. Modifies the bpk-input mixin.
 ///
 /// @require {mixin} bpk-input
