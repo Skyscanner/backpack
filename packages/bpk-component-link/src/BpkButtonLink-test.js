@@ -50,6 +50,17 @@ describe('BpkButtonLink', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "alternate" attribute', () => {
+    const tree = renderer
+      .create(
+        <BpkButtonLink onClick={() => null} alternate>
+          Link
+        </BpkButtonLink>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with arbitrary attributes', () => {
     const tree = renderer
       .create(

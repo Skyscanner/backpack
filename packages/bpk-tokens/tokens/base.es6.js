@@ -348,6 +348,10 @@ export const linkWhiteColor = "rgb(255, 255, 255)";
 export const linkWhiteHoverColor = "rgb(255, 255, 255)";
 export const linkWhiteActiveColor = "rgb(230, 228, 235)";
 export const linkWhiteVisitedColor = "rgb(255, 255, 255)";
+export const linkAlternateColor = "rgb(255, 255, 255)";
+export const linkAlternateHoverColor = "rgb(255, 255, 255)";
+export const linkAlternateActiveColor = "rgb(230, 228, 235)";
+export const linkAlternateVisitedColor = "rgb(255, 255, 255)";
 export const textXsFontSize = ".75rem";
 export const textXsLineHeight = "1.125rem";
 export const textXsFontWeight = "400";
@@ -734,6 +738,10 @@ linkWhiteColor,
 linkWhiteHoverColor,
 linkWhiteActiveColor,
 linkWhiteVisitedColor,
+linkAlternateColor,
+linkAlternateHoverColor,
+linkAlternateActiveColor,
+linkAlternateVisitedColor,
 };
 export const fontWeights = {
 fontWeightBold,

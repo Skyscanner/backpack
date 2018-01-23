@@ -26,21 +26,21 @@ export default () => (
 
 ### BpkLink
 
-| Property | PropType | Required | Default Value |
-| -------- | -------- | -------- | ------------- |
-| children | -        | true     | -             |
-| href     | string   | true     | -             |
-| onClick  | func     | false    | null          |
-| blank    | bool     | false    | false         |
-| white    | bool     | false    | false         |
+| Property  | PropType | Required | Default Value |
+| --------  | -------- | -------- | ------------- |
+| children  | -        | true     | -             |
+| href      | string   | true     | -             |
+| onClick   | func     | false    | null          |
+| blank     | bool     | false    | false         |
+| alternate | bool     | false    | false         |
 
 ### BpkLinkButton
 
-| Property | PropType | Required | Default Value |
-| -------- | -------- | -------- | ------------- |
-| children | -        | true     | -             |
-| onClick  | func     | true     | -             |
-| white    | bool     | false    | false         |
+| Property  | PropType | Required | Default Value |
+| --------  | -------- | -------- | ------------- |
+| children  | -        | true     | -             |
+| onClick   | func     | true     | -             |
+| alternate | bool     | false    | false         |
 
 ## Theme props
 
@@ -50,3 +50,10 @@ For both BpkLink and BpkLinkButton the following theme attributes are required.
 * `linkHoverColor`
 * `linkActiveColor`
 * `linkVisitedColor`
+
+Alternate:
+
+* `linkAlternateColor`
+* `linkAlternateHoverColor`
+* `linkAlternateActiveColor`
+* `linkAlternateVisitedColor`

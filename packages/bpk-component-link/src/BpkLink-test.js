@@ -59,6 +59,17 @@ describe('BpkLink', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with a "alternate" attribute', () => {
+    const tree = renderer
+      .create(
+        <BpkLink href="#" alternate>
+          Link
+        </BpkLink>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with arbitrary attributes', () => {
     const tree = renderer
       .create(

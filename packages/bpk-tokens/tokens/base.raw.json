@@ -3107,6 +3107,42 @@
       },
       "name": "LINK_WHITE_VISITED_COLOR"
     },
+    "LINK_ALTERNATE_COLOR": {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "text-colors",
+      ".alias": {
+        "value": "#ffffff"
+      },
+      "name": "LINK_ALTERNATE_COLOR"
+    },
+    "LINK_ALTERNATE_HOVER_COLOR": {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "text-colors",
+      ".alias": {
+        "value": "#ffffff"
+      },
+      "name": "LINK_ALTERNATE_HOVER_COLOR"
+    },
+    "LINK_ALTERNATE_ACTIVE_COLOR": {
+      "value": "rgb(230, 228, 235)",
+      "type": "color",
+      "category": "text-colors",
+      ".alias": {
+        "value": "#E6E4EB"
+      },
+      "name": "LINK_ALTERNATE_ACTIVE_COLOR"
+    },
+    "LINK_ALTERNATE_VISITED_COLOR": {
+      "value": "rgb(255, 255, 255)",
+      "type": "color",
+      "category": "text-colors",
+      ".alias": {
+        "value": "#ffffff"
+      },
+      "name": "LINK_ALTERNATE_VISITED_COLOR"
+    },
     "TEXT_XS_FONT_SIZE": {
       "value": ".75rem",
       "type": "font-size",
@@ -3683,6 +3719,10 @@
     "LINK_WHITE_HOVER_COLOR",
     "LINK_WHITE_ACTIVE_COLOR",
     "LINK_WHITE_VISITED_COLOR",
+    "LINK_ALTERNATE_COLOR",
+    "LINK_ALTERNATE_HOVER_COLOR",
+    "LINK_ALTERNATE_ACTIVE_COLOR",
+    "LINK_ALTERNATE_VISITED_COLOR",
     "TEXT_XS_FONT_SIZE",
     "TEXT_XS_LINE_HEIGHT",
     "TEXT_XS_FONT_WEIGHT",

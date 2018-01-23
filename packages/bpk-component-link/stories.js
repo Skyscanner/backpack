@@ -42,24 +42,24 @@ storiesOf('bpk-component-link', module)
       <BpkButtonLink onClick={action('#2 clicked')}>Link #2</BpkButtonLink>
     </div>
   ))
-  .add('Example (white)', () => (
+  .add('Example (alternate)', () => (
     <div style={{ backgroundColor: colorGray700, padding: spacingBase }}>
-      <BpkLink href="#" onClick={action('#1 clicked')} white>
+      <BpkLink href="#" onClick={action('#1 clicked')} alternate>
         Link #1
       </BpkLink>
       <br />
-      <BpkLink href="#" onClick={action('#2 clicked')} white>
+      <BpkLink href="#" onClick={action('#2 clicked')} alternate>
         Link #2
       </BpkLink>
     </div>
   ))
-  .add('Example (white + buttons)', () => (
+  .add('Example (alternate + buttons)', () => (
     <div style={{ backgroundColor: colorGray700, padding: spacingBase }}>
-      <BpkButtonLink onClick={action('#1 clicked')} white>
+      <BpkButtonLink onClick={action('#1 clicked')} alternate>
         Link #1
       </BpkButtonLink>
       <br />
-      <BpkButtonLink onClick={action('#2 clicked')} white>
+      <BpkButtonLink onClick={action('#2 clicked')} alternate>
         Link #2
       </BpkButtonLink>
     </div>

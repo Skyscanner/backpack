@@ -268,6 +268,26 @@
       "type": "color",
       "category": "text-colors"
     },
+    "LINK_ALTERNATE_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "LINK_ALTERNATE_HOVER_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "LINK_ALTERNATE_ACTIVE_COLOR": {
+      "value": "{!GRAY_100}",
+      "type": "color",
+      "category": "text-colors"
+    },
+    "LINK_ALTERNATE_VISITED_COLOR": {
+      "value": "{!WHITE}",
+      "type": "color",
+      "category": "text-colors"
+    },
     "TEXT_XS_FONT_SIZE": {
       "value": "{!FONT_SIZE_SM}",
       "type": "font-size",

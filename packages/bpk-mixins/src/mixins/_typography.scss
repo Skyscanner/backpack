@@ -511,20 +511,24 @@
 ///     @include bpk-link--white();
 ///   }
 
-@mixin bpk-link--white {
-  color: $bpk-link-white-color;
+@mixin bpk-link--alternate {
+  @include bpk-themeable-property(color, --bpk-link-alternate-color, $bpk-link-alternate-color);
 
   @include bpk-hover {
-    color: $bpk-link-white-hover-color;
+    @include bpk-themeable-property(color, --bpk-link-alternate-hover-color, $bpk-link-alternate-hover-color);
   }
 
   &:visited {
-    color: $bpk-link-white-visited-color;
+    @include bpk-themeable-property(color, --bpk-link-alternate-visited-color, $bpk-link-alternate-visited-color);
   }
 
   &:active {
-    color: $bpk-link-white-active-color;
+    @include bpk-themeable-property(color, --bpk-link-alternate-active-color, $bpk-link-alternate-active-color);
   }
+}
+
+@mixin bpk-link--white {
+  @include bpk-link--alternate;
 }
 
 /// Active link. Modifies the bpk-link mixin.

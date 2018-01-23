@@ -19,20 +19,31 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
-import themeAttributes from './themeAttributes';
+import themeAttributes, {
+  linkAlternateThemeAttributes,
+} from './themeAttributes';
 
 import STYLES from './bpk-link.scss';
 
 const getClassName = cssModules(STYLES);
 
 const BpkLink = props => {
-  const { children, className, href, onClick, blank, white, ...rest } = props;
+  const {
+    children,
+    className,
+    href,
+    onClick,
+    blank,
+    white,
+    alternate,
+    ...rest
+  } = props;
 
   const classNames = [getClassName('bpk-link')];
   const target = blank ? '_blank' : null;
 
-  if (white) {
-    classNames.push(getClassName('bpk-link--white'));
+  if (white || alternate) {
+    classNames.push(getClassName('bpk-link--alternate'));
   }
   if (className) {
     classNames.push(className);
@@ -60,6 +71,8 @@ BpkLink.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
   blank: PropTypes.bool,
+  alternate: PropTypes.bool,
+  // DEPRECATED
   white: PropTypes.bool,
 };
 
@@ -67,8 +80,10 @@ BpkLink.defaultProps = {
   className: null,
   onClick: null,
   blank: false,
+  alternate: false,
+  // DEPRECATED
   white: false,
 };
 
 export default BpkLink;
-export { themeAttributes };
+export { themeAttributes, linkAlternateThemeAttributes };
