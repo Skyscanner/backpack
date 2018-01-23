@@ -4,6 +4,11 @@
 
 _Nothing yet..._
 
+**Fixed:**
+- bpk-component-label:
+- bpk-component-fieldset:
+  - The label now has a bold font weight.
+
 ## 2018-01-23 - New `share-android` and `share-ios` icons
 
 **Added:**
