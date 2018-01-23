@@ -64,6 +64,6 @@ exports[`Android ValidIcon should render correctly 1`] = `
     ]
   }
 >
-  
+  
 </Text>
 `;

@@ -64,6 +64,6 @@ exports[`RTL ValidIcon should render correctly 1`] = `
     ]
   }
 >
-  
+  
 </Text>
 `;
