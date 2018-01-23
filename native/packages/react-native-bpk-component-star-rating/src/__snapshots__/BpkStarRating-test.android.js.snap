@@ -13,7 +13,6 @@ exports[`Android BpkStar should render correctly when empty 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -57,7 +56,6 @@ exports[`Android BpkStar should render correctly when full 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -88,7 +86,6 @@ exports[`Android BpkStar should render correctly when full 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -138,7 +135,6 @@ exports[`Android BpkStar should render correctly when half 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -169,7 +165,6 @@ exports[`Android BpkStar should render correctly when half 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [

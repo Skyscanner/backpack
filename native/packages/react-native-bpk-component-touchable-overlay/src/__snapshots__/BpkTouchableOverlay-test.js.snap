@@ -21,7 +21,6 @@ exports[`BpkTouchableOverlay should render correctly 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -78,7 +77,6 @@ exports[`BpkTouchableOverlay should render correctly with arbitrary props 1`] = 
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -135,7 +133,6 @@ exports[`BpkTouchableOverlay should render correctly with border radius props 1`
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -195,7 +192,6 @@ exports[`BpkTouchableOverlay should render correctly with custom overlay styles 
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -259,7 +255,6 @@ exports[`BpkTouchableOverlay should render correctly with custom style prop 1`] 
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [

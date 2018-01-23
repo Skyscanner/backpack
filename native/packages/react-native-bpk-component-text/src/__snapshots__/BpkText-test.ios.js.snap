@@ -4,7 +4,6 @@ exports[`iOS BpkText should render correctly 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -27,7 +26,6 @@ exports[`iOS BpkText should render correctly with \`emphasize\` prop 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -53,7 +51,6 @@ exports[`iOS BpkText should render correctly with textStyle="base" 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -76,7 +73,6 @@ exports[`iOS BpkText should render correctly with textStyle="lg" 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -99,7 +95,6 @@ exports[`iOS BpkText should render correctly with textStyle="sm" 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -122,7 +117,6 @@ exports[`iOS BpkText should render correctly with textStyle="xl" 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -145,7 +139,6 @@ exports[`iOS BpkText should render correctly with textStyle="xs" 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -168,7 +161,6 @@ exports[`iOS BpkText should render correctly with textStyle="xxl" 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -191,7 +183,6 @@ exports[`iOS BpkText should support overwriting styles 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [

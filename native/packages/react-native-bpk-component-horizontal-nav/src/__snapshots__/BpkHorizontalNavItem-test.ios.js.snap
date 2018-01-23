@@ -28,7 +28,6 @@ exports[`iOS BpkHorizontalNavItem should render correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -99,7 +98,6 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "selected" prop 1
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -173,7 +171,6 @@ exports[`iOS BpkHorizontalNavItem should render correctly with "spaceAround" pro
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -244,7 +241,6 @@ exports[`iOS BpkHorizontalNavItem should render correctly with arbitrary props 1
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -319,7 +315,6 @@ exports[`iOS BpkHorizontalNavItem should render correctly with custom "style" pr
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -390,7 +385,6 @@ exports[`iOS BpkHorizontalNavItem should support theming 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
