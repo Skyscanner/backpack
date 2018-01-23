@@ -2,7 +2,19 @@
 
 ## UNRELEASED
 
-_Nothing yet._
+**Added:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+- react-native-bpk-component-icon:
+  - New icons, `share--android` & `share-ios`.
+
+**Fixed:**
+- bpk-component-icon:
+- bpk-mixins:
+- bpk-svgs:
+- react-native-bpk-component-icon:
+  - Updated `share` icon visuals.
 
 ## 2018-01-19 - Remove `selected` prop from button
 
