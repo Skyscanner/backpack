@@ -39,7 +39,7 @@ exports[`iOS BpkStar should render correctly when empty 1`] = `
       ]
     }
   >
-    
+    
   </Text>
 </View>
 `;
@@ -83,7 +83,7 @@ exports[`iOS BpkStar should render correctly when full 1`] = `
       ]
     }
   >
-    
+    
   </Text>
   <Text
     accessible={true}
@@ -120,7 +120,7 @@ exports[`iOS BpkStar should render correctly when full 1`] = `
       ]
     }
   >
-    
+    
   </Text>
 </View>
 `;
@@ -164,7 +164,7 @@ exports[`iOS BpkStar should render correctly when half 1`] = `
       ]
     }
   >
-    
+    
   </Text>
   <Text
     accessible={true}
@@ -201,7 +201,7 @@ exports[`iOS BpkStar should render correctly when half 1`] = `
       ]
     }
   >
-    
+    
   </Text>
 </View>
 `;
