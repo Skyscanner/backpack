@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -198,16 +199,14 @@ describe('BpkFieldset', () => {
   });
 
   it('should reject label property when label is omitted', () => {
-    expect(
-      BpkFieldset.propTypes.label({}, 'label', 'BpkFieldset').toString(),
-    ).toEqual('Error: `label` is required when `isCheckbox` is false.'); // eslint-disable-line max-len
+    expect(BpkFieldset.propTypes.label({}, 'label').toString()).toEqual(
+      'Error: `label` is required when `isCheckbox` is false.',
+    ); // eslint-disable-line max-len
   });
 
   it('should accept no label property when label is omitted but isCheckbox is included', () => {
     expect(
-      BpkFieldset.propTypes
-        .label({ isCheckbox: true }, 'label', 'BpkFieldset')
-        .toString(),
+      BpkFieldset.propTypes.label({ isCheckbox: true }, 'label').toString(),
     ).toEqual('false');
   });
 });

@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import PropTypes from 'prop-types';
 import React, { cloneElement, Component } from 'react';
@@ -23,9 +24,34 @@ import BpkCheckbox from 'bpk-component-checkbox';
 import { storiesOf } from '@storybook/react';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
 
-import BpkFieldset from './index';
+import BpkFieldset, {
+  type BpkFieldsetProps,
+  BpkFieldsetPropTypes,
+  BpkFieldsetDefaultPropTypes,
+} from './index';
 
-class FieldsetContainer extends Component {
+type Props = {
+  ...$Exact<BpkFieldsetProps>,
+  validValue: string | boolean,
+};
+
+type State = {
+  value: string,
+  checked: boolean,
+};
+
+class FieldsetContainer extends Component<Props, State> {
+  static propTypes = {
+    ...BpkFieldsetPropTypes,
+    validValue: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
+      .isRequired,
+  };
+
+  static defaultProps = {
+    ...BpkFieldsetDefaultPropTypes,
+    isCheckbox: false,
+  };
+
   constructor(props) {
     super(props);
 
@@ -33,16 +59,14 @@ class FieldsetContainer extends Component {
       value: this.props.children.props.value,
       checked: false,
     };
-
-    this.onChange = this.onChange.bind(this);
   }
 
-  onChange(e) {
+  onChange = e => {
     this.setState({
       value: e.target.value,
       checked: e.target.checked,
     });
-  }
+  };
 
   render() {
     const { children, validValue, isCheckbox, ...rest } = this.props;
@@ -73,17 +97,6 @@ class FieldsetContainer extends Component {
     );
   }
 }
-
-FieldsetContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-  validValue: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
-    .isRequired,
-  isCheckbox: PropTypes.bool,
-};
-
-FieldsetContainer.defaultProps = {
-  isCheckbox: false,
-};
 
 storiesOf('bpk-component-fieldset', module)
   .add('Input example', () => (

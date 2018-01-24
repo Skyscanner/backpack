@@ -15,8 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
-import PropTypes from 'prop-types';
+import PropTypes, { type Node } from 'prop-types';
 import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
@@ -24,7 +25,15 @@ import STYLES from './bpk-label.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkLabel = props => {
+export type Props = {
+  children: Node,
+  className: ?string,
+  disabled: boolean,
+  required: boolean,
+  white: boolean,
+};
+
+const BpkLabel = (props: Props) => {
   const { children, required, white, disabled, className, ...rest } = props;
   const classNames = [getClassName('bpk-label')];
 
