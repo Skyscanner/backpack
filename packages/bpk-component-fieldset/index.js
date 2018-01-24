@@ -15,7 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
-import BpkFieldset from './src/BpkFieldset';
+import BpkFieldset, {
+  type Props,
+  BpkFieldsetPropTypes,
+  BpkFieldsetDefaultPropTypes,
+} from './src/BpkFieldset';
+
+export type BpkFieldsetProps = Props;
 
 export default BpkFieldset;
+export { BpkFieldsetPropTypes, BpkFieldsetDefaultPropTypes };

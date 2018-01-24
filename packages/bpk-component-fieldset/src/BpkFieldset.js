@@ -15,9 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
 import PropTypes from 'prop-types';
-import React, { cloneElement } from 'react';
+import React, { cloneElement, type Element } from 'react';
 import BpkLabel from 'bpk-component-label';
 import BpkFormValidation from 'bpk-component-form-validation';
 import { cssModules } from 'bpk-react-utils';
@@ -26,7 +27,20 @@ import STYLES from './bpk-fieldset.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkFieldset = props => {
+export type Props = {
+  // TODO: Should this be something like `Element<typeof BpkInput | typeof BpkCheckbox | typeof BpkSelect>`?
+  children: Element<*>,
+  label: ?string,
+  disabled: boolean,
+  valid: ?boolean,
+  required: boolean,
+  className: ?string,
+  validationMessage: ?string,
+  isCheckbox: boolean,
+  validationProps: {},
+};
+
+const BpkFieldset = (props: Props) => {
   const {
     children,
     label,
@@ -53,7 +67,13 @@ const BpkFieldset = props => {
     ? valid === false
     : children.props.valid === false;
 
-  const childrenProps = { disabled };
+  const childrenProps: {
+    required?: boolean,
+    'aria-required'?: boolean,
+    'aria-describedby'?: string,
+  } = {
+    disabled,
+  };
 
   if (isCheckbox) {
     childrenProps.required = required;
@@ -97,7 +117,10 @@ const BpkFieldset = props => {
   );
 };
 
-const labelPropType = (props, propName) => {
+const labelPropType = (
+  props: { isCheckbox?: boolean, label?: ?string },
+  propName: string,
+) => {
   const { isCheckbox, label } = props;
   if (!label && !isCheckbox) {
     return new Error(
@@ -107,8 +130,8 @@ const labelPropType = (props, propName) => {
   return false;
 };
 
-BpkFieldset.propTypes = {
-  children: PropTypes.node.isRequired,
+export const BpkFieldsetPropTypes = {
+  children: PropTypes.element.isRequired,
   label: labelPropType,
   disabled: PropTypes.bool,
   valid: PropTypes.bool,
@@ -119,7 +142,9 @@ BpkFieldset.propTypes = {
   validationProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
-BpkFieldset.defaultProps = {
+BpkFieldset.propTypes = BpkFieldsetPropTypes;
+
+export const BpkFieldsetDefaultPropTypes = {
   label: null,
   disabled: false,
   valid: null,
@@ -129,5 +154,6 @@ BpkFieldset.defaultProps = {
   isCheckbox: false,
   validationProps: {},
 };
+BpkFieldset.defaultProps = BpkFieldsetDefaultPropTypes;
 
 export default BpkFieldset;
