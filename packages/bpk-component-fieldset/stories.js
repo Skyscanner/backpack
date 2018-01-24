@@ -99,7 +99,7 @@ class FieldsetContainer extends Component<Props, State> {
 }
 
 storiesOf('bpk-component-fieldset', module)
-  .add('Input example', () => (
+  .add('Input', () => (
     <FieldsetContainer
       label="Name"
       validationMessage="Please enter a name (Joe Bloggs is correct!)"
@@ -114,11 +114,28 @@ storiesOf('bpk-component-fieldset', module)
       />
     </FieldsetContainer>
   ))
-  .add('Select example', () => (
+  .add('Input with description', () => (
+    <FieldsetContainer
+      label="Name"
+      validationMessage="Please enter a name (Joe Bloggs is correct!)"
+      validValue="Joe Bloggs"
+      description="Your full name exactly as stated in your passport."
+    >
+      <BpkInput
+        id="name_input"
+        name="name"
+        type={INPUT_TYPES.TEXT}
+        placeholder="e.g. Joe Bloggs"
+        value=""
+      />
+    </FieldsetContainer>
+  ))
+  .add('Select', () => (
     <FieldsetContainer
       label="Fruits"
       validationMessage="Please select a fruit (Orange is correct!)"
       validValue="oranges"
+      description="Select your favourite"
     >
       <BpkSelect id="fruits_select" name="fruits" value="">
         <option value="">Please select...</option>
@@ -131,7 +148,7 @@ storiesOf('bpk-component-fieldset', module)
       </BpkSelect>
     </FieldsetContainer>
   ))
-  .add('Checkbox example', () => (
+  .add('Checkbox', () => (
     <FieldsetContainer
       validationMessage="Please check this"
       validValue
@@ -144,7 +161,7 @@ storiesOf('bpk-component-fieldset', module)
       />
     </FieldsetContainer>
   ))
-  .add('Required input example', () => (
+  .add('Required input', () => (
     <FieldsetContainer
       label="Name"
       validationMessage="Please enter a name (Joe Bloggs is correct!)"
@@ -160,7 +177,7 @@ storiesOf('bpk-component-fieldset', module)
       />
     </FieldsetContainer>
   ))
-  .add('Required select example', () => (
+  .add('Required select', () => (
     <FieldsetContainer
       label="Fruits"
       validationMessage="Please select a fruit (Orange is correct!)"
@@ -178,7 +195,7 @@ storiesOf('bpk-component-fieldset', module)
       </BpkSelect>
     </FieldsetContainer>
   ))
-  .add('Required checkbox example', () => (
+  .add('Required checkbox', () => (
     <FieldsetContainer
       validationMessage="Please accept the terms &amp; conditions to continue"
       validValue
@@ -192,7 +209,7 @@ storiesOf('bpk-component-fieldset', module)
       />
     </FieldsetContainer>
   ))
-  .add('Disabled input example', () => (
+  .add('Disabled input', () => (
     <FieldsetContainer
       label="Name"
       validationMessage="Please enter a name (Joe Bloggs is correct!)"
@@ -208,7 +225,7 @@ storiesOf('bpk-component-fieldset', module)
       />
     </FieldsetContainer>
   ))
-  .add('Disabled select example', () => (
+  .add('Disabled select', () => (
     <FieldsetContainer
       label="Fruits"
       validationMessage="Please select a fruit (Orange is correct!)"
@@ -226,7 +243,7 @@ storiesOf('bpk-component-fieldset', module)
       </BpkSelect>
     </FieldsetContainer>
   ))
-  .add('Disabled checkbox example', () => (
+  .add('Disabled checkbox', () => (
     <FieldsetContainer
       validationMessage="Please check this"
       validValue
