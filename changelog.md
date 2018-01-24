@@ -1,8 +1,8 @@
 # Backpack changelog
 
-## UNRELEASED
-
 _Nothing yet..._
+
+## 2018-01-24 - Fieldset descriptions
 
 **Added:**
 - bpk-component-fieldset:
