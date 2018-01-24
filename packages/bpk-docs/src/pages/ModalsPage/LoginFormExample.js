@@ -16,24 +16,26 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import BpkLabel from 'bpk-component-label';
 import BpkButton from 'bpk-component-button';
-import { spacingSm, spacingXxl } from 'bpk-tokens/tokens/base.es6';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, type Node } from 'react';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
+import { spacingSm, spacingXxl } from 'bpk-tokens/tokens/base.es6';
 
-const FormFieldExample = props => (
+const FormFieldExample = (props: { children: Node }) => (
   <div style={{ marginBottom: spacingSm, maxWidth: `calc(${spacingXxl} * 6)` }}>
     {props.children}
   </div>
 );
 
-FormFieldExample.propTypes = {
-  children: PropTypes.node.isRequired,
+type State = {
+  username: string,
+  password: string,
 };
 
-class LoginFormExample extends Component {
+class LoginFormExample extends Component<{}, State> {
   constructor() {
     super();
 
@@ -41,22 +43,19 @@ class LoginFormExample extends Component {
       username: '',
       password: '',
     };
-
-    this.onUsernameChange = this.onUsernameChange.bind(this);
-    this.onPasswordChange = this.onPasswordChange.bind(this);
   }
 
-  onUsernameChange(e) {
+  onUsernameChange = (event: SyntheticEvent<HTMLInputElement>) => {
     this.setState({
-      username: e.target.value,
+      username: event.currentTarget.value,
     });
-  }
+  };
 
-  onPasswordChange(e) {
+  onPasswordChange = (event: SyntheticEvent<HTMLInputElement>) => {
     this.setState({
-      password: e.target.value,
+      password: event.currentTarget.value,
     });
-  }
+  };
 
   render() {
     return (

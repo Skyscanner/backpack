@@ -16,14 +16,21 @@
  * limitations under the License.
  */
 
-const titlePropType = (props, propName, componentName) => {
+/* @flow */
+
+// eslint-disable-next-line import/prefer-default-export
+export const titlePropType = (
+  props: Object,
+  propName: string,
+  componentName: string,
+): ?Error => {
   const titleValue = props[propName];
+
   if (props.showHeader && (!titleValue || typeof titleValue !== 'string')) {
     return new Error(
       `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must be title if showHeader is true.`,
-    ); // eslint-disable-line max-len
+    );
   }
-  return false;
-};
 
-export default titlePropType;
+  return null;
+};

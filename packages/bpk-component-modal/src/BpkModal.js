@@ -16,18 +16,48 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Portal, cssModules } from 'bpk-react-utils';
-import { withScrim } from 'bpk-scrim-utils';
+/* @flow */
 
-import BpkModalDialog from './BpkModalDialog';
+import PropTypes from 'prop-types';
+import React, { type Element } from 'react';
+import { withScrim } from 'bpk-scrim-utils';
+import { Portal, cssModules } from 'bpk-react-utils';
+
 import STYLES from './bpk-modal.scss';
+import BpkModalDialog, {
+  type Props as ModalDialogProps,
+} from './BpkModalDialog';
 
 const getClassName = cssModules(STYLES);
 const ScrimBpkModalDialog = withScrim(BpkModalDialog);
 
-const BpkModal = props => {
+// Please remove this type when `withScrim` is flow-typed
+type ScrimProps = {
+  isIphone: boolean,
+  dialogRef: () => ?HTMLElement,
+  closeEvents: {
+    onTouchStart: (event: SyntheticEvent<>) => void,
+    onTouchMove: (event: SyntheticEvent<>) => void,
+    onTouchEnd: (event: SyntheticEvent<>) => void,
+    onMouseDown: (event: SyntheticEvent<>) => void,
+    onMouseMove: (event: SyntheticEvent<>) => void,
+    onMouseUp: (event: SyntheticEvent<>) => void,
+  },
+};
+
+export type Props = {
+  // The `withScrim` HOC satisfies some of the ModalDialogs required
+  // props but it's not flow typed yet so this
+  // diff will suffice for now.
+  ...$Exact<$Diff<ModalDialogProps, ScrimProps>>,
+  isOpen: boolean,
+  closeOnScrimClick: boolean,
+  closeOnEscPressed: boolean,
+  renderTarget: ?() => ?HTMLElement,
+  target: ?((() => ?HTMLElement) | Element<any>),
+};
+
+const BpkModal = (props: Props) => {
   const {
     isOpen,
     onClose,
@@ -44,8 +74,6 @@ const BpkModal = props => {
   if (fullScreenOnMobile) {
     containerClass.push(getClassName('bpk-modal__container--full-screen'));
   }
-
-  delete rest.onClose;
 
   return (
     <Portal
@@ -66,22 +94,30 @@ const BpkModal = props => {
   );
 };
 
+// isIphone, dialogRef and closeEvents are provided by the withScrim HOC
+const {
+  isIphone,
+  dialogRef,
+  closeEvents,
+  ...modalDialogPropTypes
+} = BpkModalDialog.propTypes;
+
 BpkModal.propTypes = {
+  ...modalDialogPropTypes,
   isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
   renderTarget: PropTypes.func,
   target: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
-  fullScreenOnMobile: PropTypes.bool,
   closeOnScrimClick: PropTypes.bool,
   closeOnEscPressed: PropTypes.bool,
 };
 
 BpkModal.defaultProps = {
+  ...BpkModalDialog.defaultProps,
   renderTarget: null,
   target: null,
-  fullScreenOnMobile: true,
   closeOnScrimClick: true,
   closeOnEscPressed: true,
+  fullScreenOnMobile: true,
 };
 
 export default BpkModal;

@@ -16,19 +16,44 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import { BpkButtonLink } from 'bpk-component-link';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import BpkCloseButton from 'bpk-component-close-button';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-modal-dialog.scss';
 
-import titlePropType from './customPropTypes';
+import { titlePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);
 
-const BpkModalDialog = props => {
+export type Props = {
+  id: string,
+  children: Node,
+  onClose: (event: SyntheticEvent<>) => void,
+  wide: boolean,
+  isIphone: boolean,
+  showHeader: boolean,
+  fullScreenOnMobile: boolean,
+  dialogRef: (ref: ?HTMLElement) => void,
+  className: ?string,
+  title: ?string,
+  closeLabel: ?string,
+  closeText: ?string,
+  closeEvents: {
+    onTouchStart: (event: SyntheticEvent<>) => void,
+    onTouchMove: (event: SyntheticEvent<>) => void,
+    onTouchEnd: (event: SyntheticEvent<>) => void,
+    onMouseDown: (event: SyntheticEvent<>) => void,
+    onMouseMove: (event: SyntheticEvent<>) => void,
+    onMouseUp: (event: SyntheticEvent<>) => void,
+  },
+};
+
+const BpkModalDialog = (props: Props) => {
   const classNames = [getClassName('bpk-modal')];
 
   if (props.wide) {
@@ -93,16 +118,10 @@ const BpkModalDialog = props => {
 
 BpkModalDialog.propTypes = {
   id: PropTypes.string.isRequired,
-  className: PropTypes.string,
   onClose: PropTypes.func.isRequired,
-  title: titlePropType,
   children: PropTypes.node.isRequired,
-  closeLabel: PropTypes.string,
-  closeText: PropTypes.string,
-  wide: PropTypes.bool,
   isIphone: PropTypes.bool.isRequired,
   fullScreenOnMobile: PropTypes.bool.isRequired,
-  showHeader: PropTypes.bool,
   dialogRef: PropTypes.func.isRequired,
   closeEvents: PropTypes.shape({
     onTouchStart: PropTypes.func,
@@ -112,6 +131,12 @@ BpkModalDialog.propTypes = {
     onMouseMove: PropTypes.func,
     onMouseUp: PropTypes.func,
   }).isRequired,
+  title: titlePropType,
+  className: PropTypes.string,
+  closeLabel: PropTypes.string,
+  closeText: PropTypes.string,
+  wide: PropTypes.bool,
+  showHeader: PropTypes.bool,
 };
 
 BpkModalDialog.defaultProps = {

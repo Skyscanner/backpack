@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { type Node, Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { cssModules, withDefaultProps } from 'bpk-react-utils';
 
@@ -36,32 +38,43 @@ const Paragraph = withDefaultProps(BpkText, {
   className: getClassName('bpk-modal-paragraph'),
 });
 
-class ModalContainer extends Component {
+type Props = {
+  children: Node,
+  buttonText: string,
+};
+
+type State = {
+  isOpen: boolean,
+};
+
+class ModalContainer extends Component<Props, State> {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    buttonText: PropTypes.string.isRequired,
+  };
+
   constructor() {
     super();
-
-    this.onOpen = this.onOpen.bind(this);
-    this.onClose = this.onClose.bind(this);
 
     this.state = {
       isOpen: false,
     };
   }
 
-  onOpen() {
+  onOpen = () => {
     this.setState({
       isOpen: true,
     });
-  }
+  };
 
-  onClose() {
+  onClose = () => {
     this.setState({
       isOpen: false,
     });
-  }
+  };
 
   render() {
-    const { buttonText, ...rest } = this.props;
+    const { children, buttonText, ...rest } = this.props;
 
     return (
       <div id="modal-container">
@@ -77,7 +90,9 @@ class ModalContainer extends Component {
             }
             renderTarget={() => document.getElementById('modal-container')}
             {...rest}
-          />
+          >
+            {children}
+          </BpkModal>
           <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut egestas
             sit amet nisi nec ultrices. In efficitur justo ac tristique
@@ -141,10 +156,6 @@ class ModalContainer extends Component {
     );
   }
 }
-
-ModalContainer.propTypes = {
-  buttonText: PropTypes.string.isRequired,
-};
 
 storiesOf('bpk-component-modal', module)
   .add('Default', () => (

@@ -16,34 +16,49 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+/* @flow */
+
 import React from 'react';
+import PropTypes from 'prop-types';
+import BpkModal, { type BpkModalProps } from 'bpk-component-modal';
 
-import BpkModal from 'bpk-component-modal';
+import { titlePropType } from './customPropTypes';
 
-const BpkDialog = props => {
+export type Props = {
+  ...$Exact<BpkModalProps>,
+  dismissible: boolean,
+};
+
+const BpkDialog = (props: Props) => {
   const { dismissible, ...rest } = props;
 
   return (
     <BpkModal
       {...rest}
-      closeOnScrimClick={dismissible}
       showHeader={dismissible}
+      closeOnScrimClick={dismissible}
       closeOnEscPressed={dismissible}
       fullScreenOnMobile={false}
     />
   );
 };
 
+const {
+  showHeader,
+  closeOnScrimClick,
+  closeOnEscPressed,
+  fullScreenOnMobile,
+  ...modalPropTypes
+} = BpkModal.propTypes;
+
 BpkDialog.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  target: PropTypes.element,
+  ...modalPropTypes,
+  title: titlePropType,
   dismissible: PropTypes.bool,
 };
 
 BpkDialog.defaultProps = {
-  target: null,
+  ...BpkModal.defaultProps,
   dismissible: true,
 };
 
