@@ -190,6 +190,64 @@ exports[`BpkFieldset should render correctly with input component 1`] = `
 </fieldset>
 `;
 
+exports[`BpkFieldset should render correctly with input component and "description" attribute 1`] = `
+<fieldset
+  className="bpk-fieldset"
+>
+  <label
+    className="bpk-label"
+    htmlFor="name_input"
+  >
+    Name
+  </label>
+  <input
+    aria-describedby="name_input_description"
+    aria-invalid={false}
+    aria-required={false}
+    className="bpk-input"
+    disabled={false}
+    id="name_input"
+    name="name"
+    placeholder="e.g. Joe Bloggs"
+    type="text"
+    value=""
+  />
+  <span
+    className="bpk-fieldset__description"
+    id="name_input_description"
+  >
+    Your full name exactly as stated in your passport.
+  </span>
+  <div
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "MozTransition": "height 200ms ease ",
+        "OTransition": "height 200ms ease ",
+        "WebkitTransition": "height 200ms ease ",
+        "height": 0,
+        "msTransition": "height 200ms ease ",
+        "overflow": "visible",
+        "transition": "height 200ms ease ",
+      }
+    }
+  >
+    <div>
+      <div
+        className="bpk-form-validation__container"
+      >
+        <div
+          className="bpk-form-validation"
+          id="name_input_validation_message"
+        >
+          Please enter a name
+        </div>
+      </div>
+    </div>
+  </div>
+</fieldset>
+`;
+
 exports[`BpkFieldset should render correctly with input component and "disabled" attribute 1`] = `
 <fieldset
   className="bpk-fieldset"

@@ -22,4 +22,11 @@
   margin: 0;
   padding: 0;
   border: 0;
+
+  &__description {
+    display: block;
+    color: $bpk-color-gray-500;
+
+    @include bpk-text--xs;
+  }
 }

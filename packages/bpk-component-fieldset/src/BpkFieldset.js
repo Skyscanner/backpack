@@ -38,6 +38,7 @@ export type Props = {
   validationMessage: ?string,
   isCheckbox: boolean,
   validationProps: {},
+  description: ?string,
 };
 
 const BpkFieldset = (props: Props) => {
@@ -51,6 +52,7 @@ const BpkFieldset = (props: Props) => {
     isCheckbox,
     validationProps,
     disabled,
+    description,
     ...rest
   } = props;
 
@@ -60,6 +62,7 @@ const BpkFieldset = (props: Props) => {
 
   const classNames = [getClassName('bpk-fieldset')];
   const validationMessageId = `${children.props.id}_validation_message`;
+  const descriptionId = `${children.props.id}_description`;
 
   // Explicit check for false primitive value as undefined is
   // treated as neither valid nor invalid
@@ -83,6 +86,8 @@ const BpkFieldset = (props: Props) => {
 
   if (validationMessage && isInvalid) {
     childrenProps['aria-describedby'] = validationMessageId;
+  } else if (description) {
+    childrenProps['aria-describedby'] = descriptionId;
   }
 
   const clonedChildren = cloneElement(children, childrenProps);
@@ -103,6 +108,14 @@ const BpkFieldset = (props: Props) => {
         </BpkLabel>
       )}
       {clonedChildren}
+      {description && (
+        <span
+          className={getClassName('bpk-fieldset__description')}
+          id={descriptionId}
+        >
+          {description}
+        </span>
+      )}
       {validationMessage && (
         <BpkFormValidation
           id={validationMessageId}
@@ -140,6 +153,7 @@ export const BpkFieldsetPropTypes = {
   validationMessage: PropTypes.string,
   isCheckbox: PropTypes.bool,
   validationProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  description: PropTypes.string,
 };
 
 BpkFieldset.propTypes = BpkFieldsetPropTypes;
@@ -153,6 +167,7 @@ export const BpkFieldsetDefaultPropTypes = {
   validationMessage: null,
   isCheckbox: false,
   validationProps: {},
+  description: null,
 };
 BpkFieldset.defaultProps = BpkFieldsetDefaultPropTypes;
 

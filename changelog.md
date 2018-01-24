@@ -4,6 +4,10 @@
 
 _Nothing yet..._
 
+**Added:**
+- bpk-component-fieldset:
+  - Adds a new `description` prop to describe the fieldset component.
+
 **Fixed:**
 - bpk-component-label:
 - bpk-component-fieldset:

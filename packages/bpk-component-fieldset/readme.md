@@ -67,6 +67,7 @@ class FieldsetContainer extends Component {
 | valid             | bool     | false    | null          |
 | validationMessage | string   | false    | null          |
 | validationProps   | object   | false    | {}            |
+| description       | string   | false    | null          |
 
 > **Note:** There are a couple of props that behave differently when using `isCheckbox`:
 > - `valid`: checkboxes don't have a valid prop so you have to apply it to the fieldset directly

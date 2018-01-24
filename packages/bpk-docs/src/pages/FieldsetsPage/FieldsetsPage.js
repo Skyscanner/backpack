@@ -117,15 +117,16 @@ const components = [
     title: 'Inputs',
     examples: [
       <FieldsetContainer
-        label="From"
-        validationMessage="Please enter a country, city or airport."
+        label="Name"
+        validationMessage="Please enter your full name."
         validStates={[null, true, false]}
+        description="Your full name exactly as stated in your passport"
       >
         <BpkInput
-          id="from_input"
-          name="from"
+          id="name_inputy"
+          name="name"
           value=""
-          placeholder="E.g. Singapore"
+          placeholder="E.g Joe Blogs"
         />
       </FieldsetContainer>,
     ],
@@ -138,6 +139,7 @@ const components = [
         label="Cabin class"
         validationMessage="Please select a cabin class."
         validStates={[true, false]}
+        description="The final price will be adjusted based on your selection"
       >
         <BpkSelect id="cabin_class_select" name="cabin_class" value="">
           <option value="">Please select...</option>
@@ -157,6 +159,7 @@ const components = [
         validationMessage="Please accept our terms & conditions to continue."
         validStates={[true, false]}
         isCheckbox
+        description="Please review the terms & conditions carefully"
       >
         <BpkCheckbox
           id="terms_conditions_checkbox"
