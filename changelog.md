@@ -1,6 +1,12 @@
 # Backpack changelog
 
-_Nothing yet..._
+**Added:**
+- bpk-component-link:
+  - The `alternate` style can now be themed.
+
+**Fixed:**
+- bpk-component-link:
+  - The `white` prop has been deprecated in favour of `alternate` in `BpkLink` and `BpkLinkButton`
 
 ## 2018-01-24 - Fieldset descriptions
 
