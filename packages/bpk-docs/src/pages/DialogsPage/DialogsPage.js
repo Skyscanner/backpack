@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, type Node } from 'react';
 import BpkDialog from 'bpk-component-dialog';
 import BpkButton from 'bpk-component-button';
 import { BpkButtonLink } from 'bpk-component-link';
@@ -27,29 +29,38 @@ import dialogReadme from 'bpk-component-dialog/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
 
-class DialogContainer extends Component {
+type Props = {
+  children: Node,
+};
+
+type State = {
+  isOpen: boolean,
+};
+
+class DialogContainer extends Component<Props, State> {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+  };
+
   constructor() {
     super();
-
-    this.onOpen = this.onOpen.bind(this);
-    this.onClose = this.onClose.bind(this);
 
     this.state = {
       isOpen: false,
     };
   }
 
-  onOpen() {
+  onOpen = () => {
     this.setState({
       isOpen: true,
     });
-  }
+  };
 
-  onClose() {
+  onClose = () => {
     this.setState({
       isOpen: false,
     });
-  }
+  };
 
   render() {
     const { children, ...rest } = this.props;
@@ -74,10 +85,6 @@ class DialogContainer extends Component {
     );
   }
 }
-
-DialogContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 const components = [
   {

@@ -20,26 +20,26 @@
 
 import { titlePropType } from './customPropTypes';
 
-const goodData = { title: 'Modal title', showHeader: true };
-const goodData2 = { showHeader: false };
-const badData = { showHeader: true };
+const goodData = { title: 'Dialog title', dismissible: true };
+const goodData2 = { dismissible: false };
+const badData = { dismissible: true };
 
 describe('titlePropType', () => {
-  it('should fail if show header is true and there is no title', () => {
-    const result = titlePropType(badData, 'title', 'BpkModal');
+  it('should fail if dismissible is true and there is no title', () => {
+    const result = titlePropType(badData, 'title', 'BpkDialog');
 
     expect(result).not.toBeFalsy();
     expect(result).toEqual(expect.any(Error));
   });
 
   it('should return null for valid data', () => {
-    const result = titlePropType(goodData, 'title', 'BpkModal');
+    const result = titlePropType(goodData, 'title', 'BpkDialog');
 
     expect(result).toBeNull();
   });
 
-  it('should be valid to pass no title if showHeader is false', () => {
-    const result = titlePropType(goodData2, 'title', 'BpkModal');
+  it('should be valid to pass no title if dismissible is false', () => {
+    const result = titlePropType(goodData2, 'title', 'BpkDialog');
 
     expect(result).toBeNull();
   });

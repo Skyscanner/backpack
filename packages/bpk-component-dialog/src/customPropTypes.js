@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2017 Skyscanner Ltd
+ * Copyright 2018 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,19 @@
 
 /* @flow */
 
-import BpkDialog, { type Props } from './src/BpkDialog';
-import themeAttributes from './src/themeAttributes';
+// eslint-disable-next-line import/prefer-default-export
+export const titlePropType = (
+  props: Object,
+  propName: string,
+  componentName: string,
+): ?Error => {
+  const titleValue = props[propName];
 
-export type BpkDialogProps = Props;
-export default BpkDialog;
-export { themeAttributes };
+  if (props.dismissible && (!titleValue || typeof titleValue !== 'string')) {
+    return new Error(
+      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must be title if dismissible is true.`,
+    );
+  }
+
+  return null;
+};

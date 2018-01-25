@@ -16,8 +16,12 @@
  * limitations under the License.
  */
 
-import BpkModal from './src/BpkModal';
+/* @flow */
+
+import BpkModal, { type Props } from './src/BpkModal';
 import themeAttributes from './src/themeAttributes';
+
+export type BpkModalProps = Props;
 
 export default BpkModal;
 export { themeAttributes };

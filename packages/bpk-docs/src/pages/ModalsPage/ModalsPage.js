@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+/* @flow */
+
+import React, { Component, type Node } from 'react';
 import BpkModal from 'bpk-component-modal';
 import BpkButton from 'bpk-component-button';
 import { BpkButtonLink } from 'bpk-component-link';
@@ -28,13 +29,19 @@ import LoginFormExample from './LoginFormExample';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
 
-class ModalContainer extends Component {
+type Props = {
+  buttonText: string,
+  children: Node,
+};
+
+type State = {
+  isOpen: boolean,
+  hideTitle: boolean,
+};
+
+class ModalContainer extends Component<Props, State> {
   constructor() {
     super();
-
-    this.onOpen = this.onOpen.bind(this);
-    this.onClose = this.onClose.bind(this);
-    this.toggleWidth = this.toggleWidth.bind(this);
 
     this.state = {
       isOpen: false,
@@ -42,23 +49,23 @@ class ModalContainer extends Component {
     };
   }
 
-  onOpen() {
+  onOpen = () => {
     this.setState({
       isOpen: true,
     });
-  }
+  };
 
-  onClose() {
+  onClose = () => {
     this.setState({
       isOpen: false,
     });
-  }
+  };
 
-  toggleWidth() {
+  toggleWidth = () => {
     this.setState(state => ({
       hideTitle: !state.hideTitle,
     }));
-  }
+  };
 
   render() {
     const { buttonText, children, ...rest } = this.props;
@@ -84,11 +91,6 @@ class ModalContainer extends Component {
     );
   }
 }
-
-ModalContainer.propTypes = {
-  buttonText: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-};
 
 const components = [
   {
