@@ -30,6 +30,7 @@ import {
 } from './scroll-utils';
 
 import STYLES from './bpk-scrim-content.scss';
+import { onClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);
 
@@ -165,14 +166,15 @@ const withScrim = WrappedComponent => {
   component.displayName = wrapDisplayName(WrappedComponent, 'withScrim');
 
   component.propTypes = {
-    onClose: PropTypes.func.isRequired,
     getApplicationElement: PropTypes.func.isRequired,
+    onClose: onClosePropType,
     isIphone: PropTypes.bool,
     containerClassName: PropTypes.string,
     closeOnScrimClick: PropTypes.bool,
   };
 
   component.defaultProps = {
+    onClose: null,
     isIphone: /iPhone/i.test(
       typeof window !== 'undefined' ? window.navigator.platform : '',
     ),

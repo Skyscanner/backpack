@@ -26,19 +26,19 @@ import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-modal-dialog.scss';
 
-import { titlePropType } from './customPropTypes';
+import { titlePropType, onClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);
 
 export type Props = {
   id: string,
   children: Node,
-  onClose: (event: SyntheticEvent<>) => void,
   wide: boolean,
   isIphone: boolean,
   showHeader: boolean,
   fullScreenOnMobile: boolean,
   dialogRef: (ref: ?HTMLElement) => void,
+  onClose: ?(event: SyntheticEvent<>) => void,
   className: ?string,
   title: ?string,
   closeLabel: ?string,
@@ -118,10 +118,8 @@ const BpkModalDialog = (props: Props) => {
 
 BpkModalDialog.propTypes = {
   id: PropTypes.string.isRequired,
-  onClose: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
   isIphone: PropTypes.bool.isRequired,
-  fullScreenOnMobile: PropTypes.bool.isRequired,
   dialogRef: PropTypes.func.isRequired,
   closeEvents: PropTypes.shape({
     onTouchStart: PropTypes.func,
@@ -132,20 +130,24 @@ BpkModalDialog.propTypes = {
     onMouseUp: PropTypes.func,
   }).isRequired,
   title: titlePropType,
+  onClose: onClosePropType,
   className: PropTypes.string,
   closeLabel: PropTypes.string,
   closeText: PropTypes.string,
   wide: PropTypes.bool,
   showHeader: PropTypes.bool,
+  fullScreenOnMobile: PropTypes.bool,
 };
 
 BpkModalDialog.defaultProps = {
   title: null,
+  onClose: null,
   className: null,
   closeLabel: null,
   closeText: null,
   wide: false,
   showHeader: true,
+  fullScreenOnMobile: true,
 };
 
 export default BpkModalDialog;

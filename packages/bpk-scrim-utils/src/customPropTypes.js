@@ -27,11 +27,11 @@ export const onClosePropType = (
   const onCloseValue = props[propName];
 
   if (
-    props.dismissible &&
+    props.closeOnScrimClick &&
     (!onCloseValue || typeof onCloseValue !== 'function')
   ) {
     return new Error(
-      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must be an onClose handler if dismissible is true.`,
+      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must an onClose handler if closeOnScrimClick is true.`,
     );
   }
 

@@ -16,24 +16,16 @@
  * limitations under the License.
  */
 
-/* @flow */
+@import '~bpk-mixins/index';
 
-// eslint-disable-next-line import/prefer-default-export
-export const onClosePropType = (
-  props: Object,
-  propName: string,
-  componentName: string,
-): ?Error => {
-  const onCloseValue = props[propName];
+.bpk-dialog {
+  &__close-button {
+    float: right;
+    margin: 0 0 $bpk-spacing-sm $bpk-spacing-sm;
 
-  if (
-    props.dismissible &&
-    (!onCloseValue || typeof onCloseValue !== 'function')
-  ) {
-    return new Error(
-      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must be an onClose handler if dismissible is true.`,
-    );
+    @include bpk-rtl {
+      float: left;
+      margin: 0 $bpk-spacing-sm $bpk-spacing-sm 0;
+    }
   }
-
-  return null;
-};
+}

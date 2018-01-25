@@ -18,28 +18,116 @@
 
 /* @flow */
 
-import { titlePropType } from './customPropTypes';
-
-const goodData = { title: 'Modal title', showHeader: true };
-const goodData2 = { showHeader: false };
-const badData = { showHeader: true };
+import {
+  titlePropType,
+  onClosePropType,
+  modalOnClosePropType,
+} from './customPropTypes';
 
 describe('titlePropType', () => {
   it('should fail if show header is true and there is no title', () => {
-    const result = titlePropType(badData, 'title', 'BpkModal');
+    const result = titlePropType(
+      { showHeader: true },
+      'title',
+      'BpkModalDialog',
+    );
 
-    expect(result).not.toBeFalsy();
     expect(result).toEqual(expect.any(Error));
   });
 
   it('should return null for valid data', () => {
-    const result = titlePropType(goodData, 'title', 'BpkModal');
+    const result = titlePropType(
+      { title: 'Modal title', showHeader: true },
+      'title',
+      'BpkModalDialog',
+    );
 
     expect(result).toBeNull();
   });
 
   it('should be valid to pass no title if showHeader is false', () => {
-    const result = titlePropType(goodData2, 'title', 'BpkModal');
+    const result = titlePropType(
+      { showHeader: false },
+      'title',
+      'BpkModalDialog',
+    );
+
+    expect(result).toBeNull();
+  });
+});
+
+describe('onClosePropType', () => {
+  it('should fail if showHeader is true and there is onClose', () => {
+    const result = onClosePropType(
+      { showHeader: true },
+      'onClose',
+      'BpkModalDialog',
+    );
+
+    expect(result).toEqual(expect.any(Error));
+  });
+
+  it('should return null for valid data', () => {
+    const result = onClosePropType(
+      { onClose: () => null, showHeader: true },
+      'onClose',
+      'BpkModalDialog',
+    );
+
+    expect(result).toBeNull();
+  });
+
+  it('should be valid to pass no onClose if showHeader is false', () => {
+    const result = onClosePropType(
+      { showHeader: false },
+      'onClose',
+      'BpkModalDialog',
+    );
+
+    expect(result).toBeNull();
+  });
+});
+
+describe('modalOnClosePropType', () => {
+  it('should fail if closeOnEscPressed is true and there is no onClose', () => {
+    const result = modalOnClosePropType(
+      {
+        showHeader: false,
+        closeOnScrimClick: false,
+        closeOnEscPressed: true,
+      },
+      'onClose',
+      'BpkModalDialog',
+    );
+
+    expect(result).toEqual(expect.any(Error));
+  });
+
+  it('should return null for valid data', () => {
+    const result = modalOnClosePropType(
+      {
+        onClose: () => null,
+        showHeader: true,
+        closeOnScrimClick: true,
+        closeOnEscPressed: true,
+      },
+      'onClose',
+      'BpkModalDialog',
+    );
+
+    expect(result).toBeNull();
+  });
+
+  it('should be valid to pass no onClose if showHeader, closeOnScrimClick and closeOnEscPressed is false', () => {
+    const result = modalOnClosePropType(
+      {
+        showHeader: false,
+        closeOnScrimClick: false,
+        closeOnEscPressed: false,
+      },
+      'onClose',
+      'BpkModalDialog',
+    );
 
     expect(result).toBeNull();
   });
