@@ -28,7 +28,10 @@ import { themeAttributes as checkboxThemeAttributes } from 'bpk-component-checkb
 import { themeAttributes as datepickerThemeAttributes } from 'bpk-component-datepicker';
 import { themeAttributes as drawerThemeAttributes } from 'bpk-component-drawer';
 import { themeAttributes as horizontalNavThemeAttributes } from 'bpk-component-horizontal-nav';
-import { themeAttributes as linkThemeAttributes } from 'bpk-component-link';
+import {
+  linkAlternateThemeAttributes,
+  themeAttributes as linkThemeAttributes,
+} from 'bpk-component-link';
 import { themeAttributes as modalThemeAttributes } from 'bpk-component-modal';
 import { themeAttributes as nudgerThemeAttributes } from 'bpk-component-nudger';
 import { themeAttributes as paginationThemeAttributes } from 'bpk-component-pagination';
@@ -50,6 +53,7 @@ export default [
   ...drawerThemeAttributes,
   ...horizontalNavThemeAttributes,
   ...linkThemeAttributes,
+  ...linkAlternateThemeAttributes,
   ...modalThemeAttributes,
   ...nudgerThemeAttributes,
   ...paginationThemeAttributes,

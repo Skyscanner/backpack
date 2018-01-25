@@ -22,3 +22,12 @@ export default [
   'linkActiveColor',
   'linkVisitedColor',
 ];
+
+const linkAlternateThemeAttributes = [
+  'linkAlternateColor',
+  'linkAlternateHoverColor',
+  'linkAlternateActiveColor',
+  'linkAlternateVisitedColor',
+];
+
+export { linkAlternateThemeAttributes };

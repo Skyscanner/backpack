@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BpkLink should render correctly with a "alternate" attribute 1`] = `
+<a
+  className="bpk-link bpk-link--alternate"
+  href="#"
+  onClick={null}
+  target={null}
+>
+  Link
+</a>
+`;
+
 exports[`BpkLink should render correctly with a "blank" attribute 1`] = `
 <a
   className="bpk-link"
@@ -35,7 +46,7 @@ exports[`BpkLink should render correctly with a "href" attribute 1`] = `
 
 exports[`BpkLink should render correctly with a "white" attribute 1`] = `
 <a
-  className="bpk-link bpk-link--white"
+  className="bpk-link bpk-link--alternate"
   href="#"
   onClick={null}
   target={null}

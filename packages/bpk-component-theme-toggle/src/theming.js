@@ -69,6 +69,11 @@ const generateTheme = ({
   linkActiveColor: primaryColor600,
   linkVisitedColor: primaryColor700,
 
+  linkAlternateColor: colorWhite,
+  linkAlternateHoverColor: colorWhite,
+  linkAlternateActiveColor: colorGray100,
+  linkAlternateVisitedColor: colorWhite,
+
   logoFillColor: primaryColor500,
 
   horizontalNavBarSelectedColor: primaryColor500,

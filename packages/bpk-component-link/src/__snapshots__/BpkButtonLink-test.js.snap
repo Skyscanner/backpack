@@ -10,9 +10,19 @@ exports[`BpkButtonLink should render correctly 1`] = `
 </button>
 `;
 
+exports[`BpkButtonLink should render correctly with "alternate" attribute 1`] = `
+<button
+  className="bpk-link bpk-link--alternate"
+  onClick={[Function]}
+  type="button"
+>
+  Link
+</button>
+`;
+
 exports[`BpkButtonLink should render correctly with "white" attribute 1`] = `
 <button
-  className="bpk-link bpk-link--white"
+  className="bpk-link bpk-link--alternate"
   onClick={[Function]}
   type="button"
 >

@@ -18,7 +18,9 @@
 
 import BpkLink from './src/BpkLink';
 import BpkButtonLink from './src/BpkButtonLink';
-import themeAttributes from './src/themeAttributes';
+import themeAttributes, {
+  linkAlternateThemeAttributes,
+} from './src/themeAttributes';
 
 export default BpkLink;
-export { BpkButtonLink, themeAttributes };
+export { BpkButtonLink, themeAttributes, linkAlternateThemeAttributes };

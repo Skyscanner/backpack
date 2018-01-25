@@ -26,11 +26,11 @@ import STYLES from './bpk-link.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkButtonLink = props => {
-  const { children, className, onClick, white, ...rest } = props;
+  const { children, className, onClick, white, alternate, ...rest } = props;
   const classNames = [getClassName('bpk-link')];
 
-  if (white) {
-    classNames.push(getClassName('bpk-link--white'));
+  if (white || alternate) {
+    classNames.push(getClassName('bpk-link--alternate'));
   }
   if (className) {
     classNames.push(className);
@@ -52,11 +52,15 @@ BpkButtonLink.propTypes = {
   onClick: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  alternate: PropTypes.bool,
+  // DEPRECATED
   white: PropTypes.bool,
 };
 
 BpkButtonLink.defaultProps = {
   className: null,
+  alternate: false,
+  // DEPRECATED
   white: false,
 };
 
