@@ -1,5 +1,11 @@
 # Backpack changelog
 
+## Unreleased
+
+_Nothing yet!_
+
+## 2018-01-25 - New link styles
+
 **Added:**
 - bpk-component-link:
   - The `alternate` style can now be themed.
