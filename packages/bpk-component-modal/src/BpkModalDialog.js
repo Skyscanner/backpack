@@ -33,10 +33,12 @@ const getClassName = cssModules(STYLES);
 export type Props = {
   id: string,
   children: Node,
+  onClose: (event: SyntheticEvent<>) => void,
   wide: boolean,
   isIphone: boolean,
   showHeader: boolean,
   fullScreenOnMobile: boolean,
+  fullScreen: boolean,
   dialogRef: (ref: ?HTMLElement) => void,
   onClose: ?(event: SyntheticEvent<>) => void,
   className: ?string,
@@ -66,8 +68,10 @@ const BpkModalDialog = (props: Props) => {
     classNames.push(getClassName('bpk-modal--iphone-fix'));
   }
 
-  if (props.fullScreenOnMobile) {
+  if (props.fullScreen) {
     classNames.push(getClassName('bpk-modal--full-screen'));
+  } else if (props.fullScreenOnMobile) {
+    classNames.push(getClassName('bpk-modal--full-screen-mobile'));
   }
 
   const headingId = `bpk-modal-heading-${props.id}`;
@@ -120,6 +124,7 @@ BpkModalDialog.propTypes = {
   id: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   isIphone: PropTypes.bool.isRequired,
+  fullScreen: PropTypes.bool.isRequired,
   dialogRef: PropTypes.func.isRequired,
   closeEvents: PropTypes.shape({
     onTouchStart: PropTypes.func,

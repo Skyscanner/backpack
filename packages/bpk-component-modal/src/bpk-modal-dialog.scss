@@ -18,6 +18,12 @@
 
 @import '~bpk-mixins/index';
 
+@mixin fullscreen() {
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .bpk-modal {
   z-index: $bpk-zindex-modal;
   width: 100%;
@@ -32,12 +38,16 @@
   @include bpk-box-shadow-xl;
   @include bpk-border-radius-sm;
 
-  &--full-screen {
+  &--full-screen-mobile {
     @include bpk-breakpoint-mobile {
-      margin: 0;
-      border-radius: 0;
-      box-shadow: none;
+      @include fullscreen;
     }
+  }
+
+  &--full-screen {
+    min-width: 100%;
+
+    @include fullscreen;
   }
 
   &--wide {

@@ -65,6 +65,7 @@ const BpkModal = (props: Props) => {
     target,
     renderTarget,
     fullScreenOnMobile,
+    fullScreen,
     closeOnScrimClick,
     closeOnEscPressed,
     ...rest
@@ -72,8 +73,12 @@ const BpkModal = (props: Props) => {
 
   const containerClass = [getClassName('bpk-modal__container')];
 
-  if (fullScreenOnMobile) {
+  if (fullScreen) {
     containerClass.push(getClassName('bpk-modal__container--full-screen'));
+  } else if (fullScreenOnMobile) {
+    containerClass.push(
+      getClassName('bpk-modal__container--full-screen-mobile'),
+    );
   }
 
   return (
@@ -87,6 +92,7 @@ const BpkModal = (props: Props) => {
       <ScrimBpkModalDialog
         onClose={onClose}
         fullScreenOnMobile={fullScreenOnMobile}
+        fullScreen={fullScreen}
         closeOnScrimClick={closeOnScrimClick}
         containerClassName={containerClass.join(' ')}
         {...rest}
@@ -119,6 +125,8 @@ BpkModal.defaultProps = {
   target: null,
   closeOnScrimClick: true,
   closeOnEscPressed: true,
+  fullScreenOnMobile: true,
+  fullScreen: false,
 };
 
 export default BpkModal;

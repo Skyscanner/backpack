@@ -319,4 +319,14 @@ storiesOf('bpk-component-modal', module)
     >
       This is a default modal. You can put anything you want in here.
     </ModalContainer>
+  ))
+  .add('Full screen', () => (
+    <ModalContainer
+      title="Modal title"
+      closeText="Done"
+      buttonText="Open modal"
+      fullScreen
+    >
+      This is a default modal. You can put anything you want in here.
+    </ModalContainer>
   ));
