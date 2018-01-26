@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkClearButton should render correctly 1`] = `
+<button
+  aria-label="Clear"
+  className="bpk-clear-button"
+  onClick={[Function]}
+  title="Clear"
+  type="button"
+>
+  <span
+    style={
+      Object {
+        "display": "inline-block",
+        "lineHeight": "1.125rem",
+        "marginTop": "0.1875rem",
+        "verticalAlign": "top",
+      }
+    }
+  >
+    <svg
+      className="bpk-clear-button__icon"
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.8 12.9c.3.3.3.7 0 .9l-.9.9c-.3.3-.7.3-.9 0l-3-2.8-2.9 2.9c-.3.3-.7.3-.9 0l-.9-.9c-.3-.3-.3-.7 0-.9l2.9-2.9-3-3c-.3-.3-.3-.7 0-.9l.9-.9c.3-.3.7-.3.9 0l2.9 2.9 2.9-2.9c.3-.3.7-.3.9 0l.9.9c.3.3.3.7 0 .9L13.9 12l2.9 2.9z"
+      />
+    </svg>
+  </span>
+</button>
+`;
+
+exports[`BpkClearButton should render correctly with a custom class 1`] = `
+<button
+  aria-label="Clear"
+  className="bpk-clear-button foo-class"
+  onClick={[Function]}
+  title="Clear"
+  type="button"
+>
+  <span
+    style={
+      Object {
+        "display": "inline-block",
+        "lineHeight": "1.125rem",
+        "marginTop": "0.1875rem",
+        "verticalAlign": "top",
+      }
+    }
+  >
+    <svg
+      className="bpk-clear-button__icon"
+      height="18"
+      style={
+        Object {
+          "height": "1.125rem",
+          "width": "1.125rem",
+        }
+      }
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.8 12.9c.3.3.3.7 0 .9l-.9.9c-.3.3-.7.3-.9 0l-3-2.8-2.9 2.9c-.3.3-.7.3-.9 0l-.9-.9c-.3-.3-.3-.7 0-.9l2.9-2.9-3-3c-.3-.3-.3-.7 0-.9l.9-.9c.3-.3.7-.3.9 0l2.9 2.9 2.9-2.9c.3-.3.7-.3.9 0l.9.9c.3.3.3.7 0 .9L13.9 12l2.9 2.9z"
+      />
+    </svg>
+  </span>
+</button>
+`;

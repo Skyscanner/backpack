@@ -71,6 +71,43 @@ storiesOf('bpk-component-input', module)
       disabled
     />
   ))
+  .add('Clearable', () => (
+    <div>
+      <BpkInput
+        id="clearable"
+        name="clearable"
+        value="Edinburgh"
+        onChange={action('input changed')}
+        placeholder="Enter a country, city or airport"
+        clearable
+        clearButtonLabel="Clear field"
+        onClear={action('input cleared')}
+      />
+      <BpkInput
+        id="clearable"
+        name="clearable"
+        value="Edinburgh"
+        onChange={action('input changed')}
+        placeholder="Enter a country, city or airport"
+        valid
+        clearable
+        clearButtonLabel="Clear field"
+        onClear={action('input cleared')}
+      />
+      <BpkInput
+        id="clearable"
+        name="clearable"
+        value="Edinburgh"
+        onChange={action('input changed')}
+        placeholder="Enter a country, city or airport"
+        large
+        valid
+        clearable
+        clearButtonLabel="Clear field"
+        onClear={action('input cleared')}
+      />
+    </div>
+  ))
   .add('Email', () => (
     <BpkInput
       type={INPUT_TYPES.EMAIL}

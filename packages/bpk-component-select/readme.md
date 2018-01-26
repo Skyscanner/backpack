@@ -38,7 +38,6 @@ export default () => (
 | onChange     | func     | true     | -             |
 | valid        | bool     | false    | null          |
 | large        | bool     | false    | false         |
-| docked       | bool     | false    | false         |
 | dockedFirst  | bool     | false    | false         |
 | dockedMiddle | bool     | false    | false         |
 | dockedLast   | bool     | false    | false         |
