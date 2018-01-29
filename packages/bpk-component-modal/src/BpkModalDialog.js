@@ -33,7 +33,6 @@ const getClassName = cssModules(STYLES);
 export type Props = {
   id: string,
   children: Node,
-  onClose: (event: SyntheticEvent<>) => void,
   wide: boolean,
   isIphone: boolean,
   showHeader: boolean,
@@ -124,7 +123,6 @@ BpkModalDialog.propTypes = {
   id: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   isIphone: PropTypes.bool.isRequired,
-  fullScreen: PropTypes.bool.isRequired,
   dialogRef: PropTypes.func.isRequired,
   closeEvents: PropTypes.shape({
     onTouchStart: PropTypes.func,
@@ -142,6 +140,7 @@ BpkModalDialog.propTypes = {
   wide: PropTypes.bool,
   showHeader: PropTypes.bool,
   fullScreenOnMobile: PropTypes.bool,
+  fullScreen: PropTypes.bool,
 };
 
 BpkModalDialog.defaultProps = {
@@ -153,6 +152,7 @@ BpkModalDialog.defaultProps = {
   wide: false,
   showHeader: true,
   fullScreenOnMobile: true,
+  fullScreen: false,
 };
 
 export default BpkModalDialog;

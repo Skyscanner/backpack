@@ -125,8 +125,6 @@ BpkModal.defaultProps = {
   target: null,
   closeOnScrimClick: true,
   closeOnEscPressed: true,
-  fullScreenOnMobile: true,
-  fullScreen: false,
 };
 
 export default BpkModal;
