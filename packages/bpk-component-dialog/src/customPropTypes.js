@@ -19,16 +19,19 @@
 /* @flow */
 
 // eslint-disable-next-line import/prefer-default-export
-export const titlePropType = (
+export const onClosePropType = (
   props: Object,
   propName: string,
   componentName: string,
 ): ?Error => {
-  const titleValue = props[propName];
+  const onCloseValue = props[propName];
 
-  if (props.dismissible && (!titleValue || typeof titleValue !== 'string')) {
+  if (
+    props.dismissible &&
+    (!onCloseValue || typeof onCloseValue !== 'function')
+  ) {
     return new Error(
-      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must be title if dismissible is true.`,
+      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must be an onClose handler if dismissible is true.`,
     );
   }
 

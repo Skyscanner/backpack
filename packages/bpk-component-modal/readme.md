@@ -82,7 +82,7 @@ class App extends Component {
 | isOpen                | bool     | true     | -                |
 | onClose               | func     | true     | -                |
 | getApplicationElement | func     | true     | -                |
-| title                 | string   | false    | See prop details |
+| title                 | string   | true     | -                |
 | closeLabel            | string   | false    | null             |
 | closeText             | string   | false    | null             |
 | renderTarget          | func     | false    | null             |
@@ -91,12 +91,6 @@ class App extends Component {
 | closeOnScrimClick     | bool     | false    | true             |
 | showHeader            | bool     | false    | true             |
 | closeOnEscPressed     | bool     | false    | true             |
-
-### Prop Details
-
-#### title
-
-This is required unless `dismissible` is false.
 
 ## Theme Props
 

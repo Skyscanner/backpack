@@ -21,11 +21,11 @@
 import { onClosePropType } from './customPropTypes';
 
 describe('onClosePropType', () => {
-  it('should fail if dismissible is true and there is no onClose', () => {
+  it('should fail if closeOnScrimClick is true and there is no onClose', () => {
     const result = onClosePropType(
-      { dismissible: true },
+      { closeOnScrimClick: true },
       'onClose',
-      'BpkDialog',
+      'BpkScrim',
     );
 
     expect(result).toEqual(expect.any(Error));
@@ -33,19 +33,19 @@ describe('onClosePropType', () => {
 
   it('should return null for valid data', () => {
     const result = onClosePropType(
-      { onClose: () => null, dismissible: true },
+      { onClose: () => null, closeOnScrimClick: true },
       'onClose',
-      'BpkDialog',
+      'BpkScrim',
     );
 
     expect(result).toBeNull();
   });
 
-  it('should be valid to pass no onClose if dismissible is false', () => {
+  it('should be valid to pass no title if closeOnScrimClick is false', () => {
     const result = onClosePropType(
-      { dismissible: false },
+      { closeOnScrimClick: false },
       'onClose',
-      'BpkDialog',
+      'BpkScrim',
     );
 
     expect(result).toBeNull();

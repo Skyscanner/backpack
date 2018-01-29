@@ -20,9 +20,14 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { cssModules } from 'bpk-react-utils';
+import BpkCloseButton from 'bpk-component-close-button';
 import BpkModal, { type BpkModalProps } from 'bpk-component-modal';
 
-import { titlePropType } from './customPropTypes';
+import STYLES from './BpkDialog.scss';
+import { onClosePropType } from './customPropTypes';
+
+const getClassName = cssModules(STYLES);
 
 export type Props = {
   ...$Exact<BpkModalProps>,
@@ -30,20 +35,32 @@ export type Props = {
 };
 
 const BpkDialog = (props: Props) => {
-  const { dismissible, ...rest } = props;
+  const { children, dismissible, onClose, closeLabel, ...rest } = props;
 
   return (
     <BpkModal
       {...rest}
-      showHeader={dismissible}
+      onClose={onClose}
+      showHeader={false}
+      closeLabel={closeLabel}
       closeOnScrimClick={dismissible}
       closeOnEscPressed={dismissible}
       fullScreenOnMobile={false}
-    />
+    >
+      {dismissible && (
+        <BpkCloseButton
+          className={getClassName('bpk-dialog__close-button')}
+          label={closeLabel}
+          onClick={onClose}
+        />
+      )}
+      {children}
+    </BpkModal>
   );
 };
 
 const {
+  title,
   showHeader,
   closeOnScrimClick,
   closeOnEscPressed,
@@ -53,12 +70,13 @@ const {
 
 BpkDialog.propTypes = {
   ...modalPropTypes,
-  title: titlePropType,
+  onClose: onClosePropType,
   dismissible: PropTypes.bool,
 };
 
 BpkDialog.defaultProps = {
   ...BpkModal.defaultProps,
+  onClose: null,
   dismissible: true,
 };
 

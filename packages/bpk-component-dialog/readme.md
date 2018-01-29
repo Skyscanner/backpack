@@ -76,16 +76,15 @@ class App extends Component {
 | className             | string               | true     | -                |
 | children              | node                 | true     | -                |
 | isOpen                | bool                 | true     | -                |
-| onClose               | func                 | true     | -                |
 | getApplicationElement | func                 | true     | -                |
-| title                 | string               | false    | See prop details |
+| onClose               | func                 | false    | See prop details |
 | closeLabel            | string               | false    | null             |
 | renderTarget          | func                 | false    | null             |
 | dismissible           | bool                 | false    | true             |
 
 ### Prop Details
 
-#### title
+#### onClose
 
 This is required unless `dismissible` is false.
 
