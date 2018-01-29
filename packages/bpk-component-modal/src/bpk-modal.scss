@@ -19,7 +19,7 @@
 @import '~bpk-mixins/index';
 
 @mixin fullscreen() {
-  display: block;
+  display: flex;
   padding: 0;
   background-color: $bpk-modal-background-color;
 }

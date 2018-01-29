@@ -45,7 +45,7 @@
   }
 
   &--full-screen {
-    min-width: 100%;
+    max-width: none;
 
     @include fullscreen;
   }
