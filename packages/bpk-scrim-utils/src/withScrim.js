@@ -35,7 +35,7 @@ import { onClosePropType } from './customPropTypes';
 const getClassName = cssModules(STYLES);
 
 const withScrim = WrappedComponent => {
-  class component extends Component {
+  class WithScrim extends Component {
     constructor() {
       super();
 
@@ -163,9 +163,9 @@ const withScrim = WrappedComponent => {
     }
   }
 
-  component.displayName = wrapDisplayName(WrappedComponent, 'withScrim');
+  WithScrim.displayName = wrapDisplayName(WrappedComponent, 'withScrim');
 
-  component.propTypes = {
+  WithScrim.propTypes = {
     getApplicationElement: PropTypes.func.isRequired,
     onClose: onClosePropType,
     isIphone: PropTypes.bool,
@@ -173,7 +173,7 @@ const withScrim = WrappedComponent => {
     closeOnScrimClick: PropTypes.bool,
   };
 
-  component.defaultProps = {
+  WithScrim.defaultProps = {
     onClose: null,
     isIphone: /iPhone/i.test(
       typeof window !== 'undefined' ? window.navigator.platform : '',
@@ -182,7 +182,7 @@ const withScrim = WrappedComponent => {
     closeOnScrimClick: true,
   };
 
-  return component;
+  return WithScrim;
 };
 
 export default withScrim;

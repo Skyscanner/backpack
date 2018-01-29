@@ -35,9 +35,16 @@ const BoxWithScrim = withScrim(Box);
 
 ### Props
 
-| Property              | PropType | Required | Default Value |
-| --------------------- | -------- | -------- | ------------- |
-| onClose               | func     | true     | -             |
-| getApplicationElement | func     | true     | -             |
-| isIphone              | bool     | false    | /iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : '')|
-| containerClassName    | string   | false    | ''            |
+| Property              | PropType | Required | Default Value                                                                  |
+| --------------------- | -------- | -------- | ------------------------------------------------------------------------------ |
+| onClose               | func     | true     | See prop details                                                               |
+| getApplicationElement | func     | true     | -                                                                              |
+| isIphone              | bool     | false    | /iPhone/i.test(typeof window !== 'undefined' ? window.navigator.platform : '') |
+| containerClassName    | string   | false    | ''                                                                             |
+| closeOnScrimClick     | bool     | false    | true                                                                           |
+
+### Prop Details
+
+#### onClose
+
+This is required unless `closeOnScrimClick` is false.
