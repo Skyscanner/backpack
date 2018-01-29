@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "bpk-component-dialog",
   "version": "0.0.5",
   "description": "Backpack dialog component.",
