@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
-import component from './Paragraph';
+import Paragraph, { ParagraphNoMargin } from './Paragraph';
 
-export default component;
+export { ParagraphNoMargin };
+export default Paragraph;

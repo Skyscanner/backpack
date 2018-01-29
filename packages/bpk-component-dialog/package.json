@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "bpk-component-dialog",
   "version": "0.0.5",
   "description": "Backpack dialog component.",
@@ -19,6 +18,7 @@
   },
   "devDependencies": {
     "bpk-component-button": "^2.0.2",
+    "bpk-component-close-button": "^1.0.46",
     "bpk-component-text": "^1.0.42",
     "bpk-mixins": "^17.3.1",
     "bpk-react-utils": "^2.5.0"

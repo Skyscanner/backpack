@@ -21,6 +21,7 @@ import React from 'react';
 import { cssModules } from 'bpk-react-utils';
 
 import BpkClearButton from './BpkClearButton';
+import CLEAR_BUTTON_MODES from './clearButtonModes';
 
 import clearablePropType from './customPropTypes';
 import STYLES from './bpk-input.scss';
@@ -43,7 +44,7 @@ const BpkInput = props => {
   ];
   const {
     className,
-    clearable,
+    clearButtonMode,
     clearButtonLabel,
     docked,
     dockedFirst,
@@ -64,6 +65,8 @@ const BpkInput = props => {
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
 
+  const clearable = clearButtonMode !== CLEAR_BUTTON_MODES.never;
+
   if (valid) {
     classNames.push(getClassName('bpk-input--valid'));
   } else if (isInvalid) {
@@ -78,7 +81,14 @@ const BpkInput = props => {
   }
   if (clearable) {
     classNames.push(getClassName('bpk-input--clearable'));
+    if (clearButtonMode === CLEAR_BUTTON_MODES.always) {
+      classNames.push(getClassName('bpk-input--clearable--persistent'));
+      clearButtonClassNames.push(
+        getClassName('bpk-input--clearable--persistent__clear-button'),
+      );
+    }
   }
+
   if (docked) {
     classNames.push(getClassName('bpk-input--docked'));
   }
@@ -155,7 +165,7 @@ BpkInput.propTypes = {
   dockedMiddle: PropTypes.bool,
   dockedLast: PropTypes.bool,
   inputRef: PropTypes.func,
-  clearable: PropTypes.bool,
+  clearButtonMode: PropTypes.oneOf(Object.keys(CLEAR_BUTTON_MODES)),
   clearButtonLabel: clearablePropType,
   onClear: clearablePropType,
 };
@@ -170,7 +180,7 @@ BpkInput.defaultProps = {
   dockedMiddle: false,
   dockedLast: false,
   inputRef: null,
-  clearable: false,
+  clearButtonMode: CLEAR_BUTTON_MODES.never,
   clearButtonLabel: null,
   onClear: null,
 };

@@ -39,6 +39,7 @@ const Paragraph = withDefaultProps(BpkText, {
 
 type Props = {
   children: Node,
+  dismissible: boolean,
 };
 
 type State = {
@@ -48,6 +49,11 @@ type State = {
 class DialogContainer extends Component<Props, State> {
   static propTypes = {
     children: PropTypes.node.isRequired,
+    dismissible: PropTypes.bool.isRequired,
+  };
+
+  static defaultProps = {
+    dismissible: true,
   };
 
   constructor() {
@@ -71,24 +77,22 @@ class DialogContainer extends Component<Props, State> {
   };
 
   render() {
-    const { ...rest } = this.props;
-
     return (
       <div id="dialog-container">
         <div id="application-container">
           <BpkButton onClick={this.onOpen}>Open dialog</BpkButton>
         </div>
         <BpkDialog
-          closeLabel="Close dialog"
+          closeLabel={this.props.dismissible ? 'Close dialog' : null}
           id="my-dialog"
           className="my-classname"
           isOpen={this.state.isOpen}
-          onClose={this.onClose}
+          onClose={this.props.dismissible ? this.onClose : null}
           getApplicationElement={() =>
             document.getElementById('application-container')
           }
           renderTarget={() => document.getElementById('dialog-container')}
-          {...rest}
+          {...this.props}
         >
           {this.props.children}
           <BpkButton onClick={this.onClose}>Close</BpkButton>
@@ -100,7 +104,7 @@ class DialogContainer extends Component<Props, State> {
 
 storiesOf('bpk-component-dialog', module)
   .add('Default', () => (
-    <DialogContainer title="Dialog title">
+    <DialogContainer>
       <Paragraph>
         This is a default dialog. You can put anything you want in here.
       </Paragraph>

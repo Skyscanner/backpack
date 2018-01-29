@@ -15,24 +15,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import BpkText from 'bpk-component-text';
 
-import { cssModules, withDefaultProps } from 'bpk-react-utils';
+/* @flow */
 
-import STYLES from './Paragraph.scss';
+// eslint-disable-next-line import/prefer-default-export
+export const onClosePropType = (
+  props: Object,
+  propName: string,
+  componentName: string,
+): ?Error => {
+  const onCloseValue = props[propName];
 
-const getClassName = cssModules(STYLES);
+  if (
+    props.closeOnScrimClick &&
+    (!onCloseValue || typeof onCloseValue !== 'function')
+  ) {
+    return new Error(
+      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must an onClose handler if closeOnScrimClick is true.`,
+    );
+  }
 
-export const ParagraphNoMargin = withDefaultProps(BpkText, {
-  textStyle: 'base',
-  tagName: 'p',
-  className: ['bpk-docs-paragraph', 'bpk-docs-paragraph--no-margin']
-    .map(getClassName)
-    .join(' '),
-});
-
-export default withDefaultProps(BpkText, {
-  textStyle: 'base',
-  tagName: 'p',
-  className: getClassName('bpk-docs-paragraph'),
-});
+  return null;
+};

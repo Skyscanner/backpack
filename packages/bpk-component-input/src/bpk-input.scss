@@ -46,6 +46,14 @@
       @include bpk-input__clear-button;
     }
 
+    &--persistent {
+      background: $bpk-input-background;
+
+      &__clear-button {
+        opacity: 1;
+      }
+    }
+
     // Display the clear button when a clearable input is focused.
     &:focus + &__clear-button {
       opacity: 1;

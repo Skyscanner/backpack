@@ -132,6 +132,7 @@
   padding-right: $bpk-spacing-base;
 
   @include bpk-rtl {
+    padding-right: $bpk-input-padding-x;
     padding-left: $bpk-spacing-base;
   }
 

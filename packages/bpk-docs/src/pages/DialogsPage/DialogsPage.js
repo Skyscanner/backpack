@@ -27,10 +27,11 @@ import { BpkButtonLink } from 'bpk-component-link';
 import dialogReadme from 'bpk-component-dialog/readme.md';
 
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph from './../../components/Paragraph';
+import Paragraph, { ParagraphNoMargin } from './../../components/Paragraph';
 
 type Props = {
   children: Node,
+  dismissible: boolean,
 };
 
 type State = {
@@ -40,6 +41,11 @@ type State = {
 class DialogContainer extends Component<Props, State> {
   static propTypes = {
     children: PropTypes.node.isRequired,
+    dismissible: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    dismissible: true,
   };
 
   constructor() {
@@ -63,7 +69,7 @@ class DialogContainer extends Component<Props, State> {
   };
 
   render() {
-    const { children, ...rest } = this.props;
+    const { children, dismissible, ...rest } = this.props;
 
     return (
       <div>
@@ -76,10 +82,13 @@ class DialogContainer extends Component<Props, State> {
           onClose={this.onClose}
           renderTarget={() => document.getElementById('application-container')}
           getApplicationElement={() => document.getElementById('portal-target')}
+          dismissible={dismissible}
           {...rest}
         >
           <div>{children}</div>
-          <BpkButtonLink onClick={this.onClose}>Close dialog</BpkButtonLink>
+          {!dismissible && (
+            <BpkButtonLink onClick={this.onClose}>Close dialog</BpkButtonLink>
+          )}
         </BpkDialog>
       </div>
     );
@@ -92,13 +101,15 @@ const components = [
     title: 'Default dialog',
     blurb: [
       <Paragraph>
-        The default has a title and close icon. Tapping the scrim or close icon
-        will dismiss the dialog.
+        The default dialog gives you a blank canvas with a close icon. Tapping
+        the scrim or close icon will dismiss it.
       </Paragraph>,
     ],
     examples: [
       <DialogContainer title="Default Dialog.">
-        <Paragraph>You can put anything you want in here.</Paragraph>
+        <ParagraphNoMargin>
+          You can put anything you want in here.
+        </ParagraphNoMargin>
       </DialogContainer>,
     ],
   },
@@ -108,9 +119,9 @@ const components = [
     blurb: [
       <Paragraph>
         In cases when you want the user to explicitly make or accept the choice,
-        this configuration means the dialog has no close icon, and tapping the
-        scrim will not dismiss it. Instead, the user must interact with the
-        dialog&apos;s content in order to dismiss it.
+        the non dissmissible configuration means the dialog has no close icon,
+        and tapping the scrim will not dismiss it. Instead, the user must
+        interact with the dialog&apos;s content in order to dismiss it.
       </Paragraph>,
     ],
     examples: [

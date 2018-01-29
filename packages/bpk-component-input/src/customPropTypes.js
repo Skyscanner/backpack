@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import CLEAR_BUTTON_MODES from './clearButtonModes';
+
 const clearablePropType = (props, propName, componentName) => {
   const createError = message =>
     new Error(
@@ -23,11 +25,13 @@ const clearablePropType = (props, propName, componentName) => {
     );
 
   const propBeingChecked = props[propName];
-  if (props.clearable) {
-    // Prop is required if clearable=true.
+  if (
+    props.clearButtonMode &&
+    props.clearButtonMode !== CLEAR_BUTTON_MODES.never
+  ) {
     if (!propBeingChecked) {
       return createError(
-        `When \`clearable={true}\`, \`${propName}\` must be supplied`,
+        `When \`clearButtonMode\` is not 'never', \`${propName}\` must be supplied`,
       );
     }
 

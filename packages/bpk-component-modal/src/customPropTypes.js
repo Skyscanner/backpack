@@ -18,7 +18,6 @@
 
 /* @flow */
 
-// eslint-disable-next-line import/prefer-default-export
 export const titlePropType = (
   props: Object,
   propName: string,
@@ -28,7 +27,45 @@ export const titlePropType = (
 
   if (props.showHeader && (!titleValue || typeof titleValue !== 'string')) {
     return new Error(
-      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must be title if showHeader is true.`,
+      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must be a title if showHeader is true.`,
+    );
+  }
+
+  return null;
+};
+
+export const onClosePropType = (
+  props: Object,
+  propName: string,
+  componentName: string,
+): ?Error => {
+  const onCloseValue = props[propName];
+
+  if (
+    props.showHeader &&
+    (!onCloseValue || typeof onCloseValue !== 'function')
+  ) {
+    return new Error(
+      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must an onClose handler if showHeader is true.`,
+    );
+  }
+
+  return null;
+};
+
+export const modalOnClosePropType = (
+  props: Object,
+  propName: string,
+  componentName: string,
+): ?Error => {
+  const onCloseValue = props[propName];
+
+  if (
+    (props.showHeader || props.closeOnScrimClick || props.closeOnEscPressed) &&
+    (!onCloseValue || typeof onCloseValue !== 'function')
+  ) {
+    return new Error(
+      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. There must an onClose handler if showHeader, closeOnScrimClick or closeOnEscPressed is true.`,
     );
   }
 

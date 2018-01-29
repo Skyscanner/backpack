@@ -71,7 +71,7 @@ storiesOf('bpk-component-input', module)
       disabled
     />
   ))
-  .add('Clearable', () => (
+  .add('clearButtonMode', () => (
     <div>
       <BpkInput
         id="clearable"
@@ -79,7 +79,7 @@ storiesOf('bpk-component-input', module)
         value="Edinburgh"
         onChange={action('input changed')}
         placeholder="Enter a country, city or airport"
-        clearable
+        clearButtonMode="while-editing"
         clearButtonLabel="Clear field"
         onClear={action('input cleared')}
       />
@@ -90,7 +90,7 @@ storiesOf('bpk-component-input', module)
         onChange={action('input changed')}
         placeholder="Enter a country, city or airport"
         valid
-        clearable
+        clearButtonMode="always"
         clearButtonLabel="Clear field"
         onClear={action('input cleared')}
       />
@@ -102,7 +102,7 @@ storiesOf('bpk-component-input', module)
         placeholder="Enter a country, city or airport"
         large
         valid
-        clearable
+        clearButtonMode="while-editing"
         clearButtonLabel="Clear field"
         onClear={action('input cleared')}
       />

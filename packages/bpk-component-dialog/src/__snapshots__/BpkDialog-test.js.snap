@@ -21,21 +21,12 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
           role="dialog"
           tabindex="-1"
         >
-          <header
-            class="bpk-modal__header"
+          <div
+            class="bpk-modal__content"
           >
-            <h2
-              class="bpk-modal__heading"
-              id="bpk-modal-heading-my-modal"
-            >
-              Dialog title
-            </h2>
-            <!-- react-text: 7 -->
-             
-            <!-- /react-text -->
             <button
               aria-label="Close"
-              class="bpk-close-button bpk-modal__close-button"
+              class="bpk-close-button bpk-dialog__close-button"
               title="Close"
               type="button"
             >
@@ -55,11 +46,9 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
                 </svg>
               </span>
             </button>
-          </header>
-          <div
-            class="bpk-modal__content"
-          >
+            <!-- react-text: 10 -->
             Dialog content inside a custom target
+            <!-- /react-text -->
           </div>
         </section>
       </div>
@@ -92,7 +81,9 @@ exports[`BpkDialog should render correctly when it is not dismissible 2`] = `
           <div
             class="bpk-modal__content"
           >
+            <!-- react-text: 6 -->
             Dialog content inside a custom target
+            <!-- /react-text -->
           </div>
         </section>
       </div>
