@@ -23,6 +23,14 @@ import STYLES from './Paragraph.scss';
 
 const getClassName = cssModules(STYLES);
 
+export const ParagraphNoMargin = withDefaultProps(BpkText, {
+  textStyle: 'base',
+  tagName: 'p',
+  className: ['bpk-docs-paragraph', 'bpk-docs-paragraph--no-margin']
+    .map(getClassName)
+    .join(' '),
+});
+
 export default withDefaultProps(BpkText, {
   textStyle: 'base',
   tagName: 'p',
