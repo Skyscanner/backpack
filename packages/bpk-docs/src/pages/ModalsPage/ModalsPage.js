@@ -37,6 +37,7 @@ type Props = {
 type State = {
   isOpen: boolean,
   hideTitle: boolean,
+  fullScreen: boolean,
 };
 
 class ModalContainer extends Component<Props, State> {
