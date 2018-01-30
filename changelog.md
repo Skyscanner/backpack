@@ -12,25 +12,19 @@
 - bpk-component-input:
   - Added `clearButtonMode`, `onClear` and `clearButtonLabel` props. These allow inputs to have an optional clear button that appears when the input is focused.
 
-## 2018-01-25 - New link styles
-
-**Added:**
 - bpk-component-link:
   - The `alternate` style can now be themed.
-
-**Fixed:**
-- bpk-component-link:
   - The `white` prop has been deprecated in favour of `alternate` in `BpkLink` and `BpkLinkButton`
 
 ## 2018-01-24 - Fieldset descriptions
 
 **Added:**
-- bpk-component-fieldset:
+- bpk-component-fieldset: 1.0.48 => 1.1.0
   - Adds a new `description` prop to describe the fieldset component.
 
 **Fixed:**
-- bpk-component-label:
-- bpk-component-fieldset:
+- bpk-component-label: 3.2.49 => 3.2.50
+- bpk-component-fieldset: 1.0.48 => 1.1.0
   - The label now has a bold font weight.
 
 ## 2018-01-23 - New `share-android` and `share-ios` icons
