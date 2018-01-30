@@ -38,10 +38,8 @@ export const INPUT_TYPES = {
 
 const BpkInput = props => {
   const classNames = [getClassName('bpk-input')];
-  const containerClassNames = [getClassName('bpk-input--clearable__container')];
-  const clearButtonClassNames = [
-    getClassName('bpk-input--clearable__clear-button'),
-  ];
+  const containerClassNames = [getClassName('bpk-input__container')];
+  const clearButtonClassNames = [getClassName('bpk-input__clear-button')];
   const {
     className,
     clearButtonMode,
@@ -76,16 +74,14 @@ const BpkInput = props => {
 
   if (large) {
     classNames.push(getClassName('bpk-input--large'));
-    clearButtonClassNames.push(
-      getClassName('bpk-input--clearable__clear-button--large'),
-    );
+    clearButtonClassNames.push(getClassName('bpk-input__clear-button--large'));
   }
   if (clearable) {
     classNames.push(getClassName('bpk-input--clearable'));
     if (clearButtonMode === CLEAR_BUTTON_MODES.always) {
-      classNames.push(getClassName('bpk-input--clearable--persistent'));
+      classNames.push(getClassName('bpk-input--persistent-clearable'));
       clearButtonClassNames.push(
-        getClassName('bpk-input--clearable--persistent__clear-button'),
+        getClassName('bpk-input__clear-button--persistent'),
       );
     }
   }

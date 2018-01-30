@@ -21,6 +21,20 @@
 .bpk-input {
   @include bpk-input;
 
+  &__container {
+    @include bpk-input__container;
+  }
+
+  &__clear-button {
+    opacity: 0;
+
+    @include bpk-input__clear-button;
+
+    &--persistent {
+      opacity: 1;
+    }
+  }
+
   &--valid {
     @include bpk-input--valid;
   }
@@ -36,30 +50,16 @@
   &--clearable {
     @include bpk-input--clearable;
 
-    &__container {
-      @include bpk-input__container;
-    }
-
-    &__clear-button {
-      opacity: 0;
-
-      @include bpk-input__clear-button;
-    }
-
-    // When persistent, set background to override any validity icons
-    // appearing and make the clear button always display.
-    &--persistent {
-      background: $bpk-input-background;
-
-      &__clear-button {
-        opacity: 1;
-      }
-    }
-
     // Display the clear button when a clearable input is focused.
-    &:focus + &__clear-button {
+    &:focus + .bpk-input__clear-button {
       opacity: 1;
     }
+  }
+
+  // When persistent, set background to override any validity icons
+  // appearing and make the clear button always display.
+  &--persistent-clearable {
+    background: $bpk-input-background;
   }
 
   &--docked {
