@@ -43,22 +43,16 @@ const AlignRight = withDefaultProps('div', {
   className: getClassName('bpk-docs-dialog-examples-align-right'),
 });
 
-type Props = {
-  children: Node,
-};
-
-type State = {
-  isOpen: boolean,
-};
-
-export class DialogContainer extends Component<Props, State> {
+export class DialogContainer extends Component<
+  {
+    children: Node,
+  },
+  {
+    isOpen: boolean,
+  },
+> {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    dismissible: PropTypes.bool,
-  };
-
-  static defaultProps = {
-    dismissible: true,
   };
 
   constructor() {
@@ -104,7 +98,13 @@ export class DialogContainer extends Component<Props, State> {
   }
 }
 
-export class NonDismissibleDialogContainer extends Component<{}, State> {
+export class NonDismissibleDialogContainer extends Component<
+  {},
+  {
+    isOpen: boolean,
+    termsAccepted: boolean,
+  },
+> {
   constructor() {
     super();
 
