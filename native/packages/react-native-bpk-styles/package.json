@@ -1,6 +1,6 @@
 {
   "name": "react-native-bpk-styles",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "description": "Backpack React Native common styles.",
   "repository": {
@@ -14,6 +14,6 @@
     "react-native": ">= 0.47.0"
   },
   "devDependencies": {
-    "bpk-tokens": "^26.7.2"
+    "bpk-tokens": "^26.7.3"
   }
 }
