@@ -22,7 +22,22 @@ exports[`BpkInput should render correctly with "clearButtonLabel" attribute 1`] 
 />
 `;
 
-exports[`BpkInput should render correctly with "clearable" attribute 1`] = `
+exports[`BpkInput should render correctly with "clearButtonMode=always" attribute 1`] = `
+<div
+  className="bpk-input--clearable__container"
+>
+  <input
+    aria-invalid={false}
+    className="bpk-input bpk-input--clearable"
+    id="test"
+    name="test"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`BpkInput should render correctly with "clearButtonMode=whileEditing" attribute 1`] = `
 <div
   className="bpk-input--clearable__container"
 >

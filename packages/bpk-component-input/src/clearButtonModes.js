@@ -18,6 +18,6 @@
 
 export default {
   never: 'never',
-  'while-editing': 'while-editing',
+  whileEditing: 'whileEditing',
   always: 'always',
 };

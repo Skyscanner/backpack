@@ -19,6 +19,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import BpkCheckbox from 'bpk-component-checkbox';
+import BpkInput from 'bpk-component-input';
 
 class InputContainer extends Component {
   constructor(props) {
@@ -45,8 +46,10 @@ class InputContainer extends Component {
       overrideProps = {
         value: this.state.value,
         onChange: e => this.setState({ value: e.target.value }),
-        onClear: () => this.setState({ value: '' }),
       };
+      if (FormComponent === BpkInput) {
+        overrideProps.onClear = () => this.setState({ value: '' });
+      }
     }
     return <FormComponent {...rest} {...overrideProps} />;
   }

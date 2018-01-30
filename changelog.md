@@ -7,7 +7,7 @@
   - New web Dialog component, see https://backpack.github.io/components/web/dialogs/
 
 - bpk-component-input:
-  - Added `clearable`, `onClear` and `clearButtonLabel` props. These allow inputs to have an optional clear button that appears when the input is focused.
+  - Added `clearButtonMode`, `onClear` and `clearButtonLabel` props. These allow inputs to have an optional clear button that appears when the input is focused.
 
 ## 2018-01-25 - New link styles
 

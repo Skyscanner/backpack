@@ -65,7 +65,8 @@ const BpkInput = props => {
   // treated as neither valid nor invalid
   const isInvalid = valid === false;
 
-  const clearable = clearButtonMode !== CLEAR_BUTTON_MODES.never;
+  const clearable =
+    clearButtonMode && clearButtonMode !== CLEAR_BUTTON_MODES.never;
 
   if (valid) {
     classNames.push(getClassName('bpk-input--valid'));

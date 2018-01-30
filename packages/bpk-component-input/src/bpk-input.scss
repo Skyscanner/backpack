@@ -46,6 +46,8 @@
       @include bpk-input__clear-button;
     }
 
+    // When persistent, set background to override any validity icons
+    // appearing and make the clear button always display.
     &--persistent {
       background: $bpk-input-background;
 
