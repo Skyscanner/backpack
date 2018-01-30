@@ -2,18 +2,22 @@
 
 ## Unreleased
 
+_Nothing yet ..._
+
+## 2018-01-30 - New dialog component, clearable inputs, alternate links and fullscreen modals!
+
 **Added:**
-- bpk-component-dialog:
+- bpk-component-dialog: 0.0.5 => 1.0.0
   - New web Dialog component, see https://backpack.github.io/components/web/dialogs/
 
-- bpk-component-input:
+- bpk-component-input: 3.2.52 => 3.3.0
   - Added `clearButtonMode`, `onClear` and `clearButtonLabel` props. These allow inputs to have an optional clear button that appears when the input is focused.
 
-- bpk-component-link:
+- bpk-component-link: 1.0.44 => 1.1.0
   - The `alternate` style can now be themed.
   - The `white` prop has been deprecated in favour of `alternate` in `BpkLink` and `BpkLinkButton`
 
-- bpk-component-modal:
+- bpk-component-modal: 1.5.2 => 1.6.0
   - New `fullScreen` prop as an accompanyment to `fullScreenOnMobile`. When true, it trumps the mobile prop.
 
 ## 2018-01-24 - Fieldset descriptions
