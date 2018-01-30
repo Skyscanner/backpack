@@ -32,22 +32,25 @@ import Paragraph from './../../components/Paragraph';
 type Props = {
   buttonText: string,
   children: Node,
+  showWidthToggle: boolean,
 };
 
 type State = {
   isOpen: boolean,
   hideTitle: boolean,
-  fullScreen: boolean,
 };
 
 class ModalContainer extends Component<Props, State> {
+  static defaultProps = {
+    showWidthToggle: true,
+  };
+
   constructor() {
     super();
 
     this.state = {
       isOpen: false,
       hideTitle: false,
-      fullScreen: false,
     };
   }
 
@@ -69,14 +72,8 @@ class ModalContainer extends Component<Props, State> {
     }));
   };
 
-  fullScreen = () => {
-    this.setState(state => ({
-      fullScreen: !state.fullScreen,
-    }));
-  };
-
   render() {
-    const { buttonText, children, ...rest } = this.props;
+    const { buttonText, children, showWidthToggle, ...rest } = this.props;
 
     return (
       <div>
@@ -86,7 +83,6 @@ class ModalContainer extends Component<Props, State> {
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           wide={this.state.hideTitle}
-          fullScreen={this.state.fullScreen}
           getApplicationElement={() =>
             document.getElementById('application-container')
           }
@@ -94,14 +90,13 @@ class ModalContainer extends Component<Props, State> {
           {...rest}
         >
           <div>{children}</div>
-          <div>
-            <BpkButtonLink onClick={this.toggleWidth}>
-              Toggle width
-            </BpkButtonLink>
-          </div>
-          <div>
-            <BpkButtonLink onClick={this.fullScreen}>Full screen</BpkButtonLink>
-          </div>
+          {showWidthToggle && (
+            <div>
+              <BpkButtonLink onClick={this.toggleWidth}>
+                Toggle width
+              </BpkButtonLink>
+            </div>
+          )}
         </BpkModal>
       </div>
     );
@@ -112,8 +107,13 @@ const components = [
   {
     id: 'default',
     title: 'Default modal',
-    blurb:
-      'The default modal has a title and a close button. On mobile viewports, it always occupies the entire screen. On desktop viewports, it comes in two widths: regular and wide, or can be configured to open in full screen.',
+    blurb: [
+      <Paragraph>
+        The default modal has a title and a close button. On mobile viewports,
+        it always occupies the entire screen. On desktop viewports, it comes in
+        two widths: regular and wide.
+      </Paragraph>,
+    ],
     examples: [
       <ModalContainer
         title="Modal title"
@@ -141,6 +141,32 @@ const components = [
         title="Modal title"
         closeText="Done"
         buttonText="Open modal"
+      >
+        <Paragraph>
+          You can put anything you want in here, including forms:
+        </Paragraph>
+        <LoginFormExample />
+      </ModalContainer>,
+    ],
+  },
+  {
+    id: 'full-screen',
+    title: 'Full screen',
+    blurb: [
+      <Paragraph>Modals are always full screen on mobile.</Paragraph>,
+      <Paragraph>
+        They can be configured to occupy the full screen on desktop too. This
+        should only be used in exceptional circumstances as part of a considered
+        workflow.
+      </Paragraph>,
+    ],
+    examples: [
+      <ModalContainer
+        title="Modal title"
+        closeLabel="Close modal"
+        buttonText="Open modal"
+        fullScreen
+        showWidthToggle={false}
       >
         <Paragraph>
           You can put anything you want in here, including forms:
