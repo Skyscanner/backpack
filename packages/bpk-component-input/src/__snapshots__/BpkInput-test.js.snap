@@ -24,7 +24,7 @@ exports[`BpkInput should render correctly with "clearButtonLabel" attribute 1`] 
 
 exports[`BpkInput should render correctly with "clearButtonMode=always" attribute 1`] = `
 <div
-  className="bpk-input--clearable__container"
+  className="bpk-input__container"
 >
   <input
     aria-invalid={false}
@@ -39,7 +39,7 @@ exports[`BpkInput should render correctly with "clearButtonMode=always" attribut
 
 exports[`BpkInput should render correctly with "clearButtonMode=whileEditing" attribute 1`] = `
 <div
-  className="bpk-input--clearable__container"
+  className="bpk-input__container"
 >
   <input
     aria-invalid={false}
@@ -54,7 +54,7 @@ exports[`BpkInput should render correctly with "clearButtonMode=whileEditing" at
 
 exports[`BpkInput should render correctly with "clearable", "onClear" and "clearButtonLabel" attributes 1`] = `
 <div
-  className="bpk-input--clearable__container"
+  className="bpk-input__container"
 >
   <input
     aria-invalid={false}
