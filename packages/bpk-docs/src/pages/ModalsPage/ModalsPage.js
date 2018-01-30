@@ -46,6 +46,7 @@ class ModalContainer extends Component<Props, State> {
     this.state = {
       isOpen: false,
       hideTitle: false,
+      fullScreen: false,
     };
   }
 
@@ -67,6 +68,12 @@ class ModalContainer extends Component<Props, State> {
     }));
   };
 
+  fullScreen = () => {
+    this.setState(state => ({
+      fullScreen: !state.fullScreen,
+    }));
+  };
+
   render() {
     const { buttonText, children, ...rest } = this.props;
 
@@ -78,6 +85,7 @@ class ModalContainer extends Component<Props, State> {
           isOpen={this.state.isOpen}
           onClose={this.onClose}
           wide={this.state.hideTitle}
+          fullScreen={this.state.fullScreen}
           getApplicationElement={() =>
             document.getElementById('application-container')
           }
@@ -85,7 +93,14 @@ class ModalContainer extends Component<Props, State> {
           {...rest}
         >
           <div>{children}</div>
-          <BpkButtonLink onClick={this.toggleWidth}>Toggle width</BpkButtonLink>
+          <div>
+            <BpkButtonLink onClick={this.toggleWidth}>
+              Toggle width
+            </BpkButtonLink>
+          </div>
+          <div>
+            <BpkButtonLink onClick={this.fullScreen}>Full screen</BpkButtonLink>
+          </div>
         </BpkModal>
       </div>
     );
@@ -97,7 +112,7 @@ const components = [
     id: 'default',
     title: 'Default modal',
     blurb:
-      'The default modal has a title and a close button and comes in 2 widths, regular and wide.',
+      'The default modal has a title and a close button. On mobile viewports, it always occupies the entire screen. On desktop viewports, it comes in two widths: regular and wide, or can be configured to open in full screen.',
     examples: [
       <ModalContainer
         title="Modal title"
@@ -143,7 +158,7 @@ const ModalsPage = () => (
         Modals are used to display content or views that are separate from the
         rest of the app or page. When triggered, modals will emerge from the
         centre of the viewport with a backdrop to indicate their separation from
-        everything else. On mobile viewports, they occupy the entire screen.
+        everything else.
       </Paragraph>,
     ]}
     components={components}
