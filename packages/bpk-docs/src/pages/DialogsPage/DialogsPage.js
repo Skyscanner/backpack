@@ -18,82 +18,15 @@
 
 /* @flow */
 
-import PropTypes from 'prop-types';
-import React, { Component, type Node } from 'react';
-import BpkDialog from 'bpk-component-dialog';
-import BpkButton from 'bpk-component-button';
-import { BpkButtonLink } from 'bpk-component-link';
-
+import React from 'react';
 import dialogReadme from 'bpk-component-dialog/readme.md';
 
+import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
-import Paragraph, { ParagraphNoMargin } from './../../components/Paragraph';
-
-type Props = {
-  children: Node,
-  dismissible: boolean,
-};
-
-type State = {
-  isOpen: boolean,
-};
-
-class DialogContainer extends Component<Props, State> {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    dismissible: PropTypes.bool,
-  };
-
-  static defaultProps = {
-    dismissible: true,
-  };
-
-  constructor() {
-    super();
-
-    this.state = {
-      isOpen: false,
-    };
-  }
-
-  onOpen = () => {
-    this.setState({
-      isOpen: true,
-    });
-  };
-
-  onClose = () => {
-    this.setState({
-      isOpen: false,
-    });
-  };
-
-  render() {
-    const { children, dismissible, ...rest } = this.props;
-
-    return (
-      <div>
-        <BpkButton onClick={this.onOpen}>Open Dialog</BpkButton>
-        <BpkDialog
-          closeLabel="Close dialog"
-          id="my-dialog"
-          className="my-classname"
-          isOpen={this.state.isOpen}
-          onClose={this.onClose}
-          renderTarget={() => document.getElementById('application-container')}
-          getApplicationElement={() => document.getElementById('portal-target')}
-          dismissible={dismissible}
-          {...rest}
-        >
-          <div>{children}</div>
-          {!dismissible && (
-            <BpkButtonLink onClick={this.onClose}>Close dialog</BpkButtonLink>
-          )}
-        </BpkDialog>
-      </div>
-    );
-  }
-}
+import {
+  DialogContainer,
+  NonDismissibleDialogContainer,
+} from './DialogExamples';
 
 const components = [
   {
@@ -107,9 +40,7 @@ const components = [
     ],
     examples: [
       <DialogContainer title="Default Dialog.">
-        <ParagraphNoMargin>
-          You can put anything you want in here.
-        </ParagraphNoMargin>
+        You can put anything you want in here.
       </DialogContainer>,
     ],
   },
@@ -124,11 +55,7 @@ const components = [
         interact with the dialog&apos;s content in order to dismiss it.
       </Paragraph>,
     ],
-    examples: [
-      <DialogContainer dismissible={false}>
-        <Paragraph>You can put anything you want in here.</Paragraph>
-      </DialogContainer>,
-    ],
+    examples: [<NonDismissibleDialogContainer />],
   },
 ];
 

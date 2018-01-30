@@ -16,24 +16,19 @@
  * limitations under the License.
  */
 
-import BpkText from 'bpk-component-text';
+@import '~bpk-mixins/index';
 
-import { cssModules, withDefaultProps } from 'bpk-react-utils';
+.bpk-docs-dialog-examples {
+  &-margin-div {
+    margin-top: 0;
+    margin-bottom: $bpk-spacing-sm;
+  }
 
-import STYLES from './Paragraph.scss';
+  &-align-right {
+    text-align: right;
 
-const getClassName = cssModules(STYLES);
-
-export const ParagraphNoMargin = withDefaultProps(BpkText, {
-  textStyle: 'base',
-  tagName: 'p',
-  className: ['bpk-docs-paragraph', 'bpk-docs-paragraph--no-margin']
-    .map(getClassName)
-    .join(' '),
-});
-
-export default withDefaultProps(BpkText, {
-  textStyle: 'base',
-  tagName: 'p',
-  className: getClassName('bpk-docs-paragraph'),
-});
+    @include bpk-rtl {
+      text-align: left;
+    }
+  }
+}
