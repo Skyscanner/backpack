@@ -49,6 +49,7 @@ describe('BpkModalDialog', () => {
           dialogRef={jest.fn()}
           isIphone={false}
           fullScreenOnMobile
+          fullScreen={false}
         >
           Modal content
         </BpkModalDialog>,
@@ -70,6 +71,7 @@ describe('BpkModalDialog', () => {
           dialogRef={jest.fn()}
           isIphone={false}
           fullScreenOnMobile
+          fullScreen={false}
         >
           Modal content
         </BpkModalDialog>,
@@ -92,6 +94,7 @@ describe('BpkModalDialog', () => {
           dialogRef={jest.fn()}
           isIphone={false}
           fullScreenOnMobile
+          fullScreen={false}
         >
           Modal content
         </BpkModalDialog>,
@@ -114,6 +117,7 @@ describe('BpkModalDialog', () => {
           dialogRef={jest.fn()}
           isIphone={false}
           fullScreenOnMobile
+          fullScreen={false}
         >
           Modal content
         </BpkModalDialog>,
@@ -134,6 +138,7 @@ describe('BpkModalDialog', () => {
           dialogRef={jest.fn()}
           isIphone
           fullScreenOnMobile
+          fullScreen={false}
         >
           Modal content
         </BpkModalDialog>,
@@ -153,6 +158,28 @@ describe('BpkModalDialog', () => {
           closeEvents={closeEvents}
           dialogRef={jest.fn()}
           fullScreenOnMobile={false}
+          fullScreen={false}
+          isIphone={false}
+        >
+          Modal content
+        </BpkModalDialog>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly when it is fullscreen', () => {
+    const tree = renderer
+      .create(
+        <BpkModalDialog
+          id="my-modal"
+          title="Modal title"
+          onClose={jest.fn()}
+          closeLabel="Close"
+          closeEvents={closeEvents}
+          dialogRef={jest.fn()}
+          fullScreenOnMobile={false}
+          fullScreen
           isIphone={false}
         >
           Modal content

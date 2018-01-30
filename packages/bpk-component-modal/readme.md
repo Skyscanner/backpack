@@ -88,6 +88,7 @@ class App extends Component {
 | renderTarget          | func     | false    | null             |
 | wide                  | bool     | false    | false            |
 | fullScreenOnMobile    | bool     | false    | true             |
+| fullScreen            | bool     | false    | false            |
 | closeOnScrimClick     | bool     | false    | true             |
 | showHeader            | bool     | false    | true             |
 | closeOnEscPressed     | bool     | false    | true             |

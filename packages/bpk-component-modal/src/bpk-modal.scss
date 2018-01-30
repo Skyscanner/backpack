@@ -18,6 +18,12 @@
 
 @import '~bpk-mixins/index';
 
+@mixin fullscreen() {
+  display: flex;
+  padding: 0;
+  background-color: $bpk-modal-background-color;
+}
+
 .bpk-modal__container {
   display: flex;
   padding: $bpk-spacing-base;
@@ -27,11 +33,13 @@
     display: block;
   }
 
-  &--full-screen {
+  &--full-screen-mobile {
     @include bpk-breakpoint-mobile {
-      display: block;
-      padding: 0;
-      background-color: $bpk-modal-background-color;
+      @include fullscreen;
     }
+  }
+
+  &--full-screen {
+    @include fullscreen;
   }
 }

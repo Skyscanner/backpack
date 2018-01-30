@@ -12,11 +12,11 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
         class="bpk-scrim"
       />
       <div
-        class="bpk-scrim-content bpk-modal__container bpk-modal__container--full-screen"
+        class="bpk-scrim-content bpk-modal__container bpk-modal__container--full-screen-mobile"
       >
         <section
           aria-labelledby="bpk-modal-heading-my-modal"
-          class="bpk-modal bpk-modal--full-screen"
+          class="bpk-modal bpk-modal--full-screen-mobile"
           id="my-modal"
           role="dialog"
           tabindex="-1"

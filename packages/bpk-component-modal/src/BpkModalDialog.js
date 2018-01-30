@@ -37,6 +37,7 @@ export type Props = {
   isIphone: boolean,
   showHeader: boolean,
   fullScreenOnMobile: boolean,
+  fullScreen: boolean,
   dialogRef: (ref: ?HTMLElement) => void,
   onClose: ?(event: SyntheticEvent<>) => void,
   className: ?string,
@@ -66,8 +67,10 @@ const BpkModalDialog = (props: Props) => {
     classNames.push(getClassName('bpk-modal--iphone-fix'));
   }
 
-  if (props.fullScreenOnMobile) {
+  if (props.fullScreen) {
     classNames.push(getClassName('bpk-modal--full-screen'));
+  } else if (props.fullScreenOnMobile) {
+    classNames.push(getClassName('bpk-modal--full-screen-mobile'));
   }
 
   const headingId = `bpk-modal-heading-${props.id}`;
@@ -137,6 +140,7 @@ BpkModalDialog.propTypes = {
   wide: PropTypes.bool,
   showHeader: PropTypes.bool,
   fullScreenOnMobile: PropTypes.bool,
+  fullScreen: PropTypes.bool,
 };
 
 BpkModalDialog.defaultProps = {
@@ -148,6 +152,7 @@ BpkModalDialog.defaultProps = {
   wide: false,
   showHeader: true,
   fullScreenOnMobile: true,
+  fullScreen: false,
 };
 
 export default BpkModalDialog;
