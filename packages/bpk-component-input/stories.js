@@ -20,6 +20,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
+import BpkText from 'bpk-component-text';
 import BpkInput, { INPUT_TYPES } from './index';
 
 storiesOf('bpk-component-input', module)
@@ -73,16 +74,19 @@ storiesOf('bpk-component-input', module)
   ))
   .add('Clearable', () => (
     <div>
+      <BpkText tagName="p">clearButtonMode=whileEditing</BpkText>
       <BpkInput
         id="clearable"
         name="clearable"
         value="Edinburgh"
         onChange={action('input changed')}
         placeholder="Enter a country, city or airport"
-        clearable
+        clearButtonMode="whileEditing"
         clearButtonLabel="Clear field"
         onClear={action('input cleared')}
       />
+
+      <BpkText tagName="p">clearButtonMode=always</BpkText>
       <BpkInput
         id="clearable"
         name="clearable"
@@ -90,10 +94,14 @@ storiesOf('bpk-component-input', module)
         onChange={action('input changed')}
         placeholder="Enter a country, city or airport"
         valid
-        clearable
+        clearButtonMode="always"
         clearButtonLabel="Clear field"
         onClear={action('input cleared')}
       />
+
+      <BpkText tagName="p">
+        clearButtonMode=whileEditing, large=true, valid=true
+      </BpkText>
       <BpkInput
         id="clearable"
         name="clearable"
@@ -102,7 +110,7 @@ storiesOf('bpk-component-input', module)
         placeholder="Enter a country, city or airport"
         large
         valid
-        clearable
+        clearButtonMode="whileEditing"
         clearButtonLabel="Clear field"
         onClear={action('input cleared')}
       />

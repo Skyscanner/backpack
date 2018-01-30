@@ -65,12 +65,36 @@ describe('BpkInput', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly with "clearable" attribute', () => {
+  it('should render correctly with "clearButtonMode=whileEditing" attribute', () => {
     // Will report a proptypes error because 'onClear' and 'clearButtonLabel'
     // are missing. Swallow that as it's tested in customPropTypes-test.js.
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
     const tree = renderer
-      .create(<BpkInput id="test" name="test" value="" clearable />)
+      .create(
+        <BpkInput
+          id="test"
+          name="test"
+          value=""
+          clearButtonMode="whileEditing"
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly with "clearButtonMode=always" attribute', () => {
+    // Will report a proptypes error because 'onClear' and 'clearButtonLabel'
+    // are missing. Swallow that as it's tested in customPropTypes-test.js.
+    jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
+    const tree = renderer
+      .create(
+        <BpkInput
+          id="test"
+          name="test"
+          value=""
+          clearButtonMode="whileEditing"
+        />,
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -98,7 +122,7 @@ describe('BpkInput', () => {
           id="test"
           name="test"
           value=""
-          clearable
+          clearButtonMode="whileEditing"
           onClear={() => {}}
           clearButtonLabel="test"
         />,

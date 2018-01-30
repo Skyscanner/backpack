@@ -16,10 +16,8 @@
  * limitations under the License.
  */
 
-import BpkInput, { INPUT_TYPES as TYPES } from './src/BpkInput';
-import CLEAR_BUTTON_MODES from './src/clearButtonModes';
-import withOpenEvents from './src/withOpenEvents';
-
-export default BpkInput;
-export const INPUT_TYPES = TYPES;
-export { withOpenEvents, CLEAR_BUTTON_MODES };
+export default {
+  never: 'never',
+  whileEditing: 'whileEditing',
+  always: 'always',
+};

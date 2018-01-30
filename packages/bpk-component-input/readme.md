@@ -12,7 +12,7 @@ npm install bpk-component-input --save-dev
 
 ```js
 import React from 'react';
-import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
+import BpkInput, { INPUT_TYPES, CLEAR_BUTTON_MODES } from 'bpk-component-input';
 
 export default () => (
   <BpkInput
@@ -22,29 +22,32 @@ export default () => (
     value="Edinburgh"
     onChange={() => console.log('input changed!')}
     placeholder="Country, city or airport"
+    clearButtonMode={CLEAR_BUTTON_MODES.whileEditing}
   />
 );
 ```
 
 ## Props
 
-| Property         | PropType             | Required            | Default Value    |
-| ---------------- | -------------------- | ------------------- | ---------------- |
-| id               | string               | true                | -                |
-| name             | string               | true                | -                |
-| type             | INPUT_TYPES (one of) | false               | INPUT_TYPES.TEXT |
-| value            | string               | true                | -                |
-| clearable        | bool                 | false               | false            |
-| clearButtonLabel | string               | if clearable={true} | null             |
-| dockedFirst      | bool                 | false               | false            |
-| dockedLast       | bool                 | false               | false            |
-| dockedMiddle     | bool                 | false               | false            |
-| inputRef         | func                 | false               | null             |
-| large            | bool                 | false               | false            |
-| onClear          | func                 | if clearable={true} | null             |
-| valid            | bool                 | false               | null             |
+| Property         | PropType             | Required                  | Default Value            |
+| ---------------- | -------------------------- | ------------------- | ------------------------ |
+| id               | string                     | true                | -                        |
+| name             | string                     | true                | -                        |
+| type             | INPUT_TYPES (one of)       | false               | INPUT_TYPES.TEXT         |
+| value            | string                     | true                | -                        |
+| clearButtonMode  | CLEAR_BUTTON_MODES (one of)| false               | CLEAR_BUTTON_MODES.never |
+| clearButtonLabel | string                     | if clearable={true} | null                     |
+| dockedFirst      | bool                       | false               | false                    |
+| dockedLast       | bool                       | false               | false                    |
+| dockedMiddle     | bool                       | false               | false                    |
+| inputRef         | func                       | false               | null                     |
+| large            | bool                       | false               | false                    |
+| onClear          | func                       | if clearable={true} | null                     |
+| valid            | bool                       | false               | null                     |
 
 Additionally, all native `<input />` attributes such as `placeholder` and `onChange` are supported.
+
+**Note:** When `clearButtonMode` is set to `always`, validity icons will not appear.
 
 ### withOpenEvents
 

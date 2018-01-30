@@ -17,6 +17,7 @@
  */
 
 import clearablePropType from './customPropTypes';
+import CLEAR_BUTTON_MODES from './clearButtonModes';
 
 describe('clearablePropType', () => {
   const COMPONENT_NAME = 'ExampleComponent';
@@ -24,44 +25,44 @@ describe('clearablePropType', () => {
   describe('"onClear"', () => {
     const PROP_NAME = 'onClear';
 
-    it('should not produce an error when "clearable" is not provided', () => {
+    it('should not produce an error when "clearButtonMode" is not provided', () => {
       const props = {};
       expect(clearablePropType(props, PROP_NAME, COMPONENT_NAME)).toBeFalsy();
     });
 
-    it('should not produce an error when "clearable={false}"', () => {
+    it('should not produce an error when "clearButtonMode={never}"', () => {
       const props = {
-        clearable: false,
+        clearButtonMode: CLEAR_BUTTON_MODES.never,
       };
       expect(clearablePropType(props, PROP_NAME, COMPONENT_NAME)).toBeFalsy();
     });
 
-    it('should produce an error when "clearable={true}" and "onClear" is not provided', () => {
+    it('should produce an error when "clearButtonMode=always" and "onClear" is not provided', () => {
       const props = {
-        clearable: true,
+        clearButtonMode: CLEAR_BUTTON_MODES.always,
       };
       expect(
         clearablePropType(props, PROP_NAME, COMPONENT_NAME).toString(),
       ).toEqual(
-        'Error: Invalid prop `onClear` supplied to `ExampleComponent`. When `clearable={true}`, `onClear` must be supplied.',
+        "Error: Invalid prop `onClear` supplied to `ExampleComponent`. When `clearButtonMode` is not 'never', `onClear` must be supplied.",
       );
     });
 
-    it('should produce an error when "clearable={true}" and "onClear" is null', () => {
+    it('should produce an error when "clearButtonMode=always" and "onClear" is null', () => {
       const props = {
-        clearable: true,
+        clearButtonMode: CLEAR_BUTTON_MODES.always,
         onClear: null,
       };
       expect(
         clearablePropType(props, PROP_NAME, COMPONENT_NAME).toString(),
       ).toEqual(
-        'Error: Invalid prop `onClear` supplied to `ExampleComponent`. When `clearable={true}`, `onClear` must be supplied.',
+        "Error: Invalid prop `onClear` supplied to `ExampleComponent`. When `clearButtonMode` is not 'never', `onClear` must be supplied.",
       );
     });
 
-    it('should produce an error when "clearable={true}" and "onClear" is not a function', () => {
+    it('should produce an error when "clearButtonMode=always" and "onClear" is not a function', () => {
       const props = {
-        clearable: true,
+        clearButtonMode: CLEAR_BUTTON_MODES.always,
         onClear: 'Hello world',
       };
       expect(
@@ -75,44 +76,44 @@ describe('clearablePropType', () => {
   describe('"clearButtonLabel"', () => {
     const PROP_NAME = 'clearButtonLabel';
 
-    it('should not produce an error when "clearable" is not provided', () => {
+    it('should not produce an error when "clearButtonMode" is not provided', () => {
       const props = {};
       expect(clearablePropType(props, PROP_NAME, COMPONENT_NAME)).toBeFalsy();
     });
 
-    it('should not produce an error when "clearable={false}"', () => {
+    it('should not produce an error when "clearButtonMode=never"', () => {
       const props = {
-        clearable: false,
+        clearButtonMode: CLEAR_BUTTON_MODES.never,
       };
       expect(clearablePropType(props, PROP_NAME, COMPONENT_NAME)).toBeFalsy();
     });
 
-    it('should produce an error when "clearable={true}" and "clearButtonLabel" is not provided', () => {
+    it('should produce an error when "clearButtonMode=always" and "clearButtonLabel" is not provided', () => {
       const props = {
-        clearable: true,
+        clearButtonMode: CLEAR_BUTTON_MODES.always,
       };
       expect(
         clearablePropType(props, PROP_NAME, COMPONENT_NAME).toString(),
       ).toEqual(
-        'Error: Invalid prop `clearButtonLabel` supplied to `ExampleComponent`. When `clearable={true}`, `clearButtonLabel` must be supplied.',
+        "Error: Invalid prop `clearButtonLabel` supplied to `ExampleComponent`. When `clearButtonMode` is not 'never', `clearButtonLabel` must be supplied.",
       );
     });
 
-    it('should produce an error when "clearable={true}" and "clearButtonLabel" is null', () => {
+    it('should produce an error when "clearButtonMode=always" and "clearButtonLabel" is null', () => {
       const props = {
-        clearable: true,
+        clearButtonMode: CLEAR_BUTTON_MODES.always,
         clearButtonLabel: null,
       };
       expect(
         clearablePropType(props, PROP_NAME, COMPONENT_NAME).toString(),
       ).toEqual(
-        'Error: Invalid prop `clearButtonLabel` supplied to `ExampleComponent`. When `clearable={true}`, `clearButtonLabel` must be supplied.',
+        "Error: Invalid prop `clearButtonLabel` supplied to `ExampleComponent`. When `clearButtonMode` is not 'never', `clearButtonLabel` must be supplied.",
       );
     });
 
-    it('should produce an error when "clearable={true}" and "clearButtonLabel" is not a string', () => {
+    it('should produce an error when "clearButtonMode=always" and "clearButtonLabel" is not a string', () => {
       const props = {
-        clearable: true,
+        clearButtonMode: CLEAR_BUTTON_MODES.always,
         clearButtonLabel: 42,
       };
       expect(
@@ -125,9 +126,9 @@ describe('clearablePropType', () => {
 
   describe('neither', () => {
     const PROP_NAME = 'foo';
-    it('should produce no error when "clearable={true}" but the prop name is neither clearButtonLabel or onClear', () => {
+    it('should produce no error when "clearButtonMode=always" but the prop name is neither clearButtonLabel or onClear', () => {
       const props = {
-        clearable: true,
+        clearButtonMode: CLEAR_BUTTON_MODES.always,
         foo: 'bar',
       };
       expect(clearablePropType(props, PROP_NAME, COMPONENT_NAME)).toBeFalsy();

@@ -128,7 +128,7 @@ const components = [
         />
       </form>,
       <form className={formClassName}>
-        <BpkLabel htmlFor="input_clearable">Clearable input</BpkLabel>
+        <BpkLabel htmlFor="input_clearable">Clearable while editing</BpkLabel>
         <InputContainer
           FormComponent={BpkInput}
           id="input_clearable"
@@ -136,7 +136,21 @@ const components = [
           value="Edinburgh"
           placeholder="Country, city or airport"
           onChange={() => null}
-          clearable
+          clearButtonMode="whileEditing"
+          onClear={() => null}
+          clearButtonLabel="Clear field"
+        />
+      </form>,
+      <form className={formClassName}>
+        <BpkLabel htmlFor="input_clearable">Always clearable</BpkLabel>
+        <InputContainer
+          FormComponent={BpkInput}
+          id="input_clearable"
+          name="input_clearable"
+          value="Edinburgh"
+          placeholder="Country, city or airport"
+          onChange={() => null}
+          clearButtonMode="always"
           onClear={() => null}
           clearButtonLabel="Clear field"
         />
