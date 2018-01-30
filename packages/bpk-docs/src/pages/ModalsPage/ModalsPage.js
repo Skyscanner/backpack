@@ -32,6 +32,7 @@ import Paragraph from './../../components/Paragraph';
 type Props = {
   buttonText: string,
   children: Node,
+  showWidthToggle: boolean,
 };
 
 type State = {
@@ -40,6 +41,10 @@ type State = {
 };
 
 class ModalContainer extends Component<Props, State> {
+  static defaultProps = {
+    showWidthToggle: true,
+  };
+
   constructor() {
     super();
 
@@ -68,7 +73,7 @@ class ModalContainer extends Component<Props, State> {
   };
 
   render() {
-    const { buttonText, children, ...rest } = this.props;
+    const { buttonText, children, showWidthToggle, ...rest } = this.props;
 
     return (
       <div>
@@ -85,7 +90,13 @@ class ModalContainer extends Component<Props, State> {
           {...rest}
         >
           <div>{children}</div>
-          <BpkButtonLink onClick={this.toggleWidth}>Toggle width</BpkButtonLink>
+          {showWidthToggle && (
+            <div>
+              <BpkButtonLink onClick={this.toggleWidth}>
+                Toggle width
+              </BpkButtonLink>
+            </div>
+          )}
         </BpkModal>
       </div>
     );
@@ -96,8 +107,13 @@ const components = [
   {
     id: 'default',
     title: 'Default modal',
-    blurb:
-      'The default modal has a title and a close button and comes in 2 widths, regular and wide.',
+    blurb: [
+      <Paragraph>
+        The default modal has a title and a close button. On mobile viewports,
+        it always occupies the entire screen. On desktop viewports, it comes in
+        two widths: regular and wide.
+      </Paragraph>,
+    ],
     examples: [
       <ModalContainer
         title="Modal title"
@@ -133,6 +149,32 @@ const components = [
       </ModalContainer>,
     ],
   },
+  {
+    id: 'full-screen',
+    title: 'Full screen',
+    blurb: [
+      <Paragraph>Modals are always full screen on mobile.</Paragraph>,
+      <Paragraph>
+        They can be configured to occupy the full screen on desktop too. This
+        should only be used in exceptional circumstances as part of a considered
+        workflow.
+      </Paragraph>,
+    ],
+    examples: [
+      <ModalContainer
+        title="Modal title"
+        closeLabel="Close modal"
+        buttonText="Open modal"
+        fullScreen
+        showWidthToggle={false}
+      >
+        <Paragraph>
+          You can put anything you want in here, including forms:
+        </Paragraph>
+        <LoginFormExample />
+      </ModalContainer>,
+    ],
+  },
 ];
 
 const ModalsPage = () => (
@@ -143,7 +185,7 @@ const ModalsPage = () => (
         Modals are used to display content or views that are separate from the
         rest of the app or page. When triggered, modals will emerge from the
         centre of the viewport with a backdrop to indicate their separation from
-        everything else. On mobile viewports, they occupy the entire screen.
+        everything else.
       </Paragraph>,
     ]}
     components={components}
