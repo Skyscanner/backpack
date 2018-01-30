@@ -6,6 +6,9 @@
 - bpk-component-dialog:
   - New web Dialog component, see https://backpack.github.io/components/web/dialogs/
 
+- bpk-component-modal:
+  - New `fullScreen` prop as an accompanyment to `fullScreenOnMobile`. When true, it trumps the mobile prop.
+
 - bpk-component-input:
   - Added `clearable`, `onClear` and `clearButtonLabel` props. These allow inputs to have an optional clear button that appears when the input is focused.
 
