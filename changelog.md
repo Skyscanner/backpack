@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-_Nothing yet ..._
+**Fixed:**
+- bpk-component-datatable
+  - Now `onRowClick` handler respects sorting of rows.
 
 ## 2018-01-30 - New dialog component, clearable inputs, alternate links and fullscreen modals!
 
