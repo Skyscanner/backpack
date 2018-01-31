@@ -94,7 +94,7 @@ class BpkDataTable extends Component {
       this.setState({ rowSelected: index });
     }
     if (this.props.onRowClick !== undefined) {
-      this.props.onRowClick(this.props.rows[index]);
+      this.props.onRowClick(this.state.sortedList[index]);
     }
   }
 

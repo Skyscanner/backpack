@@ -186,6 +186,32 @@ describe('BpkDataTable', () => {
     expect(onRowClick).toHaveBeenCalledWith(rows[1]);
   });
 
+  it('onRowClick/bug: ensure handler is applied to the right element after sorting', () => {
+    const abcRows = [{ letter: 'Z' }, { letter: 'P' }, { letter: 'A' }];
+    const onRowClick = jest.fn();
+    const wrapper = mount(
+      <BpkDataTable
+        rows={abcRows}
+        height={200}
+        width={400}
+        onRowClick={onRowClick}
+      >
+        <BpkDataTableColumn label="Letter" dataKey="letter" width={100} />
+        <BpkDataTableColumn label="Letter" dataKey="letter" width={100} />
+      </BpkDataTable>,
+    );
+
+    // Select the last element in the table, which after sorting
+    // it will be letter Z so index 0.
+    wrapper
+      .find('.bpk-data-table__row')
+      .last()
+      .simulate('click');
+
+    expect(onRowClick).toHaveBeenCalledTimes(1);
+    expect(onRowClick).toHaveBeenCalledWith(abcRows[0]);
+  });
+
   it('should re-render when rows prop is updated', () => {
     const wrapper = mount(
       <BpkDataTable rows={rows} height={200} width={400}>
