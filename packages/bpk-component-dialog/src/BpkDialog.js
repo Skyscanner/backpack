@@ -46,6 +46,7 @@ const BpkDialog = (props: Props) => {
       closeOnScrimClick={dismissible}
       closeOnEscPressed={dismissible}
       fullScreenOnMobile={false}
+      isIphone={false}
     >
       {dismissible && (
         <BpkCloseButton

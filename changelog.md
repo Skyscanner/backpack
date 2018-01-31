@@ -5,6 +5,8 @@
 **Fixed:**
 - bpk-component-datatable
   - Now `onRowClick` handler respects sorting of rows.
+- bpk-component-dialog:
+  - Fixed appearance in Safari for iOS.
 
 ## 2018-01-30 - New dialog component, clearable inputs, alternate links and fullscreen modals!
 

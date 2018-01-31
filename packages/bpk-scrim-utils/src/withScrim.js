@@ -53,6 +53,9 @@ const withScrim = WrappedComponent => {
       const { isIphone, getApplicationElement } = this.props;
       const applicationElement = getApplicationElement();
 
+      // iPhones need to have the application element hidden
+      // and scrolling stored to prevent some weird display
+      // issues from happening.
       if (isIphone && applicationElement) {
         storeScroll();
         applicationElement.style.display = 'none';
