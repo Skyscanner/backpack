@@ -38,7 +38,11 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   ReactDOM.render(
     React.createElement(Router, {
       history: browserHistory,
-      onUpdate: () => window.scrollTo(0, 0),
+      onUpdate: () => {
+        if (!`${window.location}`.includes('#')) {
+          window.scrollTo(0, 0);
+        }
+      },
       routes,
     }),
     root,
