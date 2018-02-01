@@ -97,8 +97,6 @@ import NativeStarRatingPage from './../pages/NativeStarRatingPage';
 import NativeSwitchPage from './../pages/NativeSwitchPage';
 import NativeTextPage from './../pages/NativeTextPage';
 
-import ResourcesPage from './../pages/ResourcesPage';
-
 import {
   GridColumnDemoPage,
   GridOffsetDemoPage,
@@ -204,11 +202,6 @@ const Routes = (
       </Route>
     </Route>
 
-    <Route
-      path={ROUTES.RESOURCES}
-      component={ResourcesPage}
-      iconsSvgs={iconsSvgs}
-    />
     <Route path={ROUTES.GRID_COLUMN_DEMO} component={GridColumnDemoPage} />
     <Route path={ROUTES.GRID_OFFSET_DEMO} component={GridOffsetDemoPage} />
 

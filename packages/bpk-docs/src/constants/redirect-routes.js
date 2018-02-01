@@ -57,4 +57,5 @@ export default {
   '/components/molecules/fieldsets': ROUTES.FIELDSETS,
   '/components/molecules/barcharts': ROUTES.BARCHARTS,
   '/components/molecules/star-rating': ROUTES.STAR_RATING,
+  '/resources': ROUTES.GETTING_STARTED,
 };

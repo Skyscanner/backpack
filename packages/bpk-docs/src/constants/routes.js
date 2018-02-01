@@ -23,7 +23,6 @@ export const USING_BACKPACK = '/using';
 export const STYLE = '/style';
 export const TOKENS = '/tokens';
 export const COMPONENTS = '/components';
-export const RESOURCES = '/resources';
 
 // using/
 export const GETTING_STARTED = '/using/getting-started';
