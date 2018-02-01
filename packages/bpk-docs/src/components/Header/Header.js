@@ -40,7 +40,6 @@ const headerLinks = [
   { to: ROUTES.USING_BACKPACK, children: 'Using Backpack' },
   { to: ROUTES.TOKENS, children: 'Tokens' },
   { to: ROUTES.COMPONENTS, children: 'Components' },
-  { to: ROUTES.RESOURCES, children: 'Resources' },
   {
     href: 'https://github.com/Skyscanner/backpack',
     children: 'GitHub',

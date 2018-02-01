@@ -25,7 +25,12 @@ import { BpkCodeBlock, BpkCode } from 'bpk-component-code';
 
 import * as ROUTES from './../../constants/routes';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
+
+/* eslint-disable import/no-webpack-loader-syntax */
+const iconTemplate = require('!!file-loader?name=[name].[hash].sketch!./../../static/icon-template.sketch');
+const responsiveGrid = require('!!file-loader?name=[name].[hash].sketch!./../../static/responsive-grids.sketch');
 
 const nodeSassUrl = 'https://github.com/sass/node-sass';
 const sassLoaderUrl = 'https://github.com/jtangelder/sass-loader';
@@ -201,6 +206,19 @@ const components = [
         <strong>Roboto</strong> fonts installed for these libraries to work
         properly. These can be downloaded from Apple and Google.
       </BpkBlockquote>,
+      <Heading level="h3">Other Sketch Resources</Heading>,
+      <BpkList>
+        <BpkListItem>
+          <BpkLink href={`/${responsiveGrid}`} blank>
+            Responsive grids
+          </BpkLink>
+        </BpkListItem>
+        <BpkListItem>
+          <BpkLink href={`/${iconTemplate}`} blank>
+            Icon template
+          </BpkLink>
+        </BpkListItem>
+      </BpkList>,
     ],
     examples: [],
   },

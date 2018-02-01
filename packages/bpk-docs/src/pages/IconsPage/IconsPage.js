@@ -20,6 +20,9 @@ import _ from 'lodash';
 import React from 'react';
 import { BpkCode } from 'bpk-component-code';
 import BpkLink from 'bpk-component-link';
+import BpkButton from 'bpk-component-button';
+import { withButtonAlignment } from 'bpk-component-icon';
+import BpkSmallDownloadIcon from 'bpk-component-icon/sm/download';
 import icons from 'bpk-component-icon/all';
 
 import iconReadme from 'bpk-component-icon/readme.md';
@@ -29,6 +32,11 @@ import IconSearchApp from './../../components/IconSearchApp';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Heading from './../../components/Heading';
 import Paragraph from './../../components/Paragraph';
+
+const AlignedBpkSmallDownloadIcon = withButtonAlignment(BpkSmallDownloadIcon);
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
+const iconsSvgs = require('!!file-loader?name=[name].[hash].zip!zip-it-loader!./../../../../bpk-svgs/src/icons/icons');
 
 const friendlyNameMap = {
   sm: 'Small',
@@ -57,6 +65,12 @@ const blurb = [
   <Paragraph>
     Icons are provided in two sizes: small (18px) and large (24px). Both are
     pixel-snapped for clarity at the intended usage sizes.
+  </Paragraph>,
+  <Paragraph>
+    <BpkButton href={`/${iconsSvgs}`}>
+      Download SVG files
+      <AlignedBpkSmallDownloadIcon />
+    </BpkButton>
   </Paragraph>,
   <Paragraph>
     The <BpkLink href="#readme">readme</BpkLink> for the component is available

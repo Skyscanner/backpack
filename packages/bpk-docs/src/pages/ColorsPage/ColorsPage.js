@@ -17,12 +17,22 @@
  */
 
 import React from 'react';
+import { BpkList, BpkListItem } from 'bpk-component-list';
+import BpkLink from 'bpk-component-link';
+import BpkContentContainer from 'bpk-component-content-container';
 import { colors, primaryGradient } from 'bpk-tokens/tokens/base.es6';
 import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './colors-page.scss';
+import Heading from './../../components/Heading';
 import ColorSwatch from './../../components/ColorSwatch';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
+
+/* eslint-disable import/no-webpack-loader-syntax */
+const coreRgbAse = require('!!file-loader?name=[name].[hash].ase!./../../static/core_rgb.ase');
+const coreRgbClr = require('!!file-loader?name=[name].[hash].clr!./../../static/core_rgb.clr');
+const extendedRgbAse = require('!!file-loader?name=[name].[hash].ase!./../../static/extended_rgb.ase');
+const extendedRgbClr = require('!!file-loader?name=[name].[hash].clr!./../../static/extended_rgb.clr');
 
 const getClassName = cssModules(STYLES);
 const containerClassName = getClassName(
@@ -112,6 +122,43 @@ const components = [
           whiteColor
         />
       </div>,
+    ],
+    examples: [],
+  },
+  {
+    id: 'downloads',
+    title: 'Downloads',
+    blurb: [
+      <BpkContentContainer>
+        <Heading level="h3">Core</Heading>
+        <BpkList>
+          <BpkListItem>
+            <BpkLink href={`/${coreRgbAse}`} blank>
+              Adobe Swatch Exchange
+            </BpkLink>
+          </BpkListItem>
+          <BpkListItem>
+            <BpkLink href={`/${coreRgbClr}`} blank>
+              Mac
+            </BpkLink>
+          </BpkListItem>
+        </BpkList>
+        <Heading level="h3">
+          Extended (for marketing &amp; illustration only)
+        </Heading>
+        <BpkList>
+          <BpkListItem>
+            <BpkLink href={`/${extendedRgbAse}`} blank>
+              Adobe Swatch Exchange
+            </BpkLink>
+          </BpkListItem>
+          <BpkListItem>
+            <BpkLink href={`/${extendedRgbClr}`} blank>
+              Mac
+            </BpkLink>
+          </BpkListItem>
+        </BpkList>
+      </BpkContentContainer>,
     ],
     examples: [],
   },
