@@ -39,6 +39,19 @@ describe('withSingleItemAccordionState(BpkAccordion)', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with arbitrary props', () => {
+    const tree = renderer
+      .create(
+        <EnhancedComponent className="someClass" foo="bar">
+          <div>Accordion Item 1</div>
+          <div>Accordion Item 2</div>
+          <div>Accordion Item 3</div>
+        </EnhancedComponent>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with custom initially expanded item', () => {
     const tree = renderer
       .create(

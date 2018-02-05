@@ -55,10 +55,10 @@ const withSingleItemAccordionState = ComposedComponent => {
     }
 
     render() {
-      const { children } = this.props;
+      const { children, ...rest } = this.props;
 
       return (
-        <ComposedComponent>
+        <ComposedComponent {...rest}>
           {Children.toArray(children).map(this.renderAccordionItem)}
         </ComposedComponent>
       );
