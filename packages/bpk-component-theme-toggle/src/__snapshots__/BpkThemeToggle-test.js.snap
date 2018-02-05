@@ -2,6 +2,12 @@
 
 exports[`BpkThemeToggle should render correctly 1`] = `
 <div>
+  <label
+    className="bpk-label bpk-theme-toggle__label"
+    htmlFor="theme-select"
+  >
+    Change theme
+  </label>
   <select
     aria-invalid={false}
     className="bpk-select"
