@@ -50,7 +50,7 @@ const toNodes = children => {
   return isString(children) ? [<Paragraph>{children}</Paragraph>] : children;
 };
 
-const markdownToHTML = readmeString =>
+const markdownToHTML = (readmeString, headerPrefix = '') =>
   marked(
     readmeString
       .replace(/^#.*$/m, '') // remove first h1
@@ -59,7 +59,7 @@ const markdownToHTML = readmeString =>
       .replace(/^### /gm, '#### ') // replace h3 with h4
       .replace(/^## /gm, '### ') // replace h2 with h3
       .replace(/^# /gm, '## '), // replace h1 with h2
-    { renderer },
+    { renderer, headerPrefix },
   );
 
 const toSassdocLink = props => (
@@ -94,7 +94,9 @@ const ComponentExample = component => {
           {component.title} readme
         </Heading>,
         <BpkContentContainer
-          dangerouslySetInnerHTML={{ __html: markdownToHTML(component.readme) }}
+          dangerouslySetInnerHTML={{
+            __html: markdownToHTML(component.readme, `${component.id}-`),
+          }}
           bareHtml
         />,
       ])
@@ -128,7 +130,9 @@ const CustomSection = section => [
           Readme
         </Heading>,
         <BpkContentContainer
-          dangerouslySetInnerHTML={{ __html: markdownToHTML(section.readme) }}
+          dangerouslySetInnerHTML={{
+            __html: markdownToHTML(section.readme, `${section.id}-`),
+          }}
           bareHtml
         />,
       ])
