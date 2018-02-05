@@ -17,11 +17,16 @@
  */
 
 import React from 'react';
+import BpkLabel from 'bpk-component-label';
 import BpkSelect from 'bpk-component-select';
+import { cssModules } from 'bpk-react-utils';
 
-import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
+import STYLES from './BpkThemeToggle.scss';
 import bpkCustomThemes from './theming';
+import { getHtmlElement, THEME_CHANGE_EVENT } from './utils';
 
+const inputId = 'theme-select';
+const getClassName = cssModules(STYLES);
 const availableThemes = Object.keys(bpkCustomThemes);
 
 const setTheme = theme => {
@@ -79,9 +84,15 @@ class BpkThemeToggle extends React.Component {
     const { ...rest } = this.props;
     return (
       <div {...rest}>
+        <BpkLabel
+          className={getClassName('bpk-theme-toggle__label')}
+          htmlFor={inputId}
+        >
+          Change theme
+        </BpkLabel>
         <BpkSelect
-          id="theme-select"
-          name="theme-select"
+          id={inputId}
+          name={inputId}
           value={this.state.selectedTheme}
           onChange={this.handleChange}
         >
