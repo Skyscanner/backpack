@@ -7,7 +7,7 @@ exports[`BpkRtlToggle should render correctly 1`] = `
   title="Keyboard Shortcut: ctrl + cmd + r"
   type="button"
 >
-  Toggle RTL 
+  RTL 
   on
 </button>
 `;
@@ -19,7 +19,7 @@ exports[`BpkRtlToggle should render correctly when toggled 1`] = `
   title="Keyboard Shortcut: ctrl + cmd + r"
   type="button"
 >
-  Toggle RTL 
+  RTL 
   off
 </button>
 `;

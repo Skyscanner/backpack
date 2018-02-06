@@ -78,7 +78,7 @@ class BpkGridToggle extends React.Component {
         title="Keyboard Shortcut: ctrl + cmd + g"
         onClick={this.toggleGrid}
       >
-        Toggle baseline grid {onOrOff}
+        Baseline grid {onOrOff}
       </BpkButtonLink>
     );
   }

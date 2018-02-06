@@ -74,7 +74,7 @@ class BpkRtlToggle extends React.Component {
         title="Keyboard Shortcut: ctrl + cmd + r"
         onClick={this.toggleRtl}
       >
-        Toggle RTL {onOrOff}
+        RTL {onOrOff}
       </BpkButtonLink>
     );
   }
