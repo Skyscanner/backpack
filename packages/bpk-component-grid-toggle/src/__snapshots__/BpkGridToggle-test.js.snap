@@ -7,7 +7,7 @@ exports[`BpkGridToggle should render correctly 1`] = `
   title="Keyboard Shortcut: ctrl + cmd + g"
   type="button"
 >
-  Toggle baseline grid 
+  Baseline grid 
   on
 </button>
 `;
@@ -19,7 +19,7 @@ exports[`BpkGridToggle should render correctly when toggled 1`] = `
   title="Keyboard Shortcut: ctrl + cmd + g"
   type="button"
 >
-  Toggle baseline grid 
+  Baseline grid 
   off
 </button>
 `;
