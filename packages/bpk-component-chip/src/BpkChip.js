@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { cssModules } from 'bpk-react-utils';
 import BpkCloseButton from 'bpk-component-close-button';
 
@@ -25,7 +27,14 @@ import STYLES from './bpk-chip.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkChip = props => {
+export type Props = {
+  children: Node,
+  onClose: (event: SyntheticEvent<>) => mixed,
+  closeLabel: ((children: Node) => string) | string,
+  className: ?string,
+};
+
+const BpkChip = (props: Props) => {
   const classNames = [getClassName('bpk-chip')];
   const { children, className, onClose, closeLabel, ...rest } = props;
 
@@ -35,27 +44,27 @@ const BpkChip = props => {
 
   const classNameFinal = classNames.join(' ');
 
-  const getCloseLabel =
-    typeof closeLabel === 'string' ? () => closeLabel : closeLabel;
+  const label =
+    typeof closeLabel === 'function' ? closeLabel(children) : closeLabel;
 
   return (
     <div className={classNameFinal} {...rest}>
       <span className={getClassName('bpk-chip__label')}>{children}</span>
-      <BpkCloseButton label={getCloseLabel(children)} onClick={onClose} />
+      <BpkCloseButton label={label} onClick={onClose} />
     </div>
   );
 };
 
 BpkChip.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  closeLabel: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
   onClose: PropTypes.func.isRequired,
+  closeLabel: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
+    .isRequired,
+  className: PropTypes.string,
 };
 
 BpkChip.defaultProps = {
   className: null,
-  closeLabel: children => `close ${children.toString().toLowerCase()}`,
 };
 
 export default BpkChip;

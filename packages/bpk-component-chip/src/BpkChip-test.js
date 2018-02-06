@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
@@ -24,14 +26,16 @@ import BpkChip from './BpkChip';
 describe('BpkChip', () => {
   it('should render correctly', () => {
     const tree = shallow(
-      <BpkChip onClose={() => null}>This is a Chip!</BpkChip>,
+      <BpkChip onClose={() => null} closeLabel="Close">
+        This is a Chip!
+      </BpkChip>,
     );
     expect(toJson(tree)).toMatchSnapshot();
   });
 
   it('should render correctly with a "className" attribute', () => {
     const tree = shallow(
-      <BpkChip onClose={() => null} className="custom-class">
+      <BpkChip onClose={() => null} closeLabel="Close" className="custom-class">
         This is a Chip!
       </BpkChip>,
     );
@@ -42,9 +46,13 @@ describe('BpkChip', () => {
     const tree = shallow(
       <BpkChip
         onClose={() => null}
-        closeLabel={children =>
-          `custom close ${children.toString().toLowerCase()}`
-        }
+        closeLabel={children => {
+          if (typeof children === 'string') {
+            return `Custom close (${children.toString().toLowerCase()})`;
+          }
+
+          return 'Close';
+        }}
       >
         This is a Chip!
       </BpkChip>,

@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+**Breaking:**
+- bpk-component-chip:
+  - `closeLabel` is now a required prop.
+
 **Added:**
 - bpk-component-accordion:
   - When using `withAccordionItemState`, send all the props to the `BpkAccordion` component.
