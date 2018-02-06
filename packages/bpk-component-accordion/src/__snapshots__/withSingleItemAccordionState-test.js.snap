@@ -52,6 +52,32 @@ exports[`withSingleItemAccordionState(BpkAccordion) should render correctly even
 </dl>
 `;
 
+exports[`withSingleItemAccordionState(BpkAccordion) should render correctly with arbitrary props 1`] = `
+<dl
+  className="bpk-accordion someClass"
+  foo="bar"
+>
+  <div
+    expanded={false}
+    onClick={[Function]}
+  >
+    Accordion Item 1
+  </div>
+  <div
+    expanded={false}
+    onClick={[Function]}
+  >
+    Accordion Item 2
+  </div>
+  <div
+    expanded={false}
+    onClick={[Function]}
+  >
+    Accordion Item 3
+  </div>
+</dl>
+`;
+
 exports[`withSingleItemAccordionState(BpkAccordion) should render correctly with custom initially expanded item 1`] = `
 <dl
   className="bpk-accordion"

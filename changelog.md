@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-_Nothing yet!_
+**Added:**
+- bpk-component-accordion:
+  - When using `withAccordionItemState`, send all the props to the `BpkAccordion` component.
 
 ## 2018-01-31 - Fix dialog for iOS
 
