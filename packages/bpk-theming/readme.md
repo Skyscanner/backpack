@@ -13,7 +13,7 @@ npm install bpk-theming --save-dev
 ```js
 import BpkThemeProvider from 'bpk-theming';
 
-import BpkLink, {themeAttributes as linkThemeAttributes} from 'bpk-component-link';
+import BpkLink, { themeAttributes as linkThemeAttributes } from 'bpk-component-link';
 
 const theme = {
   linkTextColor: '#c00',
