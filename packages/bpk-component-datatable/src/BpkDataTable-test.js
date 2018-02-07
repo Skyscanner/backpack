@@ -19,6 +19,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
+import { SortDirection } from 'react-virtualized/dist/commonjs/Table';
+
 import BpkDataTable from './BpkDataTable';
 import BpkDataTableColumn from './BpkDataTableColumn';
 
@@ -229,5 +231,34 @@ describe('BpkDataTable', () => {
 
     wrapper.setProps({ rows: [rows[0]] });
     expect(wrapper.find('.bpk-data-table__row')).toHaveLength(2);
+  });
+
+  it('Default table is sorted by the column specified in the index', () => {
+    const abcRows = [
+      { letter: 'A', number: 1 },
+      { letter: 'B', number: 2 },
+      { letter: 'C', number: 3 },
+    ];
+    const wrapper = mount(
+      <BpkDataTable
+        rows={abcRows}
+        height={200}
+        width={400}
+        defaultColumnSortIndex={1}
+      >
+        <BpkDataTableColumn label="Letter" dataKey="letter" width={100} />
+        <BpkDataTableColumn
+          label="Number"
+          dataKey="number"
+          width={100}
+          defaultSortDirection={SortDirection.DESC}
+        />
+      </BpkDataTable>,
+    );
+
+    // Select the last element in the table, when sorting by default on 2nd
+    // column it will be A1.
+    const firstRow = wrapper.find('.bpk-data-table__row').at(1);
+    expect(firstRow.text()).toBe('C3');
   });
 });

@@ -60,11 +60,16 @@ const sortList = ({ sortBy, sortDirection, list }) => {
 };
 
 class BpkDataTable extends Component {
-  constructor({ rows, children }) {
+  constructor({ rows, children, defaultColumnSortIndex }) {
     super();
 
-    const sortBy = children.length > 0 ? children[0].props.dataKey : undefined;
-    const sortDirection = SortDirection.ASC;
+    const sortBy =
+      children.length > 0
+        ? children[defaultColumnSortIndex].props.dataKey
+        : undefined;
+    const sortDirection =
+      children[defaultColumnSortIndex].props.defaultSortDirection ||
+      SortDirection.ASC;
     const sortedList = sortList({ sortBy, sortDirection, list: rows });
 
     this.state = {
@@ -185,6 +190,7 @@ BpkDataTable.propTypes = {
   width: PropTypes.number,
   headerHeight: PropTypes.number,
   className: PropTypes.string,
+  defaultColumnSortIndex: PropTypes.number,
 };
 
 BpkDataTable.defaultProps = {
@@ -193,6 +199,7 @@ BpkDataTable.defaultProps = {
   headerHeight: 60,
   rowHeight: 60,
   gridStyle: { direction: undefined }, // This is required for rows to automatically respect rtl
+  defaultColumnSortIndex: 0,
 };
 
 export default BpkDataTable;
