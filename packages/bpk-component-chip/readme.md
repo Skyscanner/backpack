@@ -15,7 +15,12 @@ import React from 'react';
 import BpkChip from 'bpk-component-chip';
 
 export default () => (
-  <BpkChip onClose={event => console.log('Chip closing!', event)} >This is a chip!</BpkChip>
+  <BpkChip
+    closeLabel="Close"
+    onClose={event => console.log('Chip closing!', event)}
+  >
+    This is a chip!
+  </BpkChip>
 );
 ```
 
@@ -23,7 +28,7 @@ export default () => (
 
 | Property   | PropType                | Required | Default Value |
 | ---------- | ----------------------- | -------- | ------------- |
-| onClose    | func                    | yes      | -             |
-| children   | node                    | yes      | -             |
-| className  | string                  | no       | -             |
-| closeLabel | oneOfType(string, func) | no       | -             |
+| children   | node                    | true     | -             |
+| onClose    | func                    | true     | -             |
+| closeLabel | oneOfType(string, func) | true     | -             |
+| className  | string                  | false    | null          |

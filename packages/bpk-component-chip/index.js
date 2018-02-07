@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
-import BpkChip from './src/BpkChip';
+/* @flow */
+
+import BpkChip, { type Props } from './src/BpkChip';
+
+export type BpkChipProps = Props;
 
 export default BpkChip;

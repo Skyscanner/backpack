@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React, { Component } from 'react';
 import BpkChip from 'bpk-component-chip';
 import BpkButton from 'bpk-component-button';
@@ -26,12 +28,14 @@ import chipReadme from 'bpk-component-chip/readme.md';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
 import Paragraph from './../../components/Paragraph';
 
-class DefaultChipContainer extends Component {
+type State = {
+  chipNames: Array<string>,
+  nextChipId: number,
+};
+
+class DefaultChipContainer extends Component<{}, State> {
   constructor() {
     super();
-
-    this.removeChip = this.removeChip.bind(this);
-    this.addRemovableChip = this.addRemovableChip.bind(this);
 
     this.state = {
       chipNames: ['Example Chip 1', 'Example Chip 2'],
@@ -39,23 +43,24 @@ class DefaultChipContainer extends Component {
     };
   }
 
-  addRemovableChip() {
-    const newChipNames = this.state.chipNames.slice(0);
-    newChipNames.push(`Example Chip ${this.state.nextChipId}`);
+  addRemovableChip = () => {
     this.setState({
-      chipNames: newChipNames,
+      chipNames: [
+        ...this.state.chipNames,
+        `Example Chip ${this.state.nextChipId}`,
+      ],
       nextChipId: this.state.nextChipId + 1,
     });
-  }
+  };
 
-  removeChip(chipName) {
+  removeChip = chipName => {
     const newChipNames = this.state.chipNames.slice(0);
     const indexToRemove = newChipNames.indexOf(chipName);
     newChipNames.splice(indexToRemove, 1);
     this.setState({
       chipNames: newChipNames,
     });
-  }
+  };
 
   render() {
     return (
