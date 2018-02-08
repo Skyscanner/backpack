@@ -38,7 +38,12 @@ const omittedTableProps = [
   'onHeaderClick',
 ];
 
-const getSortDirection = (state, newSortBy, newSortDirection) => {
+const getSortDirection = (
+  state,
+  newSortBy,
+  newSortDirection,
+  defaultSortDirection,
+) => {
   const { sortBy, sortDirection } = state;
   if (newSortDirection !== null) {
     return newSortDirection;
@@ -48,7 +53,7 @@ const getSortDirection = (state, newSortBy, newSortDirection) => {
       ? SortDirection.DESC
       : SortDirection.ASC;
   }
-  return SortDirection.ASC;
+  return defaultSortDirection;
 };
 
 const sortList = ({ sortBy, sortDirection, list }) => {
@@ -104,10 +109,10 @@ class BpkDataTable extends Component {
   }
 
   onHeaderClick({ dataKey: sortBy, event }) {
-    const disableSort =
-      this.props.children.find(child => child.props.dataKey === sortBy).props
-        .disableSort === true;
-    if (disableSort) {
+    const column = this.props.children.find(
+      child => child.props.dataKey === sortBy,
+    );
+    if (column.props.disableSort === true) {
       return;
     }
 
@@ -115,6 +120,7 @@ class BpkDataTable extends Component {
       this.state,
       sortBy,
       getSortIconDirection(event.target),
+      column.props.defaultSortDirection || SortDirection.ASC,
     );
     const sortedList = sortList({
       sortBy,
