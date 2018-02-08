@@ -1,14 +1,20 @@
 # Backpack changelog
 
 ## Unreleased
+_Nothing Yet_
 
+## 2018-02-08 - Breaking changes on chip component, update accordion and datatable
 **Breaking:**
-- bpk-component-chip:
+
+- bpk-component-chip: 1.1.42 => 2.0.0
   - `closeLabel` is now a required prop.
 
 **Added:**
-- bpk-component-accordion:
+
+- bpk-component-accordion: 1.1.56 => 1.2.0
   - When using `withAccordionItemState`, send all the props to the `BpkAccordion` component.
+- bpk-component-datatable: 0.0.11 => 0.1.0
+  - Supports changing column used for initial sorting
 
 ## 2018-01-31 - Fix dialog for iOS
 
