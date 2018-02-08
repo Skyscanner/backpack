@@ -84,40 +84,56 @@ class DefaultLayout extends Component {
             onHamburgerClick={this.onHamburgerClick}
           />
           <main>{children}</main>
-          <BpkGridContainer
+          <div
             className={getClassName('bpkdocs-default-layout__footer-container')}
           >
-            <BpkGridRow
-              className={getClassName('bpkdocs-default-layout__footer-row')}
-            >
-              <BpkGridColumn width={6} mobileWidth={12}>
-                <small
-                  className={getClassName(
-                    'bpkdocs-default-layout__footer-copy',
-                  )}
-                >
-                  &copy; Skyscanner {new Date().getFullYear()}
-                </small>
-              </BpkGridColumn>
-              <BpkGridColumn width={6} mobileWidth={12}>
-                <small
-                  className={[
-                    'bpkdocs-default-layout__footer-copy',
-                    'bpkdocs-default-layout__footer-copy--align-right',
-                  ]
-                    .map(getClassName)
-                    .join(' ')}
-                >
-                  <BpkGridToggle />&nbsp; | <BpkRtlToggle />&nbsp;
-                  <BpkThemeToggle
+            <BpkGridContainer>
+              <BpkGridRow
+                className={getClassName('bpkdocs-default-layout__footer-row')}
+              >
+                <BpkGridColumn width={6} mobileWidth={12}>
+                  <small
                     className={getClassName(
-                      'bpkdocs-default-layout__theme-switcher',
+                      'bpkdocs-default-layout__footer-copy',
                     )}
-                  />
-                </small>
-              </BpkGridColumn>
-            </BpkGridRow>
-          </BpkGridContainer>
+                  >
+                    <a
+                      href="https://skyscanner.net"
+                      className={getClassName(
+                        'bpkdocs-default-layout__footer-logo',
+                      )}
+                    >
+                      <span
+                        className={getClassName(
+                          'bpkdocs-default-layout__footer-logo-text',
+                        )}
+                      >
+                        Skyscanner
+                      </span>
+                    </a>
+                    &copy; {new Date().getFullYear()}
+                  </small>
+                </BpkGridColumn>
+                <BpkGridColumn width={6} mobileWidth={12}>
+                  <small
+                    className={[
+                      'bpkdocs-default-layout__footer-copy',
+                      'bpkdocs-default-layout__footer-copy--align-right',
+                    ]
+                      .map(getClassName)
+                      .join(' ')}
+                  >
+                    <BpkGridToggle />&nbsp; | <BpkRtlToggle />&nbsp;
+                    <BpkThemeToggle
+                      className={getClassName(
+                        'bpkdocs-default-layout__theme-switcher',
+                      )}
+                    />
+                  </small>
+                </BpkGridColumn>
+              </BpkGridRow>
+            </BpkGridContainer>
+          </div>
         </div>
       </EnhancedThemeProvider>
     );

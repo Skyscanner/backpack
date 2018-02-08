@@ -54,3 +54,14 @@
 @mixin bpk-box-shadow-xl {
   box-shadow: $bpk-box-shadow-xl;
 }
+
+/// Small top box shadow.
+///
+/// @example scss
+///   .selector {
+///     @include bpk-box-shadow-top-sm();
+///   }
+
+@mixin bpk-box-shadow-top-sm {
+  box-shadow: 0 -2px 3px 0 rgba(37, 32, 31, .2); // TODO make a token
+}
