@@ -2,7 +2,15 @@
 
 ## Unreleased
 
-_Nothing yet.._
+**Fixed:**
+- bpk-component-banner-alert:
+- bpk-component-chip:
+- bpk-component-close-button:
+- bpk-component-dialog:
+- bpk-component-drawer:
+- bpk-component-modal:
+- bpk-component-popover:
+  - Fixed close button alignment issues in some cases (see https://github.com/Skyscanner/backpack/pull/499#issuecomment-364414472)
 
 ## 2018-02-09 - `className` support for RTL and grid toggles
 
@@ -12,17 +20,17 @@ _Nothing yet.._
   - `className` prop is now accepted.
 
 ## 2018-02-08 - Breaking changes on chip component, update accordion and datatable
-**Breaking:**
 
+**Breaking:**
 - bpk-component-chip: 1.1.42 => 2.0.0
   - `closeLabel` is now a required prop.
 
 **Added:**
-
 - bpk-component-accordion: 1.1.56 => 1.2.0
   - When using `withAccordionItemState`, send all the props to the `BpkAccordion` component.
+
 - bpk-component-datatable: 0.0.11 => 0.1.0
-  - Supports changing column used for initial sorting
+  - Supports changing column used for initial sorting.
 
 ## 2018-01-31 - Fix dialog for iOS
 

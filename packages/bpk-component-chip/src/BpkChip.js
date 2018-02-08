@@ -42,13 +42,11 @@ const BpkChip = (props: Props) => {
     classNames.push(className);
   }
 
-  const classNameFinal = classNames.join(' ');
-
   const label =
     typeof closeLabel === 'function' ? closeLabel(children) : closeLabel;
 
   return (
-    <div className={classNameFinal} {...rest}>
+    <div className={classNames.join(' ')} {...rest}>
       <span className={getClassName('bpk-chip__label')}>{children}</span>
       <BpkCloseButton label={label} onClick={onClose} />
     </div>
