@@ -17,42 +17,52 @@
  */
 
 @import '~bpk-mixins/index';
+@import '../../constants/neo-home-page-variables';
 
-.bpkdocs-default-layout {
-  &__container {
-    background-color: $bpk-color-gray-100;
-  }
-
-  &__footer-container {
-    @include bpk-border-top-sm($bpk-color-gray-100);
-  }
-
-  &__footer-row {
+.bpkdocs-footer {
+  &__wrapper {
     display: flex;
-    align-items: center;
+    width: 100%;
+    padding: $bpk-spacing-base 0;
+    justify-content: center;
+    background-color: $bpk-color-white;
   }
 
-  &__footer-copy {
-    display: block;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: $bpk-color-gray-500;
 
     @include bpk-text;
     @include bpk-text--sm;
+    @include bpk-home-page-center-content;
 
-    &--align-right {
-      text-align: right;
-
-      @include bpk-rtl {
-        text-align: left;
-      }
-
-      @include bpk-breakpoint-mobile {
-        text-align: left;
-
-        @include bpk-rtl {
-          text-align: right;
-        }
-      }
+    @include bpk-breakpoint-mobile {
+      flex-direction: column-reverse;
     }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: baseline;
+
+    @include bpk-breakpoint-mobile {
+      width: 100%;
+      margin-bottom: $bpk-spacing-base;
+      justify-content: space-between;
+    }
+  }
+
+  &__copyright {
+    @include bpk-breakpoint-mobile {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__heart {
+    fill: $bpk-color-red-500;
   }
 
   &__theme-switcher {

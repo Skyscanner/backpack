@@ -1,0 +1,62 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2018 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+@import '~bpk-mixins/index';
+
+$bpk-logo-offset: $bpk-one-pixel-rem * 58;
+
+$bpk-outer-container-width-desktop: $bpk-breakpoint-desktop - (2 * $bpk-logo-offset);
+$bpk-center-content-width-desktop: $bpk-outer-container-width-desktop;
+
+// Cards
+
+// Desktop
+$bpk-card-height-desktop: $bpk-spacing-xs * 66;
+$bpk-image-height-desktop: $bpk-spacing-xs * 49;
+$bpk-caption-container-height-desktop: $bpk-card-height-desktop - $bpk-image-height-desktop;
+$bpk-card-spacing-desktop: $bpk-spacing-xxl;
+
+// Tablet
+$bpk-card-height-tablet: $bpk-spacing-xs * 45;
+$bpk-image-height-tablet: $bpk-spacing-xs * 33;
+$bpk-caption-container-height-tablet: $bpk-card-height-tablet - $bpk-image-height-tablet;
+$bpk-card-spacing-tablet: $bpk-spacing-lg;
+
+// Mobile
+$bpk-card-height-mobile: $bpk-spacing-xs * 37;
+$bpk-image-height-mobile: $bpk-spacing-xs * 27;
+$bpk-caption-container-height-mobile: $bpk-card-height-mobile - $bpk-image-height-mobile;
+$bpk-card-spacing-mobile: $bpk-spacing-md;
+
+@mixin bpk-home-page-center-content {
+  width: calc(100% - (2 * #{$bpk-logo-offset}) - (2 * #{$bpk-spacing-xl}));
+  max-width: $bpk-center-content-width-desktop;
+
+  @media (max-width: $bpk-breakpoint-desktop) {
+    max-width: 100%;
+  }
+
+  // stylelint-disable-next-line
+  @include bpk-breakpoint-tablet {
+    width: 100%;
+    padding: 0 $bpk-spacing-lg;
+  }
+
+  @include bpk-breakpoint-mobile {
+    padding: 0 $bpk-spacing-md;
+  }
+}

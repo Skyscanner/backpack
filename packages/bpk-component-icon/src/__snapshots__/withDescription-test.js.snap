@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withDescription should render correctly 1`] = `
+<span>
+  <span>
+    ❤️
+  </span>
+  <span
+    className="bpk-icon-description"
+  >
+    love
+  </span>
+</span>
+`;

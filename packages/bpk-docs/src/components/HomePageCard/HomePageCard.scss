@@ -1,0 +1,112 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2018 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+@import '~bpk-mixins/index';
+
+// Desktop
+$bpk-card-height-desktop: $bpk-spacing-xs * 66;
+$bpk-image-height-desktop: $bpk-spacing-xs * 49;
+$bpk-caption-container-height-desktop: $bpk-card-height-desktop - $bpk-image-height-desktop;
+
+// Tablet
+$bpk-card-height-tablet: $bpk-spacing-xs * 45;
+$bpk-image-height-tablet: $bpk-spacing-xs * 33;
+$bpk-caption-container-height-tablet: $bpk-card-height-tablet - $bpk-image-height-tablet;
+
+// Mobile
+$bpk-card-height-mobile: $bpk-spacing-xs * 37;
+$bpk-image-height-mobile: $bpk-spacing-xs * 27;
+$bpk-caption-container-height-mobile: $bpk-card-height-mobile - $bpk-image-height-mobile;
+
+.bpkdocs-home-page-card {
+  height: $bpk-card-height-desktop;
+
+  @include bpk-breakpoint-tablet {
+    height: $bpk-card-height-tablet;
+  }
+
+  @include bpk-breakpoint-mobile {
+    height: $bpk-card-height-mobile;
+  }
+
+  &__image-container {
+    position: relative;
+    height: $bpk-image-height-desktop;
+    border-radius: $bpk-border-radius-sm $bpk-border-radius-sm 0 0;
+    overflow: hidden;
+
+    @include bpk-breakpoint-tablet {
+      height: $bpk-image-height-tablet;
+    }
+
+    @include bpk-breakpoint-mobile {
+      height: $bpk-image-height-mobile;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: calc(50%);
+    left: 15%;
+    width: $bpk-spacing-lg * 2;
+    transform: translateY(-50%);
+
+    @include bpk-breakpoint-above-tablet {
+      width: $bpk-spacing-xxl * 2;
+    }
+
+    &--centered {
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__caption {
+    position: absolute;
+    bottom: calc((#{$bpk-caption-container-height-tablet} / 2) - (#{$bpk-text-base-line-height} / 2));
+    left: $bpk-spacing-base;
+    color: $bpk-color-gray-700;
+
+    @include bpk-text;
+    @include bpk-text-base;
+
+    @include bpk-breakpoint-above-tablet {
+      bottom: calc((#{$bpk-caption-container-height-desktop} / 2) - (#{$bpk-text-lg-line-height} / 2));
+      left: $bpk-spacing-base;
+
+      @include bpk-text-lg;
+    }
+
+    @include bpk-breakpoint-mobile {
+      bottom: calc((#{$bpk-caption-container-height-mobile} / 2) - (#{$bpk-text-base-line-height} / 2));
+      left: $bpk-spacing-base;
+    }
+  }
+}

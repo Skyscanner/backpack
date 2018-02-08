@@ -30,7 +30,13 @@ import * as ROUTES from './packages/bpk-docs/src/constants/routes';
 import { blockComment as licenseHeader } from './packages/bpk-tokens/formatters/license-header';
 import redirects from './packages/bpk-docs/src/constants/redirect-routes';
 
-const { NODE_ENV, BPK_TOKENS, ENABLE_CSS_MODULES } = process.env;
+const {
+  NODE_ENV,
+  BPK_TOKENS,
+  ENABLE_CSS_MODULES,
+  BPK_NEO,
+  BPK_BUILT_AT,
+} = process.env;
 const useCssModules = ENABLE_CSS_MODULES !== 'false';
 const isProduction = NODE_ENV === 'production';
 
@@ -184,6 +190,17 @@ const config = {
     },
   },
 };
+
+if (BPK_NEO) {
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      'process.env': {
+        BPK_NEO: true,
+        BPK_BUILT_AT,
+      },
+    }),
+  );
+}
 
 if (isProduction) {
   config.plugins.push(

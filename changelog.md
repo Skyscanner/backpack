@@ -2,7 +2,11 @@
 
 ## Unreleased
 
-_Nothing yet..._
+**Added:**
+- bpk-component-icon:
+  - Added new HOC `withDescription` to make it easy to provide a textual description of icons for screen readers.
+- bpk-component-card:
+  - Added new prop `blank` which when set along with the use of `href` makes the card open the link in a new tab.
 
 ## 2018-02-19 - Fix for janky RN banner alert animations & a visual update to `plus`, `minus` and `close` icons
 
