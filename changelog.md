@@ -3,8 +3,8 @@
 ## Unreleased
 
 **Added:**
-- bpk-component-grid-toggle:
-- bpk-component-rtl-toggle:
+- bpk-component-grid-toggle: 1.0.46 => 1.1.0
+- bpk-component-rtl-toggle: 1.0.46 => 1.1.0
   - `className` prop is now accepted.
 
 ## 2018-02-08 - Breaking changes on chip component, update accordion and datatable
