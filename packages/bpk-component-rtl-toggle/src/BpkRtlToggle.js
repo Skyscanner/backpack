@@ -17,6 +17,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { BpkButtonLink } from 'bpk-component-link';
 import { getHtmlElement, DIRECTIONS, DIRECTION_CHANGE_EVENT } from './utils';
 
@@ -67,17 +68,27 @@ class BpkRtlToggle extends React.Component {
   }
 
   render() {
+    const { className } = this.props;
     const onOrOff = this.state.direction === DIRECTIONS.RTL ? 'off' : 'on';
 
     return (
       <BpkButtonLink
         title="Keyboard Shortcut: ctrl + cmd + r"
         onClick={this.toggleRtl}
+        className={className}
       >
         RTL {onOrOff}
       </BpkButtonLink>
     );
   }
 }
+
+BpkRtlToggle.propTypes = {
+  className: PropTypes.string,
+};
+
+BpkRtlToggle.defaultProps = {
+  className: null,
+};
 
 export default BpkRtlToggle;

@@ -33,4 +33,9 @@ describe('BpkGridToggle', () => {
     tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should render correctly with the className prop', () => {
+    const tree = renderer.create(<BpkGridToggle className="foo" />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -23,3 +23,15 @@ exports[`BpkGridToggle should render correctly when toggled 1`] = `
   off
 </button>
 `;
+
+exports[`BpkGridToggle should render correctly with the className prop 1`] = `
+<button
+  className="bpk-link foo"
+  onClick={[Function]}
+  title="Keyboard Shortcut: ctrl + cmd + g"
+  type="button"
+>
+  Baseline grid 
+  on
+</button>
+`;
