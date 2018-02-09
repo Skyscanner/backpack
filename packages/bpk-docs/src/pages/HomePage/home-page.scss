@@ -28,8 +28,38 @@
     color: $bpk-color-white;
 
     @include bpk-breakpoint-above-tablet {
-      padding-top: $bpk-spacing-xl * 2;
+      padding-top: $bpk-spacing-xl;
       padding-bottom: $bpk-spacing-xl * 2;
+    }
+  }
+
+  &__logo-container {
+    margin-bottom: $bpk-spacing-xxl;
+  }
+
+  &__cards-container {
+    margin-top: -$bpk-spacing-xl * 2;
+  }
+
+  &__card {
+    overflow: hidden;
+
+    &-image {
+      height: $bpk-one-pixel-rem * 250;
+      background: url('http://lorempixel.com/640/480') no-repeat;
+      background-size: cover;
+    }
+
+    &-image-text {
+      @include bpk-visually-hidden;
+    }
+
+    &-caption {
+      $margin: $bpk-spacing-base;
+
+      margin-top: $margin;
+      margin-bottom: $margin;
+      margin-left: $margin;
     }
   }
 }

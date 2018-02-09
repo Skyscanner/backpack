@@ -20,28 +20,41 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { PropTypes as RouterPropTypes } from 'react-router';
-
-import BpkButton from 'bpk-component-button';
-import { colorWhite } from 'bpk-tokens/tokens/base.es6';
-import { withLargeButtonAlignment, withRtlSupport } from 'bpk-component-icon';
-import LongArrowRightIcon from 'bpk-component-icon/lg/long-arrow-right';
+import { chunk } from 'lodash';
 import {
   BpkGridContainer,
   BpkGridRow,
   BpkGridColumn,
 } from 'bpk-component-grid';
+import BpkCard from 'bpk-component-card';
+import BpkText from 'bpk-component-text';
 import { cssModules } from 'bpk-react-utils';
 
 import Heading from './../../components/Heading';
-import Paragraph from './../../components/Paragraph';
 
 import STYLES from './home-page.scss';
 import * as ROUTES from './../../constants/routes';
 
 const getClassName = cssModules(STYLES);
-const AlignedLongArrowRightAltIcon = withRtlSupport(
-  withLargeButtonAlignment(LongArrowRightIcon),
-);
+
+const CARD_CONTENTS = [
+  {
+    title: 'Using Backpack',
+    href: ROUTES.GETTING_STARTED,
+  },
+  {
+    title: 'Design Tokens',
+    href: ROUTES.TOKENS,
+  },
+  {
+    title: 'Components',
+    href: ROUTES.COMPONENTS,
+  },
+  {
+    title: 'GitHub',
+    href: 'https://github.com/Skyscanner/backpack',
+  },
+];
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -56,47 +69,66 @@ class HomePage extends React.Component {
   }
 
   render() {
+    // Convert cards into an array of arrays with two entries, for placing in
+    // a grid.
+    const chunkedCards = chunk(CARD_CONTENTS, 2);
     return (
       <section>
         <Helmet title="Backpack" />
         <div className={getClassName('bpkdocs-home-page__hero')}>
           <BpkGridContainer>
+            <BpkGridRow
+              className={getClassName('bpkdocs-home-page__logo-container')}
+            >
+              <BpkGridColumn width={12}>Backpack Logo Here</BpkGridColumn>
+            </BpkGridRow>
             <BpkGridRow>
-              <BpkGridColumn width={12}>
-                <Heading level="h1">Backpack</Heading>
+              <BpkGridColumn width={7}>
                 <Heading level="h2">
                   Backpack is a collection of design resources, reusable
                   components and guidelines for creating Skyscanner products.
                 </Heading>
-                <BpkButton
-                  large
-                  href={ROUTES.GETTING_STARTED}
-                  onClick={this.onGettingStartedClick}
-                >
-                  Get started <AlignedLongArrowRightAltIcon fill={colorWhite} />
-                </BpkButton>
               </BpkGridColumn>
             </BpkGridRow>
           </BpkGridContainer>
         </div>
-        <BpkGridContainer>
-          <BpkGridRow>
-            <BpkGridColumn width={6} tabletWidth={12}>
-              <Heading level="h3">Mission</Heading>
-              <Paragraph>
-                To enable design and engineering to build coherent, beautiful
-                and usable products quickly and without pain.
-              </Paragraph>
-            </BpkGridColumn>
-            <BpkGridColumn width={6} tabletWidth={12}>
-              <Heading level="h3">About Backpack</Heading>
-              <Paragraph>
-                Backpack is the foundation for all Skyscanner products. It
-                builds on Atomic Design principles to help visualise how these
-                products are assembled.
-              </Paragraph>
-            </BpkGridColumn>
-          </BpkGridRow>
+        <BpkGridContainer
+          className={getClassName('bpkdocs-home-page__cards-container')}
+        >
+          {chunkedCards.map((cards, index) => (
+            <BpkGridRow key={index.toString()}>
+              {cards.map(({ title, href }) => (
+                <BpkGridColumn width={6} tabletWidth={12} key={title}>
+                  <BpkCard
+                    href={href}
+                    padded={false}
+                    className={getClassName('bpkdocs-home-page__card')}
+                  >
+                    <div
+                      className={getClassName('bpkdocs-home-page__card-image')}
+                    >
+                      <span
+                        className={getClassName(
+                          'bpkdocs-home-page__card-image-text',
+                        )}
+                      >
+                        {title}
+                      </span>
+                    </div>
+                    <BpkText
+                      tagName="h2"
+                      textStyle="lg"
+                      className={getClassName(
+                        'bpkdocs-home-page__card-caption',
+                      )}
+                    >
+                      {title}
+                    </BpkText>
+                  </BpkCard>
+                </BpkGridColumn>
+              ))}
+            </BpkGridRow>
+          ))}
         </BpkGridContainer>
       </section>
     );
