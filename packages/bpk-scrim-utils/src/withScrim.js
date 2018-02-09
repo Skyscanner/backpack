@@ -33,6 +33,7 @@ import STYLES from './bpk-scrim-content.scss';
 import { onClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);
+const CLICK_TIME_THESHOLD = 500;
 
 const withScrim = WrappedComponent => {
   class WithScrim extends Component {
@@ -41,12 +42,12 @@ const withScrim = WrappedComponent => {
 
       this.onContentMouseDown = this.onContentMouseDown.bind(this);
       this.onContentMouseUp = this.onContentMouseUp.bind(this);
-      this.onDocumentMove = this.onDocumentMove.bind(this);
       this.onOverlayMouseDown = this.onOverlayMouseDown.bind(this);
       this.onOverlayMouseUp = this.onOverlayMouseUp.bind(this);
       this.dialogRef = this.dialogRef.bind(this);
 
       this.shouldClose = false;
+      this.mouseDownTime = 0;
     }
 
     componentDidMount() {
@@ -99,18 +100,23 @@ const withScrim = WrappedComponent => {
       this.shouldClose = false;
     }
 
-    onOverlayMouseDown() {
+    onOverlayMouseDown(event) {
+      this.mouseDownTime = Date.now();
+      // console.log(this.mouseDownCoordinates);
       this.shouldClose = true;
     }
 
-    onOverlayMouseUp() {
-      if (this.props.closeOnScrimClick && this.shouldClose) {
+    onOverlayMouseUp(event) {
+      const mouseUpTime = Date.now();
+      const timeBetweenMouseDownUp = mouseUpTime - this.mouseDownTime;
+
+      if (
+        this.props.closeOnScrimClick &&
+        this.shouldClose &&
+        timeBetweenMouseDownUp < CLICK_TIME_THESHOLD
+      ) {
         this.props.onClose();
       }
-    }
-
-    onDocumentMove() {
-      this.shouldClose = false;
     }
 
     dialogRef(ref) {
@@ -133,10 +139,8 @@ const withScrim = WrappedComponent => {
 
       const closeEvents = {
         onTouchStart: this.onContentMouseDown,
-        onTouchMove: this.onDocumentMove,
         onTouchEnd: this.onContentMouseUp,
         onMouseDown: this.onContentMouseDown,
-        onMouseMove: this.onDocumentMove,
         onMouseUp: this.onContentMouseUp,
       };
 
