@@ -70,6 +70,7 @@ class BpkGridToggle extends React.Component {
   }
 
   render() {
+    const { className } = this.props;
     const { gridEnabled } = this.state;
     const onOrOff = gridEnabled ? 'off' : 'on';
 
@@ -77,6 +78,7 @@ class BpkGridToggle extends React.Component {
       <BpkButtonLink
         title="Keyboard Shortcut: ctrl + cmd + g"
         onClick={this.toggleGrid}
+        className={className}
       >
         Baseline grid {onOrOff}
       </BpkButtonLink>
@@ -86,10 +88,12 @@ class BpkGridToggle extends React.Component {
 
 BpkGridToggle.propTypes = {
   targetContainer: PropTypes.string,
+  className: PropTypes.string,
 };
 
 BpkGridToggle.defaultProps = {
   targetContainer: 'body',
+  className: null,
 };
 
 export default BpkGridToggle;

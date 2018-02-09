@@ -18,3 +18,9 @@ export default () => (
   <BpkRtlToggle />
 );
 ```
+
+## Props
+
+| Property         | PropType | Required | Default Value |
+| ---------------- | -------- | -------- | ------------- |
+| className        | string   | false    | null          |

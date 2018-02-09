@@ -1,7 +1,11 @@
 # Backpack changelog
 
 ## Unreleased
-_Nothing Yet_
+
+**Added:**
+- bpk-component-grid-toggle:
+- bpk-component-rtl-toggle:
+  - `className` prop is now accepted.
 
 ## 2018-02-08 - Breaking changes on chip component, update accordion and datatable
 **Breaking:**
