@@ -33,6 +33,7 @@ import STYLES from './bpk-scrim-content.scss';
 import { onClosePropType } from './customPropTypes';
 
 const getClassName = cssModules(STYLES);
+const DRAG_THRESHOLD = 75;
 
 const withScrim = WrappedComponent => {
   class WithScrim extends Component {
@@ -41,12 +42,12 @@ const withScrim = WrappedComponent => {
 
       this.onContentMouseDown = this.onContentMouseDown.bind(this);
       this.onContentMouseUp = this.onContentMouseUp.bind(this);
-      this.onDocumentMove = this.onDocumentMove.bind(this);
       this.onOverlayMouseDown = this.onOverlayMouseDown.bind(this);
       this.onOverlayMouseUp = this.onOverlayMouseUp.bind(this);
       this.dialogRef = this.dialogRef.bind(this);
 
       this.shouldClose = false;
+      this.mouseDownCoordinates = false;
     }
 
     componentDidMount() {
@@ -99,18 +100,28 @@ const withScrim = WrappedComponent => {
       this.shouldClose = false;
     }
 
-    onOverlayMouseDown() {
+    onOverlayMouseDown(event) {
+      this.mouseDownCoordinates = { x: event.screenX, y: event.screenY };
+      // console.log(this.mouseDownCoordinates);
       this.shouldClose = true;
     }
 
-    onOverlayMouseUp() {
-      if (this.props.closeOnScrimClick && this.shouldClose) {
+    onOverlayMouseUp(event) {
+      let distanceMovedSquared = -1;
+      const mouseUpCoordinates = { x: event.screenX, y: event.screenY };
+      if (this.mouseDownCoordinates.x !== undefined) {
+        distanceMovedSquared =
+          (this.mouseDownCoordinates.x - mouseUpCoordinates.x) ** 2 +
+          (this.mouseDownCoordinates.y - mouseUpCoordinates.y) ** 2;
+      }
+
+      if (
+        this.props.closeOnScrimClick &&
+        this.shouldClose &&
+        distanceMovedSquared < DRAG_THRESHOLD
+      ) {
         this.props.onClose();
       }
-    }
-
-    onDocumentMove() {
-      this.shouldClose = false;
     }
 
     dialogRef(ref) {
@@ -133,10 +144,8 @@ const withScrim = WrappedComponent => {
 
       const closeEvents = {
         onTouchStart: this.onContentMouseDown,
-        onTouchMove: this.onDocumentMove,
         onTouchEnd: this.onContentMouseUp,
         onMouseDown: this.onContentMouseDown,
-        onMouseMove: this.onDocumentMove,
         onMouseUp: this.onContentMouseUp,
       };
 

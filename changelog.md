@@ -24,6 +24,11 @@ _Nothing yet..._
 - bpk-component-rtl-toggle: 1.0.46 => 1.1.0
   - `className` prop is now accepted.
 
+**Fixed:**
+- bpk-component-modal:
+- bpk-component-dialog:
+  - A fix has been put in place to allow modeals and dialogs to be closed by clicking on the scrim, even with high-precision input devices such as wacom tablets.
+
 ## 2018-02-08 - Breaking changes on chip component, update accordion and datatable
 
 **Breaking:**
