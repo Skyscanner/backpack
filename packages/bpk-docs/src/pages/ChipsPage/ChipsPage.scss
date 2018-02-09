@@ -16,27 +16,16 @@
  * limitations under the License.
  */
 
-@import '~bpk-mixins';
+@import '~bpk-mixins/index';
 
-.bpk-close-button {
-  height: $bpk-spacing-base;
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-  color: $bpk-color-gray-500;
-  cursor: pointer;
-  appearance: none;
-
-  @include bpk-hover {
-    color: $bpk-color-gray-700;
+.bpk-docs-chips-page {
+  &__chip-container {
+    display: flex;
+    margin: ($bpk-spacing-sm - $bpk-spacing-xs) -#{$bpk-spacing-xs} -#{$bpk-spacing-xs} -#{$bpk-spacing-xs};
+    flex-wrap: wrap;
   }
 
-  &:active {
-    color: $bpk-color-gray-900;
-  }
-
-  &__icon {
-    vertical-align: -#{$bpk-spacing-xs / 2};
-    fill: currentColor;
+  &__chip {
+    margin: $bpk-spacing-xs;
   }
 }

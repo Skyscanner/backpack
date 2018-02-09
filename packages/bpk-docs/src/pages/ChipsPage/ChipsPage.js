@@ -21,12 +21,14 @@
 import React, { Component } from 'react';
 import BpkChip from 'bpk-component-chip';
 import BpkButton from 'bpk-component-button';
-import { spacingSm } from 'bpk-tokens/tokens/base.es6';
-
+import { cssModules } from 'bpk-react-utils';
 import chipReadme from 'bpk-component-chip/readme.md';
 
-import DocsPageBuilder from './../../components/DocsPageBuilder';
+import STYLES from './ChipsPage.scss';
 import Paragraph from './../../components/Paragraph';
+import DocsPageBuilder from './../../components/DocsPageBuilder';
+
+const getClassName = cssModules(STYLES);
 
 type State = {
   chipNames: Array<string>,
@@ -39,26 +41,25 @@ class DefaultChipContainer extends Component<{}, State> {
 
     this.state = {
       chipNames: ['Example Chip 1', 'Example Chip 2'],
-      nextChipId: 3,
+      nextChipId: 3, // eslint-disable-line react/no-unused-state
     };
   }
 
   addRemovableChip = () => {
-    this.setState({
-      chipNames: [
-        ...this.state.chipNames,
-        `Example Chip ${this.state.nextChipId}`,
-      ],
-      nextChipId: this.state.nextChipId + 1,
-    });
+    this.setState(state => ({
+      chipNames: [...state.chipNames, `Example Chip ${state.nextChipId}`],
+      nextChipId: state.nextChipId + 1,
+    }));
   };
 
   removeChip = chipName => {
-    const newChipNames = this.state.chipNames.slice(0);
-    const indexToRemove = newChipNames.indexOf(chipName);
-    newChipNames.splice(indexToRemove, 1);
-    this.setState({
-      chipNames: newChipNames,
+    this.setState(state => {
+      const newChipNames = state.chipNames.slice(0);
+      const indexToRemove = newChipNames.indexOf(chipName);
+
+      newChipNames.splice(indexToRemove, 1);
+
+      return { chipNames: newChipNames };
     });
   };
 
@@ -68,23 +69,16 @@ class DefaultChipContainer extends Component<{}, State> {
         <BpkButton onClick={this.addRemovableChip}>
           Add removable chip!
         </BpkButton>
-        <div>
+        <div className={getClassName('bpk-docs-chips-page__chip-container')}>
           {this.state.chipNames.map((chipName, index) => (
-            <span
-              style={{
-                display: 'inline-block',
-                marginTop: spacingSm,
-                marginRight: spacingSm,
-              }}
-              key={index.toString()}
+            <BpkChip
+              closeLabel={`Close ${chipName}`}
+              onClose={() => this.removeChip(chipName)}
+              className={getClassName('bpk-docs-chips-page__chip')}
+              key={index} // eslint-disable-line react/no-array-index-key
             >
-              <BpkChip
-                onClose={() => this.removeChip(chipName)}
-                closeLabel={`Close ${chipName}`}
-              >
-                {chipName}
-              </BpkChip>
-            </span>
+              {chipName}
+            </BpkChip>
           ))}
         </div>
       </div>
