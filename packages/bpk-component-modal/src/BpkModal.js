@@ -93,7 +93,6 @@ const BpkModal = (props: Props) => {
   );
 };
 
-// isIphone, dialogRef and closeEvents are provided by the withScrim HOC
 const {
   isIphone,
   dialogRef,

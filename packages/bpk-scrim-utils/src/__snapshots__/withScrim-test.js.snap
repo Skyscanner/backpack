@@ -1,103 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BpkScrim render should render correctly 1`] = `
-<div>
+<div
+  className="bpk-scrim-content "
+>
   <div
     className="bpk-scrim"
-  />
-  <div
-    className="bpk-scrim-content "
     onMouseDown={[Function]}
-    onMouseMove={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
     onTouchStart={[Function]}
-  >
-    <TestComponent
-      closeEvents={
-        Object {
-          "onMouseDown": [Function],
-          "onMouseMove": [Function],
-          "onMouseUp": [Function],
-          "onTouchEnd": [Function],
-          "onTouchMove": [Function],
-          "onTouchStart": [Function],
-        }
-      }
-      closeOnScrimClick={true}
-      dialogRef={[Function]}
-      isIphone={false}
-      onClose={[Function]}
-    />
-  </div>
+  />
+  <TestComponent
+    closeOnScrimClick={true}
+    dialogRef={[Function]}
+    isIphone={false}
+    onClose={[Function]}
+  />
 </div>
 `;
 
 exports[`BpkScrim render should render correctly when is iPhone 1`] = `
-<div>
+<div
+  className="bpk-scrim-content bpk-scrim-content--iphone-fix "
+>
   <div
     className="bpk-scrim"
-  />
-  <div
-    className="bpk-scrim-content bpk-scrim-content--iphone-fix "
     onMouseDown={[Function]}
-    onMouseMove={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
     onTouchStart={[Function]}
-  >
-    <TestComponent
-      closeEvents={
-        Object {
-          "onMouseDown": [Function],
-          "onMouseMove": [Function],
-          "onMouseUp": [Function],
-          "onTouchEnd": [Function],
-          "onTouchMove": [Function],
-          "onTouchStart": [Function],
-        }
-      }
-      closeOnScrimClick={true}
-      dialogRef={[Function]}
-      isIphone={true}
-      onClose={[Function]}
-    />
-  </div>
+  />
+  <TestComponent
+    closeOnScrimClick={true}
+    dialogRef={[Function]}
+    isIphone={true}
+    onClose={[Function]}
+  />
 </div>
 `;
 
 exports[`BpkScrim render should render correctly with containerClassName 1`] = `
-<div>
+<div
+  className="bpk-scrim-content containerClassName"
+>
   <div
     className="bpk-scrim"
-  />
-  <div
-    className="bpk-scrim-content containerClassName"
     onMouseDown={[Function]}
-    onMouseMove={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
     onTouchStart={[Function]}
-  >
-    <TestComponent
-      closeEvents={
-        Object {
-          "onMouseDown": [Function],
-          "onMouseMove": [Function],
-          "onMouseUp": [Function],
-          "onTouchEnd": [Function],
-          "onTouchMove": [Function],
-          "onTouchStart": [Function],
-        }
-      }
-      closeOnScrimClick={true}
-      dialogRef={[Function]}
-      isIphone={false}
-      onClose={[Function]}
-    />
-  </div>
+  />
+  <TestComponent
+    closeOnScrimClick={true}
+    dialogRef={[Function]}
+    isIphone={false}
+    onClose={[Function]}
+  />
 </div>
 `;

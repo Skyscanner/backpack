@@ -6,59 +6,56 @@ exports[`BpkDrawer should render correctly in the given target if renderTarget i
 <div>
   <div>
     <div
+      class="bpk-scrim-content bpk-drawer__container"
       data-reactroot=""
     >
       <div
         class="bpk-scrim"
       />
-      <div
-        class="bpk-scrim-content bpk-drawer__container"
+      <section
+        aria-labelledby="bpk-drawer-heading-my-drawer"
+        class="bpk-drawer bpk-drawer--entering"
+        id="my-drawer"
+        role="dialog"
+        tabindex="-1"
       >
-        <section
-          aria-labelledby="bpk-drawer-heading-my-drawer"
-          class="bpk-drawer bpk-drawer--entering"
-          id="my-drawer"
-          role="dialog"
-          tabindex="-1"
+        <header
+          class="bpk-drawer__header"
         >
-          <header
-            class="bpk-drawer__header"
+          <h2
+            class="bpk-drawer__heading"
+            id="bpk-drawer-heading-my-drawer"
           >
-            <h2
-              class="bpk-drawer__heading"
-              id="bpk-drawer-heading-my-drawer"
-            >
-              Drawer title
-            </h2>
-            <!-- react-text: 7 -->
-             
-            <!-- /react-text -->
-            <button
-              aria-label="Close"
-              class="bpk-close-button bpk-drawer__close-button"
-              title="Close"
-              type="button"
-            >
-              <svg
-                class="bpk-close-button__icon"
-                height="18"
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.8 12l4.9-4.9c.4-.4.4-1 0-1.4l-1.4-1.4c-.4-.4-1-.4-1.4 0L12 9.2l-4.9-5c-.4-.4-1-.4-1.4 0L4.2 5.6c-.4.4-.4 1 0 1.4l5 5-4.9 4.9c-.4.4-.4 1 0 1.4l1.4 1.4c.4.4 1 .4 1.4 0l4.9-4.9 4.9 4.9c.4.4 1 .4 1.4 0l1.4-1.4c.4-.4.4-1 0-1.4L14.8 12z"
-                />
-              </svg>
-            </button>
-          </header>
-          <div
-            class="bpk-drawer__content"
+            Drawer title
+          </h2>
+          <!-- react-text: 6 -->
+           
+          <!-- /react-text -->
+          <button
+            aria-label="Close"
+            class="bpk-close-button bpk-drawer__close-button"
+            title="Close"
+            type="button"
           >
-            Drawer content
-          </div>
-        </section>
-      </div>
+            <svg
+              class="bpk-close-button__icon"
+              height="18"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.8 12l4.9-4.9c.4-.4.4-1 0-1.4l-1.4-1.4c-.4-.4-1-.4-1.4 0L12 9.2l-4.9-5c-.4-.4-1-.4-1.4 0L4.2 5.6c-.4.4-.4 1 0 1.4l5 5-4.9 4.9c-.4.4-.4 1 0 1.4l1.4 1.4c.4.4 1 .4 1.4 0l4.9-4.9 4.9 4.9c.4.4 1 .4 1.4 0l1.4-1.4c.4-.4.4-1 0-1.4L14.8 12z"
+              />
+            </svg>
+          </button>
+        </header>
+        <div
+          class="bpk-drawer__content"
+        >
+          Drawer content
+        </div>
+      </section>
     </div>
   </div>
 </div>
