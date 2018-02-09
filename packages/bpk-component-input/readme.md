@@ -23,6 +23,8 @@ export default () => (
     onChange={() => console.log('input changed!')}
     placeholder="Country, city or airport"
     clearButtonMode={CLEAR_BUTTON_MODES.whileEditing}
+    clearButtonLabel="Clear"
+    onClear={() => console.log('input cleared!')}
   />
 );
 ```
