@@ -200,3 +200,27 @@
 
   @return $string;
 }
+
+/// Increases the tappabel area of the element to the
+/// minimum required for touch devices.
+///
+/// @content
+///
+/// @example scss
+///   .selector {
+///     @include bpk-touch-area;
+///   }
+
+@mixin bpk-touch-tappable {
+  position: relative;
+  outline-offset: -#{$bpk-spacing-xxl - $bpk-spacing-lg};
+
+  &::before {
+    position: absolute;
+    top: calc((-#{$bpk-spacing-xxl} / 2) + 50%);
+    left: calc((-#{$bpk-spacing-xxl} / 2) + 50%);
+    content: '';
+    width: $bpk-spacing-xxl;
+    height: $bpk-spacing-xxl;
+  }
+}

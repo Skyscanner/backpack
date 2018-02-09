@@ -27,6 +27,8 @@
   cursor: pointer;
   appearance: none;
 
+  @include bpk-touch-tappable;
+
   @include bpk-hover {
     color: $bpk-color-gray-700;
   }
