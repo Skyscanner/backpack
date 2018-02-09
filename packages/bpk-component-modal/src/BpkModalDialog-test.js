@@ -24,19 +24,6 @@ import renderer from 'react-test-renderer';
 import BpkModalDialog from './BpkModalDialog';
 
 describe('BpkModalDialog', () => {
-  let closeEvents;
-
-  beforeAll(() => {
-    closeEvents = {
-      onTouchStart: jest.fn(),
-      onTouchMove: jest.fn(),
-      onTouchEnd: jest.fn(),
-      onMouseDown: jest.fn(),
-      onMouseMove: jest.fn(),
-      onMouseUp: jest.fn(),
-    };
-  });
-
   it('should render correctly', () => {
     const tree = renderer
       .create(
@@ -45,7 +32,6 @@ describe('BpkModalDialog', () => {
           title="Modal title"
           onClose={jest.fn()}
           closeLabel="Close"
-          closeEvents={closeEvents}
           dialogRef={jest.fn()}
           isIphone={false}
           fullScreenOnMobile
@@ -67,7 +53,6 @@ describe('BpkModalDialog', () => {
           title="Modal title"
           onClose={jest.fn()}
           closeLabel="Close"
-          closeEvents={closeEvents}
           dialogRef={jest.fn()}
           isIphone={false}
           fullScreenOnMobile
@@ -90,7 +75,6 @@ describe('BpkModalDialog', () => {
           title="Modal title"
           onClose={jest.fn()}
           closeLabel="Close"
-          closeEvents={closeEvents}
           dialogRef={jest.fn()}
           isIphone={false}
           fullScreenOnMobile
@@ -113,7 +97,6 @@ describe('BpkModalDialog', () => {
           title="Modal title"
           onClose={jest.fn()}
           closeLabel="Close"
-          closeEvents={closeEvents}
           dialogRef={jest.fn()}
           isIphone={false}
           fullScreenOnMobile
@@ -134,7 +117,6 @@ describe('BpkModalDialog', () => {
           title="Modal title"
           onClose={jest.fn()}
           closeLabel="Close"
-          closeEvents={closeEvents}
           dialogRef={jest.fn()}
           isIphone
           fullScreenOnMobile
@@ -155,7 +137,6 @@ describe('BpkModalDialog', () => {
           title="Modal title"
           onClose={jest.fn()}
           closeLabel="Close"
-          closeEvents={closeEvents}
           dialogRef={jest.fn()}
           fullScreenOnMobile={false}
           fullScreen={false}
@@ -176,7 +157,6 @@ describe('BpkModalDialog', () => {
           title="Modal title"
           onClose={jest.fn()}
           closeLabel="Close"
-          closeEvents={closeEvents}
           dialogRef={jest.fn()}
           fullScreenOnMobile={false}
           fullScreen

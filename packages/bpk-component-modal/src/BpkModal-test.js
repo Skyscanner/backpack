@@ -24,19 +24,6 @@ import renderer from 'react-test-renderer';
 import BpkModal from './BpkModal';
 
 describe('BpkModal', () => {
-  let closeEvents;
-
-  beforeAll(() => {
-    closeEvents = {
-      onTouchStart: jest.fn(),
-      onTouchMove: jest.fn(),
-      onTouchEnd: jest.fn(),
-      onMouseDown: jest.fn(),
-      onMouseMove: jest.fn(),
-      onMouseUp: jest.fn(),
-    };
-  });
-
   it('should render correctly in the given target if renderTarget is supplied', () => {
     const customRenderTarget = document.createElement('div');
 
@@ -47,7 +34,6 @@ describe('BpkModal', () => {
           title="Modal title"
           onClose={jest.fn()}
           closeLabel="Close"
-          closeEvents={closeEvents}
           dialogRef={jest.fn()}
           isIphone={false}
           getApplicationElement={jest.fn()}

@@ -39,14 +39,7 @@ const withScrim = WrappedComponent => {
     constructor() {
       super();
 
-      this.onContentMouseDown = this.onContentMouseDown.bind(this);
-      this.onContentMouseUp = this.onContentMouseUp.bind(this);
-      this.onDocumentMove = this.onDocumentMove.bind(this);
-      this.onOverlayMouseDown = this.onOverlayMouseDown.bind(this);
-      this.onOverlayMouseUp = this.onOverlayMouseUp.bind(this);
       this.dialogRef = this.dialogRef.bind(this);
-
-      this.shouldClose = false;
     }
 
     componentDidMount() {
@@ -90,28 +83,9 @@ const withScrim = WrappedComponent => {
       focusStore.restoreFocus();
     }
 
-    onContentMouseDown(e) {
-      e.stopPropagation();
-      this.shouldClose = false;
-    }
-
-    onContentMouseUp() {
-      this.shouldClose = false;
-    }
-
-    onOverlayMouseDown() {
-      this.shouldClose = true;
-    }
-
-    onOverlayMouseUp() {
-      if (this.props.closeOnScrimClick && this.shouldClose) {
-        this.props.onClose();
-      }
-    }
-
-    onDocumentMove() {
-      this.shouldClose = false;
-    }
+    onClose = () => {
+      this.props.onClose();
+    };
 
     dialogRef(ref) {
       this.dialogElement = ref;
@@ -131,35 +105,16 @@ const withScrim = WrappedComponent => {
       }
       classNames.push(containerClassName);
 
-      const closeEvents = {
-        onTouchStart: this.onContentMouseDown,
-        onTouchMove: this.onDocumentMove,
-        onTouchEnd: this.onContentMouseUp,
-        onMouseDown: this.onContentMouseDown,
-        onMouseMove: this.onDocumentMove,
-        onMouseUp: this.onContentMouseUp,
-      };
-
       return (
         /* eslint-disable jsx-a11y/no-static-element-interactions */
-        <div>
-          <BpkScrim />
-          <div
-            className={classNames.join(' ')}
-            onTouchStart={this.onOverlayMouseDown}
-            onTouchMove={this.onDocumentMove}
-            onTouchEnd={this.onOverlayMouseUp}
-            onMouseDown={this.onOverlayMouseDown}
-            onMouseMove={this.onDocumentMove}
-            onMouseUp={this.onOverlayMouseUp}
-          >
-            <WrappedComponent
-              {...rest}
-              isIphone={isIphone}
-              dialogRef={this.dialogRef}
-              closeEvents={closeEvents}
-            />
-          </div>
+        /* eslint-disable jsx-a11y/click-events-have-key-events */
+        <div className={classNames.join(' ')}>
+          <BpkScrim onClose={this.onClose} />
+          <WrappedComponent
+            {...rest}
+            isIphone={isIphone}
+            dialogRef={this.dialogRef}
+          />
         </div>
         /* eslint-enable */
       );

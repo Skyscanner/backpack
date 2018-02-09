@@ -17,20 +17,36 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-scrim.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkScrim = () => (
+const BpkScrim = props => (
+  /* eslint-disable jsx-a11y/no-static-element-interactions */
+  /* eslint-disable jsx-a11y/click-events-have-key-events */
   <TransitionInitialMount
     appearClassName={getClassName('bpk-scrim--appear')}
     appearActiveClassName={getClassName('bpk-scrim--appear-active')}
     transitionTimeout={200}
   >
-    <div className={getClassName('bpk-scrim')} />
+    <div
+      className={getClassName('bpk-scrim')}
+      onMouseDown={props.onClose}
+      onTouchStart={props.onClose}
+    />
   </TransitionInitialMount>
+  /* eslint-enable */
 );
+
+BpkScrim.propTypes = {
+  onClose: PropTypes.func,
+};
+
+BpkScrim.defaultProps = {
+  onClose: null,
+};
 
 export default BpkScrim;

@@ -71,7 +71,6 @@ const BpkDrawerContent = props => {
             getClassName(`bpk-drawer--${status}`),
           ].join(' ')}
           ref={props.dialogRef}
-          {...props.closeEvents}
         >
           <header className={getClassName('bpk-drawer__header')}>
             <h2 id={headingId} className={headerClassNames.join(' ')}>
@@ -99,14 +98,6 @@ const BpkDrawerContent = props => {
 
 BpkDrawerContent.propTypes = {
   dialogRef: PropTypes.func.isRequired,
-  closeEvents: PropTypes.shape({
-    onTouchStart: PropTypes.func,
-    onTouchMove: PropTypes.func,
-    onTouchEnd: PropTypes.func,
-    onMouseDown: PropTypes.func,
-    onMouseMove: PropTypes.func,
-    onMouseUp: PropTypes.func,
-  }).isRequired,
   isDrawerShown: PropTypes.bool,
   onCloseAnimationComplete: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,

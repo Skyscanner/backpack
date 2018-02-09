@@ -36,14 +36,6 @@ const ScrimBpkModalDialog = withScrim(BpkModalDialog);
 type ScrimProps = {
   isIphone: boolean,
   dialogRef: () => ?HTMLElement,
-  closeEvents: {
-    onTouchStart: (event: SyntheticEvent<>) => void,
-    onTouchMove: (event: SyntheticEvent<>) => void,
-    onTouchEnd: (event: SyntheticEvent<>) => void,
-    onMouseDown: (event: SyntheticEvent<>) => void,
-    onMouseMove: (event: SyntheticEvent<>) => void,
-    onMouseUp: (event: SyntheticEvent<>) => void,
-  },
 };
 
 export type Props = {
@@ -105,7 +97,6 @@ const BpkModal = (props: Props) => {
 const {
   isIphone,
   dialogRef,
-  closeEvents,
   ...modalDialogPropTypes
 } = BpkModalDialog.propTypes;
 
