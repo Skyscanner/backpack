@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+_Nothing yet.._
+
+## 2018-02-09 - `className` support for RTL and grid toggles
+
 **Added:**
 - bpk-component-grid-toggle: 1.0.46 => 1.1.0
 - bpk-component-rtl-toggle: 1.0.46 => 1.1.0
