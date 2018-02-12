@@ -39,6 +39,7 @@ const isPrExternal = !BACKPACK_SQUAD_MEMBERS.includes(author);
 const createdFiles = danger.git.created_files;
 const modifiedFiles = danger.git.modified_files;
 const fileChanges = [...modifiedFiles, ...createdFiles];
+const declaredTrivial = danger.github.pr.title.includes('#trivial');
 
 // Be nice to our neighbours.
 if (isPrExternal) {
@@ -75,7 +76,7 @@ const packagesModified = fileChanges.some(
       filePath.startsWith('native/packages/')) &&
     !filePath.startsWith('packages/bpk-docs/'),
 );
-if (packagesModified && !changelogModified) {
+if (packagesModified && !changelogModified && !declaredTrivial) {
   warn("One or more packages have changed, but `changelog.md` wasn't updated.");
 }
 
