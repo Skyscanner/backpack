@@ -65,7 +65,7 @@
     "@storybook/addon-actions": "^3.3.9",
     "@storybook/addon-links": "^3.3.9",
     "@storybook/react": "^3.3.9",
-    "autoprefixer": "^7.2.5",
+    "autoprefixer": "^8.0.0",
     "babel-core": "^6.21.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^21.2.0",
