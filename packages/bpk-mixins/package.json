@@ -1,6 +1,6 @@
 {
   "name": "bpk-mixins",
-  "version": "17.3.3",
+  "version": "17.3.4",
   "description": "Sass mixins and variables for Backpack.",
   "main": "_index.scss",
   "repository": {
