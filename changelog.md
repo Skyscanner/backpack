@@ -4,6 +4,18 @@
 
 _Nothing yet..._
 
+**Fixed:**
+
+- bpk-component-banner-alert: 2.0.6 => 2.0.7
+- bpk-component-chip: 2.0.0 => 2.0.1
+- bpk-component-close-button: 1.0.47 => 1.0.48
+- bpk-component-datepicker: 8.0.7 => 8.0.8
+- bpk-component-dialog: 1.0.1 => 1.0.2
+- bpk-component-drawer: 1.1.13 => 1.1.14
+- bpk-component-modal: 1.6.1 => 1.6.2
+- bpk-component-popover: 2.0.6 => 2.0.7
+  - Increased close button tap area for better touch support.
+
 ## 2018-02-09 - Fix for close button alignment in various components
 
 **Fixed:**
