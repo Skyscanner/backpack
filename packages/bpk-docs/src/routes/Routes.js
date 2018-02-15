@@ -50,7 +50,13 @@ import SpacingsPage from './../pages/SpacingsPage';
 import AnimationPage from './../pages/AnimationPage';
 import ZIndexesPage from './../pages/ZIndexesPage';
 
-import TypographyPage from './../pages/TypographyPage';
+import TextPage from './../pages/TextPage';
+import LinksPage from './../pages/LinksPage';
+import ListsPage from './../pages/ListsPage';
+import DescriptionListsPage from './../pages/DescriptionListsPage';
+import TablesPage from './../pages/TablesPage';
+import BlockquotesPage from './../pages/BlockquotesPage';
+import CodePage from './../pages/CodePage';
 import ButtonsPage from './../pages/ButtonsPage';
 import IconsPage from './../pages/IconsPage';
 import SpinnersPage from './../pages/SpinnersPage';
@@ -137,7 +143,16 @@ const Routes = (
       <IndexRedirect to={ROUTES.WEB_COMPONENTS} />
       <Route path={ROUTES.WEB_COMPONENTS}>
         <IndexRedirect to={ROUTES.ACCORDIONS} />
-        <Route path={ROUTES.TYPOGRAPHY} component={TypographyPage} />
+        <Route path={ROUTES.TEXT} component={TextPage} />
+        <Route path={ROUTES.LINKS} component={LinksPage} />
+        <Route path={ROUTES.LISTS} component={ListsPage} />
+        <Route
+          path={ROUTES.DESCRIPTION_LISTS}
+          component={DescriptionListsPage}
+        />
+        <Route path={ROUTES.TABLES} component={TablesPage} />
+        <Route path={ROUTES.BLOCKQUOTES} component={BlockquotesPage} />
+        <Route path={ROUTES.CODE} component={CodePage} />
         <Route path={ROUTES.BUTTONS} component={ButtonsPage} />
         <Route path={ROUTES.ICONS} component={IconsPage} />
         <Route path={ROUTES.SPINNERS} component={SpinnersPage} />

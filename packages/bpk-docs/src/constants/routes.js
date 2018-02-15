@@ -41,7 +41,13 @@ export const Z_INDEXES = '/tokens/z-indexes';
 
 // components/web/
 export const WEB_COMPONENTS = '/components/web';
-export const TYPOGRAPHY = '/components/web/typography';
+export const TEXT = '/components/web/text';
+export const LINKS = '/components/web/links';
+export const LISTS = '/components/web/lists';
+export const DESCRIPTION_LISTS = '/components/web/description-lists';
+export const TABLES = '/components/web/tables';
+export const BLOCKQUOTES = '/components/web/blockquotes';
+export const CODE = '/components/web/code';
 export const BUTTONS = '/components/web/buttons';
 export const ICONS = '/components/web/icons';
 export const SPINNERS = '/components/web/spinners';

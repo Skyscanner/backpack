@@ -28,7 +28,21 @@ const links = [
     category: 'Web components',
     sort: true,
     links: [
-      { id: 'TYPOGRAPHY', route: routes.TYPOGRAPHY, children: 'Typography' },
+      { id: 'TEXT', route: routes.TEXT, children: 'Text' },
+      { id: 'LINKS', route: routes.LINKS, children: 'Links' },
+      { id: 'LISTS', route: routes.LISTS, children: 'Lists' },
+      {
+        id: 'DESCRIPTION_LISTS',
+        route: routes.DESCRIPTION_LISTS,
+        children: 'Description Lists',
+      },
+      { id: 'TABLES', route: routes.TABLES, children: 'Tables' },
+      {
+        id: 'BLOCKQUOTES',
+        route: routes.BLOCKQUOTES,
+        children: 'Blockquotes',
+      },
+      { id: 'CODE', route: routes.CODE, children: 'Code' },
       { id: 'BUTTONS', route: routes.BUTTONS, children: 'Buttons' },
       { id: 'ICONS', route: routes.ICONS, children: 'Icons' },
       { id: 'SPINNERS', route: routes.SPINNERS, children: 'Spinners' },
