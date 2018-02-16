@@ -18,8 +18,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View, ViewPropTypes } from 'react-native';
 
 import {
   borderRadiusSm,
@@ -177,6 +176,7 @@ const BpkBannerAlert = props => {
     animateOnEnter,
     animateOnLeave,
     children,
+    bannerStyle,
     ...rest
   } = props;
 
@@ -191,6 +191,9 @@ const BpkBannerAlert = props => {
   outerStyle.push(outerStyleForType);
   if (dismissable) {
     contentPaddedStyle.push(styles.bannerContainerPaddedDismissable);
+  }
+  if (bannerStyle) {
+    outerStyle.push(bannerStyle);
   }
 
   const banner = (
@@ -213,7 +216,6 @@ const BpkBannerAlert = props => {
     <AnimateAndFade
       animateOnEnter={animateOnEnter}
       animateOnLeave={dismissable || animateOnLeave}
-      style={outerStyle}
       show={show}
       {...rest}
     >
@@ -273,6 +275,7 @@ BpkBannerAlert.propTypes = {
   onDismiss: PropTypes.func,
   onToggleExpanded: PropTypes.func,
   show: PropTypes.bool,
+  bannerStyle: ViewPropTypes.style,
   toggleExpandedButtonLabel: toggleExpandedButtonLabelPropType,
 };
 
@@ -280,6 +283,7 @@ BpkBannerAlert.defaultProps = {
   animateOnEnter: false,
   animateOnLeave: false,
   children: null,
+  bannerStyle: null,
   dismissable: false,
   dismissButtonLabel: null,
   expanded: false,

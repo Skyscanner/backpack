@@ -540,18 +540,7 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(178, 174, 189)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -679,18 +668,7 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(0, 215, 117)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -818,18 +796,7 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(255, 187, 0)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -957,18 +924,7 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(255, 84, 82)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -1101,18 +1057,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
     animateOnLeave={true}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(178, 174, 189)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -1316,18 +1261,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
     animateOnLeave={true}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(0, 215, 117)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -1531,18 +1465,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
     animateOnLeave={true}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(255, 187, 0)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -1746,18 +1669,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
     animateOnLeave={true}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(255, 84, 82)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -1966,18 +1878,7 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(178, 174, 189)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -2175,18 +2076,7 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(0, 215, 117)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -2384,18 +2274,7 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(255, 187, 0)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -2593,18 +2472,7 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(255, 84, 82)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -2807,18 +2675,7 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(178, 174, 189)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -3063,18 +2920,7 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(0, 215, 117)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -3319,18 +3165,7 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(255, 187, 0)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -3575,18 +3410,7 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(255, 84, 82)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -3836,18 +3660,7 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(178, 174, 189)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -4092,18 +3905,7 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(0, 215, 117)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -4348,18 +4150,7 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(255, 187, 0)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}
@@ -4604,18 +4395,7 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
     animateOnLeave={false}
     duration={200}
     show={true}
-    style={
-      Array [
-        Object {
-          "borderRadius": 4,
-          "borderWidth": 1,
-          "overflow": "hidden",
-        },
-        Object {
-          "borderColor": "rgb(255, 84, 82)",
-        },
-      ]
-    }
+    style={null}
   >
     <View
       collapsable={undefined}

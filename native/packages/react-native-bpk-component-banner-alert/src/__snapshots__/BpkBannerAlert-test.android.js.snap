@@ -35,10 +35,12 @@ exports[`Android BpkBannerAlert should accept user-stlying 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -151,10 +153,12 @@ exports[`Android BpkBannerAlert should accept user-stlying 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -267,10 +271,12 @@ exports[`Android BpkBannerAlert should accept user-stlying 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -383,10 +389,12 @@ exports[`Android BpkBannerAlert should accept user-stlying 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -500,10 +508,12 @@ exports[`Android BpkBannerAlert should render correctly 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -612,10 +622,12 @@ exports[`Android BpkBannerAlert should render correctly 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -724,10 +736,12 @@ exports[`Android BpkBannerAlert should render correctly 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -836,10 +850,12 @@ exports[`Android BpkBannerAlert should render correctly 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -953,10 +969,12 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -1114,10 +1132,12 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -1275,10 +1295,12 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -1436,10 +1458,12 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -1615,10 +1639,12 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
             testID={undefined}
           >
@@ -1776,10 +1802,12 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
             testID={undefined}
           >
@@ -1937,10 +1965,12 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
             testID={undefined}
           >
@@ -2098,10 +2128,12 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
             testID={undefined}
           >
@@ -2264,10 +2296,12 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
             testID={undefined}
           >
@@ -2468,10 +2502,12 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
             testID={undefined}
           >
@@ -2672,10 +2708,12 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
             testID={undefined}
           >
@@ -2876,10 +2914,12 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
             testID={undefined}
           >
@@ -3085,10 +3125,12 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
             testID={undefined}
           >
@@ -3289,10 +3331,12 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
             testID={undefined}
           >
@@ -3493,10 +3537,12 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
             testID={undefined}
           >
@@ -3697,10 +3743,12 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
             testID={undefined}
           >
@@ -3897,10 +3945,12 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -4013,10 +4063,12 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -4129,10 +4181,12 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -4245,10 +4299,12 @@ exports[`Android BpkBannerAlert should render correctly when not shown 1`] = `
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -4368,10 +4424,12 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -4484,10 +4542,12 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -4600,10 +4660,12 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View
@@ -4716,10 +4778,12 @@ exports[`Android BpkBannerAlert should render correctly with animateOnLeave 1`] 
         >
           <View
             style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                },
+              ]
             }
           >
             <View

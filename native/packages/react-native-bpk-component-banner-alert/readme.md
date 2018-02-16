@@ -104,3 +104,10 @@ export default class App extends Component {
 | onToggleExpanded          | func               | false    | null          |
 | show                      | bool               | false    | true          |
 | toggleExpandedButtonLabel | string             | false    | null          |
+| bannerStyle               | style              | false    | null          |
+
+### Prop Details
+
+#### bannerStyle
+
+These styles will be applied to the banner alerts outer `View` container, but still within it's animation container. This is useful for maintaining smooth animations whilst applying top/bottom margin.

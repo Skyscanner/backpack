@@ -35,6 +35,9 @@ const styles = StyleSheet.create({
   bannerAlert: {
     marginBottom: spacingBase,
   },
+  button: {
+    marginBottom: spacingBase,
+  },
   child: {},
 });
 
@@ -117,13 +120,13 @@ class BpkBannerAlertFadeDemo extends React.Component {
         <BpkButton
           title="Add banner alert!"
           onPress={this.addBannerAlert}
-          style={styles.bannerAlert}
+          style={styles.button}
         />
         <View>
           {[...Array(this.state.bannerAlertCount)].map((e, i) => (
             <DismissableBannerAlert
               key={i.toString()}
-              style={this.props.style}
+              bannerStyle={this.props.bannerStyle}
               message={this.props.message}
               type={this.props.type}
               animateOnEnter
@@ -140,39 +143,39 @@ class BpkBannerAlertFadeDemo extends React.Component {
 BpkBannerAlertFadeDemo.propTypes = {
   dismissButtonLabel: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
-  style: ViewPropTypes.style,
+  bannerStyle: ViewPropTypes.style,
   type: PropTypes.string.isRequired,
 };
 
 BpkBannerAlertFadeDemo.defaultProps = {
-  style: null,
+  bannerStyle: null,
 };
 
 storiesOf('BpkBannerAlert', module)
   .add('docs:banner-alerts', () => (
     <View>
       <BpkBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.NEUTRAL}
         message="Neutral alert."
       />
       <BpkBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
         message="Successful alert."
       />
       <DismissableBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
         message="Warn alert with dismiss option."
         dismissButtonLabel="Dismiss"
       />
       <ExpandableBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="Error alert with more information."
       >
-        <BpkText textStyle="sm" style={styles.child}>
+        <BpkText textStyle="sm" bannerStyle={styles.child}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
           sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
           erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,
@@ -185,22 +188,22 @@ storiesOf('BpkBannerAlert', module)
   .add('docs:default', () => (
     <View>
       <BpkBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.NEUTRAL}
         message="Neutral alert."
       />
       <BpkBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
         message="Successful alert."
       />
       <BpkBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
         message="Warn alert."
       />
       <BpkBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="Error alert."
       />
@@ -209,25 +212,25 @@ storiesOf('BpkBannerAlert', module)
   .add('docs:dismissable', () => (
     <View>
       <DismissableBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.NEUTRAL}
         message="Neutral alert with dismiss option."
         dismissButtonLabel="Dismiss"
       />
       <DismissableBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
         message="Successful alert with dismiss option."
         dismissButtonLabel="Dismiss"
       />
       <DismissableBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
         message="Warn alert with dismiss option."
         dismissButtonLabel="Dismiss"
       />
       <DismissableBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="Error alert with dismiss option."
         dismissButtonLabel="Dismiss"
@@ -237,11 +240,11 @@ storiesOf('BpkBannerAlert', module)
   .add('docs:expandable', () => (
     <View>
       <ExpandableBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.NEUTRAL}
         message="Neutral alert with more information."
       >
-        <BpkText textStyle="sm" style={styles.child}>
+        <BpkText textStyle="sm" bannerStyle={styles.child}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
           sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
           erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,
@@ -250,11 +253,11 @@ storiesOf('BpkBannerAlert', module)
         </BpkText>
       </ExpandableBannerAlert>
       <ExpandableBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
         message="Successful alert with more information."
       >
-        <BpkText textStyle="sm" style={styles.child}>
+        <BpkText textStyle="sm" bannerStyle={styles.child}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
           sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
           erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,
@@ -263,11 +266,11 @@ storiesOf('BpkBannerAlert', module)
         </BpkText>
       </ExpandableBannerAlert>
       <ExpandableBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.WARN}
         message="Warn alert with more information."
       >
-        <BpkText textStyle="sm" style={styles.child}>
+        <BpkText textStyle="sm" bannerStyle={styles.child}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
           sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
           erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,
@@ -276,11 +279,11 @@ storiesOf('BpkBannerAlert', module)
         </BpkText>
       </ExpandableBannerAlert>
       <ExpandableBannerAlert
-        style={styles.bannerAlert}
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.ERROR}
         message="Error alert with more information."
       >
-        <BpkText textStyle="sm" style={styles.child}>
+        <BpkText textStyle="sm" bannerStyle={styles.child}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
           sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
           erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,
@@ -292,7 +295,7 @@ storiesOf('BpkBannerAlert', module)
   ))
   .add('docs:fade-in', () => (
     <BpkBannerAlertFadeDemo
-      style={styles.bannerAlert}
+      bannerStyle={styles.bannerAlert}
       message="Banner alert with dismiss option"
       dismissButtonLabel="Dismiss"
       type={ALERT_TYPES.SUCCESS}
@@ -306,30 +309,30 @@ storiesOf('BpkBannerAlert', module)
     return (
       <View>
         <BpkBannerAlert
-          style={styles.bannerAlert}
+          bannerStyle={styles.bannerAlert}
           type={ALERT_TYPES.NEUTRAL}
           message={message}
         />
         <BpkBannerAlert
-          style={styles.bannerAlert}
+          bannerStyle={styles.bannerAlert}
           type={ALERT_TYPES.SUCCESS}
           message={message}
         />
         <BpkBannerAlert
-          style={styles.bannerAlert}
+          bannerStyle={styles.bannerAlert}
           type={ALERT_TYPES.WARN}
           message={message}
           dismissButtonLabel="Dismiss"
           dismissable
         />
         <BpkBannerAlert
-          style={styles.bannerAlert}
+          bannerStyle={styles.bannerAlert}
           type={ALERT_TYPES.ERROR}
           message={message}
           toggleExpandedButtonLabel="Collapse"
           expanded
         >
-          <BpkText textStyle="sm" style={styles.child}>
+          <BpkText textStyle="sm" bannerStyle={styles.child}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
             sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
             erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,

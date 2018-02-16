@@ -171,16 +171,23 @@ const BpkBannerAlert = props => {
     toggleExpandedButtonLabel,
     show,
     style: userStyle,
+    bannerStyle,
     animateOnEnter,
     animateOnLeave,
     children,
     ...rest
   } = props;
+
   const expandable = children !== null;
   const { iconSource, iconStyle } = ALERT_TYPE_STYLES[type] || {};
 
+  const outerStyle = [styles.flexRow];
+  if (bannerStyle) {
+    outerStyle.push(bannerStyle);
+  }
+
   const mainContent = (
-    <View style={styles.flexRow}>
+    <View style={outerStyle}>
       <View style={styles.mainContainer}>
         <View style={styles.flexRow}>
           <BpkIcon style={[styles.icon, iconStyle]} icon={iconSource} small />
@@ -243,6 +250,7 @@ BpkBannerAlert.propTypes = {
   onToggleExpanded: PropTypes.func,
   show: PropTypes.bool,
   style: ViewPropTypes.style,
+  bannerStyle: ViewPropTypes.style,
   toggleExpandedButtonLabel: toggleExpandedButtonLabelPropType,
 };
 
@@ -271,6 +279,7 @@ BpkBannerAlert.defaultProps = {
   onToggleExpanded: null,
   show: true,
   style: null,
+  bannerStyle: null,
   toggleExpandedButtonLabel: null,
 };
 
