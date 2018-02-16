@@ -1,10 +1,13 @@
 # Backpack changelog
 
 ## Unreleased
+_Nothing yet!_
+
+## 2018-02-16 - Fixed mouse-clicks not always closing modals and dialogs
 
 **Fixed:**
-- bpk-component-modal:
-- bpk-component-dialog:
+- bpk-component-modal: 1.6.3 => 1.6.4
+- bpk-component-dialog: 1.0.3 => 1.0.4
   - A fix has been put in place to ensure modals and dialogs close when the user taps / clicks on the scrim.
 
 ## 2018-02-12 - Increased tap area for close button
