@@ -26,19 +26,6 @@ jest.mock('react-transition-group/Transition', () => ({ children }) =>
 );
 
 describe('BpkDrawerContent', () => {
-  let closeEvents;
-
-  beforeAll(() => {
-    closeEvents = {
-      onTouchStart: jest.fn(),
-      onTouchMove: jest.fn(),
-      onTouchEnd: jest.fn(),
-      onMouseDown: jest.fn(),
-      onMouseMove: jest.fn(),
-      onMouseUp: jest.fn(),
-    };
-  });
-
   it('should render correctly', () => {
     const tree = renderer
       .create(
@@ -48,7 +35,6 @@ describe('BpkDrawerContent', () => {
           onClose={jest.fn()}
           onCloseAnimationComplete={jest.fn()}
           closeLabel="Close"
-          closeEvents={closeEvents}
           dialogRef={jest.fn()}
           isIphone={false}
         >
@@ -69,7 +55,6 @@ describe('BpkDrawerContent', () => {
           onClose={jest.fn()}
           onCloseAnimationComplete={jest.fn()}
           closeLabel="Close"
-          closeEvents={closeEvents}
           dialogRef={jest.fn()}
           isIphone={false}
         >
@@ -90,7 +75,6 @@ describe('BpkDrawerContent', () => {
           onClose={jest.fn()}
           onCloseAnimationComplete={jest.fn()}
           closeLabel="Close"
-          closeEvents={closeEvents}
           dialogRef={jest.fn()}
           isIphone={false}
         >
@@ -110,7 +94,6 @@ describe('BpkDrawerContent', () => {
           onClose={jest.fn()}
           onCloseAnimationComplete={jest.fn()}
           closeLabel="Close"
-          closeEvents={closeEvents}
           dialogRef={jest.fn()}
           hideTitle
         >

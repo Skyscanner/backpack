@@ -6,59 +6,56 @@ exports[`BpkModal should render correctly in the given target if renderTarget is
 <div>
   <div>
     <div
+      class="bpk-scrim-content bpk-modal__container bpk-modal__container--full-screen-mobile"
       data-reactroot=""
     >
       <div
         class="bpk-scrim"
       />
-      <div
-        class="bpk-scrim-content bpk-modal__container bpk-modal__container--full-screen-mobile"
+      <section
+        aria-labelledby="bpk-modal-heading-my-modal"
+        class="bpk-modal bpk-modal--full-screen-mobile"
+        id="my-modal"
+        role="dialog"
+        tabindex="-1"
       >
-        <section
-          aria-labelledby="bpk-modal-heading-my-modal"
-          class="bpk-modal bpk-modal--full-screen-mobile"
-          id="my-modal"
-          role="dialog"
-          tabindex="-1"
+        <header
+          class="bpk-modal__header"
         >
-          <header
-            class="bpk-modal__header"
+          <h2
+            class="bpk-modal__heading"
+            id="bpk-modal-heading-my-modal"
           >
-            <h2
-              class="bpk-modal__heading"
-              id="bpk-modal-heading-my-modal"
-            >
-              Modal title
-            </h2>
-            <!-- react-text: 7 -->
-             
-            <!-- /react-text -->
-            <button
-              aria-label="Close"
-              class="bpk-close-button bpk-modal__close-button"
-              title="Close"
-              type="button"
-            >
-              <svg
-                class="bpk-close-button__icon"
-                height="18"
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.8 12l4.9-4.9c.4-.4.4-1 0-1.4l-1.4-1.4c-.4-.4-1-.4-1.4 0L12 9.2l-4.9-5c-.4-.4-1-.4-1.4 0L4.2 5.6c-.4.4-.4 1 0 1.4l5 5-4.9 4.9c-.4.4-.4 1 0 1.4l1.4 1.4c.4.4 1 .4 1.4 0l4.9-4.9 4.9 4.9c.4.4 1 .4 1.4 0l1.4-1.4c.4-.4.4-1 0-1.4L14.8 12z"
-                />
-              </svg>
-            </button>
-          </header>
-          <div
-            class="bpk-modal__content"
+            Modal title
+          </h2>
+          <!-- react-text: 6 -->
+           
+          <!-- /react-text -->
+          <button
+            aria-label="Close"
+            class="bpk-close-button bpk-modal__close-button"
+            title="Close"
+            type="button"
           >
-            Modal content inside a custom target
-          </div>
-        </section>
-      </div>
+            <svg
+              class="bpk-close-button__icon"
+              height="18"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.8 12l4.9-4.9c.4-.4.4-1 0-1.4l-1.4-1.4c-.4-.4-1-.4-1.4 0L12 9.2l-4.9-5c-.4-.4-1-.4-1.4 0L4.2 5.6c-.4.4-.4 1 0 1.4l5 5-4.9 4.9c-.4.4-.4 1 0 1.4l1.4 1.4c.4.4 1 .4 1.4 0l4.9-4.9 4.9 4.9c.4.4 1 .4 1.4 0l1.4-1.4c.4-.4.4-1 0-1.4L14.8 12z"
+              />
+            </svg>
+          </button>
+        </header>
+        <div
+          class="bpk-modal__content"
+        >
+          Modal content inside a custom target
+        </div>
+      </section>
     </div>
   </div>
 </div>

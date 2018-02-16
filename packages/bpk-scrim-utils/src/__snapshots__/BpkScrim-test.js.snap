@@ -3,5 +3,7 @@
 exports[`BpkScrim should render correctly 1`] = `
 <div
   className="bpk-scrim"
+  onMouseDown={null}
+  onTouchStart={null}
 />
 `;

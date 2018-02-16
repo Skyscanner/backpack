@@ -44,14 +44,6 @@ export type Props = {
   title: ?string,
   closeLabel: ?string,
   closeText: ?string,
-  closeEvents: {
-    onTouchStart: (event: SyntheticEvent<>) => void,
-    onTouchMove: (event: SyntheticEvent<>) => void,
-    onTouchEnd: (event: SyntheticEvent<>) => void,
-    onMouseDown: (event: SyntheticEvent<>) => void,
-    onMouseMove: (event: SyntheticEvent<>) => void,
-    onMouseUp: (event: SyntheticEvent<>) => void,
-  },
 };
 
 const BpkModalDialog = (props: Props) => {
@@ -89,7 +81,6 @@ const BpkModalDialog = (props: Props) => {
         aria-labelledby={headingId}
         className={classNames.join(' ')}
         ref={props.dialogRef}
-        {...props.closeEvents}
       >
         {props.showHeader && (
           <header className={getClassName('bpk-modal__header')}>
@@ -124,14 +115,6 @@ BpkModalDialog.propTypes = {
   children: PropTypes.node.isRequired,
   isIphone: PropTypes.bool.isRequired,
   dialogRef: PropTypes.func.isRequired,
-  closeEvents: PropTypes.shape({
-    onTouchStart: PropTypes.func,
-    onTouchMove: PropTypes.func,
-    onTouchEnd: PropTypes.func,
-    onMouseDown: PropTypes.func,
-    onMouseMove: PropTypes.func,
-    onMouseUp: PropTypes.func,
-  }).isRequired,
   title: titlePropType,
   onClose: onClosePropType,
   className: PropTypes.string,

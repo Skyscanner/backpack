@@ -2,7 +2,10 @@
 
 ## Unreleased
 
-_Nothing yet..._
+**Fixed:**
+- bpk-component-modal:
+- bpk-component-dialog:
+  - A fix has been put in place to ensure modals and dialogs close when the user taps / clicks on the scrim.
 
 ## 2018-02-12 - Increased tap area for close button
 
