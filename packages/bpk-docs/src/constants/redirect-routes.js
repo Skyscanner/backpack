@@ -30,7 +30,7 @@ export default {
   '/components/bonds/animation': ROUTES.ANIMATION,
   '/tokens/layout': ROUTES.SPACINGS,
   '/components/atoms': ROUTES.WEB_COMPONENTS,
-  '/components/atoms/typography': ROUTES.TYPOGRAPHY,
+  '/components/atoms/typography': ROUTES.TEXT,
   '/components/atoms/buttons': ROUTES.BUTTONS,
   '/components/atoms/icons': ROUTES.ICONS,
   '/components/atoms/spinners': ROUTES.SPINNERS,
@@ -58,4 +58,5 @@ export default {
   '/components/molecules/barcharts': ROUTES.BARCHARTS,
   '/components/molecules/star-rating': ROUTES.STAR_RATING,
   '/resources': ROUTES.GETTING_STARTED,
+  '/components/web/typography': ROUTES.TEXT,
 };

@@ -16,6 +16,6 @@
  * limitations under the License.
  */
 
-import page from './TypographyPage';
+import page from './TablesPage';
 
 export default page;
