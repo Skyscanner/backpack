@@ -134,7 +134,7 @@
     "static-site-generator-webpack-plugin": "github:skyscanner/static-site-generator-webpack-plugin#7bac616",
     "style-loader": "^0.20.1",
     "stylefmt": "^6.0.0",
-    "stylelint": "8.4.0",
+    "stylelint": "9.0.0",
     "stylelint-config-skyscanner": "^1.0.1",
     "theo": "^5.0.0",
     "tinycolor2": "^1.4.1",
