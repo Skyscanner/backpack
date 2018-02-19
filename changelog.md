@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+**Added:**
+- react-native-bpk-component-banner-alert:
+  - New `bannerStyle` prop. These styles will be applied to the banner alerts outer `View` container, but still within it's animation container. This is useful for maintaining smooth animations whilst applying top/bottom margin.
+
 **Fixed:**
 - bpk-svgs:
 - bpk-component-icon:
