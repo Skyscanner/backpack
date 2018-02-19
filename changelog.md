@@ -2,20 +2,28 @@
 
 ## Unreleased
 
+_Nothing yet..._
+
+## 2018-02-19 - Fix for janky RN banner alert animations & a visual update to `plus`, `minus` and `close` icons
+
 **Added:**
-- react-native-bpk-component-banner-alert:
+- react-native-bpk-component-banner-alert: 2.0.9 => 2.1.0
   - New `bannerStyle` prop. These styles will be applied to the banner alerts outer `View` container, but still within it's animation container. This is useful for maintaining smooth animations whilst applying top/bottom margin.
 
 **Fixed:**
-- bpk-svgs:
-- bpk-component-icon:
-- bpk-component-banner-alert:
-- bpk-component-close-button:
-- bpk-component-dialog:
-- bpk-component-drawer:
-- bpk-component-modal:
-- bpk-component-nudger:
-- bpk-component-popover:
+- bpk-component-banner-alert: 2.0.8 => 2.0.9
+- bpk-component-close-button: 1.0.49 => 1.0.50
+- bpk-component-dialog: 1.0.4 => 1.0.5
+- bpk-component-drawer: 1.1.16 => 1.1.17
+- bpk-component-icon: 3.15.4 => 3.15.5
+- bpk-component-modal: 1.6.4 => 1.6.5
+- bpk-component-nudger: 1.0.50 => 1.0.51
+- bpk-component-popover: 2.0.8 => 2.0.9
+- bpk-mixins: 17.3.4 => 17.3.5
+- bpk-svgs: 5.12.1 => 5.12.2
+- react-native-bpk-component-banner-alert: 2.0.9 => 2.1.0
+- react-native-bpk-component-button: 4.3.3 => 4.3.4
+- react-native-bpk-component-icon: 1.3.2 => 1.3.3
   - Updated style of `plus`, `minus` and `close` icons.
 
 ## 2018-02-16 - Fixed mouse-clicks not always closing modals and dialogs
