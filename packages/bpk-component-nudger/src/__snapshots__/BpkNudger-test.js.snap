@@ -36,7 +36,7 @@ exports[`BpkNudger should render correctly 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+          d="M19 10a2 2 0 1 1 0 4H5a2 2 0 1 1 0-4h14z"
         />
       </svg>
     </span>
@@ -81,7 +81,7 @@ exports[`BpkNudger should render correctly 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+          d="M10 10V5a2 2 0 1 1 4 0v5h5a2 2 0 1 1 0 4h-5v5a2 2 0 1 1-4 0v-5H5a2 2 0 1 1 0-4h5z"
         />
       </svg>
     </span>
@@ -125,7 +125,7 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+          d="M19 10a2 2 0 1 1 0 4H5a2 2 0 1 1 0-4h14z"
         />
       </svg>
     </span>
@@ -170,7 +170,7 @@ exports[`BpkNudger should render correctly with a "className" attribute 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+          d="M10 10V5a2 2 0 1 1 4 0v5h5a2 2 0 1 1 0 4h-5v5a2 2 0 1 1-4 0v-5H5a2 2 0 1 1 0-4h5z"
         />
       </svg>
     </span>
@@ -214,7 +214,7 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+          d="M19 10a2 2 0 1 1 0 4H5a2 2 0 1 1 0-4h14z"
         />
       </svg>
     </span>
@@ -259,7 +259,7 @@ exports[`BpkNudger should render correctly with a value < min 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+          d="M10 10V5a2 2 0 1 1 4 0v5h5a2 2 0 1 1 0 4h-5v5a2 2 0 1 1-4 0v-5H5a2 2 0 1 1 0-4h5z"
         />
       </svg>
     </span>
@@ -303,7 +303,7 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+          d="M19 10a2 2 0 1 1 0 4H5a2 2 0 1 1 0-4h14z"
         />
       </svg>
     </span>
@@ -348,7 +348,7 @@ exports[`BpkNudger should render correctly with a value = max 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+          d="M10 10V5a2 2 0 1 1 4 0v5h5a2 2 0 1 1 0 4h-5v5a2 2 0 1 1-4 0v-5H5a2 2 0 1 1 0-4h5z"
         />
       </svg>
     </span>
@@ -392,7 +392,7 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+          d="M19 10a2 2 0 1 1 0 4H5a2 2 0 1 1 0-4h14z"
         />
       </svg>
     </span>
@@ -437,7 +437,7 @@ exports[`BpkNudger should render correctly with a value = min 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+          d="M10 10V5a2 2 0 1 1 4 0v5h5a2 2 0 1 1 0 4h-5v5a2 2 0 1 1-4 0v-5H5a2 2 0 1 1 0-4h5z"
         />
       </svg>
     </span>
@@ -481,7 +481,7 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2"
+          d="M19 10a2 2 0 1 1 0 4H5a2 2 0 1 1 0-4h14z"
         />
       </svg>
     </span>
@@ -526,7 +526,7 @@ exports[`BpkNudger should render correctly with a value > max 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M19 9h-4V5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h4v4c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2v-4h4c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2z"
+          d="M10 10V5a2 2 0 1 1 4 0v5h5a2 2 0 1 1 0 4h-5v5a2 2 0 1 1-4 0v-5H5a2 2 0 1 1 0-4h5z"
         />
       </svg>
     </span>

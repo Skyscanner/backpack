@@ -1,7 +1,18 @@
 # Backpack changelog
 
 ## Unreleased
-_Nothing yet!_
+
+**Fixed:**
+- bpk-svgs:
+- bpk-component-icon:
+- bpk-component-banner-alert:
+- bpk-component-close-button:
+- bpk-component-dialog:
+- bpk-component-drawer:
+- bpk-component-modal:
+- bpk-component-nudger:
+- bpk-component-popover:
+  - Updated style of `plus`, `minus` and `close` icons.
 
 ## 2018-02-16 - Fixed mouse-clicks not always closing modals and dialogs
 
