@@ -10,5 +10,5 @@ export default ((_ref) => {
   return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style={{
     width: "1.5rem",
     height: "1.5rem"
-  }} {...props}><path d="M4 15c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2" /></svg>;
+  }} {...props}><path d="M19 10a2 2 0 1 1 0 4H5a2 2 0 1 1 0-4h14z" /></svg>;
 });
