@@ -77,13 +77,22 @@ class DefaultLayout extends Component {
         themeAttributes={themeAttributes}
         id="portal-taget"
       >
-        <div id="application-container">
+        <div
+          id="application-container"
+          className={getClassName(
+            'bpkdocs-default-layout__application-container',
+          )}
+        >
           <Helmet titleTemplate="%s | Backpack" />
           <Header
             expanded={this.state.headerExpanded}
             onHamburgerClick={this.onHamburgerClick}
           />
-          <main>{children}</main>
+          <main
+            className={getClassName('bpkdocs-default-layout__main-content')}
+          >
+            {children}
+          </main>
           <BpkGridContainer
             className={getClassName('bpkdocs-default-layout__footer-container')}
           >
