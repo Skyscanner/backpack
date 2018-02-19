@@ -47,6 +47,19 @@ describe('BpkCard', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "href" and "blank" attributes', () => {
+    const tree = renderer
+      .create(
+        <BpkCard href="//www.skyscanner.net" blank>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus.
+        </BpkCard>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with "padded" attribute equal to "false"', () => {
     const tree = renderer
       .create(

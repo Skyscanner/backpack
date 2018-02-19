@@ -26,7 +26,7 @@ const getClassName = cssModules(STYLES);
 
 const BpkCard = props => {
   const classNames = [getClassName('bpk-card')];
-  const { children, className, href, padded, ...rest } = props;
+  const { children, className, href, padded, blank, ...rest } = props;
 
   if (padded) {
     classNames.push(getClassName('bpk-card--padded'));
@@ -38,8 +38,14 @@ const BpkCard = props => {
   const classNameFinal = classNames.join(' ');
 
   if (href) {
+    let blankProps = {};
+
+    if (blank) {
+      blankProps = { target: '_blank', rel: 'noopener noreferrer' };
+    }
+
     return (
-      <a href={href} className={classNameFinal} {...rest}>
+      <a href={href} className={classNameFinal} {...blankProps} {...rest}>
         {children}
       </a>
     );
@@ -57,12 +63,14 @@ BpkCard.propTypes = {
   className: PropTypes.string,
   href: PropTypes.string,
   padded: PropTypes.bool,
+  blank: PropTypes.bool,
 };
 
 BpkCard.defaultProps = {
   className: null,
   href: null,
   padded: true,
+  blank: false,
 };
 
 export default BpkCard;

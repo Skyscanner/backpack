@@ -34,6 +34,7 @@ import TokensLayout from './../layouts/TokensLayout';
 import DocsLayout from './../layouts/DocsLayout';
 
 import HomePage from './../pages/HomePage';
+import NeoHomePage from './../pages/NeoHomePage';
 
 import GettingStartedPage from './../pages/GettingStartedPage';
 import BackpackReactScriptsPage from './../pages/BackpackReactScriptsPage';
@@ -113,7 +114,9 @@ const iconsSvgs = require('!!file-loader?name=[name].[hash].zip!zip-it-loader!./
 
 const Routes = (
   <Route path={ROUTES.HOME} component={DefaultLayout}>
-    <IndexRoute component={withRouter(HomePage)} />
+    <IndexRoute
+      component={withRouter(process.env.BPK_NEO ? NeoHomePage : HomePage)}
+    />
 
     <Route path={ROUTES.USING_BACKPACK} component={UsingLayout}>
       <IndexRedirect to={ROUTES.GETTING_STARTED} />

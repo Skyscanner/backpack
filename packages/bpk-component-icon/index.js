@@ -25,6 +25,7 @@ import {
 
 import withAlignment from './src/withAlignment';
 import withRtlSupport from './src/withRtlSupport';
+import withDescription from './src/withDescription';
 
 // Wrapper functions to provide backwards compatibility
 function withButtonAlignment(WrappedComponent) {
@@ -44,4 +45,5 @@ export {
   withLargeButtonAlignment,
   withAlignment,
   withRtlSupport,
+  withDescription,
 };

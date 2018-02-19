@@ -9,6 +9,17 @@ exports[`BpkCard should render correctly 1`] = `
 </div>
 `;
 
+exports[`BpkCard should render correctly with "href" and "blank" attributes 1`] = `
+<a
+  className="bpk-card bpk-card--padded"
+  href="//www.skyscanner.net"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+</a>
+`;
+
 exports[`BpkCard should render correctly with "padded" attribute equal to "false" 1`] = `
 <div
   className="bpk-card"
