@@ -68,8 +68,7 @@ const blurb = [
   </Paragraph>,
   <Paragraph>
     <BpkButton href={`/${iconsSvgs}`}>
-      Download SVG files
-      <AlignedBpkSmallDownloadIcon />
+      Download SVG files <AlignedBpkSmallDownloadIcon />
     </BpkButton>
   </Paragraph>,
   <Paragraph>
