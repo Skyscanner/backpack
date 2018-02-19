@@ -245,10 +245,12 @@ In future, we intend to automate more of this to reduce the number of steps requ
 brew install watchman
 ```
 
-##### Java
+## Java 8
+Java 8 is required. Other versions may not work!
 
 ```
-brew cask install java
+brew tap caskroom/versions
+brew cask install java8
 ```
 
 ##### Android Studio and SDK
