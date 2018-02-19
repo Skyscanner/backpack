@@ -38,6 +38,7 @@ const sassLoaderTildeUrl = 'https://github.com/jtangelder/sass-loader#imports';
 const nodeSassTildeImporterUrl =
   'https://github.com/matthewdavidson/node-sass-tilde-importer';
 const backpackIOS = 'https://github.com/skyscanner/backpack-ios';
+const backpackAndroid = 'https://github.com/skyscanner/backpack-android';
 
 const components = [
   {
@@ -84,8 +85,21 @@ const components = [
           Backpack for iOS
         </BpkLink>{' '}
         is distributed as a CocoaPod. The pod contains several subspecs for
-        different aspects of Backpack such as color, typography and individual
-        components.
+        different aspects of Backpack such as color, typography, spacing etc.
+      </Paragraph>,
+    ],
+    examples: [],
+  },
+  {
+    id: 'backpack-android',
+    title: 'Backpack Gradle Package',
+    blurb: [
+      <Paragraph>
+        <BpkLink href={backpackAndroid} blank>
+          Backpack for Android
+        </BpkLink>{' '}
+        is distributed as a Gradle package. It contains a module with different
+        Backpack tokens such as color, typography, spacing etc as resource file.
       </Paragraph>,
     ],
     examples: [],
