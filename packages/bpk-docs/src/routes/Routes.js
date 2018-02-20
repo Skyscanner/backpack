@@ -103,6 +103,7 @@ import NativeSpinnerPage from './../pages/NativeSpinnerPage';
 import NativeStarRatingPage from './../pages/NativeStarRatingPage';
 import NativeSwitchPage from './../pages/NativeSwitchPage';
 import NativeTextPage from './../pages/NativeTextPage';
+import NativeTouchableOverlayPage from './../pages/NativeTouchableOverlayPage';
 
 import {
   GridColumnDemoPage,
@@ -212,6 +213,10 @@ const Routes = (
         />
         <Route path={ROUTES.NATIVE_SWITCH} component={NativeSwitchPage} />
         <Route path={ROUTES.NATIVE_TEXT} component={NativeTextPage} />
+        <Route
+          path={ROUTES.NATIVE_TOUCHABLE_OVERLAY}
+          component={NativeTouchableOverlayPage}
+        />
       </Route>
       <Route path={ROUTES.UTILITIES}>
         <IndexRedirect to={ROUTES.ALIGNMENT} />

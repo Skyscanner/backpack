@@ -93,6 +93,7 @@ export const NATIVE_SPINNER = '/components/native/spinners';
 export const NATIVE_STAR_RATING = '/components/native/star-rating';
 export const NATIVE_SWITCH = '/components/native/switches';
 export const NATIVE_TEXT = '/components/native/text';
+export const NATIVE_TOUCHABLE_OVERLAY = '/components/native/touchable-overlay';
 
 // components/utilities/
 export const UTILITIES = '/components/utilities';
