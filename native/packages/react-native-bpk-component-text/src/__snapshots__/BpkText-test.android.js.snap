@@ -12,7 +12,6 @@ exports[`Android BpkText should render correctly 1`] = `
         "fontFamily": "sans-serif",
         "fontSize": 16,
         "fontWeight": "400",
-        "lineHeight": 24,
       },
       Object {},
     ]
@@ -34,7 +33,6 @@ exports[`Android BpkText should render correctly with \`emphasize\` prop 1`] = `
         "fontFamily": "sans-serif",
         "fontSize": 16,
         "fontWeight": "400",
-        "lineHeight": 24,
       },
       Object {
         "fontFamily": "sans-serif-medium",
@@ -59,7 +57,6 @@ exports[`Android BpkText should render correctly with textStyle="base" 1`] = `
         "fontFamily": "sans-serif",
         "fontSize": 16,
         "fontWeight": "400",
-        "lineHeight": 24,
       },
       Object {},
     ]
@@ -81,7 +78,6 @@ exports[`Android BpkText should render correctly with textStyle="lg" 1`] = `
         "fontFamily": "sans-serif",
         "fontSize": 20,
         "fontWeight": "400",
-        "lineHeight": 28,
       },
       Object {},
     ]
@@ -103,7 +99,6 @@ exports[`Android BpkText should render correctly with textStyle="sm" 1`] = `
         "fontFamily": "sans-serif",
         "fontSize": 14,
         "fontWeight": "400",
-        "lineHeight": 20,
       },
       Object {},
     ]
@@ -125,7 +120,6 @@ exports[`Android BpkText should render correctly with textStyle="xl" 1`] = `
         "fontFamily": "sans-serif",
         "fontSize": 24,
         "fontWeight": "400",
-        "lineHeight": 32,
       },
       Object {},
     ]
@@ -147,7 +141,6 @@ exports[`Android BpkText should render correctly with textStyle="xs" 1`] = `
         "fontFamily": "sans-serif",
         "fontSize": 12,
         "fontWeight": "400",
-        "lineHeight": 18,
       },
       Object {},
     ]
@@ -169,7 +162,6 @@ exports[`Android BpkText should render correctly with textStyle="xxl" 1`] = `
         "fontFamily": "sans-serif",
         "fontSize": 34,
         "fontWeight": "400",
-        "lineHeight": 40,
       },
       Object {},
     ]
@@ -191,7 +183,6 @@ exports[`Android BpkText should support overwriting styles 1`] = `
         "fontFamily": "sans-serif",
         "fontSize": 16,
         "fontWeight": "400",
-        "lineHeight": 24,
       },
       Object {
         "color": "red",

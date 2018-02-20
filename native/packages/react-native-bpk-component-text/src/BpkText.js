@@ -26,22 +26,16 @@ import {
   textEmphasizedFontWeight,
   textXsFontSize,
   textXsFontWeight,
-  textXsLineHeight,
   textSmFontSize,
   textSmFontWeight,
-  textSmLineHeight,
   textBaseFontSize,
   textBaseFontWeight,
-  textBaseLineHeight,
   textLgFontSize,
   textLgFontWeight,
-  textLgLineHeight,
   textXlFontSize,
   textXlFontWeight,
-  textXlLineHeight,
   textXxlFontSize,
   textXxlFontWeight,
-  textXxlLineHeight,
 } from 'bpk-tokens/tokens/base.react.native';
 
 import { emphasizePropType, stylePropType } from './customPropTypes';
@@ -51,22 +45,16 @@ const TEXT_STYLES = ['xs', 'sm', 'base', 'lg', 'xl', 'xxl'];
 const TEXT_TOKENS = {
   textXsFontSize,
   textXsFontWeight,
-  textXsLineHeight,
   textSmFontSize,
   textSmFontWeight,
-  textSmLineHeight,
   textBaseFontSize,
   textBaseFontWeight,
-  textBaseLineHeight,
   textLgFontSize,
   textLgFontWeight,
-  textLgLineHeight,
   textXlFontSize,
   textXlFontWeight,
-  textXlLineHeight,
   textXxlFontSize,
   textXxlFontWeight,
-  textXxlLineHeight,
 };
 
 const getStyleByTextStyle = textStyle => {
@@ -74,7 +62,6 @@ const getStyleByTextStyle = textStyle => {
 
   const {
     [`text${camelCasedStyle}FontSize`]: fontSize,
-    [`text${camelCasedStyle}LineHeight`]: lineHeight,
     [`text${camelCasedStyle}FontWeight`]: fontWeight,
   } = TEXT_TOKENS;
 
@@ -82,7 +69,6 @@ const getStyleByTextStyle = textStyle => {
     color: colorGray700,
     fontFamily,
     fontSize,
-    lineHeight,
     fontWeight,
   };
 };

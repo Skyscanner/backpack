@@ -28,22 +28,22 @@ import {
   fontFamily,
   spacingMd,
   spacingSm,
+  lineHeightSm,
+  lineHeightBase,
   textBaseFontSize,
   textBaseFontWeight,
-  textBaseLineHeight,
   textSmFontSize,
   textSmFontWeight,
-  textSmLineHeight,
 } from 'bpk-tokens/tokens/base.react.native';
 
 const INPUT_RANGE = [0, 1];
 
 // To increase the vertical spacing a bit.
-const minHeight = textBaseLineHeight + spacingMd;
+const minHeight = lineHeightBase + spacingMd;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: textSmLineHeight,
+    paddingTop: lineHeightSm,
   },
   input: {
     flex: 1,
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     minHeight,
     fontSize: textBaseFontSize,
     fontWeight: textBaseFontWeight,
-    lineHeight: textBaseLineHeight,
+    lineHeight: lineHeightBase,
     color: colorGray700,
     borderBottomWidth: 0,
     textAlign: I18nManager.isRTL ? 'right' : 'left',
@@ -98,7 +98,7 @@ const getLabelStyle = (
     }),
     top: animatedLabelValue.interpolate({
       inputRange: INPUT_RANGE,
-      outputRange: [0, textSmLineHeight + (spacingSm - borderSizeSm)],
+      outputRange: [0, lineHeightSm + (spacingSm - borderSizeSm)],
     }),
     fontSize: animatedLabelValue.interpolate({
       inputRange: INPUT_RANGE,
@@ -106,7 +106,7 @@ const getLabelStyle = (
     }),
     lineHeight: animatedLabelValue.interpolate({
       inputRange: INPUT_RANGE,
-      outputRange: [textSmLineHeight, textBaseLineHeight],
+      outputRange: [lineHeightSm, lineHeightBase],
     }),
     fontWeight: animatedLabelValue.interpolate({
       inputRange: INPUT_RANGE,

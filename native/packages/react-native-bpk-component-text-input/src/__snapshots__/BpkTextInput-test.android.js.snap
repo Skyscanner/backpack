@@ -722,7 +722,6 @@ exports[`Android BpkTextInput should render correctly with valid false and a val
           "fontFamily": "sans-serif",
           "fontSize": 12,
           "fontWeight": "400",
-          "lineHeight": 18,
         },
         Object {
           "color": "rgb(255, 84, 82)",

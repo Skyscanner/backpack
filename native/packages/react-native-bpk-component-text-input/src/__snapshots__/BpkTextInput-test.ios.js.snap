@@ -722,7 +722,6 @@ exports[`iOS BpkTextInput should render correctly with valid false and a validat
           "fontFamily": "System",
           "fontSize": 11,
           "fontWeight": "400",
-          "lineHeight": 13,
         },
         Object {
           "color": "rgb(255, 84, 82)",
