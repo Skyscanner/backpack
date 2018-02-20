@@ -132,10 +132,11 @@ const styles = StyleSheet.create({
     paddingTop: (spacingXl - 2 * borderSizeSm - spacingBase) / 2,
   },
   buttonExpand: {
+    paddingLeft: spacingMd,
     color: colorGray700,
   },
   buttonClose: {
-    color: colorGray500,
+    color: colorGray700,
   },
 });
 
