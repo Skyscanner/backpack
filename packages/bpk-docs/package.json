@@ -83,6 +83,7 @@
     "react-native-bpk-component-switch": "^1.0.18",
     "react-native-bpk-component-text": "^2.1.28",
     "react-native-bpk-component-text-input": "^2.0.10",
+    "react-native-bpk-component-touchable-overlay": "^1.0.10",
     "react-native-bpk-theming": "^1.0.31",
     "uglify-loader": "^1.4.0"
   }

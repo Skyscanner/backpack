@@ -142,6 +142,11 @@ const links = [
         children: 'Switches',
       },
       { id: 'NATIVE_TEXT', route: routes.NATIVE_TEXT, children: 'Text' },
+      {
+        id: 'NATIVE_TOUCHABLE_OVERLAY',
+        route: routes.NATIVE_TOUCHABLE_OVERLAY,
+        children: 'Touchable Overlay',
+      },
       { id: 'NATIVE_NUDGER', route: null, children: 'Nudger' },
     ],
   },
