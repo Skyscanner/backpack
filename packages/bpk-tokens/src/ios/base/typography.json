@@ -81,7 +81,10 @@
     "TEXT_XS_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_XS}",
       "type": "size",
-      "category": "line-heights"
+      "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      }
     },
     "TEXT_SM_FONT_SIZE": {
       "value": "{!FONT_SIZE_SM}",
@@ -96,7 +99,10 @@
     "TEXT_SM_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_SM}",
       "type": "size",
-      "category": "line-heights"
+      "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      }
     },
     "TEXT_BASE_FONT_SIZE": {
       "value": "{!FONT_SIZE_BASE}",
@@ -111,7 +117,10 @@
     "TEXT_BASE_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_BASE}",
       "type": "size",
-      "category": "line-heights"
+      "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      }
     },
     "TEXT_LG_FONT_SIZE": {
       "value": "{!FONT_SIZE_LG}",
@@ -126,7 +135,10 @@
     "TEXT_LG_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_LG}",
       "type": "size",
-      "category": "line-heights"
+      "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      }
     },
     "TEXT_XL_FONT_SIZE": {
       "value": "{!FONT_SIZE_XL}",
@@ -141,7 +153,10 @@
     "TEXT_XL_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_XL}",
       "type": "size",
-      "category": "line-heights"
+      "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      }
     },
     "TEXT_XXL_FONT_SIZE": {
       "value": "{!FONT_SIZE_XXL}",
@@ -156,7 +171,10 @@
     "TEXT_XXL_LINE_HEIGHT": {
       "value": "{!LINE_HEIGHT_XXL}",
       "type": "size",
-      "category": "line-heights"
+      "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      }
     },
     "TEXT_EMPHASIZED_FONT_WEIGHT": {
       "value": "{!FONT_WEIGHT_SEMIBOLD}",

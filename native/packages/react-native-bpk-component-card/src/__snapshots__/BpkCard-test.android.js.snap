@@ -37,7 +37,6 @@ exports[`Android BpkCard should render correctly 1`] = `
               "fontFamily": "sans-serif",
               "fontSize": 16,
               "fontWeight": "400",
-              "lineHeight": 24,
             },
             Object {},
           ]
@@ -88,7 +87,6 @@ exports[`Android BpkCard should render correctly with arbitrary props 1`] = `
               "fontFamily": "sans-serif",
               "fontSize": 16,
               "fontWeight": "400",
-              "lineHeight": 24,
             },
             Object {},
           ]
@@ -142,7 +140,6 @@ exports[`Android BpkCard should render correctly with custom inner style 1`] = `
               "fontFamily": "sans-serif",
               "fontSize": 16,
               "fontWeight": "400",
-              "lineHeight": 24,
             },
             Object {},
           ]
@@ -199,7 +196,6 @@ exports[`Android BpkCard should render correctly with custom style 1`] = `
               "fontFamily": "sans-serif",
               "fontSize": 16,
               "fontWeight": "400",
-              "lineHeight": 24,
             },
             Object {},
           ]
@@ -252,7 +248,6 @@ exports[`Android BpkCard should render correctly with the "focused" state 1`] = 
               "fontFamily": "sans-serif",
               "fontSize": 16,
               "fontWeight": "400",
-              "lineHeight": 24,
             },
             Object {},
           ]
@@ -299,7 +294,6 @@ exports[`Android BpkCard should render correctly without padding 1`] = `
               "fontFamily": "sans-serif",
               "fontSize": 16,
               "fontWeight": "400",
-              "lineHeight": 24,
             },
             Object {},
           ]

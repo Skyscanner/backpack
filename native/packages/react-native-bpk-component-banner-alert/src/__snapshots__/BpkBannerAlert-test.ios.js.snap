@@ -113,7 +113,6 @@ exports[`iOS BpkBannerAlert should accept user-stlying 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -245,7 +244,6 @@ exports[`iOS BpkBannerAlert should accept user-stlying 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -377,7 +375,6 @@ exports[`iOS BpkBannerAlert should accept user-stlying 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -509,7 +506,6 @@ exports[`iOS BpkBannerAlert should accept user-stlying 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -642,7 +638,6 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -770,7 +765,6 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -898,7 +892,6 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -1026,7 +1019,6 @@ exports[`iOS BpkBannerAlert should render correctly 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -1162,7 +1154,6 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -1366,7 +1357,6 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -1570,7 +1560,6 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -1774,7 +1763,6 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -2004,7 +1992,6 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
                           "fontFamily": "System",
                           "fontSize": 13,
                           "fontWeight": "400",
-                          "lineHeight": 18,
                         },
                         Object {
                           "color": "rgb(82, 76, 97)",
@@ -2202,7 +2189,6 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
                           "fontFamily": "System",
                           "fontSize": 13,
                           "fontWeight": "400",
-                          "lineHeight": 18,
                         },
                         Object {
                           "color": "rgb(82, 76, 97)",
@@ -2400,7 +2386,6 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
                           "fontFamily": "System",
                           "fontSize": 13,
                           "fontWeight": "400",
-                          "lineHeight": 18,
                         },
                         Object {
                           "color": "rgb(82, 76, 97)",
@@ -2598,7 +2583,6 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
                           "fontFamily": "System",
                           "fontSize": 13,
                           "fontWeight": "400",
-                          "lineHeight": 18,
                         },
                         Object {
                           "color": "rgb(82, 76, 97)",
@@ -2801,7 +2785,6 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                           "fontFamily": "System",
                           "fontSize": 13,
                           "fontWeight": "400",
-                          "lineHeight": 18,
                         },
                         Object {
                           "color": "rgb(82, 76, 97)",
@@ -2898,7 +2881,6 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                             "fontFamily": "System",
                             "fontSize": 13,
                             "fontWeight": "400",
-                            "lineHeight": 18,
                           },
                           Object {},
                         ]
@@ -3046,7 +3028,6 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                           "fontFamily": "System",
                           "fontSize": 13,
                           "fontWeight": "400",
-                          "lineHeight": 18,
                         },
                         Object {
                           "color": "rgb(82, 76, 97)",
@@ -3143,7 +3124,6 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                             "fontFamily": "System",
                             "fontSize": 13,
                             "fontWeight": "400",
-                            "lineHeight": 18,
                           },
                           Object {},
                         ]
@@ -3291,7 +3271,6 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                           "fontFamily": "System",
                           "fontSize": 13,
                           "fontWeight": "400",
-                          "lineHeight": 18,
                         },
                         Object {
                           "color": "rgb(82, 76, 97)",
@@ -3388,7 +3367,6 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                             "fontFamily": "System",
                             "fontSize": 13,
                             "fontWeight": "400",
-                            "lineHeight": 18,
                           },
                           Object {},
                         ]
@@ -3536,7 +3514,6 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                           "fontFamily": "System",
                           "fontSize": 13,
                           "fontWeight": "400",
-                          "lineHeight": 18,
                         },
                         Object {
                           "color": "rgb(82, 76, 97)",
@@ -3633,7 +3610,6 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                             "fontFamily": "System",
                             "fontSize": 13,
                             "fontWeight": "400",
-                            "lineHeight": 18,
                           },
                           Object {},
                         ]
@@ -3786,7 +3762,6 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                           "fontFamily": "System",
                           "fontSize": 13,
                           "fontWeight": "400",
-                          "lineHeight": 18,
                         },
                         Object {
                           "color": "rgb(82, 76, 97)",
@@ -3883,7 +3858,6 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                             "fontFamily": "System",
                             "fontSize": 13,
                             "fontWeight": "400",
-                            "lineHeight": 18,
                           },
                           Object {},
                         ]
@@ -4031,7 +4005,6 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                           "fontFamily": "System",
                           "fontSize": 13,
                           "fontWeight": "400",
-                          "lineHeight": 18,
                         },
                         Object {
                           "color": "rgb(82, 76, 97)",
@@ -4128,7 +4101,6 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                             "fontFamily": "System",
                             "fontSize": 13,
                             "fontWeight": "400",
-                            "lineHeight": 18,
                           },
                           Object {},
                         ]
@@ -4276,7 +4248,6 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                           "fontFamily": "System",
                           "fontSize": 13,
                           "fontWeight": "400",
-                          "lineHeight": 18,
                         },
                         Object {
                           "color": "rgb(82, 76, 97)",
@@ -4373,7 +4344,6 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                             "fontFamily": "System",
                             "fontSize": 13,
                             "fontWeight": "400",
-                            "lineHeight": 18,
                           },
                           Object {},
                         ]
@@ -4521,7 +4491,6 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                           "fontFamily": "System",
                           "fontSize": 13,
                           "fontWeight": "400",
-                          "lineHeight": 18,
                         },
                         Object {
                           "color": "rgb(82, 76, 97)",
@@ -4618,7 +4587,6 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                             "fontFamily": "System",
                             "fontSize": 13,
                             "fontWeight": "400",
-                            "lineHeight": 18,
                           },
                           Object {},
                         ]
@@ -4751,7 +4719,6 @@ exports[`iOS BpkBannerAlert should render correctly when not shown 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -4883,7 +4850,6 @@ exports[`iOS BpkBannerAlert should render correctly when not shown 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -5015,7 +4981,6 @@ exports[`iOS BpkBannerAlert should render correctly when not shown 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -5147,7 +5112,6 @@ exports[`iOS BpkBannerAlert should render correctly when not shown 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -5286,7 +5250,6 @@ exports[`iOS BpkBannerAlert should render correctly with animateOnLeave 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -5418,7 +5381,6 @@ exports[`iOS BpkBannerAlert should render correctly with animateOnLeave 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -5550,7 +5512,6 @@ exports[`iOS BpkBannerAlert should render correctly with animateOnLeave 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",
@@ -5682,7 +5643,6 @@ exports[`iOS BpkBannerAlert should render correctly with animateOnLeave 1`] = `
                         "fontFamily": "System",
                         "fontSize": 13,
                         "fontWeight": "400",
-                        "lineHeight": 18,
                       },
                       Object {
                         "color": "rgb(82, 76, 97)",

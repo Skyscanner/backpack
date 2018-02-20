@@ -8,6 +8,10 @@
 - bpk-component-card:
   - Added new prop `blank` which when set along with the use of `href` makes the card open the link in a new tab.
 
+**Fixed:**
+- react-native-bpk-component-text:
+  - Removed line height styles, allowing the built in native ones to be used instead.
+
 ## 2018-02-19 - Fix for janky RN banner alert animations & a visual update to `plus`, `minus` and `close` icons
 
 **Added:**
