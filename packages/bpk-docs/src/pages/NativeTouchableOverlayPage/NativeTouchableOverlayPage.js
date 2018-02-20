@@ -76,11 +76,8 @@ const NativeTouchableOverlayPage = () => (
         Have a look at the example below to see them both in action.
       </Paragraph>,
       <BpkBlockquote>
-        <BpkText tag="span" bold>
-          Note:
-        </BpkText>{' '}
-        This component is iOS only, for Android please stick to the default
-        React Native{' '}
+        <BpkText bold>Note:</BpkText> This component is iOS only, for Android
+        please stick to the default React Native{' '}
         <BpkLink href={touchableNativeFeedbackUrl} blank>
           Touchable Native <em>Feedback</em>
         </BpkLink>{' '}
