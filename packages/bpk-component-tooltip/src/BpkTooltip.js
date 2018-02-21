@@ -16,8 +16,10 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { type Node } from 'react';
 import { TransitionInitialMount, cssModules } from 'bpk-react-utils';
 
 import STYLES from './BpkTooltip.scss';
@@ -25,7 +27,14 @@ import { ARROW_ID } from './constants';
 
 const getClassName = cssModules(STYLES);
 
-const BpkTooltip = props => {
+export type TooltipProps = {
+  id: string,
+  children: Node,
+  className: ?string,
+  padded: boolean,
+};
+
+const BpkTooltip = (props: TooltipProps) => {
   const { id, children, className, padded, ...rest } = props;
 
   const classNames = [getClassName('bpk-tooltip')];

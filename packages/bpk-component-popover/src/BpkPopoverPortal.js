@@ -39,6 +39,7 @@ export type Props = {
   portalStyle: ?Object,
   portalClassName: ?string,
   renderTarget: ?() => HTMLElement,
+  popperModifiers: ?Object,
 };
 
 class BpkPopoverPortal extends Component<Props> {
@@ -54,6 +55,7 @@ class BpkPopoverPortal extends Component<Props> {
     portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
     portalClassName: PropTypes.string,
     renderTarget: PropTypes.func,
+    popperModifiers: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   };
 
   static defaultProps = {
@@ -62,6 +64,7 @@ class BpkPopoverPortal extends Component<Props> {
     portalStyle: null,
     portalClassName: null,
     renderTarget: null,
+    popperModifiers: null,
   };
   constructor() {
     super();
@@ -111,6 +114,7 @@ class BpkPopoverPortal extends Component<Props> {
           focusScope.scopeFocus(popoverElement);
         },
         modifiers: {
+          ...this.props.popperModifiers,
           arrow: {
             element: `#${ARROW_ID}`,
           },
@@ -134,6 +138,7 @@ class BpkPopoverPortal extends Component<Props> {
       portalStyle,
       portalClassName,
       renderTarget,
+      popperModifiers,
       ...rest
     } = this.props;
 
@@ -142,6 +147,7 @@ class BpkPopoverPortal extends Component<Props> {
     if (portalClassName) {
       classNames.push(portalClassName);
     }
+
     return (
       <Portal
         beforeClose={this.beforeClose}

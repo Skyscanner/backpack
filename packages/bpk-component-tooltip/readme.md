@@ -37,3 +37,10 @@ const App = () => (
 | padded                | bool                                      | false    | true          |
 | portalStyle           | object                                    | false    | null          |
 | portalClassName       | string                                    | false    | null          |
+| popperModifiers       | object                                    | false    | null          |
+
+### Prop Details
+
+#### popperModifiers
+
+Please refer to the [documentation](https://github.com/FezVrasta/popper.js/blob/v1.12.9/docs/_includes/popper-documentation.md#modifiers) for the underlying positioning library "popper.js". You can achieve various behaviours such as allowing the tooltip to overflow the viewport etc.
