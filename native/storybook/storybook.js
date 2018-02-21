@@ -24,14 +24,10 @@ import {
   addDecorator,
 } from '@storybook/react-native';
 
-import { spacingBase } from './../../packages/bpk-tokens/tokens/base.react.native';
-
 const styles = StyleSheet.create({
   centered: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
-    padding: spacingBase,
     width: '100%',
   },
 });
@@ -50,6 +46,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-card/stories');
   require('../packages/react-native-bpk-component-horizontal-nav/stories');
   require('../packages/react-native-bpk-component-icon/stories');
+  require('../packages/react-native-bpk-component-navigation-bar-ios/stories');
   require('../packages/react-native-bpk-component-spinner/stories');
   require('../packages/react-native-bpk-component-star-rating/stories');
   require('../packages/react-native-bpk-component-switch/stories');

@@ -994,6 +994,9 @@
       "value": "13",
       "type": "size",
       "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": 13
       },
@@ -1021,6 +1024,9 @@
       "value": "18",
       "type": "size",
       "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": 18
       },
@@ -1048,6 +1054,9 @@
       "value": "20",
       "type": "size",
       "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": 20
       },
@@ -1075,6 +1084,9 @@
       "value": "22",
       "type": "size",
       "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": 22
       },
@@ -1102,6 +1114,9 @@
       "value": "24",
       "type": "size",
       "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": 24
       },
@@ -1129,6 +1144,9 @@
       "value": "41",
       "type": "size",
       "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": 41
       },
