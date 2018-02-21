@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
 import { StyleSheet, I18nManager } from 'react-native';
 import BpkIcon, { icons } from 'react-native-bpk-component-icon';
