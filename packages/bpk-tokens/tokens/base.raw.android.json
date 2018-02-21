@@ -1206,6 +1206,9 @@
       "value": "18",
       "type": "size",
       "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": 18
       },
@@ -1233,6 +1236,9 @@
       "value": "20",
       "type": "size",
       "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": 20
       },
@@ -1260,6 +1266,9 @@
       "value": "24",
       "type": "size",
       "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": 24
       },
@@ -1287,6 +1296,9 @@
       "value": "28",
       "type": "size",
       "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": 28
       },
@@ -1314,6 +1326,9 @@
       "value": "32",
       "type": "size",
       "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": 32
       },
@@ -1341,6 +1356,9 @@
       "value": "40",
       "type": "size",
       "category": "line-heights",
+      "meta": {
+        "deprecated": true
+      },
       ".alias": {
         "value": 40
       },

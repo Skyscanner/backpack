@@ -22,7 +22,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-native": "^0.52.0",
-    "react-test-renderer": "^16.2.0"
+    "react-test-renderer": "^16.2.0",
+    "react-native-bpk-component-navigation-bar-ios": "file:./packages/react-native-bpk-component-navigation-bar-ios"
   },
   "jest": {
     "preset": "react-native",
@@ -39,5 +40,8 @@
         "lines": 75
       }
     }
+  },
+  "dependencies": {
+    "react-native-bpk-component-navigationbar-ios": "file:packages/react-native-bpk-component-navigation-bar-ios"
   }
 }
