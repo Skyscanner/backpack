@@ -22,7 +22,7 @@
 .bpkdocs-home-page {
   &__hero {
     display: flex;
-    padding: ($bpk-spacing-xl * 2) $bpk-spacing-xl ($bpk-spacing-xl * 3);
+    padding: ($bpk-spacing-xl * 2) $bpk-spacing-xl ($bpk-spacing-xl * 4);
     flex-direction: column;
     justify-content: center;
     background-color: $bpk-color-blue-500;
@@ -41,13 +41,13 @@
       margin: 0 auto;
 
       @include bpk-breakpoint-above-tablet {
-        width: calc(100% - (2 * #{$bpk-logo-offset}));
+        width: 100%;
         max-width: $bpk-center-content-width-desktop;
       }
     }
 
     &-blurb {
-      width: 60%;
+      width: 55%;
 
       @include bpk-text-xl;
 
@@ -65,7 +65,7 @@
 
   &__hero-logo-container {
     display: flex;
-    width: calc(100% - (2 * #{$bpk-logo-offset}));
+    width: 100%;
     max-width: $bpk-center-content-width-desktop;
     margin: 0 auto $bpk-spacing-xl * 2;
     justify-content: space-between;
@@ -88,8 +88,6 @@
 
     @include bpk-breakpoint-above-tablet {
       position: relative;
-      // HACK: Ensures the B in Backpack aligns with other centered content
-      left: -#{$bpk-logo-offset};
       height: $bpk-spacing-xs * 8;
       // HACK: Ensure the baseline of `bpkdocs-home-page__hero-updated` aligns with
       // the logo baseline
