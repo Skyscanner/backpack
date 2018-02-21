@@ -19,7 +19,7 @@
 
 $bpk-logo-offset: $bpk-one-pixel-rem * 58;
 
-$bpk-outer-container-width-desktop: $bpk-breakpoint-desktop - (2 * $bpk-logo-offset);
+$bpk-outer-container-width-desktop: $bpk-breakpoint-desktop;
 $bpk-center-content-width-desktop: $bpk-outer-container-width-desktop;
 
 // Cards
@@ -43,7 +43,7 @@ $bpk-caption-container-height-mobile: $bpk-card-height-mobile - $bpk-image-heigh
 $bpk-card-spacing-mobile: $bpk-spacing-md;
 
 @mixin bpk-home-page-center-content {
-  width: calc(100% - (2 * #{$bpk-logo-offset}) - (2 * #{$bpk-spacing-xl}));
+  width: calc(100% - (2 * #{$bpk-spacing-xl}));
   max-width: $bpk-center-content-width-desktop;
 
   @media (max-width: $bpk-breakpoint-desktop) {
