@@ -71,13 +71,14 @@ storiesOf('BpkTextInput', module).add('docs:text-inputs', () => (
       placeholder="3 letter airport code"
     />
     <StatefulBpkTextInput
-      label="Input with value"
+      label="Input with value and description"
       initialValue="Edinburgh"
+      description="Enter your destination."
       style={styles.input}
     />
     <StatefulBpkTextInput
       label="Input with multiline value"
-      initialValue="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." // eslint-disable-line max-len
+      initialValue="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." // eslint-disable-line max-len
       multiline
       style={styles.input}
       autoGrow

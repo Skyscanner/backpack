@@ -13,6 +13,9 @@
 - bpk-component-tooltip:
   - New `popperModifiers` prop. Use this to customise the behaviour of the underlying positioning library. Please refer to its [documentation](https://github.com/FezVrasta/popper.js/blob/v1.12.9/docs/_includes/popper-documentation.md#modifiers) for details.
 
+- react-native-bpk-component-text-input:
+  - New `description` prop. Use this to add a brief description of the field that will appear underneath it.
+
 **Fixed:**
 - react-native-bpk-component-text:
   - Removed line height styles, allowing the built in native ones to be used instead.
