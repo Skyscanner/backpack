@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import BpkTextInput from './src/BpkTextInput';
 
 export default BpkTextInput;

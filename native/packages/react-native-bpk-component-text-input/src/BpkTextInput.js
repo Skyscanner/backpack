@@ -16,16 +16,64 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, type Node } from 'react';
 import { Animated, TextInput, View, ViewPropTypes } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import { animationDurationSm } from 'bpk-tokens/tokens/base.react.native';
 import { ValidIcon, InvalidIcon } from './BpkTextInputIcons';
 import { getLabelStyle, getInputContainerStyle, styles } from './styles';
 
-class BpkTextInput extends Component {
-  constructor(props) {
+type Props = {
+  label: string,
+  value: string,
+  clearButtonMode: 'never' | 'while-editing' | 'unless-editing' | 'always',
+  editable: boolean,
+  inputRef: ?(Node) => void,
+  onBlur: ?() => void,
+  onFocus: ?() => void,
+  placeholder: ?string,
+  style: ?(Object | Array<Object>),
+  valid: true | false | null,
+  validationMessage: ?string,
+};
+
+type State = {
+  isFocused: boolean,
+};
+
+class BpkTextInput extends Component<Props, State> {
+  animatedValues: { color: mixed, labelPosition: mixed };
+
+  static propTypes = {
+    label: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    clearButtonMode: TextInput.propTypes.clearButtonMode,
+    editable: PropTypes.bool,
+    inputRef: PropTypes.func,
+    onBlur: PropTypes.func,
+    onFocus: PropTypes.func,
+    placeholder: PropTypes.string,
+    style: ViewPropTypes.style,
+    valid: PropTypes.oneOf(true, false, null),
+    validationMessage: PropTypes.string,
+  };
+
+  static defaultProps = {
+    clearButtonMode: 'while-editing',
+    editable: true,
+    inputRef: null,
+    onBlur: null,
+    onFocus: null,
+    placeholder: null,
+    style: null,
+    valid: null,
+    validationMessage: null,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -36,9 +84,6 @@ class BpkTextInput extends Component {
       color: new Animated.Value(this.getColorAnimatedValue()),
       labelPosition: new Animated.Value(this.getLabelPositionAnimatedValue()),
     };
-
-    this.onFocus = this.onFocus.bind(this);
-    this.onBlur = this.onBlur.bind(this);
   }
 
   componentDidUpdate() {
@@ -54,13 +99,27 @@ class BpkTextInput extends Component {
     ]).start();
   }
 
-  onFocus() {
-    this.setState(() => ({ isFocused: true }), this.props.onFocus);
-  }
+  onFocus = () => {
+    this.setState(
+      () => ({ isFocused: true }),
+      () => {
+        if (this.props.onFocus) {
+          this.props.onFocus();
+        }
+      },
+    );
+  };
 
-  onBlur() {
-    this.setState(() => ({ isFocused: false }), this.props.onBlur);
-  }
+  onBlur = () => {
+    this.setState(
+      () => ({ isFocused: false }),
+      () => {
+        if (this.props.onBlur) {
+          this.props.onBlur();
+        }
+      },
+    );
+  };
 
   getColorAnimatedValue() {
     return this.state.isFocused ? 1 : 0;
@@ -130,31 +189,5 @@ class BpkTextInput extends Component {
     );
   }
 }
-
-BpkTextInput.propTypes = {
-  label: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  clearButtonMode: TextInput.propTypes.clearButtonMode,
-  editable: PropTypes.bool,
-  inputRef: PropTypes.func,
-  onBlur: PropTypes.func,
-  onFocus: PropTypes.func,
-  placeholder: PropTypes.string,
-  style: ViewPropTypes.style,
-  valid: PropTypes.oneOf(true, false, null),
-  validationMessage: PropTypes.string,
-};
-
-BpkTextInput.defaultProps = {
-  clearButtonMode: 'while-editing',
-  editable: true,
-  inputRef: null,
-  onBlur: null,
-  onFocus: null,
-  placeholder: null,
-  style: null,
-  valid: null,
-  validationMessage: null,
-};
 
 export default BpkTextInput;
