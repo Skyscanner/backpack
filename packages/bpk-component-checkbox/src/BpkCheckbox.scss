@@ -37,30 +37,6 @@
     @include bpk-checkbox--disabled;
   }
 
-  &__icon {
-    position: absolute;
-    top: ($bpk-spacing-base - $bpk-spacing-sm) / 2;
-    left: ($bpk-spacing-base - $bpk-spacing-sm) / 4;
-    display: none;
-    width: $bpk-spacing-sm;
-    height: $bpk-spacing-sm;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    cursor: pointer;
-    vertical-align: text-bottom;
-    appearance: none;
-
-    @include bpk-rtl {
-      right: ($bpk-spacing-base - $bpk-spacing-sm) / 4;
-      left: auto;
-    }
-
-    @media screen\0 {
-      background: none !important; /* stylelint-disable-line declaration-no-important */
-    }
-  }
-
   &__input {
     @include bpk-checkbox__input;
 
@@ -83,6 +59,30 @@
           display: none;
         }
       }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: ($bpk-spacing-base - $bpk-spacing-sm) / 2;
+    left: ($bpk-spacing-base - $bpk-spacing-sm) / 4;
+    display: none;
+    width: $bpk-spacing-sm;
+    height: $bpk-spacing-sm;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    vertical-align: text-bottom;
+    appearance: none;
+
+    @include bpk-rtl {
+      right: ($bpk-spacing-base - $bpk-spacing-sm) / 4;
+      left: auto;
+    }
+
+    @media screen\0 {
+      background: none !important; /* stylelint-disable-line declaration-no-important */
     }
   }
 

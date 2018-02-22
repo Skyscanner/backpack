@@ -41,22 +41,6 @@
     }
   }
 
-  &:disabled {
-    background-color: $bpk-calendar-day-disabled-background-color;
-    color: $bpk-calendar-day-disabled-color;
-    cursor: not-allowed;
-
-    @include bpk-hover {
-      background-color: $bpk-calendar-day-disabled-background-color;
-      color: $bpk-calendar-day-disabled-color;
-    }
-
-    &:active {
-      background-color: $bpk-calendar-day-disabled-background-color;
-      color: $bpk-calendar-day-disabled-color;
-    }
-  }
-
   &:not(.bpk-calendar-date--selected):active {
     background-color: $bpk-calendar-day-active-background-color;
 
@@ -85,5 +69,21 @@
     box-shadow: 0 0 0 2px var(--bpk-calendar-date-focused-border-color, $bpk-state-selected-background-color) inset;
 
     @include bpk-themeable-property(color, --bpk-calendar-date-text-focus-color, $bpk-state-selected-background-color);
+  }
+
+  &:disabled {
+    background-color: $bpk-calendar-day-disabled-background-color;
+    color: $bpk-calendar-day-disabled-color;
+    cursor: not-allowed;
+
+    @include bpk-hover {
+      background-color: $bpk-calendar-day-disabled-background-color;
+      color: $bpk-calendar-day-disabled-color;
+    }
+
+    &:active {
+      background-color: $bpk-calendar-day-disabled-background-color;
+      color: $bpk-calendar-day-disabled-color;
+    }
   }
 }
