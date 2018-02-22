@@ -1045,7 +1045,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -1207,7 +1207,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -1369,7 +1369,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -1531,7 +1531,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -1712,7 +1712,7 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -1733,7 +1733,6 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -1874,7 +1873,7 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -1895,7 +1894,6 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -2036,7 +2034,7 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -2057,7 +2055,6 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -2198,7 +2195,7 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -2219,7 +2216,6 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -2407,7 +2403,7 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -2428,7 +2424,6 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -2611,7 +2606,7 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -2632,7 +2627,6 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -2815,7 +2809,7 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -2836,7 +2830,6 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -3019,7 +3012,7 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -3040,7 +3033,6 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -3228,7 +3220,7 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -3249,7 +3241,6 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -3432,7 +3423,7 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -3453,7 +3444,6 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -3636,7 +3626,7 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -3657,7 +3647,6 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -3840,7 +3829,7 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -3861,7 +3850,6 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]

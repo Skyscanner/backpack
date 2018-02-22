@@ -219,6 +219,12 @@ storiesOf('BpkBannerAlert', module)
       />
       <DismissableBannerAlert
         bannerStyle={styles.bannerAlert}
+        type={ALERT_TYPES.NEUTRAL}
+        message="Neutral alert with dismiss option and long description with emoji 😀."
+        dismissButtonLabel="Dismiss"
+      />
+      <DismissableBannerAlert
+        bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.SUCCESS}
         message="Successful alert with dismiss option."
         dismissButtonLabel="Dismiss"
@@ -243,6 +249,19 @@ storiesOf('BpkBannerAlert', module)
         bannerStyle={styles.bannerAlert}
         type={ALERT_TYPES.NEUTRAL}
         message="Neutral alert with more information."
+      >
+        <BpkText textStyle="sm" bannerStyle={styles.child}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+          sagittis sagittis purus, id blandit ipsum. Pellentesque nec diam nec
+          erat condimentum dapibus. Nunc diam augue, egestas id egestas ut,
+          facilisis nec mi. Donec et congue odio, nec laoreet est. Integer
+          rhoncus varius arcu, a fringilla libero laoreet at.
+        </BpkText>
+      </ExpandableBannerAlert>
+      <ExpandableBannerAlert
+        bannerStyle={styles.bannerAlert}
+        type={ALERT_TYPES.NEUTRAL}
+        message="Neutral alert with more information and long message with emoji 😀."
       >
         <BpkText textStyle="sm" bannerStyle={styles.child}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque

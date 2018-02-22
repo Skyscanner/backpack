@@ -17,14 +17,20 @@
  */
 
 import React from 'react';
-import { AppRegistry, StyleSheet, View } from 'react-native';
+import { I18nManager, AppRegistry, StyleSheet, View } from 'react-native';
+import RNRestart from 'react-native-restart';
 import {
   getStorybookUI,
   configure,
   addDecorator,
 } from '@storybook/react-native';
 
-import { spacingBase } from './../../packages/bpk-tokens/tokens/base.react.native';
+import BpkButton from '../packages/react-native-bpk-component-button';
+import {
+  spacingBase,
+  spacingLg,
+  spacingXxl,
+} from './../../packages/bpk-tokens/tokens/base.react.native';
 
 const styles = StyleSheet.create({
   centered: {
@@ -33,13 +39,34 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: spacingBase,
     width: '100%',
+    marginTop: spacingLg,
+  },
+  rtlButton: {
+    justifyContent: 'flex-end',
+    marginVertical: spacingBase,
+    width: spacingXxl * 3,
   },
 });
+const toggleRTL = () => {
+  I18nManager.forceRTL(!I18nManager.isRTL);
+  RNRestart.Restart();
+};
 
 const CenterDecorator = getStory => (
   <View style={styles.centered}>{getStory()}</View>
 );
-
+const RTLDecorator = getStory => (
+  <View>
+    {getStory()}
+    <BpkButton
+      style={styles.rtlButton}
+      type="secondary"
+      title={I18nManager.isRTL ? 'Turn RTL off' : 'Turn RTL on'}
+      onPress={toggleRTL}
+    />
+  </View>
+);
+addDecorator(RTLDecorator);
 addDecorator(CenterDecorator);
 
 /* eslint-disable global-require */
