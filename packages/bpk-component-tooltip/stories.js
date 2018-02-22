@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withDefaultProps } from 'bpk-react-utils';
@@ -92,6 +94,22 @@ storiesOf('bpk-component-tooltip', module)
         Find cheap flights here!
         <span role="img" aria-label="Plane">
           ✈️
+        </span>
+      </BpkTooltip>
+    </div>
+  ))
+  .add('Popper modifiers', () => (
+    <div style={st}>
+      <BpkTooltip
+        id="my-tooltip"
+        target={<Heading>£295</Heading>}
+        popperModifiers={{
+          flip: { enabled: false },
+        }}
+      >
+        This is the cheapest price!
+        <span role="img" aria-label="Thumbs up">
+          👍
         </span>
       </BpkTooltip>
     </div>

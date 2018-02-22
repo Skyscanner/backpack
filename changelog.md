@@ -5,8 +5,13 @@
 **Added:**
 - bpk-component-icon:
   - Added new HOC `withDescription` to make it easy to provide a textual description of icons for screen readers.
+
 - bpk-component-card:
   - Added new prop `blank` which when set along with the use of `href` makes the card open the link in a new tab.
+
+- bpk-component-popover:
+- bpk-component-tooltip:
+  - New `popperModifiers` prop. Use this to customise the behaviour of the underlying positioning library. Please refer to its [documentation](https://github.com/FezVrasta/popper.js/blob/v1.12.9/docs/_includes/popper-documentation.md#modifiers) for details.
 
 **Fixed:**
 - react-native-bpk-component-text:
