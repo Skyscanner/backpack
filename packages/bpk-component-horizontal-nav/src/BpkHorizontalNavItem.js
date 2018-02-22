@@ -27,11 +27,22 @@ const getClassName = cssModules(STYLES);
 const BpkHorizontalNavItem = props => {
   const classNames = [getClassName('bpk-horizontal-nav__item')];
   const innerClassNames = [getClassName('bpk-horizontal-nav__link')];
-  const { children, className, selected, spaceAround, href, ...rest } = props;
+  const {
+    children,
+    className,
+    selected,
+    spaceAround,
+    stretch,
+    href,
+    ...rest
+  } = props;
 
   // Outer classNames
   if (spaceAround) {
     classNames.push(getClassName('bpk-horizontal-nav__item--space-around'));
+  }
+  if (stretch) {
+    classNames.push(getClassName('bpk-horizontal-nav__item--stretch'));
   }
 
   // Inner classNames
@@ -40,6 +51,9 @@ const BpkHorizontalNavItem = props => {
   }
   if (className) {
     innerClassNames.push(className);
+  }
+  if (stretch) {
+    innerClassNames.push(getClassName('bpk-horizontal-nav__link--stretch'));
   }
 
   const clickableElement = href ? (
@@ -78,6 +92,7 @@ BpkHorizontalNavItem.propTypes = {
   className: PropTypes.string,
   selected: PropTypes.bool,
   spaceAround: PropTypes.bool,
+  stretch: PropTypes.bool,
   href: PropTypes.string,
 };
 
@@ -85,6 +100,7 @@ BpkHorizontalNavItem.defaultProps = {
   className: null,
   selected: false,
   spaceAround: false,
+  stretch: false,
   href: null,
 };
 

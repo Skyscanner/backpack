@@ -80,6 +80,15 @@ storiesOf('bpk-component-horizontal-nav', module)
       <BpkHorizontalNavItem selected>Car hire</BpkHorizontalNavItem>
     </BpkHorizontalNav>
   ))
+  .add('Stretch', () => (
+    <BpkHorizontalNav>
+      <BpkHorizontalNavItem stretch>Flights</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem stretch>Hotels</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem stretch selected>
+        Car hire
+      </BpkHorizontalNavItem>
+    </BpkHorizontalNav>
+  ))
   .add('Separators', () => (
     <BpkHorizontalNav>
       <BpkHorizontalNavItem selected>Flights</BpkHorizontalNavItem>
