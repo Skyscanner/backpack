@@ -31,6 +31,23 @@ $bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
     @include bpk-radio--disabled;
   }
 
+  &__circle {
+    position: absolute;
+    top: ($bpk-spacing-base - $bpk-radio-circle-size) / 2;
+    left: ($bpk-spacing-md - $bpk-radio-circle-size) / 2;
+    display: none;
+    width: $bpk-radio-circle-size;
+    height: $bpk-radio-circle-size;
+    border-radius: 50%;
+
+    @include bpk-themeable-property(background, --bpk-radio-checked-color, $bpk-radio-checked-circle-color);
+
+    @include bpk-rtl {
+      right: ($bpk-spacing-md - $bpk-radio-circle-size) / 2;
+      left: auto;
+    }
+  }
+
   &__input {
     @include bpk-radio__input;
 
@@ -48,23 +65,6 @@ $bpk-radio-circle-size: $bpk-one-pixel-rem * 10;
           display: none;
         }
       }
-    }
-  }
-
-  &__circle {
-    position: absolute;
-    top: ($bpk-spacing-base - $bpk-radio-circle-size) / 2;
-    left: ($bpk-spacing-md - $bpk-radio-circle-size) / 2;
-    display: none;
-    width: $bpk-radio-circle-size;
-    height: $bpk-radio-circle-size;
-    border-radius: 50%;
-
-    @include bpk-themeable-property(background, --bpk-radio-checked-color, $bpk-radio-checked-circle-color);
-
-    @include bpk-rtl {
-      right: ($bpk-spacing-md - $bpk-radio-circle-size) / 2;
-      left: auto;
     }
   }
 }
