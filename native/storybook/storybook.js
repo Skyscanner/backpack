@@ -15,23 +15,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import React from 'react';
 import { I18nManager, AppRegistry, StyleSheet, View } from 'react-native';
 import RNRestart from 'react-native-restart';
+import addon from '@storybook/addons';
 import {
   getStorybookUI,
   configure,
   addDecorator,
 } from '@storybook/react-native';
-
-import BpkButton from '../packages/react-native-bpk-component-button';
+import { RTL_EVENT, CHANNEL_POLL_INTERVAL } from './constants';
 import {
   spacingBase,
   spacingLg,
   spacingXxl,
 } from './../../packages/bpk-tokens/tokens/base.react.native';
 
+const toggleRTL = rtlEnabled => {
+  I18nManager.forceRTL(!rtlEnabled);
+  RNRestart.Restart();
+};
+
+const onChannelAvailable = (...fns) => {
+  const interval = setInterval(() => {
+    try {
+      const channel = addon.getChannel();
+      clearInterval(interval);
+      fns.map(fn => fn(channel));
+      return true;
+    } catch (exe) {
+      return false;
+    }
+  }, CHANNEL_POLL_INTERVAL);
+};
+function enableRtlFromUi(channel) {
+  channel.on(RTL_EVENT, toggleRTL);
+}
 const styles = StyleSheet.create({
   centered: {
     flex: 1,
@@ -47,26 +66,10 @@ const styles = StyleSheet.create({
     width: spacingXxl * 3,
   },
 });
-const toggleRTL = () => {
-  I18nManager.forceRTL(!I18nManager.isRTL);
-  RNRestart.Restart();
-};
 
 const CenterDecorator = getStory => (
   <View style={styles.centered}>{getStory()}</View>
 );
-const RTLDecorator = getStory => (
-  <View>
-    {getStory()}
-    <BpkButton
-      style={styles.rtlButton}
-      type="secondary"
-      title={I18nManager.isRTL ? 'Turn RTL off' : 'Turn RTL on'}
-      onPress={toggleRTL}
-    />
-  </View>
-);
-addDecorator(RTLDecorator);
 addDecorator(CenterDecorator);
 
 /* eslint-disable global-require */
@@ -91,4 +94,5 @@ const StorybookUI = getStorybookUI({ onDeviceUI: false });
 
 AppRegistry.registerComponent('native', () => StorybookUI);
 
+onChannelAvailable(enableRtlFromUi);
 export default StorybookUI;

@@ -15,7 +15,5 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import '@storybook/addon-actions/register';
-import '@storybook/addon-links/register';
-import './rtl-addon/register';
+export const RTL_EVENT = 'rtl-toggle';
+export const CHANNEL_POLL_INTERVAL = 500;
