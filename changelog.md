@@ -4,7 +4,7 @@
 
 _Nothing yet..._
 
-## 2018-02-23 - Popovers and tooltips positioning behaviour can now be customised
+## 2018-02-23 - Popovers and tooltips positioning behaviour can now be customised, plus new native text input `description` prop
 
 **Added:**
 - bpk-component-card: 1.0.48 => 1.1.0
@@ -17,7 +17,7 @@ _Nothing yet..._
 - bpk-component-tooltip: 3.0.8 => 3.1.0
   - New `popperModifiers` prop. Use this to customise the behaviour of the underlying positioning library. Please refer to its [documentation](https://github.com/FezVrasta/popper.js/blob/v1.12.9/docs/_includes/popper-documentation.md#modifiers) for details.
 
-- react-native-bpk-component-text-input:
+- react-native-bpk-component-text-input: 2.0.11 => 2.1.0
   - New `description` prop. Use this to add a brief description of the field that will appear underneath it.
 
 **Fixed:**
