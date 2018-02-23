@@ -16,8 +16,11 @@
  * limitations under the License.
  */
 
-import BpkBannerAlert from './src/BpkBannerAlert';
-import ALERT_TYPES from './src/AlertTypes';
+const ALERT_TYPES = {
+  SUCCESS: 'success',
+  WARN: 'warn',
+  ERROR: 'error',
+  NEUTRAL: 'neutral',
+};
 
-export default BpkBannerAlert;
-export { ALERT_TYPES };
+export default ALERT_TYPES;

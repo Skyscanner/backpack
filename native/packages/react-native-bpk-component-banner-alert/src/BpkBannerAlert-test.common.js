@@ -20,7 +20,8 @@ import React from 'react';
 import { View } from 'react-native';
 import renderer from 'react-test-renderer';
 import BpkText from 'react-native-bpk-component-text';
-import BpkBannerAlert, { ALERT_TYPES } from './BpkBannerAlert';
+import BpkBannerAlert from './BpkBannerAlert';
+import ALERT_TYPES from './AlertTypes';
 
 const commonTests = () => {
   describe('BpkBannerAlert', () => {
