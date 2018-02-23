@@ -34,6 +34,8 @@
   }
 
   &__footer-container {
+    width: 100%;
+
     @include bpk-border-top-sm($bpk-color-gray-100);
   }
 
