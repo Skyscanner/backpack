@@ -17,6 +17,10 @@ _Nothing yet..._
 - bpk-component-tooltip: 3.0.8 => 3.1.0
   - New `popperModifiers` prop. Use this to customise the behaviour of the underlying positioning library. Please refer to its [documentation](https://github.com/FezVrasta/popper.js/blob/v1.12.9/docs/_includes/popper-documentation.md#modifiers) for details.
 
+- bpk-component-horizontal-nav:
+  - Fixed "Space around" story to correctly set prop on nav items instead of parent nav component
+  - Added "Strech" prop support, stretching nav items and their links to fill available space evenly
+
 **Fixed:**
 - react-native-bpk-component-text: 2.1.28 => 2.1.29
   - Removed line height styles, allowing the built in native ones to be used instead.

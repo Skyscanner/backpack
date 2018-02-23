@@ -74,10 +74,21 @@ storiesOf('bpk-component-horizontal-nav', module)
     </BpkHorizontalNav>
   ))
   .add('Space around', () => (
-    <BpkHorizontalNav spaceAround>
-      <BpkHorizontalNavItem>Flights</BpkHorizontalNavItem>
-      <BpkHorizontalNavItem>Hotels</BpkHorizontalNavItem>
-      <BpkHorizontalNavItem selected>Car hire</BpkHorizontalNavItem>
+    <BpkHorizontalNav>
+      <BpkHorizontalNavItem spaceAround>Flights</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem spaceAround>Hotels</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem selected spaceAround>
+        Car hire
+      </BpkHorizontalNavItem>
+    </BpkHorizontalNav>
+  ))
+  .add('Stretch', () => (
+    <BpkHorizontalNav>
+      <BpkHorizontalNavItem stretch>Flights</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem stretch>Hotels</BpkHorizontalNavItem>
+      <BpkHorizontalNavItem stretch selected>
+        Car hire
+      </BpkHorizontalNavItem>
     </BpkHorizontalNav>
   ))
   .add('Separators', () => (

@@ -72,6 +72,17 @@ describe('BpkHorizontalNavItem', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render correctly with "stretch" prop', () => {
+    const tree = renderer
+      .create(
+        <BpkHorizontalNavItem stretch>
+          My nav item content.
+        </BpkHorizontalNavItem>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render correctly with arbitrary props', () => {
     const tree = renderer
       .create(

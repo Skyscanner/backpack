@@ -48,6 +48,22 @@ exports[`BpkHorizontalNavItem should render correctly with "spaceAround" prop 1`
 </li>
 `;
 
+exports[`BpkHorizontalNavItem should render correctly with "stretch" prop 1`] = `
+<li
+  aria-selected="false"
+  className="bpk-horizontal-nav__item bpk-horizontal-nav__item--stretch"
+  role="tab"
+>
+  <button
+    className="bpk-horizontal-nav__link bpk-horizontal-nav__link--stretch"
+    disabled={false}
+    type="button"
+  >
+    My nav item content.
+  </button>
+</li>
+`;
+
 exports[`BpkHorizontalNavItem should render correctly with an "href" prop 1`] = `
 <li
   aria-selected="false"
