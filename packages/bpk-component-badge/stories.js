@@ -18,39 +18,62 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { colorGray700, spacingXxl } from 'bpk-tokens/tokens/base.es6';
 
-import BpkBadge from './index';
-
-const DockedContainer = props => (
-  <div
-    {...props}
-    style={{
-      backgroundColor: colorGray700,
-      minHeight: spacingXxl,
-      position: 'relative',
-    }}
-  />
-);
+import BpkBadge, { BADGE_TYPES } from './index';
+import BadgeLayout from './BadgeLayout';
 
 storiesOf('bpk-component-badge', module)
   .add('Default', () => (
-    <div>
-      This is a badge <BpkBadge>Promocionado</BpkBadge>
-    </div>
+    <BadgeLayout>
+      <div>
+        This is a badge <BpkBadge>Promocionado</BpkBadge>
+      </div>
+    </BadgeLayout>
   ))
   .add('Centered', () => (
-    <div>
-      This is a badge <BpkBadge centered>Promocionado</BpkBadge>
-    </div>
+    <BadgeLayout>
+      <div>
+        This is a badge <BpkBadge centered>Promocionado</BpkBadge>
+      </div>
+    </BadgeLayout>
   ))
   .add('Docked right', () => (
-    <DockedContainer>
+    <BadgeLayout docked>
       <BpkBadge docked="right">Promocionado</BpkBadge>
-    </DockedContainer>
+    </BadgeLayout>
   ))
   .add('Docked left', () => (
-    <DockedContainer>
+    <BadgeLayout docked>
       <BpkBadge docked="left">Promocionado</BpkBadge>
-    </DockedContainer>
+    </BadgeLayout>
+  ))
+  .add('Warning (Default)', () => (
+    <BadgeLayout>
+      <BpkBadge type={BADGE_TYPES.warning}>Promocionado</BpkBadge>
+    </BadgeLayout>
+  ))
+  .add('Success', () => (
+    <BadgeLayout>
+      <BpkBadge type={BADGE_TYPES.success}>Promocionado</BpkBadge>
+    </BadgeLayout>
+  ))
+  .add('Destructive', () => (
+    <BadgeLayout>
+      <BpkBadge type={BADGE_TYPES.destructive}>Promocionado</BpkBadge>
+    </BadgeLayout>
+  ))
+  .add('Light', () => (
+    <BadgeLayout>
+      <BpkBadge type={BADGE_TYPES.light}>Promocionado</BpkBadge>
+    </BadgeLayout>
+  ))
+  .add('Inverse', () => (
+    <BadgeLayout>
+      <BpkBadge type={BADGE_TYPES.inverse}>Promocionado</BpkBadge>
+    </BadgeLayout>
+  ))
+  .add('Outline', () => (
+    <BadgeLayout>
+      <BpkBadge type={BADGE_TYPES.outline}>Promocionado</BpkBadge>
+    </BadgeLayout>
   ));

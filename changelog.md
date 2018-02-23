@@ -6,6 +6,9 @@
 - react-native-bpk-component-button-link:
   - Introducing the new React Native button link component.
 
+- bpk-component-badge:
+  - An optional `type` prop has been introduced to allow selection of different visual appearances.
+
 ## 2018-03-01 - Fix for Android button props
 
 **Fixed:**

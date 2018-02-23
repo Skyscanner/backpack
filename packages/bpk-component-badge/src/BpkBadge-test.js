@@ -19,7 +19,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import BpkBadge from './BpkBadge';
+import BpkBadge, { BADGE_TYPES } from './BpkBadge';
 
 describe('BpkBadge', () => {
   it('should render correctly', () => {
@@ -46,5 +46,14 @@ describe('BpkBadge', () => {
       .create(<BpkBadge docked="left">Promociando</BpkBadge>)
       .toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  Object.keys(BADGE_TYPES).forEach(badgeType => {
+    it(`should render correctly with type="${badgeType}"`, () => {
+      const tree = renderer
+        .create(<BpkBadge type={badgeType}>Promociando</BpkBadge>)
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
   });
 });

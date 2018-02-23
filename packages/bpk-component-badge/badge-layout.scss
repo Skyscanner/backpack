@@ -18,38 +18,17 @@
 
 @import '~bpk-mixins/index';
 
-.bpk-badge {
-  @include bpk-badge;
+.bpk-badge-layout {
+  &__container {
+    position: relative;
+    display: flex;
+    min-height: $bpk-spacing-xxl;
+    padding: $bpk-spacing-base;
 
-  &--centered {
-    @include bpk-badge--centered;
-  }
+    &--light {
+      background-color: $bpk-color-gray-700;
 
-  &--docked-right {
-    @include bpk-badge--docked-right;
-  }
-
-  &--docked-left {
-    @include bpk-badge--docked-left;
-  }
-
-  &--success {
-    @include bpk-badge--success;
-  }
-
-  &--destructive {
-    @include bpk-badge--destructive;
-  }
-
-  &--light {
-    @include bpk-badge--light;
-  }
-
-  &--inverse {
-    @include bpk-badge--inverse;
-  }
-
-  &--outline {
-    @include bpk-badge--outline;
+      @include bpk-border-radius-xs;
+    }
   }
 }

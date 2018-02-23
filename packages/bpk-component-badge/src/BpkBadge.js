@@ -22,11 +22,29 @@ import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-badge.scss';
 
+export const BADGE_TYPES = {
+  warning: 'warning',
+  success: 'success',
+  destructive: 'destructive',
+  light: 'light',
+  inverse: 'inverse',
+  outline: 'outline',
+};
+
 const getClassName = cssModules(STYLES);
 
+const badgeTypeClassNames = {
+  [BADGE_TYPES.warning]: null,
+  [BADGE_TYPES.success]: getClassName('bpk-badge--success'),
+  [BADGE_TYPES.destructive]: getClassName('bpk-badge--destructive'),
+  [BADGE_TYPES.light]: getClassName('bpk-badge--light'),
+  [BADGE_TYPES.inverse]: getClassName('bpk-badge--inverse'),
+  [BADGE_TYPES.outline]: getClassName('bpk-badge--outline'),
+};
+
 const BpkBadge = props => {
-  const { docked, centered, className, ...rest } = props;
-  const classNames = [getClassName('bpk-badge')];
+  const { type, docked, centered, className, ...rest } = props;
+  const classNames = [getClassName('bpk-badge'), badgeTypeClassNames[type]];
 
   if (docked === 'right') {
     classNames.push(getClassName('bpk-badge--docked-right'));
@@ -45,12 +63,14 @@ const BpkBadge = props => {
 };
 
 BpkBadge.propTypes = {
+  type: PropTypes.oneOf(Object.keys(BADGE_TYPES)),
   docked: PropTypes.oneOf(['right', 'left', null]),
   centered: PropTypes.bool,
   className: PropTypes.string,
 };
 
 BpkBadge.defaultProps = {
+  type: BADGE_TYPES.warning,
   docked: null,
   centered: false,
   className: null,
