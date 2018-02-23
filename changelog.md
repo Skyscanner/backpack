@@ -2,7 +2,8 @@
 
 ## Unreleased
 
-_Nothing yet..._
+- react-native-bpk-component-button-link:
+  - Introducing the new React Native button link component.
 
 ## 2018-02-23 - Popovers and tooltips positioning behaviour can now be customised, plus new native text input `description` prop
 

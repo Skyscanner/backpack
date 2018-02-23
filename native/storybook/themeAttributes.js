@@ -33,6 +33,7 @@ const themeAttributes = {
   buttonSecondaryBackgroundColor: theme.backgroundColor,
   buttonSecondaryTextColor: theme.contentColor,
   buttonSecondaryBorderColor: theme.contentColor,
+  buttonLinkTextColor: theme.contentColor,
 
   // Used in BpkHorizontalNavItem.
   horizontalNavSelectedTextColor: theme.contentColor,
