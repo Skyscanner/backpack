@@ -31,6 +31,7 @@ type Props = {
   value: string,
   clearButtonMode: 'never' | 'while-editing' | 'unless-editing' | 'always',
   editable: boolean,
+  description: ?string,
   inputRef: ?(Node) => void,
   onBlur: ?() => void,
   onFocus: ?() => void,
@@ -51,6 +52,7 @@ class BpkTextInput extends Component<Props, State> {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     clearButtonMode: TextInput.propTypes.clearButtonMode,
+    description: PropTypes.string,
     editable: PropTypes.bool,
     inputRef: PropTypes.func,
     onBlur: PropTypes.func,
@@ -63,6 +65,7 @@ class BpkTextInput extends Component<Props, State> {
 
   static defaultProps = {
     clearButtonMode: 'while-editing',
+    description: null,
     editable: true,
     inputRef: null,
     onBlur: null,
@@ -132,6 +135,7 @@ class BpkTextInput extends Component<Props, State> {
   render() {
     const { isFocused } = this.state;
     const {
+      description,
       inputRef,
       placeholder,
       validationMessage,
@@ -162,6 +166,24 @@ class BpkTextInput extends Component<Props, State> {
       valid,
     );
 
+    const renderExtraInfo = () => {
+      if (valid === false && validationMessage) {
+        return (
+          <BpkText textStyle="xs" style={styles.validationMessage}>
+            {validationMessage}
+          </BpkText>
+        );
+      }
+      if (description) {
+        return (
+          <BpkText textStyle="xs" style={styles.description}>
+            {description}
+          </BpkText>
+        );
+      }
+      return null;
+    };
+
     return (
       <View style={[styles.container, userStyle]}>
         <Animated.Text style={animatedLabelStyle}>{label}</Animated.Text>
@@ -179,12 +201,7 @@ class BpkTextInput extends Component<Props, State> {
           />
           {!isFocused && validityIcon}
         </Animated.View>
-        {valid === false &&
-          validationMessage && (
-            <BpkText textStyle="xs" style={styles.validationMessage}>
-              {validationMessage}
-            </BpkText>
-          )}
+        {renderExtraInfo()}
       </View>
     );
   }

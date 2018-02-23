@@ -62,6 +62,32 @@ const commonTests = () => {
       expect(testRenderer.toJSON()).toMatchSnapshot();
     });
 
+    it('should render correctly with description', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkTextInput
+          label="Name"
+          description="Who loves orange soda?"
+          value="Kel loves orange soda"
+        />,
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with description, valid=false and a validationMessage', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkTextInput
+          label="Name"
+          description="Who loves orange soda?"
+          value="Somebody other than Kel loves orange soda"
+          valid={false}
+          validationMessage="Nope"
+        />,
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
     it('should render correctly with valid', () => {
       const testRenderer = TestRenderer.create(
         <BpkTextInput label="Name" value="" valid />,

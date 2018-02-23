@@ -279,6 +279,216 @@ exports[`Android BpkTextInput should render correctly with custom style 1`] = `
 </View>
 `;
 
+exports[`Android BpkTextInput should render correctly with description 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingTop": 20,
+      },
+      null,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "rgba(129, 123, 143, 1)",
+        "fontFamily": "sans-serif",
+        "fontSize": 14,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 0,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(230, 228, 235, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      clearButtonMode="while-editing"
+      editable={true}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      placeholder={null}
+      style={
+        Object {
+          "borderBottomWidth": 0,
+          "color": "rgb(82, 76, 97)",
+          "flex": 1,
+          "fontSize": 16,
+          "fontWeight": "400",
+          "lineHeight": 24,
+          "minHeight": 32,
+          "paddingHorizontal": 0,
+          "paddingVertical": 4,
+          "textAlign": "left",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value="Kel loves orange soda"
+    />
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
+          "fontWeight": "400",
+        },
+        Object {
+          "color": "rgb(129, 123, 143)",
+          "paddingTop": 4,
+        },
+      ]
+    }
+  >
+    Who loves orange soda?
+  </Text>
+</View>
+`;
+
+exports[`Android BpkTextInput should render correctly with description, valid=false and a validationMessage 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingTop": 20,
+      },
+      null,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    collapsable={undefined}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "rgba(255, 84, 82, 1)",
+        "fontFamily": "sans-serif",
+        "fontSize": 14,
+        "fontWeight": "400",
+        "lineHeight": 20,
+        "position": "absolute",
+        "top": 0,
+      }
+    }
+  >
+    Name
+  </Text>
+  <View
+    collapsable={undefined}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomColor": "rgba(255, 84, 82, 1)",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      clearButtonMode="while-editing"
+      editable={true}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      placeholder={null}
+      style={
+        Object {
+          "borderBottomWidth": 0,
+          "color": "rgb(82, 76, 97)",
+          "flex": 1,
+          "fontSize": 16,
+          "fontWeight": "400",
+          "lineHeight": 24,
+          "minHeight": 32,
+          "paddingHorizontal": 0,
+          "paddingVertical": 4,
+          "textAlign": "left",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value="Somebody other than Kel loves orange soda"
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "BpkIcon",
+            "fontSize": 24,
+            "lineHeight": 24,
+          },
+          Object {
+            "fontSize": 16,
+            "lineHeight": 16,
+          },
+          Array [
+            Object {
+              "position": "absolute",
+              "right": 6,
+            },
+            Object {
+              "color": "rgb(255, 84, 82)",
+            },
+          ],
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 12,
+          "fontWeight": "400",
+        },
+        Object {
+          "color": "rgb(255, 84, 82)",
+          "paddingTop": 4,
+        },
+      ]
+    }
+  >
+    Nope
+  </Text>
+</View>
+`;
+
 exports[`Android BpkTextInput should render correctly with editable=false 1`] = `
 <View
   style={

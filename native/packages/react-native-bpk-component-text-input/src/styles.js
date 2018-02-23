@@ -61,6 +61,10 @@ const styles = StyleSheet.create({
     color: colorRed500,
     paddingTop: spacingSm,
   },
+  description: {
+    color: colorGray500,
+    paddingTop: spacingSm,
+  },
 });
 
 // Created in a separate StyleSheet as they are not exported.
