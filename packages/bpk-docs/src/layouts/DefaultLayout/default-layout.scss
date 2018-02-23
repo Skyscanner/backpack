@@ -19,6 +19,16 @@
 @import '~bpk-mixins/index';
 
 .bpkdocs-default-layout {
+  &__application-container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  &__main {
+    flex: 1;
+  }
+
   &__container {
     background-color: $bpk-color-gray-100;
   }
