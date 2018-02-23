@@ -2,19 +2,23 @@
 
 ## Unreleased
 
-**Added:**
-- bpk-component-icon:
-  - Added new HOC `withDescription` to make it easy to provide a textual description of icons for screen readers.
+_Nothing yet..._
 
-- bpk-component-card:
+## 2018-02-23 - Popovers and tooltips positioning behaviour can now be customised
+
+**Added:**
+- bpk-component-card: 1.0.48 => 1.1.0
   - Added new prop `blank` which when set along with the use of `href` makes the card open the link in a new tab.
 
-- bpk-component-popover:
-- bpk-component-tooltip:
+- bpk-component-icon: 3.15.5 => 3.16.0
+  - Added new HOC `withDescription` to make it easy to provide a textual description of icons for screen readers.
+
+- bpk-component-popover: 2.0.9 => 2.1.0
+- bpk-component-tooltip: 3.0.8 => 3.1.0
   - New `popperModifiers` prop. Use this to customise the behaviour of the underlying positioning library. Please refer to its [documentation](https://github.com/FezVrasta/popper.js/blob/v1.12.9/docs/_includes/popper-documentation.md#modifiers) for details.
 
 **Fixed:**
-- react-native-bpk-component-text:
+- react-native-bpk-component-text: 2.1.28 => 2.1.29
   - Removed line height styles, allowing the built in native ones to be used instead.
 
 ## 2018-02-19 - Fix for janky RN banner alert animations & a visual update to `plus`, `minus` and `close` icons
