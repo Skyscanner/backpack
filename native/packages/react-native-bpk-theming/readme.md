@@ -26,6 +26,7 @@ const theme = {
   buttonSecondaryBackgroundColor: '#fff',
   buttonSecondaryTextColor: '#2d244c',
   buttonSecondaryBorderColor: '#2d244c',
+  buttonLinkTextColor: '#fce134',
 };
 
 export default class App extends Component {
