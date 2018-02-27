@@ -1,0 +1,340 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android BpkDialingCodeListItem should render correctly 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="44 United Kingdom"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackground",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "paddingHorizontal": 8,
+      "paddingVertical": 16,
+    }
+  }
+  testID={undefined}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "borderColor": "rgb(230, 228, 235)",
+          "borderWidth": 1,
+          "height": 16,
+          "width": 24,
+        }
+      }
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 16,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "flex": 1,
+              "marginLeft": 24,
+            },
+            null,
+          ],
+        ]
+      }
+    >
+      44
+       
+      United Kingdom
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
+        },
+        Object {
+          "fontSize": 16,
+          "lineHeight": 16,
+        },
+        Array [
+          Object {
+            "color": "rgb(230, 228, 235)",
+          },
+        ],
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`Android BpkDialingCodeListItem should support the "flagImage" property 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="44 United Kingdom"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackground",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "paddingHorizontal": 8,
+      "paddingVertical": 16,
+    }
+  }
+  testID={undefined}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <Image
+      resizeMode="contain"
+      style={
+        Object {
+          "borderColor": "rgb(230, 228, 235)",
+          "borderWidth": 1,
+          "height": 16,
+          "width": 24,
+        }
+      }
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 16,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "flex": 1,
+              "marginLeft": 24,
+            },
+            null,
+          ],
+        ]
+      }
+    >
+      44
+       
+      United Kingdom
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
+        },
+        Object {
+          "fontSize": 16,
+          "lineHeight": 16,
+        },
+        Array [
+          Object {
+            "color": "rgb(230, 228, 235)",
+          },
+        ],
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`Android BpkDialingCodeListItem should support the "selected" property 1`] = `
+<View
+  accessibilityComponentType="button"
+  accessibilityLabel="44 United Kingdom"
+  accessibilityTraits={
+    Array [
+      "button",
+    ]
+  }
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackground",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "paddingHorizontal": 8,
+      "paddingVertical": 16,
+    }
+  }
+  testID={undefined}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "borderColor": "rgb(230, 228, 235)",
+          "borderWidth": 1,
+          "height": 16,
+          "width": 24,
+        }
+      }
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "sans-serif",
+            "fontSize": 16,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "flex": 1,
+              "marginLeft": 24,
+            },
+            Object {
+              "color": "rgb(0, 178, 214)",
+            },
+          ],
+        ]
+      }
+    >
+      44
+       
+      United Kingdom
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "BpkIcon",
+          "fontSize": 24,
+          "lineHeight": 24,
+        },
+        Object {
+          "fontSize": 16,
+          "lineHeight": 16,
+        },
+        Array [
+          Object {
+            "color": "rgb(230, 228, 235)",
+          },
+          Object {
+            "color": "rgb(0, 178, 214)",
+          },
+        ],
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
