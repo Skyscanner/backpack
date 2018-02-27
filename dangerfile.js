@@ -30,6 +30,10 @@ import {
 
 import * as meta from './meta.json';
 
+const AVOID_EXACT_WORDS = [
+  { word: 'react native', reason: 'Please use React Native with capitals' },
+];
+
 const BACKPACK_SQUAD_MEMBERS = meta.maintainers.map(
   maintainer => maintainer.github,
 );
@@ -40,6 +44,7 @@ const createdFiles = danger.git.created_files;
 const modifiedFiles = danger.git.modified_files;
 const fileChanges = [...modifiedFiles, ...createdFiles];
 const declaredTrivial = danger.github.pr.title.includes('#trivial');
+const markdown = fileChanges.filter(path => path.endsWith('md'));
 
 // Be nice to our neighbours.
 if (isPrExternal) {
@@ -177,3 +182,18 @@ if (androidSnapshotsWithIosTokens.length > 0) {
     )}`,
   );
 }
+
+markdown.forEach(path => {
+  const fileContent = fs.readFileSync(path);
+
+  fileContent
+    .toString()
+    .split(/\r?\n/)
+    .forEach((line, lineIndex) => {
+      AVOID_EXACT_WORDS.forEach(phrase => {
+        if (line.includes(phrase.word)) {
+          warn(`${phrase.reason} on line ${lineIndex + 1} in ${path}`);
+        }
+      });
+    });
+});

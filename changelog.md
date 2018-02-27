@@ -458,7 +458,7 @@ _Nothing yet..._
 - bpk-animate-height: 1.0.32 => 1.1.0
   - New `onAnimationComplete` function prop which is invoked when expand / collapse completes.
 
-## 2017-11-16 - New platform specific extensions for react native tokens
+## 2017-11-16 - New platform specific extensions for React Native tokens
 
 **Added:**
 - bpk-tokens: 26.4.5 => 26.5.0
@@ -955,7 +955,7 @@ _Nothing yet..._
 - bpk-svgs: 5.6.2 => 5.7.0
   - added 1 new icon (cloakroom)
 - bpk-tokens: 24.1.0 => 24.2.0
-  - Added common js output for react native. `bpk-tokens/tokens/{platform}/base.react.native.common.js`
+  - Added common js output for React Native. `bpk-tokens/tokens/{platform}/base.react.native.common.js`
 
 **Fixed:**
 - bpk-component-table: 1.0.7 => 1.0.8
