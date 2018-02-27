@@ -9,7 +9,7 @@
 npm install react-native-bpk-component-button-link --save-dev
 ```
 
-2. `react-native-bpk-component-button-link` depends on [react-native-bpk-component-icon](https://www.npmjs.com/package/react-native-bpk-component-icon) make sure to follow the installation guide for the icon component for the different platforms
+2. `react-native-bpk-component-button-link` depends on [react-native-bpk-component-icon](https://www.npmjs.com/package/react-native-bpk-component-icon). Make sure to follow the installation guide for the icon component for the different platforms.
 
 ## Usage
 

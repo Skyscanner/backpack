@@ -38,6 +38,7 @@ import {
   MODALS,
   PROGRESS,
   NATIVE_BUTTON,
+  NATIVE_BUTTON_LINK,
   NATIVE_HORIZONTAL_NAV,
   NATIVE_SPINNER,
   NATIVE_SWITCH,
@@ -60,6 +61,9 @@ const components = [
       <BpkList>
         <BpkListItem>
           <BpkRouterLink to={NATIVE_BUTTON}>Button</BpkRouterLink>
+        </BpkListItem>
+        <BpkListItem>
+          <BpkRouterLink to={NATIVE_BUTTON_LINK}>Button Link</BpkRouterLink>
         </BpkListItem>
         <BpkListItem>
           <BpkRouterLink to={NATIVE_HORIZONTAL_NAV}>
