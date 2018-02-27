@@ -1,0 +1,436 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android BpkButtonLink should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 2,
+          "height": 36,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
+      }
+    >
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButtonLink should render correctly with iconAlignment="leading" 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 2,
+          "height": 36,
+        },
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
+      }
+    >
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButtonLink should render correctly with iconAlignment="trailing" 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 2,
+          "height": 36,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
+      }
+    >
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButtonLink should support elements as icons 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 2,
+          "height": 36,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
+      }
+    >
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButtonLink should support having an icon as well as a title 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 2,
+          "height": 36,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
+      }
+    >
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButtonLink should support overwriting styles 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 2,
+          "height": 36,
+        },
+      ],
+      Object {
+        "width": 100,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
+      }
+    >
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButtonLink should support the "icon" and "large" property 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 2,
+          "height": 36,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
+      }
+    >
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButtonLink should support the "large" and secondary property 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 2,
+          "height": 36,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
+      }
+    >
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButtonLink should support the "large" property 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 2,
+          "height": 36,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffbcbc",
+          "borderColor": "red",
+          "borderWidth": 1,
+          "height": 100,
+          "justifyContent": "center",
+          "margin": 10,
+          "width": 300,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#333333",
+          "margin": 20,
+        }
+      }
+    >
+      TouchableNativeFeedback is not supported on this platform!
+    </Text>
+  </View>
+</View>
+`;
