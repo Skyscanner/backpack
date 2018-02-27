@@ -5,6 +5,9 @@
 - react-native-bpk-component-button-link:
   - Introducing the new React Native button link component.
 
+- bpk-component-checkbox:
+  - Modified `label` prop to accept a node.
+
 ## 2018-02-23 - Popovers and tooltips positioning behaviour can now be customised, plus new native text input `description` prop
 
 **Added:**
