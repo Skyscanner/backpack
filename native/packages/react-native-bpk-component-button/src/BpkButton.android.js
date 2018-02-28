@@ -107,7 +107,7 @@ const BpkButton = (props: Props) => {
                 emphasize
                 style={textStyle(theme, props)}
               >
-                {title}
+                {title.toUpperCase()}
               </BpkText>
             )}
             {typeof icon === 'string' ? (
