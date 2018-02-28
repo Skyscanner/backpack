@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-checkbox",
-  "version": "1.4.13",
+  "version": "1.4.14",
   "description": "Backpack checkbox component.",
   "main": "index.js",
   "repository": {
