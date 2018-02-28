@@ -8,7 +8,8 @@
 
 **Fixed:**
 - bpk-component-checkbox:
-  - Modified `label` prop to accept a node.
+- bpk-component-radio:
+  - `label` prop-type is now `node` instead of `string`.
 
 ## 2018-02-23 - Popovers and tooltips positioning behaviour can now be customised, plus new native text input `description` prop
 
