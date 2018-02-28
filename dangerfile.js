@@ -23,10 +23,7 @@
 import fs from 'fs';
 import { includes } from 'lodash';
 import { danger, fail, warn, message } from 'danger';
-import {
-  props as iosProps,
-  propKeys as iosPropKeys,
-} from './packages/bpk-tokens/tokens/base.raw.ios.json';
+import { props as iosProps } from './packages/bpk-tokens/tokens/base.raw.ios.json';
 
 import * as meta from './meta.json';
 
@@ -152,26 +149,7 @@ const androidSnapshotsWithIosTokens = fileChanges.filter(filePath => {
 
   const fileContent = fs.readFileSync(filePath).toString();
 
-  const formatToken = ({ value, type }) => {
-    const FORMATS = {
-      font: `"fontFamily": ${value},`,
-      'font-size': `"fontSize": ${value},`,
-    };
-
-    return FORMATS[type] || null;
-  };
-
-  return iosPropKeys.some(tokenName => {
-    const token = iosProps[tokenName];
-
-    const formattedToken = formatToken(token);
-
-    if (!formattedToken) {
-      return false;
-    }
-
-    return fileContent.includes(formattedToken);
-  });
+  return fileContent.includes(`"fontFamily": ${iosProps.FONT_FAMILY.VALUE},`);
 });
 
 if (androidSnapshotsWithIosTokens.length > 0) {
