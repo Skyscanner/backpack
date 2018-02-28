@@ -27,7 +27,7 @@ exports[`Android BpkButton should render correctly 1`] = `
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -77,7 +77,7 @@ exports[`Android BpkButton should render correctly with iconAlignment="leading" 
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -126,7 +126,7 @@ exports[`Android BpkButton should render correctly with iconAlignment="trailing"
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -174,7 +174,7 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -222,7 +222,7 @@ exports[`Android BpkButton should render correctly with type="featured" 1`] = `
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -270,7 +270,7 @@ exports[`Android BpkButton should render correctly with type="primary" 1`] = `
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -318,7 +318,7 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -369,7 +369,7 @@ exports[`Android BpkButton should support elements as icons 1`] = `
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -418,7 +418,7 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -469,7 +469,7 @@ exports[`Android BpkButton should support having only an icon 1`] = `
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -519,7 +519,9 @@ exports[`Android BpkButton should support overwriting styles 1`] = `
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        Object {
+          "width": 100,
+        },
       ]
     }
   >
@@ -568,7 +570,7 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -620,7 +622,7 @@ exports[`Android BpkButton should support the "icon" and "large" property 1`] = 
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -674,7 +676,7 @@ exports[`Android BpkButton should support the "iconOnly" and "large" property 1`
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -725,7 +727,7 @@ exports[`Android BpkButton should support the "large" and secondary property 1`]
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -776,7 +778,7 @@ exports[`Android BpkButton should support the "large" property 1`] = `
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >
@@ -824,7 +826,7 @@ exports[`Android BpkButtonThemed should render correctly 1`] = `
           "margin": 10,
           "width": 300,
         },
-        undefined,
+        null,
       ]
     }
   >

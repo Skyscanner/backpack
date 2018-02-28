@@ -38,9 +38,7 @@ jest.mock('bpk-tokens/tokens/base.react.native', () =>
   require.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
 );
 
-jest.mock('./layout/BpkButtonContainer', () =>
-  require.requireActual('./layout/BpkButtonContainer.android.js'),
-);
+jest.mock('./BpkButton', () => require.requireActual('./BpkButton.android.js'));
 
 describe('Android', () => {
   commonTests();

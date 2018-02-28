@@ -26,7 +26,7 @@ import BpkThemeProvider from 'react-native-bpk-theming';
 import { icons } from 'react-native-bpk-component-icon';
 import { spacingMd } from 'bpk-tokens/tokens/base.react.native';
 
-import BpkButton from './src/BpkButton';
+import BpkButton from './index';
 import { BUTTON_TYPES } from './src/common-types';
 import themeAttributes from '../../storybook/themeAttributes';
 import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';

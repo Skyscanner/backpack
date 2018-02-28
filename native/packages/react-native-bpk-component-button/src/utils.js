@@ -23,7 +23,7 @@ import difference from 'lodash/difference';
 import { colorWhite } from 'bpk-tokens/tokens/base.react.native';
 import { type Theme } from 'react-native-bpk-theming';
 
-import styles from './BpkButton-styles';
+import styles from './styles';
 
 const REQUIRED_THEME_ATTRIBUTES: Object = {
   primary: [

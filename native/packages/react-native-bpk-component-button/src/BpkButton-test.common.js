@@ -16,18 +16,23 @@
  * limitations under the License.
  */
 
-import { Text } from 'react-native';
 import React from 'react';
+import { Text } from 'react-native';
 import renderer from 'react-test-renderer';
-
 import BpkThemeProvider from 'react-native-bpk-theming';
 
-import BpkButton, { propTypes } from './BpkButton';
-import { BUTTON_TYPES, ICON_ALIGNMENTS } from './common-types';
+import BpkButton from './BpkButton';
+import {
+  BUTTON_TYPES,
+  ICON_ALIGNMENTS,
+  COMMON_PROP_TYPES,
+} from './common-types';
 
 const onPressFn = jest.fn();
+
 const commonTests = () => {
   jest.mock('Text', () => 'Text');
+
   describe('BpkButton', () => {
     it('should render correctly', () => {
       const tree = renderer
@@ -42,6 +47,7 @@ const commonTests = () => {
         .toJSON();
       expect(tree).toMatchSnapshot();
     });
+
     it('should support the "large" and secondary property', () => {
       const tree = renderer
         .create(
@@ -70,6 +76,7 @@ const commonTests = () => {
         .toJSON();
       expect(tree).toMatchSnapshot();
     });
+
     it('should support the "icon" and "large" property', () => {
       const tree = renderer
         .create(
@@ -175,7 +182,7 @@ const commonTests = () => {
 
     it('should accept iconOnly prop when icon prop is supplied', () => {
       expect(
-        propTypes.icon(
+        COMMON_PROP_TYPES.icon(
           {
             iconOnly: true,
             icon: 'baggage',
@@ -188,7 +195,7 @@ const commonTests = () => {
 
     it('should accept elements as the icon property', () => {
       expect(
-        propTypes.icon(
+        COMMON_PROP_TYPES.icon(
           {
             iconOnly: true,
             icon: <Text>foo</Text>,
@@ -201,15 +208,13 @@ const commonTests = () => {
 
     it('should accept iconOnly prop when icon prop is supplied', () => {
       expect(
-        propTypes
-          .icon(
-            {
-              iconOnly: true,
-            },
-            'icon',
-            'BpkButton',
-          )
-          .toString(),
+        COMMON_PROP_TYPES.icon(
+          {
+            iconOnly: true,
+          },
+          'icon',
+          'BpkButton',
+        ).toString(),
       ).toEqual(
         'Error: Invalid prop `icon` supplied to `BpkButton`. When `iconOnly` is enabled, `icon` must be supplied.',
       ); // eslint-disable-line max-len
@@ -218,16 +223,14 @@ const commonTests = () => {
     it('should reject theme property when some theme attributes are omitted', () => {
       // eslint-disable-line max-len
       expect(
-        propTypes
-          .theme(
-            {
-              type: 'primary',
-              theme: {},
-            },
-            'theme',
-            'BpkButton',
-          )
-          .toString(),
+        COMMON_PROP_TYPES.theme(
+          {
+            type: 'primary',
+            theme: {},
+          },
+          'theme',
+          'BpkButton',
+        ).toString(),
       ).toEqual(
         'Error: Invalid prop `theme` supplied to `BpkButton`. For buttons of type `primary`, the `theme` prop must include `buttonPrimaryTextColor, buttonPrimaryGradientStartColor, buttonPrimaryGradientEndColor`',
       ); // eslint-disable-line max-len
@@ -236,7 +239,7 @@ const commonTests = () => {
     it('should accept theme property when correct attributes are supplied', () => {
       // eslint-disable-line max-len
       expect(
-        propTypes.theme(
+        COMMON_PROP_TYPES.theme(
           {
             type: 'primary',
             theme: {
