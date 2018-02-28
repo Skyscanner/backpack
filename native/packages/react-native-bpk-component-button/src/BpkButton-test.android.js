@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import commonTests from './BpkButton-test.common';
 
 jest.mock('react-native', () => {
-  const reactNative = require.requireActual('react-native');
+  const reactNative = jest.requireActual('react-native');
   jest
     .spyOn(reactNative.Platform, 'select')
     .mockImplementation(obj => obj.android || obj.default);
@@ -29,16 +31,22 @@ jest.mock('react-native', () => {
   return reactNative;
 });
 
+jest.mock('TouchableNativeFeedback', () =>
+  jest.requireActual(
+    'react-native/Libraries/Components/Touchable/TouchableNativeFeedback.android.js',
+  ),
+);
+
 jest.mock(
   './../node_modules/react-native-bpk-component-text/node_modules/bpk-tokens/tokens/base.react.native',
-  () => require.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+  () => jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
 );
 
 jest.mock('bpk-tokens/tokens/base.react.native', () =>
-  require.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+  jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
 );
 
-jest.mock('./BpkButton', () => require.requireActual('./BpkButton.android.js'));
+jest.mock('./BpkButton', () => jest.requireActual('./BpkButton.android.js'));
 
 describe('Android', () => {
   commonTests();
