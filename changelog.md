@@ -6,9 +6,11 @@
 - react-native-bpk-component-button-link:
   - Introducing the new React Native button link component.
 
+## 2018-02-28 - Checkboxes and radio buttons can now accept React nodes
+
 **Fixed:**
-- bpk-component-checkbox:
-- bpk-component-radio:
+- bpk-component-checkbox: 1.4.13 => 1.4.14
+- bpk-component-radio: 1.2.13 => 1.2.14
   - `label` prop-type is now `node` instead of `string`.
 
 ## 2018-02-23 - Popovers and tooltips positioning behaviour can now be customised, plus new native text input `description` prop
