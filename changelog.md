@@ -2,9 +2,11 @@
 
 ## Unreleased
 
+**Added:**
 - react-native-bpk-component-button-link:
   - Introducing the new React Native button link component.
 
+**Fixed:**
 - bpk-component-checkbox:
   - Modified `label` prop to accept a node.
 
