@@ -20,7 +20,13 @@
 
 import PropTypes from 'prop-types';
 import React, { Component, type Node } from 'react';
-import { Animated, TextInput, View, ViewPropTypes } from 'react-native';
+import {
+  Animated,
+  type AnimatedValue,
+  TextInput,
+  View,
+  ViewPropTypes,
+} from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import { animationDurationSm } from 'bpk-tokens/tokens/base.react.native';
 import { ValidIcon, InvalidIcon } from './BpkTextInputIcons';
@@ -37,8 +43,9 @@ type Props = {
   onFocus: ?() => void,
   placeholder: ?string,
   style: ?(Object | Array<Object>),
-  valid: true | false | null,
+  valid: ?boolean,
   validationMessage: ?string,
+  accessoryView: ?Node,
 };
 
 type State = {
@@ -46,7 +53,7 @@ type State = {
 };
 
 class BpkTextInput extends Component<Props, State> {
-  animatedValues: { color: mixed, labelPosition: mixed };
+  animatedValues: { color: AnimatedValue, labelPosition: AnimatedValue };
 
   static propTypes = {
     label: PropTypes.string.isRequired,
@@ -61,6 +68,7 @@ class BpkTextInput extends Component<Props, State> {
     style: ViewPropTypes.style,
     valid: PropTypes.oneOf(true, false, null),
     validationMessage: PropTypes.string,
+    accessoryView: PropTypes.node,
   };
 
   static defaultProps = {
@@ -74,6 +82,7 @@ class BpkTextInput extends Component<Props, State> {
     style: null,
     valid: null,
     validationMessage: null,
+    accessoryView: null,
   };
 
   constructor(props: Props) {
@@ -146,8 +155,11 @@ class BpkTextInput extends Component<Props, State> {
       valid,
       onFocus,
       onBlur,
+      accessoryView,
       ...rest
     } = this.props;
+    const hasAccessoryView = accessoryView !== null;
+    const placeholerValue = isFocused || hasAccessoryView ? placeholder : null;
 
     const validityIcon = valid ? (
       <ValidIcon />
@@ -158,11 +170,12 @@ class BpkTextInput extends Component<Props, State> {
     const animatedLabelStyle = getLabelStyle(
       this.animatedValues.color,
       this.animatedValues.labelPosition,
-      { value, valid, editable },
+      { value, valid, editable, hasAccessoryView },
     );
 
     const animatedInputStyle = getInputContainerStyle(
       this.animatedValues.color,
+      hasAccessoryView,
       valid,
     );
 
@@ -186,21 +199,24 @@ class BpkTextInput extends Component<Props, State> {
 
     return (
       <View style={[styles.container, userStyle]}>
-        <Animated.Text style={animatedLabelStyle}>{label}</Animated.Text>
-        <Animated.View style={animatedInputStyle}>
-          <TextInput
-            editable={editable}
-            value={value || ''}
-            style={styles.input}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            ref={inputRef}
-            underlineColorAndroid="transparent"
-            {...rest}
-            placeholder={isFocused ? placeholder : null}
-          />
-          {!isFocused && validityIcon}
-        </Animated.View>
+        <View style={styles.rowContainer}>
+          <Animated.Text style={animatedLabelStyle}>{label}</Animated.Text>
+          {accessoryView}
+          <Animated.View style={animatedInputStyle}>
+            <TextInput
+              editable={editable}
+              value={value || ''}
+              style={styles.input}
+              onFocus={this.onFocus}
+              onBlur={this.onBlur}
+              ref={inputRef}
+              underlineColorAndroid="transparent"
+              {...rest}
+              placeholder={placeholerValue}
+            />
+            {!isFocused && validityIcon}
+          </Animated.View>
+        </View>
         {renderExtraInfo()}
       </View>
     );
