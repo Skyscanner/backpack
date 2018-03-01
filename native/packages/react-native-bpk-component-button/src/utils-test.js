@@ -52,15 +52,18 @@ describe('utils', () => {
     });
 
     it('should reject iconOnly prop when icon prop is not supplied', () => {
-      expect(
-        iconPropType(
-          {
-            iconOnly: true,
-          },
-          'icon',
-          'BpkButton',
-        ).toString(),
-      ).toEqual(
+      const result = iconPropType(
+        {
+          iconOnly: true,
+        },
+        'icon',
+        'BpkButton',
+      );
+
+      const errorString =
+        result instanceof Error ? result.toString() : 'Expected an error';
+
+      expect(errorString).toEqual(
         'Error: Invalid prop `icon` supplied to `BpkButton`. When `iconOnly` is enabled, `icon` must be supplied.',
       );
     });
@@ -68,16 +71,19 @@ describe('utils', () => {
 
   describe('themePropType', () => {
     it('should reject theme property when some theme attributes are omitted', () => {
-      expect(
-        themePropType(
-          {
-            type: 'primary',
-            theme: {},
-          },
-          'theme',
-          'BpkButton',
-        ).toString(),
-      ).toEqual(
+      const result = themePropType(
+        {
+          type: 'primary',
+          theme: {},
+        },
+        'theme',
+        'BpkButton',
+      );
+
+      const errorString =
+        result instanceof Error ? result.toString() : 'Expected an error';
+
+      expect(errorString).toEqual(
         'Error: Invalid prop `theme` supplied to `BpkButton`. For buttons of type `primary`, the `theme` prop must include `buttonPrimaryTextColor, buttonPrimaryGradientStartColor, buttonPrimaryGradientEndColor`',
       );
     });
