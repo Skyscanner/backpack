@@ -5,6 +5,8 @@
 **Added:**
 - react-native-bpk-component-button-link:
   - Introducing the new React Native button link component.
+- react-native-bpk-component-text-input:
+  - Introduced a new `accessoryView` prop that enables rendering any view on the leading side of the text input.
 
 ## 2018-03-01 - Fix for Android button props
 

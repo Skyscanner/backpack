@@ -20,7 +20,9 @@ import React from 'react';
 import BpkLink from 'bpk-component-link';
 import readme from 'react-native-bpk-component-text-input/readme.md';
 import iosScreenshot from 'react-native-bpk-component-text-input/screenshots/ios/text-inputs.png';
+import iosScreenshotWithAccessoryView from 'react-native-bpk-component-text-input/screenshots/ios/text-inputs-with-accessory-view.png';
 import androidScreenshot from 'react-native-bpk-component-text-input/screenshots/android/text-inputs.png';
+import androidScreenshotWithAccessoryView from 'react-native-bpk-component-text-input/screenshots/android/text-inputs-with-accessory-view.png';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -51,6 +53,28 @@ const components = [
       },
     ],
   },
+  {
+    id: 'text-inputs-with-accessory-view',
+    title: 'Text Inputs with Acessory View',
+    screenshots: [
+      {
+        title: 'iOS',
+        width: 750,
+        height: 1334,
+        src: `/${iosScreenshotWithAccessoryView}`,
+        altText: 'iOS Text Input Component',
+        subText: '(iPhone 8 Simulator)',
+      },
+      {
+        title: 'Android',
+        width: 1080,
+        height: 1920,
+        src: `/${androidScreenshotWithAccessoryView}`,
+        altText: 'Android Text Input Component',
+        subText: '(Google Pixel Emulator)',
+      },
+    ],
+  },
 ];
 
 const NativeInputPage = () => (
@@ -60,7 +84,10 @@ const NativeInputPage = () => (
       <Paragraph>
         The Backpack input is a wrapper around the React Native{' '}
         <BpkLink href={reactNativeUrl}>TextInput component</BpkLink>, therefore
-        it supports all the same behaviours and properties.
+        it supports all the same behaviours and properties. Optionally an
+        accessory view can be provided which will be rendered on the leading
+        side of the text input. Providing an accessory view changes the
+        behaviour of the floating label.
       </Paragraph>,
     ]}
     components={components}

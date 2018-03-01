@@ -18,7 +18,7 @@
 
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import BpkTextInput from './BpkTextInput';
 
@@ -143,6 +143,14 @@ const commonTests = () => {
     it('should ignore when placeholder is provided, as element is not focused', () => {
       const testRenderer = TestRenderer.create(
         <BpkTextInput label="Name" value="" placeholder="Placeholder" />,
+      );
+
+      expect(testRenderer.toJSON()).toMatchSnapshot();
+    });
+
+    it('should render correctly with `accessoryView`', () => {
+      const testRenderer = TestRenderer.create(
+        <BpkTextInput label="Name" value="" accessoryView={<View />} />,
       );
 
       expect(testRenderer.toJSON()).toMatchSnapshot();

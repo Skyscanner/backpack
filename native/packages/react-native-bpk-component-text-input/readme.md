@@ -99,3 +99,4 @@ export default class App extends Component {
 | valid                       | oneOf(true, false, null)                                    | false    | null          |
 | validationMessage           | string                                                      | false    | null          |
 | style                       | style                                                       | false    | null          |
+| accessoryView               | node                                                        | false    | null          |
