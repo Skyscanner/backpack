@@ -837,9 +837,7 @@ exports[`Android BpkButton should support elements as icons 1`] = `
           "borderRadius": 40,
           "height": 36,
         },
-        Object {
-          "width": 32,
-        },
+        undefined,
       ],
       null,
     ]
@@ -877,9 +875,7 @@ exports[`Android BpkButton should support elements as icons 1`] = `
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
-          Object {
-            "paddingHorizontal": 0,
-          },
+          undefined,
         ],
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
@@ -897,10 +893,43 @@ exports[`Android BpkButton should support elements as icons 1`] = `
             "flexDirection": "row",
             "justifyContent": "center",
           },
-          undefined,
+          Object {
+            "justifyContent": "space-between",
+          },
         ]
       }
     >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                  "lineHeight": 18,
+                },
+                undefined,
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -1048,122 +1077,6 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
                 Object {
                   "marginLeft": 4,
                 },
-              ],
-            ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`Android BpkButton should support having only an icon 1`] = `
-<View
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "height": 36,
-        },
-        Object {
-          "width": 32,
-        },
-      ],
-      null,
-    ]
-  }
->
-  <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hitSlop={undefined}
-    nativeBackgroundAndroid={
-      Object {
-        "attribute": "selectableItemBackground",
-        "type": "ThemeAttrAndroid",
-      }
-    }
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "height": 36,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          Object {
-            "paddingHorizontal": 0,
-          },
-        ],
-        Object {
-          "backgroundColor": "rgb(0, 215, 117)",
-        },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ]
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Object {
-              "fontSize": 16,
-              "lineHeight": 16,
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
-                },
-                undefined,
-              ],
-              Object {},
-              Array [
-                Object {
-                  "lineHeight": 16,
-                },
-                undefined,
               ],
             ],
           ]
@@ -1389,7 +1302,7 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
 </View>
 `;
 
-exports[`Android BpkButton should support the "icon" and "large" property 1`] = `
+exports[`Android BpkButton should support the "icon" property 1`] = `
 <View
   style={
     Array [
@@ -1397,9 +1310,6 @@ exports[`Android BpkButton should support the "icon" and "large" property 1`] = 
         Object {
           "borderRadius": 40,
           "height": 36,
-        },
-        Object {
-          "minHeight": 48,
         },
         undefined,
       ],
@@ -1439,10 +1349,6 @@ exports[`Android BpkButton should support the "icon" and "large" property 1`] = 
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
-          Object {
-            "minHeight": 48,
-            "paddingHorizontal": 16,
-          },
           undefined,
         ],
         Object {
@@ -1461,7 +1367,6 @@ exports[`Android BpkButton should support the "icon" and "large" property 1`] = 
             "flexDirection": "row",
             "justifyContent": "center",
           },
-          undefined,
           Object {
             "justifyContent": "space-between",
           },
@@ -1477,7 +1382,7 @@ exports[`Android BpkButton should support the "icon" and "large" property 1`] = 
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
-              "fontSize": 20,
+              "fontSize": 14,
               "fontWeight": "400",
             },
             Object {
@@ -1490,7 +1395,6 @@ exports[`Android BpkButton should support the "icon" and "large" property 1`] = 
                   "color": "rgb(255, 255, 255)",
                   "lineHeight": 18,
                 },
-                undefined,
                 undefined,
               ],
               Object {},
@@ -1512,6 +1416,10 @@ exports[`Android BpkButton should support the "icon" and "large" property 1`] = 
               "fontSize": 24,
               "lineHeight": 24,
             },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
             Array [
               Array [
                 Object {
@@ -1520,14 +1428,12 @@ exports[`Android BpkButton should support the "icon" and "large" property 1`] = 
                   "lineHeight": 18,
                 },
                 undefined,
-                undefined,
               ],
               Object {},
               Array [
                 Object {
                   "lineHeight": 16,
                 },
-                undefined,
                 Object {
                   "marginLeft": 4,
                 },
@@ -1543,7 +1449,7 @@ exports[`Android BpkButton should support the "icon" and "large" property 1`] = 
 </View>
 `;
 
-exports[`Android BpkButton should support the "iconOnly" and "large" property 1`] = `
+exports[`Android BpkButton should support the "secondary" property 1`] = `
 <View
   style={
     Array [
@@ -1551,131 +1457,6 @@ exports[`Android BpkButton should support the "iconOnly" and "large" property 1`
         Object {
           "borderRadius": 40,
           "height": 36,
-        },
-        Object {
-          "minHeight": 48,
-        },
-        Object {
-          "width": 48,
-        },
-      ],
-      null,
-    ]
-  }
->
-  <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hitSlop={undefined}
-    nativeBackgroundAndroid={
-      Object {
-        "attribute": "selectableItemBackground",
-        "type": "ThemeAttrAndroid",
-      }
-    }
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "height": 36,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          Object {
-            "minHeight": 48,
-            "paddingHorizontal": 16,
-          },
-          Object {
-            "paddingHorizontal": 0,
-          },
-        ],
-        Object {
-          "backgroundColor": "rgb(0, 215, 117)",
-        },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-          undefined,
-        ]
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
-                },
-                undefined,
-                undefined,
-              ],
-              Object {},
-              Array [
-                Object {
-                  "lineHeight": 16,
-                },
-                undefined,
-                undefined,
-              ],
-            ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`Android BpkButton should support the "large" and secondary property 1`] = `
-<View
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "height": 36,
-        },
-        Object {
-          "minHeight": 48,
         },
       ],
       null,
@@ -1720,10 +1501,6 @@ exports[`Android BpkButton should support the "large" and secondary property 1`]
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
-          Object {
-            "minHeight": 48,
-            "paddingHorizontal": 16,
-          },
         ],
         Object {
           "backgroundColor": "transparent",
@@ -1741,7 +1518,6 @@ exports[`Android BpkButton should support the "large" and secondary property 1`]
             "flexDirection": "row",
             "justifyContent": "center",
           },
-          undefined,
         ]
       }
     >
@@ -1754,7 +1530,7 @@ exports[`Android BpkButton should support the "large" and secondary property 1`]
             Object {
               "color": "rgb(82, 76, 97)",
               "fontFamily": "sans-serif",
-              "fontSize": 20,
+              "fontSize": 14,
               "fontWeight": "400",
             },
             Object {
@@ -1770,117 +1546,6 @@ exports[`Android BpkButton should support the "large" and secondary property 1`]
                 Object {
                   "color": "rgb(0, 178, 214)",
                 },
-                undefined,
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`Android BpkButton should support the "large" property 1`] = `
-<View
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "height": 36,
-        },
-        Object {
-          "minHeight": 48,
-        },
-      ],
-      null,
-    ]
-  }
->
-  <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hitSlop={undefined}
-    nativeBackgroundAndroid={
-      Object {
-        "attribute": "selectableItemBackground",
-        "type": "ThemeAttrAndroid",
-      }
-    }
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "height": 36,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          Object {
-            "minHeight": 48,
-            "paddingHorizontal": 16,
-          },
-        ],
-        Object {
-          "backgroundColor": "rgb(0, 215, 117)",
-        },
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ]
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 20,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
-                },
-                undefined,
               ],
               Object {},
             ],
