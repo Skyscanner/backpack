@@ -127,59 +127,8 @@ storiesOf('BpkTextInput', module)
       />
     </ScrollView>
   ))
-  .add('with accessory view', () => (
+  .add('docs:text-inputs-with-accessory-view', () => (
     <ScrollView>
-      <StatefulBpkTextInput
-        label="Input"
-        initialValue=""
-        style={styles.input}
-        placeholder="3 letter airport code"
-        accessoryView={<View style={styles.accessoryView} />}
-      />
-      <StatefulBpkTextInput
-        label="Input with value and description"
-        initialValue="Edinburgh"
-        description="Enter your destination."
-        style={styles.input}
-        accessoryView={<View style={styles.accessoryView} />}
-      />
-      <StatefulBpkTextInput
-        label="Input with multiline value"
-        initialValue="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." // eslint-disable-line max-len
-        multiline
-        style={styles.input}
-        autoGrow
-        accessoryView={<View style={styles.accessoryView} />}
-      />
-      <StatefulBpkTextInput
-        label="Valid input"
-        initialValue="Edinburgh"
-        valid
-        style={styles.input}
-        accessoryView={<View style={styles.accessoryView} />}
-      />
-      <StatefulBpkTextInput
-        label="Invalid input"
-        initialValue="Edinbvrgh"
-        valid={false}
-        validationMessage="'Edinbvrgh' is not a valid city."
-        style={styles.input}
-        accessoryView={<View style={styles.accessoryView} />}
-      />
-      <StatefulBpkTextInput
-        label="Non-editable input"
-        initialValue=""
-        editable={false}
-        style={styles.input}
-        accessoryView={<View style={styles.accessoryView} />}
-      />
-      <StatefulBpkTextInput
-        label="Password"
-        initialValue="letmein"
-        secureTextEntry
-        style={styles.input}
-        accessoryView={<View style={styles.accessoryView} />}
-      />
       <StatefulBpkTextInput
         label="Phone number"
         initialValue="+441234567890"
