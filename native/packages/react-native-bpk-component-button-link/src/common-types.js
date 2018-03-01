@@ -30,29 +30,30 @@ export const ICON_ALIGNMENTS = {
   trailing: 'trailing',
 };
 
-export type IconAlignment = $Keys<typeof ICON_ALIGNMENTS>;
-
 export type CommonProps = {
   onPress: (event: SyntheticEvent<>) => void,
   title: string,
   accessibilityLabel: ?string,
   icon: ?Node,
+  iconAlignment: $Keys<typeof ICON_ALIGNMENTS>,
   style: ?(Object | Array<Object>),
   theme: ?Theme,
 };
 
-export const COMMON_PROP_TYPES = {
+export const commonPropTypes = {
   onPress: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   accessibilityLabel: PropTypes.string,
   icon: PropTypes.oneOf(PropTypes.string, PropTypes.node),
+  iconAlignment: PropTypes.oneOf(Object.keys(ICON_ALIGNMENTS)),
   style: ViewPropTypes.style,
   theme: themePropType,
 };
 
-export const COMMON_DEFAULT_PROPS = {
+export const commonDefaultProps = {
   accessibilityLabel: null,
   icon: null,
+  iconAlignment: ICON_ALIGNMENTS.trailing,
   style: null,
   theme: null,
 };
