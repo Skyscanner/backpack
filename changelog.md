@@ -6,6 +6,8 @@
 - react-native-bpk-component-button-link:
   - Introducing the new React Native button link component.
 
+## 2018-03-01 - Fix for Android button props
+
 **Fixed:**
 - react-native-bpk-component-button:
   - Android buttons now correctly ignore `large` and `iconOnly` props
