@@ -6,6 +6,10 @@
 - react-native-bpk-component-button-link:
   - Introducing the new React Native button link component.
 
+**Fixed:**
+- react-native-bpk-component-button:
+  - Android buttons now correctly ignore `large` and `iconOnly` props
+
 ## 2018-02-28 - Checkboxes and radio buttons can now accept React nodes
 
 **Fixed:**

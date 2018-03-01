@@ -19,7 +19,6 @@
 /* @flow */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withTheme } from 'react-native-bpk-theming';
 import BpkIcon from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
@@ -36,17 +35,13 @@ import {
 
 import {
   type CommonProps,
-  type IconAlignment,
+  commonPropTypes,
+  commonDefaultProps,
   BUTTON_TYPES,
-  COMMON_PROP_TYPES,
-  COMMON_DEFAULT_PROPS,
-  ICON_ALIGNMENTS,
 } from './common-types';
 
 export type Props = {
   ...$Exact<CommonProps>,
-  iconAlignment: IconAlignment,
-  large: boolean,
 };
 
 const BpkButton = (props: Props) => {
@@ -54,8 +49,6 @@ const BpkButton = (props: Props) => {
     accessibilityLabel,
     disabled,
     icon,
-    iconOnly,
-    large,
     onPress,
     style,
     title,
@@ -101,21 +94,11 @@ const BpkButton = (props: Props) => {
       >
         <View style={[buttonStyle, backgroundColor]}>
           <View style={getStyleForElement('view', props)}>
-            {!iconOnly && (
-              <BpkText
-                textStyle={large ? 'lg' : 'sm'}
-                emphasize
-                style={textStyle(theme, props)}
-              >
-                {title.toUpperCase()}
-              </BpkText>
-            )}
+            <BpkText textStyle="sm" emphasize style={textStyle(theme, props)}>
+              {title.toUpperCase()}
+            </BpkText>
             {typeof icon === 'string' ? (
-              <BpkIcon
-                icon={icon}
-                style={iconStyle(theme, props)}
-                small={!large}
-              />
+              <BpkIcon icon={icon} style={iconStyle(theme, props)} small />
             ) : (
               icon
             )}
@@ -127,15 +110,11 @@ const BpkButton = (props: Props) => {
 };
 
 BpkButton.propTypes = {
-  ...COMMON_PROP_TYPES,
-  iconAlignment: PropTypes.oneOf(Object.keys(ICON_ALIGNMENTS)),
-  large: PropTypes.bool,
+  ...commonPropTypes,
 };
 
 BpkButton.defaultProps = {
-  ...COMMON_DEFAULT_PROPS,
-  iconAlignment: ICON_ALIGNMENTS.trailing,
-  large: false,
+  ...commonDefaultProps,
 };
 
 export default withTheme(BpkButton);
