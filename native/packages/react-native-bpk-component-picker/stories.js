@@ -79,7 +79,7 @@ const options = [
   },
 ];
 
-storiesOf('BpkTextInput', module).add('docs:pickers', () => (
+storiesOf('BpkPicker', module).add('docs:default', () => (
   <ScrollView>
     <StatefulBpkPicker label="Picker" style={styles.picker} options={options} />
     <StatefulBpkPicker
