@@ -18,18 +18,27 @@
 
 /* @flow */
 
+import React from 'react';
+import renderer from 'react-test-renderer';
+import BpkButton from './BpkButton';
 import commonTests from './BpkButton-test.common';
 
-jest.mock('react-native', () => {
+const onPressFn = jest.fn();
+
+const mockPlatform = (platform, version) => {
   const reactNative = jest.requireActual('react-native');
   jest
     .spyOn(reactNative.Platform, 'select')
-    .mockImplementation(obj => obj.android || obj.default);
-  reactNative.Platform.OS = 'android';
-  reactNative.TouchableNativeFeedback.SelectableBackgroundBorderless = jest.fn();
+    .mockImplementation(obj => obj.platform || obj.default);
+  reactNative.Platform.OS = platform;
+  Object.defineProperty(reactNative.Platform, 'Version', {
+    get: () => version,
+  });
 
   return reactNative;
-});
+};
+
+mockPlatform('android', 21);
 
 jest.mock('TouchableNativeFeedback', () =>
   jest.requireActual(
@@ -50,4 +59,25 @@ jest.mock('./BpkButton', () => jest.requireActual('./BpkButton.android.js'));
 
 describe('Android', () => {
   commonTests();
+});
+
+describe('Android API levels', () => {
+  beforeEach(() => {
+    jest.resetModules();
+  });
+  it('Android API>=21 should render with ripple', () => {
+    mockPlatform('android', 21);
+    const tree = renderer
+      .create(<BpkButton title="Lorem ipsum" onPress={onPressFn} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('Android API<21 should render without ripple', () => {
+    mockPlatform('android', 19);
+    const tree = renderer.create(
+      <BpkButton title="Lorem ipsum" onPress={onPressFn} />,
+    );
+    const treeJson = tree.toJSON();
+    expect(treeJson).toMatchSnapshot();
+  });
 });
