@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import commonTests from './BpkTextInput-test.common';
 
 jest.mock('react-native', () => {
-  const reactNative = require.requireActual('react-native');
+  const reactNative = jest.requireActual('react-native');
   Object.defineProperty(reactNative.I18nManager, 'isRTL', { value: true });
   return reactNative;
 });

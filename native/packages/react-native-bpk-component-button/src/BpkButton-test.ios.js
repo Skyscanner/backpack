@@ -16,10 +16,93 @@
  * limitations under the License.
  */
 
+import React from 'react';
+import renderer from 'react-test-renderer';
+
+import BpkButton from './BpkButton';
 import commonTests from './BpkButton-test.common';
 
 jest.mock('react-native-linear-gradient', () => 'View');
 
 describe('iOS', () => {
   commonTests();
+
+  it('should support the "large" property', () => {
+    const onPressFn = jest.fn();
+
+    const tree = renderer
+      .create(<BpkButton large title="Lorem ipsum" onPress={onPressFn} />)
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should support the "large" and secondary property', () => {
+    const onPressFn = jest.fn();
+
+    const tree = renderer
+      .create(
+        <BpkButton
+          large
+          title="Lorem ipsum"
+          type="secondary"
+          onPress={onPressFn}
+        />,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should support the "iconOnly" property', () => {
+    const onPressFn = jest.fn();
+
+    const tree = renderer
+      .create(
+        <BpkButton
+          iconOnly
+          icon="baggage"
+          title="Lorem ipsum"
+          onPress={onPressFn}
+        />,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should support the "iconOnly" and "large" property', () => {
+    const onPressFn = jest.fn();
+
+    const tree = renderer
+      .create(
+        <BpkButton
+          iconOnly
+          large
+          icon="baggage"
+          title="Lorem ipsum"
+          onPress={onPressFn}
+        />,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should support the "icon" and "large" property', () => {
+    const onPressFn = jest.fn();
+
+    const tree = renderer
+      .create(
+        <BpkButton
+          icon="baggage"
+          large
+          title="Lorem ipsum"
+          onPress={onPressFn}
+        />,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

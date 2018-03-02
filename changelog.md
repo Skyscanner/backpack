@@ -3,18 +3,42 @@
 ## Unreleased
 
 **Added:**
-- bpk-component-icon:
-  - Added new HOC `withDescription` to make it easy to provide a textual description of icons for screen readers.
+- react-native-bpk-component-button-link:
+  - Introducing the new React Native button link component.
+- react-native-bpk-component-text-input:
+  - Introduced a new `accessoryView` prop that enables rendering any view on the leading side of the text input.
 
-- bpk-component-card:
-  - Added new prop `blank` which when set along with the use of `href` makes the card open the link in a new tab.
-
-- bpk-component-popover:
-- bpk-component-tooltip:
-  - New `popperModifiers` prop. Use this to customise the behaviour of the underlying positioning library. Please refer to its [documentation](https://github.com/FezVrasta/popper.js/blob/v1.12.9/docs/_includes/popper-documentation.md#modifiers) for details.
+## 2018-03-01 - Fix for Android button props
 
 **Fixed:**
-- react-native-bpk-component-text:
+- react-native-bpk-component-button:
+  - Android buttons now correctly ignore `large` and `iconOnly` props
+
+## 2018-02-28 - Checkboxes and radio buttons can now accept React nodes
+
+**Fixed:**
+- bpk-component-checkbox: 1.4.13 => 1.4.14
+- bpk-component-radio: 1.2.13 => 1.2.14
+  - `label` prop-type is now `node` instead of `string`.
+
+## 2018-02-23 - Popovers and tooltips positioning behaviour can now be customised, plus new native text input `description` prop
+
+**Added:**
+- bpk-component-card: 1.0.48 => 1.1.0
+  - Added new prop `blank` which when set along with the use of `href` makes the card open the link in a new tab.
+
+- bpk-component-icon: 3.15.5 => 3.16.0
+  - Added new HOC `withDescription` to make it easy to provide a textual description of icons for screen readers.
+
+- bpk-component-popover: 2.0.9 => 2.1.0
+- bpk-component-tooltip: 3.0.8 => 3.1.0
+  - New `popperModifiers` prop. Use this to customise the behaviour of the underlying positioning library. Please refer to its [documentation](https://github.com/FezVrasta/popper.js/blob/v1.12.9/docs/_includes/popper-documentation.md#modifiers) for details.
+
+- react-native-bpk-component-text-input: 2.0.11 => 2.1.0
+  - New `description` prop. Use this to add a brief description of the field that will appear underneath it.
+
+**Fixed:**
+- react-native-bpk-component-text: 2.1.28 => 2.1.29
   - Removed line height styles, allowing the built in native ones to be used instead.
 
 ## 2018-02-19 - Fix for janky RN banner alert animations & a visual update to `plus`, `minus` and `close` icons
@@ -451,7 +475,7 @@
 - bpk-animate-height: 1.0.32 => 1.1.0
   - New `onAnimationComplete` function prop which is invoked when expand / collapse completes.
 
-## 2017-11-16 - New platform specific extensions for react native tokens
+## 2017-11-16 - New platform specific extensions for React Native tokens
 
 **Added:**
 - bpk-tokens: 26.4.5 => 26.5.0
@@ -948,7 +972,7 @@
 - bpk-svgs: 5.6.2 => 5.7.0
   - added 1 new icon (cloakroom)
 - bpk-tokens: 24.1.0 => 24.2.0
-  - Added common js output for react native. `bpk-tokens/tokens/{platform}/base.react.native.common.js`
+  - Added common js output for React Native. `bpk-tokens/tokens/{platform}/base.react.native.common.js`
 
 **Fixed:**
 - bpk-component-table: 1.0.7 => 1.0.8

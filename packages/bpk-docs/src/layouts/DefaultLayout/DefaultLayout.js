@@ -83,7 +83,12 @@ class DefaultLayout extends Component {
             : null
         }
       >
-        <div id="application-container">
+        <div
+          id="application-container"
+          className={getClassName(
+            'bpkdocs-default-layout__application-container',
+          )}
+        >
           <Helmet titleTemplate="%s | Backpack" />
           {!process.env.BPK_NEO && (
             <Header
@@ -92,7 +97,9 @@ class DefaultLayout extends Component {
             />
           )}
 
-          <main>{children}</main>
+          <main className={getClassName('bpkdocs-default-layout__main')}>
+            {children}
+          </main>
 
           {process.env.BPK_NEO ? (
             <Footer />

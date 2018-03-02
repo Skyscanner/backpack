@@ -16,18 +16,19 @@
  * limitations under the License.
  */
 
-import { Text } from 'react-native';
 import React from 'react';
+import { Text } from 'react-native';
 import renderer from 'react-test-renderer';
-
 import BpkThemeProvider from 'react-native-bpk-theming';
 
-import BpkButton, { propTypes } from './BpkButton';
+import BpkButton from './BpkButton';
 import { BUTTON_TYPES, ICON_ALIGNMENTS } from './common-types';
 
 const onPressFn = jest.fn();
+
 const commonTests = () => {
   jest.mock('Text', () => 'Text');
+
   describe('BpkButton', () => {
     it('should render correctly', () => {
       const tree = renderer
@@ -36,17 +37,10 @@ const commonTests = () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('should support the "large" property', () => {
-      const tree = renderer
-        .create(<BpkButton large title="Lorem ipsum" onPress={onPressFn} />)
-        .toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-    it('should support the "large" and secondary property', () => {
+    it('should support the "secondary" property', () => {
       const tree = renderer
         .create(
           <BpkButton
-            large
             title="Lorem ipsum"
             type="secondary"
             onPress={onPressFn}
@@ -56,29 +50,10 @@ const commonTests = () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('should support the "iconOnly" and "large" property', () => {
+    it('should support the "icon" property', () => {
       const tree = renderer
         .create(
-          <BpkButton
-            iconOnly
-            large
-            icon="baggage"
-            title="Lorem ipsum"
-            onPress={onPressFn}
-          />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-    it('should support the "icon" and "large" property', () => {
-      const tree = renderer
-        .create(
-          <BpkButton
-            icon="baggage"
-            large
-            title="Lorem ipsum"
-            onPress={onPressFn}
-          />,
+          <BpkButton icon="baggage" title="Lorem ipsum" onPress={onPressFn} />,
         )
         .toJSON();
       expect(tree).toMatchSnapshot();
@@ -95,20 +70,6 @@ const commonTests = () => {
       const tree = renderer
         .create(
           <BpkButton icon="baggage" title="Lorem ipsum" onPress={onPressFn} />,
-        )
-        .toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('should support having only an icon', () => {
-      const tree = renderer
-        .create(
-          <BpkButton
-            title="Lorem ipsum"
-            icon="baggage"
-            iconOnly
-            onPress={onPressFn}
-          />,
         )
         .toJSON();
       expect(tree).toMatchSnapshot();
@@ -171,84 +132,6 @@ const commonTests = () => {
           .toJSON();
         expect(tree).toMatchSnapshot();
       });
-    });
-
-    it('should accept iconOnly prop when icon prop is supplied', () => {
-      expect(
-        propTypes.icon(
-          {
-            iconOnly: true,
-            icon: 'baggage',
-          },
-          'icon',
-          'BpkButton',
-        ),
-      ).toBeFalsy();
-    });
-
-    it('should accept elements as the icon property', () => {
-      expect(
-        propTypes.icon(
-          {
-            iconOnly: true,
-            icon: <Text>foo</Text>,
-          },
-          'icon',
-          'BpkButton',
-        ),
-      ).toBeFalsy();
-    });
-
-    it('should accept iconOnly prop when icon prop is supplied', () => {
-      expect(
-        propTypes
-          .icon(
-            {
-              iconOnly: true,
-            },
-            'icon',
-            'BpkButton',
-          )
-          .toString(),
-      ).toEqual(
-        'Error: Invalid prop `icon` supplied to `BpkButton`. When `iconOnly` is enabled, `icon` must be supplied.',
-      ); // eslint-disable-line max-len
-    });
-
-    it('should reject theme property when some theme attributes are omitted', () => {
-      // eslint-disable-line max-len
-      expect(
-        propTypes
-          .theme(
-            {
-              type: 'primary',
-              theme: {},
-            },
-            'theme',
-            'BpkButton',
-          )
-          .toString(),
-      ).toEqual(
-        'Error: Invalid prop `theme` supplied to `BpkButton`. For buttons of type `primary`, the `theme` prop must include `buttonPrimaryTextColor, buttonPrimaryGradientStartColor, buttonPrimaryGradientEndColor`',
-      ); // eslint-disable-line max-len
-    });
-
-    it('should accept theme property when correct attributes are supplied', () => {
-      // eslint-disable-line max-len
-      expect(
-        propTypes.theme(
-          {
-            type: 'primary',
-            theme: {
-              buttonPrimaryGradientStartColor: 'red',
-              buttonPrimaryGradientEndColor: 'green',
-              buttonPrimaryTextColor: 'blue',
-            },
-          },
-          'theme',
-          'BpkButton',
-        ),
-      ).toBeFalsy();
     });
 
     it('should throw an error for invalid button type', () => {

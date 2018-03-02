@@ -1,6 +1,6 @@
 {
   "name": "bpk-component-loading-button",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "Backpack loading button component.",
   "main": "index.js",
   "repository": {
@@ -13,10 +13,10 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "bpk-component-button": "^2.0.6",
-    "bpk-component-icon": "^3.15.5",
-    "bpk-component-spinner": "^2.2.16",
-    "bpk-mixins": "^17.3.5",
+    "bpk-component-button": "^2.0.7",
+    "bpk-component-icon": "^3.16.0",
+    "bpk-component-spinner": "^2.2.17",
+    "bpk-mixins": "^17.3.6",
     "bpk-react-utils": "^2.5.0",
     "prop-types": "^15.5.8"
   }

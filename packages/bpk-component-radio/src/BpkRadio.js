@@ -60,7 +60,7 @@ const BpkRadio = props => {
 
 BpkRadio.propTypes = {
   name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.node.isRequired,
   disabled: PropTypes.bool,
   white: PropTypes.bool,
   className: PropTypes.string,

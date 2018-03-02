@@ -18,6 +18,7 @@
 
 /* @flow */
 
-import BpkButton from './src/BpkButton';
+import BpkButton, { type Props } from './src/BpkButton';
 
+export type BpkButtonProps = Props;
 export default BpkButton;

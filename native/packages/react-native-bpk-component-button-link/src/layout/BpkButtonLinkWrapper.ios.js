@@ -19,15 +19,10 @@
 /* @flow */
 
 import React from 'react';
+import { View, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import LinearGradient from 'react-native-linear-gradient';
-import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
-import {
-  getStyleForElement,
-  getThemingForElement,
-  getGradientColors,
-} from './../utils';
+import { getStyleForElement, getThemingForElement } from './../utils';
 
 import {
   type CommonProps,
@@ -41,17 +36,14 @@ type Props = {
   large: boolean,
 };
 
-const BpkButtonContainer = (props: Props) => {
+const BpkButtonLinkWrapper = (props: Props) => {
   const { theme } = props;
-  const gradientColors = getGradientColors(theme, props);
   const containerStyle = getStyleForElement('container', props);
   const buttonStyle = getStyleForElement('button', props);
-  const buttonTheme = getThemingForElement('button', theme, props);
+  const buttonTheme = getThemingForElement('button', theme);
   const {
     accessibilityLabel,
     children,
-    disabled,
-    iconOnly,
     onPress,
     style,
     title,
@@ -60,36 +52,31 @@ const BpkButtonContainer = (props: Props) => {
   } = props;
   const accessibilityTraits = ['button'];
 
-  if (disabled) {
-    accessibilityTraits.push('disabled');
-  }
   return (
-    <LinearGradient colors={gradientColors} style={[containerStyle, style]}>
-      <BpkTouchableOverlay
+    <View style={[containerStyle, style]}>
+      <TouchableOpacity
         accessibilityComponentType="button"
         accessibilityLabel={accessibilityLabel || title}
         accessibilityTraits={accessibilityTraits}
-        borderRadius="pill"
-        disabled={disabled}
         onPress={onPress}
         style={[buttonStyle, buttonTheme]}
         {...rest}
       >
         {children}
-      </BpkTouchableOverlay>
-    </LinearGradient>
+      </TouchableOpacity>
+    </View>
   );
 };
 
-BpkButtonContainer.propTypes = {
+BpkButtonLinkWrapper.propTypes = {
   ...COMMON_PROP_TYPES,
   children: PropTypes.node.isRequired,
   large: PropTypes.bool,
 };
 
-BpkButtonContainer.defaultProps = {
+BpkButtonLinkWrapper.defaultProps = {
   ...COMMON_DEFAULT_PROPS,
   large: false,
 };
 
-export default BpkButtonContainer;
+export default BpkButtonLinkWrapper;

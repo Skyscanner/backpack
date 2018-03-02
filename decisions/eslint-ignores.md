@@ -4,6 +4,8 @@
 When ignoring `eslint` rules inside files, specify the rules being ignored. Where appropriate,
 add a comment to explain why it's being ignored.
 
+Disabling rules for entire files is discouraged. If it's necessary to do so, include a comment to explain the rationale.
+
 ### Examples
 * `// eslint-disable-line max-len`
 * `// eslint-disable-next-line no-alert`

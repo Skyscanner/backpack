@@ -114,6 +114,11 @@ const links = [
         children: 'Banner alerts',
       },
       { id: 'NATIVE_BUTTON', route: routes.NATIVE_BUTTON, children: 'Button' },
+      // {
+      //   id: 'NATIVE_BUTTON_LINK',
+      //   route: routes.NATIVE_BUTTON_LINK,
+      //   children: 'Button Link',
+      // },
       { id: 'NATIVE_CARDS', route: routes.NATIVE_CARDS, children: 'Cards' },
       {
         id: 'NATIVE_HORIZONTAL_NAV',
@@ -147,6 +152,7 @@ const links = [
         route: routes.NATIVE_TOUCHABLE_OVERLAY,
         children: 'Touchable Overlay',
       },
+      { id: 'NATIVE_BUTTON_LINK', route: null, children: 'Button Link' },
       { id: 'NATIVE_NUDGER', route: null, children: 'Nudger' },
     ],
   },

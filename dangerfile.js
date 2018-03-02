@@ -23,12 +23,13 @@
 import fs from 'fs';
 import { includes } from 'lodash';
 import { danger, fail, warn, message } from 'danger';
-import {
-  props as iosProps,
-  propKeys as iosPropKeys,
-} from './packages/bpk-tokens/tokens/base.raw.ios.json';
+import { props as iosProps } from './packages/bpk-tokens/tokens/base.raw.ios.json';
 
 import * as meta from './meta.json';
+
+const AVOID_EXACT_WORDS = [
+  { word: 'react native', reason: 'Please use React Native with capitals' },
+];
 
 const BACKPACK_SQUAD_MEMBERS = meta.maintainers.map(
   maintainer => maintainer.github,
@@ -40,6 +41,7 @@ const createdFiles = danger.git.created_files;
 const modifiedFiles = danger.git.modified_files;
 const fileChanges = [...modifiedFiles, ...createdFiles];
 const declaredTrivial = danger.github.pr.title.includes('#trivial');
+const markdown = fileChanges.filter(path => path.endsWith('md'));
 
 // Be nice to our neighbours.
 if (isPrExternal) {
@@ -147,26 +149,7 @@ const androidSnapshotsWithIosTokens = fileChanges.filter(filePath => {
 
   const fileContent = fs.readFileSync(filePath).toString();
 
-  const formatToken = ({ value, type }) => {
-    const FORMATS = {
-      font: `"fontFamily": ${value},`,
-      'font-size': `"fontSize": ${value},`,
-    };
-
-    return FORMATS[type] || null;
-  };
-
-  return iosPropKeys.some(tokenName => {
-    const token = iosProps[tokenName];
-
-    const formattedToken = formatToken(token);
-
-    if (!formattedToken) {
-      return false;
-    }
-
-    return fileContent.includes(formattedToken);
-  });
+  return fileContent.includes(`"fontFamily": ${iosProps.FONT_FAMILY.VALUE},`);
 });
 
 if (androidSnapshotsWithIosTokens.length > 0) {
@@ -177,3 +160,18 @@ if (androidSnapshotsWithIosTokens.length > 0) {
     )}`,
   );
 }
+
+markdown.forEach(path => {
+  const fileContent = fs.readFileSync(path);
+
+  fileContent
+    .toString()
+    .split(/\r?\n/)
+    .forEach((line, lineIndex) => {
+      AVOID_EXACT_WORDS.forEach(phrase => {
+        if (line.includes(phrase.word)) {
+          warn(`${phrase.reason} on line ${lineIndex + 1} in ${path}`);
+        }
+      });
+    });
+});

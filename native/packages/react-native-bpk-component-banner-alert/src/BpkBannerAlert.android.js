@@ -37,7 +37,6 @@ import {
   colorYellow500,
   spacingBase,
   spacingLg,
-  spacingMd,
   spacingSm,
   spacingXxl,
 } from 'bpk-tokens/tokens/base.react.native';
@@ -47,18 +46,12 @@ import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
 
 import AnimateAndFade from './AnimateAndFade';
+import ALERT_TYPES from './AlertTypes';
 import {
   dismissablePropType,
   toggleExpandedButtonLabelPropType,
   dismissableLabelPropType,
 } from './customPropTypes';
-
-export const ALERT_TYPES = {
-  SUCCESS: 'success',
-  WARN: 'warn',
-  ERROR: 'error',
-  NEUTRAL: 'neutral',
-};
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -69,7 +62,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   dismissableContainer: {
-    paddingHorizontal: spacingLg - spacingMd,
+    paddingRight: spacingLg,
     backgroundColor: colorGray50,
     justifyContent: 'center',
   },
@@ -87,12 +80,11 @@ const styles = StyleSheet.create({
     paddingRight: spacingSm,
     paddingTop: spacingSm - 1,
   },
+  expandableIcon: {
+    paddingTop: spacingSm - 1,
+  },
   dismissLabel: {
     color: colorBlue500,
-  },
-  dismissButtonContainer: {
-    padding: spacingMd,
-    borderRadius: borderRadiusSm,
   },
   dismissButtonContainerRadius: {
     borderRadius: borderRadiusSm,
@@ -135,11 +127,9 @@ const DismissableButton = ({ dismissButtonLabel, onDismiss }) => (
         background={TouchableNativeFeedback.SelectableBackgroundBorderless()}
         onPress={onDismiss}
       >
-        <View style={styles.dismissButtonContainer}>
-          <BpkText textStyle="sm" emphasize style={styles.dismissLabel}>
-            {dismissButtonLabel.toUpperCase()}
-          </BpkText>
-        </View>
+        <BpkText textStyle="sm" emphasize style={styles.dismissLabel}>
+          {dismissButtonLabel.toUpperCase()}
+        </BpkText>
       </TouchableNativeFeedback>
     </View>
   </View>
@@ -152,7 +142,7 @@ const ExpandableContent = ({ expanded, children }) => (
 const ExpandableIcon = ({ expanded }) => (
   <View style={styles.dismissableContainer}>
     <BpkIcon
-      style={styles.icon}
+      style={styles.expandableIcon}
       icon={expanded ? icons['chevron-up'] : icons['chevron-down']}
       small
     />

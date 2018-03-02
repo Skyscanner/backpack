@@ -37,6 +37,10 @@
 		60D802631F62BDF400FA4879 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D802431F62BDCA00FA4879 /* libBVLinearGradient.a */; };
 		6A4A4F4B8F7F4269A13BB2A7 /* BpkIcon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 349CF328083441A0845E0C8D /* BpkIcon.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		C8B831744C5A4256BD1B5010 /* BpkIcon.eot in Resources */ = {isa = PBXBuildFile; fileRef = 8C8F437769B54A038A210159 /* BpkIcon.eot */; };
+		E19140ED6394488C9626FE7A /* BpkIcon.woff in Resources */ = {isa = PBXBuildFile; fileRef = E436C94A65D1410092B05450 /* BpkIcon.woff */; };
+		8E33D9A4365E4F84826CF0C6 /* iconMapping.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CA50A36B56148BD95AF98C2 /* iconMapping.json */; };
+		28EA01A797384AA6BA660F6A /* libRCTRestart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3896E08C3804FF089E1E50B /* libRCTRestart.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -315,6 +319,11 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		D60ACAA41FD8532E009E5946 /* he-IL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "he-IL"; path = "he-IL.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		8C8F437769B54A038A210159 /* BpkIcon.eot */ = {isa = PBXFileReference; name = "BpkIcon.eot"; path = "../../packages/bpk-svgs/dist/font/BpkIcon.eot"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E436C94A65D1410092B05450 /* BpkIcon.woff */ = {isa = PBXFileReference; name = "BpkIcon.woff"; path = "../../packages/bpk-svgs/dist/font/BpkIcon.woff"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3CA50A36B56148BD95AF98C2 /* iconMapping.json */ = {isa = PBXFileReference; name = "iconMapping.json"; path = "../../packages/bpk-svgs/dist/font/iconMapping.json"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0334EEA012364B5980516D8A /* RCTRestart.xcodeproj */ = {isa = PBXFileReference; name = "RCTRestart.xcodeproj"; path = "../node_modules/react-native-restart/ios/RCTRestart.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		B3896E08C3804FF089E1E50B /* libRCTRestart.a */ = {isa = PBXFileReference; name = "libRCTRestart.a"; path = "libRCTRestart.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +351,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				28EA01A797384AA6BA660F6A /* libRCTRestart.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +534,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+				0334EEA012364B5980516D8A /* RCTRestart.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -565,6 +576,9 @@
 			isa = PBXGroup;
 			children = (
 				349CF328083441A0845E0C8D /* BpkIcon.ttf */,
+				8C8F437769B54A038A210159 /* BpkIcon.eot */,
+				E436C94A65D1410092B05450 /* BpkIcon.woff */,
+				3CA50A36B56148BD95AF98C2 /* iconMapping.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -991,6 +1005,9 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				6A4A4F4B8F7F4269A13BB2A7 /* BpkIcon.ttf in Resources */,
+				C8B831744C5A4256BD1B5010 /* BpkIcon.eot in Resources */,
+				E19140ED6394488C9626FE7A /* BpkIcon.woff in Resources */,
+				8E33D9A4365E4F84826CF0C6 /* iconMapping.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1123,6 +1140,10 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/native.app/native";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Debug;
 		};
@@ -1140,6 +1161,10 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/native.app/native";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Release;
 		};
@@ -1205,6 +1230,10 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Debug;
 		};
@@ -1231,6 +1260,10 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Release;
 		};
@@ -1252,6 +1285,10 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/native-tvOS.app/native-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Debug;
 		};
@@ -1273,6 +1310,10 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/native-tvOS.app/native-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Release;
 		};

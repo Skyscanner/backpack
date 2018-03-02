@@ -22,7 +22,7 @@ import { View, TouchableNativeFeedback } from 'react-native';
 import React, { type Node } from 'react';
 import PropTypes from 'prop-types';
 
-import { getStyleForElement, getAndroidBackgroundColour } from './../utils';
+import { getStyleForElement } from './../utils';
 
 import {
   type CommonProps,
@@ -35,16 +35,12 @@ type Props = {
   children: Node,
 };
 
-const BpkButtonContainer = (props: Props) => {
-  const { theme } = props;
+const BpkButtonLinkWrapper = (props: Props) => {
   const containerStyle = getStyleForElement('container', props);
   const buttonStyle = getStyleForElement('button', props);
-  const backgroundColor = getAndroidBackgroundColour(theme, props);
   const {
     accessibilityLabel,
     children,
-    disabled,
-    iconOnly,
     onPress,
     style,
     title,
@@ -52,9 +48,6 @@ const BpkButtonContainer = (props: Props) => {
   } = props;
 
   const accessibilityTraits = ['button'];
-  if (disabled) {
-    accessibilityTraits.push('disabled');
-  }
 
   return (
     <View style={[containerStyle, style]}>
@@ -63,21 +56,20 @@ const BpkButtonContainer = (props: Props) => {
         accessibilityLabel={accessibilityLabel || title}
         accessibilityTraits={accessibilityTraits}
         background={TouchableNativeFeedback.SelectableBackgroundBorderless()}
-        disabled={disabled}
         onPress={onPress}
         {...rest}
       >
-        <View style={[buttonStyle, backgroundColor]}>{children}</View>
+        <View style={[buttonStyle]}>{children}</View>
       </TouchableNativeFeedback>
     </View>
   );
 };
 
-BpkButtonContainer.propTypes = {
+BpkButtonLinkWrapper.propTypes = {
   ...COMMON_PROP_TYPES,
   children: PropTypes.node.isRequired,
 };
 
-BpkButtonContainer.defaultProps = COMMON_DEFAULT_PROPS;
+BpkButtonLinkWrapper.defaultProps = COMMON_DEFAULT_PROPS;
 
-export default BpkButtonContainer;
+export default BpkButtonLinkWrapper;
