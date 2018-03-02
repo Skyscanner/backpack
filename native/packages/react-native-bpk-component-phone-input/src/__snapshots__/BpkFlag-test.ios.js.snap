@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkFlag should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "borderColor": "rgb(230, 228, 235)",
+      "borderWidth": 1,
+      "height": 16,
+      "width": 24,
+    }
+  }
+/>
+`;
+
+exports[`iOS BpkFlag should render correctly with an image 1`] = `
+<Image
+  resizeMode="contain"
+  style={
+    Object {
+      "borderColor": "rgb(230, 228, 235)",
+      "borderWidth": 1,
+      "height": 16,
+      "width": 24,
+    }
+  }
+/>
+`;
