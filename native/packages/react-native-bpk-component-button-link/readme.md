@@ -56,7 +56,7 @@ export default class App extends Component {
 | accessibilityLabel    | string                                                                    | false    | props.title   |
 | icon                  | oneOf(string, element) Strings must be a [BpkIcon](/components/web/icons) | false    | null          |
 | iconAlignment         | oneOf('leading', 'trailing')                                              | false    | trailing      |
-| large                 | bool                                                                      | false    | false         |
+| large (iOS only)      | bool                                                                      | false    | false         |
 | theme                 | See [Theme Props](#theme-props) below                                     | false    | null          |
 
 ## Theme Props

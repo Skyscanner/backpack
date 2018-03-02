@@ -18,15 +18,16 @@
 
 /* @flow */
 
-import { View, Platform, StyleSheet } from 'react-native';
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
+import { storiesOf } from '@storybook/react-native';
 import BpkThemeProvider from 'react-native-bpk-theming';
+import { View, Platform, StyleSheet } from 'react-native';
 import { spacingMd } from 'bpk-tokens/tokens/base.react.native';
-import themeAttributes from '../../storybook/themeAttributes';
+
 import BpkButtonLink from './src/BpkButtonLink';
 import { StorySubheading } from '../../storybook/TextStyles';
+import themeAttributes from '../../storybook/themeAttributes';
 
 const styles = StyleSheet.create({
   btnContainer: {

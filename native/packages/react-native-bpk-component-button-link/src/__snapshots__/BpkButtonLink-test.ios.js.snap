@@ -449,7 +449,100 @@ exports[`iOS BpkButtonLink should support elements as icons 1`] = `
 </View>
 `;
 
-exports[`iOS BpkButtonLink should support having an icon as well as a title 1`] = `
+exports[`iOS BpkButtonLink should support overwriting styles 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 4,
+          "height": 32,
+        },
+      ],
+      Object {
+        "width": 100,
+      },
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    collapsable={undefined}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "borderRadius": 4,
+        "height": 32,
+        "opacity": 1,
+        "paddingVertical": 8,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Array [
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
 <View
   style={
     Array [
@@ -574,100 +667,7 @@ exports[`iOS BpkButtonLink should support having an icon as well as a title 1`] 
 </View>
 `;
 
-exports[`iOS BpkButtonLink should support overwriting styles 1`] = `
-<View
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 4,
-          "height": 32,
-        },
-      ],
-      Object {
-        "width": 100,
-      },
-    ]
-  }
->
-  <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "borderRadius": 4,
-        "height": 32,
-        "opacity": 1,
-        "paddingVertical": 8,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
-  >
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ]
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 13,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Array [
-              Array [
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`iOS BpkButtonLink should support the "icon" and "large" property 1`] = `
+exports[`iOS should support the "icon" and "large" property 1`] = `
 <View
   style={
     Array [
@@ -788,98 +788,7 @@ exports[`iOS BpkButtonLink should support the "icon" and "large" property 1`] = 
 </View>
 `;
 
-exports[`iOS BpkButtonLink should support the "large" and secondary property 1`] = `
-<View
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 4,
-          "height": 32,
-        },
-      ],
-      null,
-    ]
-  }
->
-  <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    collapsable={undefined}
-    hasTVPreferredFocus={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "borderRadius": 4,
-        "height": 32,
-        "opacity": 1,
-        "paddingVertical": 8,
-      }
-    }
-    testID={undefined}
-    tvParallaxProperties={undefined}
-  >
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-        ]
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "System",
-              "fontSize": 17,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-            Array [
-              Array [
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        Lorem ipsum
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`iOS BpkButtonLink should support the "large" property 1`] = `
+exports[`iOS should support the "large" property 1`] = `
 <View
   style={
     Array [

@@ -16,8 +16,41 @@
  * limitations under the License.
  */
 
+/* @flow */
+
+import React from 'react';
+import renderer from 'react-test-renderer';
+
 import commonTests from './BpkButtonLink-test.common';
+import BpkButtonLink from './BpkButtonLink';
 
 describe('iOS', () => {
   commonTests();
+
+  it('should support the "large" property', () => {
+    const onPressFn = jest.fn();
+
+    const tree = renderer
+      .create(<BpkButtonLink large title="Lorem ipsum" onPress={onPressFn} />)
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should support the "icon" and "large" property', () => {
+    const onPressFn = jest.fn();
+
+    const tree = renderer
+      .create(
+        <BpkButtonLink
+          icon="baggage"
+          large
+          title="Lorem ipsum"
+          onPress={onPressFn}
+        />,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
