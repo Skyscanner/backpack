@@ -11,6 +11,10 @@
  - New `BpkDiallingCodeList` component.
 - react-native-bpk-component-badge:
   - Introducing the new React Native badge component.
+- bpk-component-text:
+  - SVGs inside `BpkText` will now automatically have their fill colour set to match the text colour.
+- bpk-component-link:
+  - SVGs inside `BpkLink` and `BpkButtonLink` will now automatically have their fill colour set to match the text colour.
 
 ## 2018-03-01 - Fix for Android button props
 

@@ -28,4 +28,8 @@
   &--alternate {
     @include bpk-link--alternate;
   }
+
+  svg {
+    fill: currentColor;
+  }
 }

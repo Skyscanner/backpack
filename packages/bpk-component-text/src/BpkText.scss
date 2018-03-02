@@ -30,4 +30,8 @@
   &--bold {
     @include bpk-text--bold;
   }
+
+  svg {
+    fill: currentColor;
+  }
 }
