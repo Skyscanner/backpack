@@ -20,8 +20,9 @@
 
 import BpkModal, { type Props } from './src/BpkModal';
 import themeAttributes from './src/themeAttributes';
+import withModalState from './src/withModalState';
 
 export type BpkModalProps = Props;
 
 export default BpkModal;
-export { themeAttributes };
+export { themeAttributes, withModalState };
