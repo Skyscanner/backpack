@@ -12,6 +12,10 @@
 - react-native-bpk-component-badge:
   - Introducing the new React Native badge component.
 
+**Fixed:**
+- react-native-bpk-component-button:
+  - Fixes crash on Android API level &lt; 21
+
 ## 2018-03-01 - Fix for Android button props
 
 **Fixed:**
