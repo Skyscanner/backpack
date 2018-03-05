@@ -23,99 +23,83 @@ import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react-native';
 import BpkThemeProvider from 'react-native-bpk-theming';
 import { View, Platform, StyleSheet } from 'react-native';
-import { spacingMd } from 'bpk-tokens/tokens/base.react.native';
+import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkButtonLink from './src/BpkButtonLink';
 import { StorySubheading } from '../../storybook/TextStyles';
 import themeAttributes from '../../storybook/themeAttributes';
 
 const styles = StyleSheet.create({
-  btnContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'flex-start',
-  },
-  buttonLinkStyles: {
-    marginBottom: spacingMd,
-    marginRight: spacingMd,
+  buttonStory: {
+    alignItems: 'flex-start',
+    paddingBottom: spacingBase,
   },
 });
 
-const generateButtonStory = () => {
-  function getLargeVersion() {
-    return (
-      <View>
-        <StorySubheading>Large</StorySubheading>
-        <View style={styles.btnContainer}>
-          <BpkButtonLink
-            large
-            title="Button"
-            onPress={action(`Button pressed`)}
-            style={styles.buttonLinkStyles}
-          />
-        </View>
-        <View style={styles.btnContainer}>
-          <BpkButtonLink
-            large
-            title="With Leading icon"
-            icon="alert--active"
-            iconAlignment="leading"
-            onPress={action(`Button  with icon clicked`)}
-            style={styles.buttonLinkStyles}
-          />
-        </View>
-        <View style={styles.btnContainer}>
-          <BpkButtonLink
-            large
-            title="With trailing icon"
-            icon="alert--active"
-            iconAlignment="trailing"
-            onPress={action(`Button  with trailing icon clicked`)}
-            style={styles.buttonLinkStyles}
-          />
-        </View>
-      </View>
-    );
-  }
-  return (
-    <View>
-      <StorySubheading>Default</StorySubheading>
-      <View style={styles.btnContainer}>
-        <BpkButtonLink
-          title="Button"
-          onPress={action(`Button pressed`)}
-          style={styles.buttonLinkStyles}
-        />
-      </View>
-      <View style={styles.btnContainer}>
-        <BpkButtonLink
-          title="With Leading icon"
-          iconAlignment="leading"
-          icon="alert--active"
-          onPress={action(`Button button-link with icon clicked`)}
-          style={styles.buttonLinkStyles}
-        />
-      </View>
-      <View style={styles.btnContainer}>
-        <BpkButtonLink
-          title="With Trailing icon"
-          iconAlignment="trailing"
-          icon="alert--active"
-          onPress={action(`Button button-link with icon clicked`)}
-          style={styles.buttonLinkStyles}
-        />
-      </View>
-      {Platform.OS === 'ios' ? getLargeVersion() : null}
-    </View>
+const ButtonStory = props => <View style={styles.buttonStory} {...props} />;
+
+const createButtonStory = () => {
+  const getLargeVersion = () => (
+    <ButtonStory key="large">
+      <StorySubheading>Large</StorySubheading>
+      <BpkButtonLink
+        large
+        title="Button"
+        onPress={action(`Button pressed`)}
+        style={styles.buttonLinkStyles}
+      />
+      <BpkButtonLink
+        large
+        title="With Leading icon"
+        icon="alert--active"
+        iconAlignment="leading"
+        onPress={action(`Button  with icon clicked`)}
+        style={styles.buttonLinkStyles}
+      />
+      <BpkButtonLink
+        large
+        title="With trailing icon"
+        icon="alert--active"
+        iconAlignment="trailing"
+        onPress={action(`Button  with trailing icon clicked`)}
+        style={styles.buttonLinkStyles}
+      />
+    </ButtonStory>
   );
+
+  return [
+    <ButtonStory key="default">
+      <StorySubheading>Default</StorySubheading>
+      <BpkButtonLink
+        title="Button"
+        onPress={action(`Button pressed`)}
+        style={styles.buttonLinkStyles}
+      />
+      <BpkButtonLink
+        title="With Leading icon"
+        iconAlignment="leading"
+        icon="alert--active"
+        onPress={action(`Button button-link with icon clicked`)}
+        style={styles.buttonLinkStyles}
+      />
+      <BpkButtonLink
+        title="With Trailing icon"
+        iconAlignment="trailing"
+        icon="alert--active"
+        onPress={action(`Button button-link with icon clicked`)}
+        style={styles.buttonLinkStyles}
+      />
+    </ButtonStory>,
+    Platform.OS === 'ios' ? getLargeVersion() : null,
+  ];
 };
 
 const allThemedButtons = (
   <BpkThemeProvider theme={themeAttributes}>
-    <View>{generateButtonStory()}</View>
+    <View>{createButtonStory()}</View>
   </BpkThemeProvider>
 );
 
 storiesOf('BpkButtonLink', module)
-  .add('docs:default', () => <View>{generateButtonStory()}</View>)
+  .add('docs:default', () => createButtonStory())
   .add('docs:withTheme', () => allThemedButtons);

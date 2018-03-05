@@ -4,7 +4,7 @@
 
 ## Installation
 
-1. Install the NPM package:
+1. Install the npm package:
 ```sh
 npm install react-native-bpk-component-button-link --save-dev
 ```
@@ -14,12 +14,10 @@ npm install react-native-bpk-component-button-link --save-dev
 ## Usage
 
 ```js
+import { View } from 'react-native';
 import React, { Component } from 'react';
-import { View, Image } from 'react-native';
-import BpkButton Link from 'react-native-bpk-component-button-link';
+import BpkButtonLink from 'react-native-bpk-component-button-link';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
-
-import { translationHelper } from 'translations';
 
 const styles = StyleSheet.create({
   container: {
@@ -33,14 +31,33 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <BpkButtonLink title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
-        <BpkButtonLink title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
-        <BpkButtonLink title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
-        <BpkButtonLink large  title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
-
-        <BpkButtonLink title={translationHelper.translate('BOOK_FLIGHT')} icon="baggage" onPress={() => {}} />
-        <BpkButtonLink title={translationHelper.translate('BOOK_FLIGHT')} icon="baggage" iconAlignment="leading" onPress={() => {}} />
-        <BpkButtonLink title={translationHelper.translate('BOOK_FLIGHT')} icon="baggage" iconOnly onPress={() => {}} />
+        <BpkButtonLink
+          title="Book flight"
+          onPress={() => {}} />
+        <BpkButtonLink
+          title="Book flight"
+          onPress={() => {}} />
+        <BpkButtonLink
+          title="Book flight"
+          onPress={() => {}} />
+        <BpkButtonLink
+          large
+          title="Book flight"
+          onPress={() => {}} />
+        <BpkButtonLink
+          title="Book flight"
+          icon="baggage"
+          onPress={() => {}} />
+        <BpkButtonLink
+          title="Book flight"
+          icon="baggage"
+          iconAlignment="leading"
+          onPress={() => {}} />
+        <BpkButtonLink
+          title="Book flight"
+          icon="baggage"
+          iconOnly
+          onPress={() => {}} />
       </View>
     );
   }

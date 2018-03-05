@@ -24,17 +24,14 @@ import BpkIcon from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
 import { View, TouchableNativeFeedback } from 'react-native';
 
-import {
-  themeAttributesSupplied,
-  getStyleForElement,
-  textStyle,
-  iconStyle,
-} from './utils';
+import styles from './styles';
+import { themeAttributesSupplied } from './utils';
 
 import {
   type CommonProps,
   commonPropTypes,
   commonDefaultProps,
+  ICON_ALIGNMENTS,
 } from './common-types';
 
 export type Props = {
@@ -45,42 +42,59 @@ const BpkButtonLink = (props: Props) => {
   const {
     accessibilityLabel,
     icon,
+    iconAlignment,
     onPress,
     style,
     title,
-    theme: themeProp,
+    theme,
     ...rest
   } = props;
 
-  const shouldApplyTheme = themeProp && themeAttributesSupplied(themeProp);
-  const theme = shouldApplyTheme ? themeProp : null;
+  const themeStyle =
+    theme && themeAttributesSupplied(theme)
+      ? { color: theme.buttonLinkTextColor }
+      : null;
 
-  const containerStyle = getStyleForElement('container', props);
-  const buttonStyle = getStyleForElement('button', props);
-  const accessibilityTraits = ['button'];
+  const containerStyle = [styles.container];
+  const textStyle = [styles.text];
+  const viewStyle = [styles.view];
+  const iconStyle = [styles.icon];
+
+  if (iconAlignment === ICON_ALIGNMENTS.leading) {
+    viewStyle.push(styles.viewLeading);
+    iconStyle.push(styles.iconLeading);
+  }
+
+  if (themeStyle) {
+    textStyle.push(themeStyle);
+    iconStyle.push(themeStyle);
+  }
+
+  if (style) {
+    containerStyle.push(style);
+  }
 
   return (
-    <View style={[containerStyle, style]}>
+    <View style={containerStyle}>
       <TouchableNativeFeedback
         accessibilityComponentType="button"
         accessibilityLabel={accessibilityLabel || title}
-        accessibilityTraits={accessibilityTraits}
+        accessibilityTraits={['button']}
         background={TouchableNativeFeedback.SelectableBackgroundBorderless()}
-        icon={icon}
         onPress={onPress}
+        style={styles.button}
+        icon={icon}
         {...rest}
       >
-        <View style={[buttonStyle]}>
-          <View style={getStyleForElement('view', props)}>
-            <BpkText textStyle="sm" emphasize style={textStyle(theme, props)}>
-              {title.toUpperCase()}
-            </BpkText>
-            {typeof icon === 'string' ? (
-              <BpkIcon icon={icon} style={iconStyle(theme, props)} small />
-            ) : (
-              icon
-            )}
-          </View>
+        <View style={viewStyle}>
+          <BpkText textStyle="sm" emphasize style={textStyle}>
+            {title.toUpperCase()}
+          </BpkText>
+          {typeof icon === 'string' ? (
+            <BpkIcon icon={icon} style={iconStyle} small />
+          ) : (
+            icon
+          )}
         </View>
       </TouchableNativeFeedback>
     </View>
