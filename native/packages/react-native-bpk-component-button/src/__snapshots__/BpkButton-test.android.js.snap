@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Android BpkButton should render correctly 1`] = `
+exports[`Android API levels Android API<21 should render without ripple 1`] = `
 <View
   style={
     Array [
@@ -67,6 +67,200 @@ exports[`Android BpkButton should render correctly 1`] = `
       }
     >
       <Text
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android API levels Android API>=21 should render with ripple 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 36,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+        ],
+        Object {
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButton should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 36,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+        ],
+        Object {
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Text
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
@@ -86,7 +280,6 @@ exports[`Android BpkButton should render correctly 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
               ],
               Object {},
@@ -129,7 +322,7 @@ exports[`Android BpkButton should render correctly with iconAlignment="leading" 
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -197,7 +390,6 @@ exports[`Android BpkButton should render correctly with iconAlignment="leading" 
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
                 undefined,
                 undefined,
@@ -230,16 +422,13 @@ exports[`Android BpkButton should render correctly with iconAlignment="leading" 
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
                 undefined,
                 undefined,
               ],
               Object {},
               Array [
-                Object {
-                  "lineHeight": 16,
-                },
+                null,
                 Object {
                   "marginLeft": 4,
                 },
@@ -286,7 +475,7 @@ exports[`Android BpkButton should render correctly with iconAlignment="trailing"
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -350,7 +539,6 @@ exports[`Android BpkButton should render correctly with iconAlignment="trailing"
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
                 undefined,
               ],
@@ -382,15 +570,12 @@ exports[`Android BpkButton should render correctly with iconAlignment="trailing"
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
                 undefined,
               ],
               Object {},
               Array [
-                Object {
-                  "lineHeight": 16,
-                },
+                null,
                 Object {
                   "marginLeft": 4,
                 },
@@ -432,7 +617,7 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -498,7 +683,6 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
                 Object {
                   "color": "rgb(255, 84, 82)",
@@ -542,7 +726,7 @@ exports[`Android BpkButton should render correctly with type="featured" 1`] = `
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -602,7 +786,6 @@ exports[`Android BpkButton should render correctly with type="featured" 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
               ],
               Object {},
@@ -643,7 +826,7 @@ exports[`Android BpkButton should render correctly with type="primary" 1`] = `
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -703,7 +886,6 @@ exports[`Android BpkButton should render correctly with type="primary" 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
               ],
               Object {},
@@ -744,7 +926,7 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -810,7 +992,6 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
@@ -855,7 +1036,7 @@ exports[`Android BpkButton should support elements as icons 1`] = `
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -919,7 +1100,6 @@ exports[`Android BpkButton should support elements as icons 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
                 undefined,
               ],
@@ -969,7 +1149,7 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -1033,7 +1213,6 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
                 undefined,
               ],
@@ -1065,15 +1244,12 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
                 undefined,
               ],
               Object {},
               Array [
-                Object {
-                  "lineHeight": 16,
-                },
+                null,
                 Object {
                   "marginLeft": 4,
                 },
@@ -1117,7 +1293,7 @@ exports[`Android BpkButton should support overwriting styles 1`] = `
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -1177,7 +1353,6 @@ exports[`Android BpkButton should support overwriting styles 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
               ],
               Object {},
@@ -1220,7 +1395,7 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -1284,7 +1459,6 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
                 Object {
                   "color": "rgb(178, 174, 189)",
@@ -1329,7 +1503,7 @@ exports[`Android BpkButton should support the "icon" property 1`] = `
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -1393,7 +1567,6 @@ exports[`Android BpkButton should support the "icon" property 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
                 undefined,
               ],
@@ -1425,15 +1598,12 @@ exports[`Android BpkButton should support the "icon" property 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
                 undefined,
               ],
               Object {},
               Array [
-                Object {
-                  "lineHeight": 16,
-                },
+                null,
                 Object {
                   "marginLeft": 4,
                 },
@@ -1475,7 +1645,7 @@ exports[`Android BpkButton should support the "secondary" property 1`] = `
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -1541,7 +1711,6 @@ exports[`Android BpkButton should support the "secondary" property 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
@@ -1585,7 +1754,7 @@ exports[`Android BpkButtonThemed should render correctly 1`] = `
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -1645,7 +1814,6 @@ exports[`Android BpkButtonThemed should render correctly 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
-                  "lineHeight": 18,
                 },
               ],
               Object {
