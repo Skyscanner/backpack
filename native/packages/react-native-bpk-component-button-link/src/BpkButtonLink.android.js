@@ -22,7 +22,8 @@ import React from 'react';
 import { withTheme } from 'react-native-bpk-theming';
 import BpkIcon from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
-import { View, TouchableNativeFeedback } from 'react-native';
+import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
+import { View } from 'react-native';
 
 import styles from './styles';
 import { themeAttributesSupplied } from './utils';
@@ -76,11 +77,10 @@ const BpkButtonLink = (props: Props) => {
 
   return (
     <View style={containerStyle}>
-      <TouchableNativeFeedback
+      <BpkTouchableNativeFeedback
         accessibilityComponentType="button"
         accessibilityLabel={accessibilityLabel || title}
         accessibilityTraits={['button']}
-        background={TouchableNativeFeedback.SelectableBackgroundBorderless()}
         onPress={onPress}
         style={styles.button}
         icon={icon}
@@ -96,7 +96,7 @@ const BpkButtonLink = (props: Props) => {
             icon
           )}
         </View>
-      </TouchableNativeFeedback>
+      </BpkTouchableNativeFeedback>
     </View>
   );
 };

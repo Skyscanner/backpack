@@ -18,9 +18,10 @@
 
 /* @flow */
 
-import { View, StyleSheet, TouchableNativeFeedback } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import React from 'react';
 import BpkText from 'react-native-bpk-component-text';
+import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
 import {
   spacingMd,
   spacingBase,
@@ -92,8 +93,7 @@ class BpkDialingCodeListItem extends React.Component<Props> {
     }
 
     return (
-      <TouchableNativeFeedback
-        background={TouchableNativeFeedback.SelectableBackground()}
+      <BpkTouchableNativeFeedback
         accessibilityComponentType="button"
         accessibilityLabel={`${dialingCode} ${name}`}
         accessibilityTraits={['button']}
@@ -111,7 +111,7 @@ class BpkDialingCodeListItem extends React.Component<Props> {
           </View>
           <BpkRadioIcon selected={selected} />
         </View>
-      </TouchableNativeFeedback>
+      </BpkTouchableNativeFeedback>
     );
   }
 }

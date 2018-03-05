@@ -17,6 +17,9 @@
 
 - react-native-bpk-component-badge: 0.0.0 => 1.0.0
   - Introducing the new React Native badge component.
+- react-native-bpk-component-touchable-native-feedback
+  - Introduced new `BpkTouchableNativeFeedback` for safe usage pre Lollipop
+  - Changed every usage of `TouchableNativeFeedback` to `BpkTouchableNativeFeedback`
 
 **Fixed:**
 - react-native-bpk-component-button: 4.3.7 => 4.3.8

@@ -22,7 +22,8 @@ import React from 'react';
 import { withTheme } from 'react-native-bpk-theming';
 import BpkIcon from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
-import { View, TouchableNativeFeedback, Platform } from 'react-native';
+import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
+import { View } from 'react-native';
 
 import {
   isTypeThemeable,
@@ -74,7 +75,6 @@ const BpkButton = (props: Props) => {
   const containerStyle = getStyleForElement('container', props);
   const buttonStyle = getStyleForElement('button', props);
   const backgroundColor = getAndroidBackgroundColour(theme, props);
-  const preLollipop = Platform.Version < 21;
 
   if (disabled) {
     accessibilityTraits.push('disabled');
@@ -82,7 +82,7 @@ const BpkButton = (props: Props) => {
 
   return (
     <View style={[containerStyle, style]}>
-      <TouchableNativeFeedback
+      <BpkTouchableNativeFeedback
         disabled={disabled}
         onPress={onPress}
         style={style}
@@ -90,11 +90,6 @@ const BpkButton = (props: Props) => {
         accessibilityComponentType="button"
         accessibilityLabel={accessibilityLabel || title}
         accessibilityTraits={accessibilityTraits}
-        background={
-          preLollipop
-            ? TouchableNativeFeedback.SelectableBackground()
-            : TouchableNativeFeedback.SelectableBackgroundBorderless()
-        }
         {...rest}
       >
         <View style={[buttonStyle, backgroundColor]}>
@@ -109,7 +104,7 @@ const BpkButton = (props: Props) => {
             )}
           </View>
         </View>
-      </TouchableNativeFeedback>
+      </BpkTouchableNativeFeedback>
     </View>
   );
 };

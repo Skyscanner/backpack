@@ -13,7 +13,7 @@ exports[`Android BpkHorizontalNavItem should render correctly 1`] = `
   hitSlop={undefined}
   nativeBackgroundAndroid={
     Object {
-      "attribute": "selectableItemBackground",
+      "attribute": "selectableItemBackgroundBorderless",
       "type": "ThemeAttrAndroid",
     }
   }
@@ -67,7 +67,7 @@ exports[`Android BpkHorizontalNavItem should render correctly with "selected" pr
   hitSlop={undefined}
   nativeBackgroundAndroid={
     Object {
-      "attribute": "selectableItemBackground",
+      "attribute": "selectableItemBackgroundBorderless",
       "type": "ThemeAttrAndroid",
     }
   }
@@ -124,7 +124,7 @@ exports[`Android BpkHorizontalNavItem should render correctly with "spaceAround"
   hitSlop={undefined}
   nativeBackgroundAndroid={
     Object {
-      "attribute": "selectableItemBackground",
+      "attribute": "selectableItemBackgroundBorderless",
       "type": "ThemeAttrAndroid",
     }
   }
@@ -178,7 +178,7 @@ exports[`Android BpkHorizontalNavItem should render correctly with arbitrary pro
   hitSlop={undefined}
   nativeBackgroundAndroid={
     Object {
-      "attribute": "selectableItemBackground",
+      "attribute": "selectableItemBackgroundBorderless",
       "type": "ThemeAttrAndroid",
     }
   }
@@ -232,7 +232,7 @@ exports[`Android BpkHorizontalNavItem should render correctly with custom "style
   hitSlop={undefined}
   nativeBackgroundAndroid={
     Object {
-      "attribute": "selectableItemBackground",
+      "attribute": "selectableItemBackgroundBorderless",
       "type": "ThemeAttrAndroid",
     }
   }
@@ -290,7 +290,7 @@ exports[`Android BpkHorizontalNavItem should support theming 1`] = `
   hitSlop={undefined}
   nativeBackgroundAndroid={
     Object {
-      "attribute": "selectableItemBackground",
+      "attribute": "selectableItemBackgroundBorderless",
       "type": "ThemeAttrAndroid",
     }
   }

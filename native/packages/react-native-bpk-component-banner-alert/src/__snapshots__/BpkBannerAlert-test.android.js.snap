@@ -1066,7 +1066,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                   hitSlop={undefined}
                   nativeBackgroundAndroid={
                     Object {
-                      "attribute": "selectableItemBackground",
+                      "attribute": "selectableItemBackgroundBorderless",
                       "type": "ThemeAttrAndroid",
                     }
                   }
@@ -1238,7 +1238,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                   hitSlop={undefined}
                   nativeBackgroundAndroid={
                     Object {
-                      "attribute": "selectableItemBackground",
+                      "attribute": "selectableItemBackgroundBorderless",
                       "type": "ThemeAttrAndroid",
                     }
                   }
@@ -1410,7 +1410,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                   hitSlop={undefined}
                   nativeBackgroundAndroid={
                     Object {
-                      "attribute": "selectableItemBackground",
+                      "attribute": "selectableItemBackgroundBorderless",
                       "type": "ThemeAttrAndroid",
                     }
                   }
@@ -1582,7 +1582,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                   hitSlop={undefined}
                   nativeBackgroundAndroid={
                     Object {
-                      "attribute": "selectableItemBackground",
+                      "attribute": "selectableItemBackgroundBorderless",
                       "type": "ThemeAttrAndroid",
                     }
                   }

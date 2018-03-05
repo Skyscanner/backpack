@@ -26,10 +26,7 @@ jest.mock('react-native', () => {
   jest
     .spyOn(reactNative.Platform, 'select')
     .mockImplementation(obj => obj.android || obj.default);
-  reactNative.TouchableNativeFeedback.SelectableBackgroundBorderless = jest.fn();
-
   reactNative.Platform.OS = 'android';
-
   return reactNative;
 });
 
