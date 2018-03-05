@@ -83,6 +83,7 @@ export const DIALOGS = '/components/web/dialogs';
 
 // components/native/
 export const NATIVE_BANNER_ALERT = '/components/native/banner-alerts';
+export const NATIVE_BADGE = '/components/native/badge';
 export const NATIVE_BUTTON = '/components/native/button';
 export const NATIVE_BUTTON_LINK = '/components/native/button-link';
 export const NATIVE_CARDS = '/components/native/cards';

@@ -74,6 +74,7 @@
     "prop-types": "^15.5.8",
     "react": "^15.0.0",
     "react-native-bpk-component-banner-alert": "^2.1.4",
+    "react-native-bpk-component-badge": "^0.0.0",
     "react-native-bpk-component-button": "^4.3.7",
     "react-native-bpk-component-button-link": "^0.0.2",
     "react-native-bpk-component-card": "^1.2.10",

@@ -21,47 +21,67 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View, StyleSheet } from 'react-native';
-import { colorGray900, spacingSm } from 'bpk-tokens/tokens/base.react.native';
+import {
+  colorGray900,
+  colorGray100,
+  spacingSm,
+  spacingXxl,
+  spacingBase,
+} from 'bpk-tokens/tokens/base.react.native';
 
 import BpkBadge, { BADGE_TYPES, BADGE_DOCKED_TYPES } from './index';
 import { StorySubheading } from '../../storybook/TextStyles';
 
 const style = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     flexWrap: 'wrap',
-    justifyContent: 'flex-start',
+  },
+  badgeWrapper: {
+    backgroundColor: colorGray100,
+    alignSelf: 'stretch',
+    margin: spacingSm,
+    paddingBottom: spacingSm,
   },
   badge: {
-    margin: spacingSm,
+    maxWidth: spacingBase + spacingXxl,
   },
-  dark: {
+  center: {
+    padding: spacingSm,
+    alignItems: 'center',
+  },
+  left: {
+    alignItems: 'flex-start',
+  },
+  right: {
+    alignItems: 'flex-end',
+  },
+  outline: {
     backgroundColor: colorGray900,
   },
 });
 
 const generateBadgeStory = (
-  config: { docked?: $Keys<typeof BADGE_DOCKED_TYPES>, isDark?: boolean } = {},
+  config: { docked?: $Keys<typeof BADGE_DOCKED_TYPES> } = {},
 ) => {
-  const types = config.isDark
-    ? [BADGE_TYPES.light, BADGE_TYPES.inverse, BADGE_TYPES.outline]
-    : [BADGE_TYPES.success, BADGE_TYPES.warning, BADGE_TYPES.destructive];
-
-  const containerStyle = config.isDark
-    ? [style.container, style.dark]
-    : style.container;
-
-  const badges = types.map(i => (
-    <BpkBadge
-      key={i}
-      style={style.badge}
-      message="Badge"
-      docked={config.docked}
-      type={i}
-    />
+  const badgeWrapperStyle = [style.badgeWrapper];
+  if (config.docked) {
+    badgeWrapperStyle.push(style[config.docked]);
+  } else {
+    badgeWrapperStyle.push(style.center);
+  }
+  const badges = Object.keys(BADGE_TYPES).map(i => (
+    <View style={[badgeWrapperStyle, style[i]]} key={i}>
+      <BpkBadge
+        style={style.badge}
+        message="Badge"
+        docked={config.docked}
+        type={i}
+      />
+    </View>
   ));
 
-  return <View style={containerStyle}>{badges}</View>;
+  return <View style={style.container}>{badges}</View>;
 };
 
 storiesOf('BpkBadge', module)
@@ -69,20 +89,17 @@ storiesOf('BpkBadge', module)
     <View>
       <StorySubheading>Default</StorySubheading>
       {generateBadgeStory()}
-      {generateBadgeStory({ isDark: true })}
     </View>
   ))
   .add('docs:docked-left', () => (
     <View>
       <StorySubheading>Docked on the left</StorySubheading>
       {generateBadgeStory({ docked: BADGE_DOCKED_TYPES.left })}
-      {generateBadgeStory({ docked: BADGE_DOCKED_TYPES.left, isDark: true })}
     </View>
   ))
   .add('docs:docked-right', () => (
     <View>
       <StorySubheading>Docked on the right</StorySubheading>
       {generateBadgeStory({ docked: BADGE_DOCKED_TYPES.right })}
-      {generateBadgeStory({ docked: BADGE_DOCKED_TYPES.right, isDark: true })}
     </View>
   ));

@@ -114,6 +114,7 @@ const links = [
         children: 'Banner alerts',
       },
       { id: 'NATIVE_BUTTON', route: routes.NATIVE_BUTTON, children: 'Button' },
+      { id: 'NATIVE_BADGE', route: routes.NATIVE_BADGE, children: 'Badge' },
       // {
       //   id: 'NATIVE_BUTTON_LINK',
       //   route: routes.NATIVE_BUTTON_LINK,

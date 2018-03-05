@@ -94,6 +94,7 @@ import AlignmentPage from './../pages/AlignmentPage';
 import ThemingPage from './../pages/ThemingPage';
 
 import NativeBannerAlertPage from './../pages/NativeBannerAlertPage';
+import NativeBadgePage from './../pages/NativeBadgePage';
 import NativeButtonPage from './../pages/NativeButtonPage';
 import NativeButtonLinkPage from './../pages/NativeButtonLinkPage';
 import NativeCardsPage from './../pages/NativeCardsPage';
@@ -199,6 +200,7 @@ const Routes = (
           path={ROUTES.NATIVE_BANNER_ALERT}
           component={NativeBannerAlertPage}
         />
+        <Route path={ROUTES.NATIVE_BADGE} component={NativeBadgePage} />
         <Route path={ROUTES.NATIVE_BUTTON} component={NativeButtonPage} />
         <Route
           path={ROUTES.NATIVE_BUTTON_LINK}
