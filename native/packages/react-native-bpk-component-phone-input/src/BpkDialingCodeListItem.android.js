@@ -21,7 +21,6 @@
 import { View, StyleSheet, TouchableNativeFeedback } from 'react-native';
 import React from 'react';
 import BpkText from 'react-native-bpk-component-text';
-import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 import {
   spacingMd,
   spacingBase,
@@ -29,6 +28,8 @@ import {
   colorBlue500,
   colorGray100,
 } from 'bpk-tokens/tokens/base.react.native';
+import BpkFlag from './BpkFlag';
+import BpkRadioIcon from './BpkRadioIcon';
 import {
   type ListItemProps,
   LIST_ITEM_PROP_TYPES,
@@ -52,12 +53,6 @@ const styles = StyleSheet.create({
   text: {
     flex: 1,
     marginLeft: spacingLg,
-  },
-  flag: {
-    borderColor: colorGray100,
-    borderWidth: 1,
-    width: spacingLg,
-    height: spacingLg / 3 * 2, // 3:2 aspect ratio with width.
   },
   selected: {
     color: colorBlue500,
@@ -91,16 +86,6 @@ class BpkDialingCodeListItem extends React.Component<Props> {
   render() {
     const { dialingCode, flag, name, selected, ...rest } = this.props;
 
-    // Add sizing to the flag element. If not defined, fall back to a placeholder.
-    const styledFlag = flag ? (
-      React.cloneElement(flag, {
-        resizeMode: 'contain', // Preserves aspect ratio when resizing.
-        style: styles.flag,
-      })
-    ) : (
-      <View style={styles.flag} />
-    );
-
     const iconStyles = [styles.tick];
     if (selected) {
       iconStyles.push(styles.tickSelected);
@@ -116,7 +101,7 @@ class BpkDialingCodeListItem extends React.Component<Props> {
       >
         <View style={styles.listItem}>
           <View style={styles.content}>
-            {styledFlag}
+            <BpkFlag image={flag} />
             <BpkText
               textStyle="base"
               style={[styles.text, selected ? styles.selected : null]}
@@ -124,7 +109,7 @@ class BpkDialingCodeListItem extends React.Component<Props> {
               {dialingCode} {name}
             </BpkText>
           </View>
-          <BpkIcon small icon={icons.tick} style={iconStyles} />
+          <BpkRadioIcon selected={selected} />
         </View>
       </TouchableNativeFeedback>
     );

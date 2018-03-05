@@ -23,6 +23,8 @@ import PropTypes from 'prop-types';
 
 export type Id = string;
 
+export type Flag = Element<typeof Component>;
+
 export type Code = {
   id: Id,
   dialingCode: string,
@@ -33,12 +35,12 @@ export type ListItemProps = {
   ...$Exact<Code>,
   onPress: ListItemProps => void,
   selected: boolean,
-  flag: ?Element<typeof Component>,
+  flag: ?Flag,
 };
 
 export type ListCommonProps = {
   codes: Array<Code>,
-  renderFlag: Code => ?Element<typeof Component>,
+  renderFlag: Code => ?Flag,
   onItemPress: ListItemProps => void,
   selectedId: ?string,
 };

@@ -27,8 +27,8 @@ import {
   spacingBase,
   spacingLg,
   colorBlue600,
-  colorGray100,
 } from 'bpk-tokens/tokens/base.react.native';
+import BpkFlag from './BpkFlag';
 import {
   type ListItemProps,
   LIST_ITEM_PROP_TYPES,
@@ -51,12 +51,6 @@ const styles = StyleSheet.create({
   text: {
     flex: 1,
     marginLeft: spacingLg,
-  },
-  flag: {
-    borderColor: colorGray100,
-    borderWidth: 1,
-    width: spacingLg,
-    height: spacingLg / 3 * 2, // 3:2 aspect ratio with width.
   },
   selected: {
     color: colorBlue600,
@@ -91,16 +85,6 @@ class BpkDialingCodeListItem extends React.Component<Props> {
   render() {
     const { dialingCode, flag, name, selected, ...rest } = this.props;
 
-    // Add sizing to the flag element. If not defined, fall back to a placeholder.
-    const styledFlag = flag ? (
-      React.cloneElement(flag, {
-        resizeMode: 'contain', // Preserves aspect ratio when resizing.
-        style: styles.flag,
-      })
-    ) : (
-      <View style={styles.flag} />
-    );
-
     const iconStyles = [styles.tick];
     if (selected) {
       iconStyles.push(styles.tickVisible);
@@ -115,7 +99,7 @@ class BpkDialingCodeListItem extends React.Component<Props> {
         {...rest}
       >
         <View style={styles.content}>
-          {styledFlag}
+          <BpkFlag image={flag} />
           <BpkText
             textStyle="lg"
             style={[styles.text, selected ? styles.selected : null]}

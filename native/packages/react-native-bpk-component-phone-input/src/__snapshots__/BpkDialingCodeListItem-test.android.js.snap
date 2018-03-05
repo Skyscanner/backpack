@@ -82,32 +82,34 @@ exports[`Android BpkDialingCodeListItem should render correctly 1`] = `
       United Kingdom
     </Text>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <View
     style={
       Array [
         Object {
-          "color": "rgb(82, 76, 97)",
-          "fontFamily": "BpkIcon",
-          "fontSize": 24,
-          "lineHeight": 24,
+          "alignItems": "center",
+          "borderColor": "rgb(230, 228, 235)",
+          "borderRadius": 20,
+          "borderWidth": 2,
+          "height": 20,
+          "justifyContent": "center",
+          "width": 20,
         },
-        Object {
-          "fontSize": 16,
-          "lineHeight": 16,
-        },
-        Array [
-          Object {
-            "color": "rgb(230, 228, 235)",
-          },
-        ],
       ]
     }
   >
-    
-  </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(230, 228, 235)",
+            "borderRadius": 10,
+            "height": 10,
+            "width": 10,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -194,32 +196,34 @@ exports[`Android BpkDialingCodeListItem should support the "flagImage" property 
       United Kingdom
     </Text>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <View
     style={
       Array [
         Object {
-          "color": "rgb(82, 76, 97)",
-          "fontFamily": "BpkIcon",
-          "fontSize": 24,
-          "lineHeight": 24,
+          "alignItems": "center",
+          "borderColor": "rgb(230, 228, 235)",
+          "borderRadius": 20,
+          "borderWidth": 2,
+          "height": 20,
+          "justifyContent": "center",
+          "width": 20,
         },
-        Object {
-          "fontSize": 16,
-          "lineHeight": 16,
-        },
-        Array [
-          Object {
-            "color": "rgb(230, 228, 235)",
-          },
-        ],
       ]
     }
   >
-    
-  </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(230, 228, 235)",
+            "borderRadius": 10,
+            "height": 10,
+            "width": 10,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -307,34 +311,39 @@ exports[`Android BpkDialingCodeListItem should support the "selected" property 1
       United Kingdom
     </Text>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <View
     style={
       Array [
         Object {
-          "color": "rgb(82, 76, 97)",
-          "fontFamily": "BpkIcon",
-          "fontSize": 24,
-          "lineHeight": 24,
+          "alignItems": "center",
+          "borderColor": "rgb(230, 228, 235)",
+          "borderRadius": 20,
+          "borderWidth": 2,
+          "height": 20,
+          "justifyContent": "center",
+          "width": 20,
         },
         Object {
-          "fontSize": 16,
-          "lineHeight": 16,
+          "borderColor": "rgb(0, 178, 214)",
         },
-        Array [
-          Object {
-            "color": "rgb(230, 228, 235)",
-          },
-          Object {
-            "color": "rgb(0, 178, 214)",
-          },
-        ],
       ]
     }
   >
-    
-  </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(230, 228, 235)",
+            "borderRadius": 10,
+            "height": 10,
+            "width": 10,
+          },
+          Object {
+            "backgroundColor": "rgb(0, 178, 214)",
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;
