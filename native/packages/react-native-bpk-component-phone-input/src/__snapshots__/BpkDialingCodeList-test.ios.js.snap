@@ -176,12 +176,16 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
           <Image
             resizeMode="contain"
             style={
-              Object {
-                "borderColor": "rgb(230, 228, 235)",
-                "borderWidth": 1,
-                "height": 16,
-                "width": 24,
-              }
+              Array [
+                Object {
+                  "borderColor": "rgb(230, 228, 235)",
+                  "borderWidth": 1,
+                },
+                Object {
+                  "height": 16,
+                  "width": 24,
+                },
+              ]
             }
           />
           <Text
@@ -335,12 +339,16 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
           <Image
             resizeMode="contain"
             style={
-              Object {
-                "borderColor": "rgb(230, 228, 235)",
-                "borderWidth": 1,
-                "height": 16,
-                "width": 24,
-              }
+              Array [
+                Object {
+                  "borderColor": "rgb(230, 228, 235)",
+                  "borderWidth": 1,
+                },
+                Object {
+                  "height": 16,
+                  "width": 24,
+                },
+              ]
             }
           />
           <Text
@@ -494,12 +502,16 @@ exports[`iOS BpkDialingCodeList should render correctly 1`] = `
           <Image
             resizeMode="contain"
             style={
-              Object {
-                "borderColor": "rgb(230, 228, 235)",
-                "borderWidth": 1,
-                "height": 16,
-                "width": 24,
-              }
+              Array [
+                Object {
+                  "borderColor": "rgb(230, 228, 235)",
+                  "borderWidth": 1,
+                },
+                Object {
+                  "height": 16,
+                  "width": 24,
+                },
+              ]
             }
           />
           <Text
@@ -758,12 +770,16 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
           <Image
             resizeMode="contain"
             style={
-              Object {
-                "borderColor": "rgb(230, 228, 235)",
-                "borderWidth": 1,
-                "height": 16,
-                "width": 24,
-              }
+              Array [
+                Object {
+                  "borderColor": "rgb(230, 228, 235)",
+                  "borderWidth": 1,
+                },
+                Object {
+                  "height": 16,
+                  "width": 24,
+                },
+              ]
             }
           />
           <Text
@@ -922,12 +938,16 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
           <Image
             resizeMode="contain"
             style={
-              Object {
-                "borderColor": "rgb(230, 228, 235)",
-                "borderWidth": 1,
-                "height": 16,
-                "width": 24,
-              }
+              Array [
+                Object {
+                  "borderColor": "rgb(230, 228, 235)",
+                  "borderWidth": 1,
+                },
+                Object {
+                  "height": 16,
+                  "width": 24,
+                },
+              ]
             }
           />
           <Text
@@ -1081,12 +1101,16 @@ exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`
           <Image
             resizeMode="contain"
             style={
-              Object {
-                "borderColor": "rgb(230, 228, 235)",
-                "borderWidth": 1,
-                "height": 16,
-                "width": 24,
-              }
+              Array [
+                Object {
+                  "borderColor": "rgb(230, 228, 235)",
+                  "borderWidth": 1,
+                },
+                Object {
+                  "height": 16,
+                  "width": 24,
+                },
+              ]
             }
           />
           <Text

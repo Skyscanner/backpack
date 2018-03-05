@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`iOS BpkFlag should render correctly 1`] = `
+exports[`Android BpkFlag should render correctly 1`] = `
 <View
   style={
     Array [
@@ -17,7 +17,7 @@ exports[`iOS BpkFlag should render correctly 1`] = `
 />
 `;
 
-exports[`iOS BpkFlag should render correctly with a custom style 1`] = `
+exports[`Android BpkFlag should render correctly with a custom style 1`] = `
 <View
   style={
     Array [
@@ -37,7 +37,7 @@ exports[`iOS BpkFlag should render correctly with a custom style 1`] = `
 />
 `;
 
-exports[`iOS BpkFlag should render correctly with a custom width 1`] = `
+exports[`Android BpkFlag should render correctly with a custom width 1`] = `
 <View
   style={
     Array [
@@ -54,7 +54,7 @@ exports[`iOS BpkFlag should render correctly with a custom width 1`] = `
 />
 `;
 
-exports[`iOS BpkFlag should render correctly with an image 1`] = `
+exports[`Android BpkFlag should render correctly with an image 1`] = `
 <Image
   resizeMode="contain"
   style={

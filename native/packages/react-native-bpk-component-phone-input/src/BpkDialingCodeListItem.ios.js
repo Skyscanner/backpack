@@ -99,7 +99,7 @@ class BpkDialingCodeListItem extends React.Component<Props> {
         {...rest}
       >
         <View style={styles.content}>
-          <BpkFlag image={flag} />
+          <BpkFlag flag={flag} />
           <BpkText
             textStyle="lg"
             style={[styles.text, selected ? styles.selected : null]}
