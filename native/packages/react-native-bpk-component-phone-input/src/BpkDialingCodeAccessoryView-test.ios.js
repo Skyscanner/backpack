@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow */
+import commonTests from './BpkDialingCodeAccessoryView-test.common';
 
-import BpkTextInput, { type Props } from './src/BpkTextInput';
-
-export type BpkTextInputProps = Props;
-export default BpkTextInput;
+describe('iOS', () => {
+  commonTests();
+});

@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
 });
 
 type Props = {
-  selected: ?boolean,
+  selected: boolean,
 };
 
 const BpkRadioIcon = ({ selected }: Props) => {

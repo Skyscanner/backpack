@@ -38,9 +38,11 @@ export type ListItemProps = {
   flag: ?Flag,
 };
 
+export type RenderFlag = Code => ?Flag;
+
 export type ListCommonProps = {
   codes: Array<Code>,
-  renderFlag: Code => ?Flag,
+  renderFlag: RenderFlag,
   onItemPress: ListItemProps => void,
   selectedId: ?string,
 };

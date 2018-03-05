@@ -19,10 +19,14 @@
 /* @flow */
 
 import BpkDialingCodeList, { type Props } from './src/BpkDialingCodeList';
+import BpkPhoneNumberInput, {
+  type Props as _BpkPhoneNumberInputProps,
+} from './src/BpkPhoneNumberInput';
 
 export type BpkDialingCodeListProps = Props;
+export type BpkPhoneNumberInputProps = _BpkPhoneNumberInputProps;
 
 // TODO this opt-out can be removed once phone input is implemented,
 // as it will be the default export.
 // eslint-disable-next-line import/prefer-default-export
-export { BpkDialingCodeList };
+export { BpkDialingCodeList, BpkPhoneNumberInput };
