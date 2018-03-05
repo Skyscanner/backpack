@@ -18,74 +18,38 @@
 
 /* @flow */
 
+import { StyleSheet } from 'react-native';
 import {
   colorBlue500,
-  buttonHeight,
-  buttonPaddingVertical,
   borderRadiusSm,
   spacingSm,
-  spacingBase,
+  spacingMd,
 } from 'bpk-tokens/tokens/base.react.native';
 
-import { Platform, StyleSheet } from 'react-native';
-
-const base = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     borderRadius: borderRadiusSm,
-    height: buttonHeight,
-  },
-  button: {
-    borderRadius: borderRadiusSm,
-    height: buttonHeight,
-    paddingVertical: buttonPaddingVertical,
   },
   view: {
-    alignItems: 'center',
-    flex: 1,
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'center',
+    paddingVertical: spacingMd,
   },
-  text: Platform.select({
-    ios: () => ({
-      color: colorBlue500,
-    }),
-    android: () => ({
-      color: colorBlue500,
-    }),
-  })(),
-  icon: Platform.select({
-    ios: () => ({
-      marginLeft: spacingSm,
-    }),
-    android: () => ({
-      lineHeight: spacingBase,
-      marginLeft: spacingSm,
-    }),
-  })(),
-});
-
-const modifiers = {
-  iconLeading: StyleSheet.create({
-    view: {
-      flexDirection: 'row-reverse',
-    },
-    icon: {
-      marginLeft: 0,
-      marginRight: spacingSm,
-    },
-  }),
-};
-
-const themeMappings = {
+  viewLeading: {
+    flexDirection: 'row-reverse',
+  },
   text: {
-    color: 'buttonLinkTextColor',
+    color: colorBlue500,
   },
-};
-
-const styles = {
-  base,
-  modifiers,
-  themeMappings,
-};
+  icon: {
+    color: colorBlue500,
+    marginLeft: spacingSm,
+  },
+  iconLeading: {
+    marginLeft: 0,
+    marginRight: spacingSm,
+  },
+});
 
 export default styles;

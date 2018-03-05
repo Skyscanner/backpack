@@ -4,13 +4,9 @@ exports[`iOS BpkButtonLink should render correctly 1`] = `
 <View
   style={
     Array [
-      Array [
-        Object {
-          "borderRadius": 4,
-          "height": 32,
-        },
-      ],
-      null,
+      Object {
+        "borderRadius": 4,
+      },
     ]
   }
 >
@@ -37,10 +33,7 @@ exports[`iOS BpkButtonLink should render correctly 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "borderRadius": 4,
-        "height": 32,
         "opacity": 1,
-        "paddingVertical": 8,
       }
     }
     testID={undefined}
@@ -51,9 +44,9 @@ exports[`iOS BpkButtonLink should render correctly 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
+            "paddingVertical": 8,
           },
         ]
       }
@@ -74,12 +67,9 @@ exports[`iOS BpkButtonLink should render correctly 1`] = `
               "fontWeight": "600",
             },
             Array [
-              Array [
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
+              Object {
+                "color": "rgb(0, 178, 214)",
+              },
             ],
           ]
         }
@@ -95,14 +85,9 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 
 <View
   style={
     Array [
-      Array [
-        Object {
-          "borderRadius": 4,
-          "height": 32,
-        },
-        undefined,
-      ],
-      null,
+      Object {
+        "borderRadius": 4,
+      },
     ]
   }
 >
@@ -129,10 +114,7 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 
     onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "borderRadius": 4,
-        "height": 32,
         "opacity": 1,
-        "paddingVertical": 8,
       }
     }
     testID={undefined}
@@ -143,9 +125,9 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
+            "paddingVertical": 8,
           },
           Object {
             "flexDirection": "row-reverse",
@@ -169,13 +151,9 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 
               "fontWeight": "600",
             },
             Array [
-              Array [
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-                undefined,
-              ],
-              Object {},
+              Object {
+                "color": "rgb(0, 178, 214)",
+              },
             ],
           ]
         }
@@ -199,22 +177,14 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="leading" 
               "lineHeight": 16,
             },
             Array [
-              Array [
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-                undefined,
-              ],
-              Object {},
-              Array [
-                Object {
-                  "marginLeft": 4,
-                },
-                Object {
-                  "marginLeft": 0,
-                  "marginRight": 4,
-                },
-              ],
+              Object {
+                "color": "rgb(0, 178, 214)",
+                "marginLeft": 4,
+              },
+              Object {
+                "marginLeft": 0,
+                "marginRight": 4,
+              },
             ],
           ]
         }
@@ -230,13 +200,9 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
 <View
   style={
     Array [
-      Array [
-        Object {
-          "borderRadius": 4,
-          "height": 32,
-        },
-      ],
-      null,
+      Object {
+        "borderRadius": 4,
+      },
     ]
   }
 >
@@ -263,10 +229,7 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
     onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "borderRadius": 4,
-        "height": 32,
         "opacity": 1,
-        "paddingVertical": 8,
       }
     }
     testID={undefined}
@@ -277,9 +240,9 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
+            "paddingVertical": 8,
           },
         ]
       }
@@ -300,12 +263,9 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
               "fontWeight": "600",
             },
             Array [
-              Array [
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
+              Object {
+                "color": "rgb(0, 178, 214)",
+              },
             ],
           ]
         }
@@ -329,17 +289,10 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
               "lineHeight": 16,
             },
             Array [
-              Array [
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
-              Array [
-                Object {
-                  "marginLeft": 4,
-                },
-              ],
+              Object {
+                "color": "rgb(0, 178, 214)",
+                "marginLeft": 4,
+              },
             ],
           ]
         }
@@ -351,17 +304,13 @@ exports[`iOS BpkButtonLink should render correctly with iconAlignment="trailing"
 </View>
 `;
 
-exports[`iOS BpkButtonLink should support elements as icons 1`] = `
+exports[`iOS BpkButtonLink should render correctly with theme prop 1`] = `
 <View
   style={
     Array [
-      Array [
-        Object {
-          "borderRadius": 4,
-          "height": 32,
-        },
-      ],
-      null,
+      Object {
+        "borderRadius": 4,
+      },
     ]
   }
 >
@@ -388,10 +337,7 @@ exports[`iOS BpkButtonLink should support elements as icons 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "borderRadius": 4,
-        "height": 32,
         "opacity": 1,
-        "paddingVertical": 8,
       }
     }
     testID={undefined}
@@ -402,9 +348,9 @@ exports[`iOS BpkButtonLink should support elements as icons 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
+            "paddingVertical": 8,
           },
         ]
       }
@@ -425,12 +371,93 @@ exports[`iOS BpkButtonLink should support elements as icons 1`] = `
               "fontWeight": "600",
             },
             Array [
-              Array [
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
+              Object {
+                "color": "rgb(0, 178, 214)",
+              },
+              Object {
+                "color": "red",
+              },
+            ],
+          ]
+        }
+      >
+        Lorem ipsum
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`iOS BpkButtonLink should support elements as icons 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderRadius": 4,
+      },
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    collapsable={undefined}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingVertical": 8,
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 13,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Array [
+              Object {
+                "color": "rgb(0, 178, 214)",
+              },
             ],
           ]
         }
@@ -441,6 +468,17 @@ exports[`iOS BpkButtonLink should support elements as icons 1`] = `
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+            },
+            Object {},
+          ]
+        }
       >
         foo
       </Text>
@@ -453,12 +491,9 @@ exports[`iOS BpkButtonLink should support overwriting styles 1`] = `
 <View
   style={
     Array [
-      Array [
-        Object {
-          "borderRadius": 4,
-          "height": 32,
-        },
-      ],
+      Object {
+        "borderRadius": 4,
+      },
       Object {
         "width": 100,
       },
@@ -488,10 +523,7 @@ exports[`iOS BpkButtonLink should support overwriting styles 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "borderRadius": 4,
-        "height": 32,
         "opacity": 1,
-        "paddingVertical": 8,
       }
     }
     testID={undefined}
@@ -502,9 +534,9 @@ exports[`iOS BpkButtonLink should support overwriting styles 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
+            "paddingVertical": 8,
           },
         ]
       }
@@ -525,12 +557,9 @@ exports[`iOS BpkButtonLink should support overwriting styles 1`] = `
               "fontWeight": "600",
             },
             Array [
-              Array [
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
+              Object {
+                "color": "rgb(0, 178, 214)",
+              },
             ],
           ]
         }
@@ -546,13 +575,9 @@ exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
 <View
   style={
     Array [
-      Array [
-        Object {
-          "borderRadius": 4,
-          "height": 32,
-        },
-      ],
-      null,
+      Object {
+        "borderRadius": 4,
+      },
     ]
   }
 >
@@ -579,10 +604,7 @@ exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "borderRadius": 4,
-        "height": 32,
         "opacity": 1,
-        "paddingVertical": 8,
       }
     }
     testID={undefined}
@@ -593,9 +615,9 @@ exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
+            "paddingVertical": 8,
           },
         ]
       }
@@ -616,12 +638,9 @@ exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
               "fontWeight": "600",
             },
             Array [
-              Array [
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
+              Object {
+                "color": "rgb(0, 178, 214)",
+              },
             ],
           ]
         }
@@ -645,17 +664,10 @@ exports[`iOS BpkButtonLink should support the "icon" property 1`] = `
               "lineHeight": 16,
             },
             Array [
-              Array [
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
-              Array [
-                Object {
-                  "marginLeft": 4,
-                },
-              ],
+              Object {
+                "color": "rgb(0, 178, 214)",
+                "marginLeft": 4,
+              },
             ],
           ]
         }
@@ -671,13 +683,9 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
 <View
   style={
     Array [
-      Array [
-        Object {
-          "borderRadius": 4,
-          "height": 32,
-        },
-      ],
-      null,
+      Object {
+        "borderRadius": 4,
+      },
     ]
   }
 >
@@ -704,10 +712,7 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "borderRadius": 4,
-        "height": 32,
         "opacity": 1,
-        "paddingVertical": 8,
       }
     }
     testID={undefined}
@@ -718,9 +723,9 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
+            "paddingVertical": 8,
           },
         ]
       }
@@ -741,12 +746,9 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
               "fontWeight": "600",
             },
             Array [
-              Array [
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
+              Object {
+                "color": "rgb(0, 178, 214)",
+              },
             ],
           ]
         }
@@ -766,17 +768,10 @@ exports[`iOS should support the "icon" and "large" property 1`] = `
               "lineHeight": 24,
             },
             Array [
-              Array [
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
-              Array [
-                Object {
-                  "marginLeft": 4,
-                },
-              ],
+              Object {
+                "color": "rgb(0, 178, 214)",
+                "marginLeft": 4,
+              },
             ],
           ]
         }
@@ -792,13 +787,9 @@ exports[`iOS should support the "large" property 1`] = `
 <View
   style={
     Array [
-      Array [
-        Object {
-          "borderRadius": 4,
-          "height": 32,
-        },
-      ],
-      null,
+      Object {
+        "borderRadius": 4,
+      },
     ]
   }
 >
@@ -825,10 +816,7 @@ exports[`iOS should support the "large" property 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "borderRadius": 4,
-        "height": 32,
         "opacity": 1,
-        "paddingVertical": 8,
       }
     }
     testID={undefined}
@@ -839,9 +827,9 @@ exports[`iOS should support the "large" property 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
             "justifyContent": "center",
+            "paddingVertical": 8,
           },
         ]
       }
@@ -862,12 +850,9 @@ exports[`iOS should support the "large" property 1`] = `
               "fontWeight": "600",
             },
             Array [
-              Array [
-                Object {
-                  "color": "rgb(0, 178, 214)",
-                },
-              ],
-              Object {},
+              Object {
+                "color": "rgb(0, 178, 214)",
+              },
             ],
           ]
         }

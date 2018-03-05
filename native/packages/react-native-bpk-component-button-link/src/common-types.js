@@ -18,10 +18,9 @@
 
 /* @flow */
 
-import { ViewPropTypes } from 'react-native';
 import { type Node } from 'react';
 import PropTypes from 'prop-types';
-import { type Theme } from 'react-native-bpk-theming';
+import { ViewPropTypes } from 'react-native';
 
 import { themePropType } from './utils';
 
@@ -37,14 +36,16 @@ export type CommonProps = {
   icon: ?Node,
   iconAlignment: $Keys<typeof ICON_ALIGNMENTS>,
   style: ?(Object | Array<Object>),
-  theme: ?Theme,
+  theme: ?{
+    buttonLinkTextColor: string,
+  },
 };
 
 export const commonPropTypes = {
   onPress: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   accessibilityLabel: PropTypes.string,
-  icon: PropTypes.oneOf(PropTypes.string, PropTypes.node),
+  icon: PropTypes.node,
   iconAlignment: PropTypes.oneOf(Object.keys(ICON_ALIGNMENTS)),
   style: ViewPropTypes.style,
   theme: themePropType,
