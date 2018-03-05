@@ -31,6 +31,7 @@ const mockPlatform = (platform, version) => {
     .spyOn(reactNative.Platform, 'select')
     .mockImplementation(obj => obj.platform || obj.default);
   reactNative.Platform.OS = platform;
+  // $FlowFixMe
   Object.defineProperty(reactNative.Platform, 'Version', {
     get: () => version,
   });
