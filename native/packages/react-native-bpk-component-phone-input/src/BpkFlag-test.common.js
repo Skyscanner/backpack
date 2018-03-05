@@ -30,7 +30,19 @@ const commonTests = () => {
     });
 
     it('should render correctly with an image', () => {
-      const tree = renderer.create(<BpkFlag image={<Image />} />).toJSON();
+      const tree = renderer.create(<BpkFlag flag={<Image />} />).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly with a custom width', () => {
+      const tree = renderer.create(<BpkFlag width={42} />).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly with a custom style', () => {
+      const tree = renderer
+        .create(<BpkFlag style={{ borderRadius: 10 }} />)
+        .toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

@@ -15,44 +15,60 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /* @flow */
 
-import { View, StyleSheet } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StyleSheet, View, ViewPropTypes } from 'react-native';
 import { spacingLg, colorGray100 } from 'bpk-tokens/tokens/base.react.native';
 import { type Flag } from './common-types';
+
+const ASPECT_RATIO = 3 / 2; // 3:2
+
+type Props = {
+  width: number,
+  flag: ?Flag,
+  style: ?(Object | Array<Object>),
+};
 
 const styles = StyleSheet.create({
   flag: {
     borderColor: colorGray100,
     borderWidth: 1,
-    width: spacingLg,
-    height: spacingLg / 3 * 2, // 3:2 aspect ratio with width.
   },
 });
 
-type Props = {
-  image: ?Flag,
-};
+const BpkFlag = (props: Props) => {
+  const { flag, style, width } = props;
+  const imageStyle = { width, height: width / ASPECT_RATIO };
+  const finalStyle = [styles.flag, imageStyle];
 
-const BpkFlag = ({ image }: Props) =>
-  image ? (
-    React.cloneElement(image, {
-      resizeMode: 'contain', // Preserve aspect ratio when resizing.
-      style: styles.flag,
+  if (style) {
+    finalStyle.push(style);
+  }
+
+  const styledFlag = flag ? (
+    React.cloneElement(flag, {
+      resizeMode: 'contain',
+      style: finalStyle,
     })
   ) : (
-    <View style={styles.flag} />
+    <View style={finalStyle} />
   );
 
+  return styledFlag;
+};
+
 BpkFlag.propTypes = {
-  image: PropTypes.element,
+  width: PropTypes.number,
+  flag: PropTypes.element,
+  style: ViewPropTypes.style,
 };
 
 BpkFlag.defaultProps = {
-  image: null,
+  width: spacingLg,
+  flag: null,
+  style: null,
 };
 
 export default BpkFlag;

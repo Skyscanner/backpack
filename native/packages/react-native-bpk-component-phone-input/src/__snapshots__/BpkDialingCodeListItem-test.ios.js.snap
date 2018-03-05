@@ -41,12 +41,16 @@ exports[`iOS BpkDialingCodeListItem should render correctly 1`] = `
   >
     <View
       style={
-        Object {
-          "borderColor": "rgb(230, 228, 235)",
-          "borderWidth": 1,
-          "height": 16,
-          "width": 24,
-        }
+        Array [
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 1,
+          },
+          Object {
+            "height": 16,
+            "width": 24,
+          },
+        ]
       }
     />
     <Text
@@ -164,12 +168,16 @@ exports[`iOS BpkDialingCodeListItem should support the "flagImage" property 1`] 
     <Image
       resizeMode="contain"
       style={
-        Object {
-          "borderColor": "rgb(230, 228, 235)",
-          "borderWidth": 1,
-          "height": 16,
-          "width": 24,
-        }
+        Array [
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 1,
+          },
+          Object {
+            "height": 16,
+            "width": 24,
+          },
+        ]
       }
     />
     <Text
@@ -286,12 +294,16 @@ exports[`iOS BpkDialingCodeListItem should support the "selected" property 1`] =
   >
     <View
       style={
-        Object {
-          "borderColor": "rgb(230, 228, 235)",
-          "borderWidth": 1,
-          "height": 16,
-          "width": 24,
-        }
+        Array [
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 1,
+          },
+          Object {
+            "height": 16,
+            "width": 24,
+          },
+        ]
       }
     />
     <Text

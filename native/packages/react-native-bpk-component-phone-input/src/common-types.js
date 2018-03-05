@@ -18,12 +18,12 @@
 
 /* @flow */
 
-import { Component, type Element } from 'react';
+import { type Element, Image } from 'react-native';
 import PropTypes from 'prop-types';
 
 export type Id = string;
 
-export type Flag = Element<typeof Component>;
+export type Flag = Element<typeof Image>;
 
 export type Code = {
   id: Id,
