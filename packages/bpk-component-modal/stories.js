@@ -26,7 +26,7 @@ import { cssModules, withDefaultProps } from 'bpk-react-utils';
 import BpkButton from 'bpk-component-button';
 import BpkText from 'bpk-component-text';
 
-import BpkModal from './index';
+import BpkModal, { withModalState } from './index';
 
 import STYLES from './stories.scss';
 
@@ -37,6 +37,8 @@ const Paragraph = withDefaultProps(BpkText, {
   tagName: 'p',
   className: getClassName('bpk-modal-paragraph'),
 });
+
+const BpkModalState = withModalState(BpkModal);
 
 type Props = {
   children: Node,
@@ -329,4 +331,26 @@ storiesOf('bpk-component-modal', module)
     >
       This is a default modal. You can put anything you want in here.
     </ModalContainer>
-  ));
+  ))
+  .add('With state HOC', () => {
+    const target = <BpkButton>Open modal</BpkButton>;
+    return (
+      <div id="modal-container">
+        <div id="application-container">
+          <BpkModalState
+            target={target}
+            id="my-modal"
+            className="my-classname"
+            title="Modal title"
+            closeText="Done"
+            getApplicationElement={() =>
+              document.getElementById('application-container')
+            }
+            renderTarget={() => document.getElementById('modal-container')}
+          >
+            This is a default modal. You can put anything you want in here.
+          </BpkModalState>
+        </div>
+      </div>
+    );
+  });
