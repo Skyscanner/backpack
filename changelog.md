@@ -3,12 +3,18 @@
 ## Unreleased
 
 **Added:**
-- react-native-bpk-component-button-link:
-  - Introducing the new React Native button link component.
-- react-native-bpk-component-text-input:
-  - Introduced a new `accessoryView` prop that enables rendering any view on the leading side of the text input.
 - react-native-bpk-component-phone-input:
  - New `BpkDiallingCodeList` component.
+
+ ## 2018-03-06 - New native link component, new native badge component, plus enhancements for native text input and web badge components
+
+**Added:**
+- react-native-bpk-component-button-link:
+  - Introducing the new React Native button link component.
+
+- react-native-bpk-component-text-input:
+  - Introduced a new `accessoryView` prop that enables rendering any view on the leading side of the text input.
+
 - react-native-bpk-component-badge:
   - Introducing the new React Native badge component.
 
@@ -18,6 +24,7 @@
 
 - bpk-component-badge:
   - An optional `type` prop has been introduced to allow selection of different visual appearances.
+
 
 ## 2018-03-01 - Fix for Android button props
 
