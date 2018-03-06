@@ -63,7 +63,7 @@ export const getStyleForElement = (
     styleForElement.push(styles.modifiers.disabled[elementType]);
   }
 
-  if (iconOnly && Platform.OS === 'ios') {
+  if (iconOnly) {
     styleForElement.push(
       isLarge
         ? styles.modifiers.iconOnlyLarge[elementType]

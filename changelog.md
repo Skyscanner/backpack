@@ -9,6 +9,9 @@
 - react-native-bpk-component-button-link:
   - New `disabled` prop.
 
+- react-native-bpk-component-button:
+  - Android now supports the `iconOnly` prop.
+
 ## 2018-03-06 - New `BpkTouchableNativeFeedback` component
 
 **Added:**

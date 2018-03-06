@@ -47,6 +47,7 @@ export type CommonProps = {
   type: $Keys<typeof BUTTON_TYPES>,
   theme: ?Theme,
   iconAlignment: $Keys<typeof ICON_ALIGNMENTS>,
+  iconOnly: boolean,
 };
 
 export const commonPropTypes = {
@@ -59,6 +60,7 @@ export const commonPropTypes = {
   theme: themePropType,
   type: PropTypes.oneOf(Object.keys(BUTTON_TYPES)),
   iconAlignment: PropTypes.oneOf(Object.keys(ICON_ALIGNMENTS)),
+  iconOnly: PropTypes.bool,
 };
 
 export const commonDefaultProps = {
@@ -69,4 +71,5 @@ export const commonDefaultProps = {
   theme: null,
   type: BUTTON_TYPES.primary,
   iconAlignment: ICON_ALIGNMENTS.trailing,
+  iconOnly: false,
 };

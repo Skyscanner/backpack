@@ -137,16 +137,14 @@ const generateButtonStoryForType = (
           onPress={action(`${type} button with icon clicked`)}
           style={styles.buttonStyles}
         />
-        {Platform.OS === 'ios' ? (
-          <BpkButton
-            type={type}
-            title="Icon only"
-            icon={getIconType(type)}
-            iconOnly
-            onPress={action(`${type} icon only button clicked`)}
-            style={styles.buttonStyles}
-          />
-        ) : null}
+        <BpkButton
+          type={type}
+          title="Icon only"
+          icon={getIconType(type)}
+          iconOnly
+          onPress={action(`${type} icon only button clicked`)}
+          style={styles.buttonStyles}
+        />
       </View>
       {Platform.OS === 'ios' ? getLargeVersion() : null}
     </View>

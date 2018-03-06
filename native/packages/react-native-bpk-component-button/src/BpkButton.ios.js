@@ -46,7 +46,6 @@ import {
 
 export type Props = {
   ...$Exact<CommonProps>,
-  iconOnly: boolean,
   large: boolean,
 };
 
@@ -128,13 +127,11 @@ const BpkButton = (props: Props) => {
 
 BpkButton.propTypes = {
   ...commonPropTypes,
-  iconOnly: PropTypes.bool,
   large: PropTypes.bool,
 };
 
 BpkButton.defaultProps = {
   ...commonDefaultProps,
-  iconOnly: false,
   large: false,
 };
 

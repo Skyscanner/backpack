@@ -37,7 +37,6 @@ import {
   borderRadiusPill,
   spacingSm,
   spacingBase,
-  spacingXl,
 } from 'bpk-tokens/tokens/base.react.native';
 import { Platform, StyleSheet } from 'react-native';
 
@@ -128,7 +127,7 @@ const modifiers = {
   }),
   iconOnly: StyleSheet.create({
     container: {
-      width: spacingXl,
+      width: buttonHeight,
     },
     button: {
       paddingHorizontal: 0,

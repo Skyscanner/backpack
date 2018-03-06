@@ -50,6 +50,7 @@ const BpkButton = (props: Props) => {
     accessibilityLabel,
     disabled,
     icon,
+    iconOnly,
     onPress,
     style,
     title,
@@ -94,9 +95,11 @@ const BpkButton = (props: Props) => {
       >
         <View style={[buttonStyle, backgroundColor]}>
           <View style={getStyleForElement('view', props)}>
-            <BpkText textStyle="sm" emphasize style={textStyle(theme, props)}>
-              {title.toUpperCase()}
-            </BpkText>
+            {!iconOnly && (
+              <BpkText textStyle="sm" emphasize style={textStyle(theme, props)}>
+                {title.toUpperCase()}
+              </BpkText>
+            )}
             {typeof icon === 'string' ? (
               <BpkIcon icon={icon} style={iconStyle(theme, props)} small />
             ) : (
