@@ -49,16 +49,16 @@ const commonTests = () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('should render correctly docked to the left', () => {
+    it('should render correctly docked to the start', () => {
       const tree = renderer
-        .create(generateBadgeStory({ docked: BADGE_DOCKED_TYPES.left }))
+        .create(generateBadgeStory({ docked: BADGE_DOCKED_TYPES.start }))
         .toJSON();
       expect(tree).toMatchSnapshot();
     });
 
-    it('should render correctly docked to the right', () => {
+    it('should render correctly docked to the end', () => {
       const tree = renderer
-        .create(generateBadgeStory({ docked: BADGE_DOCKED_TYPES.right }))
+        .create(generateBadgeStory({ docked: BADGE_DOCKED_TYPES.end }))
         .toJSON();
       expect(tree).toMatchSnapshot();
     });

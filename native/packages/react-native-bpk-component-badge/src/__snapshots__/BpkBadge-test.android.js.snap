@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Android BpkBadge should render correctly docked to the left 1`] = `
+exports[`Android BpkBadge should render correctly docked to the end 1`] = `
 <View>
   <View
     style={
@@ -19,9 +19,9 @@ exports[`Android BpkBadge should render correctly docked to the left 1`] = `
           "backgroundColor": "rgb(0, 215, 117)",
         },
         Object {
-          "borderBottomLeftRadius": 0,
-          "borderBottomRightRadius": 2,
-          "borderLeftWidth": 0,
+          "borderBottomLeftRadius": 2,
+          "borderBottomRightRadius": 0,
+          "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
           "borderTopWidth": 0,
@@ -70,9 +70,9 @@ exports[`Android BpkBadge should render correctly docked to the left 1`] = `
           "backgroundColor": "rgb(255, 187, 0)",
         },
         Object {
-          "borderBottomLeftRadius": 0,
-          "borderBottomRightRadius": 2,
-          "borderLeftWidth": 0,
+          "borderBottomLeftRadius": 2,
+          "borderBottomRightRadius": 0,
+          "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
           "borderTopWidth": 0,
@@ -121,9 +121,9 @@ exports[`Android BpkBadge should render correctly docked to the left 1`] = `
           "backgroundColor": "rgb(255, 84, 82)",
         },
         Object {
-          "borderBottomLeftRadius": 0,
-          "borderBottomRightRadius": 2,
-          "borderLeftWidth": 0,
+          "borderBottomLeftRadius": 2,
+          "borderBottomRightRadius": 0,
+          "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
           "borderTopWidth": 0,
@@ -174,9 +174,9 @@ exports[`Android BpkBadge should render correctly docked to the left 1`] = `
           "backgroundColor": "rgb(243, 242, 245)",
         },
         Object {
-          "borderBottomLeftRadius": 0,
-          "borderBottomRightRadius": 2,
-          "borderLeftWidth": 0,
+          "borderBottomLeftRadius": 2,
+          "borderBottomRightRadius": 0,
+          "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
           "borderTopWidth": 0,
@@ -225,9 +225,9 @@ exports[`Android BpkBadge should render correctly docked to the left 1`] = `
           "backgroundColor": "rgb(255, 255, 255)",
         },
         Object {
-          "borderBottomLeftRadius": 0,
-          "borderBottomRightRadius": 2,
-          "borderLeftWidth": 0,
+          "borderBottomLeftRadius": 2,
+          "borderBottomRightRadius": 0,
+          "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
           "borderTopWidth": 0,
@@ -284,9 +284,9 @@ exports[`Android BpkBadge should render correctly docked to the left 1`] = `
           },
         ],
         Object {
-          "borderBottomLeftRadius": 0,
-          "borderBottomRightRadius": 2,
-          "borderLeftWidth": 0,
+          "borderBottomLeftRadius": 2,
+          "borderBottomRightRadius": 0,
+          "borderRightWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
           "borderTopWidth": 0,
@@ -323,7 +323,7 @@ exports[`Android BpkBadge should render correctly docked to the left 1`] = `
 </View>
 `;
 
-exports[`Android BpkBadge should render correctly docked to the right 1`] = `
+exports[`Android BpkBadge should render correctly docked to the start 1`] = `
 <View>
   <View
     style={
@@ -342,9 +342,9 @@ exports[`Android BpkBadge should render correctly docked to the right 1`] = `
           "backgroundColor": "rgb(0, 215, 117)",
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 0,
-          "borderRightWidth": 0,
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 2,
+          "borderLeftWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
           "borderTopWidth": 0,
@@ -393,9 +393,9 @@ exports[`Android BpkBadge should render correctly docked to the right 1`] = `
           "backgroundColor": "rgb(255, 187, 0)",
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 0,
-          "borderRightWidth": 0,
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 2,
+          "borderLeftWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
           "borderTopWidth": 0,
@@ -444,9 +444,9 @@ exports[`Android BpkBadge should render correctly docked to the right 1`] = `
           "backgroundColor": "rgb(255, 84, 82)",
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 0,
-          "borderRightWidth": 0,
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 2,
+          "borderLeftWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
           "borderTopWidth": 0,
@@ -497,9 +497,9 @@ exports[`Android BpkBadge should render correctly docked to the right 1`] = `
           "backgroundColor": "rgb(243, 242, 245)",
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 0,
-          "borderRightWidth": 0,
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 2,
+          "borderLeftWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
           "borderTopWidth": 0,
@@ -548,9 +548,9 @@ exports[`Android BpkBadge should render correctly docked to the right 1`] = `
           "backgroundColor": "rgb(255, 255, 255)",
         },
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 0,
-          "borderRightWidth": 0,
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 2,
+          "borderLeftWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
           "borderTopWidth": 0,
@@ -607,9 +607,9 @@ exports[`Android BpkBadge should render correctly docked to the right 1`] = `
           },
         ],
         Object {
-          "borderBottomLeftRadius": 2,
-          "borderBottomRightRadius": 0,
-          "borderRightWidth": 0,
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 2,
+          "borderLeftWidth": 0,
           "borderTopLeftRadius": 0,
           "borderTopRightRadius": 0,
           "borderTopWidth": 0,

@@ -136,18 +136,20 @@ const components = [
       <Paragraph>The light badge is a gray color as shown below.</Paragraph>,
     ],
     examples: [
-      <BpkBadge type={BADGE_TYPES.light} className={badgeClassName}>
-        Apples
-      </BpkBadge>,
-      <BpkBadge type={BADGE_TYPES.light} className={badgeClassName}>
-        Bananas
-      </BpkBadge>,
-      <BpkBadge type={BADGE_TYPES.light} className={badgeClassName}>
-        Strawberries
-      </BpkBadge>,
-      <BpkBadge type={BADGE_TYPES.light} className={badgeClassName}>
-        Pears
-      </BpkBadge>,
+      <BadgeLayout>
+        <BpkBadge type={BADGE_TYPES.light} className={badgeClassName}>
+          Apples
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.light} className={badgeClassName}>
+          Bananas
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.light} className={badgeClassName}>
+          Strawberries
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.light} className={badgeClassName}>
+          Pears
+        </BpkBadge>
+      </BadgeLayout>,
     ],
   },
   {

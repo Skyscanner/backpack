@@ -25,13 +25,18 @@ import STYLES from './badge-layout.scss';
 
 const getClassName = cssModules(STYLES);
 
+const LIGHT_BADGES = [
+  BADGE_TYPES.light,
+  BADGE_TYPES.inverse,
+  BADGE_TYPES.outline,
+];
+
 const BadgeLayout = ({ docked, children }) => {
   const classNames = [getClassName('bpk-badge-layout__container')];
 
   if (
     docked ||
-    Children.toArray(children)[0].props.type === BADGE_TYPES.inverse ||
-    Children.toArray(children)[0].props.type === BADGE_TYPES.outline
+    LIGHT_BADGES.indexOf(Children.toArray(children)[0].props.type) !== -1
   ) {
     classNames.push(getClassName('bpk-badge-layout__container--light'));
   }

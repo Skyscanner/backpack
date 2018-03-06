@@ -108,8 +108,8 @@ export const BADGE_TYPES = {
 };
 
 export const BADGE_DOCKED_TYPES = {
-  left: 'left',
-  right: 'right',
+  start: 'start',
+  end: 'end',
 };
 
 export type Props = {
@@ -142,11 +142,11 @@ const BpkBadge = (props: Props) => {
   viewStyle.push(viewStyleMap[type]);
   textStyle.push(textStyleMap[type]);
 
-  if (docked === BADGE_DOCKED_TYPES.left) {
+  if (docked === BADGE_DOCKED_TYPES.start) {
     viewStyle.push(styles.borderLeft);
   }
 
-  if (docked === BADGE_DOCKED_TYPES.right) {
+  if (docked === BADGE_DOCKED_TYPES.end) {
     viewStyle.push(styles.borderRight);
   }
 

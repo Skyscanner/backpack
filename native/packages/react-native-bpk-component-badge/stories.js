@@ -22,11 +22,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { View, StyleSheet } from 'react-native';
 import {
-  colorGray900,
-  colorGray100,
+  colorGray50,
+  colorGray700,
   spacingSm,
-  spacingXxl,
-  spacingBase,
 } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkBadge, { BADGE_TYPES, BADGE_DOCKED_TYPES } from './index';
@@ -38,30 +36,39 @@ const style = StyleSheet.create({
     flexWrap: 'wrap',
   },
   badgeWrapper: {
-    backgroundColor: colorGray100,
     alignSelf: 'stretch',
+    justifyContent: 'space-around',
     margin: spacingSm,
     paddingBottom: spacingSm,
   },
-  badge: {
-    maxWidth: spacingBase + spacingXxl,
-  },
   center: {
+    flexDirection: 'row',
     padding: spacingSm,
     alignItems: 'center',
   },
-  left: {
+  start: {
+    backgroundColor: colorGray50,
     alignItems: 'flex-start',
   },
-  right: {
+  end: {
+    backgroundColor: colorGray50,
     alignItems: 'flex-end',
   },
+  light: {
+    backgroundColor: colorGray700,
+  },
   outline: {
-    backgroundColor: colorGray900,
+    backgroundColor: colorGray700,
+  },
+  inverse: {
+    backgroundColor: colorGray700,
   },
 });
 
+const capitalise = input => input.charAt(0).toUpperCase() + input.slice(1);
+
 const generateBadgeStory = (
+  contents: Array<string>,
   config: { docked?: $Keys<typeof BADGE_DOCKED_TYPES> } = {},
 ) => {
   const badgeWrapperStyle = [style.badgeWrapper];
@@ -71,13 +78,19 @@ const generateBadgeStory = (
     badgeWrapperStyle.push(style.center);
   }
   const badges = Object.keys(BADGE_TYPES).map(i => (
-    <View style={[badgeWrapperStyle, style[i]]} key={i}>
-      <BpkBadge
-        style={style.badge}
-        message="Badge"
-        docked={config.docked}
-        type={i}
-      />
+    <View key={i}>
+      <StorySubheading>{capitalise(i)}</StorySubheading>
+      <View style={[badgeWrapperStyle, style[i]]}>
+        {contents.map(content => (
+          <BpkBadge
+            key={content}
+            message={content}
+            docked={config.docked}
+            type={i}
+            style={style.badge}
+          />
+        ))}
+      </View>
     </View>
   ));
 
@@ -87,19 +100,16 @@ const generateBadgeStory = (
 storiesOf('BpkBadge', module)
   .add('docs:default', () => (
     <View>
-      <StorySubheading>Default</StorySubheading>
-      {generateBadgeStory()}
+      {generateBadgeStory(['Apples', 'Bananas', 'Strawberries', 'Pears'])}
     </View>
   ))
-  .add('docs:docked-left', () => (
+  .add('docs:docked-start', () => (
     <View>
-      <StorySubheading>Docked on the left</StorySubheading>
-      {generateBadgeStory({ docked: BADGE_DOCKED_TYPES.left })}
+      {generateBadgeStory(['Advert'], { docked: BADGE_DOCKED_TYPES.start })}
     </View>
   ))
-  .add('docs:docked-right', () => (
+  .add('docs:docked-end', () => (
     <View>
-      <StorySubheading>Docked on the right</StorySubheading>
-      {generateBadgeStory({ docked: BADGE_DOCKED_TYPES.right })}
+      {generateBadgeStory(['Advert'], { docked: BADGE_DOCKED_TYPES.end })}
     </View>
   ));
