@@ -21,7 +21,6 @@ import PropTypes from 'prop-types';
 
 import {
   StyleSheet,
-  TouchableNativeFeedback,
   TouchableWithoutFeedback,
   View,
   ViewPropTypes,
@@ -125,7 +124,6 @@ const DismissableButton = ({ dismissButtonLabel, onDismiss }) => (
       <BpkTouchableNativeFeedback
         accessibilityComponentType="button"
         accessibilityLabel={dismissButtonLabel}
-        background={TouchableNativeFeedback.SelectableBackgroundBorderless()}
         onPress={onDismiss}
       >
         <BpkText textStyle="sm" emphasize style={styles.dismissLabel}>
