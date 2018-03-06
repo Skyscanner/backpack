@@ -9,27 +9,27 @@
  ## 2018-03-06 - New native link component, new native badge component, plus enhancements for native text input and web badge components
 
 **Added:**
-- react-native-bpk-component-button-link:
+- react-native-bpk-component-button-link: 0.0.2 => 1.0.0
   - Introducing the new React Native button link component.
 
-- react-native-bpk-component-text-input:
+- react-native-bpk-component-text-input: 2.1.1 => 2.2.0
   - Introduced a new `accessoryView` prop that enables rendering any view on the leading side of the text input.
 
-- react-native-bpk-component-badge:
+- react-native-bpk-component-badge: 0.0.0 => 1.0.0
   - Introducing the new React Native badge component.
 
 **Fixed:**
-- react-native-bpk-component-button:
+- react-native-bpk-component-button: 4.3.7 => 4.3.8
   - Fixes crash on Android API level &lt; 21
 
-- bpk-component-badge:
+- bpk-component-badge: 1.0.50 => 1.1.0
   - An optional `type` prop has been introduced to allow selection of different visual appearances.
 
 
 ## 2018-03-01 - Fix for Android button props
 
 **Fixed:**
-- react-native-bpk-component-button:
+- react-native-bpk-component-button: 4.3.6 => 4.3.7
   - Android buttons now correctly ignore `large` and `iconOnly` props
 
 ## 2018-02-28 - Checkboxes and radio buttons can now accept React nodes
