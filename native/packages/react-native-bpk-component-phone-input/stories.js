@@ -18,18 +18,56 @@
 
 /* @flow */
 
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Image } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 
 import { BpkDialingCodeList } from './index';
 import BpkDialingCodeListItem from './src/BpkDialingCodeListItem';
+import BpkPhoneNumberInput, { type Props } from './src/BpkPhoneNumberInput';
+
+const { value: _ignored, ...propTypes } = BpkPhoneNumberInput.propTypes;
+class StatefulBpkPhoneNumberInput extends Component<
+  {
+    initialValue: string,
+    label: string,
+    ...$Exact<$Diff<Props, { value: string }>>,
+  },
+  { value: string },
+> {
+  static propTypes = {
+    ...propTypes,
+    initialValue: PropTypes.string.isRequired,
+  };
+  static defaultProps = BpkPhoneNumberInput.defaultProps;
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: this.props.initialValue,
+    };
+  }
+
+  onChange = value => {
+    this.setState(() => ({ value }));
+  };
+
+  render() {
+    return (
+      <BpkPhoneNumberInput
+        {...this.props}
+        value={this.state.value}
+        onChangeText={this.onChange}
+      />
+    );
+  }
+}
 
 // Sample dialing codes, with some long ones to demonstrate how the
 // component handles them.
-// Out of order on purpose to demonstrate how the component
-// sorts them alphabetically.
 const codes = [
   { id: 'DZ', dialingCode: '+213', name: 'Algeria' },
   { id: 'AD', dialingCode: '+376', name: 'Andorra' },
@@ -75,6 +113,7 @@ const flags = {
     'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Andorra.svg/800px-Flag_of_Andorra.svg.png',
 };
 
+// eslint-disable-next-line react/no-multi-comp
 class StatefulBpkDialingCodeList extends React.Component<
   {},
   {
@@ -155,5 +194,28 @@ storiesOf('BpkDialingCodeListItem', module)
           }}
         />
       }
+    />
+  ));
+
+storiesOf('BpkPhoneNumberInput', module)
+  .add('docs:default', () => (
+    <StatefulBpkPhoneNumberInput
+      label="Phone number"
+      initialValue=""
+      keyboardType="phone-pad"
+      dialingCodeData={{ dialingCode: '+44', id: 'uk', name: 'United Kingdom' }}
+      renderFlag={() => <Image source={{ uri: flags.CA }} />}
+      onDialingCodePress={action('Dialing code pressed')}
+    />
+  ))
+  .add('non-editable', () => (
+    <StatefulBpkPhoneNumberInput
+      label="Phone number"
+      initialValue=""
+      keyboardType="phone-pad"
+      dialingCodeData={{ dialingCode: '+44', id: 'uk', name: 'United Kingdom' }}
+      renderFlag={() => <Image source={{ uri: flags.CA }} />}
+      editable={false}
+      onDialingCodePress={action('Dialing code pressed')}
     />
   ));

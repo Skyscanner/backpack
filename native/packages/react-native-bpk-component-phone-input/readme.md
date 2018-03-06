@@ -61,3 +61,46 @@ export default class App extends Component {
 | renderFlag                  | func                                                        | true     | -             |
 | selectedId                  | string                                                      | false    | null          |
 
+## BpkDialingCodeList
+
+### Usage
+
+```js
+import React, { Component } from 'react';
+import { View } from 'react-native';
+import { BpkPhoneNumberInput } from 'react-native-bpk-component-phone-input';
+
+const CODES = [
+  { id: 'DZ', dialingCode: '+213', name: 'Algeria' },
+];
+
+const FLAG_IMAGES = {
+  'DZ': '/resources/algeria.png',
+};
+
+export default class App extends Component {
+  render() {
+    return (
+      <BpkPhoneNumberInput
+        label="Phone number"
+        value=""
+        dialingCodeData={CODES[0]}
+        onDialingCodePress={() => presentDialingCodeList()}
+        renderFlag={code => <Image source={require(FLAG_IMAGES[code.id])} />}
+      />
+    );
+  }
+}
+```
+
+### Props
+
+Inherits all props from [`BpkTextInput`](https://backpack.github.io/components/native/text-input) except `accessoryView`.
+
+
+| Property                    | PropType                                                    | Required | Default Value |
+| --------------------------- | ----------------------------------------------------------- | -------- | ------------- |
+| dialingCodeData             | {id, diallingCode, name}                                    | true     | -             |
+| onDialingCodePress          | func                                                        | true     | -             |
+| renderFlag                  | func                                                        | true     | -             |
+

@@ -32,7 +32,7 @@ import { animationDurationSm } from 'bpk-tokens/tokens/base.react.native';
 import { ValidIcon, InvalidIcon } from './BpkTextInputIcons';
 import { getLabelStyle, getInputContainerStyle, styles } from './styles';
 
-type Props = {
+export type Props = {
   label: string,
   value: string,
   clearButtonMode: 'never' | 'while-editing' | 'unless-editing' | 'always',
