@@ -115,11 +115,11 @@ const links = [
       },
       { id: 'NATIVE_BUTTON', route: routes.NATIVE_BUTTON, children: 'Button' },
       { id: 'NATIVE_BADGE', route: routes.NATIVE_BADGE, children: 'Badge' },
-      // {
-      //   id: 'NATIVE_BUTTON_LINK',
-      //   route: routes.NATIVE_BUTTON_LINK,
-      //   children: 'Button Link',
-      // },
+      {
+        id: 'NATIVE_BUTTON_LINK',
+        route: routes.NATIVE_BUTTON_LINK,
+        children: 'Button Link',
+      },
       { id: 'NATIVE_CARDS', route: routes.NATIVE_CARDS, children: 'Cards' },
       {
         id: 'NATIVE_HORIZONTAL_NAV',
