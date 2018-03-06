@@ -20,11 +20,11 @@ import React from 'react';
 import readme from 'react-native-bpk-component-badge/readme.md';
 
 import iosScreenshotDefault from 'react-native-bpk-component-badge/screenshots/ios/default.png';
-import iosScreenshotDockedLeft from 'react-native-bpk-component-badge/screenshots/ios/docked-left.png';
-import iosScreenshotDockedRight from 'react-native-bpk-component-badge/screenshots/ios/docked-right.png';
+import iosScreenshotDockedStart from 'react-native-bpk-component-badge/screenshots/ios/docked-start.png';
+import iosScreenshotDockedEnd from 'react-native-bpk-component-badge/screenshots/ios/docked-end.png';
 import androidScreenshotDefault from 'react-native-bpk-component-badge/screenshots/android/default.png';
-import androidScreenshotDockedLeft from 'react-native-bpk-component-badge/screenshots/android/docked-left.png';
-import androidScreenshotDockedRight from 'react-native-bpk-component-badge/screenshots/android/docked-right.png';
+import androidScreenshotDockedStart from 'react-native-bpk-component-badge/screenshots/android/docked-start.png';
+import androidScreenshotDockedEnd from 'react-native-bpk-component-badge/screenshots/android/docked-end.png';
 
 import Paragraph from './../../components/Paragraph';
 import DocsPageBuilder from './../../components/DocsPageBuilder';
@@ -53,45 +53,45 @@ const components = [
     ],
   },
   {
-    id: 'docked-left',
-    title: 'Docked Left',
+    id: 'docked-start',
+    title: 'Docked (start)',
     screenshots: [
       {
         title: 'iOS',
         width: 750,
         height: 1334,
-        src: `/${iosScreenshotDockedLeft}`,
-        altText: 'iOS Docked Left Badge Component',
+        src: `/${iosScreenshotDockedStart}`,
+        altText: 'iOS Docked (start) Badge Component',
         subText: '(iPhone 8 Simulator)',
       },
       {
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidScreenshotDockedLeft}`,
-        altText: 'Android Docked Left Badge Component',
+        src: `/${androidScreenshotDockedStart}`,
+        altText: 'Android Docked (start) Badge Component',
         subText: '(Google Pixel Emulator)',
       },
     ],
   },
   {
-    id: 'docked-right',
-    title: 'Docked Right',
+    id: 'docked-end',
+    title: 'Docked (end)',
     screenshots: [
       {
         title: 'iOS',
         width: 750,
         height: 1334,
-        src: `/${iosScreenshotDockedRight}`,
-        altText: 'iOS Docked Right Badge Component',
+        src: `/${iosScreenshotDockedEnd}`,
+        altText: 'iOS Docked (end) Badge Component',
         subText: '(iPhone 8 Simulator)',
       },
       {
         title: 'Android',
         width: 1080,
         height: 1920,
-        src: `/${androidScreenshotDockedRight}`,
-        altText: 'Android Docked Right Badge Component',
+        src: `/${androidScreenshotDockedEnd}`,
+        altText: 'Android Docked (end) Badge Component',
         subText: '(Google Pixel Emulator)',
       },
     ],
