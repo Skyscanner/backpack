@@ -21,7 +21,6 @@ import PropTypes from 'prop-types';
 
 import {
   StyleSheet,
-  TouchableNativeFeedback,
   TouchableWithoutFeedback,
   View,
   ViewPropTypes,
@@ -44,6 +43,7 @@ import {
 import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
 import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
+import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
 
 import AnimateAndFade from './AnimateAndFade';
 import ALERT_TYPES from './AlertTypes';
@@ -121,16 +121,15 @@ const ALERT_TYPE_STYLES = {
 const DismissableButton = ({ dismissButtonLabel, onDismiss }) => (
   <View style={styles.dismissableContainer}>
     <View style={styles.dismissButtonContainerRadius}>
-      <TouchableNativeFeedback
+      <BpkTouchableNativeFeedback
         accessibilityComponentType="button"
         accessibilityLabel={dismissButtonLabel}
-        background={TouchableNativeFeedback.SelectableBackgroundBorderless()}
         onPress={onDismiss}
       >
         <BpkText textStyle="sm" emphasize style={styles.dismissLabel}>
           {dismissButtonLabel.toUpperCase()}
         </BpkText>
-      </TouchableNativeFeedback>
+      </BpkTouchableNativeFeedback>
     </View>
   </View>
 );

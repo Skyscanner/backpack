@@ -22,7 +22,7 @@ exports[`Android BpkButtonLink should render correctly 1`] = `
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -96,7 +96,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="leadi
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -204,7 +204,7 @@ exports[`Android BpkButtonLink should render correctly with iconAlignment="trail
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -305,7 +305,7 @@ exports[`Android BpkButtonLink should render correctly with theme prop 1`] = `
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -382,7 +382,7 @@ exports[`Android BpkButtonLink should support elements as icons 1`] = `
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -477,7 +477,7 @@ exports[`Android BpkButtonLink should support overwriting styles 1`] = `
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }
@@ -551,7 +551,7 @@ exports[`Android BpkButtonLink should support the "icon" property 1`] = `
     hitSlop={undefined}
     nativeBackgroundAndroid={
       Object {
-        "attribute": "selectableItemBackground",
+        "attribute": "selectableItemBackgroundBorderless",
         "type": "ThemeAttrAndroid",
       }
     }

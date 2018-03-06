@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BpkTouchableNativeFeedback should render correctly on API < 21 1`] = `
+<FakeComponent
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackground",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  testID={undefined}
+/>
+`;
+
+exports[`BpkTouchableNativeFeedback should render correctly on API >= 21 1`] = `
+<FakeComponent
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackgroundBorderless",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  testID={undefined}
+/>
+`;
+
+exports[`BpkTouchableNativeFeedback should render correctly with arbitrary props 1`] = `
+<FakeComponent
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackgroundBorderless",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  testID="arbitrary value"
+/>
+`;
+
+exports[`BpkTouchableNativeFeedback should render correctly with custom style prop 1`] = `
+<FakeComponent
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackgroundBorderless",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  testID={undefined}
+/>
+`;

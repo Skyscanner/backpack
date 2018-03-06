@@ -26,7 +26,6 @@ jest.mock('react-native', () => {
     .spyOn(reactNative.Platform, 'select')
     .mockImplementation(obj => obj.android || obj.default);
   reactNative.Platform.OS = 'android';
-  reactNative.TouchableNativeFeedback.SelectableBackgroundBorderless = jest.fn();
   return reactNative;
 });
 
@@ -36,11 +35,11 @@ jest.mock('bpk-tokens/tokens/base.react.native', () =>
   jest.requireActual('bpk-tokens/tokens/base.react.native.android'),
 );
 
-jest.mock('TouchableNativeFeedback', () => ({ children, ...rest }) => {
-  const { cloneElement } = jest.requireActual('react');
-
-  return cloneElement(children, rest);
-});
+jest.mock('TouchableNativeFeedback', () =>
+  jest.requireActual(
+    'react-native/Libraries/Components/Touchable/TouchableNativeFeedback.android.js',
+  ),
+);
 
 describe('Android', () => {
   commonTests();

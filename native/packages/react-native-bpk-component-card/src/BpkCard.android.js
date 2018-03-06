@@ -16,12 +16,7 @@
  * limitations under the License.
  */
 
-import {
-  View,
-  StyleSheet,
-  TouchableNativeFeedback,
-  ViewPropTypes,
-} from 'react-native';
+import { View, StyleSheet, ViewPropTypes } from 'react-native';
 import {
   colorWhite,
   elevationXs,
@@ -29,6 +24,7 @@ import {
   borderRadiusSm,
   spacingBase,
 } from 'bpk-tokens/tokens/base.react.native';
+import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -69,16 +65,15 @@ const BpkCard = props => {
 
   return (
     <View style={userStyle}>
-      <TouchableNativeFeedback
+      <BpkTouchableNativeFeedback
         useForeground
         accessibilityComponentType="button"
-        background={TouchableNativeFeedback.SelectableBackgroundBorderless()}
         {...rest}
       >
         <View style={style}>
           <View style={innerStyle}>{children}</View>
         </View>
-      </TouchableNativeFeedback>
+      </BpkTouchableNativeFeedback>
     </View>
   );
 };

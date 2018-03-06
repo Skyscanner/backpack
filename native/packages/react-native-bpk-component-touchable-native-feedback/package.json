@@ -1,8 +1,8 @@
 {
-  "name": "react-native-bpk-component-card",
-  "version": "1.2.10",
+  "name": "react-native-bpk-component-touchable-native-feedback",
+  "version": "0.0.0",
   "main": "index.js",
-  "description": "Backpack React Native card component.",
+  "description": "Backpack React Native touchable native feedback component.",
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
@@ -14,12 +14,7 @@
     "react-native": ">= 0.47.0"
   },
   "dependencies": {
-    "bpk-tokens": "^26.7.4",
-    "prop-types": "^15.5.8",
-    "react-native-bpk-component-touchable-native-feedback": "^0.0.0",
-    "react-native-bpk-component-touchable-overlay": "^1.0.12",
-    "react-native-bpk-styles": "^1.0.4",
-    "react-native-dash": "0.0.8"
+    "prop-types": "^15.5.8"
   },
   "devDependencies": {
     "react-native-bpk-component-text": "^2.1.30"
