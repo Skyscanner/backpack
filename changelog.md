@@ -4,20 +4,24 @@
 
 **Added:**
 - react-native-bpk-component-phone-input:
- - New `BpkDiallingCodeList` component.
-- react-native-bpk-component-touchable-native-feedback:
+  - New `BpkDiallingCodeList` component.
+
+## 2018-03-06 - New `BpkTouchableNativeFeedback` component
+
+**Added:**
+- react-native-bpk-component-touchable-native-feedback: 0.0.0 => 1.0.0
   - Introduced new `BpkTouchableNativeFeedback` for safe usage of `TouchableNativeFeedback` pre-Lollipop.
 
 **Fixed:**
-- react-native-bpk-component-banner-alert:
+- react-native-bpk-component-banner-alert: 2.1.5 => 2.1.6
   - Changed every usage of `TouchableNativeFeedback` to `BpkTouchableNativeFeedback`, since it was crashing in Android pre-Lollipop.
-- react-native-bpk-component-button-link:
+- react-native-bpk-component-button-link: 1.0.0 => 1.0.1
   - Changed every usage of `TouchableNativeFeedback` to `BpkTouchableNativeFeedback`, since it was crashing in Android pre-Lollipop.
-- react-native-bpk-component-button:
+- react-native-bpk-component-button: 4.3.8 => 4.3.9
   - Changed every usage of `TouchableNativeFeedback` to `BpkTouchableNativeFeedback`, since it was crashing in Android pre-Lollipop.
-- react-native-bpk-component-card:
+- react-native-bpk-component-card: 1.2.10 => 1.2.11
   - Changed every usage of `TouchableNativeFeedback` to `BpkTouchableNativeFeedback`, since it was crashing in Android pre-Lollipop.
-- react-native-bpk-component-button-horizontal-nav:
+- react-native-bpk-component-button-horizontal-nav: 2.0.20 => 2.0.21
   - Changed every usage of `TouchableNativeFeedback` to `BpkTouchableNativeFeedback`, since it was crashing in Android pre-Lollipop.
 
  ## 2018-03-06 - New native link component, new native badge component, plus enhancements for native text input and web badge components
