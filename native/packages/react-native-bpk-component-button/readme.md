@@ -4,7 +4,7 @@
 
 ## Installation
 
-1. Install the NPM package:
+1. Install the npm package:
 ```sh
 npm install react-native-bpk-component-button --save-dev
 ```
@@ -16,19 +16,17 @@ pod 'React', :path => '../node_modules/react-native'
 pod 'BVLinearGradient', :path => '../node_modules/react-native-bpk-component-button/node_modules/react-native-linear-gradient'
 ```
 
-3. `react-native-bpk-component-button` depends on [react-native-bpk-component-icon](https://github.com/Skyscanner/backpack/tree/master/native/packages/react-native-bpk-component-icon) make sure to follow the installation guide for the icon component for the different platforms
+3. `react-native-bpk-component-button` depends on [react-native-bpk-component-icon](https://www.npmjs.com/package/react-native-bpk-component-icon) make sure to follow the installation guide for the icon component for the different platforms
 
 **Note:** This is necessary because `react-native-bpk-component-button` depends on [react-native-linear-gradient](https://github.com/react-native-community/react-native-linear-gradient).
 
 ## Usage
 
 ```js
+import { View } from 'react-native';
 import React, { Component } from 'react';
-import { View, Image } from 'react-native';
 import BpkButton from 'react-native-bpk-component-button';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
-
-import { translationHelper } from 'translations';
 
 const styles = StyleSheet.create({
   container: {
@@ -42,16 +40,48 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <BpkButton type="primary" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
-        <BpkButton type="featured" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
-        <BpkButton disabled type="destructive" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
-        <BpkButton large type="primary" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
-
-        <BpkButton type="featured" title={translationHelper.translate('BOOK_FLIGHT')} icon="baggage" onPress={() => {}} />
-
-        <BpkButton type="primary" title={translationHelper.translate('BOOK_FLIGHT')} icon="baggage" iconAlignment="leading" onPress={() => {}} />
-
-        <BpkButton type="featured" title={translationHelper.translate('BOOK_FLIGHT')} icon="baggage" iconOnly onPress={() => {}} />
+        <BpkButton
+          type="primary"
+          title="Book flight"
+          onPress={() => {}}
+        />
+        <BpkButton
+          type="featured"
+          title="Book flight"
+          onPress={() => {}}
+        />
+        <BpkButton
+          disabled
+          type="destructive"
+          title="Book flight"
+          onPress={() => {}}
+        />
+        <BpkButton
+          large
+          type="primary"
+          title="Book flight"
+          onPress={() => {}}
+        />
+        <BpkButton
+          type="featured"
+          title="Book flight"
+          icon="baggage"
+          onPress={() => {}}
+        />
+        <BpkButton
+          type="primary"
+          title="Book flight"
+          icon="baggage"
+          iconAlignment="leading"
+          onPress={() => {}}
+        />
+        <BpkButton
+          type="featured"
+          title="Book flight"
+          icon="baggage"
+          iconOnly
+          onPress={() => {}}
+        />
       </View>
     );
   }
@@ -68,8 +98,8 @@ export default class App extends Component {
 | disabled              | bool                                                                      | false    | false         |
 | icon                  | oneOf(string, element) Strings must be a [BpkIcon](/components/web/icons) | false    | null          |
 | iconAlignment         | oneOf('leading', 'trailing')                                              | false    | trailing      |
-| iconOnly              | bool                                                                      | false    | false         |
-| large                 | bool                                                                      | false    | false         |
+| iconOnly (iOS only)   | bool                                                                      | false    | false         |
+| large (iOS only)      | bool                                                                      | false    | false         |
 | theme                 | See [Theme Props](#theme-props) below                                     | false    | null          |
 | type                  | oneOf('primary', 'featured', 'secondary', 'destructive')                  | false    | null          |
 

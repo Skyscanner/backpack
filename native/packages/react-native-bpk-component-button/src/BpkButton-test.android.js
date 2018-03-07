@@ -16,32 +16,69 @@
  * limitations under the License.
  */
 
+/* @flow */
+
+import React from 'react';
+import renderer from 'react-test-renderer';
+import BpkButton from './BpkButton';
 import commonTests from './BpkButton-test.common';
 
-jest.mock('react-native', () => {
-  const reactNative = require.requireActual('react-native');
+const onPressFn = jest.fn();
+
+const mockPlatform = (platform, version) => {
+  const reactNative = jest.requireActual('react-native');
   jest
     .spyOn(reactNative.Platform, 'select')
-    .mockImplementation(obj => obj.android || obj.default);
-  reactNative.Platform.OS = 'android';
-  reactNative.TouchableNativeFeedback.SelectableBackgroundBorderless = jest.fn();
+    .mockImplementation(obj => obj.platform || obj.default);
+  reactNative.Platform.OS = platform;
+  // $FlowFixMe
+  Object.defineProperty(reactNative.Platform, 'Version', {
+    get: () => version,
+  });
 
   return reactNative;
-});
+};
+
+mockPlatform('android', 21);
+
+jest.mock('TouchableNativeFeedback', () =>
+  jest.requireActual(
+    'react-native/Libraries/Components/Touchable/TouchableNativeFeedback.android.js',
+  ),
+);
 
 jest.mock(
   './../node_modules/react-native-bpk-component-text/node_modules/bpk-tokens/tokens/base.react.native',
-  () => require.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+  () => jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
 );
 
 jest.mock('bpk-tokens/tokens/base.react.native', () =>
-  require.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+  jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
 );
 
-jest.mock('./layout/BpkButtonContainer', () =>
-  require.requireActual('./layout/BpkButtonContainer.android.js'),
-);
+jest.mock('./BpkButton', () => jest.requireActual('./BpkButton.android.js'));
 
 describe('Android', () => {
   commonTests();
+});
+
+describe('Android API levels', () => {
+  beforeEach(() => {
+    jest.resetModules();
+  });
+  it('Android API>=21 should render with ripple', () => {
+    mockPlatform('android', 21);
+    const tree = renderer
+      .create(<BpkButton title="Lorem ipsum" onPress={onPressFn} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('Android API<21 should render without ripple', () => {
+    mockPlatform('android', 19);
+    const tree = renderer.create(
+      <BpkButton title="Lorem ipsum" onPress={onPressFn} />,
+    );
+    const treeJson = tree.toJSON();
+    expect(treeJson).toMatchSnapshot();
+  });
 });

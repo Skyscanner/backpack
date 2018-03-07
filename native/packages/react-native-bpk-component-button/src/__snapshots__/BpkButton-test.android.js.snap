@@ -1,5 +1,199 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Android API levels Android API<21 should render without ripple 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 36,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackground",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+        ],
+        Object {
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android API levels Android API>=21 should render with ripple 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 36,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+        ],
+        Object {
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`Android BpkButton should render correctly 1`] = `
 <View
   style={
@@ -15,35 +209,87 @@ exports[`Android BpkButton should render correctly 1`] = `
   }
 >
   <View
-    style={
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
+        "button",
       ]
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+        ],
         Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -65,35 +311,139 @@ exports[`Android BpkButton should render correctly with iconAlignment="leading" 
   }
 >
   <View
-    style={
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
+        "button",
       ]
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          undefined,
+          undefined,
+        ],
         Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "justifyContent": "space-between",
+          },
+          Object {
+            "flexDirection": "row-reverse",
+          },
+        ]
       }
     >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+                undefined,
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+                undefined,
+              ],
+              Object {},
+              Array [
+                null,
+                Object {
+                  "marginLeft": 4,
+                },
+                Object {
+                  "marginLeft": 0,
+                  "marginRight": 4,
+                },
+              ],
+            ],
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -114,35 +464,129 @@ exports[`Android BpkButton should render correctly with iconAlignment="trailing"
   }
 >
   <View
-    style={
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
+        "button",
       ]
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          undefined,
+        ],
         Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "justifyContent": "space-between",
+          },
+        ]
       }
     >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                null,
+                Object {
+                  "marginLeft": 4,
+                },
+              ],
+            ],
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -162,35 +606,96 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
   }
 >
   <View
-    style={
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
+        "button",
       ]
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 0,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+        ],
         Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+          "backgroundColor": "transparent",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "color": "rgb(255, 84, 82)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -210,35 +715,87 @@ exports[`Android BpkButton should render correctly with type="featured" 1`] = `
   }
 >
   <View
-    style={
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
+        "button",
       ]
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+        ],
         Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+          "backgroundColor": "rgb(250, 72, 138)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -258,35 +815,87 @@ exports[`Android BpkButton should render correctly with type="primary" 1`] = `
   }
 >
   <View
-    style={
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
+        "button",
       ]
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+        ],
         Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -306,35 +915,96 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
   }
 >
   <View
-    style={
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
+        "button",
       ]
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 0,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+        ],
         Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+          "backgroundColor": "transparent",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -349,7 +1019,7 @@ exports[`Android BpkButton should support elements as icons 1`] = `
           "height": 36,
         },
         Object {
-          "width": 32,
+          "width": 36,
         },
       ],
       null,
@@ -357,35 +1027,69 @@ exports[`Android BpkButton should support elements as icons 1`] = `
   }
 >
   <View
-    style={
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
+        "button",
       ]
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "paddingHorizontal": 0,
+          },
+        ],
         Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
       }
     >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        foo
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -406,86 +1110,129 @@ exports[`Android BpkButton should support having an icon as well as a title 1`] 
   }
 >
   <View
-    style={
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
+        "button",
       ]
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
       }
-    >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
-  </View>
-</View>
-`;
-
-exports[`Android BpkButton should support having only an icon 1`] = `
-<View
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "height": 36,
-        },
-        Object {
-          "width": 32,
-        },
-      ],
-      null,
-    ]
-  }
->
-  <View
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          undefined,
+        ],
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
+          "backgroundColor": "rgb(0, 215, 117)",
         },
-        undefined,
       ]
     }
+    testID={undefined}
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
-        Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "justifyContent": "space-between",
+          },
+        ]
       }
     >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                null,
+                Object {
+                  "marginLeft": 4,
+                },
+              ],
+            ],
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -507,35 +1254,87 @@ exports[`Android BpkButton should support overwriting styles 1`] = `
   }
 >
   <View
-    style={
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
+        "button",
       ]
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+        ],
         Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -556,40 +1355,243 @@ exports[`Android BpkButton should support the "disabled" property 1`] = `
   }
 >
   <View
-    style={
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
+        "button",
+        "disabled",
       ]
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
+        ],
         Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+          "backgroundColor": "rgb(230, 228, 235)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
       }
     >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "color": "rgb(178, 174, 189)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
   </View>
 </View>
 `;
 
-exports[`Android BpkButton should support the "icon" and "large" property 1`] = `
+exports[`Android BpkButton should support the "icon" property 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 36,
+        },
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          undefined,
+        ],
+        Object {
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "justifyContent": "space-between",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                null,
+                Object {
+                  "marginLeft": 4,
+                },
+              ],
+            ],
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButton should support the "iconOnly" property 1`] = `
 <View
   style={
     Array [
@@ -599,49 +1601,110 @@ exports[`Android BpkButton should support the "icon" and "large" property 1`] = 
           "height": 36,
         },
         Object {
-          "minHeight": 48,
+          "width": 36,
         },
-        undefined,
       ],
       null,
     ]
   }
 >
   <View
-    style={
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
+        "button",
       ]
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "paddingHorizontal": 0,
+          },
+        ],
         Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
       }
     >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                null,
+                undefined,
+              ],
+            ],
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
   </View>
 </View>
 `;
 
-exports[`Android BpkButton should support the "iconOnly" and "large" property 1`] = `
+exports[`Android BpkButton should support the "secondary" property 1`] = `
 <View
   style={
     Array [
@@ -650,149 +1713,102 @@ exports[`Android BpkButton should support the "iconOnly" and "large" property 1`
           "borderRadius": 40,
           "height": 36,
         },
-        Object {
-          "minHeight": 48,
-        },
-        Object {
-          "width": 48,
-        },
       ],
       null,
     ]
   }
 >
   <View
-    style={
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
+        "button",
       ]
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
       }
-    >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
-  </View>
-</View>
-`;
-
-exports[`Android BpkButton should support the "large" and secondary property 1`] = `
-<View
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "height": 36,
-        },
-        Object {
-          "minHeight": 48,
-        },
-      ],
-      null,
-    ]
-  }
->
-  <View
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 0,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+        ],
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
+          "backgroundColor": "transparent",
         },
-        undefined,
       ]
     }
+    testID={undefined}
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <View
       style={
-        Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
-  </View>
-</View>
-`;
-
-exports[`Android BpkButton should support the "large" property 1`] = `
-<View
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "height": 36,
-        },
-        Object {
-          "minHeight": 48,
-        },
-      ],
-      null,
-    ]
-  }
->
-  <View
-    style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
-      ]
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#333333",
-          "margin": 20,
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+              ],
+              Object {},
+            ],
+          ]
         }
-      }
-    >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -812,35 +1828,89 @@ exports[`Android BpkButtonThemed should render correctly 1`] = `
   }
 >
   <View
-    style={
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
       Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#ffbcbc",
-          "borderColor": "red",
-          "borderWidth": 1,
-          "height": 100,
-          "justifyContent": "center",
-          "margin": 10,
-          "width": 300,
-        },
-        undefined,
+        "button",
       ]
     }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+        ],
         Object {
-          "color": "#333333",
-          "margin": 20,
-        }
+          "backgroundColor": "green",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        ]
       }
     >
-      TouchableNativeFeedback is not supported on this platform!
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {
+                "color": "red",
+              },
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
   </View>
 </View>
 `;

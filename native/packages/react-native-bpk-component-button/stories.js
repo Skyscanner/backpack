@@ -26,7 +26,7 @@ import BpkThemeProvider from 'react-native-bpk-theming';
 import { icons } from 'react-native-bpk-component-icon';
 import { spacingMd } from 'bpk-tokens/tokens/base.react.native';
 
-import BpkButton from './src/BpkButton';
+import BpkButton from './index';
 import { BUTTON_TYPES } from './src/common-types';
 import themeAttributes from '../../storybook/themeAttributes';
 import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
@@ -46,11 +46,17 @@ const styles = StyleSheet.create({
 const getIconType = type =>
   type === 'destructive' ? icons.trash : icons['long-arrow-right'];
 
-const generateButtonStoryForType = (type: string) => {
+const generateButtonStoryForType = (
+  type: string,
+  storyAsLabel: boolean = false,
+) => {
+  const formattedType = `${type[0].toUpperCase()}${type.substring(1)}`;
   function getLargeVersion() {
     return (
       <View>
-        <StorySubheading>Large</StorySubheading>
+        <StorySubheading>
+          {storyAsLabel ? formattedType : ''} Large
+        </StorySubheading>
         <View style={styles.btnContainer}>
           <BpkButton
             large
@@ -99,7 +105,9 @@ const generateButtonStoryForType = (type: string) => {
   }
   return (
     <View key={type}>
-      <StorySubheading>Default</StorySubheading>
+      <StorySubheading>
+        {storyAsLabel ? formattedType : 'Default'}
+      </StorySubheading>
       <View style={styles.btnContainer}>
         <BpkButton
           type={type}
@@ -129,24 +137,21 @@ const generateButtonStoryForType = (type: string) => {
           onPress={action(`${type} button with icon clicked`)}
           style={styles.buttonStyles}
         />
-        {Platform.OS === 'ios' ? (
-          <BpkButton
-            type={type}
-            title="Icon only"
-            icon={getIconType(type)}
-            iconOnly
-            onPress={action(`${type} icon only button clicked`)}
-            style={styles.buttonStyles}
-          />
-        ) : null}
+        <BpkButton
+          type={type}
+          title="Icon only"
+          icon={getIconType(type)}
+          iconOnly
+          onPress={action(`${type} icon only button clicked`)}
+          style={styles.buttonStyles}
+        />
       </View>
       {Platform.OS === 'ios' ? getLargeVersion() : null}
     </View>
   );
 };
-
-const allButtonStories = Object.keys(BUTTON_TYPES).map(
-  generateButtonStoryForType,
+const allButtonStories = Object.keys(BUTTON_TYPES).map(story =>
+  generateButtonStoryForType(story, true),
 );
 const allThemedButtons = (
   <BpkThemeProvider theme={themeAttributes}>

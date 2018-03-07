@@ -18,12 +18,12 @@
 
 /* @flow */
 
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import difference from 'lodash/difference';
 import { colorWhite } from 'bpk-tokens/tokens/base.react.native';
 import { type Theme } from 'react-native-bpk-theming';
 
-import styles from './BpkButton-styles';
+import styles from './styles';
 
 const REQUIRED_THEME_ATTRIBUTES: Object = {
   primary: [
@@ -44,21 +44,19 @@ export const getStyleForElement = (
   elementType: string,
   { type, title, icon, iconAlignment, iconOnly, large, disabled }: Object,
 ): Array<Object> => {
-  // Start with base style.
+  const isLarge = large && Platform.OS === 'ios';
   const styleForElement = [styles.base[elementType]];
 
-  // Add styles for the button type (primary, secondary etc).
   if (styles.types[type] && styles.types[type][elementType]) {
     styleForElement.push(styles.types[type][elementType]);
   }
 
-  // Add modifiers. Disabled comes last to override other styles.
-  if (large) {
-    let largeModifier = 'large';
-    if (['secondary', 'destructive'].includes(type)) {
-      largeModifier = 'largeWithOutline';
-    }
-    styleForElement.push(styles.modifiers[largeModifier][elementType]);
+  if (isLarge) {
+    const modifier = ['secondary', 'destructive'].includes(type)
+      ? 'largeWithOutline'
+      : 'large';
+
+    styleForElement.push(styles.modifiers[modifier][elementType]);
   }
 
   if (disabled) {
@@ -67,14 +65,15 @@ export const getStyleForElement = (
 
   if (iconOnly) {
     styleForElement.push(
-      large
+      isLarge
         ? styles.modifiers.iconOnlyLarge[elementType]
         : styles.modifiers.iconOnly[elementType],
     );
   } else if (title && icon) {
-    // If it has a title and icon, get the style for that.
     styleForElement.push(
-      styles.modifiers[large ? 'textAndIconLarge' : 'textAndIcon'][elementType],
+      styles.modifiers[isLarge ? 'textAndIconLarge' : 'textAndIcon'][
+        elementType
+      ],
     );
 
     if (iconAlignment === 'leading') {
@@ -92,9 +91,11 @@ export const getThemingForElement = (
 ): Object => {
   const suppliedTheme = theme; // This is purely to stop Flow from compaining.
   const themeForElement = {};
+
   if (suppliedTheme && !disabled && styles.themeMappings[elementType]) {
     Object.keys(styles.themeMappings[elementType]).forEach(key => {
       const values = styles.themeMappings[elementType][key];
+
       if (values[type]) {
         themeForElement[key] = suppliedTheme[values[type]];
       }
@@ -108,8 +109,10 @@ export const getGradientColors = (
   { type, disabled }: Object,
 ): Array<string> => {
   let gradientColors = styles.gradientColors[type];
+
   if (theme) {
     const gradientThemeProps = styles.themeMappings.gradient[type];
+
     gradientColors = [
       theme[gradientThemeProps.startColor],
       theme[gradientThemeProps.endColor],
@@ -119,6 +122,7 @@ export const getGradientColors = (
   if (disabled) {
     gradientColors = styles.gradientColors.disabled;
   }
+
   return gradientColors;
 };
 
@@ -128,11 +132,13 @@ export const iconPropType = (
   componentName: string,
 ): ?Error => {
   const icon = props[propName];
+
   if (props.iconOnly && !icon) {
     return new Error(
       `Invalid prop \`${propName}\` supplied to \`${componentName}\`. When \`iconOnly\` is enabled, \`${propName}\` must be supplied.`,
-    ); // eslint-disable-line max-len
+    );
   }
+
   return null;
 };
 
@@ -148,16 +154,19 @@ export const themePropType = (
   componentName: string,
 ): ?Error => {
   const { type, theme } = props;
+
   if (!theme) {
     return null;
   }
+
   if (!themeAttributesSupplied(type, theme)) {
     return new Error(
       `Invalid prop \`${propName}\` supplied to \`${componentName}\`. For buttons of type \`${type}\`, the \`theme\` prop must include \`${REQUIRED_THEME_ATTRIBUTES[
         type
       ].join(', ')}\``,
-    ); // eslint-disable-line max-len
+    );
   }
+
   return null;
 };
 

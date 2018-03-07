@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
-import BpkTooltipPortal from './src/BpkTooltipPortal';
+/* @flow */
+
+import BpkTooltipPortal, { type Props } from './src/BpkTooltipPortal';
+
+export type BpkTooltipPortalProps = Props;
 
 export default BpkTooltipPortal;

@@ -1,0 +1,1194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkDialingCodeList should render correctly 1`] = `
+<RCTScrollView
+  ItemSeparatorComponent={undefined}
+  data={
+    Array [
+      Object {
+        "data": Array [
+          Object {
+            "dialingCode": "0",
+            "id": "0",
+            "name": "Zero",
+          },
+        ],
+        "title": "Z",
+      },
+      Object {
+        "data": Array [
+          Object {
+            "dialingCode": "1",
+            "id": "1",
+            "name": "One",
+          },
+        ],
+        "title": "O",
+      },
+      Object {
+        "data": Array [
+          Object {
+            "dialingCode": "2",
+            "id": "2",
+            "name": "Two",
+          },
+        ],
+        "title": "T",
+      },
+    ]
+  }
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  onViewableItemsChanged={undefined}
+  renderItem={[Function]}
+  renderSectionHeader={[Function]}
+  scrollEventThrottle={50}
+  sections={
+    Array [
+      Object {
+        "data": Array [
+          Object {
+            "dialingCode": "0",
+            "id": "0",
+            "name": "Zero",
+          },
+        ],
+        "title": "Z",
+      },
+      Object {
+        "data": Array [
+          Object {
+            "dialingCode": "1",
+            "id": "1",
+            "name": "One",
+          },
+        ],
+        "title": "O",
+      },
+      Object {
+        "data": Array [
+          Object {
+            "dialingCode": "2",
+            "id": "2",
+            "name": "Two",
+          },
+        ],
+        "title": "T",
+      },
+    ]
+  }
+  stickyHeaderIndices={
+    Array [
+      0,
+      3,
+      6,
+    ]
+  }
+  stickySectionHeadersEnabled={true}
+  updateCellsBatchingPeriod={50}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 17,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Object {
+              "backgroundColor": "rgb(243, 242, 245)",
+              "paddingHorizontal": 16,
+              "paddingVertical": 4,
+            },
+          ]
+        }
+      >
+        Z
+      </Text>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        accessibilityComponentType="button"
+        accessibilityLabel="0 Zero"
+        accessibilityTraits={
+          Array [
+            "button",
+          ]
+        }
+        accessible={true}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "padding": 16,
+          }
+        }
+        testID={undefined}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Image
+            resizeMode="contain"
+            style={
+              Array [
+                Object {
+                  "borderColor": "rgb(230, 228, 235)",
+                  "borderWidth": 1,
+                },
+                Object {
+                  "height": 16,
+                  "width": 24,
+                },
+              ]
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "System",
+                  "fontSize": 17,
+                  "fontWeight": "400",
+                },
+                Array [
+                  Object {
+                    "flex": 1,
+                    "marginLeft": 24,
+                  },
+                  null,
+                ],
+              ]
+            }
+          >
+            0
+             
+            Zero
+          </Text>
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgb(0, 157, 189)",
+                  "opacity": 0,
+                },
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    />
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 17,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Object {
+              "backgroundColor": "rgb(243, 242, 245)",
+              "paddingHorizontal": 16,
+              "paddingVertical": 4,
+            },
+          ]
+        }
+      >
+        O
+      </Text>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        accessibilityComponentType="button"
+        accessibilityLabel="1 One"
+        accessibilityTraits={
+          Array [
+            "button",
+          ]
+        }
+        accessible={true}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "padding": 16,
+          }
+        }
+        testID={undefined}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Image
+            resizeMode="contain"
+            style={
+              Array [
+                Object {
+                  "borderColor": "rgb(230, 228, 235)",
+                  "borderWidth": 1,
+                },
+                Object {
+                  "height": 16,
+                  "width": 24,
+                },
+              ]
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "System",
+                  "fontSize": 17,
+                  "fontWeight": "400",
+                },
+                Array [
+                  Object {
+                    "flex": 1,
+                    "marginLeft": 24,
+                  },
+                  null,
+                ],
+              ]
+            }
+          >
+            1
+             
+            One
+          </Text>
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgb(0, 157, 189)",
+                  "opacity": 0,
+                },
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    />
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 17,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Object {
+              "backgroundColor": "rgb(243, 242, 245)",
+              "paddingHorizontal": 16,
+              "paddingVertical": 4,
+            },
+          ]
+        }
+      >
+        T
+      </Text>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        accessibilityComponentType="button"
+        accessibilityLabel="2 Two"
+        accessibilityTraits={
+          Array [
+            "button",
+          ]
+        }
+        accessible={true}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "padding": 16,
+          }
+        }
+        testID={undefined}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Image
+            resizeMode="contain"
+            style={
+              Array [
+                Object {
+                  "borderColor": "rgb(230, 228, 235)",
+                  "borderWidth": 1,
+                },
+                Object {
+                  "height": 16,
+                  "width": 24,
+                },
+              ]
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "System",
+                  "fontSize": 17,
+                  "fontWeight": "400",
+                },
+                Array [
+                  Object {
+                    "flex": 1,
+                    "marginLeft": 24,
+                  },
+                  null,
+                ],
+              ]
+            }
+          >
+            2
+             
+            Two
+          </Text>
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgb(0, 157, 189)",
+                  "opacity": 0,
+                },
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    />
+  </View>
+</RCTScrollView>
+`;
+
+exports[`iOS BpkDialingCodeList should render correctly with "selectedId" set 1`] = `
+<RCTScrollView
+  ItemSeparatorComponent={undefined}
+  data={
+    Array [
+      Object {
+        "data": Array [
+          Object {
+            "dialingCode": "0",
+            "id": "0",
+            "name": "Zero",
+          },
+        ],
+        "title": "Z",
+      },
+      Object {
+        "data": Array [
+          Object {
+            "dialingCode": "1",
+            "id": "1",
+            "name": "One",
+          },
+        ],
+        "title": "O",
+      },
+      Object {
+        "data": Array [
+          Object {
+            "dialingCode": "2",
+            "id": "2",
+            "name": "Two",
+          },
+        ],
+        "title": "T",
+      },
+    ]
+  }
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  onViewableItemsChanged={undefined}
+  renderItem={[Function]}
+  renderSectionHeader={[Function]}
+  scrollEventThrottle={50}
+  sections={
+    Array [
+      Object {
+        "data": Array [
+          Object {
+            "dialingCode": "0",
+            "id": "0",
+            "name": "Zero",
+          },
+        ],
+        "title": "Z",
+      },
+      Object {
+        "data": Array [
+          Object {
+            "dialingCode": "1",
+            "id": "1",
+            "name": "One",
+          },
+        ],
+        "title": "O",
+      },
+      Object {
+        "data": Array [
+          Object {
+            "dialingCode": "2",
+            "id": "2",
+            "name": "Two",
+          },
+        ],
+        "title": "T",
+      },
+    ]
+  }
+  stickyHeaderIndices={
+    Array [
+      0,
+      3,
+      6,
+    ]
+  }
+  stickySectionHeadersEnabled={true}
+  updateCellsBatchingPeriod={50}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 17,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Object {
+              "backgroundColor": "rgb(243, 242, 245)",
+              "paddingHorizontal": 16,
+              "paddingVertical": 4,
+            },
+          ]
+        }
+      >
+        Z
+      </Text>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        accessibilityComponentType="button"
+        accessibilityLabel="0 Zero"
+        accessibilityTraits={
+          Array [
+            "button",
+          ]
+        }
+        accessible={true}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "padding": 16,
+          }
+        }
+        testID={undefined}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Image
+            resizeMode="contain"
+            style={
+              Array [
+                Object {
+                  "borderColor": "rgb(230, 228, 235)",
+                  "borderWidth": 1,
+                },
+                Object {
+                  "height": 16,
+                  "width": 24,
+                },
+              ]
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "System",
+                  "fontSize": 17,
+                  "fontWeight": "400",
+                },
+                Array [
+                  Object {
+                    "flex": 1,
+                    "marginLeft": 24,
+                  },
+                  Object {
+                    "color": "rgb(0, 157, 189)",
+                  },
+                ],
+              ]
+            }
+          >
+            0
+             
+            Zero
+          </Text>
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgb(0, 157, 189)",
+                  "opacity": 0,
+                },
+                Object {
+                  "opacity": 1,
+                },
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    />
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 17,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Object {
+              "backgroundColor": "rgb(243, 242, 245)",
+              "paddingHorizontal": 16,
+              "paddingVertical": 4,
+            },
+          ]
+        }
+      >
+        O
+      </Text>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        accessibilityComponentType="button"
+        accessibilityLabel="1 One"
+        accessibilityTraits={
+          Array [
+            "button",
+          ]
+        }
+        accessible={true}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "padding": 16,
+          }
+        }
+        testID={undefined}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Image
+            resizeMode="contain"
+            style={
+              Array [
+                Object {
+                  "borderColor": "rgb(230, 228, 235)",
+                  "borderWidth": 1,
+                },
+                Object {
+                  "height": 16,
+                  "width": 24,
+                },
+              ]
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "System",
+                  "fontSize": 17,
+                  "fontWeight": "400",
+                },
+                Array [
+                  Object {
+                    "flex": 1,
+                    "marginLeft": 24,
+                  },
+                  null,
+                ],
+              ]
+            }
+          >
+            1
+             
+            One
+          </Text>
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgb(0, 157, 189)",
+                  "opacity": 0,
+                },
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    />
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "System",
+              "fontSize": 17,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+            Object {
+              "backgroundColor": "rgb(243, 242, 245)",
+              "paddingHorizontal": 16,
+              "paddingVertical": 4,
+            },
+          ]
+        }
+      >
+        T
+      </Text>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        accessibilityComponentType="button"
+        accessibilityLabel="2 Two"
+        accessibilityTraits={
+          Array [
+            "button",
+          ]
+        }
+        accessible={true}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "padding": 16,
+          }
+        }
+        testID={undefined}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Image
+            resizeMode="contain"
+            style={
+              Array [
+                Object {
+                  "borderColor": "rgb(230, 228, 235)",
+                  "borderWidth": 1,
+                },
+                Object {
+                  "height": 16,
+                  "width": 24,
+                },
+              ]
+            }
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgb(82, 76, 97)",
+                  "fontFamily": "System",
+                  "fontSize": 17,
+                  "fontWeight": "400",
+                },
+                Array [
+                  Object {
+                    "flex": 1,
+                    "marginLeft": 24,
+                  },
+                  null,
+                ],
+              ]
+            }
+          >
+            2
+             
+            Two
+          </Text>
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "rgb(82, 76, 97)",
+                "fontFamily": "BpkIcon",
+                "fontSize": 24,
+                "lineHeight": 24,
+              },
+              Object {
+                "fontSize": 16,
+                "lineHeight": 16,
+              },
+              Array [
+                Object {
+                  "color": "rgb(0, 157, 189)",
+                  "opacity": 0,
+                },
+              ],
+            ]
+          }
+        >
+          
+        </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgb(37, 32, 51)",
+                "bottom": 0,
+                "flex": 1,
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+            ]
+          }
+        />
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    />
+  </View>
+</RCTScrollView>
+`;

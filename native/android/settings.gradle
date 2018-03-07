@@ -1,3 +1,5 @@
 rootProject.name = 'native'
 
 include ':app'
+include ':react-native-restart'
+project(':react-native-restart').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-restart/android')

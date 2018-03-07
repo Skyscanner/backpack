@@ -41,6 +41,7 @@ export default class App extends Component {
           label="City"
           style={styles.input}
           value="Edinburgh"
+          description="Enter your destination."
         />
         <BpkTextInput
           label="City information"
@@ -92,8 +93,10 @@ export default class App extends Component {
 | label                       | string                                                      | true     | -             |
 | value                       | string                                                      | true     | -             |
 | clearButtonMode (iOS only)  | oneOf('never', 'while-editing', 'unless-editing', 'always') | false    | while-editing |
+| description                 | string                                                      | false    | null          |
 | editable                    | bool                                                        | false    | true          |
 | inputRef                    | func                                                        | false    | null          |
 | valid                       | oneOf(true, false, null)                                    | false    | null          |
 | validationMessage           | string                                                      | false    | null          |
 | style                       | style                                                       | false    | null          |
+| accessoryView               | node                                                        | false    | null          |

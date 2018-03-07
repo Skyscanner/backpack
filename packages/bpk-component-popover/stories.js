@@ -26,7 +26,7 @@ import { storiesOf } from '@storybook/react';
 import BpkText from 'bpk-component-text';
 import BpkContentContainer from 'bpk-component-content-container';
 
-import BpkPopover, { type Props as PopoverProps } from './index';
+import BpkPopover, { type BpkPopoverProps as PopoverProps } from './index';
 
 import STYLES from './stories.scss';
 
@@ -205,5 +205,15 @@ storiesOf('bpk-component-popover', module)
         Different target
       </Paragraph>
       <PopoverContainer id="my-popover" changeProps />
+    </Spacer>
+  ))
+  .add('Popper modifiers', () => (
+    <Spacer>
+      <PopoverContainer
+        id="my-popover"
+        popperModifiers={{
+          flip: { enabled: false },
+        }}
+      />
     </Spacer>
   ));

@@ -2,204 +2,331 @@
 
 exports[`Android BpkHorizontalNavItem should render correctly 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Nav"
+  accessibilityTraits={
     Array [
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#ffbcbc",
-        "borderColor": "red",
-        "borderWidth": 1,
-        "height": 100,
-        "justifyContent": "center",
-        "margin": 10,
-        "width": 300,
-      },
-      undefined,
+      "button",
     ]
   }
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackgroundBorderless",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <Text
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
     style={
-      Object {
-        "color": "#333333",
-        "margin": 20,
-      }
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 16,
+          "fontWeight": "400",
+        },
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
+          },
+        ],
+      ]
     }
   >
-    TouchableNativeFeedback is not supported on this platform!
+    NAV
   </Text>
 </View>
 `;
 
 exports[`Android BpkHorizontalNavItem should render correctly with "selected" prop 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Nav"
+  accessibilityTraits={
     Array [
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#ffbcbc",
-        "borderColor": "red",
-        "borderWidth": 1,
-        "height": 100,
-        "justifyContent": "center",
-        "margin": 10,
-        "width": 300,
-      },
-      undefined,
+      "button",
     ]
   }
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackgroundBorderless",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <Text
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
     style={
-      Object {
-        "color": "#333333",
-        "margin": 20,
-      }
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 16,
+          "fontWeight": "400",
+        },
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
+          },
+          Object {
+            "color": "rgb(0, 140, 168)",
+          },
+        ],
+      ]
     }
   >
-    TouchableNativeFeedback is not supported on this platform!
+    NAV
   </Text>
 </View>
 `;
 
 exports[`Android BpkHorizontalNavItem should render correctly with "spaceAround" prop 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Nav"
+  accessibilityTraits={
     Array [
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#ffbcbc",
-        "borderColor": "red",
-        "borderWidth": 1,
-        "height": 100,
-        "justifyContent": "center",
-        "margin": 10,
-        "width": 300,
-      },
-      undefined,
+      "button",
     ]
   }
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackgroundBorderless",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <Text
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
     style={
-      Object {
-        "color": "#333333",
-        "margin": 20,
-      }
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 16,
+          "fontWeight": "400",
+        },
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
+          },
+        ],
+      ]
     }
   >
-    TouchableNativeFeedback is not supported on this platform!
+    NAV
   </Text>
 </View>
 `;
 
 exports[`Android BpkHorizontalNavItem should render correctly with arbitrary props 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Nav"
+  accessibilityTraits={
     Array [
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#ffbcbc",
-        "borderColor": "red",
-        "borderWidth": 1,
-        "height": 100,
-        "justifyContent": "center",
-        "margin": 10,
-        "width": 300,
-      },
-      undefined,
+      "button",
     ]
   }
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackgroundBorderless",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <Text
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
     style={
-      Object {
-        "color": "#333333",
-        "margin": 20,
-      }
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 16,
+          "fontWeight": "400",
+        },
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
+          },
+        ],
+      ]
     }
   >
-    TouchableNativeFeedback is not supported on this platform!
+    NAV
   </Text>
 </View>
 `;
 
 exports[`Android BpkHorizontalNavItem should render correctly with custom "style" prop 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Nav"
+  accessibilityTraits={
     Array [
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#ffbcbc",
-        "borderColor": "red",
-        "borderWidth": 1,
-        "height": 100,
-        "justifyContent": "center",
-        "margin": 10,
-        "width": 300,
-      },
-      undefined,
+      "button",
     ]
   }
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackgroundBorderless",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "marginBottom": 10,
+    }
+  }
+  testID={undefined}
 >
   <Text
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
     style={
-      Object {
-        "color": "#333333",
-        "margin": 20,
-      }
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 16,
+          "fontWeight": "400",
+        },
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
+          },
+        ],
+      ]
     }
   >
-    TouchableNativeFeedback is not supported on this platform!
+    NAV
   </Text>
 </View>
 `;
 
 exports[`Android BpkHorizontalNavItem should support theming 1`] = `
 <View
-  style={
+  accessibilityComponentType="button"
+  accessibilityLabel="Nav"
+  accessibilityTraits={
     Array [
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#ffbcbc",
-        "borderColor": "red",
-        "borderWidth": 1,
-        "height": 100,
-        "justifyContent": "center",
-        "margin": 10,
-        "width": 300,
-      },
-      undefined,
+      "button",
     ]
   }
+  accessible={true}
+  hitSlop={undefined}
+  nativeBackgroundAndroid={
+    Object {
+      "attribute": "selectableItemBackgroundBorderless",
+      "type": "ThemeAttrAndroid",
+    }
+  }
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={null}
+  testID={undefined}
 >
   <Text
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
     style={
-      Object {
-        "color": "#333333",
-        "margin": 20,
-      }
+      Array [
+        Object {
+          "color": "rgb(82, 76, 97)",
+          "fontFamily": "sans-serif",
+          "fontSize": 16,
+          "fontWeight": "400",
+        },
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "paddingHorizontal": 16,
+            "paddingVertical": 8,
+          },
+        ],
+      ]
     }
   >
-    TouchableNativeFeedback is not supported on this platform!
+    NAV
   </Text>
 </View>
 `;

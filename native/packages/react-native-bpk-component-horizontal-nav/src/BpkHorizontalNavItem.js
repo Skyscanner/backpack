@@ -16,13 +16,7 @@
  * limitations under the License.
  */
 
-import {
-  View,
-  Platform,
-  StyleSheet,
-  ViewPropTypes,
-  TouchableNativeFeedback,
-} from 'react-native';
+import { View, Platform, StyleSheet, ViewPropTypes } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -35,6 +29,7 @@ import {
 import { withTheme } from 'react-native-bpk-theming';
 import BpkText from 'react-native-bpk-component-text';
 import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
+import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
 
 import { THEMING_ATTRIBUTE, themePropType } from './theming';
 
@@ -82,11 +77,10 @@ const BpkHorizontalNavItem = props => {
   }
 
   const isAndroid = Platform.OS === 'android';
-  const Touchable = isAndroid ? TouchableNativeFeedback : BpkTouchableOverlay;
+  const Touchable = isAndroid
+    ? BpkTouchableNativeFeedback
+    : BpkTouchableOverlay;
   const formattedTitle = isAndroid ? title.toUpperCase() : title;
-  const platformSpecificProps = isAndroid
-    ? { background: TouchableNativeFeedback.SelectableBackgroundBorderless() }
-    : {};
 
   return (
     <Touchable
@@ -94,7 +88,6 @@ const BpkHorizontalNavItem = props => {
       accessibilityLabel={accessibilityLabel || title}
       accessibilityTraits={accessibilityTraits}
       disabled={disabled || selected}
-      {...platformSpecificProps}
       {...rest}
     >
       <View style={style}>

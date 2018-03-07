@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
-import BpkTextInput from './src/BpkTextInput';
+/* @flow */
 
+import BpkTextInput, { type Props } from './src/BpkTextInput';
+
+export type BpkTextInputProps = Props;
 export default BpkTextInput;

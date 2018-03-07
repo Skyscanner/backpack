@@ -16,11 +16,13 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React from 'react';
 import renderer from 'react-test-renderer';
 
 jest.mock('bpk-react-utils', () => {
-  const original = require.requireActual('bpk-react-utils');
+  const original = jest.requireActual('bpk-react-utils');
 
   return {
     ...original,

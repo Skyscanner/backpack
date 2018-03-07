@@ -1,0 +1,23 @@
+{
+  "name": "react-native-bpk-component-badge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "Backpack React Native badge component.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Skyscanner/backpack.git"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-native": ">= 0.52.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
+    "bpk-tokens": "^26.7.4",
+    "react-native-bpk-component-text": "^2.1.30"
+  }
+}

@@ -17,7 +17,9 @@
  */
 
 import React from 'react';
-import BpkBadge from 'bpk-component-badge';
+import BpkBadge, { BADGE_TYPES } from 'bpk-component-badge';
+import BadgeLayout from 'bpk-component-badge/BadgeLayout';
+
 import { cssModules } from 'bpk-react-utils';
 
 import badgeReadme from 'bpk-component-badge/readme.md';
@@ -43,7 +45,7 @@ const components = [
       <BpkBadge className={badgeClassName}>Apples</BpkBadge>,
       <BpkBadge className={badgeClassName}>Bananas</BpkBadge>,
       <BpkBadge className={badgeClassName}>Strawberries</BpkBadge>,
-      <BpkBadge>Pears</BpkBadge>,
+      <BpkBadge className={badgeClassName}>Pears</BpkBadge>,
     ],
   },
   {
@@ -83,6 +85,119 @@ const components = [
       <BpkBadge centered>Pears</BpkBadge>,
     ],
   },
+  {
+    id: 'success',
+    title: 'Success',
+    blurb: [
+      <Paragraph>The success badge is a green color as shown below.</Paragraph>,
+    ],
+    examples: [
+      <BpkBadge type={BADGE_TYPES.success} className={badgeClassName}>
+        Apples
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.success} className={badgeClassName}>
+        Bananas
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.success} className={badgeClassName}>
+        Strawberries
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.success} className={badgeClassName}>
+        Pears
+      </BpkBadge>,
+    ],
+  },
+  {
+    id: 'destructive',
+    title: 'Destructive',
+    blurb: [
+      <Paragraph>
+        The destructive badge is a red color as shown below.
+      </Paragraph>,
+    ],
+    examples: [
+      <BpkBadge type={BADGE_TYPES.destructive} className={badgeClassName}>
+        Apples
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.destructive} className={badgeClassName}>
+        Bananas
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.destructive} className={badgeClassName}>
+        Strawberries
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.destructive} className={badgeClassName}>
+        Pears
+      </BpkBadge>,
+    ],
+  },
+  {
+    id: 'light',
+    title: 'Light',
+    blurb: [
+      <Paragraph>The light badge is a gray color as shown below.</Paragraph>,
+    ],
+    examples: [
+      <BadgeLayout>
+        <BpkBadge type={BADGE_TYPES.light} className={badgeClassName}>
+          Apples
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.light} className={badgeClassName}>
+          Bananas
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.light} className={badgeClassName}>
+          Strawberries
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.light} className={badgeClassName}>
+          Pears
+        </BpkBadge>
+      </BadgeLayout>,
+    ],
+  },
+  {
+    id: 'inverse',
+    title: 'Inverse',
+    blurb: [<Paragraph>The inverse badge is white as shown below.</Paragraph>],
+    examples: [
+      <BadgeLayout>
+        <BpkBadge type={BADGE_TYPES.inverse} className={badgeClassName}>
+          Apples
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.inverse} className={badgeClassName}>
+          Bananas
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.inverse} className={badgeClassName}>
+          Strawberries
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.inverse} className={badgeClassName}>
+          Pears
+        </BpkBadge>
+      </BadgeLayout>,
+    ],
+  },
+  {
+    id: 'outline',
+    title: 'Outline',
+    blurb: [
+      <Paragraph>
+        The outline badge has a somewhat transparent background as shown below.
+      </Paragraph>,
+    ],
+    examples: [
+      <BadgeLayout>
+        <BpkBadge type={BADGE_TYPES.outline} className={badgeClassName}>
+          Apples
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.outline} className={badgeClassName}>
+          Bananas
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.outline} className={badgeClassName}>
+          Strawberries
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.outline} className={badgeClassName}>
+          Pears
+        </BpkBadge>
+      </BadgeLayout>,
+    ],
+  },
 ];
 
 const BadgePage = () => (
@@ -91,8 +206,9 @@ const BadgePage = () => (
     blurb={[
       <Paragraph>
         Badges are labels which hold small amounts of information. They are
-        currently available in one colour. Badges are most often used as
-        counters, such as an indication of unread notifications.
+        available in a number of colors to signify different meanings. Badges
+        are most often used as counters, such as an indication of unread
+        notifications.
       </Paragraph>,
     ]}
     components={components}
