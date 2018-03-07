@@ -35,10 +35,8 @@ export default class App extends Component {
           title="Book flight"
           onPress={() => {}} />
         <BpkButtonLink
-          title="Book flight"
-          onPress={() => {}} />
-        <BpkButtonLink
-          title="Book flight"
+          title="Disabled"
+          disabled
           onPress={() => {}} />
         <BpkButtonLink
           large
@@ -53,11 +51,6 @@ export default class App extends Component {
           icon="baggage"
           iconAlignment="leading"
           onPress={() => {}} />
-        <BpkButtonLink
-          title="Book flight"
-          icon="baggage"
-          iconOnly
-          onPress={() => {}} />
       </View>
     );
   }
@@ -70,6 +63,7 @@ export default class App extends Component {
 | --------------------- | ------------------------------------------------------------------------- | -------- | ------------- |
 | onPress               | func                                                                      | true     | -             |
 | title                 | string                                                                    | true     | -             |
+| disabled              | bool                                                                      | false    | false         |
 | accessibilityLabel    | string                                                                    | false    | props.title   |
 | icon                  | oneOf(string, element) Strings must be a [BpkIcon](/components/web/icons) | false    | null          |
 | iconAlignment         | oneOf('leading', 'trailing')                                              | false    | trailing      |

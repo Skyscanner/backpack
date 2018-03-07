@@ -38,6 +38,18 @@ const commonTests = () => {
       expect(tree).toMatchSnapshot();
     });
 
+    it('should support the "disabled" property', () => {
+      const onPressFn = jest.fn();
+
+      const tree = renderer
+        .create(
+          <BpkButtonLink disabled title="Lorem ipsum" onPress={onPressFn} />,
+        )
+        .toJSON();
+
+      expect(tree).toMatchSnapshot();
+    });
+
     it('should support the "icon" property', () => {
       const onPressFn = jest.fn();
 
