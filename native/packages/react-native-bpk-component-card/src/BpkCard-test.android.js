@@ -16,34 +16,35 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import commonTests from './BpkCard-test.common';
 
 jest.mock('react-native', () => {
-  const reactNative = require.requireActual('react-native');
+  const reactNative = jest.requireActual('react-native');
   jest
     .spyOn(reactNative.Platform, 'select')
     .mockImplementation(obj => obj.android || obj.default);
   reactNative.Platform.OS = 'android';
-  reactNative.TouchableNativeFeedback.SelectableBackgroundBorderless = jest.fn();
   return reactNative;
 });
 
-jest.mock('./BpkCard', () => require.requireActual('./BpkCard.android'));
+jest.mock('./BpkCard', () => jest.requireActual('./BpkCard.android'));
 
 jest.mock(
   './../node_modules/react-native-bpk-component-text/node_modules/bpk-tokens/tokens/base.react.native',
-  () => require.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+  () => jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
 );
 
 jest.mock('bpk-tokens/tokens/base.react.native', () =>
-  require.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+  jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
 );
 
-jest.mock('TouchableNativeFeedback', () => ({ children, ...rest }) => {
-  const { cloneElement } = require.requireActual('react');
-
-  return cloneElement(children, rest);
-});
+jest.mock('TouchableNativeFeedback', () =>
+  jest.requireActual(
+    'react-native/Libraries/Components/Touchable/TouchableNativeFeedback.android.js',
+  ),
+);
 
 describe('Android', () => {
   commonTests();

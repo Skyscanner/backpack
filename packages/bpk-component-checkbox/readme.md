@@ -29,7 +29,7 @@ export default () => (
 | Property   | PropType | Required | Default Value |
 | ---------- | -------- | -------- | ------------- |
 | name       | string   | true     | -             |
-| label      | string   | true     | -             |
+| label      | node     | true     | -             |
 | required   | bool     | false    | false         |
 | white      | bool     | false    | false         |
 | smallLabel | bool     | false    | false         |

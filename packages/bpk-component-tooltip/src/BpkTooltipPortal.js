@@ -16,12 +16,14 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import Popper from 'popper.js';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, type Node } from 'react';
 import { Portal, cssModules } from 'bpk-react-utils';
 
-import BpkTooltip from './BpkTooltip';
+import BpkTooltip, { type TooltipProps } from './BpkTooltip';
 import { ARROW_ID } from './constants';
 import STYLES from './BpkTooltip.scss';
 
@@ -34,9 +36,50 @@ const hasTouchSupport = () =>
       (window.DocumentTouch && document instanceof window.DocumentTouch))
   );
 
-class BpkTooltipPortal extends Component {
-  constructor(props) {
-    super(props);
+export type Props = {
+  ...$Exact<TooltipProps>,
+  target: Node,
+  children: Node,
+  placement: 'top' | 'right' | 'bottom' | 'left' | 'auto',
+  hideOnTouchDevices: boolean,
+  padded: boolean,
+  portalStyle: ?Object, // eslint-disable-line react/forbid-prop-types
+  portalClassName: ?string,
+  popperModifiers: ?Object,
+};
+
+type State = {
+  isOpen: boolean,
+};
+
+class BpkTooltipPortal extends Component<Props, State> {
+  popper: ?Popper;
+  targetRef: ?HTMLElement;
+
+  static propTypes = {
+    ...BpkTooltip.propTypes,
+    target: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
+    placement: PropTypes.oneOf(Popper.placements),
+    hideOnTouchDevices: PropTypes.bool,
+    padded: PropTypes.bool,
+    portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    portalClassName: PropTypes.string,
+    popperModifiers: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  };
+
+  static defaultProps = {
+    ...BpkTooltip.defaultProps,
+    placement: 'bottom',
+    hideOnTouchDevices: true,
+    padded: true,
+    portalStyle: null,
+    portalClassName: null,
+    popperModifiers: null,
+  };
+
+  constructor() {
+    super();
 
     this.state = {
       isOpen: false,
@@ -44,30 +87,31 @@ class BpkTooltipPortal extends Component {
 
     this.popper = null;
     this.targetRef = null;
-
-    this.onOpen = this.onOpen.bind(this);
-    this.openTooltip = this.openTooltip.bind(this);
-    this.closeTooltip = this.closeTooltip.bind(this);
   }
 
   componentDidMount() {
     if (this.targetRef) {
-      this.targetRef.addEventListener('mouseenter', this.openTooltip);
-      this.targetRef.addEventListener('mouseleave', this.closeTooltip);
+      const ref = this.targetRef;
+
+      ref.addEventListener('mouseenter', this.openTooltip);
+      ref.addEventListener('mouseleave', this.closeTooltip);
     }
   }
 
   componentWillUnmount() {
     if (this.targetRef) {
-      this.targetRef.removeEventListener('mouseenter', this.openTooltip);
-      this.targetRef.removeEventListener('mouseleave', this.closeTooltip);
+      const ref = this.targetRef;
+
+      ref.removeEventListener('mouseenter', this.openTooltip);
+      ref.removeEventListener('mouseleave', this.closeTooltip);
     }
   }
 
-  onOpen(tooltipElement, targetElement) {
+  onOpen = (tooltipElement: HTMLElement, targetElement: HTMLElement) => {
     this.popper = new Popper(targetElement, tooltipElement, {
       placement: this.props.placement,
       modifiers: {
+        ...this.props.popperModifiers,
         arrow: {
           element: `#${ARROW_ID}`,
         },
@@ -75,29 +119,30 @@ class BpkTooltipPortal extends Component {
     });
 
     this.popper.scheduleUpdate();
-  }
+  };
 
-  beforeClose(done) {
-    this.popper.destroy();
-    this.popper = null;
+  beforeClose = (done: () => mixed) => {
+    if (this.popper) {
+      this.popper.destroy();
+      this.popper = null;
+    }
 
     done();
-  }
+  };
 
-  openTooltip() {
+  openTooltip = () => {
     this.setState({
       isOpen: true,
     });
-  }
+  };
 
-  closeTooltip() {
+  closeTooltip = () => {
     this.setState({
       isOpen: false,
     });
-  }
+  };
 
   render() {
-    const classNames = [getClassName('bpk-tooltip-portal')];
     const {
       padded,
       target,
@@ -106,8 +151,11 @@ class BpkTooltipPortal extends Component {
       hideOnTouchDevices,
       portalClassName,
       portalStyle,
+      popperModifiers,
       ...rest
     } = this.props;
+
+    const classNames = [getClassName('bpk-tooltip-portal')];
     const renderPortal = !hasTouchSupport() || !hideOnTouchDevices;
 
     if (portalClassName) {
@@ -135,23 +183,5 @@ class BpkTooltipPortal extends Component {
     );
   }
 }
-
-BpkTooltipPortal.propTypes = {
-  target: PropTypes.node.isRequired,
-  children: PropTypes.node.isRequired,
-  placement: PropTypes.oneOf(Popper.placements),
-  hideOnTouchDevices: PropTypes.bool,
-  padded: PropTypes.bool,
-  portalStyle: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  portalClassName: PropTypes.string,
-};
-
-BpkTooltipPortal.defaultProps = {
-  placement: 'bottom',
-  hideOnTouchDevices: true,
-  padded: true,
-  portalStyle: null,
-  portalClassName: null,
-};
 
 export default BpkTooltipPortal;

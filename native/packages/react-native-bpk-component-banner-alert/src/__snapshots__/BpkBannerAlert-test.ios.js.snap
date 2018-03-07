@@ -1215,7 +1215,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
                             "paddingTop": 7,
                           },
                           Object {
-                            "color": "rgb(129, 123, 143)",
+                            "color": "rgb(82, 76, 97)",
                           },
                         ],
                       ]
@@ -1418,7 +1418,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
                             "paddingTop": 7,
                           },
                           Object {
-                            "color": "rgb(129, 123, 143)",
+                            "color": "rgb(82, 76, 97)",
                           },
                         ],
                       ]
@@ -1621,7 +1621,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
                             "paddingTop": 7,
                           },
                           Object {
-                            "color": "rgb(129, 123, 143)",
+                            "color": "rgb(82, 76, 97)",
                           },
                         ],
                       ]
@@ -1824,7 +1824,7 @@ exports[`iOS BpkBannerAlert should render correctly dismissable 1`] = `
                             "paddingTop": 7,
                           },
                           Object {
-                            "color": "rgb(129, 123, 143)",
+                            "color": "rgb(82, 76, 97)",
                           },
                         ],
                       ]
@@ -2027,6 +2027,7 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
                           },
                           Object {
                             "color": "rgb(82, 76, 97)",
+                            "paddingLeft": 8,
                           },
                         ],
                       ]
@@ -2224,6 +2225,7 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
                           },
                           Object {
                             "color": "rgb(82, 76, 97)",
+                            "paddingLeft": 8,
                           },
                         ],
                       ]
@@ -2421,6 +2423,7 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
                           },
                           Object {
                             "color": "rgb(82, 76, 97)",
+                            "paddingLeft": 8,
                           },
                         ],
                       ]
@@ -2618,6 +2621,7 @@ exports[`iOS BpkBannerAlert should render correctly expandable 1`] = `
                           },
                           Object {
                             "color": "rgb(82, 76, 97)",
+                            "paddingLeft": 8,
                           },
                         ],
                       ]
@@ -2820,6 +2824,7 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                           },
                           Object {
                             "color": "rgb(82, 76, 97)",
+                            "paddingLeft": 8,
                           },
                         ],
                       ]
@@ -3063,6 +3068,7 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                           },
                           Object {
                             "color": "rgb(82, 76, 97)",
+                            "paddingLeft": 8,
                           },
                         ],
                       ]
@@ -3306,6 +3312,7 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                           },
                           Object {
                             "color": "rgb(82, 76, 97)",
+                            "paddingLeft": 8,
                           },
                         ],
                       ]
@@ -3549,6 +3556,7 @@ exports[`iOS BpkBannerAlert should render correctly expanded 1`] = `
                           },
                           Object {
                             "color": "rgb(82, 76, 97)",
+                            "paddingLeft": 8,
                           },
                         ],
                       ]
@@ -3797,6 +3805,7 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                           },
                           Object {
                             "color": "rgb(82, 76, 97)",
+                            "paddingLeft": 8,
                           },
                         ],
                       ]
@@ -4040,6 +4049,7 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                           },
                           Object {
                             "color": "rgb(82, 76, 97)",
+                            "paddingLeft": 8,
                           },
                         ],
                       ]
@@ -4283,6 +4293,7 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                           },
                           Object {
                             "color": "rgb(82, 76, 97)",
+                            "paddingLeft": 8,
                           },
                         ],
                       ]
@@ -4526,6 +4537,7 @@ exports[`iOS BpkBannerAlert should render correctly long text 1`] = `
                           },
                           Object {
                             "color": "rgb(82, 76, 97)",
+                            "paddingLeft": 8,
                           },
                         ],
                       ]

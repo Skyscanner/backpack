@@ -15,8 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow */
 
-import { StyleSheet, I18nManager } from 'react-native';
+import { StyleSheet, I18nManager, type AnimatedValue } from 'react-native';
 import {
   borderSizeSm,
   colorBlue500,
@@ -38,11 +39,25 @@ import {
 
 const INPUT_RANGE = [0, 1];
 
+type LabelTypography = {| size: number, lineHeight: number, weight: string |};
+const LARGE_LABEL_TYPOGRAPHY: LabelTypography = {
+  size: textBaseFontSize,
+  lineHeight: lineHeightBase,
+  weight: textBaseFontWeight,
+};
+
+const SMALL_LABEL_TYPOGRAPHY: LabelTypography = {
+  size: textSmFontSize,
+  lineHeight: lineHeightSm,
+  weight: textSmFontWeight,
+};
+
 // To increase the vertical spacing a bit.
 const minHeight = lineHeightBase + spacingMd;
 
 const styles = StyleSheet.create({
-  container: {
+  rowContainer: {
+    flexDirection: 'row',
     paddingTop: lineHeightSm,
   },
   input: {
@@ -61,6 +76,10 @@ const styles = StyleSheet.create({
     color: colorRed500,
     paddingTop: spacingSm,
   },
+  description: {
+    color: colorGray500,
+    paddingTop: spacingSm,
+  },
 });
 
 // Created in a separate StyleSheet as they are not exported.
@@ -69,54 +88,92 @@ const animatedStyles = StyleSheet.create({
     fontFamily,
     position: 'absolute',
   },
+  inputContainerWithAccessoryView: {
+    marginStart: spacingSm,
+  },
   inputContainer: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomWidth: borderSizeSm,
   },
 });
 
-const getLabelColorValue = (value, valid, editable) => {
+const getLabelColorValue = (
+  value: string,
+  valid: ?boolean,
+  editable: boolean,
+  hasAccessoryView: boolean,
+) => {
   if (!editable) {
     return colorGray100;
   }
-  if (!value) {
+  if (!value && !hasAccessoryView) {
     return colorGray300;
   }
   return valid === false ? colorRed500 : colorGray500;
 };
 
+const getLabelPosition = (hasAccessoryView: boolean): number =>
+  hasAccessoryView ? 0 : lineHeightSm + (spacingSm - borderSizeSm);
+
+const getLabelTypography = (
+  hasAccessoryView: boolean,
+): {| size: number, lineHeight: number, weight: string |} =>
+  hasAccessoryView ? SMALL_LABEL_TYPOGRAPHY : LARGE_LABEL_TYPOGRAPHY;
+
 const getLabelStyle = (
-  animatedColorValue,
-  animatedLabelValue,
-  { value, valid, editable },
+  animatedColorValue: AnimatedValue,
+  animatedLabelValue: AnimatedValue,
+  {
+    value,
+    valid,
+    editable,
+    hasAccessoryView,
+  }: {
+    value: string,
+    valid: ?boolean,
+    editable: boolean,
+    hasAccessoryView: boolean,
+  },
 ) => {
+  const labelTypography = getLabelTypography(hasAccessoryView);
   const animatedStyle = {
     color: animatedColorValue.interpolate({
       inputRange: INPUT_RANGE,
-      outputRange: [getLabelColorValue(value, valid, editable), colorBlue500],
+      outputRange: [
+        getLabelColorValue(value, valid, editable, hasAccessoryView),
+        colorBlue500,
+      ],
     }),
     top: animatedLabelValue.interpolate({
       inputRange: INPUT_RANGE,
-      outputRange: [0, lineHeightSm + (spacingSm - borderSizeSm)],
+      outputRange: [0, getLabelPosition(hasAccessoryView)],
     }),
     fontSize: animatedLabelValue.interpolate({
       inputRange: INPUT_RANGE,
-      outputRange: [textSmFontSize, textBaseFontSize],
+      outputRange: [SMALL_LABEL_TYPOGRAPHY.size, labelTypography.size],
     }),
     lineHeight: animatedLabelValue.interpolate({
       inputRange: INPUT_RANGE,
-      outputRange: [lineHeightSm, lineHeightBase],
+      outputRange: [
+        SMALL_LABEL_TYPOGRAPHY.lineHeight,
+        labelTypography.lineHeight,
+      ],
     }),
     fontWeight: animatedLabelValue.interpolate({
       inputRange: INPUT_RANGE,
-      outputRange: [textSmFontWeight, textBaseFontWeight],
+      outputRange: [LARGE_LABEL_TYPOGRAPHY.weight, labelTypography.weight],
     }),
   };
   return [animatedStyles.label, animatedStyle];
 };
 
-const getInputContainerStyle = (animatedColorValue, valid) => {
+const getInputContainerStyle = (
+  animatedColorValue: AnimatedValue,
+  hasAccessoryView: boolean,
+  valid: ?boolean,
+) => {
   const underlineColorValue = valid === false ? colorRed500 : colorGray100;
   const animatedStyle = {
     borderBottomColor: animatedColorValue.interpolate({
@@ -124,7 +181,12 @@ const getInputContainerStyle = (animatedColorValue, valid) => {
       outputRange: [underlineColorValue, colorBlue500],
     }),
   };
-  return [animatedStyles.inputContainer, animatedStyle];
+  const result = [animatedStyles.inputContainer, animatedStyle];
+  if (hasAccessoryView) {
+    result.push(animatedStyles.inputContainerWithAccessoryView);
+  }
+
+  return result;
 };
 
 export { getLabelStyle, getInputContainerStyle, styles };

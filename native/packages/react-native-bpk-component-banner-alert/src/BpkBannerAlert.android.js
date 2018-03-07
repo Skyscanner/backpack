@@ -21,7 +21,6 @@ import PropTypes from 'prop-types';
 
 import {
   StyleSheet,
-  TouchableNativeFeedback,
   TouchableWithoutFeedback,
   View,
   ViewPropTypes,
@@ -37,7 +36,6 @@ import {
   colorYellow500,
   spacingBase,
   spacingLg,
-  spacingMd,
   spacingSm,
   spacingXxl,
 } from 'bpk-tokens/tokens/base.react.native';
@@ -45,20 +43,15 @@ import {
 import BpkAnimateHeight from 'react-native-bpk-component-animate-height';
 import BpkIcon, { icons } from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
+import BpkTouchableNativeFeedback from 'react-native-bpk-component-touchable-native-feedback';
 
 import AnimateAndFade from './AnimateAndFade';
+import ALERT_TYPES from './AlertTypes';
 import {
   dismissablePropType,
   toggleExpandedButtonLabelPropType,
   dismissableLabelPropType,
 } from './customPropTypes';
-
-export const ALERT_TYPES = {
-  SUCCESS: 'success',
-  WARN: 'warn',
-  ERROR: 'error',
-  NEUTRAL: 'neutral',
-};
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -69,7 +62,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   dismissableContainer: {
-    paddingHorizontal: spacingLg - spacingMd,
+    paddingRight: spacingLg,
     backgroundColor: colorGray50,
     justifyContent: 'center',
   },
@@ -87,12 +80,11 @@ const styles = StyleSheet.create({
     paddingRight: spacingSm,
     paddingTop: spacingSm - 1,
   },
+  expandableIcon: {
+    paddingTop: spacingSm - 1,
+  },
   dismissLabel: {
     color: colorBlue500,
-  },
-  dismissButtonContainer: {
-    padding: spacingMd,
-    borderRadius: borderRadiusSm,
   },
   dismissButtonContainerRadius: {
     borderRadius: borderRadiusSm,
@@ -129,18 +121,15 @@ const ALERT_TYPE_STYLES = {
 const DismissableButton = ({ dismissButtonLabel, onDismiss }) => (
   <View style={styles.dismissableContainer}>
     <View style={styles.dismissButtonContainerRadius}>
-      <TouchableNativeFeedback
+      <BpkTouchableNativeFeedback
         accessibilityComponentType="button"
         accessibilityLabel={dismissButtonLabel}
-        background={TouchableNativeFeedback.SelectableBackgroundBorderless()}
         onPress={onDismiss}
       >
-        <View style={styles.dismissButtonContainer}>
-          <BpkText textStyle="sm" emphasize style={styles.dismissLabel}>
-            {dismissButtonLabel.toUpperCase()}
-          </BpkText>
-        </View>
-      </TouchableNativeFeedback>
+        <BpkText textStyle="sm" emphasize style={styles.dismissLabel}>
+          {dismissButtonLabel.toUpperCase()}
+        </BpkText>
+      </BpkTouchableNativeFeedback>
     </View>
   </View>
 );
@@ -152,7 +141,7 @@ const ExpandableContent = ({ expanded, children }) => (
 const ExpandableIcon = ({ expanded }) => (
   <View style={styles.dismissableContainer}>
     <BpkIcon
-      style={styles.icon}
+      style={styles.expandableIcon}
       icon={expanded ? icons['chevron-up'] : icons['chevron-down']}
       small
     />

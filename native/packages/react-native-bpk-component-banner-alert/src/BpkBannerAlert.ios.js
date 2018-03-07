@@ -42,19 +42,13 @@ import BpkText from 'react-native-bpk-component-text';
 import BpkTouchableOverlay from 'react-native-bpk-component-touchable-overlay';
 
 import AnimateAndFade from './AnimateAndFade';
+import ALERT_TYPES from './AlertTypes';
 
 import {
   dismissablePropType,
   toggleExpandedButtonLabelPropType,
   dismissableLabelPropType,
 } from './customPropTypes';
-
-export const ALERT_TYPES = {
-  SUCCESS: 'success',
-  WARN: 'warn',
-  ERROR: 'error',
-  NEUTRAL: 'neutral',
-};
 
 const styles = StyleSheet.create({
   outerContainer: {
@@ -132,10 +126,11 @@ const styles = StyleSheet.create({
     paddingTop: (spacingXl - 2 * borderSizeSm - spacingBase) / 2,
   },
   buttonExpand: {
+    paddingLeft: spacingMd,
     color: colorGray700,
   },
   buttonClose: {
-    color: colorGray500,
+    color: colorGray700,
   },
 });
 

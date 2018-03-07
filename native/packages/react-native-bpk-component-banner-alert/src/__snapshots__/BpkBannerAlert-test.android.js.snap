@@ -1045,7 +1045,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -1056,37 +1056,47 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                   }
                 }
               >
-                <View
+                <Text
+                  accessibilityComponentType="button"
+                  accessibilityLabel="Dismiss"
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  hitSlop={undefined}
+                  nativeBackgroundAndroid={
+                    Object {
+                      "attribute": "selectableItemBackgroundBorderless",
+                      "type": "ThemeAttrAndroid",
+                    }
+                  }
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
-                        "alignItems": "center",
-                        "backgroundColor": "#ffbcbc",
-                        "borderColor": "red",
-                        "borderWidth": 1,
-                        "height": 100,
-                        "justifyContent": "center",
-                        "margin": 10,
-                        "width": 300,
+                        "color": "rgb(82, 76, 97)",
+                        "fontFamily": "sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": "400",
                       },
-                      undefined,
+                      Object {
+                        "fontFamily": "sans-serif-medium",
+                      },
+                      Object {
+                        "color": "rgb(0, 178, 214)",
+                      },
                     ]
                   }
+                  testID={undefined}
                 >
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    style={
-                      Object {
-                        "color": "#333333",
-                        "margin": 20,
-                      }
-                    }
-                  >
-                    TouchableNativeFeedback is not supported on this platform!
-                  </Text>
-                </View>
+                  DISMISS
+                </Text>
               </View>
             </View>
           </View>
@@ -1207,7 +1217,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -1218,37 +1228,47 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                   }
                 }
               >
-                <View
+                <Text
+                  accessibilityComponentType="button"
+                  accessibilityLabel="Dismiss"
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  hitSlop={undefined}
+                  nativeBackgroundAndroid={
+                    Object {
+                      "attribute": "selectableItemBackgroundBorderless",
+                      "type": "ThemeAttrAndroid",
+                    }
+                  }
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
-                        "alignItems": "center",
-                        "backgroundColor": "#ffbcbc",
-                        "borderColor": "red",
-                        "borderWidth": 1,
-                        "height": 100,
-                        "justifyContent": "center",
-                        "margin": 10,
-                        "width": 300,
+                        "color": "rgb(82, 76, 97)",
+                        "fontFamily": "sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": "400",
                       },
-                      undefined,
+                      Object {
+                        "fontFamily": "sans-serif-medium",
+                      },
+                      Object {
+                        "color": "rgb(0, 178, 214)",
+                      },
                     ]
                   }
+                  testID={undefined}
                 >
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    style={
-                      Object {
-                        "color": "#333333",
-                        "margin": 20,
-                      }
-                    }
-                  >
-                    TouchableNativeFeedback is not supported on this platform!
-                  </Text>
-                </View>
+                  DISMISS
+                </Text>
               </View>
             </View>
           </View>
@@ -1369,7 +1389,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -1380,37 +1400,47 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                   }
                 }
               >
-                <View
+                <Text
+                  accessibilityComponentType="button"
+                  accessibilityLabel="Dismiss"
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  hitSlop={undefined}
+                  nativeBackgroundAndroid={
+                    Object {
+                      "attribute": "selectableItemBackgroundBorderless",
+                      "type": "ThemeAttrAndroid",
+                    }
+                  }
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
-                        "alignItems": "center",
-                        "backgroundColor": "#ffbcbc",
-                        "borderColor": "red",
-                        "borderWidth": 1,
-                        "height": 100,
-                        "justifyContent": "center",
-                        "margin": 10,
-                        "width": 300,
+                        "color": "rgb(82, 76, 97)",
+                        "fontFamily": "sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": "400",
                       },
-                      undefined,
+                      Object {
+                        "fontFamily": "sans-serif-medium",
+                      },
+                      Object {
+                        "color": "rgb(0, 178, 214)",
+                      },
                     ]
                   }
+                  testID={undefined}
                 >
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    style={
-                      Object {
-                        "color": "#333333",
-                        "margin": 20,
-                      }
-                    }
-                  >
-                    TouchableNativeFeedback is not supported on this platform!
-                  </Text>
-                </View>
+                  DISMISS
+                </Text>
               </View>
             </View>
           </View>
@@ -1531,7 +1561,7 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -1542,37 +1572,47 @@ exports[`Android BpkBannerAlert should render correctly dismissable 1`] = `
                   }
                 }
               >
-                <View
+                <Text
+                  accessibilityComponentType="button"
+                  accessibilityLabel="Dismiss"
+                  accessibilityTraits={undefined}
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  hitSlop={undefined}
+                  nativeBackgroundAndroid={
+                    Object {
+                      "attribute": "selectableItemBackgroundBorderless",
+                      "type": "ThemeAttrAndroid",
+                    }
+                  }
+                  onLayout={undefined}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                   style={
                     Array [
                       Object {
-                        "alignItems": "center",
-                        "backgroundColor": "#ffbcbc",
-                        "borderColor": "red",
-                        "borderWidth": 1,
-                        "height": 100,
-                        "justifyContent": "center",
-                        "margin": 10,
-                        "width": 300,
+                        "color": "rgb(82, 76, 97)",
+                        "fontFamily": "sans-serif",
+                        "fontSize": 14,
+                        "fontWeight": "400",
                       },
-                      undefined,
+                      Object {
+                        "fontFamily": "sans-serif-medium",
+                      },
+                      Object {
+                        "color": "rgb(0, 178, 214)",
+                      },
                     ]
                   }
+                  testID={undefined}
                 >
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
-                    style={
-                      Object {
-                        "color": "#333333",
-                        "margin": 20,
-                      }
-                    }
-                  >
-                    TouchableNativeFeedback is not supported on this platform!
-                  </Text>
-                </View>
+                  DISMISS
+                </Text>
               </View>
             </View>
           </View>
@@ -1712,7 +1752,7 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -1733,7 +1773,6 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -1874,7 +1913,7 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -1895,7 +1934,6 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -2036,7 +2074,7 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -2057,7 +2095,6 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -2198,7 +2235,7 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -2219,7 +2256,6 @@ exports[`Android BpkBannerAlert should render correctly expandable 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -2407,7 +2443,7 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -2428,7 +2464,6 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -2611,7 +2646,7 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -2632,7 +2667,6 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -2815,7 +2849,7 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -2836,7 +2870,6 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -3019,7 +3052,7 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -3040,7 +3073,6 @@ exports[`Android BpkBannerAlert should render correctly expanded 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -3228,7 +3260,7 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -3249,7 +3281,6 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -3432,7 +3463,7 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -3453,7 +3484,6 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -3636,7 +3666,7 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -3657,7 +3687,6 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]
@@ -3840,7 +3869,7 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                 Object {
                   "backgroundColor": "rgb(243, 242, 245)",
                   "justifyContent": "center",
-                  "paddingHorizontal": 16,
+                  "paddingRight": 24,
                 }
               }
             >
@@ -3861,7 +3890,6 @@ exports[`Android BpkBannerAlert should render correctly long text 1`] = `
                       "lineHeight": 16,
                     },
                     Object {
-                      "paddingRight": 4,
                       "paddingTop": 3,
                     },
                   ]

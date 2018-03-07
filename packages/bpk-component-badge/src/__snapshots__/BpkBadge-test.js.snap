@@ -2,7 +2,7 @@
 
 exports[`BpkBadge should render correctly 1`] = `
 <span
-  className="bpk-badge"
+  className="bpk-badge "
 >
   Promociando
 </span>
@@ -10,7 +10,7 @@ exports[`BpkBadge should render correctly 1`] = `
 
 exports[`BpkBadge should render correctly with a "centered" 1`] = `
 <span
-  className="bpk-badge bpk-badge--centered"
+  className="bpk-badge  bpk-badge--centered"
 >
   Promociando
 </span>
@@ -18,7 +18,7 @@ exports[`BpkBadge should render correctly with a "centered" 1`] = `
 
 exports[`BpkBadge should render correctly with a "docked" attribute value equal to "left" 1`] = `
 <span
-  className="bpk-badge bpk-badge--docked-left"
+  className="bpk-badge  bpk-badge--docked-left"
 >
   Promociando
 </span>
@@ -26,7 +26,55 @@ exports[`BpkBadge should render correctly with a "docked" attribute value equal 
 
 exports[`BpkBadge should render correctly with a "docked" attribute value equal to "right" 1`] = `
 <span
-  className="bpk-badge bpk-badge--docked-right"
+  className="bpk-badge  bpk-badge--docked-right"
+>
+  Promociando
+</span>
+`;
+
+exports[`BpkBadge should render correctly with type="destructive" 1`] = `
+<span
+  className="bpk-badge bpk-badge--destructive"
+>
+  Promociando
+</span>
+`;
+
+exports[`BpkBadge should render correctly with type="inverse" 1`] = `
+<span
+  className="bpk-badge bpk-badge--inverse"
+>
+  Promociando
+</span>
+`;
+
+exports[`BpkBadge should render correctly with type="light" 1`] = `
+<span
+  className="bpk-badge bpk-badge--light"
+>
+  Promociando
+</span>
+`;
+
+exports[`BpkBadge should render correctly with type="outline" 1`] = `
+<span
+  className="bpk-badge bpk-badge--outline"
+>
+  Promociando
+</span>
+`;
+
+exports[`BpkBadge should render correctly with type="success" 1`] = `
+<span
+  className="bpk-badge bpk-badge--success"
+>
+  Promociando
+</span>
+`;
+
+exports[`BpkBadge should render correctly with type="warning" 1`] = `
+<span
+  className="bpk-badge "
 >
   Promociando
 </span>

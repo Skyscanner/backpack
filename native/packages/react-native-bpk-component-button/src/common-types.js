@@ -32,14 +32,10 @@ export const BUTTON_TYPES = {
   featured: 'featured',
 };
 
-export type ButtonType = $Keys<typeof BUTTON_TYPES>;
-
 export const ICON_ALIGNMENTS = {
   leading: 'leading',
   trailing: 'trailing',
 };
-
-export type IconAlignment = $Keys<typeof ICON_ALIGNMENTS>;
 
 export type CommonProps = {
   onPress: (event: SyntheticEvent<>) => void,
@@ -47,30 +43,33 @@ export type CommonProps = {
   accessibilityLabel: ?string,
   disabled: boolean,
   icon: ?Node,
-  iconOnly: boolean,
   style: ?(Object | Array<Object>),
-  type: ButtonType,
+  type: $Keys<typeof BUTTON_TYPES>,
   theme: ?Theme,
+  iconAlignment: $Keys<typeof ICON_ALIGNMENTS>,
+  iconOnly: boolean,
 };
 
-export const COMMON_PROP_TYPES = {
+export const commonPropTypes = {
   onPress: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   accessibilityLabel: PropTypes.string,
   disabled: PropTypes.bool,
   icon: iconPropType,
-  iconOnly: PropTypes.bool,
   style: ViewPropTypes.style,
   theme: themePropType,
   type: PropTypes.oneOf(Object.keys(BUTTON_TYPES)),
+  iconAlignment: PropTypes.oneOf(Object.keys(ICON_ALIGNMENTS)),
+  iconOnly: PropTypes.bool,
 };
 
-export const COMMON_DEFAULT_PROPS = {
+export const commonDefaultProps = {
   accessibilityLabel: null,
   disabled: false,
   icon: null,
-  iconOnly: false,
   style: null,
   theme: null,
   type: BUTTON_TYPES.primary,
+  iconAlignment: ICON_ALIGNMENTS.trailing,
+  iconOnly: false,
 };

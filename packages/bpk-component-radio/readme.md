@@ -29,7 +29,7 @@ export default () => (
 | Property  | PropType | Required | Default Value |
 | --------- | -------- | -------- | ------------- |
 | name      | string   | true     | -             |
-| label     | string   | true     | -             |
+| label     | node     | true     | -             |
 | white     | bool     | false    | false         |
 
 ## Theme Props

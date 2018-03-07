@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
-import component from './src/BpkBadge';
+import component, { BADGE_TYPES } from './src/BpkBadge';
 
 export default component;
+export { BADGE_TYPES };

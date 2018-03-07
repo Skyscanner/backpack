@@ -84,7 +84,7 @@ const BpkCheckbox = props => {
 
 BpkCheckbox.propTypes = {
   name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.node.isRequired,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   white: PropTypes.bool,

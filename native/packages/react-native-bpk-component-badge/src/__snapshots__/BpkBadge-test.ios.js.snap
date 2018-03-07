@@ -1,0 +1,1215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS BpkBadge should render correctly docked to the end 1`] = `
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 0,
+          "borderRightWidth": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "borderTopWidth": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 187, 0)",
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 0,
+          "borderRightWidth": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "borderTopWidth": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 84, 82)",
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 0,
+          "borderRightWidth": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "borderTopWidth": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(243, 242, 245)",
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 0,
+          "borderRightWidth": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "borderTopWidth": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 0,
+          "borderRightWidth": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "borderTopWidth": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Array [
+          Object {
+            "backgroundColor": "rgba(255, 255, 255, 0.2)",
+            "paddingHorizontal": 7,
+            "paddingVertical": 3,
+          },
+          Object {
+            "borderColor": "rgb(255, 255, 255)",
+            "borderWidth": 1,
+          },
+        ],
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 0,
+          "borderRightWidth": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "borderTopWidth": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`iOS BpkBadge should render correctly docked to the start 1`] = `
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+        Object {
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 4,
+          "borderLeftWidth": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "borderTopWidth": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 187, 0)",
+        },
+        Object {
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 4,
+          "borderLeftWidth": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "borderTopWidth": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 84, 82)",
+        },
+        Object {
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 4,
+          "borderLeftWidth": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "borderTopWidth": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(243, 242, 245)",
+        },
+        Object {
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 4,
+          "borderLeftWidth": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "borderTopWidth": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+        },
+        Object {
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 4,
+          "borderLeftWidth": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "borderTopWidth": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Array [
+          Object {
+            "backgroundColor": "rgba(255, 255, 255, 0.2)",
+            "paddingHorizontal": 7,
+            "paddingVertical": 3,
+          },
+          Object {
+            "borderColor": "rgb(255, 255, 255)",
+            "borderWidth": 1,
+          },
+        ],
+        Object {
+          "borderBottomLeftRadius": 0,
+          "borderBottomRightRadius": 4,
+          "borderLeftWidth": 0,
+          "borderTopLeftRadius": 0,
+          "borderTopRightRadius": 0,
+          "borderTopWidth": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`iOS BpkBadge should render correctly in normal mode 1`] = `
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 187, 0)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 84, 82)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(243, 242, 245)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Array [
+          Object {
+            "backgroundColor": "rgba(255, 255, 255, 0.2)",
+            "paddingHorizontal": 7,
+            "paddingVertical": 3,
+          },
+          Object {
+            "borderColor": "rgb(255, 255, 255)",
+            "borderWidth": 1,
+          },
+        ],
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`iOS BpkBadge should render correctly with user provided style 1`] = `
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+        Object {
+          "margin": 4,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 187, 0)",
+        },
+        Object {
+          "margin": 4,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 84, 82)",
+        },
+        Object {
+          "margin": 4,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(243, 242, 245)",
+        },
+        Object {
+          "margin": 4,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+        },
+        Object {
+          "margin": 4,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            undefined,
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 4,
+        },
+        Object {
+          "borderBottomLeftRadius": 4,
+          "borderBottomRightRadius": 4,
+          "borderTopLeftRadius": 4,
+          "borderTopRightRadius": 4,
+        },
+        Array [
+          Object {
+            "backgroundColor": "rgba(255, 255, 255, 0.2)",
+            "paddingHorizontal": 7,
+            "paddingVertical": 3,
+          },
+          Object {
+            "borderColor": "rgb(255, 255, 255)",
+            "borderWidth": 1,
+          },
+        ],
+        Object {
+          "margin": 4,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "rgb(82, 76, 97)",
+            "fontFamily": "System",
+            "fontSize": 11,
+            "fontWeight": "400",
+          },
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+            },
+            Object {
+              "color": "rgb(255, 255, 255)",
+            },
+          ],
+        ]
+      }
+    >
+      Badge
+    </Text>
+  </View>
+</View>
+`;

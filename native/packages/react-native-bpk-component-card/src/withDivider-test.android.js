@@ -16,29 +16,30 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import commonTests from './withDivider-test.common';
 
 jest.mock('react-native', () => {
-  const reactNative = require.requireActual('react-native');
+  const reactNative = jest.requireActual('react-native');
   jest
     .spyOn(reactNative.Platform, 'select')
     .mockImplementation(obj => obj.android || obj.default);
   reactNative.Platform.OS = 'android';
-  reactNative.TouchableNativeFeedback.SelectableBackgroundBorderless = jest.fn();
   return reactNative;
 });
 
-jest.mock('./BpkCard', () => require.requireActual('./BpkCard.android'));
+jest.mock('./BpkCard', () => jest.requireActual('./BpkCard.android'));
 
 jest.mock('bpk-tokens/tokens/base.react.native', () =>
-  require.requireActual('bpk-tokens/tokens/base.react.native.android'),
+  jest.requireActual('bpk-tokens/tokens/base.react.native.android'),
 );
 
-jest.mock('TouchableNativeFeedback', () => ({ children, ...rest }) => {
-  const { cloneElement } = require.requireActual('react');
-
-  return cloneElement(children, rest);
-});
+jest.mock('TouchableNativeFeedback', () =>
+  jest.requireActual(
+    'react-native/Libraries/Components/Touchable/TouchableNativeFeedback.android.js',
+  ),
+);
 
 describe('Android', () => {
   commonTests();

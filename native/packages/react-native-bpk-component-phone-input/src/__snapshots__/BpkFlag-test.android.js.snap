@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android BpkFlag should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderColor": "rgb(230, 228, 235)",
+        "borderWidth": 1,
+      },
+      Object {
+        "height": 16,
+        "width": 24,
+      },
+    ]
+  }
+/>
+`;
+
+exports[`Android BpkFlag should render correctly with a custom style 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderColor": "rgb(230, 228, 235)",
+        "borderWidth": 1,
+      },
+      Object {
+        "height": 16,
+        "width": 24,
+      },
+      Object {
+        "borderRadius": 10,
+      },
+    ]
+  }
+/>
+`;
+
+exports[`Android BpkFlag should render correctly with a custom width 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderColor": "rgb(230, 228, 235)",
+        "borderWidth": 1,
+      },
+      Object {
+        "height": 28,
+        "width": 42,
+      },
+    ]
+  }
+/>
+`;
+
+exports[`Android BpkFlag should render correctly with an image 1`] = `
+<Image
+  resizeMode="contain"
+  style={
+    Array [
+      Object {
+        "borderColor": "rgb(230, 228, 235)",
+        "borderWidth": 1,
+      },
+      Object {
+        "height": 16,
+        "width": 24,
+      },
+    ]
+  }
+/>
+`;

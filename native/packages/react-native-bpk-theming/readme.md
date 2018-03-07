@@ -14,10 +14,7 @@ npm install react-native-bpk-theming --save-dev
 import { Component } from 'react';
 import { View } from 'react-native';
 import BpkThemeProvider from 'react-native-bpk-theming';
-
 import BpkButton from 'react-native-bpk-component-button';
-
-import { translationHelper } from 'translations';
 
 const theme = {
   buttonPrimaryGradientStartColor: '#fce134',
@@ -26,14 +23,15 @@ const theme = {
   buttonSecondaryBackgroundColor: '#fff',
   buttonSecondaryTextColor: '#2d244c',
   buttonSecondaryBorderColor: '#2d244c',
+  buttonLinkTextColor: '#fce134',
 };
 
 export default class App extends Component {
   render() {
     return (
       <BpkThemeProvider theme={theme}>
-        <BpkButton type="primary" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
-        <BpkButton type="secondary" title={translationHelper.translate('BOOK_FLIGHT')} onPress={() => {}} />
+        <BpkButton type="primary" title="Book flight" onPress={() => {}} />
+        <BpkButton type="secondary" title="Book flight" onPress={() => {}} />
       </BpkThemeProvider>
     );
   }

@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import commonTests from './BpkThemeProvider-test.common';
 
 jest.mock('react-native', () => {
-  const reactNative = require.requireActual('react-native');
+  const reactNative = jest.requireActual('react-native');
   jest
     .spyOn(reactNative.Platform, 'select')
     .mockImplementation(obj => obj.ios || obj.default);
@@ -29,7 +31,7 @@ jest.mock('react-native', () => {
 });
 
 jest.mock('bpk-tokens/tokens/base.react.native', () =>
-  require.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
+  jest.requireActual('bpk-tokens/tokens/base.react.native.android.js'),
 );
 
 describe('Android', () => {

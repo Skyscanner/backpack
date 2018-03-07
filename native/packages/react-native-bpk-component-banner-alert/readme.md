@@ -17,8 +17,6 @@ import BpkText from 'react-native-bpk-component-text';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
 import BpkBannerAlert, {ALERT_TYPES} from 'react-native-bpk-component-banner-alert';
 
-import { translationHelper } from 'translations';
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -72,7 +70,7 @@ export default class App extends Component {
           style={styles.bannerAlert}
           type={ALERT_TYPES.ERROR}
           message="Error message!"
-          toggleExpandedButtonLabel={translationHelper.translate('EXPAND')}
+          toggleExpandedButtonLabel="Expand"
           onToggleExpanded={this.onExpandablePress}
           expanded={this.state.expanded}
         >

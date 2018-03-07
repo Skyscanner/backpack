@@ -85,6 +85,7 @@ class App extends Component {
 | portalStyle           | object                                    | false    | null          |
 | portalClassName       | string                                    | false    | null          |
 | renderTarget          | func                                      | false    | null          |
+| popperModifiers       | object                                    | false    | null          |
 
 In order to attach the popover to a regular DOM element, provide a function which returns it to `target`:
 
@@ -101,7 +102,9 @@ In order to attach the popover to a regular DOM element, provide a function whic
 </BpkPopover>
 ```
 
-### onClose
+### Prop Details
+
+#### onClose
 
 ```js
 const onClose = (event, {
@@ -110,6 +113,10 @@ const onClose = (event, {
   ...
 }
 ```
+
+#### popperModifiers
+
+Please refer to the [documentation](https://github.com/FezVrasta/popper.js/blob/v1.12.9/docs/_includes/popper-documentation.md#modifiers) for the underlying positioning library "popper.js". You can achieve various behaviours such as allowing the popover to overflow the viewport etc.
 
 ## Theme Props
 
