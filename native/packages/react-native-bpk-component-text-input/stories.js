@@ -28,6 +28,7 @@ import {
   spacingBase,
 } from 'bpk-tokens/tokens/base.react.native';
 
+import CenterDecorator from '../../storybook/CenterDecorator';
 import BpkTextInput from './index';
 
 const styles = StyleSheet.create({
@@ -73,6 +74,7 @@ class StatefulBpkTextInput extends Component<
 }
 
 storiesOf('BpkTextInput', module)
+  .addDecorator(CenterDecorator)
   .add('docs:text-inputs', () => (
     <ScrollView>
       <StatefulBpkTextInput

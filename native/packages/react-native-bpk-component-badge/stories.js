@@ -29,6 +29,7 @@ import {
 
 import BpkBadge, { BADGE_TYPES, BADGE_DOCKED_TYPES } from './index';
 import { StorySubheading } from '../../storybook/TextStyles';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 const style = StyleSheet.create({
   container: {
@@ -98,6 +99,7 @@ const generateBadgeStory = (
 };
 
 storiesOf('BpkBadge', module)
+  .addDecorator(CenterDecorator)
   .add('docs:default', () => (
     <View>
       {generateBadgeStory(['Apples', 'Bananas', 'Strawberries', 'Pears'])}

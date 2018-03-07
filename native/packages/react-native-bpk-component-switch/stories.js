@@ -24,6 +24,7 @@ import { spacingXl, spacingBase } from 'bpk-tokens/tokens/base.react.native';
 
 import BpkSwitch from './index';
 import { StorySubheading } from '../../storybook/TextStyles';
+import CenterDecorator from '../../storybook/CenterDecorator';
 import themeAttributes from '../../storybook/themeAttributes';
 
 const styles = StyleSheet.create({
@@ -55,6 +56,7 @@ class SwitchContainer extends Component {
 }
 
 storiesOf('BpkSwitch', module)
+  .addDecorator(CenterDecorator)
   .add('docs:default', () => (
     <View style={styles.viewWidth}>
       <View style={styles.bottomMargin}>

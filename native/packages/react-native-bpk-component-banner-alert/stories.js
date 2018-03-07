@@ -23,6 +23,7 @@ import { storiesOf } from '@storybook/react-native';
 import BpkText from 'react-native-bpk-component-text';
 import BpkButton from 'react-native-bpk-component-button';
 import { spacingBase } from 'bpk-tokens/tokens/base.react.native';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 import BpkBannerAlert, { ALERT_TYPES } from './index';
 
@@ -152,6 +153,7 @@ BpkBannerAlertFadeDemo.defaultProps = {
 };
 
 storiesOf('BpkBannerAlert', module)
+  .addDecorator(CenterDecorator)
   .add('docs:banner-alerts', () => (
     <View>
       <BpkBannerAlert

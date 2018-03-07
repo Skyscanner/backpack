@@ -13,7 +13,7 @@ exports[`Android BpkDialingCodeAccessoryView should render correctly 1`] = `
   hitSlop={undefined}
   nativeBackgroundAndroid={
     Object {
-      "attribute": "selectableItemBackgroundBorderless",
+      "attribute": "selectableItemBackground",
       "type": "ThemeAttrAndroid",
     }
   }
@@ -115,7 +115,7 @@ exports[`Android BpkDialingCodeAccessoryView should render correctly when \`edit
   hitSlop={undefined}
   nativeBackgroundAndroid={
     Object {
-      "attribute": "selectableItemBackgroundBorderless",
+      "attribute": "selectableItemBackground",
       "type": "ThemeAttrAndroid",
     }
   }

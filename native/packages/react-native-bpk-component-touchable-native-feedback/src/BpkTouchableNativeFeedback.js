@@ -50,7 +50,7 @@ const BpkTouchableNativeFeedback = (props: Props) => {
 
 BpkTouchableNativeFeedback.propTypes = {
   children: PropTypes.element.isRequired,
-  borderlessBackground: PropTypes.boolean,
+  borderlessBackground: PropTypes.bool,
   style: ViewPropTypes.style,
 };
 

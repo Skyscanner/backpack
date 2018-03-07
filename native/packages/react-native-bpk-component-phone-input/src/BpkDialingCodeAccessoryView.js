@@ -18,12 +18,7 @@
 /* @flow */
 
 import React, { type Node } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  TouchableNativeFeedback,
-  View,
-} from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 
 import {
   colorGray100,
@@ -79,7 +74,7 @@ const Touchable = ({ editable, style, children, onPress }: TouchableProps) => {
   const platformProps = {};
 
   if (Platform.OS === 'android') {
-    platformProps.background = TouchableNativeFeedback.SelectableBackground();
+    platformProps.borderlessBackground = false;
   }
 
   if (!editable) {

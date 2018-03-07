@@ -30,6 +30,7 @@ import BpkButton from './index';
 import { BUTTON_TYPES } from './src/common-types';
 import themeAttributes from '../../storybook/themeAttributes';
 import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 const styles = StyleSheet.create({
   btnContainer: {
@@ -165,6 +166,7 @@ const allThemedButtons = (
 );
 
 storiesOf('BpkButton', module)
+  .addDecorator(CenterDecorator)
   .add('docs:primary', () => (
     <View>{generateButtonStoryForType('primary')}</View>
   ))

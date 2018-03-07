@@ -31,6 +31,7 @@ import {
 
 import BpkIcon, { icons } from './index';
 import { StorySubheading } from '../../storybook/TextStyles';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 const styles = StyleSheet.create({
   container: {
@@ -100,6 +101,7 @@ const getColouredIcons = () => (
 );
 
 storiesOf('BpkIcon', module)
+  .addDecorator(CenterDecorator)
   .add('docs:icons', () => (
     <View style={styles.container}>
       {getSmallIcons()}

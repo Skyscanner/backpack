@@ -25,6 +25,7 @@ import { colorGray900, spacingBase } from 'bpk-tokens/tokens/base.react.native';
 import BpkSpinner from './index';
 import themeAttributes from '../../storybook/themeAttributes';
 import { StoryHeading, StorySubheading } from '../../storybook/TextStyles';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 const styles = StyleSheet.create({
   dark: {
@@ -65,6 +66,7 @@ const getThemedButtons = () => (
 );
 
 storiesOf('BpkSpinner', module)
+  .addDecorator(CenterDecorator)
   .add('docs:default', () => <View>{generateAllSpinnerTypes()}</View>)
   .add('docs:small', () => <View>{generateAllSpinnerTypes(true)}</View>)
   .add('docs:withTheme', () => <View>{getThemedButtons()}</View>)

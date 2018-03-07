@@ -20,7 +20,7 @@ exports[`Android BpkRadioIcon should render correctly 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "rgb(230, 228, 235)",
+          "backgroundColor": "transparent",
           "borderRadius": 10,
           "height": 10,
           "width": 10,
@@ -54,7 +54,7 @@ exports[`Android BpkRadioIcon should render correctly with "selected" 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "rgb(230, 228, 235)",
+          "backgroundColor": "transparent",
           "borderRadius": 10,
           "height": 10,
           "width": 10,

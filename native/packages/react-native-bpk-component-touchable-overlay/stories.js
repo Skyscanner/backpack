@@ -20,6 +20,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import BpkText from 'react-native-bpk-component-text';
 import { storiesOf, action } from '@storybook/react-native';
+import CenterDecorator from '../../storybook/CenterDecorator';
 
 import BpkTouchableOverlay from './index';
 
@@ -44,6 +45,7 @@ const viewContent = <View style={styles.view}>{textContent}</View>;
 const onPress = action('Touchable overlay press');
 
 storiesOf('BpkTouchableOverlay', module)
+  .addDecorator(CenterDecorator)
   .add('docs:text-content', () => (
     <BpkTouchableOverlay
       onPress={onPress}
