@@ -8,6 +8,20 @@
 npm install react-native-bpk-component-phone-input --save-dev
 ```
 
+## Data format
+
+Consumers are expected to provide the data that powers the two components available in this package.
+
+Each supported country should be in the following format:
+
+```javascript
+{ id: 'UK', dialingCode: '+44', name: 'United Kingdom' }
+```
+
+All keys are required and should have non-null/empty values.
+
+For `BpkDialingCodeList` a list of objects with this format should be used. Sorting should be done beforehand as the component does not perform any sorting itself.
+
 ## BpkDialingCodeList
 
 ### Usage
@@ -41,7 +55,7 @@ export default class App extends Component {
   render() {
     return (
       <BpkDialingCodeList
-        codes={CODES}
+        dialingCodes={CODES}
         selectedId="CD"
         onItemPress={code => console.log(code.id)}
         renderFlag={code => <Image source={require(FLAG_IMAGES[code.id])} />}
@@ -56,12 +70,12 @@ export default class App extends Component {
 
 | Property                    | PropType                                                    | Required | Default Value |
 | --------------------------- | ----------------------------------------------------------- | -------- | ------------- |
-| codes                       | arrayOf({id, diallingCode, name})                           | true     | -             |
+| dialingCodes                | arrayOf({id, diallingCode, name})                           | true     | -             |
 | onItemPress                 | func                                                        | true     | -             |
 | renderFlag                  | func                                                        | true     | -             |
 | selectedId                  | string                                                      | false    | null          |
 
-## BpkDialingCodeList
+## BpkPhoneNumberInput
 
 ### Usage
 
@@ -84,7 +98,7 @@ export default class App extends Component {
       <BpkPhoneNumberInput
         label="Phone number"
         value=""
-        dialingCodeData={CODES[0]}
+        dialingCode={CODES[0]}
         onDialingCodePress={() => presentDialingCodeList()}
         renderFlag={code => <Image source={require(FLAG_IMAGES[code.id])} />}
       />
@@ -100,7 +114,7 @@ Inherits all props from [`BpkTextInput`](https://backpack.github.io/components/n
 
 | Property                    | PropType                                                    | Required | Default Value |
 | --------------------------- | ----------------------------------------------------------- | -------- | ------------- |
-| dialingCodeData             | {id, diallingCode, name}                                    | true     | -             |
+| dialingCode                 | {id, diallingCode, name}                                    | true     | -             |
 | onDialingCodePress          | func                                                        | true     | -             |
 | renderFlag                  | func                                                        | true     | -             |
 

@@ -82,13 +82,13 @@ export type Props = {
 };
 
 const BpkDialingCodeList = ({
-  codes,
+  dialingCodes,
   onItemPress,
   renderFlag,
   selectedId,
 }: Props) => (
   <SectionList
-    sections={convertCodesIntoSections(codes)}
+    sections={convertCodesIntoSections(dialingCodes)}
     renderItem={({ item }) => (
       <BpkDialingCodeListItem
         {...item}

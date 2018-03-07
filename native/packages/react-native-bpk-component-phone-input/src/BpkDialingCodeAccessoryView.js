@@ -18,7 +18,12 @@
 /* @flow */
 
 import React, { type Node } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import {
+  Platform,
+  StyleSheet,
+  TouchableNativeFeedback,
+  View,
+} from 'react-native';
 
 import {
   colorGray100,
@@ -71,6 +76,11 @@ const TouchablePlatformComponent = Platform.select({
 
 const Touchable = ({ editable, style, children, onPress }: TouchableProps) => {
   const accessibilityTraits = ['button'];
+  const platformProps = {};
+
+  if (Platform.OS === 'android') {
+    platformProps.background = TouchableNativeFeedback.SelectableBackground();
+  }
 
   if (!editable) {
     accessibilityTraits.push('disabled');
@@ -83,6 +93,7 @@ const Touchable = ({ editable, style, children, onPress }: TouchableProps) => {
       onPress={onPress}
       accessibilityComponentType="button"
       accessibilityTraits={accessibilityTraits}
+      {...platformProps}
     >
       {children}
     </TouchablePlatformComponent>

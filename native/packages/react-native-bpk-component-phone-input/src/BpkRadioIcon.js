@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     borderColor: colorBlue500,
   },
   inner: {
-    backgroundColor: colorGray100,
+    backgroundColor: 'transparent',
     borderRadius: innerSize,
     height: innerSize,
     width: innerSize,

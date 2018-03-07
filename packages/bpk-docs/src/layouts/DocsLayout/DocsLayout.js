@@ -133,6 +133,11 @@ const links = [
         children: 'Text input',
       },
       {
+        id: 'NATIVE_PHONE_INPUT',
+        route: routes.NATIVE_PHONE_INPUT,
+        children: 'Phone number input',
+      },
+      {
         id: 'NATIVE_SPINNER',
         route: routes.NATIVE_SPINNER,
         children: 'Spinners',

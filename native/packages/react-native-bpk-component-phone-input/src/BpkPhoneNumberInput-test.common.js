@@ -32,7 +32,7 @@ const commonTests = () => {
           <BpkPhoneNumberInput
             label="Phone number"
             value=""
-            dialingCodeData={{
+            dialingCode={{
               id: 'UK',
               dialingCode: '+44',
               name: 'United Kingdom',
@@ -52,7 +52,7 @@ const commonTests = () => {
           <BpkPhoneNumberInput
             label="Phone number"
             value=""
-            dialingCodeData={{
+            dialingCode={{
               id: 'UK',
               dialingCode: '+44',
               name: 'United Kingdom',
