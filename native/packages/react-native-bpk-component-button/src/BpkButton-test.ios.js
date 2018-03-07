@@ -54,23 +54,6 @@ describe('iOS', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should support the "iconOnly" property', () => {
-    const onPressFn = jest.fn();
-
-    const tree = renderer
-      .create(
-        <BpkButton
-          iconOnly
-          icon="baggage"
-          title="Lorem ipsum"
-          onPress={onPressFn}
-        />,
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
-  });
-
   it('should support the "iconOnly" and "large" property', () => {
     const onPressFn = jest.fn();
 

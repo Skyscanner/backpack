@@ -1613,6 +1613,137 @@ exports[`iOS BpkButton should support the "icon" property 1`] = `
 </View>
 `;
 
+exports[`iOS BpkButton should support the "iconOnly" property 1`] = `
+<View
+  colors={
+    Array [
+      "rgb(0, 215, 117)",
+      "rgb(0, 189, 104)",
+    ]
+  }
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 32,
+        },
+        Object {
+          "width": 32,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 32,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "paddingHorizontal": 0,
+          },
+        ],
+        Object {},
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                null,
+                undefined,
+              ],
+            ],
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(37, 32, 51)",
+            "bottom": 0,
+            "flex": 1,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 40,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
 exports[`iOS BpkButton should support the "secondary" property 1`] = `
 <View
   colors={
@@ -2133,137 +2264,6 @@ exports[`iOS should support the "iconOnly" and "large" property 1`] = `
               Array [
                 null,
                 undefined,
-                undefined,
-              ],
-            ],
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "rgb(37, 32, 51)",
-            "bottom": 0,
-            "flex": 1,
-            "left": 0,
-            "opacity": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "borderRadius": 40,
-          },
-        ]
-      }
-    />
-  </View>
-</View>
-`;
-
-exports[`iOS should support the "iconOnly" property 1`] = `
-<View
-  colors={
-    Array [
-      "rgb(0, 215, 117)",
-      "rgb(0, 189, 104)",
-    ]
-  }
-  style={
-    Array [
-      Array [
-        Object {
-          "borderRadius": 40,
-          "height": 32,
-        },
-        Object {
-          "width": 32,
-        },
-      ],
-      null,
-    ]
-  }
->
-  <View
-    accessibilityComponentType="button"
-    accessibilityLabel="Lorem ipsum"
-    accessibilityTraits={
-      Array [
-        "button",
-      ]
-    }
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Array [
-        Array [
-          Object {
-            "borderRadius": 40,
-            "height": 32,
-            "paddingHorizontal": 12,
-            "paddingVertical": 8,
-          },
-          Object {
-            "paddingHorizontal": 0,
-          },
-        ],
-        Object {},
-      ]
-    }
-    testID={undefined}
-  >
-    <View
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-          },
-          undefined,
-        ]
-      }
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "BpkIcon",
-              "fontSize": 24,
-              "lineHeight": 24,
-            },
-            Object {
-              "fontSize": 16,
-              "lineHeight": 16,
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-              ],
-              Object {},
-              Array [
-                null,
                 undefined,
               ],
             ],

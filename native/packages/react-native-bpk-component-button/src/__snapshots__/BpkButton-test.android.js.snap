@@ -1018,7 +1018,9 @@ exports[`Android BpkButton should support elements as icons 1`] = `
           "borderRadius": 40,
           "height": 36,
         },
-        undefined,
+        Object {
+          "width": 36,
+        },
       ],
       null,
     ]
@@ -1056,7 +1058,9 @@ exports[`Android BpkButton should support elements as icons 1`] = `
             "paddingHorizontal": 12,
             "paddingVertical": 8,
           },
-          undefined,
+          Object {
+            "paddingHorizontal": 0,
+          },
         ],
         Object {
           "backgroundColor": "rgb(0, 215, 117)",
@@ -1074,42 +1078,10 @@ exports[`Android BpkButton should support elements as icons 1`] = `
             "flexDirection": "row",
             "justifyContent": "center",
           },
-          Object {
-            "justifyContent": "space-between",
-          },
+          undefined,
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": "rgb(82, 76, 97)",
-              "fontFamily": "sans-serif",
-              "fontSize": 14,
-              "fontWeight": "400",
-            },
-            Object {
-              "fontFamily": "sans-serif-medium",
-            },
-            Array [
-              Array [
-                Object {
-                  "backgroundColor": "transparent",
-                  "color": "rgb(255, 255, 255)",
-                },
-                undefined,
-              ],
-              Object {},
-            ],
-          ]
-        }
-      >
-        LOREM IPSUM
-      </Text>
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -1607,6 +1579,119 @@ exports[`Android BpkButton should support the "icon" property 1`] = `
                 Object {
                   "marginLeft": 4,
                 },
+              ],
+            ],
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButton should support the "iconOnly" property 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 36,
+        },
+        Object {
+          "width": 36,
+        },
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "paddingHorizontal": 0,
+          },
+        ],
+        Object {
+          "backgroundColor": "rgb(0, 215, 117)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "BpkIcon",
+              "fontSize": 24,
+              "lineHeight": 24,
+            },
+            Object {
+              "fontSize": 16,
+              "lineHeight": 16,
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                undefined,
+              ],
+              Object {},
+              Array [
+                null,
+                undefined,
               ],
             ],
           ]

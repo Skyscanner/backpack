@@ -59,6 +59,21 @@ const commonTests = () => {
       expect(tree).toMatchSnapshot();
     });
 
+    it('should support the "iconOnly" property', () => {
+      const tree = renderer
+        .create(
+          <BpkButton
+            iconOnly
+            icon="baggage"
+            title="Lorem ipsum"
+            onPress={onPressFn}
+          />,
+        )
+        .toJSON();
+
+      expect(tree).toMatchSnapshot();
+    });
+
     it('should support the "disabled" property', () => {
       const tree = renderer
         .create(<BpkButton disabled title="Lorem ipsum" onPress={onPressFn} />)
