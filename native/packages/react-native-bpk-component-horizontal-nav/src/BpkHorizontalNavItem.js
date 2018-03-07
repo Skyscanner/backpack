@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { View, Platform, StyleSheet, ViewPropTypes } from 'react-native';
+import { Platform, StyleSheet, View, ViewPropTypes } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -81,6 +81,7 @@ const BpkHorizontalNavItem = props => {
     ? BpkTouchableNativeFeedback
     : BpkTouchableOverlay;
   const formattedTitle = isAndroid ? title.toUpperCase() : title;
+  const platformProps = isAndroid ? { borderlessBackground: false } : {};
 
   return (
     <Touchable
@@ -88,6 +89,7 @@ const BpkHorizontalNavItem = props => {
       accessibilityLabel={accessibilityLabel || title}
       accessibilityTraits={accessibilityTraits}
       disabled={disabled || selected}
+      {...platformProps}
       {...rest}
     >
       <View style={style}>
