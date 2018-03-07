@@ -42,6 +42,7 @@ export type Props = {
 const BpkButtonLink = (props: Props) => {
   const {
     accessibilityLabel,
+    disabled,
     icon,
     iconAlignment,
     onPress,
@@ -61,6 +62,8 @@ const BpkButtonLink = (props: Props) => {
   const viewStyle = [styles.view];
   const iconStyle = [styles.icon];
 
+  const accessibilityTraits = ['button'];
+
   if (iconAlignment === ICON_ALIGNMENTS.leading) {
     viewStyle.push(styles.viewLeading);
     iconStyle.push(styles.iconLeading);
@@ -69,6 +72,11 @@ const BpkButtonLink = (props: Props) => {
   if (themeStyle) {
     textStyle.push(themeStyle);
     iconStyle.push(themeStyle);
+  }
+
+  if (disabled) {
+    textStyle.push(styles.disabled);
+    accessibilityTraits.push('disabled');
   }
 
   if (style) {
@@ -80,8 +88,9 @@ const BpkButtonLink = (props: Props) => {
       <BpkTouchableNativeFeedback
         accessibilityComponentType="button"
         accessibilityLabel={accessibilityLabel || title}
-        accessibilityTraits={['button']}
+        accessibilityTraits={accessibilityTraits}
         onPress={onPress}
+        disabled={disabled}
         style={styles.button}
         icon={icon}
         {...rest}

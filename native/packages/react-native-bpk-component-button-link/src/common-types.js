@@ -32,6 +32,7 @@ export const ICON_ALIGNMENTS = {
 export type CommonProps = {
   onPress: (event: SyntheticEvent<>) => void,
   title: string,
+  disabled: boolean,
   accessibilityLabel: ?string,
   icon: ?Node,
   iconAlignment: $Keys<typeof ICON_ALIGNMENTS>,
@@ -44,6 +45,7 @@ export type CommonProps = {
 export const commonPropTypes = {
   onPress: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
   accessibilityLabel: PropTypes.string,
   icon: PropTypes.node,
   iconAlignment: PropTypes.oneOf(Object.keys(ICON_ALIGNMENTS)),
@@ -53,6 +55,7 @@ export const commonPropTypes = {
 
 export const commonDefaultProps = {
   accessibilityLabel: null,
+  disabled: false,
   icon: null,
   iconAlignment: ICON_ALIGNMENTS.trailing,
   style: null,

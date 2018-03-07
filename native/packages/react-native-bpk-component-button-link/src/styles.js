@@ -21,6 +21,7 @@
 import { StyleSheet } from 'react-native';
 import {
   colorBlue500,
+  colorGray300,
   borderRadiusSm,
   spacingSm,
   spacingMd,
@@ -41,6 +42,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colorBlue500,
+  },
+  disabled: {
+    color: colorGray300,
   },
   icon: {
     color: colorBlue500,

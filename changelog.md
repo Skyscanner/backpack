@@ -6,6 +6,9 @@
 - react-native-bpk-component-phone-input:
   - New `BpkDiallingCodeList` component.
 
+- react-native-bpk-component-button-link:
+  - New `disabled` prop.
+
 ## 2018-03-06 - New `BpkTouchableNativeFeedback` component
 
 **Added:**
