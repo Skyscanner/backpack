@@ -117,12 +117,15 @@ export default class App extends Component {
 ### Main properties
 
 **options** - expected to be supplied with an array of PickerItems, where PickerItem is the shape of the data object specked out below
+
 **selectedOption** - can accept a particular instance of the option, or it's value field, picker component will handle both
+
 **onSelectionChange** - triggered when user changes the selection, always receives selected option object as firt argument
 
 ### ref/focus emulation
 
 **ref** - an emulation of the ref is available on picker. And instance of the picker is returned as a ref argument.
+
 **focus()** - can be called on obtained ref instance to activate picker component. Useful for forms navigation.
 
 
@@ -141,6 +144,9 @@ An individual option for the picker has to follow the shape specified below.
 
 
 **value** - a payload for the options, so it can be used to specify selected option
+
 **label** - text which will be displayed in picker once option is selected
+
 **hint** - additional hint label which will appear on the right side of the picker if corresponding option is selected. This field is optional.
+
 **pickerLabel** - optional alternative label which will be used in the options selection menu. If not specified a fallback to **label** field will happen
