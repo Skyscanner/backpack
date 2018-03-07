@@ -14,6 +14,9 @@
 
 - react-native-bpk-component-nudger:
   - Introducing the React Native nudger component.
+  
+- bpk-drawer-component:
+  - Spread extra properties to drawer's section.
 
 ## 2018-03-06 - New `BpkTouchableNativeFeedback` component
 

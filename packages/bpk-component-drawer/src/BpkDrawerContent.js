@@ -29,23 +29,41 @@ import STYLES from './bpk-drawer-content.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkDrawerContent = props => {
+  const {
+    className,
+    hideTitle,
+    contentClassName,
+    isDrawerShown,
+    onCloseAnimationComplete,
+    id,
+    dialogRef,
+    title,
+    closeText,
+    onClose,
+    closeLabel,
+    children,
+    closeOnScrimClick,
+    isIphone,
+    ...rest
+  } = props;
+
   const drawerClassNames = [getClassName('bpk-drawer')];
   const headerClassNames = [getClassName('bpk-drawer__heading')];
   const contentClassNames = [getClassName('bpk-drawer__content')];
 
-  if (props.className) {
-    drawerClassNames.push(props.className);
+  if (className) {
+    drawerClassNames.push(className);
   }
 
-  if (props.hideTitle) {
+  if (hideTitle) {
     headerClassNames.push(getClassName('bpk-drawer__heading--visually-hidden'));
   }
 
-  if (props.contentClassName) {
-    contentClassNames.push(props.contentClassName);
+  if (contentClassName) {
+    contentClassNames.push(contentClassName);
   }
 
-  const headingId = `bpk-drawer-heading-${props.id}`;
+  const headingId = `bpk-drawer-heading-${id}`;
 
   return (
     <Transition
@@ -56,12 +74,12 @@ const BpkDrawerContent = props => {
       appear
       enter={false}
       exit
-      in={props.isDrawerShown}
-      onExited={props.onCloseAnimationComplete}
+      in={isDrawerShown}
+      onExited={onCloseAnimationComplete}
     >
       {status => (
         <section
-          id={props.id}
+          id={id}
           tabIndex="-1"
           role="dialog"
           key="dialog"
@@ -70,26 +88,25 @@ const BpkDrawerContent = props => {
             drawerClassNames.join(' '),
             getClassName(`bpk-drawer--${status}`),
           ].join(' ')}
-          ref={props.dialogRef}
+          ref={dialogRef}
+          {...rest}
         >
           <header className={getClassName('bpk-drawer__header')}>
             <h2 id={headingId} className={headerClassNames.join(' ')}>
-              {props.title}
+              {title}
             </h2>
             &nbsp;
-            {props.closeText ? (
-              <BpkButtonLink onClick={props.onClose}>
-                {props.closeText}
-              </BpkButtonLink>
+            {closeText ? (
+              <BpkButtonLink onClick={onClose}>{closeText}</BpkButtonLink>
             ) : (
               <BpkCloseButton
                 className={getClassName('bpk-drawer__close-button')}
-                label={props.closeLabel}
-                onClick={props.onClose}
+                label={closeLabel}
+                onClick={onClose}
               />
             )}
           </header>
-          <div className={contentClassNames.join(' ')}>{props.children}</div>
+          <div className={contentClassNames.join(' ')}>{children}</div>
         </section>
       )}
     </Transition>
@@ -109,6 +126,8 @@ BpkDrawerContent.propTypes = {
   closeLabel: PropTypes.string,
   closeText: PropTypes.string,
   hideTitle: PropTypes.bool,
+  closeOnScrimClick: PropTypes.func,
+  isIphone: PropTypes.bool,
 };
 
 BpkDrawerContent.defaultProps = {
@@ -118,6 +137,8 @@ BpkDrawerContent.defaultProps = {
   closeText: null,
   isDrawerShown: true,
   hideTitle: false,
+  closeOnScrimClick: null,
+  isIphone: false,
 };
 
 export default BpkDrawerContent;
