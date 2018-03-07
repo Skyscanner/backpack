@@ -1,3 +1,21 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2018 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import React from 'react';
 import BpkIcon from 'react-native-bpk-component-icon';
 import BpkText from 'react-native-bpk-component-text';
@@ -99,6 +117,12 @@ class BpkPicker extends React.Component {
   render() {
     const { valid, validationMessage, style, label, options } = this.props;
 
+    const buttonLabels = {
+      prevLabel: this.props.prevLabel,
+      nextLabel: this.props.nextLabel,
+      doneLabel: this.props.doneLabel,
+    };
+
     const selectedOption = this.getSelectedOption();
     const labelText = selectedOption ? selectedOption.label : ' ';
     const hintText =
@@ -147,6 +171,7 @@ class BpkPicker extends React.Component {
           onNextItem={() => this.selectItem(+1)}
           onClose={() => this.hideMenu()}
           onChange={itemIndex => this.onSelectedItemChange(itemIndex)}
+          {...buttonLabels}
         />
       </View>
     );

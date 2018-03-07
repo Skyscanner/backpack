@@ -1,16 +1,43 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2018 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import React from 'react';
-import BpkButton from 'react-native-bpk-component-button';
-import { Modal, Picker, View, StyleSheet } from 'react-native';
+import {
+  Modal,
+  Picker,
+  View,
+  StyleSheet,
+  TouchableWithoutFeedback,
+} from 'react-native';
+import PropTypes from 'prop-types';
+import BpkButtonLink from 'react-native-bpk-component-button-link';
 import {
   colorGray50,
   colorGray200,
-  colorBlue500,
   spacingSm,
+  spacingMd,
 } from 'bpk-tokens/tokens/base.react.native';
 
-import PropTypes from 'prop-types';
-
 const ownStyles = StyleSheet.create({
+  dismissOverlay: {
+    flex: 1,
+  },
+
   overlay: {
     flexDirection: 'column',
     width: '100%',
@@ -22,7 +49,7 @@ const ownStyles = StyleSheet.create({
   overlayHeader: {
     flex: 1,
     paddingVertical: spacingSm * 0.5,
-    paddingHorizontal: spacingSm,
+    paddingHorizontal: spacingMd,
     flexDirection: 'row',
     backgroundColor: colorGray50,
     borderTopWidth: 1,
@@ -32,13 +59,12 @@ const ownStyles = StyleSheet.create({
   spacer: {
     flex: 1,
   },
-});
 
-const overlayButtonStyle = {
-  buttonSecondaryBackgroundColor: 'rgba(0,0,0,0)',
-  buttonSecondaryBorderColor: 'rgba(0,0,0,0)',
-  buttonSecondaryTextColor: colorBlue500,
-};
+  spacerSmall: {
+    flex: 0,
+    padding: spacingSm,
+  },
+});
 
 const PickerMenu = ({
   visible,
@@ -48,29 +74,21 @@ const PickerMenu = ({
   onPrevItem,
   onNextItem,
   onClose,
+  prevLabel,
+  nextLabel,
+  doneLabel,
 }) => (
   <Modal transparent visible={visible} animationType="slide">
+    <TouchableWithoutFeedback onPress={() => onClose()}>
+      <View style={ownStyles.dismissOverlay} />
+    </TouchableWithoutFeedback>
     <View style={ownStyles.overlay}>
       <View style={ownStyles.overlayHeader}>
-        <BpkButton
-          title="Previous"
-          type="secondary"
-          theme={overlayButtonStyle}
-          onPress={() => onPrevItem()}
-        />
-        <BpkButton
-          title="Next"
-          type="secondary"
-          theme={overlayButtonStyle}
-          onPress={() => onNextItem()}
-        />
+        <BpkButtonLink title={prevLabel} onPress={() => onPrevItem()} />
+        <View style={ownStyles.spacerSmall} />
+        <BpkButtonLink title={nextLabel} onPress={() => onNextItem()} />
         <View style={ownStyles.spacer} />
-        <BpkButton
-          title="Done"
-          type="secondary"
-          theme={overlayButtonStyle}
-          onPress={() => onClose()}
-        />
+        <BpkButtonLink title={doneLabel} onPress={() => onClose()} />
       </View>
       <Picker
         style={ownStyles.picker}
@@ -92,6 +110,9 @@ const PickerMenu = ({
 PickerMenu.defaultProps = {
   visible: false,
   selectedOption: null,
+  prevLabel: 'PREV',
+  nextLabel: 'NEXT',
+  doneLabel: 'DONE',
 };
 
 PickerMenu.propTypes = {
@@ -107,6 +128,9 @@ PickerMenu.propTypes = {
   onPrevItem: PropTypes.func.isRequired,
   onNextItem: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
+  prevLabel: PropTypes.string,
+  nextLabel: PropTypes.string,
+  doneLabel: PropTypes.string,
 };
 
 export default PickerMenu;

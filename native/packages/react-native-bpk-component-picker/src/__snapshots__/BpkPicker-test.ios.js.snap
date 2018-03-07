@@ -123,6 +123,27 @@ exports[`iOS BpkPicker should render correctly 1`] = `
     visible={false}
   >
     <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+      testID={undefined}
+    />
+    <View
       style={
         Object {
           "backgroundColor": "rgb(204, 201, 212)",
@@ -141,43 +162,33 @@ exports[`iOS BpkPicker should render correctly 1`] = `
             "borderTopWidth": 1,
             "flex": 1,
             "flexDirection": "row",
-            "paddingHorizontal": 4,
+            "paddingHorizontal": 8,
             "paddingVertical": 2,
           }
         }
       >
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
-          }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Previous"
+            accessibilityLabel="PREV"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -187,36 +198,21 @@ exports[`iOS BpkPicker should render correctly 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -237,15 +233,6 @@ exports[`iOS BpkPicker should render correctly 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -253,62 +240,41 @@ exports[`iOS BpkPicker should render correctly 1`] = `
                   ]
                 }
               >
-                Previous
+                PREV
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0,
+              "padding": 4,
+            }
           }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        />
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Next"
+            accessibilityLabel="NEXT"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -318,36 +284,21 @@ exports[`iOS BpkPicker should render correctly 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -368,15 +319,6 @@ exports[`iOS BpkPicker should render correctly 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -384,30 +326,11 @@ exports[`iOS BpkPicker should render correctly 1`] = `
                   ]
                 }
               >
-                Next
+                NEXT
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
+        </View>
         <View
           style={
             Object {
@@ -415,38 +338,28 @@ exports[`iOS BpkPicker should render correctly 1`] = `
             }
           }
         />
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
-          }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Done"
+            accessibilityLabel="DONE"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -456,36 +369,21 @@ exports[`iOS BpkPicker should render correctly 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -506,15 +404,6 @@ exports[`iOS BpkPicker should render correctly 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -522,30 +411,11 @@ exports[`iOS BpkPicker should render correctly 1`] = `
                   ]
                 }
               >
-                Done
+                DONE
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
+        </View>
       </View>
       <View
         style={undefined}
@@ -694,6 +564,27 @@ exports[`iOS BpkPicker should render correctly with arbitrary props 1`] = `
     visible={false}
   >
     <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+      testID={undefined}
+    />
+    <View
       style={
         Object {
           "backgroundColor": "rgb(204, 201, 212)",
@@ -712,43 +603,33 @@ exports[`iOS BpkPicker should render correctly with arbitrary props 1`] = `
             "borderTopWidth": 1,
             "flex": 1,
             "flexDirection": "row",
-            "paddingHorizontal": 4,
+            "paddingHorizontal": 8,
             "paddingVertical": 2,
           }
         }
       >
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
-          }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Previous"
+            accessibilityLabel="PREV"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -758,36 +639,21 @@ exports[`iOS BpkPicker should render correctly with arbitrary props 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -808,15 +674,6 @@ exports[`iOS BpkPicker should render correctly with arbitrary props 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -824,62 +681,41 @@ exports[`iOS BpkPicker should render correctly with arbitrary props 1`] = `
                   ]
                 }
               >
-                Previous
+                PREV
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0,
+              "padding": 4,
+            }
           }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        />
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Next"
+            accessibilityLabel="NEXT"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -889,36 +725,21 @@ exports[`iOS BpkPicker should render correctly with arbitrary props 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -939,15 +760,6 @@ exports[`iOS BpkPicker should render correctly with arbitrary props 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -955,30 +767,11 @@ exports[`iOS BpkPicker should render correctly with arbitrary props 1`] = `
                   ]
                 }
               >
-                Next
+                NEXT
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
+        </View>
         <View
           style={
             Object {
@@ -986,38 +779,28 @@ exports[`iOS BpkPicker should render correctly with arbitrary props 1`] = `
             }
           }
         />
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
-          }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Done"
+            accessibilityLabel="DONE"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -1027,36 +810,21 @@ exports[`iOS BpkPicker should render correctly with arbitrary props 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -1077,15 +845,6 @@ exports[`iOS BpkPicker should render correctly with arbitrary props 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -1093,30 +852,11 @@ exports[`iOS BpkPicker should render correctly with arbitrary props 1`] = `
                   ]
                 }
               >
-                Done
+                DONE
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
+        </View>
       </View>
       <View
         style={undefined}
@@ -1298,6 +1038,27 @@ exports[`iOS BpkPicker should render correctly with custom style 1`] = `
     visible={false}
   >
     <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+      testID={undefined}
+    />
+    <View
       style={
         Object {
           "backgroundColor": "rgb(204, 201, 212)",
@@ -1316,43 +1077,33 @@ exports[`iOS BpkPicker should render correctly with custom style 1`] = `
             "borderTopWidth": 1,
             "flex": 1,
             "flexDirection": "row",
-            "paddingHorizontal": 4,
+            "paddingHorizontal": 8,
             "paddingVertical": 2,
           }
         }
       >
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
-          }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Previous"
+            accessibilityLabel="PREV"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -1362,36 +1113,21 @@ exports[`iOS BpkPicker should render correctly with custom style 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -1412,15 +1148,6 @@ exports[`iOS BpkPicker should render correctly with custom style 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -1428,62 +1155,41 @@ exports[`iOS BpkPicker should render correctly with custom style 1`] = `
                   ]
                 }
               >
-                Previous
+                PREV
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0,
+              "padding": 4,
+            }
           }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        />
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Next"
+            accessibilityLabel="NEXT"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -1493,36 +1199,21 @@ exports[`iOS BpkPicker should render correctly with custom style 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -1543,15 +1234,6 @@ exports[`iOS BpkPicker should render correctly with custom style 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -1559,30 +1241,11 @@ exports[`iOS BpkPicker should render correctly with custom style 1`] = `
                   ]
                 }
               >
-                Next
+                NEXT
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
+        </View>
         <View
           style={
             Object {
@@ -1590,38 +1253,28 @@ exports[`iOS BpkPicker should render correctly with custom style 1`] = `
             }
           }
         />
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
-          }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Done"
+            accessibilityLabel="DONE"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -1631,36 +1284,21 @@ exports[`iOS BpkPicker should render correctly with custom style 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -1681,15 +1319,6 @@ exports[`iOS BpkPicker should render correctly with custom style 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -1697,30 +1326,11 @@ exports[`iOS BpkPicker should render correctly with custom style 1`] = `
                   ]
                 }
               >
-                Done
+                DONE
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
+        </View>
       </View>
       <View
         style={undefined}
@@ -1921,6 +1531,27 @@ exports[`iOS BpkPicker should render correctly with hint value 1`] = `
     visible={false}
   >
     <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+      testID={undefined}
+    />
+    <View
       style={
         Object {
           "backgroundColor": "rgb(204, 201, 212)",
@@ -1939,43 +1570,33 @@ exports[`iOS BpkPicker should render correctly with hint value 1`] = `
             "borderTopWidth": 1,
             "flex": 1,
             "flexDirection": "row",
-            "paddingHorizontal": 4,
+            "paddingHorizontal": 8,
             "paddingVertical": 2,
           }
         }
       >
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
-          }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Previous"
+            accessibilityLabel="PREV"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -1985,36 +1606,21 @@ exports[`iOS BpkPicker should render correctly with hint value 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -2035,15 +1641,6 @@ exports[`iOS BpkPicker should render correctly with hint value 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -2051,62 +1648,41 @@ exports[`iOS BpkPicker should render correctly with hint value 1`] = `
                   ]
                 }
               >
-                Previous
+                PREV
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0,
+              "padding": 4,
+            }
           }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        />
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Next"
+            accessibilityLabel="NEXT"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -2116,36 +1692,21 @@ exports[`iOS BpkPicker should render correctly with hint value 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -2166,15 +1727,6 @@ exports[`iOS BpkPicker should render correctly with hint value 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -2182,30 +1734,11 @@ exports[`iOS BpkPicker should render correctly with hint value 1`] = `
                   ]
                 }
               >
-                Next
+                NEXT
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
+        </View>
         <View
           style={
             Object {
@@ -2213,38 +1746,28 @@ exports[`iOS BpkPicker should render correctly with hint value 1`] = `
             }
           }
         />
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
-          }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Done"
+            accessibilityLabel="DONE"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -2254,36 +1777,21 @@ exports[`iOS BpkPicker should render correctly with hint value 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -2304,15 +1812,6 @@ exports[`iOS BpkPicker should render correctly with hint value 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -2320,30 +1819,11 @@ exports[`iOS BpkPicker should render correctly with hint value 1`] = `
                   ]
                 }
               >
-                Done
+                DONE
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
+        </View>
       </View>
       <View
         style={undefined}
@@ -2523,6 +2003,27 @@ exports[`iOS BpkPicker should render correctly with valid 1`] = `
     visible={false}
   >
     <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+      testID={undefined}
+    />
+    <View
       style={
         Object {
           "backgroundColor": "rgb(204, 201, 212)",
@@ -2541,43 +2042,33 @@ exports[`iOS BpkPicker should render correctly with valid 1`] = `
             "borderTopWidth": 1,
             "flex": 1,
             "flexDirection": "row",
-            "paddingHorizontal": 4,
+            "paddingHorizontal": 8,
             "paddingVertical": 2,
           }
         }
       >
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
-          }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Previous"
+            accessibilityLabel="PREV"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -2587,36 +2078,21 @@ exports[`iOS BpkPicker should render correctly with valid 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -2637,15 +2113,6 @@ exports[`iOS BpkPicker should render correctly with valid 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -2653,62 +2120,41 @@ exports[`iOS BpkPicker should render correctly with valid 1`] = `
                   ]
                 }
               >
-                Previous
+                PREV
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0,
+              "padding": 4,
+            }
           }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        />
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Next"
+            accessibilityLabel="NEXT"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -2718,36 +2164,21 @@ exports[`iOS BpkPicker should render correctly with valid 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -2768,15 +2199,6 @@ exports[`iOS BpkPicker should render correctly with valid 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -2784,30 +2206,11 @@ exports[`iOS BpkPicker should render correctly with valid 1`] = `
                   ]
                 }
               >
-                Next
+                NEXT
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
+        </View>
         <View
           style={
             Object {
@@ -2815,38 +2218,28 @@ exports[`iOS BpkPicker should render correctly with valid 1`] = `
             }
           }
         />
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
-          }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Done"
+            accessibilityLabel="DONE"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -2856,36 +2249,21 @@ exports[`iOS BpkPicker should render correctly with valid 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -2906,15 +2284,6 @@ exports[`iOS BpkPicker should render correctly with valid 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -2922,30 +2291,11 @@ exports[`iOS BpkPicker should render correctly with valid 1`] = `
                   ]
                 }
               >
-                Done
+                DONE
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
+        </View>
       </View>
       <View
         style={undefined}
@@ -3125,6 +2475,27 @@ exports[`iOS BpkPicker should render correctly with valid false 1`] = `
     visible={false}
   >
     <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+      testID={undefined}
+    />
+    <View
       style={
         Object {
           "backgroundColor": "rgb(204, 201, 212)",
@@ -3143,43 +2514,33 @@ exports[`iOS BpkPicker should render correctly with valid false 1`] = `
             "borderTopWidth": 1,
             "flex": 1,
             "flexDirection": "row",
-            "paddingHorizontal": 4,
+            "paddingHorizontal": 8,
             "paddingVertical": 2,
           }
         }
       >
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
-          }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Previous"
+            accessibilityLabel="PREV"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -3189,36 +2550,21 @@ exports[`iOS BpkPicker should render correctly with valid false 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -3239,15 +2585,6 @@ exports[`iOS BpkPicker should render correctly with valid false 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -3255,62 +2592,41 @@ exports[`iOS BpkPicker should render correctly with valid false 1`] = `
                   ]
                 }
               >
-                Previous
+                PREV
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0,
+              "padding": 4,
+            }
           }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        />
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Next"
+            accessibilityLabel="NEXT"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -3320,36 +2636,21 @@ exports[`iOS BpkPicker should render correctly with valid false 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -3370,15 +2671,6 @@ exports[`iOS BpkPicker should render correctly with valid false 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -3386,30 +2678,11 @@ exports[`iOS BpkPicker should render correctly with valid false 1`] = `
                   ]
                 }
               >
-                Next
+                NEXT
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
+        </View>
         <View
           style={
             Object {
@@ -3417,38 +2690,28 @@ exports[`iOS BpkPicker should render correctly with valid false 1`] = `
             }
           }
         />
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
-          }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Done"
+            accessibilityLabel="DONE"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -3458,36 +2721,21 @@ exports[`iOS BpkPicker should render correctly with valid false 1`] = `
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -3508,15 +2756,6 @@ exports[`iOS BpkPicker should render correctly with valid false 1`] = `
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -3524,30 +2763,11 @@ exports[`iOS BpkPicker should render correctly with valid false 1`] = `
                   ]
                 }
               >
-                Done
+                DONE
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
+        </View>
       </View>
       <View
         style={undefined}
@@ -3748,6 +2968,27 @@ exports[`iOS BpkPicker should render correctly with valid false and a validation
     visible={false}
   >
     <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+      testID={undefined}
+    />
+    <View
       style={
         Object {
           "backgroundColor": "rgb(204, 201, 212)",
@@ -3766,43 +3007,33 @@ exports[`iOS BpkPicker should render correctly with valid false and a validation
             "borderTopWidth": 1,
             "flex": 1,
             "flexDirection": "row",
-            "paddingHorizontal": 4,
+            "paddingHorizontal": 8,
             "paddingVertical": 2,
           }
         }
       >
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
-          }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Previous"
+            accessibilityLabel="PREV"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -3812,36 +3043,21 @@ exports[`iOS BpkPicker should render correctly with valid false and a validation
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -3862,15 +3078,6 @@ exports[`iOS BpkPicker should render correctly with valid false and a validation
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -3878,62 +3085,41 @@ exports[`iOS BpkPicker should render correctly with valid false and a validation
                   ]
                 }
               >
-                Previous
+                PREV
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0,
+              "padding": 4,
+            }
           }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        />
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Next"
+            accessibilityLabel="NEXT"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -3943,36 +3129,21 @@ exports[`iOS BpkPicker should render correctly with valid false and a validation
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -3993,15 +3164,6 @@ exports[`iOS BpkPicker should render correctly with valid false and a validation
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -4009,30 +3171,11 @@ exports[`iOS BpkPicker should render correctly with valid false and a validation
                   ]
                 }
               >
-                Next
+                NEXT
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
+        </View>
         <View
           style={
             Object {
@@ -4040,38 +3183,28 @@ exports[`iOS BpkPicker should render correctly with valid false and a validation
             }
           }
         />
-        <BVLinearGradient
-          colors={
-            Array [
-              0,
-              0,
-            ]
-          }
-          end={undefined}
-          locations={null}
-          start={undefined}
+        <View
           style={
             Array [
-              Array [
-                Object {
-                  "borderRadius": 40,
-                  "height": 32,
-                },
-              ],
-              null,
+              Object {
+                "borderRadius": 4,
+              },
             ]
           }
         >
           <View
             accessibilityComponentType="button"
-            accessibilityLabel="Done"
+            accessibilityLabel="DONE"
             accessibilityTraits={
               Array [
                 "button",
               ]
             }
             accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
             hitSlop={undefined}
+            isTVSelectable={true}
             nativeID={undefined}
             onLayout={undefined}
             onResponderGrant={[Function]}
@@ -4081,36 +3214,21 @@ exports[`iOS BpkPicker should render correctly with valid false and a validation
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Array [
-                  Object {
-                    "borderRadius": 40,
-                    "height": 32,
-                    "paddingHorizontal": 12,
-                    "paddingVertical": 8,
-                  },
-                  Object {
-                    "borderColor": "rgb(230, 228, 235)",
-                    "borderWidth": 2,
-                    "paddingHorizontal": 10,
-                    "paddingVertical": 6,
-                  },
-                ],
-                Object {
-                  "borderColor": "rgba(0,0,0,0)",
-                },
-              ]
+              Object {
+                "opacity": 1,
+              }
             }
             testID={undefined}
+            tvParallaxProperties={undefined}
           >
             <View
               style={
                 Array [
                   Object {
                     "alignItems": "center",
-                    "flex": 1,
                     "flexDirection": "row",
                     "justifyContent": "center",
+                    "paddingVertical": 8,
                   },
                 ]
               }
@@ -4131,15 +3249,6 @@ exports[`iOS BpkPicker should render correctly with valid false and a validation
                       "fontWeight": "600",
                     },
                     Array [
-                      Array [
-                        Object {
-                          "backgroundColor": "transparent",
-                          "color": "rgb(255, 255, 255)",
-                        },
-                        Object {
-                          "color": "rgb(0, 178, 214)",
-                        },
-                      ],
                       Object {
                         "color": "rgb(0, 178, 214)",
                       },
@@ -4147,30 +3256,11 @@ exports[`iOS BpkPicker should render correctly with valid false and a validation
                   ]
                 }
               >
-                Done
+                DONE
               </Text>
             </View>
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "rgb(37, 32, 51)",
-                    "bottom": 0,
-                    "flex": 1,
-                    "left": 0,
-                    "opacity": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "borderRadius": 40,
-                  },
-                ]
-              }
-            />
           </View>
-        </BVLinearGradient>
+        </View>
       </View>
       <View
         style={undefined}

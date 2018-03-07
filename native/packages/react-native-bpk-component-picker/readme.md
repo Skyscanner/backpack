@@ -106,6 +106,9 @@ export default class App extends Component {
 | label                       | string                                                      | false    | ''            |
 | options                     | arrayOf(PickerItem)                                         | false    | null          |
 | selectedOption              | oneOfType([PickerItem, string])                             | false    | null          |
+| prevLabel                   | string                                                      | false    | 'PREV'        |
+| nextLabel                   | string                                                      | false    | 'NEXT'        |
+| doneLabel                   | string                                                      | false    | 'DONE'        |
 | valid                       | oneOf(true, false, null)                                    | false    | null          |
 | validationMessage           | string                                                      | false    | null          |
 | style                       | style                                                       | false    | null          |
@@ -113,6 +116,7 @@ export default class App extends Component {
 | onSelectionChange           | func                                                        | false    | () => null    |
 | onFocus                     | func                                                        | false    | () => null    |
 | onBlur                      | func                                                        | false    | () => null    |
+
 
 ### Main properties
 
