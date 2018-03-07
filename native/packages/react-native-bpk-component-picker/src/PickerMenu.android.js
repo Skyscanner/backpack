@@ -8,7 +8,7 @@ import {
   TouchableNativeFeedback,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import * as TOKENS from 'bpk-tokens';
+import * as TOKENS from 'bpk-tokens/tokens/base.react.native';
 
 const rowsToDisplay = 6;
 
@@ -63,7 +63,12 @@ const dataSource = new ListView.DataSource({
 const PickerMenu = ({ visible, options, onChange, onClose }) => {
   const listData = dataSource.cloneWithRows(options);
   return (
-    <Modal transparent visible={visible} animationType="slide">
+    <Modal
+      transparent
+      visible={visible}
+      animationType="slide"
+      onRequestClose={() => onClose()}
+    >
       <View style={ownStyles.overlay}>
         <ListView
           style={ownStyles.list}

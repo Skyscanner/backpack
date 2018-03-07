@@ -75,6 +75,7 @@ addDecorator(CenterDecorator);
 /* eslint-disable global-require */
 configure(() => {
   require('../packages/react-native-bpk-component-animate-height/stories');
+  require('../packages/react-native-bpk-component-picker/stories');
   require('../packages/react-native-bpk-component-banner-alert/stories');
   require('../packages/react-native-bpk-component-badge/stories');
   require('../packages/react-native-bpk-component-button-link/stories');

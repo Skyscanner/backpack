@@ -69,6 +69,10 @@ const styles = StyleSheet.create({
     color: colorGray300,
     marginRight: spacingMd,
   },
+  validationMessage: {
+    color: colorRed500,
+    paddingTop: spacingSm,
+  },
 });
 
 // Created in a separate StyleSheet as they are not exported.
