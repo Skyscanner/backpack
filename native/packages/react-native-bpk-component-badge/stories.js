@@ -98,7 +98,7 @@ const generateBadgeStory = (
   return <View style={style.container}>{badges}</View>;
 };
 
-storiesOf('BpkBadge', module)
+storiesOf('react-native-bpk-component-badge', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => (
     <View>

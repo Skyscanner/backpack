@@ -236,16 +236,20 @@ class FullyIntegrated extends React.Component<
   }
 }
 
-storiesOf('phone-input/Integrated', module).add(
+storiesOf('react-native-bpk-component-phone-input/Integrated', module).add(
   'Full component example',
   () => <FullyIntegrated initiallySelectedId="CA" codes={codes} />,
 );
 
-storiesOf('phone-input/BpkDialingCodeList', module).add('docs:default', () => (
-  <StatefulBpkDialingCodeList />
-));
+storiesOf(
+  'react-native-bpk-component-phone-input/BpkDialingCodeList',
+  module,
+).add('docs:default', () => <StatefulBpkDialingCodeList />);
 
-storiesOf('phone-input/BpkDialingCodeListItem', module)
+storiesOf(
+  'react-native-bpk-component-phone-input/BpkDialingCodeListItem',
+  module,
+)
   .add('Standard', () => (
     <BpkDialingCodeListItem
       id="44"
@@ -297,7 +301,7 @@ storiesOf('phone-input/BpkDialingCodeListItem', module)
     />
   ));
 
-storiesOf('phone-input/BpkPhoneNumberInput', module)
+storiesOf('react-native-bpk-component-phone-input/BpkPhoneNumberInput', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => (
     <StatefulBpkPhoneNumberInput

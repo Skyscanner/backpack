@@ -165,7 +165,7 @@ const allThemedButtons = (
   </BpkThemeProvider>
 );
 
-storiesOf('BpkButton', module)
+storiesOf('react-native-bpk-component-button', module)
   .addDecorator(CenterDecorator)
   .add('docs:primary', () => (
     <View>{generateButtonStoryForType('primary')}</View>

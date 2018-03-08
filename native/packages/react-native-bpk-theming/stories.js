@@ -106,7 +106,7 @@ class BpkThemePicker extends Component {
   }
 }
 
-storiesOf('BpkTheming', module)
+storiesOf('react-native-bpk-theming', module)
   .addDecorator(CenterDecorator)
   .add('Default', () => (
     <View>

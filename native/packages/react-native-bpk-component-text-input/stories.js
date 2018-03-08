@@ -73,7 +73,7 @@ class StatefulBpkTextInput extends Component<
   }
 }
 
-storiesOf('BpkTextInput', module)
+storiesOf('react-native-bpk-component-text-input', module)
   .addDecorator(CenterDecorator)
   .add('docs:text-inputs', () => (
     <ScrollView>

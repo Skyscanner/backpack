@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
 });
 
-storiesOf('BpkCard', module)
+storiesOf('react-native-bpk-component-card', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => <BpkCard onPress={onPress}>{content}</BpkCard>)
   .add('docs:without-padding', () => (

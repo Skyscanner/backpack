@@ -152,7 +152,7 @@ BpkBannerAlertFadeDemo.defaultProps = {
   bannerStyle: null,
 };
 
-storiesOf('BpkBannerAlert', module)
+storiesOf('react-native-bpk-component-banner-alert', module)
   .addDecorator(CenterDecorator)
   .add('docs:banner-alerts', () => (
     <View>

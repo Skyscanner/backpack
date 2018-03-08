@@ -12,7 +12,7 @@ import CenterDecorator from '../../storybook/CenterDecorator';
 
 import BpkText from './index';
 
-storiesOf('BpkText', module)
+storiesOf('react-native-bpk-component-text', module)
   .addDecorator(CenterDecorator)
   .add('docs:text-styles', () => (
     <View>

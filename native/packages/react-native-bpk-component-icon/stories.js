@@ -100,7 +100,7 @@ const getColouredIcons = () => (
   </View>
 );
 
-storiesOf('BpkIcon', module)
+storiesOf('react-native-bpk-component-icon', module)
   .addDecorator(CenterDecorator)
   .add('docs:icons', () => (
     <View style={styles.container}>

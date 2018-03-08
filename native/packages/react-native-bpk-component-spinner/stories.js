@@ -65,7 +65,7 @@ const getThemedButtons = () => (
   </BpkThemeProvider>
 );
 
-storiesOf('BpkSpinner', module)
+storiesOf('react-native-bpk-component-spinner', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => <View>{generateAllSpinnerTypes()}</View>)
   .add('docs:small', () => <View>{generateAllSpinnerTypes(true)}</View>)

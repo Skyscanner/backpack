@@ -44,7 +44,7 @@ const viewContent = <View style={styles.view}>{textContent}</View>;
 
 const onPress = action('Touchable overlay press');
 
-storiesOf('BpkTouchableOverlay', module)
+storiesOf('react-native-bpk-component-touchable-overlay', module)
   .addDecorator(CenterDecorator)
   .add('docs:text-content', () => (
     <BpkTouchableOverlay

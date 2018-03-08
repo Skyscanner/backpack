@@ -97,7 +97,7 @@ StoryNav.defaultProps = {
   items: 2,
 };
 
-storiesOf('BpkHorizontalNav', module)
+storiesOf('react-native-bpk-component-horizontal-nav', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => (
     <View style={styles.bottomMargin}>

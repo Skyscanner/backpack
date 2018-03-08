@@ -102,7 +102,7 @@ AnimateHeightDemo.defaultProps = {
   animationDuration: animationDurationBase,
 };
 
-storiesOf('BpkAnimateHeight', module)
+storiesOf('react-native-bpk-component-animate-height', module)
   .addDecorator(getStory => <View style={styles.centered}>{getStory()}</View>)
   .add('Default', () => (
     <AnimateHeightDemo>{animateHeightContent}</AnimateHeightDemo>

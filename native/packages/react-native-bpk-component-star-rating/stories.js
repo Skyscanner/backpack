@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     padding: spacingBase,
   },
 });
-storiesOf('BpkStarRating', module)
+storiesOf('react-native-bpk-component-star-rating/BpkStarRating', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => (
     <View>
@@ -86,7 +86,7 @@ storiesOf('BpkStarRating', module)
     </View>
   ));
 
-storiesOf('BpkStar', module)
+storiesOf('react-native-bpk-component-star-rating/BpkStar', module)
   .addDecorator(CenterDecorator)
   .add('Full', () => (
     <View style={styles.container}>

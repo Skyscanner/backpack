@@ -55,7 +55,7 @@ class SwitchContainer extends Component {
   }
 }
 
-storiesOf('BpkSwitch', module)
+storiesOf('react-native-bpk-component-switch', module)
   .addDecorator(CenterDecorator)
   .add('docs:default', () => (
     <View style={styles.viewWidth}>

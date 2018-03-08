@@ -44,7 +44,7 @@ const viewContent = <View style={styles.view}>{textContent}</View>;
 
 const onPress = action('Touchable native feedback press');
 
-storiesOf('BpkTouchableNativeFeedback', module)
+storiesOf('react-native-bpk-component-touchable-native-feedback', module)
   .addDecorator(CenterDecorator)
   .add('docs:text-content', () => (
     <BpkTouchableNativeFeedback
