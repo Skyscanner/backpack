@@ -12,8 +12,8 @@
 - react-native-bpk-component-button:
   - Android now supports the `iconOnly` prop.
 
-- bpk-drawer-component:
-  - Spread extra properties to drawer's section.
+- bpk-component-drawer:
+  - Arbitrary props are now passed to drawer container
 
 ## 2018-03-06 - New `BpkTouchableNativeFeedback` component
 
