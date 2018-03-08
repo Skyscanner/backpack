@@ -36,12 +36,6 @@ const getClassName = cssModules(STYLES);
 
 const withScrim = WrappedComponent => {
   class WithScrim extends Component {
-    constructor() {
-      super();
-
-      this.dialogRef = this.dialogRef.bind(this);
-    }
-
     componentDidMount() {
       const { isIphone, getApplicationElement } = this.props;
       const applicationElement = getApplicationElement();
@@ -83,40 +77,39 @@ const withScrim = WrappedComponent => {
       focusStore.restoreFocus();
     }
 
-    onClose = () => {
-      this.props.onClose();
-    };
-
-    dialogRef(ref) {
+    dialogRef = ref => {
       this.dialogElement = ref;
-    }
+    };
 
     render() {
       const {
-        isIphone,
         getApplicationElement,
+        onClose,
+        isIphone,
         containerClassName,
+        closeOnScrimClick,
         ...rest
       } = this.props;
 
       const classNames = [getClassName('bpk-scrim-content')];
+
       if (isIphone) {
         classNames.push(getClassName('bpk-scrim-content--iphone-fix'));
       }
-      classNames.push(containerClassName);
+
+      if (containerClassName) {
+        classNames.push(containerClassName);
+      }
 
       return (
-        /* eslint-disable jsx-a11y/no-static-element-interactions */
-        /* eslint-disable jsx-a11y/click-events-have-key-events */
         <div className={classNames.join(' ')}>
-          <BpkScrim onClose={this.onClose} />
+          <BpkScrim onClose={closeOnScrimClick ? onClose : null} />
           <WrappedComponent
             {...rest}
             isIphone={isIphone}
             dialogRef={this.dialogRef}
           />
         </div>
-        /* eslint-enable */
       );
     }
   }
@@ -136,7 +129,7 @@ const withScrim = WrappedComponent => {
     isIphone: /iPhone/i.test(
       typeof window !== 'undefined' ? window.navigator.platform : '',
     ),
-    containerClassName: '',
+    containerClassName: null,
     closeOnScrimClick: true,
   };
 

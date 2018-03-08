@@ -14,9 +14,14 @@
 
 - react-native-bpk-component-nudger:
   - Introducing the React Native nudger component.
-  
+
 - bpk-component-drawer:
   - Arbitrary props are now passed to drawer container
+
+**Fixed:**
+- bpk-component-dialog:
+- bpk-scrim-utils:
+  - Fixed `closeOnScrimClick` behaviour
 
 ## 2018-03-06 - New `BpkTouchableNativeFeedback` component
 

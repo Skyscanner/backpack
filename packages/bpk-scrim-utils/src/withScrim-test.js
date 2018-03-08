@@ -34,10 +34,12 @@ jest.mock('a11y-focus-scope', () => ({
   scopeFocus: jest.fn(),
   unscopeFocus: jest.fn(),
 }));
+
 jest.mock('a11y-focus-store', () => ({
   storeFocus: jest.fn(),
   restoreFocus: jest.fn(),
 }));
+
 jest.mock('./scroll-utils', () => ({
   lockScroll: jest.fn(),
   restoreScroll: jest.fn(),
@@ -88,6 +90,19 @@ describe('BpkScrim', () => {
             onClose={jest.fn()}
             getApplicationElement={jest.fn()}
             containerClassName="containerClassName"
+          />,
+        )
+        .toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+
+    it('should render correctly with closeOnScrimClick as false', () => {
+      const tree = renderer
+        .create(
+          <Component
+            onClose={jest.fn()}
+            getApplicationElement={jest.fn()}
+            closeOnScrimClick={false}
           />,
         )
         .toJSON();
