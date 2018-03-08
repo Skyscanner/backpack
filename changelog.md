@@ -9,7 +9,7 @@
 - react-native-bpk-component-nudger:
   - Introducing the React Native nudger component.
 
-## 2018-03-08 - Andoid buttons can be icon only and button links can be disabled
+## 2018-03-08 - Android buttons can be icon only and button links can be disabled
 
 **Added:**
 - bpk-component-drawer: 1.1.19 => 1.2.0
