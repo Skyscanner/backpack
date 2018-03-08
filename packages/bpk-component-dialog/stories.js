@@ -83,11 +83,11 @@ class DialogContainer extends Component<Props, State> {
           <BpkButton onClick={this.onOpen}>Open dialog</BpkButton>
         </div>
         <BpkDialog
-          closeLabel={this.props.dismissible ? 'Close dialog' : null}
+          closeLabel="Close dialog"
           id="my-dialog"
           className="my-classname"
           isOpen={this.state.isOpen}
-          onClose={this.props.dismissible ? this.onClose : null}
+          onClose={this.onClose}
           getApplicationElement={() =>
             document.getElementById('application-container')
           }

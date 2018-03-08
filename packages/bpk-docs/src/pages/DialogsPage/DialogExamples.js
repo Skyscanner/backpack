@@ -140,6 +140,7 @@ export class NonDismissibleDialogContainer extends Component<
           id="non-dissmissible-dialog"
           className="my-classname"
           isOpen={this.state.isOpen}
+          onClose={this.onClose}
           renderTarget={() => document.getElementById('application-container')}
           getApplicationElement={() => document.getElementById('portal-target')}
           dismissible={false}
