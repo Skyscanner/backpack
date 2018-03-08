@@ -700,6 +700,124 @@ exports[`Android BpkButton should render correctly with type="destructive" 1`] =
 </View>
 `;
 
+exports[`Android BpkButton should render correctly with type="destructive" and disabled 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 36,
+        },
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+        "disabled",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 0,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
+        ],
+        Object {
+          "backgroundColor": "transparent",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "color": "rgb(255, 84, 82)",
+                },
+                Object {
+                  "color": "rgb(178, 174, 189)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`Android BpkButton should render correctly with type="featured" 1`] = `
 <View
   style={
@@ -786,6 +904,115 @@ exports[`Android BpkButton should render correctly with type="featured" 1`] = `
                 Object {
                   "backgroundColor": "transparent",
                   "color": "rgb(255, 255, 255)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButton should render correctly with type="featured" and disabled 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 36,
+        },
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+        "disabled",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
+        ],
+        Object {
+          "backgroundColor": "rgb(230, 228, 235)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "color": "rgb(178, 174, 189)",
                 },
               ],
               Object {},
@@ -900,6 +1127,115 @@ exports[`Android BpkButton should render correctly with type="primary" 1`] = `
 </View>
 `;
 
+exports[`Android BpkButton should render correctly with type="primary" and disabled 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 36,
+        },
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+        "disabled",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
+        ],
+        Object {
+          "backgroundColor": "rgb(230, 228, 235)",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "color": "rgb(178, 174, 189)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
 <View
   style={
@@ -995,6 +1331,124 @@ exports[`Android BpkButton should render correctly with type="secondary" 1`] = `
                 },
                 Object {
                   "color": "rgb(0, 178, 214)",
+                },
+              ],
+              Object {},
+            ],
+          ]
+        }
+      >
+        LOREM IPSUM
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Android BpkButton should render correctly with type="secondary" and disabled 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 36,
+        },
+        undefined,
+      ],
+      null,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType="button"
+    accessibilityLabel="Lorem ipsum"
+    accessibilityTraits={
+      Array [
+        "button",
+        "disabled",
+      ]
+    }
+    accessible={true}
+    hitSlop={undefined}
+    nativeBackgroundAndroid={
+      Object {
+        "attribute": "selectableItemBackgroundBorderless",
+        "type": "ThemeAttrAndroid",
+      }
+    }
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Array [
+          Object {
+            "borderRadius": 40,
+            "height": 36,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "borderColor": "rgb(230, 228, 235)",
+            "borderWidth": 0,
+            "paddingHorizontal": 12,
+            "paddingVertical": 8,
+          },
+          Object {
+            "borderColor": "transparent",
+          },
+        ],
+        Object {
+          "backgroundColor": "transparent",
+        },
+      ]
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgb(82, 76, 97)",
+              "fontFamily": "sans-serif",
+              "fontSize": 14,
+              "fontWeight": "400",
+            },
+            Object {
+              "fontFamily": "sans-serif-medium",
+            },
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "color": "rgb(255, 255, 255)",
+                },
+                Object {
+                  "color": "rgb(0, 178, 214)",
+                },
+                Object {
+                  "color": "rgb(178, 174, 189)",
                 },
               ],
               Object {},

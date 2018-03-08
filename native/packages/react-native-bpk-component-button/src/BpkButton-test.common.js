@@ -130,6 +130,20 @@ const commonTests = () => {
           .toJSON();
         expect(tree).toMatchSnapshot();
       });
+
+      it(`should render correctly with type="${buttonType}" and disabled`, () => {
+        const tree = renderer
+          .create(
+            <BpkButton
+              disabled
+              type={buttonType}
+              title="Lorem ipsum"
+              onPress={onPressFn}
+            />,
+          )
+          .toJSON();
+        expect(tree).toMatchSnapshot();
+      });
     });
 
     Object.keys(ICON_ALIGNMENTS).forEach(alignmentType => {
