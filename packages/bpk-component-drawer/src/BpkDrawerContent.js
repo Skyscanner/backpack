@@ -42,8 +42,8 @@ const BpkDrawerContent = props => {
     onClose,
     closeLabel,
     children,
-    closeOnScrimClick,
-    isIphone,
+    closeOnScrimClick, // unusued from withScrim scrim HOC
+    isIphone, // unusued from withScrim scrim HOC
     ...rest
   } = props;
 
@@ -114,19 +114,19 @@ const BpkDrawerContent = props => {
 };
 
 BpkDrawerContent.propTypes = {
+  children: PropTypes.node.isRequired,
   dialogRef: PropTypes.func.isRequired,
-  isDrawerShown: PropTypes.bool,
   onCloseAnimationComplete: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   className: PropTypes.string,
   contentClassName: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
   closeLabel: PropTypes.string,
   closeText: PropTypes.string,
+  isDrawerShown: PropTypes.bool,
   hideTitle: PropTypes.bool,
-  closeOnScrimClick: PropTypes.func,
+  closeOnScrimClick: PropTypes.bool,
   isIphone: PropTypes.bool,
 };
 
@@ -137,7 +137,7 @@ BpkDrawerContent.defaultProps = {
   closeText: null,
   isDrawerShown: true,
   hideTitle: false,
-  closeOnScrimClick: null,
+  closeOnScrimClick: true,
   isIphone: false,
 };
 

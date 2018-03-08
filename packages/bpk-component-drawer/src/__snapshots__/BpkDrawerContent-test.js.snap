@@ -156,6 +156,59 @@ exports[`BpkDrawerContent should render correctly when it has a contentClassName
 </section>
 `;
 
+exports[`BpkDrawerContent should render correctly with arbitrary attributes 1`] = `
+<section
+  aria-labelledby="bpk-drawer-heading-my-drawer"
+  className="bpk-drawer bpk-drawer--entered"
+  data-arbitrary="prop"
+  id="my-drawer"
+  role="dialog"
+  tabIndex="-1"
+>
+  <header
+    className="bpk-drawer__header"
+  >
+    <h2
+      className="bpk-drawer__heading"
+      id="bpk-drawer-heading-my-drawer"
+    >
+      Drawer title
+    </h2>
+     
+    <button
+      aria-label="Close"
+      className="bpk-close-button bpk-drawer__close-button"
+      onClick={[Function]}
+      title="Close"
+      type="button"
+    >
+      <svg
+        className="bpk-close-button__icon"
+        height="18"
+        style={
+          Object {
+            "height": "1.125rem",
+            "width": "1.125rem",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 9.172l4.243-4.243a2 2 0 1 1 2.828 2.828L14.828 12l4.243 4.243a2 2 0 1 1-2.828 2.828L12 14.828l-4.243 4.243a2 2 0 1 1-2.828-2.828L9.172 12 4.929 7.757A2 2 0 1 1 7.757 4.93L12 9.172z"
+        />
+      </svg>
+    </button>
+  </header>
+  <div
+    className="bpk-drawer__content"
+  >
+    Drawer content
+  </div>
+</section>
+`;
+
 exports[`BpkDrawerContent should render correctly with hideTitle 1`] = `
 <section
   aria-labelledby="bpk-drawer-heading-my-drawer"
